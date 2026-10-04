@@ -16,7 +16,7 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final float[][] a = {new float[]{0.401288f, 0.650173f, -0.051461f}, new float[]{-0.250268f, 1.204414f, 0.045854f}, new float[]{-0.002079f, 0.048952f, 0.953127f}};
@@ -34,9 +34,9 @@ public abstract class b {
                 return new a5.a((Shader) null, (ColorStateList) null, typedValue.data);
             }
             try {
-                aVar = a5.a.g(typedArray.getResources(), typedArray.getResourceId(i10, 0), theme);
-            } catch (Exception e) {
-                Log.e("ComplexColorCompat", "Failed to inflate ComplexColor.", e);
+                aVar = a5.a.f(typedArray.getResources(), typedArray.getResourceId(i10, 0), theme);
+            } catch (Exception e7) {
+                Log.e("ComplexColorCompat", "Failed to inflate ComplexColor.", e7);
                 aVar = null;
             }
             if (aVar != null) {

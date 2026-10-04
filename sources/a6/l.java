@@ -13,12 +13,13 @@ import com.google.android.gms.common.api.internal.t0;
 import com.google.android.gms.common.api.s;
 import com.google.android.gms.internal.clearcut.v0;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import hg.k0;
 import org.json.JSONException;
 import t7.u;
-import v7.h5;
-import w7.e9;
+import v7.g5;
+import w7.h9;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class l extends b8.b {
     public final /* synthetic */ int b = 0;
@@ -53,7 +54,7 @@ public final class l extends b8.b {
                         }
                         googleSignInOptions = null;
                     }
-                    v0 a10 = e9.a(revocationBoundService, googleSignInOptions);
+                    v0 a10 = h9.a(revocationBoundService, googleSignInOptions);
                     if (b10 != null) {
                         t0 t0Var = a10.h;
                         Context context = a10.a;
@@ -85,7 +86,7 @@ public final class l extends b8.b {
                         return false;
                     }
                     L0();
-                    i.T(revocationBoundService).U();
+                    i.R(revocationBoundService).S();
                 }
                 return true;
             default:
@@ -95,14 +96,14 @@ public final class l extends b8.b {
                 Status status2 = (Status) i7.f.a(parcel, Status.CREATOR);
                 x5.f fVar = (x5.f) i7.f.a(parcel, x5.f.CREATOR);
                 i7.f.b(parcel);
-                h5.a(status2, fVar, (TaskCompletionSource) obj);
+                g5.a(status2, fVar, (TaskCompletionSource) obj);
                 return true;
         }
     }
 
     public void L0() {
         if (!u6.b.e((RevocationBoundService) this.c, Binder.getCallingUid())) {
-            throw new SecurityException(hg.c.i(Binder.getCallingUid(), "Calling UID ", " is not Google Play services."));
+            throw new SecurityException(k0.i(Binder.getCallingUid(), "Calling UID ", " is not Google Play services."));
         }
     }
 

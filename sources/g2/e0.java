@@ -9,7 +9,7 @@ import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
 import java.net.SocketTimeoutException;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class e0 extends c {
     public final int a;
@@ -84,10 +84,10 @@ public final class e0 extends c {
             this.n = true;
             transferStarted(mVar);
             return -1L;
-        } catch (IOException e) {
-            throw new d0(e, 2001);
-        } catch (SecurityException e7) {
-            throw new d0(e7, 2006);
+        } catch (IOException e7) {
+            throw new d0(e7, 2001);
+        } catch (SecurityException e10) {
+            throw new d0(e10, 2006);
         }
     }
 
@@ -106,10 +106,10 @@ public final class e0 extends c {
                 int length = datagramPacket.getLength();
                 this.r = length;
                 bytesTransferred(length);
-            } catch (SocketTimeoutException e) {
-                throw new d0(e, 2002);
-            } catch (IOException e7) {
-                throw new d0(e7, 2001);
+            } catch (SocketTimeoutException e7) {
+                throw new d0(e7, 2002);
+            } catch (IOException e10) {
+                throw new d0(e10, 2001);
             }
         }
         int length2 = datagramPacket.getLength();

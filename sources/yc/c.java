@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c implements Iterable {
     public final HashMap a = new HashMap();
@@ -25,7 +25,8 @@ public final class c implements Iterable {
     public final void i() {
         Iterator it = this.b.iterator();
         if (it.hasNext()) {
-            throw a4.a.k(it);
+            it.next().getClass();
+            throw new ClassCastException();
         }
     }
 

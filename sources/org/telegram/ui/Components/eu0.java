@@ -1,70 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public abstract class eu0 extends FrameLayout {
-    public bl0 E;
-    public int F;
-    public dr0 G;
-    public yn0 H;
-    public boolean I;
-    public int J;
-    public boolean K;
-    public float L;
-    public long a;
-    public boolean b;
-    public ObjectAnimator c;
-    public s4.j d;
-    public s4.u0 e;
-    public s4.u0 f;
-    public ks0 h;
-    public ah.n n;
-    public du0 r;
-    public ms0 s;
-    public ts0 v;
-    public vs0 w;
-    public is0 x;
-    public ss0 y;
+public final /* synthetic */ class eu0 implements gg.b2, org.telegram.ui.Cells.a5 {
+    public final /* synthetic */ gu0 a;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        dr0 dr0Var = this.G;
-        if (dr0Var == null || dr0Var.getVisibility() != 0) {
+    public /* synthetic */ eu0(gu0 gu0Var) {
+        this.a = gu0Var;
+    }
+
+    @Override // gg.b2
+    public void a(int i10) {
+        gu0 gu0Var = this.a;
+        gu0Var.l();
+        if (i10 != 1) {
             return;
         }
-        fl0 fastScroll = this.h.getFastScroll();
-        if (fastScroll != null) {
-            float dp = AndroidUtilities.dp(36.0f) + fastScroll.getScrollBarY();
-            if (this.F == 9) {
-                dp += AndroidUtilities.dp(64.0f);
-            }
-            int i10 = this.F;
-            if (i10 == 8 || lv0.w0(i10)) {
-                dp += AndroidUtilities.dp(42.0f);
-            }
-            float measuredWidth = (getMeasuredWidth() - this.G.getMeasuredWidth()) - AndroidUtilities.dp(16.0f);
-            this.G.setPivotX(r2.getMeasuredWidth());
-            this.G.setPivotY(0.0f);
-            this.G.setTranslationX(measuredWidth);
-            this.G.setTranslationY(dp);
+        int i11 = gu0Var.r - 1;
+        gu0Var.r = i11;
+        if (i11 != 0) {
+            return;
         }
-        if (fastScroll.getProgress() > 0.85f) {
-            lv0.q(this, null, false);
+        int i12 = 0;
+        while (true) {
+            pv0 pv0Var = gu0Var.s;
+            iu0[] iu0VarArr = pv0Var.k0;
+            if (i12 >= iu0VarArr.length) {
+                return;
+            }
+            iu0 iu0Var = iu0VarArr[i12];
+            if (iu0Var.F == 7) {
+                if (gu0Var.h == 0) {
+                    iu0Var.w.e(false, true);
+                } else {
+                    pv0Var.z(iu0Var.h, 0, null);
+                }
+            }
+            i12++;
         }
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view == this.r) {
-            return true;
+    @Override // org.telegram.ui.Cells.a5
+    public boolean e(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
+        int intValue = ((Integer) b5Var.getTag()).intValue();
+        gu0 gu0Var = this.a;
+        TLObject E = gu0Var.E(intValue);
+        if (!(E instanceof TLRPC.ChannelParticipant)) {
+            return false;
         }
-        return super.drawChild(canvas, view, j3);
+        TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
+        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
+        tL_chatChannelParticipant.channelParticipant = channelParticipant;
+        tL_chatChannelParticipant.user_id = MessageObject.getPeerId(channelParticipant.peer);
+        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
+        tL_chatChannelParticipant.date = channelParticipant.date;
+        return gu0Var.s.D1.h(tL_chatChannelParticipant, true, !z10, b5Var);
+    }
+
+    @Override // gg.b2
+    public /* synthetic */ a0.i w() {
+        return null;
+    }
+
+    @Override // gg.b2
+    public /* synthetic */ a0.i y() {
+        return null;
+    }
+
+    @Override // gg.b2
+    public /* synthetic */ boolean z(int i10) {
+        return true;
+    }
+
+    @Override // gg.b2
+    public /* synthetic */ void C(ArrayList arrayList) {
     }
 }

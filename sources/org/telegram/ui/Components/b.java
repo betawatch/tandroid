@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -48,15 +48,15 @@ public final /* synthetic */ class b implements View.OnClickListener {
             case 4:
                 e0 e0Var3 = this.b;
                 e0Var3.P0 = false;
-                e0Var3.J();
+                e0Var3.H();
                 e0Var3.O0.N(true);
                 e0Var3.s();
                 break;
             case 5:
-                e0.Y(this.b, view);
+                e0.X(this.b, view);
                 break;
             case 6:
-                e0.R(this.b, view);
+                e0.P(this.b, view);
                 break;
             case 7:
                 e0 e0Var4 = this.b;

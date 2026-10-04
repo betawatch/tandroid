@@ -1,42 +1,38 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rp0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wq0 b;
+public final class rp0 {
+    public final qu a;
+    public final long b;
+    public final float c;
+    public final float d;
+    public final float e;
 
-    public /* synthetic */ rp0(wq0 wq0Var, int i10) {
-        this.a = i10;
-        this.b = wq0Var;
+    public rp0(View view) {
+        qu quVar = new qu(1, view);
+        this.b = System.currentTimeMillis();
+        this.a = quVar;
+        this.c = AndroidUtilities.lerp(5.0f, 9.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+        this.d = AndroidUtilities.lerp(2.5f, 5.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+        this.e = AndroidUtilities.lerp(2.5f, 5.2f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                wq0 wq0Var = this.b;
-                wq0Var.A0 = true;
-                e20 e20Var = wq0Var.y0;
-                e20Var.r.setText("");
-                AndroidUtilities.showKeyboard(e20Var.r);
-                break;
-            default:
-                th thVar = new th(9);
-                wq0 wq0Var2 = this.b;
-                if (!wq0Var2.isKeyboardVisible()) {
-                    thVar.run();
-                    break;
-                } else {
-                    e20 e20Var2 = wq0Var2.y0;
-                    if (e20Var2 != null) {
-                        AndroidUtilities.hideKeyboard(e20Var2.r);
-                    }
-                    AndroidUtilities.runOnUIThread(thVar, 300L);
-                    break;
-                }
+    public final void a(Canvas canvas, float f7) {
+        qu quVar;
+        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
+        canvas.translate(0.0f, 0.0f);
+        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f7);
+        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7);
+        canvas.translate(-0.0f, -0.0f);
+        if (f7 <= 0.0f || (quVar = this.a) == null) {
+            return;
         }
+        quVar.run();
     }
 }

@@ -13,9 +13,9 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import n7.z0;
-import v7.b7;
+import v7.a7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i implements cf.a {
     public static final Pattern j = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -53,25 +53,25 @@ public final class i implements cf.a {
         Iterator it2 = list2.iterator();
         while (it2.hasNext()) {
             ef.a aVar = (ef.a) it2.next();
-            char e = aVar.e();
+            char e7 = aVar.e();
             char a2 = aVar.a();
-            if (e == a2) {
-                ef.a aVar2 = (ef.a) hashMap2.get(Character.valueOf(e));
+            if (e7 == a2) {
+                ef.a aVar2 = (ef.a) hashMap2.get(Character.valueOf(e7));
                 if (aVar2 == null || aVar2.e() != aVar2.a()) {
-                    b(e, aVar, hashMap2);
+                    b(e7, aVar, hashMap2);
                 } else {
                     if (aVar2 instanceof k) {
                         kVar = (k) aVar2;
                     } else {
-                        k kVar2 = new k(e);
+                        k kVar2 = new k(e7);
                         kVar2.f(aVar2);
                         kVar = kVar2;
                     }
                     kVar.f(aVar);
-                    hashMap2.put(Character.valueOf(e), kVar);
+                    hashMap2.put(Character.valueOf(e7), kVar);
                 }
             } else {
-                b(e, aVar, hashMap2);
+                b(e7, aVar, hashMap2);
                 b(a2, aVar, hashMap2);
             }
         }
@@ -236,7 +236,7 @@ public final class i implements cf.a {
         if (pVar3 == pVar4) {
             return;
         }
-        b7.b(pVar3, pVar4);
+        a7.b(pVar3, pVar4);
     }
 
     public final String c(Pattern pattern) {
@@ -279,12 +279,12 @@ public final class i implements cf.a {
             if (!bVar2.d || aVar == null) {
                 bVar2 = bVar2.f;
             } else {
-                char e = aVar.e();
+                char e7 = aVar.e();
                 ye.b bVar4 = bVar2.e;
                 int i10 = 0;
                 boolean z11 = false;
                 while (bVar4 != null && bVar4 != bVar && bVar4 != hashMap.get(Character.valueOf(c10))) {
-                    if (bVar4.c && bVar4.b == e) {
+                    if (bVar4.c && bVar4.b == e7) {
                         i10 = aVar.b(bVar4, bVar2);
                         z11 = true;
                         if (i10 > 0) {
@@ -309,7 +309,7 @@ public final class i implements cf.a {
                         bVar5 = bVar6;
                     }
                     if (sVar2 != sVar && (pVar = (p) sVar2.f) != sVar) {
-                        b7.b(pVar, (p) sVar.e);
+                        a7.b(pVar, (p) sVar.e);
                     }
                     aVar.d(sVar2, sVar, i10);
                     if (bVar4.g == 0) {

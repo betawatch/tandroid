@@ -1,35 +1,49 @@
 package org.telegram.ui.Components;
 
-import java.util.function.ToDoubleFunction;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.net.Uri;
+import java.util.Map;
+import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y71 implements ToDoubleFunction {
-    public final /* synthetic */ int a;
+public final class y71 implements g2.h {
+    public final g2.h a;
+    public final long b;
 
-    public /* synthetic */ y71(int i10) {
-        this.a = i10;
+    public y71(ExtendedDefaultDataSource extendedDefaultDataSource, long j3) {
+        this.a = extendedDefaultDataSource;
+        this.b = j3;
     }
 
-    @Override // java.util.function.ToDoubleFunction
-    public final double applyAsDouble(Object obj) {
-        switch (this.a) {
-            case 0:
-                return ((b81) obj).a;
-            case 1:
-                return ((TLRPC.TL_topPeer) obj).rating;
-            case 2:
-                return ((TLRPC.TL_topPeer) obj).rating;
-            case 3:
-                return ((TLRPC.TL_topPeer) obj).rating;
-            case 4:
-                return yh.s0.P((TL_stars.starGiftAttributeBackdrop) obj);
-            case 5:
-                return yh.s0.P((TL_stars.starGiftAttributePattern) obj);
-            default:
-                return yh.s0.P((TL_stars.starGiftAttributeModel) obj);
-        }
+    @Override // g2.h
+    public final void addTransferListener(g2.c0 c0Var) {
+        this.a.addTransferListener(c0Var);
+    }
+
+    @Override // g2.h
+    public final void close() {
+        this.a.close();
+    }
+
+    @Override // g2.h
+    public final Map getResponseHeaders() {
+        return this.a.getResponseHeaders();
+    }
+
+    @Override // g2.h
+    public final Uri getUri() {
+        return this.a.getUri();
+    }
+
+    @Override // g2.h
+    public final long open(g2.m mVar) {
+        g2.l a2 = mVar.a();
+        a2.b = mVar.e + this.b;
+        return this.a.open(a2.d());
+    }
+
+    @Override // b2.k
+    public final int read(byte[] bArr, int i10, int i11) {
+        return this.a.read(bArr, i10, i11);
     }
 }

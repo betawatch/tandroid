@@ -5,9 +5,9 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 final class zzed extends j implements p {
     int zza;
@@ -44,7 +44,7 @@ final class zzed extends j implements p {
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
         int i10 = this.zza;
-        u7.b(obj);
+        t7.b(obj);
         if (i10 != 0) {
             return obj;
         }

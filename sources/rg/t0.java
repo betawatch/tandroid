@@ -1,21 +1,11 @@
 package rg;
 
-import android.content.Context;
-import android.widget.Scroller;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class t0 extends Scroller {
-    public final /* synthetic */ u0 a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t0(u0 u0Var, Context context) {
-        super(context);
-        this.a = u0Var;
-    }
-
-    @Override // android.widget.Scroller
-    public final void startScroll(int i10, int i11, int i12, int i13, int i14) {
-        super.startScroll(i10, i11, i12, i13, (this.a.x0 ? 3 : 1) * i14);
+public final class t0 extends q1 {
+    @Override // rg.q1, rg.m0
+    public final void setOffset(float f7) {
+        setAutoPlayEnabled(f7 == 0.0f);
+        super.setOffset(f7);
     }
 }

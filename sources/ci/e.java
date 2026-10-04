@@ -11,10 +11,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.du;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.eu;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -67,14 +67,14 @@ public final /* synthetic */ class e implements Runnable {
                     }
                     mVar.q0.addListener(new ai.n(7, mVar, z10));
                     if (z10) {
-                        mVar.q0.setInterpolator(org.telegram.ui.ActionBar.o1.w);
+                        mVar.q0.setInterpolator(org.telegram.ui.ActionBar.p1.w);
                         mVar.q0.setDuration(250L);
                     } else {
                         mVar.q0.setInterpolator(new u1.a());
                         mVar.q0.setDuration(420L);
                     }
                     mVar.q0.start();
-                    du editText = gVar.getEditText();
+                    eu editText = gVar.getEditText();
                     if (editText != null && editText.getLayout() != null) {
                         ObjectAnimator objectAnimator = mVar.g0;
                         if (objectAnimator != null) {
@@ -86,7 +86,7 @@ public final /* synthetic */ class e implements Runnable {
                         ObjectAnimator ofInt = ObjectAnimator.ofInt(editText, "scrollY", scrollY, z10 ? editText.getLayout().getLineTop(editText.getLineCount()) - ((editText.getHeight() - editText.getPaddingTop()) - editText.getPaddingBottom()) : 0);
                         mVar.g0 = ofInt;
                         ofInt.setDuration(360L);
-                        mVar.g0.setInterpolator(sr.h);
+                        mVar.g0.setInterpolator(tr.h);
                         mVar.g0.start();
                     }
                     gVar.setSuggestionsEnabled(z10);

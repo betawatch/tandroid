@@ -14,9 +14,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.l21;
+import org.telegram.ui.n21;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j1 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class j1 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                x3.R0((x3) this.b, (TLObject) this.c, (tg.r) this.d, (TLRPC.TL_error) this.e);
+                x3.R0((x3) this.b, (TLObject) this.c, (tg.q) this.d, (TLRPC.TL_error) this.e);
                 break;
             case 1:
                 x3.S0((x3) this.b, (MessageObject) this.c, (ArrayList) this.d, (TL_stars.StarGift) this.e);
@@ -71,7 +71,7 @@ public final /* synthetic */ class j1 implements Runnable {
                     nj0 nj0Var = x2Var.l0;
                     if (nj0Var != null) {
                         nj0Var.d();
-                        AndroidUtilities.runOnUIThread(new l21(19), 750L);
+                        AndroidUtilities.runOnUIThread(new n21(19), 750L);
                     }
                     x2Var.Q.animate().alpha(0.0f).start();
                     x2Var.S.animate().alpha(1.0f).start();
@@ -85,32 +85,32 @@ public final /* synthetic */ class j1 implements Runnable {
                     if (x2Var.O != null) {
                         int i10 = 0;
                         while (true) {
-                            xh.j1[] j1VarArr = x2Var.O;
-                            if (i10 < j1VarArr.length) {
-                                AndroidUtilities.removeFromParent(j1VarArr[i10]);
+                            xh.i1[] i1VarArr = x2Var.O;
+                            if (i10 < i1VarArr.length) {
+                                AndroidUtilities.removeFromParent(i1VarArr[i10]);
                                 i10++;
                             } else {
                                 x2Var.O = null;
                             }
                         }
                     }
-                    x2Var.O = new xh.j1[arrayList.size()];
+                    x2Var.O = new xh.i1[arrayList.size()];
                     int i11 = 0;
                     while (i11 < arrayList.size()) {
                         TL_stars.StarGift starGift2 = (TL_stars.StarGift) arrayList.get(i11);
-                        xh.j1 j1Var = new xh.j1(x2Var.getContext(), x2Var.W, x2Var.a);
-                        j1Var.g(starGift2, false, false, false, false, true);
-                        j1Var.x.setVisibility(8);
-                        j1Var.setRibbonColor(-3065286);
-                        w9 w9Var = j1Var.y;
-                        FrameLayout.LayoutParams e = w7.y5.e(42, 42, 17);
-                        j1Var.E = e;
-                        w9Var.setLayoutParams(e);
+                        xh.i1 i1Var = new xh.i1(x2Var.getContext(), x2Var.W, x2Var.a);
+                        i1Var.g(starGift2, false, false, false, false, true);
+                        i1Var.x.setVisibility(8);
+                        i1Var.setRibbonColor(-3065286);
+                        w9 w9Var = i1Var.y;
+                        FrameLayout.LayoutParams e7 = w7.z5.e(42, 42, 17);
+                        i1Var.E = e7;
+                        w9Var.setLayoutParams(e7);
                         int i12 = i11 + 1;
                         boolean z10 = i12 >= arrayList.size();
                         LinearLayout linearLayout = x2Var.N;
-                        x2Var.O[i11] = j1Var;
-                        linearLayout.addView(j1Var, w7.y5.p(74, 74, 0.0f, 51, 0, 0, z10 ? 0 : 6, 0));
+                        x2Var.O[i11] = i1Var;
+                        linearLayout.addView(i1Var, w7.z5.p(74, 74, 0.0f, 51, 0, 0, z10 ? 0 : 6, 0));
                         i11 = i12;
                     }
                     break;

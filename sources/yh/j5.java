@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class j5 {
     public final int a;
@@ -38,15 +38,15 @@ public final class j5 {
         if (arrayList.isEmpty()) {
             return;
         }
-        k5 e = e(i10);
+        k5 e7 = e(i10);
         int i11 = 1;
         int i12 = 0;
         long j3 = this.b;
         int i13 = this.a;
-        if (e != null) {
-            e.l.addAll(0, arrayList);
-            e.n = arrayList.size() + e.n;
-            NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(j3), e);
+        if (e7 != null) {
+            e7.l.addAll(0, arrayList);
+            e7.n = arrayList.size() + e7.n;
+            NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(j3), e7);
             n(i10);
         }
         TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
@@ -198,10 +198,10 @@ public final class j5 {
         if (arrayList.isEmpty()) {
             return;
         }
-        k5 e = e(i10);
+        k5 e7 = e(i10);
         boolean z10 = false;
-        if (e != null) {
-            ArrayList arrayList2 = e.l;
+        if (e7 != null) {
+            ArrayList arrayList2 = e7.l;
             if (!arrayList2.isEmpty()) {
                 int i11 = 0;
                 while (i11 < arrayList2.size()) {
@@ -213,7 +213,7 @@ public final class j5 {
                         }
                         if (t5.k(savedStarGift2, (TL_stars.SavedStarGift) arrayList.get(i12))) {
                             arrayList2.remove(i11);
-                            e.n = Math.max(0, e.n - 1);
+                            e7.n = Math.max(0, e7.n - 1);
                             i11--;
                             break;
                         }
@@ -255,7 +255,7 @@ public final class j5 {
         }
         updatestargiftcollection.delete_stargift.size();
         ConnectionsManager.getInstance(i13).sendRequest(updatestargiftcollection, new h5(this, i14));
-        NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(j3), e);
+        NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(j3), e7);
     }
 
     public final void l(TL_stars.SavedStarGift savedStarGift, int i10, boolean z10) {
@@ -281,10 +281,10 @@ public final class j5 {
     }
 
     public final void n(int i10) {
-        k5 e = e(i10);
+        k5 e7 = e(i10);
         TL_stars.TL_starGiftCollection c10 = c(i10);
-        if (e != null) {
-            ArrayList arrayList = e.l;
+        if (e7 != null) {
+            ArrayList arrayList = e7.l;
             if (c10 == null) {
                 return;
             }

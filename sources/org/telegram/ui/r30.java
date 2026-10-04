@@ -1,48 +1,43 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class r30 extends org.telegram.ui.Components.yl0 {
-    public final /* synthetic */ d60 X2;
+public final class r30 implements Runnable {
+    public final /* synthetic */ h60 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r30(d60 d60Var, LaunchActivity launchActivity) {
-        super(launchActivity, null);
-        this.X2 = d60Var;
+    public r30(h60 h60Var) {
+        this.a = h60Var;
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        org.telegram.ui.Components.u20 u20Var = (org.telegram.ui.Components.u20) view;
-        d60 d60Var = this.X2;
-        j50 j50Var = d60Var.Q;
-        v30 v30Var = d60Var.a2;
-        if (v30Var.r == null && !d60Var.N2.k()) {
-            u20Var.setAlpha(1.0f);
-            u20Var.setTranslationX(0.0f);
-            u20Var.setTranslationY(0.0f);
+    @Override // java.lang.Runnable
+    public final void run() {
+        h60 h60Var = this.a;
+        org.telegram.ui.ActionBar.i5 i5Var = h60Var.U;
+        n50 n50Var = h60Var.V;
+        if (n50Var == null || h60Var.isDismissed()) {
+            return;
         }
-        r30 r30Var = d60Var.m2;
-        u20Var.getClass();
-        r30Var.getClass();
-        if (RecyclerView.R(u20Var) == -1 && u20Var.getRenderer() != null) {
-            return true;
+        ChatObject.Call call = h60Var.a1;
+        int i10 = call != null ? call.call.schedule_date : h60Var.k2;
+        if (i10 == 0) {
+            return;
         }
-        if (u20Var.getTranslationY() == 0.0f || u20Var.getRenderer() == null || u20Var.getRenderer().c == null) {
-            return super.drawChild(canvas, view, j3);
+        int currentTime = i10 - h60Var.d.getConnectionsManager().getCurrentTime();
+        if (currentTime >= 86400) {
+            n50Var.l(LocaleController.formatPluralString("Days", Math.round(currentTime / 86400.0f), new Object[0]), false);
+        } else {
+            n50Var.l(AndroidUtilities.formatFullDuration(Math.abs(currentTime)), false);
+            if (currentTime < 0 && i5Var.getTag() == null) {
+                i5Var.setTag(1);
+                i5Var.l(LocaleController.getString(R.string.VoipChatLateBy), false);
+            }
         }
-        float top = j50Var.getTop() - getTop();
-        float measuredHeight = j50Var.getMeasuredHeight() + top;
-        float f7 = v30Var.c;
-        canvas.save();
-        float f10 = 1.0f - f7;
-        canvas.clipRect(0.0f, top * f10, getMeasuredWidth(), (getMeasuredHeight() * f7) + (measuredHeight * f10));
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
+        h60Var.W.l(LocaleController.formatStartsTime(i10, 3), false);
+        AndroidUtilities.runOnUIThread(h60Var.w2, 1000L);
     }
 }

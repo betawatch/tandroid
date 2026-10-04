@@ -7,12 +7,12 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
-import v7.t6;
-import w7.j9;
-import w7.m8;
+import v7.s6;
+import w7.n8;
+import w7.o9;
 import z7.lg;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class n extends AbstractCollection {
     public final /* synthetic */ int a;
@@ -126,7 +126,7 @@ public final class n extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused) {
                     for (Map.Entry entry : dVar.entrySet()) {
-                        if (t6.a(obj, entry.getValue())) {
+                        if (s6.a(obj, entry.getValue())) {
                             dVar.remove(entry.getKey());
                             return true;
                         }
@@ -143,7 +143,7 @@ public final class n extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused2) {
                     for (Map.Entry entry2 : dVar2.entrySet()) {
-                        if (m8.a(obj, entry2.getValue())) {
+                        if (n8.a(obj, entry2.getValue())) {
                             dVar2.remove(entry2.getKey());
                             return true;
                         }
@@ -156,7 +156,7 @@ public final class n extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused3) {
                     for (Map.Entry entry3 : dVar3.entrySet()) {
-                        if (j9.a(obj, entry3.getValue())) {
+                        if (o9.a(obj, entry3.getValue())) {
                             dVar3.remove(entry3.getKey());
                             return true;
                         }

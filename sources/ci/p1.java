@@ -11,44 +11,44 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.bl0;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class p1 extends yl0 {
-    public bl0 X2;
-    public boolean Y2;
-    public float Z2;
-    public float a3;
-    public boolean b3;
-    public final SparseArray c3;
-    public final ArrayList d3;
-    public final ArrayList e3;
-    public final ArrayList f3;
-    public final ArrayList g3;
-    public final PorterDuffColorFilter h3;
+public final class p1 extends zl0 {
+    public bl0 e3;
+    public boolean f3;
+    public float g3;
+    public float h3;
+    public boolean i3;
+    public final SparseArray j3;
+    public final ArrayList k3;
+    public final ArrayList l3;
+    public final ArrayList m3;
+    public final ArrayList n3;
+    public final PorterDuffColorFilter o3;
 
     public p1(Context context) {
         super(context, null);
-        this.b3 = false;
-        this.c3 = new SparseArray();
-        this.d3 = new ArrayList();
-        this.e3 = new ArrayList();
-        this.f3 = new ArrayList();
-        this.g3 = new ArrayList();
-        this.h3 = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
+        this.i3 = false;
+        this.j3 = new SparseArray();
+        this.k3 = new ArrayList();
+        this.l3 = new ArrayList();
+        this.m3 = new ArrayList();
+        this.n3 = new ArrayList();
+        this.o3 = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
     }
 
-    public static void w1(p1 p1Var, int i10, int i11) {
-        if (p1Var.X2 == null || !(p1Var.getLayoutManager() instanceof s4.s)) {
+    public static void y1(p1 p1Var, int i10, int i11) {
+        if (p1Var.e3 == null || !(p1Var.getLayoutManager() instanceof s4.s)) {
             return;
         }
         s4.s sVar = (s4.s) p1Var.getLayoutManager();
         View m10 = sVar.m(i10);
         int L0 = sVar.L0();
         if ((m10 == null && Math.abs(i10 - L0) > sVar.J * 9.0f) || !SharedConfig.animationsEnabled()) {
-            p1Var.X2.b = sVar.L0() < i10 ? 0 : 1;
-            p1Var.X2.c(i10, i11, false, false);
+            p1Var.e3.b = sVar.L0() < i10 ? 0 : 1;
+            p1Var.e3.d(i10, i11, false, false);
         } else {
             m1 m1Var = new m1(p1Var, p1Var.getContext(), 0);
             m1Var.a = i10;
@@ -57,7 +57,7 @@ public final class p1 extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.zl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -68,8 +68,8 @@ public final class p1 extends yl0 {
         }
         int saveCount = canvas.getSaveCount();
         canvas.save();
-        canvas.clipRect(0.0f, this.Z2, getWidth(), this.a3);
-        if (!this.Y2) {
+        canvas.clipRect(0.0f, this.g3, getWidth(), this.h3);
+        if (!this.f3) {
             super.dispatchDraw(canvas);
             canvas.restore();
             return;
@@ -88,9 +88,9 @@ public final class p1 extends yl0 {
         int i10 = 0;
         int i11 = 0;
         while (true) {
-            sparseArray = this.c3;
+            sparseArray = this.j3;
             int size = sparseArray.size();
-            arrayList = this.d3;
+            arrayList = this.k3;
             if (i11 >= size) {
                 break;
             }
@@ -104,20 +104,20 @@ public final class p1 extends yl0 {
             View childAt = getChildAt(i12);
             if (childAt instanceof o1) {
                 o1 o1Var = (o1) childAt;
-                if (o1Var.getY() < this.a3 && o1Var.getY() + o1Var.getHeight() > this.Z2) {
-                    int y3 = this.b3 ? (int) o1Var.getY() : o1Var.getTop();
+                if (o1Var.getY() < this.h3 && o1Var.getY() + o1Var.getHeight() > this.g3) {
+                    int y3 = this.i3 ? (int) o1Var.getY() : o1Var.getTop();
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(y3);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.c.x(1, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.k0.w(1, arrayList) : new ArrayList();
                         sparseArray.put(y3, arrayList4);
                     }
                     arrayList4.add(o1Var);
                 }
             }
         }
-        ArrayList arrayList5 = this.g3;
+        ArrayList arrayList5 = this.n3;
         arrayList5.clear();
-        ArrayList arrayList6 = this.f3;
+        ArrayList arrayList6 = this.m3;
         arrayList5.addAll(arrayList6);
         arrayList6.clear();
         canvas.save();
@@ -126,7 +126,7 @@ public final class p1 extends yl0 {
         int i13 = 0;
         while (true) {
             int size2 = sparseArray.size();
-            arrayList2 = this.e3;
+            arrayList2 = this.l3;
             if (i13 >= size2) {
                 break;
             }
@@ -151,7 +151,7 @@ public final class p1 extends yl0 {
                     n1Var = new n1(this);
                     n1Var.l(7);
                 } else {
-                    n1Var = (n1) hg.c.x(1, arrayList2);
+                    n1Var = (n1) hg.k0.w(1, arrayList2);
                 }
                 n1Var.M = R;
                 n1Var.e();
@@ -196,10 +196,10 @@ public final class p1 extends yl0 {
     @Override // androidx.recyclerview.widget.RecyclerView
     public final void setLayoutManager(s4.o0 o0Var) {
         super.setLayoutManager(o0Var);
-        this.X2 = null;
+        this.e3 = null;
         if (o0Var instanceof s4.c0) {
             bl0 bl0Var = new bl0(this, (s4.c0) o0Var);
-            this.X2 = bl0Var;
+            this.e3 = bl0Var;
             bl0Var.i = new l1(this, 0);
             bl0Var.h = new a1.c(this, 15);
         }

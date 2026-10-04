@@ -1,13 +1,14 @@
 package f5;
 
 import com.google.android.gms.internal.vision.e2;
+import ii.n4;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class s extends a {
-    public static final /* synthetic */ ka.c f;
-    public static final /* synthetic */ ka.c h;
+    public static final /* synthetic */ n4 f;
+    public static final /* synthetic */ n4 h;
     public float e;
 
     static {
@@ -36,7 +37,7 @@ public final class s extends a {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.t b10 = re.a.b(h, this, this);
+        com.google.firebase.messaging.s b10 = re.a.b(h, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("SoundMediaHeaderBox[balance=");

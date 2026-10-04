@@ -9,7 +9,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class e implements m {
     public static final ArrayDeque g = new ArrayDeque();
@@ -147,9 +147,9 @@ public final class e implements m {
                 cVar2.getClass();
                 cVar2.obtainMessage(3).sendToTarget();
                 gVar.a();
-            } catch (InterruptedException e) {
+            } catch (InterruptedException e7) {
                 Thread.currentThread().interrupt();
-                throw new IllegalStateException(e);
+                throw new IllegalStateException(e7);
             }
         }
     }

@@ -7,10 +7,10 @@ import java.nio.charset.CharsetDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import v7.s6;
+import v7.r6;
 import w7.m;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a extends m {
     public static final Pattern c = Pattern.compile("(.+?)='(.*?)';", 32);
@@ -55,7 +55,7 @@ public final class a extends m {
             String group = matcher.group(1);
             String group2 = matcher.group(2);
             if (group != null) {
-                String b10 = s6.b(group);
+                String b10 = r6.b(group);
                 b10.getClass();
                 if (b10.equals("streamurl")) {
                     str3 = group2;

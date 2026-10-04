@@ -1,15 +1,15 @@
 package x7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f3 implements ia.d {
     public static final f3 a = new f3();
-    public static final ia.c b = new ia.c("maxMs", hg.c.m(v7.j.l(c0.class, new z(1))));
-    public static final ia.c c = new ia.c("minMs", hg.c.m(v7.j.l(c0.class, new z(2))));
-    public static final ia.c d = new ia.c("avgMs", hg.c.m(v7.j.l(c0.class, new z(3))));
-    public static final ia.c e = new ia.c("firstQuartileMs", hg.c.m(v7.j.l(c0.class, new z(4))));
-    public static final ia.c f = new ia.c("medianMs", hg.c.m(v7.j.l(c0.class, new z(5))));
-    public static final ia.c g = new ia.c("thirdQuartileMs", hg.c.m(v7.j.l(c0.class, new z(6))));
+    public static final ia.c b = new ia.c("maxMs", hg.k0.m(t8.b.n(c0.class, new z(1))));
+    public static final ia.c c = new ia.c("minMs", hg.k0.m(t8.b.n(c0.class, new z(2))));
+    public static final ia.c d = new ia.c("avgMs", hg.k0.m(t8.b.n(c0.class, new z(3))));
+    public static final ia.c e = new ia.c("firstQuartileMs", hg.k0.m(t8.b.n(c0.class, new z(4))));
+    public static final ia.c f = new ia.c("medianMs", hg.k0.m(t8.b.n(c0.class, new z(5))));
+    public static final ia.c g = new ia.c("thirdQuartileMs", hg.k0.m(t8.b.n(c0.class, new z(6))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {

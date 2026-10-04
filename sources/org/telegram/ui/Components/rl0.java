@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class rl0 implements Runnable {
     public final /* synthetic */ View a;
@@ -22,14 +22,14 @@ public final class rl0 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         tl0 tl0Var = this.e.b;
-        yl0 yl0Var = (yl0) tl0Var.b;
-        if (this == yl0Var.S1) {
-            yl0Var.S1 = null;
+        zl0 zl0Var = (zl0) tl0Var.b;
+        if (this == zl0Var.S1) {
+            zl0Var.S1 = null;
         }
         View view = this.a;
         if (view != null) {
-            yl0Var.h1(view, 0.0f, 0.0f, false);
-            if (((yl0) tl0Var.b).R1) {
+            zl0Var.k1(view, 0.0f, 0.0f, false);
+            if (((zl0) tl0Var.b).R1) {
                 return;
             }
             try {
@@ -39,13 +39,13 @@ public final class rl0 implements Runnable {
             view.sendAccessibilityEvent(1);
             int i10 = this.b;
             if (i10 != -1) {
-                yl0 yl0Var2 = (yl0) tl0Var.b;
-                ml0 ml0Var = yl0Var2.V0;
+                zl0 zl0Var2 = (zl0) tl0Var.b;
+                ml0 ml0Var = zl0Var2.V0;
                 if (ml0Var != null) {
                     ml0Var.d(i10, view);
                     return;
                 }
-                nl0 nl0Var = yl0Var2.W0;
+                nl0 nl0Var = zl0Var2.W0;
                 if (nl0Var != null) {
                     nl0Var.c(this.c - view.getX(), this.d - view.getY(), i10, view);
                 }

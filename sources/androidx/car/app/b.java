@@ -7,7 +7,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Map;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements androidx.car.app.utils.a, androidx.activity.result.b {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class b implements androidx.car.app.utils.a, androi
     }
 
     @Override // androidx.activity.result.b
-    public void k(Object obj) {
+    public void j(Object obj) {
         CarAppPermissionActivity carAppPermissionActivity = (CarAppPermissionActivity) this.b;
         IOnRequestPermissionsListener iOnRequestPermissionsListener = (IOnRequestPermissionsListener) this.c;
         int i10 = CarAppPermissionActivity.J;
@@ -52,8 +52,8 @@ public final /* synthetic */ class b implements androidx.car.app.utils.a, androi
         }
         try {
             iOnRequestPermissionsListener.onRequestPermissionsResult((String[]) arrayList.toArray(new String[0]), (String[]) arrayList2.toArray(new String[0]));
-        } catch (RemoteException e) {
-            Log.e("CarApp", "CarAppService dead when accepting/rejecting permissions", e);
+        } catch (RemoteException e7) {
+            Log.e("CarApp", "CarAppService dead when accepting/rejecting permissions", e7);
         }
         carAppPermissionActivity.finish();
     }

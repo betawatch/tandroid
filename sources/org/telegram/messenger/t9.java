@@ -7,7 +7,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t9 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -30,13 +30,13 @@ public final /* synthetic */ class t9 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$checkCanOpenChat$452((org.telegram.ui.ActionBar.a2) this.c, (nf.e) this.d, (org.telegram.ui.ActionBar.m2) this.e, (Bundle) this.f, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$checkCanOpenChat$452((org.telegram.ui.ActionBar.b2) this.c, (nf.e) this.d, (org.telegram.ui.ActionBar.n2) this.e, (Bundle) this.f, tLObject, tL_error);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$didReceivedNotification$51((TLRPC.TL_theme) this.c, (org.telegram.ui.ActionBar.g6) this.d, (TLRPC.TL_inputThemeSettings) this.e, (org.telegram.ui.ActionBar.f6) this.f, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$didReceivedNotification$51((TLRPC.TL_theme) this.c, (org.telegram.ui.ActionBar.h6) this.d, (TLRPC.TL_inputThemeSettings) this.e, (org.telegram.ui.ActionBar.f6) this.f, tLObject, tL_error);
                 break;
             case 2:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$28((Context) this.d, (org.telegram.ui.ActionBar.a2) this.c, (byte[]) this.e, (TLRPC.User) this.f, tLObject, tL_error);
+                ((SecretChatHelper) this.b).lambda$startSecretChat$28((Context) this.d, (org.telegram.ui.ActionBar.b2) this.c, (byte[]) this.e, (TLRPC.User) this.f, tLObject, tL_error);
                 break;
             default:
                 ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$56((TLRPC.InputMedia) this.c, (SendMessagesHelper.DelayedMessage) this.d, (String) this.e, (MessageObject) this.f, tLObject, tL_error);
@@ -44,11 +44,11 @@ public final /* synthetic */ class t9 implements RequestDelegate {
         }
     }
 
-    public /* synthetic */ t9(SecretChatHelper secretChatHelper, Context context, org.telegram.ui.ActionBar.a2 a2Var, byte[] bArr, TLRPC.User user) {
+    public /* synthetic */ t9(SecretChatHelper secretChatHelper, Context context, org.telegram.ui.ActionBar.b2 b2Var, byte[] bArr, TLRPC.User user) {
         this.a = 2;
         this.b = secretChatHelper;
         this.d = context;
-        this.c = a2Var;
+        this.c = b2Var;
         this.e = bArr;
         this.f = user;
     }

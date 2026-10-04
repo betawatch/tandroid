@@ -8,14 +8,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.yq;
-import w7.a6;
-import w7.y5;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.zq;
+import w7.b6;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class h extends FrameLayout implements le.e {
+public final class h extends FrameLayout implements le.d {
     public static final int[] s;
     public final String[] a;
     public final d6 b;
@@ -44,21 +44,6 @@ public final class h extends FrameLayout implements le.e {
         this.b = d6Var;
     }
 
-    @Override // le.e
-    public final void D(int i10, float f7, float f10, le.f fVar) {
-        int i11 = i10 >> 16;
-        int i12 = i10 & 65535;
-        if (i11 >= 0) {
-            aa.a[] aVarArr = this.e;
-            if (i11 >= aVarArr.length || aVarArr[i11] == null) {
-                return;
-            }
-            if (i12 == 1 || i12 == 2) {
-                a();
-            }
-        }
-    }
-
     public final void a() {
         int i10 = 0;
         float f7 = 0.0f;
@@ -70,8 +55,8 @@ public final class h extends FrameLayout implements le.e {
             aa.a aVar = aVarArr[i10];
             if (aVar != null) {
                 ih.b bVar = (ih.b) aVar.b;
-                float f10 = ((le.c) aVar.c).e;
-                float f11 = ((le.c) aVar.d).e;
+                float f10 = ((le.b) aVar.c).e;
+                float f11 = ((le.b) aVar.d).e;
                 bVar.setVisibility(f10 > 0.0f ? 0 : 8);
                 bVar.setAlpha(f10);
                 bVar.setScaleX(AndroidUtilities.lerp(0.7f, 1.0f, f10));
@@ -82,6 +67,21 @@ public final class h extends FrameLayout implements le.e {
                 f7 += (AndroidUtilities.dp((f11 * 10.0f) + 10.0f) + AndroidUtilities.dp(44.0f)) * f10;
             }
             i10++;
+        }
+    }
+
+    @Override // le.d
+    public final void a0(int i10, float f7, float f10, le.e eVar) {
+        int i11 = i10 >> 16;
+        int i12 = i10 & 65535;
+        if (i11 >= 0) {
+            aa.a[] aVarArr = this.e;
+            if (i11 >= aVarArr.length || aVarArr[i11] == null) {
+                return;
+            }
+            if (i12 == 1 || i12 == 2) {
+                a();
+            }
         }
     }
 
@@ -102,7 +102,7 @@ public final class h extends FrameLayout implements le.e {
         aa.a aVar = this.e[i10];
         if (aVar != null) {
             ((ih.b) aVar.b).a(i11, z10);
-            ((le.c) aVar.d).a(i11 > 0, z10);
+            ((le.b) aVar.d).a(i11 > 0, z10);
         }
     }
 
@@ -122,8 +122,8 @@ public final class h extends FrameLayout implements le.e {
         if (aVar != null || z10) {
             if (aVar == null) {
                 int i13 = i10 << 16;
-                le.c cVar = new le.c(i13 | 1, this, i10 == 0 ? sr.h : ke.a.a, i10 == 0 ? 300L : 280L, false);
-                le.c cVar2 = new le.c(i13 | 2, this, i10 == 0 ? sr.h : ke.a.a, i10 == 0 ? 300L : 280L, false);
+                le.b bVar = new le.b(i13 | 1, this, i10 == 0 ? tr.h : ke.a.a, i10 == 0 ? 300L : 280L, false);
+                le.b bVar2 = new le.b(i13 | 2, this, i10 == 0 ? tr.h : ke.a.a, i10 == 0 ? 300L : 280L, false);
                 if (i10 == 0) {
                     i11 = 50;
                     i12 = 32;
@@ -134,44 +134,44 @@ public final class h extends FrameLayout implements le.e {
                 Context context = getContext();
                 int i14 = s[i10];
                 d6 d6Var = this.b;
-                ih.b bVar = new ih.b(context, d6Var);
+                ih.b bVar3 = new ih.b(context, d6Var);
                 ih.a d = ih.a.d(context, this.d, this.c, d6Var, i14, i12);
-                bVar.b = d;
-                bVar.addView(d, y5.e(i11, i11, 80));
+                bVar3.b = d;
+                bVar3.addView(d, z5.e(i11, i11, 80));
                 d.setIconPadding(AndroidUtilities.dp(2.0f));
-                a6.b(bVar, 0.13f, 2.0f);
+                b6.b(bVar3, 0.13f, 2.0f);
                 float f7 = i11 / 2.0f;
-                bVar.setPivotX(AndroidUtilities.dp(f7));
-                bVar.setPivotY(AndroidUtilities.dp(f7 + 8.0f));
-                bVar.setVisibility(8);
-                bVar.setContentDescription(this.a[i10]);
-                bVar.setOnClickListener(new n4(this, i10, 4));
-                bVar.setOnLongClickListener(new g(this, i10, 0));
+                bVar3.setPivotX(AndroidUtilities.dp(f7));
+                bVar3.setPivotY(AndroidUtilities.dp(f7 + 8.0f));
+                bVar3.setVisibility(8);
+                bVar3.setContentDescription(this.a[i10]);
+                bVar3.setOnClickListener(new n4(this, i10, 4));
+                bVar3.setOnLongClickListener(new g(this, i10, 0));
                 if (i10 == 6) {
-                    ih.a aVar2 = bVar.b;
+                    ih.a aVar2 = bVar3.b;
                     aVar2.h = -1.0f;
                     aVar2.a();
                 }
                 if (i10 == 1) {
-                    bVar.d = true;
-                    yq yqVar = bVar.c;
-                    if (yqVar != null) {
-                        yqVar.setReverse(true);
+                    bVar3.d = true;
+                    zq zqVar = bVar3.c;
+                    if (zqVar != null) {
+                        zqVar.setReverse(true);
                     }
                 }
-                addView(bVar, y5.e(i11, i11 + 8, this.r));
-                aVarArr[i10] = new aa.a(bVar, cVar, cVar2, false, 24);
+                addView(bVar3, z5.e(i11, i11 + 8, this.r));
+                aVarArr[i10] = new aa.a(bVar3, bVar, bVar2, false, 24);
                 n1 n1Var = this.f[i10];
                 if (n1Var != null) {
-                    bVar.a(n1Var.a, false);
-                    cVar.a(false, false);
-                    cVar2.a(n1Var.a > 0, false);
-                    bVar.c(n1Var.b, false);
-                    bVar.b(n1Var.c, false);
+                    bVar3.a(n1Var.a, false);
+                    bVar.a(false, false);
+                    bVar2.a(n1Var.a > 0, false);
+                    bVar3.c(n1Var.b, false);
+                    bVar3.b(n1Var.c, false);
                 }
                 a();
             }
-            ((le.c) aVarArr[i10].c).a(z10, z11);
+            ((le.b) aVarArr[i10].c).a(z10, z11);
         }
     }
 
@@ -192,7 +192,7 @@ public final class h extends FrameLayout implements le.e {
         this.n = bVar;
     }
 
-    @Override // le.e
-    public final /* synthetic */ void C(float f7, int i10) {
+    @Override // le.d
+    public final /* synthetic */ void V(float f7, int i10) {
     }
 }

@@ -1,106 +1,35 @@
 package ci;
 
-import android.graphics.Bitmap;
-import java.io.File;
-import java.io.FileOutputStream;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ma implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Bitmap b;
-    public final /* synthetic */ File c;
+    public final /* synthetic */ kc b;
+    public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ ma(Bitmap bitmap, File file, int i10) {
+    public /* synthetic */ ma(kc kcVar, Runnable runnable, int i10) {
         this.a = i10;
-        this.b = bitmap;
-        this.c = file;
+        this.b = kcVar;
+        this.c = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                try {
-                    this.b.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(this.c));
-                    return;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
-            case 1:
-                Bitmap bitmap = this.b;
-                try {
-                    try {
-                        bitmap.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(this.c));
-                        if (bitmap.isRecycled()) {
-                            return;
-                        }
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
-                        if (bitmap == null || bitmap.isRecycled()) {
-                            return;
-                        }
-                    }
-                    bitmap.recycle();
-                    return;
-                } catch (Throwable th2) {
-                    if (bitmap != null && !bitmap.isRecycled()) {
-                        bitmap.recycle();
-                    }
-                    throw th2;
-                }
-            case 2:
-                Bitmap bitmap2 = this.b;
-                try {
-                    try {
-                        bitmap2.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(this.c));
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
-                    }
-                    return;
-                } finally {
-                    AndroidUtilities.recycleBitmap(bitmap2);
-                }
-            case 3:
-                try {
-                    this.b.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(this.c));
-                    return;
-                } catch (Exception e11) {
-                    FileLog.e(e11);
-                    return;
-                }
-            case 4:
-                try {
-                    this.b.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(this.c));
-                    return;
-                } catch (Exception e12) {
-                    FileLog.e(e12);
-                    return;
-                }
+                this.c.run();
+                this.b.p0();
+                break;
             default:
-                File file = this.c;
-                Bitmap bitmap3 = this.b;
-                try {
-                    FileOutputStream fileOutputStream = new FileOutputStream(file);
-                    try {
-                        bitmap3.compress(Bitmap.CompressFormat.PNG, 87, fileOutputStream);
-                        fileOutputStream.close();
-                        return;
-                    } finally {
-                    }
-                } catch (Exception e13) {
-                    FileLog.e(e13);
-                    return;
-                }
+                kc kcVar = this.b;
+                kcVar.f(false);
+                AndroidUtilities.cancelRunOnUIThread(kcVar.g2);
+                kcVar.g2 = null;
+                kcVar.S1 = false;
+                this.c.run();
+                break;
         }
-    }
-
-    public /* synthetic */ ma(File file, Bitmap bitmap) {
-        this.a = 5;
-        this.c = file;
-        this.b = bitmap;
     }
 }

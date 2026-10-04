@@ -14,11 +14,11 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.mi1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class m2 extends FrameLayout {
     public static final /* synthetic */ int h = 0;
@@ -166,7 +166,7 @@ public final class m2 extends FrameLayout {
                     ofFloat4.addUpdateListener(this.f.P);
                     this.f.N.playTogether(ofFloat4);
                 }
-                this.f.N.setDuration(150L).setInterpolator(sr.f);
+                this.f.N.setDuration(150L).setInterpolator(tr.f);
                 this.f.N.start();
             }
             this.f.J = false;

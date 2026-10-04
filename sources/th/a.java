@@ -3,9 +3,9 @@ package th;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.ui.Components.wn;
+import org.telegram.ui.Components.xn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -22,31 +22,31 @@ public final /* synthetic */ class a implements View.OnClickListener {
         f fVar = this.b;
         switch (i10) {
             case 0:
-                l.d dVar = fVar.k0;
-                if (dVar != null) {
+                l2.g gVar = fVar.k0;
+                if (gVar != null) {
                     ArrayList arrayList = new ArrayList(fVar.j0.keySet());
-                    wn wnVar = (wn) dVar.a;
-                    ArrayList arrayList2 = wnVar.P0;
+                    xn xnVar = (xn) gVar.b;
+                    ArrayList arrayList2 = xnVar.P0;
                     arrayList2.clear();
                     arrayList2.addAll(arrayList);
-                    int i11 = wnVar.L0;
+                    int i11 = xnVar.L0;
                     if (i11 >= 0) {
-                        wnVar.r.m(i11);
+                        xnVar.r.m(i11);
                     }
                 }
                 fVar.dismiss();
                 break;
             case 1:
-                l.d dVar2 = fVar.k0;
-                if (dVar2 != null) {
+                l2.g gVar2 = fVar.k0;
+                if (gVar2 != null) {
                     ArrayList arrayList3 = new ArrayList(fVar.j0.keySet());
-                    wn wnVar2 = (wn) dVar2.a;
-                    ArrayList arrayList4 = wnVar2.P0;
+                    xn xnVar2 = (xn) gVar2.b;
+                    ArrayList arrayList4 = xnVar2.P0;
                     arrayList4.clear();
                     arrayList4.addAll(arrayList3);
-                    int i12 = wnVar2.L0;
+                    int i12 = xnVar2.L0;
                     if (i12 >= 0) {
-                        wnVar2.r.m(i12);
+                        xnVar2.r.m(i12);
                     }
                 }
                 fVar.dismiss();
@@ -59,11 +59,11 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 fVar.e0.b(hashMap.size(), true);
                 break;
             case 3:
-                fVar.S(view);
+                fVar.Q(view);
                 break;
             default:
                 int i13 = f.r0;
-                fVar.S(view);
+                fVar.Q(view);
                 break;
         }
     }

@@ -11,12 +11,12 @@ import android.content.SyncResult;
 import android.os.Bundle;
 import android.os.IBinder;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class ContactsSyncAdapterService extends Service {
     private static SyncAdapterImpl sSyncAdapter;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class SyncAdapterImpl extends AbstractThreadedSyncAdapter {
         private Context mContext;
 
@@ -29,8 +29,8 @@ public class ContactsSyncAdapterService extends Service {
         public void onPerformSync(Account account, Bundle bundle, String str, ContentProviderClient contentProviderClient, SyncResult syncResult) {
             try {
                 ContactsSyncAdapterService.performSync(this.mContext, account, bundle, str, contentProviderClient, syncResult);
-            } catch (OperationCanceledException e) {
-                FileLog.e(e);
+            } catch (OperationCanceledException e7) {
+                FileLog.e(e7);
             }
         }
     }

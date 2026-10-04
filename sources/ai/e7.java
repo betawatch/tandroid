@@ -16,16 +16,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.nc0;
-import org.telegram.ui.Components.p90;
-import org.telegram.ui.Components.v00;
-import org.telegram.ui.Components.xl0;
-import org.telegram.ui.ub1;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.oc0;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.w00;
+import org.telegram.ui.Components.yl0;
+import org.telegram.ui.xb1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class e7 extends xl0 {
+public final class e7 extends yl0 {
     public final ArrayList c = new ArrayList();
     public final /* synthetic */ k7 d;
 
@@ -33,7 +33,7 @@ public final class e7 extends xl0 {
         this.d = k7Var;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 1;
     }
@@ -241,7 +241,7 @@ public final class e7 extends xl0 {
                 view = new b7(this, k7Var.getContext(), i13);
                 break;
             case 1:
-                nc0 nc0Var = org.telegram.ui.Cells.o6.G;
+                oc0 oc0Var = org.telegram.ui.Cells.o6.G;
                 view = new c7(i11, dVar, this, k7Var.getContext());
                 break;
             case 2:
@@ -253,11 +253,11 @@ public final class e7 extends xl0 {
                 view = new org.telegram.ui.Cells.t3(k7Var.getContext(), 70);
                 break;
             case 4:
-                v00 v00Var = new v00(k7Var.getContext(), dVar);
-                v00Var.setIsSingleCell(true);
-                v00Var.setViewType(28);
-                v00Var.w = false;
-                view = v00Var;
+                w00 w00Var = new w00(k7Var.getContext(), dVar);
+                w00Var.setIsSingleCell(true);
+                w00Var.setViewType(28);
+                w00Var.w = false;
+                view = w00Var;
                 break;
             case 5:
             case 7:
@@ -280,7 +280,7 @@ public final class e7 extends xl0 {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.getString(R.string.ExpiredViewsStub)));
                     boolean premiumFeaturesBlocked = MessagesController.getInstance(i11).premiumFeaturesBlocked();
-                    p90 p90Var = d7Var.e;
+                    q90 q90Var = d7Var.e;
                     if (!premiumFeaturesBlocked) {
                         spannableStringBuilder.append((CharSequence) "\n\n");
                         spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ExpiredViewsStubPremiumDescription), new Runnable() { // from class: ai.a7
@@ -310,29 +310,29 @@ public final class e7 extends xl0 {
                                 }
                             }
                         };
-                        ((LinearLayout.LayoutParams) p90Var.getLayoutParams()).topMargin = AndroidUtilities.dp(12.0f);
+                        ((LinearLayout.LayoutParams) q90Var.getLayoutParams()).topMargin = AndroidUtilities.dp(12.0f);
                         TextView textView = new TextView(d7Var.getContext());
                         textView.setText(string);
-                        int i14 = org.telegram.ui.ActionBar.h6.Sh;
+                        int i14 = org.telegram.ui.ActionBar.i6.Sh;
                         org.telegram.ui.ActionBar.d6 d6Var = d7Var.n;
-                        textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(i14, d6Var));
+                        textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(i14, d6Var));
                         textView.setPadding(AndroidUtilities.dp(45.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(45.0f), AndroidUtilities.dp(12.0f));
                         textView.setGravity(17);
                         textView.setTypeface(AndroidUtilities.bold());
                         textView.setTextSize(1, 15.0f);
                         w5 w5Var = new w5(d7Var.getContext(), 19);
-                        w5Var.setOnClickListener(new k80(runnable, 19));
+                        w5Var.setOnClickListener(new l80(runnable, 19));
                         int dp = AndroidUtilities.dp(8.0f);
-                        int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Oh, d6Var);
-                        int k10 = i0.a.k(org.telegram.ui.ActionBar.h6.v0(i14, d6Var), 30);
-                        w5Var.setBackground(org.telegram.ui.ActionBar.h6.i0(dp, dp, dp, dp, v02, k10, k10));
-                        w7.a6.b(w5Var, 0.05f, 1.5f);
+                        int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Oh, d6Var);
+                        int k10 = i0.a.k(org.telegram.ui.ActionBar.i6.v0(i14, d6Var), 30);
+                        w5Var.setBackground(org.telegram.ui.ActionBar.i6.i0(dp, dp, dp, dp, v02, k10, k10));
+                        w7.b6.b(w5Var, 0.05f, 1.5f);
                         w5Var.addView(textView);
-                        ub1 ub1Var = d7Var.a;
-                        ub1Var.setClipChildren(false);
-                        ub1Var.addView(w5Var, w7.y5.t(-2, -2, 1, 0, 28, 0, 4));
+                        xb1 xb1Var = d7Var.a;
+                        xb1Var.setClipChildren(false);
+                        xb1Var.addView(w5Var, w7.z5.t(-2, -2, 1, 0, 28, 0, 4));
                     }
-                    p90Var.setText(spannableStringBuilder);
+                    q90Var.setText(spannableStringBuilder);
                 } else {
                     nVar.setVisibility(0);
                     if (k7Var.F.f) {
@@ -347,33 +347,33 @@ public final class e7 extends xl0 {
                 view = d7Var;
                 break;
             case 6:
-                v00 v00Var2 = new v00(k7Var.getContext(), dVar);
-                v00Var2.setIsSingleCell(true);
-                v00Var2.setIgnoreHeightCheck(true);
-                v00Var2.setItemsCount(20);
-                v00Var2.setViewType(28);
-                v00Var2.w = false;
-                view = v00Var2;
+                w00 w00Var2 = new w00(k7Var.getContext(), dVar);
+                w00Var2.setIsSingleCell(true);
+                w00Var2.setIgnoreHeightCheck(true);
+                w00Var2.setItemsCount(20);
+                w00Var2.setViewType(28);
+                w00Var2.w = false;
+                view = w00Var2;
                 break;
             case 11:
             case 12:
-                p90 p90Var2 = new p90(k7Var.getContext(), null);
-                p90Var2.setTextSize(1, 13.0f);
-                p90Var2.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.y6, dVar));
-                p90Var2.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.J6, dVar));
+                q90 q90Var2 = new q90(k7Var.getContext(), null);
+                q90Var2.setTextSize(1, 13.0f);
+                q90Var2.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.y6, dVar));
+                q90Var2.setLinkTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.J6, dVar));
                 int dp2 = AndroidUtilities.dp(16.0f);
                 int dp3 = AndroidUtilities.dp(21.0f);
-                p90Var2.setPadding(dp3, dp2, dp3, dp2);
-                p90Var2.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
-                p90Var2.setGravity(17);
-                p90Var2.setDisablePaddingsOffsetY(true);
+                q90Var2.setPadding(dp3, dp2, dp3, dp2);
+                q90Var2.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
+                q90Var2.setGravity(17);
+                q90Var2.setDisablePaddingsOffsetY(true);
                 if (i10 == 11) {
-                    p90Var2.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryViewsPremiumHint), new a3.d(this, 10)));
+                    q90Var2.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryViewsPremiumHint), new a3.d(this, 10)));
                 } else {
-                    p90Var2.setText(LocaleController.getString(R.string.ServerErrorViewersFull));
+                    q90Var2.setText(LocaleController.getString(R.string.ServerErrorViewersFull));
                 }
-                p90Var2.setLayoutParams(new s4.p0(-1, -2));
-                view = p90Var2;
+                q90Var2.setLayoutParams(new s4.p0(-1, -2));
+                view = q90Var2;
                 break;
         }
         return new il0(view);

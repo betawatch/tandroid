@@ -7,12 +7,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class TLJsonBuilder {
     private final JSONObject result2 = new JSONObject();
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public interface Serializable {
         void serializeToJson(TLJsonBuilder tLJsonBuilder);
     }
@@ -28,8 +28,8 @@ public class TLJsonBuilder {
             TLJsonBuilder tLJsonBuilder = new TLJsonBuilder();
             serializable.serializeToJson(tLJsonBuilder);
             return tLJsonBuilder.result2;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -37,8 +37,8 @@ public class TLJsonBuilder {
     private void write(String str, Object obj) {
         try {
             this.result2.putOpt(str, obj);
-        } catch (JSONException e) {
-            FileLog.e(e);
+        } catch (JSONException e7) {
+            FileLog.e(e7);
         }
     }
 

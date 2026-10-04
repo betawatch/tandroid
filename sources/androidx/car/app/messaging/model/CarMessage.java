@@ -5,9 +5,9 @@ import android.os.Bundle;
 import androidx.car.app.model.CarText;
 import e0.p0;
 import j$.util.Objects;
-import v7.w;
+import v7.v;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class CarMessage {
     private final CarText mBody;
@@ -29,7 +29,7 @@ public class CarMessage {
             return false;
         }
         CarMessage carMessage = (CarMessage) obj;
-        return w.a(getSender(), carMessage.getSender()) && Objects.equals(this.mBody, carMessage.mBody) && this.mReceivedTimeEpochMillis == carMessage.mReceivedTimeEpochMillis && this.mIsRead == carMessage.mIsRead;
+        return v.a(getSender(), carMessage.getSender()) && Objects.equals(this.mBody, carMessage.mBody) && this.mReceivedTimeEpochMillis == carMessage.mReceivedTimeEpochMillis && this.mIsRead == carMessage.mIsRead;
     }
 
     public CarText getBody() {
@@ -57,7 +57,7 @@ public class CarMessage {
     }
 
     public int hashCode() {
-        return Objects.hash(Integer.valueOf(w.b(getSender())), this.mBody, Long.valueOf(this.mReceivedTimeEpochMillis), Boolean.valueOf(this.mIsRead));
+        return Objects.hash(Integer.valueOf(v.b(getSender())), this.mBody, Long.valueOf(this.mReceivedTimeEpochMillis), Boolean.valueOf(this.mIsRead));
     }
 
     public boolean isRead() {

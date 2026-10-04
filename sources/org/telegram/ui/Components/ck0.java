@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class ck0 extends FrameLayout {
     public bk0 E;
@@ -63,23 +63,23 @@ public final class ck0 extends FrameLayout {
         s4.c0 c0Var = new s4.c0();
         uj0Var.setLayoutManager(c0Var);
         if (Build.VERSION.SDK_INT >= 29) {
-            uj0Var.setVerticalScrollbarThumbDrawable(new ColorDrawable(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.i6, false)));
+            uj0Var.setVerticalScrollbarThumbDrawable(new ColorDrawable(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false)));
         }
         vj0 vj0Var = new vj0(this, i10, context, d6Var, z10);
         this.f = vj0Var;
         uj0Var.setAdapter(vj0Var);
         uj0Var.setOnItemClickListener(new j(this, 10));
-        uj0Var.setOnItemLongClickListener(new ov(this, 15));
+        uj0Var.setOnItemLongClickListener(new pv(this, 15));
         uj0Var.j(new wj0(this, c0Var));
         uj0Var.setVerticalScrollBarEnabled(true);
         uj0Var.setAlpha(0.0f);
-        addView(uj0Var, w7.y5.c(-1.0f, -1));
+        addView(uj0Var, w7.z5.c(-1.0f, -1));
         xj0 xj0Var = new xj0(this, context, d6Var);
         this.h = xj0Var;
-        xj0Var.f(org.telegram.ui.ActionBar.h6.G8, org.telegram.ui.ActionBar.h6.i6, -1);
+        xj0Var.f(org.telegram.ui.ActionBar.i6.G8, org.telegram.ui.ActionBar.i6.i6, -1);
         xj0Var.setIsSingleCell(true);
         xj0Var.setItemsCount(this.a);
-        addView(xj0Var, w7.y5.c(-1.0f, -1));
+        addView(xj0Var, w7.z5.c(-1.0f, -1));
         if (reaction != null && (reaction instanceof TLRPC.TL_reactionCustomEmoji) && !MessagesController.getInstance(i10).premiumFeaturesBlocked()) {
             arrayList.clear();
             arrayList.add(zg.o0.d(reaction));
@@ -132,8 +132,8 @@ public final class ck0 extends FrameLayout {
         ck0Var.f.l();
         if (!ck0Var.w) {
             ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
-            duration.setInterpolator(sr.f);
-            duration.addUpdateListener(new u70(ck0Var, 5));
+            duration.setInterpolator(tr.f);
+            duration.addUpdateListener(new v70(ck0Var, 5));
             duration.addListener(new hd0(ck0Var, 7));
             duration.start();
             ck0Var.j();
@@ -174,20 +174,20 @@ public final class ck0 extends FrameLayout {
         ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getMessageReactionsList, new y1(this, 11), 64);
     }
 
-    public final void d(org.telegram.ui.pe peVar) {
-        this.G = peVar;
+    public final void d(org.telegram.ui.re reVar) {
+        this.G = reVar;
     }
 
-    public final void e(org.telegram.ui.b7 b7Var) {
-        this.y = b7Var;
+    public final void e(org.telegram.ui.c7 c7Var) {
+        this.y = c7Var;
     }
 
-    public final void f(org.telegram.ui.zf zfVar) {
-        this.F = zfVar;
+    public final void f(org.telegram.ui.bg bgVar) {
+        this.F = bgVar;
     }
 
-    public final void g(org.telegram.ui.yf yfVar) {
-        this.E = yfVar;
+    public final void g(org.telegram.ui.ag agVar) {
+        this.E = agVar;
     }
 
     public final void h(List list) {

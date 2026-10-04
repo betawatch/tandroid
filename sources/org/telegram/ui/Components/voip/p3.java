@@ -12,9 +12,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class p3 {
     public final o5 a;
@@ -98,7 +98,7 @@ public final class p3 {
             this.q = true;
             this.p = this.i > this.o / 2 ? AndroidUtilities.dp(12) : -AndroidUtilities.dp(12);
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.setInterpolator(new sr(0.34d, 1.36d, 0.64d, 1.0d));
+            ofFloat.setInterpolator(new tr(0.34d, 1.36d, 0.64d, 1.0d));
             ofFloat.addUpdateListener(new n3(this, i12));
             long j3 = 350;
             ofFloat.setDuration(j3);
@@ -106,7 +106,7 @@ public final class p3 {
             ofFloat.setStartDelay(j10);
             ofFloat.start();
             ValueAnimator ofInt = ValueAnimator.ofInt(0, 255, 255);
-            ofInt.setInterpolator(sr.f);
+            ofInt.setInterpolator(tr.f);
             ofInt.addUpdateListener(new n3(this, i13));
             ofInt.setStartDelay(j10);
             ofInt.setDuration(j3);

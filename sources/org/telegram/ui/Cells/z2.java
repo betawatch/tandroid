@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -31,9 +31,9 @@ public final /* synthetic */ class z2 implements View.OnClickListener {
                 break;
             default:
                 ci.d dVar = (ci.d) this.b;
-                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.c;
+                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.c;
                 if (dVar.F <= 0) {
-                    e3Var.dismiss();
+                    f3Var.dismiss();
                     break;
                 } else {
                     AndroidUtilities.shakeViewSpring(dVar, 3.0f);

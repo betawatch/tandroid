@@ -12,21 +12,21 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import v7.e5;
+import v7.d5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class h implements w {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(h.class.getName());
-    public static final e5 f;
+    public static final d5 f;
     public static final Object h;
     public volatile Object a;
     public volatile d b;
     public volatile g c;
 
     static {
-        e5 fVar;
+        d5 fVar;
         try {
             fVar = new e(AtomicReferenceFieldUpdater.newUpdater(g.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(g.class, g.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, g.class, "c"), AtomicReferenceFieldUpdater.newUpdater(h.class, d.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "a"));
             th = null;
@@ -194,9 +194,9 @@ public abstract class h implements w {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    e5 e5Var = f;
-                    e5Var.d(gVar3, gVar2);
-                    if (e5Var.c(this, gVar2, gVar3)) {
+                    d5 d5Var = f;
+                    d5Var.d(gVar3, gVar2);
+                    if (d5Var.c(this, gVar2, gVar3)) {
                         while (true) {
                             LockSupport.parkNanos(this, nanos);
                             if (Thread.interrupted()) {
@@ -236,31 +236,31 @@ public abstract class h implements w {
         String obj4 = timeUnit.toString();
         Locale locale = Locale.ROOT;
         String lowerCase = obj4.toLowerCase(locale);
-        StringBuilder u10 = a4.a.u(j3, "Waited ", " ");
-        u10.append(timeUnit.toString().toLowerCase(locale));
-        String sb2 = u10.toString();
+        StringBuilder t10 = a4.a.t(j3, "Waited ", " ");
+        t10.append(timeUnit.toString().toLowerCase(locale));
+        String sb2 = t10.toString();
         if (nanos + 1000 < 0) {
-            String t10 = v7.j.t(sb2, " (plus ");
+            String v = t8.b.v(sb2, " (plus ");
             long j10 = -nanos;
             long convert = timeUnit.convert(j10, TimeUnit.NANOSECONDS);
             long nanos2 = j10 - timeUnit.toNanos(convert);
             boolean z10 = convert == 0 || nanos2 > 1000;
             if (convert > 0) {
-                String str = t10 + convert + " " + lowerCase;
+                String str = v + convert + " " + lowerCase;
                 if (z10) {
-                    str = v7.j.t(str, ",");
+                    str = t8.b.v(str, ",");
                 }
-                t10 = v7.j.t(str, " ");
+                v = t8.b.v(str, " ");
             }
             if (z10) {
-                t10 = t10 + nanos2 + " nanoseconds ";
+                v = v + nanos2 + " nanoseconds ";
             }
-            sb2 = v7.j.t(t10, "delay)");
+            sb2 = t8.b.v(v, "delay)");
         }
         if (isDone()) {
-            throw new TimeoutException(v7.j.t(sb2, " but future completed as timeout expired"));
+            throw new TimeoutException(t8.b.v(sb2, " but future completed as timeout expired"));
         }
-        throw new TimeoutException(a4.a.D(sb2, " for ", hVar));
+        throw new TimeoutException(a4.a.C(sb2, " for ", hVar));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -371,9 +371,9 @@ public abstract class h implements w {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    e5 e5Var = f;
-                    e5Var.d(gVar3, gVar2);
-                    if (e5Var.c(this, gVar2, gVar3)) {
+                    d5 d5Var = f;
+                    d5Var.d(gVar3, gVar2);
+                    if (d5Var.c(this, gVar2, gVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

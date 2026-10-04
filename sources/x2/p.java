@@ -21,13 +21,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.RandomAccess;
 import org.telegram.messenger.TranslateController;
-import org.telegram.ui.db1;
+import org.telegram.ui.gb1;
 import u2.p1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class p extends u {
-    public static final y0 l = new w(new db1(11));
+    public static final y0 l = new w(new gb1(11));
     public final Object d;
     public final Context e;
     public final qb.b f;

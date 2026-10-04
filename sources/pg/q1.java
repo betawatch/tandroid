@@ -1,8 +1,8 @@
 package pg;
 
-import v7.a7;
+import v7.z6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class q1 extends r1 {
     public final i1 f;
@@ -49,8 +49,8 @@ public final class q1 extends r1 {
         float f13 = fArr[0];
         float f14 = fArr[1];
         double atan2 = (3.141592653589793d - Math.atan2(f10 - f14, f7 - f13)) - i1Var.h;
-        double cos = Math.cos(atan2) * a7.a(f7, f10, f13, f14);
-        double sin = Math.sin(atan2) * a7.a(f7, f10, f13, f14);
+        double cos = Math.cos(atan2) * z6.a(f7, f10, f13, f14);
+        double sin = Math.sin(atan2) * z6.a(f7, f10, f13, f14);
         i1Var.d = ((float) Math.abs(cos)) / 2.0f;
         i1Var.e = ((float) Math.abs(sin)) / 2.0f;
         i1Var.b = (f7 + f13) / 2.0f;

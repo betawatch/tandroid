@@ -1,9 +1,33 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public interface xc0 {
-    void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j3);
+public final class xc0 extends s4.s0 {
+    public final /* synthetic */ gd0 a;
+
+    public xc0(gd0 gd0Var) {
+        this.a = gd0Var;
+    }
+
+    @Override // s4.s0
+    public final void a(RecyclerView recyclerView, int i10) {
+        boolean z10 = i10 != 0;
+        gd0 gd0Var = this.a;
+        gd0Var.Q = z10;
+        if (z10 || gd0Var.L == null) {
+            return;
+        }
+        gd0Var.L = null;
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        gd0 gd0Var = this.a;
+        gd0Var.A0(false);
+        if (gd0Var.L != null) {
+            gd0Var.N += i11;
+        }
+    }
 }

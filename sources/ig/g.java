@@ -25,12 +25,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.f0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.ca1;
-import org.telegram.ui.ml0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.fa1;
+import org.telegram.ui.jl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final boolean A1;
@@ -405,9 +405,9 @@ public abstract class g extends View implements i {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                ca1 ca1Var = (ca1) ((ml0) eVar).b;
-                ca1Var.f();
-                ca1Var.b.t0.d(false, false);
+                fa1 fa1Var = (fa1) ((jl0) eVar).b;
+                fa1Var.f();
+                fa1Var.b.t0.d(false, false);
             }
             B();
             invalidate();
@@ -564,9 +564,9 @@ public abstract class g extends View implements i {
                     dVar.g = dVar.f;
                 }
             }
-            ValueAnimator e = e(0.0f, 255.0f, new x(3, this, f7));
-            this.b0 = e;
-            e.addListener(new z(6, this, f7));
+            ValueAnimator e7 = e(0.0f, 255.0f, new x(3, this, f7));
+            this.b0 = e7;
+            e7.addListener(new z(6, this, f7));
             this.b0.start();
         }
     }
@@ -586,7 +586,7 @@ public abstract class g extends View implements i {
                 this.v = f11;
             } else {
                 float f13 = this.T0;
-                this.v = (sr.g.getInterpolation(f12) * (f11 - f13)) + f13;
+                this.v = (tr.g.getInterpolation(f12) * (f11 - f13)) + f13;
             }
             invalidate();
         }
@@ -601,7 +601,7 @@ public abstract class g extends View implements i {
                     this.w = f15;
                 } else {
                     float f17 = this.U0;
-                    this.w = (sr.g.getInterpolation(f16) * (f15 - f17)) + f17;
+                    this.w = (tr.g.getInterpolation(f16) * (f15 - f17)) + f17;
                 }
                 invalidate();
             }
@@ -609,23 +609,23 @@ public abstract class g extends View implements i {
     }
 
     public final void G() {
-        int i10 = this.x0 ? h6.Zi : h6.Yi;
+        int i10 = this.x0 ? i6.Zi : i6.Yi;
         d6 d6Var = this.W0;
-        int v02 = h6.v0(i10, d6Var);
+        int v02 = i6.v0(i10, d6Var);
         this.N.setColor(v02);
-        this.O.setColor(h6.v0(this.x0 ? h6.Zi : h6.Yi, d6Var));
-        int v03 = h6.v0(h6.Yi, d6Var);
+        this.O.setColor(i6.v0(this.x0 ? i6.Zi : i6.Yi, d6Var));
+        int v03 = i6.v0(i6.Yi, d6Var);
         this.P.setColor(v03);
-        int v04 = h6.v0(h6.aj, d6Var);
+        int v04 = i6.v0(i6.aj, d6Var);
         Paint paint = this.L;
         paint.setColor(v04);
-        int v05 = h6.v0(h6.bj, d6Var);
+        int v05 = i6.v0(i6.bj, d6Var);
         Paint paint2 = this.M;
         paint2.setColor(v05);
-        this.Q.setColor(h6.v0(h6.dj, d6Var));
-        this.R.setColor(h6.v0(h6.cj, d6Var));
-        this.S.setColor(h6.v0(h6.d6, d6Var));
-        this.T.setColor(h6.v0(h6.ej, d6Var));
+        this.Q.setColor(i6.v0(i6.dj, d6Var));
+        this.R.setColor(i6.v0(i6.cj, d6Var));
+        this.S.setColor(i6.v0(i6.d6, d6Var));
+        this.T.setColor(i6.v0(i6.ej, d6Var));
         this.t0.b();
         this.n = paint.getAlpha();
         this.r = paint2.getAlpha();
@@ -1822,7 +1822,7 @@ public abstract class g extends View implements i {
                 ValueAnimator valueAnimator4 = fVar.h;
                 if (valueAnimator4 == null || !valueAnimator4.isRunning()) {
                     final int i12 = 0;
-                    ValueAnimator e = e(fVar.o, 1.0f, new ValueAnimator.AnimatorUpdateListener(this) { // from class: ig.c
+                    ValueAnimator e7 = e(fVar.o, 1.0f, new ValueAnimator.AnimatorUpdateListener(this) { // from class: ig.c
                         public final /* synthetic */ g b;
 
                         {
@@ -1849,15 +1849,15 @@ public abstract class g extends View implements i {
                             }
                         }
                     });
-                    fVar.h = e;
-                    e.start();
+                    fVar.h = e7;
+                    e7.start();
                 } else {
                     i10 = this.n0 + 1;
                 }
             }
             if (!fVar.n && fVar.o != 0.0f && ((valueAnimator = fVar.i) == null || !valueAnimator.isRunning())) {
                 final int i13 = 1;
-                ValueAnimator e7 = e(fVar.o, 0.0f, new ValueAnimator.AnimatorUpdateListener(this) { // from class: ig.c
+                ValueAnimator e10 = e(fVar.o, 0.0f, new ValueAnimator.AnimatorUpdateListener(this) { // from class: ig.c
                     public final /* synthetic */ g b;
 
                     {
@@ -1884,8 +1884,8 @@ public abstract class g extends View implements i {
                         }
                     }
                 });
-                fVar.i = e7;
-                e7.start();
+                fVar.i = e10;
+                e10.start();
             }
             i10 = this.n0 + 1;
         }

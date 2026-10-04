@@ -1,40 +1,37 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z20 implements Utilities.Callback2 {
+public final /* synthetic */ class z20 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d60 b;
+    public final /* synthetic */ h60 b;
 
-    public /* synthetic */ z20(d60 d60Var, int i10) {
+    public /* synthetic */ z20(h60 h60Var, int i10) {
         this.a = i10;
-        this.b = d60Var;
+        this.b = h60Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        TLRPC.Updates updates = (TLRPC.Updates) obj;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                d60 d60Var = this.b;
-                if (updates != null) {
-                    d60Var.d.getMessagesController().processUpdates(updates, false);
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (this.b.x0 && (U instanceof yn)) {
+                    ((yn) U).S9(true, true);
+                    break;
                 }
-                AndroidUtilities.runOnUIThread(new q20(d60Var, 10));
+                break;
+            case 1:
+                this.b.dismiss();
+                break;
+            case 2:
+                this.b.E1 = null;
                 break;
             default:
-                d60 d60Var2 = this.b;
-                if (updates == null) {
-                    d60Var2.getClass();
-                    break;
-                } else {
-                    d60Var2.d.getMessagesController().processUpdates(updates, false);
-                    break;
-                }
+                this.b.r0 = null;
+                break;
         }
     }
 }

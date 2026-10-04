@@ -1,185 +1,428 @@
 package org.telegram.ui;
 
 import android.animation.ValueAnimator;
-import android.os.Build;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class vw extends s4.s0 {
-    public boolean a;
-    public final /* synthetic */ py b;
-    public final /* synthetic */ jy c;
-    public final /* synthetic */ qy d;
+public final class vw extends s4.c0 {
+    public boolean I;
+    public boolean J;
+    public ValueAnimator K;
+    public final /* synthetic */ ty L;
+    public final /* synthetic */ uy M;
 
-    public vw(qy qyVar, py pyVar, jy jyVar) {
-        this.d = qyVar;
-        this.b = pyVar;
-        this.c = jyVar;
+    public vw(uy uyVar, ty tyVar) {
+        this.M = uyVar;
+        this.L = tyVar;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        qy qyVar = this.d;
-        if (i10 == 1) {
-            this.a = true;
-            qyVar.d3 = true;
-            a5.a aVar = qyVar.e0[0].b;
-            ValueAnimator valueAnimator = (ValueAnimator) aVar.c;
-            if (valueAnimator != null) {
-                valueAnimator.removeAllListeners();
-                ((ValueAnimator) aVar.c).cancel();
-                aVar.c = null;
+    @Override // s4.c0
+    public final int R0() {
+        ty tyVar = this.L;
+        return (tyVar.s == 0 && this.M.i4() && tyVar.v == 2) ? 1 : 0;
+    }
+
+    @Override // s4.c0, s4.o0
+    public final void b0(of.e eVar, s4.z0 z0Var) {
+        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
+            try {
+                super.b0(eVar, z0Var);
+                return;
+            } catch (IndexOutOfBoundsException e7) {
+                FileLog.e(e7);
+                AndroidUtilities.runOnUIThread(new uw(this.L, 0));
+                return;
             }
-            if (qyVar.X.r.getText().length() == 0 && qyVar.X.r.hasFocus()) {
-                AndroidUtilities.hideKeyboard(qyVar.X.r);
-                qyVar.X.r.clearFocus();
-            }
-        } else {
-            qyVar.d3 = false;
         }
-        if (i10 == 0) {
-            this.a = false;
-            qyVar.e2 = false;
-            boolean z10 = qyVar.b1;
-            py pyVar = this.b;
-            if (z10) {
-                qyVar.b1 = false;
-                if (qyVar.d1) {
-                    my myVar = pyVar.a;
-                    int i11 = my.v3;
-                    myVar.A1();
-                    qyVar.d1 = false;
-                }
-                pyVar.d.l();
-            }
-            qy.r1(qyVar, pyVar);
+        try {
+            super.b0(eVar, z0Var);
+        } catch (IndexOutOfBoundsException unused) {
+            StringBuilder sb2 = new StringBuilder("Inconsistency detected. dialogsListIsFrozen=");
+            uy uyVar = this.M;
+            sb2.append(uyVar.S1);
+            sb2.append(" lastUpdateAction=");
+            sb2.append(uyVar.y3);
+            throw new RuntimeException(sb2.toString());
         }
     }
 
-    /* JADX WARN: Type inference failed for: r11v4, types: [boolean] */
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ah.h hVar;
-        my myVar;
+    @Override // s4.c0
+    public final void b1(View view, View view2, int i10, int i11) {
+        this.I = true;
+        super.b1(view, view2, i10, i11);
+        this.I = false;
+    }
+
+    @Override // s4.o0
+    public final void f0() {
+        ValueAnimator valueAnimator = this.K;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.K.cancel();
+        }
+        ty tyVar = this.L;
+        if (tyVar.a.getScrollState() != 1) {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.M.T, 0.0f);
+            this.K = ofFloat;
+            ofFloat.addUpdateListener(new ai.x(21, this, tyVar));
+            this.K.addListener(new org.telegram.ui.Components.a91(this, 17));
+            this.K.setDuration(200L);
+            this.K.setInterpolator(org.telegram.ui.Components.tr.f);
+            this.K.start();
+        }
+    }
+
+    @Override // s4.c0
+    public final void h1(int i10, int i11) {
+        if (this.I) {
+            i11 -= this.L.a.getPaddingTop();
+        }
+        super.h1(i10, i11);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x002c, code lost:
+    
+        if (org.telegram.ui.uy.v1(r4, r6) != false) goto L15;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0046, code lost:
+    
+        if (r11.s() == false) goto L24;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:225:0x016d, code lost:
+    
+        if (r8.s() == false) goto L111;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:251:0x01c3, code lost:
+    
+        if (r8.s() == false) goto L136;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:280:0x0248, code lost:
+    
+        if (r8 > (-1)) goto L172;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x0076, code lost:
+    
+        if (r11.s() == false) goto L38;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x03e6 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x00e8  */
+    /* JADX WARN: Removed duplicated region for block: B:192:0x00fe  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x01d3  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x00cc A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0250  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x026c  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x026f  */
+    /* JADX WARN: Removed duplicated region for block: B:78:0x027a  */
+    @Override // s4.c0, s4.o0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int o0(int i10, of.e eVar, s4.z0 z0Var) {
+        boolean z10;
+        int i11;
+        int L0;
+        int i12;
+        int i13;
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
-        View childAt;
-        boolean z10;
+        org.telegram.ui.ActionBar.k kVar3;
+        org.telegram.ui.ActionBar.k kVar4;
+        int i14;
+        int dp;
+        View m10;
+        int o02;
         boolean z11;
-        this.c.X();
-        py pyVar = this.b;
-        rw rwVar = pyVar.x;
-        int i12 = -i11;
-        ArrayList arrayList = rwVar.x;
-        ArrayList arrayList2 = rwVar.o;
-        if (!arrayList2.isEmpty()) {
-            int size = arrayList2.size();
-            for (int i13 = 0; i13 < size; i13++) {
-                View view = ((s4.c1) arrayList2.get(i13)).a;
-                view.setTranslationY(view.getTranslationY() + i12);
-            }
-        }
-        if (!arrayList.isEmpty()) {
-            int size2 = arrayList.size();
-            for (int i14 = 0; i14 < size2; i14++) {
-                View view2 = ((s4.c1) arrayList.get(i14)).a;
-                view2.setTranslationY(view2.getTranslationY() + i12);
-            }
-        }
-        int i15 = -1;
-        int i16 = -1;
-        for (int i17 = 0; i17 < recyclerView.getChildCount(); i17++) {
-            int R = RecyclerView.R(recyclerView.getChildAt(i17));
-            if (R >= 0) {
-                if (i15 == -1 || R > i15) {
-                    i15 = R;
-                }
-                if (i16 == -1 || R < i16) {
-                    i16 = R;
+        yw ywVar;
+        float viewOffset;
+        float f7;
+        org.telegram.ui.ActionBar.k kVar5;
+        org.telegram.ui.ActionBar.k kVar6;
+        org.telegram.ui.ActionBar.k kVar7;
+        org.telegram.ui.ActionBar.k kVar8;
+        uy uyVar = this.M;
+        UndoView[] undoViewArr = uyVar.y0;
+        ty tyVar = this.L;
+        qy qyVar = tyVar.a;
+        int i15 = 0;
+        if (!qyVar.X1) {
+            boolean z12 = qyVar.getScrollState() == 1;
+            if (z12 != this.J) {
+                this.J = z12;
+                if (!z12) {
                 }
             }
-        }
-        qy qyVar = this.d;
-        qyVar.r3(pyVar);
-        qyVar.Q = true;
-        View view3 = qyVar.fragmentView;
-        if (view3 != null) {
-            view3.invalidate();
-        }
-        if (qyVar.R0 != 10 && this.a && recyclerView.getChildCount() > 0 && i16 != -1) {
-            s4.c1 K = recyclerView.K(i16);
-            if (!qyVar.Z3() || (K != null && K.b() >= 0)) {
-                int top = K != null ? K.a.getTop() : 0;
-                int i18 = qyVar.Y1;
-                if (i18 == i16) {
-                    int i19 = qyVar.Z1;
-                    int i20 = i19 - top;
-                    z10 = top < i19;
-                    if (Math.abs(i20) <= 1) {
-                        z11 = false;
-                        if (z11 && qyVar.a2 && (z10 || qyVar.d3)) {
-                            qyVar.c4(z10);
-                        }
-                        qyVar.Y1 = i16;
-                        qyVar.Z1 = top;
-                        qyVar.a2 = true;
-                    }
+            float f10 = 0.0f;
+            if (i10 > 0 && uyVar.T != 0.0f) {
+                kVar7 = ((org.telegram.ui.ActionBar.n2) uyVar).actionBar;
+                if (kVar7 != null) {
+                    kVar8 = ((org.telegram.ui.ActionBar.n2) uyVar).actionBar;
+                }
+                float f11 = uyVar.T - i10;
+                if (f11 < 0.0f) {
+                    i15 = (int) (-f11);
                 } else {
-                    z10 = i16 > i18;
+                    f10 = f11;
                 }
-                z11 = true;
-                if (z11) {
-                    qyVar.c4(z10);
-                }
-                qyVar.Y1 = i16;
-                qyVar.Z1 = top;
-                qyVar.a2 = true;
+                uy.u1(uyVar, tyVar, f10);
+                return super.o0(i15, eVar, z0Var);
             }
-        }
-        if (!qyVar.K && recyclerView == qyVar.e0[0].a && !qyVar.j2) {
-            kVar = ((org.telegram.ui.ActionBar.m2) qyVar).actionBar;
-            if (kVar != null) {
-                kVar2 = ((org.telegram.ui.ActionBar.m2) qyVar).actionBar;
-                if (!kVar2.s() && !qyVar.e2 && !qyVar.F3.c()) {
-                    if (i11 > 0 && qyVar.Z3() && qyVar.e0[0].s == 0 && (childAt = recyclerView.getChildAt(0)) != null && recyclerView.T(childAt).b() == 0) {
-                        int top2 = (childAt.getTop() - recyclerView.getPaddingTop()) + childAt.getMeasuredHeight();
-                        if (top2 + i11 > 0) {
-                            if (top2 >= 0) {
-                                return;
-                            } else {
-                                i11 = -top2;
+            if (uyVar.K && uyVar.X2 == 0) {
+                kVar5 = ((org.telegram.ui.ActionBar.n2) uyVar).actionBar;
+                if (kVar5 != null) {
+                    kVar6 = ((org.telegram.ui.ActionBar.n2) uyVar).actionBar;
+                }
+                z10 = true;
+                int paddingTop = tyVar.a.getPaddingTop();
+                int dp2 = (z10 || uyVar.F3.c() || uyVar.R) ? paddingTop : paddingTop - AndroidUtilities.dp(81.0f);
+                if (uyVar.R && tyVar.s == 0 && !uyVar.l2 && uyVar.V2 == 0) {
+                    if (uyVar.X2 == 0 && uyVar.getMessagesController().hasHiddenArchive() && tyVar.v == 2) {
+                        i11 = 1;
+                        if ((i11 == 0 || (z10 && !uyVar.F3.c())) && i10 < 0) {
+                            tyVar.a.setOverScrollMode(0);
+                            L0 = tyVar.c.L0();
+                            if (L0 == 0 && (m10 = tyVar.c.m(L0)) != null && m10.getBottom() - dp2 <= AndroidUtilities.dp(1.0f)) {
+                                L0 = 1;
+                            }
+                            if (z12) {
+                                if (L0 != 0 || i11 == 0) {
+                                    i12 = -1;
+                                    if (((L0 == 1 && i11 != 0) || L0 == 0) && z10 && z12 && !uyVar.F3.c()) {
+                                        if (uyVar.N == 0.0f) {
+                                            tyVar.a.setOverScrollMode(0);
+                                        } else {
+                                            tyVar.a.setOverScrollMode(2);
+                                        }
+                                        i13 = (int) (i10 * 0.3f);
+                                    }
+                                } else {
+                                    View m11 = tyVar.c.m(L0);
+                                    float top = ((m11.getTop() - paddingTop) / m11.getMeasuredHeight()) + 1.0f;
+                                    if (top > 1.0f) {
+                                        top = 1.0f;
+                                    }
+                                    tyVar.a.setOverScrollMode(2);
+                                    i13 = (int) ((0.45f - (top * 0.25f)) * i10);
+                                    if (i13 > -1) {
+                                        i13 = -1;
+                                    }
+                                    UndoView undoView = undoViewArr[0];
+                                    if (undoView != null && undoView.getVisibility() == 0) {
+                                        undoViewArr[0].e(1, true);
+                                    }
+                                }
+                                i12 = i13;
+                                if (tyVar.s == 0) {
+                                    viewOffset = ((int) tyVar.a.getViewOffset()) - i10;
+                                    if (viewOffset >= 0.0f) {
+                                    }
+                                    tyVar.a.setViewsOffset(f7);
+                                }
+                                if (tyVar.s == 0) {
+                                }
+                                boolean z13 = z10;
+                                o02 = super.o0(i12, eVar, z0Var);
+                                if (o02 == 0) {
+                                    uy.u1(uyVar, tyVar, uyVar.T - (uyVar.E0.getOverScrollCoef() * i10));
+                                }
+                                return o02;
+                            }
+                            View m12 = tyVar.c.m(L0);
+                            if (m12 != null && L0 < 10) {
+                                int i16 = 0;
+                                while (i11 < L0) {
+                                    zw zwVar = tyVar.d;
+                                    if (((gg.k) zwVar.M.get(i11)).a == 0) {
+                                        if (!((gg.k) zwVar.M.get(i11)).f || zwVar.J) {
+                                            dp = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 76.0f : 70.0f);
+                                        } else {
+                                            dp = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 86.0f : 91.0f);
+                                        }
+                                        i14 = dp + 1;
+                                    } else {
+                                        i14 = 0;
+                                    }
+                                    i16 += i14;
+                                    i11++;
+                                }
+                                int i17 = (-(m12.getTop() - dp2)) + i16;
+                                if (!uyVar.F3.c()) {
+                                    kVar3 = ((org.telegram.ui.ActionBar.n2) uyVar).actionBar;
+                                    if (kVar3 != null) {
+                                        kVar4 = ((org.telegram.ui.ActionBar.n2) uyVar).actionBar;
+                                    }
+                                    i17 -= AndroidUtilities.dp(48.0f);
+                                }
+                                if (z10 && ((((ValueAnimator) tyVar.b.c) != null || uyVar.E0.g()) && !uyVar.F3.c() && !uyVar.R)) {
+                                    i17 += AndroidUtilities.dp(81.0f);
+                                }
+                                if ((((ValueAnimator) tyVar.b.c) != null || uyVar.E0.g()) && !uyVar.F3.c() && !uyVar.R) {
+                                    kVar = ((org.telegram.ui.ActionBar.n2) uyVar).actionBar;
+                                    if (kVar != null) {
+                                        kVar2 = ((org.telegram.ui.ActionBar.n2) uyVar).actionBar;
+                                    }
+                                    i17 += AndroidUtilities.dp(48.0f);
+                                }
+                                if (i17 < Math.abs(i10)) {
+                                    i12 = -i17;
+                                    if (tyVar.s == 0 && tyVar.a.getViewOffset() != 0.0f && i10 > 0 && z12) {
+                                        viewOffset = ((int) tyVar.a.getViewOffset()) - i10;
+                                        if (viewOffset >= 0.0f) {
+                                            i12 = (int) viewOffset;
+                                            f7 = 0.0f;
+                                        } else {
+                                            f7 = viewOffset;
+                                            i12 = 0;
+                                        }
+                                        tyVar.a.setViewsOffset(f7);
+                                    }
+                                    if (tyVar.s == 0 || tyVar.v == 0 || !uyVar.i4() || uyVar.R) {
+                                        boolean z132 = z10;
+                                        o02 = super.o0(i12, eVar, z0Var);
+                                        if (o02 == 0 && i10 < 0 && z12 && !uyVar.F3.c() && z132 && uyVar.t3 == 0.0f) {
+                                            uy.u1(uyVar, tyVar, uyVar.T - (uyVar.E0.getOverScrollCoef() * i10));
+                                        }
+                                        return o02;
+                                    }
+                                    int o03 = super.o0(i12, eVar, z0Var);
+                                    yw ywVar2 = tyVar.n;
+                                    if (ywVar2 != null) {
+                                        ywVar2.a = o03;
+                                    }
+                                    int L02 = tyVar.c.L0();
+                                    View m13 = L02 == 0 ? tyVar.c.m(L02) : null;
+                                    if (L02 != 0 || m13 == null || m13.getBottom() - dp2 < AndroidUtilities.dp(4.0f)) {
+                                        z11 = z10;
+                                        uyVar.c3 = 0L;
+                                        uyVar.e3 = false;
+                                        boolean z14 = tyVar.v != 2;
+                                        tyVar.v = 2;
+                                        if (z14 && AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
+                                            AndroidUtilities.makeAccessibilityAnnouncement(LocaleController.getString(R.string.AccDescrArchivedChatsHidden));
+                                        }
+                                        yw ywVar3 = tyVar.n;
+                                        if (ywVar3 != null) {
+                                            ValueAnimator valueAnimator = ywVar3.z;
+                                            if (valueAnimator != null) {
+                                                valueAnimator.cancel();
+                                            }
+                                            org.telegram.ui.Cells.s2 s2Var = ywVar3.H;
+                                            if (s2Var != null) {
+                                                s2Var.removeCallbacks(ywVar3.d0);
+                                            }
+                                            ywVar3.x = 0.0f;
+                                            ywVar3.y = false;
+                                            ywVar3.e0 = false;
+                                            tyVar.n.f(0.0f);
+                                            tyVar.n.I = tyVar.a;
+                                        }
+                                    } else {
+                                        boolean z15 = z10;
+                                        if (uyVar.c3 == 0) {
+                                            uyVar.c3 = System.currentTimeMillis();
+                                        }
+                                        if (tyVar.v == 2 && (ywVar = tyVar.n) != null) {
+                                            ywVar.h();
+                                        }
+                                        if (z15 && !uyVar.F3.c() && !uyVar.R) {
+                                            dp2 += AndroidUtilities.dp(81.0f);
+                                        }
+                                        float top2 = ((m13.getTop() - dp2) / m13.getMeasuredHeight()) + 1.0f;
+                                        if (top2 > 1.0f) {
+                                            top2 = 1.0f;
+                                        }
+                                        z11 = z15;
+                                        boolean z16 = top2 > 0.85f && System.currentTimeMillis() - uyVar.c3 > 220;
+                                        if (uyVar.e3 != z16) {
+                                            uyVar.e3 = z16;
+                                            if (tyVar.v == 2) {
+                                                try {
+                                                    tyVar.a.performHapticFeedback(3, 2);
+                                                } catch (Exception unused) {
+                                                }
+                                                yw ywVar4 = tyVar.n;
+                                                if (ywVar4 != null) {
+                                                    ywVar4.a(z16);
+                                                }
+                                            }
+                                        }
+                                        if (tyVar.v == 2 && i12 - o03 != 0 && i10 < 0 && z12) {
+                                            tyVar.a.setViewsOffset(tyVar.a.getViewOffset() - ((i10 * 0.2f) * (1.0f - (tyVar.a.getViewOffset() / AndroidUtilities.dp(72.0f)))));
+                                        }
+                                        yw ywVar5 = tyVar.n;
+                                        if (ywVar5 != null) {
+                                            ywVar5.f(top2);
+                                            tyVar.n.I = tyVar.a;
+                                        }
+                                    }
+                                    if (m13 != null) {
+                                        m13.invalidate();
+                                    }
+                                    if (tyVar.v == 1 && o03 == 0 && i10 < 0 && z12 && !uyVar.F3.c() && z11 && uyVar.t3 == 0.0f) {
+                                        uy.u1(uyVar, tyVar, uyVar.T - (AndroidUtilities.lerp(0.2f, 0.5f, uyVar.E0.n0) * i10));
+                                    }
+                                    return o03;
+                                }
                             }
                         }
-                    }
-                    qyVar.Q = true;
-                    View view4 = qyVar.fragmentView;
-                    if (view4 != null) {
-                        view4.invalidate();
+                        i12 = i10;
+                        if (tyVar.s == 0) {
+                        }
+                        if (tyVar.s == 0) {
+                        }
+                        boolean z1322 = z10;
+                        o02 = super.o0(i12, eVar, z0Var);
+                        if (o02 == 0) {
+                        }
+                        return o02;
                     }
                 }
+                i11 = 0;
+                if (i11 == 0) {
+                }
+                tyVar.a.setOverScrollMode(0);
+                L0 = tyVar.c.L0();
+                if (L0 == 0) {
+                    L0 = 1;
+                }
+                if (z12) {
+                }
+            }
+            z10 = false;
+            int paddingTop2 = tyVar.a.getPaddingTop();
+            if (z10) {
+            }
+            if (uyVar.R) {
+            }
+            i11 = 0;
+            if (i11 == 0) {
+            }
+            tyVar.a.setOverScrollMode(0);
+            L0 = tyVar.c.L0();
+            if (L0 == 0) {
+            }
+            if (z12) {
             }
         }
-        if (qyVar.fragmentView != null) {
-            qyVar.m3();
-        }
-        kx kxVar = qyVar.F3;
-        if (kxVar != null && kxVar.c() && (myVar = pyVar.a) != null) {
-            myVar.invalidate();
-        }
-        hx hxVar = qyVar.E0;
-        if (hxVar != null && hxVar.getPremiumHint() != null && qyVar.E0.getPremiumHint().V) {
-            qyVar.E0.getPremiumHint().e(true);
-        }
-        ?? Z3 = qyVar.Z3();
-        View childAt2 = pyVar.a.getChildAt(Z3 == true ? 1 : 0);
-        qyVar.e.a(i16 > Z3 || (((float) (childAt2 != null ? childAt2.getTop() : 0)) - qyVar.N) + ((float) AndroidUtilities.dp(5.0f)) < ((float) pyVar.a.getPaddingTop()), true);
-        if (i11 == 0 || (hVar = qyVar.k4) == null || Build.VERSION.SDK_INT < 31) {
+        return 0;
+    }
+
+    @Override // s4.c0, s4.o0
+    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
+        if (this.M.i4() && i10 == 1) {
+            super.v0(recyclerView, z0Var, i10);
             return;
         }
-        hVar.f(i10, i11);
+        ji.o oVar = new ji.o(recyclerView.getContext(), 0);
+        oVar.a = i10;
+        w0(oVar);
     }
 }

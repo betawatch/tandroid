@@ -12,11 +12,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class y4 extends FrameLayout {
-    public final org.telegram.ui.ActionBar.h5 a;
-    public final org.telegram.ui.ActionBar.h5 b;
+    public final org.telegram.ui.ActionBar.i5 a;
+    public final org.telegram.ui.ActionBar.i5 b;
     public final ImageView c;
     public boolean d;
     public int e;
@@ -24,31 +24,31 @@ public class y4 extends FrameLayout {
     public y4(Context context) {
         super(context);
         this.e = 0;
-        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
-        this.a = h5Var;
-        h5Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
-        h5Var.setTextSize(16);
-        h5Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(h5Var);
-        org.telegram.ui.ActionBar.h5 h5Var2 = new org.telegram.ui.ActionBar.h5(context);
-        this.b = h5Var2;
-        h5Var2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.I6, false));
-        h5Var2.setTextSize(16);
-        h5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(h5Var2);
+        org.telegram.ui.ActionBar.i5 i5Var = new org.telegram.ui.ActionBar.i5(context);
+        this.a = i5Var;
+        i5Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false));
+        i5Var.setTextSize(16);
+        i5Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(i5Var);
+        org.telegram.ui.ActionBar.i5 i5Var2 = new org.telegram.ui.ActionBar.i5(context);
+        this.b = i5Var2;
+        i5Var2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.I6, false));
+        i5Var2.setTextSize(16);
+        i5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
+        addView(i5Var2);
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.m6, false), PorterDuff.Mode.MULTIPLY));
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.m6, false), PorterDuff.Mode.MULTIPLY));
         addView(imageView);
     }
 
     public final void a(int i10, int i11) {
-        int w02 = org.telegram.ui.ActionBar.h6.w0(null, i11, false);
-        org.telegram.ui.ActionBar.h5 h5Var = this.a;
-        h5Var.setTextColor(w02);
-        h5Var.setTag(Integer.valueOf(i11));
-        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i10, false), PorterDuff.Mode.MULTIPLY);
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, i11, false);
+        org.telegram.ui.ActionBar.i5 i5Var = this.a;
+        i5Var.setTextColor(w02);
+        i5Var.setTag(Integer.valueOf(i11));
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, i10, false), PorterDuff.Mode.MULTIPLY);
         ImageView imageView = this.c;
         imageView.setColorFilter(porterDuffColorFilter);
         imageView.setTag(Integer.valueOf(i10));
@@ -69,11 +69,11 @@ public class y4 extends FrameLayout {
         return AndroidUtilities.dp(56.0f);
     }
 
-    public org.telegram.ui.ActionBar.h5 getTextView() {
+    public org.telegram.ui.ActionBar.i5 getTextView() {
         return this.a;
     }
 
-    public org.telegram.ui.ActionBar.h5 getValueTextView() {
+    public org.telegram.ui.ActionBar.i5 getValueTextView() {
         return this.b;
     }
 
@@ -82,9 +82,9 @@ public class y4 extends FrameLayout {
         if (this.d) {
             int i10 = this.e;
             if (i10 != 0) {
-                org.telegram.ui.ActionBar.h6.l0.setColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
+                org.telegram.ui.ActionBar.i6.l0.setColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
             }
-            canvas.drawLine(AndroidUtilities.dp(71.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, this.e != 0 ? org.telegram.ui.ActionBar.h6.l0 : org.telegram.ui.ActionBar.h6.k0);
+            canvas.drawLine(AndroidUtilities.dp(71.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, this.e != 0 ? org.telegram.ui.ActionBar.i6.l0 : org.telegram.ui.ActionBar.i6.k0);
         }
     }
 
@@ -92,14 +92,14 @@ public class y4 extends FrameLayout {
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14 = i13 - i11;
         int i15 = i12 - i10;
-        org.telegram.ui.ActionBar.h5 h5Var = this.b;
-        int textHeight = (i14 - h5Var.getTextHeight()) / 2;
+        org.telegram.ui.ActionBar.i5 i5Var = this.b;
+        int textHeight = (i14 - i5Var.getTextHeight()) / 2;
         int dp = LocaleController.isRTL ? AndroidUtilities.dp(24.0f) : 0;
-        h5Var.layout(dp, textHeight, h5Var.getMeasuredWidth() + dp, h5Var.getMeasuredHeight() + textHeight);
-        org.telegram.ui.ActionBar.h5 h5Var2 = this.a;
-        int textHeight2 = (i14 - h5Var2.getTextHeight()) / 2;
+        i5Var.layout(dp, textHeight, i5Var.getMeasuredWidth() + dp, i5Var.getMeasuredHeight() + textHeight);
+        org.telegram.ui.ActionBar.i5 i5Var2 = this.a;
+        int textHeight2 = (i14 - i5Var2.getTextHeight()) / 2;
         int dp2 = !LocaleController.isRTL ? AndroidUtilities.dp(71.0f) : AndroidUtilities.dp(24.0f);
-        h5Var2.layout(dp2, textHeight2, h5Var2.getMeasuredWidth() + dp2, h5Var2.getMeasuredHeight() + textHeight2);
+        i5Var2.layout(dp2, textHeight2, i5Var2.getMeasuredWidth() + dp2, i5Var2.getMeasuredHeight() + textHeight2);
         int dp3 = AndroidUtilities.dp(9.0f);
         boolean z11 = LocaleController.isRTL;
         ImageView imageView = this.c;

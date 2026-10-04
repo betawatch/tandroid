@@ -5,15 +5,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.e60;
+import org.telegram.ui.Components.bp0;
+import org.telegram.ui.Components.f60;
 import org.telegram.ui.Components.hb0;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.xo0;
-import org.telegram.ui.b51;
-import org.telegram.ui.vi0;
-import org.telegram.ui.z41;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.c51;
+import org.telegram.ui.e51;
+import org.telegram.ui.zi0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         ViewGroup viewGroup;
-        z41 z41Var;
+        c51 c51Var;
         switch (this.a) {
             case 0:
                 db dbVar = (db) this.c;
@@ -95,9 +95,9 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 6:
-                e60 e60Var = (e60) this.c;
-                e60Var.z0 = this.b ? 0.0f : ((Float) valueAnimator.getAnimatedValue()).floatValue() * (e60Var.getMeasuredHeight() / 2.0f);
-                e60Var.v();
+                f60 f60Var = (f60) this.c;
+                f60Var.z0 = this.b ? 0.0f : ((Float) valueAnimator.getAnimatedValue()).floatValue() * (f60Var.getMeasuredHeight() / 2.0f);
+                f60Var.v();
                 break;
             case 7:
                 hb0 hb0Var = (hb0) this.c;
@@ -125,33 +125,33 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 9:
-                vi0 vi0Var = (vi0) this.c;
+                zi0 zi0Var = (zi0) this.c;
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vi0Var.E = floatValue4;
-                vi0Var.H.setAlpha(floatValue4);
-                vi0Var.K.setAlpha(vi0Var.E);
-                if (!this.b && (viewGroup = vi0Var.Z) != null) {
-                    viewGroup.setAlpha(vi0Var.E);
+                zi0Var.E = floatValue4;
+                zi0Var.H.setAlpha(floatValue4);
+                zi0Var.K.setAlpha(zi0Var.E);
+                if (!this.b && (viewGroup = zi0Var.Z) != null) {
+                    viewGroup.setAlpha(zi0Var.E);
                 }
-                vi0Var.F.invalidate();
-                vi0Var.G.invalidate();
+                zi0Var.F.invalidate();
+                zi0Var.G.invalidate();
                 break;
             case 10:
-                b51 b51Var = (b51) this.c;
-                b51Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b51Var.b.invalidate();
-                b51Var.c.invalidate();
-                if (b51Var.S) {
-                    b51Var.N.invalidate();
+                e51 e51Var = (e51) this.c;
+                e51Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e51Var.b.invalidate();
+                e51Var.c.invalidate();
+                if (e51Var.S) {
+                    e51Var.N.invalidate();
                 }
-                b51Var.e();
-                TextView textView = b51Var.y;
+                e51Var.e();
+                TextView textView = e51Var.y;
                 if (textView != null) {
-                    textView.setAlpha(b51Var.s);
+                    textView.setAlpha(e51Var.s);
                 }
-                if (!b51Var.S && (z41Var = b51Var.N) != null && z41Var.getSeekBarWaveform() != null) {
-                    xo0 seekBarWaveform = b51Var.N.getSeekBarWaveform();
-                    seekBarWaveform.L = (this.b ? sr.g : sr.i).getInterpolation(Utilities.clamp(b51Var.s * 1.25f, 1.0f, 0.0f));
+                if (!e51Var.S && (c51Var = e51Var.N) != null && c51Var.getSeekBarWaveform() != null) {
+                    bp0 seekBarWaveform = e51Var.N.getSeekBarWaveform();
+                    seekBarWaveform.L = (this.b ? tr.g : tr.i).getInterpolation(Utilities.clamp(e51Var.s * 1.25f, 1.0f, 0.0f));
                     org.telegram.ui.Cells.u1 u1Var2 = seekBarWaveform.n;
                     if (u1Var2 != null) {
                         u1Var2.invalidate();
@@ -160,13 +160,13 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 11:
-                qg.m0 m0Var = (qg.m0) this.c;
+                qg.l0 l0Var = (qg.l0) this.c;
                 float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m0Var.e = floatValue5;
+                l0Var.e = floatValue5;
                 if (!this.b) {
-                    m0Var.c.setAlpha(1.0f - floatValue5);
+                    l0Var.c.setAlpha(1.0f - floatValue5);
                 }
-                m0Var.b.invalidate();
+                l0Var.b.invalidate();
                 break;
             default:
                 zg.b0 b0Var = (zg.b0) this.c;

@@ -2,14 +2,11 @@ package m4;
 
 import java.util.List;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.z1;
-import u2.o1;
-import v7.m8;
+import v7.l8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final /* synthetic */ class o0 implements e2.h, z0, y0, n2.m, d9.e, g2.g, z1 {
+public final /* synthetic */ class o0 implements e2.h, z0, y0, n2.m, d9.e, g2.g {
     public final /* synthetic */ int a;
 
     public /* synthetic */ o0(int i10) {
@@ -19,7 +16,7 @@ public final /* synthetic */ class o0 implements e2.h, z0, y0, n2.m, d9.e, g2.g,
     @Override // m4.y0
     public void a(e1 e1Var, r rVar, List list) {
         switch (this.a) {
-            case 8:
+            case 9:
                 e1Var.v0(list);
                 break;
             default:
@@ -32,44 +29,47 @@ public final /* synthetic */ class o0 implements e2.h, z0, y0, n2.m, d9.e, g2.g,
     public void accept(Object obj) {
         switch (this.a) {
             case 0:
-                ((e1) obj).G0();
+                ((e1) obj).z0();
                 break;
             case 1:
-            case 4:
-            case 7:
+                ((e1) obj).G0();
+                break;
+            case 2:
+            case 5:
             case 8:
-            case 10:
+            case 9:
             case 11:
-            case 13:
-            case 16:
+            case 12:
+            case 14:
+            case 17:
             default:
                 ((n2.k) obj).a();
                 break;
-            case 2:
+            case 3:
                 ((e1) obj).V();
                 break;
-            case 3:
+            case 4:
                 ((e1) obj).F();
                 break;
-            case 5:
+            case 6:
                 ((e1) obj).F0();
                 break;
-            case 6:
+            case 7:
                 ((e1) obj).E0();
                 break;
-            case 9:
+            case 10:
                 ((e1) obj).L();
                 break;
-            case 12:
+            case 13:
                 ((e1) obj).stop();
                 break;
-            case 14:
+            case 15:
                 ((e1) obj).b();
                 break;
-            case 15:
+            case 16:
                 ((e1) obj).H();
                 break;
-            case 17:
+            case 18:
                 ((e1) obj).v();
                 break;
         }
@@ -79,7 +79,7 @@ public final /* synthetic */ class o0 implements e2.h, z0, y0, n2.m, d9.e, g2.g,
     public Object apply(Object obj) {
         o2.q qVar = (o2.q) obj;
         qVar.e();
-        return e9.i0.v(e9.q.w(qVar.Y.b, new o1(0)));
+        return e9.i0.v(e9.q.w(qVar.Y.b, new u2.l0(2)));
     }
 
     @Override // g2.g
@@ -87,41 +87,36 @@ public final /* synthetic */ class o0 implements e2.h, z0, y0, n2.m, d9.e, g2.g,
         return new g2.b(ApplicationLoader.applicationContext);
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(a2 a2Var, int i10) {
-        a2Var.dismiss();
-    }
-
     @Override // m4.z0
     public Object h(a0 a0Var, r rVar, int i10) {
         switch (this.a) {
-            case 1:
+            case 2:
                 return a0Var.n(rVar);
-            case 4:
+            case 5:
                 a0Var.getClass();
                 throw new ClassCastException();
-            case 7:
+            case 8:
                 na.d dVar = a0Var.e;
                 a0Var.s(rVar);
                 dVar.getClass();
-                return m8.b(new k1(-6));
-            case 11:
+                return l8.b(new k1(-6));
+            case 12:
                 a0Var.getClass();
                 throw new ClassCastException();
-            case 13:
+            case 14:
                 a0Var.getClass();
                 throw new ClassCastException();
-            case 16:
+            case 17:
                 a0Var.getClass();
                 throw new ClassCastException();
-            case 18:
+            case 19:
                 a0Var.getClass();
                 throw new ClassCastException();
             default:
                 na.d dVar2 = a0Var.e;
                 a0Var.s(rVar);
                 dVar2.getClass();
-                return m8.b(new k1(-6));
+                return l8.b(new k1(-6));
         }
     }
 
@@ -134,7 +129,7 @@ public final /* synthetic */ class o0 implements e2.h, z0, y0, n2.m, d9.e, g2.g,
     }
 
     public /* synthetic */ o0(String str, int i10, int i11, n nVar) {
-        this.a = 11;
+        this.a = 12;
     }
 
     @Override // n2.m

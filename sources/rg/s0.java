@@ -1,11 +1,37 @@
 package rg;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.ActionBar.f3;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class s0 extends o1 {
-    @Override // rg.o1, rg.l0
-    public final void setOffset(float f7) {
-        setAutoPlayEnabled(f7 == 0.0f);
-        super.setOffset(f7);
+public final class s0 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y0 b;
+
+    public /* synthetic */ s0(y0 y0Var, int i10) {
+        this.a = i10;
+        this.b = y0Var;
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ViewGroup viewGroup;
+        ViewGroup viewGroup2;
+        switch (this.a) {
+            case 0:
+                y0 y0Var = this.b;
+                viewGroup = ((f3) y0Var).containerView;
+                viewGroup.invalidate();
+                y0Var.y();
+                break;
+            default:
+                y0 y0Var2 = this.b;
+                viewGroup2 = ((f3) y0Var2).containerView;
+                viewGroup2.invalidate();
+                y0Var2.y();
+                break;
+        }
     }
 }

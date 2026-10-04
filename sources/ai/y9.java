@@ -24,7 +24,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class y9 {
     public int a;
@@ -213,8 +213,8 @@ public final class y9 {
                         try {
                             Locale locale2 = Locale.US;
                             database2.executeFast("DELETE FROM stories WHERE dialog_id = " + peerDialogId + " AND story_id IN (" + join + ")").stepThis().dispose();
-                        } catch (SQLiteException e) {
-                            FileLog.e(e);
+                        } catch (SQLiteException e7) {
+                            FileLog.e(e7);
                         }
                     }
                     if (peerStories.stories.isEmpty()) {
@@ -363,9 +363,9 @@ public final class y9 {
             for (int i15 = 0; i15 < arrayList3.size(); i15++) {
                 tL_stories_getStoriesByID.id.add(Integer.valueOf(e((MessageObject) arrayList3.get(i15))));
             }
-            StringBuilder u10 = a4.a.u(j10, "fillMessagesWithStories: getStoriesByID did=", " ids=");
-            u10.append(TextUtils.join(",", tL_stories_getStoriesByID.id));
-            int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(tL_stories_getStoriesByID, new x9(y9Var, Timer.start(timer2, u10.toString()), arrayList3, j10, z10, timer2, iArr, runnable));
+            StringBuilder t10 = a4.a.t(j10, "fillMessagesWithStories: getStoriesByID did=", " ids=");
+            t10.append(TextUtils.join(",", tL_stories_getStoriesByID.id));
+            int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(tL_stories_getStoriesByID, new x9(y9Var, Timer.start(timer2, t10.toString()), arrayList3, j10, z10, timer2, iArr, runnable));
             if (i10 != 0) {
                 ConnectionsManager.getInstance(i11).bindRequestToGuid(sendRequest, i10);
             }
@@ -398,8 +398,8 @@ public final class y9 {
             }
             queryFinalized.dispose();
             return storyItem;
-        } catch (SQLiteException e) {
-            FileLog.e(e);
+        } catch (SQLiteException e7) {
+            FileLog.e(e7);
             return storyItem;
         }
     }
@@ -437,8 +437,8 @@ public final class y9 {
                 executeFast.dispose();
                 Locale locale = Locale.US;
                 database.executeFast("REPLACE INTO stories_counter VALUES(" + j3 + ", 0, " + peerStories.max_read_id + ")").stepThis().dispose();
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         }
     }
@@ -467,8 +467,8 @@ public final class y9 {
             executeFast.step();
             nativeByteBuffer.reuse();
             executeFast.dispose();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
@@ -579,8 +579,8 @@ public final class y9 {
             }
             executeFast.step();
             nativeByteBuffer.reuse();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 }

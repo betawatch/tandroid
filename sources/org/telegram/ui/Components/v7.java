@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class v7 extends s4.v {
     public final /* synthetic */ j8 d;
@@ -52,10 +52,10 @@ public final class v7 extends s4.v {
     public final void p(s4.c1 c1Var, int i10) {
         u7 u7Var = this.d.n;
         if (c1Var != null) {
-            u7Var.d1(false);
+            u7Var.e1(false);
         }
         if (i10 != 0) {
-            u7Var.I0(false);
+            u7Var.J0(false);
             if (c1Var != null) {
                 c1Var.a.setPressed(true);
             }

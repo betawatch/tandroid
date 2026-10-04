@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Process;
 import android.os.SystemClock;
 import android.view.Surface;
+import ii.n4;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.MediaController;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class l implements p {
     public long A;
@@ -121,7 +122,7 @@ public final class l implements p {
         this.m = createEncoderByType;
         MediaCodecInfo.VideoCapabilities videoCapabilities = createEncoderByType.getCodecInfo().getCapabilitiesForType(MediaController.VIDEO_MIME_TYPE).getVideoCapabilities();
         if (!videoCapabilities.isSizeSupported(i10, i10) || !videoCapabilities.areSizeAndRateSupported(i10, i10, i11)) {
-            throw new IOException(a4.a.o(i11, " fps", hg.c.k("Video encoder does not support ", i10, "x", i10, " at ")));
+            throw new IOException(a4.a.n(i11, " fps", hg.k0.k("Video encoder does not support ", i10, "x", i10, " at ")));
         }
         this.f.b("video encoder configure: codec=" + this.m.getName() + ", format=" + createVideoFormat);
         this.m.configure(createVideoFormat, (Surface) null, (MediaCrypto) null, 1);
@@ -228,11 +229,11 @@ public final class l implements p {
         }
         arrayList.clear();
         this.X = true;
-        StringBuilder u10 = a4.a.u(j3, "A/V start aligned: videoPtsUs=", ", audioPtsUs=");
-        u10.append(kVar.b.presentationTimeUs);
-        u10.append(", deltaUs=");
-        u10.append(this.Y);
-        this.f.b(u10.toString());
+        StringBuilder t10 = a4.a.t(j3, "A/V start aligned: videoPtsUs=", ", audioPtsUs=");
+        t10.append(kVar.b.presentationTimeUs);
+        t10.append(", deltaUs=");
+        t10.append(this.Y);
+        this.f.b(t10.toString());
     }
 
     public final boolean e() {
@@ -354,8 +355,8 @@ public final class l implements p {
         sb2.append(str);
         this.f.a(sb2.toString(), runtimeException);
         if (this.h.compareAndSet(false, true)) {
-            k2.u uVar = this.g.a;
-            ((s0) uVar.b).i.post(new h0(1, uVar, runtimeException));
+            n4 n4Var = this.g.a;
+            ((s0) n4Var.b).i.post(new h0(1, n4Var, runtimeException));
         }
     }
 
@@ -375,8 +376,8 @@ public final class l implements p {
                             if (audioRecord.getRecordingState() == 3) {
                                 audioRecord.stop();
                             }
-                        } catch (IllegalStateException e) {
-                            this.f.a("AudioRecord stop failed", e);
+                        } catch (IllegalStateException e7) {
+                            this.f.a("AudioRecord stop failed", e7);
                         }
                     }
                     this.f.b("recording stop boundary: presentationTimeUs=" + max);
@@ -452,8 +453,8 @@ public final class l implements p {
                     }
                     this.I = remaining + i10;
                 }
-            } catch (IOException e) {
-                throw new IllegalStateException(e);
+            } catch (IOException e7) {
+                throw new IllegalStateException(e7);
             }
         }
         this.a.k(mediaFormat, z10);
@@ -522,12 +523,12 @@ public final class l implements p {
                                         z10 = (bufferInfo.flags & 4) != 0;
                                         lVar.m.releaseOutputBuffer(dequeueOutputBuffer, false);
                                     }
-                                } catch (RuntimeException e) {
+                                } catch (RuntimeException e7) {
                                     if (lVar.u) {
-                                        lVar.f.a("video drain failed while stopping", e);
+                                        lVar.f.a("video drain failed while stopping", e7);
                                         return;
                                     } else {
-                                        lVar.k(e);
+                                        lVar.k(e7);
                                         return;
                                     }
                                 }
@@ -606,12 +607,12 @@ public final class l implements p {
                                     }
                                     j3 = j11;
                                     j11 = j3;
-                                } catch (RuntimeException e7) {
+                                } catch (RuntimeException e10) {
                                     if (lVar.u) {
-                                        lVar.f.a("audio capture failed while stopping", e7);
+                                        lVar.f.a("audio capture failed while stopping", e10);
                                         return;
                                     } else {
-                                        lVar.k(e7);
+                                        lVar.k(e10);
                                         return;
                                     }
                                 }
@@ -659,12 +660,12 @@ public final class l implements p {
                                         z10 = (bufferInfo.flags & 4) != 0;
                                         lVar.m.releaseOutputBuffer(dequeueOutputBuffer, false);
                                     }
-                                } catch (RuntimeException e) {
+                                } catch (RuntimeException e7) {
                                     if (lVar.u) {
-                                        lVar.f.a("video drain failed while stopping", e);
+                                        lVar.f.a("video drain failed while stopping", e7);
                                         return;
                                     } else {
-                                        lVar.k(e);
+                                        lVar.k(e7);
                                         return;
                                     }
                                 }
@@ -743,12 +744,12 @@ public final class l implements p {
                                     }
                                     j3 = j11;
                                     j11 = j3;
-                                } catch (RuntimeException e7) {
+                                } catch (RuntimeException e10) {
                                     if (lVar.u) {
-                                        lVar.f.a("audio capture failed while stopping", e7);
+                                        lVar.f.a("audio capture failed while stopping", e10);
                                         return;
                                     } else {
-                                        lVar.k(e7);
+                                        lVar.k(e10);
                                         return;
                                     }
                                 }
@@ -759,9 +760,9 @@ public final class l implements p {
             }, "RoundVideoAudioEncoder");
             this.q.start();
             this.r.start();
-        } catch (RuntimeException e) {
+        } catch (RuntimeException e7) {
             j();
-            throw e;
+            throw e7;
         }
     }
 
@@ -777,8 +778,8 @@ public final class l implements p {
                     this.v = true;
                     try {
                         this.m.signalEndOfInputStream();
-                    } catch (IllegalStateException e) {
-                        this.f.a("video encoder EOS failed", e);
+                    } catch (IllegalStateException e7) {
+                        this.f.a("video encoder EOS failed", e7);
                     }
                     f(this.q);
                     f(this.r);
@@ -860,8 +861,8 @@ public final class l implements p {
                     bufferInfo.offset += i11;
                     bufferInfo.size = i10 - i11;
                 }
-            } catch (IOException e) {
-                throw new IllegalStateException(e);
+            } catch (IOException e7) {
+                throw new IllegalStateException(e7);
             }
         }
         this.a.m(z10, byteBuffer, bufferInfo, this.b);

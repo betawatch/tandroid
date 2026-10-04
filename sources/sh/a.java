@@ -11,18 +11,17 @@ import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import le.e;
-import le.f;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.tr;
 import yf.p;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class a extends c implements e {
-    public final le.c d;
+public final class a extends c implements le.d {
+    public final le.b d;
     public final int[] e;
     public final Drawable f;
     public final TextPaint h;
@@ -32,24 +31,17 @@ public final class a extends c implements e {
 
     public a(Context context, d6 d6Var) {
         super(d6Var);
-        this.d = new le.c(0, this, sr.h, 320L, false);
+        this.d = new le.b(0, this, tr.h, 320L, false);
         this.e = new int[]{R.attr.state_enabled, R.attr.state_pressed};
         this.f = context.getResources().getDrawable(org.telegram.messenger.R.drawable.outline_poll_add_24).mutate();
-        this.h = new TextPaint(h6.P2);
-        int v02 = h6.v0(h6.i6, d6Var);
+        this.h = new TextPaint(i6.P2);
+        int v02 = i6.v0(i6.i6, d6Var);
         if (this.b != v02) {
-            h6.B1(this.a, v02, false);
+            i6.B1(this.a, v02, false);
             this.b = v02;
         }
         b();
         c();
-    }
-
-    @Override // le.e
-    public final void D(int i10, float f7, float f10, f fVar) {
-        b();
-        c();
-        invalidateSelf();
     }
 
     @Override // sh.c
@@ -57,6 +49,13 @@ public final class a extends c implements e {
         this.a.setAlpha(i10);
         b();
         c();
+    }
+
+    @Override // le.d
+    public final void a0(int i10, float f7, float f10, e eVar) {
+        b();
+        c();
+        invalidateSelf();
     }
 
     public final void b() {
@@ -108,7 +107,7 @@ public final class a extends c implements e {
         }
     }
 
-    @Override // le.e
-    public final /* synthetic */ void C(float f7, int i10) {
+    @Override // le.d
+    public final /* synthetic */ void V(float f7, int i10) {
     }
 }

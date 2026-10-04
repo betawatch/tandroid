@@ -1,30 +1,27 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bg0 implements View.OnClickListener {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ eg0 b;
+public final /* synthetic */ class bg0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t3 b;
 
-    public /* synthetic */ bg0(eg0 eg0Var) {
-        this.b = eg0Var;
+    public /* synthetic */ bg0(t3 t3Var, int i10) {
+        this.a = i10;
+        this.b = t3Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.a();
+                this.b.run("CANCELLED");
                 break;
             default:
-                this.b.a();
+                AndroidUtilities.runOnUIThread(new bg0(this.b, 0));
                 break;
         }
-    }
-
-    public /* synthetic */ bg0(eg0 eg0Var, og0 og0Var) {
-        this.b = eg0Var;
     }
 }

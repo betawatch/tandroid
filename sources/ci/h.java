@@ -10,7 +10,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class h implements TextWatcher {
     public int a;
@@ -78,16 +78,16 @@ public final class h implements TextWatcher {
         if (mVar.M == null) {
             i iVar = new i(mVar, mVar.getContext(), mVar.x, LaunchActivity.R(), new ai.d(), 0);
             mVar.M = iVar;
-            mVar.T = new org.telegram.ui.Components.na(mVar.O, iVar, 0, false);
+            mVar.T = new org.telegram.ui.Components.oa(mVar.O, iVar, 0, false);
             mVar.M.p(new a6.i(mVar, 11));
             ah.c cVar = mVar.h0;
             if (cVar != null) {
                 i iVar2 = mVar.M;
                 ch.d c10 = cVar.c(iVar2, null, false);
-                c10.o(eh.b.i(mVar.a));
+                c10.x(eh.b.i(mVar.a));
                 iVar2.setBackgroundDrawable(c10);
             }
-            mVar.b.addView(mVar.M, w7.y5.e(-1, -1, 83));
+            mVar.b.addView(mVar.M, w7.z5.e(-1, -1, 83));
             mVar.w();
         }
         if (mVar.M.getAdapter() != null) {

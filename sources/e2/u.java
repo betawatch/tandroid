@@ -1,13 +1,13 @@
 package e2;
 
 import android.content.Context;
-import ci.rc;
-import ci.y8;
+import ci.qc;
+import ci.x8;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class u {
     public static u f;
@@ -67,7 +67,7 @@ public final class u {
                 Iterator it2 = ((CopyOnWriteArrayList) this.d).iterator();
                 while (it2.hasNext()) {
                     t tVar2 = (t) it2.next();
-                    tVar2.b.execute(new rc(tVar2, 5));
+                    tVar2.b.execute(new qc(tVar2, 5));
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -81,6 +81,6 @@ public final class u {
         this.d = new CopyOnWriteArrayList();
         this.e = new Object();
         this.b = 0;
-        g10.execute(new y8(12, this, context));
+        g10.execute(new x8(12, this, context));
     }
 }

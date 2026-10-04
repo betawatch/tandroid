@@ -1,32 +1,34 @@
 package ci;
 
-import android.content.DialogInterface;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class wa implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class wa implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ lc b;
+    public final /* synthetic */ Utilities.Callback b;
 
-    public /* synthetic */ wa(lc lcVar, int i10) {
+    public /* synthetic */ wa(int i10, Utilities.Callback callback) {
         this.a = i10;
-        this.b = lcVar;
+        this.b = callback;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lc lcVar = this.b;
-                lcVar.X0.x(3, false);
-                lcVar.q0 = null;
+                this.b.run(LaunchActivity.U());
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new wa(3, this.b));
+                break;
+            case 2:
+                this.b.run(null);
                 break;
             default:
-                zb zbVar = this.b.X0;
-                if (zbVar != null) {
-                    zbVar.x(4, false);
-                    break;
-                }
+                this.b.run(null);
                 break;
         }
     }

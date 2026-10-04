@@ -1,31 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class at0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ eu0 b;
-    public final /* synthetic */ lv0 c;
+public final class at0 extends org.telegram.ui.Cells.j7 {
+    public final /* synthetic */ pv0 l0;
 
-    public /* synthetic */ at0(lv0 lv0Var, eu0 eu0Var, int i10) {
-        this.a = i10;
-        this.c = lv0Var;
-        this.b = eu0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public at0(pv0 pv0Var, Context context) {
+        super(context);
+        this.l0 = pv0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                this.b.h.invalidate();
-                break;
-            default:
-                this.c.n1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                this.b.h.invalidate();
-                break;
+    @Override // org.telegram.ui.Cells.j7
+    public final boolean d(MessageObject messageObject) {
+        boolean isVoice = messageObject.isVoice();
+        pv0 pv0Var = this.l0;
+        if (isVoice || messageObject.isRoundVideo()) {
+            boolean playMessage = MediaController.getInstance().playMessage(messageObject);
+            MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? pv0Var.t1[4].a : null, false);
+            return playMessage;
         }
+        if (messageObject.isMusic()) {
+            return MediaController.getInstance().setPlaylist(pv0Var.t1[4].a, messageObject, pv0Var.c1);
+        }
+        return false;
     }
 }

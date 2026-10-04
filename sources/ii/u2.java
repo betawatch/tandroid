@@ -5,9 +5,9 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u2 implements m5, g1 {
+public final /* synthetic */ class u2 implements n5, g1 {
     public final /* synthetic */ x3 a;
 
     public /* synthetic */ u2(x3 x3Var) {
@@ -16,7 +16,7 @@ public final /* synthetic */ class u2 implements m5, g1 {
 
     public void a(i1 i1Var, l4 l4Var, boolean z10) {
         x3 x3Var = this.a;
-        v3 v3Var = x3Var.h3;
+        v3 v3Var = x3Var.o3;
         Editable text = i1Var.getText();
         int spanStart = text == null ? -1 : text.getSpanStart(l4Var);
         int spanEnd = text == null ? -1 : text.getSpanEnd(l4Var);
@@ -24,15 +24,15 @@ public final /* synthetic */ class u2 implements m5, g1 {
             return;
         }
         if (z10) {
-            x3Var.o3(false);
-            v3Var.d(new w3(x3Var, i1Var, spanStart, spanEnd, l4Var), i1Var);
+            x3Var.q3(false);
+            v3Var.e(new w3(x3Var, i1Var, spanStart, spanEnd, l4Var), i1Var);
             return;
         }
         TL_iv.textButton textbutton = l4Var.a;
         if (textbutton == null) {
             return;
         }
-        i2 i2Var = x3Var.J3;
+        i2 i2Var = x3Var.Q3;
         if (i2Var != null) {
             i2Var.d();
         }
@@ -58,7 +58,7 @@ public final /* synthetic */ class u2 implements m5, g1 {
         }
         text2.removeSpan(l4Var);
         l4 l4Var2 = new l4(textbutton);
-        l4Var2.a(x3Var.f3, i1Var, x3Var.g3);
+        l4Var2.a(x3Var.m3, i1Var, x3Var.n3);
         text2.setSpan(l4Var2, spanStart, spanEnd, 33);
         i1Var.notifySpansChanged();
         i1Var.requestLayout();

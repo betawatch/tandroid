@@ -1,77 +1,16 @@
 package org.telegram.ui;
 
-import android.view.Window;
-import java.lang.ref.WeakReference;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class eb0 implements yf.j0 {
-    public final /* synthetic */ int a = 0;
-    public boolean b;
-    public boolean c;
-    public final Object d;
-
-    public eb0(yf.k0 k0Var) {
-        this.d = k0Var;
+public final class eb0 extends org.telegram.ui.Components.u00 {
+    @Override // org.telegram.ui.Components.u00
+    public final void b() {
+        setVisibility(8);
     }
 
-    @Override // yf.j0
-    public final void a(boolean z10) {
-        switch (this.a) {
-            case 0:
-                if (this.b != z10 && !this.c) {
-                    this.b = z10;
-                    LaunchActivity launchActivity = (LaunchActivity) ((WeakReference) this.d).get();
-                    if (launchActivity != null) {
-                        int i10 = launchActivity.A1 + (z10 ? 1 : -1);
-                        launchActivity.A1 = i10;
-                        k0 k0Var = launchActivity.w0;
-                        if (k0Var != null) {
-                            k0Var.setVisibility(i10 > 0 ? 8 : 0);
-                        }
-                        launchActivity.getWindow();
-                        break;
-                    }
-                }
-                break;
-            default:
-                yf.k0 k0Var2 = (yf.k0) this.d;
-                if (this.b != z10 && !this.c) {
-                    this.b = z10;
-                    if (z10) {
-                        k0Var2.a++;
-                    } else {
-                        k0Var2.a--;
-                    }
-                    boolean z11 = k0Var2.a > 0;
-                    if (k0Var2.b != z11) {
-                        k0Var2.b = z11;
-                        Window window = (Window) ((WeakReference) k0Var2.c.b).get();
-                        if (window != null) {
-                            window.getDecorView().setVisibility(z11 ? 8 : 0);
-                            break;
-                        }
-                    }
-                }
-                break;
-        }
-    }
-
-    @Override // yf.j0
-    public final void destroy() {
-        switch (this.a) {
-            case 0:
-                a(false);
-                this.c = true;
-                break;
-            default:
-                a(false);
-                this.c = true;
-                break;
-        }
-    }
-
-    public eb0(LaunchActivity launchActivity, boolean z10) {
-        this.d = new WeakReference(launchActivity);
+    @Override // org.telegram.ui.Components.u00
+    public final void c(boolean z10) {
+        setVisibility(0);
+        super.c(z10);
     }
 }

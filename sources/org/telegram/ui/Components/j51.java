@@ -1,51 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.ScrollView;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class j51 extends yl0 {
-    public final /* synthetic */ q51 X2;
-    public final /* synthetic */ t51 Y2;
+public final class j51 extends ScrollView {
+    public Drawable a;
+    public e6 b;
+    public boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j51(t51 t51Var, Context context, q51 q51Var) {
-        super(context, null);
-        this.Y2 = t51Var;
-        this.X2 = q51Var;
-    }
-
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean E0(float f7) {
-        return f7 >= ((float) (AndroidUtilities.dp(58.0f) + this.Y2.E));
-    }
-
-    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        this.Y2.F = true;
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return super.onInterceptTouchEvent(motionEvent) || this.X2.d(this, motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.Y2.L != null) {
-            return false;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float d = this.b.d(canScrollVertically(-1) ? 1.0f : 0.0f, false) * 0.5f;
+        if (d > 0.0f) {
+            if (this.a == null) {
+                this.a = getContext().getResources().getDrawable(R.drawable.header_shadow);
+            }
+            this.a.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
+            this.a.setAlpha((int) (d * 255.0f));
+            this.a.draw(canvas);
         }
-        return super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.Y2.H) {
-            return;
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final void onNestedScroll(View view, int i10, int i11, int i12, int i13) {
+        super.onNestedScroll(view, i10, i11, i12, i13);
+        boolean canScrollVertically = canScrollVertically(-1);
+        if (this.c != canScrollVertically) {
+            invalidate();
+            this.c = canScrollVertically;
         }
-        super.requestLayout();
     }
 }

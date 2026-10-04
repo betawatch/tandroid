@@ -1,39 +1,95 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bd implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ld b;
+public final class bd implements org.telegram.ui.ActionBar.d6 {
+    public final /* synthetic */ cd a;
 
-    public /* synthetic */ bd(ld ldVar, int i10) {
-        this.a = i10;
-        this.b = ldVar;
+    public bd(cd cdVar) {
+        this.a = cdVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(23, this.b, tLObject));
-                break;
-            case 1:
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    AndroidUtilities.runOnUIThread(new cd(this.b, 3));
-                    break;
-                }
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(21, this.b, tL_error));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new r1(this.b, tL_error, tLObject, 11));
-                break;
+    @Override // org.telegram.ui.ActionBar.d6
+    public final Paint H(String str) {
+        return str.equals("paintDivider") ? this.a.y0 : org.telegram.ui.ActionBar.i6.S0(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final int H0(int i10) {
+        cd cdVar = this.a;
+        int indexOfKey = cdVar.r0.indexOfKey(i10);
+        if (indexOfKey >= 0) {
+            return cdVar.r0.valueAt(indexOfKey);
         }
+        org.telegram.ui.ActionBar.d6 d6Var = cdVar.q0;
+        return d6Var != null ? d6Var.H0(i10) : org.telegram.ui.ActionBar.i6.w0(null, i10, false);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final boolean a() {
+        return this.a.J;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final Drawable getDrawable(String str) {
+        cd cdVar = this.a;
+        Drawable drawable = cdVar.x0;
+        Drawable drawable2 = cdVar.w0;
+        if (str.equals("drawableMsgIn")) {
+            return cdVar.s0;
+        }
+        if (str.equals("drawableMsgInSelected")) {
+            return cdVar.t0;
+        }
+        if (str.equals("drawableMsgOut")) {
+            return cdVar.u0;
+        }
+        if (str.equals("drawableMsgOutSelected")) {
+            return cdVar.v0;
+        }
+        if (str.equals("drawableMsgOutCheckRead")) {
+            drawable2.setColorFilter(H0(org.telegram.ui.ActionBar.i6.La), PorterDuff.Mode.MULTIPLY);
+            return drawable2;
+        }
+        if (str.equals("drawableMsgOutHalfCheck")) {
+            drawable.setColorFilter(H0(org.telegram.ui.ActionBar.i6.La), PorterDuff.Mode.MULTIPLY);
+            return drawable;
+        }
+        org.telegram.ui.ActionBar.d6 d6Var = cdVar.q0;
+        return d6Var != null ? d6Var.getDrawable(str) : org.telegram.ui.ActionBar.i6.O0(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final int j0(int i10) {
+        return H0(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final int j1(int i10) {
+        return H0(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final void m(float f7, float f10, int i10, int i11) {
+        org.telegram.ui.ActionBar.i6.q(f7, f10, i10, i11);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final /* synthetic */ boolean r0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final ColorFilter x() {
+        return org.telegram.ui.ActionBar.i6.v3;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final /* synthetic */ void L0(int i10, int i11) {
     }
 }

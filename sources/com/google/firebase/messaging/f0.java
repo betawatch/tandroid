@@ -6,13 +6,13 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.util.Log;
-import ci.rc;
+import ci.qc;
 import com.google.android.gms.tasks.Task;
 import java.util.ArrayDeque;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f0 implements ServiceConnection {
     public final Context a;
@@ -64,7 +64,7 @@ public final class f0 implements ServiceConnection {
             }
             e0Var = new e0(intent);
             ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = this.c;
-            e0Var.b.getTask().addOnCompleteListener(scheduledThreadPoolExecutor, new a1.c(scheduledThreadPoolExecutor.schedule(new rc(e0Var, 3), 20L, TimeUnit.SECONDS), 25));
+            e0Var.b.getTask().addOnCompleteListener(scheduledThreadPoolExecutor, new a1.c(scheduledThreadPoolExecutor.schedule(new qc(e0Var, 3), 20L, TimeUnit.SECONDS), 25));
             this.d.add(e0Var);
             a();
         } catch (Throwable th2) {
@@ -97,8 +97,8 @@ public final class f0 implements ServiceConnection {
             context = this.a;
             f0Var = this;
             try {
-            } catch (SecurityException e) {
-                e = e;
+            } catch (SecurityException e7) {
+                e = e7;
                 Log.e("FirebaseMessaging", "Exception while binding the service", e);
                 f0Var.f = false;
                 while (true) {
@@ -108,8 +108,8 @@ public final class f0 implements ServiceConnection {
                     ((e0) arrayDeque.poll()).b.trySetResult(null);
                 }
             }
-        } catch (SecurityException e7) {
-            e = e7;
+        } catch (SecurityException e10) {
+            e = e10;
             f0Var = this;
         }
         if (a2.c(context, context.getClass().getName(), this.b, f0Var, 65, null)) {

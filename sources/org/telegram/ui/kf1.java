@@ -1,62 +1,37 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class kf1 extends View {
-    public final HashMap a;
+public final /* synthetic */ class kf1 implements Runnable {
+    public final /* synthetic */ int a;
     public final /* synthetic */ lf1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kf1(lf1 lf1Var, Activity activity) {
-        super(activity);
+    public /* synthetic */ kf1(lf1 lf1Var, int i10) {
+        this.a = i10;
         this.b = lf1Var;
-        this.a = new HashMap();
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12;
-        int dp;
-        lf1 lf1Var = this.b;
-        wf1 wf1Var = lf1Var.d;
-        int size = View.MeasureSpec.getSize(i10);
-        int dp2 = AndroidUtilities.dp(64.0f);
-        int i13 = 0;
-        int i14 = 0;
-        for (int i15 = 0; i15 < lf1Var.F().size(); i15++) {
-            if (lf1Var.F().get(i15) != null && ((nf1) lf1Var.F().get(i15)).c != null) {
-                String str = ((nf1) lf1Var.F().get(i15)).c.title;
-                HashMap hashMap = this.a;
-                Boolean bool = (Boolean) hashMap.get(str);
-                if (bool == null) {
-                    int dp3 = AndroidUtilities.dp(LocaleController.isRTL ? 18.0f : (wf1Var.isInPreviewMode() ? 11 : 50) + 4);
-                    if (LocaleController.isRTL) {
-                        i12 = size - dp3;
-                        dp = AndroidUtilities.dp((wf1Var.isInPreviewMode() ? 11 : 50) + 13);
-                    } else {
-                        i12 = size - dp3;
-                        dp = AndroidUtilities.dp(22.0f);
-                    }
-                    bool = Boolean.valueOf(org.telegram.ui.ActionBar.h6.B0[0].measureText(str) <= ((float) ((i12 - dp) - ((int) Math.ceil((double) org.telegram.ui.ActionBar.h6.I0.measureText("00:00"))))));
-                    hashMap.put(str, bool);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                lf1 lf1Var = this.b;
+                lf1Var.F = null;
+                if (lf1Var.G != -1) {
+                    lf1Var.H.getNotificationCenter().onAnimationFinish(lf1Var.G);
+                    lf1Var.G = -1;
+                    break;
                 }
-                int dp4 = AndroidUtilities.dp((!bool.booleanValue() ? 20 : 0) + 64);
-                if (((nf1) lf1Var.F().get(i15)).c.id == 1) {
-                    dp2 = dp4;
+                break;
+            default:
+                lf1 lf1Var2 = this.b;
+                lf1Var2.F = null;
+                if (lf1Var2.G != -1) {
+                    lf1Var2.H.getNotificationCenter().onAnimationFinish(lf1Var2.G);
+                    lf1Var2.G = -1;
+                    break;
                 }
-                if (((nf1) lf1Var.F().get(i15)).c.hidden) {
-                    i13++;
-                }
-                i14 += dp4;
-            }
+                break;
         }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(0, i13 > 0 ? (((wf1Var.N.getMeasuredHeight() - wf1Var.N.getPaddingTop()) - wf1Var.N.getPaddingBottom()) - i14) + dp2 : 0), TLObject.FLAG_30));
     }
 }

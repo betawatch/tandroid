@@ -1,28 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import android.location.Location;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class al extends s4.d0 {
-    public final /* synthetic */ hg.g0 r;
+public final /* synthetic */ class al implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jl b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public al(hg.g0 g0Var, Context context) {
-        super(context);
-        this.r = g0Var;
+    public /* synthetic */ al(jl jlVar, int i10) {
+        this.a = i10;
+        this.b = jlVar;
     }
 
-    @Override // s4.d0
-    public final int k(int i10, View view) {
-        int k10 = super.k(i10, view);
-        il ilVar = (il) this.r.V;
-        return k10 - (ilVar.P.getPaddingTop() - (ilVar.A0 - ilVar.z0));
-    }
-
-    @Override // s4.d0
-    public final int m(int i10) {
-        return super.m(i10) * 4;
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                jl.I(this.b, (IMapsProvider.IMap) obj);
+                break;
+            default:
+                jl.P(this.b, (Location) obj);
+                break;
+        }
     }
 }

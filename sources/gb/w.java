@@ -4,9 +4,9 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.HashMap;
-import v7.n8;
+import v7.m8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class w extends t {
     public static final HashMap e;
@@ -30,11 +30,11 @@ public final class w extends t {
     public w(Class cls, v vVar) {
         super(vVar);
         this.d = new HashMap();
-        n8 n8Var = ib.c.a;
-        Constructor b10 = n8Var.b(cls);
+        m8 m8Var = ib.c.a;
+        Constructor b10 = m8Var.b(cls);
         this.b = b10;
         ib.c.f(b10);
-        String[] c10 = n8Var.c(cls);
+        String[] c10 = m8Var.c(cls);
         for (int i10 = 0; i10 < c10.length; i10++) {
             this.d.put(c10[i10], Integer.valueOf(i10));
         }
@@ -57,7 +57,7 @@ public final class w extends t {
         try {
             return constructor.newInstance(objArr);
         } catch (IllegalAccessException e7) {
-            n8 n8Var = ib.c.a;
+            m8 m8Var = ib.c.a;
             throw new RuntimeException("Unexpected IllegalAccessException occurred (Gson 2.11.0). Certain ReflectionAccessFilter features require Java >= 9 to work correctly. If you are not using ReflectionAccessFilter, report this to the Gson maintainers.", e7);
         } catch (IllegalArgumentException e10) {
             e = e10;
@@ -83,9 +83,9 @@ public final class w extends t {
         if (read != null || !sVar.g) {
             objArr[intValue] = read;
         } else {
-            StringBuilder w10 = a4.a.w("null is not allowed as value for record component '", str, "' of primitive type; at path ");
-            w10.append(aVar.h());
-            throw new androidx.car.app.j(w10.toString());
+            StringBuilder v = a4.a.v("null is not allowed as value for record component '", str, "' of primitive type; at path ");
+            v.append(aVar.h());
+            throw new androidx.car.app.j(v.toString());
         }
     }
 }

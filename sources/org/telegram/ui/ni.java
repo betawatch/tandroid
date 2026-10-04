@@ -1,85 +1,24 @@
 package org.telegram.ui;
 
-import android.util.SparseArray;
-import android.view.View;
+import android.app.Activity;
 import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ni {
-    public boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ SparseArray c;
-    public final /* synthetic */ wn d;
+public final class ni extends org.telegram.ui.Components.wv {
+    public final /* synthetic */ yn W;
 
-    public ni(wn wnVar, boolean z10, SparseArray sparseArray) {
-        this.d = wnVar;
-        this.b = z10;
-        this.c = sparseArray;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ni(yn ynVar, org.telegram.ui.ActionBar.n2 n2Var, Activity activity, org.telegram.ui.ActionBar.d6 d6Var, ArrayList arrayList) {
+        super(n2Var, activity, d6Var, arrayList);
+        this.W = ynVar;
     }
 
-    public final boolean a(int i10) {
-        wn wnVar = this.d;
-        int i11 = i10 - wnVar.A0.J;
-        if (i11 < 0 || i11 >= wnVar.u6.size()) {
-            return false;
-        }
-        MessageObject messageObject = (MessageObject) wnVar.u6.get(i11);
-        if (messageObject.contentType != 0) {
-            return false;
-        }
-        SparseArray sparseArray = this.c;
-        boolean z10 = this.b;
-        if (z10 || sparseArray.get(messageObject.getId(), null) != null) {
-            return z10 && sparseArray.get(messageObject.getId(), null) != null;
-        }
-        return true;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i10, boolean z10, float f7, float f10) {
-        s4.c1 K;
-        wn wnVar = this.d;
-        ArrayList arrayList = wnVar.u6;
-        SparseArray[] sparseArrayArr = wnVar.W5;
-        int i11 = i10 - wnVar.A0.J;
-        if (this.b) {
-            z10 = !z10;
-        }
-        if (i11 < 0 || i11 >= arrayList.size()) {
-            return;
-        }
-        MessageObject messageObject = (MessageObject) arrayList.get(i11);
-        if (!z10 || (sparseArrayArr[0].indexOfKey(messageObject.getId()) < 0 && sparseArrayArr[1].indexOfKey(messageObject.getId()) < 0)) {
-            if ((z10 || sparseArrayArr[0].indexOfKey(messageObject.getId()) >= 0 || sparseArrayArr[1].indexOfKey(messageObject.getId()) >= 0) && messageObject.contentType == 0) {
-                if (z10) {
-                    if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
-                        this.a = true;
-                        K = wnVar.x0.K(i10);
-                        if (K != null) {
-                            View view = K.a;
-                            if (view instanceof org.telegram.ui.Cells.u1) {
-                                wn.b2(wnVar, view, false, f7, f10);
-                                return;
-                            }
-                        }
-                        wnVar.x6(messageObject, false, true);
-                        wnVar.dc();
-                        wnVar.Wc(false);
-                    }
-                }
-                this.a = false;
-                K = wnVar.x0.K(i10);
-                if (K != null) {
-                }
-                wnVar.x6(messageObject, false, true);
-                wnVar.dc();
-                wnVar.Wc(false);
-            }
-        }
+    @Override // org.telegram.ui.Components.wv, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        yn ynVar = this.W;
+        ynVar.getClass();
+        ynVar.g8(false, true, 0.0f);
     }
 }

@@ -1,36 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class se implements d5, ol0 {
-    public final /* synthetic */ ChatActivityEnterView a;
+public final class se implements d5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ se(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+    public /* synthetic */ se(ChatActivityEnterView chatActivityEnterView, int i10) {
+        this.a = i10;
+        this.b = chatActivityEnterView;
     }
 
     @Override // org.telegram.ui.Components.d5
-    public void J(int i10, int i11, boolean z10) {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        boolean T0 = chatActivityEnterView.T0(i10, z10, i11, true, 0L);
-        nf nfVar = chatActivityEnterView.L0;
-        if (nfVar != null) {
-            nfVar.h(!T0);
-            chatActivityEnterView.L0 = null;
+    public final void K(int i10, int i11, boolean z10) {
+        switch (this.a) {
+            case 0:
+                this.b.T0(i10, z10, i11, true, 0L);
+                break;
+            default:
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                chatActivityEnterView.T0(i10, z10, i11, true, 0L);
+                of ofVar = chatActivityEnterView.L0;
+                if (ofVar != null) {
+                    ofVar.i();
+                    chatActivityEnterView.L0 = null;
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.ol0
-    public boolean d(int i10, View view) {
-        if (!(view instanceof ei.a0)) {
-            return false;
-        }
-        String str = ((ei.a0) view).getCommand() + " ";
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.setFieldText(str);
-        chatActivityEnterView.m0.c();
-        return true;
     }
 }

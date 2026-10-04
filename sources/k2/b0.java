@@ -1,31 +1,41 @@
 package k2;
 
-import android.os.Handler;
-import java.util.concurrent.Executor;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b0 implements Executor {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class b0 {
+    public Exception a;
+    public long b = -9223372036854775807L;
+    public long c = -9223372036854775807L;
 
-    public /* synthetic */ b0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((Handler) this.b).post(runnable);
-                break;
-            case 1:
-                e2.d0.U(((m4.a0) this.b).l, runnable);
-                break;
-            default:
-                ((p4.b) this.b).post(runnable);
-                break;
+    public final void a(Exception exc) {
+        boolean z10;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (this.a == null) {
+            this.a = exc;
         }
+        if (this.b == -9223372036854775807L) {
+            synchronized (f0.o0) {
+                z10 = f0.q0 > 0;
+            }
+            if (!z10) {
+                this.b = 200 + elapsedRealtime;
+            }
+        }
+        long j3 = this.b;
+        if (j3 == -9223372036854775807L || elapsedRealtime < j3) {
+            this.c = elapsedRealtime + 50;
+            return;
+        }
+        Exception exc2 = this.a;
+        if (exc2 != exc) {
+            exc2.addSuppressed(exc);
+        }
+        Exception exc3 = this.a;
+        this.a = null;
+        this.b = -9223372036854775807L;
+        this.c = -9223372036854775807L;
+        throw exc3;
     }
 }

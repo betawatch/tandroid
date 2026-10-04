@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class cj0 extends Drawable {
     public final View a;
@@ -29,7 +29,7 @@ public final class cj0 extends Drawable {
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
         paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
-        this.f = new e6(view, 0L, 350L, sr.h);
+        this.f = new e6(view, 0L, 350L, tr.h);
         float dpf2 = AndroidUtilities.dpf2(4.66f);
         float dpf22 = AndroidUtilities.dpf2(2.16f);
         path.rewind();
@@ -46,14 +46,14 @@ public final class cj0 extends Drawable {
     public final void draw(Canvas canvas) {
         int centerX = getBounds().centerX();
         int centerY = getBounds().centerY();
-        float e = this.f.e(this.e);
+        float e7 = this.f.e(this.e);
         float dpf2 = AndroidUtilities.dpf2(2.51f);
         canvas.save();
         canvas.translate(centerX, centerY);
         canvas.save();
         canvas.translate(dpf2, dpf2);
         canvas.rotate(45.0f);
-        canvas.scale(AndroidUtilities.lerp(-1.0f, 1.0f, e), 1.0f);
+        canvas.scale(AndroidUtilities.lerp(-1.0f, 1.0f, e7), 1.0f);
         Path path = this.c;
         Paint paint = this.b;
         canvas.drawPath(path, paint);
@@ -62,7 +62,7 @@ public final class cj0 extends Drawable {
         float f7 = -dpf2;
         canvas.translate(f7, f7);
         canvas.rotate(225.0f);
-        canvas.scale(AndroidUtilities.lerp(-1.0f, 1.0f, e), 1.0f);
+        canvas.scale(AndroidUtilities.lerp(-1.0f, 1.0f, e7), 1.0f);
         canvas.drawPath(path, paint);
         canvas.restore();
         canvas.restore();

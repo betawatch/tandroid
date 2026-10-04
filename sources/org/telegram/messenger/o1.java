@@ -2,9 +2,9 @@ package org.telegram.messenger;
 
 import android.app.Activity;
 import java.util.HashMap;
-import org.telegram.ui.qy;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -29,13 +29,13 @@ public final /* synthetic */ class o1 implements Runnable {
                 ((ContactsController) this.e).lambda$syncPhoneBookByAlert$7((HashMap) this.f, this.b, this.c, this.d);
                 break;
             default:
-                qy.h0((qy) this.e, this.b, this.c, this.d, (Activity) this.f);
+                uy.h0((uy) this.e, this.b, this.c, this.d, (Activity) this.f);
                 break;
         }
     }
 
-    public /* synthetic */ o1(qy qyVar, boolean z10, boolean z11, boolean z12, Activity activity) {
-        this.e = qyVar;
+    public /* synthetic */ o1(uy uyVar, boolean z10, boolean z11, boolean z12, Activity activity) {
+        this.e = uyVar;
         this.b = z10;
         this.c = z11;
         this.d = z12;

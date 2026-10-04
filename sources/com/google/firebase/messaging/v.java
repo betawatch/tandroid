@@ -9,7 +9,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class v implements Runnable {
     public final /* synthetic */ int a;
@@ -45,16 +45,16 @@ public final class v implements Runnable {
             }
             Log.d("FirebaseMessaging", "Token successfully retrieved");
             return true;
-        } catch (IOException e) {
-            String message = e.getMessage();
+        } catch (IOException e7) {
+            String message = e7.getMessage();
             if (!"SERVICE_NOT_AVAILABLE".equals(message) && !"INTERNAL_SERVER_ERROR".equals(message) && !"InternalServerError".equals(message)) {
-                if (e.getMessage() != null) {
-                    throw e;
+                if (e7.getMessage() != null) {
+                    throw e7;
                 }
                 Log.w("FirebaseMessaging", "Token retrieval failed without exception message. Will retry token retrieval");
                 return false;
             }
-            Log.w("FirebaseMessaging", "Token retrieval failed: " + e.getMessage() + ". Will retry token retrieval");
+            Log.w("FirebaseMessaging", "Token retrieval failed: " + e7.getMessage() + ". Will retry token retrieval");
             return false;
         } catch (SecurityException unused) {
             Log.w("FirebaseMessaging", "Token retrieval failed with SecurityException. Will retry token retrieval");
@@ -67,7 +67,7 @@ public final class v implements Runnable {
         switch (this.a) {
             case 0:
                 PowerManager.WakeLock wakeLock = (PowerManager.WakeLock) this.c;
-                t c10 = t.c();
+                s c10 = s.c();
                 FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.d;
                 if (c10.e(firebaseMessaging.b)) {
                     wakeLock.acquire();
@@ -79,69 +79,69 @@ public final class v implements Runnable {
                         }
                         if (!firebaseMessaging.i.e()) {
                             firebaseMessaging.e(false);
-                            if (!t.c().e(firebaseMessaging.b)) {
+                            if (!s.c().e(firebaseMessaging.b)) {
                                 return;
                             }
-                        } else if (!t.c().d(firebaseMessaging.b) || a()) {
+                        } else if (!s.c().d(firebaseMessaging.b) || a()) {
                             if (b()) {
                                 firebaseMessaging.e(false);
                             } else {
                                 firebaseMessaging.f(this.b);
                             }
-                            if (!t.c().e(firebaseMessaging.b)) {
+                            if (!s.c().e(firebaseMessaging.b)) {
                                 return;
                             }
                         } else {
                             androidx.mediarouter.app.g gVar = new androidx.mediarouter.app.g();
                             gVar.b = this;
                             gVar.a();
-                            if (!t.c().e(firebaseMessaging.b)) {
+                            if (!s.c().e(firebaseMessaging.b)) {
                                 return;
                             }
                         }
-                    } catch (IOException e) {
-                        Log.e("FirebaseMessaging", "Topic sync or token retrieval failed on hard failure exceptions: " + e.getMessage() + ". Won't retry the operation.");
+                    } catch (IOException e7) {
+                        Log.e("FirebaseMessaging", "Topic sync or token retrieval failed on hard failure exceptions: " + e7.getMessage() + ". Won't retry the operation.");
                         firebaseMessaging.e(false);
-                        if (!t.c().e(firebaseMessaging.b)) {
+                        if (!s.c().e(firebaseMessaging.b)) {
                             return;
                         }
                     }
                     wakeLock.release();
                     return;
                 } catch (Throwable th2) {
-                    if (t.c().e(firebaseMessaging.b)) {
+                    if (s.c().e(firebaseMessaging.b)) {
                         wakeLock.release();
                     }
                     throw th2;
                 }
             default:
-                w9.m mVar = (w9.m) this.e;
-                w9.q qVar = mVar.n;
-                if (qVar == null || !qVar.e.get()) {
+                w9.n nVar = (w9.n) this.e;
+                w9.r rVar = nVar.n;
+                if (rVar == null || !rVar.e.get()) {
                     long j3 = this.b / 1000;
-                    String e7 = mVar.e();
-                    if (e7 == null) {
+                    String e10 = nVar.e();
+                    if (e10 == null) {
                         Log.w("FirebaseCrashlytics", "Tried to write a non-fatal exception while no session was open.", null);
                         return;
                     }
-                    n nVar = mVar.m;
+                    n nVar2 = nVar.m;
                     Throwable th3 = (Throwable) this.c;
                     Thread thread = (Thread) this.d;
-                    nVar.getClass();
-                    String concat = "Persisting non-fatal event for session ".concat(e7);
+                    nVar2.getClass();
+                    String concat = "Persisting non-fatal event for session ".concat(e10);
                     if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                         Log.v("FirebaseCrashlytics", concat, null);
                     }
-                    nVar.v(th3, thread, e7, "error", j3, false);
+                    nVar2.v(th3, thread, e10, "error", j3, false);
                     return;
                 }
                 return;
         }
     }
 
-    public v(w9.m mVar, long j3, Throwable th2, Thread thread) {
+    public v(w9.n nVar, long j3, Throwable th2, Thread thread) {
         this.a = 1;
-        this.e = mVar;
+        this.e = nVar;
         this.b = j3;
         this.c = th2;
         this.d = thread;

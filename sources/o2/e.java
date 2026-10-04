@@ -1,19 +1,14 @@
 package o2;
 
 import java.util.Arrays;
-import v7.n7;
+import v7.m7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class e extends v2.e {
     public byte[] s;
     public volatile boolean v;
     public byte[] w;
-
-    @Override // y2.i
-    public final void D() {
-        this.v = true;
-    }
 
     @Override // y2.i
     public final void a() {
@@ -34,10 +29,15 @@ public final class e extends v2.e {
             if (!this.v) {
                 this.w = Arrays.copyOf(this.s, i11);
             }
-            n7.a(this.r);
+            m7.a(this.r);
         } catch (Throwable th2) {
-            n7.a(this.r);
+            m7.a(this.r);
             throw th2;
         }
+    }
+
+    @Override // y2.i
+    public final void q() {
+        this.v = true;
     }
 }

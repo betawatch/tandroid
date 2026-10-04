@@ -11,8 +11,7 @@ import b2.s;
 import e2.d;
 import e2.d0;
 import e2.p;
-import ei.d5;
-import hg.c;
+import hg.k0;
 import i2.c0;
 import i2.f;
 import i2.f0;
@@ -20,7 +19,7 @@ import java.util.ArrayList;
 import n4.y;
 import w7.m;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b extends f implements Handler.Callback {
     public final a I;
@@ -53,9 +52,9 @@ public final class b extends f implements Handler.Callback {
     @Override // i2.f
     public final int A(s sVar) {
         if (this.I.b(sVar)) {
-            return c.b(sVar.S == 0 ? 4 : 2, 0, 0, 0);
+            return k0.b(sVar.S == 0 ? 4 : 2, 0, 0, 0);
         }
-        return c.b(0, 0, 0, 0);
+        return k0.b(0, 0, 0, 0);
     }
 
     public final void C(p0 p0Var, ArrayList arrayList) {
@@ -76,7 +75,7 @@ public final class b extends f implements Handler.Callback {
                     aVar2.clear();
                     aVar2.b(c10.length);
                     aVar2.c.put(c10);
-                    aVar2.c();
+                    aVar2.d();
                     p0 a11 = a10.a(aVar2);
                     if (a11 != null) {
                         C(a11, arrayList);
@@ -114,9 +113,9 @@ public final class b extends f implements Handler.Callback {
         n0 b12 = f0Var.b1();
         if (!b12.equals(f0Var.O)) {
             f0Var.O = b12;
-            pVar.c(14, new d5(c0Var, 10));
+            pVar.c(14, new ei.f(c0Var, 11));
         }
-        pVar.c(28, new d5(p0Var, 11));
+        pVar.c(28, new ei.f(p0Var, 12));
         pVar.b();
     }
 
@@ -181,14 +180,14 @@ public final class b extends f implements Handler.Callback {
                 l3.a aVar = this.L;
                 aVar.clear();
                 y yVar = this.c;
-                yVar.n();
+                yVar.o();
                 int w10 = w(yVar, aVar, 0);
                 if (w10 == -4) {
                     if (aVar.isEndOfStream()) {
                         this.N = true;
                     } else if (aVar.e >= this.w) {
                         aVar.r = this.P;
-                        aVar.c();
+                        aVar.d();
                         m mVar = this.M;
                         String str = d0.a;
                         p0 a2 = mVar.a(aVar);

@@ -1,46 +1,23 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.voip.GroupCallMessage;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class c40 implements lh.a {
-    public final /* synthetic */ d60 a;
+public final class c40 extends org.telegram.ui.Components.bi0 {
+    public final /* synthetic */ h60 s1;
 
-    public c40(d60 d60Var) {
-        this.a = d60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c40(h60 h60Var, LaunchActivity launchActivity, e50 e50Var, o50 o50Var, b40 b40Var) {
+        super(launchActivity, e50Var, o50Var, b40Var);
+        this.s1 = h60Var;
     }
 
-    public final void a(GroupCallMessage groupCallMessage) {
-        org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
-        if (R == null) {
-            return;
-        }
-        boolean z10 = R instanceof ProfileActivity;
-        d60 d60Var = this.a;
-        if (z10 && ((ProfileActivity) R).a() == groupCallMessage.fromId) {
-            d60Var.dismiss();
-            return;
-        }
-        int P0 = d60Var.P0();
-        Bundle bundle = new Bundle();
-        long j3 = groupCallMessage.fromId;
-        if (j3 > 0) {
-            bundle.putLong("user_id", j3);
-        } else {
-            bundle.putLong("chat_id", -j3);
-        }
-        long j10 = groupCallMessage.fromId;
-        boolean z11 = true;
-        if (j10 == d60Var.d.getUserConfig().getClientUserId()) {
-            bundle.putBoolean("my_profile", true);
-        }
-        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
-        if (P0 > 0 && P0 != Integer.MAX_VALUE) {
-            z11 = false;
-        }
-        R.presentFragment(profileActivity, false, z11);
-        d60Var.dismiss();
+    @Override // android.view.View
+    public final void invalidate() {
+        ViewGroup viewGroup;
+        super.invalidate();
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.s1).containerView;
+        viewGroup.invalidate();
     }
 }

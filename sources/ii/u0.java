@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.text.Layout;
 import android.view.View;
 import android.widget.FrameLayout;
-import ci.bb;
+import ci.ab;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -18,11 +18,11 @@ import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class u0 extends FrameLayout implements org.telegram.ui.ActionBar.x5, p9 {
+public final class u0 extends FrameLayout implements org.telegram.ui.ActionBar.y5, p9 {
     public final org.telegram.ui.ActionBar.d6 a;
-    public final bb b;
+    public final ab b;
     public final AnimatedArrowDrawable c;
     public final i1 d;
     public final Paint e;
@@ -36,13 +36,13 @@ public final class u0 extends FrameLayout implements org.telegram.ui.ActionBar.x
         this.a = d6Var;
         setClipToPadding(false);
         setWillNotDraw(false);
-        AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Dk, d6Var));
+        AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Dk, d6Var));
         this.c = animatedArrowDrawable;
-        animatedArrowDrawable.setCallback(new i.f(this, 1));
-        bb bbVar = new bb(this, context, 6);
-        this.b = bbVar;
-        bbVar.setOnClickListener(new ai.v0(this, 28));
-        addView(bbVar, w7.y5.e(53, -1, 51));
+        animatedArrowDrawable.setCallback(new ah.d(this, 2));
+        ab abVar = new ab(this, context, 6);
+        this.b = abVar;
+        abVar.setOnClickListener(new ai.v0(this, 28));
+        addView(abVar, w7.z5.e(53, -1, 51));
         i1 i1Var = new i1(context, d6Var);
         this.d = i1Var;
         i1Var.setAllowNewlines(false);
@@ -50,8 +50,8 @@ public final class u0 extends FrameLayout implements org.telegram.ui.ActionBar.x
         i1Var.setHint(LocaleController.getString(R.string.ArticleHintDetailsTitle));
         i1Var.setPadding(0, AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(12.66f));
         i1Var.setListener(new r0(this));
-        i1Var.setDelegate(new ei.d5(this, 14));
-        addView(i1Var, w7.y5.d(-1, -2.0f, 51, 53.0f, 0.0f, 16.0f, 0.0f));
+        i1Var.setDelegate(new ei.f(this, 15));
+        addView(i1Var, w7.z5.d(-1, -2.0f, 51, 53.0f, 0.0f, 16.0f, 0.0f));
         e();
     }
 
@@ -70,16 +70,16 @@ public final class u0 extends FrameLayout implements org.telegram.ui.ActionBar.x
         super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.x5
+    @Override // org.telegram.ui.ActionBar.y5
     public final void e() {
         this.d.t();
-        int i10 = org.telegram.ui.ActionBar.h6.Dk;
+        int i10 = org.telegram.ui.ActionBar.i6.Dk;
         org.telegram.ui.ActionBar.d6 d6Var = this.a;
-        int v02 = org.telegram.ui.ActionBar.h6.v0(i10, d6Var);
+        int v02 = org.telegram.ui.ActionBar.i6.v0(i10, d6Var);
         AnimatedArrowDrawable animatedArrowDrawable = this.c;
         animatedArrowDrawable.a.setColor(v02);
         animatedArrowDrawable.invalidateSelf();
-        this.e.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Fk, d6Var));
+        this.e.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Fk, d6Var));
     }
 
     @Override // org.telegram.ui.Cells.p9

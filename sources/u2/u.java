@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class u extends r {
     public final /* synthetic */ int f;
@@ -16,8 +16,8 @@ public final class u extends r {
         switch (this.f) {
             case 0:
                 b2.k1 k1Var = this.e;
-                int e = k1Var.e(i10, i11, z10);
-                return e == -1 ? k1Var.a(z10) : e;
+                int e7 = k1Var.e(i10, i11, z10);
+                return e7 == -1 ? k1Var.a(z10) : e7;
             default:
                 return super.e(i10, i11, z10);
         }

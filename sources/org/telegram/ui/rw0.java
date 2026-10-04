@@ -1,19 +1,38 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final class rw0 extends r61 {
-    public final /* synthetic */ PremiumPreviewFragment e;
+import java.util.Comparator;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rw0(PremiumPreviewFragment premiumPreviewFragment, qw0 qw0Var) {
-        super(qw0Var);
-        this.e = premiumPreviewFragment;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class rw0 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController b;
+
+    public /* synthetic */ rw0(MessagesController messagesController, int i10) {
+        this.a = i10;
+        this.b = messagesController;
     }
 
-    @Override // org.telegram.ui.r61, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.s0 = null;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int i10;
+        int i11;
+        ex0 ex0Var = (ex0) obj;
+        ex0 ex0Var2 = (ex0) obj2;
+        switch (this.a) {
+            case 0:
+                MessagesController messagesController = this.b;
+                i10 = messagesController.businessFeaturesTypesToPosition.get(ex0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i11 = messagesController.businessFeaturesTypesToPosition.get(ex0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                break;
+            default:
+                MessagesController messagesController2 = this.b;
+                i10 = messagesController2.premiumFeaturesTypesToPosition.get(ex0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i11 = messagesController2.premiumFeaturesTypesToPosition.get(ex0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                break;
+        }
+        return i10 - i11;
     }
 }

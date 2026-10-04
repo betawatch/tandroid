@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static final int ID_NOTIFICATION = 5;
@@ -101,13 +101,13 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             long j10 = z11 ? peer.user_id : peer instanceof TLRPC.TL_peerChat ? peer.chat_id : peer instanceof TLRPC.TL_peerChannel ? peer.channel_id : 0L;
             if (j10 != 0) {
                 if (z11) {
-                    StringBuilder u10 = a4.a.u(j10, "tg://openmessage?user_id=", "&message_id=");
-                    u10.append(messageObject.getId());
-                    intent.setData(Uri.parse(u10.toString()));
+                    StringBuilder t10 = a4.a.t(j10, "tg://openmessage?user_id=", "&message_id=");
+                    t10.append(messageObject.getId());
+                    intent.setData(Uri.parse(t10.toString()));
                 } else {
-                    StringBuilder u11 = a4.a.u(j10, "tg://openmessage?chat_id=", "&message_id=");
-                    u11.append(messageObject.getId());
-                    intent.setData(Uri.parse(u11.toString()));
+                    StringBuilder t11 = a4.a.t(j10, "tg://openmessage?chat_id=", "&message_id=");
+                    t11.append(messageObject.getId());
+                    intent.setData(Uri.parse(t11.toString()));
                 }
             }
         }
@@ -300,13 +300,13 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         this.mediaSession.f(this.playbackState.b());
         updateRepeatMode();
         updateShuffleMode();
-        a4.m mVar = new a4.m(1);
+        android.support.v4.media.c cVar = new android.support.v4.media.c(0);
         String str8 = str3;
-        mVar.w0("android.media.metadata.ALBUM_ARTIST", str8);
-        mVar.w0("android.media.metadata.ARTIST", str8);
-        mVar.v0(duration);
+        cVar.e("android.media.metadata.ALBUM_ARTIST", str8);
+        cVar.e("android.media.metadata.ARTIST", str8);
+        cVar.b(duration);
         String str9 = str2;
-        mVar.w0("android.media.metadata.TITLE", str9);
+        cVar.e("android.media.metadata.TITLE", str9);
         if (aVar == null || !messageObject2.isMusic()) {
             aVar2 = aVar;
             str6 = str5;
@@ -314,14 +314,14 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             aVar2 = aVar;
             str6 = aVar2.f;
         }
-        mVar.w0("android.media.metadata.ALBUM", str6);
+        cVar.e("android.media.metadata.ALBUM", str6);
         if (bitmap4 == null || bitmap4.isRecycled()) {
             bitmap3 = bitmap4;
         } else {
             bitmap3 = bitmap4;
-            mVar.t0("android.media.metadata.ALBUM_ART", bitmap3);
+            cVar.a("android.media.metadata.ALBUM_ART", bitmap3);
         }
-        this.mediaSession.e(new MediaMetadataCompat((Bundle) mVar.b));
+        this.mediaSession.e(new MediaMetadataCompat(cVar.b));
         builder.setVisibility(1);
         Notification build = builder.build();
         if (i10 >= 31) {
@@ -434,7 +434,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         if (z10) {
             return null;
         }
-        org.telegram.ui.ActionBar.h6.R(this);
+        org.telegram.ui.ActionBar.i6.R(this);
         org.telegram.ui.Components.h9 h9Var = tLObject instanceof TLRPC.User ? new org.telegram.ui.Components.h9(0, (TLRPC.User) tLObject) : new org.telegram.ui.Components.h9((TLRPC.Chat) tLObject);
         h9Var.r = 1;
         float f11 = i10;
@@ -758,8 +758,8 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                     MediaController.getInstance().cleanupPlayer(true, true);
                     return 2;
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (Exception e7) {
+                e7.printStackTrace();
             }
         }
         MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
@@ -779,8 +779,8 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
                     this.audioManager.registerRemoteControlClient(remoteControlClient);
                 }
                 this.remoteControlClient.setTransportControlFlags(189);
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
         }
         createNotification(playingMessageObject, false);

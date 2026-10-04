@@ -1,15 +1,16 @@
 package f5;
 
 import com.google.android.gms.internal.vision.e2;
+import ii.n4;
 import java.nio.ByteBuffer;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ ka.c d;
-    public static final /* synthetic */ ka.c e;
+    public static final /* synthetic */ n4 d;
+    public static final /* synthetic */ n4 e;
     public String a;
     public long b;
     public LinkedList c;

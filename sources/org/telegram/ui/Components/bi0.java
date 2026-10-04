@@ -24,12 +24,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public class bi0 extends yp implements NotificationCenter.NotificationCenterDelegate {
+public class bi0 extends zp implements NotificationCenter.NotificationCenterDelegate {
     public boolean A0;
     public boolean B0;
-    public final yl0 C0;
+    public final zl0 C0;
     public final ai0 D0;
     public long E0;
     public TLRPC.ChatFull F0;
@@ -44,7 +44,7 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
     public final float[] O0;
     public ImageLocation P0;
     public ImageLocation Q0;
-    public f71 R0;
+    public p71 R0;
     public MessagesController.DialogPhotos S0;
     public final ArrayList T0;
     public final ArrayList U0;
@@ -60,7 +60,7 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
     public boolean e1;
     public boolean f1;
     public boolean g1;
-    public org.telegram.ui.hv0 h1;
+    public org.telegram.ui.kv0 h1;
     public boolean i1;
     public int j1;
     public int k1;
@@ -75,7 +75,7 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
     public final int y0;
     public final org.telegram.ui.ActionBar.k z0;
 
-    public bi0(Context context, org.telegram.ui.ActionBar.k kVar, yl0 yl0Var, org.telegram.ui.q4 q4Var) {
+    public bi0(Context context, org.telegram.ui.ActionBar.k kVar, zl0 zl0Var, org.telegram.ui.r4 r4Var) {
         super(context);
         this.x0 = new PointF();
         this.A0 = true;
@@ -101,15 +101,15 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
         setOffscreenPageLimit(2);
         this.p1 = null;
         this.J0 = false;
-        this.C0 = yl0Var;
+        this.C0 = zl0Var;
         ConnectionsManager.generateClassGuid();
         this.z0 = kVar;
         this.y0 = ViewConfiguration.get(context).getScaledTouchSlop();
-        this.G0 = q4Var;
+        this.G0 = r4Var;
         b(new th0(this));
         ai0 ai0Var = new ai0(this, getContext(), null);
         this.D0 = ai0Var;
-        setAdapter((xp) ai0Var);
+        setAdapter((yp) ai0Var);
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.dialogPhotosLoaded);
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoaded);
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoadProgressChanged);
@@ -239,7 +239,7 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
         return (ImageLocation) arrayList.get(i10);
     }
 
-    public final boolean H(f71 f71Var, ImageLocation imageLocation, ImageLocation imageLocation2, boolean z10) {
+    public final boolean H(p71 p71Var, ImageLocation imageLocation, ImageLocation imageLocation2, boolean z10) {
         MessagesController.DialogPhotos dialogPhotos;
         MessagesController.DialogPhotos dialogPhotos2;
         if (imageLocation != null && imageLocation2 != null && this.c1 == 0) {
@@ -264,12 +264,12 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
             if (arrayList.isEmpty()) {
                 this.P0 = imageLocation;
                 this.Q0 = imageLocation2;
-                this.R0 = f71Var;
+                this.R0 = p71Var;
                 this.U0.add(null);
                 this.T0.add(null);
                 arrayList.add(imageLocation);
                 this.Y0.add(imageLocation2);
-                this.Z0.add(f71Var);
+                this.Z0.add(p71Var);
                 this.W0.add(null);
                 this.V0.add(null);
                 this.a1.add(-1);
@@ -681,7 +681,7 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
                                         TLRPC.VideoSize vectorMarkupVideoSize = FileLoader.getVectorMarkupVideoSize(photo2);
                                         if (vectorMarkupVideoSize != null) {
                                             user3 = user;
-                                            arrayList11.add(new f71(vectorMarkupVideoSize, user != null && user3.premium, 2));
+                                            arrayList11.add(new p71(vectorMarkupVideoSize, user != null && user3.premium, 2));
                                             obj = null;
                                             arrayList9.add(null);
                                             arrayList6.add(null);
@@ -713,7 +713,7 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
                                     TLRPC.VideoSize vectorMarkupVideoSize2 = FileLoader.getVectorMarkupVideoSize(photo2);
                                     if (vectorMarkupVideoSize2 != null) {
                                         user = user2;
-                                        arrayList11.add(new f71(vectorMarkupVideoSize2, user2 != null && user2.premium, 2));
+                                        arrayList11.add(new p71(vectorMarkupVideoSize2, user2 != null && user2.premium, 2));
                                         z12 = false;
                                         arrayList9.add(null);
                                         arrayList6.add(null);
@@ -860,8 +860,8 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
         int i10;
         ai0 ai0Var = this.D0;
         if (ai0Var != null) {
-            yl0 yl0Var = this.C0;
-            if (yl0Var.getScrollState() != 0 && !this.A0 && this.B0) {
+            zl0 zl0Var = this.C0;
+            if (zl0Var.getScrollState() != 0 && !this.A0 && this.B0) {
                 this.B0 = false;
                 MotionEvent obtain = MotionEvent.obtain(motionEvent);
                 obtain.setAction(3);
@@ -870,13 +870,13 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
                 return false;
             }
             int action = motionEvent.getAction();
-            org.telegram.ui.hv0 hv0Var = this.h1;
+            org.telegram.ui.kv0 kv0Var = this.h1;
             wh0 wh0Var = this.G0;
-            if (hv0Var != null && getCurrentItemView() != null) {
+            if (kv0Var != null && getCurrentItemView() != null) {
                 if (action != 0 && this.I0) {
-                    org.telegram.ui.hv0 hv0Var2 = this.h1;
-                    if (!hv0Var2.n) {
-                        hv0Var2.a(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0), this, getCurrentItemView().getImageReceiver(), null, 0);
+                    org.telegram.ui.kv0 kv0Var2 = this.h1;
+                    if (!kv0Var2.n) {
+                        kv0Var2.a(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0), this, getCurrentItemView().getImageReceiver(), null, 0);
                     }
                 }
                 if (this.h1.a(motionEvent, this, getCurrentItemView().getImageReceiver(), null, 0)) {
@@ -945,7 +945,7 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
                             this.A0 = false;
                             MotionEvent obtain3 = MotionEvent.obtain(motionEvent);
                             obtain3.setAction(3);
-                            yl0Var.onTouchEvent(obtain3);
+                            zl0Var.onTouchEvent(obtain3);
                             obtain3.recycle();
                         }
                     }
@@ -954,12 +954,12 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
                     }
                 }
             }
-            boolean onTouchEvent = this.A0 ? yl0Var.onTouchEvent(motionEvent) : false;
+            boolean onTouchEvent = this.A0 ? zl0Var.onTouchEvent(motionEvent) : false;
             if (this.B0) {
                 try {
                     onTouchEvent |= super.onTouchEvent(motionEvent);
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
             }
             if (action == 1 || action == 3) {
@@ -1060,8 +1060,8 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
         }
     }
 
-    public void setPinchToZoomHelper(org.telegram.ui.hv0 hv0Var) {
-        this.h1 = hv0Var;
+    public void setPinchToZoomHelper(org.telegram.ui.kv0 kv0Var) {
+        this.h1 = kv0Var;
     }
 
     @Override // android.view.View
@@ -1076,7 +1076,7 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
     public void setCustomAvatarProgress(float f7) {
     }
 
-    public bi0(Context context, long j3, org.telegram.ui.ActionBar.k kVar, yl0 yl0Var, org.telegram.ui.d01 d01Var, wh0 wh0Var, sh0 sh0Var) {
+    public bi0(Context context, long j3, org.telegram.ui.ActionBar.k kVar, zl0 zl0Var, org.telegram.ui.f01 f01Var, wh0 wh0Var, sh0 sh0Var) {
         super(context);
         this.x0 = new PointF();
         this.A0 = true;
@@ -1109,14 +1109,14 @@ public class bi0 extends yp implements NotificationCenter.NotificationCenterDele
         setOffscreenPageLimit(2);
         this.J0 = true;
         this.E0 = j3;
-        this.C0 = yl0Var;
+        this.C0 = zl0Var;
         this.z0 = kVar;
-        ai0 ai0Var = new ai0(this, getContext(), d01Var);
+        ai0 ai0Var = new ai0(this, getContext(), f01Var);
         this.D0 = ai0Var;
-        setAdapter((xp) ai0Var);
+        setAdapter((yp) ai0Var);
         this.y0 = ViewConfiguration.get(context).getScaledTouchSlop();
         this.G0 = wh0Var;
-        b(new uh0((org.telegram.ui.gz0) this));
+        b(new uh0((org.telegram.ui.jz0) this));
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.dialogPhotosLoaded);
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoaded);
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoadProgressChanged);

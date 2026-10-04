@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class o extends d0 {
     public final /* synthetic */ q h;
@@ -16,17 +16,17 @@ public final class o extends d0 {
         this.h = qVar;
     }
 
-    @Override // org.telegram.ui.Components.du
+    @Override // org.telegram.ui.Components.eu
     public final void onLineCountChanged(int i10, int i11) {
         if (i11 > i10) {
             this.h.y.smoothScrollBy(0, AndroidUtilities.dp(30.0f));
         }
     }
 
-    @Override // org.telegram.ui.Components.du, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.eu, android.widget.EditText, android.widget.TextView
     public final boolean onTextContextMenuItem(int i10) {
         if (i10 == R.id.menu_delete || i10 == 16908320) {
-            return this.h.a0();
+            return this.h.Z();
         }
         if (i10 == 16908322 || i10 == 16908321) {
             return false;

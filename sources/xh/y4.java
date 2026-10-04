@@ -3,11 +3,11 @@ package xh;
 import android.graphics.Canvas;
 import android.graphics.PointF;
 import androidx.recyclerview.widget.RecyclerView;
-import ci.bb;
+import ci.ab;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class y4 extends s4.n0 {
     public final PointF a = new PointF();
@@ -21,14 +21,14 @@ public final class y4 extends s4.n0 {
     public final void c(Canvas canvas, RecyclerView recyclerView) {
         float f7;
         float f10;
-        bb bbVar;
+        ab abVar;
         float height = recyclerView.getHeight();
         z4 z4Var = this.b;
         u4 u4Var = z4Var.s0;
         t4 t4Var = z4Var.h0;
-        yl0 yl0Var = z4Var.d;
+        zl0 zl0Var = z4Var.d;
         PointF pointF = this.a;
-        if (hh.k.b(t4Var, yl0Var, pointF)) {
+        if (hh.k.b(t4Var, zl0Var, pointF)) {
             f7 = pointF.x;
             height = Math.min(height, pointF.y);
             f10 = Math.max(0.0f, pointF.y + t4Var.getMeasuredHeight());
@@ -36,14 +36,14 @@ public final class y4 extends s4.n0 {
             f7 = 0.0f;
             f10 = 0.0f;
         }
-        if (hh.k.b(u4Var, yl0Var, pointF)) {
+        if (hh.k.b(u4Var, zl0Var, pointF)) {
             height = Math.min(height, pointF.y);
             f10 = Math.max(f10, pointF.y + u4Var.getMeasuredHeight() + AndroidUtilities.dp(12.0f));
         }
-        if (height >= f10 || (bbVar = t4Var.L) == null) {
+        if (height >= f10 || (abVar = t4Var.L) == null) {
             return;
         }
-        float height2 = (f10 - height) / bbVar.getHeight();
+        float height2 = (f10 - height) / abVar.getHeight();
         canvas.save();
         canvas.clipRect(0.0f, height, recyclerView.getWidth(), f10);
         canvas.translate(f7, height);

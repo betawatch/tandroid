@@ -5,41 +5,41 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ud implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.m2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
 
-    public /* synthetic */ ud(int i10, org.telegram.ui.ActionBar.m2 m2Var) {
+    public /* synthetic */ ud(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
         this.a = i10;
-        this.b = m2Var;
+        this.b = n2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        org.telegram.ui.ActionBar.m2 m2Var = this.b;
+        org.telegram.ui.ActionBar.n2 n2Var = this.b;
         switch (i10) {
             case 0:
                 int i11 = ChatActivityEnterView.n5;
-                if (m2Var == null) {
-                    if (m2Var.getContext() instanceof LaunchActivity) {
-                        ((LaunchActivity) m2Var.getContext()).p0(new PremiumPreviewFragment(0, null));
+                if (n2Var == null) {
+                    if (n2Var.getContext() instanceof LaunchActivity) {
+                        ((LaunchActivity) n2Var.getContext()).p0(new PremiumPreviewFragment(0, null));
                         break;
                     }
                 } else {
-                    new rg.x0(m2Var, 11, false).show();
+                    new rg.y0(n2Var, 11, false).show();
                     break;
                 }
                 break;
             case 1:
-                m2Var.presentFragment(new StickersActivity(0, null));
+                n2Var.presentFragment(new StickersActivity(0, null));
                 break;
             default:
                 ThemeActivity themeActivity = new ThemeActivity(0);
                 themeActivity.T0 = true;
-                m2Var.presentFragment(themeActivity);
+                n2Var.presentFragment(themeActivity);
                 break;
         }
     }

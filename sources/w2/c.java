@@ -8,16 +8,16 @@ import e9.i0;
 import e9.p;
 import e9.x0;
 import java.util.ArrayList;
-import u2.o1;
+import u2.l0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c implements a {
-    public static final a0 b = new a0(new p(new o1(7), x0.b), new p(new o1(8), x0.c));
+    public static final a0 b = new a0(new p(new l0(9), x0.b), new p(new l0(10), x0.c));
     public final ArrayList a = new ArrayList();
 
     @Override // w2.a
-    public final long b(long j3) {
+    public final long a(long j3) {
         int i10 = 0;
         long j10 = -9223372036854775807L;
         while (true) {
@@ -43,12 +43,7 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final void clear() {
-        this.a.clear();
-    }
-
-    @Override // w2.a
-    public final i0 d(long j3) {
+    public final i0 b(long j3) {
         ArrayList arrayList = this.a;
         if (!arrayList.isEmpty()) {
             if (j3 >= ((z3.a) arrayList.get(0)).b) {
@@ -75,7 +70,7 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final boolean e(z3.a aVar, long j3) {
+    public final boolean c(z3.a aVar, long j3) {
         long j10 = aVar.b;
         e2.d.b(j10 != -9223372036854775807L);
         e2.d.b(aVar.c != -9223372036854775807L);
@@ -92,7 +87,12 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final long l(long j3) {
+    public final void clear() {
+        this.a.clear();
+    }
+
+    @Override // w2.a
+    public final long d(long j3) {
         ArrayList arrayList = this.a;
         if (arrayList.isEmpty()) {
             return -9223372036854775807L;
@@ -117,7 +117,7 @@ public final class c implements a {
     }
 
     @Override // w2.a
-    public final void r(long j3) {
+    public final void e(long j3) {
         int i10 = 0;
         while (true) {
             ArrayList arrayList = this.a;

@@ -1,278 +1,43 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.os.Bundle;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.util.SparseArray;
-import android.view.MotionEvent;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.ui.PhotoViewer;
+import android.graphics.Rect;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ks0 extends bv0 {
-    public float q3;
-    public float r3;
-    public final /* synthetic */ hs0 s3;
-    public final /* synthetic */ is0 t3;
-    public final /* synthetic */ lv0 u3;
+public final class ks0 extends org.telegram.ui.t11 {
+    public final /* synthetic */ pv0 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ks0(lv0 lv0Var, Context context, hs0 hs0Var, is0 is0Var) {
-        super(context);
-        this.u3 = lv0Var;
-        this.s3 = hs0Var;
-        this.t3 = is0Var;
+    public ks0(pv0 pv0Var, Context context, lw0 lw0Var, ai.x8 x8Var, js0 js0Var) {
+        super(context, lw0Var, x8Var, js0Var);
+        this.H = pv0Var;
     }
 
-    @Override // org.telegram.ui.Components.bv0
-    public final boolean A1() {
-        return lv0.p0(this.u3.p1);
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final boolean B1() {
-        return this == this.s3.h;
-    }
-
-    public final View C1() {
-        try {
-            for (Object parent = getParent(); parent instanceof View; parent = ((View) parent).getParent()) {
-                if (parent != this && (parent instanceof RecyclerView)) {
-                    return (View) parent;
+    @Override // org.telegram.ui.t11
+    public final void a() {
+        os0 os0Var;
+        int measuredWidth = getMeasuredWidth();
+        int visualHeight = (int) getVisualHeight();
+        Rect rect = this.F;
+        rect.set(0, 0, measuredWidth, visualHeight);
+        setClipBounds(rect);
+        invalidate();
+        pv0 pv0Var = this.H;
+        iu0[] iu0VarArr = pv0Var.k0;
+        if (iu0VarArr != null) {
+            for (iu0 iu0Var : iu0VarArr) {
+                if (iu0Var != null && (os0Var = iu0Var.h) != null) {
+                    int paddingLeft = os0Var.getPaddingLeft();
+                    int Z = pv0Var.Z(iu0Var.F);
+                    int paddingRight = iu0Var.h.getPaddingRight();
+                    os0 os0Var2 = iu0Var.h;
+                    int Y = pv0Var.Y(pv0Var.v0());
+                    os0Var2.l3 = Y;
+                    os0Var.setPadding(paddingLeft, Z, paddingRight, Y);
                 }
             }
-            return null;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return null;
         }
-    }
-
-    @Override // org.telegram.ui.Components.yl0
-    public final Integer W0(int i10) {
-        s4.h0 adapter = getAdapter();
-        ut0 ut0Var = this.u3.Q;
-        if (adapter == ut0Var && ut0Var.e > 0 && i10 == ut0Var.d.size() - 1) {
-            return 0;
-        }
-        return super.W0(i10);
-    }
-
-    @Override // org.telegram.ui.Components.bv0, org.telegram.ui.Components.ia, org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        View childAt;
-        View childAt2;
-        s4.h0 adapter = getAdapter();
-        lv0 lv0Var = this.u3;
-        org.telegram.ui.ActionBar.m2 m2Var = lv0Var.v1;
-        tt0 tt0Var = lv0Var.c0;
-        yr0 yr0Var = lv0Var.e0;
-        hs0 hs0Var = this.s3;
-        if ((adapter == yr0Var || getAdapter() == tt0Var) && getChildCount() > 0 && (childAt = getChildAt(0)) != null && RecyclerView.R(childAt) == 0) {
-            int top = childAt.getTop();
-            if (lv0Var.o1) {
-                if (lv0Var.p1 == (getAdapter() == tt0Var ? 8 : 9) && hs0Var.r.getChildCount() > 0 && (childAt2 = hs0Var.r.getChildAt(0)) != null) {
-                    hs0Var.r.getClass();
-                    if (RecyclerView.R(childAt2) == 0) {
-                        top = AndroidUtilities.lerp(top, childAt2.getTop(), lv0Var.n1);
-                    }
-                }
-            }
-            if (getAdapter() != tt0Var) {
-                if (this.j3 == null) {
-                    TextPaint textPaint = new TextPaint(1);
-                    this.j3 = textPaint;
-                    textPaint.setTextSize(AndroidUtilities.dp(14.0f));
-                    this.j3.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z6, this.p2));
-                }
-                int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(60.0f);
-                StaticLayout staticLayout = this.k3;
-                if (staticLayout == null || staticLayout.getWidth() != measuredWidth) {
-                    this.k3 = new StaticLayout(LocaleController.getString(lv0Var.q0() ? m2Var != null && ChatObject.isChannelAndNotMegaGroup(m2Var.getMessagesController().getChat(Long.valueOf(-lv0Var.j1))) ? R.string.ProfileStoriesArchiveChannelHint : R.string.ProfileStoriesArchiveGroupHint : R.string.ProfileStoriesArchiveHint), this.j3, measuredWidth, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
-                    this.l3 = 0.0f;
-                    this.m3 = measuredWidth;
-                    for (int i10 = 0; i10 < this.k3.getLineCount(); i10++) {
-                        this.l3 = Math.max(this.l3, this.k3.getLineWidth(i10));
-                        this.m3 = Math.min(this.m3, this.k3.getLineLeft(i10));
-                    }
-                }
-                canvas.save();
-                canvas.translate(((getWidth() - this.l3) / 2.0f) - this.m3, top - ((this.k3.getHeight() + AndroidUtilities.dp(64.0f)) / 2.0f));
-                this.k3.draw(canvas);
-                canvas.restore();
-            }
-        }
-        super.dispatchDraw(canvas);
-        if (hs0Var.K) {
-            float f7 = hs0Var.L + 0.010666667f;
-            hs0Var.L = f7;
-            if (f7 >= 1.0f) {
-                hs0Var.L = 0.0f;
-                hs0Var.K = false;
-                hs0Var.J = 0;
-            }
-            invalidate();
-        }
-        if (this.n3 == null) {
-            int currentAccount = m2Var.getCurrentAccount();
-            ai.rc[] rcVarArr = ai.rc.f;
-            if (rcVarArr[currentAccount] == null) {
-                rcVarArr[currentAccount] = new ai.rc(currentAccount);
-            }
-            this.n3 = rcVarArr[currentAccount];
-        }
-        this.n3.a(this);
-        if (lv0Var.o1) {
-            return;
-        }
-        lv0Var.p1 = -1;
-    }
-
-    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        lv0 lv0Var = this.u3;
-        org.telegram.ui.ActionBar.m2 m2Var = lv0Var.v1;
-        if (m2Var == null || !m2Var.isInPreviewMode()) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        this.q3 = motionEvent.getY();
-        if (motionEvent.getAction() == 1) {
-            lv0Var.v1.finishPreviewFragment();
-        } else if (motionEvent.getAction() == 2) {
-            float f7 = this.r3 - this.q3;
-            lv0Var.v1.movePreviewFragment(f7);
-            if (f7 < 0.0f) {
-                this.r3 = this.q3;
-            }
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final int getAnimateToColumnsCount() {
-        return this.u3.q1;
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final float getChangeColumnsProgress() {
-        return this.u3.n1;
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final int getColumnsCount() {
-        lv0 lv0Var = this.u3;
-        return lv0.p0(lv0Var.p1) ? lv0Var.m1[1] : lv0Var.m1[0];
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final SparseArray getMessageAlphaEnter() {
-        return this.u3.O1;
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final gl0 getMovingAdapter() {
-        lv0 lv0Var = this.u3;
-        return lv0.p0(lv0Var.p1) ? lv0Var.k1(lv0Var.p1) : lv0Var.H;
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final gl0 getSupportingAdapter() {
-        lv0 lv0Var = this.u3;
-        return lv0.p0(lv0Var.p1) ? lv0Var.l1(lv0Var.p1) : lv0Var.I;
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final du0 getSupportingListView() {
-        return this.s3.r;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void k0(int i10, int i11) {
-        org.telegram.ui.ActionBar.m2 m2Var;
-        boolean z10 = this.K1;
-        lv0 lv0Var = this.u3;
-        if (z10 && lv0Var.getSelectedTab() == 11 && (m2Var = lv0Var.v1) != null) {
-            AndroidUtilities.hideKeyboard(m2Var.getParentActivity().getCurrentFocus());
-        }
-        lv0Var.I();
-        s4.h0 adapter = getAdapter();
-        su0 su0Var = lv0Var.N;
-        if (adapter == su0Var) {
-            ArrayList<MessageObject> arrayList = su0Var.h;
-            arrayList.clear();
-            for (int i12 = 0; i12 < getChildCount(); i12++) {
-                View childAt = getChildAt(i12);
-                if (childAt instanceof org.telegram.ui.Cells.u1) {
-                    arrayList.add(((org.telegram.ui.Cells.u1) childAt).getMessageObject());
-                }
-            }
-            MessagesController.getInstance(su0Var.d).addToPollsQueue(su0Var.s.j1, arrayList);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        hs0 hs0Var = this.s3;
-        this.u3.G(hs0Var, hs0Var.h, this.t3);
-        if (hs0Var.F == 0) {
-            PhotoViewer.t1().y0();
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean performAccessibilityAction(int i10, Bundle bundle) {
-        View C1;
-        try {
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        if (i10 != 4096) {
-            if (i10 == 8192) {
-                if (!canScrollVertically(-1) && (C1 = C1()) != null && C1.canScrollVertically(-1) && C1.performAccessibilityAction(i10, bundle)) {
-                    return true;
-                }
-            }
-            return super.performAccessibilityAction(i10, bundle);
-        }
-        View C12 = C1();
-        if (C12 != null && C12.canScrollVertically(1) && C12.performAccessibilityAction(i10, bundle)) {
-            return true;
-        }
-        return super.performAccessibilityAction(i10, bundle);
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final void y1(org.telegram.ui.Cells.t7 t7Var) {
-        int messageId = t7Var.getMessageId();
-        hs0 hs0Var = this.s3;
-        if (messageId != hs0Var.J || !t7Var.c.hasBitmapImage()) {
-            t7Var.setHighlightProgress(0.0f);
-            return;
-        }
-        if (!hs0Var.K) {
-            hs0Var.L = 0.0f;
-            hs0Var.K = true;
-        }
-        float f7 = hs0Var.L;
-        t7Var.setHighlightProgress(f7 < 0.3f ? f7 / 0.3f : f7 > 0.7f ? (1.0f - f7) / 0.3f : 1.0f);
-    }
-
-    @Override // org.telegram.ui.Components.bv0
-    public final boolean z1() {
-        return this.u3.o1;
+        pv0Var.K();
     }
 }

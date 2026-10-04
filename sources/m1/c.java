@@ -2,20 +2,20 @@ package m1;
 
 import android.content.Context;
 import androidx.lifecycle.k0;
+import ii.n4;
 import java.util.List;
 import k1.a0;
-import k2.u;
 import rd.l;
 import zd.c0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c {
     public final String a;
     public final l b;
     public final c0 c;
     public final Object d;
-    public volatile u e;
+    public volatile n4 e;
 
     public c(String name, l lVar, c0 c0Var) {
         kotlin.jvm.internal.i.e(name, "name");
@@ -25,14 +25,14 @@ public final class c {
         this.d = new Object();
     }
 
-    public final u a(Object obj, vd.g property) {
-        u uVar;
+    public final n4 a(Object obj, vd.g property) {
+        n4 n4Var;
         Context thisRef = (Context) obj;
         kotlin.jvm.internal.i.e(thisRef, "thisRef");
         kotlin.jvm.internal.i.e(property, "property");
-        u uVar2 = this.e;
-        if (uVar2 != null) {
-            return uVar2;
+        n4 n4Var2 = this.e;
+        if (n4Var2 != null) {
+            return n4Var2;
         }
         synchronized (this.d) {
             try {
@@ -44,14 +44,14 @@ public final class c {
                     c0 c0Var = this.c;
                     b bVar = new b(applicationContext, this);
                     kotlin.jvm.internal.i.e(migrations, "migrations");
-                    this.e = new u(new a0(new k0(bVar, 2), hd.h.b(new bb.i(migrations, null, 1)), new na.d(12), c0Var), 6);
+                    this.e = new n4(new a0(new k0(bVar, 2), hd.h.b(new bb.i(migrations, null, 1)), new na.d(12), c0Var), 7);
                 }
-                uVar = this.e;
-                kotlin.jvm.internal.i.b(uVar);
+                n4Var = this.e;
+                kotlin.jvm.internal.i.b(n4Var);
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return uVar;
+        return n4Var;
     }
 }

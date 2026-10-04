@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class p implements e0 {
     public final c5.g a;
@@ -49,8 +49,8 @@ public final class p implements e0 {
     public static e0 e(Class cls, g2.g gVar) {
         try {
             return (e0) cls.getConstructor(g2.g.class).newInstance(gVar);
-        } catch (Exception e) {
-            throw new IllegalStateException(e);
+        } catch (Exception e7) {
+            throw new IllegalStateException(e7);
         }
     }
 
@@ -205,19 +205,19 @@ public final class p implements e0 {
                         rVar.b = ((b2.j0) i0Var3.get(i10)).f;
                         rVar.a = ((b2.j0) i0Var3.get(i10)).g;
                         b2.s sVar = new b2.s(rVar);
-                        s5.e eVar = new s5.e(6, this, sVar);
+                        rg.x xVar3 = new rg.x(7, this, sVar);
                         of.b bVar = this.b;
-                        r5.d dVar = new r5.d(eVar, 10);
+                        r2.s sVar2 = new r2.s(xVar3, 12);
                         la.h hVar = new la.h(6);
                         qb.b bVar2 = new qb.b(26);
-                        if (this.c.W(sVar)) {
+                        if (this.c.V(sVar)) {
                             b2.r a12 = sVar.a();
                             a12.q = b2.r0.n("application/x-media3-cues");
                             a12.j = sVar.r;
-                            a12.O = this.c.D(sVar);
+                            a12.O = this.c.H(sVar);
                             sVar = new b2.s(a12);
                         }
-                        b2.s sVar2 = sVar;
+                        b2.s sVar3 = sVar;
                         int i11 = i10 + 1;
                         String uri4 = ((b2.j0) i0Var3.get(i10)).a.toString();
                         b2.y yVar2 = new b2.y();
@@ -231,39 +231,39 @@ public final class p implements e0 {
                         b2.f0 f0Var4 = parse != null ? new b2.f0(parse, null, b0Var4.a != null ? new b2.c0(b0Var4) : uri, null, list3, null, a1Var, -9223372036854775807L) : uri;
                         b2.k0 k0Var3 = new b2.k0("", new b2.a0(yVar2), f0Var4, new b2.e0(d0Var), b2.n0.K, g0Var3);
                         f0Var4.getClass();
-                        aVarArr[i11] = new w0(k0Var3, bVar, dVar, hVar.A(k0Var3), bVar2, 1048576, sVar2);
+                        aVarArr[i11] = new x0(k0Var3, bVar, sVar2, hVar.A(k0Var3), bVar2, 1048576, sVar3);
                     } else {
                         of.b bVar3 = this.b;
                         bVar3.getClass();
-                        aVarArr[i10 + 1] = new l1((b2.j0) i0Var3.get(i10), bVar3, new qb.b(26));
+                        aVarArr[i10 + 1] = new m1((b2.j0) i0Var3.get(i10), bVar3, new qb.b(26));
                     }
                 }
-                a11 = new o0(aVarArr);
+                a11 = new p0(aVarArr);
             }
             b2.a0 a0Var3 = k0Var2.e;
             if (a0Var3.b != 0 || a0Var3.d != Long.MIN_VALUE || a0Var3.f) {
-                e eVar2 = new e(a11);
+                e eVar = new e(a11);
                 long j11 = a0Var3.b;
                 e2.d.b(j11 >= 0);
-                e2.d.g(!eVar2.h);
-                eVar2.b = j11;
+                e2.d.g(!eVar.h);
+                eVar.b = j11;
                 long j12 = a0Var3.d;
-                e2.d.g(!eVar2.h);
-                eVar2.c = j12;
+                e2.d.g(!eVar.h);
+                eVar.c = j12;
                 boolean z10 = !a0Var3.g;
-                e2.d.g(!eVar2.h);
-                eVar2.d = z10;
+                e2.d.g(!eVar.h);
+                eVar.d = z10;
                 boolean z11 = a0Var3.e;
-                e2.d.g(!eVar2.h);
-                eVar2.e = z11;
+                e2.d.g(!eVar.h);
+                eVar.e = z11;
                 boolean z12 = a0Var3.f;
-                e2.d.g(!eVar2.h);
-                eVar2.f = z12;
+                e2.d.g(!eVar.h);
+                eVar.f = z12;
                 boolean z13 = a0Var3.h;
-                e2.d.g(!eVar2.h);
-                eVar2.g = z13;
-                eVar2.h = true;
-                a11 = new h(eVar2);
+                e2.d.g(!eVar.h);
+                eVar.g = z13;
+                eVar.h = true;
+                a11 = new h(eVar);
             }
             k0Var2.b.getClass();
             if (k0Var2.b.d == null) {
@@ -271,8 +271,8 @@ public final class p implements e0 {
             }
             e2.a.n("DMediaSourceFactory", "Playing media without ads. Configure ad support by calling setAdsLoaderProvider and setAdViewProvider.");
             return a11;
-        } catch (ClassNotFoundException e) {
-            throw new IllegalStateException(e);
+        } catch (ClassNotFoundException e7) {
+            throw new IllegalStateException(e7);
         }
     }
 

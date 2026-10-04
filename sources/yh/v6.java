@@ -1,16 +1,25 @@
 package yh;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes4.dex */
-public final class v6 extends nf.e {
-    public final /* synthetic */ ci.d d;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-    public v6(ci.d dVar) {
-        this.d = dVar;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes4.dex */
+public final class v6 extends ClickableSpan {
+    public final /* synthetic */ z5 a;
+
+    public v6(z5 z5Var) {
+        this.a = z5Var;
     }
 
-    @Override // nf.e
-    public final void b() {
-        this.d.setLoading(false);
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a.run();
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

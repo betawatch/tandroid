@@ -7,11 +7,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.ClippingImageView;
 import org.telegram.ui.Components.PollVotesAlert$UserCell;
-import org.telegram.ui.Components.d71;
-import org.telegram.ui.Components.ub;
+import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.vb;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class t8 extends org.telegram.ui.Components.r6 {
     public final /* synthetic */ int b;
@@ -23,7 +23,7 @@ public final class t8 extends org.telegram.ui.Components.r6 {
     }
 
     @Override // org.telegram.ui.Components.r6
-    public final void b(Object obj, float f7) {
+    public final void c(Object obj, float f7) {
         switch (this.b) {
             case 0:
                 w8 w8Var = (w8) obj;
@@ -61,13 +61,13 @@ public final class t8 extends org.telegram.ui.Components.r6 {
                 ((s2) obj).setClipProgress(f7);
                 break;
             case 8:
-                ((ub) obj).setInOutOffset(f7);
+                ((vb) obj).setInOutOffset(f7);
                 break;
             case 9:
                 ((PollVotesAlert$UserCell) obj).setPlaceholderAlpha(f7);
                 break;
             case 10:
-                ((d71) obj).H(f7);
+                ((n71) obj).F(f7);
                 break;
             case 11:
                 uh.h hVar = (uh.h) obj;
@@ -186,11 +186,11 @@ public final class t8 extends org.telegram.ui.Components.r6 {
             case 7:
                 return Float.valueOf(((s2) obj).getClipProgress());
             case 8:
-                return Float.valueOf(((ub) obj).inOutOffset);
+                return Float.valueOf(((vb) obj).inOutOffset);
             case 9:
                 return Float.valueOf(((PollVotesAlert$UserCell) obj).getPlaceholderAlpha());
             case 10:
-                return Float.valueOf(((d71) obj).E);
+                return Float.valueOf(((n71) obj).E);
             case 11:
                 return Float.valueOf(((uh.h) obj).G);
             default:

@@ -1,23 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import org.telegram.messenger.ChatObject;
+import android.app.Activity;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class f30 extends FrameLayout {
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null || !ChatObject.isChannelOrGiga(sharedInstance.getChat())) {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.VoipGroupOpenVoiceChat)));
-        } else {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.VoipChannelOpenVoiceChat)));
+public final /* synthetic */ class f30 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+
+    public /* synthetic */ f30(Context context, int i10) {
+        this.a = i10;
+        this.b = context;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                d30.j(this.b);
+                break;
+            case 1:
+                nf.f.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                break;
+            case 2:
+                Activity findActivity = AndroidUtilities.findActivity(this.b);
+                if (findActivity instanceof LaunchActivity) {
+                    ((LaunchActivity) findActivity).p0(new PremiumPreviewFragment(0, rg.k0.A1(10)));
+                    break;
+                }
+                break;
+            default:
+                Activity findActivity2 = AndroidUtilities.findActivity(this.b);
+                if (findActivity2 instanceof LaunchActivity) {
+                    ((LaunchActivity) findActivity2).p0(new PremiumPreviewFragment(0, rg.k0.A1(9)));
+                    break;
+                }
+                break;
         }
     }
 }

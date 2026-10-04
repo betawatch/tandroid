@@ -9,9 +9,9 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.view.View;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class k2 {
     public boolean b;
@@ -27,7 +27,7 @@ public final class k2 {
     public final Paint r;
     public final Paint s;
     public final /* synthetic */ n2 t;
-    public final e6 a = new e6(0.0f, (View) null, 0, 320, sr.h);
+    public final e6 a = new e6(0.0f, (View) null, 0, 320, tr.h);
     public final RectF h = new RectF();
     public final RectF i = new RectF();
     public final Path l = new Path();

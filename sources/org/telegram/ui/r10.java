@@ -1,173 +1,42 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Paint;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.r10;
-import org.telegram.ui.t10;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class r10 extends org.telegram.ui.Components.xl0 {
-    public final Context c;
-    public final /* synthetic */ t10 d;
+public final class r10 extends org.telegram.ui.Cells.j7 {
+    public final /* synthetic */ s10 l0;
 
-    public r10(t10 t10Var, Context context) {
-        this.d = t10Var;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r10(s10 s10Var, Context context) {
+        super(context, 1, null);
+        this.l0 = s10Var;
     }
 
-    @Override // org.telegram.ui.Components.xl0
-    public final boolean D(s4.c1 c1Var) {
-        return false;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        t10 t10Var = this.d;
-        if (t10Var.f.isEmpty()) {
-            return 0;
+    @Override // org.telegram.ui.Cells.j7
+    public final boolean d(MessageObject messageObject) {
+        boolean isVoice = messageObject.isVoice();
+        s10 s10Var = this.l0;
+        if (isVoice || messageObject.isRoundVideo()) {
+            boolean playMessage = MediaController.getInstance().playMessage(messageObject);
+            MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? s10Var.v.f : null, false);
+            return playMessage;
         }
-        return ((int) Math.ceil(r1.size() / t10Var.s)) + (!t10Var.N ? 1 : 0);
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        t10 t10Var = this.d;
-        return i10 < ((int) Math.ceil((double) (((float) t10Var.f.size()) / ((float) t10Var.s)))) ? 0 : 1;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        t10 t10Var = this.d;
-        l10 l10Var = t10Var.S;
-        ArrayList arrayList = t10Var.f;
-        int i11 = c1Var.f;
-        View view = c1Var.a;
-        if (i11 != 0) {
-            if (i11 != 3) {
-                if (i11 == 1) {
-                    int ceil = (int) Math.ceil(arrayList.size() / t10Var.s);
-                    int i12 = t10Var.s;
-                    ((org.telegram.ui.Components.v00) view).v = i12 - ((ceil * i12) - arrayList.size());
-                    return;
-                }
-                return;
-            }
-            org.telegram.ui.Cells.s2 s2Var = (org.telegram.ui.Cells.s2) view;
-            s2Var.s2 = i10 != h() - 1;
-            MessageObject messageObject = (MessageObject) arrayList.get(i10);
-            boolean z10 = s2Var.getMessage() != null && s2Var.getMessage().getId() == messageObject.getId();
-            s2Var.O = t10Var.p0;
-            s2Var.W(messageObject.getDialogId(), messageObject, messageObject.messageOwner.date, false, false);
-            if (!t10Var.o0.g()) {
-                s2Var.V(false, z10);
-                return;
-            }
-            int id2 = messageObject.getId();
-            l10Var.a = messageObject.getDialogId();
-            l10Var.b = id2;
-            s2Var.V(t10Var.o0.c(l10Var), z10);
-            return;
+        if (!messageObject.isMusic()) {
+            return false;
         }
-        org.telegram.ui.Cells.u7 u7Var = (org.telegram.ui.Cells.u7) view;
-        u7Var.setItemsCount(t10Var.s);
-        u7Var.setIsFirst(i10 == 0);
-        int i13 = 0;
-        while (true) {
-            int i14 = t10Var.s;
-            if (i13 >= i14) {
-                u7Var.requestLayout();
-                return;
-            }
-            int i15 = (i14 * i10) + i13;
-            if (i15 < arrayList.size()) {
-                MessageObject messageObject2 = (MessageObject) arrayList.get(i15);
-                u7Var.c(i13, arrayList.indexOf(messageObject2), messageObject2);
-                if (t10Var.o0.g()) {
-                    int id3 = messageObject2.getId();
-                    l10Var.a = messageObject2.getDialogId();
-                    l10Var.b = id3;
-                    u7Var.b(i13, t10Var.o0.c(l10Var));
-                } else {
-                    u7Var.b(i13, false);
-                }
-            } else {
-                u7Var.c(i13, i15, null);
-            }
-            i13++;
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v10, types: [org.telegram.ui.Components.v00, org.telegram.ui.h10] */
-    /* JADX WARN: Type inference failed for: r6v5 */
-    /* JADX WARN: Type inference failed for: r6v6, types: [android.view.View] */
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout frameLayout;
-        ?? r62;
-        Context context = this.c;
-        if (i10 == 0) {
-            final org.telegram.ui.Cells.u7 u7Var = new org.telegram.ui.Cells.u7(context);
-            Paint paint = new Paint();
-            u7Var.n = paint;
-            u7Var.s = UserConfig.selectedAccount;
-            u7Var.r = 1;
-            paint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Lh, false));
-            u7Var.b = new MessageObject[6];
-            u7Var.a = new org.telegram.ui.Cells.q7[6];
-            u7Var.c = new int[6];
-            for (int i11 = 0; i11 < 6; i11++) {
-                u7Var.a[i11] = new org.telegram.ui.Cells.q7(u7Var, context);
-                u7Var.addView(u7Var.a[i11]);
-                u7Var.a[i11].setVisibility(4);
-                u7Var.a[i11].setTag(Integer.valueOf(i11));
-                u7Var.a[i11].setOnClickListener(new org.telegram.ui.Cells.a(u7Var, 10));
-                u7Var.a[i11].setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.ui.Cells.p7
-                    @Override // android.view.View.OnLongClickListener
-                    public final boolean onLongClick(View view) {
-                        u7 u7Var2 = u7.this;
-                        if (u7Var2.d == null) {
-                            return false;
-                        }
-                        int intValue = ((Integer) view.getTag()).intValue();
-                        r7 r7Var = u7Var2.d;
-                        int i12 = u7Var2.c[intValue];
-                        MessageObject messageObject = u7Var2.b[intValue];
-                        org.telegram.ui.g gVar = (org.telegram.ui.g) r7Var;
-                        t10 t10Var = ((r10) gVar.b).d;
-                        if (!t10Var.o0.g()) {
-                            t10.a(t10Var, messageObject, u7Var2, intValue);
-                            return true;
-                        }
-                        t10 t10Var2 = ((r10) gVar.b).d;
-                        SpannableStringBuilder[] spannableStringBuilderArr = t10.s0;
-                        t10Var2.f(i12, u7Var2, messageObject, intValue);
-                        return true;
-                    }
-                });
-            }
-            u7Var.setDelegate(new g(this, 17));
-            frameLayout = u7Var;
-        } else {
-            if (i10 != 2) {
-                r62 = new h10(this, context, 1);
-                r62.setIsSingleCell(true);
-                r62.setViewType(2);
-                return com.google.android.gms.internal.vision.e2.k(r62, r62, -1, -2);
-            }
-            FrameLayout v3Var = new org.telegram.ui.Cells.v3(context, null);
-            v3Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.e7, false) & (-218103809));
-            frameLayout = v3Var;
-        }
-        r62 = frameLayout;
-        return com.google.android.gms.internal.vision.e2.k(r62, r62, -1, -2);
+        x10 x10Var = s10Var.v;
+        String str = x10Var.Q;
+        long j3 = x10Var.E;
+        long j10 = x10Var.H;
+        MediaController.PlaylistGlobalSearchParams playlistGlobalSearchParams = new MediaController.PlaylistGlobalSearchParams(str, j3, j10, j10, x10Var.y);
+        x10 x10Var2 = s10Var.v;
+        playlistGlobalSearchParams.endReached = x10Var2.N;
+        playlistGlobalSearchParams.nextSearchRate = x10Var2.v;
+        playlistGlobalSearchParams.totalCount = x10Var2.O;
+        playlistGlobalSearchParams.folderId = x10Var2.J ? 1 : 0;
+        return MediaController.getInstance().setPlaylist(s10Var.v.f, messageObject, 0L, playlistGlobalSearchParams);
     }
 }

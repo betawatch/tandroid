@@ -4,7 +4,7 @@ import com.google.android.gms.internal.cast.b5;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class u2 {
     public static final t1 a;
@@ -410,13 +410,13 @@ public abstract class u2 {
                         m1Var.b[i12] = booleanValue;
                         m1Var.d = i13;
                         i11++;
-                    } catch (IndexOutOfBoundsException e) {
-                        e = e;
+                    } catch (IndexOutOfBoundsException e7) {
+                        e = e7;
                         i12 = i13;
                         throw new b5(i12, m1Var.c, 1, e);
                     }
-                } catch (IndexOutOfBoundsException e7) {
-                    e = e7;
+                } catch (IndexOutOfBoundsException e10) {
+                    e = e10;
                 }
             }
             return;
@@ -437,13 +437,13 @@ public abstract class u2 {
                     m1Var.b[i16] = booleanValue2;
                     m1Var.d = i17;
                     i11++;
-                } catch (IndexOutOfBoundsException e10) {
-                    e = e10;
+                } catch (IndexOutOfBoundsException e11) {
+                    e = e11;
                     i16 = i17;
                     throw new b5(i16, m1Var.c, 1, e);
                 }
-            } catch (IndexOutOfBoundsException e11) {
-                e = e11;
+            } catch (IndexOutOfBoundsException e12) {
+                e = e12;
             }
         }
     }

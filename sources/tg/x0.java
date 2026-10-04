@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -32,12 +32,12 @@ public final /* synthetic */ class x0 implements Utilities.Callback {
                     arrayList.clear();
                     arrayList.addAll(list);
                     z0Var.b0(true, true);
-                    z0Var.X(true);
+                    z0Var.W(true);
                     break;
                 }
                 break;
             default:
-                z0.P(this.b, this.c, (Pair) obj);
+                z0.N(this.b, this.c, (Pair) obj);
                 break;
         }
     }

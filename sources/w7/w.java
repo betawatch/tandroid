@@ -4,7 +4,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class w {
     public static String a(Object... objArr) {
@@ -25,10 +25,10 @@ public abstract class w {
             } else {
                 try {
                     k10 = obj.toString();
-                } catch (Exception e) {
-                    String D = a4.a.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e);
-                    k10 = org.telegram.ui.Cells.c1.k("<", D, " threw ", e.getClass().getName(), ">");
+                } catch (Exception e7) {
+                    String C = a4.a.C(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(C), (Throwable) e7);
+                    k10 = org.telegram.ui.Cells.c1.k("<", C, " threw ", e7.getClass().getName(), ">");
                 }
             }
             objArr[i11] = k10;

@@ -11,7 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class e extends c {
     public final ContentResolver a;
@@ -42,8 +42,8 @@ public final class e extends c {
                         if (assetFileDescriptor != null) {
                             assetFileDescriptor.close();
                         }
-                    } catch (IOException e) {
-                        throw new d(e, 2000);
+                    } catch (IOException e7) {
+                        throw new d(e7, 2000);
                     }
                 } finally {
                     this.c = null;
@@ -52,8 +52,8 @@ public final class e extends c {
                         transferEnded();
                     }
                 }
-            } catch (IOException e7) {
-                throw new d(e7, 2000);
+            } catch (IOException e10) {
+                throw new d(e10, 2000);
             }
         } catch (Throwable th2) {
             this.d = null;
@@ -69,8 +69,8 @@ public final class e extends c {
                         transferEnded();
                     }
                     throw th2;
-                } catch (IOException e10) {
-                    throw new d(e10, 2000);
+                } catch (IOException e11) {
+                    throw new d(e11, 2000);
                 }
             } finally {
                 this.c = null;
@@ -147,10 +147,10 @@ public final class e extends c {
             this.f = true;
             transferStarted(mVar);
             return j3 != -1 ? j3 : this.e;
-        } catch (d e) {
-            throw e;
-        } catch (IOException e7) {
-            throw new d(e7, e7 instanceof FileNotFoundException ? 2005 : 2000);
+        } catch (d e7) {
+            throw e7;
+        } catch (IOException e10) {
+            throw new d(e10, e10 instanceof FileNotFoundException ? 2005 : 2000);
         }
     }
 
@@ -164,8 +164,8 @@ public final class e extends c {
             if (j3 != -1) {
                 try {
                     i11 = (int) Math.min(j3, i11);
-                } catch (IOException e) {
-                    throw new d(e, 2000);
+                } catch (IOException e7) {
+                    throw new d(e7, 2000);
                 }
             }
             FileInputStream fileInputStream = this.d;

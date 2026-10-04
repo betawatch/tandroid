@@ -18,7 +18,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class r9 extends da {
     public boolean A0;
@@ -40,8 +40,8 @@ public abstract class r9 extends da {
         }
         try {
             str = richMessageLayout.getSelectionHtml(this.u, this.v);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             str = null;
         }
         if (str == null || str.length() == 0) {
@@ -68,7 +68,7 @@ public abstract class r9 extends da {
         u1Var.setSelectedBackgroundProgress(0.01f);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.01f, 1.0f);
         int i10 = 1;
-        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.p2(u1Var, id2, i10));
+        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.q2(u1Var, id2, i10));
         ofFloat.addListener(new k1(i10, u1Var));
         ofFloat.setDuration(300L);
         ofFloat.start();
@@ -122,11 +122,11 @@ public abstract class r9 extends da {
             Paint paint = this.p;
             Paint paint2 = this.o;
             if (z10) {
-                int i10 = org.telegram.ui.ActionBar.h6.Vb;
+                int i10 = org.telegram.ui.ActionBar.i6.Vb;
                 paint2.setColor(u(i10));
                 paint.setColor(u(i10));
             } else {
-                int i11 = org.telegram.ui.ActionBar.h6.uf;
+                int i11 = org.telegram.ui.ActionBar.i6.uf;
                 paint2.setColor(u(i11));
                 paint.setColor(u(i11));
             }
@@ -144,11 +144,11 @@ public abstract class r9 extends da {
         Paint paint = this.p;
         Paint paint2 = this.o;
         if (isOutOwner) {
-            int i10 = org.telegram.ui.ActionBar.h6.Vb;
+            int i10 = org.telegram.ui.ActionBar.i6.Vb;
             paint2.setColor(u(i10));
             paint.setColor(u(i10));
         } else {
-            int i11 = org.telegram.ui.ActionBar.h6.uf;
+            int i11 = org.telegram.ui.ActionBar.i6.uf;
             paint2.setColor(u(i11));
             paint.setColor(u(i11));
         }
@@ -187,9 +187,9 @@ public abstract class r9 extends da {
         this.u = i10;
         this.v = i11;
         x();
-        w7.i0 i0Var = this.D;
-        if (i0Var != null) {
-            i0Var.a(true);
+        w7.j0 j0Var = this.D;
+        if (j0Var != null) {
+            j0Var.a(true);
         }
         this.g = 0.0f;
         this.f = 0.0f;
@@ -224,7 +224,7 @@ public abstract class r9 extends da {
             int i12 = this.c;
             rect.set(i12, this.d, richMessageLayout2.getMinWidth() + i12, richMessageLayout2.getHeight() + this.d);
         } else if (u1Var.P2() && u1Var.getCaptionLayout().textLayoutBlocks.size() > 0) {
-            MessageObject.TextLayoutBlock textLayoutBlock = (MessageObject.TextLayoutBlock) hg.c.g(1, u1Var.getCaptionLayout().textLayoutBlocks);
+            MessageObject.TextLayoutBlock textLayoutBlock = (MessageObject.TextLayoutBlock) hg.k0.g(1, u1Var.getCaptionLayout().textLayoutBlocks);
             int i13 = this.c;
             rect.set(i13, this.d, textLayoutBlock.textLayout.getWidth() + i13, (int) (textLayoutBlock.textYOffset(u1Var.getCaptionLayout().textLayoutBlocks, t1Var) + this.d + textLayoutBlock.padTop + textLayoutBlock.textLayout.getHeight()));
         } else {
@@ -232,7 +232,7 @@ public abstract class r9 extends da {
                 this.X = null;
                 return;
             }
-            MessageObject.TextLayoutBlock textLayoutBlock2 = (MessageObject.TextLayoutBlock) hg.c.g(1, messageObject.textLayoutBlocks);
+            MessageObject.TextLayoutBlock textLayoutBlock2 = (MessageObject.TextLayoutBlock) hg.k0.g(1, messageObject.textLayoutBlocks);
             int i14 = this.c;
             rect.set(i14, this.d, textLayoutBlock2.textLayout.getWidth() + i14, (int) (textLayoutBlock2.textYOffset(messageObject.textLayoutBlocks, t1Var) + this.d + textLayoutBlock2.padTop + textLayoutBlock2.textLayout.getHeight()));
         }
@@ -404,7 +404,7 @@ public abstract class r9 extends da {
                 if (z13) {
                     RichMessageLayout richMessageLayout = u1Var.getMessageObject() != null ? u1Var.getMessageObject().richLayout : null;
                     if (richMessageLayout != null && !richMessageLayout.textBlocks.isEmpty()) {
-                        ba baVar = (ba) hg.c.g(1, richMessageLayout.textBlocks);
+                        ba baVar = (ba) hg.k0.g(1, richMessageLayout.textBlocks);
                         Layout layout2 = baVar.getLayout();
                         staticLayout = layout2 instanceof StaticLayout ? (StaticLayout) layout2 : null;
                         f7 = baVar.getY();

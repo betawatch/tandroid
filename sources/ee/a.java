@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import org.telegram.tgnet.ConnectionsManager;
-import v7.s7;
-import v7.u7;
+import v7.r7;
+import v7.t7;
 import zd.a0;
 import zd.b0;
 import zd.b2;
@@ -16,15 +16,15 @@ import zd.f1;
 import zd.g2;
 import zd.w0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static final v a = new v("NO_DECISION", 0);
-    public static final v b = new v("CLOSED", 0);
-    public static final v c = new v("UNDEFINED", 0);
-    public static final v d = new v("REUSABLE_CLAIMED", 0);
-    public static final v e = new v("CONDITION_FALSE", 0);
-    public static final v f = new v("NO_THREAD_ELEMENTS", 0);
+    public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("NO_DECISION", 1);
+    public static final com.google.android.gms.internal.clearcut.e b = new com.google.android.gms.internal.clearcut.e("CLOSED", 1);
+    public static final com.google.android.gms.internal.clearcut.e c = new com.google.android.gms.internal.clearcut.e("UNDEFINED", 1);
+    public static final com.google.android.gms.internal.clearcut.e d = new com.google.android.gms.internal.clearcut.e("REUSABLE_CLAIMED", 1);
+    public static final com.google.android.gms.internal.clearcut.e e = new com.google.android.gms.internal.clearcut.e("CONDITION_FALSE", 1);
+    public static final com.google.android.gms.internal.clearcut.e f = new com.google.android.gms.internal.clearcut.e("NO_THREAD_ELEMENTS", 1);
 
     public static final Object a(t tVar, long j3, rd.p pVar) {
         while (true) {
@@ -33,9 +33,9 @@ public abstract class a {
             }
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = d.a;
             Object obj = atomicReferenceFieldUpdater.get(tVar);
-            v vVar = b;
-            if (obj == vVar) {
-                return vVar;
+            com.google.android.gms.internal.clearcut.e eVar = b;
+            if (obj == eVar) {
+                return eVar;
             }
             t tVar2 = (t) ((d) obj);
             if (tVar2 == null) {
@@ -71,14 +71,14 @@ public abstract class a {
                     runtimeException = th2;
                 } else {
                     runtimeException = new RuntimeException("Exception while trying to handle coroutine exception", th3);
-                    s7.a(runtimeException, th2);
+                    r7.a(runtimeException, th2);
                 }
                 Thread currentThread = Thread.currentThread();
                 currentThread.getUncaughtExceptionHandler().uncaughtException(currentThread, runtimeException);
             }
         }
         try {
-            s7.a(th2, new g(hVar));
+            r7.a(th2, new g(hVar));
         } catch (Throwable unused) {
         }
         Thread currentThread2 = Thread.currentThread();
@@ -107,21 +107,21 @@ public abstract class a {
         if (obj == f) {
             return;
         }
-        if (!(obj instanceof z)) {
-            Object fold = hVar.fold(null, x.d);
+        if (!(obj instanceof y)) {
+            Object fold = hVar.fold(null, w.d);
             kotlin.jvm.internal.i.c(fold, "null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>");
-            a4.a.z(fold);
+            a4.a.y(fold);
             throw null;
         }
-        z zVar = (z) obj;
-        b2[] b2VarArr = zVar.b;
+        y yVar = (y) obj;
+        b2[] b2VarArr = yVar.b;
         int length = b2VarArr.length - 1;
         if (length < 0) {
             return;
         }
         b2 b2Var = b2VarArr[length];
         kotlin.jvm.internal.i.b(null);
-        Object obj2 = zVar.a[length];
+        Object obj2 = yVar.a[length];
         throw null;
     }
 
@@ -172,7 +172,7 @@ public abstract class a {
             } else {
                 CancellationException cancellationException = f1Var.getCancellationException();
                 hVar.c(vVar, cancellationException);
-                hVar.resumeWith(u7.a(cancellationException));
+                hVar.resumeWith(t7.a(cancellationException));
             }
             while (a10.j()) {
             }
@@ -197,7 +197,7 @@ public abstract class a {
         boolean z10;
         int i10;
         int i11;
-        int i12 = w.a;
+        int i12 = v.a;
         try {
             str2 = System.getProperty(str);
         } catch (SecurityException unused) {
@@ -276,16 +276,16 @@ public abstract class a {
 
     public static final Object k(id.h hVar, Object obj) {
         if (obj == null) {
-            obj = hVar.fold(0, x.c);
+            obj = hVar.fold(0, w.c);
             kotlin.jvm.internal.i.b(obj);
         }
         if (obj == 0) {
             return f;
         }
         if (obj instanceof Integer) {
-            return hVar.fold(new z(((Number) obj).intValue(), hVar), x.e);
+            return hVar.fold(new y(((Number) obj).intValue(), hVar), w.e);
         }
-        a4.a.z(obj);
+        a4.a.y(obj);
         throw null;
     }
 }

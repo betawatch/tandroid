@@ -1,84 +1,342 @@
 package org.telegram.ui;
 
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.Layout;
+import android.text.Spanned;
+import android.text.style.ClickableSpan;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q20 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d60 b;
+public final class q20 extends org.telegram.ui.Components.yc0 {
+    public boolean C0;
+    public boolean D0;
+    public boolean E0;
+    public boolean F0;
+    public final Paint G0;
+    public Boolean H0;
+    public final /* synthetic */ r20 I0;
 
-    public /* synthetic */ q20(d60 d60Var, int i10) {
-        this.a = i10;
-        this.b = d60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q20(r20 r20Var, Activity activity) {
+        super(activity);
+        this.I0 = r20Var;
+        new Paint(1);
+        this.G0 = new Paint(1);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                d60 d60Var = this.b;
-                if (d60Var.r1() && AndroidUtilities.checkInlinePermissions(d60Var.i0) && !org.telegram.ui.Components.voip.k1.d0.V) {
-                    d60Var.dismiss();
-                    AndroidUtilities.runOnUIThread(new q20(d60Var, 4), 100L);
-                    break;
+    private void setLightStatusBar(int i10) {
+        boolean z10 = AndroidUtilities.computePerceivedBrightness(i10) >= 0.721f;
+        Boolean bool = this.H0;
+        if (bool == null || bool.booleanValue() != z10) {
+            View view = this.I0.fragmentView;
+            this.H0 = Boolean.valueOf(z10);
+            AndroidUtilities.setLightStatusBar(view, z10);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        org.telegram.ui.ActionBar.k kVar3;
+        org.telegram.ui.ActionBar.k kVar4;
+        org.telegram.ui.ActionBar.k kVar5;
+        org.telegram.ui.ActionBar.d6 d6Var;
+        org.telegram.ui.ActionBar.c5 c5Var;
+        org.telegram.ui.ActionBar.k kVar6;
+        org.telegram.ui.ActionBar.k kVar7;
+        r20 r20Var = this.I0;
+        Paint paint = r20Var.K;
+        o20 o20Var = r20Var.y;
+        if (!r20Var.f) {
+            if (r20Var.h) {
+                float f7 = r20Var.n + 0.016f;
+                r20Var.n = f7;
+                if (f7 > 3.0f) {
+                    r20Var.h = false;
                 }
-                break;
-            case 1:
-                d60 d60Var2 = this.b;
-                if (d60Var2.a1 != null && d60Var2.R1 && VoIPService.getSharedInstance() != null) {
-                    try {
-                        d60Var2.w.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
+            } else {
+                float f10 = r20Var.n - 0.016f;
+                r20Var.n = f10;
+                if (f10 < 1.0f) {
+                    r20Var.h = true;
+                }
+            }
+        }
+        r20Var.r = (r20Var.c.getLayoutManager() != null ? r20Var.c.getLayoutManager().m(0) : null) == null ? 0 : Math.round(r20Var.t0() + r3.getBottom());
+        kVar = ((org.telegram.ui.ActionBar.n2) r20Var).actionBar;
+        int dp = AndroidUtilities.dp(16.0f) + kVar.getBottom();
+        float f11 = 1.0f - ((r20Var.r - dp) / (r20Var.J - dp));
+        r20Var.v = f11;
+        r20Var.v = Utilities.clamp(f11, 1.0f, 0.0f);
+        kVar2 = ((org.telegram.ui.ActionBar.n2) r20Var).actionBar;
+        int dp2 = AndroidUtilities.dp(16.0f) + kVar2.getBottom();
+        if (r20Var.r < dp2) {
+            r20Var.r = dp2;
+        }
+        float f12 = r20Var.x;
+        r20Var.x = 0.0f;
+        if (r20Var.r < AndroidUtilities.dp(30.0f) + dp2) {
+            r20Var.x = ((AndroidUtilities.dp(30.0f) + dp2) - r20Var.r) / AndroidUtilities.dp(30.0f);
+        }
+        if (r20Var.H) {
+            r20Var.x = 1.0f;
+            r20Var.v = 1.0f;
+        }
+        if (f12 != r20Var.x) {
+            r20Var.c.invalidate();
+        }
+        int i10 = r20Var.r;
+        kVar3 = ((org.telegram.ui.ActionBar.n2) r20Var).actionBar;
+        int measuredHeight = kVar3.getMeasuredHeight();
+        int measuredHeight2 = o20Var.getMeasuredHeight();
+        org.telegram.ui.Components.q90 q90Var = (org.telegram.ui.Components.q90) o20Var.c;
+        FrameLayout frameLayout = (FrameLayout) o20Var.e;
+        TextView textView = (TextView) o20Var.b;
+        FrameLayout frameLayout2 = (FrameLayout) o20Var.d;
+        float dp3 = AndroidUtilities.dp(16.0f) + (i10 - ((measuredHeight2 + measuredHeight) - r20Var.I));
+        kVar4 = ((org.telegram.ui.ActionBar.n2) r20Var).actionBar;
+        float max = Math.max((((((kVar4.getMeasuredHeight() - r20Var.I) - textView.getMeasuredHeight()) / 2.0f) + r20Var.I) - o20Var.getTop()) - textView.getTop(), dp3);
+        o20Var.setTranslationY(max);
+        frameLayout2.setTranslationY(((-max) / 4.0f) + AndroidUtilities.dp(16.0f) + AndroidUtilities.dp(16.0f));
+        float f13 = r20Var.v;
+        float z10 = com.google.android.gms.internal.vision.e2.z(1.0f, f13, 0.4f, 0.6f);
+        float f14 = 1.0f - (f13 > 0.5f ? (f13 - 0.5f) / 0.5f : 0.0f);
+        frameLayout2.setScaleX(z10);
+        frameLayout2.setScaleY(z10);
+        frameLayout2.setAlpha(f14);
+        frameLayout.setAlpha(f14);
+        q90Var.setAlpha(f14);
+        if (r20Var.B0()) {
+            int i11 = f14 > 0.0f ? 0 : 4;
+            frameLayout2.setVisibility(i11);
+            frameLayout.setVisibility(i11);
+            q90Var.setVisibility(i11);
+        }
+        r20Var.e.setAlpha(1.0f - r20Var.v);
+        r20Var.e.setTranslationY((frameLayout2.getY() + o20Var.getY()) - AndroidUtilities.dp(30.0f));
+        float dp4 = AndroidUtilities.dp(72.0f) - textView.getLeft();
+        float f15 = r20Var.v;
+        textView.setTranslationX(r20Var.B0() ? 0.0f : (1.0f - org.telegram.ui.Components.tr.h.getInterpolation(1.0f - (f15 > 0.3f ? (f15 - 0.3f) / 0.7f : 0.0f))) * dp4);
+        if (!r20Var.f) {
+            invalidate();
+        }
+        r20Var.a.d(0, (-getMeasuredWidth()) * 0.1f * r20Var.n, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
+        if (r20Var.M) {
+            int themedColor = r20Var.getThemedColor(org.telegram.ui.ActionBar.i6.a7);
+            Paint paint2 = this.G0;
+            paint2.setColor(themedColor);
+            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint2);
+        } else {
+            canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), r20Var.a.f);
+        }
+        int d = i0.a.d(f14, r20Var.getThemedColor(org.telegram.ui.ActionBar.i6.j5), r20Var.getThemedColor(r20Var.M ? org.telegram.ui.ActionBar.i6.G6 : org.telegram.ui.ActionBar.i6.Tj));
+        kVar5 = ((org.telegram.ui.ActionBar.n2) r20Var).actionBar;
+        kVar5.getBackButton().setColorFilter(d);
+        textView.setTextColor(d);
+        paint.setAlpha((int) ((1.0f - f14) * 255.0f));
+        r20Var.v0(paint.getAlpha() > 0);
+        int i12 = org.telegram.ui.ActionBar.i6.Sj;
+        d6Var = ((org.telegram.ui.ActionBar.n2) r20Var).resourceProvider;
+        setLightStatusBar(org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.v0(i12, d6Var), paint.getColor()));
+        if (!r20Var.B0()) {
+            float measuredWidth = getMeasuredWidth();
+            kVar7 = ((org.telegram.ui.ActionBar.n2) r20Var).actionBar;
+            canvas.drawRect(0.0f, 0.0f, measuredWidth, kVar7.getMeasuredHeight(), paint);
+        }
+        super.dispatchDraw(canvas);
+        if (f14 > 0.01f || !r20Var.r0()) {
+            return;
+        }
+        c5Var = ((org.telegram.ui.ActionBar.n2) r20Var).parentLayout;
+        kVar6 = ((org.telegram.ui.ActionBar.n2) r20Var).actionBar;
+        ((ActionBarLayout) c5Var).p(canvas, 255, kVar6.getMeasuredHeight());
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.k kVar;
+        Layout layout;
+        float f7;
+        org.telegram.ui.ActionBar.k kVar2;
+        r20 r20Var = this.I0;
+        if (r20Var.B0()) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        kVar = ((org.telegram.ui.ActionBar.n2) r20Var).actionBar;
+        if (kVar != null) {
+            kVar2 = ((org.telegram.ui.ActionBar.n2) r20Var).actionBar;
+            ImageView backButton = kVar2.getBackButton();
+            if (backButton != null && backButton.getVisibility() == 0) {
+                if (motionEvent.getAction() == 0) {
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    if (hh.k.c(backButton, this, rectF) && rectF.contains(motionEvent.getX(), motionEvent.getY())) {
+                        this.F0 = true;
                     }
-                    d60Var2.J1(1, true);
-                    AndroidUtilities.runOnUIThread(d60Var2.x2, 80L);
-                    d60Var2.R1 = false;
-                    d60Var2.S1 = true;
-                    break;
                 }
-                break;
-            case 2:
-                d60 d60Var3 = this.b;
-                int i10 = d60Var3.T1;
-                if (i10 == 1 || i10 == 2 || i10 == 6 || i10 == 5) {
-                    d60Var3.N1(true, false);
-                    break;
+                if (this.F0) {
+                    boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+                    if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
+                        return dispatchTouchEvent;
+                    }
+                    this.F0 = false;
+                    return dispatchTouchEvent;
                 }
-                break;
-            case 3:
-                this.b.v1();
-                break;
-            case 4:
-                org.telegram.ui.Components.voip.k1.n(this.b.i0);
-                break;
-            case 5:
-                this.b.dismiss();
-                break;
-            case 6:
-                d60 d60Var4 = this.b;
-                d60Var4.K1();
-                AndroidUtilities.runOnUIThread(d60Var4.D1, 1000L);
-                break;
-            case 7:
-                y40 y40Var = this.b.r0;
-                if (y40Var != null) {
-                    y40Var.show();
-                    break;
+            }
+        }
+        o20 o20Var = r20Var.y;
+        float x10 = o20Var.getX();
+        FrameLayout frameLayout = (FrameLayout) o20Var.e;
+        FrameLayout frameLayout2 = (FrameLayout) o20Var.d;
+        org.telegram.ui.Components.q90 q90Var = (org.telegram.ui.Components.q90) o20Var.c;
+        float x11 = q90Var.getX() + x10;
+        float y3 = q90Var.getY() + o20Var.getY();
+        RectF rectF2 = AndroidUtilities.rectTmp;
+        rectF2.set(x11, y3, q90Var.getMeasuredWidth() + x11, q90Var.getMeasuredHeight() + y3);
+        if ((!rectF2.contains(motionEvent.getX(), motionEvent.getY()) && !this.D0) || r20Var.c.K1 || (layout = q90Var.getLayout()) == null) {
+            f7 = 1.0f;
+        } else {
+            CharSequence text = layout.getText();
+            f7 = 1.0f;
+            if (text instanceof Spanned) {
+                Spanned spanned = (Spanned) text;
+                ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spanned.getSpans(0, spanned.length(), ClickableSpan.class);
+                if (clickableSpanArr != null && clickableSpanArr.length > 0 && r20Var.x < 1.0f) {
+                    motionEvent.offsetLocation(-x11, -y3);
+                    if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2) {
+                        this.D0 = true;
+                    } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                        this.D0 = false;
+                    }
+                    q90Var.dispatchTouchEvent(motionEvent);
+                    return true;
                 }
-                break;
-            case 8:
-                d60.t(this.b);
-                break;
-            case 9:
-                this.b.d.getMessagesController().deleteUserPhoto(null);
-                break;
-            default:
-                d60 d60Var5 = this.b;
-                d60Var5.x3 = null;
-                d60Var5.H1(true);
-                break;
+            }
+        }
+        float x12 = frameLayout2.getX() + o20Var.getX();
+        float y10 = frameLayout2.getY() + o20Var.getY();
+        boolean isClickable = frameLayout2.isClickable();
+        rectF2.set(x12, y10, frameLayout2.getMeasuredWidth() + x12, frameLayout2.getMeasuredHeight() + y10);
+        if ((rectF2.contains(motionEvent.getX(), motionEvent.getY()) || this.C0) && !r20Var.c.K1 && isClickable && r20Var.x < f7) {
+            motionEvent.offsetLocation(-x12, -y10);
+            if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2) {
+                this.C0 = true;
+            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                this.C0 = false;
+            }
+            frameLayout2.dispatchTouchEvent(motionEvent);
+            return true;
+        }
+        float x13 = frameLayout.getX() + o20Var.getX();
+        float y11 = frameLayout.getY() + o20Var.getY();
+        rectF2.set(x13, y11, frameLayout.getMeasuredWidth() + x13, frameLayout.getMeasuredHeight() + y11);
+        if ((rectF2.contains(motionEvent.getX(), motionEvent.getY()) || this.E0) && !r20Var.c.K1 && r20Var.x < f7) {
+            motionEvent.offsetLocation(-x13, -y11);
+            if (motionEvent.getAction() == 0) {
+                this.E0 = true;
+            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                this.E0 = false;
+            }
+            frameLayout.dispatchTouchEvent(motionEvent);
+            if (this.E0) {
+                return true;
+            }
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        org.telegram.ui.ActionBar.k kVar;
+        r20 r20Var = this.I0;
+        if (view != r20Var.u0() || r20Var.B0()) {
+            return super.drawChild(canvas, view, j3);
+        }
+        canvas.save();
+        kVar = ((org.telegram.ui.ActionBar.n2) r20Var).actionBar;
+        canvas.clipRect(0, kVar.getBottom(), getMeasuredWidth(), getMeasuredHeight());
+        super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.yc0, org.telegram.ui.Components.lw0
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:0x003c  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0048  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
+    @Override // org.telegram.ui.Components.yc0, android.widget.FrameLayout, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onMeasure(int i10, int i11) {
+        org.telegram.ui.ActionBar.c5 c5Var;
+        int i12;
+        int i13;
+        s4.c0 c0Var;
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.c5 c5Var2;
+        r20 r20Var = this.I0;
+        o20 o20Var = r20Var.y;
+        r20Var.H = View.MeasureSpec.getSize(i10) > View.MeasureSpec.getSize(i11);
+        c5Var = ((org.telegram.ui.ActionBar.n2) r20Var).parentLayout;
+        if (c5Var != null) {
+            c5Var2 = ((org.telegram.ui.ActionBar.n2) r20Var).parentLayout;
+            if (((ActionBarLayout) c5Var2).M0) {
+                i12 = 0;
+                r20Var.I = i12;
+                o20Var.measure(i10, View.MeasureSpec.makeMeasureSpec(0, 0));
+                ViewGroup.LayoutParams layoutParams = r20Var.e.getLayoutParams();
+                i13 = r20Var.E;
+                if (i13 <= 0) {
+                    i13 = o20Var.getMeasuredHeight();
+                }
+                layoutParams.height = i13;
+                c0Var = r20Var.F;
+                if (c0Var instanceof org.telegram.ui.Components.sz) {
+                    org.telegram.ui.Components.sz szVar = (org.telegram.ui.Components.sz) c0Var;
+                    kVar = ((org.telegram.ui.ActionBar.n2) r20Var).actionBar;
+                    szVar.M = kVar.getMeasuredHeight();
+                    szVar.p1();
+                    ((org.telegram.ui.Components.sz) r20Var.F).S = 0;
+                }
+                super.onMeasure(i10, i11);
+                if (((getMeasuredWidth() + getMeasuredHeight()) << 16) == 0) {
+                    r20Var.y0();
+                    return;
+                }
+                return;
+            }
+        }
+        i12 = AndroidUtilities.statusBarHeight;
+        r20Var.I = i12;
+        o20Var.measure(i10, View.MeasureSpec.makeMeasureSpec(0, 0));
+        ViewGroup.LayoutParams layoutParams2 = r20Var.e.getLayoutParams();
+        i13 = r20Var.E;
+        if (i13 <= 0) {
+        }
+        layoutParams2.height = i13;
+        c0Var = r20Var.F;
+        if (c0Var instanceof org.telegram.ui.Components.sz) {
+        }
+        super.onMeasure(i10, i11);
+        if (((getMeasuredWidth() + getMeasuredHeight()) << 16) == 0) {
         }
     }
 }

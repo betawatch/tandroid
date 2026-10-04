@@ -1,164 +1,180 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.os.AsyncTask;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Locale;
+import java.util.Scanner;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class io0 implements TextWatcher {
-    public final String[] a = {"34", "37"};
-    public final String[] b = {"300", "301", "302", "303", "304", "305", "309", "36", "38", "39"};
-    public final String[] c = {"2221", "2222", "2223", "2224", "2225", "2226", "2227", "2228", "2229", "2200", "2201", "2202", "2203", "2204", "8600", "9860", "223", "224", "225", "226", "227", "228", "229", "23", "24", "25", "26", "270", "271", "2720", "50", "51", "52", "53", "54", "55", "4", "60", "62", "64", "65", "35"};
-    public int d = -1;
-    public int e;
-    public final /* synthetic */ oo0 f;
+public final class io0 extends AsyncTask {
+    public final /* synthetic */ uc.a a;
+    public final /* synthetic */ so0 b;
 
-    public io0(oo0 oo0Var) {
-        this.f = oo0Var;
+    public io0(so0 so0Var, uc.a aVar) {
+        this.b = so0Var;
+        this.a = aVar;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        char c10;
-        boolean z10;
-        int i10;
-        int i11;
-        String[] strArr;
-        int i12;
-        String str;
-        oo0 oo0Var = this.f;
-        if (oo0Var.o0) {
+    /* JADX WARN: Can't wrap try/catch for region: R(20:0|1|(2:2|3)|(13:48|49|(3:51|52|(1:54))|(1:7)(2:44|(1:46)(1:47))|8|9|10|11|12|13|14|15|(4:23|(1:25)|26|27)(3:19|20|21))|5|(0)(0)|8|9|10|11|12|13|14|15|(1:17)|23|(0)|26|27|(2:(0)|(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x0137, code lost:
+    
+        r0 = e;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x0171, code lost:
+    
+        org.telegram.messenger.FileLog.e(r0);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x0174, code lost:
+    
+        if (r5 == null) goto L55;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:55:0x0084, code lost:
+    
+        if (r5.endsWith(".smart-glocal.com/cds/v1/tokenize/card") == false) goto L16;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x013d A[Catch: all -> 0x0134, Exception -> 0x0137, TRY_LEAVE, TryCatch #2 {all -> 0x0134, blocks: (B:11:0x00ba, B:14:0x00eb, B:19:0x00fc, B:23:0x0139, B:25:0x013d, B:38:0x0170, B:37:0x016d, B:41:0x0171), top: B:2:0x000e }] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x009b A[Catch: all -> 0x0087, Exception -> 0x0097, TryCatch #4 {all -> 0x0087, blocks: (B:3:0x000e, B:49:0x0063, B:52:0x0076, B:54:0x007e, B:7:0x0091, B:8:0x00b2, B:44:0x009b, B:46:0x00a3, B:47:0x00ab), top: B:2:0x000e }] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x017b  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0091 A[Catch: all -> 0x0087, Exception -> 0x0097, TRY_ENTER, TryCatch #4 {all -> 0x0087, blocks: (B:3:0x000e, B:49:0x0063, B:52:0x0076, B:54:0x007e, B:7:0x0091, B:8:0x00b2, B:44:0x009b, B:46:0x00a3, B:47:0x00ab), top: B:2:0x000e }] */
+    /* JADX WARN: Type inference failed for: r7v0 */
+    /* JADX WARN: Type inference failed for: r7v1, types: [java.net.HttpURLConnection] */
+    /* JADX WARN: Type inference failed for: r7v2 */
+    @Override // android.os.AsyncTask
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object doInBackground(Object[] objArr) {
+        HttpURLConnection httpURLConnection;
+        ?? r72;
+        JSONObject jSONObject;
+        String string;
+        int responseCode;
+        so0 so0Var = this.b;
+        uc.a aVar = this.a;
+        try {
+            try {
+                try {
+                    jSONObject = new JSONObject();
+                    JSONObject jSONObject2 = new JSONObject();
+                    jSONObject2.put("number", aVar.a);
+                    jSONObject2.put("expiration_month", String.format(Locale.US, "%02d", aVar.c));
+                    jSONObject2.put("expiration_year", "" + aVar.d);
+                    jSONObject2.put("security_code", "" + aVar.b);
+                    jSONObject.put("card", jSONObject2);
+                } catch (Throwable th2) {
+                    th = th2;
+                    r72 = aVar;
+                    if (r72 != 0) {
+                        r72.disconnect();
+                    }
+                    throw th;
+                }
+            } catch (Throwable th3) {
+                th = th3;
+                r72 = 0;
+                if (r72 != 0) {
+                }
+                throw th;
+            }
+        } catch (Exception e7) {
+            e = e7;
+            httpURLConnection = null;
+        }
+        try {
+            if (so0Var.C0.native_params != null) {
+                try {
+                    string = new JSONObject(so0Var.C0.native_params.data).getString("tokenize_url");
+                    if (string != null) {
+                        try {
+                            if (string.startsWith("https://")) {
+                            }
+                        } catch (Exception unused) {
+                        }
+                    }
+                } catch (Exception unused2) {
+                }
+                httpURLConnection = (HttpURLConnection) (string == null ? new URL(string) : so0Var.C0.invoice.test ? new URL("https://tgb-playground.smart-glocal.com/cds/v1/tokenize/card") : new URL("https://tgb.smart-glocal.com/cds/v1/tokenize/card")).openConnection();
+                httpURLConnection.setConnectTimeout(30000);
+                httpURLConnection.setReadTimeout(80000);
+                httpURLConnection.setUseCaches(false);
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setRequestProperty("Content-Type", "application/json");
+                httpURLConnection.setRequestProperty("X-PUBLIC-TOKEN", so0Var.j0);
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                outputStream.write(jSONObject.toString().getBytes("UTF-8"));
+                outputStream.close();
+                responseCode = httpURLConnection.getResponseCode();
+                if (responseCode >= 200 || responseCode >= 300) {
+                    if (BuildVars.DEBUG_VERSION) {
+                        StringBuilder sb2 = new StringBuilder("");
+                        InputStream errorStream = httpURLConnection.getErrorStream();
+                        String next = new Scanner(errorStream, "UTF-8").useDelimiter("\\A").next();
+                        errorStream.close();
+                        sb2.append(next);
+                        FileLog.e(sb2.toString());
+                    }
+                    httpURLConnection.disconnect();
+                    return null;
+                }
+                JSONObject jSONObject3 = new JSONObject();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                String next2 = new Scanner(inputStream, "UTF-8").useDelimiter("\\A").next();
+                inputStream.close();
+                jSONObject3.put("token", new JSONObject(next2).getJSONObject("data").getString("token"));
+                jSONObject3.put(TeXSymbolParser.TYPE_ATTR, "card");
+                String jSONObject4 = jSONObject3.toString();
+                httpURLConnection.disconnect();
+                return jSONObject4;
+            }
+            outputStream.write(jSONObject.toString().getBytes("UTF-8"));
+            outputStream.close();
+            responseCode = httpURLConnection.getResponseCode();
+            if (responseCode >= 200) {
+            }
+            if (BuildVars.DEBUG_VERSION) {
+            }
+            httpURLConnection.disconnect();
+            return null;
+        } finally {
+        }
+        string = null;
+        httpURLConnection = (HttpURLConnection) (string == null ? new URL(string) : so0Var.C0.invoice.test ? new URL("https://tgb-playground.smart-glocal.com/cds/v1/tokenize/card") : new URL("https://tgb.smart-glocal.com/cds/v1/tokenize/card")).openConnection();
+        httpURLConnection.setConnectTimeout(30000);
+        httpURLConnection.setReadTimeout(80000);
+        httpURLConnection.setUseCaches(false);
+        httpURLConnection.setDoOutput(true);
+        httpURLConnection.setRequestMethod("POST");
+        httpURLConnection.setRequestProperty("Content-Type", "application/json");
+        httpURLConnection.setRequestProperty("X-PUBLIC-TOKEN", so0Var.j0);
+        OutputStream outputStream2 = httpURLConnection.getOutputStream();
+    }
+
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        String str = (String) obj;
+        so0 so0Var = this.b;
+        if (so0Var.Q0) {
             return;
         }
-        EditTextBoldCursor editTextBoldCursor = oo0Var.f[0];
-        int selectionStart = editTextBoldCursor.getSelectionStart();
-        String obj = editTextBoldCursor.getText().toString();
-        int i13 = 3;
-        int i14 = 1;
-        if (this.d == 3) {
-            obj = obj.substring(0, this.e) + obj.substring(this.e + 1);
-            selectionStart--;
-        }
-        StringBuilder sb2 = new StringBuilder(obj.length());
-        int i15 = 0;
-        while (i15 < obj.length()) {
-            int i16 = i15 + 1;
-            String substring = obj.substring(i15, i16);
-            if ("0123456789".contains(substring)) {
-                sb2.append(substring);
-            }
-            i15 = i16;
-        }
-        oo0Var.o0 = true;
-        String str2 = null;
-        int i17 = 100;
-        if (sb2.length() > 0) {
-            String sb3 = sb2.toString();
-            int i18 = 0;
-            while (true) {
-                if (i18 >= i13) {
-                    c10 = 1;
-                    break;
-                }
-                if (i18 == 0) {
-                    strArr = this.c;
-                    i12 = 16;
-                    str = "xxxx xxxx xxxx xxxx";
-                } else if (i18 != i14) {
-                    strArr = this.b;
-                    i12 = 14;
-                    str = "xxxx xxxx xxxx xx";
-                } else {
-                    strArr = this.a;
-                    i12 = 15;
-                    str = "xxxx xxxx xxxx xxx";
-                }
-                c10 = 1;
-                for (String str3 : strArr) {
-                    if (sb3.length() <= str3.length()) {
-                        if (str3.startsWith(sb3)) {
-                            i17 = i12;
-                            str2 = str;
-                            break;
-                        }
-                    } else {
-                        if (sb3.startsWith(str3)) {
-                            i17 = i12;
-                            str2 = str;
-                            break;
-                        }
-                    }
-                }
-                if (str2 != null) {
-                    break;
-                }
-                i18++;
-                i13 = 3;
-                i14 = 1;
-            }
-            if (sb2.length() > i17) {
-                sb2.setLength(i17);
-            }
+        if (str == null) {
+            org.telegram.ui.Components.e5.w0(so0Var, LocaleController.getString(R.string.PaymentConnectionFailed));
         } else {
-            c10 = 1;
+            so0Var.w0 = str;
+            so0Var.t0();
         }
-        if (str2 != null) {
-            if (sb2.length() == i17) {
-                oo0Var.f[c10].requestFocus();
-            }
-            editTextBoldCursor.setTextColor(oo0Var.getThemedColor(org.telegram.ui.ActionBar.h6.G6));
-            int i19 = 0;
-            while (true) {
-                if (i19 >= sb2.length()) {
-                    break;
-                }
-                if (i19 < str2.length()) {
-                    if (str2.charAt(i19) == ' ') {
-                        sb2.insert(i19, ' ');
-                        i19++;
-                        if (selectionStart == i19 && (i11 = this.d) != 2 && i11 != 3) {
-                            selectionStart++;
-                        }
-                    }
-                    i19++;
-                } else {
-                    sb2.insert(i19, ' ');
-                    if (selectionStart == i19 + 1 && (i10 = this.d) != 2 && i10 != 3) {
-                        selectionStart++;
-                    }
-                }
-            }
-        }
-        if (sb2.toString().equals(editable.toString())) {
-            z10 = false;
-        } else {
-            z10 = false;
-            editable.replace(0, editable.length(), sb2);
-        }
-        if (selectionStart >= 0) {
-            editTextBoldCursor.setSelection(Math.min(selectionStart, editTextBoldCursor.length()));
-        }
-        oo0Var.o0 = z10;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        if (i11 == 0 && i12 == 1) {
-            this.d = 1;
-            return;
-        }
-        if (i11 != 1 || i12 != 0) {
-            this.d = -1;
-        } else if (charSequence.charAt(i10) != ' ' || i10 <= 0) {
-            this.d = 2;
-        } else {
-            this.d = 3;
-            this.e = i10 - 1;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        so0Var.H0(true, false);
+        so0Var.D0(false);
     }
 }

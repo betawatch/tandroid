@@ -1,82 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.da1;
-import org.telegram.ui.ea1;
-import org.telegram.ui.qa1;
-import org.telegram.ui.sa1;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h61 implements Utilities.Callback0Return {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class h61 extends k61 {
+    public static boolean h = true;
+    public final int e;
+    public final m11 f;
 
-    public /* synthetic */ h61(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public h61(String str, int i10, m11 m11Var) {
+        super(str, (m11) null);
+        this.e = i10;
+        this.f = m11Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:31:0x007b  */
-    /* JADX WARN: Removed duplicated region for block: B:33:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.messenger.Utilities.Callback0Return
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object run() {
-        View childAt;
-        switch (this.a) {
-            case 0:
-                l61 l61Var = (l61) this.b;
-                Object obj = ((x51) this.c).G;
-                yl0 yl0Var = l61Var.d;
-                int i10 = 0;
-                while (true) {
-                    if (i10 < l61Var.x.size()) {
-                        x51 G = l61Var.G(i10);
-                        if (G == null || G.G != obj) {
-                            i10++;
-                        }
-                    } else {
-                        i10 = -1;
-                    }
-                }
-                if (i10 != -1) {
-                    for (int i11 = 0; i11 < yl0Var.getChildCount(); i11++) {
-                        childAt = yl0Var.getChildAt(i11);
-                        int R = RecyclerView.R(childAt);
-                        if (R != -1 && R == i10) {
-                            if (childAt instanceof qa1) {
-                                return null;
-                            }
-                            return (qa1) childAt;
-                        }
-                    }
-                }
-                childAt = null;
-                if (childAt instanceof qa1) {
-                }
-                break;
-            default:
-                sa1 sa1Var = (sa1) this.b;
-                ea1 ea1Var = (ea1) this.c;
-                int childCount = sa1Var.S.getChildCount();
-                for (int i12 = 0; i12 < childCount; i12++) {
-                    View childAt2 = sa1Var.S.getChildAt(i12);
-                    if (childAt2 instanceof da1) {
-                        da1 da1Var = (da1) childAt2;
-                        if (da1Var.r == ea1Var) {
-                            return da1Var;
-                        }
-                    }
-                }
-                sa1Var.S.setItemAnimator(null);
-                sa1Var.y0.f();
-                return null;
+    @Override // org.telegram.ui.Components.k61, android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        int i10 = this.e;
+        if (i10 == 2) {
+            textPaint.setColor(-1);
+        } else if (i10 == 1) {
+            textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(null, h ? org.telegram.ui.ActionBar.i6.hc : org.telegram.ui.ActionBar.i6.fc, false));
+        } else {
+            textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(null, h ? org.telegram.ui.ActionBar.i6.gc : org.telegram.ui.ActionBar.i6.ec, false));
+        }
+        m11 m11Var = this.f;
+        if (m11Var != null) {
+            m11Var.a(textPaint);
+        } else {
+            textPaint.setUnderlineText(false);
         }
     }
 }

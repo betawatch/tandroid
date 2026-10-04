@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -64,16 +64,16 @@ public final /* synthetic */ class s implements Utilities.Callback {
                 }
                 break;
             default:
-                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) obj;
+                org.telegram.ui.web.d1 d1Var = (org.telegram.ui.web.d1) obj;
                 i4 i4Var4 = this.b;
-                if (i4Var4.L != null && c1Var != null) {
+                if (i4Var4.L != null && d1Var != null) {
                     i4Var4.h0.k(false);
                     m3 m3Var2 = i4Var4.u0[0];
                     if (m3Var2 != null && m3Var2.getWebView() != null) {
-                        i4Var4.u0[0].getWebView().e(c1Var.c, c1Var.d);
+                        i4Var4.u0[0].getWebView().e(d1Var.c, d1Var.d);
                         break;
                     } else {
-                        nf.f.n(c1Var.c);
+                        nf.f.n(d1Var.c);
                         break;
                     }
                 }

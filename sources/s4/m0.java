@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.ui.Components.wk0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class m0 {
-    public l.d a;
+    public l2.g a;
     public ArrayList b;
     public long c;
     public long d;
@@ -44,9 +44,9 @@ public abstract class m0 {
     public abstract boolean c(c1 c1Var, List list);
 
     public final void d(c1 c1Var) {
-        l.d dVar = this.a;
-        if (dVar != null) {
-            RecyclerView recyclerView = (RecyclerView) dVar.a;
+        l2.g gVar = this.a;
+        if (gVar != null) {
+            RecyclerView recyclerView = (RecyclerView) gVar.b;
             boolean z10 = true;
             c1Var.q(true);
             View view = c1Var.a;
@@ -58,17 +58,17 @@ public abstract class m0 {
                 return;
             }
             of.e eVar = recyclerView.b;
-            recyclerView.y0();
+            recyclerView.z0();
             la.h hVar = recyclerView.e;
             e6.n nVar = (e6.n) hVar.c;
-            ka.c cVar = (ka.c) hVar.b;
-            int indexOfChild = ((RecyclerView) cVar.b).indexOfChild(view);
+            hh.h hVar2 = (hh.h) hVar.b;
+            int indexOfChild = hVar2.a.indexOfChild(view);
             if (indexOfChild == -1) {
                 hVar.Y(view);
-            } else if (nVar.D(indexOfChild)) {
-                nVar.F(indexOfChild);
+            } else if (nVar.y(indexOfChild)) {
+                nVar.A(indexOfChild);
                 hVar.Y(view);
-                cVar.j0(indexOfChild);
+                hVar2.a(indexOfChild);
             } else {
                 z10 = false;
             }
@@ -77,7 +77,7 @@ public abstract class m0 {
                 eVar.k(U);
                 eVar.h(U);
             }
-            recyclerView.z0(!z10);
+            recyclerView.A0(!z10);
             if (z10 || !c1Var.l()) {
                 return;
             }
@@ -90,7 +90,7 @@ public abstract class m0 {
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
             wk0 wk0Var = (wk0) arrayList.get(i10);
-            wk0Var.a.c(wk0Var.b, wk0Var.c, wk0Var.d, false);
+            wk0Var.a.d(wk0Var.b, wk0Var.c, wk0Var.d, false);
         }
         arrayList.clear();
     }

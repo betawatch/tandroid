@@ -1,14 +1,15 @@
 package y2;
 
+import hg.k0;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.telegram.ui.db1;
+import org.telegram.ui.gb1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class q {
-    public static final db1 g = new db1(18);
-    public static final db1 h = new db1(19);
+    public static final gb1 g = new gb1(18);
+    public static final gb1 h = new gb1(19);
     public int d;
     public int e;
     public int f;
@@ -82,6 +83,6 @@ public final class q {
         if (arrayList.isEmpty()) {
             return Float.NaN;
         }
-        return ((p) hg.c.g(1, arrayList)).c;
+        return ((p) k0.g(1, arrayList)).c;
     }
 }

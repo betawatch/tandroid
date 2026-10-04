@@ -1,28 +1,31 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class qf0 extends yr {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ tf0 n;
+public final /* synthetic */ class qf0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xf0 b;
+    public final /* synthetic */ int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qf0(tf0 tf0Var, Context context, int i10) {
-        super(context);
-        this.h = i10;
-        this.n = tf0Var;
+    public /* synthetic */ qf0(xf0 xf0Var, int i10, int i11) {
+        this.a = i11;
+        this.b = xf0Var;
+        this.c = i10;
     }
 
-    @Override // org.telegram.ui.yr
-    public final void a() {
-        switch (this.h) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                this.n.h(null);
+                AndroidUtilities.runOnUIThread(new qf0(this.b, this.c, 1));
+                break;
+            case 1:
+                this.b.A(this.c);
                 break;
             default:
-                this.n.h(null);
+                this.b.f.f[this.c].l(1.0f);
                 break;
         }
     }

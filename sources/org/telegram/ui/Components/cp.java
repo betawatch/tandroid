@@ -1,23 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import org.telegram.ui.od1;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.qd1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class cp extends od1 {
-    public final /* synthetic */ int k2;
+public final /* synthetic */ class cp implements qd1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xi b;
+    public final /* synthetic */ org.telegram.ui.gc c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ cp(Object obj, Bitmap bitmap, boolean z10, int i10) {
-        super(obj, bitmap, z10);
-        this.k2 = i10;
+    public /* synthetic */ cp(xi xiVar, org.telegram.ui.gc gcVar, int i10) {
+        this.a = i10;
+        this.b = xiVar;
+        this.c = gcVar;
     }
 
-    @Override // org.telegram.ui.od1
-    public final boolean U0() {
-        switch (this.k2) {
+    @Override // org.telegram.ui.qd1
+    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
+        switch (this.a) {
+            case 0:
+                this.b.dismissInternal();
+                this.c.run(tL_wallPaper);
+                break;
+            default:
+                this.b.dismissInternal();
+                this.c.run(tL_wallPaper);
+                break;
         }
-        return true;
     }
 }

@@ -5,26 +5,26 @@ import java.util.ArrayList;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hk;
-import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.ik;
+import org.telegram.ui.Components.xi;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class u1 implements hk {
-    public final /* synthetic */ wi a;
+public final class u1 implements ik {
+    public final /* synthetic */ xi a;
     public final /* synthetic */ e2 b;
 
-    public u1(e2 e2Var, wi wiVar) {
+    public u1(e2 e2Var, xi xiVar) {
         this.b = e2Var;
-        this.a = wiVar;
+        this.a = xiVar;
     }
 
-    @Override // org.telegram.ui.Components.hk
+    @Override // org.telegram.ui.Components.ik
     public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j3, boolean z11, long j10) {
         boolean isEmpty = arrayList.isEmpty();
         e2 e2Var = this.b;
         if (!isEmpty) {
-            e2Var.P.c2((String) arrayList.get(0));
+            e2Var.P.e2((String) arrayList.get(0));
         } else if (!arrayList3.isEmpty()) {
             x3 x3Var = e2Var.P;
             MessageObject messageObject = (MessageObject) arrayList3.get(0);
@@ -32,28 +32,28 @@ public final class u1 implements hk {
             if (messageObject != null && messageObject.getDocument() != null) {
                 TLRPC.Document document = messageObject.getDocument();
                 TLRPC.Message message = messageObject.messageOwner;
-                x3Var.d2(document, message != null ? message.attachPath : null);
+                x3Var.f2(document, message != null ? message.attachPath : null);
             }
         }
         this.a.dismiss(true);
     }
 
-    @Override // org.telegram.ui.Components.hk
+    @Override // org.telegram.ui.Components.ik
     public final void w() {
         try {
             Intent intent = new Intent("android.intent.action.GET_CONTENT");
             intent.setType("*/*");
             this.b.startActivityForResult(intent, 21);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
-    @Override // org.telegram.ui.Components.hk
-    public final /* synthetic */ void O() {
+    @Override // org.telegram.ui.Components.ik
+    public final /* synthetic */ void M() {
     }
 
-    @Override // org.telegram.ui.Components.hk
+    @Override // org.telegram.ui.Components.ik
     public final /* synthetic */ void l(long j3, ArrayList arrayList, boolean z10, int i10) {
     }
 }

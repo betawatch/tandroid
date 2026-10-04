@@ -1,89 +1,57 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_chatlists;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class s00 extends og.a {
-    public View.OnClickListener c;
-    public CharSequence d;
-    public String e;
-    public boolean f;
-    public boolean g;
-    public long h;
-    public String i;
-    public int j;
-    public int k;
-    public boolean l;
-    public TL_chatlists.TL_exportedChatlistInvite m;
+public final class s00 extends org.telegram.ui.Components.p6 {
+    public final /* synthetic */ int s = 0;
+    public final Object v;
+    public final /* synthetic */ ViewGroup w;
 
-    public static s00 b(int i10, String str, boolean z10) {
-        s00 s00Var = new s00(4, false);
-        s00Var.k = i10;
-        s00Var.d = str;
-        s00Var.l = z10;
-        return s00Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s00(yh.l7 l7Var, Context context, Drawable drawable) {
+        super(context, false, false, false);
+        this.w = l7Var;
+        this.v = drawable;
     }
 
-    public static s00 c(int i10, String str, String str2, boolean z10) {
-        s00 s00Var = new s00(1, false);
-        s00Var.g = z10;
-        s00Var.d = str;
-        s00Var.i = str2;
-        s00Var.j = i10;
-        return s00Var;
-    }
-
-    public static s00 d(String str) {
-        s00 s00Var = new s00(TextUtils.isEmpty(str) ? 3 : 6, false);
-        s00Var.d = str;
-        return s00Var;
-    }
-
-    public final boolean equals(Object obj) {
-        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite;
-        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite2;
-        if (this != obj) {
-            if (obj == null || s00.class != obj.getClass()) {
-                return false;
-            }
-            s00 s00Var = (s00) obj;
-            int i10 = this.a;
-            if (i10 != s00Var.a) {
-                return false;
-            }
-            if (i10 == 11) {
-                if (!TextUtils.equals(this.d, s00Var.d) || !TextUtils.equals(this.e, s00Var.e)) {
-                    return false;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.s) {
+            case 0:
+                t00 t00Var = (t00) this.w;
+                int a2 = t00Var.w.a(t00Var.v, false);
+                setTextColor(a2);
+                Paint paint = (Paint) this.v;
+                paint.setColor(org.telegram.ui.ActionBar.i6.l1(org.telegram.ui.ActionBar.i6.I.q() ? 0.2f : 0.1f, a2));
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set((getWidth() - getDrawable().d()) - AndroidUtilities.dpf2(9.32f), (getHeight() - AndroidUtilities.dpf2(14.66f)) / 2.0f, getWidth(), (AndroidUtilities.dpf2(14.66f) + getHeight()) / 2.0f);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                Drawable drawable = (Drawable) this.v;
+                if (!((yh.l7) this.w).d) {
+                    int measuredWidth = (int) ((getMeasuredWidth() - getDrawable().d()) - AndroidUtilities.dp(20.0f));
+                    drawable.setBounds(measuredWidth, org.telegram.messenger.ok.z(17.0f, getMeasuredHeight(), 2), AndroidUtilities.dp(17.0f) + measuredWidth, (AndroidUtilities.dp(17.0f) + getMeasuredHeight()) / 2);
+                    drawable.draw(canvas);
                 }
-            } else {
-                if ((i10 == 0 || i10 == 1 || i10 == 3 || i10 == 4) && !TextUtils.equals(this.d, s00Var.d)) {
-                    return false;
-                }
-                int i11 = this.a;
-                if (i11 == 0) {
-                    if (this.f != s00Var.f) {
-                        return false;
-                    }
-                } else if (i11 == 1) {
-                    if (this.h != s00Var.h || !TextUtils.equals(this.i, s00Var.i) || this.j != s00Var.j) {
-                        return false;
-                    }
-                } else if (i11 == 7 && (tL_exportedChatlistInvite = this.m) != (tL_exportedChatlistInvite2 = s00Var.m)) {
-                    if (!TextUtils.equals(tL_exportedChatlistInvite.url, tL_exportedChatlistInvite2.url)) {
-                        return false;
-                    }
-                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite3 = this.m;
-                    boolean z10 = tL_exportedChatlistInvite3.revoked;
-                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite4 = s00Var.m;
-                    if (z10 != tL_exportedChatlistInvite4.revoked || !TextUtils.equals(tL_exportedChatlistInvite3.title, tL_exportedChatlistInvite4.title) || this.m.peers.size() != s00Var.m.peers.size()) {
-                        return false;
-                    }
-                }
-            }
+                super.dispatchDraw(canvas);
+                break;
         }
-        return true;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s00(t00 t00Var, Context context) {
+        super(context, false, true, true);
+        this.w = t00Var;
+        this.v = new Paint(1);
     }
 }

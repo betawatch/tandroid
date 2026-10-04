@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements i5.e, e0 {
     public static final /* synthetic */ b0 a = new b0();
@@ -54,7 +54,7 @@ public final /* synthetic */ class b0 implements i5.e, e0 {
             }
             throw new IllegalStateException("Did not write as much data as expected.");
         } catch (IOException e7) {
-            throw new RuntimeException(a4.a.q("Serializing ", u1Var.getClass().getName(), " to a byte array threw an IOException (should never happen)."), e7);
+            throw new RuntimeException(a4.a.p("Serializing ", u1Var.getClass().getName(), " to a byte array threw an IOException (should never happen)."), e7);
         }
     }
 

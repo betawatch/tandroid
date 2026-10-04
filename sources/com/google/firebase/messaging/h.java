@@ -14,9 +14,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.concurrent.Callable;
 import org.webrtc.audio.WebRtcAudioRecord;
-import v7.m7;
+import v7.l7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Callable {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class h implements Callable {
             case 0:
                 Context context = (Context) this.b;
                 Intent intent = (Intent) this.c;
-                t c10 = t.c();
+                s c10 = s.c();
                 c10.getClass();
                 if (Log.isLoggable("FirebaseMessaging", 3)) {
                     Log.d("FirebaseMessaging", "Starting service");
@@ -91,18 +91,18 @@ public final /* synthetic */ class h implements Callable {
                     } else {
                         i10 = -1;
                     }
-                } catch (IllegalStateException e) {
-                    Log.e("FirebaseMessaging", "Failed to start service while in background: " + e);
+                } catch (IllegalStateException e7) {
+                    Log.e("FirebaseMessaging", "Failed to start service while in background: " + e7);
                     i10 = 402;
-                } catch (SecurityException e7) {
-                    Log.e("FirebaseMessaging", "Error while delivering the message to the serviceIntent", e7);
+                } catch (SecurityException e10) {
+                    Log.e("FirebaseMessaging", "Error while delivering the message to the serviceIntent", e10);
                     i10 = 401;
                 }
                 return Integer.valueOf(i10);
             case 1:
                 g2.i iVar = (g2.i) this.b;
                 byte[] bArr = (byte[]) this.c;
-                return m7.a(bArr.length, iVar.c, bArr);
+                return l7.a(bArr.length, iVar.c, bArr);
             case 2:
                 g2.i iVar2 = (g2.i) this.b;
                 Uri uri = (Uri) this.c;
@@ -125,7 +125,7 @@ public final /* synthetic */ class h implements Callable {
                         }
                     }
                     byte[] copyOf = Arrays.copyOf(bArr2, i13);
-                    Bitmap a2 = m7.a(copyOf.length, i11, copyOf);
+                    Bitmap a2 = l7.a(copyOf.length, i11, copyOf);
                     nVar.close();
                     return a2;
                 } catch (Throwable th2) {

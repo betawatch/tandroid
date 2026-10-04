@@ -7,9 +7,9 @@ import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import rg.q1;
+import rg.s1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class q implements Runnable {
     public static final ThreadLocal e = new ThreadLocal();
@@ -30,7 +30,7 @@ public final class q implements Runnable {
         of.e eVar = recyclerView.b;
         try {
             try {
-                recyclerView.g0();
+                recyclerView.h0();
                 c1 j10 = eVar.j(i10, j3);
                 if (j10 != null) {
                     if (!j10.g() || j10.h()) {
@@ -39,16 +39,16 @@ public final class q implements Runnable {
                         eVar.g(j10.a);
                     }
                 }
-                recyclerView.h0(false);
+                recyclerView.i0(false);
                 return j10;
             } catch (Exception e7) {
                 FileLog.e(e7);
-                AndroidUtilities.runOnUIThread(new q1(recyclerView, 2));
-                recyclerView.h0(false);
+                AndroidUtilities.runOnUIThread(new s1(recyclerView, 2));
+                recyclerView.i0(false);
                 return null;
             }
         } catch (Throwable th2) {
-            recyclerView.h0(false);
+            recyclerView.i0(false);
             throw th2;
         }
     }
@@ -111,7 +111,7 @@ public final class q implements Runnable {
             c1 c10 = c(recyclerView, pVar.e, pVar.a ? Long.MAX_VALUE : j3);
             if (c10 != null && c10.b != null && c10.g() && !c10.h() && (recyclerView2 = (RecyclerView) c10.b.get()) != null) {
                 if (recyclerView2.Q && recyclerView2.e.L() != 0) {
-                    recyclerView2.o0();
+                    recyclerView2.p0();
                 }
                 a0.h hVar3 = recyclerView2.s0;
                 hVar3.c(recyclerView2, true);

@@ -1,26 +1,26 @@
 package bf;
 
-import v7.k0;
+import v7.j0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class g extends p {
     public final /* synthetic */ int g;
 
     @Override // bf.p
-    public final void a(k0 k0Var) {
+    public final void a(j0 j0Var) {
         switch (this.g) {
             case 0:
-                k0Var.e(this);
+                j0Var.e(this);
                 break;
             case 1:
-                k0Var.r(this);
+                j0Var.r(this);
                 break;
             case 2:
-                k0Var.t(this);
+                j0Var.t(this);
                 break;
             default:
-                k0Var.u(this);
+                j0Var.u(this);
                 break;
         }
     }

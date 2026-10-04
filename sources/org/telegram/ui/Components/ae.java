@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ae implements Runnable {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class ae implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        nf nfVar;
+        of ofVar;
         int i10 = this.a;
         ChatActivityEnterView chatActivityEnterView = this.b;
         boolean z10 = this.c;
@@ -45,8 +45,8 @@ public final /* synthetic */ class ae implements Runnable {
                 td tdVar = chatActivityEnterView2.F4;
                 chatActivityEnterView2.M0 = System.currentTimeMillis();
                 boolean T0 = chatActivityEnterView2.T0(0, false, 0, true, 0L);
-                if (!z10 && (nfVar = chatActivityEnterView2.L0) != null) {
-                    nfVar.h(!T0);
+                if (!z10 && (ofVar = chatActivityEnterView2.L0) != null) {
+                    ofVar.h(!T0);
                     chatActivityEnterView2.L0 = null;
                     break;
                 } else {

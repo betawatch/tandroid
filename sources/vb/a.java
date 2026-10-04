@@ -12,6 +12,7 @@ import n6.l;
 import n7.z0;
 import org.telegram.tgnet.ConnectionsManager;
 import qb.m;
+import v7.k;
 import w7.d7;
 import w7.e7;
 import w7.ia;
@@ -20,7 +21,7 @@ import w7.la;
 import w7.na;
 import w7.y6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a {
     public volatile Bitmap a;
@@ -91,9 +92,9 @@ public final class a {
         p3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
         p3Var.h = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
         e7 e7Var = new e7(p3Var);
-        v7.l lVar = new v7.l(6, false);
-        lVar.d = e7Var;
-        m.a.execute(new v(a2, new z0(lVar), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
+        k kVar = new k(6, false);
+        kVar.d = e7Var;
+        m.a.execute(new v(a2, new z0(kVar), task.isSuccessful() ? (String) task.getResult() : i.c.a(a2.g)));
         return aVar;
     }
 }

@@ -2,39 +2,39 @@ package u2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class m implements d1 {
-    public final d1 a;
+public final class m implements e1 {
+    public final e1 a;
     public final e9.i0 b;
 
-    public m(d1 d1Var, List list) {
-        this.a = d1Var;
+    public m(e1 e1Var, List list) {
+        this.a = e1Var;
         this.b = e9.i0.v(list);
     }
 
-    @Override // u2.d1
+    @Override // u2.e1
     public final boolean c() {
         return this.a.c();
     }
 
-    @Override // u2.d1
+    @Override // u2.e1
     public final long d() {
         return this.a.d();
     }
 
-    @Override // u2.d1
-    public final boolean p(i2.s0 s0Var) {
-        return this.a.p(s0Var);
+    @Override // u2.e1
+    public final boolean m(i2.s0 s0Var) {
+        return this.a.m(s0Var);
     }
 
-    @Override // u2.d1
-    public final long s() {
-        return this.a.s();
+    @Override // u2.e1
+    public final long p() {
+        return this.a.p();
     }
 
-    @Override // u2.d1
-    public final void u(long j3) {
-        this.a.u(j3);
+    @Override // u2.e1
+    public final void r(long j3) {
+        this.a.r(j3);
     }
 }

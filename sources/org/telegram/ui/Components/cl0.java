@@ -21,7 +21,7 @@ import org.telegram.ui.UsersSelectActivity;
 import org.telegram.ui.mi1;
 import org.telegram.ui.qh1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class cl0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -41,12 +41,12 @@ public final class cl0 extends AnimatorListenerAdapter {
                 ((ProfileActivity) this.c).C5 = null;
                 break;
             case 12:
-                org.telegram.ui.w21 w21Var = (org.telegram.ui.w21) this.c;
+                org.telegram.ui.y21 y21Var = (org.telegram.ui.y21) this.c;
                 super.onAnimationCancel(animator);
                 float floatValue = ((Float) ((ValueAnimator) animator).getAnimatedValue()).floatValue();
                 int[] iArr = (int[]) this.b;
                 if (iArr != null) {
-                    System.arraycopy(new int[]{i0.a.d(floatValue, w21Var.e[0], iArr[0]), i0.a.d(floatValue, w21Var.e[1], iArr[1]), i0.a.d(floatValue, w21Var.e[2], iArr[2]), i0.a.d(floatValue, w21Var.e[3], iArr[3])}, 0, w21Var.e, 0, 4);
+                    System.arraycopy(new int[]{i0.a.d(floatValue, y21Var.e[0], iArr[0]), i0.a.d(floatValue, y21Var.e[1], iArr[1]), i0.a.d(floatValue, y21Var.e[2], iArr[2]), i0.a.d(floatValue, y21Var.e[3], iArr[3])}, 0, y21Var.e, 0, 4);
                     break;
                 }
                 break;
@@ -64,43 +64,43 @@ public final class cl0 extends AnimatorListenerAdapter {
         switch (i10) {
             case 0:
                 super.onAnimationEnd(animator);
-                org.telegram.ui.wq wqVar = (org.telegram.ui.wq) obj2;
-                ((dl0) wqVar.d).g.remove((AnimatorSet) obj);
-                if (((dl0) wqVar.d).g.isEmpty()) {
-                    ((dl0) wqVar.d).b.clear();
-                    dl0 dl0Var = (dl0) wqVar.d;
+                org.telegram.ui.yq yqVar = (org.telegram.ui.yq) obj2;
+                ((dl0) yqVar.d).g.remove((AnimatorSet) obj);
+                if (((dl0) yqVar.d).g.isEmpty()) {
+                    ((dl0) yqVar.d).b.clear();
+                    dl0 dl0Var = (dl0) yqVar.d;
                     dl0Var.d = true;
                     dl0Var.a.invalidate();
                     break;
                 }
                 break;
             case 1:
-                kp0 kp0Var = (kp0) obj2;
+                op0 op0Var = (op0) obj2;
                 try {
-                    ((WindowManager) obj).removeViewImmediate(kp0Var.B);
+                    ((WindowManager) obj).removeViewImmediate(op0Var.B);
                 } catch (Exception unused) {
                 }
-                yn0 yn0Var = kp0Var.C;
-                if (yn0Var != null) {
-                    AndroidUtilities.cancelRunOnUIThread(yn0Var);
+                uo0 uo0Var = op0Var.C;
+                if (uo0Var != null) {
+                    AndroidUtilities.cancelRunOnUIThread(uo0Var);
                     break;
                 }
                 break;
             case 2:
                 androidx.activity.g gVar = (androidx.activity.g) obj2;
-                cw0 cw0Var = (cw0) gVar.c;
-                cw0Var.f0 = 1.0f;
-                cw0Var.S.add((yv0) obj);
-                ((cw0) gVar.c).a0.setShader(null);
-                ((cw0) gVar.c).c0.setShader(null);
-                ((cw0) gVar.c).N();
+                lw0 lw0Var = (lw0) gVar.c;
+                lw0Var.f0 = 1.0f;
+                lw0Var.S.add((hw0) obj);
+                ((lw0) gVar.c).a0.setShader(null);
+                ((lw0) gVar.c).c0.setShader(null);
+                ((lw0) gVar.c).N();
                 super.onAnimationEnd(animator);
                 break;
             case 3:
-                px0 px0Var = (px0) obj2;
-                px0Var.b = 0.0f;
-                px0Var.invalidate();
-                ((wm0) obj).invalidate();
+                yx0 yx0Var = (yx0) obj2;
+                yx0Var.b = 0.0f;
+                yx0Var.invalidate();
+                ((an0) obj).invalidate();
                 break;
             case 4:
                 org.telegram.ui.Components.voip.l3 l3Var = (org.telegram.ui.Components.voip.l3) obj2;
@@ -116,19 +116,19 @@ public final class cl0 extends AnimatorListenerAdapter {
                 if (view.getParent() != null) {
                     ((ViewGroup) view.getParent()).removeView(view);
                 }
-                ((org.telegram.ui.qy) obj2).Q3 = null;
+                ((org.telegram.ui.uy) obj2).Q3 = null;
                 break;
             case 7:
-                org.telegram.ui.f80 f80Var = (org.telegram.ui.f80) obj2;
-                f80Var.removeView((p30) obj);
-                f80Var.e = null;
-                f80Var.a = null;
-                f80Var.b = false;
+                org.telegram.ui.j80 j80Var = (org.telegram.ui.j80) obj2;
+                j80Var.removeView((q30) obj);
+                j80Var.e = null;
+                j80Var.a = null;
+                j80Var.b = false;
                 break;
             case 8:
-                hw0 hw0Var = (hw0) obj2;
-                hw0Var.setVisibility(8);
-                hw0Var.setX(0.0f);
+                qw0 qw0Var = (qw0) obj2;
+                qw0Var.setVisibility(8);
+                qw0Var.setX(0.0f);
                 break;
             case 9:
                 PhotoViewer photoViewer = (PhotoViewer) obj2;
@@ -159,17 +159,17 @@ public final class cl0 extends AnimatorListenerAdapter {
                 photoViewer.A2 = animatorSet4;
                 animatorSet4.playTogether(ObjectAnimator.ofFloat(photoViewer.z2, photoViewer.d4, 0.0f));
                 photoViewer.A2.setDuration(85L);
-                photoViewer.A2.setInterpolator(sr.g);
-                photoViewer.A2.addListener(new org.telegram.ui.xo0(this, 2));
+                photoViewer.A2.setInterpolator(tr.g);
+                photoViewer.A2.addListener(new org.telegram.ui.ap0(this, 2));
                 photoViewer.A2.start();
                 break;
             case 10:
-                org.telegram.ui.ax0 ax0Var = (org.telegram.ui.ax0) obj2;
-                PremiumPreviewFragment premiumPreviewFragment = ax0Var.n;
+                org.telegram.ui.dx0 dx0Var = (org.telegram.ui.dx0) obj2;
+                PremiumPreviewFragment premiumPreviewFragment = dx0Var.n;
                 ((View) obj).setVisibility(8);
                 for (int i11 = 0; i11 < premiumPreviewFragment.U.getChildCount(); i11++) {
                     View childAt = premiumPreviewFragment.U.getChildAt(i11);
-                    if (childAt != ax0Var.e) {
+                    if (childAt != dx0Var.e) {
                         childAt.setTranslationY(0.0f);
                     }
                 }
@@ -189,16 +189,16 @@ public final class cl0 extends AnimatorListenerAdapter {
                         }
                         profileActivity.T0.setVisibility(8);
                     } else {
-                        org.telegram.ui.c01 c01Var = profileActivity.O;
-                        if (c01Var.s0(c01Var.k0[0].F)) {
-                            ((org.telegram.ui.ActionBar.u0) obj).setVisibility(0);
+                        org.telegram.ui.e01 e01Var = profileActivity.O;
+                        if (e01Var.s0(e01Var.k0[0].F)) {
+                            ((org.telegram.ui.ActionBar.v0) obj).setVisibility(0);
                         }
                         profileActivity.O.r0.setVisibility(4);
                         AnimatorSet animatorSet5 = new AnimatorSet();
                         profileActivity.D5 = animatorSet5;
                         animatorSet5.playTogether(ObjectAnimator.ofFloat(profileActivity, profileActivity.j5, 1.0f));
                         profileActivity.D5.setDuration(100L);
-                        profileActivity.D5.addListener(new org.telegram.ui.xo0(this, 14));
+                        profileActivity.D5.addListener(new org.telegram.ui.ap0(this, 14));
                         profileActivity.D5.start();
                     }
                 }
@@ -206,52 +206,52 @@ public final class cl0 extends AnimatorListenerAdapter {
                 profileActivity.C5 = null;
                 break;
             case 12:
-                org.telegram.ui.w21 w21Var = (org.telegram.ui.w21) obj2;
+                org.telegram.ui.y21 y21Var = (org.telegram.ui.y21) obj2;
                 super.onAnimationEnd(animator);
                 int[] iArr = (int[]) obj;
                 if (iArr != null) {
-                    System.arraycopy(iArr, 0, w21Var.e, 0, 4);
+                    System.arraycopy(iArr, 0, y21Var.e, 0, 4);
                 }
-                w21Var.n = null;
-                w21Var.s = null;
-                oc0 oc0Var = w21Var.h;
-                oc0Var.K = 1.0f;
-                oc0Var.i();
-                w21Var.h.s(1.0f);
+                y21Var.n = null;
+                y21Var.s = null;
+                pc0 pc0Var = y21Var.h;
+                pc0Var.K = 1.0f;
+                pc0Var.i();
+                y21Var.h.s(1.0f);
                 break;
             case 13:
-                org.telegram.ui.d41 d41Var = (org.telegram.ui.d41) obj2;
-                if (d41Var.h != null) {
-                    d41Var.h = null;
-                    d41Var.n.unlock();
-                    ((org.telegram.ui.rx) obj).onTransitionAnimationEnd(true, false);
-                    d41Var.e = 1.0f;
-                    d41Var.g();
-                    d41Var.d(false);
+                org.telegram.ui.f41 f41Var = (org.telegram.ui.f41) obj2;
+                if (f41Var.h != null) {
+                    f41Var.h = null;
+                    f41Var.n.unlock();
+                    ((org.telegram.ui.tx) obj).onTransitionAnimationEnd(true, false);
+                    f41Var.e = 1.0f;
+                    f41Var.g();
+                    f41Var.d(false);
                     break;
                 }
                 break;
             case 14:
-                org.telegram.ui.vu0 vu0Var = (org.telegram.ui.vu0) obj;
-                if (vu0Var != null) {
-                    vu0Var.a.setVisible(true, true);
+                org.telegram.ui.yu0 yu0Var = (org.telegram.ui.yu0) obj;
+                if (yu0Var != null) {
+                    yu0Var.a.setVisible(true, true);
                 }
                 ((SecretMediaViewer) obj2).s = false;
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.vz0(this, 11));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.hz0(this, 12));
                 break;
             case 15:
-                ((org.telegram.ui.q61) obj).run();
-                org.telegram.ui.a71 a71Var = (org.telegram.ui.a71) obj2;
-                org.telegram.ui.p51 p51Var = a71Var.X0;
-                if (p51Var != null) {
-                    p51Var.dismiss();
-                    a71Var.X0 = null;
+                ((org.telegram.ui.s61) obj).run();
+                org.telegram.ui.c71 c71Var = (org.telegram.ui.c71) obj2;
+                org.telegram.ui.r51 r51Var = c71Var.X0;
+                if (r51Var != null) {
+                    r51Var.dismiss();
+                    c71Var.X0 = null;
                     break;
                 }
                 break;
             case 16:
                 qh1 qh1Var = (qh1) obj2;
-                qh1Var.removeView((p30) obj);
+                qh1Var.removeView((q30) obj);
                 qh1Var.e = null;
                 qh1Var.a = null;
                 qh1Var.b = false;
@@ -273,14 +273,14 @@ public final class cl0 extends AnimatorListenerAdapter {
                 mi1Var.e0.setVisibility(8);
                 break;
             case 18:
-                qg.b2 b2Var = (qg.b2) obj2;
+                qg.a2 a2Var = (qg.a2) obj2;
                 boolean[] zArr = (boolean[]) obj;
                 if (!zArr[0]) {
                     zArr[0] = true;
-                    b2Var.r0.b(b2Var.y0, false);
+                    a2Var.r0.b(a2Var.y0, false);
                 }
-                b2Var.setRotationY(0.0f);
-                b2Var.z0 = 1.0f;
+                a2Var.setRotationY(0.0f);
+                a2Var.z0 = 1.0f;
                 break;
             case 19:
                 r0.v0 v0Var = (r0.v0) obj;
@@ -288,15 +288,15 @@ public final class cl0 extends AnimatorListenerAdapter {
                 r0.q0.e((View) obj2, v0Var);
                 break;
             case 20:
-                ((rg.x0) obj2).w = false;
-                ((rg.n0) obj).setOffset(0.0f);
+                ((rg.y0) obj2).w = false;
+                ((rg.o0) obj).setOffset(0.0f);
                 super.onAnimationEnd(animator);
                 break;
             case 21:
-                rg.k1 k1Var = (rg.k1) obj2;
-                k1Var.H0 = false;
-                k1Var.G0 = 1.0f;
-                k1Var.s0.invalidate();
+                rg.m1 m1Var = (rg.m1) obj2;
+                m1Var.H0 = false;
+                m1Var.G0 = 1.0f;
+                m1Var.s0.invalidate();
                 Drawable drawable = (Drawable) obj;
                 if (drawable != null) {
                     ValueAnimator ofInt = ValueAnimator.ofInt(0, 255);
@@ -306,17 +306,17 @@ public final class cl0 extends AnimatorListenerAdapter {
                 super.onAnimationEnd(animator);
                 break;
             case 22:
-                ci.ba baVar = (ci.ba) obj2;
-                baVar.removeView((p30) obj);
-                baVar.h.clear();
-                baVar.b = null;
-                baVar.c = false;
-                ((xg.i) baVar.n).b.setAllowDrawCursor(true);
+                ci.aa aaVar = (ci.aa) obj2;
+                aaVar.removeView((q30) obj);
+                aaVar.h.clear();
+                aaVar.b = null;
+                aaVar.c = false;
+                ((xg.i) aaVar.n).b.setAllowDrawCursor(true);
                 break;
             default:
-                yh.q8 q8Var = (yh.q8) obj2;
-                q8Var.b.remove((yh.p8) obj);
-                q8Var.a1();
+                yh.r8 r8Var = (yh.r8) obj2;
+                r8Var.b.remove((yh.q8) obj);
+                r8Var.a1();
                 break;
         }
     }
@@ -325,7 +325,7 @@ public final class cl0 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 8:
-                ((hw0) this.b).setVisibility(0);
+                ((qw0) this.b).setVisibility(0);
                 break;
             default:
                 super.onAnimationStart(animator);

@@ -2,9 +2,9 @@ package com.google.android.gms.internal.play_billing;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import v7.w5;
+import v7.v5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class q0 implements Runnable {
     public final t0 a;
@@ -32,7 +32,7 @@ public final class q0 implements Runnable {
             boolean z11 = false;
             Future future = t0Var;
             if (!isDone) {
-                throw new IllegalStateException(w5.a("Future was expected to be done: %s", t0Var));
+                throw new IllegalStateException(v5.a("Future was expected to be done: %s", t0Var));
             }
             while (true) {
                 try {
@@ -64,8 +64,8 @@ public final class q0 implements Runnable {
             c5.h a2 = c5.g0.a(intValue2, "Billing override value was set by a license tester.");
             d0Var.F(93, i10, a2);
             ((q0.a) lVar.b).accept(a2);
-        } catch (ExecutionException e) {
-            lVar.k(e.getCause());
+        } catch (ExecutionException e7) {
+            lVar.k(e7.getCause());
         } catch (Throwable th3) {
             lVar.k(th3);
         }

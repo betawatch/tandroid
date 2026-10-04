@@ -1,37 +1,27 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Paint;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class x40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d60 b;
+public final class x40 extends Paint {
+    public final /* synthetic */ h60 a;
 
-    public /* synthetic */ x40(d60 d60Var, int i10) {
-        this.a = i10;
-        this.b = d60Var;
+    public x40(h60 h60Var) {
+        this.a = h60Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                d60 d60Var = this.b;
-                d60Var.V.setVisibility(4);
-                d60Var.W.setVisibility(4);
-                d60Var.U.setVisibility(4);
-                break;
-            case 1:
-                this.b.h0 = null;
-                break;
-            default:
-                d60 d60Var2 = this.b;
-                d60Var2.h1 = null;
-                d60Var2.g1.setColor(d60Var2.T1 == 3 ? -1163700 : -12761513);
-                d60Var2.f1.invalidate();
-                break;
+    @Override // android.graphics.Paint
+    public final void setAlpha(int i10) {
+        ViewGroup viewGroup;
+        ViewGroup viewGroup2;
+        super.setAlpha(i10);
+        h60 h60Var = this.a;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) h60Var).containerView;
+        if (viewGroup != null) {
+            viewGroup2 = ((org.telegram.ui.ActionBar.f3) h60Var).containerView;
+            viewGroup2.invalidate();
         }
     }
 }

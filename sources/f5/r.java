@@ -1,16 +1,17 @@
 package f5;
 
+import ii.n4;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
-import w7.t6;
+import w7.u6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class r extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ka.c f;
-    public static final /* synthetic */ ka.c h;
-    public static final /* synthetic */ ka.c n;
+    public static final /* synthetic */ n4 f;
+    public static final /* synthetic */ n4 h;
+    public static final /* synthetic */ n4 n;
     public List e;
 
     static {
@@ -24,7 +25,7 @@ public final class r extends com.googlecode.mp4parser.c {
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
-        int a2 = t6.a(e5.b.i(byteBuffer));
+        int a2 = u6.a(e5.b.i(byteBuffer));
         this.e = new ArrayList(a2);
         for (int i10 = 0; i10 < a2; i10++) {
             this.e.add(new q(e5.b.i(byteBuffer), e5.b.i(byteBuffer), e5.b.i(byteBuffer)));
@@ -48,7 +49,7 @@ public final class r extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.t b10 = re.a.b(n, this, this);
+        com.google.firebase.messaging.s b10 = re.a.b(n, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         return "SampleToChunkBox[entryCount=" + this.e.size() + "]";

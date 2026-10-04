@@ -1,51 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.content.DialogInterface;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class au implements ActionMode.Callback {
-    public final /* synthetic */ ActionMode.Callback a;
-    public final /* synthetic */ du b;
+public final /* synthetic */ class au implements DialogInterface.OnShowListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ EditTextBoldCursor b;
 
-    public au(du duVar, ActionMode.Callback callback) {
-        this.b = duVar;
-        this.a = callback;
+    public /* synthetic */ au(int i10, EditTextBoldCursor editTextBoldCursor) {
+        this.a = i10;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        if (this.b.performMenuAction(menuItem.getItemId())) {
-            actionMode.finish();
-            return true;
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                fi.o oVar = (fi.o) this.b;
+                oVar.requestFocus();
+                AndroidUtilities.showKeyboard(oVar);
+                break;
+            case 1:
+                fi.o oVar2 = (fi.o) this.b;
+                oVar2.requestFocus();
+                AndroidUtilities.showKeyboard(oVar2);
+                break;
+            default:
+                f4 f4Var = (f4) this.b;
+                f4Var.requestFocus();
+                AndroidUtilities.showKeyboard(f4Var);
+                break;
         }
-        try {
-            return this.a.onActionItemClicked(actionMode, menuItem);
-        } catch (Exception unused) {
-            return true;
-        }
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        du duVar = this.b;
-        duVar.copyPasteShowed = true;
-        duVar.onContextMenuOpen();
-        return this.a.onCreateActionMode(actionMode, menu);
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
-        du duVar = this.b;
-        duVar.copyPasteShowed = false;
-        duVar.onContextMenuClose();
-        this.a.onDestroyActionMode(actionMode);
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        return this.a.onPrepareActionMode(actionMode, menu);
     }
 }

@@ -9,9 +9,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.a71;
+import org.telegram.ui.c71;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lk implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -56,13 +56,13 @@ public final /* synthetic */ class lk implements Utilities.Callback {
                     break;
                 }
             default:
-                a71 a71Var = (a71) this.c;
+                c71 c71Var = (c71) this.c;
                 LinkedHashSet linkedHashSet = (LinkedHashSet) this.e;
                 String str2 = (String) this.f;
                 HashMap hashMap = (HashMap) this.g;
                 ArrayList arrayList3 = (ArrayList) this.d;
                 Runnable runnable = (Runnable) obj;
-                int i10 = a71Var.V;
+                int i10 = c71Var.V;
                 if (this.b) {
                     ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i10).getStickerSets(5);
                     for (int i11 = 0; i11 < stickerSets.size(); i11++) {
@@ -91,7 +91,7 @@ public final /* synthetic */ class lk implements Utilities.Callback {
                     runnable.run();
                     break;
                 } else {
-                    MediaDataController.getInstance(i10).getEmojiSuggestions(a71.a2, str2, false, new ai.g6(a71Var, linkedHashSet, hashMap, arrayList3, runnable), null, true, a71Var.W == 3, false, 30);
+                    MediaDataController.getInstance(i10).getEmojiSuggestions(c71.a2, str2, false, new ai.g6(c71Var, linkedHashSet, hashMap, arrayList3, runnable), null, true, c71Var.W == 3, false, 30);
                     break;
                 }
                 break;
@@ -107,8 +107,8 @@ public final /* synthetic */ class lk implements Utilities.Callback {
         this.g = str;
     }
 
-    public /* synthetic */ lk(a71 a71Var, boolean z10, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
-        this.c = a71Var;
+    public /* synthetic */ lk(c71 c71Var, boolean z10, LinkedHashSet linkedHashSet, String str, HashMap hashMap, ArrayList arrayList) {
+        this.c = c71Var;
         this.b = z10;
         this.e = linkedHashSet;
         this.f = str;

@@ -10,7 +10,7 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class f0 {
     public static int A(float f7, int i10, int i11) {
@@ -97,8 +97,8 @@ public abstract /* synthetic */ class f0 {
         FileLog.d(sb2.toString());
     }
 
-    public static void o(int i10, AlertDialog$Builder alertDialog$Builder, org.telegram.ui.ActionBar.z1 z1Var) {
-        alertDialog$Builder.k(LocaleController.getString(i10), z1Var);
+    public static void o(int i10, AlertDialog$Builder alertDialog$Builder, org.telegram.ui.ActionBar.a2 a2Var) {
+        alertDialog$Builder.k(LocaleController.getString(i10), a2Var);
         alertDialog$Builder.o();
     }
 

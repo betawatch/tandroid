@@ -1,24 +1,33 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rs implements ah.m {
+public final /* synthetic */ class rs implements MessagesStorage.IntCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.yl0 b;
+    public final /* synthetic */ ContactsActivity b;
 
-    public /* synthetic */ rs(org.telegram.ui.Components.yl0 yl0Var, int i10) {
+    public /* synthetic */ rs(ContactsActivity contactsActivity, int i10) {
         this.a = i10;
-        this.b = yl0Var;
+        this.b = contactsActivity;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // ah.m
-    public final boolean a(Canvas canvas, View view, long j3) {
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i10) {
         switch (this.a) {
+            case 0:
+                ContactsActivity contactsActivity = this.b;
+                contactsActivity.getClass();
+                contactsActivity.b0 = i10 != 0;
+                if (i10 != 0) {
+                    contactsActivity.f0(false);
+                    break;
+                }
+                break;
+            default:
+                ContactsActivity.U(this.b, i10);
+                break;
         }
-        return this.b.drawChild(canvas, view, j3);
     }
 }

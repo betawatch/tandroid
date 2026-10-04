@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import com.google.android.gms.internal.vision.h3;
+import ii.n4;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class v {
     public final u a;
@@ -58,7 +59,7 @@ public final class v {
         return null;
     }
 
-    public final k2.u b(v vVar) {
+    public final n4 b(v vVar) {
         if (vVar == null) {
             throw new NullPointerException("route must not be null");
         }
@@ -67,7 +68,7 @@ public final class v {
         if (fVar == null || !fVar.containsKey(str)) {
             return null;
         }
-        return new k2.u((o) this.w.get(str), 18);
+        return new n4((o) this.w.get(str), 18);
     }
 
     public final h3 c() {
@@ -86,7 +87,7 @@ public final class v {
         if (vVar == this || this.n == 3) {
             return true;
         }
-        return TextUtils.equals(((ComponentName) ((n2.e) c().d).b).getPackageName(), "android") && m("android.media.intent.category.LIVE_AUDIO") && !m("android.media.intent.category.LIVE_VIDEO");
+        return TextUtils.equals(((ComponentName) ((l2.g) c().d).b).getPackageName(), "android") && m("android.media.intent.category.LIVE_AUDIO") && !m("android.media.intent.category.LIVE_VIDEO");
     }
 
     public final boolean e() {

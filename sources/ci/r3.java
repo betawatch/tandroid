@@ -30,9 +30,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class r3 extends FrameLayout {
     public static int d0;
@@ -110,17 +110,17 @@ public final class r3 extends FrameLayout {
         } else {
             p3Var.setDrawBackgroundAsArc(6);
         }
-        p3Var.b(org.telegram.ui.ActionBar.h6.W9, org.telegram.ui.ActionBar.h6.X9, org.telegram.ui.ActionBar.h6.V9);
+        p3Var.b(org.telegram.ui.ActionBar.i6.W9, org.telegram.ui.ActionBar.i6.X9, org.telegram.ui.ActionBar.i6.V9);
         CheckBoxBase checkBoxBase = p3Var.getCheckBoxBase();
-        int i10 = org.telegram.ui.ActionBar.h6.G6;
+        int i10 = org.telegram.ui.ActionBar.i6.G6;
         if (checkBoxBase.u != i10) {
             checkBoxBase.u = i10;
             checkBoxBase.b();
         }
         FrameLayout frameLayout = new FrameLayout(context);
         this.I = frameLayout;
-        frameLayout.addView(p3Var, w7.y5.e(26, 26, 17));
-        addView(frameLayout, w7.y5.d(36, 36.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(p3Var, w7.z5.e(26, 26, 17));
+        addView(frameLayout, w7.z5.d(36, 36.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
         frameLayout.setVisibility(0);
         frameLayout.setImportantForAccessibility(2);
         p3Var.setImportantForAccessibility(2);
@@ -186,8 +186,8 @@ public final class r3 extends FrameLayout {
                     str = "" + photoEntry.imageId;
                 }
             }
-        } else if (obj instanceof l8) {
-            str = "d" + ((l8) obj).b;
+        } else if (obj instanceof k8) {
+            str = "d" + ((k8) obj).b;
         } else {
             str = null;
         }
@@ -330,8 +330,8 @@ public final class r3 extends FrameLayout {
         super.draw(canvas);
     }
 
-    public final void e(int i10, l8 l8Var) {
-        this.S = l8Var;
+    public final void e(int i10, k8 k8Var) {
+        this.S = k8Var;
         String str = null;
         if (i10 > 0) {
             this.F = null;
@@ -339,7 +339,7 @@ public final class r3 extends FrameLayout {
             this.w = false;
             this.O = LocaleController.formatPluralString("StoryDrafts", i10, new Object[0]);
         } else {
-            if (l8Var != null && l8Var.c) {
+            if (k8Var != null && k8Var.c) {
                 StaticLayout staticLayout = new StaticLayout(LocaleController.getString("StoryDraft"), this.s, getMeasuredWidth() > 0 ? getMeasuredWidth() : AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 this.F = staticLayout;
                 this.G = staticLayout.getLineCount() > 0 ? this.F.getLineWidth(0) : 0.0f;
@@ -347,17 +347,17 @@ public final class r3 extends FrameLayout {
             } else {
                 this.F = null;
             }
-            if (l8Var != null && l8Var.K) {
-                str = AndroidUtilities.formatShortDuration((int) Math.max(0.0f, ((l8Var.a0 - l8Var.Z) * l8Var.h0) / 1000.0f));
+            if (k8Var != null && k8Var.K) {
+                str = AndroidUtilities.formatShortDuration((int) Math.max(0.0f, ((k8Var.a0 - k8Var.Z) * k8Var.h0) / 1000.0f));
             }
             g(str);
-            if (l8Var == null || !l8Var.K) {
+            if (k8Var == null || !k8Var.K) {
                 this.O = LocaleController.getString(R.string.StoryDraft);
             } else {
-                this.O = LocaleController.getString(R.string.StoryDraft) + ", " + LocaleController.formatDuration((int) Math.max(0.0f, ((l8Var.a0 - l8Var.Z) * l8Var.h0) / 1000.0f));
+                this.O = LocaleController.getString(R.string.StoryDraft) + ", " + LocaleController.formatDuration((int) Math.max(0.0f, ((k8Var.a0 - k8Var.Z) * k8Var.h0) / 1000.0f));
             }
         }
-        b(l8Var);
+        b(k8Var);
     }
 
     public final void f(int i10, boolean z10, boolean z11) {
@@ -368,7 +368,7 @@ public final class r3 extends FrameLayout {
         p3 p3Var = this.J;
         if (z11) {
             frameLayout.setVisibility(0);
-            ok.s(p3Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new bi.f(1, this, z10)), sr.h, 320L);
+            ok.s(p3Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new bi.f(1, this, z10)), tr.h, 320L);
         } else {
             frameLayout.setVisibility(z10 ? 0 : 8);
         }

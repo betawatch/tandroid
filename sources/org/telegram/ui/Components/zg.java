@@ -1,39 +1,47 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class zg {
-    public static final zg a;
-    public static final zg b;
-    public static final zg c;
-    public static final zg d;
-    public static final zg e;
-    public static final zg f;
-    public static final /* synthetic */ zg[] h;
+public final class zg extends HashMap {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    static {
-        zg zgVar = new zg("VOICE", 0);
-        a = zgVar;
-        zg zgVar2 = new zg("VIDEO", 1);
-        b = zgVar2;
-        zg zgVar3 = new zg("STICKER", 2);
-        c = zgVar3;
-        zg zgVar4 = new zg("KEYBOARD", 3);
-        d = zgVar4;
-        zg zgVar5 = new zg("SMILE", 4);
-        e = zgVar5;
-        zg zgVar6 = new zg("GIF", 5);
-        f = zgVar6;
-        h = new zg[]{zgVar, zgVar2, zgVar3, zgVar4, zgVar5, zgVar6};
+    public /* synthetic */ zg(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public static zg valueOf(String str) {
-        return (zg) Enum.valueOf(zg.class, str);
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public Object get(Object obj) {
+        switch (this.a) {
+            case 0:
+                int i10 = ((ch) this.b).v;
+                kj0 kj0Var = (kj0) super.get(obj);
+                if (kj0Var != null) {
+                    return kj0Var;
+                }
+                bh bhVar = (bh) obj;
+                kj0 kj0Var2 = new kj0(bhVar.c, AndroidUtilities.dp(i10), AndroidUtilities.dp(i10));
+                put(bhVar, kj0Var2);
+                return kj0Var2;
+            default:
+                return super.get(obj);
+        }
     }
 
-    public static zg[] values() {
-        return (zg[]) h.clone();
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public Object put(Object obj, Object obj2) {
+        switch (this.a) {
+            case 1:
+                String str = (String) obj;
+                String str2 = (String) obj2;
+                ((yc.g) this.b).f.put(str == null ? str : str.toLowerCase(), str2);
+                return (String) super.put(str, str2);
+            default:
+                return super.put(obj, obj2);
+        }
     }
 }

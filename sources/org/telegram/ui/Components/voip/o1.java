@@ -7,12 +7,12 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.nj0;
 import org.telegram.ui.uh1;
-import w7.y5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class o1 extends FrameLayout {
     public final nj0 a;
@@ -33,9 +33,9 @@ public final class o1 extends FrameLayout {
         nj0Var.f(R.raw.star_stroke, 37, 37, null);
         nj0Var2.f(R.raw.star_fill, 37, 37, null);
         nj0Var2.setAlpha(0.0f);
-        addView(nj0Var, y5.c(37.0f, 37));
-        addView(nj0Var2, y5.c(37.0f, 37));
-        org.telegram.ui.Cells.z h02 = h6.h0(AndroidUtilities.dp(37.0f), 0, i0.a.k(-1, 76));
+        addView(nj0Var, z5.c(37.0f, 37));
+        addView(nj0Var2, z5.c(37.0f, 37));
+        org.telegram.ui.Cells.z h02 = i6.h0(AndroidUtilities.dp(37.0f), 0, i0.a.k(-1, 76));
         this.c = h02;
         h02.setCallback(this);
         setClickable(true);
@@ -50,7 +50,7 @@ public final class o1 extends FrameLayout {
         if (action == 0) {
             n1 n1Var2 = this.e;
             if (n1Var2 != null) {
-                o1[] o1VarArr = ((p1) ((le.b) n1Var2).b).c;
+                o1[] o1VarArr = ((p1) ((k2.v) n1Var2).b).c;
                 while (true) {
                     i10 = this.f;
                     if (i11 > i10) {
@@ -74,7 +74,7 @@ public final class o1 extends FrameLayout {
         } else if (action == 1) {
             n1 n1Var3 = this.e;
             if (n1Var3 != null) {
-                o1[] o1VarArr2 = ((p1) ((le.b) n1Var3).b).c;
+                o1[] o1VarArr2 = ((p1) ((k2.v) n1Var3).b).c;
                 for (int i13 = 0; i13 <= this.f; i13++) {
                     o1 o1Var3 = o1VarArr2[i13];
                     nj0 nj0Var5 = o1Var3.a;
@@ -92,8 +92,8 @@ public final class o1 extends FrameLayout {
                 float width = (getWidth() / 2.0f) + i14;
                 float height = (getHeight() / 2.0f) + i15;
                 int i16 = this.f + 1;
-                p1 p1Var = (p1) w2Var.c;
-                Context context = (Context) w2Var.b;
+                p1 p1Var = (p1) w2Var.b;
+                Context context = (Context) w2Var.c;
                 if (i16 >= 4) {
                     nj0 nj0Var7 = new nj0(context);
                     int dp = AndroidUtilities.dp(133.0f);
@@ -102,7 +102,7 @@ public final class o1 extends FrameLayout {
                     p1Var.getLocationOnScreen(iArr2);
                     int i17 = iArr2[0];
                     int i18 = iArr2[1];
-                    p1Var.addView(nj0Var7, y5.c(133.0f, 133));
+                    p1Var.addView(nj0Var7, z5.c(133.0f, 133));
                     float f7 = width - i17;
                     float f10 = dp / 2.0f;
                     nj0Var7.setTranslationX(f7 - f10);
@@ -116,7 +116,7 @@ public final class o1 extends FrameLayout {
                 }
             }
         } else if (action == 3 && (n1Var = this.e) != null) {
-            o1[] o1VarArr3 = ((p1) ((le.b) n1Var).b).c;
+            o1[] o1VarArr3 = ((p1) ((k2.v) n1Var).b).c;
             int length = o1VarArr3.length;
             while (i11 < length) {
                 o1 o1Var4 = o1VarArr3[i11];

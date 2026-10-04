@@ -12,6 +12,7 @@ import c6.l;
 import e6.n;
 import g2.h;
 import g2.m;
+import hg.k0;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -33,11 +34,11 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
-import org.telegram.ui.Components.yg;
+import org.telegram.ui.Components.zg;
 import t7.u;
 import yc.i;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d extends i {
     public static final f l;
@@ -66,7 +67,7 @@ public final class d extends i {
         this.i = null;
         this.j = false;
         this.k = new AtomicInteger();
-        this.f = new o0(27);
+        this.f = new o0(28);
         this.g = new u();
         this.e = new ExtendedDefaultDataSourceFactory(ApplicationLoader.applicationContext, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
     }
@@ -86,8 +87,8 @@ public final class d extends i {
                         }
                     }
                 }
-            } catch (SocketException e) {
-                FileLog.e(e);
+            } catch (SocketException e7) {
+                FileLog.e(e7);
             }
         }
         StringBuilder sb2 = new StringBuilder();
@@ -97,14 +98,14 @@ public final class d extends i {
     }
 
     public static String j(String str, String str2) {
-        return a4.a.q("http://", str, str2);
+        return a4.a.p("http://", str, str2);
     }
 
     @Override // yc.i
     public final yc.g e(yc.d dVar) {
         String str;
         int incrementAndGet = this.k.incrementAndGet();
-        StringBuilder j3 = hg.c.j(incrementAndGet, "Request ", " ");
+        StringBuilder j3 = k0.j(incrementAndGet, "Request ", " ");
         switch (dVar.g) {
             case 1:
                 str = "GET";
@@ -166,20 +167,20 @@ public final class d extends i {
         Log.d("CAST_SERVER", j3.toString());
         try {
             yc.g k10 = k(dVar);
-            yg ygVar = k10.e;
-            ygVar.put("Access-Control-Allow-Origin", "*");
-            ygVar.put("Access-Control-Max-Age", "3628800");
-            ygVar.put("Access-Control-Allow-Methods", "*");
-            ygVar.put("Access-Control-Allow-Headers", "*");
+            zg zgVar = k10.e;
+            zgVar.put("Access-Control-Allow-Origin", "*");
+            zgVar.put("Access-Control-Max-Age", "3628800");
+            zgVar.put("Access-Control-Allow-Methods", "*");
+            zgVar.put("Access-Control-Allow-Headers", "*");
             return k10;
         } catch (Throwable unused) {
             Log.d("CAST_SERVER", "Error " + incrementAndGet);
             yc.g c10 = i.c(yc.f.n, "text/plain", "Error reading file");
-            yg ygVar2 = c10.e;
-            ygVar2.put("Access-Control-Allow-Origin", "*");
-            ygVar2.put("Access-Control-Max-Age", "3628800");
-            ygVar2.put("Access-Control-Allow-Methods", "*");
-            ygVar2.put("Access-Control-Allow-Headers", "*");
+            zg zgVar2 = c10.e;
+            zgVar2.put("Access-Control-Allow-Origin", "*");
+            zgVar2.put("Access-Control-Max-Age", "3628800");
+            zgVar2.put("Access-Control-Allow-Methods", "*");
+            zgVar2.put("Access-Control-Allow-Headers", "*");
             return c10;
         }
     }
@@ -193,8 +194,8 @@ public final class d extends i {
                 f();
                 this.j = true;
                 return;
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+            } catch (IOException e7) {
+                throw new RuntimeException(e7);
             }
         }
         if (this.j) {
@@ -216,8 +217,8 @@ public final class d extends i {
                 if (thread != null) {
                     thread.join();
                 }
-            } catch (Exception e7) {
-                i.d.log(Level.SEVERE, "Could not stop all connections", (Throwable) e7);
+            } catch (Exception e10) {
+                i.d.log(Level.SEVERE, "Could not stop all connections", (Throwable) e10);
             }
             this.j = false;
         }

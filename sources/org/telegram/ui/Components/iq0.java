@@ -1,89 +1,77 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class iq0 extends vq0 {
-    public final /* synthetic */ wq0 n;
+public final class iq0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ zq0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iq0(wq0 wq0Var, Context context) {
-        super(context);
-        this.n = wq0Var;
-        final int i10 = 1;
-        this.f = new Paint(1);
-        this.h = new RectF();
-        View view = new View(context);
-        int dp = AndroidUtilities.dp(18.0f);
-        int i11 = org.telegram.ui.ActionBar.h6.O5;
-        int i12 = wq0.a1;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.b0(dp, wq0Var.getThemedColor(i11)));
-        addView(view, w7.y5.d(-1, 36.0f, 51, 14.0f, 0.0f, 14.0f, 0.0f));
-        ci.bb bbVar = new ci.bb(this, context, 23);
-        this.c = bbVar;
-        addView(bbVar, w7.y5.d(-1, 36.0f, 51, 14.0f, 0.0f, 14.0f, 0.0f));
-        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
-        this.b = h5Var;
-        int i13 = org.telegram.ui.ActionBar.h6.ng;
-        h5Var.setTextColor(wq0Var.getThemedColor(i13));
-        h5Var.setTextSize(13);
-        h5Var.setLeftDrawable(R.drawable.msg_tabs_mic1);
-        final int i14 = 0;
-        h5Var.l(LocaleController.getString(R.string.VoipGroupInviteCanSpeak), false);
-        h5Var.setGravity(17);
-        addView(h5Var, w7.y5.d(-1, -1.0f, 51, 14.0f, 0.0f, 0.0f, 0.0f));
-        h5Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.uq0
-            public final /* synthetic */ iq0 b;
+    public /* synthetic */ iq0(zq0 zq0Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = zq0Var;
+        this.b = z10;
+    }
 
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i14) {
-                    case 0:
-                        this.b.a(0);
-                        break;
-                    default:
-                        this.b.a(1);
-                        break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                AnimatorSet[] animatorSetArr = this.c.T;
+                AnimatorSet animatorSet = animatorSetArr[0];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    animatorSetArr[0] = null;
+                    break;
                 }
-            }
-        });
-        org.telegram.ui.ActionBar.h5 h5Var2 = new org.telegram.ui.ActionBar.h5(context);
-        this.a = h5Var2;
-        h5Var2.setTextColor(wq0Var.getThemedColor(i13));
-        h5Var2.setTextSize(13);
-        h5Var2.setLeftDrawable(R.drawable.msg_tabs_mic2);
-        h5Var2.l(LocaleController.getString(R.string.VoipGroupInviteListenOnly), false);
-        h5Var2.setGravity(17);
-        addView(h5Var2, w7.y5.d(-1, -1.0f, 51, 0.0f, 0.0f, 14.0f, 0.0f));
-        h5Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.uq0
-            public final /* synthetic */ iq0 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i10) {
-                    case 0:
-                        this.b.a(0);
-                        break;
-                    default:
-                        this.b.a(1);
-                        break;
+                break;
+            default:
+                zq0 zq0Var = this.c;
+                if (animator.equals(zq0Var.y)) {
+                    zq0Var.y = null;
+                    break;
                 }
-            }
-        });
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                zq0 zq0Var = this.c;
+                AnimatorSet[] animatorSetArr = zq0Var.T;
+                AnimatorSet animatorSet = animatorSetArr[0];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    if (!this.b) {
+                        zq0Var.S[0].setVisibility(4);
+                    }
+                    animatorSetArr[0] = null;
+                    break;
+                }
+                break;
+            default:
+                zq0 zq0Var2 = this.c;
+                FrameLayout frameLayout = zq0Var2.h;
+                if (animator.equals(zq0Var2.y)) {
+                    if (!this.b) {
+                        zq0Var2.c.setVisibility(4);
+                        FrameLayout frameLayout2 = zq0Var2.c0;
+                        if (frameLayout2 != null && frameLayout == null) {
+                            frameLayout2.setVisibility(4);
+                        }
+                        zq0Var2.f.setVisibility(4);
+                    } else if (frameLayout != null) {
+                        frameLayout.setVisibility(4);
+                    }
+                    zq0Var2.y = null;
+                    break;
+                }
+                break;
+        }
     }
 }

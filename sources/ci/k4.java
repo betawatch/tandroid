@@ -23,13 +23,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ok;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 import org.webrtc.RendererCommon;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class k4 extends FrameLayout implements RendererCommon.RendererEvents, NotificationCenter.NotificationCenterDelegate {
     public int a;
@@ -53,10 +53,10 @@ public final class k4 extends FrameLayout implements RendererCommon.RendererEven
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.e = w9Var;
         w9Var.setAlpha(0.75f);
-        addView(w9Var, w7.y5.e(-1, -1, 119));
+        addView(w9Var, w7.z5.e(-1, -1, 119));
         TextureView textureView = new TextureView(context);
         this.f = textureView;
-        addView(textureView, w7.y5.e(-1, -1, 119));
+        addView(textureView, w7.z5.e(-1, -1, 119));
         TextureViewRenderer textureViewRenderer = new TextureViewRenderer(context);
         this.d = textureViewRenderer;
         textureViewRenderer.setOpaque(false);
@@ -64,14 +64,14 @@ public final class k4 extends FrameLayout implements RendererCommon.RendererEven
         textureViewRenderer.setIsCamera(true);
         textureViewRenderer.setRotateTextureWithScreen(true);
         textureViewRenderer.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FIT);
-        addView(textureViewRenderer, w7.y5.e(-1, -1, 119));
+        addView(textureViewRenderer, w7.z5.e(-1, -1, 119));
         textureViewRenderer.setAlpha(1.0f);
         this.c = null;
         j4 j4Var = new j4(context);
         this.b = j4Var;
         j4Var.setAlpha(0.0f);
         j4Var.setVisibility(8);
-        addView(j4Var, w7.y5.e(-1, -1, 119));
+        addView(j4Var, w7.z5.e(-1, -1, 119));
     }
 
     public final boolean a() {
@@ -100,7 +100,7 @@ public final class k4 extends FrameLayout implements RendererCommon.RendererEven
         j4 j4Var = this.b;
         j4Var.setVisibility(0);
         d dVar = j4Var.b;
-        j4Var.animate().alpha(this.y ? 1.0f : 0.0f).setInterpolator(sr.h).setDuration(320L).withEndAction(new bi.f(2, this, z10)).start();
+        j4Var.animate().alpha(this.y ? 1.0f : 0.0f).setInterpolator(tr.h).setDuration(320L).withEndAction(new bi.f(2, this, z10)).start();
         dVar.setVisibility((!z10 || runnable == null) ? 8 : 0);
         dVar.setOnClickListener(runnable == null ? null : new bi.p(1, runnable));
     }
@@ -134,8 +134,8 @@ public final class k4 extends FrameLayout implements RendererCommon.RendererEven
                     Utilities.stackBlurBitmap(createBitmap, AndroidUtilities.dp(4.0f));
                     try {
                         createBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
                     }
                 }
             }
@@ -255,7 +255,7 @@ public final class k4 extends FrameLayout implements RendererCommon.RendererEven
     public final void e(boolean z10, boolean z11) {
         if (z10 || !z11) {
             if (z11) {
-                ok.s(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), sr.h, 320L);
+                ok.s(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), tr.h, 320L);
             } else {
                 getTextureView().animate().cancel();
                 getTextureView().setAlpha(z10 ? 1.0f : 0.0f);
@@ -308,7 +308,7 @@ public final class k4 extends FrameLayout implements RendererCommon.RendererEven
         if (this.h == null) {
             View view = new View(getContext());
             this.h = view;
-            addView(view, w7.y5.g());
+            addView(view, w7.z5.g());
         }
         return this.h;
     }

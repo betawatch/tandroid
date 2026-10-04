@@ -14,15 +14,15 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class g9 extends FrameLayout {
     public q5 a;
     public q5 b;
     public w9 c;
     public w9 d;
-    public r20 e;
-    public r20 f;
+    public s20 e;
+    public s20 f;
     public final TextView h;
     public final TLRPC.TL_emojiList n;
     public final int r;
@@ -39,13 +39,13 @@ public abstract class g9 extends FrameLayout {
         this.s = 0;
         this.v = 0;
         this.w = 1.0f;
-        this.y = new f9((im) this);
+        this.y = new f9((jm) this);
         TLRPC.TL_emojiList a2 = a(i10);
         this.n = a2;
         this.c = new w9(context);
         this.d = new w9(context);
-        addView(this.c, w7.y5.e(50, 50, 1));
-        addView(this.d, w7.y5.e(50, 50, 1));
+        addView(this.c, w7.z5.e(50, 50, 1));
+        addView(this.d, w7.z5.e(50, 50, 1));
         if (!a2.document_id.isEmpty()) {
             q5 q5Var = new q5(4, i10, a2.document_id.get(0).longValue());
             this.a = q5Var;
@@ -57,17 +57,17 @@ public abstract class g9 extends FrameLayout {
         int i12 = iArr[1];
         int i13 = iArr[2];
         int i14 = iArr[3];
-        r20 r20Var = new r20();
-        this.e = r20Var;
-        r20Var.d(i11, i12, i13, i14);
+        s20 s20Var = new s20();
+        this.e = s20Var;
+        s20Var.d(i11, i12, i13, i14);
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setTextSize(1, 12.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.J7, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.J7, false));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
         textView.setText(LocaleController.getString(R.string.UseEmoji));
-        addView(textView, w7.y5.d(-1, 28.0f, 80, 10.0f, 10.0f, 10.0f, 10.0f));
+        addView(textView, w7.z5.d(-1, 28.0f, 80, 10.0f, 10.0f, 10.0f, 10.0f));
     }
 
     public static TLRPC.TL_emojiList a(int i10) {
@@ -120,13 +120,13 @@ public abstract class g9 extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        r20 r20Var = this.e;
-        if (r20Var != null) {
-            r20Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        s20 s20Var = this.e;
+        if (s20Var != null) {
+            s20Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
         }
-        r20 r20Var2 = this.f;
-        if (r20Var2 != null) {
-            r20Var2.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        s20 s20Var2 = this.f;
+        if (s20Var2 != null) {
+            s20Var2.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
         }
         float f7 = this.w;
         if (f7 == 1.0f) {
@@ -137,7 +137,7 @@ public abstract class g9 extends FrameLayout {
             this.c.setScaleY(1.0f);
             this.d.setAlpha(0.0f);
         } else {
-            float interpolation = sr.f.getInterpolation(f7);
+            float interpolation = tr.f.getInterpolation(f7);
             this.e.c.setAlpha(255);
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.e.c);
             this.f.c.setAlpha((int) (255.0f * interpolation));

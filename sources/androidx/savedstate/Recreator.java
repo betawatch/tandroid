@@ -18,9 +18,9 @@ import kotlin.jvm.internal.i;
 import m.p;
 import t4.c;
 import t4.e;
-import v7.j;
+import t8.b;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class Recreator implements r {
     public final e a;
@@ -77,14 +77,14 @@ public final class Recreator implements r {
                         if (!new HashSet(linkedHashMap.keySet()).isEmpty()) {
                             g10.g();
                         }
-                    } catch (Exception e) {
-                        throw new RuntimeException(j.g("Failed to instantiate ", str2), e);
+                    } catch (Exception e7) {
+                        throw new RuntimeException(b.i("Failed to instantiate ", str2), e7);
                     }
-                } catch (NoSuchMethodException e7) {
-                    throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e7);
+                } catch (NoSuchMethodException e10) {
+                    throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e10);
                 }
-            } catch (ClassNotFoundException e10) {
-                throw new RuntimeException(a.q("Class ", str2, " wasn't found"), e10);
+            } catch (ClassNotFoundException e11) {
+                throw new RuntimeException(a.p("Class ", str2, " wasn't found"), e11);
             }
         }
     }

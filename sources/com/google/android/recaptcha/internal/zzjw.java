@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import hd.f;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class zzjw implements zzjt {
     public static final zzjw zza = new zzjw();
@@ -28,8 +28,8 @@ public final class zzjw implements zzjt {
         Class[] zzf = zzizVar.zzc().zzf(f.h(zzztVarArr).subList(1, length));
         try {
             zzizVar.zzc().zze(i10, cls.getConstructor((Class[]) Arrays.copyOf(zzf, zzf.length)));
-        } catch (Exception e) {
-            throw new zzdm(6, 9, e);
+        } catch (Exception e7) {
+            throw new zzdm(6, 9, e7);
         }
     }
 }

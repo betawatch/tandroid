@@ -1,54 +1,14 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ub0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zb0 b;
-    public final /* synthetic */ String c;
+public interface ub0 {
+    void a(TLRPC.TL_chatInviteExported tL_chatInviteExported);
 
-    public /* synthetic */ ub0(zb0 zb0Var, String str, int i10) {
-        this.a = i10;
-        this.b = zb0Var;
-        this.c = str;
-    }
+    void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject);
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                zb0 zb0Var = this.b;
-                zb0Var.getClass();
-                String str = this.c;
-                if ("disable".equalsIgnoreCase(str)) {
-                    zb0Var.o("turnPasswordOffRow");
-                }
-                if ("change".equalsIgnoreCase(str)) {
-                    zb0Var.o("changePasswordRow");
-                }
-                if ("change-email".equalsIgnoreCase(str)) {
-                    zb0Var.o("emailRow");
-                    break;
-                }
-                break;
-            default:
-                zb0 zb0Var2 = this.b;
-                zb0Var2.getClass();
-                String str2 = this.c;
-                if ("disable".equalsIgnoreCase(str2)) {
-                    zb0Var2.o("disablePasscodeRow");
-                }
-                if ("change".equalsIgnoreCase(str2)) {
-                    zb0Var2.o("changePasscodeRow");
-                }
-                if ("auto-lock".equalsIgnoreCase(str2)) {
-                    zb0Var2.o("autoLockRow");
-                }
-                if ("fingerprint".equalsIgnoreCase(str2)) {
-                    zb0Var2.o("fingerprintRow");
-                    break;
-                }
-                break;
-        }
-    }
+    void c(TLObject tLObject);
 }

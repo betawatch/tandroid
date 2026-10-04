@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.b80;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -67,28 +67,28 @@ public final /* synthetic */ class a0 implements Runnable {
                         imageView.setImageResource(R.drawable.menu_lightbulb);
                         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                         imageView.setScaleType(ImageView.ScaleType.CENTER);
-                        frameLayout.addView(imageView, w7.y5.d(24, 24.0f, 19, 12.0f, 12.0f, 12.0f, 12.0f));
+                        frameLayout.addView(imageView, w7.z5.d(24, 24.0f, 19, 12.0f, 12.0f, 12.0f, 12.0f));
                         TextView textView = new TextView(e0Var.getContext());
                         textView.setText(LocaleController.getString(R.string.StoryCollageMenuHint));
                         textView.setTextSize(1, 13.0f);
                         textView.setTextColor(-1);
-                        frameLayout.addView(textView, w7.y5.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
-                        a80 F = a80.F(e0Var.a, e0Var.b, e0Var);
+                        frameLayout.addView(textView, w7.z5.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
+                        b80 F = b80.F(e0Var.a, e0Var.b, e0Var);
                         if (e0Var.j0.n.K) {
-                            f8 f8Var = new f8(e0Var.getContext(), 0);
-                            f8Var.b = 0.0f;
-                            f8Var.c = 1.5f;
-                            f8Var.d(e0Var.j0.n.P);
-                            f8Var.h = new ai.y1(e0Var, 6);
-                            f8Var.R = AndroidUtilities.dp(220.0f);
-                            F.q(f8Var);
+                            e8 e8Var = new e8(e0Var.getContext(), 0);
+                            e8Var.b = 0.0f;
+                            e8Var.c = 1.5f;
+                            e8Var.d(e0Var.j0.n.P);
+                            e8Var.h = new ai.y1(e0Var, 6);
+                            e8Var.R = AndroidUtilities.dp(220.0f);
+                            F.q(e8Var);
                             F.o();
                         }
                         F.T = 220;
                         F.c(R.drawable.menu_camera_retake, LocaleController.getString(R.string.StoreCollageRetake), new a0(e0Var, 4), false);
                         F.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new a0(e0Var, 5), true);
                         F.o();
-                        F.r(frameLayout, w7.y5.n(220, -2));
+                        F.r(frameLayout, w7.z5.n(220, -2));
                         F.p = new ai.f(6);
                         F.i = 1;
                         F.V = true;
@@ -127,8 +127,8 @@ public final /* synthetic */ class a0 implements Runnable {
                 if (mainPart == null) {
                     j3 = 0;
                 } else {
-                    l8 l8Var = mainPart.n;
-                    j3 = l8Var.X + ((long) (l8Var.V * l8Var.h0));
+                    k8 k8Var = mainPart.n;
+                    j3 = k8Var.X + ((long) (k8Var.V * k8Var.h0));
                 }
                 for (int i10 = 0; i10 < e0Var3.h.size(); i10++) {
                     d0 d0Var4 = (d0) e0Var3.h.get(i10);
@@ -137,13 +137,13 @@ public final /* synthetic */ class a0 implements Runnable {
                         long clamp2 = Utilities.clamp((position + j3) - d0Var4.n.X, duration, 0L);
                         if (!e0Var3.n0 || e0Var3.q0) {
                             float f10 = clamp2;
-                            l8 l8Var2 = d0Var4.n;
+                            k8 k8Var2 = d0Var4.n;
                             float f11 = duration;
-                            if (f10 > l8Var2.V * f11 && f10 < l8Var2.W * f11) {
+                            if (f10 > k8Var2.V * f11 && f10 < k8Var2.W * f11) {
                                 z10 = true;
-                                l8 l8Var3 = d0Var4.n;
+                                k8 k8Var3 = d0Var4.n;
                                 float f12 = duration;
-                                clamp = Utilities.clamp(clamp2, (long) (l8Var3.W * f12), (long) (l8Var3.V * f12));
+                                clamp = Utilities.clamp(clamp2, (long) (k8Var3.W * f12), (long) (k8Var3.V * f12));
                                 if (d0Var4.d.isPlaying() != z10) {
                                     if (z10) {
                                         d0Var4.d.play();
@@ -153,9 +153,9 @@ public final /* synthetic */ class a0 implements Runnable {
                                 }
                                 c0 c0Var5 = d0Var4.d;
                                 if (!e0Var3.v0) {
-                                    l8 l8Var4 = d0Var4.n;
-                                    if (!l8Var4.Y && e0Var3.n0) {
-                                        f7 = l8Var4.P;
+                                    k8 k8Var4 = d0Var4.n;
+                                    if (!k8Var4.Y && e0Var3.n0) {
+                                        f7 = k8Var4.P;
                                         c0Var5.setVolume(f7);
                                         if (Math.abs((d0Var4.g >= 0 ? d0Var4.g : d0Var4.d.getCurrentPosition()) - clamp) <= 450 && d0Var4.g < 0) {
                                             c0 c0Var6 = d0Var4.d;
@@ -174,9 +174,9 @@ public final /* synthetic */ class a0 implements Runnable {
                             }
                         }
                         z10 = false;
-                        l8 l8Var32 = d0Var4.n;
+                        k8 k8Var32 = d0Var4.n;
                         float f122 = duration;
-                        clamp = Utilities.clamp(clamp2, (long) (l8Var32.W * f122), (long) (l8Var32.V * f122));
+                        clamp = Utilities.clamp(clamp2, (long) (k8Var32.W * f122), (long) (k8Var32.V * f122));
                         if (d0Var4.d.isPlaying() != z10) {
                         }
                         c0 c0Var52 = d0Var4.d;
@@ -188,9 +188,9 @@ public final /* synthetic */ class a0 implements Runnable {
                         }
                     }
                 }
-                wc wcVar = e0Var3.r0;
-                if (wcVar != null) {
-                    wcVar.setProgress(position);
+                vc vcVar = e0Var3.r0;
+                if (vcVar != null) {
+                    vcVar.setProgress(position);
                 }
                 b7 b7Var = e0Var3.s0;
                 if (b7Var != null) {
@@ -252,21 +252,21 @@ public final /* synthetic */ class a0 implements Runnable {
                     if (runnable3 != null) {
                         runnable3.run();
                     }
-                    lc lcVar = ((yb) e0Var5).y0;
-                    lcVar.I0.a(false, true);
+                    kc kcVar = ((xb) e0Var5).y0;
+                    kcVar.I0.a(false, true);
                     if (tVar.e.size() > 1) {
-                        z zVar = lcVar.G0;
-                        lcVar.z0 = tVar;
+                        z zVar = kcVar.G0;
+                        kcVar.z0 = tVar;
                         zVar.a(new u(tVar, false), true);
-                        lcVar.G0.b(true, true);
+                        kcVar.G0.b(true, true);
                     } else {
-                        lcVar.G0.b(false, true);
+                        kcVar.G0.b(false, true);
                     }
-                    lcVar.m0(true);
-                    kb kbVar = lcVar.M0;
-                    if (kbVar != null) {
-                        kbVar.setMultipleOnClick(lcVar.A0.j());
-                        lcVar.M0.setMaxCount(Math.min(10, t.b() - lcVar.A0.getFilledCount()));
+                    kcVar.m0(true);
+                    jb jbVar = kcVar.M0;
+                    if (jbVar != null) {
+                        jbVar.setMultipleOnClick(kcVar.A0.j());
+                        kcVar.M0.setMaxCount(Math.min(10, t.b() - kcVar.A0.getFilledCount()));
                         break;
                     }
                 }

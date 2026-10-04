@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class UnconfirmedAuthController {
     private final int currentAccount;
@@ -103,14 +103,14 @@ public class UnconfirmedAuthController {
                             if (unconfirmedAuth.bot && !arrayList2.contains(Long.valueOf(unconfirmedAuth.bot_id))) {
                                 arrayList2.add(Long.valueOf(unconfirmedAuth.bot_id));
                             }
-                        } catch (Exception e) {
-                            FileLog.e(e);
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
                         }
                     }
                 }
                 MessagesStorage.getInstance(this.currentAccount).getUsersInternal(arrayList2, arrayList);
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
             sQLiteCursor.dispose();
             AndroidUtilities.runOnUIThread(new zh(this, arrayList, hashSet, arrayList3));
@@ -163,8 +163,8 @@ public class UnconfirmedAuthController {
                     sQLitePreparedStatement.bindByteBuffer(1, nativeByteBuffer);
                     sQLitePreparedStatement.step();
                 }
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         } finally {
             if (sQLitePreparedStatement != null) {
@@ -358,7 +358,7 @@ public class UnconfirmedAuthController {
         saveCache();
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public class UnconfirmedAuth extends TLObject {
         public boolean bot;
         public long bot_id;
@@ -413,7 +413,7 @@ public class UnconfirmedAuthController {
             if (z10) {
                 MessagesController.getInstance(UnconfirmedAuthController.this.currentAccount).processUpdates((TLRPC.Updates) tLObject, false);
             }
-            hg.g.a(UnconfirmedAuthController.this.currentAccount).b();
+            hg.f.a(UnconfirmedAuthController.this.currentAccount).b();
             if (callback != null) {
                 callback.run(Boolean.valueOf((z10 && tL_error == null) || UnconfirmedAuthController.this.debug));
                 UnconfirmedAuthController.this.debug = false;

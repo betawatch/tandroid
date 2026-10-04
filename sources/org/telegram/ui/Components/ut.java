@@ -1,27 +1,56 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final class ut extends o6 {
-    public final /* synthetic */ int W;
-    public final /* synthetic */ EditTextBoldCursor X;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import androidx.recyclerview.widget.RecyclerView;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ut(int i10, EditTextBoldCursor editTextBoldCursor) {
-        super(false, false, false, false);
-        this.W = i10;
-        this.X = editTextBoldCursor;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ut implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
+
+    public /* synthetic */ ut(int i10, View view) {
+        this.a = i10;
+        this.b = view;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        switch (this.W) {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        RecyclerView recyclerView;
+        switch (this.a) {
             case 0:
-                this.X.invalidate();
+                org.telegram.ui.ActionBar.h4 h4Var = ((EditTextBoldCursor) this.b).floatingActionMode;
+                if (h4Var != null) {
+                    h4Var.e();
+                    break;
+                }
+                break;
+            case 1:
+                ((z70) this.b).invalidate();
                 break;
             default:
-                this.X.invalidate();
+                aw0 aw0Var = (aw0) this.b;
+                if (aw0Var.w0 && aw0Var.x0 > 0) {
+                    aw0Var.e0("PRE_DRAW_BEFORE", null, 0, 0, true);
+                }
+                aw0Var.k0();
+                if (aw0Var.j1 && (recyclerView = aw0Var.K0) != null && !recyclerView.c0()) {
+                    float j02 = aw0Var.j0();
+                    if (!Float.isInfinite(j02)) {
+                        aw0Var.j1 = false;
+                        aw0Var.m0(aw0Var.K0, Math.round(j02 - aw0Var.a1));
+                        aw0Var.u0();
+                    }
+                }
+                if (aw0Var.w0 && aw0Var.x0 > 0) {
+                    aw0Var.e0("PRE_DRAW_AFTER", null, 0, 0, true);
+                    aw0Var.x0--;
+                    aw0Var.y0++;
+                    break;
+                }
                 break;
         }
+        return true;
     }
 }

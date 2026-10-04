@@ -2,7 +2,7 @@ package v7;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements ia.d {
     public static final /* synthetic */ i b = new i(0);
@@ -19,8 +19,8 @@ public final /* synthetic */ class i implements ia.d {
             case 0:
                 Map.Entry entry = (Map.Entry) obj;
                 ia.e eVar = (ia.e) obj2;
-                eVar.a(k.g, entry.getKey());
-                eVar.a(k.h, entry.getValue());
+                eVar.a(j.g, entry.getKey());
+                eVar.a(j.h, entry.getValue());
                 return;
             default:
                 throw new ia.b("Couldn't find encoder for type ".concat(String.valueOf(obj.getClass().getCanonicalName())));

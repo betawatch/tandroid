@@ -6,20 +6,20 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.jm;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class ChatMessagesMetadataController {
-    final wn chatActivity;
+    final yn chatActivity;
     private final ArrayList<MessageObject> reactionsToCheck = new ArrayList<>(10);
     private final ArrayList<MessageObject> extendedMediaToCheck = new ArrayList<>(10);
     private final ArrayList<MessageObject> storiesToCheck = new ArrayList<>(10);
     ArrayList<Integer> reactionsRequests = new ArrayList<>();
     ArrayList<Integer> extendedMediaRequests = new ArrayList<>();
 
-    public ChatMessagesMetadataController(wn wnVar) {
-        this.chatActivity = wnVar;
+    public ChatMessagesMetadataController(yn ynVar) {
+        this.chatActivity = ynVar;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -56,9 +56,9 @@ public class ChatMessagesMetadataController {
         arrayList.add(messageObject);
         this.chatActivity.getMessagesStorage().getStorageQueue().postRunnable(new d3(13, this, arrayList));
         if (!isExpiredStory && messageObject.isExpiredStory() && messageObject.type == 24) {
-            this.chatActivity.tc(arrayList, true);
+            this.chatActivity.sc(arrayList, true);
         } else {
-            this.chatActivity.tc(arrayList, false);
+            this.chatActivity.sc(arrayList, false);
         }
     }
 
@@ -129,11 +129,11 @@ public class ChatMessagesMetadataController {
         this.storiesToCheck.clear();
         while (i13 < i14) {
             MessageObject messageObject = (MessageObject) L.get(i13);
-            if (this.chatActivity.X3 != messageObject && messageObject.getId() > 0 && ((messageObject.messageOwner.action == null || messageObject.canSetReaction()) && j3 - messageObject.reactionsLastCheckTime > 15000)) {
+            if (this.chatActivity.V3 != messageObject && messageObject.getId() > 0 && ((messageObject.messageOwner.action == null || messageObject.canSetReaction()) && j3 - messageObject.reactionsLastCheckTime > 15000)) {
                 messageObject.reactionsLastCheckTime = j3;
                 this.reactionsToCheck.add(messageObject);
             }
-            if (this.chatActivity.X3 != messageObject && messageObject.getId() > 0 && ((messageObject.hasExtendedMediaPreview() || messageObject.hasPaidMediaPreview()) && j3 - messageObject.extendedMediaLastCheckTime > 30000)) {
+            if (this.chatActivity.V3 != messageObject && messageObject.getId() > 0 && ((messageObject.hasExtendedMediaPreview() || messageObject.hasPaidMediaPreview()) && j3 - messageObject.extendedMediaLastCheckTime > 30000)) {
                 messageObject.extendedMediaLastCheckTime = j3;
                 this.extendedMediaToCheck.add(messageObject);
             }

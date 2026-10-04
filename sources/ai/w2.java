@@ -13,9 +13,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class w2 extends View {
     public final int a;
@@ -32,7 +32,7 @@ public final class w2 extends View {
     public w2(Context context, int i10) {
         super(context);
         this.b = new RectF();
-        sr srVar = sr.f;
+        tr trVar = tr.f;
         org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, false, false, false);
         this.c = o6Var;
         this.e = new ArrayList();
@@ -61,7 +61,7 @@ public final class w2 extends View {
         this.r = ofFloat;
         ofFloat.addUpdateListener(new a(this, 7));
         this.r.addListener(new t2(this, f7, s2Var, 0));
-        this.r.setInterpolator(sr.h);
+        this.r.setInterpolator(tr.h);
         this.r.setDuration(320L);
         this.r.start();
     }
@@ -102,7 +102,7 @@ public final class w2 extends View {
                 i11--;
             } else {
                 float f10 = dp / 2.0f;
-                kj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f10), (int) (rectF.centerY() - f10), (int) org.telegram.ui.Cells.c1.b(AndroidUtilities.dp(15.0f), lerp, rectF.left, f10), (int) (rectF.centerY() + f10));
+                kj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f10), (int) (rectF.centerY() - f10), (int) t8.b.d(AndroidUtilities.dp(15.0f), lerp, rectF.left, f10), (int) (rectF.centerY() + f10));
                 kj0Var.setAlpha((int) (w2Var.n * 255.0f));
                 kj0Var.draw(canvas2);
             }
@@ -124,10 +124,10 @@ public final class w2 extends View {
             float f12 = v2Var.b;
             ImageReceiver imageReceiver = v2Var.f;
             float d = v2Var.i.d(f7, z10);
-            float e = v2Var.j.e(v2Var.h);
+            float e7 = v2Var.j.e(v2Var.h);
             float dp3 = AndroidUtilities.dp(23.0f) + v2Var.g.c;
             float dp4 = AndroidUtilities.dp(18.0f);
-            float lerp2 = AndroidUtilities.lerp(0.0f, AndroidUtilities.lerp(f7, 0.0f, e), Utilities.clamp01(Math.min(AndroidUtilities.ilerp(d, f7, 0.85f), AndroidUtilities.ilerp(d, 0.0f, 0.12f))));
+            float lerp2 = AndroidUtilities.lerp(0.0f, AndroidUtilities.lerp(f7, 0.0f, e7), Utilities.clamp01(Math.min(AndroidUtilities.ilerp(d, f7, 0.85f), AndroidUtilities.ilerp(d, 0.0f, 0.12f))));
             Paint paint = v2Var.e;
             int i13 = (int) (lerp2 * 255.0f);
             paint.setAlpha(i13);
@@ -170,7 +170,7 @@ public final class w2 extends View {
                 kj0Var2.draw(canvas2);
                 canvas2.restore();
             }
-            if (d >= 1.0f || e >= 1.0f) {
+            if (d >= 1.0f || e7 >= 1.0f) {
                 ((v2) arrayList2.get(i14)).f.onDetachedFromWindow();
                 arrayList2.remove(i14);
                 i10 = i14 - 1;

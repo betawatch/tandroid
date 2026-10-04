@@ -8,7 +8,7 @@ import android.view.Surface;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class AudioDecoder {
     private static final int TIMEOUT_USEC = 0;
@@ -22,7 +22,7 @@ public class AudioDecoder {
     private long startTimeUs;
     private int trackIndex;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class DecodedBufferData {
         public ByteBuffer byteBuffer = null;
         public int index = -1;
@@ -49,8 +49,8 @@ public class AudioDecoder {
         this.startTimeUs = 0L;
         try {
             this.endTimeUs = this.extractor.getTrackFormat(this.trackIndex).getLong("durationUs");
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             this.endTimeUs = -1L;
         }
     }
@@ -149,12 +149,12 @@ public class AudioDecoder {
     public int getChannelCount() {
         try {
             return getOutputMediaFormat().getInteger("channel-count");
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             try {
                 return getInputMediaFormat().getInteger("channel-count");
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e10) {
+                FileLog.e(e10);
                 return -1;
             }
         }
@@ -163,12 +163,12 @@ public class AudioDecoder {
     public long getDurationUs() {
         try {
             return getOutputMediaFormat().getLong("durationUs");
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             try {
                 return getInputMediaFormat().getLong("durationUs");
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e10) {
+                FileLog.e(e10);
                 return -1L;
             }
         }
@@ -181,8 +181,8 @@ public class AudioDecoder {
     public MediaFormat getInputMediaFormat() {
         try {
             return this.extractor.getTrackFormat(this.trackIndex);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -190,8 +190,8 @@ public class AudioDecoder {
     public MediaFormat getMediaFormat() {
         try {
             return getOutputMediaFormat() != null ? getOutputMediaFormat() : getInputMediaFormat();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -199,8 +199,8 @@ public class AudioDecoder {
     public MediaFormat getOutputMediaFormat() {
         try {
             return this.decoder.getOutputFormat();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -208,12 +208,12 @@ public class AudioDecoder {
     public int getSampleRate() {
         try {
             return getOutputMediaFormat().getInteger("sample-rate");
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             try {
                 return getInputMediaFormat().getInteger("sample-rate");
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e10) {
+                FileLog.e(e10);
                 return -1;
             }
         }
@@ -271,7 +271,7 @@ public class AudioDecoder {
             StringBuilder sb2 = new StringBuilder("StartTimeUs(");
             sb2.append(this.startTimeUs);
             sb2.append(") must be less than or equal to EndTimeUs(");
-            throw new RuntimeException(a4.a.s(sb2, this.endTimeUs, ")"));
+            throw new RuntimeException(a4.a.r(sb2, this.endTimeUs, ")"));
         }
         this.extractor.seekTo(j3, 0);
         this.decoder.start();

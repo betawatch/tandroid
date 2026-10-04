@@ -1,54 +1,112 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class yd extends org.telegram.ui.Components.ld0 {
-    public final /* synthetic */ int L;
-    public final /* synthetic */ Object M;
+public final /* synthetic */ class yd implements TextView.OnEditorActionListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ yd(Object obj, Context context, int i10) {
-        super(context, null);
-        this.L = i10;
-        this.M = obj;
+    public /* synthetic */ yd(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.L) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        int b10;
+        int b11;
+        switch (this.a) {
             case 0:
-                je jeVar = (je) this.M;
-                org.telegram.ui.Components.t61 t61Var = jeVar.a1;
-                fi.o oVar = jeVar.Y0;
-                if (oVar != null && !oVar.isFocusable()) {
-                    oVar.setFocusable(true);
-                    oVar.setFocusableInTouchMode(true);
-                    int x12 = t61Var.x1(3);
-                    if (x12 >= 0 && x12 < t61Var.Y2.x.size()) {
-                        t61Var.B0();
-                        t61Var.x0(x12);
+                me meVar = (me) this.b;
+                va1 va1Var = (va1) this.c;
+                if (i10 == 5) {
+                    TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
+                    ud udVar = new ud(meVar, twoStepVerificationActivity, 1);
+                    twoStepVerificationActivity.Z = 1;
+                    twoStepVerificationActivity.b0 = udVar;
+                    meVar.J1.setLoading(true);
+                    twoStepVerificationActivity.s0(new vd(meVar, va1Var, twoStepVerificationActivity, 1));
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.b;
+                ei.v1 v1Var = (ei.v1) this.c;
+                if ((i10 == 6 || keyEvent.getKeyCode() == 66) && b2Var.isShowing()) {
+                    v1Var.g(b2Var, 0);
+                    break;
+                }
+                break;
+            case 2:
+                org.telegram.ui.Components.vn vnVar = (org.telegram.ui.Components.vn) this.b;
+                org.telegram.ui.Components.un unVar = (org.telegram.ui.Components.un) this.c;
+                org.telegram.ui.Components.xn xnVar = vnVar.d;
+                zb1 zb1Var = xnVar.s;
+                if (i10 == 5) {
+                    View F = zb1Var.F(unVar);
+                    s4.c1 T = F == null ? null : zb1Var.T(F);
+                    if (T != null && (b10 = T.b()) != -1) {
+                        int i11 = b10 - xnVar.t0;
+                        int i12 = xnVar.M;
+                        int i13 = i12 - 1;
+                        if (i11 == i13 && i12 < xnVar.J) {
+                            xnVar.N();
+                            break;
+                        } else if (i11 != i13) {
+                            s4.c1 K = zb1Var.K(b10 + 1);
+                            if (K != null) {
+                                View view = K.a;
+                                if (view instanceof org.telegram.ui.Cells.d6) {
+                                    ((org.telegram.ui.Cells.d6) view).getTextView().requestFocus();
+                                    break;
+                                }
+                            }
+                        } else {
+                            AndroidUtilities.hideKeyboard(unVar.getTextView());
+                            break;
+                        }
                     }
-                    oVar.requestFocus();
                 }
                 break;
             default:
-                yh.g gVar = (yh.g) this.M;
-                fi.o oVar2 = gVar.Q;
-                if (oVar2 != null && !oVar2.isFocusable()) {
-                    gVar.Q.setFocusable(true);
-                    gVar.Q.setFocusableInTouchMode(true);
-                    int x13 = gVar.e.x1(1);
-                    if (x13 >= 0 && x13 < gVar.e.Y2.x.size()) {
-                        gVar.e.B0();
-                        gVar.e.x0(x13);
+                sv0 sv0Var = (sv0) this.b;
+                rv0 rv0Var = (rv0) this.c;
+                uv0 uv0Var = sv0Var.d;
+                if (i10 == 5) {
+                    zb1 zb1Var2 = uv0Var.c;
+                    View F2 = zb1Var2.F(rv0Var);
+                    s4.c1 T2 = F2 == null ? null : zb1Var2.T(F2);
+                    if (T2 != null && (b11 = T2.b()) != -1) {
+                        int i14 = b11 - uv0Var.n0;
+                        int i15 = uv0Var.y;
+                        int i16 = i15 - 1;
+                        if (i14 == i16 && i15 < uv0Var.n) {
+                            uv0Var.f0();
+                            break;
+                        } else if (i14 != i16) {
+                            s4.c1 K2 = uv0Var.c.K(b11 + 1);
+                            if (K2 != null) {
+                                View view2 = K2.a;
+                                if (view2 instanceof org.telegram.ui.Cells.d6) {
+                                    ((org.telegram.ui.Cells.d6) view2).getTextView().requestFocus();
+                                    break;
+                                }
+                            }
+                        } else {
+                            AndroidUtilities.hideKeyboard(rv0Var.getTextView());
+                            break;
+                        }
                     }
-                    gVar.Q.requestFocus();
                 }
                 break;
         }
-        return super.dispatchTouchEvent(motionEvent);
+        return true;
     }
 }

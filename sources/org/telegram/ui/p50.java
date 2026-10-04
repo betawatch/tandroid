@@ -1,36 +1,84 @@
 package org.telegram.ui;
 
 import android.view.View;
-import java.util.Iterator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p50 implements org.telegram.ui.Components.w5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class p50 implements org.telegram.ui.Components.x40 {
+    public float a;
+    public TLRPC.FileLocation b;
+    public TLRPC.FileLocation c;
+    public ImageLocation d;
+    public final long e;
+    public final /* synthetic */ h60 f;
 
-    public /* synthetic */ p50(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public p50(h60 h60Var, long j3) {
+        this.f = h60Var;
+        this.e = j3;
     }
 
-    @Override // org.telegram.ui.Components.w5
-    public final void invalidate() {
-        switch (this.a) {
-            case 0:
-                Iterator it = ((q50) this.b).i.iterator();
-                while (it.hasNext()) {
-                    ((View) it.next()).invalidate();
-                }
-                break;
-            default:
-                j61 j61Var = (j61) this.b;
-                j61Var.getClass();
-                if (!zg.e0.b && j61Var.getParent() != null) {
-                    ((View) j61Var.getParent()).invalidate();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.x40
+    public final void B(float f7) {
+        this.f.b.O(this.d, f7);
+        a(f7);
+    }
+
+    @Override // org.telegram.ui.Components.x40
+    public final void O(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
+        AndroidUtilities.runOnUIThread(new fi.k(this, inputFile, inputFile2, videoSize, d, str, photoSize2, photoSize, 3));
+    }
+
+    public final void a(float f7) {
+        this.a = f7;
+        o50 o50Var = this.f.Q;
+        if (o50Var == null) {
+            return;
         }
+        for (int i10 = 0; i10 < o50Var.getChildCount(); i10++) {
+            View childAt = o50Var.getChildAt(i10);
+            if (childAt instanceof org.telegram.ui.Cells.e4) {
+                org.telegram.ui.Cells.e4 e4Var = (org.telegram.ui.Cells.e4) childAt;
+                if (e4Var.c()) {
+                    org.telegram.ui.Cells.z3 z3Var = e4Var.x;
+                    z3Var.setProgress(f7);
+                    if (f7 < 1.0f) {
+                        AndroidUtilities.updateViewVisibilityAnimated(z3Var, true, 1.0f, true);
+                    } else {
+                        AndroidUtilities.updateViewVisibilityAnimated(z3Var, false, 1.0f, true);
+                    }
+                }
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.x40
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.x40
+    public final /* synthetic */ yu0 getCloseIntoObject() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.x40
+    public final /* synthetic */ String getInitialSearchString() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.x40
+    public final /* synthetic */ boolean t() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.x40
+    public final /* synthetic */ void N() {
+    }
+
+    @Override // org.telegram.ui.Components.x40
+    public final void I(boolean z10, boolean z11) {
     }
 }

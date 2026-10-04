@@ -5,7 +5,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ql0 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,10 +29,10 @@ public final /* synthetic */ class ql0 implements Runnable {
         Object obj = this.d;
         switch (i10) {
             case 0:
-                yl0 yl0Var = (yl0) ((tl0) obj).b;
-                if (yl0Var.e1 != null && (view = yl0Var.N1) != null) {
-                    yl0Var.h1(view, f10, f7, true);
-                    yl0Var.e1 = null;
+                zl0 zl0Var = (zl0) ((tl0) obj).b;
+                if (zl0Var.e1 != null && (view = zl0Var.N1) != null) {
+                    zl0Var.k1(view, f10, f7, true);
+                    zl0Var.e1 = null;
                     break;
                 }
                 break;
@@ -60,8 +60,8 @@ public final /* synthetic */ class ql0 implements Runnable {
                     ofFloat.addUpdateListener(bVar2);
                     long j3 = 220;
                     ofFloat.setDuration(j3);
-                    sr srVar = sr.h;
-                    ofFloat.setInterpolator(srVar);
+                    tr trVar = tr.h;
+                    ofFloat.setInterpolator(trVar);
                     ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f10, 0.0f);
                     ofFloat2.addUpdateListener(bVar2);
                     ofFloat2.setStartDelay(j3);
@@ -70,7 +70,7 @@ public final /* synthetic */ class ql0 implements Runnable {
                     ValueAnimator ofFloat3 = ValueAnimator.ofFloat(eVar.b.g, f7);
                     ofFloat3.addUpdateListener(bVar);
                     ofFloat3.setDuration(j3);
-                    ofFloat3.setInterpolator(srVar);
+                    ofFloat3.setInterpolator(trVar);
                     ValueAnimator ofFloat4 = ValueAnimator.ofFloat(f7, 0.0f);
                     ofFloat4.addUpdateListener(bVar);
                     ofFloat4.setStartDelay(j3);

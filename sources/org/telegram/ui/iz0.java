@@ -1,46 +1,38 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Stories.ProfileStoriesView;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class iz0 extends ProfileStoriesView {
-    public final /* synthetic */ Context t0;
-    public final /* synthetic */ ProfileActivity u0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iz0(ProfileActivity profileActivity, Context context, int i10, long j3, boolean z10, k0 k0Var, fz0 fz0Var, org.telegram.ui.ActionBar.d6 d6Var, Context context2) {
-        super(context, i10, j3, z10, k0Var, fz0Var, d6Var);
-        this.u0 = profileActivity;
-        this.t0 = context2;
+public final class iz0 extends f01 {
+    public iz0(Context context) {
+        super(context);
     }
 
-    @Override // org.telegram.ui.Stories.ProfileStoriesView
-    public final void e(a6.i iVar) {
-        TL_stories.PeerStories peerStories;
-        TL_stories.PeerStories peerStories2;
-        ProfileActivity profileActivity = this.u0;
-        long a2 = profileActivity.a();
-        ai.l9 storiesController = profileActivity.getMessagesController().getStoriesController();
-        boolean I = storiesController.I(a2);
-        Context context = this.t0;
-        if (I || storiesController.K(a2) || storiesController.N(a2)) {
-            profileActivity.getOrCreateStoryViewer().D(context, a2, iVar);
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ai.l4 l4Var;
+        super.dispatchDraw(canvas);
+        org.telegram.ui.Components.q5 q5Var = this.e;
+        if (q5Var == null || (l4Var = q5Var.k) == null) {
             return;
         }
-        TLRPC.UserFull userFull = profileActivity.v2;
-        if (userFull != null && (peerStories2 = userFull.stories) != null && !peerStories2.stories.isEmpty() && profileActivity.e1 != profileActivity.getUserConfig().clientUserId) {
-            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.v2.stories, iVar);
+        l4Var.startAnimation();
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (!getImageReceiver().hasNotThumb()) {
+            accessibilityNodeInfo.setVisibleToUser(false);
             return;
         }
-        TLRPC.ChatFull chatFull = profileActivity.u2;
-        if (chatFull == null || (peerStories = chatFull.stories) == null || peerStories.stories.isEmpty()) {
-            profileActivity.K3();
-        } else {
-            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.u2.stories, iVar);
-        }
+        accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString(R.string.AccDescrOpenInPhotoViewer)));
     }
 }

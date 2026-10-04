@@ -11,15 +11,15 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.h21;
-import org.telegram.ui.Components.hs;
-import org.telegram.ui.Components.lv0;
-import org.telegram.ui.Components.ns;
+import org.telegram.ui.Components.is;
+import org.telegram.ui.Components.os;
+import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.q21;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ki0;
-import org.telegram.ui.p70;
+import org.telegram.ui.oi0;
+import org.telegram.ui.t70;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class za implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -28,11 +28,11 @@ public final /* synthetic */ class za implements RequestDelegate {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ za(int i10, ki0 ki0Var, org.telegram.ui.ActionBar.m2 m2Var, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
+    public /* synthetic */ za(int i10, oi0 oi0Var, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction) {
         this.a = 7;
         this.b = i10;
-        this.c = ki0Var;
-        this.d = m2Var;
+        this.c = oi0Var;
+        this.d = n2Var;
         this.e = tL_payments_assignPlayMarketTransaction;
     }
 
@@ -55,32 +55,32 @@ public final /* synthetic */ class za implements RequestDelegate {
                 }
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new ei.l3(tLObject, (boolean[]) obj3, (Utilities.Callback) obj2, this.b, (TL_account.updateEmojiStatus) obj, 1));
+                AndroidUtilities.runOnUIThread(new ei.m3(tLObject, (boolean[]) obj3, (Utilities.Callback) obj2, this.b, (TL_account.updateEmojiStatus) obj, 1));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new cb((p70) obj3, (org.telegram.ui.g4) obj2, tL_error, tLObject, this.b, (org.telegram.ui.d1) obj));
+                AndroidUtilities.runOnUIThread(new cb((t70) obj3, (org.telegram.ui.g4) obj2, tL_error, tLObject, this.b, (org.telegram.ui.d1) obj));
                 break;
             case 3:
                 SharedPreferences sharedPreferences = (SharedPreferences) obj3;
-                org.telegram.ui.ActionBar.a2 a2Var = (org.telegram.ui.ActionBar.a2) obj2;
-                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj;
+                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj2;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj;
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.c2(a2Var, 0));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.c2(b2Var, 0));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new ei.l3(sharedPreferences, (TLRPC.TL_help_support) tLObject, a2Var, this.b, m2Var, 21));
+                    AndroidUtilities.runOnUIThread(new ei.m3(sharedPreferences, (TLRPC.TL_help_support) tLObject, b2Var, this.b, n2Var, 21));
                     break;
                 }
             case 4:
-                AndroidUtilities.runOnUIThread(new ei.l3((hs) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj, 22));
+                AndroidUtilities.runOnUIThread(new ei.m3((is) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj, 22));
                 break;
             case 5:
-                lv0 lv0Var = (lv0) obj3;
+                pv0 pv0Var = (pv0) obj3;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
-                AndroidUtilities.runOnUIThread(new ns((org.telegram.ui.ActionBar.a2[]) obj2, 2));
+                AndroidUtilities.runOnUIThread(new os((org.telegram.ui.ActionBar.b2[]) obj2, 2));
                 int i11 = this.b;
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new c9(lv0Var, i11, tL_error, tL_messages_editMessage, 25));
+                    AndroidUtilities.runOnUIThread(new c9(pv0Var, i11, tL_error, tL_messages_editMessage, 25));
                     break;
                 } else {
                     MessagesController.getInstance(i11).processUpdates((TLRPC.Updates) tLObject, false);
@@ -88,27 +88,27 @@ public final /* synthetic */ class za implements RequestDelegate {
                 }
             case 6:
                 Pattern pattern = LaunchActivity.B1;
-                AndroidUtilities.runOnUIThread(new ei.l3((LaunchActivity) obj3, tLObject, (Uri) obj2, this.b, (org.telegram.ui.ActionBar.a2) obj, 24), 2L);
+                AndroidUtilities.runOnUIThread(new ei.m3((LaunchActivity) obj3, tLObject, (Uri) obj2, this.b, (org.telegram.ui.ActionBar.b2) obj, 24), 2L);
                 break;
             case 7:
-                ki0 ki0Var = (ki0) obj3;
-                org.telegram.ui.ActionBar.m2 m2Var2 = (org.telegram.ui.ActionBar.m2) obj2;
+                oi0 oi0Var = (oi0) obj3;
+                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) obj2;
                 TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction = (TLRPC.TL_payments_assignPlayMarketTransaction) obj;
                 boolean z10 = tLObject instanceof TLRPC.Updates;
                 int i12 = this.b;
                 if (!z10) {
                     if (tL_error != null) {
-                        AndroidUtilities.runOnUIThread(new h21(i12, tL_error, m2Var2, tL_payments_assignPlayMarketTransaction, 10));
+                        AndroidUtilities.runOnUIThread(new q21(i12, tL_error, n2Var2, tL_payments_assignPlayMarketTransaction, 10));
                         break;
                     }
                 } else {
                     MessagesController.getInstance(i12).processUpdates((TLRPC.Updates) tLObject, false);
-                    AndroidUtilities.runOnUIThread(ki0Var);
+                    AndroidUtilities.runOnUIThread(oi0Var);
                     break;
                 }
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new cb((org.telegram.ui.web.b1) obj3, tLObject, this.b, (org.telegram.ui.web.y0) obj2, (da) obj, tL_error));
+                AndroidUtilities.runOnUIThread(new cb((org.telegram.ui.web.c1) obj3, tLObject, this.b, (org.telegram.ui.web.z0) obj2, (da) obj, tL_error));
                 break;
         }
     }

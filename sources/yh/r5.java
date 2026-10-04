@@ -1,17 +1,17 @@
 package yh;
 
 import android.text.SpannableStringBuilder;
-import android.view.ViewParent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.iw0;
 import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r5 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,14 +31,14 @@ public final /* synthetic */ class r5 implements Runnable {
                 ((MessagesController) this.b).processUpdates((TLRPC.Updates) ((TLObject) this.c), false);
                 break;
             case 1:
-                new yc(((org.telegram.ui.ActionBar.e3[]) this.b)[0].topBulletinContainer, (org.telegram.ui.ActionBar.d6) this.c).Q(R.raw.copy, 36, LocaleController.getString(R.string.StarsTransactionIDCopied)).k(false);
+                new yc(((org.telegram.ui.ActionBar.f3[]) this.b)[0].topBulletinContainer, (org.telegram.ui.ActionBar.d6) this.c).Q(R.raw.copy, 36, LocaleController.getString(R.string.StarsTransactionIDCopied)).k(false);
                 break;
             case 2:
-                o8 o8Var = (o8) this.b;
+                p8 p8Var = (p8) this.b;
                 s5 s5Var = (s5) this.c;
-                o8Var.R = true;
-                o8Var.o(new p5(s5Var, 2));
-                AndroidUtilities.runOnUIThread(new x7(o8Var, 1), 240L);
+                p8Var.R = true;
+                p8Var.o(new p5(s5Var, 2));
+                AndroidUtilities.runOnUIThread(new y7(p8Var, 1), 240L);
                 break;
             case 3:
                 zg.q qVar = (zg.q) this.b;
@@ -116,9 +116,9 @@ public final /* synthetic */ class r5 implements Runnable {
                 zg.m0 m0Var = (zg.m0) this.c;
                 p0Var.getClass();
                 TLRPC.ReactionCount reactionCount = m0Var.a;
-                ViewParent viewParent = p0Var.z;
-                if (com.google.android.gms.internal.vision.e2.u(viewParent)) {
-                    ((org.telegram.ui.Cells.o4) viewParent).f(reactionCount, true, 0.0f, 0.0f);
+                iw0 iw0Var = p0Var.z;
+                if (com.google.android.gms.internal.vision.e2.u(iw0Var)) {
+                    ((org.telegram.ui.Cells.o4) iw0Var).f(reactionCount, true, 0.0f, 0.0f);
                 }
                 m0Var.Y.c(false);
                 p0Var.S = null;

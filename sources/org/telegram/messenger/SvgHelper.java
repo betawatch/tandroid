@@ -36,13 +36,13 @@ import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class SvgHelper {
     private static final Pattern SPLIT_BOUNDARY;
     private static final double[] pow10 = new double[128];
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class Circle {
         float rad;
         float x1;
@@ -55,7 +55,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class Line {
         float x1;
         float x2;
@@ -70,7 +70,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class NumberParse {
         private int nextCmd;
         private ArrayList<Float> numbers;
@@ -89,7 +89,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class Oval {
         RectF rect;
 
@@ -98,7 +98,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class ParserHelper {
         private char current;
         private int n;
@@ -455,7 +455,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class Properties {
         Attributes atts;
         ArrayList<StyleSet> styles;
@@ -530,7 +530,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class RoundRect {
         RectF rect;
         float rx;
@@ -541,13 +541,13 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public enum ScaleMode {
         Default,
         ByWidth
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class StyleSet {
         HashMap<String, String> styleMap;
 
@@ -572,7 +572,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class SvgDrawable extends Drawable {
         private static float gradientWidth;
         private static long lastUpdateTime;
@@ -638,7 +638,7 @@ public class SvgHelper {
                         j10 = j11 <= 64 ? j11 : 64L;
                         if (j10 > 0) {
                             lastUpdateTime = j3;
-                            totalTranslation = a4.a.B(j10, f13, 1800.0f, totalTranslation);
+                            totalTranslation = a4.a.A(j10, f13, 1800.0f, totalTranslation);
                             while (true) {
                                 float f14 = totalTranslation;
                                 float f15 = gradientWidth;
@@ -654,7 +654,7 @@ public class SvgHelper {
                         j10 = j12 <= 64 ? j12 : 64L;
                         long j13 = j10 >= 0 ? j10 : 0L;
                         lastUpdateTime = j3;
-                        totalTranslation = a4.a.B(j13, gradientWidth, 1800.0f, totalTranslation);
+                        totalTranslation = a4.a.A(j13, gradientWidth, 1800.0f, totalTranslation);
                         while (true) {
                             float f16 = totalTranslation;
                             float f17 = gradientWidth;
@@ -859,7 +859,7 @@ public class SvgHelper {
         public void setupGradient(int i10, org.telegram.ui.ActionBar.d6 d6Var, float f7, boolean z10) {
             BitmapShader bitmapShader;
             Integer num = this.overrideColor;
-            int v02 = num == null ? org.telegram.ui.ActionBar.h6.v0(i10, d6Var) : num.intValue();
+            int v02 = num == null ? org.telegram.ui.ActionBar.i6.v0(i10, d6Var) : num.intValue();
             this.currentResourcesProvider = d6Var;
             int[] iArr = this.currentColor;
             if (iArr[z10 ? 1 : 0] != v02) {
@@ -936,7 +936,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public interface SvgResult {
         Bitmap getBitmap();
 
@@ -1019,8 +1019,8 @@ public class SvgHelper {
             }
             sb2.append('z');
             return sb2.toString();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return "";
         }
     }
@@ -1387,8 +1387,8 @@ public class SvgHelper {
             paint.setColor(-1);
             canvas.drawPath(doPath, paint);
             return createBitmap;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -1498,8 +1498,8 @@ public class SvgHelper {
             xMLReader.setContentHandler(sVGHandler);
             xMLReader.parse(new InputSource(new StringReader(str)));
             return sVGHandler.getDrawable();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -1513,8 +1513,8 @@ public class SvgHelper {
             svgDrawable.width = i10;
             svgDrawable.height = i11;
             return svgDrawable;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -1573,8 +1573,8 @@ public class SvgHelper {
                 return sVGHandler;
             } finally {
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -1755,7 +1755,7 @@ public class SvgHelper {
         return arrayList;
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class SVGHandler extends DefaultHandler implements SvgResult {
         private boolean alphaOnly;
         private Bitmap bitmap;
@@ -1965,8 +1965,8 @@ public class SvgHelper {
                             Matrix parseTransform = SvgHelper.parseTransform(attributes.getValue("transform"));
                             parseTransform.postScale(f7, f7);
                             r14 = new dg.c(rectF, parseTransform);
-                        } catch (Exception e) {
-                            FileLog.e(e);
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
                         }
                         if (r14 != null) {
                             if (this.insideGiftRectPositions == null) {
@@ -2297,8 +2297,8 @@ public class SvgHelper {
                 return bitmap;
             } finally {
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -2311,8 +2311,8 @@ public class SvgHelper {
             svgDrawable.width = i10;
             svgDrawable.height = i11;
             return svgDrawable;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -2324,8 +2324,8 @@ public class SvgHelper {
             xMLReader.setContentHandler(sVGHandler);
             xMLReader.parse(new InputSource(ApplicationLoader.applicationContext.getResources().openRawResource(i10)));
             return sVGHandler.getDrawable();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -2337,8 +2337,8 @@ public class SvgHelper {
             xMLReader.setContentHandler(sVGHandler);
             xMLReader.parse(new InputSource(inputStream));
             return sVGHandler.getBitmap();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -2363,8 +2363,8 @@ public class SvgHelper {
                 return bitmap;
             } finally {
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -2376,8 +2376,8 @@ public class SvgHelper {
             xMLReader.setContentHandler(sVGHandler);
             xMLReader.parse(new InputSource(new StringReader(str)));
             return sVGHandler.getBitmap();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }

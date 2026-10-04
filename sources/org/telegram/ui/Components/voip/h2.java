@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import w7.y5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class h2 extends FrameLayout {
     public String a;
@@ -30,12 +30,12 @@ public final class h2 extends FrameLayout {
         r1Var.a(this);
         ImageView imageView = new ImageView(context);
         this.b = imageView;
-        addView(imageView, y5.d(24, 24.0f, 16, 8.0f, 2.0f, 8.0f, 2.0f));
+        addView(imageView, z5.d(24, 24.0f, 16, 8.0f, 2.0f, 8.0f, 2.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextColor(-1);
         textView.setTextSize(1, 14.0f);
-        addView(textView, y5.d(-2, -2.0f, 16, i10 == 0 ? 14.0f : 36.0f, 2.0f, 14.0f, 2.0f));
+        addView(textView, z5.d(-2, -2.0f, 16, i10 == 0 ? 14.0f : 36.0f, 2.0f, 14.0f, 2.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View

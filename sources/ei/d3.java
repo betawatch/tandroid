@@ -2,33 +2,47 @@ package ei;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d3 implements RequestDelegate {
+public final /* synthetic */ class d3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f3 b;
+    public final /* synthetic */ g3 b;
 
-    public /* synthetic */ d3(f3 f3Var, int i10) {
+    public /* synthetic */ d3(g3 g3Var, int i10) {
         this.a = i10;
-        this.b = f3Var;
+        this.b = g3Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                k3 k3Var = this.b.d;
-                if (tLObject instanceof TLRPC.TL_updates) {
-                    MessagesController.getInstance(k3Var.G).processUpdates((TLRPC.TL_updates) tLObject, false);
-                }
-                AndroidUtilities.runOnUIThread(new e2(k3Var, 17));
+                TL_bots.toggleUserEmojiStatusPermission toggleuseremojistatuspermission = new TL_bots.toggleUserEmojiStatusPermission();
+                g3 g3Var = this.b;
+                l3 l3Var = g3Var.d;
+                toggleuseremojistatuspermission.bot = MessagesController.getInstance(l3Var.G).getInputUser(l3Var.H);
+                toggleuseremojistatuspermission.enabled = false;
+                ConnectionsManager.getInstance(l3Var.G).sendRequest(toggleuseremojistatuspermission, new e3(g3Var, 1));
+                break;
+            case 1:
+                l3 l3Var2 = this.b.d;
+                x0.e(l3Var2.getContext(), l3Var2.G, l3Var2.H).m(false, null);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new a3.k0(this.b, tLObject, tL_error, 26));
+                l3 l3Var3 = this.b.d;
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U != null && U.getParentLayout() != null) {
+                    org.telegram.ui.ActionBar.c5 parentLayout = U.getParentLayout();
+                    U.presentFragment(ProfileActivity.m4(l3Var3.H));
+                    AndroidUtilities.scrollToFragmentRow(parentLayout, "botPermissionLocation");
+                    l3Var3.k(true);
+                    break;
+                }
                 break;
         }
     }

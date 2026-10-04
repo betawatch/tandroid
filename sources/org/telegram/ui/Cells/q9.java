@@ -19,7 +19,7 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class q9 extends da {
     public s4.c0 E0;
@@ -240,9 +240,9 @@ public class q9 extends da {
 
     public final void a0(Canvas canvas, p9 p9Var, int i10) {
         ba baVar;
-        int i11 = org.telegram.ui.ActionBar.h6.uf;
-        this.o.setColor(org.telegram.ui.ActionBar.h6.v0(i11, this.h0));
-        this.p.setColor(org.telegram.ui.ActionBar.h6.v0(i11, this.h0));
+        int i11 = org.telegram.ui.ActionBar.i6.uf;
+        this.o.setColor(org.telegram.ui.ActionBar.i6.v0(i11, this.h0));
+        this.p.setColor(org.telegram.ui.ActionBar.i6.v0(i11, this.h0));
         int e02 = e0(p9Var);
         if (e02 < 0) {
             return;
@@ -700,9 +700,9 @@ public class q9 extends da {
         g gVar = this.r0;
         AndroidUtilities.cancelRunOnUIThread(gVar);
         AndroidUtilities.runOnUIThread(gVar);
-        w7.i0 i0Var = this.D;
-        if (i0Var != null) {
-            i0Var.a(true);
+        w7.j0 j0Var = this.D;
+        if (j0Var != null) {
+            j0Var.a(true);
         }
     }
 
@@ -744,9 +744,9 @@ public class q9 extends da {
         g gVar = this.r0;
         AndroidUtilities.cancelRunOnUIThread(gVar);
         AndroidUtilities.runOnUIThread(gVar);
-        w7.i0 i0Var = this.D;
-        if (i0Var != null) {
-            i0Var.a(true);
+        w7.j0 j0Var = this.D;
+        if (j0Var != null) {
+            j0Var.a(true);
         }
         p9Var.invalidate();
         return true;

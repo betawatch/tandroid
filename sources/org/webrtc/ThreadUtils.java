@@ -7,26 +7,26 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public class ThreadUtils {
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public class 1CaughtException {
         Exception e;
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public class 1Result {
         public V value;
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public interface BlockingOperation {
         void run();
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class ThreadChecker {
         private Thread thread = Thread.currentThread();
 
@@ -85,8 +85,8 @@ public class ThreadUtils {
         if (handler.getLooper().getThread() == Thread.currentThread()) {
             try {
                 return callable.call();
-            } catch (Exception e) {
-                throw new RuntimeException(e);
+            } catch (Exception e7) {
+                throw new RuntimeException(e7);
             }
         }
         final 1Result r02 = new 1Result();
@@ -98,8 +98,8 @@ public class ThreadUtils {
             public void run() {
                 try {
                     1Result.this.value = callable.call();
-                } catch (Exception e7) {
-                    r12.e = e7;
+                } catch (Exception e10) {
+                    r12.e = e10;
                 }
                 countDownLatch.countDown();
             }

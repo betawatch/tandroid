@@ -5,9 +5,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import org.telegram.ui.Cells.q9;
-import org.telegram.ui.p70;
+import org.telegram.ui.t70;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class b4 extends HorizontalScrollView {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final class b4 extends HorizontalScrollView {
         switch (this.a) {
             case 1:
                 super.onScrollChanged(i10, i11, i12, i13);
-                d3 d3Var = ((p5) this.b).E;
+                d3 d3Var = ((q5) this.b).E;
                 if (d3Var != null && (textSelectionHelper = d3Var.a.getTextSelectionHelper()) != null && textSelectionHelper.y()) {
                     textSelectionHelper.x();
                 }
@@ -58,10 +58,10 @@ public final class b4 extends HorizontalScrollView {
                 break;
             case 2:
                 super.onScrollChanged(i10, i11, i12, i13);
-                p70 p70Var = (p70) this.b;
-                if (p70Var.d != null) {
-                    p70Var.d = null;
-                    p70Var.f = null;
+                t70 t70Var = (t70) this.b;
+                if (t70Var.d != null) {
+                    t70Var.d = null;
+                    t70Var.f = null;
                     break;
                 }
                 break;
@@ -72,9 +72,9 @@ public final class b4 extends HorizontalScrollView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b4(Context context, p70 p70Var) {
+    public b4(Context context, t70 t70Var) {
         super(context);
         this.a = 2;
-        this.b = p70Var;
+        this.b = t70Var;
     }
 }

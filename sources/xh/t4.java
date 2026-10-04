@@ -4,11 +4,11 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.lw0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class t4 extends cw0 {
+public final class t4 extends lw0 {
     public int w0;
     public final /* synthetic */ z4 x0;
 
@@ -19,17 +19,17 @@ public final class t4 extends cw0 {
         this.w0 = -1;
     }
 
-    @Override // org.telegram.ui.Components.cw0
+    @Override // org.telegram.ui.Components.lw0
     public final boolean P() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.cw0
+    @Override // org.telegram.ui.Components.lw0
     public final boolean Q() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.cw0
+    @Override // org.telegram.ui.Components.lw0
     public final void T() {
         this.x0.d.invalidate();
     }
@@ -42,12 +42,12 @@ public final class t4 extends cw0 {
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // org.telegram.ui.Components.cw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         z4 z4Var = this.x0;
         z4Var.i0.setTranslationY(((i13 - i11) - r4.getMeasuredHeight()) / 2.0f);
-        z4Var.k0.W(z4Var.k0.getY() + z4Var.i0.getY(), getBackgroundSizeY());
+        z4Var.k0.U(z4Var.k0.getY() + z4Var.i0.getY(), getBackgroundSizeY());
     }
 
     @Override // android.widget.FrameLayout, android.view.View

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class g1 {
     public static final RectF l = new RectF();
@@ -83,8 +83,8 @@ public final class g1 {
             method.setAccessible(true);
             concurrentHashMap.put(str, method);
             return method;
-        } catch (Exception e) {
-            Log.w("ACTVAutoSizeHelper", "Failed to retrieve TextView#" + str + "() method", e);
+        } catch (Exception e7) {
+            Log.w("ACTVAutoSizeHelper", "Failed to retrieve TextView#" + str + "() method", e7);
             return null;
         }
     }
@@ -92,8 +92,8 @@ public final class g1 {
     public static Object e(Object obj, String str, Object obj2) {
         try {
             return d(str).invoke(obj, null);
-        } catch (Exception e) {
-            Log.w("ACTVAutoSizeHelper", "Failed to invoke TextView#" + str + "() method", e);
+        } catch (Exception e7) {
+            Log.w("ACTVAutoSizeHelper", "Failed to invoke TextView#" + str + "() method", e7);
             return obj2;
         }
     }
@@ -186,8 +186,8 @@ public final class g1 {
                     if (d != null) {
                         d.invoke(textView, null);
                     }
-                } catch (Exception e) {
-                    Log.w("ACTVAutoSizeHelper", "Failed to invoke TextView#nullLayouts() method", e);
+                } catch (Exception e7) {
+                    Log.w("ACTVAutoSizeHelper", "Failed to invoke TextView#nullLayouts() method", e7);
                 }
                 if (a2) {
                     textView.forceLayout();

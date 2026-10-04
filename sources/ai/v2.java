@@ -11,12 +11,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.e11;
 import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class v2 {
     public final long a;
@@ -25,7 +25,7 @@ public final class v2 {
     public final kj0 d;
     public final Paint e;
     public final ImageReceiver f;
-    public final v01 g;
+    public final e11 g;
     public boolean h;
     public final org.telegram.ui.Components.e6 i;
     public final org.telegram.ui.Components.e6 j;
@@ -59,16 +59,16 @@ public final class v2 {
         }
         paint.setColor(-1135603);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("⭐️");
-        qq qqVar = new qq(R.drawable.star, 0);
-        qqVar.spaceScaleX = 0.875f;
-        spannableStringBuilder.setSpan(qqVar, 0, spannableStringBuilder.length(), 33);
+        rq rqVar = new rq(R.drawable.star, 0);
+        rqVar.spaceScaleX = 0.875f;
+        spannableStringBuilder.setSpan(rqVar, 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append((CharSequence) " ");
         spannableStringBuilder.append((CharSequence) LocaleController.formatNumber(i11, ','));
-        this.g = new v01(spannableStringBuilder, 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+        this.g = new e11(spannableStringBuilder, 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
         org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(view, 2000L, new LinearInterpolator());
         this.i = e6Var;
         e6Var.d(0.0f, true);
         e6Var.d(1.0f, false);
-        this.j = new org.telegram.ui.Components.e6(view, 350L, 240L, sr.h);
+        this.j = new org.telegram.ui.Components.e6(view, 350L, 240L, tr.h);
     }
 }

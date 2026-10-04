@@ -4,7 +4,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class a implements IInterface {
     public final /* synthetic */ int a;
@@ -72,9 +72,9 @@ public abstract class a implements IInterface {
                 this.b.transact(i10, parcel, obtain, 0);
                 obtain.readException();
                 return obtain;
-            } catch (RuntimeException e) {
+            } catch (RuntimeException e7) {
                 obtain.recycle();
-                throw e;
+                throw e7;
             }
         } finally {
             parcel.recycle();
@@ -88,9 +88,9 @@ public abstract class a implements IInterface {
                 this.b.transact(i10, parcel, obtain, 0);
                 obtain.readException();
                 return obtain;
-            } catch (RuntimeException e) {
+            } catch (RuntimeException e7) {
                 obtain.recycle();
-                throw e;
+                throw e7;
             }
         } finally {
             parcel.recycle();
@@ -129,9 +129,9 @@ public abstract class a implements IInterface {
                 this.b.transact(i10, parcel, obtain, 0);
                 obtain.readException();
                 return obtain;
-            } catch (RuntimeException e) {
+            } catch (RuntimeException e7) {
                 obtain.recycle();
-                throw e;
+                throw e7;
             }
         } finally {
             parcel.recycle();
@@ -147,9 +147,9 @@ public abstract class a implements IInterface {
                         this.b.transact(i10, parcel, obtain, 0);
                         obtain.readException();
                         return obtain;
-                    } catch (RuntimeException e) {
+                    } catch (RuntimeException e7) {
                         obtain.recycle();
-                        throw e;
+                        throw e7;
                     }
                 } finally {
                 }
@@ -162,9 +162,9 @@ public abstract class a implements IInterface {
                         return obtain2;
                     } finally {
                     }
-                } catch (RuntimeException e7) {
+                } catch (RuntimeException e10) {
                     obtain2.recycle();
-                    throw e7;
+                    throw e10;
                 }
             default:
                 Parcel obtain3 = Parcel.obtain();
@@ -173,9 +173,9 @@ public abstract class a implements IInterface {
                         this.b.transact(i10, parcel, obtain3, 0);
                         obtain3.readException();
                         return obtain3;
-                    } catch (RuntimeException e10) {
+                    } catch (RuntimeException e11) {
                         obtain3.recycle();
-                        throw e10;
+                        throw e11;
                     }
                 } finally {
                 }
@@ -260,9 +260,9 @@ public abstract class a implements IInterface {
                 this.b.transact(i10, parcel, obtain, 0);
                 obtain.readException();
                 return obtain;
-            } catch (RuntimeException e) {
+            } catch (RuntimeException e7) {
                 obtain.recycle();
-                throw e;
+                throw e7;
             }
         } finally {
             parcel.recycle();

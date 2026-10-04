@@ -17,7 +17,7 @@ import java.nio.ByteOrder;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c implements o {
     public q a;
@@ -29,7 +29,7 @@ public final class c implements o {
     public long g;
 
     @Override // c3.o
-    public final boolean a(p pVar) {
+    public final boolean b(p pVar) {
         return e.a(pVar);
     }
 
@@ -75,14 +75,14 @@ public final class c implements o {
             e2.d.g(pVar.getPosition() == 0);
             int i11 = this.f;
             if (i11 != -1) {
-                pVar.q(i11);
+                pVar.o(i11);
                 this.c = 4;
                 return 0;
             }
             if (!e.a(pVar)) {
                 throw s0.a(null, "Unsupported or unrecognized wav file type.");
             }
-            pVar.q((int) (pVar.i() - pVar.getPosition()));
+            pVar.o((int) (pVar.g() - pVar.getPosition()));
             this.c = 1;
             return 0;
         }
@@ -91,13 +91,13 @@ public final class c implements o {
             v vVar = new v(8);
             d b10 = d.b(pVar, vVar);
             if (b10.a != 1685272116) {
-                pVar.p();
+                pVar.m();
             } else {
-                pVar.l(8);
+                pVar.h(8);
                 vVar.J(0);
-                pVar.a(0, 8, vVar.a);
+                pVar.b(0, 8, vVar.a);
                 j3 = vVar.m();
-                pVar.q(((int) b10.b) + 8);
+                pVar.o(((int) b10.b) + 8);
             }
             this.d = j3;
             this.c = 2;
@@ -114,9 +114,9 @@ public final class c implements o {
                 bVar.getClass();
                 return bVar.b(pVar, position) ? -1 : 0;
             }
-            pVar.p();
+            pVar.m();
             d b11 = e.b(1684108385, pVar, new v(8));
-            pVar.q(8);
+            pVar.o(8);
             Pair create = Pair.create(Long.valueOf(pVar.getPosition()), Long.valueOf(b11.b));
             this.f = ((Long) create.first).intValue();
             long longValue = ((Long) create.second).longValue();
@@ -139,7 +139,7 @@ public final class c implements o {
         v vVar2 = new v(16);
         long j11 = e.b(1718449184, pVar, vVar2).b;
         e2.d.g(j11 >= 16);
-        pVar.a(0, 16, vVar2.a);
+        pVar.b(0, 16, vVar2.a);
         vVar2.J(0);
         int q6 = vVar2.q();
         int q10 = vVar2.q();
@@ -150,7 +150,7 @@ public final class c implements o {
         int i12 = ((int) j11) - 16;
         if (i12 > 0) {
             bArr = new byte[i12];
-            pVar.a(0, i12, bArr);
+            pVar.b(0, i12, bArr);
             if (q6 == 65534 && i12 == 24) {
                 v vVar3 = new v(bArr);
                 vVar3.q();
@@ -175,7 +175,7 @@ public final class c implements o {
         } else {
             bArr = d0.b;
         }
-        pVar.q((int) (pVar.i() - pVar.getPosition()));
+        pVar.o((int) (pVar.g() - pVar.getPosition()));
         e2.q qVar = new e2.q();
         qVar.a = q10;
         qVar.b = p5;

@@ -1,63 +1,57 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.widget.EditText;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class hk0 extends og.a {
-    public int c;
-    public int d;
-    public CharSequence e;
-    public CharSequence f;
-    public nk0 g;
-    public int h;
-    public boolean i;
+public final class hk0 extends org.telegram.ui.ActionBar.f5 {
+    public final /* synthetic */ NotificationsCustomSettingsActivity f;
 
-    public static hk0 b(int i10, String str, boolean z10) {
-        hk0 hk0Var = new hk0(1, true);
-        hk0Var.c = i10;
-        hk0Var.e = str;
-        hk0Var.i = z10;
-        return hk0Var;
+    public hk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
+        this.f = notificationsCustomSettingsActivity;
     }
 
-    public static hk0 c(int i10, String str, String str2) {
-        hk0 hk0Var = new hk0(5, true);
-        hk0Var.c = i10;
-        hk0Var.e = str;
-        hk0Var.f = str2;
-        return hk0Var;
+    @Override // org.telegram.ui.ActionBar.f5
+    public final void m() {
+        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
+        notificationsCustomSettingsActivity.d.F(null);
+        notificationsCustomSettingsActivity.f = false;
+        notificationsCustomSettingsActivity.getClass();
+        notificationsCustomSettingsActivity.c.setText(LocaleController.getString("NoExceptions", R.string.NoExceptions));
+        notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.b);
+        notificationsCustomSettingsActivity.b.l();
+        notificationsCustomSettingsActivity.a.setFastScrollVisible(true);
+        notificationsCustomSettingsActivity.a.setVerticalScrollBarEnabled(false);
+        notificationsCustomSettingsActivity.c.setShowAtCenter(false);
     }
 
-    public static hk0 d(int i10, String str) {
-        hk0 hk0Var = new hk0(4, true);
-        hk0Var.c = i10;
-        hk0Var.e = str;
-        return hk0Var;
+    @Override // org.telegram.ui.ActionBar.f5
+    public final void n() {
+        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
+        notificationsCustomSettingsActivity.f = true;
+        notificationsCustomSettingsActivity.c.setShowAtCenter(true);
     }
 
-    @Override // og.a
-    public final boolean a(og.a aVar) {
-        if (this == aVar) {
-            return true;
+    @Override // org.telegram.ui.ActionBar.f5
+    public final void q(EditText editText) {
+        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
+        if (notificationsCustomSettingsActivity.d == null) {
+            return;
         }
-        if (hk0.class != aVar.getClass()) {
-            return false;
-        }
-        hk0 hk0Var = (hk0) aVar;
-        return this.c == hk0Var.c && this.d == hk0Var.d && this.h == hk0Var.h && this.i == hk0Var.i && Objects.equals(this.e, hk0Var.e) && Objects.equals(this.f, hk0Var.f) && this.g == hk0Var.g;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && hk0.class == obj.getClass()) {
-            hk0 hk0Var = (hk0) obj;
-            if (this.c == hk0Var.c && this.h == hk0Var.h && ((this.a == 8 || (this.d == hk0Var.d && Objects.equals(this.e, hk0Var.e) && (this.a == 6 || Objects.equals(this.f, hk0Var.f)))) && this.g == hk0Var.g)) {
-                return true;
+        String obj = editText.getText().toString();
+        if (obj.length() != 0) {
+            notificationsCustomSettingsActivity.getClass();
+            if (notificationsCustomSettingsActivity.a != null) {
+                notificationsCustomSettingsActivity.c.setText(LocaleController.getString("NoResult", R.string.NoResult));
+                notificationsCustomSettingsActivity.c.b();
+                notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.d);
+                notificationsCustomSettingsActivity.d.l();
+                notificationsCustomSettingsActivity.a.setFastScrollVisible(false);
+                notificationsCustomSettingsActivity.a.setVerticalScrollBarEnabled(true);
             }
         }
-        return false;
+        notificationsCustomSettingsActivity.d.F(obj);
     }
 }

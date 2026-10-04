@@ -1,20 +1,78 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class i20 extends rg.z0 {
-    public final /* synthetic */ int r;
+public final class i20 implements org.telegram.ui.Components.xo0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sg.a b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i20(int i10, int i11, int i12, int i13, org.telegram.ui.ActionBar.d6 d6Var, int i14) {
-        super(i10, i11, i12, i13, d6Var);
-        this.r = i14;
+    public /* synthetic */ i20(sg.a aVar, int i10) {
+        this.a = i10;
+        this.b = aVar;
     }
 
-    @Override // rg.z0
-    public final int c(int i10) {
-        switch (this.r) {
+    @Override // org.telegram.ui.Components.xo0
+    public final void B() {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Components.xo0
+    public final void Y(float f7, boolean z10) {
+        switch (this.a) {
+            case 0:
+                sg.f fVar = this.b.c;
+                if (fVar != null) {
+                    fVar.v = f7 * 2.0f;
+                    break;
+                }
+                break;
+            case 1:
+                sg.f fVar2 = this.b.c;
+                if (fVar2 != null) {
+                    fVar2.w = f7 * 2.0f;
+                    break;
+                }
+                break;
+            case 2:
+                sg.f fVar3 = this.b.c;
+                if (fVar3 != null) {
+                    fVar3.x = f7;
+                    break;
+                }
+                break;
+            default:
+                sg.f fVar4 = this.b.c;
+                if (fVar4 != null) {
+                    fVar4.A = f7 * 2.0f;
+                    break;
+                }
+                break;
         }
-        return org.telegram.ui.ActionBar.h6.C0(i10);
+    }
+
+    @Override // org.telegram.ui.Components.xo0
+    public final /* synthetic */ CharSequence getContentDescription() {
+        switch (this.a) {
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.xo0
+    public final /* synthetic */ int p0() {
+        switch (this.a) {
+        }
+        return 0;
+    }
+
+    private final void a() {
+    }
+
+    private final void b() {
+    }
+
+    private final void c() {
+    }
+
+    private final void d() {
     }
 }

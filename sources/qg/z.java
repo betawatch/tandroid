@@ -1,79 +1,34 @@
 package qg;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
+import android.content.Context;
+import android.graphics.PointF;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hh;
-import org.telegram.ui.Components.ui;
-import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.d81;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.vt0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class z implements ui {
-    public final /* synthetic */ wi a;
-    public final /* synthetic */ n0 b;
+public final class z extends o2 {
+    public final /* synthetic */ m0 y0;
 
-    public z(n0 n0Var, wi wiVar) {
-        this.b = n0Var;
-        this.a = wiVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z(m0 m0Var, Context context, PointF pointF, float f7, float f10, fw0 fw0Var, TLRPC.Document document, Object obj) {
+        super(context, pointF, f7, f10, fw0Var, document, obj);
+        this.y0 = m0Var;
     }
 
-    @Override // org.telegram.ui.Components.ui
-    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
-        wi wiVar = this.a;
-        try {
-            HashMap<Object, Object> selectedPhotos = wiVar.j0.getSelectedPhotos();
-            if (selectedPhotos.isEmpty()) {
-                return;
-            }
-            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.values().iterator().next();
-            String str = photoEntry.imagePath;
-            if (str == null) {
-                str = photoEntry.path;
-            }
-            n0 n0Var = this.b;
-            n0Var.f0(n0Var.h0(str, true));
-            wiVar.dismiss();
-        } catch (Throwable th2) {
-            FileLog.e(th2);
+    @Override // qg.o2
+    public final void q(kj0 kj0Var) {
+        PhotoViewer photoViewer = ((vt0) this.y0).o2;
+        d81 d81Var = photoViewer.F2;
+        if (d81Var == null) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.ui
-    public final boolean S1() {
-        System.currentTimeMillis();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ui
-    public final /* synthetic */ boolean c0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ui
-    public final void x0(hh hhVar) {
-        hhVar.run();
-    }
-
-    @Override // org.telegram.ui.Components.ui
-    public final /* synthetic */ void K0() {
-    }
-
-    @Override // org.telegram.ui.Components.ui
-    public final /* synthetic */ void U0(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.ui
-    public final /* synthetic */ void j1(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.ui
-    public final /* synthetic */ void u0() {
-    }
-
-    @Override // org.telegram.ui.Components.ui
-    public final /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
+        long n10 = d81Var.n();
+        long j3 = photoViewer.m8;
+        kj0Var.U(n10 - (j3 > 0 ? j3 / 1000 : 0L));
     }
 }

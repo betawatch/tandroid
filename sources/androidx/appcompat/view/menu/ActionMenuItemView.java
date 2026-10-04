@@ -14,26 +14,26 @@ import android.widget.Button;
 import f.a;
 import l.b;
 import l.c;
+import l.j;
 import l.k;
-import l.l;
-import l.n;
-import l.z;
+import l.m;
+import l.y;
 import m.i;
 import m.z0;
 import org.telegram.tgnet.TLObject;
 import w7.p;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public class ActionMenuItemView extends z0 implements z, View.OnClickListener, i {
+public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i {
     public boolean E;
     public final int F;
     public int G;
     public final int H;
-    public n n;
+    public m n;
     public CharSequence r;
     public Drawable s;
-    public k v;
+    public j v;
     public b w;
     public c x;
     public boolean y;
@@ -47,15 +47,15 @@ public class ActionMenuItemView extends z0 implements z, View.OnClickListener, i
         return !TextUtils.isEmpty(getText());
     }
 
-    @Override // l.z
-    public final void b(n nVar) {
-        this.n = nVar;
-        setIcon(nVar.getIcon());
-        setTitle(nVar.getTitleCondensed());
-        setId(nVar.a);
-        setVisibility(nVar.isVisible() ? 0 : 8);
-        setEnabled(nVar.isEnabled());
-        if (nVar.hasSubMenu() && this.w == null) {
+    @Override // l.y
+    public final void b(m mVar) {
+        this.n = mVar;
+        setIcon(mVar.getIcon());
+        setTitle(mVar.getTitleCondensed());
+        setId(mVar.a);
+        setVisibility(mVar.isVisible() ? 0 : 8);
+        setEnabled(mVar.isEnabled());
+        if (mVar.hasSubMenu() && this.w == null) {
             this.w = new b(this);
         }
     }
@@ -102,16 +102,16 @@ public class ActionMenuItemView extends z0 implements z, View.OnClickListener, i
         return Button.class.getName();
     }
 
-    @Override // l.z
-    public n getItemData() {
+    @Override // l.y
+    public m getItemData() {
         return this.n;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        k kVar = this.v;
-        if (kVar != null) {
-            kVar.a(this.n);
+        j jVar = this.v;
+        if (jVar != null) {
+            jVar.a(this.n);
         }
     }
 
@@ -161,11 +161,11 @@ public class ActionMenuItemView extends z0 implements z, View.OnClickListener, i
     public void setExpandedFormat(boolean z10) {
         if (this.E != z10) {
             this.E = z10;
-            n nVar = this.n;
-            if (nVar != null) {
-                l lVar = nVar.n;
-                lVar.k = true;
-                lVar.p(true);
+            m mVar = this.n;
+            if (mVar != null) {
+                k kVar = mVar.n;
+                kVar.k = true;
+                kVar.p(true);
             }
         }
     }
@@ -191,8 +191,8 @@ public class ActionMenuItemView extends z0 implements z, View.OnClickListener, i
         g();
     }
 
-    public void setItemInvoker(k kVar) {
-        this.v = kVar;
+    public void setItemInvoker(j jVar) {
+        this.v = jVar;
     }
 
     @Override // android.widget.TextView, android.view.View

@@ -16,7 +16,7 @@ import java.util.Set;
 import m1.j;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d extends pb.a {
     public static final Set g = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList("a", "abbr", "acronym", "b", "bdo", "big", "br", "button", "cite", "code", "dfn", "em", "i", "img", "input", "kbd", "label", "map", "object", "q", "samp", "script", "select", "small", "span", "strong", "sub", "sup", "textarea", "time", "tt", "var")));
@@ -194,8 +194,8 @@ public final class d extends pb.a {
                             if (Y3 != null && Y3.length() > 0) {
                                 try {
                                     appendable.append(Y3);
-                                } catch (IOException e) {
-                                    throw new RuntimeException(e);
+                                } catch (IOException e7) {
+                                    throw new RuntimeException(e7);
                                 }
                             }
                             int length4 = charSequence.length();
@@ -241,8 +241,8 @@ public final class d extends pb.a {
                             if (Y32 != null && Y32.length() > 0) {
                                 try {
                                     appendable.append(Y32);
-                                } catch (IOException e7) {
-                                    throw new RuntimeException(e7);
+                                } catch (IOException e10) {
+                                    throw new RuntimeException(e10);
                                 }
                             }
                             aVar2.b(charSequence4.length());
@@ -282,8 +282,8 @@ public final class d extends pb.a {
                                 if (Y33 != null) {
                                     try {
                                         appendable.append(Y33);
-                                    } catch (IOException e10) {
-                                        throw new RuntimeException(e10);
+                                    } catch (IOException e11) {
+                                        throw new RuntimeException(e11);
                                     }
                                 }
                             }
@@ -304,8 +304,8 @@ public final class d extends pb.a {
                     if (this.e) {
                         try {
                             appendable.append(dVar3.c);
-                        } catch (IOException e11) {
-                            throw new RuntimeException(e11);
+                        } catch (IOException e12) {
+                            throw new RuntimeException(e12);
                         }
                     } else {
                         if (this.f) {

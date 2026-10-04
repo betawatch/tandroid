@@ -9,9 +9,9 @@ import androidx.appcompat.widget.ActionBarContainer;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.e11;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class d4 extends Drawable {
     public final /* synthetic */ int a;
@@ -34,9 +34,9 @@ public final class d4 extends Drawable {
             case 1:
                 canvas.save();
                 canvas.translate(0.0f, AndroidUtilities.dp(1.0f));
-                ei.k3 k3Var = (ei.k3) this.b;
-                k3Var.I0.setBounds(getBounds());
-                k3Var.I0.draw(canvas);
+                ei.l3 l3Var = (ei.l3) this.b;
+                l3Var.I0.setBounds(getBounds());
+                l3Var.I0.draw(canvas);
                 canvas.restore();
                 break;
             case 2:
@@ -60,11 +60,11 @@ public final class d4 extends Drawable {
                 }
                 break;
             case 3:
-                rg.z0 z0Var = (rg.z0) this.b;
+                rg.a1 a1Var = (rg.a1) this.b;
                 Rect bounds = getBounds();
-                z0Var.getClass();
-                z0Var.d(bounds.left, 0.0f, bounds.top, bounds.right, 0.0f, bounds.bottom);
-                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), Math.min(getBounds().width(), getBounds().height()) / 2.0f, z0Var.f);
+                a1Var.getClass();
+                a1Var.d(bounds.left, 0.0f, bounds.top, bounds.right, 0.0f, bounds.bottom);
+                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), Math.min(getBounds().width(), getBounds().height()) / 2.0f, a1Var.f);
                 break;
             case 4:
                 ImageReceiver imageReceiver = (ImageReceiver) this.b;
@@ -76,7 +76,7 @@ public final class d4 extends Drawable {
                 canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), AndroidUtilities.dp(18.0f), ((Switch) this.b).J);
                 break;
             case 6:
-                ((v01) this.b).c(getBounds().centerX() - (((v01) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false), canvas);
+                ((e11) this.b).c(getBounds().centerX() - (((e11) this.b).c / 2.0f), getBounds().centerY(), 1.0f, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false), canvas);
                 break;
             case 7:
                 canvas.save();
@@ -174,7 +174,7 @@ public final class d4 extends Drawable {
     public final void setAlpha(int i10) {
         switch (this.a) {
             case 1:
-                ((ei.k3) this.b).I0.setAlpha(i10);
+                ((ei.l3) this.b).I0.setAlpha(i10);
                 break;
             case 4:
                 ((ImageReceiver) this.b).setAlpha(i10 / 255.0f);
@@ -201,7 +201,7 @@ public final class d4 extends Drawable {
     public final void setColorFilter(ColorFilter colorFilter) {
         switch (this.a) {
             case 1:
-                ((ei.k3) this.b).I0.setColorFilter(colorFilter);
+                ((ei.l3) this.b).I0.setColorFilter(colorFilter);
                 break;
             case 4:
                 ((ImageReceiver) this.b).setColorFilter(colorFilter);
@@ -231,7 +231,7 @@ public final class d4 extends Drawable {
 
     public d4(String str) {
         this.a = 6;
-        this.b = new v01(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, AndroidUtilities.bold());
+        this.b = new e11(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, AndroidUtilities.bold());
     }
 
     private final void a(int i10) {

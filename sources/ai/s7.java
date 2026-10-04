@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class s7 extends FrameLayout {
     public final m7 E;
@@ -51,7 +51,7 @@ public final class s7 extends FrameLayout {
         this.h = l7Var;
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
         this.s = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.h5, dVar), PorterDuff.Mode.MULTIPLY));
+        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h5, dVar), PorterDuff.Mode.MULTIPLY));
         q7 q7Var = new q7(this, context);
         this.e = q7Var;
         m7 m7Var = new m7(this, context);
@@ -60,8 +60,8 @@ public final class s7 extends FrameLayout {
         p7 p7Var = new p7(this, jcVar, context);
         this.a = p7Var;
         m7Var.setAdapter(p7Var);
-        q7Var.addView(m7Var, w7.y5.d(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(l7Var, w7.y5.c(-1.0f, -1));
+        q7Var.addView(m7Var, w7.z5.d(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(l7Var, w7.z5.c(-1.0f, -1));
         addView(q7Var);
         setVisibility(4);
     }
@@ -176,7 +176,7 @@ public final class s7 extends FrameLayout {
         if (z11 != z10) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.I, z11 ? 1.0f : 0.0f);
             ofFloat.addUpdateListener(new a(this, 11));
-            ofFloat.setInterpolator(org.telegram.ui.ActionBar.o1.w);
+            ofFloat.setInterpolator(org.telegram.ui.ActionBar.p1.w);
             ofFloat.setDuration(250L);
             ofFloat.start();
         }
@@ -187,7 +187,7 @@ public final class s7 extends FrameLayout {
         currentPage.r.dispatchTouchEvent(AndroidUtilities.emptyMotionEvent());
         FrameLayout frameLayout = currentPage.c;
         if (frameLayout.getTranslationY() != 0.0f) {
-            currentPage.d.w((int) frameLayout.getTranslationY(), 250L, org.telegram.ui.ActionBar.o1.w);
+            currentPage.d.w((int) frameLayout.getTranslationY(), 250L, org.telegram.ui.ActionBar.p1.w);
         }
     }
 

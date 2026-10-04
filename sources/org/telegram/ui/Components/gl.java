@@ -1,39 +1,39 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.TextView;
+import android.graphics.Point;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.HashMap;
+import java.util.Map;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class gl extends TextView {
-    public final /* synthetic */ int a;
-    public float b;
-    public float c;
+public final class gl extends FrameLayout {
+    public final HashMap a;
+    public final /* synthetic */ jl b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ gl(Context context, int i10) {
+    public gl(jl jlVar, Context context) {
         super(context);
-        this.a = i10;
+        this.b = jlVar;
+        this.a = new HashMap();
     }
 
-    @Override // android.view.View
-    public final float getTranslationX() {
-        switch (this.a) {
+    public final void a() {
+        IMapsProvider.IMap iMap = this.b.H;
+        if (iMap == null) {
+            return;
         }
-        return this.b;
-    }
-
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        switch (this.a) {
-            case 0:
-                this.b = f7;
-                setTranslationY(this.c + f7);
-                break;
-            default:
-                this.b = f7;
-                setTranslationY(this.c + f7);
-                break;
+        IMapsProvider.IProjection projection = iMap.getProjection();
+        for (Map.Entry entry : this.a.entrySet()) {
+            IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
+            View view = (View) entry.getValue();
+            Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
+            view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
+            view.setTranslationY(AndroidUtilities.dp(22.0f) + (screenLocation.y - view.getMeasuredHeight()));
         }
     }
 }

@@ -3,10 +3,10 @@ package ki;
 import android.content.Context;
 import android.view.TextureView;
 import java.io.File;
-import org.telegram.ui.Components.a60;
-import org.telegram.ui.Components.ov;
+import org.telegram.ui.Components.b60;
+import org.telegram.ui.Components.pv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class j0 {
     public final Context a;
@@ -18,12 +18,12 @@ public final class j0 {
     public n0 g;
     public int h;
     public boolean i = true;
-    public l.d j;
+    public l2.g j;
     public p0 k;
-    public ov l;
+    public pv l;
 
-    public j0(Context context, a60 a60Var) {
+    public j0(Context context, b60 b60Var) {
         this.a = context;
-        this.b = a60Var;
+        this.b = b60Var;
     }
 }

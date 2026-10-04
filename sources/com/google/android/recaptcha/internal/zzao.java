@@ -5,9 +5,9 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 final class zzao extends j implements p {
     int zza;
@@ -54,13 +54,13 @@ final class zzao extends j implements p {
         a aVar = a.a;
         int i10 = this.zza;
         try {
-        } catch (Exception e) {
+        } catch (Exception e7) {
             zzar zzarVar = this.zzb;
             this.zza = 2;
-            obj = zzarVar.zzg(e, this);
+            obj = zzarVar.zzg(e7, this);
         }
         if (i10 == 0) {
-            u7.b(obj);
+            t7.b(obj);
             zzhk zzhkVar = (zzhk) this.zzd;
             zzar zzarVar2 = this.zzb;
             int zza = zzarVar2.zza();
@@ -69,10 +69,10 @@ final class zzao extends j implements p {
             obj = new zzhf(37, zzanVar, new Integer(zza)).zza(zzhkVar, this);
         } else {
             if (i10 != 1) {
-                u7.b(obj);
+                t7.b(obj);
                 return (zzat) obj;
             }
-            u7.b(obj);
+            t7.b(obj);
         }
         return (zzat) obj;
     }

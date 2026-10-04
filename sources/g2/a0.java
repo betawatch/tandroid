@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a0 extends c {
     public final Context a;
@@ -48,8 +48,8 @@ public final class a0 extends c {
                         if (assetFileDescriptor != null) {
                             assetFileDescriptor.close();
                         }
-                    } catch (IOException e) {
-                        throw new z(null, e, 2000);
+                    } catch (IOException e7) {
+                        throw new z(null, e7, 2000);
                     }
                 } finally {
                     this.c = null;
@@ -58,8 +58,8 @@ public final class a0 extends c {
                         transferEnded();
                     }
                 }
-            } catch (IOException e7) {
-                throw new z(null, e7, 2000);
+            } catch (IOException e10) {
+                throw new z(null, e10, 2000);
             }
         } catch (Throwable th2) {
             this.d = null;
@@ -75,8 +75,8 @@ public final class a0 extends c {
                         transferEnded();
                     }
                     throw th2;
-                } catch (IOException e10) {
-                    throw new z(null, e10, 2000);
+                } catch (IOException e11) {
+                    throw new z(null, e11, 2000);
                 }
             } finally {
                 this.c = null;
@@ -137,8 +137,8 @@ public final class a0 extends c {
             } else {
                 try {
                     resourcesForApplication = context.getPackageManager().getResourcesForApplication(packageName);
-                } catch (PackageManager.NameNotFoundException e) {
-                    throw new z("Package in android.resource:// URI not found. Check http://g.co/dev/packagevisibility.", e, 2005);
+                } catch (PackageManager.NameNotFoundException e7) {
+                    throw new z("Package in android.resource:// URI not found. Check http://g.co/dev/packagevisibility.", e7, 2005);
                 }
             }
             if (path.matches("\\d+")) {
@@ -148,7 +148,7 @@ public final class a0 extends c {
                     throw new z("Resource identifier must be an integer.", null, 1004);
                 }
             } else {
-                parseInt = resourcesForApplication.getIdentifier(a4.a.D(packageName, ":", path), "raw", null);
+                parseInt = resourcesForApplication.getIdentifier(a4.a.C(packageName, ":", path), "raw", null);
                 if (parseInt == 0) {
                     throw new z("Resource not found.", null, 2005);
                 }
@@ -199,13 +199,13 @@ public final class a0 extends c {
                 this.f = true;
                 transferStarted(mVar);
                 return j3 != -1 ? j3 : this.e;
-            } catch (z e7) {
-                throw e7;
-            } catch (IOException e10) {
-                throw new z(null, e10, 2000);
+            } catch (z e10) {
+                throw e10;
+            } catch (IOException e11) {
+                throw new z(null, e11, 2000);
             }
-        } catch (Resources.NotFoundException e11) {
-            throw new z(null, e11, 2005);
+        } catch (Resources.NotFoundException e12) {
+            throw new z(null, e12, 2005);
         }
     }
 
@@ -219,8 +219,8 @@ public final class a0 extends c {
             if (j3 != -1) {
                 try {
                     i11 = (int) Math.min(j3, i11);
-                } catch (IOException e) {
-                    throw new z(null, e, 2000);
+                } catch (IOException e7) {
+                    throw new z(null, e7, 2000);
                 }
             }
             FileInputStream fileInputStream = this.d;

@@ -11,7 +11,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d extends l {
     public final int i;
@@ -311,9 +311,9 @@ public final class d extends l {
 
     @Override // a4.l, h2.e
     /* renamed from: h */
-    public final z3.j c() {
-        z3.j jVar;
-        z3.j c10 = super.c();
+    public final z3.k c() {
+        z3.k kVar;
+        z3.k c10 = super.c();
         if (c10 != null) {
             return c10;
         }
@@ -322,17 +322,17 @@ public final class d extends l {
             return null;
         }
         long j10 = this.y;
-        if (j10 == -9223372036854775807L || this.e - j10 < j3 || (jVar = (z3.j) this.b.pollFirst()) == null) {
+        if (j10 == -9223372036854775807L || this.e - j10 < j3 || (kVar = (z3.k) this.b.pollFirst()) == null) {
             return null;
         }
         this.o = Collections.EMPTY_LIST;
         this.y = -9223372036854775807L;
         m f7 = f();
         long j11 = this.e;
-        jVar.timeUs = j11;
-        jVar.a = f7;
-        jVar.b = j11;
-        return jVar;
+        kVar.timeUs = j11;
+        kVar.a = f7;
+        kVar.b = j11;
+        return kVar;
     }
 
     @Override // a4.l

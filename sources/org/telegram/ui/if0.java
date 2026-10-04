@@ -1,27 +1,33 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class if0 implements org.telegram.ui.ActionBar.z1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tf0 b;
+import android.content.Intent;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.NotificationCenter;
 
-    public /* synthetic */ if0(tf0 tf0Var, int i10) {
-        this.a = i10;
-        this.b = tf0Var;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final class if0 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ jf0 a;
+
+    public if0(jf0 jf0Var) {
+        this.a = jf0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public final void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                tf0 tf0Var = this.b;
-                tf0Var.c(true);
-                tf0Var.s0.u1(0, true, null, true);
-                break;
-            default:
-                this.b.s0.u1(0, true, null, true);
-                break;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        jf0 jf0Var = this.a;
+        int intValue = ((Integer) objArr[0]).intValue();
+        ((Integer) objArr[1]).getClass();
+        Intent intent = (Intent) objArr[2];
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.onActivityResultReceived);
+        if (intValue == 200) {
+            try {
+                jf0Var.y = (GoogleSignInAccount) w7.h9.b(intent).getResult(com.google.android.gms.common.api.f.class);
+                jf0Var.h(null);
+            } catch (com.google.android.gms.common.api.f e7) {
+                FileLog.e(e7);
+            }
         }
     }
 }

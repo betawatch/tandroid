@@ -6,7 +6,7 @@ import android.util.Log;
 import com.google.android.gms.common.api.Status;
 import java.util.Map;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class h1 extends k1 {
     public final e b;
@@ -20,17 +20,17 @@ public final class h1 extends k1 {
     public final void a(Status status) {
         try {
             this.b.o(status);
-        } catch (IllegalStateException e) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e);
+        } catch (IllegalStateException e7) {
+            Log.w("ApiCallRunner", "Exception reporting failure", e7);
         }
     }
 
     @Override // com.google.android.gms.common.api.internal.k1
     public final void b(Exception exc) {
         try {
-            this.b.o(new Status(10, a4.a.D(exc.getClass().getSimpleName(), ": ", exc.getLocalizedMessage()), null, null));
-        } catch (IllegalStateException e) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e);
+            this.b.o(new Status(10, a4.a.C(exc.getClass().getSimpleName(), ": ", exc.getLocalizedMessage()), null, null));
+        } catch (IllegalStateException e7) {
+            Log.w("ApiCallRunner", "Exception reporting failure", e7);
         }
     }
 
@@ -42,14 +42,14 @@ public final class h1 extends k1 {
             eVar.getClass();
             try {
                 eVar.n(cVar);
-            } catch (DeadObjectException e) {
-                eVar.o(new Status(8, e.getLocalizedMessage(), null, null));
-                throw e;
-            } catch (RemoteException e7) {
+            } catch (DeadObjectException e7) {
                 eVar.o(new Status(8, e7.getLocalizedMessage(), null, null));
+                throw e7;
+            } catch (RemoteException e10) {
+                eVar.o(new Status(8, e10.getLocalizedMessage(), null, null));
             }
-        } catch (RuntimeException e10) {
-            b(e10);
+        } catch (RuntimeException e11) {
+            b(e11);
         }
     }
 

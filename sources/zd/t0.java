@@ -1,6 +1,6 @@
 package zd;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class t0 implements Runnable, Comparable, o0 {
     private volatile Object _heap;
@@ -11,10 +11,10 @@ public abstract class t0 implements Runnable, Comparable, o0 {
         this.a = j3;
     }
 
-    public final ee.y a() {
+    public final ee.x a() {
         Object obj = this._heap;
-        if (obj instanceof ee.y) {
-            return (ee.y) obj;
+        if (obj instanceof ee.x) {
+            return (ee.x) obj;
         }
         return null;
     }
@@ -70,15 +70,15 @@ public abstract class t0 implements Runnable, Comparable, o0 {
         synchronized (this) {
             try {
                 Object obj = this._heap;
-                ee.v vVar = e0.b;
-                if (obj == vVar) {
+                com.google.android.gms.internal.clearcut.e eVar = e0.b;
+                if (obj == eVar) {
                     return;
                 }
                 u0 u0Var = obj instanceof u0 ? (u0) obj : null;
                 if (u0Var != null) {
                     u0Var.c(this);
                 }
-                this._heap = vVar;
+                this._heap = eVar;
             } catch (Throwable th2) {
                 throw th2;
             }

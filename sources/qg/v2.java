@@ -16,13 +16,12 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.uk0;
-import org.telegram.ui.Components.z5;
-import org.telegram.ui.fe0;
-import w7.y5;
+import org.telegram.ui.je0;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class v2 extends j {
     public String A0;
@@ -66,7 +65,7 @@ public final class v2 extends j {
         u2Var.setFocusableInTouchMode(true);
         u2Var.setInputType(16384);
         u2Var.setSingleLine(false);
-        addView(u2Var, y5.e(-2, -2, 51));
+        addView(u2Var, z5.e(-2, -2, 51));
         if (i12 >= 29) {
             u2Var.setBreakStrategy(0);
         } else if (i12 >= 23) {
@@ -75,12 +74,12 @@ public final class v2 extends j {
         setSwatch(t1Var);
         setType(i11);
         k();
-        u2Var.addTextChangedListener(new fe0(this));
+        u2Var.addTextChangedListener(new je0(this));
     }
 
     @Override // qg.j
     public final i a() {
-        return new q0(this, getContext());
+        return new p0(this, getContext());
     }
 
     public int getAlign() {
@@ -196,7 +195,7 @@ public final class v2 extends j {
         u2Var.setClickable(true);
         u2Var.requestFocus();
         u2Var.setSelection(u2Var.getText().length());
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.q0(this, 18), 300L);
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.u0(this, 17), 300L);
     }
 
     public final void r() {
@@ -217,7 +216,7 @@ public final class v2 extends j {
         u2Var.setTextColor(i10);
         u2Var.setCursorColor(i10);
         u2Var.setHandlesColor(i10);
-        u2Var.setHighlightColor(h6.l1(0.4f, i10));
+        u2Var.setHighlightColor(i6.l1(0.4f, i10));
     }
 
     public final void s() {
@@ -247,7 +246,7 @@ public final class v2 extends j {
                 emojiSpanArr[i11].replaceFontMetrics(getFontMetricsInt());
                 emojiSpanArr[i11].scale = 0.85f;
             }
-            for (z5 z5Var : (z5[]) text.getSpans(0, text.length(), z5.class)) {
+            for (org.telegram.ui.Components.z5 z5Var : (org.telegram.ui.Components.z5[]) text.getSpans(0, text.length(), org.telegram.ui.Components.z5.class)) {
                 z5Var.replaceFontMetrics(getFontMetricsInt());
             }
             u2Var.invalidateForce();

@@ -3,7 +3,7 @@ package db;
 import java.io.IOException;
 import java.io.StringWriter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class i {
     public final l i() {
@@ -24,8 +24,8 @@ public abstract class i {
             bVar.n = 1;
             fb.d.l(this, bVar);
             return stringWriter.toString();
-        } catch (IOException e) {
-            throw new AssertionError(e);
+        } catch (IOException e7) {
+            throw new AssertionError(e7);
         }
     }
 }

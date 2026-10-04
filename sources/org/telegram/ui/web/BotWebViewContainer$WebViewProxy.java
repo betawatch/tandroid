@@ -3,17 +3,17 @@ package org.telegram.ui.web;
 import android.webkit.JavascriptInterface;
 import java.io.Serializable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.en0;
+import org.telegram.ui.Components.in0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public class BotWebViewContainer$WebViewProxy {
-    public b1 a;
-    public final y0 b;
+    public c1 a;
+    public final z0 b;
 
-    public BotWebViewContainer$WebViewProxy(y0 y0Var, b1 b1Var) {
-        this.b = y0Var;
-        this.a = b1Var;
+    public BotWebViewContainer$WebViewProxy(z0 z0Var, c1 c1Var) {
+        this.b = z0Var;
+        this.a = c1Var;
     }
 
     @JavascriptInterface
@@ -21,12 +21,12 @@ public class BotWebViewContainer$WebViewProxy {
         if (this.a == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new en0(this, str, str2, 21));
+        AndroidUtilities.runOnUIThread(new in0(this, str, str2, 21));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @JavascriptInterface
     public void resolveShare(String str, byte[] bArr, String str2, String str3) {
-        AndroidUtilities.runOnUIThread(new a0((Object) this, str, (Serializable) bArr, str2, str3, 5));
+        AndroidUtilities.runOnUIThread(new b0((Object) this, str, (Serializable) bArr, str2, str3, 5));
     }
 }

@@ -1,17 +1,42 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public abstract class xp extends z4.a {
-    public abstract int j();
+public final class xp implements z4.e {
+    public int a;
+    public final /* synthetic */ bi0 b;
 
-    public final int k(int i10) {
-        int size = ((ai0) this).c.size();
-        int j3 = j();
-        if (i10 < j3) {
-            return ((size - (j3 * 2)) - ((j3 - i10) - 1)) - 1;
+    public xp(bi0 bi0Var) {
+        this.b = bi0Var;
+    }
+
+    @Override // z4.e
+    public final void b(float f7, int i10, int i11) {
+        if (i10 == this.b.getCurrentItem() && f7 == 0.0f && this.a == 1) {
+            d();
         }
-        int i11 = size - j3;
-        return i10 >= i11 ? i10 - i11 : i10 - j3;
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
+        if (i10 == 0) {
+            d();
+        }
+        this.a = i10;
+    }
+
+    public final void d() {
+        bi0 bi0Var = this.b;
+        if (bi0Var.w0 != null) {
+            int currentItem = bi0Var.getCurrentItem();
+            int k10 = bi0Var.w0.k(currentItem) + bi0Var.w0.j();
+            if (currentItem != k10) {
+                bi0Var.x(k10, false);
+            }
+        }
+    }
+
+    @Override // z4.e
+    public final void a(int i10) {
     }
 }

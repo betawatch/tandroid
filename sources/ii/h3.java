@@ -4,9 +4,9 @@ import android.view.View;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class h3 implements a5 {
+public final class h3 implements b5 {
     public final /* synthetic */ u a;
     public final /* synthetic */ a b;
     public final /* synthetic */ x3 c;
@@ -17,7 +17,7 @@ public final class h3 implements a5 {
         this.b = aVar;
     }
 
-    @Override // ii.a5
+    @Override // ii.b5
     public final void e(TLRPC.Document document) {
         u uVar = this.a;
         uVar.h = document;
@@ -28,51 +28,51 @@ public final class h3 implements a5 {
             ((TL_iv.pageBlockAudio) pageBlock).audio_id = document.id;
         }
         x3 x3Var = this.c;
-        x3Var.Z3.remove(uVar);
-        x3Var.Y2.N(false);
-        x3Var.h3.onContentChanged();
+        x3Var.g4.remove(uVar);
+        x3Var.f3.N(false);
+        x3Var.o3.onContentChanged();
     }
 
-    @Override // ii.a5
+    @Override // ii.b5
     public final void f(float f7) {
         this.a.f = f7;
         a aVar = this.b;
         x3 x3Var = this.c;
-        View z12 = x3Var.z1(aVar);
-        if (z12 instanceof z) {
-            ((z) z12).m(false);
-            z12.invalidate();
+        View B1 = x3Var.B1(aVar);
+        if (B1 instanceof z) {
+            ((z) B1).m(false);
+            B1.invalidate();
         }
-        x3Var.h3.onContentChanged();
+        x3Var.o3.onContentChanged();
     }
 
-    @Override // ii.a5
+    @Override // ii.b5
     public final void onError() {
         u uVar = this.a;
         uVar.a = 3;
         x3 x3Var = this.c;
-        x3Var.Z3.remove(uVar);
-        int indexOf = x3Var.l3.indexOf(this.b);
+        x3Var.g4.remove(uVar);
+        int indexOf = x3Var.s3.indexOf(this.b);
         if (indexOf >= 0) {
-            x3Var.l3.remove(indexOf);
-            x3Var.Y2.N(true);
+            x3Var.s3.remove(indexOf);
+            x3Var.f3.N(true);
         }
-        x3Var.h3.onContentChanged();
+        x3Var.o3.onContentChanged();
     }
 
-    @Override // ii.a5
+    @Override // ii.b5
     public final /* synthetic */ void b(TLRPC.Photo photo) {
     }
 
-    @Override // ii.a5
+    @Override // ii.b5
     public final /* synthetic */ void c(TLRPC.Document document) {
     }
 
-    @Override // ii.a5
+    @Override // ii.b5
     public final /* synthetic */ void d(TLRPC.Document document) {
     }
 
-    @Override // ii.a5
+    @Override // ii.b5
     public final /* synthetic */ void a(int i10, int i11) {
     }
 }

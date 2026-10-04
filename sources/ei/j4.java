@@ -1,34 +1,33 @@
 package ei;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.ui.ActionBar.d6;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.GenericProvider;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class j4 extends org.telegram.ui.web.b1 {
-    public final /* synthetic */ q4 S0;
+public final /* synthetic */ class j4 implements org.telegram.ui.ActionBar.a2, p4, GenericProvider {
+    public final /* synthetic */ r4 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j4(q4 q4Var, Context context, d6 d6Var, int i10) {
-        super(i10, context, d6Var, true);
-        this.S0 = q4Var;
+    public /* synthetic */ j4(r4 r4Var) {
+        this.a = r4Var;
     }
 
-    @Override // org.telegram.ui.web.b1
-    public final void K(org.telegram.ui.web.y0 y0Var) {
-        this.S0.J.setWebView(y0Var);
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        this.a.b.dismiss();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            q4 q4Var = this.S0;
-            if (!q4Var.P) {
-                q4Var.P = true;
-                q4Var.n.R();
-            }
+    @Override // ei.p4
+    public void o(boolean z10) {
+        r4 r4Var = this.a;
+        if (r4Var.I()) {
+            return;
         }
-        return super.dispatchTouchEvent(motionEvent);
+        r4Var.J.e(0.0f);
+    }
+
+    @Override // org.telegram.messenger.GenericProvider
+    public Object provide(Object obj) {
+        return Boolean.valueOf(this.a.b.r1.getKeyboardHeight() >= AndroidUtilities.dp(20.0f));
     }
 }

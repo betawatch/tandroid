@@ -9,10 +9,10 @@ import android.graphics.Paint;
 import java.util.ArrayList;
 import org.telegram.messenger.SegmentTree;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ca1;
-import org.telegram.ui.ml0;
+import org.telegram.ui.fa1;
+import org.telegram.ui.jl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class p extends g {
     public long[] D1;
@@ -59,9 +59,9 @@ public final class p extends g {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                ca1 ca1Var = (ca1) ((ml0) eVar).b;
-                ca1Var.f();
-                ca1Var.b.t0.d(false, false);
+                fa1 fa1Var = (fa1) ((jl0) eVar).b;
+                fa1Var.f();
+                fa1Var.b.t0.d(false, false);
             }
             invalidate();
             B();
@@ -95,9 +95,9 @@ public final class p extends g {
                     if (animator != null) {
                         animator.cancel();
                     }
-                    ValueAnimator e = g.e(this.j0, this.l0, new k6(this, 5));
-                    this.d0 = e;
-                    e.start();
+                    ValueAnimator e7 = g.e(this.j0, this.l0, new k6(this, 5));
+                    this.d0 = e7;
+                    e7.start();
                 }
             }
         }

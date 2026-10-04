@@ -5,29 +5,30 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import ci.m6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.a31;
-import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.bb0;
-import org.telegram.ui.Components.f00;
-import org.telegram.ui.Components.m00;
-import org.telegram.ui.Components.r81;
+import org.telegram.ui.Components.f91;
+import org.telegram.ui.Components.g00;
+import org.telegram.ui.Components.j31;
+import org.telegram.ui.Components.n00;
 import org.telegram.ui.Components.sk0;
-import org.telegram.ui.Components.x81;
+import org.telegram.ui.Components.z81;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.pr;
-import org.telegram.ui.pw;
+import org.telegram.ui.ly;
+import org.telegram.ui.rr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class j0 extends s4.c0 {
     public final /* synthetic */ int I;
     public final /* synthetic */ Object J;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j0(ViewGroup viewGroup, int i10) {
-        super(0, false);
+    public /* synthetic */ j0(int i10, Object obj, boolean z10) {
+        super(1, false);
         this.I = i10;
-        this.J = viewGroup;
+        this.J = obj;
     }
 
     @Override // s4.o0
@@ -40,9 +41,9 @@ public final class j0 extends s4.c0 {
                     break;
                 }
                 break;
-            case 6:
+            case 7:
                 super.S(eVar, z0Var, dVar);
-                if (((x81) this.J).V) {
+                if (((f91) this.J).V) {
                     dVar.p(false);
                     break;
                 }
@@ -56,8 +57,8 @@ public final class j0 extends s4.c0 {
     @Override // s4.c0
     public int W0(s4.z0 z0Var) {
         switch (this.I) {
-            case 5:
-                if (!((a31) this.J).a3) {
+            case 6:
+                if (!((j31) this.J).h3) {
                     break;
                 } else {
                     break;
@@ -83,8 +84,8 @@ public final class j0 extends s4.c0 {
     public int m0(int i10, of.e eVar, s4.z0 z0Var) {
         switch (this.I) {
             case 2:
-                a80 a80Var = ((pw) ((m00) this.J).J).b.L0;
-                if (a80Var != null && a80Var.D()) {
+                b80 b80Var = ((ly) ((n00) this.J).J).b.L0;
+                if (b80Var != null && b80Var.D()) {
                     i10 = 0;
                 }
                 return super.m0(i10, eVar, z0Var);
@@ -145,8 +146,33 @@ public final class j0 extends s4.c0 {
     public int o0(int i10, of.e eVar, s4.z0 z0Var) {
         switch (this.I) {
             case 1:
-                pr prVar = (pr) this.J;
-                if (prVar.R || prVar.O != 0 || prVar.F.size() != 0) {
+                rr rrVar = (rr) this.J;
+                if (rrVar.R || rrVar.O != 0 || rrVar.F.size() != 0) {
+                    break;
+                }
+                break;
+            case 5:
+                aw0 aw0Var = (aw0) this.J;
+                if (i10 > 0 && aw0Var.T0 != null) {
+                    int i11 = 0;
+                    while (i11 < i10) {
+                        int min = Math.min(i10 - i11, Math.max(1, Math.round((aw0Var.getHeight() - aw0Var.a1) * 0.5f)));
+                        float j02 = aw0Var.j0();
+                        if (!Float.isInfinite(j02)) {
+                            min = Math.min(min, Math.max(0, Math.round(j02 - aw0Var.a1)));
+                        }
+                        if (min == 0) {
+                            break;
+                        } else {
+                            int o02 = super.o0(min, eVar, z0Var);
+                            i11 += o02;
+                            if (o02 < min) {
+                                break;
+                            }
+                        }
+                    }
+                    break;
+                } else {
                     break;
                 }
                 break;
@@ -158,14 +184,14 @@ public final class j0 extends s4.c0 {
     public void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
         switch (this.I) {
             case 2:
-                f00 f00Var = new f00(this, recyclerView.getContext());
-                f00Var.a = i10;
-                w0(f00Var);
+                g00 g00Var = new g00(this, recyclerView.getContext());
+                g00Var.a = i10;
+                w0(g00Var);
                 break;
-            case 6:
-                r81 r81Var = new r81(this, recyclerView.getContext());
-                r81Var.a = i10;
-                w0(r81Var);
+            case 7:
+                z81 z81Var = new z81(this, recyclerView.getContext());
+                z81Var.a = i10;
+                w0(z81Var);
                 break;
             default:
                 super.v0(recyclerView, z0Var, i10);
@@ -182,7 +208,7 @@ public final class j0 extends s4.c0 {
                 return true;
             case 3:
                 return false;
-            case 7:
+            case 8:
                 return false;
             default:
                 return super.y0();
@@ -192,7 +218,7 @@ public final class j0 extends s4.c0 {
     @Override // s4.c0
     public void z0(s4.z0 z0Var, int[] iArr) {
         switch (this.I) {
-            case 7:
+            case 8:
                 iArr[1] = ((StickersActivity) this.J).a.getHeight();
                 break;
             default:
@@ -201,15 +227,15 @@ public final class j0 extends s4.c0 {
         }
     }
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ j0(ViewGroup viewGroup, int i10) {
+        super(0, false);
+        this.I = i10;
+        this.J = viewGroup;
+    }
+
     public /* synthetic */ j0(Object obj, int i10) {
         this.I = i10;
         this.J = obj;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(pr prVar) {
-        super(1, false);
-        this.I = 1;
-        this.J = prVar;
     }
 }

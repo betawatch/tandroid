@@ -1,84 +1,70 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.TextUtils;
+import android.graphics.Canvas;
+import android.os.Bundle;
+import android.text.TextPaint;
 import android.view.View;
-import android.view.animation.Interpolator;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.ThemeActivity;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rb1 implements org.telegram.ui.Components.ml0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class rb1 extends FrameLayout {
+    public final org.telegram.ui.Components.yo0 a;
+    public final int b;
+    public final TextPaint c;
+    public final /* synthetic */ ThemeActivity d;
 
-    public /* synthetic */ rb1(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rb1(ThemeActivity themeActivity, Context context) {
+        super(context);
+        this.d = themeActivity;
+        this.b = 17;
+        setWillNotDraw(false);
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        textPaint.setTextSize(AndroidUtilities.dp(16.0f));
+        org.telegram.ui.Components.yo0 yo0Var = new org.telegram.ui.Components.yo0(context);
+        this.a = yo0Var;
+        yo0Var.setReportChanges(true);
+        yo0Var.setSeparatorsCount(18);
+        yo0Var.setDelegate(new dw0(this, 3));
+        yo0Var.setImportantForAccessibility(2);
+        addView(yo0Var, w7.z5.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.Components.ml0
-    public final void d(int i10, View view) {
-        Interpolator interpolator;
-        int i11 = this.a;
-        Object obj = this.d;
-        Object obj2 = this.c;
-        Object obj3 = this.b;
-        switch (i11) {
-            case 0:
-                ac1 ac1Var = (ac1) obj2;
-                wb1 wb1Var = (wb1) obj;
-                ThemeActivity themeActivity = ((yb1) obj3).e;
-                int i12 = themeActivity.f;
-                org.telegram.ui.ActionBar.g6 A0 = i12 == 1 ? org.telegram.ui.ActionBar.h6.J : org.telegram.ui.ActionBar.h6.A0();
-                if (i10 == ac1Var.h() - 1) {
-                    interpolator = null;
-                    themeActivity.presentFragment(new od1(A0, false, 1, false, i12 == 1));
-                } else {
-                    interpolator = null;
-                    org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) ac1Var.e.get(i10);
-                    if (!TextUtils.isEmpty(f6Var.o) && f6Var.a != org.telegram.ui.ActionBar.h6.n) {
-                        org.telegram.ui.ActionBar.c6.a(false);
-                    }
-                    int i13 = A0.Y;
-                    int i14 = f6Var.a;
-                    if (i13 != i14) {
-                        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, A0, Boolean.valueOf(i12 == 1), null, Integer.valueOf(f6Var.a));
-                        org.telegram.ui.ActionBar.b4.q(A0, f6Var.a);
-                        org.telegram.ui.ActionBar.h6.F1(themeActivity);
-                    } else {
-                        themeActivity.presentFragment(new od1(A0, false, 1, i14 >= 100, i12 == 1));
-                    }
-                }
-                int left = view.getLeft();
-                int right = view.getRight();
-                int dp = AndroidUtilities.dp(52.0f);
-                int i15 = left - dp;
-                if (i15 < 0) {
-                    wb1Var.v0(i15, 0, interpolator);
-                } else {
-                    int i16 = right + dp;
-                    if (i16 > wb1Var.getMeasuredWidth()) {
-                        wb1Var.v0(i16 - wb1Var.getMeasuredWidth(), 0, interpolator);
-                    }
-                }
-                int childCount = wb1Var.getChildCount();
-                for (int i17 = 0; i17 < childCount; i17++) {
-                    View childAt = wb1Var.getChildAt(i17);
-                    if (childAt instanceof ThemeActivity.InnerAccentView) {
-                        ((ThemeActivity.InnerAccentView) childAt).a(true);
-                    }
-                }
-                break;
-            default:
-                n11.V((n11) obj3, (Context) obj2, (String) obj, view, i10);
-                break;
-        }
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.a.invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.I6, false);
+        TextPaint textPaint = this.c;
+        textPaint.setColor(w02);
+        canvas.drawText("" + SharedConfig.bubbleRadius, getMeasuredWidth() - AndroidUtilities.dp(39.0f), AndroidUtilities.dp(28.0f), textPaint);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        this.a.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+        this.a.setProgress(SharedConfig.bubbleRadius / this.b);
+    }
+
+    @Override // android.view.View
+    public final boolean performAccessibilityAction(int i10, Bundle bundle) {
+        return super.performAccessibilityAction(i10, bundle) || this.a.getSeekBarAccessibilityDelegate().g(this, i10, bundle);
     }
 }

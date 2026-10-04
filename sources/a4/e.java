@@ -5,10 +5,9 @@ import ai.h6;
 import ai.n1;
 import android.util.Pair;
 import android.view.MenuItem;
-import ci.qc;
+import ci.pc;
 import gg.a2;
 import gg.h0;
-import hg.b2;
 import java.io.File;
 import java.util.Comparator;
 import java.util.List;
@@ -18,16 +17,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.v4;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.w4;
 import org.telegram.ui.Cells.s1;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.r6;
-import org.telegram.ui.t6;
+import org.telegram.ui.u6;
+import org.telegram.ui.w6;
 import s4.c1;
 import zg.o0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Comparator {
     public final /* synthetic */ int a;
@@ -83,7 +82,7 @@ public final /* synthetic */ class e implements Comparator {
                 String str2 = o0Var.f;
                 return i16 - ((str2 == null || !str2.equals("❤")) ? 0 : -1);
             case 11:
-                return (int) (((qc) obj2).e - ((qc) obj).e);
+                return (int) (((pc) obj2).e - ((pc) obj).e);
             case 12:
                 int i17 = ((h0) obj).b;
                 int i18 = ((h0) obj2).b;
@@ -103,7 +102,7 @@ public final /* synthetic */ class e implements Comparator {
             case 15:
                 return ((TL_account.TL_businessWeeklyOpen) obj).start_minute - ((TL_account.TL_businessWeeklyOpen) obj2).start_minute;
             case 16:
-                return ((b2) obj).c - ((b2) obj2).c;
+                return ((hg.a2) obj).c - ((hg.a2) obj2).c;
             case 17:
                 return Integer.compare(((i4.d) obj).a.b, ((i4.d) obj2).a.b);
             case 18:
@@ -137,25 +136,25 @@ public final /* synthetic */ class e implements Comparator {
             case 23:
                 return ((MenuItem) obj).getOrder() - ((MenuItem) obj2).getOrder();
             case 24:
-                List list = v4.r;
+                List list = w4.r;
                 return (list.contains(Integer.valueOf(((MenuItem) obj).getItemId())) ? 1 : 0) - (list.contains(Integer.valueOf(((MenuItem) obj2).getItemId())) ? 1 : 0);
             case 25:
-                g6 g6Var = (g6) obj;
-                g6 g6Var2 = (g6) obj2;
-                if (g6Var.b == null && g6Var.d == null) {
+                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) obj;
+                org.telegram.ui.ActionBar.h6 h6Var2 = (org.telegram.ui.ActionBar.h6) obj2;
+                if (h6Var.b == null && h6Var.d == null) {
                     return -1;
                 }
-                if (g6Var2.b == null && g6Var2.d == null) {
+                if (h6Var2.b == null && h6Var2.d == null) {
                     return 1;
                 }
-                return g6Var.a.compareTo(g6Var2.a);
+                return h6Var.a.compareTo(h6Var2.a);
             case 26:
                 f6 f6Var = (f6) obj;
                 f6 f6Var2 = (f6) obj2;
-                if (org.telegram.ui.ActionBar.h6.g1(f6Var)) {
+                if (i6.g1(f6Var)) {
                     return -1;
                 }
-                if (!org.telegram.ui.ActionBar.h6.g1(f6Var2)) {
+                if (!i6.g1(f6Var2)) {
                     ?? r02 = f6Var.z;
                     ?? r42 = f6Var2.z;
                     if (r02 == r42) {
@@ -180,14 +179,14 @@ public final /* synthetic */ class e implements Comparator {
                 }
                 return 1;
             case 27:
-                long j3 = ((r6) obj2).c;
-                long j10 = ((r6) obj).c;
+                long j3 = ((u6) obj2).c;
+                long j10 = ((u6) obj).c;
                 if (j3 > j10) {
                     return 1;
                 }
                 return j3 < j10 ? -1 : 0;
             case 28:
-                return Long.compare(((t6) obj2).g, ((t6) obj).g);
+                return Long.compare(((w6) obj2).g, ((w6) obj).g);
             default:
                 s1 s1Var = (s1) obj;
                 s1 s1Var2 = (s1) obj2;

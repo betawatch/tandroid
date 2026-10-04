@@ -1,75 +1,190 @@
 package ci;
 
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.Pair;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
+import android.view.View;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ix0;
+import org.telegram.ui.Components.nl0;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.a01;
+import org.telegram.ui.h60;
+import org.telegram.ui.og1;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class p9 implements Utilities.Callback {
+public final /* synthetic */ class p9 implements org.telegram.ui.ActionBar.a2, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, nl0, MessagesController.IsInChatCheckedCallback, t5.b, s5.e, pa.a, og1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ p9(Object obj, long j3, int i10) {
+    public /* synthetic */ p9(Object obj, long j3, Object obj2, int i10) {
         this.a = i10;
         this.c = obj;
         this.b = j3;
+        this.d = obj2;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10;
-        long j3;
+    @Override // s5.e
+    public Object apply(Object obj) {
+        String str = (String) this.c;
+        SQLiteDatabase sQLiteDatabase = (SQLiteDatabase) obj;
+        int i10 = ((o5.c) this.d).a;
+        Cursor rawQuery = sQLiteDatabase.rawQuery("SELECT 1 FROM log_event_dropped WHERE log_source = ? AND reason = ?", new String[]{str, Integer.toString(i10)});
+        try {
+            boolean z10 = rawQuery.getCount() > 0;
+            rawQuery.close();
+            long j3 = this.b;
+            if (z10) {
+                sQLiteDatabase.execSQL(org.telegram.ui.Cells.c1.j(j3, "UPDATE log_event_dropped SET events_dropped_count = events_dropped_count + ", " WHERE log_source = ? AND reason = ?"), new String[]{str, Integer.toString(i10)});
+                return null;
+            }
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("log_source", str);
+            contentValues.put("reason", Integer.valueOf(i10));
+            contentValues.put("events_dropped_count", Long.valueOf(j3));
+            sQLiteDatabase.insert("log_event_dropped", null, contentValues);
+            return null;
+        } catch (Throwable th2) {
+            rawQuery.close();
+            throw th2;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.nl0
+    public void c(float f7, float f10, int i10, View view) {
+        ProfileActivity.b0((ProfileActivity) this.c, (Context) this.d, this.b, view, i10, f7, f10);
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        ResultCallback resultCallback = (ResultCallback) this.c;
+        long j3 = this.b;
+        File file = (File) this.d;
+        ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
+        if (!z10 || bitmapSafe == null || bitmapSafe.bitmap.isRecycled()) {
+            return;
+        }
+        Bitmap bitmap = bitmapSafe.bitmap;
+        if (bitmap == null) {
+            Drawable drawable = bitmapSafe.drawable;
+            if (drawable instanceof BitmapDrawable) {
+                bitmap = ((BitmapDrawable) drawable).getBitmap();
+            }
+        }
+        if (bitmap != null) {
+            if (resultCallback != null) {
+                resultCallback.onComplete(new Pair(Long.valueOf(j3), bitmap));
+            }
+            Utilities.globalQueue.postRunnable(new la(file, bitmap));
+        } else if (resultCallback != null) {
+            resultCallback.onComplete(null);
+        }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
+        org.telegram.messenger.h5.a(this, i10, str, drawable);
+    }
+
+    @Override // pa.a
+    public void f(pa.b bVar) {
+        ((t9.a) bVar.get()).d((String) this.c, this.b, (y9.b1) this.d);
+    }
+
+    @Override // org.telegram.ui.Components.nl0
+    public /* synthetic */ boolean f1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
-                y9 y9Var = (y9) this.c;
-                TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) obj;
-                org.telegram.ui.ActionBar.a2 a2Var = y9Var.G;
-                if (a2Var != null) {
-                    a2Var.c(350L);
-                    y9Var.G = null;
+                x9 x9Var = (x9) this.c;
+                ArrayList arrayList = (ArrayList) this.d;
+                x9Var.d.put(Long.valueOf(this.b), arrayList);
+                int size = arrayList.size();
+                int i11 = 0;
+                while (i11 < size) {
+                    Object obj = arrayList.get(i11);
+                    i11++;
+                    x9Var.b.k(Boolean.TRUE, ((Long) obj).longValue());
                 }
-                if (tL_channels_channelParticipants != null && !tL_channels_channelParticipants.participants.isEmpty()) {
-                    TLRPC.TL_chatParticipants tL_chatParticipants = new TLRPC.TL_chatParticipants();
-                    while (i10 < tL_channels_channelParticipants.participants.size()) {
-                        TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i10);
-                        TLRPC.TL_chatParticipant tL_chatParticipant = new TLRPC.TL_chatParticipant();
-                        TLRPC.Peer peer = channelParticipant.peer;
-                        if (peer != null) {
-                            j3 = DialogObject.getPeerDialogId(peer);
-                            i10 = j3 < 0 ? i10 + 1 : 0;
-                        } else {
-                            j3 = channelParticipant.user_id;
-                        }
-                        tL_chatParticipant.user_id = j3;
-                        tL_chatParticipants.participants.add(tL_chatParticipant);
-                    }
-                    y9Var.d(this.b, tL_chatParticipants);
-                    break;
-                }
+                x9Var.i(true);
+                x9Var.e(true);
+                x9Var.f(true);
+                b2Var.dismiss();
+                x9Var.x.K = true;
                 break;
-            case 1:
-                ResultCallback resultCallback = (ResultCallback) this.c;
-                dg.a aVar = (dg.a) obj;
-                if (resultCallback != null) {
-                    resultCallback.onComplete(new Pair(Long.valueOf(this.b), aVar));
-                    break;
-                }
+            case 3:
+                pr.O((pr) this.c, (d) this.d, this.b);
                 break;
             default:
-                ix0 ix0Var = (ix0) this.c;
-                TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups = (TLRPC.TL_messages_emojiGroups) obj;
-                if (tL_messages_emojiGroups != null) {
-                    NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new a3.h0(ix0Var, tL_messages_emojiGroups, this.b, 23));
-                    break;
-                }
+                h60 h60Var = (h60) this.c;
+                h60Var.d.getMessagesController().addUserToChat(h60Var.i1(), (TLRPC.User) this.d, 0, null, (org.telegram.ui.ActionBar.n2) h60Var.i0.O().getFragmentStack().get(h60Var.i0.O().getFragmentStack().size() - 1), new ai.j(h60Var, this.b, 24));
                 break;
         }
+    }
+
+    @Override // t5.b
+    public Object h() {
+        da.b bVar = (da.b) this.c;
+        l5.i iVar = (l5.i) this.d;
+        s5.d dVar = (s5.d) bVar.c;
+        long q6 = ((u5.a) bVar.g).q() + this.b;
+        s5.g gVar = (s5.g) dVar;
+        gVar.getClass();
+        gVar.c(new ai.z1(q6, iVar));
+        return null;
+    }
+
+    @Override // org.telegram.ui.og1
+    public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
+        ((yh.g) this.c).h0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
+        org.telegram.messenger.h5.b(this, imageReceiver);
+    }
+
+    @Override // org.telegram.messenger.ChatObject.Call.OnParticipantsLoad
+    public void onLoad(ArrayList arrayList) {
+        ((VoIPService) this.c).lambda$createGroupInstance$69(this.b, (int[]) this.d, arrayList);
+    }
+
+    @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
+    public void run(boolean z10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
+        AndroidUtilities.runOnUIThread(new ai.h3((a01) this.c, this.b, tL_chatAdminRights, str, z10, (uy) this.d));
+    }
+
+    public /* synthetic */ p9(Object obj, Object obj2, long j3, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = j3;
+    }
+
+    @Override // org.telegram.ui.Components.nl0
+    public /* synthetic */ void s0(View view, float f7, float f10) {
     }
 }

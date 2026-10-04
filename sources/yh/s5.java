@@ -15,23 +15,23 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.jc;
 import org.telegram.ui.Components.kc;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class s5 {
     public final m5 a;
     public final MessageObject b;
-    public final wn c;
-    public final qc d;
-    public final kc e;
-    public final jc f;
+    public final yn c;
+    public final rc d;
+    public final lc e;
+    public final kc f;
     public final boolean g;
     public long h;
     public long k;
@@ -44,29 +44,29 @@ public final class s5 {
     public boolean j = false;
     public Long n = null;
 
-    public s5(t5 t5Var, m5 m5Var, MessageObject messageObject, wn wnVar, boolean z10) {
+    public s5(t5 t5Var, m5 m5Var, MessageObject messageObject, yn ynVar, boolean z10) {
         this.q = t5Var;
         p5 p5Var = new p5(this, 0);
         this.p = p5Var;
         this.a = m5Var;
         this.b = messageObject;
-        this.c = wnVar;
-        Context t10 = t5.t(wnVar);
-        kc kcVar = new kc(t10, wnVar.ea);
-        this.e = kcVar;
-        kcVar.c(R.raw.stars_topup, new String[0]);
-        kcVar.b.setText(d());
-        oc ocVar = new oc(t10, wnVar.ea, true, false);
-        ocVar.e(LocaleController.getString(R.string.StarsSentUndo));
-        ocVar.a = new p5(this, 1);
-        jc jcVar = new jc(t10, wnVar.ea);
-        this.f = jcVar;
-        jcVar.b = 5000L;
-        jcVar.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, wnVar.ea));
-        ocVar.addView(jcVar, w7.y5.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
-        ocVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
-        kcVar.setButton(ocVar);
-        qc b10 = yc.a0(wnVar).b(kcVar, -1);
+        this.c = ynVar;
+        Context t10 = t5.t(ynVar);
+        lc lcVar = new lc(t10, ynVar.ca);
+        this.e = lcVar;
+        lcVar.c(R.raw.stars_topup, new String[0]);
+        lcVar.b.setText(d());
+        pc pcVar = new pc(t10, ynVar.ca, true, false);
+        pcVar.e(LocaleController.getString(R.string.StarsSentUndo));
+        pcVar.a = new p5(this, 1);
+        kc kcVar = new kc(t10, ynVar.ca);
+        this.f = kcVar;
+        kcVar.b = 5000L;
+        kcVar.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Gi, ynVar.ca));
+        pcVar.addView(kcVar, w7.z5.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+        pcVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
+        lcVar.setButton(pcVar);
+        rc b10 = yc.a0(ynVar).b(lcVar, -1);
         this.d = b10;
         b10.r = false;
         if (z10) {
@@ -159,7 +159,7 @@ public final class s5 {
                 if (parentActivity == null) {
                     parentActivity = ApplicationLoader.applicationContext;
                 }
-                new l7(parentActivity, this.c.getResourceProvider(), j3, 5, str2, new q5(this, j3, i10), 0L).show();
+                new m7(parentActivity, this.c.getResourceProvider(), j3, 5, str2, new q5(this, j3, i10), 0L).show();
             }
         }
         this.d.b();

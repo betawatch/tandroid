@@ -3,21 +3,21 @@ package s9;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
-import tg.r;
+import tg.q;
 import u4.g;
-import w9.o;
-import w9.w;
+import w9.p;
+import w9.x;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b implements Callable {
     public final /* synthetic */ boolean a;
-    public final /* synthetic */ o b;
+    public final /* synthetic */ p b;
     public final /* synthetic */ da.b c;
 
-    public b(boolean z10, o oVar, da.b bVar) {
+    public b(boolean z10, p pVar, da.b bVar) {
         this.a = z10;
-        this.b = oVar;
+        this.b = pVar;
         this.c = bVar;
     }
 
@@ -26,12 +26,12 @@ public final class b implements Callable {
         if (!this.a) {
             return null;
         }
-        o oVar = this.b;
-        ExecutorService executorService = oVar.k;
-        g gVar = new g(3, oVar, this.c);
-        ExecutorService executorService2 = w.a;
+        p pVar = this.b;
+        ExecutorService executorService = pVar.k;
+        g gVar = new g(3, pVar, this.c);
+        ExecutorService executorService2 = x.a;
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        executorService.execute(new r(gVar, executorService, taskCompletionSource, 3));
+        executorService.execute(new q(gVar, executorService, taskCompletionSource, 4));
         taskCompletionSource.getTask();
         return null;
     }

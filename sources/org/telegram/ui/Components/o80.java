@@ -1,39 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o80 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class o80 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ u80 b;
+    public final /* synthetic */ TLRPC.TL_chatInviteJoinResultWebView c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ o80(int i10, Object obj, boolean z10) {
+    public /* synthetic */ o80(u80 u80Var, TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView, long j3, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = z10;
+        this.b = u80Var;
+        this.c = tL_chatInviteJoinResultWebView;
+        this.d = j3;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                t80 t80Var = (t80) this.b;
-                t80.w(t80Var.getContext(), t80Var.c, t80Var.n, this.c);
-                break;
-            case 1:
-                t80 t80Var2 = (t80) this.b;
-                t80.w(t80Var2.getContext(), t80Var2.c, t80Var2.n, this.c);
+                u80.p(this.b, this.c, this.d);
                 break;
             default:
-                ci.lc lcVar = (ci.lc) this.b;
-                lcVar.z2 = false;
-                lcVar.X0.x(7, true);
-                if (this.c) {
-                    lcVar.q(true);
-                    break;
-                }
+                u80.o(this.b, this.c, this.d);
                 break;
         }
     }

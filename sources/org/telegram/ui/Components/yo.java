@@ -1,32 +1,63 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stories;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yo implements Utilities.Callback {
+public final /* synthetic */ class yo implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ op b;
+    public final /* synthetic */ pp b;
 
-    public /* synthetic */ yo(op opVar, int i10) {
+    public /* synthetic */ yo(pp ppVar, int i10) {
         this.a = i10;
-        this.b = opVar;
+        this.b = ppVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                op opVar = this.b;
-                opVar.f0 = (TL_stories.TL_premium_boostsStatus) obj;
-                opVar.e0 = true;
-                opVar.F(true);
-                opVar.d0 = false;
+                pp ppVar = this.b;
+                xi xiVar = ppVar.Y;
+                if (xiVar.y0 != xiVar.j0) {
+                    ppVar.a0.setText(LocaleController.getString(R.string.SetColorAsBackground));
+                    xi xiVar2 = ppVar.Y;
+                    xiVar2.N1(xiVar2.j0);
+                    break;
+                } else {
+                    ppVar.a0.setText(LocaleController.getString(R.string.ChooseBackgroundFromGallery));
+                    ppVar.Y.z1();
+                    mj mjVar = ppVar.Y.r0;
+                    boolean z10 = ppVar.N;
+                    ab abVar = mjVar.v;
+                    ((ArrayList) abVar.e).clear();
+                    WallpapersListActivity.z0((ArrayList) abVar.e, z10);
+                    abVar.l();
+                    break;
+                }
+            case 1:
+                pp ppVar2 = this.b;
+                if (!ppVar2.v()) {
+                    ppVar2.dismiss();
+                    break;
+                } else {
+                    ppVar2.z(true);
+                    ppVar2.D(true);
+                    break;
+                }
+            case 2:
+                pp ppVar3 = this.b;
+                if (ppVar3.T == null) {
+                    ppVar3.B(!ppVar3.N);
+                    break;
+                }
                 break;
             default:
-                op.m(this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                this.b.s(false);
                 break;
         }
     }

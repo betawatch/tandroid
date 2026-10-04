@@ -3,7 +3,6 @@ package com.google.firebase.messaging;
 import ai.q5;
 import android.app.Application;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -24,11 +23,11 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class FirebaseMessaging {
     public static final long k = TimeUnit.HOURS.toSeconds(8);
-    public static a4.m l;
+    public static u l;
     public static i5.f m;
     public static ScheduledThreadPoolExecutor n;
     public final k9.h a;
@@ -254,19 +253,19 @@ public class FirebaseMessaging {
         }
     }
 
-    public static synchronized a4.m c(Context context) {
-        a4.m mVar;
+    public static synchronized u c(Context context) {
+        u uVar;
         synchronized (FirebaseMessaging.class) {
             try {
                 if (l == null) {
-                    l = new a4.m(context);
+                    l = new u(context);
                 }
-                mVar = l;
+                uVar = l;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return mVar;
+        return uVar;
     }
 
     public static synchronized FirebaseMessaging getInstance(k9.h hVar) {
@@ -280,7 +279,7 @@ public class FirebaseMessaging {
 
     public final String a() {
         Task task;
-        u d = d();
+        t d = d();
         if (!g(d)) {
             return d.a;
         }
@@ -301,20 +300,20 @@ public class FirebaseMessaging {
         }
         try {
             return (String) Tasks.await(task);
-        } catch (InterruptedException | ExecutionException e) {
-            throw new IOException(e);
+        } catch (InterruptedException | ExecutionException e7) {
+            throw new IOException(e7);
         }
     }
 
-    public final u d() {
-        u b10;
-        a4.m c10 = c(this.b);
+    public final t d() {
+        t b10;
+        u c10 = c(this.b);
         k9.h hVar = this.a;
         hVar.a();
         String d = "[DEFAULT]".equals(hVar.b) ? "" : hVar.d();
         String c11 = p.c(this.a);
         synchronized (c10) {
-            b10 = u.b(((SharedPreferences) c10.b).getString(d + "|T|" + c11 + "|*", null));
+            b10 = t.b(c10.a.getString(d + "|T|" + c11 + "|*", null));
         }
         return b10;
     }
@@ -328,9 +327,9 @@ public class FirebaseMessaging {
         this.j = true;
     }
 
-    public final boolean g(u uVar) {
-        if (uVar != null) {
-            return System.currentTimeMillis() > uVar.c + u.d || !this.i.a().equals(uVar.b);
+    public final boolean g(t tVar) {
+        if (tVar != null) {
+            return System.currentTimeMillis() > tVar.c + t.d || !this.i.a().equals(tVar.b);
         }
         return true;
     }

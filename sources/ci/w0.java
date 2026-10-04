@@ -9,7 +9,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w0 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,8 +35,8 @@ public final /* synthetic */ class w0 implements Runnable {
                     }
                     database.executeFast("DELETE FROM story_drafts WHERE id IN (" + TextUtils.join(", ", arrayList) + ")").stepThis().dispose();
                     return;
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                     return;
                 }
             case 1:
@@ -60,8 +60,8 @@ public final /* synthetic */ class w0 implements Runnable {
                         if (sQLitePreparedStatement == null) {
                             return;
                         }
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
                         if (sQLitePreparedStatement == null) {
                             return;
                         }
@@ -80,8 +80,8 @@ public final /* synthetic */ class w0 implements Runnable {
                 try {
                     messagesStorage3.getDatabase().executeFast("DELETE FROM quick_replies_messages WHERE topic_id IN (" + TextUtils.join(", ", arrayList3) + ")").stepThis().dispose();
                     return;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e11) {
+                    FileLog.e(e11);
                     return;
                 }
         }

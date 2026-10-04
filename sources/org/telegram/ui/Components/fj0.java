@@ -21,7 +21,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class fj0 implements LeadingMarginSpan {
     public final Path E;
@@ -41,7 +41,7 @@ public final class fj0 implements LeadingMarginSpan {
     public boolean n;
     public boolean r;
     public final ej0 s;
-    public ii.a6 v;
+    public ii.b6 v;
     public final Drawable w;
     public final Paint x;
     public final float[] y;
@@ -169,7 +169,7 @@ public final class fj0 implements LeadingMarginSpan {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static ArrayList d(fu fuVar, Layout layout, ArrayList arrayList, boolean[] zArr) {
+    public static ArrayList d(gu guVar, Layout layout, ArrayList arrayList, boolean[] zArr) {
         CharSequence charSequence;
         fj0[] fj0VarArr;
         boolean z10;
@@ -177,7 +177,7 @@ public final class fj0 implements LeadingMarginSpan {
         int i10;
         boolean z11;
         int i11;
-        fu fuVar2 = fuVar;
+        gu guVar2 = guVar;
         if (layout != null) {
             CharSequence text = layout.getText();
             if (text != null && (text instanceof Spannable)) {
@@ -191,7 +191,7 @@ public final class fj0 implements LeadingMarginSpan {
                 while (i12 < fj0VarArr2.length) {
                     fj0 fj0Var = fj0VarArr2[i12];
                     boolean z12 = fj0Var.n;
-                    bj0 bj0Var = new bj0(fuVar2, layout, spannable, fj0Var);
+                    bj0 bj0Var = new bj0(guVar2, layout, spannable, fj0Var);
                     if (fj0Var.a) {
                         int i13 = fj0Var.c;
                         if (i13 == 0 || text.charAt(i13 - 1) == '\n') {
@@ -204,7 +204,7 @@ public final class fj0 implements LeadingMarginSpan {
                                 spannable.removeSpan(fj0VarArr2[i12].s);
                                 spannable.setSpan(fj0VarArr2[i12], fj0Var.c, i14, 33);
                                 spannable.setSpan(fj0VarArr2[i12].s, fj0Var.c, i14, 33);
-                                bj0Var = new bj0(fuVar2, layout, spannable, fj0VarArr2[i12]);
+                                bj0Var = new bj0(guVar2, layout, spannable, fj0VarArr2[i12]);
                             }
                             boolean z13 = spannable instanceof SpannableStringBuilder;
                             fj0 fj0Var2 = bj0Var.e;
@@ -275,27 +275,27 @@ public final class fj0 implements LeadingMarginSpan {
                                 fj0VarArr = fj0VarArr2;
                                 z10 = true;
                             }
-                            ii.a6 a6Var = fj0Var2.v;
-                            if (a6Var != null) {
-                                spannable.removeSpan(a6Var);
+                            ii.b6 b6Var = fj0Var2.v;
+                            if (b6Var != null) {
+                                spannable.removeSpan(b6Var);
                             }
                             if (fj0Var2.e && (lineStart = layout.getLineStart(Math.min(layout.getLineForOffset(fj0Var2.c) + 3, layout.getLineCount()))) < (i10 = fj0Var2.d)) {
                                 if (fj0Var2.v == null) {
-                                    fj0Var2.v = new ii.a6(fj0Var2);
+                                    fj0Var2.v = new ii.b6(fj0Var2);
                                 }
                                 spannable.setSpan(fj0Var2.v, lineStart, i10, 33);
                             }
                         } else {
                             spannable.removeSpan(fj0VarArr2[i12]);
                             spannable.removeSpan(fj0VarArr2[i12].s);
-                            ii.a6 a6Var2 = fj0VarArr2[i12].v;
-                            if (a6Var2 != null) {
-                                spannable.removeSpan(a6Var2);
+                            ii.b6 b6Var2 = fj0VarArr2[i12].v;
+                            if (b6Var2 != null) {
+                                spannable.removeSpan(b6Var2);
                             }
                             charSequence = text;
                             fj0VarArr = fj0VarArr2;
                             i12++;
-                            fuVar2 = fuVar;
+                            guVar2 = guVar;
                             text = charSequence;
                             fj0VarArr2 = fj0VarArr;
                         }
@@ -312,7 +312,7 @@ public final class fj0 implements LeadingMarginSpan {
                     }
                     arrayList2.add(bj0Var);
                     i12++;
-                    fuVar2 = fuVar;
+                    guVar2 = guVar;
                     text = charSequence;
                     fj0VarArr2 = fj0VarArr;
                 }

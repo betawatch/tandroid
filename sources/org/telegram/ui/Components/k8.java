@@ -6,7 +6,7 @@ import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class k8 {
     public float f;
@@ -26,15 +26,15 @@ public final class k8 {
     public final float m = 120.0f;
     public final int n = 61;
     public final float[] o = new float[6];
-    public final up[] a = new up[2];
+    public final vp[] a = new vp[2];
 
     public k8() {
         for (int i10 = 0; i10 < 2; i10++) {
-            up[] upVarArr = this.a;
-            up upVar = new up();
-            upVarArr[i10] = upVar;
-            upVar.g = AndroidUtilities.dp(24.0f);
-            upVar.k = 1.0f;
+            vp[] vpVarArr = this.a;
+            vp vpVar = new vp();
+            vpVarArr[i10] = vpVar;
+            vpVar.g = AndroidUtilities.dp(24.0f);
+            vpVar.k = 1.0f;
         }
         this.h = new Paint(1);
     }
@@ -104,19 +104,19 @@ public final class k8 {
                 iArr[i11] = (int) (fArr[i11] * f11);
                 i11++;
             }
-            up[] upVarArr = this.a;
-            up upVar = upVarArr[0];
-            for (int i12 = 0; i12 < upVar.f; i12 += 2) {
-                float[] fArr4 = upVar.j;
+            vp[] vpVarArr = this.a;
+            vp vpVar = vpVarArr[0];
+            for (int i12 = 0; i12 < vpVar.f; i12 += 2) {
+                float[] fArr4 = vpVar.j;
                 fArr4[i12] = iArr[i12 / 2];
                 fArr4[i12 + 1] = 0.0f;
             }
             for (int i13 = 0; i13 < 3; i13++) {
                 iArr[i13] = (int) (fArr[i13 + 3] * f11);
             }
-            up upVar2 = upVarArr[1];
-            for (int i14 = 0; i14 < upVar2.f; i14 += 2) {
-                float[] fArr5 = upVar2.j;
+            vp vpVar2 = vpVarArr[1];
+            for (int i14 = 0; i14 < vpVar2.f; i14 += 2) {
+                float[] fArr5 = vpVar2.j;
                 fArr5[i14] = iArr[i14 / 2];
                 fArr5[i14 + 1] = 0.0f;
             }
@@ -124,9 +124,9 @@ public final class k8 {
             if (dp > AndroidUtilities.dp(26.0f)) {
                 dp = AndroidUtilities.dp(26.0f);
             }
-            up upVar3 = upVarArr[0];
-            upVarArr[1].g = dp;
-            upVar3.g = dp;
+            vp vpVar3 = vpVarArr[0];
+            vpVarArr[1].g = dp;
+            vpVar3.g = dp;
             canvas.save();
             float f20 = (float) (this.r + 0.6d);
             this.r = f20;
@@ -134,14 +134,14 @@ public final class k8 {
             canvas.save();
             float f21 = (this.f * 0.04f) + 1.0f;
             canvas.scale(f21, f21, f7, f10);
-            up upVar4 = upVarArr[0];
+            vp vpVar4 = vpVarArr[0];
             Paint paint = this.h;
-            upVar4.a(f7, f10, canvas, paint);
+            vpVar4.a(f7, f10, canvas, paint);
             canvas.restore();
             canvas.rotate(60.0f, f7, f10);
             float z10 = com.google.android.gms.internal.vision.e2.z(1.0f, this.f, 0.04f, 1.0f);
             canvas.scale(z10, z10, f7, f10);
-            upVarArr[1].a(f7, f10, canvas, paint);
+            vpVarArr[1].a(f7, f10, canvas, paint);
             canvas.restore();
         }
     }
@@ -151,10 +151,10 @@ public final class k8 {
             int i10 = this.n;
             Paint paint = this.h;
             if (z10) {
-                paint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Nb, d6Var));
+                paint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Nb, d6Var));
                 paint.setAlpha((int) (i10 * f11));
             } else {
-                paint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.ie, d6Var));
+                paint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.ie, d6Var));
                 paint.setAlpha((int) (i10 * f11));
             }
             b(canvas, f7, f10);

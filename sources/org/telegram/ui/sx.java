@@ -1,57 +1,157 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Rect;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
 import android.view.View;
-import android.widget.ScrollView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class sx extends ScrollView {
+public final class sx extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ uy c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ sx(Context context, int i10) {
-        super(context);
+    public /* synthetic */ sx(uy uyVar, boolean z10, int i10) {
         this.a = i10;
+        this.c = uyVar;
+        this.b = z10;
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) Math.min(View.MeasureSpec.getSize(i11), Math.min(AndroidUtilities.displaySize.y * 0.35f, AndroidUtilities.dp(400.0f))), View.MeasureSpec.getMode(i11)));
+                uy uyVar = this.c;
+                uyVar.o3.unlock();
+                if (uyVar.w1 == animator) {
+                    if (this.b) {
+                        uyVar.e0[0].a.d1();
+                    } else {
+                        qy qyVar = uyVar.e0[0].a;
+                        if (qyVar.i1) {
+                            qyVar.i1 = false;
+                            qyVar.L0(false);
+                        }
+                    }
+                    uyVar.w1 = null;
+                    break;
+                }
                 break;
-            case 1:
             default:
-                super.onMeasure(i10, i11);
-                break;
-            case 2:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(260.0f), View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11)));
+                super.onAnimationCancel(animator);
                 break;
         }
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup
-    public boolean onRequestFocusInDescendants(int i10, Rect rect) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10;
+        org.telegram.ui.ActionBar.v0 v0Var;
         switch (this.a) {
+            case 0:
+                uy uyVar = this.c;
+                uyVar.o3.unlock();
+                if (uyVar.w1 == animator) {
+                    uyVar.J4(false, true);
+                    boolean z10 = this.b;
+                    if (z10) {
+                        uyVar.e0[0].a.d1();
+                        jx jxVar = uyVar.E0;
+                        if (jxVar != null) {
+                            jxVar.setVisibility(8);
+                        }
+                        uyVar.q3 = true;
+                        Activity parentActivity = uyVar.getParentActivity();
+                        i10 = ((org.telegram.ui.ActionBar.n2) uyVar).classGuid;
+                        AndroidUtilities.requestAdjustResize(parentActivity, i10);
+                        uyVar.j0.setVisibility(8);
+                        mx mxVar = uyVar.F3;
+                        if (mxVar != null) {
+                            mxVar.setVisibility(8);
+                        }
+                    } else {
+                        uyVar.r3 = false;
+                        dy dyVar = uyVar.C0;
+                        if (dyVar != null) {
+                            dyVar.setVisibility(8);
+                        }
+                        iy iyVar = uyVar.X;
+                        if (iyVar != null) {
+                            iyVar.c();
+                        }
+                        dy dyVar2 = uyVar.C0;
+                        if (dyVar2 != null) {
+                            dyVar2.B0.clear();
+                            dyVar2.L();
+                        }
+                        qy qyVar = uyVar.e0[0].a;
+                        if (qyVar.i1) {
+                            qyVar.i1 = false;
+                            qyVar.L0(false);
+                        }
+                        uyVar.q3 = false;
+                        mx mxVar2 = uyVar.F3;
+                        if (mxVar2 != null) {
+                            mxVar2.setVisibility(0);
+                        }
+                    }
+                    View view = uyVar.fragmentView;
+                    if (view != null) {
+                        view.requestLayout();
+                    }
+                    uyVar.M4(z10 ? 1.0f : 0.0f);
+                    uyVar.e0[0].a.setVerticalScrollBarEnabled(true);
+                    dy dyVar3 = uyVar.C0;
+                    if (dyVar3 != null) {
+                        dyVar3.setBackground(null);
+                    }
+                    uyVar.w1 = null;
+                    break;
+                }
+                break;
             case 1:
-                return false;
+                uy uyVar2 = this.c;
+                uyVar2.O3 = null;
+                if (!this.b && (v0Var = uyVar2.m0) != null) {
+                    v0Var.setVisibility(8);
+                    break;
+                }
+                break;
             default:
-                return super.onRequestFocusInDescendants(i10, rect);
-        }
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
-        switch (this.a) {
-            case 1:
-                rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                rect.top = AndroidUtilities.dp(20.0f) + rect.top;
-                rect.bottom = AndroidUtilities.dp(50.0f) + rect.bottom;
+                uy uyVar3 = this.c;
+                uyVar3.I = null;
+                boolean z11 = this.b;
+                uyVar3.K = z11;
+                if (!z11 && !uyVar3.L) {
+                    uyVar3.E0.setVisibility(8);
+                }
+                if (z11) {
+                    uyVar3.x3 = -AndroidUtilities.dp(81.0f);
+                    uyVar3.L4(-uyVar3.d4());
+                } else {
+                    uyVar3.L4(0.0f);
+                    uyVar3.x3 = AndroidUtilities.dp(81.0f);
+                }
+                int i11 = 0;
+                while (true) {
+                    ty[] tyVarArr = uyVar3.e0;
+                    if (i11 >= tyVarArr.length) {
+                        View view2 = uyVar3.fragmentView;
+                        if (view2 != null) {
+                            view2.requestLayout();
+                            break;
+                        }
+                    } else {
+                        ty tyVar = tyVarArr[i11];
+                        if (tyVar != null) {
+                            tyVar.a.requestLayout();
+                        }
+                        i11++;
+                    }
+                }
                 break;
         }
-        return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 }

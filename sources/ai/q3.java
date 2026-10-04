@@ -9,18 +9,18 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.sk0;
-import org.telegram.ui.Components.u00;
+import org.telegram.ui.Components.v00;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ba1;
-import org.telegram.ui.ca1;
-import org.telegram.ui.tt;
+import org.telegram.ui.cu;
+import org.telegram.ui.ea1;
+import org.telegram.ui.fa1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q3 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -51,11 +51,11 @@ public final /* synthetic */ class q3 implements View.OnLongClickListener {
                 }
                 sk0 sk0Var = e6Var.r3;
                 if (sk0Var == null) {
-                    org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
+                    org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                     sk0 sk0Var2 = new sk0(2, e6Var.C2, e6Var.getContext(), R, new x3(4, e6Var.B0));
                     e6Var.r3 = sk0Var2;
                     sk0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(22.0f));
-                    e6Var.addView(e6Var.r3, e6Var.getChildCount() - 1, w7.y5.d(-2, 74.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
+                    e6Var.addView(e6Var.r3, e6Var.getChildCount() - 1, w7.z5.d(-2, 74.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
                     e6Var.r3.setVisibility(8);
                     e6Var.r3.setDelegate(new z4(e6Var));
                     e6Var.r3.p(null, null, true);
@@ -79,22 +79,22 @@ public final /* synthetic */ class q3 implements View.OnLongClickListener {
                 org.telegram.ui.Components.j8 j8Var = (org.telegram.ui.Components.j8) this.b;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.c;
                 float playbackSpeed = MediaController.getInstance().getPlaybackSpeed(true);
-                org.telegram.ui.ActionBar.a1 a1Var = j8Var.X;
-                a1Var.d(playbackSpeed, false);
-                a1Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G8, d6Var));
+                org.telegram.ui.ActionBar.b1 b1Var = j8Var.X;
+                b1Var.d(playbackSpeed, false);
+                b1Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G8, d6Var));
                 j8Var.F0(false);
-                org.telegram.ui.ActionBar.u0 u0Var = j8Var.V;
-                u0Var.setDimMenu(0.15f);
-                u0Var.M(a1Var, null);
+                org.telegram.ui.ActionBar.v0 v0Var = j8Var.V;
+                v0Var.setDimMenu(0.15f);
+                v0Var.M(b1Var, null);
                 MessagesController.getGlobalNotificationsSettings().edit().putInt("speedhint", -15).apply();
                 return true;
             case 3:
-                a80 a80Var = (a80) this.b;
-                ((tt) this.c).run();
-                if (!a80Var.J) {
+                b80 b80Var = (b80) this.b;
+                ((cu) this.c).run();
+                if (!b80Var.J) {
                     return true;
                 }
-                a80Var.u();
+                b80Var.u();
                 return true;
             case 4:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
@@ -104,13 +104,13 @@ public final /* synthetic */ class q3 implements View.OnLongClickListener {
                     return false;
                 }
                 if (AndroidUtilities.addToClipboard(messageObject.sponsoredUrl)) {
-                    new yc(org.telegram.ui.Components.lb.a(photoViewer.E), dVar).k(false).j();
+                    new yc(org.telegram.ui.Components.mb.a(photoViewer.E), dVar).k(false).j();
                 }
                 return true;
             case 5:
                 ProfileActivity profileActivity = (ProfileActivity) this.b;
                 ImageView imageView = (ImageView) this.c;
-                org.telegram.ui.ActionBar.m1 b10 = org.telegram.ui.Components.o9.b(profileActivity, imageView, profileActivity.a(), profileActivity.g1, profileActivity.z0);
+                org.telegram.ui.ActionBar.n1 b10 = org.telegram.ui.Components.o9.b(profileActivity, imageView, profileActivity.a(), profileActivity.g1, profileActivity.z0);
                 if (b10 == null) {
                     return false;
                 }
@@ -124,29 +124,29 @@ public final /* synthetic */ class q3 implements View.OnLongClickListener {
                 undoView.e(1, true);
                 return true;
             default:
-                ba1 ba1Var = (ba1) this.b;
+                ea1 ea1Var = (ea1) this.b;
                 kg.f fVar = (kg.f) this.c;
-                ca1 ca1Var = ba1Var.d;
-                u00 u00Var = ba1Var.a;
+                fa1 fa1Var = ea1Var.d;
+                v00 v00Var = ea1Var.a;
                 boolean z10 = false;
-                if (u00Var.c) {
-                    ca1Var.f();
-                    ArrayList arrayList = ca1Var.n;
-                    ig.g gVar = ca1Var.c;
+                if (v00Var.c) {
+                    fa1Var.f();
+                    ArrayList arrayList = fa1Var.n;
+                    ig.g gVar = fa1Var.c;
                     int size = arrayList.size();
                     for (int i10 = 0; i10 < size; i10++) {
-                        ((ba1) arrayList.get(i10)).a.setChecked(false);
-                        ((ba1) arrayList.get(i10)).b.n = false;
-                        if (ca1Var.r.c > 0 && i10 < gVar.d.size()) {
+                        ((ea1) arrayList.get(i10)).a.setChecked(false);
+                        ((ea1) arrayList.get(i10)).b.n = false;
+                        if (fa1Var.r.c > 0 && i10 < gVar.d.size()) {
                             ((kg.f) gVar.d.get(i10)).n = false;
                         }
                     }
                     z10 = true;
-                    u00Var.setChecked(true);
+                    v00Var.setChecked(true);
                     fVar.n = true;
-                    ca1Var.b.z();
-                    if (ca1Var.r.c > 0) {
-                        ((kg.f) gVar.d.get(ba1Var.c)).n = true;
+                    fa1Var.b.z();
+                    if (fa1Var.r.c > 0) {
+                        ((kg.f) gVar.d.get(ea1Var.c)).n = true;
                         gVar.z();
                     }
                 }

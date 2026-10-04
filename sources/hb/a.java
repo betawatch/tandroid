@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final TimeZone a = DesugarTimeZone.getTimeZone("UTC");
@@ -145,8 +145,8 @@ public abstract class a {
             i13 = 0;
             if (str.length() > i16) {
             }
-        } catch (IllegalArgumentException e) {
-            e = e;
+        } catch (IllegalArgumentException e7) {
+            e = e7;
             String str3 = str != null ? null : "\"" + str + '\"';
             message = e.getMessage();
             if (message != null || message.isEmpty()) {
@@ -155,8 +155,8 @@ public abstract class a {
             ParseException parseException = new ParseException(e2.j("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
             parseException.initCause(e);
             throw parseException;
-        } catch (IndexOutOfBoundsException e7) {
-            e = e7;
+        } catch (IndexOutOfBoundsException e10) {
+            e = e10;
             if (str != null) {
             }
             message = e.getMessage();

@@ -2,11 +2,11 @@ package org.telegram.ui.Components.voip;
 
 import java.util.Random;
 import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.ba;
+import org.telegram.ui.Components.ca;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class m3 extends ba {
+public final class m3 extends ca {
     public final void g(float f7, float f10) {
         if (!LiteMode.isEnabled(this.r)) {
             return;

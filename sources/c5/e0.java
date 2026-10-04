@@ -8,7 +8,7 @@ import com.google.android.gms.internal.play_billing.j3;
 import com.google.android.gms.internal.play_billing.k3;
 import com.google.android.gms.internal.play_billing.m3;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class e0 {
     public static final /* synthetic */ int a = 0;
@@ -83,8 +83,8 @@ public abstract /* synthetic */ class e0 {
                 i3.o((i3) s10.b, m3Var);
             }
             return (i3) s10.a();
-        } catch (Exception e) {
-            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to create logging payload", e);
+        } catch (Exception e7) {
+            com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to create logging payload", e7);
             return null;
         }
     }

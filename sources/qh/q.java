@@ -8,14 +8,14 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.m9;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.web.q0;
-import w7.y5;
+import org.telegram.ui.web.u0;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class q extends FrameLayout {
     public final m9 a;
@@ -27,26 +27,26 @@ public final class q extends FrameLayout {
         this.a = new m9(i10, this, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dpf2(1.0f));
         TextView textView = new TextView(context);
         this.b = textView;
-        textView.setTextColor(h6.v0(h6.E8, d6Var));
+        textView.setTextColor(i6.v0(i6.E8, d6Var));
         textView.setLines(1);
         textView.setSingleLine(true);
         textView.setGravity(19);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTextSize(1, 16.0f);
         setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(68.0f), 0);
-        addView(textView, y5.g());
+        addView(textView, z5.g());
     }
 
-    public final t61 a(m2 m2Var, long j3, int i10, byte[] bArr, int i11, Utilities.Callback callback) {
+    public final c71 a(n2 n2Var, long j3, int i10, byte[] bArr, int i11, Utilities.Callback callback) {
         k kVar = this.c;
         if (kVar != null) {
             return kVar;
         }
-        p pVar = new p(m2Var.getCurrentAccount(), m2Var.getMessagesController().getInputPeer(j3), i10, bArr, new q0(this, 21), callback);
-        AndroidUtilities.runOnUIThread(new q0(pVar, 22), 1000L);
-        k kVar2 = new k(m2Var, new j(pVar, 0), i11);
+        p pVar = new p(n2Var.getCurrentAccount(), n2Var.getMessagesController().getInputPeer(j3), i10, bArr, new u0(this, 20), callback);
+        AndroidUtilities.runOnUIThread(new u0(pVar, 21), 1000L);
+        k kVar2 = new k(n2Var, new j(pVar, 0), i11);
         this.c = kVar2;
-        kVar2.Y2.r = false;
+        kVar2.f3.r = false;
         kVar2.j(new l(this, pVar));
         return this.c;
     }

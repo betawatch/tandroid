@@ -19,16 +19,16 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class PipRoundVideoView implements NotificationCenter.NotificationCenterDelegate {
     public static PipRoundVideoView F;
     public final RectF E = new RectF();
-    public ig0 a;
+    public jg0 a;
     public int b;
     public TextureView c;
     public ImageView d;
-    public jg0 e;
+    public kg0 e;
     public Bitmap f;
     public int h;
     public int n;
@@ -96,12 +96,12 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.r = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<ig0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<ig0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<ig0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<jg0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<jg0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<jg0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
         this.r.setDuration(150L);
         if (this.y == null) {
             this.y = new DecelerateInterpolator();
         }
-        this.r.addListener(new ca(17, this, z10));
+        this.r.addListener(new da(17, this, z10));
         this.r.setInterpolator(this.y);
         this.r.start();
     }
@@ -112,17 +112,17 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
         }
         F = this;
         this.s = runnable;
-        ig0 ig0Var = new ig0(this, activity);
-        this.a = ig0Var;
-        ig0Var.setWillNotDraw(false);
+        jg0 jg0Var = new jg0(this, activity);
+        this.a = jg0Var;
+        jg0Var.setWillNotDraw(false);
         this.h = AndroidUtilities.dp(126.0f);
         this.n = AndroidUtilities.dp(126.0f);
-        jg0 jg0Var = new jg0(this, activity, 0);
-        this.e = jg0Var;
-        jg0Var.setOutlineProvider(new ai.k2(14));
+        kg0 kg0Var = new kg0(this, activity, 0);
+        this.e = kg0Var;
+        kg0Var.setOutlineProvider(new ai.k2(14));
         this.e.setClipToOutline(true);
         this.e.a(1.0f, 0);
-        this.a.addView(this.e, w7.y5.d(120, 120.0f, 51, 3.0f, 3.0f, 0.0f, 0.0f));
+        this.a.addView(this.e, w7.z5.d(120, 120.0f, 51, 3.0f, 3.0f, 0.0f, 0.0f));
         this.a.setAlpha(1.0f);
         this.a.setScaleX(0.8f);
         this.a.setScaleY(0.8f);
@@ -130,10 +130,10 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
         float dpf2 = (AndroidUtilities.dpf2(2.0f) + AndroidUtilities.dpf2(120.0f)) / AndroidUtilities.dpf2(120.0f);
         this.c.setScaleX(dpf2);
         this.c.setScaleY(dpf2);
-        this.e.addView(this.c, w7.y5.c(-1.0f, -1));
+        this.e.addView(this.c, w7.z5.c(-1.0f, -1));
         ImageView imageView = new ImageView(activity);
         this.d = imageView;
-        this.e.addView(imageView, w7.y5.c(-1.0f, -1));
+        this.e.addView(imageView, w7.z5.c(-1.0f, -1));
         this.d.setVisibility(4);
         this.w = (WindowManager) activity.getSystemService("window");
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("pipconfig", 0);
@@ -161,18 +161,18 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
             this.b = i13;
             NotificationCenter.getInstance(i13).addObserver(this, NotificationCenter.messagePlayingProgressDidChanged);
             c(true);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        jg0 jg0Var;
-        if (i10 != NotificationCenter.messagePlayingProgressDidChanged || (jg0Var = this.e) == null) {
+        kg0 kg0Var;
+        if (i10 != NotificationCenter.messagePlayingProgressDidChanged || (kg0Var = this.e) == null) {
             return;
         }
-        jg0Var.invalidate();
+        kg0Var.invalidate();
     }
 
     public final void e(boolean z10) {
@@ -182,12 +182,12 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.r = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<ig0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<ig0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<ig0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<jg0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<jg0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<jg0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
         this.r.setDuration(150L);
         if (this.y == null) {
             this.y = new DecelerateInterpolator();
         }
-        this.r.addListener(new kg0(this, 0));
+        this.r.addListener(new lg0(this, 0));
         this.r.setInterpolator(this.y);
         this.r.start();
     }

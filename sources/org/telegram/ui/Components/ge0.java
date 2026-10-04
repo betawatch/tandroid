@@ -13,7 +13,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class ge0 extends Dialog {
     public final FrameLayout a;
@@ -24,12 +24,12 @@ public final class ge0 extends Dialog {
         AndroidUtilities.enableEdgeToEdge(getWindow());
         FrameLayout frameLayout = new FrameLayout(launchActivity);
         this.a = frameLayout;
-        ha0 ha0Var = new ha0(9);
+        ru ruVar = new ru(11);
         WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.j(frameLayout, ha0Var);
+        r0.a0.j(frameLayout, ruVar);
         fe0 fe0Var = new fe0(this, launchActivity);
         this.b = fe0Var;
-        frameLayout.addView(fe0Var, w7.y5.e(-1, -1, 119));
+        frameLayout.addView(fe0Var, w7.z5.e(-1, -1, 119));
     }
 
     @Override // android.app.Dialog, android.content.DialogInterface

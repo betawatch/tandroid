@@ -1,72 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class i00 {
-    public int a;
-    public CharSequence b;
-    public int c;
-    public int d;
-    public boolean e;
-    public boolean f;
-    public boolean g;
-    public final /* synthetic */ m00 h;
+public final class i00 extends yl0 {
+    public final Context c;
+    public final /* synthetic */ n00 d;
 
-    public i00(m00 m00Var, int i10, Spannable spannable, boolean z10) {
-        this.h = m00Var;
-        this.a = i10;
-        this.b = spannable;
-        this.g = z10;
+    public i00(n00 n00Var, Context context) {
+        this.d = n00Var;
+        this.c = context;
     }
 
-    public final int a(boolean z10) {
-        int i10;
-        int i11;
-        CharSequence charSequence = this.b;
-        m00 m00Var = this.h;
-        int ceil = (int) Math.ceil(ci.e4.g(charSequence, m00Var.b));
-        this.c = ceil;
-        int i12 = 0;
-        if (z10) {
-            i10 = ((org.telegram.ui.pw) m00Var.J).a(this.a);
-            if (i10 < 0) {
-                i10 = 0;
-            }
-            if (z10) {
-                this.d = i10;
-            }
-        } else {
-            i10 = this.d;
-        }
-        if (i10 > 0) {
-            i11 = AndroidUtilities.dp(-2.0f) + AndroidUtilities.dp(10.0f) + Math.max(AndroidUtilities.dp(7.333f), (int) Math.ceil(m00Var.c.measureText(String.format("%d", Integer.valueOf(i10)))));
-        } else {
-            if (!this.e && m00Var.n) {
-                i12 = AndroidUtilities.dp(12.333f);
-            }
-            i11 = i12;
-        }
-        return Math.max(AndroidUtilities.dp(16.0f), ceil + i11);
+    @Override // org.telegram.ui.Components.yl0
+    public final boolean D(s4.c1 c1Var) {
+        return true;
     }
 
-    public final void b(String str) {
-        TextPaint textPaint = this.h.b;
-        if (TextUtils.equals(this.b, str)) {
-            return;
+    @Override // s4.h0
+    public final int h() {
+        return this.d.h.size();
+    }
+
+    @Override // s4.h0
+    public final long i(int i10) {
+        return this.d.k0.get(i10);
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        l00 l00Var = (l00) c1Var.a;
+        int id2 = l00Var.b != null ? l00Var.getId() : -1;
+        j00 j00Var = (j00) this.d.h.get(i10);
+        l00Var.b = j00Var;
+        l00Var.e = i10;
+        l00Var.setContentDescription(j00Var.b);
+        l00Var.requestLayout();
+        boolean z10 = l00Var.n;
+        j00 j00Var2 = l00Var.b;
+        if (z10 != (j00Var2 != null && j00Var2.g)) {
+            z5.release(l00Var, l00Var.r);
+            z5.release(l00Var, l00Var.O);
+            z5.release(l00Var, l00Var.Q);
+            z5.release(l00Var, l00Var.S);
+            if (l00Var.l0) {
+                l00Var.r = z5.update(l00Var.b.g ? 26 : 0, l00Var, l00Var.r, l00Var.s);
+                l00Var.O = z5.update(l00Var.b.g ? 26 : 0, l00Var, l00Var.O, l00Var.P);
+                l00Var.Q = z5.update(l00Var.b.g ? 26 : 0, l00Var, l00Var.Q, l00Var.R);
+                l00Var.S = z5.update(l00Var.b.g ? 26 : 0, l00Var, l00Var.S, l00Var.T);
+            }
+            l00Var.n = l00Var.b.g;
         }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
-        this.b = spannableStringBuilder;
-        CharSequence replaceEmoji = Emoji.replaceEmoji(spannableStringBuilder, textPaint.getFontMetricsInt(), false);
-        this.b = replaceEmoji;
-        this.b = MessageObject.replaceAnimatedEmoji(replaceEmoji, null, textPaint.getFontMetricsInt());
-        this.g = false;
+        if (id2 != l00Var.getId()) {
+            l00Var.k0 = l00Var.b.f ? 1.0f : 0.0f;
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        return new il0(new l00(this.d, this.c));
     }
 }

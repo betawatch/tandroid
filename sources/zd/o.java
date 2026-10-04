@@ -2,7 +2,7 @@ package zd;
 
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class o extends h1 {
     public final m e;
@@ -23,8 +23,8 @@ public final class o extends h1 {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = ee.h.n;
             loop0: while (true) {
                 Object obj = atomicReferenceFieldUpdater.get(hVar);
-                ee.v vVar = ee.a.d;
-                if (!kotlin.jvm.internal.i.a(obj, vVar)) {
+                com.google.android.gms.internal.clearcut.e eVar = ee.a.d;
+                if (!kotlin.jvm.internal.i.a(obj, eVar)) {
                     if (!(obj instanceof Throwable)) {
                         while (!atomicReferenceFieldUpdater.compareAndSet(hVar, obj, null)) {
                             if (atomicReferenceFieldUpdater.get(hVar) != obj) {
@@ -35,8 +35,8 @@ public final class o extends h1 {
                     }
                     return;
                 }
-                while (!atomicReferenceFieldUpdater.compareAndSet(hVar, vVar, q6)) {
-                    if (atomicReferenceFieldUpdater.get(hVar) != vVar) {
+                while (!atomicReferenceFieldUpdater.compareAndSet(hVar, eVar, q6)) {
+                    if (atomicReferenceFieldUpdater.get(hVar) != eVar) {
                         break;
                     }
                 }

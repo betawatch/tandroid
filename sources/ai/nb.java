@@ -21,10 +21,10 @@ import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class nb extends View {
     public int a;
@@ -45,7 +45,7 @@ public final class nb extends View {
         super(context);
         this.c = new Matrix();
         this.d = new Paint[]{new Paint(1), new Paint(1)};
-        this.e = new org.telegram.ui.Components.e6(this, 0L, 260L, sr.h);
+        this.e = new org.telegram.ui.Components.e6(this, 0L, 260L, tr.h);
         this.n = new Drawable[2];
         this.r = new float[2];
         Paint paint = new Paint(1);
@@ -59,13 +59,13 @@ public final class nb extends View {
     }
 
     public final void a(boolean z10, k9 k9Var, boolean z11) {
-        ci.da daVar;
+        ci.ca caVar;
         this.s = z10;
         this.f = true;
-        if (k9Var == null || (daVar = k9Var.c.E0) == null) {
+        if (k9Var == null || (caVar = k9Var.c.E0) == null) {
             this.f = false;
         } else {
-            int i10 = daVar.a;
+            int i10 = caVar.a;
             org.telegram.ui.Components.e6 e6Var = this.e;
             if (i10 == 1) {
                 c(15.0f, R.drawable.msg_stories_closefriends);

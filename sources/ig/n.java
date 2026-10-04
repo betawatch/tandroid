@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class n extends q {
     public float[] I1;
@@ -219,9 +219,9 @@ public final class n extends q {
                 valueAnimator.cancel();
             }
             float f12 = this.K1;
-            ValueAnimator e = g.e(oVar.r, f12 == 0.0f ? 0.0f : this.I1[i10] / f12, new x(5, this, oVar));
-            oVar.s = e;
-            e.start();
+            ValueAnimator e7 = g.e(oVar.r, f12 == 0.0f ? 0.0f : this.I1[i10] / f12, new x(5, this, oVar));
+            oVar.s = e7;
+            e7.start();
             i10++;
         }
     }
@@ -360,13 +360,13 @@ public final class n extends q {
                         canvas.save();
                     }
                     i11 = i13;
-                    double e = a4.a.e(f25, 2.0f, 360.0f, f24);
+                    double e7 = a4.a.e(f25, 2.0f, 360.0f, f24);
                     if (((o) arrayList.get(i15)).q > 0.0f) {
                         float interpolation = aVar.getInterpolation(((o) arrayList.get(i15)).q);
                         if (canvas != null) {
                             double d = interpolation;
                             f14 = f24;
-                            canvas.translate((float) (Math.cos(Math.toRadians(e)) * AndroidUtilities.dp(8.0f) * d), (float) (Math.sin(Math.toRadians(e)) * AndroidUtilities.dp(8.0f) * d));
+                            canvas.translate((float) (Math.cos(Math.toRadians(e7)) * AndroidUtilities.dp(8.0f) * d), (float) (Math.sin(Math.toRadians(e7)) * AndroidUtilities.dp(8.0f) * d));
                             ((o) arrayList.get(i15)).c.setStyle(Paint.Style.FILL_AND_STROKE);
                             ((o) arrayList.get(i15)).c.setStrokeWidth(1.0f);
                             ((o) arrayList.get(i15)).c.setAntiAlias(!g.A1);
@@ -415,14 +415,14 @@ public final class n extends q {
                 if (((o) arrayList.get(i17)).o > 0.0f || ((o) arrayList.get(i17)).n) {
                     float f27 = (((o) arrayList.get(i17)).r * ((o) arrayList.get(i17)).o) / f23;
                     canvas.save();
-                    double e7 = a4.a.e(f27, f7, 360.0f, f26);
+                    double e10 = a4.a.e(f27, f7, 360.0f, f26);
                     if (((o) arrayList.get(i17)).q > 0.0f) {
                         textPaint = textPaint3;
                         f11 = 2.0f;
                         double interpolation2 = aVar.getInterpolation(((o) arrayList.get(i17)).q);
                         rectF = rectF2;
                         f10 = f26;
-                        canvas.translate((float) (Math.cos(Math.toRadians(e7)) * AndroidUtilities.dp(8.0f) * interpolation2), (float) (Math.sin(Math.toRadians(e7)) * AndroidUtilities.dp(8.0f) * interpolation2));
+                        canvas.translate((float) (Math.cos(Math.toRadians(e10)) * AndroidUtilities.dp(8.0f) * interpolation2), (float) (Math.sin(Math.toRadians(e10)) * AndroidUtilities.dp(8.0f) * interpolation2));
                     } else {
                         rectF = rectF2;
                         f10 = f26;
@@ -440,7 +440,7 @@ public final class n extends q {
                         textPaint2.setAlpha((int) (i16 * ((o) arrayList.get(i17)).o));
                         f12 = f27;
                         double d10 = sqrt;
-                        canvas.drawText(this.R1[i18], (float) ((Math.cos(Math.toRadians(e7)) * d10) + rectF.centerX()), ((float) ((Math.sin(Math.toRadians(e7)) * d10) + rectF.centerY())) - ((textPaint2.ascent() + textPaint2.descent()) / f11), textPaint2);
+                        canvas.drawText(this.R1[i18], (float) ((Math.cos(Math.toRadians(e10)) * d10) + rectF.centerX()), ((float) ((Math.sin(Math.toRadians(e10)) * d10) + rectF.centerY())) - ((textPaint2.ascent() + textPaint2.descent()) / f11), textPaint2);
                     }
                     canvas.restore();
                     ((o) arrayList.get(i17)).c.setAlpha(255);

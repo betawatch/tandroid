@@ -19,10 +19,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 import org.telegram.ui.uh1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class v1 extends FrameLayout {
     public float E;
@@ -188,8 +188,8 @@ public final class v1 extends FrameLayout {
         v1Var.d0.start();
         animate().setListener(null).cancel();
         ViewPropertyAnimator duration = animate().scaleX(0.23f).scaleY(0.23f).translationX(translationX2 - ((getMeasuredWidth() - (getMeasuredWidth() * 0.23f)) / 2.0f)).translationY(translationY2 - ((getMeasuredHeight() - (getMeasuredHeight() * 0.23f)) / 2.0f)).alpha(1.0f).setStartDelay(0L).setDuration(300L);
-        sr srVar = sr.f;
-        duration.setInterpolator(srVar).setListener(new le.d(this, translationX2, translationY2, 1)).setInterpolator(srVar).start();
+        tr trVar = tr.f;
+        duration.setInterpolator(trVar).setListener(new le.c(this, translationX2, translationY2, 1)).setInterpolator(trVar).start();
     }
 
     public final void d(float f7, float f10) {
@@ -243,7 +243,7 @@ public final class v1 extends FrameLayout {
         canvas.scale((1.0f / getScaleX()) * v1Var.J * v1Var.K, (1.0f / getScaleY()) * v1Var.J * v1Var.K, f7, f10);
         canvas.drawCircle(f7, f10, AndroidUtilities.dp(14.0f), v1Var.w);
         Drawable drawable = v1Var.x;
-        drawable.setBounds(ok.z(2, measuredWidth, drawable), ok.d(2, measuredHeight, drawable), org.telegram.ui.Cells.c1.t(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.d(2, measuredHeight, drawable));
+        drawable.setBounds(org.telegram.ui.Cells.c1.e(2, measuredWidth, drawable), ok.d(2, measuredHeight, drawable), org.telegram.ui.Cells.c1.w(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.t(2, measuredHeight, drawable));
         drawable.draw(canvas);
         canvas.restore();
         if (v1Var.O) {
@@ -263,7 +263,7 @@ public final class v1 extends FrameLayout {
         float z12 = com.google.android.gms.internal.vision.e2.z((view.getMeasuredHeight() - systemWindowInsetBottom) - systemWindowInsetTop, i11, f10, systemWindowInsetTop);
         if (z10) {
             animate().setListener(null).cancel();
-            animate().scaleX(1.0f).scaleY(1.0f).translationX(z11).translationY(z12).alpha(1.0f).setStartDelay(this.L ? 0L : 150L).setDuration(150L).setInterpolator(sr.f).start();
+            animate().scaleX(1.0f).scaleY(1.0f).translationX(z11).translationY(z12).alpha(1.0f).setStartDelay(this.L ? 0L : 150L).setDuration(150L).setInterpolator(tr.f).start();
             return;
         }
         if (!this.S) {
@@ -390,7 +390,7 @@ public final class v1 extends FrameLayout {
                 } else if (getY() + getMeasuredHeight() > measuredHeight - f12) {
                     startDelay.translationY((measuredHeight - getMeasuredHeight()) - f12);
                 }
-                startDelay.setDuration(150L).setInterpolator(sr.f).start();
+                startDelay.setDuration(150L).setInterpolator(tr.f).start();
             }
             this.e = false;
             return true;

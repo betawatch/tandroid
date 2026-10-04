@@ -5,9 +5,9 @@ import android.view.ViewGroup;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class h implements Runnable {
                     qVar.c.setVisibility(0);
                     qVar.c.setTranslationY(r0.getMeasuredHeight());
                     qVar.c.animate().setListener(null).cancel();
-                    qVar.c.animate().translationY(0.0f).withLayer().setDuration(350L).setInterpolator(sr.f).setUpdateListener(new j(qVar, 0)).setListener(new l2(2)).start();
+                    qVar.c.animate().translationY(0.0f).withLayer().setDuration(350L).setInterpolator(tr.f).setUpdateListener(new j(qVar, 0)).setListener(new l2(2)).start();
                     break;
                 }
                 break;
@@ -51,7 +51,7 @@ public final /* synthetic */ class h implements Runnable {
                 nf.f.s(qVar.getParentActivity(), LocaleController.getString(R.string.ChannelEnablePaidReactionsInfoLink));
                 break;
             default:
-                qVar.Y(false);
+                qVar.X(false);
                 break;
         }
     }

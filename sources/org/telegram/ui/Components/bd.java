@@ -7,12 +7,12 @@ import android.text.SpannableString;
 import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class bd extends ReplacementSpan {
     public final org.telegram.ui.ActionBar.d6 a;
     public final Paint b = new Paint(1);
-    public final v01 c;
+    public final e11 c;
     public final Runnable d;
     public zc e;
     public Integer f;
@@ -20,7 +20,7 @@ public final class bd extends ReplacementSpan {
     public bd(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.d6 d6Var) {
         this.a = d6Var;
         this.d = runnable;
-        this.c = new v01(charSequence, 12.0f, null);
+        this.c = new e11(charSequence, 12.0f, null);
     }
 
     public static SpannableString b(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.d6 d6Var, Integer num) {
@@ -54,8 +54,8 @@ public final class bd extends ReplacementSpan {
         canvas.save();
         canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
         Integer num = this.f;
-        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Oh, this.a);
-        int l1 = org.telegram.ui.ActionBar.h6.l1(0.15f, intValue);
+        int intValue = num != null ? num.intValue() : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Oh, this.a);
+        int l1 = org.telegram.ui.ActionBar.i6.l1(0.15f, intValue);
         Paint paint2 = this.b;
         paint2.setColor(l1);
         canvas.drawRoundRect(rectF, f11, f11, paint2);

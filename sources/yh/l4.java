@@ -1,17 +1,17 @@
 package yh;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.q80;
+import org.telegram.ui.Components.r80;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q80 b;
+    public final /* synthetic */ r80 b;
 
-    public /* synthetic */ l4(q80 q80Var, int i10) {
+    public /* synthetic */ l4(r80 r80Var, int i10) {
         this.a = i10;
-        this.b = q80Var;
+        this.b = r80Var;
     }
 
     @Override // java.lang.Runnable

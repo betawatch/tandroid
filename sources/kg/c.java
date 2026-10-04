@@ -15,10 +15,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import w7.y5;
+import org.telegram.ui.ActionBar.i6;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class c extends FrameLayout {
     public final TextView a;
@@ -44,25 +44,25 @@ public class c extends FrameLayout {
         TextView textView = new TextView(context);
         this.a = textView;
         e2.l(15.0f, 1, textView);
-        addView(textView, y5.d(-2, -2.0f, 8388627, 16.0f, 0.0f, measureText, 0.0f));
+        addView(textView, z5.d(-2, -2.0f, 8388627, 16.0f, 0.0f, measureText, 0.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 15.0f);
         textView2.setTypeface(Typeface.DEFAULT_BOLD);
         textView2.setGravity(8388627);
-        addView(textView2, y5.d(-2, -2.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
+        addView(textView2, z5.d(-2, -2.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.b = textView3;
         textView3.setTextSize(1, 13.0f);
         textView3.setTypeface(AndroidUtilities.bold());
         textView3.setGravity(8388629);
-        addView(textView3, y5.d(-2, -2.0f, 8388629, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(textView3, z5.d(-2, -2.0f, 8388629, 16.0f, 0.0f, 16.0f, 0.0f));
         TextView textView4 = new TextView(context);
         this.c = textView4;
         textView4.setTextSize(1, 13.0f);
         textView4.setTypeface(AndroidUtilities.bold());
         textView4.setGravity(8388629);
-        addView(textView4, y5.d(-2, -2.0f, 8388629, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(textView4, z5.d(-2, -2.0f, 8388629, 16.0f, 0.0f, 16.0f, 0.0f));
         textView4.setVisibility(8);
         textView2.setVisibility(8);
         textView2.setText(LocaleController.getString(R.string.ZoomOut));
@@ -71,20 +71,20 @@ public class c extends FrameLayout {
         textView2.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
         textView2.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
         textView2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f));
-        textView2.setBackground(h6.G0(AndroidUtilities.dp(3.0f), h6.v0(h6.Rh, d6Var)));
+        textView2.setBackground(i6.G0(AndroidUtilities.dp(3.0f), i6.v0(i6.Rh, d6Var)));
         textView4.addOnLayoutChangeListener(new f4(this, 1));
         a();
     }
 
     public final void a() {
-        int i10 = h6.j5;
+        int i10 = i6.j5;
         d6 d6Var = this.r;
-        this.a.setTextColor(h6.v0(i10, d6Var));
-        this.b.setTextColor(h6.v0(i10, d6Var));
-        this.c.setTextColor(h6.v0(i10, d6Var));
-        int i11 = h6.fj;
-        this.d.setTextColor(h6.v0(i11, d6Var));
-        this.h.setColorFilter(h6.v0(i11, d6Var), PorterDuff.Mode.SRC_IN);
+        this.a.setTextColor(i6.v0(i10, d6Var));
+        this.b.setTextColor(i6.v0(i10, d6Var));
+        this.c.setTextColor(i6.v0(i10, d6Var));
+        int i11 = i6.fj;
+        this.d.setTextColor(i6.v0(i11, d6Var));
+        this.h.setColorFilter(i6.v0(i11, d6Var), PorterDuff.Mode.SRC_IN);
     }
 
     public final void b(long j3, long j10) {
@@ -112,12 +112,12 @@ public class c extends FrameLayout {
         this.e = z10;
         TextView textView = this.a;
         if (z10) {
-            textView.setLayoutParams(y5.d(-2, -2.0f, 8388627, 16.0f, 0.0f, this.n, 0.0f));
+            textView.setLayoutParams(z5.d(-2, -2.0f, 8388627, 16.0f, 0.0f, this.n, 0.0f));
             return;
         }
         this.c.setVisibility(8);
         this.b.setVisibility(8);
-        textView.setLayoutParams(y5.d(-2, -2.0f, 8388627, 16.0f, 0.0f, 16.0f, 0.0f));
+        textView.setLayoutParams(z5.d(-2, -2.0f, 8388627, 16.0f, 0.0f, 16.0f, 0.0f));
         textView.requestLayout();
     }
 

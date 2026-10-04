@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class p2 {
     public long a;
@@ -90,7 +90,7 @@ public final class p2 {
         MessageObject messageObject = s2Var.f1;
         int hashCode = messageObject == null ? 0 : s2Var.f1.hashCode() + messageObject.getId();
         long j12 = dialog.read_inbox_max_id + (dialog.read_outbox_max_id << 8) + ((dialog.unread_count + (dialog.unread_mark ? -1 : 0)) << 16) + (dialog.unread_reactions_count > 0 ? 262144 : 0) + (dialog.unread_mentions_count > 0 ? TLObject.FLAG_19 : 0) + (dialog.unread_poll_votes_count > 0 ? TLObject.FLAG_21 : 0);
-        if (s2Var.Q()) {
+        if (s2Var.O()) {
             int[] forumUnreadCount = MessagesController.getInstance(i12).getTopicsController().getForumUnreadCount(-s2Var.H0);
             if (forumUnreadCount[2] > 0) {
                 j12 |= 1048576;
@@ -99,7 +99,7 @@ public final class p2 {
                 j12 |= 4194304;
             }
         }
-        if (!s2Var.Q() && (s2Var.N0 || s2Var.P)) {
+        if (!s2Var.O() && (s2Var.N0 || s2Var.P)) {
             MessagesController messagesController = MessagesController.getInstance(i12);
             long j13 = s2Var.H0;
             topicId3 = s2Var.getTopicId();
@@ -109,7 +109,7 @@ public final class p2 {
                 topicId4 = s2Var.getTopicId();
                 num = messagesController2.getPrintingStringType(j14, topicId4);
                 int measuredWidth = s2Var.getMeasuredWidth() + (s2Var.getMeasuredHeight() << 16);
-                if (s2Var.Q()) {
+                if (s2Var.O()) {
                     ArrayList<TLRPC.TL_forumTopic> topics = MessagesController.getInstance(i12).getTopicsController().getTopics(-s2Var.H0);
                     i10 = topics == null ? -1 : topics.size();
                     if (i10 == -1) {
@@ -246,7 +246,7 @@ public final class p2 {
         }
         num = null;
         int measuredWidth2 = s2Var.getMeasuredWidth() + (s2Var.getMeasuredHeight() << 16);
-        if (s2Var.Q()) {
+        if (s2Var.O()) {
         }
         i10 = 0;
         if (!s2Var.P) {

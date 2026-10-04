@@ -1,23 +1,46 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final class em0 {
-    public final float a;
-    public final float b;
-    public final float c;
-    public final float d;
-    public final boolean e;
+import android.view.View;
+import android.view.ViewParent;
+import android.widget.FrameLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.TLObject;
 
-    public em0(float f7, float f10, float f11, float f12, int i10) {
-        this(f7, f10, f11, f12);
-        this.e = true;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final class em0 extends FrameLayout {
+    public View a;
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        View view = this.a;
+        if (view == null) {
+            ViewParent parent = getParent();
+            while (true) {
+                if (!(parent instanceof View)) {
+                    view = null;
+                    break;
+                } else {
+                    if (parent instanceof RecyclerView) {
+                        view = (RecyclerView) parent;
+                        break;
+                    }
+                    parent = parent.getParent();
+                }
+            }
+        }
+        int max = view != null ? Math.max(0, (view.getMeasuredHeight() - view.getPaddingTop()) - view.getPaddingBottom()) : 0;
+        if (max > 0) {
+            i11 = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_30);
+        }
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 
-    public em0(float f7, float f10, float f11, float f12) {
-        this.a = f7;
-        this.b = f10;
-        this.c = f11;
-        this.d = f12;
+    public void setViewportView(View view) {
+        if (this.a == view) {
+            return;
+        }
+        this.a = view;
+        requestLayout();
     }
 }

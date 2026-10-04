@@ -15,10 +15,10 @@ import android.view.animation.LinearInterpolator;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.pu;
+import org.telegram.ui.Components.qu;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public class kb extends View {
     public boolean E;
@@ -47,7 +47,7 @@ public class kb extends View {
         Paint paint = new Paint(1);
         this.d = paint;
         this.h = new Matrix();
-        org.telegram.ui.Cells.z f02 = org.telegram.ui.ActionBar.h6.f0(1174405119, 2, -1);
+        org.telegram.ui.Cells.z f02 = org.telegram.ui.ActionBar.i6.f0(1174405119, 2, -1);
         this.n = f02;
         this.r = new zc(this);
         this.s = false;
@@ -98,7 +98,7 @@ public class kb extends View {
             if (getParent() instanceof View) {
                 View view = (View) getParent();
                 Objects.requireNonNull(view);
-                zcVar.f = new pu(1, view);
+                zcVar.f = new qu(1, view);
             }
             zcVar.c(true);
             zVar.setHotspot(motionEvent.getX(), motionEvent.getY());

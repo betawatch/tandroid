@@ -1,24 +1,44 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class di extends org.telegram.ui.Components.vv {
-    public final /* synthetic */ ei W;
+public final class di implements org.telegram.ui.Components.n8 {
+    public final /* synthetic */ yn a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public di(ei eiVar, org.telegram.ui.ActionBar.m2 m2Var, Activity activity, org.telegram.ui.ActionBar.d6 d6Var, ArrayList arrayList) {
-        super(m2Var, activity, d6Var, arrayList);
-        this.W = eiVar;
+    public di(yn ynVar) {
+        this.a = ynVar;
     }
 
-    @Override // org.telegram.ui.Components.vv, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
+    @Override // org.telegram.ui.Components.n8
+    public final void U0(int i10, int i11) {
+        yn ynVar = this.a;
+        ynVar.getMessagesController().setDialogHistoryTTL(ynVar.R5, i10);
+        if (ynVar.Y7 == null && ynVar.X7 == null) {
+            return;
+        }
+        ynVar.Q7();
+        UndoView undoView = ynVar.w3;
+        if (undoView == null) {
+            return;
+        }
+        long j3 = ynVar.R5;
+        TLRPC.User user = ynVar.f;
+        TLRPC.UserFull userFull = ynVar.Y7;
+        undoView.k(j3, i11, user, Integer.valueOf(userFull != null ? userFull.ttl_period : ynVar.X7.ttl_period), null, null);
+    }
+
+    @Override // org.telegram.ui.Components.n8
     public final void dismiss() {
-        super.dismiss();
-        wn wnVar = this.W.p;
-        wnVar.getClass();
-        wnVar.g8(false, true, 0.0f);
+        org.telegram.ui.ActionBar.n1 n1Var = this.a.O8;
+        if (n1Var != null) {
+            n1Var.dismiss();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.n8
+    public final /* synthetic */ void l1() {
     }
 }

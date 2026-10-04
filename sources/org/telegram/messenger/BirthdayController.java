@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class BirthdayController {
     private static volatile BirthdayController[] Instance = new BirthdayController[4];
@@ -25,7 +25,7 @@ public class BirthdayController {
     private boolean loading;
     private BirthdayState state;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class BirthdayState {
         public String todayKey;
         public String tomorrowKey;
@@ -139,7 +139,7 @@ public class BirthdayController {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class TL_birthdays extends TLObject {
         public static final int constructor = 290452237;
         public ArrayList<TL_account.TL_contactBirthday> contacts;
@@ -197,8 +197,8 @@ public class BirthdayController {
             try {
                 SerializedData serializedData = new SerializedData(Utilities.hexToBytes(string));
                 TLdeserialize = TL_birthdays.TLdeserialize(serializedData, serializedData.readInt32(true), true);
-            } catch (Exception e) {
-                e = e;
+            } catch (Exception e7) {
+                e = e7;
                 birthdayController = this;
             }
             if (TLdeserialize != null && !TLdeserialize.contacts.isEmpty()) {
@@ -206,8 +206,8 @@ public class BirthdayController {
                 for (int i11 = 0; i11 < TLdeserialize.contacts.size(); i11++) {
                     try {
                         arrayList.add(Long.valueOf(TLdeserialize.contacts.get(i11).contact_id));
-                    } catch (Exception e7) {
-                        exc = e7;
+                    } catch (Exception e10) {
+                        exc = e10;
                         birthdayController = this;
                         FileLog.e(exc);
                         birthdayController.hiddenDays = mainSettings.getStringSet("bday_hidden", new HashSet());
@@ -216,8 +216,8 @@ public class BirthdayController {
                 birthdayController = this;
                 try {
                     MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new i0(birthdayController, i10, arrayList, TLdeserialize, 0));
-                } catch (Exception e10) {
-                    e = e10;
+                } catch (Exception e11) {
+                    e = e11;
                     exc = e;
                     FileLog.e(exc);
                     birthdayController.hiddenDays = mainSettings.getStringSet("bday_hidden", new HashSet());

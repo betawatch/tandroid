@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -91,7 +91,7 @@ public final /* synthetic */ class i5 implements View.OnClickListener {
                 MessagesController.getInstance(e6Var6.C2).getTranslateController().translateStory(c6Var2.a, new j(new m5(v5Var6, 1), System.currentTimeMillis(), 2));
                 e6Var6.f1(false);
                 e6Var6.h3 = true;
-                e6Var6.K0.D(true);
+                e6Var6.K0.E(true);
                 v5 v5Var7 = e6Var6.t1;
                 if (v5Var7 != null) {
                     v5Var7.a();

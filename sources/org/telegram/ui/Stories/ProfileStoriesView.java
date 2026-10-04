@@ -44,17 +44,18 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.oj0;
-import org.telegram.ui.Components.r20;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.s20;
+import org.telegram.ui.Components.tr;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.d01;
-import org.telegram.ui.iz0;
-import v7.a7;
+import org.telegram.ui.f01;
+import org.telegram.ui.lz0;
+import v7.z6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public class ProfileStoriesView extends View implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int s0 = 0;
@@ -90,7 +91,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
     public final View f;
     public float f0;
     public float g0;
-    public final d01 h;
+    public final f01 h;
     public float h0;
     public float i0;
     public float j0;
@@ -111,7 +112,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
     public oj0 y;
 
     /* JADX WARN: Type inference failed for: r0v12, types: [ai.f6] */
-    public ProfileStoriesView(Context context, int i10, long j3, boolean z10, View view, d01 d01Var, d6 d6Var) {
+    public ProfileStoriesView(Context context, int i10, long j3, boolean z10, View view, f01 f01Var, d6 d6Var) {
         super(context);
         Paint paint = new Paint(1);
         this.a = paint;
@@ -130,32 +131,32 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         this.Q = new RectF();
         this.R = new RectF();
         this.S = new Path();
-        sr srVar = sr.h;
-        this.T = new e6(this, 0L, 480L, srVar);
-        this.U = new e6(this, 0L, 240L, srVar);
-        this.V = new e6(this, 0L, 150L, sr.f);
+        tr trVar = tr.h;
+        this.T = new e6(this, 0L, 480L, trVar);
+        this.U = new e6(this, 0L, 240L, trVar);
+        this.V = new e6(this, 0L, 150L, tr.f);
         this.W = 1.0f;
         this.b0 = new Path();
         this.c0 = new Matrix();
         this.d0 = new PathMeasure();
         this.e0 = new Path();
-        this.l0 = new e6(this, 0L, 350L, srVar);
-        this.m0 = new e6(this, 0L, 350L, srVar);
-        final iz0 iz0Var = (iz0) this;
-        this.n0 = new i(iz0Var, 3);
+        this.l0 = new e6(this, 0L, 350L, trVar);
+        this.m0 = new e6(this, 0L, 350L, trVar);
+        final lz0 lz0Var = (lz0) this;
+        this.n0 = new i(lz0Var, 3);
         final int i11 = 0;
         this.o0 = new Runnable() { // from class: ai.f6
             @Override // java.lang.Runnable
             public final void run() {
                 int i12 = i11;
-                iz0 iz0Var2 = iz0Var;
+                lz0 lz0Var2 = lz0Var;
                 switch (i12) {
                     case 0:
                         int i13 = ProfileStoriesView.s0;
-                        iz0Var2.u0.w4(false);
+                        lz0Var2.u0.w4(false);
                         break;
                     default:
-                        iz0Var2.invalidate();
+                        lz0Var2.invalidate();
                         break;
                 }
             }
@@ -164,20 +165,20 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         this.d = j3;
         this.e = z10;
         this.f = view;
-        this.h = d01Var;
+        this.h = f01Var;
         final int i12 = 1;
-        d01Var.getImageReceiver().setVisibleInvalidate(new Runnable() { // from class: ai.f6
+        f01Var.getImageReceiver().setVisibleInvalidate(new Runnable() { // from class: ai.f6
             @Override // java.lang.Runnable
             public final void run() {
                 int i122 = i12;
-                iz0 iz0Var2 = iz0Var;
+                lz0 lz0Var2 = lz0Var;
                 switch (i122) {
                     case 0:
                         int i13 = ProfileStoriesView.s0;
-                        iz0Var2.u0.w4(false);
+                        lz0Var2.u0.w4(false);
                         break;
                     default:
-                        iz0Var2.invalidate();
+                        lz0Var2.invalidate();
                         break;
                 }
             }
@@ -190,13 +191,13 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         paint.setStyle(style);
         Paint.Cap cap = Paint.Cap.ROUND;
         paint.setStrokeCap(cap);
-        paint2.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.nk, d6Var));
+        paint2.setColor(i6.v0(i6.nk, d6Var));
         paint2.setStrokeWidth(AndroidUtilities.dpf2(1.5f));
         paint2.setStyle(style);
         paint2.setStrokeCap(cap);
-        paint3.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d6, d6Var));
+        paint3.setColor(i6.v0(i6.d6, d6Var));
         o6Var.t(AndroidUtilities.dp(18.0f));
-        o6Var.k(0.4f, 320L, srVar);
+        o6Var.k(0.4f, 320L, trVar);
         o6Var.u(AndroidUtilities.bold());
         o6Var.r(-1);
         o6Var.n(true);
@@ -476,7 +477,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         profileStoriesView5.K = null;
         e6 e6Var2 = profileStoriesView5.U;
         e6 e6Var3 = profileStoriesView5.T;
-        d01 d01Var = profileStoriesView5.h;
+        f01 f01Var = profileStoriesView5.h;
         ea eaVar5 = profileStoriesView5.L;
         RectF rectF7 = profileStoriesView5.Q;
         if (lerp2 > 0.0f) {
@@ -525,7 +526,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
             j3 = j10;
             oj0Var2.f((int) rectF7.left, (int) rectF7.top, (int) rectF7.right, (int) rectF7.bottom);
             profileStoriesView5.y.e(Utilities.clamp(f24, 1.0f, 0.0f), true);
-            if (d01Var.Q) {
+            if (f01Var.Q) {
                 profileStoriesView5.y.a(canvas2);
             }
             paint.setAlpha(alpha);
@@ -539,7 +540,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                 AnimatorSet animatorSet = new AnimatorSet();
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 1.05f);
                 ofFloat.setDuration(100L);
-                ofFloat.setInterpolator(sr.g);
+                ofFloat.setInterpolator(tr.g);
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(1.05f, 1.0f);
                 ofFloat2.setDuration(250L);
                 ofFloat2.setInterpolator(new OvershootInterpolator());
@@ -574,12 +575,12 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                 rectF7.set(rectF6);
                 rectF7.inset(-AndroidUtilities.dpf2(3.775f), -AndroidUtilities.dpf2(3.775f));
                 if (ia.d == null) {
-                    r20 r20Var = new r20();
-                    ia.d = r20Var;
-                    r20Var.a = true;
-                    r20Var.b = true;
-                    int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.xj, false);
-                    int w03 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q7, false);
+                    s20 s20Var = new s20();
+                    ia.d = s20Var;
+                    s20Var.a = true;
+                    s20Var.b = true;
+                    int w02 = i6.w0(null, i6.xj, false);
+                    int w03 = i6.w0(null, i6.q7, false);
                     ia.d.d(i0.a.d(0.25f, w02, w03), w03, 0, 0);
                     ia.d.c.setStrokeWidth(AndroidUtilities.dpf2(f7));
                     ia.d.c.setStyle(Paint.Style.STROKE);
@@ -774,7 +775,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                     eaVar2 = eaVar;
                     rectF8 = rectF2;
                     if (z13) {
-                        ia.k(canvas2, rectF8, f17, d01Var.getImageReceiver().getVisible(), profileStoriesView5.I);
+                        ia.k(canvas2, rectF8, f17, f01Var.getImageReceiver().getVisible(), profileStoriesView5.I);
                         canvas2.restore();
                     }
                 }
@@ -1314,7 +1315,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
         }
         if (motionEvent.getAction() == 1) {
             AndroidUtilities.cancelRunOnUIThread(f6Var);
-            if (contains && System.currentTimeMillis() - this.p0 <= ViewConfiguration.getTapTimeout() && a7.a(this.q0, this.r0, motionEvent.getX(), motionEvent.getY()) <= AndroidUtilities.dp(12.0f)) {
+            if (contains && System.currentTimeMillis() - this.p0 <= ViewConfiguration.getTapTimeout() && z6.a(this.q0, this.r0, motionEvent.getX(), motionEvent.getY()) <= AndroidUtilities.dp(12.0f)) {
                 l9 l9Var = this.M;
                 long j3 = this.d;
                 if (l9Var.K(j3) || l9Var.I(j3) || !this.w.isEmpty()) {
@@ -1330,7 +1331,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
     }
 
     public void setActionBarActionMode(float f7) {
-        if (org.telegram.ui.ActionBar.h6.I.q()) {
+        if (i6.I.q()) {
             return;
         }
         this.O = f7;

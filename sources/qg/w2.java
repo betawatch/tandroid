@@ -3,34 +3,34 @@ package qg;
 import android.content.Context;
 import android.graphics.PointF;
 import android.view.ViewGroup;
-import ci.kd;
+import ci.jd;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ok;
 import org.telegram.ui.Components.uk0;
-import w7.y5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class w2 extends j {
-    public final t0 q0;
+    public final s0 q0;
     public boolean r0;
     public int s0;
     public int t0;
-    public final kd u0;
+    public final jd u0;
 
-    public w2(Context context, PointF pointF, int i10, kd kdVar, float f7, int i11) {
+    public w2(Context context, PointF pointF, int i10, jd jdVar, float f7, int i11) {
         super(context, pointF);
-        t0 t0Var = new t0(context, f7);
-        this.q0 = t0Var;
-        t0Var.setMaxWidth(i11);
-        t0Var.e(0, this.s0);
-        this.u0 = kdVar;
-        String str = kdVar.c;
-        String a2 = kdVar.a();
-        t0Var.d(i10, str);
-        t0Var.setText(a2);
+        s0 s0Var = new s0(context, f7);
+        this.q0 = s0Var;
+        s0Var.setMaxWidth(i11);
+        s0Var.e(0, this.s0);
+        this.u0 = jdVar;
+        String str = jdVar.c;
+        String a2 = jdVar.a();
+        s0Var.d(i10, str);
+        s0Var.setText(a2);
         m();
-        addView(t0Var, y5.e(-2, -2, 51));
+        addView(s0Var, z5.e(-2, -2, 51));
         setClipChildren(false);
         setClipToPadding(false);
         k();
@@ -38,7 +38,7 @@ public final class w2 extends j {
 
     @Override // qg.j
     public final i a() {
-        return new q0(this, getContext());
+        return new p0(this, getContext());
     }
 
     public int getColor() {

@@ -1,11 +1,11 @@
 package i9;
 
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import v7.l8;
+import v7.k8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class d extends l8 {
+public final class d extends k8 {
     public final AtomicReferenceFieldUpdater a;
     public final AtomicReferenceFieldUpdater b;
     public final AtomicReferenceFieldUpdater c;
@@ -20,7 +20,7 @@ public final class d extends l8 {
         this.e = atomicReferenceFieldUpdater5;
     }
 
-    @Override // v7.l8
+    @Override // v7.k8
     public final boolean a(o oVar, c cVar, c cVar2) {
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
         do {
@@ -32,7 +32,7 @@ public final class d extends l8 {
         return false;
     }
 
-    @Override // v7.l8
+    @Override // v7.k8
     public final boolean b(o oVar, Object obj, Object obj2) {
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
         do {
@@ -44,7 +44,7 @@ public final class d extends l8 {
         return false;
     }
 
-    @Override // v7.l8
+    @Override // v7.k8
     public final boolean c(o oVar, n nVar, n nVar2) {
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
         do {
@@ -56,22 +56,22 @@ public final class d extends l8 {
         return false;
     }
 
-    @Override // v7.l8
+    @Override // v7.k8
     public final c d(o oVar) {
         return (c) this.d.getAndSet(oVar, c.d);
     }
 
-    @Override // v7.l8
+    @Override // v7.k8
     public final n e(o oVar) {
         return (n) this.c.getAndSet(oVar, n.c);
     }
 
-    @Override // v7.l8
+    @Override // v7.k8
     public final void f(n nVar, n nVar2) {
         this.b.lazySet(nVar, nVar2);
     }
 
-    @Override // v7.l8
+    @Override // v7.k8
     public final void g(n nVar, Thread thread) {
         this.a.lazySet(nVar, thread);
     }

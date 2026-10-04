@@ -1,9 +1,35 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public interface fj {
-    void h(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10);
+public final class fj extends c71 {
+    public final /* synthetic */ jj m3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fj(jj jjVar, Context context, int i10, d dVar, bj bjVar, bj bjVar2, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, i10, 0, false, dVar, bjVar, bjVar2, d6Var);
+        this.m3 = jjVar;
+    }
+
+    @Override // org.telegram.ui.Components.c71
+    public final void E1() {
+        jj jjVar = this.m3;
+        jjVar.b.U1(jjVar, 0);
+    }
+
+    @Override // org.telegram.ui.Components.zl0
+    public final boolean F0(float f7) {
+        xi xiVar = this.m3.b;
+        return f7 >= ((float) ((AndroidUtilities.dp(30.0f) + xiVar.b2[0]) + (!xiVar.g0 ? AndroidUtilities.statusBarHeight : 0)));
+    }
+
+    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        jj jjVar = this.m3;
+        jjVar.b.U1(jjVar, 0);
+    }
 }

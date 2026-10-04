@@ -1,10 +1,10 @@
 package la;
 
-import v7.k;
+import v7.j;
 import x7.e0;
 import z7.y;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i implements ia.g {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final class i implements ia.g {
                     throw new ia.b("Cannot encode a second value in the ValueEncoderContext");
                 }
                 this.b = true;
-                ((k) this.e).d(this.d, str, this.c);
+                ((j) this.e).d(this.d, str, this.c);
                 return this;
             case 2:
                 if (this.b) {
@@ -74,7 +74,7 @@ public final class i implements ia.g {
                     throw new ia.b("Cannot encode a second value in the ValueEncoderContext");
                 }
                 this.b = true;
-                ((k) this.e).h(this.d, z10 ? 1 : 0, this.c);
+                ((j) this.e).h(this.d, z10 ? 1 : 0, this.c);
                 return this;
             case 2:
                 if (this.b) {

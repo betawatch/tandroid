@@ -1,15 +1,15 @@
 package xh;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j1 b;
+    public final /* synthetic */ i1 b;
     public final /* synthetic */ boolean c;
 
-    public /* synthetic */ g1(j1 j1Var, boolean z10, int i10) {
+    public /* synthetic */ g1(i1 i1Var, boolean z10, int i10) {
         this.a = i10;
-        this.b = j1Var;
+        this.b = i1Var;
         this.c = z10;
     }
 
@@ -18,22 +18,22 @@ public final /* synthetic */ class g1 implements Runnable {
         switch (this.a) {
             case 0:
                 boolean z10 = this.c;
-                j1 j1Var = this.b;
+                i1 i1Var = this.b;
                 if (!z10) {
-                    j1Var.G.setVisibility(8);
+                    i1Var.G.setVisibility(8);
                     break;
                 } else {
-                    j1Var.getClass();
+                    i1Var.getClass();
                     break;
                 }
             default:
                 boolean z11 = this.c;
-                j1 j1Var2 = this.b;
+                i1 i1Var2 = this.b;
                 if (!z11) {
-                    j1Var2.v.setVisibility(8);
+                    i1Var2.v.setVisibility(8);
                     break;
                 } else {
-                    j1Var2.getClass();
+                    i1Var2.getClass();
                     break;
                 }
         }

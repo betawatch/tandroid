@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class j2 {
     public int a;
@@ -17,7 +17,7 @@ public final class j2 {
         if (richText == null) {
             return;
         }
-        j2Var.a = g6.l(richText).length() + j2Var.a;
+        j2Var.a = h6.l(richText).length() + j2Var.a;
         int c10 = c(richText) + i10;
         if (c10 > j2Var.c) {
             j2Var.c = c10;
@@ -108,7 +108,7 @@ public final class j2 {
                         i11 = 0;
                         for (int i20 = 0; i20 < pagetablerow.cells.size(); i20++) {
                             TL_iv.pageTableCell pagetablecell = pagetablerow.cells.get(i20);
-                            i11 += i6.n(pagetablecell);
+                            i11 += j6.n(pagetablecell);
                             a(pagetablecell.text, i10 + 1, j2Var);
                         }
                     } else {

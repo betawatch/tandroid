@@ -12,13 +12,13 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.e3;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import yh.t5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -30,9 +30,9 @@ public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ g0(int i10, ci.d dVar, TLObject tLObject, TL_stars.StarsSubscription starsSubscription, boolean z10, boolean z11, e3[] e3VarArr) {
+    public /* synthetic */ g0(int i10, ci.d dVar, TLObject tLObject, TL_stars.StarsSubscription starsSubscription, boolean z10, boolean z11, f3[] f3VarArr) {
         this.e = dVar;
-        this.f = e3VarArr;
+        this.f = f3VarArr;
         this.d = i10;
         this.b = z10;
         this.h = starsSubscription;
@@ -82,8 +82,8 @@ public final /* synthetic */ class g0 implements Runnable {
                                     f0 f0Var = new f0(s0Var, o0Var, file5, j3, true);
                                     s0Var = s0Var;
                                     executorService.execute(f0Var);
-                                } catch (Exception e) {
-                                    e = e;
+                                } catch (Exception e7) {
+                                    e = e7;
                                     s0Var = s0Var;
                                     s0Var.i.post(new c0(s0Var, e, 0));
                                     if (file != null) {
@@ -96,8 +96,8 @@ public final /* synthetic */ class g0 implements Runnable {
                                     }
                                     return;
                                 }
-                            } catch (Exception e7) {
-                                e = e7;
+                            } catch (Exception e10) {
+                                e = e10;
                             }
                         }
                         s0Var.R = null;
@@ -114,8 +114,8 @@ public final /* synthetic */ class g0 implements Runnable {
                         }
                         throw th;
                     }
-                } catch (Exception e10) {
-                    e = e10;
+                } catch (Exception e11) {
+                    e = e11;
                     file = file4;
                 } catch (Throwable th3) {
                     th = th3;
@@ -137,19 +137,19 @@ public final /* synthetic */ class g0 implements Runnable {
                 return;
             default:
                 ci.d dVar = (ci.d) this.e;
-                e3[] e3VarArr = (e3[]) this.f;
+                f3[] f3VarArr = (f3[]) this.f;
                 int i11 = this.d;
                 boolean z12 = this.b;
                 TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.h;
                 boolean z13 = this.c;
                 TLObject tLObject = (TLObject) this.n;
                 dVar.setLoading(false);
-                e3 e3Var = e3VarArr[0];
-                if (e3Var != null) {
-                    e3Var.dismiss();
+                f3 f3Var = f3VarArr[0];
+                if (f3Var != null) {
+                    f3Var.dismiss();
                 }
                 t5.y(i11, false).S();
-                m2 U = LaunchActivity.U();
+                n2 U = LaunchActivity.U();
                 if (U != null) {
                     yc.a0(U).V(Collections.singletonList(tLObject), LocaleController.getString(R.string.StarsSubscriptionCancelledToast), AndroidUtilities.replaceTags((!z12 || TextUtils.isEmpty(starsSubscription.title)) ? (!z13 || TextUtils.isEmpty(starsSubscription.title)) ? LocaleController.formatString(R.string.StarsSubscriptionCancelledToastText, LocaleController.formatDateChat(starsSubscription.until_date)) : LocaleController.formatString(R.string.StarsSubscriptionCancelledBotToastText, LocaleController.formatDateChat(starsSubscription.until_date), starsSubscription.title) : LocaleController.formatString(R.string.StarsSubscriptionCancelledBizToastText, LocaleController.formatDateChat(starsSubscription.until_date), starsSubscription.title)), null).k(false);
                     return;

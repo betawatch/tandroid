@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class j0 extends nf.e {
     public final /* synthetic */ int d = 0;
@@ -12,10 +12,10 @@ public final class j0 extends nf.e {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
 
-    public j0(i4 i4Var, b3 b3Var, org.telegram.ui.Components.q90 q90Var) {
+    public j0(i4 i4Var, b3 b3Var, org.telegram.ui.Components.r90 r90Var) {
         this.e = i4Var;
         this.f = b3Var;
-        this.g = q90Var;
+        this.g = r90Var;
     }
 
     @Override // nf.e
@@ -41,7 +41,7 @@ public final class j0 extends nf.e {
         switch (this.d) {
             case 1:
                 if (!z10) {
-                    AndroidUtilities.runOnUIThread(new xj(((in) this.g).a, 9), 250L);
+                    AndroidUtilities.runOnUIThread(new dn(((kn) this.g).a, 6), 250L);
                     break;
                 }
                 break;
@@ -55,18 +55,18 @@ public final class j0 extends nf.e {
     public final void d() {
         switch (this.d) {
             case 0:
-                org.telegram.ui.Components.q90 q90Var = (org.telegram.ui.Components.q90) this.g;
+                org.telegram.ui.Components.r90 r90Var = (org.telegram.ui.Components.r90) this.g;
                 i4 i4Var = (i4) this.e;
-                org.telegram.ui.Components.m90 m90Var = i4Var.c;
+                org.telegram.ui.Components.n90 n90Var = i4Var.c;
                 b3 b3Var = (b3) this.f;
                 i4Var.s = b3Var != null ? b3Var.b : null;
-                m90Var.l(i4Var.v, true);
+                n90Var.l(i4Var.v, true);
                 if (b3Var != null) {
-                    i4Var.v = org.telegram.ui.Components.m90.i(b3Var.d, q90Var.i, 0.0f);
-                    int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Ld, false);
-                    i4Var.v.f(org.telegram.ui.ActionBar.h6.l1(0.8f, w02), org.telegram.ui.ActionBar.h6.l1(1.3f, w02), org.telegram.ui.ActionBar.h6.l1(1.0f, w02), org.telegram.ui.ActionBar.h6.l1(4.0f, w02));
+                    i4Var.v = org.telegram.ui.Components.n90.i(b3Var.d, r90Var.i, 0.0f);
+                    int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Ld, false);
+                    i4Var.v.f(org.telegram.ui.ActionBar.i6.l1(0.8f, w02), org.telegram.ui.ActionBar.i6.l1(1.3f, w02), org.telegram.ui.ActionBar.i6.l1(1.0f, w02), org.telegram.ui.ActionBar.i6.l1(4.0f, w02));
                     i4Var.v.w.setStrokeWidth(AndroidUtilities.dpf2(1.25f));
-                    m90Var.b(i4Var.v, b3Var);
+                    n90Var.b(i4Var.v, b3Var);
                 }
                 View view = i4Var.s;
                 if (view != null) {
@@ -75,18 +75,18 @@ public final class j0 extends nf.e {
                 super.d();
                 break;
             default:
-                in inVar = (in) this.g;
-                inVar.a.vb = ((MessageObject) this.e).getId();
-                wn wnVar = inVar.a;
-                wnVar.wb = 0;
-                wnVar.xb = null;
+                kn knVar = (kn) this.g;
+                knVar.a.tb = ((MessageObject) this.e).getId();
+                yn ynVar = knVar.a;
+                ynVar.ub = 0;
+                ynVar.vb = null;
                 ((org.telegram.ui.Cells.u1) this.f).invalidate();
                 break;
         }
     }
 
-    public j0(in inVar, MessageObject messageObject, org.telegram.ui.Cells.u1 u1Var) {
-        this.g = inVar;
+    public j0(kn knVar, MessageObject messageObject, org.telegram.ui.Cells.u1 u1Var) {
+        this.g = knVar;
         this.e = messageObject;
         this.f = u1Var;
     }

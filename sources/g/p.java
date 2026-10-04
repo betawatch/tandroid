@@ -5,7 +5,7 @@ import android.content.IntentFilter;
 import android.util.SparseIntArray;
 import android.view.MenuItem;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class p {
     public Object a;
@@ -42,9 +42,9 @@ public abstract class p {
         if (menuItem2 != null) {
             return menuItem2;
         }
-        l.s sVar = new l.s((Context) this.a, aVar);
-        ((a0.m) this.b).put(aVar, sVar);
-        return sVar;
+        l.r rVar = new l.r((Context) this.a, aVar);
+        ((a0.m) this.b).put(aVar, rVar);
+        return rVar;
     }
 
     public int g(int i10, int i11) {

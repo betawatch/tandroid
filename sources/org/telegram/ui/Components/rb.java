@@ -1,13 +1,42 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public interface rb {
-    void a(qc qcVar);
+public final class rb extends o1.i {
+    public final /* synthetic */ int a;
 
-    void b();
+    public /* synthetic */ rb(int i10) {
+        this.a = i10;
+    }
 
-    void c();
+    @Override // o1.i
+    public final float a(Object obj) {
+        switch (this.a) {
+            case 0:
+                return ((vb) obj).inOutOffset;
+            case 1:
+                return ((org.telegram.ui.eh0) obj).N;
+            default:
+                return ((org.telegram.ui.eh0) obj).M;
+        }
+    }
 
-    void d();
+    @Override // o1.i
+    public final void b(Object obj, float f7) {
+        switch (this.a) {
+            case 0:
+                ((vb) obj).setInOutOffset(f7);
+                break;
+            case 1:
+                org.telegram.ui.eh0 eh0Var = (org.telegram.ui.eh0) obj;
+                eh0Var.N = f7;
+                eh0Var.invalidate();
+                break;
+            default:
+                org.telegram.ui.eh0 eh0Var2 = (org.telegram.ui.eh0) obj;
+                eh0Var2.M = f7;
+                eh0Var2.invalidate();
+                break;
+        }
+    }
 }

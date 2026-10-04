@@ -1,49 +1,30 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class p10 implements org.telegram.ui.Cells.m7 {
-    public final /* synthetic */ q10 a;
+public final class p10 {
+    public long a;
+    public int b;
 
-    public p10(q10 q10Var) {
-        this.a = q10Var;
+    public p10(int i10, long j3) {
+        this.a = j3;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Cells.m7
-    public final void a(String str, boolean z10) {
-        t10 t10Var = this.a.v;
-        if (!z10) {
-            SpannableStringBuilder[] spannableStringBuilderArr = t10.s0;
-            t10Var.g(str);
-            return;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(1, (Context) t10Var.K, (org.telegram.ui.ActionBar.d6) null, false);
-        e3Var.fixNavigationBar();
-        e3Var.title = str;
-        e3Var.bigTitle = false;
-        CharSequence[] charSequenceArr = {LocaleController.getString(R.string.Open), LocaleController.getString(R.string.Copy)};
-        lg.j jVar = new lg.j(7, this, str);
-        e3Var.items = charSequenceArr;
-        e3Var.onClickListener = jVar;
-        t10Var.L.showDialog(e3Var);
+        if (obj != null && p10.class == obj.getClass()) {
+            p10 p10Var = (p10) obj;
+            if (this.a == p10Var.a && this.b == p10Var.b) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // org.telegram.ui.Cells.m7
-    public final void b(TLRPC.WebPage webPage, MessageObject messageObject) {
-        t10 t10Var = this.a.v;
-        SpannableStringBuilder[] spannableStringBuilderArr = t10.s0;
-        org.telegram.ui.Components.xu.J(t10Var.L, messageObject, t10Var.g0, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
-    }
-
-    @Override // org.telegram.ui.Cells.m7
-    public final boolean e() {
-        return !this.a.v.o0.g();
+    public final int hashCode() {
+        return this.b;
     }
 }

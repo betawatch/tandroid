@@ -1,38 +1,71 @@
 package hg;
 
-import android.content.DialogInterface;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.h5;
+import org.telegram.ui.Components.o6;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class s extends EditTextBoldCursor {
+    public final h5 b;
+    public int c;
+    public final o6 d;
+    public final /* synthetic */ d6 e;
 
-    public /* synthetic */ s(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s(Context context, d6 d6Var) {
+        super(context);
+        this.e = d6Var;
+        this.b = new h5(this);
+        o6 o6Var = new o6(false, true, true, false);
+        this.d = o6Var;
+        o6Var.k(0.2f, 160L, tr.h);
+        o6Var.t(AndroidUtilities.dp(15.33f));
+        o6Var.setCallback(this);
+        o6Var.b = 5;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                x.d = null;
-                View view = this.b;
-                if (view != null) {
-                    view.requestFocus();
-                    break;
-                }
-                break;
-            default:
-                z1.h = null;
-                View view2 = this.b;
-                if (view2 != null) {
-                    view2.requestFocus();
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a2 = this.b.a(i6.v0(this.c < 0 ? i6.p7 : i6.P5, this.e), false);
+        o6 o6Var = this.d;
+        o6Var.r(a2);
+        o6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        o6Var.draw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.gu, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        o6 o6Var = this.d;
+        if (o6Var != null) {
+            this.c = 32 - charSequence.length();
+            o6Var.b();
+            String str = "";
+            if (this.c <= 4) {
+                str = "" + this.c;
+            }
+            o6Var.q(str, true, true);
         }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.d || super.verifyDrawable(drawable);
     }
 }

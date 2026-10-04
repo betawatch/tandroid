@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,8 +28,8 @@ public final /* synthetic */ class z1 implements Runnable {
                 try {
                     MessagesStorage.getInstance(c2Var.m).getDatabase().executeFast("DELETE FROM hashtag_recent_v2 WHERE 1").stepThis().dispose();
                     break;
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                     return;
                 }
             default:
@@ -49,8 +49,8 @@ public final /* synthetic */ class z1 implements Runnable {
                     Collections.sort(arrayList, new a4.e(14));
                     AndroidUtilities.runOnUIThread(new t(c2Var2, arrayList, hashMap, 3));
                     break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                 }
         }
     }

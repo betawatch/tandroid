@@ -1,23 +1,33 @@
 package v7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.jm0;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class o8 {
-    public static id.f a(id.f fVar, id.g key) {
-        kotlin.jvm.internal.i.e(key, "key");
-        if (kotlin.jvm.internal.i.a(fVar.getKey(), key)) {
-            return fVar;
+    public static void a(jm0 jm0Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        jm0Var.q(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Oh, d6Var), d6Var != null ? d6Var.a() : org.telegram.ui.ActionBar.i6.I.q());
+    }
+
+    public static int b(ii.a aVar) {
+        if (aVar == null) {
+            return 0;
         }
-        return null;
+        return c(aVar) + (Math.max(0, aVar.c) > 0 ? AndroidUtilities.dp(hg.k0.f(r4, 1, 24, 28)) : 0);
     }
 
-    public static id.h b(id.f fVar, id.g key) {
-        kotlin.jvm.internal.i.e(key, "key");
-        return kotlin.jvm.internal.i.a(fVar.getKey(), key) ? id.i.a : fVar;
+    public static int c(ii.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return AndroidUtilities.dp(hg.k0.f(r3, 1, 16, 12));
     }
 
-    public static id.h c(id.f fVar, id.h context) {
-        kotlin.jvm.internal.i.e(context, "context");
-        return context == id.i.a ? fVar : (id.h) context.fold(fVar, new b1.e(5));
+    public static int d(ii.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return AndroidUtilities.dp(hg.k0.f(r3, 1, 16, 8));
     }
 }

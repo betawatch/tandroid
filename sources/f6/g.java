@@ -25,9 +25,9 @@ import n4.y;
 import n6.l;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import v7.x6;
+import v7.w6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class g {
     public static final g6.b u = new g6.b("MediaNotificationProxy", null);
@@ -268,12 +268,12 @@ public final class g {
             if (component != null) {
                 int size = arrayList.size();
                 try {
-                    for (Intent a10 = x6.a(context, component); a10 != null; a10 = x6.a(context, a10.getComponent())) {
+                    for (Intent a10 = w6.a(context, component); a10 != null; a10 = w6.a(context, a10.getComponent())) {
                         arrayList.add(size, a10);
                     }
-                } catch (PackageManager.NameNotFoundException e) {
+                } catch (PackageManager.NameNotFoundException e7) {
                     Log.e("TaskStackBuilder", "Bad ComponentName while traversing activity parent metadata");
-                    throw new IllegalArgumentException(e);
+                    throw new IllegalArgumentException(e7);
                 }
             }
             arrayList.add(intent);

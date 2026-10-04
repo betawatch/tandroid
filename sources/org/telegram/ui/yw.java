@@ -1,50 +1,32 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class yw extends org.telegram.ui.Components.r6 {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ qy c;
+public final class yw extends org.telegram.ui.Components.vi0 {
+    public final /* synthetic */ int f0 = 0;
+    public final /* synthetic */ Object g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yw(qy qyVar, int i10) {
-        super("animationValue", 0);
-        this.b = i10;
-        switch (i10) {
-            case 1:
-                this.c = qyVar;
-                super("viewPagerTranslation", 0);
-                break;
+    public yw(yf1 yf1Var, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
+        super(spannableStringBuilder, spannableStringBuilder2);
+        this.g0 = yf1Var;
+    }
+
+    @Override // org.telegram.ui.Components.vi0
+    public final float d() {
+        switch (this.f0) {
+            case 0:
+                return ((ty) this.g0).a.getViewOffset();
             default:
-                this.c = qyVar;
-                break;
+                return ((yf1) this.g0).N.m3;
         }
     }
 
-    @Override // org.telegram.ui.Components.r6
-    public final void b(Object obj, float f7) {
-        switch (this.b) {
-            case 0:
-                ((qy) obj).C4(f7);
-                break;
-            default:
-                qy qyVar = this.c;
-                qyVar.I0 = f7;
-                ((View) obj).setTranslationY(qyVar.J0 + f7);
-                qyVar.F3();
-                break;
-        }
-    }
-
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
-            case 0:
-                return Float.valueOf(this.c.N);
-            default:
-                return Float.valueOf(this.c.I0);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yw(String str, String str2, ty tyVar) {
+        super(str, str2);
+        this.g0 = tyVar;
     }
 }

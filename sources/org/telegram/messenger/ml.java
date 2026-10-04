@@ -7,7 +7,7 @@ import org.telegram.messenger.TranslateController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ml implements Runnable {
     public final /* synthetic */ int a;
@@ -40,10 +40,10 @@ public final /* synthetic */ class ml implements Runnable {
                 ((MediaDataController) this.b).lambda$loadHints$144((ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (ArrayList) this.n);
                 break;
             case 2:
-                ((MessagesController) this.b).lambda$convertToGigaGroup$269((MessagesStorage.BooleanCallback) this.c, (Context) this.d, (org.telegram.ui.ActionBar.a2) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.m2) this.h, (TLRPC.TL_channels_convertToGigagroup) this.n);
+                ((MessagesController) this.b).lambda$convertToGigaGroup$269((MessagesStorage.BooleanCallback) this.c, (Context) this.d, (org.telegram.ui.ActionBar.b2) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.n2) this.h, (TLRPC.TL_channels_convertToGigagroup) this.n);
                 break;
             case 3:
-                ((MessagesController) this.b).lambda$convertToMegaGroup$264((MessagesStorage.LongCallback) this.c, (Context) this.d, (org.telegram.ui.ActionBar.a2) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.m2) this.h, (TLRPC.TL_messages_migrateChat) this.n);
+                ((MessagesController) this.b).lambda$convertToMegaGroup$264((MessagesStorage.LongCallback) this.c, (Context) this.d, (org.telegram.ui.ActionBar.b2) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.n2) this.h, (TLRPC.TL_messages_migrateChat) this.n);
                 break;
             default:
                 ((SecretChatHelper) this.b).lambda$performSendEncryptedRequest$8((TLRPC.EncryptedChat) this.c, (TLRPC.DecryptedMessage) this.e, (TLRPC.Message) this.f, (TLRPC.InputEncryptedFile) this.h, (MessageObject) this.n, (String) this.d);

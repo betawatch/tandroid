@@ -3,7 +3,7 @@ package m4;
 import android.os.Bundle;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class r {
     public final n4.a0 a;
@@ -42,6 +42,6 @@ public final class r {
         n4.a0 a0Var = this.a;
         sb2.append(a0Var.a.a);
         sb2.append(", uid=");
-        return a4.a.o(a0Var.a.c, "}", sb2);
+        return a4.a.n(a0Var.a.c, "}", sb2);
     }
 }

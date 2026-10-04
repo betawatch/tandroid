@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.os.RemoteException;
 import android.text.TextUtils;
+import hg.k0;
 import java.lang.ref.WeakReference;
 import java.net.IDN;
 import java.net.URLEncoder;
@@ -39,20 +40,19 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.l3;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.m3;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.ActionBar.n3;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.dz;
+import org.telegram.ui.hz;
 import org.telegram.ui.i4;
-import org.telegram.ui.web.y0;
 import org.telegram.ui.z2;
 import t7.u;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class f {
     public static z0 a;
@@ -224,8 +224,8 @@ public abstract class f {
     }
 
     public static boolean e() {
-        dz sheetFragment;
-        m2 U = LaunchActivity.U();
+        hz sheetFragment;
+        n2 U = LaunchActivity.U();
         if (U == null || !(U.getParentLayout() instanceof ActionBarLayout) || (sheetFragment = ((ActionBarLayout) U.getParentLayout()).getSheetFragment()) == null || sheetFragment.getArticleViewer() == null) {
             return (U == null || U.getArticleViewer() == null) ? false : true;
         }
@@ -452,27 +452,27 @@ public abstract class f {
     }
 
     public static void n(String str) {
-        m3 P;
-        l3 l3Var;
+        n3 P;
+        m3 m3Var;
         org.telegram.ui.m3[] m3VarArr;
-        org.telegram.ui.m3 m3Var;
+        org.telegram.ui.m3 m3Var2;
         LaunchActivity launchActivity = LaunchActivity.G1;
         if (launchActivity != null && (P = launchActivity.P()) != null) {
             if (!TextUtils.isEmpty(str)) {
-                ArrayList<l3> tabs = P.getTabs();
+                ArrayList<m3> tabs = P.getTabs();
                 for (int i10 = 0; i10 < tabs.size(); i10++) {
-                    l3Var = tabs.get(i10);
-                    i4 i4Var = l3Var.J;
+                    m3Var = tabs.get(i10);
+                    i4 i4Var = m3Var.J;
                     if (i4Var != null && !i4Var.d0.isEmpty()) {
-                        Object g10 = hg.c.g(1, l3Var.J.d0);
+                        Object g10 = k0.g(1, m3Var.J.d0);
                         if (g10 instanceof z2) {
-                            y0 y0Var = ((z2) g10).b;
-                            if (y0Var == null && (m3VarArr = l3Var.J.u0) != null && (m3Var = m3VarArr[0]) != null) {
-                                y0Var = m3Var.getWebView();
+                            org.telegram.ui.web.z0 z0Var = ((z2) g10).b;
+                            if (z0Var == null && (m3VarArr = m3Var.J.u0) != null && (m3Var2 = m3VarArr[0]) != null) {
+                                z0Var = m3Var2.getWebView();
                             }
-                            if (y0Var != null) {
-                                if (TextUtils.equals(m3.p(y0Var.canGoBack() ? y0Var.getUrl() : y0Var.getOpenURL()), m3.p(str))) {
-                                    P.e(l3Var);
+                            if (z0Var != null) {
+                                if (TextUtils.equals(n3.p(z0Var.canGoBack() ? z0Var.getUrl() : z0Var.getOpenURL()), n3.p(str))) {
+                                    P.e(m3Var);
                                     break;
                                 }
                             } else {
@@ -484,12 +484,12 @@ public abstract class f {
                     }
                 }
             }
-            l3Var = null;
-            if (l3Var != null) {
+            m3Var = null;
+            if (m3Var != null) {
                 return;
             }
         }
-        m2 U = LaunchActivity.U();
+        n2 U = LaunchActivity.U();
         if (U != null && U.getArticleViewer() != null) {
             U.getArticleViewer().N(null, null, null, str);
             return;
@@ -507,11 +507,11 @@ public abstract class f {
         if (activity == null || str == null) {
             return;
         }
-        p(activity, Uri.parse(str), z10, true);
+        r(activity, Uri.parse(str), z10, true, false, null, null, false, true, false);
     }
 
-    public static void p(Context context, Uri uri, boolean z10, boolean z11) {
-        r(context, uri, z10, z11, false, null, null, false, true, false);
+    public static void p(Context context, Uri uri) {
+        r(context, uri, true, true, false, null, null, false, true, false);
     }
 
     public static void q(Context context, Uri uri, boolean z10, boolean z11, e eVar) {
@@ -772,7 +772,7 @@ public abstract class f {
                                 bundle2.putString("android.support.customtabs.customaction.MENU_ITEM_TITLE", string);
                                 bundle2.putParcelable("android.support.customtabs.customaction.PENDING_INTENT", broadcast);
                                 arrayList.add(bundle2);
-                                intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", h6.w0(null, h6.S8, false));
+                                intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", i6.w0(null, i6.S8, false));
                                 intent3.putExtra("android.support.customtabs.extra.TITLE_VISIBILITY", 1);
                                 Bitmap decodeResource = BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout);
                                 String string2 = LocaleController.getString(R.string.ShareFile);
@@ -852,22 +852,22 @@ public abstract class f {
                         if (!z19) {
                         }
                     }
-                    a2[] a2VarArr = new a2[1];
-                    a2VarArr[c10] = new a2(context, 3, null);
+                    b2[] b2VarArr = new b2[1];
+                    b2VarArr[c10] = new b2(context, 3, null);
                     TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                     getwebpagepreview.message = uri.toString();
                     eVar2 = eVar;
                     str4 = str3;
                     z18 = z16;
                     try {
-                        int sendRequest = ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(getwebpagepreview, new a(eVar2, a2VarArr, i11, uri, context, z18));
+                        int sendRequest = ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(getwebpagepreview, new a(eVar2, b2VarArr, i11, uri, context, z18));
                         if (eVar2 != null) {
                             eVar2.d();
                             return;
                         } else {
                             i10 = i11;
                             try {
-                                AndroidUtilities.runOnUIThread(new o8(a2VarArr, sendRequest, i12), 1000L);
+                                AndroidUtilities.runOnUIThread(new o8(b2VarArr, sendRequest, i12), 1000L);
                                 return;
                             } catch (Exception unused3) {
                             }
@@ -947,11 +947,11 @@ public abstract class f {
         if (str == null) {
             return;
         }
-        p(context, Uri.parse(str), true, true);
+        r(context, Uri.parse(str), true, true, false, null, null, false, true, false);
     }
 
     public static void t(LaunchActivity launchActivity, Uri uri) {
-        p(launchActivity, uri, true, true);
+        p(launchActivity, uri);
     }
 
     public static void u(Context context, String str) {

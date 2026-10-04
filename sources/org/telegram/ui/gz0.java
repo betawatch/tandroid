@@ -1,22 +1,47 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class gz0 extends org.telegram.ui.Components.bi0 {
-    public final /* synthetic */ ProfileActivity s1;
+public final class gz0 implements jq {
+    public final /* synthetic */ TLRPC.Chat a;
+    public final /* synthetic */ mq b;
+    public final /* synthetic */ ProfileActivity c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gz0(ProfileActivity profileActivity, Context context, long j3, org.telegram.ui.ActionBar.k kVar, wy0 wy0Var, fz0 fz0Var, org.telegram.ui.Components.wh0 wh0Var, org.telegram.ui.Components.sh0 sh0Var) {
-        super(context, j3, kVar, wy0Var, fz0Var, wh0Var, sh0Var);
-        this.s1 = profileActivity;
+    public gz0(ProfileActivity profileActivity, TLRPC.Chat chat, mq mqVar) {
+        this.c = profileActivity;
+        this.a = chat;
+        this.b = mqVar;
     }
 
-    @Override // org.telegram.ui.Components.bi0
-    public final void setCustomAvatarProgress(float f7) {
-        ProfileActivity profileActivity = this.s1;
-        profileActivity.n5 = f7;
-        profileActivity.B3();
+    @Override // org.telegram.ui.jq
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.c;
+        profileActivity.M.m(-profileActivity.f1, user, profileActivity.E2.megagroup ? 10 : 9);
+    }
+
+    @Override // org.telegram.ui.jq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = this.c;
+        profileActivity.removeSelfFromStack();
+        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.e1));
+        if (user == null || (chat = this.a) == null || profileActivity.e1 == 0) {
+            return;
+        }
+        mq mqVar = this.b;
+        if (!mqVar.Q || mqVar.getParentLayout() == null) {
+            return;
+        }
+        for (org.telegram.ui.ActionBar.n2 n2Var : mqVar.getParentLayout().getFragmentStack()) {
+            if (n2Var instanceof wb) {
+                wb wbVar = (wb) n2Var;
+                wbVar.V0();
+                AndroidUtilities.runOnUIThread(new nf0(wbVar, user, chat, 25));
+                return;
+            }
+        }
     }
 }

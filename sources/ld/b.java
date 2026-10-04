@@ -4,7 +4,7 @@ import hd.c;
 import java.io.Serializable;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b extends c implements a, Serializable {
     public final Enum[] a;
@@ -31,7 +31,7 @@ public final class b extends c implements a, Serializable {
         Enum[] enumArr = this.a;
         int length = enumArr.length;
         if (i10 < 0 || i10 >= length) {
-            throw new IndexOutOfBoundsException(a4.a.m(i10, length, "index: ", ", size: "));
+            throw new IndexOutOfBoundsException(a4.a.l(i10, length, "index: ", ", size: "));
         }
         return enumArr[i10];
     }

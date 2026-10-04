@@ -1,115 +1,63 @@
 package hg;
 
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.ok;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.yc;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.h5;
+import org.telegram.ui.Components.o6;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b1 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f1 b;
+public final class b1 extends EditTextBoldCursor {
+    public final h5 b;
+    public int c;
+    public final o6 d;
+    public final /* synthetic */ e1 e;
 
-    public /* synthetic */ b1(f1 f1Var, int i10) {
-        this.a = i10;
-        this.b = f1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b1(e1 e1Var, Activity activity) {
+        super(activity);
+        this.e = e1Var;
+        this.b = new h5(this);
+        o6 o6Var = new o6(false, true, true, false);
+        this.d = o6Var;
+        o6Var.k(0.2f, 160L, tr.h);
+        o6Var.t(AndroidUtilities.dp(15.33f));
+        o6Var.setCallback(this);
+        o6Var.b = 5;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 1;
-                final f1 f1Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: hg.z0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                f1 f1Var2 = f1Var;
-                                f1Var2.b.a(0.0f);
-                                TLRPC.TL_error tL_error2 = tL_error;
-                                if (tL_error2 == null) {
-                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
-                                        f1Var2.finishFragment();
-                                        break;
-                                    } else {
-                                        ok.p(R.string.UnknownError, yc.a0(f1Var2), null);
-                                        break;
-                                    }
-                                } else {
-                                    yc.b0(tL_error2);
-                                    break;
-                                }
-                            default:
-                                f1 f1Var3 = f1Var;
-                                TLRPC.TL_error tL_error3 = tL_error;
-                                if (tL_error3 == null) {
-                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
-                                        f1Var3.finishFragment();
-                                        break;
-                                    } else {
-                                        f1Var3.b.a(0.0f);
-                                        ok.p(R.string.UnknownError, yc.a0(f1Var3), null);
-                                        break;
-                                    }
-                                } else {
-                                    f1Var3.b.a(0.0f);
-                                    yc.b0(tL_error3);
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i11 = 0;
-                final f1 f1Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: hg.z0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                f1 f1Var22 = f1Var2;
-                                f1Var22.b.a(0.0f);
-                                TLRPC.TL_error tL_error2 = tL_error;
-                                if (tL_error2 == null) {
-                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
-                                        f1Var22.finishFragment();
-                                        break;
-                                    } else {
-                                        ok.p(R.string.UnknownError, yc.a0(f1Var22), null);
-                                        break;
-                                    }
-                                } else {
-                                    yc.b0(tL_error2);
-                                    break;
-                                }
-                            default:
-                                f1 f1Var3 = f1Var2;
-                                TLRPC.TL_error tL_error3 = tL_error;
-                                if (tL_error3 == null) {
-                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
-                                        f1Var3.finishFragment();
-                                        break;
-                                    } else {
-                                        f1Var3.b.a(0.0f);
-                                        ok.p(R.string.UnknownError, yc.a0(f1Var3), null);
-                                        break;
-                                    }
-                                } else {
-                                    f1Var3.b.a(0.0f);
-                                    yc.b0(tL_error3);
-                                    break;
-                                }
-                        }
-                    }
-                });
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a2 = this.b.a(i6.v0(this.c < 0 ? i6.p7 : i6.P5, this.e.getResourceProvider()), false);
+        o6 o6Var = this.d;
+        o6Var.r(a2);
+        o6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        o6Var.draw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.gu, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        o6 o6Var = this.d;
+        if (o6Var != null) {
+            this.c = 96 - charSequence.length();
+            o6Var.b();
+            String str = "";
+            if (this.c <= 12) {
+                str = "" + this.c;
+            }
+            o6Var.q(str, true, true);
         }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.d || super.verifyDrawable(drawable);
     }
 }

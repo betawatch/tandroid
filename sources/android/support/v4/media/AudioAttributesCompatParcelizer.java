@@ -2,7 +2,7 @@ package android.support.v4.media;
 
 import androidx.media.AudioAttributesCompat;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class AudioAttributesCompatParcelizer extends androidx.media.AudioAttributesCompatParcelizer {
     public static AudioAttributesCompat read(y4.b bVar) {

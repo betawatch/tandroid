@@ -21,9 +21,11 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import androidx.car.app.j;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.lifecycle.j0;
 import androidx.lifecycle.n0;
+import androidx.lifecycle.o;
 import androidx.lifecycle.p0;
 import androidx.lifecycle.q0;
 import androidx.lifecycle.s0;
@@ -38,10 +40,10 @@ import c6.i;
 import cf.c;
 import ci.a7;
 import ci.b7;
-import ci.ha;
+import ci.ga;
+import ci.j8;
 import ci.k8;
-import ci.l8;
-import ci.y8;
+import ci.x8;
 import ci.z6;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.common.api.internal.s;
@@ -52,8 +54,6 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.m;
-import com.google.firebase.messaging.t;
-import e0.n;
 import e2.b0;
 import e2.d0;
 import e2.v;
@@ -91,24 +91,25 @@ import java.util.concurrent.atomic.AtomicLong;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import javax.net.ssl.HttpsURLConnection;
+import k2.k0;
 import k6.h;
-import m.p;
+import l5.t;
 import m.p3;
 import n6.l;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.tz;
-import org.telegram.ui.Components.u71;
-import org.telegram.ui.Components.xz;
-import v7.j;
-import v7.o;
+import org.telegram.ui.Components.a81;
+import org.telegram.ui.Components.d81;
+import org.telegram.ui.Components.t71;
+import org.telegram.ui.Components.uz;
+import org.telegram.ui.Components.yz;
+import v7.n;
+import v7.p;
 import z3.d;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
+public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
     public static a e;
     public final /* synthetic */ int a;
     public Object b;
@@ -119,7 +120,7 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         this.a = i10;
     }
 
-    public static final URL c(a aVar) {
+    public static final URL d(a aVar) {
         Uri.Builder appendPath = new Uri.Builder().scheme("https").authority((String) aVar.b).appendPath("spi").appendPath("v2").appendPath("platforms").appendPath("android").appendPath("gmp");
         za.b bVar = (za.b) aVar.c;
         Uri.Builder appendPath2 = appendPath.appendPath(bVar.a).appendPath("settings");
@@ -127,7 +128,7 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         return new URL(appendPath2.appendQueryParameter("build_version", aVar2.c).appendQueryParameter("display_version", aVar2.b).build().toString());
     }
 
-    public static String i(String str, HashMap hashMap) {
+    public static String h(String str, HashMap hashMap) {
         StringBuilder sb2 = new StringBuilder();
         Iterator it = hashMap.entrySet().iterator();
         Map.Entry entry = (Map.Entry) it.next();
@@ -146,12 +147,17 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
             return str;
         }
         if (!str.contains("?")) {
-            return a4.a.D(str, "?", sb3);
+            return a4.a.C(str, "?", sb3);
         }
         if (!str.endsWith("&")) {
             sb3 = "&".concat(sb3);
         }
-        return j.t(str, sb3);
+        return t8.b.v(str, sb3);
+    }
+
+    @Override // z3.d
+    public int G() {
+        return ((long[]) this.d).length;
     }
 
     @Override // j4.a0
@@ -220,7 +226,7 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
     }
 
     @Override // z3.d
-    public int d(long j3) {
+    public int c(long j3) {
         long[] jArr = (long[]) this.d;
         int a2 = d0.a(jArr, j3, false);
         if (a2 < jArr.length) {
@@ -263,24 +269,24 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
             Log.e("BiometricManager", "Failure in canAuthenticate(). BiometricManager was null.");
             return 1;
         }
-        if (!o.b(i10)) {
+        if (!n.b(i10)) {
             return -2;
         }
         if (i10 != 0) {
             Context context = hVar.a;
-            if (v7.s.a(context) != null) {
+            if (v7.r.a(context) != null) {
                 int i13 = 0;
-                if (o.a(i10)) {
-                    return v7.s.b(context) ? 0 : 11;
+                if (n.a(i10)) {
+                    return v7.r.b(context) ? 0 : 11;
                 }
                 if (i11 != 29) {
                     if (i11 != 28) {
-                        return h();
+                        return g();
                     }
                     if (i11 < 23 || context == null || context.getPackageManager() == null || !androidx.biometric.h0.a(context.getPackageManager())) {
                         return 12;
                     }
-                    return !v7.s.b(hVar.a) ? h() : h() == 0 ? 0 : -1;
+                    return !v7.r.b(hVar.a) ? g() : g() == 0 ? 0 : -1;
                 }
                 if ((i10 & 255) == 255) {
                     BiometricManager biometricManager3 = (BiometricManager) this.c;
@@ -291,7 +297,7 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
                     return 1;
                 }
                 Method c10 = androidx.biometric.q.c();
-                if (c10 != null && (b10 = v7.q.b(v7.q.a())) != null) {
+                if (c10 != null && (b10 = p.b(p.a())) != null) {
                     try {
                         Object invoke = c10.invoke((BiometricManager) this.c, b10);
                         if (invoke instanceof Integer) {
@@ -352,9 +358,9 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
                 if (i12 == 0) {
                     return i12;
                 }
-                if (!v7.s.b(hVar.a)) {
-                    i13 = h();
-                } else if (h() != 0) {
+                if (!v7.r.b(hVar.a)) {
+                    i13 = g();
+                } else if (g() != 0) {
                     i13 = -1;
                 }
                 return i13;
@@ -363,29 +369,15 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         return 12;
     }
 
-    @Override // z3.d
-    public long g(int i10) {
-        long[] jArr = (long[]) this.d;
-        e2.d.b(i10 >= 0);
-        e2.d.b(i10 < jArr.length);
-        return jArr[i10];
-    }
-
-    @Override // fd.a
-    public Object get() {
-        int i10 = 23;
-        return new l5.s(new rb.a(i10), new qb.b(i10), (q5.b) ((c) this.b).get(), (da.b) ((p3) this.c).get(), (t) ((oi.f) this.d).get());
-    }
-
-    public int h() {
+    public int g() {
         FingerprintManager g10;
         FingerprintManager g11;
-        h hVar = (h) this.d;
-        if (hVar == null) {
+        k0.b bVar = (k0.b) this.d;
+        if (bVar == null) {
             Log.e("BiometricManager", "Failure in canAuthenticate(). FingerprintManager was null.");
             return 1;
         }
-        Context context = hVar.a;
+        Context context = bVar.a;
         int i10 = Build.VERSION.SDK_INT;
         if (i10 < 23 || (g10 = e0.b.g(context)) == null || !e0.b.q(g10)) {
             return 12;
@@ -393,23 +385,29 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         return (i10 < 23 || (g11 = e0.b.g(context)) == null || !e0.b.m(g11)) ? 11 : 0;
     }
 
+    @Override // fd.a
+    public Object get() {
+        int i10 = 23;
+        return new t(new rb.a(i10), new qb.b(i10), (q5.b) ((c) this.b).get(), (da.b) ((p3) this.c).get(), (com.google.firebase.messaging.s) ((qi.f) this.d).get());
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:38:0x00ba  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x00bf  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public b j() {
+    public b i() {
         Throwable th2;
         HttpsURLConnection httpsURLConnection;
-        String i10;
+        String h;
         String str;
         InputStream inputStream = null;
         String sb2 = null;
         inputStream = null;
         try {
             try {
-                i10 = i((String) this.b, (HashMap) this.c);
-                str = "GET Request URL: " + i10;
+                h = h((String) this.b, (HashMap) this.c);
+                str = "GET Request URL: " + h;
             } catch (Throwable th3) {
                 th2 = th3;
                 httpsURLConnection = null;
@@ -426,7 +424,7 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                 Log.v("FirebaseCrashlytics", str, null);
             }
-            httpsURLConnection = (HttpsURLConnection) new URL(i10).openConnection();
+            httpsURLConnection = (HttpsURLConnection) new URL(h).openConnection();
             try {
                 httpsURLConnection.setReadTimeout(10000);
                 httpsURLConnection.setConnectTimeout(10000);
@@ -482,15 +480,15 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         }
     }
 
-    public p0 k(Class cls) {
+    public p0 j(Class cls) {
         String canonicalName = cls.getCanonicalName();
         if (canonicalName != null) {
-            return l(cls, "androidx.lifecycle.ViewModelProvider.DefaultKey:".concat(canonicalName));
+            return k(cls, "androidx.lifecycle.ViewModelProvider.DefaultKey:".concat(canonicalName));
         }
         throw new IllegalArgumentException("Local and anonymous classes can not be ViewModels");
     }
 
-    public p0 l(Class cls, String key) {
+    public p0 k(Class cls, String key) {
         p0 viewModel;
         s0 s0Var = (s0) this.c;
         kotlin.jvm.internal.i.e(key, "key");
@@ -502,9 +500,9 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
             v1.b bVar = new v1.b((g) this.d);
             ((LinkedHashMap) bVar.a).put(q0.b, key);
             try {
-                viewModel = s0Var.H(cls, bVar);
+                viewModel = s0Var.D(cls, bVar);
             } catch (AbstractMethodError unused) {
-                viewModel = s0Var.a(cls);
+                viewModel = s0Var.f(cls);
             }
             kotlin.jvm.internal.i.e(viewModel, "viewModel");
             p0 p0Var2 = (p0) linkedHashMap.put(key, viewModel);
@@ -516,9 +514,9 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         n0 n0Var = s0Var instanceof n0 ? (n0) s0Var : null;
         if (n0Var != null) {
             kotlin.jvm.internal.i.b(p0Var);
-            androidx.lifecycle.o oVar = n0Var.d;
+            o oVar = n0Var.d;
             if (oVar != null) {
-                p pVar = n0Var.e;
+                m.p pVar = n0Var.e;
                 kotlin.jvm.internal.i.b(pVar);
                 j0.a(p0Var, pVar, oVar);
             }
@@ -527,13 +525,21 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         return p0Var;
     }
 
-    public Object m(Bitmap bitmap) {
+    public Object l(Bitmap bitmap) {
         gh.a aVar = (gh.a) this.b;
         if (aVar.a(bitmap)) {
             this.d = ((gh.b) this.c).a(bitmap);
             aVar.b(bitmap);
         }
         return this.d;
+    }
+
+    @Override // z3.d
+    public long m(int i10) {
+        long[] jArr = (long[]) this.d;
+        e2.d.b(i10 >= 0);
+        e2.d.b(i10 < jArr.length);
+        return jArr[i10];
     }
 
     public void n(h8.f fVar) {
@@ -544,7 +550,7 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
             s7.b.c(O0, iVar);
             gVar.S0(O0, 9);
         } catch (RemoteException e7) {
-            throw new androidx.car.app.j(e7);
+            throw new j(e7);
         }
     }
 
@@ -593,76 +599,76 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         scheduledFuture.cancel(false);
     }
 
-    @Override // org.telegram.ui.Components.r71
-    public void onError(u71 u71Var, Exception exc) {
-        ha haVar = ((b7) this.d).N;
-        if (haVar != null) {
-            haVar.run();
+    @Override // org.telegram.ui.Components.a81
+    public void onError(d81 d81Var, Exception exc) {
+        ga gaVar = ((b7) this.d).N;
+        if (gaVar != null) {
+            gaVar.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public void onStateChanged(boolean z10, int i10) {
         b7 b7Var = (b7) this.d;
         z6 z6Var = b7Var.K;
-        u71 u71Var = b7Var.e;
-        if (u71Var == null) {
+        d81 d81Var = b7Var.e;
+        if (d81Var == null) {
             return;
         }
-        if (u71Var.y()) {
+        if (d81Var.y()) {
             AndroidUtilities.runOnUIThread(z6Var);
         } else {
             AndroidUtilities.cancelRunOnUIThread(z6Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         ((b7) this.d).i();
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
         b7 b7Var = (b7) this.d;
-        l8 l8Var = (l8) this.b;
-        if (l8Var != null) {
-            k8 q6 = b7Var.e.q(l8Var.d1);
-            l8Var.d1 = q6;
-            k71 k71Var = b7Var.n;
-            if (k71Var != null) {
-                k71Var.setHDRInfo(q6);
+        k8 k8Var = (k8) this.b;
+        if (k8Var != null) {
+            j8 q6 = b7Var.e.q(k8Var.d1);
+            k8Var.d1 = q6;
+            t71 t71Var = b7Var.n;
+            if (t71Var != null) {
+                t71Var.setHDRInfo(q6);
             }
         }
         int i13 = (int) (i10 * f7);
         b7Var.f = i13;
         int i14 = (int) (i11 * f7);
         b7Var.h = i14;
-        if (l8Var != null && (l8Var.k0 != i13 || l8Var.l0 != i14)) {
-            l8Var.k0 = i13;
-            l8Var.l0 = i14;
-            l8Var.A();
+        if (k8Var != null && (k8Var.k0 != i13 || k8Var.l0 != i14)) {
+            k8Var.k0 = i13;
+            k8Var.l0 = i14;
+            k8Var.A();
         }
         b7Var.b();
-        k71 k71Var2 = b7Var.n;
-        if (k71Var2 != null) {
+        t71 t71Var2 = b7Var.n;
+        if (t71Var2 != null) {
             int i15 = b7Var.f;
             int i16 = b7Var.h;
-            k71Var2.d = i15;
-            k71Var2.e = i16;
-            xz xzVar = k71Var2.b;
-            if (xzVar == null) {
+            t71Var2.d = i15;
+            t71Var2.e = i16;
+            yz yzVar = t71Var2.b;
+            if (yzVar == null) {
                 return;
             }
-            xzVar.postRunnable(new tz(xzVar, i15, i16, 0));
+            yzVar.postRunnable(new uz(yzVar, i15, i16, 0));
         }
     }
 
@@ -674,7 +680,7 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
     */
     public boolean p() {
         com.google.firebase.messaging.o oVar;
-        if (((com.google.firebase.messaging.q) this.d).a("gcm.n.noui")) {
+        if (((a6.i) this.d).H("gcm.n.noui")) {
             return true;
         }
         FirebaseMessagingService firebaseMessagingService = (FirebaseMessagingService) this.c;
@@ -696,20 +702,20 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
                 }
             }
         }
-        String e7 = ((com.google.firebase.messaging.q) this.d).e("gcm.n.image");
-        if (!TextUtils.isEmpty(e7)) {
+        String M = ((a6.i) this.d).M("gcm.n.image");
+        if (!TextUtils.isEmpty(M)) {
             try {
-                oVar = new com.google.firebase.messaging.o(new URL(e7));
+                oVar = new com.google.firebase.messaging.o(new URL(M));
             } catch (MalformedURLException unused) {
-                Log.w("FirebaseMessaging", "Not downloading image, bad URL: " + e7);
+                Log.w("FirebaseMessaging", "Not downloading image, bad URL: " + M);
             }
             if (oVar != null) {
                 ExecutorService executorService = (ExecutorService) this.b;
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-                oVar.b = executorService.submit(new y8(6, oVar, taskCompletionSource));
+                oVar.b = executorService.submit(new x8(6, oVar, taskCompletionSource));
                 oVar.c = taskCompletionSource.getTask();
             }
-            com.google.firebase.messaging.j a2 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (com.google.firebase.messaging.q) this.d);
+            com.google.firebase.messaging.j a2 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (a6.i) this.d);
             e0.t tVar = (e0.t) a2.a;
             if (oVar != null) {
                 try {
@@ -717,7 +723,7 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
                     l.h(task);
                     Bitmap bitmap = (Bitmap) Tasks.await(task, 5L, TimeUnit.SECONDS);
                     tVar.j(bitmap);
-                    n nVar = new n();
+                    e0.n nVar = new e0.n();
                     nVar.e = bitmap == null ? null : IconCompat.c(bitmap);
                     nVar.f = null;
                     nVar.g = true;
@@ -726,8 +732,8 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
                     Log.w("FirebaseMessaging", "Interrupted while downloading image, showing notification without it");
                     oVar.close();
                     Thread.currentThread().interrupt();
-                } catch (ExecutionException e10) {
-                    Log.w("FirebaseMessaging", "Failed to download image: " + e10.getCause());
+                } catch (ExecutionException e7) {
+                    Log.w("FirebaseMessaging", "Failed to download image: " + e7.getCause());
                 } catch (TimeoutException unused3) {
                     Log.w("FirebaseMessaging", "Failed to download image in time, showing notification without it");
                     oVar.close();
@@ -742,7 +748,7 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         oVar = null;
         if (oVar != null) {
         }
-        com.google.firebase.messaging.j a22 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (com.google.firebase.messaging.q) this.d);
+        com.google.firebase.messaging.j a22 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (a6.i) this.d);
         e0.t tVar2 = (e0.t) a22.a;
         if (oVar != null) {
         }
@@ -763,37 +769,17 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         ((EnumMap) this.d).put((EnumMap) iVar, (cc.i) obj);
     }
 
-    @Override // z3.d
-    public List s(long j3) {
-        List list = (List) this.b;
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = new ArrayList();
-        for (int i10 = 0; i10 < list.size(); i10++) {
-            long[] jArr = (long[]) this.c;
-            int i11 = i10 * 2;
-            if (jArr[i11] <= j3 && j3 < jArr[i11 + 1]) {
-                i4.c cVar = (i4.c) list.get(i10);
-                d2.b bVar = cVar.a;
-                if (bVar.e == -3.4028235E38f) {
-                    arrayList2.add(cVar);
-                } else {
-                    arrayList.add(bVar);
-                }
-            }
-        }
-        Collections.sort(arrayList2, new a4.e(18));
-        for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-            d2.b bVar2 = ((i4.c) arrayList2.get(i12)).a;
-            arrayList.add(new d2.b(bVar2.a, bVar2.b, bVar2.c, bVar2.d, (-1) - i12, 1, bVar2.g, bVar2.h, bVar2.i, bVar2.n, bVar2.o, bVar2.j, bVar2.k, bVar2.l, bVar2.m, bVar2.p, bVar2.q, bVar2.r));
-        }
-        return arrayList;
-    }
-
-    public void t(String str) {
+    public void s(String str) {
         if (str == null) {
             throw new NullPointerException("Null backendName");
         }
         this.b = str;
+    }
+
+    public void t(int i10, String str, String str2) {
+        ((HashMap) this.c).put(str, str2);
+        ((HashMap) this.d).put(str2, str);
+        ((HashMap) this.b).put(str, Integer.valueOf(i10));
     }
 
     public String toString() {
@@ -860,15 +846,30 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         }
     }
 
-    public void u(int i10, String str, String str2) {
-        ((HashMap) this.c).put(str, str2);
-        ((HashMap) this.d).put(str2, str);
-        ((HashMap) this.b).put(str, Integer.valueOf(i10));
-    }
-
     @Override // z3.d
-    public int v() {
-        return ((long[]) this.d).length;
+    public List z(long j3) {
+        List list = (List) this.b;
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        for (int i10 = 0; i10 < list.size(); i10++) {
+            long[] jArr = (long[]) this.c;
+            int i11 = i10 * 2;
+            if (jArr[i11] <= j3 && j3 < jArr[i11 + 1]) {
+                i4.c cVar = (i4.c) list.get(i10);
+                d2.b bVar = cVar.a;
+                if (bVar.e == -3.4028235E38f) {
+                    arrayList2.add(cVar);
+                } else {
+                    arrayList.add(bVar);
+                }
+            }
+        }
+        Collections.sort(arrayList2, new a4.e(18));
+        for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+            d2.b bVar2 = ((i4.c) arrayList2.get(i12)).a;
+            arrayList.add(new d2.b(bVar2.a, bVar2.b, bVar2.c, bVar2.d, (-1) - i12, 1, bVar2.g, bVar2.h, bVar2.i, bVar2.n, bVar2.o, bVar2.j, bVar2.k, bVar2.l, bVar2.m, bVar2.p, bVar2.q, bVar2.r));
+        }
+        return arrayList;
     }
 
     public /* synthetic */ a(Object obj, Object obj2, Object obj3, int i10) {
@@ -878,9 +879,9 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         this.d = obj2;
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public void onRenderedFirstFrame() {
-        l8 l8Var = (l8) this.b;
+        k8 k8Var = (k8) this.b;
         Runnable[] runnableArr = (Runnable[]) this.c;
         b7 b7Var = (b7) this.d;
         a7 a7Var = b7Var.H;
@@ -897,10 +898,10 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         }
         Runnable runnable = runnableArr[0];
         if (runnable == null) {
-            k71 k71Var = b7Var.n;
-            if (k71Var != null) {
+            t71 t71Var = b7Var.n;
+            if (t71Var != null) {
                 if (a7Var == null || !a7Var.g) {
-                    k71Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new ba(21, this, l8Var)).start();
+                    t71Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new ba(21, this, k8Var)).start();
                     return;
                 }
                 return;
@@ -912,8 +913,8 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         Bitmap bitmap = b7Var.a;
         if (bitmap != null) {
             bitmap.recycle();
-            if (l8Var.M0 == b7Var.a) {
-                l8Var.M0 = null;
+            if (k8Var.M0 == b7Var.a) {
+                k8Var.M0 = null;
             }
             b7Var.a = null;
             b7Var.invalidate();
@@ -985,11 +986,11 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         }
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
@@ -1076,7 +1077,7 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
 
     public a(c2.h[] hVarArr) {
         this.a = 26;
-        k2.j0 j0Var = new k2.j0();
+        k0 k0Var = new k0();
         c2.k kVar = new c2.k();
         kVar.c = 1.0f;
         kVar.d = 1.0f;
@@ -1093,9 +1094,9 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         c2.h[] hVarArr2 = new c2.h[hVarArr.length + 2];
         this.b = hVarArr2;
         System.arraycopy(hVarArr, 0, hVarArr2, 0, hVarArr.length);
-        this.c = j0Var;
+        this.c = k0Var;
         this.d = kVar;
-        hVarArr2[hVarArr.length] = j0Var;
+        hVarArr2[hVarArr.length] = k0Var;
         hVarArr2[hVarArr.length + 1] = kVar;
     }
 
@@ -1149,7 +1150,7 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         this.b = hVar;
         int i10 = Build.VERSION.SDK_INT;
         this.c = i10 >= 29 ? androidx.biometric.q.b(context) : null;
-        this.d = i10 <= 29 ? new h(context, (short) 0) : null;
+        this.d = i10 <= 29 ? new k0.b(context, false) : null;
     }
 
     public a(m mVar, hc.f fVar, jc.e eVar) {
@@ -1218,10 +1219,10 @@ public final class a implements s, r71, d, a0, OnCompleteListener, n5.b {
         this.c = hc.f.c(i18);
     }
 
-    public a(b7 b7Var, l8 l8Var, Runnable[] runnableArr) {
+    public a(b7 b7Var, k8 k8Var, Runnable[] runnableArr) {
         this.a = 10;
         this.d = b7Var;
-        this.b = l8Var;
+        this.b = k8Var;
         this.c = runnableArr;
     }
 }

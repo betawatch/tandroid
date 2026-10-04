@@ -8,9 +8,9 @@ import java.util.List;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 final class zzfe extends j implements p {
     final /* synthetic */ zzyg zza;
@@ -36,7 +36,7 @@ final class zzfe extends j implements p {
     @Override // kd.a
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
-        u7.b(obj);
+        t7.b(obj);
         try {
             zzyg zzygVar = this.zza;
             List<zzyi> zzk = zzygVar.zzk();
@@ -52,10 +52,10 @@ final class zzfe extends j implements p {
             zzfp.zze(zzfpVar).zzb(linkedHashMap);
             zzfp.zzb(zzfpVar).zze(zzygVar);
             return i.a;
-        } catch (zzcg e) {
-            throw e;
-        } catch (Exception e7) {
-            throw new zzcg(zzce.zzb, zzcd.zzav, e7.getMessage(), null, 8, null);
+        } catch (zzcg e7) {
+            throw e7;
+        } catch (Exception e10) {
+            throw new zzcg(zzce.zzb, zzcd.zzav, e10.getMessage(), null, 8, null);
         }
     }
 }

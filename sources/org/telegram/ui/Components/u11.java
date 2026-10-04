@@ -1,42 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import org.telegram.ui.Components.ThemeEditorView;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class u11 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ ThemeEditorView.EditorAlert b;
+public final class u11 {
+    public final View a;
+    public final ArrayList b;
+    public final Runnable c;
+    public Runnable d;
+    public final Bitmap e;
+    public final Matrix f;
+    public float g;
 
-    public u11(ThemeEditorView.EditorAlert editorAlert, boolean z10) {
-        this.b = editorAlert;
-        this.a = z10;
+    public u11(View view, Runnable runnable) {
+        this.g = 1.0f;
+        this.a = view;
+        this.b = null;
+        this.c = null;
+        this.d = runnable;
+        this.e = null;
+        this.f = null;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        AnimatorSet[] animatorSetArr = this.b.x;
-        AnimatorSet animatorSet = animatorSetArr[0];
-        if (animatorSet == null || !animatorSet.equals(animator)) {
-            return;
-        }
-        animatorSetArr[0] = null;
+    public u11(ArrayList arrayList, gg.t tVar) {
+        this.g = 1.0f;
+        this.a = null;
+        this.b = arrayList;
+        this.c = null;
+        this.d = tVar;
+        this.e = null;
+        this.f = null;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ThemeEditorView.EditorAlert editorAlert = this.b;
-        AnimatorSet[] animatorSetArr = editorAlert.x;
-        AnimatorSet animatorSet = animatorSetArr[0];
-        if (animatorSet == null || !animatorSet.equals(animator)) {
-            return;
-        }
-        if (!this.a) {
-            editorAlert.w[0].setVisibility(4);
-        }
-        animatorSetArr[0] = null;
+    public u11(Matrix matrix, Bitmap bitmap, Runnable runnable, Runnable runnable2) {
+        this.g = 1.0f;
+        this.a = null;
+        this.b = null;
+        this.c = runnable;
+        this.d = runnable2;
+        this.f = matrix;
+        this.e = bitmap;
     }
 }

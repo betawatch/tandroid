@@ -3,7 +3,7 @@ package e5;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
@@ -18,8 +18,8 @@ public abstract class b {
         }
         try {
             return str.getBytes("UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            throw new Error(e);
+        } catch (UnsupportedEncodingException e7) {
+            throw new Error(e7);
         }
     }
 
@@ -47,8 +47,8 @@ public abstract class b {
         byteBuffer.get(bArr);
         try {
             return new String(bArr, "ISO-8859-1");
-        } catch (UnsupportedEncodingException e) {
-            throw new RuntimeException(e);
+        } catch (UnsupportedEncodingException e7) {
+            throw new RuntimeException(e7);
         }
     }
 

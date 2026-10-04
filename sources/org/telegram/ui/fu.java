@@ -1,40 +1,76 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.AnimatorSet;
+import android.app.Activity;
+import android.net.Uri;
+import android.view.KeyEvent;
+import android.view.View;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fu implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ DataSettingsActivity b;
+public final /* synthetic */ class fu implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ KeyEvent.Callback[] e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ fu(DataSettingsActivity dataSettingsActivity, int i10) {
-        this.a = i10;
-        this.b = dataSettingsActivity;
+    public /* synthetic */ fu(ci.d dVar, TL_stars.StarsSubscription starsSubscription, int i10, org.telegram.ui.ActionBar.f3[] f3VarArr, org.telegram.ui.ActionBar.d6 d6Var, boolean[] zArr, Activity activity) {
+        this.c = dVar;
+        this.d = starsSubscription;
+        this.b = i10;
+        this.e = f3VarArr;
+        this.f = d6Var;
+        this.h = zArr;
+        this.n = activity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.getMediaDataController().clearAllDrafts(true);
-                break;
-            case 1:
-                DataSettingsActivity dataSettingsActivity = this.b;
-                dataSettingsActivity.X = true;
-                if (dataSettingsActivity.a != null && (i10 = dataSettingsActivity.s) >= 0) {
-                    dataSettingsActivity.n0(i10);
-                    break;
-                }
+                DataAutoDownloadActivity.S((DataAutoDownloadActivity) this.c, (org.telegram.ui.Cells.s8) this.d, (org.telegram.ui.Cells.s8[]) this.e, this.b, (org.telegram.ui.Cells.d5[]) this.f, (org.telegram.ui.Cells.w8[]) this.h, (AnimatorSet[]) this.n, view);
                 break;
             default:
-                z6.m0 = null;
-                DataSettingsActivity dataSettingsActivity2 = this.b;
-                fu fuVar = new fu(dataSettingsActivity2, 1);
-                AndroidUtilities.runOnUIThread(fuVar, 100L);
-                z6.j0(new gu(dataSettingsActivity2, fuVar, System.currentTimeMillis(), 0));
+                ci.d dVar = (ci.d) this.c;
+                TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.d;
+                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.e;
+                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.f;
+                boolean[] zArr = (boolean[]) this.h;
+                Activity activity = (Activity) this.n;
+                if (!dVar.N) {
+                    dVar.setLoading(true);
+                    if (starsSubscription.chat_invite_hash == null) {
+                        if (starsSubscription.invoice_slug != null) {
+                            zArr[0] = true;
+                            nf.f.r(activity, Uri.parse("https://t.me/$" + starsSubscription.invoice_slug), true, false, false, new yh.y6(dVar), null, false, true, false);
+                            break;
+                        }
+                    } else {
+                        TLRPC.TL_messages_checkChatInvite tL_messages_checkChatInvite = new TLRPC.TL_messages_checkChatInvite();
+                        tL_messages_checkChatInvite.hash = starsSubscription.chat_invite_hash;
+                        int i10 = this.b;
+                        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_checkChatInvite, new ai.ya(dVar, f3VarArr, d6Var, i10, tL_messages_checkChatInvite, 13));
+                        break;
+                    }
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ fu(DataAutoDownloadActivity dataAutoDownloadActivity, org.telegram.ui.Cells.s8 s8Var, org.telegram.ui.Cells.s8[] s8VarArr, int i10, org.telegram.ui.Cells.d5[] d5VarArr, org.telegram.ui.Cells.w8[] w8VarArr, AnimatorSet[] animatorSetArr) {
+        this.c = dataAutoDownloadActivity;
+        this.d = s8Var;
+        this.e = s8VarArr;
+        this.b = i10;
+        this.f = d5VarArr;
+        this.h = w8VarArr;
+        this.n = animatorSetArr;
     }
 }

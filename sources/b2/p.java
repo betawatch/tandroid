@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
     public final /* synthetic */ int a;
@@ -154,31 +154,21 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
             return;
         }
         try {
-            ((l5.r) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(19));
+            ((l5.s) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new j2.e(20));
         } catch (Throwable unused) {
             com.google.android.gms.internal.play_billing.u.h("BillingLogger", "logging failed.");
         }
     }
 
     @Override // s4.e0
-    public void k0(int i10, int i11) {
+    public void m0(int i10, int i11) {
         this.b = true;
         ((s4.h0) this.c).s(i10, i11);
     }
 
     @Override // s4.e0
-    public void l1(int i10, int i11) {
+    public void n1(int i10, int i11) {
         ((s4.h0) this.c).r(i10, i11, null);
-    }
-
-    @Override // androidx.lifecycle.a0
-    public void m0(Object obj) {
-        this.b = true;
-        a6.m mVar = (a6.m) this.c;
-        mVar.getClass();
-        SignInHubActivity signInHubActivity = (SignInHubActivity) mVar.b;
-        signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
-        signInHubActivity.finish();
     }
 
     public String toString() {
@@ -207,6 +197,16 @@ public final class p implements s4.e0, androidx.lifecycle.a0, x9.i {
             default:
                 return super.toString();
         }
+    }
+
+    @Override // androidx.lifecycle.a0
+    public void w0(Object obj) {
+        this.b = true;
+        a6.m mVar = (a6.m) this.c;
+        mVar.getClass();
+        SignInHubActivity signInHubActivity = (SignInHubActivity) mVar.b;
+        signInHubActivity.setResult(signInHubActivity.R, signInHubActivity.S);
+        signInHubActivity.finish();
     }
 
     public /* synthetic */ p(Object obj, int i10) {

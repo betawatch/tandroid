@@ -4,8 +4,8 @@ import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import ci.fd;
-import ci.o9;
+import ci.ed;
+import ci.n9;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
@@ -18,19 +18,19 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.e5;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.pc;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class t0 implements gi.e {
     public final Context a;
@@ -40,14 +40,14 @@ public final class t0 implements gi.e {
     public final long e;
     public final TLRPC.Chat f;
     public s0 h;
-    public o9 i;
+    public n9 i;
     public String k;
     public int l;
     public boolean m;
     public boolean n;
     public long o;
     public int p;
-    public a2 q;
+    public b2 q;
     public int r;
     public final a0.i g = new a0.i();
     public ArrayList j = new ArrayList();
@@ -59,7 +59,7 @@ public final class t0 implements gi.e {
         this.d = i10;
         this.e = j3;
         this.f = MessagesController.getInstance(i10).getChat(Long.valueOf(j3));
-        this.o = MessagesController.getMainSettings(i10).getLong(a4.a.p(j3, "community_requests_last_view_time_"), 0L);
+        this.o = MessagesController.getMainSettings(i10).getLong(a4.a.o(j3, "community_requests_last_view_time_"), 0L);
     }
 
     public final void a() {
@@ -80,8 +80,8 @@ public final class t0 implements gi.e {
         }
     }
 
-    public final void b(t61 t61Var) {
-        if (this.m || this.n || t61Var.X2.N0() + 10 <= t61Var.Y2.x.size()) {
+    public final void b(c71 c71Var) {
+        if (this.m || this.n || c71Var.e3.N0() + 10 <= c71Var.f3.x.size()) {
             return;
         }
         d();
@@ -105,7 +105,7 @@ public final class t0 implements gi.e {
                     boolean z10 = !communityPeerRequest.visible;
                     boolean z11 = i10 < size + (-1);
                     int i11 = gi.g.a;
-                    x51 J = x51.J(gi.g.class);
+                    g61 J = g61.J(gi.g.class);
                     J.G = new gi.f(peerDialogId, user, z10);
                     J.H = this;
                     J.j = !z11;
@@ -117,7 +117,7 @@ public final class t0 implements gi.e {
         if (this.n) {
             return;
         }
-        arrayList.add(x51.n(29));
+        arrayList.add(g61.o(29));
     }
 
     public final void d() {
@@ -140,22 +140,22 @@ public final class t0 implements gi.e {
         TextView textView;
         if (this.q == null && this.r == 0) {
             if (z11) {
-                a2 P = e5.P(this.a, this.b, LocaleController.getString(z10 ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.l, new Object[0])), LocaleController.getString(z10 ? R.string.Add : R.string.Decline), new bi.f(6, this, z10));
+                b2 P = e5.P(this.a, this.b, LocaleController.getString(z10 ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.l, new Object[0])), LocaleController.getString(z10 ? R.string.Add : R.string.Decline), new bi.f(6, this, z10));
                 P.show();
                 if (z10 || (textView = (TextView) P.d(-1)) == null) {
                     return;
                 }
-                textView.setTextColor(h6.w0(null, h6.q7, false));
+                textView.setTextColor(i6.w0(null, i6.q7, false));
                 return;
             }
-            o9 o9Var = this.i;
-            if (o9Var != null) {
-                o9Var.run();
+            n9 n9Var = this.i;
+            if (n9Var != null) {
+                n9Var.run();
             }
             this.i = null;
-            a2 a2Var = new a2(this.a, 3, this.b);
-            this.q = a2Var;
-            a2Var.setOnCancelListener(new fd(this, 3));
+            b2 b2Var = new b2(this.a, 3, this.b);
+            this.q = b2Var;
+            b2Var.setOnCancelListener(new ed(this, 3));
             this.q.q(500L);
             this.r = MessagesController.getInstance(this.d).resolveCommunityAllJoinPendingRequests(this.e, !z10, new r0(this, 0));
         }
@@ -168,21 +168,21 @@ public final class t0 implements gi.e {
         a();
         s0 s0Var = this.h;
         if (s0Var != null) {
-            s0Var.f();
+            s0Var.l();
         }
         int i11 = z10 ? R.string.CommunityRequestApprovedToast : R.string.CommunityRequestDeclinedToast;
         int i12 = this.d;
         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i11, DialogObject.getShortName(i12, j3)));
-        o9 o9Var = this.i;
-        if (o9Var != null) {
-            o9Var.run();
+        n9 n9Var = this.i;
+        if (n9Var != null) {
+            n9Var.run();
         }
-        this.i = new o9(this, j3, z10, 1);
+        this.i = new n9(this, j3, z10, 1);
         Context context = this.a;
         d6 d6Var = this.b;
-        pc pcVar = new pc(context, d6Var, false);
+        qc qcVar = new qc(context, d6Var, false);
         TLObject userOrChat = MessagesController.getInstance(i12).getUserOrChat(j3);
-        k9 k9Var = pcVar.a;
+        k9 k9Var = qcVar.a;
         if (userOrChat != null) {
             k9Var.setCount(1);
             k9Var.b(0, userOrChat, UserConfig.selectedAccount);
@@ -194,27 +194,27 @@ public final class t0 implements gi.e {
         k9Var.setScaleX(1.333f);
         k9Var.setScaleY(1.333f);
         k9Var.a(false);
-        p90 p90Var = pcVar.b;
-        p90Var.setSingleLine(false);
-        p90Var.setMaxLines(2);
-        p90Var.setTextSize(1, 14.0f);
-        p90Var.setText(replaceTags);
-        if (p90Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+        q90 q90Var = qcVar.b;
+        q90Var.setSingleLine(false);
+        q90Var.setMaxLines(2);
+        q90Var.setTextSize(1, 14.0f);
+        q90Var.setText(replaceTags);
+        if (q90Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             int dp = AndroidUtilities.dp(74 - ((3 - i10) * 12));
             if (LocaleController.isRTL) {
-                ((ViewGroup.MarginLayoutParams) p90Var.getLayoutParams()).rightMargin = dp;
+                ((ViewGroup.MarginLayoutParams) q90Var.getLayoutParams()).rightMargin = dp;
             } else {
-                ((ViewGroup.MarginLayoutParams) p90Var.getLayoutParams()).leftMargin = dp;
+                ((ViewGroup.MarginLayoutParams) q90Var.getLayoutParams()).leftMargin = dp;
             }
         }
         if (LocaleController.isRTL) {
             k9Var.setTranslationX(AndroidUtilities.dp(32 - ((i10 - 1) * 12)));
         }
-        oc ocVar = new oc(context, d6Var, true, true);
-        ocVar.e(LocaleController.getString(R.string.UndoNoCaps));
-        ocVar.a = new ai.j(this, j3, 9);
-        ocVar.b = this.i;
-        pcVar.setButton(ocVar);
-        this.c.b(pcVar, 5000).j();
+        pc pcVar = new pc(context, d6Var, true, true);
+        pcVar.e(LocaleController.getString(R.string.UndoNoCaps));
+        pcVar.a = new ai.j(this, j3, 9);
+        pcVar.b = this.i;
+        qcVar.setButton(pcVar);
+        this.c.b(qcVar, 5000).j();
     }
 }

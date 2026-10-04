@@ -1,78 +1,52 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class e20 implements org.telegram.ui.Components.to0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sg.a b;
+public final class e20 extends FrameLayout {
+    public TextView a;
+    public TextView b;
+    public org.telegram.ui.Components.ki0 c;
+    public boolean d;
+    public TLRPC.TL_dialogFilterSuggested e;
 
-    public /* synthetic */ e20(sg.a aVar, int i10) {
-        this.a = i10;
-        this.b = aVar;
+    public TLRPC.TL_dialogFilterSuggested getSuggestedFilter() {
+        return this.e;
     }
 
-    @Override // org.telegram.ui.Components.to0
-    public final void B() {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.to0
-    public final void X(float f7, boolean z10) {
-        switch (this.a) {
-            case 0:
-                sg.f fVar = this.b.c;
-                if (fVar != null) {
-                    fVar.v = f7 * 2.0f;
-                    break;
-                }
-                break;
-            case 1:
-                sg.f fVar2 = this.b.c;
-                if (fVar2 != null) {
-                    fVar2.w = f7 * 2.0f;
-                    break;
-                }
-                break;
-            case 2:
-                sg.f fVar3 = this.b.c;
-                if (fVar3 != null) {
-                    fVar3.x = f7;
-                    break;
-                }
-                break;
-            default:
-                sg.f fVar4 = this.b.c;
-                if (fVar4 != null) {
-                    fVar4.A = f7 * 2.0f;
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(0.0f, getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
         }
     }
 
-    @Override // org.telegram.ui.Components.to0
-    public final /* synthetic */ CharSequence getContentDescription() {
-        switch (this.a) {
-        }
-        return null;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
+        accessibilityNodeInfo.setText(this.c.getText());
+        accessibilityNodeInfo.setClassName("android.widget.Button");
     }
 
-    @Override // org.telegram.ui.Components.to0
-    public final /* synthetic */ int m0() {
-        switch (this.a) {
-        }
-        return 0;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(64.0f));
+        measureChildWithMargins(this.c, i10, 0, i11, 0);
+        TextView textView = this.a;
+        org.telegram.ui.Components.ki0 ki0Var = this.c;
+        measureChildWithMargins(textView, i10, ki0Var.getMeasuredWidth(), i11, 0);
+        measureChildWithMargins(this.b, i10, ki0Var.getMeasuredWidth(), i11, 0);
     }
 
-    private final void a() {
-    }
-
-    private final void b() {
-    }
-
-    private final void c() {
-    }
-
-    private final void d() {
+    public void setAddOnClickListener(View.OnClickListener onClickListener) {
+        this.c.setOnClickListener(onClickListener);
     }
 }

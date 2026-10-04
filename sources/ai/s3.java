@@ -5,16 +5,16 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.bc0;
-import org.telegram.ui.Components.hc0;
+import org.telegram.ui.Components.cc0;
+import org.telegram.ui.Components.ic0;
 import org.telegram.ui.Components.tb0;
-import org.telegram.ui.mn;
 import org.telegram.ui.nl;
-import org.telegram.ui.wn;
+import org.telegram.ui.on;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class s3 extends w7.i0 {
+public final class s3 extends w7.j0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -23,7 +23,7 @@ public final class s3 extends w7.i0 {
         this.b = obj;
     }
 
-    @Override // w7.i0
+    @Override // w7.j0
     public final void a(boolean z10) {
         switch (this.a) {
             case 0:
@@ -35,55 +35,55 @@ public final class s3 extends w7.i0 {
                 jcVar.P();
                 break;
             case 1:
-                org.telegram.ui.ActionBar.e3 e3Var = ((org.telegram.ui.i4) this.b).I;
-                if (e3Var != null) {
-                    e3Var.setDisableScroll(z10);
+                org.telegram.ui.ActionBar.f3 f3Var = ((org.telegram.ui.i4) this.b).I;
+                if (f3Var != null) {
+                    f3Var.setDisableScroll(z10);
                     break;
                 }
                 break;
             case 2:
-                wn wnVar = (wn) this.b;
-                wnVar.n9 = !z10;
+                yn ynVar = (yn) this.b;
+                ynVar.l9 = !z10;
                 if (z10) {
-                    if (wnVar.d9 != null) {
-                        wn.V1(wnVar, 0.0f);
-                        wnVar.d9 = null;
+                    if (ynVar.b9 != null) {
+                        yn.V1(ynVar, 0.0f);
+                        ynVar.b9 = null;
                     }
-                    wnVar.e9 = false;
-                    wnVar.f9 = false;
-                    nl nlVar = wnVar.h9;
+                    ynVar.c9 = false;
+                    ynVar.d9 = false;
+                    nl nlVar = ynVar.f9;
                     if (nlVar != null) {
                         AndroidUtilities.cancelRunOnUIThread(nlVar.H);
                         nlVar.a();
                     }
                 }
-                wnVar.vc();
+                ynVar.uc();
                 break;
             default:
-                bc0 bc0Var = (bc0) this.b;
-                tb0 tb0Var = bc0Var.e;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = bc0Var.s;
-                hc0 hc0Var = bc0Var.c0;
-                if (hc0Var.s) {
+                cc0 cc0Var = (cc0) this.b;
+                tb0 tb0Var = cc0Var.e;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = cc0Var.s;
+                ic0 ic0Var = cc0Var.c0;
+                if (ic0Var.s) {
                     if (!z10 && actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b > 0.0f) {
                         actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
                         break;
                     } else if (z10) {
-                        if (tb0Var.v - tb0Var.u <= MessagesController.getInstance(hc0Var.w).quoteLengthMax) {
+                        if (tb0Var.v - tb0Var.u <= MessagesController.getInstance(ic0Var.w).quoteLengthMax) {
                             org.telegram.ui.Cells.y9 y9Var = tb0Var.W;
-                            MessageObject c10 = bc0Var.c(y9Var != null ? ((org.telegram.ui.Cells.u1) y9Var).getMessageObject() : null);
-                            MessagePreviewParams messagePreviewParams = hc0Var.d;
+                            MessageObject c10 = cc0Var.c(y9Var != null ? ((org.telegram.ui.Cells.u1) y9Var).getMessageObject() : null);
+                            MessagePreviewParams messagePreviewParams = ic0Var.d;
                             if (messagePreviewParams.quote == null) {
                                 int i10 = tb0Var.u;
                                 messagePreviewParams.quoteStart = i10;
                                 int i11 = tb0Var.v;
                                 messagePreviewParams.quoteEnd = i11;
-                                messagePreviewParams.quote = mn.b(i10, i11, c10);
-                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(bc0Var.I);
+                                messagePreviewParams.quote = on.b(i10, i11, c10);
+                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(cc0Var.I);
                                 break;
                             }
                         } else {
-                            bc0Var.f();
+                            cc0Var.f();
                             break;
                         }
                     }
@@ -92,22 +92,22 @@ public final class s3 extends w7.i0 {
         }
     }
 
-    @Override // w7.i0
+    @Override // w7.j0
     public void b() {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
         switch (this.a) {
             case 2:
-                wn wnVar = (wn) this.b;
-                kVar = ((org.telegram.ui.ActionBar.m2) wnVar).actionBar;
+                yn ynVar = (yn) this.b;
+                kVar = ((org.telegram.ui.ActionBar.n2) ynVar).actionBar;
                 if (kVar != null) {
-                    kVar2 = ((org.telegram.ui.ActionBar.m2) wnVar).actionBar;
+                    kVar2 = ((org.telegram.ui.ActionBar.n2) ynVar).actionBar;
                     if (kVar2.s()) {
-                        wnVar.z7(false);
+                        ynVar.z7(false);
                     }
                 }
-                wnVar.Q7();
-                wnVar.y3.j(58, 0L, null);
+                ynVar.Q7();
+                ynVar.w3.j(58, 0L, null);
                 break;
         }
     }

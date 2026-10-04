@@ -11,22 +11,22 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class l6 extends FrameLayout {
     public float a;
     public float b;
     public final /* synthetic */ pg.u0 c;
-    public final /* synthetic */ nb d;
+    public final /* synthetic */ mb d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l6(nb nbVar, Context context, pg.u0 u0Var) {
+    public l6(mb mbVar, Context context, pg.u0 u0Var) {
         super(context);
-        this.d = nbVar;
+        this.d = mbVar;
         this.c = u0Var;
         new Path();
         setWillNotDraw(false);
-        Paint paint = nbVar.x1;
+        Paint paint = mbVar.x1;
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
     }
@@ -36,51 +36,51 @@ public final class l6 extends FrameLayout {
         ViewGroup barView;
         Canvas canvas2 = canvas;
         super.onDraw(canvas);
-        nb nbVar = this.d;
-        pg.t1 t1Var = nbVar.A1;
-        Paint paint = nbVar.y1;
-        Paint paint2 = nbVar.x1;
-        Paint paint3 = nbVar.z1;
-        barView = nbVar.getBarView();
+        mb mbVar = this.d;
+        pg.t1 t1Var = mbVar.A1;
+        Paint paint = mbVar.y1;
+        Paint paint2 = mbVar.x1;
+        Paint paint3 = mbVar.z1;
+        barView = mbVar.getBarView();
         RectF rectF = AndroidUtilities.rectTmp;
         int left = barView.getLeft();
-        q5 q5Var = nbVar.w1;
-        rectF.set(AndroidUtilities.lerp(left, q5Var.getLeft(), nbVar.D1), AndroidUtilities.lerp(barView.getTop(), q5Var.getTop(), nbVar.D1), AndroidUtilities.lerp(barView.getRight(), q5Var.getRight(), nbVar.D1), AndroidUtilities.lerp(barView.getBottom(), q5Var.getBottom(), nbVar.D1));
-        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f), nbVar.D1);
-        canvas2.drawRoundRect(rectF, lerp, lerp, nbVar.E1);
-        if (barView.getChildCount() < 1 || nbVar.D1 == 1.0f) {
+        q5 q5Var = mbVar.w1;
+        rectF.set(AndroidUtilities.lerp(left, q5Var.getLeft(), mbVar.D1), AndroidUtilities.lerp(barView.getTop(), q5Var.getTop(), mbVar.D1), AndroidUtilities.lerp(barView.getRight(), q5Var.getRight(), mbVar.D1), AndroidUtilities.lerp(barView.getBottom(), q5Var.getBottom(), mbVar.D1));
+        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f), mbVar.D1);
+        canvas2.drawRoundRect(rectF, lerp, lerp, mbVar.E1);
+        if (barView.getChildCount() < 1 || mbVar.D1 == 1.0f) {
             return;
         }
         canvas2.save();
         canvas2.translate(barView.getLeft(), barView.getTop());
         View childAt = barView.getChildAt(0);
-        if (barView instanceof qg.p1) {
-            childAt = ((qg.p1) barView).getColorClickableView();
+        if (barView instanceof qg.o1) {
+            childAt = ((qg.o1) barView).getColorClickableView();
         }
         if (childAt.getAlpha() != 0.0f) {
             canvas2.scale(childAt.getScaleX(), childAt.getScaleY(), childAt.getPivotX(), childAt.getPivotY());
-            paint2.setAlpha((int) (childAt.getAlpha() * (1.0f - nbVar.D1) * 255.0f));
+            paint2.setAlpha((int) (childAt.getAlpha() * (1.0f - mbVar.D1) * 255.0f));
             int width = (childAt.getWidth() - childAt.getPaddingLeft()) - childAt.getPaddingRight();
             int height = (childAt.getHeight() - childAt.getPaddingTop()) - childAt.getPaddingBottom();
             float x10 = (width / 2.0f) + childAt.getX() + childAt.getPaddingLeft();
             float y3 = (height / 2.0f) + childAt.getY() + childAt.getPaddingTop();
             int i10 = t1Var.a;
-            int i11 = nbVar.Z0;
+            int i11 = mbVar.Z0;
             View view = childAt;
             if (i11 != -1) {
-                ViewGroup viewGroup = i11 == 0 ? nbVar.k1 : i11 == 2 ? nbVar.l1 : null;
+                ViewGroup viewGroup = i11 == 0 ? mbVar.k1 : i11 == 2 ? mbVar.l1 : null;
                 View childAt2 = (viewGroup == null ? barView : viewGroup).getChildAt(0);
-                if (viewGroup instanceof qg.p1) {
-                    childAt2 = ((qg.p1) viewGroup).getColorClickableView();
+                if (viewGroup instanceof qg.o1) {
+                    childAt2 = ((qg.o1) viewGroup).getColorClickableView();
                 }
-                x10 = AndroidUtilities.lerp(x10, (((childAt2.getWidth() - childAt2.getPaddingLeft()) - childAt2.getPaddingRight()) / 2.0f) + childAt2.getX() + childAt2.getPaddingLeft(), nbVar.a1);
-                y3 = AndroidUtilities.lerp(y3, (((childAt2.getHeight() - childAt2.getPaddingTop()) - childAt2.getPaddingBottom()) / 2.0f) + childAt2.getY() + childAt2.getPaddingTop(), nbVar.a1);
+                x10 = AndroidUtilities.lerp(x10, (((childAt2.getWidth() - childAt2.getPaddingLeft()) - childAt2.getPaddingRight()) / 2.0f) + childAt2.getX() + childAt2.getPaddingLeft(), mbVar.a1);
+                y3 = AndroidUtilities.lerp(y3, (((childAt2.getHeight() - childAt2.getPaddingTop()) - childAt2.getPaddingBottom()) / 2.0f) + childAt2.getY() + childAt2.getPaddingTop(), mbVar.a1);
             }
             if (q5Var != null && q5Var.getChildCount() > 0) {
                 View childAt3 = q5Var.getChildAt(0);
-                x10 = AndroidUtilities.lerp(x10, (childAt3.getWidth() / 2.0f) + childAt3.getX() + (q5Var.getX() - barView.getLeft()), nbVar.D1);
-                y3 = AndroidUtilities.lerp(y3, (childAt3.getHeight() / 2.0f) + childAt3.getY() + (q5Var.getY() - barView.getTop()), nbVar.D1);
-                i10 = i0.a.d(nbVar.D1, t1Var.a, this.c.b(0));
+                x10 = AndroidUtilities.lerp(x10, (childAt3.getWidth() / 2.0f) + childAt3.getX() + (q5Var.getX() - barView.getLeft()), mbVar.D1);
+                y3 = AndroidUtilities.lerp(y3, (childAt3.getHeight() / 2.0f) + childAt3.getY() + (q5Var.getY() - barView.getTop()), mbVar.D1);
+                i10 = i0.a.d(mbVar.D1, t1Var.a, this.c.b(0));
             }
             float f7 = x10;
             float f10 = y3;
@@ -92,7 +92,7 @@ public final class l6 extends FrameLayout {
             float min = (Math.min(width, height) / 2.0f) - AndroidUtilities.dp(0.5f);
             if (q5Var != null && q5Var.getChildCount() > 0) {
                 View childAt4 = q5Var.getChildAt(0);
-                min = AndroidUtilities.lerp(min, (Math.min((childAt4.getWidth() - childAt4.getPaddingLeft()) - childAt4.getPaddingRight(), (childAt4.getHeight() - childAt4.getPaddingTop()) - childAt4.getPaddingBottom()) / 2.0f) - AndroidUtilities.dp(2.0f), nbVar.D1);
+                min = AndroidUtilities.lerp(min, (Math.min((childAt4.getWidth() - childAt4.getPaddingLeft()) - childAt4.getPaddingRight(), (childAt4.getHeight() - childAt4.getPaddingTop()) - childAt4.getPaddingBottom()) / 2.0f) - AndroidUtilities.dp(2.0f), mbVar.D1);
             }
             float f11 = min;
             rectF.set(f7 - f11, f10 - f11, f7 + f11, f10 + f11);
@@ -104,12 +104,12 @@ public final class l6 extends FrameLayout {
             paint3.setAlpha((int) (view.getAlpha() * 255.0f));
             float dp = f11 - AndroidUtilities.dp(3.0f);
             if (q5Var != null && q5Var.getSelectedColorIndex() != 0) {
-                dp = AndroidUtilities.lerp(f11 - AndroidUtilities.dp(3.0f), AndroidUtilities.dp(2.0f) + f11, nbVar.D1);
+                dp = AndroidUtilities.lerp(f11 - AndroidUtilities.dp(3.0f), AndroidUtilities.dp(2.0f) + f11, mbVar.D1);
             }
-            qg.j1.x1(f7, f10, dp, paint.getColor(), canvas2);
+            qg.i1.z1(f7, f10, dp, paint.getColor(), canvas2);
             if (q5Var != null && q5Var.getSelectedColorIndex() == 0) {
-                paint3.setAlpha((int) (view.getAlpha() * paint3.getAlpha() * nbVar.D1));
-                canvas2.drawCircle(f7, f10, com.google.android.gms.internal.vision.e2.b(1.0f, nbVar.D1, paint3.getStrokeWidth() + AndroidUtilities.dp(3.0f), f11), paint3);
+                paint3.setAlpha((int) (view.getAlpha() * paint3.getAlpha() * mbVar.D1));
+                canvas2.drawCircle(f7, f10, com.google.android.gms.internal.vision.e2.b(1.0f, mbVar.D1, paint3.getStrokeWidth() + AndroidUtilities.dp(3.0f), f11), paint3);
             }
         }
         canvas2.restore();

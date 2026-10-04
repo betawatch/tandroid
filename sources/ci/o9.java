@@ -1,106 +1,75 @@
 package ci;
 
-import java.util.ArrayList;
+import android.util.Pair;
 import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.TopicsController;
-import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.wn;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.rx0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o9 implements Runnable {
+public final /* synthetic */ class o9 implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ o9(Object obj, long j3, boolean z10, int i10) {
+    public /* synthetic */ o9(Object obj, long j3, int i10) {
         this.a = i10;
-        this.d = obj;
+        this.c = obj;
         this.b = j3;
-        this.c = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         int i10;
-        int i11;
+        long j3;
         switch (this.a) {
             case 0:
-                y9 y9Var = (y9) this.d;
-                fa faVar = y9Var.W;
-                boolean z10 = this.c;
-                long j3 = this.b;
-                if (z10) {
-                    i11 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
-                    MessagesController.getInstance(i11).loadChannelParticipants(Long.valueOf(j3), new p9(y9Var, j3, 0), 200);
-                    break;
-                } else {
-                    i10 = ((org.telegram.ui.ActionBar.e3) faVar).currentAccount;
-                    MessagesController.getInstance(i10).loadFullChat(j3, 0, true);
-                    break;
+                x9 x9Var = (x9) this.c;
+                TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) obj;
+                org.telegram.ui.ActionBar.b2 b2Var = x9Var.G;
+                if (b2Var != null) {
+                    b2Var.c(350L);
+                    x9Var.G = null;
                 }
-            case 1:
-                fi.t0 t0Var = (fi.t0) this.d;
-                t0Var.i = null;
-                a0.i iVar = t0Var.g;
-                long j10 = this.b;
-                iVar.l(j10);
-                ArrayList arrayList = t0Var.j;
-                if (arrayList != null) {
-                    for (int size = arrayList.size() - 1; size >= 0; size--) {
-                        if (DialogObject.getPeerDialogId(((TL_communities.CommunityPeerRequest) t0Var.j.get(size)).peer) == j10) {
-                            t0Var.j.remove(size);
+                if (tL_channels_channelParticipants != null && !tL_channels_channelParticipants.participants.isEmpty()) {
+                    TLRPC.TL_chatParticipants tL_chatParticipants = new TLRPC.TL_chatParticipants();
+                    while (i10 < tL_channels_channelParticipants.participants.size()) {
+                        TLRPC.ChannelParticipant channelParticipant = tL_channels_channelParticipants.participants.get(i10);
+                        TLRPC.TL_chatParticipant tL_chatParticipant = new TLRPC.TL_chatParticipant();
+                        TLRPC.Peer peer = channelParticipant.peer;
+                        if (peer != null) {
+                            j3 = DialogObject.getPeerDialogId(peer);
+                            i10 = j3 < 0 ? i10 + 1 : 0;
+                        } else {
+                            j3 = channelParticipant.user_id;
                         }
+                        tL_chatParticipant.user_id = j3;
+                        tL_chatParticipants.participants.add(tL_chatParticipant);
                     }
+                    x9Var.d(this.b, tL_chatParticipants);
+                    break;
                 }
-                t0Var.a();
-                fi.s0 s0Var = t0Var.h;
-                if (s0Var != null) {
-                    s0Var.f();
+                break;
+            case 1:
+                ResultCallback resultCallback = (ResultCallback) this.c;
+                dg.a aVar = (dg.a) obj;
+                if (resultCallback != null) {
+                    resultCallback.onComplete(new Pair(Long.valueOf(this.b), aVar));
+                    break;
                 }
-                MessagesController.getInstance(t0Var.d).resolveCommunityJoinPendingRequest(t0Var.e, j10, !this.c, new fi.r0(t0Var, 2));
-                break;
-            case 2:
-                ((MediaDataController) this.d).lambda$markFeaturedStickersByIdAsRead$67(this.c, this.b);
-                break;
-            case 3:
-                ((NotificationsController) this.d).lambda$setOpenedInBubble$4(this.c, this.b);
-                break;
-            case 4:
-                ((TopicsController) this.d).lambda$reloadTopics$24(this.b, this.c);
-                break;
-            case 5:
-                wn.o0((wn) this.d, this.b, this.c);
                 break;
             default:
-                yh.o8 o8Var = (yh.o8) this.d;
-                long j11 = this.b;
-                o8Var.F = j11;
-                o8Var.E = j11;
-                if (this.c) {
-                    ai.m1 m1Var = o8Var.G;
-                    m1Var.c = j11;
-                    o8Var.H.set(m1Var);
-                }
-                o8Var.r();
-                o8Var.I.a(true, true);
-                yh.n8 n8Var = o8Var.y;
-                if (n8Var != null) {
-                    n8Var.setMyPrivacy(o8Var.E);
+                rx0 rx0Var = (rx0) this.c;
+                TLRPC.TL_messages_emojiGroups tL_messages_emojiGroups = (TLRPC.TL_messages_emojiGroups) obj;
+                if (tL_messages_emojiGroups != null) {
+                    NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new a3.h0(rx0Var, tL_messages_emojiGroups, this.b, 22));
                     break;
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ o9(Object obj, boolean z10, long j3, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.c = z10;
-        this.b = j3;
     }
 }

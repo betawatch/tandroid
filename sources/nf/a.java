@@ -7,10 +7,10 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.i4;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -21,9 +21,9 @@ public final /* synthetic */ class a implements RequestDelegate {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
 
-    public /* synthetic */ a(e eVar, a2[] a2VarArr, int i10, Uri uri, Context context, boolean z10) {
+    public /* synthetic */ a(e eVar, b2[] b2VarArr, int i10, Uri uri, Context context, boolean z10) {
         this.d = eVar;
-        this.e = a2VarArr;
+        this.e = b2VarArr;
         this.b = i10;
         this.f = uri;
         this.g = context;
@@ -34,7 +34,7 @@ public final /* synthetic */ class a implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new c((e) this.d, (a2[]) this.e, tLObject, this.b, (Uri) this.f, (Context) this.g, this.c));
+                AndroidUtilities.runOnUIThread(new c((e) this.d, (b2[]) this.e, tLObject, this.b, (Uri) this.f, (Context) this.g, this.c));
                 break;
             default:
                 AndroidUtilities.runOnUIThread(new c((i4) this.d, tLObject, this.b, (TLRPC.WebPage) this.e, (MessageObject) this.f, this.c, (String) this.g));

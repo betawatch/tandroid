@@ -1,66 +1,35 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
+import android.window.OnBackInvokedCallback;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hb0 implements org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.fw0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rb0 b;
+public final class hb0 implements OnBackInvokedCallback {
+    public final /* synthetic */ LaunchActivity a;
 
-    public /* synthetic */ hb0(rb0 rb0Var, int i10) {
-        this.a = i10;
-        this.b = rb0Var;
+    public hb0(LaunchActivity launchActivity) {
+        this.a = launchActivity;
     }
 
-    @Override // org.telegram.ui.Components.d5
-    public void J(int i10, int i11, boolean z10) {
-        this.b.V(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        rb0 rb0Var = this.b;
-        rb0Var.T.a(rb0Var.e);
-        rb0Var.finishFragment();
-    }
-
-    @Override // org.telegram.ui.Components.fw0
-    public void h(int i10) {
-        switch (this.a) {
-            case 2:
-                rb0 rb0Var = this.b;
-                if (i10 >= rb0Var.P.size()) {
-                    rb0Var.w.setText("");
-                    break;
-                } else {
-                    rb0Var.w.setText(LocaleController.formatDateAudio(rb0Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i10)).intValue(), false));
-                    break;
-                }
-            default:
-                rb0 rb0Var2 = this.b;
-                rb0Var2.F.clearFocus();
-                rb0Var2.O = true;
-                ArrayList arrayList = rb0Var2.R;
-                if (i10 < arrayList.size()) {
-                    rb0Var2.F.setText(((Integer) arrayList.get(i10)).toString());
-                } else {
-                    rb0Var2.F.setText("");
-                }
-                rb0Var2.O = false;
-                break;
+    @Override // android.window.OnBackInvokedCallback
+    public final void onBackInvoked() {
+        if (AndroidUtilities.isTablet()) {
+            this.a.onBackPressed();
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.fw0
-    public /* synthetic */ void n() {
-        int i10 = this.a;
-    }
-
-    private final /* synthetic */ void a() {
-    }
-
-    private final /* synthetic */ void b() {
+        if (this.a.c0(true)) {
+            LaunchActivity launchActivity = this.a;
+            ActionBarLayout actionBarLayout = launchActivity.q0;
+            if (actionBarLayout == null) {
+                launchActivity.onBackPressed();
+            } else if (!actionBarLayout.c1) {
+                actionBarLayout.G();
+            } else {
+                actionBarLayout.c1 = false;
+                actionBarLayout.e(false);
+            }
+        }
     }
 }

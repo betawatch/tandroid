@@ -1,6 +1,5 @@
 package vg;
 
-import ai.z5;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -14,13 +13,13 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.ny0;
-import w7.y5;
+import org.telegram.ui.py0;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class g extends c {
     public final ImageView r;
@@ -35,12 +34,12 @@ public final class g extends c {
         this.r = imageView;
         imageView.setFocusable(false);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setBackground(h6.f0(h6.w0(null, h6.Vh, false), 1, -1));
+        imageView.setBackground(i6.f0(i6.w0(null, i6.Vh, false), 1, -1));
         imageView.setImageResource(R.drawable.poll_remove);
-        imageView.setColorFilter(new PorterDuffColorFilter(h6.w0(null, h6.m6, false), PorterDuff.Mode.MULTIPLY));
+        imageView.setColorFilter(new PorterDuffColorFilter(i6.w0(null, i6.m6, false), PorterDuff.Mode.MULTIPLY));
         imageView.setContentDescription(LocaleController.getString(R.string.Delete));
         boolean z10 = LocaleController.isRTL;
-        addView(imageView, y5.d(48, 50.0f, (z10 ? 3 : 5) | 17, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f, 0.0f));
+        addView(imageView, z5.d(48, 50.0f, (z10 ? 3 : 5) | 17, z10 ? 3.0f : 0.0f, 0.0f, z10 ? 0.0f : 3.0f, 0.0f));
         this.d.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 24.0f : 0.0f), 0, AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 24.0f), 0);
     }
 
@@ -60,7 +59,7 @@ public final class g extends c {
         w9Var.setRoundRadius(dp);
         w9Var.e(chat, h9Var);
         String str = chat.title;
-        z5 z5Var = this.d;
+        ai.z5 z5Var = this.d;
         z5Var.k(Emoji.replaceEmoji(str, z5Var.getPaint().getFontMetricsInt(), false));
         boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
         if (z10) {
@@ -73,7 +72,7 @@ public final class g extends c {
         } else {
             setSubtitle(LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", i10, new Object[0]));
         }
-        this.e.setTextColor(h6.v0(h6.r5, this.a));
+        this.e.setTextColor(i6.v0(i6.r5, this.a));
         setDivider(true);
         ImageView imageView = this.r;
         if (z10) {
@@ -81,7 +80,7 @@ public final class g extends c {
         } else {
             imageView.setVisibility(4);
         }
-        imageView.setOnClickListener(new ny0(21, this, chat));
+        imageView.setOnClickListener(new py0(21, this, chat));
     }
 
     public TLRPC.Chat getChat() {

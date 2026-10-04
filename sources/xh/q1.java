@@ -1,54 +1,803 @@
 package xh;
 
 import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.text.TextUtils;
+import android.text.style.ClickableSpan;
 import android.view.View;
+import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import j$.util.Collection;
+import j$.util.stream.Collectors;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.TreeSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.BirthdayController;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.GiftAuctionController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ok;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.ub1;
-import w7.y5;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.cb;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.k01;
+import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.nu;
+import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.p90;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.qz;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.zl0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.dg;
+import org.telegram.ui.ft;
+import org.telegram.ui.n21;
+import w7.b6;
+import w7.z5;
+import yh.b7;
+import yh.c6;
+import yh.k5;
+import yh.l7;
+import yh.t5;
+import yh.x7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class q1 extends FrameLayout {
-    public final ub1 a;
-    public int b;
-    public final e6 c;
-    public final ArrayList d;
-    public final RectF e;
-    public final RectF f;
-    public final RectF h;
-    public final Paint n;
-    public int r;
+public final class q1 extends cb implements NotificationCenter.NotificationCenterDelegate {
+    public static final /* synthetic */ int v0 = 0;
+    public final int X;
+    public u61 Y;
+    public List Z;
+    public final Utilities.Callback a0;
+    public TLRPC.DisallowedGiftsSettings b0;
+    public final long c0;
+    public final boolean d0;
+    public final String e0;
+    public final l7 f0;
+    public final v0 g0;
+    public final FrameLayout h0;
+    public final LinearLayout i0;
+    public final qz j0;
+    public final a1 k0;
+    public final w0 l0;
+    public final x0 m0;
+    public final ArrayList n0;
+    public final k5 o0;
+    public int p0;
+    public int q0;
+    public int r0;
+    public int s0;
+    public boolean t0;
+    public boolean u0;
 
-    public q1(Context context) {
-        super(context);
-        this.d = new ArrayList();
-        this.e = new RectF();
-        this.f = new RectF();
-        this.h = new RectF();
-        this.n = new Paint(1);
-        this.r = TLObject.FLAG_31;
-        ub1 ub1Var = new ub1(this, context, 18);
-        this.a = ub1Var;
-        ub1Var.setClipToPadding(false);
-        ub1Var.setClipChildren(false);
-        ub1Var.setOrientation(0);
-        ub1Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f));
-        addView(ub1Var, y5.e(-2, -1, 1));
-        setHorizontalScrollBarEnabled(false);
-        setClipToPadding(false);
-        setClipChildren(false);
-        this.c = new e6(ub1Var, 0L, 320L, sr.h);
+    public q1(LaunchActivity launchActivity, int i10, long j3) {
+        this(launchActivity, i10, j3, null, null);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    public static void N(final q1 q1Var, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, o0 o0Var, final Utilities.Callback callback, TLRPC.TL_error tL_error) {
+        b2Var.dismiss();
+        if (tLObject instanceof TL_stars.checkCanSendGiftResultOk) {
+            o0Var.run();
+            return;
+        }
+        if (!(tLObject instanceof TL_stars.checkCanSendGiftResultFail)) {
+            if (tL_error != null) {
+                new yc(q1Var.container, q1Var.resourcesProvider).d0(tL_error, false);
+                return;
+            }
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(q1Var.getContext(), 0, q1Var.resourcesProvider);
+        alertDialog$Builder.a.R = LocaleController.getString(R.string.GiftLocked);
+        alertDialog$Builder.a.T = MessageObject.formatTextWithEntities(((TL_stars.checkCanSendGiftResultFail) tLObject).reason, false);
+        alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
+        final org.telegram.ui.ActionBar.b2 o9 = alertDialog$Builder.o();
+        final nu nuVar = o9.n;
+        if (nuVar != null) {
+            nuVar.setOnLinkPressListener(new p90() { // from class: xh.r0
+                @Override // org.telegram.ui.Components.p90
+                public final void a(ClickableSpan clickableSpan) {
+                    q1 q1Var2 = q1.this;
+                    q1Var2.getClass();
+                    o9.dismiss();
+                    Utilities.Callback callback2 = callback;
+                    if (callback2 != null) {
+                        callback2.run(Boolean.FALSE);
+                    }
+                    q1Var2.dismiss();
+                    clickableSpan.onClick(nuVar);
+                }
+            });
+        }
+    }
+
+    public static void O(q1 q1Var, Context context, int i10, Utilities.Callback callback, long j3, int i11) {
+        TL_stars.SavedStarGift savedStarGift;
+        g61 G = q1Var.Y.G(i11 - 1);
+        if (G != null && G.G(h1.class)) {
+            Object obj = G.G;
+            int i12 = 0;
+            if (obj instanceof rg.k) {
+                new b1(q1Var, context, i10, (rg.k) obj, q1Var.c0, new m0(q1Var, callback, 0)).show();
+                return;
+            }
+            if (obj instanceof TL_stars.StarGift) {
+                TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
+                k5 k5Var = q1Var.o0;
+                if (k5Var != null && q1Var.s0 == q1Var.q0) {
+                    ArrayList arrayList = k5Var.l;
+                    int size = arrayList.size();
+                    while (true) {
+                        if (i12 >= size) {
+                            savedStarGift = null;
+                            break;
+                        }
+                        Object obj2 = arrayList.get(i12);
+                        i12++;
+                        TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj2;
+                        if (savedStarGift2.gift.id == starGift.id) {
+                            savedStarGift = savedStarGift2;
+                            break;
+                        }
+                    }
+                    if (savedStarGift == null) {
+                        return;
+                    }
+                    c1 c1Var = new c1(q1Var, q1Var.getContext(), i10, UserConfig.getInstance(i10).getClientUserId(), q1Var.resourcesProvider);
+                    c1Var.j2(savedStarGift, null);
+                    c1Var.Z1(j3, new ai.l(q1Var, c1Var, j3, callback, 9));
+                    return;
+                }
+                if (G.q && starGift.availability_resale > 0) {
+                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                    if (U == null) {
+                        return;
+                    }
+                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                    l2Var.a = true;
+                    l2Var.e = true;
+                    d1 d1Var = new d1(j3, starGift.title, starGift.id, q1Var.resourcesProvider, q1Var.container.getViewTreeObserver(), new n0());
+                    d1Var.e = new ft(22, q1Var, callback);
+                    U.showAsSheet(d1Var, l2Var);
+                    return;
+                }
+                if (starGift.auction) {
+                    GiftAuctionController.getInstance(i10).getOrRequestAuction(starGift.id, new org.telegram.ui.Components.z2(context, q1Var.resourcesProvider, i10, j3, new m0(q1Var, callback, 1)));
+                    return;
+                }
+                if (!starGift.sold_out) {
+                    if (starGift.limited_per_user && starGift.per_user_remains <= 0) {
+                        new yc(q1Var.container, q1Var.resourcesProvider).R(starGift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2PerUserLimit", starGift.per_user_total))).j();
+                        return;
+                    }
+                    o0 o0Var = new o0(q1Var, context, i10, starGift, callback, 0);
+                    if (starGift.locked_until_date > ConnectionsManager.getInstance(i10).getCurrentTime()) {
+                        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(q1Var.getContext(), 3, null);
+                        b2Var.q(500L);
+                        TL_stars.checkCanSendGift checkcansendgift = new TL_stars.checkCanSendGift();
+                        checkcansendgift.gift_id = starGift.id;
+                        ConnectionsManager.getInstance(i10).sendRequest(checkcansendgift, new ai.p3(q1Var, b2Var, o0Var, callback, 15));
+                        return;
+                    }
+                    if (!starGift.require_premium || UserConfig.getInstance(i10).isPremium()) {
+                        o0Var.run();
+                        return;
+                    }
+                    org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
+                    if (U2 == null) {
+                        return;
+                    }
+                    rg.m1 m1Var = new rg.m1(U2, i10, null, null, starGift, q1Var.resourcesProvider);
+                    w9 w9Var = new w9(q1Var.getContext());
+                    o5 o5Var = new o5(AndroidUtilities.dp(160.0f), 4, w9Var, false);
+                    w9Var.setImageDrawable(o5Var);
+                    w9Var.addOnAttachStateChangeListener(new u0(o5Var));
+                    o5Var.i(starGift.getDocument(), false);
+                    m1Var.B0 = w9Var;
+                    m1Var.show();
+                    o5Var.f();
+                    return;
+                }
+                d6 d6Var = q1Var.resourcesProvider;
+                if (context == null) {
+                    return;
+                }
+                org.telegram.ui.ActionBar.f3 j10 = ok.j(1, context, d6Var, false);
+                LinearLayout f7 = ok.f(context, 1);
+                f7.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
+                f7.setClipChildren(false);
+                f7.setClipToPadding(false);
+                w9 w9Var2 = new w9(context);
+                x7.g1(w9Var2.getImageReceiver(), starGift, 160);
+                f7.addView(w9Var2, z5.t(160, 160, 17, 0, -8, 0, 10));
+                TextView textView = new TextView(context);
+                org.telegram.ui.Cells.c1.p(i6.j5, d6Var, textView, 1, 20.0f);
+                textView.setGravity(17);
+                textView.setText(LocaleController.getString(R.string.Gift2SoldOutSheetTitle));
+                TextView h = com.google.android.gms.internal.vision.e2.h(f7, textView, z5.t(-1, -2, 17, 20, 0, 20, 4), context);
+                h.setTextSize(1, 14.0f);
+                h.setTypeface(AndroidUtilities.bold());
+                h.setGravity(17);
+                h.setTextColor(i6.v0(i6.q7, d6Var));
+                h.setText(LocaleController.getString(R.string.Gift2SoldOutSheetSubtitle));
+                f7.addView(h, z5.t(-1, -2, 17, 20, 0, 20, 4));
+                k01 k01Var = new k01(context, d6Var);
+                if (starGift.first_sale_date != 0) {
+                    k01Var.f(starGift.first_sale_date, LocaleController.getString(R.string.Gift2SoldOutSheetFirstSale));
+                }
+                if (starGift.last_sale_date != 0) {
+                    k01Var.f(starGift.last_sale_date, LocaleController.getString(R.string.Gift2SoldOutSheetLastSale));
+                }
+                k01Var.c(LocaleController.getString(R.string.Gift2SoldOutSheetValue), x7.d1(false, org.telegram.messenger.f0.h(starGift.stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                if (starGift.limited) {
+                    x7.K0(k01Var, i10, starGift, d6Var);
+                }
+                f7.addView(k01Var, z5.k(0.0f, 17.0f, 0.0f, 12.0f, -1, -2));
+                ci.d dVar = new ci.d(context, d6Var, true);
+                dVar.g(LocaleController.getString(R.string.OK), false, true);
+                f7.addView(dVar, z5.n(-1, 48));
+                j10.customView = f7;
+                org.telegram.ui.ActionBar.f3[] f3VarArr = {j10};
+                f3VarArr[0].useBackgroundTopPadding = false;
+                dVar.setOnClickListener(new c6(f3VarArr, 2));
+                f3VarArr[0].fixNavigationBar();
+                org.telegram.ui.ActionBar.n2 U3 = LaunchActivity.U();
+                if (!AndroidUtilities.isTablet() && !AndroidUtilities.hasDialogOnTop(U3)) {
+                    f3VarArr[0].makeAttached(U3);
+                }
+                f3VarArr[0].show();
+            }
+        }
+    }
+
+    public final void S(ArrayList arrayList, u61 u61Var) {
+        long j3;
+        boolean z10;
+        boolean z11;
+        TL_stars.StarGift starGift;
+        TLRPC.DisallowedGiftsSettings disallowedGiftsSettings;
+        TLRPC.DisallowedGiftsSettings disallowedGiftsSettings2;
+        TLRPC.DisallowedGiftsSettings disallowedGiftsSettings3;
+        TLRPC.DisallowedGiftsSettings disallowedGiftsSettings4;
+        int i10 = 3;
+        int i11 = 2;
+        v0 v0Var = this.g0;
+        long j10 = this.c0;
+        long j11 = 0;
+        int i12 = 0;
+        boolean z12 = this.d0;
+        if (z12 || j10 < 0 || ((disallowedGiftsSettings4 = this.b0) != null && disallowedGiftsSettings4.disallow_premium_gifts)) {
+            j3 = 0;
+            z10 = false;
+        } else {
+            arrayList.add(g61.k(v0Var));
+            arrayList.add(g61.k(this.h0));
+            ArrayList arrayList2 = this.n0;
+            if (arrayList2 == null || arrayList2.isEmpty()) {
+                j3 = 0;
+                g61 p5 = g61.p(1, 34);
+                p5.u = 1;
+                arrayList.add(p5);
+                g61 p10 = g61.p(2, 34);
+                p10.u = 1;
+                arrayList.add(p10);
+                g61 p11 = g61.p(3, 34);
+                p11.u = 1;
+                arrayList.add(p11);
+            } else {
+                int size = arrayList2.size();
+                int i13 = 0;
+                while (i13 < size) {
+                    Object obj = arrayList2.get(i13);
+                    i13++;
+                    int i14 = h1.a;
+                    g61 J = g61.J(h1.class);
+                    J.u = 1;
+                    J.G = (rg.k) obj;
+                    arrayList.add(J);
+                    j11 = j11;
+                }
+                j3 = j11;
+            }
+            z10 = true;
+        }
+        int i15 = this.X;
+        t5 y3 = t5.y(i15, false);
+        ArrayList arrayList3 = this.t0 ? y3.J : y3.I;
+        if (this.b0 != null) {
+            arrayList3 = (ArrayList) Collection.-EL.stream(arrayList3).filter(new ei.r1(this, i11)).collect(Collectors.toCollection(new dg()));
+        }
+        if (j10 < j3) {
+            arrayList3 = (ArrayList) Collection.-EL.stream(arrayList3).filter(new org.telegram.ui.cb(i10)).collect(Collectors.toCollection(new dg()));
+        }
+        long clientUserId = UserConfig.getInstance(i15).getClientUserId();
+        k5 k5Var = this.o0;
+        if (j10 != clientUserId && k5Var != null) {
+            ArrayList arrayList4 = k5Var.l;
+            int size2 = arrayList4.size();
+            int i16 = 0;
+            while (i16 < size2) {
+                Object obj2 = arrayList4.get(i16);
+                i16++;
+                if (((TL_stars.SavedStarGift) obj2).gift instanceof TL_stars.TL_starGiftUnique) {
+                    z11 = true;
+                    break;
+                }
+            }
+        }
+        z11 = false;
+        if (MessagesController.getInstance(i15).stargiftsBlocked || (arrayList3.isEmpty() && ((disallowedGiftsSettings3 = this.b0) == null || disallowedGiftsSettings3.disallow_unique_stargifts || k5Var == null || k5Var.l.isEmpty()))) {
+            TLRPC.DisallowedGiftsSettings disallowedGiftsSettings5 = this.b0;
+            if (disallowedGiftsSettings5 == null || disallowedGiftsSettings5.disallow_unique_stargifts || !arrayList3.isEmpty()) {
+                return;
+            }
+            arrayList.add(g61.C(AndroidUtilities.dp(300.0f)));
+            return;
+        }
+        if (z10) {
+            arrayList.add(g61.C(AndroidUtilities.dp(16.0f)));
+        } else {
+            arrayList.add(g61.k(v0Var));
+        }
+        arrayList.add(g61.k(this.i0));
+        TreeSet treeSet = new TreeSet();
+        TLRPC.DisallowedGiftsSettings disallowedGiftsSettings6 = this.b0;
+        if (disallowedGiftsSettings6 == null || !disallowedGiftsSettings6.disallow_unique_stargifts) {
+            for (int i17 = 0; i17 < arrayList3.size(); i17++) {
+                treeSet.add(Long.valueOf(((TL_stars.StarGift) arrayList3.get(i17)).stars));
+            }
+        }
+        ArrayList arrayList5 = new ArrayList();
+        this.q0 = -1;
+        this.p0 = -1;
+        if (!arrayList3.isEmpty()) {
+            this.p0 = arrayList5.size();
+            arrayList5.add(LocaleController.getString(R.string.Gift2TabAll));
+        }
+        TLRPC.DisallowedGiftsSettings disallowedGiftsSettings7 = this.b0;
+        if ((disallowedGiftsSettings7 == null || !disallowedGiftsSettings7.disallow_unique_stargifts) && z11) {
+            this.q0 = arrayList5.size();
+            arrayList5.add(LocaleController.getString(R.string.Gift2TabMine));
+        }
+        this.r0 = arrayList5.size();
+        arrayList5.add(LocaleController.getString(R.string.Gift2TabCollectibles));
+        int i18 = this.s0;
+        q0 q0Var = new q0(this, i12);
+        int i19 = o1.a;
+        g61 J2 = g61.J(o1.class);
+        J2.d = 1;
+        J2.G = arrayList5;
+        J2.z = i18;
+        J2.H = q0Var;
+        arrayList.add(J2);
+        boolean z13 = this.s0 == this.r0 && !z12 && j10 >= j3;
+        if (z13 != this.u0) {
+            this.u0 = z13;
+            ViewPropertyAnimator duration = this.l0.animate().alpha(!z13 ? 1.0f : 0.0f).scaleX(!z13 ? 1.0f : 0.85f).scaleY(!z13 ? 1.0f : 0.85f).setDuration(380L);
+            tr trVar = tr.h;
+            duration.setInterpolator(trVar).start();
+            this.m0.animate().alpha(z13 ? 1.0f : 0.0f).scaleX(z13 ? 1.0f : 0.85f).scaleY(z13 ? 1.0f : 0.85f).setDuration(380L).setInterpolator(trVar).start();
+        }
+        if (k5Var != null && this.s0 == this.q0) {
+            arrayList3 = new ArrayList();
+            ArrayList arrayList6 = k5Var.l;
+            int size3 = arrayList6.size();
+            int i20 = 0;
+            while (i20 < size3) {
+                Object obj3 = arrayList6.get(i20);
+                i20++;
+                TL_stars.StarGift starGift2 = ((TL_stars.SavedStarGift) obj3).gift;
+                if (starGift2 instanceof TL_stars.TL_starGiftUnique) {
+                    arrayList3.add(starGift2);
+                }
+            }
+        }
+        int i21 = 0;
+        for (int i22 = 0; i22 < arrayList3.size(); i22++) {
+            TL_stars.StarGift starGift3 = (TL_stars.StarGift) arrayList3.get(i22);
+            int i23 = this.s0;
+            if (i23 == this.p0 || i23 == this.q0 || (i23 == this.r0 && (starGift3.availability_resale > j3 || starGift3.require_premium || starGift3.locked_until_date != 0))) {
+                if (starGift3.sold_out || starGift3.availability_resale <= j3 || i23 == this.r0) {
+                    starGift = starGift3;
+                } else {
+                    g61 a2 = h1.a(i23, starGift3, i23 == this.q0, starGift3.limited && (disallowedGiftsSettings2 = this.b0) != null && disallowedGiftsSettings2.disallow_limited_stargifts, false, false, false);
+                    starGift = starGift3;
+                    arrayList.add(a2);
+                    i21++;
+                }
+                int i24 = this.s0;
+                arrayList.add(h1.a(i24, starGift, i24 == this.q0, starGift.limited && (disallowedGiftsSettings = this.b0) != null && disallowedGiftsSettings.disallow_limited_stargifts, true, false, false));
+                i21++;
+            }
+        }
+        int i25 = this.s0;
+        int i26 = this.q0;
+        if (i25 == i26 && k5Var != null && !k5Var.j) {
+            k5Var.a();
+            g61 p12 = g61.p(4, 34);
+            p12.u = 1;
+            arrayList.add(p12);
+            g61 p13 = g61.p(5, 34);
+            p13.u = 1;
+            arrayList.add(p13);
+            g61 p14 = g61.p(6, 34);
+            p14.u = 1;
+            arrayList.add(p14);
+        } else if (i25 != i26 && y3.C) {
+            g61 p15 = g61.p(4, 34);
+            p15.u = 1;
+            arrayList.add(p15);
+            g61 p16 = g61.p(5, 34);
+            p16.u = 1;
+            arrayList.add(p16);
+            g61 p17 = g61.p(6, 34);
+            p17.u = 1;
+            arrayList.add(p17);
+        }
+        arrayList.add(g61.C(AndroidUtilities.dp(i21 < 9 ? 300.0f : 40.0f)));
+    }
+
+    public final void T(boolean z10) {
+        this.t0 = z10;
+        this.Y.N(false);
+    }
+
+    public final void U() {
+        List list;
+        TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption;
+        ArrayList arrayList = this.n0;
+        arrayList.clear();
+        if (arrayList.isEmpty() && (list = this.Z) != null && !list.isEmpty()) {
+            ArrayList arrayList2 = new ArrayList();
+            long j3 = 0;
+            for (int size = this.Z.size() - 1; size >= 0; size--) {
+                TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption2 = (TLRPC.TL_premiumGiftCodeOption) this.Z.get(size);
+                if (!"XTR".equalsIgnoreCase(tL_premiumGiftCodeOption2.currency)) {
+                    Iterator it = this.Z.iterator();
+                    while (true) {
+                        if (!it.hasNext()) {
+                            tL_premiumGiftCodeOption = null;
+                            break;
+                        }
+                        tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) it.next();
+                        if (tL_premiumGiftCodeOption != tL_premiumGiftCodeOption2 && "XTR".equalsIgnoreCase(tL_premiumGiftCodeOption.currency) && tL_premiumGiftCodeOption.months == tL_premiumGiftCodeOption2.months) {
+                            break;
+                        }
+                    }
+                    rg.k kVar = new rg.k(tL_premiumGiftCodeOption2, tL_premiumGiftCodeOption);
+                    arrayList.add(kVar);
+                    if (BuildVars.useInvoiceBilling()) {
+                        if (kVar.f() > j3) {
+                            j3 = kVar.f();
+                        }
+                    } else if (kVar.h() != null && BillingController.getInstance().isReady()) {
+                        c5.a aVar = new c5.a();
+                        aVar.b = "inapp";
+                        aVar.a = kVar.h();
+                        arrayList2.add(aVar.a());
+                    }
+                }
+            }
+            if (BuildVars.useInvoiceBilling()) {
+                int size2 = arrayList.size();
+                int i10 = 0;
+                while (i10 < size2) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    ((rg.k) obj).g = j3;
+                }
+            } else if (!arrayList2.isEmpty()) {
+                System.currentTimeMillis();
+                BillingController.getInstance().queryProductDetails(arrayList2, new r2.s(this, 19));
+            }
+        }
+        if (arrayList.isEmpty()) {
+            tg.s.j(this.X, null, new q0(this, 1));
+        }
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        u61 u61Var;
+        if (i10 == NotificationCenter.billingProductDetailsUpdated) {
+            U();
+            return;
+        }
+        if (i10 == NotificationCenter.starGiftsLoaded) {
+            u61 u61Var2 = this.Y;
+            if (u61Var2 != null) {
+                u61Var2.N(true);
+                return;
+            }
+            return;
+        }
+        if (i10 != NotificationCenter.userInfoDidLoad) {
+            if (i10 != NotificationCenter.starGiftSoldOut) {
+                if (i10 == NotificationCenter.starUserGiftsLoaded && objArr[1] == this.o0 && (u61Var = this.Y) != null) {
+                    u61Var.N(true);
+                    return;
+                }
+                return;
+            }
+            if (isShown()) {
+                TL_stars.StarGift starGift = (TL_stars.StarGift) objArr[0];
+                new yc(this.container, this.resourcesProvider).s(starGift.sticker, LocaleController.getString(R.string.Gift2SoldOutTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("Gift2SoldOutCount", starGift.availability_total))).j();
+                u61 u61Var3 = this.Y;
+                if (u61Var3 != null) {
+                    u61Var3.N(true);
+                    return;
+                }
+                return;
+            }
+            return;
+        }
+        if (isShown()) {
+            long longValue = ((Long) objArr[0]).longValue();
+            long j3 = this.c0;
+            if (longValue == j3 && j3 > 0) {
+                int i12 = this.X;
+                TLRPC.UserFull userFull = MessagesController.getInstance(i12).getUserFull(j3);
+                TLRPC.DisallowedGiftsSettings disallowedGiftsSettings = (j3 == UserConfig.getInstance(i12).getClientUserId() || userFull == null) ? null : userFull.disallowed_stargifts;
+                this.b0 = disallowedGiftsSettings;
+                if (disallowedGiftsSettings != null && disallowedGiftsSettings.disallow_premium_gifts && disallowedGiftsSettings.disallow_unique_stargifts && disallowedGiftsSettings.disallow_limited_stargifts && disallowedGiftsSettings.disallow_unlimited_stargifts) {
+                    dismiss();
+                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                    if (U != null) {
+                        yc.a0(U).Q(R.raw.error, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserDisallowedGifts, DialogObject.getShortName(j3)))).j();
+                        return;
+                    }
+                    return;
+                }
+                u61 u61Var4 = this.Y;
+                if (u61Var4 != null) {
+                    u61Var4.N(true);
+                }
+            }
+            ArrayList arrayList = this.n0;
+            if (arrayList == null || arrayList.isEmpty()) {
+                U();
+                u61 u61Var5 = this.Y;
+                if (u61Var5 != null) {
+                    u61Var5.N(true);
+                }
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        int i10 = this.X;
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.billingProductDetailsUpdated);
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.starGiftsLoaded);
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.userInfoDidLoad);
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.starGiftSoldOut);
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.starUserGiftsLoaded);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void show() {
+        int i10 = this.X;
+        if (MessagesController.getInstance(i10).isFrozen()) {
+            org.telegram.ui.b.b(i10);
+            return;
+        }
+        TLRPC.DisallowedGiftsSettings disallowedGiftsSettings = this.b0;
+        if (disallowedGiftsSettings == null || !disallowedGiftsSettings.disallow_premium_gifts || !disallowedGiftsSettings.disallow_unique_stargifts || !disallowedGiftsSettings.disallow_limited_stargifts || !disallowedGiftsSettings.disallow_unlimited_stargifts) {
+            super.show();
+            return;
+        }
+        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+        if (U != null) {
+            yc.a0(U).Q(R.raw.error, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserDisallowedGifts, DialogObject.getShortName(this.c0)))).j();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.cb
+    public final yl0 v(zl0 zl0Var) {
+        u61 u61Var = new u61(this.d, getContext(), this.X, 0, true, new hi.a(this, 16), this.resourcesProvider);
+        this.Y = u61Var;
+        u61Var.r = false;
+        return u61Var;
+    }
+
+    @Override // org.telegram.ui.Components.cb
+    public final CharSequence y() {
+        return this.d0 ? LocaleController.getString(R.string.Gift2TitleSelf1) : Emoji.replaceEmoji(LocaleController.formatString(R.string.Gift2User, this.e0), null, false);
+    }
+
+    public q1(final Context context, final int i10, final long j3, List list, final Utilities.Callback callback) {
+        super(context, null, false, false, null);
+        this.n0 = new ArrayList();
+        this.p0 = -1;
+        this.q0 = -1;
+        this.r0 = -1;
+        new ArrayList();
+        this.X = i10;
+        this.c0 = j3;
+        boolean z10 = UserConfig.getInstance(i10).getClientUserId() == j3;
+        this.d0 = z10;
+        this.Z = list;
+        this.a0 = callback;
+        int i11 = i6.b6;
+        TLRPC.DisallowedGiftsSettings disallowedGiftsSettings = null;
+        setBackgroundColor(i6.w0(null, i11, false));
+        fixNavigationBar(i6.w0(null, i11, false));
+        this.o0 = t5.y(i10, false).G(UserConfig.getInstance(i10).getClientUserId(), true);
+        t5.y(i10, false).V();
+        w9 w9Var = new w9(context);
+        w9Var.setImportantForAccessibility(2);
+        h9 h9Var = new h9((d6) null);
+        if (j3 > 0) {
+            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j3));
+            this.e0 = UserObject.getForcedFirstName(user);
+            h9Var.r(user);
+            w9Var.e(user, h9Var);
+            TLRPC.UserFull userFull = MessagesController.getInstance(i10).getUserFull(j3);
+            if (j3 != UserConfig.getInstance(i10).getClientUserId() && userFull != null) {
+                disallowedGiftsSettings = userFull.disallowed_stargifts;
+            }
+            this.b0 = disallowedGiftsSettings;
+            if (userFull == null) {
+                MessagesController.getInstance(i10).loadFullUser(user, 0, true);
+            }
+        } else {
+            TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
+            this.e0 = chat == null ? "" : chat.title;
+            h9Var.q(chat);
+            w9Var.e(chat, h9Var);
+        }
+        this.v = 0.1f;
+        l7 l7Var = new l7(context, i10, this.resourcesProvider);
+        this.f0 = l7Var;
+        b6.a(l7Var);
+        l7Var.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 17));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.h0 = frameLayout;
+        v0 v0Var = new v0(context);
+        this.g0 = v0Var;
+        v0Var.setClipChildren(false);
+        v0Var.setClipToPadding(false);
+        v0Var.addView(new b7(context, 70, 0), z5.c(-1.0f, -1));
+        w9Var.setRoundRadius(AndroidUtilities.dp(42.0f));
+        v0Var.addView(w9Var, z5.d(84, 84.0f, 17, 0.0f, 15.0f, 0.0f, 17.0f));
+        b6.a(w9Var);
+        w9Var.setOnClickListener(new ai.a3(this, j3, 5));
+        v0Var.addView(l7Var, z5.d(-2, -2.0f, 53, 0.0f, -3.0f, -10.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        frameLayout.addView(linearLayout, z5.e(-1, -2, 55));
+        TextView f7 = org.telegram.messenger.f0.f(context, 1, 20.0f);
+        f7.setTypeface(AndroidUtilities.bold());
+        int i12 = i6.j5;
+        f7.setTextColor(i6.v0(i12, this.resourcesProvider));
+        f7.setGravity(17);
+        linearLayout.addView(f7, z5.t(-1, -2, 1, 4, 0, 4, 0));
+        f7.setMaxWidth(ci.e4.a(f7.getText(), f7.getPaint()));
+        q90 q90Var = new q90(context, this.resourcesProvider);
+        int i13 = i6.gc;
+        q90Var.setLinkTextColor(i6.v0(i13, this.resourcesProvider));
+        q90Var.setTextSize(1, 14.0f);
+        q90Var.setTextColor(i6.v0(i12, this.resourcesProvider));
+        q90Var.setGravity(17);
+        q90Var.setLineSpacing(AndroidUtilities.dp(2.33f), 1.0f);
+        linearLayout.addView(q90Var, z5.t(-1, -2, 1, 4, 4, 4, 12));
+        f7.setText(LocaleController.getString(R.string.Gift2Premium));
+        q90Var.setText(TextUtils.concat(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2PremiumInfo, this.e0)), " ", AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2PremiumInfoLink), new n21(17)), true)));
+        q90Var.setMaxWidth(ci.e4.a(q90Var.getText(), q90Var.getPaint()));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        this.i0 = linearLayout2;
+        linearLayout2.setOrientation(1);
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, 20.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setTextColor(i6.v0(i12, this.resourcesProvider));
+        textView.setGravity(17);
+        linearLayout2.addView(textView, z5.t(-1, -2, 1, 4, 0, 4, 0));
+        w0 w0Var = new w0(context, this.resourcesProvider);
+        this.l0 = w0Var;
+        w0Var.setLinkTextColor(i6.v0(i13, this.resourcesProvider));
+        w0Var.setTextSize(1, 14.0f);
+        w0Var.setTextColor(i6.v0(i12, this.resourcesProvider));
+        w0Var.setGravity(17);
+        x0 x0Var = new x0(context, this.resourcesProvider);
+        this.m0 = x0Var;
+        x0Var.setLinkTextColor(i6.v0(i13, this.resourcesProvider));
+        x0Var.setTextSize(1, 14.0f);
+        x0Var.setTextColor(i6.v0(i12, this.resourcesProvider));
+        x0Var.setGravity(17);
+        x0Var.setAlpha(0.0f);
+        x0Var.setScaleX(0.85f);
+        x0Var.setScaleY(0.85f);
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        frameLayout2.addView(w0Var, z5.d(-1, -2.0f, 49, 26.0f, 0.0f, 26.0f, 0.0f));
+        frameLayout2.addView(x0Var, z5.d(-1, -2.0f, 49, 26.0f, 0.0f, 26.0f, 0.0f));
+        textView.setText(LocaleController.getString(j3 < 0 ? R.string.Gift2StarsChannel : z10 ? R.string.Gift2StarsSelf : R.string.Gift2Stars));
+        if (z10) {
+            linearLayout2.addView(frameLayout2, z5.t(-2, -2, 1, 0, 9, 0, 4));
+            q90 q90Var2 = new q90(context, this.resourcesProvider);
+            q90Var2.setLinkTextColor(i6.v0(i13, this.resourcesProvider));
+            q90Var2.setTextSize(1, 14.0f);
+            q90Var2.setTextColor(i6.v0(i12, this.resourcesProvider));
+            q90Var2.setGravity(17);
+            linearLayout2.addView(q90Var2, z5.t(-2, -2, 1, 26, 4, 26, 6));
+            w0Var.setText(LocaleController.getString(R.string.Gift2StarsSelfInfo1));
+            q90Var2.setText(LocaleController.getString(R.string.Gift2StarsSelfInfo2));
+        } else if (j3 < 0) {
+            linearLayout2.addView(frameLayout2, z5.t(-2, -2, 1, 0, 9, 0, 4));
+            NotificationCenter.listenEmojiLoading(w0Var);
+            w0Var.setText(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2StarsChannelInfo, this.e0)), w0Var.getPaint().getFontMetricsInt(), false));
+        } else {
+            linearLayout2.addView(frameLayout2, z5.t(-1, -2, 1, 0, 9, 0, 6));
+            k5 G = t5.y(i10, false).G(j3, true);
+            org.telegram.messenger.voip.f fVar = new org.telegram.messenger.voip.f(this, G, j3, callback, context, 8);
+            fVar.run();
+            w0Var.addOnAttachStateChangeListener(new y0(fVar));
+            if (G.l.size() < 3) {
+                G.a();
+            }
+            NotificationCenter.getInstance(i10).listen(w0Var, NotificationCenter.starUserGiftsLoaded, new ft(23, G, fVar));
+        }
+        qz qzVar = new qz(3, false);
+        this.j0 = qzVar;
+        qzVar.O = new z0(this);
+        this.d.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        this.d.setClipToPadding(false);
+        this.d.setClipChildren(false);
+        this.d.setLayoutManager(qzVar);
+        this.d.setSelectorType(9);
+        this.d.setSelectorDrawableColor(0);
+        a1 a1Var = new a1();
+        this.k0 = a1Var;
+        a1Var.C = false;
+        a1Var.m = false;
+        a1Var.n(350L);
+        a1Var.o(tr.h);
+        a1Var.D = 40L;
+        this.d.setItemAnimator(a1Var);
+        this.d.setOnItemClickListener(new ml0() { // from class: xh.s0
+            @Override // org.telegram.ui.Components.ml0
+            public final void d(int i14, View view) {
+                q1.O(q1.this, context, i10, callback, j3, i14);
+            }
+        });
+        U();
+        this.Y.N(false);
+        L();
+        if (BirthdayController.getInstance(i10).isToday(j3)) {
+            T(true);
+        }
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.billingProductDetailsUpdated);
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.starGiftsLoaded);
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.userInfoDidLoad);
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.starGiftSoldOut);
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.starUserGiftsLoaded);
+        this.e.setTitle(y());
+        NotificationCenter.listenEmojiLoading(this.e.getTitleTextView());
     }
 }

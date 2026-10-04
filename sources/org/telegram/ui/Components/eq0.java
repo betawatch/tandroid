@@ -1,58 +1,91 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class eq0 implements View.OnTouchListener {
-    public final /* synthetic */ int a;
-    public final Rect b;
-    public final /* synthetic */ wq0 c;
+public final class eq0 extends mu {
+    public boolean V;
+    public int W;
+    public int a0;
+    public ValueAnimator b0;
+    public final /* synthetic */ zq0 c0;
 
-    public eq0(wq0 wq0Var, int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = wq0Var;
-                this.b = new Rect();
-                break;
-            default:
-                this.c = wq0Var;
-                this.b = new Rect();
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public eq0(zq0 zq0Var, Context context, kq0 kq0Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, kq0Var, null, 1, true, d6Var);
+        this.c0 = zq0Var;
+    }
+
+    @Override // org.telegram.ui.Components.mu
+    public final void c(float f7) {
+        this.c0.V0();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.V) {
+            eu editText = this.c0.d.getEditText();
+            editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
+            ofFloat.addUpdateListener(new v70(editText, 18));
+            ValueAnimator valueAnimator = this.b0;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            this.b0 = ofFloat;
+            ofFloat.setDuration(200L);
+            ofFloat.setInterpolator(tr.f);
+            ofFloat.start();
+            this.V = false;
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.mu
+    public final void f() {
+        super.f();
+        nz emojiView = getEmojiView();
+        zq0 zq0Var = this.c0;
+        if (emojiView != null) {
+            emojiView.w0 = false;
+            emojiView.w2 = false;
+            emojiView.setShouldDrawBackground(false);
+            emojiView.setBottomInset(zq0Var.G0.d);
+        }
+        FrameLayout frameLayout = zq0Var.c0;
+        if (frameLayout != null) {
+            frameLayout.bringToFront();
+        }
+        dq0 dq0Var = zq0Var.c;
+        if (dq0Var != null) {
+            dq0Var.bringToFront();
+        }
+        dq0 dq0Var2 = zq0Var.f;
+        if (dq0Var2 != null) {
+            dq0Var2.bringToFront();
         }
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        wq0 wq0Var;
-        org.telegram.ui.ActionBar.m1 m1Var;
-        wq0 wq0Var2;
-        org.telegram.ui.ActionBar.m1 m1Var2;
-        switch (this.a) {
-            case 0:
-                if (motionEvent.getActionMasked() == 0 && (m1Var = (wq0Var = this.c).J0) != null && m1Var.isShowing()) {
-                    Rect rect = this.b;
-                    view.getHitRect(rect);
-                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        wq0Var.J0.d(true);
-                        break;
-                    }
-                }
-                break;
-            default:
-                if (motionEvent.getActionMasked() == 0 && (m1Var2 = (wq0Var2 = this.c).J0) != null && m1Var2.isShowing()) {
-                    Rect rect2 = this.b;
-                    view.getHitRect(rect2);
-                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        wq0Var2.J0.d(true);
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.mu
+    public final void q(int i10, int i11) {
+        zq0 zq0Var = this.c0;
+        dq0 dq0Var = zq0Var.c;
+        if (TextUtils.isEmpty(getEditText().getText())) {
+            getEditText().animate().cancel();
+            getEditText().setOffsetY(0.0f);
+            this.V = false;
+        } else {
+            this.V = true;
+            this.W = getEditText().getMeasuredHeight();
+            this.a0 = getEditText().getScrollY();
+            invalidate();
         }
-        return false;
+        zq0Var.v0 = dq0Var.getTop() + zq0Var.u0;
+        dq0Var.invalidate();
     }
 }

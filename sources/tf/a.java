@@ -1,11 +1,14 @@
 package tf;
 
 import ai.n4;
+import android.os.Trace;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import java.util.Iterator;
+import li.h;
 import yf.x;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements ViewTreeObserver.OnDrawListener {
     public final /* synthetic */ int a;
@@ -20,11 +23,21 @@ public final /* synthetic */ class a implements ViewTreeObserver.OnDrawListener 
     public final void onDraw() {
         switch (this.a) {
             case 0:
-                ((n4) this.b).forceLayout();
-                break;
+                n4 n4Var = (n4) this.b;
+                Trace.beginSection("OnDraw");
+                try {
+                    Iterator it = ((pe.b) n4Var.b).iterator();
+                    while (it.hasNext()) {
+                        ((h) it.next()).a();
+                    }
+                    return;
+                } finally {
+                    Trace.endSection();
+                    n4Var.forceLayout();
+                }
             default:
                 ((x) this.b).e.incrementAndGet();
-                break;
+                return;
         }
     }
 }

@@ -3,13 +3,13 @@ package b3;
 import b2.s;
 import e2.v;
 import h2.h;
-import hg.c;
+import hg.k0;
 import i2.d0;
 import i2.f;
 import java.nio.ByteBuffer;
 import n4.y;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a extends f {
     public final h I;
@@ -25,7 +25,7 @@ public final class a extends f {
 
     @Override // i2.f
     public final int A(s sVar) {
-        return "application/x-camera-motion".equals(sVar.r) ? c.b(4, 0, 0, 0) : c.b(0, 0, 0, 0);
+        return "application/x-camera-motion".equals(sVar.r) ? k0.b(4, 0, 0, 0) : k0.b(0, 0, 0, 0);
     }
 
     @Override // i2.f, i2.j1
@@ -74,7 +74,7 @@ public final class a extends f {
             h hVar = this.I;
             hVar.clear();
             y yVar = this.c;
-            yVar.n();
+            yVar.o();
             if (w(yVar, hVar, 0) != -4 || hVar.isEndOfStream()) {
                 return;
             }
@@ -82,7 +82,7 @@ public final class a extends f {
             this.L = j11;
             boolean z10 = j11 < this.w;
             if (this.K != null && !z10) {
-                hVar.c();
+                hVar.d();
                 ByteBuffer byteBuffer = hVar.c;
                 String str = e2.d0.a;
                 if (byteBuffer.remaining() != 16) {

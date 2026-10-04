@@ -7,10 +7,10 @@ import android.os.Build;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.wv0;
-import w7.n6;
+import org.telegram.ui.Components.fw0;
+import w7.o6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class u1 {
     public final Bitmap a;
@@ -20,9 +20,9 @@ public final class u1 {
         this.a = bitmap;
     }
 
-    public static int b(wv0 wv0Var) {
-        int i10 = (int) wv0Var.a;
-        int i11 = (int) wv0Var.b;
+    public static int b(fw0 fw0Var) {
+        int i10 = (int) fw0Var.a;
+        int i11 = (int) fw0Var.b;
         int[] iArr = new int[1];
         GLES20.glGenTextures(1, iArr, 0);
         int i12 = iArr[0];
@@ -69,8 +69,8 @@ public final class u1 {
         GLES20.glTexParameteri(3553, 10241, 9729);
         try {
             GLUtils.texImage2D(3553, 0, 6408, this.a, 5121, 0);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             int width = bitmap.getWidth();
             int height = bitmap.getHeight();
             int i12 = width * height;
@@ -88,7 +88,7 @@ public final class u1 {
             allocateDirect.putInt(((pixel >> 16) & 255) | (pixel & (-16711936)) | ((pixel & 255) << 16)).position(0);
             GLES20.glTexSubImage2D(3553, 0, 0, 0, 1, 1, 6408, 5121, allocateDirect);
         }
-        n6.a();
+        o6.a();
         return this.b;
     }
 }

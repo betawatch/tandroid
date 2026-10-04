@@ -13,10 +13,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class i2 {
-    public final a4.m a;
+    public final a6.m a;
     public boolean e;
     public boolean f;
     public final ArrayDeque b = new ArrayDeque();
@@ -24,7 +24,7 @@ public final class i2 {
     public final i2.h0 g = new i2.h0(this, 6);
     public h2 d = b();
 
-    public i2(a4.m mVar) {
+    public i2(a6.m mVar) {
         this.a = mVar;
     }
 
@@ -204,20 +204,20 @@ public final class i2 {
             }
         }
         f2 f2Var = h2Var.b;
-        a4.m mVar = this.a;
+        a6.m mVar = this.a;
         x3 x3Var = (x3) mVar.b;
-        x3Var.n3.f(false);
-        ArrayList arrayList3 = x3Var.l3;
+        x3Var.u3.f(false);
+        ArrayList arrayList3 = x3Var.s3;
         arrayList3.clear();
         arrayList3.addAll(arrayList2);
-        x3Var.s4();
-        x3Var.Y2.N(false);
+        x3Var.u4();
+        x3Var.f3.N(false);
         if (f2Var.a >= 0) {
             x3Var.post(new gg.x1(15, x3Var, f2Var));
         }
-        x3Var.h3.onContentChanged();
+        x3Var.o3.onContentChanged();
         this.f = false;
-        ((x3) mVar.b).h3.G();
+        ((x3) mVar.b).o3.i0();
         return;
         pageBlock = new TL_iv.pageBlockParagraph();
         pageBlock.text = new TL_iv.textEmpty();
@@ -239,12 +239,12 @@ public final class i2 {
     /* JADX WARN: Type inference failed for: r1v4, types: [android.view.View, android.widget.TextView, ii.i1] */
     /* JADX WARN: Type inference failed for: r1v5, types: [android.view.View] */
     /* JADX WARN: Type inference failed for: r1v9, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r2v4, types: [ii.p5] */
+    /* JADX WARN: Type inference failed for: r2v4, types: [ii.q5] */
     public final h2 b() {
         f2 f2Var;
         m0 m0Var;
-        a4.m mVar = this.a;
-        ArrayList arrayList = ((x3) mVar.b).l3;
+        a6.m mVar = this.a;
+        ArrayList arrayList = ((x3) mVar.b).s3;
         HashMap hashMap = new HashMap();
         h2 h2Var = this.d;
         if (h2Var != null) {
@@ -286,8 +286,8 @@ public final class i2 {
             ?? r12 = (i1) findFocus;
             int selectionStart = r12.getSelectionStart();
             int selectionEnd = r12.getSelectionEnd();
-            ?? U2 = x3.U2(r12);
-            if (U2 == 0 || U2.getRow() == null) {
+            ?? W2 = x3.W2(r12);
+            if (W2 == 0 || W2.getRow() == null) {
                 if (!(r12 instanceof m0)) {
                     ViewParent parent = r12.getParent();
                     while (true) {
@@ -305,24 +305,24 @@ public final class i2 {
                     m0Var = (m0) r12;
                 }
                 if (m0Var == null || m0Var.getRow() == null) {
-                    while (r12 != 0 && !(r12 instanceof e6)) {
+                    while (r12 != 0 && !(r12 instanceof f6)) {
                         Object parent2 = r12.getParent();
                         r12 = parent2 instanceof View ? (View) parent2 : 0;
                     }
-                    if (r12 instanceof e6) {
-                        e6 e6Var = (e6) r12;
-                        if (e6Var.getRow() != null) {
-                            f2Var = new f2(e6Var.getRow().a, -1, selectionStart, selectionEnd);
+                    if (r12 instanceof f6) {
+                        f6 f6Var = (f6) r12;
+                        if (f6Var.getRow() != null) {
+                            f2Var = new f2(f6Var.getRow().a, -1, selectionStart, selectionEnd);
                         }
                     }
                 } else {
                     f2Var = new f2(m0Var.getRow().a, -1, selectionStart, selectionEnd);
                 }
-            } else if (r12 == U2.getTitleEditText()) {
-                f2Var = new f2(U2.getRow().a, 0, selectionStart, selectionEnd);
+            } else if (r12 == W2.getTitleEditText()) {
+                f2Var = new f2(W2.getRow().a, 0, selectionStart, selectionEnd);
             } else {
-                s5 o9 = U2.o(r12);
-                f2Var = new f2(U2.getRow().a, o9 != null ? U2.k(o9.b) : -1, selectionStart, selectionEnd);
+                t5 o9 = W2.o(r12);
+                f2Var = new f2(W2.getRow().a, o9 != null ? W2.k(o9.b) : -1, selectionStart, selectionEnd);
             }
             return new h2(g2VarArr, f2Var);
         }
@@ -357,7 +357,7 @@ public final class i2 {
         }
         this.c.clear();
         this.d = b10;
-        ((x3) this.a.b).h3.G();
+        ((x3) this.a.b).o3.i0();
     }
 
     public final void d() {
@@ -382,7 +382,7 @@ public final class i2 {
         i2.h0 h0Var = this.g;
         AndroidUtilities.cancelRunOnUIThread(h0Var);
         AndroidUtilities.runOnUIThread(h0Var, 800L);
-        ((x3) this.a.b).h3.G();
+        ((x3) this.a.b).o3.i0();
     }
 
     public final void h() {
@@ -412,7 +412,7 @@ public final class i2 {
         this.c.clear();
         this.d = b();
         this.e = false;
-        ((x3) this.a.b).h3.G();
+        ((x3) this.a.b).o3.i0();
     }
 
     public final void k() {

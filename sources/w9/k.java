@@ -1,69 +1,118 @@
 package w9;
 
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.os.IBinder;
+import android.os.RemoteException;
 import android.util.Log;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.android.gms.tasks.Tasks;
-import java.io.File;
-import java.io.IOException;
+import android.view.View;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.Task;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.Callable;
-import java.util.concurrent.Executor;
-import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildConfig;
+import org.telegram.messenger.f0;
+import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.xv0;
+import org.telegram.ui.q20;
+import y8.w0;
+import yh.r2;
+import yh.x7;
+import zg.o0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class k implements Callable {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ Throwable b;
-    public final /* synthetic */ Thread c;
-    public final /* synthetic */ da.b d;
-    public final /* synthetic */ m e;
+public final class k implements Continuation, xv0, rk0 {
+    public Object a;
 
-    public k(m mVar, long j3, Throwable th2, Thread thread, da.b bVar) {
-        this.e = mVar;
-        this.a = j3;
-        this.b = th2;
-        this.c = thread;
-        this.d = bVar;
+    public /* synthetic */ k(Object obj) {
+        this.a = obj;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        ba.c cVar;
-        String str;
-        long j3 = this.a;
-        long j10 = j3 / 1000;
-        m mVar = this.e;
-        String e = mVar.e();
-        if (e == null) {
-            Log.e("FirebaseCrashlytics", "Tried to write a fatal exception while no session was open.", null);
-            return Tasks.forResult(null);
+    @Override // org.telegram.ui.Components.xv0
+    public void E(boolean z10) {
+        x7 x7Var = (x7) this.a;
+        le.b bVar = x7Var.W;
+        if (bVar != null) {
+            bVar.a(z10, true);
         }
-        mVar.c.o();
-        com.google.firebase.messaging.n nVar = mVar.m;
-        nVar.getClass();
-        String concat = "Persisting fatal event for session ".concat(e);
-        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-            Log.v("FirebaseCrashlytics", concat, null);
+        q20 q20Var = x7Var.s;
+        if (q20Var != null) {
+            q20Var.invalidate();
         }
-        nVar.v(this.b, this.c, e, "crash", j10, true);
-        try {
-            cVar = mVar.g;
-            str = ".ae" + j3;
-            cVar.getClass();
-        } catch (IOException e7) {
-            Log.w("FirebaseCrashlytics", "Could not create app exception marker file.", e7);
+    }
+
+    @Override // org.telegram.ui.Components.xv0
+    public float Y0() {
+        return f0.b(9.0f, ((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2) * 2) + ((x7) this.a).Z, 0);
+    }
+
+    public void a(IBinder iBinder) {
+        synchronized (((HashMap) this.a)) {
+            if (iBinder != null) {
+                try {
+                    iBinder.queryLocalInterface("com.google.android.gms.wearable.internal.IWearableService");
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+            new w0();
+            for (Map.Entry entry : ((HashMap) this.a).entrySet()) {
+                if (entry.getValue() != null) {
+                    throw new ClassCastException();
+                }
+                try {
+                    throw null;
+                } catch (RemoteException unused) {
+                    Log.w("WearableClient", "onPostInitHandler: Didn't add: " + String.valueOf(entry.getKey()) + "/" + BuildConfig.BETA_URL);
+                }
+            }
         }
-        if (!new File(cVar.b, str).createNewFile()) {
-            throw new IOException("Create new file failed.");
-        }
-        da.b bVar = this.d;
-        mVar.c(false, bVar);
-        new f(mVar.f);
-        m.a(mVar, f.b, Boolean.FALSE);
-        if (!mVar.b.a()) {
-            return Tasks.forResult(null);
-        }
-        Executor executor = (Executor) mVar.e.b;
-        return ((TaskCompletionSource) ((AtomicReference) bVar.i).get()).getTask().onSuccessTask(executor, new o0.a(this, executor, e));
+    }
+
+    @Override // org.telegram.ui.Components.xv0
+    public int e1() {
+        return ((x7) this.a).a0;
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public void h(View view, o0 o0Var, boolean z10, boolean z11) {
+        zg.t tVar = (zg.t) this.a;
+        tVar.a.Za(null, tVar.e, tVar.b, view, 0.0f, 0.0f, o0Var, false, z10, z11, false);
+        AndroidUtilities.runOnUIThread(new r2(this, 9));
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public /* synthetic */ boolean j() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public /* synthetic */ boolean k() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public /* synthetic */ boolean p() {
+        return false;
+    }
+
+    @Override // com.google.android.gms.tasks.Continuation
+    public Object then(Task task) {
+        return ((Callable) this.a).call();
+    }
+
+    public k() {
+        this.a = new HashMap();
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public /* synthetic */ void o() {
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

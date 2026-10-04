@@ -6,9 +6,9 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class j3 implements a5 {
+public final class j3 implements b5 {
     public final /* synthetic */ u a;
     public final /* synthetic */ a b;
     public final /* synthetic */ x3 c;
@@ -19,21 +19,21 @@ public final class j3 implements a5 {
         this.b = aVar;
     }
 
-    @Override // ii.a5
+    @Override // ii.b5
     public final void a(int i10, int i11) {
         if (i10 > 0 && i11 > 0) {
             u uVar = this.a;
             uVar.j = i10;
             uVar.k = i11;
         }
-        View z12 = this.c.z1(this.b);
-        if (z12 instanceof v4) {
-            z12.requestLayout();
-            z12.invalidate();
+        View B1 = this.c.B1(this.b);
+        if (B1 instanceof w4) {
+            B1.requestLayout();
+            B1.invalidate();
         }
     }
 
-    @Override // ii.a5
+    @Override // ii.b5
     public final void b(TLRPC.Photo photo) {
         int i10;
         int i11;
@@ -46,60 +46,60 @@ public final class j3 implements a5 {
             uVar.k = i11;
         }
         a aVar = this.b;
-        TL_iv.PageBlock N3 = x3.N3(aVar, uVar);
-        if (N3 instanceof TL_iv.pageBlockPhoto) {
-            ((TL_iv.pageBlockPhoto) N3).photo_id = photo.id;
+        TL_iv.PageBlock P3 = x3.P3(aVar, uVar);
+        if (P3 instanceof TL_iv.pageBlockPhoto) {
+            ((TL_iv.pageBlockPhoto) P3).photo_id = photo.id;
         }
         x3 x3Var = this.c;
-        x3Var.Z3.remove(uVar);
-        x3Var.n4(aVar);
-        x3Var.h3.onContentChanged();
+        x3Var.g4.remove(uVar);
+        x3Var.p4(aVar);
+        x3Var.o3.onContentChanged();
     }
 
-    @Override // ii.a5
+    @Override // ii.b5
     public final void c(TLRPC.Document document) {
         u uVar = this.a;
         uVar.h = document;
         uVar.a = 2;
         a aVar = this.b;
-        TL_iv.PageBlock N3 = x3.N3(aVar, uVar);
-        if (N3 instanceof TL_iv.pageBlockVideo) {
-            ((TL_iv.pageBlockVideo) N3).video_id = document.id;
+        TL_iv.PageBlock P3 = x3.P3(aVar, uVar);
+        if (P3 instanceof TL_iv.pageBlockVideo) {
+            ((TL_iv.pageBlockVideo) P3).video_id = document.id;
         }
         x3 x3Var = this.c;
-        x3Var.Z3.remove(uVar);
-        x3Var.n4(aVar);
-        x3Var.h3.onContentChanged();
+        x3Var.g4.remove(uVar);
+        x3Var.p4(aVar);
+        x3Var.o3.onContentChanged();
     }
 
-    @Override // ii.a5
+    @Override // ii.b5
     public final void f(float f7) {
         this.a.f = f7;
         a aVar = this.b;
         x3 x3Var = this.c;
-        View z12 = x3Var.z1(aVar);
-        if (z12 instanceof v4) {
-            z12.requestLayout();
-            z12.invalidate();
+        View B1 = x3Var.B1(aVar);
+        if (B1 instanceof w4) {
+            B1.requestLayout();
+            B1.invalidate();
         }
-        x3Var.h3.onContentChanged();
+        x3Var.o3.onContentChanged();
     }
 
-    @Override // ii.a5
+    @Override // ii.b5
     public final void onError() {
         u uVar = this.a;
         uVar.a = 3;
         x3 x3Var = this.c;
-        x3Var.Z3.remove(uVar);
-        x3Var.q4(this.b, uVar);
-        x3Var.h3.onContentChanged();
+        x3Var.g4.remove(uVar);
+        x3Var.s4(this.b, uVar);
+        x3Var.o3.onContentChanged();
     }
 
-    @Override // ii.a5
+    @Override // ii.b5
     public final /* synthetic */ void d(TLRPC.Document document) {
     }
 
-    @Override // ii.a5
+    @Override // ii.b5
     public final /* synthetic */ void e(TLRPC.Document document) {
     }
 }

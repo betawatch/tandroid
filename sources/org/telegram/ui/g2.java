@@ -13,10 +13,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class g2 extends FrameLayout implements org.telegram.ui.Cells.p9, e3 {
-    public final p70 a;
+    public final t70 a;
     public final g4 b;
     public b3 c;
     public final ii.b4 d;
@@ -24,15 +24,15 @@ public final class g2 extends FrameLayout implements org.telegram.ui.Cells.p9, e
     public TL_iv.pageBlockPreformatted f;
     public CharSequence h;
 
-    public g2(Context context, final p70 p70Var, g4 g4Var) {
+    public g2(Context context, final t70 t70Var, g4 g4Var) {
         super(context);
-        this.a = p70Var;
+        this.a = t70Var;
         this.b = g4Var;
-        ii.b4 b4Var = new ii.b4(context, p70Var);
+        ii.b4 b4Var = new ii.b4(context, t70Var);
         this.d = b4Var;
         b4Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        addView(b4Var, w7.y5.c(-2.0f, -1));
-        f2 f2Var = new f2(this, context, p70Var, g4Var);
+        addView(b4Var, w7.z5.c(-2.0f, -1));
+        f2 f2Var = new f2(this, context, t70Var, g4Var);
         this.e = f2Var;
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, -1);
         int dp = AndroidUtilities.dp(16.0f);
@@ -47,7 +47,7 @@ public final class g2 extends FrameLayout implements org.telegram.ui.Cells.p9, e
             b4Var.setOnScrollChangeListener(new View.OnScrollChangeListener() { // from class: org.telegram.ui.e2
                 @Override // android.view.View.OnScrollChangeListener
                 public final void onScrollChange(View view, int i10, int i11, int i12, int i13) {
-                    org.telegram.ui.Cells.q9 q9Var = ((i4) p70.this).O0;
+                    org.telegram.ui.Cells.q9 q9Var = ((i4) t70.this).O0;
                     if (q9Var == null || !q9Var.y()) {
                         return;
                     }

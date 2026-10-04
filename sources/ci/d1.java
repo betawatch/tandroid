@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public abstract class d1 extends CameraView {
     public static final int[] a0 = {1893745684, -215458996, -862041025, -1258375037, -1320049076, -215749424, 1901578030, -215451421, 1908491424, -1321491332, -1155551678, 1908524435, 976847578, -1489198134, 1910814392, -713271737, -2010722764, 1407170066, -821405251, -1394190955, -1394190055, 1407170066, 1407159934, 1407172057, 1231389747, -2076538925, 41497626, 846150482, -1198092731, -251277614, -2073158771, 1273004781};
@@ -90,8 +90,8 @@ public abstract class d1 extends CameraView {
         for (int i10 = 0; i10 < split.length; i10++) {
             try {
                 fArr[i10] = Float.parseFloat(split[i10]);
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
                 return null;
             }
         }
@@ -167,13 +167,13 @@ public abstract class d1 extends CameraView {
     public final void onDualCameraSuccess() {
         v();
         if (this.H) {
-            ob obVar = (ob) this;
+            nb nbVar = (nb) this;
             if (MessagesController.getGlobalMainSettings().getInt("storysvddualhint", 0) < 2) {
-                AndroidUtilities.runOnUIThread(new androidx.fragment.app.a0(obVar, 26), 340L);
+                AndroidUtilities.runOnUIThread(new androidx.fragment.app.a0(nbVar, 26), 340L);
             }
-            lc lcVar = obVar.b0;
-            lcVar.F0.setValue(obVar.isDual());
-            lcVar.F0.setContentDescription(LocaleController.getString(obVar.isDual() ? R.string.AccDescrDualCameraOn : R.string.AccDescrDualCameraOff));
+            kc kcVar = nbVar.b0;
+            kcVar.F0.setValue(nbVar.isDual());
+            kcVar.F0.setContentDescription(LocaleController.getString(nbVar.isDual() ? R.string.AccDescrDualCameraOn : R.string.AccDescrDualCameraOff));
         }
         t(true);
     }
@@ -243,11 +243,11 @@ public abstract class d1 extends CameraView {
         fArr[1] = 0.0f;
         matrix.mapPoints(fArr);
         this.R = (float) Math.toDegrees(Math.atan2(fArr[1] - this.Q, fArr[0] - this.P));
-        this.S = v7.a7.a(this.P, this.Q, fArr[0], fArr[1]) * 2.0f;
+        this.S = v7.z6.a(this.P, this.Q, fArr[0], fArr[1]) * 2.0f;
         fArr[0] = 0.0f;
         fArr[1] = 1.0f;
         matrix.mapPoints(fArr);
-        this.T = v7.a7.a(this.P, this.Q, fArr[0], fArr[1]) * 2.0f;
+        this.T = v7.z6.a(this.P, this.Q, fArr[0], fArr[1]) * 2.0f;
     }
 
     public final boolean s(float f7, float f10) {
@@ -369,7 +369,7 @@ public abstract class d1 extends CameraView {
                 if (z12) {
                     pointF.x = (motionEvent.getX(1) + motionEvent.getX(0)) / 2.0f;
                     pointF.y = (motionEvent.getY(1) + motionEvent.getY(0)) / 2.0f;
-                    f7 = v7.a7.a(motionEvent.getX(0), motionEvent.getY(0), motionEvent.getX(1), motionEvent.getY(1));
+                    f7 = v7.z6.a(motionEvent.getX(0), motionEvent.getY(0), motionEvent.getX(1), motionEvent.getY(1));
                     d = Math.atan2(motionEvent.getY(1) - motionEvent.getY(0), motionEvent.getX(1) - motionEvent.getX(0));
                 } else {
                     pointF.x = motionEvent.getX(0);
@@ -520,7 +520,7 @@ public abstract class d1 extends CameraView {
                     f10 = 0.0f;
                 }
                 if (motionEvent.getAction() == 2 && this.s) {
-                    if (v7.a7.a(f16, f17, f18, f19) > AndroidUtilities.dp(2.0f) && (c1Var = this.M) != null) {
+                    if (v7.z6.a(f16, f17, f18, f19) > AndroidUtilities.dp(2.0f) && (c1Var = this.M) != null) {
                         AndroidUtilities.cancelRunOnUIThread(c1Var);
                         this.M = null;
                     }
@@ -610,8 +610,8 @@ public abstract class d1 extends CameraView {
                     boolean z16 = Math.max(f44, (this.T / 2.0f) + f44) > ((float) (getHeight() - AndroidUtilities.dp(66.0f)));
                     if (this.F != z15) {
                         this.F = z15;
-                        lc lcVar = ((ob) this).b0;
-                        lcVar.o1.a(true, z15, lcVar.i0);
+                        kc kcVar = ((nb) this).b0;
+                        kcVar.o1.a(true, z15, kcVar.i0);
                     }
                     if (this.G != z16) {
                         this.G = z16;
@@ -626,8 +626,8 @@ public abstract class d1 extends CameraView {
                     this.s = false;
                     if (this.F) {
                         this.F = false;
-                        lc lcVar2 = ((ob) this).b0;
-                        lcVar2.o1.a(true, false, lcVar2.i0);
+                        kc kcVar2 = ((nb) this).b0;
+                        kcVar2.o1.a(true, false, kcVar2.i0);
                     }
                     if (this.G) {
                         this.G = false;
@@ -637,8 +637,8 @@ public abstract class d1 extends CameraView {
                     this.s = false;
                     if (this.F) {
                         this.F = false;
-                        lc lcVar3 = ((ob) this).b0;
-                        lcVar3.o1.a(true, false, lcVar3.i0);
+                        kc kcVar3 = ((nb) this).b0;
+                        kcVar3.o1.a(true, false, kcVar3.i0);
                     }
                     if (this.G) {
                         this.G = false;
@@ -652,7 +652,7 @@ public abstract class d1 extends CameraView {
                 return this.s || z11;
             }
         } else if (motionEvent.getAction() == 1) {
-            if (System.currentTimeMillis() - this.K <= ViewConfiguration.getTapTimeout() && v7.a7.a(this.I, this.J, motionEvent.getX(), motionEvent.getY()) < AndroidUtilities.dp(10.0f)) {
+            if (System.currentTimeMillis() - this.K <= ViewConfiguration.getTapTimeout() && v7.z6.a(this.I, this.J, motionEvent.getX(), motionEvent.getY()) < AndroidUtilities.dp(10.0f)) {
                 if (s(this.I, this.J)) {
                     switchCamera();
                     this.N = null;

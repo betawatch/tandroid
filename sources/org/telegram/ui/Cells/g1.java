@@ -1,31 +1,31 @@
 package org.telegram.ui.Cells;
 
 import android.view.ViewGroup;
-import org.telegram.ui.Components.qo0;
+import org.telegram.ui.Components.bp0;
 import org.telegram.ui.Components.to0;
-import org.telegram.ui.Components.uo0;
-import org.telegram.ui.Components.w00;
+import org.telegram.ui.Components.x00;
 import org.telegram.ui.Components.xo0;
+import org.telegram.ui.Components.yo0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class g1 extends w00 {
+public final class g1 extends x00 {
     public final /* synthetic */ int e = 0;
     public final /* synthetic */ ViewGroup f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g1(uo0 uo0Var, boolean z10) {
+    public g1(yo0 yo0Var, boolean z10) {
         super(z10);
-        this.f = uo0Var;
+        this.f = yo0Var;
     }
 
-    @Override // org.telegram.ui.Components.ro0
+    @Override // org.telegram.ui.Components.vo0
     public CharSequence d() {
         switch (this.e) {
             case 1:
-                to0 to0Var = ((uo0) this.f).w;
-                if (to0Var != null) {
-                    return to0Var.getContentDescription();
+                xo0 xo0Var = ((yo0) this.f).w;
+                if (xo0Var != null) {
+                    return xo0Var.getContentDescription();
                 }
                 return null;
             default:
@@ -33,13 +33,13 @@ public final class g1 extends w00 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w00
+    @Override // org.telegram.ui.Components.x00
     public float h() {
         switch (this.e) {
             case 1:
-                int m0 = ((uo0) this.f).w.m0();
-                if (m0 > 0) {
-                    return 1.0f / m0;
+                int p02 = ((yo0) this.f).w.p0();
+                if (p02 > 0) {
+                    return 1.0f / p02;
                 }
                 return 0.05f;
             default:
@@ -47,7 +47,7 @@ public final class g1 extends w00 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w00
+    @Override // org.telegram.ui.Components.x00
     public final float k() {
         float f7;
         int i10;
@@ -59,7 +59,7 @@ public final class g1 extends w00 {
                 if (u1Var.y7.isMusic()) {
                     f7 = f1Var.b;
                     i10 = f1Var.f;
-                    i11 = qo0.E;
+                    i11 = to0.E;
                 } else {
                     if (!u1Var.y7.isVoice()) {
                         if (u1Var.y7.isRoundVideo()) {
@@ -68,38 +68,38 @@ public final class g1 extends w00 {
                         return 0.0f;
                     }
                     if (u1Var.F5) {
-                        xo0 xo0Var = u1Var.H5;
-                        return xo0Var.a / xo0Var.g;
+                        bp0 bp0Var = u1Var.H5;
+                        return bp0Var.a / bp0Var.g;
                     }
                     f7 = f1Var.b;
                     i10 = f1Var.f;
-                    i11 = qo0.E;
+                    i11 = to0.E;
                 }
                 return f7 / (i10 - i11);
             default:
-                return ((uo0) this.f).getProgress();
+                return ((yo0) this.f).getProgress();
         }
     }
 
-    @Override // org.telegram.ui.Components.w00
+    @Override // org.telegram.ui.Components.x00
     public final void l(float f7) {
         switch (this.e) {
             case 0:
                 u1 u1Var = (u1) this.f;
-                xo0 xo0Var = u1Var.H5;
+                bp0 bp0Var = u1Var.H5;
                 f1 f1Var = u1Var.G5;
                 if (u1Var.y7.isMusic()) {
                     f1Var.i(f7);
                 } else if (u1Var.y7.isVoice()) {
                     if (u1Var.F5) {
-                        xo0Var.g(f7, false);
+                        bp0Var.g(f7, false);
                     } else {
                         f1Var.i(f7);
                     }
                 } else if (u1Var.y7.isRoundVideo()) {
                     if (u1Var.F5) {
-                        if (xo0Var != null) {
-                            xo0Var.g(f7, false);
+                        if (bp0Var != null) {
+                            bp0Var.g(f7, false);
                         }
                     } else if (f1Var != null) {
                         f1Var.i(f7);
@@ -110,11 +110,11 @@ public final class g1 extends w00 {
                 u1Var.invalidate();
                 break;
             default:
-                uo0 uo0Var = (uo0) this.f;
-                uo0Var.v = true;
-                uo0Var.setProgress(f7);
-                uo0Var.f(f7, true);
-                uo0Var.v = false;
+                yo0 yo0Var = (yo0) this.f;
+                yo0Var.v = true;
+                yo0Var.setProgress(f7);
+                yo0Var.f(f7, true);
+                yo0Var.v = false;
                 break;
         }
     }

@@ -1,6 +1,5 @@
 package org.telegram.ui;
 
-import android.os.Build;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
@@ -9,149 +8,142 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class yj extends s4.s0 {
     public boolean b;
-    public final /* synthetic */ wn d;
+    public final /* synthetic */ yn d;
     public float a = 0.0f;
     public final int c = AndroidUtilities.dp(100.0f);
 
-    public yj(wn wnVar) {
-        this.d = wnVar;
+    public yj(yn ynVar) {
+        this.d = ynVar;
     }
 
     @Override // s4.s0
     public final void a(RecyclerView recyclerView, int i10) {
-        wn wnVar = this.d;
+        yn ynVar = this.d;
         if (i10 == 0) {
-            org.telegram.ui.Cells.u1 u1Var = wnVar.p2;
+            org.telegram.ui.Cells.u1 u1Var = ynVar.n2;
             if (u1Var != null) {
-                wnVar.n2.e(u1Var, -1, wnVar.q2, wnVar.r2, true);
-                wnVar.p2 = null;
+                ynVar.l2.e(u1Var, -1, ynVar.o2, ynVar.p2, true);
+                ynVar.n2 = null;
             }
-            wnVar.j3 = false;
-            wnVar.k3 = false;
-            wnVar.l3 = false;
-            wnVar.m3 = false;
-            wnVar.f9(true);
-            wnVar.g9(true);
+            ynVar.h3 = false;
+            ynVar.i3 = false;
+            ynVar.j3 = false;
+            ynVar.k3 = false;
+            ynVar.g9(true);
+            ynVar.h9(true);
             if (SharedConfig.getDevicePerformanceClass() == 0) {
-                int i11 = wn.Gc;
+                int i11 = yn.Bc;
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
             }
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startSpoilers, new Object[0]);
-            wnVar.x0.setOverScrollMode(0);
-            wnVar.c9.W();
-            wnVar.Wc(false);
-            wnVar.q9(1);
-            wnVar.sa = false;
+            ynVar.v0.setOverScrollMode(0);
+            ynVar.a9.W();
+            ynVar.Vc(false);
+            ynVar.qa = false;
             return;
         }
-        ci.e4 e4Var = wnVar.y1;
+        ci.e4 e4Var = ynVar.w1;
         if (e4Var != null && e4Var.V) {
             e4Var.e(true);
         }
-        org.telegram.ui.Components.p6 p6Var = wnVar.W2;
-        if (p6Var != null && p6Var.getVisibility() == 0 && wnVar.x9()) {
-            AndroidUtilities.hideKeyboard(wnVar.getParentActivity().getCurrentFocus());
+        org.telegram.ui.Components.p6 p6Var = ynVar.U2;
+        if (p6Var != null && p6Var.getVisibility() == 0 && ynVar.w9()) {
+            AndroidUtilities.hideKeyboard(ynVar.getParentActivity().getCurrentFocus());
         }
         if (i10 == 2) {
-            wnVar.D4 = true;
-            wnVar.l3 = true;
+            ynVar.B4 = true;
+            ynVar.j3 = true;
         } else if (i10 == 1) {
-            wnVar.p2 = null;
-            wnVar.D4 = true;
-            wnVar.j3 = true;
-            wnVar.k3 = true;
-            wnVar.m3 = true;
-            wnVar.l3 = true;
+            ynVar.n2 = null;
+            ynVar.B4 = true;
+            ynVar.h3 = true;
+            ynVar.i3 = true;
+            ynVar.k3 = true;
+            ynVar.j3 = true;
         }
         if (SharedConfig.getDevicePerformanceClass() == 0) {
-            int i12 = wn.Gc;
+            int i12 = yn.Bc;
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopSpoilers, new Object[0]);
-        zg.t tVar = wnVar.Y9;
+        zg.t tVar = ynVar.W9;
         if (tVar == null || !tVar.d()) {
             return;
         }
-        wnVar.Y9.setHiddenByScroll(true);
+        ynVar.W9.setHiddenByScroll(true);
     }
 
     @Override // s4.s0
     public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ah.h hVar;
         boolean z10;
-        wn wnVar = this.d;
-        wn wnVar2 = wnVar.da;
-        if (wnVar2 == null) {
-            wnVar2 = wnVar;
-        }
-        wnVar.x0.invalidate();
+        yn ynVar = this.d;
+        ynVar.v0.invalidate();
         boolean z11 = true;
         this.b = i11 < 0;
-        int L0 = wnVar.z0.L0();
-        if (((i11 != 0 && wnVar.sa && recyclerView.getScrollState() == 2) || recyclerView.getScrollState() == 1) && wnVar.N4 != 0) {
-            if (!this.b || wnVar.O4) {
-                wnVar.N4 = 0;
-            } else if (!wnVar.x0.X1 && L0 != -1) {
-                int N0 = wnVar.z0.N0();
+        int L0 = ynVar.x0.L0();
+        if (((i11 != 0 && ynVar.qa && recyclerView.getScrollState() == 2) || recyclerView.getScrollState() == 1) && ynVar.L4 != 0) {
+            if (!this.b || ynVar.M4) {
+                ynVar.L4 = 0;
+            } else if (!ynVar.v0.X1 && L0 != -1) {
+                int N0 = ynVar.x0.N0();
                 MessageObject messageObject = null;
                 while (true) {
                     if (N0 < L0) {
                         z10 = false;
                         break;
                     }
-                    View m10 = wnVar.z0.m(N0);
+                    View m10 = ynVar.x0.m(N0);
                     if (m10 instanceof org.telegram.ui.Cells.u1) {
                         messageObject = ((org.telegram.ui.Cells.u1) m10).getMessageObject();
                     } else if (m10 instanceof org.telegram.ui.Cells.w0) {
                         messageObject = ((org.telegram.ui.Cells.w0) m10).getMessageObject();
                     }
-                    if (messageObject != null && wnVar.N4 == messageObject.getId()) {
+                    if (messageObject != null && ynVar.L4 == messageObject.getId()) {
                         z10 = true;
                         break;
                     }
                     N0--;
                 }
-                if (!z10 && messageObject != null && messageObject.getId() < wnVar.N4) {
-                    wnVar.N4 = 0;
+                if (!z10 && messageObject != null && messageObject.getId() < ynVar.L4) {
+                    ynVar.L4 = 0;
                 }
             }
         }
         if (recyclerView.getScrollState() == 1) {
-            wnVar.O4 = false;
-            if (!wnVar.D4 && i11 != 0) {
-                wnVar.D4 = true;
+            ynVar.M4 = false;
+            if (!ynVar.B4 && i11 != 0) {
+                ynVar.B4 = true;
             }
         }
         if (i11 != 0) {
-            wnVar.q9(1);
-            wnVar.X0.getClass();
-            wnVar.h9(true);
+            ynVar.V0.getClass();
+            ynVar.i9(true);
         }
-        if (i11 != 0 && wnVar.j3 && !wnVar.f3) {
-            if (wnVar.L7 != Integer.MAX_VALUE) {
-                wnVar.Ia();
-                wnVar.Wc(false);
+        if (i11 != 0 && ynVar.h3 && !ynVar.d3) {
+            if (ynVar.J7 != Integer.MAX_VALUE) {
+                ynVar.Ha();
+                ynVar.Vc(false);
             }
-            wnVar.Fb(true);
+            ynVar.Eb(true);
         }
-        if (wnVar.t9() && i11 != 0 && wnVar.k3 && !wnVar.f3) {
-            if (wnVar.L7 != Integer.MAX_VALUE) {
-                wnVar.Ia();
-                wnVar.Wc(false);
+        if (ynVar.s9() && i11 != 0 && ynVar.i3 && !ynVar.d3) {
+            if (ynVar.J7 != Integer.MAX_VALUE) {
+                ynVar.Ha();
+                ynVar.Vc(false);
             }
-            wnVar.Gb(true);
+            ynVar.Fb(true);
         }
-        wnVar.a7(true);
+        ynVar.a7(true);
         if (L0 != -1) {
-            wnVar.A0.h();
-            if (L0 != 0 || !wnVar.E6[0]) {
-                aa.a[] aVarArr = wnVar.j1.e;
+            ynVar.y0.h();
+            if (L0 != 0 || !ynVar.C6[0]) {
+                aa.a[] aVarArr = ynVar.h1.e;
                 aa.a aVar = 1 < aVarArr.length ? aVarArr[1] : null;
-                boolean z12 = aVar != null && ((le.c) aVar.c).f;
+                boolean z12 = aVar != null && ((le.b) aVar.c).f;
                 int i12 = this.c;
                 if (i11 > 0) {
                     if (!z12) {
@@ -159,31 +151,31 @@ public final class yj extends s4.s0 {
                         this.a = f7;
                         if (f7 > i12) {
                             this.a = 0.0f;
-                            wnVar.g9 = true;
-                            wnVar.vc();
-                            wnVar.k1 = true;
+                            ynVar.e9 = true;
+                            ynVar.uc();
+                            ynVar.i1 = true;
                         }
                     }
-                } else if (wnVar.k1 && z12) {
+                } else if (ynVar.i1 && z12) {
                     float f10 = this.a + i11;
                     this.a = f10;
                     if (f10 < (-i12)) {
-                        wnVar.g9 = false;
-                        wnVar.vc();
+                        ynVar.e9 = false;
+                        ynVar.uc();
                         this.a = 0.0f;
                     }
                 }
             } else if (i11 >= 0) {
-                wnVar.g9 = false;
-                wnVar.vc();
+                ynVar.e9 = false;
+                ynVar.uc();
             }
         }
-        wnVar.r9();
-        wnVar.c9.H();
-        ArrayList arrayList = wnVar.xa.F;
+        ynVar.q9();
+        ynVar.a9.H();
+        ArrayList arrayList = ynVar.va.F;
         for (int i13 = 0; i13 < arrayList.size(); i13++) {
-            if (!((bz) arrayList.get(i13)).c) {
-                ((bz) arrayList.get(i13)).b -= i11;
+            if (!((fz) arrayList.get(i13)).c) {
+                ((fz) arrayList.get(i13)).b -= i11;
             }
         }
         zg.k0 k0Var = zg.k0.B;
@@ -193,44 +185,41 @@ public final class yj extends s4.s0 {
                 k0Var.u = true;
             }
         }
-        if (Build.VERSION.SDK_INT >= 31 && (hVar = wnVar2.F) != null) {
-            hVar.f(i10, i11);
-        }
-        wnVar.i7(false);
-        ci.e4 e4Var = wnVar.x1;
+        ynVar.i7(false);
+        ci.e4 e4Var = ynVar.v1;
         if (e4Var != null) {
             if (e4Var.V) {
                 e4Var.e(true);
-            } else if (!wnVar.Ub) {
-                wnVar.Tb = System.currentTimeMillis();
-                AndroidUtilities.cancelRunOnUIThread(new rg(wnVar, 28));
-                AndroidUtilities.runOnUIThread(new rg(wnVar, 29), 2000L);
+            } else if (!ynVar.Sb) {
+                ynVar.Rb = System.currentTimeMillis();
+                AndroidUtilities.cancelRunOnUIThread(new ug(ynVar, 25));
+                AndroidUtilities.runOnUIThread(new ug(ynVar, 26), 2000L);
             }
         }
-        ul ulVar = wnVar.B1;
+        ul ulVar = ynVar.z1;
         if (ulVar != null && ulVar.V) {
             ulVar.e(true);
         }
-        ci.e4 e4Var2 = wnVar.z1;
+        ci.e4 e4Var2 = ynVar.x1;
         if (e4Var2 == null || !e4Var2.V) {
-            AndroidUtilities.cancelRunOnUIThread(new xj(wnVar, 0));
-            AndroidUtilities.runOnUIThread(new xj(wnVar, 1), 2000L);
+            AndroidUtilities.cancelRunOnUIThread(new ug(ynVar, 27));
+            AndroidUtilities.runOnUIThread(new ug(ynVar, 28), 2000L);
         } else {
             e4Var2.e(true);
         }
-        ci.e4 e4Var3 = wnVar.A1;
+        ci.e4 e4Var3 = ynVar.y1;
         if (e4Var3 != null) {
             e4Var3.e(true);
         }
-        jk jkVar = wnVar.Y;
+        jk jkVar = ynVar.W;
         if (jkVar != null) {
             jkVar.l0();
         }
-        yh.b4 b4Var = wnVar.pc;
+        yh.b4 b4Var = ynVar.nc;
         if (b4Var != null) {
             b4Var.invalidate();
         }
-        hh.a aVar2 = wnVar.Pb;
+        hh.a aVar2 = ynVar.Nb;
         if (aVar2 == null || aVar2.b <= 0) {
             return;
         }

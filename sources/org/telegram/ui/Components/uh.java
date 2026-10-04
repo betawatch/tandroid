@@ -1,76 +1,152 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
+import java.util.regex.Pattern;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.CallReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SavedMessagesController;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class uh extends AnimatorListenerAdapter {
+public final /* synthetic */ class uh implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ci c;
 
-    public /* synthetic */ uh(ci ciVar, boolean z10, int i10) {
+    public /* synthetic */ uh(int i10) {
         this.a = i10;
-        this.c = ciVar;
-        this.b = z10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ci ciVar = this.c;
-                wi wiVar = ciVar.e;
-                boolean z10 = this.b;
-                if (z10) {
-                    wiVar.x1.setVisibility(8);
-                } else {
-                    wiVar.E1.setVisibility(8);
-                }
-                int dp = z10 ? AndroidUtilities.dp(36.0f) : 0;
-                for (int i10 = 0; i10 < wiVar.x0.size(); i10++) {
-                    ((ei.q4) wiVar.x0.valueAt(i10)).setMeasureOffsetY(dp);
-                }
-                if (ciVar.a == animator) {
-                    ciVar.a = null;
+                break;
+            case 1:
+                int i10 = xn.m1;
+                break;
+            case 2:
+                PhotoViewer.t1().G0(false, false);
+                break;
+            case 3:
+                PhotoViewer.t1().G0(false, false);
+                break;
+            case 4:
+                int i11 = eu.b;
+                break;
+            case 5:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
+                break;
+            case 6:
+                if (VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute()) {
+                    VoIPService.getSharedInstance().setMicMute(false, true, false);
                     break;
                 }
                 break;
-            default:
-                wi wiVar2 = this.c.e;
-                boolean z11 = this.b;
-                wiVar2.B1 = z11;
-                if (!z11) {
-                    wiVar2.C1.setVisibility(8);
+            case 7:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
+                break;
+            case 8:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                break;
+            case 9:
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                if (R != null) {
+                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                    l2Var.a = true;
+                    R.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), l2Var);
                     break;
                 }
+                break;
+            case 10:
+                int i12 = f11.f;
+                break;
+            case 11:
+                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+                v11.f = Boolean.TRUE;
+                edit.putBoolean("nothanos", true).apply();
+                break;
+            case 12:
+                SharedPreferences.Editor edit2 = MessagesController.getGlobalMainSettings().edit();
+                v11.f = Boolean.TRUE;
+                edit2.putBoolean("nothanos", true).apply();
+                break;
+            case 13:
+                int i13 = v31.f0;
+                break;
+            case 14:
+                SavedMessagesController.openSavedMessages();
+                break;
+            case 15:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
+                break;
+            case 16:
+                org.telegram.ui.Components.voip.n2.i();
+                break;
+            case 17:
+                ai.x7.p();
+                break;
+            case 18:
+                org.telegram.ui.h60 h60Var = org.telegram.ui.h60.D3;
+                if (h60Var != null) {
+                    h60Var.show();
+                    break;
+                }
+                break;
+            case 19:
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().setMicMute(false, true, false);
+                    break;
+                }
+                break;
+            case 20:
+                Pattern pattern = LaunchActivity.B1;
+                break;
+            case 21:
+                Pattern pattern2 = LaunchActivity.B1;
+                break;
+            case 22:
+                Pattern pattern3 = LaunchActivity.B1;
+                ApplicationLoader.mainInterfacePausedStageQueue = false;
+                ApplicationLoader.mainInterfacePausedStageQueueTime = System.currentTimeMillis();
+                break;
+            case 23:
+                break;
+            case 24:
+                CallReceiver.checkLastReceivedCall();
+                break;
+            case 25:
+                CallReceiver.checkLastReceivedCall();
+                break;
+            case 26:
+                yc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                break;
+            case 27:
+                yc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+                break;
+            case 28:
+                Drawable[] drawableArr = PhotoViewer.U8;
+                break;
+            default:
+                yc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                wi wiVar = this.c.e;
-                if (this.b) {
-                    wiVar.E1.setAlpha(0.0f);
-                    wiVar.E1.setVisibility(0);
-                    int dp = AndroidUtilities.dp(36.0f);
-                    for (int i10 = 0; i10 < wiVar.x0.size(); i10++) {
-                        ((ei.q4) wiVar.x0.valueAt(i10)).setMeasureOffsetY(dp);
-                    }
-                    break;
-                } else {
-                    wiVar.x1.setAlpha(0.0f);
-                    wiVar.x1.setVisibility(0);
-                    break;
-                }
-            default:
-                super.onAnimationStart(animator);
-                break;
-        }
+    public /* synthetic */ uh(Object obj, int i10) {
+        this.a = i10;
+    }
+
+    private final void a() {
+    }
+
+    private final void b() {
     }
 }

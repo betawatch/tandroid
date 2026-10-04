@@ -1,9 +1,9 @@
 package r0;
 
-import android.view.ViewGroup;
+import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public interface m extends l {
-    void j(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr);
+    void n(View view, int i10, int i11, int i12, int i13, int i14, int[] iArr);
 }

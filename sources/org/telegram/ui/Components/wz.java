@@ -1,27 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.graphics.SurfaceTexture;
-import org.telegram.messenger.DispatchQueue;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wz implements SurfaceTexture.OnFrameAvailableListener {
+public final /* synthetic */ class wz implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ DispatchQueue b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ wz(DispatchQueue dispatchQueue, int i10) {
+    public /* synthetic */ wz(Object obj, boolean z10, boolean z11, boolean z12, int i10) {
         this.a = i10;
-        this.b = dispatchQueue;
+        this.e = obj;
+        this.b = z10;
+        this.c = z11;
+        this.d = z12;
     }
 
-    @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
-    public final void onFrameAvailable(SurfaceTexture surfaceTexture) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((xz) this.b).e(false, true, true);
+                yz yzVar = (yz) this.e;
+                if (this.b) {
+                    c00 c00Var = yzVar.J;
+                    c00Var.a = true;
+                    c00Var.b = true;
+                }
+                if (this.c) {
+                    yzVar.x = true;
+                }
+                long currentTimeMillis = System.currentTimeMillis();
+                if (this.d || Math.abs(yzVar.a0 - currentTimeMillis) > 30) {
+                    yzVar.a0 = currentTimeMillis;
+                    yzVar.d0.run();
+                    break;
+                }
                 break;
             default:
-                ((p50) this.b).requestRender(true, false);
+                ((org.telegram.ui.ug0) this.e).w1(this.b, this.c, this.d);
                 break;
         }
     }

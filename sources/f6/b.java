@@ -8,7 +8,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.internal.cast.v;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b extends AsyncTask {
     public static final g6.b c = new g6.b("FetchBitmapTask", null);
@@ -28,13 +28,13 @@ public final class b extends AsyncTask {
             int readInt = Q0.readInt();
             Q0.recycle();
             eVar = readInt >= 233700000 ? b10.a1(bVar2, new x6.b(this), jVar, i10, i11) : b10.Z0(new x6.b(this), jVar, i10, i11);
-        } catch (RemoteException e) {
-            e = e;
+        } catch (RemoteException e7) {
+            e = e7;
             com.google.android.gms.internal.cast.e.a.a(e, "Unable to call %s on %s.", "newFetchBitmapTaskImpl", com.google.android.gms.internal.cast.g.class.getSimpleName());
             eVar = null;
             this.a = eVar;
-        } catch (d6.d e7) {
-            e = e7;
+        } catch (d6.d e10) {
+            e = e10;
             com.google.android.gms.internal.cast.e.a.a(e, "Unable to call %s on %s.", "newFetchBitmapTaskImpl", com.google.android.gms.internal.cast.g.class.getSimpleName());
             eVar = null;
             this.a = eVar;
@@ -56,8 +56,8 @@ public final class b extends AsyncTask {
                 Bitmap bitmap = (Bitmap) v.a(Q0, Bitmap.CREATOR);
                 Q0.recycle();
                 return bitmap;
-            } catch (RemoteException e) {
-                c.a(e, "Unable to call %s on %s.", "doFetch", e.class.getSimpleName());
+            } catch (RemoteException e7) {
+                c.a(e7, "Unable to call %s on %s.", "doFetch", e.class.getSimpleName());
             }
         }
         return null;
@@ -70,7 +70,7 @@ public final class b extends AsyncTask {
         if (cVar != null) {
             a aVar = (a) cVar.e;
             if (aVar != null) {
-                aVar.n(bitmap);
+                aVar.m(bitmap);
             }
             cVar.d = null;
         }

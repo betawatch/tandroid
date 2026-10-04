@@ -18,11 +18,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class t1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
     public final s1 a;
-    public final org.telegram.ui.Components.q91 b;
+    public final org.telegram.ui.Components.z91 b;
     public b3 c;
     public b3 d;
     public int e;
@@ -46,9 +46,9 @@ public final class t1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             this.a = null;
             return;
         }
-        org.telegram.ui.Components.q91 q91Var = new org.telegram.ui.Components.q91(context, false, new o1(this));
-        this.b = q91Var;
-        addView(q91Var);
+        org.telegram.ui.Components.z91 z91Var = new org.telegram.ui.Components.z91(context, false, new o1(this));
+        this.b = z91Var;
+        addView(z91Var);
         i4Var.N.add(this);
         s1 s1Var = new s1(this, context);
         this.a = s1Var;
@@ -73,14 +73,14 @@ public final class t1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
                 if (z10) {
                     s1Var.destroy();
                 }
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         }
         this.v = null;
-        org.telegram.ui.Components.q91 q91Var = this.b;
-        if (q91Var != null) {
-            q91Var.b();
+        org.telegram.ui.Components.z91 z91Var = this.b;
+        if (z91Var != null) {
+            z91Var.b();
         }
     }
 
@@ -173,12 +173,12 @@ public final class t1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             int i14 = this.n;
             s1Var.layout(i14, 0, s1Var.getMeasuredWidth() + i14, s1Var.getMeasuredHeight());
         }
-        org.telegram.ui.Components.q91 q91Var = this.b;
-        if (q91Var == null || q91Var.getParent() != this) {
+        org.telegram.ui.Components.z91 z91Var = this.b;
+        if (z91Var == null || z91Var.getParent() != this) {
             return;
         }
         int i15 = this.n;
-        q91Var.layout(i15, 0, q91Var.getMeasuredWidth() + i15, q91Var.getMeasuredHeight());
+        z91Var.layout(i15, 0, z91Var.getMeasuredWidth() + i15, z91Var.getMeasuredHeight());
     }
 
     /* JADX WARN: Removed duplicated region for block: B:40:0x013b  */
@@ -235,9 +235,9 @@ public final class t1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             if (s1Var != null) {
                 s1Var.measure(View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i18, TLObject.FLAG_30));
             }
-            org.telegram.ui.Components.q91 q91Var = this.b;
-            if (q91Var != null && q91Var.getParent() == this) {
-                q91Var.measure(View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f) + i18, TLObject.FLAG_30));
+            org.telegram.ui.Components.z91 z91Var = this.b;
+            if (z91Var != null && z91Var.getParent() == this) {
+                z91Var.measure(View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(10.0f) + i18, TLObject.FLAG_30));
             }
             int dp4 = AndroidUtilities.dp(8.0f) + i18;
             this.f = dp4;
@@ -258,7 +258,7 @@ public final class t1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             TL_iv.pageBlockEmbed pageblockembed4 = this.v;
             TL_iv.RichText richText2 = pageblockembed4.caption.credit;
             if (this.w.G) {
-                alignment = org.telegram.ui.Components.ww0.a();
+                alignment = org.telegram.ui.Components.fx0.a();
             }
             b3 p10 = i4.p(i4Var, this, null, richText2, i14, 0, pageblockembed4, alignment, 0, this.w);
             this.d = p10;

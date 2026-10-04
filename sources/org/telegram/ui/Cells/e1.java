@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class e1 implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class e1 implements Runnable {
                         AndroidUtilities.runOnUIThread(e1Var, 1000L);
                         u1Var.Wc = true;
                         int dp = u1Var.J8 - AndroidUtilities.dp(91.0f);
-                        u1Var.T3 = new StaticLayout(TextUtils.ellipsize(LocaleController.getString(R.string.AttachLiveLocation), org.telegram.ui.ActionBar.h6.H2, dp, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.h6.H2, dp, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                        u1Var.T3 = new StaticLayout(TextUtils.ellipsize(LocaleController.getString(R.string.AttachLiveLocation), org.telegram.ui.ActionBar.i6.H2, dp, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.i6.H2, dp, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                     }
                 }
                 if (!u1Var.W3) {

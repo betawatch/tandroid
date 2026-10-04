@@ -1,55 +1,75 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.ViewGroup;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vw0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ Object d;
+public final class vw0 extends ow0 {
+    public final /* synthetic */ int r = 0;
+    public final /* synthetic */ org.telegram.ui.Components.yl0 s;
 
-    public /* synthetic */ vw0(Object obj, ViewGroup viewGroup, Object obj2, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = viewGroup;
-        this.d = obj2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vw0(rg.l1 l1Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
+        this.s = l1Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
+    @Override // org.telegram.ui.ow0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        org.telegram.ui.ActionBar.d6 d6Var;
+        boolean q6;
+        org.telegram.ui.ActionBar.d6 d6Var2;
+        switch (this.r) {
             case 0:
-                ax0 ax0Var = (ax0) this.b;
-                ValueAnimator valueAnimator2 = (ValueAnimator) this.d;
-                PremiumPreviewFragment premiumPreviewFragment = ax0Var.n;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view = this.c;
-                view.setAlpha(floatValue);
-                view.setScaleX(floatValue);
-                view.setScaleY(floatValue);
-                float animatedFraction = valueAnimator2.getAnimatedFraction();
-                for (int i10 = 0; i10 < premiumPreviewFragment.U.getChildCount(); i10++) {
-                    View childAt = premiumPreviewFragment.U.getChildAt(i10);
-                    if (childAt != ax0Var.e) {
-                        childAt.setTranslationY((view.getMeasuredHeight() * animatedFraction) + (childAt == ax0Var.c ? 0.0f - (AndroidUtilities.dp(15.0f) * animatedFraction) : 0.0f + (AndroidUtilities.dp(8.0f) * animatedFraction)));
-                    }
+                float dp = AndroidUtilities.dp(10.0f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                ImageView imageView = this.c;
+                rectF.set(imageView.getLeft(), imageView.getTop(), imageView.getRight(), imageView.getBottom());
+                PremiumPreviewFragment premiumPreviewFragment = ((ww0) this.s).c;
+                premiumPreviewFragment.S.reset();
+                premiumPreviewFragment.S.postScale(1.0f, premiumPreviewFragment.N / 100.0f, 0.0f, 0.0f);
+                premiumPreviewFragment.S.postTranslate(0.0f, -this.f.e);
+                premiumPreviewFragment.R.setLocalMatrix(premiumPreviewFragment.S);
+                canvas.drawRoundRect(rectF, dp, dp, premiumPreviewFragment.T);
+                d6Var = ((org.telegram.ui.ActionBar.n2) premiumPreviewFragment).resourceProvider;
+                if (d6Var != null) {
+                    d6Var2 = ((org.telegram.ui.ActionBar.n2) premiumPreviewFragment).resourceProvider;
+                    q6 = d6Var2.a();
+                } else {
+                    q6 = org.telegram.ui.ActionBar.i6.I.q();
                 }
+                if (q6) {
+                    float dp2 = AndroidUtilities.dp(1.0f);
+                    premiumPreviewFragment.Q.setStrokeWidth(dp2);
+                    canvas.save();
+                    canvas.translate(rectF.left, rectF.top);
+                    rectF.offset(-rectF.left, -rectF.top);
+                    float f7 = dp2 / 2.0f;
+                    rectF.inset(f7, f7);
+                    canvas.drawRoundRect(rectF, dp, dp, premiumPreviewFragment.Q);
+                    canvas.restore();
+                }
+                super.dispatchDraw(canvas);
                 break;
             default:
-                cb1 cb1Var = (cb1) this.b;
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                org.telegram.ui.Components.vi viVar = (org.telegram.ui.Components.vi) this.d;
-                cb1Var.getClass();
-                cb1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                chatActivityEnterView.getEditField().setAlpha(cb1Var.a);
-                viVar.invalidate();
+                RectF rectF2 = AndroidUtilities.rectTmp;
+                ImageView imageView2 = this.c;
+                rectF2.set(imageView2.getLeft(), imageView2.getTop(), imageView2.getRight(), imageView2.getBottom());
+                rg.l1 l1Var = (rg.l1) this.s;
+                l1Var.c.p0.d(0, 0.0f, 0, getMeasuredWidth(), -this.f.e, l1Var.c.e0);
+                canvas.drawRoundRect(rectF2, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), l1Var.c.p0.f);
+                super.dispatchDraw(canvas);
                 break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vw0(ww0 ww0Var, Context context) {
+        super(context, null);
+        this.s = ww0Var;
     }
 }

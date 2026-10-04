@@ -26,7 +26,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class q5 extends Drawable {
     public static SparseArray q;
@@ -207,7 +207,7 @@ public class q5 extends Drawable {
     }
 
     public final void a(View view) {
-        if (view instanceof org.telegram.ui.c61) {
+        if (view instanceof org.telegram.ui.e61) {
             throw new RuntimeException();
         }
         this.m = false;
@@ -357,25 +357,25 @@ public class q5 extends Drawable {
                 }
                 String str3 = this.d + "_" + this.d;
                 if (i11 == 12) {
-                    str3 = v7.j.t(str3, "_d_nostream");
+                    str3 = t8.b.v(str3, "_d_nostream");
                 }
                 if (i11 != 17 && i11 != 15 && i11 != 14 && i11 != 8 && ((i11 != 1 || SharedConfig.getDevicePerformanceClass() < 2) && i11 != 12)) {
-                    str3 = v7.j.t(str3, "_pcache");
+                    str3 = t8.b.v(str3, "_pcache");
                 }
                 if (i11 != 17 && i11 != 0 && i11 != 26 && i11 != 1 && i11 != 14 && i11 != 15 && i11 != 19 && i11 != 20 && i11 != 21) {
-                    str3 = v7.j.t(str3, "_compress");
+                    str3 = t8.b.v(str3, "_compress");
                 }
                 if (i11 == 8) {
-                    str3 = v7.j.t(str3, "firstframe");
+                    str3 = t8.b.v(str3, "firstframe");
                 }
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(this.e.thumbs, 90);
                 if ("video/webm".equals(this.e.mime_type)) {
                     forDocument = ImageLocation.getForDocument(this.e);
-                    str3 = v7.j.t(str3, "_g");
-                    svgThumb = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.h6.m6, 0.2f, true);
+                    str3 = t8.b.v(str3, "_g");
+                    svgThumb = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.i6.m6, 0.2f, true);
                 } else {
                     if (!"application/x-tgsticker".equals(this.e.mime_type)) {
-                        svgThumb = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.h6.m6, 0.2f, true);
+                        svgThumb = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.i6.m6, 0.2f, true);
                         if (svgThumb != null && MessageObject.isAnimatedStickerDocument(this.e, true)) {
                             svgThumb.overrideWidthAndHeight(512, 512);
                         }
@@ -406,9 +406,9 @@ public class q5 extends Drawable {
                                             l4Var2.setImage(null, null, forDocument3, str5, forDocument2, null, drawable, document3.size, null, document3, 1);
                                         } else if (MessageObject.isAnimatedStickerDocument(this.e, true)) {
                                             ai.l4 l4Var3 = this.k;
-                                            String t10 = v7.j.t(str4, "_firstframe");
+                                            String v9 = t8.b.v(str4, "_firstframe");
                                             TLRPC.Document document4 = this.e;
-                                            l4Var3.setImage(imageLocation3, t10, forDocument2, null, drawable, document4.size, null, document4, 1);
+                                            l4Var3.setImage(imageLocation3, v9, forDocument2, null, drawable, document4.size, null, document4, 1);
                                         } else {
                                             ai.l4 l4Var4 = this.k;
                                             ImageLocation forDocument4 = ImageLocation.getForDocument(closestPhotoSizeWithSize, this.e);
@@ -472,13 +472,13 @@ public class q5 extends Drawable {
                         k();
                     }
                     StringBuilder sb2 = new StringBuilder();
-                    sb2.append(i11 != 0 ? a4.a.n(i11, "_") : "");
+                    sb2.append(i11 != 0 ? a4.a.m(i11, "_") : "");
                     sb2.append(this.f);
                     sb2.append("@");
                     sb2.append(str3);
                     String sb3 = sb2.toString();
                     if (SharedConfig.getDevicePerformanceClass() != 0 || i11 == 2 || i11 == 25 || i11 == 22 || !ImageLoader.getInstance().hasLottieMemCache(sb3)) {
-                        SvgHelper.SvgDrawable svgThumb2 = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.h6.m6, i11 == 22 ? 0.8f : 0.2f);
+                        SvgHelper.SvgDrawable svgThumb2 = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.i6.m6, i11 == 22 ? 0.8f : 0.2f);
                         if (svgThumb2 != null && MessageObject.isAnimatedStickerDocument(this.e, true)) {
                             svgThumb2.overrideWidthAndHeight(512, 512);
                         }
@@ -645,7 +645,7 @@ public class q5 extends Drawable {
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("AnimatedEmojiDrawable{");
         TLRPC.Document document = this.e;
-        return a4.a.t(sb2, document == null ? BuildConfig.BETA_URL : MessageObject.findAnimatedEmojiEmoticon(document, null), "}");
+        return a4.a.s(sb2, document == null ? BuildConfig.BETA_URL : MessageObject.findAnimatedEmojiEmoticon(document, null), "}");
     }
 
     public final void v() {
@@ -687,16 +687,16 @@ public class q5 extends Drawable {
     public final void y() {
         int i10 = this.g;
         if (i10 == 0 || i10 == 26) {
-            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.h6.o2.descent()) + Math.abs(org.telegram.ui.ActionBar.h6.o2.ascent())) * 1.15f) / AndroidUtilities.density);
+            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.i6.o2.descent()) + Math.abs(org.telegram.ui.ActionBar.i6.o2.ascent())) * 1.15f) / AndroidUtilities.density);
             return;
         }
-        TextPaint[] textPaintArr = org.telegram.ui.ActionBar.h6.y2;
+        TextPaint[] textPaintArr = org.telegram.ui.ActionBar.i6.y2;
         if (textPaintArr != null && (i10 == 1 || i10 == 4 || i10 == 19 || i10 == 20)) {
-            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.h6.y2[2].descent()) + Math.abs(textPaintArr[2].ascent())) * 1.15f) / AndroidUtilities.density);
+            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.i6.y2[2].descent()) + Math.abs(textPaintArr[2].ascent())) * 1.15f) / AndroidUtilities.density);
             return;
         }
         if (textPaintArr != null && i10 == 8) {
-            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.h6.y2[0].descent()) + Math.abs(textPaintArr[0].ascent())) * 1.15f) / AndroidUtilities.density);
+            this.d = (int) (((Math.abs(org.telegram.ui.ActionBar.i6.y2[0].descent()) + Math.abs(textPaintArr[0].ascent())) * 1.15f) / AndroidUtilities.density);
             return;
         }
         if (i10 == 14 || i10 == 15 || i10 == 17) {

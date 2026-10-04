@@ -1,14 +1,86 @@
 package org.telegram.ui.web;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class h2 extends TLRPC.Photo {
-    public i2 a;
-    public String b;
-    public final HashSet c = new HashSet();
-    public int d;
-    public int e;
+public final class h2 {
+    public final int a;
+    public boolean b;
+    public boolean c;
+    public String d;
+    public float e;
+    public boolean f;
+    public boolean g;
+    public TLRPC.WebPage h;
+    public boolean i;
+    public TLRPC.TL_webPage j;
+    public int k;
+    public u0 l;
+    public final ArrayList m = new ArrayList();
+
+    public h2(int i10) {
+        this.a = i10;
+    }
+
+    public final void a() {
+        u0 u0Var;
+        if (this.c) {
+            return;
+        }
+        this.c = true;
+        if (!this.g) {
+            ConnectionsManager.getInstance(this.a).cancelRequest(this.k, true);
+        }
+        if (this.i || (u0Var = this.l) == null) {
+            return;
+        }
+        u0Var.run();
+    }
+
+    public final TLRPC.WebPage b() {
+        TLRPC.WebPage webPage;
+        if (!SharedConfig.onlyLocalInstantView && (webPage = this.h) != null) {
+            return webPage;
+        }
+        TLRPC.TL_webPage tL_webPage = this.j;
+        if (tL_webPage != null) {
+            return tL_webPage;
+        }
+        return null;
+    }
+
+    public final void c() {
+        ArrayList arrayList = this.m;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((Runnable) obj).run();
+        }
+    }
+
+    public final void d(z0 z0Var) {
+        if (this.c) {
+            return;
+        }
+        TLRPC.TL_webPage tL_webPage = this.j;
+        if (tL_webPage != null) {
+            j2.o(tL_webPage);
+            this.j = null;
+        }
+        this.i = false;
+        this.d = z0Var.getUrl();
+        this.e = z0Var.getProgress();
+        this.f = z0Var.b;
+        u0 u0Var = this.l;
+        if (u0Var != null) {
+            u0Var.run();
+        }
+        this.l = j2.e(z0Var, new g2(this, 1));
+    }
 }

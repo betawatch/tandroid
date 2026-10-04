@@ -1,19 +1,33 @@
 package v7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class p2 implements ia.d {
     public static final p2 a = new p2();
-
-    static {
-        j.r(j.j(h.class, j.n(3, j.j(h.class, j.n(2, j.j(h.class, new e(1)))))));
-    }
+    public static final ia.c b = new ia.c("durationMs", hg.k0.m(t8.b.l(h.class, new e(1))));
+    public static final ia.c c = new ia.c("errorCode", hg.k0.m(t8.b.l(h.class, new e(2))));
+    public static final ia.c d = new ia.c("isColdCall", hg.k0.m(t8.b.l(h.class, new e(3))));
+    public static final ia.c e = new ia.c("autoManageModelOnBackground", hg.k0.m(t8.b.l(h.class, new e(4))));
+    public static final ia.c f = new ia.c("autoManageModelOnLowMemory", hg.k0.m(t8.b.l(h.class, new e(5))));
+    public static final ia.c g = new ia.c("isNnApiEnabled", hg.k0.m(t8.b.l(h.class, new e(6))));
+    public static final ia.c h = new ia.c("eventsCount", hg.k0.m(t8.b.l(h.class, new e(7))));
+    public static final ia.c i = new ia.c("otherErrors", hg.k0.m(t8.b.l(h.class, new e(8))));
+    public static final ia.c j = new ia.c("remoteConfigValueForAcceleration", hg.k0.m(t8.b.l(h.class, new e(9))));
+    public static final ia.c k = new ia.c("isAccelerated", hg.k0.m(t8.b.l(h.class, new e(10))));
 
     @Override // ia.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    public final void a(Object obj, Object obj2) {
+        b6 b6Var = (b6) obj;
+        ia.e eVar = (ia.e) obj2;
+        eVar.a(b, b6Var.a);
+        eVar.a(c, b6Var.b);
+        eVar.a(d, b6Var.c);
+        eVar.a(e, null);
+        eVar.a(f, null);
+        eVar.a(g, null);
+        eVar.a(h, null);
+        eVar.a(i, null);
+        eVar.a(j, null);
+        eVar.a(k, null);
     }
 }

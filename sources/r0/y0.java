@@ -2,13 +2,13 @@ package r0;
 
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class y0 extends b1 {
     public final WindowInsets.Builder c;
 
     public y0() {
-        this.c = ah.e.h();
+        this.c = ah.f.h();
     }
 
     @Override // r0.b1
@@ -49,9 +49,9 @@ public class y0 extends b1 {
         WindowInsets.Builder h;
         WindowInsets g10 = l1Var.g();
         if (g10 != null) {
-            h = ah.e.i(g10);
+            h = ah.f.i(g10);
         } else {
-            h = ah.e.h();
+            h = ah.f.h();
         }
         this.c = h;
     }

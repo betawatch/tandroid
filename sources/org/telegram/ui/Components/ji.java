@@ -1,90 +1,115 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ji implements hk {
-    public final /* synthetic */ wi a;
+public final class ji extends org.telegram.ui.ActionBar.p1 {
+    public final /* synthetic */ ki x;
 
-    public ji(wi wiVar) {
-        this.a = wiVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ji(ki kiVar, ki kiVar2) {
+        super(kiVar2);
+        this.x = kiVar;
     }
 
-    @Override // org.telegram.ui.Components.hk
-    public final void O() {
-        this.a.B1(true);
-    }
-
-    @Override // org.telegram.ui.Components.hk
-    public final void k(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i10, long j3, boolean z11, long j10) {
-        wi wiVar = this.a;
-        hk hkVar = wiVar.X;
-        if (hkVar != null) {
-            hkVar.k(arrayList, str, arrayList2, arrayList3, z10, i10, j3, z11, j10);
-            return;
-        }
-        Object obj = wiVar.f0;
-        if (obj instanceof hk) {
-            ((hk) obj).k(arrayList, str, arrayList2, arrayList3, z10, i10, j3, z11, j10);
-            return;
-        }
-        if (obj instanceof org.telegram.ui.gn0) {
-            org.telegram.ui.gn0 gn0Var = (org.telegram.ui.gn0) obj;
-            ArrayList arrayList4 = new ArrayList();
-            int size = arrayList.size();
-            for (int i11 = 0; i11 < size; i11++) {
-                SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-                sendingMediaInfo.path = (String) arrayList.get(i11);
-                arrayList4.add(sendingMediaInfo);
+    @Override // org.telegram.ui.ActionBar.p1
+    public final boolean b() {
+        nz nzVar;
+        xi xiVar = this.x.B0;
+        if (!xiVar.isDismissed() && xiVar.s1) {
+            pi piVar = xiVar.y0;
+            if (piVar != xiVar.m0 && piVar != xiVar.n0 && !xiVar.k1().m()) {
+                return true;
             }
-            gn0Var.G1(arrayList4);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.hk
-    public final void l(long j3, ArrayList arrayList, boolean z10, int i10) {
-        wi wiVar = this.a;
-        hk hkVar = wiVar.X;
-        if (hkVar != null) {
-            hkVar.l(j3, arrayList, z10, i10);
-            return;
-        }
-        org.telegram.ui.ActionBar.m2 m2Var = wiVar.f0;
-        if (m2Var instanceof org.telegram.ui.wn) {
-            ((org.telegram.ui.wn) m2Var).l(j3, arrayList, z10, i10);
-        } else if (m2Var instanceof org.telegram.ui.gn0) {
-            ((org.telegram.ui.gn0) m2Var).G1(arrayList);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.hk
-    public final void w() {
-        wi wiVar = this.a;
-        hk hkVar = wiVar.X;
-        if (hkVar != null) {
-            hkVar.w();
-            return;
-        }
-        Object obj = wiVar.f0;
-        if (obj instanceof hk) {
-            ((hk) obj).w();
-            return;
-        }
-        if (obj instanceof org.telegram.ui.gn0) {
-            org.telegram.ui.gn0 gn0Var = (org.telegram.ui.gn0) obj;
-            gn0Var.getClass();
-            try {
-                Intent intent = new Intent("android.intent.action.GET_CONTENT");
-                intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
-                intent.setType("*/*");
-                gn0Var.startActivityForResult(intent, 21);
-            } catch (Exception e) {
-                FileLog.e(e);
+            pi piVar2 = xiVar.y0;
+            xn xnVar = xiVar.m0;
+            if (piVar2 == xnVar && ((nzVar = xnVar.E) == null || nzVar.getVisibility() != 0)) {
+                return true;
+            }
+            pi piVar3 = xiVar.y0;
+            xn xnVar2 = xiVar.n0;
+            if (piVar3 == xnVar2) {
+                nz nzVar2 = xnVar2.E;
+                return nzVar2 == null || nzVar2.getVisibility() != 0;
             }
         }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void e(float f7, float f10, boolean z10) {
+        ki kiVar = this.x;
+        xi xiVar = kiVar.B0;
+        xiVar.l2 = f7;
+        float f11 = xiVar.d2;
+        if (f11 > 0.0f) {
+            xiVar.l2 = com.google.android.gms.internal.vision.e2.z(1.0f, f10, f11 - xiVar.e2, f7);
+        }
+        xiVar.X0.setTranslationY(xiVar.l2);
+        xiVar.a1.setTranslationY(xiVar.l2);
+        org.telegram.ui.ActionBar.v0 v0Var = xiVar.e1;
+        if (v0Var != null) {
+            v0Var.setTranslationY(xiVar.l2);
+        }
+        org.telegram.ui.ActionBar.v0 v0Var2 = xiVar.c1;
+        if (v0Var2 != null) {
+            v0Var2.setTranslationY(xiVar.a1.getTranslationY());
+        }
+        ci.e4 e4Var = xiVar.d1;
+        if (e4Var != null) {
+            e4Var.setTranslationY(xiVar.a1.getTranslationY());
+        }
+        xiVar.f1.setTranslationY(xiVar.l2);
+        xiVar.X1(0);
+        xiVar.setCurrentPanTranslationY(xiVar.l2);
+        kiVar.invalidate();
+        xiVar.D0.invalidate();
+        xiVar.R1();
+        pi piVar = xiVar.y0;
+        if (piVar != null) {
+            piVar.k(xiVar.l2);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void f() {
+        boolean z10;
+        xi xiVar = this.x.B0;
+        xiVar.U1(xiVar.y0, 0);
+        xiVar.c2 = xiVar.b2[0];
+        xiVar.y0.v();
+        if (!(xiVar.y0 instanceof ei.r4) || xiVar.D1) {
+            return;
+        }
+        z10 = ((org.telegram.ui.ActionBar.f3) xiVar).keyboardVisible;
+        int dp = z10 ? AndroidUtilities.dp(84.0f) : 0;
+        for (int i10 = 0; i10 < xiVar.x0.size(); i10++) {
+            ((ei.r4) xiVar.x0.valueAt(i10)).setMeasureOffsetY(dp);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void g(int i10, boolean z10) {
+        int i11;
+        ki kiVar = this.x;
+        xi xiVar = kiVar.B0;
+        int i12 = xiVar.c2;
+        if (i12 <= 0 || i12 == (i11 = xiVar.b2[0]) || !z10) {
+            xiVar.d2 = -1.0f;
+        } else {
+            xiVar.d2 = i12;
+            xiVar.e2 = i11;
+        }
+        kiVar.invalidate();
+        wh whVar = xiVar.x1;
+        if ((xiVar.y0 instanceof ei.r4) && !xiVar.D1) {
+            if (z10) {
+                whVar.setVisibility(8);
+            } else {
+                whVar.setVisibility(0);
+            }
+        }
+        xiVar.y0.w(i10, z10);
     }
 }

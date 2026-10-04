@@ -7,46 +7,33 @@ import java.util.HashMap;
 
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements h, fb.n {
-    public final String a;
+    public final /* synthetic */ int a;
+    public final String b;
 
-    public /* synthetic */ e(String str) {
-        this.a = str;
-    }
-
-    public static e a(e2.v vVar) {
-        String str;
-        vVar.K(2);
-        int x10 = vVar.x();
-        int i10 = x10 >> 1;
-        int x11 = ((vVar.x() >> 3) & 31) | ((x10 & 1) << 5);
-        if (i10 == 4 || i10 == 5 || i10 == 7 || i10 == 8) {
-            str = "dvhe";
-        } else if (i10 == 9) {
-            str = "dvav";
-        } else {
-            if (i10 != 10) {
-                return null;
-            }
-            str = "dav1";
-        }
-        StringBuilder v = a4.a.v(str);
-        v.append(i10 < 10 ? ".0" : ".");
-        v.append(i10);
-        v.append(x11 < 10 ? ".0" : ".");
-        v.append(x11);
-        return new e(v.toString());
+    public /* synthetic */ e(String str, int i10) {
+        this.a = i10;
+        this.b = str;
     }
 
     @Override // fb.n
     public Object p2() {
-        throw new db.j(this.a);
+        throw new db.j(this.b);
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 1:
+                return "<" + this.b + '>';
+            default:
+                return super.toString();
+        }
     }
 
     @Override // com.google.android.gms.internal.clearcut.h
     public Object zzp() {
         Object obj;
         boolean z10;
-        String str = this.a;
+        String str = this.b;
         ContentResolver contentResolver = d.g.getContentResolver();
         Uri uri = f2.a;
         synchronized (f2.class) {

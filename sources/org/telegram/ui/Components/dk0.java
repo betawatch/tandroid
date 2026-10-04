@@ -21,7 +21,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class dk0 extends FrameLayout {
     public final Paint a;
@@ -45,22 +45,22 @@ public final class dk0 extends FrameLayout {
         this.c = AndroidUtilities.dp(32.0f);
         View view = new View(context);
         this.h = view;
-        addView(view, w7.y5.c(-1.0f, -1));
+        addView(view, w7.z5.c(-1.0f, -1));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         Drawable mutate = context.getDrawable(R.drawable.msg_reactions_filled).mutate();
         this.r = mutate;
         imageView.setImageDrawable(mutate);
-        addView(imageView, w7.y5.i(24.0f, 24.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
+        addView(imageView, w7.z5.i(24.0f, 24.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
         w9 w9Var = new w9(context);
         this.d = w9Var;
-        addView(w9Var, w7.y5.i(24.0f, 24.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
+        addView(w9Var, w7.z5.i(24.0f, 24.0f, 8388627, 8.0f, 0.0f, 8.0f, 0.0f));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setImportantForAccessibility(2);
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.n8, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.n8, false));
         textView.setTypeface(AndroidUtilities.bold());
-        addView(textView, w7.y5.i(-1.0f, -2.0f, 8388627, 40.0f, 0.0f, 8.0f, 0.0f));
+        addView(textView, w7.z5.i(-1.0f, -2.0f, 8388627, 40.0f, 0.0f, 8.0f, 0.0f));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
         setWillNotDraw(false);
@@ -84,7 +84,7 @@ public final class dk0 extends FrameLayout {
         }
         for (TLRPC.TL_availableReaction tL_availableReaction : MediaDataController.getInstance(i10).getReactionsList()) {
             if (tL_availableReaction.reaction.equals(this.v.f)) {
-                w9Var.i(ImageLocation.getForDocument(tL_availableReaction.center_icon), "40_40_lastreactframe", "webp", DocumentObject.getSvgThumb(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.h6.a7, 1.0f), tL_availableReaction);
+                w9Var.i(ImageLocation.getForDocument(tL_availableReaction.center_icon), "40_40_lastreactframe", "webp", DocumentObject.getSvgThumb(tL_availableReaction.static_icon, org.telegram.ui.ActionBar.i6.a7, 1.0f), tL_availableReaction);
                 w9Var.setVisibility(0);
                 imageView.setVisibility(8);
                 return;
@@ -128,11 +128,11 @@ public final class dk0 extends FrameLayout {
 
     public void setOutlineProgress(float f7) {
         this.n = f7;
-        int i10 = org.telegram.ui.ActionBar.h6.Cj;
-        int w02 = org.telegram.ui.ActionBar.h6.w0(null, i10, false);
-        int k10 = i0.a.k(org.telegram.ui.ActionBar.h6.w0(null, i10, false), 16);
-        int i11 = org.telegram.ui.ActionBar.h6.Fj;
-        int d = i0.a.d(f7, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Ej, false), org.telegram.ui.ActionBar.h6.w0(null, i11, false));
+        int i10 = org.telegram.ui.ActionBar.i6.Cj;
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, i10, false);
+        int k10 = i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, i10, false), 16);
+        int i11 = org.telegram.ui.ActionBar.i6.Fj;
+        int d = i0.a.d(f7, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Ej, false), org.telegram.ui.ActionBar.i6.w0(null, i11, false));
         this.a.setColor(i0.a.d(f7, k10, w02));
         this.f.setTextColor(d);
         this.r.setColorFilter(new PorterDuffColorFilter(d, PorterDuff.Mode.MULTIPLY));
@@ -140,12 +140,12 @@ public final class dk0 extends FrameLayout {
         View view = this.h;
         if (f7 == 1.0f) {
             int i12 = (int) f10;
-            int k11 = i0.a.k(org.telegram.ui.ActionBar.h6.w0(null, i11, false), 76);
-            view.setBackground(org.telegram.ui.ActionBar.h6.i0(i12, i12, i12, i12, 0, k11, k11));
+            int k11 = i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, i11, false), 76);
+            view.setBackground(org.telegram.ui.ActionBar.i6.i0(i12, i12, i12, i12, 0, k11, k11));
         } else if (f7 == 0.0f) {
             int i13 = (int) f10;
             int k12 = i0.a.k(w02, 76);
-            view.setBackground(org.telegram.ui.ActionBar.h6.i0(i13, i13, i13, i13, 0, k12, k12));
+            view.setBackground(org.telegram.ui.ActionBar.i6.i0(i13, i13, i13, i13, 0, k12, k12));
         }
         invalidate();
     }

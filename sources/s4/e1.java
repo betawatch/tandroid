@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class e1 extends r0.b {
     public final RecyclerView d;
@@ -78,13 +78,13 @@ public final class e1 extends r0.b {
                     D = (layoutManager.m - layoutManager.D()) - layoutManager.E();
                     if (F == 0) {
                     }
-                    layoutManager.b.v0(D, F, null);
+                    layoutManager.b.w0(D, F, null);
                     return true;
                 }
                 D = 0;
                 if (F == 0) {
                 }
-                layoutManager.b.v0(D, F, null);
+                layoutManager.b.w0(D, F, null);
                 return true;
             }
             if (i10 != 8192) {
@@ -98,7 +98,7 @@ public final class e1 extends r0.b {
                 D = 0;
             }
             if (F == 0 || D != 0) {
-                layoutManager.b.v0(D, F, null);
+                layoutManager.b.w0(D, F, null);
                 return true;
             }
         }

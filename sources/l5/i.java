@@ -3,7 +3,7 @@ package l5;
 import android.util.Base64;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i {
     public final String a;
@@ -24,7 +24,7 @@ public final class i {
 
     public final i b(i5.d dVar) {
         aa.a a2 = a();
-        a2.t(this.a);
+        a2.s(this.a);
         if (dVar == null) {
             throw new NullPointerException("Null priority");
         }
@@ -58,6 +58,6 @@ public final class i {
         sb2.append(", ");
         sb2.append(this.c);
         sb2.append(", ");
-        return a4.a.t(sb2, encodeToString, ")");
+        return a4.a.s(sb2, encodeToString, ")");
     }
 }

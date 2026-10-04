@@ -2,12 +2,12 @@ package og;
 
 import gg.g;
 import java.util.ArrayList;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 import s4.o;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public abstract class b extends xl0 {
+public abstract class b extends yl0 {
     public final g c = new g();
 
     public final void E(ArrayList arrayList, ArrayList arrayList2) {

@@ -2,21 +2,48 @@ package org.telegram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class wf extends AnimatorListenerAdapter {
-    public final /* synthetic */ ChatActivityEnterView a;
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public wf(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+    public wf(ChatActivityEnterView chatActivityEnterView, boolean z10) {
+        this.b = chatActivityEnterView;
+        this.a = z10;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.h1.setAllowDraw(true);
-        chatActivityEnterView.N1.setTransformToSeekbar(1.0f);
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        if (animator.equals(chatActivityEnterView.t2)) {
+            chatActivityEnterView.t2 = null;
+        }
         chatActivityEnterView.x0();
+        chatActivityEnterView.k1.setAlpha(1.0f);
+        chatActivityEnterView.k1.setTranslationX(0.0f);
+        tg tgVar = chatActivityEnterView.O1;
+        if (tgVar != null && SharedConfig.lockRecordAudioVideoHint < 3) {
+            ChatActivityEnterView chatActivityEnterView2 = tgVar.V;
+            chatActivityEnterView2.e4 = true;
+            chatActivityEnterView2.f4 = System.currentTimeMillis();
+        }
+        rf rfVar = chatActivityEnterView.E0;
+        if (rfVar != null) {
+            rfVar.setAlpha(0.0f);
+        }
+        if (this.a) {
+            tk0 tk0Var = chatActivityEnterView.h1;
+            if (tk0Var != null) {
+                tk0Var.setVisibility(8);
+            }
+            me meVar = chatActivityEnterView.e1;
+            if (meVar != null) {
+                meVar.setVisibility(8);
+            }
+            chatActivityEnterView.x0();
+        }
     }
 }

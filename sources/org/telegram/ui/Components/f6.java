@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class f6 implements le.i, oe.a {
+public final class f6 implements le.h, oe.a {
     public final View a;
     public boolean b;
     public boolean c;
@@ -23,7 +23,7 @@ public final class f6 implements le.i, oe.a {
         this.c = false;
     }
 
-    @Override // le.i
+    @Override // le.h
     public final /* synthetic */ int b(boolean z10) {
         return 0;
     }
@@ -35,12 +35,12 @@ public final class f6 implements le.i, oe.a {
         return this.a.equals(((f6) obj).a);
     }
 
-    @Override // le.i
+    @Override // le.h
     public final int getHeight() {
         return this.a.getMeasuredHeight();
     }
 
-    @Override // le.i
+    @Override // le.h
     public final int getWidth() {
         return this.a.getMeasuredWidth();
     }

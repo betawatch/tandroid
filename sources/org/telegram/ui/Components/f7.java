@@ -2,19 +2,19 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f7 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ j8 b;
-    public final /* synthetic */ a80 c;
+    public final /* synthetic */ b80 c;
     public final /* synthetic */ MessageObject d;
 
-    public /* synthetic */ f7(j8 j8Var, MessageObject messageObject, a80 a80Var, int i10) {
+    public /* synthetic */ f7(j8 j8Var, MessageObject messageObject, b80 b80Var, int i10) {
         this.a = i10;
         this.b = j8Var;
         this.d = messageObject;
-        this.c = a80Var;
+        this.c = b80Var;
     }
 
     @Override // java.lang.Runnable
@@ -57,7 +57,7 @@ public final /* synthetic */ class f7 implements Runnable {
                 j8Var6.v0(this.d, true, new g7(j8Var6, this.c, 4), false);
                 break;
             case 7:
-                j8.L(this.b, this.d, this.c);
+                j8.J(this.b, this.d, this.c);
                 break;
             default:
                 this.b.u0(this.d);
@@ -66,10 +66,10 @@ public final /* synthetic */ class f7 implements Runnable {
         }
     }
 
-    public /* synthetic */ f7(j8 j8Var, a80 a80Var, MessageObject messageObject, int i10) {
+    public /* synthetic */ f7(j8 j8Var, b80 b80Var, MessageObject messageObject, int i10) {
         this.a = i10;
         this.b = j8Var;
-        this.c = a80Var;
+        this.c = b80Var;
         this.d = messageObject;
     }
 }

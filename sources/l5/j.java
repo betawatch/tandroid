@@ -1,19 +1,69 @@
 package l5;
 
-import java.io.Closeable;
+import android.content.Context;
+import android.os.Build;
+import b2.r0;
+import e2.d0;
+import m.p3;
+import n4.y;
+import n7.z0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class j implements Closeable {
-    public fd.a a;
-    public a9.r b;
-    public fd.a c;
-    public l.d d;
-    public fd.a e;
-    public fd.a f;
+public final class j implements r2.k {
+    public Context a;
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        ((s5.h) ((s5.d) this.e.get())).close();
+    public j(Context context) {
+        this.a = context;
+    }
+
+    public k a() {
+        Context context = this.a;
+        if (context == null) {
+            throw new IllegalStateException(Context.class.getCanonicalName() + " must be set");
+        }
+        k kVar = new k();
+        kVar.a = n5.a.a(n.a);
+        e.a aVar = new e.a(context);
+        kVar.b = aVar;
+        kVar.c = n5.a.a(new y(26, aVar, new l2.g(aVar, 3)));
+        e.a aVar2 = kVar.b;
+        int i10 = 19;
+        kVar.d = new l2.g(aVar2, i10);
+        fd.a a2 = n5.a.a(new o0.a(16, kVar.d, n5.a.a(new n2.c(aVar2, i10))));
+        kVar.e = a2;
+        qb.b bVar = new qb.b(19);
+        e.a aVar3 = kVar.b;
+        la.h hVar = new la.h(aVar3, a2, bVar, 21);
+        fd.a aVar4 = kVar.a;
+        fd.a aVar5 = kVar.c;
+        cf.c cVar = new cf.c(aVar4, aVar5, hVar, a2, a2);
+        p3 p3Var = new p3();
+        p3Var.a = aVar3;
+        p3Var.b = aVar5;
+        p3Var.c = a2;
+        p3Var.d = hVar;
+        p3Var.e = aVar4;
+        p3Var.f = a2;
+        p3Var.h = a2;
+        qi.f fVar = new qi.f();
+        fVar.a = aVar4;
+        fVar.b = a2;
+        fVar.c = hVar;
+        fVar.d = a2;
+        kVar.f = n5.a.a(new aa.a(cVar, p3Var, fVar, false, 29));
+        return kVar;
+    }
+
+    @Override // r2.k
+    public r2.l v(com.google.firebase.messaging.n nVar) {
+        Context context;
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 < 23 || (i10 < 31 && ((context = this.a) == null || i10 < 28 || !context.getPackageManager().hasSystemFeature("com.amazon.hardware.tv_screen")))) {
+            return new rb.a(20).v(nVar);
+        }
+        int h = r0.h(((b2.s) nVar.c).r);
+        e2.a.i("DMCodecAdapterFactory", "Creating an asynchronous MediaCodec adapter for track type " + d0.G(h));
+        return new z0(14, new r2.b(h, 0), new r2.b(h, 1)).v(nVar);
     }
 }

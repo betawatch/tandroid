@@ -14,14 +14,14 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
-import v7.l8;
+import v7.k8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class o extends j9.a implements w {
     public static final boolean d;
     public static final s0 e;
-    public static final l8 f;
+    public static final k8 f;
     public static final Object h;
     public volatile Object a;
     public volatile c b;
@@ -30,7 +30,7 @@ public abstract class o extends j9.a implements w {
     static {
         boolean z10;
         Throwable th2;
-        l8 fVar;
+        k8 fVar;
         try {
             z10 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
@@ -364,9 +364,9 @@ public abstract class o extends j9.a implements w {
             if (nVar2 != nVar) {
                 n nVar3 = new n();
                 while (true) {
-                    l8 l8Var = f;
-                    l8Var.f(nVar3, nVar2);
-                    if (l8Var.c(this, nVar2, nVar3)) {
+                    k8 k8Var = f;
+                    k8Var.f(nVar3, nVar2);
+                    if (k8Var.c(this, nVar2, nVar3)) {
                         j10 = j11;
                         while (true) {
                             LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
@@ -400,31 +400,31 @@ public abstract class o extends j9.a implements w {
                     String obj3 = timeUnit.toString();
                     Locale locale = Locale.ROOT;
                     String lowerCase = obj3.toLowerCase(locale);
-                    StringBuilder u10 = a4.a.u(j3, "Waited ", " ");
-                    u10.append(timeUnit.toString().toLowerCase(locale));
-                    String sb2 = u10.toString();
+                    StringBuilder t10 = a4.a.t(j3, "Waited ", " ");
+                    t10.append(timeUnit.toString().toLowerCase(locale));
+                    String sb2 = t10.toString();
                     if (nanos + 1000 < j10) {
-                        String t10 = v7.j.t(sb2, " (plus ");
+                        String v = t8.b.v(sb2, " (plus ");
                         long j13 = -nanos;
                         long convert = timeUnit.convert(j13, TimeUnit.NANOSECONDS);
                         long nanos2 = j13 - timeUnit.toNanos(convert);
                         boolean z10 = convert == j10 || nanos2 > 1000;
                         if (convert > j10) {
-                            String str = t10 + convert + " " + lowerCase;
+                            String str = v + convert + " " + lowerCase;
                             if (z10) {
-                                str = v7.j.t(str, ",");
+                                str = t8.b.v(str, ",");
                             }
-                            t10 = v7.j.t(str, " ");
+                            v = t8.b.v(str, " ");
                         }
                         if (z10) {
-                            t10 = t10 + nanos2 + " nanoseconds ";
+                            v = v + nanos2 + " nanoseconds ";
                         }
-                        sb2 = v7.j.t(t10, "delay)");
+                        sb2 = t8.b.v(v, "delay)");
                     }
                     if (isDone()) {
-                        throw new TimeoutException(v7.j.t(sb2, " but future completed as timeout expired"));
+                        throw new TimeoutException(t8.b.v(sb2, " but future completed as timeout expired"));
                     }
-                    throw new TimeoutException(a4.a.D(sb2, " for ", oVar));
+                    throw new TimeoutException(a4.a.C(sb2, " for ", oVar));
                 }
                 Object obj4 = this.a;
                 if ((obj4 != null) && (!(obj4 instanceof e))) {
@@ -605,9 +605,9 @@ public abstract class o extends j9.a implements w {
             if (nVar2 != nVar) {
                 n nVar3 = new n();
                 do {
-                    l8 l8Var = f;
-                    l8Var.f(nVar3, nVar2);
-                    if (l8Var.c(this, nVar2, nVar3)) {
+                    k8 k8Var = f;
+                    k8Var.f(nVar3, nVar2);
+                    if (k8Var.c(this, nVar2, nVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

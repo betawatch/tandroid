@@ -18,10 +18,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.h6;
-import w7.y5;
+import org.telegram.ui.ActionBar.i6;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public final Paint a;
@@ -55,7 +55,7 @@ public final class f extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.msg_photo_flip);
-        imageView.setBackgroundDrawable(h6.f0(1090519039, 1, -1));
+        imageView.setBackgroundDrawable(i6.f0(1090519039, 1, -1));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         final int i10 = 0;
@@ -97,11 +97,11 @@ public final class f extends FrameLayout {
         });
         imageView.setOnLongClickListener(new m5(this, 5));
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrMirror));
-        addView(imageView, y5.e(70, 64, 19));
+        addView(imageView, z5.e(70, 64, 19));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setImageResource(R.drawable.msg_photo_cropfix);
-        imageView2.setBackgroundDrawable(h6.f0(1090519039, 1, -1));
+        imageView2.setBackgroundDrawable(i6.f0(1090519039, 1, -1));
         imageView2.setScaleType(scaleType);
         final int i11 = 1;
         imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: lg.d
@@ -142,11 +142,11 @@ public final class f extends FrameLayout {
         });
         imageView2.setVisibility(8);
         imageView2.setContentDescription(LocaleController.getString(R.string.AccDescrAspectRatio));
-        addView(imageView2, y5.e(70, 64, 19));
+        addView(imageView2, z5.e(70, 64, 19));
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
         imageView3.setImageResource(R.drawable.msg_photo_rotate);
-        imageView3.setBackgroundDrawable(h6.f0(1090519039, 1, -1));
+        imageView3.setBackgroundDrawable(i6.f0(1090519039, 1, -1));
         imageView3.setScaleType(scaleType);
         final int i12 = 2;
         imageView3.setOnClickListener(new View.OnClickListener(this) { // from class: lg.d
@@ -186,7 +186,7 @@ public final class f extends FrameLayout {
             }
         });
         imageView3.setContentDescription(LocaleController.getString(R.string.AccDescrRotate));
-        addView(imageView3, y5.e(70, 64, 21));
+        addView(imageView3, z5.e(70, 64, 21));
         TextPaint textPaint = new TextPaint(1);
         this.h = textPaint;
         textPaint.setColor(-1);
@@ -241,7 +241,7 @@ public final class f extends FrameLayout {
                 float dp = (width - AndroidUtilities.dp(2.5f)) / 2;
                 RectF rectF = this.r;
                 rectF.left = dp;
-                rectF.top = ok.A(22.0f, height, 2);
+                rectF.top = ok.z(22.0f, height, 2);
                 rectF.right = (AndroidUtilities.dp(2.5f) + width) / 2;
                 rectF.bottom = (AndroidUtilities.dp(22.0f) + height) / 2;
                 canvas2.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint);
@@ -325,11 +325,11 @@ public final class f extends FrameLayout {
     }
 
     public void setMirrored(boolean z10) {
-        this.e.setColorFilter(z10 ? new PorterDuffColorFilter(h6.w0(null, h6.zf, false), PorterDuff.Mode.MULTIPLY) : null);
+        this.e.setColorFilter(z10 ? new PorterDuffColorFilter(i6.w0(null, i6.zf, false), PorterDuff.Mode.MULTIPLY) : null);
     }
 
     public void setRotated(boolean z10) {
-        this.d.setColorFilter(z10 ? new PorterDuffColorFilter(h6.w0(null, h6.zf, false), PorterDuff.Mode.MULTIPLY) : null);
+        this.d.setColorFilter(z10 ? new PorterDuffColorFilter(i6.w0(null, i6.zf, false), PorterDuff.Mode.MULTIPLY) : null);
     }
 
     public void setFreeform(boolean z10) {

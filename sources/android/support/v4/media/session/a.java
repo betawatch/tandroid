@@ -6,7 +6,7 @@ import android.os.Parcel;
 import android.support.v4.media.MediaMetadataCompat;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a implements b {
     public IBinder a;
@@ -21,7 +21,7 @@ public final class a implements b {
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            v7.m.b(obtain, playbackStateCompat);
+            v7.l.b(obtain, playbackStateCompat);
             this.a.transact(3, obtain, null, 1);
         } finally {
             obtain.recycle();
@@ -38,7 +38,7 @@ public final class a implements b {
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            v7.m.b(obtain, parcelableVolumeInfo);
+            v7.l.b(obtain, parcelableVolumeInfo);
             this.a.transact(8, obtain, null, 1);
         } finally {
             obtain.recycle();
@@ -71,7 +71,7 @@ public final class a implements b {
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
-            v7.m.b(obtain, mediaMetadataCompat);
+            v7.l.b(obtain, mediaMetadataCompat);
             this.a.transact(4, obtain, null, 1);
         } finally {
             obtain.recycle();

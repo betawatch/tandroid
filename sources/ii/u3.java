@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class u3 {
     public final a a;
@@ -26,12 +26,12 @@ public final class u3 {
         boolean z10 = i10 >= 0 && i10 < d.buttons.size();
         if (z10 || d.buttons.size() < 8) {
             x3 x3Var = this.c;
-            i2 i2Var = x3Var.J3;
+            i2 i2Var = x3Var.Q3;
             if (i2Var != null) {
                 i2Var.d();
             }
             TL_keyboard.PageButton pageButton = z10 ? d.buttons.get(i10) : new TL_keyboard.PageButton();
-            pageButton.text = g6.f(str);
+            pageButton.text = h6.f(str);
             pageButton.type = inlineButtonType;
             if (pageButton.style == null) {
                 pageButton.style = new TL_keyboard.RichButtonStyle();
@@ -39,12 +39,12 @@ public final class u3 {
             if (!z10) {
                 d.buttons.add(pageButton);
             }
-            x3Var.Y2.N(false);
-            i2 i2Var2 = x3Var.J3;
+            x3Var.f3.N(false);
+            i2 i2Var2 = x3Var.Q3;
             if (i2Var2 != null) {
                 i2Var2.h();
             }
-            x3Var.h3.onContentChanged();
+            x3Var.o3.onContentChanged();
         }
     }
 
@@ -55,17 +55,17 @@ public final class u3 {
             return;
         }
         x3 x3Var = this.c;
-        i2 i2Var = x3Var.J3;
+        i2 i2Var = x3Var.Q3;
         if (i2Var != null) {
             i2Var.d();
         }
         d.buttons.remove(i10);
-        x3Var.Y2.N(false);
-        i2 i2Var2 = x3Var.J3;
+        x3Var.f3.N(false);
+        i2 i2Var2 = x3Var.Q3;
         if (i2Var2 != null) {
             i2Var2.h();
         }
-        x3Var.h3.onContentChanged();
+        x3Var.o3.onContentChanged();
     }
 
     public final boolean c() {

@@ -3,16 +3,16 @@ package za;
 import android.os.Build;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
     public final String b;
     public final String c;
-    public final r d;
+    public final p d;
     public final ArrayList e;
 
-    public a(String str, String versionName, String appBuildVersion, r rVar, ArrayList arrayList) {
+    public a(String str, String versionName, String appBuildVersion, p pVar, ArrayList arrayList) {
         String deviceManufacturer = Build.MANUFACTURER;
         kotlin.jvm.internal.i.e(versionName, "versionName");
         kotlin.jvm.internal.i.e(appBuildVersion, "appBuildVersion");
@@ -20,7 +20,7 @@ public final class a {
         this.a = str;
         this.b = versionName;
         this.c = appBuildVersion;
-        this.d = rVar;
+        this.d = pVar;
         this.e = arrayList;
     }
 

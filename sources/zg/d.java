@@ -16,10 +16,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.cz;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.gz;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class d {
     public static int m;
@@ -107,13 +107,13 @@ public final class d {
             cVar3.h = min;
             float clamp = Utilities.clamp(min, 1.0f, 0.0f);
             cVar3.h = clamp;
-            sr srVar = sr.g;
-            float interpolation = srVar.getInterpolation(clamp);
+            tr trVar = tr.g;
+            float interpolation = trVar.getInterpolation(clamp);
             float lerp = AndroidUtilities.lerp(cVar3.a, cVar3.c, interpolation);
             d dVar = cVar3.l;
             q5 q5Var = dVar.a;
             float f10 = cVar3.h;
-            float lerp2 = f10 < 0.3f ? AndroidUtilities.lerp(cVar3.b, cVar3.d, srVar.getInterpolation(f10 / 0.3f)) : AndroidUtilities.lerp(cVar3.d, cVar3.e, sr.i.getInterpolation((f10 - 0.3f) / 0.7f));
+            float lerp2 = f10 < 0.3f ? AndroidUtilities.lerp(cVar3.b, cVar3.d, trVar.getInterpolation(f10 / 0.3f)) : AndroidUtilities.lerp(cVar3.d, cVar3.e, tr.i.getInterpolation((f10 - 0.3f) / 0.7f));
             float lerp3 = AndroidUtilities.lerp(cVar3.f, cVar3.g, interpolation);
             if (!dVar.f) {
                 float height = dVar.b.height() * 0.8f;
@@ -211,7 +211,7 @@ public final class d {
                 sb2.append(i11);
                 sb2.append(" ");
                 imageReceiver.setUniqKeyPrefix(sb2.toString());
-                int f7 = cz.f();
+                int f7 = gz.f();
                 TLRPC.Document document3 = tL_availableReaction.around_animation;
                 z10 = true;
                 imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.around_animation), f7 + "_" + f7 + "_pcache_compress", null, null, document3, 0);
@@ -240,7 +240,7 @@ public final class d {
                     sb3.append(i12);
                     sb3.append(" ");
                     imageReceiver.setUniqKeyPrefix(sb3.toString());
-                    int f10 = cz.f();
+                    int f10 = gz.f();
                     imageReceiver.setImage(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(this.k)), f10 + "_" + f10 + "_pcache_compress", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
                 } else {
                     imageReceiver.setImage(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(this.k)), "60_60", null, null, tL_messages_stickerSet.documents.get(this.k), 0);

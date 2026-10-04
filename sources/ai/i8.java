@@ -9,15 +9,15 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.th;
-import org.telegram.ui.Components.wu0;
-import org.telegram.ui.Components.ym;
+import org.telegram.ui.Components.av0;
+import org.telegram.ui.Components.uh;
+import org.telegram.ui.Components.zm;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.am0;
 import org.telegram.ui.bj1;
-import org.telegram.ui.ji;
-import org.telegram.ui.wl0;
+import org.telegram.ui.ki;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -56,13 +56,13 @@ public final /* synthetic */ class i8 implements RequestDelegate {
                     break;
                 }
             case 2:
-                AndroidUtilities.runOnUIThread(new s1((ei.q4) obj, tLObject, i13, i11));
+                AndroidUtilities.runOnUIThread(new s1((ei.r4) obj, tLObject, i13, i11));
                 break;
             case 3:
                 ((VoIPService) obj).lambda$startScreenCapture$60(i13, tLObject, tL_error);
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new ym((wu0) obj, tLObject, i13, 16));
+                AndroidUtilities.runOnUIThread(new zm((av0) obj, tLObject, i13, 16));
                 break;
             case 5:
                 LaunchActivity launchActivity = (LaunchActivity) obj;
@@ -70,27 +70,27 @@ public final /* synthetic */ class i8 implements RequestDelegate {
                 SharedConfig.lastUpdateCheckTime = System.currentTimeMillis();
                 SharedConfig.saveConfig();
                 if (tLObject instanceof TLRPC.TL_help_appUpdate) {
-                    AndroidUtilities.runOnUIThread(new ym(launchActivity, (TLRPC.TL_help_appUpdate) tLObject, i13, 28));
+                    AndroidUtilities.runOnUIThread(new zm(launchActivity, (TLRPC.TL_help_appUpdate) tLObject, i13, 28));
                     break;
                 } else if (tLObject instanceof TLRPC.TL_help_noAppUpdate) {
-                    AndroidUtilities.runOnUIThread(new th(20));
+                    AndroidUtilities.runOnUIThread(new uh(20));
                     break;
                 } else if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new th(tL_error, 21));
+                    AndroidUtilities.runOnUIThread(new uh(tL_error, 21));
                     break;
                 }
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new ym((ji) obj, tLObject, i13, 29));
+                AndroidUtilities.runOnUIThread(new zm((ki) obj, tLObject, i13, 29));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new wl0((bj1) obj, i13, tLObject, i11));
+                AndroidUtilities.runOnUIThread(new am0((bj1) obj, i13, tLObject, i11));
                 break;
             case 8:
-                yh.x3.U((yh.x3) obj, i13, tLObject);
+                yh.x3.S((yh.x3) obj, i13, tLObject);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new wl0((yh.t5) obj, i13, tLObject, 17));
+                AndroidUtilities.runOnUIThread(new am0((yh.t5) obj, i13, tLObject, 17));
                 break;
         }
     }

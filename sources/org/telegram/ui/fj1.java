@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class fj1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ hj1 a;
@@ -21,11 +21,11 @@ public final class fj1 extends org.telegram.ui.ActionBar.j {
         }
         if (i10 != 1) {
             if (i10 == 2) {
-                hj1.V(hj1Var.d, messageObject, hj1Var.getParentActivity(), hj1Var.r, hj1Var.e);
+                hj1.T(hj1Var.d, messageObject, hj1Var.getParentActivity(), hj1Var.r, hj1Var.e);
             }
         } else if (messageObject != null) {
             messageObject.messageOwner.with_my_score = false;
-            hj1Var.showDialog(org.telegram.ui.Components.wq0.N0(hj1Var.getParentActivity(), messageObject, null, false, hj1Var.h));
+            hj1Var.showDialog(org.telegram.ui.Components.zq0.K0(hj1Var.getParentActivity(), messageObject, null, false, hj1Var.h));
         }
     }
 }

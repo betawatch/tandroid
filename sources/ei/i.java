@@ -1,119 +1,38 @@
 package ei;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.ok;
-import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import w7.y5;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class i extends FrameLayout {
-    public final ImageView a;
-    public final FrameLayout.LayoutParams b;
-    public final FrameLayout.LayoutParams c;
-    public final TextView d;
-    public final TextView e;
-    public final TextView f;
-
-    public i(Context context, d6 d6Var) {
-        super(context);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        FrameLayout.LayoutParams d = y5.d(28, 28.0f, 51, 17.0f, 14.33f, 0.0f, 0.0f);
-        this.b = d;
-        addView(imageView, d);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        FrameLayout.LayoutParams d10 = y5.d(-1, -2.0f, 55, 62.0f, 10.0f, 40.0f, 8.66f);
-        this.c = d10;
-        addView(linearLayout, d10);
-        TextView textView = new TextView(context);
-        this.d = textView;
-        ok.k(15.0f, 1, textView);
-        textView.setTextColor(h6.v0(h6.G6, d6Var));
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, y5.t(-1, -2, 55, 0, 0, 0, 0), context);
-        this.e = h;
-        h.setTextSize(1, 14.0f);
-        h.setTextColor(h6.v0(h6.z6, d6Var));
-        linearLayout.addView(h, y5.t(-1, -2, 55, 0, 3, 0, 0));
-        ImageView imageView2 = new ImageView(context);
-        imageView2.setColorFilter(new PorterDuffColorFilter(h6.v0(h6.M6, d6Var), mode));
-        imageView2.setImageResource(R.drawable.msg_arrowright);
-        imageView2.setScaleType(scaleType);
-        addView(imageView2, y5.d(24, 24.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.f = textView2;
-        textView2.setTextColor(-1);
-        textView2.setBackground(h6.b0(AndroidUtilities.dp(4.0f), h6.v0(h6.uj, d6Var)));
-        textView2.setTextSize(1, 13.0f);
-        textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        textView2.setGravity(17);
-        textView2.setVisibility(8);
-        addView(textView2, y5.d(-2, 18.0f, 21, 0.0f, 0.0f, 35.33f, 0.0f));
+public final class i extends f61 {
+    static {
+        f61.setup(new i());
     }
 
-    public final void a(int i10, int i11, CharSequence charSequence, CharSequence charSequence2) {
-        ImageView imageView = this.a;
-        imageView.setImageResource(i11);
-        imageView.setBackground(h6.b0(AndroidUtilities.dp(9.0f), i10));
-        TextView textView = this.d;
-        textView.setText(charSequence);
-        boolean isEmpty = TextUtils.isEmpty(charSequence2);
-        TextView textView2 = this.e;
-        FrameLayout.LayoutParams layoutParams = this.c;
-        FrameLayout.LayoutParams layoutParams2 = this.b;
-        if (isEmpty) {
-            layoutParams2.topMargin = AndroidUtilities.dp(10.0f);
-            layoutParams2.bottomMargin = AndroidUtilities.dp(10.0f);
-            textView.setTypeface(null);
-            textView.setTextSize(1, 16.0f);
-            layoutParams.topMargin = 0;
-            layoutParams.bottomMargin = 0;
-            layoutParams.gravity = 23;
-            textView2.setVisibility(8);
-            return;
-        }
-        layoutParams2.topMargin = AndroidUtilities.dp(14.33f);
-        layoutParams2.bottomMargin = AndroidUtilities.dp(10.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(1, 15.0f);
-        layoutParams.topMargin = AndroidUtilities.dp(10.0f);
-        layoutParams.bottomMargin = AndroidUtilities.dp(8.66f);
-        layoutParams.gravity = 55;
-        textView2.setText(charSequence2);
-        textView2.setVisibility(0);
+    public static g61 a(int i10, int i11, int i12, CharSequence charSequence, String str) {
+        g61 J = g61.J(i.class);
+        J.d = i10;
+        J.z = i11;
+        J.k = i12;
+        J.l = charSequence;
+        J.m = str;
+        return J;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // org.telegram.ui.Components.f61
+    public final void bindView(View view, g61 g61Var, boolean z10, u61 u61Var, c71 c71Var) {
+        ((j) view).a(g61Var.z, g61Var.k, g61Var.l, g61Var.m);
     }
 
-    public void setPercent(CharSequence charSequence) {
-        boolean isEmpty = TextUtils.isEmpty(charSequence);
-        TextView textView = this.f;
-        if (isEmpty) {
-            textView.setVisibility(8);
-        } else {
-            textView.setVisibility(0);
-            textView.setText(charSequence);
-        }
+    @Override // org.telegram.ui.Components.f61
+    public final View createView(Context context, zl0 zl0Var, int i10, int i11, d6 d6Var) {
+        return new j(context, d6Var);
     }
 }

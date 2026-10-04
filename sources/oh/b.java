@@ -12,8 +12,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import le.d;
 import le.e;
-import le.f;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
@@ -23,21 +23,21 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.zg0;
-import rg.a1;
+import org.telegram.ui.dh0;
+import rg.b1;
 import w7.q;
-import w7.y5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class b extends FrameLayout implements zg0, e {
+public final class b extends FrameLayout implements dh0, d {
     public static final RectF V = new RectF();
     public TLRPC.TL_attachMenuBot E;
     public final TextPaint F;
@@ -62,9 +62,9 @@ public final class b extends FrameLayout implements zg0, e {
     public d6 d;
     public final Paint e;
     public final o6 f;
-    public final le.c h;
-    public final le.c n;
-    public final le.c r;
+    public final le.b h;
+    public final le.b n;
+    public final le.b r;
     public int s;
     public int v;
     public int w;
@@ -74,14 +74,14 @@ public final class b extends FrameLayout implements zg0, e {
     public b(Context context) {
         super(context);
         this.e = new Paint(1);
-        this.h = new le.c(0, this, ke.a.a, 320L, false);
-        sr srVar = sr.h;
-        this.n = new le.c(1, this, srVar, 380L, false);
-        this.r = new le.c(2, this, srVar, 380L, false);
+        this.h = new le.b(0, this, ke.a.a, 320L, false);
+        tr trVar = tr.h;
+        this.n = new le.b(1, this, trVar, 380L, false);
+        this.r = new le.b(2, this, trVar, 380L, false);
         this.S = 1.0f;
         nj0 nj0Var = new nj0(context);
         this.b = nj0Var;
-        addView(nj0Var, y5.d(44, 44.0f, 49, 0.0f, -6.0f, 0.0f, 0.0f));
+        addView(nj0Var, z5.d(44, 44.0f, 49, 0.0f, -6.0f, 0.0f, 0.0f));
         nj0Var.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
         TextView textView = new TextView(context);
         this.a = textView;
@@ -92,7 +92,7 @@ public final class b extends FrameLayout implements zg0, e {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
         this.F = new TextPaint(textView.getPaint());
-        addView(textView, y5.d(-1, -2.0f, 49, 0.0f, 28.33f, 0.0f, 0.0f));
+        addView(textView, z5.d(-1, -2.0f, 49, 0.0f, 28.33f, 0.0f, 0.0f));
         o6 o6Var = new o6(false, false, false, false);
         this.f = o6Var;
         o6Var.u(AndroidUtilities.bold());
@@ -108,20 +108,12 @@ public final class b extends FrameLayout implements zg0, e {
         bVar.y = aVar;
         bVar.a.setText(LocaleController.getString(i10));
         bVar.a(false);
-        bVar.b.setLayoutParams(y5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
-        bVar.w = h6.v0(h6.cl, d6Var);
-        bVar.s = h6.v0(h6.al, d6Var);
-        bVar.v = h6.v0(h6.bl, d6Var);
+        bVar.b.setLayoutParams(z5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
+        bVar.w = i6.v0(i6.cl, d6Var);
+        bVar.s = i6.v0(i6.al, d6Var);
+        bVar.v = i6.v0(i6.bl, d6Var);
         bVar.f();
         return bVar;
-    }
-
-    @Override // le.e
-    public final void D(int i10, float f7, float f10, f fVar) {
-        if (i10 == 0) {
-            f();
-        }
-        invalidate();
     }
 
     public final void a(boolean z10) {
@@ -138,7 +130,7 @@ public final class b extends FrameLayout implements zg0, e {
             if (animatedAttachMenuBotIcon == null || (document = animatedAttachMenuBotIcon.icon) == null) {
                 this.c.b();
             } else if (this.P != document.id) {
-                this.c.l(ImageLocation.getForDocument(document), "24_24_lastframe", ImageLocation.getForDocument(document), "24_24_lastframe", z12 ? null : DocumentObject.getSvgThumb(document, h6.a7, 1.0f), this.E);
+                this.c.l(ImageLocation.getForDocument(document), "24_24_lastframe", ImageLocation.getForDocument(document), "24_24_lastframe", z12 ? null : DocumentObject.getSvgThumb(document, i6.a7, 1.0f), this.E);
                 this.P = document.id;
             }
             f();
@@ -236,6 +228,14 @@ public final class b extends FrameLayout implements zg0, e {
         }
     }
 
+    @Override // le.d
+    public final void a0(int i10, float f7, float f10, e eVar) {
+        if (i10 == 0) {
+            f();
+        }
+        invalidate();
+    }
+
     public final float c() {
         float measureText = this.F.measureText(this.a.getText().toString());
         return Math.min(AndroidUtilities.dp(84.0f), (int) ((AndroidUtilities.lerp(AndroidUtilities.dpf2(16.0f), AndroidUtilities.dp(8.0f), q.a((measureText - AndroidUtilities.dp(40.0f)) / AndroidUtilities.dp(16.0f), 0.0f, 1.0f)) * 2.0f) + measureText));
@@ -254,7 +254,7 @@ public final class b extends FrameLayout implements zg0, e {
         RectF rectF = V;
         Paint paint = this.e;
         if (f7 > 0.0f && !this.K) {
-            paint.setColor(h6.l1(ke.a.a.getInterpolation(f7) * 0.09f, this.s));
+            paint.setColor(i6.l1(ke.a.a.getInterpolation(f7) * 0.09f, this.s));
             rectF.set(0.0f, 0.0f, width, getHeight());
             float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
             float a2 = q.a(this.S, 0.0f, 1.0f) * AndroidUtilities.lerp(0.6f, 1.0f, f7);
@@ -283,20 +283,20 @@ public final class b extends FrameLayout implements zg0, e {
             float f12 = dpf24 / 2.0f;
             rectF.set((dpf22 - f11) - dpf2, (dpf23 - f12) - dpf2, f11 + dpf22 + dpf2, f12 + dpf23 + dpf2);
             canvas.scale(f10, f10, dpf22, dpf23);
-            canvas.drawRoundRect(rectF, dpf25, dpf25, h6.Il);
+            canvas.drawRoundRect(rectF, dpf25, dpf25, i6.Jl);
             rectF.inset(dpf2, dpf2);
             if (this.x) {
                 if (this.L == null) {
                     this.L = getContext().getResources().getDrawable(R.drawable.star).mutate();
                 }
-                a1.d().f(0.0f, 0.0f, AndroidUtilities.dp(96.0f), AndroidUtilities.dp(16.0f));
-                canvas.drawRoundRect(rectF, dpf26, dpf26, a1.d().e());
+                b1.d().f(0.0f, 0.0f, AndroidUtilities.dp(96.0f), AndroidUtilities.dp(16.0f));
+                canvas.drawRoundRect(rectF, dpf26, dpf26, b1.d().e());
                 int dpf27 = (int) (dpf22 - AndroidUtilities.dpf2(7.0f));
                 int dpf28 = (int) (dpf23 - AndroidUtilities.dpf2(7.0f));
                 this.L.setBounds(dpf27, dpf28, AndroidUtilities.dp(14.0f) + dpf27, AndroidUtilities.dp(14.0f) + dpf28);
                 this.L.draw(canvas);
             } else {
-                paint.setColor(i0.a.d(this.r.e, h6.w0(null, h6.hl, false), h6.w0(null, h6.r7, false)));
+                paint.setColor(i0.a.d(this.r.e, i6.w0(null, i6.hl, false), i6.w0(null, i6.r7, false)));
                 canvas.drawRoundRect(rectF, dpf26, dpf26, paint);
                 o6Var.m(rectF);
                 o6Var.draw(canvas);
@@ -317,9 +317,9 @@ public final class b extends FrameLayout implements zg0, e {
     public final void f() {
         int i10 = this.w;
         int i11 = this.s;
-        le.c cVar = this.h;
-        int d = i0.a.d(cVar.e, i10, i11);
-        int d10 = i0.a.d(cVar.e, this.w, this.v);
+        le.b bVar = this.h;
+        int d = i0.a.d(bVar.e, i10, i11);
+        int d10 = i0.a.d(bVar.e, this.w, this.v);
         PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(d, PorterDuff.Mode.SRC_IN);
         w9 w9Var = this.c;
         if (w9Var != null && this.M) {
@@ -418,7 +418,7 @@ public final class b extends FrameLayout implements zg0, e {
         }
     }
 
-    @Override // le.e
-    public final /* synthetic */ void C(float f7, int i10) {
+    @Override // le.d
+    public final /* synthetic */ void V(float f7, int i10) {
     }
 }

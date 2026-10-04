@@ -20,7 +20,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
@@ -28,7 +28,7 @@ public abstract class h {
     public static ExecutorService a(String str) {
         ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue(), new c5.w(str, new AtomicLong(1L)), new ThreadPoolExecutor.DiscardPolicy()));
         TimeUnit timeUnit = TimeUnit.SECONDS;
-        Runtime.getRuntime().addShutdownHook(new Thread(new t(str, unconfigurableExecutorService), "Crashlytics Shutdown Hook for ".concat(str)));
+        Runtime.getRuntime().addShutdownHook(new Thread(new u(str, unconfigurableExecutorService), "Crashlytics Shutdown Hook for ".concat(str)));
         return unconfigurableExecutorService;
     }
 
@@ -46,8 +46,8 @@ public abstract class h {
         if (closeable != null) {
             try {
                 closeable.close();
-            } catch (IOException e) {
-                Log.e("FirebaseCrashlytics", str, e);
+            } catch (IOException e7) {
+                Log.e("FirebaseCrashlytics", str, e7);
             }
         }
     }
@@ -107,7 +107,7 @@ public abstract class h {
     public static boolean h() {
         boolean g10 = g();
         String str = Build.TAGS;
-        if ((g10 || str == null || !str.contains("test-keys")) && !v7.j.s("/system/app/Superuser.apk")) {
+        if ((g10 || str == null || !str.contains("test-keys")) && !t8.b.u("/system/app/Superuser.apk")) {
             return !g10 && new File("/system/xbin/su").exists();
         }
         return true;
@@ -119,8 +119,8 @@ public abstract class h {
             MessageDigest messageDigest = MessageDigest.getInstance("SHA-1");
             messageDigest.update(bytes);
             return f(messageDigest.digest());
-        } catch (NoSuchAlgorithmException e) {
-            Log.e("FirebaseCrashlytics", "Could not create hashing algorithm: SHA-1, returning empty string.", e);
+        } catch (NoSuchAlgorithmException e7) {
+            Log.e("FirebaseCrashlytics", "Could not create hashing algorithm: SHA-1, returning empty string.", e7);
             return "";
         }
     }

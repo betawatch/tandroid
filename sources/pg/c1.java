@@ -20,10 +20,10 @@ import java.util.WeakHashMap;
 import m.p3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.pa;
-import org.telegram.ui.st0;
+import org.telegram.ui.Components.qa;
+import org.telegram.ui.vt0;
 import qg.v2;
-import w7.n6;
+import w7.o6;
 import x7.a7;
 import x7.fa;
 import x7.m7;
@@ -37,7 +37,7 @@ import z7.lg;
 import z7.ma;
 import z7.wf;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class c1 implements Runnable {
     public final /* synthetic */ int a;
@@ -105,8 +105,8 @@ public final class c1 implements Runnable {
                             GLES20.glTexParameteri(3553, 10241, 9729);
                             GLES20.glUniform1i(g1Var.d("blured"), 1);
                             GLES20.glActiveTexture(33985);
-                            pa paVar = s0Var.F.m;
-                            GLES20.glBindTexture(3553, paVar != null ? paVar.s[2] : -1);
+                            qa qaVar = s0Var.F.m;
+                            GLES20.glBindTexture(3553, qaVar != null ? qaVar.s[2] : -1);
                             if (s0Var.b == null || !(s0Var.i instanceof d)) {
                                 GLES20.glUniform1f(g1Var.d("eraser"), 0.0f);
                             } else {
@@ -156,7 +156,7 @@ public final class c1 implements Runnable {
                             GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) s0Var.n);
                             GLES20.glEnableVertexAttribArray(1);
                             GLES20.glDrawArrays(5, 0, 4);
-                            n6.a();
+                            o6.a();
                             i10 = s0Var.q;
                             if (i10 != 0 && s0Var.d != null && s0Var.I > 0.0f) {
                                 s0Var.o(i10, s0Var.g(), s0Var.d, (s0Var.J * f7) + (s0Var.I * f7));
@@ -175,7 +175,7 @@ public final class c1 implements Runnable {
                 f1 f1Var = ((d1) this.b).y;
                 if (!f1Var.s) {
                     f1Var.s = true;
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.q0(this, 12));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.u0(this, 11));
                 }
                 if (((d1) this.b).h) {
                     return;
@@ -183,25 +183,25 @@ public final class c1 implements Runnable {
                 ((d1) this.b).h = true;
                 return;
             case 1:
-                qg.j jVar = ((st0) this.b).S0;
+                qg.j jVar = ((vt0) this.b).S0;
                 if (jVar instanceof v2) {
                     ((v2) jVar).getEditText();
                     return;
                 }
                 return;
             case 2:
-                rg.s0 s0Var2 = (rg.s0) this.b;
-                ArrayList arrayList = s0Var2.g3;
-                if (s0Var2.n3) {
-                    if (!arrayList.isEmpty() && (R = RecyclerView.R((rg.n1) hg.c.g(1, arrayList))) >= 0) {
-                        View m10 = s0Var2.Y2.m(R + 1);
+                rg.t0 t0Var = (rg.t0) this.b;
+                ArrayList arrayList = t0Var.n3;
+                if (t0Var.u3) {
+                    if (!arrayList.isEmpty() && (R = RecyclerView.R((rg.p1) hg.k0.g(1, arrayList))) >= 0) {
+                        View m10 = t0Var.f3.m(R + 1);
                         if (m10 != null) {
-                            s0Var2.d3 = false;
-                            s0Var2.w1(m10, true);
-                            s0Var2.v0(0, m10.getTop() - ((s0Var2.getMeasuredHeight() - m10.getMeasuredHeight()) / 2), AndroidUtilities.overshootInterpolator);
+                            t0Var.k3 = false;
+                            t0Var.y1(m10, true);
+                            t0Var.w0(0, m10.getTop() - ((t0Var.getMeasuredHeight() - m10.getMeasuredHeight()) / 2), AndroidUtilities.overshootInterpolator);
                         }
                     }
-                    s0Var2.x1();
+                    t0Var.z1();
                     return;
                 }
                 return;
@@ -296,7 +296,7 @@ public final class c1 implements Runnable {
                 tg.z0 z0Var = (tg.z0) this.b;
                 String str = z0Var.n0;
                 if (str != null) {
-                    z0Var.T(z0Var.r0, str, false);
+                    z0Var.R(z0Var.r0, str, false);
                     return;
                 }
                 return;
@@ -304,7 +304,7 @@ public final class c1 implements Runnable {
                 tg.m1 m1Var = (tg.m1) this.b;
                 String str2 = m1Var.o0;
                 if (str2 != null) {
-                    tg.m1.U(m1Var, str2);
+                    tg.m1.S(m1Var, str2);
                     return;
                 }
                 return;
@@ -346,7 +346,7 @@ public final class c1 implements Runnable {
                 }
                 return;
             case 7:
-                ((ThreadLocal) ((com.google.firebase.messaging.t) this.b).e).set(Boolean.TRUE);
+                ((ThreadLocal) ((com.google.firebase.messaging.s) this.b).e).set(Boolean.TRUE);
                 return;
             case 8:
                 fa faVar = (fa) this.b;
@@ -391,11 +391,11 @@ public final class c1 implements Runnable {
                         int size2 = arrayList2.size();
                         com.google.firebase.messaging.n nVar = new com.google.firebase.messaging.n();
                         nVar.c = m7.b;
-                        v7.l lVar2 = new v7.l(8, false);
-                        lVar2.c = Integer.valueOf(size2 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                        lVar2.b = (x7.r0) next;
-                        lVar2.d = a7Var;
-                        nVar.f = new x7.s0(lVar2);
+                        v7.k kVar = new v7.k(8, false);
+                        kVar.c = Integer.valueOf(size2 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                        kVar.b = (x7.r0) next;
+                        kVar.d = a7Var;
+                        nVar.f = new x7.s0(kVar);
                         qb.m.a.execute(new com.google.android.gms.internal.cast.p(faVar, new a5.a(nVar, 0), o7Var, faVar.b(), 7));
                     }
                     hashMap.remove(o7Var);
@@ -475,11 +475,11 @@ public final class c1 implements Runnable {
                         int size4 = arrayList3.size();
                         p3 p3Var = new p3();
                         p3Var.c = fb.b;
-                        v7.l lVar3 = new v7.l(14, false);
-                        lVar3.c = Integer.valueOf(size4 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                        lVar3.b = (z7.i1) next2;
-                        lVar3.d = maVar;
-                        p3Var.h = new z7.j1(lVar3);
+                        v7.k kVar2 = new v7.k(14, false);
+                        kVar2.c = Integer.valueOf(size4 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                        kVar2.b = (z7.i1) next2;
+                        kVar2.d = maVar;
+                        p3Var.h = new z7.j1(kVar2);
                         wf wfVar2 = wfVar;
                         hb hbVar2 = hbVar;
                         qb.m.a.execute(new com.google.android.gms.internal.cast.p(wfVar2, new a5.a(p3Var, 0), hbVar2, wfVar.c(), 8));

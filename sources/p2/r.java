@@ -28,7 +28,7 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class r implements y2.n {
     public final o a;
@@ -148,7 +148,7 @@ public final class r implements y2.n {
         String j10 = j(str, pattern, hashMap);
         byte[] decode = Base64.decode(j10.substring(j10.indexOf(44)), 0);
         UUID uuid2 = b2.i.e;
-        return new b2.n(uuid2, null, "video/mp4", w3.o.a(uuid2, null, decode));
+        return new b2.n(uuid2, null, "video/mp4", w3.n.a(uuid2, null, decode));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:223:0x08ec, code lost:
@@ -1950,8 +1950,8 @@ public final class r implements y2.n {
                                                         default:
                                                             bool2 = valueOf;
                                                             String i49 = e2.i(1, 0, group2);
-                                                            String t10 = v7.j.t(i49, "=");
-                                                            int length4 = t10.length() + substring.indexOf(t10);
+                                                            String v9 = t8.b.v(i49, "=");
+                                                            int length4 = v9.length() + substring.indexOf(v9);
                                                             arrayList11 = arrayList30;
                                                             String substring2 = substring.substring(length4, (substring.length() == length4 + 1 ? 1 : 2) + length4);
                                                             if (substring2.startsWith("\"")) {
@@ -2181,15 +2181,15 @@ public final class r implements y2.n {
                                                         d dVar3 = (d) hashMap6.get(str31);
                                                         if (dVar3 != null) {
                                                             boolean equals4 = dVar3.equals(dVar2);
-                                                            StringBuilder w10 = a4.a.w("Can't change ", str31, " from ");
-                                                            w10.append(dVar3.d);
-                                                            w10.append(" ");
-                                                            w10.append(dVar3.c);
-                                                            w10.append(" to ");
-                                                            w10.append(dVar2.d);
-                                                            w10.append(" ");
-                                                            w10.append(dVar2.c);
-                                                            e2.d.a(w10.toString(), equals4);
+                                                            StringBuilder v10 = a4.a.v("Can't change ", str31, " from ");
+                                                            v10.append(dVar3.d);
+                                                            v10.append(" ");
+                                                            v10.append(dVar3.c);
+                                                            v10.append(" to ");
+                                                            v10.append(dVar2.d);
+                                                            v10.append(" ");
+                                                            v10.append(dVar2.c);
+                                                            e2.d.a(v10.toString(), equals4);
                                                         }
                                                         hashMap6.put(str31, dVar2);
                                                     }
@@ -2659,7 +2659,7 @@ public final class r implements y2.n {
                     String j10 = j(str9, pattern2, hashMap4);
                     b2.r rVar = new b2.r();
                     ArrayList arrayList27 = arrayList24;
-                    rVar.a = a4.a.D(j3, ":", j10);
+                    rVar.a = a4.a.C(j3, ":", j10);
                     rVar.b = j10;
                     rVar.p = r0.n("application/x-mpegURL");
                     boolean f7 = f(str9, s0);
@@ -2956,7 +2956,7 @@ public final class r implements y2.n {
                                 }
                                 if (sb3.length() > 0) {
                                     sb2 = sb3.toString();
-                                    i28 = sb2 != null ? a4.a.D(str5, ",", sb2) : str5;
+                                    i28 = sb2 != null ? a4.a.C(str5, ",", sb2) : str5;
                                 }
                             }
                             sb2 = null;

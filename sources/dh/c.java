@@ -6,7 +6,7 @@ import e2.m;
 import m4.e1;
 import org.telegram.ui.ActionBar.d6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements d, m, h {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class c implements d, m, h {
     }
 
     @Override // dh.d
-    public int g(d6 d6Var, boolean z10) {
+    public int h(d6 d6Var, boolean z10) {
         return z10 ? this.b : this.c;
     }
 

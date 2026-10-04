@@ -5,7 +5,7 @@ import g2.m;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c extends InputStream {
     public final h a;
@@ -16,8 +16,8 @@ public final class c extends InputStream {
         this.a = hVar;
         try {
             this.c = hVar.open(mVar);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (IOException e7) {
+            throw new RuntimeException(e7);
         }
     }
 

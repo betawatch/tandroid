@@ -11,12 +11,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.ol0;
-import org.telegram.ui.Components.qp;
+import org.telegram.ui.Components.rp;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class la implements ol0, yf.m, ImageReceiver.ImageReceiverDelegate, FlagSecureReason.FlagSecureCondition, qp, Utilities.Callback2Return {
+public final /* synthetic */ class la implements ol0, yf.m, ImageReceiver.ImageReceiverDelegate, FlagSecureReason.FlagSecureCondition, rp, Utilities.Callback2Return {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -25,7 +25,7 @@ public final /* synthetic */ class la implements ol0, yf.m, ImageReceiver.ImageR
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.qp
+    @Override // org.telegram.ui.Components.rp
     public void a() {
         switch (this.a) {
             case 4:
@@ -51,7 +51,7 @@ public final /* synthetic */ class la implements ol0, yf.m, ImageReceiver.ImageR
     public boolean d(int i10, View view) {
         pa paVar = (pa) this.b;
         paVar.getClass();
-        paVar.z1(((ThemesHorizontalListCell$InnerThemeView) view).b);
+        paVar.B1(((ThemesHorizontalListCell$InnerThemeView) view).b);
         return true;
     }
 
@@ -107,7 +107,7 @@ public final /* synthetic */ class la implements ol0, yf.m, ImageReceiver.ImageR
                     int dominantColor = AndroidUtilities.getDominantColor(imageReceiver3.getBitmap());
                     t7Var.a = dominantColor;
                     CheckBoxBase checkBoxBase = t7Var.P;
-                    if (checkBoxBase != null && checkBoxBase.x != (v = org.telegram.ui.ActionBar.h6.v(dominantColor, org.telegram.ui.ActionBar.h6.l1(0.25f, -1)))) {
+                    if (checkBoxBase != null && checkBoxBase.x != (v = org.telegram.ui.ActionBar.i6.v(dominantColor, org.telegram.ui.ActionBar.i6.l1(0.25f, -1)))) {
                         checkBoxBase.x = v;
                         checkBoxBase.b();
                         break;

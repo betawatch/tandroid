@@ -5,7 +5,7 @@ import com.google.android.datatransport.cct.CctBackendFactory;
 import java.util.HashMap;
 import la.h;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d {
     public final of.b a;
@@ -23,12 +23,12 @@ public final class d {
         if (this.c.containsKey(str)) {
             return (e) this.c.get(str);
         }
-        CctBackendFactory I = this.a.I(str);
-        if (I == null) {
+        CctBackendFactory y3 = this.a.y(str);
+        if (y3 == null) {
             return null;
         }
         h hVar = this.b;
-        e create = I.create(new b((Context) hVar.b, (u5.a) hVar.c, (u5.a) hVar.d, str));
+        e create = y3.create(new b((Context) hVar.b, (u5.a) hVar.c, (u5.a) hVar.d, str));
         this.c.put(str, create);
         return create;
     }

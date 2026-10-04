@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import bf.p;
 import com.google.firebase.messaging.d;
-import hg.c;
+import hg.k0;
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
 import java.io.FilterInputStream;
@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a extends jf.a {
     public static final Logger s = Logger.getLogger(a.class.getName());
@@ -386,8 +386,8 @@ public final class a extends jf.a {
                                                                 this.o = decodeByteArray;
                                                                 if (decodeByteArray != null) {
                                                                 }
-                                                            } catch (Exception e) {
-                                                                e.printStackTrace();
+                                                            } catch (Exception e7) {
+                                                                e7.printStackTrace();
                                                                 break;
                                                             }
                                                             break;
@@ -410,9 +410,9 @@ public final class a extends jf.a {
                                                             String str5 = this.h;
                                                             if (str5 == null || str5.trim().length() == 0) {
                                                                 if (k11.i() == 2) {
-                                                                    int a2 = c.a(dataInputStream5.readShort() - r62);
+                                                                    int a2 = k0.a(dataInputStream5.readShort() - r62);
                                                                     if (a2 != 0) {
-                                                                        this.h = c.c(a2);
+                                                                        this.h = k0.c(a2);
                                                                     }
                                                                 } else {
                                                                     this.h = k11.m();

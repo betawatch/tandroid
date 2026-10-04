@@ -1,44 +1,26 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class qs0 extends s4.s0 {
-    public final /* synthetic */ hs0 a;
-    public final /* synthetic */ is0 b;
-    public final /* synthetic */ lv0 c;
+public final class qs0 extends s4.s {
+    public final /* synthetic */ pv0 Q;
 
-    public qs0(lv0 lv0Var, hs0 hs0Var, is0 is0Var) {
-        this.c = lv0Var;
-        this.a = hs0Var;
-        this.b = is0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qs0(pv0 pv0Var) {
+        super(3);
+        this.Q = pv0Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        this.c.b1 = i10 != 0;
+    @Override // s4.s, s4.c0, s4.o0
+    public final int o0(int i10, of.e eVar, s4.z0 z0Var) {
+        if (this.Q.o1) {
+            i10 = 0;
+        }
+        return super.o0(i10, eVar, z0Var);
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        int i12;
-        int i13;
-        lv0 lv0Var = this.c;
-        av0[] av0VarArr = lv0Var.t1;
-        is0 is0Var = this.b;
-        hs0 hs0Var = this.a;
-        lv0Var.G(hs0Var, (yl0) recyclerView, is0Var);
-        if (i11 != 0 && ((i13 = lv0Var.k0[0].F) == 0 || i13 == 5)) {
-            av0VarArr[0].a.isEmpty();
-        }
-        if (i11 != 0 && ((i12 = hs0Var.F) == 0 || lv0.p0(i12))) {
-            lv0.q(hs0Var, av0VarArr, true);
-        }
-        hs0Var.h.L0(true);
-        if (hs0Var.G != null) {
-            hs0Var.invalidate();
-        }
-        lv0Var.o0();
+    @Override // s4.s, s4.c0, s4.o0
+    public final boolean y0() {
+        return false;
     }
 }

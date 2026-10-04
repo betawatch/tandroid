@@ -1,66 +1,27 @@
 package qg;
 
-import org.telegram.ui.ar0;
-import org.telegram.ui.st0;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.ui.vt0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class e0 implements pg.e1 {
-    public final /* synthetic */ ar0 a;
-    public final /* synthetic */ st0 b;
+public final class e0 extends View {
+    public final /* synthetic */ vt0 a;
 
-    public e0(st0 st0Var, ar0 ar0Var) {
-        this.b = st0Var;
-        this.a = ar0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e0(vt0 vt0Var, Context context) {
+        super(context);
+        this.a = vt0Var;
     }
 
-    @Override // pg.e1
-    public final void a() {
-        this.a.run();
-    }
-
-    @Override // pg.e1
-    public final void b() {
-        f0 f0Var = this.b.X0;
-        if (f0Var != null) {
-            f0Var.invalidate();
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        c0 c0Var = this.a.W0;
+        if (c0Var != null) {
+            c0Var.d(canvas);
         }
-    }
-
-    @Override // pg.e1
-    public final void c() {
-        st0 st0Var = this.b;
-        if (st0Var.k1) {
-            st0Var.k1 = false;
-        } else {
-            st0Var.t1.b(1);
-            st0Var.b((pg.m) pg.m.a.get(0));
-        }
-    }
-
-    @Override // pg.e1
-    public final boolean d() {
-        st0 st0Var = this.b;
-        boolean z10 = st0Var.S0 == null;
-        if (!z10) {
-            st0Var.s0(null, true);
-        }
-        return z10;
-    }
-
-    @Override // pg.e1
-    public final void e() {
-        st0 st0Var = this.b;
-        st0Var.F0.a.e();
-        st0Var.l1.setViewHidden(false);
-    }
-
-    @Override // pg.e1
-    public final void f() {
-        st0 st0Var = this.b;
-        if (st0Var.S0 != null) {
-            st0Var.s0(null, true);
-        }
-        st0Var.l1.setViewHidden(true);
     }
 }

@@ -9,13 +9,13 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
-import n2.e;
+import k2.e;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 import s0.d;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class b extends r0.b {
     public static final Rect n = new Rect(ConnectionsManager.DEFAULT_DATACENTER_ID, ConnectionsManager.DEFAULT_DATACENTER_ID, TLObject.FLAG_31, TLObject.FLAG_31);
@@ -120,9 +120,9 @@ public abstract class b extends r0.b {
         if (!this.h.isEnabled() || (parent = (view = this.i).getParent()) == null) {
             return;
         }
-        AccessibilityEvent e = e(-1, 2048);
-        e.setContentChangeTypes(1);
-        parent.requestSendAccessibilityEvent(view, e);
+        AccessibilityEvent e7 = e(-1, 2048);
+        e7.setContentChangeTypes(1);
+        parent.requestSendAccessibilityEvent(view, e7);
     }
 
     public final d j(int i10) {

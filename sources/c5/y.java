@@ -17,7 +17,7 @@ import com.google.android.gms.internal.play_billing.l3;
 import com.google.android.gms.internal.play_billing.z3;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class y implements ServiceConnection {
     public final d a;
@@ -88,7 +88,7 @@ public final class y implements ServiceConnection {
                     p5.c();
                     a4.o((a4) p5.b, longValue);
                 }
-                cVar.h.c0((a4) p5.a());
+                cVar.h.Z((a4) p5.a());
                 return;
             }
             c4 r10 = d4.r();
@@ -146,9 +146,9 @@ public final class y implements ServiceConnection {
                 r10.d(false);
                 r10.e();
                 u10.e(r10);
-                bVar.X((g3) u10.a());
+                bVar.T((g3) u10.a());
             } else {
-                cVar.h.b0(l3.n());
+                cVar.h.X(l3.n());
             }
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
@@ -214,9 +214,9 @@ public final class y implements ServiceConnection {
                 r10.d(false);
                 r10.e();
                 u10.e(r10);
-                bVar.X((g3) u10.a());
+                bVar.T((g3) u10.a());
             } else {
-                cVar.h.d0(b4.n());
+                cVar.h.a0(b4.n());
             }
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);

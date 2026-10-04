@@ -1,9 +1,8 @@
 package tc;
 
 import java.io.IOException;
-import v7.j;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class g extends Exception {
     public final String a;
@@ -16,7 +15,7 @@ public abstract class g extends Exception {
     @Override // java.lang.Throwable
     public final String toString() {
         String str = this.a;
-        return a4.a.t(new StringBuilder(), super.toString(), str != null ? j.g("; request-id: ", str) : "");
+        return a4.a.s(new StringBuilder(), super.toString(), str != null ? t8.b.i("; request-id: ", str) : "");
     }
 
     public g(String str, String str2, IOException iOException) {

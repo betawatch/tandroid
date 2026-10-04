@@ -24,7 +24,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.ViewConfiguration;
-import ei.l3;
+import ei.m3;
 import gg.d2;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -32,11 +32,11 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class k0 extends n4.p {
     public static final int w;
-    public final oi.f f;
+    public final qi.f f;
     public final a0 g;
     public final n4.d0 h;
     public final i0 i;
@@ -81,7 +81,7 @@ public final class k0 extends n4.p {
         Context context = a0Var.f;
         this.h = n4.d0.a(context);
         this.i = new i0(this);
-        oi.f fVar = new oi.f(a0Var);
+        qi.f fVar = new qi.f(a0Var);
         this.f = fVar;
         this.o = 300000L;
         this.j = new androidx.mediarouter.app.c(a0Var.l.getLooper(), fVar);
@@ -146,7 +146,7 @@ public final class k0 extends n4.p {
         n4.y yVar = new n4.y(context, join, componentName2, pendingIntent, bundle);
         this.k = yVar;
         if (i10 >= 31 && componentName != null) {
-            e0.h0.g(yVar, componentName);
+            e0.h0.i(yVar, componentName);
         }
         yVar.Y(this, handler);
     }
@@ -163,7 +163,7 @@ public final class k0 extends n4.p {
                 i11++;
                 long j3 = ((n4.v) obj).b;
                 if (hashSet.contains(Long.valueOf(j3))) {
-                    Log.e("MediaSessionCompat", a4.a.p(j3, "Found duplicate queue id: "), new IllegalArgumentException("id of each queue item should be unique"));
+                    Log.e("MediaSessionCompat", a4.a.o(j3, "Found duplicate queue id: "), new IllegalArgumentException("id of each queue item should be unique"));
                 }
                 hashSet.add(Long.valueOf(j3));
             }
@@ -304,7 +304,7 @@ public final class k0 extends n4.p {
                     i10 = 2;
                 } else {
                     if (d != 4) {
-                        throw new IllegalArgumentException(hg.c.h(d, "Unrecognized State: "));
+                        throw new IllegalArgumentException(hg.k0.h(d, "Unrecognized State: "));
                     }
                     i10 = 1;
                 }
@@ -461,7 +461,7 @@ public final class k0 extends n4.p {
 
     public final void I(g1 g1Var, int i10, j0 j0Var, n4.a0 a0Var) {
         if (a0Var != null) {
-            e2.d0.U(this.g.l, new l3(this, g1Var, i10, a0Var, j0Var, 5));
+            e2.d0.U(this.g.l, new m3(this, g1Var, i10, a0Var, j0Var, 5));
             return;
         }
         StringBuilder sb2 = new StringBuilder("RemoteUserInfo is null, ignoring command=");

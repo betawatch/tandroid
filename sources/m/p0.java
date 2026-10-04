@@ -17,9 +17,9 @@ import android.view.ViewTreeObserver;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
-import v7.w7;
+import v7.v7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class p0 extends Spinner {
     public static final int[] r = {R.attr.spinnerMode};
@@ -64,8 +64,8 @@ public final class p0 extends Spinner {
                     if (typedArray.hasValue(0)) {
                         i10 = typedArray.getInt(0, 0);
                     }
-                } catch (Exception e) {
-                    e = e;
+                } catch (Exception e7) {
+                    e = e7;
                     Log.i("AppCompatSpinner", "Could not read android:spinnerMode", e);
                 }
             } catch (Throwable th2) {
@@ -76,8 +76,8 @@ public final class p0 extends Spinner {
                 }
                 throw th;
             }
-        } catch (Exception e7) {
-            e = e7;
+        } catch (Exception e10) {
+            e = e10;
             typedArray = null;
         } catch (Throwable th3) {
             th = th3;
@@ -331,14 +331,14 @@ public final class p0 extends Spinner {
 
     @Override // android.widget.Spinner
     public void setPopupBackgroundResource(int i10) {
-        setPopupBackgroundDrawable(w7.b(getPopupContext(), i10));
+        setPopupBackgroundDrawable(v7.b(getPopupContext(), i10));
     }
 
     @Override // android.widget.Spinner
     public void setPrompt(CharSequence charSequence) {
         o0 o0Var = this.f;
         if (o0Var != null) {
-            o0Var.g(charSequence);
+            o0Var.h(charSequence);
         } else {
             super.setPrompt(charSequence);
         }

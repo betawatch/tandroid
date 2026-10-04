@@ -1,37 +1,28 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ij0 extends xg.i {
-    public boolean J;
-    public final /* synthetic */ lj0 K;
+public final /* synthetic */ class ij0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ oj0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ij0(lj0 lj0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
-        this.K = lj0Var;
+    public /* synthetic */ ij0(oj0 oj0Var, int i10) {
+        this.a = i10;
+        this.b = oj0Var;
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        int dp = AndroidUtilities.dp(64.0f) + getMeasuredHeight();
-        lj0 lj0Var = this.K;
-        lj0Var.l0 = dp;
-        lj0Var.k0.G();
-        if (this.J != lj0Var.isKeyboardVisible()) {
-            boolean isKeyboardVisible = lj0Var.isKeyboardVisible();
-            this.J = isKeyboardVisible;
-            if (isKeyboardVisible) {
-                org.telegram.ui.Components.yl0 yl0Var = lj0Var.d;
-                ji.o oVar = new ji.o(lj0Var.getContext(), 2, 0.6f);
-                oVar.a = 1;
-                oVar.p = AndroidUtilities.dp(36.0f);
-                yl0Var.getLayoutManager().w0(oVar);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.dismiss();
+                break;
+            case 1:
+                this.b.S(true, false);
+                break;
+            default:
+                this.b.S(true, false);
+                break;
         }
     }
 }

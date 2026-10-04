@@ -1,9 +1,9 @@
 package hd;
 
 import java.util.RandomAccess;
-import v7.c8;
+import v7.b8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b extends c implements RandomAccess {
     public final c a;
@@ -13,7 +13,7 @@ public final class b extends c implements RandomAccess {
     public b(c cVar, int i10, int i11) {
         this.a = cVar;
         this.b = i10;
-        c8.a(i10, i11, cVar.i());
+        b8.a(i10, i11, cVar.i());
         this.c = i11 - i10;
     }
 
@@ -21,7 +21,7 @@ public final class b extends c implements RandomAccess {
     public final Object get(int i10) {
         int i11 = this.c;
         if (i10 < 0 || i10 >= i11) {
-            throw new IndexOutOfBoundsException(a4.a.m(i10, i11, "index: ", ", size: "));
+            throw new IndexOutOfBoundsException(a4.a.l(i10, i11, "index: ", ", size: "));
         }
         return this.a.get(this.b + i10);
     }

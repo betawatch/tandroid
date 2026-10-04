@@ -1,9 +1,9 @@
 package ai;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.hx;
+import org.telegram.ui.jx;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y implements Runnable {
     public final /* synthetic */ int a;
@@ -18,12 +18,12 @@ public final /* synthetic */ class y implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                hx hxVar = this.b.b0;
-                ValueAnimator valueAnimator = hxVar.j0;
+                jx jxVar = this.b.b0;
+                ValueAnimator valueAnimator = jxVar.j0;
                 if (valueAnimator != null) {
                     valueAnimator.start();
                 }
-                hxVar.k0 = null;
+                jxVar.k0 = null;
                 break;
             default:
                 a0 a0Var = this.b;

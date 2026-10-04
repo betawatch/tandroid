@@ -1,75 +1,148 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class tz0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ProfileActivity c;
+public final class tz0 extends ou0 {
+    public final /* synthetic */ ProfileActivity a;
 
-    public /* synthetic */ tz0(ProfileActivity profileActivity, boolean z10, int i10) {
-        this.a = i10;
-        this.c = profileActivity;
-        this.b = z10;
+    public tz0(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                this.c.f0 = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x013e  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0108  */
+    /* JADX WARN: Type inference failed for: r1v7, types: [org.telegram.ui.Components.w9] */
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final yu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        TLRPC.Chat chat;
+        TLRPC.ChatPhoto chatPhoto;
+        TLRPC.FileLocation fileLocation2;
+        yu0 yu0Var;
+        int i11;
+        boolean z12;
+        long j3;
+        jz0 jz0Var;
+        jz0 jz0Var2;
+        org.telegram.ui.Components.ai0 ai0Var;
+        TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated;
+        TLRPC.User user;
+        TLRPC.UserProfilePhoto userProfilePhoto;
+        if (fileLocation != null) {
+            ProfileActivity profileActivity = this.a;
+            if (profileActivity.Y.getScaleX() <= 0.96f || !z11) {
+                if (profileActivity.e1 == 0 ? profileActivity.f1 == 0 || (chat = profileActivity.getMessagesController().getChat(Long.valueOf(profileActivity.f1))) == null || (chatPhoto = chat.photo) == null || (fileLocation2 = chatPhoto.photo_big) == null : (user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.e1))) == null || (userProfilePhoto = user.photo) == null || (fileLocation2 = userProfilePhoto.photo_big) == null) {
+                    fileLocation2 = null;
+                }
+                boolean z13 = false;
+                boolean z14 = fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id;
+                jz0 jz0Var3 = profileActivity.n0;
+                if (jz0Var3 != null) {
+                    int realCount = jz0Var3.getRealCount();
+                    i11 = 0;
+                    while (i11 < realCount) {
+                        ImageLocation G = profileActivity.n0.G(i11);
+                        if (G != null && (tL_fileLocationToBeDeprecated = G.location) != null && tL_fileLocationToBeDeprecated.local_id == fileLocation.local_id) {
+                            yu0Var = null;
+                            if (tL_fileLocationToBeDeprecated.volume_id == fileLocation.volume_id && G.dc_id == fileLocation.dc_id) {
+                                z14 = true;
+                                break;
+                            }
+                        }
+                        i11++;
+                    }
+                }
+                yu0Var = null;
+                i11 = -1;
+                if (!z14) {
+                    return yu0Var;
+                }
+                iz0 iz0Var = profileActivity.e0;
+                if (i11 >= 0 && (jz0Var = profileActivity.n0) != null && jz0Var.getVisibility() == 0) {
+                    if (i11 != profileActivity.n0.getRealPosition() && (ai0Var = (jz0Var2 = profileActivity.n0).D0) != null) {
+                        jz0Var2.x(ai0Var.j() + i11, false);
+                    }
+                    ?? currentItemView = profileActivity.n0.getCurrentItemView();
+                    if (currentItemView != 0) {
+                        iz0Var = currentItemView;
+                        z12 = true;
+                        int[] iArr = new int[2];
+                        iz0Var.getLocationInWindow(iArr);
+                        yu0 yu0Var2 = new yu0();
+                        yu0Var2.b = iArr[0];
+                        yu0Var2.c = iArr[1];
+                        yu0Var2.d = iz0Var;
+                        ImageReceiver imageReceiver = iz0Var.getImageReceiver();
+                        yu0Var2.a = imageReceiver;
+                        j3 = profileActivity.e1;
+                        if (j3 == 0) {
+                            yu0Var2.f = j3;
+                        } else {
+                            long j10 = profileActivity.f1;
+                            if (j10 != 0) {
+                                yu0Var2.f = -j10;
+                            }
+                        }
+                        yu0Var2.e = imageReceiver.getBitmapSafe();
+                        yu0Var2.g = -1L;
+                        yu0Var2.h = iz0Var.getImageReceiver().getRoundRadius(true);
+                        yu0Var2.k = !z12 ? 1.0f : profileActivity.Y.getScaleX();
+                        yu0Var2.p = profileActivity.e1 != profileActivity.getUserConfig().clientUserId;
+                        if (!z12 && profileActivity.Y.getScaleX() > 0.96f) {
+                            z13 = true;
+                        }
+                        yu0Var2.r = z13;
+                        yu0Var2.s = z12;
+                        return yu0Var2;
+                    }
+                }
+                z12 = false;
+                int[] iArr2 = new int[2];
+                iz0Var.getLocationInWindow(iArr2);
+                yu0 yu0Var22 = new yu0();
+                yu0Var22.b = iArr2[0];
+                yu0Var22.c = iArr2[1];
+                yu0Var22.d = iz0Var;
+                ImageReceiver imageReceiver2 = iz0Var.getImageReceiver();
+                yu0Var22.a = imageReceiver2;
+                j3 = profileActivity.e1;
+                if (j3 == 0) {
+                }
+                yu0Var22.e = imageReceiver2.getBitmapSafe();
+                yu0Var22.g = -1L;
+                yu0Var22.h = iz0Var.getImageReceiver().getRoundRadius(true);
+                yu0Var22.k = !z12 ? 1.0f : profileActivity.Y.getScaleX();
+                yu0Var22.p = profileActivity.e1 != profileActivity.getUserConfig().clientUserId;
+                if (!z12) {
+                    z13 = true;
+                }
+                yu0Var22.r = z13;
+                yu0Var22.s = z12;
+                return yu0Var22;
+            }
         }
+        return null;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10;
-        org.telegram.ui.Cells.z3 z3Var;
-        switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = this.c;
-                boolean z10 = this.b;
-                ProfileActivity.n1(profileActivity, z10);
-                profileActivity.Y.setClickable(true);
-                if (z10) {
-                    org.telegram.ui.ActionBar.u0 u0Var = profileActivity.U0;
-                    if (u0Var.F.getWidth() != 0 && !u0Var.e.isFocused()) {
-                        u0Var.e.requestFocus();
-                        AndroidUtilities.showKeyboard(u0Var.e);
-                    }
-                }
-                profileActivity.k4(true);
-                profileActivity.V1 = null;
-                profileActivity.fragmentView.invalidate();
-                if (z10) {
-                    profileActivity.U4 = true;
-                    profileActivity.F4();
-                    Activity parentActivity = profileActivity.getParentActivity();
-                    i10 = ((org.telegram.ui.ActionBar.m2) profileActivity).classGuid;
-                    AndroidUtilities.requestAdjustResize(parentActivity, i10);
-                    profileActivity.P.setPreventMoving(false);
-                    break;
-                }
-                break;
-            default:
-                ProfileActivity profileActivity2 = this.c;
-                if (profileActivity2.f0 != null && (z3Var = profileActivity2.g0) != null) {
-                    if (!this.b) {
-                        z3Var.setVisibility(4);
-                    }
-                    profileActivity2.f0 = null;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    public final void G() {
+        this.a.e0.getImageReceiver().setVisible(true, true);
+    }
+
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    public final void f(String str, String str2, boolean z10) {
+        this.a.q0.q(str, str2, z10);
     }
 }

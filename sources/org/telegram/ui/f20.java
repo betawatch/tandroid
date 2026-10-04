@@ -1,48 +1,41 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class f20 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ sg.a c;
+public final class f20 extends FrameLayout {
+    public org.telegram.ui.ActionBar.i5 a;
+    public ImageView b;
 
-    public /* synthetic */ f20(Context context, sg.a aVar, int i10) {
-        this.a = i10;
-        this.b = context;
-        this.c = aVar;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int dp;
+        ImageView imageView = this.b;
+        int i14 = i12 - i10;
+        org.telegram.ui.ActionBar.i5 i5Var = this.a;
+        int textHeight = ((i13 - i11) - i5Var.getTextHeight()) / 2;
+        if (LocaleController.isRTL) {
+            dp = (getMeasuredWidth() - i5Var.getMeasuredWidth()) - AndroidUtilities.dp(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
+        } else {
+            dp = AndroidUtilities.dp(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
+        }
+        i5Var.layout(dp, textHeight, i5Var.getMeasuredWidth() + dp, i5Var.getMeasuredHeight() + textHeight);
+        int dp2 = !LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : (i14 - imageView.getMeasuredWidth()) - AndroidUtilities.dp(20.0f);
+        imageView.layout(dp2, 0, imageView.getMeasuredWidth() + dp2, imageView.getMeasuredHeight());
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                g gVar = new g(this, 18);
-                Context context = this.b;
-                org.telegram.ui.Components.u8 u8Var = new org.telegram.ui.Components.u8(context, false, gVar, 1);
-                sg.f fVar = this.c.c;
-                u8Var.e(fVar != null ? fVar.C : 0, 0);
-                u8Var.f(-1, 1, 1, false);
-                org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(context, false);
-                e3Var.setCustomView(u8Var);
-                e3Var.setDimBehind(false);
-                e3Var.show();
-                break;
-            default:
-                g gVar2 = new g(this, 19);
-                Context context2 = this.b;
-                org.telegram.ui.Components.u8 u8Var2 = new org.telegram.ui.Components.u8(context2, false, gVar2, 2);
-                sg.f fVar2 = this.c.c;
-                u8Var2.e(fVar2 == null ? 0 : fVar2.B, 0);
-                u8Var2.f(-1, 1, 1, false);
-                org.telegram.ui.ActionBar.e3 e3Var2 = new org.telegram.ui.ActionBar.e3(context2, false);
-                e3Var2.setCustomView(u8Var2);
-                e3Var2.setDimBehind(false);
-                e3Var2.show();
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        AndroidUtilities.dp(48.0f);
+        this.a.measure(org.telegram.messenger.ok.c(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
+        this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+        setMeasuredDimension(size, AndroidUtilities.dp(50.0f));
     }
 }

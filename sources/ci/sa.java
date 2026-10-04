@@ -1,54 +1,43 @@
 package ci;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.og0;
-import org.telegram.ui.Components.qg0;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class sa implements o1.f {
+public final /* synthetic */ class sa implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ kc b;
 
-    public /* synthetic */ sa(Object obj, float f7, int i10) {
+    public /* synthetic */ sa(kc kcVar, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = f7;
+        this.b = kcVar;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                lc lcVar = (lc) this.c;
-                if (!z10) {
-                    lcVar.M0.setTranslationY(this.b);
-                    lcVar.M0.K = false;
-                    lcVar.o2 = null;
-                    lcVar.p2 = null;
-                    break;
-                }
+                this.b.M0.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                ei.p4 p4Var = (ei.p4) this.c;
-                p4Var.v = null;
-                float f11 = this.b;
-                if (!z10) {
-                    p4Var.f = f11;
-                    p4Var.c();
-                    break;
-                } else {
-                    p4Var.h = f11;
-                    break;
-                }
+                this.b.r1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 2:
+                this.b.r1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 3:
+                this.b.s1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 4:
+                this.b.s1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
             default:
-                og0 og0Var = (og0) this.c;
-                if (!z10) {
-                    qg0 qg0Var = og0Var.d;
-                    qg0Var.M.u.i = (qg0Var.H / 2.0f) + this.b >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r0 - r3) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
-                    break;
-                }
+                kc kcVar = this.b;
+                kcVar.getClass();
+                kcVar.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                kcVar.o();
+                kcVar.r.invalidate();
+                kcVar.n.invalidate();
                 break;
         }
     }

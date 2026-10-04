@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class db0 extends Drawable {
     public Paint a;
@@ -62,7 +62,7 @@ public final class db0 extends Drawable {
             }
             canvas.drawRect(bounds, paint);
         } else if (f10 != 0.0f) {
-            float interpolation = this.e ? sr.h.getInterpolation(f10) : 1.0f - sr.h.getInterpolation(1.0f - f10);
+            float interpolation = this.e ? tr.h.getInterpolation(f10) : 1.0f - tr.h.getInterpolation(1.0f - f10);
             Rect bounds2 = getBounds();
             float centerX = bounds2.centerX();
             float centerY = bounds2.centerY();

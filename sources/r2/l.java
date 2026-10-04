@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public interface l {
     void a(long j3, int i10, int i11, int i12);
@@ -20,11 +20,11 @@ public interface l {
 
     void e();
 
-    void f(int i10, long j3);
+    boolean f(n2.c cVar);
 
     void flush();
 
-    int g();
+    void g(int i10, long j3);
 
     ByteBuffer getInputBuffer(int i10);
 
@@ -32,13 +32,13 @@ public interface l {
 
     MediaFormat getOutputFormat();
 
-    int h(MediaCodec.BufferInfo bufferInfo);
+    int h();
 
-    void i(int i10);
+    int i(MediaCodec.BufferInfo bufferInfo);
 
-    void j(Surface surface);
+    void j(int i10);
 
-    boolean k(k2.u uVar);
+    void k(Surface surface);
 
     void release();
 

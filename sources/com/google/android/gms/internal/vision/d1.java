@@ -2,7 +2,7 @@ package com.google.android.gms.internal.vision;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class d1 implements Cloneable {
     public final f1 a;
@@ -42,10 +42,10 @@ public abstract class d1 implements Cloneable {
             com.google.android.gms.internal.clearcut.m mVar = new com.google.android.gms.internal.clearcut.m();
             u0Var.getClass();
             a2.f(f1Var2, bArr, 0, i10, mVar);
-        } catch (n1 e) {
-            throw e;
-        } catch (IOException e7) {
-            throw new RuntimeException("Reading from byte array should not throw IOException.", e7);
+        } catch (n1 e7) {
+            throw e7;
+        } catch (IOException e10) {
+            throw new RuntimeException("Reading from byte array should not throw IOException.", e10);
         } catch (IndexOutOfBoundsException unused) {
             throw n1.a();
         }
@@ -76,21 +76,21 @@ public abstract class d1 implements Cloneable {
     }
 
     public final f1 f() {
-        f1 e = e();
+        f1 e7 = e();
         boolean z10 = true;
-        byte byteValue = ((Byte) e.e(1)).byteValue();
+        byte byteValue = ((Byte) e7.e(1)).byteValue();
         if (byteValue != 1) {
             if (byteValue == 0) {
                 z10 = false;
             } else {
                 l2 l2Var = l2.c;
                 l2Var.getClass();
-                z10 = l2Var.a(e.getClass()).a(e);
-                e.e(2);
+                z10 = l2Var.a(e7.getClass()).a(e7);
+                e7.e(2);
             }
         }
         if (z10) {
-            return e;
+            return e7;
         }
         throw new androidx.car.app.j("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
     }

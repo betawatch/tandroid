@@ -27,22 +27,22 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.b5;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.c5;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.rq;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.sq;
+import org.telegram.ui.Components.zl0;
 import org.telegram.ui.LaunchActivity;
 import w7.q;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList E;
     public int F;
     public m6 a;
-    public rq b;
+    public sq b;
     public k c;
     public k d;
     public SharedPreferences e;
@@ -54,7 +54,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
     public int v;
     public LinearLayout w;
     public TextView x;
-    public yl0 y;
+    public zl0 y;
 
     public static float a(DisplayMetrics displayMetrics, float f7) {
         return q.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));
@@ -71,7 +71,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
         arrayList.add(new a("Show blur settings", new c(this, 0)));
         arrayList.add(new a(LocaleController.getString(R.string.DebugGeneral)));
         arrayList.add(new a(LocaleController.getString(SharedConfig.debugWebView ? R.string.DebugMenuDisableWebViewDebug : R.string.DebugMenuEnableWebViewDebug), new c(this, 1)));
-        arrayList.add(new a(h6.I.q() ? "Switch to day theme" : "Switch to dark theme", new ai.f(15)));
+        arrayList.add(new a(i6.I.q() ? "Switch to day theme" : "Switch to dark theme", new ai.f(15)));
         arrayList.add(new a(LocaleController.getString(R.string.DebugSendLogs), new c(this, 2)));
         return arrayList;
     }
@@ -87,7 +87,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
             this.w.setVisibility(0);
             arrayList.clear();
             if (getContext() instanceof LaunchActivity) {
-                b5 O = ((LaunchActivity) getContext()).O();
+                c5 O = ((LaunchActivity) getContext()).O();
                 if (O instanceof b) {
                     arrayList.addAll(((b) O).z());
                 }
@@ -159,20 +159,20 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
     }
 
     public final void d() {
-        z h02 = h6.h0(AndroidUtilities.dp(56.0f), h6.w0(null, h6.P9, false), h6.w0(null, h6.Q9, false));
+        z h02 = i6.h0(AndroidUtilities.dp(56.0f), i6.w0(null, i6.P9, false), i6.w0(null, i6.Q9, false));
         Drawable mutate = getResources().getDrawable(R.drawable.floating_shadow).mutate();
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, mode));
-        rq rqVar = new rq(mutate, h02, 0, 0);
+        sq sqVar = new sq(mutate, h02, 0, 0);
         int dp = AndroidUtilities.dp(56.0f);
         int dp2 = AndroidUtilities.dp(56.0f);
-        rqVar.e = dp;
-        rqVar.f = dp2;
-        this.b = rqVar;
+        sqVar.e = dp;
+        sqVar.f = dp2;
+        this.b = sqVar;
         Drawable drawable = getResources().getDrawable(R.drawable.popup_fixed_alert3);
-        drawable.setColorFilter(new PorterDuffColorFilter(h6.w0(null, h6.h5, false), mode));
+        drawable.setColorFilter(new PorterDuffColorFilter(i6.w0(null, i6.h5, false), mode));
         this.w.setBackground(drawable);
-        this.x.setTextColor(h6.w0(null, h6.j5, false));
+        this.x.setTextColor(i6.w0(null, i6.j5, false));
         invalidate();
     }
 

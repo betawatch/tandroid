@@ -1,104 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class wj extends xl0 {
-    public final Context c;
-    public ArrayList d = new ArrayList();
-    public ArrayList e = new ArrayList();
-    public vj f;
-    public int h;
-    public final /* synthetic */ ak n;
+public final /* synthetic */ class wj implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xj b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ int d;
 
-    public wj(ak akVar, Context context) {
-        this.n = akVar;
-        this.c = context;
+    public /* synthetic */ wj(xj xjVar, String str, int i10, int i11) {
+        this.a = i11;
+        this.b = xjVar;
+        this.c = str;
+        this.d = i10;
     }
 
-    @Override // org.telegram.ui.Components.xl0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f == 0;
-    }
-
-    public final Object E(int i10) {
-        int i11 = i10 - 1;
-        if (i11 < 0 || i11 >= this.d.size()) {
-            return null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                xj xjVar = this.b;
+                String str = this.c;
+                int i10 = this.d;
+                xjVar.getClass();
+                AndroidUtilities.runOnUIThread(new wj(xjVar, str, i10, 1));
+                break;
+            default:
+                xj xjVar2 = this.b;
+                String str2 = this.c;
+                int i11 = this.d;
+                xjVar2.getClass();
+                int i12 = UserConfig.selectedAccount;
+                Utilities.searchQueue.postRunnable(new ii.i0(xjVar2, str2, new ArrayList(ContactsController.getInstance(i12).contactsBook.values()), new ArrayList(ContactsController.getInstance(i12).contacts), i12, i11));
+                break;
         }
-        return this.d.get(i11);
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.d.size() + 2;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 1;
-        }
-        return i10 == h() - 1 ? 2 : 0;
-    }
-
-    @Override // s4.h0
-    public final void l() {
-        super.l();
-        this.n.N();
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        TLRPC.User user;
-        if (c1Var.f == 0) {
-            zj zjVar = (zj) c1Var.a;
-            boolean z10 = i10 != h() + (-2);
-            Object E = E(i10);
-            if (E instanceof ContactsController.Contact) {
-                ContactsController.Contact contact = (ContactsController.Contact) E;
-                user = contact.user;
-                if (user == null) {
-                    zjVar.setCurrentId(contact.contact_id);
-                    zjVar.a(null, (CharSequence) this.e.get(i10 - 1), new sj(contact, 1), z10);
-                    user = null;
-                }
-            } else {
-                user = (TLRPC.User) E;
-            }
-            if (user != null) {
-                zjVar.a(user, (CharSequence) this.e.get(i10 - 1), new tj(1, user), z10);
-            }
-            boolean containsKey = this.n.w.containsKey(qj.a(E));
-            pp ppVar = zjVar.d;
-            if (ppVar.getVisibility() != 0) {
-                ppVar.setVisibility(0);
-            }
-            ppVar.a(containsKey, false);
-        }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View zjVar;
-        Context context = this.c;
-        if (i10 == 0) {
-            zjVar = new zj(context, this.n.a);
-        } else if (i10 != 1) {
-            zjVar = new View(context);
-            zjVar.setTag(-33024);
-        } else {
-            zjVar = new View(context);
-            zjVar.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
-            zjVar.setTag(-33024);
-        }
-        return new il0(zjVar);
     }
 }

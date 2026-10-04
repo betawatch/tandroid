@@ -18,12 +18,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ok;
 import org.telegram.ui.Components.ld;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.uk0;
 import org.telegram.ui.Components.zc;
-import v7.a7;
+import v7.z6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final List p0 = Arrays.asList(-90, 0, 90, 180);
@@ -109,7 +109,7 @@ public abstract class j extends FrameLayout {
                                 jVar.performHapticFeedback(0);
                             } catch (Exception unused) {
                             }
-                            jVar.F.z(jVar);
+                            jVar.F.A(jVar);
                             break;
                         }
                         break;
@@ -146,7 +146,7 @@ public abstract class j extends FrameLayout {
                                 jVar.performHapticFeedback(0);
                             } catch (Exception unused) {
                             }
-                            jVar.F.z(jVar);
+                            jVar.F.A(jVar);
                             break;
                         }
                         break;
@@ -178,7 +178,7 @@ public abstract class j extends FrameLayout {
                                 jVar.performHapticFeedback(0);
                             } catch (Exception unused) {
                             }
-                            jVar.F.z(jVar);
+                            jVar.F.A(jVar);
                             break;
                         }
                         break;
@@ -222,8 +222,8 @@ public abstract class j extends FrameLayout {
                 AndroidUtilities.cancelRunOnUIThread(this.I);
                 e(f15, f16);
                 if (z10) {
-                    float a2 = a7.a(f7, f10, f11, f12);
-                    float a10 = a7.a(this.b, this.c, this.d, this.e);
+                    float a2 = z6.a(f7, f10, f11, f12);
+                    float a10 = z6.a(this.b, this.c, this.d, this.e);
                     if (a10 > 0.0f) {
                         j(a2 / a10);
                     }
@@ -244,27 +244,27 @@ public abstract class j extends FrameLayout {
                 }
                 if (!this.v && (hVar4 = this.F) != null) {
                     this.v = true;
-                    hVar4.B();
+                    hVar4.C();
                 }
                 if (!this.w && z10 && (hVar3 = this.F) != null) {
                     this.w = true;
-                    hVar3.l();
+                    hVar3.j();
                 }
                 if (this.w && !z10 && (hVar2 = this.F) != null) {
                     this.w = false;
-                    hVar2.k();
+                    hVar2.i();
                 }
                 if (!this.l0 && !this.x && (hVar = this.F) != null) {
-                    hVar.d(this);
+                    hVar.c(this);
                     this.x = true;
                 }
                 h hVar5 = this.F;
                 if (hVar5 != null) {
-                    hVar5.A(ok.b((float) getHeight(), 2.0f, scaleX, this.G.y) < ((float) AndroidUtilities.dp(66.0f)));
-                    this.F.h(a4.a.e((float) getHeight(), 2.0f, scaleX, this.G.y) > ((float) (((View) getParent()).getHeight() - AndroidUtilities.dp(114.0f))));
+                    hVar5.B(ok.b((float) getHeight(), 2.0f, scaleX, this.G.y) < ((float) AndroidUtilities.dp(66.0f)));
+                    this.F.g(a4.a.e((float) getHeight(), 2.0f, scaleX, this.G.y) > ((float) (((View) getParent()).getHeight() - AndroidUtilities.dp(114.0f))));
                 }
                 h hVar6 = this.F;
-                boolean z11 = (hVar6 == null || hVar6.q()) && !z10 && a7.a(f13, f14, ((float) ((View) getParent()).getWidth()) / 2.0f, (float) (((View) getParent()).getHeight() - AndroidUtilities.dp(76.0f))) < ((float) AndroidUtilities.dp(32.0f));
+                boolean z11 = (hVar6 == null || hVar6.q()) && !z10 && z6.a(f13, f14, ((float) ((View) getParent()).getWidth()) / 2.0f, (float) (((View) getParent()).getHeight() - AndroidUtilities.dp(76.0f))) < ((float) AndroidUtilities.dp(32.0f));
                 if (this.y != z11) {
                     ValueAnimator valueAnimator = this.o0;
                     if (valueAnimator != null) {
@@ -274,13 +274,13 @@ public abstract class j extends FrameLayout {
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n0, z11 ? 0.5f : 1.0f);
                     this.o0 = ofFloat;
                     ofFloat.addUpdateListener(new f(this, i10));
-                    this.o0.setInterpolator(sr.h);
+                    this.o0.setInterpolator(tr.h);
                     this.o0.setDuration(280L);
                     this.o0.start();
                     this.y = z11;
                     h hVar7 = this.F;
                     if (hVar7 != null) {
-                        hVar7.n(z11);
+                        hVar7.l(z11);
                     }
                 }
                 this.a.c(false);
@@ -294,16 +294,16 @@ public abstract class j extends FrameLayout {
         h hVar;
         h hVar2;
         if (this.v) {
-            this.F.i(this.y);
+            this.F.h(this.y);
             this.v = false;
         }
         this.w = false;
         if (!z10 && !this.E && !this.n && !this.s && !this.x && (hVar2 = this.F) != null) {
-            hVar2.d(this);
+            hVar2.c(this);
         }
         if (this.n && (hVar = this.F) != null) {
-            hVar.A(false);
-            this.F.h(false);
+            hVar.B(false);
+            this.F.g(false);
         }
         AndroidUtilities.cancelRunOnUIThread(this.I);
         this.E = false;
@@ -333,7 +333,7 @@ public abstract class j extends FrameLayout {
         canvas.scale(a2, a2, getWidth() / 2.0f, getHeight() / 2.0f);
         if (getParent() instanceof View) {
             View view = (View) getParent();
-            if (this instanceof c2) {
+            if (this instanceof b2) {
                 float f7 = this.n0;
                 canvas.scale(f7, f7, getWidth() / 2.0f, getHeight() / 2.0f);
             } else {
@@ -443,7 +443,7 @@ public abstract class j extends FrameLayout {
                         if (ldVar != null) {
                             AndroidUtilities.cancelRunOnUIThread(ldVar);
                         }
-                        ld ldVar2 = new ld(this, intValue, 29);
+                        ld ldVar2 = new ld(this, intValue, 28);
                         this.N = ldVar2;
                         AndroidUtilities.runOnUIThread(ldVar2, 250L);
                     }
@@ -467,7 +467,7 @@ public abstract class j extends FrameLayout {
                 }
                 ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                 this.Q = duration;
-                duration.setInterpolator(sr.f);
+                duration.setInterpolator(tr.f);
                 this.Q.addUpdateListener(new f(this, i10));
                 this.Q.addListener(new g(this, 3));
                 this.Q.start();
@@ -602,7 +602,7 @@ public abstract class j extends FrameLayout {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(fArr).setDuration(150L);
         this.a0 = duration;
-        duration.setInterpolator(sr.f);
+        duration.setInterpolator(tr.f);
         this.a0.addUpdateListener(new f(this, 3));
         this.a0.addListener(new g(this, 0));
         this.a0.start();
@@ -615,7 +615,7 @@ public abstract class j extends FrameLayout {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(fArr).setDuration(150L);
         this.b0 = duration;
-        duration.setInterpolator(sr.f);
+        duration.setInterpolator(tr.f);
         this.b0.addUpdateListener(new f(this, 4));
         this.b0.addListener(new g(this, 1));
         this.b0.start();
@@ -631,7 +631,7 @@ public abstract class j extends FrameLayout {
         float f11 = f7 * f10;
         this.h0 = f11;
         float clamp = Utilities.clamp(Math.max(f11, 0.1f), getMaxScale(), getMinScale());
-        if (!(this instanceof b2)) {
+        if (!(this instanceof a2)) {
             if ((clamp >= getMaxScale() || clamp <= getMinScale()) != (f10 >= getMaxScale() || f10 <= getMinScale())) {
                 try {
                     performHapticFeedback(3, 1);
@@ -674,7 +674,7 @@ public abstract class j extends FrameLayout {
             ofFloat.addUpdateListener(new f(this, 2));
             this.k0.addListener(new g(this, 4));
             this.k0.setDuration(280L);
-            this.k0.setInterpolator(sr.h);
+            this.k0.setInterpolator(tr.h);
             this.k0.start();
         }
     }
@@ -763,7 +763,7 @@ public abstract class j extends FrameLayout {
             float rawX = motionEvent.getRawX();
             float rawY = motionEvent.getRawY();
             float[] fArr = this.e0;
-            hVar.u(rawX, rawY, fArr);
+            hVar.v(rawX, rawY, fArr);
             boolean z12 = motionEvent.getPointerCount() > 1;
             float[] fArr2 = this.f0;
             if (z12) {
@@ -841,7 +841,7 @@ public abstract class j extends FrameLayout {
                     }
                     return true;
                 }
-                this.F.u(motionEvent.getRawX(1), motionEvent.getRawY(1), fArr2);
+                this.F.v(motionEvent.getRawX(1), motionEvent.getRawY(1), fArr2);
             }
             z10 = z12;
             float[] fArr32 = this.g0;

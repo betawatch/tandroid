@@ -14,9 +14,9 @@ import m.j1;
 import m.l3;
 import org.telegram.messenger.beta.R;
 import r0.i0;
-import w7.w6;
+import w7.x6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class u extends androidx.activity.m {
     public s d;
@@ -98,7 +98,7 @@ public abstract class u extends androidx.activity.m {
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        return w6.b(this.e, getWindow().getDecorView(), this, keyEvent);
+        return x6.b(this.e, getWindow().getDecorView(), this, keyEvent);
     }
 
     @Override // android.app.Dialog

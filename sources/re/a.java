@@ -1,11 +1,11 @@
 package re;
 
-import com.google.firebase.messaging.t;
+import com.google.firebase.messaging.s;
+import ii.n4;
 import java.util.Hashtable;
 import java.util.StringTokenizer;
-import ka.c;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a {
     public static final Hashtable b;
@@ -48,20 +48,20 @@ public final class a {
                 try {
                     cls2 = Class.forName("java.lang.ClassNotFoundException");
                     d = cls2;
-                } catch (ClassNotFoundException e) {
-                    throw new NoClassDefFoundError(e.getMessage());
+                } catch (ClassNotFoundException e7) {
+                    throw new NoClassDefFoundError(e7.getMessage());
                 }
             }
             return cls2;
         }
     }
 
-    public static t b(c cVar, Object obj, Object obj2) {
-        return new t(cVar, obj, obj2, c);
+    public static s b(n4 n4Var, Object obj, Object obj2) {
+        return new s(n4Var, obj, obj2, c);
     }
 
-    public static t c(c cVar, Object obj, Object obj2, Object obj3) {
-        return new t(cVar, obj, obj2, new Object[]{obj3});
+    public static s c(n4 n4Var, Object obj, Object obj2, Object obj3) {
+        return new s(n4Var, obj, obj2, new Object[]{obj3});
     }
 
     public final ra.a d(String str, String str2, String str3, String str4, String str5) {
@@ -96,9 +96,9 @@ public final class a {
         return aVar;
     }
 
-    public final c e(ra.a aVar) {
-        c cVar = new c(19, false);
-        cVar.b = aVar;
-        return cVar;
+    public final n4 e(ra.a aVar) {
+        n4 n4Var = new n4(22);
+        n4Var.b = aVar;
+        return n4Var;
     }
 }

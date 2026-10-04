@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import ci.x7;
+import ci.y7;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
@@ -20,23 +20,23 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.m90;
-import org.telegram.ui.Components.p90;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.yf0;
-import rg.v1;
-import w7.y5;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.cg0;
+import rg.x1;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class r extends FrameLayout {
-    public final yf0 a;
+    public final cg0 a;
     public final o b;
     public final TextView c;
-    public final p90 d;
+    public final q90 d;
     public final d6 e;
-    public final m90 f;
+    public final n90 f;
     public final Paint[] h;
     public ValueAnimator n;
 
@@ -44,59 +44,59 @@ public final class r extends FrameLayout {
         super(context);
         this.e = d6Var;
         LinearLayout f7 = ok.f(context, 1);
-        yf0 yf0Var = new yf0(context, 1, 0, 3);
-        this.a = yf0Var;
+        cg0 cg0Var = new cg0(context, 1, 0, 3);
+        this.a = cg0Var;
         Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
-        int i10 = h6.Mj;
-        canvas.drawColor(i0.a.d(0.5f, h6.v0(i10, d6Var), h6.v0(h6.h5, d6Var)));
-        yf0Var.setBackgroundBitmap(createBitmap);
-        sg.a aVar = yf0Var.b;
+        int i10 = i6.Mj;
+        canvas.drawColor(i0.a.d(0.5f, i6.v0(i10, d6Var), i6.v0(i6.h5, d6Var)));
+        cg0Var.setBackgroundBitmap(createBitmap);
+        sg.a aVar = cg0Var.b;
         aVar.w = i10;
-        aVar.x = h6.Lj;
+        aVar.x = i6.Lj;
         aVar.b();
-        f7.addView(yf0Var, y5.q(160, 160, 1));
+        f7.addView(cg0Var, z5.q(160, 160, 1));
         o oVar = new o(this, context);
         this.b = oVar;
         this.h = new Paint[20];
         a(0.0f);
-        v1 v1Var = oVar.a;
-        v1Var.q = false;
-        v1Var.K = false;
-        v1Var.L = true;
-        v1Var.H = true;
-        v1Var.l = new x7(this, 4);
-        v1Var.c();
-        yf0Var.setStarParticlesView(oVar);
+        x1 x1Var = oVar.a;
+        x1Var.q = false;
+        x1Var.K = false;
+        x1Var.L = true;
+        x1Var.H = true;
+        x1Var.l = new y7(this, 4);
+        x1Var.c();
+        cg0Var.setStarParticlesView(oVar);
         TextView textView = new TextView(context);
         this.c = textView;
         ok.k(22.0f, 1, textView);
-        int i11 = h6.G6;
-        textView.setTextColor(h6.v0(i11, d6Var));
+        int i11 = i6.G6;
+        textView.setTextColor(i6.v0(i11, d6Var));
         textView.setGravity(1);
-        f7.addView(textView, y5.t(-2, -2, 1, 24, -8, 24, 0));
-        m90 m90Var = new m90(this);
-        this.f = m90Var;
-        p90 p90Var = new p90(context, m90Var, d6Var);
-        this.d = p90Var;
-        p90Var.setTextSize(1, 15.0f);
-        p90Var.setGravity(17);
-        p90Var.setTextColor(h6.v0(i11, d6Var));
-        p90Var.setMovementMethod(LinkMovementMethod.getInstance());
-        p90Var.setLinkTextColor(h6.v0(h6.J6, d6Var));
-        p90Var.setImportantForAccessibility(2);
-        f7.addView(p90Var, y5.d(-1, -2.0f, 17, 24.0f, 8.0f, 24.0f, 18.0f));
+        f7.addView(textView, z5.t(-2, -2, 1, 24, -8, 24, 0));
+        n90 n90Var = new n90(this);
+        this.f = n90Var;
+        q90 q90Var = new q90(context, n90Var, d6Var);
+        this.d = q90Var;
+        q90Var.setTextSize(1, 15.0f);
+        q90Var.setGravity(17);
+        q90Var.setTextColor(i6.v0(i11, d6Var));
+        q90Var.setMovementMethod(LinkMovementMethod.getInstance());
+        q90Var.setLinkTextColor(i6.v0(i6.J6, d6Var));
+        q90Var.setImportantForAccessibility(2);
+        f7.addView(q90Var, z5.d(-1, -2.0f, 17, 24.0f, 8.0f, 24.0f, 18.0f));
         setClipChildren(false);
-        addView(oVar, y5.e(-1, 234, 48));
+        addView(oVar, z5.e(-1, 234, 48));
         addView(f7);
         setWillNotDraw(false);
     }
 
     public final void a(float f7) {
-        int i10 = h6.Lj;
+        int i10 = i6.Lj;
         d6 d6Var = this.e;
-        int v02 = h6.v0(i10, d6Var);
-        int v03 = h6.v0(h6.Mj, d6Var);
+        int v02 = i6.v0(i10, d6Var);
+        int v03 = i6.v0(i6.Mj, d6Var);
         int d = i0.a.d(f7, v02, -371690);
         int d10 = i0.a.d(f7, v03, -14281);
         int i11 = 0;
@@ -114,12 +114,12 @@ public final class r extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        m90 m90Var = this.f;
-        if (m90Var != null) {
+        n90 n90Var = this.f;
+        if (n90Var != null) {
             canvas.save();
-            p90 p90Var = this.d;
-            canvas.translate(p90Var.getLeft(), p90Var.getTop());
-            if (m90Var.f(canvas)) {
+            q90 q90Var = this.d;
+            canvas.translate(q90Var.getLeft(), q90Var.getTop());
+            if (n90Var.f(canvas)) {
                 invalidate();
             }
             canvas.restore();
@@ -129,9 +129,9 @@ public final class r extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
-        yf0 yf0Var = this.a;
+        cg0 cg0Var = this.a;
         o oVar = this.b;
-        oVar.setTranslationY(((yf0Var.getMeasuredHeight() / 2.0f) + yf0Var.getTop()) - (oVar.getMeasuredHeight() / 2.0f));
+        oVar.setTranslationY(((cg0Var.getMeasuredHeight() / 2.0f) + cg0Var.getTop()) - (oVar.getMeasuredHeight() / 2.0f));
     }
 
     public void setBoostViaGifsText(TLRPC.Chat chat) {
@@ -140,14 +140,14 @@ public final class r extends FrameLayout {
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) getLayoutParams();
         marginLayoutParams.topMargin = -AndroidUtilities.dp(6.0f);
         setLayoutParams(marginLayoutParams);
-        int i10 = h6.a7;
+        int i10 = i6.a7;
         d6 d6Var = this.e;
-        setBackgroundColor(h6.v0(i10, d6Var));
+        setBackgroundColor(i6.v0(i10, d6Var));
         this.c.setText(LocaleController.formatString("BoostingBoostsViaGifts", R.string.BoostingBoostsViaGifts, new Object[0]));
         String formatString = LocaleController.formatString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingGetMoreBoost2 : R.string.BoostingGetMoreBoostGroup, new Object[0]);
-        p90 p90Var = this.d;
-        p90Var.setText(formatString);
-        p90Var.setTextColor(h6.v0(h6.r5, d6Var));
+        q90 q90Var = this.d;
+        q90Var.setText(formatString);
+        q90Var.setTextColor(i6.v0(i6.r5, d6Var));
     }
 
     public void setPaused(boolean z10) {
@@ -160,14 +160,14 @@ public final class r extends FrameLayout {
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        yf0 yf0Var = this.a;
-        final float f7 = yf0Var.b.i;
+        cg0 cg0Var = this.a;
+        final float f7 = cg0Var.b.i;
         final float f10 = z10 ? 1.0f : 0.0f;
         this.n = ValueAnimator.ofFloat(0.0f, 1.0f);
         final float[] fArr = {0.0f};
-        AndroidUtilities.cancelRunOnUIThread(yf0Var.U);
-        yf0Var.d();
-        yf0Var.i();
+        AndroidUtilities.cancelRunOnUIThread(cg0Var.U);
+        cg0Var.d();
+        cg0Var.i();
         this.n.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: vg.m
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
@@ -176,17 +176,17 @@ public final class r extends FrameLayout {
                 float f11 = floatValue - fArr2[0];
                 fArr2[0] = floatValue;
                 r rVar = r.this;
-                yf0 yf0Var2 = rVar.a;
-                yf0Var2.b.i = AndroidUtilities.lerp(f7, f10, floatValue);
-                sg.a aVar = yf0Var2.b;
+                cg0 cg0Var2 = rVar.a;
+                cg0Var2.b.i = AndroidUtilities.lerp(f7, f10, floatValue);
+                sg.a aVar = cg0Var2.b;
                 aVar.f = (f11 * 360.0f * (z10 ? 1 : -1)) + aVar.f;
                 aVar.b();
-                rVar.a(yf0Var2.b.i);
+                rVar.a(cg0Var2.b.i);
             }
         });
         this.n.addListener(new q(this, fArr, f7, f10, z10));
         this.n.setDuration(680L);
-        this.n.setInterpolator(sr.h);
+        this.n.setInterpolator(tr.h);
         this.n.start();
     }
 }

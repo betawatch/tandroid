@@ -11,7 +11,7 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class e0 extends View {
     public final RichMessageLayout.RichButton a;
@@ -30,7 +30,7 @@ public final class e0 extends View {
         this.a = createEditorPageButton;
         this.e = new o8(this, i10, 10);
         createEditorPageButton.width = createEditorPageButton.getPreferredWidth();
-        setContentDescription(g6.l(pageButton.text));
+        setContentDescription(h6.l(pageButton.text));
         setClickable(true);
         setLongClickable(true);
     }
@@ -92,7 +92,7 @@ public final class e0 extends View {
                     TL_iv.pageBlockButtonRow pageblockbuttonrow = (TL_iv.pageBlockButtonRow) pageBlock;
                     int i10 = this.b;
                     if (i10 >= 0 && i10 < pageblockbuttonrow.buttons.size()) {
-                        i2 i2Var = x3Var.J3;
+                        i2 i2Var = x3Var.Q3;
                         if (i2Var != null) {
                             i2Var.d();
                         }
@@ -110,12 +110,12 @@ public final class e0 extends View {
                             richButtonStyle.link = false;
                             pageButton.style = richButtonStyle;
                         }
-                        x3Var.Y2.N(false);
-                        i2 i2Var2 = x3Var.J3;
+                        x3Var.f3.N(false);
+                        i2 i2Var2 = x3Var.Q3;
                         if (i2Var2 != null) {
                             i2Var2.h();
                         }
-                        x3Var.h3.onContentChanged();
+                        x3Var.o3.onContentChanged();
                     }
                 }
             }

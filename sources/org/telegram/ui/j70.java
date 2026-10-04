@@ -1,17 +1,7 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class j70 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ TLRPC.TL_messages_stickerSet b;
-    public final /* synthetic */ o70 c;
-
-    public j70(o70 o70Var, boolean z10, TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
-        this.c = o70Var;
-        this.a = z10;
-        this.b = tL_messages_stickerSet;
-    }
+public interface j70 {
+    void a(k70 k70Var, long j3);
 }

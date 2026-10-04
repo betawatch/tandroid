@@ -1,34 +1,38 @@
 package yh;
 
-import android.app.Activity;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.yl0;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.style.ReplacementSpan;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.e11;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class z6 extends l61 {
-    public final /* synthetic */ w7 N;
+public final class z6 extends ReplacementSpan {
+    public final Paint a;
+    public final e11 b;
+    public final /* synthetic */ int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z6(w7 w7Var, yl0 yl0Var, Activity activity, int i10, int i11, hi.a aVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(yl0Var, activity, i10, i11, true, aVar, d6Var);
-        this.N = w7Var;
+    public z6(int i10, String str) {
+        this.c = i10;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(org.telegram.ui.ActionBar.i6.l1(0.1f, i10));
+        this.b = new e11(str, 13.0f, AndroidUtilities.bold());
     }
 
-    @Override // org.telegram.ui.Components.l61, s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        if (i10 != 42) {
-            return super.x(viewGroup, i10);
-        }
-        w7 w7Var = this.N;
-        Activity parentActivity = w7Var.getParentActivity();
-        int i11 = org.telegram.ui.ActionBar.h6.L6;
-        d6Var = ((org.telegram.ui.ActionBar.m2) w7Var).resourceProvider;
-        org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(parentActivity, i11, 21, 0, false, d6Var);
-        m4Var.setHeight(25);
-        return new il0(m4Var);
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(f7, (r12 - AndroidUtilities.dp(20.0f)) / 2.0f, AndroidUtilities.dp(12.0f) + f7 + this.b.c, (AndroidUtilities.dp(20.0f) + r12) / 2.0f);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), this.a);
+        int i15 = this.c;
+        this.b.c(f7 + AndroidUtilities.dp(6.0f), (i12 + i14) / 2.0f, 1.0f, i15, canvas);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return (int) (AndroidUtilities.dp(12.0f) + this.b.c);
     }
 }

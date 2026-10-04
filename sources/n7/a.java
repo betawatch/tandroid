@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class a {
     public static volatile cc.k b;
@@ -100,10 +100,10 @@ public abstract class a {
             } else {
                 try {
                     k10 = obj.toString();
-                } catch (Exception e) {
-                    String D = a4.a.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e);
-                    k10 = org.telegram.ui.Cells.c1.k("<", D, " threw ", e.getClass().getName(), ">");
+                } catch (Exception e7) {
+                    String C = a4.a.C(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(C), (Throwable) e7);
+                    k10 = org.telegram.ui.Cells.c1.k("<", C, " threw ", e7.getClass().getName(), ">");
                 }
             }
             objArr[i11] = k10;
@@ -192,7 +192,7 @@ public abstract class a {
                 c10 = c("%s (%s) must not be negative", "index", Integer.valueOf(i10));
             } else {
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(hg.c.h(i11, "negative size: "));
+                    throw new IllegalArgumentException(hg.k0.h(i11, "negative size: "));
                 }
                 c10 = c("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
@@ -205,7 +205,7 @@ public abstract class a {
             throw new NullPointerException("null key in entry: null=".concat(String.valueOf(obj2)));
         }
         if (obj2 == null) {
-            throw new NullPointerException(a4.a.q("null value in entry: ", obj.toString(), "=null"));
+            throw new NullPointerException(a4.a.p("null value in entry: ", obj.toString(), "=null"));
         }
     }
 
@@ -349,16 +349,16 @@ public abstract class a {
                         i10++;
                     }
                     return new a1(r.b(treeMap));
-                } catch (IOException | RuntimeException e) {
-                    e = e;
+                } catch (IOException | RuntimeException e7) {
+                    e = e7;
                     throw new x0(e);
                 }
-            } catch (RuntimeException e7) {
-                e = e7;
+            } catch (RuntimeException e10) {
+                e = e10;
                 throw new x0(e);
             }
-        } catch (IOException e10) {
-            throw new x0(e10);
+        } catch (IOException e11) {
+            throw new x0(e11);
         }
     }
 
@@ -402,6 +402,6 @@ public abstract class a {
         if (i11 >= 0) {
             return c("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
         }
-        throw new IllegalArgumentException(hg.c.h(i11, "negative size: "));
+        throw new IllegalArgumentException(hg.k0.h(i11, "negative size: "));
     }
 }

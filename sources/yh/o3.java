@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.g20;
+import org.telegram.ui.k20;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class o3 extends FrameLayout {
     public final x0 a;
@@ -18,12 +18,12 @@ public final class o3 extends FrameLayout {
     public final n3 c;
     public final n3 d;
     public boolean e;
-    public final g20 f;
+    public final k20 f;
     public final RectF h;
 
     public o3(Context context, org.telegram.ui.ActionBar.d6 d6Var, x0 x0Var) {
         super(context);
-        this.f = new g20();
+        this.f = new k20();
         this.h = new RectF();
         this.a = x0Var;
         n3 n3Var = new n3(context, d6Var);
@@ -32,9 +32,9 @@ public final class o3 extends FrameLayout {
         this.c = n3Var2;
         n3 n3Var3 = new n3(context, d6Var);
         this.d = n3Var3;
-        addView(n3Var, w7.y5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
-        addView(n3Var2, w7.y5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
-        addView(n3Var3, w7.y5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
+        addView(n3Var, w7.z5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
+        addView(n3Var2, w7.z5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
+        addView(n3Var3, w7.z5.d(-2, -2.0f, 51, 12.66f, 5.33f, 12.66f, 5.33f));
     }
 
     public final void a(e3 e3Var, float f7, boolean z10, e3 e3Var2, float f10, boolean z11, e3 e3Var3, float f11, boolean z12) {
@@ -93,10 +93,10 @@ public final class o3 extends FrameLayout {
         float dp = AndroidUtilities.dp(8.0f);
         RectF rectF = this.h;
         rectF.set(0.0f, 0.0f, width, dp);
-        g20 g20Var = this.f;
-        g20Var.b(canvas, rectF, 1, 1.0f);
+        k20 k20Var = this.f;
+        k20Var.b(canvas, rectF, 1, 1.0f);
         rectF.set(0.0f, getHeight() - AndroidUtilities.dp(8.0f), getWidth(), getHeight());
-        g20Var.b(canvas, rectF, 3, 1.0f);
+        k20Var.b(canvas, rectF, 3, 1.0f);
         canvas.restore();
         canvas.restore();
     }

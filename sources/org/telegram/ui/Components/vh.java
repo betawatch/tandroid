@@ -1,85 +1,76 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class vh implements org.telegram.ui.sq0 {
-    public boolean a;
-    public final /* synthetic */ HashMap b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ wi d;
+public final class vh extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ ci c;
 
-    public vh(wi wiVar, HashMap hashMap, ArrayList arrayList) {
-        this.d = wiVar;
-        this.b = hashMap;
-        this.c = arrayList;
+    public /* synthetic */ vh(ci ciVar, boolean z10, int i10) {
+        this.a = i10;
+        this.c = ciVar;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.sq0
-    public final /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.sq0
-    public final void i(int i10, boolean z10, boolean z11) {
-        if (z10) {
-            return;
-        }
-        HashMap hashMap = this.b;
-        if (hashMap.isEmpty() || this.a) {
-            return;
-        }
-        this.a = true;
-        ArrayList arrayList = new ArrayList();
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList2 = this.c;
-            if (i11 >= arrayList2.size()) {
-                ((org.telegram.ui.wn) this.d.f0).d8(i10, arrayList, z11);
-                return;
-            }
-            Object obj = hashMap.get(arrayList2.get(i11));
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-            arrayList.add(sendingMediaInfo);
-            MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
-            String str = searchImage.imagePath;
-            if (str != null) {
-                sendingMediaInfo.path = str;
-            } else {
-                sendingMediaInfo.searchImage = searchImage;
-            }
-            sendingMediaInfo.thumbPath = searchImage.thumbPath;
-            sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
-            CharSequence charSequence = searchImage.caption;
-            sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
-            sendingMediaInfo.entities = searchImage.entities;
-            sendingMediaInfo.masks = searchImage.stickers;
-            sendingMediaInfo.ttl = searchImage.ttl;
-            TLRPC.BotInlineResult botInlineResult = searchImage.inlineResult;
-            if (botInlineResult != null && searchImage.type == 1) {
-                sendingMediaInfo.inlineResult = botInlineResult;
-                sendingMediaInfo.params = searchImage.params;
-            }
-            searchImage.date = (int) (System.currentTimeMillis() / 1000);
-            i11++;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ci ciVar = this.c;
+                xi xiVar = ciVar.e;
+                boolean z10 = this.b;
+                if (z10) {
+                    xiVar.x1.setVisibility(8);
+                } else {
+                    xiVar.E1.setVisibility(8);
+                }
+                int dp = z10 ? AndroidUtilities.dp(36.0f) : 0;
+                for (int i10 = 0; i10 < xiVar.x0.size(); i10++) {
+                    ((ei.r4) xiVar.x0.valueAt(i10)).setMeasureOffsetY(dp);
+                }
+                if (ciVar.a == animator) {
+                    ciVar.a = null;
+                    break;
+                }
+                break;
+            default:
+                xi xiVar2 = this.c.e;
+                boolean z11 = this.b;
+                xiVar2.B1 = z11;
+                if (!z11) {
+                    xiVar2.C1.setVisibility(8);
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // org.telegram.ui.sq0
-    public final void a() {
-    }
-
-    @Override // org.telegram.ui.sq0
-    public final void b(Editable editable) {
-    }
-
-    @Override // org.telegram.ui.sq0
-    public final /* synthetic */ void g() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                xi xiVar = this.c.e;
+                if (this.b) {
+                    xiVar.E1.setAlpha(0.0f);
+                    xiVar.E1.setVisibility(0);
+                    int dp = AndroidUtilities.dp(36.0f);
+                    for (int i10 = 0; i10 < xiVar.x0.size(); i10++) {
+                        ((ei.r4) xiVar.x0.valueAt(i10)).setMeasureOffsetY(dp);
+                    }
+                    break;
+                } else {
+                    xiVar.x1.setAlpha(0.0f);
+                    xiVar.x1.setVisibility(0);
+                    break;
+                }
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
-import v7.n8;
+import v7.m8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class x implements db.v {
     public final of.b a;
@@ -89,7 +89,7 @@ public final class x implements db.v {
                         Method a2 = ib.c.a.a(cls2, field3);
                         ib.c.f(a2);
                         if (a2.getAnnotation(eb.b.class) != null && field3.getAnnotation(eb.b.class) == null) {
-                            throw new db.j(a4.a.q("@SerializedName on ", ib.c.d(a2, r14), " is not supported"));
+                            throw new db.j(a4.a.p("@SerializedName on ", ib.c.d(a2, r14), " is not supported"));
                         }
                         z11 = c11;
                         method = a2;
@@ -214,11 +214,11 @@ public final class x implements db.v {
         if (!Object.class.isAssignableFrom(cls)) {
             return null;
         }
-        n8 n8Var = ib.c.a;
+        m8 m8Var = ib.c.a;
         if (!Modifier.isStatic(cls.getModifiers()) && (cls.isAnonymousClass() || cls.isLocalClass())) {
             return new db.d(2);
         }
         fb.d.f(this.d);
-        return ib.c.a.d(cls) ? new w(cls, b(gVar, aVar, cls, true)) : new u(this.a.K(aVar), b(gVar, aVar, cls, false));
+        return ib.c.a.d(cls) ? new w(cls, b(gVar, aVar, cls, true)) : new u(this.a.z(aVar), b(gVar, aVar, cls, false));
     }
 }

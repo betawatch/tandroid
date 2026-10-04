@@ -1,24 +1,37 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import java.util.ArrayList;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class dj extends org.telegram.ui.Components.vv {
-    public final /* synthetic */ wn W;
+public final class dj extends FrameLayout {
+    public final /* synthetic */ yn a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dj(wn wnVar, org.telegram.ui.ActionBar.m2 m2Var, Activity activity, org.telegram.ui.ActionBar.d6 d6Var, ArrayList arrayList) {
-        super(m2Var, activity, d6Var, arrayList);
-        this.W = wnVar;
+    public dj(yn ynVar, Activity activity) {
+        super(activity);
+        this.a = ynVar;
     }
 
-    @Override // org.telegram.ui.Components.vv, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
-    public final void dismiss() {
-        super.dismiss();
-        wn wnVar = this.W;
-        wnVar.getClass();
-        wnVar.g8(false, true, 0.0f);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
+            this.a.A7(true);
+        }
+        return super.dispatchKeyEvent(keyEvent);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int min = Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(300.0f));
+        if (min == 0) {
+            min = AndroidUtilities.dp(300.0f);
+        }
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_31));
     }
 }

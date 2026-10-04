@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class z4 implements Iterable, Serializable {
     public static final z4 c = new z4(n5.b);
@@ -23,7 +23,7 @@ public class z4 implements Iterable, Serializable {
 
     public static void p(int i10) {
         if (((i10 - 47) | 47) < 0) {
-            throw new IndexOutOfBoundsException(hg.c.h(i10, "End index: 47 >= "));
+            throw new IndexOutOfBoundsException(hg.k0.h(i10, "End index: 47 >= "));
         }
     }
 
@@ -47,7 +47,7 @@ public class z4 implements Iterable, Serializable {
                     throw new IllegalArgumentException("Length too large: " + o9 + o());
                 }
                 if (o9 > z4Var.o()) {
-                    throw new IllegalArgumentException(a4.a.m(o9, z4Var.o(), "Ran off end of other: 0, ", ", "));
+                    throw new IllegalArgumentException(a4.a.l(o9, z4Var.o(), "Ran off end of other: 0, ", ", "));
                 }
                 byte[] bArr = z4Var.b;
                 int i12 = 0;
@@ -105,16 +105,16 @@ public class z4 implements Iterable, Serializable {
         String hexString = Integer.toHexString(System.identityHashCode(this));
         int o9 = o();
         if (o() <= 50) {
-            concat = v7.u5.a(this);
+            concat = v7.t5.a(this);
         } else {
             p(o());
-            concat = v7.u5.a(new y4(this.b)).concat("...");
+            concat = v7.t5.a(new y4(this.b)).concat("...");
         }
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);
         sb2.append(" size=");
         sb2.append(o9);
         sb2.append(" contents=\"");
-        return a4.a.t(sb2, concat, "\">");
+        return a4.a.s(sb2, concat, "\">");
     }
 }

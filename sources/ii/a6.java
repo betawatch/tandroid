@@ -1,45 +1,136 @@
 package ii;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.fj0;
-import org.telegram.ui.Components.hb0;
+import android.text.Editable;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class a6 extends CharacterStyle {
-    public final /* synthetic */ int a;
-    public final Object b;
+public final class a6 implements h1 {
+    public final /* synthetic */ f6 a;
 
-    public /* synthetic */ a6(int i10, FrameLayout frameLayout) {
-        this.a = i10;
-        this.b = frameLayout;
+    public a6(f6 f6Var) {
+        this.a = f6Var;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                textPaint.setColor(org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.l1(0.55f, textPaint.getColor()), org.telegram.ui.ActionBar.h6.l1(0.4f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Oh, ((e6) this.b).a))));
-                break;
-            case 1:
-                textPaint.setTypeface(AndroidUtilities.bold());
-                int alpha = textPaint.getAlpha();
-                int i10 = org.telegram.ui.ActionBar.h6.n6;
-                ((hb0) this.b).getClass();
-                textPaint.setColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
-                textPaint.setAlpha(alpha);
-                break;
-            default:
-                textPaint.setColor(org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.l1(0.55f, textPaint.getColor()), org.telegram.ui.ActionBar.h6.l1(0.4f, ((fj0) this.b).I)));
-                break;
+    @Override // ii.h1
+    public final void B(Editable editable) {
+        f6 f6Var = this.a;
+        if (f6Var.x == null) {
+            return;
+        }
+        f6Var.w();
+        c6 c6Var = f6Var.y;
+        if (c6Var != null) {
+            x3 x3Var = ((f3) c6Var).a;
+            i2 i2Var = x3Var.Q3;
+            if (i2Var != null) {
+                i2Var.g();
+            }
+            x3Var.o3.onContentChanged();
+        }
+        TL_iv.PageBlock pageBlock = f6Var.x.b;
+        if (pageBlock instanceof TL_iv.pageBlockPullquote) {
+            f6Var.invalidate();
+            return;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockBlockquote) {
+            f6Var.invalidate();
+            int measuredWidth = f6Var.getMeasuredWidth();
+            if (measuredWidth > 0) {
+                if (f6Var.h(measuredWidth, f6Var.getPaddingBottom() + f6Var.h.getMeasuredHeight() + f6Var.b.getMeasuredHeight() + f6Var.getPaddingTop()) == f6Var.O) {
+                    return;
+                }
+            }
+            f6Var.requestLayout();
         }
     }
 
-    public a6(fj0 fj0Var) {
-        this.a = 2;
-        this.b = fj0Var;
+    @Override // ii.h1
+    public final /* synthetic */ boolean G(boolean z10) {
+        return false;
+    }
+
+    @Override // ii.h1
+    public final void b(i1 i1Var) {
+        c6 c6Var = this.a.y;
+        if (c6Var != null) {
+            x3 x3Var = ((f3) c6Var).a;
+            x3.O1(x3Var, i1Var);
+            x3Var.o3.P(i1Var, true);
+        }
+    }
+
+    @Override // ii.h1
+    public final boolean e() {
+        f6 f6Var = this.a;
+        c6 c6Var = f6Var.y;
+        if (c6Var == null || f6Var.x == null) {
+            return false;
+        }
+        return ((f3) c6Var).a.U4();
+    }
+
+    @Override // ii.h1
+    public final void f(int i10, int i11) {
+        i2 i2Var;
+        f6 f6Var = this.a;
+        c6 c6Var = f6Var.y;
+        if (c6Var == null || f6Var.x == null || (i2Var = ((f3) c6Var).a.Q3) == null) {
+            return;
+        }
+        i2Var.f(i10, i11);
+    }
+
+    @Override // ii.h1
+    public final void l(i1 i1Var) {
+        a aVar;
+        f6 f6Var = this.a;
+        c6 c6Var = f6Var.y;
+        if (c6Var == null || (aVar = f6Var.x) == null) {
+            return;
+        }
+        x3.R1(((f3) c6Var).a, aVar);
+    }
+
+    @Override // ii.h1
+    public final /* synthetic */ boolean n(i1 i1Var) {
+        return false;
+    }
+
+    @Override // ii.h1
+    public final boolean p(i1 i1Var) {
+        f6 f6Var = this.a;
+        f6Var.f.r();
+        i1 i1Var2 = f6Var.f;
+        i1Var2.setSelection(i1Var2.length());
+        return true;
+    }
+
+    @Override // ii.h1
+    public final void t(i1 i1Var, int i10, int i11) {
+        c6 c6Var;
+        q9 textSelectionHelper;
+        f6 f6Var = this.a;
+        if (f6Var.n || i10 == i11 || (c6Var = f6Var.y) == null || (textSelectionHelper = ((f3) c6Var).a.getTextSelectionHelper()) == null) {
+            return;
+        }
+        i1Var.post(new ei.y4(this, i1Var, i11, textSelectionHelper, i10, 6));
+    }
+
+    @Override // ii.h1
+    public final void x(CharSequence charSequence) {
+        c6 c6Var = this.a.y;
+        if (c6Var != null) {
+            f3 f3Var = (f3) c6Var;
+            if (charSequence == null || charSequence.length() <= 0) {
+                return;
+            }
+            f3Var.a.v4(charSequence.toString());
+        }
+    }
+
+    @Override // ii.h1
+    public final void r() {
     }
 }

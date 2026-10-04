@@ -20,11 +20,11 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ok;
-import org.telegram.ui.Components.ja;
-import org.telegram.ui.Components.wv0;
-import w7.n6;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.ka;
+import w7.o6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class d1 extends DispatchQueue {
     public final SurfaceTexture a;
@@ -37,19 +37,19 @@ public final class d1 extends DispatchQueue {
     public int n;
     public int r;
     public b1 s;
-    public final ja v;
+    public final ka v;
     public final c1 w;
     public final b1 x;
     public final /* synthetic */ f1 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d1(f1 f1Var, SurfaceTexture surfaceTexture, ja jaVar) {
+    public d1(f1 f1Var, SurfaceTexture surfaceTexture, ka kaVar) {
         super("CanvasInternal");
         this.y = f1Var;
         int i10 = 0;
         this.w = new c1(this, i10);
         this.x = new b1(this, i10);
-        this.v = jaVar;
+        this.v = kaVar;
         this.a = surfaceTexture;
     }
 
@@ -66,7 +66,7 @@ public final class d1 extends DispatchQueue {
     }
 
     public final void finish() {
-        ja jaVar = this.v;
+        ka kaVar = this.v;
         if (this.e != null) {
             EGL10 egl10 = this.b;
             EGLDisplay eGLDisplay = this.c;
@@ -77,11 +77,11 @@ public final class d1 extends DispatchQueue {
         }
         EGLContext eGLContext = this.d;
         if (eGLContext != null) {
-            if (jaVar != null) {
-                synchronized (jaVar.f) {
+            if (kaVar != null) {
+                synchronized (kaVar.f) {
                     try {
-                        if (jaVar.g == eGLContext) {
-                            jaVar.g = null;
+                        if (kaVar.g == eGLContext) {
+                            kaVar.g = null;
                         }
                     } finally {
                     }
@@ -95,12 +95,12 @@ public final class d1 extends DispatchQueue {
             this.b.eglTerminate(eGLDisplay2);
             this.c = null;
         }
-        if (jaVar != null) {
+        if (kaVar != null) {
             b1 b1Var = this.x;
-            ArrayList arrayList = jaVar.e;
+            ArrayList arrayList = kaVar.e;
             arrayList.remove(b1Var);
-            if (arrayList.isEmpty() && jaVar.d.isEmpty()) {
-                jaVar.n.a();
+            if (arrayList.isEmpty() && kaVar.d.isEmpty()) {
+                kaVar.n.a();
             }
         }
     }
@@ -114,7 +114,7 @@ public final class d1 extends DispatchQueue {
             return;
         }
         SurfaceTexture surfaceTexture = this.a;
-        ja jaVar = this.v;
+        ka kaVar = this.v;
         EGL10 egl10 = (EGL10) EGLContext.getEGL();
         this.b = egl10;
         EGLDisplay eglGetDisplay = egl10.eglGetDisplay(EGL10.EGL_DEFAULT_DISPLAY);
@@ -138,10 +138,10 @@ public final class d1 extends DispatchQueue {
                     if (iArr[0] > 0) {
                         EGLConfig eGLConfig = eGLConfigArr[0];
                         int[] iArr2 = {12440, 2, 12344};
-                        if (jaVar != null) {
-                            synchronized (jaVar.f) {
+                        if (kaVar != null) {
+                            synchronized (kaVar.f) {
                                 try {
-                                    eGLContext = jaVar.g;
+                                    eGLContext = kaVar.g;
                                     if (eGLContext == null) {
                                         eGLContext = EGL10.EGL_NO_CONTEXT;
                                     }
@@ -159,9 +159,9 @@ public final class d1 extends DispatchQueue {
                             }
                             finish();
                         } else {
-                            if (jaVar != null) {
-                                jaVar.a(eglCreateContext);
-                                jaVar.e.add(this.x);
+                            if (kaVar != null) {
+                                kaVar.a(eglCreateContext);
+                                kaVar.e.add(this.x);
                             }
                             if (surfaceTexture != null) {
                                 EGLSurface eglCreateWindowSurface = this.b.eglCreateWindowSurface(this.c, eGLConfig, surfaceTexture, null);
@@ -236,16 +236,16 @@ public final class d1 extends DispatchQueue {
                                         i10 = 0;
                                     }
                                     s0Var.r = DesugarCollections.unmodifiableMap(hashMap);
-                                    wv0 wv0Var = s0Var.g;
-                                    if (f1Var.h.getWidth() != wv0Var.a || f1Var.h.getHeight() != wv0Var.b) {
-                                        Bitmap createBitmap = Bitmap.createBitmap((int) wv0Var.a, (int) wv0Var.b, Bitmap.Config.ARGB_8888);
-                                        new Canvas(createBitmap).drawBitmap(f1Var.h, (Rect) null, new RectF(0.0f, 0.0f, wv0Var.a, wv0Var.b), (Paint) null);
+                                    fw0 fw0Var = s0Var.g;
+                                    if (f1Var.h.getWidth() != fw0Var.a || f1Var.h.getHeight() != fw0Var.b) {
+                                        Bitmap createBitmap = Bitmap.createBitmap((int) fw0Var.a, (int) fw0Var.b, Bitmap.Config.ARGB_8888);
+                                        new Canvas(createBitmap).drawBitmap(f1Var.h, (Rect) null, new RectF(0.0f, 0.0f, fw0Var.a, fw0Var.b), (Paint) null);
                                         f1Var.h = createBitmap;
                                         f1Var.r = true;
                                     }
-                                    if (f1Var.n != null && (r5.getWidth() != wv0Var.a || f1Var.n.getHeight() != wv0Var.b)) {
-                                        Bitmap createBitmap2 = Bitmap.createBitmap((int) wv0Var.a, (int) wv0Var.b, Bitmap.Config.ARGB_8888);
-                                        new Canvas(createBitmap2).drawBitmap(f1Var.n, (Rect) null, new RectF(0.0f, 0.0f, wv0Var.a, wv0Var.b), (Paint) null);
+                                    if (f1Var.n != null && (r5.getWidth() != fw0Var.a || f1Var.n.getHeight() != fw0Var.b)) {
+                                        Bitmap createBitmap2 = Bitmap.createBitmap((int) fw0Var.a, (int) fw0Var.b, Bitmap.Config.ARGB_8888);
+                                        new Canvas(createBitmap2).drawBitmap(f1Var.n, (Rect) null, new RectF(0.0f, 0.0f, fw0Var.a, fw0Var.b), (Paint) null);
                                         f1Var.n = createBitmap2;
                                         f1Var.r = true;
                                     }
@@ -260,7 +260,7 @@ public final class d1 extends DispatchQueue {
                                     if (s0Var.G && s0Var.l == null) {
                                         s0Var.l = new u1(s0Var.A);
                                     }
-                                    n6.a();
+                                    o6.a();
                                     z10 = true;
                                 } else {
                                     if (BuildVars.LOGS_ENABLED) {

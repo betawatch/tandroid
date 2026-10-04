@@ -1,16 +1,26 @@
 package ei;
 
+import android.content.Context;
 import android.graphics.Point;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.d6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class h3 extends org.telegram.ui.ActionBar.k {
-    @Override // org.telegram.ui.ActionBar.k, android.widget.FrameLayout, android.view.View
+public final class h3 extends y {
+    public final /* synthetic */ l3 s;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h3(l3 l3Var, Context context, d6 d6Var) {
+        super(context, d6Var);
+        this.s = l3Var;
+    }
+
+    @Override // ei.y, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        if (AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
+        if (!this.s.d0 && AndroidUtilities.isTablet() && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isSmallTablet()) {
             Point point = AndroidUtilities.displaySize;
             i10 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point.x, point.y) * 0.8f), TLObject.FLAG_30);
         }

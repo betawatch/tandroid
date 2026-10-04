@@ -5,14 +5,14 @@ import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.TextureView;
 import b2.w1;
-import ci.rc;
+import ci.qc;
 import gg.x1;
 import java.util.ArrayList;
-import org.telegram.ui.Components.u71;
+import org.telegram.ui.Components.d81;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class c0 implements a3.l0, k2.j, SurfaceHolder.Callback, TextureView.SurfaceTextureListener {
+public final class c0 implements a3.l0, k2.k, SurfaceHolder.Callback, TextureView.SurfaceTextureListener {
     public final /* synthetic */ f0 a;
 
     public c0(f0 f0Var) {
@@ -42,13 +42,13 @@ public final class c0 implements a3.l0, k2.j, SurfaceHolder.Callback, TextureVie
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            if (((u71) ((w1) obj)).J.onSurfaceDestroyed(surfaceTexture)) {
+            if (((d81) ((w1) obj)).J.onSurfaceDestroyed(surfaceTexture)) {
                 return false;
             }
         }
         org.telegram.messenger.d1 d1Var = f0Var.m0;
         if (d1Var != null) {
-            d1Var.execute(new rc(this, surfaceTexture));
+            d1Var.execute(new qc(this, surfaceTexture));
             return true;
         }
         f0Var.t1(null);
@@ -81,7 +81,7 @@ public final class c0 implements a3.l0, k2.j, SurfaceHolder.Callback, TextureVie
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((u71) ((w1) obj)).J.onSurfaceTextureUpdated(surfaceTexture);
+            ((d81) ((w1) obj)).J.onSurfaceTextureUpdated(surfaceTexture);
         }
     }
 

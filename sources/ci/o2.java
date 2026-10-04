@@ -4,11 +4,11 @@ import com.google.android.gms.common.api.internal.BasePendingResult;
 import java.util.ArrayDeque;
 import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.zp;
-import org.telegram.ui.c10;
-import org.telegram.ui.il0;
+import org.telegram.ui.Components.aq;
+import org.telegram.ui.g10;
+import org.telegram.ui.nl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class o2 extends TimerTask {
     public final /* synthetic */ int a;
@@ -31,11 +31,11 @@ public final class o2 extends TimerTask {
                 ArrayDeque arrayDeque = cVar.h;
                 if (!arrayDeque.isEmpty() && cVar.k == null && cVar.b != 0) {
                     e6.h hVar = cVar.c;
-                    int[] e = g6.a.e(arrayDeque);
+                    int[] e7 = g6.a.e(arrayDeque);
                     hVar.getClass();
                     n6.l.e("Must be called from the main thread.");
                     if (hVar.w()) {
-                        e6.k kVar = new e6.k(hVar, e);
+                        e6.k kVar = new e6.k(hVar, e7);
                         e6.h.x(kVar);
                         basePendingResult = kVar;
                     } else {
@@ -48,13 +48,13 @@ public final class o2 extends TimerTask {
                 }
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new zp(this, 24));
+                AndroidUtilities.runOnUIThread(new aq(this, 24));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new c10(this, 23));
+                AndroidUtilities.runOnUIThread(new g10(this, 23));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new il0(this, 5));
+                AndroidUtilities.runOnUIThread(new nl0(this, 5));
                 break;
         }
     }

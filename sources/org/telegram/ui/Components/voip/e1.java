@@ -15,98 +15,50 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.cd0;
-import org.telegram.ui.Components.fw0;
-import org.telegram.ui.Components.tv0;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.dw0;
+import org.telegram.ui.Components.ow0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.yg0;
-import yh.w7;
+import org.telegram.ui.ch0;
+import yh.x7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e1 implements tv0, uv0, org.telegram.ui.ActionBar.z1, cd0, GenericProvider, FlagSecureReason.FlagSecureCondition, Utilities.Callback2Return, fw0 {
+public final /* synthetic */ class e1 implements cw0, dw0, org.telegram.ui.ActionBar.a2, cd0, GenericProvider, FlagSecureReason.FlagSecureCondition, Utilities.Callback2Return, ow0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ e1(int i10) {
         this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.uv0
+    @Override // org.telegram.ui.Components.dw0
     public void b(Object obj, float f7) {
         k1 k1Var = (k1) obj;
-        WindowManager.LayoutParams layoutParams = k1Var.c;
-        k1Var.R = f7;
-        layoutParams.y = (int) f7;
-        AndroidUtilities.updateViewLayout(k1Var.b, k1Var.d, layoutParams);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
         switch (this.a) {
-            case 2:
-                a2Var.dismiss();
-                break;
-            case 3:
-                break;
-            case 4:
-                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askedAboutMiuiLockscreen", true).commit();
-                break;
-            case 5:
-                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askedAboutFSILockscreen", true).commit();
-                break;
-            case 13:
-                a2Var.dismiss();
-                break;
-            case 15:
-                Drawable[] drawableArr = PhotoViewer.U8;
-                break;
-            case 16:
-                a2Var.dismiss();
-                break;
-            case 17:
-                a2Var.dismiss();
-                break;
-            case 19:
-                a2Var.dismiss();
-                break;
-            case 20:
-                a2Var.dismiss();
-                break;
-            case 26:
-                a2Var.dismiss();
-                break;
-            case 27:
-                a2Var.dismiss();
-                break;
-            case 28:
-                a2Var.dismiss();
+            case 1:
+                WindowManager.LayoutParams layoutParams = k1Var.c;
+                k1Var.Q = f7;
+                layoutParams.x = (int) f7;
+                AndroidUtilities.updateViewLayout(k1Var.b, k1Var.d, layoutParams);
                 break;
             default:
-                a2Var.dismiss();
+                WindowManager.LayoutParams layoutParams2 = k1Var.c;
+                k1Var.R = f7;
+                layoutParams2.y = (int) f7;
+                AndroidUtilities.updateViewLayout(k1Var.b, k1Var.d, layoutParams2);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.tv0
-    public float get(Object obj) {
-        return ((k1) obj).R;
-    }
-
-    @Override // org.telegram.ui.Components.fw0
-    public void h(int i10) {
-        SharedConfig.proxyRotationTimeout = i10;
-        SharedConfig.saveConfig();
-    }
-
     @Override // org.telegram.ui.Components.cd0
-    public String j(int i10) {
+    public String e(int i10) {
         switch (this.a) {
-            case 6:
+            case 8:
                 break;
-            case 7:
+            case 9:
                 break;
             default:
                 if (i10 != 0) {
@@ -133,19 +85,77 @@ public final /* synthetic */ class e1 implements tv0, uv0, org.telegram.ui.Actio
         return String.format("%02d", Integer.valueOf(i10));
     }
 
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 4:
+                b2Var.dismiss();
+                break;
+            case 5:
+                break;
+            case 6:
+                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askedAboutMiuiLockscreen", true).commit();
+                break;
+            case 7:
+                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askedAboutFSILockscreen", true).commit();
+                break;
+            case 15:
+                b2Var.dismiss();
+                break;
+            case 17:
+                Drawable[] drawableArr = PhotoViewer.U8;
+                break;
+            case 18:
+                b2Var.dismiss();
+                break;
+            case 19:
+                b2Var.dismiss();
+                break;
+            case 21:
+                b2Var.dismiss();
+                break;
+            case 22:
+                b2Var.dismiss();
+                break;
+            case 28:
+                b2Var.dismiss();
+                break;
+            default:
+                b2Var.dismiss();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.cw0
+    public float get(Object obj) {
+        k1 k1Var = (k1) obj;
+        switch (this.a) {
+            case 0:
+                return k1Var.Q;
+            default:
+                return k1Var.R;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ow0
+    public void j(int i10) {
+        SharedConfig.proxyRotationTimeout = i10;
+        SharedConfig.saveConfig();
+    }
+
     @Override // org.telegram.messenger.GenericProvider
     public Object provide(Object obj) {
         switch (this.a) {
-            case 8:
+            case 10:
                 int dp = AndroidUtilities.dp(150.0f);
                 Bitmap createBitmap = Bitmap.createBitmap(AndroidUtilities.dp(200.0f), dp, Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(createBitmap);
-                canvas.drawColor(h6.w0(null, h6.d6, false));
+                canvas.drawColor(i6.w0(null, i6.d6, false));
                 Paint paint = new Paint(1);
                 paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
                 canvas.drawCircle(createBitmap.getWidth() / 2.0f, createBitmap.getHeight() / 2.0f, dp / 2.0f, paint);
                 return createBitmap;
-            case 9:
+            case 11:
                 Paint paint2 = new Paint(1);
                 paint2.setColor(-14509328);
                 int dp2 = AndroidUtilities.dp(150.0f);
@@ -155,13 +165,13 @@ public final /* synthetic */ class e1 implements tv0, uv0, org.telegram.ui.Actio
                 return createBitmap2;
             default:
                 Pattern pattern = LaunchActivity.B1;
-                return new yg0();
+                return new ch0();
         }
     }
 
     @Override // org.telegram.messenger.Utilities.Callback2Return
     public Object run(Object obj, Object obj2) {
-        return ((Integer) obj).intValue() == 0 ? w7.X0(false, LocaleController.formatPluralStringComma("Stars", ((Integer) obj2).intValue()), 0.66f, null) : LocaleController.formatNumber(r4.intValue(), ',');
+        return ((Integer) obj).intValue() == 0 ? x7.d1(false, LocaleController.formatPluralStringComma("Stars", ((Integer) obj2).intValue()), 0.66f, null) : LocaleController.formatNumber(r4.intValue(), ',');
     }
 
     @Override // org.telegram.messenger.FlagSecureReason.FlagSecureCondition
@@ -170,10 +180,10 @@ public final /* synthetic */ class e1 implements tv0, uv0, org.telegram.ui.Actio
         return SharedConfig.passcodeHash.length() > 0 && !SharedConfig.allowScreenCapture;
     }
 
-    @Override // org.telegram.ui.Components.fw0
-    public /* synthetic */ void n() {
+    @Override // org.telegram.ui.Components.ow0
+    public /* synthetic */ void l() {
     }
 
-    private final void a(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+    private final void a(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
     }
 }

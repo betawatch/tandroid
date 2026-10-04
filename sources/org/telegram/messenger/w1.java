@@ -4,7 +4,7 @@ import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w1 implements Runnable {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class w1 implements Runnable {
                 MediaDataController.lambda$cleanup$1();
                 break;
             case 17:
-                org.telegram.ui.ActionBar.h6.E(false);
+                org.telegram.ui.ActionBar.i6.E(false);
                 break;
             case 18:
                 NotificationCenter.lambda$listen$3();

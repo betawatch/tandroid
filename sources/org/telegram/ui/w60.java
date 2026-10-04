@@ -1,141 +1,87 @@
 package org.telegram.ui;
 
+import android.view.KeyEvent;
+import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w60 implements Runnable {
+public final class w60 implements View.OnKeyListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x60 b;
-    public final /* synthetic */ String c;
+    public boolean b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c;
 
-    public /* synthetic */ w60(x60 x60Var, String str, int i10) {
+    public /* synthetic */ w60(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
         this.a = i10;
-        this.b = x60Var;
-        this.c = str;
+        this.c = n2Var;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r7v12 */
-    /* JADX WARN: Type inference failed for: r7v14 */
-    /* JADX WARN: Type inference failed for: r7v3 */
-    /* JADX WARN: Type inference failed for: r7v4 */
-    @Override // java.lang.Runnable
-    public final void run() {
-        String str;
-        String publicUsername;
-        ArrayList arrayList;
-        Object obj;
+    @Override // android.view.View.OnKeyListener
+    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                x60 x60Var = this.b;
-                String str2 = this.c;
-                x60Var.getClass();
-                AndroidUtilities.runOnUIThread(new w60(x60Var, str2, 1));
-                break;
-            case 1:
-                x60 x60Var2 = this.b;
-                String str3 = this.c;
-                gg.c2 c2Var = x60Var2.f;
-                z60 z60Var = x60Var2.I;
-                c2Var.g(str3, true, z60Var.O || z60Var.P, true, false, 0L, false, 0, 0);
-                DispatchQueue dispatchQueue = Utilities.searchQueue;
-                w60 w60Var = new w60(x60Var2, str3, 2);
-                x60Var2.h = w60Var;
-                dispatchQueue.postRunnable(w60Var);
+                d70 d70Var = (d70) this.c;
+                if (i10 == 67) {
+                    if (keyEvent.getAction() != 0) {
+                        if (keyEvent.getAction() == 1 && this.b && !d70Var.a0.isEmpty()) {
+                            d70Var.h.c((org.telegram.ui.Components.q30) hg.k0.g(1, d70Var.a0));
+                            d70Var.s0();
+                            d70Var.k0();
+                            break;
+                        }
+                    } else {
+                        this.b = d70Var.f.r.length() == 0;
+                        break;
+                    }
+                }
                 break;
             default:
-                x60 x60Var3 = this.b;
-                String str4 = this.c;
-                ArrayList arrayList2 = x60Var3.r;
-                String lowerCase = str4.trim().toLowerCase();
-                if (!lowerCase.isEmpty()) {
-                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
-                    if (lowerCase.equals(translitString) || translitString.isEmpty()) {
-                        translitString = null;
-                    }
-                    int i10 = 0;
-                    int i11 = (translitString != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i11];
-                    strArr[0] = lowerCase;
-                    if (translitString != null) {
-                        strArr[1] = translitString;
-                    }
-                    ArrayList arrayList3 = new ArrayList();
-                    ArrayList arrayList4 = new ArrayList();
-                    int i12 = 0;
-                    while (i12 < arrayList2.size()) {
-                        TLObject tLObject = (TLObject) arrayList2.get(i12);
-                        boolean z10 = tLObject instanceof TLRPC.User;
-                        if (z10) {
-                            TLRPC.User user = (TLRPC.User) tLObject;
-                            str = ContactsController.formatName(user.first_name, user.last_name).toLowerCase();
-                            publicUsername = UserObject.getPublicUsername(user);
-                        } else {
-                            if (tLObject instanceof TLRPC.Chat) {
-                                TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-                                str = chat.title;
-                                publicUsername = ChatObject.getPublicUsername(chat);
-                            }
-                            arrayList = arrayList2;
-                            i12++;
-                            arrayList2 = arrayList;
-                            i10 = 0;
-                        }
-                        String translitString2 = LocaleController.getInstance().getTranslitString(str);
-                        if (str.equals(translitString2)) {
-                            translitString2 = null;
-                        }
-                        boolean z11 = false;
-                        while (i10 < i11) {
-                            String str5 = strArr[i10];
-                            ?? r72 = (str.startsWith(str5) || org.telegram.messenger.f0.w(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.f0.w(" ", str5, translitString2)))) ? 1 : (publicUsername == null || !publicUsername.startsWith(str5)) ? z11 : 2;
-                            if (r72 != 0) {
-                                arrayList = arrayList2;
-                                if (r72 == 1) {
-                                    if (z10) {
-                                        TLRPC.User user2 = (TLRPC.User) tLObject;
-                                        arrayList4.add(AndroidUtilities.generateSearchName(user2.first_name, user2.last_name, str5));
-                                    } else if (tLObject instanceof TLRPC.Chat) {
-                                        obj = null;
-                                        arrayList4.add(AndroidUtilities.generateSearchName(((TLRPC.Chat) tLObject).title, null, str5));
-                                    }
-                                    obj = null;
-                                } else {
-                                    obj = null;
-                                    arrayList4.add(AndroidUtilities.generateSearchName(v7.j.g("@", publicUsername), null, "@" + str5));
+                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.c;
+                ArrayList arrayList = usersSelectActivity.O;
+                if (i10 == 67) {
+                    if (keyEvent.getAction() != 0) {
+                        if (keyEvent.getAction() == 1 && this.b && !arrayList.isEmpty()) {
+                            org.telegram.ui.Components.q30 q30Var = (org.telegram.ui.Components.q30) hg.k0.g(1, arrayList);
+                            usersSelectActivity.b.b(q30Var);
+                            if (usersSelectActivity.x == 2) {
+                                if (q30Var.getUid() == -9223372036854775800L) {
+                                    usersSelectActivity.J &= -2;
+                                } else if (q30Var.getUid() == -9223372036854775799L) {
+                                    usersSelectActivity.J &= -3;
+                                } else if (q30Var.getUid() == Long.MIN_VALUE) {
+                                    usersSelectActivity.J &= -5;
+                                } else if (q30Var.getUid() == -9223372036854775807L) {
+                                    usersSelectActivity.J &= -9;
                                 }
-                                arrayList3.add(tLObject);
-                                i12++;
-                                arrayList2 = arrayList;
-                                i10 = 0;
-                            } else {
-                                i10++;
-                                arrayList2 = arrayList2;
-                                z11 = r72;
+                            } else if (q30Var.getUid() == Long.MIN_VALUE) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_CONTACTS) & usersSelectActivity.J;
+                            } else if (q30Var.getUid() == -9223372036854775807L) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS) & usersSelectActivity.J;
+                            } else if (q30Var.getUid() == -9223372036854775806L) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_GROUPS) & usersSelectActivity.J;
+                            } else if (q30Var.getUid() == -9223372036854775805L) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_CHANNELS) & usersSelectActivity.J;
+                            } else if (q30Var.getUid() == -9223372036854775804L) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_BOTS) & usersSelectActivity.J;
+                            } else if (q30Var.getUid() == -9223372036854775803L) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) & usersSelectActivity.J;
+                            } else if (q30Var.getUid() == -9223372036854775802L) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ) & usersSelectActivity.J;
+                            } else if (q30Var.getUid() == -9223372036854775801L) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED) & usersSelectActivity.J;
                             }
+                            usersSelectActivity.X();
+                            usersSelectActivity.U();
+                            break;
                         }
-                        arrayList = arrayList2;
-                        i12++;
-                        arrayList2 = arrayList;
-                        i10 = 0;
+                    } else {
+                        this.b = usersSelectActivity.c.length() == 0;
+                        break;
                     }
-                    AndroidUtilities.runOnUIThread(new sq(x60Var3, arrayList3, arrayList4, 10));
-                    break;
-                } else {
-                    AndroidUtilities.runOnUIThread(new sq(x60Var3, new ArrayList(), new ArrayList(), 10));
-                    break;
                 }
                 break;
         }
+        return true;
     }
 }

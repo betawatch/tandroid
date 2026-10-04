@@ -1,49 +1,22 @@
 package org.telegram.ui.Components;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Utilities;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bu0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cu0 b;
-    public final /* synthetic */ String c;
+public interface bu0 {
+    void C();
 
-    public /* synthetic */ bu0(cu0 cu0Var, String str, int i10) {
-        this.a = i10;
-        this.b = cu0Var;
-        this.c = str;
-    }
+    void P();
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                cu0 cu0Var = this.b;
-                String str = this.c;
-                cu0Var.getClass();
-                AndroidUtilities.runOnUIThread(new bu0(cu0Var, str, 1));
-                break;
-            default:
-                cu0 cu0Var2 = this.b;
-                String str2 = this.c;
-                ArrayList arrayList = null;
-                cu0Var2.f = null;
-                if (!ChatObject.isChannel(cu0Var2.n) && cu0Var2.s.d1 != null) {
-                    arrayList = new ArrayList(cu0Var2.s.d1.participants.participants);
-                }
-                cu0Var2.r = 2;
-                if (arrayList != null) {
-                    Utilities.searchQueue.postRunnable(new en0((Object) cu0Var2, (Serializable) str2, arrayList, 6));
-                } else {
-                    cu0Var2.r = 1;
-                }
-                cu0Var2.e.g(str2, false, false, true, false, ChatObject.isChannel(cu0Var2.n) ? cu0Var2.n.id : 0L, false, 2, 1);
-                break;
-        }
-    }
+    boolean R();
+
+    zl0 f();
+
+    TLRPC.Chat g();
+
+    boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view);
+
+    boolean p();
 }

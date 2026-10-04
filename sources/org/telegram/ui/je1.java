@@ -1,105 +1,32 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class je1 implements Runnable {
+public final class je1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ke1 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ ne1 b;
 
-    public /* synthetic */ je1(ke1 ke1Var, String str, int i10, int i11) {
-        this.a = i11;
-        this.b = ke1Var;
-        this.c = str;
-        this.d = i10;
+    public /* synthetic */ je1(ne1 ne1Var, int i10) {
+        this.a = i10;
+        this.b = ne1Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x009d A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00ac A[SYNTHETIC] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                ke1 ke1Var = this.b;
-                String str = this.c;
-                int i10 = this.d;
-                ke1Var.getClass();
-                Utilities.searchQueue.postRunnable(new je1(ke1Var, str, i10, 1));
+                ne1 ne1Var = this.b;
+                ne1Var.v = 0;
+                ne1Var.n.setVisibility(8);
+                break;
+            case 1:
+                this.b.v = 0;
                 break;
             default:
-                ke1 ke1Var2 = this.b;
-                String str2 = this.c;
-                int i11 = this.d;
-                le1 le1Var = ke1Var2.h;
-                ArrayList arrayList = le1Var.f;
-                String lowerCase = str2.trim().toLowerCase();
-                String str3 = null;
-                if (lowerCase.length() != 0) {
-                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
-                    if (!lowerCase.equals(translitString) && translitString.length() != 0) {
-                        str3 = translitString;
-                    }
-                    int i12 = (str3 != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i12];
-                    strArr[0] = lowerCase;
-                    if (str3 != null) {
-                        strArr[1] = str3;
-                    }
-                    ArrayList arrayList2 = new ArrayList();
-                    int i13 = 0;
-                    ArrayList arrayList3 = new ArrayList();
-                    int i14 = 0;
-                    while (i14 < arrayList.size()) {
-                        TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i14);
-                        int i15 = 0;
-                        boolean z10 = false;
-                        while (true) {
-                            if (i15 >= 2) {
-                                break;
-                            }
-                            String publicUsername = i15 == 0 ? chat.title : ChatObject.getPublicUsername(chat);
-                            if (publicUsername != null) {
-                                String lowerCase2 = publicUsername.toLowerCase();
-                                while (i13 < i12) {
-                                    String str4 = strArr[i13];
-                                    if (!lowerCase2.startsWith(str4)) {
-                                        int i16 = i13;
-                                        if (!org.telegram.messenger.f0.w(" ", str4, lowerCase2)) {
-                                            i13 = i16 + 1;
-                                        }
-                                    }
-                                    z10 = true;
-                                    if (!z10) {
-                                        arrayList2.add(chat);
-                                        arrayList3.add((String) le1Var.h.get(i14));
-                                    }
-                                }
-                                if (!z10) {
-                                }
-                            }
-                            i15++;
-                            i13 = 0;
-                        }
-                        i14++;
-                        i13 = 0;
-                    }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.h21(ke1Var2, i11, arrayList2, arrayList3, 12));
-                    break;
-                } else {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.h21(ke1Var2, i11, str3, str3, 12));
-                    break;
-                }
+                this.b.F.setVisibility(8);
                 break;
         }
     }

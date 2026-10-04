@@ -17,9 +17,9 @@ import java.lang.ref.WeakReference;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import org.xmlpull.v1.XmlPullParserException;
-import v7.s8;
+import v7.r8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class m2 {
     public static m2 i;
@@ -103,9 +103,9 @@ public final class m2 {
         TypedValue typedValue = this.e;
         context.getResources().getValue(i10, typedValue, true);
         long j3 = (typedValue.assetCookie << 32) | typedValue.data;
-        Drawable e = e(context, j3);
-        if (e != null) {
-            return e;
+        Drawable e7 = e(context, j3);
+        if (e7 != null) {
+            return e7;
         }
         LayerDrawable layerDrawable = null;
         if (this.g != null) {
@@ -228,9 +228,9 @@ public final class m2 {
         Resources resources = context.getResources();
         resources.getValue(i10, typedValue, true);
         long j3 = (typedValue.assetCookie << 32) | typedValue.data;
-        Drawable e = e(context, j3);
-        if (e != null) {
-            return e;
+        Drawable e7 = e(context, j3);
+        if (e7 != null) {
+            return e7;
         }
         CharSequence charSequence = typedValue.string;
         if (charSequence != null && charSequence.toString().endsWith(".xml")) {
@@ -250,20 +250,20 @@ public final class m2 {
                 this.c.a(i10, name);
                 l2 l2Var = (l2) this.b.get(name);
                 if (l2Var != null) {
-                    e = l2Var.a(context, xml, asAttributeSet, context.getTheme());
+                    e7 = l2Var.a(context, xml, asAttributeSet, context.getTheme());
                 }
-                if (e != null) {
-                    e.setChangingConfigurations(typedValue.changingConfigurations);
-                    b(context, j3, e);
+                if (e7 != null) {
+                    e7.setChangingConfigurations(typedValue.changingConfigurations);
+                    b(context, j3, e7);
                 }
-            } catch (Exception e7) {
-                Log.e("ResourceManagerInternal", "Exception while inflating drawable", e7);
+            } catch (Exception e10) {
+                Log.e("ResourceManagerInternal", "Exception while inflating drawable", e10);
             }
         }
-        if (e == null) {
+        if (e7 == null) {
             this.c.a(i10, "appcompat_skip_skip");
         }
-        return e;
+        return e7;
     }
 
     public final synchronized void l(com.google.firebase.messaging.n nVar) {
@@ -282,7 +282,7 @@ public final class m2 {
         PorterDuff.Mode mode = null;
         if (i12 != null) {
             int[] iArr = l1.a;
-            Drawable d = s8.d(drawable.mutate());
+            Drawable d = r8.d(drawable.mutate());
             d.setTintList(i12);
             if (this.g != null && i10 == R.drawable.abc_switch_thumb_material) {
                 mode = PorterDuff.Mode.MULTIPLY;

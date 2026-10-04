@@ -1,5 +1,6 @@
 package ih;
 
+import ah.c;
 import android.content.Context;
 import android.graphics.BlendMode;
 import android.graphics.BlendModeColorFilter;
@@ -9,74 +10,60 @@ import android.graphics.PorterDuffColorFilter;
 import android.os.Build;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import ch.d;
-import le.c;
+import le.d;
 import le.e;
-import le.f;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.vp;
-import w7.y5;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.wp;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class a extends FrameLayout implements e {
-    public final c a;
-    public final c b;
+public final class a extends FrameLayout implements d {
+    public final le.b a;
+    public final le.b b;
     public ImageView c;
     public ImageView d;
-    public vp e;
+    public wp e;
     public d6 f;
     public float h;
-    public d n;
+    public ch.d n;
 
     public a(Context context) {
         super(context);
-        sr srVar = sr.h;
-        this.a = new c(0, this, srVar, 320L, false);
-        this.b = new c(1, this, srVar, 320L, true);
+        tr trVar = tr.h;
+        this.a = new le.b(0, this, trVar, 320L, false);
+        this.b = new le.b(1, this, trVar, 320L, true);
         this.h = 1.0f;
     }
 
-    public static a c(ah.c cVar, Context context, dh.a aVar, d6 d6Var) {
-        int v02 = h6.v0(h6.Wk, d6Var);
+    public static a c(c cVar, Context context, dh.a aVar, d6 d6Var) {
+        int v02 = i6.v0(i6.Wk, d6Var);
         a aVar2 = new a(context);
         aVar2.f = d6Var;
         aVar2.setBlurredBackgroundDrawable(cVar.c(aVar2, aVar, false));
         aVar2.setIconColor(v02);
         int dp = AndroidUtilities.dp(22.0f);
-        int l1 = h6.l1(0.15f, v02);
+        int l1 = i6.l1(0.15f, v02);
         int dp2 = AndroidUtilities.dp(6.0f);
-        aVar2.setBackground(h6.W(dp, l1, dp2, dp2, dp2, dp2));
+        aVar2.setBackground(i6.W(dp, l1, dp2, dp2, dp2, dp2));
         return aVar2;
     }
 
-    public static a d(Context context, ah.c cVar, dh.a aVar, d6 d6Var, int i10, int i11) {
-        int v02 = h6.v0(h6.Wk, d6Var);
+    public static a d(Context context, c cVar, dh.a aVar, d6 d6Var, int i10, int i11) {
+        int v02 = i6.v0(i6.Wk, d6Var);
         a aVar2 = new a(context);
         aVar2.f = d6Var;
         aVar2.setBlurredBackgroundDrawable(cVar.c(aVar2, aVar, false));
         aVar2.f(i10, i11);
         aVar2.setIconColor(v02);
         int dp = AndroidUtilities.dp(22.0f);
-        int l1 = h6.l1(0.15f, v02);
+        int l1 = i6.l1(0.15f, v02);
         int dp2 = AndroidUtilities.dp(6.0f);
-        aVar2.setBackground(h6.W(dp, l1, dp2, dp2, dp2, dp2));
+        aVar2.setBackground(i6.W(dp, l1, dp2, dp2, dp2, dp2));
         return aVar2;
-    }
-
-    @Override // le.e
-    public final void D(int i10, float f7, float f10, f fVar) {
-        if (i10 == 0) {
-            a();
-            b();
-        }
-        if (i10 == 1) {
-            a();
-            b();
-        }
     }
 
     public final void a() {
@@ -88,6 +75,18 @@ public final class a extends FrameLayout implements e {
             this.c.setScaleX(AndroidUtilities.lerp(0.4f, 1.0f, f7));
             this.c.setScaleY(AndroidUtilities.lerp(0.4f, 1.0f, f7) * this.h);
             this.c.setVisibility(f7 > 0.0f ? 0 : 8);
+        }
+    }
+
+    @Override // le.d
+    public final void a0(int i10, float f7, float f10, e eVar) {
+        if (i10 == 0) {
+            a();
+            b();
+        }
+        if (i10 == 1) {
+            a();
+            b();
         }
     }
 
@@ -131,25 +130,25 @@ public final class a extends FrameLayout implements e {
             ImageView imageView = new ImageView(getContext());
             this.c = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            addView(this.c, y5.e(i11, i11, 17));
+            addView(this.c, z5.e(i11, i11, 17));
             a();
         }
         this.c.setImageResource(i10);
     }
 
     public final void g() {
-        d dVar = this.n;
+        ch.d dVar = this.n;
         if (dVar != null) {
-            dVar.v();
+            dVar.k();
             invalidate();
         }
-        int i10 = h6.Wk;
-        int v02 = h6.v0(i10, this.f);
-        setIconColor(h6.v0(i10, this.f));
+        int i10 = i6.Wk;
+        int v02 = i6.v0(i10, this.f);
+        setIconColor(i6.v0(i10, this.f));
         int dp = AndroidUtilities.dp(22.0f);
-        int l1 = h6.l1(0.15f, v02);
+        int l1 = i6.l1(0.15f, v02);
         int dp2 = AndroidUtilities.dp(6.0f);
-        setBackground(h6.W(dp, l1, dp2, dp2, dp2, dp2));
+        setBackground(i6.W(dp, l1, dp2, dp2, dp2, dp2));
     }
 
     @Override // android.view.View
@@ -158,10 +157,10 @@ public final class a extends FrameLayout implements e {
         this.n.setBounds(0, 0, i10, i11);
     }
 
-    public void setBlurredBackgroundDrawable(d dVar) {
+    public void setBlurredBackgroundDrawable(ch.d dVar) {
         this.n = dVar;
-        dVar.p(AndroidUtilities.dp(6.0f));
-        this.n.q(AndroidUtilities.dp(22.0f));
+        dVar.y(AndroidUtilities.dp(6.0f));
+        this.n.z(AndroidUtilities.dp(22.0f));
     }
 
     @Override // android.view.View
@@ -194,7 +193,7 @@ public final class a extends FrameLayout implements e {
         }
     }
 
-    @Override // le.e
-    public final /* synthetic */ void C(float f7, int i10) {
+    @Override // le.d
+    public final /* synthetic */ void V(float f7, int i10) {
     }
 }

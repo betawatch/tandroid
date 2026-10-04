@@ -13,9 +13,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.vp;
+import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class u0 extends ImageView {
     public int a;
@@ -23,17 +23,17 @@ public final class u0 extends ImageView {
     public boolean c;
     public boolean d;
     public boolean e;
-    public vp f;
-    public ia h;
+    public wp f;
+    public ha h;
     public t0 n;
-    public l8 r;
+    public k8 r;
     public r0 s;
     public Uri v;
     public boolean w;
     public boolean x;
 
     public static void a(u0 u0Var) {
-        ia iaVar = u0Var.h;
+        ha haVar = u0Var.h;
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 23 && ((i10 <= 28 || BuildVars.NO_SCOPED_STORAGE) && u0Var.getContext().checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") != 0)) {
             Activity findActivity = AndroidUtilities.findActivity(u0Var.getContext());
@@ -53,8 +53,8 @@ public final class u0 extends ImageView {
             } else if (i10 < 29) {
                 try {
                     new File(u0Var.v.toString()).delete();
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
                 u0Var.v = null;
             }
@@ -70,23 +70,23 @@ public final class u0 extends ImageView {
             r0Var.a(true);
             u0Var.s = null;
         }
-        if (iaVar != null) {
+        if (haVar != null) {
             u0Var.e = true;
-            iaVar.run(new o0(u0Var, 0));
+            haVar.run(new o0(u0Var, 0));
         }
         u0Var.d();
-        if (iaVar == null) {
+        if (haVar == null) {
             u0Var.b();
         }
     }
 
     public final void b() {
-        l8 l8Var;
-        if (!this.e || (l8Var = this.r) == null) {
+        k8 k8Var;
+        if (!this.e || (k8Var = this.r) == null) {
             return;
         }
         this.e = false;
-        if (l8Var.E()) {
+        if (k8Var.E()) {
             this.d = true;
             t0 t0Var = new t0(getContext());
             this.n = t0Var;
@@ -144,9 +144,9 @@ public final class u0 extends ImageView {
         }
     }
 
-    public void setEntry(l8 l8Var) {
+    public void setEntry(k8 k8Var) {
         this.v = null;
-        this.r = l8Var;
+        this.r = k8Var;
         r0 r0Var = this.s;
         if (r0Var != null) {
             r0Var.a(true);
@@ -157,7 +157,7 @@ public final class u0 extends ImageView {
             t0Var.a();
             this.n = null;
         }
-        if (l8Var == null) {
+        if (k8Var == null) {
             this.c = false;
             d();
         }

@@ -5,10 +5,10 @@ import b2.s;
 import c3.h0;
 import e2.v;
 import g2.b0;
-import u2.a1;
-import v7.n7;
+import u2.b1;
+import v7.m7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i extends a {
     public final int E;
@@ -26,20 +26,15 @@ public final class i extends a {
     }
 
     @Override // y2.i
-    public final void D() {
-        this.I = true;
-    }
-
-    @Override // y2.i
     public final void a() {
         o0.a aVar = this.x;
         e2.d.h(aVar);
         if (this.H == 0) {
             long j3 = this.F;
-            for (a1 a1Var : (a1[]) aVar.c) {
-                if (a1Var.F != j3) {
-                    a1Var.F = j3;
-                    a1Var.z = true;
+            for (b1 b1Var : (b1[]) aVar.c) {
+                if (b1Var.F != j3) {
+                    b1Var.F = j3;
+                    b1Var.z = true;
                 }
             }
             d dVar = this.G;
@@ -68,18 +63,18 @@ public final class i extends a {
             int i10 = sVar.Q;
             int i11 = sVar.R;
             if (r0.k(str) && ((i10 > 1 || i11 > 1) && i10 != -1 && i11 != -1)) {
-                h0 U = aVar.U(4);
+                h0 L = aVar.L(4);
                 int i12 = i10 * i11;
                 long j13 = (this.n - this.h) / i12;
                 for (int i13 = 1; i13 < i12; i13++) {
-                    U.d(0, new v());
-                    U.c(i13 * j13, 0, 0, 0, null);
+                    L.d(0, new v());
+                    L.c(i13 * j13, 0, 0, 0, null);
                 }
             }
-            n7.a(this.r);
+            m7.a(this.r);
             this.J = !this.I;
         } catch (Throwable th2) {
-            n7.a(this.r);
+            m7.a(this.r);
             throw th2;
         }
     }
@@ -92,5 +87,10 @@ public final class i extends a {
     @Override // v2.k
     public final boolean c() {
         return this.J;
+    }
+
+    @Override // y2.i
+    public final void q() {
+        this.I = true;
     }
 }

@@ -7,7 +7,7 @@ import android.text.Layout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class nh0 {
     public int a;
@@ -16,8 +16,8 @@ public final class nh0 {
     public Drawable i;
     public Drawable j;
     public kj0 k;
-    public v01 l;
-    public t90 r;
+    public e11 l;
+    public u90 r;
     public boolean s;
     public boolean t;
     public int u;
@@ -39,7 +39,7 @@ public final class nh0 {
     public nh0(qh0 qh0Var) {
         this.y = qh0Var;
         this.b = new zc(qh0Var);
-        this.e = new e6(qh0Var, 0L, 250L, sr.f);
+        this.e = new e6(qh0Var, 0L, 250L, tr.f);
     }
 
     public final void a() {
@@ -74,11 +74,11 @@ public final class nh0 {
     }
 
     public final void c(String str) {
-        v01 v01Var = new v01(str, 11.0f, AndroidUtilities.bold());
-        v01Var.n(3);
+        e11 e11Var = new e11(str, 11.0f, AndroidUtilities.bold());
+        e11Var.n(3);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        v01Var.a();
-        this.l = v01Var;
+        e11Var.a();
+        this.l = e11Var;
     }
 
     public final void d(int i10, int i11, int i12) {
@@ -111,7 +111,7 @@ public final class nh0 {
     public nh0(qh0 qh0Var, oh0 oh0Var) {
         this.y = qh0Var;
         this.b = new zc(qh0Var);
-        this.e = new e6(qh0Var, 0L, 250L, sr.f);
+        this.e = new e6(qh0Var, 0L, 250L, tr.f);
         d(0, oh0Var.b, oh0Var.c);
         c(LocaleController.getString(oh0Var.a));
     }

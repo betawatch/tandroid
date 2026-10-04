@@ -10,10 +10,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ExternalActionActivity;
-import org.telegram.ui.cx0;
-import org.telegram.ui.gn0;
+import org.telegram.ui.fx0;
+import org.telegram.ui.kn0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y5 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -26,11 +26,11 @@ public final /* synthetic */ class y5 implements Runnable {
     public final /* synthetic */ Object n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ y5(int i10, File file, String str, org.telegram.ui.ActionBar.a2 a2Var, boolean[] zArr, String str2, Utilities.Callback callback, boolean[] zArr2) {
+    public /* synthetic */ y5(int i10, File file, String str, org.telegram.ui.ActionBar.b2 b2Var, boolean[] zArr, String str2, Utilities.Callback callback, boolean[] zArr2) {
         this.c = i10;
         this.f = file;
         this.d = str;
-        this.b = a2Var;
+        this.b = b2Var;
         this.h = zArr;
         this.e = str2;
         this.r = callback;
@@ -51,11 +51,11 @@ public final /* synthetic */ class y5 implements Runnable {
         Object obj7 = this.f;
         switch (i10) {
             case 0:
-                MediaController.lambda$saveFile$50(this.c, (File) obj7, (String) obj6, (org.telegram.ui.ActionBar.a2) obj4, (boolean[]) obj3, (String) obj5, (Utilities.Callback) obj, (boolean[]) obj2);
+                MediaController.lambda$saveFile$50(this.c, (File) obj7, (String) obj6, (org.telegram.ui.ActionBar.b2) obj4, (boolean[]) obj3, (String) obj5, (Utilities.Callback) obj, (boolean[]) obj2);
                 return;
             case 1:
                 ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj7;
-                org.telegram.ui.ActionBar.a2 a2Var = (org.telegram.ui.ActionBar.a2) obj4;
+                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj4;
                 TLObject tLObject = (TLObject) obj3;
                 TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) obj2;
                 TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj;
@@ -63,18 +63,18 @@ public final /* synthetic */ class y5 implements Runnable {
                 String str2 = (String) obj5;
                 ArrayList arrayList = ExternalActionActivity.x;
                 try {
-                    a2Var.dismiss();
-                } catch (Exception e) {
-                    FileLog.e(e);
+                    b2Var.dismiss();
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
                 if (tLObject != null) {
                     MessagesController.getInstance(i11).putUsers(authorizationform.users, false);
-                    gn0 gn0Var = new gn0(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str, str2, (String) null, authorizationform, (TL_account.Password) tLObject);
-                    gn0Var.C1 = true;
+                    kn0 kn0Var = new kn0(5, getauthorizationform.bot_id, getauthorizationform.scope, getauthorizationform.public_key, str, str2, (String) null, authorizationform, (TL_account.Password) tLObject);
+                    kn0Var.C1 = true;
                     if (AndroidUtilities.isTablet()) {
-                        externalActionActivity.d.c(-1, gn0Var);
+                        externalActionActivity.d.c(-1, kn0Var);
                     } else {
-                        externalActionActivity.c.c(-1, gn0Var);
+                        externalActionActivity.c.c(-1, kn0Var);
                     }
                     if (!AndroidUtilities.isTablet()) {
                         externalActionActivity.e.setVisibility(8);
@@ -88,46 +88,46 @@ public final /* synthetic */ class y5 implements Runnable {
                 }
                 return;
             default:
-                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj6;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj6;
                 TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription = (TLRPC.TL_inputStorePaymentPremiumSubscription) obj5;
-                cx0 cx0Var = (cx0) obj4;
+                fx0 fx0Var = (fx0) obj4;
                 c5.f fVar = (c5.f) obj3;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj;
                 if (!(((TLObject) obj7) instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.ui.Components.e5.f0(i11, tL_error, m2Var, tL_payments_canPurchaseStore, new Object[0]);
+                    org.telegram.ui.Components.e5.f0(i11, tL_error, n2Var, tL_payments_canPurchaseStore, new Object[0]);
                     return;
                 }
-                Activity parentActivity = m2Var != null ? m2Var.getParentActivity() : AndroidUtilities.getActivity();
+                Activity parentActivity = n2Var != null ? n2Var.getParentActivity() : AndroidUtilities.getActivity();
                 BillingController billingController = BillingController.getInstance();
-                AccountInstance accountInstance = m2Var.getAccountInstance();
+                AccountInstance accountInstance = n2Var.getAccountInstance();
                 of.b bVar = new of.b(7, z10);
-                bVar.U(BillingController.PREMIUM_PRODUCT_DETAILS);
-                cx0Var.a();
-                String str3 = cx0Var.g.a;
+                bVar.O(BillingController.PREMIUM_PRODUCT_DETAILS);
+                fx0Var.a();
+                String str3 = fx0Var.g.a;
                 if (TextUtils.isEmpty(str3)) {
                     throw new IllegalArgumentException("offerToken can not be empty");
                 }
                 bVar.c = str3;
-                billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumSubscription, Collections.singletonList(bVar.B()), fVar, false);
+                billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumSubscription, Collections.singletonList(bVar.s()), fVar, false);
                 return;
         }
     }
 
-    public /* synthetic */ y5(TLObject tLObject, org.telegram.ui.ActionBar.m2 m2Var, TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, cx0 cx0Var, c5.f fVar, int i10, TLRPC.TL_error tL_error, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
+    public /* synthetic */ y5(TLObject tLObject, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, fx0 fx0Var, c5.f fVar, int i10, TLRPC.TL_error tL_error, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
         this.f = tLObject;
-        this.d = m2Var;
+        this.d = n2Var;
         this.e = tL_inputStorePaymentPremiumSubscription;
-        this.b = cx0Var;
+        this.b = fx0Var;
         this.h = fVar;
         this.c = i10;
         this.n = tL_error;
         this.r = tL_payments_canPurchaseStore;
     }
 
-    public /* synthetic */ y5(ExternalActionActivity externalActionActivity, org.telegram.ui.ActionBar.a2 a2Var, TLObject tLObject, int i10, TL_account.authorizationForm authorizationform, TL_account.getAuthorizationForm getauthorizationform, String str, String str2) {
+    public /* synthetic */ y5(ExternalActionActivity externalActionActivity, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, int i10, TL_account.authorizationForm authorizationform, TL_account.getAuthorizationForm getauthorizationform, String str, String str2) {
         this.f = externalActionActivity;
-        this.b = a2Var;
+        this.b = b2Var;
         this.h = tLObject;
         this.c = i10;
         this.n = authorizationform;

@@ -5,7 +5,7 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class k {
     public final TLRPC.TL_premiumGiftOption a;
@@ -91,9 +91,9 @@ public final class k {
 
     public final long f() {
         if (this.f == 0) {
-            long e = e();
-            if (e != 0) {
-                this.f = e / d();
+            long e7 = e();
+            if (e7 != 0) {
+                this.f = e7 / d();
             }
         }
         return this.f;

@@ -1,32 +1,13 @@
 package w7;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class l8 {
-    public static boolean a(e9.l1 l1Var, Collection collection) {
-        collection.getClass();
-        if (collection instanceof x7.r) {
-            collection = ((x7.r) collection).zza();
-        }
-        boolean z10 = false;
-        if (!(collection instanceof Set) || collection.size() <= l1Var.size()) {
-            Iterator it = collection.iterator();
-            while (it.hasNext()) {
-                z10 |= l1Var.remove(it.next());
-            }
-            return z10;
-        }
-        Iterator<E> it2 = l1Var.iterator();
-        while (it2.hasNext()) {
-            if (collection.contains(it2.next())) {
-                it2.remove();
-                z10 = true;
+    public static void a(int i10, Object[] objArr) {
+        for (int i11 = 0; i11 < i10; i11++) {
+            if (objArr[i11] == null) {
+                throw new NullPointerException(hg.k0.h(i11, "at index "));
             }
         }
-        return z10;
     }
 }

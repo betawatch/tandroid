@@ -6,7 +6,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class w implements ThreadFactory {
     public final /* synthetic */ int a;
@@ -28,11 +28,11 @@ public final class w implements ThreadFactory {
                 newThread.setName("PlayBillingLibrary-" + atomicInteger.getAndIncrement());
                 return newThread;
             case 1:
-                Thread newThread2 = ((ThreadFactory) this.b).newThread(new l5.o(2, runnable));
+                Thread newThread2 = ((ThreadFactory) this.b).newThread(new l5.p(2, runnable));
                 newThread2.setName((String) this.c);
                 return newThread2;
             default:
-                Thread newThread3 = Executors.defaultThreadFactory().newThread(new w9.s(runnable));
+                Thread newThread3 = Executors.defaultThreadFactory().newThread(new w9.t(runnable));
                 newThread3.setName(((String) this.b) + ((AtomicLong) this.c).getAndIncrement());
                 return newThread3;
         }

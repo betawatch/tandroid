@@ -1,68 +1,278 @@
 package org.telegram.ui;
 
+import android.text.SpannableString;
+import android.text.style.CharacterStyle;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ua implements MessagesStorage.IntCallback {
+public final /* synthetic */ class ua implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ ua(Object obj, int i10) {
+    public /* synthetic */ ua(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, Object obj2, Object obj3, Object obj4, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = notificationCenterDelegate;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.f = obj4;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i10) {
-        nu0 nu0Var;
-        int i11 = this.a;
-        Object obj = this.b;
-        switch (i11) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
             case 0:
-                ((ub) obj).U0(true);
+                AndroidUtilities.runOnUIThread(new ai.z8((wb) this.b, (TLRPC.ChannelParticipant) obj, (ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.e, (ta) this.f));
                 break;
             case 1:
-                wn wnVar = ((in) obj).a;
-                if (i10 > 0 && wnVar.getParentActivity() != null && wnVar.fragmentView != null) {
-                    org.telegram.ui.Components.yc.a0(wnVar).m(org.telegram.ui.Components.xc.I, i10, 0, 0, wnVar.ea).j();
-                    break;
+                yn ynVar = (yn) this.b;
+                TLRPC.TL_document tL_document = (TLRPC.TL_document) this.c;
+                String str = (String) this.d;
+                MessageObject.SendAnimationData sendAnimationData = (MessageObject.SendAnimationData) this.f;
+                Long l4 = (Long) obj;
+                int i10 = ynVar.P3;
+                Object obj2 = this.e;
+                if (i10 == 1) {
+                    org.telegram.ui.Components.e5.M(ynVar.getParentActivity(), ynVar.R5, new a1.d(ynVar, tL_document, str, obj2, 4), ynVar.ca);
+                } else {
+                    ynVar.getSendMessagesHelper().sendSticker(tL_document, str, ynVar.R5, ynVar.l5, ynVar.V3, null, ynVar.j5, sendAnimationData, true, 0, 0, false, obj2, ynVar.D8(), l4.longValue(), ynVar.O8(), ynVar.e5);
+                    tL_document = tL_document;
                 }
+                ynVar.f9(false);
+                ynVar.W.o(tL_document);
+                ynVar.W.setFieldText("");
                 break;
             case 2:
-                ((NotificationsCustomSettingsActivity) obj).l0(true);
+                final yn ynVar2 = (yn) this.b;
+                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.c;
+                String str2 = (String) this.d;
+                TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) this.e;
+                CharacterStyle characterStyle = (CharacterStyle) this.f;
+                final TLRPC.User user = (TLRPC.User) obj;
+                final TLRPC.UserFull userFull = user != null ? ynVar2.getMessagesController().getUserFull(user.id) : null;
+                org.telegram.ui.Components.b80 I = org.telegram.ui.Components.b80.I(ynVar2, u1Var);
+                org.telegram.ui.Components.sm0 sm0Var = new org.telegram.ui.Components.sm0(ynVar2.getParentActivity(), ynVar2.ca);
+                I.p = new se(sm0Var, 1);
+                z zVar = new z(ynVar2, user, str2, 2);
+                org.telegram.ui.Components.b80 J = I.J();
+                J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new hu0(I, 25), false);
+                J.k();
+                J.c(R.drawable.msg_addbot, LocaleController.getString(R.string.CreateNewContact), new r1(ynVar2, I, str2), false);
+                J.c(R.drawable.menu_contact_existing, LocaleController.getString(R.string.AddToExistingContact), new hu0(zVar, 26), false);
+                if (tL_contact == null && (user == null || !ynVar2.getContactsController().contactsDict.containsKey(Long.valueOf(user.id)))) {
+                    I.c(R.drawable.msg_contact_add, LocaleController.getString(R.string.AddToContacts), new ei.n2(I, J, 4), false);
+                    I.k();
+                }
+                if (user == null) {
+                    I.c(R.drawable.menu_invit_telegram, LocaleController.getString(R.string.InviteToTelegramShort), new ue(ynVar2, str2, 8), false);
+                    I.c(R.drawable.msg_calls_regular, LocaleController.getString(R.string.VoiceCallViaCarrier), new ue(ynVar2, str2, 9), false);
+                    I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyNumber), new ue(ynVar2, str2, 10), false);
+                    I.k();
+                    I.p(13, -1, LocaleController.getString(R.string.NumberNotOnTelegram));
+                } else {
+                    I.c(R.drawable.msg_discussion, LocaleController.getString(R.string.SendMessage), new sg(ynVar2, user, 0), false);
+                    if (!UserObject.isUserSelf(user)) {
+                        final int i11 = 0;
+                        I.c(R.drawable.msg_calls, LocaleController.getString(R.string.VoiceCallViaTelegram), new Runnable() { // from class: org.telegram.ui.qg
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                boolean z10;
+                                boolean z11;
+                                switch (i11) {
+                                    case 0:
+                                        yn ynVar3 = ynVar2;
+                                        TLRPC.UserFull userFull2 = userFull;
+                                        if (userFull2 != null) {
+                                            ynVar3.getClass();
+                                            if (userFull2.video_calls_available) {
+                                                z10 = true;
+                                                org.telegram.ui.Components.voip.g2.m(user, false, z10, ynVar3.getParentActivity(), userFull2, ynVar3.getAccountInstance());
+                                                break;
+                                            }
+                                        }
+                                        z10 = false;
+                                        org.telegram.ui.Components.voip.g2.m(user, false, z10, ynVar3.getParentActivity(), userFull2, ynVar3.getAccountInstance());
+                                    default:
+                                        yn ynVar4 = ynVar2;
+                                        TLRPC.UserFull userFull3 = userFull;
+                                        if (userFull3 != null) {
+                                            ynVar4.getClass();
+                                            if (userFull3.video_calls_available) {
+                                                z11 = true;
+                                                org.telegram.ui.Components.voip.g2.m(user, true, z11, ynVar4.getParentActivity(), userFull3, ynVar4.getAccountInstance());
+                                                break;
+                                            }
+                                        }
+                                        z11 = false;
+                                        org.telegram.ui.Components.voip.g2.m(user, true, z11, ynVar4.getParentActivity(), userFull3, ynVar4.getAccountInstance());
+                                }
+                            }
+                        }, false);
+                        final int i12 = 1;
+                        I.c(R.drawable.msg_videocall, LocaleController.getString(R.string.VideoCallViaTelegram), new Runnable() { // from class: org.telegram.ui.qg
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                boolean z10;
+                                boolean z11;
+                                switch (i12) {
+                                    case 0:
+                                        yn ynVar3 = ynVar2;
+                                        TLRPC.UserFull userFull2 = userFull;
+                                        if (userFull2 != null) {
+                                            ynVar3.getClass();
+                                            if (userFull2.video_calls_available) {
+                                                z10 = true;
+                                                org.telegram.ui.Components.voip.g2.m(user, false, z10, ynVar3.getParentActivity(), userFull2, ynVar3.getAccountInstance());
+                                                break;
+                                            }
+                                        }
+                                        z10 = false;
+                                        org.telegram.ui.Components.voip.g2.m(user, false, z10, ynVar3.getParentActivity(), userFull2, ynVar3.getAccountInstance());
+                                    default:
+                                        yn ynVar4 = ynVar2;
+                                        TLRPC.UserFull userFull3 = userFull;
+                                        if (userFull3 != null) {
+                                            ynVar4.getClass();
+                                            if (userFull3.video_calls_available) {
+                                                z11 = true;
+                                                org.telegram.ui.Components.voip.g2.m(user, true, z11, ynVar4.getParentActivity(), userFull3, ynVar4.getAccountInstance());
+                                                break;
+                                            }
+                                        }
+                                        z11 = false;
+                                        org.telegram.ui.Components.voip.g2.m(user, true, z11, ynVar4.getParentActivity(), userFull3, ynVar4.getAccountInstance());
+                                }
+                            }
+                        }, false);
+                    }
+                    I.c(R.drawable.msg_calls_regular, LocaleController.getString(R.string.VoiceCallViaCarrier), new ue(ynVar2, str2, 6), false);
+                    I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyNumber), new ue(ynVar2, str2, 7), false);
+                    I.k();
+                    I.n(user, LocaleController.getString(R.string.ViewProfile), new r1(ynVar2, sm0Var, user, 16));
+                }
+                sm0Var.e(I);
+                if (characterStyle instanceof org.telegram.ui.Components.m61) {
+                    String url = ((org.telegram.ui.Components.m61) characterStyle).getURL();
+                    if (url == null) {
+                        url = "";
+                    }
+                    String trim = url.trim();
+                    if (trim.startsWith("tel:")) {
+                        trim = trim.substring(4);
+                    }
+                    if (trim.length() > 204) {
+                        trim = trim.substring(0, 204) + "…";
+                    }
+                    SpannableString spannableString = new SpannableString(trim);
+                    spannableString.setSpan(characterStyle, 0, spannableString.length(), 33);
+                    sm0Var.f(u1Var, characterStyle, spannableString, false);
+                } else {
+                    sm0Var.f(u1Var, characterStyle, null, false);
+                }
+                ynVar2.showDialog(sm0Var);
                 break;
             case 3:
-                PhotoViewer photoViewer = (PhotoViewer) obj;
-                if (photoViewer.y != null && (nu0Var = photoViewer.e0) != null && i10 > 0) {
-                    org.telegram.ui.Components.yc.F(nu0Var, true).j();
+                org.telegram.ui.Components.my myVar = (org.telegram.ui.Components.my) this.b;
+                String str3 = (String) this.f;
+                ArrayList arrayList = (ArrayList) this.c;
+                ArrayList arrayList2 = (ArrayList) this.d;
+                ArrayList arrayList3 = (ArrayList) this.e;
+                org.telegram.ui.Components.ny nyVar = myVar.a;
+                String str4 = nyVar.v;
+                ArrayList arrayList4 = nyVar.r;
+                ArrayList arrayList5 = nyVar.h;
+                ArrayList arrayList6 = nyVar.s;
+                org.telegram.ui.Components.nz nzVar = nyVar.F;
+                if (str3.equals(str4)) {
+                    org.telegram.ui.Components.nw nwVar = nzVar.V;
+                    org.telegram.ui.Components.zx zxVar = nzVar.P;
+                    int i13 = 0;
+                    nwVar.e(false);
+                    nyVar.y = true;
+                    s4.h0 adapter = zxVar.getAdapter();
+                    org.telegram.ui.Components.ny nyVar2 = nzVar.S;
+                    if (adapter != nyVar2) {
+                        zxVar.setAdapter(nyVar2);
+                    }
+                    arrayList5.clear();
+                    arrayList5.addAll(nyVar.n);
+                    arrayList4.clear();
+                    arrayList4.addAll(arrayList);
+                    arrayList6.clear();
+                    LongSparseIntArray longSparseIntArray = new LongSparseIntArray();
+                    int size = arrayList2.size();
+                    int i14 = 0;
+                    while (i14 < size) {
+                        Object obj3 = arrayList2.get(i14);
+                        i14++;
+                        org.telegram.ui.Components.gy gyVar = (org.telegram.ui.Components.gy) obj3;
+                        if (longSparseIntArray.indexOfKey(gyVar.c.id) < 0) {
+                            longSparseIntArray.append(gyVar.c.id, 1);
+                            arrayList6.add(gyVar);
+                        }
+                    }
+                    int size2 = arrayList3.size();
+                    while (i13 < size2) {
+                        Object obj4 = arrayList3.get(i13);
+                        i13++;
+                        org.telegram.ui.Components.gy gyVar2 = (org.telegram.ui.Components.gy) obj4;
+                        if (longSparseIntArray.indexOfKey(gyVar2.c.id) < 0) {
+                            longSparseIntArray.append(gyVar2.c.id, 1);
+                            arrayList6.add(gyVar2);
+                        }
+                    }
+                    nyVar.l();
                     break;
                 }
                 break;
             case 4:
-                ProfileActivity profileActivity = (ProfileActivity) obj;
-                if (i10 != 1) {
-                    profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(profileActivity.e1));
-                    break;
-                } else {
-                    NotificationCenter notificationCenter = profileActivity.getNotificationCenter();
-                    int i12 = NotificationCenter.closeChats;
-                    notificationCenter.removeObserver(profileActivity, i12);
-                    profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i12, new Object[0]);
-                    profileActivity.J1 = 0;
-                    profileActivity.finishFragment();
+                uy uyVar = (uy) this.b;
+                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.c;
+                Long l10 = (Long) this.d;
+                nd ndVar = (nd) this.e;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.f;
+                uyVar.getClass();
+                b2Var.dismiss();
+                uyVar.getMessagesController().loadChannelParticipants(l10);
+                oy oyVar = uyVar.C2;
+                uyVar.removeSelfFromStack();
+                ndVar.removeSelfFromStack();
+                n2Var.finishFragment();
+                if (oyVar != null) {
+                    ArrayList arrayList7 = new ArrayList();
+                    arrayList7.add(MessagesStorage.TopicKey.of(-l10.longValue(), 0L));
+                    oyVar.u(uyVar, arrayList7, null, false, uyVar.J2, uyVar.K2, uyVar.L2, null);
                     break;
                 }
+                break;
             default:
-                wf1 wf1Var = ((bf1) obj).a;
-                if (i10 != 0) {
-                    wf1Var.finishFragment();
-                    break;
-                } else {
-                    wf1Var.O0(false);
-                    break;
-                }
+                yh.x3.r0((yh.x3) this.b, (TL_stars.StarGift) this.c, (TL_stars.StarGiftAttribute) this.d, (org.telegram.ui.Components.ad[]) this.e, (boolean[]) this.f, (ArrayList) obj);
+                break;
         }
+    }
+
+    public /* synthetic */ ua(org.telegram.ui.Components.my myVar, String str, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3) {
+        this.a = 3;
+        this.b = myVar;
+        this.f = str;
+        this.c = arrayList;
+        this.d = arrayList2;
+        this.e = arrayList3;
     }
 }

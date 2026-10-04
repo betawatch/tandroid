@@ -3,7 +3,7 @@ package ci;
 import android.widget.FrameLayout;
 import org.telegram.ui.Components.bb0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y4 implements o1.f {
     public final /* synthetic */ int a;
@@ -34,13 +34,13 @@ public final /* synthetic */ class y4 implements o1.f {
                 break;
             case 1:
                 q6 q6Var2 = (q6) this.b;
-                qg.u1 u1Var = q6Var2.m1;
+                qg.t1 t1Var = q6Var2.m1;
                 if (hVar == q6Var2.v1) {
                     q6Var2.v1 = null;
                     if (!this.c) {
-                        u1Var.setVisibility(8);
+                        t1Var.setVisibility(8);
                     }
-                    u1Var.setMaskProvider(null);
+                    t1Var.setMaskProvider(null);
                     break;
                 }
                 break;

@@ -8,12 +8,12 @@ import android.graphics.RectF;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.ui.PrivacyControlActivity;
-import org.telegram.ui.v60;
-import yf.e0;
+import org.telegram.ui.z60;
+import w7.e9;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements gh.f, v60 {
+public final /* synthetic */ class a implements gh.f, z60 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -30,29 +30,29 @@ public final /* synthetic */ class a implements gh.f, v60 {
         Path.Direction direction;
         float f7;
         d dVar = (d) this.c;
-        float[] fArr2 = d.E;
-        c cVar = dVar.j;
+        float[] fArr2 = d.F;
+        c cVar = dVar.l;
         Path path = new Path();
         Path.Direction direction2 = Path.Direction.CW;
         path.addRoundRect(rectF, fArr, direction2);
         Paint paint2 = new Paint(1);
         paint2.setStyle(Paint.Style.FILL);
         paint2.setColor(this.a);
-        float f10 = dVar.n;
+        float f10 = dVar.o;
         if (f10 > 0.0f) {
-            paint2.setShadowLayer(f10, 0.0f, dVar.o, dVar.d);
+            paint2.setShadowLayer(f10, 0.0f, dVar.p, dVar.f);
         }
         canvas.drawPath(path, paint2);
-        if (dVar.n > 0.0f) {
+        if (dVar.o > 0.0f) {
             paint2.clearShadowLayer();
             canvas.drawPath(path, paint2);
         }
         if (this.b) {
             float[] copyOf = Arrays.copyOf(cVar.b, 8);
-            boolean c10 = e0.c(copyOf);
+            boolean a2 = e9.a(copyOf);
             float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
             Paint paint3 = new Paint(1);
-            if (Color.alpha(dVar.f) <= 0 || copyOf[0] <= 0.0f) {
+            if (Color.alpha(dVar.h) <= 0 || copyOf[0] <= 0.0f) {
                 paint = paint3;
                 direction = direction2;
                 f7 = 0.0f;
@@ -62,7 +62,7 @@ public final /* synthetic */ class a implements gh.f, v60 {
                 fArr2[1] = copyOf[1];
                 fArr2[2] = copyOf[2];
                 fArr2[3] = copyOf[3];
-                if (c10 && copyOf[0] > min) {
+                if (a2 && copyOf[0] > min) {
                     fArr2[3] = min;
                     fArr2[2] = min;
                     fArr2[1] = min;
@@ -78,10 +78,10 @@ public final /* synthetic */ class a implements gh.f, v60 {
                 float f13 = rectF.left;
                 float f14 = rectF.top;
                 path2.addRoundRect(f13, cVar.i + f14, rectF.right, Math.min(Math.max(copyOf[0], copyOf[2]) + f14, rectF.bottom), fArr2, Path.Direction.CCW);
-                paint.setColor(dVar.f);
+                paint.setColor(dVar.h);
                 canvas.drawPath(path2, paint);
             }
-            if (Color.alpha(dVar.g) <= 0 || copyOf[4] <= f7) {
+            if (Color.alpha(dVar.i) <= 0 || copyOf[4] <= f7) {
                 return;
             }
             Arrays.fill(fArr2, 0.0f);
@@ -89,7 +89,7 @@ public final /* synthetic */ class a implements gh.f, v60 {
             fArr2[5] = copyOf[5];
             fArr2[6] = copyOf[6];
             fArr2[7] = copyOf[7];
-            if (c10 && copyOf[0] > min) {
+            if (a2 && copyOf[0] > min) {
                 fArr2[7] = min;
                 fArr2[6] = min;
                 fArr2[5] = min;
@@ -98,12 +98,12 @@ public final /* synthetic */ class a implements gh.f, v60 {
             Path path3 = new Path();
             path3.addRoundRect(rectF.left, Math.max(rectF.bottom - Math.max(copyOf[4], copyOf[6]), rectF.top), rectF.right, rectF.bottom, fArr2, direction);
             path3.addRoundRect(rectF.left, Math.max(rectF.bottom - Math.max(copyOf[4], copyOf[6]), rectF.top), rectF.right, rectF.bottom - cVar.j, fArr2, Path.Direction.CCW);
-            paint.setColor(dVar.g);
+            paint.setColor(dVar.i);
             canvas.drawPath(path3, paint);
         }
     }
 
-    @Override // org.telegram.ui.v60
+    @Override // org.telegram.ui.z60
     public void b(ArrayList arrayList, boolean z10, boolean z11) {
         PrivacyControlActivity privacyControlActivity = (PrivacyControlActivity) this.c;
         boolean[] zArr = privacyControlActivity.E;

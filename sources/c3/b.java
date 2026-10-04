@@ -3,6 +3,7 @@ package c3;
 import android.util.Base64;
 import b2.p0;
 import b2.s0;
+import hg.k0;
 import java.io.EOFException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -13,7 +14,7 @@ import java.util.List;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.OneUIUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 12000, 11025, 8000, 7350};
@@ -445,7 +446,7 @@ public abstract class b {
         }
         int l4 = l(hVar);
         int i11 = hVar.i(4);
-        String h10 = hg.c.h(i10, "mp4a.40.");
+        String h10 = k0.h(i10, "mp4a.40.");
         if (i10 == 5 || i10 == 29) {
             l4 = l(hVar);
             int i12 = hVar.i(5);
@@ -602,13 +603,13 @@ public abstract class b {
     }
 
     public static p0 s(p pVar, boolean z10) {
-        org.webrtc.audio.b bVar = z10 ? null : q3.i.b;
+        org.telegram.ui.web.w wVar = z10 ? null : q3.i.b;
         e2.v vVar = new e2.v(10);
         p0 p0Var = null;
         int i10 = 0;
         while (true) {
             try {
-                pVar.a(0, 10, vVar.a);
+                pVar.b(0, 10, vVar.a);
                 vVar.J(0);
                 if (vVar.A() != 4801587) {
                     break;
@@ -619,17 +620,17 @@ public abstract class b {
                 if (p0Var == null) {
                     byte[] bArr = new byte[i11];
                     System.arraycopy(vVar.a, 0, bArr, 0, 10);
-                    pVar.a(10, w10, bArr);
-                    p0Var = new q3.i(bVar).c(i11, bArr);
+                    pVar.b(10, w10, bArr);
+                    p0Var = new q3.i(wVar).c(i11, bArr);
                 } else {
-                    pVar.l(w10);
+                    pVar.h(w10);
                 }
                 i10 += i11;
             } catch (EOFException unused) {
             }
         }
-        pVar.p();
-        pVar.l(i10);
+        pVar.m();
+        pVar.h(i10);
         if (p0Var == null || p0Var.a.length == 0) {
             return null;
         }
@@ -690,7 +691,7 @@ public abstract class b {
         return new of.b(jArr, jArr2, false, 6);
     }
 
-    public static j0 v(e2.v vVar, boolean z10, boolean z11) {
+    public static a4.m v(e2.v vVar, boolean z10, boolean z11) {
         if (z10) {
             x(3, vVar, false);
         }
@@ -703,7 +704,7 @@ public abstract class b {
         if (z11 && (vVar.x() & 1) == 0) {
             throw s0.a(null, "framing bit expected to be set");
         }
-        return new j0(strArr);
+        return new a4.m(strArr, 5);
     }
 
     public static void w(a4.h hVar) {

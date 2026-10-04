@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b extends c {
     public final y2.c g;
@@ -141,14 +141,14 @@ public final class b extends c {
                 }
                 v2.l lVar = lVarArr[i11];
                 if (lVar.next()) {
-                    x10 = lVar.g() - lVar.a();
+                    x10 = lVar.f() - lVar.a();
                     break;
                 }
                 i11++;
             }
         } else {
             v2.l lVar2 = lVarArr[this.r];
-            x10 = lVar2.g() - lVar2.a();
+            x10 = lVar2.f() - lVar2.a();
         }
         int i12 = this.s;
         if (i12 == 0) {

@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b extends c {
     public final AssetManager a;
@@ -30,8 +30,8 @@ public final class b extends c {
                 if (inputStream != null) {
                     inputStream.close();
                 }
-            } catch (IOException e) {
-                throw new a(e, 2000);
+            } catch (IOException e7) {
+                throw new a(e7, 2000);
             }
         } finally {
             this.c = null;
@@ -79,10 +79,10 @@ public final class b extends c {
             this.e = true;
             transferStarted(mVar);
             return this.d;
-        } catch (a e) {
-            throw e;
-        } catch (IOException e7) {
-            throw new a(e7, e7 instanceof FileNotFoundException ? 2005 : 2000);
+        } catch (a e7) {
+            throw e7;
+        } catch (IOException e10) {
+            throw new a(e10, e10 instanceof FileNotFoundException ? 2005 : 2000);
         }
     }
 
@@ -96,8 +96,8 @@ public final class b extends c {
             if (j3 != -1) {
                 try {
                     i11 = (int) Math.min(j3, i11);
-                } catch (IOException e) {
-                    throw new a(e, 2000);
+                } catch (IOException e7) {
+                    throw new a(e7, 2000);
                 }
             }
             InputStream inputStream = this.c;

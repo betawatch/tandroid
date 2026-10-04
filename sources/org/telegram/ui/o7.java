@@ -1,78 +1,33 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.ColorDrawable;
-import android.view.ViewGroup;
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class o7 extends g7 {
-    public org.telegram.ui.Cells.s7 n;
-    public final ArrayList r;
-    public org.telegram.ui.Components.rq s;
-    public final /* synthetic */ s7 v;
+public final class o7 extends og.a {
+    public u6 c;
+    public zh.a d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o7(s7 s7Var) {
-        super(s7Var, 1);
-        this.v = s7Var;
-        this.r = new ArrayList();
-    }
-
-    @Override // org.telegram.ui.g7, org.telegram.ui.f7
-    public final void F() {
-        super.F();
-        ArrayList arrayList = this.r;
-        arrayList.clear();
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList2 = this.e;
-            if (i10 >= arrayList2.size()) {
-                return;
+    public final boolean equals(Object obj) {
+        zh.a aVar;
+        zh.a aVar2;
+        u6 u6Var;
+        u6 u6Var2;
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && o7.class == obj.getClass()) {
+            o7 o7Var = (o7) obj;
+            int i10 = this.a;
+            if (i10 == o7Var.a) {
+                if (i10 == 1 && (u6Var = this.c) != null && (u6Var2 = o7Var.c) != null) {
+                    return u6Var.a == u6Var2.a;
+                }
+                if (i10 == 2 && (aVar = this.d) != null && (aVar2 = o7Var.d) != null) {
+                    return Objects.equals(aVar.a, aVar2.a);
+                }
             }
-            arrayList.add(new MediaController.PhotoEntry(0, 0, 0L, ((m7) arrayList2.get(i10)).d.a.getPath(), 0, ((m7) arrayList2.get(i10)).d.d == 1, 0, 0, 0L));
-            i10++;
         }
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        if (this.s == null) {
-            org.telegram.ui.Components.rq rqVar = new org.telegram.ui.Components.rq(new ColorDrawable(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.X9, false)), org.telegram.ui.ActionBar.h6.R4);
-            this.s = rqVar;
-            rqVar.w = true;
-        }
-        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) c1Var.a;
-        zh.a aVar = ((m7) this.e.get(i10)).d;
-        Object tag = t7Var.getTag();
-        ImageReceiver imageReceiver = t7Var.c;
-        boolean z10 = aVar == tag;
-        t7Var.setTag(aVar);
-        int max = (int) Math.max(100.0f, AndroidUtilities.getRealScreenSize().x / AndroidUtilities.density);
-        int i11 = aVar.d;
-        File file = aVar.a;
-        if (i11 == 1) {
-            imageReceiver.setImage(ImageLocation.getForPath("vthumb://0:" + file.getAbsolutePath()), a4.a.l(max, max, "_"), this.s, null, null, 0);
-            t7Var.m(AndroidUtilities.formatFileSize(aVar.c), true);
-        } else {
-            imageReceiver.setImage(ImageLocation.getForPath("thumb://0:" + file.getAbsolutePath()), a4.a.l(max, max, "_"), this.s, null, null, 0);
-            t7Var.m(AndroidUtilities.formatFileSize(aVar.c), false);
-        }
-        t7Var.i(this.v.f.j.contains(aVar), z10);
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        if (this.n == null) {
-            this.n = new org.telegram.ui.Cells.s7(viewGroup.getContext(), null);
-        }
-        n7 n7Var = new n7(this, viewGroup.getContext(), this.n, this.v.d.getCurrentAccount());
-        n7Var.setStyle(1);
-        return new org.telegram.ui.Components.il0(n7Var);
+        return false;
     }
 }

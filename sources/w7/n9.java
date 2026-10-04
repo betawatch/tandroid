@@ -1,61 +1,32 @@
 package w7;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class n9 {
-    public static String a(String str, Object... objArr) {
-        int length;
-        int length2;
-        int indexOf;
-        String k10;
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i11 >= length) {
-                break;
-            }
-            Object obj = objArr[i11];
-            if (obj == null) {
-                k10 = BuildConfig.BETA_URL;
-            } else {
-                try {
-                    k10 = obj.toString();
-                } catch (Exception e) {
-                    String D = a4.a.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e);
-                    k10 = org.telegram.ui.Cells.c1.k("<", D, " threw ", e.getClass().getName(), ">");
-                }
-            }
-            objArr[i11] = k10;
-            i11++;
+    public static boolean a(e9.l1 l1Var, Collection collection) {
+        collection.getClass();
+        if (collection instanceof z7.l) {
+            collection = ((z7.l) collection).zza();
         }
-        StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
-        int i12 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
-                break;
+        boolean z10 = false;
+        if (!(collection instanceof Set) || collection.size() <= l1Var.size()) {
+            Iterator it = collection.iterator();
+            while (it.hasNext()) {
+                z10 |= l1Var.remove(it.next());
             }
-            sb2.append((CharSequence) str, i12, indexOf);
-            sb2.append(objArr[i10]);
-            i10++;
-            i12 = indexOf + 2;
+            return z10;
         }
-        sb2.append((CharSequence) str, i12, str.length());
-        if (i10 < length2) {
-            sb2.append(" [");
-            sb2.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb2.append(", ");
-                sb2.append(objArr[i13]);
+        Iterator<E> it2 = l1Var.iterator();
+        while (it2.hasNext()) {
+            if (collection.contains(it2.next())) {
+                it2.remove();
+                z10 = true;
             }
-            sb2.append(']');
         }
-        return sb2.toString();
+        return z10;
     }
 }

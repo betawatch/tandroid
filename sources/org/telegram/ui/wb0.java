@@ -1,83 +1,172 @@
 package org.telegram.ui;
 
 import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class wb0 extends z60 {
-    public wb0(zb0 zb0Var, Bundle bundle) {
-        super(bundle);
+public final /* synthetic */ class wb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
+
+    public /* synthetic */ wb0(ProfileActivity profileActivity, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
     }
 
-    public static void t0(wb0 wb0Var, TLObject tLObject, HashSet hashSet, TLRPC.TL_error tL_error) {
-        int i10 = 0;
-        if (!(tLObject instanceof TLRPC.Updates)) {
-            if (!(tLObject instanceof TL_phone.groupCall)) {
-                if (tL_error != null) {
-                    zb0.b().d0(tL_error, false);
-                    return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        s01 s01Var;
+        switch (this.a) {
+            case 0:
+                ProfileActivity profileActivity = this.b;
+                e01 e01Var = profileActivity.O;
+                if (e01Var != null) {
+                    e01Var.Y0(14);
+                    profileActivity.G4(false);
+                    break;
                 }
-                return;
-            }
-            TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
-            MessagesController.getInstance(wb0Var.currentAccount).putUsers(groupcall.users, false);
-            MessagesController.getInstance(wb0Var.currentAccount).putChats(groupcall.chats, false);
-            if (LaunchActivity.G1 == null) {
-                return;
-            }
-            TLRPC.TL_inputGroupCall tL_inputGroupCall = new TLRPC.TL_inputGroupCall();
-            TLRPC.GroupCall groupCall = groupcall.call;
-            tL_inputGroupCall.id = groupCall.id;
-            tL_inputGroupCall.access_hash = groupCall.access_hash;
-            org.telegram.ui.Components.voip.g2.g(LaunchActivity.G1, wb0Var.currentAccount, tL_inputGroupCall, false, groupCall, hashSet);
-            return;
+                break;
+            case 1:
+                ProfileActivity profileActivity2 = this.b;
+                e01 e01Var2 = profileActivity2.O;
+                if (e01Var2 != null) {
+                    e01Var2.Y0(14);
+                    profileActivity2.G4(false);
+                    break;
+                }
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new wb0(this.b, 0), 200L);
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new wb0(this.b, 1), 200L);
+                break;
+            case 4:
+                ProfileActivity profileActivity3 = this.b;
+                profileActivity3.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of("/start", profileActivity3.e1, null, null, null, false, null, null, null, true, 0, 0, null, false));
+                break;
+            case 5:
+                this.b.z4(false);
+                break;
+            case 6:
+                ProfileActivity profileActivity4 = this.b;
+                profileActivity4.getClass();
+                profileActivity4.presentFragment(new UserInfoActivity());
+                break;
+            case 7:
+                this.b.z4(true);
+                break;
+            case 8:
+                ProfileActivity profileActivity5 = this.b;
+                profileActivity5.getClass();
+                profileActivity5.presentFragment(new hg.g1());
+                break;
+            case 9:
+                ProfileActivity profileActivity6 = this.b;
+                profileActivity6.getClass();
+                profileActivity6.presentFragment(new hg.e1());
+                break;
+            case 10:
+                ProfileActivity profileActivity7 = this.b;
+                profileActivity7.getClass();
+                profileActivity7.presentFragment(new sa(null));
+                break;
+            case 11:
+                ProfileActivity profileActivity8 = this.b;
+                profileActivity8.getClass();
+                profileActivity8.presentFragment(new UserInfoActivity());
+                break;
+            case 12:
+                ProfileActivity profileActivity9 = this.b;
+                profileActivity9.getClass();
+                profileActivity9.presentFragment(new h(3));
+                break;
+            case 13:
+                org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                l2Var.a = true;
+                this.b.showAsSheet(new PrivacyControlActivity(11, false), l2Var);
+                break;
+            case 14:
+                ProfileActivity profileActivity10 = this.b;
+                profileActivity10.k4(true);
+                if (profileActivity10.j2.isRunning()) {
+                    profileActivity10.j2.cancel();
+                }
+                profileActivity10.J4(1.0f);
+                break;
+            case 15:
+                this.b.e5(false, false);
+                break;
+            case 16:
+                this.b.F3();
+                break;
+            case 17:
+                ProfileActivity profileActivity11 = this.b;
+                e01 e01Var3 = profileActivity11.O;
+                if (e01Var3 != null) {
+                    e01Var3.v1(true);
+                    profileActivity11.O.n1();
+                    break;
+                }
+                break;
+            case 18:
+                ProfileActivity profileActivity12 = this.b;
+                profileActivity12.getMessagesController().reloadUser(profileActivity12.a());
+                break;
+            case 19:
+                ProfileActivity profileActivity13 = this.b;
+                if (!profileActivity13.a.c0() && (s01Var = profileActivity13.d) != null) {
+                    s01Var.l();
+                    break;
+                }
+                break;
+            case 20:
+                this.b.e5(false, false);
+                break;
+            case 21:
+                this.b.y5.setVisibility(8);
+                break;
+            case 22:
+                ProfileActivity profileActivity14 = this.b;
+                profileActivity14.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putLong("chat_id", profileActivity14.f1);
+                bundle.putLong("user_id", profileActivity14.e1);
+                profileActivity14.presentFragment(new y21(bundle));
+                break;
+            case 23:
+                ProfileActivity profileActivity15 = this.b;
+                profileActivity15.getClass();
+                profileActivity15.presentFragment(new sa(null));
+                break;
+            case 24:
+                ProfileActivity.U(this.b);
+                break;
+            case 25:
+                ProfileActivity profileActivity16 = this.b;
+                TLRPC.UserFull userFull = profileActivity16.v2;
+                if (userFull != null) {
+                    AndroidUtilities.addToClipboard(MessageObject.formatTextWithEntities(userFull.note, false));
+                    org.telegram.messenger.ok.o(R.string.TextCopied, org.telegram.ui.Components.yc.a0(profileActivity16));
+                    break;
+                }
+                break;
+            case 26:
+                ProfileActivity profileActivity17 = this.b;
+                profileActivity17.getClass();
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("user_id", profileActivity17.e1);
+                bundle2.putBoolean("focus_notes", true);
+                profileActivity17.presentFragment(new qs(bundle2, profileActivity17.z0));
+                break;
+            default:
+                this.b.G4(true);
+                break;
         }
-        TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-        MessagesController.getInstance(wb0Var.currentAccount).putUsers(updates.users, false);
-        MessagesController.getInstance(wb0Var.currentAccount).putChats(updates.chats, false);
-        ArrayList findUpdatesAndRemove = MessagesController.findUpdatesAndRemove(updates, TL_update.TL_updateGroupCall.class);
-        int size = findUpdatesAndRemove.size();
-        TLRPC.GroupCall groupCall2 = null;
-        while (i10 < size) {
-            Object obj = findUpdatesAndRemove.get(i10);
-            i10++;
-            groupCall2 = ((TL_update.TL_updateGroupCall) obj).call;
-        }
-        if (LaunchActivity.G1 == null || groupCall2 == null) {
-            return;
-        }
-        TLRPC.TL_inputGroupCall tL_inputGroupCall2 = new TLRPC.TL_inputGroupCall();
-        tL_inputGroupCall2.id = groupCall2.id;
-        tL_inputGroupCall2.access_hash = groupCall2.access_hash;
-        org.telegram.ui.Components.voip.g2.g(LaunchActivity.G1, wb0Var.currentAccount, tL_inputGroupCall2, false, groupCall2, hashSet);
-    }
-
-    @Override // org.telegram.ui.z60
-    public final void n0(HashSet hashSet) {
-        if (hashSet.size() == 1) {
-            TLRPC.User user = getMessagesController().getUser((Long) hashSet.iterator().next());
-            TLRPC.UserFull userFull = getMessagesController().getUserFull(user.id);
-            if (userFull == null) {
-                TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
-                tL_users_getFullUser.id = getMessagesController().getInputUser(user.id);
-                getConnectionsManager().sendRequest(tL_users_getFullUser, new lo(29, this, user));
-                return;
-            }
-            org.telegram.ui.Components.voip.g2.m(user, false, userFull.video_calls_available, getParentActivity(), userFull, getAccountInstance());
-        } else {
-            TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
-            createconferencecall.random_id = Utilities.random.nextInt();
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new vb0(0, this, hashSet));
-        }
-        finishFragment();
     }
 }

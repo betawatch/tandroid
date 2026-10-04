@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.ui.Components.RLottieNative;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class a0 {
     public static z D;
@@ -225,8 +225,8 @@ public final class a0 {
             fArr = fArr2;
             float f17 = (zVar.c / this.a) * 2.0f;
             t(fArr4, 12, f7 - f17, 1.0f, f17 - 1.0f);
-            float e = a4.a.e(zVar.d, this.a, 2.0f, -1.0f);
-            t(fArr4, 30, -1.0f, e, e);
+            float e7 = a4.a.e(zVar.d, this.a, 2.0f, -1.0f);
+            t(fArr4, 30, -1.0f, e7, e7);
             ByteBuffer duplicate = zVar.f.duplicate();
             duplicate.position(0);
             GLES20.glPixelStorei(3317, 1);
@@ -277,7 +277,7 @@ public final class a0 {
         }
         String glGetShaderInfoLog = GLES20.glGetShaderInfoLog(glCreateShader);
         GLES20.glDeleteShader(glCreateShader);
-        throw new IllegalStateException(v7.j.g("Unable to compile shader: ", glGetShaderInfoLog));
+        throw new IllegalStateException(t8.b.i("Unable to compile shader: ", glGetShaderInfoLog));
     }
 
     public static void d(int i10) {

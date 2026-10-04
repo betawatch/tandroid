@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class fd extends Drawable {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final class fd extends Drawable {
         float round = Math.round(f7 * 10.0f) / 10.0f;
         long j3 = (long) round;
         if (round == j3) {
-            return a4.a.p(j3, "");
+            return a4.a.o(j3, "");
         }
         return "" + round;
     }
@@ -63,9 +63,9 @@ public final class fd extends Drawable {
                 if (chatActivityEnterView.U0 != null) {
                     paint.setAlpha(Math.round(chatActivityEnterView.C3 * 102.0f));
                     float width = chatActivityEnterView.getWidth();
-                    float y3 = (chatActivityEnterView.U0.getY() - chatActivityEnterView.getHeight()) + org.telegram.ui.ActionBar.h6.i3.getIntrinsicHeight();
-                    qf qfVar = chatActivityEnterView.E0;
-                    canvas.drawRect(0.0f, 0.0f, width, y3 + (qfVar == null ? 0.0f : qfVar.getOffsetY()), paint);
+                    float y3 = (chatActivityEnterView.U0.getY() - chatActivityEnterView.getHeight()) + org.telegram.ui.ActionBar.i6.i3.getIntrinsicHeight();
+                    rf rfVar = chatActivityEnterView.E0;
+                    canvas.drawRect(0.0f, 0.0f, width, y3 + (rfVar == null ? 0.0f : rfVar.getOffsetY()), paint);
                     break;
                 }
                 break;
@@ -118,7 +118,7 @@ public final class fd extends Drawable {
                 int intrinsicWidth = (int) (drawable.getIntrinsicWidth() * 0.8f);
                 int intrinsicHeight = (int) (drawable.getIntrinsicHeight() * 0.8f);
                 int A = (int) com.google.android.gms.internal.vision.e2.A(imageReceiver.getImageWidth(), intrinsicWidth, 2.0f, imageReceiver.getImageX());
-                int imageHeight = (int) ((((imageReceiver.getImageHeight() / 2.0f) - intrinsicHeight) + imageReceiver.getImageY()) - ((1.0f - sr.k.getInterpolation(imageReceiver.getCurrentAlpha())) * AndroidUtilities.dp(16.0f)));
+                int imageHeight = (int) ((((imageReceiver.getImageHeight() / 2.0f) - intrinsicHeight) + imageReceiver.getImageY()) - ((1.0f - tr.k.getInterpolation(imageReceiver.getCurrentAlpha())) * AndroidUtilities.dp(16.0f)));
                 drawable.setAlpha((int) (imageReceiver.getAlpha() * Math.min(1.0f, imageReceiver.getCurrentAlpha() * 5.0f) * 255.0f));
                 drawable.setBounds(A, imageHeight, intrinsicWidth + A, intrinsicHeight + imageHeight);
                 drawable.draw(canvas);
@@ -257,11 +257,11 @@ public final class fd extends Drawable {
 
     public fd() {
         this.a = 3;
-        i.f fVar = new i.f(this, 4);
+        ah.d dVar = new ah.d(this, 5);
         o6 o6Var = new o6(false, true, true, false);
         this.c = o6Var;
-        o6Var.setCallback(fVar);
-        o6Var.k(0.3f, 165L, sr.h);
+        o6Var.setCallback(dVar);
+        o6Var.k(0.3f, 165L, tr.h);
         o6Var.b = 1;
         o6Var.u(AndroidUtilities.bold());
         o6Var.t(AndroidUtilities.dp(10.0f));

@@ -1,79 +1,76 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.LinearLayout;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class p41 extends w51 {
-    static {
-        w51.setup(new p41());
+public final class p41 extends p6 {
+    public final Paint s;
+    public final n90 v;
+    public final /* synthetic */ r41 w;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p41(r41 r41Var, Context context) {
+        super(context, false, false, false);
+        this.w = r41Var;
+        this.s = new Paint(1);
+        this.v = new n90();
     }
 
-    public static x51 a(int i10, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, View.OnClickListener onClickListener, boolean z10, View.OnClickListener onClickListener2, n nVar) {
-        x51 J = x51.J(p41.class);
-        J.d = i10;
-        J.l = charSequence;
-        J.m = charSequence2;
-        J.n = charSequence3;
-        J.D = onClickListener;
-        J.e = z10;
-        J.E = onClickListener2;
-        J.G = nVar;
-        return J;
+    @Override // org.telegram.ui.Components.p6, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (LocaleController.isRTL) {
+            AndroidUtilities.rectTmp.set(getWidth() - d(), (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, getWidth(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
+        } else {
+            AndroidUtilities.rectTmp.set(0.0f, (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, d(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
+        }
+        t41 t41Var = this.w.h;
+        int i10 = org.telegram.ui.ActionBar.i6.Pi;
+        String[] strArr = t41.R;
+        int l1 = org.telegram.ui.ActionBar.i6.l1(0.1175f, t41Var.getThemedColor(i10));
+        Paint paint = this.s;
+        paint.setColor(l1);
+        canvas.drawRoundRect(AndroidUtilities.rectTmp, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
+        if (this.v.f(canvas)) {
+            invalidate();
+        }
+        super.onDraw(canvas);
     }
 
-    public static x51 b(int i10, String str, String str2, String str3, m41 m41Var) {
-        return a(i10, str, str2, str3, m41Var, false, null, null);
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
-        q41 q41Var = (q41) view;
-        CharSequence charSequence = x51Var.l;
-        CharSequence charSequence2 = x51Var.m;
-        CharSequence charSequence3 = x51Var.n;
-        View.OnClickListener onClickListener = x51Var.D;
-        boolean z11 = x51Var.e;
-        View.OnClickListener onClickListener2 = x51Var.E;
-        Object obj = x51Var.G;
-        View.OnClickListener onClickListener3 = obj instanceof View.OnClickListener ? (View.OnClickListener) obj : null;
-        LinearLayout linearLayout = q41Var.r;
-        LinearLayout linearLayout2 = q41Var.h;
-        LinearLayout linearLayout3 = q41Var.b;
-        q41Var.c.setText(charSequence);
-        q41Var.d.setText(charSequence2);
-        q41Var.e.setText(charSequence3);
-        q41Var.f.setVisibility(onClickListener != null ? 0 : 8);
-        linearLayout3.setOnClickListener(onClickListener);
-        linearLayout3.setClickable(onClickListener != null);
-        q41Var.n.a(z11, false);
-        linearLayout2.setVisibility(onClickListener2 != null ? 0 : 8);
-        linearLayout2.setOnClickListener(onClickListener2);
-        linearLayout.setVisibility(onClickListener3 != null ? 0 : 8);
-        linearLayout.setOnClickListener(new ft(19, q41Var, onClickListener3));
-        q41Var.e();
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final boolean contentsEquals(x51 x51Var, x51 x51Var2) {
-        return TextUtils.equals(x51Var.l, x51Var2.l) && TextUtils.equals(x51Var.m, x51Var2.m) && TextUtils.equals(x51Var.n, x51Var2.n) && x51Var.E == x51Var2.E;
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final View createView(Context context, yl0 yl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        return new q41(context, d6Var);
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final boolean equals(x51 x51Var, x51 x51Var2) {
-        return x51Var.d == x51Var2.d;
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final boolean isClickable() {
-        return false;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.d6 d6Var;
+        t41 t41Var = this.w.h;
+        int action = motionEvent.getAction();
+        n90 n90Var = this.v;
+        if (action != 0) {
+            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                if (motionEvent.getAction() == 1) {
+                    performClick();
+                }
+                n90Var.d(true);
+                invalidate();
+            }
+            return super.onTouchEvent(motionEvent);
+        }
+        d6Var = ((org.telegram.ui.ActionBar.f3) t41Var).resourcesProvider;
+        r90 r90Var = new r90(null, d6Var, motionEvent.getX(), motionEvent.getY(), 0);
+        r90Var.d(org.telegram.ui.ActionBar.i6.l1(0.1175f, t41Var.getThemedColor(org.telegram.ui.ActionBar.i6.Pi)));
+        k90 b10 = r90Var.b();
+        if (LocaleController.isRTL) {
+            AndroidUtilities.rectTmp.set(getWidth() - d(), (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, getWidth(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
+        } else {
+            AndroidUtilities.rectTmp.set(0.0f, (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, d(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
+        }
+        b10.addRect(AndroidUtilities.rectTmp, Path.Direction.CW);
+        n90Var.a(r90Var, null);
+        invalidate();
+        return true;
     }
 }

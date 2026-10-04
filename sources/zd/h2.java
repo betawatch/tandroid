@@ -1,8 +1,8 @@
 package zd;
 
-import v7.o8;
+import v7.n8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class h2 implements id.f, id.g {
     public static final h2 a = new h2();
@@ -14,17 +14,17 @@ public final class h2 implements id.f, id.g {
 
     @Override // id.h
     public final id.f get(id.g gVar) {
-        return o8.a(this, gVar);
+        return n8.a(this, gVar);
     }
 
     @Override // id.h
     public final id.h minusKey(id.g gVar) {
-        return o8.b(this, gVar);
+        return n8.b(this, gVar);
     }
 
     @Override // id.h
     public final id.h plus(id.h hVar) {
-        return o8.c(this, hVar);
+        return n8.c(this, hVar);
     }
 
     @Override // id.f

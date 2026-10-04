@@ -48,12 +48,11 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.UUID;
 import java.util.concurrent.Executor;
-import k2.m;
 import r2.p;
 import u2.b0;
 import u2.f0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i implements b {
     public u0 E;
@@ -214,14 +213,14 @@ public final class i implements b {
             }
         }
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (bVar.E(0)) {
+        if (bVar.v(0)) {
             a aVar2 = (a) ((SparseArray) bVar.c).get(0);
             aVar2.getClass();
             if (this.v != null) {
                 r(aVar2.b, aVar2.d);
             }
         }
-        if (bVar.E(2) && this.v != null) {
+        if (bVar.v(2) && this.v != null) {
             g0 listIterator = b1Var.g0().a.listIterator(0);
             loop2: while (true) {
                 if (!listIterator.hasNext()) {
@@ -262,7 +261,7 @@ public final class i implements b {
                 builder.setDrmType(i16);
             }
         }
-        if (bVar.E(1011)) {
+        if (bVar.v(1011)) {
             this.Q++;
         }
         u0 u0Var = this.E;
@@ -306,10 +305,10 @@ public final class i implements b {
                             } else {
                                 if (cause instanceof OutOfMemoryError) {
                                     q0Var = new q0(14, 0);
-                                } else if (cause instanceof m) {
-                                    q0Var2 = new q0(17, ((m) cause).a);
-                                } else if (cause instanceof k2.o) {
-                                    q0Var2 = new q0(18, ((k2.o) cause).a);
+                                } else if (cause instanceof k2.n) {
+                                    q0Var2 = new q0(17, ((k2.n) cause).a);
+                                } else if (cause instanceof k2.p) {
+                                    q0Var2 = new q0(18, ((k2.p) cause).a);
                                 } else if (cause instanceof MediaCodec.CryptoException) {
                                     int errorCode = ((MediaCodec.CryptoException) cause).getErrorCode();
                                     switch (d0.x(errorCode)) {
@@ -387,7 +386,7 @@ public final class i implements b {
                                 }
                                 q0Var = new q0(i12, y3);
                             } else {
-                                q0Var = e.f(cause3) ? new q0(27, 0) : cause3 instanceof NotProvisionedException ? new q0(24, 0) : cause3 instanceof DeniedByServerException ? new q0(29, 0) : cause3 instanceof n2.x ? new q0(23, 0) : cause3 instanceof n2.c ? new q0(28, 0) : new q0(30, 0);
+                                q0Var = e.f(cause3) ? new q0(27, 0) : cause3 instanceof NotProvisionedException ? new q0(24, 0) : cause3 instanceof DeniedByServerException ? new q0(29, 0) : cause3 instanceof n2.x ? new q0(23, 0) : cause3 instanceof n2.d ? new q0(28, 0) : new q0(30, 0);
                             }
                         } else if ((cause instanceof g2.s) && (cause.getCause() instanceof FileNotFoundException)) {
                             Throwable cause4 = cause.getCause();
@@ -411,7 +410,7 @@ public final class i implements b {
             this.R = true;
             this.E = null;
         }
-        if (bVar.E(2)) {
+        if (bVar.v(2)) {
             s1 g02 = b1Var.g0();
             boolean a10 = g02.a(2);
             boolean a11 = g02.a(i13);
@@ -515,7 +514,7 @@ public final class i implements b {
                         }
                         if (b1Var.W() == null) {
                             this.N = false;
-                        } else if (bVar.E(i14)) {
+                        } else if (bVar.v(i14)) {
                             this.N = true;
                         }
                         int d = b1Var.d();
@@ -555,7 +554,7 @@ public final class i implements b {
                             this.R = z11;
                             this.b.execute(new gg.x1(24, this, new PlaybackStateEvent.Builder().setState(this.x).setTimeSinceCreatedMillis(elapsedRealtime - this.e).build()));
                         }
-                        if (bVar.E(1028)) {
+                        if (bVar.v(1028)) {
                             h hVar2 = this.c;
                             a aVar6 = (a) ((SparseArray) bVar.c).get(1028);
                             aVar6.getClass();
@@ -598,7 +597,7 @@ public final class i implements b {
                 }
                 if (this.x != i11) {
                 }
-                if (bVar.E(1028)) {
+                if (bVar.v(1028)) {
                 }
             }
         }
@@ -623,7 +622,7 @@ public final class i implements b {
         }
         if (this.x != i11) {
         }
-        if (bVar.E(1028)) {
+        if (bVar.v(1028)) {
         }
     }
 

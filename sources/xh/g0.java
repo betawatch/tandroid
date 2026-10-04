@@ -3,9 +3,9 @@ package xh;
 import android.app.Activity;
 import android.view.Menu;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class g0 extends ChatActivityEnterView {
     public final /* synthetic */ j0 o5;
@@ -25,6 +25,6 @@ public final class g0 extends ChatActivityEnterView {
 
     @Override // org.telegram.ui.Components.ChatActivityEnterView
     public final void h0(Menu menu) {
-        wn.k8(menu, null, false, false, false, false);
+        yn.k8(menu, null, false, false, false, false);
     }
 }

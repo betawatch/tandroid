@@ -1,9 +1,9 @@
 package org.telegram.messenger;
 
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ef implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class ef implements Runnable {
                 ((MessagesStorage) this.f).lambda$saveDiffParams$35(this.b, this.c, this.d, this.e);
                 break;
             case 1:
-                wn.B0((wn) this.f, this.b, this.c, this.d, this.e);
+                yn.s1((yn) this.f, this.b, this.c, this.d, this.e);
                 break;
             default:
                 ((TextureViewRenderer) this.f).lambda$onFrameResolutionChanged$0(this.b, this.c, this.d, this.e);

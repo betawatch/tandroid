@@ -2,13 +2,13 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.internal.zzpv;
 import com.google.android.recaptcha.internal.zzpw;
-import hg.c;
+import hg.k0;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, BuilderType extends zzpv<MessageType, BuilderType>> implements zztr {
     public static void zzd(Iterable iterable, List list) {
@@ -20,7 +20,7 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
             int size = list.size();
             for (Object obj : zza) {
                 if (obj == null) {
-                    String i10 = c.i(zzteVar.size() - size, "Element at index ", " is null.");
+                    String i10 = k0.i(zzteVar.size() - size, "Element at index ", " is null.");
                     int size2 = zzteVar.size();
                     while (true) {
                         size2--;
@@ -75,7 +75,7 @@ public abstract class zzpv<MessageType extends zzpw<MessageType, BuilderType>, B
     }
 
     private static void zze(List list, int i10) {
-        String i11 = c.i(list.size() - i10, "Element at index ", " is null.");
+        String i11 = k0.i(list.size() - i10, "Element at index ", " is null.");
         int size = list.size();
         while (true) {
             size--;

@@ -1,23 +1,86 @@
 package org.telegram.ui;
 
-import android.media.MediaFormat;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class jt0 implements a3.y {
-    public final /* synthetic */ PhotoViewer a;
+public final class jt0 extends org.telegram.ui.Components.d81 {
+    public final /* synthetic */ PhotoViewer m0;
 
     public jt0(PhotoViewer photoViewer) {
-        this.a = photoViewer;
+        this.m0 = photoViewer;
     }
 
-    @Override // a3.y
-    public final void a(long j3, long j10, b2.s sVar, MediaFormat mediaFormat) {
-        org.telegram.ui.Components.u71 u71Var;
-        PhotoViewer photoViewer = this.a;
-        if (photoViewer.J4 && (u71Var = photoViewer.F2) != null) {
-            AndroidUtilities.runOnUIThread(new xi0(22, this, u71Var));
+    @Override // org.telegram.ui.Components.d81
+    public final void B() {
+        super.B();
+        PhotoViewer photoViewer = this.m0;
+        if (photoViewer.u4 == 0) {
+            PhotoViewer.X(photoViewer, false);
         }
+        if (photoViewer.O8) {
+            return;
+        }
+        b5.d.D(n());
+        b5.d.x(false);
+    }
+
+    @Override // org.telegram.ui.Components.d81
+    public final void C() {
+        super.C();
+        PhotoViewer photoViewer = this.m0;
+        PhotoViewer.X(photoViewer, true);
+        if (photoViewer.O8) {
+            return;
+        }
+        b5.d.D(n());
+        b5.d.x(true);
+    }
+
+    @Override // org.telegram.ui.Components.d81
+    public final void K(long j3) {
+        L(j3, false);
+        PhotoViewer photoViewer = this.m0;
+        if (photoViewer.r1) {
+            PhotoViewer.Y(photoViewer, j3);
+        }
+        if (photoViewer.O8) {
+            return;
+        }
+        b5.d.D(j3);
+    }
+
+    @Override // org.telegram.ui.Components.d81
+    public final void Q(float f7) {
+        super.Q(f7);
+        if (this.m0.O8) {
+            return;
+        }
+        b5.d.z(f7);
+    }
+
+    @Override // org.telegram.ui.Components.d81, b2.z0
+    public final void onRenderedFirstFrame() {
+        b2.v0 h;
+        super.onRenderedFirstFrame();
+        PhotoViewer photoViewer = this.m0;
+        boolean z10 = true;
+        photoViewer.R = true;
+        if (photoViewer.D2) {
+            photoViewer.e0.invalidate();
+        }
+        photoViewer.z3();
+        if (!b5.d.u() && !photoViewer.r) {
+            z10 = false;
+        }
+        O(z10);
+        if (photoViewer.O8) {
+            return;
+        }
+        b5.d.D(n());
+        i2.f0 f0Var = this.d;
+        float f7 = 1.0f;
+        if (f0Var != null && (h = f0Var.h()) != null) {
+            f7 = h.a;
+        }
+        b5.d.z(f7);
     }
 }

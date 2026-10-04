@@ -5,9 +5,10 @@ import e9.i0;
 import e9.x0;
 import e9.y0;
 import e9.z;
+import hg.k0;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class l extends n implements Comparable {
     public final int e;
@@ -25,7 +26,7 @@ public final class l extends n implements Comparable {
         int i13;
         int i14;
         int i15 = 0;
-        this.f = hg.c.d(i12, false);
+        this.f = k0.d(i12, false);
         int i16 = this.d.e;
         int i17 = iVar.y;
         i0 i0Var = iVar.v;
@@ -61,7 +62,7 @@ public final class l extends n implements Comparable {
         int d = p.d(this.d, str, p.g(str) == null);
         this.w = d;
         boolean z11 = i14 > 0 || (i0Var.isEmpty() && i13 > 0) || this.h || (this.n && d > 0);
-        if (hg.c.d(i12, iVar.t0) && z11) {
+        if (k0.d(i12, iVar.t0) && z11) {
             i15 = 1;
         }
         this.e = i15;

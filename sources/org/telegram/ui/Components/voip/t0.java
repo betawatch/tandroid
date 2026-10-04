@@ -10,11 +10,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.w9;
-import w7.y5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class t0 extends FrameLayout {
     public final s0 a;
@@ -35,12 +35,12 @@ public final class t0 extends FrameLayout {
         s0Var.e = true;
         w9 w9Var = new w9(activity);
         this.b = w9Var;
-        addView(w9Var, y5.e(135, 135, 17));
+        addView(w9Var, z5.e(135, 135, 17));
         setWillNotDraw(false);
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
         animatorSet.playTogether(ObjectAnimator.ofFloat(this, (Property<t0, Float>) View.SCALE_X, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<t0, Float>) View.SCALE_Y, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f));
-        this.c.setInterpolator(sr.g);
+        this.c.setInterpolator(tr.g);
         this.c.setDuration(3000L);
         boolean isEnabled = LiteMode.isEnabled(512);
         this.f = isEnabled;
@@ -62,7 +62,7 @@ public final class t0 extends FrameLayout {
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.c = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<t0, Float>) View.SCALE_X, getScaleX(), 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<t0, Float>) View.SCALE_Y, getScaleY(), 1.05f, 1.0f));
-        this.c.setInterpolator(sr.g);
+        this.c.setInterpolator(tr.g);
         this.c.setDuration(400L);
         this.c.start();
     }

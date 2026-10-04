@@ -4,7 +4,7 @@ import android.content.Context;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class t7 extends nd {
     public final /* synthetic */ int b;
@@ -23,26 +23,26 @@ public final class t7 extends nd {
             case 0:
                 j8 j8Var = (j8) this.c;
                 j8Var.D0();
-                org.telegram.ui.tr trVar = j8Var.O;
-                if (trVar != null) {
-                    trVar.a(b5.d.u());
+                org.telegram.ui.xr xrVar = j8Var.O;
+                if (xrVar != null) {
+                    xrVar.a(b5.d.u());
                     break;
                 }
                 break;
             default:
                 PhotoViewer photoViewer = (PhotoViewer) this.c;
-                org.telegram.ui.ActionBar.e1 e1Var = photoViewer.F0;
-                if (e1Var != null) {
-                    e1Var.d(z10);
+                org.telegram.ui.ActionBar.f1 f1Var = photoViewer.F0;
+                if (f1Var != null) {
+                    f1Var.d(z10);
                     photoViewer.F0.setSelectorColor(z10 ? 259241196 : 268435455);
                 }
-                u71 u71Var = photoViewer.F2;
-                if (u71Var != null) {
-                    u71Var.O(b5.d.u() || photoViewer.r);
+                d81 d81Var = photoViewer.F2;
+                if (d81Var != null) {
+                    d81Var.O(b5.d.u() || photoViewer.r);
                 }
-                org.telegram.ui.tr trVar2 = photoViewer.w0;
-                if (trVar2 != null) {
-                    trVar2.a(b5.d.u());
+                org.telegram.ui.xr xrVar2 = photoViewer.w0;
+                if (xrVar2 != null) {
+                    xrVar2.a(b5.d.u());
                     break;
                 }
                 break;

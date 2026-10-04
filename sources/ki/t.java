@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.video.MP4Builder;
 import org.telegram.messenger.video.Mp4Movie;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class t {
     public final File a;
@@ -150,8 +150,8 @@ public final class t {
         try {
             this.i.finishMovie(file);
             this.d.b("MP4 preview written: file=" + file.getName() + ", size=" + file.length() + ", elapsedMs=" + ((System.nanoTime() - nanoTime) / 1000000));
-        } catch (Exception e) {
-            throw a("Unable to create preview MP4", e);
+        } catch (Exception e7) {
+            throw a("Unable to create preview MP4", e7);
         }
     }
 
@@ -168,8 +168,8 @@ public final class t {
             this.v = true;
             i(this.a.length());
             this.d.b("MP4 finalized: file=" + this.a.getName() + ", size=" + this.a.length() + ", videoSamples=" + this.o + ", audioSamples=" + this.p + ", elapsedMs=" + ((System.nanoTime() - nanoTime) / 1000000));
-        } catch (Exception e) {
-            throw a("Unable to finish MP4", e);
+        } catch (Exception e7) {
+            throw a("Unable to finish MP4", e7);
         }
     }
 
@@ -198,8 +198,8 @@ public final class t {
                     n(rVar.a, rVar.b, rVar.c);
                 }
                 arrayList.clear();
-            } catch (Exception e) {
-                throw a("Unable to initialize MP4", e);
+            } catch (Exception e7) {
+                throw a("Unable to initialize MP4", e7);
             }
         }
     }
@@ -208,14 +208,14 @@ public final class t {
     public final int h(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
         int i10 = bufferInfo.offset;
         int i11 = bufferInfo.size + i10;
-        int e = e(byteBuffer, i10, i11);
-        if (e == bufferInfo.offset) {
-            int l4 = l(byteBuffer, e, i11);
-            int e7 = e(byteBuffer, e + l4, i11);
-            if (l4 == 4 && e7 < 0) {
+        int e7 = e(byteBuffer, i10, i11);
+        if (e7 == bufferInfo.offset) {
+            int l4 = l(byteBuffer, e7, i11);
+            int e10 = e(byteBuffer, e7 + l4, i11);
+            if (l4 == 4 && e10 < 0) {
                 return 1;
             }
-            int i12 = e;
+            int i12 = e7;
             int i13 = 0;
             int i14 = 0;
             while (i12 >= 0) {
@@ -235,18 +235,18 @@ public final class t {
                 this.s.clear();
                 int position = byteBuffer.position();
                 int limit = byteBuffer.limit();
-                while (e >= 0) {
+                while (e7 >= 0) {
                     try {
-                        int l11 = e + l(byteBuffer, e, i11);
-                        int e10 = e(byteBuffer, l11, i11);
-                        int i16 = e10 < 0 ? i11 : e10;
+                        int l11 = e7 + l(byteBuffer, e7, i11);
+                        int e11 = e(byteBuffer, l11, i11);
+                        int i16 = e11 < 0 ? i11 : e11;
                         if (i16 > l11) {
                             this.s.putInt(i16 - l11);
                             byteBuffer.position(l11);
                             byteBuffer.limit(i16);
                             this.s.put(byteBuffer);
                         }
-                        e = e10;
+                        e7 = e11;
                     } catch (Throwable th2) {
                         byteBuffer.limit(limit);
                         byteBuffer.position(position);
@@ -370,8 +370,8 @@ public final class t {
                     return;
                 }
                 return;
-            } catch (Exception e) {
-                throw a("Unable to write MP4 sample", e);
+            } catch (Exception e7) {
+                throw a("Unable to write MP4 sample", e7);
             }
         }
         z11 = z10;

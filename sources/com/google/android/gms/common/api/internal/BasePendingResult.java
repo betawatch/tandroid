@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
-import v7.g5;
+import v7.f5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public abstract class BasePendingResult<R extends com.google.android.gms.common.api.q> extends g5 {
+public abstract class BasePendingResult<R extends com.google.android.gms.common.api.q> extends f5 {
     public static final n1 n = new n1(0);
     public final g b;
     public final WeakReference c;
@@ -44,13 +44,13 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
                 if (dataHolder != null) {
                     dataHolder.close();
                 }
-            } catch (RuntimeException e) {
-                Log.w("BasePendingResult", "Unable to release ".concat(String.valueOf(qVar)), e);
+            } catch (RuntimeException e7) {
+                Log.w("BasePendingResult", "Unable to release ".concat(String.valueOf(qVar)), e7);
             }
         }
     }
 
-    @Override // v7.g5
+    @Override // v7.f5
     public final void b(com.google.android.gms.common.api.o oVar) {
         synchronized (this.a) {
             try {

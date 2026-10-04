@@ -10,12 +10,12 @@ import java.util.List;
 import java.util.RandomAccess;
 import java.util.Timer;
 import kotlin.jvm.internal.i;
-import v7.t7;
+import v7.s7;
 import w7.g;
 import wd.c;
 import zd.e0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class zzgz implements zzgs {
     private static Timer zza;
@@ -124,7 +124,7 @@ public final class zzgz implements zzgs {
         byte[] zzd = ((zzwq) zzi.zzk()).zzd();
         try {
             int i11 = zzby.zza;
-            if (!((zzha) t7.a(zzgt.zza).a()).zza(zzd) || (zzgoVar = this.zzc) == null) {
+            if (!((zzha) s7.a(zzgt.zza).a()).zza(zzd) || (zzgoVar = this.zzc) == null) {
                 return;
             }
             zzgoVar.zza(arrayList);
@@ -144,7 +144,7 @@ public final class zzgz implements zzgs {
     public final void zza(zzzm zzzmVar) {
         try {
             int i10 = zzby.zza;
-            e0.q(((zzcr) t7.a(zzgx.zza).a()).zza(), new zzgy(this, zzzmVar, null));
+            e0.q(((zzcr) s7.a(zzgx.zza).a()).zza(), new zzgy(this, zzzmVar, null));
         } catch (Exception unused) {
         }
         zzh();

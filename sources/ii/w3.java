@@ -5,7 +5,7 @@ import android.text.SpannableStringBuilder;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class w3 {
     public final i1 a;
@@ -23,7 +23,7 @@ public final class w3 {
         this.c = i11;
         this.d = l4Var;
         if (l4Var == null || (textbutton = l4Var.a) == null) {
-            this.e = g6.f(new SpannableStringBuilder(i1Var.getText().subSequence(i10, i11)));
+            this.e = h6.f(new SpannableStringBuilder(i1Var.getText().subSequence(i10, i11)));
         } else {
             this.e = textbutton.text;
         }
@@ -41,11 +41,11 @@ public final class w3 {
                 return;
             }
             x3 x3Var = this.f;
-            i2 i2Var = x3Var.J3;
+            i2 i2Var = x3Var.Q3;
             if (i2Var != null) {
                 i2Var.d();
             }
-            k3 k3Var = x3Var.n3;
+            k3 k3Var = x3Var.u3;
             if (k3Var != null) {
                 k3Var.f(false);
             }
@@ -53,8 +53,8 @@ public final class w3 {
             for (l4 l4Var : (l4[]) text.getSpans(i10, i11, l4.class)) {
                 text.removeSpan(l4Var);
             }
-            g6.n(text, i10, i11);
-            g6.m(text, i10, i11);
+            h6.n(text, i10, i11);
+            h6.m(text, i10, i11);
             l4 l4Var2 = this.d;
             if (l4Var2 == null || (textbutton = l4Var2.a) == null) {
                 textbutton = new TL_iv.textButton();
@@ -65,23 +65,23 @@ public final class w3 {
                 textbutton.style = new TL_keyboard.RichButtonStyle();
             }
             l4 l4Var3 = new l4(textbutton);
-            l4Var3.a(x3Var.f3, i1Var, x3Var.g3);
+            l4Var3.a(x3Var.m3, i1Var, x3Var.n3);
             text.setSpan(l4Var3, i10, i11, 33);
             l4Var3.d(text);
             i1Var.setSelection(Math.min(i11, i1Var.length()));
-            x3Var.I3 = true;
+            x3Var.P3 = true;
             try {
                 i1Var.notifySpansChanged();
                 i1Var.requestLayout();
                 i1Var.invalidateEffects();
-                x3Var.I3 = false;
-                i2 i2Var2 = x3Var.J3;
+                x3Var.P3 = false;
+                i2 i2Var2 = x3Var.Q3;
                 if (i2Var2 != null) {
                     i2Var2.h();
                 }
-                x3Var.h3.onContentChanged();
+                x3Var.o3.onContentChanged();
             } catch (Throwable th2) {
-                x3Var.I3 = false;
+                x3Var.P3 = false;
                 throw th2;
             }
         }

@@ -5,9 +5,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class zl extends lu0 {
+public final class zl extends ou0 {
     public final /* synthetic */ MessageObject a;
     public final /* synthetic */ MediaController.PhotoEntry b;
     public final /* synthetic */ am c;
@@ -18,26 +18,26 @@ public final class zl extends lu0 {
         this.b = photoEntry;
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
-    public final vu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        return this.c.a.Q.Fa.E(this.a, fileLocation, i10, z10, false);
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    public final yu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return this.c.a.Q.Da.E(this.a, fileLocation, i10, z10, false);
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
         jm jmVar = this.c.a;
         MessageObject messageObject = this.a;
         messageObject.settingAvatar = true;
         MediaController.PhotoEntry photoEntry = this.b;
         if (photoEntry.imagePath != null || photoEntry.isVideo) {
-            wn wnVar = jmVar.Q;
-            aj ajVar = new aj(messageObject, 4);
-            org.telegram.ui.ActionBar.b5 parentLayout = wnVar.getParentLayout();
-            int currentAccount = wnVar.getCurrentAccount();
-            org.telegram.ui.Components.x40 x40Var = new org.telegram.ui.Components.x40(0, true, true);
-            x40Var.a = wnVar;
-            x40Var.t(photoEntry);
-            x40Var.b = new da(currentAccount, ajVar, parentLayout, x40Var);
+            yn ynVar = jmVar.Q;
+            bj bjVar = new bj(messageObject, 4);
+            org.telegram.ui.ActionBar.c5 parentLayout = ynVar.getParentLayout();
+            int currentAccount = ynVar.getCurrentAccount();
+            org.telegram.ui.Components.y40 y40Var = new org.telegram.ui.Components.y40(0, true, true);
+            y40Var.a = ynVar;
+            y40Var.t(photoEntry);
+            y40Var.b = new fa(currentAccount, bjVar, parentLayout, y40Var);
             return;
         }
         TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();

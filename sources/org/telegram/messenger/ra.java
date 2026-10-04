@@ -2,20 +2,20 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ra implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
     public final /* synthetic */ TLObject c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h6 d;
     public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
 
-    public /* synthetic */ ra(MessagesController messagesController, TLObject tLObject, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+    public /* synthetic */ ra(MessagesController messagesController, TLObject tLObject, org.telegram.ui.ActionBar.h6 h6Var, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
         this.a = i10;
         this.b = messagesController;
         this.c = tLObject;
-        this.d = g6Var;
+        this.d = h6Var;
         this.e = f6Var;
     }
 

@@ -4,8 +4,9 @@ import android.content.Context;
 import com.google.mlkit.common.internal.MlKitComponentDiscoveryService;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
+import org.telegram.ui.web.w;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object b = new Object();
@@ -32,16 +33,16 @@ public final class g {
             if (applicationContext != null) {
                 context = applicationContext;
             }
-            ArrayList q6 = new o0.a(12, context, new n2.e(MlKitComponentDiscoveryService.class, 14)).q();
+            ArrayList C = new o0.a(12, context, new k2.e(MlKitComponentDiscoveryService.class, 14)).C();
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
-            org.webrtc.audio.b bVar = q9.e.A;
-            arrayList.addAll(q6);
+            w wVar = q9.e.A;
+            arrayList.addAll(C);
             arrayList2.add(q9.a.c(context, Context.class, new Class[0]));
             arrayList2.add(q9.a.c(gVar2, g.class, new Class[0]));
-            q9.g gVar3 = new q9.g(executor, arrayList, arrayList2, bVar);
+            q9.g gVar3 = new q9.g(executor, arrayList, arrayList2, wVar);
             gVar2.a = gVar3;
-            gVar3.g(true);
+            gVar3.h(true);
             gVar = c;
         }
         return gVar;

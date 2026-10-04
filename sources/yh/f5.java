@@ -5,9 +5,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ye;
+import org.telegram.ui.bf;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f5 implements Utilities.Callback {
     public final /* synthetic */ t5 a;
@@ -51,9 +51,9 @@ public final /* synthetic */ class f5 implements Utilities.Callback {
         org.telegram.ui.ActionBar.d6 d6Var = this.g;
         if (starsPurchaseAvailable) {
             boolean[] zArr2 = {false};
-            l7 l7Var = new l7(context, d6Var, j10, 1, chatInvite.title, new ye((Object) t5Var, (Object) zArr2, str, (TLObject) chatInvite, (Object) zArr, (Object) callback2, (Object) callback, 10), 0L);
-            l7Var.setOnDismissListener(new org.telegram.ui.web.c0(t5Var, callback, zArr2, zArr, callback2, 1));
-            l7Var.show();
+            m7 m7Var = new m7(context, d6Var, j10, 1, chatInvite.title, new bf((Object) t5Var, (Object) zArr2, str, (TLObject) chatInvite, (Object) zArr, (Object) callback2, (Object) callback, 10), 0L);
+            m7Var.setOnDismissListener(new org.telegram.ui.web.d0(t5Var, callback, zArr2, zArr, callback2, 1));
+            m7Var.show();
             return;
         }
         if (callback != null) {

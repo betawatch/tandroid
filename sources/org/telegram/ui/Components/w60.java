@@ -1,30 +1,27 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w60 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y60 b;
+public final class w60 extends j90 {
+    public final /* synthetic */ a70 L;
 
-    public /* synthetic */ w60(y60 y60Var, int i10) {
-        this.a = i10;
-        this.b = y60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w60(a70 a70Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.f3 f3Var, boolean z10) {
+        super(context, n2Var, f3Var, false, z10);
+        this.L = a70Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o(this.b, tL_error, tLObject, 22));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new dv(16, this.b, tL_error));
-                break;
-        }
+    @Override // org.telegram.ui.Components.j90
+    public final void e(int i10, SpannableStringBuilder spannableStringBuilder) {
+        org.telegram.ui.ActionBar.d6 d6Var;
+        f70 f70Var = this.L.c;
+        org.telegram.ui.ActionBar.d3 d3Var = f70Var.container;
+        d6Var = ((org.telegram.ui.ActionBar.f3) f70Var).resourcesProvider;
+        rc Q = new yc(d3Var, d6Var).Q(i10, 36, spannableStringBuilder);
+        Q.r = false;
+        Q.k(true);
     }
 }

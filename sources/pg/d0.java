@@ -6,14 +6,14 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.widget.ImageView;
 import java.util.Iterator;
-import org.telegram.ui.o00;
-import rg.z1;
-import yh.k7;
+import org.telegram.ui.s00;
+import rg.b2;
+import yh.l7;
 import yh.o2;
 import yh.p2;
 import yh.r5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class d0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -47,20 +47,20 @@ public final class d0 extends AnimatorListenerAdapter {
                 break;
             case 1:
                 super.onAnimationEnd(animator);
-                qg.m0 m0Var = (qg.m0) this.b;
-                ImageView imageView = m0Var.c;
-                m0Var.c = m0Var.d;
-                m0Var.d = imageView;
+                qg.l0 l0Var = (qg.l0) this.b;
+                ImageView imageView = l0Var.c;
+                l0Var.c = l0Var.d;
+                l0Var.d = imageView;
                 imageView.bringToFront();
-                m0Var.d.setVisibility(8);
-                m0Var.h = null;
+                l0Var.d.setVisibility(8);
+                l0Var.h = null;
                 break;
             case 2:
-                qg.s1 s1Var = (qg.s1) this.b;
-                if (animator == s1Var.r) {
-                    s1Var.f = s1Var.h;
-                    s1Var.h = -1;
-                    s1Var.r = null;
+                qg.r1 r1Var = (qg.r1) this.b;
+                if (animator == r1Var.r) {
+                    r1Var.f = r1Var.h;
+                    r1Var.h = -1;
+                    r1Var.r = null;
                     break;
                 }
                 break;
@@ -68,14 +68,14 @@ public final class d0 extends AnimatorListenerAdapter {
                 ((r0.m0) this.b).c();
                 break;
             case 4:
-                rg.p0 p0Var = (rg.p0) this.b;
-                p0Var.n = p0Var.h ? 1.0f : 0.0f;
-                p0Var.e();
+                rg.q0 q0Var = (rg.q0) this.b;
+                q0Var.n = q0Var.h ? 1.0f : 0.0f;
+                q0Var.e();
                 break;
             case 5:
-                z1 z1Var = (z1) ((ci.c0) this.b).b;
-                z1Var.F = true;
-                z1Var.invalidate();
+                b2 b2Var = (b2) ((ci.c0) this.b).b;
+                b2Var.F = true;
+                b2Var.invalidate();
                 break;
             case 6:
                 super.onAnimationEnd(animator);
@@ -122,9 +122,9 @@ public final class d0 extends AnimatorListenerAdapter {
                 p2Var.G = null;
                 break;
             case 11:
-                o00 o00Var = ((k7) this.b).c;
-                o00Var.setScaleX(1.0f);
-                o00Var.setScaleY(1.0f);
+                s00 s00Var = ((l7) this.b).c;
+                s00Var.setScaleX(1.0f);
+                s00Var.setScaleY(1.0f);
                 break;
             case 12:
                 ((r5) this.b).run();

@@ -11,10 +11,10 @@ import jd.a;
 import kd.j;
 import l8.b;
 import rd.p;
-import v7.u7;
+import v7.t7;
 import zd.h0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 final class zzr extends j implements p {
     int zza;
@@ -53,7 +53,7 @@ final class zzr extends j implements p {
         try {
             try {
                 if (i10 == 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     h0Var = this.zzb.zzc;
                     if (h0Var == null) {
                         h0Var = null;
@@ -65,7 +65,7 @@ final class zzr extends j implements p {
                     }
                 } else {
                     if (i10 != 1) {
-                        u7.b(obj);
+                        t7.b(obj);
                         str2 = ((b) obj).a;
                         if (str2 != null) {
                             throw new IllegalStateException("Required value was null.");
@@ -78,7 +78,7 @@ final class zzr extends j implements p {
                         zzf.zzf((zzxj) zzf2.zzk());
                         return new f((zzxx) zzf.zzk());
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                 }
                 l8.a aVar2 = new l8.a();
                 zzu zzuVar = this.zzb;
@@ -88,13 +88,13 @@ final class zzr extends j implements p {
                 Application context = zzu.zzl(zzuVar);
                 kotlin.jvm.internal.i.e(context, "context");
                 a8.f fVar = new a8.f(context, a8.f.k, com.google.android.gms.common.api.b.t, com.google.android.gms.common.api.i.c);
-                v e = w.e();
-                e.d = new k6.c[]{l8.f.a};
-                e.c = new xa.c(aVar2, 1);
-                e.a = 34002;
-                Task e7 = fVar.e(0, e.a());
-                kotlin.jvm.internal.i.d(e7, "doRead(...)");
-                h0 zza = zzdf.zza(e7);
+                v e7 = w.e();
+                e7.d = new k6.c[]{l8.f.a};
+                e7.c = new xa.c(aVar2, 1);
+                e7.a = 34002;
+                Task e10 = fVar.e(0, e7.a());
+                kotlin.jvm.internal.i.d(e10, "doRead(...)");
+                h0 zza = zzdf.zza(e10);
                 this.zza = 2;
                 obj = zza.await(this);
                 if (obj == aVar) {
@@ -104,10 +104,10 @@ final class zzr extends j implements p {
                 if (str2 != null) {
                 }
             } catch (Exception unused) {
-                return new f(u7.a(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
+                return new f(t7.a(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
             }
         } catch (Exception unused2) {
-            return new f(u7.a(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
+            return new f(t7.a(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
         }
     }
 }

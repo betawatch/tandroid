@@ -1,78 +1,58 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.os.Bundle;
+import android.view.View;
+import java.util.ArrayList;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class aw implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ TLObject b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
+public final /* synthetic */ class aw implements org.telegram.ui.Components.ml0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ uy b;
 
-    public /* synthetic */ aw(TLObject tLObject, Context context, ai.a1 a1Var, long j3, byte[] bArr, org.telegram.messenger.video.a aVar, org.telegram.ui.Components.yc ycVar, org.telegram.messenger.video.d dVar) {
-        this.b = tLObject;
-        this.d = context;
-        this.e = a1Var;
-        this.c = j3;
-        this.f = bArr;
-        this.h = aVar;
-        this.n = ycVar;
-        this.r = dVar;
+    public /* synthetic */ aw(uy uyVar, int i10) {
+        this.a = i10;
+        this.b = uyVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.Components.ml0
+    public final void d(int i10, View view) {
         switch (this.a) {
             case 0:
-                qy.n0((qy) this.d, (org.telegram.ui.ActionBar.a2) this.e, this.b, (TLRPC.User) this.f, (TLRPC.Chat) this.h, this.c, (TLRPC.TL_error) this.n, (TLRPC.TL_messages_checkHistoryImportPeer) this.r);
-                break;
-            case 1:
-                Context context = (Context) this.d;
-                ai.a1 a1Var = (ai.a1) this.e;
-                byte[] bArr = (byte[]) this.f;
-                org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.h;
-                org.telegram.ui.Components.yc ycVar = (org.telegram.ui.Components.yc) this.n;
-                org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.r;
-                TLRPC.TL_channels_sponsoredMessageReportResultChooseOption tL_channels_sponsoredMessageReportResultChooseOption = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) this.b;
-                t31 t31Var = new t31(context, a1Var, this.c, bArr);
-                t31Var.O(tL_channels_sponsoredMessageReportResultChooseOption);
-                t31Var.s = new m31(aVar, ycVar, context, a1Var, dVar);
-                t31Var.show();
+                uy uyVar = this.b;
+                Object obj = uyVar.C0.w0.G(i10).G;
+                if (!(obj instanceof MessageObject)) {
+                    if (obj instanceof ai.v8) {
+                        ai.v8 v8Var = (ai.v8) obj;
+                        Bundle h = org.telegram.ui.Cells.c1.h(3, TeXSymbolParser.TYPE_ATTR);
+                        h.putString("hashtag", v8Var.C);
+                        h.putInt("storiesCount", v8Var.J);
+                        uyVar.presentFragment(new org.telegram.ui.Components.pa0(h, null));
+                        break;
+                    }
+                } else {
+                    MessageObject messageObject = (MessageObject) obj;
+                    Bundle bundle = new Bundle();
+                    if (messageObject.getDialogId() >= 0) {
+                        bundle.putLong("user_id", messageObject.getDialogId());
+                    } else {
+                        bundle.putLong("chat_id", -messageObject.getDialogId());
+                    }
+                    bundle.putInt("message_id", messageObject.getId());
+                    yn ynVar = new yn(bundle);
+                    uy.m4(ynVar, messageObject);
+                    uyVar.presentFragment(ynVar);
+                    break;
+                }
                 break;
             default:
-                yh.x3.C0((yh.x3) this.d, (nf.e) this.f, (org.telegram.ui.ActionBar.a2) this.e, this.b, (TL_stars.TL_starGiftUnique) this.h, (TLRPC.TL_error) this.n, this.c, (CharSequence) this.r);
+                uy uyVar2 = this.b;
+                uyVar2.b0.J0(true);
+                ArrayList arrayList = uyVar2.b0.e3;
+                uyVar2.t3(arrayList.isEmpty() ? gg.s0.j3[i10] : (gg.q0) arrayList.get(i10));
                 break;
         }
-    }
-
-    public /* synthetic */ aw(qy qyVar, org.telegram.ui.ActionBar.a2 a2Var, TLObject tLObject, TLRPC.User user, TLRPC.Chat chat, long j3, TLRPC.TL_error tL_error, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
-        this.d = qyVar;
-        this.e = a2Var;
-        this.b = tLObject;
-        this.f = user;
-        this.h = chat;
-        this.c = j3;
-        this.n = tL_error;
-        this.r = tL_messages_checkHistoryImportPeer;
-    }
-
-    public /* synthetic */ aw(yh.x3 x3Var, nf.e eVar, org.telegram.ui.ActionBar.a2 a2Var, TLObject tLObject, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLRPC.TL_error tL_error, long j3, CharSequence charSequence) {
-        this.d = x3Var;
-        this.f = eVar;
-        this.e = a2Var;
-        this.b = tLObject;
-        this.h = tL_starGiftUnique;
-        this.n = tL_error;
-        this.c = j3;
-        this.r = charSequence;
     }
 }

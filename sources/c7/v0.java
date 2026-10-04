@@ -7,7 +7,7 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class v0 extends o6.a {
     public static final Parcelable.Creator<v0> CREATOR = new r0(14);
@@ -36,8 +36,8 @@ public final class v0 extends o6.a {
                 jSONObject.put("results", jSONObject2);
             }
             return jSONObject;
-        } catch (JSONException e) {
-            throw new RuntimeException("Error encoding AuthenticationExtensionsPrfOutputs to JSON object", e);
+        } catch (JSONException e7) {
+            throw new RuntimeException("Error encoding AuthenticationExtensionsPrfOutputs to JSON object", e7);
         }
     }
 
@@ -54,16 +54,16 @@ public final class v0 extends o6.a {
     }
 
     public final String toString() {
-        return a4.a.q("AuthenticationExtensionsPrfOutputs{", b().toString(), "}");
+        return a4.a.p("AuthenticationExtensionsPrfOutputs{", b().toString(), "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.s(parcel, 1, 4);
+        int q6 = w7.g0.q(parcel, 20293);
+        w7.g0.s(parcel, 1, 4);
         parcel.writeInt(this.a ? 1 : 0);
         n7.s0 s0Var = this.b;
-        w7.f0.c(parcel, 2, s0Var == null ? null : s0Var.u());
-        w7.f0.r(parcel, q6);
+        w7.g0.c(parcel, 2, s0Var == null ? null : s0Var.u());
+        w7.g0.r(parcel, q6);
     }
 }

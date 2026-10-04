@@ -7,13 +7,12 @@ import androidx.biometric.t;
 import androidx.biometric.v;
 import androidx.biometric.x;
 import androidx.lifecycle.z;
-import e0.b;
 import java.lang.ref.WeakReference;
 import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a extends FingerprintManager.AuthenticationCallback {
     public final /* synthetic */ m a;
@@ -55,7 +54,7 @@ public final class a extends FingerprintManager.AuthenticationCallback {
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
     public final void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult authenticationResult) {
         m mVar = this.a;
-        aa.a L = b.L(b.f(authenticationResult));
+        aa.a L = e0.b.L(e0.b.f(authenticationResult));
         mVar.getClass();
         t tVar = null;
         if (L != null) {

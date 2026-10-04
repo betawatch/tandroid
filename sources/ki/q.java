@@ -13,11 +13,12 @@ import android.os.HandlerThread;
 import android.os.SystemClock;
 import android.util.Size;
 import android.view.Surface;
+import ii.n4;
 import ii.s2;
 import java.util.concurrent.CountDownLatch;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class q {
     public long B;
@@ -96,9 +97,9 @@ public final class q {
         if (z10) {
             return;
         }
-        StringBuilder h = v7.j.h(str, ": 0x");
-        h.append(Integer.toHexString(EGL14.eglGetError()));
-        throw new IllegalStateException(h.toString());
+        StringBuilder j3 = t8.b.j(str, ": 0x");
+        j3.append(Integer.toHexString(EGL14.eglGetError()));
+        throw new IllegalStateException(j3.toString());
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:38:0x0133, code lost:
@@ -203,13 +204,13 @@ public final class q {
             i10 = this.G;
             if (i10 != 0) {
             }
-        } catch (RuntimeException e) {
+        } catch (RuntimeException e7) {
             this.G = 0;
-            this.e.a("GL error", e);
+            this.e.a("GL error", e7);
             b bVar = this.k;
             if (bVar != null) {
-                k2.u uVar = bVar.a;
-                ((s0) uVar.b).i.post(new h0(1, uVar, e));
+                n4 n4Var = bVar.a;
+                ((s0) n4Var.b).i.post(new h0(1, n4Var, e7));
             }
         }
     }
@@ -371,12 +372,12 @@ public final class q {
                             qVar.b();
                         }
                     }
-                } catch (RuntimeException e) {
-                    qVar.e.a("GL error", e);
+                } catch (RuntimeException e7) {
+                    qVar.e.a("GL error", e7);
                     b bVar = qVar.k;
                     if (bVar != null) {
-                        k2.u uVar = bVar.a;
-                        ((s0) uVar.b).i.post(new h0(1, uVar, e));
+                        n4 n4Var = bVar.a;
+                        ((s0) n4Var.b).i.post(new h0(1, n4Var, e7));
                     }
                 }
             }
@@ -567,9 +568,9 @@ public final class q {
             if (runtimeException != null) {
                 throw runtimeException;
             }
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e7) {
             Thread.currentThread().interrupt();
-            throw new IllegalStateException("Input size update was interrupted", e);
+            throw new IllegalStateException("Input size update was interrupted", e7);
         }
     }
 

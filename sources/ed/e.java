@@ -6,9 +6,9 @@ import bf.s;
 import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
-import v7.b7;
+import v7.a7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class e extends h {
     public static final Pattern e = i.n;
@@ -126,7 +126,7 @@ public final class e extends h {
                     p pVar3 = (p) kVar.c;
                     p pVar4 = (p) kVar.d;
                     if (pVar3 != pVar4) {
-                        b7.b(pVar3, pVar4);
+                        a7.b(pVar3, pVar4);
                     }
                     sVar.g();
                     i iVar8 = this.a;

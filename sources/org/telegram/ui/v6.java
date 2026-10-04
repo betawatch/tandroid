@@ -1,46 +1,10 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class v6 extends org.telegram.ui.Components.ed {
-    public final /* synthetic */ x6 e0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v6(x6 x6Var, Context context) {
-        super(context, 11, org.telegram.ui.Components.ed.W, 0, org.telegram.ui.Components.ed.a0);
-        this.e0 = x6Var;
-    }
-
-    @Override // org.telegram.ui.Components.ed
-    public final void d(int i10, boolean z10) {
-        z6 z6Var = this.e0.e;
-        if (!z10) {
-            z6Var.b.j1();
-            return;
-        }
-        int i11 = -1;
-        if (i10 == 8) {
-            i10 = -1;
-        }
-        int i12 = 0;
-        while (true) {
-            if (i12 < z6Var.a0.size()) {
-                t6 t6Var = (t6) z6Var.a0.get(i12);
-                if (t6Var != null && t6Var.a == 11 && t6Var.f == i10) {
-                    i11 = i12;
-                    break;
-                }
-                i12++;
-            } else {
-                break;
-            }
-        }
-        if (i11 >= 0) {
-            z6Var.b.e1(new i2.w(i11, 7), 0, true);
-        } else {
-            z6Var.b.j1();
-        }
-    }
+public final class v6 {
+    public long a;
+    public final ArrayList b = new ArrayList();
 }

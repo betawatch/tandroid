@@ -1,8 +1,6 @@
 package a3;
 
-import ei.d5;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,7 +23,7 @@ public final /* synthetic */ class j0 implements Runnable {
                 String str = e2.d0.a;
                 j2.f fVar = ((i2.c0) l0Var).a.s;
                 j2.a p5 = fVar.p();
-                fVar.q(p5, 1015, new j2.c(p5, gVar, 21));
+                fVar.q(p5, 1015, new j2.c(p5, gVar, 22));
                 break;
             default:
                 of.b bVar2 = this.b;
@@ -37,7 +35,7 @@ public final /* synthetic */ class j0 implements Runnable {
                 i2.f0 f0Var = ((i2.c0) l0Var2).a;
                 j2.f fVar2 = f0Var.s;
                 j2.a n10 = fVar2.n((u2.f0) fVar2.d.e);
-                fVar2.q(n10, 1020, new d5(n10, gVar2, 24));
+                fVar2.q(n10, 1020, new ei.f(n10, gVar2, 25));
                 f0Var.Q = null;
                 break;
         }

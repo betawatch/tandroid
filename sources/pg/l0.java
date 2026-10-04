@@ -11,12 +11,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.yc;
 import yh.k5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 } else {
                     string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckGiftsStatistic : R.string.BoostingCheckGiftsStatisticGroup);
                 }
-                qc M = ycVar.M(string2, AndroidUtilities.replaceSingleTag(string, h6.Gi, 0, new tg.c(chat), d6Var), i12);
+                rc M = ycVar.M(string2, AndroidUtilities.replaceSingleTag(string, i6.Gi, 0, new tg.c(chat), d6Var), i12);
                 M.j = 5000;
                 M.j();
                 break;

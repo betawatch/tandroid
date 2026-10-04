@@ -1,94 +1,41 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import java.util.HashMap;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class go0 implements TextWatcher {
-    public final /* synthetic */ oo0 a;
+public final class go0 implements qo0 {
+    public final /* synthetic */ so0 a;
 
-    public go0(oo0 oo0Var) {
-        this.a = oo0Var;
+    public go0(so0 so0Var) {
+        this.a = so0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String str;
-        boolean z10;
-        String str2;
-        oo0 oo0Var = this.a;
-        HashMap hashMap = oo0Var.c;
-        if (oo0Var.m0) {
-            return;
+    @Override // org.telegram.ui.qo0
+    public final void a(TL_account.Password password) {
+        this.a.a0 = password;
+    }
+
+    @Override // org.telegram.ui.qo0
+    public final void b() {
+        this.a.f0 = null;
+    }
+
+    @Override // org.telegram.ui.qo0
+    public final boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
+        so0 so0Var = this.a;
+        qo0 qo0Var = so0Var.T;
+        if (qo0Var != null) {
+            qo0Var.c(str, str2, z10, tL_inputPaymentCredentialsGooglePay, tL_paymentSavedCredentialsCard);
         }
-        oo0Var.m0 = true;
-        String d = gf.b.d(oo0Var.f[8].getText().toString(), false);
-        oo0Var.f[8].setText(d);
-        org.telegram.ui.Components.i40 i40Var = (org.telegram.ui.Components.i40) oo0Var.f[9];
-        if (d.length() == 0) {
-            i40Var.setHintText((String) null);
-            i40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
-        } else {
-            int i10 = 4;
-            if (d.length() > 4) {
-                while (true) {
-                    if (i10 < 1) {
-                        str = null;
-                        z10 = false;
-                        break;
-                    }
-                    String substring = d.substring(0, i10);
-                    if (((String) hashMap.get(substring)) != null) {
-                        String str3 = d.substring(i10) + oo0Var.f[9].getText().toString();
-                        oo0Var.f[8].setText(substring);
-                        str = str3;
-                        d = substring;
-                        z10 = true;
-                        break;
-                    }
-                    i10--;
-                }
-                if (!z10) {
-                    str = d.substring(1) + oo0Var.f[9].getText().toString();
-                    EditTextBoldCursor editTextBoldCursor = oo0Var.f[8];
-                    d = d.substring(0, 1);
-                    editTextBoldCursor.setText(d);
-                }
-            } else {
-                str = null;
-                z10 = false;
-            }
-            String str4 = (String) hashMap.get(d);
-            if (str4 == null || oo0Var.a.indexOf(str4) == -1 || (str2 = (String) oo0Var.d.get(d)) == null) {
-                i40Var.setHintText((String) null);
-                i40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
-            } else {
-                i40Var.setHintText(str2.replace('X', (char) 8211));
-                i40Var.setHint((CharSequence) null);
-            }
-            if (!z10) {
-                EditTextBoldCursor editTextBoldCursor2 = oo0Var.f[8];
-                editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
-            }
-            if (str != null) {
-                i40Var.requestFocus();
-                i40Var.setText(str);
-                i40Var.setSelection(i40Var.length());
-            }
+        if (so0Var.S0) {
+            so0Var.removeSelfFromStack();
         }
-        oo0Var.m0 = false;
+        return so0Var.T != null;
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.qo0
+    public final /* synthetic */ void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
     }
 }

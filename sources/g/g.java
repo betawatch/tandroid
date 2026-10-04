@@ -25,7 +25,7 @@ import m.v1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class g extends u implements DialogInterface {
     public final f f;
@@ -277,7 +277,7 @@ public class g extends u implements DialogInterface {
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public boolean onKeyDown(int i10, KeyEvent keyEvent) {
         NestedScrollView nestedScrollView = this.f.m;
-        if (nestedScrollView == null || !nestedScrollView.i(keyEvent)) {
+        if (nestedScrollView == null || !nestedScrollView.h(keyEvent)) {
             return super.onKeyDown(i10, keyEvent);
         }
         return true;
@@ -286,7 +286,7 @@ public class g extends u implements DialogInterface {
     @Override // android.app.Dialog, android.view.KeyEvent.Callback
     public boolean onKeyUp(int i10, KeyEvent keyEvent) {
         NestedScrollView nestedScrollView = this.f.m;
-        if (nestedScrollView == null || !nestedScrollView.i(keyEvent)) {
+        if (nestedScrollView == null || !nestedScrollView.h(keyEvent)) {
             return super.onKeyUp(i10, keyEvent);
         }
         return true;

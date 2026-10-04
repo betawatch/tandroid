@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.text.Layout;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class aa extends da {
     public final z9 u0;
@@ -20,7 +20,7 @@ public class aa extends da {
 
     public final void X(Canvas canvas) {
         Layout staticTextLayout = this.u0.getStaticTextLayout();
-        int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Md, this.h0);
+        int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Md, this.h0);
         this.o.setColor(v02);
         this.p.setColor(v02);
         i(canvas, staticTextLayout, this.u, this.v, true, true, 0.0f);
@@ -62,8 +62,8 @@ public class aa extends da {
             if (i15 >= 0) {
                 try {
                     return t9Var.a + layout.getOffsetForHorizontal(i15, i14);
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
             }
         }

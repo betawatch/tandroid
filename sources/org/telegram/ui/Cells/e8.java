@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class e8 extends ImageReceiver {
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 a;
@@ -24,9 +24,9 @@ public final class e8 extends ImageReceiver {
                 f8Var.K = AndroidUtilities.getDominantColor(((BitmapDrawable) drawable).getBitmap());
                 int i12 = f8Var.K;
                 if (i12 == -1 || i12 == 0) {
-                    f8Var.K = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.q5, this.a);
+                    f8Var.K = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.q5, this.a);
                 }
-                f8Var.J.setBackground(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(12.0f), f8Var.K));
+                f8Var.J.setBackground(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(12.0f), f8Var.K));
                 invalidate();
             }
         }

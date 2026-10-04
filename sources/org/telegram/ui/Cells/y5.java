@@ -8,7 +8,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class y5 extends FrameLayout {
     public w5[] a;
@@ -30,13 +30,13 @@ public final class y5 extends FrameLayout {
         w9Var.q(0, true);
         MediaController.PhotoEntry photoEntry = albumEntry.coverPhoto;
         if (photoEntry == null || photoEntry.path == null) {
-            w9Var2.setImageDrawable(org.telegram.ui.ActionBar.h6.R4);
+            w9Var2.setImageDrawable(org.telegram.ui.ActionBar.i6.R4);
         } else {
             w9Var2.p(photoEntry.orientation, photoEntry.invert, true);
             if (albumEntry.coverPhoto.isVideo) {
-                w9Var2.f("vthumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.h6.R4);
+                w9Var2.f("vthumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.i6.R4);
             } else {
-                w9Var2.f("thumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.h6.R4);
+                w9Var2.f("thumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.i6.R4);
             }
         }
         w5Var.b.setText(albumEntry.bucketName);
@@ -46,17 +46,17 @@ public final class y5 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         View[] viewArr = this.a;
-        int B = AndroidUtilities.isTablet() ? ok.B(4.0f, this.c - 1, AndroidUtilities.dp(490.0f) - AndroidUtilities.dp(12.0f)) / this.c : ok.B(4.0f, this.c - 1, AndroidUtilities.displaySize.x - AndroidUtilities.dp(12.0f)) / this.c;
+        int A = AndroidUtilities.isTablet() ? ok.A(4.0f, this.c - 1, AndroidUtilities.dp(490.0f) - AndroidUtilities.dp(12.0f)) / this.c : ok.A(4.0f, this.c - 1, AndroidUtilities.displaySize.x - AndroidUtilities.dp(12.0f)) / this.c;
         for (int i12 = 0; i12 < this.c; i12++) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i12].getLayoutParams();
             layoutParams.topMargin = AndroidUtilities.dp(4.0f);
-            layoutParams.leftMargin = (AndroidUtilities.dp(4.0f) + B) * i12;
-            layoutParams.width = B;
-            layoutParams.height = B;
+            layoutParams.leftMargin = (AndroidUtilities.dp(4.0f) + A) * i12;
+            layoutParams.width = A;
+            layoutParams.height = A;
             layoutParams.gravity = 51;
             viewArr[i12].setLayoutParams(layoutParams);
         }
-        super.onMeasure(i10, ok.C(4.0f, B, TLObject.FLAG_30));
+        super.onMeasure(i10, ok.B(4.0f, A, TLObject.FLAG_30));
     }
 
     public void setAlbumsCount(int i10) {

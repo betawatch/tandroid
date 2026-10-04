@@ -3,9 +3,9 @@ package ai;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.m50;
+import org.telegram.ui.r50;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class t2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -46,29 +46,29 @@ public final class t2 extends AnimatorListenerAdapter {
                 }
                 break;
             case 2:
-                ci.lc lcVar = (ci.lc) obj;
-                lcVar.L = null;
-                lcVar.I = f7;
-                lcVar.k();
-                lcVar.r.invalidate();
-                lcVar.n.invalidate();
+                ci.kc kcVar = (ci.kc) obj;
+                kcVar.L = null;
+                kcVar.I = f7;
+                kcVar.k();
+                kcVar.r.invalidate();
+                kcVar.n.invalidate();
                 runnable.run();
-                lcVar.P.unlock();
+                kcVar.P.unlock();
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
                 NotificationCenter.getGlobalInstance().runDelayedNotifications();
-                lcVar.o();
-                Runnable runnable2 = lcVar.Q;
+                kcVar.o();
+                Runnable runnable2 = kcVar.Q;
                 if (runnable2 != null) {
                     runnable2.run();
-                    lcVar.Q = null;
+                    kcVar.Q = null;
                 }
-                lcVar.r.invalidate();
-                lcVar.h0.invalidate();
+                kcVar.r.invalidate();
+                kcVar.h0.invalidate();
                 break;
             case 3:
-                m50 m50Var = (m50) obj;
-                m50Var.h = f7;
-                m50Var.a.invalidate();
+                r50 r50Var = (r50) obj;
+                r50Var.h = f7;
+                r50Var.a.invalidate();
                 if (runnable != null) {
                     runnable.run();
                     break;

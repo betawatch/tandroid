@@ -17,7 +17,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import java.io.IOException;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class q4 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,14 +69,14 @@ public final class q4 implements Runnable {
                 try {
                     super/*android.app.Activity*/.onBackPressed();
                     return;
-                } catch (IllegalStateException e) {
-                    if (!TextUtils.equals(e.getMessage(), "Can not perform this action after onSaveInstanceState")) {
-                        throw e;
+                } catch (IllegalStateException e7) {
+                    if (!TextUtils.equals(e7.getMessage(), "Can not perform this action after onSaveInstanceState")) {
+                        throw e7;
                     }
                     return;
-                } catch (NullPointerException e7) {
-                    if (!TextUtils.equals(e7.getMessage(), "Attempt to invoke virtual method 'android.os.Handler android.app.FragmentHostCallback.getHandler()' on a null object reference")) {
-                        throw e7;
+                } catch (NullPointerException e10) {
+                    if (!TextUtils.equals(e10.getMessage(), "Attempt to invoke virtual method 'android.os.Handler android.app.FragmentHostCallback.getHandler()' on a null object reference")) {
+                        throw e10;
                     }
                     return;
                 }
@@ -138,7 +138,7 @@ public final class q4 implements Runnable {
                 yVar.c(hVar2);
                 return;
             case 12:
-                qg.j jVar = ((ci.nb) this.b).J0;
+                qg.j jVar = ((ci.mb) this.b).J0;
                 if (jVar instanceof qg.v2) {
                     ((qg.v2) jVar).getEditText();
                     return;
@@ -159,8 +159,8 @@ public final class q4 implements Runnable {
                         return;
                     }
                     return;
-                } catch (SecurityException e10) {
-                    Log.d("GooglePlayServicesUtil", "Suppressing Security Exception %s in cancelAvailabilityErrorNotifications.", e10);
+                } catch (SecurityException e11) {
+                    Log.d("GooglePlayServicesUtil", "Suppressing Security Exception %s in cancelAvailabilityErrorNotifications.", e11);
                     return;
                 }
             case 14:
@@ -237,7 +237,7 @@ public final class q4 implements Runnable {
                 hVar.l();
                 return;
             case 27:
-                Object obj2 = ((a6.i) this.b).b;
+                Object obj2 = ((a4.m) this.b).b;
                 return;
             case 28:
                 org.telegram.ui.Cells.a0 a0Var = (org.telegram.ui.Cells.a0) this.b;
@@ -260,7 +260,7 @@ public final class q4 implements Runnable {
                 animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(v5Var.a, (Property<TextView, Float>) property, 1.0f));
                 v5Var.d.setDuration(250L);
                 v5Var.d.setInterpolator(new DecelerateInterpolator());
-                v5Var.d.addListener(new org.telegram.ui.t4(this, 9));
+                v5Var.d.addListener(new org.telegram.ui.u4(this, 9));
                 v5Var.d.start();
                 return;
         }
@@ -271,8 +271,8 @@ public final class q4 implements Runnable {
         this.b = obj;
     }
 
-    public q4(a6.i iVar, int i10) {
+    public q4(a4.m mVar, int i10) {
         this.a = 27;
-        this.b = iVar;
+        this.b = mVar;
     }
 }

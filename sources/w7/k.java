@@ -9,13 +9,13 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class k {
     public static a3.z a(File file, ki.t tVar, long j3, long j10, boolean z10) {
-        long e = e(file);
+        long e7 = e(file);
         long max = Math.max(0L, j3 * 1000);
-        long min = Math.min(e, Math.max(max, j10 * 1000));
+        long min = Math.min(e7, Math.max(max, j10 * 1000));
         MediaExtractor mediaExtractor = new MediaExtractor();
         try {
             mediaExtractor.setDataSource(file.getAbsolutePath());

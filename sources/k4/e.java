@@ -5,7 +5,7 @@ import c3.p;
 import com.google.android.gms.internal.vision.e2;
 import e2.v;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final byte[] a = {0, 0, 0, 0, 16, 0, Byte.MIN_VALUE, 0, 0, -86, 0, 56, -101, 113};
@@ -17,7 +17,7 @@ public abstract class e {
         if (i10 != 1380533830 && i10 != 1380333108) {
             return false;
         }
-        pVar.a(0, 4, vVar.a);
+        pVar.b(0, 4, vVar.a);
         vVar.J(0);
         int j3 = vVar.j();
         if (j3 == 1463899717) {
@@ -43,7 +43,7 @@ public abstract class e {
             if (j10 > 2147483647L) {
                 throw s0.c("Chunk is too large (~2GB+) to skip; id: " + i11);
             }
-            pVar.q((int) j10);
+            pVar.o((int) j10);
             b10 = d.b(pVar, vVar);
         }
     }

@@ -1,82 +1,66 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class rn0 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ int[] d;
+public final /* synthetic */ class rn0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ so0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rn0(Context context, int i10, int[] iArr, int[] iArr2) {
-        super(context);
-        this.b = i10;
-        this.c = iArr;
-        this.d = iArr2;
+    public /* synthetic */ rn0(so0 so0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = so0Var;
+        this.c = tL_error;
+        this.d = tLObject;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        this.a = true;
-        int dp = AndroidUtilities.dp(9.0f);
-        int i12 = this.b;
-        int i13 = (i12 - 1) * dp;
-        int[] iArr = this.c;
-        float f7 = 1.0f;
-        if ((iArr[0] * i12) + i13 <= size) {
-            setWeightSum(1.0f);
-            int childCount = getChildCount();
-            for (int i14 = 0; i14 < childCount; i14++) {
-                getChildAt(i14).getLayoutParams().width = 0;
-                ((LinearLayout.LayoutParams) getChildAt(i14).getLayoutParams()).weight = 1.0f / childCount;
-            }
-        } else if (this.d[0] + i13 <= size) {
-            setWeightSum(1.0f);
-            int i15 = size - i13;
-            int childCount2 = getChildCount();
-            for (int i16 = 0; i16 < childCount2; i16++) {
-                LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) getChildAt(i16).getLayoutParams();
-                layoutParams.width = 0;
-                float intValue = ((Integer) r9.getTag(R.id.width_tag)).intValue() / i15;
-                layoutParams.weight = intValue;
-                f7 -= intValue;
-            }
-            float f10 = f7 / (i12 - 1);
-            if (f10 > 0.0f) {
-                int childCount3 = getChildCount();
-                for (int i17 = 0; i17 < childCount3; i17++) {
-                    View childAt = getChildAt(i17);
-                    LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) childAt.getLayoutParams();
-                    if (((Integer) childAt.getTag(R.id.width_tag)).intValue() != iArr[0]) {
-                        layoutParams2.weight += f10;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                so0 so0Var = this.b;
+                so0Var.e0 = false;
+                if (this.c == null) {
+                    TL_account.Password password = (TL_account.Password) this.d;
+                    so0Var.a0 = password;
+                    if (!TwoStepVerificationActivity.i0(password, false)) {
+                        org.telegram.ui.Components.e5.x0(so0Var.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
+                        break;
+                    } else {
+                        TLRPC.PaymentForm paymentForm = so0Var.C0;
+                        if (paymentForm != null && so0Var.a0.has_password) {
+                            paymentForm.password_missing = false;
+                            paymentForm.can_save_credentials = true;
+                            so0Var.K0();
+                        }
+                        TwoStepVerificationActivity.m0(so0Var.a0);
+                        so0 so0Var2 = so0Var.f0;
+                        if (so0Var2 != null) {
+                            so0Var2.C0(so0Var.a0);
+                        }
+                        if (!so0Var.a0.has_password && so0Var.d0 == null) {
+                            pn0 pn0Var = new pn0(so0Var, 3);
+                            so0Var.d0 = pn0Var;
+                            AndroidUtilities.runOnUIThread(pn0Var, 5000L);
+                            break;
+                        }
                     }
                 }
-            }
-        } else {
-            setWeightSum(0.0f);
-            int childCount4 = getChildCount();
-            for (int i18 = 0; i18 < childCount4; i18++) {
-                getChildAt(i18).getLayoutParams().width = -2;
-                ((LinearLayout.LayoutParams) getChildAt(i18).getLayoutParams()).weight = 0.0f;
-            }
+                break;
+            case 1:
+                so0.T(this.b, this.c, this.d);
+                break;
+            default:
+                so0.W(this.b, this.c, this.d);
+                break;
         }
-        this.a = false;
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
-        }
-        super.requestLayout();
     }
 }

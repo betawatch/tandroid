@@ -6,9 +6,9 @@ import e2.d0;
 import java.io.IOException;
 import java.util.concurrent.Executors;
 import pg.c1;
-import u2.o1;
+import u2.l0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class l implements m {
     public static final k4.d d = new k4.d(0, -9223372036854775807L, false);
@@ -23,7 +23,7 @@ public final class l implements m {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public l(String str) {
-        this(new z2.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new o1(18)));
+        this(new z2.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new l0(20)));
         String concat = "ExoPlayer:Loader:".concat(str);
         String str2 = d0.a;
     }

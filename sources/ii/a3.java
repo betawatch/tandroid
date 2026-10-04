@@ -2,7 +2,7 @@ package ii;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a3 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,28 +19,28 @@ public final /* synthetic */ class a3 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                View z12 = this.b.z1(this.c);
-                if (z12 instanceof e6) {
-                    e6 e6Var = (e6) z12;
-                    e6Var.B();
-                    e6Var.getEditText().setSelection(0);
+                View B1 = this.b.B1(this.c);
+                if (B1 instanceof f6) {
+                    f6 f6Var = (f6) B1;
+                    f6Var.B();
+                    f6Var.getEditText().setSelection(0);
                     break;
                 }
                 break;
             case 1:
-                this.b.d3(this.c);
+                this.b.f3(this.c);
                 break;
             case 2:
-                this.b.d3(this.c);
+                this.b.f3(this.c);
                 break;
             case 3:
-                this.b.e3(this.c);
+                this.b.g3(this.c);
                 break;
             case 4:
-                this.b.d3(this.c);
+                this.b.f3(this.c);
                 break;
             default:
-                this.b.d3(this.c);
+                this.b.f3(this.c);
                 break;
         }
     }

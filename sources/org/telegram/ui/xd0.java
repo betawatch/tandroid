@@ -1,40 +1,106 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class xd0 extends yr {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object n;
+public final /* synthetic */ class xd0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ee0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xd0(Object obj, Context context, int i10) {
-        super(context);
-        this.h = i10;
-        this.n = obj;
+    public /* synthetic */ xd0(ee0 ee0Var, int i10) {
+        this.a = i10;
+        this.b = ee0Var;
     }
 
-    @Override // org.telegram.ui.yr
-    public final void a() {
-        switch (this.h) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                ((ae0) this.n).h(null);
+                this.b.p();
                 break;
             case 1:
-                ((ue0) this.n).h(null);
+                ee0 ee0Var = this.b;
+                ee0Var.postDelayed(new xd0(ee0Var, 2), 150L);
+                xd0 xd0Var = ee0Var.S;
+                ee0Var.removeCallbacks(xd0Var);
+                ee0Var.postDelayed(xd0Var, 3000L);
+                ee0Var.R = true;
                 break;
             case 2:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) this.n;
-                if (passcodeActivity.E != 0) {
-                    passcodeActivity.g0();
-                    break;
-                } else {
-                    postDelayed(new il0(this, 0), 260L);
+                be0 be0Var = this.b.a;
+                int i10 = 0;
+                be0Var.e = false;
+                be0Var.f[0].requestFocus();
+                while (true) {
+                    es[] esVarArr = be0Var.f;
+                    if (i10 >= esVarArr.length) {
+                        break;
+                    } else {
+                        esVarArr[i10].i(0.0f);
+                        i10++;
+                    }
+                }
+            case 3:
+                ee0 ee0Var2 = this.b;
+                ee0Var2.postDelayed(new xd0(ee0Var2, 5), 150L);
+                break;
+            case 4:
+                ee0 ee0Var3 = this.b;
+                de0 de0Var = ee0Var3.Q;
+                boolean z10 = false;
+                ee0Var3.R = false;
+                int i11 = 0;
+                while (true) {
+                    es[] esVarArr2 = ee0Var3.a.f;
+                    if (i11 >= esVarArr2.length) {
+                        if (de0Var.getCurrentView() != ee0Var3.e) {
+                            de0Var.showNext();
+                            FrameLayout frameLayout = ee0Var3.h;
+                            if (ee0Var3.f.getVisibility() != 0 && ee0Var3.W.F != 3 && !ee0Var3.P) {
+                                z10 = true;
+                            }
+                            AndroidUtilities.updateViewVisibilityAnimated(frameLayout, z10, 1.0f, true);
+                            break;
+                        }
+                    } else {
+                        esVarArr2[i11].i(0.0f);
+                        i11++;
+                    }
+                }
+                break;
+            case 5:
+                be0 be0Var2 = this.b.a;
+                int i12 = 0;
+                be0Var2.e = false;
+                be0Var2.f[0].requestFocus();
+                while (true) {
+                    es[] esVarArr3 = be0Var2.f;
+                    if (i12 >= esVarArr3.length) {
+                        break;
+                    } else {
+                        esVarArr3[i12].i(0.0f);
+                        i12++;
+                    }
+                }
+            case 6:
+                this.b.q(true);
+                break;
+            case 7:
+                this.b.r();
+                break;
+            default:
+                ee0 ee0Var4 = this.b;
+                org.telegram.ui.Components.nj0 nj0Var = ee0Var4.w;
+                nj0Var.getAnimatedDrawable().N(0, false, false);
+                nj0Var.d();
+                be0 be0Var3 = ee0Var4.a;
+                if (be0Var3 != null && be0Var3.f != null) {
+                    be0Var3.setText("");
+                    be0Var3.f[0].requestFocus();
                     break;
                 }
-            default:
-                ((zg1) this.n).C0();
                 break;
         }
     }

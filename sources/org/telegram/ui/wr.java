@@ -1,85 +1,55 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.KeyEvent;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class wr extends as {
-    public final /* synthetic */ int M;
-    public final /* synthetic */ int N;
-    public final /* synthetic */ yr O;
+public final class wr implements Drawable.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Drawable b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wr(yr yrVar, Context context, int i10, int i11) {
-        super(context);
-        this.O = yrVar;
-        this.M = i10;
-        this.N = i11;
-        this.e = 1.0f;
-        this.f = new o1.k(this, as.I);
-        this.h = new o1.k(this, as.J);
-        this.n = new o1.k(this, as.K);
-        this.r = new o1.k(this, as.L);
-        this.s = true;
-        this.v = 1.0f;
-        this.w = 1.0f;
-        this.H = false;
-        setBackground(null);
-        setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
-        setMovementMethod(null);
-        addTextChangedListener(new m0(this, 5));
+    public /* synthetic */ wr(int i10, Drawable drawable) {
+        this.a = i10;
+        this.b = drawable;
     }
 
-    @Override // android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        if (keyEvent.getKeyCode() == 4) {
-            return false;
-        }
-        int keyCode = keyEvent.getKeyCode();
-        yr yrVar = this.O;
-        int length = yrVar.f.length;
-        int i10 = this.M;
-        if (i10 >= length) {
-            return false;
-        }
-        if (keyEvent.getAction() != 1) {
-            return isFocused();
-        }
-        if (keyCode == 67 && yrVar.f[i10].length() == 1) {
-            yrVar.f[i10].m();
-            yrVar.f[i10].setText("");
-            return true;
-        }
-        if (keyCode == 67 && yrVar.f[i10].length() == 0 && i10 > 0) {
-            as[] asVarArr = yrVar.f;
-            asVarArr[i10 - 1].setSelection(asVarArr[i10 - 1].length());
-            for (int i11 = 0; i11 < i10; i11++) {
-                if (i11 == i10 - 1) {
-                    yrVar.f[i10 - 1].requestFocus();
-                } else {
-                    yrVar.f[i11].clearFocus();
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        switch (this.a) {
+            case 0:
+                ((xr) this.b).invalidateSelf();
+                break;
+            default:
+                org.telegram.ui.Cells.w0 w0Var = ((d11) this.b).h;
+                if (w0Var != null) {
+                    w0Var.invalidate();
+                    break;
                 }
-            }
-            yrVar.f[i10 - 1].m();
-            yrVar.f[i10 - 1].setText("");
-            return true;
+                break;
         }
-        if (keyCode >= 7 && keyCode <= 16) {
-            String num = Integer.toString(keyCode - 7);
-            if (yrVar.f[i10].getText() != null && num.equals(yrVar.f[i10].getText().toString())) {
-                if (i10 >= this.N - 1) {
-                    yrVar.a();
-                } else {
-                    yrVar.f[i10 + 1].requestFocus();
-                }
-                return true;
-            }
-            if (yrVar.f[i10].length() > 0) {
-                yrVar.f[i10].m();
-            }
-            yrVar.f[i10].setText(num);
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
+        switch (this.a) {
+            case 0:
+                ((xr) this.b).scheduleSelf(runnable, j3);
+                break;
         }
-        return true;
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                ((xr) this.b).unscheduleSelf(runnable);
+                break;
+        }
+    }
+
+    private final void b(Drawable drawable, Runnable runnable) {
+    }
+
+    private final void a(Drawable drawable, Runnable runnable, long j3) {
     }
 }

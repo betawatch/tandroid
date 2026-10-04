@@ -15,15 +15,15 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.h21;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.wv0;
-import v7.a7;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.q21;
+import org.telegram.ui.Components.tr;
+import v7.z6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class e0 {
-    public static final sr B = new sr(0.0d, 0.5d, 0.0d, 1.0d);
+    public static final tr B = new tr(0.0d, 0.5d, 0.0d, 1.0d);
     public m A;
     public final f1 a;
     public boolean b;
@@ -72,7 +72,7 @@ public final class e0 {
             */
             public final void run() {
                 i1 i1Var;
-                int e;
+                int e7;
                 double d;
                 long j3;
                 int i11;
@@ -141,7 +141,7 @@ public final class e0 {
                                     }
                                     long j10 = currentTimeMillis;
                                     if (arrayList.size() == 47) {
-                                        arrayList.add((k1) hg.c.g(1, f7));
+                                        arrayList.add((k1) hg.k0.g(1, f7));
                                     }
                                     ArrayList f10 = n1.f(arrayList);
                                     k1 b10 = n1.b(f10);
@@ -232,13 +232,13 @@ public final class e0 {
                                     if (i23 >= 0 && i23 < l.b.size() && arrayList.size() >= 1) {
                                         i1 i1Var2 = new i1(l.p(i23));
                                         if (i23 == 4) {
-                                            int e7 = n1.e(0, arrayList);
-                                            if (e7 > 0) {
-                                                if (e7 > 10) {
-                                                    e7 -= 2;
+                                            int e10 = n1.e(0, arrayList);
+                                            if (e10 > 0) {
+                                                if (e10 > 10) {
+                                                    e10 -= 2;
                                                 }
-                                                k1 k1Var9 = (k1) arrayList.get(e7);
-                                                k1 k1Var10 = (k1) arrayList.get(e7 / 2);
+                                                k1 k1Var9 = (k1) arrayList.get(e10);
+                                                k1 k1Var10 = (k1) arrayList.get(e10 / 2);
                                                 k1 k1Var11 = (k1) arrayList.get(0);
                                                 i1Var2.b = (float) k1Var9.a;
                                                 i1Var2.c = (float) k1Var9.b;
@@ -255,8 +255,8 @@ public final class e0 {
                                             l1 a11 = n1.a(arrayList);
                                             i1Var2.d = ((float) (a11.c - a11.a)) / 2.0f;
                                             i1Var2.e = ((float) (a11.d - a11.b)) / 2.0f;
-                                            if (i23 == 2 && (e = n1.e(1, arrayList)) > 0) {
-                                                k1 k1Var12 = (k1) arrayList.get(e);
+                                            if (i23 == 2 && (e7 = n1.e(1, arrayList)) > 0) {
+                                                k1 k1Var12 = (k1) arrayList.get(e7);
                                                 i1Var2.h = (float) Math.atan2(k1Var12.b - i1Var2.c, k1Var12.a - i1Var2.b);
                                             }
                                         }
@@ -270,13 +270,13 @@ public final class e0 {
                                             sb2.append(i1Var != null ? " (template#" + i21 + " shape#" + i23 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        AndroidUtilities.runOnUIThread(new h21(n1Var3, i1Var, i21, f10, 14));
+                                        AndroidUtilities.runOnUIThread(new q21(n1Var3, i1Var, i21, f10, 14));
                                         n1Var3.j.set(false);
                                     }
                                     i1Var = null;
                                     if (BuildVars.LOGS_ENABLED) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new h21(n1Var3, i1Var, i21, f10, 14));
+                                    AndroidUtilities.runOnUIThread(new q21(n1Var3, i1Var, i21, f10, 14));
                                     n1Var3.j.set(false);
                                 }
                             } finally {
@@ -331,8 +331,8 @@ public final class e0 {
                             }
                             open.close();
                             return;
-                        } catch (Exception e10) {
-                            FileLog.e(e10);
+                        } catch (Exception e11) {
+                            FileLog.e(e11);
                             return;
                         }
                 }
@@ -353,7 +353,7 @@ public final class e0 {
             */
             public final void run() {
                 i1 i1Var;
-                int e;
+                int e7;
                 double d;
                 long j3;
                 int i112;
@@ -422,7 +422,7 @@ public final class e0 {
                                     }
                                     long j10 = currentTimeMillis;
                                     if (arrayList.size() == 47) {
-                                        arrayList.add((k1) hg.c.g(1, f7));
+                                        arrayList.add((k1) hg.k0.g(1, f7));
                                     }
                                     ArrayList f10 = n1.f(arrayList);
                                     k1 b10 = n1.b(f10);
@@ -513,13 +513,13 @@ public final class e0 {
                                     if (i23 >= 0 && i23 < l.b.size() && arrayList.size() >= 1) {
                                         i1 i1Var2 = new i1(l.p(i23));
                                         if (i23 == 4) {
-                                            int e7 = n1.e(0, arrayList);
-                                            if (e7 > 0) {
-                                                if (e7 > 10) {
-                                                    e7 -= 2;
+                                            int e10 = n1.e(0, arrayList);
+                                            if (e10 > 0) {
+                                                if (e10 > 10) {
+                                                    e10 -= 2;
                                                 }
-                                                k1 k1Var9 = (k1) arrayList.get(e7);
-                                                k1 k1Var10 = (k1) arrayList.get(e7 / 2);
+                                                k1 k1Var9 = (k1) arrayList.get(e10);
+                                                k1 k1Var10 = (k1) arrayList.get(e10 / 2);
                                                 k1 k1Var11 = (k1) arrayList.get(0);
                                                 i1Var2.b = (float) k1Var9.a;
                                                 i1Var2.c = (float) k1Var9.b;
@@ -536,8 +536,8 @@ public final class e0 {
                                             l1 a11 = n1.a(arrayList);
                                             i1Var2.d = ((float) (a11.c - a11.a)) / 2.0f;
                                             i1Var2.e = ((float) (a11.d - a11.b)) / 2.0f;
-                                            if (i23 == 2 && (e = n1.e(1, arrayList)) > 0) {
-                                                k1 k1Var12 = (k1) arrayList.get(e);
+                                            if (i23 == 2 && (e7 = n1.e(1, arrayList)) > 0) {
+                                                k1 k1Var12 = (k1) arrayList.get(e7);
                                                 i1Var2.h = (float) Math.atan2(k1Var12.b - i1Var2.c, k1Var12.a - i1Var2.b);
                                             }
                                         }
@@ -551,13 +551,13 @@ public final class e0 {
                                             sb2.append(i1Var != null ? " (template#" + i21 + " shape#" + i23 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        AndroidUtilities.runOnUIThread(new h21(n1Var3, i1Var, i21, f10, 14));
+                                        AndroidUtilities.runOnUIThread(new q21(n1Var3, i1Var, i21, f10, 14));
                                         n1Var3.j.set(false);
                                     }
                                     i1Var = null;
                                     if (BuildVars.LOGS_ENABLED) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new h21(n1Var3, i1Var, i21, f10, 14));
+                                    AndroidUtilities.runOnUIThread(new q21(n1Var3, i1Var, i21, f10, 14));
                                     n1Var3.j.set(false);
                                 }
                             } finally {
@@ -612,8 +612,8 @@ public final class e0 {
                             }
                             open.close();
                             return;
-                        } catch (Exception e10) {
-                            FileLog.e(e10);
+                        } catch (Exception e11) {
+                            FileLog.e(e11);
                             return;
                         }
                 }
@@ -647,15 +647,15 @@ public final class e0 {
             if (z10 && (e1Var = f1Var.a) != null) {
                 e1Var.f();
             }
-            wv0 wv0Var = f1Var.getPainting().g;
+            fw0 fw0Var = f1Var.getPainting().g;
             w0 w0Var = this.g;
-            float a2 = a7.a((float) w0Var.a, (float) w0Var.b, 0.0f, 0.0f);
+            float a2 = z6.a((float) w0Var.a, (float) w0Var.b, 0.0f, 0.0f);
             w0 w0Var2 = this.g;
-            float max = Math.max(a2, a7.a((float) w0Var2.a, (float) w0Var2.b, wv0Var.a, 0.0f));
+            float max = Math.max(a2, z6.a((float) w0Var2.a, (float) w0Var2.b, fw0Var.a, 0.0f));
             w0 w0Var3 = this.g;
-            float a10 = a7.a((float) w0Var3.a, (float) w0Var3.b, 0.0f, wv0Var.b);
+            float a10 = z6.a((float) w0Var3.a, (float) w0Var3.b, 0.0f, fw0Var.b);
             w0 w0Var4 = this.g;
-            final float max2 = Math.max(max, Math.max(a10, a7.a((float) w0Var4.a, (float) w0Var4.b, wv0Var.a, wv0Var.b))) / 0.84f;
+            final float max2 = Math.max(max, Math.max(a10, z6.a((float) w0Var4.a, (float) w0Var4.b, fw0Var.a, fw0Var.b))) / 0.84f;
             ValueAnimator valueAnimator = this.r;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
@@ -693,7 +693,7 @@ public final class e0 {
             });
             this.x.addListener(new c0(this, w0Var6, max2, mVar, z10, y0Var));
             this.x.setDuration(450L);
-            this.x.setInterpolator(sr.h);
+            this.x.setInterpolator(tr.h);
             this.x.start();
             if (z10) {
                 BotWebViewVibrationEffect.IMPACT_HEAVY.vibrate();

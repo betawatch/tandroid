@@ -2,7 +2,7 @@ package bc;
 
 import qb.g;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements q9.d {
     public static final /* synthetic */ a b = new a(0);
@@ -14,7 +14,7 @@ public final /* synthetic */ class a implements q9.d {
     }
 
     @Override // q9.d
-    public final Object G(cf.c cVar) {
+    public final Object E(cf.c cVar) {
         switch (this.a) {
             case 0:
                 return new c((g) cVar.a(g.class));

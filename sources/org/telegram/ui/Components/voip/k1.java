@@ -17,7 +17,7 @@ import android.view.ViewPropertyAnimator;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import ci.bb;
+import ci.ab;
 import ci.m6;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
@@ -30,25 +30,24 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.ew0;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.ha0;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.th;
-import org.telegram.ui.Components.vv0;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.uh;
 import org.telegram.ui.Components.w9;
 import org.webrtc.RendererCommon;
-import w7.y5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class k1 implements NotificationCenter.NotificationCenterDelegate, rf.a {
-    public static final vv0 b0 = new vv0(new ha0(28), new ha0(29));
-    public static final vv0 c0 = new vv0(new e1(0), new e1(1));
+    public static final ew0 b0 = new ew0(new e1(0), new e1(1));
+    public static final ew0 c0 = new ew0(new e1(2), new e1(3));
     public static final k1 d0;
     public AccountInstance E;
     public ScaleGestureDetector F;
-    public n2.e G;
+    public k2.e G;
     public boolean H;
     public boolean I;
     public View J;
@@ -78,7 +77,7 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
     public FrameLayout h;
     public h n;
     public w9 r;
-    public bb s;
+    public ab s;
     public TLRPC.GroupCallParticipant v;
     public boolean w;
     public boolean x;
@@ -90,7 +89,7 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
         k1Var.n = new h();
         k1Var.w = true;
         k1Var.P = 1.0f;
-        k1Var.X = new i2.h0(k1Var, 20);
+        k1Var.X = new i2.h0(k1Var, 19);
         d0 = k1Var;
     }
 
@@ -98,7 +97,7 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
         k1 k1Var = d0;
         if (k1Var.V) {
             k1Var.V = false;
-            AndroidUtilities.runOnUIThread(new th(15), 100L);
+            AndroidUtilities.runOnUIThread(new uh(15), 100L);
             k1Var.E.getNotificationCenter().removeObserver(k1Var, NotificationCenter.groupCallUpdated);
             k1Var.E.getNotificationCenter().removeObserver(k1Var, NotificationCenter.applyGroupCallVisibleParticipants);
             NotificationCenter.getGlobalInstance().removeObserver(k1Var, NotificationCenter.didEndCall);
@@ -112,7 +111,7 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
             }
             AnimatorSet animatorSet = new AnimatorSet();
             animatorSet.setDuration(250L);
-            animatorSet.setInterpolator(sr.f);
+            animatorSet.setInterpolator(tr.f);
             animatorSet.playTogether(ObjectAnimator.ofFloat(k1Var.d, (Property<org.telegram.ui.f, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(k1Var.d, (Property<org.telegram.ui.f, Float>) View.SCALE_X, 0.1f), ObjectAnimator.ofFloat(k1Var.d, (Property<org.telegram.ui.f, Float>) View.SCALE_Y, 0.1f));
             animatorSet.addListener(new h1(k1Var));
             animatorSet.start();
@@ -164,17 +163,17 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
         if (i11 >= 23) {
             k1Var.F.setStylusScaleEnabled(false);
         }
-        k1Var.G = new n2.e(activity2, new i1(k1Var, scaledTouchSlop));
+        k1Var.G = new k2.e(activity2, new i1(k1Var, scaledTouchSlop));
         k1Var.e = new m6(k1Var, activity2);
         org.telegram.ui.f fVar = new org.telegram.ui.f(k1Var, activity2, i10);
         k1Var.d = fVar;
-        fVar.addView(k1Var.e, y5.c(-1.0f, -1));
+        fVar.addView(k1Var.e, z5.c(-1.0f, -1));
         k1Var.e.setOutlineProvider(new ai.k2(17));
         k1Var.e.setClipToOutline(true);
-        k1Var.e.setBackgroundColor(h6.w0(null, h6.gg, false));
+        k1Var.e.setBackgroundColor(i6.w0(null, i6.gg, false));
         w9 w9Var = new w9(activity2);
         k1Var.r = w9Var;
-        k1Var.e.addView(w9Var, y5.c(-1.0f, -1));
+        k1Var.e.addView(w9Var, z5.c(-1.0f, -1));
         t2 t2Var = new t2(activity2, false, false, false, false);
         k1Var.f = t2Var;
         t2Var.setAlpha(0.0f);
@@ -183,10 +182,10 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
         t2Var2.a0 = 0;
         t2Var2.d.setRotateTextureWithScreen(true);
         k1Var.f.d.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new j1(k1Var));
-        k1Var.e.addView(k1Var.f, y5.c(-1.0f, -1));
-        bb bbVar = new bb(k1Var, activity2, 27);
-        k1Var.s = bbVar;
-        k1Var.e.addView(bbVar, y5.c(-1.0f, -1));
+        k1Var.e.addView(k1Var.f, z5.c(-1.0f, -1));
+        ab abVar = new ab(k1Var, activity2, 28);
+        k1Var.s = abVar;
+        k1Var.e.addView(abVar, z5.c(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(activity2);
         k1Var.h = frameLayout;
         frameLayout.setAlpha(0.0f);
@@ -195,27 +194,27 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
         gradientDrawable.setColors(new int[]{1140850688, 0});
         gradientDrawable.setOrientation(GradientDrawable.Orientation.TOP_BOTTOM);
         view.setBackground(gradientDrawable);
-        k1Var.h.addView(view, y5.c(-1.0f, -1));
+        k1Var.h.addView(view, z5.c(-1.0f, -1));
         int dp = AndroidUtilities.dp(8.0f);
         ImageView imageView = new ImageView(activity2);
         imageView.setImageResource(R.drawable.pip_video_close);
-        int i12 = h6.hg;
-        imageView.setColorFilter(h6.w0(null, i12, false));
-        int i13 = h6.i6;
-        imageView.setBackground(h6.f0(h6.w0(null, i13, false), 1, -1));
+        int i12 = i6.hg;
+        imageView.setColorFilter(i6.w0(null, i12, false));
+        int i13 = i6.i6;
+        imageView.setBackground(i6.f0(i6.w0(null, i13, false), 1, -1));
         imageView.setPadding(dp, dp, dp, dp);
         imageView.setOnClickListener(new ai.e2(13));
         float f7 = 38;
         float f10 = 4;
-        k1Var.h.addView(imageView, y5.d(38, f7, 5, 0.0f, f10, f10, 0.0f));
+        k1Var.h.addView(imageView, z5.d(38, f7, 5, 0.0f, f10, f10, 0.0f));
         ImageView imageView2 = new ImageView(activity2);
         imageView2.setImageResource(R.drawable.pip_video_expand);
-        imageView2.setColorFilter(h6.w0(null, i12, false));
-        imageView2.setBackground(h6.f0(h6.w0(null, i13, false), 1, -1));
+        imageView2.setColorFilter(i6.w0(null, i12, false));
+        imageView2.setBackground(i6.f0(i6.w0(null, i13, false), 1, -1));
         imageView2.setPadding(dp, dp, dp, dp);
         imageView2.setOnClickListener(new o(activity2, 3));
-        k1Var.h.addView(imageView2, y5.d(38, f7, 5, 0.0f, f10, 48, 0.0f));
-        k1Var.e.addView(k1Var.h, y5.c(-1.0f, -1));
+        k1Var.h.addView(imageView2, z5.d(38, f7, 5, 0.0f, f10, 48, 0.0f));
+        k1Var.e.addView(k1Var.h, z5.c(-1.0f, -1));
         k1Var.b = (WindowManager) activity2.getSystemService("window");
         WindowManager.LayoutParams b10 = sf.c.b(activity2, false);
         k1Var.c = b10;
@@ -239,7 +238,7 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
         k1Var.b.addView(k1Var.d, k1Var.c);
         AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.setDuration(250L);
-        animatorSet.setInterpolator(sr.f);
+        animatorSet.setInterpolator(tr.f);
         animatorSet.playTogether(ObjectAnimator.ofFloat(k1Var.d, (Property<org.telegram.ui.f, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(k1Var.d, (Property<org.telegram.ui.f, Float>) View.SCALE_X, 1.0f), ObjectAnimator.ofFloat(k1Var.d, (Property<org.telegram.ui.f, Float>) View.SCALE_Y, 1.0f));
         animatorSet.addListener(new f1(k1Var, 0));
         animatorSet.start();
@@ -399,12 +398,12 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
         if (this.w != z11) {
             this.s.animate().cancel();
             ViewPropertyAnimator duration = this.s.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(150L);
-            sr srVar = sr.f;
-            duration.setInterpolator(srVar).start();
+            tr trVar = tr.f;
+            duration.setInterpolator(trVar).start();
             this.r.animate().cancel();
-            this.r.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(150L).setInterpolator(srVar).start();
+            this.r.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(150L).setInterpolator(trVar).start();
             this.f.animate().cancel();
-            this.f.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(150L).setInterpolator(srVar).start();
+            this.f.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(150L).setInterpolator(trVar).start();
             this.w = z11;
         }
         if (this.M == m() * this.P && this.N == l() * this.P) {
@@ -423,7 +422,7 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
         float f7 = this.Q;
         kVar.b = f7;
         kVar.c = true;
-        kVar.u.i = a4.a.B(m(), this.P, 2.0f, f7) >= AndroidUtilities.displaySize.x / 2.0f ? (r3 - (m() * this.P)) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+        kVar.u.i = a4.a.A(m(), this.P, 2.0f, f7) >= AndroidUtilities.displaySize.x / 2.0f ? (r3 - (m() * this.P)) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
         this.S.f();
         o1.k kVar2 = this.T;
         kVar2.b = this.R;
@@ -474,7 +473,7 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
     public final void o(boolean z10) {
         ValueAnimator duration = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f).setDuration(200L);
         this.L = duration;
-        duration.setInterpolator(sr.f);
+        duration.setInterpolator(tr.f);
         this.L.addUpdateListener(new r0(this, 2));
         this.L.addListener(new f1(this, 1));
         this.L.start();

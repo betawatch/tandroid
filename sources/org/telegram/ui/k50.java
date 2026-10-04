@@ -1,84 +1,106 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.os.Build;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class k50 implements org.telegram.ui.Components.w40 {
-    public float a;
-    public TLRPC.FileLocation b;
-    public TLRPC.FileLocation c;
-    public ImageLocation d;
-    public final long e;
-    public final /* synthetic */ d60 f;
+public final class k50 implements org.telegram.ui.Components.rk0 {
+    public final Path a = new Path();
+    public final Paint b;
+    public final /* synthetic */ h60 c;
 
-    public k50(d60 d60Var, long j3) {
-        this.f = d60Var;
-        this.e = j3;
+    public k50(h60 h60Var) {
+        this.c = h60Var;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setColor(-14603467);
     }
 
-    @Override // org.telegram.ui.Components.w40
-    public final void B(float f7) {
-        this.f.b.O(this.d, f7);
-        a(f7);
-    }
-
-    @Override // org.telegram.ui.Components.w40
-    public final void Q(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize) {
-        AndroidUtilities.runOnUIThread(new fi.k(this, inputFile, inputFile2, videoSize, d, str, photoSize2, photoSize, 3));
-    }
-
-    public final void a(float f7) {
-        this.a = f7;
-        j50 j50Var = this.f.Q;
-        if (j50Var == null) {
+    @Override // org.telegram.ui.Components.rk0
+    public final void h(View view, zg.o0 o0Var, boolean z10, boolean z11) {
+        TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
+        String str = o0Var.f;
+        if (str == null) {
+            str = "👍";
+        }
+        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+        tL_textWithEntities.text = str;
+        long j3 = o0Var.g;
+        if (j3 != 0) {
+            tL_messageEntityCustomEmoji.document_id = j3;
+            tL_messageEntityCustomEmoji.offset = 0;
+            tL_messageEntityCustomEmoji.length = str.length();
+            tL_textWithEntities.entities.add(tL_messageEntityCustomEmoji);
+        }
+        h60 h60Var = this.c;
+        h60Var.A1(tL_textWithEntities);
+        i40 i40Var = h60Var.H;
+        if (i40Var.m()) {
+            i40Var.j();
+        } else {
+            i40Var.d();
+        }
+        zg.b0 reactionsWindow = h60Var.K.getReactionsWindow();
+        if (reactionsWindow == null || reactionsWindow.q) {
             return;
         }
-        for (int i10 = 0; i10 < j50Var.getChildCount(); i10++) {
-            View childAt = j50Var.getChildAt(i10);
-            if (childAt instanceof org.telegram.ui.Cells.e4) {
-                org.telegram.ui.Cells.e4 e4Var = (org.telegram.ui.Cells.e4) childAt;
-                if (e4Var.c()) {
-                    org.telegram.ui.Cells.z3 z3Var = e4Var.x;
-                    z3Var.setProgress(f7);
-                    if (f7 < 1.0f) {
-                        AndroidUtilities.updateViewVisibilityAnimated(z3Var, true, 1.0f, true);
-                    } else {
-                        AndroidUtilities.updateViewVisibilityAnimated(z3Var, false, 1.0f, true);
-                    }
-                }
-            }
-        }
+        h60Var.K.getReactionsWindow().e();
+        h60Var.K.n();
     }
 
-    @Override // org.telegram.ui.Components.w40
-    public final /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.w40
-    public final /* synthetic */ vu0 getCloseIntoObject() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.w40
-    public final /* synthetic */ String getInitialSearchString() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.w40
-    public final /* synthetic */ boolean t() {
+    @Override // org.telegram.ui.Components.rk0
+    public final boolean j() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.w40
-    public final /* synthetic */ void P() {
+    @Override // org.telegram.ui.Components.rk0
+    public final /* synthetic */ boolean k() {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.w40
-    public final void L(boolean z10, boolean z11) {
+    @Override // org.telegram.ui.Components.rk0
+    public final void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+        Paint paint = this.b;
+        if (f7 > 0.0f) {
+            canvas.drawRoundRect(rectF, f7, f7, paint);
+        } else {
+            canvas.drawRect(rectF, paint);
+        }
+        if (Build.VERSION.SDK_INT < 29 || !canvas.isHardwareAccelerated()) {
+            return;
+        }
+        h60 h60Var = this.c;
+        if (h60Var.Q2 != null) {
+            canvas.save();
+            if (f7 > 0.0f) {
+                Path path = this.a;
+                path.rewind();
+                path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
+                path.close();
+                canvas.clipPath(path);
+            } else {
+                canvas.clipRect(rectF);
+            }
+            canvas.translate(-h60Var.K.getX(), -h60Var.K.getY());
+            float f12 = h60Var.R2;
+            canvas.scale(f12, f12);
+            canvas.drawRenderNode(h60Var.Q2);
+            canvas.restore();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public final boolean p() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public final /* synthetic */ void o() {
     }
 }

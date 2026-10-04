@@ -1,47 +1,69 @@
 package ci;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.graphics.RectF;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.tr;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public interface pc {
-    void A(float f7, int i10);
+public final class pc {
+    public int a;
+    public boolean b;
+    public tc c;
+    public String d;
+    public long e;
+    public long f;
+    public float g;
+    public float h;
+    public float i;
+    public final RectF j = new RectF();
+    public final org.telegram.ui.Components.e6 k;
+    public final /* synthetic */ vc l;
 
-    void D(float f7);
+    public pc(vc vcVar) {
+        this.l = vcVar;
+        this.k = new org.telegram.ui.Components.e6(vcVar, 360L, tr.h);
+    }
 
-    void F(float f7, boolean z10);
+    public static void a(pc pcVar, boolean z10) {
+        vc vcVar = pcVar.l;
+        if (vcVar.getMeasuredWidth() > 0) {
+            tc tcVar = pcVar.c;
+            if (tcVar == null || z10) {
+                if (tcVar != null) {
+                    tcVar.b();
+                    pcVar.c = null;
+                }
+                vc vcVar2 = pcVar.l;
+                boolean z11 = pcVar.b;
+                String str = pcVar.d;
+                int i10 = vcVar2.v1;
+                int i11 = vcVar2.y1;
+                int i12 = (i10 - i11) - i11;
+                int dp = AndroidUtilities.dp(38.0f);
+                long j3 = pcVar.e;
+                pcVar.c = new tc(vcVar2, z11, str, i12, dp, j3 > 2 ? Long.valueOf(j3) : null, vcVar.getMaxScrollDuration(), vcVar.Z0, vcVar.a1, new androidx.fragment.app.a0(pcVar, 29));
+            }
+        }
+    }
 
-    void J(long j3);
-
-    void O(boolean z10);
-
-    void R(float f7, int i10);
-
-    void T(float f7);
-
-    void Y(float f7);
-
-    void Z(float f7, int i10);
-
-    void a0(float f7);
-
-    void b0();
-
-    void e(int i10);
-
-    void h0(float f7);
-
-    void i(float f7);
-
-    void i0(int i10, long j3);
-
-    void l(float f7);
-
-    void l0(long j3);
-
-    void n(long j3, boolean z10);
-
-    void r();
-
-    void u(float f7);
-
-    void w(boolean z10);
+    public static void b(pc pcVar) {
+        vc vcVar = pcVar.l;
+        int i10 = pcVar.a;
+        if (i10 >= 0) {
+            ArrayList arrayList = vcVar.r;
+            if (i10 >= arrayList.size()) {
+                return;
+            }
+            nc ncVar = (nc) arrayList.get(pcVar.a);
+            if (vcVar.getMeasuredWidth() <= 0 || ncVar != null) {
+                return;
+            }
+            if (ncVar != null) {
+                ncVar.a();
+            }
+            arrayList.set(pcVar.a, new nc(vcVar, pcVar.d, (vcVar.getMeasuredWidth() - vcVar.getPaddingLeft()) - vcVar.getPaddingRight()));
+        }
+    }
 }

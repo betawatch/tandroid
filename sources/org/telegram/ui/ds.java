@@ -1,55 +1,58 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.R;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ds implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ms b;
-    public final /* synthetic */ TLRPC.User c;
+public final class ds implements ActionMode.Callback {
+    public final /* synthetic */ es a;
 
-    public /* synthetic */ ds(ms msVar, TLRPC.User user, int i10) {
-        this.a = i10;
-        this.b = msVar;
-        this.c = user;
+    public ds(es esVar) {
+        this.a = esVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String str;
-        switch (this.a) {
-            case 0:
-                ms msVar = this.b;
-                TLRPC.User user = this.c;
-                if (user != null && msVar.M == null && msVar.N == null) {
-                    if (user.phone == null && (str = msVar.L) != null) {
-                        user.phone = gf.b.d(str, false);
-                    }
-                    msVar.b.setText(user.first_name);
-                    org.telegram.ui.Cells.h3 h3Var = msVar.b.b;
-                    h3Var.setSelection(h3Var.length());
-                    msVar.c.setText(user.last_name);
-                }
-                TLRPC.UserFull userFull = msVar.getMessagesController().getUserFull(msVar.H);
-                if (userFull != null) {
-                    TLRPC.TL_textWithEntities tL_textWithEntities = userFull.note;
-                    if (tL_textWithEntities != null) {
-                        msVar.d.setText(tL_textWithEntities);
-                    } else {
-                        msVar.d.setText("");
-                    }
-                }
-                if (msVar.J) {
-                    msVar.d.b.requestFocus();
-                    AndroidUtilities.showKeyboard(msVar.d.b);
-                    break;
-                }
-                break;
-            default:
-                ms.V(this.b, this.c);
-                break;
+    @Override // android.view.ActionMode.Callback
+    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+        ClipboardManager clipboardManager;
+        ClipData primaryClip;
+        int i10;
+        if (menuItem.getItemId() != 16908322) {
+            return true;
         }
+        es esVar = this.a;
+        cs csVar = esVar.getParent() instanceof cs ? (cs) esVar.getParent() : null;
+        if (csVar != null && (clipboardManager = (ClipboardManager) f0.e.f(esVar.getContext(), ClipboardManager.class)) != null && (primaryClip = clipboardManager.getPrimaryClip()) != null) {
+            String charSequence = primaryClip.getItemAt(0).getText().toString();
+            try {
+                i10 = Integer.parseInt(charSequence);
+            } catch (Exception unused) {
+                i10 = -1;
+            }
+            if (i10 > 0) {
+                csVar.c(charSequence, true);
+            }
+        }
+        esVar.hideActionMode();
+        return true;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+        menu.add(0, R.id.paste, 0, R.string.paste);
+        return true;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        return true;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final void onDestroyActionMode(ActionMode actionMode) {
     }
 }

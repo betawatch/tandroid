@@ -7,7 +7,7 @@ import android.util.Log;
 import java.util.IllegalFormatException;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j0 {
     public final String a;
@@ -20,12 +20,12 @@ public final class j0 {
         if (objArr.length > 0) {
             try {
                 str2 = String.format(Locale.US, str2, objArr);
-            } catch (IllegalFormatException e) {
-                Log.e("PlayCore", "Unable to format ".concat(str2), e);
+            } catch (IllegalFormatException e7) {
+                Log.e("PlayCore", "Unable to format ".concat(str2), e7);
                 str2 = str2 + " [" + TextUtils.join(", ", objArr) + "]";
             }
         }
-        return a4.a.D(str, " : ", str2);
+        return a4.a.C(str, " : ", str2);
     }
 
     public final void a(RemoteException remoteException, String str, Object... objArr) {

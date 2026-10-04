@@ -8,17 +8,17 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class el0 extends Drawable {
     public final Paint a = new Paint(1);
     public final /* synthetic */ View b;
     public final /* synthetic */ Path c;
     public final /* synthetic */ RectF d;
-    public final /* synthetic */ yl0 e;
+    public final /* synthetic */ zl0 e;
 
-    public el0(yl0 yl0Var, View view, Path path, RectF rectF) {
-        this.e = yl0Var;
+    public el0(zl0 zl0Var, View view, Path path, RectF rectF) {
+        this.e = zl0Var;
         this.b = view;
         this.c = path;
         this.d = rectF;
@@ -30,7 +30,7 @@ public final class el0 extends Drawable {
         View view = this.b;
         canvas.translate(-view.getX(), -view.getY());
         canvas.clipPath(this.c);
-        int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.d6, this.e.p2);
+        int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.d6, this.e.p2);
         Paint paint = this.a;
         paint.setColor(i0.a.k(v02, paint.getAlpha()));
         canvas.drawRect(this.d, paint);

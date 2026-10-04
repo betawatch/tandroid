@@ -2,15 +2,15 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class wa0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.m2 a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
     public final /* synthetic */ bb0 b;
 
-    public wa0(bb0 bb0Var, org.telegram.ui.ActionBar.m2 m2Var) {
+    public wa0(bb0 bb0Var, org.telegram.ui.ActionBar.n2 n2Var) {
         this.b = bb0Var;
-        this.a = m2Var;
+        this.a = n2Var;
     }
 
     public final void a(boolean z10) {
@@ -35,11 +35,11 @@ public final class wa0 {
 
     public final void c() {
         bb0 bb0Var = this.b;
-        zp zpVar = bb0Var.J;
+        aq aqVar = bb0Var.J;
         if (bb0Var.b.getLayoutManager() == bb0Var.d || !bb0Var.I) {
             return;
         }
-        AndroidUtilities.cancelRunOnUIThread(zpVar);
-        AndroidUtilities.runOnUIThread(zpVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
+        AndroidUtilities.cancelRunOnUIThread(aqVar);
+        AndroidUtilities.runOnUIThread(aqVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
     }
 }

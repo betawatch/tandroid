@@ -1,41 +1,37 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class a9 extends TextView {
-    public final Paint a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 b;
+public final class a9 extends FragmentContextView {
+    public final /* synthetic */ int Q0 = 0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 R0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a9(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        this.b = d6Var;
-        this.a = new Paint(1);
+    public a9(m9 m9Var, Context context, m9 m9Var2, y8 y8Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, m9Var2, y8Var, false, d6Var);
+        this.R0 = m9Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int l1 = org.telegram.ui.ActionBar.h6.l1(0.8f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.z6, this.b));
-        Paint paint = this.a;
-        paint.setColor(l1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(1.0f);
-        float height = getHeight() / 2.0f;
-        Layout layout = getLayout();
-        int i10 = 0;
-        for (int i11 = 0; i11 < layout.getLineCount(); i11++) {
-            i10 = Math.max(i10, (int) layout.getLineWidth(i11));
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.Q0) {
+            case 0:
+                m9 m9Var = (m9) this.R0;
+                m9Var.L.i(m9Var.M, i10 == 0, true);
+                break;
+            default:
+                yf1 yf1Var = (yf1) this.R0;
+                yf1Var.U0.i(yf1Var.F0, i10 == 0, true);
+                break;
         }
-        float f7 = i10 / 2.0f;
-        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - f7) - AndroidUtilities.dp(8.0f), height, paint);
-        canvas.drawLine((getWidth() / 2.0f) + f7 + AndroidUtilities.dp(8.0f), height, getWidth(), height, paint);
-        super.dispatchDraw(canvas);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a9(yf1 yf1Var, Context context, yf1 yf1Var2) {
+        super(context, yf1Var2, null, false, null);
+        this.R0 = yf1Var;
     }
 }

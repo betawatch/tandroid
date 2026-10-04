@@ -1,41 +1,29 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class d50 extends org.telegram.ui.ActionBar.m1 {
-    public final /* synthetic */ d60 o;
+public final class d50 extends org.telegram.ui.Components.zq0 {
+    public final /* synthetic */ h60 X0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d50(d60 d60Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = d60Var;
+    public d50(h60 h60Var, Context context, String str, String str2, String str3, String str4) {
+        super(context, null, str, str2, false, str3, str4, true);
+        this.X0 = h60Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        d60 d60Var = this.o;
-        if (d60Var.f3 != this) {
-            return;
+    @Override // org.telegram.ui.Components.zq0
+    public final void O0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            int m10 = iVar.m();
+            h60 h60Var = this.X0;
+            if (m10 == 1) {
+                h60Var.k1().m(((TLRPC.Dialog) iVar.n(0)).id, Integer.valueOf(i10), 41);
+            } else {
+                h60Var.k1().k(0L, 41, Integer.valueOf(i10), Integer.valueOf(iVar.m()), null, null);
+            }
         }
-        d60Var.f3 = null;
-        AnimatorSet animatorSet = d60Var.e3;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            d60Var.e3 = null;
-        }
-        d60Var.Y.X = true;
-        d60Var.e3 = new AnimatorSet();
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(ObjectAnimator.ofInt(d60Var.W2, org.telegram.ui.Components.s6.b, 0));
-        d60Var.e3.playTogether(arrayList);
-        d60Var.e3.setDuration(220L);
-        d60Var.e3.addListener(new org.telegram.ui.Components.s81(this, 22));
-        d60Var.e3.start();
     }
 }

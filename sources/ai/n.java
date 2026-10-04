@@ -10,12 +10,12 @@ import android.view.WindowManager;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.id;
-import org.telegram.ui.ld;
-import org.telegram.ui.ro;
-import org.telegram.ui.wn;
+import org.telegram.ui.kd;
+import org.telegram.ui.nd;
+import org.telegram.ui.to;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class n extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -59,18 +59,18 @@ public final class n extends AnimatorListenerAdapter {
                 }
                 break;
             case 27:
-                ((ld) this.c).n = null;
+                ((nd) this.c).n = null;
                 break;
             case 28:
-                wn wnVar = (wn) this.c;
-                AnimatorSet animatorSet4 = wnVar.H0;
+                yn ynVar = (yn) this.c;
+                AnimatorSet animatorSet4 = ynVar.F0;
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
-                    wnVar.H0 = null;
+                    ynVar.F0 = null;
                     break;
                 }
                 break;
             case 29:
-                ((ro) this.c).h = null;
+                ((to) this.c).h = null;
                 break;
             default:
                 super.onAnimationCancel(animator);
@@ -83,7 +83,7 @@ public final class n extends AnimatorListenerAdapter {
         d2 d2Var;
         View m10;
         RadialProgressView radialProgressView;
-        id idVar;
+        kd kdVar;
         RadialProgressView radialProgressView2;
         switch (this.a) {
             case 0:
@@ -211,23 +211,23 @@ public final class n extends AnimatorListenerAdapter {
                 }
                 break;
             case 12:
-                ci.w9 w9Var = (ci.w9) this.c;
+                ci.v9 v9Var = (ci.v9) this.c;
                 if (this.b) {
-                    w9Var.setVisibility(8);
+                    v9Var.setVisibility(8);
                 }
-                w9Var.c = null;
+                v9Var.c = null;
                 break;
             case 13:
-                ci.lc lcVar = (ci.lc) this.c;
+                ci.kc kcVar = (ci.kc) this.c;
                 if (!this.b) {
-                    lcVar.V0.setVisibility(8);
+                    kcVar.V0.setVisibility(8);
                 }
-                lcVar.f2 = null;
+                kcVar.f2 = null;
                 break;
             case 14:
-                ei.k3 k3Var = (ei.k3) this.c;
-                k3Var.N0 = this.b ? 1.0f : 0.0f;
-                k3Var.h();
+                ei.l3 l3Var = (ei.l3) this.c;
+                l3Var.N0 = this.b ? 1.0f : 0.0f;
+                l3Var.h();
                 break;
             case 15:
                 fi.p pVar = (fi.p) this.c;
@@ -263,10 +263,10 @@ public final class n extends AnimatorListenerAdapter {
                 }
                 break;
             case 18:
-                org.telegram.ui.ActionBar.e1 e1Var = (org.telegram.ui.ActionBar.e1) this.c;
+                org.telegram.ui.ActionBar.f1 f1Var = (org.telegram.ui.ActionBar.f1) this.c;
                 float f7 = this.b ? 1.0f : 0.0f;
-                e1Var.setTextColor(i0.a.d(f7, -1, -9194260));
-                e1Var.setIconColor(i0.a.d(f7, -1, -9194260));
+                f1Var.setTextColor(i0.a.d(f7, -1, -9194260));
+                f1Var.setIconColor(i0.a.d(f7, -1, -9194260));
                 break;
             case 19:
                 org.telegram.ui.i4 i4Var = (org.telegram.ui.i4) this.c;
@@ -280,24 +280,24 @@ public final class n extends AnimatorListenerAdapter {
                 }
                 break;
             case 20:
-                org.telegram.ui.c5 c5Var = (org.telegram.ui.c5) this.c;
+                org.telegram.ui.d5 d5Var = (org.telegram.ui.d5) this.c;
                 if (!this.b) {
-                    c5Var.setVisibility(4);
-                    com.google.firebase.messaging.m mVar3 = ((org.telegram.ui.r4) c5Var).G;
+                    d5Var.setVisibility(4);
+                    com.google.firebase.messaging.m mVar3 = ((org.telegram.ui.s4) d5Var).G;
                     if (mVar3.a) {
                         mVar3.a = false;
-                        if (((org.telegram.ui.r4) mVar3.d).getParent() != null) {
-                            ((WindowManager) mVar3.c).removeView((org.telegram.ui.r4) mVar3.d);
+                        if (((org.telegram.ui.s4) mVar3.d).getParent() != null) {
+                            ((WindowManager) mVar3.c).removeView((org.telegram.ui.s4) mVar3.d);
                         }
-                        org.telegram.ui.r4 r4Var = (org.telegram.ui.r4) mVar3.d;
-                        r4Var.E = true;
-                        org.telegram.ui.z4 z4Var = r4Var.y;
-                        if (z4Var != null) {
-                            if (z4Var.g) {
-                                z4Var.g = false;
-                                z4Var.b.removeObserver(z4Var.a, z4Var.e);
+                        org.telegram.ui.s4 s4Var = (org.telegram.ui.s4) mVar3.d;
+                        s4Var.E = true;
+                        org.telegram.ui.a5 a5Var = s4Var.y;
+                        if (a5Var != null) {
+                            if (a5Var.g) {
+                                a5Var.g = false;
+                                a5Var.b.removeObserver(a5Var.a, a5Var.e);
                             }
-                            r4Var.y = null;
+                            s4Var.y = null;
                         }
                         mVar3.d = null;
                         ((ViewGroup) mVar3.b).requestDisallowInterceptTouchEvent(false);
@@ -363,41 +363,41 @@ public final class n extends AnimatorListenerAdapter {
                 }
                 break;
             case 26:
-                ((org.telegram.ui.na) this.c).d.setVisibility(this.b ? 0 : 8);
+                ((org.telegram.ui.pa) this.c).d.setVisibility(this.b ? 0 : 8);
                 break;
             case 27:
-                ld ldVar = (ld) this.c;
-                if (ldVar.n != null && (idVar = ldVar.h) != null) {
+                nd ndVar = (nd) this.c;
+                if (ndVar.n != null && (kdVar = ndVar.h) != null) {
                     if (this.b) {
-                        idVar.setVisibility(4);
+                        kdVar.setVisibility(4);
                     } else {
-                        ldVar.r.setVisibility(4);
+                        ndVar.r.setVisibility(4);
                     }
-                    ldVar.n = null;
+                    ndVar.n = null;
                     break;
                 }
                 break;
             case 28:
-                wn wnVar = (wn) this.c;
-                AnimatorSet animatorSet4 = wnVar.H0;
+                yn ynVar = (yn) this.c;
+                AnimatorSet animatorSet4 = ynVar.F0;
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
                     if (!this.b) {
-                        wnVar.G0.setVisibility(4);
+                        ynVar.E0.setVisibility(4);
                         break;
                     } else {
-                        (wnVar.C0 ? wnVar.D0 : wnVar.B0).setVisibility(4);
+                        (ynVar.A0 ? ynVar.B0 : ynVar.z0).setVisibility(4);
                         break;
                     }
                 }
                 break;
             default:
-                ro roVar = (ro) this.c;
-                if (roVar.h != null && (radialProgressView2 = roVar.n) != null) {
+                to toVar = (to) this.c;
+                if (toVar.h != null && (radialProgressView2 = toVar.n) != null) {
                     if (!this.b) {
                         radialProgressView2.setVisibility(4);
-                        roVar.f.setVisibility(4);
+                        toVar.f.setVisibility(4);
                     }
-                    roVar.h = null;
+                    toVar.h = null;
                     break;
                 }
                 break;

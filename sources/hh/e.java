@@ -20,13 +20,13 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.w0;
-import org.telegram.ui.rj;
+import org.telegram.ui.sj;
 import w7.q;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class e extends View implements ViewTreeObserver.OnPreDrawListener, ViewTreeObserver.OnScrollChangedListener, ViewTreeObserver.OnGlobalLayoutListener {
     public static final RectF H = new RectF();
@@ -76,11 +76,11 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         arrayList.clear();
     }
 
-    public final void b(int i10, long j3, ViewGroup viewGroup, rj rjVar) {
+    public final void b(int i10, long j3, ViewGroup viewGroup, sj sjVar) {
         this.d = j3;
         this.e = i10;
         this.f = viewGroup;
-        this.h = rjVar;
+        this.h = sjVar;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:104:0x022d  */
@@ -362,7 +362,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                 this.G.setTextSize(AndroidUtilities.dp(10.0f));
             }
             super.onDraw(canvas);
-            Paint paint = h6.Ll;
+            Paint paint = i6.Ml;
             RectF rectF = this.c;
             canvas.drawRect(rectF, paint);
             LongSparseArray longSparseArray = this.w;
@@ -370,10 +370,10 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             for (int i10 = 0; i10 < size; i10++) {
                 d dVar = (d) longSparseArray.valueAt(i10);
                 RectF rectF2 = dVar.c;
-                canvas.drawRect(rectF2, h6.Ml);
+                canvas.drawRect(rectF2, i6.Nl);
                 canvas.save();
                 canvas.translate(rectF2.left, q.a(q.a(rectF2.centerY() - AndroidUtilities.dp(20.0f), rectF.top - AndroidUtilities.dp(40.0f), rectF.bottom), rectF2.top, rectF2.bottom - AndroidUtilities.dp(40.0f)));
-                canvas.drawRect(0.0f, 0.0f, rectF2.width(), AndroidUtilities.dp(40.0f), h6.Kl);
+                canvas.drawRect(0.0f, 0.0f, rectF2.width(), AndroidUtilities.dp(40.0f), i6.Ll);
                 canvas.translate(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(16.0f));
                 canvas.save();
                 canvas.drawText("time_in_view_ms: " + dVar.g, 0.0f, 0.0f, this.G);

@@ -4,6 +4,7 @@ import android.media.MediaCodec;
 import android.media.MediaFormat;
 import android.os.SystemClock;
 import android.view.Surface;
+import hg.k0;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.concurrent.BlockingDeque;
@@ -17,7 +18,7 @@ import org.webrtc.VideoDecoder;
 import org.webrtc.VideoFrame;
 import ru.noties.jlatexmath.android.BuildConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private static final int DEQUEUE_INPUT_TIMEOUT_US = 500000;
@@ -49,7 +50,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
     private final Object dimensionLock = new Object();
     private final Object renderedTextureMetadataLock = new Object();
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class DecodedTextureMetadata {
         final Integer decodeTimeMs;
         final long presentationTimestampUs;
@@ -60,7 +61,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class FrameInfo {
         final long decodeStartTimeMs;
         final int rotation;
@@ -73,7 +74,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     public AndroidVideoDecoder(MediaCodecWrapperFactory mediaCodecWrapperFactory, String str, VideoCodecMimeType videoCodecMimeType, int i10, EglBase.Context context) {
         if (!isSupportedColorFormat(i10)) {
-            throw new IllegalArgumentException(hg.c.h(i10, "Unsupported color format: "));
+            throw new IllegalArgumentException(k0.h(i10, "Unsupported color format: "));
         }
         Logging.d(TAG, "ctor name: " + str + " type: " + videoCodecMimeType + " color format: " + i10 + " context: " + context);
         this.mediaCodecWrapperFactory = mediaCodecWrapperFactory;
@@ -86,7 +87,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
 
     private VideoFrame.Buffer copyI420Buffer(ByteBuffer byteBuffer, int i10, int i11, int i12, int i13) {
         if (i10 % 2 != 0) {
-            throw new AssertionError(hg.c.h(i10, "Stride is not divisible by two: "));
+            throw new AssertionError(k0.h(i10, "Stride is not divisible by two: "));
         }
         int i14 = (i12 + 1) / 2;
         int i15 = i11 % 2 == 0 ? (i13 + 1) / 2 : i13 / 2;
@@ -245,13 +246,13 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
                 createOutputThread.start();
                 Logging.d(TAG, "initDecodeInternal done");
                 return VideoCodecStatus.OK;
-            } catch (IllegalArgumentException e) {
-                e = e;
+            } catch (IllegalArgumentException e7) {
+                e = e7;
                 Logging.e(TAG, "initDecode failed", e);
                 release();
                 return VideoCodecStatus.FALLBACK_SOFTWARE;
-            } catch (IllegalStateException e7) {
-                e = e7;
+            } catch (IllegalStateException e10) {
+                e = e10;
                 Logging.e(TAG, "initDecode failed", e);
                 release();
                 return VideoCodecStatus.FALLBACK_SOFTWARE;
@@ -351,14 +352,14 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
         Logging.d(TAG, "Releasing MediaCodec on output thread");
         try {
             this.codec.stop();
-        } catch (Exception e) {
-            Logging.e(TAG, "Media decoder stop failed", e);
+        } catch (Exception e7) {
+            Logging.e(TAG, "Media decoder stop failed", e7);
         }
         try {
             this.codec.release();
-        } catch (Exception e7) {
-            Logging.e(TAG, "Media decoder release failed", e7);
-            this.shutdownException = e7;
+        } catch (Exception e10) {
+            Logging.e(TAG, "Media decoder release failed", e10);
+            this.shutdownException = e10;
         }
         Logging.d(TAG, "Release on output thread done");
     }
@@ -469,17 +470,17 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
                         this.keyFrameRequired = false;
                     }
                     return VideoCodecStatus.OK;
-                } catch (IllegalStateException e) {
-                    Logging.e(TAG, "queueInputBuffer failed", e);
+                } catch (IllegalStateException e7) {
+                    Logging.e(TAG, "queueInputBuffer failed", e7);
                     this.frameInfos.pollLast();
                     return VideoCodecStatus.ERROR;
                 }
-            } catch (IllegalStateException e7) {
-                Logging.e(TAG, "getInputBuffer with index=" + dequeueInputBuffer + " failed", e7);
+            } catch (IllegalStateException e10) {
+                Logging.e(TAG, "getInputBuffer with index=" + dequeueInputBuffer + " failed", e10);
                 return VideoCodecStatus.ERROR;
             }
-        } catch (IllegalStateException e10) {
-            Logging.e(TAG, "dequeueInputBuffer failed", e10);
+        } catch (IllegalStateException e11) {
+            Logging.e(TAG, "dequeueInputBuffer failed", e11);
             return VideoCodecStatus.ERROR;
         }
     }
@@ -513,8 +514,8 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
             } else {
                 deliverByteFrame(dequeueOutputBuffer, bufferInfo, i10, num);
             }
-        } catch (IllegalStateException e) {
-            Logging.e(TAG, "deliverDecodedFrame failed", e);
+        } catch (IllegalStateException e7) {
+            Logging.e(TAG, "deliverDecodedFrame failed", e7);
         }
     }
 

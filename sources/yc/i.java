@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class i {
     public static final Logger d;
@@ -31,8 +31,8 @@ public abstract class i {
     public static String b(String str) {
         try {
             return URLDecoder.decode(str, "UTF8");
-        } catch (UnsupportedEncodingException e) {
-            d.log(Level.WARNING, "Encoding not supported, ignored", (Throwable) e);
+        } catch (UnsupportedEncodingException e7) {
+            d.log(Level.WARNING, "Encoding not supported, ignored", (Throwable) e7);
             return null;
         }
     }
@@ -54,8 +54,8 @@ public abstract class i {
                 str3 = str5;
             }
             bArr = str2.getBytes(str3);
-        } catch (UnsupportedEncodingException e) {
-            d.log(Level.SEVERE, "encoding problem, responding nothing", (Throwable) e);
+        } catch (UnsupportedEncodingException e7) {
+            d.log(Level.SEVERE, "encoding problem, responding nothing", (Throwable) e7);
             bArr = new byte[0];
         }
         return new g(fVar, bVar.a, new ByteArrayInputStream(bArr), bArr.length);
@@ -74,8 +74,8 @@ public abstract class i {
                     }
                     ((ServerSocket) obj).close();
                 }
-            } catch (IOException e) {
-                d.log(Level.SEVERE, "Could not close", (Throwable) e);
+            } catch (IOException e7) {
+                d.log(Level.SEVERE, "Could not close", (Throwable) e7);
             }
         }
     }

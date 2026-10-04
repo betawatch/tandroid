@@ -2,7 +2,7 @@ package yh;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -23,28 +23,28 @@ public final /* synthetic */ class e1 implements View.OnClickListener {
                 int i10 = this.c;
                 x3Var.R0 = i10;
                 g2 g2Var = x3Var.Z;
-                g2Var.D(g2Var.getCurrentPosition() + (i10 > x3Var.G1() ? 1 : -1));
+                g2Var.E(g2Var.getCurrentPosition() + (i10 > x3Var.G1() ? 1 : -1));
                 break;
             case 1:
                 x3 x3Var2 = this.b;
                 int i11 = this.c;
                 x3Var2.R0 = i11;
                 g2 g2Var2 = x3Var2.Z;
-                g2Var2.D(g2Var2.getCurrentPosition() + (i11 > x3Var2.G1() ? 1 : -1));
+                g2Var2.E(g2Var2.getCurrentPosition() + (i11 > x3Var2.G1() ? 1 : -1));
                 break;
             case 2:
                 x3 x3Var3 = this.b;
                 int i12 = this.c;
                 x3Var3.R0 = i12;
                 g2 g2Var3 = x3Var3.Z;
-                g2Var3.D(g2Var3.getCurrentPosition() + (i12 > x3Var3.G1() ? 1 : -1));
+                g2Var3.E(g2Var3.getCurrentPosition() + (i12 > x3Var3.G1() ? 1 : -1));
                 break;
             default:
                 x3 x3Var4 = this.b;
                 int i13 = this.c;
                 x3Var4.R0 = i13;
                 g2 g2Var4 = x3Var4.Z;
-                g2Var4.D(g2Var4.getCurrentPosition() + (i13 > x3Var4.G1() ? 1 : -1));
+                g2Var4.E(g2Var4.getCurrentPosition() + (i13 > x3Var4.G1() ? 1 : -1));
                 break;
         }
     }

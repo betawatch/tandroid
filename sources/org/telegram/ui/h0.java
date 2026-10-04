@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class h0 extends org.telegram.ui.ActionBar.e5 {
+public final class h0 extends org.telegram.ui.ActionBar.f5 {
     public final /* synthetic */ int f;
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate h;
 
@@ -13,7 +13,7 @@ public final class h0 extends org.telegram.ui.ActionBar.e5 {
         this.h = notificationCenterDelegate;
     }
 
-    @Override // org.telegram.ui.ActionBar.e5, org.telegram.ui.ActionBar.y2
+    @Override // org.telegram.ui.ActionBar.f5, org.telegram.ui.ActionBar.z2
     public boolean g() {
         switch (this.f) {
             case 0:
@@ -29,11 +29,11 @@ public final class h0 extends org.telegram.ui.ActionBar.e5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e5, org.telegram.ui.ActionBar.y2
+    @Override // org.telegram.ui.ActionBar.f5, org.telegram.ui.ActionBar.z2
     public void onOpenAnimationEnd() {
         switch (this.f) {
             case 1:
-                ((org.telegram.ui.Components.wq0) this.h).Y = true;
+                ((org.telegram.ui.Components.zq0) this.h).Y = true;
                 break;
         }
     }

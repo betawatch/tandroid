@@ -19,9 +19,9 @@ import android.util.Log;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.List;
 import org.telegram.messenger.MediaController;
-import w7.a7;
+import w7.b7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class c {
     public static void a(Context context, boolean z10, TaskCompletionSource taskCompletionSource) {
@@ -64,13 +64,13 @@ public abstract class c {
                     i12 = 1;
                     break;
                 }
-                if (r2.i.c(supportedPerformancePoints.get(i13)).covers(performancePoint)) {
+                if (r2.i.b(supportedPerformancePoints.get(i13)).covers(performancePoint)) {
                     i12 = 2;
                     break;
                 }
                 i13++;
             }
-            if (i12 == 1 && a7.a == null) {
+            if (i12 == 1 && b7.a == null) {
                 if (Build.VERSION.SDK_INT < 35) {
                     int c10 = c(false);
                     int c11 = c(true);
@@ -78,12 +78,12 @@ public abstract class c {
                         if (c11 == 0) {
                         }
                     }
-                    a7.a = Boolean.valueOf(z10);
+                    b7.a = Boolean.valueOf(z10);
                     if (!z10) {
                     }
                 }
                 z10 = false;
-                a7.a = Boolean.valueOf(z10);
+                b7.a = Boolean.valueOf(z10);
                 if (!z10) {
                 }
             }
@@ -101,9 +101,9 @@ public abstract class c {
             s sVar = new s(rVar);
             String str = sVar.r;
             if (str != null) {
-                List d = r2.w.d(str, z10, false);
-                String b10 = r2.w.b(sVar);
-                Iterable d10 = b10 == null ? e9.a1.e : r2.w.d(b10, z10, false);
+                List d = r2.x.d(str, z10, false);
+                String b10 = r2.x.b(sVar);
+                Iterable d10 = b10 == null ? e9.a1.e : r2.x.d(b10, z10, false);
                 e9.f0 u10 = e9.i0.u();
                 u10.d(d);
                 u10.d(d10);
@@ -112,7 +112,7 @@ public abstract class c {
                     if (((r2.o) i10.get(i11)).d != null && (videoCapabilities = ((r2.o) i10.get(i11)).d.getVideoCapabilities()) != null && (supportedPerformancePoints = videoCapabilities.getSupportedPerformancePoints()) != null && !supportedPerformancePoints.isEmpty()) {
                         MediaCodecInfo.VideoCapabilities.PerformancePoint performancePoint = new MediaCodecInfo.VideoCapabilities.PerformancePoint(1280, 720, 60);
                         for (int i12 = 0; i12 < supportedPerformancePoints.size(); i12++) {
-                            if (r2.i.c(supportedPerformancePoints.get(i12)).covers(performancePoint)) {
+                            if (r2.i.b(supportedPerformancePoints.get(i12)).covers(performancePoint)) {
                                 return 2;
                             }
                         }
@@ -120,7 +120,7 @@ public abstract class c {
                     }
                 }
             }
-        } catch (r2.t unused) {
+        } catch (r2.u unused) {
         }
         return 0;
     }
@@ -155,9 +155,9 @@ public abstract class c {
         return 0;
     }
 
-    public static k2.e f(AudioFormat audioFormat, AudioAttributes audioAttributes, boolean z10) {
+    public static k2.f f(AudioFormat audioFormat, AudioAttributes audioAttributes, boolean z10) {
         if (!AudioManager.isOffloadedPlaybackSupported(audioFormat, audioAttributes)) {
-            return k2.e.d;
+            return k2.f.d;
         }
         ac.d dVar = new ac.d();
         dVar.a = true;

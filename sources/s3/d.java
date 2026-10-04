@@ -3,7 +3,7 @@ package s3;
 import j$.util.DesugarCollections;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d extends b {
     public final long a;
@@ -21,6 +21,6 @@ public final class d extends b {
         StringBuilder sb2 = new StringBuilder("SCTE-35 SpliceInsertCommand { programSplicePts=");
         sb2.append(this.a);
         sb2.append(", programSplicePlaybackPositionUs= ");
-        return a4.a.s(sb2, this.b, " }");
+        return a4.a.r(sb2, this.b, " }");
     }
 }

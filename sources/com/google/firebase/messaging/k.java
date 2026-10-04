@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import ci.rc;
+import ci.qc;
 import java.util.Collections;
 import java.util.Set;
 import java.util.WeakHashMap;
-import v7.o6;
+import v7.n6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class k implements Application.ActivityLifecycleCallbacks {
     public final Set a = Collections.newSetFromMap(new WeakHashMap());
@@ -26,8 +26,8 @@ public final class k implements Application.ActivityLifecycleCallbacks {
             if (extras != null) {
                 bundle = extras.getBundle("gcm.n.analytics_data");
             }
-        } catch (RuntimeException e) {
-            Log.w("FirebaseMessaging", "Failed trying to get analytics data from Intent extras.", e);
+        } catch (RuntimeException e7) {
+            Log.w("FirebaseMessaging", "Failed trying to get analytics data from Intent extras.", e7);
         }
         if (bundle == null ? false : "1".equals(bundle.getString("google.c.a.e"))) {
             if (bundle != null) {
@@ -43,7 +43,7 @@ public final class k implements Application.ActivityLifecycleCallbacks {
                     Log.d("FirebaseMessaging", "Received event with track-conversion=false. Do not set user property");
                 }
             }
-            o6.a("_no", bundle);
+            n6.a("_no", bundle);
         }
     }
 
@@ -54,7 +54,7 @@ public final class k implements Application.ActivityLifecycleCallbacks {
             return;
         }
         if (Build.VERSION.SDK_INT <= 25) {
-            new Handler(Looper.getMainLooper()).post(new rc(this, intent));
+            new Handler(Looper.getMainLooper()).post(new qc(this, intent));
         } else {
             a(intent);
         }

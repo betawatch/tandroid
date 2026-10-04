@@ -1,5 +1,6 @@
 package lb;
 
+import hg.k0;
 import j$.util.Objects;
 import java.io.Closeable;
 import java.io.EOFException;
@@ -7,7 +8,7 @@ import java.io.Reader;
 import java.util.Arrays;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class a implements Closeable {
     public final Reader a;
@@ -206,21 +207,21 @@ public class a implements Closeable {
     }
 
     public final void D(String str) {
-        StringBuilder v = a4.a.v(str);
-        v.append(m());
-        v.append("\nSee ");
-        v.append("https://github.com/google/gson/blob/main/Troubleshooting.md#".concat("malformed-json"));
-        throw new c(v.toString());
+        StringBuilder u10 = a4.a.u(str);
+        u10.append(m());
+        u10.append("\nSee ");
+        u10.append("https://github.com/google/gson/blob/main/Troubleshooting.md#".concat("malformed-json"));
+        throw new c(u10.toString());
     }
 
     public final IllegalStateException E(String str) {
         String str2 = x() == 9 ? "adapter-not-null-safe" : "unexpected-json-structure";
-        StringBuilder w10 = a4.a.w("Expected ", str, " but was ");
-        w10.append(hg.c.D(x()));
-        w10.append(m());
-        w10.append("\nSee ");
-        w10.append("https://github.com/google/gson/blob/main/Troubleshooting.md#".concat(str2));
-        return new IllegalStateException(w10.toString());
+        StringBuilder v = a4.a.v("Expected ", str, " but was ");
+        v.append(k0.C(x()));
+        v.append(m());
+        v.append("\nSee ");
+        v.append("https://github.com/google/gson/blob/main/Troubleshooting.md#".concat(str2));
+        return new IllegalStateException(v.toString());
     }
 
     public void a() {
@@ -679,7 +680,7 @@ public class a implements Closeable {
                 case 8:
                     break;
                 default:
-                    throw new AssertionError(hg.c.h(i12, "Unknown scope value: "));
+                    throw new AssertionError(k0.h(i12, "Unknown scope value: "));
             }
             i10++;
         }
@@ -727,7 +728,7 @@ public class a implements Closeable {
     }
 
     final String m() {
-        StringBuilder k10 = hg.c.k(" at line ", this.e + 1, " column ", (this.c - this.f) + 1, " path ");
+        StringBuilder k10 = k0.k(" at line ", this.e + 1, " column ", (this.c - this.f) + 1, " path ");
         k10.append(h());
         return k10.toString();
     }

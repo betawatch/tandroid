@@ -1,32 +1,17 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class xz0 implements hq {
-    public final /* synthetic */ qy a;
-    public final /* synthetic */ yz0 b;
-
-    public xz0(yz0 yz0Var, qy qyVar) {
-        this.b = yz0Var;
-        this.a = qyVar;
-    }
-
-    @Override // org.telegram.ui.hq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        yz0 yz0Var = this.b;
-        yz0Var.b.N1 = true;
-        this.a.removeSelfFromStack();
-        NotificationCenter notificationCenter = yz0Var.b.getNotificationCenter();
-        ProfileActivity profileActivity = yz0Var.b;
-        int i11 = NotificationCenter.closeChats;
-        notificationCenter.removeObserver(profileActivity, i11);
-        yz0Var.b.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i11, new Object[0]);
-    }
-
-    @Override // org.telegram.ui.hq
-    public final void a(TLRPC.User user) {
+public final class xz0 extends d10 {
+    @Override // org.telegram.ui.d10, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        canvas.save();
+        canvas.translate(AndroidUtilities.dp(2.0f), 0.0f);
+        super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
+        canvas.restore();
     }
 }

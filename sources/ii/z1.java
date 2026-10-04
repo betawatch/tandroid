@@ -6,14 +6,14 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.vg;
-import org.telegram.ui.Components.wq0;
+import org.telegram.ui.Components.wg;
+import org.telegram.ui.Components.zq0;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.qy;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class z1 extends vg {
+public final class z1 extends wg {
     public final /* synthetic */ int l0;
     public final /* synthetic */ Object m0;
 
@@ -24,7 +24,7 @@ public final class z1 extends vg {
         this.m0 = obj;
     }
 
-    @Override // org.telegram.ui.Components.vg
+    @Override // org.telegram.ui.Components.wg
     public boolean d() {
         switch (this.l0) {
             case 0:
@@ -40,7 +40,7 @@ public final class z1 extends vg {
         }
     }
 
-    @Override // org.telegram.ui.Components.vg
+    @Override // org.telegram.ui.Components.wg
     public final boolean f() {
         switch (this.l0) {
             case 0:
@@ -55,24 +55,24 @@ public final class z1 extends vg {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.vg
+    @Override // org.telegram.ui.Components.wg
     public int getFillColor() {
         int i10 = this.l0;
         Object obj = this.m0;
         switch (i10) {
             case 2:
-                return ((wq0) obj).getThemedColor(org.telegram.ui.ActionBar.h6.S5);
+                return ((zq0) obj).getThemedColor(org.telegram.ui.ActionBar.i6.S5);
             case 3:
             default:
                 return super.getFillColor();
             case 4:
-                int i11 = org.telegram.ui.ActionBar.h6.zf;
+                int i11 = org.telegram.ui.ActionBar.i6.zf;
                 Drawable[] drawableArr = PhotoViewer.U8;
                 return ((PhotoViewer) obj).z1(i11);
         }
     }
 
-    @Override // org.telegram.ui.Components.vg
+    @Override // org.telegram.ui.Components.wg
     public boolean j() {
         switch (this.l0) {
             case 2:
@@ -91,7 +91,7 @@ public final class z1 extends vg {
         switch (this.l0) {
             case 3:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((qy) this.m0).I2.size(), new Object[0]));
+                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((uy) this.m0).I2.size(), new Object[0]));
                 accessibilityNodeInfo.setClassName(Button.class.getName());
                 accessibilityNodeInfo.setLongClickable(true);
                 accessibilityNodeInfo.setClickable(true);

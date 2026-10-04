@@ -6,7 +6,7 @@ import com.google.android.gms.common.internal.ReflectedParcelable;
 import n7.i1;
 import w.a;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public enum Transport implements ReflectedParcelable {
     /* JADX INFO: Fake field, exist only in values array */
@@ -33,7 +33,7 @@ public enum Transport implements ReflectedParcelable {
 
     public static Transport a(String str) {
         if (str.equals("hybrid")) {
-            i1.a.r0();
+            i1.a.q();
             throw null;
         }
         for (Transport transport : values()) {
@@ -41,7 +41,7 @@ public enum Transport implements ReflectedParcelable {
                 return transport;
             }
         }
-        throw new a7.a(a4.a.q("Transport ", str, " not supported"));
+        throw new a7.a(a4.a.p("Transport ", str, " not supported"));
     }
 
     @Override // android.os.Parcelable

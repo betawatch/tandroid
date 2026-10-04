@@ -3,9 +3,9 @@ package f9;
 import java.io.InputStream;
 import java.util.ArrayDeque;
 import java.util.Arrays;
-import v7.z7;
+import v7.y7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class b {
     static {
@@ -49,7 +49,7 @@ public abstract class b {
                 i11 += read;
                 i10 += read;
             }
-            min = z7.e(min * (min < 4096 ? 4 : 2));
+            min = y7.e(min * (min < 4096 ? 4 : 2));
         }
         if (inputStream.read() == -1) {
             return a(arrayDeque, 2147483639);

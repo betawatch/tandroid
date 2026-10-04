@@ -9,7 +9,7 @@ import java.util.WeakHashMap;
 import m.j2;
 import org.telegram.ui.Components.qd0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
@@ -56,34 +56,34 @@ public final class j implements ViewTreeObserver.OnGlobalLayoutListener {
                     break;
                 }
             case 1:
-                l.f fVar = (l.f) obj;
-                ArrayList arrayList = fVar.n;
-                if (fVar.a() && arrayList.size() > 0 && !((l.e) arrayList.get(0)).a.N) {
-                    View view = fVar.E;
+                l.e eVar = (l.e) obj;
+                ArrayList arrayList = eVar.n;
+                if (eVar.a() && arrayList.size() > 0 && !((l.d) arrayList.get(0)).a.N) {
+                    View view = eVar.E;
                     if (view != null && view.isShown()) {
                         int size = arrayList.size();
                         while (i11 < size) {
                             Object obj2 = arrayList.get(i11);
                             i11++;
-                            ((l.e) obj2).a.h();
+                            ((l.d) obj2).a.g();
                         }
                         break;
                     } else {
-                        fVar.dismiss();
+                        eVar.dismiss();
                         break;
                     }
                 }
                 break;
             case 2:
-                l.d0 d0Var = (l.d0) obj;
-                j2 j2Var = d0Var.n;
-                if (d0Var.a() && !j2Var.N) {
-                    View view2 = d0Var.x;
+                l.c0 c0Var = (l.c0) obj;
+                j2 j2Var = c0Var.n;
+                if (c0Var.a() && !j2Var.N) {
+                    View view2 = c0Var.x;
                     if (view2 != null && view2.isShown()) {
-                        j2Var.h();
+                        j2Var.g();
                         break;
                     } else {
-                        d0Var.dismiss();
+                        c0Var.dismiss();
                         break;
                     }
                 }
@@ -108,8 +108,8 @@ public final class j implements ViewTreeObserver.OnGlobalLayoutListener {
                     m0Var.dismiss();
                     break;
                 } else {
-                    m0Var.r();
-                    m0Var.h();
+                    m0Var.q();
+                    m0Var.g();
                     break;
                 }
                 break;

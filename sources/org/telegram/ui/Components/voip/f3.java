@@ -2,21 +2,21 @@ package org.telegram.ui.Components.voip;
 
 import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.ui.Components.nw0;
+import org.telegram.ui.Components.ww0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class f3 extends View {
-    public nw0 a;
+    public ww0 a;
     public boolean b;
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        nw0 nw0Var;
-        if (this.b || (nw0Var = this.a) == null) {
+        ww0 ww0Var;
+        if (this.b || (ww0Var = this.a) == null) {
             return;
         }
-        nw0Var.b(canvas, this);
+        ww0Var.b(canvas, this);
     }
 
     public void setState(boolean z10) {

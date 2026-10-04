@@ -1,32 +1,26 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.nd1;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bp implements nd1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wi b;
-    public final /* synthetic */ org.telegram.ui.ec c;
+public final class bp implements ValueAnimator.AnimatorUpdateListener {
+    public boolean a = false;
+    public final /* synthetic */ pp b;
 
-    public /* synthetic */ bp(wi wiVar, org.telegram.ui.ec ecVar, int i10) {
-        this.a = i10;
-        this.b = wiVar;
-        this.c = ecVar;
+    public bp(pp ppVar) {
+        this.b = ppVar;
     }
 
-    @Override // org.telegram.ui.nd1
-    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
-        switch (this.a) {
-            case 0:
-                this.b.dismissInternal();
-                this.c.run(tL_wallPaper);
-                break;
-            default:
-                this.b.dismissInternal();
-                this.c.run(tL_wallPaper);
-                break;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        pp ppVar = this.b;
+        ppVar.S = floatValue;
+        ppVar.R.invalidate();
+        if (this.a || ppVar.S <= 0.5f) {
+            return;
         }
+        this.a = true;
     }
 }

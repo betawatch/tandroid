@@ -7,10 +7,10 @@ import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
 import android.widget.EditText;
 import androidx.emoji2.text.l;
-import com.google.firebase.messaging.t;
+import com.google.firebase.messaging.s;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b extends InputConnectionWrapper {
     public final EditText a;
@@ -33,7 +33,7 @@ public final class b extends InputConnectionWrapper {
             androidx.emoji2.text.f fVar = a2.e;
             fVar.getClass();
             Bundle bundle = editorInfo.extras;
-            p1.b bVar = (p1.b) ((t) fVar.c).b;
+            p1.b bVar = (p1.b) ((s) fVar.c).b;
             int a10 = bVar.a(4);
             bundle.putInt("android.support.text.emoji.emojiCompat_metadataVersion", a10 != 0 ? ((ByteBuffer) bVar.d).getInt(a10 + bVar.a) : 0);
             editorInfo.extras.putBoolean("android.support.text.emoji.emojiCompat_replaceAll", false);

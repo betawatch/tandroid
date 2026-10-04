@@ -14,28 +14,28 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.bb;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.xl0;
 import org.telegram.ui.Components.yl0;
-import w7.y5;
+import org.telegram.ui.Components.zl0;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class c extends bb {
+public final class c extends cb {
     public final d1 X;
-    public l61 Y;
+    public u61 Y;
 
     public c(Context context, TLRPC.Chat chat, Runnable runnable) {
         super(context, (d6) null, false);
         this.K = AndroidUtilities.dp(30.0f);
-        yl0 yl0Var = this.d;
+        zl0 zl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        yl0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(130.0f) + AndroidUtilities.navigationBarHeight);
+        zl0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(130.0f) + AndroidUtilities.navigationBarHeight);
         this.d.setClipToPadding(false);
         d dVar = new d(context, this.resourcesProvider, true);
         dVar.setText(LocaleController.getString(R.string.Cancel));
@@ -54,28 +54,28 @@ public final class c extends bb {
         d1Var.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(17.0f));
         ((w9) d1Var.b).e(chat, new h9(chat));
         textView2.setText(DialogObject.getName(chat));
-        int i11 = h6.G6;
+        int i11 = i6.G6;
         textView2.setTextColor(getThemedColor(i11));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) "* ");
-        spannableStringBuilder.setSpan(new qq(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
+        spannableStringBuilder.setSpan(new rq(R.drawable.mini_ephemeral_hidden_14, 0), 0, 1, 33);
         spannableStringBuilder.append((CharSequence) LocaleController.getString(isChannelAndNotMegaGroup ? R.string.CommunityInviteOnlyChannelInfo : R.string.CommunityInviteOnlyGroupInfo));
         textView.setTextColor(getThemedColor(i11));
         textView.setText(spannableStringBuilder);
-        this.containerView.addView(dVar2, y5.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(70.0f) + AndroidUtilities.navigationBarHeight));
-        this.containerView.addView(dVar, y5.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
+        this.containerView.addView(dVar2, z5.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(70.0f) + AndroidUtilities.navigationBarHeight));
+        this.containerView.addView(dVar, z5.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
         this.Y.N(false);
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final xl0 v(yl0 yl0Var) {
-        l61 l61Var = new l61(this.d, getContext(), this.currentAccount, 0, true, new a(this, 1), this.resourcesProvider);
-        this.Y = l61Var;
-        l61Var.r = false;
-        return l61Var;
+    @Override // org.telegram.ui.Components.cb
+    public final yl0 v(zl0 zl0Var) {
+        u61 u61Var = new u61(this.d, getContext(), this.currentAccount, 0, true, new a(this, 1), this.resourcesProvider);
+        this.Y = u61Var;
+        u61Var.r = false;
+        return u61Var;
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.cb
     public final CharSequence y() {
         return null;
     }

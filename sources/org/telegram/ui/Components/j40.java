@@ -1,51 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.text.TextPaint;
+import android.util.TypedValue;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class j40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l40 b;
+public class j40 extends EditTextBoldCursor {
+    public final TextPaint b;
+    public String c;
+    public final Rect d;
 
-    public /* synthetic */ j40(l40 l40Var, int i10) {
-        this.a = i10;
-        this.b = l40Var;
+    public j40(Context context) {
+        super(context);
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        this.d = new Rect();
+        textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.H6, false));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                l40 l40Var = this.b;
-                l40Var.f = null;
-                if (!l40Var.H) {
-                    zp zpVar = new zp(this, 21);
-                    l40Var.h = zpVar;
-                    AndroidUtilities.runOnUIThread(zpVar, l40Var.n == 0 ? 10000L : 2000L);
-                    break;
+    public String getHintText() {
+        return this.c;
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.gu, android.widget.TextView, android.view.View
+    public void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        if (this.c != null && length() < this.c.length()) {
+            int i10 = 0;
+            float f7 = 0.0f;
+            while (i10 < this.c.length()) {
+                int length = length();
+                TextPaint textPaint = this.b;
+                float measureText = i10 < length ? getPaint().measureText(getText(), i10, i10 + 1) : textPaint.measureText(this.c, i10, i10 + 1);
+                if (i10 < length()) {
+                    f7 += measureText;
+                    canvas2 = canvas;
+                } else {
+                    int color = textPaint.getColor();
+                    canvas.save();
+                    String str = this.c;
+                    textPaint.getTextBounds(str, 0, str.length(), this.d);
+                    i(i10);
+                    canvas2 = canvas;
+                    canvas2.drawText(this.c, i10, i10 + 1, f7, (r5.height() + getHeight()) / 2.0f, (Paint) textPaint);
+                    f7 += measureText;
+                    canvas2.restore();
+                    textPaint.setColor(color);
                 }
-                break;
-            case 1:
-                l40 l40Var2 = this.b;
-                l40Var2.f = null;
-                if (!l40Var2.H) {
-                    zp zpVar2 = new zp(this, 22);
-                    l40Var2.h = zpVar2;
-                    AndroidUtilities.runOnUIThread(zpVar2, l40Var2.E);
-                    break;
-                }
-                break;
-            default:
-                l40 l40Var3 = this.b;
-                l40Var3.setVisibility(4);
-                l40Var3.getClass();
-                l40Var3.e = null;
-                l40Var3.d = null;
-                l40Var3.f = null;
-                break;
+                i10++;
+                canvas = canvas2;
+            }
         }
+        super.onDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.gu, android.widget.TextView, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        invalidate();
+    }
+
+    public void setHintText(String str) {
+        this.c = str;
+        invalidate();
+        setText(getText());
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
+    public void setTextSize(int i10, float f7) {
+        super.setTextSize(i10, f7);
+        this.b.setTextSize(TypedValue.applyDimension(i10, f7, getResources().getDisplayMetrics()));
+    }
+
+    public void i(int i10) {
     }
 }

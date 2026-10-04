@@ -2,11 +2,11 @@ package tg;
 
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.k2;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.l2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class a1 implements Runnable {
                 break;
             case 2:
                 m1 m1Var = this.b;
-                m1Var.W();
+                m1Var.U();
                 m1Var.i0(true, false);
                 break;
             case 3:
@@ -41,7 +41,7 @@ public final /* synthetic */ class a1 implements Runnable {
                 break;
             case 5:
                 m1 m1Var2 = this.b;
-                m1Var2.W();
+                m1Var2.U();
                 m1Var2.i0(true, false);
                 break;
             case 6:
@@ -52,15 +52,15 @@ public final /* synthetic */ class a1 implements Runnable {
                 break;
             case 8:
                 m1 m1Var3 = this.b;
-                m1Var3.W();
+                m1Var3.U();
                 m1Var3.i0(true, false);
                 break;
             case 9:
-                m2 m2Var = this.b.n;
-                if (m2Var != null) {
-                    k2 k2Var = new k2();
-                    k2Var.a = true;
-                    m2Var.showAsSheet(new PrivacyControlActivity(11, false), k2Var);
+                n2 n2Var = this.b.n;
+                if (n2Var != null) {
+                    l2 l2Var = new l2();
+                    l2Var.a = true;
+                    n2Var.showAsSheet(new PrivacyControlActivity(11, false), l2Var);
                     break;
                 }
                 break;
@@ -72,7 +72,7 @@ public final /* synthetic */ class a1 implements Runnable {
                 break;
             default:
                 m1 m1Var4 = this.b;
-                m1Var4.W();
+                m1Var4.U();
                 m1Var4.i0(true, false);
                 break;
         }

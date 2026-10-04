@@ -4,7 +4,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.util.Log;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c0 extends l0 {
     public final /* synthetic */ int b = 0;
@@ -26,20 +26,20 @@ public final class c0 extends l0 {
         Object obj2 = this.c;
         switch (i10) {
             case 0:
-                ((d0) obj).c.e((k6.a) obj2);
+                ((d0) obj).c.d((k6.a) obj2);
                 break;
             default:
                 g0 g0Var = (g0) obj2;
                 o8.h hVar = (o8.h) obj;
-                if (g0Var.h(0)) {
+                if (g0Var.i(0)) {
                     k6.a aVar = hVar.b;
                     if (!aVar.c()) {
                         if (g0Var.w && !aVar.b()) {
-                            g0Var.b();
+                            g0Var.a();
                             g0Var.g();
                             break;
                         } else {
-                            g0Var.e(aVar);
+                            g0Var.d(aVar);
                             break;
                         }
                     } else {
@@ -48,7 +48,7 @@ public final class c0 extends l0 {
                         k6.a aVar2 = vVar.c;
                         if (!aVar2.c()) {
                             Log.wtf("GACConnecting", "Sign-in succeeded with resolve account failure: ".concat(String.valueOf(aVar2)), new Exception());
-                            g0Var.e(aVar2);
+                            g0Var.d(aVar2);
                             break;
                         } else {
                             g0Var.y = true;

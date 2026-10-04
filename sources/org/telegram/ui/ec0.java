@@ -1,43 +1,21 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.widget.TextView;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ec0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ fc0 c;
-
-    public /* synthetic */ ec0(fc0 fc0Var, float f7, int i10) {
-        this.a = i10;
-        this.c = fc0Var;
-        this.b = f7;
+public final class ec0 extends org.telegram.ui.Cells.e9 {
+    @Override // org.telegram.ui.Cells.e9, android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setEnabled(true);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                fc0 fc0Var = this.c;
-                TextView textView = fc0Var.f;
-                int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.y6, false);
-                int w03 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.n6, false);
-                float f7 = this.b;
-                fc0Var.s = f7;
-                textView.setTextColor(i0.a.d(f7, w02, w03));
-                break;
-            default:
-                fc0 fc0Var2 = this.c;
-                TextView textView2 = fc0Var2.d;
-                int w04 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.y6, false);
-                int w05 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.n6, false);
-                float f10 = this.b;
-                fc0Var2.w = f10;
-                textView2.setTextColor(i0.a.d(f10, w04, w05));
-                break;
-        }
+    @Override // android.view.View
+    public final void onPopulateAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
+        super.onPopulateAccessibilityEvent(accessibilityEvent);
+        accessibilityEvent.setContentDescription(getTextView().getText());
+        setContentDescription(getTextView().getText());
     }
 }

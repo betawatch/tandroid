@@ -4,7 +4,7 @@ import ai.e4;
 import ai.s5;
 import android.content.Intent;
 import android.net.Uri;
-import ci.a9;
+import ci.z8;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -12,43 +12,43 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c3;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.cw0;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.ActionBar.d3;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.cb;
+import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.zl0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class c0 extends bb {
+public final class c0 extends cb {
     public final TLRPC.TL_payments_checkedGiftCode X;
     public final boolean Y;
     public b0 Z;
     public final String a0;
 
-    public c0(m2 m2Var, TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode, String str) {
-        super(m2Var, true);
+    public c0(n2 n2Var, TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode, String str) {
+        super(n2Var, true);
         this.Y = tL_payments_checkedGiftCode.used_date == 0;
         this.X = tL_payments_checkedGiftCode;
         this.a0 = str;
         setApplyTopPadding(false);
         setApplyBottomPadding(false);
         fixNavigationBar();
-        N();
+        L();
         b0 b0Var = this.Z;
-        c3 c3Var = this.container;
+        d3 d3Var = this.container;
         b0Var.getClass();
         b0Var.d = tL_payments_checkedGiftCode.used_date == 0;
-        b0Var.e = m2Var;
+        b0Var.e = n2Var;
         b0Var.f = tL_payments_checkedGiftCode;
         b0Var.h = str;
-        b0Var.n = c3Var;
+        b0Var.n = d3Var;
     }
 
-    public static boolean S(Intent intent, nf.e eVar) {
+    public static boolean Q(Intent intent, nf.e eVar) {
         String scheme;
         String path;
         Uri data = intent.getData();
@@ -64,7 +64,7 @@ public final class c0 extends bb {
             if ((!uri.startsWith("tg:giftcode") && !uri.startsWith("tg://giftcode")) || lastPathSegment == null) {
                 return false;
             }
-            T(LaunchActivity.R(), lastPathSegment, eVar);
+            R(LaunchActivity.R(), lastPathSegment, eVar);
             return true;
         }
         String lowerCase = data.getHost().toLowerCase();
@@ -75,12 +75,12 @@ public final class c0 extends bb {
         if (!path.startsWith("/giftcode") || lastPathSegment2 == null) {
             return false;
         }
-        T(LaunchActivity.R(), lastPathSegment2, eVar);
+        R(LaunchActivity.R(), lastPathSegment2, eVar);
         return true;
     }
 
-    public static void T(m2 m2Var, String str, nf.e eVar) {
-        if (m2Var == null) {
+    public static void R(n2 n2Var, String str, nf.e eVar) {
+        if (n2Var == null) {
             return;
         }
         AtomicBoolean atomicBoolean = new AtomicBoolean(false);
@@ -88,7 +88,7 @@ public final class c0 extends bb {
             eVar.d();
             eVar.b = new d(atomicBoolean, 1);
         }
-        e4 e4Var = new e4(atomicBoolean, m2Var, str, eVar, 16);
+        e4 e4Var = new e4(atomicBoolean, n2Var, str, eVar, 16);
         f fVar = new f(atomicBoolean, eVar, 1);
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
         MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
@@ -97,19 +97,19 @@ public final class c0 extends bb {
         connectionsManager.sendRequest(tL_payments_checkGiftCode, new s5(messagesController, e4Var, fVar, 19));
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final void G(cw0 cw0Var) {
-        qc.a(this.container, new a9(14));
+    @Override // org.telegram.ui.Components.cb
+    public final void E(lw0 lw0Var) {
+        rc.a(this.container, new z8(14));
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final xl0 v(yl0 yl0Var) {
+    @Override // org.telegram.ui.Components.cb
+    public final yl0 v(zl0 zl0Var) {
         b0 b0Var = new b0(this, this.resourcesProvider);
         this.Z = b0Var;
         return b0Var;
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.cb
     public final CharSequence y() {
         return this.Y ? LocaleController.getString(R.string.BoostingGiftLink) : LocaleController.getString(R.string.BoostingUsedGiftLink);
     }

@@ -8,10 +8,10 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class e4 extends FrameLayout {
-    public final org.telegram.ui.Components.uo0 a;
+    public final org.telegram.ui.Components.yo0 a;
     public final int b;
     public final int c;
     public int d;
@@ -28,12 +28,12 @@ public final class e4 extends FrameLayout {
         TextPaint textPaint = new TextPaint(1);
         this.e = textPaint;
         textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        org.telegram.ui.Components.uo0 uo0Var = new org.telegram.ui.Components.uo0(context, null, false);
-        this.a = uo0Var;
-        uo0Var.setReportChanges(true);
-        uo0Var.setSeparatorsCount(19);
-        uo0Var.setDelegate(new g(this, 3));
-        addView(uo0Var, w7.y5.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
+        org.telegram.ui.Components.yo0 yo0Var = new org.telegram.ui.Components.yo0(context, null, false);
+        this.a = yo0Var;
+        yo0Var.setReportChanges(true);
+        yo0Var.setSeparatorsCount(19);
+        yo0Var.setDelegate(new g(this, 3));
+        addView(yo0Var, w7.z5.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
     }
 
     @Override // android.view.View
@@ -44,9 +44,9 @@ public final class e4 extends FrameLayout {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        int i10 = org.telegram.ui.ActionBar.h6.I6;
+        int i10 = org.telegram.ui.ActionBar.i6.I6;
         this.f.getClass();
-        int w02 = org.telegram.ui.ActionBar.h6.w0(null, i10, false);
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, i10, false);
         TextPaint textPaint = this.e;
         textPaint.setColor(w02);
         canvas.drawText("" + SharedConfig.ivFontSize, getMeasuredWidth() - AndroidUtilities.dp(39.0f), AndroidUtilities.dp(28.0f), textPaint);

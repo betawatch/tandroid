@@ -15,7 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class v extends o6.a {
     public static final Parcelable.Creator<v> CREATOR = new w.a(24);
@@ -51,8 +51,8 @@ public final class v extends o6.a {
                 this.v = b10.v;
                 this.w = str2;
                 return;
-            } catch (JSONException e) {
-                throw new IllegalArgumentException(e);
+            } catch (JSONException e7) {
+                throw new IllegalArgumentException(e7);
             }
         }
         n6.l.h(yVar);
@@ -71,8 +71,8 @@ public final class v extends o6.a {
         if (str != null) {
             try {
                 this.s = e.a(str);
-            } catch (d e7) {
-                throw new IllegalArgumentException(e7);
+            } catch (d e10) {
+                throw new IllegalArgumentException(e10);
             }
         } else {
             this.s = null;
@@ -255,8 +255,8 @@ public final class v extends o6.a {
         if (jSONObject.has("attestation")) {
             try {
                 eVar = e.a(jSONObject.getString("attestation"));
-            } catch (d e) {
-                Log.w("PKCCreationOptions", "Invalid AttestationConveyancePreference", e);
+            } catch (d e7) {
+                Log.w("PKCCreationOptions", "Invalid AttestationConveyancePreference", e7);
                 eVar = e.b;
             }
         } else {
@@ -296,47 +296,47 @@ public final class v extends o6.a {
         String valueOf6 = String.valueOf(this.r);
         String valueOf7 = String.valueOf(this.s);
         String valueOf8 = String.valueOf(this.v);
-        StringBuilder x10 = a4.a.x("PublicKeyCredentialCreationOptions{\n rp=", valueOf, ", \n user=", valueOf2, ", \n challenge=");
-        a4.a.A(x10, c10, ", \n parameters=", valueOf3, ", \n timeoutSeconds=");
-        x10.append(this.e);
-        x10.append(", \n excludeList=");
-        x10.append(valueOf4);
-        x10.append(", \n authenticatorSelection=");
-        x10.append(valueOf5);
-        x10.append(", \n requestId=");
-        x10.append(this.n);
-        x10.append(", \n tokenBinding=");
-        x10.append(valueOf6);
-        x10.append(", \n attestationConveyancePreference=");
-        x10.append(valueOf7);
-        x10.append(", \n authenticationExtensions=");
-        x10.append(valueOf8);
-        x10.append("}");
-        return x10.toString();
+        StringBuilder w10 = a4.a.w("PublicKeyCredentialCreationOptions{\n rp=", valueOf, ", \n user=", valueOf2, ", \n challenge=");
+        a4.a.z(w10, c10, ", \n parameters=", valueOf3, ", \n timeoutSeconds=");
+        w10.append(this.e);
+        w10.append(", \n excludeList=");
+        w10.append(valueOf4);
+        w10.append(", \n authenticatorSelection=");
+        w10.append(valueOf5);
+        w10.append(", \n requestId=");
+        w10.append(this.n);
+        w10.append(", \n tokenBinding=");
+        w10.append(valueOf6);
+        w10.append(", \n attestationConveyancePreference=");
+        w10.append(valueOf7);
+        w10.append(", \n authenticationExtensions=");
+        w10.append(valueOf8);
+        w10.append("}");
+        return w10.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.k(parcel, 2, this.a, i10);
-        w7.f0.k(parcel, 3, this.b, i10);
-        w7.f0.c(parcel, 4, this.c);
-        w7.f0.p(parcel, 5, this.d);
+        int q6 = w7.g0.q(parcel, 20293);
+        w7.g0.k(parcel, 2, this.a, i10);
+        w7.g0.k(parcel, 3, this.b, i10);
+        w7.g0.c(parcel, 4, this.c);
+        w7.g0.p(parcel, 5, this.d);
         Double d = this.e;
         if (d != null) {
-            w7.f0.s(parcel, 6, 8);
+            w7.g0.s(parcel, 6, 8);
             parcel.writeDouble(d.doubleValue());
         }
-        w7.f0.p(parcel, 7, this.f);
-        w7.f0.k(parcel, 8, this.h, i10);
-        w7.f0.i(parcel, 9, this.n);
-        w7.f0.k(parcel, 10, this.r, i10);
+        w7.g0.p(parcel, 7, this.f);
+        w7.g0.k(parcel, 8, this.h, i10);
+        w7.g0.i(parcel, 9, this.n);
+        w7.g0.k(parcel, 10, this.r, i10);
         e eVar = this.s;
-        w7.f0.l(parcel, 11, eVar == null ? null : eVar.a);
-        w7.f0.k(parcel, 12, this.v, i10);
-        w7.f0.l(parcel, 13, this.w);
-        w7.f0.k(parcel, 14, this.x, i10);
-        w7.f0.r(parcel, q6);
+        w7.g0.l(parcel, 11, eVar == null ? null : eVar.a);
+        w7.g0.k(parcel, 12, this.v, i10);
+        w7.g0.l(parcel, 13, this.w);
+        w7.g0.k(parcel, 14, this.x, i10);
+        w7.g0.r(parcel, q6);
     }
 
     public v(String str) {
@@ -354,8 +354,8 @@ public final class v extends o6.a {
             this.s = b10.s;
             this.v = b10.v;
             this.w = str;
-        } catch (JSONException e) {
-            throw new IllegalArgumentException(e);
+        } catch (JSONException e7) {
+            throw new IllegalArgumentException(e7);
         }
     }
 }

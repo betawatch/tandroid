@@ -19,17 +19,17 @@ import org.telegram.messenger.voip.VoIPGroupNotification;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.bc0;
-import org.telegram.ui.Components.mo;
-import org.telegram.ui.Components.qo;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.cc0;
+import org.telegram.ui.Components.no;
+import org.telegram.ui.Components.ro;
 import org.telegram.ui.Components.ub0;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -138,8 +138,8 @@ public final /* synthetic */ class n implements Runnable {
                     Collections.sort(arrayList4, new a4.e(12));
                     AndroidUtilities.runOnUIThread(new t(g0Var, arrayList4, iVar, 0));
                     break;
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                     return;
                 }
                 break;
@@ -164,40 +164,40 @@ public final /* synthetic */ class n implements Runnable {
                 ((ConnectionsManager) this.d).lambda$discardConnection$0(this.b, this.c);
                 break;
             case 6:
-                org.telegram.ui.web.y0 y0Var = (org.telegram.ui.web.y0) this.d;
+                org.telegram.ui.web.z0 z0Var = (org.telegram.ui.web.z0) this.d;
                 for (int i17 = 0; i17 < this.b - this.c; i17++) {
-                    y0Var.goBack();
+                    z0Var.goBack();
                 }
                 break;
             case 7:
-                m2 m2Var = (m2) this.d;
+                n2 n2Var = (n2) this.d;
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", UserConfig.getInstance(this.b).getClientUserId());
                 bundle.putInt("message_id", this.c);
-                m2Var.presentFragment(new wn(bundle));
+                n2Var.presentFragment(new yn(bundle));
                 break;
             case 8:
-                qo qoVar = (qo) this.d;
+                ro roVar = (ro) this.d;
                 int i18 = this.b;
                 if (i18 != 0) {
                     SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings.edit().putInt("last_selected_mute_until_time", i18).putInt("last_selected_mute_until_time2", notificationsSettings.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                qoVar.u(i18);
+                roVar.t(i18);
                 break;
             case 9:
-                mo moVar = (mo) this.d;
+                no noVar = (no) this.d;
                 int i19 = this.b;
                 if (i19 != 0) {
                     SharedPreferences notificationsSettings2 = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings2.edit().putInt("last_selected_mute_until_time", i19).putInt("last_selected_mute_until_time2", notificationsSettings2.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                moVar.run(Integer.valueOf(i19));
+                noVar.run(Integer.valueOf(i19));
                 break;
             case 10:
-                bc0 bc0Var = ((ub0) this.d).X2;
-                View d = bc0Var.d();
-                ub0 ub0Var = bc0Var.f;
+                cc0 cc0Var = ((ub0) this.d).e3;
+                View d = cc0Var.d();
+                ub0 ub0Var = cc0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;

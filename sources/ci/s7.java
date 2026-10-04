@@ -2,7 +2,7 @@ package ci;
 
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public abstract class s7 {
     public final String a;
@@ -15,7 +15,7 @@ public abstract class s7 {
 
     public abstract String b();
 
-    public abstract void c(org.telegram.ui.ActionBar.m2 m2Var);
+    public abstract void c(org.telegram.ui.ActionBar.n2 n2Var);
 
     public abstract void d(ImageReceiver imageReceiver);
 }

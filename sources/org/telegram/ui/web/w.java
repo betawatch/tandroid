@@ -1,59 +1,113 @@
 package org.telegram.ui.web;
 
-import ai.da;
-import org.json.JSONObject;
-import org.telegram.messenger.FileLog;
+import android.graphics.Typeface;
+import android.media.AudioRecordingConfiguration;
+import android.media.MediaRoute2Info;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.firebase.components.ComponentRegistrar;
+import com.google.firebase.concurrent.ExecutorsRegistrar;
+import com.google.firebase.installations.FirebaseInstallationsRegistrar;
+import java.util.List;
+import java.util.concurrent.ScheduledExecutorService;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w implements Runnable {
+public final /* synthetic */ class w implements org.telegram.ui.ActionBar.a2, pg.i0, q3.g, q9.e, pa.a, q9.d, OnFailureListener, androidx.car.app.utils.b {
     public final /* synthetic */ int a;
-    public final /* synthetic */ String[] b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ y0 d;
-    public final /* synthetic */ da e;
 
-    public /* synthetic */ w(String[] strArr, int i10, y0 y0Var, da daVar, int i11) {
-        this.a = i11;
-        this.b = strArr;
-        this.c = i10;
-        this.d = y0Var;
-        this.e = daVar;
+    public /* synthetic */ w(int i10) {
+        this.a = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public static /* bridge */ /* synthetic */ AudioRecordingConfiguration d(Object obj) {
+        return (AudioRecordingConfiguration) obj;
+    }
+
+    public static /* bridge */ /* synthetic */ MediaRoute2Info e(Object obj) {
+        return (MediaRoute2Info) obj;
+    }
+
+    @Override // q9.d
+    public Object E(cf.c cVar) {
+        qa.d lambda$getComponents$0;
+        switch (this.a) {
+            case 14:
+                lambda$getComponents$0 = FirebaseInstallationsRegistrar.lambda$getComponents$0(cVar);
+                return lambda$getComponents$0;
+            case 21:
+                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
+            case 22:
+                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
+            case 23:
+                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
+            default:
+                q9.n nVar = ExecutorsRegistrar.a;
+                return r9.j.a;
+        }
+    }
+
+    @Override // pg.i0
+    public Typeface a() {
+        switch (this.a) {
+            case 5:
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM);
+            case 6:
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
+            case 7:
+                return Typeface.create("serif", 1);
+            case 8:
+                return AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf");
+            case 9:
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
+            default:
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
+        }
+    }
+
+    @Override // q9.e
+    public List b(ComponentRegistrar componentRegistrar) {
+        return componentRegistrar.getComponents();
+    }
+
+    @Override // q3.g
+    public boolean c(int i10, int i11, int i12, int i13, int i14) {
+        return false;
+    }
+
+    @Override // androidx.car.app.utils.b
+    public void call() {
+        throw null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
-                int i10 = this.c;
-                y0 y0Var = this.d;
-                da daVar = this.e;
-                String[] strArr = this.b;
-                if (strArr[0] != null) {
-                    try {
-                        JSONObject jSONObject = new JSONObject();
-                        jSONObject.put("status", strArr[0]);
-                        b1.x(i10, y0Var, daVar, "phone_requested", jSONObject);
-                        break;
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        return;
-                    }
-                }
+                b2Var.dismiss();
+                break;
+            case 1:
+                b2Var.dismiss();
+                break;
+            case 25:
+                b2Var.dismiss();
                 break;
             default:
-                String[] strArr2 = this.b;
-                int i11 = this.c;
-                y0 y0Var2 = this.d;
-                da daVar2 = this.e;
-                try {
-                    JSONObject jSONObject2 = new JSONObject();
-                    jSONObject2.put("status", strArr2[0]);
-                    b1.x(i11, y0Var2, daVar2, "write_access_requested", jSONObject2);
-                    break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                }
+                b2Var.dismiss();
+                break;
         }
+    }
+
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public void onFailure(Exception exc) {
+        int i10 = qg.n2.r0;
+    }
+
+    public /* synthetic */ w(r.a aVar, int i10, w.b bVar) {
+        this.a = 16;
+    }
+
+    @Override // pa.a
+    public void f(pa.b bVar) {
     }
 }

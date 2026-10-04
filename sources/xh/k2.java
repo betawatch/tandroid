@@ -1,14 +1,14 @@
 package xh;
 
-import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.fs0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class k2 extends s4.j {
-    public final /* synthetic */ bs0 F;
+    public final /* synthetic */ fs0 F;
 
-    public k2(bs0 bs0Var) {
-        this.F = bs0Var;
+    public k2(fs0 fs0Var) {
+        this.F = fs0Var;
     }
 
     @Override // s4.j

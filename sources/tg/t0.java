@@ -1,6 +1,6 @@
 package tg;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t0 implements Runnable {
     public final /* synthetic */ int a;
@@ -15,13 +15,13 @@ public final /* synthetic */ class t0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.W(true);
+                this.b.U(true);
                 break;
             case 1:
                 this.b.b0(true, false);
                 break;
             case 2:
-                this.b.R();
+                this.b.P();
                 break;
             case 3:
                 this.b.b0(true, false);

@@ -1,6 +1,5 @@
 package yc;
 
-import c5.m;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -19,12 +18,11 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
 import javax.net.ssl.SSLException;
-import v7.j;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d {
-    public final m a;
+    public final n2.c a;
     public final OutputStream b;
     public final BufferedInputStream c;
     public int d;
@@ -38,9 +36,9 @@ public final class d {
     public String l;
     public final /* synthetic */ i m;
 
-    public d(i iVar, m mVar, InputStream inputStream, OutputStream outputStream, InetAddress inetAddress) {
+    public d(i iVar, n2.c cVar, InputStream inputStream, OutputStream outputStream, InetAddress inetAddress) {
         this.m = iVar;
-        this.a = mVar;
+        this.a = cVar;
         this.c = new BufferedInputStream(inputStream, 8192);
         this.b = outputStream;
         this.k = (inetAddress.isLoopbackAddress() || inetAddress.isAnyLocalAddress()) ? "127.0.0.1" : inetAddress.getHostAddress().toString();
@@ -133,15 +131,15 @@ public final class d {
                 readLine2 = bufferedReader.readLine();
             }
             hashMap.put("uri", b10);
-        } catch (IOException e) {
-            throw new h("SERVER INTERNAL ERROR: IOException: " + e.getMessage(), e);
+        } catch (IOException e7) {
+            throw new h("SERVER INTERNAL ERROR: IOException: " + e7.getMessage(), e7);
         }
     }
 
     public final void c() {
         f fVar = f.n;
         i iVar = this.m;
-        m mVar = this.a;
+        n2.c cVar = this.a;
         BufferedInputStream bufferedInputStream = this.c;
         OutputStream outputStream = this.b;
         try {
@@ -190,7 +188,7 @@ public final class d {
                                 this.i.put("remote-addr", str);
                                 this.i.put("http-client-ip", str);
                             }
-                            int b10 = j.b((String) hashMap2.get("method"));
+                            int b10 = t8.b.b((String) hashMap2.get("method"));
                             this.g = b10;
                             if (b10 == 0) {
                                 throw new h("BAD REQUEST: Syntax error. HTTP verb " + ((String) hashMap2.get("method")) + " unhandled.");
@@ -199,53 +197,53 @@ public final class d {
                             this.j = new c(this.i);
                             String str2 = (String) this.i.get("connection");
                             boolean z11 = "HTTP/1.1".equals(this.l) && (str2 == null || !str2.matches("(?i).*close.*"));
-                            g e = iVar.e(this);
+                            g e7 = iVar.e(this);
                             String str3 = (String) this.i.get("accept-encoding");
                             this.j.i();
-                            e.i(this.g);
-                            if (i.g(e) && str3 != null && str3.contains("gzip")) {
+                            e7.i(this.g);
+                            if (i.g(e7) && str3 != null && str3.contains("gzip")) {
                                 z10 = true;
                             }
-                            e.g(z10);
-                            e.h(z11);
-                            e.d(outputStream);
-                            if (!z11 || e.b()) {
+                            e7.g(z10);
+                            e7.h(z11);
+                            e7.d(outputStream);
+                            if (!z11 || e7.b()) {
                                 throw new SocketException("NanoHttpd Shutdown");
                             }
-                            i.d(e);
-                            mVar.a();
-                        } catch (SSLException e7) {
-                            throw e7;
+                            i.d(e7);
+                            cVar.d();
+                        } catch (SSLException e10) {
+                            throw e10;
                         } catch (IOException unused) {
                             i.d(bufferedInputStream);
                             i.d(outputStream);
                             throw new SocketException("NanoHttpd Shutdown");
                         }
-                    } catch (h e10) {
-                        i.c(e10.a(), "text/plain", e10.getMessage()).d(outputStream);
+                    } catch (h e11) {
+                        i.c(e11.a(), "text/plain", e11.getMessage()).d(outputStream);
                         i.d(outputStream);
                         i.d(null);
-                        mVar.a();
+                        cVar.d();
                     }
-                } catch (SSLException e11) {
-                    i.c(fVar, "text/plain", "SSL PROTOCOL FAILURE: " + e11.getMessage()).d(outputStream);
+                } catch (SSLException e12) {
+                    i.c(fVar, "text/plain", "SSL PROTOCOL FAILURE: " + e12.getMessage()).d(outputStream);
                     i.d(outputStream);
                     i.d(null);
-                    mVar.a();
-                } catch (IOException e12) {
-                    i.c(fVar, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e12.getMessage()).d(outputStream);
+                    cVar.d();
+                } catch (IOException e13) {
+                    i.c(fVar, "text/plain", "SERVER INTERNAL ERROR: IOException: " + e13.getMessage()).d(outputStream);
                     i.d(outputStream);
                     i.d(null);
-                    mVar.a();
+                    cVar.d();
                 }
-            } catch (SocketException e13) {
-                throw e13;
-            } catch (SocketTimeoutException e14) {
+            } catch (SocketException e14) {
                 throw e14;
+            } catch (SocketTimeoutException e15) {
+                throw e15;
             }
         } catch (Throwable th2) {
             i.d(null);
-            mVar.a();
+            cVar.d();
             throw th2;
         }
     }

@@ -1,283 +1,86 @@
 package ei;
 
-import android.content.Context;
 import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import ci.rc;
+import ci.qc;
+import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class a1 {
-    public final SensorManager a;
-    public Sensor b;
-    public long c;
-    public Sensor d;
-    public long e;
-    public Sensor f;
-    public Sensor g;
-    public long h;
-    public Sensor i;
-    public long j;
-    public org.telegram.ui.web.y0 k;
-    public boolean l;
-    public rc m;
-    public rc o;
-    public rc q;
-    public rc s;
-    public final x0 n = new x0(this, 0);
-    public final x0 p = new x0(this, 1);
-    public final y0 r = new y0(this);
-    public final z0 t = new z0(this);
+public final class a1 implements SensorEventListener {
+    public long a;
+    public float[] b;
+    public float[] c;
+    public float[] d;
+    public final /* synthetic */ b1 e;
 
-    public a1(Context context) {
-        this.a = (SensorManager) context.getSystemService("sensor");
+    public a1(b1 b1Var) {
+        this.e = b1Var;
     }
 
-    public static int a(long j3) {
-        if (j3 >= 160) {
-            return 3;
-        }
-        return j3 >= 60 ? 2 : 1;
-    }
-
-    public final void b() {
-        if (this.l) {
+    public final void a() {
+        if (this.b == null) {
             return;
         }
-        this.l = true;
-        SensorManager sensorManager = this.a;
-        if (sensorManager != null) {
-            Sensor sensor = this.b;
-            if (sensor != null) {
-                sensorManager.unregisterListener(this.n, sensor);
-            }
-            rc rcVar = this.m;
-            if (rcVar != null) {
-                AndroidUtilities.cancelRunOnUIThread(rcVar);
-                this.m = null;
-            }
-            Sensor sensor2 = this.d;
-            if (sensor2 != null) {
-                sensorManager.unregisterListener(this.p, sensor2);
-            }
-            rc rcVar2 = this.o;
-            if (rcVar2 != null) {
-                AndroidUtilities.cancelRunOnUIThread(rcVar2);
-                this.o = null;
-            }
-            Sensor sensor3 = this.g;
-            y0 y0Var = this.r;
-            if (sensor3 != null) {
-                sensorManager.unregisterListener(y0Var, sensor3);
-            }
-            Sensor sensor4 = this.f;
-            if (sensor4 != null) {
-                sensorManager.unregisterListener(y0Var, sensor4);
-            }
-            rc rcVar3 = this.q;
-            if (rcVar3 != null) {
-                AndroidUtilities.cancelRunOnUIThread(rcVar3);
-                this.q = null;
-            }
-            Sensor sensor5 = this.i;
-            if (sensor5 != null) {
-                sensorManager.unregisterListener(this.t, sensor5);
-            }
-            rc rcVar4 = this.s;
-            if (rcVar4 != null) {
-                AndroidUtilities.cancelRunOnUIThread(rcVar4);
-                this.s = null;
-            }
+        b1 b1Var = this.e;
+        if (b1Var.k == null) {
+            return;
         }
-    }
-
-    public final boolean c(long j3) {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        if (this.b == null) {
-            Sensor defaultSensor = sensorManager.getDefaultSensor(1);
-            this.b = defaultSensor;
-            if (defaultSensor == null) {
-                return false;
-            }
-            this.c = j3;
-            if (!this.l) {
-                sensorManager.registerListener(this.n, defaultSensor, a(j3));
-            }
-        }
-        return true;
-    }
-
-    public final boolean d(long j3) {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
+        this.a = System.currentTimeMillis();
+        if (this.c == null) {
+            this.c = new float[9];
         }
         if (this.d == null) {
-            Sensor defaultSensor = sensorManager.getDefaultSensor(4);
-            this.d = defaultSensor;
-            if (defaultSensor == null) {
-                return false;
-            }
-            this.e = j3;
-            if (!this.l) {
-                sensorManager.registerListener(this.p, defaultSensor, a(j3));
-            }
+            this.d = new float[4];
         }
-        return true;
-    }
-
-    public final boolean e(long j3, boolean z10) {
-        Sensor sensor;
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        z0 z0Var = this.t;
-        y0 y0Var = this.r;
-        if (z10) {
-            if (this.i != null) {
-                rc rcVar = this.s;
-                if (rcVar != null) {
-                    AndroidUtilities.cancelRunOnUIThread(rcVar);
-                    this.s = null;
-                }
-                if (!this.l && (sensor = this.i) != null) {
-                    sensorManager.unregisterListener(z0Var, sensor);
-                }
-                this.i = null;
-            }
-            if (this.f == null || this.g == null) {
-                this.g = sensorManager.getDefaultSensor(1);
-                Sensor defaultSensor = sensorManager.getDefaultSensor(2);
-                this.f = defaultSensor;
-                Sensor sensor2 = this.g;
-                if (sensor2 == null || defaultSensor == null) {
-                    return false;
-                }
-                this.h = j3;
-                if (!this.l) {
-                    sensorManager.registerListener(y0Var, sensor2, a(j3));
-                    sensorManager.registerListener(y0Var, this.f, a(j3));
-                    return true;
-                }
-            }
+        float[] fArr = this.b;
+        if (fArr.length > 4) {
+            System.arraycopy(fArr, 0, this.d, 0, 4);
+            SensorManager.getRotationMatrixFromVector(this.c, this.d);
         } else {
-            if (this.f != null || this.g != null) {
-                rc rcVar2 = this.q;
-                if (rcVar2 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(rcVar2);
-                    this.q = null;
-                }
-                if (!this.l) {
-                    Sensor sensor3 = this.g;
-                    if (sensor3 != null) {
-                        sensorManager.unregisterListener(y0Var, sensor3);
-                    }
-                    Sensor sensor4 = this.f;
-                    if (sensor4 != null) {
-                        sensorManager.unregisterListener(y0Var, sensor4);
-                    }
-                }
-                this.g = null;
-                this.f = null;
-            }
-            if (this.i == null) {
-                Sensor defaultSensor2 = sensorManager.getDefaultSensor(15);
-                this.i = defaultSensor2;
-                if (defaultSensor2 == null) {
-                    return false;
-                }
-                this.j = j3;
-                if (!this.l) {
-                    sensorManager.registerListener(z0Var, defaultSensor2, a(j3));
-                }
-            }
+            SensorManager.getRotationMatrixFromVector(this.c, fArr);
         }
-        return true;
+        SensorManager.getOrientation(this.c, new float[3]);
+        try {
+            JSONObject jSONObject = new JSONObject();
+            jSONObject.put("absolute", false);
+            jSONObject.put("alpha", -r2[0]);
+            jSONObject.put("beta", -r2[1]);
+            jSONObject.put("gamma", r2[2]);
+            b1Var.k.d("window.Telegram.WebView.receiveEvent('device_orientation_changed', " + jSONObject + ");");
+        } catch (Exception unused) {
+        }
     }
 
-    public final boolean f() {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
+    @Override // android.hardware.SensorEventListener
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        b1 b1Var = this.e;
+        qc qcVar = b1Var.s;
+        if (qcVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(qcVar);
+            b1Var.s = null;
         }
-        Sensor sensor = this.b;
-        if (sensor == null) {
-            return true;
+        if (b1Var.l || b1Var.k == null) {
+            return;
         }
-        if (!this.l) {
-            sensorManager.unregisterListener(this.n, sensor);
+        long currentTimeMillis = System.currentTimeMillis() - this.a;
+        long j3 = b1Var.j;
+        if (currentTimeMillis < j3) {
+            qc qcVar2 = new qc(this, 12);
+            b1Var.s = qcVar2;
+            AndroidUtilities.runOnUIThread(qcVar2, j3 - currentTimeMillis);
+        } else {
+            if (sensorEvent.sensor.getType() == 15) {
+                this.b = sensorEvent.values;
+            }
+            a();
         }
-        rc rcVar = this.m;
-        if (rcVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(rcVar);
-            this.m = null;
-        }
-        this.b = null;
-        return true;
     }
 
-    public final boolean g() {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        Sensor sensor = this.d;
-        if (sensor == null) {
-            return true;
-        }
-        if (!this.l) {
-            sensorManager.unregisterListener(this.p, sensor);
-        }
-        rc rcVar = this.o;
-        if (rcVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(rcVar);
-            this.o = null;
-        }
-        this.d = null;
-        return true;
-    }
-
-    public final boolean h() {
-        SensorManager sensorManager = this.a;
-        if (sensorManager == null) {
-            return false;
-        }
-        Sensor sensor = this.g;
-        if (sensor == null && this.f == null && this.i == null) {
-            return true;
-        }
-        if (!this.l) {
-            y0 y0Var = this.r;
-            if (sensor != null) {
-                sensorManager.unregisterListener(y0Var, sensor);
-            }
-            Sensor sensor2 = this.f;
-            if (sensor2 != null) {
-                sensorManager.unregisterListener(y0Var, sensor2);
-            }
-            Sensor sensor3 = this.i;
-            if (sensor3 != null) {
-                sensorManager.unregisterListener(this.t, sensor3);
-            }
-        }
-        rc rcVar = this.q;
-        if (rcVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(rcVar);
-            this.q = null;
-        }
-        rc rcVar2 = this.s;
-        if (rcVar2 != null) {
-            AndroidUtilities.cancelRunOnUIThread(rcVar2);
-            this.s = null;
-        }
-        this.g = null;
-        this.f = null;
-        this.i = null;
-        return true;
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i10) {
     }
 }

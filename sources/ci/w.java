@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.il0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class w extends s4.h0 {
     public final /* synthetic */ Context c;
@@ -37,7 +37,7 @@ public final class w extends s4.h0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         x xVar = new x(this.c);
         xVar.setLayoutParams(new s4.p0(AndroidUtilities.dp(46.0f), AndroidUtilities.dp(56.0f)));
-        xVar.setBackground(org.telegram.ui.ActionBar.h6.f0(553648127, 1, -1));
+        xVar.setBackground(org.telegram.ui.ActionBar.i6.f0(553648127, 1, -1));
         return new il0(xVar);
     }
 

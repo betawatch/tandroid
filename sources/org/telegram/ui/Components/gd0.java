@@ -24,10 +24,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class gd0 extends LinearLayout {
-    public static final sr v0 = new sr(0.0f, 0.5f, 0.5f, 1.0f);
+    public static final tr v0 = new tr(0.0f, 0.5f, 0.5f, 1.0f);
     public int E;
     public boolean F;
     public int G;
@@ -42,8 +42,8 @@ public class gd0 extends LinearLayout {
     public int P;
     public int Q;
     public int R;
-    public final bn0 S;
-    public final bn0 T;
+    public final fn0 S;
+    public final fn0 T;
     public int U;
     public bd0 V;
     public float W;
@@ -98,7 +98,7 @@ public class gd0 extends LinearLayout {
                 return View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30);
             }
             if (mode != 1073741824) {
-                throw new IllegalArgumentException(hg.c.h(mode, "Unknown measure mode: "));
+                throw new IllegalArgumentException(hg.k0.h(mode, "Unknown measure mode: "));
             }
         }
         return i10;
@@ -143,7 +143,7 @@ public class gd0 extends LinearLayout {
                 str = strArr[i10 - i11];
             } else {
                 cd0 cd0Var = this.K;
-                str = cd0Var != null ? cd0Var.j(i10) : String.format(Locale.getDefault(), "%d", Integer.valueOf(i10));
+                str = cd0Var != null ? cd0Var.e(i10) : String.format(Locale.getDefault(), "%d", Integer.valueOf(i10));
             }
         }
         sparseArray.put(i10, str);
@@ -170,25 +170,25 @@ public class gd0 extends LinearLayout {
 
     @Override // android.view.View
     public final void computeScroll() {
-        bn0 bn0Var = this.S;
-        if (bn0Var.q) {
-            bn0Var = this.T;
-            if (bn0Var.q) {
+        fn0 fn0Var = this.S;
+        if (fn0Var.q) {
+            fn0Var = this.T;
+            if (fn0Var.q) {
                 return;
             }
         }
-        bn0Var.b();
-        int i10 = bn0Var.k;
+        fn0Var.b();
+        int i10 = fn0Var.k;
         if (this.U == 0) {
-            this.U = bn0Var.c;
+            this.U = fn0Var.c;
         }
         scrollBy(0, i10 - this.U);
         this.U = i10;
-        if (!bn0Var.q) {
+        if (!fn0Var.q) {
             invalidate();
             return;
         }
-        if (bn0Var == this.S) {
+        if (fn0Var == this.S) {
             if (!c()) {
                 n();
             }
@@ -349,9 +349,9 @@ public class gd0 extends LinearLayout {
         return this.g0;
     }
 
-    public final boolean h(bn0 bn0Var) {
-        bn0Var.q = true;
-        int i10 = bn0Var.e - bn0Var.k;
+    public final boolean h(fn0 fn0Var) {
+        fn0Var.q = true;
+        int i10 = fn0Var.e - fn0Var.k;
         int i11 = this.Q - ((this.R + i10) % this.P);
         if (i11 == 0) {
             return false;
@@ -382,7 +382,7 @@ public class gd0 extends LinearLayout {
                 if (strArr == null) {
                     int i11 = this.G;
                     cd0 cd0Var = this.K;
-                    str = cd0Var != null ? cd0Var.j(i11) : String.format(Locale.getDefault(), "%d", Integer.valueOf(i11));
+                    str = cd0Var != null ? cd0Var.e(i11) : String.format(Locale.getDefault(), "%d", Integer.valueOf(i11));
                 } else {
                     str = strArr[this.G - this.x];
                 }
@@ -408,12 +408,12 @@ public class gd0 extends LinearLayout {
         if (this.G == i10) {
             return;
         }
-        int e = this.g0 ? e(i10) : Math.min(Math.max(i10, this.x), this.E);
+        int e7 = this.g0 ? e(i10) : Math.min(Math.max(i10, this.x), this.E);
         int i11 = this.G;
-        this.H = e;
-        this.G = e;
+        this.H = e7;
+        this.G = e7;
         n();
-        if (Math.abs(i11 - e) > 0.9f) {
+        if (Math.abs(i11 - e7) > 0.9f) {
             AndroidUtilities.vibrateCursor(this);
         }
         if (z10 && (ed0Var = this.I) != null) {
@@ -477,7 +477,7 @@ public class gd0 extends LinearLayout {
         if (strArr == null) {
             int i10 = this.G;
             cd0 cd0Var = this.K;
-            str = cd0Var != null ? cd0Var.j(i10) : String.format(Locale.getDefault(), "%d", Integer.valueOf(i10));
+            str = cd0Var != null ? cd0Var.e(i10) : String.format(Locale.getDefault(), "%d", Integer.valueOf(i10));
         } else {
             str = strArr[this.G - this.x];
         }
@@ -590,17 +590,17 @@ public class gd0 extends LinearLayout {
             ((gd0) fd0Var2.d).postDelayed(fd0Var2, ViewConfiguration.getTapTimeout());
         }
         getParent().requestDisallowInterceptTouchEvent(true);
-        bn0 bn0Var = this.S;
-        if (!bn0Var.q) {
-            bn0Var.q = true;
+        fn0 fn0Var = this.S;
+        if (!fn0Var.q) {
+            fn0Var.q = true;
             this.T.q = true;
             i(0);
             return true;
         }
-        bn0 bn0Var2 = this.T;
-        if (!bn0Var2.q) {
-            bn0Var.q = true;
-            bn0Var2.q = true;
+        fn0 fn0Var2 = this.T;
+        if (!fn0Var2.q) {
+            fn0Var.q = true;
+            fn0Var2.q = true;
             return true;
         }
         float f10 = this.W;
@@ -983,7 +983,7 @@ public class gd0 extends LinearLayout {
         this.s = dp;
         Paint paint = new Paint();
         this.i0 = paint;
-        paint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Oh, d6Var));
+        paint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Oh, d6Var));
         this.j0 = (int) TypedValue.applyDimension(1, 2.0f, getResources().getDisplayMetrics());
         TypedValue.applyDimension(1, 48.0f, getResources().getDisplayMetrics());
         this.e = -1;
@@ -1002,7 +1002,7 @@ public class gd0 extends LinearLayout {
         this.d = textView;
         textView.setGravity(17);
         this.d.setSingleLine(true);
-        this.d.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.j5, d6Var));
+        this.d.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.j5, d6Var));
         this.d.setBackgroundResource(0);
         float f7 = dp;
         this.d.setTextSize(0, f7);
@@ -1019,8 +1019,8 @@ public class gd0 extends LinearLayout {
         paint2.setTypeface(this.d.getTypeface());
         paint2.setColor(this.d.getTextColors().getColorForState(LinearLayout.ENABLED_STATE_SET, -1));
         this.O = paint2;
-        this.S = new bn0(getContext(), null);
-        this.T = new bn0(getContext(), new DecelerateInterpolator(2.5f));
+        this.S = new fn0(getContext(), null);
+        this.T = new fn0(getContext(), new DecelerateInterpolator(2.5f));
         n();
         setImportantForAccessibility(1);
         setAccessibilityDelegate(new ad0(this));

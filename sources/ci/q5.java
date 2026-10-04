@@ -7,26 +7,26 @@ import android.graphics.RectF;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class q5 extends qg.j1 {
-    public final Path g3;
-    public final /* synthetic */ nb h3;
+public final class q5 extends qg.i1 {
+    public final Path n3;
+    public final /* synthetic */ mb o3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q5(nb nbVar, Context context) {
+    public q5(mb mbVar, Context context) {
         super(context);
-        this.h3 = nbVar;
-        this.g3 = new Path();
+        this.o3 = mbVar;
+        this.n3 = new Path();
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void draw(Canvas canvas) {
         ViewGroup barView;
-        barView = this.h3.getBarView();
+        barView = this.o3.getBarView();
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(AndroidUtilities.lerp(barView.getLeft() - getLeft(), 0, r0.D1), AndroidUtilities.lerp(barView.getTop() - getTop(), 0, r0.D1), AndroidUtilities.lerp(barView.getRight() - getLeft(), getWidth(), r0.D1), AndroidUtilities.lerp(barView.getBottom() - getTop(), getHeight(), r0.D1));
-        Path path = this.g3;
+        Path path = this.n3;
         path.rewind();
         path.addRoundRect(rectF, AndroidUtilities.dp(32.0f), AndroidUtilities.dp(32.0f), Path.Direction.CW);
         canvas.save();

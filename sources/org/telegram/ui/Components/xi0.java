@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class xi0 {
     public final e6 a;
@@ -22,7 +22,7 @@ public final class xi0 {
     public boolean h;
 
     public xi0(View view) {
-        this.a = new e6(view, 350L, sr.h);
+        this.a = new e6(view, 350L, tr.h);
         this.e = new cj0(view);
         this.f = new zc(view);
         o6 o6Var = new o6(false, false, false, false);

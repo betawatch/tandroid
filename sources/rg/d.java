@@ -13,21 +13,21 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.t3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.xl0;
-import org.telegram.ui.m51;
-import w7.y5;
+import org.telegram.ui.Components.yl0;
+import org.telegram.ui.n41;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class d extends xl0 {
+public final class d extends yl0 {
     public final d6 c;
     public final int d;
     public final int e;
     public final ArrayList f;
-    public final z0 h;
+    public final a1 h;
     public int n;
     public c r;
     public final boolean s;
@@ -37,11 +37,11 @@ public final class d extends xl0 {
         this.f = arrayList;
         this.s = true;
         this.c = d6Var;
-        z0 z0Var = new z0(h6.Lj, h6.Mj, h6.Nj, h6.Oj, d6Var);
-        this.h = z0Var;
-        z0Var.o = 0.0f;
-        z0Var.p = 0.0f;
-        z0Var.q = 1.0f;
+        a1 a1Var = new a1(i6.Lj, i6.Mj, i6.Nj, i6.Oj, d6Var);
+        this.h = a1Var;
+        a1Var.o = 0.0f;
+        a1Var.p = 0.0f;
+        a1Var.q = 1.0f;
         MessagesController messagesController = MessagesController.getInstance(i10);
         arrayList.add(new e(messagesController.channelsLimitDefault, messagesController.channelsLimitPremium, LocaleController.getString(R.string.GroupsAndChannelsLimitTitle), LocaleController.formatString(R.string.GroupsAndChannelsLimitSubtitle, Integer.valueOf(messagesController.channelsLimitPremium))));
         arrayList.add(new e(messagesController.dialogFiltersPinnedLimitDefault, messagesController.dialogFiltersPinnedLimitPremium, LocaleController.getString(R.string.PinChatsLimitTitle), LocaleController.formatString(R.string.PinChatsLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersPinnedLimitPremium))));
@@ -59,7 +59,7 @@ public final class d extends xl0 {
         this.d = arrayList.size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -91,7 +91,7 @@ public final class d extends xl0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.m51] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.n41] */
     /* JADX WARN: Type inference failed for: r1v7, types: [rg.f] */
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
@@ -108,20 +108,20 @@ public final class d extends xl0 {
                 t3Var = new t3(context, 16);
             }
         } else if (this.s) {
-            ?? m51Var = new m51(context, 10);
+            ?? n41Var = new n41(context, 11);
             LinearLayout f7 = ok.f(context, 0);
             ImageView imageView = new ImageView(context);
-            imageView.setImageDrawable(a1.c(context.getDrawable(R.drawable.other_2x_large), a1.d().a));
-            f7.addView(imageView, y5.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
+            imageView.setImageDrawable(b1.c(context.getDrawable(R.drawable.other_2x_large), b1.d().a));
+            f7.addView(imageView, z5.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
             TextView textView = new TextView(context);
             textView.setText(LocaleController.getString(R.string.DoubledLimits));
             textView.setGravity(17);
             textView.setTextSize(1, 20.0f);
-            textView.setTextColor(h6.v0(h6.G6, d6Var));
+            textView.setTextColor(i6.v0(i6.G6, d6Var));
             textView.setTypeface(AndroidUtilities.bold());
-            f7.addView(textView, y5.e(-2, -2, 16));
-            m51Var.addView(f7, y5.e(-2, -2, 17));
-            t3Var = m51Var;
+            f7.addView(textView, z5.e(-2, -2, 16));
+            n41Var.addView(f7, z5.e(-2, -2, 17));
+            t3Var = n41Var;
         } else {
             t3Var = new t3(context, 64);
         }

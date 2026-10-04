@@ -4,10 +4,10 @@ import ai.u9;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.Cells.o2;
 import org.telegram.ui.Cells.s2;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.wn;
+import org.telegram.ui.Components.zl0;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class l1 implements o2 {
     public final /* synthetic */ o1 a;
@@ -24,10 +24,10 @@ public final class l1 implements o2 {
     @Override // org.telegram.ui.Cells.o2
     public final void e(s2 s2Var) {
         o1 o1Var = this.a;
-        wn wnVar = o1Var.f;
+        yn ynVar = o1Var.f;
         if (MessagesController.getInstance(o1Var.r).getStoriesController().I(s2Var.getDialogId())) {
-            wnVar.getOrCreateStoryViewer().getClass();
-            wnVar.getOrCreateStoryViewer().D(o1Var.c, s2Var.getDialogId(), u9.a((yl0) s2Var.getParent()));
+            ynVar.getOrCreateStoryViewer().getClass();
+            ynVar.getOrCreateStoryViewer().D(o1Var.c, s2Var.getDialogId(), u9.a((zl0) s2Var.getParent()));
         }
     }
 

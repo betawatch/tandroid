@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b0 {
     public static int d;
@@ -114,8 +114,8 @@ public final class b0 {
                 if (handler != null) {
                     handler.removeCallbacksAndMessages(null);
                 }
-            } catch (Exception e) {
-                Log.w("MediaSessionCompat", "Exception happened while accessing MediaSession.mCallback.", e);
+            } catch (Exception e7) {
+                Log.w("MediaSessionCompat", "Exception happened while accessing MediaSession.mCallback.", e7);
             }
         }
         mediaSession.setCallback(null);
@@ -193,9 +193,9 @@ public final class b0 {
                     PlaybackStateCompat.CustomAction customAction = (PlaybackStateCompat.CustomAction) obj;
                     PlaybackState.CustomAction customAction2 = customAction.e;
                     if (customAction2 == null) {
-                        PlaybackState.CustomAction.Builder e = c0.e(customAction.a, customAction.b, customAction.c);
-                        c0.w(e, customAction.d);
-                        customAction2 = c0.b(e);
+                        PlaybackState.CustomAction.Builder e7 = c0.e(customAction.a, customAction.b, customAction.c);
+                        c0.w(e7, customAction.d);
+                        customAction2 = c0.b(e7);
                     }
                     c0.a(d10, customAction2);
                 }
@@ -225,7 +225,7 @@ public final class b0 {
                 }
                 long j3 = mediaSessionCompat$QueueItem.b;
                 if (hashSet.contains(Long.valueOf(j3))) {
-                    Log.e("MediaSessionCompat", a4.a.p(j3, "Found duplicate queue id: "), new IllegalArgumentException("id of each queue item should be unique"));
+                    Log.e("MediaSessionCompat", a4.a.o(j3, "Found duplicate queue id: "), new IllegalArgumentException("id of each queue item should be unique"));
                 }
                 hashSet.add(Long.valueOf(j3));
             }

@@ -14,7 +14,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h7 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -56,7 +56,7 @@ public final /* synthetic */ class h7 implements RequestDelegate {
                         boolean z12;
                         lh0 lh0Var2 = lh0.this;
                         int i10 = lh0Var2.b;
-                        t61 t61Var = lh0Var2.c;
+                        c71 c71Var = lh0Var2.c;
                         lh0Var2.K = -1;
                         lh0Var2.v = false;
                         lh0Var2.H.setLoading(false);
@@ -68,14 +68,14 @@ public final /* synthetic */ class h7 implements RequestDelegate {
                             if (tL_error2 == null || !tL_error2.text.startsWith("FLOOD_WAIT_") || !tL_error2.text.contains("_OR_STARS_")) {
                                 if (tL_error2 != null && "PREMIUM_ACCOUNT_REQUIRED".equalsIgnoreCase(tL_error2.text)) {
                                     lh0Var2.d();
-                                    t61Var.Y2.N(true);
+                                    c71Var.f3.N(true);
                                     return;
                                 } else {
                                     if (tL_error2 == null || !"BALANCE_TOO_LOW".equalsIgnoreCase(tL_error2.text)) {
                                         return;
                                     }
                                     lh0Var2.d();
-                                    t61Var.Y2.N(true);
+                                    c71Var.f3.N(true);
                                     yh.t5.y(i10, false).q(true, true, new ai.j(lh0Var2, j10, 22));
                                     return;
                                 }
@@ -93,7 +93,7 @@ public final /* synthetic */ class h7 implements RequestDelegate {
                                 lh0Var2.d.stars_amount = parseInt2;
                             }
                             lh0Var2.d();
-                            t61Var.Y2.N(true);
+                            c71Var.f3.N(true);
                             return;
                         }
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject2;
@@ -149,9 +149,9 @@ public final /* synthetic */ class h7 implements RequestDelegate {
                         }
                         lh0Var2.d();
                         if (isEmpty) {
-                            t61Var.u0(0);
+                            c71Var.v0(0);
                         }
-                        t61Var.Y2.N(z12);
+                        c71Var.f3.N(z12);
                         if (!arrayList2.isEmpty() && (!z14 ? !lh0Var2.s : !lh0Var2.h)) {
                             AndroidUtilities.runOnUIThread(new ci.y0(lh0Var2, z14, arrayList2, 23));
                         }

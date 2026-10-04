@@ -1,106 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.KeyEvent;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class za extends xl0 {
-    public final /* synthetic */ int c;
-    public final Context d;
-    public final Object e;
-    public final /* synthetic */ KeyEvent.Callback f;
+public final class za extends s4.j0 {
+    public final /* synthetic */ s4.j0 a;
+    public final /* synthetic */ ab b;
 
-    public za(lj ljVar, Context context) {
-        this.c = 1;
-        this.f = ljVar;
-        this.e = new ArrayList();
-        this.d = context;
+    public za(ab abVar, s4.j0 j0Var) {
+        this.b = abVar;
+        this.a = j0Var;
     }
 
-    @Override // s4.h0
-    public void B(s4.j0 j0Var) {
-        switch (this.c) {
-            case 0:
-                ((xl0) this.e).B(new ya(this, j0Var));
-                break;
-            default:
-                super.B(j0Var);
-                break;
-        }
+    @Override // s4.j0
+    public final void a() {
+        this.a.a();
     }
 
-    @Override // org.telegram.ui.Components.xl0
-    public final boolean D(s4.c1 c1Var) {
-        switch (this.c) {
-            case 0:
-                return ((xl0) this.e).D(c1Var);
-            default:
-                return c1Var.f == 0;
-        }
+    @Override // s4.j0
+    public final void b(int i10, int i11) {
+        this.a.b(i10 + (!((cb) this.b.f).P ? 1 : 0), i11);
     }
 
-    @Override // s4.h0
-    public final int h() {
-        switch (this.c) {
-            case 0:
-                return ((xl0) this.e).h() + 1;
-            default:
-                return ((ArrayList) this.e).size();
-        }
+    @Override // s4.j0
+    public final void c(int i10, int i11, Object obj) {
+        this.a.c(i10 + (!((cb) this.b.f).P ? 1 : 0), i11, obj);
     }
 
-    @Override // s4.h0
-    public final int j(int i10) {
-        switch (this.c) {
-            case 0:
-                bb bbVar = (bb) this.f;
-                if (i10 == (bbVar.P ? h() - 1 : 0)) {
-                    return -1000;
-                }
-                return ((xl0) this.e).j(i10 - (!bbVar.P ? 1 : 0));
-            default:
-                return 0;
-        }
+    @Override // s4.j0
+    public final void d(int i10, int i11) {
+        this.a.d(i10 + (!((cb) this.b.f).P ? 1 : 0), i11);
     }
 
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        switch (this.c) {
-            case 0:
-                bb bbVar = (bb) this.f;
-                if (i10 != (bbVar.P ? h() - 1 : 0)) {
-                    ((xl0) this.e).v(c1Var, i10 - (!bbVar.P ? 1 : 0));
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.Cells.eb ebVar = (org.telegram.ui.Cells.eb) c1Var.a;
-                ebVar.d(1, false, false);
-                ebVar.setSize(((lj) this.f).r);
-                ebVar.e(1, ((ArrayList) this.e).get(i10), null, 0);
-                break;
-        }
+    @Override // s4.j0
+    public final void e(int i10, int i11) {
+        int i12 = !((cb) this.b.f).P ? 1 : 0;
+        this.a.e(i10 + i12, i11 + i12);
     }
 
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        switch (this.c) {
-            case 0:
-                return i10 == -1000 ? new il0(new ci.bb((bb) this.f, this.d)) : ((xl0) this.e).x(viewGroup, i10);
-            default:
-                kj kjVar = new kj(this, this.d);
-                kjVar.b = false;
-                return new il0(kjVar);
-        }
-    }
-
-    public za(bb bbVar, xl0 xl0Var, Context context) {
-        this.c = 0;
-        this.f = bbVar;
-        this.e = xl0Var;
-        this.d = context;
+    @Override // s4.j0
+    public final void f(int i10, int i11) {
+        this.a.f(i10 + (!((cb) this.b.f).P ? 1 : 0), i11);
     }
 }

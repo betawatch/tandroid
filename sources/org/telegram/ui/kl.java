@@ -7,21 +7,21 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class kl extends ViewOutlineProvider {
-    public final /* synthetic */ wn a;
+    public final /* synthetic */ yn a;
 
-    public kl(wn wnVar) {
-        this.a = wnVar;
+    public kl(yn ynVar) {
+        this.a = ynVar;
     }
 
     @Override // android.view.ViewOutlineProvider
     public final void getOutline(View view, Outline outline) {
         ImageReceiver imageReceiver = (ImageReceiver) view.getTag(R.id.parent_tag);
         if (imageReceiver == null) {
-            wn wnVar = this.a;
-            outline.setOval(0, 0, AndroidUtilities.roundPlayingMessageSize(wnVar.C9()), AndroidUtilities.roundPlayingMessageSize(wnVar.C9()));
+            yn ynVar = this.a;
+            outline.setOval(0, 0, AndroidUtilities.roundPlayingMessageSize(ynVar.B9()), AndroidUtilities.roundPlayingMessageSize(ynVar.B9()));
             return;
         }
         int[] roundRadius = imageReceiver.getRoundRadius();

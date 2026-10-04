@@ -3,7 +3,7 @@ package ii;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class e3 {
     public final /* synthetic */ x3 a;
@@ -14,34 +14,34 @@ public final class e3 {
 
     public final void a(a aVar) {
         x3 x3Var = this.a;
-        ArrayList arrayList = x3Var.l3;
+        ArrayList arrayList = x3Var.s3;
         int indexOf = arrayList.indexOf(aVar);
-        if (indexOf < 0 || !x3.x3(aVar)) {
+        if (indexOf < 0 || !x3.z3(aVar)) {
             return;
         }
-        int P3 = x3Var.P3(indexOf);
-        if (P3 >= arrayList.size()) {
-            P3 = arrayList.size() - 1;
+        int R3 = x3Var.R3(indexOf);
+        if (R3 >= arrayList.size()) {
+            R3 = arrayList.size() - 1;
         }
-        i2 i2Var = x3Var.J3;
+        i2 i2Var = x3Var.Q3;
         if (i2Var != null) {
             i2Var.d();
         }
-        while (P3 >= indexOf) {
-            arrayList.remove(P3);
-            P3--;
+        while (R3 >= indexOf) {
+            arrayList.remove(R3);
+            R3--;
         }
         a aVar2 = null;
         a aVar3 = indexOf > 0 ? (a) arrayList.get(indexOf - 1) : null;
-        if (aVar3 != null && !aVar3.i && !x3.x3(aVar3) && !x3.E3(aVar3.b)) {
+        if (aVar3 != null && !aVar3.i && !x3.z3(aVar3) && !x3.G3(aVar3.b)) {
             aVar2 = aVar3;
         }
         if (arrayList.isEmpty()) {
             aVar2 = new a(new TL_iv.pageBlockParagraph(), 0, 0);
             arrayList.add(aVar2);
         }
-        x3Var.Y2.N(false);
-        i2 i2Var2 = x3Var.J3;
+        x3Var.f3.N(false);
+        i2 i2Var2 = x3Var.Q3;
         if (i2Var2 != null) {
             i2Var2.h();
         }

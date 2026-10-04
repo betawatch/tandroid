@@ -6,7 +6,7 @@ import android.os.Build;
 import java.util.ArrayList;
 import n7.z0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -29,9 +29,9 @@ public final class a {
         this.h = z0Var;
     }
 
-    public static a a(Context context, u uVar, String str, String str2, ArrayList arrayList, z0 z0Var) {
+    public static a a(Context context, v vVar, String str, String str2, ArrayList arrayList, z0 z0Var) {
         String packageName = context.getPackageName();
-        String c10 = uVar.c();
+        String c10 = vVar.c();
         PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 0);
         String l4 = Build.VERSION.SDK_INT >= 28 ? Long.toString(packageInfo.getLongVersionCode()) : Integer.toString(packageInfo.versionCode);
         String str3 = packageInfo.versionName;

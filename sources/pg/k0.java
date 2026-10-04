@@ -16,9 +16,9 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.l21;
+import org.telegram.ui.n21;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class k0 {
     public static final k0 e;
@@ -32,9 +32,9 @@ public final class k0 {
     public final o0.a d;
 
     static {
-        k0 k0Var = new k0("roboto", "PhotoEditorTypefaceRoboto", new o0.a(new org.webrtc.audio.b(3)));
+        k0 k0Var = new k0("roboto", "PhotoEditorTypefaceRoboto", new o0.a(new org.telegram.ui.web.w(5)));
         e = k0Var;
-        f = Arrays.asList(k0Var, new k0("italic", "PhotoEditorTypefaceItalic", new o0.a(new org.webrtc.audio.b(4))), new k0("serif", "PhotoEditorTypefaceSerif", new o0.a(new org.webrtc.audio.b(5))), new k0("condensed", "PhotoEditorTypefaceCondensed", new o0.a(new org.webrtc.audio.b(6))), new k0("mono", "PhotoEditorTypefaceMono", new o0.a(new org.webrtc.audio.b(7))), new k0("mw_bold", "PhotoEditorTypefaceMerriweather", new o0.a(new org.webrtc.audio.b(8))));
+        f = Arrays.asList(k0Var, new k0("italic", "PhotoEditorTypefaceItalic", new o0.a(new org.telegram.ui.web.w(6))), new k0("serif", "PhotoEditorTypefaceSerif", new o0.a(new org.telegram.ui.web.w(7))), new k0("condensed", "PhotoEditorTypefaceCondensed", new o0.a(new org.telegram.ui.web.w(8))), new k0("mono", "PhotoEditorTypefaceMono", new o0.a(new org.telegram.ui.web.w(9))), new k0("mw_bold", "PhotoEditorTypefaceMerriweather", new o0.a(new org.telegram.ui.web.w(10))));
         g = Arrays.asList("Google Sans", "Dancing Script", "Carrois Gothic SC", "Cutive Mono", "Droid Sans Mono", "Coming Soon");
     }
 
@@ -202,7 +202,7 @@ public final class k0 {
         }
         if (arrayList == null && !i) {
             i = true;
-            Utilities.themeQueue.postRunnable(new l21(10));
+            Utilities.themeQueue.postRunnable(new n21(10));
         }
         return f;
     }
@@ -229,6 +229,6 @@ public final class k0 {
         this.a = str;
         this.c = str;
         this.b = null;
-        this.d = new o0.a(new le.b(font, 17));
+        this.d = new o0.a(new k2.v(font, 18));
     }
 }

@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class if0 extends View {
     public Paint a;
@@ -35,7 +35,7 @@ public final class if0 extends View {
         if (!z10 || (hf0Var = this.r) == null) {
             return;
         }
-        hf0Var.l(((Integer) getTag()).intValue(), getProgress());
+        hf0Var.k(((Integer) getTag()).intValue(), getProgress());
     }
 
     public int getProgress() {
@@ -90,7 +90,7 @@ public final class if0 extends View {
                 this.e = (f7 >= 0.0f ? f7 > ((float) (getMeasuredWidth() - i10)) ? getMeasuredWidth() - i10 : f7 : 0.0f) / (getMeasuredWidth() - i10);
                 hf0 hf0Var = this.r;
                 if (hf0Var != null) {
-                    hf0Var.l(((Integer) getTag()).intValue(), getProgress());
+                    hf0Var.k(((Integer) getTag()).intValue(), getProgress());
                 }
                 invalidate();
                 return true;

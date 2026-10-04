@@ -5,10 +5,10 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.wv0;
-import org.telegram.ui.wl0;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.am0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class s1 {
     public f1 a;
@@ -37,13 +37,13 @@ public final class s1 {
         return (float) Math.sqrt((f18 * f18) + (f17 * f17));
     }
 
-    public final void b(Canvas canvas, wv0 wv0Var, r1 r1Var) {
-        float width = (r1Var.d / wv0Var.a) * canvas.getWidth();
-        float height = (r1Var.e / wv0Var.b) * canvas.getHeight();
+    public final void b(Canvas canvas, fw0 fw0Var, r1 r1Var) {
+        float width = (r1Var.d / fw0Var.a) * canvas.getWidth();
+        float height = (r1Var.e / fw0Var.b) * canvas.getHeight();
         float dp = AndroidUtilities.dp(5.0f);
         boolean z10 = r1Var.a;
         canvas.drawCircle(width, height, dp, z10 ? this.d : this.f);
-        canvas.drawCircle((r1Var.d / wv0Var.a) * canvas.getWidth(), (r1Var.e / wv0Var.b) * canvas.getHeight(), AndroidUtilities.dp(5.0f), z10 ? this.e : this.g);
+        canvas.drawCircle((r1Var.d / fw0Var.a) * canvas.getWidth(), (r1Var.e / fw0Var.b) * canvas.getHeight(), AndroidUtilities.dp(5.0f), z10 ? this.e : this.g);
     }
 
     public final void c(float f7, float f10, boolean z10) {
@@ -64,10 +64,10 @@ public final class s1 {
                 fArr[1] = fArr[1] - i1Var.c;
                 double d = f7 * (z10 ? -1 : 1);
                 float cos = (float) ((Math.cos(d) * f10) - (Math.sin(d) * fArr[1]));
-                float e = (float) hg.c.e(d, fArr[1], Math.sin(d) * fArr[0]);
+                float e7 = (float) hg.k0.e(d, fArr[1], Math.sin(d) * fArr[0]);
                 i1 i1Var2 = this.h;
                 fArr[0] = cos + i1Var2.b;
-                fArr[1] = e + i1Var2.c;
+                fArr[1] = e7 + i1Var2.c;
             }
         }
     }
@@ -85,7 +85,7 @@ public final class s1 {
         if (i1Var2 == null) {
             painting.getClass();
         } else if (painting.r != null) {
-            painting.f.f(new wl0(painting, i1Var2, currentColor, 11));
+            painting.f.f(new am0(painting, i1Var2, currentColor, 11));
         }
         this.m.clear();
         this.n.clear();

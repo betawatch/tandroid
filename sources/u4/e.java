@@ -16,14 +16,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import org.xmlpull.v1.XmlSerializer;
-import w9.o;
+import w9.p;
 import x8.m;
 import y8.b1;
 import y8.k0;
 import y8.v0;
 import zd.y0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class e implements Runnable {
     public final /* synthetic */ int a;
@@ -78,13 +78,13 @@ public final class e implements Runnable {
                         }
                         try {
                             X.close();
-                        } catch (IOException e) {
-                            Log.e("AtomicFile", "Failed to close file output stream", e);
+                        } catch (IOException e7) {
+                            Log.e("AtomicFile", "Failed to close file output stream", e7);
                         }
                         la.h.U(file2, file);
                         return;
-                    } catch (Exception e7) {
-                        e = e7;
+                    } catch (Exception e10) {
+                        e = e10;
                         fileOutputStream = X;
                         Log.e("ShortcutInfoCompatSaver", "Failed to write to file " + file, e);
                         if (fileOutputStream != null) {
@@ -95,8 +95,8 @@ public final class e implements Runnable {
                             }
                             try {
                                 fileOutputStream.close();
-                            } catch (IOException e10) {
-                                Log.e("AtomicFile", "Failed to close file output stream", e10);
+                            } catch (IOException e11) {
+                                Log.e("AtomicFile", "Failed to close file output stream", e11);
                             }
                             if (!file2.delete()) {
                                 Log.e("AtomicFile", "Failed to delete new file " + file2);
@@ -104,8 +104,8 @@ public final class e implements Runnable {
                         }
                         throw new RuntimeException("Failed to write to file " + file, e);
                     }
-                } catch (Exception e11) {
-                    e = e11;
+                } catch (Exception e12) {
+                    e = e12;
                 }
             case 1:
                 l lVar = (l) this.c;
@@ -113,8 +113,8 @@ public final class e implements Runnable {
                     ((l) this.b).get();
                     lVar.k(null);
                     return;
-                } catch (Exception e12) {
-                    lVar.l(e12);
+                } catch (Exception e13) {
+                    lVar.l(e13);
                     return;
                 }
             case 2:
@@ -126,8 +126,8 @@ public final class e implements Runnable {
                     fVar.putAll(d.c(shortcutInfoCompatSaverImpl2.f, shortcutInfoCompatSaverImpl2.a));
                     shortcutInfoCompatSaverImpl2.e(new ArrayList(fVar.values()));
                     return;
-                } catch (Exception e13) {
-                    Log.w("ShortcutInfoCompatSaver", "ShortcutInfoCompatSaver started with an exceptions ", e13);
+                } catch (Exception e14) {
+                    Log.w("ShortcutInfoCompatSaver", "ShortcutInfoCompatSaver started with an exceptions ", e14);
                     return;
                 }
             case 3:
@@ -149,12 +149,12 @@ public final class e implements Runnable {
                     ((Runnable) this.c).run();
                     ((l) this.b).k(null);
                     return;
-                } catch (Exception e14) {
-                    ((l) this.b).l(e14);
+                } catch (Exception e15) {
+                    ((l) this.b).l(e15);
                     return;
                 }
             case 5:
-                o.a((o) this.c, (da.b) this.b);
+                p.a((p) this.c, (da.b) this.b);
                 return;
             case 6:
                 x1.a aVar = (x1.a) this.c;

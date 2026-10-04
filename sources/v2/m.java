@@ -4,10 +4,10 @@ import b2.s;
 import c3.h0;
 import g2.b0;
 import org.telegram.tgnet.ConnectionsManager;
-import u2.a1;
-import v7.n7;
+import u2.b1;
+import v7.m7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class m extends a {
     public final int E;
@@ -26,28 +26,28 @@ public final class m extends a {
         b0 b0Var = this.r;
         o0.a aVar = this.x;
         e2.d.h(aVar);
-        for (a1 a1Var : (a1[]) aVar.c) {
-            if (a1Var.F != 0) {
-                a1Var.F = 0L;
-                a1Var.z = true;
+        for (b1 b1Var : (b1[]) aVar.c) {
+            if (b1Var.F != 0) {
+                b1Var.F = 0L;
+                b1Var.z = true;
             }
         }
-        h0 U = aVar.U(this.E);
-        U.b(this.F);
+        h0 L = aVar.L(this.E);
+        L.b(this.F);
         try {
             long open = b0Var.open(this.b.b(this.G));
             if (open != -1) {
                 open += this.G;
             }
             c3.l lVar = new c3.l(this.r, this.G, open);
-            for (int i10 = 0; i10 != -1; i10 = U.a(lVar, ConnectionsManager.DEFAULT_DATACENTER_ID, true)) {
+            for (int i10 = 0; i10 != -1; i10 = L.a(lVar, ConnectionsManager.DEFAULT_DATACENTER_ID, true)) {
                 this.G += i10;
             }
-            U.c(this.h, 1, (int) this.G, 0, null);
-            n7.a(b0Var);
+            L.c(this.h, 1, (int) this.G, 0, null);
+            m7.a(b0Var);
             this.H = true;
         } catch (Throwable th2) {
-            n7.a(b0Var);
+            m7.a(b0Var);
             throw th2;
         }
     }
@@ -58,6 +58,6 @@ public final class m extends a {
     }
 
     @Override // y2.i
-    public final void D() {
+    public final void q() {
     }
 }

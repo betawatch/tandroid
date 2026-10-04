@@ -1,25 +1,58 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class nq0 extends g.p {
-    public final /* synthetic */ tq0 c;
+public final class nq0 extends org.telegram.ui.ActionBar.f5 {
+    public final nl0 f = new nl0(this, 12);
+    public final /* synthetic */ wq0 h;
 
-    public nq0(tq0 tq0Var) {
-        this.c = tq0Var;
+    public nq0(wq0 wq0Var) {
+        this.h = wq0Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        tq0 tq0Var = this.c;
-        if (tq0Var.L.j(i10) == 1 || tq0Var.Y || (tq0Var.J == null && TextUtils.isEmpty(tq0Var.v))) {
-            return tq0Var.M.J;
+    @Override // org.telegram.ui.ActionBar.f5
+    public final boolean b() {
+        this.h.finishFragment();
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f5
+    public final void p(ci.h2 h2Var) {
+        this.h.b0(h2Var);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f5
+    public final void q(EditText editText) {
+        int i10;
+        if (editText.getText().length() != 0) {
+            nl0 nl0Var = this.f;
+            AndroidUtilities.cancelRunOnUIThread(nl0Var);
+            AndroidUtilities.runOnUIThread(nl0Var, 1200L);
+            return;
         }
-        int i11 = tq0Var.R;
-        int i12 = tq0Var.g0;
-        return i11 + (i10 % i12 != i12 - 1 ? AndroidUtilities.dp(2.0f) : 0);
+        wq0 wq0Var = this.h;
+        wq0Var.f.clear();
+        wq0Var.h.clear();
+        wq0Var.v = null;
+        wq0Var.s = true;
+        wq0Var.r = false;
+        if (wq0Var.x != 0) {
+            i10 = ((org.telegram.ui.ActionBar.n2) wq0Var).currentAccount;
+            ConnectionsManager.getInstance(i10).cancelRequest(wq0Var.x, true);
+            wq0Var.x = 0;
+        }
+        wq0Var.N.d.setText(LocaleController.getString(R.string.NoRecentSearches));
+        wq0Var.N.e(false, true);
+        wq0Var.j0();
+    }
+
+    @Override // org.telegram.ui.ActionBar.f5
+    public final void n() {
     }
 }

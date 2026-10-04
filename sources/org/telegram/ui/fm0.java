@@ -1,86 +1,59 @@
 package org.telegram.ui;
 
-import java.util.HashMap;
-import org.telegram.messenger.ImageReceiver;
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SecureDocument;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class fm0 extends lu0 {
-    public final /* synthetic */ gn0 a;
+public final class fm0 implements TextWatcher {
+    public boolean a;
+    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ kn0 d;
 
-    public fm0(gn0 gn0Var) {
-        this.a = gn0Var;
+    public fm0(kn0 kn0Var, EditTextBoldCursor editTextBoldCursor, String str) {
+        this.d = kn0Var;
+        this.b = editTextBoldCursor;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
-    public final void B(int i10) {
-        gn0 gn0Var = this.a;
-        int i11 = gn0Var.S0;
-        SecureDocument secureDocument = i11 == 1 ? gn0Var.j1 : i11 == 4 ? (SecureDocument) gn0Var.k1.get(i10) : i11 == 2 ? gn0Var.l1 : i11 == 3 ? gn0Var.m1 : (SecureDocument) gn0Var.i1.get(i10);
-        en0 en0Var = (en0) gn0Var.n1.remove(secureDocument);
-        if (en0Var == null) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        if (this.a) {
             return;
         }
-        String n12 = gn0.n1(secureDocument);
-        int i12 = gn0Var.S0;
-        String str = null;
-        if (i12 == 1) {
-            gn0Var.j1 = null;
-            str = v7.j.g("selfie", n12);
-        } else if (i12 == 4) {
-            str = v7.j.g("translation", n12);
-        } else if (i12 == 2) {
-            gn0Var.l1 = null;
-            str = v7.j.g("front", n12);
-        } else if (i12 == 3) {
-            gn0Var.m1 = null;
-            str = v7.j.g("reverse", n12);
-        } else if (i12 == 0) {
-            str = v7.j.g("files", n12);
-        }
-        if (str != null) {
-            HashMap hashMap = gn0Var.x1;
-            if (hashMap != null) {
-                hashMap.remove(str);
+        boolean z10 = true;
+        this.a = true;
+        int i10 = 0;
+        while (true) {
+            if (i10 >= editable.length()) {
+                z10 = false;
+                break;
             }
-            HashMap hashMap2 = gn0Var.y1;
-            if (hashMap2 != null) {
-                hashMap2.remove(str);
+            char charAt = editable.charAt(i10);
+            if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && !((charAt >= '0' && charAt <= '9') || charAt == '-' || charAt == ' '))) {
+                break;
+            } else {
+                i10++;
             }
         }
-        gn0Var.S1(gn0Var.S0);
-        gn0Var.i0.removeView(en0Var);
+        this.a = false;
+        EditTextBoldCursor editTextBoldCursor = this.b;
+        if (z10) {
+            editTextBoldCursor.setErrorText(LocaleController.getString(R.string.PassportUseLatinOnly));
+        } else {
+            kn0.J0(this.d, editTextBoldCursor, this.c, editable, false);
+        }
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
-    public final vu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        if (i10 < 0) {
-            return null;
-        }
-        gn0 gn0Var = this.a;
-        if (i10 >= gn0Var.i0.getChildCount()) {
-            return null;
-        }
-        en0 en0Var = (en0) gn0Var.i0.getChildAt(i10);
-        int[] iArr = new int[2];
-        en0Var.c.getLocationInWindow(iArr);
-        vu0 vu0Var = new vu0();
-        vu0Var.b = iArr[0];
-        vu0Var.c = iArr[1];
-        vu0Var.d = gn0Var.i0;
-        ImageReceiver imageReceiver = en0Var.c.getImageReceiver();
-        vu0Var.a = imageReceiver;
-        vu0Var.e = imageReceiver.getBitmapSafe();
-        return vu0Var;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
-    public final String a0() {
-        return this.a.S0 == 1 ? LocaleController.formatString("PassportDeleteSelfieAlert", R.string.PassportDeleteSelfieAlert, new Object[0]) : LocaleController.formatString("PassportDeleteScanAlert", R.string.PassportDeleteScanAlert, new Object[0]);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

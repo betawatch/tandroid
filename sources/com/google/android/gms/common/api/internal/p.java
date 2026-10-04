@@ -2,15 +2,15 @@ package com.google.android.gms.common.api.internal;
 
 import android.os.Looper;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class p {
-    public final l5.p a;
+    public final l5.q a;
     public volatile Object b;
     public volatile n c;
 
     public p(Looper looper, Object obj, String str) {
-        this.a = new l5.p(looper);
+        this.a = new l5.q(looper);
         n6.l.i(obj, "Listener must not be null");
         this.b = obj;
         n6.l.f(str);

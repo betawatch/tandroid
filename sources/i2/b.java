@@ -3,9 +3,9 @@ package i2;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import ci.rc;
+import ci.qc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b extends BroadcastReceiver {
     public final c0 a;
@@ -21,7 +21,7 @@ public final class b extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
     public final void onReceive(Context context, Intent intent) {
         if ("android.media.AUDIO_BECOMING_NOISY".equals(intent.getAction())) {
-            this.b.c(new rc(this, 27));
+            this.b.c(new qc(this, 27));
         }
     }
 }

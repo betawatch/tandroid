@@ -1,42 +1,46 @@
 package ci;
 
-import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class eb implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gb b;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ fb b;
+    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ eb(gb gbVar, int i10) {
-        this.a = i10;
-        this.b = gbVar;
+    public /* synthetic */ eb(fb fbVar, Runnable runnable, boolean z10) {
+        this.b = fbVar;
+        this.c = runnable;
+        this.d = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                lc lcVar = this.b.a;
-                f7 f7Var = lcVar.C0;
-                if (f7Var != null) {
-                    f7Var.c(false);
-                }
-                if (lcVar.Q1 && lcVar.R1 && lcVar.B0 != null) {
-                    lcVar.j0(false);
-                    CameraController.getInstance().stopVideoRecording(lcVar.B0.getCameraSessionRecording(), false, false);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.a.K(1, true);
-                break;
-            case 2:
-                this.b.a.K(1, true);
+                this.b.f(this.c, this.d);
                 break;
             default:
-                this.b.a.K(1, true);
+                this.c.run();
+                kc kcVar = this.b.a;
+                b4 b4Var = kcVar.T0;
+                b4Var.a.q(LocaleController.getString(this.d ? R.string.StoryHintSwipeToZoom : R.string.StoryHintPinchToZoom), false, true);
+                b4Var.invalidate();
+                kcVar.h(true, true);
+                kcVar.d0(true);
+                kcVar.I0.a(false, true);
+                kcVar.J0.b(true, true);
+                kcVar.i0(true, true);
                 break;
         }
+    }
+
+    public /* synthetic */ eb(fb fbVar, boolean z10, Runnable runnable) {
+        this.b = fbVar;
+        this.d = z10;
+        this.c = runnable;
     }
 }

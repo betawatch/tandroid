@@ -1,15 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public interface zm0 {
-    void C();
+public final class zm0 {
+    public static final zm0 a;
+    public static final zm0 b;
+    public static final /* synthetic */ zm0[] c;
 
-    void C0(float f7);
+    static {
+        zm0 zm0Var = new zm0("LINE", 0);
+        a = zm0Var;
+        zm0 zm0Var2 = new zm0("TAB", 1);
+        b = zm0Var2;
+        c = new zm0[]{zm0Var, zm0Var2};
+    }
 
-    void d(int i10, boolean z10);
+    public static zm0 valueOf(String str) {
+        return (zm0) Enum.valueOf(zm0.class, str);
+    }
 
-    boolean n1(int i10, View view);
+    public static zm0[] values() {
+        return (zm0[]) c.clone();
+    }
 }

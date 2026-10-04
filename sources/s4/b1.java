@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.ui.Cells.m2;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b1 implements Runnable {
     public int a;
@@ -124,7 +124,7 @@ public final class b1 implements Runnable {
             if (recyclerView.w != null) {
                 iArr[0] = 0;
                 iArr[1] = 0;
-                recyclerView.t0(i10, i11, iArr);
+                recyclerView.u0(i10, i11, iArr);
                 i12 = iArr[0];
                 i13 = iArr[1];
                 i10 -= i12;
@@ -223,7 +223,7 @@ public final class b1 implements Runnable {
         this.e = false;
         if (!this.f) {
             recyclerView.setScrollState(0);
-            recyclerView.A0(1);
+            recyclerView.B0(1);
         } else {
             recyclerView.removeCallbacks(this);
             WeakHashMap weakHashMap2 = r0.i0.a;

@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import java.io.File;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class b0 implements Runnable {
             default:
                 s0 s0Var4 = this.b;
                 s0Var4.B = false;
-                s0Var4.m.b("recording segment stopped: state=" + hg.c.C(s0Var4.W) + ", retainedDurationMs=" + s0Var4.E);
+                s0Var4.m.b("recording segment stopped: state=" + hg.k0.B(s0Var4.W) + ", retainedDurationMs=" + s0Var4.E);
                 if (s0Var4.A) {
                     s0Var4.A = false;
                     s0Var4.i();
@@ -90,8 +90,8 @@ public final /* synthetic */ class b0 implements Runnable {
                     s0Var4.m.b("preview snapshot started: file=" + d.getName());
                     s0Var4.j.execute(new gg.t(s0Var4, s0Var4.Q, d, 23));
                     return;
-                } catch (IOException e) {
-                    s0Var4.h(e);
+                } catch (IOException e7) {
+                    s0Var4.h(e7);
                     return;
                 }
         }

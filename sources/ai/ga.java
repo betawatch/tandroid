@@ -19,14 +19,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.om0;
+import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.sm0;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.n00;
-import org.telegram.ui.qe;
-import org.telegram.ui.wn;
+import org.telegram.ui.r00;
+import org.telegram.ui.se;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ga implements Runnable {
     public final /* synthetic */ int a;
@@ -115,33 +115,33 @@ public final /* synthetic */ class ga implements Runnable {
                 ((ConnectionsManager) obj5).lambda$sendRequestInternal$7((RequestDelegate) obj3, (TLObject) obj4, (TLRPC.TL_error) obj2, (RequestDelegateTimestamp) obj, this.c);
                 break;
             case 2:
-                wn wnVar = (wn) obj5;
-                om0 om0Var = (om0) obj;
-                ((a80) obj4).n0 = true;
-                Activity parentActivity = wnVar.getParentActivity();
+                yn ynVar = (yn) obj5;
+                sm0 sm0Var = (sm0) obj;
+                ((b80) obj4).n0 = true;
+                Activity parentActivity = ynVar.getParentActivity();
                 long j10 = ((TLRPC.TL_messageEntityFormattedDate) obj3).date;
                 long j11 = this.c;
-                ci.y6 y6Var = new ci.y6(wnVar, (ArrayList) obj2, j11, om0Var, 1);
-                qe qeVar = new qe(om0Var, i11);
+                ci.y6 y6Var = new ci.y6(ynVar, (ArrayList) obj2, j11, sm0Var, 1);
+                se seVar = new se(sm0Var, i11);
                 Pattern pattern = org.telegram.ui.Components.e5.a;
-                org.telegram.ui.Components.e5.K(parentActivity, j11, j10, 0, true, y6Var, qeVar, new org.telegram.ui.Components.c5(null), null);
+                org.telegram.ui.Components.e5.K(parentActivity, j11, j10, 0, true, y6Var, seVar, new org.telegram.ui.Components.c5(null), null);
                 break;
             case 3:
-                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj5;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj5;
                 TLObject tLObject2 = (TLObject) obj4;
                 MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) obj3;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 Runnable runnable = (Runnable) obj;
-                if (m2Var.getContext() != null) {
+                if (n2Var.getContext() != null) {
                     if (tLObject2 instanceof TL_chatlists.TL_chatlists_exportedInvites) {
                         TL_chatlists.TL_chatlists_exportedInvites tL_chatlists_exportedInvites = (TL_chatlists.TL_chatlists_exportedInvites) tLObject2;
-                        m2Var.getMessagesController().putChats(tL_chatlists_exportedInvites.chats, false);
-                        m2Var.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
-                        new n00(m2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
+                        n2Var.getMessagesController().putChats(tL_chatlists_exportedInvites.chats, false);
+                        n2Var.getMessagesController().putUsers(tL_chatlists_exportedInvites.users, false);
+                        new r00(n2Var, dialogFilter, tL_chatlists_exportedInvites.invites).show();
                     } else if (tL_error == null || !"FILTER_ID_INVALID".equals(tL_error.text) || dialogFilter.isDefault()) {
-                        ok.p(R.string.UnknownError, yc.a0(m2Var), null);
+                        ok.p(R.string.UnknownError, yc.a0(n2Var), null);
                     } else {
-                        new n00(m2Var, dialogFilter, null).show();
+                        new r00(n2Var, dialogFilter, null).show();
                     }
                     if (runnable != null) {
                         AndroidUtilities.runOnUIThread(runnable, Math.max(0L, 200 - (System.currentTimeMillis() - this.c)));

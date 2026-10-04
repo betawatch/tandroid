@@ -1,47 +1,31 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o81 implements View.OnClickListener {
+public final /* synthetic */ class o81 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z81 b;
+    public final /* synthetic */ a91 b;
 
-    public /* synthetic */ o81(z81 z81Var, int i10) {
+    public /* synthetic */ o81(a91 a91Var, int i10) {
         this.a = i10;
-        this.b = z81Var;
+        this.b = a91Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                z81 z81Var = this.b;
-                nf.f.s(z81Var.getParentActivity(), z81Var.getMessagesController().premiumManageSubscriptionUrl);
-                z81Var.getMessagesController().removeSuggestion(0L, "PREMIUM_GRACE");
+                MessagesController.getInstance(this.b.currentAccount).deleteUserPhoto(null);
                 break;
             case 1:
-                z81 z81Var2 = this.b;
-                z81Var2.getClass();
-                z81Var2.presentFragment(new h(3));
-                break;
-            case 2:
-                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PHONE_NUMBER");
-                break;
-            case 3:
-                z81 z81Var3 = this.b;
-                z81Var3.getClass();
-                z81Var3.presentFragment(new zg1(8, null));
-                break;
-            case 4:
-                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
-                break;
-            case 5:
-                z81.V(this.b);
+                this.b.c.f3.N(true);
                 break;
             default:
-                z81.Z(this.b);
+                nf.f.s(this.b.getParentActivity(), LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl));
                 break;
         }
     }

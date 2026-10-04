@@ -6,9 +6,9 @@ import android.graphics.Path;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class t extends yh.u3 {
     public final Path A0;
@@ -45,7 +45,7 @@ public final class t extends yh.u3 {
     public final void j(int i10) {
         v vVar = this.C0;
         TextView textView = vVar.b0;
-        if (textView == null || !h6.B1(textView.getBackground(), i10, false)) {
+        if (textView == null || !i6.B1(textView.getBackground(), i10, false)) {
             return;
         }
         vVar.b0.invalidate();

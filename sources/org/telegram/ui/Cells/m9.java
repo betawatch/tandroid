@@ -12,7 +12,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LanguageDetector;
 import org.telegram.ui.Components.hf0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m9 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback, hf0 {
     public final /* synthetic */ Object a;
@@ -24,12 +24,12 @@ public final /* synthetic */ class m9 implements LanguageDetector.StringCallback
     }
 
     @Override // org.telegram.ui.Components.hf0
-    public void l(int i10, int i11) {
+    public void k(int i10, int i11) {
         v5 v5Var = (v5) this.a;
         hf0 hf0Var = (hf0) this.b;
         ai.q4 q4Var = v5Var.e;
         TextView textView = v5Var.b;
-        hf0Var.l(i10, i11);
+        hf0Var.k(i10, i11);
         if (i11 > 0) {
             textView.setText("+" + i11);
         } else {
@@ -51,7 +51,7 @@ public final /* synthetic */ class m9 implements LanguageDetector.StringCallback
         animatorSet2.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(v5Var.a, (Property<TextView, Float>) property, 0.0f));
         v5Var.d.setDuration(250L);
         v5Var.d.setInterpolator(new DecelerateInterpolator());
-        v5Var.d.addListener(new org.telegram.ui.t4(v5Var, 10));
+        v5Var.d.addListener(new org.telegram.ui.u4(v5Var, 10));
         v5Var.d.start();
     }
 

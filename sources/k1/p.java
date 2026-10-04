@@ -1,15 +1,15 @@
 package k1;
 
 import org.telegram.tgnet.TLObject;
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class p implements ce.c {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ ce.c b;
 
-    public p(ce.c cVar, za.a0 a0Var) {
+    public p(ce.c cVar, za.y yVar) {
         this.b = cVar;
     }
 
@@ -24,7 +24,7 @@ public final class p implements ce.c {
     public final Object a(Object obj, kd.c cVar) {
         o oVar;
         int i10;
-        za.z zVar;
+        za.x xVar;
         int i11;
         int i12 = this.a;
         gd.i iVar = gd.i.a;
@@ -43,10 +43,10 @@ public final class p implements ce.c {
                             if (i10 != 1) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
-                            u7.b(obj2);
+                            t7.b(obj2);
                             return iVar;
                         }
-                        u7.b(obj2);
+                        t7.b(obj2);
                         b0 b0Var = (b0) obj;
                         if (b0Var instanceof h) {
                             throw ((h) b0Var).a;
@@ -72,32 +72,32 @@ public final class p implements ce.c {
                 if (i10 == 0) {
                 }
             default:
-                if (cVar instanceof za.z) {
-                    zVar = (za.z) cVar;
-                    int i14 = zVar.b;
+                if (cVar instanceof za.x) {
+                    xVar = (za.x) cVar;
+                    int i14 = xVar.b;
                     if ((i14 & TLObject.FLAG_31) != 0) {
-                        zVar.b = i14 - TLObject.FLAG_31;
-                        Object obj4 = zVar.a;
+                        xVar.b = i14 - TLObject.FLAG_31;
+                        Object obj4 = xVar.a;
                         jd.a aVar3 = jd.a.a;
-                        i11 = zVar.b;
+                        i11 = xVar.b;
                         if (i11 == 0) {
                             if (i11 != 1) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
-                            u7.b(obj4);
+                            t7.b(obj4);
                             return iVar;
                         }
-                        u7.b(obj4);
-                        za.w wVar = za.a0.e;
-                        za.o oVar2 = new za.o((String) ((n1.b) obj).a(za.x.a));
-                        zVar.b = 1;
-                        return cVar2.a(oVar2, zVar) == aVar3 ? aVar3 : iVar;
+                        t7.b(obj4);
+                        za.u uVar = za.y.e;
+                        za.m mVar = new za.m((String) ((n1.b) obj).a(za.v.a));
+                        xVar.b = 1;
+                        return cVar2.a(mVar, xVar) == aVar3 ? aVar3 : iVar;
                     }
                 }
-                zVar = new za.z(this, cVar);
-                Object obj42 = zVar.a;
+                xVar = new za.x(this, cVar);
+                Object obj42 = xVar.a;
                 jd.a aVar32 = jd.a.a;
-                i11 = zVar.b;
+                i11 = xVar.b;
                 if (i11 == 0) {
                 }
         }

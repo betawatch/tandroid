@@ -1,83 +1,86 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import android.view.WindowManager;
-import org.telegram.messenger.FileLog;
+import android.graphics.Typeface;
+import android.text.TextUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class zb extends sk0 {
-    public final /* synthetic */ int l1 = 0;
-    public final /* synthetic */ Object m1;
+public class zb extends ob {
+    public final nj0 a;
+    public TextView b;
+    public int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zb(org.telegram.ui.nt ntVar, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(4, i10, context, null, d6Var);
-        this.m1 = ntVar;
+    public zb(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
+        nj0 nj0Var = new nj0(context);
+        this.a = nj0Var;
+        nj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(nj0Var, w7.z5.h(56.0f, 48.0f, 8388627));
+        yb ybVar = new yb(context, 0, null);
+        ybVar.setDisablePaddingsOffset(true);
+        this.b = ybVar;
+        NotificationCenter.listenEmojiLoading(ybVar);
+        this.b.setSingleLine();
+        this.b.setTypeface(Typeface.SANS_SERIF);
+        this.b.setTextSize(1, 15.0f);
+        this.b.setEllipsize(TextUtils.TruncateAt.END);
+        this.b.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+        addView(this.b, w7.z5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+        this.b.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.i6.Gi));
+        setTextColor(getThemedColor(org.telegram.ui.ActionBar.i6.Hi));
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.i6.Fi));
     }
 
-    @Override // org.telegram.ui.Components.sk0, android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        qc qcVar;
-        switch (this.l1) {
-            case 0:
-                bc bcVar = (bc) this.m1;
-                if (motionEvent.getAction() == 0) {
-                    qc qcVar2 = bcVar.n;
-                    if (qcVar2 != null) {
-                        qcVar2.i(false);
-                    }
-                } else if (motionEvent.getAction() == 1 && (qcVar = bcVar.n) != null) {
-                    qcVar.i(true);
-                }
-                break;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.sk0
-    public void j() {
-        switch (this.l1) {
-            case 1:
-                super.j();
-                org.telegram.ui.nt ntVar = (org.telegram.ui.nt) this.m1;
-                if (getReactionsWindow() != null) {
-                    WindowManager.LayoutParams layoutParams = ntVar.x;
-                    layoutParams.flags &= -131073;
-                    layoutParams.softInputMode = 16;
-                } else {
-                    ntVar.x.flags |= 131072;
-                }
-                try {
-                    ((WindowManager) ntVar.w.getSystemService("window")).updateViewLayout(ntVar.y, ntVar.x);
-                    break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
-            default:
-                super.j();
-                break;
+    public final void c(int i10, int i11, int i12, String... strArr) {
+        nj0 nj0Var = this.a;
+        nj0Var.f(i10, i11, i12, null);
+        for (String str : strArr) {
+            nj0Var.h(this.c, str);
         }
     }
 
-    @Override // org.telegram.ui.Components.sk0
-    public void m() {
-        switch (this.l1) {
-            case 0:
-                qc qcVar = qc.w;
-                if (qcVar != null) {
-                    qcVar.i(false);
-                }
-                ((bc) this.m1).d.getReactionsWindow().c.setOnClickListener(new f0(this, 5));
-                break;
+    public final void d(int i10, String... strArr) {
+        c(i10, 32, 32, strArr);
+    }
+
+    public final void e(TLRPC.Document document, String... strArr) {
+        nj0 nj0Var = this.a;
+        nj0Var.setAutoRepeat(true);
+        nj0Var.g(36, 36, document);
+        for (String str : strArr) {
+            nj0Var.h(this.c, str);
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zb(bc bcVar, org.telegram.ui.ActionBar.m2 m2Var, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(3, i10, context, m2Var, d6Var);
-        this.m1 = bcVar;
+    @Override // org.telegram.ui.Components.vb
+    public CharSequence getAccessibilityText() {
+        return this.b.getText();
+    }
+
+    @Override // org.telegram.ui.Components.vb
+    public final void onShow() {
+        super.onShow();
+        this.a.d();
+    }
+
+    public void setIconPaddingBottom(int i10) {
+        this.a.setLayoutParams(w7.z5.i(56.0f, 48 - i10, 8388627, 0.0f, 0.0f, 0.0f, i10));
+    }
+
+    public void setTextColor(int i10) {
+        this.c = i10;
+        this.b.setTextColor(i10);
+    }
+
+    public zb(int i10, int i11, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        this(context, d6Var);
+        setBackground(i10);
+        setTextColor(i11);
     }
 }

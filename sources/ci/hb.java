@@ -1,13 +1,37 @@
 package ci;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class hb extends CharacterStyle {
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setAlpha(128);
+public final class hb extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ kc d;
+
+    public /* synthetic */ hb(kc kcVar, int i10, int i11, int i12) {
+        this.a = i12;
+        this.d = kcVar;
+        this.b = i10;
+        this.c = i11;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.d.N(this.b, this.c);
+                break;
+            default:
+                int i10 = this.b;
+                int i11 = this.c;
+                if (i10 != i11) {
+                    this.d.Q(i10, i11);
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -1,12 +1,27 @@
 package org.telegram.ui;
 
-import android.text.Layout;
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public interface mj0 {
-    Layout getLayout();
+public final class mj0 extends ci.d {
+    public final /* synthetic */ oj0 h0;
 
-    View getParentView();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mj0(oj0 oj0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var, true);
+        this.h0 = oj0Var;
+    }
+
+    @Override // ci.d
+    public final float a(float f7, float f10) {
+        oj0 oj0Var = this.h0;
+        boolean z10 = oj0Var.n0 == 0.0f;
+        oj0Var.n0 = f7;
+        if (z10) {
+            oj0Var.o0 = new org.telegram.ui.Components.fb0(oj0Var, 1);
+            oj0Var.Q(false);
+        }
+        return f7;
+    }
 }

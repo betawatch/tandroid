@@ -12,13 +12,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.tr;
 import yf.p;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class a extends View {
     public final /* synthetic */ int a = 1;
@@ -29,14 +29,14 @@ public final class a extends View {
 
     public a(Activity activity, d6 d6Var) {
         super(activity);
-        this.c = new le.c(this, sr.h, 380L);
+        this.c = new le.b(this, tr.h, 380L);
         this.b = new Paint(1);
         this.d = d6Var;
-        v51 v51Var = new v51(true);
-        this.e = v51Var;
-        v51Var.setCallback(this);
-        v51Var.b(-1);
-        v51Var.i = true;
+        e61 e61Var = new e61(true);
+        this.e = e61Var;
+        e61Var.setCallback(this);
+        e61Var.b(-1);
+        e61Var.i = true;
     }
 
     @Override // android.view.View
@@ -44,7 +44,7 @@ public final class a extends View {
         switch (this.a) {
             case 1:
                 super.onAttachedToWindow();
-                ((v51) this.e).d();
+                ((e61) this.e).d();
                 break;
             case 2:
                 super.onAttachedToWindow();
@@ -62,7 +62,7 @@ public final class a extends View {
         switch (this.a) {
             case 1:
                 super.onDetachedFromWindow();
-                ((v51) this.e).e();
+                ((e61) this.e).e();
                 break;
             case 2:
                 super.onDetachedFromWindow();
@@ -92,20 +92,20 @@ public final class a extends View {
                 float width = getWidth() / 2.0f;
                 float height = getHeight() / 2.0f;
                 super.onDraw(canvas);
-                int v02 = h6.v0(h6.Yd, (d6) this.d);
+                int v02 = i6.v0(i6.Yd, (d6) this.d);
                 Paint paint = this.b;
                 paint.setColor(v02);
                 canvas.drawCircle(width, height, AndroidUtilities.dp(19.0f), paint);
-                float f7 = ((le.c) this.c).e;
+                float f7 = ((le.b) this.c).e;
                 float f10 = 1.0f - f7;
                 if (f10 > 0.0f) {
-                    p.b(canvas, (v51) this.e, f10 * 1.35f);
+                    p.b(canvas, (e61) this.e, f10 * 1.35f);
                     invalidate();
                 }
                 if (f7 > 0.0f) {
                     float dp = AndroidUtilities.dp(6.666f) * f7;
                     float dp2 = AndroidUtilities.dp(2.666f) * f7;
-                    canvas.drawRoundRect(width - dp, height - dp, width + dp, height + dp, dp2, dp2, h6.l0(-1));
+                    canvas.drawRoundRect(width - dp, height - dp, width + dp, height + dp, dp2, dp2, i6.l0(-1));
                     break;
                 }
                 break;
@@ -144,7 +144,7 @@ public final class a extends View {
         switch (this.a) {
             case 1:
                 super.onSizeChanged(i10, i11, i12, i13);
-                p.d((v51) this.e, i10 / 2.0f, i11 / 2.0f, 17);
+                p.d((e61) this.e, i10 / 2.0f, i11 / 2.0f, 17);
                 break;
             default:
                 super.onSizeChanged(i10, i11, i12, i13);
@@ -156,7 +156,7 @@ public final class a extends View {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 1:
-                return super.verifyDrawable(drawable) || (drawable == ((v51) this.e) && !((le.c) this.c).f);
+                return super.verifyDrawable(drawable) || (drawable == ((e61) this.e) && !((le.b) this.c).f);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -172,8 +172,8 @@ public final class a extends View {
         this.d = paint3;
         this.e = new RectF();
         paint2.setColor(-1);
-        paint.setColor(h6.v0(h6.d6, d6Var));
-        paint3.setColor(h6.v0(h6.wj, d6Var));
+        paint.setColor(i6.v0(i6.d6, d6Var));
+        paint3.setColor(i6.v0(i6.wj, d6Var));
     }
 
     public a(Context context, TLObject tLObject, TLObject tLObject2) {
@@ -194,7 +194,7 @@ public final class a extends View {
         this.d = imageReceiver2;
         imageReceiver2.setRoundRadius(AndroidUtilities.dp(30.0f));
         imageReceiver2.setForUserOrChat(tLObject2, h9Var2);
-        paint.setColor(h6.w0(null, h6.E6, false));
+        paint.setColor(i6.w0(null, i6.E6, false));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);

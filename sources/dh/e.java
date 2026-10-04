@@ -2,9 +2,9 @@ package dh;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class e implements a {
     public final d6 a;
@@ -30,7 +30,7 @@ public final class e implements a {
     }
 
     @Override // dh.a
-    public final int H() {
+    public final int B() {
         return b(this.e);
     }
 
@@ -45,10 +45,10 @@ public final class e implements a {
             return 0;
         }
         d6 d6Var = this.a;
-        if ((d6Var instanceof ai.d) || (d6Var == null ? h6.I.q() : d6Var.a())) {
+        if ((d6Var instanceof ai.d) || (d6Var == null ? i6.I.q() : d6Var.a())) {
             z10 = true;
         }
-        return dVar.g(d6Var, z10);
+        return dVar.h(d6Var, z10);
     }
 
     @Override // dh.a
@@ -69,7 +69,7 @@ public final class e implements a {
     }
 
     @Override // dh.a
-    public final int m() {
+    public final int i() {
         return b(this.b);
     }
 }

@@ -1,18 +1,18 @@
 package w7;
 
-import android.os.StrictMode;
-import java.util.concurrent.Callable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class h0 {
-    public static Object a(Callable callable) {
-        StrictMode.ThreadPolicy threadPolicy = StrictMode.getThreadPolicy();
-        try {
-            StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
-            return callable.call();
-        } finally {
-            StrictMode.setThreadPolicy(threadPolicy);
-        }
+    public static o6.b a(byte[] bArr, Parcelable.Creator creator) {
+        n6.l.h(creator);
+        Parcel obtain = Parcel.obtain();
+        obtain.unmarshall(bArr, 0, bArr.length);
+        obtain.setDataPosition(0);
+        o6.b bVar = (o6.b) creator.createFromParcel(obtain);
+        obtain.recycle();
+        return bVar;
     }
 }

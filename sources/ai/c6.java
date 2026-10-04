@@ -16,9 +16,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.t41;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class c6 {
     public TL_stories.StoryItem a = null;
@@ -50,7 +50,7 @@ public final class c6 {
             StringBuilder sb2 = new StringBuilder("photo#");
             sb2.append(c6Var.a.media.photo.id);
             sb2.append("at");
-            return a4.a.o(c6Var.a.media.photo.dc_id, "dc", sb2);
+            return a4.a.n(c6Var.a.media.photo.dc_id, "dc", sb2);
         }
         if (messageMedia.document == null) {
             return "unknown";
@@ -58,7 +58,7 @@ public final class c6 {
         StringBuilder sb3 = new StringBuilder("doc#");
         sb3.append(c6Var.a.media.document.id);
         sb3.append("at");
-        return a4.a.o(c6Var.a.media.document.dc_id, "dc", sb3);
+        return a4.a.n(c6Var.a.media.document.dc_id, "dc", sb3);
     }
 
     public final boolean d() {
@@ -216,24 +216,24 @@ public final class c6 {
             } else {
                 k9 k9Var = this.b;
                 if (k9Var != null) {
-                    ci.l8 l8Var = k9Var.c;
-                    if (l8Var != null) {
-                        if (l8Var.n) {
+                    ci.k8 k8Var = k9Var.c;
+                    if (k8Var != null) {
+                        if (k8Var.n) {
                             saVar = new sa();
-                            saVar.k = l8Var.p;
-                            String str = l8Var.s;
+                            saVar.k = k8Var.p;
+                            String str = k8Var.s;
                             saVar.l = str;
                             saVar.f = TextUtils.isEmpty(str);
-                        } else if (l8Var.u && (arrayList = l8Var.v) != null && arrayList.size() > 0) {
-                            MessageObject messageObject = (MessageObject) l8Var.v.get(0);
-                            long p5 = ci.l8.p(messageObject);
+                        } else if (k8Var.u && (arrayList = k8Var.v) != null && arrayList.size() > 0) {
+                            MessageObject messageObject = (MessageObject) k8Var.v.get(0);
+                            long p5 = ci.k8.p(messageObject);
                             if (p5 < 0 && (chat = MessagesController.getInstance(messageObject.currentAccount).getChat(Long.valueOf(-p5))) != null) {
                                 saVar = new sa();
                                 saVar.b = Long.valueOf(p5);
                                 saVar.e = true;
                                 saVar.a = messageObject.currentAccount;
                                 saVar.f = true;
-                                Boolean D = ci.l8.D(messageObject);
+                                Boolean D = ci.k8.D(messageObject);
                                 saVar.d = Integer.valueOf(D != null ? D.booleanValue() ? messageObject.messageOwner.fwd_from.channel_post : messageObject.getId() : 0);
                                 saVar.k = new SpannableStringBuilder(ChatObject.isChannelAndNotMegaGroup(chat) ? MessageObject.channelSpan() : MessageObject.groupSpan()).append((CharSequence) " ").append((CharSequence) chat.title);
                             }
@@ -334,7 +334,7 @@ public final class c6 {
         }
         TL_stories.StoryItem storyItem = c6Var.a;
         if (storyItem != null) {
-            if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, k41.A())) {
+            if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, t41.A())) {
                 String str = c6Var.a.caption;
                 this.h = str;
                 CharSequence replaceEmoji2 = Emoji.replaceEmoji(str, g5Var.b0.getPaint().getFontMetricsInt(), false);

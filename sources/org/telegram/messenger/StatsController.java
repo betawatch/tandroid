@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Array;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class StatsController extends BaseController {
     private static final int OLD_TYPES_COUNT = 7;
@@ -100,7 +100,7 @@ public class StatsController extends BaseController {
         };
         File filesDirFixed = ApplicationLoader.getFilesDirFixed();
         if (i10 != 0) {
-            filesDirFixed = new File(ApplicationLoader.getFilesDirFixed(), hg.c.i(i10, "account", "/"));
+            filesDirFixed = new File(ApplicationLoader.getFilesDirFixed(), hg.k0.i(i10, "account", "/"));
             filesDirFixed.mkdirs();
         }
         try {
@@ -153,10 +153,10 @@ public class StatsController extends BaseController {
             this.callsTotalTime[i14] = sharedPreferences.getInt("callsTotalTime" + i14, 0);
             this.resetStatsDate[i14] = sharedPreferences.getLong("resetStatsDate" + i14, 0L);
             for (int i15 = 0; i15 < 8; i15++) {
-                this.sentBytes[i14][i15] = sharedPreferences.getLong(a4.a.m(i14, i15, "sentBytes", "_"), 0L);
-                this.receivedBytes[i14][i15] = sharedPreferences.getLong(a4.a.m(i14, i15, "receivedBytes", "_"), 0L);
-                this.sentItems[i14][i15] = sharedPreferences.getInt(a4.a.m(i14, i15, "sentItems", "_"), 0);
-                this.receivedItems[i14][i15] = sharedPreferences.getInt(a4.a.m(i14, i15, "receivedItems", "_"), 0);
+                this.sentBytes[i14][i15] = sharedPreferences.getLong(a4.a.l(i14, i15, "sentBytes", "_"), 0L);
+                this.receivedBytes[i14][i15] = sharedPreferences.getLong(a4.a.l(i14, i15, "receivedBytes", "_"), 0L);
+                this.sentItems[i14][i15] = sharedPreferences.getInt(a4.a.l(i14, i15, "sentItems", "_"), 0);
+                this.receivedItems[i14][i15] = sharedPreferences.getInt(a4.a.l(i14, i15, "receivedItems", "_"), 0);
             }
             long[] jArr2 = this.resetStatsDate;
             if (jArr2[i14] == 0) {

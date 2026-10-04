@@ -2,13 +2,13 @@ package ai;
 
 import android.graphics.Canvas;
 import android.view.View;
-import ci.kd;
+import ci.jd;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class nc extends kc {
     public final mc a;
@@ -19,15 +19,15 @@ public final class nc extends kc {
     public nc(oc ocVar, TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather) {
         this.d = ocVar;
         this.b = tL_mediaAreaWeather;
-        kd kdVar = new kd();
-        kdVar.c = tL_mediaAreaWeather.emoji;
-        kdVar.d = (float) tL_mediaAreaWeather.temperature_c;
+        jd jdVar = new jd();
+        jdVar.c = tL_mediaAreaWeather.emoji;
+        jdVar.d = (float) tL_mediaAreaWeather.temperature_c;
         mc mcVar = new mc(this, ApplicationLoader.applicationContext, AndroidUtilities.density);
         this.a = mcVar;
         mcVar.setMaxWidth(AndroidUtilities.displaySize.x);
         mcVar.setIsVideo(false);
-        mcVar.d(UserConfig.selectedAccount, kdVar.c);
-        mcVar.setText(kdVar.a());
+        mcVar.d(UserConfig.selectedAccount, jdVar.c);
+        mcVar.setText(jdVar.a());
         mcVar.e(3, tL_mediaAreaWeather.color);
         mcVar.f();
     }

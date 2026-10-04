@@ -1,28 +1,28 @@
 package u2;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class c implements b1 {
-    public final b1 a;
+public final class c implements c1 {
+    public final c1 a;
     public boolean b;
     public final /* synthetic */ d c;
 
-    public c(d dVar, b1 b1Var) {
+    public c(d dVar, c1 c1Var) {
         this.c = dVar;
-        this.a = b1Var;
+        this.a = c1Var;
     }
 
-    @Override // u2.b1
+    @Override // u2.c1
     public final void a() {
         this.a.a();
     }
 
-    @Override // u2.b1
+    @Override // u2.c1
     public final boolean e() {
         return !this.c.a() && this.a.e();
     }
 
-    @Override // u2.b1
+    @Override // u2.c1
     public final int f(n4.y yVar, h2.h hVar, int i10) {
         d dVar = this.c;
         if (dVar.a()) {
@@ -32,11 +32,11 @@ public final class c implements b1 {
             hVar.setFlags(4);
             return -4;
         }
-        long s10 = dVar.s();
+        long p5 = dVar.p();
         int f7 = this.a.f(yVar, hVar, i10);
         if (f7 != -5) {
             long j3 = dVar.f;
-            if (j3 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j3) && !(f7 == -3 && s10 == Long.MIN_VALUE && !hVar.d))) {
+            if (j3 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j3) && !(f7 == -3 && p5 == Long.MIN_VALUE && !hVar.d))) {
                 return f7;
             }
             hVar.clear();
@@ -64,7 +64,7 @@ public final class c implements b1 {
         return -5;
     }
 
-    @Override // u2.b1
+    @Override // u2.c1
     public final int j(long j3) {
         if (this.c.a()) {
             return -3;

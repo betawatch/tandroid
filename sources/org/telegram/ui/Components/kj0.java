@@ -35,7 +35,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class kj0 extends BitmapDrawable implements Animatable, yf.c {
     public static final AtomicInteger P0 = new AtomicInteger();
@@ -242,8 +242,8 @@ public class kj0 extends BitmapDrawable implements Animatable, yf.c {
                 } catch (Throwable th5) {
                     th = th5;
                 }
-            } catch (Exception e) {
-                e = e;
+            } catch (Exception e7) {
+                e = e7;
                 FileLog.e((Throwable) e, false);
                 String absolutePath = file.getAbsolutePath();
                 com.google.firebase.messaging.p pVar2 = this.u0;
@@ -256,8 +256,8 @@ public class kj0 extends BitmapDrawable implements Animatable, yf.c {
                 }
                 this.B0 = new yf.e(file, this, n1Var, i10, i11, !z10, i12);
             }
-        } catch (Exception e7) {
-            e = e7;
+        } catch (Exception e10) {
+            e = e10;
             FileLog.e((Throwable) e, false);
             String absolutePath2 = file.getAbsolutePath();
             com.google.firebase.messaging.p pVar22 = this.u0;
@@ -325,8 +325,8 @@ public class kj0 extends BitmapDrawable implements Animatable, yf.c {
                 }
                 i10 = B;
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             i10 = 2;
         }
         if (i10 == 1) {
@@ -423,8 +423,8 @@ public class kj0 extends BitmapDrawable implements Animatable, yf.c {
                     this.m0.d();
                     this.m0 = null;
                 }
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         }
         yf.e eVar2 = this.B0;
@@ -464,8 +464,8 @@ public class kj0 extends BitmapDrawable implements Animatable, yf.c {
             if (randomAccessFile != null) {
                 try {
                     randomAccessFile.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                } catch (IOException e7) {
+                    e7.printStackTrace();
                 }
                 eVar.s = null;
             }
@@ -479,11 +479,11 @@ public class kj0 extends BitmapDrawable implements Animatable, yf.c {
         RLottieNative rLottieNative = this.m0;
         this.m0 = null;
         if (rLottieNative != null) {
-            kc0 kc0Var = new kc0(rLottieNative, 16);
+            lc0 lc0Var = new lc0(rLottieNative, 16);
             if (z10) {
-                DispatchQueuePoolBackground.execute(kc0Var);
+                DispatchQueuePoolBackground.execute(lc0Var);
             } else {
-                Utilities.globalQueue.postRunnable(kc0Var);
+                Utilities.globalQueue.postRunnable(lc0Var);
             }
         }
     }
@@ -625,8 +625,8 @@ public class kj0 extends BitmapDrawable implements Animatable, yf.c {
             } else if (!z10) {
                 try {
                     this.U.await();
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
                 this.U = null;
             }
@@ -768,8 +768,8 @@ public class kj0 extends BitmapDrawable implements Animatable, yf.c {
         }
         try {
             Thread.sleep(100L);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        } catch (InterruptedException e7) {
+            e7.printStackTrace();
         }
         return a(bitmap);
     }

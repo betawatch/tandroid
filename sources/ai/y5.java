@@ -11,15 +11,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.bw;
-import org.telegram.ui.bf0;
-import org.telegram.ui.g70;
-import org.telegram.ui.ld;
-import org.telegram.ui.ro;
+import org.telegram.ui.Components.cw;
+import org.telegram.ui.ff0;
+import org.telegram.ui.k70;
+import org.telegram.ui.nd;
+import org.telegram.ui.to;
 import org.telegram.ui.yi1;
 import org.telegram.ui.zi1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class y5 extends org.telegram.ui.Components.w9 {
     public final /* synthetic */ int G;
@@ -100,18 +100,18 @@ public final class y5 extends org.telegram.ui.Components.w9 {
                     canvas2 = canvas;
                 }
                 if (dbVar.e) {
-                    dbVar.n.r.setColor(org.telegram.ui.ActionBar.h6.c0);
+                    dbVar.n.r.setColor(org.telegram.ui.ActionBar.i6.c0);
                     int measuredWidth = getMeasuredWidth() / 2;
                     int measuredHeight = getMeasuredHeight() / 2;
                     canvas2.drawCircle(measuredWidth, measuredHeight, AndroidUtilities.dp(20.0f), dbVar.n.r);
                     Drawable drawable = dbVar.n.v;
-                    drawable.setBounds(ok.z(2, measuredWidth, drawable), ok.d(2, measuredHeight, dbVar.n.v), org.telegram.ui.Cells.c1.t(2, measuredWidth, dbVar.n.v), org.telegram.ui.Cells.c1.d(2, measuredHeight, dbVar.n.v));
+                    drawable.setBounds(org.telegram.ui.Cells.c1.e(2, measuredWidth, drawable), ok.d(2, measuredHeight, dbVar.n.v), org.telegram.ui.Cells.c1.w(2, measuredWidth, dbVar.n.v), org.telegram.ui.Cells.c1.t(2, measuredHeight, dbVar.n.v));
                     dbVar.n.v.draw(canvas2);
                     break;
                 }
                 break;
             case 11:
-                if (!((org.telegram.ui.web.b1) this.H).v) {
+                if (!((org.telegram.ui.web.c1) this.H).v) {
                     if (this.a.getDrawable() != null) {
                         this.a.setImageCoords(0.0f, 0.0f, getWidth(), (getWidth() / r0.getIntrinsicWidth()) * r0.getIntrinsicHeight());
                         this.a.draw(canvas);
@@ -156,17 +156,17 @@ public final class y5 extends org.telegram.ui.Components.w9 {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.G) {
             case 1:
-                return drawable == ((hg.f1) this.H).r || super.verifyDrawable(drawable);
+                return drawable == ((hg.e1) this.H).r || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y5(org.telegram.ui.web.b1 b1Var, Context context) {
+    public y5(org.telegram.ui.web.c1 c1Var, Context context) {
         super(context);
         this.G = 11;
-        this.H = b1Var;
+        this.H = c1Var;
         this.a = new l4(this, this, 6);
     }
 
@@ -174,14 +174,14 @@ public final class y5 extends org.telegram.ui.Components.w9 {
     public void invalidate() {
         switch (this.G) {
             case 5:
-                ci.r6 r6Var = ((ld) this.H).f;
+                ci.r6 r6Var = ((nd) this.H).f;
                 if (r6Var != null) {
                     r6Var.invalidate();
                 }
                 super.invalidate();
                 break;
             case 6:
-                ci.r6 r6Var2 = ((ro) this.H).f;
+                ci.r6 r6Var2 = ((to) this.H).f;
                 if (r6Var2 != null) {
                     r6Var2.invalidate();
                 }
@@ -194,19 +194,19 @@ public final class y5 extends org.telegram.ui.Components.w9 {
             case 8:
                 if (!zg.e0.b(this)) {
                     super.invalidate();
-                    ((bw) this.H).f();
+                    ((cw) this.H).f();
                     break;
                 }
                 break;
             case 9:
-                ci.r6 r6Var3 = ((g70) this.H).e;
+                ci.r6 r6Var3 = ((k70) this.H).e;
                 if (r6Var3 != null) {
                     r6Var3.invalidate();
                 }
                 super.invalidate();
                 break;
             case 10:
-                ci.r6 r6Var4 = ((bf0) this.H).h;
+                ci.r6 r6Var4 = ((ff0) this.H).h;
                 if (r6Var4 != null) {
                     r6Var4.invalidate();
                 }
@@ -222,14 +222,14 @@ public final class y5 extends org.telegram.ui.Components.w9 {
     public void invalidate(int i10, int i11, int i12, int i13) {
         switch (this.G) {
             case 5:
-                ci.r6 r6Var = ((ld) this.H).f;
+                ci.r6 r6Var = ((nd) this.H).f;
                 if (r6Var != null) {
                     r6Var.invalidate();
                 }
                 super.invalidate(i10, i11, i12, i13);
                 break;
             case 6:
-                ci.r6 r6Var2 = ((ro) this.H).f;
+                ci.r6 r6Var2 = ((to) this.H).f;
                 if (r6Var2 != null) {
                     r6Var2.invalidate();
                 }
@@ -246,14 +246,14 @@ public final class y5 extends org.telegram.ui.Components.w9 {
                 }
                 break;
             case 9:
-                ci.r6 r6Var3 = ((g70) this.H).e;
+                ci.r6 r6Var3 = ((k70) this.H).e;
                 if (r6Var3 != null) {
                     r6Var3.invalidate();
                 }
                 super.invalidate(i10, i11, i12, i13);
                 break;
             case 10:
-                ci.r6 r6Var4 = ((bf0) this.H).h;
+                ci.r6 r6Var4 = ((ff0) this.H).h;
                 if (r6Var4 != null) {
                     r6Var4.invalidate();
                 }

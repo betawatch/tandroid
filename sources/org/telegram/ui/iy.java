@@ -1,38 +1,20 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class iy implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jy b;
-
-    public /* synthetic */ iy(jy jyVar, int i10) {
-        this.a = i10;
-        this.b = jyVar;
+public final class iy extends org.telegram.ui.Components.f20 {
+    public iy(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        switch (this.a) {
-            case 0:
-                jy jyVar = this.b;
-                qy qyVar = jyVar.E0;
-                Context context = jyVar.getContext();
-                i10 = ((org.telegram.ui.ActionBar.m2) qyVar).currentAccount;
-                qyVar.showDialog(new rg.j0(3, i10, context, qyVar, null));
-                break;
-            default:
-                qy qyVar2 = this.b.E0;
-                mx mxVar = qyVar2.M0;
-                if (mxVar != null) {
-                    mxVar.dismiss();
-                    qyVar2.M0 = null;
-                    break;
-                }
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 || getAlpha() >= 0.25f) {
+            return super.dispatchTouchEvent(motionEvent);
         }
+        return false;
     }
 }

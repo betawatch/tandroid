@@ -2,10 +2,9 @@ package ai;
 
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class q7 extends FrameLayout implements r0.m {
     public final b2.q0 a;
@@ -19,7 +18,45 @@ public final class q7 extends FrameLayout implements r0.m {
     }
 
     @Override // r0.l
-    public final void E(ViewGroup viewGroup, int i10, int i11, int[] iArr, int i12) {
+    public final void m(int i10, View view) {
+        this.a.a = 0;
+    }
+
+    @Override // r0.m
+    public final void n(View view, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
+        s7 s7Var = this.b;
+        jc jcVar = s7Var.r;
+        if (s7Var.x <= 0 && i13 != 0 && i11 == 0) {
+            float f7 = jcVar.e0;
+            float f10 = i13 + f7;
+            if (f10 <= f7) {
+                f7 = f10;
+            }
+            s7Var.setOffset(f7);
+            jcVar.e0 = f7;
+            e6 currentPeerView = jcVar.n0.getCurrentPeerView();
+            if (currentPeerView != null) {
+                currentPeerView.invalidate();
+            }
+            yb ybVar = jcVar.v;
+            if (ybVar != null) {
+                ybVar.invalidate();
+            }
+        }
+    }
+
+    @Override // r0.l
+    public final boolean p(View view, View view2, int i10, int i11) {
+        return this.b.x <= 0 && i10 == 2;
+    }
+
+    @Override // r0.l
+    public final void s(View view, View view2, int i10, int i11) {
+        this.a.a = i10;
+    }
+
+    @Override // r0.l
+    public final void t(View view, int i10, int i11, int[] iArr, int i12) {
         s7 s7Var = this.b;
         jc jcVar = s7Var.r;
         if (s7Var.x > 0) {
@@ -47,45 +84,7 @@ public final class q7 extends FrameLayout implements r0.m {
         }
     }
 
-    @Override // r0.m
-    public final void j(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
-        s7 s7Var = this.b;
-        jc jcVar = s7Var.r;
-        if (s7Var.x <= 0 && i13 != 0 && i11 == 0) {
-            float f7 = jcVar.e0;
-            float f10 = i13 + f7;
-            if (f10 <= f7) {
-                f7 = f10;
-            }
-            s7Var.setOffset(f7);
-            jcVar.e0 = f7;
-            e6 currentPeerView = jcVar.n0.getCurrentPeerView();
-            if (currentPeerView != null) {
-                currentPeerView.invalidate();
-            }
-            yb ybVar = jcVar.v;
-            if (ybVar != null) {
-                ybVar.invalidate();
-            }
-        }
-    }
-
     @Override // r0.l
-    public final void o(int i10, View view) {
-        this.a.a = 0;
-    }
-
-    @Override // r0.l
-    public final boolean p(View view, View view2, int i10, int i11) {
-        return this.b.x <= 0 && i10 == 2;
-    }
-
-    @Override // r0.l
-    public final void s(View view, View view2, int i10, int i11) {
-        this.a.a = i10;
-    }
-
-    @Override // r0.l
-    public final void c(ViewGroup viewGroup, int i10, int i11, int i12, int i13, int i14) {
+    public final void o(View view, int i10, int i11, int i12, int i13, int i14) {
     }
 }

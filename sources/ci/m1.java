@@ -1,12 +1,12 @@
 package ci;
 
 import android.content.Context;
-import org.telegram.ui.Components.mx;
-import org.telegram.ui.Components.mz;
-import org.telegram.ui.a71;
-import org.telegram.ui.o51;
+import org.telegram.ui.Components.nx;
+import org.telegram.ui.Components.nz;
+import org.telegram.ui.c71;
+import org.telegram.ui.q51;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class m1 extends ji.o {
     public final /* synthetic */ int q;
@@ -23,13 +23,13 @@ public final class m1 extends ji.o {
     public void e() {
         switch (this.q) {
             case 0:
-                ((p1) this.r).b3 = true;
+                ((p1) this.r).i3 = true;
                 break;
             case 1:
-                ((mz) this.r).f0 = true;
+                ((nz) this.r).f0 = true;
                 break;
             case 4:
-                ((a71) this.r).w1 = true;
+                ((c71) this.r).w1 = true;
                 break;
         }
     }
@@ -38,22 +38,22 @@ public final class m1 extends ji.o {
     public final void i() {
         switch (this.q) {
             case 0:
-                ((p1) this.r).b3 = false;
+                ((p1) this.r).i3 = false;
                 break;
             case 1:
-                ((mz) this.r).f0 = false;
+                ((nz) this.r).f0 = false;
                 break;
             case 2:
-                ((mx) this.r).Q.f0 = false;
+                ((nx) this.r).Q.f0 = false;
                 break;
             case 3:
-                ((o51) this.r).R.w1 = false;
+                ((q51) this.r).R.w1 = false;
                 break;
             case 4:
-                ((a71) this.r).w1 = false;
+                ((c71) this.r).w1 = false;
                 break;
             default:
-                ((o51) this.r).R.w1 = false;
+                ((q51) this.r).R.w1 = false;
                 break;
         }
     }

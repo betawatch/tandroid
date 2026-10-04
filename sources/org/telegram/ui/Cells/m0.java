@@ -5,7 +5,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class m0 extends Drawable {
     public final /* synthetic */ int a;
@@ -89,7 +89,7 @@ public final class m0 extends Drawable {
     public final void setAlpha(int i10) {
         switch (this.a) {
             case 0:
-                ((Paint) this.b).setAlpha(org.telegram.ui.ActionBar.h6.l1(i10 / 255.0f, this.c));
+                ((Paint) this.b).setAlpha(org.telegram.ui.ActionBar.i6.l1(i10 / 255.0f, this.c));
                 break;
             case 1:
                 ((Paint) this.b).setAlpha(i10);

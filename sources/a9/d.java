@@ -18,7 +18,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final class d implements ServiceConnection {
                 of.b bVar = d0Var.h;
                 bVar.getClass();
                 try {
-                    bVar.f0(c10, (p3) bVar.b);
+                    bVar.c0(c10, (p3) bVar.b);
                     break;
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
@@ -87,8 +87,8 @@ public final class d implements ServiceConnection {
                             break;
                         } catch (RemoteException unused) {
                             return;
-                        } catch (Exception e) {
-                            FileLog.e(e);
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
                             return;
                         }
                     }
@@ -96,7 +96,7 @@ public final class d implements ServiceConnection {
                 break;
             default:
                 StringBuilder sb2 = new StringBuilder("Connected to SessionLifecycleService. Queue size ");
-                oi.f fVar = (oi.f) this.b;
+                qi.f fVar = (qi.f) this.b;
                 LinkedBlockingDeque linkedBlockingDeque = (LinkedBlockingDeque) fVar.c;
                 sb2.append(linkedBlockingDeque.size());
                 Log.d("SessionLifecycleClient", sb2.toString());
@@ -131,7 +131,7 @@ public final class d implements ServiceConnection {
                 break;
             default:
                 Log.d("SessionLifecycleClient", "Disconnected from SessionLifecycleService");
-                oi.f fVar = (oi.f) this.b;
+                qi.f fVar = (qi.f) this.b;
                 fVar.b = null;
                 fVar.getClass();
                 break;

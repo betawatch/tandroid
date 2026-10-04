@@ -1,43 +1,80 @@
 package org.telegram.ui.Components;
 
-import android.graphics.SurfaceTexture;
-import android.os.Looper;
-import android.view.Surface;
+import android.graphics.Point;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uz implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xz b;
+    public final /* synthetic */ yz b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ uz(xz xzVar, int i10) {
-        this.a = i10;
-        this.b = xzVar;
+    public /* synthetic */ uz(yz yzVar, int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = yzVar;
+        this.c = i10;
+        this.d = i11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        int i10;
         switch (this.a) {
             case 0:
-                this.b.finish();
-                Looper myLooper = Looper.myLooper();
-                if (myLooper != null) {
-                    myLooper.quit();
+                yz yzVar = this.b;
+                int i11 = this.c;
+                int i12 = this.d;
+                if (yzVar.W != i11 || yzVar.X != i12) {
+                    yzVar.W = i11;
+                    yzVar.X = i12;
+                    int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
+                    int i13 = 1920;
+                    if (devicePerformanceClass != 1) {
+                        if (devicePerformanceClass != 2) {
+                            i13 = 720;
+                        } else {
+                            Point point = AndroidUtilities.displaySize;
+                            i13 = Math.min(1920, Math.max(point.x, point.y));
+                        }
+                    }
+                    if (SharedConfig.getDevicePerformanceClass() == 0 && ((i10 = yzVar.W) > 1280 || yzVar.X > 1280)) {
+                        yzVar.W = i10 / 2;
+                        yzVar.X /= 2;
+                    }
+                    int i14 = yzVar.W;
+                    if (i14 > i13 || yzVar.X > i13) {
+                        int i15 = yzVar.X;
+                        if (i14 > i15) {
+                            yzVar.X = (int) (i15 / (i13 / i14));
+                            yzVar.W = i13;
+                        } else {
+                            yzVar.W = (int) (i14 / (i13 / i15));
+                            yzVar.X = i13;
+                        }
+                    }
+                    yzVar.Z = false;
+                    yzVar.g();
+                    yzVar.d0.run();
                     break;
                 }
                 break;
             case 1:
-                xz.b(this.b);
+                yz yzVar2 = this.b;
+                int i16 = this.c;
+                int i17 = this.d;
+                yzVar2.n = i16;
+                yzVar2.r = i17;
                 break;
             default:
-                xz xzVar = this.b;
-                ov ovVar = xzVar.b0;
-                SurfaceTexture surfaceTexture = xzVar.w;
-                k71 k71Var = (k71) ovVar.b;
-                if (k71Var.a != null) {
-                    k71Var.a.T(new Surface(surfaceTexture));
-                    break;
-                }
+                yz yzVar3 = this.b;
+                int i18 = this.c;
+                int i19 = this.d;
+                qa qaVar = yzVar3.I;
+                qaVar.l = i18;
+                qaVar.m = i19;
                 break;
         }
     }

@@ -13,11 +13,11 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.SortedSet;
 import org.telegram.tgnet.ConnectionsManager;
+import v7.s6;
 import v7.t6;
-import v7.u6;
-import v7.z7;
+import v7.y7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class q {
     public final /* synthetic */ int a = 2;
@@ -33,7 +33,7 @@ public abstract class q {
     public static void d(int i10, Object[] objArr) {
         for (int i11 = 0; i11 < i10; i11++) {
             if (objArr[i11] == null) {
-                throw new NullPointerException(hg.c.h(i11, "at index "));
+                throw new NullPointerException(hg.k0.h(i11, "at index "));
             }
         }
     }
@@ -47,7 +47,7 @@ public abstract class q {
 
     public static Object f(int i10) {
         if (i10 < 2 || i10 > 1073741824 || Integer.highestOneBit(i10) != i10) {
-            throw new IllegalArgumentException(hg.c.h(i10, "must be power of 2 between 2^1 and 2^30: "));
+            throw new IllegalArgumentException(hg.k0.h(i10, "must be power of 2 between 2^1 and 2^30: "));
         }
         return i10 <= 256 ? new byte[i10] : i10 <= 65536 ? new short[i10] : new int[i10];
     }
@@ -113,7 +113,7 @@ public abstract class q {
             if (list.isEmpty()) {
                 throw new NoSuchElementException();
             }
-            return org.telegram.ui.Cells.c1.i(1, list);
+            return t8.b.h(1, list);
         }
         Iterator it = iterable.iterator();
         do {
@@ -133,8 +133,8 @@ public abstract class q {
     }
 
     public static i1 n(Set set, m0 m0Var) {
-        u6.d(set, "set1");
-        u6.d(m0Var, "set2");
+        t6.d(set, "set1");
+        t6.d(m0Var, "set2");
         return new i1(set, m0Var);
     }
 
@@ -145,7 +145,7 @@ public abstract class q {
     public static ArrayList p(Object... objArr) {
         int length = objArr.length;
         e(length, "arraySize");
-        ArrayList arrayList = new ArrayList(z7.e(length + 5 + (length / 10)));
+        ArrayList arrayList = new ArrayList(y7.e(length + 5 + (length / 10)));
         Collections.addAll(arrayList, objArr);
         return arrayList;
     }
@@ -188,7 +188,7 @@ public abstract class q {
             while (true) {
                 int i15 = u10 - 1;
                 int i16 = iArr[i15];
-                if ((i16 & i12) != i13 || !t6.a(obj, objArr[i15]) || (objArr2 != null && !t6.a(obj2, objArr2[i15]))) {
+                if ((i16 & i12) != i13 || !s6.a(obj, objArr[i15]) || (objArr2 != null && !s6.a(obj2, objArr2[i15]))) {
                     int i17 = i16 & i10;
                     if (i17 == 0) {
                         break;

@@ -1,12 +1,11 @@
 package ie;
 
-import ee.v;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import zd.e0;
 import zd.m;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d extends i implements a {
     public static final /* synthetic */ AtomicReferenceFieldUpdater g = AtomicReferenceFieldUpdater.newUpdater(d.class, Object.class, "owner$volatile");
@@ -61,10 +60,10 @@ public final class d extends i implements a {
         while (c()) {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = g;
             Object obj2 = atomicReferenceFieldUpdater.get(this);
-            v vVar = e.a;
-            if (obj2 != vVar) {
+            com.google.android.gms.internal.clearcut.e eVar = e.a;
+            if (obj2 != eVar) {
                 if (obj2 == obj || obj == null) {
-                    while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, vVar)) {
+                    while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, eVar)) {
                         if (atomicReferenceFieldUpdater.get(this) != obj2) {
                             break;
                         }

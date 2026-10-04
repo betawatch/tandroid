@@ -16,20 +16,20 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 import m.p3;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class y0 extends n6.g {
     public final ExecutorService U;
-    public final pb.c V;
-    public final pb.c W;
-    public final pb.c X;
-    public final pb.c Y;
-    public final pb.c Z;
-    public final pb.c a0;
-    public final pb.c b0;
-    public final pb.c c0;
-    public final pb.c d0;
-    public final pb.c e0;
+    public final w9.k V;
+    public final w9.k W;
+    public final w9.k X;
+    public final w9.k Y;
+    public final w9.k Z;
+    public final w9.k a0;
+    public final w9.k b0;
+    public final w9.k c0;
+    public final w9.k d0;
+    public final w9.k e0;
     public final z0 f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -37,16 +37,16 @@ public final class y0 extends n6.g {
         super(context, looper, 14, p3Var, kVar, lVar, 0);
         ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
         z0 a2 = z0.a(context);
-        this.V = new pb.c();
-        this.W = new pb.c();
-        this.X = new pb.c();
-        this.Y = new pb.c();
-        this.Z = new pb.c();
-        this.a0 = new pb.c();
-        this.b0 = new pb.c();
-        this.c0 = new pb.c();
-        this.d0 = new pb.c();
-        this.e0 = new pb.c();
+        this.V = new w9.k();
+        this.W = new w9.k();
+        this.X = new w9.k();
+        this.Y = new w9.k();
+        this.Z = new w9.k();
+        this.a0 = new w9.k();
+        this.b0 = new w9.k();
+        this.c0 = new w9.k();
+        this.d0 = new w9.k();
+        this.e0 = new w9.k();
         n6.l.h(unconfigurableExecutorService);
         this.U = unconfigurableExecutorService;
         this.f0 = a2;

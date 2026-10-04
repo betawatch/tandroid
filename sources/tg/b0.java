@@ -6,14 +6,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c3;
+import org.telegram.ui.ActionBar.d3;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.e3;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class b0 extends ug.e {
     public final /* synthetic */ c0 r;
@@ -30,28 +30,28 @@ public final class b0 extends ug.e {
         c0 c0Var = this.r;
         String str = c0Var.a0;
         String string = ((str == null || str.isEmpty()) && c0Var.X.to_id == -1) ? LocaleController.getString(R.string.BoostingOnlyGiveawayCreatorSeeLink) : LocaleController.getString(R.string.BoostingOnlyRecipientCode);
-        c3 c3Var = c0Var.container;
-        d6Var = ((e3) c0Var).resourcesProvider;
-        new yc(c3Var, d6Var).Q(R.raw.chats_infotip, 36, string).k(true);
+        d3 d3Var = c0Var.container;
+        d6Var = ((f3) c0Var).resourcesProvider;
+        new yc(d3Var, d6Var).Q(R.raw.chats_infotip, 36, string).k(true);
     }
 
     @Override // ug.e
     public final void F(TLObject tLObject) {
         c0 c0Var = this.r;
         TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = c0Var.X;
-        m2 m2Var = c0Var.n;
+        n2 n2Var = c0Var.n;
         c0Var.dismiss();
         if (tLObject instanceof TLRPC.Chat) {
-            m2Var.presentFragment(wn.R9(-((TLRPC.Chat) tLObject).id));
+            n2Var.presentFragment(yn.Q9(-((TLRPC.Chat) tLObject).id));
             return;
         }
         if (tLObject instanceof TLRPC.User) {
-            m2Var.presentFragment(wn.R9(((TLRPC.User) tLObject).id));
+            n2Var.presentFragment(yn.Q9(((TLRPC.User) tLObject).id));
             return;
         }
         Bundle bundle = new Bundle();
         bundle.putLong("chat_id", -DialogObject.getPeerDialogId(tL_payments_checkedGiftCode.from_id));
         bundle.putInt("message_id", tL_payments_checkedGiftCode.giveaway_msg_id);
-        m2Var.presentFragment(new wn(bundle));
+        n2Var.presentFragment(new yn(bundle));
     }
 }

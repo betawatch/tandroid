@@ -17,7 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import c3.h0;
-import ci.rc;
+import ci.qc;
 import com.google.android.gms.internal.vision.e2;
 import e9.f1;
 import j$.util.Objects;
@@ -40,16 +40,15 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.nu;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.c5;
-import org.telegram.ui.r4;
-import org.telegram.ui.v4;
-import org.telegram.ui.x4;
+import org.telegram.ui.Components.ou;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.d5;
+import org.telegram.ui.s4;
+import org.telegram.ui.w4;
 import org.telegram.ui.z0;
 import r0.i0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class m implements c3.q {
     public static m e;
@@ -59,12 +58,12 @@ public final class m implements c3.q {
     public Object d;
 
     public m(View view) {
-        nu[] nuVarArr = {new nu(), new nu(), new nu()};
-        this.b = nuVarArr;
+        ou[] ouVarArr = {new ou(), new ou(), new ou()};
+        this.b = ouVarArr;
         this.d = new ArrayList();
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
-        animatorSet.playTogether(g(nuVarArr[0], 0, 255, 0, 300), g(nuVarArr[1], 0, 255, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 300), g(nuVarArr[2], 0, 255, 300, 300), g(nuVarArr[0], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(nuVarArr[1], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(nuVarArr[2], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
+        animatorSet.playTogether(g(ouVarArr[0], 0, 255, 0, 300), g(ouVarArr[1], 0, 255, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 300), g(ouVarArr[2], 0, 255, 300, 300), g(ouVarArr[0], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(ouVarArr[1], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), g(ouVarArr[2], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
         animatorSet.addListener(new y4(this, view));
     }
 
@@ -110,8 +109,8 @@ public final class m implements c3.q {
         return true;
     }
 
-    public static boolean e(x4 x4Var) {
-        return (x4Var.a == null && x4Var.b == null) ? false : true;
+    public static boolean e(org.telegram.ui.y4 y4Var) {
+        return (y4Var.a == null && y4Var.b == null) ? false : true;
     }
 
     public static m k() {
@@ -139,13 +138,13 @@ public final class m implements c3.q {
             this.a = true;
             return qVar.Z1(i10, i11);
         }
-        z3.n nVar = (z3.n) sparseArray.get(i10);
-        if (nVar != null) {
-            return nVar;
+        z3.o oVar = (z3.o) sparseArray.get(i10);
+        if (oVar != null) {
+            return oVar;
         }
-        z3.n nVar2 = new z3.n(qVar.Z1(i10, i11), (z3.k) this.c);
-        sparseArray.put(i10, nVar2);
-        return nVar2;
+        z3.o oVar2 = new z3.o(qVar.Z1(i10, i11), (z3.l) this.c);
+        sparseArray.put(i10, oVar2);
+        return oVar2;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x006c  */
@@ -247,7 +246,7 @@ public final class m implements c3.q {
         ((c3.q) this.b).e1();
         if (this.a) {
             for (int i10 = 0; i10 < sparseArray.size(); i10++) {
-                ((z3.n) sparseArray.valueAt(i10)).i = true;
+                ((z3.o) sparseArray.valueAt(i10)).i = true;
             }
         }
     }
@@ -257,12 +256,12 @@ public final class m implements c3.q {
         return this.a ? bVar.b(i11, i10) : bVar.b(i10, i11) ? (i12 << 1) | 1 : i12 << 1;
     }
 
-    public ValueAnimator g(nu nuVar, int i10, int i11, int i12, int i13) {
+    public ValueAnimator g(ou ouVar, int i10, int i11, int i12, int i13) {
         ValueAnimator ofInt = ValueAnimator.ofInt(i10, i11);
-        ofInt.addUpdateListener(new ai.x(15, this, nuVar));
+        ofInt.addUpdateListener(new ai.x(15, this, ouVar));
         ofInt.setDuration(i13);
         ofInt.setStartDelay(i12);
-        ofInt.setInterpolator(sr.f);
+        ofInt.setInterpolator(tr.f);
         return ofInt;
     }
 
@@ -301,7 +300,7 @@ public final class m implements c3.q {
         if (i14 >= 0) {
             return new aa.a(this, fVar, eVarArr[length][i14][i15]);
         }
-        throw new cc.k(a4.a.q("Internal error: failed to encode \"", str, "\""));
+        throw new cc.k(a4.a.p("Internal error: failed to encode \"", str, "\""));
     }
 
     public byte[] i(UUID uuid, n2.p pVar) {
@@ -324,11 +323,11 @@ public final class m implements c3.q {
         synchronized (((HashMap) this.d)) {
             hashMap.putAll((HashMap) this.d);
         }
-        return w7.b0.a(((g2.o) this.b).createDataSource(), str, pVar.a, hashMap);
+        return w7.c0.a(((g2.o) this.b).createDataSource(), str, pVar.a, hashMap);
     }
 
     public byte[] j(n2.q qVar) {
-        return w7.b0.a(((g2.o) this.b).createDataSource(), qVar.b + "&signedRequest=" + e2.d0.p(qVar.a), null, Collections.EMPTY_MAP);
+        return w7.c0.a(((g2.o) this.b).createDataSource(), qVar.b + "&signedRequest=" + e2.d0.p(qVar.a), null, Collections.EMPTY_MAP);
     }
 
     public synchronized void m() {
@@ -475,7 +474,7 @@ public final class m implements c3.q {
     public void t() {
         e2.z zVar = (e2.z) this.d;
         if (this.a) {
-            zVar.c(new rc(this, 26));
+            zVar.c(new qc(this, 26));
             this.a = false;
         }
     }
@@ -495,7 +494,7 @@ public final class m implements c3.q {
                         return true;
                     }
                 }
-                ((t) ((p3) this.d).b).k(gVar);
+                ((s) ((p3) this.d).b).l(gVar);
                 return true;
             } catch (Throwable th2) {
                 throw th2;
@@ -503,36 +502,36 @@ public final class m implements c3.q {
         }
     }
 
-    public void v(ViewGroup viewGroup, d6 d6Var, x4 x4Var, v4 v4Var) {
+    public void v(ViewGroup viewGroup, d6 d6Var, org.telegram.ui.y4 y4Var, w4 w4Var) {
         Objects.requireNonNull(viewGroup);
         Context context = viewGroup.getContext();
         if (((ViewGroup) this.b) != viewGroup) {
             if (this.a) {
-                r4 r4Var = (r4) this.d;
-                int i10 = c5.F;
-                r4Var.b(false);
+                s4 s4Var = (s4) this.d;
+                int i10 = d5.F;
+                s4Var.b(false);
             }
             this.b = viewGroup;
             this.c = (WindowManager) f0.e.f(context, WindowManager.class);
-            r4 r4Var2 = new r4(this, context, d6Var, v4Var);
-            this.d = r4Var2;
+            s4 s4Var2 = new s4(this, context, d6Var, w4Var);
+            this.d = s4Var2;
             z0 z0Var = new z0(this, 3);
             WeakHashMap weakHashMap = i0.a;
-            r0.a0.j(r4Var2, z0Var);
+            r0.a0.j(s4Var2, z0Var);
         }
-        ((r4) this.d).a(x4Var);
+        ((s4) this.d).a(y4Var);
         if (this.a) {
             return;
         }
-        if (((r4) this.d).getParent() != null) {
-            ((WindowManager) this.c).removeView((r4) this.d);
+        if (((s4) this.d).getParent() != null) {
+            ((WindowManager) this.c).removeView((s4) this.d);
         }
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(-1, -1, MediaDataController.MAX_STYLE_RUNS_COUNT, 0, -3);
         layoutParams.softInputMode = 16;
         layoutParams.flags |= -1945959040;
         AndroidUtilities.applyEdgeToEdgeLayoutParams(layoutParams);
-        AndroidUtilities.setPreferredMaxRefreshRate((WindowManager) this.c, (r4) this.d, layoutParams);
-        ((WindowManager) this.c).addView((r4) this.d, layoutParams);
+        AndroidUtilities.setPreferredMaxRefreshRate((WindowManager) this.c, (s4) this.d, layoutParams);
+        ((WindowManager) this.c).addView((s4) this.d, layoutParams);
         viewGroup.requestDisallowInterceptTouchEvent(true);
         this.a = true;
     }
@@ -553,12 +552,12 @@ public final class m implements c3.q {
     }
 
     public void x(SpannableString spannableString, int i10) {
-        nu[] nuVarArr = (nu[]) this.b;
+        ou[] ouVarArr = (ou[]) this.b;
         int i11 = i10 + 1;
-        spannableString.setSpan(nuVarArr[0], i10, i11, 0);
+        spannableString.setSpan(ouVarArr[0], i10, i11, 0);
         int i12 = i10 + 2;
-        spannableString.setSpan(nuVarArr[1], i11, i12, 0);
-        spannableString.setSpan(nuVarArr[2], i12, i10 + 3, 0);
+        spannableString.setSpan(ouVarArr[1], i11, i12, 0);
+        spannableString.setSpan(ouVarArr[2], i12, i10 + 3, 0);
     }
 
     public void y() {
@@ -584,9 +583,9 @@ public final class m implements c3.q {
         }
     }
 
-    public m(c3.q qVar, z3.k kVar) {
+    public m(c3.q qVar, z3.l lVar) {
         this.b = qVar;
-        this.c = kVar;
+        this.c = lVar;
         this.d = new SparseArray();
     }
 

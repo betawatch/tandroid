@@ -7,23 +7,23 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.fi1;
-import org.telegram.ui.o00;
-import org.telegram.ui.rt0;
-import org.telegram.ui.xd;
+import org.telegram.ui.s00;
+import org.telegram.ui.ut0;
+import org.telegram.ui.zd;
 import yh.b4;
-import yh.k7;
-import yh.l8;
+import yh.l7;
+import yh.m8;
 import yh.x3;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ r0(a6.i iVar, View view) {
+    public /* synthetic */ r0(a4.m mVar, View view) {
         this.a = 14;
-        this.b = iVar;
+        this.b = mVar;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -86,19 +86,19 @@ public final /* synthetic */ class r0 implements ValueAnimator.AnimatorUpdateLis
                 l0Var.invalidate();
                 break;
             case 8:
-                ((rt0) ((qg.x0) obj)).K.e0.invalidate();
+                ((ut0) ((qg.w0) obj)).K.e0.invalidate();
                 break;
             case 9:
-                qg.s1 s1Var = (qg.s1) obj;
-                s1Var.getClass();
-                s1Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s1Var.invalidate();
+                qg.r1 r1Var = (qg.r1) obj;
+                r1Var.getClass();
+                r1Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                r1Var.invalidate();
                 break;
             case 10:
-                qg.z1 z1Var = (qg.z1) obj;
-                z1Var.getClass();
-                z1Var.x = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                z1Var.invalidate();
+                qg.y1 y1Var = (qg.y1) obj;
+                y1Var.getClass();
+                y1Var.x = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y1Var.invalidate();
                 break;
             case 11:
                 pg.n nVar = (pg.n) obj;
@@ -114,14 +114,14 @@ public final /* synthetic */ class r0 implements ValueAnimator.AnimatorUpdateLis
                 qg.t2 t2Var = (qg.t2) obj;
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 t2Var.y = floatValue3;
-                xd xdVar = t2Var.c;
-                xdVar.setAlpha(floatValue3);
-                xdVar.setScaleX(AndroidUtilities.lerp(0.9f, 1.0f, t2Var.y));
-                xdVar.setScaleY(AndroidUtilities.lerp(0.9f, 1.0f, t2Var.y));
+                zd zdVar = t2Var.c;
+                zdVar.setAlpha(floatValue3);
+                zdVar.setScaleX(AndroidUtilities.lerp(0.9f, 1.0f, t2Var.y));
+                zdVar.setScaleY(AndroidUtilities.lerp(0.9f, 1.0f, t2Var.y));
                 t2Var.b.invalidate();
                 break;
             case 14:
-                ((View) ((g.b0) ((a6.i) obj).b).d.getParent()).invalidate();
+                ((View) ((g.b0) ((a4.m) obj).b).d.getParent()).invalidate();
                 break;
             case 15:
                 LimitPreviewView limitPreviewView = (LimitPreviewView) obj;
@@ -131,17 +131,17 @@ public final /* synthetic */ class r0 implements ValueAnimator.AnimatorUpdateLis
                 limitPreviewView.b0 = floatValue4 < 0.5f ? (floatValue4 / 0.5f) * (-7.0f) : (1.0f - ((floatValue4 - 0.5f) / 0.5f)) * (-7.0f);
                 break;
             case 16:
-                rg.p0 p0Var = (rg.p0) obj;
-                p0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p0Var.d.invalidate();
-                rg.o0 o0Var = p0Var.e;
-                if (o0Var != null) {
-                    o0Var.invalidate();
+                rg.q0 q0Var = (rg.q0) obj;
+                q0Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                q0Var.d.invalidate();
+                rg.p0 p0Var = q0Var.e;
+                if (p0Var != null) {
+                    p0Var.invalidate();
                     break;
                 }
                 break;
             case 17:
-                ((rg.w1) obj).a.o = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ((rg.y1) obj).a.o = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 18:
                 tg.b bVar = (tg.b) obj;
@@ -187,15 +187,15 @@ public final /* synthetic */ class r0 implements ValueAnimator.AnimatorUpdateLis
                 break;
             case 25:
                 float floatValue6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o00 o00Var = ((k7) obj).c;
-                o00Var.setScaleX(floatValue6);
-                o00Var.setScaleY(floatValue6);
+                s00 s00Var = ((l7) obj).c;
+                s00Var.setScaleX(floatValue6);
+                s00Var.setScaleY(floatValue6);
                 break;
             case 26:
-                l8 l8Var = (l8) obj;
-                l8Var.getClass();
-                l8Var.c0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l8Var.invalidate();
+                m8 m8Var = (m8) obj;
+                m8Var.getClass();
+                m8Var.c0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m8Var.invalidate();
                 break;
             default:
                 float floatValue7 = ((Float) valueAnimator.getAnimatedValue()).floatValue();

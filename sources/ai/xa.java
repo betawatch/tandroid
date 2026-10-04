@@ -22,12 +22,12 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.z70;
+import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public class xa extends NestedScrollView implements z70 {
+public class xa extends NestedScrollView implements a80 {
     public final org.telegram.ui.Cells.aa W;
     public final o1.k a0;
     public final wa b0;
@@ -81,22 +81,32 @@ public class xa extends NestedScrollView implements z70 {
         kVar.b(new qa(0, this));
         kVar.u.a(1.0f);
         try {
-            NestedScrollView.class.getDeclaredMethod("d", null).setAccessible(true);
-        } catch (Exception e) {
-            FileLog.e(e);
+            NestedScrollView.class.getDeclaredMethod("c", null).setAccessible(true);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
         try {
             Field declaredField = NestedScrollView.class.getDeclaredField("d");
             declaredField.setAccessible(true);
             this.k0 = (OverScroller) declaredField.get(this);
-        } catch (Exception e7) {
+        } catch (Exception e10) {
             this.k0 = null;
-            FileLog.e(e7);
+            FileLog.e(e10);
         }
     }
 
     @Override // androidx.core.widget.NestedScrollView
-    public final void B(int i10) {
+    public final boolean A(int i10, int i11) {
+        if (i11 == 0) {
+            this.a0.c();
+            this.c0 = true;
+            this.d0 = this.b0.getTranslationY();
+        }
+        return true;
+    }
+
+    @Override // androidx.core.widget.NestedScrollView
+    public final void C(int i10) {
         OverScroller overScroller;
         if (this.c0 && i10 == 0) {
             this.c0 = false;
@@ -107,7 +117,7 @@ public class xa extends NestedScrollView implements z70 {
         }
     }
 
-    public final void C() {
+    public final void D() {
         if (this.v0) {
             this.v0 = false;
             float scrollY = getScrollY();
@@ -115,12 +125,12 @@ public class xa extends NestedScrollView implements z70 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new pa(this, scrollY, f7, 0));
             ofFloat.setDuration(250L);
-            ofFloat.setInterpolator(sr.f);
+            ofFloat.setInterpolator(tr.f);
             ofFloat.start();
         }
     }
 
-    public final void D(boolean z10) {
+    public final void E(boolean z10) {
         if (!this.v0 || z10) {
             this.v0 = true;
             float scrollY = getScrollY();
@@ -128,7 +138,7 @@ public class xa extends NestedScrollView implements z70 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new pa(this, scrollY, f7, 1));
             ofFloat.setDuration(250L);
-            ofFloat.setInterpolator(sr.f);
+            ofFloat.setInterpolator(tr.f);
             ofFloat.start();
         }
     }
@@ -148,7 +158,7 @@ public class xa extends NestedScrollView implements z70 {
             kVar.f();
         }
         if (getScrollY() < AndroidUtilities.dp(2.0f)) {
-            C();
+            D();
         }
     }
 
@@ -195,7 +205,7 @@ public class xa extends NestedScrollView implements z70 {
         }
     }
 
-    @Override // org.telegram.ui.Components.z70
+    @Override // org.telegram.ui.Components.a80
     public final void a(RectF rectF) {
         va vaVar;
         wa waVar = this.b0;
@@ -214,7 +224,7 @@ public class xa extends NestedScrollView implements z70 {
         rectF.offset(frameLayout.getX() + x10, frameLayout.getY() + (waVar.getY() - getScrollY()));
     }
 
-    @Override // org.telegram.ui.Components.z70
+    @Override // org.telegram.ui.Components.a80
     public final void b(Canvas canvas, float f7) {
         va vaVar;
         wa waVar = this.b0;
@@ -265,7 +275,7 @@ public class xa extends NestedScrollView implements z70 {
     }
 
     @Override // androidx.core.widget.NestedScrollView
-    public final boolean g(int i10, int i11, int i12, int[] iArr, int[] iArr2) {
+    public final boolean f(int i10, int i11, int i12, int[] iArr, int[] iArr2) {
         iArr[1] = 0;
         if (this.c0) {
             float f7 = this.d0;
@@ -293,6 +303,41 @@ public class xa extends NestedScrollView implements z70 {
             }
         }
         return false;
+    }
+
+    @Override // androidx.core.widget.NestedScrollView
+    public final void g(int i10, int i11, int i12, int i13, int[] iArr, int i14, int[] iArr2) {
+        float f7;
+        if (i13 != 0) {
+            int round = Math.round((1.0f - Math.abs((-this.d0) / this.r0.getTop())) * i13);
+            if (round != 0) {
+                boolean z10 = this.c0;
+                wa waVar = this.b0;
+                if (z10) {
+                    float f10 = this.d0 - round;
+                    this.d0 = f10;
+                    waVar.setTranslationY(f10);
+                } else if (!this.a0.f) {
+                    OverScroller overScroller = this.k0;
+                    float currVelocity = overScroller != null ? overScroller.getCurrVelocity() : Float.NaN;
+                    if (Float.isNaN(currVelocity)) {
+                        f7 = 0.0f;
+                    } else {
+                        Point point = AndroidUtilities.displaySize;
+                        float min = Math.min(point.x > point.y ? 3000.0f : 5000.0f, currVelocity);
+                        round = (int) ((round * min) / currVelocity);
+                        f7 = min * (-this.e0);
+                    }
+                    if (round != 0) {
+                        float f11 = this.d0 - round;
+                        this.d0 = f11;
+                        waVar.setTranslationY(f11);
+                    }
+                    K(f7);
+                }
+            }
+        }
+        this.W.x();
     }
 
     @Override // androidx.core.widget.NestedScrollView, android.view.View
@@ -327,38 +372,10 @@ public class xa extends NestedScrollView implements z70 {
     }
 
     @Override // androidx.core.widget.NestedScrollView
-    public final void h(int i10, int i11, int i12, int i13, int[] iArr, int i14, int[] iArr2) {
-        float f7;
-        if (i13 != 0) {
-            int round = Math.round((1.0f - Math.abs((-this.d0) / this.r0.getTop())) * i13);
-            if (round != 0) {
-                boolean z10 = this.c0;
-                wa waVar = this.b0;
-                if (z10) {
-                    float f10 = this.d0 - round;
-                    this.d0 = f10;
-                    waVar.setTranslationY(f10);
-                } else if (!this.a0.f) {
-                    OverScroller overScroller = this.k0;
-                    float currVelocity = overScroller != null ? overScroller.getCurrVelocity() : Float.NaN;
-                    if (Float.isNaN(currVelocity)) {
-                        f7 = 0.0f;
-                    } else {
-                        Point point = AndroidUtilities.displaySize;
-                        float min = Math.min(point.x > point.y ? 3000.0f : 5000.0f, currVelocity);
-                        round = (int) ((round * min) / currVelocity);
-                        f7 = min * (-this.e0);
-                    }
-                    if (round != 0) {
-                        float f11 = this.d0 - round;
-                        this.d0 = f11;
-                        waVar.setTranslationY(f11);
-                    }
-                    K(f7);
-                }
-            }
-        }
-        this.W.x();
+    public final void i(int i10) {
+        super.i(i10);
+        this.e0 = Math.signum(i10);
+        this.f0 = 0.0f;
     }
 
     @Override // android.view.View
@@ -368,13 +385,6 @@ public class xa extends NestedScrollView implements z70 {
             ((View) getParent()).invalidate();
         }
         this.W.x();
-    }
-
-    @Override // androidx.core.widget.NestedScrollView
-    public final void k(int i10) {
-        super.k(i10);
-        this.e0 = Math.signum(i10);
-        this.f0 = 0.0f;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x002c, code lost:
@@ -445,16 +455,6 @@ public class xa extends NestedScrollView implements z70 {
     public final void scrollBy(int i10, int i11) {
         super.scrollBy(i10, i11);
         invalidate();
-    }
-
-    @Override // androidx.core.widget.NestedScrollView
-    public final boolean z(int i10, int i11) {
-        if (i11 == 0) {
-            this.a0.c();
-            this.c0 = true;
-            this.d0 = this.b0.getTranslationY();
-        }
-        return true;
     }
 
     public void F(org.telegram.ui.Components.z5 z5Var) {

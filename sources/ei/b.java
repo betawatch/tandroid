@@ -5,17 +5,17 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.a2 c;
+    public final /* synthetic */ m b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2 c;
 
-    public /* synthetic */ b(l lVar, org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+    public /* synthetic */ b(m mVar, org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         this.a = i10;
-        this.b = lVar;
-        this.c = a2Var;
+        this.b = mVar;
+        this.c = b2Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
@@ -23,17 +23,17 @@ public final /* synthetic */ class b implements RequestDelegate {
         switch (this.a) {
             case 0:
                 final int i10 = 1;
-                final l lVar = this.b;
-                final org.telegram.ui.ActionBar.a2 a2Var = this.c;
+                final m mVar = this.b;
+                final org.telegram.ui.ActionBar.b2 b2Var = this.c;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: ei.d
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                l.y0(lVar, a2Var, tLObject, tL_error);
+                                m.D0(mVar, b2Var, tLObject, tL_error);
                                 break;
                             default:
-                                l.z0(lVar, a2Var, tLObject, tL_error);
+                                m.E0(mVar, b2Var, tLObject, tL_error);
                                 break;
                         }
                     }
@@ -41,17 +41,17 @@ public final /* synthetic */ class b implements RequestDelegate {
                 break;
             default:
                 final int i11 = 0;
-                final l lVar2 = this.b;
-                final org.telegram.ui.ActionBar.a2 a2Var2 = this.c;
+                final m mVar2 = this.b;
+                final org.telegram.ui.ActionBar.b2 b2Var2 = this.c;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: ei.d
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
                             case 0:
-                                l.y0(lVar2, a2Var2, tLObject, tL_error);
+                                m.D0(mVar2, b2Var2, tLObject, tL_error);
                                 break;
                             default:
-                                l.z0(lVar2, a2Var2, tLObject, tL_error);
+                                m.E0(mVar2, b2Var2, tLObject, tL_error);
                                 break;
                         }
                     }

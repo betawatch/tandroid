@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class y5 extends s2 {
     public final /* synthetic */ int H;
@@ -26,7 +26,7 @@ public final class y5 extends s2 {
         if (num.intValue() == 3) {
             int i10 = 0;
             for (int i11 = 0; i11 < j6Var.getChildCount(); i11++) {
-                if (j6Var.getChildAt(i11) instanceof qg.b2) {
+                if (j6Var.getChildAt(i11) instanceof qg.a2) {
                     i10++;
                 }
             }
@@ -36,7 +36,7 @@ public final class y5 extends s2 {
                     this.container.performHapticFeedback(3);
                 } catch (Exception unused) {
                 }
-                new org.telegram.ui.Components.yc(this.container, this.resourcesProvider).M(LocaleController.getString(R.string.IncreaseLimit), AndroidUtilities.replaceSingleTag(formatPluralString, org.telegram.ui.ActionBar.h6.gc, 0, new androidx.fragment.app.a0(this, 10), this.resourcesProvider), R.raw.star_premium_2).k(true);
+                new org.telegram.ui.Components.yc(this.container, this.resourcesProvider).M(LocaleController.getString(R.string.IncreaseLimit), AndroidUtilities.replaceSingleTag(formatPluralString, org.telegram.ui.ActionBar.i6.gc, 0, new androidx.fragment.app.a0(this, 10), this.resourcesProvider), R.raw.star_premium_2).k(true);
                 return false;
             }
             if (i10 >= MessagesController.getInstance(this.currentAccount).storiesSuggestedReactionsLimitPremium) {
@@ -82,7 +82,7 @@ public final class y5 extends s2 {
         return this.I.f0(o8Var);
     }
 
-    @Override // org.telegram.ui.ActionBar.e3
+    @Override // org.telegram.ui.ActionBar.f3
     public final void onDismissAnimationStart() {
         super.onDismissAnimationStart();
         this.I.R0(this.H);

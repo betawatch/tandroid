@@ -10,9 +10,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class fa implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -40,7 +40,7 @@ public final /* synthetic */ class fa implements RequestDelegate {
                 ((ConferenceCall) this.c).lambda$poll$8((TL_phone.getGroupCallChainBlocks) this.d, this.b, (AtomicBoolean) this.e, (AtomicInteger) this.f, tLObject, tL_error);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.e(tL_error, (wn) this.c, tLObject, (TLRPC.FileLocation[]) this.d, (String) this.e, (TLRPC.FileLocation[]) this.f, this.b));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.e(tL_error, (yn) this.c, tLObject, (TLRPC.FileLocation[]) this.d, (String) this.e, (TLRPC.FileLocation[]) this.f, this.b));
                 break;
         }
     }
@@ -53,8 +53,8 @@ public final /* synthetic */ class fa implements RequestDelegate {
         this.f = atomicInteger;
     }
 
-    public /* synthetic */ fa(wn wnVar, TLRPC.FileLocation[] fileLocationArr, String str, TLRPC.FileLocation[] fileLocationArr2, long j3) {
-        this.c = wnVar;
+    public /* synthetic */ fa(yn ynVar, TLRPC.FileLocation[] fileLocationArr, String str, TLRPC.FileLocation[] fileLocationArr2, long j3) {
+        this.c = ynVar;
         this.d = fileLocationArr;
         this.e = str;
         this.f = fileLocationArr2;

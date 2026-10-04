@@ -27,11 +27,11 @@ import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class GoogleMapsProvider implements IMapsProvider {
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static final class GoogleCameraUpdate implements IMapsProvider.ICameraUpdate {
         private h8.a cameraUpdate;
 
@@ -40,7 +40,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static final class GoogleCircleOptions implements IMapsProvider.ICircleOptions {
         private j8.b circleOptions;
 
@@ -106,7 +106,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static final class GoogleLatLngBounds implements IMapsProvider.ILatLngBounds {
         private LatLngBounds bounds;
 
@@ -131,7 +131,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static final class GoogleLatLngBoundsBuilder implements IMapsProvider.ILatLngBoundsBuilder {
         private j8.d builder;
 
@@ -180,13 +180,13 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static final class GoogleMapImpl implements IMapsProvider.IMap {
         private h8.c googleMap;
         private Map<j8.a, GoogleCircle> implToAbsCircleMap;
         private Map<j8.f, GoogleMarker> implToAbsMarkerMap;
 
-        /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+        /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
         public final class GoogleCircle implements IMapsProvider.ICircle {
             private j8.a circle;
 
@@ -200,8 +200,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                     double readDouble = N0.readDouble();
                     N0.recycle();
                     return readDouble;
-                } catch (RemoteException e) {
-                    throw new androidx.car.app.j(e);
+                } catch (RemoteException e7) {
+                    throw new androidx.car.app.j(e7);
                 }
             }
 
@@ -213,8 +213,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                     s7.f fVar = (s7.f) aVar.a;
                     fVar.S0(fVar.O0(), 1);
                     GoogleMapImpl.this.implToAbsCircleMap.remove(this.circle);
-                } catch (RemoteException e) {
-                    throw new androidx.car.app.j(e);
+                } catch (RemoteException e7) {
+                    throw new androidx.car.app.j(e7);
                 }
             }
 
@@ -228,8 +228,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                     Parcel O0 = fVar.O0();
                     s7.b.b(O0, latLng2);
                     fVar.S0(O0, 3);
-                } catch (RemoteException e) {
-                    throw new androidx.car.app.j(e);
+                } catch (RemoteException e7) {
+                    throw new androidx.car.app.j(e7);
                 }
             }
 
@@ -242,8 +242,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                     Parcel O0 = fVar.O0();
                     O0.writeInt(i10);
                     fVar.S0(O0, 11);
-                } catch (RemoteException e) {
-                    throw new androidx.car.app.j(e);
+                } catch (RemoteException e7) {
+                    throw new androidx.car.app.j(e7);
                 }
             }
 
@@ -256,8 +256,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                     Parcel O0 = fVar.O0();
                     O0.writeDouble(d);
                     fVar.S0(O0, 5);
-                } catch (RemoteException e) {
-                    throw new androidx.car.app.j(e);
+                } catch (RemoteException e7) {
+                    throw new androidx.car.app.j(e7);
                 }
             }
 
@@ -270,8 +270,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                     Parcel O0 = fVar.O0();
                     O0.writeInt(i10);
                     fVar.S0(O0, 9);
-                } catch (RemoteException e) {
-                    throw new androidx.car.app.j(e);
+                } catch (RemoteException e7) {
+                    throw new androidx.car.app.j(e7);
                 }
             }
 
@@ -280,7 +280,7 @@ public class GoogleMapsProvider implements IMapsProvider {
             }
         }
 
-        /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+        /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
         public final class GoogleMarker implements IMapsProvider.IMarker {
             private j8.f marker;
 
@@ -296,8 +296,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                     LatLng createFromParcel = N0.readInt() == 0 ? null : creator.createFromParcel(N0);
                     N0.recycle();
                     return new IMapsProvider.LatLng(createFromParcel.a, createFromParcel.b);
-                } catch (RemoteException e) {
-                    throw new androidx.car.app.j(e);
+                } catch (RemoteException e7) {
+                    throw new androidx.car.app.j(e7);
                 }
             }
 
@@ -311,8 +311,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                     x6.a L0 = x6.b.L0(N0.readStrongBinder());
                     N0.recycle();
                     return x6.b.M0(L0);
-                } catch (RemoteException e) {
-                    throw new androidx.car.app.j(e);
+                } catch (RemoteException e7) {
+                    throw new androidx.car.app.j(e7);
                 }
             }
 
@@ -324,14 +324,14 @@ public class GoogleMapsProvider implements IMapsProvider {
                     s7.i iVar = (s7.i) fVar.a;
                     iVar.S0(iVar.O0(), 1);
                     GoogleMapImpl.this.implToAbsMarkerMap.remove(this.marker);
-                } catch (RemoteException e) {
-                    throw new androidx.car.app.j(e);
+                } catch (RemoteException e7) {
+                    throw new androidx.car.app.j(e7);
                 }
             }
 
             @Override // org.telegram.messenger.IMapsProvider.IMarker
             public void setIcon(Bitmap bitmap) {
-                this.marker.a(v7.d9.a(bitmap));
+                this.marker.a(v7.c9.a(bitmap));
             }
 
             @Override // org.telegram.messenger.IMapsProvider.IMarker
@@ -344,8 +344,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                     Parcel O0 = iVar.O0();
                     s7.b.b(O0, latLng2);
                     iVar.S0(O0, 3);
-                } catch (RemoteException e) {
-                    throw new androidx.car.app.j(e);
+                } catch (RemoteException e7) {
+                    throw new androidx.car.app.j(e7);
                 }
             }
 
@@ -359,8 +359,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                     Parcel O0 = iVar.O0();
                     O0.writeFloat(f7);
                     iVar.S0(O0, 22);
-                } catch (RemoteException e) {
-                    throw new androidx.car.app.j(e);
+                } catch (RemoteException e7) {
+                    throw new androidx.car.app.j(e7);
                 }
             }
 
@@ -375,8 +375,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                     Parcel O0 = iVar.O0();
                     s7.b.c(O0, bVar);
                     iVar.S0(O0, 29);
-                } catch (RemoteException e) {
-                    throw new androidx.car.app.j(e);
+                } catch (RemoteException e7) {
+                    throw new androidx.car.app.j(e7);
                 }
             }
 
@@ -386,7 +386,7 @@ public class GoogleMapsProvider implements IMapsProvider {
 
             @Override // org.telegram.messenger.IMapsProvider.IMarker
             public void setIcon(int i10) {
-                this.marker.a(v7.d9.b(i10));
+                this.marker.a(v7.c9.b(i10));
             }
         }
 
@@ -437,8 +437,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 GoogleCircle googleCircle = new GoogleCircle(aVar);
                 this.implToAbsCircleMap.put(aVar, googleCircle);
                 return googleCircle;
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -467,8 +467,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 GoogleMarker googleMarker = new GoogleMarker(fVar2);
                 this.implToAbsMarkerMap.put(fVar2, googleMarker);
                 return googleMarker;
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -484,8 +484,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 Parcel O0 = fVar.O0();
                 s7.b.c(O0, aVar2);
                 fVar.S0(O0, 5);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -502,8 +502,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 N0.recycle();
                 LatLng latLng = createFromParcel.a;
                 return new IMapsProvider.CameraPosition(new IMapsProvider.LatLng(latLng.a, latLng.b), createFromParcel.b);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -517,8 +517,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 float readFloat = N0.readFloat();
                 N0.recycle();
                 return readFloat;
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -532,8 +532,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 float readFloat = N0.readFloat();
                 N0.recycle();
                 return readFloat;
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -554,8 +554,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 }
                 N0.recycle();
                 return new GoogleProjection(new h8.g(bVar));
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -579,8 +579,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                     cVar2.b = new h8.h(cVar);
                 }
                 return new GoogleUISettings(cVar2.b);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -596,8 +596,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 Parcel O0 = fVar.O0();
                 s7.b.c(O0, aVar2);
                 fVar.S0(O0, 4);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -613,8 +613,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 Parcel N0 = fVar.N0(O0, 91);
                 N0.readInt();
                 N0.recycle();
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -642,8 +642,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 int i10 = s7.b.a;
                 O0.writeInt(z10 ? 1 : 0);
                 fVar.S0(O0, 22);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -658,8 +658,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 Parcel O0 = fVar.O0();
                 s7.b.c(O0, iVar);
                 fVar.S0(O0, 99);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -674,8 +674,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 Parcel O0 = fVar.O0();
                 s7.b.c(O0, iVar);
                 fVar.S0(O0, 97);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -689,8 +689,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 Parcel O0 = fVar.O0();
                 s7.b.c(O0, iVar);
                 fVar.S0(O0, 96);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -705,8 +705,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 Parcel O0 = fVar.O0();
                 s7.b.c(O0, iVar);
                 fVar.S0(O0, 42);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -720,8 +720,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 Parcel O0 = fVar.O0();
                 s7.b.c(O0, iVar);
                 fVar.S0(O0, 30);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -736,8 +736,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 Parcel O0 = fVar.O0();
                 s7.b.c(O0, iVar);
                 fVar.S0(O0, 36);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -753,8 +753,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 O0.writeInt(i12);
                 O0.writeInt(i13);
                 fVar.S0(O0, 39);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -792,8 +792,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 s7.b.c(O0, aVar2);
                 s7.b.c(O0, iVar);
                 fVar.S0(O0, 6);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -826,13 +826,13 @@ public class GoogleMapsProvider implements IMapsProvider {
                 O0.writeInt(i10);
                 s7.b.c(O0, iVar);
                 fVar.S0(O0, 7);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static final class GoogleMapStyleOptions implements IMapsProvider.IMapStyleOptions {
         private j8.e mapStyleOptions;
 
@@ -841,7 +841,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static final class GoogleMapView implements IMapsProvider.IMapView {
         private IMapsProvider.ITouchInterceptor dispatchInterceptor;
         private GLSurfaceView glSurfaceView;
@@ -849,7 +849,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         private h8.d mapView;
         private Runnable onLayoutListener;
 
-        /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+        /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
         public class 1 extends h8.d {
             public 1(Context context) {
                 super(context);
@@ -962,7 +962,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static final class GoogleMarkerOptions implements IMapsProvider.IMarkerOptions {
         private j8.g markerOptions;
 
@@ -982,7 +982,7 @@ public class GoogleMapsProvider implements IMapsProvider {
 
         @Override // org.telegram.messenger.IMapsProvider.IMarkerOptions
         public IMapsProvider.IMarkerOptions icon(Bitmap bitmap) {
-            this.markerOptions.d = v7.d9.a(bitmap);
+            this.markerOptions.d = v7.c9.a(bitmap);
             return this;
         }
 
@@ -1019,12 +1019,12 @@ public class GoogleMapsProvider implements IMapsProvider {
 
         @Override // org.telegram.messenger.IMapsProvider.IMarkerOptions
         public IMapsProvider.IMarkerOptions icon(int i10) {
-            this.markerOptions.d = v7.d9.b(i10);
+            this.markerOptions.d = v7.c9.b(i10);
             return this;
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static final class GoogleProjection implements IMapsProvider.IProjection {
         private h8.g projection;
 
@@ -1041,8 +1041,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 x6.a L0 = x6.b.L0(N0.readStrongBinder());
                 N0.recycle();
                 return (Point) x6.b.M0(L0);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -1051,7 +1051,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static final class GoogleUISettings implements IMapsProvider.IUISettings {
         private h8.h uiSettings;
 
@@ -1065,8 +1065,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 int i10 = s7.b.a;
                 O0.writeInt(z10 ? 1 : 0);
                 cVar.S0(O0, 2);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -1080,8 +1080,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 int i10 = s7.b.a;
                 O0.writeInt(z10 ? 1 : 0);
                 cVar.S0(O0, 3);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -1095,8 +1095,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                 int i10 = s7.b.a;
                 O0.writeInt(z10 ? 1 : 0);
                 cVar.S0(O0, 1);
-            } catch (RemoteException e) {
-                throw new androidx.car.app.j(e);
+            } catch (RemoteException e7) {
+                throw new androidx.car.app.j(e7);
             }
         }
 
@@ -1143,8 +1143,8 @@ public class GoogleMapsProvider implements IMapsProvider {
                     throw th2;
                 }
             }
-        } catch (IOException e) {
-            throw new Resources.NotFoundException("Failed to read resource " + i10 + ": " + e.toString());
+        } catch (IOException e7) {
+            throw new Resources.NotFoundException("Failed to read resource " + i10 + ": " + e7.toString());
         }
     }
 
@@ -1152,7 +1152,7 @@ public class GoogleMapsProvider implements IMapsProvider {
     public IMapsProvider.ICameraUpdate newCameraUpdateLatLng(IMapsProvider.LatLng latLng) {
         LatLng latLng2 = new LatLng(latLng.latitude, latLng.longitude);
         try {
-            i8.a aVar = v7.y7.a;
+            i8.a aVar = v7.x7.a;
             n6.l.i(aVar, "CameraUpdateFactory is not initialized");
             Parcel O0 = aVar.O0();
             s7.b.b(O0, latLng2);
@@ -1160,8 +1160,8 @@ public class GoogleMapsProvider implements IMapsProvider {
             x6.a L0 = x6.b.L0(N0.readStrongBinder());
             N0.recycle();
             return new GoogleCameraUpdate(new h8.a(L0));
-        } catch (RemoteException e) {
-            throw new androidx.car.app.j(e);
+        } catch (RemoteException e7) {
+            throw new androidx.car.app.j(e7);
         }
     }
 
@@ -1170,7 +1170,7 @@ public class GoogleMapsProvider implements IMapsProvider {
         LatLngBounds latLngBounds = ((GoogleLatLngBounds) iLatLngBounds).bounds;
         n6.l.i(latLngBounds, "bounds must not be null");
         try {
-            i8.a aVar = v7.y7.a;
+            i8.a aVar = v7.x7.a;
             n6.l.i(aVar, "CameraUpdateFactory is not initialized");
             Parcel O0 = aVar.O0();
             s7.b.b(O0, latLngBounds);
@@ -1179,8 +1179,8 @@ public class GoogleMapsProvider implements IMapsProvider {
             x6.a L0 = x6.b.L0(N0.readStrongBinder());
             N0.recycle();
             return new GoogleCameraUpdate(new h8.a(L0));
-        } catch (RemoteException e) {
-            throw new androidx.car.app.j(e);
+        } catch (RemoteException e7) {
+            throw new androidx.car.app.j(e7);
         }
     }
 
@@ -1188,7 +1188,7 @@ public class GoogleMapsProvider implements IMapsProvider {
     public IMapsProvider.ICameraUpdate newCameraUpdateLatLngZoom(IMapsProvider.LatLng latLng, float f7) {
         LatLng latLng2 = new LatLng(latLng.latitude, latLng.longitude);
         try {
-            i8.a aVar = v7.y7.a;
+            i8.a aVar = v7.x7.a;
             n6.l.i(aVar, "CameraUpdateFactory is not initialized");
             Parcel O0 = aVar.O0();
             s7.b.b(O0, latLng2);
@@ -1197,8 +1197,8 @@ public class GoogleMapsProvider implements IMapsProvider {
             x6.a L0 = x6.b.L0(N0.readStrongBinder());
             N0.recycle();
             return new GoogleCameraUpdate(new h8.a(L0));
-        } catch (RemoteException e) {
-            throw new androidx.car.app.j(e);
+        } catch (RemoteException e7) {
+            throw new androidx.car.app.j(e7);
         }
     }
 

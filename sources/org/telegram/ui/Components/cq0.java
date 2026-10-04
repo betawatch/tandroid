@@ -1,50 +1,51 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class cq0 implements gg.g0 {
-    public final /* synthetic */ wq0 a;
+public final class cq0 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zq0 b;
 
-    public cq0(wq0 wq0Var) {
-        this.a = wq0Var;
+    public /* synthetic */ cq0(zq0 zq0Var, int i10) {
+        this.a = i10;
+        this.b = zq0Var;
     }
 
-    @Override // gg.g0
-    public final void a(a0.i iVar, ArrayList arrayList) {
-        int i10;
-        int i11;
-        int i12;
-        int i13 = 0;
-        while (i13 < arrayList.size()) {
-            TLObject tLObject = ((gg.h0) arrayList.get(i13)).a;
-            if ((tLObject instanceof TLRPC.Chat) && !ChatObject.canWriteToChat((TLRPC.Chat) tLObject)) {
-                arrayList.remove(i13);
-                i13--;
-            }
-            i13++;
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        vb vbVar;
+        switch (this.a) {
+            case 0:
+                zq0 zq0Var = this.b;
+                if (i11 != 0) {
+                    zq0.k0(zq0Var);
+                    zq0Var.q0 = zq0Var.p0;
+                }
+                rc rcVar = rc.w;
+                if (rcVar != null && (vbVar = rcVar.e) != null && (vbVar.getParent() instanceof View) && ((View) rc.w.e.getParent()).getParent() == zq0Var.w) {
+                    rc.e();
+                    break;
+                }
+                break;
+            case 1:
+                if (i11 != 0) {
+                    zq0 zq0Var2 = this.b;
+                    zq0.k0(zq0Var2);
+                    zq0Var2.q0 = zq0Var2.p0;
+                    break;
+                }
+                break;
+            default:
+                if (i11 != 0) {
+                    zq0 zq0Var3 = this.b;
+                    zq0.k0(zq0Var3);
+                    zq0Var3.q0 = zq0Var3.p0;
+                    break;
+                }
+                break;
         }
-        wq0 wq0Var = this.a;
-        wq0Var.E0 = arrayList;
-        for (int i14 = 0; i14 < wq0Var.E0.size(); i14++) {
-            gg.h0 h0Var = (gg.h0) wq0Var.E0.get(i14);
-            TLObject tLObject2 = h0Var.a;
-            if (tLObject2 instanceof TLRPC.User) {
-                i12 = ((org.telegram.ui.ActionBar.e3) wq0Var).currentAccount;
-                MessagesController.getInstance(i12).putUser((TLRPC.User) h0Var.a, true);
-            } else if (tLObject2 instanceof TLRPC.Chat) {
-                i11 = ((org.telegram.ui.ActionBar.e3) wq0Var).currentAccount;
-                MessagesController.getInstance(i11).putChat((TLRPC.Chat) h0Var.a, true);
-            } else if (tLObject2 instanceof TLRPC.EncryptedChat) {
-                i10 = ((org.telegram.ui.ActionBar.e3) wq0Var).currentAccount;
-                MessagesController.getInstance(i10).putEncryptedChat((TLRPC.EncryptedChat) h0Var.a, true);
-            }
-        }
-        wq0Var.M.l();
     }
 }

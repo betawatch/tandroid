@@ -1,18 +1,19 @@
 package n7;
 
+import ii.n4;
 import java.io.ByteArrayInputStream;
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.IOException;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f1 implements Closeable {
     public final ByteArrayInputStream a;
     public e1 b;
     public final byte[] c = new byte[8];
-    public final k2.u d = new k2.u(8);
+    public final n4 d = new n4(9);
 
     public f1(ByteArrayInputStream byteArrayInputStream) {
         this.a = byteArrayInputStream;
@@ -39,7 +40,7 @@ public final class f1 implements Closeable {
             z10 = true;
         } else {
             if (b10 != 32) {
-                throw new IllegalStateException(hg.c.h((this.b.a >> 5) & 7, "expected major type 0 or 1 but found "));
+                throw new IllegalStateException(hg.k0.h((this.b.a >> 5) & 7, "expected major type 0 or 1 but found "));
             }
             z10 = false;
         }
@@ -66,7 +67,7 @@ public final class f1 implements Closeable {
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public final void close() {
         this.a.close();
-        this.d.e();
+        this.d.I();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:52:0x0098, code lost:
@@ -79,9 +80,9 @@ public final class f1 implements Closeable {
     public final e1 d() {
         if (this.b == null) {
             int read = this.a.read();
-            k2.u uVar = this.d;
+            n4 n4Var = this.d;
             if (read == -1) {
-                uVar.e();
+                n4Var.I();
                 return null;
             }
             e1 e1Var = new e1(read);
@@ -92,44 +93,44 @@ public final class f1 implements Closeable {
                 if (b10 != -32) {
                     if (b10 != 0 && b10 != 32) {
                         if (b10 == 64) {
-                            uVar.f(-1L);
+                            n4Var.L(-1L);
                         } else {
                             if (b10 != 96) {
-                                throw new IllegalStateException(hg.c.h((this.b.a >> 5) & 7, "invalid major type: "));
+                                throw new IllegalStateException(hg.k0.h((this.b.a >> 5) & 7, "invalid major type: "));
                             }
-                            uVar.f(-2L);
+                            n4Var.L(-2L);
                         }
-                        long h = uVar.h();
-                        ArrayDeque arrayDeque = (ArrayDeque) uVar.b;
-                        if (h == 1) {
+                        long O = n4Var.O();
+                        ArrayDeque arrayDeque = (ArrayDeque) n4Var.b;
+                        if (O == 1) {
                             arrayDeque.pop();
-                        } else if (h > 1) {
+                        } else if (O > 1) {
                             arrayDeque.pop();
-                            arrayDeque.push(Long.valueOf(h - 1));
-                        } else if (h == -4) {
+                            arrayDeque.push(Long.valueOf(O - 1));
+                        } else if (O == -4) {
                             arrayDeque.pop();
                             arrayDeque.push(-5L);
-                        } else if (h == -5) {
+                        } else if (O == -5) {
                             arrayDeque.pop();
                             arrayDeque.push(-4L);
                         }
                     }
                 } else if (e1Var.b == 31) {
-                    long h10 = uVar.h();
-                    if (h10 >= 0) {
-                        throw new IOException(a4.a.p(h10, "expected indefinite length scope but found "));
+                    long O2 = n4Var.O();
+                    if (O2 >= 0) {
+                        throw new IOException(a4.a.o(O2, "expected indefinite length scope but found "));
                     }
-                    if (h10 == -5) {
+                    if (O2 == -5) {
                         throw new IOException("expected a value for dangling key in indefinite-length map");
                     }
-                    ((ArrayDeque) uVar.b).pop();
+                    ((ArrayDeque) n4Var.b).pop();
                 }
             }
-            long h11 = uVar.h();
-            if (h11 == -1) {
-                j3 = h11;
+            long O3 = n4Var.O();
+            if (O3 == -1) {
+                j3 = O3;
             }
-            throw new IOException(a4.a.p(j3, "expected non-string scope but found "));
+            throw new IOException(a4.a.o(j3, "expected non-string scope but found "));
         }
         return this.b;
     }
@@ -175,7 +176,7 @@ public final class f1 implements Closeable {
         }
         if (b10 != 27) {
             e1 e1Var = this.b;
-            throw new IOException(a4.a.m(e1Var.b, (e1Var.a >> 5) & 7, "invalid additional information ", " for major type "));
+            throw new IOException(a4.a.l(e1Var.b, (e1Var.a >> 5) & 7, "invalid additional information ", " for major type "));
         }
         i(8, bArr);
         return ((bArr[0] & 255) << 56) | ((bArr[1] & 255) << 48) | ((bArr[2] & 255) << 40) | ((bArr[3] & 255) << 32) | ((bArr[4] & 255) << 24) | ((bArr[5] & 255) << 16) | ((bArr[6] & 255) << 8) | (bArr[7] & 255);
@@ -184,14 +185,14 @@ public final class f1 implements Closeable {
     public final void g() {
         d();
         if (this.b.b == 31) {
-            throw new IllegalStateException(hg.c.h(this.b.b, "expected definite length but found "));
+            throw new IllegalStateException(hg.k0.h(this.b.b, "expected definite length but found "));
         }
     }
 
     public final void h(byte b10) {
         d();
         if (this.b.a != b10) {
-            throw new IllegalStateException(a4.a.m((b10 >> 5) & 7, (this.b.a >> 5) & 7, "expected major type ", " but found "));
+            throw new IllegalStateException(a4.a.l((b10 >> 5) & 7, (this.b.a >> 5) & 7, "expected major type ", " but found "));
         }
     }
 

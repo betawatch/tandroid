@@ -3,7 +3,7 @@ package ii;
 import java.util.ArrayList;
 import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class k3 extends q9 {
     public final /* synthetic */ v3 K0;
@@ -17,33 +17,33 @@ public final class k3 extends q9 {
     @Override // org.telegram.ui.Cells.da
     public final boolean D() {
         x3 x3Var = this.L0;
-        CharSequence s10 = x3Var.n3.s();
+        CharSequence s10 = x3Var.u3.s();
         if (s10 == null || s10.length() == 0) {
             return true;
         }
-        x3Var.b5(s10);
+        x3Var.d5(s10);
         return true;
     }
 
     @Override // org.telegram.ui.Cells.da
     public final void E() {
         x3 x3Var = this.L0;
-        CharSequence s10 = x3Var.n3.s();
+        CharSequence s10 = x3Var.u3.s();
         if (s10 != null && s10.length() > 0) {
-            x3Var.b5(s10);
+            x3Var.d5(s10);
         }
-        x3Var.E2();
+        x3Var.G2();
     }
 
     @Override // org.telegram.ui.Cells.q9, org.telegram.ui.Cells.da
     public final void G() {
         super.G();
-        this.K0.l();
+        this.K0.w();
     }
 
     @Override // org.telegram.ui.Cells.da
     public final void I() {
-        this.L0.c4();
+        this.L0.e4();
     }
 
     @Override // org.telegram.ui.Cells.da
@@ -51,15 +51,15 @@ public final class k3 extends q9 {
         if (b0()) {
             return true;
         }
-        return this.L0.S4();
+        return this.L0.U4();
     }
 
     @Override // org.telegram.ui.Cells.da
     public final void L(float f7, float f10) {
         x3 x3Var = this.L0;
-        x3Var.s3 = true;
-        x3Var.t3 = f7;
-        x3Var.u3 = f10;
+        x3Var.z3 = true;
+        x3Var.A3 = f7;
+        x3Var.B3 = f10;
     }
 
     @Override // org.telegram.ui.Cells.da
@@ -67,14 +67,14 @@ public final class k3 extends q9 {
         boolean z10;
         int size;
         x3 x3Var = this.L0;
-        k3 k3Var = x3Var.n3;
-        ArrayList arrayList = x3Var.l3;
+        k3 k3Var = x3Var.u3;
+        ArrayList arrayList = x3Var.s3;
         if (!arrayList.isEmpty() && k3Var.y() && k3Var.u0 == 0 && k3Var.v0 == 0 && k3Var.w0 <= 0 && k3Var.x0 == (size = arrayList.size() - 1)) {
             a aVar = (a) arrayList.get(size);
-            String l4 = e6.p(aVar.b) ? g6.l(e6.k(aVar.b)) : "";
+            String l4 = f6.p(aVar.b) ? h6.l(f6.k(aVar.b)) : "";
             boolean z11 = !l4.isEmpty();
             if (k3Var.y0 == z11) {
-                if (k3Var.z0 >= (z11 ? l4.length() : e6.z(aVar.b).length())) {
+                if (k3Var.z0 >= (z11 ? l4.length() : f6.z(aVar.b).length())) {
                     z10 = true;
                     return !z10;
                 }

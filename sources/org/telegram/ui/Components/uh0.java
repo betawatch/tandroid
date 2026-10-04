@@ -7,26 +7,26 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class uh0 implements z4.e {
-    public final /* synthetic */ org.telegram.ui.gz0 a;
+    public final /* synthetic */ org.telegram.ui.jz0 a;
 
-    public uh0(org.telegram.ui.gz0 gz0Var) {
-        this.a = gz0Var;
+    public uh0(org.telegram.ui.jz0 jz0Var) {
+        this.a = jz0Var;
     }
 
     @Override // z4.e
     public final void a(int i10) {
-        org.telegram.ui.gz0 gz0Var = this.a;
-        int i11 = gz0Var.o1;
+        org.telegram.ui.jz0 jz0Var = this.a;
+        int i11 = jz0Var.o1;
         boolean z10 = i10 >= i11;
         if (i10 != i11) {
-            gz0Var.o1 = i10;
+            jz0Var.o1 = i10;
         }
-        MessagesController.DialogPhotos dialogPhotos = gz0Var.S0;
+        MessagesController.DialogPhotos dialogPhotos = jz0Var.S0;
         if (dialogPhotos != null) {
-            ai0 ai0Var = gz0Var.D0;
+            ai0 ai0Var = jz0Var.D0;
             dialogPhotos.loadAfter(i10 - (ai0Var != null ? ai0Var.j() : 0), z10);
         }
     }
@@ -34,16 +34,16 @@ public final class uh0 implements z4.e {
     @Override // z4.e
     public final void b(float f7, int i10, int i11) {
         ImageLocation imageLocation;
-        org.telegram.ui.gz0 gz0Var = this.a;
-        ai0 ai0Var = gz0Var.D0;
-        ArrayList arrayList = gz0Var.W0;
-        gz0Var.B(f7, i10);
+        org.telegram.ui.jz0 jz0Var = this.a;
+        ai0 ai0Var = jz0Var.D0;
+        ArrayList arrayList = jz0Var.W0;
+        jz0Var.B(f7, i10);
         if (i11 == 0) {
             int k10 = ai0Var.k(i10);
-            gz0Var.getCurrentItemView();
-            int childCount = gz0Var.getChildCount();
+            jz0Var.getCurrentItemView();
+            int childCount = jz0Var.getChildCount();
             for (int i12 = 0; i12 < childCount; i12++) {
-                View childAt = gz0Var.getChildAt(i12);
+                View childAt = jz0Var.getChildAt(i12);
                 if (childAt instanceof w9) {
                     int k11 = ai0Var.k(ai0Var.d.indexOf(childAt));
                     ImageReceiver imageReceiver = ((w9) childAt).getImageReceiver();
@@ -56,7 +56,7 @@ public final class uh0 implements z4.e {
                             }
                             ImageLocation imageLocation2 = (ImageLocation) arrayList.get(k11);
                             if (imageLocation2 != null) {
-                                FileLoader.getInstance(gz0Var.L0).setForceStreamLoadingFile(imageLocation2.location, "mp4");
+                                FileLoader.getInstance(jz0Var.L0).setForceStreamLoadingFile(imageLocation2.location, "mp4");
                             }
                         } else if (allowStartAnimation) {
                             d6 animation = imageReceiver.getAnimation();

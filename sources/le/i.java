@@ -1,11 +1,29 @@
 package le;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public interface i {
-    int b(boolean z10);
+public final class i {
+    public final f a;
+    public final m b = new m(0.0f);
+    public final m c = new m(0.0f);
+    public final m d = new m(0.0f);
+    public final m e = new m(0.0f);
+    public final m f = new m(0.0f);
+    public final m g = new m(0.0f);
 
-    int getHeight();
+    public i(j jVar, f fVar) {
+        this.a = fVar;
+    }
 
-    int getWidth();
+    public static void a(i iVar, int i10, boolean z10) {
+        m mVar = iVar.c;
+        m mVar2 = iVar.b;
+        if (z10) {
+            mVar2.c = i10;
+            mVar.c = i10 > 0 ? 1.0f : 0.0f;
+        } else {
+            mVar2.d(i10);
+            mVar.d(i10 > 0 ? 1.0f : 0.0f);
+        }
+    }
 }

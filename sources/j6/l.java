@@ -16,6 +16,7 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.ImageView;
+import c5.d0;
 import c5.g0;
 import c5.w;
 import com.google.android.gms.internal.cast.a1;
@@ -41,15 +42,15 @@ import m.q;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.q2;
 import org.telegram.ui.Components.o6;
-import org.telegram.ui.rg;
+import org.telegram.ui.ug;
 import r0.i0;
-import v7.o;
-import v7.w7;
-import w7.d0;
+import v7.n;
+import v7.v7;
+import w7.e0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class l implements OnSuccessListener, le.l {
+public final class l implements OnSuccessListener, le.k {
     public static l e;
     public int a;
     public Object b;
@@ -84,7 +85,7 @@ public final class l implements OnSuccessListener, le.l {
         return lVar;
     }
 
-    @Override // le.l
+    @Override // le.k
     public void a() {
         h();
     }
@@ -128,8 +129,8 @@ public final class l implements OnSuccessListener, le.l {
         }
     }
 
-    @Override // le.l
-    public void c(le.m mVar) {
+    @Override // le.k
+    public void c(le.l lVar) {
         h();
     }
 
@@ -137,7 +138,7 @@ public final class l implements OnSuccessListener, le.l {
         if (TextUtils.isEmpty((String) this.b)) {
             throw new IllegalArgumentException("Title must be set and non-empty.");
         }
-        if (!o.b(this.a)) {
+        if (!n.b(this.a)) {
             StringBuilder sb2 = new StringBuilder("Authenticator combination is unsupported on API ");
             sb2.append(Build.VERSION.SDK_INT);
             sb2.append(": ");
@@ -146,7 +147,7 @@ public final class l implements OnSuccessListener, le.l {
             throw new IllegalArgumentException(sb2.toString());
         }
         int i11 = this.a;
-        boolean a2 = i11 != 0 ? o.a(i11) : false;
+        boolean a2 = i11 != 0 ? n.a(i11) : false;
         if (TextUtils.isEmpty((String) this.d) && !a2) {
             throw new IllegalArgumentException("Negative text must be set and non-empty.");
         }
@@ -176,7 +177,7 @@ public final class l implements OnSuccessListener, le.l {
         i0.j(imageView, imageView.getContext(), iArr, attributeSet, (TypedArray) Q.c, i10);
         try {
             Drawable drawable3 = imageView.getDrawable();
-            if (drawable3 == null && (resourceId = typedArray.getResourceId(1, -1)) != -1 && (drawable3 = w7.b(imageView.getContext(), resourceId)) != null) {
+            if (drawable3 == null && (resourceId = typedArray.getResourceId(1, -1)) != -1 && (drawable3 = v7.b(imageView.getContext(), resourceId)) != null) {
                 imageView.setImageDrawable(drawable3);
             }
             if (drawable3 != null) {
@@ -234,12 +235,12 @@ public final class l implements OnSuccessListener, le.l {
     public void h() {
         float[] fArr = (float[]) this.b;
         Arrays.fill(fArr, 0.0f);
-        Iterator it = ((le.m) this.d).iterator();
+        Iterator it = ((le.l) this.d).iterator();
         while (it.hasNext()) {
-            le.h hVar = (le.h) it.next();
-            fArr[((Integer) hVar.a).intValue()] = hVar.c();
+            le.g gVar = (le.g) it.next();
+            fArr[((Integer) gVar.a).intValue()] = gVar.c();
         }
-        ((rg) this.c).run();
+        ((ug) this.c).run();
     }
 
     public void i() {
@@ -262,16 +263,16 @@ public final class l implements OnSuccessListener, le.l {
 
     public void j(int i10, boolean z10, boolean z11) {
         int numberOfLeadingZeros = 31 - Integer.numberOfLeadingZeros(this.a);
-        int b10 = d0.b(this.a, 1 << i10, z10);
+        int b10 = e0.b(this.a, 1 << i10, z10);
         this.a = b10;
         int numberOfLeadingZeros2 = 31 - Integer.numberOfLeadingZeros(b10);
         if (numberOfLeadingZeros != numberOfLeadingZeros2) {
-            ((le.m) this.d).i(Integer.valueOf(numberOfLeadingZeros2), z11);
+            ((le.l) this.d).i(Integer.valueOf(numberOfLeadingZeros2), z11);
         }
     }
 
     public void k(Throwable th2) {
-        c5.d0 d0Var = (c5.d0) this.d;
+        d0 d0Var = (d0) this.d;
         if (th2 instanceof TimeoutException) {
             d0Var.F(102, 28, g0.p);
             u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", th2);

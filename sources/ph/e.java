@@ -18,9 +18,9 @@ import r0.p0;
 import r0.q0;
 import r0.t0;
 import r0.v0;
-import w7.d0;
+import w7.e0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class e extends b2.g {
     public static final RectF e;
@@ -89,11 +89,11 @@ public final class e extends b2.g {
         while (it.hasNext()) {
             i10 |= ((v0) it.next()).a.c();
         }
-        if (d0.a(i10, 8)) {
+        if (e0.a(i10, 8)) {
             Iterator it2 = this.d.iterator();
             while (it2.hasNext()) {
                 d dVar = (d) it2.next();
-                l1 Z0 = Z0(l1Var, dVar.N(), this.b);
+                l1 Z0 = Z0(l1Var, dVar.L(), this.b);
                 if (Z0 != null) {
                     dVar.j(Z0);
                 }

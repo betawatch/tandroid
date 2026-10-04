@@ -4,9 +4,9 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class l9 implements le.i, oe.a {
+public final class l9 implements le.h, oe.a {
     public final ImageReceiver a;
     public final h9 b;
     public long c;
@@ -32,7 +32,7 @@ public final class l9 implements le.i, oe.a {
         this.c = 0L;
     }
 
-    @Override // le.i
+    @Override // le.h
     public final int b(boolean z10) {
         if (z10) {
             return 0;
@@ -44,12 +44,12 @@ public final class l9 implements le.i, oe.a {
         return (obj instanceof l9) && this.c == ((l9) obj).c;
     }
 
-    @Override // le.i
+    @Override // le.h
     public final int getHeight() {
         return this.e.e;
     }
 
-    @Override // le.i
+    @Override // le.h
     public final int getWidth() {
         return this.e.e;
     }

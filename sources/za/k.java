@@ -1,38 +1,20 @@
 package za;
 
-import android.util.Log;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.z1;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final /* synthetic */ class k implements i5.e, z1 {
-    public final /* synthetic */ Object a;
+public enum k implements ka.f {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    b(1);
 
-    public /* synthetic */ k(Object obj) {
-        this.a = obj;
+    public final int a;
+
+    k(int i10) {
+        this.a = i10;
     }
 
-    @Override // i5.e
-    public Object apply(Object obj) {
-        ((w3.b) this.a).getClass();
-        String J = d0.b.J((c0) obj);
-        kotlin.jvm.internal.i.d(J, "SessionEvents.SESSION_EVENT_ENCODER.encode(value)");
-        Log.d("EventGDTLogger", "Session Event: ".concat(J));
-        byte[] bytes = J.getBytes(xd.a.a);
-        kotlin.jvm.internal.i.d(bytes, "this as java.lang.String).getBytes(charset)");
-        return bytes;
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(a2 a2Var, int i10) {
-        ei.l lVar = (ei.l) this.a;
-        TL_bots.updateStarRefProgram updatestarrefprogram = new TL_bots.updateStarRefProgram();
-        updatestarrefprogram.bot = lVar.getMessagesController().getInputUser(lVar.P);
-        updatestarrefprogram.commission_permille = 0;
-        a2 a2Var2 = new a2(lVar.getParentActivity(), 3, null);
-        a2Var2.q(150L);
-        lVar.getConnectionsManager().sendRequest(updatestarrefprogram, new ei.b(lVar, a2Var2, 0));
+    @Override // ka.f
+    public final int a() {
+        return this.a;
     }
 }

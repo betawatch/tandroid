@@ -1,49 +1,38 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.NotificationCenter;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class c41 extends AnimatorListenerAdapter {
+public final /* synthetic */ class c41 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d41 b;
+    public final /* synthetic */ f41 b;
 
-    public /* synthetic */ c41(d41 d41Var, int i10) {
+    public /* synthetic */ c41(f41 f41Var, int i10) {
         this.a = i10;
-        this.b = d41Var;
+        this.b = f41Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                d41 d41Var = this.b;
-                if (d41Var.h != null) {
-                    d41Var.h = null;
-                    d41Var.e = 0.0f;
-                    d41Var.g();
-                    d41Var.n.unlock();
-                    rx rxVar = d41Var.a;
-                    if (rxVar != null) {
-                        rxVar.onPause();
-                        d41Var.a.onFragmentDestroy();
-                        d41Var.removeAllViews();
-                        d41Var.a = null;
-                        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
-                    }
-                    d41Var.d(false);
-                    break;
-                }
+                f41 f41Var = this.b;
+                f41Var.getClass();
+                f41Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                f41Var.g();
+                break;
+            case 1:
+                f41 f41Var2 = this.b;
+                f41Var2.getClass();
+                f41Var2.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                f41Var2.g();
                 break;
             default:
-                d41 d41Var2 = this.b;
-                if (d41Var2.h != null) {
-                    d41Var2.h = null;
-                    d41Var2.d(true);
-                    break;
-                }
+                f41 f41Var3 = this.b;
+                f41Var3.getClass();
+                f41Var3.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                f41Var3.g();
                 break;
         }
     }

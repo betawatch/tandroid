@@ -1,16 +1,11 @@
 package v7;
 
-import android.R;
-import android.content.Context;
-import android.content.res.TypedArray;
+import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class b0 {
-    public static int a(Context context, int i10) {
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(R.style.Animation.Activity, new int[]{i10});
-        int resourceId = obtainStyledAttributes.getResourceId(0, -1);
-        obtainStyledAttributes.recycle();
-        return resourceId;
-    }
+    public abstract View b(int i10);
+
+    public abstract boolean c();
 }

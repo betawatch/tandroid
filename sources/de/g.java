@@ -1,13 +1,14 @@
 package de;
 
 import com.google.android.gms.internal.vision.e2;
+import hg.k0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import rd.q;
 import zd.e0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class g extends kd.c implements ce.c {
     public final ce.c a;
@@ -107,7 +108,7 @@ public final class g extends kd.c implements ce.c {
                     } else {
                         kotlin.jvm.internal.i.e(str4, "<this>");
                         if (intValue < 0) {
-                            throw new IllegalArgumentException(hg.c.i(intValue, "Requested character count ", " is less than zero.").toString());
+                            throw new IllegalArgumentException(k0.i(intValue, "Requested character count ", " is less than zero.").toString());
                         }
                         int length3 = str4.length();
                         if (intValue <= length3) {

@@ -1,29 +1,22 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ad1 extends org.telegram.ui.Components.wq0 {
-    public final /* synthetic */ cd1 b1;
+public final class ad1 extends rd1 {
+    public final /* synthetic */ yn k2;
+    public final /* synthetic */ boolean l2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ad1(cd1 cd1Var, Activity activity, String str, String str2) {
-        super(activity, null, str, false, str2, false, null);
-        this.b1 = cd1Var;
+    public ad1(Object obj, yn ynVar, boolean z10) {
+        super(obj, null, true);
+        this.k2 = ynVar;
+        this.l2 = z10;
     }
 
-    @Override // org.telegram.ui.Components.wq0
-    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            int m10 = iVar.m();
-            cd1 cd1Var = this.b1;
-            if (m10 == 1) {
-                cd1Var.a.l0.m(((TLRPC.Dialog) iVar.n(0)).id, Integer.valueOf(i10), 61);
-            } else {
-                cd1Var.a.l0.k(0L, 61, Integer.valueOf(i10), Integer.valueOf(iVar.m()), null, null);
-            }
-        }
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onFragmentClosed() {
+        super.onFragmentClosed();
+        wn wnVar = this.k2.ca;
+        wnVar.i(wnVar.f, wnVar.h, false, Boolean.valueOf(this.l2), false);
     }
 }

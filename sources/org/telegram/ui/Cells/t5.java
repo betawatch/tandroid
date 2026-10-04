@@ -33,11 +33,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pp;
-import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.qp;
+import org.telegram.ui.Components.rq;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class t5 extends FrameLayout {
     public static final Rect a0 = new Rect();
@@ -63,7 +63,7 @@ public final class t5 extends FrameLayout {
     public final p5 a;
     public final o5 b;
     public final FrameLayout c;
-    public final pp d;
+    public final qp d;
     public final ImageView e;
     public final TextView f;
     public final q5 h;
@@ -85,38 +85,38 @@ public final class t5 extends FrameLayout {
         setWillNotDraw(false);
         o5 o5Var = new o5(this, context);
         this.b = o5Var;
-        addView(o5Var, w7.y5.c(80.0f, 80));
+        addView(o5Var, w7.z5.c(80.0f, 80));
         p5 p5Var = new p5(this, context);
         this.a = p5Var;
         p5Var.setBlurAllowed(true);
-        o5Var.addView(p5Var, w7.y5.c(-1.0f, -1));
+        o5Var.addView(p5Var, w7.z5.c(-1.0f, -1));
         q5 q5Var = new q5(context, 0);
         q5Var.b = new RectF();
         this.h = q5Var;
         q5Var.setWillNotDraw(false);
         q5Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
-        o5Var.addView(q5Var, w7.y5.d(-2, 17.0f, 83, 4.0f, 0.0f, 0.0f, 4.0f));
+        o5Var.addView(q5Var, w7.z5.d(-2, 17.0f, 83, 4.0f, 0.0f, 0.0f, 4.0f));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.play_mini_video);
-        q5Var.addView(imageView, w7.y5.e(-2, -2, 19));
+        q5Var.addView(imageView, w7.z5.e(-2, -2, 19));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setTextColor(-1);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 12.0f);
         textView.setImportantForAccessibility(2);
-        q5Var.addView(textView, w7.y5.d(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
-        pp ppVar = new pp(context, 24, d6Var);
-        this.d = ppVar;
-        ppVar.setDrawBackgroundAsArc(7);
-        ppVar.b(org.telegram.ui.ActionBar.h6.W9, org.telegram.ui.ActionBar.h6.X9, org.telegram.ui.ActionBar.h6.V9);
-        addView(ppVar, w7.y5.d(26, 26.0f, 51, 52.0f, 4.0f, 0.0f, 0.0f));
-        ppVar.setVisibility(0);
+        q5Var.addView(textView, w7.z5.d(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
+        qp qpVar = new qp(context, 24, d6Var);
+        this.d = qpVar;
+        qpVar.setDrawBackgroundAsArc(7);
+        qpVar.b(org.telegram.ui.ActionBar.i6.W9, org.telegram.ui.ActionBar.i6.X9, org.telegram.ui.ActionBar.i6.V9);
+        addView(qpVar, w7.z5.d(26, 26.0f, 51, 52.0f, 4.0f, 0.0f, 0.0f));
+        qpVar.setVisibility(0);
         setFocusable(true);
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        addView(frameLayout, w7.y5.d(42, 42.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
+        addView(frameLayout, w7.z5.d(42, 42.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
         this.y = AndroidUtilities.dp(80.0f);
     }
 
@@ -189,11 +189,11 @@ public final class t5 extends FrameLayout {
         if (animatorSet != null) {
             animatorSet.cancel();
             this.J = null;
-            pp ppVar = this.d;
-            float f7 = ppVar.a.q ? 0.787f : 1.0f;
+            qp qpVar = this.d;
+            float f7 = qpVar.a.q ? 0.787f : 1.0f;
             o5 o5Var = this.b;
             o5Var.setScaleX(f7);
-            o5Var.setScaleY(ppVar.a.q ? 0.787f : 1.0f);
+            o5Var.setScaleY(qpVar.a.q ? 0.787f : 1.0f);
         }
     }
 
@@ -226,19 +226,19 @@ public final class t5 extends FrameLayout {
         MediaController.PhotoEntry photoEntry2 = this.G;
         String str = photoEntry2.coverPath;
         if (str != null) {
-            p5Var.f(str, null, org.telegram.ui.ActionBar.h6.R4);
+            p5Var.f(str, null, org.telegram.ui.ActionBar.i6.R4);
         } else {
             String str2 = photoEntry2.thumbPath;
             if (str2 != null) {
-                p5Var.f(str2, null, org.telegram.ui.ActionBar.h6.R4);
+                p5Var.f(str2, null, org.telegram.ui.ActionBar.i6.R4);
             } else if (photoEntry2.path == null) {
-                p5Var.setImageDrawable(org.telegram.ui.ActionBar.h6.R4);
+                p5Var.setImageDrawable(org.telegram.ui.ActionBar.i6.R4);
             } else if (!photoEntry2.isVideo || photoEntry2.isLivePhoto()) {
                 MediaController.PhotoEntry photoEntry3 = this.G;
                 p5Var.p(photoEntry3.orientation, photoEntry3.invert, true);
-                p5Var.f("thumb://" + this.G.imageId + ":" + this.G.path, null, org.telegram.ui.ActionBar.h6.R4);
+                p5Var.f("thumb://" + this.G.imageId + ":" + this.G.path, null, org.telegram.ui.ActionBar.i6.R4);
             } else {
-                p5Var.f("vthumb://" + this.G.imageId + ":" + this.G.path, null, org.telegram.ui.ActionBar.h6.R4);
+                p5Var.f("vthumb://" + this.G.imageId + ":" + this.G.path, null, org.telegram.ui.ActionBar.i6.R4);
             }
         }
         boolean z16 = z11 && PhotoViewer.M1(this.G.path);
@@ -265,7 +265,7 @@ public final class t5 extends FrameLayout {
         this.v = false;
         this.H = searchImage;
         this.r = false;
-        Drawable drawable = this.F ? org.telegram.ui.ActionBar.h6.R4 : getResources().getDrawable(R.drawable.nophotos);
+        Drawable drawable = this.F ? org.telegram.ui.ActionBar.i6.R4 : getResources().getDrawable(R.drawable.nophotos);
         TLRPC.PhotoSize photoSize = searchImage.thumbPhotoSize;
         p5 p5Var2 = this.a;
         if (photoSize != null) {
@@ -334,19 +334,19 @@ public final class t5 extends FrameLayout {
             spannableStringBuilder = new SpannableStringBuilder();
             if (this.V == null) {
                 this.V = new SpannableString("⭐");
-                qq qqVar = new qq(R.drawable.star_small_inner, 0);
-                qqVar.setScale(0.7f, 0.7f);
+                rq rqVar = new rq(R.drawable.star_small_inner, 0);
+                rqVar.setScale(0.7f, 0.7f);
                 SpannableString spannableString = this.V;
-                spannableString.setSpan(qqVar, 0, spannableString.length(), 33);
+                spannableString.setSpan(rqVar, 0, spannableString.length(), 33);
             }
             spannableStringBuilder.append((CharSequence) this.V);
             spannableStringBuilder.append((CharSequence) "\u2009");
             if (z10) {
                 if (this.W == null) {
                     this.W = new SpannableString("l");
-                    qq qqVar2 = new qq(R.drawable.msg_mini_lock2, 0);
+                    rq rqVar2 = new rq(R.drawable.msg_mini_lock2, 0);
                     SpannableString spannableString2 = this.W;
-                    spannableString2.setSpan(qqVar2, 0, spannableString2.length(), 33);
+                    spannableString2.setSpan(rqVar2, 0, spannableString2.length(), 33);
                 }
                 spannableStringBuilder.append((CharSequence) this.W);
             } else {
@@ -362,11 +362,11 @@ public final class t5 extends FrameLayout {
     }
 
     public final void g(boolean z10) {
-        pp ppVar = this.d;
-        if (z10 && ppVar.getAlpha() == 1.0f) {
+        qp qpVar = this.d;
+        if (z10 && qpVar.getAlpha() == 1.0f) {
             return;
         }
-        if (z10 || ppVar.getAlpha() != 0.0f) {
+        if (z10 || qpVar.getAlpha() != 0.0f) {
             AnimatorSet animatorSet = this.n;
             if (animatorSet != null) {
                 animatorSet.cancel();
@@ -380,13 +380,13 @@ public final class t5 extends FrameLayout {
             float[] fArr = {z10 ? 1.0f : 0.0f};
             q5 q5Var = this.h;
             Property property = View.ALPHA;
-            animatorSet3.playTogether(ObjectAnimator.ofFloat(q5Var, (Property<q5, Float>) property, fArr), ObjectAnimator.ofFloat(ppVar, (Property<pp, Float>) property, z10 ? 1.0f : 0.0f));
-            this.n.addListener(new org.telegram.ui.t4(this, 8));
+            animatorSet3.playTogether(ObjectAnimator.ofFloat(q5Var, (Property<q5, Float>) property, fArr), ObjectAnimator.ofFloat(qpVar, (Property<qp, Float>) property, z10 ? 1.0f : 0.0f));
+            this.n.addListener(new org.telegram.ui.u4(this, 8));
             this.n.start();
         }
     }
 
-    public pp getCheckBox() {
+    public qp getCheckBox() {
         return this.d;
     }
 
@@ -460,7 +460,7 @@ public final class t5 extends FrameLayout {
         if (!z10 && this.b.getScaleX() == 1.0f && p5Var.getImageReceiver().hasNotThumb() && p5Var.getImageReceiver().getCurrentAlpha() == 1.0f && (((photoEntry = this.G) == null || !PhotoViewer.M1(photoEntry.path)) && ((searchImage = this.H) == null || !PhotoViewer.M1(searchImage.getPathToAttach())))) {
             return;
         }
-        int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.X9, this.K);
+        int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.X9, this.K);
         Paint paint = this.I;
         paint.setColor(v02);
         canvas.drawRect(0.0f, 0.0f, p5Var.getMeasuredWidth(), p5Var.getMeasuredHeight(), paint);
@@ -499,7 +499,7 @@ public final class t5 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         if (this.x) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.y, TLObject.FLAG_30), ok.C(2.0f, this.y, TLObject.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.y, TLObject.FLAG_30), ok.B(2.0f, this.y, TLObject.FLAG_30));
             return;
         }
         if (this.E) {
@@ -613,14 +613,14 @@ public final class t5 extends FrameLayout {
         FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.c.getLayoutParams();
         layoutParams2.gravity = 53;
         layoutParams2.leftMargin = 0;
-        pp ppVar = this.d;
-        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) ppVar.getLayoutParams();
+        qp qpVar = this.d;
+        FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) qpVar.getLayoutParams();
         layoutParams3.gravity = 53;
         layoutParams3.leftMargin = 0;
         int dp = AndroidUtilities.dp(5.0f);
         layoutParams3.topMargin = dp;
         layoutParams3.rightMargin = dp;
-        ppVar.setDrawBackgroundAsArc(6);
+        qpVar.setDrawBackgroundAsArc(6);
         this.x = true;
     }
 

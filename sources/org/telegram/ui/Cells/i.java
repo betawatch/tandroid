@@ -9,12 +9,12 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.uc;
+import org.telegram.ui.Components.be;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.td1;
-import org.telegram.ui.zo;
+import org.telegram.ui.bp;
+import org.telegram.ui.wd1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class i extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final class i extends ClickableSpan {
             case 1:
                 w0 w0Var = (w0) this.c;
                 if (w0Var.X0 != null) {
-                    w0Var.Q((CharacterStyle) this.b);
+                    w0Var.O((CharacterStyle) this.b);
                     break;
                 }
                 break;
@@ -58,12 +58,12 @@ public final class i extends ClickableSpan {
             case 3:
                 try {
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (yc.a((org.telegram.ui.qa) this.c)) {
-                        yc.j((org.telegram.ui.qa) this.c).j();
+                    if (yc.a((org.telegram.ui.sa) this.c)) {
+                        yc.j((org.telegram.ui.sa) this.c).j();
                         break;
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                     return;
                 }
                 break;
@@ -71,10 +71,10 @@ public final class i extends ClickableSpan {
                 nf.f.s(((y1) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 5:
-                nf.f.s(((zo) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
+                nf.f.s(((bp) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 6:
-                ((uc) this.c).run();
+                ((be) this.c).run();
                 break;
             case 7:
                 AndroidUtilities.addToClipboard((CharSequence) this.b);
@@ -83,12 +83,12 @@ public final class i extends ClickableSpan {
             default:
                 try {
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (yc.a((td1) this.c)) {
-                        yc.j((td1) this.c).j();
+                    if (yc.a((wd1) this.c)) {
+                        yc.j((wd1) this.c).j();
                         break;
                     }
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                     return;
                 }
                 break;
@@ -113,7 +113,7 @@ public final class i extends ClickableSpan {
             case 6:
                 super.updateDrawState(textPaint);
                 textPaint.setUnderlineText(false);
-                textPaint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, (org.telegram.ui.ActionBar.d6) this.b));
+                textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Gi, (org.telegram.ui.ActionBar.d6) this.b));
                 break;
             case 7:
                 textPaint.setColor(textPaint.linkColor);
@@ -134,9 +134,9 @@ public final class i extends ClickableSpan {
         this.c = runnable;
     }
 
-    public /* synthetic */ i(String str, org.telegram.ui.ActionBar.m2 m2Var, int i10) {
+    public /* synthetic */ i(String str, org.telegram.ui.ActionBar.n2 n2Var, int i10) {
         this.a = i10;
-        this.c = m2Var;
+        this.c = n2Var;
         this.b = str;
     }
 }

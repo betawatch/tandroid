@@ -1,36 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Typeface;
-import android.widget.ImageView;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public class ic extends nb {
-    public final ImageView a;
-    public final p90 b;
+public final class ic extends ob {
+    public float a;
+    public hc b;
+    public w9 c;
+    public p6 d;
+    public boolean e;
 
-    public ic(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var);
-        int themedColor = getThemedColor(org.telegram.ui.ActionBar.h6.Hi);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.y5.i(24.0f, 24.0f, 8388627, 16.0f, 12.0f, 16.0f, 12.0f));
-        p90 p90Var = new p90(context, null);
-        this.b = p90Var;
-        p90Var.setDisablePaddingsOffsetY(true);
-        p90Var.setSingleLine();
-        p90Var.setTextColor(themedColor);
-        p90Var.setTypeface(Typeface.SANS_SERIF);
-        p90Var.setTextSize(1, 15.0f);
-        addView(p90Var, w7.y5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+    @Override // org.telegram.ui.Components.vb
+    public CharSequence getAccessibilityText() {
+        return this.d.getText();
     }
 
-    @Override // org.telegram.ui.Components.ub
-    public CharSequence getAccessibilityText() {
-        return this.b.getText();
+    public void setProgress(float f7) {
+        if (this.e != (f7 < 1.0f)) {
+            this.e = f7 < 1.0f;
+            this.c.animate().scaleX(this.e ? 0.78f : 1.0f).scaleY(this.e ? 0.78f : 1.0f).setDuration(320L).setInterpolator(tr.h).start();
+        }
+        this.a = f7;
+        this.b.invalidate();
+    }
+
+    public void setTextColor(int i10) {
+        this.d.setTextColor(i10);
     }
 }

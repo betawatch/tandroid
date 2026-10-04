@@ -12,9 +12,9 @@ import e2.d0;
 import e2.v;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class d implements w3.c {
+public final class d implements w3.b {
     public int a;
     public int b;
     public final Object c;
@@ -24,17 +24,17 @@ public final class d implements w3.c {
         this.c = context;
     }
 
-    @Override // w3.c
+    @Override // w3.b
     public int a() {
         return this.a;
     }
 
-    @Override // w3.c
+    @Override // w3.b
     public int b() {
         return this.b;
     }
 
-    @Override // w3.c
+    @Override // w3.b
     public int c() {
         int i10 = this.a;
         return i10 == -1 ? ((v) this.c).B() : i10;
@@ -89,9 +89,9 @@ public final class d implements w3.c {
         PackageInfo packageInfo;
         if (this.a == 0) {
             try {
-                packageInfo = w6.b.a((Context) this.c).e(0, "com.google.android.gms");
-            } catch (PackageManager.NameNotFoundException e) {
-                Log.w("Metadata", "Failed to find package ".concat(e.toString()));
+                packageInfo = w6.b.a((Context) this.c).b(0, "com.google.android.gms");
+            } catch (PackageManager.NameNotFoundException e7) {
+                Log.w("Metadata", "Failed to find package ".concat(e7.toString()));
                 packageInfo = null;
             }
             if (packageInfo != null) {

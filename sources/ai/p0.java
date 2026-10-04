@@ -5,11 +5,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -20,12 +20,12 @@ public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ p0(int i10, Context context, long j3, long j10, org.telegram.ui.ActionBar.e3[] e3VarArr, org.telegram.ui.ActionBar.d6 d6Var) {
+    public /* synthetic */ p0(int i10, Context context, long j3, long j10, org.telegram.ui.ActionBar.f3[] f3VarArr, org.telegram.ui.ActionBar.d6 d6Var) {
         this.d = i10;
         this.e = context;
         this.b = j3;
         this.c = j10;
-        this.f = e3VarArr;
+        this.f = f3VarArr;
         this.h = d6Var;
     }
 
@@ -53,7 +53,7 @@ public final /* synthetic */ class p0 implements Runnable {
                     d dVar = new d();
                     long j3 = this.c;
                     long j10 = this.b;
-                    new yh.l7(context, dVar, j10, 17, "", new a3.g0(o1Var, j3, tL_textWithEntities, j10, 1), o1Var.M).show();
+                    new yh.m7(context, dVar, j10, 17, "", new a3.g0(o1Var, j3, tL_textWithEntities, j10, 1), o1Var.M).show();
                     break;
                 }
                 break;
@@ -61,29 +61,29 @@ public final /* synthetic */ class p0 implements Runnable {
                 ((MessagesController) this.e).lambda$deleteSavedDialog$144(this.b, this.c, (TLRPC.InputPeer) this.f, this.d, (int[]) this.h);
                 break;
             case 2:
-                a80 a80Var = (a80) this.e;
-                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.f;
+                b80 b80Var = (b80) this.e;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.f;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.h;
-                a80Var.u();
+                b80Var.u();
                 int i10 = this.d;
                 MessagesController messagesController = MessagesController.getInstance(i10);
                 long j11 = this.b;
                 long j12 = this.c;
                 boolean isDialogMuted = messagesController.isDialogMuted(j11, j12);
                 NotificationsController.getInstance(i10).muteDialog(j11, j12, !isDialogMuted);
-                if (yc.a(m2Var)) {
-                    yc.z(m2Var, !isDialogMuted ? 3 : 4, !isDialogMuted ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, d6Var).j();
+                if (yc.a(n2Var)) {
+                    yc.z(n2Var, !isDialogMuted ? 3 : 4, !isDialogMuted ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, d6Var).j();
                     break;
                 }
                 break;
             default:
                 Context context2 = (Context) this.e;
-                org.telegram.ui.ActionBar.e3[] e3VarArr = (org.telegram.ui.ActionBar.e3[]) this.f;
+                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.f;
                 org.telegram.ui.ActionBar.d6 d6Var2 = (org.telegram.ui.ActionBar.d6) this.h;
                 int i11 = this.d;
                 yh.o g10 = yh.o.g(i11);
                 long j13 = this.b;
-                g10.f(context2, j13, this.c, new ei.q3(e3VarArr, context2, i11, j13, d6Var2, 2));
+                g10.f(context2, j13, this.c, new ei.r3(f3VarArr, context2, i11, j13, d6Var2, 2));
                 break;
         }
     }
@@ -106,12 +106,12 @@ public final /* synthetic */ class p0 implements Runnable {
         this.h = iArr;
     }
 
-    public /* synthetic */ p0(a80 a80Var, int i10, long j3, long j10, wn wnVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.e = a80Var;
+    public /* synthetic */ p0(b80 b80Var, int i10, long j3, long j10, yn ynVar, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.e = b80Var;
         this.d = i10;
         this.b = j3;
         this.c = j10;
-        this.f = wnVar;
+        this.f = ynVar;
         this.h = d6Var;
     }
 }

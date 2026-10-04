@@ -1,51 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class h7 extends lu0 {
-    public org.telegram.ui.Components.yl0 a;
-    public final /* synthetic */ s7 b;
+public abstract class h7 extends og.b {
+    public final int d;
+    public final ArrayList e = new ArrayList();
 
-    public h7(s7 s7Var) {
-        this.b = s7Var;
+    public h7(int i10) {
+        this.d = i10;
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
-    public final vu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        org.telegram.ui.Cells.t7 t7Var;
-        org.telegram.ui.Components.yl0 listView = this.b.getListView();
-        int i11 = 0;
-        while (true) {
-            if (i11 >= listView.getChildCount()) {
-                t7Var = null;
-                break;
-            }
-            View childAt = listView.getChildAt(i11);
-            if (RecyclerView.R(childAt) == i10 && (childAt instanceof org.telegram.ui.Cells.t7)) {
-                t7Var = (org.telegram.ui.Cells.t7) childAt;
-                break;
-            }
-            i11++;
-        }
-        if (t7Var == null) {
-            return null;
-        }
-        int[] iArr = new int[2];
-        t7Var.getLocationInWindow(iArr);
-        vu0 vu0Var = new vu0();
-        vu0Var.b = iArr[0];
-        vu0Var.c = iArr[1];
-        vu0Var.d = this.a;
-        ImageReceiver imageReceiver = t7Var.c;
-        vu0Var.a = imageReceiver;
-        vu0Var.e = imageReceiver.getBitmapSafe();
-        vu0Var.k = t7Var.getScaleX();
-        return vu0Var;
+    public abstract void F();
+
+    @Override // s4.h0
+    public final int h() {
+        return this.e.size();
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return ((o7) this.e.get(i10)).a;
     }
 }

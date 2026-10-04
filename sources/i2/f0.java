@@ -17,8 +17,7 @@ import android.view.SurfaceView;
 import android.view.TextureView;
 import b2.s1;
 import b2.x1;
-import ci.rc;
-import ei.d5;
+import ci.qc;
 import gg.d2;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -29,12 +28,12 @@ import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f0 extends b2.g implements r {
     public final com.google.firebase.messaging.m A;
-    public final c3.k0 B;
-    public final c3.k0 C;
+    public final c3.j0 B;
+    public final c3.j0 C;
     public final long D;
     public final e2.c E;
     public int F;
@@ -44,7 +43,7 @@ public final class f0 extends b2.g implements r {
     public boolean J;
     public final p1 K;
     public q1 L;
-    public u2.g1 M;
+    public u2.h1 M;
     public b2.x0 N;
     public b2.n0 O;
     public b2.n0 P;
@@ -158,7 +157,7 @@ public final class f0 extends b2.g implements r {
             CopyOnWriteArraySet copyOnWriteArraySet = new CopyOnWriteArraySet();
             this.n = copyOnWriteArraySet;
             this.p = new ArrayList();
-            this.M = new u2.e1();
+            this.M = new u2.f1();
             f[] fVarArr2 = this.g;
             x2.v vVar = new x2.v(new n1[fVarArr2.length], new x2.r[fVarArr2.length], s1.b, null);
             this.b = vVar;
@@ -214,7 +213,7 @@ public final class f0 extends b2.g implements r {
             j2.f fVar = this.s;
             b11.getClass();
             fVar.getClass();
-            n2.e eVar = b11.c;
+            k2.e eVar = b11.c;
             eVar.getClass();
             CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) eVar.b;
             Iterator it = copyOnWriteArrayList.iterator();
@@ -258,7 +257,7 @@ public final class f0 extends b2.g implements r {
             try {
                 e2.c cVar = new e2.c(0, looper2, looper, xVar, new x(f0Var2, 2));
                 f0Var.E = cVar;
-                cVar.i(new rc(f0Var, 28));
+                cVar.i(new qc(f0Var, 28));
                 Context context3 = pVar.a;
                 Looper looper3 = pVar.h;
                 c0 c0Var2 = f0Var.y;
@@ -268,8 +267,8 @@ public final class f0 extends b2.g implements r {
                 mVar.c = new b(mVar, xVar.a(looper3, callback), c0Var2);
                 f0Var.A = mVar;
                 mVar.t();
-                f0Var.B = new c3.k0(context, looper2, xVar, 2);
-                f0Var.C = new c3.k0(context, looper2, xVar, 3);
+                f0Var.B = new c3.j0(context, looper2, xVar, 2);
+                f0Var.C = new c3.j0(context, looper2, xVar, 3);
                 f0Var.g0 = b2.l.c;
                 f0Var.h0 = x1.d;
                 f0Var.X = e2.w.c;
@@ -317,8 +316,8 @@ public final class f0 extends b2.g implements r {
 
     public final void A1() {
         int d = d();
-        c3.k0 k0Var = this.C;
-        c3.k0 k0Var2 = this.B;
+        c3.j0 j0Var = this.C;
+        c3.j0 j0Var2 = this.B;
         boolean z10 = false;
         if (d != 1) {
             if (d == 2 || d == 3) {
@@ -327,16 +326,16 @@ public final class f0 extends b2.g implements r {
                 if (u() && !z11) {
                     z10 = true;
                 }
-                k0Var2.a(z10);
-                k0Var.a(u());
+                j0Var2.a(z10);
+                j0Var.a(u());
                 return;
             }
             if (d != 4) {
                 throw new IllegalStateException();
             }
         }
-        k0Var2.a(false);
-        k0Var.a(false);
+        j0Var2.a(false);
+        j0Var.a(false);
     }
 
     @Override // b2.b1
@@ -496,7 +495,7 @@ public final class f0 extends b2.g implements r {
         if (!equals) {
             this.Y = eVar;
             p1(1, 3, eVar);
-            pVar.c(20, new d5(eVar, 7));
+            pVar.c(20, new ei.f(eVar, 8));
         }
         b2.e eVar2 = this.Y;
         e2.z zVar = this.l.n;
@@ -627,7 +626,7 @@ public final class f0 extends b2.g implements r {
             z10 = gVar.c(p0Var.K);
         }
         if (!z10) {
-            this.m.e(10, new hg.r(10));
+            this.m.e(10, new ga.a(11));
         }
         this.m.d();
         this.j.a.removeCallbacksAndMessages(null);
@@ -679,7 +678,7 @@ public final class f0 extends b2.g implements r {
             if (!fVar.r) {
                 j2.a l4 = fVar.l();
                 fVar.r = true;
-                fVar.q(l4, -1, new d5(l4, 23));
+                fVar.q(l4, -1, new ei.f(l4, 24));
             }
             this.H++;
             if (o()) {
@@ -744,9 +743,9 @@ public final class f0 extends b2.g implements r {
         ArrayList Z0 = Z0(i10, arrayList);
         m1 m1Var = new m1(this.p, this.M);
         h1 k12 = k1(h1Var, m1Var, h1(k1Var, m1Var, g1(h1Var), e1(h1Var)));
-        u2.g1 g1Var = this.M;
+        u2.h1 h1Var2 = this.M;
         e2.z zVar = this.l.n;
-        k0 k0Var = new k0(Z0, g1Var, -1, -9223372036854775807L);
+        k0 k0Var = new k0(Z0, h1Var2, -1, -9223372036854775807L);
         zVar.getClass();
         e2.y b10 = e2.z.b();
         b10.a = zVar.a.obtainMessage(18, i10, 0, k0Var);
@@ -1264,11 +1263,11 @@ public final class f0 extends b2.g implements r {
         if (i13 != 1 && i13 != 4 && i10 < i11 && i11 == size && g12 >= k12.a.o()) {
             k12 = j1(k12, 4);
         }
-        u2.g1 g1Var = this.M;
+        u2.h1 h1Var2 = this.M;
         e2.z zVar = this.l.n;
         zVar.getClass();
         e2.y b10 = e2.z.b();
-        b10.a = zVar.a.obtainMessage(20, i10, i11, g1Var);
+        b10.a = zVar.a.obtainMessage(20, i10, i11, h1Var2);
         b10.b();
         return k12;
     }
@@ -1337,7 +1336,7 @@ public final class f0 extends b2.g implements r {
         if (B0.equals(q1Var)) {
             return;
         }
-        this.m.e(19, new d5(q1Var, 8));
+        this.m.e(19, new ei.f(q1Var, 9));
     }
 
     public final void q1(u2.a aVar, boolean z10) {
@@ -1371,10 +1370,10 @@ public final class f0 extends b2.g implements r {
         m1 m1Var = new m1(arrayList, this.M);
         h1 h1Var = this.j0;
         h1 k12 = k1(h1Var, m1Var, h1(w02, m1Var, g1(h1Var), e1(this.j0)));
-        u2.g1 g1Var = this.M;
+        u2.h1 h1Var2 = this.M;
         p0 p0Var = this.l;
         p0Var.getClass();
-        p0Var.n.a(19, new l0(i10, min, min2, g1Var)).b();
+        p0Var.n.a(19, new l0(i10, min, min2, h1Var2)).b();
         z1(k12, 0, false, 5, -9223372036854775807L, -1, false);
     }
 
@@ -1654,13 +1653,13 @@ public final class f0 extends b2.g implements r {
         if (h1Var.p) {
             h1Var = h1Var.a();
         }
-        h1 e = h1Var.e(i10, i12, z10);
+        h1 e7 = h1Var.e(i10, i12, z10);
         e2.z zVar = this.l.n;
         zVar.getClass();
         e2.y b10 = e2.z.b();
         b10.a = zVar.a.obtainMessage(1, z10 ? 1 : 0, i10 | (i12 << 4));
         b10.b();
-        z1(e, 0, false, 5, -9223372036854775807L, -1, false);
+        z1(e7, 0, false, 5, -9223372036854775807L, -1, false);
     }
 
     @Override // b2.b1

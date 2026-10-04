@@ -4,9 +4,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.b80;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class b implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:86:0x014a, code lost:
     
-        if (ii.e6.m(r5, r5.getLeft(), r5.getTop(), r1, r3) != false) goto L87;
+        if (ii.f6.m(r5, r5.getLeft(), r5.getTop(), r1, r3) != false) goto L87;
      */
     @Override // java.lang.Runnable
     /*
@@ -32,21 +32,21 @@ public final /* synthetic */ class b implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.C2();
+                this.b.E2();
                 break;
             case 1:
-                this.b.t3();
+                this.b.v3();
                 break;
             case 2:
                 x3 x3Var = this.b;
-                if (x3Var.x3 != null && !x3Var.n3.y()) {
-                    if (x3Var.T4(x3Var.x3, x3Var.v3, x3Var.w3)) {
-                        x3Var.A3 = true;
+                if (x3Var.E3 != null && !x3Var.u3.y()) {
+                    if (x3Var.V4(x3Var.E3, x3Var.C3, x3Var.D3)) {
+                        x3Var.H3 = true;
                         break;
                     } else {
-                        int left = (int) ((x3Var.v3 - x3Var.x3.getLeft()) - x3Var.getLeft());
-                        int top = (int) ((x3Var.w3 - x3Var.x3.getTop()) - x3Var.getTop());
-                        View view = x3Var.x3;
+                        int left = (int) ((x3Var.C3 - x3Var.E3.getLeft()) - x3Var.getLeft());
+                        int top = (int) ((x3Var.D3 - x3Var.E3.getTop()) - x3Var.getTop());
+                        View view = x3Var.E3;
                         if (view instanceof h0) {
                             h0 h0Var = (h0) view;
                             h0Var.getLocationOnScreen(new int[2]);
@@ -63,58 +63,58 @@ public final /* synthetic */ class b implements Runnable {
                                     }
                                 }
                             }
-                            x3Var.A3 = true;
+                            x3Var.H3 = true;
                             break;
                         }
-                        View view2 = x3Var.x3;
-                        if (view2 instanceof p5) {
-                            p5 p5Var = (p5) view2;
-                            if (x3Var.j3(p5Var, left, top)) {
+                        View view2 = x3Var.E3;
+                        if (view2 instanceof q5) {
+                            q5 q5Var = (q5) view2;
+                            if (x3Var.l3(q5Var, left, top)) {
                                 try {
-                                    p5Var.performHapticFeedback(0);
+                                    q5Var.performHapticFeedback(0);
                                 } catch (Exception unused) {
                                 }
-                                x3Var.A3 = true;
+                                x3Var.H3 = true;
                                 break;
                             } else {
-                                TL_iv.pageTableCell m10 = p5Var.m(left, top);
+                                TL_iv.pageTableCell m10 = q5Var.m(left, top);
                                 if (m10 != null) {
-                                    a80 a80Var = x3Var.j4;
-                                    if (a80Var != null) {
-                                        x3Var.j4 = null;
-                                        a80Var.u();
+                                    b80 b80Var = x3Var.q4;
+                                    if (b80Var != null) {
+                                        x3Var.q4 = null;
+                                        b80Var.u();
                                     }
-                                    x3Var.g2(p5Var);
-                                    x3Var.B0();
+                                    x3Var.i2(q5Var);
+                                    x3Var.C0();
                                     x3Var.requestDisallowInterceptTouchEvent(true);
-                                    x3Var.B3 = true;
-                                    x3Var.D3 = m10;
-                                    x3Var.E3 = m10;
-                                    p5Var.w(m10, m10);
+                                    x3Var.I3 = true;
+                                    x3Var.K3 = m10;
+                                    x3Var.L3 = m10;
+                                    q5Var.w(m10, m10);
                                     try {
-                                        p5Var.performHapticFeedback(0);
+                                        q5Var.performHapticFeedback(0);
                                     } catch (Exception unused2) {
                                     }
-                                    x3Var.A3 = true;
+                                    x3Var.H3 = true;
                                     break;
                                 } else {
-                                    x3Var.J4(x3Var.x3);
+                                    x3Var.L4(x3Var.E3);
                                     break;
                                 }
                             }
-                        } else if (view2 instanceof e6) {
-                            e6 e6Var = (e6) view2;
-                            i1 i1Var = e6Var.h;
-                            i1 i1Var2 = e6Var.f;
-                            LinearLayout linearLayout = e6Var.b;
-                            if (!e6.m(i1Var2, i1Var2.getLeft() + linearLayout.getLeft(), i1Var2.getTop() + linearLayout.getTop(), left, top)) {
+                        } else if (view2 instanceof f6) {
+                            f6 f6Var = (f6) view2;
+                            i1 i1Var = f6Var.h;
+                            i1 i1Var2 = f6Var.f;
+                            LinearLayout linearLayout = f6Var.b;
+                            if (!f6.m(i1Var2, i1Var2.getLeft() + linearLayout.getLeft(), i1Var2.getTop() + linearLayout.getTop(), left, top)) {
                                 if (i1Var.getVisibility() == 0) {
                                     break;
                                 }
-                                x3Var.J4(x3Var.x3);
+                                x3Var.L4(x3Var.E3);
                                 break;
                             }
-                            x3Var.A3 = true;
+                            x3Var.H3 = true;
                             break;
                         } else {
                             if (view2 instanceof u0) {
@@ -125,18 +125,18 @@ public final /* synthetic */ class b implements Runnable {
                                     }
                                 }
                             }
-                            x3Var.J4(x3Var.x3);
+                            x3Var.L4(x3Var.E3);
                         }
                     }
                 }
                 break;
             case 3:
                 x3 x3Var2 = this.b;
-                k3 k3Var = x3Var2.n3;
+                k3 k3Var = x3Var2.u3;
                 if (k3Var != null && k3Var.y()) {
                     for (int i11 = 0; i11 < x3Var2.getChildCount(); i11++) {
                         View childAt = x3Var2.getChildAt(i11);
-                        if ((childAt instanceof e6) || (childAt instanceof p5) || (childAt instanceof m0) || (childAt instanceof u0)) {
+                        if ((childAt instanceof f6) || (childAt instanceof q5) || (childAt instanceof m0) || (childAt instanceof u0)) {
                             childAt.invalidate();
                         }
                     }
@@ -145,10 +145,10 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 break;
             case 4:
-                this.b.o3(true);
+                this.b.q3(true);
                 break;
             default:
-                this.b.a3();
+                this.b.c3();
                 break;
         }
     }

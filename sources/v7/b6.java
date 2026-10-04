@@ -1,15 +1,15 @@
 package v7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public abstract class b6 {
-    public abstract void a(com.google.android.gms.internal.play_billing.f4 f4Var, com.google.android.gms.internal.play_billing.f4 f4Var2);
+public final class b6 {
+    public final Long a;
+    public final i6 b;
+    public final Boolean c;
 
-    public abstract void b(com.google.android.gms.internal.play_billing.f4 f4Var, Thread thread);
-
-    public abstract boolean c(com.google.android.gms.internal.play_billing.g4 g4Var, com.google.android.gms.internal.play_billing.v2 v2Var, com.google.android.gms.internal.play_billing.v2 v2Var2);
-
-    public abstract boolean d(com.google.android.gms.internal.play_billing.g4 g4Var, Object obj, Object obj2);
-
-    public abstract boolean e(com.google.android.gms.internal.play_billing.g4 g4Var, com.google.android.gms.internal.play_billing.f4 f4Var, com.google.android.gms.internal.play_billing.f4 f4Var2);
+    public /* synthetic */ b6(k kVar) {
+        this.a = (Long) kVar.b;
+        this.b = (i6) kVar.c;
+        this.c = (Boolean) kVar.d;
+    }
 }

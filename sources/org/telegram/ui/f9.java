@@ -1,62 +1,46 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.CheckBoxBase;
+import android.os.Bundle;
+import java.util.HashSet;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class f9 extends FrameLayout {
-    public final int a;
-    public final org.telegram.ui.Components.k9 b;
-    public final ImageView c;
-    public final org.telegram.ui.Cells.i6 d;
-    public final org.telegram.ui.Components.pp e;
+public final class f9 extends d70 {
+    public final /* synthetic */ int v0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 w0;
 
-    public f9(Context context, int i10) {
-        super(context);
-        this.a = i10;
-        org.telegram.ui.Cells.i6 i6Var = new org.telegram.ui.Cells.i6(context, null);
-        this.d = i6Var;
-        i6Var.M0 = true;
-        i6Var.E0 = true;
-        i6Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(32.0f), 0);
-        int dp = AndroidUtilities.dp(LocaleController.isRTL ? 2.0f : -2.0f);
-        int i11 = -AndroidUtilities.dp(7.0f);
-        i6Var.b0 = dp;
-        i6Var.c0 = i11;
-        addView(i6Var, w7.y5.c(-1.0f, -1));
-        org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9(context, false);
-        this.b = k9Var;
-        k9Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
-        k9Var.setStepFactor(0.4f);
-        k9Var.setSize(AndroidUtilities.dp(29.0f));
-        k9Var.setCentered(true);
-        k9Var.setVisibility(8);
-        addView(k9Var, w7.y5.d(72, -1.0f, LocaleController.isRTL ? 5 : 3, -2.0f, 0.0f, 0.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        imageView.setColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.il, false), PorterDuff.Mode.SRC_IN);
-        imageView.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.i6, false), 1, -1));
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setContentDescription(LocaleController.getString(R.string.Call));
-        addView(imageView, w7.y5.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 16, 8.0f, 0.0f, 8.0f, 0.0f));
-        org.telegram.ui.Components.pp ppVar = new org.telegram.ui.Components.pp(context, 21, null);
-        this.e = ppVar;
-        CheckBoxBase checkBoxBase = ppVar.getCheckBoxBase();
-        int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.hl, false);
-        if (checkBoxBase.x != w02) {
-            checkBoxBase.x = w02;
-            checkBoxBase.b();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f9(Bundle bundle, int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+        super(bundle);
+        this.v0 = i10;
+        this.w0 = n2Var;
+    }
+
+    @Override // org.telegram.ui.d70
+    public final void n0(HashSet hashSet) {
+        int size = hashSet.size();
+        int i10 = this.v0;
+        if (size == 1) {
+            TLRPC.User user = MessagesController.getInstance(i10).getUser((Long) hashSet.iterator().next());
+            TLRPC.UserFull userFull = MessagesController.getInstance(i10).getUserFull(user.id);
+            if (userFull == null) {
+                TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
+                tL_users_getFullUser.id = MessagesController.getInstance(i10).getInputUser(user.id);
+                ConnectionsManager.getInstance(i10).sendRequest(tL_users_getFullUser, new gg.u(this, i10, user, 3));
+                return;
+            }
+            org.telegram.ui.Components.voip.g2.m(user, false, userFull.video_calls_available, getParentActivity(), userFull, AccountInstance.getInstance(i10));
+        } else {
+            TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
+            createconferencecall.random_id = Utilities.random.nextInt();
+            ConnectionsManager.getInstance(i10).sendRequest(createconferencecall, new gg.u(i10, hashSet, this.w0));
         }
-        ppVar.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
-        ppVar.setDrawUnchecked(false);
-        ppVar.setDrawBackgroundAsArc(3);
-        addView(ppVar, w7.y5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 42.0f, 32.0f, 42.0f, 0.0f));
+        finishFragment();
     }
 }

@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p1 implements NativeInstance.PayloadCallback, RequestDelegateTimestamp, NativeInstance.VideoSourcesCallback, NativeInstance.RequestBroadcastPartCallback, NativeInstance.RequestCurrentTimeCallback {
     public final /* synthetic */ int a;
@@ -133,7 +133,7 @@ public final /* synthetic */ class p1 implements NativeInstance.PayloadCallback,
                     }
                     tL_upload_getFile.location = tL_inputGroupCallStream;
                     if (i10 == 0) {
-                        str = a4.a.p(j3, "");
+                        str = a4.a.o(j3, "");
                     } else {
                         str = i10 + "_" + j3 + "_" + i11;
                     }
@@ -218,7 +218,7 @@ public final /* synthetic */ class p1 implements NativeInstance.PayloadCallback,
                 StringBuilder sb3 = new StringBuilder("[LivePlayer] cancelling getFile time_ms=");
                 sb3.append(j3);
                 sb3.append(j10 == 500 ? ", scale = 1" : "");
-                sb3.append(i10 != 0 ? a4.a.m(i10, i11, ", video_channel = ", ", video_quality = ") : "");
+                sb3.append(i10 != 0 ? a4.a.l(i10, i11, ", video_channel = ", ", video_quality = ") : "");
                 FileLog.d(sb3.toString());
                 AndroidUtilities.runOnUIThread(new a2(i10, i11, 0, j3, this.b));
                 break;

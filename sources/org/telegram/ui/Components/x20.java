@@ -2,30 +2,76 @@ package org.telegram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.ui.fb1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class x20 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c30 b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ View d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ x20(c30 c30Var, int i10) {
-        this.a = i10;
-        this.b = c30Var;
+    public x20(fb1 fb1Var, wi wiVar, org.telegram.ui.Cells.u1 u1Var, org.telegram.ui.jk jkVar, org.telegram.ui.yn ynVar) {
+        this.f = fb1Var;
+        this.b = wiVar;
+        this.c = u1Var;
+        this.d = jkVar;
+        this.e = ynVar;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                c30 c30Var = this.b;
-                c30Var.b.setVisibility(8);
-                c30Var.y = false;
-                c30Var.E = 0.0f;
+                WindowManager windowManager = (WindowManager) this.f;
+                View view = this.b;
+                if (view.getParent() != null) {
+                    view.setVisibility(8);
+                    View view2 = this.c;
+                    view2.setVisibility(8);
+                    View view3 = this.d;
+                    view3.setVisibility(8);
+                    windowManager.removeView(view);
+                    windowManager.removeView(view2);
+                    windowManager.removeView(view3);
+                    windowManager.removeView((View) this.e);
+                    break;
+                }
                 break;
             default:
-                this.b.e.setVisibility(8);
+                fb1 fb1Var = (fb1) this.f;
+                fb1Var.D.unlock();
+                wi wiVar = (wi) this.b;
+                ((ArrayList) wiVar.c).remove(fb1Var);
+                wiVar.a();
+                ((ViewGroup) wiVar.d).invalidate();
+                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.c;
+                u1Var.setEnterTransitionInProgress(false);
+                u1Var.getTransitionParams().D0.set(u1Var.getBackgroundDrawableLeft(), u1Var.getBackgroundDrawableTop(), u1Var.getBackgroundDrawableRight(), u1Var.getBackgroundDrawableBottom());
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.d;
+                chatActivityEnterView.setTextTransitionIsRunning(false);
+                chatActivityEnterView.getEditField().setAlpha(1.0f);
+                org.telegram.ui.yn ynVar = (org.telegram.ui.yn) this.e;
+                ((to[]) ynVar.Y.b)[0].c.setAlpha(1.0f);
+                ((to[]) ynVar.Y.b)[0].d.setAlpha(1.0f);
+                z5.release((View) null, fb1Var.H);
                 break;
         }
+    }
+
+    public x20(b30 b30Var, ai.f0 f0Var, FrameLayout frameLayout, WindowManager windowManager, org.telegram.ui.x7 x7Var) {
+        this.b = b30Var;
+        this.c = f0Var;
+        this.d = frameLayout;
+        this.f = windowManager;
+        this.e = x7Var;
     }
 }

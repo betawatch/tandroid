@@ -1,62 +1,80 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.ColorDrawable;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.R;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class dv extends org.telegram.ui.Components.xl0 {
+public final class dv implements View.OnClickListener {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
     public final /* synthetic */ fv c;
 
-    public dv(fv fvVar) {
+    public dv(fv fvVar, Context context, org.telegram.ui.ActionBar.n2 n2Var) {
         this.c = fvVar;
+        this.a = context;
+        this.b = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.xl0
-    public final boolean D(s4.c1 c1Var) {
-        return false;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return this.c.g0.h() ? 1 : 3;
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        int i11;
-        int i12;
-        fv fvVar = this.c;
-        if (i10 == 0) {
-            view = fvVar.d0;
-        } else if (i10 == 2) {
-            view = fvVar.e0;
-            s4.p0 p0Var = new s4.p0(-1, -2);
-            i11 = ((org.telegram.ui.ActionBar.e3) fvVar).backgroundPaddingLeft;
-            ((ViewGroup.MarginLayoutParams) p0Var).leftMargin = i11;
-            i12 = ((org.telegram.ui.ActionBar.e3) fvVar).backgroundPaddingLeft;
-            ((ViewGroup.MarginLayoutParams) p0Var).rightMargin = i12;
-            view.setLayoutParams(p0Var);
-        } else {
-            org.telegram.ui.Cells.e9 e9Var = new org.telegram.ui.Cells.e9(viewGroup.getContext());
-            e9Var.setFixedSize(12);
-            org.telegram.ui.Components.rq rqVar = new org.telegram.ui.Components.rq(new ColorDrawable(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false)), org.telegram.ui.ActionBar.h6.V0(viewGroup.getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.h6.b7));
-            rqVar.w = true;
-            e9Var.setBackgroundDrawable(rqVar);
-            view = e9Var;
+    /* JADX WARN: Removed duplicated region for block: B:24:0x007e  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x008f  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0095  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0084  */
+    @Override // android.view.View.OnClickListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onClick(View view) {
+        if (uy.v4) {
+            return;
         }
-        return new org.telegram.ui.Components.il0(view);
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return i10;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q6, false);
+        int w03 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false);
+        uy.v4 = true;
+        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
+        String str = "Blue";
+        String string = sharedPreferences.getString("lastDayTheme", "Blue");
+        if (org.telegram.ui.ActionBar.i6.N0(string) == null || org.telegram.ui.ActionBar.i6.N0(string).q()) {
+            string = "Blue";
+        }
+        String str2 = "Dark Blue";
+        String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
+        if (org.telegram.ui.ActionBar.i6.N0(string2) == null || !org.telegram.ui.ActionBar.i6.N0(string2).q()) {
+            string2 = "Dark Blue";
+        }
+        org.telegram.ui.ActionBar.h6 h6Var = org.telegram.ui.ActionBar.i6.I;
+        if (!string.equals(string2)) {
+            str2 = string2;
+        } else if (h6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+            str2 = string2;
+            boolean q6 = org.telegram.ui.ActionBar.i6.I.q();
+            String str3 = str2;
+            boolean z10 = !q6;
+            org.telegram.ui.ActionBar.h6 N0 = q6 ? org.telegram.ui.ActionBar.i6.N0(str3) : org.telegram.ui.ActionBar.i6.N0(str);
+            org.telegram.ui.Components.kj0 kj0Var = this.c.d;
+            kj0Var.P(q6 ? kj0Var.e[0] - 1 : 0);
+            this.c.e.getImageView().d();
+            int[] iArr = {(this.c.e.getImageView().getMeasuredWidth() / 2) + r2, org.telegram.messenger.f0.C(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, r2)};
+            this.c.e.getImageView().getLocationInWindow(iArr);
+            int i10 = iArr[0];
+            int i11 = iArr[1];
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, N0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z10), this.c.e.getImageView(), this.c.e, new org.telegram.messenger.v7(this, w02, this.a, w03, z10, this.b));
+        }
+        str = string;
+        boolean q62 = org.telegram.ui.ActionBar.i6.I.q();
+        String str32 = str2;
+        boolean z102 = !q62;
+        org.telegram.ui.ActionBar.h6 N02 = q62 ? org.telegram.ui.ActionBar.i6.N0(str32) : org.telegram.ui.ActionBar.i6.N0(str);
+        org.telegram.ui.Components.kj0 kj0Var2 = this.c.d;
+        kj0Var2.P(q62 ? kj0Var2.e[0] - 1 : 0);
+        this.c.e.getImageView().d();
+        int[] iArr2 = {(this.c.e.getImageView().getMeasuredWidth() / 2) + i10, org.telegram.messenger.f0.C(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, i11)};
+        this.c.e.getImageView().getLocationInWindow(iArr2);
+        int i102 = iArr2[0];
+        int i112 = iArr2[1];
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, N02, Boolean.FALSE, iArr2, -1, Boolean.valueOf(z102), this.c.e.getImageView(), this.c.e, new org.telegram.messenger.v7(this, w02, this.a, w03, z102, this.b));
     }
 }

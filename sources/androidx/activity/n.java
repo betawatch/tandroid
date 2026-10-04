@@ -17,7 +17,7 @@ import m.p;
 import m4.a0;
 import m4.k0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class n implements i9.r, com.google.android.gms.common.api.internal.s {
     public final /* synthetic */ int a;
@@ -191,10 +191,10 @@ public final class n implements i9.r, com.google.android.gms.common.api.internal
         this.d = new ArrayList();
     }
 
-    public n(ih.a aVar, le.c cVar) {
+    public n(ih.a aVar, le.b bVar) {
         this.a = 1;
         this.c = aVar;
-        this.d = cVar;
+        this.d = bVar;
     }
 
     public n(a0 a0Var, m4.r rVar, boolean z10, x0 x0Var) {

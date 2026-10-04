@@ -1,17 +1,17 @@
 package gg;
 
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.go0;
+import org.telegram.ui.Components.jo0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class z extends c2 {
-    public final /* synthetic */ go0 t;
+    public final /* synthetic */ jo0 t;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z(go0 go0Var) {
+    public z(jo0 jo0Var) {
         super(false);
-        this.t = go0Var;
+        this.t = jo0Var;
     }
 
     @Override // gg.c2

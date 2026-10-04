@@ -2,26 +2,26 @@ package org.telegram.ui.Cells;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public interface t0 {
     void J1(w0 w0Var, TLRPC.TL_premiumGiftOption tL_premiumGiftOption, String str);
 
-    org.telegram.ui.ActionBar.m2 O0();
+    void L(w0 w0Var, int i10);
+
+    org.telegram.ui.ActionBar.n2 O0();
 
     void Q0(TLRPC.TL_chatInviteExported tL_chatInviteExported);
 
-    void U(w0 w0Var, int i10);
-
-    void Z(w0 w0Var);
+    void Y(w0 w0Var);
 
     long a();
 
     long d();
 
-    boolean f();
+    void d0(w0 w0Var, int i10, int i11);
 
-    void g0(w0 w0Var, int i10, int i11);
+    boolean g();
 
     void g1(w0 w0Var, TLRPC.Document document, TLRPC.VideoSize videoSize);
 

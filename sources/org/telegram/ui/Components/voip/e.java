@@ -21,12 +21,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.zc;
 import org.telegram.ui.ki1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class e extends View {
     public boolean E;
@@ -119,7 +119,7 @@ public final class e extends View {
         this.V = activity.getDrawable(R.drawable.calls_video).mutate();
         paint.setColor(-1);
         paint.setAlpha(20);
-        org.telegram.ui.Cells.z h02 = h6.h0(AndroidUtilities.dp(52.0f), 0, i0.a.k(-1, 76));
+        org.telegram.ui.Cells.z h02 = i6.h0(AndroidUtilities.dp(52.0f), 0, i0.a.k(-1, 76));
         this.S = h02;
         h02.setCallback(this);
     }
@@ -321,9 +321,9 @@ public final class e extends View {
         super.onMeasure(i10, i11);
         int i12 = this.v;
         this.L = (getMeasuredWidth() / 2.0f) - ((i12 / 2.0f) + AndroidUtilities.dp(46.0f));
-        int A = ok.A(28.0f, i12, 2);
-        this.c.setBounds(A, A, AndroidUtilities.dp(28.0f) + A, AndroidUtilities.dp(28.0f) + A);
-        this.d.setBounds(A, A, AndroidUtilities.dp(28.0f) + A, AndroidUtilities.dp(28.0f) + A);
+        int z10 = ok.z(28.0f, i12, 2);
+        this.c.setBounds(z10, z10, AndroidUtilities.dp(28.0f) + z10, AndroidUtilities.dp(28.0f) + z10);
+        this.d.setBounds(z10, z10, AndroidUtilities.dp(28.0f) + z10, AndroidUtilities.dp(28.0f) + z10);
         float dp = AndroidUtilities.dp(3.0f);
         Paint paint = this.T;
         paint.setStrokeWidth(dp);
@@ -383,7 +383,7 @@ public final class e extends View {
             motionEvent.getX();
             this.H = motionEvent.getY();
             if (this.O == null && this.N.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.S = h6.h0(AndroidUtilities.dp(52.0f), 0, this.R ? h6.w0(null, h6.i6, false) : -51130);
+                this.S = i6.h0(AndroidUtilities.dp(52.0f), 0, this.R ? i6.w0(null, i6.i6, false) : -51130);
                 this.F = true;
                 this.G = true;
                 zcVar2.c(true);
@@ -393,7 +393,7 @@ public final class e extends View {
                 return true;
             }
             if (this.P == null && this.M.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                this.S = h6.h0(AndroidUtilities.dp(52.0f), 0, -11677354);
+                this.S = i6.h0(AndroidUtilities.dp(52.0f), 0, -11677354);
                 this.F = true;
                 this.G = false;
                 zcVar2.c(false);

@@ -12,10 +12,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.oc0;
-import w7.y5;
+import org.telegram.ui.Components.pc0;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class w0 extends z4.a {
     public final /* synthetic */ x0 c;
@@ -45,17 +45,17 @@ public final class w0 extends z4.a {
         int i11 = 1;
         if (z10 && i10 == 0) {
             ?? frameLayout = new FrameLayout(x0Var.getContext());
-            frameLayout.setBackground(new oc0(true, -14602694, -13935795, -14395293, -14203560));
+            frameLayout.setBackground(new pc0(true, -14602694, -13935795, -14395293, -14203560));
             ImageView imageView2 = new ImageView(x0Var.getContext());
             imageView2.setScaleType(ImageView.ScaleType.CENTER);
             imageView2.setImageResource(R.drawable.screencast_big);
-            frameLayout.addView(imageView2, y5.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
+            frameLayout.addView(imageView2, z5.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
             TextView textView = new TextView(x0Var.getContext());
             textView.setText(LocaleController.getString(R.string.VoipVideoPrivateScreenSharing));
             textView.setGravity(17);
             textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
             org.telegram.messenger.f0.q(textView, -1, 1, 15.0f);
-            frameLayout.addView(textView, y5.d(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
+            frameLayout.addView(textView, z5.d(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
             imageView = frameLayout;
         } else {
             ImageView imageView3 = new ImageView(x0Var.getContext());

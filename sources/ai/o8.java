@@ -22,16 +22,17 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.p90;
-import org.telegram.ui.ee;
-import org.telegram.ui.in;
-import org.telegram.ui.pm;
-import org.telegram.ui.wi;
-import org.telegram.ui.wn;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.he;
+import org.telegram.ui.ie;
+import org.telegram.ui.kn;
+import org.telegram.ui.qm;
 import org.telegram.ui.xi;
 import org.telegram.ui.yi;
+import org.telegram.ui.yn;
+import org.telegram.ui.zi;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o8 implements Runnable {
     public final /* synthetic */ int a;
@@ -82,31 +83,31 @@ public final /* synthetic */ class o8 implements Runnable {
                 MessagesController.getInstance(i14).putUsers((ArrayList) obj, true);
                 break;
             case 6:
-                ci.lc lcVar = (ci.lc) obj;
-                int i15 = lcVar.c;
-                lcVar.m();
-                lcVar.X1 = false;
-                File file = lcVar.K1.O0;
+                ci.kc kcVar = (ci.kc) obj;
+                int i15 = kcVar.c;
+                kcVar.m();
+                kcVar.X1 = false;
+                File file = kcVar.K1.O0;
                 if (file != null) {
                     file.delete();
-                    lcVar.K1.O0 = null;
+                    kcVar.K1.O0 = null;
                 }
-                lcVar.W(lcVar.K1, true);
-                CharSequence[] charSequenceArr = {lcVar.c1.getText()};
+                kcVar.W(kcVar.K1, true);
+                CharSequence[] charSequenceArr = {kcVar.c1.getText()};
                 ArrayList<TLRPC.MessageEntity> entities = MessagesController.getInstance(i15).storyEntitiesAllowed() ? MediaDataController.getInstance(i15).getEntities(charSequenceArr, true) : new ArrayList<>();
-                ArrayList<TLRPC.MessageEntity> entities2 = MessagesController.getInstance(i15).storyEntitiesAllowed() ? MediaDataController.getInstance(i15).getEntities(new CharSequence[]{lcVar.K1.C0}, true) : new ArrayList<>();
-                ci.l8 l8Var = lcVar.K1;
-                l8Var.k = (TextUtils.equals(l8Var.C0, charSequenceArr[0]) && MediaDataController.entitiesEqual(entities, entities2)) ? false : true;
-                lcVar.K1.C0 = new SpannableString(lcVar.c1.getText());
-                lcVar.z();
-                lcVar.y();
-                ci.l8 l8Var2 = lcVar.K1;
-                lcVar.O1 = (l8Var2 == null || !l8Var2.K) ? 0 : 1;
-                lcVar.K1 = (ci.l8) lcVar.H1.get(i14);
-                lcVar.O(0, 1);
-                lcVar.N(0, 1);
-                lcVar.d1.b.Y2.N(false);
-                lcVar.c1.setText(lcVar.K1.C0);
+                ArrayList<TLRPC.MessageEntity> entities2 = MessagesController.getInstance(i15).storyEntitiesAllowed() ? MediaDataController.getInstance(i15).getEntities(new CharSequence[]{kcVar.K1.C0}, true) : new ArrayList<>();
+                ci.k8 k8Var = kcVar.K1;
+                k8Var.k = (TextUtils.equals(k8Var.C0, charSequenceArr[0]) && MediaDataController.entitiesEqual(entities, entities2)) ? false : true;
+                kcVar.K1.C0 = new SpannableString(kcVar.c1.getText());
+                kcVar.z();
+                kcVar.y();
+                ci.k8 k8Var2 = kcVar.K1;
+                kcVar.O1 = (k8Var2 == null || !k8Var2.K) ? 0 : 1;
+                kcVar.K1 = (ci.k8) kcVar.H1.get(i14);
+                kcVar.O(0, 1);
+                kcVar.N(0, 1);
+                kcVar.d1.b.f3.N(false);
+                kcVar.c1.setText(kcVar.K1.C0);
                 break;
             case 7:
                 ((gg.i0) obj).m(i14);
@@ -117,8 +118,8 @@ public final /* synthetic */ class o8 implements Runnable {
                     database.executeFast("DELETE FROM business_replies WHERE topic_id = " + i14).stepThis().dispose();
                     database.executeFast("DELETE FROM quick_replies_messages WHERE topic_id = " + i14).stepThis().dispose();
                     break;
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                     return;
                 }
             case 9:
@@ -144,34 +145,34 @@ public final /* synthetic */ class o8 implements Runnable {
                     ii.f0 f0Var = h0Var.E;
                     ii.a aVar = h0Var.a;
                     ii.x3 x3Var = ((ii.p3) f0Var).a;
-                    x3Var.o3(false);
-                    x3Var.h3.J(new ii.u3(x3Var, aVar, i14), e0Var);
+                    x3Var.q3(false);
+                    x3Var.o3.o0(new ii.u3(x3Var, aVar, i14), e0Var);
                     break;
                 }
                 break;
             case 11:
-                k2.j jVar = (k2.j) ((n4.y) obj).c;
+                k2.k kVar = (k2.k) ((n4.y) obj).c;
                 String str = e2.d0.a;
-                e2.c cVar = ((i2.c0) jVar).a.E;
+                e2.c cVar = ((i2.c0) kVar).a.E;
                 i2.w wVar = new i2.w(i14, 2);
                 cVar.getClass();
                 e2.d.g(Looper.myLooper() == ((e2.z) cVar.c).a.getLooper());
                 cVar.a++;
-                cVar.i(new ci.y8(i12, cVar, wVar));
+                cVar.i(new ci.x8(i12, cVar, wVar));
                 cVar.n(Integer.valueOf(i14));
                 break;
             case 12:
-                org.telegram.ui.ActionBar.a2[] a2VarArr = (org.telegram.ui.ActionBar.a2[]) obj;
-                org.telegram.ui.ActionBar.a2 a2Var = a2VarArr[0];
-                if (a2Var != null) {
+                org.telegram.ui.ActionBar.b2[] b2VarArr = (org.telegram.ui.ActionBar.b2[]) obj;
+                org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
+                if (b2Var != null) {
                     try {
-                        a2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: nf.b
+                        b2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: nf.b
                             @Override // android.content.DialogInterface.OnCancelListener
                             public final void onCancel(DialogInterface dialogInterface) {
                                 ConnectionsManager.getInstance(UserConfig.selectedAccount).cancelRequest(i14, true);
                             }
                         });
-                        a2VarArr[0].show();
+                        b2VarArr[0].show();
                         break;
                     } catch (Exception unused2) {
                         return;
@@ -179,7 +180,7 @@ public final /* synthetic */ class o8 implements Runnable {
                 }
                 break;
             case 13:
-                ((nh.a) obj).v0(i14, 0, null);
+                ((nh.a) obj).w0(i14, 0, null);
                 break;
             case 14:
                 ConnectionsManager.lambda$onUpdateConfig$21(i14, (TLRPC.TL_config) obj);
@@ -188,7 +189,7 @@ public final /* synthetic */ class o8 implements Runnable {
                 MessagesController.getInstance(i14).loadFullChat(((TLRPC.Chat) obj).id, 0, true);
                 break;
             case 16:
-                ((org.telegram.ui.p4) ((org.telegram.ui.g) obj).b).V(i14, true);
+                ((org.telegram.ui.q4) ((org.telegram.ui.g) obj).b).T(i14, true);
                 break;
             case 17:
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) obj;
@@ -219,52 +220,54 @@ public final /* synthetic */ class o8 implements Runnable {
                 }
                 break;
             case 18:
-                ((ee) obj).f.c(i14);
+                ie ieVar = ((he) obj).f;
+                ieVar.getClass();
+                ieVar.c(i14);
                 break;
             case 19:
-                ((yi) obj).a.F(this.b, 0, 0, 0, true, true);
+                ((zi) obj).a.D(this.b, 0, 0, 0, true, true);
                 break;
             case 20:
-                wn wnVar = ((wi) obj).g;
-                if (wnVar.vb == i14) {
-                    wnVar.Ma();
+                yn ynVar = ((xi) obj).g;
+                if (ynVar.tb == i14) {
+                    ynVar.La();
                     break;
                 }
                 break;
             case 21:
-                wn wnVar2 = ((xi) obj).g;
-                if (wnVar2.vb == i14) {
-                    wnVar2.Ma();
+                yn ynVar2 = ((yi) obj).g;
+                if (ynVar2.tb == i14) {
+                    ynVar2.La();
                     break;
                 }
                 break;
             case 22:
-                wn wnVar3 = ((wi) obj).g;
-                if (wnVar3.vb == i14) {
-                    wnVar3.Ma();
+                yn ynVar3 = ((xi) obj).g;
+                if (ynVar3.tb == i14) {
+                    ynVar3.La();
                     break;
                 }
                 break;
             case 23:
-                wn wnVar4 = ((xi) obj).g;
-                if (wnVar4.vb == i14) {
-                    wnVar4.Ma();
+                yn ynVar4 = ((yi) obj).g;
+                if (ynVar4.tb == i14) {
+                    ynVar4.La();
                     break;
                 }
                 break;
             case 24:
-                wn wnVar5 = ((xi) obj).g;
-                if (wnVar5.vb == i14) {
-                    wnVar5.Ma();
+                yn ynVar5 = ((yi) obj).g;
+                if (ynVar5.tb == i14) {
+                    ynVar5.La();
                     break;
                 }
                 break;
             case 25:
-                wn wnVar6 = ((pm) obj).J0;
-                wnVar6.z0.h1(i14, wnVar6.y4);
+                yn ynVar6 = ((qm) obj).M0;
+                ynVar6.x0.h1(i14, ynVar6.w4);
                 break;
             case 26:
-                i10 = ((org.telegram.ui.ActionBar.m2) ((in) obj).a).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.n2) ((kn) obj).a).currentAccount;
                 ConnectionsManager.getInstance(i10).cancelRequest(i14, true);
                 break;
             case 27:
@@ -272,7 +275,7 @@ public final /* synthetic */ class o8 implements Runnable {
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.t1((MessagesStorage.BooleanCallback) obj, i13), 250L);
                 break;
             case 28:
-                p90 p90Var = (p90) obj;
+                q90 q90Var = (q90) obj;
                 ArrayList<TLRPC.PrivacyRule> privacyRules = ContactsController.getInstance(i14).getPrivacyRules(11);
                 String string = LocaleController.getString(R.string.EditProfileBirthdayInfoContacts);
                 if (privacyRules != null && !privacyRules.isEmpty()) {
@@ -290,7 +293,7 @@ public final /* synthetic */ class o8 implements Runnable {
                         }
                     }
                 }
-                p90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(string, new org.telegram.ui.Components.m1(privacyRules, objArr == true ? 1 : 0)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(0.66f)));
+                q90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(string, new org.telegram.ui.Components.m1(privacyRules, objArr == true ? 1 : 0)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(0.66f)));
                 break;
             default:
                 ((org.telegram.ui.Components.o8) obj).b(i14);

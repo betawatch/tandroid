@@ -30,11 +30,11 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import org.telegram.ui.am;
+import org.telegram.ui.hh;
 import org.telegram.ui.jm;
-import org.telegram.ui.mh;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -104,17 +104,17 @@ public final /* synthetic */ class s1 implements Runnable {
                     q6Var.c1 = true;
                 }
                 q6Var.b(lVar);
-                qg.s1 s1Var = q6Var.k1;
-                int i15 = s1Var.d + 1;
-                s1Var.a(i15);
-                AndroidUtilities.updateImageViewImageAnimated(s1Var.a[i15], i14);
-                s1Var.e = true;
+                qg.r1 r1Var = q6Var.k1;
+                int i15 = r1Var.d + 1;
+                r1Var.a(i15);
+                AndroidUtilities.updateImageViewImageAnimated(r1Var.a[i15], i14);
+                r1Var.e = true;
                 break;
             case 6:
                 AndroidUtilities.runOnUIThread(new o8(this.b, ((MessagesStorage) this.c).getUsers(new ArrayList<>((HashSet) this.d)), 5));
                 break;
             case 7:
-                ((ci.oc) this.c).b((short[]) this.d, this.b);
+                ((ci.nc) this.c).b((short[]) this.d, this.b);
                 break;
             case 8:
                 CopyOnWriteArraySet copyOnWriteArraySet = (CopyOnWriteArraySet) this.c;
@@ -147,14 +147,14 @@ public final /* synthetic */ class s1 implements Runnable {
                 }
                 break;
             case 10:
-                ei.q4 q4Var = (ei.q4) this.c;
+                ei.r4 r4Var = (ei.r4) this.c;
                 TLObject tLObject2 = (TLObject) this.d;
                 int i18 = this.b;
                 if (tLObject2 instanceof TLRPC.TL_webViewResultUrl) {
                     TLRPC.TL_webViewResultUrl tL_webViewResultUrl = (TLRPC.TL_webViewResultUrl) tLObject2;
-                    q4Var.x = tL_webViewResultUrl.query_id;
-                    q4Var.n.u(i18, tL_webViewResultUrl.url, tL_webViewResultUrl.same_origin);
-                    AndroidUtilities.runOnUIThread(q4Var.U);
+                    r4Var.x = tL_webViewResultUrl.query_id;
+                    r4Var.n.u(i18, tL_webViewResultUrl.url, tL_webViewResultUrl.same_origin);
+                    AndroidUtilities.runOnUIThread(r4Var.U);
                     break;
                 }
                 break;
@@ -178,9 +178,9 @@ public final /* synthetic */ class s1 implements Runnable {
                 }
                 break;
             case 12:
-                hg.a0 a0Var = (hg.a0) this.c;
-                a0Var.b.add(this.b, (TL_account.TL_businessChatLink) this.d);
-                NotificationCenter.getInstance(a0Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
+                hg.y yVar = (hg.y) this.c;
+                yVar.b.add(this.b, (TL_account.TL_businessChatLink) this.d);
+                NotificationCenter.getInstance(yVar.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
                 break;
             case 13:
                 i2.d1 d1Var = (i2.d1) this.c;
@@ -188,10 +188,10 @@ public final /* synthetic */ class s1 implements Runnable {
                 d1Var.b.h.a(((Integer) pair.first).intValue(), (u2.f0) pair.second, this.b);
                 break;
             case 14:
-                ii.p5 p5Var = (ii.p5) this.c;
+                ii.q5 q5Var = (ii.q5) this.c;
                 TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) this.d;
                 int i21 = this.b;
-                ii.s5 m10 = p5Var.getGrid().m(pagetablecell);
+                ii.t5 m10 = q5Var.getGrid().m(pagetablecell);
                 if (m10 != null) {
                     ii.i1 i1Var = m10.a;
                     i1Var.r();
@@ -200,13 +200,13 @@ public final /* synthetic */ class s1 implements Runnable {
                 }
                 break;
             case 15:
-                ii.y5 y5Var = (ii.y5) this.c;
+                ii.z5 z5Var = (ii.z5) this.c;
                 ii.a aVar = (ii.a) this.d;
                 int i22 = this.b;
-                ii.e6 e6Var = y5Var.a;
-                if (e6Var.y != null) {
-                    ii.e6.f(aVar.b, "");
-                    ((ii.f3) e6Var.y).c(aVar, i22);
+                ii.f6 f6Var = z5Var.a;
+                if (f6Var.y != null) {
+                    ii.f6.f(aVar.b, "");
+                    ((ii.f3) f6Var.y).c(aVar, i22);
                     break;
                 }
                 break;
@@ -229,13 +229,13 @@ public final /* synthetic */ class s1 implements Runnable {
             case 21:
                 int i23 = this.b;
                 Context context = (Context) this.c;
-                org.telegram.ui.ActionBar.e3[] e3VarArr = (org.telegram.ui.ActionBar.e3[]) this.d;
+                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.d;
                 String str2 = MessagesController.getInstance(i23).freezeAppealUrl;
                 if (!str2.startsWith("http://") && !str2.startsWith("https://")) {
                     str2 = "https://".concat(str2);
                 }
                 nf.f.s(context, str2);
-                e3VarArr[0].dismiss();
+                f3VarArr[0].dismiss();
                 break;
             case 22:
                 org.telegram.ui.i4 i4Var = (org.telegram.ui.i4) this.c;
@@ -244,7 +244,7 @@ public final /* synthetic */ class s1 implements Runnable {
                 HashMap hashMap = new HashMap(i4Var.u0[0].c.w);
                 ArrayList arrayList3 = new ArrayList(i4Var.u0[0].c.x);
                 i4Var.V0 = null;
-                Utilities.searchQueue.postRunnable(new ei.l3(i4Var, arrayList3, hashMap, str3, i24, 14));
+                Utilities.searchQueue.postRunnable(new ei.m3(i4Var, arrayList3, hashMap, str3, i24, 14));
                 break;
             case 23:
                 org.telegram.ui.i4 i4Var2 = (org.telegram.ui.i4) this.c;
@@ -277,25 +277,25 @@ public final /* synthetic */ class s1 implements Runnable {
             case 26:
                 String str4 = (String) this.d;
                 int i28 = this.b;
-                org.telegram.ui.ActionBar.e3[] e3VarArr2 = (org.telegram.ui.ActionBar.e3[]) this.c;
+                org.telegram.ui.ActionBar.f3[] f3VarArr2 = (org.telegram.ui.ActionBar.f3[]) this.c;
                 TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug = new TLRPC.TL_inputGroupCallSlug();
                 tL_inputGroupCallSlug.slug = Uri.parse(str4).getPathSegments().get(r0.getPathSegments().size() - 1);
                 org.telegram.ui.Components.voip.g2.g(LaunchActivity.G1, i28, tL_inputGroupCallSlug, false, null, null);
-                e3VarArr2[0].dismiss();
+                f3VarArr2[0].dismiss();
                 break;
             case 27:
-                ((wn) this.c).Ka((ArrayList) this.d, this.b, false, false);
+                ((yn) this.c).Ja((ArrayList) this.d, this.b, false, false);
                 break;
             case 28:
-                wn wnVar = (wn) this.c;
+                yn ynVar = (yn) this.c;
                 int i29 = this.b;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
-                wnVar.x0.v0(0, i29, null);
+                ynVar.v0.w0(0, i29, null);
                 if (!AndroidUtilities.showKeyboard(editTextBoldCursor)) {
                     editTextBoldCursor.clearFocus();
                     editTextBoldCursor.requestFocus();
                 }
-                AndroidUtilities.runOnUIThread(new mh(0, editTextBoldCursor), 100L);
+                AndroidUtilities.runOnUIThread(new hh(0, editTextBoldCursor), 100L);
                 break;
             default:
                 am amVar = (am) this.c;
@@ -304,7 +304,7 @@ public final /* synthetic */ class s1 implements Runnable {
                 amVar.getClass();
                 MessageObject messageObject = w0Var.getMessageObject();
                 jm jmVar = amVar.a;
-                jmVar.Q.F(i30, messageObject.getId(), messageObject.getDialogId() == jmVar.Q.L6 ? 1 : 0, 0, true, true);
+                jmVar.Q.D(i30, messageObject.getId(), messageObject.getDialogId() == jmVar.Q.J6 ? 1 : 0, 0, true, true);
                 break;
         }
     }
@@ -323,11 +323,11 @@ public final /* synthetic */ class s1 implements Runnable {
         this.b = i10;
     }
 
-    public /* synthetic */ s1(String str, int i10, org.telegram.ui.ActionBar.e3[] e3VarArr) {
+    public /* synthetic */ s1(String str, int i10, org.telegram.ui.ActionBar.f3[] f3VarArr) {
         this.a = 26;
         this.d = str;
         this.b = i10;
-        this.c = e3VarArr;
+        this.c = f3VarArr;
     }
 
     public /* synthetic */ s1(org.telegram.ui.g4 g4Var, int i10, int[] iArr, int[] iArr2) {

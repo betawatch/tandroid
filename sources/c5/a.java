@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import n7.z0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a {
     public String a;
@@ -32,14 +32,14 @@ public final class a {
 
     public a(z0 z0Var) {
         Context context = (Context) z0Var.b;
-        int e = w9.h.e(context, "com.google.firebase.crashlytics.unity_version", "string");
-        if (e != 0) {
+        int e7 = w9.h.e(context, "com.google.firebase.crashlytics.unity_version", "string");
+        if (e7 != 0) {
             this.a = "Unity";
-            String string = context.getResources().getString(e);
+            String string = context.getResources().getString(e7);
             this.b = string;
-            String g10 = v7.j.g("Unity Editor version is: ", string);
+            String i10 = t8.b.i("Unity Editor version is: ", string);
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                Log.v("FirebaseCrashlytics", g10, null);
+                Log.v("FirebaseCrashlytics", i10, null);
                 return;
             }
             return;

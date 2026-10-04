@@ -1,35 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uc implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yc b;
+public final class uc extends up0 {
+    public final /* synthetic */ vc F;
 
-    public /* synthetic */ uc(yc ycVar, int i10) {
-        this.a = i10;
-        this.b = ycVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uc(vc vcVar, Context context, int i10, long j3, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(i10, j3, context, d6Var);
+        this.F = vcVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        View view = (View) obj;
-        switch (this.a) {
-            case 0:
-                yc ycVar = this.b;
-                ycVar.getClass();
-                ((org.telegram.ui.Components.j21) view).setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i5, ycVar.b));
-                break;
-            default:
-                if (view instanceof org.telegram.ui.Components.j21) {
-                    org.telegram.ui.Components.j21 j21Var = (org.telegram.ui.Components.j21) view;
-                    j21Var.setFallbackWallpaper(j21Var.G.a.b ? null : this.b.v);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.up0
+    public final void b(int i10, boolean z10) {
+        super.b(i10, z10);
+        vc vcVar = this.F;
+        TextView textView = vcVar.d;
+        if (textView != null) {
+            textView.setTextColor(vcVar.b.h.getTextColor());
         }
     }
 }

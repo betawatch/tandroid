@@ -1,25 +1,69 @@
 package w9;
 
-import android.os.Bundle;
+import android.util.Log;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.android.gms.tasks.Tasks;
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.Callable;
-import org.telegram.ui.Cells.c1;
+import java.util.concurrent.Executor;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class l implements Callable {
     public final /* synthetic */ long a;
-    public final /* synthetic */ m b;
+    public final /* synthetic */ Throwable b;
+    public final /* synthetic */ Thread c;
+    public final /* synthetic */ da.b d;
+    public final /* synthetic */ n e;
 
-    public l(m mVar, long j3) {
-        this.b = mVar;
+    public l(n nVar, long j3, Throwable th2, Thread thread, da.b bVar) {
+        this.e = nVar;
         this.a = j3;
+        this.b = th2;
+        this.c = thread;
+        this.d = bVar;
     }
 
     @Override // java.util.concurrent.Callable
     public final Object call() {
-        Bundle g10 = c1.g(1, "fatal");
-        g10.putLong("timestamp", this.a);
-        this.b.k.J(g10);
-        return null;
+        ba.c cVar;
+        String str;
+        long j3 = this.a;
+        long j10 = j3 / 1000;
+        n nVar = this.e;
+        String e7 = nVar.e();
+        if (e7 == null) {
+            Log.e("FirebaseCrashlytics", "Tried to write a fatal exception while no session was open.", null);
+            return Tasks.forResult(null);
+        }
+        nVar.c.o();
+        com.google.firebase.messaging.n nVar2 = nVar.m;
+        nVar2.getClass();
+        String concat = "Persisting fatal event for session ".concat(e7);
+        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+            Log.v("FirebaseCrashlytics", concat, null);
+        }
+        nVar2.v(this.b, this.c, e7, "crash", j10, true);
+        try {
+            cVar = nVar.g;
+            str = ".ae" + j3;
+            cVar.getClass();
+        } catch (IOException e10) {
+            Log.w("FirebaseCrashlytics", "Could not create app exception marker file.", e10);
+        }
+        if (!new File(cVar.b, str).createNewFile()) {
+            throw new IOException("Create new file failed.");
+        }
+        da.b bVar = this.d;
+        nVar.c(false, bVar);
+        new f(nVar.f);
+        n.a(nVar, f.b, Boolean.FALSE);
+        if (!nVar.b.a()) {
+            return Tasks.forResult(null);
+        }
+        Executor executor = (Executor) nVar.e.b;
+        return ((TaskCompletionSource) ((AtomicReference) bVar.i).get()).getTask().onSuccessTask(executor, new o0.a(this, executor, e7));
     }
 }

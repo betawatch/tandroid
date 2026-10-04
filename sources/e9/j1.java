@@ -7,9 +7,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 import java.util.Set;
-import v7.u6;
+import v7.t6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class j1 extends AbstractCollection implements Set {
     public final Set a;
@@ -118,7 +118,7 @@ public class j1 extends AbstractCollection implements Set {
     public final boolean isEmpty() {
         Iterator it = this.a.iterator();
         d9.f fVar = this.b;
-        u6.d(fVar, "predicate");
+        t6.d(fVar, "predicate");
         int i10 = 0;
         while (true) {
             if (!it.hasNext()) {

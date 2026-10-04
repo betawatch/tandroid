@@ -16,12 +16,13 @@ import e2.v;
 import e9.a1;
 import e9.g0;
 import e9.i0;
+import hg.k0;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final v a;
@@ -55,9 +56,9 @@ public final class b implements o {
     }
 
     @Override // c3.o
-    public final boolean a(p pVar) {
+    public final boolean b(p pVar) {
         v vVar = this.a;
-        pVar.a(0, 12, vVar.a);
+        pVar.b(0, 12, vVar.a);
         vVar.J(0);
         if (vVar.l() == 1179011410) {
             vVar.K(4);
@@ -137,10 +138,10 @@ public final class b implements o {
                 v vVar = this.a;
                 switch (i13) {
                     case 0:
-                        if (!a(pVar)) {
+                        if (!b(pVar)) {
                             throw s0.a(null, "AVI Header List not found");
                         }
-                        pVar.q(12);
+                        pVar.o(12);
                         this.e = 1;
                         return 0;
                     case 1:
@@ -208,7 +209,7 @@ public final class b implements o {
                                     int h = r0.h(sVar2.r);
                                     if (h == 1 || h == 2) {
                                         h0 Z1 = this.f.Z1(i17, h);
-                                        hg.c.s(a2, Z1);
+                                        k0.r(a2, Z1);
                                         this.h = Math.max(this.h, Y);
                                         eVar = new e(i17, dVar, Z1);
                                         if (eVar != null) {
@@ -239,8 +240,8 @@ public final class b implements o {
                         } else {
                             i10 = 16;
                         }
-                        pVar.a(0, 12, vVar.a);
-                        pVar.p();
+                        pVar.b(0, 12, vVar.a);
+                        pVar.m();
                         vVar.J(0);
                         lVar.getClass();
                         lVar.a = vVar.l();
@@ -249,7 +250,7 @@ public final class b implements o {
                         int l10 = vVar.l();
                         int i20 = lVar.a;
                         if (i20 == 1179011410) {
-                            pVar.q(12);
+                            pVar.o(12);
                             return 0;
                         }
                         if (i20 != 1414744396 || l10 != 1769369453) {
@@ -373,15 +374,15 @@ public final class b implements o {
                             return 0;
                         }
                         if ((pVar.getPosition() & 1) == 1) {
-                            pVar.q(1);
+                            pVar.o(1);
                         }
-                        pVar.a(0, 12, vVar.a);
+                        pVar.b(0, 12, vVar.a);
                         vVar.J(0);
                         int l17 = vVar.l();
                         if (l17 == 1414744396) {
                             vVar.J(8);
-                            pVar.q(vVar.l() == 1769369453 ? 12 : 8);
-                            pVar.p();
+                            pVar.o(vVar.l() == 1769369453 ? 12 : 8);
+                            pVar.m();
                             return 0;
                         }
                         int l18 = vVar.l();
@@ -389,8 +390,8 @@ public final class b implements o {
                             this.j = pVar.getPosition() + l18 + 8;
                             return 0;
                         }
-                        pVar.q(8);
-                        pVar.p();
+                        pVar.o(8);
+                        pVar.m();
                         for (e eVar6 : this.i) {
                             if (eVar6.c == l17 || eVar6.d == l17) {
                                 eVar3 = eVar6;
@@ -411,7 +412,7 @@ public final class b implements o {
                         throw new AssertionError();
                 }
             } else {
-                pVar.q((int) (j3 - position));
+                pVar.o((int) (j3 - position));
             }
         }
         z10 = false;

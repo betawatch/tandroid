@@ -8,10 +8,10 @@ import java.util.Date;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.h5;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.ActionBar.i5;
+import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class l0 extends CountDownTimer {
     public final /* synthetic */ s0 a;
@@ -25,7 +25,7 @@ public final class l0 extends CountDownTimer {
     @Override // android.os.CountDownTimer
     public final void onTick(long j3) {
         s0 s0Var = this.a;
-        yl0 yl0Var = s0Var.d;
+        zl0 zl0Var = s0Var.d;
         ArrayList arrayList = s0Var.Y;
         ArrayList arrayList2 = new ArrayList(arrayList.size());
         int size = arrayList.size();
@@ -44,28 +44,28 @@ public final class l0 extends CountDownTimer {
         if (arrayList2.isEmpty()) {
             return;
         }
-        for (int i11 = 0; i11 < yl0Var.getChildCount(); i11++) {
-            View childAt = yl0Var.getChildAt(i11);
+        for (int i11 = 0; i11 < zl0Var.getChildCount(); i11++) {
+            View childAt = zl0Var.getChildAt(i11);
             if (childAt instanceof xg.l) {
                 xg.l lVar = (xg.l) childAt;
                 if (arrayList2.contains(lVar.getBoost())) {
-                    h5 h5Var = lVar.e;
+                    i5 i5Var = lVar.e;
                     z5 z5Var = lVar.d;
                     int i12 = lVar.I.cooldown_until_date;
                     if (i12 > 0) {
                         lVar.setSubtitle(LocaleController.formatString(R.string.BoostingAvailableIn, xg.l.f((i12 * 1000) - System.currentTimeMillis())));
                         z5Var.setAlpha(0.65f);
-                        h5Var.setAlpha(0.65f);
+                        i5Var.setAlpha(0.65f);
                         lVar.i(0.3f, false);
                     } else {
                         lVar.setSubtitle(LocaleController.formatString(R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(lVar.I.expires * 1000))));
                         if (z5Var.getAlpha() < 1.0f) {
                             z5Var.animate().alpha(1.0f).start();
-                            h5Var.animate().alpha(1.0f).start();
+                            i5Var.animate().alpha(1.0f).start();
                             lVar.i(1.0f, true);
                         } else {
                             z5Var.setAlpha(1.0f);
-                            h5Var.setAlpha(1.0f);
+                            i5Var.setAlpha(1.0f);
                             lVar.i(1.0f, false);
                         }
                     }

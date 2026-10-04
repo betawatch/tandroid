@@ -20,10 +20,10 @@ public abstract class z extends j {
     public static Object b(Method method, z zVar, Object... objArr) {
         try {
             return method.invoke(zVar, objArr);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
-        } catch (InvocationTargetException e7) {
-            Throwable cause = e7.getCause();
+        } catch (IllegalAccessException e7) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e7);
+        } catch (InvocationTargetException e10) {
+            Throwable cause = e10.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -44,8 +44,8 @@ public abstract class z extends j {
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 zVar = zzjr.get(cls);
-            } catch (ClassNotFoundException e) {
-                throw new IllegalStateException("Class initialization cannot fail.", e);
+            } catch (ClassNotFoundException e7) {
+                throw new IllegalStateException("Class initialization cannot fail.", e7);
             }
         }
         if (zVar != null) {
@@ -76,9 +76,9 @@ public abstract class z extends j {
         }
         w0 w0Var = w0.c;
         w0Var.getClass();
-        int e = w0Var.a(getClass()).e(this);
-        this.zzex = e;
-        return e;
+        int e7 = w0Var.a(getClass()).e(this);
+        this.zzex = e7;
+        return e7;
     }
 
     public final String toString() {

@@ -6,16 +6,16 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import kotlin.jvm.internal.i;
-import v7.t7;
+import v7.s7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class zzii {
     private final c zza;
 
     public zzii() {
         int i10 = zzby.zza;
-        this.zza = t7.a(zzih.zza);
+        this.zza = s7.a(zzih.zza);
     }
 
     public final HttpURLConnection zza(String str) {

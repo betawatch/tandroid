@@ -42,11 +42,11 @@ public final class u1 extends z {
                 return (u1) zVar;
             }
             throw new d0(new androidx.car.app.j().getMessage());
-        } catch (IOException e) {
-            if (e.getCause() instanceof d0) {
-                throw ((d0) e.getCause());
+        } catch (IOException e7) {
+            if (e7.getCause() instanceof d0) {
+                throw ((d0) e7.getCause());
             }
-            throw new d0(e.getMessage());
+            throw new d0(e7.getMessage());
         } catch (IndexOutOfBoundsException unused) {
             throw d0.a();
         }

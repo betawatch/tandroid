@@ -3,12 +3,12 @@ package xh;
 import android.os.Bundle;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.cb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -27,12 +27,12 @@ public final /* synthetic */ class p0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                r1 r1Var = (r1) this.c;
+                q1 q1Var = (q1) this.c;
                 Utilities.Callback callback = (Utilities.Callback) this.d;
-                r1Var.getClass();
-                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+                q1Var.getClass();
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    r1Var.dismiss();
+                    q1Var.dismiss();
                     if (callback != null) {
                         callback.run(Boolean.FALSE);
                     }
@@ -60,24 +60,24 @@ public final /* synthetic */ class p0 implements Runnable {
                 x3Var2.p2((int) this.b, x3Var2.getContext(), true);
                 break;
             default:
-                org.telegram.ui.ActionBar.e3[] e3VarArr = (org.telegram.ui.ActionBar.e3[]) this.c;
+                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.c;
                 TL_stories.Boost boost = (TL_stories.Boost) this.d;
-                org.telegram.ui.ActionBar.e3 e3Var = e3VarArr[0];
-                if (e3Var != null) {
-                    e3Var.dismiss();
+                org.telegram.ui.ActionBar.f3 f3Var = f3VarArr[0];
+                if (f3Var != null) {
+                    f3Var.dismiss();
                 }
-                org.telegram.ui.ActionBar.m2 U2 = LaunchActivity.U();
+                org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
                 if (U2 != null) {
-                    U2.presentFragment(wn.Q9(boost.giveaway_msg_id, this.b));
+                    U2.presentFragment(yn.P9(boost.giveaway_msg_id, this.b));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ p0(bb bbVar, Object obj, long j3, int i10) {
+    public /* synthetic */ p0(cb cbVar, Object obj, long j3, int i10) {
         this.a = i10;
-        this.c = bbVar;
+        this.c = cbVar;
         this.d = obj;
         this.b = j3;
     }

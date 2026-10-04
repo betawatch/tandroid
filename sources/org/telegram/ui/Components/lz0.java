@@ -1,29 +1,98 @@
 package org.telegram.ui.Components;
 
-import android.util.Pair;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class lz0 extends ArrayList {
-    public final Class a;
-    public final Class b;
+public final class lz0 extends Drawable {
+    public boolean a;
+    public final e6 b;
+    public final Drawable c;
+    public final Drawable d;
+    public int e = 255;
 
-    public lz0(Class cls, Class cls2) {
-        this.a = cls;
-        this.b = cls2;
+    public lz0(org.telegram.ui.Cells.u1 u1Var) {
+        this.b = new e6(u1Var, 420L, tr.h);
+        this.c = u1Var.getContext().getResources().getDrawable(R.drawable.summary_arrow);
+        this.d = u1Var.getContext().getResources().getDrawable(R.drawable.summary_stars);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final la.h i() {
-        int size = size();
-        Object[] objArr = (Object[]) Array.newInstance((Class<?>) this.a, size);
-        Object[] objArr2 = (Object[]) Array.newInstance((Class<?>) this.b, size);
-        for (int i10 = 0; i10 < size; i10++) {
-            objArr[i10] = ((Pair) get(i10)).first;
-            objArr2[i10] = ((Pair) get(i10)).second;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        Drawable drawable = this.d;
+        drawable.setBounds(bounds);
+        drawable.setAlpha(this.e);
+        drawable.draw(canvas);
+        float e7 = this.b.e(this.a);
+        float centerX = getBounds().centerX();
+        float centerY = getBounds().centerY();
+        float width = getBounds().width();
+        canvas.save();
+        if (e7 < 0.5f) {
+            float abs = Math.abs(e7 - 0.5f) + 0.5f;
+            canvas.scale(abs, abs, centerX, centerY);
         }
-        return new la.h(objArr, objArr2);
+        canvas.save();
+        if (e7 > 0.5f) {
+            float abs2 = Math.abs(e7 - 0.5f) + 0.5f;
+            float f7 = -abs2;
+            float f10 = width * 0.32f;
+            canvas.scale(f7, f7, getBounds().left + f10, getBounds().bottom - f10);
+            float f11 = 1.0f - abs2;
+            canvas.translate((-width) * f11 * 0.4f, f11 * width * 0.4f);
+        }
+        Rect bounds2 = getBounds();
+        Drawable drawable2 = this.c;
+        drawable2.setBounds(bounds2);
+        drawable2.setAlpha(this.e);
+        drawable2.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        if (e7 > 0.5f) {
+            float f12 = -(Math.abs(e7 - 0.5f) + 0.5f);
+            float f13 = 0.32f * width;
+            canvas.scale(f12, f12, getBounds().right - f13, getBounds().top + f13);
+        }
+        canvas.rotate(180.0f, centerX, centerY);
+        if (e7 > 0.5f) {
+            float abs3 = 1.0f - (Math.abs(e7 - 0.5f) + 0.5f);
+            canvas.translate((-width) * abs3 * 0.4f, width * abs3 * 0.4f);
+        }
+        drawable2.setBounds(getBounds());
+        drawable2.setAlpha(this.e);
+        drawable2.draw(canvas);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.c.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.c.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.e = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.c.setColorFilter(colorFilter);
+        this.d.setColorFilter(colorFilter);
     }
 }

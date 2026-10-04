@@ -3,20 +3,20 @@ package bi;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.ui.Cells.u7;
-import org.telegram.ui.Components.pz;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.wv0;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.qz;
 import s4.z0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class i extends pz {
+public final class i extends qz {
     public final /* synthetic */ int X = 0;
     public final Object Y;
 
     public i() {
         super(100, false);
-        this.Y = new wv0();
+        this.Y = new fw0();
     }
 
     @Override // s4.o0
@@ -29,14 +29,14 @@ public final class i extends pz {
         }
     }
 
-    @Override // org.telegram.ui.Components.pz
-    public wv0 D1(int i10) {
+    @Override // org.telegram.ui.Components.qz
+    public fw0 D1(int i10) {
         switch (this.X) {
             case 0:
-                wv0 wv0Var = (wv0) this.Y;
-                wv0Var.b = 100.0f;
-                wv0Var.a = 100.0f;
-                return wv0Var;
+                fw0 fw0Var = (fw0) this.Y;
+                fw0Var.b = 100.0f;
+                fw0Var.a = 100.0f;
+                return fw0Var;
             default:
                 return super.D1(i10);
         }
@@ -49,9 +49,9 @@ public final class i extends pz {
                 super.U(eVar, z0Var, view, dVar);
                 AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
                 AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
-                he.c cVar = collectionItemInfo != null ? new he.c(collectionItemInfo) : null;
-                if (cVar != null) {
-                    Object obj = cVar.a;
+                e.a aVar = collectionItemInfo != null ? new e.a(collectionItemInfo) : null;
+                if (aVar != null) {
+                    Object obj = aVar.a;
                     if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
                         accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
                         break;
@@ -68,7 +68,7 @@ public final class i extends pz {
     public int W0(z0 z0Var) {
         switch (this.X) {
             case 1:
-                if (!((t61) this.Y).a3) {
+                if (!((c71) this.Y).h3) {
                     break;
                 } else {
                     break;
@@ -91,8 +91,8 @@ public final class i extends pz {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(t61 t61Var, int i10) {
+    public i(c71 c71Var, int i10) {
         super(i10, false);
-        this.Y = t61Var;
+        this.Y = c71Var;
     }
 }

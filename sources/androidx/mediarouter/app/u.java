@@ -44,7 +44,7 @@ import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class u extends g.g {
     public static final int F0;
@@ -120,10 +120,10 @@ public final class u extends g.g {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public u(Context context) {
-        super(r5, r1 == 0 ? v7.f0.e(r5) : r1);
+        super(r5, r1 == 0 ? v7.e0.e(r5) : r1);
         int i10 = 1;
-        ContextThemeWrapper a2 = v7.f0.a(context, true);
-        int g10 = v7.f0.g(a2, R.attr.mediaRouteTheme);
+        ContextThemeWrapper a2 = v7.e0.a(context, true);
+        int g10 = v7.e0.g(a2, R.attr.mediaRouteTheme);
         this.O = true;
         this.E0 = new q4(this, 9);
         Context context2 = getContext();
@@ -211,7 +211,7 @@ public final class u extends g.g {
     }
 
     public final int k(int i10, int i11) {
-        return i10 >= i11 ? (int) (((this.x * i11) / i10) + 0.5f) : (int) a4.a.B(this.x, 9.0f, 16.0f, 0.5f);
+        return i10 >= i11 ? (int) (((this.x * i11) / i10) + 0.5f) : (int) a4.a.A(this.x, 9.0f, 16.0f, 0.5f);
     }
 
     public final int l(boolean z10) {
@@ -255,9 +255,9 @@ public final class u extends g.g {
         this.I = linearLayout;
         linearLayout.setOnClickListener(new l());
         Context context = this.s;
-        int f7 = v7.f0.f(context, 0, R.attr.colorPrimary);
-        if (i0.a.e(f7, v7.f0.f(context, 0, android.R.attr.colorBackground)) < 3.0d) {
-            f7 = v7.f0.f(context, 0, R.attr.colorAccent);
+        int f7 = v7.e0.f(context, 0, R.attr.colorPrimary);
+        if (i0.a.e(f7, v7.e0.f(context, 0, android.R.attr.colorBackground)) < 3.0d) {
+            f7 = v7.e0.f(context, 0, R.attr.colorAccent);
         }
         Button button = (Button) findViewById(android.R.id.button2);
         this.y = button;
@@ -304,9 +304,9 @@ public final class u extends g.g {
         LinearLayout linearLayout3 = this.Q;
         OverlayListView overlayListView = this.U;
         boolean n10 = n();
-        int f10 = v7.f0.f(context, 0, R.attr.colorPrimary);
-        int f11 = v7.f0.f(context, 0, R.attr.colorPrimaryDark);
-        if (n10 && v7.f0.b(context, 0) == -570425344) {
+        int f10 = v7.e0.f(context, 0, R.attr.colorPrimary);
+        int f11 = v7.e0.f(context, 0, R.attr.colorPrimaryDark);
+        if (n10 && v7.e0.b(context, 0) == -570425344) {
             f11 = f10;
             f10 = -1;
         }
@@ -316,7 +316,7 @@ public final class u extends g.g {
         overlayListView.setTag(Integer.valueOf(f11));
         MediaRouteVolumeSlider mediaRouteVolumeSlider = (MediaRouteVolumeSlider) this.a0;
         LinearLayout linearLayout4 = this.Q;
-        int b10 = v7.f0.b(context, 0);
+        int b10 = v7.e0.b(context, 0);
         if (Color.alpha(b10) != 255) {
             b10 = i0.a.h(b10, ((Integer) linearLayout4.getTag()).intValue());
         }
@@ -374,7 +374,7 @@ public final class u extends g.g {
         if (mediaSessionCompat$Token != null && this.w) {
             n4.y yVar2 = new n4.y(this.s, mediaSessionCompat$Token);
             this.i0 = yVar2;
-            yVar2.W(rVar);
+            yVar2.X(rVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.i0.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -393,8 +393,8 @@ public final class u extends g.g {
             if (mediaSessionCompat$Token2.a() != null) {
                 try {
                     d = mediaSessionCompat$Token2.a().d();
-                } catch (RemoteException e) {
-                    Log.e("MediaControllerCompat", "Dead object in getPlaybackState.", e);
+                } catch (RemoteException e7) {
+                    Log.e("MediaControllerCompat", "Dead object in getPlaybackState.", e7);
                 }
                 this.k0 = d;
                 r();
@@ -520,7 +520,7 @@ public final class u extends g.g {
                                         i11 = R.string.mr_controller_pause;
                                         this.F.setVisibility(z14 ? 0 : 8);
                                         if (z14) {
-                                            this.F.setImageResource(v7.f0.g(context, i10));
+                                            this.F.setImageResource(v7.e0.g(context, i10));
                                             this.F.setContentDescription(context.getResources().getText(i11));
                                         }
                                     }
@@ -602,7 +602,7 @@ public final class u extends g.g {
 
     public final void s() {
         Context context = this.s;
-        int a2 = v7.e0.a(context);
+        int a2 = v7.d0.a(context);
         getWindow().setLayout(a2, -2);
         View decorView = getWindow().getDecorView();
         this.x = (a2 - decorView.getPaddingLeft()) - decorView.getPaddingRight();

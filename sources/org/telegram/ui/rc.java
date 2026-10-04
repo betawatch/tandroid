@@ -1,75 +1,55 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewParent;
-import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.ViewGroup;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class rc extends FrameLayout {
-    public final org.telegram.ui.ActionBar.d6 a;
-    public final wb1 b;
-    public final s4.c0 c;
-    public final int d;
-    public int e;
+public final class rc extends org.telegram.ui.Components.yl0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ tc f;
 
-    public rc(int i10, Activity activity, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(activity);
-        this.d = i10;
-        this.a = d6Var;
-        wb1 wb1Var = new wb1(activity, 3, d6Var);
-        this.b = wb1Var;
-        wb1Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(6.0f), 0);
-        wb1Var.setClipToPadding(false);
-        wb1Var.setAdapter(new pc(this, activity, d6Var, i10));
-        s4.c0 c0Var = new s4.c0();
-        this.c = c0Var;
-        c0Var.j1(0);
-        wb1Var.setLayoutManager(c0Var);
-        addView(wb1Var, w7.y5.c(-1.0f, -1));
+    public rc(tc tcVar, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        this.f = tcVar;
+        this.c = context;
+        this.d = d6Var;
+        this.e = i10;
     }
 
-    public final void a(int i10, boolean z10) {
-        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.d).peerColors;
-        int i11 = 0;
-        if (peerColors != null) {
-            int i12 = 0;
-            while (true) {
-                if (i12 >= peerColors.colors.size()) {
-                    break;
-                }
-                if (peerColors.colors.get(i12).id == i10) {
-                    i11 = i12;
-                    break;
-                }
-                i12++;
-            }
-        }
-        if (i11 != this.e) {
-            this.e = i11;
-            if (!z10) {
-                this.c.h1(i11, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(56.0f)) / 2);
-            }
-            AndroidUtilities.forEachViews((RecyclerView) this.b, (Utilities.Callback<View>) new ai.i3(3, this, z10));
-        }
+    @Override // org.telegram.ui.Components.yl0
+    public final boolean D(s4.c1 c1Var) {
+        return true;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (getParent() != null) {
-            ViewParent parent = getParent();
-            boolean z10 = true;
-            if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
-                z10 = false;
-            }
-            parent.requestDisallowInterceptTouchEvent(z10);
+    @Override // s4.h0
+    public final int h() {
+        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.e).peerColors;
+        if (peerColors == null) {
+            return 0;
         }
-        return super.onInterceptTouchEvent(motionEvent);
+        return peerColors.colors.size();
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        sc scVar = (sc) c1Var.a;
+        scVar.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.d6, this.d));
+        boolean z10 = i10 == this.f.e;
+        scVar.s = z10;
+        scVar.v.f(z10, true);
+        scVar.invalidate();
+        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.e).peerColors;
+        if (peerColors == null || i10 < 0 || i10 >= peerColors.colors.size()) {
+            return;
+        }
+        scVar.a(peerColors.colors.get(i10));
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        return new org.telegram.ui.Components.il0(new sc(this.f, this.c));
     }
 }

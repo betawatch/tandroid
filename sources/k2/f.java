@@ -1,38 +1,31 @@
 package k2;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n4.y b;
-    public final /* synthetic */ Exception c;
+public final class f {
+    public static final f d = new ac.d().a();
+    public final boolean a;
+    public final boolean b;
+    public final boolean c;
 
-    public /* synthetic */ f(n4.y yVar, Exception exc, int i10) {
-        this.a = i10;
-        this.b = yVar;
-        this.c = exc;
+    public f(ac.d dVar) {
+        this.a = dVar.a;
+        this.b = dVar.b;
+        this.c = dVar.c;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Exception exc = this.c;
-        n4.y yVar = this.b;
-        switch (i10) {
-            case 0:
-                j jVar = (j) yVar.c;
-                String str = e2.d0.a;
-                j2.f fVar = ((i2.c0) jVar).a.s;
-                j2.a p5 = fVar.p();
-                fVar.q(p5, 1029, new j2.c(p5, exc, 0));
-                break;
-            default:
-                j jVar2 = (j) yVar.c;
-                String str2 = e2.d0.a;
-                j2.f fVar2 = ((i2.c0) jVar2).a.s;
-                j2.a p10 = fVar2.p();
-                fVar2.q(p10, 1014, new j2.c(p10, exc, 24));
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || f.class != obj.getClass()) {
+            return false;
+        }
+        f fVar = (f) obj;
+        return this.a == fVar.a && this.b == fVar.b && this.c == fVar.c;
+    }
+
+    public final int hashCode() {
+        return ((this.a ? 1 : 0) << 2) + ((this.b ? 1 : 0) << 1) + (this.c ? 1 : 0);
     }
 }

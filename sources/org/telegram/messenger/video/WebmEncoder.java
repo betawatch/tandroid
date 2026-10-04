@@ -36,11 +36,11 @@ import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.z5;
 import pg.k0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class WebmEncoder {
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class FrameDrawer {
         private final int H;
         private final int W;
@@ -310,7 +310,7 @@ public class WebmEncoder {
                                 double d10 = paddingLeft - f12;
                                 double d11 = (paddingTop - f13) / f14;
                                 paddingLeft = ((float) ((Math.cos(-mediaEntity.rotation) * d10) - (Math.sin(-mediaEntity.rotation) * d11))) + f12;
-                                paddingTop = (((float) hg.c.e(-mediaEntity.rotation, d11, Math.sin(-mediaEntity.rotation) * d10)) * f14) + f13;
+                                paddingTop = (((float) hg.k0.e(-mediaEntity.rotation, d11, Math.sin(-mediaEntity.rotation) * d10)) * f14) + f13;
                             }
                             VideoEditedInfo.MediaEntity mediaEntity5 = emojiEntity.entity;
                             int i17 = this.measuredSize;
@@ -442,8 +442,8 @@ public class WebmEncoder {
             } catch (Throwable th2) {
                 th = th2;
             }
-        } catch (Exception e) {
-            e = e;
+        } catch (Exception e7) {
+            e = e7;
         }
         try {
             try {
@@ -466,8 +466,8 @@ public class WebmEncoder {
                     if (videoConvertorListener3 != null) {
                         try {
                             bitmap = bitmap2;
-                        } catch (Exception e7) {
-                            e = e7;
+                        } catch (Exception e10) {
+                            e = e10;
                             FileLog.e(e);
                             stop(createEncoder);
                             if (bitmap2 != null) {
@@ -486,8 +486,8 @@ public class WebmEncoder {
                         try {
                             i11 = i12;
                             videoConvertorListener3.didWriteData(Math.min(261120L, convertVideoParams.cacheFile.length()), i14 / ceil);
-                        } catch (Exception e10) {
-                            e = e10;
+                        } catch (Exception e11) {
+                            e = e11;
                             bitmap2 = bitmap;
                             FileLog.e(e);
                             stop(createEncoder);
@@ -529,8 +529,8 @@ public class WebmEncoder {
             } catch (Throwable th4) {
                 th = th4;
             }
-        } catch (Exception e11) {
-            e = e11;
+        } catch (Exception e12) {
+            e = e12;
             FileLog.e(e);
             stop(createEncoder);
             if (bitmap2 != null) {

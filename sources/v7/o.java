@@ -1,25 +1,14 @@
 package v7;
 
-import android.os.Build;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class o {
-    public static boolean a(int i10) {
-        return (i10 & 32768) != 0;
+    public void b() {
     }
 
-    public static boolean b(int i10) {
-        if (i10 == 15 || i10 == 255) {
-            return true;
-        }
-        if (i10 == 32768) {
-            return Build.VERSION.SDK_INT >= 30;
-        }
-        if (i10 != 32783) {
-            return i10 == 33023 || i10 == 0;
-        }
-        int i11 = Build.VERSION.SDK_INT;
-        return i11 < 28 || i11 > 29;
+    public void c(androidx.biometric.s sVar) {
+    }
+
+    public void a(int i10, CharSequence charSequence) {
     }
 }

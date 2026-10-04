@@ -1,71 +1,33 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class nv0 extends xl0 {
-    public final Context c;
-    public final /* synthetic */ pv0 d;
+public final class nv0 extends mv0 {
+    public final /* synthetic */ ov0 G;
 
-    public nv0(pv0 pv0Var, Context context) {
-        this.d = pv0Var;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nv0(ov0 ov0Var, Context context, int i10) {
+        super(ov0Var.e, context, i10, false);
+        this.G = ov0Var;
     }
 
-    @Override // org.telegram.ui.Components.xl0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f == 0;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        return LocationController.getLocationsCount() + 1;
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return i10 == 0 ? 1 : 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        TextView textView;
-        int i11 = c1Var.f;
-        if (i11 == 0) {
-            ((org.telegram.ui.Cells.w7) c1Var.a).setDialog(pv0.p(i10 - 1));
-        } else if (i11 == 1 && (textView = this.d.e) != null) {
-            textView.setText(LocaleController.formatString("SharingLiveLocationTitle", R.string.SharingLiveLocationTitle, LocaleController.formatPluralString("Chats", LocationController.getLocationsCount(), new Object[0])));
+    @Override // org.telegram.ui.Components.mv0, s4.h0
+    public final void l() {
+        super.l();
+        ov0 ov0Var = this.G;
+        pv0 pv0Var = ov0Var.e;
+        int i10 = ov0Var.a;
+        int[] iArr = pv0.d2;
+        iu0 W = pv0Var.W(i10);
+        if (W != null && W.r.getVisibility() == 0) {
+            ov0Var.d.l();
         }
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout w7Var;
-        org.telegram.ui.ActionBar.d6 d6Var;
-        Context context = this.c;
-        pv0 pv0Var = this.d;
-        if (i10 != 0) {
-            w7Var = new ai.w5(context, 18);
-            w7Var.setWillNotDraw(false);
-            TextView textView = new TextView(context);
-            pv0Var.e = textView;
-            textView.setTextColor(pv0Var.getThemedColor(org.telegram.ui.ActionBar.h6.J5));
-            pv0Var.e.setTextSize(1, 14.0f);
-            pv0Var.e.setGravity(17);
-            pv0Var.e.setPadding(0, 0, 0, AndroidUtilities.dp(8.0f));
-            w7Var.addView(pv0Var.e, w7.y5.c(40.0f, -1));
-        } else {
-            d6Var = ((org.telegram.ui.ActionBar.e3) pv0Var).resourcesProvider;
-            w7Var = new org.telegram.ui.Cells.w7(54, context, d6Var, false);
+        if (W != null) {
+            zs0 zs0Var = W.w;
+            ai.d9 d9Var = this.s;
+            zs0Var.e(d9Var != null && (d9Var.k() || (pv0Var.i0() && this.s.g() > 0)), true);
         }
-        return new il0(w7Var);
     }
 }

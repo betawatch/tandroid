@@ -1,20 +1,26 @@
 package v7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public abstract class v8 {
-    public static String a(String str, String str2) {
-        int length = str.length() - str2.length();
-        if (length < 0 || length > 1) {
-            throw new IllegalArgumentException("Invalid input received");
+public final class v8 {
+    public final String a;
+
+    public v8(String str) {
+        this.a = str;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        StringBuilder sb2 = new StringBuilder(str2.length() + str.length());
-        for (int i10 = 0; i10 < str.length(); i10++) {
-            sb2.append(str.charAt(i10));
-            if (str2.length() > i10) {
-                sb2.append(str2.charAt(i10));
-            }
-        }
-        return sb2.toString();
+        return (obj instanceof v8) && this.a.equals(((v8) obj).a);
+    }
+
+    public final int hashCode() {
+        return ((((this.a.hashCode() ^ 1000003) * 1000003) ^ 1231) * 1000003) ^ 1;
+    }
+
+    public final String toString() {
+        return a4.a.p("MLKitLoggingOptions{libraryName=", this.a, ", enableFirelog=true, firelogEventType=1}");
     }
 }

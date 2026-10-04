@@ -1,8 +1,9 @@
 package a0;
 
+import hg.k0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i implements Cloneable {
     public /* synthetic */ boolean a;
@@ -170,7 +171,7 @@ public final class i implements Cloneable {
     public final long j(int i10) {
         int i11;
         if (i10 < 0 || i10 >= (i11 = this.d)) {
-            throw new IllegalArgumentException(hg.c.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(k0.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         if (this.a) {
             long[] jArr = this.b;
@@ -307,7 +308,7 @@ public final class i implements Cloneable {
     public final Object n(int i10) {
         int i11;
         if (i10 < 0 || i10 >= (i11 = this.d)) {
-            throw new IllegalArgumentException(hg.c.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(k0.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         if (this.a) {
             long[] jArr = this.b;

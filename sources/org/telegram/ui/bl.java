@@ -10,13 +10,13 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class bl implements org.telegram.ui.Components.rk0 {
-    public final /* synthetic */ wn a;
+    public final /* synthetic */ yn a;
 
-    public bl(wn wnVar) {
-        this.a = wnVar;
+    public bl(yn ynVar) {
+        this.a = ynVar;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:23:0x008b, code lost:
@@ -35,17 +35,17 @@ public final class bl implements org.telegram.ui.Components.rk0 {
         int i11;
         MessageObject messageObject;
         TLRPC.Message message;
-        wn wnVar = this.a;
-        SparseArray[] sparseArrayArr = wnVar.W5;
-        if (wnVar.ab == null) {
+        yn ynVar = this.a;
+        SparseArray[] sparseArrayArr = ynVar.U5;
+        if (ynVar.Ya == null) {
             return;
         }
-        if (wnVar.a() == wnVar.getUserConfig().getClientUserId() && !wnVar.getUserConfig().isPremium()) {
-            new rg.x0((org.telegram.ui.ActionBar.m2) wnVar, 24, true).show();
-            wnVar.z7(false);
+        if (ynVar.a() == ynVar.getUserConfig().getClientUserId() && !ynVar.getUserConfig().isPremium()) {
+            new rg.y0((org.telegram.ui.ActionBar.n2) ynVar, 24, true).show();
+            ynVar.z7(false);
             return;
         }
-        boolean contains = wnVar.ab.getSelectedReactions().contains(o0Var);
+        boolean contains = ynVar.Ya.getSelectedReactions().contains(o0Var);
         HashSet hashSet2 = new HashSet();
         int i12 = 0;
         boolean z13 = false;
@@ -59,10 +59,10 @@ public final class bl implements org.telegram.ui.Components.rk0 {
             while (i15 < sparseArrayArr[i12].size()) {
                 MessageObject messageObject2 = (MessageObject) sparseArrayArr[i12].valueAt(i15);
                 if (messageObject2.hasValidGroupId()) {
-                    MessageObject.GroupedMessages X8 = wnVar.X8(messageObject2);
-                    if (X8 != null && !hashSet2.contains(Long.valueOf(X8.groupId))) {
-                        hashSet2.add(Long.valueOf(X8.groupId));
-                        messageObject2 = X8.findPrimaryMessageObject();
+                    MessageObject.GroupedMessages Y8 = ynVar.Y8(messageObject2);
+                    if (Y8 != null && !hashSet2.contains(Long.valueOf(Y8.groupId))) {
+                        hashSet2.add(Long.valueOf(Y8.groupId));
+                        messageObject2 = Y8.findPrimaryMessageObject();
                     }
                     z12 = contains;
                     hashSet = hashSet2;
@@ -79,7 +79,7 @@ public final class bl implements org.telegram.ui.Components.rk0 {
                     z12 = contains;
                     i10 = i12;
                     i11 = i15;
-                    wnVar.ab(wnVar.q8(messageObject2.getId(), false), messageObject, null, null, 0.0f, 0.0f, o0Var, false, false, false, true);
+                    ynVar.Za(ynVar.q8(messageObject2.getId(), false), messageObject, null, null, 0.0f, 0.0f, o0Var, false, false, false, true);
                     if (!z12) {
                         i14++;
                     }
@@ -91,26 +91,26 @@ public final class bl implements org.telegram.ui.Components.rk0 {
                     messageObject = messageObject2;
                 }
                 if (messageObject.messageOwner != null) {
-                    boolean z17 = wnVar.A0.N;
+                    boolean z17 = ynVar.y0.N;
                     if (z17) {
-                        MessageObject messageObject3 = (MessageObject) wnVar.o6[0].get(messageObject.getId());
+                        MessageObject messageObject3 = (MessageObject) ynVar.m6[0].get(messageObject.getId());
                         if (messageObject3 != null && (message = messageObject3.messageOwner) != null) {
                             message.reactions = messageObject.messageOwner.reactions;
                         }
-                    } else if (!z17 && wnVar.q3 != null) {
+                    } else if (!z17 && ynVar.o3 != null) {
                         z15 = true;
                     }
                 }
-                if (wnVar.A0.N && !messageObject.hasReaction(wnVar.q3)) {
-                    MessageObject.GroupedMessages X82 = wnVar.X8(messageObject);
-                    if (X82 != null) {
-                        for (int i16 = 0; i16 < X82.messages.size(); i16++) {
-                            wnVar.getMediaDataController().removeMessageFromResults(X82.messages.get(i16).getId());
+                if (ynVar.y0.N && !messageObject.hasReaction(ynVar.o3)) {
+                    MessageObject.GroupedMessages Y82 = ynVar.Y8(messageObject);
+                    if (Y82 != null) {
+                        for (int i16 = 0; i16 < Y82.messages.size(); i16++) {
+                            ynVar.getMediaDataController().removeMessageFromResults(Y82.messages.get(i16).getId());
                         }
                     } else {
-                        wnVar.getMediaDataController().removeMessageFromResults(messageObject.getId());
+                        ynVar.getMediaDataController().removeMessageFromResults(messageObject.getId());
                     }
-                    gg.o1 o1Var = wnVar.M3;
+                    gg.o1 o1Var = ynVar.K3;
                     if (o1Var != null) {
                         o1Var.l();
                     }
@@ -128,9 +128,9 @@ public final class bl implements org.telegram.ui.Components.rk0 {
             i13 = i14;
         }
         if (z13) {
-            wnVar.kc(z14);
+            ynVar.jc(z14);
         }
-        wnVar.z7(true);
+        ynVar.z7(true);
         if (i13 > 0) {
             long j3 = o0Var.g;
             if (j3 == 0) {
@@ -146,7 +146,7 @@ public final class bl implements org.telegram.ui.Components.rk0 {
             if (f7 == null) {
                 return;
             }
-            org.telegram.ui.Components.yc.a0(wnVar).y(i13, f7, null).k(true);
+            org.telegram.ui.Components.yc.a0(ynVar).y(i13, f7, null).k(true);
         }
     }
 
@@ -166,10 +166,10 @@ public final class bl implements org.telegram.ui.Components.rk0 {
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ void n() {
+    public final /* synthetic */ void o() {
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ void m(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    public final /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

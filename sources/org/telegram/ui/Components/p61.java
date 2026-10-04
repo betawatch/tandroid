@@ -1,20 +1,41 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Selection;
+import android.text.Spannable;
+import android.text.method.LinkMovementMethod;
+import android.text.style.CharacterStyle;
+import android.view.MotionEvent;
+import android.widget.TextView;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class p61 extends s4.c0 {
-    public final /* synthetic */ t61 I;
+public final class p61 extends LinkMovementMethod {
+    public final /* synthetic */ UndoView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p61(t61 t61Var, int i10) {
-        super(i10, false);
-        this.I = t61Var;
+    public p61(UndoView undoView) {
+        this.a = undoView;
     }
 
-    @Override // s4.c0
-    public final int W0(s4.z0 z0Var) {
-        return this.I.a3 ? AndroidUtilities.displaySize.y : super.W0(z0Var);
+    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
+    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
+        CharacterStyle[] characterStyleArr;
+        try {
+            if (motionEvent.getAction() != 0 || ((characterStyleArr = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class)) != null && characterStyleArr.length != 0)) {
+                if (motionEvent.getAction() != 1) {
+                    return super.onTouchEvent(textView, spannable, motionEvent);
+                }
+                CharacterStyle[] characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class);
+                if (characterStyleArr2 != null && characterStyleArr2.length > 0) {
+                    this.a.b(characterStyleArr2[0]);
+                }
+                Selection.removeSelection(spannable);
+                return true;
+            }
+            return false;
+        } catch (Exception e7) {
+            FileLog.e(e7);
+            return false;
+        }
     }
 }

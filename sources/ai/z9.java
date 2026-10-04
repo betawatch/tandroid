@@ -5,10 +5,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.r20;
+import org.telegram.ui.Components.s20;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class z9 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final class z9 implements Runnable {
         switch (this.a) {
             case 0:
                 Math.abs(Utilities.random.nextInt() % 3);
-                r20[] r20VarArr = ia.a;
+                s20[] s20VarArr = ia.a;
                 NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, 0);
                 AndroidUtilities.runOnUIThread(ia.o, 1000L);
                 LaunchActivity.R().getFragmentView();
@@ -48,12 +48,12 @@ public final class z9 implements Runnable {
             case 2:
                 return;
             case 3:
-                org.telegram.ui.ActionBar.h6.j = false;
-                org.telegram.ui.ActionBar.h6.l(false);
+                org.telegram.ui.ActionBar.i6.j = false;
+                org.telegram.ui.ActionBar.i6.l(false);
                 return;
             case 4:
-                org.telegram.ui.ActionBar.h6.k = false;
-                org.telegram.ui.ActionBar.h6.l(true);
+                org.telegram.ui.ActionBar.i6.k = false;
+                org.telegram.ui.ActionBar.i6.l(true);
                 return;
             case 5:
                 return;

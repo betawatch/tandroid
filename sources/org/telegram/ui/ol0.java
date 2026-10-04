@@ -1,83 +1,195 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ol0 extends FrameLayout {
-    public final int a;
-    public final org.telegram.ui.ActionBar.d6 b;
-    public final FrameLayout c;
-    public final org.telegram.ui.Components.w9 d;
-    public final TextView e;
-    public final TextView f;
-    public final ImageView h;
-    public boolean n;
-    public String r;
+public final class ol0 extends org.telegram.ui.Components.yl0 {
+    public final Context c;
+    public final /* synthetic */ PasscodeActivity d;
 
-    public ol0(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        this.a = i10;
-        this.b = d6Var;
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.c = frameLayout;
-        addView(frameLayout, w7.y5.d(36, 36.0f, 19, 18.5f, 0.0f, 0.0f, 0.0f));
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.d = w9Var;
-        w9Var.setImageResource(R.drawable.msg2_permissions);
-        int i11 = org.telegram.ui.ActionBar.h6.G6;
-        int l1 = org.telegram.ui.ActionBar.h6.l1(0.3f, org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        w9Var.setColorFilter(new PorterDuffColorFilter(l1, mode));
-        frameLayout.addView(w9Var, w7.y5.e(36, 36, 17));
-        TextView b10 = w7.c6.b(context, 15.0f, i11, true, null);
-        this.e = b10;
-        b10.setSingleLine();
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        b10.setEllipsize(truncateAt);
-        addView(b10, w7.y5.d(-1, -2.0f, 55, 72.0f, 8.0f, 46.0f, 0.0f));
-        int i12 = org.telegram.ui.ActionBar.h6.y6;
-        TextView b11 = w7.c6.b(context, 13.0f, i12, false, null);
-        this.f = b11;
-        b11.setSingleLine();
-        b11.setEllipsize(truncateAt);
-        addView(b11, w7.y5.d(-1, -2.0f, 55, 72.0f, 31.0f, 46.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.h = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.ic_ab_other);
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i12, false), mode));
-        imageView.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, d6Var), 1, -1));
-        addView(imageView, w7.y5.d(32, 32.0f, 21, 0.0f, 0.0f, 13.0f, 0.0f));
+    public ol0(PasscodeActivity passcodeActivity, Context context) {
+        this.d = passcodeActivity;
+        this.c = context;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.n) {
-            Paint T0 = org.telegram.ui.ActionBar.h6.T0("paintDivider", this.b);
-            if (T0 == null) {
-                T0 = org.telegram.ui.ActionBar.h6.k0;
+    @Override // org.telegram.ui.Components.yl0
+    public final boolean D(s4.c1 c1Var) {
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int b10 = c1Var.b();
+        PasscodeActivity passcodeActivity = this.d;
+        i10 = passcodeActivity.fingerprintRow;
+        if (b10 == i10) {
+            return true;
+        }
+        i11 = passcodeActivity.autoLockRow;
+        if (b10 == i11 || b10 == passcodeActivity.J) {
+            return true;
+        }
+        i12 = passcodeActivity.changePasscodeRow;
+        if (b10 == i12) {
+            return true;
+        }
+        i13 = passcodeActivity.disablePasscodeRow;
+        return b10 == i13;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.d.L;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        PasscodeActivity passcodeActivity = this.d;
+        i11 = passcodeActivity.fingerprintRow;
+        if (i10 == i11 || i10 == passcodeActivity.J) {
+            return 0;
+        }
+        i12 = passcodeActivity.changePasscodeRow;
+        if (i10 == i12) {
+            return 1;
+        }
+        i13 = passcodeActivity.autoLockRow;
+        if (i10 == i13) {
+            return 1;
+        }
+        i14 = passcodeActivity.disablePasscodeRow;
+        if (i10 == i14) {
+            return 1;
+        }
+        if (i10 == passcodeActivity.H || i10 == passcodeActivity.K || i10 == passcodeActivity.G) {
+            return 2;
+        }
+        if (i10 == passcodeActivity.I) {
+            return 3;
+        }
+        return i10 == 0 ? 4 : 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15 = c1Var.f;
+        View view = c1Var.a;
+        PasscodeActivity passcodeActivity = this.d;
+        if (i15 == 0) {
+            org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) view;
+            i11 = passcodeActivity.fingerprintRow;
+            if (i10 == i11) {
+                w8Var.f(LocaleController.getString(R.string.UnlockFingerprint), SharedConfig.useFingerprintLock, false);
+                return;
+            } else {
+                if (i10 == passcodeActivity.J) {
+                    w8Var.f(LocaleController.getString(R.string.ScreenCaptureShowContent), SharedConfig.allowScreenCapture, false);
+                    return;
+                }
+                return;
             }
-            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 72.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 72.0f : 0.0f), getMeasuredHeight(), T0);
+        }
+        if (i15 != 1) {
+            if (i15 != 2) {
+                if (i15 != 3) {
+                    if (i15 != 4) {
+                        return;
+                    }
+                    pl0 pl0Var = (pl0) view;
+                    pl0Var.a.f(R.raw.utyan_passcode, 100, 100, null);
+                    pl0Var.a.d();
+                    return;
+                }
+                org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
+                m4Var.setHeight(46);
+                if (i10 == passcodeActivity.I) {
+                    m4Var.setText(LocaleController.getString(R.string.ScreenCaptureHeader));
+                    return;
+                }
+                return;
+            }
+            org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
+            if (i10 == passcodeActivity.G) {
+                e9Var.setText(LocaleController.getString(R.string.PasscodeScreenHint));
+                e9Var.setBackground(null);
+                e9Var.getTextView().setGravity(1);
+                return;
+            } else if (i10 == passcodeActivity.H) {
+                e9Var.setText(LocaleController.getString(R.string.AutoLockInfo));
+                e9Var.getTextView().setGravity(LocaleController.isRTL ? 5 : 3);
+                return;
+            } else {
+                if (i10 == passcodeActivity.K) {
+                    e9Var.setText(LocaleController.getString(R.string.ScreenCaptureInfo));
+                    e9Var.getTextView().setGravity(LocaleController.isRTL ? 5 : 3);
+                    return;
+                }
+                return;
+            }
+        }
+        org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) view;
+        i12 = passcodeActivity.changePasscodeRow;
+        if (i10 == i12) {
+            eaVar.b(LocaleController.getString(R.string.ChangePasscode), true);
+            if (SharedConfig.passcodeHash.isEmpty()) {
+                int i16 = org.telegram.ui.ActionBar.i6.E6;
+                eaVar.setTag(Integer.valueOf(i16));
+                eaVar.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i16, false));
+                return;
+            } else {
+                int i17 = org.telegram.ui.ActionBar.i6.G6;
+                eaVar.setTag(Integer.valueOf(i17));
+                eaVar.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i17, false));
+                return;
+            }
+        }
+        i13 = passcodeActivity.autoLockRow;
+        if (i10 == i13) {
+            int i18 = SharedConfig.autoLockIn;
+            eaVar.c(LocaleController.getString(R.string.AutoLock), i18 == 0 ? LocaleController.formatString("AutoLockDisabled", R.string.AutoLockDisabled, new Object[0]) : i18 < 3600 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", i18 / 60, new Object[0])) : i18 < 86400 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", (int) Math.ceil((i18 / 60.0f) / 60.0f), new Object[0])) : LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Days", (int) Math.ceil(((i18 / 60.0f) / 60.0f) / 24.0f), new Object[0])), false, true);
+            int i19 = org.telegram.ui.ActionBar.i6.G6;
+            eaVar.setTag(Integer.valueOf(i19));
+            eaVar.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i19, false));
+            return;
+        }
+        i14 = passcodeActivity.disablePasscodeRow;
+        if (i10 == i14) {
+            eaVar.b(LocaleController.getString(R.string.DisablePasscode), false);
+            int i20 = org.telegram.ui.ActionBar.i6.q7;
+            eaVar.setTag(Integer.valueOf(i20));
+            eaVar.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i20, false));
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View w8Var;
+        Context context = this.c;
+        if (i10 == 0) {
+            w8Var = new org.telegram.ui.Cells.w8(context);
+        } else if (i10 == 1) {
+            w8Var = new org.telegram.ui.Cells.ea(context);
+        } else if (i10 == 3) {
+            w8Var = new org.telegram.ui.Cells.m4(context);
+        } else if (i10 != 4) {
+            w8Var = new org.telegram.ui.Cells.e9(context);
+        } else {
+            w8Var = new pl0(context);
+            w8Var.setTag(-33024);
+        }
+        return new org.telegram.ui.Components.il0(w8Var);
     }
 }

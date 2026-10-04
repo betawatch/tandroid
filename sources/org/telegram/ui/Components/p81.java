@@ -1,33 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.os.AsyncTask;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public abstract class p81 {
-    public abstract void b(View view, int i10, int i11);
+public final class p81 extends AsyncTask {
+    public int a = 0;
+    public final /* synthetic */ s81 b;
 
-    public boolean c(int i10) {
-        return false;
+    public p81(s81 s81Var) {
+        this.b = s81Var;
     }
 
-    public abstract View d(int i10);
-
-    public abstract int e();
-
-    public CharSequence g(int i10) {
-        return "";
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
+        Bitmap frameAtTime;
+        s81 s81Var = this.b;
+        this.a = ((Integer[]) objArr)[0].intValue();
+        Bitmap bitmap = null;
+        if (!isCancelled()) {
+            try {
+                frameAtTime = s81Var.r.getFrameAtTime(s81Var.x * this.a * 1000, 2);
+            } catch (Exception e7) {
+                e = e7;
+            }
+            try {
+                if (!isCancelled()) {
+                    if (frameAtTime == null) {
+                        return frameAtTime;
+                    }
+                    Bitmap createBitmap = Bitmap.createBitmap(s81Var.y, s81Var.E, frameAtTime.getConfig());
+                    Canvas canvas = new Canvas(createBitmap);
+                    float max = Math.max(s81Var.y / frameAtTime.getWidth(), s81Var.E / frameAtTime.getHeight());
+                    int width = (int) (frameAtTime.getWidth() * max);
+                    int height = (int) (frameAtTime.getHeight() * max);
+                    canvas.drawBitmap(frameAtTime, new Rect(0, 0, frameAtTime.getWidth(), frameAtTime.getHeight()), new Rect((s81Var.y - width) / 2, (s81Var.E - height) / 2, width, height), (Paint) null);
+                    frameAtTime.recycle();
+                    return createBitmap;
+                }
+            } catch (Exception e10) {
+                e = e10;
+                bitmap = frameAtTime;
+                FileLog.e(e);
+                return bitmap;
+            }
+        }
+        return null;
     }
 
-    public int h(int i10) {
-        return 0;
-    }
-
-    public void a(ArrayList arrayList) {
-    }
-
-    public int f(int i10) {
-        return i10;
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        Bitmap bitmap = (Bitmap) obj;
+        if (isCancelled()) {
+            return;
+        }
+        s81 s81Var = this.b;
+        s81Var.v.add(bitmap);
+        s81Var.invalidate();
+        int i10 = this.a;
+        if (i10 < s81Var.F) {
+            s81Var.b(i10 + 1);
+        } else {
+            s81Var.O = true;
+        }
     }
 }

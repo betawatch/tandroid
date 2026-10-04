@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class h {
     public int a;
@@ -184,7 +184,7 @@ public final class h {
         int i12 = i11 + i10;
         int i13 = this.e;
         if (i12 <= i13) {
-            throw new IllegalStateException(hg.c.i(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
+            throw new IllegalStateException(hg.k0.i(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
         }
         int i14 = this.i;
         if (i10 <= (ConnectionsManager.DEFAULT_DATACENTER_ID - i14) - i11 && i14 + i11 + i10 <= this.j) {

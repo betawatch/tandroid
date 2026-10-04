@@ -3,17 +3,17 @@ package org.telegram.ui;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u implements ev0, org.telegram.ui.Components.ol0, org.telegram.ui.ActionBar.k1 {
+public final /* synthetic */ class u implements hv0, org.telegram.ui.Components.ol0, org.telegram.ui.ActionBar.l1 {
     public final /* synthetic */ i4 a;
 
     public /* synthetic */ u(i4 i4Var) {
         this.a = i4Var;
     }
 
-    @Override // org.telegram.ui.ev0
-    public void b(float[] fArr) {
+    @Override // org.telegram.ui.hv0
+    public void a(float[] fArr) {
         i4 i4Var = this.a;
         fArr[0] = i4Var.I0;
         fArr[1] = i4Var.u0[0].b.getMeasuredHeight();
@@ -31,12 +31,12 @@ public final /* synthetic */ class u implements ev0, org.telegram.ui.Components.
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.k1
-    public void p(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.m1 m1Var;
+    @Override // org.telegram.ui.ActionBar.l1
+    public void o(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.n1 n1Var;
         i4 i4Var = this.a;
         i4Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m1Var = i4Var.H) != null && m1Var.isShowing()) {
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var = i4Var.H) != null && n1Var.isShowing()) {
             i4Var.H.d(true);
         }
     }

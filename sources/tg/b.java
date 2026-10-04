@@ -11,9 +11,9 @@ import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class b extends View {
     public final o6 a;
@@ -27,7 +27,7 @@ public final class b extends View {
         this.b = 1.0f;
         o6 o6Var = new o6(false, false, true, false);
         this.a = o6Var;
-        o6Var.k(0.3f, 250L, sr.h);
+        o6Var.k(0.3f, 250L, tr.h);
         o6Var.setCallback(this);
         o6Var.t(AndroidUtilities.dp(11.5f));
         o6Var.u(AndroidUtilities.bold());

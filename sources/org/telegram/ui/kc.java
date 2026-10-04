@@ -1,111 +1,42 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class kc extends View {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Canvas b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ Paint f;
-    public final /* synthetic */ Bitmap h;
-    public final /* synthetic */ Paint n;
-    public final /* synthetic */ float r;
-    public final /* synthetic */ float s;
-    public final /* synthetic */ org.telegram.ui.ActionBar.m2 v;
+public final class kc extends c71 {
+    public final /* synthetic */ fc d2;
+    public final /* synthetic */ t61[] e2;
+    public final /* synthetic */ cd f2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ kc(org.telegram.ui.ActionBar.m2 m2Var, Activity activity, Canvas canvas, float f7, float f10, float f11, Paint paint, Bitmap bitmap, Paint paint2, float f12, float f13, int i10) {
-        super(activity);
-        this.a = i10;
-        this.v = m2Var;
-        this.b = canvas;
-        this.c = f7;
-        this.d = f10;
-        this.e = f11;
-        this.f = paint;
-        this.h = bitmap;
-        this.n = paint2;
-        this.r = f12;
-        this.s = f13;
+    public kc(cd cdVar, cd cdVar2, Activity activity, Integer num, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11, int i12, fc fcVar, t61[] t61VarArr) {
+        super(cdVar2, activity, true, num, i10, true, d6Var, i11, i12);
+        this.f2 = cdVar;
+        this.d2 = fcVar;
+        this.e2 = t61VarArr;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                super.onDraw(canvas);
-                ad adVar = (ad) this.v;
-                boolean z10 = adVar.J;
-                Paint paint = this.n;
-                float f7 = this.e;
-                float f10 = this.d;
-                float f11 = this.c;
-                if (z10) {
-                    float f12 = adVar.n0;
-                    if (f12 > 0.0f) {
-                        this.b.drawCircle(f11, f10, f7 * f12, this.f);
-                    }
-                    canvas.drawBitmap(this.h, 0.0f, 0.0f, paint);
-                } else {
-                    canvas.drawCircle(f11, f10, (1.0f - adVar.n0) * f7, paint);
-                }
-                canvas.save();
-                canvas.translate(this.r, this.s);
-                adVar.L.draw(canvas);
-                canvas.restore();
-                break;
-            case 1:
-                super.onDraw(canvas);
-                tp0 tp0Var = (tp0) this.v;
-                boolean z11 = tp0Var.S;
-                Paint paint2 = this.n;
-                float f13 = this.e;
-                float f14 = this.d;
-                float f15 = this.c;
-                if (z11) {
-                    float f16 = tp0Var.Y;
-                    if (f16 > 0.0f) {
-                        this.b.drawCircle(f15, f14, f13 * f16, this.f);
-                    }
-                    canvas.drawBitmap(this.h, 0.0f, 0.0f, paint2);
-                } else {
-                    canvas.drawCircle(f15, f14, (1.0f - tp0Var.Y) * f13, paint2);
-                }
-                canvas.save();
-                canvas.translate(this.r, this.s);
-                tp0Var.K.draw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.onDraw(canvas);
-                od1 od1Var = (od1) this.v;
-                boolean a2 = od1Var.a.a();
-                Paint paint3 = this.n;
-                float f17 = this.e;
-                float f18 = this.d;
-                float f19 = this.c;
-                if (a2) {
-                    float f20 = od1Var.i2;
-                    if (f20 > 0.0f) {
-                        this.b.drawCircle(f19, f18, f17 * f20, this.f);
-                    }
-                    canvas.drawBitmap(this.h, 0.0f, 0.0f, paint3);
-                } else {
-                    canvas.drawCircle(f19, f18, (1.0f - od1Var.i2) * f17, paint3);
-                }
-                canvas.save();
-                canvas.translate(this.r, this.s);
-                od1Var.O1.draw(canvas);
-                canvas.restore();
-                break;
+    @Override // org.telegram.ui.c71
+    public final long getDialogId() {
+        return this.f2.a;
+    }
+
+    @Override // org.telegram.ui.c71
+    public final float getScrimDrawableTranslationY() {
+        return 0.0f;
+    }
+
+    @Override // org.telegram.ui.c71
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        this.d2.run(Long.valueOf(l4 == null ? 0L : l4.longValue()), num, tL_starGiftUnique);
+        t61 t61Var = this.e2[0];
+        if (t61Var != null) {
+            this.f2.Q = null;
+            t61Var.dismiss();
         }
     }
 }

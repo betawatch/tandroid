@@ -1,49 +1,24 @@
 package za;
 
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.os.Build;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class d0 {
-    public static final d0 a = new d0();
-    public static final ka.c b;
+public final class d0 extends kd.c {
+    public /* synthetic */ Object a;
+    public final /* synthetic */ g0 b;
+    public int c;
 
-    static {
-        ka.e eVar = new ka.e();
-        eVar.a(c0.class, g.a);
-        eVar.a(l0.class, h.a);
-        eVar.a(j.class, e.a);
-        eVar.a(b.class, d.a);
-        eVar.a(a.class, c.a);
-        eVar.a(r.class, f.a);
-        eVar.d = true;
-        b = new ka.c(eVar, 0);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d0(g0 g0Var, kd.c cVar) {
+        super(cVar);
+        this.b = g0Var;
     }
 
-    public static b a(k9.h hVar) {
-        hVar.a();
-        Context context = hVar.a;
-        kotlin.jvm.internal.i.d(context, "firebaseApp.applicationContext");
-        String packageName = context.getPackageName();
-        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 0);
-        String valueOf = Build.VERSION.SDK_INT >= 28 ? String.valueOf(packageInfo.getLongVersionCode()) : String.valueOf(packageInfo.versionCode);
-        hVar.a();
-        String str = hVar.c.b;
-        kotlin.jvm.internal.i.d(str, "firebaseApp.options.applicationId");
-        String MODEL = Build.MODEL;
-        kotlin.jvm.internal.i.d(MODEL, "MODEL");
-        String RELEASE = Build.VERSION.RELEASE;
-        kotlin.jvm.internal.i.d(RELEASE, "RELEASE");
-        kotlin.jvm.internal.i.d(packageName, "packageName");
-        String str2 = packageInfo.versionName;
-        String str3 = str2 == null ? valueOf : str2;
-        String MANUFACTURER = Build.MANUFACTURER;
-        kotlin.jvm.internal.i.d(MANUFACTURER, "MANUFACTURER");
-        hVar.a();
-        r b10 = s.b(context);
-        hVar.a();
-        return new b(str, new a(packageName, str3, valueOf, b10, s.a(context)));
+    @Override // kd.a
+    public final Object invokeSuspend(Object obj) {
+        this.a = obj;
+        this.c |= TLObject.FLAG_31;
+        return g0.a(this.b, this);
     }
 }

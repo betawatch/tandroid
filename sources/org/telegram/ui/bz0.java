@@ -1,24 +1,33 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class bz0 extends org.telegram.ui.Components.wq0 {
-    public final /* synthetic */ cz0 b1;
+public final /* synthetic */ class bz0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ez0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bz0(cz0 cz0Var, Activity activity, String str) {
-        super(activity, null, str, false, null, false, null);
-        this.b1 = cz0Var;
+    public /* synthetic */ bz0(ez0 ez0Var, int i10) {
+        this.a = i10;
+        this.b = ez0Var;
     }
 
-    @Override // org.telegram.ui.Components.wq0
-    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new ix0(this, iVar, i10, 13), 250L);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                ez0 ez0Var = this.b;
+                ez0Var.c.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new bz0(ez0Var, 1));
+                break;
+            default:
+                this.b.c.getMessagesController().loadAppConfig();
+                break;
         }
     }
 }

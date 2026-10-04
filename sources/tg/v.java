@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -33,8 +33,8 @@ public final /* synthetic */ class v implements Utilities.Callback {
             case 2:
                 a0 a0Var3 = this.b;
                 a0Var3.n0 = a0Var3.Y.indexOf(Integer.valueOf(((TLRPC.TL_premiumGiftCodeOption) obj).users));
-                a0Var3.a0(true, true);
-                a0Var3.Z(true);
+                a0Var3.Z(true, true);
+                a0Var3.Y(true);
                 break;
             case 3:
                 a0 a0Var4 = this.b;
@@ -51,7 +51,7 @@ public final /* synthetic */ class v implements Utilities.Callback {
                 ArrayList arrayList = a0Var6.f0;
                 arrayList.clear();
                 arrayList.addAll((List) obj);
-                a0Var6.a0(true, true);
+                a0Var6.Z(true, true);
                 break;
             default:
                 a0 a0Var7 = this.b;

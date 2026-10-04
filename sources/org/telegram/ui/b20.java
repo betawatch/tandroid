@@ -1,41 +1,55 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
+import android.text.TextUtils;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class b20 extends FrameLayout {
-    public org.telegram.ui.ActionBar.h5 a;
-    public ImageView b;
+public final class b20 extends og.a {
+    public CharSequence c;
+    public MessagesController.DialogFilter d;
+    public TLRPC.TL_dialogFilterSuggested e;
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int dp;
-        ImageView imageView = this.b;
-        int i14 = i12 - i10;
-        org.telegram.ui.ActionBar.h5 h5Var = this.a;
-        int textHeight = ((i13 - i11) - h5Var.getTextHeight()) / 2;
-        if (LocaleController.isRTL) {
-            dp = (getMeasuredWidth() - h5Var.getMeasuredWidth()) - AndroidUtilities.dp(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
-        } else {
-            dp = AndroidUtilities.dp(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        h5Var.layout(dp, textHeight, h5Var.getMeasuredWidth() + dp, h5Var.getMeasuredHeight() + textHeight);
-        int dp2 = !LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : (i14 - imageView.getMeasuredWidth()) - AndroidUtilities.dp(20.0f);
-        imageView.layout(dp2, 0, imageView.getMeasuredWidth() + dp2, imageView.getMeasuredHeight());
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        AndroidUtilities.dp(48.0f);
-        this.a.measure(org.telegram.messenger.ok.c(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
-        this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
-        setMeasuredDimension(size, AndroidUtilities.dp(50.0f));
+        if (!(obj instanceof b20)) {
+            return false;
+        }
+        b20 b20Var = (b20) obj;
+        int i10 = b20Var.a;
+        int i11 = this.a;
+        if (i10 != i11) {
+            return false;
+        }
+        if ((i11 == 0 || i11 == 4 || i11 == 3 || i11 == 6) && !TextUtils.equals(this.c, b20Var.c)) {
+            return false;
+        }
+        int i12 = this.a;
+        if (i12 == 2) {
+            MessagesController.DialogFilter dialogFilter = this.d;
+            boolean z10 = dialogFilter == null;
+            MessagesController.DialogFilter dialogFilter2 = b20Var.d;
+            if (z10 != (dialogFilter2 == null)) {
+                return false;
+            }
+            if (dialogFilter != null && dialogFilter.id != dialogFilter2.id) {
+                return false;
+            }
+        }
+        if (i12 == 5) {
+            TLRPC.TL_dialogFilterSuggested tL_dialogFilterSuggested = this.e;
+            boolean z11 = tL_dialogFilterSuggested == null;
+            TLRPC.TL_dialogFilterSuggested tL_dialogFilterSuggested2 = b20Var.e;
+            if (z11 != (tL_dialogFilterSuggested2 == null)) {
+                return false;
+            }
+            if (tL_dialogFilterSuggested != null && tL_dialogFilterSuggested.filter.id != tL_dialogFilterSuggested2.filter.id) {
+                return false;
+            }
+        }
+        return true;
     }
 }

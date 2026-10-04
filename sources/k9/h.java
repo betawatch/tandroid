@@ -20,7 +20,7 @@ import n4.y;
 import n6.l;
 import q9.n;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object k = new Object();
@@ -50,13 +50,13 @@ public final class h {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList q6 = new o0.a(12, context, new n2.e(ComponentDiscoveryService.class, 14)).q();
+        ArrayList C = new o0.a(12, context, new k2.e(ComponentDiscoveryService.class, 14)).C();
         Trace.endSection();
         Trace.beginSection("Runtime");
         r9.j jVar2 = r9.j.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        arrayList.addAll(q6);
+        arrayList.addAll(C);
         int i10 = 1;
         arrayList.add(new q9.c(new FirebaseCommonRegistrar(), i10));
         arrayList.add(new q9.c(new ExecutorsRegistrar(), i10));
@@ -71,7 +71,7 @@ public final class h {
         this.d = gVar;
         Trace.endSection();
         this.g = new n(new d(0, this, context));
-        this.h = gVar.c(na.c.class);
+        this.h = gVar.d(na.c.class);
         e eVar = new e(this);
         a();
         if (atomicBoolean.get()) {
@@ -179,7 +179,7 @@ public final class h {
             sb2.append(str);
             Log.i("FirebaseApp", sb2.toString());
             a();
-            this.d.g("[DEFAULT]".equals(str));
+            this.d.h("[DEFAULT]".equals(str));
             ((na.c) this.h.get()).c();
             return;
         }
@@ -224,8 +224,8 @@ public final class h {
 
     public final String toString() {
         y yVar = new y(this);
-        yVar.k(this.b, "name");
-        yVar.k(this.c, "options");
+        yVar.m(this.b, "name");
+        yVar.m(this.c, "options");
         return yVar.toString();
     }
 }

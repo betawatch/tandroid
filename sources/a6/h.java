@@ -9,7 +9,7 @@ import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final a5.a a = new a5.a("GoogleSignInCommon", new String[0]);
@@ -27,7 +27,7 @@ public abstract class h {
     }
 
     public static void b(Context context) {
-        i.T(context).U();
+        i.R(context).S();
         Set set = com.google.android.gms.common.api.m.a;
         synchronized (set) {
         }

@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
-import v7.q8;
+import v7.p8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class y0 extends a0 implements org.telegram.ui.ActionBar.x5, p9 {
+public final class y0 extends a0 implements org.telegram.ui.ActionBar.y5, p9 {
     public final org.telegram.ui.ActionBar.d6 n;
     public final Paint r;
     public final Paint s;
@@ -30,12 +30,12 @@ public final class y0 extends a0 implements org.telegram.ui.ActionBar.x5, p9 {
         e();
     }
 
-    @Override // org.telegram.ui.ActionBar.x5
+    @Override // org.telegram.ui.ActionBar.y5
     public final void e() {
-        int i10 = org.telegram.ui.ActionBar.h6.vk;
+        int i10 = org.telegram.ui.ActionBar.i6.vk;
         org.telegram.ui.ActionBar.d6 d6Var = this.n;
-        this.r.setColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
-        this.s.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.uf, d6Var));
+        this.r.setColor(org.telegram.ui.ActionBar.i6.v0(i10, d6Var));
+        this.s.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.uf, d6Var));
     }
 
     @Override // ii.a0
@@ -47,7 +47,7 @@ public final class y0 extends a0 implements org.telegram.ui.ActionBar.x5, p9 {
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         int i10 = this.w ? 0 : this.c;
         int h = (h() - i10) / 4;
-        arrayList.add(q8.a((i10 + h) - AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f) + (h() - h), AndroidUtilities.dp(12.0f)));
+        arrayList.add(p8.a((i10 + h) - AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f) + (h() - h), AndroidUtilities.dp(12.0f)));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {

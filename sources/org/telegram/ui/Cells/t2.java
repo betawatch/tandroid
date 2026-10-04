@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class t2 extends a0 {
     public boolean E;
@@ -51,7 +51,7 @@ public final class t2 extends a0 {
         Canvas canvas2;
         if (this.G) {
             canvas2 = canvas;
-            canvas2.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.h6.u0);
+            canvas2.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.i6.u0);
         } else {
             canvas2 = canvas;
         }
@@ -66,16 +66,16 @@ public final class t2 extends a0 {
             canvas2.translate(this.x, this.w);
             try {
                 this.y.draw(canvas2);
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
             canvas2.restore();
         }
         if (this.E) {
-            a0.o(this.v, AndroidUtilities.dp(16.5f), org.telegram.ui.ActionBar.h6.f1);
-            a0.o(this.v, AndroidUtilities.dp(16.5f), org.telegram.ui.ActionBar.h6.i1);
-            org.telegram.ui.ActionBar.h6.f1.draw(canvas2);
-            org.telegram.ui.ActionBar.h6.i1.draw(canvas2);
+            a0.o(this.v, AndroidUtilities.dp(16.5f), org.telegram.ui.ActionBar.i6.f1);
+            a0.o(this.v, AndroidUtilities.dp(16.5f), org.telegram.ui.ActionBar.i6.i1);
+            org.telegram.ui.ActionBar.i6.f1.draw(canvas2);
+            org.telegram.ui.ActionBar.i6.i1.draw(canvas2);
         }
         this.h.draw(canvas2);
     }
@@ -102,8 +102,8 @@ public final class t2 extends a0 {
             int i16 = this.H;
             ImageReceiver imageReceiver = this.h;
             org.telegram.ui.Components.h9 h9Var = this.n;
-            TextPaint textPaint2 = org.telegram.ui.ActionBar.h6.B0[0];
-            TextPaint textPaint3 = org.telegram.ui.ActionBar.h6.F0[0];
+            TextPaint textPaint2 = org.telegram.ui.ActionBar.i6.B0[0];
+            TextPaint textPaint3 = org.telegram.ui.ActionBar.i6.F0[0];
             this.E = false;
             TLRPC.RecentMeUrl recentMeUrl = this.f;
             if (recentMeUrl instanceof TLRPC.TL_recentMeUrlChat) {
@@ -209,7 +209,7 @@ public final class t2 extends a0 {
             }
             int i17 = measuredWidth - dp;
             if (this.E) {
-                int intrinsicWidth = org.telegram.ui.ActionBar.h6.f1.getIntrinsicWidth() + AndroidUtilities.dp(6.0f);
+                int intrinsicWidth = org.telegram.ui.ActionBar.i6.f1.getIntrinsicWidth() + AndroidUtilities.dp(6.0f);
                 i17 -= intrinsicWidth;
                 if (LocaleController.isRTL) {
                     this.r += intrinsicWidth;
@@ -221,19 +221,19 @@ public final class t2 extends a0 {
                 textPaint = textPaint3;
                 try {
                     i14 = max2;
-                } catch (Exception e) {
-                    e = e;
+                } catch (Exception e7) {
+                    e = e7;
                     i14 = max2;
                 }
-            } catch (Exception e7) {
-                e = e7;
+            } catch (Exception e10) {
+                e = e10;
                 i14 = max2;
                 textPaint = textPaint3;
             }
             try {
                 this.s = new StaticLayout(ellipsize, textPaint2, max2, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            } catch (Exception e10) {
-                e = e10;
+            } catch (Exception e11) {
+                e = e11;
                 FileLog.e(e);
                 int measuredWidth3 = getMeasuredWidth() - AndroidUtilities.dp(AndroidUtilities.leftBaseline + 16);
                 if (LocaleController.isRTL) {
@@ -257,14 +257,14 @@ public final class t2 extends a0 {
             max = Math.max(AndroidUtilities.dp(12.0f), measuredWidth32);
             try {
                 i15 = max;
-            } catch (Exception e11) {
-                e = e11;
+            } catch (Exception e12) {
+                e = e12;
                 i15 = max;
             }
             try {
                 this.y = new StaticLayout(TextUtils.ellipsize(str5, textPaint, max - AndroidUtilities.dp(12.0f), TextUtils.TruncateAt.END), textPaint, max, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            } catch (Exception e12) {
-                e = e12;
+            } catch (Exception e13) {
+                e = e13;
                 FileLog.e(e);
                 if (LocaleController.isRTL) {
                 }
@@ -275,7 +275,7 @@ public final class t2 extends a0 {
                     float lineLeft = this.s.getLineLeft(0);
                     double ceil = Math.ceil(this.s.getLineWidth(0));
                     if (this.E) {
-                        this.v = (int) ((((i14 - ceil) + this.r) - AndroidUtilities.dp(6.0f)) - org.telegram.ui.ActionBar.h6.f1.getIntrinsicWidth());
+                        this.v = (int) ((((i14 - ceil) + this.r) - AndroidUtilities.dp(6.0f)) - org.telegram.ui.ActionBar.i6.f1.getIntrinsicWidth());
                     }
                     if (lineLeft == 0.0f) {
                         double d = i14;

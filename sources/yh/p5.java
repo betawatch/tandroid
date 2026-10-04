@@ -3,9 +3,9 @@ package yh;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.rc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p5 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class p5 implements Runnable {
                 s5Var.a();
                 break;
             default:
-                qc qcVar = s5Var.d;
+                rc rcVar = s5Var.d;
                 t5 t5Var = s5Var.q;
                 p5 p5Var = s5Var.p;
                 MessageObject messageObject = s5Var.b;
@@ -47,8 +47,8 @@ public final /* synthetic */ class p5 implements Runnable {
                     s5Var.f.b = 5000L;
                     AndroidUtilities.cancelRunOnUIThread(p5Var);
                     AndroidUtilities.runOnUIThread(p5Var, 5000L);
-                    qcVar.k(true);
-                    qcVar.v = p5Var;
+                    rcVar.k(true);
+                    rcVar.v = p5Var;
                 }
                 s5Var.e.b.setText(s5Var.d());
                 break;

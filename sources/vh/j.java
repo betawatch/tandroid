@@ -6,7 +6,7 @@ import android.view.View;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class j extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ View a;
@@ -57,7 +57,7 @@ public final class j extends GestureDetector.SimpleOnGestureListener {
             int i11 = paddingTop - lVar.d;
             for (g gVar : this.b) {
                 if (gVar.getBounds().contains(i10, i11)) {
-                    this.c.l(gVar, i10, i11);
+                    this.c.b(gVar, i10, i11);
                     return true;
                 }
             }

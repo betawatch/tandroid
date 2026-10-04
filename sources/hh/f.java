@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import w7.y5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public final jh.f a;
@@ -15,7 +15,7 @@ public final class f extends FrameLayout {
         super(context);
         jh.f fVar = new jh.f(context);
         this.a = fVar;
-        addView(fVar, y5.g());
+        addView(fVar, z5.g());
     }
 
     public final void a(ah.c cVar, dh.e eVar) {

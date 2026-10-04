@@ -14,7 +14,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class l2 extends FrameLayout {
     public final w9 a;
@@ -29,21 +29,21 @@ public final class l2 extends FrameLayout {
         w9 w9Var = new w9(context);
         this.a = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(13.0f));
-        addView(w9Var, w7.y5.d(26, 26.0f, 49, 0.0f, 11.33f, 0.0f, 0.0f));
+        addView(w9Var, w7.z5.d(26, 26.0f, 49, 0.0f, 11.33f, 0.0f, 0.0f));
         s2 s2Var = new s2(context);
         this.b = s2Var;
         s2Var.e = AndroidUtilities.dp(18.0f);
         s2Var.a.setStrokeWidth(AndroidUtilities.dp(3.0f));
-        addView(s2Var, w7.y5.d(48, 48.0f, 49, 0.0f, 0.66f, 0.0f, 0.0f));
+        addView(s2Var, w7.z5.d(48, 48.0f, 49, 0.0f, 0.66f, 0.0f, 0.0f));
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, false, false, false);
         this.c = p6Var;
         p6Var.setTypeface(AndroidUtilities.bold());
         p6Var.setGravity(17);
         p6Var.setTextSize(AndroidUtilities.dp(12.0f));
         p6Var.setTextColor(-1);
-        addView(p6Var, w7.y5.d(-1, 14.0f, 48, 0.0f, 39.0f, 0.0f, 0.0f));
+        addView(p6Var, w7.z5.d(-1, 14.0f, 48, 0.0f, 39.0f, 0.0f, 0.0f));
         c(0.0f, false);
-        w7.a6.a(this);
+        w7.b6.a(this);
     }
 
     public final void a(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {
@@ -54,7 +54,7 @@ public final class l2 extends FrameLayout {
         w9Var.setScaleY(1.0f);
         if (stargiftattributebackdrop == null) {
             w9Var.setAlpha(1.0f);
-            w9Var.setImageDrawable(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(26.0f), org.telegram.ui.ActionBar.h6.l1(0.25f, -1)));
+            w9Var.setImageDrawable(org.telegram.ui.ActionBar.i6.K(AndroidUtilities.dp(26.0f), org.telegram.ui.ActionBar.i6.l1(0.25f, -1)));
             return;
         }
         w9Var.setAlpha(1.0f);

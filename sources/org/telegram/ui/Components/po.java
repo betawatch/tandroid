@@ -1,76 +1,53 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class po extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
-    public final /* synthetic */ int T;
-    public Object U;
+public final /* synthetic */ class po implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ po(Context context, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var, int i12) {
-        super(i10, i11, context, d6Var);
-        this.T = i12;
+    public /* synthetic */ po(Object obj, Context context, Object obj2, int i10, Object obj3, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.b = context;
+        this.e = obj2;
+        this.c = i10;
+        this.f = obj3;
     }
 
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        switch (this.T) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                canvas.save();
-                Path path = (Path) this.U;
-                path.rewind();
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
-                path.addRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
-                canvas.clipPath(path);
-                boolean drawChild = super.drawChild(canvas, view, j3);
-                canvas.restore();
-                return drawChild;
-            case 1:
-                canvas.save();
-                Path path2 = (Path) this.U;
-                path2.rewind();
-                RectF rectF2 = AndroidUtilities.rectTmp;
-                rectF2.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
-                path2.addRoundRect(rectF2, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
-                canvas.clipPath(path2);
-                boolean drawChild2 = super.drawChild(canvas, view, j3);
-                canvas.restore();
-                return drawChild2;
+                so soVar = (so) this.d;
+                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.e;
+                ro roVar = (ro) this.f;
+                soVar.a();
+                e5.G(this.b, d6Var, new i2.s(this.c, roVar, 7));
+                break;
             default:
-                return super.drawChild(canvas, view, j3);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        int i12;
-        switch (this.T) {
-            case 2:
-                a80 a80Var = (a80) this.U;
-                if (this == a80Var.A && (i12 = a80Var.X) > 0) {
-                    i11 = View.MeasureSpec.makeMeasureSpec(Math.min(i12, View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11));
+                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.d;
+                qp qpVar = (qp) this.e;
+                TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug = (TLRPC.TL_inputGroupCallSlug) this.f;
+                f3Var.dismiss();
+                Activity findActivity = AndroidUtilities.findActivity(this.b);
+                if (findActivity != null) {
+                    MessagesController.getGlobalMainSettings().edit().putBoolean("callmiconstart", qpVar.a.q).apply();
+                    org.telegram.ui.Components.voip.g2.g(findActivity, this.c, tL_inputGroupCallSlug, false, null, null);
+                    break;
                 }
-                super.onMeasure(i10, i11);
-                break;
-            default:
-                super.onMeasure(i10, i11);
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public po(a80 a80Var, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
-        super(i10, i11, context, d6Var);
-        this.T = 2;
-        this.U = a80Var;
     }
 }

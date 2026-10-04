@@ -3,7 +3,6 @@ package u3;
 import a4.h;
 import android.util.Pair;
 import android.util.SparseArray;
-import b2.i;
 import b2.j;
 import b2.n;
 import b2.r;
@@ -11,7 +10,6 @@ import b2.r0;
 import b2.s0;
 import c3.h0;
 import c3.i0;
-import c3.l;
 import c3.o;
 import c3.p;
 import c3.q;
@@ -19,12 +17,14 @@ import c3.s;
 import c3.t;
 import c3.x;
 import c5.b0;
+import c5.i;
 import com.google.android.gms.internal.vision.e2;
 import com.google.firebase.messaging.m;
 import e2.d0;
 import e2.v;
 import e9.a1;
 import e9.g0;
+import ii.n4;
 import j$.util.DesugarCollections;
 import java.math.RoundingMode;
 import java.nio.ByteBuffer;
@@ -44,9 +44,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLObject;
-import z3.k;
+import z3.l;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d implements o {
     public static final byte[] f0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -91,7 +91,7 @@ public final class d implements o {
     public boolean d0;
     public final boolean e;
     public q e0;
-    public final k f;
+    public final l f;
     public final v g;
     public final v h;
     public final v i;
@@ -125,7 +125,7 @@ public final class d implements o {
         k0 = DesugarCollections.unmodifiableMap(hashMap);
     }
 
-    public d(k kVar, int i10) {
+    public d(l lVar, int i10) {
         b bVar = new b();
         this.s = -1L;
         this.t = -9223372036854775807L;
@@ -135,8 +135,8 @@ public final class d implements o {
         this.D = -1L;
         this.E = -9223372036854775807L;
         this.a = bVar;
-        bVar.d = new ka.c(this, 24);
-        this.f = kVar;
+        bVar.d = new n4(this, 26);
+        this.f = lVar;
         this.d = (i10 & 1) == 0;
         this.e = (i10 & 2) == 0;
         this.b = new e();
@@ -166,18 +166,24 @@ public final class d implements o {
         return format.getBytes(StandardCharsets.UTF_8);
     }
 
+    public final void a(int i10) {
+        if (this.F == null || this.G == null) {
+            throw s0.a(null, "Element " + i10 + " must be in a Cues");
+        }
+    }
+
     @Override // c3.o
-    public final boolean a(p pVar) {
+    public final boolean b(p pVar) {
         b0 b0Var = new b0(8, (byte) 0);
         v vVar = (v) b0Var.c;
-        l lVar = (l) pVar;
+        c3.l lVar = (c3.l) pVar;
         long j3 = lVar.c;
         long j10 = 1024;
         if (j3 != -1 && j3 <= 1024) {
             j10 = j3;
         }
         int i10 = (int) j10;
-        lVar.h(vVar.a, 0, 4, false);
+        lVar.f(vVar.a, 0, 4, false);
         long z10 = vVar.z();
         b0Var.b = 4;
         while (true) {
@@ -187,7 +193,7 @@ public final class d implements o {
                 if (i11 == i10) {
                     break;
                 }
-                lVar.h(vVar.a, 0, 1, false);
+                lVar.f(vVar.a, 0, 1, false);
                 z10 = ((z10 << 8) & (-256)) | (vVar.a[0] & 255);
             } else {
                 long h = b0Var.h(lVar);
@@ -204,7 +210,7 @@ public final class d implements o {
                                 }
                                 if (h10 != 0) {
                                     int i12 = (int) h10;
-                                    lVar.t(i12, false);
+                                    lVar.s(i12, false);
                                     b0Var.b += i12;
                                 }
                             } else {
@@ -218,12 +224,6 @@ public final class d implements o {
             }
         }
         return false;
-    }
-
-    public final void b(int i10) {
-        if (this.F == null || this.G == null) {
-            throw s0.a(null, "Element " + i10 + " must be in a Cues");
-        }
     }
 
     public final void d(int i10) {
@@ -496,7 +496,7 @@ public final class d implements o {
         byte[] bArr;
         int i18;
         String str5;
-        com.google.android.gms.internal.clearcut.e a10;
+        i d;
         c3.b0 tVar;
         int i19;
         long[] jArr;
@@ -520,9 +520,9 @@ public final class d implements o {
                             long b10 = eVar.b(pVar2, true, false, 4);
                             if (b10 == -2) {
                                 byte[] bArr2 = bVar.a;
-                                pVar2.p();
+                                pVar2.m();
                                 while (true) {
-                                    pVar2.a(i21, i22, bArr2);
+                                    pVar2.b(i21, i22, bArr2);
                                     byte b11 = bArr2[i21];
                                     int i23 = 0;
                                     while (true) {
@@ -540,11 +540,11 @@ public final class d implements o {
                                         if (a2 == 357149030 || a2 == 524531317 || a2 == 475249515 || a2 == 374648427) {
                                         }
                                     }
-                                    pVar2.q(1);
+                                    pVar2.o(1);
                                     i22 = 4;
                                     i21 = 0;
                                 }
-                                pVar2.q(i11);
+                                pVar2.o(i11);
                                 j3 = a2;
                             } else {
                                 j3 = b10;
@@ -565,9 +565,9 @@ public final class d implements o {
                             bVar.g = eVar.b(pVar2, false, z10, 8);
                             bVar.e = 2;
                         }
-                        ka.c cVar = bVar.d;
+                        n4 n4Var = bVar.d;
                         int i24 = bVar.f;
-                        Object obj2 = cVar.b;
+                        Object obj2 = n4Var.b;
                         switch (i24) {
                             case 131:
                             case 136:
@@ -677,57 +677,57 @@ public final class d implements o {
                                 break;
                         }
                         if (i10 == 0) {
-                            pVar2.q((int) bVar.g);
+                            pVar2.o((int) bVar.g);
                             bVar.e = 0;
                             i20 = -1;
                         } else if (i10 == 1) {
                             long position = pVar2.getPosition();
                             arrayDeque.push(new a(bVar.f, bVar.g + position));
-                            ka.c cVar2 = bVar.d;
+                            n4 n4Var2 = bVar.d;
                             int i25 = bVar.f;
                             long j10 = bVar.g;
-                            d dVar4 = (d) cVar2.b;
+                            d dVar4 = (d) n4Var2.b;
                             e2.d.h(dVar4.e0);
                             if (i25 != 160) {
                                 if (i25 == 174) {
-                                    c cVar3 = new c();
-                                    cVar3.n = -1;
-                                    cVar3.o = -1;
-                                    cVar3.p = -1;
-                                    cVar3.q = -1;
-                                    cVar3.r = -1;
-                                    cVar3.s = 0;
-                                    cVar3.t = -1;
-                                    cVar3.u = 0.0f;
-                                    cVar3.v = 0.0f;
-                                    cVar3.w = 0.0f;
-                                    cVar3.x = null;
-                                    cVar3.y = -1;
-                                    cVar3.z = false;
-                                    cVar3.A = -1;
-                                    cVar3.B = -1;
-                                    cVar3.C = -1;
-                                    cVar3.D = MediaDataController.MAX_STYLE_RUNS_COUNT;
-                                    cVar3.E = 200;
-                                    cVar3.F = -1.0f;
-                                    cVar3.G = -1.0f;
-                                    cVar3.H = -1.0f;
-                                    cVar3.I = -1.0f;
-                                    cVar3.J = -1.0f;
-                                    cVar3.K = -1.0f;
-                                    cVar3.L = -1.0f;
-                                    cVar3.M = -1.0f;
-                                    cVar3.N = -1.0f;
-                                    cVar3.O = -1.0f;
-                                    cVar3.Q = 1;
-                                    cVar3.R = -1;
-                                    cVar3.S = 8000;
-                                    cVar3.T = 0L;
-                                    cVar3.U = 0L;
-                                    cVar3.X = true;
-                                    cVar3.Y = "eng";
-                                    dVar4.x = cVar3;
-                                    cVar3.a = dVar4.w;
+                                    c cVar = new c();
+                                    cVar.n = -1;
+                                    cVar.o = -1;
+                                    cVar.p = -1;
+                                    cVar.q = -1;
+                                    cVar.r = -1;
+                                    cVar.s = 0;
+                                    cVar.t = -1;
+                                    cVar.u = 0.0f;
+                                    cVar.v = 0.0f;
+                                    cVar.w = 0.0f;
+                                    cVar.x = null;
+                                    cVar.y = -1;
+                                    cVar.z = false;
+                                    cVar.A = -1;
+                                    cVar.B = -1;
+                                    cVar.C = -1;
+                                    cVar.D = MediaDataController.MAX_STYLE_RUNS_COUNT;
+                                    cVar.E = 200;
+                                    cVar.F = -1.0f;
+                                    cVar.G = -1.0f;
+                                    cVar.H = -1.0f;
+                                    cVar.I = -1.0f;
+                                    cVar.J = -1.0f;
+                                    cVar.K = -1.0f;
+                                    cVar.L = -1.0f;
+                                    cVar.M = -1.0f;
+                                    cVar.N = -1.0f;
+                                    cVar.O = -1.0f;
+                                    cVar.Q = 1;
+                                    cVar.R = -1;
+                                    cVar.S = 8000;
+                                    cVar.T = 0L;
+                                    cVar.U = 0L;
+                                    cVar.X = true;
+                                    cVar.Y = "eng";
+                                    dVar4.x = cVar;
+                                    cVar.a = dVar4.w;
                                 } else if (i25 == 187) {
                                     dVar4.H = false;
                                 } else if (i25 == 19899) {
@@ -769,7 +769,7 @@ public final class d implements o {
                             if (j12 > 8) {
                                 throw s0.a(null, "Invalid integer size: " + bVar.g);
                             }
-                            cVar.W(i24, bVar.a(pVar2, (int) j12));
+                            n4Var.F(i24, bVar.a(pVar2, (int) j12));
                             z11 = false;
                             bVar.e = 0;
                         } else if (i10 == 3) {
@@ -788,7 +788,7 @@ public final class d implements o {
                                 }
                                 str = new String(bArr3, 0, i26);
                             }
-                            d dVar5 = (d) cVar.b;
+                            d dVar5 = (d) n4Var.b;
                             if (i24 == 134) {
                                 dVar5.d(i24);
                                 dVar5.x.c = str;
@@ -807,7 +807,7 @@ public final class d implements o {
                             z11 = false;
                             bVar.e = 0;
                         } else if (i10 == 4) {
-                            cVar.D(i24, (int) bVar.g, pVar2);
+                            n4Var.x(i24, (int) bVar.g, pVar2);
                             z11 = false;
                             bVar.e = 0;
                         } else {
@@ -820,7 +820,7 @@ public final class d implements o {
                             }
                             int i27 = (int) j14;
                             double intBitsToFloat = i27 == 4 ? Float.intBitsToFloat((int) r5) : Double.longBitsToDouble(bVar.a(pVar2, i27));
-                            d dVar6 = (d) cVar.b;
+                            d dVar6 = (d) n4Var.b;
                             if (i24 == 181) {
                                 dVar6.d(i24);
                                 dVar6.x.S = (int) intBitsToFloat;
@@ -889,9 +889,9 @@ public final class d implements o {
                             bVar.e = 0;
                         }
                     } else {
-                        ka.c cVar4 = bVar.d;
+                        n4 n4Var3 = bVar.d;
                         int i28 = ((a) arrayDeque.pop()).a;
-                        d dVar7 = (d) cVar4.b;
+                        d dVar7 = (d) n4Var3.b;
                         SparseArray sparseArray = dVar7.c;
                         e2.d.h(dVar7.e0);
                         if (i28 != 160) {
@@ -1194,8 +1194,8 @@ public final class d implements o {
                                                 i12 = -1;
                                                 str2 = null;
                                                 i13 = -1;
-                                                if (r32.P != null && (a10 = com.google.android.gms.internal.clearcut.e.a(new v(r32.P))) != null) {
-                                                    str2 = a10.a;
+                                                if (r32.P != null && (d = i.d(new v(r32.P))) != null) {
+                                                    str2 = d.a;
                                                     str7 = "video/dolby-vision";
                                                 }
                                                 int i30 = (r32.X ? 1 : 0) | (r32.W ? 2 : 0);
@@ -1330,7 +1330,7 @@ public final class d implements o {
                                                         i13 = -1;
                                                         singletonList = null;
                                                         if (r32.P != null) {
-                                                            str2 = a10.a;
+                                                            str2 = d.a;
                                                             str7 = "video/dolby-vision";
                                                             break;
                                                         }
@@ -1470,17 +1470,17 @@ public final class d implements o {
                                                 dVar7 = dVar2;
                                                 break;
                                             case 4:
-                                                byte[] a11 = r32.a(str6);
+                                                byte[] a10 = r32.a(str6);
                                                 try {
                                                     try {
-                                                        if (a11[0] != 2) {
+                                                        if (a10[0] != 2) {
                                                             throw s0.a(null, "Error parsing vorbis codec private");
                                                         }
                                                         int i38 = 0;
                                                         int i39 = 1;
                                                         while (true) {
                                                             int i40 = i39;
-                                                            int i41 = a11[i39] & 255;
+                                                            int i41 = a10[i39] & 255;
                                                             if (i41 == 255) {
                                                                 i38 += 255;
                                                                 i39 = i40 + 1;
@@ -1489,29 +1489,29 @@ public final class d implements o {
                                                                 int i43 = i38 + i41;
                                                                 int i44 = 0;
                                                                 while (true) {
-                                                                    int i45 = a11[i42] & 255;
+                                                                    int i45 = a10[i42] & 255;
                                                                     if (i45 == 255) {
                                                                         i44 += 255;
                                                                         i42++;
                                                                     } else {
                                                                         int i46 = i42 + 1;
                                                                         int i47 = i44 + i45;
-                                                                        if (a11[i46] != 1) {
+                                                                        if (a10[i46] != 1) {
                                                                             throw s0.a(null, "Error parsing vorbis codec private");
                                                                         }
                                                                         byte[] bArr6 = new byte[i43];
-                                                                        System.arraycopy(a11, i46, bArr6, 0, i43);
+                                                                        System.arraycopy(a10, i46, bArr6, 0, i43);
                                                                         int i48 = i46 + i43;
-                                                                        if (a11[i48] != 3) {
+                                                                        if (a10[i48] != 3) {
                                                                             throw s0.a(null, "Error parsing vorbis codec private");
                                                                         }
                                                                         int i49 = i48 + i47;
-                                                                        if (a11[i49] != 5) {
+                                                                        if (a10[i49] != 5) {
                                                                             throw s0.a(null, "Error parsing vorbis codec private");
                                                                         }
-                                                                        byte[] bArr7 = new byte[a11.length - i49];
+                                                                        byte[] bArr7 = new byte[a10.length - i49];
                                                                         dVar2 = dVar7;
-                                                                        System.arraycopy(a11, i49, bArr7, 0, a11.length - i49);
+                                                                        System.arraycopy(a10, i49, bArr7, 0, a10.length - i49);
                                                                         ArrayList arrayList = new ArrayList(2);
                                                                         arrayList.add(bArr6);
                                                                         arrayList.add(bArr7);
@@ -1766,10 +1766,10 @@ public final class d implements o {
                                                 dVar7 = dVar2;
                                                 break;
                                             case '\n':
-                                                c3.d a12 = c3.d.a(new v(r32.a(r32.c)));
-                                                singletonList = a12.a;
-                                                r32.a0 = a12.b;
-                                                str4 = a12.l;
+                                                c3.d a11 = c3.d.a(new v(r32.a(r32.c)));
+                                                singletonList = a11.a;
+                                                r32.a0 = a11.b;
+                                                str4 = a11.l;
                                                 str7 = MediaController.VIDEO_MIME_TYPE;
                                                 str2 = str4;
                                                 dVar2 = dVar7;
@@ -2441,10 +2441,10 @@ public final class d implements o {
                                                 dVar7 = dVar2;
                                                 break;
                                             case 27:
-                                                x a13 = x.a(new v(r32.a(r32.c)), false, null);
-                                                singletonList = a13.a;
-                                                r32.a0 = a13.b;
-                                                str4 = a13.n;
+                                                x a12 = x.a(new v(r32.a(r32.c)), false, null);
+                                                singletonList = a12.a;
+                                                r32.a0 = a12.b;
+                                                str4 = a12.n;
                                                 str7 = "video/hevc";
                                                 str2 = str4;
                                                 dVar2 = dVar7;
@@ -2707,18 +2707,18 @@ public final class d implements o {
                                 }
                             } else if (i28 == 25152) {
                                 dVar7.d(i28);
-                                c cVar5 = dVar7.x;
-                                if (cVar5.i) {
-                                    c3.g0 g0Var = cVar5.k;
+                                c cVar2 = dVar7.x;
+                                if (cVar2.i) {
+                                    c3.g0 g0Var = cVar2.k;
                                     if (g0Var == null) {
                                         throw s0.a(null, "Encrypted Track found but ContentEncKeyID was not found");
                                     }
-                                    cVar5.m = new b2.o(null, true, new n(i.a, null, "video/webm", g0Var.b));
+                                    cVar2.m = new b2.o(null, true, new n(b2.i.a, null, "video/webm", g0Var.b));
                                 }
                             } else if (i28 == 28032) {
                                 dVar7.d(i28);
-                                c cVar6 = dVar7.x;
-                                if (cVar6.i && cVar6.j != null) {
+                                c cVar3 = dVar7.x;
+                                if (cVar3.i && cVar3.j != null) {
                                     throw s0.a(null, "Combining encryption and compression is not supported");
                                 }
                             } else if (i28 == 357149030) {
@@ -2790,9 +2790,9 @@ public final class d implements o {
                                 dVar7.G = null;
                             }
                         } else if (dVar7.J == 2) {
-                            c cVar7 = (c) sparseArray.get(dVar7.P);
-                            cVar7.Z.getClass();
-                            if (dVar7.U > 0 && "A_OPUS".equals(cVar7.c)) {
+                            c cVar4 = (c) sparseArray.get(dVar7.P);
+                            cVar4.Z.getClass();
+                            if (dVar7.U > 0 && "A_OPUS".equals(cVar4.c)) {
                                 v vVar3 = dVar7.p;
                                 byte[] array = ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(dVar7.U).array();
                                 vVar3.getClass();
@@ -2804,14 +2804,14 @@ public final class d implements o {
                             }
                             int i62 = 0;
                             while (i62 < dVar7.N) {
-                                long j17 = dVar7.K + ((cVar7.f * i62) / MediaDataController.MAX_STYLE_RUNS_COUNT);
+                                long j17 = dVar7.K + ((cVar4.f * i62) / MediaDataController.MAX_STYLE_RUNS_COUNT);
                                 int i63 = dVar7.R;
                                 if (i62 == 0 && !dVar7.T) {
                                     i63 |= 1;
                                 }
                                 int i64 = dVar7.O[i62];
                                 int i65 = i60 - i64;
-                                dVar7.e(cVar7, j17, i63, i64, i65);
+                                dVar7.e(cVar4, j17, i63, i64, i65);
                                 i62++;
                                 i60 = i65;
                             }

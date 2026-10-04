@@ -1,6 +1,6 @@
 package w7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class l9 {
     public final String a;
@@ -15,17 +15,17 @@ public final class l9 {
     public final Integer j;
     public final Integer k;
 
-    public /* synthetic */ l9(v7.e8 e8Var) {
-        this.a = e8Var.a;
-        this.b = e8Var.b;
-        this.c = e8Var.c;
-        this.d = e8Var.d;
-        this.e = (ua) e8Var.k;
-        this.f = e8Var.e;
-        this.g = (Boolean) e8Var.f;
-        this.h = (Boolean) e8Var.g;
-        this.i = (Boolean) e8Var.h;
-        this.j = e8Var.i;
-        this.k = (Integer) e8Var.j;
+    public /* synthetic */ l9(v7.d8 d8Var) {
+        this.a = d8Var.a;
+        this.b = d8Var.b;
+        this.c = d8Var.c;
+        this.d = d8Var.d;
+        this.e = (ua) d8Var.k;
+        this.f = d8Var.e;
+        this.g = (Boolean) d8Var.f;
+        this.h = (Boolean) d8Var.g;
+        this.i = (Boolean) d8Var.h;
+        this.j = d8Var.i;
+        this.k = (Integer) d8Var.j;
     }
 }

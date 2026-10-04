@@ -5,12 +5,12 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.p6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u implements d5, fw0, vg.f, vg.k {
+public final /* synthetic */ class u implements d5, ow0, vg.f, vg.k {
     public final /* synthetic */ a0 a;
 
     public /* synthetic */ u(a0 a0Var) {
@@ -18,14 +18,14 @@ public final /* synthetic */ class u implements d5, fw0, vg.f, vg.k {
     }
 
     @Override // org.telegram.ui.Components.d5
-    public void J(int i10, int i11, boolean z10) {
+    public void K(int i10, int i11, boolean z10) {
         a0 a0Var = this.a;
         a0Var.m0 = i10 * 1000;
-        a0Var.a0(false, true);
+        a0Var.Z(false, true);
     }
 
-    @Override // org.telegram.ui.Components.fw0
-    public void h(int i10) {
+    @Override // org.telegram.ui.Components.ow0
+    public void j(int i10) {
         a0 a0Var = this.a;
         int i11 = a0Var.h0;
         int i12 = vg.d.s;
@@ -34,19 +34,19 @@ public final /* synthetic */ class u implements d5, fw0, vg.f, vg.k {
         } else {
             a0Var.o0 = i10;
         }
-        a0Var.q0.a.b(a0Var.V(), true);
+        a0Var.q0.a.b(a0Var.T(), true);
         if (a0Var.h0 == 3) {
-            a0Var.a0(true, true);
+            a0Var.Z(true, true);
         } else {
-            a0Var.a0(false, false);
+            a0Var.Z(false, false);
         }
         ug.b bVar = a0Var.g0;
-        int V = a0Var.V();
+        int T = a0Var.T();
         for (int i13 = 0; i13 < bVar.f.getChildCount(); i13++) {
             View childAt = bVar.f.getChildAt(i13);
             if (childAt instanceof vg.x) {
                 p6 p6Var = ((vg.x) childAt).r;
-                String formatPluralString = V <= 0 ? "" : LocaleController.formatPluralString("BoostingBoostsCountTitle", V, Integer.valueOf(V));
+                String formatPluralString = T <= 0 ? "" : LocaleController.formatPluralString("BoostingBoostsCountTitle", T, Integer.valueOf(T));
                 p6Var.a();
                 p6Var.c(formatPluralString, true, true);
             }
@@ -57,7 +57,7 @@ public final /* synthetic */ class u implements d5, fw0, vg.f, vg.k {
                 if (gVar.w) {
                     gVar.setSubtitle(F >= 1 ? LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "Subscribers" : "Members", F, new Object[0]) : LocaleController.getString(isChannelAndNotMegaGroup ? R.string.DiscussChannel : R.string.AccDescrGroup));
                 } else {
-                    gVar.setSubtitle(LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", V, new Object[0]));
+                    gVar.setSubtitle(LocaleController.formatPluralString(isChannelAndNotMegaGroup ? "BoostingChannelWillReceiveBoost" : "BoostingGroupWillReceiveBoost", T, new Object[0]));
                 }
             }
         }
@@ -65,7 +65,7 @@ public final /* synthetic */ class u implements d5, fw0, vg.f, vg.k {
         bVar.q(bVar.e.size() - 12, 12);
     }
 
-    @Override // org.telegram.ui.Components.fw0
-    public /* synthetic */ void n() {
+    @Override // org.telegram.ui.Components.ow0
+    public /* synthetic */ void l() {
     }
 }

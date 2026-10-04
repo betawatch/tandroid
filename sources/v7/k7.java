@@ -1,6 +1,57 @@
 package v7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.util.Log;
+import android.util.LongSparseArray;
+import java.lang.reflect.Field;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class k7 {
+    public static Field a;
+    public static boolean b;
+    public static Class c;
+    public static boolean d;
+    public static Field e;
+    public static boolean f;
+    public static Field g;
+    public static boolean h;
+
+    public static void a(Object obj) {
+        LongSparseArray longSparseArray;
+        if (!d) {
+            try {
+                c = Class.forName("android.content.res.ThemedResourceCache");
+            } catch (ClassNotFoundException e7) {
+                Log.e("ResourcesFlusher", "Could not find ThemedResourceCache class", e7);
+            }
+            d = true;
+        }
+        Class cls = c;
+        if (cls == null) {
+            return;
+        }
+        if (!f) {
+            try {
+                Field declaredField = cls.getDeclaredField("mUnthemedEntries");
+                e = declaredField;
+                declaredField.setAccessible(true);
+            } catch (NoSuchFieldException e10) {
+                Log.e("ResourcesFlusher", "Could not retrieve ThemedResourceCache#mUnthemedEntries field", e10);
+            }
+            f = true;
+        }
+        Field field = e;
+        if (field == null) {
+            return;
+        }
+        try {
+            longSparseArray = (LongSparseArray) field.get(obj);
+        } catch (IllegalAccessException e11) {
+            Log.e("ResourcesFlusher", "Could not retrieve value from ThemedResourceCache#mUnthemedEntries", e11);
+            longSparseArray = null;
+        }
+        if (longSparseArray != null) {
+            g.x.a(longSparseArray);
+        }
+    }
 }

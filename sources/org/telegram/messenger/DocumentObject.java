@@ -7,24 +7,24 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class DocumentObject {
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class ThemeDocument extends TLRPC.TL_document {
         public org.telegram.ui.ActionBar.f6 accent;
-        public org.telegram.ui.ActionBar.g6 baseTheme;
+        public org.telegram.ui.ActionBar.h6 baseTheme;
         public TLRPC.ThemeSettings themeSettings;
         public TLRPC.Document wallpaper;
 
         public ThemeDocument(TLRPC.ThemeSettings themeSettings) {
             this.themeSettings = themeSettings;
-            org.telegram.ui.ActionBar.g6 N0 = org.telegram.ui.ActionBar.h6.N0(org.telegram.ui.ActionBar.h6.q0(themeSettings));
+            org.telegram.ui.ActionBar.h6 N0 = org.telegram.ui.ActionBar.i6.N0(org.telegram.ui.ActionBar.i6.q0(themeSettings));
             this.baseTheme = N0;
             N0.getClass();
             org.telegram.ui.ActionBar.f6 f6Var = new org.telegram.ui.ActionBar.f6();
-            org.telegram.ui.ActionBar.g6.i(f6Var, themeSettings);
+            org.telegram.ui.ActionBar.h6.i(f6Var, themeSettings);
             f6Var.b = N0;
             this.accent = f6Var;
             TLRPC.WallPaper wallPaper = this.themeSettings.wallpaper;
@@ -96,8 +96,8 @@ public class DocumentObject {
             svgDrawable.height = 512;
             svgDrawable.setupGradient(i10, f10, false);
             return svgDrawable;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }

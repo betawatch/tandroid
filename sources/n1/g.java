@@ -16,7 +16,7 @@ import m1.h;
 import m1.j;
 import m1.k;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class g {
     public static final g a = new g();
@@ -82,8 +82,8 @@ public final class g {
             Map unmodifiableMap = DesugarCollections.unmodifiableMap(bVar.a);
             i.d(unmodifiableMap, "unmodifiableMap(preferencesMap)");
             return new b(new LinkedHashMap(unmodifiableMap), true);
-        } catch (b0 e) {
-            throw new k1.a("Unable to parse preferences proto.", e);
+        } catch (b0 e7) {
+            throw new k1.a("Unable to parse preferences proto.", e7);
         }
     }
 

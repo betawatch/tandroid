@@ -1,15 +1,14 @@
 package i2;
 
 import android.util.Pair;
-import ei.d5;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class w0 {
     public final j2.f c;
     public final e2.z d;
-    public final d5 e;
+    public final ei.f e;
     public long f;
     public int g;
     public boolean h;
@@ -25,10 +24,10 @@ public final class w0 {
     public final b2.j1 b = new b2.j1();
     public ArrayList q = new ArrayList();
 
-    public w0(j2.f fVar, e2.z zVar, d5 d5Var) {
+    public w0(j2.f fVar, e2.z zVar, ei.f fVar2) {
         this.c = fVar;
         this.d = zVar;
-        this.e = d5Var;
+        this.e = fVar2;
     }
 
     public static u2.f0 o(b2.k1 k1Var, Object obj, long j3, long j10, b2.j1 j1Var, b2.h1 h1Var) {
@@ -115,10 +114,10 @@ public final class w0 {
                 if (i10 != -1) {
                     h1Var2.f(i10);
                 }
-                int e = h1Var2.e(i10);
+                int e7 = h1Var2.e(i10);
                 h1Var2.g(i10);
-                if (e != h1Var2.g.a(i10).a) {
-                    return e(k1Var, f0Var.a, f0Var.e, e, v0Var.e, f0Var.d, z10);
+                if (e7 != h1Var2.g.a(i10).a) {
+                    return e(k1Var, f0Var.a, f0Var.e, e7, v0Var.e, f0Var.d, z10);
                 }
                 k1Var.g(obj2, h1Var2);
                 h1Var2.d(i10);
@@ -334,13 +333,13 @@ public final class w0 {
         this.d.c(new gg.t(this, u10, u0Var2 == null ? null : u0Var2.g.a, 13));
     }
 
-    /* JADX WARN: Type inference failed for: r1v4, types: [java.lang.Object, u2.d1] */
+    /* JADX WARN: Type inference failed for: r1v4, types: [java.lang.Object, u2.e1] */
     public final void m(long j3) {
         u0 u0Var = this.l;
         if (u0Var != null) {
             e2.d.g(u0Var.m == null);
             if (u0Var.e) {
-                u0Var.a.u(j3 - u0Var.p);
+                u0Var.a.r(j3 - u0Var.p);
             }
         }
     }

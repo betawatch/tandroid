@@ -5,9 +5,9 @@ import android.app.Activity;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class y extends FrameLayout {
     public final v a;
@@ -27,7 +27,7 @@ public final class y extends FrameLayout {
         vVar.setVisibility(8);
         vVar.setWillNotDraw(false);
         vVar.setOnItemClickListener(new ai.g(this, 2));
-        addView(vVar, w7.y5.c(56.0f, -1));
+        addView(vVar, w7.z5.c(56.0f, -1));
     }
 
     public final void a(boolean z10, boolean z11) {
@@ -51,7 +51,7 @@ public final class y extends FrameLayout {
         this.f = ofFloat;
         ofFloat.addUpdateListener(new ai.a(this, 16));
         this.f.addListener(new ai.n(r0, this, z10));
-        this.f.setInterpolator(sr.h);
+        this.f.setInterpolator(tr.h);
         this.f.setDuration(340L);
         this.f.start();
     }

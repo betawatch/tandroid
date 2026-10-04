@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a implements h0 {
     public final ArrayList a;
@@ -149,7 +149,7 @@ public final class a implements h0 {
                 StringBuilder sb2 = new StringBuilder("Can't change tag of fragment ");
                 sb2.append(sVar);
                 sb2.append(": was ");
-                throw new IllegalStateException(a4.a.r(sVar.P, " now ", str, sb2));
+                throw new IllegalStateException(a4.a.q(sVar.P, " now ", str, sb2));
             }
             sVar.P = str;
         }

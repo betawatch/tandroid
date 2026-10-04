@@ -1,13 +1,23 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public interface ky {
-    boolean A();
+public final class ky extends org.telegram.ui.Components.n00 {
+    public final /* synthetic */ uy B0;
 
-    boolean K(qy qyVar);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ky(uy uyVar, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
+        this.B0 = uyVar;
+    }
 
-    boolean u(qy qyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var);
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        getParent().requestDisallowInterceptTouchEvent(true);
+        this.B0.m3 = false;
+        return super.onInterceptTouchEvent(motionEvent);
+    }
 }

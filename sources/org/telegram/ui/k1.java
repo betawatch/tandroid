@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class k1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
     public final ai.w0 a;
@@ -47,7 +47,7 @@ public final class k1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
         h1 h1Var = new h1(this);
         this.b = h1Var;
         w0Var.setAdapter(h1Var);
-        addView(w0Var, w7.y5.c(-2.0f, -1));
+        addView(w0Var, w7.z5.c(-2.0f, -1));
         setWillNotDraw(false);
     }
 
@@ -189,7 +189,7 @@ public final class k1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             TL_iv.pageBlockCollage pageblockcollage3 = k1Var.s;
             TL_iv.RichText richText2 = pageblockcollage3.caption.credit;
             if (k1Var.w.G) {
-                alignment = org.telegram.ui.Components.ww0.a();
+                alignment = org.telegram.ui.Components.fx0.a();
             }
             b3 p10 = i4.p(i4Var, k1Var, null, richText2, dp, 0, pageblockcollage3, alignment, 0, k1Var.w);
             k1Var.d = p10;

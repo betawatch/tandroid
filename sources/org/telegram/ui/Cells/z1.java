@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class z1 extends LinearLayout {
     public final ImageView a;
@@ -21,9 +21,9 @@ public final class z1 extends LinearLayout {
 
     public z1(a2 a2Var, Context context, int i10) {
         super(context);
-        int i11 = org.telegram.ui.ActionBar.h6.G6;
+        int i11 = org.telegram.ui.ActionBar.i6.G6;
         org.telegram.ui.ActionBar.d6 d6Var = a2Var.b;
-        int v02 = org.telegram.ui.ActionBar.h6.v0(i11, d6Var);
+        int v02 = org.telegram.ui.ActionBar.i6.v0(i11, d6Var);
         if (i10 != 0) {
             ImageView imageView = new ImageView(context);
             this.a = imageView;
@@ -42,21 +42,21 @@ public final class z1 extends LinearLayout {
         mutate.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.MULTIPLY));
         view.setBackground(mutate);
         if (LocaleController.isRTL) {
-            addView(view, w7.y5.t(16, 16, 16, 11, 0, 3, 0));
-            addView(p6Var, w7.y5.t(-2, 16, 16, 0, 0, this.a == null ? 11 : 3, 0));
+            addView(view, w7.z5.t(16, 16, 16, 11, 0, 3, 0));
+            addView(p6Var, w7.z5.t(-2, 16, 16, 0, 0, this.a == null ? 11 : 3, 0));
             View view2 = this.a;
             if (view2 != null) {
-                addView(view2, w7.y5.t(16, 16, 16, 0, 0, 11, 0));
+                addView(view2, w7.z5.t(16, 16, 16, 0, 0, 11, 0));
             }
         } else {
             View view3 = this.a;
             if (view3 != null) {
-                addView(view3, w7.y5.t(16, 16, 16, 11, 0, 3, 0));
+                addView(view3, w7.z5.t(16, 16, 16, 11, 0, 3, 0));
             }
-            addView(p6Var, w7.y5.t(-2, 16, 16, this.a == null ? 11 : 0, 0, 3, 0));
-            addView(view, w7.y5.t(16, 16, 16, 0, 0, 11, 0));
+            addView(p6Var, w7.z5.t(-2, 16, 16, this.a == null ? 11 : 0, 0, 3, 0));
+            addView(view, w7.z5.t(16, 16, 16, 0, 0, 11, 0));
         }
-        setBackground(org.telegram.ui.ActionBar.h6.Y(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, d6Var), 16, 16));
+        setBackground(org.telegram.ui.ActionBar.i6.Y(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, d6Var), 16, 16));
         setClickable(true);
     }
 

@@ -1,64 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class a01 extends TextView {
-    public final b01 a;
-    public boolean b;
-    public boolean c;
+public final class a01 extends ViewGroup.MarginLayoutParams {
+    public c01 a;
+    public c01 b;
 
-    public a01(b01 b01Var, CharSequence charSequence) {
-        super(b01Var.getContext());
-        this.a = b01Var;
-        org.telegram.ui.ActionBar.d6 d6Var = b01Var.a;
-        setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f));
-        setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));
-        setTypeface(AndroidUtilities.bold());
-        setTextSize(1, 14.0f);
-        setText(charSequence);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a01() {
+        super(-2, -2);
+        c01 c01Var = c01.e;
+        this.a = c01Var;
+        this.b = c01Var;
+        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
+        this.a = c01Var;
+        this.b = c01Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        boolean z10 = this.b;
-        b01 b01Var = this.a;
-        if (z10 || this.c) {
-            canvas2 = canvas;
-            float dp = AndroidUtilities.dp(10.0f);
-            float[] fArr = b01Var.c;
-            float f7 = this.b ? dp : 0.0f;
-            fArr[1] = f7;
-            fArr[0] = f7;
-            fArr[3] = 0.0f;
-            fArr[2] = 0.0f;
-            fArr[5] = 0.0f;
-            fArr[4] = 0.0f;
-            if (!this.c) {
-                dp = 0.0f;
-            }
-            fArr[7] = dp;
-            fArr[6] = dp;
-            b01Var.b.rewind();
-            RectF rectF = AndroidUtilities.rectTmp;
-            float f10 = b01Var.h;
-            rectF.set(f10, f10, getWidth() + b01Var.h, (b01Var.h * AndroidUtilities.dp(this.c ? -1.0f : 1.0f)) + getHeight());
-            b01Var.b.addRoundRect(rectF, b01Var.c, Path.Direction.CW);
-            canvas2.drawPath(b01Var.b, b01Var.d);
-            canvas2.drawPath(b01Var.b, b01Var.e);
-        } else {
-            float f11 = b01Var.h;
-            canvas2 = canvas;
-            canvas2.drawRect(f11, f11, getWidth() + b01Var.h, getHeight() + b01Var.h, b01Var.d);
-            float f12 = b01Var.h;
-            canvas2.drawRect(f12, f12, getWidth() + b01Var.h, getHeight() + b01Var.h, b01Var.e);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        super.onDraw(canvas2);
+        if (obj == null || a01.class != obj.getClass()) {
+            return false;
+        }
+        a01 a01Var = (a01) obj;
+        return this.b.equals(a01Var.b) && this.a.equals(a01Var.a);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + (this.a.hashCode() * 31);
     }
 }

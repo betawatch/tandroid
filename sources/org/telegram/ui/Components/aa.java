@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class aa extends View {
     public Bitmap a;
@@ -29,7 +29,7 @@ public final class aa extends View {
         Paint paint = this.c;
         int i10 = 0;
         while (i10 < this.d) {
-            paint.setColor(org.telegram.ui.ActionBar.h6.w0(null, i10 < this.e ? org.telegram.ui.ActionBar.h6.m5 : org.telegram.ui.ActionBar.h6.t5, false));
+            paint.setColor(org.telegram.ui.ActionBar.i6.w0(null, i10 < this.e ? org.telegram.ui.ActionBar.i6.m5 : org.telegram.ui.ActionBar.i6.t5, false));
             canvas.drawBitmap(i10 < this.e ? this.a : this.b, AndroidUtilities.dp(48.0f) * i10, 0.0f, paint);
             i10++;
         }

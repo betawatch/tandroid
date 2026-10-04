@@ -1,24 +1,33 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class xn extends wn {
-    public final /* synthetic */ yn Pc;
+public final class xn extends org.telegram.ui.ActionBar.i5 {
+    public boolean M0;
+    public final /* synthetic */ yn N0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xn(yn ynVar, Bundle bundle) {
-        super(bundle);
-        this.Pc = ynVar;
+    public xn(yn ynVar, Activity activity) {
+        super(activity);
+        this.N0 = ynVar;
+        this.M0 = true;
     }
 
-    @Override // org.telegram.ui.wn
-    public final void V9(boolean z10) {
-        this.Pc.b(z10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.m2
-    public final void setNavigationBarColor(int i10) {
+    @Override // org.telegram.ui.ActionBar.i5
+    public final void d(int i10) {
+        super.d(i10);
+        if (this.M0 && getVisibility() == 0) {
+            int dp = AndroidUtilities.dp(4.0f) + getTextWidth();
+            yn ynVar = this.N0;
+            ynVar.E2 = dp;
+            NumberTextView numberTextView = ynVar.D2;
+            if (numberTextView != null) {
+                numberTextView.setTranslationX(dp);
+            }
+        }
     }
 }

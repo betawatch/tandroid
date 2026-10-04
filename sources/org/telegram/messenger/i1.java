@@ -10,10 +10,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.j90;
-import org.telegram.ui.m80;
+import org.telegram.ui.h90;
+import org.telegram.ui.n90;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i1 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -65,14 +65,14 @@ public final /* synthetic */ class i1 implements RequestDelegate {
             default:
                 Pattern pattern = LaunchActivity.B1;
                 boolean z10 = this.b;
-                AndroidUtilities.runOnUIThread(new j90((LaunchActivity) obj6, (m80) obj5, tLObject, z10, (Long) serializable3, (nf.e) obj4, (Long) serializable2, (Integer) serializable, (Integer) obj3, (byte[]) obj2, (org.telegram.ui.ActionBar.m2) obj, this.c, (Bundle) cloneable));
+                AndroidUtilities.runOnUIThread(new n90((LaunchActivity) obj6, (h90) obj5, tLObject, z10, (Long) serializable3, (nf.e) obj4, (Long) serializable2, (Integer) serializable, (Integer) obj3, (byte[]) obj2, (org.telegram.ui.ActionBar.n2) obj, this.c, (Bundle) cloneable));
                 break;
         }
     }
 
-    public /* synthetic */ i1(LaunchActivity launchActivity, m80 m80Var, boolean z10, Long l4, nf.e eVar, Long l10, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.m2 m2Var, int i10, Bundle bundle) {
+    public /* synthetic */ i1(LaunchActivity launchActivity, h90 h90Var, boolean z10, Long l4, nf.e eVar, Long l10, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.n2 n2Var, int i10, Bundle bundle) {
         this.d = launchActivity;
-        this.e = m80Var;
+        this.e = h90Var;
         this.b = z10;
         this.f = l4;
         this.g = eVar;
@@ -80,7 +80,7 @@ public final /* synthetic */ class i1 implements RequestDelegate {
         this.i = num;
         this.j = num2;
         this.k = bArr;
-        this.l = m2Var;
+        this.l = n2Var;
         this.c = i10;
         this.m = bundle;
     }

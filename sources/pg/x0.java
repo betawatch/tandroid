@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class x0 {
     public float a;

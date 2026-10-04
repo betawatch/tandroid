@@ -1,51 +1,137 @@
 package android.support.v4.media;
 
+import a0.f;
+import android.graphics.Bitmap;
 import android.media.Rating;
+import android.os.Bundle;
+import android.support.v4.media.session.b0;
+import n4.i0;
+import n4.m;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public abstract class c {
-    public static float a(Rating rating) {
-        return rating.getPercentRating();
+public final class c {
+    public final /* synthetic */ int a;
+    public final Bundle b;
+
+    public c(int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.b = new Bundle();
+                break;
+            default:
+                this.b = new Bundle();
+                break;
+        }
     }
 
-    public static int b(Rating rating) {
-        return rating.getRatingStyle();
+    public final void a(String str, Bitmap bitmap) {
+        switch (this.a) {
+            case 0:
+                f fVar = MediaMetadataCompat.d;
+                if (fVar.containsKey(str) && ((Integer) fVar.get(str)).intValue() != 2) {
+                    throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a Bitmap"));
+                }
+                this.b.putParcelable(str, bitmap);
+                return;
+            default:
+                Integer num = (Integer) m.c.get(str);
+                if (num != null && num.intValue() != 2) {
+                    throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a Bitmap"));
+                }
+                this.b.putParcelable(str, bitmap);
+                return;
+        }
     }
 
-    public static float c(Rating rating) {
-        return rating.getStarRating();
+    public void b(long j3) {
+        f fVar = MediaMetadataCompat.d;
+        if (fVar.containsKey("android.media.metadata.DURATION") && ((Integer) fVar.get("android.media.metadata.DURATION")).intValue() != 0) {
+            throw new IllegalArgumentException("The android.media.metadata.DURATION key cannot be used to put a long");
+        }
+        this.b.putLong("android.media.metadata.DURATION", j3);
     }
 
-    public static boolean d(Rating rating) {
-        return rating.hasHeart();
+    public void c(long j3, String str) {
+        Integer num = (Integer) m.c.get(str);
+        if (num != null && num.intValue() != 0) {
+            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a long"));
+        }
+        this.b.putLong(str, j3);
     }
 
-    public static boolean e(Rating rating) {
-        return rating.isRated();
+    public void d(String str, i0 i0Var) {
+        Rating rating;
+        float f7 = i0Var.b;
+        int i10 = i0Var.a;
+        Integer num = (Integer) m.c.get(str);
+        if (num != null && num.intValue() != 3) {
+            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a Rating"));
+        }
+        if (i0Var.c == null) {
+            if (i0Var.b()) {
+                switch (i10) {
+                    case 1:
+                        i0Var.c = Rating.newHeartRating(i10 == 1 && f7 == 1.0f);
+                        break;
+                    case 2:
+                        i0Var.c = Rating.newThumbRating(i10 == 2 && f7 == 1.0f);
+                        break;
+                    case 3:
+                    case 4:
+                    case 5:
+                        i0Var.c = Rating.newStarRating(i10, i0Var.a());
+                        break;
+                    case 6:
+                        if (i10 != 6 || !i0Var.b()) {
+                            f7 = -1.0f;
+                        }
+                        i0Var.c = Rating.newPercentageRating(f7);
+                        break;
+                    default:
+                        rating = null;
+                        break;
+                }
+                this.b.putParcelable(str, rating);
+            }
+            i0Var.c = Rating.newUnratedRating(i10);
+        }
+        rating = i0Var.c;
+        this.b.putParcelable(str, rating);
     }
 
-    public static boolean f(Rating rating) {
-        return rating.isThumbUp();
+    public final void e(String str, String str2) {
+        switch (this.a) {
+            case 0:
+                f fVar = MediaMetadataCompat.d;
+                if (fVar.containsKey(str) && ((Integer) fVar.get(str)).intValue() != 1) {
+                    throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a String"));
+                }
+                this.b.putCharSequence(str, str2);
+                return;
+            default:
+                Integer num = (Integer) m.c.get(str);
+                if (num != null && num.intValue() != 1) {
+                    throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a String"));
+                }
+                this.b.putCharSequence(str, str2);
+                return;
+        }
     }
 
-    public static Rating g(boolean z10) {
-        return Rating.newHeartRating(z10);
+    public void f(CharSequence charSequence, String str) {
+        Integer num = (Integer) m.c.get(str);
+        if (num != null && num.intValue() != 1) {
+            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a CharSequence"));
+        }
+        this.b.putCharSequence(str, charSequence);
     }
 
-    public static Rating h(float f7) {
-        return Rating.newPercentageRating(f7);
-    }
-
-    public static Rating i(int i10, float f7) {
-        return Rating.newStarRating(i10, f7);
-    }
-
-    public static Rating j(boolean z10) {
-        return Rating.newThumbRating(z10);
-    }
-
-    public static Rating k(int i10) {
-        return Rating.newUnratedRating(i10);
+    public c(MediaMetadataCompat mediaMetadataCompat) {
+        this.a = 0;
+        Bundle bundle = new Bundle(mediaMetadataCompat.a);
+        this.b = bundle;
+        b0.a(bundle);
     }
 }

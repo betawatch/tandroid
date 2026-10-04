@@ -12,7 +12,7 @@ import java.security.spec.X509EncodedKeySpec;
 import k9.h;
 import k9.j;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c {
     public static final String[] c = {"*", "FCM", "GCM", ""};
@@ -64,8 +64,8 @@ public final class c {
             }
             try {
                 publicKey = KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(Base64.decode(string, 8)));
-            } catch (IllegalArgumentException | NoSuchAlgorithmException | InvalidKeySpecException e) {
-                Log.w("ContentValues", "Invalid key stored " + e);
+            } catch (IllegalArgumentException | NoSuchAlgorithmException | InvalidKeySpecException e7) {
+                Log.w("ContentValues", "Invalid key stored " + e7);
                 publicKey = null;
             }
             if (publicKey == null) {

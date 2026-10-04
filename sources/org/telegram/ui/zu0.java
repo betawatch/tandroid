@@ -1,11 +1,58 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final class zu0 {
-    public final float a;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-    public zu0(float f7) {
-        this.a = f7;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final class zu0 extends org.telegram.ui.Components.l60 {
+    public final /* synthetic */ av0 d;
+
+    public zu0(av0 av0Var) {
+        this.d = av0Var;
+    }
+
+    @Override // org.telegram.ui.Components.vo0
+    public final CharSequence d() {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(LocaleController.getString("AccDescrVideoQuality", R.string.AccDescrVideoQuality));
+        if (this.d.s.Z7 > 0) {
+            sb2.append(", ");
+            sb2.append(this.d.s.Y7 + 1);
+            sb2.append(" / ");
+            sb2.append(this.d.s.Z7);
+        }
+        sb2.append(", ");
+        sb2.append(this.d.h);
+        sb2.append(" – ");
+        sb2.append(this.d.n);
+        return sb2.toString();
+    }
+
+    @Override // org.telegram.ui.Components.l60
+    public final int i() {
+        return Math.max(0, this.d.s.Z7 - 1);
+    }
+
+    @Override // org.telegram.ui.Components.l60
+    public final int j() {
+        return this.d.s.Y7;
+    }
+
+    @Override // org.telegram.ui.Components.l60
+    public final void k(int i10) {
+        int max;
+        if (this.d.s.Z7 > 0 && (max = Math.max(0, Math.min(this.d.s.Z7 - 1, i10))) != this.d.s.Y7) {
+            av0 av0Var = this.d;
+            av0Var.r = av0Var.s.Y7;
+            this.d.s.Y7 = max;
+            this.d.s.R0();
+            this.d.invalidate();
+            int i11 = this.d.s.Y7;
+            av0 av0Var2 = this.d;
+            if (i11 != av0Var2.r) {
+                av0Var2.s.p2(1);
+            }
+        }
     }
 }

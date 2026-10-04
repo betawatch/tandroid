@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class t0 implements b1 {
     public final a a;
@@ -22,7 +22,7 @@ public final class t0 implements b1 {
     @Override // androidx.datastore.preferences.protobuf.b1
     public final void b(Object obj, k0 k0Var) {
         this.c.getClass();
-        a4.a.z(obj);
+        a4.a.y(obj);
         throw null;
     }
 
@@ -43,7 +43,7 @@ public final class t0 implements b1 {
         this.b.getClass();
         ((w) obj).unknownFields.e = false;
         this.c.getClass();
-        a4.a.z(obj);
+        a4.a.y(obj);
         throw null;
     }
 
@@ -68,7 +68,7 @@ public final class t0 implements b1 {
     @Override // androidx.datastore.preferences.protobuf.b1
     public final boolean f(Object obj) {
         this.c.getClass();
-        a4.a.z(obj);
+        a4.a.y(obj);
         throw null;
     }
 

@@ -6,9 +6,9 @@ import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.qy;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fg implements Runnable {
     public final /* synthetic */ int a;
@@ -61,11 +61,11 @@ public final /* synthetic */ class fg implements Runnable {
                     if (storyItem != null) {
                         long j3 = this.b;
                         storyItem.dialogId = j3;
-                        org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
+                        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                         if (R != null) {
-                            if (R instanceof qy) {
+                            if (R instanceof uy) {
                                 try {
-                                    u9Var = ai.u9.a(((qy) R).E0.h);
+                                    u9Var = ai.u9.a(((uy) R).E0.h);
                                 } catch (Exception unused) {
                                 }
                             }

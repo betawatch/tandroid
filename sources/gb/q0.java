@@ -2,7 +2,7 @@ package gb;
 
 import java.util.UUID;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class q0 extends db.u {
     @Override // db.u
@@ -14,10 +14,10 @@ public class q0 extends db.u {
         String v = aVar.v();
         try {
             return UUID.fromString(v);
-        } catch (IllegalArgumentException e) {
-            StringBuilder w10 = a4.a.w("Failed parsing '", v, "' as UUID; at path ");
-            w10.append(aVar.j());
-            throw new db.j(w10.toString(), e);
+        } catch (IllegalArgumentException e7) {
+            StringBuilder v9 = a4.a.v("Failed parsing '", v, "' as UUID; at path ");
+            v9.append(aVar.j());
+            throw new db.j(v9.toString(), e7);
         }
     }
 

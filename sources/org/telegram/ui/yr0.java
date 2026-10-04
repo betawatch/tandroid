@@ -1,52 +1,52 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.SurfaceView;
+import android.animation.AnimatorSet;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class yr0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class yr0 implements Runnable {
+    public final /* synthetic */ PhotoViewer a;
     public final /* synthetic */ View b;
-    public final /* synthetic */ PhotoViewer c;
+    public final /* synthetic */ ct0 c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ AnimatorSet f;
 
-    public /* synthetic */ yr0(PhotoViewer photoViewer, View view, int i10) {
-        this.a = i10;
-        this.c = photoViewer;
+    public /* synthetic */ yr0(PhotoViewer photoViewer, View view, ct0 ct0Var, float f7, float f10, AnimatorSet animatorSet) {
+        this.a = photoViewer;
         this.b = view;
+        this.c = ct0Var;
+        this.d = f7;
+        this.e = f10;
+        this.f = animatorSet;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.c;
-                photoViewer.B3 = false;
-                this.b.setOutlineProvider(null);
-                ImageView imageView = photoViewer.x3;
-                if (imageView != null) {
-                    imageView.setOutlineProvider(null);
-                }
-                mu0 mu0Var = photoViewer.E2;
-                if (mu0Var != null) {
-                    mu0Var.setOutlineProvider(null);
-                }
-                SurfaceView surfaceView = photoViewer.C2;
-                if (surfaceView != null) {
-                    surfaceView.setVisibility(0);
-                    break;
-                }
-                break;
-            default:
-                PhotoViewer photoViewer2 = this.c;
-                photoViewer2.B3 = false;
-                photoViewer2.i4.run();
-                AndroidUtilities.runOnUIThread(new xi0(21, this, this.b), 100L);
-                break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        Drawable[] drawableArr = PhotoViewer.U8;
+        View view = this.b;
+        ct0 ct0Var = this.c;
+        view.setOutlineProvider(ct0Var);
+        view.setClipToOutline(true);
+        PhotoViewer photoViewer = this.a;
+        photoViewer.x3.setOutlineProvider(ct0Var);
+        photoViewer.x3.setClipToOutline(true);
+        pu0 pu0Var = photoViewer.E2;
+        if (pu0Var != null) {
+            pu0Var.setOutlineProvider(ct0Var);
+            photoViewer.E2.setClipToOutline(true);
         }
+        photoViewer.x3.setTranslationY(this.d);
+        float f7 = this.e;
+        view.setTranslationY(f7);
+        pu0 pu0Var2 = photoViewer.E2;
+        if (pu0Var2 != null) {
+            pu0Var2.setTranslationY(f7);
+        }
+        photoViewer.Y5 = 0.0f;
+        photoViewer.e0.invalidate();
+        this.f.start();
     }
 }

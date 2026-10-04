@@ -2,7 +2,7 @@ package b2;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j {
     public static final j h = new j(1, 2, 3, null, -1, -1);
@@ -40,15 +40,15 @@ public final class j {
     }
 
     public static String a(int i10) {
-        return i10 != -1 ? i10 != 1 ? i10 != 2 ? hg.c.h(i10, "Undefined color range ") : "Limited range" : "Full range" : "Unset color range";
+        return i10 != -1 ? i10 != 1 ? i10 != 2 ? hg.k0.h(i10, "Undefined color range ") : "Limited range" : "Full range" : "Unset color range";
     }
 
     public static String b(int i10) {
-        return i10 != -1 ? i10 != 6 ? i10 != 1 ? i10 != 2 ? hg.c.h(i10, "Undefined color space ") : "BT601" : "BT709" : "BT2020" : "Unset color space";
+        return i10 != -1 ? i10 != 6 ? i10 != 1 ? i10 != 2 ? hg.k0.h(i10, "Undefined color space ") : "BT601" : "BT709" : "BT2020" : "Unset color space";
     }
 
     public static String c(int i10) {
-        return i10 != -1 ? i10 != 10 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 6 ? i10 != 7 ? hg.c.h(i10, "Undefined color transfer ") : "HLG" : "ST2084 PQ" : "SDR SMPTE 170M" : "sRGB" : "Linear" : "Gamma 2.2" : "Unset color transfer";
+        return i10 != -1 ? i10 != 10 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 6 ? i10 != 7 ? hg.k0.h(i10, "Undefined color transfer ") : "HLG" : "ST2084 PQ" : "SDR SMPTE 170M" : "sRGB" : "Linear" : "Gamma 2.2" : "Unset color transfer";
     }
 
     public static boolean e(j jVar) {
@@ -139,9 +139,9 @@ public final class j {
         sb2.append(this.d != null);
         sb2.append(", ");
         int i10 = this.e;
-        sb2.append(i10 != -1 ? a4.a.n(i10, "bit Luma") : "NA");
+        sb2.append(i10 != -1 ? a4.a.m(i10, "bit Luma") : "NA");
         sb2.append(", ");
         int i11 = this.f;
-        return a4.a.t(sb2, i11 != -1 ? a4.a.n(i11, "bit Chroma") : "NA", ")");
+        return a4.a.s(sb2, i11 != -1 ? a4.a.m(i11, "bit Chroma") : "NA", ")");
     }
 }

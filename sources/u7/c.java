@@ -1,8 +1,8 @@
 package u7;
 
-import w7.s7;
+import w7.t7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c extends d {
     public final transient int c;
@@ -17,7 +17,7 @@ public final class c extends d {
 
     @Override // java.util.List
     public final Object get(int i10) {
-        s7.a(i10, this.d);
+        t7.a(i10, this.d);
         return this.e.get(i10 + this.c);
     }
 
@@ -39,7 +39,7 @@ public final class c extends d {
     @Override // u7.d, java.util.List
     /* renamed from: q, reason: merged with bridge method [inline-methods] */
     public final d subList(int i10, int i11) {
-        s7.b(i10, i11, this.d);
+        t7.b(i10, i11, this.d);
         int i12 = this.c;
         return this.e.subList(i10 + i12, i11 + i12);
     }

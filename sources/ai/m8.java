@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m8 implements Runnable {
     public final /* synthetic */ int a;
@@ -172,7 +172,7 @@ public final /* synthetic */ class m8 implements Runnable {
                 tL_fulfillStarsSubscription.subscription_id = ((TL_stars.StarsSubscription) obj2).id;
                 tL_fulfillStarsSubscription.peer = new TLRPC.TL_inputPeerSelf();
                 int i16 = this.c;
-                ConnectionsManager.getInstance(i16).sendRequest(tL_fulfillStarsSubscription, new k8(dVar, (org.telegram.ui.ActionBar.e3[]) obj, i16, this.b, 7));
+                ConnectionsManager.getInstance(i16).sendRequest(tL_fulfillStarsSubscription, new k8(dVar, (org.telegram.ui.ActionBar.f3[]) obj, i16, this.b, 7));
                 break;
         }
     }

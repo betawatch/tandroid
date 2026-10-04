@@ -1,7 +1,7 @@
 package gg;
 
 import ai.c9;
-import ei.l3;
+import ei.m3;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
@@ -12,15 +12,15 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.br0;
-import org.telegram.ui.Components.h40;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.er0;
+import org.telegram.ui.Components.i40;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.d9;
-import org.telegram.ui.da;
-import org.telegram.ui.dy0;
+import org.telegram.ui.f9;
+import org.telegram.ui.fa;
+import org.telegram.ui.gy0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -28,11 +28,11 @@ public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ u(int i10, HashSet hashSet, m2 m2Var) {
+    public /* synthetic */ u(int i10, HashSet hashSet, n2 n2Var) {
         this.a = 4;
         this.b = i10;
         this.d = hashSet;
-        this.c = m2Var;
+        this.c = n2Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
@@ -51,22 +51,22 @@ public final /* synthetic */ class u implements RequestDelegate {
                 ((VoIPService) this.d).lambda$editCallMember$90(this.b, (Runnable) this.c, tLObject, tL_error);
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new c9((d9) this.d, tLObject, this.b, (TLRPC.User) this.c, 11));
+                AndroidUtilities.runOnUIThread(new c9((f9) this.d, tLObject, this.b, (TLRPC.User) this.c, 11));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new l3(tLObject, this.b, (HashSet) this.d, tL_error, (m2) this.c, 15));
+                AndroidUtilities.runOnUIThread(new m3(tLObject, this.b, (HashSet) this.d, tL_error, (n2) this.c, 15));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new c9((m2) this.d, tLObject, this.b, (Utilities.Callback) this.c, 18));
+                AndroidUtilities.runOnUIThread(new c9((n2) this.d, tLObject, this.b, (Utilities.Callback) this.c, 18));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new c9((h40) this.d, this.b, tLObject, (String) this.c, 20));
+                AndroidUtilities.runOnUIThread(new c9((i40) this.d, this.b, tLObject, (String) this.c, 20));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new c9((br0) this.d, this.b, tLObject, (String) this.c, 22));
+                AndroidUtilities.runOnUIThread(new c9((er0) this.d, this.b, tLObject, (String) this.c, 22));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new dy0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
+                AndroidUtilities.runOnUIThread(new gy0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
                 break;
             default:
                 TLRPC.Chat chat = (TLRPC.Chat) this.d;
@@ -92,7 +92,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                         AndroidUtilities.runOnUIThread(new tg.n(chat, i11, arrayList, callback, 0));
                         break;
                     } else {
-                        BillingController.getInstance().queryProductDetails(arrayList2, new da(arrayList, chat, i11, callback, 9));
+                        BillingController.getInstance().queryProductDetails(arrayList2, new fa(arrayList, chat, i11, callback, 9));
                         break;
                     }
                 }

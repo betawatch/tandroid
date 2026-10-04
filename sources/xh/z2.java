@@ -2,16 +2,16 @@ package xh;
 
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.g61;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z2 implements yh.j2, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ i4 a;
 
     @Override // yh.j2
     public void b(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, boolean z10) {
-        i4.U(this.a, tL_starGiftUnique, j3, z10);
+        i4.S(this.a, tL_starGiftUnique, j3, z10);
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5Return
@@ -28,6 +28,6 @@ public final /* synthetic */ class z2 implements yh.j2, Utilities.Callback5, Uti
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        i4.Y(this.a, (x51) obj);
+        i4.X(this.a, (g61) obj);
     }
 }

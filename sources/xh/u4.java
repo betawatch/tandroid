@@ -7,9 +7,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.lw0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class u4 extends org.telegram.ui.Cells.g3 {
     public final /* synthetic */ z4 E;
@@ -17,8 +17,8 @@ public final class u4 extends org.telegram.ui.Cells.g3 {
     public final /* synthetic */ int y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u4(z4 z4Var, Context context, cw0 cw0Var, String str, int i10, d6 d6Var, ch.f fVar, int i11) {
-        super(context, cw0Var, str, true, i10, d6Var);
+    public u4(z4 z4Var, Context context, lw0 lw0Var, String str, int i10, d6 d6Var, ch.f fVar, int i11) {
+        super(context, lw0Var, str, true, i10, d6Var);
         this.E = z4Var;
         this.x = fVar;
         this.y = i11;
@@ -51,9 +51,9 @@ public final class u4 extends org.telegram.ui.Cells.g3 {
         tL_textWithEntities.entities = MediaDataController.getInstance(this.y).getEntities(charSequenceArr, true);
         tL_textWithEntities.text = charSequenceArr[0].toString();
         messageObject.setType();
-        z4Var.k0.U(messageObject, true);
+        z4Var.k0.S(messageObject, true);
         z4Var.t0.N(true);
-        z4Var.Z(true);
+        z4Var.Y(true);
     }
 
     @Override // android.view.ViewGroup, android.view.View

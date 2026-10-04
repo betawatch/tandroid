@@ -11,13 +11,13 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.fw0;
 import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.uk0;
-import org.telegram.ui.Components.wv0;
-import w7.y5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class o2 extends j {
     public final TLRPC.Document q0;
@@ -25,11 +25,11 @@ public class o2 extends j {
     public final int s0;
     public boolean t0;
     public final e6 u0;
-    public final wv0 v0;
+    public final fw0 v0;
     public final ai.f0 w0;
     public final ImageReceiver x0;
 
-    public o2(Context context, PointF pointF, float f7, float f10, wv0 wv0Var, TLRPC.Document document, Object obj) {
+    public o2(Context context, PointF pointF, float f7, float f10, fw0 fw0Var, TLRPC.Document document, Object obj) {
         super(context, pointF);
         this.s0 = -1;
         int i10 = 0;
@@ -38,7 +38,7 @@ public class o2 extends j {
         setRotation(f7);
         setScale(f10);
         this.q0 = document;
-        this.v0 = wv0Var;
+        this.v0 = fw0Var;
         this.r0 = obj;
         while (true) {
             if (i10 >= document.attributes.size()) {
@@ -56,28 +56,28 @@ public class o2 extends j {
         }
         ai.f0 f0Var = new ai.f0(this, context);
         this.w0 = f0Var;
-        addView(f0Var, y5.c(-1.0f, -1));
-        this.u0 = new e6(f0Var, 0L, 500L, sr.h);
+        addView(f0Var, z5.c(-1.0f, -1));
+        this.u0 = new e6(f0Var, 0L, 500L, tr.h);
         this.x0.setAspectFit(true);
         this.x0.setInvalidateAll(true);
         this.x0.setParentView(f0Var);
         this.x0.setImage(ImageLocation.getForDocument(document), (String) null, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90), document), (String) null, "webp", obj, 1);
-        this.x0.setDelegate(new le.b(this, 26));
+        this.x0.setDelegate(new k2.v(this, 27));
         k();
     }
 
     @Override // qg.j
     public final i a() {
-        a2 a2Var = new a2(this, getContext(), 2);
-        a2Var.r = new RectF();
-        return a2Var;
+        z1 z1Var = new z1(this, getContext(), 2);
+        z1Var.r = new RectF();
+        return z1Var;
     }
 
     public int getAnchor() {
         return this.s0;
     }
 
-    public wv0 getBaseSize() {
+    public fw0 getBaseSize() {
         return this.v0;
     }
 
@@ -116,9 +116,9 @@ public class o2 extends j {
 
     @Override // qg.j
     public final void k() {
-        wv0 wv0Var = this.v0;
-        float f7 = wv0Var.a / 2.0f;
-        float f10 = wv0Var.b / 2.0f;
+        fw0 fw0Var = this.v0;
+        float f7 = fw0Var.a / 2.0f;
+        float f10 = fw0Var.b / 2.0f;
         setX(getPositionX() - f7);
         setY(getPositionY() - f10);
         m();
@@ -138,8 +138,8 @@ public class o2 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        wv0 wv0Var = this.v0;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) wv0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) wv0Var.b, TLObject.FLAG_30));
+        fw0 fw0Var = this.v0;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) fw0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) fw0Var.b, TLObject.FLAG_30));
     }
 
     public final void r(boolean z10) {

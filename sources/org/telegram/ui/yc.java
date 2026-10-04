@@ -1,130 +1,262 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.graphics.Color;
+import android.net.Uri;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.ViewGroup;
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatThemeController;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class yc extends FrameLayout {
-    public final int a;
-    public final org.telegram.ui.ActionBar.d6 b;
-    public final ArrayList c;
-    public final wb1 d;
-    public final org.telegram.ui.Components.v00 e;
-    public boolean f;
-    public final wc h;
-    public boolean n;
-    public Utilities.Callback r;
-    public String s;
-    public TLRPC.WallPaper v;
-    public final HashMap w;
-    public final HashMap x;
+public final class yc extends org.telegram.ui.Components.yl0 {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 d;
+    public final /* synthetic */ ad e;
 
-    public yc(int i10, Activity activity, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(activity);
-        this.c = new ArrayList();
-        this.w = new HashMap();
-        this.x = new HashMap();
-        this.a = i10;
-        this.b = d6Var;
-        org.telegram.ui.Components.v00 v00Var = new org.telegram.ui.Components.v00(getContext(), d6Var);
-        this.e = v00Var;
-        v00Var.setViewType(14);
-        v00Var.setVisibility(0);
-        addView(v00Var, w7.y5.d(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
-        wb1 wb1Var = new wb1(activity, 4, d6Var);
-        this.d = wb1Var;
-        wb1Var.setClipToPadding(false);
-        wb1Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
-        getContext();
-        s4.c0 c0Var = new s4.c0();
-        c0Var.j1(0);
-        wb1Var.setLayoutManager(c0Var);
-        wb1Var.setAlpha(0.0f);
-        wc wcVar = new wc(this, i10, d6Var);
-        this.h = wcVar;
-        wb1Var.setAdapter(wcVar);
-        addView(wb1Var, w7.y5.c(130.0f, -1));
-        wb1Var.setOnItemClickListener(new i(this, 2));
-        ChatThemeController chatThemeController = ChatThemeController.getInstance(i10);
-        chatThemeController.preloadAllWallpaperThumbs(true);
-        chatThemeController.preloadAllWallpaperThumbs(false);
-        chatThemeController.preloadAllWallpaperImages(true);
-        chatThemeController.preloadAllWallpaperImages(false);
-        chatThemeController.requestAllChatThemes(new xc(this, i10), true);
-        if (this.n) {
-            AndroidUtilities.updateViewVisibilityAnimated(v00Var, false, 1.0f, true, false);
-        } else {
-            AndroidUtilities.updateViewVisibilityAnimated(v00Var, true, 1.0f, true, false);
-        }
+    public yc(ad adVar, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.e = adVar;
+        this.c = i10;
+        this.d = d6Var;
     }
 
-    public final void a(String str, boolean z10) {
-        ArrayList arrayList;
-        int R;
-        this.s = str;
-        int i10 = -1;
-        int i11 = 0;
-        while (true) {
-            arrayList = this.c;
-            boolean z11 = true;
-            if (i11 >= arrayList.size()) {
-                break;
-            }
-            org.telegram.ui.Components.np npVar = (org.telegram.ui.Components.np) arrayList.get(i11);
-            if (!TextUtils.equals(this.s, npVar.a()) && (!TextUtils.isEmpty(str) || !npVar.a.a)) {
-                z11 = false;
-            }
-            npVar.d = z11;
-            if (z11) {
-                i10 = i11;
-            }
-            i11++;
-        }
-        wb1 wb1Var = this.d;
-        if (i10 >= 0 && !z10 && (wb1Var.getLayoutManager() instanceof s4.c0)) {
-            ((s4.c0) wb1Var.getLayoutManager()).h1(i10, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
-        }
-        for (int i12 = 0; i12 < wb1Var.getChildCount(); i12++) {
-            View childAt = wb1Var.getChildAt(i12);
-            if ((childAt instanceof org.telegram.ui.Components.j21) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
-                ((org.telegram.ui.Components.j21) childAt).g(((org.telegram.ui.Components.np) arrayList.get(R)).d, true);
-            }
-        }
+    @Override // org.telegram.ui.Components.yl0
+    public final boolean D(s4.c1 c1Var) {
+        return true;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // s4.h0
+    public final int h() {
+        return this.e.c.size();
     }
 
-    public void setGalleryWallpaper(TLRPC.WallPaper wallPaper) {
-        this.v = wallPaper;
-        AndroidUtilities.forEachViews((RecyclerView) this.d, (Utilities.Callback<View>) new uc(this, 1));
-        if (this.v != null) {
-            ArrayList arrayList = this.c;
-            if ((arrayList.isEmpty() || ((org.telegram.ui.Components.np) arrayList.get(0)).a.a) && this.f) {
-                arrayList.add(0, new org.telegram.ui.Components.np(org.telegram.ui.ActionBar.b4.a(this.a)));
-                this.h.l();
+    /* JADX WARN: Removed duplicated region for block: B:145:0x02eb  */
+    @Override // s4.h0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void v(s4.c1 c1Var, int i10) {
+        boolean z10;
+        FileInputStream fileInputStream;
+        boolean z11;
+        int s10;
+        int intValue;
+        String[] split;
+        org.telegram.ui.Components.s21 s21Var = (org.telegram.ui.Components.s21) c1Var.a;
+        ad adVar = this.e;
+        ArrayList arrayList = adVar.c;
+        org.telegram.ui.ActionBar.h6 j3 = ((org.telegram.ui.Components.op) arrayList.get(i10)).a.j(((org.telegram.ui.Components.op) arrayList.get(i10)).c);
+        if (j3 != null && j3.b != null && !j3.T && new File(j3.b).exists()) {
+            HashMap hashMap = adVar.x;
+            if (j3.b != null) {
+                try {
+                    FileInputStream fileInputStream2 = new FileInputStream(new File(j3.b));
+                    int i11 = 0;
+                    boolean z12 = false;
+                    while (true) {
+                        try {
+                            int read = fileInputStream2.read(org.telegram.ui.Cells.pa.p3);
+                            if (read == -1) {
+                                fileInputStream = fileInputStream2;
+                                break;
+                            }
+                            int i12 = i11;
+                            int i13 = 0;
+                            int i14 = 0;
+                            while (true) {
+                                if (i13 >= read) {
+                                    fileInputStream = fileInputStream2;
+                                    break;
+                                }
+                                byte[] bArr = org.telegram.ui.Cells.pa.p3;
+                                if (bArr[i13] == 10) {
+                                    int i15 = i13 - i14;
+                                    int i16 = i15 + 1;
+                                    fileInputStream = fileInputStream2;
+                                    try {
+                                        String str = new String(bArr, i14, i15, "UTF-8");
+                                        if (str.startsWith("WLS=")) {
+                                            String substring = str.substring(4);
+                                            Uri parse = Uri.parse(substring);
+                                            j3.e = parse.getQueryParameter("slug");
+                                            File filesDirFixed = ApplicationLoader.getFilesDirFixed();
+                                            StringBuilder sb2 = new StringBuilder();
+                                            z11 = z12;
+                                            sb2.append(Utilities.MD5(substring));
+                                            sb2.append(".wp");
+                                            j3.c = new File(filesDirFixed, sb2.toString()).getAbsolutePath();
+                                            String queryParameter = parse.getQueryParameter("mode");
+                                            if (queryParameter != null && (split = queryParameter.toLowerCase().split(" ")) != null && split.length > 0) {
+                                                int i17 = 0;
+                                                while (true) {
+                                                    if (i17 >= split.length) {
+                                                        break;
+                                                    }
+                                                    if ("blur".equals(split[i17])) {
+                                                        j3.h = true;
+                                                        break;
+                                                    }
+                                                    i17++;
+                                                }
+                                            }
+                                            if (!TextUtils.isEmpty(parse.getQueryParameter("pattern"))) {
+                                                try {
+                                                    String queryParameter2 = parse.getQueryParameter("bg_color");
+                                                    if (!TextUtils.isEmpty(queryParameter2)) {
+                                                        j3.r = Integer.parseInt(queryParameter2.substring(0, 6), 16) | (-16777216);
+                                                        if (queryParameter2.length() >= 13 && AndroidUtilities.isValidWallChar(queryParameter2.charAt(6))) {
+                                                            j3.s = Integer.parseInt(queryParameter2.substring(7, 13), 16) | (-16777216);
+                                                        }
+                                                        if (queryParameter2.length() >= 20 && AndroidUtilities.isValidWallChar(queryParameter2.charAt(13))) {
+                                                            j3.v = Integer.parseInt(queryParameter2.substring(14, 20), 16) | (-16777216);
+                                                        }
+                                                        if (queryParameter2.length() == 27 && AndroidUtilities.isValidWallChar(queryParameter2.charAt(20))) {
+                                                            j3.w = Integer.parseInt(queryParameter2.substring(21), 16) | (-16777216);
+                                                        }
+                                                    }
+                                                } catch (Exception unused) {
+                                                }
+                                                try {
+                                                    String queryParameter3 = parse.getQueryParameter("rotation");
+                                                    if (!TextUtils.isEmpty(queryParameter3)) {
+                                                        j3.x = Utilities.parseInt((CharSequence) queryParameter3).intValue();
+                                                    }
+                                                } catch (Exception unused2) {
+                                                }
+                                                String queryParameter4 = parse.getQueryParameter("intensity");
+                                                if (!TextUtils.isEmpty(queryParameter4)) {
+                                                    j3.y = Utilities.parseInt((CharSequence) queryParameter4).intValue();
+                                                }
+                                                if (j3.y == 0) {
+                                                    j3.y = 50;
+                                                }
+                                            }
+                                        } else {
+                                            z11 = z12;
+                                            if (str.startsWith("WPS")) {
+                                                j3.P = i12 + i16;
+                                                z12 = true;
+                                                break;
+                                            }
+                                            int indexOf = str.indexOf(61);
+                                            if (indexOf != -1 && ((s10 = org.telegram.ui.ActionBar.f5.s(str.substring(0, indexOf))) == org.telegram.ui.ActionBar.i6.ra || s10 == org.telegram.ui.ActionBar.i6.Aa || s10 == org.telegram.ui.ActionBar.i6.Nd || s10 == org.telegram.ui.ActionBar.i6.Od || s10 == org.telegram.ui.ActionBar.i6.Pd || s10 == org.telegram.ui.ActionBar.i6.Qd)) {
+                                                String substring2 = str.substring(indexOf + 1);
+                                                if (substring2.length() <= 0 || substring2.charAt(0) != '#') {
+                                                    intValue = Utilities.parseInt((CharSequence) substring2).intValue();
+                                                } else {
+                                                    try {
+                                                        intValue = Color.parseColor(substring2);
+                                                    } catch (Exception unused3) {
+                                                        intValue = Utilities.parseInt((CharSequence) substring2).intValue();
+                                                    }
+                                                }
+                                                if (s10 == org.telegram.ui.ActionBar.i6.ra) {
+                                                    j3.Q = intValue;
+                                                } else if (s10 == org.telegram.ui.ActionBar.i6.Aa) {
+                                                    j3.R = intValue;
+                                                } else if (s10 == org.telegram.ui.ActionBar.i6.Nd) {
+                                                    j3.L = intValue;
+                                                } else if (s10 == org.telegram.ui.ActionBar.i6.Od) {
+                                                    j3.M = intValue;
+                                                } else if (s10 == org.telegram.ui.ActionBar.i6.Pd) {
+                                                    j3.N = intValue;
+                                                } else if (s10 == org.telegram.ui.ActionBar.i6.Qd) {
+                                                    j3.O = intValue;
+                                                }
+                                            }
+                                        }
+                                        i14 += i16;
+                                        i12 += i16;
+                                    } catch (Throwable th2) {
+                                        th = th2;
+                                        Throwable th3 = th;
+                                        try {
+                                            fileInputStream.close();
+                                            throw th3;
+                                        } catch (Throwable th4) {
+                                            th3.addSuppressed(th4);
+                                            throw th3;
+                                        }
+                                    }
+                                } else {
+                                    fileInputStream = fileInputStream2;
+                                    z11 = z12;
+                                }
+                                i13++;
+                                fileInputStream2 = fileInputStream;
+                                z12 = z11;
+                            }
+                            if (z12 || i11 == i12) {
+                                break;
+                            }
+                            fileInputStream.getChannel().position(i12);
+                            i11 = i12;
+                            fileInputStream2 = fileInputStream;
+                        } catch (Throwable th5) {
+                            th = th5;
+                            fileInputStream = fileInputStream2;
+                        }
+                    }
+                    fileInputStream.close();
+                } catch (Throwable th6) {
+                    FileLog.e(th6);
+                }
+                if (j3.c == null || j3.f || new File(j3.c).exists()) {
+                    z10 = true;
+                    j3.T = true;
+                    org.telegram.ui.Components.op opVar = (org.telegram.ui.Components.op) arrayList.get(i10);
+                    s21Var.setEnabled(z10);
+                    s21Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i5, false));
+                    s21Var.f(opVar, 0L, false);
+                    s21Var.g(opVar.d, false);
+                    s21Var.setFallbackWallpaper(opVar.a.b ? null : adVar.v);
+                }
+                if (!hashMap.containsKey(j3)) {
+                    hashMap.put(j3, j3.e);
+                    TL_account.getWallPaper getwallpaper = new TL_account.getWallPaper();
+                    TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
+                    tL_inputWallPaperSlug.slug = j3.e;
+                    getwallpaper.wallpaper = tL_inputWallPaperSlug;
+                    ConnectionsManager.getInstance(j3.E).sendRequest(getwallpaper, new ai.v1(23, adVar, j3));
+                }
             }
         }
+        z10 = true;
+        org.telegram.ui.Components.op opVar2 = (org.telegram.ui.Components.op) arrayList.get(i10);
+        s21Var.setEnabled(z10);
+        s21Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i5, false));
+        s21Var.f(opVar2, 0L, false);
+        s21Var.g(opVar2.d, false);
+        s21Var.setFallbackWallpaper(opVar2.a.b ? null : adVar.v);
     }
 
-    public void setOnEmoticonSelected(Utilities.Callback<String> callback) {
-        this.r = callback;
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        return new org.telegram.ui.Components.il0(new xc(this.c, 3, viewGroup.getContext(), this.d));
     }
 
-    public void setWithRemovedStub(boolean z10) {
-        this.f = z10;
+    @Override // s4.h0
+    public final void y(s4.c1 c1Var) {
+        ad adVar = this.e;
+        ArrayList arrayList = adVar.c;
+        int b10 = c1Var.b();
+        View view = c1Var.a;
+        if (b10 < 0 || b10 >= arrayList.size()) {
+            return;
+        }
+        org.telegram.ui.Components.op opVar = (org.telegram.ui.Components.op) arrayList.get(b10);
+        org.telegram.ui.Components.s21 s21Var = (org.telegram.ui.Components.s21) view;
+        s21Var.g(opVar.d, false);
+        s21Var.setFallbackWallpaper(opVar.a.b ? null : adVar.v);
     }
 }

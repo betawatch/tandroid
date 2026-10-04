@@ -1,33 +1,42 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class hh1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ih1 b;
+import android.content.Context;
+import android.text.Editable;
 
-    public /* synthetic */ hh1(ih1 ih1Var, int i10) {
-        this.a = i10;
-        this.b = ih1Var;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final class hh1 extends org.telegram.ui.Cells.j3 {
+    public final /* synthetic */ int x;
+    public final /* synthetic */ UserInfoActivity y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ hh1(UserInfoActivity userInfoActivity, Context context, String str, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, str, false, false, -1, d6Var);
+        this.x = i10;
+        this.y = userInfoActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.ui.Cells.j3
+    public final void b(Editable editable) {
+        switch (this.x) {
             case 0:
-                org.telegram.ui.Components.n61 n61Var = this.b.a;
-                if (n61Var != null) {
-                    n61Var.Y2.N(true);
-                    break;
-                }
+                this.y.b0(true);
+                break;
+            case 1:
+                this.y.b0(true);
                 break;
             default:
-                org.telegram.ui.Components.n61 n61Var2 = this.b.a;
-                if (n61Var2 != null) {
-                    n61Var2.Y2.N(true);
-                    break;
-                }
+                UserInfoActivity userInfoActivity = this.y;
+                userInfoActivity.b0(true);
+                userInfoActivity.e0();
                 break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hh1(UserInfoActivity userInfoActivity, Context context, String str, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, str, true, false, i10, d6Var);
+        this.x = 2;
+        this.y = userInfoActivity;
     }
 }

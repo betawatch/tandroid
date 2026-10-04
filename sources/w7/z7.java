@@ -1,22 +1,64 @@
 package w7;
 
-import java.util.Date;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class z7 {
-    public static la.h a(String str) {
-        JSONObject jSONObject = new JSONObject(str);
-        String a2 = r8.a(jSONObject.getString("id"));
-        long j3 = jSONObject.getLong("created");
-        jSONObject.getBoolean("livemode");
-        String str2 = "card".equals(r8.a(jSONObject.getString(TeXSymbolParser.TYPE_ATTR))) ? "card" : null;
-        Boolean valueOf = Boolean.valueOf(jSONObject.getBoolean("used"));
-        JSONObject jSONObject2 = jSONObject.getJSONObject("card");
-        uc.a aVar = new uc.a(null, Integer.valueOf(jSONObject2.getInt("exp_month")), Integer.valueOf(jSONObject2.getInt("exp_year")), null, r8.a(jSONObject2.optString("name")), r8.a(jSONObject2.optString("address_line1")), r8.a(jSONObject2.optString("address_line2")), r8.a(jSONObject2.optString("address_city")), r8.a(jSONObject2.optString("address_state")), r8.a(jSONObject2.optString("address_zip")), r8.a(jSONObject2.optString("address_country")), t8.a(r8.a(jSONObject2.optString("brand"))), r8.a(jSONObject2.optString("last4")), r8.a(jSONObject2.optString("fingerprint")), t8.b(r8.a(jSONObject2.optString("funding"))), r8.a(jSONObject2.optString("country")), r8.a(jSONObject2.optString("currency")));
-        new Date(j3 * 1000);
-        return new la.h(a2, valueOf, aVar, str2);
+    public static String a(String str, Object... objArr) {
+        int length;
+        int length2;
+        int indexOf;
+        String sb2;
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            length = objArr.length;
+            if (i11 >= length) {
+                break;
+            }
+            Object obj = objArr[i11];
+            if (obj == null) {
+                sb2 = BuildConfig.BETA_URL;
+            } else {
+                try {
+                    sb2 = obj.toString();
+                } catch (Exception e7) {
+                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e7);
+                    StringBuilder v = a4.a.v("<", str2, " threw ");
+                    v.append(e7.getClass().getName());
+                    v.append(">");
+                    sb2 = v.toString();
+                }
+            }
+            objArr[i11] = sb2;
+            i11++;
+        }
+        StringBuilder sb3 = new StringBuilder((length * 16) + str.length());
+        int i12 = 0;
+        while (true) {
+            length2 = objArr.length;
+            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
+                break;
+            }
+            sb3.append((CharSequence) str, i12, indexOf);
+            sb3.append(objArr[i10]);
+            i10++;
+            i12 = indexOf + 2;
+        }
+        sb3.append((CharSequence) str, i12, str.length());
+        if (i10 < length2) {
+            sb3.append(" [");
+            sb3.append(objArr[i10]);
+            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
+                sb3.append(", ");
+                sb3.append(objArr[i13]);
+            }
+            sb3.append(']');
+        }
+        return sb3.toString();
     }
 }

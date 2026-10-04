@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class m9 extends Drawable {
     public final ViewGroup a;
@@ -24,7 +24,7 @@ public final class m9 extends Drawable {
     public final int e;
     public final int f;
     public final float g;
-    public final le.k c = new le.k(new l.d(this), sr.h, 380);
+    public final le.j c = new le.j(new ii.n4(this, 12), tr.h, 380);
     public final ArrayList h = new ArrayList();
     public int i = 255;
 
@@ -80,10 +80,10 @@ public final class m9 extends Drawable {
         }
         float f7 = bounds.left;
         float f10 = bounds.top;
-        le.k kVar = this.c;
-        canvas.saveLayer(f7, f10, f7 + kVar.d.f.a, f10 + this.e, null);
-        for (int size = kVar.b.size() - 1; size >= 0; size--) {
-            le.h n10 = kVar.n(size);
+        le.j jVar = this.c;
+        canvas.saveLayer(f7, f10, f7 + jVar.d.f.a, f10 + this.e, null);
+        for (int size = jVar.b.size() - 1; size >= 0; size--) {
+            le.g n10 = jVar.n(size);
             RectF b10 = n10.b();
             Object obj = n10.a;
             float f11 = n10.f.a;
@@ -96,7 +96,7 @@ public final class m9 extends Drawable {
             float f16 = f10 + f14;
             canvas.save();
             canvas.scale(c10, c10, f15, f16);
-            canvas.drawCircle(f15, f16, f14 + this.g, org.telegram.ui.ActionBar.h6.Il);
+            canvas.drawCircle(f15, f16, f14 + this.g, org.telegram.ui.ActionBar.i6.Jl);
             l9 l9Var = (l9) obj;
             l9Var.a.setImageCoords(f13, f10, width, width);
             l9Var.a.setAlpha((this.i / 255.0f) * n10.c());
@@ -108,13 +108,13 @@ public final class m9 extends Drawable {
 
     public final void d(List list, boolean z10) {
         l9 l9Var;
-        le.k kVar = this.c;
+        le.j jVar = this.c;
         if (list == null || list.isEmpty()) {
-            kVar.r(null, z10);
+            jVar.r(null, z10);
             return;
         }
         if (!z10) {
-            kVar.r(null, false);
+            jVar.r(null, false);
         }
         ArrayList arrayList = new ArrayList(list.size());
         Iterator it = list.iterator();
@@ -175,7 +175,7 @@ public final class m9 extends Drawable {
                 imageReceiver.onAttachedToWindow();
             }
         }
-        kVar.r(arrayList, z10);
+        jVar.r(arrayList, z10);
     }
 
     @Override // android.graphics.drawable.Drawable

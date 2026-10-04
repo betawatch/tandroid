@@ -3,18 +3,19 @@ package bc;
 import android.graphics.Bitmap;
 import android.view.View;
 import android.view.animation.Interpolator;
-import com.google.firebase.messaging.t;
+import com.google.firebase.messaging.s;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import k.i;
 import m.p3;
+import n6.l;
 import n7.z0;
 import org.telegram.tgnet.ConnectionsManager;
 import r0.l0;
 import r0.m0;
-import v7.l;
-import w7.h9;
+import v7.k;
+import w7.m9;
 import z7.ee;
 import z7.fb;
 import z7.g;
@@ -27,7 +28,7 @@ import z7.te;
 import z7.va;
 import z7.vf;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements vf {
     public long a;
@@ -102,25 +103,25 @@ public final /* synthetic */ class d implements vf {
         ig igVar = (ig) this.f;
         cf.c cVar = new cf.c();
         boolean z11 = false;
-        l lVar = new l(16, false);
-        lVar.b = Long.valueOf(j3 & Long.MAX_VALUE);
-        lVar.c = gbVar;
-        lVar.d = Boolean.valueOf(z10);
-        cVar.a = new va(lVar);
+        k kVar = new k(16, false);
+        kVar.b = Long.valueOf(j3 & Long.MAX_VALUE);
+        kVar.c = gbVar;
+        kVar.d = Boolean.valueOf(z10);
+        cVar.a = new va(kVar);
         int i11 = aVar.e;
         f.l.getClass();
         int i12 = aVar.e;
         if (i12 == -1) {
             Bitmap bitmap = aVar.a;
-            n6.l.h(bitmap);
+            l.h(bitmap);
             i10 = bitmap.getAllocationByteCount();
         } else {
             if (i12 == 17 || i12 == 842094169) {
-                n6.l.h(null);
+                l.h(null);
                 throw null;
             }
             if (i12 == 35) {
-                n6.l.h(null);
+                l.h(null);
                 throw null;
             }
             i10 = 0;
@@ -135,19 +136,19 @@ public final /* synthetic */ class d implements vf {
             g gVar = z7.i.b;
             Object[] array = list.toArray();
             int length = array.length;
-            h9.a(length, array);
+            m9.a(length, array);
             cVar.e = z7.i.r(length, array);
             List<hg> list2 = igVar.a;
             if (!list2.isEmpty()) {
                 Object[] objArr = new Object[4];
                 int i13 = 0;
                 for (hg hgVar : list2) {
-                    t tVar = new t(14, z11);
-                    tVar.b = Integer.valueOf(hgVar.c & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    tVar.c = Integer.valueOf(hgVar.d & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    tVar.d = Integer.valueOf(hgVar.e & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    tVar.e = Integer.valueOf(hgVar.f & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    te teVar = new te(tVar);
+                    s sVar = new s(14, z11);
+                    sVar.b = Integer.valueOf(hgVar.c & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    sVar.c = Integer.valueOf(hgVar.d & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    sVar.d = Integer.valueOf(hgVar.e & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    sVar.e = Integer.valueOf(hgVar.f & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    te teVar = new te(sVar);
                     int i14 = i13 + 1;
                     int length2 = objArr.length;
                     if (length2 < i14) {

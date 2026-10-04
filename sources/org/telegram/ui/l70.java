@@ -1,59 +1,123 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.LinearLayout;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class l70 extends LinearLayout {
-    public final org.telegram.ui.Components.du a;
-    public boolean b;
-    public int c;
-    public tt d;
-    public String e;
-    public final k70 f;
-    public final /* synthetic */ o70 h;
+public final class l70 extends org.telegram.ui.Components.yl0 {
+    public final Context c;
+    public final /* synthetic */ m70 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l70(o70 o70Var, Context context) {
-        super(context);
-        this.h = o70Var;
-        this.f = new k70(this);
-        TextView f7 = org.telegram.messenger.f0.f(context, 1, 16.0f);
-        f7.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.j5, false));
-        f7.setText("t.me/addemoji/");
-        org.telegram.ui.Components.du duVar = new org.telegram.ui.Components.du(context, null);
-        this.a = duVar;
-        duVar.setLines(1);
-        duVar.setSingleLine(true);
-        duVar.setInputType(16384);
-        duVar.setTextSize(1, 16.0f);
-        duVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Ud, false));
-        duVar.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.hc, false));
-        duVar.setHighlightColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.uf, false));
-        int i10 = org.telegram.ui.ActionBar.h6.Vd;
-        duVar.setHintColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
-        duVar.setHintTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
-        duVar.setCursorColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Wd, false));
-        duVar.setHandlesColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.vf, false));
-        duVar.setBackground(null);
-        duVar.setHint(LocaleController.getString(R.string.AddEmojiPackLinkHint));
-        addView(f7, w7.y5.t(-2, -2, 16, 20, 0, 0, 0));
-        addView(duVar, w7.y5.t(-1, -2, 16, -4, 0, 0, 0));
-        setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
-        setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f));
-        setWillNotDraw(false);
+    public l70(m70 m70Var, Context context) {
+        this.d = m70Var;
+        this.c = context;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.b) {
-            canvas.drawLine(AndroidUtilities.dp(20.0f), getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
+    @Override // org.telegram.ui.Components.yl0
+    public final boolean D(s4.c1 c1Var) {
+        int b10 = c1Var.b();
+        m70 m70Var = this.d;
+        return b10 == m70Var.r || b10 == m70Var.n || b10 == m70Var.s || b10 == 0;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        m70 m70Var = this.d;
+        if (m70Var.e) {
+            return 0;
         }
+        return m70Var.w;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        m70 m70Var = this.d;
+        if (i10 == m70Var.n || i10 == m70Var.s || i10 == m70Var.r) {
+            return 0;
+        }
+        if (i10 == m70Var.v || i10 == m70Var.h) {
+            return 1;
+        }
+        return i10 == 0 ? 2 : 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        int i11 = c1Var.f;
+        View view = c1Var.a;
+        m70 m70Var = this.d;
+        if (i11 == 0) {
+            org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) view;
+            if (i10 == m70Var.n) {
+                eaVar.b(LocaleController.getString(R.string.CopyLink), true);
+                return;
+            } else if (i10 == m70Var.s) {
+                eaVar.b(LocaleController.getString(R.string.ShareLink), false);
+                return;
+            } else {
+                if (i10 == m70Var.r) {
+                    eaVar.b(LocaleController.getString(R.string.RevokeLink), true);
+                    return;
+                }
+                return;
+            }
+        }
+        if (i11 != 1) {
+            if (i11 != 2) {
+                return;
+            }
+            org.telegram.ui.Cells.p8 p8Var = (org.telegram.ui.Cells.p8) view;
+            TLRPC.TL_chatInviteExported tL_chatInviteExported = m70Var.f;
+            p8Var.a.setText(tL_chatInviteExported != null ? tL_chatInviteExported.link : "error");
+            p8Var.setWillNotDraw(true);
+            return;
+        }
+        org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
+        int i12 = m70Var.v;
+        Context context = this.c;
+        if (i10 == i12) {
+            e9Var.setText("");
+            e9Var.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.V0(context, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.i6.b7));
+        } else if (i10 == m70Var.h) {
+            TLRPC.Chat chat = m70Var.getMessagesController().getChat(Long.valueOf(m70Var.d));
+            if (!ChatObject.isChannel(chat) || chat.megagroup) {
+                e9Var.setText(LocaleController.getString(R.string.LinkInfo));
+            } else {
+                e9Var.setText(LocaleController.getString(R.string.ChannelLinkInfo));
+            }
+            e9Var.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.V0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.i6.b7));
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout frameLayout;
+        Context context = this.c;
+        if (i10 == 0) {
+            FrameLayout eaVar = new org.telegram.ui.Cells.ea(context);
+            eaVar.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
+            frameLayout = eaVar;
+        } else if (i10 != 1) {
+            org.telegram.ui.Cells.p8 p8Var = new org.telegram.ui.Cells.p8(context);
+            TextView textView = new TextView(context);
+            p8Var.a = textView;
+            textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false));
+            textView.setTextSize(1, 16.0f);
+            textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+            p8Var.addView(textView, w7.z5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 23.0f, 10.0f, 23.0f, 10.0f));
+            p8Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
+            frameLayout = p8Var;
+        } else {
+            frameLayout = new org.telegram.ui.Cells.e9(context);
+        }
+        return new org.telegram.ui.Components.il0(frameLayout);
     }
 }

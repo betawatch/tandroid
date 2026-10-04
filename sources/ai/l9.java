@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class l9 {
     public static final Comparator X = Comparator$-CC.comparingInt(new g7(1));
@@ -381,7 +381,7 @@ public final class l9 {
         if (arrayList == null || arrayList.isEmpty()) {
             return false;
         }
-        return ((k9) hg.c.g(1, arrayList)).I;
+        return ((k9) hg.k0.g(1, arrayList)).I;
     }
 
     public final void O(long j3) {
@@ -1172,12 +1172,12 @@ public final class l9 {
 
     public final void k0(long j3, List list) {
         ArrayList arrayList;
-        StringBuilder u10 = a4.a.u(j3, "updateDeletedStoriesInLists ", " storyItems[");
-        u10.append(list.size());
-        u10.append("] {");
-        u10.append(h0(list));
-        u10.append("}");
-        FileLog.d(u10.toString());
+        StringBuilder t10 = a4.a.t(j3, "updateDeletedStoriesInLists ", " storyItems[");
+        t10.append(list.size());
+        t10.append("] {");
+        t10.append(h0(list));
+        t10.append("}");
+        FileLog.d(t10.toString());
         d9 A = A(j3, 0, -1, false);
         l9 l9Var = this;
         d9 A2 = l9Var.A(j3, 1, -1, false);
@@ -1397,12 +1397,12 @@ public final class l9 {
 
     public final void n0(long j3, List list, boolean z10) {
         ArrayList arrayList;
-        StringBuilder u10 = a4.a.u(j3, "updateStoriesInLists ", " storyItems[");
-        u10.append(list.size());
-        u10.append("] {");
-        u10.append(h0(list));
-        u10.append("}");
-        FileLog.d(u10.toString());
+        StringBuilder t10 = a4.a.t(j3, "updateStoriesInLists ", " storyItems[");
+        t10.append(list.size());
+        t10.append("] {");
+        t10.append(h0(list));
+        t10.append("}");
+        FileLog.d(t10.toString());
         d9 A = A(j3, 0, -1, false);
         l9 l9Var = this;
         d9 A2 = l9Var.A(j3, 1, -1, false);
@@ -1502,14 +1502,14 @@ public final class l9 {
 
     public final void p0(long j3, TL_stories.StoryItem storyItem, boolean z10) {
         String str;
-        StringBuilder u10 = a4.a.u(j3, "StoriesController updateStoryItem ", " ");
+        StringBuilder t10 = a4.a.t(j3, "StoriesController updateStoryItem ", " ");
         if (storyItem == null) {
             str = BuildConfig.BETA_URL;
         } else {
             str = storyItem.id + "@" + storyItem.dialogId;
         }
-        u10.append(str);
-        FileLog.d(u10.toString());
+        t10.append(str);
+        FileLog.d(t10.toString());
         n0(j3, Collections.singletonList(storyItem), z10);
         this.k.k(j3, storyItem);
         l0(j3, Collections.singletonList(storyItem), false);

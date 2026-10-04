@@ -1,7 +1,32 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public abstract class xl0 extends s4.h0 {
-    public abstract boolean D(s4.c1 c1Var);
+public final class xl0 {
+    public static final xl0 a;
+    public static final xl0 b;
+    public static final /* synthetic */ xl0[] c;
+
+    /* JADX INFO: Fake field, exist only in values array */
+    xl0 EF0;
+
+    static {
+        xl0 xl0Var = new xl0("FULL_BACKGROUND", 0);
+        xl0 xl0Var2 = new xl0("SECTION_COLOR_BACKGROUND", 1);
+        xl0 xl0Var3 = new xl0("OPTIMIZED_BACKGROUND", 2);
+        a = xl0Var3;
+        xl0 xl0Var4 = new xl0("DRAW_VERTICES", 3);
+        b = xl0Var4;
+        c = new xl0[]{xl0Var, xl0Var2, xl0Var3, xl0Var4};
+    }
+
+    public static xl0 valueOf(String str) {
+        return (xl0) Enum.valueOf(xl0.class, str);
+    }
+
+    public static xl0[] values() {
+        return (xl0[]) c.clone();
+    }
 }

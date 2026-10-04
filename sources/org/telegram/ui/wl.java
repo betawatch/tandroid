@@ -8,39 +8,39 @@ import android.util.Property;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class wl extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ org.telegram.ui.Components.w9 c;
-    public final /* synthetic */ vn d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.h5 e;
+    public final /* synthetic */ xn d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i5 e;
     public final /* synthetic */ boolean f;
     public final /* synthetic */ ai.p4 h;
-    public final /* synthetic */ wn n;
+    public final /* synthetic */ yn n;
 
-    public wl(wn wnVar, boolean z10, boolean z11, org.telegram.ui.Components.w9 w9Var, vn vnVar, org.telegram.ui.ActionBar.h5 h5Var, boolean z12, ai.p4 p4Var) {
-        this.n = wnVar;
+    public wl(yn ynVar, boolean z10, boolean z11, org.telegram.ui.Components.w9 w9Var, xn xnVar, org.telegram.ui.ActionBar.i5 i5Var, boolean z12, ai.p4 p4Var) {
+        this.n = ynVar;
         this.a = z10;
         this.b = z11;
         this.c = w9Var;
-        this.d = vnVar;
-        this.e = h5Var;
+        this.d = xnVar;
+        this.e = i5Var;
         this.f = z12;
         this.h = p4Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationCancel(Animator animator) {
-        wn wnVar = this.n;
-        wnVar.H2[1] = null;
-        wnVar.B2[1].setTranslationY(0.0f);
+        yn ynVar = this.n;
+        ynVar.F2[1] = null;
+        ynVar.z2[1].setTranslationY(0.0f);
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        AnimatorSet[] animatorSetArr = this.n.H2;
+        AnimatorSet[] animatorSetArr = this.n.F2;
         if (animator.equals(animatorSetArr[1])) {
             org.telegram.ui.Components.w9 w9Var = this.c;
             boolean z10 = this.b;
@@ -50,14 +50,14 @@ public final class wl extends AnimatorListenerAdapter {
                 return;
             }
             animatorSetArr[1] = new AnimatorSet();
-            animatorSetArr[1].setInterpolator(org.telegram.ui.Components.sr.h);
+            animatorSetArr[1].setInterpolator(org.telegram.ui.Components.tr.h);
             animatorSetArr[1].setDuration(360L);
             ArrayList arrayList = new ArrayList();
             if (z11) {
-                arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<vn, Float>) View.TRANSLATION_Y, 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<xn, Float>) View.TRANSLATION_Y, 0.0f));
             }
             if (z10) {
-                arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.ActionBar.h5, Float>) View.TRANSLATION_Y, 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.ActionBar.i5, Float>) View.TRANSLATION_Y, 0.0f));
             }
             if (this.f) {
                 arrayList.add(ObjectAnimator.ofFloat(this.h, (Property<ai.p4, Float>) View.TRANSLATION_Y, 0.0f));
@@ -65,7 +65,7 @@ public final class wl extends AnimatorListenerAdapter {
             if (w9Var != null) {
                 arrayList.add(ObjectAnimator.ofFloat(w9Var, (Property<org.telegram.ui.Components.w9, Float>) View.TRANSLATION_Y, 0.0f));
             }
-            animatorSetArr[1].addListener(new t4(this, 20));
+            animatorSetArr[1].addListener(new u4(this, 20));
             animatorSetArr[1].playTogether(arrayList);
             animatorSetArr[1].start();
         }

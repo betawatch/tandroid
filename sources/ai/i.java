@@ -10,13 +10,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.th;
+import org.telegram.ui.Components.uh;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ad;
-import org.telegram.ui.w31;
+import org.telegram.ui.cd;
+import org.telegram.ui.y31;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -44,15 +44,15 @@ public final /* synthetic */ class i implements Utilities.Callback {
                 break;
             case 3:
                 View view2 = (View) obj;
-                if (view2 instanceof hg.y1) {
-                    ((hg.y1) view2).c.invalidate();
+                if (view2 instanceof hg.x1) {
+                    ((hg.x1) view2).c.invalidate();
                     break;
                 }
                 break;
             case 4:
                 View view3 = (View) obj;
-                if (view3 instanceof hg.y1) {
-                    ((hg.y1) view3).d.a(false, true);
+                if (view3 instanceof hg.x1) {
+                    ((hg.x1) view3).d.a(false, true);
                     break;
                 }
                 break;
@@ -60,22 +60,21 @@ public final /* synthetic */ class i implements Utilities.Callback {
                 ((View) obj).invalidate();
                 break;
             case 6:
-                HashMap hashMap = org.telegram.ui.ActionBar.m3.K;
+                HashMap hashMap = org.telegram.ui.ActionBar.n3.K;
                 break;
             case 7:
-                int i10 = org.telegram.ui.ActionBar.k3.r;
+                int i10 = org.telegram.ui.ActionBar.l3.r;
                 break;
             case 8:
                 int i11 = org.telegram.ui.Cells.wa.f;
                 break;
             case 9:
-                ad.Y0((View) obj);
+                cd.Y0((View) obj);
                 break;
             case 10:
                 View view4 = (View) obj;
                 if ((view4 instanceof org.telegram.ui.Cells.u1) && (messageObject = ((org.telegram.ui.Cells.u1) view4).getMessageObject()) != null) {
                     messageObject.forceUpdate = true;
-                    messageObject.reactionsChanged = true;
                     break;
                 }
                 break;
@@ -83,13 +82,14 @@ public final /* synthetic */ class i implements Utilities.Callback {
                 View view5 = (View) obj;
                 if ((view5 instanceof org.telegram.ui.Cells.u1) && (messageObject2 = ((org.telegram.ui.Cells.u1) view5).getMessageObject()) != null) {
                     messageObject2.forceUpdate = true;
+                    messageObject2.reactionsChanged = true;
                     break;
                 }
                 break;
             case 12:
                 View view6 = (View) obj;
-                if (view6 instanceof org.telegram.ui.ActionBar.x2) {
-                    ((org.telegram.ui.ActionBar.x2) view6).getTextView().invalidate();
+                if (view6 instanceof org.telegram.ui.ActionBar.y2) {
+                    ((org.telegram.ui.ActionBar.y2) view6).getTextView().invalidate();
                     break;
                 } else {
                     view6.invalidate();
@@ -102,8 +102,8 @@ public final /* synthetic */ class i implements Utilities.Callback {
                     h5Var.b.invalidate();
                     h5Var.c.invalidate();
                     break;
-                } else if (view7 instanceof hg.y1) {
-                    ((hg.y1) view7).c.invalidate();
+                } else if (view7 instanceof hg.x1) {
+                    ((hg.x1) view7).c.invalidate();
                     break;
                 } else {
                     view7.invalidate();
@@ -131,13 +131,13 @@ public final /* synthetic */ class i implements Utilities.Callback {
             case 18:
                 Long l4 = (Long) obj;
                 if (l4 != null && l4.longValue() != Long.MAX_VALUE) {
-                    org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                     if (U != null) {
                         U.presentFragment(ProfileActivity.m4(l4.longValue()));
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new th(27));
+                    AndroidUtilities.runOnUIThread(new uh(27));
                     break;
                 }
                 break;
@@ -146,7 +146,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
             case 20:
                 HashSet hashSet = (HashSet) obj;
                 String str = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
-                hashSet.addAll(w31.Y());
+                hashSet.addAll(y31.X());
                 SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
                 if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
                     edit.remove("translate_button_restricted_languages");
@@ -154,7 +154,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
                     edit.putStringSet("translate_button_restricted_languages", hashSet);
                 }
                 edit.putInt("translate_button_restricted_languages_version", 2).apply();
-                w31.s = false;
+                y31.s = false;
                 for (int i12 = 0; i12 < 4; i12++) {
                     try {
                         MessagesController.getInstance(i12).getTranslateController().checkRestrictedLanguagesUpdate();
@@ -186,7 +186,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ i(ad adVar) {
+    public /* synthetic */ i(cd cdVar) {
         this.a = 9;
     }
 }

@@ -5,16 +5,16 @@ import android.view.View;
 import java.util.List;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.ui.ActionBar.e3;
+import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.Components.sk0;
-import org.telegram.ui.b40;
-import org.telegram.ui.d60;
+import org.telegram.ui.g40;
+import org.telegram.ui.h60;
 import s4.c1;
 import s4.j;
 import zg.k0;
 import zg.o0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class f extends j {
     public final /* synthetic */ h F;
@@ -48,14 +48,14 @@ public final class f extends j {
         if (!(view instanceof c) || (gVar = hVar.Z0) == null) {
             return;
         }
-        d60 d60Var = ((b40) gVar).a;
-        Context context = d60Var.getContext();
-        sk0 sk0Var = d60Var.K;
-        i10 = ((e3) d60Var).currentAccount;
+        h60 h60Var = ((g40) gVar).a;
+        Context context = h60Var.getContext();
+        sk0 sk0Var = h60Var.K;
+        i10 = ((f3) h60Var).currentAccount;
         k0 k0Var = new k0(context, null, sk0Var, (c) view, null, 0.0f, 0.0f, o0Var, i10, 1, false);
         k0.B = k0Var;
         k0Var.i.setTag(R.id.parent_tag, 1);
-        d60Var.container.addView(k0Var.i);
+        h60Var.container.addView(k0Var.i);
         k0Var.s = true;
         k0Var.y = System.currentTimeMillis();
     }

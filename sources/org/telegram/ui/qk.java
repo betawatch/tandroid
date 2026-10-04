@@ -2,19 +2,19 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class qk extends org.telegram.ui.Components.v61 {
-    public final /* synthetic */ wn N;
+public final class qk extends org.telegram.ui.Components.e71 {
+    public final /* synthetic */ yn N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qk(wn wnVar, Context context) {
+    public qk(yn ynVar, Context context) {
         super(context);
-        this.N = wnVar;
+        this.N = ynVar;
     }
 
-    @Override // org.telegram.ui.Components.v61
+    @Override // org.telegram.ui.Components.e71
     public final org.telegram.ui.ActionBar.d6 getResourceProvider() {
-        return this.N.ea;
+        return this.N.ca;
     }
 }

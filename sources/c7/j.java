@@ -15,7 +15,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j extends l {
     public static final Parcelable.Creator<j> CREATOR = new r0(16);
@@ -143,8 +143,8 @@ public final class j extends l {
                                         if (bArr2 != null) {
                                         }
                                         return jSONObject;
-                                    } catch (c1 e) {
-                                        throw new IllegalArgumentException("COSE key ill-formed", e);
+                                    } catch (c1 e7) {
+                                        throw new IllegalArgumentException("COSE key ill-formed", e7);
                                     }
                                 } finally {
                                     try {
@@ -152,29 +152,29 @@ public final class j extends l {
                                     } catch (IOException unused) {
                                     }
                                 }
-                            } catch (n7.x0 e7) {
-                                e = e7;
+                            } catch (n7.x0 e10) {
+                                e = e10;
                                 throw new IllegalArgumentException("failed to parse COSE key", e);
                             }
-                        } catch (c1 e10) {
-                            e = e10;
+                        } catch (c1 e11) {
+                            e = e11;
                             throw new IllegalArgumentException("failed to parse COSE key", e);
                         }
-                    } catch (IllegalArgumentException e11) {
-                        throw new IllegalArgumentException("ill-formed authenticator data", e11);
+                    } catch (IllegalArgumentException e12) {
+                        throw new IllegalArgumentException("ill-formed authenticator data", e12);
                     }
-                } catch (c1 e12) {
-                    throw new IllegalArgumentException("authData value has wrong type", e12);
+                } catch (c1 e13) {
+                    throw new IllegalArgumentException("authData value has wrong type", e13);
                 }
-            } catch (c1 e13) {
-                e = e13;
-                throw new IllegalArgumentException("failed to parse attestation object", e);
-            } catch (n7.x0 e14) {
+            } catch (c1 e14) {
                 e = e14;
                 throw new IllegalArgumentException("failed to parse attestation object", e);
+            } catch (n7.x0 e15) {
+                e = e15;
+                throw new IllegalArgumentException("failed to parse attestation object", e);
             }
-        } catch (JSONException e15) {
-            throw new RuntimeException("Error encoding AuthenticatorAttestationResponse to JSON object", e15);
+        } catch (JSONException e16) {
+            throw new RuntimeException("Error encoding AuthenticatorAttestationResponse to JSON object", e16);
         }
     }
 
@@ -205,11 +205,11 @@ public final class j extends l {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.c(parcel, 2, this.a.u());
-        w7.f0.c(parcel, 3, this.b.u());
-        w7.f0.c(parcel, 4, this.c.u());
-        w7.f0.m(parcel, 5, this.d);
-        w7.f0.r(parcel, q6);
+        int q6 = w7.g0.q(parcel, 20293);
+        w7.g0.c(parcel, 2, this.a.u());
+        w7.g0.c(parcel, 3, this.b.u());
+        w7.g0.c(parcel, 4, this.c.u());
+        w7.g0.m(parcel, 5, this.d);
+        w7.g0.r(parcel, q6);
     }
 }

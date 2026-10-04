@@ -1,13 +1,13 @@
 package gb;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a0 extends y {
     public final db.o a;
     public final db.g b;
     public final kb.a c;
     public final db.v d;
-    public final a6.i e = new a6.i(this, 21);
+    public final a4.m e = new a4.m(this, 17);
     public final boolean f;
     public volatile db.u g;
 

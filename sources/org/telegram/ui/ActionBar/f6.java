@@ -10,11 +10,11 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class f6 {
     public int a;
-    public g6 b;
+    public h6 b;
     public int c;
     public int d;
     public int e;
@@ -35,7 +35,7 @@ public final class f6 {
     public String v;
     public TLRPC.InputFile w;
     public TLRPC.InputFile x;
-    public z5 y;
+    public a6 y;
     public boolean z;
     public int n = 45;
     public String o = "";
@@ -65,17 +65,17 @@ public final class f6 {
     }
 
     public static void g(SparseIntArray sparseIntArray) {
-        for (int i10 = h6.za; i10 < h6.Ga; i10++) {
+        for (int i10 = i6.za; i10 < i6.Ga; i10++) {
             sparseIntArray.delete(i10);
-            sparseIntArray.put(i10, h6.nl[i10]);
+            sparseIntArray.put(i10, i6.nl[i10]);
         }
-        for (int i11 = h6.Ha; i11 < h6.Tb; i11++) {
+        for (int i11 = i6.Ha; i11 < i6.Tb; i11++) {
             sparseIntArray.delete(i11);
-            sparseIntArray.put(i11, h6.nl[i11]);
+            sparseIntArray.put(i11, i6.nl[i11]);
         }
-        for (int i12 = h6.Ub; i12 < h6.cc; i12++) {
+        for (int i12 = i6.Ub; i12 < i6.cc; i12++) {
             sparseIntArray.delete(i12);
-            sparseIntArray.put(i12, h6.nl[i12]);
+            sparseIntArray.put(i12, i6.nl[i12]);
         }
     }
 
@@ -118,29 +118,29 @@ public final class f6 {
         int i13;
         int i14;
         int i15;
-        float[] M0 = h6.M0(1);
-        float[] M02 = h6.M0(2);
+        float[] M0 = i6.M0(1);
+        float[] M02 = i6.M0(2);
         Color.colorToHSV(this.b.X, M0);
         Color.colorToHSV(this.c, M02);
         boolean q6 = this.b.q();
         if (this.c != this.b.X || this.d != 0) {
             int i16 = 0;
             while (true) {
-                int[] iArr = h6.nl;
+                int[] iArr = i6.nl;
                 if (i16 >= iArr.length) {
                     break;
                 }
-                if (!h6.pl.contains(Integer.valueOf(i16))) {
+                if (!i6.pl.contains(Integer.valueOf(i16))) {
                     int indexOfKey = sparseIntArray.indexOfKey(i16);
                     if (indexOfKey < 0) {
-                        int i17 = h6.ol.get(i16, -1);
+                        int i17 = i6.ol.get(i16, -1);
                         if (i17 < 0 || sparseIntArray.indexOfKey(i17) < 0) {
                             valueAt = iArr[i16];
                         }
                     } else {
                         valueAt = sparseIntArray.valueAt(indexOfKey);
                     }
-                    int D = h6.D(M0, M02, valueAt, q6, valueAt);
+                    int D = i6.D(M0, M02, valueAt, q6, valueAt);
                     if (D != valueAt) {
                         sparseIntArray2.put(i16, D);
                     }
@@ -158,12 +158,12 @@ public final class f6 {
             if (i18 == 0) {
                 i18 = this.c;
             }
-            int i19 = h6.Aa;
+            int i19 = i6.Aa;
             int i20 = sparseIntArray.get(i19);
             if (i20 == 0) {
-                i20 = h6.nl[i19];
+                i20 = i6.nl[i19];
             }
-            int colorDistance = AndroidUtilities.getColorDistance(i18, h6.D(M0, M02, i20, q6, i20));
+            int colorDistance = AndroidUtilities.getColorDistance(i18, i6.D(M0, M02, i20, q6, i20));
             c10 = 1;
             int colorDistance2 = AndroidUtilities.getColorDistance(i18, this.f);
             c11 = 2;
@@ -177,11 +177,11 @@ public final class f6 {
                 a2 = AndroidUtilities.computePerceivedBrightness(averageColor) > 0.705f;
             } else {
                 f7 = 0.705f;
-                a2 = h6.a(this.e, this.f);
+                a2 = i6.a(this.e, this.f);
             }
             z10 = a2 && colorDistance <= 35000 && colorDistance2 <= 35000;
-            float[] M03 = h6.M0(3);
-            float[] M04 = h6.M0(4);
+            float[] M03 = i6.M0(3);
+            float[] M04 = i6.M0(4);
             Color.colorToHSV(i20, M03);
             Color.colorToHSV(i18, M04);
             float min = Math.min((M03[1] * 1.5f) / M0[1], 1.0f);
@@ -201,42 +201,42 @@ public final class f6 {
             } else {
                 Color.colorToHSV(i18, M02);
             }
-            for (int i23 = h6.Ha; i23 < h6.Tb; i23++) {
+            for (int i23 = i6.Ha; i23 < i6.Tb; i23++) {
                 int indexOfKey2 = sparseIntArray.indexOfKey(i23);
                 if (indexOfKey2 < 0) {
-                    int i24 = h6.ol.get(i23, -1);
+                    int i24 = i6.ol.get(i23, -1);
                     if (i24 < 0 || sparseIntArray.get(i24, -1) < 0) {
-                        valueAt3 = h6.nl[i23];
+                        valueAt3 = i6.nl[i23];
                     }
                 } else {
                     valueAt3 = sparseIntArray.valueAt(indexOfKey2);
                 }
-                int D2 = h6.D(M0, M02, valueAt3, q6, valueAt3);
+                int D2 = i6.D(M0, M02, valueAt3, q6, valueAt3);
                 if (D2 != valueAt3) {
                     sparseIntArray2.put(i23, D2);
                 }
             }
-            for (int i25 : h6.Hk) {
+            for (int i25 : i6.Hk) {
                 int indexOfKey3 = sparseIntArray.indexOfKey(i25);
-                int valueAt4 = indexOfKey3 < 0 ? h6.nl[i25] : sparseIntArray.valueAt(indexOfKey3);
-                int D3 = h6.D(M0, M02, valueAt4, q6, valueAt4);
+                int valueAt4 = indexOfKey3 < 0 ? i6.nl[i25] : sparseIntArray.valueAt(indexOfKey3);
+                int D3 = i6.D(M0, M02, valueAt4, q6, valueAt4);
                 if (D3 != valueAt4) {
                     sparseIntArray2.put(i25, D3);
                 }
             }
             if (z11) {
                 Color.colorToHSV(i18, M02);
-                for (int i26 = h6.za; i26 < h6.Ga; i26++) {
+                for (int i26 = i6.za; i26 < i6.Ga; i26++) {
                     int indexOfKey4 = sparseIntArray.indexOfKey(i26);
                     if (indexOfKey4 < 0) {
-                        int i27 = h6.ol.get(i26, -1);
+                        int i27 = i6.ol.get(i26, -1);
                         if (i27 < 0 || sparseIntArray.get(i27, -1) < 0) {
-                            valueAt2 = h6.nl[i26];
+                            valueAt2 = i6.nl[i26];
                         }
                     } else {
                         valueAt2 = sparseIntArray.valueAt(indexOfKey4);
                     }
-                    int D4 = h6.D(M0, M02, valueAt2, q6, valueAt2);
+                    int D4 = i6.D(M0, M02, valueAt2, q6, valueAt2);
                     if (D4 != valueAt2) {
                         sparseIntArray2.put(i26, D4);
                     }
@@ -252,7 +252,7 @@ public final class f6 {
                 }
                 a10 = AndroidUtilities.computePerceivedBrightness(averageColor2) > f7;
             } else {
-                a10 = h6.a(this.e, i10);
+                a10 = i6.a(this.e, i10);
             }
             if (a10) {
                 i13 = -14606047;
@@ -264,148 +264,148 @@ public final class f6 {
                 i13 = -1;
             }
             if (this.d == 0) {
-                sparseIntArray2.put(h6.qb, i12);
-                sparseIntArray2.put(h6.rb, i12);
-                sparseIntArray2.put(h6.wb, i12);
-                sparseIntArray2.put(h6.xb, i12);
-                sparseIntArray2.put(h6.yb, i12);
-                sparseIntArray2.put(h6.zb, i13);
-                sparseIntArray2.put(h6.Ab, i12);
-                sparseIntArray2.put(h6.Bb, i12);
-                sparseIntArray2.put(h6.Cb, i13);
-                sparseIntArray2.put(h6.hc, i13);
-                sparseIntArray2.put(h6.Ya, i13);
-                sparseIntArray2.put(h6.Za, i13);
-                sparseIntArray2.put(h6.ab, i13);
-                sparseIntArray2.put(h6.bb, i13);
-                sparseIntArray2.put(h6.cb, i13);
-                sparseIntArray2.put(h6.gb, i13);
-                sparseIntArray2.put(h6.hb, i13);
-                sparseIntArray2.put(h6.Va, i13);
-                sparseIntArray2.put(h6.Wa, i13);
-                sparseIntArray2.put(h6.Xa, i13);
-                sparseIntArray2.put(h6.Ra, i13);
-                sparseIntArray2.put(h6.Sa, i13);
-                sparseIntArray2.put(h6.tb, i13);
-                sparseIntArray2.put(h6.Fb, i13);
-                sparseIntArray2.put(h6.ib, i13);
-                sparseIntArray2.put(h6.lb, i13);
-                sparseIntArray2.put(h6.mb, i13);
-                sparseIntArray2.put(h6.Ja, i13);
-                sparseIntArray2.put(h6.Ka, i13);
-                sparseIntArray2.put(h6.La, i13);
-                sparseIntArray2.put(h6.Ma, i13);
-                sparseIntArray2.put(h6.Na, i13);
-                sparseIntArray2.put(h6.Oa, i13);
-                sparseIntArray2.put(h6.Ta, i13);
-                sparseIntArray2.put(h6.Ua, i13);
-                sparseIntArray2.put(h6.sb, i13);
-                sparseIntArray2.put(h6.nb, i13);
-                sparseIntArray2.put(h6.ub, i11);
-                sparseIntArray2.put(h6.vb, i11);
-                sparseIntArray2.put(h6.jb, i11);
-                sparseIntArray2.put(h6.kb, i11);
-                sparseIntArray2.put(h6.Gb, i11);
-                sparseIntArray2.put(h6.Hb, i11);
-                sparseIntArray2.put(h6.Kb, i11);
-                sparseIntArray2.put(h6.Lb, i11);
-                sparseIntArray2.put(h6.Nb, i13);
-                sparseIntArray2.put(h6.Ob, i13);
-                sparseIntArray2.put(h6.Db, this.e);
-                sparseIntArray2.put(h6.Eb, this.e);
-                sparseIntArray2.put(h6.Pa, this.e);
-                sparseIntArray2.put(h6.Qa, this.e);
+                sparseIntArray2.put(i6.qb, i12);
+                sparseIntArray2.put(i6.rb, i12);
+                sparseIntArray2.put(i6.wb, i12);
+                sparseIntArray2.put(i6.xb, i12);
+                sparseIntArray2.put(i6.yb, i12);
+                sparseIntArray2.put(i6.zb, i13);
+                sparseIntArray2.put(i6.Ab, i12);
+                sparseIntArray2.put(i6.Bb, i12);
+                sparseIntArray2.put(i6.Cb, i13);
+                sparseIntArray2.put(i6.hc, i13);
+                sparseIntArray2.put(i6.Ya, i13);
+                sparseIntArray2.put(i6.Za, i13);
+                sparseIntArray2.put(i6.ab, i13);
+                sparseIntArray2.put(i6.bb, i13);
+                sparseIntArray2.put(i6.cb, i13);
+                sparseIntArray2.put(i6.gb, i13);
+                sparseIntArray2.put(i6.hb, i13);
+                sparseIntArray2.put(i6.Va, i13);
+                sparseIntArray2.put(i6.Wa, i13);
+                sparseIntArray2.put(i6.Xa, i13);
+                sparseIntArray2.put(i6.Ra, i13);
+                sparseIntArray2.put(i6.Sa, i13);
+                sparseIntArray2.put(i6.tb, i13);
+                sparseIntArray2.put(i6.Fb, i13);
+                sparseIntArray2.put(i6.ib, i13);
+                sparseIntArray2.put(i6.lb, i13);
+                sparseIntArray2.put(i6.mb, i13);
+                sparseIntArray2.put(i6.Ja, i13);
+                sparseIntArray2.put(i6.Ka, i13);
+                sparseIntArray2.put(i6.La, i13);
+                sparseIntArray2.put(i6.Ma, i13);
+                sparseIntArray2.put(i6.Na, i13);
+                sparseIntArray2.put(i6.Oa, i13);
+                sparseIntArray2.put(i6.Ta, i13);
+                sparseIntArray2.put(i6.Ua, i13);
+                sparseIntArray2.put(i6.sb, i13);
+                sparseIntArray2.put(i6.nb, i13);
+                sparseIntArray2.put(i6.ub, i11);
+                sparseIntArray2.put(i6.vb, i11);
+                sparseIntArray2.put(i6.jb, i11);
+                sparseIntArray2.put(i6.kb, i11);
+                sparseIntArray2.put(i6.Gb, i11);
+                sparseIntArray2.put(i6.Hb, i11);
+                sparseIntArray2.put(i6.Kb, i11);
+                sparseIntArray2.put(i6.Lb, i11);
+                sparseIntArray2.put(i6.Nb, i13);
+                sparseIntArray2.put(i6.Ob, i13);
+                sparseIntArray2.put(i6.Db, this.e);
+                sparseIntArray2.put(i6.Eb, this.e);
+                sparseIntArray2.put(i6.Pa, this.e);
+                sparseIntArray2.put(i6.Qa, this.e);
             }
-            sparseIntArray2.put(h6.db, i13);
-            sparseIntArray2.put(h6.eb, i13);
-            sparseIntArray2.put(h6.fb, i13);
-            sparseIntArray2.put(h6.fc, i13);
+            sparseIntArray2.put(i6.db, i13);
+            sparseIntArray2.put(i6.eb, i13);
+            sparseIntArray2.put(i6.fb, i13);
+            sparseIntArray2.put(i6.fc, i13);
         }
         if (z10) {
-            int i29 = h6.Nb;
+            int i29 = i6.Nb;
             if (AndroidUtilities.getColorDistance(-1, sparseIntArray2.indexOfKey(i29) >= 0 ? sparseIntArray2.get(i29) : 0) < 5000) {
                 z10 = false;
             }
         }
         int i30 = this.e;
         if (i30 != 0 && this.f != 0) {
-            sparseIntArray2.put(h6.Aa, i30);
-            sparseIntArray2.put(h6.Da, this.f);
+            sparseIntArray2.put(i6.Aa, i30);
+            sparseIntArray2.put(i6.Da, this.f);
             int i31 = this.g;
             if (i31 != 0) {
-                sparseIntArray2.put(h6.Ea, i31);
+                sparseIntArray2.put(i6.Ea, i31);
                 int i32 = this.h;
                 if (i32 != 0) {
-                    sparseIntArray2.put(h6.Fa, i32);
+                    sparseIntArray2.put(i6.Fa, i32);
                 }
             }
-            sparseIntArray2.put(h6.ac, this.i ? 1 : 0);
+            sparseIntArray2.put(i6.ac, this.i ? 1 : 0);
         }
         long j3 = this.j;
         int i33 = (int) j3;
         if (i33 != 0) {
-            sparseIntArray2.put(h6.Nd, i33);
+            sparseIntArray2.put(i6.Nd, i33);
         } else if (j3 != 0) {
-            sparseIntArray2.delete(h6.Nd);
+            sparseIntArray2.delete(i6.Nd);
         }
         long j10 = this.k;
         int i34 = (int) j10;
         if (i34 != 0) {
-            sparseIntArray2.put(h6.Od, i34);
+            sparseIntArray2.put(i6.Od, i34);
         } else if (j10 != 0) {
-            sparseIntArray2.delete(h6.Od);
+            sparseIntArray2.delete(i6.Od);
         }
         long j11 = this.l;
         int i35 = (int) j11;
         if (i35 != 0) {
-            sparseIntArray2.put(h6.Pd, i35);
+            sparseIntArray2.put(i6.Pd, i35);
         } else if (j11 != 0) {
-            sparseIntArray2.delete(h6.Pd);
+            sparseIntArray2.delete(i6.Pd);
         }
         long j12 = this.m;
         int i36 = (int) j12;
         if (i36 != 0) {
-            sparseIntArray2.put(h6.Qd, i36);
+            sparseIntArray2.put(i6.Qd, i36);
         } else if (j12 != 0) {
-            sparseIntArray2.delete(h6.Qd);
+            sparseIntArray2.delete(i6.Qd);
         }
         int i37 = this.n;
         if (i37 != 45) {
-            sparseIntArray2.put(h6.Rd, i37);
+            sparseIntArray2.put(i6.Rd, i37);
         }
-        int i38 = h6.Aa;
+        int i38 = i6.Aa;
         int i39 = sparseIntArray2.get(i38);
         if (i39 == 0) {
-            i39 = h6.w0(null, i38, false);
+            i39 = i6.w0(null, i38, false);
         }
-        int i40 = h6.ra;
+        int i40 = i6.ra;
         int i41 = sparseIntArray2.get(i40);
         if (i41 == 0) {
-            i41 = h6.w0(null, i40, false);
+            i41 = i6.w0(null, i40, false);
         }
         TLRPC.TL_theme tL_theme = this.r;
         if (tL_theme != null && tL_theme.emoticon != null && !q6) {
-            sparseIntArray2.delete(h6.Hc);
-            int a11 = a(sparseIntArray2, h6.Od, h6.Pd, h6.Qd);
+            sparseIntArray2.delete(i6.Hc);
+            int a11 = a(sparseIntArray2, i6.Od, i6.Pd, i6.Qd);
             if (a11 == 0) {
-                a11 = a(sparseIntArray2, h6.Nd);
+                a11 = a(sparseIntArray2, i6.Nd);
             }
             if (a11 == 0) {
                 a11 = this.c;
             }
             int b10 = b(i39, a11);
-            sparseIntArray2.put(h6.Yb, b10);
-            sparseIntArray2.put(h6.bc, b10);
-            sparseIntArray2.put(h6.Ba, h6.v(i39, b10));
+            sparseIntArray2.put(i6.Yb, b10);
+            sparseIntArray2.put(i6.bc, b10);
+            sparseIntArray2.put(i6.Ba, i6.v(i39, b10));
             int b11 = b(i41, this.c);
-            sparseIntArray2.put(h6.sa, b11);
-            sparseIntArray2.put(h6.dc, h6.v(i41, b11));
+            sparseIntArray2.put(i6.sa, b11);
+            sparseIntArray2.put(i6.dc, i6.v(i41, b11));
         }
         float[] fArr = this.A;
         if (!q6) {
-            sparseIntArray2.put(h6.uf, h(i41, this.c));
-            sparseIntArray2.put(h6.Vb, h(i39, this.c));
-            int i42 = h6.Wb;
+            sparseIntArray2.put(i6.uf, h(i41, this.c));
+            sparseIntArray2.put(i6.Vb, h(i39, this.c));
+            int i42 = i6.Wb;
             Color.colorToHSV(this.c, fArr);
             float f11 = fArr[0];
             Color.colorToHSV(i39, fArr);
@@ -417,50 +417,50 @@ public final class f6 {
                 fArr[c10] = Math.max(0.0f, Math.min(1.0f, f12 + 0.6f));
                 float f14 = fArr[c11];
                 fArr[c11] = Math.max(0.0f, Math.min(1.0f, f14 - (f14 <= 0.7f ? 0.25f : 0.125f)));
-                sparseIntArray2.put(i42, h6.v(i39, Color.HSVToColor(255, fArr)));
+                sparseIntArray2.put(i42, i6.v(i39, Color.HSVToColor(255, fArr)));
             }
             fArr[0] = f11;
             fArr[c10] = Math.max(0.0f, Math.min(1.0f, f12 + 0.6f));
             float f142 = fArr[c11];
             fArr[c11] = Math.max(0.0f, Math.min(1.0f, f142 - (f142 <= 0.7f ? 0.25f : 0.125f)));
-            sparseIntArray2.put(i42, h6.v(i39, Color.HSVToColor(255, fArr)));
+            sparseIntArray2.put(i42, i6.v(i39, Color.HSVToColor(255, fArr)));
         }
-        Color.colorToHSV(h6.w0(null, h6.n6, false), fArr);
+        Color.colorToHSV(i6.w0(null, i6.n6, false), fArr);
         float f15 = fArr[0];
-        sparseIntArray2.put(h6.Xb, f(i39, f15, q6));
-        sparseIntArray2.put(h6.wf, f(i41, f15, q6));
-        int i43 = h6.gc;
+        sparseIntArray2.put(i6.Xb, f(i39, f15, q6));
+        sparseIntArray2.put(i6.wf, f(i41, f15, q6));
+        int i43 = i6.gc;
         int i44 = sparseIntArray2.get(i43);
         if (i44 == 0) {
-            i44 = h6.w0(null, i43, false);
+            i44 = i6.w0(null, i43, false);
         }
-        int i45 = h6.hc;
+        int i45 = i6.hc;
         int i46 = sparseIntArray2.get(i45);
         if (i46 == 0) {
-            i46 = h6.w0(null, i45, false);
+            i46 = i6.w0(null, i45, false);
         }
-        sparseIntArray2.put(h6.Ld, e(i44, i41, q6));
-        sparseIntArray2.put(h6.Mb, e(i46, i39, q6));
-        int i47 = h6.G8;
+        sparseIntArray2.put(i6.Ld, e(i44, i41, q6));
+        sparseIntArray2.put(i6.Mb, e(i46, i39, q6));
+        int i47 = i6.G8;
         int i48 = sparseIntArray2.get(i47);
         if (i48 == 0) {
-            i48 = h6.w0(null, i47, false);
+            i48 = i6.w0(null, i47, false);
         }
-        sparseIntArray2.put(h6.H8, Color.argb(Color.alpha(i48), Math.max(0, Color.red(i48) - 10), Math.max(0, Color.green(i48) - 10), Math.max(0, Color.blue(i48) - 10)));
+        sparseIntArray2.put(i6.H8, Color.argb(Color.alpha(i48), Math.max(0, Color.red(i48) - 10), Math.max(0, Color.green(i48) - 10), Math.max(0, Color.blue(i48) - 10)));
         int i49 = 64;
         if (q6) {
-            int i50 = h6.Da;
+            int i50 = i6.Da;
             if (sparseIntArray2.get(i50) != 0) {
-                Color.colorToHSV(a(sparseIntArray2, i50, h6.Ea, h6.Fa), fArr);
+                Color.colorToHSV(a(sparseIntArray2, i50, i6.Ea, i6.Fa), fArr);
                 fArr[c10] = Utilities.clamp(fArr[c10] + 0.1f, 1.0f, 0.0f);
                 fArr[c11] = Utilities.clamp(fArr[c11] - 0.8f, 1.0f, 0.0f);
-                sparseIntArray2.put(h6.qk, Color.HSVToColor(64, fArr));
-                h6.g(sparseIntArray, sparseIntArray2, q6);
-                h6.f(sparseIntArray, sparseIntArray2, q6);
+                sparseIntArray2.put(i6.qk, Color.HSVToColor(64, fArr));
+                i6.g(sparseIntArray, sparseIntArray2, q6);
+                i6.f(sparseIntArray, sparseIntArray2, q6);
                 return !z10;
             }
         }
-        int i51 = h6.qk;
+        int i51 = i6.qk;
         Color.colorToHSV(i39, fArr);
         if (q6) {
             fArr[c10] = Utilities.clamp(fArr[c10] - 0.08f, 1.0f, 0.0f);
@@ -479,8 +479,8 @@ public final class f6 {
             i49 = 32;
         }
         sparseIntArray2.put(i51, Color.HSVToColor(i49, fArr));
-        h6.g(sparseIntArray, sparseIntArray2, q6);
-        h6.f(sparseIntArray, sparseIntArray2, q6);
+        i6.g(sparseIntArray, sparseIntArray2, q6);
+        i6.f(sparseIntArray, sparseIntArray2, q6);
         return !z10;
     }
 

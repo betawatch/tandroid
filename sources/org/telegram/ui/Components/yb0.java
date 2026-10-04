@@ -1,41 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.ChatMessageSharedResources;
-import org.telegram.messenger.MessageObject;
+import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class yb0 extends org.telegram.ui.Cells.u1 {
-    public final /* synthetic */ ac0 Ge;
+public final class yb0 implements ml0 {
+    public final /* synthetic */ cc0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yb0(ac0 ac0Var, Context context, int i10, ChatMessageSharedResources chatMessageSharedResources, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, i10, false, chatMessageSharedResources, d6Var);
-        this.Ge = ac0Var;
+    public yb0(cc0 cc0Var) {
+        this.a = cc0Var;
     }
 
-    @Override // org.telegram.ui.Cells.u1
-    public final void X3(MessageObject messageObject, MessageObject.GroupedMessages groupedMessages, boolean z10, boolean z11, boolean z12, boolean z13) {
-        super.X3(messageObject, groupedMessages, z10, z11, z12, z13);
-        bc0.b(this.Ge.c, this);
-    }
-
-    @Override // org.telegram.ui.Cells.u1, org.telegram.ui.Cells.a0, android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.Ge.c.f.invalidate();
-    }
-
-    @Override // org.telegram.ui.Cells.u1, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        bc0.b(this.Ge.c, this);
-    }
-
-    @Override // org.telegram.ui.Cells.u1, android.view.View
-    public final void invalidate(int i10, int i11, int i12, int i13) {
-        super.invalidate(i10, i11, i12, i13);
-        this.Ge.c.f.invalidate();
+    @Override // org.telegram.ui.Components.ml0
+    public final void d(int i10, View view) {
+        cc0 cc0Var = this.a;
+        if (cc0Var.a != 1 || cc0Var.r.previewMessages.size() <= 1) {
+            return;
+        }
+        int id2 = cc0Var.r.previewMessages.get(i10).getId();
+        boolean z10 = cc0Var.r.selectedIds.get(id2, false);
+        boolean z11 = !z10;
+        if (cc0Var.r.selectedIds.size() == 1 && z10) {
+            return;
+        }
+        if (z10) {
+            cc0Var.r.selectedIds.delete(id2);
+        } else {
+            cc0Var.r.selectedIds.put(id2, z11);
+        }
+        if (view instanceof org.telegram.ui.Cells.u1) {
+            ((org.telegram.ui.Cells.u1) view).L3(z11, z11, true);
+        }
+        cc0Var.k(true);
     }
 }

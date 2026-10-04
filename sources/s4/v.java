@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.m2;
-import org.telegram.ui.xy;
+import org.telegram.ui.bz;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class v {
     public static final m2 b = new m2(1);
@@ -91,7 +91,7 @@ public abstract class v {
     }
 
     public boolean k() {
-        return !(this instanceof xy);
+        return !(this instanceof bz);
     }
 
     public void m(Canvas canvas, RecyclerView recyclerView, c1 c1Var, float f7, float f10, int i10, boolean z10) {
@@ -105,9 +105,9 @@ public abstract class v {
                 View childAt = recyclerView.getChildAt(i11);
                 if (childAt != view) {
                     WeakHashMap weakHashMap2 = r0.i0.a;
-                    float e = r0.a0.e(childAt);
-                    if (e > f11) {
-                        f11 = e;
+                    float e7 = r0.a0.e(childAt);
+                    if (e7 > f11) {
+                        f11 = e7;
                     }
                 }
             }
@@ -129,18 +129,18 @@ public abstract class v {
         }
         if (layoutManager.d()) {
             if (o0.x(view) <= recyclerView.getPaddingLeft()) {
-                recyclerView.u0(i10);
+                recyclerView.v0(i10);
             }
             if (o0.y(view) >= recyclerView.getWidth() - recyclerView.getPaddingRight()) {
-                recyclerView.u0(i10);
+                recyclerView.v0(i10);
             }
         }
         if (layoutManager.e()) {
             if (o0.z(view) <= recyclerView.getPaddingTop()) {
-                recyclerView.u0(i10);
+                recyclerView.v0(i10);
             }
             if (o0.v(view) >= recyclerView.getHeight() - recyclerView.getPaddingBottom()) {
-                recyclerView.u0(i10);
+                recyclerView.v0(i10);
             }
         }
     }

@@ -3,18 +3,18 @@ package gg;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesStorage;
-import org.telegram.ui.Components.go0;
+import org.telegram.ui.Components.jo0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ i0 b;
     public final /* synthetic */ long c;
 
-    public /* synthetic */ q(go0 go0Var, long j3, int i10) {
+    public /* synthetic */ q(jo0 jo0Var, long j3, int i10) {
         this.a = i10;
-        this.b = go0Var;
+        this.b = jo0Var;
         this.c = j3;
     }
 
@@ -28,8 +28,8 @@ public final /* synthetic */ class q implements Runnable {
                 try {
                     MessagesStorage.getInstance(i0Var.s0).getDatabase().executeFast("DELETE FROM search_recent WHERE did = " + j3).stepThis().dispose();
                     break;
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                     return;
                 }
             default:
@@ -44,8 +44,8 @@ public final /* synthetic */ class q implements Runnable {
                     executeFast.step();
                     executeFast.dispose();
                     break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                 }
         }
     }

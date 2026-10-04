@@ -13,7 +13,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class e extends Thread {
     public EGLContext E;
@@ -269,8 +269,8 @@ public final class e extends Thread {
         if (iArr2 != null) {
             try {
                 GLES20.glDeleteBuffers(2, iArr2, 0);
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
             this.O = null;
         }
@@ -278,8 +278,8 @@ public final class e extends Thread {
         if (i11 != 0) {
             try {
                 GLES20.glDeleteProgram(i11);
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
             this.F = 0;
         }
@@ -289,24 +289,24 @@ public final class e extends Thread {
                 EGLDisplay eGLDisplay2 = this.w;
                 EGLSurface eGLSurface2 = EGL10.EGL_NO_SURFACE;
                 egl103.eglMakeCurrent(eGLDisplay2, eGLSurface2, eGLSurface2, EGL10.EGL_NO_CONTEXT);
-            } catch (Exception e10) {
-                FileLog.e(e10);
-            }
-            try {
-                this.v.eglDestroySurface(this.w, this.y);
             } catch (Exception e11) {
                 FileLog.e(e11);
             }
             try {
-                this.v.eglDestroyContext(this.w, this.E);
+                this.v.eglDestroySurface(this.w, this.y);
             } catch (Exception e12) {
                 FileLog.e(e12);
+            }
+            try {
+                this.v.eglDestroyContext(this.w, this.E);
+            } catch (Exception e13) {
+                FileLog.e(e13);
             }
         }
         try {
             this.d.release();
-        } catch (Exception e13) {
-            FileLog.e(e13);
+        } catch (Exception e14) {
+            FileLog.e(e14);
         }
         a();
     }

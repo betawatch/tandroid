@@ -5,10 +5,10 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.fz0;
-import org.telegram.ui.z81;
+import org.telegram.ui.a91;
+import org.telegram.ui.iz0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class z3 extends RadialProgressView {
     public final /* synthetic */ int K = 0;
@@ -41,8 +41,8 @@ public final class z3 extends RadialProgressView {
                 break;
             case 1:
                 ProfileActivity profileActivity = (ProfileActivity) this.M;
-                fz0 fz0Var = profileActivity.e0;
-                if (fz0Var != null && fz0Var.getImageReceiver().hasNotThumb()) {
+                iz0 iz0Var = profileActivity.e0;
+                if (iz0Var != null && iz0Var.getImageReceiver().hasNotThumb()) {
                     int currentAlpha = (int) (profileActivity.e0.getImageReceiver().getCurrentAlpha() * 85.0f);
                     Paint paint2 = this.L;
                     paint2.setAlpha(currentAlpha);
@@ -51,10 +51,10 @@ public final class z3 extends RadialProgressView {
                 super.onDraw(canvas);
                 break;
             default:
-                z81 z81Var = (z81) this.M;
-                org.telegram.ui.Components.w9 w9Var2 = z81Var.F;
+                a91 a91Var = (a91) this.M;
+                org.telegram.ui.Components.w9 w9Var2 = a91Var.E;
                 if (w9Var2 != null && w9Var2.getImageReceiver().hasNotThumb()) {
-                    int currentAlpha2 = (int) (z81Var.F.getImageReceiver().getCurrentAlpha() * 85.0f);
+                    int currentAlpha2 = (int) (a91Var.E.getImageReceiver().getCurrentAlpha() * 85.0f);
                     Paint paint3 = this.L;
                     paint3.setAlpha(currentAlpha2);
                     canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint3);
@@ -65,9 +65,9 @@ public final class z3 extends RadialProgressView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z3(z81 z81Var, Context context) {
+    public z3(a91 a91Var, Context context) {
         super(context, null);
-        this.M = z81Var;
+        this.M = a91Var;
         Paint paint = new Paint(1);
         this.L = paint;
         paint.setColor(1426063360);

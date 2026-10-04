@@ -9,10 +9,10 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ia;
-import org.telegram.ui.my;
+import org.telegram.ui.Components.ja;
+import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class l extends FrameLayout {
     public boolean a;
@@ -48,7 +48,7 @@ public final class l extends FrameLayout {
         int i14 = mVar.r;
         boolean z10 = i14 == 0 && mVar.h == 0 && MessagesController.getInstance(mVar.F).dialogs_dict.f(DialogObject.makeFolderDialogId(1)) != null;
         View view = (View) getParent();
-        int i15 = view instanceof ia ? ((ia) view).X2 : 0;
+        int i15 = view instanceof ja ? ((ja) view).e3 : 0;
         boolean z11 = mVar.J;
         int paddingTop = view.getPaddingTop();
         int paddingBottom = view.getPaddingBottom();
@@ -100,8 +100,8 @@ public final class l extends FrameLayout {
                         i12 -= AndroidUtilities.statusBarHeight;
                         if (!z11 && !mVar.S) {
                             i12 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                            if (getParent() instanceof my) {
-                                i13 = ((my) getParent()).t3;
+                            if (getParent() instanceof qy) {
+                                i13 = ((qy) getParent()).A3;
                                 i12 -= i13;
                             }
                         }
@@ -114,8 +114,8 @@ public final class l extends FrameLayout {
                             i12 -= AndroidUtilities.statusBarHeight;
                             if (!z11 && !mVar.S) {
                                 i12 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                                if (getParent() instanceof my) {
-                                    i13 = ((my) getParent()).t3;
+                                if (getParent() instanceof qy) {
+                                    i13 = ((qy) getParent()).A3;
                                     i12 -= i13;
                                 }
                             }

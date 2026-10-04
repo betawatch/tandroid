@@ -2,15 +2,15 @@ package ci;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bc b;
+    public final /* synthetic */ ac b;
 
-    public /* synthetic */ n(bc bcVar, int i10) {
+    public /* synthetic */ n(ac acVar, int i10) {
         this.a = i10;
-        this.b = bcVar;
+        this.b = acVar;
     }
 
     @Override // java.lang.Runnable
@@ -20,24 +20,24 @@ public final /* synthetic */ class n implements Runnable {
                 this.b.n();
                 break;
             case 1:
-                bc bcVar = this.b;
-                bcVar.K0 = false;
-                bcVar.L0 = TLObject.FLAG_31;
-                bcVar.invalidate();
-                bcVar.S0.setVisibility(0);
-                bcVar.T0.setVisibility(0);
+                ac acVar = this.b;
+                acVar.K0 = false;
+                acVar.L0 = TLObject.FLAG_31;
+                acVar.invalidate();
+                acVar.S0.setVisibility(0);
+                acVar.T0.setVisibility(0);
                 break;
             default:
-                lc lcVar = this.b.S1;
-                zb zbVar = lcVar.X0;
-                if (zbVar != null) {
-                    zbVar.O = false;
-                    zbVar.c();
-                    zb zbVar2 = lcVar.X0;
-                    zbVar2.m(0L);
-                    wc wcVar = zbVar2.F;
-                    if (wcVar != null) {
-                        wcVar.setProgress(0L);
+                kc kcVar = this.b.S1;
+                yb ybVar = kcVar.X0;
+                if (ybVar != null) {
+                    ybVar.O = false;
+                    ybVar.c();
+                    yb ybVar2 = kcVar.X0;
+                    ybVar2.m(0L);
+                    vc vcVar = ybVar2.F;
+                    if (vcVar != null) {
+                        vcVar.setProgress(0L);
                         break;
                     }
                 }

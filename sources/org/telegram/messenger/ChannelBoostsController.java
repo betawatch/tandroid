@@ -11,7 +11,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class ChannelBoostsController {
     public static final int BOOSTS_FOR_LEVEL_1 = 1;
@@ -20,7 +20,7 @@ public class ChannelBoostsController {
     private final int currentAccount;
     private final MessagesController messagesController;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class CanApplyBoost {
         public boolean alreadyActive;
         public int boostCount = 0;
@@ -144,7 +144,7 @@ public class ChannelBoostsController {
             callback.run((TL_stories.TL_premium_boostsStatus) tLObject);
             return;
         }
-        org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
+        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
         if (tL_error == null || R == null || !"CHANNEL_PRIVATE".equals(tL_error.text)) {
             org.telegram.ui.Components.yc.X().d0(tL_error, false);
         } else {
@@ -153,10 +153,10 @@ public class ChannelBoostsController {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(R.getContext(), 0, R.getResourceProvider());
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
                 HashMap hashMap = new HashMap();
-                int i10 = org.telegram.ui.ActionBar.h6.L5;
-                hashMap.put("info1", Integer.valueOf(org.telegram.ui.ActionBar.h6.w0(null, i10, false)));
-                hashMap.put("info2", Integer.valueOf(org.telegram.ui.ActionBar.h6.w0(null, i10, false)));
-                alertDialog$Builder.m(R.raw.not_available, 52, org.telegram.ui.ActionBar.h6.w0(null, i10, false), hashMap);
+                int i10 = org.telegram.ui.ActionBar.i6.L5;
+                hashMap.put("info1", Integer.valueOf(org.telegram.ui.ActionBar.i6.w0(null, i10, false)));
+                hashMap.put("info2", Integer.valueOf(org.telegram.ui.ActionBar.i6.w0(null, i10, false)));
+                alertDialog$Builder.m(R.raw.not_available, 52, org.telegram.ui.ActionBar.i6.w0(null, i10, false), hashMap);
                 alertDialog$Builder.a.W = true;
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.ChannelPrivate);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.ChannelCantOpenPrivate2);

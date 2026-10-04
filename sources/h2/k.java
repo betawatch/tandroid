@@ -3,7 +3,7 @@ package h2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class k extends Thread {
     public final /* synthetic */ int a = 0;
@@ -21,8 +21,8 @@ public final class k extends Thread {
             case 0:
                 do {
                     try {
-                    } catch (InterruptedException e) {
-                        throw new IllegalStateException(e);
+                    } catch (InterruptedException e7) {
+                        throw new IllegalStateException(e7);
                     }
                 } while (((l) this.b).j());
                 return;
@@ -75,16 +75,16 @@ public final class k extends Thread {
                                         }
                                     } catch (InterruptedException unused2) {
                                     }
-                                } catch (Exception e7) {
-                                    FileLog.e(e7);
+                                } catch (Exception e10) {
+                                    FileLog.e(e10);
                                     return;
                                 }
                             }
                         }
                     }
                     return;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+                } catch (Exception e11) {
+                    FileLog.e(e11);
                     ((sg.e) this.b).x = false;
                     return;
                 }

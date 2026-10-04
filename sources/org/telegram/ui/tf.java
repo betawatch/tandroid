@@ -1,32 +1,49 @@
 package org.telegram.ui;
 
-import android.text.style.URLSpan;
 import android.view.View;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tf implements Utilities.CallbackReturn {
+public final /* synthetic */ class tf implements View.OnLongClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ yn b;
 
-    public /* synthetic */ tf(int i10, Object obj, Object obj2) {
+    public /* synthetic */ tf(yn ynVar, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.b = ynVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        MessageObject messageObject;
+        MessageObject messageObject2;
         switch (this.a) {
             case 0:
-                wn wnVar = (wn) this.b;
-                View view = (View) this.c;
-                wnVar.U7((URLSpan) obj, false, wnVar.d5, view instanceof org.telegram.ui.Cells.u1 ? (org.telegram.ui.Cells.u1) view : null);
-                return Boolean.TRUE;
+                yn ynVar = this.b;
+                MessageObject messageObject3 = ynVar.b5;
+                if (messageObject3 == null) {
+                    return false;
+                }
+                if (AndroidUtilities.addToClipboard(messageObject3.sponsoredUrl)) {
+                    new org.telegram.ui.Components.yc(org.telegram.ui.Components.mb.a(ynVar.getParentActivity()), ynVar.ca).k(false).j();
+                }
+                return true;
+            case 1:
+                return yn.P0(this.b);
             default:
-                return rh.c.d((View) obj, (String) this.b, (String) this.c, null, null);
+                yn ynVar2 = this.b;
+                int i10 = ynVar2.lb;
+                if (i10 == 1 && (messageObject2 = ynVar2.n5) != null) {
+                    ynVar2.D(messageObject2.getId(), 0, 0, 0, true, true);
+                    return true;
+                }
+                if (ynVar2.d5 == null || i10 != 2 || (messageObject = ynVar2.l5) == null) {
+                    return false;
+                }
+                ynVar2.D(messageObject.getId(), 0, 0, 0, true, true);
+                return true;
         }
     }
 }

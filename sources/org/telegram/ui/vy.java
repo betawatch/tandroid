@@ -1,44 +1,41 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.DownloadController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class vy implements org.telegram.ui.Components.pl0 {
-    public final Rect a = new Rect();
-    public final /* synthetic */ zy b;
+public final class vy implements DownloadController.FileDownloadProgressListener {
+    public long a;
+    public long b;
+    public final String c;
+    public final /* synthetic */ wy d;
 
-    public vy(zy zyVar) {
-        this.b = zyVar;
+    public vy(wy wyVar, String str) {
+        this.d = wyVar;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.Components.pl0
-    public final boolean c(float f7, float f10, int i10, View view) {
-        zy zyVar = this.b;
-        if (zyVar.getParentActivity() != null && (view instanceof org.telegram.ui.Cells.g4)) {
-            ImageView imageView = (ImageView) view.getTag(R.id.object_tag);
-            Rect rect = this.a;
-            imageView.getHitRect(rect);
-            if (!rect.contains((int) f7, (int) f10)) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(zyVar.getParentActivity());
-                alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.Delete)}, new uy(this, i10, 0));
-                zyVar.showDialog(alertDialog$Builder.a);
-                return true;
-            }
-        }
-        return false;
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final int getObserverTag() {
+        return 0;
     }
 
-    @Override // org.telegram.ui.Components.pl0
-    public final void g() {
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressDownload(String str, long j3, long j10) {
+        this.b = j3;
+        this.a = j10;
+        this.d.c();
     }
 
-    @Override // org.telegram.ui.Components.pl0
-    public final void q(float f7) {
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onSuccessDownload(String str) {
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onFailedDownload(String str, boolean z10) {
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressUpload(String str, long j3, long j10, boolean z10) {
     }
 }

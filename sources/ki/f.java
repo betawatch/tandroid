@@ -5,8 +5,9 @@ import android.hardware.camera2.CaptureRequest;
 import android.os.Handler;
 import android.util.Size;
 import ci.y0;
+import ii.n4;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class f extends CameraCaptureSession.StateCallback {
     public final /* synthetic */ i a;
@@ -97,14 +98,14 @@ public final class f extends CameraCaptureSession.StateCallback {
                     i iVar4 = this.a;
                     iVar4.c.post(new a(iVar4, 7));
                     i iVar5 = this.a;
-                    k2.u uVar = iVar5.k;
+                    n4 n4Var = iVar5.k;
                     l0 l0Var = iVar5.D;
                     m0 m0Var = iVar5.F;
                     n0 n0Var = iVar5.G;
                     Size size = iVar5.q;
                     Size size2 = iVar5.r;
                     i iVar6 = this.a;
-                    ((s0) uVar.b).i.post(new y0(uVar, new h(l0Var, m0Var, n0Var, size, size2, iVar6.L, iVar6.q()), z10, 7));
+                    ((s0) n4Var.b).i.post(new y0(n4Var, new h(l0Var, m0Var, n0Var, size, size2, iVar6.L, iVar6.q()), z10, 7));
                     l0 l0Var2 = this.a.C;
                     i iVar7 = this.a;
                     if (l0Var2 != iVar7.D) {
@@ -112,13 +113,13 @@ public final class f extends CameraCaptureSession.StateCallback {
                         return;
                     }
                     return;
-                } catch (Exception e) {
+                } catch (Exception e7) {
                     i iVar8 = this.a;
                     if (iVar8.G == n0.c) {
-                        iVar8.n("60 fps request submission rejected", e);
+                        iVar8.n("60 fps request submission rejected", e7);
                         return;
                     } else {
-                        iVar8.t(e);
+                        iVar8.t(e7);
                         return;
                     }
                 }

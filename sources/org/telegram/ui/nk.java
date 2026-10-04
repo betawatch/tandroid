@@ -7,28 +7,28 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class nk extends FrameLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wn b;
+    public final /* synthetic */ yn b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ nk(wn wnVar, Context context, int i10) {
+    public /* synthetic */ nk(yn ynVar, Context context, int i10) {
         super(context);
         this.a = i10;
-        this.b = wnVar;
+        this.b = ynVar;
     }
 
     @Override // android.view.ViewGroup
     public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
         switch (this.a) {
             case 1:
-                wn wnVar = this.b;
-                if (view == wnVar.U2) {
-                    ImageView imageView = wnVar.S2;
+                yn ynVar = this.b;
+                if (view == ynVar.S2) {
+                    ImageView imageView = ynVar.Q2;
                     int i14 = (imageView == null || imageView.getVisibility() == 8) ? 18 : 66;
-                    ImageView imageView2 = wnVar.T2;
+                    ImageView imageView2 = ynVar.R2;
                     if (imageView2 != null && imageView2.getVisibility() != 8) {
                         i14 += 48;
                     }
@@ -47,7 +47,7 @@ public final class nk extends FrameLayout {
         switch (this.a) {
             case 2:
                 super.setTranslationY(f7);
-                this.b.X0.invalidate();
+                this.b.V0.invalidate();
                 break;
             default:
                 super.setTranslationY(f7);
@@ -60,7 +60,7 @@ public final class nk extends FrameLayout {
         switch (this.a) {
             case 0:
                 super.setVisibility(i10);
-                this.b.Ac.j(2, i10 == 0, getMeasuredWidth() > 0);
+                this.b.yc.j(2, i10 == 0, getMeasuredWidth() > 0);
                 break;
             default:
                 super.setVisibility(i10);

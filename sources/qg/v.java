@@ -1,96 +1,79 @@
 package qg;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.b5;
-import org.telegram.ui.Components.p90;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.st0;
-import yh.t5;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.ui.vt0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class v implements pg.u {
+    public boolean a;
+    public final /* synthetic */ Bitmap b;
+    public final /* synthetic */ vt0 c;
 
-    public /* synthetic */ v(int i10, b5 b5Var) {
-        this.a = 3;
-        this.b = i10;
-        this.c = b5Var;
+    public v(vt0 vt0Var, Bitmap bitmap) {
+        this.c = vt0Var;
+        this.b = bitmap;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        int i11 = this.b;
-        Object obj = this.c;
-        switch (i10) {
-            case 0:
-                st0 st0Var = (st0) obj;
-                pg.t1 t1Var = st0Var.K1;
-                st0Var.t0(t1Var, null);
-                pg.u0.e(i11).j(t1Var.c);
-                break;
-            case 1:
-                n2 n2Var = (n2) obj;
-                n2Var.getClass();
-                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.customStickerCreated, Boolean.FALSE);
-                n2Var.h();
-                break;
-            case 2:
-                p90 p90Var = ((tg.r0) obj).e;
-                try {
-                    if (p90Var.getLayout().getLineForOffset(i11) == 0) {
-                        p90Var.getEditableText().insert(i11, "\n");
-                        break;
-                    }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
-                break;
-            case 3:
-                Bundle bundle = new Bundle();
-                bundle.putLong("user_id", UserConfig.getInstance(i11).clientUserId);
-                ((b5) obj).getLastFragment().presentFragment(new ProfileActivity(bundle, null));
-                break;
-            case 4:
-                nf.f.s(((yh.g) obj).getParentActivity(), LocaleController.getString(i11));
-                break;
-            case 5:
-                ConnectionsManager.getInstance(((t5) obj).a).cancelRequest(i11, true);
-                break;
-            default:
-                zg.f fVar = (zg.f) obj;
-                if (fVar.b) {
-                    Utilities.Callback callback = fVar.d;
-                    if (callback != null) {
-                        callback.run(Boolean.valueOf(i11 < 300));
-                        try {
-                            fVar.a.performHapticFeedback(3);
-                        } catch (Exception unused) {
-                        }
-                    }
-                    fVar.c = true;
-                    int max = Math.max(50, i11 - 100);
-                    AndroidUtilities.runOnUIThread(new v(fVar, max, 6), max);
-                    break;
-                }
-                break;
-        }
+    @Override // pg.u
+    public final void a() {
+        this.a = true;
     }
 
-    public /* synthetic */ v(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    @Override // pg.u
+    public final void b(Canvas canvas) {
+        c0 c0Var = this.c.W0;
+        Matrix matrix = c0Var.getMatrix();
+        canvas.save();
+        canvas.translate(c0Var.getX(), c0Var.getY());
+        canvas.concat(matrix);
+        float width = c0Var.getWidth();
+        Bitmap bitmap = this.b;
+        canvas.scale(width / bitmap.getWidth(), c0Var.getHeight() / bitmap.getHeight(), 0.0f, 0.0f);
+        canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
+        canvas.restore();
+    }
+
+    @Override // pg.u
+    public final boolean c() {
+        return this.a;
+    }
+
+    @Override // pg.u
+    public final void d() {
+        this.a = false;
+    }
+
+    @Override // pg.u
+    public final View e() {
+        return this.c;
+    }
+
+    @Override // pg.u
+    public final FrameLayout f() {
+        return this.c.e1;
+    }
+
+    @Override // pg.u
+    public final boolean g() {
+        return this.b != null;
+    }
+
+    @Override // pg.u
+    public final void h(int i10) {
+        vt0 vt0Var = this.c;
+        vt0Var.x0(false);
+        pg.u0 u0Var = vt0Var.V1;
+        u0Var.h(i10, true);
+        u0Var.g();
+        vt0Var.setNewColor(i10);
+        j0 j0Var = vt0Var.G1;
+        j0Var.setSelectedColorIndex(u0Var.d());
+        j0Var.getAdapter().l();
     }
 }

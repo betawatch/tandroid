@@ -10,10 +10,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ww0;
-import w7.y5;
+import org.telegram.ui.Components.fx0;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class i2 extends LinearLayout {
     public HashMap a;
@@ -35,7 +35,7 @@ public final class i2 extends LinearLayout {
         h2Var.a = str2;
         int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(120.0f);
         TextView textView = h2Var.c;
-        StaticLayout c10 = ww0.c(str, textView.getPaint(), dp, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, dp, 10, true);
+        StaticLayout c10 = fx0.c(str, textView.getPaint(), dp, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, dp, 10, true);
         if (c10 != null) {
             dp = 0;
             for (int i11 = 0; i11 < c10.getLineCount(); i11++) {
@@ -50,7 +50,7 @@ public final class i2 extends LinearLayout {
             this.b.add(h2Var);
         } else {
             this.f = true;
-            addView(h2Var, y5.t(-2, -2, 1, 4, 0, 0, 4));
+            addView(h2Var, z5.t(-2, -2, 1, 4, 0, 0, 4));
         }
     }
 

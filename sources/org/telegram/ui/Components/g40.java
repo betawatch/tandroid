@@ -1,58 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.ArrayList;
+import org.telegram.messenger.HashtagSearchController;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class g40 extends FrameLayout {
-    public final int a;
-    public final org.telegram.ui.ActionBar.d6 b;
-    public ArrayList c;
-    public final FrameLayout d;
-    public final t61 e;
-    public final l61 f;
-    public Utilities.Callback h;
+public final /* synthetic */ class g40 implements Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ h40 a;
 
-    public g40(int i10, Activity activity, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(activity);
-        this.a = i10;
-        this.b = d6Var;
-        t61 t61Var = new t61(activity, i10, 0, false, new d(this, 15), new f40(this), new f40(this), d6Var);
-        this.e = t61Var;
-        t61Var.setClipToPadding(false);
-        l61 l61Var = (l61) t61Var.getAdapter();
-        this.f = l61Var;
-        l61Var.r = false;
-        addView(t61Var, -1, -1);
-        FrameLayout frameLayout = new FrameLayout(activity);
-        this.d = frameLayout;
-        ImageView imageView = new ImageView(activity);
-        int i11 = org.telegram.ui.ActionBar.h6.m6;
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(i11, d6Var), PorterDuff.Mode.MULTIPLY));
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.large_hashtags);
-        frameLayout.addView(imageView, w7.y5.e(56, 56, 49));
-        TextView textView = new TextView(activity);
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
-        org.telegram.messenger.ok.l(R.string.HashtagSearchPlaceholder, textView, 17);
-        frameLayout.addView(textView, w7.y5.d(-2, -2.0f, 81, 0.0f, 56.0f, 0.0f, 0.0f));
-        addView(frameLayout, w7.y5.e(210, -2, 17));
-        t61Var.setEmptyView(frameLayout);
+    public /* synthetic */ g40(h40 h40Var) {
+        this.a = h40Var;
     }
 
-    public void setOnHashtagClickListener(Utilities.Callback<String> callback) {
-        this.h = callback;
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        int i10 = ((g61) obj).d;
+        h40 h40Var = this.a;
+        if (i10 == 0) {
+            HashtagSearchController.getInstance(h40Var.a).clearHistory();
+            h40Var.f.N(true);
+        } else {
+            Utilities.Callback callback = h40Var.h;
+            if (callback != null) {
+                callback.run((String) h40Var.c.get(i10 - 1));
+            }
+        }
     }
 
-    public void setOnScrollListener(s4.s0 s0Var) {
-        this.e.j(s0Var);
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        int i10 = ((g61) obj).d;
+        boolean z10 = false;
+        if (i10 != 0) {
+            h40 h40Var = this.a;
+            String str = (String) h40Var.c.get(i10 - 1);
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(h40Var.getContext(), 0, h40Var.b);
+            String string = LocaleController.getString(R.string.ClearSearchSingleAlertTitle);
+            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+            b2Var.R = string;
+            b2Var.T = LocaleController.formatString(R.string.ClearSearchSingleHashtagAlertText, str);
+            alertDialog$Builder.k(LocaleController.getString(R.string.ClearSearchRemove), new w2(h40Var, str, false, 14));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+            b2Var.show();
+            z10 = true;
+        }
+        return Boolean.valueOf(z10);
     }
 }

@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class lh0 extends FrameLayout {
     public final w9 E;
@@ -33,14 +33,14 @@ public final class lh0 extends FrameLayout {
     public int O;
     public boolean P;
     public boolean Q;
-    public qq R;
-    public qq S;
-    public nu T;
-    public final qq[] U;
+    public rq R;
+    public rq S;
+    public ou T;
+    public final rq[] U;
     public final ih0 V;
-    public final org.telegram.ui.qy a;
+    public final org.telegram.ui.uy a;
     public final int b;
-    public final t61 c;
+    public final c71 c;
     public TLRPC.SearchPostsFlood d;
     public final ArrayList e;
     public int f;
@@ -51,34 +51,34 @@ public final class lh0 extends FrameLayout {
     public boolean v;
     public String w;
     public final FrameLayout x;
-    public final org.telegram.ui.xd y;
+    public final org.telegram.ui.zd y;
 
-    public lh0(Context context, org.telegram.ui.qy qyVar) {
+    public lh0(Context context, org.telegram.ui.uy uyVar) {
         super(context);
         this.e = new ArrayList();
         this.n = new ArrayList();
         this.K = -1;
         this.L = 0;
         this.O = -1;
-        this.U = new qq[1];
+        this.U = new rq[1];
         this.V = new ih0(this, 1);
-        this.a = qyVar;
-        int currentAccount = qyVar.getCurrentAccount();
+        this.a = uyVar;
+        int currentAccount = uyVar.getCurrentAccount();
         this.b = currentAccount;
-        t61 t61Var = new t61(context, currentAccount, 0, false, new d(this, 18), new ov(this, 12), null, null);
-        this.c = t61Var;
-        t61Var.j(new ii.n3(3, this, qyVar));
-        addView(t61Var, w7.y5.e(-1, -1, 119));
+        c71 c71Var = new c71(context, currentAccount, 0, false, new d(this, 18), new pv(this, 12), null, null);
+        this.c = c71Var;
+        c71Var.j(new ii.n3(3, this, uyVar));
+        addView(c71Var, w7.z5.e(-1, -1, 119));
         FrameLayout frameLayout = new FrameLayout(context);
         this.x = frameLayout;
-        org.telegram.ui.xd xdVar = new org.telegram.ui.xd(context, 3);
-        this.y = xdVar;
-        xdVar.setOrientation(1);
-        frameLayout.addView(xdVar, w7.y5.d(-2, -2.0f, 17, 32.0f, 0.0f, 32.0f, 0.0f));
+        org.telegram.ui.zd zdVar = new org.telegram.ui.zd(context, 3);
+        this.y = zdVar;
+        zdVar.setOrientation(1);
+        frameLayout.addView(zdVar, w7.z5.d(-2, -2.0f, 17, 32.0f, 0.0f, 32.0f, 0.0f));
         w9 w9Var = new w9(context);
         this.E = w9Var;
         w9Var.setVisibility(8);
-        xdVar.addView(w9Var, w7.y5.t(130, 130, 1, 0, 0, 0, 12));
+        zdVar.addView(w9Var, w7.z5.t(130, 130, 1, 0, 0, 0, 12));
         TextView textView = new TextView(context);
         this.F = textView;
         textView.setTextSize(1, 16.0f);
@@ -88,7 +88,7 @@ public final class lh0 extends FrameLayout {
         textView.setMaxLines(4);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        xdVar.addView(textView, w7.y5.q(-2, -2, 1));
+        zdVar.addView(textView, w7.z5.q(-2, -2, 1));
         TextView textView2 = new TextView(context);
         this.G = textView2;
         textView2.setTextSize(1, 14.0f);
@@ -96,20 +96,20 @@ public final class lh0 extends FrameLayout {
         textView2.setSingleLine(false);
         textView2.setMaxLines(4);
         textView2.setEllipsize(truncateAt);
-        xdVar.addView(textView2, w7.y5.t(-2, -2, 1, 0, 9, 0, 0));
+        zdVar.addView(textView2, w7.z5.t(-2, -2, 1, 0, 9, 0, 0));
         ci.d g10 = org.telegram.messenger.ok.g(24, context, null, true);
         this.H = g10;
-        xdVar.addView(g10, w7.y5.t(-1, 44, 7, 0, 19, 0, 0));
+        zdVar.addView(g10, w7.z5.t(-1, 44, 7, 0, 19, 0, 0));
         TextView textView3 = new TextView(context);
         this.I = textView3;
         textView3.setTextSize(1, 12.0f);
         textView3.setGravity(17);
-        xdVar.addView(textView3, w7.y5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
-        addView(frameLayout, w7.y5.e(-1, -1, 119));
-        t61Var.setHideIfEmpty(false);
-        t61Var.setEmptyView(frameLayout);
-        t61Var.Y1 = true;
-        t61Var.Z1 = 0;
+        zdVar.addView(textView3, w7.z5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
+        addView(frameLayout, w7.z5.e(-1, -1, 119));
+        c71Var.setHideIfEmpty(false);
+        c71Var.setEmptyView(frameLayout);
+        c71Var.Y1 = true;
+        c71Var.Z1 = 0;
         c();
         d();
     }
@@ -139,7 +139,7 @@ public final class lh0 extends FrameLayout {
                     if (arrayList.isEmpty()) {
                         tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
                     } else {
-                        MessageObject messageObject = (MessageObject) hg.c.g(1, arrayList);
+                        MessageObject messageObject = (MessageObject) hg.k0.g(1, arrayList);
                         tL_channels_searchPosts.offset_rate = this.f;
                         tL_channels_searchPosts.offset_id = messageObject.getRealId();
                         tL_channels_searchPosts.offset_peer = messagesController.getInputPeer(messageObject.messageOwner.peer_id);
@@ -149,7 +149,7 @@ public final class lh0 extends FrameLayout {
                     if (arrayList2.isEmpty()) {
                         tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
                     } else {
-                        MessageObject messageObject2 = (MessageObject) hg.c.g(1, arrayList2);
+                        MessageObject messageObject2 = (MessageObject) hg.k0.g(1, arrayList2);
                         tL_channels_searchPosts.offset_rate = this.r;
                         tL_channels_searchPosts.offset_id = messageObject2.getRealId();
                         tL_channels_searchPosts.offset_peer = messagesController.getInputPeer(messageObject2.messageOwner.peer_id);
@@ -164,7 +164,7 @@ public final class lh0 extends FrameLayout {
                 }
                 this.K = connectionsManager.sendRequest(tL_channels_searchPosts, new h7(this, messagesController, isEmpty, tL_channels_searchPosts, z10, j3, connectionsManager), 1024);
                 d();
-                this.c.Y2.N(true);
+                this.c.f3.N(true);
             }
         }
     }
@@ -189,14 +189,14 @@ public final class lh0 extends FrameLayout {
     }
 
     public final void c() {
-        this.x.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
-        this.F.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
-        int i10 = org.telegram.ui.ActionBar.h6.y6;
-        this.I.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
-        this.G.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
-        t61 t61Var = this.c;
-        t61Var.setAdapter(null);
-        t61Var.setAdapter(t61Var.Y2);
+        this.x.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
+        this.F.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false));
+        int i10 = org.telegram.ui.ActionBar.i6.y6;
+        this.I.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
+        this.G.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
+        c71 c71Var = this.c;
+        c71Var.setAdapter(null);
+        c71Var.setAdapter(c71Var.f3);
         if (this.T != null) {
             this.T = null;
             d();
@@ -283,13 +283,13 @@ public final class lh0 extends FrameLayout {
                 int i17 = i16 / 60;
                 int i18 = i16 - (i17 * 60);
                 dVar.setVisibility(0);
-                dVar.g(yh.w7.R0(LocaleController.formatPluralStringComma("SearchPostsButtonPay", (int) this.d.stars_amount), 1.13f, this.U), true, true);
+                dVar.g(yh.x7.X0(LocaleController.formatPluralStringComma("SearchPostsButtonPay", (int) this.d.stars_amount), 1.13f, this.U), true, true);
                 int i19 = R.string.SearchPostsFreeSearchUnlocksIn;
                 StringBuilder sb2 = new StringBuilder();
-                sb2.append(i15 > 0 ? a4.a.n(i15, ":") : "");
-                sb2.append(i17 < 10 ? hg.c.h(i17, "0") : Integer.valueOf(i17));
+                sb2.append(i15 > 0 ? a4.a.m(i15, ":") : "");
+                sb2.append(i17 < 10 ? hg.k0.h(i17, "0") : Integer.valueOf(i17));
                 sb2.append(":");
-                sb2.append(i18 < 10 ? hg.c.h(i18, "0") : Integer.valueOf(i18));
+                sb2.append(i18 < 10 ? hg.k0.h(i18, "0") : Integer.valueOf(i18));
                 dVar.f(LocaleController.formatString(i19, sb2.toString()), true);
                 dVar.e.o(false, true, false);
                 dVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.jh0
@@ -346,12 +346,12 @@ public final class lh0 extends FrameLayout {
         textView.setText(LocaleController.getString(R.string.SearchPostsText));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("s ");
         if (this.R == null) {
-            qq qqVar = new qq(R.drawable.smiles_tab_search, 0);
-            this.R = qqVar;
-            qqVar.setScale(0.79f, 0.79f);
+            rq rqVar = new rq(R.drawable.smiles_tab_search, 0);
+            this.R = rqVar;
+            rqVar.setScale(0.79f, 0.79f);
         }
         if (this.T == null) {
-            this.T = new nu(org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Oh, false), org.telegram.ui.ActionBar.h6.l1(0.75f, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false))), 1);
+            this.T = new ou(org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Oh, false), org.telegram.ui.ActionBar.i6.l1(0.75f, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false))), 1);
         }
         spannableStringBuilder.setSpan(this.R, 0, 1, 0);
         spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.SearchPostsButton));
@@ -361,9 +361,9 @@ public final class lh0 extends FrameLayout {
         spannableStringBuilder.setSpan(this.T, length, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append((CharSequence) " >");
         if (this.S == null) {
-            qq qqVar2 = new qq(R.drawable.msg_mini_forumarrow, 0);
-            this.S = qqVar2;
-            qqVar2.setScale(1.05f, 1.05f);
+            rq rqVar2 = new rq(R.drawable.msg_mini_forumarrow, 0);
+            this.S = rqVar2;
+            rqVar2.setScale(1.05f, 1.05f);
         }
         spannableStringBuilder.setSpan(this.S, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         dVar.setVisibility(0);
@@ -432,6 +432,6 @@ public final class lh0 extends FrameLayout {
     }
 
     public void setKeyboardHeight(int i10) {
-        this.y.animate().translationY((-i10) / 2.0f).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();
+        this.y.animate().translationY((-i10) / 2.0f).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.p1.w).start();
     }
 }

@@ -18,10 +18,10 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class x2 {
     public final Context a;
@@ -81,9 +81,9 @@ public final class x2 {
         }
     }
 
-    public final void c(fb fbVar) {
+    public final void c(eb ebVar) {
         h(this.p);
-        e(1.0f, 320L, fbVar);
+        e(1.0f, 320L, ebVar);
     }
 
     public final void d() {
@@ -111,7 +111,7 @@ public final class x2 {
         ofFloat.addUpdateListener(new ai.a(this, 17));
         this.i.addListener(new ai.t2(this, f7, runnable, 1));
         this.i.setDuration(j3);
-        this.i.setInterpolator(sr.i);
+        this.i.setInterpolator(tr.i);
         this.i.start();
     }
 
@@ -138,7 +138,7 @@ public final class x2 {
             long[] jArr = {Color.valueOf(Color.red(this.n) / 255.0f, Color.green(this.n) / 255.0f, Color.blue(this.n) / 255.0f, 0.0f, ColorSpace.get(named)).pack(), Color.valueOf(Color.red(this.n) / 255.0f, Color.green(this.n) / 255.0f, Color.blue(this.n) / 255.0f, 1.0f, ColorSpace.get(named)).pack()};
             float[] fArr = {AndroidUtilities.lerp(0.9f, 0.22f, this.h), 1.0f};
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            this.r = ah.e.b(f7, f10, min, jArr, fArr);
+            this.r = ah.f.b(f7, f10, min, jArr, fArr);
         } else {
             this.r = new RadialGradient(this.j * 0.5f, this.k * 0.4f, (2.0f - this.h) * (Math.min(r1, r11) / 2.0f) * 1.35f, new int[]{i0.a.k(this.n, 0), this.n}, new float[]{AndroidUtilities.lerp(0.9f, 0.22f, this.h), 1.0f}, Shader.TileMode.CLAMP);
         }

@@ -1,68 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class bi extends lu {
-    public boolean V;
-    public int W;
-    public int a0;
-    public ValueAnimator b0;
-    public final /* synthetic */ wi c0;
+public final class bi extends mu {
+    public final /* synthetic */ xi V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bi(wi wiVar, Context context, mi miVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, miVar, null, 1, true, d6Var);
-        this.c0 = wiVar;
+    public bi(xi xiVar, Context context, ki kiVar, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, kiVar, null, 1, true, d6Var);
+        this.V = xiVar;
     }
 
-    @Override // org.telegram.ui.Components.lu
-    public final void c(float f7) {
-        wi wiVar = this.c0;
-        wiVar.g2 = f7;
-        yh yhVar = wiVar.D0;
-        yhVar.setTranslationY(f7);
-        yhVar.invalidate();
-        wiVar.g1();
-        wiVar.X1(wiVar.y0, 0);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.V) {
-            du editText = this.c0.E0.getEditText();
-            editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
-            ofFloat.addUpdateListener(new ai.x(14, this, editText));
-            ValueAnimator valueAnimator = this.b0;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.b0 = ofFloat;
-            ofFloat.setDuration(200L);
-            ofFloat.setInterpolator(sr.f);
-            ofFloat.start();
-            this.V = false;
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.lu
-    public final void e() {
-        super/*org.telegram.ui.ActionBar.e3*/.dismiss();
-    }
-
-    @Override // org.telegram.ui.Components.lu
+    @Override // org.telegram.ui.Components.mu
     public final void f() {
         super.f();
-        mz emojiView = getEmojiView();
+        nz emojiView = getEmojiView();
         if (emojiView != null) {
             emojiView.w0 = false;
             emojiView.w2 = false;
@@ -71,23 +29,23 @@ public final class bi extends lu {
         }
     }
 
-    @Override // org.telegram.ui.Components.lu
+    @Override // org.telegram.ui.Components.mu
     public final void i(Menu menu) {
-        org.telegram.ui.ActionBar.m2 m2Var = this.c0.f0;
-        if (m2Var instanceof org.telegram.ui.wn) {
-            org.telegram.ui.wn.k8(menu, ((org.telegram.ui.wn) m2Var).h, true, true, true, true);
+        org.telegram.ui.ActionBar.n2 n2Var = this.V.f0;
+        if (n2Var instanceof org.telegram.ui.yn) {
+            org.telegram.ui.yn.k8(menu, ((org.telegram.ui.yn) n2Var).h, true, true, true, true);
         }
     }
 
     @Override // android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        wi wiVar = this.c0;
-        bi biVar = wiVar.E0;
-        if (!wiVar.u1) {
+        xi xiVar = this.V;
+        bi biVar = xiVar.P0;
+        if (!xiVar.u1) {
             if (motionEvent.getX() <= biVar.getEditText().getLeft() || motionEvent.getX() >= biVar.getEditText().getRight() || motionEvent.getY() <= biVar.getEditText().getTop() || motionEvent.getY() >= biVar.getEditText().getBottom()) {
-                wiVar.t1(biVar.getEditText(), false);
+                xiVar.q1(biVar.getEditText(), false);
             } else {
-                wiVar.t1(biVar.getEditText(), true);
+                xiVar.q1(biVar.getEditText(), true);
             }
         }
         return super.onInterceptTouchEvent(motionEvent);
@@ -96,32 +54,15 @@ public final class bi extends lu {
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        this.c0.U1();
+        this.V.Y1();
     }
 
-    @Override // org.telegram.ui.Components.lu
+    @Override // org.telegram.ui.Components.mu
     public final void q(int i10, int i11) {
-        wi wiVar = this.c0;
-        yh yhVar = wiVar.D0;
-        boolean z10 = false;
-        if (TextUtils.isEmpty(getEditText().getText())) {
-            getEditText().animate().cancel();
-            getEditText().setOffsetY(0.0f);
-            this.V = false;
-        } else {
-            this.V = true;
-            this.W = getEditText().getMeasuredHeight();
-            this.a0 = getEditText().getScrollY();
-            invalidate();
+        xi xiVar = this.V;
+        xiVar.Y1();
+        if (xiVar.c0) {
+            xiVar.J1(i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
         }
-        if (!wiVar.c0) {
-            if (i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim())) {
-                z10 = true;
-            }
-            wiVar.M1(z10);
-        }
-        wiVar.W1 = yhVar.getTop() + wiVar.V1;
-        yhVar.invalidate();
-        wiVar.U1();
     }
 }

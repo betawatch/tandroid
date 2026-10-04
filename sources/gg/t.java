@@ -6,15 +6,15 @@ import android.os.HandlerThread;
 import android.util.Pair;
 import android.view.KeyEvent;
 import android.view.View;
-import ii.b6;
-import ii.d6;
+import ii.c6;
 import ii.e6;
 import ii.f3;
-import ii.g6;
+import ii.f6;
+import ii.h6;
 import ii.k3;
-import ii.p5;
+import ii.q5;
 import ii.x3;
-import ii.y5;
+import ii.z5;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,14 +31,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.o01;
-import org.telegram.ui.Components.q01;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.rc;
+import org.telegram.ui.Components.x01;
 import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.z01;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -100,7 +100,7 @@ public final /* synthetic */ class t implements Runnable {
                 c2Var.q = arrayList5;
                 c2Var.r = hashMap;
                 c2Var.s = true;
-                c2Var.a.F(arrayList5);
+                c2Var.a.C(arrayList5);
                 return;
             case 4:
                 e2 e2Var = (e2) this.b;
@@ -109,133 +109,133 @@ public final /* synthetic */ class t implements Runnable {
                 String str2 = tL_messages_searchStickerSets.q;
                 g2 g2Var = e2Var.a;
                 String str3 = g2Var.R;
-                h51 h51Var = g2Var.e;
+                q51 q51Var = g2Var.e;
                 if (str2.equals(str3)) {
                     e2Var.a();
-                    h51Var.b.h.getProgressDrawable().e = false;
+                    q51Var.b.h.getProgressDrawable().e = false;
                     g2Var.N = 0;
-                    h51Var.b(true);
+                    q51Var.b(true);
                     g2Var.E.addAll(tL_messages_foundStickerSets.sets);
                     g2Var.l();
                     return;
                 }
                 return;
             case 5:
-                hg.d dVar = (hg.d) this.b;
+                hg.c cVar = (hg.c) this.b;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
                 TLObject tLObject2 = (TLObject) this.d;
                 if (tL_error != null) {
-                    dVar.a.a(0.0f);
+                    cVar.a.a(0.0f);
                     yc.b0(tL_error);
                     return;
                 } else if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
-                    dVar.finishFragment();
+                    cVar.finishFragment();
                     return;
                 } else {
-                    dVar.a.a(0.0f);
-                    ok.p(R.string.UnknownError, yc.a0(dVar), null);
+                    cVar.a.a(0.0f);
+                    ok.p(R.string.UnknownError, yc.a0(cVar), null);
                     return;
                 }
             case 6:
-                hg.n nVar = (hg.n) this.b;
+                hg.m mVar = (hg.m) this.b;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.c;
                 TLObject tLObject3 = (TLObject) this.d;
                 if (tL_error2 != null) {
-                    nVar.e.a(0.0f);
+                    mVar.f.a(0.0f);
                     yc.b0(tL_error2);
                     return;
                 } else if (tLObject3 instanceof TLRPC.TL_boolFalse) {
-                    nVar.e.a(0.0f);
-                    ok.p(R.string.UnknownError, yc.a0(nVar), null);
+                    mVar.f.a(0.0f);
+                    ok.p(R.string.UnknownError, yc.a0(mVar), null);
                     return;
                 } else {
-                    if (nVar.E != null) {
-                        nVar.getMessagesController().loadFullUser(nVar.getUserConfig().getCurrentUser(), 0, true);
+                    if (mVar.F != null) {
+                        mVar.getMessagesController().loadFullUser(mVar.getUserConfig().getCurrentUser(), 0, true);
                     }
-                    nVar.finishFragment();
+                    mVar.finishFragment();
                     return;
                 }
             case 7:
-                hg.a0 a0Var = (hg.a0) this.b;
+                hg.y yVar = (hg.y) this.b;
                 TLObject tLObject4 = (TLObject) this.c;
                 TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) this.d;
-                ArrayList arrayList6 = a0Var.b;
+                ArrayList arrayList6 = yVar.b;
                 if (!(tLObject4 instanceof TLRPC.TL_boolTrue)) {
                     FileLog.e(new RuntimeException("Unexpected response from server!"));
                     return;
                 }
                 if (arrayList6.contains(tL_businessChatLink)) {
                     arrayList6.remove(tL_businessChatLink);
-                    NotificationCenter.getInstance(a0Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
+                    NotificationCenter.getInstance(yVar.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
                 }
-                a0Var.f();
+                yVar.f();
                 return;
             case 8:
-                hg.a0 a0Var2 = (hg.a0) this.b;
+                hg.y yVar2 = (hg.y) this.b;
                 String str4 = (String) this.c;
                 TL_account.TL_businessChatLink tL_businessChatLink2 = (TL_account.TL_businessChatLink) this.d;
                 TL_account.deleteBusinessChatLink deletebusinesschatlink = new TL_account.deleteBusinessChatLink();
                 deletebusinesschatlink.slug = str4;
-                ConnectionsManager.getInstance(a0Var2.a).sendRequest(deletebusinesschatlink, new ai.v1(13, a0Var2, tL_businessChatLink2));
+                ConnectionsManager.getInstance(yVar2.a).sendRequest(deletebusinesschatlink, new ai.v1(13, yVar2, tL_businessChatLink2));
                 return;
             case 9:
-                hg.m0.P((hg.m0) this.b, (TL_account.TL_connectedBot) this.c, (TL_account.TL_businessBotRecipients) this.d);
+                hg.l0.N((hg.l0) this.b, (TL_account.TL_connectedBot) this.c, (TL_account.TL_businessBotRecipients) this.d);
                 return;
             case 10:
-                hg.x0 x0Var = (hg.x0) this.b;
+                hg.w0 w0Var = (hg.w0) this.b;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.c;
                 TLObject tLObject5 = (TLObject) this.d;
                 if (tL_error3 != null) {
-                    x0Var.a.a(0.0f);
+                    w0Var.a.a(0.0f);
                     yc.b0(tL_error3);
                     return;
                 } else if (!(tLObject5 instanceof TLRPC.TL_boolFalse)) {
-                    x0Var.finishFragment();
+                    w0Var.finishFragment();
                     return;
                 } else {
-                    x0Var.a.a(0.0f);
-                    ok.p(R.string.UnknownError, yc.a0(x0Var), null);
+                    w0Var.a.a(0.0f);
+                    ok.p(R.string.UnknownError, yc.a0(w0Var), null);
                     return;
                 }
             case 11:
-                hg.h1.U((hg.h1) this.b, (TLRPC.TL_error) this.c, (TLObject) this.d);
+                hg.g1.S((hg.g1) this.b, (TLRPC.TL_error) this.c, (TLObject) this.d);
                 return;
             case 12:
-                hg.g2 g2Var2 = (hg.g2) this.b;
+                hg.f2 f2Var = (hg.f2) this.b;
                 TLObject tLObject6 = (TLObject) this.c;
                 SharedPreferences sharedPreferences = (SharedPreferences) this.d;
-                ArrayList arrayList7 = g2Var2.d;
+                ArrayList arrayList7 = f2Var.d;
                 if (tLObject6 instanceof TLRPC.TL_help_timezonesList) {
                     arrayList7.clear();
                     arrayList7.addAll(((TLRPC.TL_help_timezonesList) tLObject6).timezones);
                     SerializedData serializedData = new SerializedData(tLObject6.getObjectSize());
                     tLObject6.serializeToStream(serializedData);
                     sharedPreferences.edit().putString("timezones", Utilities.bytesToHex(serializedData.toByteArray())).apply();
-                    NotificationCenter.getInstance(g2Var2.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.timezonesUpdated, new Object[0]);
+                    NotificationCenter.getInstance(f2Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.timezonesUpdated, new Object[0]);
                 }
-                g2Var2.c = true;
-                g2Var2.b = false;
+                f2Var.c = true;
+                f2Var.b = false;
                 return;
             case 13:
-                i2.w0 w0Var = (i2.w0) this.b;
+                i2.w0 w0Var2 = (i2.w0) this.b;
                 e9.f0 f0Var = (e9.f0) this.c;
                 u2.f0 f0Var2 = (u2.f0) this.d;
-                j2.f fVar = w0Var.c;
+                j2.f fVar = w0Var2.c;
                 e9.a1 i11 = f0Var.i();
-                com.google.firebase.messaging.n nVar2 = fVar.d;
+                com.google.firebase.messaging.n nVar = fVar.d;
                 b2.b1 b1Var = fVar.h;
                 b1Var.getClass();
-                nVar2.getClass();
-                nVar2.b = e9.i0.v(i11);
+                nVar.getClass();
+                nVar.b = e9.i0.v(i11);
                 if (!i11.isEmpty()) {
-                    nVar2.e = (u2.f0) i11.get(0);
+                    nVar.e = (u2.f0) i11.get(0);
                     f0Var2.getClass();
-                    nVar2.f = f0Var2;
+                    nVar.f = f0Var2;
                 }
-                if (((u2.f0) nVar2.d) == null) {
-                    nVar2.d = com.google.firebase.messaging.n.p(b1Var, (e9.i0) nVar2.b, (u2.f0) nVar2.e, (b2.h1) nVar2.a);
+                if (((u2.f0) nVar.d) == null) {
+                    nVar.d = com.google.firebase.messaging.n.p(b1Var, (e9.i0) nVar.b, (u2.f0) nVar.e, (b2.h1) nVar.a);
                 }
-                nVar2.H(b1Var.w0());
+                nVar.G(b1Var.w0());
                 return;
             case 14:
                 i2.d1 d1Var = (i2.d1) this.b;
@@ -244,14 +244,14 @@ public final /* synthetic */ class t implements Runnable {
                 return;
             case 15:
                 x3 x3Var = (x3) this.b;
-                a80 a80Var = (a80) this.c;
-                p5 p5Var = (p5) this.d;
-                if (x3Var.j4 != a80Var) {
+                b80 b80Var = (b80) this.c;
+                q5 q5Var = (q5) this.d;
+                if (x3Var.q4 != b80Var) {
                     return;
                 }
-                x3Var.j4 = null;
-                if (x3Var.C3 && x3Var.i4 == p5Var && !p5Var.H.isEmpty()) {
-                    x3Var.M2();
+                x3Var.q4 = null;
+                if (x3Var.J3 && x3Var.p4 == q5Var && !q5Var.H.isEmpty()) {
+                    x3Var.O2();
                     return;
                 }
                 return;
@@ -259,8 +259,8 @@ public final /* synthetic */ class t implements Runnable {
                 x3 x3Var2 = (x3) this.b;
                 ii.a aVar = (ii.a) this.c;
                 ii.a aVar2 = (ii.a) this.d;
-                ArrayList arrayList8 = x3Var2.p4;
-                k3 k3Var = x3Var2.n3;
+                ArrayList arrayList8 = x3Var2.w4;
+                k3 k3Var = x3Var2.u3;
                 if (k3Var == null || aVar == null || aVar2 == null) {
                     return;
                 }
@@ -273,63 +273,63 @@ public final /* synthetic */ class t implements Runnable {
                     ii.a aVar3 = (ii.a) arrayList8.get(i12);
                     long j3 = aVar3.t;
                     if (j3 != 0) {
-                        k3Var.Y(i12, g6.l((TL_iv.RichText) x3Var2.m3.get(Long.valueOf(j3))));
+                        k3Var.Y(i12, h6.l((TL_iv.RichText) x3Var2.t3.get(Long.valueOf(j3))));
                     } else {
-                        k3Var.Y(i12, e6.z(aVar3.b));
+                        k3Var.Y(i12, f6.z(aVar3.b));
                     }
                 }
                 k3Var.j0(Math.min(indexOf, indexOf2), Math.max(indexOf, indexOf2));
                 return;
             case 17:
-                ((x3) this.b).Z4((ii.a) this.c, (String) this.d);
+                ((x3) this.b).b5((ii.a) this.c, (String) this.d);
                 return;
             case 18:
-                y5 y5Var = (y5) this.b;
+                z5 z5Var = (z5) this.b;
                 ii.a aVar4 = (ii.a) this.c;
-                d6 d6Var = (d6) this.d;
-                b6 b6Var = y5Var.a.y;
-                if (b6Var != null) {
-                    ((f3) b6Var).d(aVar4, d6Var.a, d6Var.b, d6Var.c, d6Var.d, d6Var.e);
+                e6 e6Var = (e6) this.d;
+                c6 c6Var = z5Var.a.y;
+                if (c6Var != null) {
+                    ((f3) c6Var).d(aVar4, e6Var.a, e6Var.b, e6Var.c, e6Var.d, e6Var.e);
                     return;
                 }
                 return;
             case 19:
-                ji.n nVar3 = (ji.n) this.b;
+                ji.n nVar2 = (ji.n) this.b;
                 ArrayList arrayList9 = (ArrayList) this.c;
                 ArrayList arrayList10 = (ArrayList) this.d;
-                nVar3.getClass();
+                nVar2.getClass();
                 for (int i13 = 0; i13 < arrayList9.size(); i13++) {
                     ((View) arrayList9.get(i13)).setVisibility(0);
                 }
-                if (nVar3.A.removeAll(arrayList10)) {
+                if (nVar2.A.removeAll(arrayList10)) {
                     for (int i14 = 0; i14 < arrayList10.size(); i14++) {
-                        nVar3.d((s4.c1) arrayList10.get(i14));
+                        nVar2.d((s4.c1) arrayList10.get(i14));
                     }
-                    nVar3.G();
+                    nVar2.G();
                 }
-                nVar3.K.removeAll(arrayList9);
+                nVar2.K.removeAll(arrayList9);
                 return;
             case 20:
-                ji.n nVar4 = (ji.n) this.b;
+                ji.n nVar3 = (ji.n) this.b;
                 View view = (View) this.c;
                 s4.c1 c1Var = (s4.c1) this.d;
-                nVar4.getClass();
+                nVar3.getClass();
                 view.setVisibility(0);
-                if (nVar4.A.remove(c1Var)) {
-                    nVar4.d(c1Var);
-                    nVar4.G();
+                if (nVar3.A.remove(c1Var)) {
+                    nVar3.d(c1Var);
+                    nVar3.G();
                 }
-                nVar4.K.remove(view);
+                nVar3.K.remove(view);
                 return;
             case 21:
-                n4.y yVar = (n4.y) this.b;
+                n4.y yVar3 = (n4.y) this.b;
                 b2.s sVar = (b2.s) this.c;
                 i2.h hVar = (i2.h) this.d;
-                k2.j jVar = (k2.j) yVar.c;
+                k2.k kVar = (k2.k) yVar3.c;
                 String str5 = e2.d0.a;
-                j2.f fVar2 = ((i2.c0) jVar).a.s;
+                j2.f fVar2 = ((i2.c0) kVar).a.s;
                 j2.a p5 = fVar2.p();
-                fVar2.q(p5, 1009, new j2.c(p5, sVar, hVar, 20));
+                fVar2.q(p5, 1009, new j2.c(p5, sVar, hVar, 21));
                 return;
             case 22:
                 ki.q qVar = (ki.q) this.b;
@@ -351,12 +351,12 @@ public final /* synthetic */ class t implements Runnable {
                 try {
                     tVar.d(file);
                     s0Var.g();
-                    long e = w7.k.e(file) / 1000;
-                    s0Var.m.b("preview snapshot completed: durationMs=" + e + ", size=" + file.length() + ", elapsedMs=" + ki.s0.f(s0Var.J));
-                    handler.post(new ki.d0(s0Var, e, i10));
+                    long e7 = w7.k.e(file) / 1000;
+                    s0Var.m.b("preview snapshot completed: durationMs=" + e7 + ", size=" + file.length() + ", elapsedMs=" + ki.s0.f(s0Var.J));
+                    handler.post(new ki.d0(s0Var, e7, i10));
                     return;
-                } catch (Exception e7) {
-                    handler.post(new ki.c0(s0Var, e7, 3));
+                } catch (Exception e10) {
+                    handler.post(new ki.c0(s0Var, e10, 3));
                     return;
                 }
             case 24:
@@ -365,50 +365,50 @@ public final /* synthetic */ class t implements Runnable {
                 File file2 = (File) this.d;
                 ki.p0 p0Var = s0Var2.e;
                 long j10 = o0Var.a;
-                q01 q01Var = (q01) p0Var;
-                synchronized (q01Var) {
-                    if (q01Var.d) {
+                z01 z01Var = (z01) p0Var;
+                synchronized (z01Var) {
+                    if (z01Var.d) {
                         return;
                     }
-                    q01Var.c.put(Long.valueOf(j10), new o01(file2));
+                    z01Var.c.put(Long.valueOf(j10), new x01(file2));
                     return;
                 }
             case 25:
                 m4.w wVar = (m4.w) this.b;
                 m4.r rVar = (m4.r) this.c;
                 KeyEvent keyEvent = (KeyEvent) this.d;
-                m4.a0 a0Var3 = wVar.b;
-                if (a0Var3.i(rVar)) {
-                    a0Var3.b(keyEvent, false, false);
+                m4.a0 a0Var = wVar.b;
+                if (a0Var.i(rVar)) {
+                    a0Var.b(keyEvent, false, false);
                 } else {
-                    m4.k0 k0Var = a0Var3.h;
-                    n4.a0 a0Var4 = rVar.a;
-                    a0Var4.getClass();
+                    m4.k0 k0Var = a0Var.h;
+                    n4.a0 a0Var2 = rVar.a;
+                    a0Var2.getClass();
                     k0Var.getClass();
-                    k0Var.H(1, new m4.b0(k0Var, 7), a0Var4, true);
+                    k0Var.H(1, new m4.b0(k0Var, 7), a0Var2, true);
                 }
                 wVar.a = null;
                 return;
             case 26:
-                m4.a0 a0Var5 = (m4.a0) this.b;
+                m4.a0 a0Var3 = (m4.a0) this.b;
                 m4.o0 o0Var2 = (m4.o0) this.c;
                 m4.s sVar2 = (m4.s) this.d;
-                if (a0Var5.j()) {
+                if (a0Var3.j()) {
                     return;
                 }
-                m4.e1 e1Var = a0Var5.t;
+                m4.e1 e1Var = a0Var3.t;
                 o0Var2.getClass();
                 w7.u.b(e1Var, sVar2);
                 return;
             case 27:
-                n2.k kVar = (n2.k) this.b;
-                this.c.b(kVar.a, kVar.b, (Exception) this.d);
+                n2.k kVar2 = (n2.k) this.b;
+                this.c.b(kVar2.a, kVar2.b, (Exception) this.d);
                 return;
             case 28:
-                ((VideoAds) this.b).lambda$show$3((qc) this.c, (TLRPC.TL_sponsoredMessage) this.d);
+                ((VideoAds) this.b).lambda$show$3((rc) this.c, (TLRPC.TL_sponsoredMessage) this.d);
                 return;
             default:
-                ((VideoAds) this.b).lambda$show$5((qc) this.c, (boolean[]) this.d);
+                ((VideoAds) this.b).lambda$show$5((rc) this.c, (boolean[]) this.d);
                 return;
         }
     }

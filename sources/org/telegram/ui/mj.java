@@ -1,57 +1,100 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Rect;
+import android.os.Build;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class mj extends org.telegram.ui.Components.go {
-    public final /* synthetic */ wn v0;
+public final class mj implements View.OnTouchListener {
+    public View a;
+    public org.telegram.ui.ActionBar.n1 b;
+    public final Rect c = new Rect();
+    public boolean d;
+    public boolean e;
+    public final org.telegram.ui.Components.n20 f;
+    public final int[] h;
+    public View n;
+    public float r;
+    public float s;
+    public final /* synthetic */ View v;
+    public final /* synthetic */ yn w;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mj(wn wnVar, Context context, wn wnVar2, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, wnVar2, z10, d6Var);
-        this.v0 = wnVar;
+    public mj(yn ynVar, ImageView imageView) {
+        this.w = ynVar;
+        this.v = imageView;
+        org.telegram.ui.Components.n20 n20Var = new org.telegram.ui.Components.n20((Context) null, new g(this, 24));
+        this.f = n20Var;
+        this.h = new int[2];
+        n20Var.v = true;
     }
 
-    @Override // org.telegram.ui.Components.go
-    public final boolean a() {
-        boolean z10;
-        wn wnVar = this.v0;
-        if (wnVar.Oa || wnVar.isInPreviewMode()) {
-            return false;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        View view2;
+        this.a = view;
+        if (motionEvent.getAction() == 0) {
+            this.r = motionEvent.getX();
+            this.s = motionEvent.getY();
+            this.e = false;
         }
-        z10 = ((org.telegram.ui.ActionBar.m2) wnVar).inBubbleMode;
-        if (z10 || wnVar.j0 == null || wnVar.s3) {
-            return false;
+        this.f.a(motionEvent);
+        if (this.b != null && !this.d && motionEvent.getAction() == 2) {
+            View view3 = this.a;
+            int[] iArr = this.h;
+            view3.getLocationOnScreen(iArr);
+            float x10 = motionEvent.getX() + iArr[0];
+            float y3 = motionEvent.getY() + iArr[1];
+            this.b.getContentView().getLocationOnScreen(iArr);
+            float f7 = x10 - iArr[0];
+            float f10 = y3 - iArr[1];
+            this.n = null;
+            ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b.getContentView();
+            for (int i10 = 0; i10 < actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount(); i10++) {
+                View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10);
+                Rect rect = this.c;
+                childAt.getHitRect(rect);
+                childAt.getTag();
+                if (childAt.getVisibility() == 0 && childAt.isClickable()) {
+                    if (rect.contains((int) f7, (int) f10)) {
+                        childAt.setPressed(true);
+                        childAt.setSelected(true);
+                        if (Build.VERSION.SDK_INT == 21 && childAt.getBackground() != null) {
+                            childAt.getBackground().setVisible(true, false);
+                        }
+                        childAt.drawableHotspotChanged(f7, f10 - childAt.getTop());
+                        this.n = childAt;
+                    } else {
+                        childAt.setPressed(false);
+                        childAt.setSelected(false);
+                        if (Build.VERSION.SDK_INT == 21 && childAt.getBackground() != null) {
+                            childAt.getBackground().setVisible(false, false);
+                        }
+                    }
+                }
+            }
         }
-        return !wnVar.F9() || wnVar.h4;
-    }
-
-    @Override // org.telegram.ui.Components.go
-    public final boolean d() {
-        wn wnVar = this.v0;
-        TLRPC.User user = wnVar.f;
-        if (user != null && user.linked_community_id != 0) {
-            wnVar.showDialog(new fi.k0(wnVar, wnVar.f.linked_community_id, null, null));
-            return true;
+        if ((motionEvent.getAction() == 2 && Math.abs(motionEvent.getX() - this.r) > AndroidUtilities.touchSlop * 2.0f) || Math.abs(motionEvent.getY() - this.s) > AndroidUtilities.touchSlop * 2.0f) {
+            this.e = true;
+            this.a.setPressed(false);
+            this.a.setSelected(false);
         }
-        TLRPC.Chat chat = wnVar.e;
-        if (chat == null || chat.linked_community_id == 0) {
-            return false;
+        if (motionEvent.getAction() == 1 && !this.d && !this.e) {
+            View view4 = this.n;
+            if (view4 != null) {
+                view4.callOnClick();
+                this.d = true;
+                return true;
+            }
+            if (this.b == null && (view2 = this.a) != null) {
+                view2.callOnClick();
+            }
         }
-        wnVar.showDialog(new fi.k0(wnVar, wnVar.e.linked_community_id, null, null));
         return true;
-    }
-
-    @Override // org.telegram.ui.Components.go
-    public final void f() {
-        wn wnVar = this.v0;
-        wnVar.la(wnVar.E9() ? "" : null);
-    }
-
-    @Override // org.telegram.ui.Components.go
-    public final boolean o() {
-        return this.v0.R3 == 3;
     }
 }

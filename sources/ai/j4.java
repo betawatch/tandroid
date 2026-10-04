@@ -8,42 +8,42 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.wq0;
 import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zq0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class j4 extends wq0 {
-    public final /* synthetic */ e6 b1;
+public final class j4 extends zq0 {
+    public final /* synthetic */ e6 X0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public j4(e6 e6Var, Context context, String str, String str2, boolean z10, x3 x3Var) {
         super(context, null, null, str, null, false, str2, null, false, false, z10, null, x3Var);
-        this.b1 = e6Var;
+        this.X0 = e6Var;
     }
 
-    @Override // org.telegram.ui.Components.wq0
-    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+    @Override // org.telegram.ui.Components.zq0
+    public final void O0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         if (z10) {
-            e6 e6Var = this.b1;
+            e6 e6Var = this.X0;
             yc ycVar = new yc(e6Var.c1, this.resourcesProvider);
             if (iVar.m() == 1) {
                 long j3 = iVar.j(0);
                 if (j3 == UserConfig.getInstance(this.currentAccount).clientUserId) {
-                    org.telegram.ui.Components.qc G = ycVar.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedToSavedMessages, new Object[0])));
+                    org.telegram.ui.Components.rc G = ycVar.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedToSavedMessages, new Object[0])));
                     G.r = false;
                     G.j();
                 } else if (j3 < 0) {
-                    org.telegram.ui.Components.qc G2 = ycVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3)).title)));
+                    org.telegram.ui.Components.rc G2 = ycVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j3)).title)));
                     G2.r = false;
                     G2.j();
                 } else {
-                    org.telegram.ui.Components.qc G3 = ycVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3)).first_name)));
+                    org.telegram.ui.Components.rc G3 = ycVar.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StorySharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j3)).first_name)));
                     G3.r = false;
                     G3.j();
                 }
             } else {
-                org.telegram.ui.Components.qc Q = ycVar.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StorySharedToManyChats", iVar.m(), Integer.valueOf(iVar.m()))));
+                org.telegram.ui.Components.rc Q = ycVar.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("StorySharedToManyChats", iVar.m(), Integer.valueOf(iVar.m()))));
                 Q.r = false;
                 Q.j();
             }
@@ -54,14 +54,14 @@ public final class j4 extends wq0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wq0
-    public final void S0(View view) {
-        this.b1.e1();
+    @Override // org.telegram.ui.Components.zq0
+    public final void P0(View view) {
+        this.X0.e1();
     }
 
-    @Override // org.telegram.ui.Components.wq0, org.telegram.ui.ActionBar.e3
+    @Override // org.telegram.ui.Components.zq0, org.telegram.ui.ActionBar.f3
     public final void dismissInternal() {
         super.dismissInternal();
-        this.b1.Z2 = null;
+        this.X0.Z2 = null;
     }
 }

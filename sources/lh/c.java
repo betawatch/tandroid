@@ -17,7 +17,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import b2.i0;
-import ci.ac;
+import ci.zb;
 import i2.h0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
@@ -34,27 +34,27 @@ import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.d61;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.c40;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.h40;
 import vh.n;
 import zg.o0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class c extends ViewGroup implements me.a, NotificationCenter.NotificationCenterDelegate, le.e {
+public final class c extends ViewGroup implements me.a, NotificationCenter.NotificationCenterDelegate, le.d {
     public static final Rect L = new Rect();
     public RenderNode E;
     public float F;
     public View G;
     public GroupCallMessage H;
     public a I;
-    public final ac J;
+    public final zb J;
     public final RectF K;
-    public final le.c a;
-    public final le.c b;
+    public final le.b a;
+    public final le.b b;
     public final me.b c;
     public final ImageReceiver d;
     public final Paint e;
@@ -70,9 +70,9 @@ public final class c extends ViewGroup implements me.a, NotificationCenter.Notif
 
     public c(Context context) {
         super(context);
-        sr srVar = sr.h;
-        this.a = new le.c(0, this, srVar, 320L, false);
-        this.b = new le.c(1, this, srVar, 320L, false);
+        tr trVar = tr.h;
+        this.a = new le.b(0, this, trVar, 320L, false);
+        this.b = new le.b(1, this, trVar, 320L, false);
         this.c = new me.b(this);
         Paint paint = new Paint(1);
         this.e = paint;
@@ -81,7 +81,7 @@ public final class c extends ViewGroup implements me.a, NotificationCenter.Notif
         org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h();
         this.h = hVar;
         this.y = new h0(this, 11);
-        this.J = new ac(this, 1);
+        this.J = new zb(this, 1);
         this.K = new RectF();
         n nVar = new n(context);
         this.v = nVar;
@@ -119,16 +119,6 @@ public final class c extends ViewGroup implements me.a, NotificationCenter.Notif
         return false;
     }
 
-    @Override // le.e
-    public final void D(int i10, float f7, float f10, le.f fVar) {
-        this.f.setAlpha(Math.round(this.b.e * 100.0f));
-        int round = Math.round(this.a.e * 220.0f);
-        org.telegram.ui.Components.voip.h hVar = this.h;
-        hVar.a.setAlpha(round);
-        hVar.c.setAlpha(round);
-        invalidate();
-    }
-
     public final int a(float f7, float f10) {
         i0 i0Var = this.w;
         if (i0Var == null) {
@@ -142,6 +132,16 @@ public final class c extends ViewGroup implements me.a, NotificationCenter.Notif
             return 1;
         }
         return ((RectF) this.w.c).contains(f7, f10) ? 0 : -1;
+    }
+
+    @Override // le.d
+    public final void a0(int i10, float f7, float f10, le.e eVar) {
+        this.f.setAlpha(Math.round(this.b.e * 100.0f));
+        int round = Math.round(this.a.e * 220.0f);
+        org.telegram.ui.Components.voip.h hVar = this.h;
+        hVar.a.setAlpha(round);
+        hVar.c.setAlpha(round);
+        invalidate();
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -264,7 +264,7 @@ public final class c extends ViewGroup implements me.a, NotificationCenter.Notif
         if (a(f7, f10) != 1 || (aVar = this.I) == null || (groupCallMessage = this.H) == null) {
             return;
         }
-        ((c40) aVar).a(groupCallMessage);
+        ((h40) aVar).a(groupCallMessage);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -412,7 +412,7 @@ public final class c extends ViewGroup implements me.a, NotificationCenter.Notif
         }
         this.r = null;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(name);
-        spannableStringBuilder.setSpan(new u51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new d61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.setSpan(this.J, 0, spannableStringBuilder.length(), 33);
         o0 o0Var = groupCallMessage.visibleReaction;
         n nVar = this.v;
@@ -459,8 +459,8 @@ public final class c extends ViewGroup implements me.a, NotificationCenter.Notif
         this.I = aVar;
     }
 
-    @Override // le.e
-    public final /* synthetic */ void C(float f7, int i10) {
+    @Override // le.d
+    public final /* synthetic */ void V(float f7, int i10) {
     }
 
     @Override // me.a

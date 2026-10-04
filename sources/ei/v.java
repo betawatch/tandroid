@@ -1,65 +1,100 @@
 package ei;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.h5;
-import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.vp;
-import org.telegram.ui.Components.zc;
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.WeakHashMap;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.h5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class v {
-    public final RectF a = new RectF();
-    public final e6 b;
-    public final e6 c;
-    public final e6 d;
-    public final e6 e;
-    public final h5 f;
-    public final h5 g;
-    public final e6 h;
-    public final e6 i;
-    public final zc j;
-    public final Paint k;
-    public final o6 l;
-    public int m;
-    public final org.telegram.ui.Cells.z n;
-    public final vp o;
-    public final org.telegram.ui.Components.voip.h p;
+public final class v extends org.telegram.ui.ActionBar.n2 {
+    public c71 a;
+    public final ArrayList b;
+    public final HashMap c;
 
-    public v(x xVar) {
-        sr srVar = sr.h;
-        this.b = new e6(xVar, 0L, 320L, srVar);
-        this.c = new e6(xVar, 0L, 320L, srVar);
-        this.d = new e6(xVar, 0L, 320L, srVar);
-        this.e = new e6(xVar, 0L, 320L, srVar);
-        this.f = new h5(xVar, 320L, srVar, 0);
-        this.g = new h5(xVar, 320L, srVar, 0);
-        this.h = new e6(xVar, 0L, 320L, srVar);
-        this.i = new e6(xVar, 0L, 320L, srVar);
-        this.j = new zc(xVar);
-        this.k = new Paint(1);
-        o6 o6Var = new o6(true, false, true, false);
-        this.l = o6Var;
-        org.telegram.ui.Cells.z Y = h6.Y(0, 9, 9);
-        this.n = Y;
-        vp vpVar = new vp(-1);
-        this.o = vpVar;
-        org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h();
-        this.p = hVar;
-        o6Var.b = 17;
-        o6Var.t(AndroidUtilities.dp(14.0f));
-        o6Var.u(AndroidUtilities.bold());
-        o6Var.G = AndroidUtilities.displaySize.x * 4;
-        o6Var.n(true);
-        o6Var.setCallback(xVar);
-        vpVar.setCallback(xVar);
-        Y.setCallback(xVar);
-        hVar.l = true;
-        hVar.m = 2.0f;
+    public v() {
+        super(null);
+        this.b = new ArrayList();
+        this.c = new HashMap();
+    }
+
+    public static void S(v vVar, ArrayList arrayList) {
+        HashMap hashMap = vVar.c;
+        ArrayList arrayList2 = vVar.b;
+        for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+            r rVar = (r) arrayList2.get(i10);
+            SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) hashMap.get(rVar);
+            if (spannableStringBuilder == null) {
+                spannableStringBuilder = new SpannableStringBuilder();
+                spannableStringBuilder.append((CharSequence) "a   ");
+                h5 h5Var = new h5(null, 24.0f, vVar.currentAccount);
+                h5Var.e(rVar.a);
+                spannableStringBuilder.setSpan(h5Var, 0, 1, 33);
+                spannableStringBuilder.append((CharSequence) UserObject.getUserName(rVar.a));
+                hashMap.put(rVar, spannableStringBuilder);
+            }
+            g61 i11 = g61.i(i10, spannableStringBuilder);
+            i11.K(!rVar.b);
+            arrayList.add(i11);
+        }
+        com.google.android.gms.internal.vision.e2.w(R.string.PrivacyBiometryBotsInfo, arrayList);
+    }
+
+    public static void T(v vVar, g61 g61Var) {
+        int i10;
+        u61 u61Var;
+        ArrayList arrayList = vVar.b;
+        if (g61Var.a != 4 || (i10 = g61Var.d) < 0 || i10 >= arrayList.size()) {
+            return;
+        }
+        r rVar = (r) arrayList.get(g61Var.d);
+        rVar.b = !rVar.b;
+        Activity parentActivity = vVar.getParentActivity();
+        int i11 = vVar.currentAccount;
+        long j3 = rVar.a.id;
+        boolean z10 = rVar.b;
+        WeakHashMap weakHashMap = s.k;
+        SharedPreferences sharedPreferences = parentActivity.getSharedPreferences("2botbiometry_" + i11, 0);
+        SharedPreferences.Editor edit = sharedPreferences.edit();
+        edit.putBoolean(j3 + "_disabled", z10);
+        if (!z10 && sharedPreferences.getString(String.valueOf(j3), null) == null) {
+            edit.putString(String.valueOf(j3), "");
+        }
+        edit.apply();
+        c71 c71Var = vVar.a;
+        if (c71Var == null || (u61Var = c71Var.f3) == null) {
+            return;
+        }
+        u61Var.N(true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        hg.k0.u(false, this.actionBar);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(LocaleController.getString(R.string.PrivacyBiometryBots));
+        this.actionBar.setActionBarMenuOnItemClick(new u(this, 0));
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setBackgroundColor(i6.v0(i6.a7, this.resourceProvider));
+        c71 c71Var = new c71(this, new bi.v(this, 13), new t(this), new t(this));
+        this.a = c71Var;
+        frameLayout.addView(c71Var, z5.e(-1, -1, 119));
+        s.d(getParentActivity(), this.currentAccount, new ai.y1(this, 18));
+        this.fragmentView = frameLayout;
+        return frameLayout;
     }
 }

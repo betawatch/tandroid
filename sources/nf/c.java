@@ -12,13 +12,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.g4;
 import org.telegram.ui.i4;
 import org.telegram.ui.m3;
 import s4.c1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -30,9 +30,9 @@ public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ c(e eVar, a2[] a2VarArr, TLObject tLObject, int i10, Uri uri, Context context, boolean z10) {
+    public /* synthetic */ c(e eVar, b2[] b2VarArr, TLObject tLObject, int i10, Uri uri, Context context, boolean z10) {
         this.e = eVar;
-        this.f = a2VarArr;
+        this.f = b2VarArr;
         this.b = tLObject;
         this.c = i10;
         this.h = uri;
@@ -47,7 +47,7 @@ public final /* synthetic */ class c implements Runnable {
         switch (this.a) {
             case 0:
                 e eVar = (e) this.e;
-                a2[] a2VarArr = (a2[]) this.f;
+                b2[] b2VarArr = (b2[]) this.f;
                 TLObject tLObject = this.b;
                 int i11 = this.c;
                 Uri uri = (Uri) this.h;
@@ -57,10 +57,10 @@ public final /* synthetic */ class c implements Runnable {
                     eVar.b();
                 } else {
                     try {
-                        a2VarArr[0].dismiss();
+                        b2VarArr[0].dismiss();
                     } catch (Throwable unused) {
                     }
-                    a2VarArr[0] = null;
+                    b2VarArr[0] = null;
                 }
                 if (tLObject instanceof TL_account.webPagePreview) {
                     TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject;
@@ -76,7 +76,7 @@ public final /* synthetic */ class c implements Runnable {
                         }
                     }
                 }
-                f.p(context, uri, z10, false);
+                f.r(context, uri, z10, false, false, null, null, false, true, false);
                 break;
             default:
                 i4 i4Var = (i4) this.e;

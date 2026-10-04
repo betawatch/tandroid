@@ -2,7 +2,7 @@ package ki;
 
 import android.os.Handler;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -51,9 +51,9 @@ public final /* synthetic */ class a implements Runnable {
                     lVar2.p(new c(iVar2, lVar2, 0), new c(iVar2, lVar2, 1));
                     iVar2.j.b("first camera frame received; audio startup requested: segmentElapsedMs=" + i.m(iVar2.f0));
                     return;
-                } catch (RuntimeException e) {
+                } catch (RuntimeException e7) {
                     iVar2.d();
-                    iVar2.t(e);
+                    iVar2.t(e7);
                     return;
                 }
             case 3:

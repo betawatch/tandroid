@@ -3,16 +3,16 @@ package androidx.emoji2.text;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Handler;
+import hg.k0;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import v7.y;
-import w7.o6;
+import w7.p6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class p implements k {
     public final Context a;
@@ -22,19 +22,19 @@ public final class p implements k {
     public Handler e;
     public ThreadPoolExecutor f;
     public ThreadPoolExecutor g;
-    public y h;
+    public v7.x h;
 
     public p(Context context, o0.e eVar) {
-        o6.a(context, "Context cannot be null");
+        p6.a(context, "Context cannot be null");
         this.a = context.getApplicationContext();
         this.b = eVar;
         this.c = q.d;
     }
 
     @Override // androidx.emoji2.text.k
-    public final void a(y yVar) {
+    public final void a(v7.x xVar) {
         synchronized (this.d) {
-            this.h = yVar;
+            this.h = xVar;
         }
         c();
     }
@@ -93,15 +93,15 @@ public final class p implements k {
             j4.f a2 = o0.d.a(context, DesugarCollections.unmodifiableList(arrayList));
             int i10 = a2.a;
             if (i10 != 0) {
-                throw new RuntimeException(hg.c.i(i10, "fetchFonts failed (", ")"));
+                throw new RuntimeException(k0.i(i10, "fetchFonts failed (", ")"));
             }
             o0.i[] iVarArr = (o0.i[]) a2.b.get(0);
             if (iVarArr == null || iVarArr.length == 0) {
                 throw new RuntimeException("fetchFonts failed (empty result)");
             }
             return iVarArr[0];
-        } catch (PackageManager.NameNotFoundException e) {
-            throw new RuntimeException("provider not found", e);
+        } catch (PackageManager.NameNotFoundException e7) {
+            throw new RuntimeException("provider not found", e7);
         }
     }
 }

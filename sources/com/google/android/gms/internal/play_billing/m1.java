@@ -4,11 +4,11 @@ import com.google.android.gms.internal.cast.b5;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import v7.e6;
+import v7.d6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class m1 extends e6 {
+public final class m1 extends d6 {
     public static final Logger e = Logger.getLogger(m1.class.getName());
     public static final boolean f = c3.e;
     public i2 a;
@@ -20,7 +20,7 @@ public final class m1 extends e6 {
         int length = bArr.length;
         if (((length - i10) | i10) < 0) {
             Locale locale = Locale.US;
-            throw new IllegalArgumentException(a4.a.m(length, i10, "Array range is invalid. Buffer.length=", ", offset=0, length="));
+            throw new IllegalArgumentException(a4.a.l(length, i10, "Array range is invalid. Buffer.length=", ", offset=0, length="));
         }
         this.b = bArr;
         this.d = 0;

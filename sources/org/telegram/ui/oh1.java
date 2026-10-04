@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oh1 implements Runnable {
     public final /* synthetic */ int a;
@@ -148,7 +148,7 @@ public final /* synthetic */ class oh1 implements Runnable {
                                         if (c11 == 0) {
                                             if (c11 != 1) {
                                                 str3 = str;
-                                                arrayList4.add(AndroidUtilities.generateSearchName(v7.j.g("@", str2), str3, "@" + str7));
+                                                arrayList4.add(AndroidUtilities.generateSearchName(t8.b.i("@", str2), str3, "@" + str7));
                                             } else if (z18) {
                                                 TLRPC.User user2 = (TLRPC.User) tLObject;
                                                 arrayList4.add(AndroidUtilities.generateSearchName(user2.first_name, user2.last_name, str7));
@@ -184,10 +184,10 @@ public final /* synthetic */ class oh1 implements Runnable {
                         z16 = z10;
                         z17 = z11;
                     }
-                    AndroidUtilities.runOnUIThread(new qd1(ph1Var3, arrayList3, arrayList4, 6));
+                    AndroidUtilities.runOnUIThread(new td1(ph1Var3, arrayList3, arrayList4, 6));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new qd1(ph1Var3, new ArrayList(), new ArrayList(), 6));
+                    AndroidUtilities.runOnUIThread(new td1(ph1Var3, new ArrayList(), new ArrayList(), 6));
                     break;
                 }
         }

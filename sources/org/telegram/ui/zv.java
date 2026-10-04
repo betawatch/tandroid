@@ -1,62 +1,36 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zv implements View.OnLongClickListener {
+public final /* synthetic */ class zv implements MessagesStorage.IntCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qy b;
+    public final /* synthetic */ uy b;
 
-    public /* synthetic */ zv(qy qyVar, int i10) {
+    public /* synthetic */ zv(uy uyVar, int i10) {
         this.a = i10;
-        this.b = qyVar;
+        this.b = uyVar;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i10) {
         switch (this.a) {
             case 0:
-                qy qyVar = this.b;
-                qyVar.r4(qyVar.I2, 104, true, true, null);
-                break;
-            case 1:
-                qy qyVar2 = this.b;
-                ArrayList arrayList = qyVar2.I2;
-                if (qyVar2.getParentActivity() != null) {
-                    boolean z10 = true;
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        long longValue = ((Long) arrayList.get(i10)).longValue();
-                        if (DialogObject.isEncryptedDialog(longValue)) {
-                            z10 = false;
-                        }
-                        TLRPC.Chat chat = qyVar2.getMessagesController().getChat(Long.valueOf(-longValue));
-                        if (chat != null && !ChatObject.canWriteToChat(chat)) {
-                            z10 = false;
-                        }
-                    }
-                    org.telegram.ui.Components.a80 H = org.telegram.ui.Components.a80.H(qyVar2, view);
-                    H.c(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new lv(qyVar2, 19), false);
-                    H.l(R.drawable.msg_calendar2, LocaleController.getString(R.string.ScheduleMessage), new lv(qyVar2, 20), z10);
-                    H.Z();
-                    break;
-                }
-                break;
-            case 2:
-                this.b.p4(view);
+                uy uyVar = this.b;
+                uyVar.getClass();
+                uyVar.U1 = i10 != 0;
+                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askAboutContacts", uyVar.U1).apply();
+                uyVar.u3(false);
                 break;
             default:
-                qy qyVar3 = this.b;
-                qyVar3.getContactsController().loadGlobalPrivacySetting();
-                qyVar3.K4();
+                uy uyVar2 = this.b;
+                uyVar2.getClass();
+                uyVar2.U1 = i10 != 0;
+                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askAboutContacts", uyVar2.U1).commit();
+                uyVar2.u3(false);
                 break;
         }
-        return true;
     }
 }

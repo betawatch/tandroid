@@ -4,11 +4,11 @@ import android.content.Context;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
-import yh.l8;
+import yh.m8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class h extends l8 {
+public final class h extends m8 {
     public final /* synthetic */ m m0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,16 +17,16 @@ public final class h extends l8 {
         this.m0 = mVar;
     }
 
-    @Override // yh.l8
+    @Override // yh.m8
     public final boolean d(float f7) {
         if (getProgress() <= 0.99d && f7 <= getMeasuredWidth() * 0.9f) {
             return false;
         }
-        m.U(this.m0);
+        m.S(this.m0);
         return true;
     }
 
-    @Override // yh.l8, android.view.View
+    @Override // yh.m8, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0 && motionEvent.getY() > getMeasuredHeight() - AndroidUtilities.dp(48.0f)) {
             return false;
@@ -35,14 +35,14 @@ public final class h extends l8 {
         return true;
     }
 
-    @Override // yh.l8
+    @Override // yh.m8
     public final void e(int i10) {
-        m.T(this.m0, i10);
+        m.R(this.m0, i10);
     }
 
-    @Override // yh.l8
+    @Override // yh.m8
     public final void setValue(int i10) {
         super.setValue(i10);
-        m.T(this.m0, i10);
+        m.R(this.m0, i10);
     }
 }

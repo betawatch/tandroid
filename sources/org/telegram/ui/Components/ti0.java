@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ti0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -24,9 +24,9 @@ public final /* synthetic */ class ti0 implements ValueAnimator.AnimatorUpdateLi
                 if (s2Var != null) {
                     s2Var.invalidate();
                 }
-                yl0 yl0Var = vi0Var.I;
-                if (yl0Var != null) {
-                    yl0Var.invalidate();
+                zl0 zl0Var = vi0Var.I;
+                if (zl0Var != null) {
+                    zl0Var.invalidate();
                     break;
                 }
                 break;
@@ -38,9 +38,9 @@ public final /* synthetic */ class ti0 implements ValueAnimator.AnimatorUpdateLi
                 if (s2Var2 != null) {
                     s2Var2.invalidate();
                 }
-                yl0 yl0Var2 = vi0Var2.I;
-                if (yl0Var2 != null) {
-                    yl0Var2.invalidate();
+                zl0 zl0Var2 = vi0Var2.I;
+                if (zl0Var2 != null) {
+                    zl0Var2.invalidate();
                     break;
                 }
                 break;

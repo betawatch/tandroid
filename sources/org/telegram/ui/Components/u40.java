@@ -1,43 +1,31 @@
 package org.telegram.ui.Components;
 
+import android.content.Intent;
 import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class u40 extends org.telegram.ui.lu0 {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ x40 b;
+public final class u40 implements org.telegram.ui.eq0 {
+    public final /* synthetic */ y40 a;
 
-    public u40(x40 x40Var, ArrayList arrayList) {
-        this.b = x40Var;
-        this.a = arrayList;
+    public u40(y40 y40Var) {
+        this.a = y40Var;
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
-    public final org.telegram.ui.vu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        w40 w40Var = this.b.b;
-        if (w40Var == null) {
-            return null;
+    @Override // org.telegram.ui.eq0
+    public final void a(ArrayList arrayList) {
+        y40.b(this.a, false, arrayList);
+    }
+
+    @Override // org.telegram.ui.eq0
+    public final void b() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.setType("image/*");
+            this.a.a.startActivityForResult(intent, 14);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
-        return w40Var.getCloseIntoObject();
-    }
-
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
-    public final boolean S() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        this.b.t((MediaController.PhotoEntry) this.a.get(0));
-    }
-
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
-    public final boolean z() {
-        return false;
     }
 }

@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class pk0 extends w9 {
     public final /* synthetic */ int G;
@@ -49,7 +49,7 @@ public final class pk0 extends w9 {
                     if (runnable != null) {
                         runnable.run();
                     }
-                    AndroidUtilities.runOnUIThread(new kc0(this, 18));
+                    AndroidUtilities.runOnUIThread(new lc0(this, 18));
                 }
                 invalidate();
                 break;

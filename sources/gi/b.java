@@ -18,16 +18,16 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.x5;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.y5;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.w9;
-import w7.y5;
+import w7.z5;
 import yf.p;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class b extends FrameLayout implements x5 {
+public final class b extends FrameLayout implements y5 {
     public final d6 a;
     public final w9 b;
     public final TextView c;
@@ -40,7 +40,7 @@ public final class b extends FrameLayout implements x5 {
         w9 w9Var = new w9(context);
         this.b = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(7.3125f));
-        addView(w9Var, y5.d(26, 26.0f, 19, 16.0f, 0.0f, 0.0f, 0.0f));
+        addView(w9Var, z5.d(26, 26.0f, 19, 16.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(16);
@@ -50,19 +50,19 @@ public final class b extends FrameLayout implements x5 {
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        linearLayout.addView(textView, y5.n(-1, -2));
+        linearLayout.addView(textView, z5.n(-1, -2));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 13.0f);
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
-        linearLayout.addView(textView2, y5.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
-        addView(linearLayout, y5.d(-1, -2.0f, 19, 58.0f, 0.0f, 48.0f, 1.0f));
+        linearLayout.addView(textView2, z5.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
+        addView(linearLayout, z5.d(-1, -2.0f, 19, 58.0f, 0.0f, 48.0f, 1.0f));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.msg_inputarrow);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, y5.d(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
+        addView(imageView, z5.d(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
         e();
     }
 
@@ -78,25 +78,25 @@ public final class b extends FrameLayout implements x5 {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        Drawable drawable = h6.S0;
+        Drawable drawable = i6.S0;
         w9 w9Var = this.b;
         p.a(canvas, drawable, (w9Var.getWidth() / 2.0f) + w9Var.getLeft(), (w9Var.getHeight() / 2.0f) + w9Var.getTop(), w9Var.getHeight());
         super.dispatchDraw(canvas);
         d6 d6Var = this.a;
-        Paint G = d6Var != null ? d6Var.G("paintDivider") : null;
-        if (G == null) {
-            G = h6.k0;
+        Paint H = d6Var != null ? d6Var.H("paintDivider") : null;
+        if (H == null) {
+            H = i6.k0;
         }
-        canvas.drawLine(AndroidUtilities.dp(58.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, G);
+        canvas.drawLine(AndroidUtilities.dp(58.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, H);
     }
 
-    @Override // org.telegram.ui.ActionBar.x5
+    @Override // org.telegram.ui.ActionBar.y5
     public final void e() {
-        int i10 = h6.z6;
+        int i10 = i6.z6;
         d6 d6Var = this.a;
-        this.e.setColorFilter(h6.v0(i10, d6Var));
-        this.c.setTextColor(h6.v0(h6.G6, d6Var));
-        this.d.setTextColor(h6.v0(i10, d6Var));
+        this.e.setColorFilter(i6.v0(i10, d6Var));
+        this.c.setTextColor(i6.v0(i6.G6, d6Var));
+        this.d.setTextColor(i6.v0(i10, d6Var));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {

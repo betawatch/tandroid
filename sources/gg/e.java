@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.b7;
 import org.telegram.ui.Cells.d3;
 import org.telegram.ui.Cells.m4;
@@ -29,13 +29,13 @@ import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Cells.v3;
 import org.telegram.ui.Cells.za;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.mn;
+import org.telegram.ui.Components.nn;
 import org.telegram.ui.Components.ul0;
-import org.telegram.ui.Components.uq;
-import org.telegram.ui.Components.yl0;
-import w7.y5;
+import org.telegram.ui.Components.vq;
+import org.telegram.ui.Components.zl0;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class e extends ul0 {
     public final boolean E;
@@ -63,28 +63,31 @@ public abstract class e extends ul0 {
 
     @Override // org.telegram.ui.Components.gl0
     public final String F(int i10) {
-        if (this.F != 2 && !this.I) {
-            int i11 = this.r;
-            int i12 = this.v;
-            ContactsController contactsController = ContactsController.getInstance(i11);
-            ArrayList<String> arrayList = i12 == 2 ? contactsController.sortedUsersMutualSectionsArray : contactsController.sortedUsersSectionsArray;
-            int S = S(i10);
-            if (S == -1) {
-                S = arrayList.size() - 1;
-            }
-            if (i12 == 0 || this.E) {
-                if (S > 0 && S <= arrayList.size()) {
-                    return arrayList.get(S - 1);
-                }
-            } else if (S >= 0 && S < arrayList.size()) {
-                return arrayList.get(S);
-            }
+        if (this.F == 2 || this.I) {
+            return null;
         }
-        return null;
+        int i11 = this.r;
+        int i12 = this.v;
+        ContactsController contactsController = ContactsController.getInstance(i11);
+        ArrayList<String> arrayList = i12 == 2 ? contactsController.sortedUsersMutualSectionsArray : contactsController.sortedUsersSectionsArray;
+        int S = S(i10);
+        if (S == -1) {
+            S = arrayList.size() - 1;
+        }
+        if (i12 == 0 || this.E) {
+            if (S <= 0 || S > arrayList.size()) {
+                return null;
+            }
+            return arrayList.get(S - 1);
+        }
+        if (S < 0 || S >= arrayList.size()) {
+            return null;
+        }
+        return arrayList.get(S);
     }
 
     @Override // org.telegram.ui.Components.gl0
-    public final void G(yl0 yl0Var, float f7, int[] iArr) {
+    public final void G(zl0 zl0Var, float f7, int[] iArr) {
         iArr[0] = (int) (h() * f7);
         iArr[1] = 0;
     }
@@ -318,8 +321,8 @@ public abstract class e extends ul0 {
             TextView textView = new TextView(r4Var.getContext());
             r4Var.a = textView;
             com.google.android.gms.internal.vision.e2.l(22.0f, 1, textView);
-            com.google.android.gms.internal.vision.e2.p(h6.B6, null, false, textView, 17);
-            r4Var.addView(textView, y5.d(-1, -1.0f, 119, 12.0f, 0.0f, 0.0f, 0.0f));
+            com.google.android.gms.internal.vision.e2.p(i6.B6, null, false, textView, 17);
+            r4Var.addView(textView, z5.d(-1, -1.0f, 119, 12.0f, 0.0f, 0.0f, 0.0f));
             view2 = r4Var;
         } else {
             view2 = view;
@@ -470,10 +473,10 @@ public abstract class e extends ul0 {
         r8 r8Var = (r8) view;
         boolean z11 = this.w;
         if (z11 || !z10) {
-            int i18 = h6.G6;
+            int i18 = i6.G6;
             r8Var.e(i18, i18);
         } else {
-            int i19 = h6.il;
+            int i19 = i6.il;
             r8Var.e(i19, i19);
         }
         if (i10 != 0) {
@@ -554,8 +557,8 @@ public abstract class e extends ul0 {
             int currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
             Collections.sort(this.y, new d(MessagesController.getInstance(i10), currentTime, 0));
             l();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
@@ -575,21 +578,21 @@ public abstract class e extends ul0 {
         } else if (i10 != 3) {
             if (i10 == 4) {
                 FrameLayout m6Var = new m6(this, context, viewGroup, 1);
-                m6Var.addView(new uq(context), y5.e(-1, -2, 17));
+                m6Var.addView(new vq(context), z5.e(-1, -2, 17));
                 m6Var.setLayoutParams(new s4.p0(-1, -2));
                 m6Var.setTag(-33024);
                 view2 = m6Var;
             } else if (i10 == 7) {
-                view = new m4(this.s, h6.L6, 21, 14, 5, false, false, null);
+                view = new m4(this.s, i6.L6, 21, 14, 5, false, false, null);
             } else if (i10 == 8) {
                 view = new p4(context, false);
             } else if (i10 != 9) {
                 view = new b7(context, (org.telegram.ui.Cells.c1) null);
             } else {
-                View mnVar = new mn(context, 4);
-                mnVar.setId(9);
-                mnVar.setTag(-33024);
-                view2 = mnVar;
+                View nnVar = new nn(context, 4);
+                nnVar.setId(9);
+                nnVar.setTag(-33024);
+                view2 = nnVar;
             }
             view = view2;
         } else {

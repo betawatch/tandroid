@@ -8,11 +8,11 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.QuickAckDelegate;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.nj0;
+import org.telegram.ui.qj0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements org.telegram.ui.ActionBar.z1, RequestTimeDelegate, MessagesController.ErrorDelegate, nj0, QuickAckDelegate {
+public final /* synthetic */ class d implements org.telegram.ui.ActionBar.a2, RequestTimeDelegate, MessagesController.ErrorDelegate, qj0, QuickAckDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -23,19 +23,19 @@ public final /* synthetic */ class d implements org.telegram.ui.ActionBar.z1, Re
         this.c = obj2;
     }
 
-    @Override // org.telegram.ui.nj0
+    @Override // org.telegram.ui.qj0
     public void b(Canvas canvas) {
         ((RichMessageLayout.RichThinkingBlock) this.b).lambda$onDrawFaded$0((View) this.c, canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.lambda$isMapsInstalled$11((String) this.b, (org.telegram.ui.ActionBar.m2) this.c, a2Var, i10);
+                AndroidUtilities.lambda$isMapsInstalled$11((String) this.b, (org.telegram.ui.ActionBar.n2) this.c, b2Var, i10);
                 break;
             default:
-                AndroidUtilities.lambda$showProxyAlert$20((SharedPreferences) this.b, (g0) this.c, a2Var, i10);
+                AndroidUtilities.lambda$showProxyAlert$20((SharedPreferences) this.b, (g0) this.c, b2Var, i10);
                 break;
         }
     }

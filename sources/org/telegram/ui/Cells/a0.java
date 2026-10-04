@@ -4,11 +4,11 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.zv0;
+import org.telegram.ui.Components.iw0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public abstract class a0 extends ViewGroup implements zv0 {
+public abstract class a0 extends ViewGroup implements iw0 {
     public boolean a;
     public androidx.emoji2.text.j b;
     public int c;
@@ -44,7 +44,7 @@ public abstract class a0 extends ViewGroup implements zv0 {
         drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
-    @Override // org.telegram.ui.Components.zv0
+    @Override // org.telegram.ui.Components.iw0
     public final void g(Runnable runnable) {
         this.e = runnable;
     }

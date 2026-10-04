@@ -1,11 +1,13 @@
 package l5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import hg.k0;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c implements ia.d {
     public static final c a = new c();
-    public static final ia.c b = new ia.c("eventsDroppedCount", hg.c.m(hg.c.l(la.e.class, new la.a(1))));
-    public static final ia.c c = new ia.c("reason", hg.c.m(hg.c.l(la.e.class, new la.a(3))));
+    public static final ia.c b = new ia.c("eventsDroppedCount", k0.m(k0.l(la.e.class, new la.a(1))));
+    public static final ia.c c = new ia.c("reason", k0.m(k0.l(la.e.class, new la.a(3))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {

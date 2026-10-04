@@ -1,35 +1,30 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessagesController;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sx0 implements Runnable {
+public final class sx0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hy0 b;
+    public final /* synthetic */ tx0 b;
 
-    public /* synthetic */ sx0(hy0 hy0Var, int i10) {
+    public /* synthetic */ sx0(tx0 tx0Var, int i10) {
         this.a = i10;
-        this.b = hy0Var;
+        this.b = tx0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.b.d.l();
+                this.b.s.setVisibility(8);
                 break;
             case 1:
-                this.b.d.l();
-                break;
-            case 2:
-                hy0.t(this.b);
-                break;
-            case 3:
-                MessagesController.getInstance(r0.currentAccount).openByUserName("stickers", this.b.L, 1);
+                this.b.s.setVisibility(8);
                 break;
             default:
-                hy0.s(this.b);
+                this.b.s.setVisibility(8);
                 break;
         }
     }

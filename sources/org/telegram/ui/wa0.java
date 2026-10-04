@@ -1,41 +1,26 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class wa0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Components.nj0 a;
-    public final /* synthetic */ org.telegram.ui.Components.kj0 b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ LaunchActivity d;
+public final class wa0 implements jq {
+    public final /* synthetic */ uy a;
+    public final /* synthetic */ int b;
 
-    public wa0(LaunchActivity launchActivity, org.telegram.ui.Components.nj0 nj0Var, org.telegram.ui.Components.kj0 kj0Var, boolean z10) {
-        this.d = launchActivity;
-        this.a = nj0Var;
-        this.b = kj0Var;
-        this.c = z10;
+    public wa0(uy uyVar, int i10) {
+        this.a = uyVar;
+        this.b = i10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        LaunchActivity launchActivity = this.d;
-        launchActivity.G0 = null;
-        launchActivity.z0.invalidate();
-        launchActivity.o0.invalidate();
-        launchActivity.o0.setImageDrawable(null);
-        launchActivity.o0.setVisibility(8);
-        launchActivity.p0.setVisibility(8);
-        org.telegram.ui.Components.nj0 nj0Var = this.a;
-        if (nj0Var != null) {
-            nj0Var.setImageDrawable(this.b);
-        }
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeAccentListUpdated, new Object[0]);
-        if (!this.c && nj0Var != null) {
-            nj0Var.setVisibility(0);
-        }
-        qy.w4 = false;
+    @Override // org.telegram.ui.jq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        this.a.removeSelfFromStack();
+        NotificationCenter.getInstance(this.b).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+    }
+
+    @Override // org.telegram.ui.jq
+    public final void a(TLRPC.User user) {
     }
 }

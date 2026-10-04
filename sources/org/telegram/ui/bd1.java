@@ -1,54 +1,31 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class bd1 extends lu0 {
-    public final /* synthetic */ MediaController.PhotoEntry a;
-    public final /* synthetic */ cd1 b;
+public final class bd1 implements id1 {
+    public boolean a;
+    public final /* synthetic */ yn b;
 
-    public bd1(cd1 cd1Var, MediaController.PhotoEntry photoEntry) {
-        this.b = cd1Var;
-        this.a = photoEntry;
+    public bd1(yn ynVar, boolean z10) {
+        this.b = ynVar;
+        this.a = z10;
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        od1 od1Var = this.b.a;
-        MediaController.PhotoEntry photoEntry = this.a;
-        if (photoEntry.imagePath != null) {
-            File file = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-            Point realScreenSize = AndroidUtilities.getRealScreenSize();
-            Bitmap loadBitmap = ImageLoader.loadBitmap(photoEntry.imagePath, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
-            try {
-                loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            File file2 = new File(photoEntry.imagePath);
-            od1Var.B1 = new zi1(file2, file2, "");
-            od1Var.C1 = loadBitmap;
-            od1Var.b2 = 0;
-            od1Var.x0.requestLayout();
-            od1Var.b1(false);
-            od1Var.w1 = null;
-            od1Var.i1();
-        }
+    @Override // org.telegram.ui.id1
+    public final boolean a() {
+        return this.a;
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
-    public final boolean z() {
-        return false;
+    @Override // org.telegram.ui.id1
+    public final boolean a1() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.id1
+    public final void q1(boolean z10) {
+        boolean z11 = !this.a;
+        this.a = z11;
+        wn wnVar = this.b.ca;
+        wnVar.i(wnVar.f, wnVar.h, z10, Boolean.valueOf(z11), false);
     }
 }

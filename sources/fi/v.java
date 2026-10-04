@@ -2,9 +2,9 @@ package fi;
 
 import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.e20;
+import org.telegram.ui.Components.f20;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -20,21 +20,21 @@ public final /* synthetic */ class v implements Runnable {
         switch (this.a) {
             case 0:
                 k0 k0Var = this.b;
-                k0Var.v.d.X2.h1(1, k0Var.U.b);
+                k0Var.v.d.e3.h1(1, k0Var.U.b);
                 k0Var.b.a(false, true);
                 k0Var.setAllowNestedScroll(true);
-                e20 e20Var = k0Var.y;
-                AndroidUtilities.hideKeyboard(e20Var.r);
-                e20Var.r.clearFocus();
+                f20 f20Var = k0Var.y;
+                AndroidUtilities.hideKeyboard(f20Var.r);
+                f20Var.r.clearFocus();
                 break;
             case 1:
                 k0 k0Var2 = this.b;
-                k0Var2.x.d.X2.h1(1, k0Var2.U.b);
+                k0Var2.x.d.e3.h1(1, k0Var2.U.b);
                 k0Var2.c.a(false, true);
                 k0Var2.setAllowNestedScroll(true);
-                e20 e20Var2 = k0Var2.E;
-                AndroidUtilities.hideKeyboard(e20Var2.r);
-                e20Var2.r.clearFocus();
+                f20 f20Var2 = k0Var2.E;
+                AndroidUtilities.hideKeyboard(f20Var2.r);
+                f20Var2.r.clearFocus();
                 break;
             default:
                 k0 k0Var3 = this.b;

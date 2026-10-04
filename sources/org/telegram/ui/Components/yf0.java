@@ -1,14 +1,14 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yf0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ cg0 b;
+    public final /* synthetic */ dg0 b;
 
-    public /* synthetic */ yf0(cg0 cg0Var, int i10) {
+    public /* synthetic */ yf0(dg0 dg0Var, int i10) {
         this.a = i10;
-        this.b = cg0Var;
+        this.b = dg0Var;
     }
 
     @Override // java.lang.Runnable

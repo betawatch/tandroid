@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class a6 {
     public static final char[] a;
@@ -54,13 +54,13 @@ public abstract class a6 {
         sb2.append(str);
         if (obj instanceof String) {
             sb2.append(": \"");
-            sb2.append(v7.u5.a(new z4(((String) obj).getBytes(n5.a))));
+            sb2.append(v7.t5.a(new z4(((String) obj).getBytes(n5.a))));
             sb2.append('\"');
             return;
         }
         if (obj instanceof z4) {
             sb2.append(": \"");
-            sb2.append(v7.u5.a((z4) obj));
+            sb2.append(v7.t5.a((z4) obj));
             sb2.append('\"');
             return;
         }

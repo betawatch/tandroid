@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c0 extends e6.g {
     public final /* synthetic */ int a;
@@ -64,9 +64,9 @@ public final class c0 extends e6.g {
         switch (this.a) {
             case 1:
                 e6.c cVar = (e6.c) this.b;
-                long e = cVar.e();
-                if (e != cVar.b) {
-                    cVar.b = e;
+                long e7 = cVar.e();
+                if (e7 != cVar.b) {
+                    cVar.b = e7;
                     cVar.c();
                     if (cVar.b != 0) {
                         cVar.d();
@@ -86,15 +86,15 @@ public final class c0 extends e6.g {
             case 0:
                 q4 q4Var = ((c) this.b).l;
                 if (q4Var != null) {
-                    x6 F = q4Var.a.F();
+                    x6 C = q4Var.a.C();
                     u2 u2Var = new u2(str);
                     u2Var.b = j3;
                     u2Var.c = i10;
                     u2Var.d = j10;
                     u2Var.e = j11;
                     j3 j3Var = new j3(u2Var);
-                    j3Var.f = F.h;
-                    F.d.add(j3Var);
+                    j3Var.f = C.h;
+                    C.d.add(j3Var);
                     break;
                 }
                 break;

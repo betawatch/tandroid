@@ -26,7 +26,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 class ArticleViewer$WindowView extends FrameLayout {
     public int E;
@@ -132,7 +132,7 @@ class ArticleViewer$WindowView extends FrameLayout {
                         animatorSet.playTogether(ObjectAnimator.ofFloat(i4Var.g0, (Property<k0, Float>) property, 0.0f), ObjectAnimator.ofFloat(this, i4.d1, 0.0f));
                     }
                     animatorSet.setDuration(Math.max((int) ((420.0f / view.getMeasuredWidth()) * x10), MediaDataController.MAX_LINKS_COUNT));
-                    animatorSet.setInterpolator(org.telegram.ui.Components.sr.h);
+                    animatorSet.setInterpolator(org.telegram.ui.Components.tr.h);
                     animatorSet.addListener(new h4(this, z11));
                     animatorSet.start();
                     i4Var.T0 = true;
@@ -489,9 +489,9 @@ class ArticleViewer$WindowView extends FrameLayout {
         i4Var.l0.setAlpha(i10);
         i4Var.x0.setAlpha(i10);
         this.w = f7;
-        eb0 eb0Var = i4Var.U0;
-        if (eb0Var != null) {
-            eb0Var.a(i4Var.V && f7 == 1.0f && this.v == 0.0f);
+        ib0 ib0Var = i4Var.U0;
+        if (ib0Var != null) {
+            ib0Var.a(i4Var.V && f7 == 1.0f && this.v == 0.0f);
         }
         invalidate();
     }
@@ -499,9 +499,9 @@ class ArticleViewer$WindowView extends FrameLayout {
     public void setInnerTranslationX(float f7) {
         this.v = f7;
         i4 i4Var = this.H;
-        eb0 eb0Var = i4Var.U0;
-        if (eb0Var != null) {
-            eb0Var.a(i4Var.V && this.w == 1.0f && f7 == 0.0f);
+        ib0 ib0Var = i4Var.U0;
+        if (ib0Var != null) {
+            ib0Var.a(i4Var.V && this.w == 1.0f && f7 == 0.0f);
         }
         invalidate();
     }

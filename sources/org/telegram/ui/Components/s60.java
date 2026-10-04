@@ -1,27 +1,51 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class s60 extends s4.s0 {
-    public final /* synthetic */ s4.c0 a;
-    public final /* synthetic */ e70 b;
+public final class s60 extends zl0 {
+    public int e3;
+    public final /* synthetic */ f70 f3;
 
-    public s60(e70 e70Var, s4.c0 c0Var) {
-        this.b = e70Var;
-        this.a = c0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s60(f70 f70Var, Context context) {
+        super(context, null);
+        this.f3 = f70Var;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        e70 e70Var = this.b;
-        e70.O(e70Var);
-        if (!e70Var.R || e70Var.Q) {
+    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        f70 f70Var = this.f3;
+        s60 s60Var = f70Var.V;
+        if (this.e3 != View.MeasureSpec.getSize(i11)) {
+            this.e3 = View.MeasureSpec.getSize(i11);
+            f70Var.a0 = true;
+            s60Var.setPadding(0, 0, 0, 0);
+            f70Var.a0 = false;
+            measure(i10, View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
+            int measuredHeight = getMeasuredHeight();
+            int i12 = this.e3;
+            int i13 = (int) ((i12 / 5.0f) * 2.0f);
+            if (i13 < AndroidUtilities.dp(60.0f) + (i12 - measuredHeight)) {
+                i13 = this.e3 - measuredHeight;
+            }
+            f70Var.a0 = true;
+            s60Var.setPadding(0, i13, 0, 0);
+            f70Var.a0 = false;
+            measure(i10, View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
+        }
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.f3.a0) {
             return;
         }
-        if (e70Var.S - this.a.N0() < 10) {
-            e70Var.X();
-        }
+        super.requestLayout();
     }
 }

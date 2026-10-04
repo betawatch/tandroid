@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class u0 extends db.u {
     public static db.i a(lb.a aVar, int i10) {
@@ -20,7 +20,7 @@ public class u0 extends db.u {
             return new db.m(Boolean.valueOf(aVar.n()));
         }
         if (c10 != 8) {
-            throw new IllegalStateException("Unexpected token: ".concat(hg.c.D(i10)));
+            throw new IllegalStateException("Unexpected token: ".concat(hg.k0.C(i10)));
         }
         aVar.t();
         return db.k.a;
@@ -91,7 +91,7 @@ public class u0 extends db.u {
                 lVar.C();
                 return iVar;
             }
-            throw new IllegalStateException("Unexpected " + hg.c.D(x10) + " when reading a JsonElement.");
+            throw new IllegalStateException("Unexpected " + hg.k0.C(x10) + " when reading a JsonElement.");
         }
         int x11 = aVar.x();
         int c10 = m1.j.c(x11);

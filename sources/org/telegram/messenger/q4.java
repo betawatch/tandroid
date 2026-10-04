@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q4 implements Runnable {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class q4 implements Runnable {
                 ((MediaDataController) this.c).lambda$loadStickers$93(this.b, (Utilities.Callback) this.d);
                 break;
             case 11:
-                ((MessagesController) this.c).lambda$checkCanOpenChat$454(this.b, (org.telegram.ui.ActionBar.m2) this.d);
+                ((MessagesController) this.c).lambda$checkCanOpenChat$454(this.b, (org.telegram.ui.ActionBar.n2) this.d);
                 break;
             case 12:
                 ((MessagesController) this.c).lambda$loadGlobalNotificationsSettings$200((TLObject) this.d, this.b);

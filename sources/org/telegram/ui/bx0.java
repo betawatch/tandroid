@@ -1,18 +1,30 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final class bx0 {
-    public final int a;
-    public final int b;
-    public final CharSequence c;
-    public final String d;
-    public int e;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
 
-    public bx0(int i10, int i11, String str, String str2) {
-        this.a = i10;
-        this.b = i11;
-        this.c = str;
-        this.d = str2;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final class bx0 extends rg.r1 {
+    public final /* synthetic */ cx0 N;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bx0(cx0 cx0Var, Context context) {
+        super(context);
+        this.N = cx0Var;
+    }
+
+    @Override // rg.r1, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.r.getVisibility() == 0) {
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(r0.getLeft(), r0.getTop(), r0.getRight(), r0.getBottom());
+            cx0 cx0Var = this.N;
+            cx0Var.d.n.n0.d(0, 0.0f, 0, getMeasuredWidth(), -this.n.h, cx0Var.d.n.O);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), cx0Var.d.n.n0.f);
+        }
+        super.dispatchDraw(canvas);
     }
 }

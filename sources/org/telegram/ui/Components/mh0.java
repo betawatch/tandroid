@@ -12,13 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class mh0 extends AccessibilityNodeProvider {
     public final /* synthetic */ int a = 1;
     public final Object b;
 
-    public mh0(n2.e eVar) {
+    public mh0(k2.e eVar) {
         this.b = eVar;
     }
 
@@ -74,11 +74,11 @@ public class mh0 extends AccessibilityNodeProvider {
                 }
                 return null;
             default:
-                s0.d u10 = ((n2.e) this.b).u(i10);
-                if (u10 == null) {
+                s0.d b10 = ((k2.e) this.b).b(i10);
+                if (b10 == null) {
                     return null;
                 }
-                return u10.a;
+                return b10.a;
         }
     }
 
@@ -86,7 +86,7 @@ public class mh0 extends AccessibilityNodeProvider {
     public List findAccessibilityNodeInfosByText(String str, int i10) {
         switch (this.a) {
             case 1:
-                ((n2.e) this.b).getClass();
+                ((k2.e) this.b).getClass();
                 return null;
             default:
                 return super.findAccessibilityNodeInfosByText(str, i10);
@@ -97,11 +97,11 @@ public class mh0 extends AccessibilityNodeProvider {
     public AccessibilityNodeInfo findFocus(int i10) {
         switch (this.a) {
             case 1:
-                s0.d v = ((n2.e) this.b).v(i10);
-                if (v == null) {
+                s0.d d = ((k2.e) this.b).d(i10);
+                if (d == null) {
                     return null;
                 }
-                return v.a;
+                return d.a;
             default:
                 return super.findFocus(i10);
         }
@@ -140,14 +140,14 @@ public class mh0 extends AccessibilityNodeProvider {
                     } else if (i11 == 16) {
                         ph0 ph0Var = qh0Var.F;
                         if (ph0Var != null) {
-                            ProfileActivity.Y(((org.telegram.ui.by0) ph0Var).b, i10, 0.0f, 0.0f);
+                            ProfileActivity.X(((org.telegram.ui.ey0) ph0Var).b, i10, 0.0f, 0.0f);
                         }
                     }
                     return true;
                 }
                 return false;
             default:
-                return ((n2.e) this.b).H(i10, i11, bundle);
+                return ((k2.e) this.b).i(i10, i11, bundle);
         }
     }
 

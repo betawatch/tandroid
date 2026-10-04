@@ -1,13 +1,13 @@
 package xh;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements le.e, yf.m {
+public final /* synthetic */ class f implements le.d, yf.m {
     public final /* synthetic */ m a;
 
-    @Override // le.e
-    public void D(int i10, float f7, float f10, le.f fVar) {
-        this.a.a0();
+    @Override // le.d
+    public void a0(int i10, float f7, float f10, le.e eVar) {
+        this.a.Z();
     }
 
     @Override // yf.m
@@ -16,7 +16,7 @@ public final /* synthetic */ class f implements le.e, yf.m {
         mVar.b0(j3, mVar.w0);
     }
 
-    @Override // le.e
-    public /* synthetic */ void C(float f7, int i10) {
+    @Override // le.d
+    public /* synthetic */ void V(float f7, int i10) {
     }
 }

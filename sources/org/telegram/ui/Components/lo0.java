@@ -1,12 +1,40 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final class lo0 {
-    public final int a;
-    public int b;
+import android.content.Context;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-    public lo0(int i10) {
-        this.a = i10;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final class lo0 extends ws {
+    public final /* synthetic */ org.telegram.ui.uy d0;
+    public final /* synthetic */ org.telegram.ui.dy e0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lo0(org.telegram.ui.dy dyVar, zl0 zl0Var, Context context, int i10, int i11, org.telegram.ui.uy uyVar) {
+        super(zl0Var, context, i10, i11);
+        this.e0 = dyVar;
+        this.d0 = uyVar;
+    }
+
+    @Override // org.telegram.ui.Components.u61
+    public final void N(boolean z10) {
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        ArrayList arrayList3;
+        ArrayList arrayList4;
+        super.N(z10);
+        do0 do0Var = this.e0.h0;
+        do0Var.e(this.W || this.X || (arrayList = this.P) == null || !arrayList.isEmpty() || (arrayList2 = this.Q) == null || !arrayList2.isEmpty() || (arrayList3 = this.S) == null || !arrayList3.isEmpty() || (arrayList4 = this.R) == null || !arrayList4.isEmpty(), z10);
+        if (!TextUtils.isEmpty(this.b0)) {
+            do0Var.d.setText(LocaleController.getString(R.string.NoResult));
+            do0Var.e.setVisibility(8);
+        } else {
+            do0Var.d.setText(LocaleController.getString(R.string.NoChannelsTitle));
+            do0Var.e.setVisibility(0);
+            do0Var.e.setText(LocaleController.getString(R.string.NoChannelsMessage));
+        }
     }
 }

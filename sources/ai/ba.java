@@ -31,13 +31,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.m90;
-import org.telegram.ui.Components.q90;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.r90;
+import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.zc;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ba implements Runnable {
     public final /* synthetic */ int a;
@@ -80,17 +80,17 @@ public final /* synthetic */ class ba implements Runnable {
                 return;
             case 1:
                 va vaVar = (va) this.b;
-                q90 q90Var = (q90) this.c;
-                q90 q90Var2 = vaVar.a;
-                if (q90Var != q90Var2 || q90Var2 == null) {
+                r90 r90Var = (r90) this.c;
+                r90 r90Var2 = vaVar.a;
+                if (r90Var != r90Var2 || r90Var2 == null) {
                     return;
                 }
-                CharacterStyle characterStyle = q90Var2.i;
+                CharacterStyle characterStyle = r90Var2.i;
                 if (characterStyle instanceof URLSpan) {
                     wa waVar = vaVar.v;
-                    m90 m90Var = vaVar.c;
-                    Objects.requireNonNull(m90Var);
-                    waVar.J.H((URLSpan) characterStyle, waVar, new a3.d(m90Var, 18));
+                    n90 n90Var = vaVar.c;
+                    Objects.requireNonNull(n90Var);
+                    waVar.J.H((URLSpan) characterStyle, waVar, new a3.d(n90Var, 18));
                     vaVar.a = null;
                     return;
                 }
@@ -125,7 +125,7 @@ public final /* synthetic */ class ba implements Runnable {
                 ((v0.i) this.b).onError(this.c);
                 return;
             case 6:
-                ((v0.i) this.b).onResult((v0.o) this.c);
+                ((v0.i) this.b).onResult((v0.p) this.c);
                 return;
             case 7:
                 bi.z zVar = (bi.z) this.b;
@@ -150,7 +150,7 @@ public final /* synthetic */ class ba implements Runnable {
                 ((c1.e) this.b).e().onError((w0.h) this.c);
                 return;
             case 10:
-                ((c1.e) this.b).e().onResult((v0.o) this.c);
+                ((c1.e) this.b).e().onResult((v0.p) this.c);
                 return;
             case 11:
                 Context context = (Context) this.b;
@@ -162,7 +162,7 @@ public final /* synthetic */ class ba implements Runnable {
                 ca.c cVar = (ca.c) this.b;
                 CountDownLatch countDownLatch = (CountDownLatch) this.c;
                 try {
-                    l5.s.a().d.e(cVar.h.a.b(i5.d.c), 1);
+                    l5.t.a().d.e(cVar.h.a.b(i5.d.c), 1);
                 } catch (SQLException unused2) {
                 }
                 countDownLatch.countDown();
@@ -191,11 +191,11 @@ public final /* synthetic */ class ba implements Runnable {
                 if (tLObject instanceof TLRPC.TL_contacts_resolvedPeer) {
                     TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
                     ci.s2 s2Var = z1Var.r;
-                    i10 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
+                    i10 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
                     MessagesController.getInstance(i10).putUsers(tL_contacts_resolvedPeer.users, false);
-                    i11 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
+                    i11 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
                     MessagesController.getInstance(i11).putChats(tL_contacts_resolvedPeer.chats, false);
-                    i12 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
+                    i12 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
                     MessagesStorage.getInstance(i12).putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, true, true);
                 }
                 w1Var.n = true;
@@ -233,17 +233,17 @@ public final /* synthetic */ class ba implements Runnable {
                 ((Utilities.Callback) this.b).run((Bitmap) this.c);
                 return;
             case 20:
-                ci.b7.a((ci.b7) this.b, (ci.l8) this.c);
+                ci.b7.a((ci.b7) this.b, (ci.k8) this.c);
                 return;
             case 21:
                 aa.a aVar = (aa.a) this.b;
-                ci.l8 l8Var = (ci.l8) this.c;
+                ci.k8 k8Var = (ci.k8) this.c;
                 ci.b7 b7Var = (ci.b7) aVar.d;
                 Bitmap bitmap = b7Var.a;
                 if (bitmap != null) {
                     bitmap.recycle();
-                    if (l8Var.M0 == b7Var.a) {
-                        l8Var.M0 = null;
+                    if (k8Var.M0 == b7Var.a) {
+                        k8Var.M0 = null;
                     }
                     b7Var.a = null;
                     b7Var.invalidate();
@@ -264,41 +264,41 @@ public final /* synthetic */ class ba implements Runnable {
                 return;
             case 24:
                 ci.p pVar = (ci.p) this.b;
-                qg.c2 c2Var = (qg.c2) this.c;
+                qg.b2 b2Var = (qg.b2) this.c;
                 ci.n7 n7Var = pVar.a;
-                if (c2Var.getWidth() <= 0) {
+                if (b2Var.getWidth() <= 0) {
                     n7Var.animate().scaleX(0.0f).scaleY(1.0f).withEndAction(new androidx.fragment.app.a0(pVar, 20)).start();
                     return;
                 }
-                float width = c2Var.getWidth() / n7Var.getWidth();
+                float width = b2Var.getWidth() / n7Var.getWidth();
                 ValueAnimator valueAnimator = pVar.w;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
                 pVar.w = ValueAnimator.ofFloat(0.0f, 1.0f);
-                pVar.w.addUpdateListener(new ci.m7(pVar, n7Var.getScaleX(), width, ((c2Var.getWidth() / 2.0f) + c2Var.getX()) - ((n7Var.getWidth() / 2.0f) + n7Var.getX()), ((c2Var.getHeight() / 2.0f) + c2Var.getY()) - ((n7Var.getHeight() / 2.0f) + n7Var.getY()), 0));
-                pVar.w.addListener(new z(4, pVar, c2Var));
+                pVar.w.addUpdateListener(new ci.m7(pVar, n7Var.getScaleX(), width, ((b2Var.getWidth() / 2.0f) + b2Var.getX()) - ((n7Var.getWidth() / 2.0f) + n7Var.getX()), ((b2Var.getHeight() / 2.0f) + b2Var.getY()) - ((n7Var.getHeight() / 2.0f) + n7Var.getY()), 0));
+                pVar.w.addListener(new z(4, pVar, b2Var));
                 pVar.w.setDuration(320L);
-                pVar.w.setInterpolator(sr.h);
-                pVar.v = c2Var;
+                pVar.w.setInterpolator(tr.h);
+                pVar.v = b2Var;
                 pVar.w.start();
                 return;
             case 25:
-                ci.d8 d8Var = (ci.d8) this.b;
-                ArrayList arrayList2 = (ArrayList) this.c;
-                d8Var.L0 = false;
-                d8Var.b0.addAll(arrayList2);
-                d8Var.q0.N(true);
+                ci.c8.R((ci.c8) this.b, (TLObject) this.c);
                 return;
             case 26:
-                ci.d8.R((ci.d8) this.b, (TLObject) this.c);
+                ci.c8 c8Var = (ci.c8) this.b;
+                ArrayList arrayList2 = (ArrayList) this.c;
+                c8Var.J0 = false;
+                c8Var.b0.addAll(arrayList2);
+                c8Var.o0.N(true);
                 return;
             case 27:
-                ci.l8 l8Var2 = (ci.l8) this.b;
+                ci.k8 k8Var2 = (ci.k8) this.b;
                 TLObject tLObject2 = (TLObject) this.c;
-                l8Var2.e1 = 0;
+                k8Var2.e1 = 0;
                 if (tLObject2 instanceof Vector) {
-                    l8Var2.V0 = new ArrayList();
+                    k8Var2.V0 = new ArrayList();
                     Vector vector = (Vector) tLObject2;
                     for (int i15 = 0; i15 < vector.objects.size(); i15++) {
                         TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) vector.objects.get(i15);
@@ -317,24 +317,24 @@ public final /* synthetic */ class ba implements Runnable {
                             tL_inputDocument.id = document.id;
                             tL_inputDocument.access_hash = document.access_hash;
                             tL_inputDocument.file_reference = document.file_reference;
-                            l8Var2.V0.add(tL_inputDocument);
+                            k8Var2.V0.add(tL_inputDocument);
                         }
                     }
                     return;
                 }
                 return;
             case 28:
-                ci.u8.R((ci.u8) this.b, (TLObject) this.c);
+                ci.t8.P((ci.t8) this.b, (TLObject) this.c);
                 return;
             default:
-                ci.u8 u8Var = (ci.u8) this.b;
+                ci.t8 t8Var = (ci.t8) this.b;
                 TextView textView = (TextView) this.c;
-                ClipboardManager clipboardManager = (ClipboardManager) u8Var.getContext().getSystemService("clipboard");
-                org.telegram.ui.Cells.h3 h3Var = u8Var.Y.b;
+                ClipboardManager clipboardManager = (ClipboardManager) t8Var.getContext().getSystemService("clipboard");
+                org.telegram.ui.Cells.h3 h3Var = t8Var.Y.b;
                 if ((TextUtils.isEmpty(h3Var.getText()) || TextUtils.equals(h3Var.getText(), "https://") || TextUtils.isEmpty(h3Var.getText().toString())) && clipboardManager != null && clipboardManager.hasPrimaryClip()) {
                     i13 = 1;
                 }
-                ok.s(textView.animate().alpha(i13 != 0 ? 1.0f : 0.0f).scaleX(i13 != 0 ? 1.0f : 0.7f).scaleY(i13 == 0 ? 0.7f : 1.0f), sr.h, 300L);
+                ok.s(textView.animate().alpha(i13 != 0 ? 1.0f : 0.0f).scaleX(i13 != 0 ? 1.0f : 0.7f).scaleY(i13 == 0 ? 0.7f : 1.0f), tr.h, 300L);
                 return;
         }
     }

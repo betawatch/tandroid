@@ -1,66 +1,34 @@
 package yh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class c7 extends LinearLayout {
-    public final Path a;
-    public final /* synthetic */ Matrix b;
-    public final /* synthetic */ RadialGradient c;
-    public final /* synthetic */ Paint d;
-    public final /* synthetic */ org.telegram.ui.Components.o5 e;
+public final class c7 extends u61 {
+    public final /* synthetic */ x7 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c7(Context context, Matrix matrix, RadialGradient radialGradient, Paint paint, org.telegram.ui.Components.o5 o5Var) {
-        super(context);
-        this.b = matrix;
-        this.c = radialGradient;
-        this.d = paint;
-        this.e = o5Var;
-        this.a = new Path();
+    public c7(x7 x7Var, zl0 zl0Var, Activity activity, int i10, int i11, hi.a aVar, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(zl0Var, activity, i10, i11, true, aVar, d6Var);
+        this.N = x7Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float dp = AndroidUtilities.dp(10.0f);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, AndroidUtilities.dp(2.0f) + 1, getWidth(), getHeight() + dp);
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
-        canvas.save();
-        canvas.clipPath(path);
-        Matrix matrix = this.b;
-        matrix.reset();
-        matrix.postTranslate(getWidth() / 2.0f, AndroidUtilities.dp(100.0f));
-        this.c.setLocalMatrix(matrix);
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.d);
-        canvas.save();
-        canvas.translate(getWidth() / 2.0f, AndroidUtilities.dp(100.0f));
-        j0.a(canvas, 0, this.e, getWidth(), AndroidUtilities.dp(180.0f), 1.0f, 1.0f);
-        canvas.restore();
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.e.a();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.e.b();
+    @Override // org.telegram.ui.Components.u61, s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.ActionBar.d6 d6Var;
+        if (i10 != 42) {
+            return super.x(viewGroup, i10);
+        }
+        x7 x7Var = this.N;
+        Activity parentActivity = x7Var.getParentActivity();
+        int i11 = org.telegram.ui.ActionBar.i6.L6;
+        d6Var = ((org.telegram.ui.ActionBar.n2) x7Var).resourceProvider;
+        org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(parentActivity, i11, 21, 0, false, d6Var);
+        m4Var.setHeight(25);
+        return new il0(m4Var);
     }
 }

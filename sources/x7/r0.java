@@ -2,17 +2,17 @@ package x7;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class r0 {
     public final n7 a;
     public final Boolean b;
     public final h8 c;
 
-    public /* synthetic */ r0(v7.l lVar) {
-        this.a = (n7) lVar.b;
-        this.b = (Boolean) lVar.c;
-        this.c = (h8) lVar.d;
+    public /* synthetic */ r0(v7.k kVar) {
+        this.a = (n7) kVar.b;
+        this.b = (Boolean) kVar.c;
+        this.c = (h8) kVar.d;
     }
 
     public final boolean equals(Object obj) {

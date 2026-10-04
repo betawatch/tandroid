@@ -14,7 +14,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import androidx.versionedparcelable.ParcelImpl;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class r extends MediaSession.Callback {
     public final /* synthetic */ s a;
@@ -33,8 +33,8 @@ public final class r extends MediaSession.Callback {
         if (i10 >= 24) {
             try {
                 str = (String) mediaSession.getClass().getMethod("getCallingPackage", null).invoke(mediaSession, null);
-            } catch (Exception e) {
-                Log.e("MediaSessionCompat", "Cannot execute MediaSession.getCallingPackage()", e);
+            } catch (Exception e7) {
+                Log.e("MediaSessionCompat", "Cannot execute MediaSession.getCallingPackage()", e7);
             }
         }
         if (TextUtils.isEmpty(str)) {
@@ -325,8 +325,8 @@ public final class r extends MediaSession.Callback {
         b(a2);
         RatingCompat ratingCompat = null;
         if (rating != null) {
-            int b10 = android.support.v4.media.c.b(rating);
-            if (!android.support.v4.media.c.e(rating)) {
+            int b10 = android.support.v4.media.d.b(rating);
+            if (!android.support.v4.media.d.e(rating)) {
                 switch (b10) {
                     case 1:
                     case 2:
@@ -340,15 +340,15 @@ public final class r extends MediaSession.Callback {
             } else {
                 switch (b10) {
                     case 1:
-                        ratingCompat = new RatingCompat(1, android.support.v4.media.c.d(rating) ? 1.0f : 0.0f);
+                        ratingCompat = new RatingCompat(1, android.support.v4.media.d.d(rating) ? 1.0f : 0.0f);
                         break;
                     case 2:
-                        ratingCompat = new RatingCompat(2, android.support.v4.media.c.f(rating) ? 1.0f : 0.0f);
+                        ratingCompat = new RatingCompat(2, android.support.v4.media.d.f(rating) ? 1.0f : 0.0f);
                         break;
                     case 3:
                     case 4:
                     case 5:
-                        float c10 = android.support.v4.media.c.c(rating);
+                        float c10 = android.support.v4.media.d.c(rating);
                         if (b10 == 3) {
                             f7 = 3.0f;
                         } else if (b10 == 4) {
@@ -368,7 +368,7 @@ public final class r extends MediaSession.Callback {
                         }
                         break;
                     case 6:
-                        float a10 = android.support.v4.media.c.a(rating);
+                        float a10 = android.support.v4.media.d.a(rating);
                         if (a10 >= 0.0f && a10 <= 100.0f) {
                             ratingCompat = new RatingCompat(6, a10);
                             break;

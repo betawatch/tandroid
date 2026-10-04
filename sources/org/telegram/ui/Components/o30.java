@@ -1,158 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.GradientDrawable;
-import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public abstract class o30 extends org.telegram.ui.ActionBar.e3 {
-    public final z4.g b;
-    public final l30 c;
-    public final LinearLayout d;
-    public final TextView[] e;
-    public float f;
-    public int h;
+public final class o30 extends z4.a {
+    public final /* synthetic */ p30 c;
 
-    public o30(Context context, TLRPC.Chat chat, boolean z10) {
-        super(context, false);
-        int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.fg, false);
-        this.shadowDrawable.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.MULTIPLY));
-        j30 j30Var = new j30(this, context);
-        this.containerView = j30Var;
-        j30Var.setWillNotDraw(false);
-        this.containerView.setClipChildren(false);
-        this.containerView.setBackgroundDrawable(this.shadowDrawable);
-        ViewGroup viewGroup = this.containerView;
-        int i10 = this.backgroundPaddingLeft;
-        viewGroup.setPadding(i10, 0, i10, 0);
-        TextView textView = new TextView(getContext());
-        if (ChatObject.isChannelOrGiga(chat)) {
-            textView.setText(LocaleController.getString(R.string.VoipChannelRecordVoiceChat));
+    public o30(p30 p30Var) {
+        this.c = p30Var;
+    }
+
+    @Override // z4.a
+    public final void a(z4.g gVar, Object obj) {
+        gVar.removeView((View) obj);
+    }
+
+    @Override // z4.a
+    public final int b() {
+        return this.c.e.length;
+    }
+
+    @Override // z4.a
+    public final Object e(z4.g gVar, int i10) {
+        n30 n30Var = new n30(this, this.c.getContext(), i10, 0);
+        n30Var.setOnClickListener(new ci.n4(this, i10, 10));
+        n30Var.setFocusable(true);
+        n30Var.setTag(Integer.valueOf(i10));
+        n30Var.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
+        n30Var.setScaleType(ImageView.ScaleType.FIT_XY);
+        n30Var.setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.dp(200.0f), -1));
+        if (i10 == 0) {
+            n30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordAudio));
+        } else if (i10 == 1) {
+            n30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordPortrait));
         } else {
-            textView.setText(LocaleController.getString(R.string.VoipRecordVoiceChat));
+            n30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordLandscape));
         }
-        org.telegram.messenger.f0.q(textView, -1, 1, 20.0f);
-        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        this.containerView.addView(textView, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 29.0f, 24.0f, 0.0f));
-        TextView textView2 = new TextView(getContext());
-        textView2.setText(LocaleController.getString(R.string.VoipRecordVoiceChatInfo));
-        textView2.setTextColor(-1);
-        textView2.setTextSize(1, 14.0f);
-        textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        this.containerView.addView(textView2, w7.y5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 62.0f, 24.0f, 0.0f));
-        this.e = new TextView[3];
-        z4.g gVar = new z4.g(context);
-        this.b = gVar;
-        gVar.setClipChildren(false);
-        gVar.setOffscreenPageLimit(4);
-        gVar.setClipToPadding(false);
-        AndroidUtilities.setViewPagerEdgeEffectColor(gVar, 2130706432);
-        gVar.setAdapter(new n30(this));
-        gVar.setPageMargin(0);
-        this.containerView.addView(gVar, w7.y5.d(-1, -1.0f, 1, 0.0f, 100.0f, 0.0f, 130.0f));
-        gVar.b(new k30(this));
-        View view = new View(getContext());
-        GradientDrawable.Orientation orientation = GradientDrawable.Orientation.LEFT_RIGHT;
-        view.setBackground(new GradientDrawable(orientation, new int[]{w02, 0}));
-        this.containerView.addView(view, w7.y5.d(120, -1.0f, 51, 0.0f, 100.0f, 0.0f, 130.0f));
-        View view2 = new View(getContext());
-        view2.setBackground(new GradientDrawable(orientation, new int[]{0, w02}));
-        this.containerView.addView(view2, w7.y5.d(120, -1.0f, 53, 0.0f, 100.0f, 0.0f, 130.0f));
-        l30 l30Var = new l30(this, getContext());
-        this.c = l30Var;
-        l30Var.setMinWidth(AndroidUtilities.dp(64.0f));
-        l30Var.setTag(-1);
-        l30Var.setTextSize(1, 14.0f);
-        int i11 = org.telegram.ui.ActionBar.h6.ng;
-        l30Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
-        l30Var.setGravity(17);
-        l30Var.setTypeface(AndroidUtilities.bold());
-        l30Var.setText(LocaleController.getString(R.string.VoipRecordStart));
-        if (Build.VERSION.SDK_INT >= 23) {
-            int dp = AndroidUtilities.dp(6.0f);
-            int k10 = i0.a.k(org.telegram.ui.ActionBar.h6.w0(null, i11, false), 76);
-            l30Var.setForeground(org.telegram.ui.ActionBar.h6.i0(dp, dp, dp, dp, 0, k10, k10));
+        SvgHelper.SvgDrawable drawable = SvgHelper.getDrawable(AndroidUtilities.readRes(i10 == 0 ? R.raw.record_audio : i10 == 1 ? R.raw.record_video_p : R.raw.record_video_l));
+        drawable.setAspectFill(false);
+        n30Var.setImageDrawable(drawable);
+        if (n30Var.getParent() != null) {
+            ((ViewGroup) n30Var.getParent()).removeView(n30Var);
         }
-        l30Var.setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
-        l30Var.setOnClickListener(new f0(this, 23));
-        this.containerView.addView(l30Var, w7.y5.d(-1, 48.0f, 80, 0.0f, 0.0f, 0.0f, 64.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.d = linearLayout;
-        this.containerView.addView(linearLayout, w7.y5.e(-2, 64, 80));
-        int i12 = 0;
-        while (true) {
-            TextView[] textViewArr = this.e;
-            if (i12 >= textViewArr.length) {
-                break;
-            }
-            textViewArr[i12] = new TextView(context);
-            this.e[i12].setTextSize(1, 12.0f);
-            this.e[i12].setTextColor(-1);
-            this.e[i12].setTypeface(AndroidUtilities.bold());
-            this.e[i12].setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
-            this.e[i12].setGravity(16);
-            this.e[i12].setSingleLine(true);
-            this.d.addView(this.e[i12], w7.y5.n(-2, -1));
-            if (i12 == 0) {
-                this.e[i12].setText(LocaleController.getString(R.string.VoipRecordAudio));
-            } else if (i12 == 1) {
-                this.e[i12].setText(LocaleController.getString(R.string.VoipRecordPortrait));
-            } else {
-                this.e[i12].setText(LocaleController.getString(R.string.VoipRecordLandscape));
-            }
-            this.e[i12].setOnClickListener(new ci.n4(this, i12, 9));
-            i12++;
-        }
-        if (z10) {
-            this.b.setCurrentItem(1);
-        }
+        gVar.addView(n30Var, 0);
+        return n30Var;
     }
 
-    public static void m(o30 o30Var) {
-        TextView[] textViewArr = o30Var.e;
-        int i10 = o30Var.h;
-        TextView textView = textViewArr[i10];
-        TextView textView2 = i10 < textViewArr.length + (-1) ? textViewArr[i10 + 1] : null;
-        o30Var.containerView.getMeasuredWidth();
-        float measuredWidth = (textView.getMeasuredWidth() / 2) + textView.getLeft();
-        float measuredWidth2 = (o30Var.containerView.getMeasuredWidth() / 2) - measuredWidth;
-        if (textView2 != null) {
-            measuredWidth2 -= (((textView2.getMeasuredWidth() / 2) + textView2.getLeft()) - measuredWidth) * o30Var.f;
-        }
-        for (int i11 = 0; i11 < textViewArr.length; i11++) {
-            int i12 = o30Var.h;
-            float f7 = 0.9f;
-            float f10 = 0.7f;
-            if (i11 >= i12 && i11 <= i12 + 1) {
-                if (i11 == i12) {
-                    float f11 = o30Var.f;
-                    f10 = 1.0f - (0.3f * f11);
-                    f7 = 1.0f - (f11 * 0.1f);
-                } else {
-                    float f12 = o30Var.f;
-                    f10 = 0.7f + (0.3f * f12);
-                    f7 = 0.9f + (f12 * 0.1f);
-                }
-            }
-            textViewArr[i11].setAlpha(f10);
-            textViewArr[i11].setScaleX(f7);
-            textViewArr[i11].setScaleY(f7);
-        }
-        o30Var.d.setTranslationX(measuredWidth2);
-        o30Var.c.invalidate();
+    @Override // z4.a
+    public final boolean f(View view, Object obj) {
+        return view.equals(obj);
     }
 
-    public abstract void n(int i10);
+    @Override // z4.a
+    public final void h(int i10) {
+    }
 }

@@ -12,17 +12,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class o5 extends Drawable implements w5 {
-    public yh.i8 E;
+    public yh.j8 E;
     public Integer F;
     public int G;
     public PorterDuffColorFilter H;
     public int I;
     public int J;
     public final Rect K;
-    public final pg L;
+    public final qg L;
     public boolean a;
     public final int b;
     public final OvershootInterpolator c;
@@ -30,7 +30,7 @@ public class o5 extends Drawable implements w5 {
     public final e6 e;
     public final Drawable[] f;
     public View h;
-    public org.telegram.ui.a71 n;
+    public org.telegram.ui.c71 n;
     public final boolean r;
     public final int s;
     public int v;
@@ -88,19 +88,19 @@ public class o5 extends Drawable implements w5 {
         Rect rect = this.K;
         rect.set(bounds);
         rect.offset(this.I, this.J);
-        float e = this.e.e(this.y);
-        pg pgVar = this.L;
-        if (e > 0.0f) {
-            yh.i8 i8Var = this.E;
-            i8Var.c.set(rect);
-            i8Var.e();
+        float e7 = this.e.e(this.y);
+        qg qgVar = this.L;
+        if (e7 > 0.0f) {
+            yh.j8 j8Var = this.E;
+            j8Var.c.set(rect);
+            j8Var.e();
             this.E.d();
-            yh.i8 i8Var2 = this.E;
+            yh.j8 j8Var2 = this.E;
             Integer num = this.F;
-            i8Var2.a(canvas, org.telegram.ui.ActionBar.h6.l1(e, num == null ? -1 : num.intValue()));
-            yf.h.d().a(15, pgVar);
+            j8Var2.a(canvas, org.telegram.ui.ActionBar.i6.l1(e7, num == null ? -1 : num.intValue()));
+            yf.h.d().a(15, qgVar);
         } else {
-            yf.h.d().f(pgVar);
+            yf.h.d().f(qgVar);
         }
         Drawable[] drawableArr = this.f;
         Drawable drawable = drawableArr[1];
@@ -299,9 +299,9 @@ public class o5 extends Drawable implements w5 {
                 this.h.invalidate();
             }
         }
-        org.telegram.ui.a71 a71Var = this.n;
-        if (a71Var != null) {
-            a71Var.invalidate();
+        org.telegram.ui.c71 c71Var = this.n;
+        if (c71Var != null) {
+            c71Var.invalidate();
         }
         invalidateSelf();
     }
@@ -383,7 +383,7 @@ public class o5 extends Drawable implements w5 {
         }
         if (z11) {
             if (this.E == null) {
-                this.E = new yh.i8(1, 8);
+                this.E = new yh.j8(1, 8);
             }
             this.y = z10;
             invalidate();
@@ -391,7 +391,7 @@ public class o5 extends Drawable implements w5 {
         }
         this.y = z10;
         if (z10 && this.E == null) {
-            this.E = new yh.i8(1, 8);
+            this.E = new yh.j8(1, 8);
         } else if (!z10 && this.E != null) {
             this.E = null;
         }
@@ -411,15 +411,15 @@ public class o5 extends Drawable implements w5 {
     public o5(int i10, int i11, View view, boolean z10) {
         this.a = false;
         this.c = new OvershootInterpolator(2.0f);
-        sr srVar = sr.g;
-        e6 e6Var = new e6((View) null, 300L, srVar);
+        tr trVar = tr.g;
+        e6 e6Var = new e6((View) null, 300L, trVar);
         this.d = e6Var;
-        e6 e6Var2 = new e6((View) null, 300L, srVar);
+        e6 e6Var2 = new e6((View) null, 300L, trVar);
         this.e = e6Var2;
         this.f = new Drawable[2];
         this.v = 255;
         this.K = new Rect();
-        this.L = new pg(this, 6);
+        this.L = new qg(this, 6);
         e6Var.a = view;
         this.h = view;
         e6Var2.a = view;

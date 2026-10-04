@@ -12,11 +12,11 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ub1;
+import org.telegram.ui.xb1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class w8 extends cw0 {
+public final class w8 extends lw0 {
     public float A0;
     public float B0;
     public final /* synthetic */ e9 C0;
@@ -33,7 +33,7 @@ public final class w8 extends cw0 {
         this.w0 = new b2.q0();
     }
 
-    @Override // org.telegram.ui.Components.cw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int save = canvas.save();
@@ -95,11 +95,11 @@ public final class w8 extends cw0 {
         if (view == e9Var.H) {
             return true;
         }
-        kVar = ((org.telegram.ui.ActionBar.m2) e9Var).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.n2) e9Var).actionBar;
         if (view != kVar || e9Var.N <= 0.0f) {
             canvas2 = canvas;
         } else {
-            paint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
+            paint.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
             paint.setAlpha((int) (e9Var.N * 255.0f));
             canvas2 = canvas;
             canvas2.drawRect(0.0f, 0.0f, view.getMeasuredWidth(), view.getMeasuredHeight(), paint);
@@ -110,8 +110,7 @@ public final class w8 extends cw0 {
 
     @Override // android.view.ViewGroup
     public final int getNestedScrollAxes() {
-        b2.q0 q0Var = this.w0;
-        return q0Var.b | q0Var.a;
+        return this.w0.b();
     }
 
     @Override // android.view.ViewGroup
@@ -137,9 +136,9 @@ public final class w8 extends cw0 {
             if (e9Var.U) {
                 e9Var.i0(0.0f, false);
                 e9Var.a.setExpanded(false);
-                addView(e9Var.a, 0, w7.y5.c(-1.0f, -1));
+                addView(e9Var.a, 0, w7.z5.c(-1.0f, -1));
             } else {
-                e9Var.r.addView(e9Var.a, 0, w7.y5.c(-2.0f, -1));
+                e9Var.r.addView(e9Var.a, 0, w7.z5.c(-2.0f, -1));
             }
             AndroidUtilities.requestAdjustResize(e9Var.getParentActivity(), e9Var.getClassGuid());
         }
@@ -166,13 +165,13 @@ public final class w8 extends cw0 {
             super.onMeasure(i10, i11);
             if (e9Var.L) {
                 int i13 = -e9Var.b.getTop();
-                kVar = ((org.telegram.ui.ActionBar.m2) e9Var).actionBar;
+                kVar = ((org.telegram.ui.ActionBar.n2) e9Var).actionBar;
                 i12 = AndroidUtilities.dp(8.0f) + kVar.getMeasuredHeight() + i13;
             } else {
                 i12 = 0;
             }
-            ub1 ub1Var = e9Var.r;
-            ub1Var.setTranslationY((ub1Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) e9Var.r.getLayoutParams()).topMargin) - i12);
+            xb1 xb1Var = e9Var.r;
+            xb1Var.setTranslationY((xb1Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) e9Var.r.getLayoutParams()).topMargin) - i12);
             ((ViewGroup.MarginLayoutParams) e9Var.r.getLayoutParams()).topMargin = i12;
             boolean z13 = e9Var.L;
             if (!e9Var.U) {
@@ -192,7 +191,7 @@ public final class w8 extends cw0 {
                 e9Var.M.addUpdateListener(new z8(e9Var, f10, f7, z13));
                 e9Var.M.addListener(new t8(e9Var, 1));
                 e9Var.M.setDuration(250L);
-                e9Var.M.setInterpolator(org.telegram.ui.ActionBar.o1.w);
+                e9Var.M.setInterpolator(org.telegram.ui.ActionBar.p1.w);
                 e9Var.M.start();
             }
         }

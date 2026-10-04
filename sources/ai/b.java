@@ -13,9 +13,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.d01;
+import org.telegram.ui.f01;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class b extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -90,10 +90,10 @@ public final class b extends AnimatorListenerAdapter {
                 break;
             case 6:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
-                d01 d01Var = profileStoriesView.h;
+                f01 f01Var = profileStoriesView.h;
                 profileStoriesView.G = 1.0f;
-                d01Var.R = 1.0f;
-                d01Var.invalidate();
+                f01Var.R = 1.0f;
+                f01Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 7:
@@ -179,23 +179,23 @@ public final class b extends AnimatorListenerAdapter {
                 }
                 break;
             case 18:
-                ((ci.y9) obj).N = false;
+                ((ci.x9) obj).N = false;
                 break;
             case 19:
-                ci.w9 w9Var = (ci.w9) obj;
-                w9Var.setTranslationY(0.0f);
-                w9Var.d = null;
+                ci.v9 v9Var = (ci.v9) obj;
+                v9Var.setTranslationY(0.0f);
+                v9Var.d = null;
                 break;
             case 20:
-                ei.y yVar = (ei.y) obj;
-                yVar.setVisibility(8);
-                yVar.a = null;
+                ei.z zVar = (ei.z) obj;
+                zVar.setVisibility(8);
+                zVar.a = null;
                 break;
             case 21:
-                ((ei.k3) obj).y.setVisibility(8);
+                ((ei.l3) obj).y.setVisibility(8);
                 break;
             case 22:
-                ((ei.q4) obj).I.setVisibility(8);
+                ((ei.r4) obj).I.setVisibility(8);
                 break;
             case 23:
                 super.onAnimationEnd(animator);
@@ -236,9 +236,9 @@ public final class b extends AnimatorListenerAdapter {
                 v3Var.a.unlock();
                 break;
             case 29:
-                org.telegram.ui.q4 q4Var = (org.telegram.ui.q4) obj;
-                q4Var.getClass();
-                q4Var.setVisibility(8);
+                org.telegram.ui.r4 r4Var = (org.telegram.ui.r4) obj;
+                r4Var.getClass();
+                r4Var.setVisibility(8);
                 break;
         }
     }
@@ -254,7 +254,7 @@ public final class b extends AnimatorListenerAdapter {
                 kj0Var.start();
                 break;
             case 29:
-                ((org.telegram.ui.q4) this.b).setVisibility(0);
+                ((org.telegram.ui.r4) this.b).setVisibility(0);
                 break;
             default:
                 super.onAnimationStart(animator);

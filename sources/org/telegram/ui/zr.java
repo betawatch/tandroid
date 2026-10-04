@@ -1,58 +1,23 @@
 package org.telegram.ui;
 
-import android.R;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class zr implements ActionMode.Callback {
-    public final /* synthetic */ as a;
+public final class zr {
+    public ActionBarPopupWindow$ActionBarPopupWindowLayout a;
+    public org.telegram.ui.ActionBar.b1 b;
+    public org.telegram.ui.ActionBar.f1[] c;
 
-    public zr(as asVar) {
-        this.a = asVar;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        ClipboardManager clipboardManager;
-        ClipData primaryClip;
-        int i10;
-        if (menuItem.getItemId() != 16908322) {
-            return true;
-        }
-        as asVar = this.a;
-        yr yrVar = asVar.getParent() instanceof yr ? (yr) asVar.getParent() : null;
-        if (yrVar != null && (clipboardManager = (ClipboardManager) f0.e.f(asVar.getContext(), ClipboardManager.class)) != null && (primaryClip = clipboardManager.getPrimaryClip()) != null) {
-            String charSequence = primaryClip.getItemAt(0).getText().toString();
-            try {
-                i10 = Integer.parseInt(charSequence);
-            } catch (Exception unused) {
-                i10 = -1;
-            }
-            if (i10 > 0) {
-                yrVar.c(charSequence, true);
+    public final void a(float f7, boolean z10) {
+        org.telegram.ui.ActionBar.f1[] f1VarArr = this.c;
+        for (int i10 = 0; i10 < f1VarArr.length; i10++) {
+            if (!z10 || ((i10 != 0 || Math.abs(f7 - 0.2f) >= 0.01f) && ((i10 != 1 || Math.abs(f7 - 0.5f) >= 0.1f) && ((i10 != 2 || Math.abs(f7 - 1.0f) >= 0.1f) && ((i10 != 3 || Math.abs(f7 - 1.5f) >= 0.1f) && (i10 != 4 || Math.abs(f7 - 2.0f) >= 0.1f)))))) {
+                f1VarArr[i10].c(-328966, -328966);
+            } else {
+                f1VarArr[i10].c(-9718023, -9718023);
             }
         }
-        asVar.hideActionMode();
-        return true;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        menu.add(0, R.id.paste, 0, R.string.paste);
-        return true;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        return true;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
+        this.b.d(f7, true);
     }
 }

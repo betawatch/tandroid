@@ -1,164 +1,84 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.voip.VoIPService;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vz0 implements Runnable {
+public final class vz0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ ProfileActivity b;
 
-    public /* synthetic */ vz0(Object obj, int i10) {
+    public /* synthetic */ vz0(ProfileActivity profileActivity, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = profileActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                ProfileActivity profileActivity = ((yz0) obj).b;
-                profileActivity.getMessagesController().toggleChatNoForwards(profileActivity.e1, 0, true, new ci.za(true, profileActivity, 2));
-                break;
-            case 1:
-                c01 c01Var = (c01) obj;
-                c01Var.M0(c01Var.getTabProgress());
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
             case 2:
-                ((t01) obj).c();
-                break;
-            case 3:
-                ((h11) obj).a();
-                break;
-            case 4:
-                e11 e11Var = (e11) obj;
-                e11Var.f.add(e11Var.c);
-                e11Var.a();
-                break;
-            case 5:
-                Runnable[] runnableArr = (Runnable[]) obj;
-                runnableArr[0].run();
-                runnableArr[0] = null;
-                break;
-            case 6:
-                ((ai.x8) obj).e();
-                break;
-            case 7:
-                org.telegram.ui.Components.yc ycVar = (org.telegram.ui.Components.yc) obj;
-                if (LaunchActivity.U() != null) {
-                    if (ycVar == null) {
-                        ycVar = org.telegram.ui.Components.yc.a0(LaunchActivity.U());
-                    }
-                    if (ycVar != null) {
-                        org.telegram.ui.Components.qc M = ycVar.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
-                        M.j = 5000;
-                        M.j();
-                        break;
-                    }
-                }
-                break;
-            case 8:
-                ((d41) obj).invalidate();
-                break;
-            case 9:
-                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) obj;
-                saveToGallerySettingsActivity.v.clear();
-                saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.a, saveToGallerySettingsActivity.v);
-                saveToGallerySettingsActivity.Z();
-                break;
-            case 10:
-                l41 l41Var = (l41) obj;
-                l41Var.dismiss();
-                nf.f.s(l41Var.getContext(), LocaleController.getString(R.string.PromoteUrl));
-                break;
-            case 11:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.cl0) obj).c;
-                Runnable runnable = secretMediaViewer.o0;
-                if (runnable != null) {
-                    runnable.run();
-                    secretMediaViewer.o0 = null;
-                    break;
-                }
-                break;
-            case 12:
-                b51 b51Var = ((a51) obj).a;
-                b51Var.Q = true;
-                b51Var.N.invalidate();
-                break;
-            case 13:
-                ((NotificationCenter) obj).runDelayedNotifications();
-                break;
-            case 14:
-                AndroidUtilities.updateViewShow(((p61) obj).c, true);
-                break;
-            case 15:
-                org.telegram.ui.Components.l61 l61Var = ((k71) obj).i0;
-                if (l61Var != null) {
-                    l61Var.N(true);
-                    break;
-                }
-                break;
-            case 16:
-                ((d71) obj).a();
-                break;
-            case 17:
-                hg.g.a(((SessionsActivity) obj).currentAccount).b();
-                break;
-            case 18:
-                ((ye1) obj).J.r.l();
-                break;
-            case 19:
-                ((gf1) obj).b.C0();
-                break;
-            case 20:
-                ((VoIPFeedbackActivity) obj).finish();
-                break;
-            case 21:
-                ((bi1) obj).a.H();
-                break;
-            case 22:
-                ((ci1) obj).a.H();
-                break;
-            case 23:
-                mi1 mi1Var = ((ai1) obj).b;
-                mi1Var.L0.unlock();
-                org.telegram.ui.Components.voip.n2.k().getClass();
-                if (VoIPService.getSharedInstance() != null) {
-                    VoIPService.getSharedInstance().swapSinks();
-                }
-                mi1Var.Y.setCornerRadius(-1.0f);
-                mi1Var.c0.d.release();
-                mi1Var.d0.d.release();
-                mi1Var.b0.release();
-                mi1Var.l();
-                mi1Var.u0.d();
-                org.telegram.ui.Components.voip.n2.T = false;
-                mi1Var.E0 = false;
-                mi1.n1 = null;
-                break;
-            case 24:
-                ki1 ki1Var = (ki1) obj;
-                ki1Var.getClass();
-                if (VoIPService.getSharedState() != null) {
-                    VoIPService.getSharedState().acceptIncomingCall();
-                    if (ki1Var.a.n0 && VoIPService.getSharedInstance() != null) {
-                        VoIPService.getSharedInstance().requestVideoCall(false);
-                        break;
-                    }
-                }
-                break;
-            case 25:
-                ((VoIPPermissionActivity) obj).finish();
+                ProfileActivity profileActivity = this.b;
+                profileActivity.O1 = false;
+                profileActivity.a.N0 = true;
                 break;
             default:
-                int[][] iArr = WallpapersListActivity.k0;
-                ((WallpapersListActivity) obj).B0(false);
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                this.b.k4(true);
+                break;
+            case 1:
+                ProfileActivity profileActivity = this.b;
+                AnimatorSet animatorSet = profileActivity.w;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    profileActivity.w = null;
+                    break;
+                }
+                break;
+            case 2:
+                ProfileActivity profileActivity2 = this.b;
+                profileActivity2.O1 = false;
+                profileActivity2.a.N0 = true;
+                profileActivity2.j2.removeListener(this);
+                profileActivity2.d1.setBackgroundColor(-16777216);
+                profileActivity2.Y.setVisibility(8);
+                profileActivity2.n0.setVisibility(0);
+                profileActivity2.n0.setAlpha(1.0f);
+                break;
+            case 3:
+                ProfileActivity profileActivity3 = this.b;
+                profileActivity3.j2.removeListener(this);
+                profileActivity3.n0.setVisibility(8);
+                profileActivity3.n0.setAlpha(1.0f);
+                break;
+            default:
+                ProfileActivity profileActivity4 = this.b;
+                profileActivity4.w0 = null;
+                profileActivity4.fragmentView.invalidate();
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 2:
+                ProfileActivity profileActivity = this.b;
+                ProfileActivity.s3(profileActivity, false);
+                profileActivity.n0.setAnimatedFileMaybe(profileActivity.e0.getImageReceiver().getAnimation());
+                profileActivity.n0.L();
+                break;
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

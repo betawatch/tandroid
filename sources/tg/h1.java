@@ -3,9 +3,9 @@ package tg;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class h1 extends xg.i {
     public boolean J;
@@ -28,11 +28,11 @@ public final class h1 extends xg.i {
             boolean isKeyboardVisible = m1Var.isKeyboardVisible();
             this.J = isKeyboardVisible;
             if (isKeyboardVisible) {
-                yl0 yl0Var = m1Var.d;
+                zl0 zl0Var = m1Var.d;
                 ji.o oVar = new ji.o(m1Var.getContext(), 2, 0.6f);
                 oVar.a = 1;
                 oVar.p = AndroidUtilities.dp(36.0f);
-                yl0Var.getLayoutManager().w0(oVar);
+                zl0Var.getLayoutManager().w0(oVar);
             }
         }
     }

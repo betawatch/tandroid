@@ -1,92 +1,99 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.StaticLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ub1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class rm0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wm0 b;
+public final class rm0 extends Drawable {
+    public int a = 255;
+    public final /* synthetic */ k90 b;
+    public final /* synthetic */ int[] c;
+    public final /* synthetic */ org.telegram.ui.Cells.u1 d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ Bitmap f;
+    public final /* synthetic */ RectF g;
+    public final /* synthetic */ Paint h;
+    public final /* synthetic */ Paint i;
+    public final /* synthetic */ StaticLayout j;
 
-    public /* synthetic */ rm0(wm0 wm0Var, int i10) {
-        this.a = i10;
-        this.b = wm0Var;
+    public rm0(k90 k90Var, int[] iArr, org.telegram.ui.Cells.u1 u1Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
+        this.b = k90Var;
+        this.c = iArr;
+        this.d = u1Var;
+        this.e = iArr2;
+        this.f = bitmap;
+        this.g = rectF;
+        this.h = paint;
+        this.i = paint2;
+        this.j = staticLayout;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x003a, code lost:
-    
-        if (r2.q0 != false) goto L8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0049, code lost:
-    
-        if (r2.q0 != false) goto L8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x0022, code lost:
-    
-        if (r2.q0 != false) goto L8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x0024, code lost:
-    
-        r5 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x004c, code lost:
-    
-        r2.scrollBy(r0 * r5, 0);
-        org.telegram.messenger.AndroidUtilities.runOnUIThread(r2.s0);
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int tabSize;
-        int max;
-        switch (this.a) {
-            case 0:
-                wm0 wm0Var = this.b;
-                ub1 ub1Var = wm0Var.e;
-                wm0Var.b0 = false;
-                wm0Var.V = wm0Var.getScrollX() + wm0Var.W;
-                tabSize = wm0Var.getTabSize();
-                int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
-                wm0Var.U = ceil;
-                wm0Var.T = ceil;
-                if (wm0Var.e(ceil) && ceil >= 0 && ceil < ub1Var.getChildCount()) {
-                    try {
-                        wm0Var.performHapticFeedback(0);
-                    } catch (Exception unused) {
-                    }
-                    wm0Var.d0 = 0.0f;
-                    wm0Var.v = 0.0f;
-                    View childAt = ub1Var.getChildAt(ceil);
-                    wm0Var.s = childAt;
-                    wm0Var.c0 = childAt.getX() - wm0Var.getScrollX();
-                    wm0Var.s.invalidate();
-                    ub1Var.invalidate();
-                    wm0Var.j();
-                    wm0Var.invalidate();
-                    break;
-                }
-                break;
-            default:
-                long currentTimeMillis = System.currentTimeMillis();
-                wm0 wm0Var2 = this.b;
-                long j3 = currentTimeMillis - wm0Var2.r0;
-                int i10 = -1;
-                if (j3 >= 3000) {
-                    if (j3 >= 5000) {
-                        max = Math.max(1, AndroidUtilities.dp(4.0f));
-                        break;
-                    } else {
-                        max = Math.max(1, AndroidUtilities.dp(2.0f));
-                        break;
-                    }
-                } else {
-                    max = Math.max(1, AndroidUtilities.dp(1.0f));
-                    break;
-                }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        if (this.a <= 0) {
+            return;
         }
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getBounds());
+        float f7 = rectF.left;
+        CornerPathEffect cornerPathEffect = k90.w;
+        rectF.left = f7 - (AndroidUtilities.dp(5.0f) / 2.0f);
+        canvas.save();
+        canvas.saveLayerAlpha(rectF, this.a, 31);
+        int[] iArr = this.c;
+        canvas.translate(iArr[0], iArr[1]);
+        k90 k90Var = this.b;
+        org.telegram.ui.Cells.u1 u1Var = this.d;
+        if (u1Var == null || !u1Var.C1()) {
+            canvas.drawPath(k90Var, this.i);
+        } else {
+            org.telegram.ui.ActionBar.e5 e5Var = u1Var.t8;
+            if (e5Var == null || e5Var.c == null) {
+                canvas.translate(-iArr[0], -iArr[1]);
+                int[] iArr2 = this.e;
+                canvas.translate(iArr2[0], u1Var.getPaddingTop() + iArr2[1]);
+                u1Var.D1(canvas, true, false);
+                canvas.translate(-iArr2[0], (-iArr2[1]) - u1Var.getPaddingTop());
+                canvas.translate(iArr[0], iArr[1]);
+            } else {
+                canvas.save();
+                u1Var.setBackgroundTopY(true);
+                canvas.translate(0.0f, -u1Var.t8.r);
+                canvas.drawPaint(u1Var.t8.c);
+                canvas.restore();
+            }
+            Bitmap bitmap = this.f;
+            if (bitmap != null) {
+                canvas.save();
+                RectF rectF2 = this.g;
+                canvas.drawBitmap(bitmap, rectF2.left, rectF2.top, this.h);
+                canvas.restore();
+            }
+        }
+        canvas.clipPath(k90Var);
+        this.j.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

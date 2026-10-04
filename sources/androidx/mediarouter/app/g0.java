@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import org.telegram.messenger.beta.R;
 import s4.c1;
-import v7.s8;
-import v7.w7;
+import v7.r8;
+import v7.v7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class g0 extends c1 {
     public p4.v v;
@@ -26,12 +26,12 @@ public abstract class g0 extends c1 {
         this.w = imageButton;
         this.x = mediaRouteVolumeSlider;
         Context context = o0Var.y;
-        Drawable d = s8.d(w7.b(context, R.drawable.mr_cast_mute_button));
-        if (v7.f0.h(context)) {
+        Drawable d = r8.d(v7.b(context, R.drawable.mr_cast_mute_button));
+        if (v7.e0.h(context)) {
             d.setTint(f0.e.c(context, R.color.mr_dynamic_dialog_icon_light));
         }
         imageButton.setImageDrawable(d);
-        if (v7.f0.h(context)) {
+        if (v7.e0.h(context)) {
             c10 = f0.e.c(context, R.color.mr_cast_progressbar_progress_and_thumb_light);
             c11 = f0.e.c(context, R.color.mr_cast_progressbar_background_light);
         } else {

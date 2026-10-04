@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class FileRefController extends BaseController {
     private static volatile FileRefController[] Instance = new FileRefController[4];
@@ -32,7 +32,7 @@ public class FileRefController extends BaseController {
     private ArrayList<Waiter> savedGifsWaiters;
     private ArrayList<Waiter> wallpaperWaiters;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class CachedResult {
         private long firstQueryTime;
         private TLObject response;
@@ -41,7 +41,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class Requester {
         private Object[] args;
         private boolean completed;
@@ -52,7 +52,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class Waiter {
         private String locationKey;
         private String parentKey;
@@ -444,13 +444,13 @@ public class FileRefController extends BaseController {
                                     try {
                                         SharedConfig.pendingAppUpdate = tL_help_appUpdate;
                                         SharedConfig.saveConfig();
-                                    } catch (Exception e) {
-                                        FileLog.e(e);
+                                    } catch (Exception e7) {
+                                        FileLog.e(e7);
                                     }
                                     try {
                                         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateAvailable, new Object[0]);
-                                    } catch (Exception e7) {
-                                        FileLog.e(e7);
+                                    } catch (Exception e10) {
+                                        FileLog.e(e10);
                                     }
                                     try {
                                         TLRPC.Document document3 = tL_help_appUpdate.document;
@@ -467,8 +467,8 @@ public class FileRefController extends BaseController {
                                             inputFileLocationArr4 = inputFileLocationArr2;
                                         }
                                         inputFileLocationArr2 = inputFileLocationArr4;
-                                    } catch (Exception e10) {
-                                        FileLog.e(e10);
+                                    } catch (Exception e11) {
+                                        FileLog.e(e11);
                                         bArr = null;
                                     }
                                     if (bArr == null) {
@@ -793,7 +793,7 @@ public class FileRefController extends BaseController {
             return "bot_info_" + ((TL_bots.BotInfo) obj).user_id;
         }
         if (obj instanceof TLRPC.TL_attachMenuBot) {
-            return a4.a.p(((TLRPC.TL_attachMenuBot) obj).bot_id, "attach_menu_bot_");
+            return a4.a.o(((TLRPC.TL_attachMenuBot) obj).bot_id, "attach_menu_bot_");
         }
         if (obj instanceof MessageObject) {
             MessageObject messageObject = (MessageObject) obj;
@@ -850,7 +850,7 @@ public class FileRefController extends BaseController {
             StringBuilder sb2 = new StringBuilder("story(dialogId=");
             sb2.append(storyItem.dialogId);
             sb2.append(" id=");
-            return a4.a.o(storyItem.id, ")", sb2);
+            return a4.a.n(storyItem.id, ")", sb2);
         }
         if (!(obj instanceof MessageObject)) {
             if (obj == null) {
@@ -925,17 +925,17 @@ public class FileRefController extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public static void lambda$onRequestComplete$46(TLRPC.TL_theme tL_theme) {
         TLRPC.Document document;
-        ArrayList arrayList = org.telegram.ui.ActionBar.h6.F;
+        ArrayList arrayList = org.telegram.ui.ActionBar.i6.F;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
-            TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.g6) arrayList.get(i10)).F;
+            TLRPC.TL_theme tL_theme2 = ((org.telegram.ui.ActionBar.h6) arrayList.get(i10)).F;
             if (tL_theme2 != null && tL_theme2.id == tL_theme.id) {
                 TLRPC.Document document2 = tL_theme2.document;
                 if (document2 == null || (document = tL_theme.document) == null) {
                     return;
                 }
                 document2.file_reference = document.file_reference;
-                org.telegram.ui.ActionBar.h6.s1(true, false);
+                org.telegram.ui.ActionBar.i6.s1(true, false);
                 return;
             }
         }
@@ -1479,13 +1479,13 @@ public class FileRefController extends BaseController {
                                         try {
                                             SharedConfig.pendingAppUpdate = tL_help_appUpdate;
                                             SharedConfig.saveConfig();
-                                        } catch (Exception e) {
-                                            FileLog.e(e);
+                                        } catch (Exception e7) {
+                                            FileLog.e(e7);
                                         }
                                         try {
                                             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateAvailable, new Object[0]);
-                                        } catch (Exception e7) {
-                                            FileLog.e(e7);
+                                        } catch (Exception e10) {
+                                            FileLog.e(e10);
                                         }
                                         try {
                                             TLRPC.Document document4 = tL_help_appUpdate.document;
@@ -1501,8 +1501,8 @@ public class FileRefController extends BaseController {
                                             } else {
                                                 bArr3 = bArr4;
                                             }
-                                        } catch (Exception e10) {
-                                            FileLog.e(e10);
+                                        } catch (Exception e11) {
+                                            FileLog.e(e11);
                                             bArr3 = null;
                                         }
                                         if (bArr3 == null) {

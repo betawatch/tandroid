@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class lk extends org.telegram.ui.Components.qd {
-    public final /* synthetic */ wn d;
+    public final /* synthetic */ yn d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lk(wn wnVar, Context context) {
+    public lk(yn ynVar, Context context) {
         super(context);
-        this.d = wnVar;
+        this.d = ynVar;
     }
 
     @Override // android.view.View
@@ -23,20 +23,20 @@ public final class lk extends org.telegram.ui.Components.qd {
     @Override // android.view.View
     public final void setTranslationY(float f7) {
         super.setTranslationY(f7);
-        wn wnVar = this.d;
-        jk jkVar = wnVar.Y;
+        yn ynVar = this.d;
+        jk jkVar = ynVar.W;
         if (jkVar != null) {
             jkVar.invalidate();
         }
         if (getVisibility() != 8) {
-            wnVar.h9(true);
-            FrameLayout frameLayout = wnVar.P;
+            ynVar.i9(true);
+            FrameLayout frameLayout = ynVar.N;
             if (frameLayout != null) {
                 frameLayout.setTranslationY(f7);
             }
-            wnVar.o9();
-            wnVar.r9();
-            View view = wnVar.fragmentView;
+            ynVar.o9();
+            ynVar.q9();
+            View view = ynVar.fragmentView;
             if (view != null) {
                 view.invalidate();
             }
@@ -47,7 +47,7 @@ public final class lk extends org.telegram.ui.Components.qd {
     public final void setVisibility(int i10) {
         FrameLayout frameLayout;
         super.setVisibility(i10);
-        if (i10 != 8 || (frameLayout = this.d.P) == null) {
+        if (i10 != 8 || (frameLayout = this.d.N) == null) {
             return;
         }
         frameLayout.setTranslationY(0.0f);

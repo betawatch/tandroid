@@ -9,17 +9,18 @@ import android.os.Build;
 import android.util.Log;
 import android.view.KeyEvent;
 import ci.e7;
-import ci.y8;
+import ci.x8;
 import com.google.firebase.messaging.FirebaseMessaging;
+import ii.n4;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
-import org.telegram.ui.Components.pg;
-import org.telegram.ui.Components.qk;
+import org.telegram.ui.Components.qg;
+import org.telegram.ui.Components.rk;
 import p4.s0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class g extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -61,7 +62,7 @@ public final class g extends BroadcastReceiver {
                 }
                 return;
             case 2:
-                ((Executor) ((e2.u) this.b).c).execute(new y8(13, this, context));
+                ((Executor) ((e2.u) this.b).c).execute(new x8(13, this, context));
                 return;
             case 3:
                 ((g.p) this.b).k();
@@ -78,21 +79,21 @@ public final class g extends BroadcastReceiver {
                     return;
                 }
                 e7 e7Var = (e7) this.b;
-                e7Var.a(k2.b.b(context, intent, (b2.e) e7Var.j, (a6.m) e7Var.i));
+                e7Var.a(k2.b.b(context, intent, (b2.e) e7Var.j, (k2.e) e7Var.i));
                 return;
             case 6:
                 if (Objects.equals(intent.getAction(), "android.intent.action.MEDIA_BUTTON") && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null) {
-                    ((n4.j) ((k2.u) ((m4.k0) this.b).k.c).b).a.dispatchMediaButtonEvent(keyEvent);
+                    ((n4.j) ((n4) ((m4.k0) this.b).k.c).b).a.dispatchMediaButtonEvent(keyEvent);
                     return;
                 }
                 return;
             case 7:
-                pg pgVar = new pg(this, 22);
+                qg qgVar = new qg(this, 22);
                 if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    ((qk) this.b).r.postDelayed(pgVar, 1000L);
+                    ((rk) this.b).r.postDelayed(qgVar, 1000L);
                     return;
                 } else {
-                    pgVar.run();
+                    qgVar.run();
                     return;
                 }
             case 8:
@@ -108,7 +109,8 @@ public final class g extends BroadcastReceiver {
                     }
                     Iterator it = arrayList.iterator();
                     if (it.hasNext()) {
-                        throw a4.a.k(it);
+                        it.next().getClass();
+                        throw new ClassCastException();
                     }
                     return;
                 }

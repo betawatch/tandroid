@@ -18,9 +18,9 @@ import org.telegram.messenger.SavedMessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -77,7 +77,7 @@ public final /* synthetic */ class f implements Runnable {
                 MessagesController.getGlobalMainSettings().edit().putInt("storydualhint", MessagesController.getGlobalMainSettings().getInt("storydualhint", 0) + 1).apply();
                 break;
             case 10:
-                HashSet hashSet = ei.k3.W0;
+                HashSet hashSet = ei.l3.W0;
                 break;
             case 11:
                 break;
@@ -85,7 +85,7 @@ public final /* synthetic */ class f implements Runnable {
                 int i12 = gi.h.F;
                 break;
             case 13:
-                hg.c2[] c2VarArr = hg.c2.g;
+                hg.b2[] b2VarArr = hg.b2.g;
                 break;
             case 14:
                 SharedConfig.drawActionBarShadow = !SharedConfig.drawActionBarShadow;
@@ -96,32 +96,32 @@ public final /* synthetic */ class f implements Runnable {
                 SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
                 String str = "Blue";
                 String string = sharedPreferences.getString("lastDayTheme", "Blue");
-                if (org.telegram.ui.ActionBar.h6.N0(string) == null || org.telegram.ui.ActionBar.h6.N0(string).q()) {
+                if (org.telegram.ui.ActionBar.i6.N0(string) == null || org.telegram.ui.ActionBar.i6.N0(string).q()) {
                     string = "Blue";
                 }
                 String str2 = "Dark Blue";
                 String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-                if (org.telegram.ui.ActionBar.h6.N0(string2) == null || !org.telegram.ui.ActionBar.h6.N0(string2).q()) {
+                if (org.telegram.ui.ActionBar.i6.N0(string2) == null || !org.telegram.ui.ActionBar.i6.N0(string2).q()) {
                     string2 = "Dark Blue";
                 }
-                org.telegram.ui.ActionBar.g6 g6Var = org.telegram.ui.ActionBar.h6.I;
+                org.telegram.ui.ActionBar.h6 h6Var = org.telegram.ui.ActionBar.i6.I;
                 if (string.equals(string2)) {
-                    if (g6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
+                    if (h6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
                         str2 = string2;
-                        AndroidUtilities.runOnUIThread(new i2.h0(org.telegram.ui.ActionBar.h6.I.q() ? org.telegram.ui.ActionBar.h6.N0(str2) : org.telegram.ui.ActionBar.h6.N0(str), 12), 200L);
+                        AndroidUtilities.runOnUIThread(new i2.h0(org.telegram.ui.ActionBar.i6.I.q() ? org.telegram.ui.ActionBar.i6.N0(str2) : org.telegram.ui.ActionBar.i6.N0(str), 12), 200L);
                         break;
                     }
                 } else {
                     str2 = string2;
                 }
                 str = string;
-                AndroidUtilities.runOnUIThread(new i2.h0(org.telegram.ui.ActionBar.h6.I.q() ? org.telegram.ui.ActionBar.h6.N0(str2) : org.telegram.ui.ActionBar.h6.N0(str), 12), 200L);
+                AndroidUtilities.runOnUIThread(new i2.h0(org.telegram.ui.ActionBar.i6.I.q() ? org.telegram.ui.ActionBar.i6.N0(str2) : org.telegram.ui.ActionBar.i6.N0(str), 12), 200L);
                 break;
             case 16:
-                org.telegram.ui.ActionBar.h6.E(false);
+                org.telegram.ui.ActionBar.i6.E(false);
                 break;
             case 17:
-                int i13 = wn.Gc;
+                int i13 = yn.Bc;
                 break;
             case 18:
                 break;
@@ -138,11 +138,11 @@ public final /* synthetic */ class f implements Runnable {
                 Pattern pattern = org.telegram.ui.Components.e5.a;
                 break;
             case 22:
-                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    org.telegram.ui.ActionBar.k2 k2Var = new org.telegram.ui.ActionBar.k2();
-                    k2Var.a = true;
-                    U.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), k2Var);
+                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                    l2Var.a = true;
+                    U.showAsSheet(new PremiumPreviewFragment(0, "schedule_repeat"), l2Var);
                     break;
                 }
                 break;
@@ -163,9 +163,9 @@ public final /* synthetic */ class f implements Runnable {
                         }
                         break;
                     }
-                } catch (Exception e) {
+                } catch (Exception e7) {
                     if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                        FileLog.e(e);
+                        FileLog.e(e7);
                         return;
                     }
                     return;

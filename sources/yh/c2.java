@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c2 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class c2 implements RequestDelegate {
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                x3.a0(x3Var, tLObject, tL_error);
+                                x3.Z(x3Var, tLObject, tL_error);
                                 break;
                             default:
                                 x3.z0(x3Var, tLObject, tL_error);
@@ -44,7 +44,7 @@ public final /* synthetic */ class c2 implements RequestDelegate {
                     public final void run() {
                         switch (i11) {
                             case 0:
-                                x3.a0(x3Var2, tLObject, tL_error);
+                                x3.Z(x3Var2, tLObject, tL_error);
                                 break;
                             default:
                                 x3.z0(x3Var2, tLObject, tL_error);

@@ -1,26 +1,44 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class m60 extends rg.j0 {
-    public final /* synthetic */ n60 W0;
+public final class m60 extends s4.o {
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ n60 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m60(n60 n60Var, n60 n60Var2, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(i10, i11, activity, n60Var2, d6Var);
-        this.W0 = n60Var;
+    public m60(n60 n60Var, ArrayList arrayList) {
+        this.c = n60Var;
+        this.b = arrayList;
     }
 
-    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
-    public final void dismiss() {
-        super.dismiss();
-        this.W0.B0 = false;
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
+        return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.e3
-    public final void onOpenAnimationEnd() {
-        this.W0.B0 = false;
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        ArrayList arrayList = this.b;
+        if (i10 >= arrayList.size()) {
+            return false;
+        }
+        n60 n60Var = this.c;
+        if (i11 < n60Var.e.size()) {
+            return ((ChatObject.VideoParticipant) arrayList.get(i10)).equals(n60Var.e.get(i11));
+        }
+        return false;
+    }
+
+    @Override // s4.o
+    public final int d() {
+        return this.c.e.size();
+    }
+
+    @Override // s4.o
+    public final int e() {
+        return this.b.size();
     }
 }

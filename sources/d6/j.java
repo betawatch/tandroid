@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import m4.o0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j extends b8.b {
     public final /* synthetic */ int b = 2;
@@ -86,8 +86,8 @@ public final class j extends b8.b {
                                 O0.writeInt(i13);
                                 O0.writeInt(0);
                                 oVar.S0(O0, 6);
-                            } catch (RemoteException e) {
-                                c.m.a(e, "Unable to call %s on %s.", "disconnectFromDevice", q.class.getSimpleName());
+                            } catch (RemoteException e7) {
+                                c.m.a(e7, "Unable to call %s on %s.", "disconnectFromDevice", q.class.getSimpleName());
                             }
                             cVar.d(0);
                         }
@@ -181,10 +181,10 @@ public final class j extends b8.b {
                     com.google.android.gms.internal.cast.v.b(parcel);
                     e0 e0Var = cVar4.i;
                     if (e0Var != null && e0Var.F == 2) {
-                        com.google.android.gms.common.api.internal.v e7 = com.google.android.gms.common.api.internal.w.e();
-                        e7.c = new c6.b0(e0Var, readString2, readString3, objArr == true ? 1 : 0);
-                        e7.a = 8407;
-                        e0Var.e(1, e7.a()).addOnCompleteListener(new a4.m(this, 12));
+                        com.google.android.gms.common.api.internal.v e10 = com.google.android.gms.common.api.internal.w.e();
+                        e10.c = new c6.b0(e0Var, readString2, readString3, objArr == true ? 1 : 0);
+                        e10.a = 8407;
+                        e0Var.e(1, e10.a()).addOnCompleteListener(new a4.m(this, 11));
                     }
                     parcel2.writeNoException();
                     break;
@@ -194,10 +194,10 @@ public final class j extends b8.b {
                     com.google.android.gms.internal.cast.v.b(parcel);
                     e0 e0Var2 = cVar4.i;
                     if (e0Var2 != null && e0Var2.F == 2) {
-                        com.google.android.gms.common.api.internal.v e10 = com.google.android.gms.common.api.internal.w.e();
-                        e10.c = new aa.a((Object) e0Var2, readString4, (Object) iVar2, 7);
-                        e10.a = 8406;
-                        e0Var2.e(1, e10.a()).addOnCompleteListener(new a6.i(this, 15));
+                        com.google.android.gms.common.api.internal.v e11 = com.google.android.gms.common.api.internal.w.e();
+                        e11.c = new aa.a((Object) e0Var2, readString4, (Object) iVar2, 7);
+                        e11.a = 8406;
+                        e0Var2.e(1, e11.a()).addOnCompleteListener(new a6.i(this, 16));
                     }
                     parcel2.writeNoException();
                     break;
@@ -206,10 +206,10 @@ public final class j extends b8.b {
                     com.google.android.gms.internal.cast.v.b(parcel);
                     e0 e0Var3 = cVar4.i;
                     if (e0Var3 != null && e0Var3.F == 2) {
-                        com.google.android.gms.common.api.internal.v e11 = com.google.android.gms.common.api.internal.w.e();
-                        e11.c = new of.b(e0Var3, readString5, z10, 9);
-                        e11.a = 8409;
-                        e0Var3.e(1, e11.a());
+                        com.google.android.gms.common.api.internal.v e12 = com.google.android.gms.common.api.internal.w.e();
+                        e12.c = new of.b(e0Var3, readString5, z10, 9);
+                        e12.a = 8409;
+                        e0Var3.e(1, e12.a());
                     }
                     parcel2.writeNoException();
                     break;

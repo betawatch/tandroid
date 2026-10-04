@@ -25,12 +25,12 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class o6 extends Drawable {
     public boolean A;
     public boolean B;
-    public pg C;
+    public qg C;
     public boolean D;
     public boolean E;
     public boolean F;
@@ -124,7 +124,7 @@ public class o6 extends Drawable {
         TextPaint textPaint = this.a;
         textPaint.setAlpha((int) (this.w * f7));
         if (this.O) {
-            textPaint.setShadowLayer(this.P, 0.0f, this.Q, org.telegram.ui.ActionBar.h6.l1(f7, this.R));
+            textPaint.setShadowLayer(this.P, 0.0f, this.Q, org.telegram.ui.ActionBar.i6.l1(f7, this.R));
         }
     }
 
@@ -411,13 +411,13 @@ public class o6 extends Drawable {
 
     public final void i(m6 m6Var, CharSequence charSequence, int i10, int i11) {
         if (!this.B || charSequence.length() <= 1) {
-            m6Var.b(charSequence);
+            m6Var.a(charSequence);
             return;
         }
         int i12 = 0;
         while (i12 < charSequence.length()) {
             int i13 = i12 + 1;
-            m6Var.b(charSequence.subSequence(i12, i13));
+            m6Var.a(charSequence.subSequence(i12, i13));
             i12 = i13;
         }
     }
@@ -541,7 +541,7 @@ public class o6 extends Drawable {
         this.i = 0.0f;
         this.h = 0.0f;
         this.c = AndroidUtilities.isRTL(this.g);
-        org.telegram.ui.da daVar = new org.telegram.ui.da(this, i16, arrayList2, arrayList, 1);
+        org.telegram.ui.fa faVar = new org.telegram.ui.fa(this, i16, arrayList2, arrayList, 1);
         m6 m6Var = new m6(this) { // from class: org.telegram.ui.Components.j6
             public final /* synthetic */ o6 b;
 
@@ -550,7 +550,7 @@ public class o6 extends Drawable {
             }
 
             @Override // org.telegram.ui.Components.m6
-            public final void b(CharSequence charSequence3) {
+            public final void a(CharSequence charSequence3) {
                 switch (i12) {
                     case 0:
                         o6 o6Var2 = this.b;
@@ -577,7 +577,7 @@ public class o6 extends Drawable {
             }
 
             @Override // org.telegram.ui.Components.m6
-            public final void b(CharSequence charSequence3) {
+            public final void a(CharSequence charSequence3) {
                 switch (i14) {
                     case 0:
                         o6 o6Var2 = this.b;
@@ -638,9 +638,9 @@ public class o6 extends Drawable {
                     if ((size % 2 == 0 ? 1 : 0) == i17) {
                         i11 = size;
                         if (n6Var2.length() > n6Var.length()) {
-                            daVar.b(n6Var2.subSequence(length3, length3 + intValue));
+                            faVar.a(n6Var2.subSequence(length3, length3 + intValue));
                         } else {
-                            daVar.b(n6Var.subSequence(length4, length4 + intValue));
+                            faVar.a(n6Var.subSequence(length4, length4 + intValue));
                         }
                     } else {
                         i11 = size;
@@ -662,7 +662,7 @@ public class o6 extends Drawable {
                     if (z13 != z14 || i24 == min) {
                         if (i24 - i25 > 0) {
                             if (z13) {
-                                i(daVar, n6Var2.subSequence(i25, i24), i25, i24);
+                                i(faVar, n6Var2.subSequence(i25, i24), i25, i24);
                             } else {
                                 i(m6Var, n6Var2.subSequence(i25, i24), i25, i24);
                                 i(m6Var2, n6Var.subSequence(i25, i24), i25, i24);
@@ -700,7 +700,7 @@ public class o6 extends Drawable {
                     int i31 = i27 - i29;
                     if (i30 > 0 || i31 > 0) {
                         if (i30 == i31 && z17) {
-                            daVar.b(n6Var2.subSequence(i28, i26));
+                            faVar.a(n6Var2.subSequence(i28, i26));
                         } else {
                             if (i30 > 0) {
                                 i(m6Var, n6Var2.subSequence(i28, i26), i28, i26);
@@ -762,7 +762,7 @@ public class o6 extends Drawable {
             runnable2.run();
         }
         this.o.addUpdateListener(new k6(this, 0));
-        this.o.addListener(new org.telegram.ui.t4(this, 28));
+        this.o.addListener(new org.telegram.ui.u4(this, 28));
         this.o.setStartDelay(0L);
         this.o.setDuration(this.r);
         this.o.setInterpolator(this.s);
@@ -787,9 +787,9 @@ public class o6 extends Drawable {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.S = ofFloat;
         ofFloat.addUpdateListener(new ci.c5(this, this.a.getColor(), i10, 2));
-        this.S.addListener(new ei.v2(this, i10, 4));
+        this.S.addListener(new ei.w2(this, i10, 4));
         this.S.setDuration(240L);
-        this.S.setInterpolator(sr.h);
+        this.S.setInterpolator(tr.h);
         this.S.start();
     }
 
@@ -870,7 +870,7 @@ public class o6 extends Drawable {
         this.m = 0.0f;
         this.n = true;
         this.r = 320L;
-        this.s = sr.h;
+        this.s = tr.h;
         this.t = -1.0f;
         this.u = 0.3f;
         this.v = 0.0f;

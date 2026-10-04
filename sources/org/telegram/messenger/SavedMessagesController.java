@@ -16,9 +16,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class SavedMessagesController {
     private final int currentAccount;
@@ -38,7 +38,7 @@ public class SavedMessagesController {
     private final Runnable saveCacheRunnable = new yh(this, 1);
     private final a0.i checkMessagesCallbacks = new a0.i();
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class SavedDialog {
         public long dialogId;
         private int lastDate;
@@ -180,8 +180,8 @@ public class SavedMessagesController {
             executeFast.bindLong(1, 0L);
             executeFast.step();
             executeFast.dispose();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
         AndroidUtilities.runOnUIThread(new yh(this, 2));
     }
@@ -301,8 +301,8 @@ public class SavedMessagesController {
                     if (j10 < 0) {
                         try {
                             arrayList3.add(Long.valueOf(-j10));
-                        } catch (Exception e) {
-                            e = e;
+                        } catch (Exception e7) {
+                            e = e7;
                             savedMessagesController = this;
                             sQLiteCursor = sQLiteCursor3;
                             sQLiteCursor3 = queryFinalized;
@@ -346,8 +346,8 @@ public class SavedMessagesController {
                                 savedMessagesController = this;
                                 try {
                                     savedDialog.message = new MessageObject(savedMessagesController.currentAccount, TLdeserialize, null, null, null, null, null, false, false, 0L, false, false, true);
-                                } catch (Exception e7) {
-                                    e = e7;
+                                } catch (Exception e10) {
+                                    e = e10;
                                     sQLiteCursor = sQLiteCursor3;
                                     sQLiteCursor3 = sQLiteCursor2;
                                     FileLog.e(e);
@@ -372,20 +372,20 @@ public class SavedMessagesController {
                             arrayList.add(savedDialog);
                             queryFinalized = sQLiteCursor2;
                             i10 = 0;
-                        } catch (Exception e10) {
-                            e = e10;
+                        } catch (Exception e11) {
+                            e = e11;
                             savedMessagesController = this;
                         } catch (Throwable th5) {
                             th = th5;
                         }
-                    } catch (Exception e11) {
-                        e = e11;
+                    } catch (Exception e12) {
+                        e = e12;
                         savedMessagesController = this;
                     } catch (Throwable th6) {
                         th = th6;
                     }
-                } catch (Exception e12) {
-                    e = e12;
+                } catch (Exception e13) {
+                    e = e13;
                     savedMessagesController = this;
                     sQLiteCursor = sQLiteCursor3;
                     sQLiteCursor2 = queryFinalized;
@@ -409,8 +409,8 @@ public class SavedMessagesController {
                     messagesStorage.getAnimatedEmoji(TextUtils.join(",", arrayList4), arrayList7);
                 }
                 sQLiteCursor2.dispose();
-            } catch (Exception e13) {
-                e = e13;
+            } catch (Exception e14) {
+                e = e14;
                 sQLiteCursor3 = sQLiteCursor2;
                 FileLog.e(e);
                 if (sQLiteCursor3 != null) {
@@ -424,8 +424,8 @@ public class SavedMessagesController {
                 }
                 throw th;
             }
-        } catch (Exception e14) {
-            e = e14;
+        } catch (Exception e15) {
+            e = e15;
             savedMessagesController = this;
             sQLiteCursor = null;
         } catch (Throwable th9) {
@@ -599,8 +599,8 @@ public class SavedMessagesController {
                     sQLitePreparedStatement.step();
                 }
                 sQLitePreparedStatement.dispose();
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
             sQLitePreparedStatement.dispose();
             AndroidUtilities.runOnUIThread(new yh(this, 3));
@@ -691,8 +691,8 @@ public class SavedMessagesController {
                             queryFinalized.dispose();
                             i10 = i11 + 1;
                             sQLiteCursor2 = queryFinalized;
-                        } catch (Exception e) {
-                            e = e;
+                        } catch (Exception e7) {
+                            e = e7;
                             sQLiteCursor2 = queryFinalized;
                             try {
                                 FileLog.e(e);
@@ -714,8 +714,8 @@ public class SavedMessagesController {
                             }
                             throw th;
                         }
-                    } catch (Exception e7) {
-                        e = e7;
+                    } catch (Exception e10) {
+                        e = e10;
                         sQLiteCursor2 = sQLiteCursor;
                         FileLog.e(e);
                         if (sQLiteCursor2 != null) {
@@ -728,8 +728,8 @@ public class SavedMessagesController {
                         }
                         throw th;
                     }
-                } catch (Exception e10) {
-                    e = e10;
+                } catch (Exception e11) {
+                    e = e11;
                     sQLiteCursor = sQLiteCursor2;
                     sQLiteCursor2 = sQLiteCursor;
                     FileLog.e(e);
@@ -744,8 +744,8 @@ public class SavedMessagesController {
                     }
                     throw th;
                 }
-            } catch (Exception e11) {
-                e = e11;
+            } catch (Exception e12) {
+                e = e12;
             } catch (Throwable th6) {
                 th = th6;
             }
@@ -787,24 +787,24 @@ public class SavedMessagesController {
     }
 
     public static void openSavedMessages() {
-        org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
+        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
         if (R == null) {
             return;
         }
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", UserConfig.getInstance(R.getCurrentAccount()).getClientUserId());
-        R.presentFragment(new wn(bundle));
+        R.presentFragment(new yn(bundle));
     }
 
     public static void openSavedMessagesReminders() {
-        org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
+        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
         if (R == null) {
             return;
         }
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", UserConfig.getInstance(R.getCurrentAccount()).getClientUserId());
         bundle.putInt("chatMode", 1);
-        R.presentFragment(new wn(bundle));
+        R.presentFragment(new yn(bundle));
     }
 
     private boolean processUpdateInternal(TLRPC.Update update) {
@@ -1103,7 +1103,7 @@ public class SavedMessagesController {
         }
         this.dialogsLoading = true;
         TLRPC.TL_messages_getSavedDialogs tL_messages_getSavedDialogs = new TLRPC.TL_messages_getSavedDialogs();
-        SavedDialog savedDialog = this.loadedDialogs.isEmpty() ? null : (SavedDialog) hg.c.g(1, this.loadedDialogs);
+        SavedDialog savedDialog = this.loadedDialogs.isEmpty() ? null : (SavedDialog) hg.k0.g(1, this.loadedDialogs);
         if (savedDialog != null) {
             tL_messages_getSavedDialogs.offset_id = savedDialog.top_message_id;
             tL_messages_getSavedDialogs.offset_date = savedDialog.getDate();

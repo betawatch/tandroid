@@ -1,19 +1,39 @@
 package org.telegram.ui;
 
-import android.widget.EditText;
+import android.graphics.Point;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class zc1 extends org.telegram.ui.ActionBar.e5 {
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void m() {
+public final class zc1 extends w7.w5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+
+    public /* synthetic */ zc1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        this.a = i10;
+        this.b = notificationCenterDelegate;
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void n() {
+    @Override // w7.w5
+    public void a() {
+        switch (this.a) {
+            case 1:
+                ((mi1) this.b).v.invalidate();
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void q(EditText editText) {
+    @Override // w7.w5
+    public void b(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                Point point = AndroidUtilities.displaySize;
+                if ((point.x <= point.y) == (i10 <= i11)) {
+                    ((rd1) this.b).x0.invalidate();
+                    break;
+                }
+                break;
+        }
     }
 }

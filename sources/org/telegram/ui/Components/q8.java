@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.os.Build;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q8 implements org.telegram.ui.ActionBar.z1, nq {
+public final /* synthetic */ class q8 implements org.telegram.ui.ActionBar.a2, oq {
     public final /* synthetic */ int a;
     public final /* synthetic */ e9 b;
 
@@ -14,25 +14,8 @@ public final /* synthetic */ class q8 implements org.telegram.ui.ActionBar.z1, n
         this.b = e9Var;
     }
 
-    @Override // org.telegram.ui.Components.nq
-    public /* synthetic */ int K0(int i10) {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.finishFragment();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.nq
-    public void x0(int i10, int i11, boolean z10) {
+    @Override // org.telegram.ui.Components.oq
+    public void C0(int i10, int i11, boolean z10) {
         e9 e9Var = this.b;
         if (i11 == 0) {
             a9 a9Var = e9Var.Y;
@@ -81,11 +64,28 @@ public final /* synthetic */ class q8 implements org.telegram.ui.ActionBar.z1, n
         e9Var.a.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.nq
-    public /* synthetic */ void l(boolean z10) {
+    @Override // org.telegram.ui.Components.oq
+    public /* synthetic */ int K0(int i10) {
+        return 0;
     }
 
-    @Override // org.telegram.ui.Components.nq
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.finishFragment();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.oq
+    public /* synthetic */ void d(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.oq
     public /* synthetic */ void y() {
     }
 }

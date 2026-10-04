@@ -1,43 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class vy0 extends yl0 {
-    public boolean X2;
-    public boolean Y2;
-    public final /* synthetic */ zy0 Z2;
+public final class vy0 implements TextWatcher {
+    public final /* synthetic */ NumberTextView a;
+    public final /* synthetic */ uy0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vy0(zy0 zy0Var, Context context) {
-        super(context, null);
-        this.Z2 = zy0Var;
+    public vy0(NumberTextView numberTextView, uy0 uy0Var) {
+        this.a = numberTextView;
+        this.b = uy0Var;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void k0(int i10, int i11) {
-        boolean canScrollHorizontally = canScrollHorizontally(-1);
-        boolean canScrollHorizontally2 = canScrollHorizontally(1);
-        if (this.X2 == canScrollHorizontally && this.Y2 == canScrollHorizontally2) {
-            return;
-        }
-        ai.f0 f0Var = this.Z2.d;
-        if (f0Var != null) {
-            f0Var.invalidate();
-        }
-        this.X2 = canScrollHorizontally;
-        this.Y2 = canScrollHorizontally2;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        this.a.a(50 - Character.codePointCount(editable, 0, editable.length()), true);
+        this.b.setErrorText(null);
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.lt previewDelegate;
-        org.telegram.ui.nt q6 = org.telegram.ui.nt.q();
-        zy0 zy0Var = this.Z2;
-        vy0 vy0Var = zy0Var.e;
-        previewDelegate = zy0Var.getPreviewDelegate();
-        return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, vy0Var, previewDelegate, this.p2);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

@@ -3,12 +3,13 @@ package r7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.Process;
+import hg.k0;
 import java.util.Arrays;
 import java.util.List;
-import w7.b7;
-import w7.f0;
+import w7.c7;
+import w7.g0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j extends o6.a {
     public static final Parcelable.Creator<j> CREATOR = new m(3);
@@ -56,7 +57,7 @@ public final class j extends o6.a {
             int length2 = array2.length;
             for (int i13 = 0; i13 < length2; i13++) {
                 if (array2[i13] == null) {
-                    throw new NullPointerException(hg.c.h(i13, "at index "));
+                    throw new NullPointerException(k0.h(i13, "at index "));
                 }
             }
             if (length2 == 0) {
@@ -76,7 +77,7 @@ public final class j extends o6.a {
             return false;
         }
         j jVar = (j) obj;
-        return this.a == jVar.a && this.b == jVar.b && this.e == jVar.e && this.c.equals(jVar.c) && b7.a(this.d, jVar.d) && b7.a(this.f, jVar.f) && b7.a(this.h, jVar.h) && this.n.equals(jVar.n);
+        return this.a == jVar.a && this.b == jVar.b && this.e == jVar.e && this.c.equals(jVar.c) && c7.a(this.d, jVar.d) && c7.a(this.f, jVar.f) && c7.a(this.h, jVar.h) && this.n.equals(jVar.n);
     }
 
     public final int hashCode() {
@@ -113,18 +114,18 @@ public final class j extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.s(parcel, 1, 4);
+        int q6 = g0.q(parcel, 20293);
+        g0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        f0.s(parcel, 2, 4);
+        g0.s(parcel, 2, 4);
         parcel.writeInt(this.b);
-        f0.l(parcel, 3, this.c);
-        f0.l(parcel, 4, this.d);
-        f0.s(parcel, 5, 4);
+        g0.l(parcel, 3, this.c);
+        g0.l(parcel, 4, this.d);
+        g0.s(parcel, 5, 4);
         parcel.writeInt(this.e);
-        f0.l(parcel, 6, this.f);
-        f0.k(parcel, 7, this.h, i10);
-        f0.p(parcel, 8, this.n);
-        f0.r(parcel, q6);
+        g0.l(parcel, 6, this.f);
+        g0.k(parcel, 7, this.h, i10);
+        g0.p(parcel, 8, this.n);
+        g0.r(parcel, q6);
     }
 }

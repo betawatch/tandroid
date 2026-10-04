@@ -2,6 +2,7 @@ package qh;
 
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
+import hg.k0;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
@@ -10,9 +11,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import w7.d0;
+import w7.e0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class i {
     public static int a(MessageObject messageObject) {
@@ -59,12 +60,12 @@ public abstract class i {
         if (tL_messageMediaPoll == null) {
             return null;
         }
-        if (!d0.a(i10, 4)) {
-            if (d0.a(i10, 1)) {
+        if (!e0.a(i10, 4)) {
+            if (e0.a(i10, 1)) {
                 TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
                 return AndroidUtilities.replaceTags(LocaleController.formatString(R.string.PollV2ToastOnlySubscribersCanVote, DialogObject.getShortName(MessagesController.getInstance(i11).getChat(Long.valueOf(-(messageFwdHeader != null ? DialogObject.getPeerDialogId(messageFwdHeader.from_id) : messageObject.getDialogId()))))));
             }
-            if (d0.a(i10, 2)) {
+            if (e0.a(i10, 2)) {
                 return AndroidUtilities.replaceTags(LocaleController.getString(R.string.PollV2ToastOnlySubscribersJoined24hCanVote));
             }
             return null;
@@ -94,6 +95,6 @@ public abstract class i {
             }
             stringBuffer.append((String) arrayList.get(i13));
         }
-        return AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.PollV2ToastOnlySubscribersFromCountriesCanVoteOther : R.string.PollV2ToastOnlyUsersFromCountriesCanVoteOther, stringBuffer, hg.c.g(1, arrayList)));
+        return AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.PollV2ToastOnlySubscribersFromCountriesCanVoteOther : R.string.PollV2ToastOnlyUsersFromCountriesCanVoteOther, stringBuffer, k0.g(1, arrayList)));
     }
 }

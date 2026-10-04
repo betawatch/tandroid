@@ -15,23 +15,23 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.ad;
 import org.telegram.ui.Components.bd;
 import org.telegram.ui.Components.e0;
 import org.telegram.ui.Components.y;
-import org.telegram.ui.n81;
+import org.telegram.ui.g91;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
-import org.telegram.ui.web.b1;
-import org.telegram.ui.web.g0;
-import w7.y5;
+import org.telegram.ui.web.c1;
+import org.telegram.ui.web.h0;
+import w7.z5;
 import xh.h4;
 import yh.a0;
 import yh.w0;
 import yh.x3;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -55,30 +55,30 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 ((ConnectionsManager) this.b).lambda$sendRequestTypedAndProcessUpdates$5((Executor) this.c, (Utilities.Callback2) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                e0.W((e0) this.b, (nf.e) this.c, (TL_aicompose.TL_aiComposeTone) this.d);
+                e0.U((e0) this.b, (nf.e) this.c, (TL_aicompose.TL_aiComposeTone) this.d);
                 break;
             case 2:
-                org.telegram.ui.Components.q.S((org.telegram.ui.Components.q) this.b, (d6) this.c, (TL_aicompose.AiComposeTone) this.d, (TLRPC.TL_error) obj2);
+                org.telegram.ui.Components.q.Q((org.telegram.ui.Components.q) this.b, (d6) this.c, (TL_aicompose.AiComposeTone) this.d, (TLRPC.TL_error) obj2);
                 break;
             case 3:
-                y.P((y) this.b, (nf.e) this.c, (a2) this.d);
+                y.N((y) this.b, (nf.e) this.c, (b2) this.d);
                 break;
             case 4:
-                b1 b1Var = (b1) this.b;
+                c1 c1Var = (c1) this.b;
                 da daVar = (da) this.c;
                 BotWebViewContainer$BotWebViewProxy botWebViewContainer$BotWebViewProxy = (BotWebViewContainer$BotWebViewProxy) this.d;
                 String str = (String) obj;
                 ArrayList arrayList = (ArrayList) obj2;
                 if (!TextUtils.isEmpty(str)) {
-                    b1Var.y(daVar, "prepared_message_failed", b1.B(str, "error"));
+                    c1Var.y(daVar, "prepared_message_failed", c1.B(str, "error"));
                     break;
                 } else {
-                    b1Var.y(daVar, "prepared_message_sent", null);
-                    g0 g0Var = b1Var.c;
-                    if (g0Var != null) {
-                        g0Var.c();
+                    c1Var.y(daVar, "prepared_message_sent", null);
+                    h0 h0Var = c1Var.c;
+                    if (h0Var != null) {
+                        h0Var.c();
                     }
-                    AndroidUtilities.runOnUIThread(new n81(28, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
+                    AndroidUtilities.runOnUIThread(new g91(25, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
                     break;
                 }
             case 5:
@@ -117,7 +117,7 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 e4Var2.h = AndroidUtilities.dp(300.0f);
                 e4Var2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                 e4Var2.m(0.0f, x10 - AndroidUtilities.dp(4.0f));
-                frameLayout.addView(e4Var2, y5.e(-1, 100, 55));
+                frameLayout.addView(e4Var2, z5.e(-1, 100, 55));
                 e4Var2.u();
                 break;
             case 6:
@@ -135,7 +135,7 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 }
                 break;
             case 7:
-                a0.R((a0) this.b, (nf.e) this.c, (a2) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                a0.P((a0) this.b, (nf.e) this.c, (b2) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
                 x3 x3Var = (x3) this.b;
@@ -173,7 +173,7 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 e4Var4.h = AndroidUtilities.dp(300.0f);
                 e4Var4.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
                 e4Var4.m(0.0f, x11 - AndroidUtilities.dp(4.0f));
-                frameLayout2.addView(e4Var4, y5.e(-1, 100, 55));
+                frameLayout2.addView(e4Var4, z5.e(-1, 100, 55));
                 e4Var4.u();
                 break;
         }

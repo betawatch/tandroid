@@ -9,9 +9,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.db1;
+import org.telegram.ui.gb1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class k5 implements l5 {
     public final int a;
@@ -300,7 +300,7 @@ public final class k5 implements l5 {
                     arrayList = this.l;
                     arrayList.removeAll(h);
                     if (this.e && !this.c) {
-                        Collections.sort(arrayList, new db1(21));
+                        Collections.sort(arrayList, new gb1(20));
                     }
                     arrayList.addAll(0, h);
                     NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(this.b), this);
@@ -315,7 +315,7 @@ public final class k5 implements l5 {
                         return true;
                     }
                     while (h.size() > 0 && h.size() + 1 > MessagesController.getInstance(i10).stargiftsPinnedToTopLimit) {
-                        ((TL_stars.SavedStarGift) hg.c.x(1, h)).pinned_to_top = false;
+                        ((TL_stars.SavedStarGift) hg.k0.w(1, h)).pinned_to_top = false;
                     }
                     z12 = true;
                 }
@@ -324,7 +324,7 @@ public final class k5 implements l5 {
                 arrayList = this.l;
                 arrayList.removeAll(h);
                 if (this.e) {
-                    Collections.sort(arrayList, new db1(21));
+                    Collections.sort(arrayList, new gb1(20));
                 }
                 arrayList.addAll(0, h);
                 NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(this.b), this);

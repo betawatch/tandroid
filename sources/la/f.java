@@ -1,5 +1,6 @@
 package la;
 
+import hg.k0;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
@@ -10,12 +11,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f implements ia.e {
     public static final Charset f = Charset.forName("UTF-8");
-    public static final ia.c g = new ia.c("key", hg.c.m(hg.c.l(e.class, new a(1))));
-    public static final ia.c h = new ia.c("value", hg.c.m(hg.c.l(e.class, new a(2))));
+    public static final ia.c g = new ia.c("key", k0.m(k0.l(e.class, new a(1))));
+    public static final ia.c h = new ia.c("value", k0.m(k0.l(e.class, new a(2))));
     public static final ka.a i = new ka.a(1);
     public OutputStream a;
     public final HashMap b;

@@ -7,9 +7,9 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public abstract class j0 {
     public static final float[][] a;
@@ -168,12 +168,12 @@ public abstract class j0 {
             }
             float f51 = f26;
             if (i12 == 18 || i12 == 19 || i12 == 6 || i12 == 7) {
-                f13 = sr.i.getInterpolation(f13);
+                f13 = tr.i.getInterpolation(f13);
             }
             float[] fArr3 = fArr;
             float b10 = com.google.android.gms.internal.vision.e2.b(1.0f, f15, AndroidUtilities.dp(12.0f), f47);
             if (f13 < 1.0f) {
-                f46 = AndroidUtilities.lerp(f18, f46, sr.i.getInterpolation(f13));
+                f46 = AndroidUtilities.lerp(f18, f46, tr.i.getInterpolation(f13));
                 b10 = AndroidUtilities.lerp(f19, b10, f13);
                 dpf27 = AndroidUtilities.lerp(AndroidUtilities.dpf2(8.0f), dpf27, f13);
             }
@@ -184,7 +184,7 @@ public abstract class j0 {
                 f45 = 1.0f;
                 f14 = 1.0f;
             }
-            float clamp013 = (f45 - Utilities.clamp01(v7.a7.a(f21, f23, f46, b10) / (max2 * 2.0f))) * f11 * 0.5f * f14;
+            float clamp013 = (f45 - Utilities.clamp01(v7.z6.a(f21, f23, f46, b10) / (max2 * 2.0f))) * f11 * 0.5f * f14;
             if (f13 < 1.0f) {
                 clamp013 = AndroidUtilities.lerp(0.0f, clamp013, f13);
             }

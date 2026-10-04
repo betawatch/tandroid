@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class q5 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -24,12 +24,12 @@ public final class q5 extends FrameLayout {
             case 0:
                 RectF rectF = this.b;
                 rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.h6.i2);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.i6.i2);
                 break;
             default:
                 RectF rectF2 = this.b;
                 rectF2.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                canvas.drawRoundRect(rectF2, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.h6.i2);
+                canvas.drawRoundRect(rectF2, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.i6.i2);
                 break;
         }
     }

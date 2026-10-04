@@ -5,7 +5,7 @@ import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i extends h {
     @Override // i0.h
@@ -14,8 +14,8 @@ public final class i extends h {
             Object newInstance = Array.newInstance((Class<?>) this.f, 1);
             Array.set(newInstance, 0, obj);
             return (Typeface) this.l.invoke(null, newInstance, "sans-serif", -1, -1);
-        } catch (IllegalAccessException | InvocationTargetException e) {
-            throw new RuntimeException(e);
+        } catch (IllegalAccessException | InvocationTargetException e7) {
+            throw new RuntimeException(e7);
         }
     }
 

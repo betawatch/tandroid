@@ -1,39 +1,59 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.video.VideoPlayerHolderBase;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public abstract class p70 {
-    public String F;
-    public int G;
-    public org.telegram.ui.ActionBar.m1 H;
-    public org.telegram.ui.ActionBar.e3 I;
-    public org.telegram.ui.Components.q90 b;
-    public b3 d;
-    public int e;
-    public View f;
-    public boolean h;
-    public TLRPC.Chat n;
-    public boolean r;
-    public View s;
-    public org.telegram.ui.Components.t90 v;
-    public VideoPlayerHolderBase w;
-    public x2 x;
-    public int a = 0;
-    public final org.telegram.ui.Components.m90 c = new org.telegram.ui.Components.m90();
-    public final a0.i y = new a0.i();
-    public ArrayList E = new ArrayList();
+public final class p70 extends LinearLayout {
+    public final org.telegram.ui.Components.eu a;
+    public boolean b;
+    public int c;
+    public cu d;
+    public String e;
+    public final o70 f;
+    public final /* synthetic */ s70 h;
 
-    public abstract int a();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p70(s70 s70Var, Context context) {
+        super(context);
+        this.h = s70Var;
+        this.f = new o70(this);
+        TextView f7 = org.telegram.messenger.f0.f(context, 1, 16.0f);
+        f7.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false));
+        f7.setText("t.me/addemoji/");
+        org.telegram.ui.Components.eu euVar = new org.telegram.ui.Components.eu(context, null);
+        this.a = euVar;
+        euVar.setLines(1);
+        euVar.setSingleLine(true);
+        euVar.setInputType(16384);
+        euVar.setTextSize(1, 16.0f);
+        euVar.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Ud, false));
+        euVar.setLinkTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.hc, false));
+        euVar.setHighlightColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.uf, false));
+        int i10 = org.telegram.ui.ActionBar.i6.Vd;
+        euVar.setHintColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
+        euVar.setHintTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
+        euVar.setCursorColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Wd, false));
+        euVar.setHandlesColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.vf, false));
+        euVar.setBackground(null);
+        euVar.setHint(LocaleController.getString(R.string.AddEmojiPackLinkHint));
+        addView(f7, w7.z5.t(-2, -2, 16, 20, 0, 0, 0));
+        addView(euVar, w7.z5.t(-1, -2, 16, -4, 0, 0, 0));
+        setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
+        setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f));
+        setWillNotDraw(false);
+    }
 
-    public abstract int b();
-
-    public abstract void c(g4 g4Var, org.telegram.ui.Components.z01 z01Var);
-
-    public abstract boolean d(TL_iv.PageBlock pageBlock, g4 g4Var);
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.b) {
+            canvas.drawLine(AndroidUtilities.dp(20.0f), getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+        }
+    }
 }

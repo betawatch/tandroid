@@ -4,9 +4,9 @@ import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import gd.i;
 import rd.p;
-import v7.h0;
+import v7.g0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements p {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class e implements p {
                 rd.a f7 = (rd.a) obj2;
                 kotlin.jvm.internal.i.e(f7, "f");
                 int i11 = d.d;
-                h0.a((CancellationSignal) obj, f7);
+                g0.a((CancellationSignal) obj, f7);
                 return iVar;
             case 1:
                 rd.a f10 = (rd.a) obj2;

@@ -9,29 +9,29 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public abstract class ra0 extends d71 {
+public abstract class ra0 extends n71 {
     public final int T;
     public final qa0 U;
-    public final v00 V;
-    public final kx0 W;
-    public final kx0 X;
+    public final w00 V;
+    public final tx0 W;
+    public final tx0 X;
     public float Y;
     public boolean Z;
 
-    public ra0(org.telegram.ui.ActionBar.m2 m2Var, long j3) {
-        super(m2Var.getParentActivity(), m2Var.getCurrentAccount(), m2Var.getResourceProvider());
+    public ra0(org.telegram.ui.ActionBar.n2 n2Var, long j3) {
+        super(n2Var.getParentActivity(), n2Var.getCurrentAccount(), n2Var.getResourceProvider());
         this.T = ViewConfiguration.get(getContext()).getScaledTouchSlop();
-        int i10 = org.telegram.ui.ActionBar.h6.a7;
+        int i10 = org.telegram.ui.ActionBar.i6.a7;
         setBackgroundColor(getThemedColor(i10));
         this.L = i10;
         this.K = i10;
-        H(0.0f);
+        F(0.0f);
         fixNavigationBar(getThemedColor(i10));
         this.G = false;
         this.H = false;
-        qa0 qa0Var = new qa0((wh.b) this, m2Var, this.container, j3);
+        qa0 qa0Var = new qa0((wh.b) this, n2Var, this.container, j3);
         this.U = qa0Var;
         qa0Var.B = false;
         setDimBehindAlpha(75);
@@ -40,7 +40,7 @@ public abstract class ra0 extends d71 {
         this.f = gVar;
         this.e = gVar;
         this.d.setAdapter(gVar);
-        this.d.p1();
+        this.d.s1();
         ai.w0 w0Var = this.d;
         qa0Var.p = w0Var;
         w0Var.setOnItemClickListener(new ai.g(qa0Var, 18));
@@ -51,21 +51,21 @@ public abstract class ra0 extends d71 {
             w0Var.setOnScrollListener(new ii.n3(8, qa0Var, onScrollListener));
         }
         int indexOfChild = ((ViewGroup) this.d.getParent()).indexOfChild(this.d);
-        v00 b10 = qa0Var.b();
+        w00 b10 = qa0Var.b();
         this.V = b10;
-        this.containerView.addView(b10, indexOfChild, w7.y5.c(-1.0f, -1));
-        kx0 a2 = qa0Var.a();
+        this.containerView.addView(b10, indexOfChild, w7.z5.c(-1.0f, -1));
+        tx0 a2 = qa0Var.a();
         this.W = a2;
-        this.containerView.addView(a2, indexOfChild, w7.y5.c(-1.0f, -1));
-        kx0 c10 = qa0Var.c();
+        this.containerView.addView(a2, indexOfChild, w7.z5.c(-1.0f, -1));
+        tx0 c10 = qa0Var.c();
         this.X = c10;
-        this.containerView.addView(c10, indexOfChild, w7.y5.c(-1.0f, -1));
+        this.containerView.addView(c10, indexOfChild, w7.z5.c(-1.0f, -1));
         qa0Var.e();
     }
 
-    @Override // org.telegram.ui.Components.d71
-    public final void E(MotionEvent motionEvent, ci.h2 h2Var) {
-        org.telegram.ui.ActionBar.m2 m2Var;
+    @Override // org.telegram.ui.Components.n71
+    public final void C(MotionEvent motionEvent, ci.h2 h2Var) {
+        org.telegram.ui.ActionBar.n2 n2Var;
         int action = motionEvent.getAction();
         qa0 qa0Var = this.U;
         if (action == 0) {
@@ -75,14 +75,14 @@ public abstract class ra0 extends d71 {
             Activity findActivity = AndroidUtilities.findActivity(getContext());
             if (findActivity instanceof LaunchActivity) {
                 LaunchActivity launchActivity = (LaunchActivity) findActivity;
-                m2Var = (org.telegram.ui.ActionBar.m2) launchActivity.O().getFragmentStack().get(launchActivity.O().getFragmentStack().size() - 1);
+                n2Var = (org.telegram.ui.ActionBar.n2) launchActivity.O().getFragmentStack().get(launchActivity.O().getFragmentStack().size() - 1);
             } else {
-                m2Var = null;
+                n2Var = null;
             }
-            if (m2Var instanceof org.telegram.ui.wn) {
-                boolean P9 = ((org.telegram.ui.wn) m2Var).P9();
+            if (n2Var instanceof org.telegram.ui.yn) {
+                boolean O9 = ((org.telegram.ui.yn) n2Var).O9();
                 this.Z = true;
-                AndroidUtilities.runOnUIThread(new dv(22, this, h2Var), P9 ? 200L : 0L);
+                AndroidUtilities.runOnUIThread(new yw(20, this, h2Var), O9 ? 200L : 0L);
             } else {
                 this.Z = true;
                 setFocusable(true);
@@ -95,35 +95,35 @@ public abstract class ra0 extends d71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.d71
-    public final void G(String str) {
+    @Override // org.telegram.ui.Components.n71
+    public final void E(String str) {
         this.U.j(str);
     }
 
-    @Override // org.telegram.ui.Components.d71
-    public final void I(int i10) {
-        super.I(i10);
+    @Override // org.telegram.ui.Components.n71
+    public final void G(int i10) {
+        super.G(i10);
         this.V.setTranslationY(this.c.getMeasuredHeight() + i10);
         float f7 = i10;
         this.W.setTranslationY(f7);
         this.X.setTranslationY(f7);
     }
 
-    @Override // org.telegram.ui.Components.d71
-    public final void L() {
+    @Override // org.telegram.ui.Components.n71
+    public final void J() {
         ai.w0 w0Var = this.d;
         if (w0Var.getChildCount() > 0) {
-            super.L();
+            super.J();
             return;
         }
         int paddingTop = w0Var.getVisibility() == 0 ? w0Var.getPaddingTop() - AndroidUtilities.dp(8.0f) : 0;
         if (this.y != paddingTop) {
             this.y = paddingTop;
-            I(paddingTop);
+            G(paddingTop);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
     public final void onBackPressed() {
         wh.m mVar = this.U.s;
         if (mVar != null) {
@@ -133,7 +133,7 @@ public abstract class ra0 extends d71 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
     public final void show() {
         qa0 qa0Var = this.U;
         if (qa0Var.b && this.y == 0) {

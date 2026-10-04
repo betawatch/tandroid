@@ -3,7 +3,7 @@ package ai;
 import android.window.OnBackInvokedCallback;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class rb implements OnBackInvokedCallback {
     public final /* synthetic */ int a;
@@ -34,10 +34,10 @@ public final /* synthetic */ class rb implements OnBackInvokedCallback {
                 onBackInvoked.invoke();
                 break;
             case 2:
-                ((ci.lc) this.b).M();
+                ((ci.kc) this.b).M();
                 break;
             case 3:
-                ((g.s) this.b).s();
+                ((g.s) this.b).r();
                 break;
             default:
                 ((Runnable) this.b).run();

@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class m0 extends u3 {
     public final float[] A0;
@@ -28,7 +28,7 @@ public final class m0 extends u3 {
     @Override // yh.u3
     public final void d(f4.d dVar) {
         super.d(dVar);
-        this.D0.T(true);
+        this.D0.R(true);
     }
 
     @Override // yh.u3, android.view.ViewGroup, android.view.View
@@ -53,17 +53,17 @@ public final class m0 extends u3 {
     public final void j(int i10) {
         s0 s0Var = this.D0;
         ImageView imageView = s0Var.m0;
-        if (imageView != null && org.telegram.ui.ActionBar.h6.B1(imageView.getBackground(), i10, false)) {
+        if (imageView != null && org.telegram.ui.ActionBar.i6.B1(imageView.getBackground(), i10, false)) {
             s0Var.m0.invalidate();
         }
         ImageView imageView2 = s0Var.n0;
-        if (imageView2 != null && org.telegram.ui.ActionBar.h6.B1(imageView2.getBackground(), i10, false)) {
+        if (imageView2 != null && org.telegram.ui.ActionBar.i6.B1(imageView2.getBackground(), i10, false)) {
             s0Var.n0.invalidate();
         }
         for (ai.w7 w7Var : s0Var.Z) {
             Drawable background = w7Var.getBackground();
             org.telegram.ui.Components.p6 p6Var = (org.telegram.ui.Components.p6) w7Var.d;
-            if (org.telegram.ui.ActionBar.h6.B1(background, i10, false)) {
+            if (org.telegram.ui.ActionBar.i6.B1(background, i10, false)) {
                 w7Var.invalidate();
             }
             int d = i0.a.d(0.33f, i10, -1);
@@ -75,7 +75,7 @@ public final class m0 extends u3 {
             if (p6Var.getSizeableBackground() instanceof k3) {
                 ((k3) p6Var.getSizeableBackground()).b.setColor(HSVToColor);
                 p6Var.invalidate();
-            } else if (org.telegram.ui.ActionBar.h6.B1(p6Var.getSizeableBackground(), HSVToColor, false)) {
+            } else if (org.telegram.ui.ActionBar.i6.B1(p6Var.getSizeableBackground(), HSVToColor, false)) {
                 p6Var.invalidate();
             }
         }

@@ -4,9 +4,9 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class f {
     public static final DecelerateInterpolator a = new DecelerateInterpolator();
@@ -36,21 +36,21 @@ public abstract class f {
         c = h.i(new DecelerateInterpolator(), 0, 240, 240, false);
         d = h.i(linearInterpolator, 0, 240, 240, false);
         e = h.i(new DecelerateInterpolator(), 220, 240, 240, false);
-        f = h.i(new sr(0.7f, -0.6f, 0.4f, 1.0f), 0, 200, 560, false);
-        g = h.i(new sr(0.7f, -0.6f, 0.4f, 1.0f), 200, 400, 560, true);
+        f = h.i(new tr(0.7f, -0.6f, 0.4f, 1.0f), 0, 200, 560, false);
+        g = h.i(new tr(0.7f, -0.6f, 0.4f, 1.0f), 200, 400, 560, true);
         h = h.i(new DecelerateInterpolator(), 0, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 560, false);
         i = h.i(new DecelerateInterpolator(), 210, 425, 560, false);
-        sr srVar = sr.h;
-        j = h.i(srVar, 0, 320, 560, false);
-        k = h.i(srVar, 40, 320, 560, false);
+        tr trVar = tr.h;
+        j = h.i(trVar, 0, 320, 560, false);
+        k = h.i(trVar, 40, 320, 560, false);
         l = h.i(new DecelerateInterpolator(), 0, MediaDataController.MAX_LINKS_COUNT, 560, false);
-        m = h.i(srVar, 0, 460, 560, false);
-        n = h.i(srVar, 0, 325, 560, false);
+        m = h.i(trVar, 0, 460, 560, false);
+        n = h.i(trVar, 0, 325, 560, false);
         o = h.i(new DecelerateInterpolator(), ImageReceiver.DEFAULT_CROSSFADE_DURATION, MediaDataController.MAX_LINKS_COUNT, 560, false);
         p = h.i(new DecelerateInterpolator(), 200, 480, 560, false);
-        q = h.i(srVar, 60, 320, 560, false);
-        r = h.i(srVar, 90, 380, 560, false);
-        s = h.i(srVar, 110, 440, 560, false);
+        q = h.i(trVar, 60, 320, 560, false);
+        r = h.i(trVar, 90, 380, 560, false);
+        s = h.i(trVar, 110, 440, 560, false);
         t = h.i(new DecelerateInterpolator(), 200, 460, 560, false);
     }
 }

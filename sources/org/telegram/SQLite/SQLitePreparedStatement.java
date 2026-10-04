@@ -8,7 +8,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class SQLitePreparedStatement {
     private boolean isFinalized = false;
@@ -99,9 +99,9 @@ public class SQLitePreparedStatement {
         try {
             this.isFinalized = true;
             finalize(this.sqliteStatementHandle);
-        } catch (SQLiteException e) {
+        } catch (SQLiteException e7) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.e(e.getMessage(), e);
+                FileLog.e(e7.getMessage(), e7);
             }
         }
     }

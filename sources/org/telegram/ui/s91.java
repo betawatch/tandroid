@@ -1,62 +1,82 @@
 package org.telegram.ui;
 
+import android.app.Activity;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class s91 extends org.telegram.ui.Components.p81 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ sa1 e;
+public final class s91 extends org.telegram.ui.Components.g91 {
+    public boolean U;
+    public final /* synthetic */ va1 V;
 
-    public s91(sa1 sa1Var, boolean z10, boolean z11, boolean z12, FrameLayout frameLayout) {
-        this.e = sa1Var;
-        this.a = z10;
-        this.b = z11;
-        this.c = z12;
-        this.d = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s91(va1 va1Var, Activity activity) {
+        super(activity, null);
+        this.V = va1Var;
     }
 
-    @Override // org.telegram.ui.Components.p81
-    public final View d(int i10) {
-        sa1 sa1Var = this.e;
-        if (sa1Var.l0) {
-            return sa1Var.j0;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        boolean z10;
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            va1 va1Var = this.V;
+            if (va1Var.j0 != null) {
+                View currentView = getCurrentView();
+                me meVar = va1Var.j0;
+                if (currentView == meVar) {
+                    boolean z02 = meVar.z0(motionEvent.getX() - va1Var.j0.getX(), motionEvent.getY() - va1Var.j0.getY());
+                    meVar.T1 = z02;
+                    if (z02 && meVar.d2.b.canScrollHorizontally(-1)) {
+                        z10 = true;
+                        this.U = z10;
+                    }
+                }
+            }
+            z10 = false;
+            this.U = z10;
         }
-        boolean z10 = this.a;
-        FrameLayout frameLayout = this.d;
+        try {
+            boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+            if (actionMasked != 1 && actionMasked != 3) {
+                return dispatchTouchEvent;
+            }
+            this.U = false;
+            return dispatchTouchEvent;
+        } catch (Throwable th2) {
+            if (actionMasked == 1 || actionMasked == 3) {
+                this.U = false;
+            }
+            throw th2;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.g91, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return !this.U && super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.g91, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.U && B(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.g91
+    public final void u() {
+        va1 va1Var = this.V;
+        va1Var.k0(va1Var.h0.getCurrentPosition(), true);
+        va1Var.l0(0.0f, false);
+    }
+
+    @Override // org.telegram.ui.Components.g91
+    public final void w(boolean z10) {
+        va1 va1Var = this.V;
+        float positionAnimated = va1Var.h0.getPositionAnimated();
+        va1Var.l0(positionAnimated, !z10);
         if (z10) {
-            if (i10 == 0) {
-                return frameLayout;
-            }
-            i10--;
+            return;
         }
-        if (this.b) {
-            if (i10 == 0) {
-                return sa1Var.j0;
-            }
-            i10--;
-        }
-        return (this.c && i10 == 0) ? sa1Var.k0 : frameLayout;
-    }
-
-    @Override // org.telegram.ui.Components.p81
-    public final int e() {
-        if (this.e.l0) {
-            return 1;
-        }
-        return (this.a ? 1 : 0) + (this.b ? 1 : 0) + (this.c ? 1 : 0);
-    }
-
-    @Override // org.telegram.ui.Components.p81
-    public final int h(int i10) {
-        return i10;
-    }
-
-    @Override // org.telegram.ui.Components.p81
-    public final void b(View view, int i10, int i11) {
+        va1Var.k0(Math.round(positionAnimated), true);
     }
 }

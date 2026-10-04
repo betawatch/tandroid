@@ -1,60 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gy0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ com.google.firebase.messaging.n b;
-    public final /* synthetic */ int c;
-
-    public /* synthetic */ gy0(com.google.firebase.messaging.n nVar, int i10, int i11) {
-        this.a = i11;
-        this.b = nVar;
-        this.c = i10;
+public final class gy0 extends org.telegram.ui.ou0 {
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    public final boolean P() {
+        return true;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = (ArrayList) this.b.d;
-                Float f7 = (Float) valueAnimator.getAnimatedValue();
-                f7.getClass();
-                arrayList.set(this.c, f7);
-                break;
-            case 1:
-                ArrayList arrayList2 = (ArrayList) this.b.e;
-                Float f10 = (Float) valueAnimator.getAnimatedValue();
-                f10.getClass();
-                arrayList2.set(this.c, f10);
-                break;
-            case 2:
-                ArrayList arrayList3 = (ArrayList) this.b.f;
-                Float f11 = (Float) valueAnimator.getAnimatedValue();
-                f11.getClass();
-                arrayList3.set(this.c, f11);
-                break;
-            case 3:
-                ArrayList arrayList4 = (ArrayList) this.b.d;
-                Float f12 = (Float) valueAnimator.getAnimatedValue();
-                f12.getClass();
-                arrayList4.set(this.c, f12);
-                break;
-            case 4:
-                ArrayList arrayList5 = (ArrayList) this.b.e;
-                Float f13 = (Float) valueAnimator.getAnimatedValue();
-                f13.getClass();
-                arrayList5.set(this.c, f13);
-                break;
-            default:
-                ArrayList arrayList6 = (ArrayList) this.b.f;
-                Float f14 = (Float) valueAnimator.getAnimatedValue();
-                f14.getClass();
-                arrayList6.set(this.c, f14);
-                break;
-        }
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    public final boolean z() {
+        return false;
     }
 }

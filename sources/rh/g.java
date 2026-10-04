@@ -7,10 +7,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class g extends qh.e {
     public final MessageObject b;
@@ -32,7 +32,7 @@ public final class g extends qh.e {
                 radialProgress2.h(artworkUrl);
             }
         }
-        radialProgress2.g(h6.ie, h6.je, h6.uc, h6.vc);
+        radialProgress2.g(i6.ie, i6.je, i6.uc, i6.vc);
     }
 
     @Override // qh.e

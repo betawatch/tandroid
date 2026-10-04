@@ -18,7 +18,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class td implements Runnable {
     public final /* synthetic */ int a;
@@ -31,16 +31,16 @@ public final /* synthetic */ class td implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        qf qfVar;
+        rf rfVar;
         int i10 = this.a;
         int i11 = 1;
         int i12 = 0;
         ChatActivityEnterView chatActivityEnterView = this.b;
         switch (i10) {
             case 0:
-                org.telegram.ui.wn wnVar = chatActivityEnterView.P2;
-                if (wnVar != null) {
-                    wnVar.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
+                org.telegram.ui.yn ynVar = chatActivityEnterView.P2;
+                if (ynVar != null) {
+                    ynVar.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
                     break;
                 }
                 break;
@@ -63,9 +63,9 @@ public final /* synthetic */ class td implements Runnable {
                 }
                 break;
             case 4:
-                ei.c0 c0Var = chatActivityEnterView.l0;
-                if (c0Var != null) {
-                    c0Var.setOpened(false);
+                ei.d0 d0Var = chatActivityEnterView.l0;
+                if (d0Var != null) {
+                    d0Var.setOpened(false);
                     break;
                 }
                 break;
@@ -81,38 +81,38 @@ public final /* synthetic */ class td implements Runnable {
                         }
                     }
                 }
-                if (!chatActivityEnterView.j2 && i11 != 0 && (qfVar = chatActivityEnterView.E0) != null) {
+                if (!chatActivityEnterView.j2 && i11 != 0 && (rfVar = chatActivityEnterView.E0) != null) {
                     try {
-                        qfVar.requestFocus();
+                        rfVar.requestFocus();
                         break;
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
                         return;
                     }
                 }
                 break;
             case 6:
-                eg egVar = chatActivityEnterView.U0;
-                if (egVar != null) {
+                fg fgVar = chatActivityEnterView.U0;
+                if (fgVar != null) {
                     if (chatActivityEnterView.d5 == null) {
-                        egVar.getLayoutParams().height = chatActivityEnterView.D3;
+                        fgVar.getLayoutParams().height = chatActivityEnterView.D3;
                     }
                     chatActivityEnterView.U0.setLayerType(0, null);
                     break;
                 }
                 break;
             case 7:
-                nf nfVar = chatActivityEnterView.L0;
-                if (nfVar != null) {
-                    nfVar.h(chatActivityEnterView.E4);
+                of ofVar = chatActivityEnterView.L0;
+                if (ofVar != null) {
+                    ofVar.h(chatActivityEnterView.E4);
                     chatActivityEnterView.L0 = null;
                     break;
                 }
                 break;
             case 8:
-                org.telegram.ui.wn wnVar2 = chatActivityEnterView.P2;
-                if (wnVar2 == null || wnVar2.isLastFragment()) {
-                    chatActivityEnterView.P();
+                org.telegram.ui.yn ynVar2 = chatActivityEnterView.P2;
+                if (ynVar2 == null || ynVar2.isLastFragment()) {
+                    chatActivityEnterView.N();
                 }
                 chatActivityEnterView.N4 = null;
                 break;
@@ -121,9 +121,9 @@ public final /* synthetic */ class td implements Runnable {
                 chatActivityEnterView.S1();
                 break;
             case 10:
-                og ogVar = chatActivityEnterView.Z2;
-                if (ogVar != null) {
-                    ogVar.y(0.0f);
+                pg pgVar = chatActivityEnterView.Z2;
+                if (pgVar != null) {
+                    pgVar.y(0.0f);
                 }
                 chatActivityEnterView.requestLayout();
                 break;
@@ -141,49 +141,49 @@ public final /* synthetic */ class td implements Runnable {
                 yc.a0(chatActivityEnterView.P2).T(LocaleController.getString(R.string.BusinessLinkSaved)).j();
                 break;
             case 15:
-                qf qfVar2 = chatActivityEnterView.E0;
-                if (qfVar2 != null) {
-                    qfVar2.setText("");
+                rf rfVar2 = chatActivityEnterView.E0;
+                if (rfVar2 != null) {
+                    rfVar2.setText("");
                     break;
                 }
                 break;
             case 16:
-                qf qfVar3 = chatActivityEnterView.E0;
-                if (qfVar3 != null) {
-                    qfVar3.setText("");
+                rf rfVar3 = chatActivityEnterView.E0;
+                if (rfVar3 != null) {
+                    rfVar3.setText("");
                 }
-                chatActivityEnterView.K(true);
+                chatActivityEnterView.I(true);
                 break;
             case 17:
-                nf nfVar2 = chatActivityEnterView.L0;
-                if (nfVar2 != null) {
-                    nfVar2.h(false);
+                of ofVar2 = chatActivityEnterView.L0;
+                if (ofVar2 != null) {
+                    ofVar2.h(false);
                     chatActivityEnterView.L0 = null;
                 }
-                AndroidUtilities.runOnUIThread(new je(chatActivityEnterView, i12), 600L);
+                AndroidUtilities.runOnUIThread(new ke(chatActivityEnterView, i12), 600L);
                 break;
             case 18:
-                e5.M(chatActivityEnterView.O2, chatActivityEnterView.P2.a(), new re(chatActivityEnterView, i11), chatActivityEnterView.W3);
+                e5.M(chatActivityEnterView.O2, chatActivityEnterView.P2.a(), new se(chatActivityEnterView, i11), chatActivityEnterView.W3);
                 break;
             case 19:
                 int i16 = ChatActivityEnterView.n5;
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
                 chatActivityEnterView2.T0(2147483646, true, 0, true, 0L);
-                nf nfVar3 = chatActivityEnterView2.L0;
-                if (nfVar3 != null) {
-                    nfVar3.h(false);
+                of ofVar3 = chatActivityEnterView2.L0;
+                if (ofVar3 != null) {
+                    ofVar3.h(false);
                     chatActivityEnterView2.L0 = null;
                     break;
                 }
                 break;
             case 20:
-                org.telegram.ui.wn wnVar3 = chatActivityEnterView.P2;
+                org.telegram.ui.yn ynVar3 = chatActivityEnterView.P2;
                 TL_iv.RichMessage richMessage = chatActivityEnterView.E1;
-                if (richMessage != null && chatActivityEnterView.E0 != null && wnVar3 != null) {
+                if (richMessage != null && chatActivityEnterView.E0 != null && ynVar3 != null) {
                     if (!MessagesController.getInstance(chatActivityEnterView.Q).richEditorAvailable()) {
                         TL_iv.RichMessage richMessage2 = chatActivityEnterView.E1;
                         if (richMessage2 != null && chatActivityEnterView.E0 != null) {
-                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ii.d5.c(richMessage2.blocks));
+                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ii.e5.c(richMessage2.blocks));
                             Emoji.replaceEmoji((CharSequence) spannableStringBuilder, chatActivityEnterView.E0.getPaint().getFontMetricsInt(), false, (int[]) null);
                             z5[] z5VarArr = (z5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), z5.class);
                             if (z5VarArr != null) {
@@ -194,7 +194,7 @@ public final /* synthetic */ class td implements Runnable {
                                 }
                             }
                             fj0.a(spannableStringBuilder);
-                            chatActivityEnterView.O();
+                            chatActivityEnterView.M();
                             chatActivityEnterView.setFieldText(spannableStringBuilder);
                             chatActivityEnterView.S0();
                             break;
@@ -203,20 +203,20 @@ public final /* synthetic */ class td implements Runnable {
                         ii.e2 e2Var = new ii.e2(richMessage);
                         e2Var.e = true;
                         e2Var.setResourceProvider(chatActivityEnterView.W3);
-                        e2Var.J = wnVar3;
-                        e2Var.s = wnVar3.S;
-                        e2Var.v = wnVar3.Y;
+                        e2Var.J = ynVar3;
+                        e2Var.s = ynVar3.Q;
+                        e2Var.v = ynVar3.W;
                         e2Var.L = new td(chatActivityEnterView, 24);
                         e2Var.K = new td(chatActivityEnterView, 25);
-                        wnVar3.presentFragment(e2Var);
+                        ynVar3.presentFragment(e2Var);
                         break;
                     }
                 }
                 break;
             case 21:
-                org.telegram.ui.wn wnVar4 = chatActivityEnterView.P2;
-                if (wnVar4 != null) {
-                    wnVar4.showDialog(new rg.x0((org.telegram.ui.ActionBar.m2) wnVar4, 43, true));
+                org.telegram.ui.yn ynVar4 = chatActivityEnterView.P2;
+                if (ynVar4 != null) {
+                    ynVar4.showDialog(new rg.y0((org.telegram.ui.ActionBar.n2) ynVar4, 43, true));
                     break;
                 }
                 break;
@@ -226,26 +226,26 @@ public final /* synthetic */ class td implements Runnable {
                 break;
             case 23:
                 int i17 = ChatActivityEnterView.n5;
-                chatActivityEnterView.x1(true, true);
+                chatActivityEnterView.w1(true, true);
                 chatActivityEnterView.V = null;
                 break;
             case 24:
-                qf qfVar4 = chatActivityEnterView.E0;
-                if (qfVar4 != null) {
-                    qfVar4.setText("");
+                rf rfVar4 = chatActivityEnterView.E0;
+                if (rfVar4 != null) {
+                    rfVar4.setText("");
                     break;
                 }
                 break;
             case 25:
-                qf qfVar5 = chatActivityEnterView.E0;
-                if (qfVar5 != null) {
-                    qfVar5.setText("");
+                rf rfVar5 = chatActivityEnterView.E0;
+                if (rfVar5 != null) {
+                    rfVar5.setText("");
                 }
-                chatActivityEnterView.K(true);
+                chatActivityEnterView.I(true);
                 break;
             case 26:
                 int i18 = ChatActivityEnterView.n5;
-                chatActivityEnterView.W0();
+                chatActivityEnterView.V0();
                 break;
             case 27:
                 chatActivityEnterView.l3 = false;
@@ -258,32 +258,32 @@ public final /* synthetic */ class td implements Runnable {
                 long j3 = chatActivityEnterView.Q2;
                 String str = chatActivityEnterView.i0;
                 String str2 = chatActivityEnterView.j0;
-                org.telegram.ui.wn wnVar5 = chatActivityEnterView.P2;
-                ei.f5 b10 = ei.f5.b(i20, j3, j3, str, str2, 2, 0, wnVar5 == null ? 0L : wnVar5.N8(), null, false, null, null, 0, false, false);
+                org.telegram.ui.yn ynVar5 = chatActivityEnterView.P2;
+                ei.f5 b10 = ei.f5.b(i20, j3, j3, str, str2, 2, 0, ynVar5 == null ? 0L : ynVar5.O8(), null, false, null, null, 0, false, false);
                 LaunchActivity launchActivity = LaunchActivity.G1;
                 if (launchActivity != null && launchActivity.P() != null && LaunchActivity.G1.P().k(b10) != null) {
-                    ei.c0 c0Var2 = chatActivityEnterView.l0;
-                    if (c0Var2 != null) {
-                        c0Var2.setOpened(false);
+                    ei.d0 d0Var2 = chatActivityEnterView.l0;
+                    if (d0Var2 != null) {
+                        d0Var2.setOpened(false);
                         break;
                     }
-                } else if (!org.telegram.ui.zb0.l(chatActivityEnterView.j0)) {
+                } else if (!org.telegram.ui.dc0.l(chatActivityEnterView.j0)) {
                     TLRPC.User user = MessagesController.getInstance(chatActivityEnterView.Q).getUser(Long.valueOf(chatActivityEnterView.Q2));
                     String restrictionReason = MessagesController.getInstance(chatActivityEnterView.Q).getRestrictionReason(user != null ? user.restriction_reason : null);
                     if (!TextUtils.isEmpty(restrictionReason)) {
                         MessagesController.getInstance(chatActivityEnterView.Q);
-                        MessagesController.showCantOpenAlert(wnVar5, restrictionReason);
+                        MessagesController.showCantOpenAlert(ynVar5, restrictionReason);
                         break;
                     } else {
-                        ei.k3 k3Var = new ei.k3(chatActivityEnterView.getContext(), chatActivityEnterView.W3);
-                        k3Var.w(false);
-                        k3Var.A0 = true;
-                        k3Var.k0 = chatActivityEnterView.O2;
-                        k3Var.s(wnVar5, b10);
-                        k3Var.show();
-                        ei.c0 c0Var3 = chatActivityEnterView.l0;
-                        if (c0Var3 != null) {
-                            c0Var3.setOpened(false);
+                        ei.l3 l3Var = new ei.l3(chatActivityEnterView.getContext(), chatActivityEnterView.W3);
+                        l3Var.w(false);
+                        l3Var.A0 = true;
+                        l3Var.k0 = chatActivityEnterView.O2;
+                        l3Var.s(ynVar5, b10);
+                        l3Var.show();
+                        ei.d0 d0Var3 = chatActivityEnterView.l0;
+                        if (d0Var3 != null) {
+                            d0Var3.setOpened(false);
                             break;
                         }
                     }

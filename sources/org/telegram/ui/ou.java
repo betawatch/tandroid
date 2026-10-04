@@ -1,69 +1,92 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ou extends org.telegram.ui.Components.ed {
-    public final /* synthetic */ pu e0;
+public final class ou extends FrameLayout {
+    public final ImageView a;
+    public final TextView b;
+    public final ImageView c;
+    public final TextView d;
+    public boolean e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ou(pu puVar, Context context, int i10, int[] iArr, int[] iArr2) {
-        super(context, i10, iArr, 1, iArr2);
-        this.e0 = puVar;
-    }
-
-    @Override // org.telegram.ui.Components.ed
-    public final int c() {
-        return 216;
-    }
-
-    @Override // org.telegram.ui.Components.ed
-    public final void d(int i10, boolean z10) {
-        int i11;
-        ru ruVar = (ru) this.e0.e;
-        if (!z10) {
-            ruVar.j1();
-            return;
+    public ou(zu zuVar, Context context) {
+        super(context);
+        setBackgroundColor(zuVar.getThemedColor(org.telegram.ui.ActionBar.i6.d6));
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, w7.z5.d(28, 28.0f, (LocaleController.isRTL ? 5 : 3) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(0);
+        linearLayout.setWeightSum(2.0f);
+        addView(linearLayout, w7.z5.i(-1.0f, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 64.0f, 0.0f, 20.0f, 0.0f));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(0);
+        if (LocaleController.isRTL) {
+            linearLayout2.setGravity(5);
         }
-        if (i10 < 0 || i10 >= ruVar.g3.length) {
-            return;
-        }
-        int i12 = 0;
-        while (true) {
-            qu[] quVarArr = ruVar.g3;
-            i11 = -1;
-            if (i12 >= quVarArr.length) {
-                i12 = -1;
-                break;
-            } else if (quVarArr[i12].d == i10) {
-                break;
-            } else {
-                i12++;
-            }
-        }
-        int i13 = 0;
-        while (true) {
-            if (i13 < ruVar.c3.size()) {
-                mu muVar = (mu) ruVar.c3.get(i13);
-                if (muVar != null && muVar.a == 2 && muVar.h == i12) {
-                    i11 = i13;
-                    break;
-                }
-                i13++;
-            } else {
-                break;
-            }
-        }
-        if (i11 >= 0) {
-            ruVar.e1(new i2.w(i11, 7), 0, true);
+        linearLayout2.setWeightSum(2.0f);
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextSize(1, 16.0f);
+        int i10 = org.telegram.ui.ActionBar.i6.G6;
+        textView.setTextColor(zuVar.getThemedColor(i10));
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setSingleLine();
+        textView.setLines(1);
+        ImageView imageView2 = new ImageView(context);
+        this.c = imageView2;
+        imageView2.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        imageView2.setImageResource(R.drawable.arrow_more);
+        imageView2.setColorFilter(new PorterDuffColorFilter(zuVar.getThemedColor(i10), PorterDuff.Mode.MULTIPLY));
+        imageView2.setTranslationY(AndroidUtilities.dp(1.0f));
+        imageView2.setVisibility(8);
+        if (LocaleController.isRTL) {
+            linearLayout2.addView(imageView2, w7.z5.t(16, 16, 21, 3, 0, 0, 0));
+            linearLayout2.addView(textView, w7.z5.q(-2, -2, 21));
         } else {
-            ruVar.j1();
+            linearLayout2.addView(textView, w7.z5.q(-2, -2, 16));
+            linearLayout2.addView(imageView2, w7.z5.t(16, 16, 16, 3, 0, 0, 0));
+        }
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 16.0f);
+        textView2.setTextColor(zuVar.getThemedColor(org.telegram.ui.ActionBar.i6.o6));
+        textView2.setGravity(LocaleController.isRTL ? 3 : 5);
+        if (LocaleController.isRTL) {
+            linearLayout.addView(textView2, w7.z5.q(-2, -2, 19));
+            linearLayout.addView(linearLayout2, w7.z5.o(0, -2, 2.0f, 21));
+        } else {
+            linearLayout.addView(linearLayout2, w7.z5.o(0, -2, 2.0f, 16));
+            linearLayout.addView(textView2, w7.z5.q(-2, -2, 21));
         }
     }
 
-    @Override // org.telegram.ui.Components.ed
-    public final int e() {
-        return 10;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.e) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(64.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
     }
 }

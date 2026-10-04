@@ -5,13 +5,13 @@ import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e5;
-import org.telegram.ui.Components.n61;
+import org.telegram.ui.ActionBar.f5;
+import org.telegram.ui.Components.w61;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class g1 extends e5 {
-    public final q0 f = new q0(this, 2);
+public final class g1 extends f5 {
+    public final u0 f = new u0(this, 1);
     public final /* synthetic */ h1 h;
 
     public g1(h1 h1Var) {
@@ -32,43 +32,43 @@ public final class g1 extends e5 {
         return translitSafe.startsWith(translitSafe2) || org.telegram.messenger.f0.w(" ", translitSafe2, translitSafe) || org.telegram.messenger.f0.w(".", translitSafe2, translitSafe);
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
+    @Override // org.telegram.ui.ActionBar.f5
     public final void m() {
         h1 h1Var = this.h;
-        h1Var.n = null;
-        h1Var.h = false;
+        h1Var.r = null;
+        h1Var.n = false;
         AndroidUtilities.cancelRunOnUIThread(this.f);
-        n61 n61Var = h1Var.a;
-        if (n61Var != null) {
-            n61Var.Y2.N(true);
-            h1Var.a.X2.h1(0, 0);
+        w61 w61Var = h1Var.a;
+        if (w61Var != null) {
+            w61Var.f3.N(true);
+            h1Var.a.e3.h1(0, 0);
         }
-        h1Var.w.d.setText(LocaleController.getString(TextUtils.isEmpty(h1Var.n) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
+        h1Var.x.d.setText(LocaleController.getString(TextUtils.isEmpty(h1Var.r) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
+    @Override // org.telegram.ui.ActionBar.f5
     public final void q(EditText editText) {
         h1 h1Var = this.h;
-        boolean z10 = !TextUtils.isEmpty(h1Var.n);
+        boolean z10 = !TextUtils.isEmpty(h1Var.r);
         String obj = editText.getText().toString();
-        if (!TextUtils.equals(h1Var.n, obj)) {
-            h1Var.n = obj;
-            h1Var.h = true;
-            q0 q0Var = this.f;
-            AndroidUtilities.cancelRunOnUIThread(q0Var);
-            AndroidUtilities.runOnUIThread(q0Var, 500L);
-            h1Var.w.d.setText(LocaleController.getString(TextUtils.isEmpty(obj) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
+        if (!TextUtils.equals(h1Var.r, obj)) {
+            h1Var.r = obj;
+            h1Var.n = true;
+            u0 u0Var = this.f;
+            AndroidUtilities.cancelRunOnUIThread(u0Var);
+            AndroidUtilities.runOnUIThread(u0Var, 500L);
+            h1Var.x.d.setText(LocaleController.getString(TextUtils.isEmpty(obj) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
         }
-        n61 n61Var = h1Var.a;
-        if (n61Var != null) {
-            n61Var.Y2.N(true);
+        w61 w61Var = h1Var.a;
+        if (w61Var != null) {
+            w61Var.f3.N(true);
             if (z10 != (!TextUtils.isEmpty(obj))) {
-                h1Var.a.X2.h1(0, 0);
+                h1Var.a.e3.h1(0, 0);
             }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
+    @Override // org.telegram.ui.ActionBar.f5
     public final void n() {
     }
 }

@@ -6,7 +6,7 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class g extends o6.a {
     public static final Parcelable.Creator<g> CREATOR = new r0(10);
@@ -33,8 +33,8 @@ public final class g extends o6.a {
                     JSONObject jSONObject2 = new JSONObject();
                     jSONObject2.put("rk", hVar.a);
                     jSONObject.put("credProps", jSONObject2);
-                } catch (JSONException e) {
-                    throw new RuntimeException("Error encoding AuthenticationExtensionsCredPropsOutputs to JSON object", e);
+                } catch (JSONException e7) {
+                    throw new RuntimeException("Error encoding AuthenticationExtensionsCredPropsOutputs to JSON object", e7);
                 }
             }
             k0 k0Var = this.a;
@@ -50,8 +50,8 @@ public final class g extends o6.a {
                 jSONObject.put("txAuthSimple", str);
             }
             return jSONObject;
-        } catch (JSONException e7) {
-            throw new RuntimeException("Error encoding AuthenticationExtensionsClientOutputs to JSON object", e7);
+        } catch (JSONException e10) {
+            throw new RuntimeException("Error encoding AuthenticationExtensionsClientOutputs to JSON object", e10);
         }
     }
 
@@ -68,17 +68,17 @@ public final class g extends o6.a {
     }
 
     public final String toString() {
-        return a4.a.q("AuthenticationExtensionsClientOutputs{", b().toString(), "}");
+        return a4.a.p("AuthenticationExtensionsClientOutputs{", b().toString(), "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.k(parcel, 1, this.a, i10);
-        w7.f0.k(parcel, 2, this.b, i10);
-        w7.f0.k(parcel, 3, this.c, i10);
-        w7.f0.k(parcel, 4, this.d, i10);
-        w7.f0.l(parcel, 5, this.e);
-        w7.f0.r(parcel, q6);
+        int q6 = w7.g0.q(parcel, 20293);
+        w7.g0.k(parcel, 1, this.a, i10);
+        w7.g0.k(parcel, 2, this.b, i10);
+        w7.g0.k(parcel, 3, this.c, i10);
+        w7.g0.k(parcel, 4, this.d, i10);
+        w7.g0.l(parcel, 5, this.e);
+        w7.g0.r(parcel, q6);
     }
 }

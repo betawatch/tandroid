@@ -1,44 +1,40 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class to0 implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ zf.b b;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wp0 b;
 
-    public /* synthetic */ to0(tp0 tp0Var, zf.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, qo0 qo0Var) {
-        this.e = tp0Var;
-        this.b = bVar;
-        this.c = tL_starGiftUnique;
-        this.d = j3;
-        this.f = qo0Var;
+    public /* synthetic */ to0(wp0 wp0Var, int i10) {
+        this.a = i10;
+        this.b = wp0Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                tp0.V((tp0) this.e, this.b, this.c, this.d, (qo0) this.f, (TLRPC.TL_payments_paymentFormStarGift) obj);
+                Integer num = (Integer) obj;
+                ci.i1 i1Var = this.b.I;
+                if (i1Var != null) {
+                    i1Var.E(num.intValue());
+                    break;
+                }
                 break;
             default:
-                xh.h4.U((xh.h4) this.e, (org.telegram.ui.ActionBar.a2) this.f, this.b, this.c, this.d, (TLRPC.TL_payments_paymentFormStarGift) obj);
+                wp0 wp0Var = this.b;
+                wp0Var.r = false;
+                wp0Var.Q.setLoading(false);
+                if (((Boolean) obj).booleanValue()) {
+                    wp0Var.x0();
+                    wp0Var.finishFragment();
+                    wp0Var.D0();
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ to0(xh.h4 h4Var, org.telegram.ui.ActionBar.a2 a2Var, zf.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3) {
-        this.e = h4Var;
-        this.f = a2Var;
-        this.b = bVar;
-        this.c = tL_starGiftUnique;
-        this.d = j3;
     }
 }

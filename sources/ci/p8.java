@@ -1,20 +1,15 @@
 package ci;
 
-import android.view.ViewGroup;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class p8 extends s4.j {
-    public final /* synthetic */ u8 F;
-
-    public p8(u8 u8Var) {
-        this.F = u8Var;
-    }
-
-    @Override // s4.j
-    public final void P(s4.c1 c1Var) {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.e3) this.F).containerView;
-        viewGroup.invalidate();
+public final class p8 extends u61 {
+    @Override // org.telegram.ui.Components.u61
+    public final int I(int i10) {
+        if (i10 == org.telegram.ui.ActionBar.i6.i5) {
+            return -15921907;
+        }
+        return org.telegram.ui.ActionBar.i6.v0(i10, this.v);
     }
 }

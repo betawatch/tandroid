@@ -1,43 +1,18 @@
 package za;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.util.Base64;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class r {
-    public final String a;
-    public final int b;
-    public final int c;
-    public final boolean d;
+public abstract class r {
+    public static final String a;
+    public static final String b;
 
-    public r(String str, int i10, int i11, boolean z10) {
-        this.a = str;
-        this.b = i10;
-        this.c = i11;
-        this.d = z10;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof r)) {
-            return false;
-        }
-        r rVar = (r) obj;
-        return kotlin.jvm.internal.i.a(this.a, rVar.a) && this.b == rVar.b && this.c == rVar.c && this.d == rVar.d;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final int hashCode() {
-        int hashCode = ((((this.a.hashCode() * 31) + this.b) * 31) + this.c) * 31;
-        boolean z10 = this.d;
-        int i10 = z10;
-        if (z10 != 0) {
-            i10 = 1;
-        }
-        return hashCode + i10;
-    }
-
-    public final String toString() {
-        return "ProcessDetails(processName=" + this.a + ", pid=" + this.b + ", importance=" + this.c + ", isDefaultProcess=" + this.d + ')';
+    static {
+        byte[] bytes = q.c().getBytes(xd.a.a);
+        kotlin.jvm.internal.i.d(bytes, "getBytes(...)");
+        String encodeToString = Base64.encodeToString(bytes, 10);
+        a = a4.a.p("firebase_session_", encodeToString, "_data");
+        b = a4.a.p("firebase_session_", encodeToString, "_settings");
     }
 }

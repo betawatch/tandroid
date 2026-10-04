@@ -1,9 +1,9 @@
 package ii;
 
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.vi0;
+import org.telegram.ui.zi0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -19,20 +19,20 @@ public final /* synthetic */ class d implements Runnable {
         switch (this.a) {
             case 0:
                 r rVar = this.b;
-                rVar.I(2147483646, true, 0, false, 0L);
-                vi0 vi0Var = rVar.O;
-                if (vi0Var != null) {
-                    vi0Var.h(false);
+                rVar.G(2147483646, true, 0, false, 0L);
+                zi0 zi0Var = rVar.O;
+                if (zi0Var != null) {
+                    zi0Var.h(false);
                     rVar.O = null;
                     break;
                 }
                 break;
             case 1:
                 r rVar2 = this.b;
-                rVar2.I(0, false, 0, false, 0L);
-                vi0 vi0Var2 = rVar2.O;
-                if (vi0Var2 != null) {
-                    vi0Var2.h(true);
+                rVar2.G(0, false, 0, false, 0L);
+                zi0 zi0Var2 = rVar2.O;
+                if (zi0Var2 != null) {
+                    zi0Var2.h(true);
                     rVar2.O = null;
                     break;
                 }
@@ -40,7 +40,7 @@ public final /* synthetic */ class d implements Runnable {
             case 2:
                 r rVar3 = this.b;
                 if (!UserConfig.getInstance(rVar3.n).isPremium()) {
-                    new rg.x0(rVar3.b.f0, rVar3.getContext(), rVar3.n, 43, true).show();
+                    new rg.y0(rVar3.b.f0, rVar3.getContext(), rVar3.n, 43, true).show();
                     break;
                 }
                 break;
@@ -48,12 +48,12 @@ public final /* synthetic */ class d implements Runnable {
                 r rVar4 = this.b;
                 c4 c4Var = rVar4.s;
                 if (c4Var != null) {
-                    c4Var.setSendEnabled(rVar4.r.M3());
+                    c4Var.setSendEnabled(rVar4.r.O3());
                     break;
                 }
                 break;
             default:
-                this.b.a0();
+                this.b.Z();
                 break;
         }
     }

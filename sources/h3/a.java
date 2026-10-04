@@ -9,7 +9,7 @@ import c3.p;
 import c3.s;
 import e2.d;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a {
     public final e a;
@@ -54,22 +54,22 @@ public final class a {
             i iVar = this.b;
             if (j12 <= j13) {
                 this.c = null;
-                iVar.d();
+                iVar.g();
                 return c(pVar, j3, sVar);
             }
             long position = j11 - pVar.getPosition();
             if (position < 0 || position > 262144) {
                 break;
             }
-            pVar.q((int) position);
-            pVar.p();
-            h b10 = iVar.b(pVar, fVar.b);
-            int i10 = b10.a;
-            long j14 = b10.b;
-            long j15 = b10.c;
+            pVar.o((int) position);
+            pVar.m();
+            h c10 = iVar.c(pVar, fVar.b);
+            int i10 = c10.a;
+            long j14 = c10.b;
+            long j15 = c10.c;
             if (i10 == -3) {
                 this.c = null;
-                iVar.d();
+                iVar.g();
                 return c(pVar, j11, sVar);
             }
             if (i10 == -2) {
@@ -83,10 +83,10 @@ public final class a {
                     }
                     long position2 = j15 - pVar.getPosition();
                     if (position2 >= 0 && position2 <= 262144) {
-                        pVar.q((int) position2);
+                        pVar.o((int) position2);
                     }
                     this.c = null;
-                    iVar.d();
+                    iVar.g();
                     return c(pVar, j15, sVar);
                 }
                 fVar.e = j14;

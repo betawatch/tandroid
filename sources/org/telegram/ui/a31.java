@@ -1,60 +1,113 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class a31 extends a71 {
-    public final /* synthetic */ c31 d2;
-    public final /* synthetic */ r61[] e2;
-    public final /* synthetic */ d31 f2;
+public final class a31 extends org.telegram.ui.ActionBar.n2 {
+    public z21 a;
+    public org.telegram.ui.Components.zl0 b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int h;
+    public org.telegram.ui.Cells.k3[] n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a31(d31 d31Var, d31 d31Var2, Activity activity, Integer num, c31 c31Var, r61[] r61VarArr) {
-        super(d31Var2, activity, false, num, 2, null);
-        this.f2 = d31Var;
-        this.d2 = c31Var;
-        this.e2 = r61VarArr;
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getString(R.string.VoipQuickReplies));
+        if (AndroidUtilities.isTablet()) {
+            this.actionBar.setOccupyStatusBar(false);
+        }
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setActionBarMenuOnItemClick(new u70(this, 24));
+        this.a = new z21(this, context);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false));
+        FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
+        org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
+        this.b = zl0Var;
+        zl0Var.s1();
+        this.b.setVerticalScrollBarEnabled(false);
+        this.b.setLayoutManager(new s4.c0(1, false));
+        frameLayout2.addView(this.b, w7.z5.e(-1, -1, 51));
+        this.b.setAdapter(this.a);
+        this.actionBar.setAdaptiveBackground(this.b);
+        return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.a71
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        int i10;
-        if (l4 == null) {
-            return;
-        }
-        d31 d31Var = this.f2;
-        i10 = ((org.telegram.ui.ActionBar.m2) d31Var).currentAccount;
-        MediaDataController.getInstance(i10).setDoubleTapReaction("animated_" + l4);
-        c31 c31Var = this.d2;
-        if (c31Var != null) {
-            c31Var.a(true);
-        }
-        r61 r61Var = this.e2[0];
-        if (r61Var != null) {
-            d31Var.n = null;
-            r61Var.dismiss();
+    @Override // org.telegram.ui.ActionBar.n2
+    public final ArrayList getThemeDescriptions() {
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 16, new Class[]{org.telegram.ui.Cells.ea.class, org.telegram.ui.Cells.w8.class, org.telegram.ui.Cells.k3.class}, null, null, null, org.telegram.ui.ActionBar.i6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.i6.a7));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 32768, null, null, null, null, org.telegram.ui.ActionBar.i6.s8));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.i6.v8));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.i6.A8));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.i6.t8));
+        int i10 = org.telegram.ui.ActionBar.i6.G6;
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 4, new Class[]{org.telegram.ui.Cells.k3.class}, new String[]{"textView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, TLObject.FLAG_23, new Class[]{org.telegram.ui.Cells.k3.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.H6));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 4096, null, null, null, null, org.telegram.ui.ActionBar.i6.i6));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 0, new Class[]{View.class}, org.telegram.ui.ActionBar.i6.k0, null, null, org.telegram.ui.ActionBar.i6.d7));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 0, new Class[]{org.telegram.ui.Cells.ea.class}, new String[]{"textView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.b, 0, new Class[]{org.telegram.ui.Cells.ea.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.I6));
+        return arrayList;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean onFragmentCreate() {
+        super.onFragmentCreate();
+        this.c = 1;
+        this.d = 2;
+        this.e = 3;
+        this.h = 5;
+        this.f = 4;
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        int i10 = 0;
+        SharedPreferences.Editor edit = getParentActivity().getSharedPreferences("mainconfig", 0).edit();
+        while (true) {
+            org.telegram.ui.Cells.k3[] k3VarArr = this.n;
+            if (i10 >= k3VarArr.length) {
+                edit.commit();
+                return;
+            }
+            org.telegram.ui.Cells.k3 k3Var = k3VarArr[i10];
+            if (k3Var != null) {
+                String obj = k3Var.getTextView().getText().toString();
+                if (TextUtils.isEmpty(obj)) {
+                    edit.remove("quick_reply_msg" + (i10 + 1));
+                } else {
+                    edit.putString("quick_reply_msg" + (i10 + 1), obj);
+                }
+            }
+            i10++;
         }
     }
 
-    @Override // org.telegram.ui.a71
-    public final void r(j61 j61Var, zg.o0 o0Var) {
-        int i10;
-        d31 d31Var = this.f2;
-        i10 = ((org.telegram.ui.ActionBar.m2) d31Var).currentAccount;
-        MediaDataController.getInstance(i10).setDoubleTapReaction(o0Var.f);
-        c31 c31Var = this.d2;
-        if (c31Var != null) {
-            c31Var.a(true);
-        }
-        r61 r61Var = this.e2[0];
-        if (r61Var != null) {
-            d31Var.n = null;
-            r61Var.dismiss();
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onResume() {
+        super.onResume();
+        z21 z21Var = this.a;
+        if (z21Var != null) {
+            z21Var.l();
         }
     }
 }

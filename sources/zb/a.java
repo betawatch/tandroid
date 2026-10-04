@@ -8,11 +8,12 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
+import hg.k0;
 import java.util.ArrayList;
 import n6.l;
 import qb.j;
-import w7.d8;
-import w7.f0;
+import w7.e8;
+import w7.g0;
 import x7.ja;
 import x7.ka;
 import x7.la;
@@ -21,7 +22,7 @@ import x7.na;
 import x7.oa;
 import x7.y;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a implements b {
     public final Context a;
@@ -47,14 +48,14 @@ public final class a implements b {
             try {
                 jaVar.S0(jaVar.O0(), 1);
                 this.c = true;
-            } catch (RemoteException e) {
-                throw new mb.a("Failed to init thin image labeler.", e);
+            } catch (RemoteException e7) {
+                throw new mb.a("Failed to init thin image labeler.", e7);
             }
         }
         int i10 = aVar.e;
         int i11 = aVar.b;
         int i12 = aVar.c;
-        int a2 = d8.a(aVar.d);
+        int a2 = e8.a(aVar.d);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         int i13 = aVar.e;
         if (i13 != -1) {
@@ -62,7 +63,7 @@ public final class a implements b {
                 if (i13 == 35) {
                     bVar = new x6.b(null);
                 } else if (i13 != 842094169) {
-                    throw new mb.a(hg.c.h(aVar.e, "Unsupported image format: "), 3);
+                    throw new mb.a(k0.h(aVar.e, "Unsupported image format: "), 3);
                 }
             }
             l.h(null);
@@ -76,18 +77,18 @@ public final class a implements b {
             int i14 = y.a;
             O0.writeStrongBinder(bVar);
             O0.writeInt(1);
-            int q6 = f0.q(O0, 20293);
-            f0.s(O0, 1, 4);
+            int q6 = g0.q(O0, 20293);
+            g0.s(O0, 1, 4);
             O0.writeInt(i10);
-            f0.s(O0, 2, 4);
+            g0.s(O0, 2, 4);
             O0.writeInt(i11);
-            f0.s(O0, 3, 4);
+            g0.s(O0, 3, 4);
             O0.writeInt(i12);
-            f0.s(O0, 4, 4);
+            g0.s(O0, 4, 4);
             O0.writeInt(a2);
-            f0.s(O0, 5, 8);
+            g0.s(O0, 5, 8);
             O0.writeLong(elapsedRealtime);
-            f0.r(O0, q6);
+            g0.r(O0, q6);
             Parcel Q0 = jaVar.Q0(O0, 3);
             ArrayList createTypedArrayList = Q0.createTypedArrayList(na.CREATOR);
             Q0.recycle();
@@ -101,8 +102,8 @@ public final class a implements b {
                 arrayList.add(new xb.a(naVar.b, naVar.d, naVar.a, naVar.c));
             }
             return arrayList;
-        } catch (RemoteException e7) {
-            throw new mb.a("Failed to run thin image labeler.", e7);
+        } catch (RemoteException e10) {
+            throw new mb.a("Failed to run thin image labeler.", e10);
         }
     }
 
@@ -123,8 +124,8 @@ public final class a implements b {
                 kaVar = queryLocalInterface instanceof ma ? (ma) queryLocalInterface : new ka(b10, "com.google.mlkit.vision.label.aidls.IImageLabelerCreator", 10);
             }
             this.e = ((ka) kaVar).W0(new x6.b(context), new oa(this.b.a, -1));
-        } catch (RemoteException e) {
-            throw new mb.a("Failed to create thin image labeler.", e);
+        } catch (RemoteException e7) {
+            throw new mb.a("Failed to create thin image labeler.", e7);
         } catch (y6.b unused) {
             if (!this.d) {
                 j.b(context);

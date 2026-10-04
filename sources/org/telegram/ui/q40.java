@@ -2,26 +2,18 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class q40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Components.voip.u a;
-    public final /* synthetic */ d60 b;
+    public final /* synthetic */ h60 a;
 
-    public q40(d60 d60Var, org.telegram.ui.Components.voip.u uVar) {
-        this.b = d60Var;
-        this.a = uVar;
+    public q40(h60 h60Var) {
+        this.a = h60Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        ViewGroup viewGroup;
-        org.telegram.ui.Components.voip.u uVar = this.a;
-        if (uVar.getParent() != null) {
-            viewGroup = ((org.telegram.ui.ActionBar.e3) this.b).containerView;
-            viewGroup.removeView(uVar);
-        }
+        this.a.X0 = null;
     }
 }

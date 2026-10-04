@@ -10,13 +10,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b extends u {
     public static final a b = new a();
     public final SimpleDateFormat a;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public class a implements v {
         @Override // db.v
         public final u create(g gVar, kb.a aVar) {
@@ -44,8 +44,8 @@ public final class b extends u {
             try {
                 try {
                     time = new Time(this.a.parse(v).getTime());
-                } catch (ParseException e) {
-                    throw new j("Failed parsing '" + v + "' as SQL Time; at path " + aVar.j(), e);
+                } catch (ParseException e7) {
+                    throw new j("Failed parsing '" + v + "' as SQL Time; at path " + aVar.j(), e7);
                 }
             } finally {
                 this.a.setTimeZone(timeZone);

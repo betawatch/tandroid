@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d implements db.v {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final class d implements db.v {
                 fb.d.b(Collection.class.isAssignableFrom(cls2));
                 Type j3 = fb.d.j(type, cls2, fb.d.g(type, cls2, Collection.class), new HashMap());
                 cls = j3 instanceof ParameterizedType ? ((ParameterizedType) j3).getActualTypeArguments()[0] : Object.class;
-                return new c(gVar, cls, gVar.b(new kb.a(cls)), bVar.K(aVar));
+                return new c(gVar, cls, gVar.b(new kb.a(cls)), bVar.z(aVar));
             default:
                 Type type2 = aVar.b;
                 Class cls3 = aVar.a;
@@ -59,9 +59,9 @@ public final class d implements db.v {
                 Type type3 = actualTypeArguments[0];
                 db.u b10 = (type3 == Boolean.TYPE || type3 == Boolean.class) ? h1.c : gVar.b(new kb.a(type3));
                 db.u b11 = gVar.b(new kb.a(actualTypeArguments[1]));
-                fb.n K = bVar.K(aVar);
+                fb.n z10 = bVar.z(aVar);
                 Type[] typeArr = actualTypeArguments;
-                return new o(this, gVar, typeArr[0], b10, typeArr[1], b11, K);
+                return new o(this, gVar, typeArr[0], b10, typeArr[1], b11, z10);
         }
     }
 }

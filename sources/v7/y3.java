@@ -1,12 +1,12 @@
 package v7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class y3 implements ia.d {
     public static final y3 a = new y3();
 
     static {
-        j.r(j.j(h.class, j.n(4, j.j(h.class, j.n(3, j.j(h.class, j.n(2, j.j(h.class, new e(1)))))))));
+        t8.b.t(t8.b.l(h.class, t8.b.p(5, t8.b.l(h.class, t8.b.p(4, t8.b.l(h.class, t8.b.p(3, t8.b.l(h.class, t8.b.p(2, t8.b.l(h.class, new e(1)))))))))));
     }
 
     @Override // ia.a

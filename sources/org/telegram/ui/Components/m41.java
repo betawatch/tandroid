@@ -1,41 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m41 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v41 b;
+public final class m41 extends t41 {
+    public final /* synthetic */ org.telegram.ui.yf T;
 
-    public /* synthetic */ m41(v41 v41Var, int i10) {
-        this.a = i10;
-        this.b = v41Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m41(Activity activity, String str, String str2, TLRPC.InputPeer inputPeer, int i10, TL_iv.RichMessage richMessage, org.telegram.ui.yf yfVar) {
+        super(activity, str, str2, null, inputPeer, i10, false, richMessage);
+        this.T = yfVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.dismiss();
-                break;
-            case 1:
-                this.b.dismiss();
-                break;
-            case 2:
-                this.b.dismiss();
-                break;
-            case 3:
-                v41 v41Var = this.b;
-                CharSequence charSequence = v41Var.c0;
-                if (charSequence != null) {
-                    v41Var.d0.run(charSequence);
-                }
-                v41Var.dismiss();
-                break;
-            default:
-                v41.P(this.b, view);
-                break;
-        }
+    @Override // org.telegram.ui.Components.t41, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        this.T.run();
     }
 }

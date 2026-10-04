@@ -1,41 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public abstract class q51 {
-    public String[] a = new String[0];
+public final class q51 {
+    public final /* synthetic */ z51 a;
+    public final /* synthetic */ c61 b;
 
-    public boolean a() {
-        return false;
+    public q51(c61 c61Var, z51 z51Var) {
+        this.b = c61Var;
+        this.a = z51Var;
     }
 
-    public String[] b() {
-        return this.a;
+    public final int a() {
+        return this.b.s.v;
     }
 
-    public boolean c() {
-        return false;
-    }
-
-    public boolean d(j51 j51Var, MotionEvent motionEvent) {
-        return false;
-    }
-
-    public boolean e(j51 j51Var, j jVar, MotionEvent motionEvent) {
-        return false;
-    }
-
-    public abstract void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10);
-
-    public abstract void h(TLRPC.StickerSetCovered stickerSetCovered);
-
-    public void i(String[] strArr) {
-        this.a = strArr;
-    }
-
-    public void f(TLRPC.Document document, Object obj, boolean z10, int i10) {
+    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0029  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(boolean z10) {
+        c61 c61Var = this.b;
+        s51 s51Var = c61Var.n;
+        if (z10) {
+            s4.h0 adapter = s51Var.getAdapter();
+            gg.g2 g2Var = c61Var.v;
+            if (adapter != g2Var) {
+                s51Var.setAdapter(g2Var);
+                if (s51Var.getAdapter().h() <= 0) {
+                    c61Var.r.i1(0, AndroidUtilities.dp(58.0f) + (-s51Var.getPaddingTop()) + c61Var.E, false);
+                    return;
+                }
+                return;
+            }
+        }
+        if (z10) {
+            return;
+        }
+        s4.h0 adapter2 = s51Var.getAdapter();
+        b61 b61Var = c61Var.s;
+        if (adapter2 == b61Var) {
+            return;
+        }
+        s51Var.setAdapter(b61Var);
+        if (s51Var.getAdapter().h() <= 0) {
+        }
     }
 }

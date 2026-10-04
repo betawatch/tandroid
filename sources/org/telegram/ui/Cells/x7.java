@@ -4,19 +4,19 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.to0;
+import org.telegram.ui.Components.xo0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class x7 implements to0 {
+public final class x7 implements xo0 {
     public final /* synthetic */ z7 a;
 
     public x7(z7 z7Var) {
         this.a = z7Var;
     }
 
-    @Override // org.telegram.ui.Components.to0
-    public final void X(float f7, boolean z10) {
+    @Override // org.telegram.ui.Components.xo0
+    public final void Y(float f7, boolean z10) {
         int round;
         z7 z7Var = this.a;
         y7 y7Var = z7Var.r;
@@ -50,7 +50,7 @@ public final class x7 implements to0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.to0
+    @Override // org.telegram.ui.Components.xo0
     public final CharSequence getContentDescription() {
         Utilities.Callback2Return callback2Return;
         z7 z7Var = this.a;
@@ -89,8 +89,8 @@ public final class x7 implements to0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.to0
-    public final int m0() {
+    @Override // org.telegram.ui.Components.xo0
+    public final int p0() {
         y7 y7Var = this.a.r;
         if (y7Var == null) {
             return 0;
@@ -98,7 +98,7 @@ public final class x7 implements to0 {
         return y7Var.c != null ? (r1.length - 1) * y7Var.d : y7Var.a() - y7Var.b();
     }
 
-    @Override // org.telegram.ui.Components.to0
+    @Override // org.telegram.ui.Components.xo0
     public final /* synthetic */ void B() {
     }
 }

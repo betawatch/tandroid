@@ -8,9 +8,9 @@ import com.android.billingclient.api.Purchase;
 import java.util.ArrayList;
 import org.json.JSONException;
 import org.telegram.messenger.OneUIUtilities;
-import v7.y5;
+import v7.x5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class u {
     public static final int a = Runtime.getRuntime().availableProcessors();
@@ -55,10 +55,10 @@ public abstract class u {
         bundle.putString("SKU_DETAILS_RESPONSE_FORMAT", "PRODUCT_DETAILS");
         p pVar = r.b;
         Object[] objArr = {"subs", "inapp"};
-        y5.a(2, objArr);
+        x5.a(2, objArr);
         bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_MULTIPLE_OFFERS", new ArrayList<>(r.t(2, objArr)));
         Object[] objArr2 = {"inapp"};
-        y5.a(1, objArr2);
+        x5.a(1, objArr2);
         bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_RENT_OFFERS", new ArrayList<>(r.t(1, objArr2)));
         bundle.putBoolean("SHOULD_RETURN_UNFETCHED_PRODUCTS", true);
         ArrayList<String> arrayList2 = new ArrayList<>();
@@ -165,8 +165,8 @@ public abstract class u {
         }
         try {
             return new Purchase(str, str2);
-        } catch (JSONException e) {
-            h("BillingHelper", "Got JSONException while parsing purchase data: ".concat(e.toString()));
+        } catch (JSONException e7) {
+            h("BillingHelper", "Got JSONException while parsing purchase data: ".concat(e7.toString()));
             return null;
         }
     }

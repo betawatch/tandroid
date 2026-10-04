@@ -8,11 +8,11 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.ml0;
-import org.telegram.ui.fb0;
+import org.telegram.ui.jb0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u0 implements ml0 {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class u0 implements ml0 {
                 r3 r3Var = (r3) obj3;
                 h1 h1Var = (h1) view;
                 m1 m1Var = h1Var.K;
-                a80 F = a80.F((ViewGroup) obj2, new d(), view);
+                b80 F = b80.F((ViewGroup) obj2, new d(), view);
                 F.p(15, -1, LocaleController.formatString(R.string.LiveStoryMessageSent, LocaleController.formatDateTime(m1Var.d, true)));
                 F.k();
                 F.c(R.drawable.msg_openprofile, LocaleController.getString(R.string.OpenProfile), new a1.e(i12, (jc) obj, m1Var), false);
@@ -52,25 +52,25 @@ public final /* synthetic */ class u0 implements ml0 {
                 F.Z();
                 break;
             case 1:
-                ci.d8.Q((ci.d8) obj3, (Utilities.Callback) obj2, (org.telegram.ui.ActionBar.d6) obj, view, i10);
+                ci.c8.O((ci.c8) obj3, (Utilities.Callback) obj2, (org.telegram.ui.ActionBar.d6) obj, view, i10);
                 break;
             case 2:
-                ci.u8.P((ci.u8) obj3, (Context) obj2, (ci.b7) obj, view, i10);
+                ci.t8.N((ci.t8) obj3, (Context) obj2, (ci.b7) obj, view, i10);
                 break;
             default:
                 org.telegram.ui.Cells.t tVar = (org.telegram.ui.Cells.t) obj3;
-                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj2;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj2;
                 Context context = (Context) obj;
                 org.telegram.ui.Cells.s sVar = (org.telegram.ui.Cells.s) view;
-                fb0 fb0Var = (fb0) tVar.X2.get(i10);
-                if (fb0Var.e && !UserConfig.hasPremiumOnAccounts()) {
-                    m2Var.showDialog(new rg.x0(m2Var, 10, true));
+                jb0 jb0Var = (jb0) tVar.e3.get(i10);
+                if (jb0Var.e && !UserConfig.hasPremiumOnAccounts()) {
+                    n2Var.showDialog(new rg.y0(n2Var, 10, true));
                     break;
-                } else if (!w7.f6.a(fb0Var)) {
+                } else if (!w7.g6.a(jb0Var)) {
                     org.telegram.ui.Cells.p pVar = new org.telegram.ui.Cells.p(context);
                     pVar.a = i10;
-                    tVar.Y2.w0(pVar);
-                    w7.f6.b(fb0Var);
+                    tVar.f3.w0(pVar);
+                    w7.g6.b(jb0Var);
                     int i13 = org.telegram.ui.Cells.s.f;
                     sVar.b(true, true);
                     for (int i14 = 0; i14 < tVar.getChildCount(); i14++) {
@@ -79,7 +79,7 @@ public final /* synthetic */ class u0 implements ml0 {
                             sVar2.b(false, true);
                         }
                     }
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 5, fb0Var);
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 5, jb0Var);
                     break;
                 }
                 break;

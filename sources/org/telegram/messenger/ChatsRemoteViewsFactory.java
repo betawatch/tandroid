@@ -16,9 +16,9 @@ import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g10;
+import org.telegram.ui.Components.h10;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
@@ -33,7 +33,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
 
     public ChatsRemoteViewsFactory(Context context, Intent intent) {
         this.mContext = context;
-        org.telegram.ui.ActionBar.h6.R(context);
+        org.telegram.ui.ActionBar.i6.R(context);
         this.appWidgetId = intent.getIntExtra("appWidgetId", 0);
         SharedPreferences sharedPreferences = context.getSharedPreferences("shortcut_widget", 0);
         int i10 = sharedPreferences.getInt("account" + this.appWidgetId, -1);
@@ -298,9 +298,9 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                         } else if (messageObject.isPhoto()) {
                             str3 = "🖼 ";
                         }
-                        StringBuilder v = a4.a.v(str3);
-                        v.append((Object) messageObject.caption);
-                        charSequence2 = v.toString();
+                        StringBuilder u10 = a4.a.u(str3);
+                        u10.append((Object) messageObject.caption);
+                        charSequence2 = u10.toString();
                     } else {
                         if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
                             charSequence = "📊 " + ((TLRPC.TL_messageMediaPoll) messageMedia).poll.question.text;
@@ -340,9 +340,9 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                             } else if (messageObject.isPhoto()) {
                                 str3 = "🖼 ";
                             }
-                            StringBuilder v9 = a4.a.v(str3);
-                            v9.append(charSequence7.replace('\n', ' '));
-                            String sb2 = v9.toString();
+                            StringBuilder u11 = a4.a.u(str3);
+                            u11.append(charSequence7.replace('\n', ' '));
+                            String sb2 = u11.toString();
                             Object[] objArr = new Object[2];
                             objArr[0] = sb2;
                             objArr[c10] = string2;
@@ -364,23 +364,23 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                             color = this.mContext.getResources().getColor(R.color.widget_action_text);
                             TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
                             Object[] objArr3 = new Object[2];
-                            objArr3[0] = (messageMedia2 instanceof TLRPC.TL_messageMediaPoll ? a4.a.q("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069") : messageMedia2 instanceof TLRPC.TL_messageMediaGame ? a4.a.q("🎮 \u2068", messageMedia2.game.title, "\u2069") : messageObject.type == 14 ? org.telegram.ui.Cells.c1.k("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString()).replace('\n', ' ');
+                            objArr3[0] = (messageMedia2 instanceof TLRPC.TL_messageMediaPoll ? a4.a.p("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069") : messageMedia2 instanceof TLRPC.TL_messageMediaGame ? a4.a.p("🎮 \u2068", messageMedia2.game.title, "\u2069") : messageObject.type == 14 ? org.telegram.ui.Cells.c1.k("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString()).replace('\n', ' ');
                             objArr3[c10] = string2;
                             SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr3));
                             try {
-                                valueOf2.setSpan(new g10(org.telegram.ui.ActionBar.h6.o9, null), string2.length() + 2, valueOf2.length(), 33);
+                                valueOf2.setSpan(new h10(org.telegram.ui.ActionBar.i6.o9, null), string2.length() + 2, valueOf2.length(), 33);
                                 spannableStringBuilder = valueOf2;
-                            } catch (Exception e) {
-                                FileLog.e(e);
+                            } catch (Exception e7) {
+                                FileLog.e(e7);
                                 spannableStringBuilder = valueOf2;
                             }
-                            spannableStringBuilder.setSpan(new g10(org.telegram.ui.ActionBar.h6.k9, null), 0, string2.length() + 1, 33);
+                            spannableStringBuilder.setSpan(new h10(org.telegram.ui.ActionBar.i6.k9, null), 0, string2.length() + 1, 33);
                             charSequence2 = spannableStringBuilder;
                         }
-                        spannableStringBuilder.setSpan(new g10(org.telegram.ui.ActionBar.h6.k9, null), 0, string2.length() + 1, 33);
+                        spannableStringBuilder.setSpan(new h10(org.telegram.ui.ActionBar.i6.k9, null), 0, string2.length() + 1, 33);
                         charSequence2 = spannableStringBuilder;
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
                         charSequence2 = spannableStringBuilder;
                     }
                     spannableStringBuilder = valueOf;

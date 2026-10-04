@@ -1,11 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final class hb {
-    public final /* synthetic */ ub a;
+import org.telegram.tgnet.TLRPC;
 
-    public hb(ub ubVar) {
-        this.a = ubVar;
-    }
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final class hb extends TLRPC.ChannelParticipant {
 }

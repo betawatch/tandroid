@@ -16,7 +16,7 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import w7.q;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final ThreadLocal a = new ThreadLocal();
@@ -168,14 +168,14 @@ public abstract class c {
                                                 float A = e2.A(f17, f18, 2.0f, f18);
                                                 float f20 = f17;
                                                 int c10 = a.b(A, f15, min).c(l.k);
-                                                float e = b.e(Color.red(c10));
-                                                float e7 = b.e(Color.green(c10));
-                                                float e10 = b.e(Color.blue(c10));
+                                                float e7 = b.e(Color.red(c10));
+                                                float e10 = b.e(Color.green(c10));
+                                                float e11 = b.e(Color.blue(c10));
                                                 float[] fArr = b.d[1];
-                                                float f21 = (e7 * fArr[1]) + (e * fArr[0]);
+                                                float f21 = (e10 * fArr[1]) + (e7 * fArr[0]);
                                                 float f22 = fArr[2];
                                                 i11 = depth2;
-                                                float y3 = e2.y(e10, f22, f21, 100.0f);
+                                                float y3 = e2.y(e11, f22, f21, 100.0f);
                                                 float cbrt = y3 <= 0.008856452f ? y3 * 903.2963f : (((float) Math.cbrt(y3)) * 116.0f) - 16.0f;
                                                 float abs = Math.abs(f11 - cbrt);
                                                 if (abs < 0.2f) {

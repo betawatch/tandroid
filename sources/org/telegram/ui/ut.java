@@ -1,70 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Timer;
-import org.telegram.messenger.Emoji;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ut extends org.telegram.ui.Components.xl0 {
-    public final Context c;
-    public Timer d;
-    public ArrayList e;
-    public final ArrayList f = new ArrayList();
-    public final /* synthetic */ wt h;
+public final class ut {
+    public String a;
+    public String b;
+    public String c;
+    public String d;
 
-    public ut(wt wtVar, Context context, HashMap hashMap) {
-        this.h = wtVar;
-        this.c = context;
-        Iterator it = hashMap.values().iterator();
-        while (it.hasNext()) {
-            Iterator it2 = ((List) it.next()).iterator();
-            while (it2.hasNext()) {
-                this.f.add((qt) it2.next());
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && ut.class == obj.getClass()) {
+            ut utVar = (ut) obj;
+            if (Objects.equals(this.a, utVar.a) && Objects.equals(this.c, utVar.c)) {
+                return true;
             }
         }
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.xl0
-    public final boolean D(s4.c1 c1Var) {
-        return true;
-    }
-
-    @Override // s4.h0
-    public final int h() {
-        ArrayList arrayList = this.e;
-        if (arrayList == null) {
-            return 0;
-        }
-        return arrayList.size();
-    }
-
-    @Override // s4.h0
-    public final int j(int i10) {
-        return 0;
-    }
-
-    @Override // s4.h0
-    public final void v(s4.c1 c1Var, int i10) {
-        String str;
-        qt qtVar = (qt) this.e.get(i10);
-        org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) c1Var.a;
-        CharSequence replaceEmoji = Emoji.replaceEmoji(wt.V(qtVar), eaVar.getTextView().getPaint().getFontMetricsInt(), false);
-        if (this.h.h) {
-            str = "+" + qtVar.c;
-        } else {
-            str = null;
-        }
-        eaVar.c(replaceEmoji, str, false, false);
-    }
-
-    @Override // s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.il0(wt.U(this.c));
+    public final int hashCode() {
+        return Objects.hash(this.a, this.c);
     }
 }

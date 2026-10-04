@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class s2 extends View {
     public final Paint a;
@@ -23,9 +23,9 @@ public final class s2 extends View {
         this.a = paint;
         int i10 = 0;
         r2 r2Var = new r2(this, i10);
-        sr srVar = sr.h;
-        this.b = new org.telegram.ui.Components.e6(r2Var, 420L, srVar, 0);
-        this.c = new org.telegram.ui.Components.e6(new r2(this, i10), 420L, srVar, 0);
+        tr trVar = tr.h;
+        this.b = new org.telegram.ui.Components.e6(r2Var, 420L, trVar, 0);
+        this.c = new org.telegram.ui.Components.e6(new r2(this, i10), 420L, trVar, 0);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
@@ -34,18 +34,18 @@ public final class s2 extends View {
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
         float d = this.b.d(this.d, false);
-        float e = this.c.e(this.d > 0.0f);
+        float e7 = this.c.e(this.d > 0.0f);
         float width = getWidth() / 2.0f;
         float height = getHeight() / 2.0f;
         float f7 = this.e;
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(width - f7, height - f7, width + f7, height + f7);
-        int l1 = org.telegram.ui.ActionBar.h6.l1(0.25f, -1);
+        int l1 = org.telegram.ui.ActionBar.i6.l1(0.25f, -1);
         Paint paint = this.a;
         paint.setColor(l1);
         canvas.drawArc(rectF, 135.0f, 270.0f, false, paint);
-        if (e > 0.0f) {
-            paint.setColor(org.telegram.ui.ActionBar.h6.l1(e, -1));
+        if (e7 > 0.0f) {
+            paint.setColor(org.telegram.ui.ActionBar.i6.l1(e7, -1));
             canvas.drawArc(rectF, 135.0f, d * 270.0f, false, paint);
         }
     }

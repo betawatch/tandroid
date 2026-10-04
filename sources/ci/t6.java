@@ -22,9 +22,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class t6 extends View {
     public final Paint a;
@@ -51,7 +51,7 @@ public final class t6 extends View {
         this.a = paint;
         Paint paint2 = new Paint(1);
         this.b = paint2;
-        this.r = new org.telegram.ui.Components.e6(this, 0L, 220L, sr.h);
+        this.r = new org.telegram.ui.Components.e6(this, 0L, 220L, tr.h);
         this.s = true;
         this.n = z10;
         paint.setColor(-15098625);

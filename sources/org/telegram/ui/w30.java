@@ -1,29 +1,48 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class w30 extends q4 {
-    public final /* synthetic */ d60 U;
+public final class w30 extends org.telegram.ui.Components.zl0 {
+    public final /* synthetic */ h60 e3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w30(d60 d60Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.U = d60Var;
+    public w30(h60 h60Var, LaunchActivity launchActivity) {
+        super(launchActivity, null);
+        this.e3 = h60Var;
     }
 
-    @Override // org.telegram.ui.q4, org.telegram.ui.Components.wh0
-    public final void c() {
-        d60 d60Var = this.U;
-        AccountInstance accountInstance = d60Var.d;
-        x30 x30Var = d60Var.b;
-        long dialogId = x30Var.getDialogId();
-        if (dialogId > 0) {
-            TLRPC.User user = accountInstance.getMessagesController().getUser(Long.valueOf(dialogId));
-            x30Var.H(null, ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 0), ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 1), false);
+    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        org.telegram.ui.Components.v20 v20Var = (org.telegram.ui.Components.v20) view;
+        h60 h60Var = this.e3;
+        o50 o50Var = h60Var.Q;
+        a40 a40Var = h60Var.a2;
+        if (a40Var.r == null && !h60Var.N2.k()) {
+            v20Var.setAlpha(1.0f);
+            v20Var.setTranslationX(0.0f);
+            v20Var.setTranslationY(0.0f);
         }
+        w30 w30Var = h60Var.m2;
+        v20Var.getClass();
+        w30Var.getClass();
+        if (RecyclerView.R(v20Var) == -1 && v20Var.getRenderer() != null) {
+            return true;
+        }
+        if (v20Var.getTranslationY() == 0.0f || v20Var.getRenderer() == null || v20Var.getRenderer().c == null) {
+            return super.drawChild(canvas, view, j3);
+        }
+        float top = o50Var.getTop() - getTop();
+        float measuredHeight = o50Var.getMeasuredHeight() + top;
+        float f7 = a40Var.c;
+        canvas.save();
+        float f10 = 1.0f - f7;
+        canvas.clipRect(0.0f, top * f10, getMeasuredWidth(), (getMeasuredHeight() * f7) + (measuredHeight * f10));
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild;
     }
 }

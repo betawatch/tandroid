@@ -1,20 +1,21 @@
 package f5;
 
 import com.google.android.gms.internal.vision.e2;
+import ii.n4;
 import j$.util.DesugarCollections;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ka.c E;
-    public static final /* synthetic */ ka.c F;
-    public static final /* synthetic */ ka.c w;
-    public static final /* synthetic */ ka.c x;
-    public static final /* synthetic */ ka.c y;
+    public static final /* synthetic */ n4 E;
+    public static final /* synthetic */ n4 F;
+    public static final /* synthetic */ n4 w;
+    public static final /* synthetic */ n4 x;
+    public static final /* synthetic */ n4 y;
     public String e;
     public String f;
     public long h;
@@ -73,8 +74,8 @@ public final class j extends com.googlecode.mp4parser.c {
                 this.f = e2.i(1, 0, this.f);
                 this.s = true;
             }
-        } catch (UnsupportedEncodingException e) {
-            throw new Error(e);
+        } catch (UnsupportedEncodingException e7) {
+            throw new Error(e7);
         }
     }
 
@@ -101,7 +102,7 @@ public final class j extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.t b10 = re.a.b(F, this, this);
+        com.google.firebase.messaging.s b10 = re.a.b(F, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("HandlerBox[handlerType=");
@@ -109,6 +110,6 @@ public final class j extends com.googlecode.mp4parser.c {
         sb2.append(this.e);
         sb2.append(";name=");
         e2.q(re.a.b(E, this, this));
-        return a4.a.t(sb2, this.f, "]");
+        return a4.a.s(sb2, this.f, "]");
     }
 }

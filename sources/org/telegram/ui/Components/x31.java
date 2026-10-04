@@ -1,40 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class x31 extends yl0 {
-    public final /* synthetic */ k41 X2;
+public final /* synthetic */ class x31 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ String d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x31(k41 k41Var, Context context) {
-        super(context, null);
-        this.X2 = k41Var;
+    public /* synthetic */ x31(String str, MessageObject messageObject, long j3, int i10) {
+        this.a = i10;
+        this.b = messageObject;
+        this.c = j3;
+        this.d = str;
     }
 
-    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            float y3 = motionEvent.getY();
-            k41 k41Var = this.X2;
-            if (y3 < k41Var.z(true) - getTop()) {
-                k41Var.dismiss();
-                return true;
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        String str = this.d;
+        long j3 = this.c;
+        MessageObject messageObject = this.b;
+        switch (i10) {
+            case 0:
+                NotificationCenter notificationCenter = NotificationCenter.getInstance(messageObject.currentAccount);
+                int i11 = NotificationCenter.voiceTranscriptionUpdate;
+                Long valueOf = Long.valueOf(j3);
+                Boolean bool = Boolean.TRUE;
+                notificationCenter.lambda$postNotificationNameOnUIThread$1(i11, messageObject, valueOf, str, bool, bool);
+                break;
+            default:
+                c41.g(messageObject, j3, str);
+                break;
         }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onRequestFocusInDescendants(int i10, Rect rect) {
-        return true;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
-    public final void requestChildFocus(View view, View view2) {
     }
 }

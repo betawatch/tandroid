@@ -7,9 +7,9 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import org.telegram.ui.Cells.c1;
-import v7.g5;
+import v7.f5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class l {
     public static final Object a = new Object();
@@ -94,9 +94,9 @@ public abstract class l {
         return status.c != null ? new com.google.android.gms.common.api.p(status) : new com.google.android.gms.common.api.f(status);
     }
 
-    public static Task n(g5 g5Var, k kVar) {
+    public static Task n(f5 f5Var, k kVar) {
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        g5Var.b(new t(g5Var, taskCompletionSource, kVar));
+        f5Var.b(new t(f5Var, taskCompletionSource, kVar));
         return taskCompletionSource.getTask();
     }
 }

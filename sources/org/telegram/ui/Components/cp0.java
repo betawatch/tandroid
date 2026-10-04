@@ -1,38 +1,32 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cp0 implements o1.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kp0 b;
-    public final /* synthetic */ o1.k c;
+public final class cp0 extends o6 {
+    public final /* synthetic */ int W = 0;
+    public final /* synthetic */ Object X;
 
-    public /* synthetic */ cp0(kp0 kp0Var, o1.k kVar, int i10) {
-        this.a = i10;
-        this.b = kp0Var;
-        this.c = kVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cp0(Runnable runnable) {
+        super(false, true, true, true);
+        this.X = runnable;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
-        switch (this.a) {
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        switch (this.W) {
             case 0:
-                if (!z10) {
-                    this.b.z.remove(this.c);
-                    hVar.c();
-                    break;
-                }
+                ((Runnable) this.X).run();
                 break;
             default:
-                kp0 kp0Var = this.b;
-                if (!z10) {
-                    kp0Var.z.remove(this.c);
-                    hVar.c();
-                    break;
-                } else {
-                    kp0Var.getClass();
-                    break;
-                }
+                ((org.telegram.ui.s21) this.X).invalidate();
+                break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cp0(org.telegram.ui.s21 s21Var) {
+        super(false, true, false, false);
+        this.X = s21Var;
     }
 }

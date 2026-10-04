@@ -16,13 +16,13 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.ts;
-import org.telegram.ui.Components.vs;
-import yh.b7;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.us;
+import org.telegram.ui.Components.ws;
+import yh.e7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -61,9 +61,9 @@ public final /* synthetic */ class e0 implements Runnable {
                             a0Var2.s(L);
                             dVar.getClass();
                             try {
-                                j0Var.g(L);
-                            } catch (RemoteException e) {
-                                e2.a.o("MediaSessionLegacyStub", "Exception in " + L, e);
+                                j0Var.f(L);
+                            } catch (RemoteException e7) {
+                                e2.a.o("MediaSessionLegacyStub", "Exception in " + L, e7);
                             }
                             if (this.b) {
                                 new SparseBooleanArray().append(i10, true);
@@ -75,7 +75,7 @@ public final /* synthetic */ class e0 implements Runnable {
                             break;
                         }
                     } else {
-                        StringBuilder j3 = hg.c.j(i10, "Ignore incoming player command before initialization. command=", ", pid=");
+                        StringBuilder j3 = hg.k0.j(i10, "Ignore incoming player command before initialization. command=", ", pid=");
                         j3.append(a0Var.a.b);
                         e2.a.n("MediaSessionLegacyStub", j3.toString());
                         break;
@@ -86,13 +86,13 @@ public final /* synthetic */ class e0 implements Runnable {
                 ((MessagesController) this.d).lambda$startShortPoll$333((TLRPC.Chat) this.e, this.b, this.c, (q0.a) this.f);
                 break;
             case 2:
-                ts tsVar = (ts) this.d;
+                us usVar = (us) this.d;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) this.e;
                 TLObject tLObject = (TLObject) this.f;
-                ArrayList arrayList = tsVar.T;
-                int i11 = tsVar.N;
-                if (this.c == tsVar.d0 && TextUtils.equals(tL_messages_searchGlobal.q, tsVar.e0)) {
-                    tsVar.Z = false;
+                ArrayList arrayList = usVar.T;
+                int i11 = usVar.N;
+                if (this.c == usVar.d0 && TextUtils.equals(tL_messages_searchGlobal.q, usVar.e0)) {
+                    usVar.Z = false;
                     if (!this.b) {
                         arrayList.clear();
                     }
@@ -108,25 +108,25 @@ public final /* synthetic */ class e0 implements Runnable {
                             TLRPC.Message message = arrayList2.get(i12);
                             i12++;
                             MessageObject messageObject = new MessageObject(i11, message, false, true);
-                            messageObject.setQuery(tsVar.e0);
+                            messageObject.setQuery(usVar.e0);
                             arrayList.add(messageObject);
                         }
-                        tsVar.b0 = messages_messages instanceof TLRPC.TL_messages_messagesSlice;
+                        usVar.b0 = messages_messages instanceof TLRPC.TL_messages_messagesSlice;
                         Math.max(arrayList.size(), messages_messages.count);
-                        tsVar.c0 = messages_messages.next_rate;
+                        usVar.c0 = messages_messages.next_rate;
                     }
-                    tsVar.N(true);
+                    usVar.N(true);
                     break;
                 }
                 break;
             case 3:
-                vs vsVar = (vs) this.d;
+                ws wsVar = (ws) this.d;
                 TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal2 = (TLRPC.TL_messages_searchGlobal) this.e;
                 TLObject tLObject2 = (TLObject) this.f;
-                ArrayList arrayList3 = vsVar.P;
-                int i13 = vsVar.N;
-                if (this.c == vsVar.a0 && TextUtils.equals(tL_messages_searchGlobal2.q, vsVar.b0)) {
-                    vsVar.W = false;
+                ArrayList arrayList3 = wsVar.P;
+                int i13 = wsVar.N;
+                if (this.c == wsVar.a0 && TextUtils.equals(tL_messages_searchGlobal2.q, wsVar.b0)) {
+                    wsVar.W = false;
                     if (!this.b) {
                         arrayList3.clear();
                     }
@@ -142,14 +142,14 @@ public final /* synthetic */ class e0 implements Runnable {
                             TLRPC.Message message2 = arrayList4.get(i14);
                             i14++;
                             MessageObject messageObject2 = new MessageObject(i13, message2, false, true);
-                            messageObject2.setQuery(vsVar.b0);
+                            messageObject2.setQuery(wsVar.b0);
                             arrayList3.add(messageObject2);
                         }
-                        vsVar.Y = messages_messages2 instanceof TLRPC.TL_messages_messagesSlice;
+                        wsVar.Y = messages_messages2 instanceof TLRPC.TL_messages_messagesSlice;
                         Math.max(arrayList3.size(), messages_messages2.count);
-                        vsVar.Z = messages_messages2.next_rate;
+                        wsVar.Z = messages_messages2.next_rate;
                     }
-                    vsVar.N(true);
+                    wsVar.N(true);
                     break;
                 }
                 break;
@@ -217,8 +217,8 @@ public final /* synthetic */ class e0 implements Runnable {
                 }
                 if (document != null) {
                     imageReceiver.setAllowStartLottieAnimation(true);
-                    imageReceiver.setDelegate(new b7(zArr));
-                    SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, h6.a7, 0.3f);
+                    imageReceiver.setDelegate(new e7(zArr));
+                    SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, i6.a7, 0.3f);
                     TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 160, true, null, true);
                     imageReceiver.setAutoRepeat(0);
                     imageReceiver.setImage(ImageLocation.getForDocument(document), "160_160_nr", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "160_160", svgThumb, document.size, "tgs", tL_messages_stickerSet, 1);
@@ -240,9 +240,9 @@ public final /* synthetic */ class e0 implements Runnable {
         this.f = aVar;
     }
 
-    public /* synthetic */ e0(l61 l61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
+    public /* synthetic */ e0(u61 u61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
         this.a = i11;
-        this.d = l61Var;
+        this.d = u61Var;
         this.c = i10;
         this.e = tL_messages_searchGlobal;
         this.b = z10;

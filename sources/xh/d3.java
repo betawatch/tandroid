@@ -5,39 +5,39 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.t00;
+import org.telegram.ui.Components.rc;
+import org.telegram.ui.Components.u00;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class d3 extends wn {
-    public boolean Pc;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique Qc;
-    public final /* synthetic */ long Rc;
+public final class d3 extends yn {
+    public boolean Kc;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique Lc;
+    public final /* synthetic */ long Mc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public d3(Bundle bundle, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3) {
         super(bundle);
-        this.Qc = tL_starGiftUnique;
-        this.Rc = j3;
-        this.Pc = false;
+        this.Lc = tL_starGiftUnique;
+        this.Mc = j3;
+        this.Kc = false;
     }
 
-    @Override // org.telegram.ui.wn, org.telegram.ui.ActionBar.m2
+    @Override // org.telegram.ui.yn, org.telegram.ui.ActionBar.n2
     public final void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
-        if (this.Pc) {
+        if (this.Kc) {
             return;
         }
-        this.Pc = true;
-        qc O = yc.a0(this).O(this.Qc.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, this.Rc)));
+        this.Kc = true;
+        rc O = yc.a0(this).O(this.Lc.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, this.Mc)));
         O.r = false;
         O.j();
-        t00 t00Var = this.m9;
-        if (t00Var != null) {
-            t00Var.c(true);
+        u00 u00Var = this.k9;
+        if (u00Var != null) {
+            u00Var.c(true);
         }
     }
 }

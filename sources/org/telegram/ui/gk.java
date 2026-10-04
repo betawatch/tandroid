@@ -7,58 +7,58 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class gk extends org.telegram.ui.Components.p81 {
+public final class gk extends org.telegram.ui.Components.x81 {
     public final /* synthetic */ Context a;
-    public final /* synthetic */ wn b;
+    public final /* synthetic */ yn b;
 
-    public gk(wn wnVar, Context context) {
-        this.b = wnVar;
+    public gk(yn ynVar, Context context) {
+        this.b = ynVar;
         this.a = context;
     }
 
-    @Override // org.telegram.ui.Components.p81
+    @Override // org.telegram.ui.Components.x81
     public final void b(View view, int i10, int i11) {
-        if (view instanceof yn) {
-            ((yn) view).a.Jc(this.b.u3);
+        if (view instanceof ao) {
+            ((ao) view).a.Ic(this.b.s3);
         }
         WeakHashMap weakHashMap = r0.i0.a;
         r0.y.c(view);
     }
 
-    @Override // org.telegram.ui.Components.p81
+    @Override // org.telegram.ui.Components.x81
     public final View d(int i10) {
         Context context = this.a;
-        wn wnVar = this.b;
+        yn ynVar = this.b;
         if (i10 == 0) {
-            return new kn(wnVar, context);
+            return new mn(ynVar, context);
         }
         Bundle bundle = new Bundle();
         bundle.putInt("chatMode", 7);
         bundle.putInt("searchType", i10);
-        bundle.putString("searchHashtag", wnVar.u3);
-        fk fkVar = new fk(context, wnVar.getParentLayout(), bundle, 0);
+        bundle.putString("searchHashtag", ynVar.s3);
+        fk fkVar = new fk(context, ynVar.getParentLayout(), bundle, 0);
         fkVar.h = false;
-        xn xnVar = fkVar.a;
-        xnVar.L.a = wnVar.L;
-        xnVar.ca = wnVar.ea;
-        xnVar.da = wnVar;
-        xnVar.V8 = new g(this, 13);
+        zn znVar = fkVar.a;
+        znVar.J.a = ynVar.J;
+        znVar.aa = ynVar.ca;
+        znVar.ba = ynVar;
+        znVar.T8 = new g(this, 13);
         return fkVar;
     }
 
-    @Override // org.telegram.ui.Components.p81
+    @Override // org.telegram.ui.Components.x81
     public final int e() {
         return 3;
     }
 
-    @Override // org.telegram.ui.Components.p81
+    @Override // org.telegram.ui.Components.x81
     public final CharSequence g(int i10) {
         return i10 != 1 ? i10 != 2 ? LocaleController.getString(R.string.SearchThisChat) : LocaleController.getString(R.string.SearchPublicPosts) : LocaleController.getString(R.string.SearchMyMessages);
     }
 
-    @Override // org.telegram.ui.Components.p81
+    @Override // org.telegram.ui.Components.x81
     public final int h(int i10) {
         return i10;
     }

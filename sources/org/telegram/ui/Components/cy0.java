@@ -1,23 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class cy0 extends org.telegram.ui.Cells.f8 {
-    public final /* synthetic */ dy0 O;
+public final /* synthetic */ class cy0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLObject b;
+    public final /* synthetic */ Utilities.Callback c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cy0(dy0 dy0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var, false);
-        this.O = dy0Var;
+    public /* synthetic */ cy0(TLObject tLObject, Utilities.Callback callback, int i10) {
+        this.a = i10;
+        this.b = tLObject;
+        this.c = callback;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        dy0 dy0Var = this.O;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(dy0Var.r.O, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dy0Var.r.O, TLObject.FLAG_30));
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                TLObject tLObject = this.b;
+                if (tLObject instanceof TLRPC.TL_messages_stickerSet) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
+                    MediaDataController.getInstance(UserConfig.selectedAccount).putStickerSet(tL_messages_stickerSet);
+                    if (!MediaDataController.getInstance(UserConfig.selectedAccount).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
+                        MediaDataController.getInstance(UserConfig.selectedAccount).toggleStickerSet(null, tL_messages_stickerSet, 2, null, false, false);
+                    }
+                    z10 = true;
+                } else {
+                    z10 = false;
+                }
+                this.c.run(Boolean.valueOf(z10));
+                break;
+            default:
+                TLObject tLObject2 = this.b;
+                boolean z11 = tLObject2 instanceof TL_account.paidMessagesRevenue;
+                Utilities.Callback callback = this.c;
+                if (!z11) {
+                    callback.run(0L);
+                    break;
+                } else {
+                    callback.run(Long.valueOf(((TL_account.paidMessagesRevenue) tLObject2).stars_amount));
+                    break;
+                }
+        }
     }
 }

@@ -11,20 +11,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class j2 extends View implements org.telegram.ui.Cells.p9, e3 {
-    public final p70 a;
+    public final t70 a;
     public final g4 b;
     public b3 c;
     public final int d;
     public int e;
     public TL_iv.pageBlockRelatedArticles f;
 
-    public j2(Context context, p70 p70Var, g4 g4Var) {
+    public j2(Context context, t70 t70Var, g4 g4Var) {
         super(context);
         this.d = AndroidUtilities.dp(18.0f);
-        this.a = p70Var;
+        this.a = t70Var;
         this.b = g4Var;
     }
 

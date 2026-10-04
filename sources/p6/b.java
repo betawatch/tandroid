@@ -8,16 +8,16 @@ import com.google.android.gms.common.api.j;
 import com.google.android.gms.tasks.Task;
 import n6.o;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b extends j {
     public static final e k = new e("ClientTelemetry.API", new d(11), new com.google.android.gms.common.api.d());
 
     public final Task f(o oVar) {
-        v e = w.e();
-        e.d = new k6.c[]{k7.b.a};
-        e.b = false;
-        e.c = new l.d(oVar);
-        return e(2, e.a());
+        v e7 = w.e();
+        e7.d = new k6.c[]{k7.b.a};
+        e7.b = false;
+        e7.c = new n2.c(oVar, 11);
+        return e(2, e7.a());
     }
 }

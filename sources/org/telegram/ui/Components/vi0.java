@@ -15,9 +15,9 @@ import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
-import org.telegram.ui.tf1;
+import org.telegram.ui.vf1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class vi0 {
     public ValueAnimator A;
@@ -28,7 +28,7 @@ public abstract class vi0 {
     public boolean F;
     public boolean G;
     public org.telegram.ui.Cells.s2 H;
-    public yl0 I;
+    public zl0 I;
     public float J;
     public float K;
     public float L;
@@ -68,9 +68,9 @@ public abstract class vi0 {
     public float x;
     public boolean y;
     public ValueAnimator z;
-    public final int b = org.telegram.ui.ActionBar.h6.R9;
-    public final int c = org.telegram.ui.ActionBar.h6.S9;
-    public final int d = org.telegram.ui.ActionBar.h6.N7;
+    public final int b = org.telegram.ui.ActionBar.i6.R9;
+    public final int c = org.telegram.ui.ActionBar.i6.S9;
+    public final int d = org.telegram.ui.ActionBar.i6.N7;
     public final boolean e = true;
     public final Paint f = new Paint(1);
     public final Paint g = new Paint(1);
@@ -190,7 +190,7 @@ public abstract class vi0 {
         if (!this.X || this.Y || (s2Var = this.H) == null || this.I == null) {
             return;
         }
-        boolean z12 = s2Var instanceof tf1;
+        boolean z12 = s2Var instanceof vf1;
         int dp = AndroidUtilities.dp(z12 ? 15.0f : 28.0f);
         int dp2 = AndroidUtilities.dp(8.0f);
         int dp3 = AndroidUtilities.dp(9.0f);
@@ -291,7 +291,7 @@ public abstract class vi0 {
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(fArr2);
             this.A = ofFloat2;
             ofFloat2.addUpdateListener(new ti0(this, 2));
-            this.A.setInterpolator(sr.j);
+            this.A.setInterpolator(tr.j);
             this.A.setDuration(250L);
             this.A.start();
         }
@@ -434,7 +434,7 @@ public abstract class vi0 {
             canvas.save();
             canvas.rotate(180.0f * f47, f44, f45);
             canvas.translate(0.0f, (AndroidUtilities.dpf2(1.0f) * 1.0f) - f47);
-            ui0Var.b.setColor(this.G ? paint2.getColor() : org.telegram.ui.ActionBar.h6.w0(null, this.b, false));
+            ui0Var.b.setColor(this.G ? paint2.getColor() : org.telegram.ui.ActionBar.i6.w0(null, this.b, false));
             ui0Var.draw(canvas);
             canvas.restore();
         } else {
@@ -503,29 +503,29 @@ public abstract class vi0 {
             return;
         }
         canvas.save();
-        int i27 = org.telegram.ui.ActionBar.h6.u1.b;
+        int i27 = org.telegram.ui.ActionBar.i6.u1.b;
         int height3 = (this.H.getHeight() - dp2) - i14;
         float f55 = i27;
         float dp7 = AndroidUtilities.dp(24.0f) / f55;
         float f56 = this.C;
-        float b10 = org.telegram.ui.Cells.c1.b(1.0f - dp7, f56, dp7, f7);
+        float d10 = t8.b.d(1.0f - dp7, f56, dp7, f7);
         float f57 = i16 - f23;
         float f58 = 1.0f - f56;
         canvas.translate(f57 * f58, (height3 - f13) * f58);
-        canvas.scale(b10, b10, f23, f13);
-        org.telegram.ui.ActionBar.h6.u1.T(0.0f, true);
-        if (!org.telegram.ui.ActionBar.h6.C1) {
-            kj0 kj0Var = org.telegram.ui.ActionBar.h6.u1;
+        canvas.scale(d10, d10, f23, f13);
+        org.telegram.ui.ActionBar.i6.u1.T(0.0f, true);
+        if (!org.telegram.ui.ActionBar.i6.C1) {
+            kj0 kj0Var = org.telegram.ui.ActionBar.i6.u1;
             kj0Var.Z = true;
             int i28 = this.d;
-            kj0Var.Q(org.telegram.ui.ActionBar.h6.w0(null, i28, true), "Arrow1");
-            org.telegram.ui.ActionBar.h6.u1.Q(org.telegram.ui.ActionBar.h6.w0(null, i28, true), "Arrow2");
-            org.telegram.ui.ActionBar.h6.u1.o();
-            org.telegram.ui.ActionBar.h6.C1 = true;
+            kj0Var.Q(org.telegram.ui.ActionBar.i6.w0(null, i28, true), "Arrow1");
+            org.telegram.ui.ActionBar.i6.u1.Q(org.telegram.ui.ActionBar.i6.w0(null, i28, true), "Arrow2");
+            org.telegram.ui.ActionBar.i6.u1.o();
+            org.telegram.ui.ActionBar.i6.C1 = true;
         }
         float f59 = f55 / 2.0f;
-        org.telegram.ui.ActionBar.h6.u1.setBounds((int) (f23 - f59), (int) (f13 - f59), (int) (f23 + f59), (int) (f59 + f13));
-        org.telegram.ui.ActionBar.h6.u1.draw(canvas);
+        org.telegram.ui.ActionBar.i6.u1.setBounds((int) (f23 - f59), (int) (f13 - f59), (int) (f23 + f59), (int) (f59 + f13));
+        org.telegram.ui.ActionBar.i6.u1.draw(canvas);
         canvas.restore();
     }
 
@@ -533,15 +533,15 @@ public abstract class vi0 {
 
     public final void e(float f7) {
         this.C = f7;
-        int d = i0.a.d(1.0f - this.C, org.telegram.ui.ActionBar.h6.w0(null, this.d, true), org.telegram.ui.ActionBar.h6.w0(null, this.c, true));
+        int d = i0.a.d(1.0f - this.C, org.telegram.ui.ActionBar.i6.w0(null, this.d, true), org.telegram.ui.ActionBar.i6.w0(null, this.c, true));
         this.h.setColor(d);
         if (this.e && this.X && !this.Y) {
-            kj0 kj0Var = org.telegram.ui.ActionBar.h6.u1;
+            kj0 kj0Var = org.telegram.ui.ActionBar.i6.u1;
             kj0Var.Z = true;
             kj0Var.Q(d, "Arrow1");
-            org.telegram.ui.ActionBar.h6.u1.Q(d, "Arrow2");
-            org.telegram.ui.ActionBar.h6.u1.o();
-            org.telegram.ui.ActionBar.h6.C1 = true;
+            org.telegram.ui.ActionBar.i6.u1.Q(d, "Arrow2");
+            org.telegram.ui.ActionBar.i6.u1.o();
+            org.telegram.ui.ActionBar.i6.C1 = true;
         }
     }
 
@@ -571,12 +571,12 @@ public abstract class vi0 {
     }
 
     public final void i() {
-        int w02 = org.telegram.ui.ActionBar.h6.w0(null, this.b, false);
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, this.b, false);
         this.k.setColor(-1);
         this.g.setColor(-1);
         this.f.setColor(i0.a.k(-1, 100));
         this.i.setColor(w02);
         this.l.b.setColor(w02);
-        this.h.setColor(org.telegram.ui.ActionBar.h6.w0(null, this.d, false));
+        this.h.setColor(org.telegram.ui.ActionBar.i6.w0(null, this.d, false));
     }
 }

@@ -2,9 +2,9 @@ package yh;
 
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class f3 {
     public final Runnable a;
@@ -30,7 +30,7 @@ public final class f3 {
         this.i = e3Var2;
         this.j = f7;
         this.k = i10;
-        org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(runnable, 300L, sr.h);
+        org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(runnable, 300L, tr.h);
         this.m = e6Var;
         e6Var.a(true);
         this.f = -0.5f;

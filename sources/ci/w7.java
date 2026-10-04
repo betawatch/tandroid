@@ -1,54 +1,23 @@
 package ci;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import j$.util.Objects;
-import org.telegram.ui.Components.yl0;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w7 implements bh.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class w7 implements li.j, li.i {
+    public final /* synthetic */ c8 a;
 
-    public /* synthetic */ w7(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ w7(c8 c8Var) {
+        this.a = c8Var;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // bh.a
-    public final void b(ah.a aVar, RectF rectF) {
-        switch (this.a) {
-        }
-        aVar.a = true;
+    @Override // li.j
+    public int f() {
+        c8 c8Var = this.a;
+        c8Var.getClass();
+        return c8Var.getThemedColor(org.telegram.ui.ActionBar.i6.d6);
     }
 
-    @Override // bh.a
-    public final void f(Canvas canvas, RectF rectF) {
-        switch (this.a) {
-            case 0:
-                d8 d8Var = (d8) this.b;
-                yl0 yl0Var = d8Var.d;
-                gh.d.b(yl0Var, canvas, rectF, yl0Var, d8Var.getContainerView(), 255);
-                break;
-            default:
-                xh.s2 s2Var = (xh.s2) this.b;
-                for (View view : s2Var.h.getViewPages()) {
-                    if (view instanceof xh.o2) {
-                        xh.o2 o2Var = (xh.o2) view;
-                        if (o2Var.h == null) {
-                            xh.j2 j2Var = o2Var.f;
-                            ViewGroup viewGroup = s2Var.S;
-                            Objects.requireNonNull(j2Var);
-                            o2Var.h = new ah.n(j2Var, viewGroup, new org.telegram.ui.v8(j2Var, 0));
-                        }
-                        o2Var.h.f(canvas, rectF);
-                    }
-                }
-                break;
-        }
+    @Override // li.i
+    public void k(int i10) {
+        c8.S(this.a, i10);
     }
 }

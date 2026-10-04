@@ -1,39 +1,35 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.ScrollView;
-import org.telegram.messenger.R;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class a51 extends ScrollView {
-    public Drawable a;
-    public e6 b;
-    public boolean c;
+public final class a51 extends vh.n {
+    public final org.telegram.ui.k20 R;
+    public final /* synthetic */ d51 S;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        float d = this.b.d(canScrollVertically(-1) ? 1.0f : 0.0f, false) * 0.5f;
-        if (d > 0.0f) {
-            if (this.a == null) {
-                this.a = getContext().getResources().getDrawable(R.drawable.header_shadow);
-            }
-            this.a.setBounds(0, getScrollY(), getWidth(), this.a.getIntrinsicHeight() + getScrollY());
-            this.a.setAlpha((int) (d * 255.0f));
-            this.a.draw(canvas);
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a51(d51 d51Var, Context context) {
+        super(context);
+        this.S = d51Var;
+        this.R = new org.telegram.ui.k20();
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final void onNestedScroll(View view, int i10, int i11, int i12, int i13) {
-        super.onNestedScroll(view, i10, i11, i12, i13);
-        boolean canScrollVertically = canScrollVertically(-1);
-        if (this.c != canScrollVertically) {
-            invalidate();
-            this.c = canScrollVertically;
-        }
+    @Override // vh.n, android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int dp = AndroidUtilities.dp(8.0f) + this.S.d.getWidth();
+        canvas.saveLayerAlpha(getScrollX(), 0.0f, (getWidth() + getScrollX()) - dp, getHeight(), 255, 31);
+        super.onDraw(canvas);
+        canvas.save();
+        canvas.translate(getPaddingLeft(), getPaddingTop());
+        xw0.a(canvas, getLayout());
+        canvas.restore();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((getWidth() - dp) - AndroidUtilities.dp(24.0f), 0.0f, getWidth() - dp, getHeight());
+        this.R.b(canvas, rectF, 2, 1.0f);
+        canvas.restore();
     }
 }

@@ -1,48 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q60 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z60 b;
+public final class q60 extends rg.k0 {
+    public final /* synthetic */ r60 W0;
 
-    public /* synthetic */ q60(z60 z60Var, int i10) {
-        this.a = i10;
-        this.b = z60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q60(r60 r60Var, r60 r60Var2, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(i10, i11, activity, r60Var2, d6Var);
+        this.W0 = r60Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                z60 z60Var = this.b;
-                z60Var.f.r.clearFocus();
-                z60Var.f.r.requestFocus();
-                AndroidUtilities.showKeyboard(z60Var.f.r);
-                break;
-            case 1:
-                this.b.o0();
-                break;
-            case 2:
-                z60 z60Var2 = this.b;
-                z60Var2.n0(z60Var2.l0());
-                break;
-            case 3:
-                z60 z60Var3 = this.b;
-                z60Var3.n0(z60Var3.l0());
-                break;
-            default:
-                z60 z60Var4 = this.b;
-                z60Var4.X = null;
-                z60Var4.Z.b();
-                z60Var4.h.b();
-                z60Var4.k0();
-                z60Var4.r0();
-                z60Var4.s0();
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        this.W0.B0 = false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3
+    public final void onOpenAnimationEnd() {
+        this.W0.B0 = false;
     }
 }

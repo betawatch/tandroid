@@ -17,20 +17,20 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class b1 extends View implements org.telegram.ui.Cells.p9, e3 {
-    public final p70 a;
+    public final t70 a;
     public final g4 b;
     public b3 c;
     public int d;
     public final int e;
     public TL_iv.pageBlockAuthorDate f;
 
-    public b1(Context context, p70 p70Var, g4 g4Var) {
+    public b1(Context context, t70 t70Var, g4 g4Var) {
         super(context);
         this.e = AndroidUtilities.dp(8.0f);
-        this.a = p70Var;
+        this.a = t70Var;
         this.b = g4Var;
     }
 
@@ -168,8 +168,8 @@ public final class b1 extends View implements org.telegram.ui.Cells.p9, e3 {
                             formatString.setSpan(metricAffectingSpan, spannable.getSpanStart(metricAffectingSpan) + indexOf, spannable.getSpanEnd(metricAffectingSpanArr[i14]) + indexOf, 33);
                         }
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
             }
             b3 q6 = i4.q(this.a, this, formatString, null, i12 - AndroidUtilities.dp(36.0f), this.e, this.f, this.b);

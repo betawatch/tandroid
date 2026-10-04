@@ -10,14 +10,15 @@ import android.os.Handler;
 import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
+import ii.n4;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
-import v7.m8;
+import v7.l8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i0 implements i9.r, q {
     public b2.n0 a;
@@ -60,8 +61,8 @@ public final class i0 implements i9.r, q {
                 for (int beginBroadcast = rVar.f.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
                     try {
                         ((n4.f) rVar.f.getBroadcastItem(beginBroadcast)).t0(str);
-                    } catch (RemoteException | SecurityException e) {
-                        Log.e("MediaSessionCompat", "Dead object in sendSessionEvent.", e);
+                    } catch (RemoteException | SecurityException e7) {
+                        Log.e("MediaSessionCompat", "Dead object in sendSessionEvent.", e7);
                     }
                 }
                 rVar.f.finishBroadcast();
@@ -87,11 +88,11 @@ public final class i0 implements i9.r, q {
     public void j(b2.e eVar) {
         k0 k0Var = (k0) this.e;
         k0Var.g.t.K().getClass();
-        int e = k.e(eVar);
+        int e7 = k.e(eVar);
         n4.r rVar = (n4.r) k0Var.k.b;
         rVar.getClass();
         AudioAttributes.Builder builder = new AudioAttributes.Builder();
-        builder.setLegacyStreamType(e);
+        builder.setLegacyStreamType(e7);
         rVar.a.setPlaybackToLocal(builder.build());
     }
 
@@ -99,11 +100,11 @@ public final class i0 implements i9.r, q {
         k0 k0Var = (k0) this.e;
         e1 e1Var = k0Var.g.t;
         e1Var.K().getClass();
-        int e = k.e(e1Var.m0(21) ? e1Var.I() : b2.e.h);
+        int e7 = k.e(e1Var.m0(21) ? e1Var.I() : b2.e.h);
         n4.r rVar = (n4.r) k0Var.k.b;
         rVar.getClass();
         AudioAttributes.Builder builder = new AudioAttributes.Builder();
-        builder.setLegacyStreamType(e);
+        builder.setLegacyStreamType(e7);
         rVar.a.setPlaybackToLocal(builder.build());
     }
 
@@ -164,7 +165,7 @@ public final class i0 implements i9.r, q {
     public void n(b2.n0 n0Var) {
         k0 k0Var = (k0) this.e;
         n4.y yVar = k0Var.k;
-        CharSequence queueTitle = ((n4.j) ((k2.u) yVar.c).b).a.getQueueTitle();
+        CharSequence queueTitle = ((n4.j) ((n4) yVar.c).b).a.getQueueTitle();
         CharSequence charSequence = n0Var.a;
         if (TextUtils.equals(queueTitle, charSequence)) {
             return;
@@ -196,8 +197,8 @@ public final class i0 implements i9.r, q {
                 for (int beginBroadcast = rVar.f.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
                     try {
                         ((n4.f) rVar.f.getBroadcastItem(beginBroadcast)).onRepeatModeChanged(i12);
-                    } catch (RemoteException | SecurityException e) {
-                        Log.e("MediaSessionCompat", "Dead object in setRepeatMode.", e);
+                    } catch (RemoteException | SecurityException e7) {
+                        Log.e("MediaSessionCompat", "Dead object in setRepeatMode.", e7);
                     }
                 }
                 rVar.f.finishBroadcast();
@@ -227,8 +228,8 @@ public final class i0 implements i9.r, q {
                 for (int beginBroadcast = rVar.f.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
                     try {
                         ((n4.f) rVar.f.getBroadcastItem(beginBroadcast)).h(z10 ? 1 : 0);
-                    } catch (RemoteException | SecurityException e) {
-                        Log.e("MediaSessionCompat", "Dead object in setShuffleMode.", e);
+                    } catch (RemoteException | SecurityException e7) {
+                        Log.e("MediaSessionCompat", "Dead object in setShuffleMode.", e7);
                     }
                 }
                 rVar.f.finishBroadcast();
@@ -271,7 +272,7 @@ public final class i0 implements i9.r, q {
         yVar.getClass();
         byte[] bArr = R0.k;
         if (bArr != null) {
-            wVar = yVar.o(bArr);
+            wVar = yVar.s(bArr);
         } else {
             Uri uri5 = R0.m;
             if (uri5 != null) {
@@ -300,13 +301,13 @@ public final class i0 implements i9.r, q {
                 k0Var.p = i0Var;
                 Handler handler = a0Var.l;
                 Objects.requireNonNull(handler);
-                wVar.a(new i9.s(0, wVar, i0Var), new k2.b0(handler, 0));
+                wVar.a(new i9.s(0, wVar, i0Var), new k2.c0(handler, 0));
                 k0.E(k0Var.k, k.b(n0Var, str, uri2, j3, bitmap));
             }
             try {
-                bitmap = (Bitmap) m8.a(wVar);
-            } catch (CancellationException | ExecutionException e) {
-                e2.a.n("MediaSessionLegacyStub", "Failed to load bitmap: " + e.getMessage());
+                bitmap = (Bitmap) l8.a(wVar);
+            } catch (CancellationException | ExecutionException e7) {
+                e2.a.n("MediaSessionLegacyStub", "Failed to load bitmap: " + e7.getMessage());
             }
         }
         j3 = j10;
@@ -337,11 +338,11 @@ public final class i0 implements i9.r, q {
                 arrayList2.add(null);
                 h5Var.run();
             } else {
-                i9.w o9 = a0Var.m.o(bArr);
-                arrayList2.add(o9);
+                i9.w s10 = a0Var.m.s(bArr);
+                arrayList2.add(s10);
                 Handler handler = a0Var.l;
                 Objects.requireNonNull(handler);
-                o9.a(h5Var, new k2.b0(handler, 0));
+                s10.a(h5Var, new k2.c0(handler, 0));
             }
         }
     }

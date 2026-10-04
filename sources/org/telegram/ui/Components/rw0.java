@@ -1,47 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class rw0 extends bb {
-    public ts X;
+public final /* synthetic */ class rw0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tw0 b;
 
-    public rw0(Context context) {
-        super(context, null, true, false, null);
-        fixNavigationBar();
-        this.E = true;
-        this.y = true;
-        K();
-        yl0 yl0Var = this.d;
-        int i10 = this.backgroundPaddingLeft;
-        yl0Var.setPadding(i10, 0, i10, 0);
-        this.d.j(new wg0(this, 5));
-        this.d.setOnItemClickListener(new j(this, 14));
+    public /* synthetic */ rw0(tw0 tw0Var, int i10) {
+        this.a = i10;
+        this.b = tw0Var;
     }
 
-    public static void P(rw0 rw0Var, int i10) {
-        x51 G = rw0Var.X.G(i10 - 1);
-        Object obj = G != null ? G.G : null;
-        if (obj instanceof TLRPC.User) {
-            MessagesController.getInstance(rw0Var.currentAccount).openApp(rw0Var.attachedFragment, (TLRPC.User) obj, null, 0, null);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                tw0 tw0Var = this.b;
+                tw0Var.V0 = false;
+                if (!tw0Var.Y0 && tw0Var.W0) {
+                    tw0Var.C(true);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.V0 = false;
+                break;
+            case 2:
+                tw0 tw0Var2 = this.b;
+                tw0Var2.Y0 = false;
+                if (!tw0Var2.V0 && tw0Var2.W0) {
+                    tw0Var2.C(true);
+                    break;
+                }
+                break;
+            default:
+                this.b.Y0 = false;
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.bb
-    public final xl0 v(yl0 yl0Var) {
-        ts tsVar = new ts(yl0Var, getContext(), this.currentAccount, 0, true, this.resourcesProvider);
-        this.X = tsVar;
-        tsVar.r = false;
-        return tsVar;
-    }
-
-    @Override // org.telegram.ui.Components.bb
-    public final CharSequence y() {
-        return LocaleController.getString(R.string.SearchAppsExamples);
     }
 }

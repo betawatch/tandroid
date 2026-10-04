@@ -1,79 +1,29 @@
 package org.telegram.ui;
 
-import android.R;
-import android.net.Uri;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ht0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ it0 b;
+public final class ht0 extends org.telegram.ui.Components.k81 {
+    public final /* synthetic */ PhotoViewer h0;
 
-    public /* synthetic */ ht0(it0 it0Var, int i10) {
-        this.a = i10;
-        this.b = it0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ht0(PhotoViewer photoViewer, Context context, lr0 lr0Var) {
+        super(context, lr0Var);
+        this.h0 = photoViewer;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0057, code lost:
-    
-        if (r2 != 7) goto L32;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        b2.j jVar;
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.b.b;
-                mu0 mu0Var = photoViewer.E2;
-                if (mu0Var != null) {
-                    org.telegram.ui.Components.u71 u71Var = photoViewer.F2;
-                    if (mu0Var.e != u71Var) {
-                        mu0Var.c = false;
-                        mu0Var.d = false;
-                        if (mu0Var.b) {
-                            mu0Var.a++;
-                            mu0Var.b = false;
-                        }
-                        mu0Var.setImageResource(R.color.transparent);
-                    }
-                    if (u71Var != null) {
-                        i2.f0 f0Var = u71Var.d;
-                        if (f0Var != null) {
-                            try {
-                                f0Var.B1();
-                                b2.s sVar = f0Var.Q;
-                                if (sVar != null && (jVar = sVar.H) != null) {
-                                    int i10 = jVar.c;
-                                    if (i10 != 6) {
-                                        break;
-                                    }
-                                }
-                            } catch (Exception unused) {
-                            }
-                        }
-                        long p5 = u71Var.p() - u71Var.n();
-                        if (!mu0Var.c && !mu0Var.d && !mu0Var.b && p5 < 5250.0f) {
-                            Uri uri = u71Var.F;
-                            int i11 = mu0Var.a + 1;
-                            mu0Var.a = i11;
-                            Utilities.globalQueue.postRunnable(new wl0(mu0Var, uri, i11, 2));
-                            mu0Var.b = true;
-                        }
-                    }
-                    mu0Var.e = u71Var;
-                    break;
-                }
-                break;
-            case 1:
-                mu0.a(this.b.b.E2);
-                break;
-            default:
-                mu0.a(this.b.b.E2);
-                break;
+    @Override // android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        PhotoViewer.W(this.h0);
+    }
+
+    @Override // android.view.View
+    public final void setVisibility(int i10) {
+        super.setVisibility(i10);
+        if (i10 == 0) {
+            PhotoViewer.W(this.h0);
         }
     }
 }

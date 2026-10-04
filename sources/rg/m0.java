@@ -1,33 +1,7 @@
 package rg;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class m0 extends org.telegram.ui.Cells.q {
-    public v1 e;
-    public Paint f;
-    public float h;
-
-    @Override // org.telegram.ui.Cells.q, android.view.View
-    public final void draw(Canvas canvas) {
-        int dp = AndroidUtilities.dp(10.0f);
-        v1 v1Var = this.e;
-        v1Var.c.set(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), getMeasuredWidth() - AndroidUtilities.dp(5.0f), getMeasuredHeight() - AndroidUtilities.dp(5.0f));
-        float f7 = -dp;
-        v1Var.a.set(f7, f7, getWidth() + dp, getHeight() + dp);
-        canvas.save();
-        float f10 = 1.0f - this.h;
-        canvas.scale(f10, f10, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        v1Var.d(canvas);
-        canvas.restore();
-        invalidate();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), this.f);
-        super.draw(canvas);
-    }
+public interface m0 {
+    void setOffset(float f7);
 }

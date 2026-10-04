@@ -7,11 +7,12 @@ import android.os.Looper;
 import android.os.SystemClock;
 import android.support.v4.media.session.MediaSessionCompat$Token;
 import android.util.Log;
+import ii.n4;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import org.telegram.ui.Cells.t6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -108,7 +109,7 @@ public final class x {
         c10.u = zVar;
         if (c10.f()) {
             if (c10.r == null) {
-                k kVar = new k(c10.h, new k2.u(c10, 17));
+                k kVar = new k(c10.h, new n4(c10, 17));
                 c10.r = kVar;
                 c10.a(kVar, true);
                 c10.k();

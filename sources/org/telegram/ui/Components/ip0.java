@@ -1,31 +1,31 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ip0 implements rb {
-    public final /* synthetic */ qc a;
-    public final /* synthetic */ ff b;
+public final class ip0 extends LinearLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
 
-    public ip0(ff ffVar, qc qcVar) {
-        this.b = ffVar;
-        this.a = qcVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ip0(Context context, int i10, int i11) {
+        super(context);
+        this.a = i10;
+        this.b = i11;
     }
 
-    @Override // org.telegram.ui.Components.rb
-    public final void c() {
-        this.b.G.remove(this.a);
+    @Override // android.view.View
+    public final int getSuggestedMinimumWidth() {
+        return AndroidUtilities.dp(260.0f);
     }
 
-    @Override // org.telegram.ui.Components.rb
-    public final void d() {
-        this.b.G.add(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.rb
-    public final /* synthetic */ void a(qc qcVar) {
-    }
-
-    @Override // org.telegram.ui.Components.rb
-    public final /* synthetic */ void b() {
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), this.a), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), this.b), View.MeasureSpec.getMode(i11)));
     }
 }

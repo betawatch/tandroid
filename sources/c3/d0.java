@@ -2,9 +2,10 @@ package c3;
 
 import b2.r0;
 import e9.a1;
+import hg.k0;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d0 implements o {
     public final int a;
@@ -22,12 +23,12 @@ public final class d0 implements o {
     }
 
     @Override // c3.o
-    public final boolean a(p pVar) {
+    public final boolean b(p pVar) {
         int i10 = this.b;
         int i11 = this.a;
         e2.d.g((i11 == -1 || i10 == -1) ? false : true);
         e2.v vVar = new e2.v(i10);
-        ((l) pVar).h(vVar.a, 0, i10, false);
+        ((l) pVar).f(vVar.a, 0, i10, false);
         return vVar.D() == i11;
     }
 
@@ -40,7 +41,7 @@ public final class d0 implements o {
         String str = this.c;
         rVar.p = r0.n(str);
         rVar.q = r0.n(str);
-        hg.c.s(rVar, Z1);
+        k0.r(rVar, Z1);
         this.f.e1();
         this.f.X1(new e0());
         this.e = 1;

@@ -1,15 +1,15 @@
 package gg;
 
-import ei.l3;
+import ei.m3;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.cy;
+import org.telegram.ui.fy;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -60,9 +60,9 @@ public final /* synthetic */ class v implements Runnable {
                         }
                         boolean z12 = i12 == 2 || i12 == 1;
                         boolean z13 = i12 == 0;
-                        cy cyVar = i0Var.U;
-                        if (cyVar != null) {
-                            j3 = cyVar.a();
+                        fy fyVar = i0Var.U;
+                        if (fyVar != null) {
+                            j3 = fyVar.a();
                         }
                         zVar.h(this.c, true, z11, true, z10, z12, 0L, z13, 0, i14, j3, null);
                         i14 = i14;
@@ -91,8 +91,8 @@ public final /* synthetic */ class v implements Runnable {
                 ArrayList<Long> arrayList4 = i0Var2.q0;
                 String str3 = this.c;
                 messagesStorage.localSearch(i15, str3, arrayList, arrayList2, arrayList3, arrayList4, -1);
-                AndroidUtilities.runOnUIThread(new l3(i0Var2, this.d, arrayList, arrayList2, arrayList3, 2));
-                s0.y1(str3, i0Var2.y0);
+                AndroidUtilities.runOnUIThread(new m3(i0Var2, this.d, arrayList, arrayList2, arrayList3, 2));
+                s0.A1(str3, i0Var2.y0);
                 i0Var2.z0 = false;
                 if (str3.length() >= 3 && (LocaleController.getString(R.string.ArchiveSearchFilter).toLowerCase().startsWith(str3) || "archive".startsWith(this.e))) {
                     i0Var2.z0 = true;
@@ -126,7 +126,7 @@ public final /* synthetic */ class v implements Runnable {
                         ArrayList arrayList6 = new ArrayList();
                         ArrayList arrayList7 = new ArrayList();
                         new ArrayList();
-                        AndroidUtilities.runOnUIThread(new l3(i0Var3, i0Var3.d0, arrayList5, arrayList6, arrayList7, 2));
+                        AndroidUtilities.runOnUIThread(new m3(i0Var3, i0Var3.d0, arrayList5, arrayList6, arrayList7, 2));
                     }
                 }
                 str = str4;

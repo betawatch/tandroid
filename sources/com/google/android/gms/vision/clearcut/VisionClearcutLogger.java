@@ -15,9 +15,9 @@ import com.google.android.gms.internal.vision.y1;
 import com.google.android.gms.internal.vision.z0;
 import i6.a;
 import java.io.IOException;
-import w7.q6;
+import w7.r6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class VisionClearcutLogger {
     private final a zza;
@@ -84,20 +84,20 @@ public class VisionClearcutLogger {
                     if (Log.isLoggable("Vision", 6)) {
                         Log.e("Vision", "Would have logged:\n" + obj);
                     }
-                } catch (Exception e) {
-                    q6.a(e, "Parsing error", new Object[0]);
+                } catch (Exception e7) {
+                    r6.a(e7, "Parsing error", new Object[0]);
                 }
-            } catch (Exception e7) {
-                c.a.q(e7);
-                q6.a(e7, "Failed to log", new Object[0]);
+            } catch (Exception e10) {
+                c.a.q(e10);
+                r6.a(e10, "Failed to log", new Object[0]);
             }
-        } catch (IOException e10) {
+        } catch (IOException e11) {
             String name = f0.class.getName();
             StringBuilder sb2 = new StringBuilder(name.length() + 72);
             sb2.append("Serializing ");
             sb2.append(name);
             sb2.append(" to a byte array threw an IOException (should never happen).");
-            throw new RuntimeException(sb2.toString(), e10);
+            throw new RuntimeException(sb2.toString(), e11);
         }
     }
 }

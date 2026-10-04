@@ -6,7 +6,7 @@ import java.io.DataInputStream;
 import java.io.EOFException;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b extends p {
     public final /* synthetic */ int g;
@@ -86,7 +86,7 @@ public final class b extends p {
                 stringBuffer.append("]");
                 return stringBuffer.toString();
             default:
-                return a4.a.s(new StringBuilder("mp4[pos="), ((d) this.b).b, "]");
+                return a4.a.r(new StringBuilder("mp4[pos="), ((d) this.b).b, "]");
         }
     }
 }

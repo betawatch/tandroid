@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qd0;
 import org.telegram.ui.Components.sh0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class n7 implements z4.e {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final class n7 implements z4.e {
                 }
                 break;
             case 1:
-                ((li.e) this.b).f++;
+                ((li.m) this.b).e++;
                 break;
             case 2:
                 qd0 qd0Var = (qd0) this.b;

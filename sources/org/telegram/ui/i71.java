@@ -1,32 +1,18 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class i71 extends View {
-    public final Paint a;
-    public final LinearGradient b;
+public final class i71 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ m71 a;
 
-    public i71(k71 k71Var, Context context) {
-        super(context);
-        this.a = new Paint(1);
-        float dp = AndroidUtilities.dp(68.0f);
-        int i10 = org.telegram.ui.ActionBar.h6.h5;
-        this.b = new LinearGradient(0.0f, 0.0f, 0.0f, dp, new int[]{org.telegram.ui.ActionBar.h6.l1(0.0f, k71Var.getThemedColor(i10)), k71Var.getThemedColor(i10)}, new float[]{0.0f, 0.2f}, Shader.TileMode.CLAMP);
+    public i71(m71 m71Var) {
+        this.a = m71Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        LinearGradient linearGradient = this.b;
-        Paint paint = this.a;
-        paint.setShader(linearGradient);
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        m71.Q(this.a);
     }
 }

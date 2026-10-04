@@ -17,7 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b {
     public static final ReentrantLock c = new ReentrantLock();
@@ -47,7 +47,7 @@ public final class b {
     }
 
     public static final String f(String str, String str2) {
-        return a4.a.D(str, ":", str2);
+        return a4.a.C(str, ":", str2);
     }
 
     public final GoogleSignInAccount b() {
@@ -144,11 +144,11 @@ public final class b {
                     jSONObject2.put("hostedDomain", str9);
                 }
                 e(f10, jSONObject2.toString());
-            } catch (JSONException e) {
-                throw new RuntimeException(e);
+            } catch (JSONException e7) {
+                throw new RuntimeException(e7);
             }
-        } catch (JSONException e7) {
-            throw new RuntimeException(e7);
+        } catch (JSONException e10) {
+            throw new RuntimeException(e10);
         }
     }
 

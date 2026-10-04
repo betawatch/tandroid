@@ -4,7 +4,7 @@ import ai.v8;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import ci.rc;
+import ci.qc;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.ChatObject;
@@ -17,15 +17,15 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.s2;
-import org.telegram.ui.Components.v00;
-import org.telegram.ui.Components.xl0;
-import org.telegram.ui.wn;
+import org.telegram.ui.Components.w00;
+import org.telegram.ui.Components.yl0;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class o1 extends xl0 implements NotificationCenter.NotificationCenterDelegate {
+public final class o1 extends yl0 implements NotificationCenter.NotificationCenterDelegate {
     public final Context c;
-    public final wn f;
+    public final yn f;
     public int h;
     public int n;
     public final d6 s;
@@ -36,17 +36,17 @@ public final class o1 extends xl0 implements NotificationCenter.NotificationCent
     public final HashSet d = new HashSet();
     public final ArrayList e = new ArrayList();
     public final int r = UserConfig.selectedAccount;
-    public final rc E = new rc(this, 16);
+    public final qc E = new qc(this, 16);
 
-    public o1(Context context, wn wnVar, d6 d6Var, int i10, boolean z10) {
+    public o1(Context context, yn ynVar, d6 d6Var, int i10, boolean z10) {
         this.s = d6Var;
         this.c = context;
-        this.f = wnVar;
+        this.f = ynVar;
         this.v = i10;
         this.w = z10;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 0 || i10 == 2;
@@ -164,7 +164,7 @@ public final class o1 extends xl0 implements NotificationCenter.NotificationCent
             i11 = i14;
             z10 = true;
         }
-        s2Var.W(dialogId, messageObject, i11, z10, false);
+        s2Var.U(dialogId, messageObject, i11, z10, false);
         s2Var.setDialogCellDelegate(new l1(this));
     }
 
@@ -176,10 +176,10 @@ public final class o1 extends xl0 implements NotificationCenter.NotificationCent
             d6 d6Var = this.s;
             Context context = this.c;
             if (i10 == 1) {
-                v00 v00Var = new v00(context, d6Var);
-                v00Var.setIsSingleCell(true);
-                v00Var.setViewType(7);
-                view = v00Var;
+                w00 w00Var = new w00(context, d6Var);
+                w00Var.setIsSingleCell(true);
+                w00Var.setViewType(7);
+                view = w00Var;
             } else if (i10 != 2) {
                 s2Var = null;
             } else {

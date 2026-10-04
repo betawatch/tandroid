@@ -12,9 +12,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ok;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class t extends View {
     public final Paint a;
@@ -141,7 +141,7 @@ public final class t extends View {
             if (num2 != null) {
                 paint2.setColor(AndroidUtilities.computePerceivedBrightness(num2.intValue()) > 0.721f ? -15658735 : -1);
             }
-            paint2.setStrokeWidth(sr.h.getInterpolation(min) * AndroidUtilities.dp(3.0f));
+            paint2.setStrokeWidth(tr.h.getInterpolation(min) * AndroidUtilities.dp(3.0f));
             Path path2 = this.f;
             path2.rewind();
             RectF rectF3 = AndroidUtilities.rectTmp;

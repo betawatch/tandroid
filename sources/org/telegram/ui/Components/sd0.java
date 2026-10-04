@@ -20,7 +20,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class sd0 extends FrameLayout {
     public Bitmap a;
@@ -46,7 +46,7 @@ public final class sd0 extends FrameLayout {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v2, types: [android.view.View, android.widget.EditText, android.widget.TextView, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.fu, qg.b] */
+    /* JADX WARN: Type inference failed for: r6v2, types: [android.view.View, android.widget.EditText, android.widget.TextView, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.gu, qg.b] */
     public final void b(ArrayList arrayList, boolean z10, boolean z11, boolean z12) {
         w9 w9Var;
         int i10;
@@ -70,7 +70,7 @@ public final class sd0 extends FrameLayout {
                     imageReceiver.setAllowDecodeSingleFrame(true);
                     imageReceiver.setAllowStartLottieAnimation(false);
                     if (z11) {
-                        imageReceiver.setDelegate(new ha0(8));
+                        imageReceiver.setDelegate(new ru(10));
                     }
                 }
                 imageReceiver.setImage(ImageLocation.getForDocument(mediaEntity.document), null, null, null, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(mediaEntity.document.thumbs, 90), mediaEntity.document), null, null, 0L, "webp", mediaEntity.parentObject, 1);
@@ -150,7 +150,7 @@ public final class sd0 extends FrameLayout {
                 rd0Var.setTextColor(i20);
                 rd0Var.setCursorColor(i20);
                 rd0Var.setHandlesColor(i20);
-                rd0Var.setHighlightColor(org.telegram.ui.ActionBar.h6.l1(0.4f, i20));
+                rd0Var.setHighlightColor(org.telegram.ui.ActionBar.i6.l1(0.4f, i20));
                 mediaEntity.view = rd0Var;
                 w9Var = rd0Var;
             } else {

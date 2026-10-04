@@ -3,66 +3,66 @@ package org.telegram.ui.web;
 import android.text.TextUtils;
 import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e5;
-import org.telegram.ui.Components.n61;
+import org.telegram.ui.ActionBar.f5;
+import org.telegram.ui.Components.w61;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class n extends e5 {
-    public final i2.h0 f = new i2.h0(this, 29);
+public final class n extends f5 {
+    public final i2.h0 f = new i2.h0(this, 28);
     public final /* synthetic */ o h;
 
     public n(o oVar) {
         this.h = oVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
+    @Override // org.telegram.ui.ActionBar.f5
     public final void m() {
         o oVar = this.h;
-        oVar.s = null;
+        oVar.v = null;
         AndroidUtilities.cancelRunOnUIThread(this.f);
-        i iVar = oVar.e;
+        i iVar = oVar.f;
         if (iVar != null) {
             iVar.c();
-            oVar.e = null;
+            oVar.f = null;
         }
-        n61 n61Var = oVar.a;
-        if (n61Var != null) {
-            n61Var.Y2.N(true);
-            oVar.a.X2.h1(0, 0);
+        w61 w61Var = oVar.a;
+        if (w61Var != null) {
+            w61Var.f3.N(true);
+            oVar.a.e3.h1(0, 0);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
+    @Override // org.telegram.ui.ActionBar.f5
     public final void q(EditText editText) {
         int i10;
         o oVar = this.h;
-        boolean z10 = !TextUtils.isEmpty(oVar.s);
+        boolean z10 = !TextUtils.isEmpty(oVar.v);
         String obj = editText.getText().toString();
-        if (!TextUtils.equals(oVar.s, obj)) {
-            oVar.s = obj;
-            i iVar = oVar.e;
+        if (!TextUtils.equals(oVar.v, obj)) {
+            oVar.v = obj;
+            i iVar = oVar.f;
             if (iVar != null) {
                 iVar.c();
             }
-            i10 = ((org.telegram.ui.ActionBar.m2) oVar).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.n2) oVar).currentAccount;
             i iVar2 = new i(obj, i10, new l(oVar, 1));
-            oVar.e = iVar2;
+            oVar.f = iVar2;
             iVar2.a();
             i2.h0 h0Var = this.f;
             AndroidUtilities.cancelRunOnUIThread(h0Var);
             AndroidUtilities.runOnUIThread(h0Var, 500L);
         }
-        n61 n61Var = oVar.a;
-        if (n61Var != null) {
-            n61Var.Y2.N(true);
+        w61 w61Var = oVar.a;
+        if (w61Var != null) {
+            w61Var.f3.N(true);
             if (z10 != (!TextUtils.isEmpty(obj))) {
-                oVar.a.X2.h1(0, 0);
+                oVar.a.e3.h1(0, 0);
             }
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
+    @Override // org.telegram.ui.ActionBar.f5
     public final void n() {
     }
 }

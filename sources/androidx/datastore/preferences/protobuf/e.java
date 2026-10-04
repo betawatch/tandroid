@@ -4,7 +4,7 @@ import com.google.android.gms.internal.cast.z4;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class e implements Iterator {
     public final /* synthetic */ int a = 0;
@@ -71,8 +71,8 @@ public final class e implements Iterator {
                     int i12 = this.b;
                     this.b = i12 + 1;
                     return Byte.valueOf(oVar.o(i12));
-                } catch (IndexOutOfBoundsException e) {
-                    throw new NoSuchElementException(e.getMessage());
+                } catch (IndexOutOfBoundsException e7) {
+                    throw new NoSuchElementException(e7.getMessage());
                 }
             case 3:
                 int i13 = this.b;

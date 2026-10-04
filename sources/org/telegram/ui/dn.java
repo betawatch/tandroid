@@ -1,29 +1,49 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesController;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class dn implements MessagesController.MessagesLoadedCallback {
-    public final /* synthetic */ xi a;
-    public final /* synthetic */ wn b;
-    public final /* synthetic */ in c;
+public final /* synthetic */ class dn implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yn b;
 
-    public dn(in inVar, xi xiVar, wn wnVar) {
-        this.c = inVar;
-        this.a = xiVar;
-        this.b = wnVar;
+    public /* synthetic */ dn(yn ynVar, int i10) {
+        this.a = i10;
+        this.b = ynVar;
     }
 
-    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
-    public final void onError() {
-        this.a.c(false);
-        this.c.a.presentFragment(this.b);
-    }
-
-    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
-    public final void onMessagesLoaded(boolean z10) {
-        this.a.c(false);
-        this.c.a.presentFragment(this.b);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        yn ynVar = this.b;
+        switch (i10) {
+            case 0:
+                int i11 = yn.Bc;
+                ynVar.La();
+                break;
+            case 1:
+                int i12 = yn.Bc;
+                ynVar.La();
+                break;
+            case 2:
+                int i13 = yn.Bc;
+                ynVar.La();
+                break;
+            case 3:
+                int i14 = yn.Bc;
+                ynVar.La();
+                break;
+            case 4:
+                int i15 = yn.Bc;
+                ynVar.La();
+                break;
+            case 5:
+                int i16 = yn.Bc;
+                ynVar.La();
+                break;
+            default:
+                int i17 = yn.Bc;
+                ynVar.La();
+                break;
+        }
     }
 }

@@ -11,10 +11,10 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class f7 {
-    public final ia c;
+    public final ha c;
     public d7 d;
     public CameraView f;
     public Bitmap g;
@@ -23,8 +23,8 @@ public final class f7 {
     public final c7 h = new c7(this, 0);
     public final String e = MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix;
 
-    public f7(Context context, ia iaVar) {
-        this.c = iaVar;
+    public f7(Context context, ha haVar) {
+        this.c = haVar;
         Utilities.globalQueue.postRunnable(new ai.ba(22, this, context));
     }
 

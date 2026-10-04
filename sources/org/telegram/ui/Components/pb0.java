@@ -6,23 +6,23 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class pb0 extends s4.t {
-    public final /* synthetic */ bc0 S;
+    public final /* synthetic */ cc0 S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pb0(bc0 bc0Var) {
+    public pb0(cc0 cc0Var) {
         super(true);
-        this.S = bc0Var;
+        this.S = cc0Var;
     }
 
     @Override // s4.t
     public final boolean B1(int i10) {
         byte b10;
-        bc0 bc0Var = this.S;
-        MessageObject messageObject = bc0Var.r.previewMessages.get(i10);
-        MessageObject.GroupedMessages a2 = bc0.a(bc0Var, messageObject);
+        cc0 cc0Var = this.S;
+        MessageObject messageObject = cc0Var.r.previewMessages.get(i10);
+        MessageObject.GroupedMessages a2 = cc0.a(cc0Var, messageObject);
         if (a2 != null) {
             MessageObject.GroupedMessagePosition position = a2.getPosition(messageObject);
             if (position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
@@ -55,9 +55,9 @@ public final class pb0 extends s4.t {
         }
         try {
             super.b0(eVar, z0Var);
-        } catch (Exception e) {
-            FileLog.e(e);
-            AndroidUtilities.runOnUIThread(new zp(this, 29));
+        } catch (Exception e7) {
+            FileLog.e(e7);
+            AndroidUtilities.runOnUIThread(new aq(this, 29));
         }
     }
 }

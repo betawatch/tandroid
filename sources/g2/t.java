@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class t extends c {
     public RandomAccessFile a;
@@ -25,8 +25,8 @@ public final class t extends c {
                 if (randomAccessFile != null) {
                     randomAccessFile.close();
                 }
-            } catch (IOException e) {
-                throw new s(e, 2000);
+            } catch (IOException e7) {
+                throw new s(e7, 2000);
             }
         } finally {
             this.a = null;
@@ -66,23 +66,23 @@ public final class t extends c {
                 this.d = true;
                 transferStarted(mVar);
                 return this.c;
-            } catch (IOException e) {
-                throw new s(e, 2000);
+            } catch (IOException e7) {
+                throw new s(e7, 2000);
             }
-        } catch (FileNotFoundException e7) {
+        } catch (FileNotFoundException e10) {
             if (TextUtils.isEmpty(uri.getQuery()) && TextUtils.isEmpty(uri.getFragment())) {
-                throw new s(e7, ((e7.getCause() instanceof ErrnoException) && ((ErrnoException) e7.getCause()).errno == OsConstants.EACCES) ? 2006 : 2005);
+                throw new s(e10, ((e10.getCause() instanceof ErrnoException) && ((ErrnoException) e10.getCause()).errno == OsConstants.EACCES) ? 2006 : 2005);
             }
             String path2 = uri.getPath();
             String query = uri.getQuery();
             String fragment = uri.getFragment();
-            StringBuilder x10 = a4.a.x("uri has query and/or fragment, which are not supported. Did you call Uri.parse() on a string containing '?' or '#'? Use Uri.fromFile(new File(path)) to avoid this. path=", path2, ",query=", query, ",fragment=");
-            x10.append(fragment);
-            throw new s(x10.toString(), e7, 1004);
-        } catch (SecurityException e10) {
-            throw new s(e10, 2006);
-        } catch (RuntimeException e11) {
-            throw new s(e11, 2000);
+            StringBuilder w10 = a4.a.w("uri has query and/or fragment, which are not supported. Did you call Uri.parse() on a string containing '?' or '#'? Use Uri.fromFile(new File(path)) to avoid this. path=", path2, ",query=", query, ",fragment=");
+            w10.append(fragment);
+            throw new s(w10.toString(), e10, 1004);
+        } catch (SecurityException e11) {
+            throw new s(e11, 2006);
+        } catch (RuntimeException e12) {
+            throw new s(e12, 2000);
         }
     }
 
@@ -104,8 +104,8 @@ public final class t extends c {
                 bytesTransferred(read);
             }
             return read;
-        } catch (IOException e) {
-            throw new s(e, 2000);
+        } catch (IOException e7) {
+            throw new s(e7, 2000);
         }
     }
 }

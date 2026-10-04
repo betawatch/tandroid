@@ -1,88 +1,48 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import android.content.Context;
+import android.text.TextUtils;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ki implements View.OnTouchListener {
-    public final /* synthetic */ int a;
-    public final int[] b;
-    public final /* synthetic */ Rect c;
-    public final /* synthetic */ Object d;
+public final class ki extends yh0 {
+    public final /* synthetic */ yn e;
 
-    public ki(d60 d60Var, Rect rect) {
-        this.a = 1;
-        this.d = d60Var;
-        this.c = rect;
-        this.b = new int[2];
-    }
-
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        d50 d50Var;
-        switch (this.a) {
-            case 0:
-                wn wnVar = (wn) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4) {
-                        wnVar.A7(true);
-                        break;
-                    }
-                } else {
-                    org.telegram.ui.ActionBar.m1 m1Var = wnVar.Q8;
-                    if (m1Var != null && m1Var.isShowing()) {
-                        View contentView = wnVar.Q8.getContentView();
-                        int[] iArr = this.b;
-                        contentView.getLocationInWindow(iArr);
-                        int i10 = iArr[0];
-                        int i11 = iArr[1];
-                        int measuredWidth = contentView.getMeasuredWidth() + i10;
-                        int measuredHeight = contentView.getMeasuredHeight() + iArr[1];
-                        Rect rect = this.c;
-                        rect.set(i10, i11, measuredWidth, measuredHeight);
-                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            wnVar.A7(true);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                d60 d60Var = (d60) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4 && (d50Var = d60Var.f3) != null && d50Var.isShowing()) {
-                        d60Var.f3.dismiss();
-                        break;
-                    }
-                } else {
-                    d50 d50Var2 = d60Var.f3;
-                    if (d50Var2 != null && d50Var2.isShowing()) {
-                        View contentView2 = d60Var.f3.getContentView();
-                        int[] iArr2 = this.b;
-                        contentView2.getLocationInWindow(iArr2);
-                        int i12 = iArr2[0];
-                        int i13 = iArr2[1];
-                        int measuredWidth2 = contentView2.getMeasuredWidth() + i12;
-                        int measuredHeight2 = contentView2.getMeasuredHeight() + iArr2[1];
-                        Rect rect2 = this.c;
-                        rect2.set(i12, i13, measuredWidth2, measuredHeight2);
-                        if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            d60Var.f3.dismiss();
-                            break;
-                        }
-                    }
-                }
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ki(yn ynVar, Context context, int i10, MessageObject messageObject) {
+        super(context);
+        this.e = ynVar;
+        this.a = null;
+        if (!messageObject.isRoundVideo()) {
+            messageObject.isVoice();
         }
-        return false;
-    }
-
-    public ki(wn wnVar, Rect rect) {
-        this.a = 0;
-        this.d = wnVar;
-        this.c = rect;
-        this.b = new int[2];
+        org.telegram.ui.Components.w00 w00Var = new org.telegram.ui.Components.w00(context, null);
+        this.c = w00Var;
+        w00Var.f(org.telegram.ui.ActionBar.i6.G8, org.telegram.ui.ActionBar.i6.i6, -1);
+        w00Var.setViewType(13);
+        w00Var.setIsSingleCell(false);
+        addView(w00Var, w7.z5.c(-1.0f, -2));
+        org.telegram.ui.Components.q90 q90Var = new org.telegram.ui.Components.q90(context, null);
+        this.b = q90Var;
+        q90Var.setTextSize(1, 14.0f);
+        q90Var.setGravity(19);
+        q90Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.E8, false));
+        q90Var.setLinkTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.gc, false));
+        q90Var.setEllipsize(TextUtils.TruncateAt.END);
+        q90Var.setSingleLine();
+        q90Var.setLines(1);
+        q90Var.setMaxLines(1);
+        addView(q90Var, w7.z5.d(-1, -2.0f, 19, 12.0f, 0.0f, 12.0f, 0.0f));
+        TLRPC.TL_channels_getMessageAuthor tL_channels_getMessageAuthor = new TLRPC.TL_channels_getMessageAuthor();
+        tL_channels_getMessageAuthor.channel = MessagesController.getInstance(i10).getInputChannel(-messageObject.getDialogId());
+        tL_channels_getMessageAuthor.id = messageObject.getId();
+        q90Var.setAlpha(0.0f);
+        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_getMessageAuthor, new ai.i8(this, i10, 6));
+        setBackground(org.telegram.ui.ActionBar.i6.Y(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.I5, false), 6, 0));
+        setEnabled(false);
     }
 }

@@ -1,27 +1,88 @@
 package v7;
 
-import android.os.Build;
-import android.webkit.WebView;
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class j0 {
-    public static InvocationHandler a() {
-        ClassLoader classLoader;
-        if (Build.VERSION.SDK_INT >= 28) {
-            classLoader = b5.d.t();
-        } else {
-            try {
-                Method declaredMethod = WebView.class.getDeclaredMethod("getFactory", null);
-                declaredMethod.setAccessible(true);
-                classLoader = declaredMethod.invoke(null, null).getClass().getClassLoader();
-            } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
-                throw new RuntimeException(e);
-            }
+    public abstract void a(bf.b bVar);
+
+    public abstract void b(bf.c cVar);
+
+    public void c(bf.d dVar) {
+        v(dVar);
+    }
+
+    public void d(bf.e eVar) {
+        v(eVar);
+    }
+
+    public void e(bf.g gVar) {
+        v(gVar);
+    }
+
+    public void f(bf.h hVar) {
+        v(hVar);
+    }
+
+    public void g(bf.i iVar) {
+        v(iVar);
+    }
+
+    public void h(bf.j jVar) {
+        v(jVar);
+    }
+
+    public void i(bf.k kVar) {
+        v(kVar);
+    }
+
+    public void j(bf.l lVar) {
+        v(lVar);
+    }
+
+    public abstract void k(bf.n nVar);
+
+    public void l(bf.o oVar) {
+        v(oVar);
+    }
+
+    public abstract void m(bf.q qVar);
+
+    public abstract void n(bf.r rVar);
+
+    public void o(bf.s sVar) {
+        v(sVar);
+    }
+
+    public void p(bf.t tVar) {
+        v(tVar);
+    }
+
+    public void q(bf.d dVar) {
+        v(dVar);
+    }
+
+    public void r(bf.g gVar) {
+        v(gVar);
+    }
+
+    public void s(bf.k kVar) {
+        v(kVar);
+    }
+
+    public void t(bf.g gVar) {
+        v(gVar);
+    }
+
+    public void u(bf.g gVar) {
+        v(gVar);
+    }
+
+    public void v(bf.p pVar) {
+        bf.p pVar2 = (bf.p) pVar.c;
+        while (pVar2 != null) {
+            bf.p pVar3 = (bf.p) pVar2.f;
+            pVar2.a(this);
+            pVar2 = pVar3;
         }
-        return (InvocationHandler) Class.forName("org.chromium.support_lib_glue.SupportLibReflectionUtil", false, classLoader).getDeclaredMethod("createWebViewProviderFactory", null).invoke(null, null);
     }
 }

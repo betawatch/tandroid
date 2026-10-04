@@ -8,10 +8,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.w8;
 import org.telegram.ui.Components.z5;
-import org.telegram.ui.wl0;
+import org.telegram.ui.am0;
 import yh.r5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
                 q qVar = this.b;
                 qVar.Q = (TL_stories.TL_premium_boostsStatus) obj;
                 if (!qVar.E.keySet().equals(qVar.G.keySet())) {
-                    qVar.Y(false);
+                    qVar.X(false);
                     break;
                 }
                 break;
@@ -38,7 +38,7 @@ public final /* synthetic */ class i implements Utilities.Callback {
                 Boolean bool = (Boolean) obj;
                 q qVar2 = this.b;
                 h hVar = qVar2.U;
-                if (!qVar2.a0()) {
+                if (!qVar2.Z()) {
                     int editTextSelectionEnd = qVar2.n.getEditTextSelectionEnd();
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(qVar2.n.getText());
                     for (z5 z5Var : (z5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), z5.class)) {
@@ -56,9 +56,9 @@ public final /* synthetic */ class i implements Utilities.Callback {
                                 AndroidUtilities.runOnUIThread(hVar, 350L);
                                 break;
                             } else {
-                                z5Var.setRemoved(new wl0(qVar2, z5Var, editTextSelectionEnd, 19));
-                                qVar2.W(z5Var);
-                                qVar2.Y(false);
+                                z5Var.setRemoved(new am0(qVar2, z5Var, editTextSelectionEnd, 19));
+                                qVar2.U(z5Var);
+                                qVar2.X(false);
                                 break;
                             }
                         }

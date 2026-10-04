@@ -1,48 +1,30 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class x60 implements org.telegram.ui.qb0 {
-    public final /* synthetic */ y60 a;
+public final /* synthetic */ class x60 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z60 b;
 
-    public x60(y60 y60Var) {
-        this.a = y60Var;
+    public /* synthetic */ x60(z60 z60Var, int i10) {
+        this.a = i10;
+        this.b = z60Var;
     }
 
-    @Override // org.telegram.ui.qb0
-    public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject) {
-        int i10;
-        org.telegram.ui.hb hbVar = this.a.a.c.j0;
-        if (hbVar != null) {
-            TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent = new TLRPC.TL_channelAdminLogEvent();
-            TLRPC.TL_channelAdminLogEventActionExportedInviteEdit tL_channelAdminLogEventActionExportedInviteEdit = new TLRPC.TL_channelAdminLogEventActionExportedInviteEdit();
-            tL_channelAdminLogEventActionExportedInviteEdit.new_invite = tL_chatInviteExported;
-            tL_channelAdminLogEventActionExportedInviteEdit.prev_invite = tL_chatInviteExported;
-            tL_channelAdminLogEvent.action = tL_channelAdminLogEventActionExportedInviteEdit;
-            tL_channelAdminLogEvent.date = (int) (System.currentTimeMillis() / 1000);
-            org.telegram.ui.ub ubVar = hbVar.a;
-            tL_channelAdminLogEvent.user_id = ubVar.getAccountInstance().getUserConfig().clientUserId;
-            i10 = ((org.telegram.ui.ActionBar.m2) ubVar).currentAccount;
-            if (new MessageObject(i10, tL_channelAdminLogEvent, (ArrayList<MessageObject>) ubVar.n0, (HashMap<String, ArrayList<MessageObject>>) ubVar.m0, ubVar.f, ubVar.T, true).contentType < 0) {
-                return;
-            }
-            ubVar.R0();
-            ubVar.E.l();
-            org.telegram.ui.ub.K0(ubVar);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o(this.b, tL_error, tLObject, 22));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new yw(14, this.b, tL_error));
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.qb0
-    public final void a(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
-    }
-
-    @Override // org.telegram.ui.qb0
-    public final void c(TLObject tLObject) {
     }
 }

@@ -1,30 +1,32 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class h11 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k11 b;
-    public final /* synthetic */ j11 c;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-    public /* synthetic */ h11(k11 k11Var, j11 j11Var, int i10) {
-        this.a = i10;
-        this.b = k11Var;
-        this.c = j11Var;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final class h11 extends MetricAffectingSpan {
+    public TextPaint a;
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        TextPaint textPaint2 = this.a;
+        textPaint.setColor(textPaint2.getColor());
+        textPaint.setTypeface(textPaint2.getTypeface());
+        textPaint.setFlags(textPaint2.getFlags());
+        textPaint.setTextSize(textPaint2.getTextSize());
+        textPaint.baselineShift = textPaint2.baselineShift;
+        textPaint.bgColor = textPaint2.bgColor;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.b(this.c);
-                break;
-            case 1:
-                this.b.b(this.c);
-                break;
-            default:
-                this.b.b(this.c);
-                break;
-        }
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        TextPaint textPaint2 = this.a;
+        textPaint.setColor(textPaint2.getColor());
+        textPaint.setTypeface(textPaint2.getTypeface());
+        textPaint.setFlags(textPaint2.getFlags());
+        textPaint.setTextSize(textPaint2.getTextSize());
+        textPaint.baselineShift = textPaint2.baselineShift;
+        textPaint.bgColor = textPaint2.bgColor;
     }
 }

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class l extends lb.a {
     public static final k I = new k();
@@ -45,7 +45,7 @@ public final class l extends lb.a {
         if (x() == i10) {
             return;
         }
-        throw new IllegalStateException("Expected " + hg.c.D(i10) + " but was " + hg.c.D(x()) + H());
+        throw new IllegalStateException("Expected " + hg.k0.C(i10) + " but was " + hg.k0.C(x()) + H());
     }
 
     public final String G(boolean z10) {
@@ -200,7 +200,7 @@ public final class l extends lb.a {
     public final double o() {
         int x10 = x();
         if (x10 != 7 && x10 != 6) {
-            throw new IllegalStateException("Expected " + hg.c.D(7) + " but was " + hg.c.D(x10) + H());
+            throw new IllegalStateException("Expected " + hg.k0.C(7) + " but was " + hg.k0.C(x10) + H());
         }
         double q6 = ((db.m) J()).q();
         if (Double.isNaN(q6) || Double.isInfinite(q6)) {
@@ -220,7 +220,7 @@ public final class l extends lb.a {
     public final int p() {
         int x10 = x();
         if (x10 != 7 && x10 != 6) {
-            throw new IllegalStateException("Expected " + hg.c.D(7) + " but was " + hg.c.D(x10) + H());
+            throw new IllegalStateException("Expected " + hg.k0.C(7) + " but was " + hg.k0.C(x10) + H());
         }
         db.m mVar = (db.m) J();
         int intValue = mVar.a instanceof Number ? mVar.r().intValue() : Integer.parseInt(mVar.n());
@@ -238,7 +238,7 @@ public final class l extends lb.a {
     public final long q() {
         int x10 = x();
         if (x10 != 7 && x10 != 6) {
-            throw new IllegalStateException("Expected " + hg.c.D(7) + " but was " + hg.c.D(x10) + H());
+            throw new IllegalStateException("Expected " + hg.k0.C(7) + " but was " + hg.k0.C(x10) + H());
         }
         db.m mVar = (db.m) J();
         long longValue = mVar.a instanceof Number ? mVar.r().longValue() : Long.parseLong(mVar.n());
@@ -278,7 +278,7 @@ public final class l extends lb.a {
     public final String v() {
         int x10 = x();
         if (x10 != 6 && x10 != 7) {
-            throw new IllegalStateException("Expected " + hg.c.D(6) + " but was " + hg.c.D(x10) + H());
+            throw new IllegalStateException("Expected " + hg.k0.C(6) + " but was " + hg.k0.C(x10) + H());
         }
         String n10 = ((db.m) K()).n();
         int i10 = this.F;

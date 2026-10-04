@@ -1,54 +1,63 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ws implements TextWatcher {
-    public final /* synthetic */ EditTextBoldCursor a;
+public final class ws extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ ContactsActivity a;
 
-    public ws(EditTextBoldCursor editTextBoldCursor) {
-        this.a = editTextBoldCursor;
+    public ws(ContactsActivity contactsActivity) {
+        this.a = contactsActivity;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        try {
-            String obj = editable.toString();
-            if (obj.isEmpty()) {
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        org.telegram.ui.ActionBar.k kVar;
+        ContactsActivity contactsActivity = this.a;
+        if (i10 == -1) {
+            kVar = ((org.telegram.ui.ActionBar.n2) contactsActivity).actionBar;
+            if (kVar.s()) {
+                contactsActivity.o0();
+                return;
+            } else {
+                contactsActivity.finishFragment();
                 return;
             }
-            int intValue = Utilities.parseInt((CharSequence) obj).intValue();
-            EditTextBoldCursor editTextBoldCursor = this.a;
-            if (intValue < 0) {
-                editTextBoldCursor.setText("0");
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                return;
-            }
-            if (intValue > 300) {
-                editTextBoldCursor.setText("300");
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                return;
-            }
-            if (obj.equals("" + intValue)) {
-                return;
-            }
-            editTextBoldCursor.setText("" + intValue);
-            editTextBoldCursor.setSelection(editTextBoldCursor.length());
-        } catch (Exception e) {
-            FileLog.e(e);
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        if (i10 != 100) {
+            if (i10 != 1) {
+                if (i10 == 0) {
+                    contactsActivity.f.y0(0);
+                    AndroidUtilities.doOnPreDraw(contactsActivity.Z.r, new bj(this, 14));
+                    return;
+                }
+                return;
+            }
+            SharedConfig.toggleSortContactsByName();
+            boolean z10 = SharedConfig.sortContactsByName;
+            contactsActivity.v = z10;
+            contactsActivity.d.Y(z10 ? 1 : 2, false);
+            contactsActivity.s.setIcon(contactsActivity.v ? R.drawable.msg_contacts_time : R.drawable.msg_contacts_name);
+            return;
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(contactsActivity.getParentActivity(), 0, contactsActivity.getResourceProvider());
+        a0.i iVar = contactsActivity.d0;
+        if (iVar.m() == 1) {
+            alertDialog$Builder.a.R = LocaleController.getString(R.string.DeleteContactTitle);
+            alertDialog$Builder.a.T = LocaleController.getString(R.string.DeleteContactSubtitle);
+        } else {
+            alertDialog$Builder.a.R = LocaleController.formatPluralString("DeleteContactsTitle", iVar.m(), new Object[0]);
+            alertDialog$Builder.a.T = LocaleController.getString(R.string.DeleteContactsSubtitle);
+        }
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ts(contactsActivity));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.voip.e1(4));
+        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+        b2Var.show();
+        b2Var.h();
     }
 }

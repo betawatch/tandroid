@@ -25,7 +25,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class ed extends View {
     public static final int[] W;
@@ -45,7 +45,7 @@ public abstract class ed extends View {
     public final o6 N;
     public final o6 O;
     public final o6 P;
-    public rg.v1 Q;
+    public rg.x1 Q;
     public boolean R;
     public boolean S;
     public int T;
@@ -67,15 +67,15 @@ public abstract class ed extends View {
     public final Paint y;
 
     static {
-        int i10 = org.telegram.ui.ActionBar.h6.lj;
-        int i11 = org.telegram.ui.ActionBar.h6.hj;
-        int i12 = org.telegram.ui.ActionBar.h6.ij;
-        int i13 = org.telegram.ui.ActionBar.h6.pj;
-        int i14 = org.telegram.ui.ActionBar.h6.mj;
-        int i15 = org.telegram.ui.ActionBar.h6.jj;
-        int i16 = org.telegram.ui.ActionBar.h6.nj;
-        int i17 = org.telegram.ui.ActionBar.h6.qj;
-        int i18 = org.telegram.ui.ActionBar.h6.kj;
+        int i10 = org.telegram.ui.ActionBar.i6.lj;
+        int i11 = org.telegram.ui.ActionBar.i6.hj;
+        int i12 = org.telegram.ui.ActionBar.i6.ij;
+        int i13 = org.telegram.ui.ActionBar.i6.pj;
+        int i14 = org.telegram.ui.ActionBar.i6.mj;
+        int i15 = org.telegram.ui.ActionBar.i6.jj;
+        int i16 = org.telegram.ui.ActionBar.i6.nj;
+        int i17 = org.telegram.ui.ActionBar.i6.qj;
+        int i18 = org.telegram.ui.ActionBar.i6.kj;
         W = new int[]{i10, i11, i12, i13, i14, i15, i16, i17, i13, i18, i18};
         int i19 = R.raw.cache_photos;
         int i20 = R.raw.cache_videos;
@@ -94,10 +94,10 @@ public abstract class ed extends View {
         this.b = new RectF();
         this.c = new RectF();
         this.h = true;
-        sr srVar = sr.h;
-        this.n = new e6(this, 750L, srVar);
+        tr trVar = tr.h;
+        this.n = new e6(this, 750L, trVar);
         this.r = false;
-        this.s = new e6(this, 650L, srVar);
+        this.s = new e6(this, 650L, trVar);
         this.w = new float[2];
         this.x = new RectF();
         Paint paint = new Paint(1);
@@ -124,7 +124,7 @@ public abstract class ed extends View {
         this.v = new cd[i10];
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
-        paint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.i6, false));
+        paint.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false));
         paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(200.0f), new int[]{7263574, -9513642, -12469647, 4307569}, new float[]{0.0f, 0.07f, 0.93f, 1.0f}, tileMode);
@@ -138,24 +138,24 @@ public abstract class ed extends View {
         paint2.setStyle(style);
         paint2.setStrokeCap(Paint.Cap.ROUND);
         paint2.setStrokeJoin(Paint.Join.ROUND);
-        o6Var.k(0.2f, 450L, srVar);
+        o6Var.k(0.2f, 450L, trVar);
         o6Var.v = 0.6f;
-        o6Var.r(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false));
+        o6Var.r(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false));
         o6Var.u(AndroidUtilities.bold());
         o6Var.t(AndroidUtilities.dp(32.0f));
         o6Var.b = 17;
-        o6Var2.k(0.6f, 450L, srVar);
+        o6Var2.k(0.6f, 450L, trVar);
         o6Var2.v = 0.6f;
-        o6Var2.r(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.y6, false));
+        o6Var2.r(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.y6, false));
         o6Var2.t(AndroidUtilities.dp(12.0f));
         o6Var2.b = 17;
-        o6Var3.k(0.2f, 450L, srVar);
+        o6Var3.k(0.2f, 450L, trVar);
         o6Var3.v = 0.6f;
         o6Var3.a.setShader(linearGradient2);
         o6Var3.u(AndroidUtilities.bold());
         o6Var3.t(AndroidUtilities.dp(32.0f));
         o6Var3.b = 17;
-        o6Var4.k(0.6f, 450L, srVar);
+        o6Var4.k(0.6f, 450L, trVar);
         o6Var4.v = 0.6f;
         o6Var4.a.setShader(linearGradient2);
         o6Var4.u(AndroidUtilities.bold());
@@ -169,8 +169,8 @@ public abstract class ed extends View {
             }
             cd cdVar = new cd(this);
             cdVarArr[i12] = cdVar;
-            int v = org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.w0(null, iArr[i12], false), ConnectionsManager.FileTypeAudio);
-            int v9 = org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.w0(null, iArr[i12], false), 822083583);
+            int v = org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.w0(null, iArr[i12], false), ConnectionsManager.FileTypeAudio);
+            int v9 = org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.w0(null, iArr[i12], false), 822083583);
             AndroidUtilities.dp(50.0f);
             RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, AndroidUtilities.dp(86.0f), new int[]{v9, v}, new float[]{0.3f, 1.0f}, Shader.TileMode.CLAMP);
             cdVar.v = radialGradient;
@@ -271,7 +271,7 @@ public abstract class ed extends View {
         }
         float currentTimeMillis = ((d0 == null ? System.currentTimeMillis() : r9.longValue()) - c0.longValue()) * 0.6f;
         float[] fArr2 = this.w;
-        vp.a(fArr2, currentTimeMillis % 5400.0f);
+        wp.a(fArr2, currentTimeMillis % 5400.0f);
         float f26 = fArr2[0];
         float f27 = fArr2[1];
         if (d > 0.0f) {
@@ -301,7 +301,7 @@ public abstract class ed extends View {
                 break;
             }
             cd cdVar2 = cdVarArr[i11];
-            vp.a(fArr2, (currentTimeMillis + (i11 * 80)) % 5400.0f);
+            wp.a(fArr2, (currentTimeMillis + (i11 * 80)) % 5400.0f);
             float min = Math.min(Math.max(fArr2[c11], f26), f27);
             float min2 = Math.min(Math.max(fArr2[c10], f26), f27);
             if (d < f10 || min < min2) {
@@ -399,12 +399,12 @@ public abstract class ed extends View {
                                 f19 = f32;
                                 double d15 = width6;
                                 float f35 = f31 + width4;
-                                double e = hg.c.e(a(f35), d15, rectF12.centerX());
+                                double e7 = hg.k0.e(a(f35), d15, rectF12.centerX());
                                 z11 = z16;
                                 i10 = i11;
                                 f20 = abs;
                                 double sin = (Math.sin(a(f35)) * d15) + rectF12.centerY();
-                                float f36 = (float) e;
+                                float f36 = (float) e7;
                                 float f37 = (float) sin;
                                 rectF11.set(f36 - min3, f37 - min3, f36 + min3, f37 + min3);
                                 path.arcTo(rectF11, f35 - 90.0f, 90.0f);
@@ -417,14 +417,14 @@ public abstract class ed extends View {
                             path.arcTo(rectF12, f31 + width4, f34 - (width4 * 2.0f));
                             if (z11) {
                                 double d16 = width6;
-                                float e7 = (float) hg.c.e(a(r4), d16, rectF12.centerX());
+                                float e10 = (float) hg.k0.e(a(r4), d16, rectF12.centerX());
                                 float sin2 = (float) ((Math.sin(a(r4)) * d16) + rectF12.centerY());
-                                rectF11.set(e7 - min3, sin2 - min3, e7 + min3, sin2 + min3);
+                                rectF11.set(e10 - min3, sin2 - min3, e10 + min3, sin2 + min3);
                                 path.arcTo(rectF11, f19 - width4, 90.0f);
                                 double d17 = width7;
-                                float e10 = (float) hg.c.e(a(r4), d17, rectF2.centerX());
+                                float e11 = (float) hg.k0.e(a(r4), d17, rectF2.centerX());
                                 float sin3 = (float) ((Math.sin(a(r4)) * d17) + rectF2.centerY());
-                                rectF11.set(e10 - min3, sin3 - min3, e10 + min3, sin3 + min3);
+                                rectF11.set(e11 - min3, sin3 - min3, e11 + min3, sin3 + min3);
                                 path.arcTo(rectF11, (f19 - width5) + 90.0f, 90.0f);
                             }
                             rectF5 = rectF2;
@@ -432,9 +432,9 @@ public abstract class ed extends View {
                             if (z11) {
                                 double d18 = width7;
                                 float f38 = f31 + width5;
-                                double e11 = hg.c.e(a(f38), d18, rectF5.centerX());
+                                double e12 = hg.k0.e(a(f38), d18, rectF5.centerX());
                                 double sin4 = (Math.sin(a(f38)) * d18) + rectF5.centerY();
-                                float f39 = (float) e11;
+                                float f39 = (float) e12;
                                 float f40 = (float) sin4;
                                 rectF11.set(f39 - min3, f40 - min3, f39 + min3, f40 + min3);
                                 path.arcTo(rectF11, f38 + 180.0f, 90.0f);
@@ -567,21 +567,21 @@ public abstract class ed extends View {
         }
         if (f43 > 0.0f) {
             if (this.Q == null) {
-                rg.v1 v1Var = new rg.v1(25);
-                this.Q = v1Var;
-                v1Var.N = 100;
-                v1Var.M = z10;
-                v1Var.G = z10;
-                v1Var.K = false;
-                v1Var.H = z10;
-                v1Var.r = 18;
-                v1Var.B = false;
-                v1Var.j = AndroidUtilities.dp(80.0f);
-                rg.v1 v1Var2 = this.Q;
-                v1Var2.w = 0.85f;
-                v1Var2.v = 0.85f;
-                v1Var2.u = 0.85f;
-                v1Var2.c();
+                rg.x1 x1Var = new rg.x1(25);
+                this.Q = x1Var;
+                x1Var.N = 100;
+                x1Var.M = z10;
+                x1Var.G = z10;
+                x1Var.K = false;
+                x1Var.H = z10;
+                x1Var.r = 18;
+                x1Var.B = false;
+                x1Var.j = AndroidUtilities.dp(80.0f);
+                rg.x1 x1Var2 = this.Q;
+                x1Var2.w = 0.85f;
+                x1Var2.v = 0.85f;
+                x1Var2.u = 0.85f;
+                x1Var2.c();
                 rectF = rectF14;
             } else {
                 RectF rectF15 = this.E;
@@ -660,7 +660,7 @@ public abstract class ed extends View {
         float x10 = motionEvent.getX();
         float y3 = motionEvent.getY();
         RectF rectF = this.b;
-        float a2 = v7.a7.a(rectF.centerX(), rectF.centerY(), x10, y3);
+        float a2 = v7.z6.a(rectF.centerX(), rectF.centerY(), x10, y3);
         float atan2 = (float) ((Math.atan2(y3 - rectF.centerY(), x10 - rectF.centerX()) / 3.141592653589793d) * 180.0d);
         if (atan2 < 0.0f) {
             atan2 += 360.0f;
@@ -902,7 +902,7 @@ public abstract class ed extends View {
         cd[] cdVarArr4 = cdVarArr3;
         AndroidUtilities.roundPercents(this.V, this.U);
         if (this.d == 0) {
-            Arrays.sort(ddVarArr2, new org.telegram.ui.cf(8));
+            Arrays.sort(ddVarArr2, new org.telegram.ui.ff(8));
             int i17 = 0;
             while (true) {
                 if (i17 > ddVarArr2.length) {
@@ -1113,9 +1113,9 @@ public abstract class ed extends View {
         matrix2.reset();
         matrix2.setTranslate(rectF.left, -rectF.centerY());
         this.J.setLocalMatrix(matrix2);
-        rg.v1 v1Var = this.Q;
-        if (v1Var != null) {
-            v1Var.a.set(0.0f, 0.0f, AndroidUtilities.dp(140.0f), AndroidUtilities.dp(140.0f));
+        rg.x1 x1Var = this.Q;
+        if (x1Var != null) {
+            x1Var.a.set(0.0f, 0.0f, AndroidUtilities.dp(140.0f), AndroidUtilities.dp(140.0f));
             this.Q.a.offset((getMeasuredWidth() - this.Q.a.width()) / 2.0f, (getMeasuredHeight() - this.Q.a.height()) / 2.0f);
             this.Q.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
             this.Q.f();

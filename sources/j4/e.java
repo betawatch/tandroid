@@ -2,11 +2,12 @@ package j4;
 
 import b2.r0;
 import c3.h0;
+import hg.k0;
 import java.util.Arrays;
 import java.util.Collections;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class e implements i {
     public static final byte[] x = {73, 68, 51};
@@ -324,7 +325,7 @@ public final class e implements i {
         rVar.a = f0Var.e;
         rVar.p = r0.n(this.f);
         rVar.q = r0.n("application/id3");
-        hg.c.s(rVar, Z12);
+        k0.r(rVar, Z12);
     }
 
     @Override // j4.i

@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f implements o0 {
     public final a0 a;
@@ -219,8 +219,8 @@ public final class f implements o0 {
     public final void p(long j3, long j10) {
         try {
             this.b.a(j3, j10);
-        } catch (i2.n e) {
-            throw new n0(e, this.e);
+        } catch (i2.n e7) {
+            throw new n0(e7, this.e);
         }
     }
 

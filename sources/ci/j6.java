@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class j6 extends qg.d {
     public final Paint h;
@@ -15,12 +15,12 @@ public final class j6 extends qg.d {
     public float s;
     public int v;
     public int w;
-    public final /* synthetic */ nb x;
+    public final /* synthetic */ mb x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j6(nb nbVar, Context context, i6 i6Var) {
+    public j6(mb mbVar, Context context, i6 i6Var) {
         super(context, i6Var);
-        this.x = nbVar;
+        this.x = mbVar;
         Paint paint = new Paint();
         this.h = paint;
         setWillNotDraw(false);
@@ -60,14 +60,14 @@ public final class j6 extends qg.d {
         super.onDraw(canvas);
         long min = Math.min(16L, System.currentTimeMillis() - this.n);
         this.n = System.currentTimeMillis();
-        nb nbVar = this.x;
-        qg.j jVar = nbVar.J0;
+        mb mbVar = this.x;
+        qg.j jVar = mbVar.J0;
         if (jVar == null || jVar.r || !jVar.n) {
             i10 = 0;
             i11 = 0;
         } else {
             i10 = jVar.getStickyX();
-            i11 = nbVar.J0.getStickyY();
+            i11 = mbVar.J0.getStickyY();
         }
         if (i10 != 0) {
             this.v = i10;
@@ -169,14 +169,14 @@ public final class j6 extends qg.d {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
-        nb nbVar = this.x;
-        j6 j6Var = nbVar.R0;
-        if (nbVar.R1 <= 0) {
-            nbVar.R1 = j6Var.getMeasuredWidth();
+        mb mbVar = this.x;
+        j6 j6Var = mbVar.R0;
+        if (mbVar.R1 <= 0) {
+            mbVar.R1 = j6Var.getMeasuredWidth();
         }
-        if (nbVar.S1 <= 0) {
-            nbVar.S1 = j6Var.getMeasuredHeight();
+        if (mbVar.S1 <= 0) {
+            mbVar.S1 = j6Var.getMeasuredHeight();
         }
-        nbVar.H0();
+        mbVar.H0();
     }
 }

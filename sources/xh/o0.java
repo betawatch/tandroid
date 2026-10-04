@@ -14,7 +14,7 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import yh.t5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,23 +44,23 @@ public final /* synthetic */ class o0 implements Runnable {
         KeyEvent.Callback callback = this.c;
         switch (i10) {
             case 0:
-                r1 r1Var = (r1) callback;
+                q1 q1Var = (q1) callback;
                 Context context = (Context) obj2;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) tLObject;
-                long j3 = r1Var.c0;
-                m0 m0Var = new m0(r1Var, (Utilities.Callback) obj, 2);
+                long j3 = q1Var.c0;
+                m0 m0Var = new m0(q1Var, (Utilities.Callback) obj, 2);
                 boolean z10 = starGift.limited;
-                new t0(r1Var, context, this.b, starGift, j3, m0Var, z10 && (disallowedGiftsSettings2 = r1Var.b0) != null && disallowedGiftsSettings2.disallow_limited_stargifts, z10 && (disallowedGiftsSettings = r1Var.b0) != null && disallowedGiftsSettings.disallow_unique_stargifts).show();
+                new t0(q1Var, context, this.b, starGift, j3, m0Var, z10 && (disallowedGiftsSettings2 = q1Var.b0) != null && disallowedGiftsSettings2.disallow_limited_stargifts, z10 && (disallowedGiftsSettings = q1Var.b0) != null && disallowedGiftsSettings.disallow_unique_stargifts).show();
                 break;
             default:
                 String str = (String) obj;
                 ((ci.d) callback).setLoading(false);
-                org.telegram.ui.ActionBar.e3 e3Var = ((org.telegram.ui.ActionBar.e3[]) obj2)[0];
-                if (e3Var != null) {
-                    e3Var.dismiss();
+                org.telegram.ui.ActionBar.f3 f3Var = ((org.telegram.ui.ActionBar.f3[]) obj2)[0];
+                if (f3Var != null) {
+                    f3Var.dismiss();
                 }
                 t5.y(this.b, false).S();
-                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
                     yc.a0(U).V(Collections.singletonList(tLObject), LocaleController.getString(R.string.StarsSubscriptionRenewedToast), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StarsSubscriptionRenewedToastText, str)), null).k(false);
                     break;

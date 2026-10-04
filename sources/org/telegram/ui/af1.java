@@ -1,18 +1,220 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final class af1 extends s4.y {
-    public final /* synthetic */ wf1 S;
+import android.animation.ValueAnimator;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.SharedConfig;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public af1(wf1 wf1Var, vf1 vf1Var) {
-        super(vf1Var);
-        this.S = wf1Var;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final class af1 extends s4.c0 {
+    public boolean I;
+    public final /* synthetic */ yf1 J;
+
+    public af1(yf1 yf1Var) {
+        this.J = yf1Var;
     }
 
-    @Override // s4.y
-    public final boolean q() {
-        return this.S.x > 0;
+    @Override // s4.c0, s4.o0
+    public final void b0(of.e eVar, s4.z0 z0Var) {
+        if (BuildVars.DEBUG_PRIVATE_VERSION) {
+            try {
+                super.b0(eVar, z0Var);
+                return;
+            } catch (IndexOutOfBoundsException unused) {
+                throw new RuntimeException("Inconsistency detected. ");
+            }
+        }
+        try {
+            super.b0(eVar, z0Var);
+        } catch (IndexOutOfBoundsException e7) {
+            FileLog.e(e7);
+            AndroidUtilities.runOnUIThread(new hz0(this, 20));
+        }
+    }
+
+    @Override // s4.c0
+    public final void b1(View view, View view2, int i10, int i11) {
+        this.I = true;
+        super.b1(view, view2, i10, i11);
+        this.I = false;
+    }
+
+    @Override // s4.c0
+    public final void h1(int i10, int i11) {
+        if (this.I) {
+            i11 -= this.J.N.getPaddingTop();
+        }
+        super.h1(i10, i11);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00c6  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00ca  */
+    @Override // s4.c0, s4.o0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int o0(int i10, of.e eVar, s4.z0 z0Var) {
+        int i11;
+        jf1 jf1Var;
+        yw ywVar;
+        float f7;
+        int i12;
+        yf1 yf1Var = this.J;
+        jf1 jf1Var2 = yf1Var.N;
+        boolean z10 = false;
+        if (jf1Var2.X1) {
+            return 0;
+        }
+        boolean z11 = jf1Var2.getScrollState() == 1;
+        int paddingTop = yf1Var.N.getPaddingTop();
+        if (i10 < 0 && yf1Var.x > 0 && yf1Var.y == 2) {
+            yf1Var.N.setOverScrollMode(0);
+            int L0 = yf1Var.F.L0();
+            if (L0 == 0) {
+                View m10 = yf1Var.F.m(L0);
+                if (m10 != null) {
+                    m10.setTranslationX(0.0f);
+                }
+                if (m10 != null && m10.getBottom() - paddingTop <= AndroidUtilities.dp(1.0f)) {
+                    L0 = 1;
+                }
+            }
+            if (!z11) {
+                View m11 = yf1Var.F.m(L0);
+                if (m11 != null) {
+                    int f10 = hg.k0.f(L0, 1, AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 78.0f : 72.0f) + 1, -(m11.getTop() - paddingTop));
+                    if (f10 < Math.abs(i10)) {
+                        i11 = -f10;
+                    }
+                }
+            } else if (L0 == 0) {
+                View m12 = yf1Var.F.m(L0);
+                float top = ((m12.getTop() - paddingTop) / m12.getMeasuredHeight()) + 1.0f;
+                if (top > 1.0f) {
+                    top = 1.0f;
+                }
+                yf1Var.N.setOverScrollMode(2);
+                i11 = (int) ((0.45f - (top * 0.25f)) * i10);
+                if (i11 > -1) {
+                    i11 = -1;
+                }
+            }
+            jf1Var = yf1Var.N;
+            if (jf1Var.m3 != 0.0f && i10 > 0 && z11) {
+                f7 = ((int) r15) - i10;
+                if (f7 >= 0.0f) {
+                    i12 = (int) f7;
+                    f7 = 0.0f;
+                } else {
+                    i12 = 0;
+                }
+                jf1Var.setViewsOffset(f7);
+                i11 = i12;
+            }
+            if (yf1Var.y != 0 || yf1Var.x <= 0) {
+                return super.o0(i11, eVar, z0Var);
+            }
+            int o02 = super.o0(i11, eVar, z0Var);
+            yw ywVar2 = yf1Var.w;
+            if (ywVar2 != null) {
+                ywVar2.a = o02;
+            }
+            int L02 = yf1Var.F.L0();
+            View m13 = L02 == 0 ? yf1Var.F.m(L02) : null;
+            if (m13 != null) {
+                m13.setTranslationX(0.0f);
+            }
+            int i13 = i11;
+            if (L02 != 0 || m13 == null || m13.getBottom() - paddingTop < AndroidUtilities.dp(4.0f)) {
+                yf1Var.Y = 0L;
+                yf1Var.Z = false;
+                yf1Var.y = 2;
+                yw ywVar3 = yf1Var.w;
+                if (ywVar3 != null) {
+                    ValueAnimator valueAnimator = ywVar3.z;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                    }
+                    org.telegram.ui.Cells.s2 s2Var = ywVar3.H;
+                    if (s2Var != null) {
+                        s2Var.removeCallbacks(ywVar3.d0);
+                    }
+                    ywVar3.x = 0.0f;
+                    ywVar3.y = false;
+                    ywVar3.e0 = false;
+                    yf1Var.w.f(0.0f);
+                    yf1Var.w.I = yf1Var.N;
+                }
+            } else {
+                if (yf1Var.Y == 0) {
+                    yf1Var.Y = System.currentTimeMillis();
+                }
+                if (yf1Var.y == 2 && (ywVar = yf1Var.w) != null) {
+                    ywVar.h();
+                }
+                float top2 = ((m13.getTop() - paddingTop) / m13.getMeasuredHeight()) + 1.0f;
+                if (top2 > 1.0f) {
+                    top2 = 1.0f;
+                }
+                long currentTimeMillis = System.currentTimeMillis() - yf1Var.Y;
+                if (top2 > 0.85f && currentTimeMillis > 220) {
+                    z10 = true;
+                }
+                if (yf1Var.Z != z10) {
+                    yf1Var.Z = z10;
+                    if (yf1Var.y == 2) {
+                        try {
+                            yf1Var.N.performHapticFeedback(3, 2);
+                        } catch (Exception unused) {
+                        }
+                        yw ywVar4 = yf1Var.w;
+                        if (ywVar4 != null) {
+                            ywVar4.a(z10);
+                        }
+                    }
+                }
+                if (yf1Var.y == 2 && i13 - o02 != 0 && i10 < 0 && z11) {
+                    float dp = 1.0f - (yf1Var.N.m3 / AndroidUtilities.dp(72.0f));
+                    jf1 jf1Var3 = yf1Var.N;
+                    jf1Var3.setViewsOffset(jf1Var3.m3 - ((i10 * 0.2f) * dp));
+                }
+                yw ywVar5 = yf1Var.w;
+                if (ywVar5 != null) {
+                    ywVar5.f(top2);
+                    yf1Var.w.I = yf1Var.N;
+                }
+            }
+            if (m13 != null) {
+                m13.invalidate();
+            }
+            return o02;
+        }
+        i11 = i10;
+        jf1Var = yf1Var.N;
+        if (jf1Var.m3 != 0.0f) {
+            f7 = ((int) r15) - i10;
+            if (f7 >= 0.0f) {
+            }
+            jf1Var.setViewsOffset(f7);
+            i11 = i12;
+        }
+        if (yf1Var.y != 0) {
+        }
+        return super.o0(i11, eVar, z0Var);
+    }
+
+    @Override // s4.c0, s4.o0
+    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
+        if (this.J.x > 0 && i10 == 1) {
+            super.v0(recyclerView, z0Var, i10);
+            return;
+        }
+        ji.o oVar = new ji.o(recyclerView.getContext(), 0);
+        oVar.a = i10;
+        w0(oVar);
     }
 }

@@ -22,10 +22,10 @@ import org.telegram.messenger.ok;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.rq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
                 TL_stories.StoryItem storyItem = e6Var.O1.a;
                 if (storyItem != null) {
                     if (e6Var.C1) {
-                        e6Var.F0(storyItem.privacy.isEmpty() ? new ci.da(3, e6Var.C2, new ArrayList()) : new ci.da(e6Var.C2, storyItem.privacy), storyItem);
+                        e6Var.F0(storyItem.privacy.isEmpty() ? new ci.ca(3, e6Var.C2, new ArrayList()) : new ci.ca(e6Var.C2, storyItem.privacy), storyItem);
                         break;
                     } else {
                         if (e6Var.F0 == null) {
@@ -73,7 +73,7 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
                             e4Var.l0 = new c3(e6Var, 9);
                             e6Var.F0 = e4Var;
                             e4Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-                            a5Var.addView(e6Var.F0, w7.y5.d(-1, 60.0f, 55, 0.0f, 52.0f, 0.0f, 0.0f));
+                            a5Var.addView(e6Var.F0, w7.z5.d(-1, 60.0f, 55, 0.0f, 52.0f, 0.0f, 0.0f));
                         }
                         TLRPC.User user = MessagesController.getInstance(e6Var.C2).getUser(Long.valueOf(e6Var.B1));
                         if (user != null) {
@@ -194,37 +194,37 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
             case 7:
                 Context context = e6Var.getContext();
                 org.telegram.ui.ActionBar.d6 d6Var = e6Var.B0;
-                org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(1, context, d6Var, false);
-                e3Var.fixNavigationBar(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.h5, d6Var));
+                org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, context, d6Var, false);
+                f3Var.fixNavigationBar(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h5, d6Var));
                 LinearLayout linearLayout = new LinearLayout(e6Var.getContext());
                 linearLayout.setOrientation(1);
                 linearLayout.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
                 org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(e6Var.getContext());
                 w9Var.getImageReceiver().setAutoRepeat(1);
                 MediaDataController.getInstance(e6Var.C2).setPlaceholderImage(w9Var, AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME_2, "😎", "150_150");
-                linearLayout.addView(w9Var, w7.y5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 1, 0, 16, 0, 16));
+                linearLayout.addView(w9Var, w7.z5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 1, 0, 16, 0, 16));
                 TextView textView = new TextView(e6Var.getContext());
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setGravity(17);
-                ok.n(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 20.0f);
+                ok.n(org.telegram.ui.ActionBar.i6.j5, d6Var, textView, 1, 20.0f);
                 textView.setText(LocaleController.getString(R.string.StoryQualityPremium));
-                linearLayout.addView(textView, w7.y5.t(-1, -2, 1, 12, 0, 12, 0));
+                linearLayout.addView(textView, w7.z5.t(-1, -2, 1, 12, 0, 12, 0));
                 TextView textView2 = new TextView(e6Var.getContext());
                 textView2.setGravity(17);
-                ok.n(org.telegram.ui.ActionBar.h6.r5, d6Var, textView2, 1, 14.0f);
+                ok.n(org.telegram.ui.ActionBar.i6.r5, d6Var, textView2, 1, 14.0f);
                 org.telegram.messenger.f0.m(R.string.StoryQualityPremiumText, textView2);
-                linearLayout.addView(textView2, w7.y5.t(-1, -2, 1, 32, 9, 32, 19));
+                linearLayout.addView(textView2, w7.z5.t(-1, -2, 1, 32, 9, 32, 19));
                 ci.d dVar = new ci.d(e6Var.getContext(), d6Var, true);
                 dVar.g(LocaleController.getString(R.string.StoryQualityIncrease), false, true);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
-                qq qqVar = new qq(R.drawable.mini_switch_lock, 0);
-                qqVar.setTopOffset(1);
-                spannableStringBuilder.setSpan(qqVar, 0, 1, 33);
+                rq rqVar = new rq(R.drawable.mini_switch_lock, 0);
+                rqVar.setTopOffset(1);
+                spannableStringBuilder.setSpan(rqVar, 0, 1, 33);
                 dVar.f(new SpannableStringBuilder().append((CharSequence) spannableStringBuilder).append((CharSequence) LocaleController.getString(R.string.OptionPremiumRequiredTitle)), false);
-                linearLayout.addView(dVar, w7.y5.q(-1, 48, 1));
-                dVar.setOnClickListener(new f2(2, e6Var, e3Var));
-                e3Var.setCustomView(linearLayout);
-                ((ac) e6Var.Q1).h(e3Var);
+                linearLayout.addView(dVar, w7.z5.q(-1, 48, 1));
+                dVar.setOnClickListener(new f2(2, e6Var, f3Var));
+                f3Var.setCustomView(linearLayout);
+                ((ac) e6Var.Q1).h(f3Var);
                 v5 v5Var = e6Var.t1;
                 if (v5Var != null) {
                     v5Var.a();
@@ -257,10 +257,10 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
                 org.telegram.ui.Cells.aa aaVar = g5Var.W;
                 if (!z12) {
                     e6Var.h3 = true;
-                    g5Var.D(false);
+                    g5Var.E(false);
                     break;
                 } else if (!aaVar.y()) {
-                    g5Var.C();
+                    g5Var.D();
                     break;
                 } else if (aaVar.y() && Math.abs(g5Var.g0 - g5Var.i0) < AndroidUtilities.touchSlop && Math.abs(g5Var.h0 - g5Var.j0) < AndroidUtilities.touchSlop) {
                     org.telegram.ui.Cells.da daVar = aaVar.o(g5Var.getContext()).r;

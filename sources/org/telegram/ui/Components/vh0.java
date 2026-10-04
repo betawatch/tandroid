@@ -11,9 +11,9 @@ import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class vh0 extends w9 implements zv0 {
+public final class vh0 extends w9 implements iw0 {
     public final int G;
     public RadialProgress2 H;
     public ValueAnimator I;
@@ -36,7 +36,7 @@ public final class vh0 extends w9 implements zv0 {
         setLayerNum(bi0Var.l1);
     }
 
-    @Override // org.telegram.ui.Components.zv0
+    @Override // org.telegram.ui.Components.iw0
     public final void g(Runnable runnable) {
         this.O = runnable;
     }
@@ -58,8 +58,8 @@ public final class vh0 extends w9 implements zv0 {
         Path path = bi0Var.M0;
         ArrayList arrayList = bi0Var.b1;
         RectF rectF = bi0Var.N0;
-        org.telegram.ui.hv0 hv0Var = bi0Var.h1;
-        if (hv0Var == null || !hv0Var.n) {
+        org.telegram.ui.kv0 kv0Var = bi0Var.h1;
+        if (kv0Var == null || !kv0Var.n) {
             if (this.H != null) {
                 int k10 = bi0Var.D0.k(this.M);
                 if (bi0Var.i1) {
@@ -75,7 +75,7 @@ public final class vh0 extends w9 implements zv0 {
                         long currentTimeMillis = System.currentTimeMillis() - this.K;
                         long j10 = this.L ? 250L : 750L;
                         if (currentTimeMillis <= 250 + j10 && currentTimeMillis > j10) {
-                            this.H.E = sr.f.getInterpolation((currentTimeMillis - j10) / 250.0f);
+                            this.H.E = tr.f.getInterpolation((currentTimeMillis - j10) / 250.0f);
                         }
                     }
                     if (bi0Var.g1) {
@@ -95,9 +95,9 @@ public final class vh0 extends w9 implements zv0 {
                     this.I = ofFloat;
                     ofFloat.setStartDelay(j3);
                     this.I.setDuration((long) (this.J * 250.0f));
-                    this.I.setInterpolator(sr.f);
-                    this.I.addUpdateListener(new u70(this, i10));
-                    this.I.addListener(new ei.v2(this, k10, 8));
+                    this.I.setInterpolator(tr.f);
+                    this.I.addUpdateListener(new v70(this, i10));
+                    this.I.addListener(new ei.w2(this, k10, 8));
                     this.I.start();
                 }
                 int i11 = bi0Var.m1;
@@ -144,7 +144,7 @@ public final class vh0 extends w9 implements zv0 {
             RadialProgress2 radialProgress2 = this.H;
             int i14 = this.G;
             int i15 = (i11 - currentActionBarHeight) - dp2;
-            radialProgress2.q((i10 - i14) / 2, hg.c.z(i15, i14, 2, currentActionBarHeight), (i10 + i14) / 2, ((i15 + i14) / 2) + currentActionBarHeight);
+            radialProgress2.q((i10 - i14) / 2, hg.k0.y(i15, i14, 2, currentActionBarHeight), (i10 + i14) / 2, ((i15 + i14) / 2) + currentActionBarHeight);
         }
     }
 

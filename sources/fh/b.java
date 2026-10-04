@@ -8,7 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import ch.f;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class b implements a {
     public final Paint a;
@@ -41,7 +41,7 @@ public final class b implements a {
             BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
             this.c = bitmapShader;
             paint.setShader(bitmapShader);
-            e();
+            d();
         }
     }
 
@@ -51,15 +51,10 @@ public final class b implements a {
         }
         this.h = i10;
         this.n = i11;
-        e();
+        d();
     }
 
-    @Override // fh.a
-    public final ch.d d() {
-        return new f(this);
-    }
-
-    public final void e() {
+    public final void d() {
         Bitmap bitmap = this.d;
         Matrix matrix = this.b;
         if (bitmap == null) {
@@ -84,6 +79,11 @@ public final class b implements a {
     }
 
     @Override // fh.a
+    public final ch.d f() {
+        return new f(this);
+    }
+
+    @Override // oi.a
     public final void y(Canvas canvas, float f7, float f10, float f11, float f12) {
         Bitmap bitmap = this.d;
         if (bitmap == null || bitmap.isRecycled() || this.c == null) {

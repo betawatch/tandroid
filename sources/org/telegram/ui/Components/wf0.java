@@ -7,20 +7,20 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class wf0 extends FrameLayout {
-    public final ci.wc a;
+    public final ci.vc a;
     public final ci.d b;
-    public final rt c;
-    public u71 d;
+    public final st c;
+    public d81 d;
     public long e;
     public float f;
     public ci.a4 h;
     public Utilities.Callback n;
     public Runnable r;
 
-    public wf0(Context context, org.telegram.ui.ActionBar.d6 d6Var, ja jaVar) {
+    public wf0(Context context, org.telegram.ui.ActionBar.d6 d6Var, ka kaVar) {
         super(context);
         this.e = -1L;
         this.f = 1.39f;
@@ -29,25 +29,25 @@ public final class wf0 extends FrameLayout {
         kVar.setTitle(LocaleController.getString(R.string.EditorSetCoverTitle));
         kVar.B(-1, false);
         kVar.A(587202559, false);
-        kVar.setActionBarMenuOnItemClick(new org.telegram.ui.oo(this, 10));
-        addView(kVar, w7.y5.e(-1, -2, 55));
-        ci.wc wcVar = new ci.wc(context, null, null, d6Var, jaVar);
-        this.a = wcVar;
-        wcVar.X0 = true;
-        addView(wcVar, w7.y5.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
+        kVar.setActionBarMenuOnItemClick(new org.telegram.ui.qo(this, 10));
+        addView(kVar, w7.z5.e(-1, -2, 55));
+        ci.vc vcVar = new ci.vc(context, null, null, d6Var, kaVar);
+        this.a = vcVar;
+        vcVar.X0 = true;
+        addView(vcVar, w7.z5.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
         ci.d dVar = new ci.d(context, d6Var, true);
         this.b = dVar;
         dVar.g(LocaleController.getString(R.string.EditorSetCoverSave), false, true);
         dVar.e();
-        addView(dVar, w7.y5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
-        rt rtVar = new rt(context, LocaleController.getString(R.string.EditorSetCoverGallery));
-        this.c = rtVar;
-        rtVar.setOnClickListener(new ai.d0(this, context, d6Var, 26));
-        addView(rtVar, w7.y5.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
-        wcVar.setDelegate(new n7.z0(this));
+        addView(dVar, w7.z5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
+        st stVar = new st(context, LocaleController.getString(R.string.EditorSetCoverGallery));
+        this.c = stVar;
+        stVar.setOnClickListener(new ai.d0(this, context, d6Var, 26));
+        addView(stVar, w7.z5.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
+        vcVar.setDelegate(new n7.z0(this));
     }
 
-    public final void a(MediaController.PhotoEntry photoEntry, u71 u71Var, org.telegram.ui.ActionBar.d6 d6Var) {
+    public final void a(MediaController.PhotoEntry photoEntry, d81 d81Var, org.telegram.ui.ActionBar.d6 d6Var) {
         int i10;
         ci.d dVar = this.b;
         dVar.a = d6Var;
@@ -58,32 +58,32 @@ public final class wf0 extends FrameLayout {
         } else {
             this.f = Utilities.clamp(i10 / i11, 1.39f, 0.85f);
         }
-        this.d = u71Var;
+        this.d = d81Var;
         long j3 = photoEntry.coverSavedPosition;
         if (j3 >= 0) {
             this.e = j3;
-            u71Var.L(j3, false);
+            d81Var.L(j3, false);
         } else {
-            this.e = u71Var.n();
+            this.e = d81Var.n();
         }
-        String path = u71Var.F.getPath();
-        long p5 = u71Var.p();
-        i2.f0 f0Var = u71Var.d;
+        String path = d81Var.F.getPath();
+        long p5 = d81Var.p();
+        i2.f0 f0Var = d81Var.d;
         f0Var.B1();
         this.a.o(false, path, p5, f0Var.Z);
-        long p10 = u71Var.p();
+        long p10 = d81Var.p();
         float max = 2.8f / Math.max(60L, p10);
-        float max2 = (1.0f - max) * (this.e / Math.max(1L, u71Var.p()));
-        ci.wc wcVar = this.a;
-        wcVar.setVideoLeft(max2);
-        wcVar.setVideoRight(max2 + max);
-        wcVar.Z0 = 0L;
-        wcVar.a1 = p10;
-        ci.qc qcVar = wcVar.h;
-        if (qcVar != null) {
-            ci.qc.a(qcVar, true);
+        float max2 = (1.0f - max) * (this.e / Math.max(1L, d81Var.p()));
+        ci.vc vcVar = this.a;
+        vcVar.setVideoLeft(max2);
+        vcVar.setVideoRight(max2 + max);
+        vcVar.Z0 = 0L;
+        vcVar.a1 = p10;
+        ci.pc pcVar = vcVar.h;
+        if (pcVar != null) {
+            ci.pc.a(pcVar, true);
         }
-        wcVar.k();
+        vcVar.k();
     }
 
     public long getTime() {

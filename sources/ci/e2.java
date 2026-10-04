@@ -4,9 +4,9 @@ import android.content.Context;
 import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class e2 extends a2 {
     public final p1 b;
@@ -46,25 +46,25 @@ public final class e2 extends a2 {
         jVar.e = 220L;
         jVar.f = 160L;
         jVar.g = 160L;
-        jVar.i = sr.g;
+        jVar.i = tr.g;
         p1Var.setItemAnimator(jVar);
-        addView(p1Var, w7.y5.c(-1.0f, -1));
-        d6Var = ((org.telegram.ui.ActionBar.e3) s2Var).resourcesProvider;
+        addView(p1Var, w7.z5.c(-1.0f, -1));
+        d6Var = ((org.telegram.ui.ActionBar.f3) s2Var).resourcesProvider;
         l2 l2Var = new l2(context, d6Var);
         this.f = l2Var;
         l2Var.v = new bi.v(this, 3);
-        addView(l2Var, w7.y5.e(-1, -2, 48));
-        d6Var2 = ((org.telegram.ui.ActionBar.e3) s2Var).resourcesProvider;
+        addView(l2Var, w7.z5.e(-1, -2, 48));
+        d6Var2 = ((org.telegram.ui.ActionBar.f3) s2Var).resourcesProvider;
         c2 c2Var = new c2(this, context, d6Var2);
         this.e = c2Var;
-        addView(c2Var, w7.y5.c(36.0f, -1));
+        addView(c2Var, w7.z5.c(36.0f, -1));
     }
 
     @Override // ci.a2
     public final void a(int i10) {
         int i11;
         this.a = i10;
-        this.b.Y2 = i10 == 0;
+        this.b.f3 = i10 == 0;
         int i12 = i10 == 0 ? 8 : 5;
         this.h = i12;
         this.d.y1(i12);
@@ -82,8 +82,8 @@ public final class e2 extends a2 {
             l2Var.r = false;
             k2 k2Var = l2Var.f;
             if (k2Var != null) {
-                k2Var.E1(s2Var.c);
-                l2Var.f.C1();
+                k2Var.G1(s2Var.c);
+                l2Var.f.E1();
                 if (l2Var.f.getSelectedCategory() != null) {
                     d2Var.H = l2Var.f.getSelectedCategory().a;
                     androidx.fragment.app.a0 a0Var = d2Var.M;
@@ -97,14 +97,14 @@ public final class e2 extends a2 {
             l2Var.d.setText(s2Var.b);
             k2 k2Var2 = l2Var.f;
             if (k2Var2 != null) {
-                k2Var2.F1(null);
-                l2Var.f.D1();
+                k2Var2.H1(null);
+                l2Var.f.F1();
             }
             AndroidUtilities.cancelRunOnUIThread(d2Var.M);
             AndroidUtilities.runOnUIThread(d2Var.M);
         }
         l2Var.a(i10, s2Var.s);
-        i11 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
+        i11 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
         MediaDataController.getInstance(i11).checkStickers(i10 == 0 ? 5 : 0);
     }
 
@@ -135,8 +135,8 @@ public final class e2 extends a2 {
         this.f.setTranslationY(AndroidUtilities.dp(52.0f) + max);
         p1 p1Var = this.b;
         float height = p1Var.getHeight() - p1Var.getPaddingBottom();
-        p1Var.Z2 = max + p1Var.getPaddingTop();
-        p1Var.a3 = height;
+        p1Var.g3 = max + p1Var.getPaddingTop();
+        p1Var.h3 = height;
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -144,8 +144,8 @@ public final class e2 extends a2 {
         int i12;
         int i13;
         s2 s2Var = this.s;
-        i12 = ((org.telegram.ui.ActionBar.e3) s2Var).backgroundPaddingLeft;
-        i13 = ((org.telegram.ui.ActionBar.e3) s2Var).backgroundPaddingLeft;
+        i12 = ((org.telegram.ui.ActionBar.f3) s2Var).backgroundPaddingLeft;
+        i13 = ((org.telegram.ui.ActionBar.f3) s2Var).backgroundPaddingLeft;
         setPadding(i12, 0, i13, 0);
         this.e.setTranslationY(AndroidUtilities.dp(16.0f));
         this.f.setTranslationY(AndroidUtilities.dp(52.0f));

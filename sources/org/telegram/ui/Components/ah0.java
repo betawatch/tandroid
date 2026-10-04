@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class ah0 extends FrameLayout {
     public final y5 a;
@@ -29,31 +29,31 @@ public abstract class ah0 extends FrameLayout {
     public ah0(ch0 ch0Var, Context context) {
         super(context);
         this.d = ch0Var;
-        setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.i5, false));
+        setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i5, false));
         y5 y5Var = new y5(getContext());
         this.a = y5Var;
         y5Var.setTextSize(1, 14.0f);
         y5Var.setTypeface(AndroidUtilities.bold());
-        int i10 = org.telegram.ui.ActionBar.h6.f7;
-        y5Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
+        int i10 = org.telegram.ui.ActionBar.i6.f7;
+        y5Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
         y5Var.setSingleLine(true);
         y5Var.setEllipsize(TextUtils.TruncateAt.END);
         y5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         TextView textView = new TextView(getContext());
         this.b = textView;
         textView.setTextSize(1, 14.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         org.telegram.ui.Cells.x1 x1Var = new org.telegram.ui.Cells.x1(this, getContext(), 1);
         this.c = x1Var;
         x1Var.setTextSize(AndroidUtilities.dp(14.0f));
-        x1Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i10, false));
+        x1Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
         x1Var.setGravity(LocaleController.isRTL ? 3 : 5);
-        x1Var.setOnClickListener(new k80(this, 9));
+        x1Var.setOnClickListener(new l80(this, 9));
         boolean z10 = LocaleController.isRTL;
-        addView(y5Var, w7.y5.d(-2, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 0 : 16, 0.0f, z10 ? 16 : 0, 0.0f));
-        addView(textView, w7.y5.d(-2, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(x1Var, w7.y5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
+        addView(y5Var, w7.z5.d(-2, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 0 : 16, 0.0f, z10 ? 16 : 0, 0.0f));
+        addView(textView, w7.z5.d(-2, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(x1Var, w7.z5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
     }
 
     public final void a(String str, ArrayList arrayList, int i10, int i11, int i12, boolean z10) {
@@ -69,8 +69,8 @@ public abstract class ah0 extends FrameLayout {
             y5Var.setText(Emoji.replaceEmoji(str, y5Var.getPaint().getFontMetricsInt(), false));
         }
         String format = String.format("%d", Integer.valueOf(i10));
-        SpannableStringBuilder spannableStringBuilder2 = LocaleController.isRTL ? new SpannableStringBuilder(a4.a.n(i10, "% – ")) : new SpannableStringBuilder(hg.c.i(i10, " – ", "%"));
-        spannableStringBuilder2.setSpan(new u51(AndroidUtilities.bold()), 3, format.length() + 3, 33);
+        SpannableStringBuilder spannableStringBuilder2 = LocaleController.isRTL ? new SpannableStringBuilder(a4.a.m(i10, "% – ")) : new SpannableStringBuilder(hg.k0.i(i10, " – ", "%"));
+        spannableStringBuilder2.setSpan(new d61(AndroidUtilities.bold()), 3, format.length() + 3, 33);
         this.b.setText(spannableStringBuilder2);
         org.telegram.ui.Cells.x1 x1Var = this.c;
         if (i12 == 0) {

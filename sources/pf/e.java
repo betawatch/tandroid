@@ -14,7 +14,7 @@ import org.telegram.ui.LaunchActivity;
 import org.webrtc.TextureViewRenderer;
 import w7.q;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class e {
     public static int n;
@@ -27,7 +27,7 @@ public final class e {
     public final boolean f;
     public final rf.a g;
     public final sf.b h;
-    public final oi.f i;
+    public final qi.f i;
     public View j;
     public View k;
     public f0 l;
@@ -39,7 +39,7 @@ public final class e {
         sf.b bVar = new sf.b();
         this.h = bVar;
         g4 g4Var = new g4(this, 1);
-        oi.f fVar = new oi.f();
+        qi.f fVar = new qi.f();
         fVar.d = new u2(fVar, 11);
         fVar.a = g4Var;
         this.i = fVar;

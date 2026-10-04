@@ -6,13 +6,13 @@ import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.nj0;
-import org.telegram.ui.aq0;
-import org.telegram.ui.cq0;
-import org.telegram.ui.ml0;
-import org.telegram.ui.r10;
-import org.telegram.ui.t10;
+import org.telegram.ui.dq0;
+import org.telegram.ui.fq0;
+import org.telegram.ui.jl0;
+import org.telegram.ui.v10;
+import org.telegram.ui.x10;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 y5 y5Var = (y5) obj;
                 x5 x5Var = y5Var.d;
                 if (x5Var != null) {
-                    cq0.U(((aq0) ((ml0) x5Var).b).d, y5Var.b[((Integer) view.getTag()).intValue()]);
+                    fq0.S(((dq0) ((jl0) x5Var).b).d, y5Var.b[((Integer) view.getTag()).intValue()]);
                     break;
                 }
                 break;
@@ -86,9 +86,9 @@ public final /* synthetic */ class a implements View.OnClickListener {
                     r7 r7Var = u7Var.d;
                     int i11 = u7Var.c[intValue];
                     MessageObject messageObject = u7Var.b[intValue];
-                    t10 t10Var = ((r10) ((org.telegram.ui.g) r7Var).b).d;
-                    SpannableStringBuilder[] spannableStringBuilderArr = t10.s0;
-                    t10Var.f(i11, u7Var, messageObject, intValue);
+                    x10 x10Var = ((v10) ((org.telegram.ui.g) r7Var).b).d;
+                    SpannableStringBuilder[] spannableStringBuilderArr = x10.s0;
+                    x10Var.f(i11, u7Var, messageObject, intValue);
                     break;
                 }
                 break;

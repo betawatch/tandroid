@@ -1,17 +1,21 @@
 package k2;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class l extends Exception {
-    public final b2.s a;
+public final class l {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final boolean d;
+    public final boolean e;
+    public final int f;
 
-    public l(c2.g gVar, b2.s sVar) {
-        super(gVar);
-        this.a = sVar;
-    }
-
-    public l(String str, b2.s sVar) {
-        super(str);
-        this.a = sVar;
+    public l(int i10, int i11, int i12, int i13, boolean z10, boolean z11) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = z10;
+        this.e = z11;
+        this.f = i13;
     }
 }

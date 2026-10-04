@@ -10,13 +10,14 @@ import e2.d0;
 import e9.a1;
 import e9.f0;
 import e9.i0;
+import hg.k0;
 import j$.util.Objects;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.MediaController;
-import w7.a7;
+import w7.b7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class o {
     public final String a;
@@ -166,7 +167,7 @@ public final class o {
             }
             String str3 = this.b;
             if (i11 == 0 && MediaController.AUDIO_MIME_TYPE.equals(str3)) {
-                HashMap hashMap = w.a;
+                HashMap hashMap = x.a;
                 Pair b10 = e2.e.b(sVar3);
                 Pair b11 = e2.e.b(sVar4);
                 if (b10 != null && b11 != null) {
@@ -200,7 +201,7 @@ public final class o {
         MediaCodecInfo.VideoCapabilities videoCapabilities;
         Pair pair;
         String str;
-        HashMap hashMap = w.a;
+        HashMap hashMap = x.a;
         Pair b10 = e2.e.b(sVar);
         String str2 = sVar.r;
         int i10 = 4;
@@ -238,8 +239,8 @@ public final class o {
                         while (i15 < i14.d) {
                             if (((Integer) i14.get(i15)).intValue() + i12 < length) {
                                 a4.h hVar = new a4.h(bArr, ((Integer) i14.get(i15)).intValue() + i12, length);
-                                a3.l e = f2.o.e(hVar);
-                                if (e.a == 33 && e.b == 0) {
+                                a3.l e7 = f2.o.e(hVar);
+                                if (e7.a == 33 && e7.b == 0) {
                                     hVar.t(4);
                                     int i16 = hVar.i(3);
                                     hVar.s();
@@ -342,7 +343,7 @@ public final class o {
         int i10;
         String str = sVar.r;
         String str2 = this.b;
-        if ((!str2.equals(str) && !str2.equals(w.b(sVar))) || !c(sVar, true) || !d(sVar)) {
+        if ((!str2.equals(str) && !str2.equals(x.b(sVar))) || !c(sVar, true) || !d(sVar)) {
             return false;
         }
         if (this.i) {
@@ -398,7 +399,7 @@ public final class o {
         if (this.i) {
             return this.e;
         }
-        HashMap hashMap = w.a;
+        HashMap hashMap = x.a;
         Pair b10 = e2.e.b(sVar);
         return b10 != null && ((Integer) b10.first).intValue() == 42;
     }
@@ -417,10 +418,10 @@ public final class o {
         }
         int i12 = Build.VERSION.SDK_INT;
         if (i12 >= 29) {
-            int b10 = (i12 < 29 || ((bool = a7.a) != null && bool.booleanValue())) ? 0 : b2.c.b(videoCapabilities, i10, i11, d);
+            int b10 = (i12 < 29 || ((bool = b7.a) != null && bool.booleanValue())) ? 0 : b2.c.b(videoCapabilities, i10, i11, d);
             if (b10 != 2) {
                 if (b10 == 1) {
-                    StringBuilder k10 = hg.c.k("sizeAndRate.cover, ", i10, "x", i11, "@");
+                    StringBuilder k10 = k0.k("sizeAndRate.cover, ", i10, "x", i11, "@");
                     k10.append(d);
                     h(k10.toString());
                     return false;
@@ -432,18 +433,18 @@ public final class o {
             if (i10 < i11) {
                 String str = this.a;
                 if ((!"OMX.MTK.VIDEO.DECODER.HEVC".equals(str) || !"mcv5a".equals(Build.DEVICE)) && a(videoCapabilities, i11, i10, d)) {
-                    StringBuilder k11 = hg.c.k("sizeAndRate.rotated, ", i10, "x", i11, "@");
+                    StringBuilder k11 = k0.k("sizeAndRate.rotated, ", i10, "x", i11, "@");
                     k11.append(d);
-                    StringBuilder x10 = a4.a.x("AssumedSupport [", k11.toString(), "] [", str, ", ");
-                    x10.append(this.b);
-                    x10.append("] [");
-                    x10.append(d0.a);
-                    x10.append("]");
-                    e2.a.d("MediaCodecInfo", x10.toString());
+                    StringBuilder w10 = a4.a.w("AssumedSupport [", k11.toString(), "] [", str, ", ");
+                    w10.append(this.b);
+                    w10.append("] [");
+                    w10.append(d0.a);
+                    w10.append("]");
+                    e2.a.d("MediaCodecInfo", w10.toString());
                     return true;
                 }
             }
-            StringBuilder k12 = hg.c.k("sizeAndRate.support, ", i10, "x", i11, "@");
+            StringBuilder k12 = k0.k("sizeAndRate.support, ", i10, "x", i11, "@");
             k12.append(d);
             h(k12.toString());
             return false;
@@ -452,14 +453,14 @@ public final class o {
     }
 
     public final void h(String str) {
-        StringBuilder w10 = a4.a.w("NoSupport [", str, "] [");
-        w10.append(this.a);
-        w10.append(", ");
-        w10.append(this.b);
-        w10.append("] [");
-        w10.append(d0.a);
-        w10.append("]");
-        e2.a.d("MediaCodecInfo", w10.toString());
+        StringBuilder v = a4.a.v("NoSupport [", str, "] [");
+        v.append(this.a);
+        v.append(", ");
+        v.append(this.b);
+        v.append("] [");
+        v.append(d0.a);
+        v.append("]");
+        e2.a.d("MediaCodecInfo", v.toString());
     }
 
     public final String toString() {

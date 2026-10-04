@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class p2 {
     public static final Class a;
@@ -232,7 +232,7 @@ public abstract class p2 {
             c10 = o2Var.zzb(l0Var);
             l0Var.b(c10);
         }
-        return a4.a.E(c10, c10, T);
+        return a4.a.D(c10, c10, T);
     }
 
     public static int b(int i10, List list, o2 o2Var) {
@@ -248,7 +248,7 @@ public abstract class p2 {
                 c10 = o2Var.zzb(l0Var);
                 l0Var.b(c10);
             }
-            y3 = a4.a.E(c10, c10, y3);
+            y3 = a4.a.D(c10, c10, y3);
         }
         return y3;
     }
@@ -312,20 +312,20 @@ public abstract class p2 {
                         r0Var.H(b3.a(str));
                         r0Var.e = b3.a.h(str, bArr, r0Var.e, r0Var.F());
                     }
-                } catch (c3 e) {
+                } catch (c3 e7) {
                     r0Var.e = i12;
-                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e);
+                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e7);
                     byte[] bytes = str.getBytes(j1.a);
                     try {
                         r0Var.H(bytes.length);
                         r0Var.L(bytes, 0, bytes.length);
-                    } catch (s0 e7) {
-                        throw e7;
-                    } catch (IndexOutOfBoundsException e10) {
-                        throw new s0(e10);
+                    } catch (s0 e10) {
+                        throw e10;
+                    } catch (IndexOutOfBoundsException e11) {
+                        throw new s0(e11);
                     }
-                } catch (IndexOutOfBoundsException e11) {
-                    throw new s0(e11);
+                } catch (IndexOutOfBoundsException e12) {
+                    throw new s0(e12);
                 }
             }
             return;
@@ -352,20 +352,20 @@ public abstract class p2 {
                         r0Var.H(b3.a(str2));
                         r0Var.e = b3.a.h(str2, bArr2, r0Var.e, r0Var.F());
                     }
-                } catch (c3 e12) {
+                } catch (c3 e13) {
                     r0Var.e = i15;
-                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e12);
+                    r0.f.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e13);
                     byte[] bytes2 = str2.getBytes(j1.a);
                     try {
                         r0Var.H(bytes2.length);
                         r0Var.L(bytes2, 0, bytes2.length);
-                    } catch (s0 e13) {
-                        throw e13;
-                    } catch (IndexOutOfBoundsException e14) {
-                        throw new s0(e14);
+                    } catch (s0 e14) {
+                        throw e14;
+                    } catch (IndexOutOfBoundsException e15) {
+                        throw new s0(e15);
                     }
-                } catch (IndexOutOfBoundsException e15) {
-                    throw new s0(e15);
+                } catch (IndexOutOfBoundsException e16) {
+                    throw new s0(e16);
                 }
             } else {
                 q0 q0Var = (q0) a2;
@@ -452,7 +452,7 @@ public abstract class p2 {
                 Object obj = list.get(i11);
                 if (obj instanceof q0) {
                     int n10 = ((q0) obj).n();
-                    y3 = a4.a.E(n10, n10, y3);
+                    y3 = a4.a.D(n10, n10, y3);
                 } else {
                     y3 = r0.G((String) obj) + y3;
                 }
@@ -465,7 +465,7 @@ public abstract class p2 {
             Object a2 = t1Var.a(i11);
             if (a2 instanceof q0) {
                 int n11 = ((q0) a2).n();
-                y3 = a4.a.E(n11, n11, y3);
+                y3 = a4.a.D(n11, n11, y3);
             } else {
                 y3 = r0.G((String) a2) + y3;
             }
@@ -555,7 +555,7 @@ public abstract class p2 {
         int y3 = r0.y(i10) * size;
         for (int i11 = 0; i11 < list.size(); i11++) {
             int n10 = ((q0) list.get(i11)).n();
-            y3 = a4.a.E(n10, n10, y3);
+            y3 = a4.a.D(n10, n10, y3);
         }
         return y3;
     }

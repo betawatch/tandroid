@@ -37,7 +37,7 @@ import p4.l;
 import p4.m;
 import p4.w;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class f {
     public static volatile e a;
@@ -66,7 +66,8 @@ public abstract class f {
         j(context).a(p5);
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            throw a4.a.k(it);
+            it.next().getClass();
+            throw new ClassCastException();
         }
     }
 
@@ -305,7 +306,8 @@ public abstract class f {
         j(context).c();
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            throw a4.a.k(it);
+            it.next().getClass();
+            throw new ClassCastException();
         }
     }
 
@@ -316,7 +318,8 @@ public abstract class f {
         j(context).d(arrayList);
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            throw a4.a.k(it);
+            it.next().getClass();
+            throw new ClassCastException();
         }
     }
 
@@ -403,8 +406,8 @@ public abstract class f {
                                     if (applicationInfo != null) {
                                         resources = packageManager.getResourcesForApplication(applicationInfo);
                                     }
-                                } catch (PackageManager.NameNotFoundException e) {
-                                    Log.e("IconCompat", "Unable to find pkg=" + h + " for icon", e);
+                                } catch (PackageManager.NameNotFoundException e7) {
+                                    Log.e("IconCompat", "Unable to find pkg=" + h + " for icon", e7);
                                 }
                                 resources = null;
                             }
@@ -422,8 +425,8 @@ public abstract class f {
                 } else if (i11 == 2) {
                     try {
                         intent.putExtra("android.intent.extra.shortcut.ICON_RESOURCE", Intent.ShortcutIconResource.fromContext(context2.createPackageContext(iconCompat.h(), 0), iconCompat.e));
-                    } catch (PackageManager.NameNotFoundException e7) {
-                        throw new IllegalArgumentException("Can't find package " + iconCompat.b, e7);
+                    } catch (PackageManager.NameNotFoundException e10) {
+                        throw new IllegalArgumentException("Can't find package " + iconCompat.b, e10);
                     }
                 } else {
                     if (i11 != 5) {
@@ -458,8 +461,8 @@ public abstract class f {
     public static void v(Surface surface, float f7) {
         try {
             surface.setFrameRate(f7, f7 == 0.0f ? 0 : 1);
-        } catch (IllegalStateException e) {
-            e2.a.f("VideoFrameReleaseHelper", "Failed to call Surface.setFrameRate", e);
+        } catch (IllegalStateException e7) {
+            e2.a.f("VideoFrameReleaseHelper", "Failed to call Surface.setFrameRate", e7);
         }
     }
 
@@ -643,7 +646,8 @@ public abstract class f {
         j(context).a(p5);
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            throw a4.a.k(it);
+            it.next().getClass();
+            throw new ClassCastException();
         }
     }
 }

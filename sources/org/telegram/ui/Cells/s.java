@@ -7,9 +7,9 @@ import android.graphics.RectF;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.mt;
+import org.telegram.ui.Components.nt;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class s extends LinearLayout {
     public static final /* synthetic */ int f = 0;
@@ -22,11 +22,11 @@ public final class s extends LinearLayout {
     public final void a(float f7) {
         this.e = f7;
         TextView textView = this.d;
-        int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false);
-        int i10 = org.telegram.ui.ActionBar.h6.I6;
-        textView.setTextColor(i0.a.d(f7, w02, org.telegram.ui.ActionBar.h6.w0(null, i10, false)));
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false);
+        int i10 = org.telegram.ui.ActionBar.i6.I6;
+        textView.setTextColor(i0.a.d(f7, w02, org.telegram.ui.ActionBar.i6.w0(null, i10, false)));
         Paint paint = this.a;
-        paint.setColor(i0.a.d(f7, i0.a.k(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.M6, false), 63), org.telegram.ui.ActionBar.h6.w0(null, i10, false)));
+        paint.setColor(i0.a.d(f7, i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.M6, false), 63), org.telegram.ui.ActionBar.i6.w0(null, i10, false)));
         paint.setStrokeWidth(Math.max(2, AndroidUtilities.dp(AndroidUtilities.lerp(0.5f, 2.0f, f7))));
         invalidate();
     }
@@ -42,7 +42,7 @@ public final class s extends LinearLayout {
             return;
         }
         ValueAnimator duration = ValueAnimator.ofFloat(f10, f7).setDuration(250L);
-        duration.setInterpolator(mt.e);
+        duration.setInterpolator(nt.e);
         duration.addUpdateListener(new r(this, 0));
         duration.start();
     }

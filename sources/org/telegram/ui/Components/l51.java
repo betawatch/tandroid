@@ -1,33 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseArray;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class l51 extends g.p {
-    public final /* synthetic */ t51 c;
+public final class l51 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public int b;
+    public final /* synthetic */ Object c;
 
-    public l51(t51 t51Var) {
-        this.c = t51Var;
+    public l51(o51 o51Var) {
+        this.a = 0;
+        this.c = o51Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        t51 t51Var = this.c;
-        s4.h0 adapter = t51Var.n.getAdapter();
-        s51 s51Var = t51Var.s;
-        if (adapter == s51Var) {
-            if ((s51Var.d.get(i10) instanceof Integer) || i10 >= s51Var.w) {
-                return s51Var.v;
-            }
-            return 1;
+    @Override // s4.s0
+    public void a(RecyclerView recyclerView, int i10) {
+        switch (this.a) {
+            case 0:
+                if (i10 == 0) {
+                    this.b = 0;
+                    break;
+                }
+                break;
         }
-        gg.g2 g2Var = t51Var.v;
-        SparseArray sparseArray = g2Var.s;
-        if (i10 == g2Var.y || !(sparseArray.get(i10) == null || (sparseArray.get(i10) instanceof TLRPC.Document))) {
-            return g2Var.e.a();
+    }
+
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                o51 o51Var = (o51) this.c;
+                this.b += i11;
+                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > AndroidUtilities.dp(96.0f)) {
+                    View findFocus = o51Var.e.findFocus();
+                    if (findFocus == null) {
+                        findFocus = o51Var.e;
+                    }
+                    AndroidUtilities.hideKeyboard(findFocus);
+                }
+                if (i11 != 0) {
+                    o51.m(o51Var);
+                    break;
+                }
+                break;
+            default:
+                int i12 = this.b + i11;
+                this.b = i12;
+                ((org.telegram.ui.x21) this.c).H.setAlpha((i12 * 1.0f) / AndroidUtilities.dp(6.0f));
+                break;
         }
-        return 1;
+    }
+
+    public l51(org.telegram.ui.x21 x21Var) {
+        this.a = 1;
+        this.c = x21Var;
+        this.b = 0;
     }
 }

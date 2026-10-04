@@ -1,84 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.Utilities;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import java.io.File;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class x11 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y11 b;
+public final class x11 implements m91 {
+    public final /* synthetic */ ThemeEditorView a;
 
-    public x11(y11 y11Var, int i10) {
-        this.b = y11Var;
-        this.a = i10;
+    public x11(ThemeEditorView themeEditorView) {
+        this.a = themeEditorView;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0080 A[LOOP:0: B:13:0x0076->B:15:0x0080, LOOP_END] */
-    @Override // android.text.TextWatcher
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void afterTextChanged(Editable editable) {
-        int i10;
-        int i11;
-        int i12;
-        y11 y11Var = this.b;
-        EditTextBoldCursor[] editTextBoldCursorArr = y11Var.n;
-        ThemeEditorView.EditorAlert editorAlert = y11Var.I;
-        if (editorAlert.K) {
+    @Override // org.telegram.ui.Components.m91
+    public final void a() {
+        int i10 = 0;
+        while (true) {
+            ThemeEditorView themeEditorView = this.a;
+            if (i10 >= themeEditorView.c.size()) {
+                ThemeEditorView.EditorAlert editorAlert = themeEditorView.l;
+                int i11 = ThemeEditorView.EditorAlert.M;
+                editorAlert.J(true);
+                return;
+            } else {
+                org.telegram.ui.ActionBar.k6 k6Var = (org.telegram.ui.ActionBar.k6) themeEditorView.c.get(i10);
+                int w02 = org.telegram.ui.ActionBar.i6.w0(k6Var.j, k6Var.f, false);
+                k6Var.i = w02;
+                if (i10 == 0) {
+                    themeEditorView.l.b.c(w02);
+                }
+                i10++;
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.m91
+    public final void b(File file, Bitmap bitmap, boolean z10) {
+        org.telegram.ui.ActionBar.h6 h6Var = this.a.m;
+        org.telegram.ui.ActionBar.i6.rl.delete(org.telegram.ui.ActionBar.i6.Nd);
+        org.telegram.ui.ActionBar.i6.rl.delete(org.telegram.ui.ActionBar.i6.Od);
+        org.telegram.ui.ActionBar.i6.rl.delete(org.telegram.ui.ActionBar.i6.Pd);
+        org.telegram.ui.ActionBar.i6.rl.delete(org.telegram.ui.ActionBar.i6.Qd);
+        org.telegram.ui.ActionBar.i6.rl.delete(org.telegram.ui.ActionBar.i6.Rd);
+        org.telegram.ui.ActionBar.i6.h0 = null;
+        h6Var.v(null);
+        if (bitmap == null) {
+            org.telegram.ui.ActionBar.i6.f0 = null;
+            org.telegram.ui.ActionBar.i6.e0 = null;
+            org.telegram.ui.ActionBar.i6.r1(h6Var, false, false, false);
+            org.telegram.ui.ActionBar.i6.o1(true);
             return;
         }
-        editorAlert.K = true;
-        int intValue = Utilities.parseInt((CharSequence) editable.toString()).intValue();
-        int i13 = this.a;
-        if (intValue < 0) {
-            editTextBoldCursorArr[i13].setText("0");
-            EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[i13];
-            editTextBoldCursor.setSelection(editTextBoldCursor.length());
-            intValue = 0;
-        } else if (intValue > 255) {
-            editTextBoldCursorArr[i13].setText("255");
-            EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursorArr[i13];
-            editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
-            intValue = 255;
+        org.telegram.ui.ActionBar.i6.f0 = new BitmapDrawable(bitmap);
+        org.telegram.ui.ActionBar.i6.r1(h6Var, false, false, false);
+        int[] calcDrawableColor = AndroidUtilities.calcDrawableColor(org.telegram.ui.ActionBar.i6.f0);
+        int i10 = calcDrawableColor[0];
+        org.telegram.ui.ActionBar.i6.c0 = i10;
+        org.telegram.ui.ActionBar.i6.X = i10;
+        int i11 = calcDrawableColor[1];
+        org.telegram.ui.ActionBar.i6.d0 = i11;
+        org.telegram.ui.ActionBar.i6.b0 = i11;
+        Drawable drawable = org.telegram.ui.ActionBar.i6.e0;
+        if (drawable != null) {
+            org.telegram.ui.ActionBar.i6.i(drawable);
         }
-        int b10 = y11Var.b();
-        if (i13 == 2) {
-            i10 = b10 & (-256);
-            i11 = intValue & 255;
-        } else if (i13 == 1) {
-            i10 = b10 & (-65281);
-            i11 = (intValue & 255) << 8;
-        } else {
-            if (i13 != 0) {
-                if (i13 == 3) {
-                    i10 = b10 & 16777215;
-                    i11 = (intValue & 255) << 24;
-                }
-                y11Var.c(b10);
-                for (i12 = 0; i12 < ThemeEditorView.this.c.size(); i12++) {
-                    ((org.telegram.ui.ActionBar.j6) ThemeEditorView.this.c.get(i12)).e(y11Var.b(), false, true);
-                }
-                editorAlert.K = false;
-            }
-            i10 = b10 & (-16711681);
-            i11 = (intValue & 255) << 16;
-        }
-        b10 = i10 | i11;
-        y11Var.c(b10);
-        while (i12 < ThemeEditorView.this.c.size()) {
-        }
-        editorAlert.K = false;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        org.telegram.ui.ActionBar.i6.h(org.telegram.ui.ActionBar.i6.e0);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewWallpapper, new Object[0]);
     }
 }

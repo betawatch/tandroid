@@ -4,20 +4,20 @@ import ai.y3;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
-import ci.a9;
+import ci.z8;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.e3;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.zv0;
+import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.rc;
+import org.telegram.ui.cw0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class m extends e3 {
+public final class m extends f3 {
     public static m e;
     public final k b;
     public final z0 c;
@@ -31,13 +31,13 @@ public final class m extends e3 {
         this.useBackgroundTopPadding = false;
         setBackgroundColor(0);
         fixNavigationBar();
-        AndroidUtilities.setLightStatusBar(this, i0.a.f(h6.v0(h6.h5, this.resourcesProvider)) > 0.699999988079071d);
+        AndroidUtilities.setLightStatusBar(this, i0.a.f(i6.v0(i6.h5, this.resourcesProvider)) > 0.699999988079071d);
         this.d = getContext().getResources().getConfiguration().orientation == 2;
         k kVar = new k(this, getContext(), z0Var, d6Var, a0Var);
         this.b = kVar;
         kVar.setOverScrollMode(2);
         kVar.setClipToPadding(false);
-        kVar.setAdapter(new zv0(a0Var, z0Var));
+        kVar.setAdapter(new cw0(a0Var, z0Var));
         kVar.setPosition(0);
         setCustomView(kVar);
         a0Var.t0 = new j(this, 0);
@@ -47,32 +47,32 @@ public final class m extends e3 {
         if (!z10) {
             MessagesController.getInstance(this.currentAccount).getStoriesController().R();
         }
-        qc.a(this.container, new a9(13));
+        rc.a(this.container, new z8(13));
     }
 
-    public static void m(m2 m2Var, d6 d6Var, long j3, TL_stories.PrepaidGiveaway prepaidGiveaway) {
+    public static void m(n2 n2Var, d6 d6Var, long j3, TL_stories.PrepaidGiveaway prepaidGiveaway) {
         if (e != null) {
             return;
         }
         boolean z10 = d6Var instanceof ai.d;
-        m2 y3Var = z10 ? new y3(m2Var) : m2Var;
-        m mVar = new m(m2Var.getParentActivity(), new a0(y3Var, j3, prepaidGiveaway), new z0(y3Var, j3), y3Var.getResourceProvider(), z10);
+        n2 y3Var = z10 ? new y3(n2Var) : n2Var;
+        m mVar = new m(n2Var.getParentActivity(), new a0(y3Var, j3, prepaidGiveaway), new z0(y3Var, j3), y3Var.getResourceProvider(), z10);
         mVar.show();
         e = mVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.e3
+    @Override // org.telegram.ui.ActionBar.f3
     public final boolean canDismissWithSwipe() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.e3
+    @Override // org.telegram.ui.ActionBar.f3
     public final void dismissInternal() {
         super.dismissInternal();
         e = null;
     }
 
-    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
     public final void onBackPressed() {
         k kVar = this.b;
         if (kVar.getCurrentPosition() <= 0) {
@@ -80,16 +80,16 @@ public final class m extends e3 {
             return;
         }
         z0 z0Var = this.c;
-        if (z0Var.S()) {
+        if (z0Var.Q()) {
             return;
         }
         if (isKeyboardVisible()) {
             AndroidUtilities.hideKeyboard(z0Var.getContainerView());
         }
-        kVar.D(0);
+        kVar.E(0);
     }
 
-    @Override // org.telegram.ui.ActionBar.e3
+    @Override // org.telegram.ui.ActionBar.f3
     public final void onConfigurationChanged(Configuration configuration) {
         this.c.onConfigurationChanged(configuration);
         this.d = getContext().getResources().getConfiguration().orientation == 2;

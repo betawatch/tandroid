@@ -16,7 +16,7 @@ import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 import ru.noties.jlatexmath.awt.Font;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class DefaultTeXFontParser {
     public static final String GEN_SET_EL = "GeneralSettings";
@@ -35,12 +35,12 @@ public class DefaultTeXFontParser {
     private static Map<String, Integer> rangeTypeMappings = new HashMap();
     private static Map<String, CharChildParser> charChildParsers = new HashMap();
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public interface CharChildParser {
         void parse(Element element, char c10, FontInfo fontInfo);
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class ExtensionParser implements CharChildParser {
         @Override // org.scilab.forge.jlatexmath.DefaultTeXFontParser.CharChildParser
         public void parse(Element element, char c10, FontInfo fontInfo) {
@@ -48,7 +48,7 @@ public class DefaultTeXFontParser {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class KernParser implements CharChildParser {
         @Override // org.scilab.forge.jlatexmath.DefaultTeXFontParser.CharChildParser
         public void parse(Element element, char c10, FontInfo fontInfo) {
@@ -56,7 +56,7 @@ public class DefaultTeXFontParser {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class LigParser implements CharChildParser {
         @Override // org.scilab.forge.jlatexmath.DefaultTeXFontParser.CharChildParser
         public void parse(Element element, char c10, FontInfo fontInfo) {
@@ -64,7 +64,7 @@ public class DefaultTeXFontParser {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class NextLargerParser implements CharChildParser {
         @Override // org.scilab.forge.jlatexmath.DefaultTeXFontParser.CharChildParser
         public void parse(Element element, char c10, FontInfo fontInfo) {
@@ -157,7 +157,7 @@ public class DefaultTeXFontParser {
                     String attrValueAndCheckIfNotNull3 = getAttrValueAndCheckIfNotNull("code", element3);
                     Integer num = rangeTypeMappings.get(attrValueAndCheckIfNotNull3);
                     if (num == null) {
-                        throw new XMLResourceParseException(RESOURCE_NAME, "MapRange", "code", a.q("contains an unknown \"range name\" '", attrValueAndCheckIfNotNull3, "'!"));
+                        throw new XMLResourceParseException(RESOURCE_NAME, "MapRange", "code", a.p("contains an unknown \"range name\" '", attrValueAndCheckIfNotNull3, "'!"));
                     }
                     if (str == null) {
                         charFontArr[num.intValue()] = new CharFont((char) intAndCheck, Font_ID.indexOf(attrValueAndCheckIfNotNull2));
@@ -216,11 +216,11 @@ public class DefaultTeXFontParser {
                 String attrValueAndCheckIfNotNull = getAttrValueAndCheckIfNotNull("code", element2);
                 Integer num = rangeTypeMappings.get(attrValueAndCheckIfNotNull);
                 if (num == null) {
-                    throw new XMLResourceParseException(RESOURCE_NAME, "MapStyle", "code", a.q("contains an unknown \"range name\" '", attrValueAndCheckIfNotNull, "'!"));
+                    throw new XMLResourceParseException(RESOURCE_NAME, "MapStyle", "code", a.p("contains an unknown \"range name\" '", attrValueAndCheckIfNotNull, "'!"));
                 }
                 String attrValueAndCheckIfNotNull2 = getAttrValueAndCheckIfNotNull("textStyle", element2);
                 if (this.parsedTextStyles.get(attrValueAndCheckIfNotNull2) == null) {
-                    throw new XMLResourceParseException(RESOURCE_NAME, "MapStyle", "textStyle", a.q("contains an unknown text style '", attrValueAndCheckIfNotNull2, "'!"));
+                    throw new XMLResourceParseException(RESOURCE_NAME, "MapStyle", "textStyle", a.p("contains an unknown text style '", attrValueAndCheckIfNotNull2, "'!"));
                 }
                 CharFont[] charFontArr = this.parsedTextStyles.get(attrValueAndCheckIfNotNull2);
                 int intValue = num.intValue();
@@ -260,7 +260,7 @@ public class DefaultTeXFontParser {
             String attrValueAndCheckIfNotNull = getAttrValueAndCheckIfNotNull("name", documentElement);
             String attrValueAndCheckIfNotNull2 = getAttrValueAndCheckIfNotNull("id", documentElement);
             if (Font_ID.indexOf(attrValueAndCheckIfNotNull2) >= 0) {
-                throw new FontAlreadyLoadedException(a.q("Font ", attrValueAndCheckIfNotNull2, " is already loaded !"));
+                throw new FontAlreadyLoadedException(a.p("Font ", attrValueAndCheckIfNotNull2, " is already loaded !"));
             }
             Font_ID.add(attrValueAndCheckIfNotNull2);
             float floatAndCheck = getFloatAndCheck("space", documentElement);
@@ -312,10 +312,10 @@ public class DefaultTeXFontParser {
             }
             this.parsedTextStyles = parseStyleMappings();
             return (FontInfo[]) arrayList.toArray(fontInfoArr);
-        } catch (Exception e) {
-            StringBuilder w10 = a.w("Cannot find the file ", str, "!");
-            w10.append(e.toString());
-            throw new XMLResourceParseException(w10.toString());
+        } catch (Exception e7) {
+            StringBuilder v = a.v("Cannot find the file ", str, "!");
+            v.append(e7.toString());
+            throw new XMLResourceParseException(v.toString());
         }
     }
 
@@ -375,7 +375,7 @@ public class DefaultTeXFontParser {
                     }
                 }
             } catch (Exception unused2) {
-                throw new XMLResourceParseException(a.q("Cannot find the file ", attrValueAndCheckIfNotNull, "!"));
+                throw new XMLResourceParseException(a.p("Cannot find the file ", attrValueAndCheckIfNotNull, "!"));
             }
         }
         return hashMap;
@@ -391,8 +391,8 @@ public class DefaultTeXFontParser {
         factory.setIgnoringComments(true);
         try {
             this.root = factory.newDocumentBuilder().parse(inputStream).getDocumentElement();
-        } catch (Exception e) {
-            throw new XMLResourceParseException(str, e);
+        } catch (Exception e7) {
+            throw new XMLResourceParseException(str, e7);
         }
     }
 
@@ -402,8 +402,8 @@ public class DefaultTeXFontParser {
         factory.setIgnoringComments(true);
         try {
             this.root = factory.newDocumentBuilder().parse(inputStream).getDocumentElement();
-        } catch (Exception e) {
-            throw new XMLResourceParseException(str, e);
+        } catch (Exception e7) {
+            throw new XMLResourceParseException(str, e7);
         }
     }
 

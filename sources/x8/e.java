@@ -2,11 +2,12 @@ package x8;
 
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.data.DataHolder;
+import hg.k0;
 import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class e implements com.google.android.gms.common.api.q, Iterable, Closeable {
     public final DataHolder a;
@@ -39,7 +40,7 @@ public final class e implements com.google.android.gms.common.api.q, Iterable, C
 
     public final int n(int i10) {
         if (i10 < 0 || i10 >= this.c.size()) {
-            throw new IllegalArgumentException(hg.c.i(i10, "Position ", " is out of bounds for this buffer"));
+            throw new IllegalArgumentException(k0.i(i10, "Position ", " is out of bounds for this buffer"));
         }
         return ((Integer) this.c.get(i10)).intValue();
     }

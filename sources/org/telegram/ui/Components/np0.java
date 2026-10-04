@@ -1,38 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
+import android.content.Context;
+import android.text.TextUtils;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class np0 {
-    public final pu a;
-    public final long b;
-    public final float c;
-    public final float d;
-    public final float e;
+public final class np0 extends LinearLayout {
+    public final bw0 a;
+    public final TextView b;
+    public final TextView c;
 
-    public np0(View view) {
-        pu puVar = new pu(1, view);
-        this.b = System.currentTimeMillis();
-        this.a = puVar;
-        this.c = AndroidUtilities.lerp(5.0f, 9.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
-        this.d = AndroidUtilities.lerp(2.5f, 5.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
-        this.e = AndroidUtilities.lerp(2.5f, 5.2f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
-    }
-
-    public final void a(Canvas canvas, float f7) {
-        pu puVar;
-        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
-        canvas.translate(0.0f, 0.0f);
-        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f7);
-        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7);
-        canvas.translate(-0.0f, -0.0f);
-        if (f7 <= 0.0f || (puVar = this.a) == null) {
-            return;
-        }
-        puVar.run();
+    public np0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        setLayoutParams(new s4.p0(-1, -2));
+        setOrientation(0);
+        setGravity(16);
+        int dp = AndroidUtilities.dp(14.0f);
+        int i10 = dp / 2;
+        setPadding(dp, i10, dp, i10);
+        bw0 bw0Var = new bw0(context);
+        this.a = bw0Var;
+        addView(bw0Var, w7.z5.c(40.0f, 40));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, w7.z5.m(1.0f, 0, -1, 12, 0, 0));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        int i11 = org.telegram.ui.ActionBar.i6.E8;
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
+        textView.setTextSize(1, 16.0f);
+        textView.setTag(textView);
+        textView.setMaxLines(1);
+        linearLayout.addView(textView);
+        TextView textView2 = new TextView(context);
+        this.c = textView2;
+        textView2.setTextColor(i0.a.k(org.telegram.ui.ActionBar.i6.v0(i11, d6Var), 102));
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTag(textView2);
+        textView2.setMaxLines(1);
+        textView2.setEllipsize(TextUtils.TruncateAt.END);
+        linearLayout.addView(textView2);
     }
 }

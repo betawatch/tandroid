@@ -5,10 +5,14 @@ import android.util.Log;
 import java.util.HashMap;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class i {
+public final class i implements fb.n {
     public String a;
+
+    public /* synthetic */ i(String str) {
+        this.a = str;
+    }
 
     public static void a(aa.a aVar, da.d dVar) {
         String str = dVar.a;
@@ -48,6 +52,30 @@ public final class i {
         return hashMap;
     }
 
+    public static i d(e2.v vVar) {
+        String str;
+        vVar.K(2);
+        int x10 = vVar.x();
+        int i10 = x10 >> 1;
+        int x11 = ((vVar.x() >> 3) & 31) | ((x10 & 1) << 5);
+        if (i10 == 4 || i10 == 5 || i10 == 7 || i10 == 8) {
+            str = "dvhe";
+        } else if (i10 == 9) {
+            str = "dvav";
+        } else {
+            if (i10 != 10) {
+                return null;
+            }
+            str = "dav1";
+        }
+        StringBuilder u10 = a4.a.u(str);
+        u10.append(i10 < 10 ? ".0" : ".");
+        u10.append(i10);
+        u10.append(x11 < 10 ? ".0" : ".");
+        u10.append(x11);
+        return new i(u10.toString());
+    }
+
     public JSONObject c(aa.b bVar) {
         String str = this.a;
         int i10 = bVar.c;
@@ -63,10 +91,15 @@ public final class i {
         String str3 = bVar.b;
         try {
             return new JSONObject(str3);
-        } catch (Exception e) {
-            bVar2.d("Failed to parse settings JSON from " + str, e);
+        } catch (Exception e7) {
+            bVar2.d("Failed to parse settings JSON from " + str, e7);
             bVar2.d("Settings response " + str3, null);
             return null;
         }
+    }
+
+    @Override // fb.n
+    public Object p2() {
+        throw new db.j(this.a);
     }
 }

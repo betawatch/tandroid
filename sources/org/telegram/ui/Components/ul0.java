@@ -6,7 +6,7 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class ul0 extends gl0 {
     public SparseIntArray c;
@@ -20,7 +20,7 @@ public abstract class ul0 extends gl0 {
         L();
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         int b10 = c1Var.b();
         return V(S(b10), Q(b10), c1Var);

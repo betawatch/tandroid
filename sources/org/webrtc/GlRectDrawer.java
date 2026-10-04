@@ -2,7 +2,7 @@ package org.webrtc;
 
 import org.webrtc.GlGenericDrawer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public class GlRectDrawer extends GlGenericDrawer {
     private static final String FRAGMENT_SHADER = "void main() {\n  gl_FragColor = sample(tc);\n}\n";
@@ -11,7 +11,7 @@ public class GlRectDrawer extends GlGenericDrawer {
         super(FRAGMENT_SHADER, new ShaderCallbacks());
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class ShaderCallbacks implements GlGenericDrawer.ShaderCallbacks {
         private ShaderCallbacks() {
         }

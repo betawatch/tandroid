@@ -15,14 +15,14 @@ import java.util.Iterator;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.en0;
-import org.telegram.ui.da0;
+import org.telegram.ui.Components.in0;
+import org.telegram.ui.ha0;
 import org.webrtc.EglBase;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.GlUtil;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public class EglRenderer implements VideoSink {
     private static final long LOG_INTERVAL_SEC = 4;
@@ -57,7 +57,7 @@ public class EglRenderer implements VideoSink {
     private int rotation;
     private boolean usePresentationTimeStamp;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public class EglSurfaceCreation implements Runnable {
         private final boolean background;
         private Object surface;
@@ -115,17 +115,17 @@ public class EglRenderer implements VideoSink {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public interface ErrorCallback {
         void onGlOutOfMemory();
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public interface FrameListener {
         void onFrame(Bitmap bitmap);
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class FrameListenerAndParams {
         public final boolean applyFpsReduction;
         public final RendererCommon.GlDrawer drawer;
@@ -140,7 +140,7 @@ public class EglRenderer implements VideoSink {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class HandlerWithExceptionCallback extends Handler {
         private final Runnable exceptionCallback;
 
@@ -153,10 +153,10 @@ public class EglRenderer implements VideoSink {
         public void dispatchMessage(Message message) {
             try {
                 super.dispatchMessage(message);
-            } catch (Exception e) {
-                Logging.e(EglRenderer.TAG, "Exception on EglRenderer thread", e);
+            } catch (Exception e7) {
+                Logging.e(EglRenderer.TAG, "Exception on EglRenderer thread", e7);
                 this.exceptionCallback.run();
-                throw e;
+                throw e7;
             }
         }
     }
@@ -428,8 +428,8 @@ public class EglRenderer implements VideoSink {
                                 this.firstFrameRendered = true;
                                 onFirstFrameRendered();
                             }
-                        } catch (GlUtil.GlOutOfMemoryException e) {
-                            logE("Error while drawing frame", e);
+                        } catch (GlUtil.GlOutOfMemoryException e7) {
+                            logE("Error while drawing frame", e7);
                             ErrorCallback errorCallback = this.errorCallback;
                             if (errorCallback != null) {
                                 errorCallback.onGlOutOfMemory();
@@ -480,8 +480,8 @@ public class EglRenderer implements VideoSink {
                 if (handler != null) {
                     handler.post(new s(1, this, textureCallback));
                 }
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         }
     }
@@ -507,7 +507,7 @@ public class EglRenderer implements VideoSink {
                     }
                 });
                 this.renderThreadHandler = handlerWithExceptionCallback;
-                handlerWithExceptionCallback.post(new en0(this, context, iArr, 24));
+                handlerWithExceptionCallback.post(new in0(this, context, iArr, 24));
                 this.renderThreadHandler.post(this.eglSurfaceCreationRunnable);
             } catch (Throwable th2) {
                 throw th2;
@@ -601,7 +601,7 @@ public class EglRenderer implements VideoSink {
                 Handler handler = this.renderThreadHandler;
                 if (handler != null) {
                     handler.removeCallbacks(this.eglSurfaceCreationRunnable);
-                    this.renderThreadHandler.postAtFrontOfQueue(new da0(this, z10, runnable, 12));
+                    this.renderThreadHandler.postAtFrontOfQueue(new ha0(this, z10, runnable, 12));
                 } else if (runnable != null) {
                     runnable.run();
                 }
@@ -621,7 +621,7 @@ public class EglRenderer implements VideoSink {
                 if (Thread.currentThread() == this.renderThreadHandler.getLooper().getThread()) {
                     throw new RuntimeException("removeFrameListener must not be called on the render thread.");
                 }
-                postToRenderThread(new en0(this, countDownLatch, frameListener, 25));
+                postToRenderThread(new in0(this, countDownLatch, frameListener, 25));
                 ThreadUtils.awaitUninterruptibly(countDownLatch);
             } catch (Throwable th2) {
                 throw th2;

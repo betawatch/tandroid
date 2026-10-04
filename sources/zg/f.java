@@ -1,7 +1,6 @@
 package zg;
 
 import ai.e2;
-import ai.i6;
 import android.app.Activity;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -14,10 +13,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import w7.y5;
+import org.telegram.ui.ActionBar.i6;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -32,18 +31,18 @@ public final class f extends FrameLayout {
         this.a = eVar;
         eVar.setHapticFeedbackEnabled(true);
         eVar.setImageResource(R.drawable.smiles_tab_clear);
-        int i10 = h6.Re;
-        eVar.setColorFilter(new PorterDuffColorFilter(d6Var != null ? d6Var.G0(i10) : h6.w0(null, i10, false), PorterDuff.Mode.MULTIPLY));
+        int i10 = i6.Re;
+        eVar.setColorFilter(new PorterDuffColorFilter(d6Var != null ? d6Var.H0(i10) : i6.w0(null, i10, false), PorterDuff.Mode.MULTIPLY));
         eVar.setScaleType(ImageView.ScaleType.CENTER);
         eVar.setContentDescription(LocaleController.getString(R.string.AccDescrBackspace));
         eVar.setFocusable(true);
         eVar.setOnClickListener(new e2(28));
-        addView(eVar, y5.e(36, 36, 17));
-        int w02 = h6.w0(null, h6.i6, false);
+        addView(eVar, z5.e(36, 36, 17));
+        int w02 = i6.w0(null, i6.i6, false);
         int dp = AndroidUtilities.dp(36.0f);
-        int i11 = h6.d6;
-        eVar.setBackground(h6.h0(dp, d6Var != null ? d6Var.G0(i11) : h6.w0(null, i11, false), w02));
-        eVar.setOutlineProvider(new i6(18));
+        int i11 = i6.d6;
+        eVar.setBackground(i6.h0(dp, d6Var != null ? d6Var.H0(i11) : i6.w0(null, i11, false), w02));
+        eVar.setOutlineProvider(new ai.i6(18));
         eVar.setElevation(AndroidUtilities.dp(1.0f));
         eVar.setClipToOutline(true);
         setClickable(true);

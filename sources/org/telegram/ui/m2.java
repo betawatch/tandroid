@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.Intro;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class m2 implements z4.e {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final class m2 implements z4.e {
                 q2Var.c.invalidate();
                 break;
             case 1:
-                ((y70) this.b).H = i10;
+                ((c80) this.b).H = i10;
                 break;
             default:
-                ((od1) this.b).a0.invalidate();
+                ((rd1) this.b).a0.invalidate();
                 break;
         }
     }
@@ -43,14 +43,14 @@ public final class m2 implements z4.e {
                 }
                 break;
             case 1:
-                y70 y70Var = (y70) this.b;
-                org.telegram.ui.Components.sa saVar = y70Var.e;
-                saVar.b = f7;
-                saVar.c = i10;
-                saVar.invalidate();
-                float measuredWidth2 = y70Var.d.getMeasuredWidth();
+                c80 c80Var = (c80) this.b;
+                org.telegram.ui.Components.ta taVar = c80Var.e;
+                taVar.b = f7;
+                taVar.c = i10;
+                taVar.invalidate();
+                float measuredWidth2 = c80Var.d.getMeasuredWidth();
                 if (measuredWidth2 != 0.0f) {
-                    Intro.setScrollOffset((((i10 * measuredWidth2) + i11) - (y70Var.H * measuredWidth2)) / measuredWidth2);
+                    Intro.setScrollOffset((((i10 * measuredWidth2) + i11) - (c80Var.H * measuredWidth2)) / measuredWidth2);
                     break;
                 }
                 break;
@@ -61,21 +61,21 @@ public final class m2 implements z4.e {
     public final void c(int i10) {
         switch (this.a) {
             case 1:
-                y70 y70Var = (y70) this.b;
+                c80 c80Var = (c80) this.b;
                 if (i10 != 1) {
                     if (i10 == 0 || i10 == 2) {
-                        if (y70Var.K) {
-                            y70Var.K = false;
+                        if (c80Var.K) {
+                            c80Var.K = false;
                         }
-                        if (y70Var.w != y70Var.d.getCurrentItem()) {
-                            y70Var.w = y70Var.d.getCurrentItem();
+                        if (c80Var.w != c80Var.d.getCurrentItem()) {
+                            c80Var.w = c80Var.d.getCurrentItem();
                             break;
                         }
                     }
                 } else {
-                    y70Var.K = true;
-                    y70Var.d.getCurrentItem();
-                    y70Var.d.getMeasuredWidth();
+                    c80Var.K = true;
+                    c80Var.d.getCurrentItem();
+                    c80Var.d.getMeasuredWidth();
                     break;
                 }
                 break;

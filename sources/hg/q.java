@@ -1,92 +1,38 @@
 package hg;
 
-import android.view.KeyEvent;
+import android.content.DialogInterface;
 import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q implements TextView.OnEditorActionListener {
+public final /* synthetic */ class q implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.a2[] c;
-    public final /* synthetic */ View d;
-    public final /* synthetic */ EditTextBoldCursor e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ q(EditTextBoldCursor editTextBoldCursor, int i10, Object obj, org.telegram.ui.ActionBar.a2[] a2VarArr, View view, int i11) {
-        this.a = i11;
-        this.e = editTextBoldCursor;
-        this.b = i10;
-        this.f = obj;
-        this.c = a2VarArr;
-        this.d = view;
+    public /* synthetic */ q(int i10, View view) {
+        this.a = i10;
+        this.b = view;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                u uVar = (u) this.e;
-                TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) this.f;
-                if (i10 == 6) {
-                    String obj = uVar.getText().toString();
-                    if (obj.length() <= 32) {
-                        a0 d = a0.d(this.b);
-                        TL_account.TL_businessChatLink c10 = d.c(tL_businessChatLink.link);
-                        if (c10 != null) {
-                            TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink = new TL_account.TL_inputBusinessChatLink();
-                            tL_inputBusinessChatLink.message = c10.message;
-                            tL_inputBusinessChatLink.entities = c10.entities;
-                            tL_inputBusinessChatLink.title = obj;
-                            d.b(c10, tL_inputBusinessChatLink, null);
-                        }
-                        org.telegram.ui.ActionBar.a2[] a2VarArr = this.c;
-                        org.telegram.ui.ActionBar.a2 a2Var = a2VarArr[0];
-                        if (a2Var != null) {
-                            a2Var.dismiss();
-                        }
-                        if (a2VarArr[0] == x.d) {
-                            x.d = null;
-                        }
-                        View view = this.d;
-                        if (view != null) {
-                            view.requestFocus();
-                            break;
-                        }
-                    } else {
-                        AndroidUtilities.shakeView(uVar);
-                        break;
-                    }
+                v.e = null;
+                View view = this.b;
+                if (view != null) {
+                    view.requestFocus();
+                    break;
                 }
                 break;
             default:
-                MessagesStorage.StringCallback stringCallback = (MessagesStorage.StringCallback) this.f;
-                if (i10 == 6) {
-                    EditTextBoldCursor editTextBoldCursor = this.e;
-                    String obj2 = editTextBoldCursor.getText().toString();
-                    if (obj2.length() <= this.b) {
-                        stringCallback.run(obj2);
-                        org.telegram.ui.ActionBar.a2 a2Var2 = this.c[0];
-                        if (a2Var2 != null) {
-                            a2Var2.dismiss();
-                        }
-                        View view2 = this.d;
-                        if (view2 != null) {
-                            view2.requestFocus();
-                            break;
-                        }
-                    } else {
-                        AndroidUtilities.shakeView(editTextBoldCursor);
-                        break;
-                    }
+                y1.h = null;
+                View view2 = this.b;
+                if (view2 != null) {
+                    view2.requestFocus();
+                    break;
                 }
                 break;
         }
-        return false;
     }
 }

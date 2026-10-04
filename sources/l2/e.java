@@ -8,7 +8,7 @@ import b2.k1;
 import e2.d0;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class e extends k1 {
     public final long e;
@@ -73,7 +73,7 @@ public final class e extends k1 {
     public final j1 m(int i10, j1 j1Var, long j3) {
         long j10;
         long j11;
-        h d;
+        i c10;
         e2.d.c(i10, 1);
         m2.c cVar = this.l;
         boolean z10 = cVar.d;
@@ -90,12 +90,12 @@ public final class e extends k1 {
                 }
             }
             long j14 = this.i + j12;
-            long d10 = cVar.d(0);
+            long d = cVar.d(0);
             int i11 = 0;
-            while (i11 < cVar.m.size() - 1 && j14 >= d10) {
-                j14 -= d10;
+            while (i11 < cVar.m.size() - 1 && j14 >= d) {
+                j14 -= d;
                 i11++;
-                d10 = cVar.d(i11);
+                d = cVar.d(i11);
             }
             m2.h b10 = cVar.b(i11);
             List list = b10.c;
@@ -115,8 +115,8 @@ public final class e extends k1 {
                 i12++;
                 j13 = j11;
             }
-            if (i12 != -1 && (d = ((m2.m) ((m2.a) b10.c.get(i12)).c.get(0)).d()) != null && d.z(d10) != j11) {
-                j12 = (d.b(d.s(j14, d10)) + j12) - j14;
+            if (i12 != -1 && (c10 = ((m2.m) ((m2.a) b10.c.get(i12)).c.get(0)).c()) != null && c10.p0(d) != j11) {
+                j12 = (c10.a(c10.H(j14, d)) + j12) - j14;
             }
         } else {
             j10 = -9223372036854775807L;

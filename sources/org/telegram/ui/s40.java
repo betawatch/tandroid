@@ -1,27 +1,50 @@
 package org.telegram.ui;
 
-import android.graphics.Paint;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class s40 extends Paint {
-    public final /* synthetic */ d60 a;
+public final class s40 extends kv0 {
+    public final /* synthetic */ h60 T;
 
-    public s40(d60 d60Var) {
-        this.a = d60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s40(h60 h60Var, ViewGroup viewGroup, ViewGroup viewGroup2) {
+        super(viewGroup, viewGroup2);
+        this.T = h60Var;
     }
 
-    @Override // android.graphics.Paint
-    public final void setAlpha(int i10) {
+    @Override // org.telegram.ui.kv0
+    public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
-        super.setAlpha(i10);
-        d60 d60Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.e3) d60Var).containerView;
-        if (viewGroup != null) {
-            viewGroup2 = ((org.telegram.ui.ActionBar.e3) d60Var).containerView;
-            viewGroup2.invalidate();
+        h60 h60Var = this.T;
+        c40 c40Var = h60Var.b;
+        d40 d40Var = h60Var.C2;
+        if (f7 > 0.0f) {
+            float x10 = d40Var.getX();
+            viewGroup = ((org.telegram.ui.ActionBar.f3) h60Var).containerView;
+            float x11 = viewGroup.getX() + x10;
+            float y3 = d40Var.getY();
+            viewGroup2 = ((org.telegram.ui.ActionBar.f3) h60Var).containerView;
+            float y10 = viewGroup2.getY() + y3;
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(x11, y10, c40Var.getMeasuredWidth() + x11, c40Var.getMeasuredHeight() + y10);
+            canvas.saveLayerAlpha(rectF, (int) (f7 * 255.0f), 31);
+            canvas.translate(x11, y10);
+            d40Var.draw(canvas);
+            canvas.restore();
+        }
+    }
+
+    @Override // org.telegram.ui.kv0
+    public final void e() {
+        c40 c40Var = this.T.b;
+        super.e();
+        for (int i10 = 0; i10 < c40Var.getChildCount(); i10++) {
+            c40Var.getChildAt(i10).invalidate();
         }
     }
 }

@@ -17,13 +17,13 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.ca;
-import org.telegram.ui.Components.s81;
-import org.telegram.ui.Components.sr;
-import w7.y5;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.a91;
+import org.telegram.ui.Components.da;
+import org.telegram.ui.Components.tr;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class w2 extends FrameLayout {
     public String E;
@@ -81,7 +81,7 @@ public class w2 extends FrameLayout {
             textView.setTextSize(1, 11.0f);
             textView.setTextColor(-1);
             textView.setImportantForAccessibility(2);
-            this.f.addView(textView, y5.d(-1, -2.0f, 0, 0.0f, f7 + 6.0f, 0.0f, 0.0f));
+            this.f.addView(textView, z5.d(-1, -2.0f, 0, 0.0f, f7 + 6.0f, 0.0f, 0.0f));
             this.h[i10] = textView;
         }
         this.h[1].setVisibility(8);
@@ -118,7 +118,7 @@ public class w2 extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.Q, this.P ? 1.0f : 0.0f);
             this.U = ofFloat;
             ofFloat.addUpdateListener(new v2(this, 0));
-            this.U.addListener(new s81(this, 10));
+            this.U.addListener(new a91(this, 10));
             this.U.setDuration(150L);
             this.U.start();
         }
@@ -137,11 +137,11 @@ public class w2 extends FrameLayout {
             int alpha = Color.alpha(i12);
             float f10 = this.T;
             if (alpha != 255 || AndroidUtilities.computePerceivedBrightness(i12) <= 0.5d) {
-                org.telegram.ui.Cells.z h02 = h6.h0(AndroidUtilities.dp(f10), 0, i0.a.k(-1, (int) (f7 * 76.5f)));
+                org.telegram.ui.Cells.z h02 = i6.h0(AndroidUtilities.dp(f10), 0, i0.a.k(-1, (int) (f7 * 76.5f)));
                 this.N = h02;
                 h02.setCallback(this);
             } else {
-                org.telegram.ui.Cells.z h03 = h6.h0(AndroidUtilities.dp(f10), 0, i0.a.k(-16777216, (int) (f7 * 25.5f)));
+                org.telegram.ui.Cells.z h03 = i6.h0(AndroidUtilities.dp(f10), 0, i0.a.k(-16777216, (int) (f7 * 25.5f)));
                 this.N = h03;
                 h03.setCallback(this);
             }
@@ -202,7 +202,7 @@ public class w2 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.v = ofFloat;
         ofFloat.addUpdateListener(new bb(8, this, z14));
-        this.v.addListener(new ca(25, this, z14));
+        this.v.addListener(new da(25, this, z14));
         this.v.setDuration(150L).start();
         invalidate();
     }
@@ -271,7 +271,7 @@ public class w2 extends FrameLayout {
                     canvas.drawCircle(width, dp, dp2, paint);
                 }
                 if (this.N == null) {
-                    org.telegram.ui.Cells.z h02 = h6.h0(AndroidUtilities.dp(f12), 0, -16777216);
+                    org.telegram.ui.Cells.z h02 = i6.h0(AndroidUtilities.dp(f12), 0, -16777216);
                     this.N = h02;
                     h02.setCallback(this);
                 }
@@ -342,9 +342,9 @@ public class w2 extends FrameLayout {
                                     float dpf2 = AndroidUtilities.dpf2(8.0f) + ((int) (width - (drawableArr[0].getIntrinsicWidth() / 2.0f))) + this.M;
                                     float dpf22 = AndroidUtilities.dpf2(8.0f) + ((int) (dp - (drawableArr[0].getIntrinsicHeight() / 2.0f)));
                                     float dp3 = AndroidUtilities.dp(17.0f);
-                                    sr srVar = sr.f;
-                                    float interpolation = (srVar.getInterpolation(this.K) * dp3) + (dpf2 - AndroidUtilities.dp(1.0f));
-                                    float interpolation2 = (srVar.getInterpolation(this.K) * AndroidUtilities.dp(17.0f)) + dpf22;
+                                    tr trVar = tr.f;
+                                    float interpolation = (trVar.getInterpolation(this.K) * dp3) + (dpf2 - AndroidUtilities.dp(1.0f));
+                                    float interpolation2 = (trVar.getInterpolation(this.K) * AndroidUtilities.dp(17.0f)) + dpf22;
                                     canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
                                     drawableArr[0].setBounds((int) (width - (r2.getIntrinsicWidth() / 2.0f)), (int) (dp - (drawableArr[0].getIntrinsicHeight() / 2.0f)), (int) ((drawableArr[0].getIntrinsicWidth() / 2.0f) + width), (int) ((drawableArr[0].getIntrinsicHeight() / 2.0f) + dp));
                                     drawableArr[0].draw(canvas);

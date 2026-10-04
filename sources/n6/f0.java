@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f0 extends o6.a {
     public static final Parcelable.Creator<f0> CREATOR = new m8.h(19);
@@ -15,13 +15,13 @@ public final class f0 extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.b(parcel, 1, this.a);
-        w7.f0.o(parcel, 2, this.b, i10);
+        int q6 = w7.g0.q(parcel, 20293);
+        w7.g0.b(parcel, 1, this.a);
+        w7.g0.o(parcel, 2, this.b, i10);
         int i11 = this.c;
-        w7.f0.s(parcel, 3, 4);
+        w7.g0.s(parcel, 3, 4);
         parcel.writeInt(i11);
-        w7.f0.k(parcel, 4, this.d, i10);
-        w7.f0.r(parcel, q6);
+        w7.g0.k(parcel, 4, this.d, i10);
+        w7.g0.r(parcel, q6);
     }
 }

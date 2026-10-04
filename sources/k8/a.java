@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.BuildConfig;
-import w7.f0;
+import w7.g0;
 
 /* loaded from: classes.dex */
 public final class a extends o6.a {
@@ -160,15 +160,15 @@ public final class a extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.l(parcel, 2, this.a);
-        f0.c(parcel, 3, this.b);
-        f0.d(parcel, 4, this.c);
-        f0.d(parcel, 5, this.d);
-        f0.d(parcel, 6, this.e);
-        f0.d(parcel, 7, this.f);
-        f0.g(parcel, 8, this.h);
-        f0.d(parcel, 9, this.n);
-        f0.r(parcel, q6);
+        int q6 = g0.q(parcel, 20293);
+        g0.l(parcel, 2, this.a);
+        g0.c(parcel, 3, this.b);
+        g0.d(parcel, 4, this.c);
+        g0.d(parcel, 5, this.d);
+        g0.d(parcel, 6, this.e);
+        g0.d(parcel, 7, this.f);
+        g0.g(parcel, 8, this.h);
+        g0.d(parcel, 9, this.n);
+        g0.r(parcel, q6);
     }
 }

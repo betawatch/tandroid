@@ -8,7 +8,7 @@ import java.io.RandomAccessFile;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j implements Closeable {
     public static final Logger h = Logger.getLogger(j.class.getName());
@@ -110,8 +110,8 @@ public final class j implements Closeable {
         sb2.append(", element lengths=[");
         try {
             a(new p(sb2));
-        } catch (IOException e) {
-            h.log(Level.WARNING, "read error", (Throwable) e);
+        } catch (IOException e7) {
+            h.log(Level.WARNING, "read error", (Throwable) e7);
         }
         sb2.append("]]");
         return sb2.toString();

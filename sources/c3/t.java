@@ -1,6 +1,6 @@
 package c3;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class t implements b0 {
     public final /* synthetic */ int a;
@@ -34,17 +34,17 @@ public class t implements b0 {
                 of.b bVar = uVar.k;
                 long[] jArr = (long[]) bVar.b;
                 long[] jArr2 = (long[]) bVar.c;
-                int e = e2.d0.e(jArr, e2.d0.i((uVar.e * j3) / 1000000, 0L, uVar.j - 1), false);
-                long j10 = e == -1 ? 0L : jArr[e];
-                long j11 = e != -1 ? jArr2[e] : 0L;
+                int e7 = e2.d0.e(jArr, e2.d0.i((uVar.e * j3) / 1000000, 0L, uVar.j - 1), false);
+                long j10 = e7 == -1 ? 0L : jArr[e7];
+                long j11 = e7 != -1 ? jArr2[e7] : 0L;
                 int i10 = uVar.e;
                 long j12 = (j10 * 1000000) / i10;
                 long j13 = this.b;
                 c0 c0Var = new c0(j12, j11 + j13);
-                if (j12 == j3 || e == jArr.length - 1) {
+                if (j12 == j3 || e7 == jArr.length - 1) {
                     return new a0(c0Var, c0Var);
                 }
-                int i11 = e + 1;
+                int i11 = e7 + 1;
                 return new a0(c0Var, new c0((jArr[i11] * 1000000) / i10, j13 + jArr2[i11]));
             case 1:
                 return (a0) this.c;

@@ -1,46 +1,72 @@
 package org.telegram.ui;
 
-import java.util.Calendar;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.KeyEvent;
+import android.view.View;
+import org.telegram.messenger.voip.NativeInstance;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s20 implements org.telegram.ui.Components.cd0 {
+public final /* synthetic */ class s20 implements org.telegram.ui.ActionBar.r0, org.telegram.ui.Components.ol0, r0.n, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.l1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Calendar c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ h60 b;
 
-    public /* synthetic */ s20(long j3, Calendar calendar, int i10, int i11) {
-        this.a = i11;
-        this.b = j3;
-        this.c = calendar;
-        this.d = i10;
+    public /* synthetic */ s20(h60 h60Var, int i10) {
+        this.a = i10;
+        this.b = h60Var;
     }
 
-    @Override // org.telegram.ui.Components.cd0
-    public final String j(int i10) {
+    @Override // r0.n
+    public r0.l1 Q0(View view, r0.l1 l1Var) {
+        return h60.z(this.b, l1Var);
+    }
+
+    @Override // org.telegram.ui.Components.ol0
+    public boolean d(int i10, View view) {
         switch (this.a) {
-            case 0:
-                if (i10 == 0) {
-                    return LocaleController.getString(R.string.MessageScheduleToday);
+            case 1:
+                h60 h60Var = this.b;
+                if (h60Var.F1(view)) {
+                    try {
+                        h60Var.Q.performHapticFeedback(0);
+                    } catch (Exception unused) {
+                    }
                 }
-                long j3 = (i10 * 86400000) + this.b;
-                Calendar calendar = this.c;
-                calendar.setTimeInMillis(j3);
-                if (calendar.get(1) != this.d) {
-                    return LocaleController.getInstance().getFormatterScheduleYear().format(j3);
-                }
-                return LocaleController.getInstance().getFormatterWeek().format(j3) + " " + LocaleController.getInstance().getFormatterScheduleDay().format(j3);
+                return false;
             default:
-                if (i10 == 0) {
-                    return LocaleController.getString("MessageScheduleToday", R.string.MessageScheduleToday);
+                h60 h60Var2 = this.b;
+                if (!h60Var2.r1()) {
+                    if (view instanceof org.telegram.ui.Components.voip.l) {
+                        return h60Var2.F1(view);
+                    }
+                    if (view instanceof org.telegram.ui.Cells.e4) {
+                        h60Var2.I1();
+                        org.telegram.ui.Components.nj0 nj0Var = ((org.telegram.ui.Cells.e4) view).f;
+                        if (nj0Var.isEnabled()) {
+                            nj0Var.callOnClick();
+                            return true;
+                        }
+                    }
                 }
-                long j10 = (i10 * 86400000) + this.b;
-                Calendar calendar2 = this.c;
-                calendar2.setTimeInMillis(j10);
-                return calendar2.get(1) == this.d ? LocaleController.getInstance().getFormatterScheduleDay().format(j10) : LocaleController.getInstance().getFormatterScheduleYear().format(j10);
+                return false;
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.r0
+    public void m(int i10) {
+        this.b.O.getActionBarMenuOnItemClick().b(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.l1
+    public void o(KeyEvent keyEvent) {
+        h60 h60Var;
+        i50 i50Var;
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (i50Var = (h60Var = this.b).f3) != null && i50Var.isShowing()) {
+            h60Var.f3.dismiss();
+        }
+    }
+
+    @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback
+    public void run(int[] iArr, float[] fArr, boolean[] zArr) {
+        h60.B(this.b, iArr, fArr);
     }
 }

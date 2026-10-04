@@ -1,253 +1,227 @@
 package org.telegram.ui;
 
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.util.SparseIntArray;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class rc1 implements org.telegram.ui.Components.nq {
-    public final /* synthetic */ od1 a;
+public final class rc1 implements org.telegram.ui.ActionBar.d6 {
+    public org.telegram.ui.ActionBar.d6 a;
+    public final SparseIntArray b = new SparseIntArray();
+    public final Paint c = new Paint(3);
+    public final Paint d = new Paint(3);
+    public final Paint e;
+    public final TextPaint f;
+    public final TextPaint h;
+    public final TextPaint n;
+    public Bitmap r;
+    public BitmapShader s;
+    public Matrix v;
+    public final /* synthetic */ rd1 w;
+    public final /* synthetic */ rd1 x;
 
-    public rc1(od1 od1Var) {
-        this.a = od1Var;
+    public rc1(rd1 rd1Var) {
+        this.x = rd1Var;
+        this.w = rd1Var;
+        Paint paint = new Paint(3);
+        this.e = paint;
+        TextPaint textPaint = new TextPaint();
+        this.f = textPaint;
+        TextPaint textPaint2 = new TextPaint();
+        this.h = textPaint2;
+        TextPaint textPaint3 = new TextPaint();
+        this.n = textPaint3;
+        textPaint.setTextSize(AndroidUtilities.dp(Math.max(16, SharedConfig.fontSize) - 2));
+        textPaint2.setTextSize(AndroidUtilities.dp(Math.max(16, SharedConfig.fontSize) - 2));
+        textPaint3.setTextSize(AndroidUtilities.dp(15.0f));
+        textPaint3.setTypeface(AndroidUtilities.bold());
+        paint.setColor(352321536);
     }
 
-    @Override // org.telegram.ui.Components.nq
-    public final int K0(int i10) {
-        org.telegram.ui.ActionBar.f6 f6Var;
-        od1 od1Var = this.a;
-        if (od1Var.n != 3) {
-            return 0;
+    @Override // org.telegram.ui.ActionBar.d6
+    public final Paint H(String str) {
+        str.getClass();
+        switch (str) {
+            case "paintChatActionText2":
+                return this.h;
+            case "paintChatActionBackground":
+                return this.c;
+            case "paintChatBotButton":
+                return this.n;
+            case "paintChatActionBackgroundDarken":
+                return this.e;
+            case "paintChatActionBackgroundSelected":
+                return this.d;
+            case "paintChatActionText":
+                return this.f;
+            default:
+                org.telegram.ui.ActionBar.d6 d6Var = this.a;
+                return d6Var != null ? d6Var.H(str) : org.telegram.ui.ActionBar.i6.S0(str);
         }
-        org.telegram.ui.ActionBar.g6 g6Var = od1Var.e0;
-        if (g6Var.S && i10 == 0 && (f6Var = (org.telegram.ui.ActionBar.f6) g6Var.a0.get(org.telegram.ui.ActionBar.h6.n)) != null) {
-            return f6Var.e;
-        }
-        return 0;
     }
 
-    @Override // org.telegram.ui.Components.nq
-    public final void l(boolean z10) {
-        int i10;
-        int i11;
-        od1 od1Var = this.a;
-        org.telegram.ui.ActionBar.f6 f6Var = od1Var.s;
-        if (!z10) {
-            org.telegram.ui.Components.e5.W(od1Var, 1, null, null);
-            return;
-        }
-        if (f6Var.r == null) {
-            od1Var.finishFragment();
-            i11 = ((org.telegram.ui.ActionBar.m2) od1Var).currentAccount;
-            MessagesController.getInstance(i11).saveThemeToServer(f6Var.b, f6Var);
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needShareTheme, f6Var.b, f6Var);
-            return;
-        }
-        StringBuilder sb2 = new StringBuilder("https://");
-        i10 = ((org.telegram.ui.ActionBar.m2) od1Var).currentAccount;
-        sb2.append(MessagesController.getInstance(i10).linkPrefix);
-        sb2.append("/addtheme/");
-        sb2.append(f6Var.r.slug);
-        String sb3 = sb2.toString();
-        od1Var.showDialog(new org.telegram.ui.Components.wq0(od1Var.getParentActivity(), null, sb3, false, sb3, false, null));
+    @Override // org.telegram.ui.ActionBar.d6
+    public final int H0(int i10) {
+        org.telegram.ui.ActionBar.d6 d6Var = this.a;
+        return d6Var != null ? d6Var.H0(i10) : org.telegram.ui.ActionBar.i6.w0(null, i10, false);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x00a8  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00bc  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00c5  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00cc  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x00c8  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x00bf  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00b6  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00ac  */
-    @Override // org.telegram.ui.Components.nq
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void x0(int i10, int i11, boolean z10) {
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        boolean z11;
-        od1 od1Var = this.a;
-        if (od1Var.b == 2) {
-            od1Var.a1(i10, i11, true);
-            return;
+    @Override // org.telegram.ui.ActionBar.d6
+    public final boolean a() {
+        id1 id1Var = this.x.p1;
+        if (id1Var != null) {
+            return id1Var.a();
         }
-        Runnable runnable = od1Var.Y;
-        org.telegram.ui.ActionBar.f6 f6Var = od1Var.s;
-        if (i11 != -1) {
-            int i19 = od1Var.X;
-            if (i19 != -1 && i19 != i11) {
-                runnable.run();
-            }
-            od1Var.W = i10;
-            od1Var.X = i11;
-            if (z10) {
-                runnable.run();
-                return;
-            } else {
-                if (od1Var.Z) {
-                    return;
-                }
-                od1Var.Z = true;
-                od1Var.fragmentView.postDelayed(runnable, 16L);
-                return;
-            }
+        id1 id1Var2 = this.w.p1;
+        if (id1Var2 != null) {
+            return id1Var2.a();
         }
-        int i20 = od1Var.n;
-        if (i20 == 1 || i20 == 2) {
-            long j3 = od1Var.I;
-            if (j3 != 0) {
-                f6Var.j = j3;
-            } else {
-                f6Var.j = 0L;
-            }
-            long j10 = od1Var.J;
-            if (j10 != 0) {
-                f6Var.k = j10;
-            } else {
-                f6Var.k = 0L;
-            }
-            long j11 = od1Var.K;
-            if (j11 != 0) {
-                f6Var.l = j11;
-            } else {
-                f6Var.l = 0L;
-            }
-            long j12 = od1Var.L;
-            if (j12 != 0) {
-                f6Var.m = j12;
-            } else {
-                f6Var.m = 0L;
-            }
-            f6Var.n = od1Var.O;
-            if (i20 == 2) {
-                int B0 = org.telegram.ui.ActionBar.h6.B0(org.telegram.ui.ActionBar.h6.Nd);
-                int B02 = org.telegram.ui.ActionBar.h6.B0(org.telegram.ui.ActionBar.h6.Od);
-                int B03 = org.telegram.ui.ActionBar.h6.B0(org.telegram.ui.ActionBar.h6.Pd);
-                int B04 = org.telegram.ui.ActionBar.h6.B0(org.telegram.ui.ActionBar.h6.Qd);
-                int i21 = (int) f6Var.k;
-                int i22 = (int) f6Var.l;
-                int i23 = (int) f6Var.m;
-                int i24 = (int) f6Var.j;
-                org.telegram.ui.Components.oq oqVar = od1Var.V;
-                if (i23 != 0) {
-                    B04 = i23;
-                }
-                oqVar.e(B04, 3);
-                org.telegram.ui.Components.oq oqVar2 = od1Var.V;
-                if (i22 != 0) {
-                    B03 = i22;
-                }
-                oqVar2.e(B03, 2);
-                org.telegram.ui.Components.oq oqVar3 = od1Var.V;
-                if (i21 != 0) {
-                    B02 = i21;
-                }
-                i12 = 1;
-                oqVar3.e(B02, 1);
-                org.telegram.ui.Components.oq oqVar4 = od1Var.V;
-                if (i24 != 0) {
-                    B0 = i24;
-                }
-                oqVar4.e(B0, 0);
-                i13 = od1Var.n;
-                if (i13 != i12 || i13 == 3) {
-                    i14 = od1Var.y;
-                    if (i14 == 0) {
-                        f6Var.e = i14;
-                        i15 = 0;
-                    } else {
-                        i15 = 0;
-                        f6Var.e = 0;
-                    }
-                    i16 = od1Var.E;
-                    if (i16 == 0) {
-                        f6Var.f = i16;
-                    } else {
-                        f6Var.f = i15;
-                    }
-                    i17 = od1Var.F;
-                    if (i17 == 0) {
-                        f6Var.g = i17;
-                    } else {
-                        f6Var.g = i15;
-                    }
-                    i18 = od1Var.G;
-                    if (i18 == 0) {
-                        f6Var.h = i18;
-                    } else {
-                        f6Var.h = i15;
-                    }
-                    if (i13 == 3) {
-                        od1Var.V.e(f6Var.h, 3);
-                        od1Var.V.e(f6Var.g, 2);
-                        od1Var.V.e(f6Var.f, 1);
-                        org.telegram.ui.Components.oq oqVar5 = od1Var.V;
-                        int i25 = f6Var.e;
-                        if (i25 == 0) {
-                            i25 = f6Var.c;
-                        }
-                        z11 = false;
-                        oqVar5.e(i25, 0);
-                        org.telegram.ui.ActionBar.h6.n1(z11, z11);
-                        od1Var.u0.f1();
-                    }
-                }
-                z11 = false;
-                org.telegram.ui.ActionBar.h6.n1(z11, z11);
-                od1Var.u0.f1();
-            }
-        }
-        i12 = 1;
-        i13 = od1Var.n;
-        if (i13 != i12) {
-        }
-        i14 = od1Var.y;
-        if (i14 == 0) {
-        }
-        i16 = od1Var.E;
-        if (i16 == 0) {
-        }
-        i17 = od1Var.F;
-        if (i17 == 0) {
-        }
-        i18 = od1Var.G;
-        if (i18 == 0) {
-        }
-        if (i13 == 3) {
-        }
-        z11 = false;
-        org.telegram.ui.ActionBar.h6.n1(z11, z11);
-        od1Var.u0.f1();
+        org.telegram.ui.ActionBar.d6 d6Var = this.a;
+        return d6Var != null ? d6Var.a() : org.telegram.ui.ActionBar.i6.I.q();
     }
 
-    @Override // org.telegram.ui.Components.nq
-    public final void y() {
-        od1 od1Var = this.a;
-        if (od1Var.getParentActivity() == null) {
+    public final void b(Drawable drawable, Drawable drawable2, Float f7) {
+        int i10 = org.telegram.ui.ActionBar.i6.lc;
+        int H0 = H0(i10);
+        int H02 = H0(org.telegram.ui.ActionBar.i6.mc);
+        if (drawable == null) {
+            drawable = drawable2;
+        }
+        boolean z10 = drawable instanceof org.telegram.ui.Components.pc0;
+        TextPaint textPaint = this.h;
+        TextPaint textPaint2 = this.f;
+        if ((z10 || (drawable instanceof BitmapDrawable)) && SharedConfig.getDevicePerformanceClass() != 0 && LiteMode.isEnabled(32)) {
+            Bitmap bitmap = z10 ? ((org.telegram.ui.Components.pc0) drawable).k : drawable instanceof BitmapDrawable ? ((BitmapDrawable) drawable).getBitmap() : null;
+            if (this.r != bitmap) {
+                this.r = bitmap;
+                Bitmap bitmap2 = this.r;
+                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                this.s = new BitmapShader(bitmap2, tileMode, tileMode);
+                if (this.v == null) {
+                    this.v = new Matrix();
+                }
+            }
+            textPaint2.setColor(-1);
+            textPaint.setColor(-1);
+            textPaint2.linkColor = -1;
+            this.n.setColor(-1);
+        } else {
+            this.r = null;
+            this.s = null;
+            int i11 = org.telegram.ui.ActionBar.i6.ic;
+            textPaint2.setColor(H0(i11));
+            textPaint.setColor(H0(i11));
+            textPaint2.linkColor = H0(org.telegram.ui.ActionBar.i6.jc);
+        }
+        Paint paint = this.c;
+        paint.setColor(H0);
+        Paint paint2 = this.d;
+        paint2.setColor(H02);
+        if (this.s == null || !(this.b.indexOfKey(i10) < 0 || z10 || (drawable instanceof BitmapDrawable))) {
+            paint.setColorFilter(null);
+            paint.setShader(null);
+            paint2.setColorFilter(null);
+            paint2.setShader(null);
             return;
         }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(od1Var.getParentActivity());
-        alertDialog$Builder.a.R = LocaleController.getString(R.string.DeleteThemeTitle);
-        alertDialog$Builder.a.T = LocaleController.getString(R.string.DeleteThemeAlert);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ml0(this, 21));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
-        od1Var.showDialog(a2Var);
-        TextView textView = (TextView) a2Var.d(-1);
-        if (textView != null) {
-            textView.setTextColor(od1Var.getThemedColor(org.telegram.ui.ActionBar.h6.q7));
+        ColorMatrix colorMatrix = new ColorMatrix();
+        if (z10) {
+            if (((org.telegram.ui.Components.pc0) drawable).q >= 0.0f) {
+                colorMatrix.setSaturation(1.6f);
+                AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, a() ? 0.97f : 0.92f);
+                AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, a() ? 0.12f : -0.06f);
+            } else {
+                colorMatrix.setSaturation(1.1f);
+                AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, a() ? 0.4f : 0.8f);
+                AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, a() ? 0.08f : -0.06f);
+            }
+        } else {
+            colorMatrix.setSaturation(1.6f);
+            AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, a() ? 0.9f : 0.84f);
+            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, a() ? -0.04f : 0.06f);
         }
+        if (z10) {
+            float f10 = ((org.telegram.ui.Components.pc0) drawable).q;
+            if (f7 != null) {
+                f10 = f7.floatValue();
+            }
+            if (f10 >= 0.0f) {
+                colorMatrix.setSaturation(1.8f);
+                AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, 0.97f);
+                AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, 0.03f);
+            } else {
+                colorMatrix.setSaturation(0.5f);
+                AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, 0.35f);
+                AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, 0.03f);
+            }
+        } else {
+            colorMatrix.setSaturation(1.6f);
+            AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, 0.97f);
+            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, 0.06f);
+        }
+        paint.setShader(this.s);
+        paint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+        paint.setAlpha(255);
+        paint2.setShader(this.s);
+        ColorMatrix colorMatrix2 = new ColorMatrix(colorMatrix);
+        AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix2, 0.85f);
+        paint2.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
+        paint2.setAlpha(255);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final Drawable getDrawable(String str) {
+        org.telegram.ui.ActionBar.d6 d6Var = this.a;
+        return d6Var != null ? d6Var.getDrawable(str) : org.telegram.ui.ActionBar.i6.O0(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final int j0(int i10) {
+        return H0(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final int j1(int i10) {
+        org.telegram.ui.ActionBar.d6 d6Var = this.a;
+        return d6Var != null ? d6Var.j1(i10) : H0(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final void m(float f7, float f10, int i10, int i11) {
+        BitmapShader bitmapShader;
+        Bitmap bitmap = this.r;
+        if (bitmap == null || (bitmapShader = this.s) == null) {
+            org.telegram.ui.ActionBar.i6.q(f7, f10, i10, i11);
+        } else {
+            org.telegram.ui.ActionBar.i6.r(bitmap, bitmapShader, this.v, i10, i11, f7, f10);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final boolean r0() {
+        org.telegram.ui.ActionBar.d6 d6Var = this.a;
+        return d6Var != null ? d6Var.r0() : org.telegram.ui.ActionBar.i6.a1();
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final ColorFilter x() {
+        return org.telegram.ui.ActionBar.i6.v3;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public final /* synthetic */ void L0(int i10, int i11) {
     }
 }

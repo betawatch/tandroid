@@ -1,80 +1,78 @@
 package v7;
 
-import java.io.Serializable;
-import java.lang.reflect.Array;
-import java.util.AbstractCollection;
-import java.util.Arrays;
-import java.util.Collection;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public abstract class f9 extends AbstractCollection implements Serializable {
-    public static final Object[] a = new Object[0];
+public final class f9 extends a9.o implements ListIterator {
+    public final int b;
+    public int c;
+    public final h9 d;
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean addAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final void clear() {
-        throw new UnsupportedOperationException();
-    }
-
-    public abstract int i(Object[] objArr);
-
-    public int n() {
-        throw new UnsupportedOperationException();
-    }
-
-    public int o() {
-        throw new UnsupportedOperationException();
-    }
-
-    public Object[] p() {
-        return null;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean remove(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean removeAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean retainAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray() {
-        return toArray(a);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        objArr.getClass();
-        int size = size();
-        int length = objArr.length;
-        if (length < size) {
-            Object[] p5 = p();
-            if (p5 != null) {
-                return Arrays.copyOfRange(p5, o(), n(), objArr.getClass());
-            }
-            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), size);
-        } else if (length > size) {
-            objArr[size] = null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f9(h9 h9Var, int i10) {
+        super(6);
+        int size = h9Var.size();
+        if (i10 < 0 || i10 > size) {
+            throw new IndexOutOfBoundsException(w7.y7.c(i10, size, "index"));
         }
-        i(objArr);
-        return objArr;
+        this.b = size;
+        this.c = i10;
+        this.d = h9Var;
+    }
+
+    public final Object a(int i10) {
+        return this.d.get(i10);
+    }
+
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final boolean hasNext() {
+        return this.c < this.b;
+    }
+
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.c > 0;
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final Object next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
+        int i10 = this.c;
+        this.c = i10 + 1;
+        return a(i10);
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.c;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            throw new NoSuchElementException();
+        }
+        int i10 = this.c - 1;
+        this.c = i10;
+        return a(i10);
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.c - 1;
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

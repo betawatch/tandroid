@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.jb;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w4 implements Utilities.Callback {
     public final /* synthetic */ t5 a;
@@ -61,9 +61,9 @@ public final /* synthetic */ class w4 implements Utilities.Callback {
         org.telegram.ui.ActionBar.d6 d6Var = this.f;
         if (starsPurchaseAvailable) {
             boolean[] zArr2 = {false};
-            l7 l7Var = new l7(context, d6Var, j10, this.g ? 9 : 0, this.h, new jb(t5Var, zArr2, messageObject, inputInvoice, tL_payments_paymentFormStars, zArr, i10, callback2, callback), this.m);
-            l7Var.setOnDismissListener(new org.telegram.ui.web.c0(t5Var, callback, zArr2, zArr, callback2, 2));
-            l7Var.show();
+            m7 m7Var = new m7(context, d6Var, j10, this.g ? 9 : 0, this.h, new jb(t5Var, zArr2, messageObject, inputInvoice, tL_payments_paymentFormStars, zArr, i10, callback2, callback), this.m);
+            m7Var.setOnDismissListener(new org.telegram.ui.web.d0(t5Var, callback, zArr2, zArr, callback2, 2));
+            m7Var.show();
             return;
         }
         if (callback != null) {

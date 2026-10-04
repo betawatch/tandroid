@@ -1,28 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.id1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class hp extends nj0 {
-    public final /* synthetic */ op r;
+public final class hp implements id1 {
+    public final /* synthetic */ pp a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hp(op opVar, Context context) {
-        super(context);
-        this.r = opVar;
+    public hp(pp ppVar) {
+        this.a = ppVar;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (this.r.N) {
-            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToDayTheme));
-        } else {
-            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToNightTheme));
+    @Override // org.telegram.ui.id1
+    public final boolean a() {
+        return this.a.N;
+    }
+
+    @Override // org.telegram.ui.id1
+    public final boolean a1() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.id1
+    public final void q1(boolean z10) {
+        pp ppVar = this.a;
+        org.telegram.ui.yn ynVar = ppVar.v;
+        ppVar.N = !ppVar.N;
+        if (ppVar.M != null) {
+            ppVar.P = true;
+            ynVar.c7 = true;
+            TLRPC.WallPaper wallPaper = ppVar.v() ? null : ppVar.n.h;
+            org.telegram.ui.ActionBar.c4 c4Var = ppVar.M.a;
+            if (c4Var.a) {
+                ppVar.n.i(null, wallPaper, z10, Boolean.valueOf(ppVar.N), false);
+            } else {
+                ppVar.n.i(c4Var, wallPaper, z10, Boolean.valueOf(ppVar.N), false);
+            }
+            ynVar.c7 = false;
         }
     }
 }

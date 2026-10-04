@@ -17,7 +17,7 @@ import u4.b;
 import u4.c;
 import u4.d;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class ChooserTargetServiceCompat extends ChooserTargetService {
     @Override // android.service.chooser.ChooserTargetService
@@ -99,8 +99,8 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
                 g0.c cVar4 = aVar.a;
                 try {
                     iconCompat = shortcutInfoCompatSaverImpl.g(cVar4.b);
-                } catch (Exception e) {
-                    Log.e("ChooserServiceCompat", "Failed to retrieve shortcut icon: ", e);
+                } catch (Exception e7) {
+                    Log.e("ChooserServiceCompat", "Failed to retrieve shortcut icon: ", e7);
                     iconCompat = null;
                 }
                 Bundle bundle = new Bundle();
@@ -116,8 +116,8 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
                 f7 = f10;
             }
             return arrayList4;
-        } catch (Exception e7) {
-            Log.e("ChooserServiceCompat", "Failed to retrieve shortcuts: ", e7);
+        } catch (Exception e10) {
+            Log.e("ChooserServiceCompat", "Failed to retrieve shortcuts: ", e10);
             return Collections.EMPTY_LIST;
         }
     }

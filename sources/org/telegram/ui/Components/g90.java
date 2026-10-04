@@ -1,23 +1,21 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class g90 extends k9 {
-    public final /* synthetic */ ai.w7 e;
+public final class g90 extends wi0 {
+    public final /* synthetic */ j90 n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g90(ai.w7 w7Var, Context context) {
-        super(context, false);
-        this.e = w7Var;
+    public g90(j90 j90Var, Context context, String str, String str2, String str3) {
+        super(context, str, str2, str3, false);
+        this.n = j90Var;
     }
 
-    @Override // org.telegram.ui.Components.k9, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(Math.min(3, ((i90) this.e.d).w) == 0 ? 0 : hg.c.f(r4, 1, 20, 32)), TLObject.FLAG_30), i11);
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        this.n.E = null;
     }
 }

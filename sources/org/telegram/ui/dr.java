@@ -3,57 +3,31 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class dr implements ir {
-    public final /* synthetic */ pr a;
+public final class dr implements jq {
+    public final /* synthetic */ TLObject a;
+    public final /* synthetic */ rr b;
 
-    public dr(pr prVar) {
-        this.a = prVar;
+    public dr(rr rrVar, TLObject tLObject) {
+        this.b = rrVar;
+        this.a = tLObject;
     }
 
-    @Override // org.telegram.ui.ir
-    public final void c(long j3, TLObject tLObject) {
-        pr prVar = this.a;
-        if (prVar.K.f(j3) == null) {
-            jr w02 = prVar.w0();
-            prVar.F.add(tLObject);
-            prVar.K.k(tLObject, j3);
-            prVar.z0(prVar.F);
-            prVar.A0(w02);
+    @Override // org.telegram.ui.jq
+    public final void a(TLRPC.User user) {
+        rr.c0(this.b, user);
+    }
+
+    @Override // org.telegram.ui.jq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLObject tLObject = this.a;
+        if (tLObject instanceof TLRPC.ChannelParticipant) {
+            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
+            channelParticipant.admin_rights = tL_chatAdminRights;
+            channelParticipant.banned_rights = tL_chatBannedRights;
+            channelParticipant.rank = str;
+            rr.U(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
         }
-    }
-
-    @Override // org.telegram.ui.ir
-    public final void d(long j3) {
-        pr prVar = this.a;
-        if (prVar.K.f(j3) == null) {
-            jr w02 = prVar.w0();
-            TLRPC.TL_channelParticipantBanned tL_channelParticipantBanned = new TLRPC.TL_channelParticipantBanned();
-            if (j3 > 0) {
-                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-                tL_channelParticipantBanned.peer = tL_peerUser;
-                tL_peerUser.user_id = j3;
-            } else {
-                TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
-                tL_channelParticipantBanned.peer = tL_peerChannel;
-                tL_peerChannel.channel_id = -j3;
-            }
-            tL_channelParticipantBanned.date = prVar.getConnectionsManager().getCurrentTime();
-            tL_channelParticipantBanned.kicked_by = prVar.getAccountInstance().getUserConfig().clientUserId;
-            prVar.s.kicked_count++;
-            prVar.F.add(tL_channelParticipantBanned);
-            prVar.K.k(tL_channelParticipantBanned, j3);
-            prVar.z0(prVar.F);
-            prVar.A0(w02);
-        }
-    }
-
-    @Override // org.telegram.ui.ir
-    public final /* synthetic */ void a(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.ir
-    public final /* synthetic */ void b(long j3) {
     }
 }

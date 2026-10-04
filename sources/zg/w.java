@@ -3,10 +3,10 @@ package zg;
 import android.animation.ValueAnimator;
 import android.view.View;
 import java.util.ArrayList;
-import yh.p8;
 import yh.q8;
+import yh.r8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -32,11 +32,11 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 b0Var.m.k0.invalidate();
                 break;
             default:
-                q8 q8Var = (q8) this.b;
-                p8 p8Var = (p8) this.c;
-                q8Var.getClass();
-                p8Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q8Var.a1();
+                r8 r8Var = (r8) this.b;
+                q8 q8Var = (q8) this.c;
+                r8Var.getClass();
+                q8Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                r8Var.a1();
                 break;
         }
     }

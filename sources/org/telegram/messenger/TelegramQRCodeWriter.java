@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class TelegramQRCodeWriter {
     private static final int QUIET_ZONE_SIZE = 4;
@@ -214,7 +214,7 @@ public final class TelegramQRCodeWriter {
         hc.f fVar;
         int i16;
         int i17;
-        int e;
+        int e7;
         int i18;
         hc.f fVar2;
         dc.a aVar;
@@ -328,17 +328,17 @@ public final class TelegramQRCodeWriter {
                                                 for (i17 = 0; i17 < i16; i17++) {
                                                     aVar4.a(aVar2.d(i17));
                                                 }
-                                                e = eVar != eVar2 ? aVar3.e() : str.length();
+                                                e7 = eVar != eVar2 ? aVar3.e() : str.length();
                                                 int a2 = eVar.a(fVar);
                                                 i18 = 1 << a2;
-                                                if (e < i18) {
+                                                if (e7 < i18) {
                                                     StringBuilder sb2 = new StringBuilder();
-                                                    sb2.append(e);
+                                                    sb2.append(e7);
                                                     sb2.append(" is bigger than ");
                                                     sb2.append(i18 - 1);
                                                     throw new cc.k(sb2.toString());
                                                 }
-                                                aVar4.b(e, a2);
+                                                aVar4.b(e7, a2);
                                                 int i27 = aVar3.b;
                                                 aVar4.c(aVar4.b + i27);
                                                 for (int i28 = 0; i28 < i27; i28++) {
@@ -368,7 +368,7 @@ public final class TelegramQRCodeWriter {
                                                         }
                                                         int a22 = eVar.a(fVar);
                                                         i18 = 1 << a22;
-                                                        if (e < i18) {
+                                                        if (e7 < i18) {
                                                         }
                                                     } else {
                                                         i30++;
@@ -466,13 +466,13 @@ public final class TelegramQRCodeWriter {
                                             z21 = false;
                                         }
                                     }
-                                    int e7 = i44 - aVar.e();
+                                    int e10 = i44 - aVar.e();
                                     int i47 = 0;
-                                    while (i47 < e7) {
-                                        int i48 = e7;
+                                    while (i47 < e10) {
+                                        int i48 = e10;
                                         aVar.b((i47 & 1) == 0 ? 236 : 17, 8);
                                         i47++;
-                                        e7 = i48;
+                                        e10 = i48;
                                     }
                                     if (aVar.b != i19) {
                                         throw new cc.k("Bits size does not equal capacity");
@@ -567,7 +567,7 @@ public final class TelegramQRCodeWriter {
                                             throw new IllegalArgumentException("No data bytes provided");
                                         }
                                         if (i72 >= arrayList4.size()) {
-                                            fc.b bVar7 = (fc.b) hg.c.g(1, arrayList4);
+                                            fc.b bVar7 = (fc.b) hg.k0.g(1, arrayList4);
                                             int size2 = arrayList4.size();
                                             fc.b bVar8 = bVar7;
                                             while (size2 <= i72) {
@@ -687,7 +687,7 @@ public final class TelegramQRCodeWriter {
                                         }
                                     }
                                     if (i85 != aVar10.e()) {
-                                        StringBuilder j3 = hg.c.j(i85, "Interleaving error: ", " and ");
+                                        StringBuilder j3 = hg.k0.j(i85, "Interleaving error: ", " and ");
                                         j3.append(aVar10.e());
                                         j3.append(" differ.");
                                         throw new cc.k(j3.toString());

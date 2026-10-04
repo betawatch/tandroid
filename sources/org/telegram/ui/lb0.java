@@ -1,70 +1,66 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.Emoji;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class lb0 implements TextWatcher {
+public final /* synthetic */ class lb0 implements org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.ow0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rb0 b;
+    public final /* synthetic */ vb0 b;
 
-    public /* synthetic */ lb0(rb0 rb0Var, int i10) {
+    public /* synthetic */ lb0(vb0 vb0Var, int i10) {
         this.a = i10;
-        this.b = rb0Var;
+        this.b = vb0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
+    @Override // org.telegram.ui.Components.d5
+    public void K(int i10, int i11, boolean z10) {
+        this.b.T(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        vb0 vb0Var = this.b;
+        vb0Var.T.a(vb0Var.e);
+        vb0Var.finishFragment();
+    }
+
+    @Override // org.telegram.ui.Components.ow0
+    public void j(int i10) {
         switch (this.a) {
-            case 0:
-                Emoji.replaceEmoji(editable, this.b.K.getPaint().getFontMetricsInt(), false);
-                break;
-            default:
-                rb0 rb0Var = this.b;
-                if (!rb0Var.O) {
-                    if (editable.toString().equals("0")) {
-                        rb0Var.F.setText("");
-                        break;
-                    } else {
-                        try {
-                            int parseInt = Integer.parseInt(editable.toString());
-                            if (parseInt <= 100000) {
-                                rb0Var.W(parseInt);
-                                break;
-                            } else {
-                                rb0Var.X();
-                                break;
-                            }
-                        } catch (NumberFormatException unused) {
-                            rb0Var.X();
-                        }
-                    }
+            case 2:
+                vb0 vb0Var = this.b;
+                if (i10 >= vb0Var.P.size()) {
+                    vb0Var.w.setText("");
+                    break;
+                } else {
+                    vb0Var.w.setText(LocaleController.formatDateAudio(vb0Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i10)).intValue(), false));
+                    break;
                 }
+            default:
+                vb0 vb0Var2 = this.b;
+                vb0Var2.F.clearFocus();
+                vb0Var2.O = true;
+                ArrayList arrayList = vb0Var2.R;
+                if (i10 < arrayList.size()) {
+                    vb0Var2.F.setText(((Integer) arrayList.get(i10)).toString());
+                } else {
+                    vb0Var2.F.setText("");
+                }
+                vb0Var2.O = false;
                 break;
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
+    @Override // org.telegram.ui.Components.ow0
+    public /* synthetic */ void l() {
+        int i10 = this.a;
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
+    private final /* synthetic */ void a() {
     }
 
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    private final /* synthetic */ void b() {
     }
 }

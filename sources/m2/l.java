@@ -5,11 +5,11 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class l extends m {
     public final j n;
-    public final l.d r;
+    public final a4.m r;
 
     public l(b2.s sVar, i0 i0Var, r rVar, ArrayList arrayList, List list, List list2) {
         super(sVar, i0Var, rVar, arrayList, list, list2);
@@ -17,21 +17,21 @@ public final class l extends m {
         long j3 = rVar.e;
         j jVar = j3 <= 0 ? null : new j(rVar.d, j3, null);
         this.n = jVar;
-        this.r = jVar == null ? new l.d(new j(0L, -1L, null)) : null;
+        this.r = jVar == null ? new a4.m(new j(0L, -1L, null), 29) : null;
     }
 
     @Override // m2.m
-    public final String a() {
+    public final String b() {
         return null;
     }
 
     @Override // m2.m
-    public final l2.h d() {
+    public final l2.i c() {
         return this.r;
     }
 
     @Override // m2.m
-    public final j e() {
+    public final j d() {
         return this.n;
     }
 }

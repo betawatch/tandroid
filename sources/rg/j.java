@@ -15,9 +15,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class j extends b {
     public final ArrayList d;
@@ -65,7 +65,7 @@ public final class j extends b {
             this.e = createBitmap;
             Canvas canvas = new Canvas(createBitmap);
             Paint paint = new Paint();
-            paint.setShader(new LinearGradient(0.0f, 0.0f, createBitmap.getWidth(), 0.0f, new int[]{h6.w0(null, h6.Lj, false), h6.w0(null, h6.Mj, false), h6.w0(null, h6.Nj, false), h6.w0(null, h6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
+            paint.setShader(new LinearGradient(0.0f, 0.0f, createBitmap.getWidth(), 0.0f, new int[]{i6.w0(null, i6.Lj, false), i6.w0(null, i6.Mj, false), i6.w0(null, i6.Nj, false), i6.w0(null, i6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
             canvas.drawRect(0.0f, 0.0f, createBitmap.getWidth(), createBitmap.getHeight(), paint);
         }
         sparseIntArray = null;
@@ -78,7 +78,7 @@ public final class j extends b {
         this.e = createBitmap2;
         Canvas canvas2 = new Canvas(createBitmap2);
         Paint paint2 = new Paint();
-        paint2.setShader(new LinearGradient(0.0f, 0.0f, createBitmap2.getWidth(), 0.0f, new int[]{h6.w0(null, h6.Lj, false), h6.w0(null, h6.Mj, false), h6.w0(null, h6.Nj, false), h6.w0(null, h6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
+        paint2.setShader(new LinearGradient(0.0f, 0.0f, createBitmap2.getWidth(), 0.0f, new int[]{i6.w0(null, i6.Lj, false), i6.w0(null, i6.Mj, false), i6.w0(null, i6.Nj, false), i6.w0(null, i6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
         canvas2.drawRect(0.0f, 0.0f, createBitmap2.getWidth(), createBitmap2.getHeight(), paint2);
     }
 

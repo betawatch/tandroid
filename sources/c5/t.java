@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class t {
     public final String a;
@@ -45,6 +45,6 @@ public final class t {
         sb2.append("', productType='");
         sb2.append(this.c);
         sb2.append("', statusCode=");
-        return a4.a.o(this.d, "}", sb2);
+        return a4.a.n(this.d, "}", sb2);
     }
 }

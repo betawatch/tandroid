@@ -1,24 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.messenger.LanguageDetector;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class e41 extends k41 {
-    public final /* synthetic */ Runnable T;
+public final /* synthetic */ class e41 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ Utilities.Callback2 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e41(Context context, String str, String str2, CharSequence charSequence, Runnable runnable) {
-        super(context, str, str2, charSequence, null, 0, false, null);
-        this.T = runnable;
+    public /* synthetic */ e41(String str, String str2, Utilities.Callback2 callback2) {
+        this.a = str;
+        this.b = str2;
+        this.c = callback2;
     }
 
-    @Override // org.telegram.ui.Components.k41, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
-    public final void dismiss() {
-        super.dismiss();
-        Runnable runnable = this.T;
-        if (runnable != null) {
-            runnable.run();
-        }
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        t41.x(this.a, str, this.b, this.c);
+    }
+
+    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+    public void run(Exception exc) {
+        t41.x(this.a, "en", this.b, this.c);
     }
 }

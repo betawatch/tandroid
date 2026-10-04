@@ -11,11 +11,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.r20;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.s20;
+import org.telegram.ui.Components.tr;
 import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class h6 {
     public final int a;
@@ -42,10 +42,10 @@ public final class h6 {
         this.c = 0;
         this.d = false;
         this.e = 1.0f;
-        sr srVar = sr.h;
-        this.f = new org.telegram.ui.Components.e6(profileStoriesView, 420L, srVar);
-        this.g = new org.telegram.ui.Components.e6(profileStoriesView, 420L, srVar);
-        this.h = new org.telegram.ui.Components.e6(profileStoriesView, 420L, srVar);
+        tr trVar = tr.h;
+        this.f = new org.telegram.ui.Components.e6(profileStoriesView, 420L, trVar);
+        this.g = new org.telegram.ui.Components.e6(profileStoriesView, 420L, trVar);
+        this.h = new org.telegram.ui.Components.e6(profileStoriesView, 420L, trVar);
         this.m = new RectF();
         this.n = new RectF();
         this.a = storyItem.id;
@@ -55,7 +55,7 @@ public final class h6 {
         if (profileStoriesView.x) {
             imageReceiver.onAttachedToWindow();
         }
-        r20[] r20VarArr = ia.a;
+        s20[] s20VarArr = ia.a;
         TLRPC.MessageMedia messageMedia = storyItem.media;
         if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
             TLObject userOrChat = MessagesController.getInstance(imageReceiver.getCurrentAccount()).getUserOrChat(storyItem.dialogId);

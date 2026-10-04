@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vd implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -40,10 +40,10 @@ public final /* synthetic */ class vd implements View.OnClickListener {
     /* JADX WARN: Type inference failed for: r9v19 */
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        og ogVar;
+        pg pgVar;
         boolean z10;
-        eg egVar;
-        qf qfVar;
+        fg fgVar;
+        rf rfVar;
         boolean z11;
         boolean z12;
         boolean z13;
@@ -59,8 +59,8 @@ public final /* synthetic */ class vd implements View.OnClickListener {
         ChatActivityEnterView chatActivityEnterView = this.b;
         switch (i12) {
             case 0:
-                qf qfVar2 = chatActivityEnterView.E0;
-                String obj = qfVar2 != null ? qfVar2.getText().toString() : "";
+                rf rfVar2 = chatActivityEnterView.E0;
+                String obj = rfVar2 != null ? rfVar2.getText().toString() : "";
                 int indexOf = obj.indexOf(32);
                 if (indexOf != -1 && indexOf != obj.length() - 1) {
                     chatActivityEnterView.setFieldText(obj.substring(0, indexOf + 1));
@@ -70,8 +70,8 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                     break;
                 }
             case 1:
-                nf nfVar = chatActivityEnterView.L0;
-                if (nfVar == null || nfVar.q0) {
+                of ofVar = chatActivityEnterView.L0;
+                if (ofVar == null || ofVar.q0) {
                     AnimatorSet animatorSet = chatActivityEnterView.t2;
                     if ((animatorSet == null || !animatorSet.isRunning()) && chatActivityEnterView.f0 == null) {
                         chatActivityEnterView.S0();
@@ -80,9 +80,9 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                 }
                 break;
             case 2:
-                og ogVar2 = chatActivityEnterView.Z2;
-                if (ogVar2 != null) {
-                    ogVar2.J0();
+                pg pgVar2 = chatActivityEnterView.Z2;
+                if (pgVar2 != null) {
+                    pgVar2.J0();
                     break;
                 }
                 break;
@@ -90,9 +90,9 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                 int i14 = ChatActivityEnterView.n5;
                 if (chatActivityEnterView.b2 != null) {
                     if (chatActivityEnterView.c0 - chatActivityEnterView.d0 >= 0) {
-                        kg x10 = chatActivityEnterView.x();
+                        lg x10 = chatActivityEnterView.x();
                         chatActivityEnterView.c2 = x10;
-                        hg.a0 d = hg.a0.d(chatActivityEnterView.Q);
+                        hg.y d = hg.y.d(chatActivityEnterView.Q);
                         String str = chatActivityEnterView.b2.link;
                         String str2 = x10.a;
                         ArrayList<TLRPC.MessageEntity> arrayList = x10.b;
@@ -121,36 +121,36 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                 }
                 break;
             case 4:
-                if (chatActivityEnterView.T4 == BotForumHelper.SteamingSendButtonState.STOP && (ogVar = chatActivityEnterView.Z2) != null) {
-                    ogVar.z1();
+                if (chatActivityEnterView.T4 == BotForumHelper.SteamingSendButtonState.STOP && (pgVar = chatActivityEnterView.Z2) != null) {
+                    pgVar.z1();
                     break;
                 }
                 break;
             case 5:
                 if (chatActivityEnterView.S0.getVisibility() == 0 && chatActivityEnterView.S0.getAlpha() == 1.0f && !chatActivityEnterView.k3) {
-                    if (!chatActivityEnterView.z2 || (qfVar = chatActivityEnterView.E0) == null || !qfVar.isFocused()) {
+                    if (!chatActivityEnterView.z2 || (rfVar = chatActivityEnterView.E0) == null || !rfVar.isFocused()) {
                         if (!chatActivityEnterView.z3) {
                             if (!chatActivityEnterView.E3) {
                                 z10 = true;
-                                chatActivityEnterView.U0.O(true);
+                                chatActivityEnterView.U0.M(true);
                             }
                             z10 = true;
                         } else if (chatActivityEnterView.R1 != 0) {
                             z10 = true;
-                            chatActivityEnterView.m1(0, true);
+                            chatActivityEnterView.l1(0, true);
                             chatActivityEnterView.U0.t(true);
                             chatActivityEnterView.U0.A();
                             if (chatActivityEnterView.y3) {
-                                chatActivityEnterView.K(true);
+                                chatActivityEnterView.I(true);
                             }
                         } else {
-                            if (!chatActivityEnterView.E3 && (egVar = chatActivityEnterView.U0) != null) {
-                                egVar.O(false);
+                            if (!chatActivityEnterView.E3 && (fgVar = chatActivityEnterView.U0) != null) {
+                                fgVar.M(false);
                             }
                             z10 = true;
                         }
                         if (!chatActivityEnterView.E3) {
-                            chatActivityEnterView.n1(chatActivityEnterView.z3 ^ z10, z10, false, z10);
+                            chatActivityEnterView.m1(chatActivityEnterView.z3 ^ z10, z10, false, z10);
                             break;
                         }
                     }
@@ -166,9 +166,9 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                     if (chatActivityEnterView.e3 != null) {
                         CameraController.getInstance().cancelOnInitRunnable(chatActivityEnterView.H3);
                         chatActivityEnterView.Z2.k2(2, 0, chatActivityEnterView.O ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.S4, 0L, true);
-                        ye yeVar = chatActivityEnterView.J0;
+                        ze zeVar = chatActivityEnterView.J0;
                         chatActivityEnterView.S4 = 0L;
-                        yeVar.setEffect(0L);
+                        zeVar.setEffect(0L);
                     } else {
                         MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
                         if (playingMessageObject != null && playingMessageObject == chatActivityEnterView.d3) {
@@ -184,19 +184,19 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                     MediaController.getInstance().cleanRecording(true);
                     MediaDataController mediaDataController = MediaDataController.getInstance(chatActivityEnterView.Q);
                     long j3 = chatActivityEnterView.Q2;
-                    org.telegram.ui.wn wnVar = chatActivityEnterView.P2;
-                    mediaDataController.pushDraftVoiceMessage(j3, (wnVar == null || !wnVar.h4) ? 0L : wnVar.d(), null);
+                    org.telegram.ui.yn ynVar = chatActivityEnterView.P2;
+                    mediaDataController.pushDraftVoiceMessage(j3, (ynVar == null || !ynVar.f4) ? 0L : ynVar.d(), null);
                     MediaController.getInstance().stopRecording(0, false, 0, false, 0L);
                     chatActivityEnterView.i1 = 0L;
                     chatActivityEnterView.o0(false);
-                    chatActivityEnterView.K(true);
+                    chatActivityEnterView.I(true);
                     break;
                 }
                 break;
             case 7:
-                ei.c0 c0Var = chatActivityEnterView.l0;
-                boolean z14 = c0Var.v;
-                c0Var.setOpened(!z14);
+                ei.d0 d0Var = chatActivityEnterView.l0;
+                boolean z14 = d0Var.v;
+                d0Var.setOpened(!z14);
                 try {
                     chatActivityEnterView.performHapticFeedback(3, 2);
                 } catch (Exception unused2) {
@@ -213,82 +213,82 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                         }
                     }
                 } else if (z14) {
-                    of ofVar = chatActivityEnterView.m0;
-                    if (ofVar != null) {
-                        ofVar.c();
+                    pf pfVar = chatActivityEnterView.m0;
+                    if (pfVar != null) {
+                        pfVar.c();
                         break;
                     }
                 } else {
                     if (chatActivityEnterView.m0 == null) {
-                        of ofVar2 = new of(chatActivityEnterView, chatActivityEnterView.getContext());
-                        chatActivityEnterView.m0 = ofVar2;
-                        ai.w0 w0Var = ofVar2.c;
+                        pf pfVar2 = new pf(chatActivityEnterView, chatActivityEnterView.getContext());
+                        chatActivityEnterView.m0 = pfVar2;
+                        ai.w0 w0Var = pfVar2.c;
                         chatActivityEnterView.getContext();
                         w0Var.setLayoutManager(new s4.c0());
                         ai.w0 w0Var2 = chatActivityEnterView.m0.c;
-                        ei.b0 b0Var = new ei.b0();
-                        b0Var.c = new ArrayList();
-                        b0Var.d = new ArrayList();
-                        b0Var.e = new ArrayList();
-                        chatActivityEnterView.n0 = b0Var;
-                        w0Var2.setAdapter(b0Var);
-                        chatActivityEnterView.m0.c.setOnItemClickListener(new pf(chatActivityEnterView));
-                        chatActivityEnterView.m0.c.setOnItemLongClickListener(new se(chatActivityEnterView));
+                        ei.c0 c0Var = new ei.c0();
+                        c0Var.c = new ArrayList();
+                        c0Var.d = new ArrayList();
+                        c0Var.e = new ArrayList();
+                        chatActivityEnterView.n0 = c0Var;
+                        w0Var2.setAdapter(c0Var);
+                        chatActivityEnterView.m0.c.setOnItemClickListener(new qf(chatActivityEnterView));
+                        chatActivityEnterView.m0.c.setOnItemLongClickListener(new te(chatActivityEnterView));
                         chatActivityEnterView.m0.setClipToPadding(false);
-                        chatActivityEnterView.m1.addView(chatActivityEnterView.m0, w7.y5.e(-1, -1, 80));
+                        chatActivityEnterView.m1.addView(chatActivityEnterView.m0, w7.z5.e(-1, -1, 80));
                         chatActivityEnterView.m0.setVisibility(8);
                         a0.i iVar = chatActivityEnterView.X4;
                         if (iVar != null) {
                             chatActivityEnterView.n0.E(iVar);
                         }
-                        chatActivityEnterView.C1();
+                        chatActivityEnterView.B1();
                     }
-                    of ofVar3 = chatActivityEnterView.m0;
-                    if (ofVar3.getVisibility() != 0) {
-                        ofVar3.setVisibility(0);
-                        ofVar3.c.u0(0);
-                        ofVar3.n = true;
-                        ofVar3.f = false;
+                    pf pfVar3 = chatActivityEnterView.m0;
+                    if (pfVar3.getVisibility() != 0) {
+                        pfVar3.setVisibility(0);
+                        pfVar3.c.v0(0);
+                        pfVar3.n = true;
+                        pfVar3.f = false;
                         break;
-                    } else if (ofVar3.f) {
-                        ofVar3.f = false;
-                        ofVar3.a();
-                        ofVar3.d(false);
+                    } else if (pfVar3.f) {
+                        pfVar3.f = false;
+                        pfVar3.a();
+                        pfVar3.d(false);
                         break;
                     }
                 }
                 break;
             case 8:
-                og ogVar3 = chatActivityEnterView.Z2;
-                if (ogVar3 != null && !ogVar3.m()) {
-                    og ogVar4 = chatActivityEnterView.Z2;
-                    wg wgVar = chatActivityEnterView.F0;
-                    ogVar4.t1(wgVar, wgVar.a.getText(), true);
+                pg pgVar3 = chatActivityEnterView.Z2;
+                if (pgVar3 != null && !pgVar3.m()) {
+                    pg pgVar4 = chatActivityEnterView.Z2;
+                    xg xgVar = chatActivityEnterView.F0;
+                    pgVar4.t1(xgVar, xgVar.a.getText(), true);
                     break;
                 }
                 break;
             case 9:
                 SharedPreferences.Editor edit = MessagesController.getInstance(chatActivityEnterView.Q).getMainSettings().edit();
-                org.telegram.ui.wn wnVar2 = chatActivityEnterView.P2;
-                if (BirthdayController.isToday(wnVar2.a8)) {
-                    edit.putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + wnVar2.a(), false);
+                org.telegram.ui.yn ynVar2 = chatActivityEnterView.P2;
+                if (BirthdayController.isToday(ynVar2.Y7)) {
+                    edit.putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + ynVar2.a(), false);
                 } else {
-                    edit.putBoolean("show_gift_for_" + wnVar2.a(), false);
+                    edit.putBoolean("show_gift_for_" + ynVar2.a(), false);
                 }
                 if (MessagesController.getInstance(chatActivityEnterView.Q).giftAttachMenuIcon && MessagesController.getInstance(chatActivityEnterView.Q).giftTextFieldIcon) {
-                    edit.putBoolean("show_gift_for_" + wnVar2.a(), false);
+                    edit.putBoolean("show_gift_for_" + ynVar2.a(), false);
                 }
                 edit.apply();
                 TLRPC.UserFull userFull = MessagesController.getInstance(chatActivityEnterView.Q).getUserFull(UserConfig.getInstance(chatActivityEnterView.Q).getClientUserId());
-                if ((chatActivityEnterView.getParentFragment().a8 == null || !chatActivityEnterView.getParentFragment().a8.display_gifts_button) && (userFull == null || !userFull.display_gifts_button)) {
+                if ((chatActivityEnterView.getParentFragment().Y7 == null || !chatActivityEnterView.getParentFragment().Y7.display_gifts_button) && (userFull == null || !userFull.display_gifts_button)) {
                     AndroidUtilities.updateViewVisibilityAnimated(chatActivityEnterView.K1, false);
                 }
                 TLRPC.User i15 = chatActivityEnterView.getParentFragment().i();
                 if (i15 != null) {
-                    boolean z15 = chatActivityEnterView.getParentFragment().a8 != null && BirthdayController.isToday(chatActivityEnterView.getParentFragment().a8.birthday);
-                    org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(chatActivityEnterView.getContext(), 3, null);
-                    a2Var.q(200L);
-                    a2Var.setOnCancelListener(new org.telegram.ui.ba(chatActivityEnterView, tg.s.j(chatActivityEnterView.Q, null, new ai.t4(chatActivityEnterView, a2Var, i15, z15)), 3));
+                    boolean z15 = chatActivityEnterView.getParentFragment().Y7 != null && BirthdayController.isToday(chatActivityEnterView.getParentFragment().Y7.birthday);
+                    org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(chatActivityEnterView.getContext(), 3, null);
+                    b2Var.q(200L);
+                    b2Var.setOnCancelListener(new org.telegram.ui.da(chatActivityEnterView, tg.s.j(chatActivityEnterView.Q, null, new ai.t4(chatActivityEnterView, b2Var, i15, z15)), 3));
                     break;
                 }
                 break;
@@ -297,51 +297,51 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                 chatActivityEnterView.J0();
                 break;
             case 11:
-                mf mfVar = chatActivityEnterView.N0;
-                if (mfVar != null && mfVar.isShowing()) {
+                nf nfVar = chatActivityEnterView.N0;
+                if (nfVar != null && nfVar.isShowing()) {
                     chatActivityEnterView.N0.dismiss();
                 }
-                e5.M(chatActivityEnterView.O2, chatActivityEnterView.P2.a(), new n2.e(chatActivityEnterView, 5), chatActivityEnterView.W3);
+                e5.M(chatActivityEnterView.O2, chatActivityEnterView.P2.a(), new n2.c(chatActivityEnterView, 5), chatActivityEnterView.W3);
                 break;
             case 12:
                 ChatActivityEnterView chatActivityEnterView2 = this.b;
-                mf mfVar2 = chatActivityEnterView2.N0;
-                if (mfVar2 != null && mfVar2.isShowing()) {
+                nf nfVar2 = chatActivityEnterView2.N0;
+                if (nfVar2 != null && nfVar2.isShowing()) {
                     chatActivityEnterView2.N0.dismiss();
                 }
                 chatActivityEnterView2.T0(2147483646, true, 0, true, 0L);
                 break;
             case 13:
                 ChatActivityEnterView chatActivityEnterView3 = this.b;
-                mf mfVar3 = chatActivityEnterView3.N0;
-                if (mfVar3 != null && mfVar3.isShowing()) {
+                nf nfVar3 = chatActivityEnterView3.N0;
+                if (nfVar3 != null && nfVar3.isShowing()) {
                     chatActivityEnterView3.N0.dismiss();
                 }
                 chatActivityEnterView3.T0(0, false, 0, true, 0L);
                 break;
             case 14:
-                org.telegram.ui.ActionBar.o1 o1Var = chatActivityEnterView.U;
-                if (o1Var == null || !o1Var.f) {
+                org.telegram.ui.ActionBar.p1 p1Var = chatActivityEnterView.U;
+                if (p1Var == null || !p1Var.f) {
                     if (chatActivityEnterView.A0) {
-                        chatActivityEnterView.u1();
+                        chatActivityEnterView.t1();
                         break;
                     } else if (chatActivityEnterView.t0() && chatActivityEnterView.f2 == 0) {
                         if (chatActivityEnterView.R1 != 0) {
                             z13 = false;
-                            chatActivityEnterView.m1(0, true);
-                            eg egVar2 = chatActivityEnterView.U0;
-                            if (egVar2 != null) {
-                                egVar2.t(false);
+                            chatActivityEnterView.l1(0, true);
+                            fg fgVar2 = chatActivityEnterView.U0;
+                            if (fgVar2 != null) {
+                                fgVar2.t(false);
                             }
-                            qf qfVar3 = chatActivityEnterView.E0;
-                            if (qfVar3 != null) {
-                                qfVar3.requestFocus();
+                            rf rfVar3 = chatActivityEnterView.E0;
+                            if (rfVar3 != null) {
+                                rfVar3.requestFocus();
                             }
                         } else {
                             z13 = false;
                         }
                         if (chatActivityEnterView.z3) {
-                            chatActivityEnterView.n1(z13, true, z13, true);
+                            chatActivityEnterView.m1(z13, true, z13, true);
                             chatActivityEnterView.l3 = true;
                             AndroidUtilities.runOnUIThread(new td(chatActivityEnterView, 22), 200L);
                             break;
@@ -350,13 +350,13 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                             break;
                         }
                     } else {
-                        chatActivityEnterView.t1(1, 0, true, true);
-                        eg egVar3 = chatActivityEnterView.U0;
-                        qf qfVar4 = chatActivityEnterView.E0;
-                        boolean z16 = qfVar4 != null && qfVar4.length() > 0;
-                        org.telegram.ui.wn wnVar3 = chatActivityEnterView.P2;
-                        if (wnVar3 != null) {
-                            ci.e4 e4Var = wnVar3.y1;
+                        chatActivityEnterView.s1(1, 0, true, true);
+                        fg fgVar3 = chatActivityEnterView.U0;
+                        rf rfVar4 = chatActivityEnterView.E0;
+                        boolean z16 = rfVar4 != null && rfVar4.length() > 0;
+                        org.telegram.ui.yn ynVar3 = chatActivityEnterView.P2;
+                        if (ynVar3 != null) {
+                            ci.e4 e4Var = ynVar3.w1;
                             if (e4Var != null) {
                                 if (e4Var.V) {
                                     e4Var.e(true);
@@ -365,25 +365,25 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                             } else {
                                 z12 = false;
                             }
-                            wnVar3.y1 = null;
+                            ynVar3.w1 = null;
                             if (z12) {
                                 z11 = true;
-                                egVar3.B(z16, z11);
+                                fgVar3.B(z16, z11);
                                 break;
                             }
                         }
                         z11 = false;
-                        egVar3.B(z16, z11);
+                        fgVar3.B(z16, z11);
                     }
                 }
                 break;
             case 15:
                 if (chatActivityEnterView.R1 != 0) {
-                    chatActivityEnterView.m1(0, false);
+                    chatActivityEnterView.l1(0, false);
                     chatActivityEnterView.U0.t(false);
-                    qf qfVar5 = chatActivityEnterView.E0;
-                    if (qfVar5 != null) {
-                        qfVar5.requestFocus();
+                    rf rfVar5 = chatActivityEnterView.E0;
+                    if (rfVar5 != null) {
+                        rfVar5.requestFocus();
                     }
                 }
                 if (chatActivityEnterView.n2 != null) {
@@ -391,29 +391,29 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                         r92 = 1;
                         if (chatActivityEnterView.f2 == 1) {
                             if (chatActivityEnterView.t0() && chatActivityEnterView.f2 == 1) {
-                                chatActivityEnterView.t1(0, 1, true, false);
+                                chatActivityEnterView.s1(0, 1, true, false);
                             }
                         }
                     } else {
                         r92 = 1;
                     }
-                    chatActivityEnterView.t1(r92, r92, r92, r92);
+                    chatActivityEnterView.s1(r92, r92, r92, r92);
                 } else if (chatActivityEnterView.p2) {
                     chatActivityEnterView.setFieldText("/");
-                    qf qfVar6 = chatActivityEnterView.E0;
-                    if (qfVar6 != null) {
-                        qfVar6.requestFocus();
+                    rf rfVar6 = chatActivityEnterView.E0;
+                    if (rfVar6 != null) {
+                        rfVar6.requestFocus();
                     }
                     chatActivityEnterView.H0();
                 }
                 if (chatActivityEnterView.z3) {
-                    chatActivityEnterView.n1(false, false, false, true);
+                    chatActivityEnterView.m1(false, false, false, true);
                     break;
                 }
                 break;
             case 16:
                 ChatActivityEnterView chatActivityEnterView4 = this.b;
-                org.telegram.ui.wn wnVar4 = chatActivityEnterView4.P2;
+                org.telegram.ui.yn ynVar4 = chatActivityEnterView4.P2;
                 if (!chatActivityEnterView4.l5 ? chatActivityEnterView4.getTranslationY() == 0.0f : !chatActivityEnterView4.t0()) {
                     if (chatActivityEnterView4.Z2.q() > AndroidUtilities.dp(20.0f)) {
                         int b12 = chatActivityEnterView4.Z2.b1();
@@ -426,22 +426,22 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                             b12 -= chatActivityEnterView4.getEmojiPadding();
                         }
                         if (b12 < AndroidUtilities.dp(200.0f)) {
-                            chatActivityEnterView4.u0 = new je(chatActivityEnterView4, 4);
-                            chatActivityEnterView4.P();
+                            chatActivityEnterView4.u0 = new ke(chatActivityEnterView4, 4);
+                            chatActivityEnterView4.N();
                             break;
                         }
                     } else {
                         f7 = 20.0f;
                     }
-                    if (chatActivityEnterView4.Z2.J() != null) {
+                    if (chatActivityEnterView4.Z2.I() != null) {
                         try {
                             view.performHapticFeedback(3, 2);
                         } catch (Exception unused3) {
                         }
-                        ff ffVar = chatActivityEnterView4.q0;
-                        if (ffVar != null) {
-                            ffVar.e = false;
-                            ffVar.l(new o1.k[0]);
+                        gf gfVar = chatActivityEnterView4.q0;
+                        if (gfVar != null) {
+                            gfVar.e = false;
+                            gfVar.l(new o1.k[0]);
                             break;
                         } else {
                             MessagesController messagesController = MessagesController.getInstance(chatActivityEnterView4.Q);
@@ -456,20 +456,20 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                                 chatFull = chatFull2;
                                 peer = chatFull2 != null ? chatFull2.default_send_as : null;
                             }
-                            if (peer == null && chatActivityEnterView4.Z2.J() != null && !chatActivityEnterView4.Z2.J().peers.isEmpty()) {
-                                peer = chatActivityEnterView4.Z2.J().peers.get(0).peer;
+                            if (peer == null && chatActivityEnterView4.Z2.I() != null && !chatActivityEnterView4.Z2.I().peers.isEmpty()) {
+                                peer = chatActivityEnterView4.Z2.I().peers.get(0).peer;
                             }
                             TLRPC.Peer peer2 = peer;
                             boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(messagesController.getChat(Long.valueOf(-chatActivityEnterView4.Q2)));
                             if (chatActivityEnterView4.l5) {
                             } else {
-                                wnVar4.getParentLayout().getOverlayContainerView();
+                                ynVar4.getParentLayout().getOverlayContainerView();
                             }
-                            ff ffVar2 = new ff(chatActivityEnterView4, chatActivityEnterView4.getContext(), chatActivityEnterView4.P2, messagesController, isChannelAndNotMegaGroup, peer2, chatActivityEnterView4.Z2.J(), new ai.q5(chatActivityEnterView4, chatFull, messagesController, i13), chatActivityEnterView4.W3);
-                            chatActivityEnterView4.q0 = ffVar2;
-                            ffVar2.e = true;
-                            ffVar2.c = 220;
-                            ffVar2.setOutsideTouchable(true);
+                            gf gfVar2 = new gf(chatActivityEnterView4, chatActivityEnterView4.getContext(), chatActivityEnterView4.P2, messagesController, isChannelAndNotMegaGroup, peer2, chatActivityEnterView4.Z2.I(), new ai.q5(chatActivityEnterView4, chatFull, messagesController, i13), chatActivityEnterView4.W3);
+                            chatActivityEnterView4.q0 = gfVar2;
+                            gfVar2.e = true;
+                            gfVar2.c = 220;
+                            gfVar2.setOutsideTouchable(true);
                             chatActivityEnterView4.q0.setClippingEnabled(true);
                             chatActivityEnterView4.q0.setFocusable(true);
                             chatActivityEnterView4.q0.getContentView().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
@@ -479,10 +479,10 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                             chatActivityEnterView4.q0.b = false;
                             int i17 = -AndroidUtilities.dp(4.0f);
                             int[] iArr = new int[2];
-                            if (!AndroidUtilities.isTablet() || wnVar4 == null) {
+                            if (!AndroidUtilities.isTablet() || ynVar4 == null) {
                                 i10 = i17;
                             } else {
-                                wnVar4.getFragmentView().getLocationInWindow(iArr);
+                                ynVar4.getFragmentView().getLocationInWindow(iArr);
                                 i10 = iArr[0] + i17;
                             }
                             int b13 = chatActivityEnterView4.Z2.b1();
@@ -495,21 +495,21 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                                 b13 -= chatActivityEnterView4.getEmojiPadding();
                             }
                             AndroidUtilities.dp(f10);
-                            if (measuredHeight < (((i17 * 2) + b13) - ((wnVar4 == null || !wnVar4.isInBubbleMode()) ? AndroidUtilities.statusBarHeight : 0)) - chatActivityEnterView4.q0.p.getMeasuredHeight()) {
+                            if (measuredHeight < (((i17 * 2) + b13) - ((ynVar4 == null || !ynVar4.isInBubbleMode()) ? AndroidUtilities.statusBarHeight : 0)) - chatActivityEnterView4.q0.p.getMeasuredHeight()) {
                                 chatActivityEnterView4.getLocationInWindow(iArr);
                                 i11 = ((iArr[1] - measuredHeight) - i17) - AndroidUtilities.dp(2.0f);
                             } else {
-                                int i18 = (wnVar4 == null || !wnVar4.isInBubbleMode()) ? AndroidUtilities.statusBarHeight : 0;
+                                int i18 = (ynVar4 == null || !ynVar4.isInBubbleMode()) ? AndroidUtilities.statusBarHeight : 0;
                                 chatActivityEnterView4.q0.o.getLayoutParams().height = ((b13 - i18) - AndroidUtilities.dp(14.0f)) - chatActivityEnterView4.getHeightWithTopView();
                                 i11 = i18;
                             }
-                            ff ffVar3 = chatActivityEnterView4.q0;
-                            View view2 = ffVar3.u;
-                            yl0 yl0Var = ffVar3.v;
-                            TLRPC.Peer peer3 = ffVar3.r;
-                            ep0 ep0Var = ffVar3.o;
-                            ai.f0 f0Var = ffVar3.t;
-                            ArrayList arrayList2 = ffVar3.z;
+                            gf gfVar3 = chatActivityEnterView4.q0;
+                            View view2 = gfVar3.u;
+                            zl0 zl0Var = gfVar3.v;
+                            TLRPC.Peer peer3 = gfVar3.r;
+                            ip0 ip0Var = gfVar3.o;
+                            ai.f0 f0Var = gfVar3.t;
+                            ArrayList arrayList2 = gfVar3.z;
                             int size = arrayList2.size();
                             int i19 = 0;
                             while (i19 < size) {
@@ -520,9 +520,9 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                             arrayList2.clear();
                             f0Var.setPivotX(AndroidUtilities.dp(8.0f));
                             f0Var.setPivotY(f0Var.getMeasuredHeight() - AndroidUtilities.dp(8.0f));
-                            ep0Var.setPivotX(0.0f);
-                            ep0Var.setPivotY(0.0f);
-                            ArrayList<TLRPC.TL_sendAsPeer> arrayList3 = ffVar3.s.peers;
+                            ip0Var.setPivotX(0.0f);
+                            ip0Var.setPivotY(0.0f);
+                            ArrayList<TLRPC.TL_sendAsPeer> arrayList3 = gfVar3.s.peers;
                             if (peer3 != null) {
                                 int dp = AndroidUtilities.dp(54.0f);
                                 int size2 = arrayList3.size() * dp;
@@ -530,7 +530,7 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                                 while (i20 < arrayList3.size()) {
                                     TLRPC.Peer peer4 = arrayList3.get(i20).peer;
                                     ArrayList<TLRPC.TL_sendAsPeer> arrayList4 = arrayList3;
-                                    yl0 yl0Var2 = yl0Var;
+                                    zl0 zl0Var2 = zl0Var;
                                     long j10 = peer4.channel_id;
                                     if (j10 == 0 || j10 != peer3.channel_id) {
                                         long j11 = peer4.user_id;
@@ -538,13 +538,13 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                                             long j12 = peer4.chat_id;
                                             if (j12 == 0 || j12 != peer3.chat_id) {
                                                 i20++;
-                                                yl0Var = yl0Var2;
+                                                zl0Var = zl0Var2;
                                                 arrayList3 = arrayList4;
                                             }
                                         }
                                     }
-                                    ffVar3.w.h1(i20, (size2 - ((arrayList4.size() - 2) * dp)) + AndroidUtilities.dp(7.0f) + ((i20 == arrayList4.size() + (-1) || yl0Var2.getMeasuredHeight() >= size2) ? 0 : yl0Var2.getMeasuredHeight() % dp));
-                                    if (yl0Var2.computeVerticalScrollOffset() > 0) {
+                                    gfVar3.w.h1(i20, (size2 - ((arrayList4.size() - 2) * dp)) + AndroidUtilities.dp(7.0f) + ((i20 == arrayList4.size() + (-1) || zl0Var2.getMeasuredHeight() >= size2) ? 0 : zl0Var2.getMeasuredHeight() % dp));
+                                    if (zl0Var2.computeVerticalScrollOffset() > 0) {
                                         view2.animate().cancel();
                                         view2.animate().alpha(1.0f).setDuration(150L).start();
                                     }
@@ -552,33 +552,33 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                             }
                             f0Var.setScaleX(0.25f);
                             f0Var.setScaleY(0.25f);
-                            ep0Var.setAlpha(0.25f);
+                            ip0Var.setAlpha(0.25f);
                             o1.k kVar = new o1.k(f0Var, o1.h.o);
                             kVar.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
-                            kVar.b(new bp0(ffVar3, 2));
+                            kVar.b(new fp0(gfVar3, 2));
                             o1.k kVar2 = new o1.k(f0Var, o1.h.p);
                             kVar2.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
-                            kVar2.b(new bp0(ffVar3, 3));
+                            kVar2.b(new fp0(gfVar3, 3));
                             o1.c cVar = o1.h.t;
                             o1.k kVar3 = new o1.k(f0Var, cVar);
                             kVar3.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
-                            o1.k kVar4 = new o1.k(ep0Var, cVar);
+                            o1.k kVar4 = new o1.k(ip0Var, cVar);
                             kVar4.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
                             for (o1.k kVar5 : Arrays.asList(kVar, kVar2, kVar3, kVar4)) {
                                 arrayList2.add(kVar5);
-                                kVar5.a(new cp0(ffVar3, kVar5, 1));
+                                kVar5.a(new gp0(gfVar3, kVar5, 1));
                                 kVar5.f();
                             }
-                            ff ffVar4 = chatActivityEnterView4.q0;
+                            gf gfVar4 = chatActivityEnterView4.q0;
                             chatActivityEnterView4.s0 = i10;
                             chatActivityEnterView4.t0 = i11;
-                            ffVar4.showAtLocation(view, 51, i10, i11);
+                            gfVar4.showAtLocation(view, 51, i10, i11);
                             chatActivityEnterView4.p0.setProgress(1.0f);
                             break;
                         }
                     }
                 } else {
-                    chatActivityEnterView4.r0 = new je(chatActivityEnterView4, 3);
+                    chatActivityEnterView4.r0 = new ke(chatActivityEnterView4, 3);
                     if (chatActivityEnterView4.l5) {
                         chatActivityEnterView4.n0(true, false, true);
                         break;
@@ -593,15 +593,15 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                 chatActivityEnterView.d0();
                 break;
             case 18:
-                org.telegram.ui.ActionBar.o1 o1Var2 = chatActivityEnterView.U;
-                if ((o1Var2 == null || !o1Var2.f) && chatActivityEnterView.F != 0.0f) {
+                org.telegram.ui.ActionBar.p1 p1Var2 = chatActivityEnterView.U;
+                if ((p1Var2 == null || !p1Var2.f) && chatActivityEnterView.F != 0.0f) {
                     chatActivityEnterView.Z2.A2();
                     break;
                 }
                 break;
             case 19:
-                org.telegram.ui.ActionBar.o1 o1Var3 = chatActivityEnterView.U;
-                if ((o1Var3 == null || !o1Var3.f) && chatActivityEnterView.F != 0.0f) {
+                org.telegram.ui.ActionBar.p1 p1Var3 = chatActivityEnterView.U;
+                if ((p1Var3 == null || !p1Var3.f) && chatActivityEnterView.F != 0.0f) {
                     chatActivityEnterView.Z2.q1();
                     break;
                 }

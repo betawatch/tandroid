@@ -7,6 +7,7 @@ import b2.r0;
 import b2.s0;
 import e2.d0;
 import g2.u;
+import ii.n4;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Collections;
@@ -14,12 +15,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.web.w;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c implements y2.g {
-    public static final org.webrtc.audio.b E = new org.webrtc.audio.b(1);
-    public final l.d a;
+    public static final w E = new w(3);
+    public final n4 a;
     public final s b;
     public final qb.b c;
     public a5.a f;
@@ -34,20 +36,10 @@ public final class c implements y2.g {
     public final HashMap d = new HashMap();
     public long y = -9223372036854775807L;
 
-    public c(l.d dVar, qb.b bVar, s sVar) {
-        this.a = dVar;
+    public c(n4 n4Var, qb.b bVar, s sVar) {
+        this.a = n4Var;
         this.b = sVar;
         this.c = bVar;
-    }
-
-    @Override // y2.g
-    public final void E(y2.i iVar, long j3, long j10, boolean z10) {
-        y2.o oVar = (y2.o) iVar;
-        long j11 = oVar.a;
-        Uri uri = oVar.d.c;
-        u2.t tVar = new u2.t(j10);
-        this.c.getClass();
-        this.f.o(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
     public final l a(Uri uri, boolean z10) {
@@ -125,7 +117,7 @@ public final class c implements y2.g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final k4.d m(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d s(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
         long j11;
         y2.o oVar = (y2.o) iVar;
         long j12 = oVar.a;
@@ -153,7 +145,7 @@ public final class c implements y2.g {
     }
 
     @Override // y2.g
-    public final void n(y2.i iVar, long j3, long j10, int i10) {
+    public final void t(y2.i iVar, long j3, long j10, int i10) {
         u2.t tVar;
         y2.o oVar = (y2.o) iVar;
         if (i10 == 0) {
@@ -168,7 +160,7 @@ public final class c implements y2.g {
     }
 
     @Override // y2.g
-    public final void o(y2.i iVar, long j3, long j10) {
+    public final void v(y2.i iVar, long j3, long j10) {
         o oVar;
         y2.o oVar2 = (y2.o) iVar;
         p pVar = (p) oVar2.f;
@@ -205,5 +197,15 @@ public final class c implements y2.g {
         }
         this.c.getClass();
         this.f.p(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+    }
+
+    @Override // y2.g
+    public final void x0(y2.i iVar, long j3, long j10, boolean z10) {
+        y2.o oVar = (y2.o) iVar;
+        long j11 = oVar.a;
+        Uri uri = oVar.d.c;
+        u2.t tVar = new u2.t(j10);
+        this.c.getClass();
+        this.f.o(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

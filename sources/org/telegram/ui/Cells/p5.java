@@ -11,10 +11,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.jm;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.km;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class p5 extends org.telegram.ui.Components.w9 {
     public final Paint G;
@@ -73,7 +73,7 @@ public final class p5 extends org.telegram.ui.Components.w9 {
         }
         float f7 = t5Var.T;
         if (f7 != 1.0f && t5Var.R != null) {
-            int interpolation = (int) (sr.f.getInterpolation(1.0f - f7) * 255.0f);
+            int interpolation = (int) (tr.f.getInterpolation(1.0f - f7) * 255.0f);
             Paint paint = this.G;
             paint.setAlpha(interpolation);
             canvas.drawBitmap(t5Var.R, 0.0f, 0.0f, paint);
@@ -93,7 +93,7 @@ public final class p5 extends org.telegram.ui.Components.w9 {
         }
         if (t5Var.s) {
             r5 r5Var = t5Var.U;
-            if ((r5Var == null || !((jm) ((org.telegram.ui.Components.s) r5Var).b).s) && (photoEntry = t5Var.G) != null && photoEntry.isLivePhoto()) {
+            if ((r5Var == null || !((km) ((org.telegram.ui.Components.s) r5Var).b).s) && (photoEntry = t5Var.G) != null && photoEntry.isLivePhoto()) {
                 if (t5Var.G.isUnalivePhoto()) {
                     if (this.J == null) {
                         this.J = getContext().getResources().getDrawable(R.drawable.media_live_off).mutate();

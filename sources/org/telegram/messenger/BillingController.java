@@ -30,9 +30,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.qg0;
+import org.telegram.ui.ug0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class BillingController implements c5.q, c5.d {
     public static final r PREMIUM_PRODUCT;
@@ -53,7 +53,7 @@ public class BillingController implements c5.q, c5.d {
     private ArrayList<Runnable> setupListeners = new ArrayList<>();
     private int triesLeft = 0;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public interface ProductDetailsResponseListenerLegacy {
         void onProductDetailsResponse(c5.h hVar, List<c5.o> list);
     }
@@ -244,8 +244,8 @@ public class BillingController implements c5.q, c5.d {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void lambda$onPurchasesUpdatedInternal$10(org.telegram.ui.ActionBar.a2[] a2VarArr, Purchase purchase, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction, AccountInstance accountInstance, c5.h hVar, AtomicInteger atomicInteger, AtomicInteger atomicInteger2, Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new e0(a2VarArr, 0));
+    public void lambda$onPurchasesUpdatedInternal$10(org.telegram.ui.ActionBar.b2[] b2VarArr, Purchase purchase, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction, AccountInstance accountInstance, c5.h hVar, AtomicInteger atomicInteger, AtomicInteger atomicInteger2, Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new e0(b2VarArr, 0));
         this.requestingTokens.remove(purchase.c());
         int i10 = 1;
         if (!(tLObject instanceof TLRPC.Updates)) {
@@ -303,8 +303,8 @@ public class BillingController implements c5.q, c5.d {
             serializedData2.cleanup();
             FileLog.d("BillingUtilities.clearPurpose: id_hex = " + bytesToHex);
             ApplicationLoader.applicationContext.getSharedPreferences("purchases", 0).edit().remove(bytesToHex).apply();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
@@ -317,31 +317,31 @@ public class BillingController implements c5.q, c5.d {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static void lambda$onPurchasesUpdatedInternal$5(org.telegram.ui.ActionBar.a2[] a2VarArr) {
-        org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(ApplicationLoader.applicationContext, 3, null);
-        a2VarArr[0] = a2Var;
-        a2Var.q(500L);
+    public static void lambda$onPurchasesUpdatedInternal$5(org.telegram.ui.ActionBar.b2[] b2VarArr) {
+        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(ApplicationLoader.applicationContext, 3, null);
+        b2VarArr[0] = b2Var;
+        b2Var.q(500L);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$6(org.telegram.ui.ActionBar.a2[] a2VarArr) {
-        org.telegram.ui.ActionBar.a2 a2Var = a2VarArr[0];
-        if (a2Var != null) {
-            a2Var.dismiss();
+    public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$6(org.telegram.ui.ActionBar.b2[] b2VarArr) {
+        org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
+        if (b2Var != null) {
+            b2Var.dismiss();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onPurchasesUpdatedInternal$7(AccountInstance accountInstance, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction, TL_update.TL_updateSentPhoneCode tL_updateSentPhoneCode) {
-        qg0 qg0Var = (qg0) LaunchActivity.N();
-        if (qg0Var == null) {
-            qg0Var = new qg0(accountInstance.getCurrentAccount());
-            org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+        ug0 ug0Var = (ug0) LaunchActivity.N();
+        if (ug0Var == null) {
+            ug0Var = new ug0(accountInstance.getCurrentAccount());
+            org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
             if (U != null) {
-                U.presentFragment(qg0Var);
+                U.presentFragment(ug0Var);
             }
         }
-        qg0Var.q1(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
+        ug0Var.q1(((TLRPC.TL_inputStorePaymentAuthCode) tL_payments_assignPlayMarketTransaction.purpose).phone_number, tL_updateSentPhoneCode.sent_code);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -364,8 +364,8 @@ public class BillingController implements c5.q, c5.d {
     public /* synthetic */ void lambda$onQueriedPremiumProductDetails$14() {
         try {
             queryProductDetails(Collections.singletonList(PREMIUM_PRODUCT), new d0(this));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
@@ -482,8 +482,8 @@ public class BillingController implements c5.q, c5.d {
         this.triesLeft = 3;
         try {
             queryProductDetails(Collections.singletonList(PREMIUM_PRODUCT), new d0(this));
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
         queryPurchases("inapp", new d0(this));
         queryPurchases("subs", new d0(this));
@@ -568,8 +568,8 @@ public class BillingController implements c5.q, c5.d {
                     } else {
                         try {
                             inputStorePaymentPurpose = yf.b.b(str2);
-                        } catch (Exception e) {
-                            FileLog.e("Billing: Extract payload, failed to get purpose", e);
+                        } catch (Exception e7) {
+                            FileLog.e("Billing: Extract payload, failed to get purpose", e7);
                             inputStorePaymentPurpose = null;
                         }
                         String str3 = new String(Base64.decode(str, i12), d9.d.a);
@@ -577,8 +577,8 @@ public class BillingController implements c5.q, c5.d {
                         if (str3.startsWith("account-")) {
                             try {
                                 accountInstance = AccountInstance.getInstance(Integer.parseInt(str3.substring(8)));
-                            } catch (Exception e7) {
-                                FileLog.e("Billing: Extract Payload", e7);
+                            } catch (Exception e10) {
+                                FileLog.e("Billing: Extract Payload", e10);
                             }
                         } else {
                             long parseLong = Long.parseLong(str3);
@@ -624,13 +624,13 @@ public class BillingController implements c5.q, c5.d {
                                     tL_payments_assignPlayMarketTransaction.receipt = tL_dataJSON;
                                     tL_dataJSON.data = purchase.a;
                                     tL_payments_assignPlayMarketTransaction.purpose = (TLRPC.InputStorePaymentPurpose) obj2;
-                                    final org.telegram.ui.ActionBar.a2[] a2VarArr = new org.telegram.ui.ActionBar.a2[1];
-                                    AndroidUtilities.runOnUIThread(new e0(a2VarArr, 1));
+                                    final org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
+                                    AndroidUtilities.runOnUIThread(new e0(b2VarArr, 1));
                                     atomicInteger.incrementAndGet();
                                     accountInstance3.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new RequestDelegate() { // from class: org.telegram.messenger.w
                                         @Override // org.telegram.tgnet.RequestDelegate
                                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                            BillingController.this.lambda$onPurchasesUpdatedInternal$10(a2VarArr, purchase, tL_payments_assignPlayMarketTransaction, accountInstance3, hVar2, atomicInteger2, atomicInteger, runnable, tLObject, tL_error);
+                                            BillingController.this.lambda$onPurchasesUpdatedInternal$10(b2VarArr, purchase, tL_payments_assignPlayMarketTransaction, accountInstance3, hVar2, atomicInteger2, atomicInteger, runnable, tLObject, tL_error);
                                         }
                                     }, tL_payments_assignPlayMarketTransaction.purpose instanceof TLRPC.TL_inputStorePaymentAuthCode ? 65608 : 65600);
                                 }
@@ -668,7 +668,7 @@ public class BillingController implements c5.q, c5.d {
             throw new IllegalStateException("Billing: Controller should be ready for this call!");
         }
         c5.b bVar = this.billingClient;
-        a6.i iVar = new a6.i(9, false);
+        a6.i iVar = new a6.i(9);
         if (list == null || list.isEmpty()) {
             throw new IllegalArgumentException("Product list cannot be empty.");
         }
@@ -700,7 +700,7 @@ public class BillingController implements c5.q, c5.d {
             c5.h u10 = cVar.u();
             cVar.y(25, 9, u10);
             com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
-            pVar.a(u10, com.google.android.gms.internal.play_billing.v.e);
+            pVar.b(u10, com.google.android.gms.internal.play_billing.v.e);
         }
     }
 
@@ -719,8 +719,8 @@ public class BillingController implements c5.q, c5.d {
                 return;
             }
             this.billingClient.d(this);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
@@ -750,7 +750,7 @@ public class BillingController implements c5.q, c5.d {
             FileLog.d("BillingController.launchBillingFlow, checking consumables");
             queryPurchases("inapp", new c5.p() { // from class: org.telegram.messenger.z
                 @Override // c5.p
-                public final void a(c5.h hVar, List list2) {
+                public final void b(c5.h hVar, List list2) {
                     BillingController.this.lambda$launchBillingFlow$4(activity, accountInstance, inputStorePaymentPurpose, list, fVar, hVar, list2);
                 }
             });

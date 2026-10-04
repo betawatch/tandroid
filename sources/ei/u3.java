@@ -1,117 +1,314 @@
 package ei;
 
-import ai.h5;
+import ai.d7;
 import android.content.Context;
+import android.text.TextUtils;
+import android.util.SparseArray;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import java.util.Arrays;
+import java.util.HashMap;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.gk;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.qk;
+import org.telegram.ui.Components.rk;
+import org.telegram.ui.Components.w00;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class u3 implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
+public final /* synthetic */ class u3 implements Runnable {
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e3 c;
-    public final /* synthetic */ d6 d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ Context f;
-    public final /* synthetic */ TL_payments.connectedBotStarRef h;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ long f;
+    public final /* synthetic */ long h;
     public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
+    public final /* synthetic */ Object v;
+    public final /* synthetic */ Object w;
+    public final /* synthetic */ Object x;
 
-    public /* synthetic */ u3(int i10, org.telegram.ui.ActionBar.e3 e3Var, d6 d6Var, LinearLayout linearLayout, long j3, Context context, TL_payments.connectedBotStarRef connectedbotstarref) {
+    public /* synthetic */ u3(ci.d dVar, TLObject tLObject, int i10, long j3, org.telegram.ui.ActionBar.f3 f3Var, TL_payments.starRefProgram starrefprogram, long j10, boolean z10, Context context, d6 d6Var, TLRPC.User user, TLRPC.TL_error tL_error) {
+        this.n = dVar;
+        this.d = tLObject;
         this.b = i10;
-        this.c = e3Var;
-        this.d = d6Var;
-        this.n = linearLayout;
-        this.e = j3;
-        this.f = context;
-        this.h = connectedbotstarref;
+        this.f = j3;
+        this.r = f3Var;
+        this.s = starrefprogram;
+        this.h = j10;
+        this.e = z10;
+        this.v = context;
+        this.w = d6Var;
+        this.x = user;
+        this.c = tL_error;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        long j3;
-        switch (this.a) {
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x01f9, code lost:
+    
+        if (r3.getChildCount() > 1) goto L73;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:79:0x01ff, code lost:
+    
+        r9.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.yq(r13, (org.telegram.ui.Components.w00) r2, r1, r12));
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x020d, code lost:
+    
+        r13.l();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:82:0x01fd, code lost:
+    
+        if (r2 != null) goto L74;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        TL_payments.connectedBotStarRef connectedbotstarref;
+        org.telegram.ui.ActionBar.n2 U;
+        int i10;
+        ArrayList arrayList;
+        int i11 = this.a;
+        Object obj = this.x;
+        Object obj2 = this.w;
+        long j3 = this.h;
+        Object obj3 = this.v;
+        Object obj4 = this.s;
+        boolean z10 = this.e;
+        Object obj5 = this.r;
+        TLObject tLObject = this.d;
+        TLRPC.TL_error tL_error = this.c;
+        Object obj6 = this.n;
+        switch (i11) {
             case 0:
-                h5 h5Var = (h5) this.n;
-                TL_payments.connectedBotStarRef connectedbotstarref = this.h;
-                if (!connectedbotstarref.revoked) {
-                    h5Var.run();
-                    break;
+                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj5;
+                TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj4;
+                Context context = (Context) obj3;
+                d6 d6Var = (d6) obj2;
+                TLRPC.User user = (TLRPC.User) obj;
+                ((ci.d) obj6).setLoading(false);
+                if (!(tLObject instanceof TL_payments.connectedStarRefBots)) {
+                    if (tL_error != null) {
+                        org.telegram.ui.Cells.c1.r(f3Var.topBulletinContainer, d6Var, tL_error, false);
+                        break;
+                    }
                 } else {
-                    int i10 = this.b;
-                    TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(connectedbotstarref.bot_id));
-                    if (user != null) {
-                        MessagesController.getInstance(i10).loadFullUser(user, 0, true, new q3(this.c, this.f, i10, this.e, this.d, 0));
+                    TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
+                    int i12 = this.b;
+                    yh.o g10 = yh.o.g(i12);
+                    long j10 = this.f;
+                    yh.l d = g10.d(j10);
+                    int i13 = d.a;
+                    MessagesController.getInstance(i13).putUsers(connectedstarrefbots.users, false);
+                    d.c = 0;
+                    d.h = false;
+                    d.d = false;
+                    ArrayList arrayList2 = d.e;
+                    arrayList2.clear();
+                    if (d.i != 0) {
+                        ConnectionsManager.getInstance(i13).cancelRequest(d.i, true);
+                        d.i = 0;
+                    }
+                    d.g = false;
+                    d.c = connectedstarrefbots.count;
+                    arrayList2.addAll(connectedstarrefbots.connected_bots);
+                    d.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList2.size() >= d.c;
+                    d.h = false;
+                    NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelConnectedBotsUpdate, Long.valueOf(d.b));
+                    d.a();
+                    f3Var.dismiss();
+                    int i14 = 0;
+                    while (true) {
+                        if (i14 < connectedstarrefbots.connected_bots.size()) {
+                            connectedbotstarref = connectedstarrefbots.connected_bots.get(i14);
+                            if (connectedbotstarref.bot_id != starrefprogram.bot_id) {
+                                i14++;
+                            }
+                        } else {
+                            connectedbotstarref = null;
+                        }
+                    }
+                    if ((j3 != j10 || z10) && (U = LaunchActivity.U()) != null && (!(U instanceof f4) || ((f4) U).P != j10)) {
+                        U.presentFragment(new f4(j10));
+                    }
+                    if (connectedbotstarref != null) {
+                        yh.m e7 = yh.o.g(i12).e(j10);
+                        long j11 = connectedbotstarref.bot_id;
+                        ArrayList arrayList3 = e7.e;
+                        int i15 = 0;
+                        while (true) {
+                            if (i15 < arrayList3.size()) {
+                                if (((TL_payments.starRefProgram) arrayList3.get(i15)).bot_id == j11) {
+                                    arrayList3.remove(i15);
+                                    e7.c--;
+                                    NotificationCenter.getInstance(e7.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelSuggestedBotsUpdate, Long.valueOf(e7.b));
+                                } else {
+                                    i15++;
+                                }
+                            }
+                        }
+                        new yc(f4.M0(context, i12, connectedbotstarref, j10, d6Var).topBulletinContainer, d6Var).V(Arrays.asList(user), LocaleController.getString(R.string.AffiliateProgramJoinedTitle), LocaleController.getString(R.string.AffiliateProgramJoinedText), null).j();
                         break;
                     }
                 }
                 break;
             default:
-                LinearLayout linearLayout = (LinearLayout) this.n;
-                int i11 = this.b;
-                yh.o g10 = yh.o.g(i11);
-                g10.n();
-                g10.o();
-                ArrayList arrayList = new ArrayList();
-                ArrayList arrayList2 = g10.j;
-                if (arrayList2 != null) {
-                    arrayList.addAll(arrayList2);
-                }
-                ArrayList arrayList3 = g10.l;
-                if (arrayList3 != null) {
-                    arrayList.addAll(arrayList3);
-                }
-                arrayList.add(0, UserConfig.getInstance(i11).getCurrentUser());
-                org.telegram.ui.ActionBar.e3 e3Var = this.c;
-                ViewGroup containerView = e3Var.getContainerView();
-                d6 d6Var = this.d;
-                a80 F = a80.F(containerView, d6Var, linearLayout);
-                int size = arrayList.size();
-                int i12 = 0;
-                while (i12 < size) {
-                    int i13 = i12 + 1;
-                    TLObject tLObject = (TLObject) arrayList.get(i12);
-                    if (tLObject instanceof TLRPC.User) {
-                        j3 = ((TLRPC.User) tLObject).id;
-                    } else {
-                        if (tLObject instanceof TLRPC.Chat) {
-                            TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-                            if (ChatObject.isChannelAndNotMegaGroup(chat)) {
-                                j3 = -chat.id;
+                qk qkVar = (qk) obj6;
+                AccountInstance accountInstance = (AccountInstance) obj5;
+                String str = (String) obj4;
+                ArrayList arrayList4 = (ArrayList) obj3;
+                ArrayList arrayList5 = (ArrayList) obj2;
+                ArrayList arrayList6 = (ArrayList) obj;
+                ArrayList arrayList7 = qkVar.P;
+                SparseArray sparseArray = qkVar.O;
+                ArrayList arrayList8 = qkVar.M;
+                HashMap hashMap = qkVar.Q;
+                ArrayList arrayList9 = qkVar.N;
+                ArrayList arrayList10 = qkVar.L;
+                rk rkVar = qkVar.X;
+                d7 d7Var = rkVar.L;
+                if (this.b == qkVar.T) {
+                    qkVar.S = false;
+                    if (tL_error == null) {
+                        gk gkVar = rkVar.r;
+                        d7Var.e(false, true);
+                        q90 q90Var = d7Var.e;
+                        vh.n nVar = d7Var.d;
+                        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+                        qkVar.G = messages_messages.next_rate;
+                        gk gkVar2 = gkVar;
+                        accountInstance.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
+                        accountInstance.getMessagesController().putUsers(messages_messages.users, false);
+                        accountInstance.getMessagesController().putChats(messages_messages.chats, false);
+                        if (!z10) {
+                            arrayList9.clear();
+                            sparseArray.clear();
+                            arrayList7.clear();
+                            hashMap.clear();
+                        }
+                        int i16 = messages_messages.count;
+                        qkVar.K = str;
+                        int size = arrayList4.size();
+                        int i17 = 0;
+                        while (i17 < size) {
+                            MessageObject messageObject = (MessageObject) arrayList4.get(i17);
+                            ArrayList arrayList11 = (ArrayList) hashMap.get(messageObject.monthKey);
+                            if (arrayList11 == null) {
+                                arrayList11 = new ArrayList();
+                                arrayList = arrayList4;
+                                hashMap.put(messageObject.monthKey, arrayList11);
+                                arrayList7.add(messageObject.monthKey);
+                            } else {
+                                arrayList = arrayList4;
+                            }
+                            arrayList11.add(messageObject);
+                            arrayList9.add(messageObject);
+                            sparseArray.put(messageObject.getId(), messageObject);
+                            i17++;
+                            arrayList4 = arrayList;
+                        }
+                        if (arrayList9.size() > i16) {
+                            i16 = arrayList9.size();
+                        }
+                        qkVar.V = arrayList9.size() >= i16;
+                        if (arrayList9.isEmpty()) {
+                            if (TextUtils.isEmpty(qkVar.K) && this.f == 0 && j3 == 0) {
+                                nVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle));
+                                q90Var.setVisibility(0);
+                                q90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitleFiles));
+                            } else {
+                                nVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
+                                q90Var.setVisibility(0);
+                                q90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                             }
                         }
-                        i12 = i13;
+                        if (!z10) {
+                            arrayList10.clear();
+                            if (arrayList5 != null) {
+                                arrayList10.addAll(arrayList5);
+                            }
+                            if (str.length() >= 3 && (LocaleController.getString(R.string.SavedMessages).toLowerCase().startsWith(str) || "saved messages".startsWith(str))) {
+                                int i18 = 0;
+                                while (true) {
+                                    if (i18 >= arrayList10.size()) {
+                                        arrayList10.add(0, UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser());
+                                    } else if (!(arrayList10.get(i18) instanceof TLRPC.User) || UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().id != ((TLRPC.User) arrayList10.get(i18)).id) {
+                                        i18++;
+                                    }
+                                }
+                            }
+                            arrayList8.clear();
+                            arrayList8.addAll(arrayList6);
+                            qkVar.a0(arrayList10, arrayList8, TextUtils.isEmpty(qkVar.K));
+                        }
+                        int i19 = -1;
+                        View view = null;
+                        int i20 = 0;
+                        while (i20 < size) {
+                            gk gkVar3 = gkVar2;
+                            View childAt = gkVar3.getChildAt(i20);
+                            if (childAt instanceof w00) {
+                                i19 = RecyclerView.R(childAt);
+                                view = childAt;
+                            }
+                            i20++;
+                            gkVar2 = gkVar3;
+                        }
+                        gk gkVar4 = gkVar2;
+                        if (view != null) {
+                            gkVar4.removeView(view);
+                        }
+                        if (rkVar.J.getVisibility() != 0) {
+                            i10 = 1;
+                            break;
+                        } else {
+                            i10 = 1;
+                            break;
+                        }
+                    } else {
+                        vh.n nVar2 = d7Var.d;
+                        q90 q90Var2 = d7Var.e;
+                        nVar2.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
+                        q90Var2.setVisibility(0);
+                        q90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                        d7Var.e(false, true);
+                        break;
                     }
-                    F.g(tLObject, j3 == this.e, new p3(i11, j3, this.f, this.h, e3Var, d6Var));
-                    i12 = i13;
                 }
-                F.t = false;
-                F.s = 0;
-                F.V(5);
-                F.a0(AndroidUtilities.dp(24.0f), 0.0f);
-                F.Z();
                 break;
         }
     }
 
-    public /* synthetic */ u3(TL_payments.connectedBotStarRef connectedbotstarref, int i10, org.telegram.ui.ActionBar.e3 e3Var, Context context, long j3, d6 d6Var, h5 h5Var) {
-        this.h = connectedbotstarref;
+    public /* synthetic */ u3(qk qkVar, int i10, TLRPC.TL_error tL_error, TLObject tLObject, AccountInstance accountInstance, boolean z10, String str, ArrayList arrayList, long j3, long j10, ArrayList arrayList2, ArrayList arrayList3) {
+        this.n = qkVar;
         this.b = i10;
-        this.c = e3Var;
-        this.f = context;
-        this.e = j3;
-        this.d = d6Var;
-        this.n = h5Var;
+        this.c = tL_error;
+        this.d = tLObject;
+        this.r = accountInstance;
+        this.e = z10;
+        this.s = str;
+        this.v = arrayList;
+        this.f = j3;
+        this.h = j10;
+        this.w = arrayList2;
+        this.x = arrayList3;
     }
 }

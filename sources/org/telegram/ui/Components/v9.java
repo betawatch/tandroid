@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class v9 extends GradientDrawable {
     public final int[] a;
@@ -36,7 +36,7 @@ public final class v9 extends GradientDrawable {
         paint.setDither(true);
     }
 
-    public static /* synthetic */ void a(v9 v9Var, Runnable[] runnableArr, Bitmap bitmap, l60 l60Var, int i10, w7.j0[] j0VarArr) {
+    public static /* synthetic */ void a(v9 v9Var, Runnable[] runnableArr, Bitmap bitmap, m60 m60Var, int i10, w7.w5[] w5VarArr) {
         a0.f fVar = v9Var.b;
         ArrayList arrayList = v9Var.e;
         if (!arrayList.contains(runnableArr)) {
@@ -47,10 +47,10 @@ public final class v9 extends GradientDrawable {
             return;
         }
         if (bitmap != null) {
-            fVar.put(l60Var, bitmap);
+            fVar.put(m60Var, bitmap);
         } else {
-            fVar.remove(l60Var);
-            v9Var.c.remove(l60Var);
+            fVar.remove(m60Var);
+            v9Var.c.remove(m60Var);
         }
         runnableArr[i10] = null;
         boolean z10 = true;
@@ -65,14 +65,14 @@ public final class v9 extends GradientDrawable {
         if (!z10) {
             arrayList.remove(runnableArr);
         }
-        w7.j0 j0Var = j0VarArr[0];
-        if (j0Var != null) {
-            j0Var.b(l60Var.a, l60Var.b);
+        w7.w5 w5Var = w5VarArr[0];
+        if (w5Var != null) {
+            w5Var.b(m60Var.a, m60Var.b);
             if (z10) {
                 return;
             }
-            j0VarArr[0].a();
-            j0VarArr[0] = null;
+            w5VarArr[0].a();
+            w5VarArr[0] = null;
         }
     }
 
@@ -175,10 +175,10 @@ public final class v9 extends GradientDrawable {
                 if (u9Var != null) {
                     u9Var.dispose();
                 }
-                l60 l60Var = new l60(width, height);
-                fVar.put(l60Var, null);
-                this.c.put(l60Var, Boolean.TRUE);
-                final q9 g10 = g(new l60[]{l60Var}, new s9(this, viewGroup), 0L);
+                m60 m60Var = new m60(width, height);
+                fVar.put(m60Var, null);
+                this.c.put(m60Var, Boolean.TRUE);
+                final q9 g10 = g(new m60[]{m60Var}, new s9(this, viewGroup), 0L);
                 u9 u9Var2 = (u9) fVar2.put(viewGroup, new u9() { // from class: org.telegram.ui.Components.r9
                     @Override // org.telegram.ui.Components.u9
                     public final void dispose() {
@@ -189,8 +189,8 @@ public final class v9 extends GradientDrawable {
                 super.draw(canvas);
                 return u9Var2;
             }
-            l60 l60Var2 = (l60) fVar.e(i11);
-            if (l60Var2.a == width && l60Var2.b == height) {
+            m60 m60Var2 = (m60) fVar.e(i11);
+            if (m60Var2.a == width && m60Var2.b == height) {
                 Bitmap bitmap = (Bitmap) fVar.h(i11);
                 if (bitmap != null) {
                     canvas.drawBitmap(bitmap, (Rect) null, bounds, this.f);
@@ -219,10 +219,10 @@ public final class v9 extends GradientDrawable {
         float f7 = Float.MAX_VALUE;
         Bitmap bitmap2 = null;
         for (int i11 = 0; i11 < i10; i11++) {
-            l60 l60Var = (l60) fVar.e(i11);
+            m60 m60Var = (m60) fVar.e(i11);
             float f10 = f7;
-            float sqrt = (float) Math.sqrt(Math.pow(height - l60Var.b, 2.0d) + Math.pow(width - l60Var.a, 2.0d));
-            if (sqrt >= f10 || (bitmap = (Bitmap) fVar.h(i11)) == null || ((bool = (Boolean) this.c.get(l60Var)) != null && bool.booleanValue())) {
+            float sqrt = (float) Math.sqrt(Math.pow(height - m60Var.b, 2.0d) + Math.pow(width - m60Var.a, 2.0d));
+            if (sqrt >= f10 || (bitmap = (Bitmap) fVar.h(i11)) == null || ((bool = (Boolean) this.c.get(m60Var)) != null && bool.booleanValue())) {
                 f7 = f10;
             } else {
                 bitmap2 = bitmap;
@@ -236,19 +236,19 @@ public final class v9 extends GradientDrawable {
         }
     }
 
-    public final q9 f(n2.e eVar, w7.j0 j0Var, long j3) {
-        l60[] l60VarArr = (l60[]) eVar.b;
+    public final q9 f(n2.c cVar, w7.w5 w5Var, long j3) {
+        m60[] m60VarArr = (m60[]) cVar.b;
         if (!this.g) {
-            ArrayList arrayList = new ArrayList(l60VarArr.length);
-            for (l60 l60Var : l60VarArr) {
+            ArrayList arrayList = new ArrayList(m60VarArr.length);
+            for (m60 m60Var : m60VarArr) {
                 a0.f fVar = this.b;
-                if (!fVar.containsKey(l60Var)) {
-                    fVar.put(l60Var, null);
-                    arrayList.add(l60Var);
+                if (!fVar.containsKey(m60Var)) {
+                    fVar.put(m60Var, null);
+                    arrayList.add(m60Var);
                 }
             }
             if (!arrayList.isEmpty()) {
-                return g((l60[]) arrayList.toArray(new l60[0]), j0Var, j3);
+                return g((m60[]) arrayList.toArray(new m60[0]), w5Var, j3);
             }
         }
         return null;
@@ -262,23 +262,23 @@ public final class v9 extends GradientDrawable {
         }
     }
 
-    public final q9 g(l60[] l60VarArr, w7.j0 j0Var, long j3) {
-        if (l60VarArr.length == 0) {
+    public final q9 g(m60[] m60VarArr, w7.w5 w5Var, long j3) {
+        if (m60VarArr.length == 0) {
             return null;
         }
-        w7.j0[] j0VarArr = {j0Var};
-        Runnable[] runnableArr = new Runnable[l60VarArr.length];
+        w7.w5[] w5VarArr = {w5Var};
+        Runnable[] runnableArr = new Runnable[m60VarArr.length];
         this.e.add(runnableArr);
-        for (int i10 = 0; i10 < l60VarArr.length; i10++) {
-            l60 l60Var = l60VarArr[i10];
-            if (l60Var.a != 0 && l60Var.b != 0) {
+        for (int i10 = 0; i10 < m60VarArr.length; i10++) {
+            m60 m60Var = m60VarArr[i10];
+            if (m60Var.a != 0 && m60Var.b != 0) {
                 DispatchQueue dispatchQueue = Utilities.globalQueue;
-                p9 p9Var = new p9(this, l60Var, runnableArr, i10, j0VarArr);
+                p9 p9Var = new p9(this, m60Var, runnableArr, i10, w5VarArr);
                 runnableArr[i10] = p9Var;
                 dispatchQueue.postRunnable(p9Var, j3);
             }
         }
-        return new q9(this, j0VarArr, runnableArr, l60VarArr);
+        return new q9(this, w5VarArr, runnableArr, m60VarArr);
     }
 
     @Override // android.graphics.drawable.GradientDrawable, android.graphics.drawable.Drawable

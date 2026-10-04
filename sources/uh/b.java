@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.Utilities;
 import w7.q;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class b extends Drawable {
     public final a b;
@@ -47,7 +47,7 @@ public final class b extends Drawable {
         this.d.translate(f10, f10);
         float f11 = 1.0f / f7;
         this.d.scale(f11, f11);
-        this.b.o(this.d, 255);
+        this.b.p(this.d, 255);
         Utilities.stackBlurBitmap(this.c, (int) f10);
         this.d.restore();
     }
@@ -59,7 +59,7 @@ public final class b extends Drawable {
         if (i10 == 255) {
             canvas.save();
             canvas.translate(this.g, this.h);
-            aVar.o(canvas, 255);
+            aVar.p(canvas, 255);
             canvas.restore();
             return;
         }
@@ -87,7 +87,7 @@ public final class b extends Drawable {
         if (b10 > 0) {
             canvas.save();
             canvas.translate(this.g, this.h);
-            aVar.o(canvas, b10);
+            aVar.p(canvas, b10);
             canvas.restore();
         }
     }

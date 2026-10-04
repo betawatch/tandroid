@@ -27,26 +27,25 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.gd0;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.qn0;
-import org.telegram.ui.Components.ub;
+import org.telegram.ui.Components.rc;
+import org.telegram.ui.Components.un0;
+import org.telegram.ui.Components.vb;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.c50;
-import org.telegram.ui.cd0;
-import org.telegram.ui.g50;
-import org.telegram.ui.kh;
-import org.telegram.ui.wn;
+import org.telegram.ui.gd0;
+import org.telegram.ui.gh;
+import org.telegram.ui.h50;
+import org.telegram.ui.l50;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d2 implements MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.z1, e2.m, m4.j0, e2.h, NativeInstance.PayloadCallback, Utilities.Callback3Return, t5.b {
+public final /* synthetic */ class d2 implements MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.a2, e2.m, m4.j0, e2.h, NativeInstance.PayloadCallback, Utilities.Callback3Return, t5.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -72,129 +71,23 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
         try {
             k1Var = (m4.k1) ((i9.w) obj).get();
             e2.d.e(k1Var, "SessionResult must not be null");
-        } catch (InterruptedException e) {
-            e = e;
+        } catch (InterruptedException e7) {
+            e = e7;
             e2.a.o("MediaSessionStub", "Session operation failed", e);
             k1Var = new m4.k1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
-        } catch (CancellationException e7) {
-            e2.a.o("MediaSessionStub", "Session operation cancelled", e7);
+        } catch (CancellationException e10) {
+            e2.a.o("MediaSessionStub", "Session operation cancelled", e10);
             k1Var = new m4.k1(1);
-        } catch (ExecutionException e10) {
-            e = e10;
+        } catch (ExecutionException e11) {
+            e = e11;
             e2.a.o("MediaSessionStub", "Session operation failed", e);
             k1Var = new m4.k1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
         }
         m4.a1.O0(a0Var, rVar, this.b, k1Var);
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        switch (this.a) {
-            case 1:
-                hg.u uVar = (hg.u) this.c;
-                TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) this.d;
-                String obj = uVar.getText().toString();
-                if (obj.length() <= 32) {
-                    hg.a0 d = hg.a0.d(this.b);
-                    TL_account.TL_businessChatLink c10 = d.c(tL_businessChatLink.link);
-                    if (c10 != null) {
-                        TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink = new TL_account.TL_inputBusinessChatLink();
-                        tL_inputBusinessChatLink.message = c10.message;
-                        tL_inputBusinessChatLink.entities = c10.entities;
-                        tL_inputBusinessChatLink.title = obj;
-                        d.b(c10, tL_inputBusinessChatLink, null);
-                    }
-                    a2Var.dismiss();
-                    break;
-                } else {
-                    AndroidUtilities.shakeView(uVar);
-                    break;
-                }
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 10:
-            case 15:
-            default:
-                StickersActivity.a0((StickersActivity) this.c, (ArrayList) this.d, this.b);
-                break;
-            case 6:
-                wn wnVar = (wn) this.c;
-                wnVar.getMessagesController().pinMessage(wnVar.e, wnVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
-                qc B = yc.B(wnVar, true, null, null, wnVar.ea);
-                B.j();
-                ub ubVar = B.e;
-                ubVar.postDelayed(new kh(0, ubVar), 550L);
-                break;
-            case 7:
-                wn.d0((wn) this.c, this.b, (MessageObject) this.d);
-                break;
-            case 8:
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
-                MessagesStorage.StringCallback stringCallback = (MessagesStorage.StringCallback) this.d;
-                String trim = editTextBoldCursor.getText().toString().trim();
-                if (trim.length() <= this.b && !trim.isEmpty()) {
-                    stringCallback.run(trim);
-                    a2Var.dismiss();
-                    break;
-                } else {
-                    AndroidUtilities.shakeView(editTextBoldCursor);
-                    break;
-                }
-                break;
-            case 9:
-                qn0 qn0Var = (qn0) this.c;
-                TLRPC.Reaction reaction = (TLRPC.Reaction) this.d;
-                String obj2 = qn0Var.getText().toString();
-                if (obj2.length() <= 12) {
-                    MessagesController.getInstance(this.b).renameSavedReactionTag(zg.o0.d(reaction), obj2);
-                    a2Var.dismiss();
-                    break;
-                } else {
-                    AndroidUtilities.shakeView(qn0Var);
-                    break;
-                }
-            case 11:
-                c50 c50Var = (c50) this.c;
-                EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) this.d;
-                g50 g50Var = c50Var.n;
-                ChatObject.Call call = g50Var.b.a1;
-                String obj3 = editTextBoldCursor2.getText().toString();
-                int i11 = this.b;
-                call.toggleRecord(obj3, i11);
-                AndroidUtilities.hideKeyboard(editTextBoldCursor2);
-                g50Var.b.k1().j(i11 == 0 ? 39 : 100, 0L, null);
-                if (VoIPService.getSharedInstance() != null) {
-                    VoIPService.getSharedInstance().playStartRecordSound();
-                    break;
-                }
-                break;
-            case 12:
-                LaunchActivity launchActivity = (LaunchActivity) this.c;
-                HashMap hashMap = (HashMap) this.d;
-                ArrayList arrayList = launchActivity.d0;
-                if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((m2) hg.c.g(1, arrayList))) {
-                    cd0 cd0Var = new cd0(0);
-                    cd0Var.F0 = new i2.s(hashMap, this.b, 12);
-                    launchActivity.p0(cd0Var);
-                    break;
-                }
-                break;
-            case 13:
-                ((cd0) this.c).w0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
-                break;
-            case 14:
-                PasscodeActivity.U((PasscodeActivity) this.c, (gd0) this.d, this.b);
-                break;
-            case 16:
-                SessionsActivity.X((SessionsActivity) this.c, this.b, (boolean[]) this.d);
-                break;
-        }
-    }
-
     @Override // m4.j0
-    public void g(m4.r rVar) {
+    public void f(m4.r rVar) {
         byte[] bArr;
         int i10;
         m4.k0 k0Var = (m4.k0) this.c;
@@ -234,8 +127,8 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
                     byteArrayOutputStream.close();
                 } finally {
                 }
-            } catch (IOException e) {
-                e2.a.o("LegacyConversions", "Failed to convert iconBitmap to artworkData", e);
+            } catch (IOException e7) {
+                e2.a.o("LegacyConversions", "Failed to convert iconBitmap to artworkData", e7);
                 bArr = null;
             }
             m0Var.k = bArr == null ? null : (byte[]) bArr.clone();
@@ -291,8 +184,114 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
         l4.a(new i9.s(0, l4, new a5.a(k0Var, rVar, this.b)), i9.q.a);
     }
 
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 1:
+                hg.s sVar = (hg.s) this.c;
+                TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) this.d;
+                String obj = sVar.getText().toString();
+                if (obj.length() <= 32) {
+                    hg.y d = hg.y.d(this.b);
+                    TL_account.TL_businessChatLink c10 = d.c(tL_businessChatLink.link);
+                    if (c10 != null) {
+                        TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink = new TL_account.TL_inputBusinessChatLink();
+                        tL_inputBusinessChatLink.message = c10.message;
+                        tL_inputBusinessChatLink.entities = c10.entities;
+                        tL_inputBusinessChatLink.title = obj;
+                        d.b(c10, tL_inputBusinessChatLink, null);
+                    }
+                    b2Var.dismiss();
+                    break;
+                } else {
+                    AndroidUtilities.shakeView(sVar);
+                    break;
+                }
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 10:
+            case 15:
+            default:
+                StickersActivity.Z((StickersActivity) this.c, (ArrayList) this.d, this.b);
+                break;
+            case 6:
+                yn ynVar = (yn) this.c;
+                ynVar.getMessagesController().pinMessage(ynVar.e, ynVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
+                rc B = yc.B(ynVar, true, null, null, ynVar.ca);
+                B.j();
+                vb vbVar = B.e;
+                vbVar.postDelayed(new gh(0, vbVar), 550L);
+                break;
+            case 7:
+                yn.N0((yn) this.c, this.b, (MessageObject) this.d);
+                break;
+            case 8:
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
+                MessagesStorage.StringCallback stringCallback = (MessagesStorage.StringCallback) this.d;
+                String trim = editTextBoldCursor.getText().toString().trim();
+                if (trim.length() <= this.b && !trim.isEmpty()) {
+                    stringCallback.run(trim);
+                    b2Var.dismiss();
+                    break;
+                } else {
+                    AndroidUtilities.shakeView(editTextBoldCursor);
+                    break;
+                }
+                break;
+            case 9:
+                un0 un0Var = (un0) this.c;
+                TLRPC.Reaction reaction = (TLRPC.Reaction) this.d;
+                String obj2 = un0Var.getText().toString();
+                if (obj2.length() <= 12) {
+                    MessagesController.getInstance(this.b).renameSavedReactionTag(zg.o0.d(reaction), obj2);
+                    b2Var.dismiss();
+                    break;
+                } else {
+                    AndroidUtilities.shakeView(un0Var);
+                    break;
+                }
+            case 11:
+                h50 h50Var = (h50) this.c;
+                EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) this.d;
+                l50 l50Var = h50Var.n;
+                ChatObject.Call call = l50Var.b.a1;
+                String obj3 = editTextBoldCursor2.getText().toString();
+                int i11 = this.b;
+                call.toggleRecord(obj3, i11);
+                AndroidUtilities.hideKeyboard(editTextBoldCursor2);
+                l50Var.b.k1().j(i11 == 0 ? 39 : 100, 0L, null);
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().playStartRecordSound();
+                    break;
+                }
+                break;
+            case 12:
+                LaunchActivity launchActivity = (LaunchActivity) this.c;
+                HashMap hashMap = (HashMap) this.d;
+                ArrayList arrayList = launchActivity.d0;
+                if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((n2) hg.k0.g(1, arrayList))) {
+                    gd0 gd0Var = new gd0(0);
+                    gd0Var.F0 = new i2.s(hashMap, this.b, 12);
+                    launchActivity.p0(gd0Var);
+                    break;
+                }
+                break;
+            case 13:
+                ((gd0) this.c).w0(RichMessageLayout.PART_MAX_HEIGHT_DP, (TLRPC.User) this.d, this.b);
+                break;
+            case 14:
+                PasscodeActivity.S((PasscodeActivity) this.c, (org.telegram.ui.Components.gd0) this.d, this.b);
+                break;
+            case 16:
+                SessionsActivity.W((SessionsActivity) this.c, this.b, (boolean[]) this.d);
+                break;
+        }
+    }
+
     @Override // t5.b
-    public Object i() {
+    public Object h() {
         da.b bVar = (da.b) this.c;
         ((la.h) bVar.d).V((l5.i) this.d, this.b + 1, false);
         return null;
@@ -364,13 +363,13 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
         int i10 = this.b;
         String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(document, "😀", Integer.valueOf(i10));
         String str = TextUtils.isEmpty(findAnimatedEmojiEmoticon) ? "😀" : findAnimatedEmojiEmoticon;
-        org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(context, 3, null);
+        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(context, 3, null);
         TLRPC.TL_stickers_addStickerToSet tL_stickers_addStickerToSet = new TLRPC.TL_stickers_addStickerToSet();
         tL_stickers_addStickerToSet.stickerset = MediaDataController.getInputStickerSet(tL_messages_stickerSet.set);
         tL_stickers_addStickerToSet.sticker = MediaDataController.getInputStickerSetItem(document, str);
-        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_stickers_addStickerToSet, new ya(a2Var, i10, document, obj, tL_stickers_addStickerToSet, 6));
+        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_stickers_addStickerToSet, new ya(b2Var, i10, document, obj, tL_stickers_addStickerToSet, 6));
         try {
-            a2Var.q(350L);
+            b2Var.q(350L);
         } catch (Exception unused) {
         }
         return Boolean.TRUE;

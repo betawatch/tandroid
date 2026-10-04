@@ -1,5 +1,6 @@
 package ki;
 
+import ai.v1;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -12,8 +13,8 @@ import android.os.ResultReceiver;
 import android.view.View;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import java.io.InputStream;
-import java.nio.ByteBuffer;
+import ii.n4;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -21,25 +22,32 @@ import m4.a1;
 import m4.e1;
 import m4.k1;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.video.VideoAds;
 import org.telegram.messenger.voip.ConferenceCall;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.voip.VoipAudioManager;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.d60;
-import org.telegram.ui.Components.oo0;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.e60;
+import org.telegram.ui.Components.ro0;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.b41;
 import org.telegram.ui.il;
-import org.telegram.ui.z31;
-import rg.x0;
+import rg.y0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,171 +60,34 @@ public final /* synthetic */ class h0 implements Runnable {
         this.c = obj2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:33:0x019a A[LOOP:0: B:2:0x000e->B:33:0x019a, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0196 A[SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    private final void a() {
-        oi.k kVar = (oi.k) this.b;
-        byte[] bArr = (byte[]) this.c;
-        int i10 = 0;
-        int i11 = 0;
-        while (i11 < bArr.length) {
-            if (bArr.length - i11 < 8) {
-                kVar.f();
-                return;
-            }
-            int i12 = bArr[i11] & 255;
-            int i13 = ((bArr[i11 + 1] & 255) << 16) | ((bArr[i11 + 2] & 255) << 8) | (bArr[i11 + 3] & 255);
-            long j3 = ((bArr[i11 + 4] & 255) << 24) | ((bArr[i11 + 5] & 255) << 16) | ((bArr[i11 + 6] & 255) << 8) | (255 & bArr[i11 + 7]);
-            int i14 = i11 + 8;
-            long j10 = i14 + j3;
-            if (j3 > 1048576 || j10 > bArr.length) {
-                kVar.f();
-                return;
-            }
-            int i15 = (int) j3;
-            byte[] bArr2 = new byte[i15];
-            System.arraycopy(bArr, i14, bArr2, i10, i15);
-            boolean z10 = true;
-            if (i13 != 0) {
-                synchronized (kVar.a) {
-                    try {
-                        oi.j jVar = (oi.j) kVar.m.get(Integer.valueOf(i13));
-                        if (jVar == null) {
-                            if (i12 != 2 && i12 != 4 && i12 != 3) {
-                                z10 = false;
-                            }
-                        } else if (i12 == 2) {
-                            if (i15 != 0) {
-                                synchronized (kVar.a) {
-                                    try {
-                                        long j11 = jVar.d;
-                                        long j12 = i15;
-                                        if (j11 >= j12) {
-                                            jVar.d = j11 - j12;
-                                            try {
-                                                jVar.b.getOutputStream().write(bArr2);
-                                                synchronized (kVar.a) {
-                                                    try {
-                                                        if (kVar.m.get(Integer.valueOf(jVar.a)) == jVar) {
-                                                            jVar.d += j12;
-                                                            kVar.k(4, jVar.a, ByteBuffer.allocate(4).putInt(i15).array());
-                                                        }
-                                                    } catch (Throwable th2) {
-                                                        throw th2;
-                                                    }
-                                                }
-                                            } catch (Exception unused) {
-                                                kVar.c(jVar, true);
-                                            }
-                                        }
-                                    } finally {
-                                    }
-                                }
-                            }
-                        } else if (i12 == 4 && i15 == 4) {
-                            long j13 = ByteBuffer.wrap(bArr2).getInt() & 4294967295L;
-                            if (j13 != 0) {
-                                synchronized (kVar.a) {
-                                    try {
-                                        long j14 = jVar.c;
-                                        if (j14 <= 4294967295L - j13) {
-                                            jVar.c = j14 + j13;
-                                            kVar.a.notifyAll();
-                                            z10 = true;
-                                        }
-                                    } finally {
-                                    }
-                                }
-                            }
-                        } else {
-                            if (i12 == 3 && i15 == 0) {
-                                kVar.c(jVar, false);
-                                z10 = true;
-                            } else {
-                                z10 = false;
-                            }
-                            if (!z10) {
-                            }
-                        }
-                    } finally {
-                    }
-                }
-                if (!z10) {
-                }
-            } else if (i12 == 17 && i15 == 0) {
-                synchronized (kVar.a) {
-                    try {
-                        if (!kVar.r && !kVar.q) {
-                            kVar.q = true;
-                            ArrayList arrayList = new ArrayList(kVar.m.values());
-                            int size = arrayList.size();
-                            int i16 = 0;
-                            while (i16 < size) {
-                                Object obj = arrayList.get(i16);
-                                i16++;
-                                oi.j jVar2 = (oi.j) obj;
-                                jVar2.e = true;
-                                kVar.k(1, jVar2.a, null);
-                            }
-                            oi.d dVar = kVar.u;
-                            kVar.a.notifyAll();
-                            if (dVar != null) {
-                                AndroidUtilities.runOnUIThread(new i2.h0(dVar, 17));
-                            }
-                        }
-                    } finally {
-                    }
-                }
-                if (!z10) {
-                }
-            } else if (i12 == 5 && i15 <= 64) {
-                kVar.k(6, i10, bArr2);
-                if (!z10) {
-                    kVar.f();
-                    return;
-                } else {
-                    i11 = (int) j10;
-                    i10 = 0;
-                }
-            }
-            z10 = false;
-            if (!z10) {
-            }
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:130:?, code lost:
-    
-        return;
-     */
+    /* JADX WARN: Multi-variable type inference failed */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
         k1 k1Var;
-        int i10 = 4;
-        int i11 = 1;
-        int i12 = 0;
-        switch (this.a) {
+        int i10 = this.a;
+        int i11 = 4;
+        ArrayList arrayList = null;
+        Bitmap bitmap = null;
+        Object[] objArr = 0;
+        Object[] objArr2 = 0;
+        Object[] objArr3 = 0;
+        int i12 = 1;
+        Object obj = this.c;
+        Object obj2 = this.b;
+        switch (i10) {
             case 0:
-                k2.u uVar = (k2.u) this.b;
-                l0 l0Var = (l0) this.c;
-                s0 s0Var = (s0) uVar.b;
+                s0 s0Var = (s0) ((n4) obj2).b;
                 s0Var.N++;
                 s0Var.w = true;
-                s0Var.m.b("camera switch started: target=" + l0Var);
-                d60 d60Var = (d60) s0Var.d.a;
-                il ilVar = d60Var.E;
-                FrameLayout frameLayout = d60Var.x;
-                d60Var.s(false);
-                Bitmap bitmap = d60Var.m0;
-                if (bitmap != null) {
-                    ilVar.setImageBitmap(bitmap);
-                    d60Var.l0 = true;
+                s0Var.m.b("camera switch started: target=" + ((l0) obj));
+                e60 e60Var = (e60) s0Var.d.b;
+                il ilVar = e60Var.E;
+                FrameLayout frameLayout = e60Var.x;
+                e60Var.s(false);
+                Bitmap bitmap2 = e60Var.m0;
+                if (bitmap2 != null) {
+                    ilVar.setImageBitmap(bitmap2);
+                    e60Var.l0 = true;
                     ilVar.animate().cancel();
                     ilVar.setAlpha(1.0f);
                 }
@@ -224,245 +95,254 @@ public final /* synthetic */ class h0 implements Runnable {
                 frameLayout.setCameraDistance(frameLayout.getMeasuredHeight() * 8.0f);
                 frameLayout.animate().rotationY(90.0f).setDuration(120L).start();
                 s0Var.o();
-                return;
+                break;
             case 1:
-                ((s0) ((k2.u) this.b).b).h((Exception) this.c);
-                return;
+                ((s0) ((n4) obj2).b).h((Exception) obj);
+                break;
             case 2:
-                ((i9.c0) this.c).m(Boolean.valueOf(((m4.a0) this.b).o()));
-                return;
+                ((i9.c0) obj).m(Boolean.valueOf(((m4.a0) obj2).o()));
+                break;
             case 3:
-                m4.a0 a0Var = (m4.a0) this.b;
-                Runnable runnable = (Runnable) this.c;
-                a0Var.getClass();
-                runnable.run();
-                return;
+                ((m4.a0) obj2).getClass();
+                ((Runnable) obj).run();
+                break;
             case 4:
-                ((m4.a0) this.b).u(null, (e1) this.c);
-                return;
+                ((m4.a0) obj2).u(null, (e1) obj);
+                break;
             case 5:
-                i9.u uVar2 = (i9.u) this.b;
-                ResultReceiver resultReceiver = (ResultReceiver) this.c;
+                ResultReceiver resultReceiver = (ResultReceiver) obj;
                 try {
-                    k1Var = (k1) uVar2.a;
+                    k1Var = (k1) ((i9.u) obj2).a;
                     e2.d.e(k1Var, "SessionResult must not be null");
-                } catch (InterruptedException e) {
-                    e = e;
+                } catch (InterruptedException e7) {
+                    e = e7;
                     e2.a.o("MediaSessionLegacyStub", "Custom command failed", e);
                     k1Var = new k1(-1);
-                } catch (CancellationException e7) {
-                    e2.a.o("MediaSessionLegacyStub", "Custom command cancelled", e7);
+                } catch (CancellationException e10) {
+                    e2.a.o("MediaSessionLegacyStub", "Custom command cancelled", e10);
                     k1Var = new k1(1);
-                } catch (ExecutionException e10) {
-                    e = e10;
+                } catch (ExecutionException e11) {
+                    e = e11;
                     e2.a.o("MediaSessionLegacyStub", "Custom command failed", e);
                     k1Var = new k1(-1);
                 }
                 resultReceiver.send(k1Var.a, k1Var.b);
-                return;
+                break;
             case 6:
-                a1 a1Var = (a1) this.b;
-                m4.i iVar = (m4.i) this.c;
-                oi.f fVar = a1Var.b;
-                m4.r t10 = fVar.t(iVar.asBinder());
+                qi.f fVar = ((a1) obj2).b;
+                m4.r t10 = fVar.t(((m4.i) obj).asBinder());
                 if (t10 != null) {
                     fVar.M(t10);
-                    return;
+                    break;
                 }
-                return;
+                break;
             case 7:
-                ((a1) this.b).b.n((m4.r) this.c);
-                return;
+                ((a1) obj2).b.n((m4.r) obj);
+                break;
             case 8:
-                me.b bVar = (me.b) this.b;
-                View view = (View) this.c;
+                me.b bVar = (me.b) obj2;
+                View view = (View) obj;
                 me.a aVar = bVar.a;
                 if ((bVar.c & 2) != 0) {
-                    if (!aVar.onLongPressRequestedAt(view, bVar.d, bVar.e)) {
-                        bVar.c |= 8;
-                        return;
-                    }
-                    bVar.c &= -3;
-                    bVar.b = null;
-                    float f7 = bVar.d;
-                    float f10 = bVar.e;
-                    bVar.f = f7;
-                    bVar.g = f10;
-                    if (aVar.ignoreHapticFeedbackSettings(f7, f10)) {
-                        boolean forceEnableVibration = aVar.forceEnableVibration();
-                        if (view != null) {
-                            view.performHapticFeedback(0, forceEnableVibration ? 2 : 0);
+                    if (aVar.onLongPressRequestedAt(view, bVar.d, bVar.e)) {
+                        bVar.c &= -3;
+                        bVar.b = null;
+                        float f7 = bVar.d;
+                        float f10 = bVar.e;
+                        bVar.f = f7;
+                        bVar.g = f10;
+                        if (aVar.ignoreHapticFeedbackSettings(f7, f10)) {
+                            boolean forceEnableVibration = aVar.forceEnableVibration();
+                            if (view != null) {
+                                view.performHapticFeedback(0, forceEnableVibration ? 2 : 0);
+                            }
+                        } else {
+                            view.performHapticFeedback(0);
                         }
+                        bVar.c = (bVar.c | 4) & (-11);
+                        bVar.b = null;
+                        break;
                     } else {
-                        view.performHapticFeedback(0);
+                        bVar.c |= 8;
+                        break;
                     }
-                    bVar.c = (bVar.c | 4) & (-11);
-                    bVar.b = null;
-                    return;
                 }
-                return;
+                break;
             case 9:
-                n2.d dVar = (n2.d) this.b;
-                b2.s sVar = (b2.s) this.c;
-                n2.f fVar2 = dVar.d;
-                if (fVar2.E == 0 || dVar.c) {
-                    return;
+                n2.e eVar = (n2.e) obj2;
+                b2.s sVar = (b2.s) obj;
+                n2.f fVar2 = eVar.d;
+                if (fVar2.E != 0 && !eVar.c) {
+                    Looper looper = fVar2.I;
+                    looper.getClass();
+                    eVar.b = fVar2.a(looper, eVar.a, sVar, false);
+                    fVar2.x.add(eVar);
+                    break;
                 }
-                Looper looper = fVar2.I;
-                looper.getClass();
-                dVar.b = fVar2.a(looper, dVar.a, sVar, false);
-                fVar2.x.add(dVar);
-                return;
+                break;
             case 10:
-                ((p2.b) ((o2.k) ((o2.q) this.b).c.b).b.d.get(((o2.j) this.c).x)).c(true);
-                return;
+                ((p2.b) ((o2.k) ((o2.q) obj2).c.b).b.d.get(((o2.j) obj).x)).c(true);
+                break;
             case 11:
-                oi.k kVar = (oi.k) this.b;
-                oi.j jVar = (oi.j) this.c;
-                byte[] bArr = new byte[65536];
-                try {
-                    InputStream inputStream = jVar.b.getInputStream();
-                    while (true) {
-                        synchronized (kVar.a) {
-                            while (!kVar.r && kVar.m.get(Integer.valueOf(jVar.a)) == jVar && (!kVar.q || !jVar.e || jVar.c == 0)) {
-                                try {
-                                    kVar.a.wait();
-                                } finally {
-                                }
-                            }
-                            if (!kVar.r && kVar.m.get(Integer.valueOf(jVar.a)) == jVar) {
-                                int read = inputStream.read(bArr, 0, (int) Math.min(65536L, jVar.c));
-                                if (read < 0) {
-                                    kVar.c(jVar, true);
-                                    return;
-                                }
-                                if (read != 0) {
-                                    byte[] bArr2 = new byte[read];
-                                    System.arraycopy(bArr, 0, bArr2, 0, read);
-                                    synchronized (kVar.a) {
-                                        try {
-                                            if (!kVar.r && kVar.m.get(Integer.valueOf(jVar.a)) == jVar && kVar.q) {
-                                                jVar.c -= read;
-                                                kVar.k(2, jVar.a, bArr2);
-                                            }
-                                        } finally {
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    return;
-                } catch (Exception unused) {
-                    kVar.c(jVar, true);
-                    return;
-                }
+                ((VideoAds) obj2).lambda$showPremium$19((y0) obj);
+                break;
             case 12:
-                a();
-                return;
+                ((VideoAds) obj2).lambda$load$0((TLObject) obj);
+                break;
             case 13:
-                ((VideoAds) this.b).lambda$showPremium$19((x0) this.c);
-                return;
+                ((VideoAds) obj2).lambda$show$16((Utilities.Callback) obj);
+                break;
             case 14:
-                ((VideoAds) this.b).lambda$load$0((TLObject) this.c);
-                return;
+                b41.R((Context) obj2, null, false, (ai.a1) obj, null);
+                break;
             case 15:
-                ((VideoAds) this.b).lambda$show$16((Utilities.Callback) this.c);
-                return;
+                ((ConferenceCall) obj2).lambda$processUpdates$4((TLRPC.Updates) obj);
+                break;
             case 16:
-                z31.T((Context) this.b, null, false, (ai.a1) this.c, null);
-                return;
+                VideoCapturerDevice.lambda$checkScreenCapturerSize$1((VideoCapturerDevice) obj2, (Point) obj);
+                break;
             case 17:
-                ((ConferenceCall) this.b).lambda$processUpdates$4((TLRPC.Updates) this.c);
-                return;
+                ((VideoCapturerDevice) obj2).lambda$init$4((String) obj);
+                break;
             case 18:
-                VideoCapturerDevice.lambda$checkScreenCapturerSize$1((VideoCapturerDevice) this.b, (Point) this.c);
-                return;
+                ((VoIPService) obj2).lambda$startGroupCall$21((TL_update.TL_updateGroupCall) obj);
+                break;
             case 19:
-                ((VideoCapturerDevice) this.b).lambda$init$4((String) this.c);
-                return;
+                ((VoIPService) obj2).lambda$createGroupInstance$71((String) obj);
+                break;
             case 20:
-                ((VoIPService) this.b).lambda$startGroupCall$21((TL_update.TL_updateGroupCall) this.c);
-                return;
+                ((VoIPService) obj2).lambda$startConferenceGroupCall$56((org.telegram.messenger.voip.m0) obj);
+                break;
             case 21:
-                ((VoIPService) this.b).lambda$createGroupInstance$71((String) this.c);
-                return;
+                ((VoIPService) obj2).lambda$startScreenCapture$58((TLRPC.Updates) obj);
+                break;
             case 22:
-                ((VoIPService) this.b).lambda$startConferenceGroupCall$56((org.telegram.messenger.voip.m0) this.c);
-                return;
+                ((AudioManager) obj2).setCommunicationDevice((AudioDeviceInfo) obj);
+                break;
             case 23:
-                ((VoIPService) this.b).lambda$startScreenCapture$58((TLRPC.Updates) this.c);
-                return;
+                ((VoipAudioManager) obj2).lambda$isBluetoothAndSpeakerOnAsync$4((Utilities.Callback2) obj);
+                break;
             case 24:
-                ((AudioManager) this.b).setCommunicationDevice((AudioDeviceInfo) this.c);
-                return;
-            case 25:
-                ((VoipAudioManager) this.b).lambda$isBluetoothAndSpeakerOnAsync$4((Utilities.Callback2) this.c);
-                return;
-            case 26:
-                org.telegram.ui.ActionBar.k kVar2 = (org.telegram.ui.ActionBar.k) this.b;
-                boolean canScrollVertically = ((oo0) this.c).canScrollVertically(-1);
+                org.telegram.ui.ActionBar.k kVar = (org.telegram.ui.ActionBar.k) obj2;
+                boolean canScrollVertically = ((ro0) obj).canScrollVertically(-1);
                 boolean z10 = !canScrollVertically;
-                if (kVar2.q1 == z10) {
-                    return;
+                if (kVar.t1 != z10) {
+                    ValueAnimator valueAnimator = kVar.v1;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                    }
+                    float f11 = kVar.u1;
+                    kVar.t1 = z10;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(f11, canScrollVertically ? 0.0f : 1.0f);
+                    kVar.v1 = ofFloat;
+                    ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar, objArr == true ? 1 : 0));
+                    kVar.v1.addListener(new org.telegram.ui.ActionBar.c(kVar, z10, i12));
+                    kVar.v1.setDuration(320L);
+                    kVar.v1.setInterpolator(tr.h);
+                    kVar.v1.start();
+                    break;
                 }
-                ValueAnimator valueAnimator = kVar2.s1;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                }
-                float f11 = kVar2.r1;
-                kVar2.q1 = z10;
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f11, canScrollVertically ? 0.0f : 1.0f);
-                kVar2.s1 = ofFloat;
-                ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar2, i12));
-                kVar2.s1.addListener(new org.telegram.ui.ActionBar.c(kVar2, z10, i11));
-                kVar2.s1.setDuration(320L);
-                kVar2.s1.setInterpolator(sr.h);
-                kVar2.s1.start();
-                return;
-            case 27:
-                org.telegram.ui.ActionBar.k kVar3 = (org.telegram.ui.ActionBar.k) this.b;
-                boolean canScrollVertically2 = ((RecyclerView) this.c).canScrollVertically(-1);
+                break;
+            case 25:
+                org.telegram.ui.ActionBar.k kVar2 = (org.telegram.ui.ActionBar.k) obj2;
+                boolean canScrollVertically2 = ((RecyclerView) obj).canScrollVertically(-1);
                 boolean z11 = !canScrollVertically2;
-                if (kVar3.q1 == z11) {
-                    return;
+                if (kVar2.t1 != z11) {
+                    ValueAnimator valueAnimator2 = kVar2.v1;
+                    if (valueAnimator2 != null) {
+                        valueAnimator2.cancel();
+                    }
+                    float f12 = kVar2.u1;
+                    kVar2.t1 = z11;
+                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f12, canScrollVertically2 ? 0.0f : 1.0f);
+                    kVar2.v1 = ofFloat2;
+                    ofFloat2.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar2, i11));
+                    kVar2.v1.addListener(new org.telegram.ui.ActionBar.c(kVar2, z11, objArr2 == true ? 1 : 0));
+                    kVar2.v1.setDuration(320L);
+                    kVar2.v1.setInterpolator(tr.h);
+                    kVar2.v1.start();
+                    break;
                 }
-                ValueAnimator valueAnimator2 = kVar3.s1;
-                if (valueAnimator2 != null) {
-                    valueAnimator2.cancel();
-                }
-                float f12 = kVar3.r1;
-                kVar3.q1 = z11;
-                ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f12, canScrollVertically2 ? 0.0f : 1.0f);
-                kVar3.s1 = ofFloat2;
-                ofFloat2.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar3, i10));
-                kVar3.s1.addListener(new org.telegram.ui.ActionBar.c(kVar3, z11, i12));
-                kVar3.s1.setDuration(320L);
-                kVar3.s1.setInterpolator(sr.h);
-                kVar3.s1.start();
-                return;
-            case 28:
-                ActionBarLayout actionBarLayout = (ActionBarLayout) this.b;
-                m2 m2Var = (m2) this.c;
+                break;
+            case 26:
+                ActionBarLayout actionBarLayout = (ActionBarLayout) obj2;
                 Drawable drawable = ActionBarLayout.p1;
-                actionBarLayout.b0(m2Var, false);
+                actionBarLayout.b0((n2) obj, false);
                 actionBarLayout.setVisibility(8);
                 View view2 = actionBarLayout.B0;
                 if (view2 != null) {
                     view2.setVisibility(8);
-                    return;
+                    break;
                 }
-                return;
-            default:
-                m2 m2Var2 = (m2) this.b;
-                m2 m2Var3 = (m2) this.c;
+                break;
+            case 27:
+                n2 n2Var = (n2) obj2;
+                n2 n2Var2 = (n2) obj;
                 Drawable drawable2 = ActionBarLayout.p1;
-                if (m2Var2 != null) {
-                    m2Var2.onTransitionAnimationEnd(false, false);
+                if (n2Var != null) {
+                    n2Var.onTransitionAnimationEnd(false, false);
                 }
-                m2Var3.onTransitionAnimationEnd(true, false);
-                m2Var3.onBecomeFullyVisible();
-                return;
+                n2Var2.onTransitionAnimationEnd(true, false);
+                n2Var2.onBecomeFullyVisible();
+                break;
+            case 28:
+                c6 c6Var = (c6) obj2;
+                ArrayList arrayList2 = (ArrayList) obj;
+                int size = arrayList2.size();
+                int i13 = 0;
+                while (i13 < size) {
+                    f6 f6Var = (f6) arrayList2.get(i13);
+                    File d = f6Var.d();
+                    if (d == null || d.length() <= 0) {
+                        if (arrayList == null) {
+                            arrayList = new ArrayList();
+                        }
+                        if (!arrayList.contains(f6Var.o)) {
+                            arrayList.add(f6Var.o);
+                        }
+                    } else {
+                        arrayList2.remove(i13);
+                        i13--;
+                        size--;
+                    }
+                    i13++;
+                }
+                if (arrayList != null) {
+                    TL_account.getMultiWallPapers getmultiwallpapers = new TL_account.getMultiWallPapers();
+                    int size2 = arrayList.size();
+                    for (int i14 = 0; i14 < size2; i14++) {
+                        TLRPC.TL_inputWallPaperSlug tL_inputWallPaperSlug = new TLRPC.TL_inputWallPaperSlug();
+                        tL_inputWallPaperSlug.slug = (String) arrayList.get(i14);
+                        getmultiwallpapers.wallpapers.add(tL_inputWallPaperSlug);
+                    }
+                    ConnectionsManager.getInstance(c6Var.a).sendRequest(getmultiwallpapers, new v1(20, c6Var, arrayList2));
+                    break;
+                }
+                break;
+            default:
+                c6 c6Var2 = (c6) obj2;
+                b6 b6Var = (b6) obj;
+                TLRPC.TL_wallPaper tL_wallPaper = b6Var.a;
+                File pathToAttach = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(tL_wallPaper.document, true);
+                ArrayList arrayList3 = b6Var.b;
+                int size3 = arrayList3.size();
+                ArrayList arrayList4 = null;
+                for (int i15 = 0; i15 < size3; i15++) {
+                    f6 f6Var2 = (f6) arrayList3.get(i15);
+                    if (f6Var2.o.equals(tL_wallPaper.slug)) {
+                        Bitmap b10 = c6.b(bitmap, "application/x-tgwallpattern".equals(tL_wallPaper.document.mime_type), pathToAttach, f6Var2);
+                        if (arrayList4 == null) {
+                            arrayList4 = new ArrayList();
+                            arrayList4.add(f6Var2);
+                        }
+                        bitmap = b10;
+                    }
+                }
+                if (bitmap != null) {
+                    bitmap.recycle();
+                }
+                AndroidUtilities.runOnUIThread(new ci.y0((Object) c6Var2, (Object) arrayList4, (boolean) (objArr3 == true ? 1 : 0), 11));
+                break;
         }
     }
 

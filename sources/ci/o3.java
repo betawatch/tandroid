@@ -12,9 +12,9 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class o3 extends gl0 {
     public final /* synthetic */ w3 c;
@@ -23,7 +23,7 @@ public final class o3 extends gl0 {
         this.c = w3Var;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 2;
     }
@@ -40,7 +40,7 @@ public final class o3 extends gl0 {
             i11 = i10 - 3;
         } else if (w3Var.d0) {
             if (i11 >= 0 && i11 < w3Var.b0.size()) {
-                return LocaleController.formatYearMont(((l8) w3Var.b0.get(i11)).d / 1000, true);
+                return LocaleController.formatYearMont(((k8) w3Var.b0.get(i11)).d / 1000, true);
             }
             i11 -= w3Var.b0.size();
         }
@@ -56,26 +56,26 @@ public final class o3 extends gl0 {
     }
 
     @Override // org.telegram.ui.Components.gl0
-    public final void G(yl0 yl0Var, float f7, int[] iArr) {
+    public final void G(zl0 zl0Var, float f7, int[] iArr) {
         int k10 = k();
-        float width = (yl0Var.getWidth() - yl0Var.getPaddingLeft()) - yl0Var.getPaddingRight();
+        float width = (zl0Var.getWidth() - zl0Var.getPaddingLeft()) - zl0Var.getPaddingRight();
         w3 w3Var = this.c;
         f3 f3Var = w3Var.e;
         float f10 = f3Var.J;
         int i10 = (int) (((int) (width / f10)) * w3Var.O);
         int ceil = (int) Math.ceil(k10 / f10);
-        float lerp = (AndroidUtilities.lerp(0, Math.max(0, r2 - ((AndroidUtilities.displaySize.y - yl0Var.getPaddingTop()) - yl0Var.getPaddingBottom())), f7) / (ceil * i10)) * ceil;
+        float lerp = (AndroidUtilities.lerp(0, Math.max(0, r2 - ((AndroidUtilities.displaySize.y - zl0Var.getPaddingTop()) - zl0Var.getPaddingBottom())), f7) / (ceil * i10)) * ceil;
         int round = Math.round(lerp);
         iArr[0] = Math.max(0, f3Var.J * round) + 2;
-        iArr[1] = yl0Var.getPaddingTop() + ((int) ((lerp - round) * i10));
+        iArr[1] = zl0Var.getPaddingTop() + ((int) ((lerp - round) * i10));
     }
 
     @Override // org.telegram.ui.Components.gl0
-    public final float H(yl0 yl0Var) {
+    public final float H(zl0 zl0Var) {
         int k10 = k();
-        float width = (yl0Var.getWidth() - yl0Var.getPaddingLeft()) - yl0Var.getPaddingRight();
+        float width = (zl0Var.getWidth() - zl0Var.getPaddingLeft()) - zl0Var.getPaddingRight();
         float f7 = this.c.e.J;
-        return (Math.max(0, yl0Var.computeVerticalScrollOffset() - r2.getPadding()) - yl0Var.getPaddingTop()) / ((((int) Math.ceil(k10 / f7)) * ((int) (((int) (width / f7)) * r2.O))) - (AndroidUtilities.displaySize.y - yl0Var.getPaddingTop()));
+        return (Math.max(0, zl0Var.computeVerticalScrollOffset() - r2.getPadding()) - zl0Var.getPaddingTop()) / ((((int) Math.ceil(k10 / f7)) * ((int) (((int) (width / f7)) * r2.O))) - (AndroidUtilities.displaySize.y - zl0Var.getPaddingTop()));
     }
 
     @Override // s4.h0
@@ -122,14 +122,14 @@ public final class o3 extends gl0 {
             if (w3Var.c0) {
                 if (i12 == 0) {
                     r3Var.f(-1, false, false);
-                    r3Var.e(arrayList2.size(), (l8) arrayList2.get(0));
+                    r3Var.e(arrayList2.size(), (k8) arrayList2.get(0));
                     return;
                 }
                 i12 = i10 - 3;
             } else if (w3Var.d0) {
                 if (i12 >= 0 && i12 < arrayList2.size()) {
                     r3Var.f(-1, false, false);
-                    r3Var.e(0, (l8) arrayList2.get(i12));
+                    r3Var.e(0, (k8) arrayList2.get(i12));
                     return;
                 }
                 i12 -= arrayList2.size();
@@ -177,7 +177,7 @@ public final class o3 extends gl0 {
             textView.setTextColor(-1);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setText(w3Var.getTitle());
-            w5Var.addView(textView, w7.y5.d(-1, -1.0f, 119, 0.0f, 0.0f, z10 ? 32.0f : 0.0f, 0.0f));
+            w5Var.addView(textView, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, z10 ? 32.0f : 0.0f, 0.0f));
             w3Var.i0 = w5Var;
             view = w5Var;
         } else {

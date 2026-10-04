@@ -1,11 +1,11 @@
 package n;
 
 import android.os.Looper;
-import w7.z;
+import w7.a0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class a extends z {
+public final class a extends a0 {
     public static volatile a b;
     public final c a = new c();
 

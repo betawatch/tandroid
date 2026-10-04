@@ -19,7 +19,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class yg0 extends ul0 {
     public final Context r;
@@ -36,7 +36,7 @@ public final class yg0 extends ul0 {
     }
 
     @Override // org.telegram.ui.Components.gl0
-    public final void G(yl0 yl0Var, float f7, int[] iArr) {
+    public final void G(zl0 zl0Var, float f7, int[] iArr) {
         iArr[0] = 0;
         iArr[1] = 0;
     }
@@ -125,7 +125,7 @@ public final class yg0 extends ul0 {
                         i11++;
                     }
                 }
-                ah0Var.a(tL_textWithEntities == null ? "" : tL_textWithEntities.text, tL_textWithEntities == null ? null : tL_textWithEntities.entities, ch0Var.P(bh0Var.d), bh0Var.a, bh0Var.a(), false);
+                ah0Var.a(tL_textWithEntities == null ? "" : tL_textWithEntities.text, tL_textWithEntities == null ? null : tL_textWithEntities.entities, ch0Var.N(bh0Var.d), bh0Var.a, bh0Var.a(), false);
                 ah0Var.setTag(R.id.object_tag, bh0Var);
                 return view;
             }
@@ -182,7 +182,7 @@ public final class yg0 extends ul0 {
                         i13++;
                     }
                 }
-                ah0Var.a(tL_textWithEntities == null ? "" : tL_textWithEntities.text, tL_textWithEntities == null ? null : tL_textWithEntities.entities, ch0Var.P(bArr), bh0Var2.a, bh0Var2.a(), false);
+                ah0Var.a(tL_textWithEntities == null ? "" : tL_textWithEntities.text, tL_textWithEntities == null ? null : tL_textWithEntities.entities, ch0Var.N(bArr), bh0Var2.a, bh0Var2.a(), false);
                 ah0Var.setTag(R.id.object_tag, bh0Var2);
                 return;
             }
@@ -207,8 +207,8 @@ public final class yg0 extends ul0 {
         } else if (i10 != 2) {
             org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(23, context, true);
             r8Var.setOffsetFromImage(65);
-            r8Var.setBackgroundColor(ch0Var.getThemedColor(org.telegram.ui.ActionBar.h6.h5));
-            r8Var.e(org.telegram.ui.ActionBar.h6.N6, org.telegram.ui.ActionBar.h6.q6);
+            r8Var.setBackgroundColor(ch0Var.getThemedColor(org.telegram.ui.ActionBar.i6.h5));
+            r8Var.e(org.telegram.ui.ActionBar.i6.N6, org.telegram.ui.ActionBar.i6.q6);
             view = r8Var;
         } else {
             View xg0Var = new xg0(this, context);
@@ -231,11 +231,11 @@ public final class yg0 extends ul0 {
             ch0 ch0Var = this.s;
             bh0 bh0Var = (bh0) ch0Var.x.get(S - 1);
             TLRPC.MessagePeerVote messagePeerVote = (TLRPC.MessagePeerVote) bh0Var.b.get(Q);
-            TLObject userOrChat = ch0Var.Q().getUserOrChat(DialogObject.getPeerDialogId(messagePeerVote.peer));
+            TLObject userOrChat = ch0Var.O().getUserOrChat(DialogObject.getPeerDialogId(messagePeerVote.peer));
             int i10 = messagePeerVote.date;
             boolean z11 = (Q == bh0Var.b() - 1 && TextUtils.isEmpty(bh0Var.c) && !bh0Var.e) ? false : true;
             w9 w9Var = pollVotesAlert$UserCell.a;
-            org.telegram.ui.ActionBar.h5 h5Var = pollVotesAlert$UserCell.b;
+            org.telegram.ui.ActionBar.i5 i5Var = pollVotesAlert$UserCell.b;
             if (userOrChat instanceof TLRPC.User) {
                 pollVotesAlert$UserCell.h = (TLRPC.User) userOrChat;
                 pollVotesAlert$UserCell.n = null;
@@ -253,7 +253,7 @@ public final class yg0 extends ul0 {
             pollVotesAlert$UserCell.x = userOrChat == null;
             pollVotesAlert$UserCell.w = Q;
             if (userOrChat == null) {
-                h5Var.l("", false);
+                i5Var.l("", false);
                 w9Var.setImageDrawable(null);
             } else {
                 int i11 = pollVotesAlert$UserCell.s;
@@ -276,25 +276,25 @@ public final class yg0 extends ul0 {
                     String userName = UserObject.getUserName(user2);
                     pollVotesAlert$UserCell.r = userName;
                     z10 = false;
-                    pollVotesAlert$UserCell.r = Emoji.replaceEmoji(userName, h5Var.getPaint().getFontMetricsInt(), false);
+                    pollVotesAlert$UserCell.r = Emoji.replaceEmoji(userName, i5Var.getPaint().getFontMetricsInt(), false);
                 } else {
                     z10 = false;
                     TLRPC.Chat chat3 = pollVotesAlert$UserCell.n;
                     if (chat3 != null) {
                         String str = chat3.title;
                         pollVotesAlert$UserCell.r = str;
-                        pollVotesAlert$UserCell.r = Emoji.replaceEmoji(str, h5Var.getPaint().getFontMetricsInt(), false);
+                        pollVotesAlert$UserCell.r = Emoji.replaceEmoji(str, i5Var.getPaint().getFontMetricsInt(), false);
                     } else {
                         pollVotesAlert$UserCell.r = "";
                     }
                 }
-                h5Var.l(pollVotesAlert$UserCell.r, z10);
-                xw0 xw0Var = pollVotesAlert$UserCell.f;
+                i5Var.l(pollVotesAlert$UserCell.r, z10);
+                gx0 gx0Var = pollVotesAlert$UserCell.f;
                 TLRPC.User user3 = pollVotesAlert$UserCell.h;
                 TLRPC.Chat chat4 = pollVotesAlert$UserCell.n;
-                int i12 = org.telegram.ui.ActionBar.h6.z9;
-                d6Var = ((org.telegram.ui.ActionBar.e3) pollVotesAlert$UserCell.F).resourcesProvider;
-                h5Var.i(xw0Var.a(user3, chat4, org.telegram.ui.ActionBar.h6.v0(i12, d6Var), z10));
+                int i12 = org.telegram.ui.ActionBar.i6.z9;
+                d6Var = ((org.telegram.ui.ActionBar.f3) pollVotesAlert$UserCell.F).resourcesProvider;
+                i5Var.i(gx0Var.a(user3, chat4, org.telegram.ui.ActionBar.i6.v0(i12, d6Var), z10));
                 TLRPC.Chat chat5 = pollVotesAlert$UserCell.n;
                 if (chat5 != null) {
                     w9Var.e(chat5, h9Var);
@@ -316,7 +316,7 @@ public final class yg0 extends ul0 {
             } else {
                 Property property = View.ALPHA;
                 arrayList.add(ObjectAnimator.ofFloat(w9Var, (Property<w9, Float>) property, 0.0f, 1.0f));
-                pollVotesAlert$UserCell.E.add(ObjectAnimator.ofFloat(h5Var, (Property<org.telegram.ui.ActionBar.h5, Float>) property, 0.0f, 1.0f));
+                pollVotesAlert$UserCell.E.add(ObjectAnimator.ofFloat(i5Var, (Property<org.telegram.ui.ActionBar.i5, Float>) property, 0.0f, 1.0f));
                 pollVotesAlert$UserCell.E.add(ObjectAnimator.ofFloat(pollVotesAlert$UserCell, ch0.O, 1.0f, 0.0f));
             }
         }

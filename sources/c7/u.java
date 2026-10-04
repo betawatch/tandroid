@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import java.util.Arrays;
 import n7.l1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class u extends o6.a {
     public static final Parcelable.Creator<u> CREATOR = new w.a(25);
@@ -55,19 +55,19 @@ public final class u extends o6.a {
         String valueOf2 = String.valueOf(this.e);
         String valueOf3 = String.valueOf(this.f);
         String valueOf4 = String.valueOf(this.h);
-        StringBuilder x10 = a4.a.x("PublicKeyCredential{\n id='", this.a, "', \n type='", this.b, "', \n rawId=");
-        a4.a.A(x10, c10, ", \n registerResponse=", valueOf, ", \n signResponse=");
-        a4.a.A(x10, valueOf2, ", \n errorResponse=", valueOf3, ", \n extensionsClientOutputs=");
-        x10.append(valueOf4);
-        x10.append(", \n authenticatorAttachment='");
-        x10.append(this.n);
-        x10.append("'}");
-        return x10.toString();
+        StringBuilder w10 = a4.a.w("PublicKeyCredential{\n id='", this.a, "', \n type='", this.b, "', \n rawId=");
+        a4.a.z(w10, c10, ", \n registerResponse=", valueOf, ", \n signResponse=");
+        a4.a.z(w10, valueOf2, ", \n errorResponse=", valueOf3, ", \n extensionsClientOutputs=");
+        w10.append(valueOf4);
+        w10.append(", \n authenticatorAttachment='");
+        w10.append(this.n);
+        w10.append("'}");
+        return w10.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        l1.a.r0();
+        l1.a.q();
         throw null;
     }
 }

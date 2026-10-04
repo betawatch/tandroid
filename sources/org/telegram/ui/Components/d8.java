@@ -19,7 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class d8 extends FrameLayout {
     public final TextView[] a;
@@ -49,7 +49,7 @@ public abstract class d8 extends FrameLayout {
                 this.a[i10].setAlpha(0.0f);
                 this.a[i10].setVisibility(8);
             }
-            addView(this.a[i10], w7.y5.c(-1.0f, -2));
+            addView(this.a[i10], w7.z5.c(-1.0f, -2));
         }
         this.d = new Matrix();
         Paint paint = new Paint(1);
@@ -98,7 +98,7 @@ public abstract class d8 extends FrameLayout {
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.n = animatorSet2;
-        animatorSet2.addListener(new ei.v2(this, i14, 5));
+        animatorSet2.addListener(new ei.w2(this, i14, 5));
         textViewArr[i15].setText(charSequence);
         textViewArr[i15].bringToFront();
         textViewArr[i15].setVisibility(0);
@@ -183,7 +183,7 @@ public abstract class d8 extends FrameLayout {
                     break;
                 }
                 TextView textView = textViewArr[i11];
-                if ((textView instanceof ea0) && ((ea0) textView).d) {
+                if ((textView instanceof fa0) && ((fa0) textView).d) {
                     this.s = -1;
                     break;
                 }
@@ -284,8 +284,8 @@ public abstract class d8 extends FrameLayout {
     public void setCustomPaddingRight(int i10) {
         this.w = i10;
         for (TextView textView : this.a) {
-            if (textView instanceof ea0) {
-                ((ea0) textView).setCustomPaddingRight(i10);
+            if (textView instanceof fa0) {
+                ((fa0) textView).setCustomPaddingRight(i10);
             }
         }
         invalidate();

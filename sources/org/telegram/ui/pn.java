@@ -1,47 +1,51 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pn implements Runnable {
+public final /* synthetic */ class pn implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ un b;
+    public final /* synthetic */ qn b;
 
-    public /* synthetic */ pn(un unVar, int i10) {
+    public /* synthetic */ pn(qn qnVar, int i10) {
         this.a = i10;
-        this.b = unVar;
+        this.b = qnVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.ActionBar.b5 b5Var;
-        org.telegram.ui.ActionBar.b5 b5Var2;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                SparseIntArray sparseIntArray = new SparseIntArray();
-                un unVar = this.b;
-                unVar.e = sparseIntArray;
-                wn wnVar = unVar.V;
-                org.telegram.ui.ActionBar.d5 d5Var = (org.telegram.ui.ActionBar.d5) wnVar.getThemedDrawable("drawableMsgOut");
-                unVar.I = d5Var;
-                b5Var = ((org.telegram.ui.ActionBar.m2) wnVar).parentLayout;
-                d5Var.H = b5Var.getMessageDrawableOutStart();
-                org.telegram.ui.ActionBar.d5 d5Var2 = (org.telegram.ui.ActionBar.d5) wnVar.getThemedDrawable("drawableMsgOutMedia");
-                unVar.J = d5Var2;
-                b5Var2 = ((org.telegram.ui.ActionBar.m2) wnVar).parentLayout;
-                d5Var2.H = b5Var2.getMessageDrawableOutMediaStart();
-                unVar.I.I = 0.0f;
-                unVar.J.I = 0.0f;
-                wnVar.uc();
-                unVar.k(0.0f);
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                qn qnVar = this.b;
+                qnVar.f = floatValue;
+                View view = qnVar.h.fragmentView;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            case 1:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                qn qnVar2 = this.b;
+                qnVar2.f = floatValue2;
+                View view2 = qnVar2.h.fragmentView;
+                if (view2 != null) {
+                    view2.invalidate();
+                    break;
+                }
                 break;
             default:
-                un unVar2 = this.b;
-                unVar2.I.H = null;
-                unVar2.J.H = null;
-                unVar2.e = null;
-                unVar2.k(1.0f);
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                qn qnVar3 = this.b;
+                qnVar3.f = floatValue3;
+                View view3 = qnVar3.h.fragmentView;
+                if (view3 != null) {
+                    view3.invalidate();
+                    break;
+                }
                 break;
         }
     }

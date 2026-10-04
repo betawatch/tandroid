@@ -1,54 +1,32 @@
 package org.telegram.ui;
 
-import android.os.Build;
+import android.graphics.Canvas;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class vs extends s4.s0 {
-    public boolean a;
-    public boolean b;
-    public final /* synthetic */ ContactsActivity c;
+public final /* synthetic */ class vs implements ah.m {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public vs(ContactsActivity contactsActivity) {
-        this.c = contactsActivity;
+    public /* synthetic */ vs(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        if (i10 != 1) {
-            this.b = false;
-            return;
+    @Override // ah.m
+    public final boolean a(Canvas canvas, View view, long j3) {
+        switch (this.a) {
+            case 0:
+                return ((org.telegram.ui.Components.zl0) this.b).drawChild(canvas, view, j3);
+            case 1:
+                ProfileActivity profileActivity = (ProfileActivity) this.b;
+                if (view == profileActivity.O) {
+                    return true;
+                }
+                return profileActivity.a.drawChild(canvas, view, j3);
+            default:
+                return ((wf1) this.b).drawChild(canvas, view, j3);
         }
-        ContactsActivity contactsActivity = this.c;
-        if ((contactsActivity.F && contactsActivity.E) || contactsActivity.Z.r.isFocused()) {
-            AndroidUtilities.hideKeyboard(contactsActivity.getParentActivity().getCurrentFocus());
-        }
-        this.b = true;
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ah.h hVar;
-        ContactsActivity contactsActivity = this.c;
-        int L0 = contactsActivity.n.L0();
-        View childAt = recyclerView.getChildAt(0);
-        int top = childAt != null ? childAt.getTop() : 0;
-        if (contactsActivity.w != null && !contactsActivity.F) {
-            boolean z10 = i11 > 0;
-            if (i11 != 0 && this.a && (z10 || this.b)) {
-                contactsActivity.x = !z10;
-                ContactsActivity.e0(contactsActivity);
-            }
-            this.a = true;
-        }
-        contactsActivity.Y.b(L0 != 0 || top < contactsActivity.f.getPaddingTop(), true);
-        if (Build.VERSION.SDK_INT >= 31 && (hVar = contactsActivity.t0) != null) {
-            hVar.f(i10, i11);
-            contactsActivity.g0();
-        }
-        ContactsActivity.d0(contactsActivity);
     }
 }

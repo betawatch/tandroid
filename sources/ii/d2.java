@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class d2 extends Drawable implements Drawable.Callback {
     public final Drawable a;
@@ -31,10 +31,10 @@ public final class d2 extends Drawable implements Drawable.Callback {
         this.a = drawable;
         drawable.setCallback(this);
         paint.setColor(0);
-        if (org.telegram.ui.ActionBar.h6.I.q()) {
-            paint.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.h6.l1(0.3f, -16777216));
+        if (org.telegram.ui.ActionBar.i6.I.q()) {
+            paint.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.i6.l1(0.3f, -16777216));
         } else {
-            paint.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.h6.l1(0.1f, -16777216));
+            paint.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.i6.l1(0.1f, -16777216));
         }
     }
 

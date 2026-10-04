@@ -3,7 +3,7 @@ package h2;
 import java.util.ArrayDeque;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class l implements e {
     public final k a;
@@ -157,10 +157,10 @@ public abstract class l implements e {
                 }
                 try {
                     h = i(hVar, jVar, z10);
-                } catch (OutOfMemoryError e) {
-                    h = h(e);
-                } catch (RuntimeException e7) {
+                } catch (OutOfMemoryError e7) {
                     h = h(e7);
+                } catch (RuntimeException e10) {
+                    h = h(e10);
                 }
                 if (h != null) {
                     synchronized (this.b) {

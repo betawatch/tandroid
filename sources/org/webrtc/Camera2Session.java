@@ -12,13 +12,14 @@ import android.hardware.camera2.CaptureRequest;
 import android.os.Handler;
 import android.util.Range;
 import android.view.Surface;
+import hg.k0;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraSession;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 class Camera2Session implements CameraSession {
     private static final String TAG = "Camera2Session";
@@ -48,7 +49,7 @@ class Camera2Session implements CameraSession {
     private static final Histogram camera2StopTimeMsHistogram = Histogram.createCounts("WebRTC.Android.Camera2.StopTimeMs", 1, 10000, 50);
     private static final Histogram camera2ResolutionHistogram = Histogram.createEnumeration("WebRTC.Android.Camera2.Resolution", CameraEnumerationAndroid.COMMON_RESOLUTIONS.size());
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class CameraCaptureCallback extends CameraCaptureSession.CaptureCallback {
         private CameraCaptureCallback() {
         }
@@ -59,13 +60,13 @@ class Camera2Session implements CameraSession {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public class CameraStateCallback extends CameraDevice.StateCallback {
         private CameraStateCallback() {
         }
 
         private String getErrorDescription(int i10) {
-            return i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? hg.c.h(i10, "Unknown camera error: ") : "Camera service has encountered a fatal error." : "Camera device has encountered a fatal error." : "Camera device could not be opened due to a device policy." : "Camera device could not be opened because there are too many other open camera devices." : "Camera device is in use already.";
+            return i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? k0.h(i10, "Unknown camera error: ") : "Camera service has encountered a fatal error." : "Camera device has encountered a fatal error." : "Camera device could not be opened due to a device policy." : "Camera device could not be opened because there are too many other open camera devices." : "Camera device is in use already.";
         }
 
         @Override // android.hardware.camera2.CameraDevice.StateCallback
@@ -103,13 +104,13 @@ class Camera2Session implements CameraSession {
             Camera2Session.this.surface = new Surface(Camera2Session.this.surfaceTextureHelper.getSurfaceTexture());
             try {
                 cameraDevice.createCaptureSession(Arrays.asList(Camera2Session.this.surface), new CaptureSessionCallback(), Camera2Session.this.cameraThreadHandler);
-            } catch (CameraAccessException e) {
-                Camera2Session.this.reportError("Failed to create capture session. " + e);
+            } catch (CameraAccessException e7) {
+                Camera2Session.this.reportError("Failed to create capture session. " + e7);
             }
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public class CaptureSessionCallback extends CameraCaptureSession.StateCallback {
         private CaptureSessionCallback() {
         }
@@ -188,13 +189,13 @@ class Camera2Session implements CameraSession {
                 Camera2Session.this.surfaceTextureHelper.startListening(new a(this, 1));
                 Logging.d(Camera2Session.TAG, "Camera device successfully started.");
                 Camera2Session.this.callback.onDone(Camera2Session.this);
-            } catch (CameraAccessException e) {
-                Camera2Session.this.reportError("Failed to start capture request. " + e);
+            } catch (CameraAccessException e7) {
+                Camera2Session.this.reportError("Failed to start capture request. " + e7);
             }
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public enum SessionState {
         RUNNING,
         STOPPED
@@ -265,8 +266,8 @@ class Camera2Session implements CameraSession {
         this.events.onCameraOpening();
         try {
             this.cameraManager.openCamera(this.cameraId, new CameraStateCallback(), this.cameraThreadHandler);
-        } catch (Exception e) {
-            reportError("Failed to open camera: " + e);
+        } catch (Exception e7) {
+            reportError("Failed to open camera: " + e7);
         }
     }
 

@@ -11,9 +11,9 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.u4;
 import org.telegram.ui.Cells.v3;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.v00;
+import org.telegram.ui.Components.w00;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class u0 extends c {
     public final Context K;
@@ -25,10 +25,10 @@ public abstract class u0 extends c {
         this.M = false;
         this.K = context;
         this.L = d6Var;
-        new v00(context, null).setIsSingleCell(true);
+        new w00(context, null).setIsSingleCell(true);
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }

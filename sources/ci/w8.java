@@ -1,55 +1,199 @@
 package ci;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class w8 extends LinearLayout {
-    public final RectF a;
-    public final RectF b;
-    public final RectF c;
-    public final Paint d;
-    public final /* synthetic */ x8 e;
+public abstract class w8 extends FrameLayout implements w2 {
+    public final v8 a;
+    public final FrameLayout b;
+    public final TextView c;
+    public final FrameLayout d;
+    public final TextView e;
+    public final FrameLayout f;
+    public final TextView h;
+    public float n;
+    public float r;
+    public int s;
+    public ValueAnimator v;
+    public Utilities.Callback w;
+    public Utilities.Callback x;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w8(x8 x8Var, Context context) {
+    public w8(Context context) {
         super(context);
-        this.e = x8Var;
-        this.a = new RectF();
-        this.b = new RectF();
-        this.c = new RectF();
-        this.d = new Paint(1);
+        v8 v8Var = new v8(this, context);
+        this.a = v8Var;
+        v8Var.setOrientation(0);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.b = frameLayout;
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 14.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setTextColor(-1);
+        textView.setText(LocaleController.getString(R.string.StoryLive));
+        frameLayout.addView(textView, w7.z5.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
+        v8Var.addView(frameLayout, w7.z5.r(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
+        final int i10 = 0;
+        frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: ci.u8
+            public final /* synthetic */ w8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i10) {
+                    case 0:
+                        this.b.b(-1);
+                        break;
+                    case 1:
+                        this.b.b(0);
+                        break;
+                    default:
+                        this.b.b(1);
+                        break;
+                }
+            }
+        });
+        w7.b6.a(frameLayout);
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        this.d = frameLayout2;
+        TextView textView2 = new TextView(context);
+        this.e = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setTypeface(AndroidUtilities.bold());
+        textView2.setTextColor(-1);
+        textView2.setText(LocaleController.getString(R.string.StoryPhoto));
+        frameLayout2.addView(textView2, w7.z5.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
+        v8Var.addView(frameLayout2, w7.z5.r(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
+        final int i11 = 1;
+        frameLayout2.setOnClickListener(new View.OnClickListener(this) { // from class: ci.u8
+            public final /* synthetic */ w8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i11) {
+                    case 0:
+                        this.b.b(-1);
+                        break;
+                    case 1:
+                        this.b.b(0);
+                        break;
+                    default:
+                        this.b.b(1);
+                        break;
+                }
+            }
+        });
+        w7.b6.a(frameLayout2);
+        FrameLayout frameLayout3 = new FrameLayout(context);
+        this.f = frameLayout3;
+        TextView textView3 = new TextView(context);
+        this.h = textView3;
+        textView3.setTextSize(1, 14.0f);
+        textView3.setTypeface(AndroidUtilities.bold());
+        textView3.setTextColor(-1);
+        textView3.setText(LocaleController.getString(R.string.StoryVideo));
+        frameLayout3.addView(textView3, w7.z5.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
+        v8Var.addView(frameLayout3, w7.z5.t(-2, -1, 112, 0, 0, 0, 0));
+        final int i12 = 2;
+        frameLayout3.setOnClickListener(new View.OnClickListener(this) { // from class: ci.u8
+            public final /* synthetic */ w8 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i12) {
+                    case 0:
+                        this.b.b(-1);
+                        break;
+                    case 1:
+                        this.b.b(0);
+                        break;
+                    default:
+                        this.b.b(1);
+                        break;
+                }
+            }
+        });
+        w7.b6.a(frameLayout3);
+        addView(v8Var, w7.z5.e(-2, -1, 113));
     }
 
-    public final void a(RectF rectF, int i10) {
-        x8 x8Var = this.e;
-        FrameLayout frameLayout = i10 <= -1 ? x8Var.b : i10 >= 1 ? x8Var.f : x8Var.d;
-        rectF.set(frameLayout.getLeft(), frameLayout.getBottom() - AndroidUtilities.dp(30.0f), frameLayout.getRight(), frameLayout.getBottom());
+    public final void a(int i10) {
+        if (this.s == i10) {
+            return;
+        }
+        this.s = i10;
+        ValueAnimator valueAnimator = this.v;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r, i10);
+        this.v = ofFloat;
+        ofFloat.addUpdateListener(new ai.a(this, 24));
+        this.v.setDuration(320L);
+        this.v.setInterpolator(tr.h);
+        this.v.start();
+    }
+
+    public final void b(int i10) {
+        if (this.s == i10) {
+            return;
+        }
+        a(i10);
+        Utilities.Callback callback = this.w;
+        if (callback != null) {
+            callback.run(Integer.valueOf(i10));
+        }
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        x8 x8Var = this.e;
-        int floor = (int) Math.floor(x8Var.r);
-        RectF rectF = this.a;
-        a(rectF, floor);
-        int ceil = (int) Math.ceil(x8Var.r);
-        RectF rectF2 = this.b;
-        a(rectF2, ceil);
-        float f7 = x8Var.r;
-        float floor2 = f7 - ((float) Math.floor(f7));
-        RectF rectF3 = this.c;
-        AndroidUtilities.lerp(rectF, rectF2, floor2, rectF3);
-        int l1 = org.telegram.ui.ActionBar.h6.l1(0.15f, i0.a.d(x8Var.n, -1, -16777216));
-        Paint paint = this.d;
-        paint.setColor(l1);
-        canvas.drawRoundRect(rectF3, rectF3.height() / 2.0f, rectF3.height() / 2.0f, paint);
-        super.dispatchDraw(canvas);
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (((cb) this).y.I()) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View, ci.w2
+    public final void invalidate() {
+        super.invalidate();
+        this.a.invalidate();
+    }
+
+    @Override // ci.w2
+    public void setInvert(float f7) {
+        this.n = f7;
+        this.c.setTextColor(i0.a.d(f7, -1, -16777216));
+        this.e.setTextColor(i0.a.d(f7, -1, -16777216));
+        this.h.setTextColor(i0.a.d(f7, -1, -16777216));
+    }
+
+    public void setOnSwitchModeListener(Utilities.Callback<Integer> callback) {
+        this.w = callback;
+    }
+
+    public void setOnSwitchingModeListener(Utilities.Callback<Float> callback) {
+        this.x = callback;
     }
 }

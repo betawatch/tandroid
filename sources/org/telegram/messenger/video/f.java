@@ -16,16 +16,16 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.gd0;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.aa;
+import org.telegram.ui.Components.rc;
 import org.telegram.ui.c3;
-import org.telegram.ui.d60;
-import org.telegram.ui.i40;
-import org.telegram.ui.j40;
-import org.telegram.ui.l40;
-import org.telegram.ui.n30;
+import org.telegram.ui.ca;
+import org.telegram.ui.h60;
+import org.telegram.ui.n40;
+import org.telegram.ui.o40;
+import org.telegram.ui.q40;
+import org.telegram.ui.s30;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -60,45 +60,45 @@ public final /* synthetic */ class f implements View.OnClickListener {
         Object obj7 = this.b;
         switch (i10) {
             case 0:
-                ((VideoAds) obj7).lambda$show$17((qc) obj6, (TLRPC.TL_sponsoredMessage) obj5, (Context) obj4, (d6) obj3, (VideoAds.AdLayout) obj2, (e) obj, view);
+                ((VideoAds) obj7).lambda$show$17((rc) obj6, (TLRPC.TL_sponsoredMessage) obj5, (Context) obj4, (d6) obj3, (VideoAds.AdLayout) obj2, (e) obj, view);
                 break;
             default:
-                d60 d60Var = (d60) obj7;
+                h60 h60Var = (h60) obj7;
                 gd0 gd0Var = (gd0) obj6;
-                i40 i40Var = (i40) obj5;
-                j40 j40Var = (j40) obj4;
+                n40 n40Var = (n40) obj5;
+                o40 o40Var = (o40) obj4;
                 TLRPC.Chat chat = (TLRPC.Chat) obj3;
                 AccountInstance accountInstance = (AccountInstance) obj2;
                 TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj;
-                n30 n30Var = d60Var.e1;
+                s30 s30Var = h60Var.e1;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                d60Var.X0 = ofFloat;
+                h60Var.X0 = ofFloat;
                 ofFloat.setDuration(600L);
-                d60Var.X0.addUpdateListener(new c3(d60Var, 15));
-                d60Var.X0.addListener(new l40(d60Var));
-                d60Var.X0.start();
-                if (ChatObject.isChannelOrGiga(d60Var.Z0)) {
-                    n30Var.b(LocaleController.getString(R.string.VoipChannelVoiceChat), true);
+                h60Var.X0.addUpdateListener(new c3(h60Var, 14));
+                h60Var.X0.addListener(new q40(h60Var));
+                h60Var.X0.start();
+                if (ChatObject.isChannelOrGiga(h60Var.Z0)) {
+                    s30Var.b(LocaleController.getString(R.string.VoipChannelVoiceChat), true);
                 } else {
-                    n30Var.b(LocaleController.getString(R.string.VoipGroupVoiceChat), true);
+                    s30Var.b(LocaleController.getString(R.string.VoipGroupVoiceChat), true);
                 }
                 Calendar calendar = Calendar.getInstance();
-                boolean g10 = e5.g(null, null, 0L, 604800L, 3, gd0Var, i40Var, j40Var);
+                boolean g10 = e5.g(null, null, 0L, 604800L, 3, gd0Var, n40Var, o40Var);
                 calendar.setTimeInMillis((gd0Var.getValue() * 86400000) + System.currentTimeMillis());
                 int i11 = 11;
-                calendar.set(11, i40Var.getValue());
-                calendar.set(12, j40Var.getValue());
+                calendar.set(11, n40Var.getValue());
+                calendar.set(12, o40Var.getValue());
                 if (g10) {
                     calendar.set(13, 0);
                 }
-                d60Var.k2 = (int) (calendar.getTimeInMillis() / 1000);
-                d60Var.L1(false);
+                h60Var.k2 = (int) (calendar.getTimeInMillis() / 1000);
+                h60Var.L1(false);
                 TL_phone.createGroupCall creategroupcall = new TL_phone.createGroupCall();
                 creategroupcall.peer = MessagesController.getInputPeer(chat);
                 creategroupcall.random_id = Utilities.random.nextInt();
-                creategroupcall.schedule_date = d60Var.k2;
+                creategroupcall.schedule_date = h60Var.k2;
                 creategroupcall.flags |= 2;
-                accountInstance.getConnectionsManager().sendRequest(creategroupcall, new aa(d60Var, chat, inputPeer, i11), 2);
+                accountInstance.getConnectionsManager().sendRequest(creategroupcall, new ca(h60Var, chat, inputPeer, i11), 2);
                 break;
         }
     }

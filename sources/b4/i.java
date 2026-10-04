@@ -14,13 +14,12 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
-import v7.j;
-import z3.l;
 import z3.m;
+import z3.n;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class i implements m {
+public final class i implements n {
     public static final byte[] n = {0, 7, 8, 15};
     public static final byte[] r = {0, 119, -120, -1};
     public static final byte[] s = {0, 17, 34, 51, 68, 85, 102, 119, -120, -103, -86, -69, -52, -35, -18, -1};
@@ -428,13 +427,13 @@ public final class i implements m {
         return new c(bArr2, bArr, h, i10);
     }
 
-    @Override // z3.m
+    @Override // z3.n
     public final int A() {
         return 2;
     }
 
-    @Override // z3.m
-    public final void C(byte[] bArr, int i10, int i11, l lVar, e2.h hVar) {
+    @Override // z3.n
+    public final void F(byte[] bArr, int i10, int i11, m mVar, e2.h hVar) {
         h hVar2;
         z3.a aVar;
         ArrayList arrayList;
@@ -716,12 +715,12 @@ public final class i implements m {
         hVar.accept(aVar);
     }
 
-    @Override // z3.m
-    public final /* synthetic */ z3.d r(int i10, int i11, byte[] bArr) {
-        return j.a(this, bArr, i11);
+    @Override // z3.n
+    public final /* synthetic */ z3.d h(int i10, int i11, byte[] bArr) {
+        return t8.b.a(this, bArr, i11);
     }
 
-    @Override // z3.m
+    @Override // z3.n
     public final void reset() {
         h hVar = this.f;
         hVar.c.clear();

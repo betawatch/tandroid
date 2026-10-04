@@ -13,12 +13,12 @@ import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class r0 extends h3 implements ServiceConnection {
     public static final /* synthetic */ int G = 0;
     public boolean E;
-    public le.b F;
+    public k2.v F;
     public final ComponentName r;
     public final com.google.android.gms.internal.cast.c0 s;
     public final ArrayList v;
@@ -31,7 +31,7 @@ public final class r0 extends h3 implements ServiceConnection {
     }
 
     public r0(Context context, ComponentName componentName) {
-        super(context, new n2.e(componentName, 12));
+        super(context, new l2.g(componentName, 12));
         this.v = new ArrayList();
         this.r = componentName;
         this.s = new com.google.android.gms.internal.cast.c0();
@@ -185,8 +185,8 @@ public final class r0 extends h3 implements ServiceConnection {
             p();
             try {
                 this.a.unbindService(this);
-            } catch (IllegalArgumentException e) {
-                Log.e("MediaRouteProviderProxy", this + ": unbindService failed", e);
+            } catch (IllegalArgumentException e7) {
+                Log.e("MediaRouteProviderProxy", this + ": unbindService failed", e7);
             }
         }
     }

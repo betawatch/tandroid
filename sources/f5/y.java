@@ -1,37 +1,38 @@
 package f5;
 
 import com.google.android.gms.internal.vision.e2;
+import ii.n4;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import w7.u6;
+import w7.v6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class y extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ka.c E;
-    public static final /* synthetic */ ka.c F;
-    public static final /* synthetic */ ka.c G;
-    public static final /* synthetic */ ka.c H;
-    public static final /* synthetic */ ka.c I;
-    public static final /* synthetic */ ka.c J;
-    public static final /* synthetic */ ka.c K;
-    public static final /* synthetic */ ka.c L;
-    public static final /* synthetic */ ka.c M;
-    public static final /* synthetic */ ka.c N;
-    public static final /* synthetic */ ka.c O;
-    public static final /* synthetic */ ka.c P;
-    public static final /* synthetic */ ka.c Q;
-    public static final /* synthetic */ ka.c R;
-    public static final /* synthetic */ ka.c S;
-    public static final /* synthetic */ ka.c T;
-    public static final /* synthetic */ ka.c U;
-    public static final /* synthetic */ ka.c V;
-    public static final /* synthetic */ ka.c W;
-    public static final /* synthetic */ ka.c X;
-    public static final /* synthetic */ ka.c Y;
-    public static final /* synthetic */ ka.c Z;
-    public static final /* synthetic */ ka.c a0;
-    public static final /* synthetic */ ka.c b0;
+    public static final /* synthetic */ n4 E;
+    public static final /* synthetic */ n4 F;
+    public static final /* synthetic */ n4 G;
+    public static final /* synthetic */ n4 H;
+    public static final /* synthetic */ n4 I;
+    public static final /* synthetic */ n4 J;
+    public static final /* synthetic */ n4 K;
+    public static final /* synthetic */ n4 L;
+    public static final /* synthetic */ n4 M;
+    public static final /* synthetic */ n4 N;
+    public static final /* synthetic */ n4 O;
+    public static final /* synthetic */ n4 P;
+    public static final /* synthetic */ n4 Q;
+    public static final /* synthetic */ n4 R;
+    public static final /* synthetic */ n4 S;
+    public static final /* synthetic */ n4 T;
+    public static final /* synthetic */ n4 U;
+    public static final /* synthetic */ n4 V;
+    public static final /* synthetic */ n4 W;
+    public static final /* synthetic */ n4 X;
+    public static final /* synthetic */ n4 Y;
+    public static final /* synthetic */ n4 Z;
+    public static final /* synthetic */ n4 a0;
+    public static final /* synthetic */ n4 b0;
     public Date e;
     public Date f;
     public long h;
@@ -81,8 +82,8 @@ public final class y extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = u6.b(e5.b.j(byteBuffer));
-            this.f = u6.b(e5.b.j(byteBuffer));
+            this.e = v6.b(e5.b.j(byteBuffer));
+            this.f = v6.b(e5.b.j(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             e5.b.i(byteBuffer);
             long j3 = byteBuffer.getLong();
@@ -91,8 +92,8 @@ public final class y extends com.googlecode.mp4parser.c {
                 throw new RuntimeException("The tracks duration is bigger than Long.MAX_VALUE");
             }
         } else {
-            this.e = u6.b(e5.b.i(byteBuffer));
-            this.f = u6.b(e5.b.i(byteBuffer));
+            this.e = v6.b(e5.b.i(byteBuffer));
+            this.f = v6.b(e5.b.i(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             e5.b.i(byteBuffer);
             this.n = e5.b.i(byteBuffer);
@@ -110,19 +111,19 @@ public final class y extends com.googlecode.mp4parser.c {
 
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void getContent(ByteBuffer byteBuffer) {
-        com.google.firebase.messaging.t c10 = re.a.c(N, this, this, byteBuffer);
+        com.google.firebase.messaging.s c10 = re.a.c(N, this, this, byteBuffer);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(c10);
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(u6.a(this.e));
-            byteBuffer.putLong(u6.a(this.f));
+            byteBuffer.putLong(v6.a(this.e));
+            byteBuffer.putLong(v6.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) 0);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) u6.a(this.e));
-            byteBuffer.putInt((int) u6.a(this.f));
+            byteBuffer.putInt((int) v6.a(this.e));
+            byteBuffer.putInt((int) v6.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) 0);
             byteBuffer.putInt((int) this.n);
@@ -145,7 +146,7 @@ public final class y extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.t b10 = re.a.b(O, this, this);
+        com.google.firebase.messaging.s b10 = re.a.b(O, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("TrackHeaderBox[creationTime=");

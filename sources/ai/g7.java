@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g7 implements ToIntFunction {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class g7 implements ToIntFunction {
             case 1:
                 return ((TL_stories.StoryItem) obj).date;
             case 2:
-                return -((TL_stories.StoryItem) hg.c.g(1, ((TL_stories.PeerStories) obj).stories)).date;
+                return -((TL_stories.StoryItem) hg.k0.g(1, ((TL_stories.PeerStories) obj).stories)).date;
             case 3:
                 return ((Integer) ((Object[]) obj)[1]).intValue();
             case 4:

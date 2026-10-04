@@ -18,11 +18,11 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.v01;
-import org.telegram.ui.Components.ww0;
+import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.fx0;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class n0 {
     public final u1 a;
@@ -35,7 +35,7 @@ public final class n0 {
     public final Drawable h;
     public final Paint i;
     public final Paint j;
-    public final v01 k;
+    public final e11 k;
     public boolean l;
     public boolean m;
     public final zc n;
@@ -59,7 +59,7 @@ public final class n0 {
             this.b[i12] = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
             if (i12 >= tLObjectArr.length || (tLObject = tLObjectArr[i12]) == null) {
                 Paint paint = new Paint(1);
-                int v = org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.ra, u1Var.Id), org.telegram.ui.ActionBar.h6.l1(0.5f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.y6, u1Var.Id)));
+                int v = org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.ra, u1Var.Id), org.telegram.ui.ActionBar.i6.l1(0.5f, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.y6, u1Var.Id)));
                 paint.setColor(v);
                 this.c[i12].setImageBitmap(new m0(paint, v));
             } else {
@@ -79,7 +79,7 @@ public final class n0 {
         if (c(this.o) == null) {
             this.k = null;
         } else {
-            this.k = new v01(hg.c.h(i11, "+"), 9.33f, AndroidUtilities.bold());
+            this.k = new e11(hg.k0.h(i11, "+"), 9.33f, AndroidUtilities.bold());
         }
     }
 
@@ -120,7 +120,7 @@ public final class n0 {
                 CharSequence charSequence = this.e;
                 this.f = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i10).setMaxLines(2).setEllipsize(TextUtils.TruncateAt.END).setBreakStrategy(0).setAlignment(Layout.Alignment.ALIGN_CENTER).build();
             } else {
-                this.f = ww0.c(this.e, textPaint, i10, Layout.Alignment.ALIGN_CENTER, 0.0f, false, TextUtils.TruncateAt.END, i10 - AndroidUtilities.dp(16.0f), 2, false);
+                this.f = fx0.c(this.e, textPaint, i10, Layout.Alignment.ALIGN_CENTER, 0.0f, false, TextUtils.TruncateAt.END, i10 - AndroidUtilities.dp(16.0f), 2, false);
             }
         }
         if (this.f != null) {
@@ -129,23 +129,23 @@ public final class n0 {
             int length = this.c.length;
             u1 u1Var = this.a;
             if (length <= 1) {
-                textPaint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.ec, u1Var.Id));
+                textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.ec, u1Var.Id));
             } else {
-                textPaint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.y6, u1Var.Id));
+                textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.y6, u1Var.Id));
             }
             textPaint.setAlpha((int) (textPaint.getAlpha() * f7));
             this.f.draw(canvas);
             canvas.restore();
         }
-        v01 v01Var = this.k;
-        if (v01Var != null) {
-            v01Var.p = i10 - AndroidUtilities.dp(32.0f);
+        e11 e11Var = this.k;
+        if (e11Var != null) {
+            e11Var.p = i10 - AndroidUtilities.dp(32.0f);
             Drawable drawable = this.h;
-            float l4 = (f10 - (v01Var.l() + AndroidUtilities.dp(drawable != null ? 17.0f : 8.0f))) / 2.0f;
+            float l4 = (f10 - (e11Var.l() + AndroidUtilities.dp(drawable != null ? 17.0f : 8.0f))) / 2.0f;
             float dp = AndroidUtilities.dp(54.0f) + AndroidUtilities.dp(4.165f);
             boolean z10 = this.g;
             if (drawable != null) {
-                drawable.setBounds((int) ((z10 ? v01Var.l() + AndroidUtilities.dp(1.33f) : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) ok.b(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z10 ? AndroidUtilities.dp(1.33f) + v01Var.l() : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) a4.a.e(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp));
+                drawable.setBounds((int) ((z10 ? e11Var.l() + AndroidUtilities.dp(1.33f) : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) ok.b(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z10 ? AndroidUtilities.dp(1.33f) + e11Var.l() : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) a4.a.e(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp));
                 drawable.draw(canvas);
             }
             this.k.c(l4 + AndroidUtilities.dp(!z10 ? 12.66f : 4.0f), dp, f7, -1, canvas);
@@ -195,7 +195,7 @@ public final class n0 {
         if (c(tLObject) == null) {
             this.k = null;
         } else {
-            this.k = new v01(c(tLObject), 9.33f, AndroidUtilities.bold());
+            this.k = new e11(c(tLObject), 9.33f, AndroidUtilities.bold());
         }
     }
 }

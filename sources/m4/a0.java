@@ -25,9 +25,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
-import v7.m8;
+import v7.l8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class a0 {
     public static final k1 B = new k1(1);
@@ -107,7 +107,7 @@ public class a0 {
                     int i10 = a1Var.b;
                     b2.a1 a1Var2 = j1Var.a;
                     if (i10 == a1Var2.b && a1Var.e == a1Var2.e && a1Var.h == a1Var2.h && a1Var.i == a1Var2.i) {
-                        oi.f fVar = a0Var.g.b;
+                        qi.f fVar = a0Var.g.b;
                         e9.i0 s10 = fVar.s();
                         for (int i11 = 0; i11 < s10.size(); i11++) {
                             final r rVar = (r) s10.get(i11);
@@ -116,15 +116,15 @@ public class a0 {
                             final boolean B3 = fVar.B(rVar, 17);
                             a0Var.c(rVar, new z() { // from class: m4.v
                                 @Override // m4.z
-                                public final void c(q qVar, int i12) {
+                                public final void b(q qVar, int i12) {
                                     qVar.e(i12, j1.this, B2, B3, rVar.c);
                                 }
                             });
                         }
                         try {
                             a0Var.h.i.e(0, O0, true, true, 0);
-                        } catch (RemoteException e) {
-                            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+                        } catch (RemoteException e7) {
+                            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
                         }
                     }
                 }
@@ -141,50 +141,50 @@ public class a0 {
 
     public final boolean b(KeyEvent keyEvent, boolean z10, boolean z11) {
         b bVar;
-        r e = this.k.a.e();
-        e.getClass();
+        r e7 = this.k.a.e();
+        e7.getClass();
         int keyCode = keyEvent.getKeyCode();
         if ((keyCode == 85 || keyCode == 79) && z10) {
             keyCode = 87;
         }
         if (keyCode == 126) {
-            bVar = new b(this, e, 7);
+            bVar = new b(this, e7, 7);
         } else if (keyCode != 127) {
             if (keyCode != 272) {
                 if (keyCode != 273) {
                     switch (keyCode) {
                         case 85:
                             if (!this.t.u()) {
-                                bVar = new b(this, e, 6);
+                                bVar = new b(this, e7, 6);
                                 break;
                             } else {
-                                bVar = new b(this, e, 5);
+                                bVar = new b(this, e7, 5);
                                 break;
                             }
                         case 86:
-                            bVar = new b(this, e, 4);
+                            bVar = new b(this, e7, 4);
                             break;
                         case 87:
                             break;
                         case 88:
                             break;
                         case 89:
-                            bVar = new b(this, e, 3);
+                            bVar = new b(this, e7, 3);
                             break;
                         case 90:
-                            bVar = new b(this, e, 2);
+                            bVar = new b(this, e7, 2);
                             break;
                         default:
                             return false;
                     }
                 }
-                bVar = new b(this, e, 1);
+                bVar = new b(this, e7, 1);
             }
-            bVar = new b(this, e, 9);
+            bVar = new b(this, e7, 9);
         } else {
-            bVar = new b(this, e, 8);
+            bVar = new b(this, e7, 8);
         }
-        e2.d0.U(this.l, new s4(this, z11, e, bVar, 7));
+        e2.d0.U(this.l, new s4(this, z11, e7, bVar, 7));
         return true;
     }
 
@@ -202,12 +202,12 @@ public class a0 {
             }
             q qVar = rVar.d;
             if (qVar != null) {
-                zVar.c(qVar, i10);
+                zVar.b(qVar, i10);
             }
         } catch (DeadObjectException unused) {
             a1Var.b.M(rVar);
-        } catch (RemoteException e) {
-            e2.a.o("MediaSessionImpl", "Exception in " + rVar, e);
+        } catch (RemoteException e7) {
+            e2.a.o("MediaSessionImpl", "Exception in " + rVar, e7);
         }
     }
 
@@ -217,9 +217,9 @@ public class a0 {
             c((r) s10.get(i10), zVar);
         }
         try {
-            zVar.c(this.h.i, 0);
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+            zVar.b(this.h.i, 0);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
         }
     }
 
@@ -236,13 +236,13 @@ public class a0 {
 
     public final void f(b2.x0 x0Var) {
         this.c.a(false, false);
-        d(new le.b(x0Var, 1));
+        d(new k2.v(x0Var, 3));
         try {
             i0 i0Var = this.h.i;
             b2.l lVar = this.s.q;
             i0Var.k();
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
         }
     }
 
@@ -271,7 +271,7 @@ public class a0 {
             UnsupportedOperationException unsupportedOperationException = new UnsupportedOperationException();
             i9.t tVar = new i9.t();
             tVar.n(unsupportedOperationException);
-            tVar.a(new i9.s(0, tVar, new androidx.activity.n(this, s10, z10, x0Var)), new k2.b0(this, 1));
+            tVar.a(new i9.s(0, tVar, new androidx.activity.n(this, s10, z10, x0Var)), new k2.c0(this, 1));
         }
     }
 
@@ -358,7 +358,7 @@ public class a0 {
     public final i9.u n(r rVar) {
         s(rVar);
         this.e.getClass();
-        return m8.b(new k1(-6));
+        return l8.b(new k1(-6));
     }
 
     public final boolean o() {
@@ -369,8 +369,8 @@ public class a0 {
         this.o.post(new ki.h0(2, this, c0Var));
         try {
             return ((Boolean) c0Var.get()).booleanValue();
-        } catch (InterruptedException | ExecutionException e) {
-            throw new IllegalStateException(e);
+        } catch (InterruptedException | ExecutionException e7) {
+            throw new IllegalStateException(e7);
         }
     }
 
@@ -385,7 +385,7 @@ public class a0 {
         return e2.d0.d0(na.d.z3(list), new i9.p() { // from class: m4.o
             @Override // i9.p
             public final i9.w apply(Object obj) {
-                return m8.b(new s(j3, i10, (List) obj));
+                return l8.b(new s(j3, i10, (List) obj));
             }
         });
     }
@@ -407,8 +407,8 @@ public class a0 {
                 this.l.removeCallbacksAndMessages(null);
                 try {
                     e2.d0.U(this.l, new u(this, 0));
-                } catch (Exception e) {
-                    e2.a.o("MediaSessionImpl", "Exception thrown while closing", e);
+                } catch (Exception e7) {
+                    e2.a.o("MediaSessionImpl", "Exception thrown while closing", e7);
                 }
                 k0 k0Var = this.h;
                 ComponentName componentName = k0Var.m;
@@ -440,8 +440,8 @@ public class a0 {
                         if (handler != null) {
                             handler.removeCallbacksAndMessages(null);
                         }
-                    } catch (Exception e7) {
-                        Log.w("MediaSessionCompat", "Exception happened while accessing MediaSession.mCallback.", e7);
+                    } catch (Exception e10) {
+                        Log.w("MediaSessionCompat", "Exception happened while accessing MediaSession.mCallback.", e10);
                     }
                 }
                 mediaSession.setCallback(null);
@@ -449,7 +449,7 @@ public class a0 {
                 mediaSession.release();
                 a1 a1Var = this.g;
                 Set set = a1Var.c;
-                oi.f fVar = a1Var.b;
+                qi.f fVar = a1Var.b;
                 e9.i0 s10 = fVar.s();
                 int size = s10.size();
                 while (i11 < size) {
@@ -481,9 +481,9 @@ public class a0 {
         if (!this.x || !k(rVar)) {
             return rVar;
         }
-        r e = e();
-        e.getClass();
-        return e;
+        r e7 = e();
+        e7.getClass();
+        return e7;
     }
 
     public final void t() {
@@ -513,8 +513,8 @@ public class a0 {
         this.u = yVar2;
         try {
             k0Var.i.m(0, e1Var, e1Var2);
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
         }
         if (e1Var == null) {
             ((n4.r) k0Var.k.b).a.setActive(true);

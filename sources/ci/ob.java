@@ -1,42 +1,73 @@
 package ci;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import android.app.Activity;
+import android.app.Dialog;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class ob extends d1 {
-    public final /* synthetic */ lc b0;
+public final class ob extends org.telegram.ui.ActionBar.n2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kc b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ob(lc lcVar, Context context, boolean z10) {
-        super(context, z10);
-        this.b0 = lcVar;
-    }
-
-    @Override // org.telegram.messenger.camera.CameraView
-    public final void receivedAmplitude(double d) {
-        j7 j7Var = this.b0.O0;
-        if (j7Var != null) {
-            j7Var.g0 = Utilities.clamp((float) (d / 1800.0d), 1.0f, 0.0f);
+    public ob(kc kcVar, int i10) {
+        super(null);
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.b = kcVar;
+                super(null);
+                this.currentAccount = kcVar.c;
+                break;
+            default:
+                this.b = kcVar;
+                break;
         }
     }
 
-    @Override // ci.d1, org.telegram.messenger.camera.CameraView
-    public final void toggleDual() {
-        super.toggleDual();
-        lc lcVar = this.b0;
-        lcVar.F0.setValue(isDual());
-        lcVar.F0.setContentDescription(LocaleController.getString(isDual() ? R.string.AccDescrDualCameraOn : R.string.AccDescrDualCameraOff));
-        lcVar.e0(lcVar.C());
+    @Override // org.telegram.ui.ActionBar.n2
+    public final Activity getParentActivity() {
+        switch (this.a) {
+        }
+        return this.b.b;
     }
 
-    @Override // ci.d1
-    public final void u(boolean z10) {
-        lc lcVar = this.b0;
-        lcVar.o1.b(lcVar.c1.getText());
-        lcVar.o1.a(false, z10, lcVar.k0);
+    @Override // org.telegram.ui.ActionBar.n2
+    public final org.telegram.ui.ActionBar.d6 getResourceProvider() {
+        switch (this.a) {
+            case 0:
+                return new ai.x3(7, this.b.a);
+            default:
+                return new ai.x3(8, this.b.a);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean isLightStatusBar() {
+        switch (this.a) {
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public boolean presentFragment(org.telegram.ui.ActionBar.n2 n2Var) {
+        switch (this.a) {
+            case 0:
+                this.b.T();
+                return false;
+            default:
+                return super.presentFragment(n2Var);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public Dialog showDialog(Dialog dialog) {
+        switch (this.a) {
+            case 1:
+                dialog.show();
+                return dialog;
+            default:
+                return super.showDialog(dialog);
+        }
     }
 }

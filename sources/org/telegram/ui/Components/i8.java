@@ -17,9 +17,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class i8 extends xl0 {
+public final class i8 extends yl0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public String e;
@@ -32,7 +32,7 @@ public final class i8 extends xl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         return (this.n.v0 && c1Var.b() == 0) ? false : true;
     }
@@ -102,16 +102,16 @@ public final class i8 extends xl0 {
                         ViewGroup viewGroup2;
                         switch (i10) {
                             case 0:
-                                viewGroup = ((org.telegram.ui.ActionBar.e3) this.b.n).containerView;
+                                viewGroup = ((org.telegram.ui.ActionBar.f3) this.b.n).containerView;
                                 viewGroup.invalidate();
                                 break;
                             default:
-                                viewGroup2 = ((org.telegram.ui.ActionBar.e3) this.b.n).containerView;
+                                viewGroup2 = ((org.telegram.ui.ActionBar.f3) this.b.n).containerView;
                                 viewGroup2.invalidate();
                                 break;
                         }
                     }
-                }).setDuration(420L).setInterpolator(sr.h).start();
+                }).setDuration(420L).setInterpolator(tr.h).start();
             } else {
                 final int i11 = 1;
                 u7Var.animate().translationY(AndroidUtilities.displaySize.y).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.f8
@@ -127,24 +127,24 @@ public final class i8 extends xl0 {
                         ViewGroup viewGroup2;
                         switch (i11) {
                             case 0:
-                                viewGroup = ((org.telegram.ui.ActionBar.e3) this.b.n).containerView;
+                                viewGroup = ((org.telegram.ui.ActionBar.f3) this.b.n).containerView;
                                 viewGroup.invalidate();
                                 break;
                             default:
-                                viewGroup2 = ((org.telegram.ui.ActionBar.e3) this.b.n).containerView;
+                                viewGroup2 = ((org.telegram.ui.ActionBar.f3) this.b.n).containerView;
                                 viewGroup2.invalidate();
                                 break;
                         }
                     }
-                }).setDuration(420L).setInterpolator(sr.h).withEndAction(new pg(this, 9)).start();
+                }).setDuration(420L).setInterpolator(tr.h).withEndAction(new qg(this, 9)).start();
             }
         }
         if (j8Var.x0.size() > 1) {
-            p7Var.setBackgroundColor(j8Var.getThemedColor(org.telegram.ui.ActionBar.h6.Ri));
+            p7Var.setBackgroundColor(j8Var.getThemedColor(org.telegram.ui.ActionBar.i6.Ri));
             view.setVisibility(0);
             u7Var.setPadding(0, u7Var.getPaddingTop(), 0, AndroidUtilities.dp(231.0f));
         } else {
-            p7Var.setBackgroundColor(j8Var.getThemedColor(org.telegram.ui.ActionBar.h6.Ri));
+            p7Var.setBackgroundColor(j8Var.getThemedColor(org.telegram.ui.ActionBar.i6.Ri));
             view.setVisibility(0);
             u7Var.setPadding(0, u7Var.getPaddingTop(), 0, 0);
         }
@@ -201,9 +201,9 @@ public final class i8 extends xl0 {
             messageObject.setQuery(this.e);
         }
         ci.q1 q1Var = j8Var.s0() ? new ci.q1(2, this, xVar) : null;
-        int i11 = org.telegram.ui.ActionBar.h6.h5;
-        d6Var = ((org.telegram.ui.ActionBar.e3) j8Var).resourcesProvider;
-        xVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+        int i11 = org.telegram.ui.ActionBar.i6.h5;
+        d6Var = ((org.telegram.ui.ActionBar.f3) j8Var).resourcesProvider;
+        xVar.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
         boolean s02 = j8Var.s0();
         ai.d0 d0Var = (j8Var.s0() || j8Var.z0 || messageObject.getId() <= 0) ? null : new ai.d0(this, xVar, messageObject, 15);
         RadialProgress2 radialProgress2 = xVar.H;
@@ -238,12 +238,12 @@ public final class i8 extends xl0 {
         org.telegram.ui.ActionBar.d6 d6Var;
         Context context = this.c;
         if (i10 == 1) {
-            mn mnVar = new mn(context, 10);
-            mnVar.setTag(-33024);
-            return new il0(mnVar);
+            nn nnVar = new nn(context, 10);
+            nnVar.setTag(-33024);
+            return new il0(nnVar);
         }
         boolean currentPlaylistIsGlobalSearch = MediaController.getInstance().currentPlaylistIsGlobalSearch();
-        d6Var = ((org.telegram.ui.ActionBar.e3) this.n).resourcesProvider;
+        d6Var = ((org.telegram.ui.ActionBar.f3) this.n).resourcesProvider;
         return new il0(new org.telegram.ui.Cells.x(context, currentPlaylistIsGlobalSearch ? 1 : 0, d6Var));
     }
 }

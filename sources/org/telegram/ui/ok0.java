@@ -1,92 +1,117 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Parcelable;
-import android.util.SparseArray;
-import android.widget.TextView;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ok0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ sk0 b;
+public final class ok0 extends org.telegram.ui.Components.yl0 {
+    public final Context c;
+    public ArrayList d = new ArrayList();
+    public ArrayList e = new ArrayList();
+    public nk0 f;
+    public final gg.c2 h;
+    public final /* synthetic */ NotificationsCustomSettingsActivity n;
 
-    public ok0(sk0 sk0Var, Context context) {
-        this.b = sk0Var;
-        this.a = context;
+    public ok0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, Context context) {
+        this.n = notificationsCustomSettingsActivity;
+        this.c = context;
+        gg.c2 c2Var = new gg.c2(true);
+        this.h = c2Var;
+        c2Var.a = new bu(this, 26);
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        int i11;
-        int i12;
-        org.telegram.ui.ActionBar.k kVar;
-        sk0 sk0Var = this.b;
-        org.telegram.ui.ActionBar.d6 d6Var = sk0Var.h;
-        SparseArray sparseArray = sk0Var.J;
-        if (i10 == -1) {
-            kVar = ((org.telegram.ui.ActionBar.m2) sk0Var).actionBar;
-            if (kVar.s()) {
-                sk0.W(sk0Var);
-                return;
-            } else {
-                sk0Var.finishFragment();
-                return;
-            }
+    @Override // org.telegram.ui.Components.yl0
+    public final boolean D(s4.c1 c1Var) {
+        return true;
+    }
+
+    public final Object E(int i10) {
+        if (i10 >= 0 && i10 < this.d.size()) {
+            return this.d.get(i10);
         }
-        if (i10 == 1) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(sk0Var.getParentActivity(), 0, d6Var);
-            alertDialog$Builder.a.R = LocaleController.formatPluralString("DeleteTones", sparseArray.size(), new Object[0]);
-            alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString("DeleteTonesMessage", sparseArray.size(), new Object[0]));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.voip.e1(13));
-            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new du(this, 28));
-            TextView textView = (TextView) alertDialog$Builder.o().d(-1);
-            if (textView != null) {
-                textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.q7, d6Var));
-                return;
-            }
+        int f7 = com.google.android.gms.internal.vision.e2.f(1, i10, this.d);
+        gg.c2 c2Var = this.h;
+        ArrayList arrayList = c2Var.e;
+        if (f7 < 0 || f7 >= arrayList.size()) {
+            return null;
+        }
+        return c2Var.e.get(f7);
+    }
+
+    public final void F(String str) {
+        if (this.f != null) {
+            Utilities.searchQueue.cancelRunnable(this.f);
+            this.f = null;
+        }
+        if (str != null) {
+            DispatchQueue dispatchQueue = Utilities.searchQueue;
+            nk0 nk0Var = new nk0(this, str, 0);
+            this.f = nk0Var;
+            dispatchQueue.postRunnable(nk0Var, 300L);
             return;
         }
-        if (i10 == 2) {
-            int size = sparseArray.size();
-            Context context = this.a;
-            if (size == 1) {
-                Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
-                intent.setAction("android.intent.action.SEND");
-                qk0 qk0Var = (qk0) sparseArray.valueAt(0);
-                i12 = ((org.telegram.ui.ActionBar.m2) sk0Var).currentAccount;
-                Uri a2 = qk0Var.a(i12);
-                if (a2 != null) {
-                    intent.putExtra("android.intent.extra.STREAM", a2);
-                    context.startActivity(intent);
-                }
-            } else {
-                Intent intent2 = new Intent(context, (Class<?>) LaunchActivity.class);
-                intent2.setAction("android.intent.action.SEND_MULTIPLE");
-                ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
-                for (int i13 = 0; i13 < sparseArray.size(); i13++) {
-                    qk0 qk0Var2 = (qk0) sparseArray.valueAt(i13);
-                    i11 = ((org.telegram.ui.ActionBar.m2) sk0Var).currentAccount;
-                    Uri a10 = qk0Var2.a(i11);
-                    if (a10 != null) {
-                        arrayList.add(a10);
-                    }
-                }
-                if (!arrayList.isEmpty()) {
-                    intent2.putParcelableArrayListExtra("android.intent.extra.STREAM", arrayList);
-                    context.startActivity(intent2);
-                }
+        this.d.clear();
+        this.e.clear();
+        this.h.f(null, null);
+        gg.c2 c2Var = this.h;
+        int i10 = this.n.s;
+        c2Var.g(null, true, (i10 == 1 || i10 == 3) ? false : true, true, false, 0L, false, 0, 0);
+        l();
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        int size = this.d.size();
+        ArrayList arrayList = this.h.e;
+        return !arrayList.isEmpty() ? arrayList.size() + 1 + size : size;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return i10 == this.d.size() ? 1 : 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        int i11 = c1Var.f;
+        View view = c1Var.a;
+        if (i11 != 0) {
+            if (i11 != 1) {
+                return;
             }
-            sk0.W(sk0Var);
-            sk0Var.c0();
-            sk0Var.f.l();
+            ((org.telegram.ui.Cells.v3) view).setText(LocaleController.getString("AddToExceptions", R.string.AddToExceptions));
+            return;
         }
+        org.telegram.ui.Cells.za zaVar = (org.telegram.ui.Cells.za) view;
+        if (i10 < this.d.size()) {
+            zaVar.g((rk0) this.d.get(i10), (CharSequence) this.e.get(i10), i10 != this.d.size() - 1);
+            zaVar.setAddButtonVisible(false);
+        } else {
+            int f7 = com.google.android.gms.internal.vision.e2.f(1, i10, this.d);
+            ArrayList arrayList = this.h.e;
+            zaVar.d((TLObject) arrayList.get(f7), null, LocaleController.getString("NotificationsOn", R.string.NotificationsOn), f7 != arrayList.size() - 1);
+            zaVar.setAddButtonVisible(true);
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View zaVar;
+        if (i10 != 0) {
+            zaVar = new org.telegram.ui.Cells.v3(this.c, null);
+            zaVar.setBackgroundColor(0);
+            zaVar.setTag(-33024);
+        } else {
+            zaVar = new org.telegram.ui.Cells.za(4, 0, this.c, null, false, true);
+        }
+        return new org.telegram.ui.Components.il0(zaVar);
     }
 }

@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import org.chromium.support_lib_boundary.FeatureFlagHolderBoundaryInterface;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a implements InvocationHandler {
     public final FeatureFlagHolderBoundaryInterface a;
@@ -19,10 +19,10 @@ public final class a implements InvocationHandler {
         FeatureFlagHolderBoundaryInterface featureFlagHolderBoundaryInterface = this.a;
         try {
             return Class.forName(method.getDeclaringClass().getName(), true, featureFlagHolderBoundaryInterface.getClass().getClassLoader()).getDeclaredMethod(method.getName(), method.getParameterTypes()).invoke(featureFlagHolderBoundaryInterface, objArr);
-        } catch (InvocationTargetException e) {
-            throw e.getTargetException();
-        } catch (ReflectiveOperationException e7) {
-            throw new RuntimeException("Reflection failed for method " + method, e7);
+        } catch (InvocationTargetException e7) {
+            throw e7.getTargetException();
+        } catch (ReflectiveOperationException e10) {
+            throw new RuntimeException("Reflection failed for method " + method, e10);
         }
     }
 }

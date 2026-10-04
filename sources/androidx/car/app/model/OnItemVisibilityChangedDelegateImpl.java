@@ -6,12 +6,12 @@ import androidx.car.app.model.IOnItemVisibilityChangedListener;
 import androidx.car.app.model.OnItemVisibilityChangedDelegateImpl;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class OnItemVisibilityChangedDelegateImpl implements f0 {
     private final IOnItemVisibilityChangedListener mStub;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class OnItemVisibilityChangedListenerStub extends IOnItemVisibilityChangedListener.Stub {
         private final s mListener;
 
@@ -49,8 +49,8 @@ public class OnItemVisibilityChangedDelegateImpl implements f0 {
             IOnItemVisibilityChangedListener iOnItemVisibilityChangedListener = this.mStub;
             Objects.requireNonNull(iOnItemVisibilityChangedListener);
             iOnItemVisibilityChangedListener.onItemVisibilityChanged(i10, i11, androidx.car.app.utils.g.a());
-        } catch (RemoteException e) {
-            throw new RuntimeException(e);
+        } catch (RemoteException e7) {
+            throw new RuntimeException(e7);
         }
     }
 

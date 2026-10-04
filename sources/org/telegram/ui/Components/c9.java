@@ -12,14 +12,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class c9 extends View {
     public a9 a;
     public final e6 b;
     public boolean c;
     public boolean d;
-    public final r20 e;
+    public final s20 e;
     public Drawable f;
     public Drawable h;
     public boolean n;
@@ -34,7 +34,7 @@ public final class c9 extends View {
         this.w = e9Var;
         e6 e6Var = new e6(400L, AndroidUtilities.overshootInterpolator);
         this.b = e6Var;
-        this.e = new r20();
+        this.e = new s20();
         e6Var.a = this;
     }
 
@@ -60,15 +60,15 @@ public final class c9 extends View {
             int i11 = a9Var.d;
             int i12 = a9Var.e;
             int i13 = a9Var.f;
-            r20 r20Var = this.e;
-            r20Var.d(i10, i11, i12, i13);
-            r20Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-            paint = r20Var.c;
+            s20 s20Var = this.e;
+            s20Var.d(i10, i11, i12, i13);
+            s20Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+            paint = s20Var.c;
         } else {
             if (this.s == null) {
                 Paint paint2 = new Paint(1);
                 this.s = paint2;
-                paint2.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.He, false));
+                paint2.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.He, false));
             }
             paint = this.s;
         }
@@ -87,7 +87,7 @@ public final class c9 extends View {
             this.h = getContext().getResources().getDrawable(R.drawable.msg_mini_lock2).mutate();
             boolean z10 = this.d && this.a == null;
             this.n = z10;
-            this.h.setColorFilter(new PorterDuffColorFilter(z10 ? org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Je, false) : -1, PorterDuff.Mode.SRC_IN));
+            this.h.setColorFilter(new PorterDuffColorFilter(z10 ? org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Je, false) : -1, PorterDuff.Mode.SRC_IN));
             this.h.setBounds((int) (measuredWidth - (r1.getIntrinsicWidth() / 2.0f)), (int) (measuredHeight - (this.h.getIntrinsicHeight() / 2.0f)), (int) ((this.h.getIntrinsicWidth() / 2.0f) + measuredWidth), (int) ((this.h.getIntrinsicHeight() / 2.0f) + measuredHeight));
             float lerp = AndroidUtilities.lerp(1.05f, 0.92f, e6Var.c);
             canvas.save();
@@ -101,7 +101,7 @@ public final class c9 extends View {
                 if (this.f == null) {
                     Drawable drawable = getContext().getDrawable(R.drawable.msg_filled_plus);
                     this.f = drawable;
-                    drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Je, false), PorterDuff.Mode.MULTIPLY));
+                    drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Je, false), PorterDuff.Mode.MULTIPLY));
                 }
                 this.f.setBounds((int) (measuredWidth - (r1.getIntrinsicWidth() / 2.0f)), (int) (measuredHeight - (this.f.getIntrinsicHeight() / 2.0f)), (int) ((this.f.getIntrinsicWidth() / 2.0f) + measuredWidth), (int) ((this.f.getIntrinsicHeight() / 2.0f) + measuredHeight));
                 this.f.draw(canvas);

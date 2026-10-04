@@ -9,7 +9,7 @@ import android.view.View;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class mf0 extends View {
     public int a;
@@ -64,9 +64,9 @@ public final class mf0 extends View {
         if (lf0Var != null) {
             vf0 vf0Var = ((nf0) lf0Var).a;
             vf0Var.g();
-            xz xzVar = vf0Var.l0;
-            if (xzVar != null) {
-                xzVar.e(false, false, false);
+            yz yzVar = vf0Var.l0;
+            if (yzVar != null) {
+                yzVar.e(false, false, false);
             }
         }
         this.d = y3;

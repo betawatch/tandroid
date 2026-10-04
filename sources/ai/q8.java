@@ -31,13 +31,13 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.m31;
-import org.telegram.ui.Components.wi;
-import org.telegram.ui.oa0;
-import org.telegram.ui.wn;
+import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.v31;
+import org.telegram.ui.Components.xi;
+import org.telegram.ui.sa0;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q8 implements Runnable {
     public final /* synthetic */ int a;
@@ -72,7 +72,7 @@ public final /* synthetic */ class q8 implements Runnable {
         TLRPC.ChatParticipants chatParticipants;
         ArrayList<TLRPC.ChatParticipant> arrayList;
         SQLiteCursor sQLiteCursor;
-        hg.c2 c2Var;
+        hg.b2 b2Var;
         ArrayList arrayList2;
         Runnable runnable;
         int i11;
@@ -221,7 +221,7 @@ public final /* synthetic */ class q8 implements Runnable {
                 return;
             case 1:
                 TLObject tLObject = (TLObject) obj2;
-                oa0 oa0Var = (oa0) obj;
+                sa0 sa0Var = (sa0) obj;
                 l9 l9Var2 = ((r8) obj3).c;
                 int i17 = l9Var2.a;
                 if (tLObject != null) {
@@ -235,14 +235,14 @@ public final /* synthetic */ class q8 implements Runnable {
                                 a0.i iVar2 = l9Var2.E;
                                 storyItem = peerStories2.stories.get(i18);
                                 iVar2.k(storyItem, j3);
-                                oa0Var.run(storyItem);
+                                sa0Var.run(storyItem);
                                 return;
                             }
                         }
                     }
                 }
                 storyItem = null;
-                oa0Var.run(storyItem);
+                sa0Var.run(storyItem);
                 return;
             case 2:
                 TLObject tLObject2 = (TLObject) obj2;
@@ -269,19 +269,19 @@ public final /* synthetic */ class q8 implements Runnable {
                 ((ca) obj).f(j10);
                 return;
             case 4:
-                ci.y9 y9Var = (ci.y9) obj3;
+                ci.x9 x9Var = (ci.x9) obj3;
                 boolean isChannel = ChatObject.isChannel((TLRPC.Chat) obj2);
                 long j11 = this.b;
                 TLRPC.ChatFull loadChatInfoInQueue = ((MessagesStorage) obj).loadChatInfoInQueue(j11, isChannel, true, true, 0);
                 if (loadChatInfoInQueue == null || (chatParticipants = loadChatInfoInQueue.participants) == null || ((arrayList = chatParticipants.participants) != null && arrayList.size() < loadChatInfoInQueue.participants_count - 1)) {
-                    AndroidUtilities.runOnUIThread(new ci.o9(y9Var, isChannel, j11, 0));
+                    AndroidUtilities.runOnUIThread(new ci.n9(x9Var, isChannel, j11, 0));
                     return;
                 } else {
-                    AndroidUtilities.runOnUIThread(new a3.h0(y9Var, j11, loadChatInfoInQueue, 7));
+                    AndroidUtilities.runOnUIThread(new a3.h0(x9Var, j11, loadChatInfoInQueue, 7));
                     return;
                 }
             case 5:
-                hg.c2 c2Var2 = (hg.c2) obj3;
+                hg.b2 b2Var2 = (hg.b2) obj3;
                 MessagesStorage messagesStorage = (MessagesStorage) obj2;
                 Runnable runnable2 = (Runnable) obj;
                 ArrayList arrayList6 = new ArrayList();
@@ -294,16 +294,16 @@ public final /* synthetic */ class q8 implements Runnable {
                         try {
                             try {
                                 try {
-                                    hg.b2 b2Var = new hg.b2();
-                                    b2Var.a = queryFinalized.intValue(i13);
-                                    b2Var.b = queryFinalized.stringValue(1);
-                                    b2Var.c = queryFinalized.intValue(2);
-                                    b2Var.f = queryFinalized.intValue(3);
-                                    arrayList6.add(b2Var);
+                                    hg.a2 a2Var = new hg.a2();
+                                    a2Var.a = queryFinalized.intValue(i13);
+                                    a2Var.b = queryFinalized.stringValue(1);
+                                    a2Var.c = queryFinalized.intValue(2);
+                                    a2Var.f = queryFinalized.intValue(3);
+                                    arrayList6.add(a2Var);
                                     i13 = 0;
-                                } catch (Exception e) {
-                                    e = e;
-                                    c2Var = c2Var2;
+                                } catch (Exception e7) {
+                                    e = e7;
+                                    b2Var = b2Var2;
                                     arrayList2 = arrayList6;
                                     sQLiteCursor = queryFinalized;
                                     runnable = runnable2;
@@ -312,7 +312,7 @@ public final /* synthetic */ class q8 implements Runnable {
                                         if (sQLiteCursor != null) {
                                             sQLiteCursor.dispose();
                                         }
-                                        AndroidUtilities.runOnUIThread(new m3(c2Var, arrayList7, arrayList8, arrayList2, runnable, 7));
+                                        AndroidUtilities.runOnUIThread(new m3(b2Var, arrayList7, arrayList8, arrayList2, runnable, 7));
                                         return;
                                     } catch (Throwable th2) {
                                         th = th2;
@@ -326,9 +326,9 @@ public final /* synthetic */ class q8 implements Runnable {
                                 th = th3;
                                 sQLiteCursor = queryFinalized;
                             }
-                        } catch (Exception e7) {
-                            e = e7;
-                            c2Var = c2Var2;
+                        } catch (Exception e10) {
+                            e = e10;
+                            b2Var = b2Var2;
                             arrayList2 = arrayList6;
                             runnable = runnable2;
                             sQLiteCursor = queryFinalized;
@@ -343,17 +343,17 @@ public final /* synthetic */ class q8 implements Runnable {
                     while (i19 < arrayList6.size()) {
                         try {
                             try {
-                                hg.b2 b2Var2 = (hg.b2) arrayList6.get(i19);
+                                hg.a2 a2Var2 = (hg.a2) arrayList6.get(i19);
                                 arrayList2 = arrayList6;
                                 try {
                                     i11 = i19;
-                                } catch (Exception e10) {
-                                    e = e10;
-                                    c2Var = c2Var2;
+                                } catch (Exception e11) {
+                                    e = e11;
+                                    b2Var = b2Var2;
                                 }
                                 try {
                                     Object[] objArr = new Object[1];
-                                    objArr[c10] = Integer.valueOf(b2Var2.a);
+                                    objArr[c10] = Integer.valueOf(a2Var2.a);
                                     SQLiteCursor queryFinalized2 = database.queryFinalized(str2, objArr);
                                     try {
                                         try {
@@ -374,23 +374,23 @@ public final /* synthetic */ class q8 implements Runnable {
                                                         TLdeserialize.quick_reply_shortcut_id = queryFinalized2.intValue(4);
                                                         TLdeserialize.ttl = queryFinalized2.intValue(5);
                                                         MessagesStorage.addUsersAndChatsFromMessage(TLdeserialize, arrayList9, arrayList10, null);
-                                                        c2Var = c2Var2;
-                                                    } catch (Exception e11) {
-                                                        e = e11;
-                                                        c2Var = c2Var2;
+                                                        b2Var = b2Var2;
+                                                    } catch (Exception e12) {
+                                                        e = e12;
+                                                        b2Var = b2Var2;
                                                         sQLiteCursor = queryFinalized2;
                                                         FileLog.e(e);
                                                         if (sQLiteCursor != null) {
                                                         }
-                                                        AndroidUtilities.runOnUIThread(new m3(c2Var, arrayList7, arrayList8, arrayList2, runnable, 7));
+                                                        AndroidUtilities.runOnUIThread(new m3(b2Var, arrayList7, arrayList8, arrayList2, runnable, 7));
                                                         return;
                                                     }
                                                     try {
-                                                        MessageObject messageObject2 = new MessageObject(c2Var2.a, TLdeserialize, false, true);
-                                                        b2Var2.e = messageObject2;
-                                                        b2Var2.d = TLdeserialize.id;
+                                                        MessageObject messageObject2 = new MessageObject(b2Var2.a, TLdeserialize, false, true);
+                                                        a2Var2.e = messageObject2;
+                                                        a2Var2.d = TLdeserialize.id;
                                                         messageObject2.generateThumbs(false);
-                                                        b2Var2.e.applyQuickReply(b2Var2.b, b2Var2.a);
+                                                        a2Var2.e.applyQuickReply(a2Var2.b, a2Var2.a);
                                                         queryFinalized2.dispose();
                                                         i19 = i11 + 1;
                                                         sQLiteCursor3 = queryFinalized2;
@@ -398,22 +398,22 @@ public final /* synthetic */ class q8 implements Runnable {
                                                         database = sQLiteDatabase;
                                                         str2 = str;
                                                         runnable2 = runnable;
-                                                        c2Var2 = c2Var;
+                                                        b2Var2 = b2Var;
                                                         c10 = 0;
-                                                    } catch (Exception e12) {
-                                                        e = e12;
+                                                    } catch (Exception e13) {
+                                                        e = e13;
                                                         sQLiteCursor = queryFinalized2;
                                                         FileLog.e(e);
                                                         if (sQLiteCursor != null) {
                                                         }
-                                                        AndroidUtilities.runOnUIThread(new m3(c2Var, arrayList7, arrayList8, arrayList2, runnable, 7));
+                                                        AndroidUtilities.runOnUIThread(new m3(b2Var, arrayList7, arrayList8, arrayList2, runnable, 7));
                                                         return;
                                                     }
                                                 }
                                             } else {
                                                 sQLiteDatabase = database;
                                             }
-                                            c2Var = c2Var2;
+                                            b2Var = b2Var2;
                                             str = str2;
                                             runnable = runnable2;
                                             queryFinalized2.dispose();
@@ -423,7 +423,7 @@ public final /* synthetic */ class q8 implements Runnable {
                                             database = sQLiteDatabase;
                                             str2 = str;
                                             runnable2 = runnable;
-                                            c2Var2 = c2Var;
+                                            b2Var2 = b2Var;
                                             c10 = 0;
                                         } catch (Throwable th4) {
                                             th = th4;
@@ -432,33 +432,33 @@ public final /* synthetic */ class q8 implements Runnable {
                                             }
                                             throw th;
                                         }
-                                    } catch (Exception e13) {
-                                        e = e13;
-                                        c2Var = c2Var2;
+                                    } catch (Exception e14) {
+                                        e = e14;
+                                        b2Var = b2Var2;
                                         runnable = runnable2;
                                     }
-                                } catch (Exception e14) {
-                                    e = e14;
-                                    c2Var = c2Var2;
+                                } catch (Exception e15) {
+                                    e = e15;
+                                    b2Var = b2Var2;
                                     runnable = runnable2;
                                     sQLiteCursor = sQLiteCursor3;
                                     FileLog.e(e);
                                     if (sQLiteCursor != null) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new m3(c2Var, arrayList7, arrayList8, arrayList2, runnable, 7));
+                                    AndroidUtilities.runOnUIThread(new m3(b2Var, arrayList7, arrayList8, arrayList2, runnable, 7));
                                     return;
                                 }
                             } catch (Throwable th5) {
                                 th = th5;
                                 sQLiteCursor = sQLiteCursor3;
                             }
-                        } catch (Exception e15) {
-                            e = e15;
-                            c2Var = c2Var2;
+                        } catch (Exception e16) {
+                            e = e16;
+                            b2Var = b2Var2;
                             arrayList2 = arrayList6;
                         }
                     }
-                    c2Var = c2Var2;
+                    b2Var = b2Var2;
                     arrayList2 = arrayList6;
                     runnable = runnable2;
                     try {
@@ -469,18 +469,18 @@ public final /* synthetic */ class q8 implements Runnable {
                             messagesStorage.getUsersInternal(arrayList9, arrayList7);
                         }
                         sQLiteCursor3.dispose();
-                    } catch (Exception e16) {
-                        e = e16;
+                    } catch (Exception e17) {
+                        e = e17;
                         sQLiteCursor = sQLiteCursor3;
                         FileLog.e(e);
                         if (sQLiteCursor != null) {
                         }
-                        AndroidUtilities.runOnUIThread(new m3(c2Var, arrayList7, arrayList8, arrayList2, runnable, 7));
+                        AndroidUtilities.runOnUIThread(new m3(b2Var, arrayList7, arrayList8, arrayList2, runnable, 7));
                         return;
                     }
-                } catch (Exception e17) {
-                    e = e17;
-                    c2Var = c2Var2;
+                } catch (Exception e18) {
+                    e = e18;
+                    b2Var = b2Var2;
                     arrayList2 = arrayList6;
                     runnable = runnable2;
                     sQLiteCursor = null;
@@ -488,16 +488,16 @@ public final /* synthetic */ class q8 implements Runnable {
                     th = th6;
                     sQLiteCursor = null;
                 }
-                AndroidUtilities.runOnUIThread(new m3(c2Var, arrayList7, arrayList8, arrayList2, runnable, 7));
+                AndroidUtilities.runOnUIThread(new m3(b2Var, arrayList7, arrayList8, arrayList2, runnable, 7));
                 return;
             case 6:
-                hg.c2 c2Var3 = (hg.c2) obj3;
+                hg.b2 b2Var3 = (hg.b2) obj3;
                 MessagesStorage messagesStorage2 = (MessagesStorage) obj2;
-                hg.b2 b2Var3 = (hg.b2) obj;
+                hg.a2 a2Var3 = (hg.a2) obj;
                 try {
                     ArrayList<Long> arrayList11 = new ArrayList<>();
                     ArrayList arrayList12 = new ArrayList();
-                    SQLiteCursor queryFinalized3 = messagesStorage2.getDatabase().queryFinalized("SELECT data, send_state, mid, date, topic_id, ttl FROM quick_replies_messages WHERE topic_id = ? ORDER BY mid ASC", Integer.valueOf(b2Var3.a));
+                    SQLiteCursor queryFinalized3 = messagesStorage2.getDatabase().queryFinalized("SELECT data, send_state, mid, date, topic_id, ttl FROM quick_replies_messages WHERE topic_id = ? ORDER BY mid ASC", Integer.valueOf(a2Var3.a));
                     try {
                         if (!queryFinalized3.next() || (byteBufferValue = queryFinalized3.byteBufferValue(0)) == null) {
                             messageObject = null;
@@ -512,7 +512,7 @@ public final /* synthetic */ class q8 implements Runnable {
                             TLdeserialize2.quick_reply_shortcut_id = queryFinalized3.intValue(4);
                             TLdeserialize2.ttl = queryFinalized3.intValue(5);
                             MessagesStorage.addUsersAndChatsFromMessage(TLdeserialize2, arrayList11, arrayList12, null);
-                            messageObject = new MessageObject(c2Var3.a, TLdeserialize2, false, true);
+                            messageObject = new MessageObject(b2Var3.a, TLdeserialize2, false, true);
                         }
                         queryFinalized3.dispose();
                         ArrayList<TLRPC.User> arrayList13 = new ArrayList<>();
@@ -523,11 +523,11 @@ public final /* synthetic */ class q8 implements Runnable {
                         if (!arrayList11.isEmpty()) {
                             messagesStorage2.getUsersInternal(arrayList11, arrayList13);
                         }
-                        AndroidUtilities.runOnUIThread(new m3(c2Var3, arrayList13, arrayList14, b2Var3, messageObject, 8));
+                        AndroidUtilities.runOnUIThread(new m3(b2Var3, arrayList13, arrayList14, a2Var3, messageObject, 8));
                         queryFinalized3.dispose();
                         return;
-                    } catch (Exception e18) {
-                        e = e18;
+                    } catch (Exception e19) {
+                        e = e19;
                         sQLiteCursor2 = queryFinalized3;
                         try {
                             FileLog.e(e);
@@ -550,8 +550,8 @@ public final /* synthetic */ class q8 implements Runnable {
                         }
                         throw th;
                     }
-                } catch (Exception e19) {
-                    e = e19;
+                } catch (Exception e20) {
+                    e = e20;
                     sQLiteCursor2 = null;
                 } catch (Throwable th9) {
                     th = th9;
@@ -622,25 +622,25 @@ public final /* synthetic */ class q8 implements Runnable {
                 ((CameraController) obj3).lambda$finishRecordingVideo$15((File) obj2, (Bitmap) obj, j3);
                 return;
             case 28:
-                wi wiVar = (wi) obj3;
-                wn wnVar = (wn) obj2;
+                xi xiVar = (xi) obj3;
+                yn ynVar = (yn) obj2;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj;
-                Context context = wiVar.getContext();
-                int i20 = wiVar.J1;
-                MessageSuggestionParams messageSuggestionParams = wnVar.g5;
+                Context context = xiVar.getContext();
+                int i20 = xiVar.J1;
+                MessageSuggestionParams messageSuggestionParams = ynVar.e5;
                 if (messageSuggestionParams == null) {
                     messageSuggestionParams = MessageSuggestionParams.empty();
                 }
-                new yh.e0(context, i20, this.b, messageSuggestionParams, wnVar, d6Var, 0, new org.telegram.ui.oc(17, wiVar, wnVar)).show();
+                new yh.e0(context, i20, this.b, messageSuggestionParams, ynVar, d6Var, 0, new org.telegram.ui.qc(17, xiVar, ynVar)).show();
                 return;
             default:
-                m31 m31Var = (m31) obj3;
+                v31 v31Var = (v31) obj3;
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
-                ((a80) obj2).u();
-                TLRPC.User user3 = MessagesController.getInstance(m31Var.b).getUser(Long.valueOf(j3));
+                ((b80) obj2).u();
+                TLRPC.User user3 = MessagesController.getInstance(v31Var.b).getUser(Long.valueOf(j3));
                 if (user3 != null) {
-                    wn wnVar2 = m31Var.h;
-                    org.telegram.ui.Components.e5.r(wnVar2, -1, user3, chat, true, new z1(m31Var, j3, 6), wnVar2.getResourceProvider());
+                    yn ynVar2 = v31Var.h;
+                    org.telegram.ui.Components.e5.r(ynVar2, -1, user3, chat, true, new z1(v31Var, j3, 6), ynVar2.getResourceProvider());
                     return;
                 }
                 return;

@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.d01;
-import org.telegram.ui.wn;
+import org.telegram.ui.f01;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -91,11 +91,11 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 break;
             case 9:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) this.b;
-                d01 d01Var = profileStoriesView.h;
+                f01 f01Var = profileStoriesView.h;
                 float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 profileStoriesView.G = floatValue5;
-                d01Var.R = floatValue5;
-                d01Var.invalidate();
+                f01Var.R = floatValue5;
+                f01Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 10:
@@ -200,22 +200,22 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 o7Var.invalidate();
                 break;
             case 24:
-                ci.x8 x8Var = (ci.x8) this.b;
+                ci.w8 w8Var = (ci.w8) this.b;
                 float floatValue8 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                x8Var.r = floatValue8;
-                Utilities.Callback callback = x8Var.x;
+                w8Var.r = floatValue8;
+                Utilities.Callback callback = w8Var.x;
                 if (callback != null) {
                     callback.run(Float.valueOf(Utilities.clamp(floatValue8, 1.0f, -1.0f)));
                 }
-                x8Var.a.invalidate();
+                w8Var.a.invalidate();
                 break;
             case 25:
-                ((ci.y9) this.b).x.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((ci.x9) this.b).x.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 26:
-                ci.ca caVar = (ci.ca) this.b;
-                caVar.getClass();
-                caVar.setContainerHeight(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ci.ba baVar = (ci.ba) this.b;
+                baVar.getClass();
+                baVar.setContainerHeight(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 27:
                 ig.h hVar = (ig.h) this.b;
@@ -223,22 +223,22 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 hVar.g.a.invalidate();
                 break;
             case 28:
-                ii.v4 v4Var = (ii.v4) this.b;
-                v4Var.getClass();
-                v4Var.a0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v4Var.requestLayout();
-                v4Var.invalidate();
+                ii.w4 w4Var = (ii.w4) this.b;
+                w4Var.getClass();
+                w4Var.a0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w4Var.requestLayout();
+                w4Var.invalidate();
                 break;
             default:
                 ji.n nVar = (ji.n) this.b;
-                wn wnVar = nVar.F;
-                if (wnVar == null) {
+                yn ynVar = nVar.F;
+                if (ynVar == null) {
                     nVar.G.invalidate();
                     break;
                 } else {
-                    wnVar.r9();
-                    if (wnVar.J8 != null) {
-                        wnVar.fragmentView.invalidate();
+                    ynVar.q9();
+                    if (ynVar.H8 != null) {
+                        ynVar.fragmentView.invalidate();
                         break;
                     }
                 }

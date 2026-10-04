@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rd implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -20,16 +20,16 @@ public final /* synthetic */ class rd implements ValueAnimator.AnimatorUpdateLis
         ChatActivityEnterView chatActivityEnterView = this.b;
         switch (i10) {
             case 0:
-                af afVar = chatActivityEnterView.J1;
-                if (afVar != null) {
-                    afVar.setTranslationX(afVar.a);
+                bf bfVar = chatActivityEnterView.J1;
+                if (bfVar != null) {
+                    bfVar.setTranslationX(bfVar.a);
                     break;
                 }
                 break;
             case 1:
-                af afVar2 = chatActivityEnterView.J1;
-                if (afVar2 != null) {
-                    afVar2.setTranslationX(afVar2.a);
+                bf bfVar2 = chatActivityEnterView.J1;
+                if (bfVar2 != null) {
+                    bfVar2.setTranslationX(bfVar2.a);
                     break;
                 }
                 break;
@@ -42,9 +42,9 @@ public final /* synthetic */ class rd implements ValueAnimator.AnimatorUpdateLis
             case 4:
                 int i11 = ChatActivityEnterView.n5;
                 chatActivityEnterView.w0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                eg egVar = chatActivityEnterView.U0;
-                if (egVar != null) {
-                    egVar.Y();
+                fg fgVar = chatActivityEnterView.U0;
+                if (fgVar != null) {
+                    fgVar.X();
                     break;
                 }
                 break;

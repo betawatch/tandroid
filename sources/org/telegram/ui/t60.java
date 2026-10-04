@@ -1,23 +1,36 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.messenger.ContactsController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class t60 implements Comparator {
-    public static String a(TLObject tLObject) {
-        if (!(tLObject instanceof TLRPC.User)) {
-            return tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
-        }
-        TLRPC.User user = (TLRPC.User) tLObject;
-        return ContactsController.formatName(user.first_name, user.last_name);
+public final /* synthetic */ class t60 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d70 b;
+
+    public /* synthetic */ t60(d70 d70Var, int i10) {
+        this.a = i10;
+        this.b = d70Var;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        return a((TLObject) obj).compareTo(a((TLObject) obj2));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.finishFragment();
+                break;
+            case 1:
+                d70 d70Var = this.b;
+                d70Var.i0();
+                d70Var.e0();
+                break;
+            case 2:
+                d70 d70Var2 = this.b;
+                d70Var2.getClass();
+                d70Var2.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
+                break;
+            default:
+                d70 d70Var3 = this.b;
+                d70Var3.n.postOnAnimation(new t60(d70Var3, 1));
+                break;
+        }
     }
 }

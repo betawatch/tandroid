@@ -1,53 +1,59 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.OrientationEventListener;
+import android.view.MotionEvent;
+import org.telegram.messenger.video.VideoFramesRewinder;
+import org.telegram.messenger.video.VideoPlayerRewinder;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ft0 extends OrientationEventListener {
+public final class ft0 extends VideoPlayerRewinder {
     public final /* synthetic */ PhotoViewer a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ft0(Context context, PhotoViewer photoViewer) {
-        super(context);
+    public ft0(PhotoViewer photoViewer, VideoFramesRewinder videoFramesRewinder) {
+        super(videoFramesRewinder);
         this.a = photoViewer;
     }
 
-    @Override // android.view.OrientationEventListener
-    public final void onOrientationChanged(int i10) {
-        kt0 kt0Var;
-        Activity activity;
-        int i11;
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void onRewindCanceled() {
+        MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
         PhotoViewer photoViewer = this.a;
-        if (photoViewer.W3 == null || (kt0Var = photoViewer.y2) == null || kt0Var.getVisibility() != 0 || (activity = photoViewer.y) == null || (i11 = photoViewer.Y3) == 0) {
-            return;
+        PhotoViewer.k(photoViewer, obtain);
+        photoViewer.z1.f(false);
+        org.telegram.ui.Components.rg0.p0.Q.f(false);
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void onRewindStart(boolean z10) {
+        PhotoViewer photoViewer = this.a;
+        photoViewer.z1.e(false);
+        photoViewer.z1.d(!z10);
+        photoViewer.z1.f(true);
+        photoViewer.e0.invalidate();
+        org.telegram.ui.Components.rg0.v(z10);
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void updateRewindProgressUi(long j3, float f7, boolean z10) {
+        PhotoViewer photoViewer = this.a;
+        photoViewer.z1.g(Math.abs(j3));
+        if (z10) {
+            photoViewer.q3.h(f7, false);
+            photoViewer.r3.invalidate();
         }
-        if (i11 != 1) {
-            if (i10 > 0 && (i10 >= 330 || i10 <= 30)) {
-                photoViewer.Z3 = true;
-                return;
+        org.telegram.ui.Components.rg0 rg0Var = org.telegram.ui.Components.rg0.p0;
+        rg0Var.Q.g(0L);
+        if (z10) {
+            rg0Var.Z = f7;
+            ai.n4 n4Var = rg0Var.b0;
+            if (n4Var != null) {
+                n4Var.invalidate();
             }
-            if (!photoViewer.Z3 || i10 < 240 || i10 > 300) {
-                return;
+            org.telegram.ui.Components.qg0 qg0Var = rg0Var.h;
+            if (qg0Var != null) {
+                qg0Var.invalidate();
             }
-            activity.setRequestedOrientation(photoViewer.X3);
-            photoViewer.Y3 = 0;
-            photoViewer.Z3 = false;
-            return;
-        }
-        if (i10 >= 240 && i10 <= 300) {
-            photoViewer.Z3 = true;
-            return;
-        }
-        if (!photoViewer.Z3 || i10 <= 0) {
-            return;
-        }
-        if (i10 >= 330 || i10 <= 30) {
-            activity.setRequestedOrientation(photoViewer.X3);
-            photoViewer.Y3 = 0;
-            photoViewer.Z3 = false;
         }
     }
 }

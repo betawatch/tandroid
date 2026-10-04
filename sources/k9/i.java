@@ -7,7 +7,7 @@ import java.util.concurrent.Executor;
 import q9.r;
 import zd.y0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i implements q9.d, t {
     public static final i b = new i(0);
@@ -21,24 +21,24 @@ public final class i implements q9.d, t {
     }
 
     @Override // q9.d
-    public Object G(cf.c cVar) {
+    public Object E(cf.c cVar) {
         switch (this.a) {
             case 0:
-                Object i10 = cVar.i(new r(m9.a.class, Executor.class));
-                kotlin.jvm.internal.i.d(i10, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) i10);
+                Object g10 = cVar.g(new r(m9.a.class, Executor.class));
+                kotlin.jvm.internal.i.d(g10, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) g10);
             case 1:
-                Object i11 = cVar.i(new r(m9.c.class, Executor.class));
-                kotlin.jvm.internal.i.d(i11, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) i11);
+                Object g11 = cVar.g(new r(m9.c.class, Executor.class));
+                kotlin.jvm.internal.i.d(g11, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) g11);
             case 2:
-                Object i12 = cVar.i(new r(m9.b.class, Executor.class));
-                kotlin.jvm.internal.i.d(i12, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) i12);
+                Object g12 = cVar.g(new r(m9.b.class, Executor.class));
+                kotlin.jvm.internal.i.d(g12, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) g12);
             default:
-                Object i13 = cVar.i(new r(m9.d.class, Executor.class));
-                kotlin.jvm.internal.i.d(i13, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) i13);
+                Object g13 = cVar.g(new r(m9.d.class, Executor.class));
+                kotlin.jvm.internal.i.d(g13, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) g13);
         }
     }
 

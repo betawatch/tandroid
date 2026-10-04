@@ -5,10 +5,10 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.u7;
+import v7.t7;
 import zd.c0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 final class zzck extends j implements p {
     public zzck(c cVar) {
@@ -28,7 +28,7 @@ final class zzck extends j implements p {
     @Override // kd.a
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
-        u7.b(obj);
+        t7.b(obj);
         Thread.currentThread().setPriority(8);
         return i.a;
     }

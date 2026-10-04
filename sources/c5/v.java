@@ -20,8 +20,8 @@ import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
 import n7.z0;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.ng;
-import v7.e8;
+import org.telegram.ui.Components.og;
+import v7.d8;
 import w7.j7;
 import w7.l9;
 import w7.la;
@@ -31,7 +31,7 @@ import w7.sa;
 import w7.ua;
 import y8.k0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -69,9 +69,9 @@ public final /* synthetic */ class v implements Runnable {
         z0 z0Var = (z0) this.c;
         j7 j7Var = j7.b;
         String str2 = (String) this.d;
-        v7.l lVar = (v7.l) z0Var.b;
-        lVar.c = j7Var;
-        l9 l9Var = (l9) lVar.b;
+        v7.k kVar = (v7.k) z0Var.b;
+        kVar.c = j7Var;
+        l9 l9Var = (l9) kVar.b;
         if (l9Var != null) {
             str = l9Var.d;
             int i10 = r2.a;
@@ -79,13 +79,13 @@ public final /* synthetic */ class v implements Runnable {
             }
         }
         str = "NA";
-        e8 e8Var = new e8();
-        e8Var.a = laVar.a;
-        e8Var.b = laVar.b;
+        d8 d8Var = new d8();
+        d8Var.a = laVar.a;
+        d8Var.b = laVar.b;
         synchronized (la.class) {
             uaVar = la.j;
             if (uaVar == null) {
-                n0.c a2 = w7.a0.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = w7.b0.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i11 = 0;
                 int i12 = 0;
@@ -116,14 +116,14 @@ public final /* synthetic */ class v implements Runnable {
                 la.j = uaVar;
             }
         }
-        e8Var.k = uaVar;
-        e8Var.g = Boolean.TRUE;
-        e8Var.d = str;
-        e8Var.c = str2;
-        e8Var.e = laVar.f.isSuccessful() ? (String) laVar.f.getResult() : laVar.d.a();
-        e8Var.i = 10;
-        e8Var.j = Integer.valueOf(laVar.h);
-        z0Var.c = e8Var;
+        d8Var.k = uaVar;
+        d8Var.g = Boolean.TRUE;
+        d8Var.d = str;
+        d8Var.c = str2;
+        d8Var.e = laVar.f.isSuccessful() ? (String) laVar.f.getResult() : laVar.d.a();
+        d8Var.i = 10;
+        d8Var.j = Integer.valueOf(laVar.h);
+        z0Var.c = d8Var;
         laVar.c.a(z0Var);
     }
 
@@ -211,7 +211,7 @@ public final /* synthetic */ class v implements Runnable {
                 ((Handler) this.d).post(new i9.s(20, (z) this.c, obj));
                 return;
             case 9:
-                ((ng) this.d).n((File) this.c, (ArrayList) this.b);
+                ((og) this.d).n((File) this.c, (ArrayList) this.b);
                 return;
             case 10:
                 u4.f fVar2 = (u4.f) this.d;
@@ -223,8 +223,8 @@ public final /* synthetic */ class v implements Runnable {
                 try {
                     lVar2.get();
                     return;
-                } catch (Exception e) {
-                    fVar2.c.l(e);
+                } catch (Exception e7) {
+                    fVar2.c.l(e7);
                     return;
                 }
             case 11:
@@ -255,9 +255,9 @@ public final /* synthetic */ class v implements Runnable {
                         }
                         throw th2;
                     }
-                } catch (IOException | OutOfMemoryError | RuntimeException e7) {
-                    Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e7);
-                    throw new RuntimeException(v7.j.g("Unable to write bitmap to file ", str3), e7);
+                } catch (IOException | OutOfMemoryError | RuntimeException e10) {
+                    Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e10);
+                    throw new RuntimeException(t8.b.i("Unable to write bitmap to file ", str3), e10);
                 }
             case 12:
                 b();
@@ -271,7 +271,7 @@ public final /* synthetic */ class v implements Runnable {
                     x8.m.M0(e0Var, false, null);
                     return;
                 } else {
-                    onRequest.addOnCompleteListener(new l.d(e0Var));
+                    onRequest.addOnCompleteListener(new l2.g(e0Var, 22));
                     return;
                 }
         }

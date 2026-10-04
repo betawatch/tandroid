@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class g implements Iterable, Serializable {
     public static final g c = new g(z.b);
@@ -27,12 +27,12 @@ public class g implements Iterable, Serializable {
         int length = bArr.length;
         if (((i12 - i10) | i10 | i12 | (length - i12)) < 0) {
             if (i10 < 0) {
-                throw new IndexOutOfBoundsException(hg.c.i(i10, "Beginning index: ", " < 0"));
+                throw new IndexOutOfBoundsException(hg.k0.i(i10, "Beginning index: ", " < 0"));
             }
             if (i12 < i10) {
-                throw new IndexOutOfBoundsException(a4.a.m(i10, i12, "Beginning index larger than ending index: ", ", "));
+                throw new IndexOutOfBoundsException(a4.a.l(i10, i12, "Beginning index larger than ending index: ", ", "));
             }
-            throw new IndexOutOfBoundsException(a4.a.m(i12, length, "End index: ", " >= "));
+            throw new IndexOutOfBoundsException(a4.a.l(i12, length, "End index: ", " >= "));
         }
         switch (d.a) {
             case 0:
@@ -70,7 +70,7 @@ public class g implements Iterable, Serializable {
             throw new IllegalArgumentException("Length too large: " + size + size());
         }
         if (size > gVar.size()) {
-            StringBuilder j3 = hg.c.j(size, "Ran off end of other: 0, ", ", ");
+            StringBuilder j3 = hg.k0.j(size, "Ran off end of other: 0, ", ", ");
             j3.append(gVar.size());
             throw new IllegalArgumentException(j3.toString());
         }

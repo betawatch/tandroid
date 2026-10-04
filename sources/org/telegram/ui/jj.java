@@ -3,28 +3,42 @@ package org.telegram.ui;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class jj implements MessagesStorage.BooleanCallback {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ kj b;
+public final /* synthetic */ class jj implements MessagesStorage.IntCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
 
-    public jj(kj kjVar, boolean z10) {
-        this.b = kjVar;
-        this.a = z10;
+    public /* synthetic */ jj(int i10, Object obj, boolean z10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = z10;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public final void run(boolean z10) {
-        wn wnVar = this.b.b;
-        if (z10) {
-            TLRPC.User user = wnVar.f;
-            boolean z11 = this.a;
-            if (user != null || z11) {
-                wnVar.getMessagesStorage().getMessagesCount(wnVar.T5, new ij(1, this, z11));
-                return;
-            }
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i10) {
+        switch (this.a) {
+            case 0:
+                yn ynVar = ((lj) this.c).b;
+                if (i10 > 0 && ynVar.getParentActivity() != null) {
+                    org.telegram.ui.Components.yc.a0(ynVar).m(this.b ? org.telegram.ui.Components.xc.G : org.telegram.ui.Components.xc.I, i10, 0, 0, ynVar.ca).j();
+                    break;
+                }
+                break;
+            default:
+                kj kjVar = (kj) this.c;
+                yn ynVar2 = kjVar.b.b;
+                if (i10 < 50) {
+                    ynVar2.pa(ynVar2.b4, true);
+                    break;
+                } else {
+                    TLRPC.Chat chat = ynVar2.e;
+                    TLRPC.User user = ynVar2.f;
+                    boolean z10 = this.b;
+                    org.telegram.ui.Components.e5.s(ynVar2, true, chat, user, false, false, false, z10, new z0(kjVar, z10));
+                    break;
+                }
         }
-        wnVar.qa(wnVar.d4, z10);
     }
 }

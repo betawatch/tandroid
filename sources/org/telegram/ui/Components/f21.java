@@ -1,25 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseIntArray;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class f21 extends org.telegram.ui.ActionBar.d5 {
-    public final /* synthetic */ SparseIntArray R;
+public final class f21 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ThemeEditorView.EditorAlert a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f21(boolean z10, SparseIntArray sparseIntArray) {
-        super(2, z10, false, null);
-        this.R = sparseIntArray;
+    public f21(ThemeEditorView.EditorAlert editorAlert) {
+        this.a = editorAlert;
     }
 
-    @Override // org.telegram.ui.ActionBar.d5
-    public final int g(int i10) {
-        return this.R.get(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d5
-    public final int h(int i10) {
-        return this.R.get(i10);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ThemeEditorView.EditorAlert editorAlert = this.a;
+        if (editorAlert.c.getAdapter() == editorAlert.r) {
+            l21 l21Var = editorAlert.f.b;
+            l21Var.requestFocus();
+            AndroidUtilities.showKeyboard(l21Var);
+        }
+        editorAlert.b.setVisibility(8);
+        editorAlert.v.setVisibility(8);
+        editorAlert.H = false;
     }
 }

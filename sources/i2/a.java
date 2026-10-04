@@ -2,16 +2,16 @@ package i2;
 
 import android.util.Pair;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class a extends b2.k1 {
     public static final /* synthetic */ int g = 0;
     public final int e;
-    public final u2.g1 f;
+    public final u2.h1 f;
 
-    public a(u2.g1 g1Var) {
-        this.f = g1Var;
-        this.e = g1Var.getLength();
+    public a(u2.h1 h1Var) {
+        this.f = h1Var;
+        this.e = h1Var.getLength();
     }
 
     @Override // b2.k1
@@ -48,10 +48,10 @@ public abstract class a extends b2.k1 {
     public final int c(boolean z10) {
         int i10 = this.e;
         if (i10 != 0) {
-            u2.g1 g1Var = this.f;
-            int g10 = z10 ? g1Var.g() : i10 - 1;
+            u2.h1 h1Var = this.f;
+            int g10 = z10 ? h1Var.g() : i10 - 1;
             while (x(g10).p()) {
-                g10 = z10 ? g1Var.c(g10) : g10 > 0 ? g10 - 1 : -1;
+                g10 = z10 ? h1Var.c(g10) : g10 > 0 ? g10 - 1 : -1;
                 if (g10 == -1) {
                 }
             }
@@ -64,9 +64,9 @@ public abstract class a extends b2.k1 {
     public final int e(int i10, int i11, boolean z10) {
         int s10 = s(i10);
         int v = v(s10);
-        int e = x(s10).e(i10 - v, i11 == 2 ? 0 : i11, z10);
-        if (e != -1) {
-            return v + e;
+        int e7 = x(s10).e(i10 - v, i11 == 2 ? 0 : i11, z10);
+        if (e7 != -1) {
+            return v + e7;
         }
         int w10 = w(s10, z10);
         while (w10 != -1 && x(w10).p()) {
@@ -133,12 +133,12 @@ public abstract class a extends b2.k1 {
         if (k10 != -1) {
             return v + k10;
         }
-        u2.g1 g1Var = this.f;
+        u2.h1 h1Var = this.f;
         if (z10) {
-            i12 = g1Var.c(s10);
+            i12 = h1Var.c(s10);
         }
         while (i12 != -1 && x(i12).p()) {
-            i12 = z10 ? g1Var.c(i12) : i12 > 0 ? i12 - 1 : -1;
+            i12 = z10 ? h1Var.c(i12) : i12 > 0 ? i12 - 1 : -1;
         }
         if (i12 != -1) {
             return x(i12).c(z10) + v(i12);

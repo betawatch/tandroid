@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class UserNameResolver {
     private static final long CACHE_TIME = 3600000;
@@ -17,7 +17,7 @@ public class UserNameResolver {
     android.util.LruCache<String, CachedPeer> resolvedCache = new android.util.LruCache<>(100);
     HashMap<String, ArrayList<Utilities.Callback<Long>>> resolvingConsumers = new HashMap<>();
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public class CachedPeer {
         final long peerId;
         final long time = System.currentTimeMillis();
@@ -33,7 +33,7 @@ public class UserNameResolver {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$resolve$0(String str, TLRPC.TL_error tL_error, TLObject tLObject) {
-        org.telegram.ui.ActionBar.m2 R;
+        org.telegram.ui.ActionBar.n2 R;
         ArrayList<Utilities.Callback<Long>> remove = this.resolvingConsumers.remove(str);
         if (remove == null) {
             return;
@@ -112,7 +112,7 @@ public class UserNameResolver {
                 StringBuilder sb2 = new StringBuilder("resolve username from cache ");
                 sb2.append(str);
                 sb2.append(" ");
-                hg.c.u(sb2, cachedPeer.peerId);
+                hg.k0.t(sb2, cachedPeer.peerId);
                 return null;
             }
             this.resolvedCache.remove(str);

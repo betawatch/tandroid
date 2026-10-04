@@ -8,7 +8,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class yi1 {
     public String a;
@@ -61,15 +61,15 @@ public final class yi1 {
         String lowerCase4 = i13 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i13 >> 16)) & 255), Integer.valueOf(((byte) (i13 >> 8)) & 255), Byte.valueOf((byte) (i13 & 255))).toLowerCase() : null;
         if (lowerCase == null || lowerCase3 == null) {
             if (lowerCase != null) {
-                String D = a4.a.D(lowerCase2, "-", lowerCase);
+                String C = a4.a.C(lowerCase2, "-", lowerCase);
                 if (this.g != null) {
-                    StringBuilder h = v7.j.h(D, "&rotation=");
-                    h.append(AndroidUtilities.getWallpaperRotation(this.f, true));
-                    lowerCase2 = h.toString();
+                    StringBuilder j3 = t8.b.j(C, "&rotation=");
+                    j3.append(AndroidUtilities.getWallpaperRotation(this.f, true));
+                    lowerCase2 = j3.toString();
                 } else {
-                    StringBuilder h10 = v7.j.h(D, "?rotation=");
-                    h10.append(AndroidUtilities.getWallpaperRotation(this.f, true));
-                    lowerCase2 = h10.toString();
+                    StringBuilder j10 = t8.b.j(C, "?rotation=");
+                    j10.append(AndroidUtilities.getWallpaperRotation(this.f, true));
+                    lowerCase2 = j10.toString();
                 }
             }
         } else if (lowerCase4 != null) {
@@ -79,15 +79,15 @@ public final class yi1 {
             sb2.append(lowerCase);
             sb2.append("~");
             sb2.append(lowerCase3);
-            lowerCase2 = a4.a.t(sb2, "~", lowerCase4);
+            lowerCase2 = a4.a.s(sb2, "~", lowerCase4);
         } else {
             lowerCase2 = lowerCase2 + "~" + lowerCase + "~" + lowerCase3;
         }
         if (this.g == null) {
-            return a4.a.r(MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix, "/bg/", lowerCase2, new StringBuilder("https://"));
+            return a4.a.q(MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix, "/bg/", lowerCase2, new StringBuilder("https://"));
         }
         String str = "https://" + MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix + "/bg/" + this.g.slug + "?intensity=" + ((int) (this.h * 100.0f)) + "&bg_color=" + lowerCase2;
-        return this.j ? v7.j.t(str, "&mode=motion") : str;
+        return this.j ? t8.b.v(str, "&mode=motion") : str;
     }
 
     public yi1(String str, int i10, int i11, int i12, int i13) {

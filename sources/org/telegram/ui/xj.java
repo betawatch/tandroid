@@ -1,59 +1,52 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wn b;
-
-    public /* synthetic */ xj(wn wnVar, int i10) {
-        this.a = i10;
-        this.b = wnVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        wn wnVar = this.b;
-        switch (i10) {
-            case 0:
-                wn.i2(wnVar);
-                break;
-            case 1:
-                wn.i2(wnVar);
-                break;
-            case 2:
-                int i11 = wn.Gc;
-                wnVar.Ma();
-                break;
-            case 3:
-                int i12 = wn.Gc;
-                wnVar.Ma();
-                break;
-            case 4:
-                int i13 = wn.Gc;
-                wnVar.Ma();
-                break;
-            case 5:
-                int i14 = wn.Gc;
-                wnVar.Ma();
-                break;
-            case 6:
-                int i15 = wn.Gc;
-                wnVar.Ma();
-                break;
-            case 7:
-                int i16 = wn.Gc;
-                wnVar.Ma();
-                break;
-            case 8:
-                int i17 = wn.Gc;
-                wnVar.Ma();
-                break;
-            default:
-                int i18 = wn.Gc;
-                wnVar.Ma();
-                break;
+public final class xj extends s4.n0 {
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        org.telegram.ui.Cells.u1 u1Var;
+        MessageObject.GroupedMessages currentMessagesGroup;
+        MessageObject.GroupedMessagePosition currentPosition;
+        int i10 = 0;
+        rect.bottom = 0;
+        if (!(view instanceof org.telegram.ui.Cells.u1) || (currentMessagesGroup = (u1Var = (org.telegram.ui.Cells.u1) view).getCurrentMessagesGroup()) == null || (currentPosition = u1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
+            return;
         }
+        Point point = AndroidUtilities.displaySize;
+        float max = Math.max(point.x, point.y) * 0.5f;
+        int extraInsetHeight = u1Var.getExtraInsetHeight();
+        int i11 = 0;
+        while (true) {
+            if (i11 >= currentPosition.siblingHeights.length) {
+                break;
+            }
+            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
+            i11++;
+        }
+        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
+        int size = currentMessagesGroup.posArray.size();
+        while (true) {
+            if (i10 < size) {
+                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
+                byte b10 = groupedMessagePosition.minY;
+                byte b11 = currentPosition.minY;
+                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
+                    round = org.telegram.messenger.f0.A(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
+                    break;
+                }
+                i10++;
+            } else {
+                break;
+            }
+        }
+        rect.bottom = -round;
     }
 }

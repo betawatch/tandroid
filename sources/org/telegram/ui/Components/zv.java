@@ -1,14 +1,25 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class zv extends rg.b1 {
+public final class zv extends w9 {
+    public final /* synthetic */ cw G;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zv(cw cwVar, Context context) {
+        super(context);
+        this.G = cwVar;
+    }
+
     @Override // android.view.View
     public final void invalidate() {
         if (zg.e0.b(this)) {
             return;
         }
         super.invalidate();
+        this.G.f();
     }
 
     @Override // android.view.View

@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class r2 extends FrameLayout {
     public final FrameLayout a;
@@ -26,7 +26,7 @@ public final class r2 extends FrameLayout {
 
     public r2(Context context, dh.b bVar) {
         super(context);
-        w7.a6.a(this);
+        w7.b6.a(this);
         FrameLayout frameLayout = new FrameLayout(context);
         this.a = frameLayout;
         ah.l lVar = new ah.l();
@@ -35,24 +35,24 @@ public final class r2 extends FrameLayout {
         lVar.invalidateSelf();
         lVar.f = AndroidUtilities.dp(1.0f);
         frameLayout.setBackground(lVar);
-        addView(frameLayout, w7.y5.e(40, 40, 17));
+        addView(frameLayout, w7.z5.e(40, 40, 17));
         View view = new View(context);
         this.b = view;
-        view.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(40.0f), -13522392));
-        frameLayout.addView(view, w7.y5.e(38, 38, 17));
+        view.setBackground(org.telegram.ui.ActionBar.i6.K(AndroidUtilities.dp(40.0f), -13522392));
+        frameLayout.addView(view, w7.z5.e(38, 38, 17));
         view.setAlpha(0.0f);
         view.setScaleX(0.0f);
         view.setScaleY(0.0f);
         q2 q2Var = new q2(context);
         this.d = q2Var;
-        addView(q2Var, w7.y5.e(42, 42, 17));
+        addView(q2Var, w7.z5.e(42, 42, 17));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setScaleX(0.75f);
         imageView.setScaleY(0.75f);
         imageView.setColorFilter(new PorterDuffColorFilter(-2960428, PorterDuff.Mode.SRC_IN));
-        frameLayout.addView(imageView, w7.y5.e(40, 40, 17));
+        frameLayout.addView(imageView, w7.z5.e(40, 40, 17));
         b(false, false);
     }
 
@@ -74,7 +74,7 @@ public final class r2 extends FrameLayout {
             this.f = ofFloat;
             ofFloat.addUpdateListener(new p2(this, 0));
             this.f.setDuration(320L);
-            this.f.setInterpolator(sr.h);
+            this.f.setInterpolator(tr.h);
             this.f.start();
         } else {
             q2Var.setAlpha(z10 ? 0.0f : 1.0f);
@@ -107,7 +107,7 @@ public final class r2 extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n, z10 ? 1.0f : 0.0f);
             this.r = ofFloat;
             ofFloat.addUpdateListener(new p2(this, 1));
-            this.r.setInterpolator(sr.h);
+            this.r.setInterpolator(tr.h);
             this.r.setDuration(420L);
             this.r.start();
             return;

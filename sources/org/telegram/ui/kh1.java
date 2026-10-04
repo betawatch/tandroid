@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class kh1 extends LinearLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -28,23 +28,23 @@ public final class kh1 extends LinearLayout {
         this.b = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        addView(imageView, w7.y5.t(40, 40, 19, 12, 0, 12, 0));
+        addView(imageView, w7.z5.t(40, 40, 19, 12, 0, 12, 0));
         LinearLayout linearLayout = new LinearLayout(context);
         this.c = linearLayout;
         linearLayout.setOrientation(1);
         linearLayout.setPadding(0, AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f));
-        addView(linearLayout, w7.y5.p(0, -2, 1.0f, 23, 0, 0, 32, 0));
+        addView(linearLayout, w7.z5.p(0, -2, 1.0f, 23, 0, 0, 32, 0));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 16.0f);
-        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.y5.t(-1, -2, 7, 0, 0, 0, 0), context);
+        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.z5.t(-1, -2, 7, 0, 0, 0, 0), context);
         this.e = h;
         h.setTextSize(1, 13.0f);
-        linearLayout.addView(h, w7.y5.r(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
+        linearLayout.addView(h, w7.z5.r(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.f = imageView2;
         imageView2.setScaleType(scaleType);
-        addView(imageView2, w7.y5.t(40, 40, 21, 12, 0, 12, 0));
+        addView(imageView2, w7.z5.t(40, 40, 21, 12, 0, 12, 0));
     }
 
     @Override // android.widget.LinearLayout, android.view.View

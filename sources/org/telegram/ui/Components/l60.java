@@ -1,37 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class l60 {
-    public final int a;
-    public final int b;
-
-    public l60(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+public abstract class l60 extends vo0 {
+    @Override // org.telegram.ui.Components.vo0
+    public final boolean a() {
+        return j() > 0;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.Components.vo0
+    public final boolean b() {
+        return j() < i();
+    }
+
+    @Override // org.telegram.ui.Components.vo0
+    public final void c(boolean z10) {
+        int h = h();
+        if (z10) {
+            h *= -1;
         }
-        if (obj != null && l60.class == obj.getClass()) {
-            l60 l60Var = (l60) obj;
-            if (this.a == l60Var.a && this.b == l60Var.b) {
-                return true;
-            }
-        }
-        return false;
+        k(Math.min(i(), Math.max(0, j() + h)));
     }
 
-    public final int hashCode() {
-        return (this.a * 31) + this.b;
+    public int h() {
+        return 1;
     }
 
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("IntSize(");
-        sb2.append(this.a);
-        sb2.append(", ");
-        return a4.a.o(this.b, ")", sb2);
-    }
+    public abstract int i();
+
+    public abstract int j();
+
+    public abstract void k(int i10);
 }

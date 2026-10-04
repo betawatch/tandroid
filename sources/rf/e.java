@@ -16,7 +16,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class e implements qf.c, qf.b {
     public f d;
@@ -82,7 +82,7 @@ public final class e implements qf.c, qf.b {
         Log.i("PIP_DEBUG", "[HANDLER] pre attach start " + rect);
         int measuredWidth = ((LaunchActivity) eVar.a.d).getWindow().getDecorView().getMeasuredWidth();
         int measuredHeight = ((LaunchActivity) eVar.a.d).getWindow().getDecorView().getMeasuredHeight();
-        Bitmap e = eVar.g.e();
+        Bitmap e7 = eVar.g.e();
         final a aVar = eVar.g;
         Objects.requireNonNull(aVar);
         final int i10 = 0;
@@ -127,7 +127,7 @@ public final class e implements qf.c, qf.b {
         cVar.a = view;
         cVar.b = view2;
         this.h = cVar;
-        cVar.y(e);
+        cVar.w(e7);
         eVar.a.q().addView(this.f);
         this.a = 1;
         this.f.invalidate();
@@ -140,7 +140,7 @@ public final class e implements qf.c, qf.b {
             FileLog.e("[PIP_DEBUG] wrong pip state STATE_ATTACHED: " + this.a);
             return;
         }
-        this.h.y(this.j.g.c());
+        this.h.w(this.j.g.c());
         this.a = 3;
         this.f.removeView(this.i);
         this.f.invalidate();

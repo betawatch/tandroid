@@ -1,6 +1,6 @@
 package y9;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class u0 extends v1 {
     public final Double a;
@@ -56,6 +56,6 @@ public final class u0 extends v1 {
         sb2.append(", ramUsed=");
         sb2.append(this.e);
         sb2.append(", diskUsed=");
-        return a4.a.s(sb2, this.f, "}");
+        return a4.a.r(sb2, this.f, "}");
     }
 }

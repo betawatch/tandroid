@@ -1,38 +1,36 @@
 package ei;
 
-import android.content.Context;
-import android.view.View;
+import android.app.Activity;
+import android.view.ViewGroup;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.w51;
-import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class h extends w51 {
-    static {
-        w51.setup(new h());
+public final class h extends u61 {
+    public final /* synthetic */ m N;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h(m mVar, zl0 zl0Var, Activity activity, int i10, int i11, bi.v vVar, d6 d6Var) {
+        super(zl0Var, activity, i10, i11, true, vVar, d6Var);
+        this.N = mVar;
     }
 
-    public static x51 a(int i10, int i11, int i12, CharSequence charSequence, String str) {
-        x51 J = x51.J(h.class);
-        J.d = i10;
-        J.z = i11;
-        J.k = i12;
-        J.l = charSequence;
-        J.m = str;
-        return J;
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final void bindView(View view, x51 x51Var, boolean z10, l61 l61Var, t61 t61Var) {
-        ((i) view).a(x51Var.z, x51Var.k, x51Var.l, x51Var.m);
-    }
-
-    @Override // org.telegram.ui.Components.w51
-    public final View createView(Context context, yl0 yl0Var, int i10, int i11, d6 d6Var) {
-        return new i(context, d6Var);
+    @Override // org.telegram.ui.Components.u61, s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        d6 d6Var;
+        if (i10 != 42) {
+            return super.x(viewGroup, i10);
+        }
+        m mVar = this.N;
+        Activity parentActivity = mVar.getParentActivity();
+        int i11 = i6.L6;
+        d6Var = ((org.telegram.ui.ActionBar.n2) mVar).resourceProvider;
+        org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(parentActivity, i11, 21, 0, false, d6Var);
+        m4Var.setHeight(25);
+        return new il0(m4Var);
     }
 }

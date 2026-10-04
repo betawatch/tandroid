@@ -1,46 +1,71 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class w6 extends s7 {
-    public final /* synthetic */ int w;
-    public final /* synthetic */ Object x;
+public final class w6 extends og.a {
+    public final int c;
+    public CharSequence d;
+    public String e;
+    public int f;
+    public long g;
+    public int h;
+    public boolean i;
+    public boolean j;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w6(Object obj, Context context, org.telegram.ui.ActionBar.m2 m2Var, int i10) {
-        super(context, m2Var);
-        this.w = i10;
-        this.x = obj;
+    public w6(int i10, String str) {
+        super(i10, true);
+        this.c = -1;
+        this.d = str;
     }
 
-    public void e(boolean z10) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        z6 z6Var = ((x6) this.x).e;
-        if (!z10) {
-            kVar = ((org.telegram.ui.ActionBar.m2) z6Var).actionBar;
-            kVar.r();
-        } else {
-            z6.b0(z6Var, true);
-            kVar2 = ((org.telegram.ui.ActionBar.m2) z6Var).actionBar;
-            kVar2.O(null, null);
-        }
+    public static w6 b(int i10, long j3, String str, int i11) {
+        w6 w6Var = new w6(11);
+        w6Var.f = i10;
+        w6Var.d = str;
+        w6Var.g = j3;
+        w6Var.h = i11;
+        w6Var.j = false;
+        return w6Var;
     }
 
-    @Override // org.telegram.ui.s7, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.w) {
-            case 0:
-                super.onMeasure(i10, org.telegram.messenger.ok.c(12.0f, View.MeasureSpec.getSize(i11) - (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((((fv) this.x).h - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, TLObject.FLAG_30));
-                break;
+    public final boolean equals(Object obj) {
+        if (this != obj) {
+            if (obj == null || w6.class != obj.getClass()) {
+                return false;
+            }
+            w6 w6Var = (w6) obj;
+            int i10 = this.a;
+            if (i10 != w6Var.a) {
+                return false;
+            }
+            if (i10 != 9 && i10 != 10 && i10 != 8 && i10 != 4 && i10 != 2 && i10 != 0 && i10 != 13) {
+                if (i10 == 3) {
+                    return Objects.equals(this.d, w6Var.d);
+                }
+                if (i10 == 1) {
+                    return Objects.equals(this.e, w6Var.e);
+                }
+                if (i10 == 11) {
+                    if (this.f != w6Var.f || this.g != w6Var.g) {
+                        return false;
+                    }
+                } else if (i10 != 7 || this.c != w6Var.c) {
+                    return false;
+                }
+            }
         }
+        return true;
+    }
+
+    public w6(int i10, int i11) {
+        super(7, true);
+        this.c = i10;
+    }
+
+    public w6(int i10) {
+        super(i10, true);
+        this.c = -1;
     }
 }

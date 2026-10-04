@@ -1,79 +1,83 @@
 package hg;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.oz;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Components.bl;
+import org.telegram.ui.Components.hk;
+import org.telegram.ui.Components.jl;
+import org.telegram.ui.Components.ln;
+import org.telegram.ui.Components.pi;
+import org.telegram.ui.Components.qj;
+import org.telegram.ui.Components.sz;
+import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class e0 implements TextWatcher {
-    public final /* synthetic */ k0 a;
+public final class e0 extends sz {
+    public final /* synthetic */ int U;
+    public final /* synthetic */ pi V;
 
-    public e0(k0 k0Var) {
-        this.a = k0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ e0(pi piVar, int i10, zl0 zl0Var, int i11) {
+        super(i10, 0, zl0Var);
+        this.U = i11;
+        this.V = piVar;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int currentTop;
-        k0 k0Var = this.a;
-        ai.w0 w0Var = k0Var.s;
-        oz ozVar = k0Var.E;
-        h0 h0Var = k0Var.x;
-        String obj = editable.toString();
-        if (obj.isEmpty()) {
-            if (w0Var.getAdapter() != h0Var) {
-                currentTop = k0Var.getCurrentTop();
-                ozVar.c();
-                w0Var.setAdapter(h0Var);
-                h0Var.l();
-                if (currentTop > 0) {
-                    k0Var.v.h1(0, -currentTop);
+    @Override // s4.o0
+    public int[] t(View view, Rect rect) {
+        switch (this.U) {
+            case 4:
+                int C = this.n - C();
+                int top = (view.getTop() + rect.top) - view.getScrollY();
+                int height = rect.height() + top;
+                int min = Math.min(0, top);
+                int max = Math.max(0, height - C);
+                if (min == 0) {
+                    min = Math.min(top, max);
                 }
-            }
-        } else if (ozVar != null) {
-            ozVar.setText(LocaleController.getString(R.string.NoResult));
-        }
-        i0 i0Var = k0Var.y;
-        if (i0Var != null) {
-            k0 k0Var2 = i0Var.f;
-            ai.w0 w0Var2 = k0Var2.s;
-            ArrayList arrayList = i0Var.d;
-            arrayList.clear();
-            i0Var.e = obj;
-            String translitSafe = AndroidUtilities.translitSafe(obj);
-            if (translitSafe.startsWith("/")) {
-                translitSafe = translitSafe.substring(1);
-            }
-            ArrayList arrayList2 = c2.f(UserConfig.selectedAccount).b;
-            for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                b2 b2Var = (b2) arrayList2.get(i10);
-                if (!c2.g(b2Var.b)) {
-                    String translitSafe2 = AndroidUtilities.translitSafe(b2Var.b);
-                    if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.f0.w(" ", translitSafe, translitSafe2)) {
-                        arrayList.add(b2Var);
-                    }
-                }
-            }
-            s4.h0 adapter = w0Var2.getAdapter();
-            i0 i0Var2 = k0Var2.y;
-            if (adapter != i0Var2) {
-                w0Var2.setAdapter(i0Var2);
-            }
-            i0Var.l();
+                return new int[]{0, min};
+            default:
+                return super.t(view, rect);
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // s4.c0, s4.o0
+    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
+        switch (this.U) {
+            case 0:
+                d0 d0Var = new d0(this, recyclerView.getContext());
+                d0Var.a = i10;
+                w0(d0Var);
+                break;
+            case 1:
+                qj qjVar = new qj(this, recyclerView.getContext());
+                qjVar.a = i10;
+                w0(qjVar);
+                break;
+            case 2:
+                hk hkVar = new hk(this, recyclerView.getContext());
+                hkVar.a = i10;
+                w0(hkVar);
+                break;
+            case 3:
+                bl blVar = new bl(this, recyclerView.getContext());
+                blVar.a = i10;
+                w0(blVar);
+                break;
+            default:
+                ln lnVar = new ln(this, recyclerView.getContext());
+                lnVar.a = i10;
+                w0(lnVar);
+                break;
+        }
     }
 
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e0(jl jlVar, ai.w0 w0Var) {
+        super(0, 0, w0Var);
+        this.U = 3;
+        this.V = jlVar;
     }
 }

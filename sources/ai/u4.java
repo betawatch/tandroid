@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.ui.Components.rk0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class u4 implements rk0 {
     public final /* synthetic */ e6 a;
@@ -36,7 +36,7 @@ public final class u4 implements rk0 {
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final void m(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    public final void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
         e6 e6Var = this.a;
         Paint paint = e6Var.n2;
         com.google.firebase.messaging.n nVar = e6Var.P1;
@@ -53,7 +53,7 @@ public final class u4 implements rk0 {
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final void n() {
+    public final void o() {
         ((ac) this.a.Q1).b(false);
     }
 

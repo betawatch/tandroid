@@ -5,20 +5,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.bs0;
+import org.telegram.ui.Components.fs0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import yh.k5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class l2 extends s4.v {
-    public final /* synthetic */ bs0 d;
+    public final /* synthetic */ fs0 d;
     public final /* synthetic */ o2 e;
 
-    public l2(o2 o2Var, bs0 bs0Var) {
+    public l2(o2 o2Var, fs0 fs0Var) {
         this.e = o2Var;
-        this.d = bs0Var;
+        this.d = fs0Var;
     }
 
     @Override // s4.v
@@ -30,7 +30,7 @@ public final class l2 extends s4.v {
     @Override // s4.v
     public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
         View view = c1Var.a;
-        return r(view instanceof j1 ? ((j1) view).getSavedGift() : null) ? s4.v.l(15, 0) : s4.v.l(0, 0);
+        return r(view instanceof i1 ? ((i1) view).getSavedGift() : null) ? s4.v.l(15, 0) : s4.v.l(0, 0);
     }
 
     @Override // s4.v
@@ -52,20 +52,20 @@ public final class l2 extends s4.v {
             return false;
         }
         View view = c1Var.a;
-        if (!r(view instanceof j1 ? ((j1) view).getSavedGift() : null)) {
+        if (!r(view instanceof i1 ? ((i1) view).getSavedGift() : null)) {
             return false;
         }
         View view2 = c1Var2.a;
-        if (!r(view2 instanceof j1 ? ((j1) view2).getSavedGift() : null)) {
+        if (!r(view2 instanceof i1 ? ((i1) view2).getSavedGift() : null)) {
             return false;
         }
         int b10 = c1Var.b();
         int b11 = c1Var2.b();
         boolean z10 = o2Var.d;
-        bs0 bs0Var = this.d;
+        fs0 fs0Var = this.d;
         if (z10) {
             o2Var.e.k(b10, b11);
-            bs0Var.e.n(o2Var.e.d);
+            fs0Var.e.n(o2Var.e.d);
         } else {
             k5 k5Var = o2Var.e;
             if (k5Var.q == null) {
@@ -73,13 +73,13 @@ public final class l2 extends s4.v {
             }
             k5Var.k(b10, b11);
         }
-        j2Var.Y2.p(b10, b11);
-        j2Var.Y2.S();
+        j2Var.f3.p(b10, b11);
+        j2Var.f3.S();
         if (o2Var.d) {
             HashMap hashMap = s2.T;
-            bs0Var.f(true);
+            fs0Var.f(true);
         }
-        org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
         if ((U instanceof ProfileActivity) && (g0Var = ((ProfileActivity) U).v0) != null) {
             g0Var.a();
         }
@@ -92,7 +92,7 @@ public final class l2 extends s4.v {
         if (i10 != 0) {
             j2 j2Var = o2Var.f;
             if (j2Var != null) {
-                j2Var.I0(false);
+                j2Var.J0(false);
             }
             if (c1Var != null) {
                 c1Var.a.setPressed(true);

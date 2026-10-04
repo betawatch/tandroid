@@ -9,7 +9,7 @@ import android.os.Process;
 import android.util.Log;
 import java.util.Calendar;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class o extends p {
     public final /* synthetic */ int c = 1;
@@ -59,8 +59,8 @@ public final class o extends p {
                     Location location3 = null;
                     if (f0.e.a(context, "android.permission.ACCESS_COARSE_LOCATION", Process.myPid(), Process.myUid(), context.getPackageName()) == 0) {
                         try {
-                        } catch (Exception e) {
-                            Log.d("TwilightManager", "Failed to get last known location", e);
+                        } catch (Exception e7) {
+                            Log.d("TwilightManager", "Failed to get last known location", e7);
                         }
                         if (locationManager.isProviderEnabled("network")) {
                             location2 = locationManager.getLastKnownLocation("network");
@@ -76,8 +76,8 @@ public final class o extends p {
                             if (locationManager.isProviderEnabled("gps")) {
                                 location3 = locationManager.getLastKnownLocation("gps");
                             }
-                        } catch (Exception e7) {
-                            Log.d("TwilightManager", "Failed to get last known location", e7);
+                        } catch (Exception e10) {
+                            Log.d("TwilightManager", "Failed to get last known location", e10);
                         }
                     }
                     if (location3 == null || location == null ? location3 != null : location3.getTime() > location.getTime()) {

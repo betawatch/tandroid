@@ -20,9 +20,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import v7.o6;
+import v7.n6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
     public static SoftReference a;
@@ -61,13 +61,13 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
         }
         try {
             i11 = ((Integer) Tasks.await(new j(context).b(intent))).intValue();
-        } catch (InterruptedException | ExecutionException e) {
-            Log.e("FirebaseMessaging", "Failed to send message to service.", e);
+        } catch (InterruptedException | ExecutionException e7) {
+            Log.e("FirebaseMessaging", "Failed to send message to service.", e7);
         }
         try {
             Tasks.await(m10, TimeUnit.SECONDS.toMillis(1L), TimeUnit.MILLISECONDS);
-        } catch (InterruptedException | ExecutionException | TimeoutException e7) {
-            Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e7.toString()));
+        } catch (InterruptedException | ExecutionException | TimeoutException e10) {
+            Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e10.toString()));
         }
         return i11;
     }
@@ -93,10 +93,10 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             return 500;
         }
         Intent putExtras = new Intent("com.google.firebase.messaging.NOTIFICATION_DISMISS").putExtras(extras);
-        if (!o6.b(putExtras)) {
+        if (!n6.b(putExtras)) {
             return -1;
         }
-        o6.a("_nd", putExtras.getExtras());
+        n6.a("_nd", putExtras.getExtras());
         return -1;
     }
 

@@ -1,114 +1,48 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class j20 extends LinearLayout {
-    public final /* synthetic */ int a = 0;
-    public final Object b;
-    public final View c;
-    public final Object d;
-    public final Object e;
+public final class j20 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ sg.a c;
 
-    public j20(Context context, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.yl0 yl0Var) {
-        super(context);
-        this.d = new Paint(1);
-        this.e = new org.telegram.ui.Components.e6(this);
-        this.b = d6Var;
-        this.c = yl0Var;
+    public /* synthetic */ j20(Context context, sg.a aVar, int i10) {
+        this.a = i10;
+        this.b = context;
+        this.c = aVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
-            case 1:
-                org.telegram.ui.Components.e6 e6Var = (org.telegram.ui.Components.e6) this.e;
-                super.dispatchDraw(canvas);
-                Paint paint = (Paint) this.d;
-                paint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.a7, (org.telegram.ui.ActionBar.d6) this.b));
-                org.telegram.ui.Components.yl0 yl0Var = (org.telegram.ui.Components.yl0) this.c;
-                if (yl0Var != null) {
-                    paint.setAlpha((int) (e6Var.d(yl0Var.canScrollVertically(1) ? 1.0f : 0.0f, false) * 255.0f));
-                } else {
-                    paint.setAlpha((int) (e6Var.d(1.0f, false) * 255.0f));
-                }
-                canvas.drawRect(0.0f, 0.0f, getWidth(), AndroidUtilities.getShadowHeight(), paint);
+            case 0:
+                g gVar = new g(this, 18);
+                Context context = this.b;
+                org.telegram.ui.Components.u8 u8Var = new org.telegram.ui.Components.u8(context, false, gVar, 1);
+                sg.f fVar = this.c.c;
+                u8Var.e(fVar != null ? fVar.C : 0, 0);
+                u8Var.f(-1, 1, 1, false);
+                org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(context, false);
+                f3Var.setCustomView(u8Var);
+                f3Var.setDimBehind(false);
+                f3Var.show();
                 break;
             default:
-                super.dispatchDraw(canvas);
+                g gVar2 = new g(this, 19);
+                Context context2 = this.b;
+                org.telegram.ui.Components.u8 u8Var2 = new org.telegram.ui.Components.u8(context2, false, gVar2, 2);
+                sg.f fVar2 = this.c.c;
+                u8Var2.e(fVar2 == null ? 0 : fVar2.B, 0);
+                u8Var2.f(-1, 1, 1, false);
+                org.telegram.ui.ActionBar.f3 f3Var2 = new org.telegram.ui.ActionBar.f3(context2, false);
+                f3Var2.setCustomView(u8Var2);
+                f3Var2.setDimBehind(false);
+                f3Var2.show();
                 break;
         }
-    }
-
-    public j20(Context context) {
-        super(context);
-        setOrientation(1);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.d = frameLayout;
-        addView(frameLayout, w7.y5.q(-1, -2, 1));
-        frameLayout.setClipChildren(false);
-        setClipChildren(false);
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 22.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setGravity(1);
-        addView(textView, w7.y5.p(-2, -2, 0.0f, 1, 16, 20, 16, 0));
-        org.telegram.ui.Components.p90 p90Var = new org.telegram.ui.Components.p90(context, null);
-        this.c = p90Var;
-        p90Var.setTextSize(1, 14.0f);
-        p90Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        p90Var.setGravity(1);
-        addView(p90Var, w7.y5.p(-1, -2, 0.0f, 1, 24, 7, 24, 0));
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        this.e = frameLayout2;
-        addView(frameLayout2, w7.y5.q(-1, -2, 1));
-        frameLayout2.setClipChildren(false);
-    }
-
-    public j20(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        setOrientation(1);
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setClipChildren(false);
-        frameLayout.setClipToPadding(false);
-        yh.y6 y6Var = new yh.y6(context, 70, 0);
-        frameLayout.addView(y6Var, w7.y5.c(-1.0f, -1));
-        sg.e eVar = new sg.e(context, 1, 2);
-        this.c = eVar;
-        sg.a aVar = eVar.b;
-        aVar.w = org.telegram.ui.ActionBar.h6.fk;
-        aVar.x = org.telegram.ui.ActionBar.h6.gk;
-        aVar.b();
-        eVar.setStarParticlesView(y6Var);
-        frameLayout.addView(eVar, w7.y5.d(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
-        eVar.setPaused(false);
-        yh.k7 k7Var = new yh.k7(context, i10, d6Var);
-        this.d = k7Var;
-        w7.a6.a(k7Var);
-        k7Var.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 27));
-        frameLayout.addView(k7Var, w7.y5.d(-2, -2.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(frameLayout, w7.y5.c(150.0f, -1));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        com.google.android.gms.internal.vision.e2.l(20.0f, 1, textView);
-        int i11 = org.telegram.ui.ActionBar.h6.j5;
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
-        textView.setGravity(17);
-        addView(textView, w7.y5.t(-2, -2, 1, 0, 2, 0, 0));
-        TextView textView2 = new TextView(context);
-        this.e = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
-        textView2.setGravity(17);
-        addView(textView2, w7.y5.t(-2, -2, 1, 0, 9, 0, 18));
     }
 }

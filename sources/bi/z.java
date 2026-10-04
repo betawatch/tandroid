@@ -11,7 +11,7 @@ import android.text.TextUtils;
 import android.util.LongSparseArray;
 import android.view.View;
 import android.widget.FrameLayout;
-import ci.l8;
+import ci.k8;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -27,23 +27,23 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.t7;
-import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.x81;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.Components.zr0;
-import w7.y5;
+import org.telegram.ui.Components.ds0;
+import org.telegram.ui.Components.f91;
+import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.xi;
+import org.telegram.ui.Components.zl0;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public abstract class z extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static LongSparseArray E;
     public static LongSparseArray F;
-    public final m2 a;
+    public final n2 a;
     public final int b;
     public final d6 c;
     public final long d;
@@ -51,27 +51,27 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
     public final ArrayList f;
     public final ArrayList h;
     public final a n;
-    public final x81 r;
+    public final f91 r;
     public Boolean s;
     public int v;
     public float w;
     public ValueAnimator x;
     public int y;
 
-    public z(Context context, m2 m2Var, long j3) {
+    public z(Context context, n2 n2Var, long j3) {
         super(context);
         this.f = new ArrayList();
         this.h = new ArrayList();
         this.s = null;
         this.v = AndroidUtilities.displaySize.y;
         this.y = Utilities.clamp(SharedConfig.storiesColumnsCount, 6, 2);
-        this.a = m2Var;
-        int currentAccount = m2Var.getCurrentAccount();
+        this.a = n2Var;
+        int currentAccount = n2Var.getCurrentAccount();
         this.b = currentAccount;
-        d6 resourceProvider = m2Var.getResourceProvider();
+        d6 resourceProvider = n2Var.getResourceProvider();
         this.c = resourceProvider;
         this.d = j3;
-        setBackgroundColor(h6.v(h6.v0(h6.d6, resourceProvider), h6.l1(0.04f, h6.v0(h6.G6, resourceProvider))));
+        setBackgroundColor(i6.v(i6.v0(i6.d6, resourceProvider), i6.l1(0.04f, i6.v0(i6.G6, resourceProvider))));
         if (F == null) {
             F = new LongSparseArray();
         }
@@ -90,38 +90,38 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             u8Var = u8Var2;
         }
         this.e = u8Var;
-        zr0 zr0Var = (zr0) this;
-        a aVar = new a(zr0Var, context);
+        ds0 ds0Var = (ds0) this;
+        a aVar = new a(ds0Var, context);
         this.n = aVar;
         aVar.setAllowDisallowInterceptTouch(true);
-        aVar.setAdapter(new b(zr0Var, context));
-        addView(aVar, y5.e(-1, -1, 119));
-        x81 n10 = aVar.n(9, true);
+        aVar.setAdapter(new b(ds0Var, context));
+        addView(aVar, z5.e(-1, -1, 119));
+        f91 n10 = aVar.n(9, true);
         this.r = n10;
         n10.r = 12;
-        n10.setPreTabClick(new a1.c(zr0Var, 11));
-        addView(n10, y5.e(-1, 42, 48));
+        n10.setPreTabClick(new a1.c(ds0Var, 11));
+        addView(n10, z5.e(-1, 42, 48));
         i(false);
     }
 
     public final void a(String str) {
-        m2 m2Var = this.a;
-        if (m2Var == null || m2Var.getParentActivity() == null) {
+        n2 n2Var = this.a;
+        if (n2Var == null || n2Var.getParentActivity() == null) {
             return;
         }
-        wi wiVar = new wi(m2Var.getParentActivity(), this.a, false, false, false, this.c);
-        wiVar.J1(1, false);
-        wiVar.T0 = true;
-        wiVar.S0 = false;
-        wiVar.j1.setText(LocaleController.getString(R.string.ChoosePhotoOrVideo));
-        wiVar.j0.f0();
+        xi xiVar = new xi(n2Var.getParentActivity(), this.a, false, false, false, this.c);
+        xiVar.G1(1, false);
+        xiVar.T0 = true;
+        xiVar.S0 = false;
+        xiVar.j1.setText(LocaleController.getString(R.string.ChoosePhotoOrVideo));
+        xiVar.j0.f0();
         int i10 = Build.VERSION.SDK_INT;
         if (i10 == 21 || i10 == 22) {
-            AndroidUtilities.hideKeyboard(m2Var.getFragmentView().findFocus());
+            AndroidUtilities.hideKeyboard(n2Var.getFragmentView().findFocus());
         }
-        wiVar.Z1 = new c(this, wiVar, str);
-        wiVar.r1();
-        wiVar.show();
+        xiVar.Z1 = new c(this, xiVar, str);
+        xiVar.o1();
+        xiVar.show();
     }
 
     public final void b(String str) {
@@ -317,7 +317,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
         return u8Var;
     }
 
-    public yl0 getCurrentListView() {
+    public zl0 getCurrentListView() {
         View currentView = this.n.getCurrentView();
         if (currentView instanceof u) {
             return ((u) currentView).f;
@@ -354,7 +354,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
 
     public final void i(boolean z10) {
         u8 u8Var;
-        l8 l8Var;
+        k8 k8Var;
         ArrayList arrayList = new ArrayList(this.e.G);
         ArrayList arrayList2 = this.h;
         int size = arrayList2.size();
@@ -377,8 +377,8 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
                 Object obj2 = E2.get(i11);
                 i11++;
                 k9 k9Var = (k9) obj2;
-                if (k9Var != null && (l8Var = k9Var.c) != null && l8Var.J0 == j3 && !TextUtils.isEmpty(l8Var.K0) && !arrayList.contains(l8Var.K0)) {
-                    arrayList.add(l8Var.K0);
+                if (k9Var != null && (k8Var = k9Var.c) != null && k8Var.J0 == j3 && !TextUtils.isEmpty(k8Var.K0) && !arrayList.contains(k8Var.K0)) {
+                    arrayList.add(k8Var.K0);
                 }
             }
         }
@@ -414,13 +414,13 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
         a aVar = this.n;
         aVar.o(true);
         SpannableString spannableString = new SpannableString(f0.g(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
-        qq qqVar = new qq(R.drawable.msg_filled_plus, 0);
-        qqVar.setScale(0.9f, 0.9f);
-        qqVar.spaceScaleX = 0.85f;
-        spannableString.setSpan(qqVar, 0, 1, 33);
-        x81 x81Var = this.r;
-        x81Var.a(-1, spannableString);
-        x81Var.x.l();
+        rq rqVar = new rq(R.drawable.msg_filled_plus, 0);
+        rqVar.setScale(0.9f, 0.9f);
+        rqVar.spaceScaleX = 0.85f;
+        spannableString.setSpan(rqVar, 0, 1, 33);
+        f91 f91Var = this.r;
+        f91Var.a(-1, spannableString);
+        f91Var.x.l();
         boolean z11 = arrayList3.size() + 1 > 1;
         Boolean bool = this.s;
         if (bool == null || bool.booleanValue() != z11) {
@@ -431,7 +431,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             this.s = Boolean.valueOf(z11);
             if (!z10) {
                 this.w = z11 ? 1.0f : 0.0f;
-                x81Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
+                f91Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
                 aVar.setTranslationY(AndroidUtilities.dp(z11 ? 42.0f : 0.0f));
                 return;
             }
@@ -440,7 +440,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             ofFloat.addUpdateListener(new ai.a(this, 14));
             this.x.addListener(new ai.n(4, this, z11));
             this.x.setDuration(320L);
-            this.x.setInterpolator(sr.h);
+            this.x.setInterpolator(tr.h);
             this.x.start();
         }
     }

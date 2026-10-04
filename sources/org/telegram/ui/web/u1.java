@@ -8,12 +8,12 @@ import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class u1 {
     public final o6 a;
@@ -31,7 +31,7 @@ public final class u1 {
         this.a = o6Var;
         o6 o6Var2 = new o6(true, true, true, false);
         this.b = o6Var2;
-        this.c = new e6(l0Var, 0L, 300L, sr.h);
+        this.c = new e6(l0Var, 0L, 300L, tr.h);
         this.e = false;
         o6Var.E = true;
         o6Var.t(AndroidUtilities.dp(18.33f));
@@ -68,13 +68,13 @@ public final class u1 {
         o6Var.l(0.0f, 0.0f, f7, f10);
         o6Var.draw(canvas);
         canvas.restore();
-        float e = this.c.e(this.e);
+        float e7 = this.c.e(this.e);
         canvas.save();
         canvas.translate(0.0f, com.google.android.gms.internal.vision.e2.b(1.0f, f12, AndroidUtilities.dp(4.0f), (AndroidUtilities.dp(14.0f) * f12) + ((1.0f - l0Var.G) * f13 * f12) + (-AndroidUtilities.dp(1.0f))));
         float lerp2 = AndroidUtilities.lerp(1.15f, 0.9f, f12) * l0Var.G;
         canvas.scale(lerp2, lerp2, 0.0f, 0.0f);
-        o6Var2.r(i0.a.d(e, this.d, h6.w0(null, h6.q7, false)));
-        if (e > 0.0f) {
+        o6Var2.r(i0.a.d(e7, this.d, i6.w0(null, i6.q7, false)));
+        if (e7 > 0.0f) {
             int i10 = this.f;
             int color = textPaint.getColor();
             Drawable drawable = this.g;
@@ -83,11 +83,11 @@ public final class u1 {
                 this.f = color2;
                 drawable.setColorFilter(new PorterDuffColorFilter(color2, PorterDuff.Mode.SRC_IN));
             }
-            drawable.setAlpha((int) (e * 255.0f));
+            drawable.setAlpha((int) (e7 * 255.0f));
             drawable.setBounds(0, ((int) (f10 - AndroidUtilities.dp(16.0f))) / 2, AndroidUtilities.dp(16.0f), ((int) (AndroidUtilities.dp(16.0f) + f10)) / 2);
             drawable.draw(canvas);
         }
-        o6Var2.l(AndroidUtilities.dp(20.0f) * e, 0.0f, f7, f10);
+        o6Var2.l(AndroidUtilities.dp(20.0f) * e7, 0.0f, f7, f10);
         o6Var2.draw(canvas);
         canvas.restore();
         rectF.set(f7 - AndroidUtilities.dp(12.0f), 0.0f, f7, f10);

@@ -1,60 +1,23 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ay0 extends s4.x {
-    public int e;
-    public final /* synthetic */ hy0 f;
+public final /* synthetic */ class ay0 implements org.telegram.ui.ActionBar.r0, MessagesStorage.StringCallback {
+    public final /* synthetic */ qy0 a;
 
-    public ay0(hy0 hy0Var) {
-        this.f = hy0Var;
-        this.d = 15;
-        this.e = -1;
+    public /* synthetic */ ay0(qy0 qy0Var) {
+        this.a = qy0Var;
     }
 
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
-        int i10 = c1Var.f;
-        if (i10 == 3 || i10 != c1Var2.f) {
-            return false;
-        }
-        hy0 hy0Var = this.f;
-        if (hy0Var.S == null) {
-            return false;
-        }
-        int b10 = c1Var.b();
-        int b11 = c1Var2.b();
-        hy0Var.S.documents.add(b11, hy0Var.S.documents.remove(b10));
-        hy0Var.d.p(b10, b11);
-        this.e = b11;
-        return true;
+    @Override // org.telegram.ui.ActionBar.r0
+    public void m(int i10) {
+        qy0.B(this.a, i10);
     }
 
-    @Override // s4.v
-    public final void p(s4.c1 c1Var, int i10) {
-        hy0 hy0Var = this.f;
-        if (i10 != 0 || hy0Var.f == null || this.e <= 0) {
-            if (i10 == 2) {
-                hy0Var.f = ((org.telegram.ui.Cells.f8) c1Var.a).getSticker();
-            }
-        } else {
-            TLRPC.TL_stickers_changeStickerPosition tL_stickers_changeStickerPosition = new TLRPC.TL_stickers_changeStickerPosition();
-            tL_stickers_changeStickerPosition.position = this.e;
-            tL_stickers_changeStickerPosition.sticker = MediaDataController.getInputStickerSetItem(hy0Var.f, "").document;
-            this.e = -1;
-            hy0Var.f = null;
-        }
-    }
-
-    @Override // s4.v
-    public final void q(s4.c1 c1Var) {
-    }
-
-    @Override // s4.v
-    public final void o(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2, int i10, int i11, int i12) {
+    @Override // org.telegram.messenger.MessagesStorage.StringCallback
+    public void run(String str) {
+        new a50(r1.getContext(), r1.o0, null, this.a.resourcesProvider).show();
     }
 }

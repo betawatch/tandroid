@@ -1,6 +1,8 @@
 package cc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import hg.k0;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class g extends d {
     public final byte[] c;
@@ -50,7 +52,7 @@ public final class g extends d {
     @Override // cc.d
     public final byte[] b(int i10, byte[] bArr) {
         if (i10 < 0 || i10 >= this.b) {
-            throw new IllegalArgumentException(hg.c.h(i10, "Requested row is outside the image: "));
+            throw new IllegalArgumentException(k0.h(i10, "Requested row is outside the image: "));
         }
         int i11 = this.a;
         if (bArr == null || bArr.length < i11) {

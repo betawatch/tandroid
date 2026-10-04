@@ -12,7 +12,7 @@ import org.telegram.ui.Cells.c1;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 import ru.noties.jlatexmath.awt.Font;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class DefaultTeXFont implements TeXFont {
     protected static final int BOT = 3;
@@ -90,8 +90,8 @@ public class DefaultTeXFont implements TeXFont {
     public static void addTeXFontDescription(String str) {
         try {
             addTeXFontDescription(new FileInputStream(str), str);
-        } catch (FileNotFoundException e) {
-            throw new ResourceParseException(str, e);
+        } catch (FileNotFoundException e7) {
+            throw new ResourceParseException(str, e7);
         }
     }
 
@@ -537,8 +537,8 @@ public class DefaultTeXFont implements TeXFont {
         if (alphabetRegistration != null) {
             try {
                 addAlphabet(alphabetRegistration.getPackage(), alphabetRegistration.getUnicodeBlock(), alphabetRegistration.getTeXFontFileName());
-            } catch (AlphabetRegistrationException e) {
-                System.err.println(e.toString());
+            } catch (AlphabetRegistrationException e7) {
+                System.err.println(e7.toString());
             } catch (FontAlreadyLoadedException unused) {
             }
         }

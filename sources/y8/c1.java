@@ -3,9 +3,9 @@ package y8;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import w7.z8;
+import w7.a9;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c1 extends o6.a {
     public static final Parcelable.Creator<c1> CREATOR = new n0(10);
@@ -33,7 +33,7 @@ public final class c1 extends o6.a {
         }
         if (obj != null && c1.class == obj.getClass()) {
             c1 c1Var = (c1) obj;
-            if (z8.a(this.a, c1Var.a) && z8.a(this.b, c1Var.b) && z8.a(this.c, c1Var.c) && z8.a(this.d, c1Var.d) && z8.a(this.e, c1Var.e) && z8.a(this.f, c1Var.f) && z8.a(this.h, c1Var.h)) {
+            if (a9.a(this.a, c1Var.a) && a9.a(this.b, c1Var.b) && a9.a(this.c, c1Var.c) && a9.a(this.d, c1Var.d) && a9.a(this.e, c1Var.e) && a9.a(this.f, c1Var.f) && a9.a(this.h, c1Var.h)) {
                 return true;
             }
         }
@@ -47,25 +47,25 @@ public final class c1 extends o6.a {
     public final String toString() {
         String valueOf = String.valueOf(this.h);
         String valueOf2 = String.valueOf(this.c);
-        StringBuilder x10 = a4.a.x("AppParcelable{title='", this.b, "', developerName='", this.d, "', formattedPrice='");
-        x10.append(this.e);
-        x10.append("', starRating=");
-        x10.append(this.f);
-        x10.append(", wearDetails=");
-        a4.a.A(x10, valueOf, ", deepLinkUri='", this.a, "', icon=");
-        return a4.a.t(x10, valueOf2, "}");
+        StringBuilder w10 = a4.a.w("AppParcelable{title='", this.b, "', developerName='", this.d, "', formattedPrice='");
+        w10.append(this.e);
+        w10.append("', starRating=");
+        w10.append(this.f);
+        w10.append(", wearDetails=");
+        a4.a.z(w10, valueOf, ", deepLinkUri='", this.a, "', icon=");
+        return a4.a.s(w10, valueOf2, "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.l(parcel, 1, this.a);
-        w7.f0.l(parcel, 2, this.b);
-        w7.f0.k(parcel, 3, this.c, i10);
-        w7.f0.l(parcel, 4, this.d);
-        w7.f0.l(parcel, 5, this.e);
-        w7.f0.e(parcel, 6, this.f);
-        w7.f0.k(parcel, 7, this.h, i10);
-        w7.f0.r(parcel, q6);
+        int q6 = w7.g0.q(parcel, 20293);
+        w7.g0.l(parcel, 1, this.a);
+        w7.g0.l(parcel, 2, this.b);
+        w7.g0.k(parcel, 3, this.c, i10);
+        w7.g0.l(parcel, 4, this.d);
+        w7.g0.l(parcel, 5, this.e);
+        w7.g0.e(parcel, 6, this.f);
+        w7.g0.k(parcel, 7, this.h, i10);
+        w7.g0.r(parcel, q6);
     }
 }

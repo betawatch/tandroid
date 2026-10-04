@@ -1,37 +1,27 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kz implements DialogInterface.OnCancelListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int[] c;
+public final class kz extends org.telegram.ui.Components.f61 {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ kz(int i10, int i11, int[] iArr) {
-        this.a = i11;
-        this.b = i10;
-        this.c = iArr;
+    static {
+        org.telegram.ui.Components.f61.setup(new kz());
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        int i10 = this.a;
-        int[] iArr = this.c;
-        int i11 = this.b;
-        switch (i10) {
-            case 0:
-                ArrayList arrayList = ExternalActionActivity.x;
-                ConnectionsManager.getInstance(i11).cancelRequest(iArr[0], true);
-                break;
-            default:
-                Pattern pattern = LaunchActivity.B1;
-                ConnectionsManager.getInstance(i11).cancelRequest(iArr[0], true);
-                break;
-        }
+    @Override // org.telegram.ui.Components.f61
+    public final void bindView(View view, org.telegram.ui.Components.g61 g61Var, boolean z10, org.telegram.ui.Components.u61 u61Var, org.telegram.ui.Components.c71 c71Var) {
+        lz lzVar = (lz) view;
+        lzVar.b.setOnClickListener((View.OnClickListener) g61Var.G);
+        lzVar.e.setOnClickListener((View.OnClickListener) g61Var.H);
+        lzVar.a(g61Var.e, false);
+    }
+
+    @Override // org.telegram.ui.Components.f61
+    public final View createView(Context context, org.telegram.ui.Components.zl0 zl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new lz(context, d6Var);
     }
 }

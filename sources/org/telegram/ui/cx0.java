@@ -1,129 +1,41 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.BuildVars;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class cx0 {
-    public final TLRPC.TL_premiumSubscriptionOption a;
-    public int b;
-    public long c;
-    public long d;
-    public long e;
-    public c5.o f;
-    public c5.n g;
-    public int h;
+public final class cx0 extends org.telegram.ui.Components.yl0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ dx0 d;
 
-    public cx0(TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption) {
-        this.a = tL_premiumSubscriptionOption;
+    public cx0(dx0 dx0Var, Context context) {
+        this.d = dx0Var;
+        this.c = context;
     }
 
-    public final void a() {
-        c5.o oVar = this.f;
-        if (oVar != null && this.g == null) {
-            ArrayList arrayList = oVar.h;
-            int size = arrayList.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                c5.n nVar = (c5.n) obj;
-                String str = ((c5.l) nVar.b.a.get(0)).d;
-                int i11 = this.a.months;
-                if (i11 != 12) {
-                    Locale locale = Locale.ROOT;
-                    if (str.equals("P" + i11 + "M")) {
-                        this.g = nVar;
-                        return;
-                    }
-                } else if (str.equals("P1Y")) {
-                    this.g = nVar;
-                    return;
-                }
-            }
-        }
+    @Override // org.telegram.ui.Components.yl0
+    public final boolean D(s4.c1 c1Var) {
+        return !((fx0) this.d.n.d.get(c1Var.b())).a.current;
     }
 
-    public final String b() {
-        boolean useInvoiceBilling = BuildVars.useInvoiceBilling();
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = this.a;
-        if (useInvoiceBilling || tL_premiumSubscriptionOption.store_product == null) {
-            return tL_premiumSubscriptionOption.currency;
-        }
-        if (this.f == null) {
-            return "";
-        }
-        a();
-        c5.n nVar = this.g;
-        return nVar == null ? "" : ((c5.l) nVar.b.a.get(0)).c;
+    @Override // s4.h0
+    public final int h() {
+        return this.d.n.d.size();
     }
 
-    public final int c() {
-        if (this.b == 0) {
-            if (h() == 0) {
-                return 0;
-            }
-            if (this.e != 0) {
-                int i10 = (int) ((1.0d - (i() / this.e)) * 100.0d);
-                this.b = i10;
-                if (i10 == 0) {
-                    this.b = -1;
-                }
-            }
-        }
-        return this.b;
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        rg.r1 r1Var = (rg.r1) c1Var.a;
+        PremiumPreviewFragment premiumPreviewFragment = this.d.n;
+        r1Var.a((fx0) premiumPreviewFragment.d.get(i10), i10 != h() - 1);
+        r1Var.c(premiumPreviewFragment.e == i10, false);
     }
 
-    public final String d() {
-        return (BuildVars.useInvoiceBilling() || this.a.store_product == null) ? BillingController.getInstance().formatCurrency(g(), b()) : this.f == null ? "" : BillingController.getInstance().formatCurrency(g(), b(), 6);
-    }
-
-    public final String e() {
-        return (BuildVars.useInvoiceBilling() || this.a.store_product == null) ? BillingController.getInstance().formatCurrency(h(), b()) : this.f == null ? "" : BillingController.getInstance().formatCurrency(h(), b(), 6);
-    }
-
-    public final String f() {
-        return (BuildVars.useInvoiceBilling() || this.a.store_product == null) ? BillingController.getInstance().formatCurrency(i(), b()) : this.f == null ? "" : BillingController.getInstance().formatCurrency(i(), b(), 6);
-    }
-
-    public final long g() {
-        boolean useInvoiceBilling = BuildVars.useInvoiceBilling();
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = this.a;
-        if (useInvoiceBilling || tL_premiumSubscriptionOption.store_product == null) {
-            return tL_premiumSubscriptionOption.amount;
-        }
-        if (this.f == null) {
-            return 0L;
-        }
-        a();
-        c5.n nVar = this.g;
-        if (nVar == null) {
-            return 0L;
-        }
-        return ((c5.l) nVar.b.a.get(0)).b;
-    }
-
-    public final long h() {
-        if (this.c == 0) {
-            long g10 = g();
-            if (g10 != 0) {
-                this.c = g10 / this.a.months;
-            }
-        }
-        return this.c;
-    }
-
-    public final long i() {
-        if (this.d == 0) {
-            long g10 = g();
-            if (g10 != 0) {
-                this.d = (long) ((g10 / this.a.months) * 12.0d);
-            }
-        }
-        return this.d;
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        bx0 bx0Var = new bx0(this, this.c);
+        bx0Var.setCirclePaintProvider(new fs0(4, this, bx0Var));
+        return new org.telegram.ui.Components.il0(bx0Var);
     }
 }

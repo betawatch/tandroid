@@ -1,31 +1,28 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class iv0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rv0 b;
-
-    public /* synthetic */ iv0(rv0 rv0Var, int i10) {
-        this.a = i10;
-        this.b = rv0Var;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                rv0 rv0Var = this.b;
-                rv0Var.getClass();
-                rv0Var.R.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                rv0 rv0Var2 = this.b;
-                rv0Var2.getClass();
-                rv0Var2.R.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
+public final class iv0 extends ViewOutlineProvider {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        ImageReceiver imageReceiver = (ImageReceiver) view.getTag(R.id.parent_tag);
+        if (imageReceiver == null) {
+            int i10 = AndroidUtilities.roundMessageSize;
+            outline.setOval(0, 0, i10, i10);
+            return;
         }
+        int[] roundRadius = imageReceiver.getRoundRadius(true);
+        int i11 = 0;
+        for (int i12 = 0; i12 < 4; i12++) {
+            i11 = Math.max(i11, roundRadius[i12]);
+        }
+        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), i11);
     }
 }

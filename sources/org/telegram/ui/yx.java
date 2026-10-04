@@ -1,35 +1,30 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class yx implements ValueAnimator.AnimatorUpdateListener {
-    public int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ qy d;
+public final class yx implements org.telegram.ui.Components.d5 {
+    public final /* synthetic */ uy a;
 
-    public yx(qy qyVar, float f7, boolean z10, float f10) {
-        this.d = qyVar;
-        this.b = f7;
-        this.c = f10;
-        this.a = (int) f7;
+    public yx(uy uyVar) {
+        this.a = uyVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        ((Float) valueAnimator.getAnimatedValue()).getClass();
-        int lerp = (int) AndroidUtilities.lerp(this.b, this.c, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-        int i10 = lerp - this.a;
-        this.a = lerp;
-        qy qyVar = this.d;
-        qyVar.e0[0].a.scrollBy(0, i10);
-        View view = qyVar.fragmentView;
-        if (view != null) {
-            view.invalidate();
+    @Override // org.telegram.ui.Components.d5
+    public final void K(int i10, int i11, boolean z10) {
+        uy uyVar = this.a;
+        ArrayList arrayList = uyVar.I2;
+        uyVar.K2 = i10;
+        uyVar.L2 = i11;
+        if (uyVar.C2 == null || arrayList.isEmpty()) {
+            return;
         }
+        ArrayList arrayList2 = new ArrayList();
+        for (int i12 = 0; i12 < arrayList.size(); i12++) {
+            arrayList2.add(MessagesStorage.TopicKey.of(((Long) arrayList.get(i12)).longValue(), 0L));
+        }
+        uyVar.C2.u(uyVar, arrayList2, uyVar.B1.getFieldText(), false, z10, i10, i11, null);
     }
 }

@@ -22,9 +22,9 @@ import android.view.textclassifier.TextClassifier;
 import android.widget.EditText;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import w7.r7;
+import w7.s7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class s extends EditText implements r0.o, u0.k {
     public final e2.c a;
@@ -100,7 +100,7 @@ public final class s extends EditText implements r0.o, u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return r7.d(super.getCustomSelectionActionModeCallback());
+        return s7.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
@@ -139,14 +139,14 @@ public final class s extends EditText implements r0.o, u0.k {
 
     @Override // android.widget.TextView, android.view.View
     public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        String[] e;
+        String[] e7;
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         this.b.getClass();
         w0.h(editorInfo, onCreateInputConnection, this);
         w7.o.a(editorInfo, onCreateInputConnection, this);
-        if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e = r0.i0.e(this)) != null) {
-            t0.b.b(editorInfo, e);
-            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new r5.d(this, 3));
+        if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e7 = r0.i0.e(this)) != null) {
+            t0.b.b(editorInfo, e7);
+            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new r2.s(this, 5));
         }
         return this.e.c(onCreateInputConnection, editorInfo);
     }
@@ -243,7 +243,7 @@ public final class s extends EditText implements r0.o, u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(r7.e(callback, this));
+        super.setCustomSelectionActionModeCallback(s7.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {

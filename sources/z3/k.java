@@ -1,15 +1,44 @@
 package z3;
 
-import b2.s;
+import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public interface k {
-    public static final rb.a D = new rb.a(28);
+public abstract class k extends h2.j implements d {
+    public d a;
+    public long b;
 
-    int D(s sVar);
+    @Override // z3.d
+    public final int G() {
+        d dVar = this.a;
+        dVar.getClass();
+        return dVar.G();
+    }
 
-    boolean W(s sVar);
+    @Override // z3.d
+    public final int c(long j3) {
+        d dVar = this.a;
+        dVar.getClass();
+        return dVar.c(j3 - this.b);
+    }
 
-    m x(s sVar);
+    @Override // h2.j, h2.a
+    public final void clear() {
+        super.clear();
+        this.a = null;
+    }
+
+    @Override // z3.d
+    public final long m(int i10) {
+        d dVar = this.a;
+        dVar.getClass();
+        return dVar.m(i10) + this.b;
+    }
+
+    @Override // z3.d
+    public final List z(long j3) {
+        d dVar = this.a;
+        dVar.getClass();
+        return dVar.z(j3 - this.b);
+    }
 }

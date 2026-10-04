@@ -8,9 +8,9 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public class ad extends p90 {
+public class ad extends q90 {
     public bd L;
     public bd M;
 
@@ -28,7 +28,7 @@ public class ad extends p90 {
         this.M = null;
     }
 
-    @Override // org.telegram.ui.Components.p90, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.q90, android.widget.TextView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         Layout layout;
         bd bdVar;

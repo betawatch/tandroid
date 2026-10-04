@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h9 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -42,12 +42,12 @@ public final /* synthetic */ class h9 implements RequestDelegate {
                 long j3 = k9Var.J;
                 String str = k9Var.f;
                 boolean z11 = k9Var.b;
-                ci.l8 l8Var = k9Var.c;
+                ci.k8 k8Var = k9Var.c;
                 int i14 = k9Var.M.a;
                 if (tLObject instanceof TLRPC.Updates) {
                     k9Var.I = false;
                     TLRPC.Updates updates3 = (TLRPC.Updates) tLObject;
-                    if (l8Var.b0) {
+                    if (k8Var.b0) {
                         MessagesController.getInstance(i14).processUpdates(updates3, false);
                         AndroidUtilities.runOnUIThread(new i9(k9Var, 1));
                         break;
@@ -75,13 +75,13 @@ public final /* synthetic */ class h9 implements RequestDelegate {
                                     storyItem = new TL_stories.TL_storyItem();
                                     int currentTime = ConnectionsManager.getInstance(i14).getCurrentTime();
                                     storyItem.date = currentTime;
-                                    int i18 = l8Var.I0;
+                                    int i18 = k8Var.I0;
                                     if (i18 == Integer.MAX_VALUE) {
                                         i18 = 86400;
                                     }
                                     storyItem.expire_date = currentTime + i18;
                                     storyItem.parsedPrivacy = null;
-                                    ArrayList arrayList2 = l8Var.F0;
+                                    ArrayList arrayList2 = k8Var.F0;
                                     ArrayList<TLRPC.PrivacyRule> arrayList3 = new ArrayList<>();
                                     int i19 = 0;
                                     while (true) {
@@ -146,7 +146,7 @@ public final /* synthetic */ class h9 implements RequestDelegate {
                                             i10 = i15;
                                             i11 = i14;
                                             storyItem.privacy = arrayList3;
-                                            storyItem.pinned = l8Var.I0 == Integer.MAX_VALUE;
+                                            storyItem.pinned = k8Var.I0 == Integer.MAX_VALUE;
                                             storyItem.dialogId = UserConfig.getInstance(i11).clientUserId;
                                             storyItem.attachPath = k9Var.e;
                                             storyItem.firstFramePath = str;
@@ -204,9 +204,9 @@ public final /* synthetic */ class h9 implements RequestDelegate {
                     }
                 } else if (tLObject instanceof TL_bots.botPreviewMedia) {
                     k9Var.L = (TL_bots.botPreviewMedia) tLObject;
-                } else if (tL_error != null && FileRefController.isFileRefError(tL_error.text) && l8Var.c0 != null && (c5Var = l8Var.d0) != null) {
+                } else if (tL_error != null && FileRefController.isFileRefError(tL_error.text) && k8Var.c0 != null && (c5Var = k8Var.d0) != null) {
                     c5Var.run(new j9(k9Var, 0));
-                    l8Var.d0 = null;
+                    k8Var.d0 = null;
                     break;
                 } else if (tL_error != null && !z11) {
                     AndroidUtilities.runOnUIThread(new a1.e(20, k9Var, tL_error));

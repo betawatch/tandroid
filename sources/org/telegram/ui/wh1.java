@@ -5,7 +5,7 @@ import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wh1 implements Runnable {
     public final /* synthetic */ int a;
@@ -102,7 +102,7 @@ public final /* synthetic */ class wh1 implements Runnable {
                 mi1Var4.K.setAlpha(0.0f);
                 mi1Var4.M0.setAlpha(0.0f);
                 mi1Var4.Y.b0 = true;
-                AndroidUtilities.runOnUIThread(new n81(22, mi1Var4, k10), 32L);
+                AndroidUtilities.runOnUIThread(new g91(19, mi1Var4, k10), 32L);
                 break;
             case 12:
                 mi1 mi1Var5 = this.b;

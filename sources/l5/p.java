@@ -1,33 +1,46 @@
 package l5;
 
-import android.os.Looper;
-import com.google.android.gms.internal.cast.c0;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
+import android.os.Process;
+import w7.h6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class p implements Executor {
-    public final /* synthetic */ int a = 1;
-    public final Object b;
+public final class p implements Runnable {
+    public final /* synthetic */ int a;
+    public final Runnable b;
 
-    public p(Looper looper) {
-        this.b = new c0(looper, 4);
+    public /* synthetic */ p(int i10, Runnable runnable) {
+        this.a = i10;
+        this.b = runnable;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((Executor) this.b).execute(new o(0, runnable));
+                try {
+                    this.b.run();
+                    break;
+                } catch (Exception e7) {
+                    h6.b("Executor", "Background execution failure.", e7);
+                    return;
+                }
+            case 1:
+                this.b.run();
                 break;
             default:
-                ((c0) this.b).post(runnable);
+                Process.setThreadPriority(0);
+                this.b.run();
                 break;
         }
     }
 
-    public p(ExecutorService executorService) {
-        this.b = executorService;
+    public String toString() {
+        switch (this.a) {
+            case 1:
+                return this.b.toString();
+            default:
+                return super.toString();
+        }
     }
 }

@@ -1,12 +1,12 @@
 package x3;
 
+import a4.m;
 import b2.p0;
 import b2.r;
 import b2.r0;
 import b2.s;
 import b2.s0;
 import c3.j0;
-import c3.k0;
 import c3.z;
 import e0.i0;
 import e2.v;
@@ -14,14 +14,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import n7.z0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j extends i {
     public i0 n;
     public int o;
     public boolean p;
     public z q;
-    public j0 r;
+    public m r;
 
     @Override // x3.i
     public final void a(long j3) {
@@ -41,7 +41,7 @@ public final class j extends i {
         e2.d.h(i0Var);
         int i10 = i0Var.a;
         z zVar = (z) i0Var.b;
-        int i11 = !((k0[]) i0Var.e)[(b10 >> 1) & (255 >>> (8 - i10))].b ? zVar.e : zVar.f;
+        int i11 = !((j0[]) i0Var.e)[(b10 >> 1) & (255 >>> (8 - i10))].b ? zVar.e : zVar.f;
         long j3 = this.p ? (this.o + i11) / 4 : 0;
         byte[] bArr = vVar.a;
         int length = bArr.length;
@@ -100,8 +100,8 @@ public final class j extends i {
             zVar2.g = copyOf;
             this.q = zVar2;
         } else {
-            j0 j0Var = this.r;
-            if (j0Var == null) {
+            m mVar = this.r;
+            if (mVar == null) {
                 this.r = c3.b.v(vVar, true, true);
             } else {
                 int i12 = vVar.c;
@@ -272,13 +272,13 @@ public final class j extends i {
                                 }
                                 int i61 = hVar.i(6);
                                 int i62 = i61 + 1;
-                                k0[] k0VarArr = new k0[i62];
+                                j0[] j0VarArr = new j0[i62];
                                 for (int i63 = 0; i63 < i62; i63++) {
                                     boolean h = hVar.h();
                                     hVar.i(16);
                                     hVar.i(16);
                                     hVar.i(8);
-                                    k0VarArr[i63] = new k0(h);
+                                    j0VarArr[i63] = new j0(h);
                                 }
                                 if (!hVar.h()) {
                                     throw s0.a(null, "framing bit after modes not set as expected");
@@ -288,7 +288,7 @@ public final class j extends i {
                                     i64++;
                                     i61 >>>= 1;
                                 }
-                                i0Var = new i0(zVar, j0Var, bArr, k0VarArr, i64);
+                                i0Var = new i0(zVar, mVar, bArr, j0VarArr, i64);
                             }
                         }
                     } else {
@@ -343,7 +343,7 @@ public final class j extends i {
         ArrayList arrayList = new ArrayList();
         arrayList.add((byte[]) zVar3.g);
         arrayList.add((byte[]) i0Var.d);
-        p0 r10 = c3.b.r(e9.i0.w(((j0) i0Var.c).a));
+        p0 r10 = c3.b.r(e9.i0.w((String[]) ((m) i0Var.c).b));
         r rVar = new r();
         rVar.p = r0.n("audio/ogg");
         rVar.q = r0.n("audio/vorbis");

@@ -2,32 +2,61 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import java.lang.reflect.Method;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class yt0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ zt0 a;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.wm0 b;
 
-    public yt0(zt0 zt0Var) {
-        this.a = zt0Var;
+    public /* synthetic */ yt0(org.telegram.ui.Components.wm0 wm0Var, int i10) {
+        this.a = i10;
+        this.b = wm0Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        super.onAnimationEnd(animator);
-        zt0 zt0Var = this.a;
-        PhotoViewer photoViewer = zt0Var.c;
-        photoViewer.n4 = 0;
-        photoViewer.G1();
-        photoViewer.L0.setAlpha(255);
-        photoViewer.e0.invalidate();
-        photoViewer.P0.setTranslationY(0.0f);
-        if (photoViewer.t4) {
-            PhotoViewer.a0(photoViewer, zt0Var.b.intValue());
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = (PhotoViewer) this.b.b;
+                photoViewer.Q1.getNextView().setText((CharSequence) null);
+                wt0 wt0Var = photoViewer.T1;
+                wt0Var.l0 = false;
+                if (wt0Var.m0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) wt0Var.o0.getLayoutParams()).topMargin = wt0Var.m0;
+                    wt0Var.m0 = -1;
+                    wt0Var.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                ((PhotoViewer) this.b.b).Q1.setTranslationY(0.0f);
+                break;
         }
-        tu0 tu0Var = zt0Var.a;
-        if (tu0Var != null) {
-            tu0Var.d();
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                wt0 wt0Var = ((PhotoViewer) this.b.b).T1;
+                Method method = wt0Var.f0;
+                if (method != null) {
+                    try {
+                        method.invoke(wt0Var, null);
+                        break;
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
+                        return;
+                    }
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
     }
 }

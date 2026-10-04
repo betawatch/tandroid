@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -25,48 +25,48 @@ public final /* synthetic */ class f implements Runnable {
         switch (i10) {
             case 0:
                 x3 x3Var = rVar.r;
-                View z12 = x3Var.z1(aVar);
-                if (!(z12 instanceof p4)) {
-                    x3Var.Y2.N(false);
+                View B1 = x3Var.B1(aVar);
+                if (!(B1 instanceof q4)) {
+                    x3Var.f3.N(false);
                     break;
                 } else {
-                    ((p4) z12).h(aVar, x3Var.getMapDelegate());
+                    ((q4) B1).h(aVar, x3Var.getMapDelegate());
                     break;
                 }
             case 1:
-                rVar.r.W4(aVar, 0);
+                rVar.r.Y4(aVar, 0);
                 break;
             case 2:
-                rVar.r.W4(aVar, 1);
+                rVar.r.Y4(aVar, 1);
                 break;
             case 3:
-                rVar.r.W4(aVar, 2);
+                rVar.r.Y4(aVar, 2);
                 break;
             case 4:
-                rVar.r.W4(aVar, 3);
+                rVar.r.Y4(aVar, 3);
                 break;
             case 5:
-                rVar.r.V4(aVar, new TL_iv.pageBlockParagraph());
+                rVar.r.X4(aVar, new TL_iv.pageBlockParagraph());
                 break;
             case 6:
                 x3 x3Var2 = rVar.r;
-                ArrayList arrayList = x3.s4;
+                ArrayList arrayList = x3.z4;
                 TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
                 pageblockblockquote.caption = new TL_iv.textEmpty();
-                x3Var2.U4(this.c, pageblockblockquote, 0, 0, false, false);
+                x3Var2.W4(this.c, pageblockblockquote, 0, 0, false, false);
                 break;
             case 7:
                 x3 x3Var3 = rVar.r;
-                ArrayList arrayList2 = x3.s4;
+                ArrayList arrayList2 = x3.z4;
                 TL_iv.pageBlockPullquote pageblockpullquote = new TL_iv.pageBlockPullquote();
                 pageblockpullquote.caption = new TL_iv.textEmpty();
-                x3Var3.U4(this.c, pageblockpullquote, 0, 0, false, false);
+                x3Var3.W4(this.c, pageblockpullquote, 0, 0, false, false);
                 break;
             case 8:
-                rVar.r.V4(aVar, new TL_iv.pageBlockPreformatted());
+                rVar.r.X4(aVar, new TL_iv.pageBlockPreformatted());
                 break;
             default:
-                rVar.r.V4(aVar, new TL_iv.pageBlockFooter());
+                rVar.r.X4(aVar, new TL_iv.pageBlockFooter());
                 break;
         }
     }

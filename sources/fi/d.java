@@ -2,21 +2,21 @@ package fi;
 
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.b2;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements MessagesStorage.LongCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a2 b;
+    public final /* synthetic */ b2 b;
     public final /* synthetic */ long c;
     public final /* synthetic */ boolean d;
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
 
-    public /* synthetic */ d(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, a2 a2Var, long j3, boolean z10, int i10) {
+    public /* synthetic */ d(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, b2 b2Var, long j3, boolean z10, int i10) {
         this.a = i10;
         this.e = notificationCenterDelegate;
-        this.b = a2Var;
+        this.b = b2Var;
         this.c = j3;
         this.d = z10;
     }
@@ -31,7 +31,7 @@ public final /* synthetic */ class d implements MessagesStorage.LongCallback {
                 if (j3 != 0) {
                     fVar.a = -j3;
                     fVar.b = fVar.getMessagesController().getChat(Long.valueOf(j3));
-                    fVar.W(this.c, this.d);
+                    fVar.U(this.c, this.d);
                     break;
                 }
                 break;

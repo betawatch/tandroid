@@ -11,15 +11,15 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.q21;
-import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.z21;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class b0 extends View {
     public final org.telegram.ui.ActionBar.d6 a;
     public final c0 b;
-    public final q21 c;
+    public final z21 c;
     public int d;
     public float e;
 
@@ -27,9 +27,9 @@ public abstract class b0 extends View {
         super(context);
         this.a = d6Var;
         this.b = new c0(context, i10, d6Var);
-        q21 q21Var = new q21(i10, this, d6Var, true);
-        this.c = q21Var;
-        q21Var.e = new v01("", 14.0f, AndroidUtilities.bold());
+        z21 z21Var = new z21(i10, this, d6Var, true);
+        this.c = z21Var;
+        z21Var.e = new e11("", 14.0f, AndroidUtilities.bold());
     }
 
     public final void a(float f7, int i10) {
@@ -56,7 +56,7 @@ public abstract class b0 extends View {
         if (d6Var != null) {
             d6Var.m(f10, this.e, measuredWidth2, this.d);
         } else {
-            org.telegram.ui.ActionBar.h6.q(f10, this.e, measuredWidth2, this.d);
+            org.telegram.ui.ActionBar.i6.q(f10, this.e, measuredWidth2, this.d);
         }
         this.c.c(canvas, getWidth(), f7, 0.0f, 1.0f, 1.0f, false);
         c0Var.setBounds(i10, dp, c0Var.h + i10, c0Var.i + dp);
@@ -65,26 +65,26 @@ public abstract class b0 extends View {
 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), ok.C(40.0f, this.b.i, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), ok.B(40.0f, this.b.i, TLObject.FLAG_30));
     }
 
     public void setDialogId(long j3) {
         c0 c0Var = this.b;
-        v01 v01Var = c0Var.d;
+        e11 e11Var = c0Var.d;
         TLRPC.User user = MessagesController.getInstance(c0Var.b).getUser(Long.valueOf(j3));
-        v01 v01Var2 = c0Var.e;
-        v01Var2.n(1);
-        v01Var2.q(9999.0f);
-        v01Var2.r(LocaleController.formatString(R.string.BotForumAskForStartNewChat, UserObject.getUserName(user)));
-        float b10 = (v01Var2.b() / 2.0f) * 1.2f;
-        v01Var2.n(4);
+        e11 e11Var2 = c0Var.e;
+        e11Var2.n(1);
+        e11Var2.q(9999.0f);
+        e11Var2.r(LocaleController.formatString(R.string.BotForumAskForStartNewChat, UserObject.getUserName(user)));
+        float b10 = (e11Var2.b() / 2.0f) * 1.2f;
+        e11Var2.n(4);
         float f7 = (int) (AndroidUtilities.displaySize.x * 0.95f);
-        v01Var2.q(Math.min(f7, b10));
-        if (v01Var2.b.getLineCount() > 2) {
-            v01Var2.q(Math.min(f7, b10 * 1.2f));
+        e11Var2.q(Math.min(f7, b10));
+        if (e11Var2.b.getLineCount() > 2) {
+            e11Var2.q(Math.min(f7, b10 * 1.2f));
         }
-        float min = Math.min(Math.max(Math.max(0.0f, v01Var2.b()), v01Var.b()) + AndroidUtilities.dp(32.0f), f7);
-        float j10 = v01Var2.j() + v01Var.j() + AndroidUtilities.dp(17.0f) + 0.0f + AndroidUtilities.dp(70.0f) + AndroidUtilities.dp(14.0f) + AndroidUtilities.dp(4.0f) + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(5.0f);
+        float min = Math.min(Math.max(Math.max(0.0f, e11Var2.b()), e11Var.b()) + AndroidUtilities.dp(32.0f), f7);
+        float j10 = e11Var2.j() + e11Var.j() + AndroidUtilities.dp(17.0f) + 0.0f + AndroidUtilities.dp(70.0f) + AndroidUtilities.dp(14.0f) + AndroidUtilities.dp(4.0f) + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(5.0f);
         c0Var.h = (int) min;
         c0Var.i = (int) j10;
     }

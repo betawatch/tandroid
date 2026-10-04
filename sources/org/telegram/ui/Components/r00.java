@@ -1,13 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class r00 {
-    public Paint a;
-    public long b;
-    public ArrayList c;
-    public ArrayList d;
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public int j;
+    public final /* synthetic */ s00 k;
+
+    public r00(s00 s00Var) {
+        this.k = s00Var;
+    }
 }

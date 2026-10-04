@@ -1,19 +1,59 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final class c60 {
-    public final boolean a;
-    public final int b;
-    public final int c;
-    public final long d;
-    public final long e;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import org.telegram.messenger.ImageReceiver;
 
-    public c60(long j3, int i10, int i11, boolean z10, long j10) {
-        this.a = z10;
-        this.b = i10;
-        this.c = i11;
-        this.d = j3;
-        this.e = j10;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final class c60 extends h60 {
+    public ImageReceiver a;
+    public float b;
+    public final /* synthetic */ e60 c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c60(e60 e60Var, Context context) {
+        super(context);
+        this.c = e60Var;
+        setWillNotDraw(false);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        e60 e60Var = this.c;
+        FrameLayout frameLayout = e60Var.x;
+        om0 om0Var = e60Var.w;
+        b60 b60Var = e60Var.y;
+        super.dispatchDraw(canvas);
+        if (this.a == null) {
+            return;
+        }
+        float f7 = this.b;
+        if (f7 < 1.0f) {
+            this.b = Math.min(1.0f, f7 + 0.064f);
+            invalidate();
+        }
+        canvas.save();
+        canvas.translate(b60Var.getLeft() + frameLayout.getLeft() + om0Var.getLeft(), b60Var.getTop() + frameLayout.getTop() + om0Var.getTop());
+        if (this.a.getImageWidth() != b60Var.getWidth()) {
+            float width = b60Var.getWidth() / this.a.getImageWidth();
+            canvas.scale(width, width);
+        }
+        canvas.translate(-this.a.getImageX(), -this.a.getImageY());
+        float alpha = this.a.getAlpha();
+        this.a.setAlpha(this.b);
+        this.a.draw(canvas);
+        this.a.setAlpha(alpha);
+        canvas.restore();
+    }
+
+    @Override // org.telegram.ui.Components.h60
+    public final void setImageReceiver(ImageReceiver imageReceiver) {
+        if (this.a == null) {
+            this.b = 0.0f;
+        }
+        this.a = imageReceiver;
+        invalidate();
     }
 }

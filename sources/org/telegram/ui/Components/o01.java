@@ -1,22 +1,15 @@
 package org.telegram.ui.Components;
 
-import java.io.File;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class o01 {
-    public final File a;
-    public long b;
-    public long c;
-    public boolean d;
-    public boolean e;
-    public TLRPC.InputFile f;
-    public TLRPC.InputEncryptedFile g;
-    public byte[] h;
-    public byte[] i;
-
-    public o01(File file) {
-        this.a = file;
+public final class o01 extends ViewOutlineProvider {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), AndroidUtilities.dp(16.0f));
     }
 }

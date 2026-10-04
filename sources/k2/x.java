@@ -1,18 +1,37 @@
 package k2;
 
-import b2.v0;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class x {
-    public final v0 a;
-    public final long b;
-    public final long c;
-    public long d;
+    public final b2.s a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final int g;
+    public final int h;
+    public final c2.e i;
+    public final boolean j;
+    public final boolean k;
+    public final boolean l;
 
-    public x(v0 v0Var, long j3, long j10) {
-        this.a = v0Var;
-        this.b = j3;
-        this.c = j10;
+    public x(b2.s sVar, int i10, int i11, int i12, int i13, int i14, int i15, int i16, c2.e eVar, boolean z10, boolean z11, boolean z12) {
+        this.a = sVar;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
+        this.f = i14;
+        this.g = i15;
+        this.h = i16;
+        this.i = eVar;
+        this.j = z10;
+        this.k = z11;
+        this.l = z12;
+    }
+
+    public final l a() {
+        return new l(this.g, this.e, this.f, this.h, this.l, this.c == 1);
     }
 }

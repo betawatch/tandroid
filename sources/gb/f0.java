@@ -1,6 +1,6 @@
 package gb;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class f0 extends db.u {
     @Override // db.u
@@ -13,9 +13,9 @@ public class f0 extends db.u {
         if (v.length() == 1) {
             return Character.valueOf(v.charAt(0));
         }
-        StringBuilder w10 = a4.a.w("Expecting character, got: ", v, "; at ");
-        w10.append(aVar.j());
-        throw new db.j(w10.toString());
+        StringBuilder v9 = a4.a.v("Expecting character, got: ", v, "; at ");
+        v9.append(aVar.j());
+        throw new db.j(v9.toString());
     }
 
     @Override // db.u

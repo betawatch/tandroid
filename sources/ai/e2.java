@@ -11,16 +11,16 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.qg0;
-import org.telegram.ui.Components.wr;
-import org.telegram.ui.Components.xu;
+import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.rg0;
+import org.telegram.ui.Components.xr;
+import org.telegram.ui.Components.zu;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 PhotoViewer.t1().j0(1.0f, 0.0f, 0.0f, false);
                 break;
             case 3:
-                int i11 = ei.n.n;
+                int i11 = ei.o.n;
                 break;
             case 4:
                 break;
@@ -53,7 +53,7 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 int i13 = org.telegram.ui.Cells.x.L;
                 break;
             case 7:
-                org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R != null) {
                     R.presentFragment(new PremiumPreviewFragment(0, "contact"));
                     break;
@@ -71,28 +71,28 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 }
                 break;
             case 9:
-                int i14 = oq.e0;
+                int i14 = pq.e0;
                 break;
             case 10:
-                int i15 = wr.s;
+                int i15 = xr.s;
                 break;
             case 11:
                 float[] fArr = FragmentContextView.P0;
                 MediaController.getInstance().updateSilent(false);
                 break;
             case 12:
-                qg0 qg0Var = qg0.p0;
-                xu xuVar = qg0Var.U;
-                if (xuVar != null) {
-                    xuVar.H();
+                rg0 rg0Var = rg0.p0;
+                zu zuVar = rg0Var.U;
+                if (zuVar != null) {
+                    zuVar.F();
                 } else {
-                    PhotoViewer photoViewer = qg0Var.V;
+                    PhotoViewer photoViewer = rg0Var.V;
                     if (photoViewer != null) {
                         photoViewer.P0();
                         MediaController.getInstance().tryResumePausedAudio();
                     }
                 }
-                qg0.j(false);
+                rg0.j(false);
                 break;
             case 13:
                 org.telegram.ui.Components.voip.k1.j();
@@ -126,8 +126,8 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 try {
                     view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://fragment.com")));
                     break;
-                } catch (ActivityNotFoundException e) {
-                    FileLog.e(e);
+                } catch (ActivityNotFoundException e7) {
+                    FileLog.e(e7);
                     return;
                 }
             case 22:
@@ -137,8 +137,8 @@ public final /* synthetic */ class e2 implements View.OnClickListener {
                 try {
                     view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://play.google.com/store/apps/details?id=org.telegram.messenger")));
                     break;
-                } catch (ActivityNotFoundException e7) {
-                    FileLog.e(e7);
+                } catch (ActivityNotFoundException e10) {
+                    FileLog.e(e10);
                     return;
                 }
             case 24:

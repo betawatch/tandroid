@@ -2,11 +2,12 @@ package lf;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import hg.k0;
 import java.io.EOFException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class h extends jf.a {
     public static final Logger s = Logger.getLogger(h.class.getName());
@@ -72,30 +73,30 @@ public final class h extends jf.a {
             case "APIC":
                 if (this.o == null || this.r != 3) {
                     b b10 = eVar.b();
-                    a4.m mVar = eVar.d;
+                    l2.g gVar = eVar.d;
                     if (eVar.b.a == 2) {
                         eVar.c(3, b.c).toUpperCase().getClass();
                     } else {
                         eVar.d(20, b.c);
                     }
-                    byte y02 = mVar.y0();
+                    byte D = gVar.D();
                     eVar.d(200, b10);
-                    int e = (int) eVar.a.e();
-                    byte[] bArr = new byte[e];
+                    int e7 = (int) eVar.a.e();
+                    byte[] bArr = new byte[e7];
                     int i13 = 0;
-                    while (i13 < e) {
-                        int read = ((com.google.firebase.messaging.d) mVar.b).read(bArr, i13, e - i13);
+                    while (i13 < e7) {
+                        int read = ((com.google.firebase.messaging.d) gVar.b).read(bArr, i13, e7 - i13);
                         if (read <= 0) {
                             throw new EOFException();
                         }
                         i13 += read;
                     }
-                    if (this.o == null || y02 == 3 || y02 == 0) {
+                    if (this.o == null || D == 3 || D == 0) {
                         try {
                             options = new BitmapFactory.Options();
                             options.inJustDecodeBounds = true;
                             options.inSampleSize = 1;
-                            BitmapFactory.decodeByteArray(bArr, 0, e, options);
+                            BitmapFactory.decodeByteArray(bArr, 0, e7, options);
                             i11 = options.outWidth;
                         } catch (Throwable th2) {
                             th2.printStackTrace();
@@ -104,7 +105,7 @@ public final class h extends jf.a {
                             if (options.outHeight > 800) {
                             }
                             options.inJustDecodeBounds = false;
-                            decodeByteArray = BitmapFactory.decodeByteArray(bArr, 0, e, options);
+                            decodeByteArray = BitmapFactory.decodeByteArray(bArr, 0, e7, options);
                             this.o = decodeByteArray;
                             if (decodeByteArray != null) {
                                 float max = Math.max(decodeByteArray.getWidth(), this.o.getHeight()) / 120.0f;
@@ -117,18 +118,18 @@ public final class h extends jf.a {
                                     this.p = this.o;
                                 }
                             }
-                            this.r = y02;
+                            this.r = D;
                             return;
                         }
                         for (int max2 = Math.max(i11, options.outHeight); max2 > 800; max2 /= 2) {
                             options.inSampleSize *= 2;
                         }
                         options.inJustDecodeBounds = false;
-                        decodeByteArray = BitmapFactory.decodeByteArray(bArr, 0, e, options);
+                        decodeByteArray = BitmapFactory.decodeByteArray(bArr, 0, e7, options);
                         this.o = decodeByteArray;
                         if (decodeByteArray != null) {
                         }
-                        this.r = y02;
+                        this.r = D;
                         return;
                     }
                     return;
@@ -144,20 +145,20 @@ public final class h extends jf.a {
                 return;
             case "TCO":
             case "TCON":
-                String e7 = e(eVar);
-                if (e7.length() > 0) {
-                    this.h = e7;
+                String e10 = e(eVar);
+                if (e10.length() > 0) {
+                    this.h = e10;
                     try {
-                        if (e7.charAt(0) == '(') {
-                            int indexOf = e7.indexOf(41);
-                            if (indexOf > 1 && (i10 = hg.c.a(Integer.parseInt(e7.substring(1, indexOf)))) == 0 && e7.length() > (i12 = indexOf + 1)) {
-                                this.h = e7.substring(i12);
+                        if (e10.charAt(0) == '(') {
+                            int indexOf = e10.indexOf(41);
+                            if (indexOf > 1 && (i10 = k0.a(Integer.parseInt(e10.substring(1, indexOf)))) == 0 && e10.length() > (i12 = indexOf + 1)) {
+                                this.h = e10.substring(i12);
                             }
                         } else {
-                            i10 = hg.c.a(Integer.parseInt(e7));
+                            i10 = k0.a(Integer.parseInt(e10));
                         }
                         if (i10 != 0) {
-                            this.h = hg.c.c(i10);
+                            this.h = k0.c(i10);
                             return;
                         }
                         return;
@@ -176,13 +177,13 @@ public final class h extends jf.a {
                 return;
             case "TLE":
             case "TLEN":
-                String e10 = e(eVar);
+                String e11 = e(eVar);
                 try {
-                    this.b = Long.valueOf(e10).longValue();
+                    this.b = Long.valueOf(e11).longValue();
                     return;
                 } catch (NumberFormatException unused2) {
                     if (logger.isLoggable(level)) {
-                        logger.log(level, "Could not parse track duration: " + e10);
+                        logger.log(level, "Could not parse track duration: " + e11);
                         return;
                     }
                     return;
@@ -197,34 +198,34 @@ public final class h extends jf.a {
                 return;
             case "TPA":
             case "TPOS":
-                String e11 = e(eVar);
-                if (e11.length() > 0) {
-                    int indexOf2 = e11.indexOf(47);
+                String e12 = e(eVar);
+                if (e12.length() > 0) {
+                    int indexOf2 = e12.indexOf(47);
                     if (indexOf2 < 0) {
                         try {
-                            this.k = Short.valueOf(e11).shortValue();
+                            this.k = Short.valueOf(e12).shortValue();
                             return;
                         } catch (NumberFormatException unused3) {
                             if (logger.isLoggable(level)) {
-                                logger.log(level, "Could not parse disc number: ".concat(e11));
+                                logger.log(level, "Could not parse disc number: ".concat(e12));
                                 return;
                             }
                             return;
                         }
                     }
                     try {
-                        this.k = Short.valueOf(e11.substring(0, indexOf2)).shortValue();
+                        this.k = Short.valueOf(e12.substring(0, indexOf2)).shortValue();
                     } catch (NumberFormatException unused4) {
                         if (logger.isLoggable(level)) {
-                            logger.log(level, "Could not parse disc number: ".concat(e11));
+                            logger.log(level, "Could not parse disc number: ".concat(e12));
                         }
                     }
                     try {
-                        Short.valueOf(e11.substring(indexOf2 + 1)).getClass();
+                        Short.valueOf(e12.substring(indexOf2 + 1)).getClass();
                         return;
                     } catch (NumberFormatException unused5) {
                         if (logger.isLoggable(level)) {
-                            logger.log(level, "Could not parse number of discs: ".concat(e11));
+                            logger.log(level, "Could not parse number of discs: ".concat(e12));
                             return;
                         }
                         return;
@@ -233,34 +234,34 @@ public final class h extends jf.a {
                 return;
             case "TRK":
             case "TRCK":
-                String e12 = e(eVar);
-                if (e12.length() > 0) {
-                    int indexOf3 = e12.indexOf(47);
+                String e13 = e(eVar);
+                if (e13.length() > 0) {
+                    int indexOf3 = e13.indexOf(47);
                     if (indexOf3 < 0) {
                         try {
-                            this.j = Short.valueOf(e12).shortValue();
+                            this.j = Short.valueOf(e13).shortValue();
                             return;
                         } catch (NumberFormatException unused6) {
                             if (logger.isLoggable(level)) {
-                                logger.log(level, "Could not parse track number: ".concat(e12));
+                                logger.log(level, "Could not parse track number: ".concat(e13));
                                 return;
                             }
                             return;
                         }
                     }
                     try {
-                        this.j = Short.valueOf(e12.substring(0, indexOf3)).shortValue();
+                        this.j = Short.valueOf(e13.substring(0, indexOf3)).shortValue();
                     } catch (NumberFormatException unused7) {
                         if (logger.isLoggable(level)) {
-                            logger.log(level, "Could not parse track number: ".concat(e12));
+                            logger.log(level, "Could not parse track number: ".concat(e13));
                         }
                     }
                     try {
-                        Short.valueOf(e12.substring(indexOf3 + 1)).getClass();
+                        Short.valueOf(e13.substring(indexOf3 + 1)).getClass();
                         return;
                     } catch (NumberFormatException unused8) {
                         if (logger.isLoggable(level)) {
-                            logger.log(level, "Could not parse number of tracks: ".concat(e12));
+                            logger.log(level, "Could not parse number of tracks: ".concat(e13));
                             return;
                         }
                         return;
@@ -277,14 +278,14 @@ public final class h extends jf.a {
                 return;
             case "TYE":
             case "TYER":
-                String e13 = e(eVar);
-                if (e13.length() > 0) {
+                String e14 = e(eVar);
+                if (e14.length() > 0) {
                     try {
-                        this.g = Short.valueOf(e13).shortValue();
+                        this.g = Short.valueOf(e14).shortValue();
                         return;
                     } catch (NumberFormatException unused9) {
                         if (logger.isLoggable(level)) {
-                            logger.log(level, "Could not parse year: ".concat(e13));
+                            logger.log(level, "Could not parse year: ".concat(e14));
                             return;
                         }
                         return;
@@ -299,14 +300,14 @@ public final class h extends jf.a {
                 }
                 return;
             case "TDRC":
-                String e14 = e(eVar);
-                if (e14.length() >= 4) {
+                String e15 = e(eVar);
+                if (e15.length() >= 4) {
                     try {
-                        this.g = Short.valueOf(e14.substring(0, 4)).shortValue();
+                        this.g = Short.valueOf(e15.substring(0, 4)).shortValue();
                         return;
                     } catch (NumberFormatException unused10) {
                         if (logger.isLoggable(level)) {
-                            logger.log(level, "Could not parse year from: ".concat(e14));
+                            logger.log(level, "Could not parse year from: ".concat(e15));
                             return;
                         }
                         return;

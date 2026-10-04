@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.kj0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class q extends Drawable {
     public final Paint a;
@@ -19,15 +19,15 @@ public final class q extends Drawable {
     public boolean f;
     public boolean g;
     public final kj0 h;
-    public final bc i;
-    public final /* synthetic */ bc j;
+    public final ac i;
+    public final /* synthetic */ ac j;
 
-    public q(bc bcVar, bc bcVar2) {
-        this.j = bcVar;
+    public q(ac acVar, ac acVar2) {
+        this.j = acVar;
         Paint paint = new Paint(1);
         this.a = paint;
         this.c = 1.0f;
-        this.i = bcVar2;
+        this.i = acVar2;
         kj0 kj0Var = new kj0(R.raw.chat_audio_record_delete_3, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
         this.h = kj0Var;
         kj0Var.o0 = true;

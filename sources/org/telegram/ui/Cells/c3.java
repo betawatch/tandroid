@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class c3 extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public int a;
@@ -35,7 +35,7 @@ public abstract class c3 extends LinearLayout implements NotificationCenter.Noti
             w9Var.getImageReceiver().clearImage();
             return;
         }
-        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.h6.a7, 0.2f);
+        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.i6.a7, 0.2f);
         if (svgThumb != null) {
             svgThumb.overrideWidthAndHeight(512, 512);
         }

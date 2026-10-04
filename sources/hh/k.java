@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class k implements ViewTreeObserver.OnPreDrawListener, View.OnAttachStateChangeListener {
     public static final int[] f = new int[2];
@@ -128,7 +128,7 @@ public final class k implements ViewTreeObserver.OnPreDrawListener, View.OnAttac
                             rectF.set(rectF2);
                             jVar.e = true;
                             try {
-                                jVar.b.i(new RectF(rectF2), view);
+                                jVar.b.k(new RectF(rectF2), view);
                             } catch (Throwable unused) {
                             }
                         }

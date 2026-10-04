@@ -1,34 +1,31 @@
 package qg;
 
-import android.content.Context;
-import android.graphics.PointF;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.u71;
-import org.telegram.ui.Components.wv0;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.st0;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class a0 extends o2 {
-    public final /* synthetic */ n0 y0;
+public final class a0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a0(n0 n0Var, Context context, PointF pointF, float f7, float f10, wv0 wv0Var, TLRPC.Document document, Object obj) {
-        super(context, pointF, f7, f10, wv0Var, document, obj);
-        this.y0 = n0Var;
+    public /* synthetic */ a0(m0 m0Var, int i10) {
+        this.a = i10;
+        this.b = m0Var;
     }
 
-    @Override // qg.o2
-    public final void q(kj0 kj0Var) {
-        PhotoViewer photoViewer = ((st0) this.y0).o2;
-        u71 u71Var = photoViewer.F2;
-        if (u71Var == null) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.f2.setTranslationY(0.0f);
+                break;
+            default:
+                m0 m0Var = this.b;
+                m0Var.i2 = false;
+                m0Var.f2.setTranslationY(0.0f);
+                m0Var.n0();
+                break;
         }
-        long n10 = u71Var.n();
-        long j3 = photoViewer.m8;
-        kj0Var.U(n10 - (j3 > 0 ? j3 / 1000 : 0L));
     }
 }

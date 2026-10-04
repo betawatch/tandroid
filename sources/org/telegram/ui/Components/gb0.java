@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class gb0 extends z5 {
     public final /* synthetic */ hb0 a;
@@ -21,6 +21,6 @@ public final class gb0 extends z5 {
         int i15 = hb0Var.y;
         int i16 = i14 + i12;
         int i17 = this.measuredSize;
-        hb0Var.c.set((int) f7, hg.c.z(i16, i17, 2, i15), (int) (f7 + i17), ((i16 + i17) / 2) + i15);
+        hb0Var.c.set((int) f7, hg.k0.y(i16, i17, 2, i15), (int) (f7 + i17), ((i16 + i17) / 2) + i15);
     }
 }

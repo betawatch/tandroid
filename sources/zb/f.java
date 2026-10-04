@@ -12,7 +12,8 @@ import n6.j;
 import n6.l;
 import n7.z0;
 import org.telegram.tgnet.ConnectionsManager;
-import w7.k8;
+import w7.l8;
+import w9.k;
 import x7.d7;
 import x7.da;
 import x7.e7;
@@ -29,7 +30,7 @@ import x7.o7;
 import x7.r0;
 import x7.s;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f extends qb.e {
     public boolean d = true;
@@ -42,9 +43,9 @@ public final class f extends qb.e {
         l.i(aVar, "ImageLabelerOptions can not be null");
         this.f = bVar;
         this.g = faVar;
-        ka.c cVar = new ka.c(29, false);
-        cVar.b = Float.valueOf(aVar.a);
-        this.e = new h8(cVar);
+        k kVar = new k();
+        kVar.a = Float.valueOf(aVar.a);
+        this.e = new h8(kVar);
         this.h = new o0.a(qb.g.c().b());
     }
 
@@ -58,7 +59,7 @@ public final class f extends qb.e {
         z0Var.b = this.e;
         m mVar = o.b;
         Object[] objArr = {n7.b};
-        k8.a(1, objArr);
+        l8.a(1, objArr);
         z0Var.c = new s(1, objArr);
         nVar.d = new g8(z0Var);
         qb.m.a.execute(new p(faVar, new a5.a(nVar, 0), o7.e, faVar.b(), 7));
@@ -83,9 +84,9 @@ public final class f extends qb.e {
                 a2 = this.f.a(aVar);
                 f(n7.b, aVar, elapsedRealtime);
                 this.d = false;
-            } catch (mb.a e) {
-                f(e.a == 14 ? n7.c : n7.d, aVar, elapsedRealtime);
-                throw e;
+            } catch (mb.a e7) {
+                f(e7.a == 14 ? n7.c : n7.d, aVar, elapsedRealtime);
+                throw e7;
             }
         }
         return a2;
@@ -103,7 +104,7 @@ public final class f extends qb.e {
             faVar.i.put(o7Var, Long.valueOf(elapsedRealtime2));
             n nVar = new n();
             nVar.c = m7.b;
-            v7.l lVar = new v7.l(10, false);
+            v7.k kVar = new v7.k(10, false);
             cf.c cVar = new cf.c();
             cVar.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
             cVar.b = n7Var;
@@ -111,7 +112,7 @@ public final class f extends qb.e {
             Boolean bool = Boolean.TRUE;
             cVar.d = bool;
             cVar.e = bool;
-            lVar.b = new g7(cVar);
+            kVar.b = new g7(cVar);
             int i11 = aVar.e;
             if (i11 == -1) {
                 Bitmap bitmap = aVar.a;
@@ -131,16 +132,16 @@ public final class f extends qb.e {
             o0.a aVar2 = new o0.a(25, b10);
             aVar2.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? d7.b : d7.d : d7.c : d7.e : d7.f : d7.h;
             aVar2.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-            lVar.d = new e7(aVar2);
-            lVar.c = this.e;
-            nVar.e = new f8(lVar);
+            kVar.d = new e7(aVar2);
+            kVar.c = this.e;
+            nVar.e = new f8(kVar);
             qb.m.a.execute(new p(faVar, new a5.a(nVar, 0), o7Var, faVar.b(), 7));
         }
-        v7.l lVar2 = new v7.l(9, false);
-        lVar2.d = this.e;
-        lVar2.b = n7Var;
-        lVar2.c = Boolean.valueOf(this.d);
-        qb.m.a.execute(new da(this.g, new r0(lVar2), elapsedRealtime));
+        v7.k kVar2 = new v7.k(9, false);
+        kVar2.d = this.e;
+        kVar2.b = n7Var;
+        kVar2.c = Boolean.valueOf(this.d);
+        qb.m.a.execute(new da(this.g, new r0(kVar2), elapsedRealtime));
         long currentTimeMillis = System.currentTimeMillis();
         o0.a aVar3 = this.h;
         int i12 = n7Var.a;

@@ -4,7 +4,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class u4 extends h4 implements RunnableFuture {
     public volatile t4 n;
@@ -16,7 +16,7 @@ public final class u4 extends h4 implements RunnableFuture {
     @Override // com.google.android.gms.internal.cast.h4
     public final String c() {
         t4 t4Var = this.n;
-        return t4Var != null ? a4.a.q("task=[", t4Var.toString(), "]") : super.c();
+        return t4Var != null ? a4.a.p("task=[", t4Var.toString(), "]") : super.c();
     }
 
     @Override // com.google.android.gms.internal.cast.h4

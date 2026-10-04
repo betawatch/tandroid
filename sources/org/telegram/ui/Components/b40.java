@@ -1,67 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.util.SparseArray;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class b40 extends lv0 {
-    public final /* synthetic */ e40 f2;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b40(e40 e40Var, Context context, dv0 dv0Var, e40 e40Var2, a40 a40Var, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, 0L, dv0Var, 0, null, null, null, 8, 0, e40Var2, a40Var, 0, d6Var, null);
-        this.f2 = e40Var;
+public final class b40 implements bu0 {
+    @Override // org.telegram.ui.Components.bu0
+    public final boolean R() {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.lv0
-    public final int getInitialTab() {
-        return 8;
+    @Override // org.telegram.ui.Components.bu0
+    public final zl0 f() {
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.lv0
-    public final String getStoriesHashtag() {
-        return this.f2.b;
+    @Override // org.telegram.ui.Components.bu0
+    public final TLRPC.Chat g() {
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.lv0
-    public final String getStoriesHashtagUsername() {
-        return this.f2.c;
+    @Override // org.telegram.ui.Components.bu0
+    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.lv0
-    public final boolean t0() {
+    @Override // org.telegram.ui.Components.bu0
+    public final boolean p() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.lv0
-    public final void D0(SparseArray sparseArray) {
+    @Override // org.telegram.ui.Components.bu0
+    public final void C() {
     }
 
-    @Override // org.telegram.ui.Components.lv0
-    public final void K0(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.lv0
-    public final void M0(float f7) {
-    }
-
-    @Override // org.telegram.ui.Components.lv0
-    public final void N0(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.lv0
-    public final void b1(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.lv0
-    public final void o0() {
-    }
-
-    @Override // org.telegram.ui.Components.lv0
-    public final void P(Canvas canvas, float f7, Rect rect, Paint paint) {
+    @Override // org.telegram.ui.Components.bu0
+    public final void P() {
     }
 }

@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.pe0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class LocationController extends BaseController implements NotificationCenter.NotificationCenterDelegate, ILocationServiceProvider.IAPIConnectionCallbacks, ILocationServiceProvider.IAPIOnConnectionFailedListener {
     private static final int BACKGROUD_UPDATE_TIME = 30000;
@@ -67,7 +67,7 @@ public class LocationController extends BaseController implements NotificationCe
     public static String[] unnamedRoads = {"Unnamed Road", "Вulicya bez nazvi", "Нeizvestnaya doroga", "İsimsiz Yol", "Ceļš bez nosaukuma", "Kelias be pavadinimo", "Droga bez nazwy", "Cesta bez názvu", "Silnice bez názvu", "Drum fără nume", "Route sans nom", "Vía sin nombre", "Estrada sem nome", "Οdos xoris onomasia", "Rrugë pa emër", "Пat bez ime", "Нeimenovani put", "Strada senza nome", "Straße ohne Straßennamen"};
     private static HashMap<LocationFetchCallback, Runnable> callbacks = new HashMap<>();
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public class FusedLocationListener implements ILocationServiceProvider.ILocationListener {
         private FusedLocationListener() {
         }
@@ -81,12 +81,12 @@ public class LocationController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public interface LocationFetchCallback {
         void onLocationAddressAvailable(String str, String str2, TLRPC.TL_messageMediaVenue tL_messageMediaVenue, TLRPC.TL_messageMediaVenue tL_messageMediaVenue2, Location location);
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class SharingLocationInfo {
         public int account;
         public long did;
@@ -1094,8 +1094,8 @@ public class LocationController extends BaseController implements NotificationCe
                 getMessagesStorage().getChatsInternal(TextUtils.join(",", arrayList5), arrayList3);
             }
             getMessagesStorage().getUsersInternal(arrayList4, arrayList2);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
         if (arrayList.isEmpty()) {
             return;
@@ -1265,8 +1265,8 @@ public class LocationController extends BaseController implements NotificationCe
             executeFast.step();
             executeFast.dispose();
             nativeByteBuffer.reuse();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
@@ -1284,8 +1284,8 @@ public class LocationController extends BaseController implements NotificationCe
             executeFast.bindLong(2, j3);
             executeFast.step();
             executeFast.dispose();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
@@ -1366,18 +1366,18 @@ public class LocationController extends BaseController implements NotificationCe
         }
         try {
             this.locationManager.requestLocationUpdates("gps", 1L, 0.0f, this.gpsLocationListener);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        try {
-            this.locationManager.requestLocationUpdates("network", 1L, 0.0f, this.networkLocationListener);
         } catch (Exception e7) {
             FileLog.e(e7);
         }
         try {
-            this.locationManager.requestLocationUpdates("passive", 1L, 0.0f, this.passiveLocationListener);
+            this.locationManager.requestLocationUpdates("network", 1L, 0.0f, this.networkLocationListener);
         } catch (Exception e10) {
             FileLog.e(e10);
+        }
+        try {
+            this.locationManager.requestLocationUpdates("passive", 1L, 0.0f, this.passiveLocationListener);
+        } catch (Exception e11) {
+            FileLog.e(e11);
         }
         if (this.lastKnownLocation == null) {
             try {
@@ -1385,8 +1385,8 @@ public class LocationController extends BaseController implements NotificationCe
                 if (this.lastKnownLocation == null) {
                     setLastKnownLocation(this.locationManager.getLastKnownLocation("network"));
                 }
-            } catch (Exception e11) {
-                FileLog.e(e11);
+            } catch (Exception e12) {
+                FileLog.e(e12);
             }
         }
     }
@@ -1750,12 +1750,12 @@ public class LocationController extends BaseController implements NotificationCe
         Locale locale = systemDefaultLocale;
         Locale locale2 = locale.getLanguage().contains("en") ? locale : Locale.US;
         DispatchQueue dispatchQueue = Utilities.globalQueue;
-        ei.l3 l3Var = new ei.l3(locale, location, i10, locale2, locationFetchCallback, 6);
-        dispatchQueue.postRunnable(l3Var, 300L);
-        callbacks.put(locationFetchCallback, l3Var);
+        ei.m3 m3Var = new ei.m3(locale, location, i10, locale2, locationFetchCallback, 6);
+        dispatchQueue.postRunnable(m3Var, 300L);
+        callbacks.put(locationFetchCallback, m3Var);
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public class GpsLocationListener implements LocationListener {
         private GpsLocationListener() {
         }

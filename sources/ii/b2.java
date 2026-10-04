@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class b2 extends Drawable {
     public final Paint a;
@@ -19,25 +19,25 @@ public final class b2 extends Drawable {
     public b2(int i10) {
         Paint paint = new Paint(1);
         this.a = paint;
-        this.b = new org.telegram.ui.Components.e6(new i2.h0(this, 5), 420L, sr.h, 0);
+        this.b = new org.telegram.ui.Components.e6(new i2.h0(this, 5), 420L, tr.h, 0);
         this.d = 255;
         paint.setColor(i10);
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        float e = this.b.e(this.c);
-        if (e <= 0.0f) {
+        float e7 = this.b.e(this.c);
+        if (e7 <= 0.0f) {
             return;
         }
         Paint paint = this.a;
-        paint.setAlpha((int) (this.d * e));
-        paint.setShadowLayer(AndroidUtilities.dp(12.0f) * e, 0.0f, AndroidUtilities.dp(3.0f), org.telegram.ui.ActionBar.h6.l1(e, 805306368));
+        paint.setAlpha((int) (this.d * e7));
+        paint.setShadowLayer(AndroidUtilities.dp(12.0f) * e7, 0.0f, AndroidUtilities.dp(3.0f), org.telegram.ui.ActionBar.i6.l1(e7, 805306368));
         Rect bounds = getBounds();
-        float dp = AndroidUtilities.dp(8.0f) * e;
-        float dp2 = AndroidUtilities.dp(0.0f) * e;
-        float dp3 = AndroidUtilities.dp(12.0f) * e;
-        canvas.drawRoundRect(bounds.left + dp, bounds.top + dp2, bounds.right - dp, (AndroidUtilities.dp(6.0f) * e) + (bounds.bottom - dp2), dp3, dp3, paint);
+        float dp = AndroidUtilities.dp(8.0f) * e7;
+        float dp2 = AndroidUtilities.dp(0.0f) * e7;
+        float dp3 = AndroidUtilities.dp(12.0f) * e7;
+        canvas.drawRoundRect(bounds.left + dp, bounds.top + dp2, bounds.right - dp, (AndroidUtilities.dp(6.0f) * e7) + (bounds.bottom - dp2), dp3, dp3, paint);
     }
 
     @Override // android.graphics.drawable.Drawable

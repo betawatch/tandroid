@@ -7,9 +7,9 @@ import ie.d;
 import ie.e;
 import kotlin.jvm.internal.i;
 import org.telegram.tgnet.TLObject;
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class zzdj {
     private Object zza;
@@ -40,7 +40,7 @@ public final class zzdj {
                     jd.a aVar = jd.a.a;
                     i10 = zzdgVar.zzd;
                     if (i10 != 0) {
-                        u7.b(obj2);
+                        t7.b(obj2);
                         a aVar2 = this.zzb;
                         zzdgVar.zze = (zzmc) obj;
                         zzdgVar.zza = aVar2;
@@ -55,7 +55,7 @@ public final class zzdj {
                         }
                         ?? r52 = (a) zzdgVar.zza;
                         zzmc zzmcVar = zzdgVar.zze;
-                        u7.b(obj2);
+                        t7.b(obj2);
                         dVar = r52;
                         obj = zzmcVar;
                     }
@@ -95,7 +95,7 @@ public final class zzdj {
                     jd.a aVar = jd.a.a;
                     i10 = zzdhVar.zzd;
                     if (i10 != 0) {
-                        u7.b(obj);
+                        t7.b(obj);
                         a aVar2 = this.zzb;
                         zzdhVar.zze = (zzmc[]) objArr;
                         zzdhVar.zza = aVar2;
@@ -110,7 +110,7 @@ public final class zzdj {
                         }
                         ?? r52 = (a) zzdhVar.zza;
                         zzmc[] zzmcVarArr = zzdhVar.zze;
-                        u7.b(obj);
+                        t7.b(obj);
                         dVar = r52;
                         objArr = zzmcVarArr;
                     }
@@ -150,7 +150,7 @@ public final class zzdj {
                     jd.a aVar = jd.a.a;
                     i10 = zzdiVar.zzd;
                     if (i10 != 0) {
-                        u7.b(obj2);
+                        t7.b(obj2);
                         a aVar2 = this.zzb;
                         zzdiVar.zze = (zzmc) obj;
                         zzdiVar.zza = aVar2;
@@ -165,7 +165,7 @@ public final class zzdj {
                         }
                         ?? r52 = (a) zzdiVar.zza;
                         zzmc zzmcVar = zzdiVar.zze;
-                        u7.b(obj2);
+                        t7.b(obj2);
                         dVar = r52;
                         obj = zzmcVar;
                     }

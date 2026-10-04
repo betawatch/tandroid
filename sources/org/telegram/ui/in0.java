@@ -1,183 +1,181 @@
 package org.telegram.ui;
 
+import android.app.Activity;
+import android.graphics.Canvas;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
-import java.util.ArrayList;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.SecureDocument;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class in0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ oo0 b;
+public final class in0 extends FrameLayout implements DownloadController.FileDownloadProgressListener {
+    public final TextView a;
+    public final TextView b;
+    public final org.telegram.ui.Components.w9 c;
+    public final org.telegram.ui.Components.oj0 d;
+    public int e;
+    public SecureDocument f;
+    public final int h;
+    public final /* synthetic */ kn0 n;
 
-    public /* synthetic */ in0(oo0 oo0Var, int i10) {
-        this.a = i10;
-        this.b = oo0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public in0(kn0 kn0Var, Activity activity) {
+        super(activity);
+        int i10;
+        this.n = kn0Var;
+        i10 = ((org.telegram.ui.ActionBar.n2) kn0Var).currentAccount;
+        this.h = DownloadController.getInstance(i10).generateObserverTag();
+        this.d = new org.telegram.ui.Components.oj0(this);
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(activity);
+        this.c = w9Var;
+        addView(w9Var, w7.z5.d(48, 48.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 8.0f, 21.0f, 0.0f));
+        TextView textView = new TextView(activity);
+        this.a = textView;
+        org.telegram.messenger.ok.t(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f, 1);
+        textView.setMaxLines(1);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        boolean z10 = LocaleController.isRTL;
+        addView(textView, w7.z5.d(-2, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 21 : 81, 10.0f, z10 ? 81 : 21, 0.0f));
+        TextView textView2 = new TextView(activity);
+        this.b = textView2;
+        textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.z6, false));
+        textView2.setTextSize(1, 13.0f);
+        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
+        textView2.setLines(1);
+        textView2.setMaxLines(1);
+        textView2.setSingleLine(true);
+        textView2.setPadding(0, 0, 0, 0);
+        boolean z11 = LocaleController.isRTL;
+        addView(textView2, w7.z5.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 81, 35.0f, z11 ? 81 : 21, 0.0f));
+        setWillNotDraw(false);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        oo0 oo0Var = this.b;
-        switch (i10) {
-            case 0:
-                if (oo0Var.getParentActivity() != null) {
-                    oo0Var.G0(null);
-                    break;
-                }
-                break;
-            case 1:
-                oo0 oo0Var2 = new oo0(oo0Var.b1, oo0Var.C0, oo0Var.N0, oo0Var.O0, 0, oo0Var.E0, oo0Var.G0, oo0Var.H0, null, oo0Var.x0, oo0Var.I0, oo0Var.U0, null, oo0Var.r0, oo0Var.W0);
-                oo0Var2.c1 = oo0Var.c1;
-                oo0Var2.d1 = oo0Var.d1;
-                oo0Var2.T = new tn0(oo0Var);
-                oo0Var.presentFragment(oo0Var2);
-                break;
-            case 2:
-                oo0 oo0Var3 = new oo0(oo0Var.b1, oo0Var.C0, oo0Var.N0, oo0Var.O0, 0, oo0Var.E0, oo0Var.G0, oo0Var.H0, null, oo0Var.x0, oo0Var.I0, oo0Var.U0, null, oo0Var.r0, oo0Var.W0);
-                oo0Var3.c1 = oo0Var.c1;
-                oo0Var3.d1 = oo0Var.d1;
-                oo0Var3.T = new un0(oo0Var);
-                oo0Var.presentFragment(oo0Var3);
-                break;
-            case 3:
-                oo0 oo0Var4 = new oo0(oo0Var.b1, oo0Var.C0, oo0Var.N0, oo0Var.O0, 0, oo0Var.E0, oo0Var.G0, oo0Var.H0, null, oo0Var.x0, oo0Var.I0, oo0Var.U0, null, oo0Var.r0, oo0Var.W0);
-                oo0Var4.c1 = oo0Var.c1;
-                oo0Var4.d1 = oo0Var.d1;
-                oo0Var4.T = new vn0(oo0Var);
-                oo0Var.presentFragment(oo0Var4);
-                break;
-            case 4:
-                oo0 oo0Var5 = new oo0(oo0Var.b1, oo0Var.C0, oo0Var.N0, oo0Var.O0, 0, oo0Var.E0, oo0Var.G0, oo0Var.H0, null, oo0Var.x0, oo0Var.I0, oo0Var.U0, null, oo0Var.r0, oo0Var.W0);
-                oo0Var5.c1 = oo0Var.c1;
-                oo0Var5.d1 = oo0Var.d1;
-                oo0Var5.T = new wn0(oo0Var);
-                oo0Var.presentFragment(oo0Var5);
-                break;
-            case 5:
-                if (!oo0Var.P0) {
-                    boolean z10 = !oo0Var.F;
-                    oo0Var.F = z10;
-                    oo0Var.V.setChecked(z10);
-                    oo0Var.W.a(oo0Var.F, true);
-                    break;
-                }
-                break;
-            case 6:
-                oo0.Z(oo0Var);
-                break;
-            case 7:
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(oo0Var.getParentActivity());
-                String string = LocaleController.getString(R.string.TurnPasswordOffQuestion);
-                if (oo0Var.a0.has_secure_values) {
-                    string = org.telegram.messenger.f0.g(R.string.TurnPasswordOffPassport, v7.j.h(string, "\n\n"));
-                }
-                org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
-                a2Var.T = string;
-                a2Var.R = LocaleController.getString(R.string.TurnPasswordOffQuestionTitle);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Disable), new mn0(oo0Var, 3));
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                oo0Var.showDialog(a2Var);
-                TextView textView = (TextView) a2Var.d(-1);
-                if (textView != null) {
-                    textView.setTextColor(oo0Var.getThemedColor(org.telegram.ui.ActionBar.h6.q7));
-                    break;
-                }
-                break;
-            case 8:
-                boolean z11 = !oo0Var.T0;
-                oo0Var.T0 = z11;
-                oo0Var.L.setChecked(z11);
-                break;
-            case 9:
-                boolean z12 = !oo0Var.U0;
-                oo0Var.U0 = z12;
-                oo0Var.L.setChecked(z12);
-                break;
-            case 10:
-                boolean z13 = !oo0Var.U0;
-                oo0Var.U0 = z13;
-                oo0Var.L.setChecked(z13);
-                break;
-            case 11:
-                oo0Var.getClass();
-                int intValue = ((Integer) view.getTag()).intValue();
-                int i11 = 0;
-                while (true) {
-                    org.telegram.ui.Cells.k6[] k6VarArr = oo0Var.h;
-                    if (i11 >= k6VarArr.length) {
-                        break;
-                    } else {
-                        k6VarArr[i11].a(intValue == i11, true);
-                        i11++;
-                    }
-                }
-            case 12:
-                oo0Var.P.setClickable(false);
-                try {
-                    JSONObject put = new JSONObject().put("apiVersion", 2).put("apiVersionMinor", 0);
-                    JSONObject p02 = oo0.p0();
-                    if (oo0Var.K0 == null || oo0Var.M0 != null) {
-                        p02.put("tokenizationSpecification", new bo0(oo0Var, 3));
-                    } else {
-                        p02.put("tokenizationSpecification", new bo0(oo0Var, 1));
-                    }
-                    put.put("allowedPaymentMethods", new JSONArray().put(p02));
-                    JSONObject jSONObject = new JSONObject();
-                    ArrayList arrayList = new ArrayList(oo0Var.C0.invoice.prices);
-                    TLRPC.TL_shippingOption tL_shippingOption = oo0Var.G0;
-                    if (tL_shippingOption != null) {
-                        arrayList.addAll(tL_shippingOption.prices);
-                    }
-                    long j3 = 0;
-                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                        j3 += ((TLRPC.TL_labeledPrice) arrayList.get(i12)).amount;
-                    }
-                    jSONObject.put("totalPrice", LocaleController.getInstance().formatCurrencyDecimalString(j3, oo0Var.C0.invoice.currency, false));
-                    jSONObject.put("totalPriceStatus", "FINAL");
-                    if (!TextUtils.isEmpty(oo0Var.L0)) {
-                        jSONObject.put("countryCode", oo0Var.L0);
-                    }
-                    jSONObject.put("currencyCode", oo0Var.C0.invoice.currency);
-                    jSONObject.put("checkoutOption", "COMPLETE_IMMEDIATE_PURCHASE");
-                    put.put("transactionInfo", jSONObject);
-                    put.put("merchantInfo", new JSONObject().put("merchantName", oo0Var.p0));
-                    String jSONObject2 = put.toString();
-                    v8.j jVar = new v8.j();
-                    jVar.r = true;
-                    n6.l.i(jSONObject2, "paymentDataRequestJson cannot be null!");
-                    jVar.s = jSONObject2;
-                    com.google.android.gms.internal.clearcut.v0 v0Var = oo0Var.e;
-                    v0Var.getClass();
-                    com.google.android.gms.common.api.internal.v e = com.google.android.gms.common.api.internal.w.e();
-                    e.c = new k2.u(jVar, 29);
-                    e.d = new k6.c[]{v8.p.b};
-                    e.b = true;
-                    e.a = 23707;
-                    v8.a.a(v0Var.e(1, e.a()), oo0Var.getParentActivity());
-                    break;
-                } catch (JSONException e7) {
-                    FileLog.e(e7);
-                    return;
-                }
-            case 13:
-                oo0Var.v0 = false;
-                oo0Var.t0();
-                break;
-            default:
-                oo0Var.f[0].requestFocus();
-                AndroidUtilities.showKeyboard(oo0Var.f[0]);
-                break;
+    public final void a(boolean z10) {
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        String attachFileName = FileLoader.getAttachFileName(this.f);
+        boolean exists = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(this.f).exists();
+        boolean isEmpty = TextUtils.isEmpty(attachFileName);
+        org.telegram.ui.Components.oj0 oj0Var = this.d;
+        if (isEmpty) {
+            oj0Var.d(null, false, false);
+            return;
         }
+        SecureDocument secureDocument = this.f;
+        String str = secureDocument.path;
+        kn0 kn0Var = this.n;
+        if (str != null) {
+            if (secureDocument.inputFile != null) {
+                i13 = ((org.telegram.ui.ActionBar.n2) kn0Var).currentAccount;
+                DownloadController.getInstance(i13).removeLoadingFileObserver(this);
+                oj0Var.d(null, false, z10);
+                this.e = -1;
+                return;
+            }
+            i12 = ((org.telegram.ui.ActionBar.n2) kn0Var).currentAccount;
+            DownloadController.getInstance(i12).addLoadingFileObserver(this.f.path, this);
+            this.e = 1;
+            Float fileProgress = ImageLoader.getInstance().getFileProgress(this.f.path);
+            oj0Var.d(getResources().getDrawable(R.drawable.circle), true, z10);
+            oj0Var.e(fileProgress != null ? fileProgress.floatValue() : 0.0f, false);
+            invalidate();
+            return;
+        }
+        if (exists) {
+            i11 = ((org.telegram.ui.ActionBar.n2) kn0Var).currentAccount;
+            DownloadController.getInstance(i11).removeLoadingFileObserver(this);
+            this.e = -1;
+            oj0Var.d(null, false, z10);
+            invalidate();
+            return;
+        }
+        i10 = ((org.telegram.ui.ActionBar.n2) kn0Var).currentAccount;
+        DownloadController.getInstance(i10).addLoadingFileObserver(attachFileName, this);
+        this.e = 1;
+        Float fileProgress2 = ImageLoader.getInstance().getFileProgress(attachFileName);
+        oj0Var.d(getResources().getDrawable(R.drawable.circle), true, z10);
+        oj0Var.e(fileProgress2 != null ? fileProgress2.floatValue() : 0.0f, z10);
+        invalidate();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        if (view == this.c) {
+            this.d.a(canvas);
+        }
+        return drawChild;
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public int getObserverTag() {
+        return this.h;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.a.invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onFailedDownload(String str, boolean z10) {
+        a(false);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        org.telegram.ui.Components.w9 w9Var = this.c;
+        int measuredWidth = ((w9Var.getMeasuredWidth() - AndroidUtilities.dp(24.0f)) / 2) + w9Var.getLeft();
+        int measuredHeight = ((w9Var.getMeasuredHeight() - AndroidUtilities.dp(24.0f)) / 2) + w9Var.getTop();
+        this.d.f(measuredWidth, measuredHeight, AndroidUtilities.dp(24.0f) + measuredWidth, AndroidUtilities.dp(24.0f) + measuredHeight);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), org.telegram.messenger.ok.B(64.0f, 1, TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressDownload(String str, long j3, long j10) {
+        this.d.e(Math.min(1.0f, j3 / j10), true);
+        if (this.e != 1) {
+            a(false);
+        }
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressUpload(String str, long j3, long j10, boolean z10) {
+        this.d.e(Math.min(1.0f, j3 / j10), true);
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onSuccessDownload(String str) {
+        this.d.e(1.0f, true);
+        a(true);
+    }
+
+    public void setValue(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

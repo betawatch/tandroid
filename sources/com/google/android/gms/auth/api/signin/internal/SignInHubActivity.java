@@ -21,7 +21,7 @@ import com.google.android.gms.common.api.Status;
 import java.lang.reflect.Modifier;
 import java.util.Set;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class SignInHubActivity extends v {
     public static boolean T = false;
@@ -49,11 +49,11 @@ public class SignInHubActivity extends v {
         if (intent != null) {
             SignInAccount signInAccount = (SignInAccount) intent.getParcelableExtra("signInAccount");
             if (signInAccount != null && (googleSignInAccount = signInAccount.b) != null) {
-                i T2 = i.T(this);
+                i R = i.R(this);
                 GoogleSignInOptions googleSignInOptions = this.P.b;
-                synchronized (T2) {
-                    synchronized (T2) {
-                        ((b) T2.b).c(googleSignInAccount, googleSignInOptions);
+                synchronized (R) {
+                    synchronized (R) {
+                        ((b) R.b).c(googleSignInAccount, googleSignInOptions);
                     }
                     intent.removeExtra("signInAccount");
                     intent.putExtra("googleSignInAccount", googleSignInAccount);
@@ -176,7 +176,7 @@ public class SignInHubActivity extends v {
     }
 
     public final void v() {
-        w1.b bVar = (w1.b) new a(f(), w1.b.f).k(w1.b.class);
+        w1.b bVar = (w1.b) new a(f(), w1.b.f).j(w1.b.class);
         m mVar = new m(this, 0);
         boolean z10 = bVar.e;
         n nVar = bVar.d;

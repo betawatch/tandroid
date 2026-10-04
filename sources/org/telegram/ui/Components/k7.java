@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k7 implements o1.g {
     public final /* synthetic */ int a;
@@ -21,28 +21,28 @@ public final /* synthetic */ class k7 implements o1.g {
                 ((j8) this.b).T.setBufferedProgress(f7 / 1000.0f);
                 break;
             case 1:
-                qc qcVar = (qc) this.b;
-                qcVar.o = (int) f7;
-                qcVar.l();
+                rc rcVar = (rc) this.b;
+                rcVar.o = (int) f7;
+                rcVar.l();
                 break;
             case 2:
-                if (Math.abs(f7) > ((ub) this.b).getWidth()) {
+                if (Math.abs(f7) > ((vb) this.b).getWidth()) {
                     hVar.c();
                     break;
                 }
                 break;
             case 3:
-                wi wiVar = (wi) ((hi) this.b).d;
-                oi oiVar = wiVar.z0;
-                if (oiVar == wiVar.m0 || oiVar == wiVar.n0 || (wiVar.F && wiVar.t1 != null)) {
-                    wiVar.a2(1);
+                xi xiVar = (xi) ((fi) this.b).d;
+                pi piVar = xiVar.z0;
+                if (piVar == xiVar.m0 || piVar == xiVar.n0 || (xiVar.F && xiVar.t1 != null)) {
+                    xiVar.X1(1);
                 }
-                wiVar.z0.k(wiVar.l2);
-                viewGroup = ((org.telegram.ui.ActionBar.e3) wiVar).containerView;
+                xiVar.z0.k(xiVar.l2);
+                viewGroup = ((org.telegram.ui.ActionBar.f3) xiVar).containerView;
                 viewGroup.invalidate();
                 break;
             default:
-                ((oc0) this.b).z();
+                ((pc0) this.b).z();
                 break;
         }
     }

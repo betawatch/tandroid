@@ -12,14 +12,14 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class p2 extends FrameLayout {
     public float E;
     public int F;
     public ValueAnimator G;
     public o2 H;
-    public final rg.q1 I;
+    public final rg.s1 I;
     public final View[] a;
     public final Matrix b;
     public final float[] c;
@@ -52,13 +52,13 @@ public final class p2 extends FrameLayout {
         this.x = new HashMap();
         this.y = new float[6];
         this.F = -1;
-        this.I = new rg.q1(this, 29);
+        this.I = new rg.s1(this, 29);
         setClipToOutline(false);
         setClipToPadding(false);
         android.opengl.Matrix.setIdentityM(fArr, 0);
         this.a = viewArr;
         for (View view : viewArr) {
-            addView(view, w7.y5.e(108, 108, 17));
+            addView(view, w7.z5.e(108, 108, 17));
         }
     }
 
@@ -350,7 +350,7 @@ public final class p2 extends FrameLayout {
         }
         AndroidUtilities.removeFromParent(frameLayout);
         int childCount = getChildCount();
-        addView(frameLayout, w7.y5.e(64, 64, 17));
+        addView(frameLayout, w7.z5.e(64, 64, 17));
         this.v.add(Integer.valueOf(i10));
         this.w.put(Integer.valueOf(childCount), Integer.valueOf(i10));
     }

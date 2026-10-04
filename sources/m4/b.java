@@ -2,7 +2,7 @@ package m4;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -34,19 +34,19 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 break;
             case 1:
-                this.b.g.N0(this.c, TLObject.FLAG_31, 7, a1.P0(new o0(2)));
+                this.b.g.N0(this.c, TLObject.FLAG_31, 7, a1.P0(new o0(3)));
                 break;
             case 2:
-                this.b.g.N0(this.c, TLObject.FLAG_31, 12, a1.P0(new o0(5)));
+                this.b.g.N0(this.c, TLObject.FLAG_31, 12, a1.P0(new o0(6)));
                 break;
             case 3:
-                this.b.g.N0(this.c, TLObject.FLAG_31, 11, a1.P0(new o0(0)));
+                this.b.g.N0(this.c, TLObject.FLAG_31, 11, a1.P0(new o0(1)));
                 break;
             case 4:
-                this.b.g.N0(this.c, TLObject.FLAG_31, 3, a1.P0(new o0(12)));
+                this.b.g.N0(this.c, TLObject.FLAG_31, 3, a1.P0(new o0(13)));
                 break;
             case 5:
-                this.b.g.N0(this.c, TLObject.FLAG_31, 1, a1.P0(new j2.e(27)));
+                this.b.g.N0(this.c, TLObject.FLAG_31, 1, a1.P0(new j2.e(28)));
                 break;
             case 6:
                 a1 a1Var = this.b.g;
@@ -61,10 +61,10 @@ public final /* synthetic */ class b implements Runnable {
                 a1Var2.N0(rVar3, TLObject.FLAG_31, 1, a1.P0(new ah.b(27, a1Var2, rVar3)));
                 break;
             case 8:
-                this.b.g.N0(this.c, TLObject.FLAG_31, 1, a1.P0(new j2.e(27)));
+                this.b.g.N0(this.c, TLObject.FLAG_31, 1, a1.P0(new j2.e(28)));
                 break;
             default:
-                this.b.g.N0(this.c, TLObject.FLAG_31, 9, a1.P0(new o0(6)));
+                this.b.g.N0(this.c, TLObject.FLAG_31, 9, a1.P0(new o0(7)));
                 break;
         }
     }

@@ -1,62 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.RectF;
-import android.os.Bundle;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ev extends org.telegram.ui.Components.py0 {
-    public final /* synthetic */ o0.a I;
+public final class ev extends g.p {
+    public final /* synthetic */ int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ev(Context context, long j3, o0.a aVar) {
-        super(context);
-        this.I = aVar;
-        this.a = new RectF();
-        this.f = 0.0f;
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, true, true, false);
-        this.r = o6Var;
-        org.telegram.ui.Components.o6 o6Var2 = new org.telegram.ui.Components.o6(false, true, false, false);
-        this.s = o6Var2;
-        o6Var.setCallback(this);
-        o6Var2.setCallback(this);
-        this.n = Long.valueOf(j3);
-        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
-        h9Var.p = 1.5f;
-        ImageReceiver imageReceiver = new ImageReceiver();
-        this.h = imageReceiver;
-        imageReceiver.setParentView(this);
-        if (j3 == Long.MAX_VALUE) {
-            this.v = LocaleController.getString(R.string.CacheOtherChats);
-            h9Var.g(14);
-            imageReceiver.setForUserOrChat(null, h9Var);
-        } else {
-            String dialogPhotoTitle = DialogObject.setDialogPhotoTitle(imageReceiver, h9Var, MessagesController.getInstance(UserConfig.selectedAccount).getUserOrChat(j3));
-            this.v = dialogPhotoTitle;
-            this.v = Emoji.replaceEmoji(dialogPhotoTitle, null, false);
+    @Override // g.p
+    public int h(int i10, int i11) {
+        switch (this.c) {
+            case 1:
+                return i10 % i11;
+            default:
+                return super.h(i10, i11);
         }
     }
 
-    @Override // org.telegram.ui.Components.py0
-    public final void b() {
-        o0.a aVar = this.I;
-        z6 z6Var = (z6) aVar.c;
-        z6Var.T.dismiss();
-        Bundle bundle = new Bundle();
-        long j3 = ((r6) aVar.b).a;
-        if (j3 > 0) {
-            bundle.putLong("user_id", j3);
-        } else {
-            bundle.putLong("chat_id", -j3);
+    @Override // g.p
+    public final int i(int i10) {
+        switch (this.c) {
         }
-        z6Var.presentFragment(new ProfileActivity(bundle, null));
+        return 1;
     }
 }

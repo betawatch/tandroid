@@ -11,17 +11,17 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.f0;
 import org.telegram.messenger.ok;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.ActionBar.i4;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.cw0;
-import org.telegram.ui.Components.uo0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.j4;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.yo0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.i5;
-import w7.y5;
+import org.telegram.ui.j5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -36,52 +36,52 @@ public final /* synthetic */ class c implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                m2 R = LaunchActivity.R();
-                i5 i5Var = new i5(R.getParentActivity(), false);
-                if (R.getFragmentView() instanceof cw0) {
-                    i5Var.b = (cw0) R.getFragmentView();
+                n2 R = LaunchActivity.R();
+                j5 j5Var = new j5(R.getParentActivity(), false);
+                if (R.getFragmentView() instanceof lw0) {
+                    j5Var.b = (lw0) R.getFragmentView();
                 }
                 Activity parentActivity = R.getParentActivity();
-                LinearLayout e = f0.e(parentActivity, 1);
+                LinearLayout e7 = f0.e(parentActivity, 1);
                 TextView textView = new TextView(parentActivity);
-                textView.setText("Saturation " + (i5.c * 5.0f));
-                int i10 = h6.n5;
-                ok.t(textView, h6.w0(null, i10, false), 1, 16.0f, 1);
+                textView.setText("Saturation " + (j5.c * 5.0f));
+                int i10 = i6.n5;
+                ok.t(textView, i6.w0(null, i10, false), 1, 16.0f, 1);
                 textView.setMaxLines(1);
                 textView.setSingleLine(true);
                 textView.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-                e.addView(textView, y5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                uo0 uo0Var = new uo0(parentActivity);
-                uo0Var.setDelegate(new o0.a(i5Var, textView, false, 1));
-                uo0Var.setReportChanges(true);
-                e.addView(uo0Var, y5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                e7.addView(textView, z5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                yo0 yo0Var = new yo0(parentActivity);
+                yo0Var.setDelegate(new o0.a(j5Var, textView, false, 1));
+                yo0Var.setReportChanges(true);
+                e7.addView(yo0Var, z5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
                 TextView textView2 = new TextView(parentActivity);
-                textView2.setText("Alpha " + i5.e);
-                ok.t(textView2, h6.w0(null, i10, false), 1, 16.0f, 1);
+                textView2.setText("Alpha " + j5.e);
+                ok.t(textView2, i6.w0(null, i10, false), 1, 16.0f, 1);
                 textView2.setMaxLines(1);
                 textView2.setSingleLine(true);
                 textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-                e.addView(textView2, y5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                uo0 uo0Var2 = new uo0(parentActivity);
-                uo0Var2.setDelegate(new z0(i5Var, textView2, false, 2));
-                uo0Var2.setReportChanges(true);
-                e.addView(uo0Var2, y5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                e7.addView(textView2, z5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                yo0 yo0Var2 = new yo0(parentActivity);
+                yo0Var2.setDelegate(new z0(j5Var, textView2, false, 2));
+                yo0Var2.setReportChanges(true);
+                e7.addView(yo0Var2, z5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
                 TextView textView3 = new TextView(parentActivity);
                 textView3.setText("Blur Radius");
-                ok.t(textView3, h6.w0(null, i10, false), 1, 16.0f, 1);
+                ok.t(textView3, i6.w0(null, i10, false), 1, 16.0f, 1);
                 textView3.setMaxLines(1);
                 textView3.setSingleLine(true);
                 textView3.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-                e.addView(textView3, y5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
-                uo0 uo0Var3 = new uo0(parentActivity);
-                uo0Var3.setDelegate(new org.telegram.ui.g(i5Var, 5));
-                uo0Var3.setReportChanges(true);
-                e.addView(uo0Var3, y5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
-                e.addOnLayoutChangeListener(new i4(uo0Var, uo0Var3, uo0Var2));
+                e7.addView(textView3, z5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                yo0 yo0Var3 = new yo0(parentActivity);
+                yo0Var3.setDelegate(new org.telegram.ui.g(j5Var, 5));
+                yo0Var3.setReportChanges(true);
+                e7.addView(yo0Var3, z5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                e7.addOnLayoutChangeListener(new j4(yo0Var, yo0Var3, yo0Var2));
                 ScrollView scrollView = new ScrollView(parentActivity);
-                scrollView.addView(e);
-                i5Var.setCustomView(scrollView);
-                i5Var.show();
+                scrollView.addView(e7);
+                j5Var.setCustomView(scrollView);
+                j5Var.show();
                 this.b.c(false);
                 break;
             case 1:

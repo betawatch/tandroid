@@ -5,7 +5,7 @@ import android.text.Layout;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.ba;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class s0 implements ba {
     public final /* synthetic */ Layout a;
@@ -47,7 +47,7 @@ public final class s0 implements ba {
             return "";
         }
         TL_iv.PageBlock pageBlock = aVar.b;
-        return pageBlock instanceof TL_iv.pageBlockDetails ? g6.r(((TL_iv.pageBlockDetails) pageBlock).title, null, true) : "";
+        return pageBlock instanceof TL_iv.pageBlockDetails ? h6.r(((TL_iv.pageBlockDetails) pageBlock).title, null, true) : "";
     }
 
     @Override // org.telegram.ui.Cells.ba

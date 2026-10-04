@@ -1,126 +1,151 @@
 package ci;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.bf0;
-import org.telegram.ui.c40;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class ac extends ClickableSpan {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class ac extends r {
+    public final Path R1;
+    public final /* synthetic */ kc S1;
 
-    public /* synthetic */ ac(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ac(kc kcVar, Activity activity, FrameLayout frameLayout, lw0 lw0Var, FrameLayout frameLayout2, ai.d dVar, org.telegram.ui.Components.ka kaVar) {
+        super(activity, frameLayout, lw0Var, frameLayout2, dVar, kaVar);
+        this.S1 = kcVar;
+        this.R1 = new Path();
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        GroupCallMessage groupCallMessage;
-        org.telegram.ui.ActionBar.d6 d6Var;
-        switch (this.a) {
-            case 0:
-                ((bc) this.b).S1.T();
-                break;
-            case 1:
-                lh.c cVar = (lh.c) this.b;
-                lh.a aVar = cVar.I;
-                if (aVar != null && (groupCallMessage = cVar.H) != null) {
-                    ((c40) aVar).a(groupCallMessage);
-                    break;
-                }
-                break;
-            case 2:
-                org.telegram.ui.Cells.y1 y1Var = (org.telegram.ui.Cells.y1) this.b;
-                nf.f.s(y1Var.getContext(), "https://fragment.com/username/" + ((org.telegram.ui.pa) y1Var.M).e.r);
-                break;
-            case 3:
-                ((org.telegram.ui.ub) this.b).finishFragment();
-                break;
-            case 4:
-                ((org.telegram.ui.r1) this.b).run();
-                break;
-            case 5:
-                ((org.telegram.ui.Components.yc) this.b).a.presentFragment(new PremiumPreviewFragment(0, "settings"));
-                break;
-            case 6:
-                ((ActionBarLayout) ((LaunchActivity) this.b).O()).P(new PremiumPreviewFragment(0, "gift"));
-                break;
-            case 7:
-                ((bf0) this.b).q(false);
-                break;
-            case 8:
-                rg.j0 j0Var = ((rg.c0) this.b).c;
-                org.telegram.ui.ActionBar.m2 m2Var = j0Var.n;
-                long j3 = j0Var.a0;
-                d6Var = ((org.telegram.ui.ActionBar.e3) j0Var).resourcesProvider;
-                tg.m.m(m2Var, d6Var, j3, null);
-                break;
+    @Override // ci.m
+    public final boolean e() {
+        org.telegram.ui.Components.rc rcVar;
+        int i10 = 0;
+        if (MessagesController.getInstance(this.U).premiumFeaturesBlocked() || ((rcVar = org.telegram.ui.Components.rc.w) != null && rcVar.a == 2)) {
+            return false;
+        }
+        int i11 = MessagesController.getInstance(this.U).storyCaptionLengthLimitPremium;
+        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), hg.k0.h(i11, "")));
+        int indexOf = replaceTags.toString().indexOf("__");
+        if (indexOf >= 0) {
+            replaceTags.replace(indexOf, indexOf + 2, (CharSequence) "");
+            int indexOf2 = replaceTags.toString().indexOf("__");
+            if (indexOf2 >= 0) {
+                replaceTags.replace(indexOf2, indexOf2 + 2, (CharSequence) "");
+                replaceTags.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.gc, this.a)), indexOf, indexOf2, 33);
+                replaceTags.setSpan(new zb(this, i10), indexOf, indexOf2, 33);
+            }
+        }
+        org.telegram.ui.Components.rc M = new org.telegram.ui.Components.yc(this.S1.l0, this.a).M(LocaleController.getString(R.string.CaptionPremiumTitle), replaceTags, R.raw.caption_limit);
+        M.a = 2;
+        M.j = 5000;
+        M.k(false);
+        return true;
+    }
+
+    @Override // ci.m
+    public final boolean g() {
+        return this.S1.r0.c();
+    }
+
+    @Override // ci.r
+    public final int getTimelineHeight() {
+        vc vcVar;
+        kc kcVar = this.S1;
+        if (kcVar.Y0 == null || (vcVar = kcVar.Z0) == null || vcVar.getVisibility() != 0) {
+            return 0;
+        }
+        return kcVar.Z0.getTimelineHeight();
+    }
+
+    @Override // ci.m
+    public final void h(org.telegram.ui.Components.oa oaVar, Canvas canvas, RectF rectF, float f7, boolean z10, float f10, float f11, boolean z11) {
+        if (canvas.isHardwareAccelerated()) {
+            canvas.save();
+            Path path = this.R1;
+            path.rewind();
+            path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
+            canvas.clipPath(path);
+            canvas.translate(f10, f11);
+            oaVar.b(canvas, true);
+            canvas.restore();
         }
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        switch (this.a) {
-            case 0:
-                textPaint.setUnderlineText(false);
-                break;
-            case 1:
-                break;
-            case 2:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 3:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 4:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 5:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 6:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 7:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 8:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                int i10 = org.telegram.ui.ActionBar.h6.gc;
-                d6Var = ((org.telegram.ui.ActionBar.e3) ((rg.c0) this.b).c).resourcesProvider;
-                textPaint.setColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
-                break;
-            default:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                Integer num = ((rg.k1) this.b).u0;
-                if (num != null) {
-                    textPaint.setColor(num.intValue());
-                    break;
+    @Override // ci.m
+    public final void i(Bitmap bitmap) {
+        this.S1.n.Z(bitmap, 12.0f);
+        Utilities.stackBlurBitmap(bitmap, (int) 12.0f);
+    }
+
+    @Override // ci.m
+    public final boolean l(float f7, float f10) {
+        kc kcVar = this.S1;
+        mb mbVar = kcVar.v1;
+        if (mbVar != null && mbVar.R0 != null) {
+            ac acVar = kcVar.c1;
+            if (!acVar.p0) {
+                float x10 = acVar.getX() + f7;
+                float y3 = kcVar.c1.getY() + f10;
+                float x11 = kcVar.l0.getX() + x10;
+                float y10 = kcVar.l0.getY() + y3;
+                float x12 = x11 - kcVar.h0.getX();
+                float y11 = y10 - kcVar.h0.getY();
+                for (int i10 = 0; i10 < kcVar.v1.R0.getChildCount(); i10++) {
+                    View childAt = kcVar.v1.R0.getChildAt(i10);
+                    if (childAt instanceof qg.j) {
+                        uk0 selectionBounds = ((qg.j) childAt).getSelectionBounds();
+                        RectF rectF = AndroidUtilities.rectTmp;
+                        float f11 = selectionBounds.a;
+                        float f12 = selectionBounds.b;
+                        rectF.set(f11, f12, selectionBounds.c + f11, selectionBounds.d + f12);
+                        if (rectF.contains(x12, y11)) {
+                            return true;
+                        }
+                    }
                 }
-                break;
+            }
+        }
+        return false;
+    }
+
+    @Override // ci.m
+    public final void n() {
+        ab abVar = this.S1.t0;
+        if (abVar != null) {
+            abVar.invalidate();
         }
     }
 
-    private final void a(View view) {
-    }
-
-    private final void b(TextPaint textPaint) {
+    @Override // ci.m
+    public final void q(boolean z10) {
+        boolean z11;
+        k8 k8Var;
+        kc kcVar = this.S1;
+        u6 u6Var = kcVar.b1;
+        if (!kcVar.N1 && !z10) {
+            ai.l9 storiesController = MessagesController.getInstance(this.U).getStoriesController();
+            int B = kcVar.B();
+            ai.f9 o9 = storiesController.o();
+            if (o9 == null || !o9.a(storiesController.a, B) || ((k8Var = kcVar.K1) != null && k8Var.g)) {
+                z11 = true;
+                u6Var.setShareEnabled(z11);
+            }
+        }
+        z11 = false;
+        u6Var.setShareEnabled(z11);
     }
 }

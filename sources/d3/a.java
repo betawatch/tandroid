@@ -19,14 +19,14 @@ import e2.d0;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import hg.c;
+import hg.k0;
 import java.io.EOFException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -66,16 +66,11 @@ public final class a implements o {
         this.n = nVar;
     }
 
-    @Override // c3.o
-    public final boolean a(p pVar) {
-        return d(pVar);
-    }
-
-    public final int b(p pVar) {
+    public final int a(p pVar) {
         boolean z10;
-        pVar.p();
+        pVar.m();
         byte[] bArr = this.a;
-        pVar.a(0, 1, bArr);
+        pVar.b(0, 1, bArr);
         byte b10 = bArr[0];
         if ((b10 & 131) > 0) {
             throw s0.a(null, "Invalid padding bits for frame header " + ((int) b10));
@@ -91,25 +86,30 @@ public final class a implements o {
         throw s0.a(null, sb2.toString());
     }
 
+    @Override // c3.o
+    public final boolean b(p pVar) {
+        return d(pVar);
+    }
+
     public final boolean d(p pVar) {
-        pVar.p();
+        pVar.m();
         byte[] bArr = u;
         byte[] bArr2 = new byte[bArr.length];
-        pVar.a(0, bArr.length, bArr2);
+        pVar.b(0, bArr.length, bArr2);
         if (Arrays.equals(bArr2, bArr)) {
             this.d = false;
-            pVar.q(bArr.length);
+            pVar.o(bArr.length);
             return true;
         }
-        pVar.p();
+        pVar.m();
         byte[] bArr3 = v;
         byte[] bArr4 = new byte[bArr3.length];
-        pVar.a(0, bArr3.length, bArr4);
+        pVar.b(0, bArr3.length, bArr4);
         if (!Arrays.equals(bArr4, bArr3)) {
             return false;
         }
         this.d = true;
-        pVar.q(bArr3.length);
+        pVar.o(bArr3.length);
         return true;
     }
 
@@ -183,14 +183,14 @@ public final class a implements o {
             rVar.r = i12;
             rVar.I = 1;
             rVar.J = i11;
-            c.s(rVar, h0Var);
+            k0.r(rVar, h0Var);
         }
         int i13 = 0;
         if (this.g == 0) {
             try {
-                int b10 = b(pVar);
-                this.f = b10;
-                this.g = b10;
+                int a2 = a(pVar);
+                this.f = a2;
+                this.g = a2;
                 if (this.i == -1) {
                     this.h = pVar.getPosition();
                     this.i = this.f;
@@ -225,9 +225,9 @@ public final class a implements o {
             }
         }
         pVar2 = pVar;
-        int a2 = this.n.a(pVar2, this.g, true);
-        if (a2 != -1) {
-            int i15 = this.g - a2;
+        int a10 = this.n.a(pVar2, this.g, true);
+        if (a10 != -1) {
+            int i15 = this.g - a10;
             this.g = i15;
             if (i15 <= 0) {
                 this.n.c(this.k + this.e, 1, this.f, 0, null);

@@ -6,7 +6,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -40,13 +40,13 @@ public final /* synthetic */ class w0 implements Utilities.Callback {
                         AndroidUtilities.cancelRunOnUIThread(c1Var);
                         arrayList.clear();
                         arrayList.addAll(s.e(z0Var.q0.id));
-                        z0Var.a0(false, true);
-                        z0Var.X(true);
+                        z0Var.Z(false, true);
+                        z0Var.W(true);
                         break;
                     }
                 } else if (i10 == 3) {
-                    z0Var.a0(false, true);
-                    z0Var.X(true);
+                    z0Var.Z(false, true);
+                    z0Var.W(true);
                     break;
                 }
                 break;
@@ -58,7 +58,7 @@ public final /* synthetic */ class w0 implements Utilities.Callback {
                     arrayList2.clear();
                     arrayList2.addAll(list);
                     z0Var2.b0(true, true);
-                    z0Var2.X(true);
+                    z0Var2.W(true);
                     break;
                 }
                 break;

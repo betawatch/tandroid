@@ -1,8 +1,8 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class x extends org.telegram.ui.r61 {
+public final class x extends org.telegram.ui.t61 {
     public final /* synthetic */ y e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -11,7 +11,7 @@ public final class x extends org.telegram.ui.r61 {
         this.e = yVar;
     }
 
-    @Override // org.telegram.ui.r61, android.widget.PopupWindow
+    @Override // org.telegram.ui.t61, android.widget.PopupWindow
     public final void dismiss() {
         super.dismiss();
         this.e.i0 = null;

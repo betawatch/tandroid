@@ -6,13 +6,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.uy;
+import org.telegram.ui.Components.vy;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.cp;
-import org.telegram.ui.je;
-import org.telegram.ui.yt;
+import org.telegram.ui.du;
+import org.telegram.ui.ep;
+import org.telegram.ui.me;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -36,19 +36,19 @@ public final /* synthetic */ class t1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new u1((w1) this.c, tLObject, this.b, (TLRPC.TL_messages_getInlineBotResults) this.d, (String) this.e, 0));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new i2.c1((je) this.c, tL_error, (TwoStepVerificationActivity) this.d, (Activity) this.e, this.b, tLObject, 6));
+                AndroidUtilities.runOnUIThread(new i2.c1((me) this.c, tL_error, (TwoStepVerificationActivity) this.d, (Activity) this.e, this.b, tLObject, 6));
                 break;
             case 2:
                 AndroidUtilities.runOnUIThread(new u1(this.c, this.d, tLObject, this.e, this.b, 15));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new i2.c1((cp) this.c, (TLRPC.TL_channels_toggleUsername) this.d, tLObject, (TLRPC.TL_username) this.e, this.b, tL_error, 8));
+                AndroidUtilities.runOnUIThread(new i2.c1((ep) this.c, (TLRPC.TL_channels_toggleUsername) this.d, tLObject, (TLRPC.TL_username) this.e, this.b, tL_error, 8));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new u1((uy) this.c, (String) this.e, this.b, (String) this.d, tLObject));
+                AndroidUtilities.runOnUIThread(new u1((vy) this.c, (String) this.e, this.b, (String) this.d, tLObject));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new i2.c1((yt) this.c, tLObject, (d) this.d, this.b, (HashSet) this.e, tL_error, 10));
+                AndroidUtilities.runOnUIThread(new i2.c1((du) this.c, tLObject, (d) this.d, this.b, (HashSet) this.e, tL_error, 10));
                 break;
         }
     }
@@ -61,17 +61,17 @@ public final /* synthetic */ class t1 implements RequestDelegate {
         this.b = z10;
     }
 
-    public /* synthetic */ t1(uy uyVar, String str, boolean z10, String str2) {
+    public /* synthetic */ t1(vy vyVar, String str, boolean z10, String str2) {
         this.a = 4;
-        this.c = uyVar;
+        this.c = vyVar;
         this.e = str;
         this.b = z10;
         this.d = str2;
     }
 
-    public /* synthetic */ t1(yt ytVar, d dVar, boolean z10, HashSet hashSet) {
+    public /* synthetic */ t1(du duVar, d dVar, boolean z10, HashSet hashSet) {
         this.a = 5;
-        this.c = ytVar;
+        this.c = duVar;
         this.d = dVar;
         this.b = z10;
         this.e = hashSet;

@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class xf0 extends LinearLayout {
     public final LinearLayout a;
@@ -24,10 +24,10 @@ public final class xf0 extends LinearLayout {
         setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
         LinearLayout a2 = a(R.drawable.msg_replace, LocaleController.getString(R.string.ReplaceAttachedPollMedia));
         this.b = a2;
-        addView(a2, w7.y5.n(-2, -1));
+        addView(a2, w7.z5.n(-2, -1));
         LinearLayout a10 = a(R.drawable.media_button_restore, LocaleController.getString(R.string.Edit));
         this.a = a10;
-        addView(a10, w7.y5.n(-2, -1));
+        addView(a10, w7.z5.n(-2, -1));
     }
 
     public final LinearLayout a(int i10, String str) {
@@ -38,15 +38,15 @@ public final class xf0 extends LinearLayout {
         linearLayout.setPadding(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(25.0f), AndroidUtilities.dp(7.0f));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(i10);
-        linearLayout.addView(imageView, w7.y5.k(0.0f, 0.0f, 8.0f, 0.0f, 24, 24));
+        linearLayout.addView(imageView, w7.z5.k(0.0f, 0.0f, 8.0f, 0.0f, 24, 24));
         TextView textView = new TextView(context);
         textView.setGravity(16);
         textView.setText(str);
         textView.setTextSize(2, 14.0f);
         textView.setSingleLine(true);
         textView.setTextColor(-1);
-        linearLayout.addView(textView, w7.y5.n(-2, -2));
-        w7.a6.a(linearLayout);
+        linearLayout.addView(textView, w7.z5.n(-2, -2));
+        w7.b6.a(linearLayout);
         return linearLayout;
     }
 

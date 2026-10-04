@@ -3,9 +3,9 @@ package pg;
 import android.animation.ValueAnimator;
 import android.graphics.RectF;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,9 +30,9 @@ public final /* synthetic */ class o0 implements Runnable {
                     s0Var.h = new RectF();
                 }
                 s0Var.c.a(s0Var.h);
-                n2.e eVar = s0Var.a;
-                if (eVar != null) {
-                    eVar.t();
+                l2.g gVar = s0Var.a;
+                if (gVar != null) {
+                    gVar.m();
                     break;
                 }
                 break;
@@ -44,9 +44,9 @@ public final /* synthetic */ class o0 implements Runnable {
                 if (s0Var.H == (i1Var != null)) {
                     if (i1Var != s0Var.d) {
                         s0Var.d = i1Var;
-                        n2.e eVar2 = s0Var.a;
-                        if (eVar2 != null) {
-                            eVar2.t();
+                        l2.g gVar2 = s0Var.a;
+                        if (gVar2 != null) {
+                            gVar2.m();
                             break;
                         }
                     }
@@ -61,12 +61,12 @@ public final /* synthetic */ class o0 implements Runnable {
                     s0Var.K = ofFloat;
                     ofFloat.addUpdateListener(new n0(s0Var, i11));
                     s0Var.K.addListener(new r0(s0Var, i11));
-                    s0Var.K.setInterpolator(sr.h);
+                    s0Var.K.setInterpolator(tr.h);
                     s0Var.K.start();
                     s0Var.d = i1Var;
-                    n2.e eVar3 = s0Var.a;
-                    if (eVar3 != null) {
-                        eVar3.t();
+                    l2.g gVar3 = s0Var.a;
+                    if (gVar3 != null) {
+                        gVar3.m();
                     }
                     if (s0Var.H) {
                         BotWebViewVibrationEffect.SELECTION_CHANGE.vibrate();

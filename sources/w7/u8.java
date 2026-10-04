@@ -1,19 +1,41 @@
 package w7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class u8 {
-    public static void a(StringBuilder sb2, Object obj, rd.l lVar) {
-        if (lVar != null) {
-            sb2.append((CharSequence) lVar.invoke(obj));
-            return;
+    public static String a(String str) {
+        if (d(str)) {
+            return null;
         }
-        if (obj == null ? true : obj instanceof CharSequence) {
-            sb2.append((CharSequence) obj);
-        } else if (obj instanceof Character) {
-            sb2.append(((Character) obj).charValue());
-        } else {
-            sb2.append((CharSequence) obj.toString());
+        return "American Express".equalsIgnoreCase(str) ? "American Express" : "MasterCard".equalsIgnoreCase(str) ? "MasterCard" : "Diners Club".equalsIgnoreCase(str) ? "Diners Club" : "Discover".equalsIgnoreCase(str) ? "Discover" : "JCB".equalsIgnoreCase(str) ? "JCB" : "Visa".equalsIgnoreCase(str) ? "Visa" : "Unknown";
+    }
+
+    public static String b(String str) {
+        if (d(str)) {
+            return null;
         }
+        return "credit".equalsIgnoreCase(str) ? "credit" : "debit".equalsIgnoreCase(str) ? "debit" : "prepaid".equalsIgnoreCase(str) ? "prepaid" : "unknown";
+    }
+
+    public static boolean c(String str, String... strArr) {
+        if (str != null) {
+            for (String str2 : strArr) {
+                if (str.startsWith(str2)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean d(String str) {
+        return str == null || str.trim().length() == 0;
+    }
+
+    public static String e(String str) {
+        if (d(str)) {
+            return null;
+        }
+        return str;
     }
 }

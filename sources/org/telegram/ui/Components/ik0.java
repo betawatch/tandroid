@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class ik0 extends og.b {
     public final /* synthetic */ sk0 d;
@@ -20,7 +20,7 @@ public final class ik0 extends og.b {
         this.d = sk0Var;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -52,16 +52,16 @@ public final class ik0 extends og.b {
         sk0 sk0Var = this.d;
         if (i10 == 1) {
             sk0Var.R = new FrameLayout(sk0Var.getContext());
-            rg.b1 b1Var = new rg.b1(sk0Var.getContext(), 0, null);
-            sk0Var.u0 = b1Var;
-            int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.F8, false);
-            int i11 = org.telegram.ui.ActionBar.h6.h5;
-            b1Var.setColor(i0.a.d(0.7f, w02, org.telegram.ui.ActionBar.h6.w0(null, i11, false)));
-            sk0Var.u0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i11, false), PorterDuff.Mode.MULTIPLY));
+            rg.c1 c1Var = new rg.c1(sk0Var.getContext(), 0, null);
+            sk0Var.u0 = c1Var;
+            int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.F8, false);
+            int i11 = org.telegram.ui.ActionBar.i6.h5;
+            c1Var.setColor(i0.a.d(0.7f, w02, org.telegram.ui.ActionBar.i6.w0(null, i11, false)));
+            sk0Var.u0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, i11, false), PorterDuff.Mode.MULTIPLY));
             sk0Var.u0.setScaleX(0.0f);
             sk0Var.u0.setScaleY(0.0f);
             sk0Var.u0.setPadding(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
-            sk0Var.R.addView(sk0Var.u0, w7.y5.e(26, 26, 17));
+            sk0Var.R.addView(sk0Var.u0, w7.z5.e(26, 26, 17));
             final int i12 = 0;
             sk0Var.u0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.hk0
                 public final /* synthetic */ ik0 b;
@@ -81,7 +81,7 @@ public final class ik0 extends og.b {
                             view2.getMeasuredWidth();
                             view2.getMeasuredHeight();
                             sk0Var2.getClass();
-                            new rg.x0(sk0Var2.t0, 4, true).show();
+                            new rg.y0(sk0Var2.t0, 4, true).show();
                             break;
                         default:
                             sk0.a(this.b.d);
@@ -94,20 +94,20 @@ public final class ik0 extends og.b {
             view = new qk0(sk0Var, sk0Var.getContext());
         } else {
             sk0Var.S = new ci.m6(sk0Var, sk0Var.getContext());
-            ur urVar = new ur(sk0Var, sk0Var.getContext());
-            sk0Var.v0 = urVar;
-            urVar.setImageResource(R.drawable.msg_reactions_expand);
+            vr vrVar = new vr(sk0Var, sk0Var.getContext());
+            sk0Var.v0 = vrVar;
+            vrVar.setImageResource(R.drawable.msg_reactions_expand);
             sk0Var.v0.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             int i13 = sk0Var.M0;
             if (i13 == 1 || i13 == 2 || i13 == 4) {
                 sk0Var.v0.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
             } else {
-                sk0Var.v0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
+                sk0Var.v0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.h5, false), PorterDuff.Mode.MULTIPLY));
             }
-            sk0Var.v0.setBackground(org.telegram.ui.ActionBar.h6.h0(AndroidUtilities.dp(28.0f), 0, i0.a.k(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.i6, false), 40)));
+            sk0Var.v0.setBackground(org.telegram.ui.ActionBar.i6.h0(AndroidUtilities.dp(28.0f), 0, i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false), 40)));
             sk0Var.v0.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
             sk0Var.v0.setContentDescription(LocaleController.getString(R.string.AccDescrExpandPanel));
-            sk0Var.S.addView(sk0Var.v0, w7.y5.e(30, 30, 17));
+            sk0Var.S.addView(sk0Var.v0, w7.z5.e(30, 30, 17));
             final int i14 = 1;
             sk0Var.v0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.hk0
                 public final /* synthetic */ ik0 b;
@@ -127,7 +127,7 @@ public final class ik0 extends og.b {
                             view2.getMeasuredWidth();
                             view2.getMeasuredHeight();
                             sk0Var2.getClass();
-                            new rg.x0(sk0Var2.t0, 4, true).show();
+                            new rg.y0(sk0Var2.t0, 4, true).show();
                             break;
                         default:
                             sk0.a(this.b.d);

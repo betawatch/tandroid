@@ -1,30 +1,27 @@
 package w7;
 
-import android.os.Build;
-import android.util.Log;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.ui.jb0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class g6 {
-    public static void a(Object obj, String str, String str2) {
-        String c10 = c(str);
-        if (Log.isLoggable(c10, 3)) {
-            Log.d(c10, String.format(str2, obj));
-        }
+    public static boolean a(jb0 jb0Var) {
+        Context context = ApplicationLoader.applicationContext;
+        int componentEnabledSetting = context.getPackageManager().getComponentEnabledSetting(jb0Var.a(context));
+        return componentEnabledSetting == 1 || (componentEnabledSetting == 0 && jb0Var == jb0.h);
     }
 
-    public static void b(String str, String str2, Exception exc) {
-        String c10 = c(str);
-        if (Log.isLoggable(c10, 6)) {
-            Log.e(c10, str2, exc);
+    public static void b(jb0 jb0Var) {
+        Context context = ApplicationLoader.applicationContext;
+        PackageManager packageManager = context.getPackageManager();
+        jb0[] values = jb0.values();
+        int length = values.length;
+        for (int i10 = 0; i10 < length; i10++) {
+            jb0 jb0Var2 = values[i10];
+            packageManager.setComponentEnabledSetting(jb0Var2.a(context), jb0Var2 == jb0Var ? 1 : 2, 1);
         }
-    }
-
-    public static String c(String str) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            return "TRuntime.".concat(str);
-        }
-        String concat = "TRuntime.".concat(str);
-        return concat.length() > 23 ? concat.substring(0, 23) : concat;
     }
 }

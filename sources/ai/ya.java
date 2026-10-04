@@ -15,13 +15,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ch0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.aj;
-import org.telegram.ui.m80;
-import org.telegram.ui.ms;
-import org.telegram.ui.p60;
-import org.telegram.ui.sq;
+import org.telegram.ui.bj;
+import org.telegram.ui.h90;
+import org.telegram.ui.qs;
+import org.telegram.ui.t60;
+import org.telegram.ui.uq;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ya implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -59,43 +59,43 @@ public final /* synthetic */ class ya implements RequestDelegate {
                 break;
             case 3:
                 int i11 = this.b;
-                AndroidUtilities.runOnUIThread(new cb(i11, 5, (org.telegram.ui.ActionBar.a2) obj4, (Context) obj, (org.telegram.ui.ActionBar.d6) obj3, (p60) obj2, tLObject));
+                AndroidUtilities.runOnUIThread(new cb(i11, 5, (org.telegram.ui.ActionBar.b2) obj4, (Context) obj, (org.telegram.ui.ActionBar.d6) obj3, (t60) obj2, tLObject));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new gg.e1(tL_error, tLObject, (ArrayList) obj3, this.b, (AtomicInteger) obj4, (ArrayList) obj, (sq) obj2));
+                AndroidUtilities.runOnUIThread(new gg.e1(tL_error, tLObject, (ArrayList) obj3, this.b, (AtomicInteger) obj4, (ArrayList) obj, (uq) obj2));
                 break;
             case 5:
                 AndroidUtilities.runOnUIThread(new cb((ch0) obj4, (Integer[]) obj, this.b, tLObject, (ArrayList) obj3, (TLRPC.PollAnswerVoters) obj2));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new gg.e1((org.telegram.ui.ActionBar.a2) obj4, tLObject, this.b, (TLRPC.Document) obj3, tL_error, this.e, (TLRPC.TL_stickers_addStickerToSet) obj2));
+                AndroidUtilities.runOnUIThread(new gg.e1((org.telegram.ui.ActionBar.b2) obj4, tLObject, this.b, (TLRPC.Document) obj3, tL_error, this.e, (TLRPC.TL_stickers_addStickerToSet) obj2));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new cb((ms) obj4, (TLRPC.FileLocation) obj, (TLRPC.InputFile) obj3, tLObject, (TLRPC.FileLocation) obj2, this.b));
+                AndroidUtilities.runOnUIThread(new cb((qs) obj4, (TLRPC.FileLocation) obj, (TLRPC.InputFile) obj3, tLObject, (TLRPC.FileLocation) obj2, this.b));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new gg.e1((org.telegram.ui.ActionBar.a2) obj4, (nf.e) obj, tLObject, this.b, (Context) obj3, (TLRPC.TL_inputGroupCallSlug) obj2, tL_error));
+                AndroidUtilities.runOnUIThread(new gg.e1((org.telegram.ui.ActionBar.b2) obj4, (nf.e) obj, tLObject, this.b, (Context) obj3, (TLRPC.TL_inputGroupCallSlug) obj2, tL_error));
                 break;
             case 9:
                 Pattern pattern = LaunchActivity.B1;
-                AndroidUtilities.runOnUIThread(new gg.e1((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj, (m80) obj3, this.b, (String) obj2));
+                AndroidUtilities.runOnUIThread(new gg.e1((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj, (h90) obj3, this.b, (String) obj2));
                 break;
             case 10:
                 Pattern pattern2 = LaunchActivity.B1;
-                AndroidUtilities.runOnUIThread(new gg.e1((LaunchActivity) obj4, tL_error, tLObject, this.b, (org.telegram.ui.ActionBar.a2) obj, (m80) obj3, (String) obj2));
+                AndroidUtilities.runOnUIThread(new gg.e1((LaunchActivity) obj4, tL_error, tLObject, this.b, (org.telegram.ui.ActionBar.b2) obj, (h90) obj3, (String) obj2));
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new gg.e1((org.telegram.ui.web.b1) obj4, (String) obj, tLObject, tL_error, this.b, (org.telegram.ui.web.y0) obj3, (da) obj2));
+                AndroidUtilities.runOnUIThread(new gg.e1((org.telegram.ui.web.c1) obj4, (String) obj, tLObject, tL_error, this.b, (org.telegram.ui.web.z0) obj3, (da) obj2));
                 break;
             case 12:
                 int i12 = this.b;
-                AndroidUtilities.runOnUIThread(new cb(i12, 13, (TLRPC.PhotoSize) obj4, (TLRPC.PhotoSize) obj, (aj) obj3, (org.telegram.ui.ActionBar.b5) obj2, tLObject));
+                AndroidUtilities.runOnUIThread(new cb(i12, 13, (TLRPC.PhotoSize) obj4, (TLRPC.PhotoSize) obj, (bj) obj3, (org.telegram.ui.ActionBar.c5) obj2, tLObject));
                 break;
             case 13:
-                AndroidUtilities.runOnUIThread(new xh.o0((ci.d) obj4, (org.telegram.ui.ActionBar.e3[]) obj, this.b, (TLObject) obj3, (String) obj2, 1));
+                AndroidUtilities.runOnUIThread(new cb((ci.d) obj4, tLObject, (org.telegram.ui.ActionBar.f3[]) obj, (org.telegram.ui.ActionBar.d6) obj3, this.b, (TLRPC.TL_messages_checkChatInvite) obj2, 14));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new cb((ci.d) obj4, tLObject, (org.telegram.ui.ActionBar.e3[]) obj, (org.telegram.ui.ActionBar.d6) obj3, this.b, (TLRPC.TL_messages_checkChatInvite) obj2, 14));
+                AndroidUtilities.runOnUIThread(new xh.o0((ci.d) obj4, (org.telegram.ui.ActionBar.f3[]) obj, this.b, (TLObject) obj3, (String) obj2, 1));
                 break;
         }
     }
@@ -145,12 +145,12 @@ public final /* synthetic */ class ya implements RequestDelegate {
         this.b = i10;
     }
 
-    public /* synthetic */ ya(ArrayList arrayList, int i10, AtomicInteger atomicInteger, ArrayList arrayList2, sq sqVar) {
+    public /* synthetic */ ya(ArrayList arrayList, int i10, AtomicInteger atomicInteger, ArrayList arrayList2, uq uqVar) {
         this.a = 4;
         this.c = arrayList;
         this.b = i10;
         this.d = atomicInteger;
         this.e = arrayList2;
-        this.f = sqVar;
+        this.f = uqVar;
     }
 }

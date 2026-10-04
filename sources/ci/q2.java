@@ -21,9 +21,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.pe0;
-import org.telegram.ui.Components.u90;
+import org.telegram.ui.Components.v90;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class q2 extends View {
     public final Paint a;
@@ -52,11 +52,11 @@ public final class q2 extends View {
         setPadding(0, 0, 0, 0);
         if (s2Var.m0(4)) {
             n2 n2Var = new n2(this, 4, R.drawable.msg_limit_links, LocaleController.getString(R.string.StoryWidgetLink));
-            i11 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
             if (!UserConfig.getInstance(i11).isPremium()) {
                 Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_mini_lock3).mutate();
                 n2Var.j = mutate;
-                mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.l1(0.6f, -1), PorterDuff.Mode.SRC_IN));
+                mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.l1(0.6f, -1), PorterDuff.Mode.SRC_IN));
                 Paint paint2 = new Paint(1);
                 n2Var.n = paint2;
                 paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
@@ -67,23 +67,23 @@ public final class q2 extends View {
             arrayList.add(new n2(this, 0, R.drawable.map_pin3, LocaleController.getString(R.string.StoryWidgetLocation)));
         }
         if (s2Var.m0(5)) {
-            kd kdVar = ld.b;
+            jd jdVar = kd.b;
             n2[] n2VarArr = {null};
             StringBuilder sb2 = new StringBuilder();
-            sb2.append(kdVar == null ? "🌤" : kdVar.c);
+            sb2.append(jdVar == null ? "🌤" : jdVar.c);
             sb2.append(" ");
-            sb2.append(kdVar == null ? ld.b() ? "24°C" : "72°F" : kdVar.a());
+            sb2.append(jdVar == null ? kd.b() ? "24°C" : "72°F" : jdVar.a());
             CharSequence replaceEmoji = Emoji.replaceEmoji(sb2.toString(), textPaint.getFontMetricsInt(), false);
-            i10 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
+            i10 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
             CharSequence charSequence = replaceEmoji;
             if (MessagesController.getInstance(i10).storyWeatherPreload) {
                 charSequence = replaceEmoji;
                 charSequence = replaceEmoji;
-                if (pe0.f("android.permission.ACCESS_COARSE_LOCATION") && kdVar == null) {
+                if (pe0.f("android.permission.ACCESS_COARSE_LOCATION") && jdVar == null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("___");
-                    spannableStringBuilder.setSpan(new u90(AndroidUtilities.dp(68.0f), this), 0, spannableStringBuilder.length(), 33);
+                    spannableStringBuilder.setSpan(new v90(AndroidUtilities.dp(68.0f), this), 0, spannableStringBuilder.length(), 33);
                     n2VarArr[0] = new n2(this, spannableStringBuilder);
-                    ld.a(false, new ai.g3(1, this, n2VarArr));
+                    kd.a(false, new ai.g3(1, this, n2VarArr));
                     charSequence = spannableStringBuilder;
                 }
             }
@@ -114,8 +114,8 @@ public final class q2 extends View {
                 }
                 fArr[i11] = 0.0f;
                 i11++;
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         }
         int size = arrayList.size();

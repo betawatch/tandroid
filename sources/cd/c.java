@@ -3,7 +3,7 @@ package cd;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c implements Iterable, Cloneable {
     public static final String[] d = new String[0];
@@ -32,8 +32,8 @@ public final class c implements Iterable, Cloneable {
             System.arraycopy(strArr3, 0, strArr4, 0, Math.min(strArr3.length, i11));
             this.c = strArr4;
             return cVar;
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e);
+        } catch (CloneNotSupportedException e7) {
+            throw new RuntimeException(e7);
         }
     }
 

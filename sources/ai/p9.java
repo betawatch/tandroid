@@ -19,7 +19,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.kj0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class p9 extends FrameLayout {
     public final ArrayList a;
@@ -49,13 +49,13 @@ public final class p9 extends FrameLayout {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(LocaleController.getString(R.string.StoriesIntroHeader));
         textView.setTextSize(1, 20.0f);
-        linearLayout.addView(textView, w7.y5.n(-2, -2));
+        linearLayout.addView(textView, w7.z5.n(-2, -2));
         TextView textView2 = new TextView(context);
         textView2.setTextColor(-1761607681);
         textView2.setText(LocaleController.getString(R.string.StoriesIntroSubHeader));
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(1);
-        linearLayout.addView(textView2, w7.y5.k(68.0f, 8.0f, 68.0f, 36.0f, -2, -2));
+        linearLayout.addView(textView2, w7.z5.k(68.0f, 8.0f, 68.0f, 36.0f, -2, -2));
         ArrayList arrayList = new ArrayList(4);
         this.a = arrayList;
         arrayList.add(new o9(context, R.raw.stories_intro_go_forward, LocaleController.getString(R.string.StoriesIntroGoForwardHeader), LocaleController.getString(R.string.StoriesIntroGoForwardSubHeader)));
@@ -97,8 +97,8 @@ public final class p9 extends FrameLayout {
         textView3.setTypeface(AndroidUtilities.bold());
         textView3.setText(LocaleController.getString(R.string.StoriesIntroDismiss));
         textView3.setTextSize(1, 14.0f);
-        linearLayout.addView(textView3, w7.y5.k(0.0f, 73.0f, 0.0f, 0.0f, -2, -2));
-        addView(linearLayout, w7.y5.e(-1, -2, 17));
+        linearLayout.addView(textView3, w7.z5.k(0.0f, 73.0f, 0.0f, 0.0f, -2, -2));
+        addView(linearLayout, w7.z5.e(-1, -2, 17));
         BitmapDrawable bitmapDrawable = new BitmapDrawable(getContext().getResources(), AndroidUtilities.makeBlurBitmap(xbVar, 12.0f, 10));
         bitmapDrawable.setColorFilter(new PorterDuffColorFilter(-587202560, PorterDuff.Mode.DST_OVER));
         imageView.setImageDrawable(bitmapDrawable);

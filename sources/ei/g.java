@@ -1,36 +1,133 @@
 package ei;
 
-import android.app.Activity;
-import android.view.ViewGroup;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.yl0;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.p20;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class g extends l61 {
-    public final /* synthetic */ l N;
+public final class g extends rg.y1 {
+    public final /* synthetic */ int n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(l lVar, yl0 yl0Var, Activity activity, int i10, int i11, bi.v vVar, d6 d6Var) {
-        super(yl0Var, activity, i10, i11, true, vVar, d6Var);
-        this.N = lVar;
+    public /* synthetic */ g(Context context, int i10) {
+        super(context);
+        this.n = i10;
     }
 
-    @Override // org.telegram.ui.Components.l61, s4.h0
-    public final s4.c1 x(ViewGroup viewGroup, int i10) {
-        d6 d6Var;
-        if (i10 != 42) {
-            return super.x(viewGroup, i10);
+    @Override // rg.y1
+    public final void a() {
+        switch (this.n) {
+            case 0:
+                super.a();
+                rg.x1 x1Var = this.a;
+                x1Var.q = true;
+                x1Var.K = false;
+                x1Var.L = true;
+                x1Var.H = true;
+                x1Var.c();
+                break;
+            case 1:
+                super.a();
+                rg.x1 x1Var2 = this.a;
+                x1Var2.q = true;
+                x1Var2.K = false;
+                x1Var2.L = true;
+                x1Var2.H = true;
+                x1Var2.c();
+                break;
+            case 2:
+                p20 p20Var = new p20(50);
+                this.a = p20Var;
+                p20Var.N = 100;
+                p20Var.M = false;
+                p20Var.G = false;
+                p20Var.K = true;
+                p20Var.H = true;
+                p20Var.J = false;
+                p20Var.r = 4;
+                p20Var.w = 0.98f;
+                p20Var.v = 0.98f;
+                p20Var.u = 0.98f;
+                p20Var.c();
+                break;
+            case 3:
+                rg.x1 x1Var3 = this.a;
+                x1Var3.q = true;
+                x1Var3.K = false;
+                x1Var3.H = true;
+                x1Var3.J = true;
+                x1Var3.k = AndroidUtilities.dp(-14.0f);
+                rg.x1 x1Var4 = this.a;
+                x1Var4.x = 2000L;
+                x1Var4.y = 3000;
+                x1Var4.r = 16;
+                x1Var4.G = false;
+                x1Var4.N = 28;
+                x1Var4.P = i6.Mj;
+                x1Var4.c();
+                break;
+            case 4:
+                rg.x1 x1Var5 = this.a;
+                x1Var5.q = true;
+                x1Var5.K = false;
+                x1Var5.H = true;
+                x1Var5.J = true;
+                x1Var5.k = AndroidUtilities.dp(-14.0f);
+                rg.x1 x1Var6 = this.a;
+                x1Var6.x = 2000L;
+                x1Var6.y = 3000;
+                x1Var6.r = 16;
+                x1Var6.G = false;
+                x1Var6.N = 28;
+                x1Var6.P = i6.Mj;
+                x1Var6.c();
+                break;
+            default:
+                super.a();
+                rg.x1 x1Var7 = this.a;
+                x1Var7.q = true;
+                x1Var7.K = false;
+                x1Var7.L = true;
+                x1Var7.H = true;
+                x1Var7.c();
+                break;
         }
-        l lVar = this.N;
-        Activity parentActivity = lVar.getParentActivity();
-        int i11 = h6.L6;
-        d6Var = ((org.telegram.ui.ActionBar.m2) lVar).resourceProvider;
-        org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(parentActivity, i11, 21, 0, false, d6Var);
-        m4Var.setHeight(25);
-        return new il0(m4Var);
+    }
+
+    @Override // rg.y1
+    public int getStarsRectWidth() {
+        switch (this.n) {
+            case 0:
+                return getMeasuredWidth();
+            case 1:
+                return getMeasuredWidth();
+            case 2:
+                return getMeasuredWidth();
+            default:
+                return super.getStarsRectWidth();
+        }
+    }
+
+    @Override // rg.y1, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.n) {
+            case 3:
+                super.onMeasure(i10, i11);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
+                break;
+            case 4:
+                super.onMeasure(i10, i11);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
+                break;
+            case 5:
+                super.onMeasure(i10, i11);
+                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 }

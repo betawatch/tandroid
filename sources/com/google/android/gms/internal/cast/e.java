@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final g6.b a = new g6.b("CastDynamiteModule", null);
@@ -41,8 +41,8 @@ public abstract class e {
             }
             IInterface queryLocalInterface = b10.queryLocalInterface("com.google.android.gms.cast.framework.internal.ICastDynamiteModule");
             return queryLocalInterface instanceof g ? (g) queryLocalInterface : new g(b10, "com.google.android.gms.cast.framework.internal.ICastDynamiteModule", 1);
-        } catch (y6.b e) {
-            throw new d6.d(e);
+        } catch (y6.b e7) {
+            throw new d6.d(e7);
         }
     }
 }

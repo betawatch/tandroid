@@ -2,7 +2,7 @@ package com.google.android.gms.tasks;
 
 import java.util.concurrent.Callable;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 final class zzz implements Runnable {
     final /* synthetic */ zzw zza;
@@ -17,8 +17,8 @@ final class zzz implements Runnable {
     public final void run() {
         try {
             this.zza.zzb(this.zzb.call());
-        } catch (Exception e) {
-            this.zza.zza(e);
+        } catch (Exception e7) {
+            this.zza.zza(e7);
         } catch (Throwable th2) {
             this.zza.zza(new RuntimeException(th2));
         }

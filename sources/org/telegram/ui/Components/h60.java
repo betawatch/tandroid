@@ -1,6 +1,10 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.widget.FrameLayout;
+import org.telegram.messenger.ImageReceiver;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public interface h60 {
+public abstract class h60 extends FrameLayout {
+    public abstract void setImageReceiver(ImageReceiver imageReceiver);
 }

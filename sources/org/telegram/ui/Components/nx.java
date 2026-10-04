@@ -1,29 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final class nx extends g.p {
-    public final /* synthetic */ mz c;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.FileLog;
 
-    public nx(mz mzVar) {
-        this.c = mzVar;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final class nx extends s4.s {
+    public final /* synthetic */ nz Q;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nx(nz nzVar) {
+        super(8);
+        this.Q = nzVar;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        mz mzVar = this.c;
-        vx vxVar = mzVar.R;
-        mx mxVar = mzVar.Q;
-        s4.h0 adapter = mzVar.P.getAdapter();
-        my myVar = mzVar.S;
-        if (adapter == myVar) {
-            int j3 = myVar.j(i10);
-            if (j3 == 1 || j3 == 3 || j3 == 2 || j3 == 4 || j3 == 5) {
-                return mxVar.J;
-            }
-        } else if ((mzVar.d0 && i10 == 0) || i10 == vxVar.d || i10 == vxVar.c || i10 == vxVar.f || vxVar.r.indexOfKey(i10) >= 0 || vxVar.v.indexOfKey(i10) >= 0) {
-            return mxVar.J;
+    @Override // s4.c0, s4.o0
+    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
+        try {
+            ci.m1 m1Var = new ci.m1(this, recyclerView.getContext(), 2);
+            m1Var.a = i10;
+            w0(m1Var);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
-        return 1;
     }
 }

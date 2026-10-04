@@ -12,22 +12,22 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.bb;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.cb;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.yl0;
-import w7.y5;
+import org.telegram.ui.Components.zl0;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class e extends bb implements GiftAuctionController.OnActiveAuctionsUpdateListeners {
-    public final x51 X;
+public final class e extends cb implements GiftAuctionController.OnActiveAuctionsUpdateListeners {
+    public final g61 X;
     public final LongSparseArray Y;
     public ArrayList Z;
     public boolean a0;
-    public l61 b0;
+    public u61 b0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public e(Context context) {
@@ -35,7 +35,7 @@ public final class e extends bb implements GiftAuctionController.OnActiveAuction
         int i10 = 0;
         this.Y = new LongSparseArray();
         this.Z = new ArrayList();
-        setBackgroundColor(h6.w0(null, h6.a7, false));
+        setBackgroundColor(i6.w0(null, i6.a7, false));
         GiftAuctionController.getInstance(this.currentAccount).subscribeToActiveAuctionsUpdates(this);
         this.L = false;
         this.K = AndroidUtilities.dp(12.0f);
@@ -45,7 +45,7 @@ public final class e extends bb implements GiftAuctionController.OnActiveAuction
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setClickable(true);
-        this.X = x51.j(-1, linearLayout);
+        this.X = g61.j(-1, linearLayout);
         this.d.setPadding(this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f), this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f));
         this.d.setOverScrollMode(2);
         this.b0.N(false);
@@ -57,13 +57,13 @@ public final class e extends bb implements GiftAuctionController.OnActiveAuction
             GiftAuctionController.Auction auction2 = auction;
             d dVar = new d(context, auction2);
             dVar.a.setOnClickListener(new xg.e(this, context, auction2, 1));
-            linearLayout.addView(dVar, y5.n(-1, -2));
+            linearLayout.addView(dVar, z5.n(-1, -2));
             this.Y.put(auction2.giftId, dVar);
         }
         onActiveAuctionsUpdate(activeAuctions);
     }
 
-    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
     public final void dismiss() {
         GiftAuctionController.getInstance(this.currentAccount).unsubscribeFromActiveAuctionsUpdates(this);
         super.dismiss();
@@ -88,21 +88,21 @@ public final class e extends bb implements GiftAuctionController.OnActiveAuction
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e3
+    @Override // org.telegram.ui.ActionBar.f3
     public final void onOpenAnimationEnd() {
         super.onOpenAnimationEnd();
         this.a0 = true;
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final xl0 v(yl0 yl0Var) {
-        l61 l61Var = new l61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 12), this.resourcesProvider);
-        this.b0 = l61Var;
-        l61Var.r = false;
-        return l61Var;
+    @Override // org.telegram.ui.Components.cb
+    public final yl0 v(zl0 zl0Var) {
+        u61 u61Var = new u61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 12), this.resourcesProvider);
+        this.b0 = u61Var;
+        u61Var.r = false;
+        return u61Var;
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.cb
     public final CharSequence y() {
         ArrayList arrayList = this.Z;
         if (arrayList == null) {

@@ -26,12 +26,12 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.concurrent.Callable;
-import v7.z8;
+import v7.y8;
 import w7.la;
 import x7.fa;
 import z7.wf;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Callable {
     public final /* synthetic */ int a;
@@ -97,11 +97,11 @@ public final /* synthetic */ class x implements Callable {
                                                 int readInt = V0.readInt();
                                                 V0.recycle();
                                                 i12 = readInt;
-                                            } catch (Exception e) {
-                                                com.google.android.gms.internal.play_billing.u.i("BillingClient", "Exception while checking if billing is supported; try to reconnect", e);
-                                                boolean z12 = e instanceof DeadObjectException;
-                                                int i13 = z12 ? 91 : e instanceof RemoteException ? 90 : e instanceof SecurityException ? 92 : 42;
-                                                String a2 = m1.j.b(i13, 42) ? e0.a(e) : null;
+                                            } catch (Exception e7) {
+                                                com.google.android.gms.internal.play_billing.u.i("BillingClient", "Exception while checking if billing is supported; try to reconnect", e7);
+                                                boolean z12 = e7 instanceof DeadObjectException;
+                                                int i13 = z12 ? 91 : e7 instanceof RemoteException ? 90 : e7 instanceof SecurityException ? 92 : 42;
+                                                String a2 = m1.j.b(i13, 42) ? e0.a(e7) : null;
                                                 yVar.d.k(0);
                                                 yVar.b(z12 ? g0.h : g0.f, i13, a2, z11);
                                                 yVar.c(z12 ? g0.h : g0.f);
@@ -205,7 +205,7 @@ public final /* synthetic */ class x implements Callable {
                                                 p5.c();
                                                 a4.o((a4) p5.b, longValue2);
                                             }
-                                            yVar.d.h.c0((a4) p5.a());
+                                            yVar.d.h.Z((a4) p5.a());
                                         }
                                     } catch (Throwable th2) {
                                         com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
@@ -269,9 +269,9 @@ public final /* synthetic */ class x implements Callable {
             case 4:
                 return BitmapFactory.decodeFile(((u4.h) this.b).b);
             case 5:
-                z8 z8Var = (z8) this.b;
-                z8Var.getClass();
-                return n6.i.c.a(z8Var.g);
+                y8 y8Var = (y8) this.b;
+                y8Var.getClass();
+                return n6.i.c.a(y8Var.g);
             case 6:
                 la laVar = (la) this.b;
                 laVar.getClass();

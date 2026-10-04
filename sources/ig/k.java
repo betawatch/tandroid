@@ -9,9 +9,9 @@ import android.graphics.Path;
 import android.text.TextPaint;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class k extends g {
     @Override // ig.g
@@ -47,9 +47,9 @@ public final class k extends g {
                     if (animator != null) {
                         animator.cancel();
                     }
-                    ValueAnimator e = g.e(this.j0, this.l0, new k6(this, 4));
-                    this.d0 = e;
-                    e.start();
+                    ValueAnimator e7 = g.e(this.j0, this.l0, new k6(this, 4));
+                    this.d0 = e7;
+                    e7.start();
                 }
             }
         }
@@ -431,7 +431,7 @@ public final class k extends g {
                             } else {
                                 if (charSequenceArr == null || arrayList.size() < 2) {
                                     i14 = i20;
-                                    textPaint2.setColor(h6.v0(h6.Yi, this.W0));
+                                    textPaint2.setColor(i6.v0(i6.Yi, this.W0));
                                     textPaint2.setAlpha((int) e2.C(dVar2.f, this.f, f10, f7));
                                 } else {
                                     i14 = i20;

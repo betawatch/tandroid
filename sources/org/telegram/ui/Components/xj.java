@@ -1,34 +1,104 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zj b;
+public final class xj extends yl0 {
+    public final Context c;
+    public ArrayList d = new ArrayList();
+    public ArrayList e = new ArrayList();
+    public wj f;
+    public int h;
+    public final /* synthetic */ bk n;
 
-    public /* synthetic */ xj(zj zjVar, int i10) {
-        this.a = i10;
-        this.b = zjVar;
+    public xj(bk bkVar, Context context) {
+        this.n = bkVar;
+        this.c = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                zj zjVar = this.b;
-                if (zjVar.f != null) {
-                    zjVar.v = org.telegram.messenger.ok.h(new StringBuilder("+"), zjVar.f.phone, gf.b.c());
-                    zjVar.s = zjVar.f;
-                    AndroidUtilities.runOnUIThread(new xj(zjVar, 1));
-                    break;
-                }
-                break;
-            default:
-                zj zjVar2 = this.b;
-                zjVar2.c.l(zjVar2.v, false);
-                break;
+    @Override // org.telegram.ui.Components.yl0
+    public final boolean D(s4.c1 c1Var) {
+        return c1Var.f == 0;
+    }
+
+    public final Object E(int i10) {
+        int i11 = i10 - 1;
+        if (i11 < 0 || i11 >= this.d.size()) {
+            return null;
         }
+        return this.d.get(i11);
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.d.size() + 2;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 1;
+        }
+        return i10 == h() - 1 ? 2 : 0;
+    }
+
+    @Override // s4.h0
+    public final void l() {
+        super.l();
+        this.n.L();
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        TLRPC.User user;
+        if (c1Var.f == 0) {
+            ak akVar = (ak) c1Var.a;
+            boolean z10 = i10 != h() + (-2);
+            Object E = E(i10);
+            if (E instanceof ContactsController.Contact) {
+                ContactsController.Contact contact = (ContactsController.Contact) E;
+                user = contact.user;
+                if (user == null) {
+                    akVar.setCurrentId(contact.contact_id);
+                    akVar.a(null, (CharSequence) this.e.get(i10 - 1), new tj(contact, 1), z10);
+                    user = null;
+                }
+            } else {
+                user = (TLRPC.User) E;
+            }
+            if (user != null) {
+                akVar.a(user, (CharSequence) this.e.get(i10 - 1), new uj(1, user), z10);
+            }
+            boolean containsKey = this.n.w.containsKey(rj.a(E));
+            qp qpVar = akVar.d;
+            if (qpVar.getVisibility() != 0) {
+                qpVar.setVisibility(0);
+            }
+            qpVar.a(containsKey, false);
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View akVar;
+        Context context = this.c;
+        if (i10 == 0) {
+            akVar = new ak(context, this.n.a);
+        } else if (i10 != 1) {
+            akVar = new View(context);
+            akVar.setTag(-33024);
+        } else {
+            akVar = new View(context);
+            akVar.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
+            akVar.setTag(-33024);
+        }
+        return new il0(akVar);
     }
 }

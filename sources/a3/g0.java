@@ -17,15 +17,15 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.q01;
-import org.telegram.ui.Components.ro;
+import org.telegram.ui.Components.so;
+import org.telegram.ui.Components.z01;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.qy;
-import org.telegram.ui.wf1;
-import org.telegram.ui.wn;
+import org.telegram.ui.uy;
+import org.telegram.ui.yf1;
+import org.telegram.ui.yn;
 import yh.x3;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -64,11 +64,11 @@ public final /* synthetic */ class g0 implements Runnable {
                 String str3 = (String) this.e;
                 long j11 = this.b;
                 long j12 = this.c;
-                k2.j jVar = (k2.j) yVar.c;
+                k2.k kVar = (k2.k) yVar.c;
                 String str4 = e2.d0.a;
-                j2.f fVar2 = ((i2.c0) jVar).a.s;
+                j2.f fVar2 = ((i2.c0) kVar).a.s;
                 j2.a p10 = fVar2.p();
-                fVar2.q(p10, 1008, new hg.r(p10, str3, j12, j11));
+                fVar2.q(p10, 1008, new ga.a(p10, str3, j12, j11));
                 return;
             case 3:
                 s0 s0Var = (s0) this.d;
@@ -77,7 +77,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 long j14 = this.c;
                 synchronized (s0Var.g) {
                     if (!o0Var.d && !o0Var.e) {
-                        ((q01) s0Var.e).a(o0Var.a, o0Var.b, j13, j14);
+                        ((z01) s0Var.e).a(o0Var.a, o0Var.b, j13, j14);
                         return;
                     }
                     return;
@@ -110,22 +110,22 @@ public final /* synthetic */ class g0 implements Runnable {
                 ((GroupCallMessagesController) this.d).lambda$processUpdate$3(this.b, this.c, (byte[]) this.e);
                 return;
             case 13:
-                ((ro) this.d).d(this.b, this.c, (HashSet) this.e);
+                ((so) this.d).d(this.b, this.c, (HashSet) this.e);
                 return;
             case 14:
-                qy qyVar = (qy) this.d;
+                uy uyVar = (uy) this.d;
                 long j15 = this.b;
                 long j16 = this.c;
-                wf1 wf1Var = (wf1) this.e;
-                if (qyVar.C2 == null) {
-                    qyVar.finishFragment();
+                yf1 yf1Var = (yf1) this.e;
+                if (uyVar.C2 == null) {
+                    uyVar.finishFragment();
                     return;
                 }
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(MessagesStorage.TopicKey.of(j15, j16));
-                qyVar.C2.u(qyVar, arrayList, null, false, qyVar.J2, qyVar.K2, qyVar.L2, wf1Var);
-                if (qyVar.i2) {
-                    qyVar.C2 = null;
+                uyVar.C2.u(uyVar, arrayList, null, false, uyVar.J2, uyVar.K2, uyVar.L2, yf1Var);
+                if (uyVar.i2) {
+                    uyVar.C2 = null;
                     return;
                 }
                 return;
@@ -133,17 +133,17 @@ public final /* synthetic */ class g0 implements Runnable {
                 LaunchActivity launchActivity = (LaunchActivity) this.d;
                 long j17 = this.b;
                 long j18 = this.c;
-                wn wnVar = (wn) this.e;
+                yn ynVar = (yn) this.e;
                 Pattern pattern = LaunchActivity.B1;
                 TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(launchActivity.O).getTopicsController().findTopic(j17, j18);
-                StringBuilder u10 = a4.a.u(j17, "LaunchActivity openForum after load ", " ");
-                u10.append(j18);
-                u10.append(" TL_forumTopic ");
-                u10.append(findTopic);
-                FileLog.d(u10.toString());
+                StringBuilder t10 = a4.a.t(j17, "LaunchActivity openForum after load ", " ");
+                t10.append(j18);
+                t10.append(" TL_forumTopic ");
+                t10.append(findTopic);
+                FileLog.d(t10.toString());
                 if (launchActivity.q0 != null) {
-                    ng.d.a(wnVar, MessagesStorage.TopicKey.of(-j17, j18));
-                    ((ActionBarLayout) launchActivity.O()).P(wnVar);
+                    ng.d.a(ynVar, MessagesStorage.TopicKey.of(-j17, j18));
+                    ((ActionBarLayout) launchActivity.O()).P(ynVar);
                     return;
                 }
                 return;

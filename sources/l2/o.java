@@ -1,50 +1,101 @@
 package l2;
 
 import android.os.Handler;
-import android.os.Message;
+import b2.p0;
+import b2.s;
+import b2.s0;
+import c3.g0;
+import c3.h0;
 import e2.d0;
-import java.util.TreeMap;
-import k2.u;
+import e2.v;
+import n4.y;
+import org.telegram.ui.Components.ap0;
+import u2.b1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class o implements Handler.Callback {
-    public final y2.d a;
-    public final u b;
-    public m2.c f;
-    public boolean h;
-    public boolean n;
-    public boolean r;
-    public final TreeMap e = new TreeMap();
-    public final Handler d = d0.o(this);
-    public final m3.b c = new m3.b(1);
+public final class o implements h0 {
+    public final b1 a;
+    public final y b = new y(17);
+    public final l3.a c = new l3.a();
+    public long d = -9223372036854775807L;
+    public final /* synthetic */ p e;
 
-    public o(m2.c cVar, u uVar, y2.d dVar) {
-        this.f = cVar;
-        this.b = uVar;
-        this.a = dVar;
+    public o(p pVar, y2.d dVar) {
+        this.e = pVar;
+        this.a = new b1(dVar, null, null);
     }
 
-    @Override // android.os.Handler.Callback
-    public final boolean handleMessage(Message message) {
-        if (!this.r) {
-            if (message.what != 1) {
-                return false;
+    @Override // c3.h0
+    public final int a(b2.k kVar, int i10, boolean z10) {
+        return e(kVar, i10, z10);
+    }
+
+    @Override // c3.h0
+    public final void b(s sVar) {
+        this.a.b(sVar);
+    }
+
+    @Override // c3.h0
+    public final void c(long j3, int i10, int i11, int i12, g0 g0Var) {
+        long i13;
+        long j10;
+        this.a.c(j3, i10, i11, i12, g0Var);
+        while (this.a.x(false)) {
+            l3.a aVar = this.c;
+            aVar.clear();
+            if (this.a.C(this.b, aVar, 0, false) == -4) {
+                aVar.d();
+            } else {
+                aVar = null;
             }
-            m mVar = (m) message.obj;
-            long j3 = mVar.a;
-            long j10 = mVar.b;
-            Long valueOf = Long.valueOf(j10);
-            TreeMap treeMap = this.e;
-            Long l4 = (Long) treeMap.get(valueOf);
-            if (l4 == null) {
-                treeMap.put(Long.valueOf(j10), Long.valueOf(j3));
-                return true;
-            }
-            if (l4.longValue() > j3) {
-                treeMap.put(Long.valueOf(j10), Long.valueOf(j3));
+            if (aVar != null) {
+                long j11 = aVar.e;
+                p0 a2 = this.e.c.a(aVar);
+                if (a2 != null) {
+                    n3.a aVar2 = (n3.a) a2.a[0];
+                    String str = aVar2.a;
+                    String str2 = aVar2.b;
+                    if ("urn:mpeg:dash:event:2012".equals(str) && ("1".equals(str2) || "2".equals(str2) || "3".equals(str2))) {
+                        try {
+                            j10 = d0.T(d0.p(aVar2.e));
+                        } catch (s0 unused) {
+                            j10 = -9223372036854775807L;
+                        }
+                        if (j10 != -9223372036854775807L) {
+                            n nVar = new n(j11, j10);
+                            Handler handler = this.e.d;
+                            handler.sendMessage(handler.obtainMessage(1, nVar));
+                        }
+                    }
+                }
             }
         }
-        return true;
+        b1 b1Var = this.a;
+        ap0 ap0Var = b1Var.a;
+        synchronized (b1Var) {
+            int i14 = b1Var.s;
+            i13 = i14 == 0 ? -1L : b1Var.i(i14);
+        }
+        ap0Var.b(i13);
+    }
+
+    @Override // c3.h0
+    public final void d(int i10, v vVar) {
+        f(vVar, i10, 0);
+    }
+
+    @Override // c3.h0
+    public final int e(b2.k kVar, int i10, boolean z10) {
+        b1 b1Var = this.a;
+        b1Var.getClass();
+        return b1Var.e(kVar, i10, z10);
+    }
+
+    @Override // c3.h0
+    public final void f(v vVar, int i10, int i11) {
+        b1 b1Var = this.a;
+        b1Var.getClass();
+        b1Var.f(vVar, i10, 0);
     }
 }

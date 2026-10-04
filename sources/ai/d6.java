@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class d6 {
     public boolean a;
@@ -12,14 +12,14 @@ public final class d6 {
     public Object d;
     public Object g;
     public Object c = k2.b.c;
-    public Object e = k2.f0.a;
-    public Object f = k2.v.a;
+    public Object e = k2.g0.a;
+    public Object f = k2.w.a;
 
     public d6(Context context) {
         this.b = context;
     }
 
-    public k2.e0 a() {
+    public k2.f0 a() {
         e2.d.g(!this.a);
         this.a = true;
         if (((aa.a) this.d) == null) {
@@ -28,7 +28,7 @@ public final class d6 {
         if (((of.b) this.g) == null) {
             this.g = new of.b((Context) this.b, 26);
         }
-        return new k2.e0(this);
+        return new k2.f0(this);
     }
 
     public void b() {

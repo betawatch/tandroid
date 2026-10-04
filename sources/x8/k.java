@@ -10,7 +10,7 @@ import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class k extends Service implements c {
     public static final String BIND_LISTENER_INTENT_ACTION = "com.google.android.gms.wearable.BIND_LISTENER";
@@ -21,7 +21,7 @@ public abstract class k extends Service implements c {
     private Looper zze;
     private boolean zzg;
     private final Object zzf = new Object();
-    private y8.d zzh = new y8.d(new w3.b(this));
+    private y8.d zzh = new y8.d(new n2.c(this, 25));
 
     public Looper getLooper() {
         if (this.zze == null) {

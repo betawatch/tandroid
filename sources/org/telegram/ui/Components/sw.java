@@ -2,15 +2,15 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class sw extends zy {
-    public final /* synthetic */ mz H;
+public final class sw extends az {
+    public final /* synthetic */ nz H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sw(mz mzVar, Context context) {
-        super(mzVar, context, 2);
-        this.H = mzVar;
+    public sw(nz nzVar, Context context) {
+        super(nzVar, context, 2);
+        this.H = nzVar;
     }
 
     @Override // android.view.View

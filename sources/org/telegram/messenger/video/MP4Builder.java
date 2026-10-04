@@ -3,6 +3,7 @@ package org.telegram.messenger.video;
 import android.media.MediaCodec;
 import android.media.MediaFormat;
 import com.google.android.gms.internal.vision.e2;
+import com.google.firebase.messaging.s;
 import f5.t;
 import f5.u;
 import f5.v;
@@ -22,9 +23,9 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import w7.u6;
+import w7.v6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class MP4Builder {
     private boolean splitMdat;
@@ -124,13 +125,13 @@ public class MP4Builder {
         e2.q(re.a.c(f5.m.Q, mVar, mVar, date));
         mVar.e = date;
         long j3 = 4294967296L;
-        if (u6.a(date) >= 4294967296L) {
+        if (v6.a(date) >= 4294967296L) {
             mVar.h();
         }
         Date date2 = new Date();
         e2.q(re.a.c(f5.m.R, mVar, mVar, date2));
         mVar.f = date2;
-        if (u6.a(date2) >= 4294967296L) {
+        if (v6.a(date2) >= 4294967296L) {
             mVar.h();
         }
         e2.q(re.a.c(f5.m.U, mVar, mVar, dVar));
@@ -291,15 +292,15 @@ public class MP4Builder {
         y yVar = new y("tkhd");
         qc.d dVar = qc.d.j;
         yVar.w = dVar;
-        com.google.firebase.messaging.t c10 = re.a.c(y.Z, yVar, yVar, new Boolean(true));
+        s c10 = re.a.c(y.Z, yVar, yVar, new Boolean(true));
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(c10);
         yVar.g(yVar.d() | 1);
-        com.google.firebase.messaging.t c11 = re.a.c(y.a0, yVar, yVar, new Boolean(true));
+        s c11 = re.a.c(y.a0, yVar, yVar, new Boolean(true));
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(c11);
         yVar.g(yVar.d() | 2);
-        com.google.firebase.messaging.t c12 = re.a.c(y.b0, yVar, yVar, new Boolean(true));
+        s c12 = re.a.c(y.b0, yVar, yVar, new Boolean(true));
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(c12);
         yVar.g(yVar.d() | 4);
@@ -316,7 +317,7 @@ public class MP4Builder {
         Date creationTime = track.getCreationTime();
         e2.q(re.a.c(y.P, yVar, yVar, creationTime));
         yVar.e = creationTime;
-        if (u6.a(creationTime) >= 4294967296L) {
+        if (v6.a(creationTime) >= 4294967296L) {
             yVar.h();
         }
         long timescale = (getTimescale(mp4Movie) * track.getDuration()) / track.getTimeScale();
@@ -336,7 +337,7 @@ public class MP4Builder {
         Date date = new Date();
         e2.q(re.a.c(y.Q, yVar, yVar, date));
         yVar.f = date;
-        if (u6.a(date) >= 4294967296L) {
+        if (v6.a(date) >= 4294967296L) {
             yVar.h();
         }
         long trackId = track.getTrackId() + 1;
@@ -539,7 +540,7 @@ public class MP4Builder {
     public void createSidx(Track track, f5.p pVar) {
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class InterleaveChunkMdat implements f5.b {
         private long contentSize;
         private long dataOffset;

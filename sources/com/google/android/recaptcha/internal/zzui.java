@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 final class zzui {
     public static final /* synthetic */ int zza = 0;
@@ -158,7 +158,7 @@ final class zzui {
         }
         int zzA = zzqv.zzA(i11);
         int zza2 = ((zztd) obj).zza();
-        return e2.w(zza2, zza2, zzA);
+        return e2.c(zza2, zza2, zzA);
     }
 
     public static int zzi(List list) {

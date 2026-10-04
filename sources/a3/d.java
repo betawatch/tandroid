@@ -13,7 +13,6 @@ import ai.ic;
 import ai.jc;
 import ai.k7;
 import ai.kb;
-import ai.l9;
 import ai.m2;
 import ai.ma;
 import ai.mb;
@@ -33,22 +32,22 @@ import android.os.Trace;
 import androidx.fragment.app.v0;
 import ci.b1;
 import ci.e4;
-import ci.m9;
+import ci.l9;
 import java.nio.MappedByteBuffer;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.m90;
+import org.telegram.ui.Components.n90;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.hx;
-import org.telegram.ui.qy;
+import org.telegram.ui.jx;
+import org.telegram.ui.uy;
+import v7.h8;
 import v7.i8;
-import v7.j8;
-import w7.a8;
+import w7.b8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -64,18 +63,18 @@ public final /* synthetic */ class d implements Runnable {
         boolean z10 = false;
         switch (this.a) {
             case 0:
-                ((f) this.b).g.D();
+                ((f) this.b).g.B();
                 return;
             case 1:
                 ((w) this.b).k--;
                 return;
             case 2:
-                qy qyVar = ((hx) this.b).O0;
-                if (qyVar.L && qyVar.X3().G()) {
-                    qyVar.E0.h();
+                uy uyVar = ((jx) this.b).O0;
+                if (uyVar.L && uyVar.g4().G()) {
+                    uyVar.E0.h();
                     return;
                 } else {
-                    qyVar.x4(true, true);
+                    uyVar.G4(true, true);
                     return;
                 }
             case 3:
@@ -139,7 +138,7 @@ public final /* synthetic */ class d implements Runnable {
                 }
                 return;
             case 12:
-                ((m9) this.b).run();
+                ((l9) this.b).run();
                 return;
             case 13:
                 b1 b1Var = (b1) this.b;
@@ -177,7 +176,7 @@ public final /* synthetic */ class d implements Runnable {
                     e6Var2.S1.S(peerStories, true);
                     return;
                 }
-                l9 l9Var = e6Var2.S1;
+                ai.l9 l9Var = e6Var2.S1;
                 TL_stories.PeerStories y3 = l9Var.y(j3);
                 if (y3 == null) {
                     y3 = l9Var.z(j3);
@@ -186,7 +185,7 @@ public final /* synthetic */ class d implements Runnable {
                 l9Var.S(y3, z10);
                 return;
             case 18:
-                ((m90) this.b).d(true);
+                ((n90) this.b).d(true);
                 return;
             case 19:
                 ((db) this.b).requestLayout();
@@ -274,24 +273,24 @@ public final /* synthetic */ class d implements Runnable {
                                 Context context = pVar.a;
                                 uVar.getClass();
                                 o0.i[] iVarArr = {d};
-                                i8 i8Var = i0.e.a;
-                                a8.a("TypefaceCompat.createFromFontInfo");
+                                h8 h8Var = i0.e.a;
+                                b8.a("TypefaceCompat.createFromFontInfo");
                                 try {
                                     Typeface b10 = i0.e.a.b(context, iVarArr, 0);
                                     Trace.endSection();
-                                    MappedByteBuffer e = j8.e(pVar.a, d.a);
-                                    if (e == null || b10 == null) {
+                                    MappedByteBuffer e7 = i8.e(pVar.a, d.a);
+                                    if (e7 == null || b10 == null) {
                                         throw new RuntimeException("Unable to open file.");
                                     }
                                     try {
                                         Trace.beginSection("EmojiCompat.MetadataRepo.create");
-                                        com.google.firebase.messaging.t tVar = new com.google.firebase.messaging.t(b10, v7.z.a(e));
+                                        com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s(b10, v7.y.a(e7));
                                         Trace.endSection();
                                         synchronized (pVar.d) {
                                             try {
-                                                v7.y yVar = pVar.h;
-                                                if (yVar != null) {
-                                                    yVar.b(tVar);
+                                                v7.x xVar = pVar.h;
+                                                if (xVar != null) {
+                                                    xVar.b(sVar);
                                                 }
                                             } finally {
                                             }
@@ -310,9 +309,9 @@ public final /* synthetic */ class d implements Runnable {
                         } catch (Throwable th3) {
                             synchronized (pVar.d) {
                                 try {
-                                    v7.y yVar2 = pVar.h;
-                                    if (yVar2 != null) {
-                                        yVar2.a(th3);
+                                    v7.x xVar2 = pVar.h;
+                                    if (xVar2 != null) {
+                                        xVar2.a(th3);
                                     }
                                     pVar.b();
                                     return;

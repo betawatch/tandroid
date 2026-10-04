@@ -3,15 +3,15 @@ package vh;
 import android.view.View;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class l {
-    public final n2.e a;
+    public final k2.e a;
     public boolean b;
     public int c;
     public int d;
 
     public l(View view, List list, k kVar) {
-        this.a = new n2.e(view.getContext(), new j(this, view, list, kVar));
+        this.a = new k2.e(view.getContext(), new j(this, view, list, kVar));
     }
 }

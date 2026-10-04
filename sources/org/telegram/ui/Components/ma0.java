@@ -16,29 +16,29 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ma0 extends lv0 {
+public final class ma0 extends pv0 {
     public AnimatorSet f2;
     public final /* synthetic */ FrameLayout g2;
     public final /* synthetic */ ja0 h2;
     public final /* synthetic */ pa0 i2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ma0(pa0 pa0Var, Context context, long j3, dv0 dv0Var, TLRPC.ChatFull chatFull, TLRPC.UserFull userFull, int i10, pa0 pa0Var2, la0 la0Var, org.telegram.ui.ActionBar.d6 d6Var, FrameLayout frameLayout, ja0 ja0Var) {
-        super(context, j3, dv0Var, 0, null, chatFull, userFull, i10, 0, pa0Var2, la0Var, 0, d6Var, null);
+    public ma0(pa0 pa0Var, Context context, long j3, hv0 hv0Var, TLRPC.ChatFull chatFull, TLRPC.UserFull userFull, int i10, pa0 pa0Var2, la0 la0Var, org.telegram.ui.ActionBar.d6 d6Var, FrameLayout frameLayout, ja0 ja0Var) {
+        super(context, j3, hv0Var, 0, null, chatFull, userFull, i10, 0, pa0Var2, la0Var, 0, d6Var, null);
         this.i2 = pa0Var;
         this.g2 = frameLayout;
         this.h2 = ja0Var;
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final boolean D() {
         int i10 = this.i2.a;
         return (i10 == 1 || i10 == 2) ? false : true;
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final void D0(SparseArray sparseArray) {
         int size = sparseArray.size();
         pa0 pa0Var = this.i2;
@@ -58,23 +58,23 @@ public final class ma0 extends lv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final void K0(boolean z10) {
         int i10;
         pa0 pa0Var = this.i2;
         Activity parentActivity = pa0Var.getParentActivity();
-        i10 = ((org.telegram.ui.ActionBar.m2) pa0Var).classGuid;
+        i10 = ((org.telegram.ui.ActionBar.n2) pa0Var).classGuid;
         AndroidUtilities.removeAdjustResize(parentActivity, i10);
         AndroidUtilities.updateViewVisibilityAnimated(this.g2, !z10, 0.95f, true);
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final void L0() {
         super.L0();
-        this.i2.a0();
+        this.i2.Z();
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final void M0(float f7) {
         pa0 pa0Var = this.i2;
         if (pa0Var.a != 1) {
@@ -92,13 +92,13 @@ public final class ma0 extends lv0 {
         pa0Var.v[1].setTranslationX(AndroidUtilities.dp(12.0f) * f11);
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final boolean N() {
         int i10 = this.i2.a;
         return i10 == 1 || i10 == 2 || i10 == 3;
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final void N0(boolean z10) {
         oa0 oa0Var = this.i2.R;
         if (oa0Var != null) {
@@ -106,12 +106,12 @@ public final class ma0 extends lv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final void P(Canvas canvas, float f7, Rect rect, Paint paint) {
         this.h2.J(canvas, getY() + f7, rect, paint, true);
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final void b1(boolean z10) {
         pa0 pa0Var = this.i2;
         if (pa0Var.a == 0) {
@@ -156,20 +156,20 @@ public final class ma0 extends lv0 {
             arrayList.add(ObjectAnimator.ofFloat(frameLayout2, (Property<FrameLayout, Float>) property, z10 ? 1.0f : 0.0f));
             arrayList.add(ObjectAnimator.ofFloat(pa0Var.S, (Property<FrameLayout, Float>) View.TRANSLATION_Y, z10 ? 0.0f : r6.getMeasuredHeight()));
         }
-        org.telegram.ui.ActionBar.u0 u0Var = pa0Var.H;
-        if (u0Var != null) {
-            u0Var.setVisibility(0);
-            arrayList.add(ObjectAnimator.ofFloat(pa0Var.H, (Property<org.telegram.ui.ActionBar.u0, Float>) property, z10 ? 1.0f : 0.0f));
+        org.telegram.ui.ActionBar.v0 v0Var = pa0Var.H;
+        if (v0Var != null) {
+            v0Var.setVisibility(0);
+            arrayList.add(ObjectAnimator.ofFloat(pa0Var.H, (Property<org.telegram.ui.ActionBar.v0, Float>) property, z10 ? 1.0f : 0.0f));
         }
         boolean z11 = c0(getClosestTab()) == 0;
-        org.telegram.ui.ActionBar.u0 u0Var2 = pa0Var.G;
-        if (u0Var2 != null) {
-            u0Var2.setVisibility(0);
-            org.telegram.ui.ActionBar.u0 u0Var3 = pa0Var.G;
+        org.telegram.ui.ActionBar.v0 v0Var2 = pa0Var.G;
+        if (v0Var2 != null) {
+            v0Var2.setVisibility(0);
+            org.telegram.ui.ActionBar.v0 v0Var3 = pa0Var.G;
             if (!z10 && !z11) {
                 f7 = 1.0f;
             }
-            arrayList.add(ObjectAnimator.ofFloat(u0Var3, (Property<org.telegram.ui.ActionBar.u0, Float>) property, f7));
+            arrayList.add(ObjectAnimator.ofFloat(v0Var3, (Property<org.telegram.ui.ActionBar.v0, Float>) property, f7));
         }
         oa0 oa0Var = pa0Var.R;
         if (oa0Var != null) {
@@ -177,49 +177,49 @@ public final class ma0 extends lv0 {
         }
         this.f2.playTogether(arrayList);
         this.f2.setDuration(300L);
-        this.f2.setInterpolator(sr.h);
+        this.f2.setInterpolator(tr.h);
         this.f2.addListener(new org.telegram.ui.ActionBar.g(this, z10, z11, 4));
         this.f2.start();
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final int getInitialTab() {
         return this.i2.W;
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final String getStoriesHashtag() {
         return this.i2.h;
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final String getStoriesHashtagUsername() {
         return this.i2.n;
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final boolean l0() {
         pa0 pa0Var = this.i2;
         return pa0Var.a == 0 && pa0Var.e == pa0Var.getUserConfig().getClientUserId() && pa0Var.f == 0;
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final boolean m0() {
         int i10 = this.i2.a;
         return i10 == 1 || i10 == 2;
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final void o0() {
         this.h2.M();
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final boolean q0() {
         return this.i2.a == 2;
     }
 
-    @Override // org.telegram.ui.Components.lv0
+    @Override // org.telegram.ui.Components.pv0
     public final boolean v0() {
         int i10 = this.i2.a;
         return i10 == 1 || i10 == 2;

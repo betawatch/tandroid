@@ -1,56 +1,234 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oe0 implements Runnable {
+public final /* synthetic */ class oe0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ re0 b;
+    public final /* synthetic */ ve0 b;
+    public final /* synthetic */ TLRPC.TL_auth_signIn c;
 
-    public /* synthetic */ oe0(re0 re0Var, int i10) {
+    public /* synthetic */ oe0(ve0 ve0Var, TLRPC.TL_auth_signIn tL_auth_signIn, int i10) {
         this.a = i10;
-        this.b = re0Var;
+        this.b = ve0Var;
+        this.c = tL_auth_signIn;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                re0 re0Var = this.b;
-                ci.h2 h2Var = re0Var.c;
-                h2Var.requestFocus();
-                String str = re0Var.K;
-                if (str != null) {
-                    if (str.length() > 1) {
-                        String obj = h2Var.getText().toString();
-                        int length = obj.length();
-                        int i10 = 0;
-                        while (i10 < length && obj.charAt(i10) <= ' ') {
-                            i10++;
+                final int i10 = 0;
+                final ve0 ve0Var = this.b;
+                final TLRPC.TL_auth_signIn tL_auth_signIn = this.c;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.qe0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i11;
+                        switch (i10) {
+                            case 0:
+                                ve0 ve0Var2 = ve0Var;
+                                int i12 = ve0Var2.a;
+                                ci.h2 h2Var = ve0Var2.c;
+                                ug0 ug0Var = ve0Var2.a0;
+                                ug0Var.k1(false, true);
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                TLRPC.TL_auth_signIn tL_auth_signIn2 = tL_auth_signIn;
+                                if (tL_error2 != null) {
+                                    if (!tL_error2.text.contains("SESSION_PASSWORD_NEEDED")) {
+                                        ve0Var2.R = false;
+                                        if (i12 != 3) {
+                                            if (tL_error2.text.contains("PHONE_NUMBER_INVALID")) {
+                                                ug0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
+                                            } else if (tL_error2.text.contains("PHONE_CODE_EMPTY") || tL_error2.text.contains("PHONE_CODE_INVALID")) {
+                                                ve0Var2.s(false);
+                                                h2Var.post(new se0(ve0Var2, 0));
+                                                break;
+                                            } else if (tL_error2.text.contains("PHONE_CODE_EXPIRED")) {
+                                                ve0Var2.c(true);
+                                                ug0Var.u1(0, true, null, true);
+                                                ug0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
+                                            } else if (tL_error2.text.startsWith("FLOOD_WAIT")) {
+                                                ug0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
+                                            } else {
+                                                ug0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred) + "\n" + tL_error2.text);
+                                            }
+                                            h2Var.setText("");
+                                            h2Var.requestFocus();
+                                            break;
+                                        }
+                                    } else {
+                                        TL_account.getPassword getpassword = new TL_account.getPassword();
+                                        i11 = ((org.telegram.ui.ActionBar.n2) ug0Var).currentAccount;
+                                        ConnectionsManager.getInstance(i11).sendRequest(getpassword, new oe0(ve0Var2, tL_auth_signIn2, 1), 10);
+                                        ve0Var2.r();
+                                    }
+                                } else {
+                                    ve0Var2.R = false;
+                                    ug0Var.v1(false, true);
+                                    ve0Var2.r();
+                                    TLObject tLObject2 = tLObject;
+                                    if (tLObject2 instanceof TLRPC.TL_auth_authorizationSignUpRequired) {
+                                        TLRPC.TL_help_termsOfService tL_help_termsOfService = ((TLRPC.TL_auth_authorizationSignUpRequired) tLObject2).terms_of_service;
+                                        if (tL_help_termsOfService != null) {
+                                            ug0Var.p0 = tL_help_termsOfService;
+                                        }
+                                        Bundle bundle = new Bundle();
+                                        bundle.putString("phoneFormated", ve0Var2.G);
+                                        bundle.putString("phoneHash", ve0Var2.H);
+                                        bundle.putString("code", tL_auth_signIn2.phone_code);
+                                        ug0Var.u1(5, true, bundle, false);
+                                    } else {
+                                        ug0Var.o1((TLRPC.TL_auth_authorization) tLObject2, false);
+                                    }
+                                }
+                                if (i12 == 3) {
+                                    AndroidUtilities.endIncomingCall();
+                                    AndroidUtilities.setWaitingForCall(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                ve0 ve0Var3 = ve0Var;
+                                ve0Var3.R = false;
+                                ug0 ug0Var2 = ve0Var3.a0;
+                                ug0Var2.v1(false, true);
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (tL_error3 != null) {
+                                    ug0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error3.text);
+                                    break;
+                                } else {
+                                    TL_account.Password password = (TL_account.Password) tLObject;
+                                    if (!TwoStepVerificationActivity.i0(password, true)) {
+                                        org.telegram.ui.Components.e5.x0(ug0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
+                                        break;
+                                    } else {
+                                        Bundle bundle2 = new Bundle();
+                                        SerializedData serializedData = new SerializedData(password.getObjectSize());
+                                        password.serializeToStream(serializedData);
+                                        bundle2.putString("password", Utilities.bytesToHex(serializedData.toByteArray()));
+                                        bundle2.putString("phoneFormated", ve0Var3.G);
+                                        bundle2.putString("phoneHash", ve0Var3.H);
+                                        bundle2.putString("code", tL_auth_signIn.phone_code);
+                                        ug0Var2.u1(6, true, bundle2, false);
+                                        break;
+                                    }
+                                }
                         }
-                        int length2 = re0Var.K.length() + i10;
-                        h2Var.setSelection(Utilities.clamp(length2 + ((length2 < 0 || length2 >= obj.length() || obj.charAt(length2) != ' ') ? 0 : 1), obj.length(), 0), h2Var.getText().length());
-                        break;
                     }
-                }
-                h2Var.setSelection(0, h2Var.getText().length());
-                break;
-            case 1:
-                this.b.q(true);
-                break;
-            case 2:
-                this.b.o(false);
+                });
                 break;
             default:
-                ci.h2 h2Var2 = this.b.c;
-                if (h2Var2 != null) {
-                    h2Var2.requestFocus();
-                    h2Var2.setSelection(h2Var2.length());
-                    AndroidUtilities.showKeyboard(h2Var2);
-                    break;
-                }
+                final int i11 = 1;
+                final ve0 ve0Var2 = this.b;
+                final TLRPC.TL_auth_signIn tL_auth_signIn2 = this.c;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.qe0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i112;
+                        switch (i11) {
+                            case 0:
+                                ve0 ve0Var22 = ve0Var2;
+                                int i12 = ve0Var22.a;
+                                ci.h2 h2Var = ve0Var22.c;
+                                ug0 ug0Var = ve0Var22.a0;
+                                ug0Var.k1(false, true);
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                TLRPC.TL_auth_signIn tL_auth_signIn22 = tL_auth_signIn2;
+                                if (tL_error2 != null) {
+                                    if (!tL_error2.text.contains("SESSION_PASSWORD_NEEDED")) {
+                                        ve0Var22.R = false;
+                                        if (i12 != 3) {
+                                            if (tL_error2.text.contains("PHONE_NUMBER_INVALID")) {
+                                                ug0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
+                                            } else if (tL_error2.text.contains("PHONE_CODE_EMPTY") || tL_error2.text.contains("PHONE_CODE_INVALID")) {
+                                                ve0Var22.s(false);
+                                                h2Var.post(new se0(ve0Var22, 0));
+                                                break;
+                                            } else if (tL_error2.text.contains("PHONE_CODE_EXPIRED")) {
+                                                ve0Var22.c(true);
+                                                ug0Var.u1(0, true, null, true);
+                                                ug0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
+                                            } else if (tL_error2.text.startsWith("FLOOD_WAIT")) {
+                                                ug0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
+                                            } else {
+                                                ug0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred) + "\n" + tL_error2.text);
+                                            }
+                                            h2Var.setText("");
+                                            h2Var.requestFocus();
+                                            break;
+                                        }
+                                    } else {
+                                        TL_account.getPassword getpassword = new TL_account.getPassword();
+                                        i112 = ((org.telegram.ui.ActionBar.n2) ug0Var).currentAccount;
+                                        ConnectionsManager.getInstance(i112).sendRequest(getpassword, new oe0(ve0Var22, tL_auth_signIn22, 1), 10);
+                                        ve0Var22.r();
+                                    }
+                                } else {
+                                    ve0Var22.R = false;
+                                    ug0Var.v1(false, true);
+                                    ve0Var22.r();
+                                    TLObject tLObject2 = tLObject;
+                                    if (tLObject2 instanceof TLRPC.TL_auth_authorizationSignUpRequired) {
+                                        TLRPC.TL_help_termsOfService tL_help_termsOfService = ((TLRPC.TL_auth_authorizationSignUpRequired) tLObject2).terms_of_service;
+                                        if (tL_help_termsOfService != null) {
+                                            ug0Var.p0 = tL_help_termsOfService;
+                                        }
+                                        Bundle bundle = new Bundle();
+                                        bundle.putString("phoneFormated", ve0Var22.G);
+                                        bundle.putString("phoneHash", ve0Var22.H);
+                                        bundle.putString("code", tL_auth_signIn22.phone_code);
+                                        ug0Var.u1(5, true, bundle, false);
+                                    } else {
+                                        ug0Var.o1((TLRPC.TL_auth_authorization) tLObject2, false);
+                                    }
+                                }
+                                if (i12 == 3) {
+                                    AndroidUtilities.endIncomingCall();
+                                    AndroidUtilities.setWaitingForCall(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                ve0 ve0Var3 = ve0Var2;
+                                ve0Var3.R = false;
+                                ug0 ug0Var2 = ve0Var3.a0;
+                                ug0Var2.v1(false, true);
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (tL_error3 != null) {
+                                    ug0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error3.text);
+                                    break;
+                                } else {
+                                    TL_account.Password password = (TL_account.Password) tLObject;
+                                    if (!TwoStepVerificationActivity.i0(password, true)) {
+                                        org.telegram.ui.Components.e5.x0(ug0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
+                                        break;
+                                    } else {
+                                        Bundle bundle2 = new Bundle();
+                                        SerializedData serializedData = new SerializedData(password.getObjectSize());
+                                        password.serializeToStream(serializedData);
+                                        bundle2.putString("password", Utilities.bytesToHex(serializedData.toByteArray()));
+                                        bundle2.putString("phoneFormated", ve0Var3.G);
+                                        bundle2.putString("phoneHash", ve0Var3.H);
+                                        bundle2.putString("code", tL_auth_signIn2.phone_code);
+                                        ug0Var2.u1(6, true, bundle2, false);
+                                        break;
+                                    }
+                                }
+                        }
+                    }
+                });
                 break;
         }
     }

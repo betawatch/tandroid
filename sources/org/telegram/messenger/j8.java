@@ -10,7 +10,7 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j8 implements Runnable {
     public final /* synthetic */ int a;
@@ -65,10 +65,10 @@ public final /* synthetic */ class j8 implements Runnable {
                 ((MessagesController) this.b).lambda$addUsersToChat$296((TLRPC.Chat) this.d, (TLRPC.TL_messages_invitedUsers) this.c);
                 break;
             case 12:
-                MessagesController.lambda$openByUserName$458((org.telegram.ui.ActionBar.a2[]) this.b, (boolean[]) this.d, (org.telegram.ui.ActionBar.m2) this.c);
+                MessagesController.lambda$openByUserName$458((org.telegram.ui.ActionBar.b2[]) this.b, (boolean[]) this.d, (org.telegram.ui.ActionBar.n2) this.c);
                 break;
             case 13:
-                ((MessagesController) this.b).lambda$didReceivedNotification$50((org.telegram.ui.ActionBar.g6) this.d, (org.telegram.ui.ActionBar.f6) this.c);
+                ((MessagesController) this.b).lambda$didReceivedNotification$50((org.telegram.ui.ActionBar.h6) this.d, (org.telegram.ui.ActionBar.f6) this.c);
                 break;
             case 14:
                 ((MessagesController) this.b).lambda$processDialogsUpdateRead$223((LongSparseIntArray) this.d, (LongSparseIntArray) this.c);

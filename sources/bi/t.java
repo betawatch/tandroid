@@ -7,7 +7,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
-import ci.l8;
+import ci.k8;
 import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -17,13 +17,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.s7;
 import org.telegram.ui.Cells.t7;
+import org.telegram.ui.Components.ds0;
 import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.Components.zr0;
+import org.telegram.ui.Components.zl0;
 import s4.c1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public class t extends gl0 {
     public final Context c;
@@ -41,7 +41,7 @@ public class t extends gl0 {
         M();
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(c1 c1Var) {
         return false;
     }
@@ -58,13 +58,13 @@ public class t extends gl0 {
     }
 
     @Override // org.telegram.ui.Components.gl0
-    public final void G(yl0 yl0Var, float f7, int[] iArr) {
-        int measuredHeight = yl0Var.getChildAt(0).getMeasuredHeight();
+    public final void G(zl0 zl0Var, float f7, int[] iArr) {
+        int measuredHeight = zl0Var.getChildAt(0).getMeasuredHeight();
         t tVar = this.f;
         u uVar = this.s;
         int i10 = this == tVar ? uVar.e : uVar.d;
         int ceil = (int) (Math.ceil(h() / i10) * measuredHeight);
-        int measuredHeight2 = yl0Var.getMeasuredHeight() - yl0Var.getPaddingTop();
+        int measuredHeight2 = zl0Var.getMeasuredHeight() - zl0Var.getPaddingTop();
         if (measuredHeight == 0) {
             iArr[1] = 0;
             iArr[0] = 0;
@@ -76,13 +76,13 @@ public class t extends gl0 {
     }
 
     public final boolean L(int i10) {
-        zr0 zr0Var = this.s.W;
+        ds0 ds0Var = this.s.W;
         d9 d9Var = this.e;
         if (d9Var == null) {
             return false;
         }
         if (d9Var instanceof u8) {
-            TLRPC.User user = MessagesController.getInstance(zr0Var.b).getUser(Long.valueOf(zr0Var.d));
+            TLRPC.User user = MessagesController.getInstance(ds0Var.b).getUser(Long.valueOf(ds0Var.d));
             return user != null && user.bot && user.bot_has_main_app && user.bot_can_edit;
         }
         if (i10 < 0 || i10 >= d9Var.i.size()) {
@@ -141,8 +141,8 @@ public class t extends gl0 {
             if (E != null) {
                 for (int i10 = 0; i10 < E.size(); i10++) {
                     k9 k9Var = (k9) E.get(i10);
-                    l8 l8Var = k9Var.c;
-                    if (l8Var != null && !l8Var.g && TextUtils.equals(l8Var.K0, u8Var.E)) {
+                    k8 k8Var = k9Var.c;
+                    if (k8Var != null && !k8Var.g && TextUtils.equals(k8Var.K0, u8Var.E)) {
                         arrayList.add(k9Var);
                     }
                 }
@@ -201,22 +201,22 @@ public class t extends gl0 {
             t7Var.f0 = messageObject != null && this.e.m(messageObject.getId());
             t7Var.setReorder(true);
             t7Var.k(messageObject, this == this.f ? uVar.e : uVar.d, false);
-            zr0 zr0Var = uVar.W;
-            if (!zr0Var.G.C1 || messageObject == null) {
+            ds0 ds0Var = uVar.W;
+            if (!ds0Var.G.C1 || messageObject == null) {
                 t7Var.i(false, false);
             } else {
-                t7Var.i(zr0Var.c(messageObject), true);
+                t7Var.i(ds0Var.c(messageObject), true);
             }
         }
     }
 
     @Override // s4.h0
     public final c1 x(ViewGroup viewGroup, int i10) {
-        zr0 zr0Var = this.s.W;
+        ds0 ds0Var = this.s.W;
         if (this.h == null) {
-            this.h = new s7(viewGroup.getContext(), zr0Var.c);
+            this.h = new s7(viewGroup.getContext(), ds0Var.c);
         }
-        t7 t7Var = new t7(this.c, this.h, zr0Var.b);
+        t7 t7Var = new t7(this.c, this.h, ds0Var.b);
         t7Var.w0 = true;
         t7Var.setGradientView(null);
         t7Var.d0 = true;

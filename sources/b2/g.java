@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
-import v7.q7;
-import v7.z7;
+import v7.p7;
+import v7.y7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class g implements b1 {
     public Object a;
@@ -25,7 +25,7 @@ public abstract class g implements b1 {
 
     @Override // b2.b1
     public void E0() {
-        int e;
+        int e7;
         i2.f0 f0Var = (i2.f0) this;
         if (f0Var.w0().p() || f0Var.o()) {
             R0();
@@ -42,7 +42,7 @@ public abstract class g implements b1 {
         }
         k1 w02 = f0Var.w0();
         if (w02.p()) {
-            e = -1;
+            e7 = -1;
         } else {
             int l02 = f0Var.l0();
             f0Var.B1();
@@ -51,14 +51,14 @@ public abstract class g implements b1 {
                 i10 = 0;
             }
             f0Var.B1();
-            e = w02.e(l02, i10, f0Var.G);
+            e7 = w02.e(l02, i10, f0Var.G);
         }
-        if (e == -1) {
+        if (e7 == -1) {
             R0();
-        } else if (e == f0Var.l0()) {
+        } else if (e7 == f0Var.l0()) {
             V0(f0Var.l0(), -9223372036854775807L, true);
         } else {
-            V0(e, -9223372036854775807L, false);
+            V0(e7, -9223372036854775807L, false);
         }
     }
 
@@ -111,11 +111,11 @@ public abstract class g implements b1 {
     }
 
     public boolean P0() {
-        int e;
+        int e7;
         i2.f0 f0Var = (i2.f0) this;
         k1 w02 = f0Var.w0();
         if (w02.p()) {
-            e = -1;
+            e7 = -1;
         } else {
             int l02 = f0Var.l0();
             f0Var.B1();
@@ -124,9 +124,9 @@ public abstract class g implements b1 {
                 i10 = 0;
             }
             f0Var.B1();
-            e = w02.e(l02, i10, f0Var.G);
+            e7 = w02.e(l02, i10, f0Var.G);
         }
-        return e != -1;
+        return e7 != -1;
     }
 
     @Override // b2.b1
@@ -265,11 +265,11 @@ public abstract class g implements b1 {
 
     @Override // b2.b1
     public void e0() {
-        int e;
+        int e7;
         i2.f0 f0Var = (i2.f0) this;
         k1 w02 = f0Var.w0();
         if (w02.p()) {
-            e = -1;
+            e7 = -1;
         } else {
             int l02 = f0Var.l0();
             f0Var.B1();
@@ -278,14 +278,14 @@ public abstract class g implements b1 {
                 i10 = 0;
             }
             f0Var.B1();
-            e = w02.e(l02, i10, f0Var.G);
+            e7 = w02.e(l02, i10, f0Var.G);
         }
-        if (e == -1) {
+        if (e7 == -1) {
             R0();
-        } else if (e == f0Var.l0()) {
+        } else if (e7 == f0Var.l0()) {
             V0(f0Var.l0(), -9223372036854775807L, true);
         } else {
-            V0(e, -9223372036854775807L, false);
+            V0(e7, -9223372036854775807L, false);
         }
     }
 
@@ -389,8 +389,8 @@ public abstract class g implements b1 {
             return 100;
         }
         String str = e2.d0.a;
-        long d = q7.d(c02, 100L);
-        return e2.d0.h(z7.b((d == Long.MAX_VALUE || d == Long.MIN_VALUE) ? c02 / (duration / 100) : d / duration), 0, 100);
+        long d = p7.d(c02, 100L);
+        return e2.d0.h(y7.b((d == Long.MAX_VALUE || d == Long.MIN_VALUE) ? c02 / (duration / 100) : d / duration), 0, 100);
     }
 
     public g(String str, Bundle data) {

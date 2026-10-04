@@ -1,10 +1,25 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class mq0 extends s4.s {
-    @Override // s4.s, s4.c0, s4.o0
-    public final boolean y0() {
-        return false;
+public final class mq0 implements org.telegram.ui.ActionBar.s0 {
+    public final /* synthetic */ wq0 a;
+
+    public mq0(wq0 wq0Var) {
+        this.a = wq0Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.s0
+    public final void e() {
+        wq0 wq0Var = this.a;
+        wq0Var.Q.setText(LocaleController.getString(wq0Var.Y ? R.string.ShowAsGrid : R.string.ShowAsList));
+        wq0Var.Q.setIcon(wq0Var.Y ? R.drawable.msg_media : R.drawable.msg_list);
+    }
+
+    @Override // org.telegram.ui.ActionBar.s0
+    public final void c() {
     }
 }

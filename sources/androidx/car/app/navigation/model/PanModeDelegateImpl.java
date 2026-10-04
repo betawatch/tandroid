@@ -6,12 +6,12 @@ import androidx.car.app.navigation.model.IPanModeListener;
 import androidx.car.app.navigation.model.PanModeDelegateImpl;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class PanModeDelegateImpl implements g {
     private final IPanModeListener mStub;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class PanModeListenerStub extends IPanModeListener.Stub {
         private final i mListener;
 
@@ -49,8 +49,8 @@ public class PanModeDelegateImpl implements g {
             IPanModeListener iPanModeListener = this.mStub;
             Objects.requireNonNull(iPanModeListener);
             iPanModeListener.onPanModeChanged(z10, androidx.car.app.utils.g.a());
-        } catch (RemoteException e) {
-            throw new RuntimeException(e);
+        } catch (RemoteException e7) {
+            throw new RuntimeException(e7);
         }
     }
 

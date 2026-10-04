@@ -8,12 +8,12 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.ui.Components.a91;
 import org.telegram.ui.Components.cl0;
 import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.s81;
-import w7.y5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class l3 extends FrameLayout {
     public final r1 a;
@@ -29,21 +29,21 @@ public final class l3 extends FrameLayout {
         setWillNotDraw(true);
         k3 k3Var = new k3(activity, r1Var);
         this.b = k3Var;
-        addView(k3Var, y5.a(53.5f, 53.5f, 1));
+        addView(k3Var, z5.a(53.5f, 53.5f, 1));
         TextView textView = new TextView(activity);
         this.d = textView;
         textView.setGravity(1);
         textView.setTextSize(1, 11.0f);
         textView.setTextColor(-1);
         textView.setImportantForAccessibility(2);
-        addView(textView, y5.d(-1, -2.0f, 0, 0.0f, 58.0f, 0.0f, 2.0f));
+        addView(textView, z5.d(-1, -2.0f, 0, 0.0f, 58.0f, 0.0f, 2.0f));
         TextView textView2 = new TextView(activity);
         this.e = textView2;
         textView2.setGravity(1);
         textView2.setTextSize(1, 11.0f);
         textView2.setTextColor(-1);
         textView2.setImportantForAccessibility(2);
-        addView(textView2, y5.d(-1, -2.0f, 0, 0.0f, 58.0f, 0.0f, 2.0f));
+        addView(textView2, z5.d(-1, -2.0f, 0, 0.0f, 58.0f, 0.0f, 2.0f));
         textView.setVisibility(8);
         textView2.setVisibility(8);
     }
@@ -69,7 +69,7 @@ public final class l3 extends FrameLayout {
         k3Var.a(i12, z10, false);
         k3Var.setAlpha(0.0f);
         k3Var.setOnBtnClickedListener(this.b.x);
-        addView(k3Var, y5.a(53.5f, 53.5f, 1));
+        addView(k3Var, z5.a(53.5f, 53.5f, 1));
         k3 k3Var2 = this.b;
         this.b = k3Var;
         k3Var.animate().alpha(1.0f).setDuration(250L).start();
@@ -175,7 +175,7 @@ public final class l3 extends FrameLayout {
                 textView2.setVisibility(0);
                 textView2.setAlpha(0.0f);
                 textView2.setTranslationY(AndroidUtilities.dp(5.0f));
-                textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new s81(this, 13)).start();
+                textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new a91(this, 13)).start();
             }
             this.c = i10;
         }
@@ -205,7 +205,7 @@ public final class l3 extends FrameLayout {
         textView2.setVisibility(0);
         textView2.setAlpha(0.0f);
         textView2.setTranslationY(AndroidUtilities.dp(5.0f));
-        textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new s81(this, 13)).start();
+        textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new a91(this, 13)).start();
         this.c = i10;
     }
 

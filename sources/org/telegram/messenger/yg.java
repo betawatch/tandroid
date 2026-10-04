@@ -6,9 +6,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final /* synthetic */ class yg implements org.telegram.ui.ActionBar.z1, Vector.TLDeserializer {
+public final /* synthetic */ class yg implements org.telegram.ui.ActionBar.a2, Vector.TLDeserializer {
     public static /* bridge */ /* synthetic */ NotificationChannel a(Object obj) {
         return (NotificationChannel) obj;
     }
@@ -18,8 +18,8 @@ public final /* synthetic */ class yg implements org.telegram.ui.ActionBar.z1, V
         return TLRPC.PollAnswer.TLdeserialize(inputSerializedData, i10, z10);
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        SharedConfig.lambda$checkSdCard$1(a2Var, i10);
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        SharedConfig.lambda$checkSdCard$1(b2Var, i10);
     }
 }

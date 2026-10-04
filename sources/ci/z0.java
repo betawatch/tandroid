@@ -6,7 +6,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.NativeByteBuffer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,8 +37,8 @@ public final /* synthetic */ class z0 implements Runnable {
                         }
                         throw th2;
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                     if (sQLitePreparedStatement == null) {
                         return;
                     }
@@ -72,8 +72,8 @@ public final /* synthetic */ class z0 implements Runnable {
                 try {
                     try {
                         database2 = messagesStorage2.getDatabase();
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
                         if (sQLitePreparedStatement2 == null) {
                             return;
                         }

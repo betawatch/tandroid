@@ -4,7 +4,7 @@ import android.graphics.Paint;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ya0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class f4 implements ya0 {
     public final /* synthetic */ e6 a;
@@ -14,31 +14,31 @@ public final class f4 implements ya0 {
     }
 
     @Override // org.telegram.ui.Components.ya0
-    public final void A(TLRPC.TL_document tL_document, String str, Object obj) {
-        e6 e6Var = this.a;
-        org.telegram.ui.Components.e5.a0(e6Var.C2, 1, e6Var.B1, new e4(this, tL_document, str, obj, 0));
-    }
-
-    @Override // org.telegram.ui.Components.ya0
-    public final void O(int i10, int i11, CharSequence charSequence, boolean z10) {
+    public final void F(int i10, int i11, CharSequence charSequence, boolean z10) {
         this.a.b2.O0(i10, i11, charSequence, z10);
     }
 
     @Override // org.telegram.ui.Components.ya0
-    public final void P(String str) {
+    public final void G(String str) {
         a4 a4Var = this.a.b2;
-        a4Var.U();
+        a4Var.S();
         a4Var.U0.h(str);
     }
 
     @Override // org.telegram.ui.Components.ya0
-    public final void f(TLRPC.BotInlineResult botInlineResult, boolean z10, int i10) {
+    public final void g(TLRPC.BotInlineResult botInlineResult, boolean z10, int i10) {
         e6 e6Var = this.a;
         org.telegram.ui.Components.e5.a0(e6Var.C2, 1, e6Var.B1, new d4(i10, 0, this, botInlineResult, z10));
     }
 
     @Override // org.telegram.ui.Components.ya0
-    public final Paint.FontMetricsInt w() {
+    public final Paint.FontMetricsInt r() {
         return this.a.b2.getEditField().getPaint().getFontMetricsInt();
+    }
+
+    @Override // org.telegram.ui.Components.ya0
+    public final void x(TLRPC.TL_document tL_document, String str, Object obj) {
+        e6 e6Var = this.a;
+        org.telegram.ui.Components.e5.a0(e6Var.C2, 1, e6Var.B1, new e4(this, tL_document, str, obj, 0));
     }
 }

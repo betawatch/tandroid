@@ -1,22 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class o71 extends i2.l {
-    public final /* synthetic */ u71 d;
+public final class o71 extends ImageReceiver {
+    public final /* synthetic */ p71 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o71(Context context, u71 u71Var) {
-        super(context);
-        this.d = u71Var;
+    public o71(p71 p71Var) {
+        this.a = p71Var;
     }
 
-    @Override // i2.l
-    public final k2.e0 a(Context context) {
-        ai.d6 d6Var = new ai.d6(context);
-        d6Var.d = new aa.a(new c2.h[]{new k2.k0(new t71(this.d))});
-        return d6Var.a();
+    @Override // org.telegram.messenger.ImageReceiver, org.telegram.ui.Components.w5
+    public final void invalidate() {
+        this.a.invalidate();
     }
 }

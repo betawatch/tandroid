@@ -6,9 +6,9 @@ import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class hb {
     public final b6 a;
@@ -23,7 +23,7 @@ public final class hb {
 
     public hb(e6 e6Var, b6 b6Var) {
         this.a = b6Var;
-        this.b = new org.telegram.ui.Components.e6(e6Var, 0L, 360L, sr.h);
+        this.b = new org.telegram.ui.Components.e6(e6Var, 0L, 360L, tr.h);
         TextPaint textPaint = new TextPaint(1);
         this.c = textPaint;
         textPaint.setTextSize(AndroidUtilities.dp(14.0f));

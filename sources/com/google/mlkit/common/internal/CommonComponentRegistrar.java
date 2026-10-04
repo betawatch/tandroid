@@ -12,9 +12,9 @@ import qb.g;
 import qb.h;
 import qb.k;
 import t7.u;
-import w7.i7;
+import w7.l7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class CommonComponentRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -52,7 +52,7 @@ public class CommonComponentRegistrar implements ComponentRegistrar {
         a b17 = a16.b();
         t7.b bVar = t7.d.b;
         Object[] objArr = {k.b, b10, b11, b12, b13, b14, b15, b16, b17};
-        i7.a(9, objArr);
+        l7.a(9, objArr);
         return new t7.g(9, objArr);
     }
 }

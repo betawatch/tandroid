@@ -4,16 +4,16 @@ import ai.da;
 import org.json.JSONObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b1 b;
+    public final /* synthetic */ c1 b;
     public final /* synthetic */ da c;
 
-    public /* synthetic */ r(b1 b1Var, da daVar, int i10) {
+    public /* synthetic */ r(c1 c1Var, da daVar, int i10) {
         this.a = i10;
-        this.b = b1Var;
+        this.b = c1Var;
         this.c = daVar;
     }
 
@@ -27,15 +27,15 @@ public final /* synthetic */ class r implements Utilities.Callback {
                 this.b.y(this.c, "location_requested", (JSONObject) obj);
                 break;
             default:
-                b1 b1Var = this.b;
-                b1Var.getClass();
+                c1 c1Var = this.b;
+                c1Var.getClass();
                 boolean booleanValue = ((Boolean) obj).booleanValue();
                 da daVar = this.c;
                 if (!booleanValue) {
-                    b1Var.y(daVar, "home_screen_failed", b1.B("UNSUPPORTED", "error"));
+                    c1Var.y(daVar, "home_screen_failed", c1.B("UNSUPPORTED", "error"));
                     break;
                 } else {
-                    b1Var.y(daVar, "home_screen_added", null);
+                    c1Var.y(daVar, "home_screen_added", null);
                     break;
                 }
         }

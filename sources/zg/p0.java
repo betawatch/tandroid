@@ -34,20 +34,20 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.o4;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.w0;
 import org.telegram.ui.Components.j9;
 import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.xq;
-import org.telegram.ui.db1;
-import org.telegram.ui.pm;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.yq;
+import org.telegram.ui.gb1;
+import org.telegram.ui.qm;
 import yh.r5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class p0 {
     public static int Z;
@@ -95,7 +95,7 @@ public final class p0 {
     public static final TextPaint Y = new TextPaint(1);
     public static final l0 a0 = new l0();
     public static int b0 = 1;
-    public static final db1 c0 = new db1(25);
+    public static final gb1 c0 = new gb1(24);
     public final ArrayList v = new ArrayList();
     public final ArrayList w = new ArrayList();
     public final HashMap x = new HashMap();
@@ -162,8 +162,8 @@ public final class p0 {
     }
 
     public static void o(d6 d6Var) {
-        V.setColor(h6.v0(h6.ie, d6Var));
-        int v02 = h6.v0(h6.Sh, d6Var);
+        V.setColor(i6.v0(i6.ie, d6Var));
+        int v02 = i6.v0(i6.Sh, d6Var);
         TextPaint textPaint = Y;
         textPaint.setColor(v02);
         textPaint.setTextSize(AndroidUtilities.dp(12.0f));
@@ -201,7 +201,7 @@ public final class p0 {
             }
             m0 m0Var = (m0) arrayList2.get(i13);
             String str = m0Var.o;
-            xq xqVar = m0Var.F;
+            yq yqVar = m0Var.F;
             m0 m0Var2 = (m0) hashMap.get(str);
             if (m0Var2 != null && m0Var.b != m0Var2.b) {
                 m0Var2 = null;
@@ -223,9 +223,9 @@ public final class p0 {
                     m0Var.c = 3;
                     int i16 = m0Var.w;
                     int i17 = m0Var2.w;
-                    if (i16 != i17 && xqVar != null) {
-                        xqVar.c(i17, false);
-                        xqVar.c(m0Var.w, true);
+                    if (i16 != i17 && yqVar != null) {
+                        yqVar.c(i17, false);
+                        yqVar.c(m0Var.w, true);
                     }
                     j9 j9Var2 = m0Var.T;
                     if (j9Var2 != null || m0Var2.T != null) {
@@ -561,7 +561,7 @@ public final class p0 {
         }
     }
 
-    public final void f(pm pmVar, Canvas canvas, int i10, Integer num) {
+    public final void f(qm qmVar, Canvas canvas, int i10, Integer num) {
         if (this.s && this.w.isEmpty()) {
             return;
         }
@@ -583,7 +583,7 @@ public final class p0 {
                 float f11 = f7 + f10;
                 RectF rectF2 = this.O;
                 rectF2.set(clamp, (f7 - dp) + f10, dp + clamp, f11);
-                float interpolation = sr.h.getInterpolation(this.D);
+                float interpolation = tr.h.getInterpolation(this.D);
                 AndroidUtilities.lerp(rectF, rectF2, interpolation, rectF2);
                 int i12 = m0Var.V;
                 o0 o0Var = m0Var.s;
@@ -596,7 +596,7 @@ public final class p0 {
                         if (o0Var.f != null) {
                             TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i12).getReactionsMap().get(o0Var.f);
                             if (tL_availableReaction != null && tL_availableReaction.activate_animation != null) {
-                                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tL_availableReaction.static_icon, h6.a7, 1.0f);
+                                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tL_availableReaction.static_icon, i6.a7, 1.0f);
                                 ImageReceiver imageReceiver = new ImageReceiver(view);
                                 m0Var.f0 = imageReceiver;
                                 imageReceiver.setLayerNum(7);
@@ -630,7 +630,7 @@ public final class p0 {
                             m0Var.g0.draw(canvas);
                         }
                     }
-                    pmVar.invalidate();
+                    qmVar.invalidate();
                 }
             }
             i11++;
@@ -705,7 +705,7 @@ public final class p0 {
             m0 m0Var = (m0) arrayList.get(i12);
             boolean z10 = m0Var.b;
             o6 o6Var = m0Var.G;
-            xq xqVar = m0Var.F;
+            yq yqVar = m0Var.F;
             if (z10) {
                 m0Var.A = AndroidUtilities.dp(14.0f);
                 m0Var.B = AndroidUtilities.dp(14.0f);
@@ -714,8 +714,8 @@ public final class p0 {
                 m0Var.B = AndroidUtilities.dp(26.0f);
                 if (m0Var.u) {
                     m0Var.A = (int) (o6Var.d + AndroidUtilities.dp(8.0f) + m0Var.A);
-                } else if (xqVar != null && m0Var.w > 1) {
-                    m0Var.A = org.telegram.messenger.f0.C(8.0f, (int) Math.ceil(xqVar.m), m0Var.A);
+                } else if (yqVar != null && m0Var.w > 1) {
+                    m0Var.A = org.telegram.messenger.f0.C(8.0f, (int) Math.ceil(yqVar.m), m0Var.A);
                 }
             } else {
                 m0Var.A = AndroidUtilities.dp(m0Var.D != null ? 6.0f : 4.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(8.0f);
@@ -725,8 +725,8 @@ public final class p0 {
                     m0Var.T.o = AndroidUtilities.dp(26.0f);
                 } else if (m0Var.u) {
                     m0Var.A = (int) (o6Var.d + AndroidUtilities.dp(8.0f) + m0Var.A);
-                } else if (((int) Math.ceil(xqVar.m)) > 0) {
-                    m0Var.A = org.telegram.messenger.f0.C(8.0f, (int) Math.ceil(xqVar.m), m0Var.A);
+                } else if (((int) Math.ceil(yqVar.m)) > 0) {
+                    m0Var.A = org.telegram.messenger.f0.C(8.0f, (int) Math.ceil(yqVar.m), m0Var.A);
                 } else {
                     m0Var.A -= AndroidUtilities.dp(1.0f);
                 }
@@ -978,7 +978,7 @@ public final class p0 {
                                                 ((m0) arrayList.get(1)).Q = true;
                                                 ((m0) arrayList.get(0)).j = 1;
                                                 ((m0) arrayList.get(1)).j = 1;
-                                                ((m0) arrayList.get(1)).o = a4.a.t(new StringBuilder(), ((m0) arrayList.get(1)).o, "_");
+                                                ((m0) arrayList.get(1)).o = a4.a.s(new StringBuilder(), ((m0) arrayList.get(1)).o, "_");
                                                 break;
                                             }
                                         }

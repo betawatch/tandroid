@@ -1,43 +1,26 @@
 package za;
 
-import android.util.Log;
-import v7.u7;
+import android.content.Context;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class y extends kd.j implements rd.q {
-    public int a;
-    public /* synthetic */ ce.c b;
-    public /* synthetic */ Throwable c;
+public final class y implements s {
+    public static final u e = new u();
+    public static final m1.c f = w7.r.a(r.a);
+    public final Context a;
+    public final id.h b;
+    public final AtomicReference c;
+    public final o0.a d;
 
-    @Override // rd.q
-    public final Object c(Object obj, Object obj2, kd.c cVar) {
-        y yVar = new y(3, cVar);
-        yVar.b = (ce.c) obj;
-        yVar.c = (Throwable) obj2;
-        return yVar.invokeSuspend(gd.i.a);
-    }
-
-    @Override // kd.a
-    public final Object invokeSuspend(Object obj) {
-        jd.a aVar = jd.a.a;
-        int i10 = this.a;
-        if (i10 == 0) {
-            u7.b(obj);
-            ce.c cVar = this.b;
-            Log.e("FirebaseSessionsRepo", "Error reading stored session data.", this.c);
-            n1.b bVar = new n1.b(true);
-            this.b = null;
-            this.a = 1;
-            if (cVar.a(bVar, this) == aVar) {
-                return aVar;
-            }
-        } else {
-            if (i10 != 1) {
-                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-            }
-            u7.b(obj);
-        }
-        return gd.i.a;
+    public y(Context context, id.h hVar) {
+        kotlin.jvm.internal.i.e(context, "context");
+        this.a = context;
+        this.b = hVar;
+        this.c = new AtomicReference();
+        e.getClass();
+        int i10 = 9;
+        this.d = new o0.a(29, new n4.y(i10, ((k1.a0) f.a(context, u.a[0]).b).c, new w(3, null)), this);
+        zd.e0.q(zd.e0.b(hVar), new t(this, null, 0));
     }
 }

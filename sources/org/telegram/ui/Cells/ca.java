@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class ca extends View {
     public final Paint a;
@@ -58,7 +58,7 @@ public final class ca extends View {
                 this.b = motionEvent.getX();
                 this.c = motionEvent.getY();
                 this.d = System.currentTimeMillis();
-            } else if (action == 1 && System.currentTimeMillis() - this.d < 200 && v7.a7.b((int) this.b, (int) this.c, (int) motionEvent.getX(), (int) motionEvent.getY()) < daVar.m) {
+            } else if (action == 1 && System.currentTimeMillis() - this.d < 200 && v7.z6.b((int) this.b, (int) this.c, (int) motionEvent.getX(), (int) motionEvent.getY()) < daVar.m) {
                 daVar.L(motionEvent.getRawX(), motionEvent.getRawY());
                 daVar.v();
                 daVar.f(false);
@@ -126,9 +126,9 @@ public final class ca extends View {
                 y9 y9Var2 = daVar.W;
                 MessageObject messageObject = y9Var2 instanceof u1 ? ((u1) y9Var2).getMessageObject() : null;
                 if (messageObject == null || !messageObject.isOutOwner()) {
-                    paint.setColor(daVar.u(org.telegram.ui.ActionBar.h6.vf));
+                    paint.setColor(daVar.u(org.telegram.ui.ActionBar.i6.vf));
                 } else {
-                    paint.setColor(daVar.u(org.telegram.ui.ActionBar.h6.Wb));
+                    paint.setColor(daVar.u(org.telegram.ui.ActionBar.i6.Wb));
                 }
                 int length = daVar.t(daVar.W, false).length();
                 int i14 = daVar.v;
@@ -309,7 +309,7 @@ public final class ca extends View {
                 actionMode.invalidateContentRect();
                 ActionMode actionMode2 = daVar.Y;
                 if (actionMode2 != null) {
-                    ((org.telegram.ui.ActionBar.g4) actionMode2).e();
+                    ((org.telegram.ui.ActionBar.h4) actionMode2).e();
                 }
             }
             if (daVar.k) {

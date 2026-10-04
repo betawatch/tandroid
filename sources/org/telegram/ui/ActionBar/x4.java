@@ -1,27 +1,20 @@
 package org.telegram.ui.ActionBar;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.app.Activity;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class x4 {
-    public static final x4 a;
-    public static final x4 b;
-    public static final /* synthetic */ x4[] c;
+public final class x4 extends ActionBarLayout {
+    public final /* synthetic */ p s1;
 
-    static {
-        x4 x4Var = new x4("BACK", 0);
-        a = x4Var;
-        x4 x4Var2 = new x4("MENU", 1);
-        b = x4Var2;
-        c = new x4[]{x4Var, x4Var2};
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x4(Activity activity, p pVar) {
+        super(activity, false);
+        this.s1 = pVar;
     }
 
-    public static x4 valueOf(String str) {
-        return (x4) Enum.valueOf(x4.class, str);
-    }
-
-    public static x4[] values() {
-        return (x4[]) c.clone();
+    @Override // org.telegram.ui.ActionBar.ActionBarLayout, org.telegram.ui.ActionBar.c5
+    public final f3 getBottomSheet() {
+        return ((f3[]) this.s1.b)[0];
     }
 }

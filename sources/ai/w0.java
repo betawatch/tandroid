@@ -13,92 +13,92 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.ak;
-import org.telegram.ui.Components.d71;
-import org.telegram.ui.Components.go0;
-import org.telegram.ui.Components.hy0;
-import org.telegram.ui.Components.il;
-import org.telegram.ui.Components.k00;
-import org.telegram.ui.Components.kn0;
-import org.telegram.ui.Components.kz;
-import org.telegram.ui.Components.lj;
-import org.telegram.ui.Components.m00;
-import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.of;
-import org.telegram.ui.Components.p00;
-import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.ao0;
+import org.telegram.ui.Components.bk;
+import org.telegram.ui.Components.d91;
+import org.telegram.ui.Components.f91;
+import org.telegram.ui.Components.jl;
+import org.telegram.ui.Components.jo0;
+import org.telegram.ui.Components.l00;
+import org.telegram.ui.Components.lz;
+import org.telegram.ui.Components.mj;
+import org.telegram.ui.Components.n00;
+import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.nz;
+import org.telegram.ui.Components.on0;
+import org.telegram.ui.Components.pf;
+import org.telegram.ui.Components.q00;
 import org.telegram.ui.Components.qk0;
-import org.telegram.ui.Components.rm;
+import org.telegram.ui.Components.qy0;
 import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.sm;
-import org.telegram.ui.Components.u70;
-import org.telegram.ui.Components.v81;
-import org.telegram.ui.Components.wi;
-import org.telegram.ui.Components.wn0;
-import org.telegram.ui.Components.x81;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.tm;
+import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.v70;
+import org.telegram.ui.Components.xi;
+import org.telegram.ui.Components.zl0;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.b10;
-import org.telegram.ui.c10;
-import org.telegram.ui.kq;
-import org.telegram.ui.nt;
-import org.telegram.ui.pr;
-import org.telegram.ui.pw;
-import org.telegram.ui.s00;
-import org.telegram.ui.t10;
-import org.telegram.ui.wn;
-import org.telegram.ui.zx;
+import org.telegram.ui.dy;
+import org.telegram.ui.f10;
+import org.telegram.ui.g10;
+import org.telegram.ui.ly;
+import org.telegram.ui.mq;
+import org.telegram.ui.rr;
+import org.telegram.ui.rt;
+import org.telegram.ui.w00;
+import org.telegram.ui.x10;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class w0 extends yl0 {
-    public final /* synthetic */ int X2;
-    public final /* synthetic */ Object Y2;
+public final class w0 extends zl0 {
+    public final /* synthetic */ int e3;
+    public final /* synthetic */ Object f3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ w0(Object obj, Context context, int i10) {
         super(context, null);
-        this.X2 = i10;
-        this.Y2 = obj;
+        this.e3 = i10;
+        this.f3 = obj;
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public boolean E0(float f7) {
-        switch (this.X2) {
+    @Override // org.telegram.ui.Components.zl0
+    public boolean F0(float f7) {
+        switch (this.e3) {
             case 3:
-                wi wiVar = ((hg.k0) this.Y2).b;
-                return f7 >= ((float) ((AndroidUtilities.dp(30.0f) + wiVar.b2[0]) + (!wiVar.g0 ? AndroidUtilities.statusBarHeight : 0)));
+                xi xiVar = ((hg.i0) this.f3).b;
+                return f7 >= ((float) ((AndroidUtilities.dp(30.0f) + xiVar.b2[0]) + (!xiVar.g0 ? AndroidUtilities.statusBarHeight : 0)));
             case 12:
-                wi wiVar2 = ((ak) this.Y2).b;
-                return f7 >= ((float) ((AndroidUtilities.dp(30.0f) + wiVar2.b2[0]) + (!wiVar2.g0 ? AndroidUtilities.statusBarHeight : 0)));
+                xi xiVar2 = ((bk) this.f3).b;
+                return f7 >= ((float) ((AndroidUtilities.dp(30.0f) + xiVar2.b2[0]) + (!xiVar2.g0 ? AndroidUtilities.statusBarHeight : 0)));
             default:
-                return super.E0(f7);
+                return super.F0(f7);
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public boolean F0(View view) {
-        switch (this.X2) {
+    @Override // org.telegram.ui.Components.zl0
+    public boolean G0(View view) {
+        switch (this.e3) {
             case 5:
-                return view != ((org.telegram.ui.z6) this.Y2).Q;
+                return view != ((org.telegram.ui.a7) this.f3).W;
             case 16:
-                m00 m00Var = (m00) this.Y2;
-                return m00Var.isEnabled() && !((pw) m00Var.J).b.j2;
+                n00 n00Var = (n00) this.f3;
+                return n00Var.isEnabled() && !((ly) n00Var.J).b.j2;
             default:
-                return super.F0(view);
+                return super.G0(view);
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public boolean H0(View view, float f7, float f10) {
-        switch (this.X2) {
+    @Override // org.telegram.ui.Components.zl0
+    public boolean I0(View view, float f7, float f10) {
+        switch (this.e3) {
             case 10:
-                return ((org.telegram.ui.Components.bb) this.Y2).t(view, f7, f10);
+                return ((org.telegram.ui.Components.cb) this.f3).t(view, f7, f10);
             case 16:
-                if (((m00) this.Y2).n) {
+                if (((n00) this.f3).n) {
                     int dp = AndroidUtilities.dp(6.0f);
-                    RectF rectF = ((k00) view).f;
+                    RectF rectF = ((l00) view).f;
                     float f11 = dp;
                     if (rectF.left - f11 < f7 && rectF.right + f11 > f7) {
                         return false;
@@ -106,9 +106,9 @@ public final class w0 extends yl0 {
                 }
                 return true;
             case 25:
-                if (((x81) this.Y2).n) {
+                if (((f91) this.f3).n) {
                     int dp2 = AndroidUtilities.dp(6.0f);
-                    RectF rectF2 = ((v81) view).c;
+                    RectF rectF2 = ((d91) view).c;
                     float f12 = dp2;
                     if (rectF2.left - f12 < f7 && rectF2.right + f12 > f7) {
                         return false;
@@ -116,48 +116,48 @@ public final class w0 extends yl0 {
                 }
                 return true;
             default:
-                return super.H0(view, f7, f10);
+                return super.I0(view, f7, f10);
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public boolean S0() {
-        switch (this.X2) {
+    @Override // org.telegram.ui.Components.zl0
+    public boolean T0() {
+        switch (this.e3) {
             case 24:
-                return getAdapter() != null && ((d71) this.Y2).H && getAdapter().h() <= 2;
+                return getAdapter() != null && ((n71) this.f3).H && getAdapter().h() <= 2;
             default:
-                return super.S0();
+                return super.T0();
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public Integer W0(int i10) {
+    @Override // org.telegram.ui.Components.zl0
+    public Integer X0(int i10) {
         int i11;
-        switch (this.X2) {
+        switch (this.e3) {
             case 0:
                 return 0;
             case 20:
                 return 0;
             case 26:
-                i11 = ((DataSettingsActivity) this.Y2).resetDownloadRow;
+                i11 = ((DataSettingsActivity) this.f3).resetDownloadRow;
                 org.telegram.ui.ActionBar.d6 d6Var = this.p2;
-                return i10 == i11 ? Integer.valueOf(org.telegram.ui.ActionBar.h6.l1(0.1f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.p7, d6Var))) : Integer.valueOf(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, d6Var));
+                return i10 == i11 ? Integer.valueOf(org.telegram.ui.ActionBar.i6.l1(0.1f, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.p7, d6Var))) : Integer.valueOf(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, d6Var));
             case 27:
-                ArrayList arrayList = ((b10) this.Y2).P;
-                s00 s00Var = (i10 < 0 || i10 >= arrayList.size()) ? null : (s00) arrayList.get(i10);
+                ArrayList arrayList = ((f10) this.f3).P;
+                w00 w00Var = (i10 < 0 || i10 >= arrayList.size()) ? null : (w00) arrayList.get(i10);
                 org.telegram.ui.ActionBar.d6 d6Var2 = this.p2;
-                return (s00Var == null || !s00Var.l) ? Integer.valueOf(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, d6Var2)) : Integer.valueOf(org.telegram.ui.ActionBar.h6.l1(0.12f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.p7, d6Var2)));
+                return (w00Var == null || !w00Var.l) ? Integer.valueOf(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, d6Var2)) : Integer.valueOf(org.telegram.ui.ActionBar.i6.l1(0.12f, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.p7, d6Var2)));
             default:
-                return super.W0(i10);
+                return super.X0(i10);
         }
     }
 
     @Override // android.view.ViewGroup
     public void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
-        switch (this.X2) {
+        switch (this.e3) {
             case 25:
                 super.addView(view, i10, layoutParams);
-                if (!((x81) this.Y2).V) {
+                if (!((f91) this.f3).V) {
                     view.setScaleX(1.0f);
                     view.setScaleY(1.0f);
                     view.setAlpha(1.0f);
@@ -174,12 +174,12 @@ public final class w0 extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.zl0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         m1 m1Var;
-        switch (this.X2) {
+        switch (this.e3) {
             case 0:
-                r3 r3Var = (r3) this.Y2;
+                r3 r3Var = (r3) this.f3;
                 int i10 = -1;
                 if (!r3Var.f0) {
                     int i11 = 0;
@@ -204,18 +204,18 @@ public final class w0 extends yl0 {
                 super.dispatchDraw(canvas);
                 break;
             case 2:
-                of ofVar = (of) this.Y2;
-                w0 w0Var = ofVar.c;
+                pf pfVar = (pf) this.f3;
+                w0 w0Var = pfVar.c;
                 if (w0Var.getLayoutManager() != null && w0Var.getAdapter() != null && w0Var.getAdapter().h() != 0) {
-                    float dp = ofVar.h - AndroidUtilities.dp(8.0f);
-                    ofVar.e = dp - AndroidUtilities.dp(16.0f);
-                    ch.d dVar = ofVar.r;
+                    float dp = pfVar.h - AndroidUtilities.dp(8.0f);
+                    pfVar.e = dp - AndroidUtilities.dp(16.0f);
+                    ch.d dVar = pfVar.r;
                     if (dVar != null) {
                         dVar.draw(canvas);
                     }
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set((getMeasuredWidth() / 2.0f) - AndroidUtilities.dp(12.0f), dp - AndroidUtilities.dp(4.0f), (getMeasuredWidth() / 2.0f) + AndroidUtilities.dp(12.0f), dp);
-                    canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), ofVar.d);
+                    canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), pfVar.d);
                     super.dispatchDraw(canvas);
                     break;
                 } else {
@@ -224,17 +224,17 @@ public final class w0 extends yl0 {
                 }
             case 6:
                 super.dispatchDraw(canvas);
-                ((org.telegram.ui.h8) this.Y2).F = false;
+                ((org.telegram.ui.k8) this.f3).F = false;
                 break;
             case 21:
-                zx zxVar = (zx) this.Y2;
-                s4.c0 c0Var = zxVar.c0;
-                s4.j jVar = zxVar.a0;
-                go0 go0Var = zxVar.b0;
-                if (go0Var != null && jVar != null && c0Var != null && go0Var.m0) {
+                dy dyVar = (dy) this.f3;
+                s4.c0 c0Var = dyVar.d0;
+                s4.j jVar = dyVar.b0;
+                jo0 jo0Var = dyVar.c0;
+                if (jo0Var != null && jVar != null && c0Var != null && jo0Var.m0) {
                     canvas.save();
                     invalidate();
-                    int h = go0Var.h() - 1;
+                    int h = jo0Var.h() - 1;
                     int i12 = 0;
                     while (true) {
                         if (i12 < getChildCount()) {
@@ -248,19 +248,19 @@ public final class w0 extends yl0 {
                     }
                 }
                 super.dispatchDraw(canvas);
-                if (go0Var != null && jVar != null && c0Var != null && go0Var.m0) {
+                if (jo0Var != null && jVar != null && c0Var != null && jo0Var.m0) {
                     canvas.restore();
                 }
-                if (go0Var != null && go0Var.o0 != null) {
+                if (jo0Var != null && jo0Var.o0 != null) {
                     canvas.save();
-                    canvas.translate(go0Var.o0.getLeft(), go0Var.o0.getTranslationY() + go0Var.o0.getTop());
-                    go0Var.o0.draw(canvas);
+                    canvas.translate(jo0Var.o0.getLeft(), jo0Var.o0.getTranslationY() + jo0Var.o0.getTop());
+                    jo0Var.o0.draw(canvas);
                     canvas.restore();
                     break;
                 }
                 break;
             case 28:
-                if (getAdapter() == ((t10) this.Y2).U) {
+                if (getAdapter() == ((x10) this.f3).U) {
                     for (int i13 = 0; i13 < getChildCount(); i13++) {
                         if (T(getChildAt(i13)).f == 1) {
                             canvas.save();
@@ -279,10 +279,10 @@ public final class w0 extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.zl0, android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int i10 = this.X2;
-        Object obj = this.Y2;
+        int i10 = this.e3;
+        Object obj = this.f3;
         switch (i10) {
             case 0:
                 if (!((r3) obj).f0) {
@@ -301,14 +301,14 @@ public final class w0 extends yl0 {
                         }
                         ValueAnimator ofFloat = ValueAnimator.ofFloat(sk0Var.B0, 0.0f);
                         sk0Var.y0 = ofFloat;
-                        ofFloat.addUpdateListener(new u70(sk0Var, 6));
+                        ofFloat.addUpdateListener(new v70(sk0Var, 6));
                         sk0Var.y0.setDuration(150L);
                         sk0Var.y0.start();
                     }
                 }
                 break;
             case 20:
-                LinearLayout linearLayout = ((wn0) obj).f;
+                LinearLayout linearLayout = ((ao0) obj).f;
                 if (linearLayout == null || linearLayout.getAlpha() <= 0.5f) {
                     break;
                 }
@@ -317,22 +317,22 @@ public final class w0 extends yl0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j3) {
-        switch (this.X2) {
+        switch (this.e3) {
             case 18:
-                zg.o0 o0Var = ((sk0) this.Y2).l0;
+                zg.o0 o0Var = ((sk0) this.f3).l0;
                 if (o0Var == null || !(view instanceof qk0) || !((qk0) view).e.equals(o0Var)) {
                     break;
                 }
                 break;
             case 23:
-                hy0 hy0Var = (hy0) this.Y2;
-                com.google.firebase.messaging.n nVar = hy0Var.l0;
-                if (!(view instanceof org.telegram.ui.Cells.f8) || !hy0Var.R) {
+                qy0 qy0Var = (qy0) this.f3;
+                com.google.firebase.messaging.n nVar = qy0Var.l0;
+                if (!(view instanceof org.telegram.ui.Cells.f8) || !qy0Var.R) {
                     break;
                 } else {
-                    int b10 = hy0Var.c.T(view).b();
+                    int b10 = qy0Var.c.T(view).b();
                     canvas.save();
                     ArrayList arrayList = (ArrayList) nVar.d;
                     canvas.rotate(arrayList.isEmpty() ? 0.0f : ((Float) arrayList.get(b10 - ((b10 / 6) * 6))).floatValue(), (view.getMeasuredWidth() / 2.0f) + view.getLeft(), (view.getMeasuredHeight() / 2.0f) + view.getTop());
@@ -347,7 +347,7 @@ public final class w0 extends yl0 {
                 }
                 break;
             case 28:
-                if (getAdapter() != ((t10) this.Y2).U || T(view).f != 1) {
+                if (getAdapter() != ((x10) this.f3).U || T(view).f != 1) {
                     break;
                 }
                 break;
@@ -357,14 +357,14 @@ public final class w0 extends yl0 {
 
     @Override // android.view.View
     public void invalidate() {
-        switch (this.X2) {
+        switch (this.e3) {
             case 0:
                 super.invalidate();
-                ((r3) this.Y2).invalidate();
+                ((r3) this.f3).invalidate();
                 break;
             case 9:
                 super.invalidate();
-                View view = ((pr) this.Y2).fragmentView;
+                View view = ((rr) this.f3).fragmentView;
                 if (view != null) {
                     view.invalidate();
                     break;
@@ -377,47 +377,47 @@ public final class w0 extends yl0 {
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView
-    public void k0(int i10, int i11) {
-        switch (this.X2) {
+    public void l0(int i10) {
+        switch (this.e3) {
             case 3:
                 break;
             case 14:
-                sm smVar = (sm) this.Y2;
-                smVar.invalidate();
-                smVar.b.X1(smVar, i11);
-                rm rmVar = smVar.v;
+                tm tmVar = (tm) this.f3;
+                tmVar.invalidate();
+                tmVar.b.U1(tmVar, i10);
+                sm smVar = tmVar.v;
                 boolean z10 = true;
-                int i12 = 0;
-                boolean z11 = rmVar.x == null;
+                int i11 = 0;
+                boolean z11 = smVar.x == null;
                 if (z11) {
-                    rmVar.x = rmVar.d();
+                    smVar.x = smVar.d();
                 } else {
-                    boolean[] d = rmVar.d();
-                    if (d.length == rmVar.x.length) {
+                    boolean[] d = smVar.d();
+                    if (d.length == smVar.x.length) {
                         while (true) {
-                            if (i12 >= d.length) {
+                            if (i11 >= d.length) {
                                 z10 = z11;
-                            } else if (d[i12] == rmVar.x[i12]) {
-                                i12++;
+                            } else if (d[i11] == smVar.x[i11]) {
+                                i11++;
                             }
                         }
                     }
                     z11 = z10;
                 }
                 if (z11) {
-                    rmVar.invalidate();
+                    smVar.invalidate();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onAttachedToWindow() {
-        switch (this.X2) {
+        switch (this.e3) {
             case 7:
                 super.onAttachedToWindow();
-                gg.o1 o1Var = ((wn) this.Y2).M3;
+                gg.o1 o1Var = ((yn) this.f3).K3;
                 if (o1Var != null) {
                     NotificationCenter.getInstance(o1Var.r).addObserver(o1Var, NotificationCenter.storiesListUpdated);
                     break;
@@ -429,12 +429,12 @@ public final class w0 extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onDetachedFromWindow() {
-        switch (this.X2) {
+        switch (this.e3) {
             case 7:
                 super.onDetachedFromWindow();
-                gg.o1 o1Var = ((wn) this.Y2).M3;
+                gg.o1 o1Var = ((yn) this.f3).K3;
                 if (o1Var != null) {
                     AndroidUtilities.cancelRunOnUIThread(o1Var.E);
                     NotificationCenter.getInstance(o1Var.r).removeObserver(o1Var, NotificationCenter.storiesListUpdated);
@@ -447,48 +447,48 @@ public final class w0 extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.X2) {
+        switch (this.e3) {
             case 1:
-                nt q6 = nt.q();
-                ci.z1 z1Var = (ci.z1) this.Y2;
+                rt q6 = rt.q();
+                ci.z1 z1Var = (ci.z1) this.f3;
                 boolean r10 = q6.r(motionEvent, z1Var.b, z1Var.f, this.p2);
                 if (super.onInterceptTouchEvent(motionEvent) || r10) {
                 }
                 break;
             case 8:
-                if (!((kq) this.Y2).H) {
+                if (!((mq) this.f3).H) {
                     break;
                 }
                 break;
             case 11:
-                if (motionEvent.getAction() != 0 || motionEvent.getY() >= ((lj) this.Y2).b.b2[0] - AndroidUtilities.dp(80.0f)) {
+                if (motionEvent.getAction() != 0 || motionEvent.getY() >= ((mj) this.f3).b.b2[0] - AndroidUtilities.dp(80.0f)) {
                     break;
                 }
                 break;
             case 14:
-                if (((sm) this.Y2).J == null) {
+                if (((tm) this.f3).J == null) {
                     break;
                 }
                 break;
             case 15:
                 if (getParent() != null && getParent().getParent() != null) {
                     getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1) || canScrollHorizontally(1));
-                    ((mz) this.Y2).h.requestDisallowInterceptTouchEvent(true);
+                    ((nz) this.f3).h.requestDisallowInterceptTouchEvent(true);
                 }
                 break;
             case 22:
-                boolean r11 = nt.q().r(motionEvent, ((pv0) this.Y2).b, null, this.p2);
+                boolean r11 = rt.q().r(motionEvent, ((tv0) this.f3).b, null, this.p2);
                 if (super.onInterceptTouchEvent(motionEvent) || r11) {
                 }
                 break;
             case 23:
-                hy0 hy0Var = (hy0) this.Y2;
-                if (hy0Var.R) {
+                qy0 qy0Var = (qy0) this.f3;
+                if (qy0Var.R) {
                     break;
                 } else {
-                    boolean r12 = nt.q().r(motionEvent, hy0Var.c, hy0Var.m0, this.p2);
+                    boolean r12 = rt.q().r(motionEvent, qy0Var.c, qy0Var.m0, this.p2);
                     if (super.onInterceptTouchEvent(motionEvent) || r12) {
                     }
                 }
@@ -497,11 +497,11 @@ public final class w0 extends yl0 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.X2) {
+        switch (this.e3) {
             case 10:
-                ((org.telegram.ui.Components.bb) this.Y2).s();
+                ((org.telegram.ui.Components.cb) this.f3).s();
                 super.onLayout(z10, i10, i11, i12, i13);
                 break;
             case 11:
@@ -510,11 +510,11 @@ public final class w0 extends yl0 {
                 break;
             case 13:
                 super.onLayout(z10, i10, i11, i12, i13);
-                ((il) this.Y2).e0();
+                ((jl) this.f3).e0();
                 break;
             case 19:
                 super.onLayout(z10, i10, i11, i12, i13);
-                ((kn0) this.Y2).a();
+                ((on0) this.f3).a();
                 break;
             default:
                 super.onLayout(z10, i10, i11, i12, i13);
@@ -522,9 +522,9 @@ public final class w0 extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i10, int i11) {
-        switch (this.X2) {
+        switch (this.e3) {
             case 0:
                 int size = View.MeasureSpec.getSize(i10);
                 View.MeasureSpec.getSize(i11);
@@ -536,27 +536,27 @@ public final class w0 extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.X2) {
+        switch (this.e3) {
             case 8:
-                if (!((kq) this.Y2).H) {
+                if (!((mq) this.f3).H) {
                     break;
                 }
                 break;
             case 11:
-                if (motionEvent.getAction() != 0 || motionEvent.getY() >= ((lj) this.Y2).b.b2[0] - AndroidUtilities.dp(80.0f)) {
+                if (motionEvent.getAction() != 0 || motionEvent.getY() >= ((mj) this.f3).b.b2[0] - AndroidUtilities.dp(80.0f)) {
                     break;
                 }
                 break;
             case 14:
-                if (((sm) this.Y2).J == null) {
+                if (((tm) this.f3).J == null) {
                     break;
                 }
                 break;
             case 29:
                 if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                    AndroidUtilities.runOnUIThread(new c10(this, 2), 250L);
+                    AndroidUtilities.runOnUIThread(new g10(this, 2), 250L);
                 }
                 break;
         }
@@ -565,7 +565,7 @@ public final class w0 extends yl0 {
 
     @Override // android.view.ViewGroup, android.view.View
     public boolean requestFocus(int i10, Rect rect) {
-        switch (this.X2) {
+        switch (this.e3) {
             case 27:
                 return false;
             default:
@@ -573,29 +573,29 @@ public final class w0 extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public void requestLayout() {
-        switch (this.X2) {
+        switch (this.e3) {
             case 4:
-                if (!((org.telegram.ui.k1) this.Y2).r) {
+                if (!((org.telegram.ui.k1) this.f3).r) {
                     super.requestLayout();
                     break;
                 }
                 break;
             case 17:
-                if (!((p00) this.Y2).n) {
+                if (!((q00) this.f3).n) {
                     super.requestLayout();
                     break;
                 }
                 break;
             case 22:
-                if (!((pv0) this.Y2).h) {
+                if (!((tv0) this.f3).h) {
                     super.requestLayout();
                     break;
                 }
                 break;
             case 23:
-                if (!((hy0) this.Y2).g0) {
+                if (!((qy0) this.f3).g0) {
                     super.requestLayout();
                     break;
                 }
@@ -608,14 +608,14 @@ public final class w0 extends yl0 {
 
     @Override // android.view.View
     public void setAlpha(float f7) {
-        switch (this.X2) {
+        switch (this.e3) {
             case 16:
                 super.setAlpha(f7);
-                ((m00) this.Y2).invalidate();
+                ((n00) this.f3).invalidate();
                 break;
             case 25:
                 super.setAlpha(f7);
-                ((x81) this.Y2).invalidate();
+                ((f91) this.f3).invalidate();
                 break;
             default:
                 super.setAlpha(f7);
@@ -623,9 +623,9 @@ public final class w0 extends yl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yl0, android.view.View
+    @Override // org.telegram.ui.Components.zl0, android.view.View
     public void setTranslationY(float f7) {
-        switch (this.X2) {
+        switch (this.e3) {
             case 24:
                 super.setTranslationY(f7);
                 getLocationInWindow(new int[2]);
@@ -639,27 +639,27 @@ public final class w0 extends yl0 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ w0(Object obj, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
         super(context, d6Var);
-        this.X2 = i10;
-        this.Y2 = obj;
+        this.e3 = i10;
+        this.f3 = obj;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w0(mz mzVar, Context context, kz kzVar) {
+    public w0(nz nzVar, Context context, lz lzVar) {
         super(context, null);
-        this.X2 = 15;
-        this.Y2 = mzVar;
+        this.e3 = 15;
+        this.f3 = nzVar;
         setNestedScrollingEnabled(true);
         setSelectorRadius(AndroidUtilities.dp(4.0f));
-        setSelectorDrawableColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, this.p2));
+        setSelectorDrawableColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, this.p2));
         setTag(9);
         setItemAnimator(null);
         setLayoutAnimation(null);
         gg.b0 b0Var = new gg.b0(8);
         b0Var.j1(0);
         setLayoutManager(b0Var);
-        setAdapter(kzVar);
+        setAdapter(lzVar);
     }
 
-    private final void w1(int i10, int i11) {
+    private final void y1(int i10) {
     }
 }

@@ -1,21 +1,87 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class f80 extends yl0 {
-    public final /* synthetic */ j80 X2;
+public final class f80 extends FrameLayout {
+    public final /* synthetic */ k80 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f80(j80 j80Var, Context context) {
-        super(context, null);
-        this.X2 = j80Var;
+    public f80(k80 k80Var, Context context) {
+        super(context);
+        this.a = k80Var;
     }
 
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10;
+        k80 k80Var = this.a;
+        Drawable drawable = k80Var.b;
+        int i11 = k80Var.r;
+        i10 = ((org.telegram.ui.ActionBar.f3) k80Var).backgroundPaddingTop;
+        drawable.setBounds(0, i11 - i10, getMeasuredWidth(), getMeasuredHeight());
+        drawable.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            k80 k80Var = this.a;
+            if (k80Var.r != 0 && motionEvent.getY() < k80Var.r) {
+                k80Var.dismiss();
+                return true;
+            }
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        k80.o(this.a);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12;
+        int size = View.MeasureSpec.getSize(i11) - AndroidUtilities.statusBarHeight;
+        k80 k80Var = this.a;
+        TextView textView = k80Var.f;
+        measureChildWithMargins(textView, i10, 0, i11, 0);
+        int measuredHeight = textView.getMeasuredHeight();
+        g80 g80Var = k80Var.d;
+        ((FrameLayout.LayoutParams) g80Var.getLayoutParams()).topMargin = AndroidUtilities.dp(65.0f) + measuredHeight;
+        getMeasuredWidth();
+        int D = org.telegram.messenger.f0.D(58.0f, k80Var.h.size(), AndroidUtilities.dp(80.0f));
+        i12 = ((org.telegram.ui.ActionBar.f3) k80Var).backgroundPaddingTop;
+        int C = org.telegram.messenger.f0.C(55.0f, i12 + D, measuredHeight);
+        int i13 = size / 5;
+        int i14 = C < i13 * 3 ? size - C : i13 * 2;
+        if (g80Var.getPaddingTop() != i14) {
+            k80Var.n = true;
+            g80Var.setPadding(0, i14, 0, 0);
+            k80Var.n = false;
+        }
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.a.isDismissed() && super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
     public final void requestLayout() {
-        if (this.X2.n) {
+        if (this.a.n) {
             return;
         }
         super.requestLayout();

@@ -10,8 +10,8 @@ import android.text.TextUtils;
 import android.text.style.CharacterStyle;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import ci.ed;
-import ci.gd;
+import ci.dd;
+import ci.fd;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,30 +39,30 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.en0;
-import org.telegram.ui.Components.hy0;
-import org.telegram.ui.Components.om0;
-import org.telegram.ui.Components.p90;
+import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.in0;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.sm0;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.Components.yn0;
+import org.telegram.ui.Components.yw;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.aj;
-import org.telegram.ui.cl0;
-import org.telegram.ui.dh;
-import org.telegram.ui.dh1;
-import org.telegram.ui.gn0;
-import org.telegram.ui.k71;
-import org.telegram.ui.n31;
-import org.telegram.ui.qe;
-import org.telegram.ui.t31;
-import org.telegram.ui.wm0;
-import org.telegram.ui.wn;
-import org.telegram.ui.xe;
-import org.telegram.ui.ye;
+import org.telegram.ui.af;
+import org.telegram.ui.an0;
+import org.telegram.ui.bf;
+import org.telegram.ui.bj;
+import org.telegram.ui.fh1;
+import org.telegram.ui.gl0;
+import org.telegram.ui.kn0;
+import org.telegram.ui.m71;
+import org.telegram.ui.oh;
+import org.telegram.ui.p31;
+import org.telegram.ui.se;
+import org.telegram.ui.v31;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z8 implements Runnable {
     public final /* synthetic */ int a;
@@ -101,7 +101,7 @@ public final /* synthetic */ class z8 implements Runnable {
         }
         TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
         tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentStarsGiveaway;
-        ConnectionsManager.getInstance(t5Var.a).sendRequest(tL_payments_canPurchaseStore, new dh1(oVar, hVar, m0Var, activity, tL_inputStorePaymentStarsGiveaway, list, 3));
+        ConnectionsManager.getInstance(t5Var.a).sendRequest(tL_payments_canPurchaseStore, new fh1(oVar, hVar, m0Var, activity, tL_inputStorePaymentStarsGiveaway, list, 3));
     }
 
     private final void b() {
@@ -124,14 +124,14 @@ public final /* synthetic */ class z8 implements Runnable {
         TLObject tLObject = (TLObject) this.c;
         MessageObject messageObject = (MessageObject) this.d;
         TLRPC.TL_inputInvoiceMessage tL_inputInvoiceMessage = (TLRPC.TL_inputInvoiceMessage) this.e;
-        aj ajVar = (aj) this.f;
+        bj bjVar = (bj) this.f;
         TLRPC.TL_error tL_error = (TLRPC.TL_error) this.h;
         if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
-            t5Var.Y(messageObject, tL_inputInvoiceMessage, (TLRPC.TL_payments_paymentFormStars) tLObject, ajVar, null);
+            t5Var.Y(messageObject, tL_inputInvoiceMessage, (TLRPC.TL_payments_paymentFormStars) tLObject, bjVar, null);
         } else {
             yh.t5.e(tL_error == null ? "NO_PAYMENT_FORM" : tL_error.text);
         }
-        ajVar.run();
+        bjVar.run();
     }
 
     private final void e() {
@@ -145,31 +145,34 @@ public final /* synthetic */ class z8 implements Runnable {
         t5Var.a0(messageObject, inputInvoice, tL_payments_paymentFormStars, new yh.w0(1, callback));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:107:0x03f2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x03f0, code lost:
     
         if (r1.admin_rights.manage_call != false) goto L110;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:109:0x042b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:109:0x0429, code lost:
     
         if (r8.creator != false) goto L114;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:123:0x0427, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:123:0x0425, code lost:
     
         if ((r10 instanceof org.telegram.tgnet.TLRPC.TL_chatParticipantCreator) == false) goto L114;
      */
-    /* JADX WARN: Removed duplicated region for block: B:195:0x0665 A[Catch: Exception -> 0x05ff, TryCatch #1 {Exception -> 0x05ff, blocks: (B:399:0x05ef, B:401:0x05f9, B:183:0x0603, B:186:0x0611, B:188:0x061b, B:190:0x0621, B:191:0x0624, B:193:0x065f, B:195:0x0665, B:197:0x066b, B:198:0x066e, B:200:0x0673, B:202:0x0679, B:203:0x067c, B:206:0x0685, B:208:0x068f, B:210:0x069f, B:212:0x06ab, B:214:0x06b7, B:218:0x0700, B:220:0x0706, B:221:0x0709, B:223:0x0712, B:224:0x0715, B:225:0x071f, B:228:0x0729, B:234:0x073c, B:236:0x0742, B:244:0x0771, B:246:0x0777, B:248:0x0795, B:249:0x0797, B:250:0x079f, B:252:0x07a3, B:254:0x07b8, B:255:0x07be, B:257:0x07c4, B:258:0x07c8, B:260:0x07ce, B:261:0x07d2, B:369:0x079c, B:371:0x06c8, B:373:0x06d8, B:375:0x06e2, B:377:0x06fb, B:383:0x0629, B:385:0x0633, B:387:0x0639, B:388:0x063c, B:389:0x0640, B:391:0x064a, B:393:0x0650, B:395:0x0656, B:396:0x0659), top: B:398:0x05ef }] */
-    /* JADX WARN: Removed duplicated region for block: B:208:0x068f A[Catch: Exception -> 0x05ff, TryCatch #1 {Exception -> 0x05ff, blocks: (B:399:0x05ef, B:401:0x05f9, B:183:0x0603, B:186:0x0611, B:188:0x061b, B:190:0x0621, B:191:0x0624, B:193:0x065f, B:195:0x0665, B:197:0x066b, B:198:0x066e, B:200:0x0673, B:202:0x0679, B:203:0x067c, B:206:0x0685, B:208:0x068f, B:210:0x069f, B:212:0x06ab, B:214:0x06b7, B:218:0x0700, B:220:0x0706, B:221:0x0709, B:223:0x0712, B:224:0x0715, B:225:0x071f, B:228:0x0729, B:234:0x073c, B:236:0x0742, B:244:0x0771, B:246:0x0777, B:248:0x0795, B:249:0x0797, B:250:0x079f, B:252:0x07a3, B:254:0x07b8, B:255:0x07be, B:257:0x07c4, B:258:0x07c8, B:260:0x07ce, B:261:0x07d2, B:369:0x079c, B:371:0x06c8, B:373:0x06d8, B:375:0x06e2, B:377:0x06fb, B:383:0x0629, B:385:0x0633, B:387:0x0639, B:388:0x063c, B:389:0x0640, B:391:0x064a, B:393:0x0650, B:395:0x0656, B:396:0x0659), top: B:398:0x05ef }] */
-    /* JADX WARN: Removed duplicated region for block: B:220:0x0706 A[Catch: Exception -> 0x05ff, TryCatch #1 {Exception -> 0x05ff, blocks: (B:399:0x05ef, B:401:0x05f9, B:183:0x0603, B:186:0x0611, B:188:0x061b, B:190:0x0621, B:191:0x0624, B:193:0x065f, B:195:0x0665, B:197:0x066b, B:198:0x066e, B:200:0x0673, B:202:0x0679, B:203:0x067c, B:206:0x0685, B:208:0x068f, B:210:0x069f, B:212:0x06ab, B:214:0x06b7, B:218:0x0700, B:220:0x0706, B:221:0x0709, B:223:0x0712, B:224:0x0715, B:225:0x071f, B:228:0x0729, B:234:0x073c, B:236:0x0742, B:244:0x0771, B:246:0x0777, B:248:0x0795, B:249:0x0797, B:250:0x079f, B:252:0x07a3, B:254:0x07b8, B:255:0x07be, B:257:0x07c4, B:258:0x07c8, B:260:0x07ce, B:261:0x07d2, B:369:0x079c, B:371:0x06c8, B:373:0x06d8, B:375:0x06e2, B:377:0x06fb, B:383:0x0629, B:385:0x0633, B:387:0x0639, B:388:0x063c, B:389:0x0640, B:391:0x064a, B:393:0x0650, B:395:0x0656, B:396:0x0659), top: B:398:0x05ef }] */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x0712 A[Catch: Exception -> 0x05ff, TryCatch #1 {Exception -> 0x05ff, blocks: (B:399:0x05ef, B:401:0x05f9, B:183:0x0603, B:186:0x0611, B:188:0x061b, B:190:0x0621, B:191:0x0624, B:193:0x065f, B:195:0x0665, B:197:0x066b, B:198:0x066e, B:200:0x0673, B:202:0x0679, B:203:0x067c, B:206:0x0685, B:208:0x068f, B:210:0x069f, B:212:0x06ab, B:214:0x06b7, B:218:0x0700, B:220:0x0706, B:221:0x0709, B:223:0x0712, B:224:0x0715, B:225:0x071f, B:228:0x0729, B:234:0x073c, B:236:0x0742, B:244:0x0771, B:246:0x0777, B:248:0x0795, B:249:0x0797, B:250:0x079f, B:252:0x07a3, B:254:0x07b8, B:255:0x07be, B:257:0x07c4, B:258:0x07c8, B:260:0x07ce, B:261:0x07d2, B:369:0x079c, B:371:0x06c8, B:373:0x06d8, B:375:0x06e2, B:377:0x06fb, B:383:0x0629, B:385:0x0633, B:387:0x0639, B:388:0x063c, B:389:0x0640, B:391:0x064a, B:393:0x0650, B:395:0x0656, B:396:0x0659), top: B:398:0x05ef }] */
-    /* JADX WARN: Removed duplicated region for block: B:228:0x0729 A[Catch: Exception -> 0x05ff, TRY_ENTER, TRY_LEAVE, TryCatch #1 {Exception -> 0x05ff, blocks: (B:399:0x05ef, B:401:0x05f9, B:183:0x0603, B:186:0x0611, B:188:0x061b, B:190:0x0621, B:191:0x0624, B:193:0x065f, B:195:0x0665, B:197:0x066b, B:198:0x066e, B:200:0x0673, B:202:0x0679, B:203:0x067c, B:206:0x0685, B:208:0x068f, B:210:0x069f, B:212:0x06ab, B:214:0x06b7, B:218:0x0700, B:220:0x0706, B:221:0x0709, B:223:0x0712, B:224:0x0715, B:225:0x071f, B:228:0x0729, B:234:0x073c, B:236:0x0742, B:244:0x0771, B:246:0x0777, B:248:0x0795, B:249:0x0797, B:250:0x079f, B:252:0x07a3, B:254:0x07b8, B:255:0x07be, B:257:0x07c4, B:258:0x07c8, B:260:0x07ce, B:261:0x07d2, B:369:0x079c, B:371:0x06c8, B:373:0x06d8, B:375:0x06e2, B:377:0x06fb, B:383:0x0629, B:385:0x0633, B:387:0x0639, B:388:0x063c, B:389:0x0640, B:391:0x064a, B:393:0x0650, B:395:0x0656, B:396:0x0659), top: B:398:0x05ef }] */
-    /* JADX WARN: Removed duplicated region for block: B:243:0x076f  */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x08ba A[Catch: Exception -> 0x0a06, TryCatch #4 {Exception -> 0x0a06, blocks: (B:265:0x07e3, B:266:0x07f6, B:268:0x07fc, B:270:0x0808, B:272:0x0810, B:274:0x081a, B:276:0x0828, B:277:0x082e, B:279:0x0834, B:281:0x083e, B:283:0x084c, B:284:0x0850, B:286:0x0856, B:288:0x0860, B:290:0x086e, B:291:0x0872, B:293:0x0878, B:295:0x087e, B:297:0x0888, B:299:0x088e, B:300:0x0891, B:301:0x0896, B:304:0x089d, B:306:0x08a2, B:311:0x08b4, B:313:0x08ba, B:315:0x08d0, B:318:0x08e7, B:320:0x08f1, B:322:0x0928, B:324:0x093d, B:325:0x0943, B:327:0x0949, B:328:0x094d, B:330:0x0953, B:331:0x0957, B:333:0x0961, B:334:0x096d, B:336:0x0973, B:338:0x097d, B:344:0x0988, B:346:0x098e, B:348:0x099a, B:350:0x09d1, B:351:0x09de, B:308:0x08b0), top: B:264:0x07e3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:315:0x08d0 A[Catch: Exception -> 0x0a06, TryCatch #4 {Exception -> 0x0a06, blocks: (B:265:0x07e3, B:266:0x07f6, B:268:0x07fc, B:270:0x0808, B:272:0x0810, B:274:0x081a, B:276:0x0828, B:277:0x082e, B:279:0x0834, B:281:0x083e, B:283:0x084c, B:284:0x0850, B:286:0x0856, B:288:0x0860, B:290:0x086e, B:291:0x0872, B:293:0x0878, B:295:0x087e, B:297:0x0888, B:299:0x088e, B:300:0x0891, B:301:0x0896, B:304:0x089d, B:306:0x08a2, B:311:0x08b4, B:313:0x08ba, B:315:0x08d0, B:318:0x08e7, B:320:0x08f1, B:322:0x0928, B:324:0x093d, B:325:0x0943, B:327:0x0949, B:328:0x094d, B:330:0x0953, B:331:0x0957, B:333:0x0961, B:334:0x096d, B:336:0x0973, B:338:0x097d, B:344:0x0988, B:346:0x098e, B:348:0x099a, B:350:0x09d1, B:351:0x09de, B:308:0x08b0), top: B:264:0x07e3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:322:0x0928 A[Catch: Exception -> 0x0a06, TryCatch #4 {Exception -> 0x0a06, blocks: (B:265:0x07e3, B:266:0x07f6, B:268:0x07fc, B:270:0x0808, B:272:0x0810, B:274:0x081a, B:276:0x0828, B:277:0x082e, B:279:0x0834, B:281:0x083e, B:283:0x084c, B:284:0x0850, B:286:0x0856, B:288:0x0860, B:290:0x086e, B:291:0x0872, B:293:0x0878, B:295:0x087e, B:297:0x0888, B:299:0x088e, B:300:0x0891, B:301:0x0896, B:304:0x089d, B:306:0x08a2, B:311:0x08b4, B:313:0x08ba, B:315:0x08d0, B:318:0x08e7, B:320:0x08f1, B:322:0x0928, B:324:0x093d, B:325:0x0943, B:327:0x0949, B:328:0x094d, B:330:0x0953, B:331:0x0957, B:333:0x0961, B:334:0x096d, B:336:0x0973, B:338:0x097d, B:344:0x0988, B:346:0x098e, B:348:0x099a, B:350:0x09d1, B:351:0x09de, B:308:0x08b0), top: B:264:0x07e3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:340:0x0986 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:346:0x098e A[Catch: Exception -> 0x0a06, TryCatch #4 {Exception -> 0x0a06, blocks: (B:265:0x07e3, B:266:0x07f6, B:268:0x07fc, B:270:0x0808, B:272:0x0810, B:274:0x081a, B:276:0x0828, B:277:0x082e, B:279:0x0834, B:281:0x083e, B:283:0x084c, B:284:0x0850, B:286:0x0856, B:288:0x0860, B:290:0x086e, B:291:0x0872, B:293:0x0878, B:295:0x087e, B:297:0x0888, B:299:0x088e, B:300:0x0891, B:301:0x0896, B:304:0x089d, B:306:0x08a2, B:311:0x08b4, B:313:0x08ba, B:315:0x08d0, B:318:0x08e7, B:320:0x08f1, B:322:0x0928, B:324:0x093d, B:325:0x0943, B:327:0x0949, B:328:0x094d, B:330:0x0953, B:331:0x0957, B:333:0x0961, B:334:0x096d, B:336:0x0973, B:338:0x097d, B:344:0x0988, B:346:0x098e, B:348:0x099a, B:350:0x09d1, B:351:0x09de, B:308:0x08b0), top: B:264:0x07e3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:381:0x0719  */
-    /* JADX WARN: Removed duplicated region for block: B:382:0x0683  */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:194:0x0664 A[Catch: Exception -> 0x05fd, TryCatch #0 {Exception -> 0x05fd, blocks: (B:398:0x05ed, B:400:0x05f7, B:182:0x0601, B:185:0x060f, B:187:0x0619, B:189:0x061f, B:190:0x0622, B:192:0x065e, B:194:0x0664, B:196:0x066a, B:197:0x066d, B:199:0x0672, B:201:0x0678, B:202:0x067b, B:205:0x0684, B:207:0x068e, B:209:0x069e, B:211:0x06aa, B:213:0x06b6, B:217:0x06ff, B:219:0x0705, B:220:0x0708, B:222:0x0711, B:223:0x0714, B:224:0x071e, B:227:0x0728, B:233:0x073b, B:235:0x0741, B:243:0x0770, B:245:0x0776, B:247:0x0794, B:248:0x0796, B:249:0x079e, B:251:0x07a2, B:253:0x07b5, B:254:0x07bc, B:256:0x07c2, B:257:0x07c6, B:259:0x07cc, B:260:0x07d0, B:368:0x079b, B:370:0x06c7, B:372:0x06d7, B:374:0x06e1, B:376:0x06fa, B:382:0x0627, B:384:0x0631, B:386:0x0637, B:387:0x063a, B:388:0x063e, B:390:0x0648, B:392:0x064e, B:394:0x0654, B:395:0x0657), top: B:397:0x05ed }] */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x068e A[Catch: Exception -> 0x05fd, TryCatch #0 {Exception -> 0x05fd, blocks: (B:398:0x05ed, B:400:0x05f7, B:182:0x0601, B:185:0x060f, B:187:0x0619, B:189:0x061f, B:190:0x0622, B:192:0x065e, B:194:0x0664, B:196:0x066a, B:197:0x066d, B:199:0x0672, B:201:0x0678, B:202:0x067b, B:205:0x0684, B:207:0x068e, B:209:0x069e, B:211:0x06aa, B:213:0x06b6, B:217:0x06ff, B:219:0x0705, B:220:0x0708, B:222:0x0711, B:223:0x0714, B:224:0x071e, B:227:0x0728, B:233:0x073b, B:235:0x0741, B:243:0x0770, B:245:0x0776, B:247:0x0794, B:248:0x0796, B:249:0x079e, B:251:0x07a2, B:253:0x07b5, B:254:0x07bc, B:256:0x07c2, B:257:0x07c6, B:259:0x07cc, B:260:0x07d0, B:368:0x079b, B:370:0x06c7, B:372:0x06d7, B:374:0x06e1, B:376:0x06fa, B:382:0x0627, B:384:0x0631, B:386:0x0637, B:387:0x063a, B:388:0x063e, B:390:0x0648, B:392:0x064e, B:394:0x0654, B:395:0x0657), top: B:397:0x05ed }] */
+    /* JADX WARN: Removed duplicated region for block: B:219:0x0705 A[Catch: Exception -> 0x05fd, TryCatch #0 {Exception -> 0x05fd, blocks: (B:398:0x05ed, B:400:0x05f7, B:182:0x0601, B:185:0x060f, B:187:0x0619, B:189:0x061f, B:190:0x0622, B:192:0x065e, B:194:0x0664, B:196:0x066a, B:197:0x066d, B:199:0x0672, B:201:0x0678, B:202:0x067b, B:205:0x0684, B:207:0x068e, B:209:0x069e, B:211:0x06aa, B:213:0x06b6, B:217:0x06ff, B:219:0x0705, B:220:0x0708, B:222:0x0711, B:223:0x0714, B:224:0x071e, B:227:0x0728, B:233:0x073b, B:235:0x0741, B:243:0x0770, B:245:0x0776, B:247:0x0794, B:248:0x0796, B:249:0x079e, B:251:0x07a2, B:253:0x07b5, B:254:0x07bc, B:256:0x07c2, B:257:0x07c6, B:259:0x07cc, B:260:0x07d0, B:368:0x079b, B:370:0x06c7, B:372:0x06d7, B:374:0x06e1, B:376:0x06fa, B:382:0x0627, B:384:0x0631, B:386:0x0637, B:387:0x063a, B:388:0x063e, B:390:0x0648, B:392:0x064e, B:394:0x0654, B:395:0x0657), top: B:397:0x05ed }] */
+    /* JADX WARN: Removed duplicated region for block: B:222:0x0711 A[Catch: Exception -> 0x05fd, TryCatch #0 {Exception -> 0x05fd, blocks: (B:398:0x05ed, B:400:0x05f7, B:182:0x0601, B:185:0x060f, B:187:0x0619, B:189:0x061f, B:190:0x0622, B:192:0x065e, B:194:0x0664, B:196:0x066a, B:197:0x066d, B:199:0x0672, B:201:0x0678, B:202:0x067b, B:205:0x0684, B:207:0x068e, B:209:0x069e, B:211:0x06aa, B:213:0x06b6, B:217:0x06ff, B:219:0x0705, B:220:0x0708, B:222:0x0711, B:223:0x0714, B:224:0x071e, B:227:0x0728, B:233:0x073b, B:235:0x0741, B:243:0x0770, B:245:0x0776, B:247:0x0794, B:248:0x0796, B:249:0x079e, B:251:0x07a2, B:253:0x07b5, B:254:0x07bc, B:256:0x07c2, B:257:0x07c6, B:259:0x07cc, B:260:0x07d0, B:368:0x079b, B:370:0x06c7, B:372:0x06d7, B:374:0x06e1, B:376:0x06fa, B:382:0x0627, B:384:0x0631, B:386:0x0637, B:387:0x063a, B:388:0x063e, B:390:0x0648, B:392:0x064e, B:394:0x0654, B:395:0x0657), top: B:397:0x05ed }] */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x0728 A[Catch: Exception -> 0x05fd, TRY_ENTER, TRY_LEAVE, TryCatch #0 {Exception -> 0x05fd, blocks: (B:398:0x05ed, B:400:0x05f7, B:182:0x0601, B:185:0x060f, B:187:0x0619, B:189:0x061f, B:190:0x0622, B:192:0x065e, B:194:0x0664, B:196:0x066a, B:197:0x066d, B:199:0x0672, B:201:0x0678, B:202:0x067b, B:205:0x0684, B:207:0x068e, B:209:0x069e, B:211:0x06aa, B:213:0x06b6, B:217:0x06ff, B:219:0x0705, B:220:0x0708, B:222:0x0711, B:223:0x0714, B:224:0x071e, B:227:0x0728, B:233:0x073b, B:235:0x0741, B:243:0x0770, B:245:0x0776, B:247:0x0794, B:248:0x0796, B:249:0x079e, B:251:0x07a2, B:253:0x07b5, B:254:0x07bc, B:256:0x07c2, B:257:0x07c6, B:259:0x07cc, B:260:0x07d0, B:368:0x079b, B:370:0x06c7, B:372:0x06d7, B:374:0x06e1, B:376:0x06fa, B:382:0x0627, B:384:0x0631, B:386:0x0637, B:387:0x063a, B:388:0x063e, B:390:0x0648, B:392:0x064e, B:394:0x0654, B:395:0x0657), top: B:397:0x05ed }] */
+    /* JADX WARN: Removed duplicated region for block: B:242:0x076e  */
+    /* JADX WARN: Removed duplicated region for block: B:314:0x08ce A[Catch: Exception -> 0x0a02, TryCatch #4 {Exception -> 0x0a02, blocks: (B:264:0x07e1, B:265:0x07f4, B:267:0x07fa, B:269:0x0806, B:271:0x080c, B:273:0x0816, B:275:0x0824, B:276:0x082b, B:278:0x0831, B:280:0x083b, B:282:0x0849, B:283:0x084d, B:285:0x0853, B:287:0x085d, B:289:0x086b, B:290:0x086f, B:292:0x0875, B:294:0x087b, B:296:0x0885, B:298:0x088b, B:299:0x088e, B:300:0x0894, B:303:0x089b, B:305:0x08a0, B:310:0x08b2, B:312:0x08b8, B:314:0x08ce, B:321:0x08df, B:323:0x08eb, B:325:0x0922, B:327:0x0935, B:328:0x093c, B:330:0x0942, B:331:0x0946, B:333:0x094c, B:334:0x0950, B:336:0x095a, B:337:0x0966, B:339:0x096c, B:341:0x0976, B:345:0x0983, B:347:0x0989, B:349:0x0995, B:351:0x09cc, B:352:0x09d9, B:307:0x08ae), top: B:263:0x07e1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:380:0x0718  */
+    /* JADX WARN: Removed duplicated region for block: B:381:0x0682  */
+    /* JADX WARN: Type inference failed for: r18v3, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r18v7 */
+    /* JADX WARN: Type inference failed for: r18v8 */
+    /* JADX WARN: Type inference failed for: r3v61, types: [android.location.Address] */
+    /* JADX WARN: Type inference failed for: r3v8 */
+    /* JADX WARN: Type inference failed for: r3v9 */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -184,33 +187,36 @@ public final /* synthetic */ class z8 implements Runnable {
         HashSet hashSet;
         HashSet hashSet2;
         int i11;
+        TLRPC.User user;
         Address address;
+        ?? r18;
         Locale locale;
         String str2;
         List<Address> list;
         HashSet hashSet3;
+        HashSet hashSet4;
         int i12;
         List<Address> list2;
-        int i13;
         StringBuilder sb2;
         String str3;
         String thoroughfare;
         boolean z10;
         boolean z11;
         String countryName;
-        HashSet hashSet4;
+        HashSet hashSet5;
         StringBuilder sb3;
         boolean z12;
         StringBuilder sb4;
         boolean z13;
         String str4;
-        int i14;
-        TLRPC.User user;
+        int i13;
         TLRPC.ChatParticipants chatParticipants;
         boolean z14;
         String str5;
-        org.telegram.ui.ActionBar.m2 U;
+        org.telegram.ui.ActionBar.n2 U;
         String str6 = "";
+        TLRPC.User user2 = null;
+        int i14 = 2;
         int i15 = 0;
         switch (this.a) {
             case 0:
@@ -219,7 +225,7 @@ public final /* synthetic */ class z8 implements Runnable {
                 ArrayList arrayList2 = (ArrayList) this.d;
                 ArrayList<TLRPC.User> arrayList3 = (ArrayList) this.e;
                 ArrayList<TLRPC.Chat> arrayList4 = (ArrayList) this.f;
-                HashSet hashSet5 = (HashSet) this.h;
+                HashSet hashSet6 = (HashSet) this.h;
                 StringBuilder sb5 = new StringBuilder("StoriesList ");
                 sb5.append(d9Var.e);
                 sb5.append("{");
@@ -240,7 +246,7 @@ public final /* synthetic */ class z8 implements Runnable {
                     d9Var.j();
                     break;
                 } else {
-                    d9Var.m.addAll(hashSet5);
+                    d9Var.m.addAll(hashSet6);
                     d9Var.k.clear();
                     for (int i17 = 0; i17 < arrayList.size(); i17++) {
                         d9Var.t((MessageObject) arrayList.get(i17), true);
@@ -259,21 +265,21 @@ public final /* synthetic */ class z8 implements Runnable {
                 TLObject tLObject = (TLObject) this.c;
                 MessagesController messagesController = (MessagesController) this.d;
                 TLRPC.User[] userArr = (TLRPC.User[]) this.e;
-                gd gdVar = (gd) this.f;
-                ed edVar = (ed) this.h;
+                fd fdVar = (fd) this.f;
+                dd ddVar = (dd) this.h;
                 iArr[0] = 0;
                 if (tLObject instanceof TLRPC.TL_contacts_resolvedPeer) {
                     TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
                     messagesController.putUsers(tL_contacts_resolvedPeer.users, false);
                     messagesController.putChats(tL_contacts_resolvedPeer.chats, false);
-                    TLRPC.User user2 = messagesController.getUser(Long.valueOf(DialogObject.getPeerDialogId(tL_contacts_resolvedPeer.peer)));
-                    userArr[0] = user2;
-                    if (user2 != null) {
-                        gdVar.run();
+                    TLRPC.User user3 = messagesController.getUser(Long.valueOf(DialogObject.getPeerDialogId(tL_contacts_resolvedPeer.peer)));
+                    userArr[0] = user3;
+                    if (user3 != null) {
+                        fdVar.run();
                         break;
                     }
                 }
-                edVar.run(null);
+                ddVar.run(null);
                 break;
             case 2:
                 gg.c cVar2 = (gg.c) this.b;
@@ -294,193 +300,199 @@ public final /* synthetic */ class z8 implements Runnable {
                 }
                 while (i11 < fromLocationName.size()) {
                     Address address2 = fromLocationName.get(i11);
-                    if (fromLocationName2 != null && i11 < fromLocationName2.size()) {
-                        address = fromLocationName2.get(i11);
-                        if (address2.hasLatitude() || !address2.hasLongitude()) {
-                            locale = locale2;
-                            str2 = str6;
-                            list = fromLocationName2;
-                            hashSet3 = hashSet;
-                            i12 = i10;
-                            cVar = cVar2;
-                            location = location2;
-                            str = str8;
-                            list2 = fromLocationName;
-                            i13 = i11;
-                        } else {
-                            int i18 = i10;
-                            double latitude = address2.getLatitude();
-                            locale = locale2;
-                            str2 = str6;
-                            double longitude = address2.getLongitude();
-                            list = fromLocationName2;
-                            StringBuilder sb6 = new StringBuilder();
-                            Address address3 = address;
-                            StringBuilder sb7 = new StringBuilder();
-                            location = location2;
-                            try {
-                                sb2 = new StringBuilder();
-                                String locality = address2.getLocality();
-                                if (TextUtils.isEmpty(locality)) {
-                                    locality = address2.getAdminArea();
-                                }
-                                str = str8;
-                                str3 = locality;
-                                if (address3 != null) {
-                                    try {
-                                        if (TextUtils.isEmpty(address3.getLocality())) {
-                                            address3.getAdminArea();
-                                        }
-                                    } catch (Exception unused2) {
-                                        cVar = cVar2;
-                                    }
-                                }
-                                list2 = fromLocationName;
-                                thoroughfare = address2.getThoroughfare();
-                                i13 = i11;
-                            } catch (Exception unused3) {
+                    if (fromLocationName2 != null) {
+                        TLRPC.User user4 = user2;
+                        user = user4;
+                        if (i11 < fromLocationName2.size()) {
+                            address = fromLocationName2.get(i11);
+                            r18 = user4;
+                            if (address2.hasLatitude() || !address2.hasLongitude()) {
+                                locale = locale2;
+                                str2 = str6;
+                                list = fromLocationName2;
+                                hashSet3 = hashSet;
+                                hashSet4 = hashSet2;
                                 cVar = cVar2;
-                            }
-                            if (TextUtils.isEmpty(thoroughfare) || TextUtils.equals(thoroughfare, address2.getAdminArea())) {
-                                String subLocality = address2.getSubLocality();
-                                if (TextUtils.isEmpty(subLocality)) {
-                                    String locality2 = address2.getLocality();
-                                    if (TextUtils.isEmpty(locality2) || TextUtils.equals(locality2, str3)) {
-                                        z10 = true;
-                                        sb2 = null;
-                                        if (TextUtils.isEmpty(str3)) {
-                                            if (sb7.length() > 0) {
-                                                sb7.append(", ");
+                                location = location2;
+                                str = str8;
+                                i12 = i11;
+                                list2 = fromLocationName;
+                            } else {
+                                HashSet hashSet7 = hashSet2;
+                                double latitude = address2.getLatitude();
+                                locale = locale2;
+                                str2 = str6;
+                                double longitude = address2.getLongitude();
+                                Address address3 = address;
+                                StringBuilder sb6 = new StringBuilder();
+                                list = fromLocationName2;
+                                StringBuilder sb7 = new StringBuilder();
+                                location = location2;
+                                try {
+                                    sb2 = new StringBuilder();
+                                    String locality = address2.getLocality();
+                                    if (TextUtils.isEmpty(locality)) {
+                                        locality = address2.getAdminArea();
+                                    }
+                                    str = str8;
+                                    str3 = locality;
+                                    if (address3 != null) {
+                                        try {
+                                            if (TextUtils.isEmpty(address3.getLocality())) {
+                                                address3.getAdminArea();
                                             }
-                                            sb7.append(str3);
-                                            if (sb2 != null) {
-                                                if (sb2.length() > 0) {
-                                                    sb2.append(", ");
-                                                }
-                                                sb2.append(str3);
-                                            }
-                                            z11 = false;
-                                        } else {
-                                            z11 = true;
+                                        } catch (Exception unused2) {
+                                            cVar = cVar2;
                                         }
-                                        boolean z15 = z10;
-                                        countryName = address2.getCountryName();
-                                        if (TextUtils.isEmpty(countryName)) {
-                                            sb3 = sb2;
-                                            z12 = z11;
-                                            if (!"US".equals(address2.getCountryCode()) && !"AE".equals(address2.getCountryCode()) && (!"GB".equals(address2.getCountryCode()) || !"en".equals(locale.getLanguage()))) {
-                                                hashSet4 = hashSet;
-                                                str4 = countryName;
+                                    }
+                                    i12 = i11;
+                                    thoroughfare = address2.getThoroughfare();
+                                    list2 = fromLocationName;
+                                } catch (Exception unused3) {
+                                    cVar = cVar2;
+                                }
+                                if (TextUtils.isEmpty(thoroughfare) || TextUtils.equals(thoroughfare, address2.getAdminArea())) {
+                                    String subLocality = address2.getSubLocality();
+                                    if (TextUtils.isEmpty(subLocality)) {
+                                        String locality2 = address2.getLocality();
+                                        if (TextUtils.isEmpty(locality2) || TextUtils.equals(locality2, str3)) {
+                                            sb2 = r18;
+                                            z10 = true;
+                                            if (TextUtils.isEmpty(str3)) {
                                                 if (sb7.length() > 0) {
                                                     sb7.append(", ");
                                                 }
+                                                sb7.append(str3);
+                                                if (sb2 != null) {
+                                                    if (sb2.length() > 0) {
+                                                        sb2.append(", ");
+                                                    }
+                                                    sb2.append(str3);
+                                                }
+                                                z11 = false;
+                                            } else {
+                                                z11 = true;
+                                            }
+                                            boolean z15 = z10;
+                                            countryName = address2.getCountryName();
+                                            if (TextUtils.isEmpty(countryName)) {
+                                                sb3 = sb2;
+                                                z12 = z11;
+                                                if (!"US".equals(address2.getCountryCode()) && !"AE".equals(address2.getCountryCode()) && (!"GB".equals(address2.getCountryCode()) || !"en".equals(locale.getLanguage()))) {
+                                                    hashSet5 = hashSet;
+                                                    str4 = countryName;
+                                                    if (sb7.length() > 0) {
+                                                        sb7.append(", ");
+                                                    }
+                                                    sb7.append(str4);
+                                                    if (sb6.length() > 0) {
+                                                        sb6.append(", ");
+                                                    }
+                                                    sb6.append(countryName);
+                                                }
+                                                String[] split = countryName.split(" ");
+                                                int length = split.length;
+                                                hashSet5 = hashSet;
+                                                str4 = str2;
+                                                int i18 = 0;
+                                                while (i18 < length) {
+                                                    int i19 = i18;
+                                                    String str9 = split[i19];
+                                                    if (str9.length() > 0) {
+                                                        i13 = length;
+                                                        str4 = str4 + str9.charAt(0);
+                                                    } else {
+                                                        i13 = length;
+                                                    }
+                                                    i18 = i19 + 1;
+                                                    length = i13;
+                                                }
+                                                if (sb7.length() > 0) {
+                                                }
                                                 sb7.append(str4);
                                                 if (sb6.length() > 0) {
-                                                    sb6.append(", ");
                                                 }
                                                 sb6.append(countryName);
-                                            }
-                                            String[] split = countryName.split(" ");
-                                            int length = split.length;
-                                            hashSet4 = hashSet;
-                                            str4 = str2;
-                                            int i19 = 0;
-                                            while (i19 < length) {
-                                                int i20 = i19;
-                                                String str9 = split[i20];
-                                                if (str9.length() > 0) {
-                                                    i14 = length;
-                                                    str4 = str4 + str9.charAt(0);
-                                                } else {
-                                                    i14 = length;
-                                                }
-                                                i19 = i20 + 1;
-                                                length = i14;
-                                            }
-                                            if (sb7.length() > 0) {
-                                            }
-                                            sb7.append(str4);
-                                            if (sb6.length() > 0) {
-                                            }
-                                            sb6.append(countryName);
-                                        } else {
-                                            hashSet4 = hashSet;
-                                            sb3 = sb2;
-                                            z12 = z11;
-                                        }
-                                        if (cVar2.e) {
-                                            if (sb3 == null || sb3.length() <= 0) {
-                                                cVar = cVar2;
-                                                sb4 = sb6;
                                             } else {
-                                                TLRPC.TL_messageMediaVenue tL_messageMediaVenue = new TLRPC.TL_messageMediaVenue();
-                                                TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
-                                                tL_messageMediaVenue.geo = tL_geoPoint;
-                                                tL_geoPoint.lat = latitude;
-                                                tL_geoPoint._long = longitude;
-                                                tL_messageMediaVenue.query_id = -1L;
-                                                tL_messageMediaVenue.title = sb3.toString();
-                                                tL_messageMediaVenue.icon = "pin";
-                                                tL_messageMediaVenue.address = LocaleController.getString(z15 ? R.string.PassportCity : R.string.PassportStreet1);
-                                                if (address3 != null) {
-                                                    TL_stories.TL_geoPointAddress tL_geoPointAddress = new TL_stories.TL_geoPointAddress();
-                                                    tL_messageMediaVenue.geoAddress = tL_geoPointAddress;
-                                                    tL_geoPointAddress.country_iso2 = address3.getCountryCode();
-                                                    String locality3 = TextUtils.isEmpty(null) ? address3.getLocality() : null;
-                                                    if (TextUtils.isEmpty(locality3)) {
-                                                        locality3 = address3.getAdminArea();
-                                                    }
-                                                    if (TextUtils.isEmpty(locality3)) {
-                                                        locality3 = address3.getSubAdminArea();
-                                                    }
-                                                    String adminArea = address3.getAdminArea();
-                                                    StringBuilder sb8 = new StringBuilder();
-                                                    if (TextUtils.isEmpty(adminArea)) {
-                                                        cVar = cVar2;
-                                                        sb4 = sb6;
-                                                    } else {
-                                                        cVar = cVar2;
-                                                        try {
-                                                            TL_stories.TL_geoPointAddress tL_geoPointAddress2 = tL_messageMediaVenue.geoAddress;
-                                                            tL_geoPointAddress2.state = adminArea;
+                                                hashSet5 = hashSet;
+                                                sb3 = sb2;
+                                                z12 = z11;
+                                            }
+                                            if (cVar2.e) {
+                                                if (sb3 == null || sb3.length() <= 0) {
+                                                    cVar = cVar2;
+                                                    sb4 = sb6;
+                                                } else {
+                                                    TLRPC.TL_messageMediaVenue tL_messageMediaVenue = new TLRPC.TL_messageMediaVenue();
+                                                    TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
+                                                    tL_messageMediaVenue.geo = tL_geoPoint;
+                                                    tL_geoPoint.lat = latitude;
+                                                    tL_geoPoint._long = longitude;
+                                                    tL_messageMediaVenue.query_id = -1L;
+                                                    tL_messageMediaVenue.title = sb3.toString();
+                                                    tL_messageMediaVenue.icon = "pin";
+                                                    tL_messageMediaVenue.address = LocaleController.getString(z15 ? R.string.PassportCity : R.string.PassportStreet1);
+                                                    if (address3 != null) {
+                                                        TL_stories.TL_geoPointAddress tL_geoPointAddress = new TL_stories.TL_geoPointAddress();
+                                                        tL_messageMediaVenue.geoAddress = tL_geoPointAddress;
+                                                        tL_geoPointAddress.country_iso2 = address3.getCountryCode();
+                                                        String locality3 = TextUtils.isEmpty(r18) ? address3.getLocality() : r18;
+                                                        if (TextUtils.isEmpty(locality3)) {
+                                                            locality3 = address3.getAdminArea();
+                                                        }
+                                                        if (TextUtils.isEmpty(locality3)) {
+                                                            locality3 = address3.getSubAdminArea();
+                                                        }
+                                                        String adminArea = address3.getAdminArea();
+                                                        StringBuilder sb8 = new StringBuilder();
+                                                        if (TextUtils.isEmpty(adminArea)) {
+                                                            cVar = cVar2;
                                                             sb4 = sb6;
-                                                            tL_geoPointAddress2.flags |= 1;
-                                                        } catch (Exception unused4) {
-                                                        }
-                                                    }
-                                                    if (!TextUtils.isEmpty(locality3)) {
-                                                        TL_stories.TL_geoPointAddress tL_geoPointAddress3 = tL_messageMediaVenue.geoAddress;
-                                                        tL_geoPointAddress3.city = locality3;
-                                                        tL_geoPointAddress3.flags |= 2;
-                                                    }
-                                                    if (!z15) {
-                                                        String thoroughfare2 = (!TextUtils.isEmpty(null) || TextUtils.equals(address3.getThoroughfare(), str3) || TextUtils.equals(address3.getThoroughfare(), address3.getCountryName())) ? null : address3.getThoroughfare();
-                                                        if (TextUtils.isEmpty(thoroughfare2) && !TextUtils.equals(address3.getSubLocality(), str3) && !TextUtils.equals(address3.getSubLocality(), address3.getCountryName())) {
-                                                            thoroughfare2 = address3.getSubLocality();
-                                                        }
-                                                        if (TextUtils.isEmpty(thoroughfare2) && !TextUtils.equals(address3.getLocality(), str3) && !TextUtils.equals(address3.getLocality(), address3.getCountryName())) {
-                                                            thoroughfare2 = address3.getLocality();
-                                                        }
-                                                        if (TextUtils.isEmpty(thoroughfare2) || TextUtils.equals(thoroughfare2, adminArea) || TextUtils.equals(thoroughfare2, address3.getCountryName())) {
-                                                            sb8 = null;
                                                         } else {
-                                                            if (sb8.length() > 0) {
-                                                                sb8.append(", ");
+                                                            cVar = cVar2;
+                                                            try {
+                                                                TL_stories.TL_geoPointAddress tL_geoPointAddress2 = tL_messageMediaVenue.geoAddress;
+                                                                tL_geoPointAddress2.state = adminArea;
+                                                                sb4 = sb6;
+                                                                tL_geoPointAddress2.flags |= 1;
+                                                            } catch (Exception unused4) {
                                                             }
-                                                            sb8.append(thoroughfare2);
                                                         }
-                                                        if (!TextUtils.isEmpty(sb8)) {
-                                                            int i21 = 0;
-                                                            while (true) {
-                                                                String[] strArr = LocationController.unnamedRoads;
-                                                                if (i21 < strArr.length) {
-                                                                    if (strArr[i21].equalsIgnoreCase(sb8.toString())) {
-                                                                        z13 = true;
-                                                                    } else {
-                                                                        i21++;
+                                                        if (!TextUtils.isEmpty(locality3)) {
+                                                            TL_stories.TL_geoPointAddress tL_geoPointAddress3 = tL_messageMediaVenue.geoAddress;
+                                                            tL_geoPointAddress3.city = locality3;
+                                                            tL_geoPointAddress3.flags |= 2;
+                                                        }
+                                                        if (!z15) {
+                                                            String thoroughfare2 = (!TextUtils.isEmpty(r18) || TextUtils.equals(address3.getThoroughfare(), str3) || TextUtils.equals(address3.getThoroughfare(), address3.getCountryName())) ? r18 : address3.getThoroughfare();
+                                                            if (TextUtils.isEmpty(thoroughfare2) && !TextUtils.equals(address3.getSubLocality(), str3) && !TextUtils.equals(address3.getSubLocality(), address3.getCountryName())) {
+                                                                thoroughfare2 = address3.getSubLocality();
+                                                            }
+                                                            if (TextUtils.isEmpty(thoroughfare2) && !TextUtils.equals(address3.getLocality(), str3) && !TextUtils.equals(address3.getLocality(), address3.getCountryName())) {
+                                                                thoroughfare2 = address3.getLocality();
+                                                            }
+                                                            if (TextUtils.isEmpty(thoroughfare2) || TextUtils.equals(thoroughfare2, adminArea) || TextUtils.equals(thoroughfare2, address3.getCountryName())) {
+                                                                sb8 = r18;
+                                                            } else {
+                                                                if (sb8.length() > 0) {
+                                                                    sb8.append(", ");
+                                                                }
+                                                                sb8.append(thoroughfare2);
+                                                            }
+                                                            if (!TextUtils.isEmpty(sb8)) {
+                                                                int i20 = 0;
+                                                                while (true) {
+                                                                    String[] strArr = LocationController.unnamedRoads;
+                                                                    if (i20 < strArr.length) {
+                                                                        if (strArr[i20].equalsIgnoreCase(sb8.toString())) {
+                                                                            z13 = true;
+                                                                        } else {
+                                                                            i20++;
+                                                                        }
                                                                     }
                                                                 }
                                                             }
+                                                            z13 = false;
                                                             if (!TextUtils.isEmpty(sb8)) {
                                                                 TL_stories.TL_geoPointAddress tL_geoPointAddress4 = tL_messageMediaVenue.geoAddress;
                                                                 tL_geoPointAddress4.flags |= 4;
@@ -488,202 +500,185 @@ public final /* synthetic */ class z8 implements Runnable {
                                                             }
                                                             if (!z13) {
                                                                 arrayList6.add(tL_messageMediaVenue);
-                                                                i12 = i18;
-                                                                if (arrayList6.size() >= i12) {
+                                                                if (arrayList6.size() >= i10) {
                                                                     AndroidUtilities.runOnUIThread(new h5(cVar, location, str, arrayList6, 11));
                                                                     break;
                                                                 }
-                                                                if (!z12 && !hashSet2.contains(sb7.toString())) {
-                                                                    TLRPC.TL_messageMediaVenue tL_messageMediaVenue2 = new TLRPC.TL_messageMediaVenue();
-                                                                    TLRPC.TL_geoPoint tL_geoPoint2 = new TLRPC.TL_geoPoint();
-                                                                    tL_messageMediaVenue2.geo = tL_geoPoint2;
-                                                                    tL_geoPoint2.lat = latitude;
-                                                                    tL_geoPoint2._long = longitude;
-                                                                    tL_messageMediaVenue2.query_id = -1L;
-                                                                    tL_messageMediaVenue2.title = sb7.toString();
-                                                                    tL_messageMediaVenue2.icon = "https://ss3.4sqi.net/img/categories_v2/travel/hotel_64.png";
-                                                                    tL_messageMediaVenue2.emoji = LocationController.countryCodeToEmoji(address2.getCountryCode());
-                                                                    hashSet2.add(tL_messageMediaVenue2.title);
-                                                                    tL_messageMediaVenue2.address = LocaleController.getString(R.string.PassportCity);
-                                                                    if (address3 != null) {
-                                                                        TL_stories.TL_geoPointAddress tL_geoPointAddress5 = new TL_stories.TL_geoPointAddress();
-                                                                        tL_messageMediaVenue2.geoAddress = tL_geoPointAddress5;
-                                                                        tL_geoPointAddress5.country_iso2 = address3.getCountryCode();
-                                                                        String locality4 = TextUtils.isEmpty(null) ? address3.getLocality() : null;
-                                                                        if (TextUtils.isEmpty(locality4)) {
-                                                                            locality4 = address3.getAdminArea();
-                                                                        }
-                                                                        if (TextUtils.isEmpty(locality4)) {
-                                                                            locality4 = address3.getSubAdminArea();
-                                                                        }
-                                                                        String adminArea2 = address3.getAdminArea();
-                                                                        if (!TextUtils.isEmpty(adminArea2)) {
-                                                                            TL_stories.TL_geoPointAddress tL_geoPointAddress6 = tL_messageMediaVenue2.geoAddress;
-                                                                            tL_geoPointAddress6.state = adminArea2;
-                                                                            tL_geoPointAddress6.flags |= 1;
-                                                                        }
-                                                                        if (!TextUtils.isEmpty(locality4)) {
-                                                                            TL_stories.TL_geoPointAddress tL_geoPointAddress7 = tL_messageMediaVenue2.geoAddress;
-                                                                            tL_geoPointAddress7.city = locality4;
-                                                                            tL_geoPointAddress7.flags |= 2;
-                                                                        }
-                                                                    }
-                                                                    arrayList6.add(tL_messageMediaVenue2);
-                                                                    if (arrayList6.size() >= i12) {
-                                                                        AndroidUtilities.runOnUIThread(new h5(cVar, location, str, arrayList6, 11));
-                                                                    }
-                                                                }
-                                                                if (sb4.length() > 0) {
-                                                                    hashSet3 = hashSet4;
-                                                                    if (hashSet3.contains(sb4.toString())) {
-                                                                        continue;
-                                                                    } else {
-                                                                        TLRPC.TL_messageMediaVenue tL_messageMediaVenue3 = new TLRPC.TL_messageMediaVenue();
-                                                                        TLRPC.TL_geoPoint tL_geoPoint3 = new TLRPC.TL_geoPoint();
-                                                                        tL_messageMediaVenue3.geo = tL_geoPoint3;
-                                                                        tL_geoPoint3.lat = latitude;
-                                                                        tL_geoPoint3._long = longitude;
-                                                                        tL_messageMediaVenue3.query_id = -1L;
-                                                                        tL_messageMediaVenue3.title = sb4.toString();
-                                                                        tL_messageMediaVenue3.icon = "https://ss3.4sqi.net/img/categories_v2/building/government_capitolbuilding_64.png";
-                                                                        tL_messageMediaVenue3.emoji = LocationController.countryCodeToEmoji(address2.getCountryCode());
-                                                                        hashSet3.add(tL_messageMediaVenue3.title);
-                                                                        tL_messageMediaVenue3.address = LocaleController.getString(R.string.Country);
-                                                                        if (address3 != null) {
-                                                                            TL_stories.TL_geoPointAddress tL_geoPointAddress8 = new TL_stories.TL_geoPointAddress();
-                                                                            tL_messageMediaVenue3.geoAddress = tL_geoPointAddress8;
-                                                                            tL_geoPointAddress8.country_iso2 = address3.getCountryCode();
-                                                                        }
-                                                                        arrayList6.add(tL_messageMediaVenue3);
-                                                                        if (arrayList6.size() >= i12) {
-                                                                            AndroidUtilities.runOnUIThread(new h5(cVar, location, str, arrayList6, 11));
-                                                                        }
-                                                                    }
-                                                                }
                                                             }
                                                         }
-                                                        z13 = false;
-                                                        if (!TextUtils.isEmpty(sb8)) {
+                                                    } else {
+                                                        cVar = cVar2;
+                                                        sb4 = sb6;
+                                                    }
+                                                    z13 = false;
+                                                    if (!z13) {
+                                                    }
+                                                }
+                                                if (z12) {
+                                                    hashSet4 = hashSet7;
+                                                } else {
+                                                    hashSet4 = hashSet7;
+                                                    if (!hashSet4.contains(sb7.toString())) {
+                                                        TLRPC.TL_messageMediaVenue tL_messageMediaVenue2 = new TLRPC.TL_messageMediaVenue();
+                                                        TLRPC.TL_geoPoint tL_geoPoint2 = new TLRPC.TL_geoPoint();
+                                                        tL_messageMediaVenue2.geo = tL_geoPoint2;
+                                                        tL_geoPoint2.lat = latitude;
+                                                        tL_geoPoint2._long = longitude;
+                                                        tL_messageMediaVenue2.query_id = -1L;
+                                                        tL_messageMediaVenue2.title = sb7.toString();
+                                                        tL_messageMediaVenue2.icon = "https://ss3.4sqi.net/img/categories_v2/travel/hotel_64.png";
+                                                        tL_messageMediaVenue2.emoji = LocationController.countryCodeToEmoji(address2.getCountryCode());
+                                                        hashSet4.add(tL_messageMediaVenue2.title);
+                                                        tL_messageMediaVenue2.address = LocaleController.getString(R.string.PassportCity);
+                                                        if (address3 != null) {
+                                                            TL_stories.TL_geoPointAddress tL_geoPointAddress5 = new TL_stories.TL_geoPointAddress();
+                                                            tL_messageMediaVenue2.geoAddress = tL_geoPointAddress5;
+                                                            tL_geoPointAddress5.country_iso2 = address3.getCountryCode();
+                                                            String locality4 = TextUtils.isEmpty(r18) ? address3.getLocality() : r18;
+                                                            if (TextUtils.isEmpty(locality4)) {
+                                                                locality4 = address3.getAdminArea();
+                                                            }
+                                                            if (TextUtils.isEmpty(locality4)) {
+                                                                locality4 = address3.getSubAdminArea();
+                                                            }
+                                                            String adminArea2 = address3.getAdminArea();
+                                                            if (!TextUtils.isEmpty(adminArea2)) {
+                                                                TL_stories.TL_geoPointAddress tL_geoPointAddress6 = tL_messageMediaVenue2.geoAddress;
+                                                                tL_geoPointAddress6.state = adminArea2;
+                                                                tL_geoPointAddress6.flags |= 1;
+                                                            }
+                                                            if (!TextUtils.isEmpty(locality4)) {
+                                                                TL_stories.TL_geoPointAddress tL_geoPointAddress7 = tL_messageMediaVenue2.geoAddress;
+                                                                tL_geoPointAddress7.city = locality4;
+                                                                tL_geoPointAddress7.flags |= 2;
+                                                            }
                                                         }
-                                                        if (!z13) {
+                                                        arrayList6.add(tL_messageMediaVenue2);
+                                                        if (arrayList6.size() >= i10) {
+                                                            AndroidUtilities.runOnUIThread(new h5(cVar, location, str, arrayList6, 11));
                                                         }
                                                     }
-                                                } else {
-                                                    cVar = cVar2;
-                                                    sb4 = sb6;
                                                 }
-                                                z13 = false;
-                                                if (!z13) {
+                                                if (sb4.length() > 0) {
+                                                    hashSet3 = hashSet5;
+                                                    if (hashSet3.contains(sb4.toString())) {
+                                                        continue;
+                                                    } else {
+                                                        TLRPC.TL_messageMediaVenue tL_messageMediaVenue3 = new TLRPC.TL_messageMediaVenue();
+                                                        TLRPC.TL_geoPoint tL_geoPoint3 = new TLRPC.TL_geoPoint();
+                                                        tL_messageMediaVenue3.geo = tL_geoPoint3;
+                                                        tL_geoPoint3.lat = latitude;
+                                                        tL_geoPoint3._long = longitude;
+                                                        tL_messageMediaVenue3.query_id = -1L;
+                                                        tL_messageMediaVenue3.title = sb4.toString();
+                                                        tL_messageMediaVenue3.icon = "https://ss3.4sqi.net/img/categories_v2/building/government_capitolbuilding_64.png";
+                                                        tL_messageMediaVenue3.emoji = LocationController.countryCodeToEmoji(address2.getCountryCode());
+                                                        hashSet3.add(tL_messageMediaVenue3.title);
+                                                        tL_messageMediaVenue3.address = LocaleController.getString(R.string.Country);
+                                                        if (address3 != null) {
+                                                            TL_stories.TL_geoPointAddress tL_geoPointAddress8 = new TL_stories.TL_geoPointAddress();
+                                                            tL_messageMediaVenue3.geoAddress = tL_geoPointAddress8;
+                                                            tL_geoPointAddress8.country_iso2 = address3.getCountryCode();
+                                                        }
+                                                        arrayList6.add(tL_messageMediaVenue3);
+                                                        if (arrayList6.size() >= i10) {
+                                                            AndroidUtilities.runOnUIThread(new h5(cVar, location, str, arrayList6, 11));
+                                                        }
+                                                    }
                                                 }
+                                            } else {
+                                                StringBuilder sb9 = new StringBuilder();
+                                                try {
+                                                    String addressLine = address2.getAddressLine(0);
+                                                    if (!TextUtils.isEmpty(addressLine)) {
+                                                        sb9.append(addressLine);
+                                                    }
+                                                } catch (Exception unused5) {
+                                                }
+                                                if (sb9.length() > 0) {
+                                                    TLRPC.TL_messageMediaVenue tL_messageMediaVenue4 = new TLRPC.TL_messageMediaVenue();
+                                                    TLRPC.TL_geoPoint tL_geoPoint4 = new TLRPC.TL_geoPoint();
+                                                    tL_messageMediaVenue4.geo = tL_geoPoint4;
+                                                    tL_geoPoint4.lat = latitude;
+                                                    tL_geoPoint4._long = longitude;
+                                                    tL_messageMediaVenue4.query_id = -1L;
+                                                    tL_messageMediaVenue4.title = sb9.toString();
+                                                    tL_messageMediaVenue4.icon = "pin";
+                                                    tL_messageMediaVenue4.address = LocaleController.getString(R.string.PassportAddress);
+                                                    arrayList6.add(tL_messageMediaVenue4);
+                                                }
+                                                cVar = cVar2;
+                                                hashSet4 = hashSet7;
                                             }
-                                            i12 = i18;
-                                            if (!z12) {
-                                                TLRPC.TL_messageMediaVenue tL_messageMediaVenue22 = new TLRPC.TL_messageMediaVenue();
-                                                TLRPC.TL_geoPoint tL_geoPoint22 = new TLRPC.TL_geoPoint();
-                                                tL_messageMediaVenue22.geo = tL_geoPoint22;
-                                                tL_geoPoint22.lat = latitude;
-                                                tL_geoPoint22._long = longitude;
-                                                tL_messageMediaVenue22.query_id = -1L;
-                                                tL_messageMediaVenue22.title = sb7.toString();
-                                                tL_messageMediaVenue22.icon = "https://ss3.4sqi.net/img/categories_v2/travel/hotel_64.png";
-                                                tL_messageMediaVenue22.emoji = LocationController.countryCodeToEmoji(address2.getCountryCode());
-                                                hashSet2.add(tL_messageMediaVenue22.title);
-                                                tL_messageMediaVenue22.address = LocaleController.getString(R.string.PassportCity);
-                                                if (address3 != null) {
-                                                }
-                                                arrayList6.add(tL_messageMediaVenue22);
-                                                if (arrayList6.size() >= i12) {
-                                                }
-                                            }
-                                            if (sb4.length() > 0) {
-                                            }
+                                            hashSet3 = hashSet5;
                                         } else {
-                                            StringBuilder sb9 = new StringBuilder();
-                                            try {
-                                                String addressLine = address2.getAddressLine(0);
-                                                if (!TextUtils.isEmpty(addressLine)) {
-                                                    sb9.append(addressLine);
-                                                }
-                                            } catch (Exception unused5) {
+                                            if (sb2.length() > 0) {
+                                                sb2.append(", ");
                                             }
-                                            if (sb9.length() > 0) {
-                                                TLRPC.TL_messageMediaVenue tL_messageMediaVenue4 = new TLRPC.TL_messageMediaVenue();
-                                                TLRPC.TL_geoPoint tL_geoPoint4 = new TLRPC.TL_geoPoint();
-                                                tL_messageMediaVenue4.geo = tL_geoPoint4;
-                                                tL_geoPoint4.lat = latitude;
-                                                tL_geoPoint4._long = longitude;
-                                                tL_messageMediaVenue4.query_id = -1L;
-                                                tL_messageMediaVenue4.title = sb9.toString();
-                                                tL_messageMediaVenue4.icon = "pin";
-                                                tL_messageMediaVenue4.address = LocaleController.getString(R.string.PassportAddress);
-                                                arrayList6.add(tL_messageMediaVenue4);
-                                            }
-                                            cVar = cVar2;
-                                            i12 = i18;
+                                            sb2.append(locality2);
                                         }
-                                        hashSet3 = hashSet4;
                                     } else {
                                         if (sb2.length() > 0) {
                                             sb2.append(", ");
                                         }
-                                        sb2.append(locality2);
+                                        sb2.append(subLocality);
                                     }
                                 } else {
                                     if (sb2.length() > 0) {
                                         sb2.append(", ");
                                     }
-                                    sb2.append(subLocality);
+                                    sb2.append(thoroughfare);
                                 }
-                            } else {
-                                if (sb2.length() > 0) {
-                                    sb2.append(", ");
+                                z10 = false;
+                                if (TextUtils.isEmpty(str3)) {
                                 }
-                                sb2.append(thoroughfare);
+                                boolean z152 = z10;
+                                countryName = address2.getCountryName();
+                                if (TextUtils.isEmpty(countryName)) {
+                                }
+                                if (cVar2.e) {
+                                }
+                                hashSet3 = hashSet5;
                             }
-                            z10 = false;
-                            if (TextUtils.isEmpty(str3)) {
-                            }
-                            boolean z152 = z10;
-                            countryName = address2.getCountryName();
-                            if (TextUtils.isEmpty(countryName)) {
-                            }
-                            if (cVar2.e) {
-                            }
-                            hashSet3 = hashSet4;
+                            i11 = i12 + 1;
+                            hashSet2 = hashSet4;
+                            hashSet = hashSet3;
+                            user2 = r18;
+                            str6 = str2;
+                            locale2 = locale;
+                            fromLocationName2 = list;
+                            location2 = location;
+                            str8 = str;
+                            fromLocationName = list2;
+                            cVar2 = cVar;
                         }
-                        i11 = i13 + 1;
-                        i10 = i12;
-                        hashSet = hashSet3;
-                        str6 = str2;
-                        locale2 = locale;
-                        fromLocationName2 = list;
-                        location2 = location;
-                        fromLocationName = list2;
-                        str8 = str;
-                        cVar2 = cVar;
+                    } else {
+                        user = user2;
                     }
-                    address = null;
+                    address = user;
+                    r18 = user;
                     if (address2.hasLatitude()) {
                     }
                     locale = locale2;
                     str2 = str6;
                     list = fromLocationName2;
                     hashSet3 = hashSet;
-                    i12 = i10;
+                    hashSet4 = hashSet2;
                     cVar = cVar2;
                     location = location2;
                     str = str8;
+                    i12 = i11;
                     list2 = fromLocationName;
-                    i13 = i11;
-                    i11 = i13 + 1;
-                    i10 = i12;
+                    i11 = i12 + 1;
+                    hashSet2 = hashSet4;
                     hashSet = hashSet3;
+                    user2 = r18;
                     str6 = str2;
                     locale2 = locale;
                     fromLocationName2 = list;
                     location2 = location;
-                    fromLocationName = list2;
                     str8 = str;
+                    fromLocationName = list2;
                     cVar2 = cVar;
                 }
                 cVar = cVar2;
@@ -704,26 +699,23 @@ public final /* synthetic */ class z8 implements Runnable {
                     if (tL_error == null) {
                         TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer2 = (TLRPC.TL_contacts_resolvedPeer) tLObject2;
                         if (!tL_contacts_resolvedPeer2.users.isEmpty()) {
-                            TLRPC.User user3 = tL_contacts_resolvedPeer2.users.get(0);
-                            messagesController2.putUser(user3, false);
+                            TLRPC.User user5 = tL_contacts_resolvedPeer2.users.get(0);
+                            messagesController2.putUser(user5, false);
                             messagesStorage.putUsersAndChats(tL_contacts_resolvedPeer2.users, null, true, true);
-                            user = user3;
-                            k1Var.R(user);
-                            k1Var.t0 = 0;
-                            break;
+                            user2 = user5;
                         }
                     }
-                    user = null;
-                    k1Var.R(user);
+                    k1Var.R(user2);
                     k1Var.t0 = 0;
+                    break;
                 }
                 break;
             case 4:
                 TLObject tLObject3 = (TLObject) this.b;
                 String[] strArr2 = (String[]) this.c;
                 final FrameLayout frameLayout = (FrameLayout) this.d;
-                final p90 p90Var = (p90) this.e;
-                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.f;
+                final q90 q90Var = (q90) this.e;
+                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.f;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.h;
                 if (tLObject3 instanceof TL_phone.exportedGroupCallInvite) {
                     final String str12 = ((TL_phone.exportedGroupCallInvite) tLObject3).link;
@@ -733,7 +725,7 @@ public final /* synthetic */ class z8 implements Runnable {
                     }
                     ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(220L);
                     final AtomicBoolean atomicBoolean = new AtomicBoolean();
-                    duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.i8
+                    duration.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.l8
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
@@ -747,29 +739,29 @@ public final /* synthetic */ class z8 implements Runnable {
                                     return;
                                 }
                                 atomicBoolean2.set(true);
-                                p90Var.setText(str12);
+                                q90Var.setText(str12);
                             }
                         }
                     });
-                    duration.addListener(new org.telegram.ui.b9(atomicBoolean, p90Var, str12));
+                    duration.addListener(new org.telegram.ui.d9(atomicBoolean, q90Var, str12));
                     duration.start();
-                    new yc(e3Var.topBulletinContainer, d6Var).M(LocaleController.getString(R.string.GroupCallCreatedLinkRevokedTitle), LocaleController.getString(R.string.GroupCallCreatedLinkRevokedText), R.raw.linkbroken).j();
+                    new yc(f3Var.topBulletinContainer, d6Var).M(LocaleController.getString(R.string.GroupCallCreatedLinkRevokedTitle), LocaleController.getString(R.string.GroupCallCreatedLinkRevokedText), R.raw.linkbroken).j();
                     break;
                 }
                 break;
             case 5:
-                org.telegram.ui.ub ubVar = (org.telegram.ui.ub) this.b;
+                org.telegram.ui.wb wbVar = (org.telegram.ui.wb) this.b;
                 TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) this.f;
                 ArrayList arrayList7 = (ArrayList) this.c;
                 ArrayList arrayList8 = (ArrayList) this.d;
                 ArrayList arrayList9 = (ArrayList) this.e;
-                org.telegram.ui.ra raVar = (org.telegram.ui.ra) this.h;
-                TLRPC.Chat chat = ubVar.f;
-                ubVar.Z = channelParticipant;
+                org.telegram.ui.ta taVar = (org.telegram.ui.ta) this.h;
+                TLRPC.Chat chat = wbVar.f;
+                wbVar.Z = channelParticipant;
                 if (channelParticipant != null) {
                     if (channelParticipant.peer instanceof TLRPC.TL_peerUser) {
                         if (ChatObject.isChannel(chat)) {
-                            TLRPC.ChannelParticipant adminInChannel = ubVar.getMessagesController().getAdminInChannel(channelParticipant.peer.user_id, chat.id);
+                            TLRPC.ChannelParticipant adminInChannel = wbVar.getMessagesController().getAdminInChannel(channelParticipant.peer.user_id, chat.id);
                             if (adminInChannel != null) {
                                 if (!(adminInChannel instanceof TLRPC.TL_channelParticipantCreator)) {
                                     break;
@@ -777,7 +769,7 @@ public final /* synthetic */ class z8 implements Runnable {
                                 break;
                             }
                         } else {
-                            TLRPC.ChatFull chatFull = ubVar.getMessagesController().getChatFull(chat.id);
+                            TLRPC.ChatFull chatFull = wbVar.getMessagesController().getChatFull(chat.id);
                             if (chatFull != null && (chatParticipants = chatFull.participants) != null) {
                                 int size = chatParticipants.participants.size();
                                 while (true) {
@@ -802,71 +794,71 @@ public final /* synthetic */ class z8 implements Runnable {
                     arrayList7.add(LocaleController.getString(R.string.Ban));
                     org.telegram.ui.Cells.c1.m(R.drawable.msg_block, 35, arrayList8, arrayList9);
                 }
-                raVar.run();
+                taVar.run();
                 break;
             case 6:
-                wn wnVar = (wn) this.b;
+                yn ynVar = (yn) this.b;
                 nf.e eVar = (nf.e) this.c;
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.d;
                 String str13 = (String) this.e;
                 TLObject tLObject4 = (TLObject) this.f;
                 CharacterStyle characterStyle = (CharacterStyle) this.h;
                 eVar.b();
-                a80 I = a80.I(wnVar, u1Var);
-                om0 om0Var = new om0(wnVar.getParentActivity(), wnVar.ea);
-                I.p = new qe(om0Var, 0);
-                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyCardNumber), new xe(wnVar, om0Var, str13, 1), false);
+                b80 I = b80.I(ynVar, u1Var);
+                sm0 sm0Var = new sm0(ynVar.getParentActivity(), ynVar.ca);
+                I.p = new se(sm0Var, 0);
+                I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyCardNumber), new af(ynVar, sm0Var, str13, i14), false);
                 if (tLObject4 instanceof TLRPC.TL_payments_bankCardData) {
                     TLRPC.TL_payments_bankCardData tL_payments_bankCardData = (TLRPC.TL_payments_bankCardData) tLObject4;
                     ArrayList<TLRPC.TL_bankCardOpenUrl> arrayList10 = tL_payments_bankCardData.open_urls;
                     int size2 = arrayList10.size();
-                    int i22 = 0;
-                    while (i22 < size2) {
-                        TLRPC.TL_bankCardOpenUrl tL_bankCardOpenUrl = arrayList10.get(i22);
-                        i22++;
+                    int i21 = 0;
+                    while (i21 < size2) {
+                        TLRPC.TL_bankCardOpenUrl tL_bankCardOpenUrl = arrayList10.get(i21);
+                        i21++;
                         TLRPC.TL_bankCardOpenUrl tL_bankCardOpenUrl2 = tL_bankCardOpenUrl;
-                        I.c(R.drawable.msg_payment_card, tL_bankCardOpenUrl2.name, new dh(1, wnVar, tL_bankCardOpenUrl2), false);
+                        I.c(R.drawable.msg_payment_card, tL_bankCardOpenUrl2.name, new oh(i15, ynVar, tL_bankCardOpenUrl2), false);
                     }
                     if (!TextUtils.isEmpty(tL_payments_bankCardData.title)) {
                         I.k();
                         I.p(13, AndroidUtilities.dp(200.0f), tL_payments_bankCardData.title);
                     }
                 }
-                om0Var.e(I);
-                om0Var.f(u1Var, characterStyle, null, false);
-                wnVar.showDialog(om0Var);
+                sm0Var.e(I);
+                sm0Var.f(u1Var, characterStyle, null, false);
+                ynVar.showDialog(sm0Var);
                 break;
             case 7:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.b;
                 Context context = (Context) this.c;
                 org.telegram.ui.ActionBar.d6 d6Var2 = (org.telegram.ui.ActionBar.d6) this.d;
                 ci.d dVar = (ci.d) this.e;
-                org.telegram.ui.ActionBar.e3 e3Var2 = (org.telegram.ui.ActionBar.e3) this.f;
+                org.telegram.ui.ActionBar.f3 f3Var2 = (org.telegram.ui.ActionBar.f3) this.f;
                 Runnable runnable = (Runnable) this.h;
                 if (tL_error2 != null) {
-                    new yc(org.telegram.ui.Components.lb.a(context), d6Var2).d0(tL_error2, false);
+                    new yc(org.telegram.ui.Components.mb.a(context), d6Var2).d0(tL_error2, false);
                     break;
                 } else {
                     dVar.setLoading(false);
-                    e3Var2.dismiss();
-                    new yc(org.telegram.ui.Components.lb.a(context), d6Var2).Q(R.raw.chats_infotip, 36, LocaleController.getString(R.string.PremiumReadSet)).j();
+                    f3Var2.dismiss();
+                    new yc(org.telegram.ui.Components.mb.a(context), d6Var2).Q(R.raw.chats_infotip, 36, LocaleController.getString(R.string.PremiumReadSet)).j();
                     runnable.run();
                     break;
                 }
             case 8:
-                hy0 hy0Var = (hy0) this.b;
+                qy0 qy0Var = (qy0) this.b;
                 TLObject tLObject5 = (TLObject) this.c;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
                 TextView textView = (TextView) this.e;
                 TextView textView2 = (TextView) this.f;
                 int[] iArr2 = (int[]) this.h;
-                hy0Var.getClass();
+                qy0Var.getClass();
                 if (!(tLObject5 instanceof TLRPC.TL_stickers_suggestedShortName) || (str5 = ((TLRPC.TL_stickers_suggestedShortName) tLObject5).short_name) == null) {
                     z14 = false;
                 } else {
                     editTextBoldCursor.setText(str5);
                     editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
-                    hy0Var.m0(textView, editTextBoldCursor.getText().toString(), true);
+                    qy0Var.m0(textView, editTextBoldCursor.getText().toString(), true);
                     z14 = true;
                 }
                 textView2.setVisibility(0);
@@ -877,78 +869,78 @@ public final /* synthetic */ class z8 implements Runnable {
                 iArr2[0] = 2;
                 break;
             case 9:
-                gn0.W((gn0) this.b, (TLRPC.TL_error) this.c, (String) this.d, (wm0) this.e, (TLObject) this.f, (TL_account.sendVerifyPhoneCode) this.h);
+                kn0.U((kn0) this.b, (TLRPC.TL_error) this.c, (String) this.d, (an0) this.e, (TLObject) this.f, (TL_account.sendVerifyPhoneCode) this.h);
                 break;
             case 10:
-                t31.n((t31) this.b, (TLObject) this.c, (CharSequence) this.d, (TLRPC.TL_error) this.e, (byte[]) this.f, (String) this.h);
+                v31.n((v31) this.b, (TLObject) this.c, (CharSequence) this.d, (TLRPC.TL_error) this.e, (byte[]) this.f, (String) this.h);
                 break;
             case 11:
                 TLObject tLObject6 = (TLObject) this.b;
                 Context context2 = (Context) this.c;
                 org.telegram.ui.ActionBar.d6 d6Var3 = (org.telegram.ui.ActionBar.d6) this.d;
                 byte[] bArr = (byte[]) this.e;
-                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.f;
-                yn0 yn0Var = (yn0) this.h;
-                t31 t31Var = new t31(context2, d6Var3, 0L, bArr);
-                t31Var.O((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject6);
-                t31Var.s = new n31(m2Var, context2, d6Var3, yn0Var);
-                t31Var.show();
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.f;
+                yw ywVar = (yw) this.h;
+                v31 v31Var = new v31(context2, d6Var3, 0L, bArr);
+                v31Var.M((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject6);
+                v31Var.s = new p31(n2Var, context2, d6Var3, ywVar);
+                v31Var.show();
                 break;
             case 12:
-                k71.R((k71) this.b, (TLRPC.TL_error) this.c, (TLRPC.InputCheckPasswordSRP) this.d, (TLRPC.User) this.e, (TwoStepVerificationActivity) this.f, (TLRPC.TL_channels_editCreator) this.h);
+                m71.P((m71) this.b, (TLRPC.TL_error) this.c, (TLRPC.InputCheckPasswordSRP) this.d, (TLRPC.User) this.e, (TwoStepVerificationActivity) this.f, (TLRPC.TL_channels_editCreator) this.h);
                 break;
             case 13:
-                org.telegram.ui.web.b1 b1Var2 = (org.telegram.ui.web.b1) this.b;
+                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) this.b;
                 TLObject tLObject7 = (TLObject) this.c;
                 TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = (TLRPC.TL_messages_requestUrlAuth) this.d;
                 String str14 = (String) this.e;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.f;
                 String str15 = (String) this.h;
-                org.telegram.ui.ActionBar.d6 d6Var4 = b1Var2.e;
+                org.telegram.ui.ActionBar.d6 d6Var4 = c1Var.e;
                 if (tLObject7 != null) {
                     if (tLObject7 instanceof TLRPC.TL_urlAuthResultRequest) {
-                        cl0.b(false, b1Var2.M, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultRequest) tLObject7, null, null, null, false, b1Var2);
+                        gl0.b(false, c1Var.M, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultRequest) tLObject7, null, null, null, false, c1Var);
                         break;
                     } else if (tLObject7 instanceof TLRPC.TL_urlAuthResultAccepted) {
-                        cl0.b(false, b1Var2.M, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultAccepted) tLObject7, null, null, null, false, b1Var2);
+                        gl0.b(false, c1Var.M, tL_messages_requestUrlAuth, (TLRPC.TL_urlAuthResultAccepted) tLObject7, null, null, null, false, c1Var);
                         break;
                     } else if (tLObject7 instanceof TLRPC.TL_urlAuthResultDefault) {
-                        org.telegram.ui.Components.e5.p0(b1Var2.getContext(), str14, false, true, true, false, 0L, null, null, null);
+                        org.telegram.ui.Components.e5.p0(c1Var.getContext(), str14, false, true, true, false, 0L, null, null, null);
                         break;
                     }
                 } else if (tL_error3 != null) {
                     if ("URL_EXPIRED".equalsIgnoreCase(tL_error3.text)) {
-                        new yc(b1Var2, d6Var4).M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str15), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, d6Var4)), R.raw.error).j();
+                        new yc(c1Var, d6Var4).M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str15), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Gi, d6Var4)), R.raw.error).j();
                         break;
                     } else {
-                        new yc(b1Var2, d6Var4).d0(tL_error3, false);
+                        new yc(c1Var, d6Var4).d0(tL_error3, false);
                         break;
                     }
                 }
                 break;
             case 14:
-                org.telegram.ui.web.b1 b1Var3 = (org.telegram.ui.web.b1) this.b;
+                org.telegram.ui.web.c1 c1Var2 = (org.telegram.ui.web.c1) this.b;
                 File file = (File) this.c;
-                org.telegram.ui.ActionBar.a2 a2Var = (org.telegram.ui.ActionBar.a2) this.d;
+                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.d;
                 String str16 = (String) this.e;
                 String str17 = (String) this.f;
                 String str18 = (String) this.h;
                 if (file == null) {
-                    a2Var.c(500L);
+                    b2Var.c(500L);
                     break;
                 } else {
                     int[] iArr3 = new int[11];
-                    Utilities.globalQueue.postRunnable(new en0(file, iArr3, new ye(b1Var3, iArr3, file, a2Var, str16, str17, str18, 7), 18));
+                    Utilities.globalQueue.postRunnable(new in0(file, iArr3, new bf(c1Var2, iArr3, file, b2Var, str16, str17, str18, 7), 18));
                     break;
                 }
             case 15:
-                xh.r1.P((xh.r1) this.b, (org.telegram.ui.ActionBar.a2) this.c, (TLObject) this.d, (xh.o0) this.e, (Utilities.Callback) this.f, (TLRPC.TL_error) this.h);
+                xh.q1.N((xh.q1) this.b, (org.telegram.ui.ActionBar.b2) this.c, (TLObject) this.d, (xh.o0) this.e, (Utilities.Callback) this.f, (TLRPC.TL_error) this.h);
                 break;
             case 16:
                 yh.x3.c1((yh.x3) this.b, (TLObject) this.c, (CharSequence) this.d, (TL_stars.TL_starGiftUnique) this.e, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) this.f, (TLRPC.TL_error) this.h);
                 break;
             case 17:
-                yh.x3.y0((yh.x3) this.b, (TLObject) this.c, (tg.m1[]) this.d, (Long) this.e, (tg.r) this.f, (TLRPC.TL_error) this.h);
+                yh.x3.y0((yh.x3) this.b, (TLObject) this.c, (tg.m1[]) this.d, (Long) this.e, (tg.q) this.f, (TLRPC.TL_error) this.h);
                 break;
             case 18:
                 a();
@@ -970,7 +962,7 @@ public final /* synthetic */ class z8 implements Runnable {
                 Utilities.Callback callback = (Utilities.Callback) this.f;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.h;
                 long j3 = j5Var.b;
-                int i23 = j5Var.a;
+                int i22 = j5Var.a;
                 HashMap hashMap = j5Var.h;
                 ArrayList arrayList11 = j5Var.e;
                 j5Var.k = false;
@@ -979,11 +971,11 @@ public final /* synthetic */ class z8 implements Runnable {
                     arrayList11.remove(tL_starGiftCollection);
                     arrayList11.add(tL_starGiftCollection2);
                     hashMap.remove(-1);
-                    int i24 = tL_starGiftCollection2.collection_id;
-                    k5Var.d = i24;
-                    hashMap.put(Integer.valueOf(i24), k5Var);
+                    int i23 = tL_starGiftCollection2.collection_id;
+                    k5Var.d = i23;
+                    hashMap.put(Integer.valueOf(i23), k5Var);
                     j5Var.j();
-                    NotificationCenter.getInstance(i23).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j3), j5Var);
+                    NotificationCenter.getInstance(i22).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j3), j5Var);
                     if (callback != null) {
                         callback.run(tL_starGiftCollection2);
                         break;
@@ -995,20 +987,20 @@ public final /* synthetic */ class z8 implements Runnable {
                     arrayList11.remove(tL_starGiftCollection);
                     hashMap.remove(-1);
                     j5Var.j();
-                    NotificationCenter.getInstance(i23).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j3), j5Var);
+                    NotificationCenter.getInstance(i22).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j3), j5Var);
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ z8(org.telegram.ui.ub ubVar, TLRPC.ChannelParticipant channelParticipant, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, org.telegram.ui.ra raVar) {
+    public /* synthetic */ z8(org.telegram.ui.wb wbVar, TLRPC.ChannelParticipant channelParticipant, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, org.telegram.ui.ta taVar) {
         this.a = 5;
-        this.b = ubVar;
+        this.b = wbVar;
         this.f = channelParticipant;
         this.c = arrayList;
         this.d = arrayList2;
         this.e = arrayList3;
-        this.h = raVar;
+        this.h = taVar;
     }
 }

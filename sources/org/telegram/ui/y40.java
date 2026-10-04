@@ -1,29 +1,44 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class y40 extends org.telegram.ui.Components.wq0 {
-    public final /* synthetic */ d60 b1;
+public final class y40 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ ChatObject.VideoParticipant a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ h60 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y40(d60 d60Var, Context context, String str, String str2, String str3, String str4) {
-        super(context, null, str, str2, false, str3, str4, true);
-        this.b1 = d60Var;
+    public y40(h60 h60Var, ChatObject.VideoParticipant videoParticipant, boolean z10) {
+        this.c = h60Var;
+        this.a = videoParticipant;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.wq0
-    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            int m10 = iVar.m();
-            d60 d60Var = this.b1;
-            if (m10 == 1) {
-                d60Var.k1().m(((TLRPC.Dialog) iVar.n(0)).id, Integer.valueOf(i10), 41);
-            } else {
-                d60Var.k1().k(0L, 41, Integer.valueOf(i10), Integer.valueOf(iVar.m()), null, null);
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        ViewGroup viewGroup;
+        h60 h60Var = this.c;
+        o50 o50Var = h60Var.Q;
+        o50Var.getViewTreeObserver().removeOnPreDrawListener(this);
+        h60Var.q2 = null;
+        a40 a40Var = h60Var.a2;
+        ChatObject.VideoParticipant videoParticipant = this.a;
+        a40Var.j(videoParticipant);
+        if (h60Var.s0) {
+            h60Var.s0 = false;
+            h60Var.O0(true);
+            if (this.b && videoParticipant != null) {
+                o50Var.v0(0);
             }
+            h60Var.s0 = true;
+        } else {
+            h60Var.O0(true);
         }
+        viewGroup = ((org.telegram.ui.ActionBar.f3) h60Var).containerView;
+        viewGroup.requestLayout();
+        return false;
     }
 }

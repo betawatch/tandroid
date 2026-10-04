@@ -13,23 +13,23 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pp;
+import org.telegram.ui.Components.qp;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class z5 extends FrameLayout {
     public org.telegram.ui.Components.w9 a;
     public FrameLayout b;
-    public pp c;
+    public qp c;
     public TextView d;
-    public org.telegram.ui.t5 e;
+    public org.telegram.ui.u5 e;
     public int f;
     public int h;
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.c.b(org.telegram.ui.ActionBar.h6.W9, org.telegram.ui.ActionBar.h6.X9, org.telegram.ui.ActionBar.h6.V9);
+        this.c.b(org.telegram.ui.ActionBar.i6.W9, org.telegram.ui.ActionBar.i6.X9, org.telegram.ui.ActionBar.i6.V9);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -38,7 +38,7 @@ public final class z5 extends FrameLayout {
     }
 
     public void setImage(MediaController.PhotoEntry photoEntry) {
-        org.telegram.ui.t5 t5Var = this.e;
+        org.telegram.ui.u5 u5Var = this.e;
         org.telegram.ui.Components.w9 w9Var = this.a;
         Drawable drawable = getResources().getDrawable(R.drawable.nophotos);
         String str = photoEntry.thumbPath;
@@ -52,18 +52,18 @@ public final class z5 extends FrameLayout {
         }
         w9Var.p(photoEntry.orientation, photoEntry.invert, true);
         if (photoEntry.isLivePhoto()) {
-            t5Var.setVisibility(4);
+            u5Var.setVisibility(4);
             setContentDescription(LocaleController.getString(R.string.AttachLivePhoto));
             w9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
             return;
         }
         if (!photoEntry.isVideo) {
-            t5Var.setVisibility(4);
+            u5Var.setVisibility(4);
             setContentDescription(LocaleController.getString(R.string.AttachPhoto));
             w9Var.f("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
             return;
         }
-        t5Var.setVisibility(0);
+        u5Var.setVisibility(0);
         this.d.setText(AndroidUtilities.formatShortDuration(photoEntry.duration));
         StringBuilder sb2 = new StringBuilder();
         c1.n(R.string.AttachVideo, ", ", sb2);

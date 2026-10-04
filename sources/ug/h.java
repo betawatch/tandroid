@@ -1,6 +1,5 @@
 package ug;
 
-import ai.z5;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
@@ -19,29 +18,29 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Cells.u3;
 import org.telegram.ui.Cells.v3;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.kx0;
-import org.telegram.ui.Components.pp;
-import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.qp;
+import org.telegram.ui.Components.sq;
+import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.ny0;
-import org.telegram.ui.web.f1;
+import org.telegram.ui.Components.zl0;
+import org.telegram.ui.py0;
+import org.telegram.ui.web.x1;
 import s4.c1;
 import s4.p0;
-import w7.y5;
+import w7.z5;
 import xg.l;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class h extends og.b {
     public final d6 d;
     public final Context e;
-    public yl0 f;
+    public zl0 f;
     public ArrayList n;
     public boolean s;
     public v3 v;
@@ -57,10 +56,10 @@ public final class h extends og.b {
         this.d = d6Var;
         q1 q1Var = new q1(this, 18);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(UserConfig.selectedAccount);
-        messagesStorage.getStorageQueue().postRunnable(new f1(26, messagesStorage, q1Var));
+        messagesStorage.getStorageQueue().postRunnable(new x1(26, messagesStorage, q1Var));
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 3 || i10 == 6 || i10 == 9;
@@ -139,7 +138,7 @@ public final class h extends og.b {
             }
             if (i12 == 5) {
                 try {
-                    ((kx0) view).b.getImageReceiver().startAnimation();
+                    ((tx0) view).b.getImageReceiver().startAnimation();
                     return;
                 } catch (Exception unused) {
                     return;
@@ -148,7 +147,7 @@ public final class h extends og.b {
             if (i12 != 8) {
                 if (i12 == 9) {
                     r8 r8Var = (r8) view;
-                    r8Var.e(h6.v6, h6.u6);
+                    r8Var.e(i6.v6, i6.u6);
                     r8Var.m(gVar.j, gVar.g, false);
                     return;
                 } else {
@@ -158,7 +157,7 @@ public final class h extends og.b {
                             return;
                         }
                         AndroidUtilities.removeFromParent(gVar.q);
-                        frameLayout.addView(gVar.q, y5.c(-2.0f, -1));
+                        frameLayout.addView(gVar.q, z5.c(-2.0f, -1));
                         return;
                     }
                     return;
@@ -175,10 +174,10 @@ public final class h extends og.b {
                 v3Var.setText(Emoji.replaceWithRestrictedEmoji(gVar.g, v3Var.getTextView(), (Runnable) null));
                 if (!TextUtils.isEmpty(gVar.h)) {
                     String str2 = gVar.h;
-                    ny0 ny0Var = gVar.m;
+                    py0 py0Var = gVar.m;
                     u3 u3Var = v3Var.b;
                     u3Var.c(str2, false, true);
-                    u3Var.setOnClickListener(ny0Var);
+                    u3Var.setOnClickListener(py0Var);
                     u3Var.setVisibility(0);
                 }
             }
@@ -186,8 +185,8 @@ public final class h extends og.b {
             return;
         }
         l lVar = (l) view;
-        rq rqVar = gVar.r;
-        if (rqVar != null) {
+        sq sqVar = gVar.r;
+        if (sqVar != null) {
             CharSequence charSequence = gVar.g;
             String str3 = gVar.h;
             lVar.v.setVisibility(8);
@@ -195,16 +194,16 @@ public final class h extends og.b {
             lVar.H = null;
             w9 w9Var = lVar.c;
             w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-            w9Var.setImageDrawable(rqVar);
-            z5 z5Var = lVar.d;
+            w9Var.setImageDrawable(sqVar);
+            ai.z5 z5Var = lVar.d;
             z5Var.k(charSequence);
             boolean[] zArr = lVar.r;
             zArr[0] = false;
             lVar.setSubtitle(str3);
-            lVar.e.setTextColor(h6.v0(zArr[0] ? h6.n5 : h6.r5, lVar.a));
-            pp ppVar = lVar.s;
-            if (ppVar != null) {
-                ppVar.setAlpha(1.0f);
+            lVar.e.setTextColor(i6.v0(zArr[0] ? i6.n5 : i6.r5, lVar.a));
+            qp qpVar = lVar.s;
+            if (qpVar != null) {
+                qpVar.setAlpha(1.0f);
             }
             z5Var.i(null);
         } else {
@@ -214,7 +213,7 @@ public final class h extends og.b {
                 String str4 = gVar.h;
                 if (str4 != null) {
                     lVar.setSubtitle(str4);
-                    lVar.e.setTextColor(h6.v0(h6.r5, this.d));
+                    lVar.e.setTextColor(i6.v0(i6.r5, this.d));
                 }
             } else {
                 TLRPC.Chat chat = gVar.e;
@@ -277,11 +276,11 @@ public final class h extends og.b {
         } else {
             d6 d6Var = this.d;
             if (i10 == 5) {
-                kx0 kx0Var = new kx0(context, null, 1, d6Var);
-                kx0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                kx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                kx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
-                lVar = kx0Var;
+                tx0 tx0Var = new tx0(context, null, 1, d6Var);
+                tx0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                tx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                tx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
+                lVar = tx0Var;
             } else {
                 boolean z10 = this.h;
                 if (i10 == 7) {

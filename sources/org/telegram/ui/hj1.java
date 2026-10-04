@@ -24,23 +24,23 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class hj1 extends org.telegram.ui.ActionBar.m2 {
+public final class hj1 extends org.telegram.ui.ActionBar.n2 {
     public WebView a;
-    public org.telegram.ui.ActionBar.u0 b;
-    public org.telegram.ui.Components.vq c;
+    public org.telegram.ui.ActionBar.v0 b;
+    public org.telegram.ui.Components.wq c;
     public final String d;
     public final String e;
     public final String f;
     public final String h;
     public final MessageObject n;
     public final String r;
-    public w5 s;
+    public x5 s;
 
     public hj1(String str, String str2, String str3, String str4, MessageObject messageObject) {
         super(null);
-        this.s = new w5(this, 15);
+        this.s = new x5(this, 15);
         this.d = str;
         this.e = str2;
         this.f = str3;
@@ -50,11 +50,11 @@ public final class hj1 extends org.telegram.ui.ActionBar.m2 {
         sb2.append(MessagesController.getInstance(this.currentAccount).linkPrefix);
         sb2.append("/");
         sb2.append(str2);
-        sb2.append(TextUtils.isEmpty(str4) ? "" : v7.j.g("?game=", str4));
+        sb2.append(TextUtils.isEmpty(str4) ? "" : t8.b.i("?game=", str4));
         this.h = sb2.toString();
     }
 
-    public static void V(String str, MessageObject messageObject, Activity activity, String str2, String str3) {
+    public static void T(String str, MessageObject messageObject, Activity activity, String str2, String str3) {
         String str4;
         String str5 = "";
         try {
@@ -98,24 +98,24 @@ public final class hj1 extends org.telegram.ui.ActionBar.m2 {
             edit.commit();
             nf.f.o(activity, str4, false);
             serializedData.cleanup();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
+    @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new fj1(this));
-        org.telegram.ui.ActionBar.y n10 = this.actionBar.n();
+        org.telegram.ui.ActionBar.z n10 = this.actionBar.n();
         this.b = n10.g(1, R.drawable.share, AndroidUtilities.dp(54.0f));
         n10.a(0, R.drawable.ic_ab_other).e(2, R.drawable.msg_openin, LocaleController.getString(R.string.OpenInExternalApp));
         this.actionBar.setTitle(this.f);
         this.actionBar.setSubtitle("@" + this.e);
-        org.telegram.ui.Components.vq vqVar = new org.telegram.ui.Components.vq(context, 1);
-        this.c = vqVar;
-        this.b.addView(vqVar, w7.y5.c(-1.0f, -1));
+        org.telegram.ui.Components.wq wqVar = new org.telegram.ui.Components.wq(context, 1);
+        this.c = wqVar;
+        this.b.addView(wqVar, w7.z5.c(-1.0f, -1));
         this.c.setAlpha(0.0f);
         this.c.setScaleX(0.1f);
         this.c.setScaleY(0.1f);
@@ -133,33 +133,33 @@ public final class hj1 extends org.telegram.ui.ActionBar.m2 {
         this.a.getSettings().setMixedContentMode(0);
         CookieManager.getInstance().setAcceptThirdPartyCookies(this.a, true);
         this.a.addJavascriptInterface(new gj1(this), "TelegramWebviewProxy");
-        this.a.setWebViewClient(new oi.i(this, 2));
-        frameLayout.addView(this.a, w7.y5.c(-1.0f, -1));
+        this.a.setWebViewClient(new org.telegram.ui.Components.zf0(this, 1));
+        frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
+    @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.h6.d6));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, 1, null, null, null, null, org.telegram.ui.ActionBar.h6.s8));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.h6.v8));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.h6.A8));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.h6.t8));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, TLObject.FLAG_31, null, null, null, null, org.telegram.ui.ActionBar.h6.G8));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, TLObject.FLAG_30, null, null, null, null, org.telegram.ui.ActionBar.h6.E8));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.actionBar, 1073741832, null, null, null, null, org.telegram.ui.ActionBar.h6.F8));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.c, 0, null, null, null, null, org.telegram.ui.ActionBar.h6.D7));
-        arrayList.add(new org.telegram.ui.ActionBar.j6(this.c, 0, null, null, null, null, org.telegram.ui.ActionBar.h6.E7));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.i6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 1, null, null, null, null, org.telegram.ui.ActionBar.i6.s8));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.i6.v8));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.i6.A8));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.i6.t8));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, TLObject.FLAG_31, null, null, null, null, org.telegram.ui.ActionBar.i6.G8));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, TLObject.FLAG_30, null, null, null, null, org.telegram.ui.ActionBar.i6.E8));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 1073741832, null, null, null, null, org.telegram.ui.ActionBar.i6.F8));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.c, 0, null, null, null, null, org.telegram.ui.ActionBar.i6.D7));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.c, 0, null, null, null, null, org.telegram.ui.ActionBar.i6.E7));
         return arrayList;
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         AndroidUtilities.checkAndroidTheme(getParentActivity(), false);
@@ -175,19 +175,19 @@ public final class hj1 extends org.telegram.ui.ActionBar.m2 {
             this.a.loadUrl("about:blank");
             this.a.destroy();
             this.a = null;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onResume() {
         super.onResume();
         AndroidUtilities.cancelRunOnUIThread(this.s);
         this.s.run();
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
         WebView webView;
         if (!z10 || z11 || (webView = this.a) == null) {

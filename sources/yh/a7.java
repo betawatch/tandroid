@@ -1,61 +1,99 @@
 package yh;
 
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.w9;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.ld0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class a7 extends w9 {
-    public vh.f G;
-    public Path H;
-    public RectF I;
-    public Drawable J;
+public final class a7 implements TextWatcher {
+    public boolean a;
+    public int b = 2;
+    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ ld0 d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ ci.d h;
+    public final /* synthetic */ TextView n;
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        RectF rectF = this.I;
-        Path path = this.H;
-        Drawable drawable = this.J;
-        super.dispatchDraw(canvas);
-        if (this.G == null) {
-            this.G = vh.f.e(this);
+    public a7(EditTextBoldCursor editTextBoldCursor, ld0 ld0Var, long j3, boolean z10, ci.d dVar, TextView textView) {
+        this.c = editTextBoldCursor;
+        this.d = ld0Var;
+        this.e = j3;
+        this.f = z10;
+        this.h = dVar;
+        this.n = textView;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0098  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00a8  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        long j3;
+        ld0 ld0Var = this.d;
+        EditTextBoldCursor editTextBoldCursor = this.c;
+        if (this.a) {
+            return;
         }
-        if (this.G != null) {
-            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-            path.rewind();
-            path.addRoundRect(rectF, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), Path.Direction.CW);
-            canvas.save();
-            canvas.clipPath(path);
-            canvas2 = canvas;
-            this.G.c(canvas2, this, getWidth(), getHeight(), 1.0f, false);
-            canvas2.restore();
+        try {
+            j3 = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
+        } catch (Exception unused) {
+            j3 = 0;
+        }
+        try {
+            if (j3 > MessagesController.getInstance(UserConfig.selectedAccount).starsPaidPostAmountMax) {
+                this.a = true;
+                j3 = MessagesController.getInstance(UserConfig.selectedAccount).starsPaidPostAmountMax;
+                editTextBoldCursor.setText(Long.toString(j3));
+                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                int i10 = -this.b;
+                this.b = i10;
+                AndroidUtilities.shakeViewSpring(ld0Var, i10);
+            }
+        } catch (Exception unused2) {
+            this.a = true;
+            long j10 = this.e;
+            editTextBoldCursor.setText(j10 <= 0 ? "" : Long.toString(j10));
+            editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+            this.a = false;
+            if (!this.f) {
+            }
+            ld0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+            TextView textView = this.n;
+            if (j3 != 0) {
+            }
+        }
+        this.a = false;
+        if (!this.f) {
+            this.h.setEnabled(j3 > 0);
+        }
+        ld0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+        TextView textView2 = this.n;
+        if (j3 != 0) {
+            textView2.animate().alpha(0.0f).start();
+            textView2.setText("");
         } else {
-            canvas2 = canvas;
+            textView2.animate().alpha(1.0f).start();
+            textView2.setText("≈" + BillingController.getInstance().formatCurrency((long) ((j3 / 1000.0d) * MessagesController.getInstance(UserConfig.selectedAccount).starsUsdWithdrawRate1000), "USD"));
         }
-        drawable.setBounds((getWidth() - drawable.getIntrinsicWidth()) / 2, (getHeight() - drawable.getIntrinsicHeight()) / 2, (drawable.getIntrinsicWidth() + getWidth()) / 2, (drawable.getIntrinsicHeight() + getHeight()) / 2);
-        drawable.draw(canvas2);
     }
 
-    @Override // org.telegram.ui.Components.w9, android.view.View
-    public final void onAttachedToWindow() {
-        vh.f fVar = this.G;
-        if (fVar != null) {
-            fVar.a(this);
-        }
-        super.onAttachedToWindow();
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    @Override // org.telegram.ui.Components.w9, android.view.View
-    public final void onDetachedFromWindow() {
-        vh.f fVar = this.G;
-        if (fVar != null) {
-            fVar.b(this);
-        }
-        super.onDetachedFromWindow();
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

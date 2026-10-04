@@ -1,14 +1,14 @@
 package ci;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class s5 extends i4 {
-    public final /* synthetic */ nb m;
+    public final /* synthetic */ mb m;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s5(nb nbVar, kc kcVar, ai.g3 g3Var) {
-        super(kcVar, false, g3Var);
-        this.m = nbVar;
+    public s5(mb mbVar, jc jcVar, ai.g3 g3Var) {
+        super(jcVar, false, g3Var);
+        this.m = mbVar;
     }
 
     @Override // ci.i4

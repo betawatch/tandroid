@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class p3 extends FrameLayout {
     public final TextView a;
@@ -30,13 +30,13 @@ public final class p3 extends FrameLayout {
         textView.setTextSize(1, 12.0f);
         textView.setGravity(17);
         textView.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        addView(textView, w7.y5.d(-1, 34.0f, 51, 0.0f, 10.0f, 0.0f, 0.0f));
+        addView(textView, w7.z5.d(-1, 34.0f, 51, 0.0f, 10.0f, 0.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextSize(1, 12.0f);
         textView2.setGravity(19);
         textView2.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        addView(textView2, w7.y5.d(-1, 34.0f, 51, 0.0f, 10.0f, 0.0f, 0.0f));
+        addView(textView2, w7.z5.d(-1, 34.0f, 51, 0.0f, 10.0f, 0.0f, 0.0f));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

@@ -1,8 +1,8 @@
 package ci;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class t5 implements qg.w1 {
+public final class t5 implements qg.v1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ qg.v2 b;
     public final /* synthetic */ float c;
@@ -13,8 +13,8 @@ public final class t5 implements qg.w1 {
         this.c = f7;
     }
 
-    @Override // qg.w1
-    public final void K(float f7) {
+    @Override // qg.v1
+    public final void E(float f7) {
         switch (this.a) {
             case 0:
                 qg.v2 v2Var = this.b;
@@ -29,7 +29,7 @@ public final class t5 implements qg.w1 {
         }
     }
 
-    @Override // qg.w1
+    @Override // qg.v1
     public final float get() {
         float baseFontSize;
         float f7;

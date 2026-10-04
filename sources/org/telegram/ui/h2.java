@@ -14,10 +14,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
-    public final p70 a;
+    public final t70 a;
     public final g4 b;
     public b3 c;
     public b3 d;
@@ -26,9 +26,9 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
     public int h;
     public TL_iv.pageBlockPullquote n;
 
-    public h2(Context context, p70 p70Var, g4 g4Var) {
+    public h2(Context context, t70 t70Var, g4 g4Var) {
         super(context);
-        this.a = p70Var;
+        this.a = t70Var;
         this.b = g4Var;
     }
 
@@ -89,10 +89,10 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
         int c10;
         int dp;
         b3 b3Var = this.d;
-        p70 p70Var = this.a;
+        t70 t70Var = this.a;
         if (b3Var != null) {
             c10 = b3Var.c() + b3Var.s;
-            p70Var.getClass();
+            t70Var.getClass();
             dp = AndroidUtilities.dp(18);
         } else {
             b3 b3Var2 = this.c;
@@ -100,7 +100,7 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
                 return -1;
             }
             c10 = b3Var2.c() + b3Var2.s;
-            p70Var.getClass();
+            t70Var.getClass();
             dp = AndroidUtilities.dp(18);
         }
         return dp + c10;
@@ -142,12 +142,12 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
             return;
         }
         b3 b3Var = this.c;
-        p70 p70Var = this.a;
+        t70 t70Var = this.a;
         int i10 = 0;
         if (b3Var != null) {
             canvas.save();
             canvas.translate(this.f, this.h);
-            i4.v(p70Var, canvas, this, 0);
+            i4.v(t70Var, canvas, this, 0);
             this.c.draw(canvas, this);
             canvas.restore();
             i10 = 1;
@@ -155,7 +155,7 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
         if (this.d != null) {
             canvas.save();
             canvas.translate(this.f, this.e);
-            i4.v(p70Var, canvas, this, i10);
+            i4.v(t70Var, canvas, this, i10);
             this.d.draw(canvas, this);
             canvas.restore();
         }
@@ -173,12 +173,12 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         b3 b3Var = this.c;
         g4 g4Var = this.b;
-        p70 p70Var = this.a;
-        if (b3Var != null && (j10 = i4.j(p70Var, g4Var, b3Var)) != null) {
+        t70 t70Var = this.a;
+        if (b3Var != null && (j10 = i4.j(t70Var, g4Var, b3Var)) != null) {
             spannableStringBuilder.append(j10);
         }
         b3 b3Var2 = this.d;
-        if (b3Var2 != null && (j3 = i4.j(p70Var, g4Var, b3Var2)) != null) {
+        if (b3Var2 != null && (j3 = i4.j(t70Var, g4Var, b3Var2)) != null) {
             if (spannableStringBuilder.length() > 0) {
                 spannableStringBuilder.append((CharSequence) ", ");
             }
@@ -195,22 +195,22 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
     public final void onMeasure(int i10, int i11) {
         int i12;
         int size = View.MeasureSpec.getSize(i10);
-        p70 p70Var = this.a;
-        p70Var.getClass();
+        t70 t70Var = this.a;
+        t70Var.getClass();
         this.f = AndroidUtilities.dp(18);
-        p70Var.getClass();
+        t70Var.getClass();
         float f7 = 8;
         this.h = AndroidUtilities.dp(f7);
         TL_iv.pageBlockPullquote pageblockpullquote = this.n;
         if (pageblockpullquote != null) {
             TL_iv.RichText richText = pageblockpullquote.text;
-            p70 p70Var2 = this.a;
-            p70Var2.getClass();
+            t70 t70Var2 = this.a;
+            t70Var2.getClass();
             float f10 = 36;
-            b3 q6 = i4.q(p70Var2, this, null, richText, size - AndroidUtilities.dp(f10), this.h, this.n, this.b);
+            b3 q6 = i4.q(t70Var2, this, null, richText, size - AndroidUtilities.dp(f10), this.h, this.n, this.b);
             this.c = q6;
             if (q6 != null) {
-                p70Var.getClass();
+                t70Var.getClass();
                 int height = this.c.d.getHeight() + AndroidUtilities.dp(f7);
                 b3 b3Var = this.c;
                 b3Var.s = this.f;
@@ -221,19 +221,19 @@ public final class h2 extends View implements org.telegram.ui.Cells.p9, e3 {
             }
             this.e = AndroidUtilities.dp(2.0f) + i12;
             TL_iv.RichText richText2 = this.n.caption;
-            p70 p70Var3 = this.a;
-            p70Var3.getClass();
-            b3 q10 = i4.q(p70Var3, this, null, richText2, size - AndroidUtilities.dp(f10), this.e, this.n, this.b);
+            t70 t70Var3 = this.a;
+            t70Var3.getClass();
+            b3 q10 = i4.q(t70Var3, this, null, richText2, size - AndroidUtilities.dp(f10), this.e, this.n, this.b);
             this.d = q10;
             if (q10 != null) {
-                p70Var.getClass();
+                t70Var.getClass();
                 i12 += this.d.d.getHeight() + AndroidUtilities.dp(f7);
                 b3 b3Var2 = this.d;
                 b3Var2.s = this.f;
                 b3Var2.v = this.e;
             }
             if (i12 != 0) {
-                p70Var.getClass();
+                t70Var.getClass();
                 i12 += AndroidUtilities.dp(f7);
             }
         } else {

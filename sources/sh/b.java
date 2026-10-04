@@ -10,7 +10,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import java.util.ArrayList;
-import le.j;
+import le.i;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.DocumentObject;
@@ -25,15 +25,15 @@ import org.telegram.messenger.WebFile;
 import org.telegram.messenger.f0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.m9;
 import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 import yf.p;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class b extends Drawable implements DownloadController.FileDownloadProgressListener {
     public final RadialProgress2 E;
@@ -57,7 +57,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
     public boolean v;
     public final Paint w;
     public final Paint x;
-    public final le.c y;
+    public final le.b y;
 
     public b(int i10, u1 u1Var) {
         Paint paint = new Paint(1);
@@ -66,7 +66,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
         this.G = new a5.a((char) 0, 14);
         this.e = i10;
         this.d = u1Var;
-        this.y = new le.c(u1Var, sr.h, 380L);
+        this.y = new le.b(u1Var, tr.h, 380L);
         o6 o6Var = new o6(false, false, false, false);
         this.a = o6Var;
         o6Var.b = 21;
@@ -106,9 +106,9 @@ public final class b extends Drawable implements DownloadController.FileDownload
         Rect bounds = getBounds();
         int dp = AndroidUtilities.dp(this.f ? 56.33f : 19.0f);
         if (this.y.e > 0.0f) {
-            j jVar = this.b.c.d;
-            float f7 = jVar.c.a;
-            int i10 = (int) jVar.f.a;
+            i iVar = this.b.c.d;
+            float f7 = iVar.c.a;
+            int i10 = (int) iVar.f.a;
             int lerp = (bounds.right - dp) - AndroidUtilities.lerp(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f) + i10, f7);
             if (f7 > 0.0f) {
                 m9 m9Var = this.b;
@@ -137,7 +137,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
                 if (!this.n || this.r) {
                     canvas.drawRoundRect(rectF, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), this.w);
                 } else {
-                    this.x.setColor(i0.a.k(h6.w0(null, this.F.isOutOwner() ? h6.fc : h6.ec, false), 16));
+                    this.x.setColor(i0.a.k(i6.w0(null, this.F.isOutOwner() ? i6.fc : i6.ec, false), 16));
                     canvas.drawRoundRect(rectF, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), this.x);
                 }
             }
@@ -150,7 +150,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
                 if (this.r) {
                     w02 = -1;
                 } else {
-                    w02 = h6.w0(null, this.F.isOutOwner() ? h6.sb : h6.nd, false);
+                    w02 = i6.w0(null, this.F.isOutOwner() ? i6.sb : i6.nd, false);
                 }
                 PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
                 aVar.getClass();
@@ -262,7 +262,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
                                 boolean z12 = MessageObject.isStickerDocument(document) || MessageObject.isVideoSticker(document);
                                 boolean isAnimatedStickerDocument = MessageObject.isAnimatedStickerDocument(document, true);
                                 if (z12 || isAnimatedStickerDocument) {
-                                    imageReceiver.setImage(ImageLocation.getForDocument(document), "36_36", DocumentObject.getSvgThumb(document, h6.lc, 1.0f), document.size, z12 ? "webp" : null, messageObject2, 1);
+                                    imageReceiver.setImage(ImageLocation.getForDocument(document), "36_36", DocumentObject.getSvgThumb(document, i6.lc, 1.0f), document.size, z12 ? "webp" : null, messageObject2, 1);
                                 }
                                 z11 = false;
                             }
@@ -279,7 +279,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
                     if (!z11) {
                         imageReceiver.clearImage();
                     }
-                    this.E.setColors(this.v ? 0 : h6.w0(null, h6.le, false), this.v ? 0 : h6.w0(null, h6.me, false), h6.w0(null, h6.ne, false), h6.w0(null, h6.oe, false));
+                    this.E.setColors(this.v ? 0 : i6.w0(null, i6.le, false), this.v ? 0 : i6.w0(null, i6.me, false), i6.w0(null, i6.ne, false), i6.w0(null, i6.oe, false));
                     if (!TextUtils.equals(str2, this.H)) {
                         boolean isEmpty = TextUtils.isEmpty(str2);
                         int i10 = this.e;
@@ -301,7 +301,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
             this.h = z11;
             if (!z11) {
             }
-            this.E.setColors(this.v ? 0 : h6.w0(null, h6.le, false), this.v ? 0 : h6.w0(null, h6.me, false), h6.w0(null, h6.ne, false), h6.w0(null, h6.oe, false));
+            this.E.setColors(this.v ? 0 : i6.w0(null, i6.le, false), this.v ? 0 : i6.w0(null, i6.me, false), i6.w0(null, i6.ne, false), i6.w0(null, i6.oe, false));
             if (!TextUtils.equals(str2, this.H)) {
             }
             b(z10);
@@ -311,7 +311,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
         this.h = z11;
         if (!z11) {
         }
-        this.E.setColors(this.v ? 0 : h6.w0(null, h6.le, false), this.v ? 0 : h6.w0(null, h6.me, false), h6.w0(null, h6.ne, false), h6.w0(null, h6.oe, false));
+        this.E.setColors(this.v ? 0 : i6.w0(null, i6.le, false), this.v ? 0 : i6.w0(null, i6.me, false), i6.w0(null, i6.ne, false), i6.w0(null, i6.oe, false));
         if (!TextUtils.equals(str2, this.H)) {
         }
         b(z10);

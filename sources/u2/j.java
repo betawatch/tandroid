@@ -4,10 +4,10 @@ import j$.util.Objects;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.messenger.zj;
-import org.telegram.ui.Components.u50;
-import org.telegram.ui.da;
+import org.telegram.ui.Components.v50;
+import org.telegram.ui.fa;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j implements k0, n2.l {
     public final Object a;
@@ -43,7 +43,7 @@ public final class j implements k0, n2.l {
             b0 m10 = m(b0Var, f0Var);
             f0 f0Var2 = (f0) aVar.c;
             f0Var2.getClass();
-            aVar.j(new u50(aVar, f0Var2, m10, 10));
+            aVar.j(new v50(aVar, f0Var2, m10, 10));
         }
     }
 
@@ -53,7 +53,7 @@ public final class j implements k0, n2.l {
             a5.a aVar = this.b;
             b0 m10 = m(b0Var, f0Var);
             aVar.getClass();
-            aVar.j(new s5.e(7, aVar, m10));
+            aVar.j(new rg.x(8, aVar, m10));
         }
     }
 
@@ -90,7 +90,7 @@ public final class j implements k0, n2.l {
             a5.a aVar = this.b;
             b0 m10 = m(b0Var, f0Var);
             aVar.getClass();
-            aVar.j(new da(aVar, tVar, m10, i11, 10));
+            aVar.j(new fa(aVar, tVar, m10, i11, 10));
         }
     }
 

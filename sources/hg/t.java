@@ -1,45 +1,100 @@
 package hg;
 
-import android.content.DialogInterface;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.c6;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.i5;
+import org.telegram.ui.ActionBar.i6;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+public final class t extends FrameLayout {
+    public final i5 a;
+    public final vh.n b;
+    public final i5 c;
+    public final d6 d;
+    public boolean e;
+    public TL_account.TL_businessChatLink f;
 
-    public /* synthetic */ t(int i10, EditTextBoldCursor editTextBoldCursor) {
-        this.a = i10;
-        this.b = editTextBoldCursor;
+    public t(Context context, d6 d6Var) {
+        super(context);
+        this.d = d6Var;
+        setWillNotDraw(false);
+        ImageView imageView = new ImageView(context);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setImageResource(R.drawable.msg_limit_links);
+        imageView.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f));
+        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        imageView.setBackground(i6.K(AndroidUtilities.dp(36.0f), i6.w0(null, i6.Oh, false)));
+        imageView.setOnClickListener(new ai.v0(this, 25));
+        addView(imageView, z5.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
+        i5 i5Var = new i5(context);
+        this.a = i5Var;
+        i5Var.setTextSize(15);
+        i5Var.setTextColor(i6.w0(null, i6.G6, false));
+        i5Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(i5Var, z5.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
+        i5 i5Var2 = new i5(context);
+        this.c = i5Var2;
+        i5Var2.setTextSize(14);
+        int i10 = i6.z6;
+        i5Var2.setTextColor(i6.w0(null, i10, false));
+        i5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
+        addView(i5Var2, z5.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
+        vh.n nVar = new vh.n(context);
+        this.b = nVar;
+        nVar.setTextSize(1, 13.0f);
+        nVar.setMaxLines(1);
+        nVar.setEllipsize(TextUtils.TruncateAt.END);
+        nVar.setTextColor(i6.v0(i10, d6Var));
+        nVar.setGravity(LocaleController.isRTL ? 5 : 3);
+        nVar.f = false;
+        nVar.setUseAlphaForEmoji(false);
+        NotificationCenter.listenEmojiLoading(nVar);
+        addView(nVar, z5.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                u uVar = (u) this.b;
-                uVar.requestFocus();
-                AndroidUtilities.showKeyboard(uVar);
-                break;
-            case 1:
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                editTextBoldCursor.requestFocus();
-                AndroidUtilities.showKeyboard(editTextBoldCursor);
-                editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
-                break;
-            case 2:
-                c6 c6Var = (c6) this.b;
-                c6Var.requestFocus();
-                AndroidUtilities.showKeyboard(c6Var);
-                break;
-            default:
-                xh.a2 a2Var = (xh.a2) this.b;
-                a2Var.requestFocus();
-                AndroidUtilities.showKeyboard(a2Var);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.e) {
+            Paint T0 = i6.T0("paintDivider", this.d);
+            if (T0 == null) {
+                T0 = i6.k0;
+            }
+            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 64.0f : 0.0f), getMeasuredHeight(), T0);
         }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        boolean z11 = LocaleController.isRTL;
+        i5 i5Var = this.c;
+        i5 i5Var2 = this.a;
+        if (z11) {
+            i5Var2.setPadding(i5Var.getTextWidth(), 0, 0, 0);
+        } else {
+            i5Var2.setPadding(0, 0, i5Var.getTextWidth(), 0);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f) + (this.e ? 1 : 0), TLObject.FLAG_30));
     }
 }

@@ -2,17 +2,17 @@ package org.telegram.messenger;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ba implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.a2 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2 c;
 
-    public /* synthetic */ ba(int i10, Context context, org.telegram.ui.ActionBar.a2 a2Var) {
+    public /* synthetic */ ba(int i10, Context context, org.telegram.ui.ActionBar.b2 b2Var) {
         this.a = i10;
         this.b = context;
-        this.c = a2Var;
+        this.c = b2Var;
     }
 
     @Override // java.lang.Runnable

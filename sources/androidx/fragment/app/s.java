@@ -24,7 +24,7 @@ import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 import n7.z0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuListener, androidx.lifecycle.t, androidx.lifecycle.u0, androidx.lifecycle.i, t4.e {
     public static final Object j0 = new Object();
@@ -239,7 +239,7 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         return (m.p) this.g0.d;
     }
 
-    public v7.c0 h() {
+    public v7.b0 h() {
         return new o(this);
     }
 
@@ -367,11 +367,11 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
             printWriter.println(this.V);
         }
         if (n() != null) {
-            new z0(this, f()).s(str, printWriter);
+            new z0(this, f()).r(str, printWriter);
         }
         printWriter.print(str);
         printWriter.println("Child " + this.L + ":");
-        this.L.w(v7.j.t(str, "  "), fileDescriptor, printWriter, strArr);
+        this.L.w(t8.b.v(str, "  "), fileDescriptor, printWriter, strArr);
     }
 
     public final r j() {

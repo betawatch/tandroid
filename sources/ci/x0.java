@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class x0 implements Utilities.Callback {
                 ArrayList arrayList3 = new ArrayList();
                 ArrayList arrayList4 = new ArrayList();
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    l8 a2 = ((a1) arrayList.get(i10)).a();
+                    k8 a2 = ((a1) arrayList.get(i10)).a();
                     if ((a2.v() || ((file = a2.L) != null && file.exists())) && currentTimeMillis - a2.d <= 604800000) {
                         arrayList4.add(a2);
                         arrayList2.add(Long.valueOf(a2.b));
@@ -49,7 +49,7 @@ public final /* synthetic */ class x0 implements Utilities.Callback {
                 while (i11 < size) {
                     Object obj2 = arrayList4.get(i11);
                     i11++;
-                    ai.k9 k9Var = new ai.k9(storiesController, (l8) obj2);
+                    ai.k9 k9Var = new ai.k9(storiesController, (k8) obj2);
                     storiesController.d(k9Var.J, k9Var, storiesController.b, false);
                 }
                 NotificationCenter.getInstance(storiesController.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
@@ -61,7 +61,7 @@ public final /* synthetic */ class x0 implements Utilities.Callback {
                 ArrayList arrayList5 = new ArrayList();
                 ArrayList arrayList6 = new ArrayList();
                 for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                    l8 a10 = ((a1) arrayList.get(i12)).a();
+                    k8 a10 = ((a1) arrayList.get(i12)).a();
                     if ((a10.v() || ((file2 = a10.L) != null && file2.exists())) && (!a10.g ? currentTimeMillis2 - a10.d <= 604800000 : currentTimeMillis2 <= a10.J)) {
                         b1Var2.b.add(a10);
                         arrayList5.add(Long.valueOf(a10.b));

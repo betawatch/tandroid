@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a0 extends b0 {
     public final ArrayList e = new ArrayList();
@@ -128,7 +128,7 @@ public final class a0 extends b0 {
                     size4--;
                 }
             } else {
-                zVar = !arrayList.isEmpty() ? (z) hg.c.g(1, arrayList) : null;
+                zVar = !arrayList.isEmpty() ? (z) hg.k0.g(1, arrayList) : null;
             }
         }
         if (this.h != null && this.i.booleanValue()) {
@@ -153,11 +153,11 @@ public final class a0 extends b0 {
             z10 = false;
             for (size = arrayList.size() - 1; size >= 0; size--) {
                 z zVar2 = (z) arrayList.get(size);
-                CharSequence e = z10 ? e(zVar2) : zVar2.a;
+                CharSequence e7 = z10 ? e(zVar2) : zVar2.a;
                 if (size != arrayList.size() - 1) {
                     spannableStringBuilder.insert(0, (CharSequence) "\n");
                 }
-                spannableStringBuilder.insert(0, e);
+                spannableStringBuilder.insert(0, e7);
             }
             new Notification.BigTextStyle(builder).setBigContentTitle(null).bigText(spannableStringBuilder);
         }

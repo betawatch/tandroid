@@ -1,46 +1,58 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
 import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class b41 extends ClickableSpan {
-    public final /* synthetic */ URLSpan a;
-    public final /* synthetic */ k41 b;
+public final class b41 extends Drawable {
+    public final kj0 a;
+    public int b;
+    public final TextPaint c;
 
-    public b41(k41 k41Var, URLSpan uRLSpan) {
-        this.b = k41Var;
-        this.a = uRLSpan;
+    public b41(TextPaint textPaint) {
+        ah.d dVar = new ah.d(this, 6);
+        this.c = textPaint;
+        float textSize = textPaint.getTextSize() * 0.89f;
+        kj0 kj0Var = new kj0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
+        this.a = kj0Var;
+        kj0Var.setCallback(dVar);
+        kj0Var.K(1);
+        kj0Var.M((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
+        kj0Var.J(true);
+        kj0Var.start();
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        k41 k41Var = this.b;
-        Utilities.CallbackReturn callbackReturn = k41Var.N;
-        URLSpan uRLSpan = this.a;
-        if (callbackReturn != null) {
-            if (((Boolean) callbackReturn.run(uRLSpan)).booleanValue()) {
-                k41Var.dismiss();
-            }
-        } else {
-            org.telegram.ui.ActionBar.m2 m2Var = k41Var.M;
-            if (m2Var != null) {
-                e5.q0(m2Var, uRLSpan.getURL(), false, false);
-            }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int color = this.c.getColor();
+        int i10 = this.b;
+        kj0 kj0Var = this.a;
+        if (color != i10) {
+            kj0Var.Z = true;
+            kj0Var.Q(color, "Comp 1");
+            kj0Var.o();
+            kj0Var.J(true);
+            kj0Var.V(0L);
+            this.b = color;
         }
+        kj0Var.draw(canvas);
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & 255);
-        if (!(this.a instanceof b61)) {
-            textPaint.setUnderlineText(true);
-        }
-        textPaint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.k5, false));
-        textPaint.setAlpha(min);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

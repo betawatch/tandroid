@@ -1,8 +1,8 @@
 package ee;
 
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class u {
     public static final /* synthetic */ int a = 0;
@@ -17,7 +17,7 @@ public abstract class u {
         try {
             a2 = kd.a.class.getCanonicalName();
         } catch (Throwable th2) {
-            a2 = u7.a(th2);
+            a2 = t7.a(th2);
         }
         if (gd.f.a(a2) != null) {
             a2 = "kotlin.coroutines.jvm.internal.BaseContinuationImpl";
@@ -25,7 +25,7 @@ public abstract class u {
         try {
             a10 = u.class.getCanonicalName();
         } catch (Throwable th3) {
-            a10 = u7.a(th3);
+            a10 = t7.a(th3);
         }
         if (gd.f.a(a10) != null) {
             a10 = "kotlinx.coroutines.internal.StackTraceRecoveryKt";

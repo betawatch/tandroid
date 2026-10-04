@@ -1,13 +1,13 @@
 package b1;
 
 import ai.ba;
-import ci.y8;
+import ci.x8;
 import com.google.android.gms.common.api.r;
 import java.util.concurrent.Executor;
 import v0.i;
-import v0.o;
+import v0.p;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements rd.a {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class b implements rd.a {
                 this.b.execute(new ba(5, this.c, this.d));
                 break;
             case 1:
-                this.b.execute(new ba(6, this.c, (o) this.d));
+                this.b.execute(new ba(6, this.c, (p) this.d));
                 break;
             case 2:
                 this.b.execute(new h(this.c, (w0.i) this.d, 0));
@@ -55,7 +55,7 @@ public final /* synthetic */ class b implements rd.a {
                 } else {
                     cVar = new w0.c("Conditional create failed, failure: " + exc, 2);
                 }
-                this.b.execute(new y8(8, this.c, cVar));
+                this.b.execute(new x8(8, this.c, cVar));
                 break;
         }
         return gd.i.a;

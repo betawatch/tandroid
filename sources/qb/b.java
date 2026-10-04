@@ -11,8 +11,8 @@ import androidx.fragment.app.n0;
 import androidx.lifecycle.p0;
 import androidx.lifecycle.s0;
 import c5.b0;
-import com.google.firebase.messaging.t;
-import ei.m4;
+import ei.n4;
+import g2.u;
 import g2.x;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
@@ -44,24 +44,24 @@ import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.db;
-import org.telegram.ui.Components.fb;
+import org.telegram.ui.Components.eb;
 import org.telegram.ui.Components.gb;
 import org.telegram.ui.Components.hb;
-import org.telegram.ui.Components.hh;
-import org.telegram.ui.Components.ol;
-import org.telegram.ui.Components.pg;
-import org.telegram.ui.Components.sb;
+import org.telegram.ui.Components.ib;
+import org.telegram.ui.Components.ih;
+import org.telegram.ui.Components.pl;
+import org.telegram.ui.Components.qg;
 import org.telegram.ui.Components.tb;
 import org.telegram.ui.Components.ub;
-import org.telegram.ui.Components.ui;
+import org.telegram.ui.Components.vb;
+import org.telegram.ui.Components.vi;
 import org.telegram.ui.Components.z5;
-import org.telegram.ui.hv0;
-import r2.u;
+import org.telegram.ui.kv0;
+import r2.v;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, l1, u, u5.a, z3.k {
+public class b implements s0, bg.a, cg.a, da.c, fb.n, vi, n5.b, n2.r, q9.d, ub, l1, v, u5.a, z3.l {
     public final /* synthetic */ int a;
 
     public /* synthetic */ b(int i10) {
@@ -88,7 +88,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
 
     public static long M3(b0 b0Var) {
         Throwable th2 = (IOException) b0Var.c;
-        if ((th2 instanceof b2.s0) || (th2 instanceof FileNotFoundException) || (th2 instanceof g2.u) || (th2 instanceof y2.k)) {
+        if ((th2 instanceof b2.s0) || (th2 instanceof FileNotFoundException) || (th2 instanceof u) || (th2 instanceof y2.k)) {
             return -9223372036854775807L;
         }
         int i10 = g2.j.b;
@@ -134,8 +134,8 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     }
 
     @Override // n2.r
-    public h2.b B(byte[] bArr) {
-        throw new IllegalStateException();
+    public byte[] B() {
+        throw new MediaDrmException("Attempting to open a session using a dummy ExoMediaDrm.");
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -143,9 +143,18 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         int i10 = this.a;
     }
 
-    @Override // n2.r
-    public byte[] C() {
-        throw new MediaDrmException("Attempting to open a session using a dummy ExoMediaDrm.");
+    @Override // cg.a
+    public void C(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12) {
+        if (i10 < i11) {
+            cg.a.q.C(shortBuffer, i10, shortBuffer2, i11, i12);
+        } else if (i10 > i11) {
+            cg.a.p.C(shortBuffer, i10, shortBuffer2, i11, i12);
+        } else {
+            if (i10 != i11) {
+                throw new IllegalArgumentException("Illegal use of PassThroughAudioResampler");
+            }
+            shortBuffer2.put(shortBuffer);
+        }
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -153,29 +162,11 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         int i10 = this.a;
     }
 
-    @Override // z3.k
-    public int D(b2.s sVar) {
-        String str = sVar.r;
-        if (str != null) {
-            switch (str) {
-                case "application/dvbsubs":
-                case "application/pgs":
-                case "application/x-mp4-vtt":
-                    return 2;
-                case "text/vtt":
-                    return 1;
-                case "application/x-quicktime-tx3g":
-                    return 2;
-                case "text/x-ssa":
-                    return 1;
-                case "application/vobsub":
-                    return 2;
-                case "application/x-subrip":
-                case "application/ttml+xml":
-                    return 1;
-            }
+    @Override // androidx.lifecycle.s0
+    public p0 D(Class cls, v1.b bVar) {
+        switch (this.a) {
         }
-        throw new IllegalArgumentException(v7.j.g("Unsupported MIME type: ", str));
+        return f(cls);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -188,23 +179,8 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void E(u1 u1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void F(u1 u1Var) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void F0(u1 u1Var) {
-        int i10 = this.a;
-    }
-
     @Override // q9.d
-    public Object G(cf.c cVar) {
+    public Object E(cf.c cVar) {
         switch (this.a) {
             case 14:
                 return new h();
@@ -228,17 +204,50 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     }
 
     @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void F(u1 u1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void F0(u1 u1Var) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void G(u1 u1Var) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean G1(u1 u1Var, TLRPC.Chat chat) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // androidx.lifecycle.s0
-    public p0 H(Class cls, v1.b bVar) {
-        switch (this.a) {
+    @Override // z3.l
+    public int H(b2.s sVar) {
+        String str = sVar.r;
+        if (str != null) {
+            switch (str) {
+                case "application/dvbsubs":
+                case "application/pgs":
+                case "application/x-mp4-vtt":
+                    return 2;
+                case "text/vtt":
+                    return 1;
+                case "application/x-quicktime-tx3g":
+                    return 2;
+                case "text/x-ssa":
+                    return 1;
+                case "application/vobsub":
+                    return 2;
+                case "application/x-subrip":
+                case "application/ttml+xml":
+                    return 1;
+            }
         }
-        return a(cls);
+        throw new IllegalArgumentException(t8.b.i("Unsupported MIME type: ", str));
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -246,9 +255,9 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void I(MessageObject.TextLayoutBlock textLayoutBlock) {
-        int i10 = this.a;
+    @Override // n2.r
+    public void I(byte[] bArr, byte[] bArr2) {
+        throw new IllegalStateException();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -263,9 +272,9 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         return false;
     }
 
-    @Override // n2.r
-    public void J(byte[] bArr, byte[] bArr2) {
-        throw new IllegalStateException();
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void J(MessageObject.TextLayoutBlock textLayoutBlock) {
+        int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -273,9 +282,17 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void L(u1 u1Var) {
-        int i10 = this.a;
+    @Override // org.telegram.ui.Components.ub
+    public void L(vb vbVar, gb gbVar, qg qgVar, pl plVar) {
+        vbVar.setInOutOffset(vbVar.getMeasuredHeight());
+        plVar.accept(Float.valueOf(vbVar.getTranslationY()));
+        o1.k kVar = new o1.k(vbVar, vb.IN_OUT_OFFSET_Y, 0.0f);
+        kVar.u.a(0.8f);
+        kVar.u.b(400.0f);
+        kVar.a(new n4(1, vbVar, qgVar));
+        kVar.b(new tb(plVar, vbVar, 1));
+        kVar.f();
+        gbVar.run();
     }
 
     @Override // bg.a
@@ -288,8 +305,8 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void M(int i10, u1 u1Var) {
-        int i11 = this.a;
+    public /* synthetic */ void M(u1 u1Var) {
+        int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -305,8 +322,8 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void N(MessageObject messageObject) {
-        int i10 = this.a;
+    public /* synthetic */ void N(int i10, u1 u1Var) {
+        int i11 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -327,10 +344,8 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean O(u1 u1Var, TLRPC.TodoItem todoItem, boolean z10) {
-        switch (this.a) {
-        }
-        return false;
+    public /* synthetic */ void O(MessageObject messageObject) {
+        int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -341,7 +356,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean P() {
+    public /* synthetic */ boolean P(u1 u1Var, TLRPC.TodoItem todoItem, boolean z10) {
         switch (this.a) {
         }
         return false;
@@ -358,7 +373,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean Q(u1 u1Var) {
+    public /* synthetic */ boolean Q() {
         switch (this.a) {
         }
         return false;
@@ -372,7 +387,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean R() {
+    public /* synthetic */ boolean R(u1 u1Var) {
         switch (this.a) {
         }
         return false;
@@ -389,8 +404,10 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void S(u1 u1Var, TLRPC.Chat chat, int i10, float f7, float f10, boolean z10) {
-        int i11 = this.a;
+    public /* synthetic */ boolean S() {
+        switch (this.a) {
+        }
+        return false;
     }
 
     @Override // bg.a
@@ -412,14 +429,14 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         }
     }
 
-    @Override // org.telegram.ui.Components.ui
+    @Override // org.telegram.ui.Components.vi
     public /* synthetic */ boolean S1() {
         return false;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void T(u1 u1Var) {
-        int i10 = this.a;
+    public /* synthetic */ void T(u1 u1Var, TLRPC.Chat chat, int i10, float f7, float f10, boolean z10) {
+        int i11 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -427,17 +444,9 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.tb
-    public void U(ub ubVar, fb fbVar, pg pgVar, ol olVar) {
-        ubVar.setInOutOffset(ubVar.getMeasuredHeight());
-        olVar.accept(Float.valueOf(ubVar.getTranslationY()));
-        o1.k kVar = new o1.k(ubVar, ub.IN_OUT_OFFSET_Y, 0.0f);
-        kVar.u.a(0.8f);
-        kVar.u.b(400.0f);
-        kVar.a(new m4(1, ubVar, pgVar));
-        kVar.b(new sb(olVar, ubVar, 1));
-        kVar.f();
-        fbVar.run();
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void U(u1 u1Var) {
+        int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -445,11 +454,10 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ int V() {
-        switch (this.a) {
-        }
-        return 0;
+    @Override // z3.l
+    public boolean V(b2.s sVar) {
+        String str = sVar.r;
+        return Objects.equals(str, "text/x-ssa") || Objects.equals(str, "text/vtt") || Objects.equals(str, "application/x-mp4-vtt") || Objects.equals(str, "application/x-subrip") || Objects.equals(str, "application/x-quicktime-tx3g") || Objects.equals(str, "application/pgs") || Objects.equals(str, "application/vobsub") || Objects.equals(str, "application/dvbsubs") || Objects.equals(str, "application/ttml+xml");
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -464,10 +472,11 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         return false;
     }
 
-    @Override // z3.k
-    public boolean W(b2.s sVar) {
-        String str = sVar.r;
-        return Objects.equals(str, "text/x-ssa") || Objects.equals(str, "text/vtt") || Objects.equals(str, "application/x-mp4-vtt") || Objects.equals(str, "application/x-subrip") || Objects.equals(str, "application/x-quicktime-tx3g") || Objects.equals(str, "application/pgs") || Objects.equals(str, "application/vobsub") || Objects.equals(str, "application/dvbsubs") || Objects.equals(str, "application/ttml+xml");
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ int W() {
+        switch (this.a) {
+        }
+        return 0;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -487,23 +496,23 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ hh.a Y() {
-        switch (this.a) {
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ hv0 Y1() {
-        switch (this.a) {
-        }
-        return null;
-    }
-
-    @Override // r2.u
-    public boolean Z(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+    @Override // r2.v
+    public boolean Y(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
         return false;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ kv0 Y1() {
+        switch (this.a) {
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ hh.a Z() {
+        switch (this.a) {
+        }
+        return null;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -511,20 +520,13 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         int i10 = this.a;
     }
 
-    @Override // androidx.lifecycle.s0
-    public p0 a(Class cls) {
-        switch (this.a) {
-            case 3:
-                return new n0(true);
-            default:
-                return new w1.b();
-        }
+    @Override // r2.v
+    public MediaCodecInfo a(int i10) {
+        return MediaCodecList.getCodecInfoAt(i10);
     }
 
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean a0(u1 u1Var) {
-        switch (this.a) {
-        }
+    @Override // org.telegram.ui.Components.vi
+    public /* synthetic */ boolean a0() {
         return false;
     }
 
@@ -535,13 +537,13 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         return false;
     }
 
-    @Override // r2.u
-    public MediaCodecInfo b(int i10) {
-        return MediaCodecList.getCodecInfoAt(i10);
+    @Override // n2.r
+    public Map b(byte[] bArr) {
+        throw new IllegalStateException();
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean b0(u1 u1Var, TLRPC.User user) {
+    public /* synthetic */ boolean b0(u1 u1Var) {
         switch (this.a) {
         }
         return false;
@@ -552,13 +554,21 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         int i11 = this.a;
     }
 
-    @Override // n2.r
-    public Map c(byte[] bArr) {
-        throw new IllegalStateException();
+    @Override // org.telegram.ui.Components.ub
+    public void c(vb vbVar, gb gbVar, eb ebVar, hb hbVar) {
+        o1.k kVar = new o1.k(vbVar, vb.IN_OUT_OFFSET_Y, vbVar.getHeight());
+        kVar.u.a(0.8f);
+        kVar.u.b(400.0f);
+        kVar.a(new ib(ebVar, 1));
+        kVar.b(new tb(hbVar, vbVar, 0));
+        kVar.f();
+        gbVar.run();
     }
 
-    @Override // org.telegram.ui.Components.ui
-    public /* synthetic */ boolean c0() {
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean c0(u1 u1Var, TLRPC.User user) {
+        switch (this.a) {
+        }
         return false;
     }
 
@@ -576,9 +586,9 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         return false;
     }
 
-    @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void d0(int i10) {
-        int i11 = this.a;
+    @Override // r2.v
+    public int d0() {
+        return MediaCodecList.getCodecCount();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -589,10 +599,8 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean e0() {
-        switch (this.a) {
-        }
-        return false;
+    public /* synthetic */ void e0(int i10) {
+        int i11 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -600,32 +608,33 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         int i10 = this.a;
     }
 
+    @Override // androidx.lifecycle.s0
+    public p0 f(Class cls) {
+        switch (this.a) {
+            case 3:
+                return new n0(true);
+            default:
+                return new w1.b();
+        }
+    }
+
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ boolean f() {
+    public /* synthetic */ boolean f0() {
+        switch (this.a) {
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ boolean g() {
         switch (this.a) {
         }
         return true;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void f0(u1 u1Var, float f7, float f10) {
+    public /* synthetic */ void g0(u1 u1Var, float f7, float f10) {
         int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.tb
-    public void g(ub ubVar, fb fbVar, db dbVar, gb gbVar) {
-        o1.k kVar = new o1.k(ubVar, ub.IN_OUT_OFFSET_Y, ubVar.getHeight());
-        kVar.u.a(0.8f);
-        kVar.u.b(400.0f);
-        kVar.a(new hb(dbVar, 1));
-        kVar.b(new sb(gbVar, ubVar, 0));
-        kVar.f();
-        fbVar.run();
-    }
-
-    @Override // r2.u
-    public int g0() {
-        return MediaCodecList.getCodecCount();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -637,7 +646,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     public Object get() {
         switch (this.a) {
             case 12:
-                return new l5.p(Executors.newSingleThreadExecutor());
+                return new l5.q(Executors.newSingleThreadExecutor());
             default:
                 rb.a aVar = new rb.a(23);
                 HashMap hashMap = new HashMap();
@@ -687,18 +696,13 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void i(u1 u1Var, bi.f fVar) {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void i0(u1 u1Var) {
         int i10 = this.a;
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void j(u1 u1Var, ArrayList arrayList, int i10, int i11, int i12) {
-        int i13 = this.a;
+    public /* synthetic */ void j(u1 u1Var, bi.f fVar) {
+        int i10 = this.a;
     }
 
     @Override // n2.r
@@ -707,8 +711,8 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     }
 
     @Override // org.telegram.ui.Cells.l1
-    public /* synthetic */ void k() {
-        int i10 = this.a;
+    public /* synthetic */ void k(u1 u1Var, ArrayList arrayList, int i10, int i11, int i12) {
+        int i13 = this.a;
     }
 
     @Override // n2.r
@@ -718,6 +722,11 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void k1() {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.l1
+    public /* synthetic */ void l() {
         int i10 = this.a;
     }
 
@@ -782,7 +791,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         int i10 = this.a;
     }
 
-    @Override // r2.u
+    @Override // r2.v
     public boolean p0() {
         return false;
     }
@@ -869,7 +878,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         int i10 = this.a;
     }
 
-    @Override // r2.u
+    @Override // r2.v
     public boolean v(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
         return "secure-playback".equals(str) && MediaController.VIDEO_MIME_TYPE.equals(str2);
     }
@@ -900,8 +909,8 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         return true;
     }
 
-    @Override // z3.k
-    public z3.m x(b2.s sVar) {
+    @Override // z3.l
+    public z3.n x(b2.s sVar) {
         String str = sVar.r;
         List list = sVar.u;
         if (str != null) {
@@ -909,9 +918,9 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
                 case "application/dvbsubs":
                     return new b4.i(list);
                 case "application/pgs":
-                    return new t(2);
+                    return new com.google.firebase.messaging.s(2);
                 case "application/x-mp4-vtt":
-                    return new a6.m(25);
+                    return new xa.c(26);
                 case "text/vtt":
                     return new of.b(21);
                 case "application/x-quicktime-tx3g":
@@ -919,19 +928,19 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
                 case "text/x-ssa":
                     return new d4.a(list);
                 case "application/vobsub":
-                    return new t(list);
+                    return new com.google.firebase.messaging.s(list);
                 case "application/x-subrip":
                     return new e4.a();
                 case "application/ttml+xml":
                     return new f4.e();
             }
         }
-        throw new IllegalArgumentException(v7.j.g("Unsupported MIME type: ", str));
+        throw new IllegalArgumentException(t8.b.i("Unsupported MIME type: ", str));
     }
 
-    @Override // org.telegram.ui.Components.ui
-    public void x0(hh hhVar) {
-        hhVar.run();
+    @Override // org.telegram.ui.Components.vi
+    public void x0(ih ihVar) {
+        ihVar.run();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -939,18 +948,9 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
         int i10 = this.a;
     }
 
-    @Override // cg.a
-    public void y(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12) {
-        if (i10 < i11) {
-            cg.a.q.y(shortBuffer, i10, shortBuffer2, i11, i12);
-        } else if (i10 > i11) {
-            cg.a.p.y(shortBuffer, i10, shortBuffer2, i11, i12);
-        } else {
-            if (i10 != i11) {
-                throw new IllegalArgumentException("Illegal use of PassThroughAudioResampler");
-            }
-            shortBuffer2.put(shortBuffer);
-        }
+    @Override // n2.r
+    public h2.b y(byte[] bArr) {
+        throw new IllegalStateException();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -1028,7 +1028,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     private final /* synthetic */ void d3() {
     }
 
-    @Override // org.telegram.ui.Components.ui
+    @Override // org.telegram.ui.Components.vi
     public /* synthetic */ void K0() {
     }
 
@@ -1036,7 +1036,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     public void release() {
     }
 
-    @Override // org.telegram.ui.Components.ui
+    @Override // org.telegram.ui.Components.vi
     public /* synthetic */ void u0() {
     }
 
@@ -1200,15 +1200,15 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     public void K(byte[] bArr) {
     }
 
-    @Override // org.telegram.ui.Components.ui
+    @Override // org.telegram.ui.Components.vi
     public /* synthetic */ void U0(Object obj) {
     }
 
     @Override // n2.r
-    public void d(l.d dVar) {
+    public void i(n2.c cVar) {
     }
 
-    @Override // org.telegram.ui.Components.ui
+    @Override // org.telegram.ui.Components.vi
     public /* synthetic */ void j1(TLRPC.User user) {
     }
 
@@ -1279,7 +1279,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     }
 
     @Override // n2.r
-    public /* synthetic */ void l(byte[] bArr, j2.k kVar) {
+    public /* synthetic */ void d(byte[] bArr, j2.k kVar) {
     }
 
     private final /* synthetic */ void C0(u1 u1Var, float f7, float f10) {
@@ -1378,11 +1378,11 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, ui, n5.b, n2.r, q9.d, tb, 
     private final /* synthetic */ void R3(MessageObject messageObject, String str, String str2, String str3, String str4, int i10, int i11) {
     }
 
-    @Override // org.telegram.ui.Components.ui
+    @Override // org.telegram.ui.Components.vi
     public /* synthetic */ void W1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
     }
 
-    @Override // org.telegram.ui.Components.ui
+    @Override // org.telegram.ui.Components.vi
     public void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j3, boolean z12, boolean z13, long j10) {
     }
 }

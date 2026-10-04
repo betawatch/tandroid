@@ -1,6 +1,6 @@
 package za;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class g implements ia.d {
     public static final g a = new g();
@@ -10,11 +10,11 @@ public final class g implements ia.d {
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {
-        c0 c0Var = (c0) obj;
+        a0 a0Var = (a0) obj;
         ia.e eVar = (ia.e) obj2;
-        c0Var.getClass();
-        eVar.a(b, l.b);
-        eVar.a(c, c0Var.a);
-        eVar.a(d, c0Var.b);
+        a0Var.getClass();
+        eVar.a(b, k.b);
+        eVar.a(c, a0Var.a);
+        eVar.a(d, a0Var.b);
     }
 }

@@ -1,36 +1,29 @@
 package org.telegram.ui;
 
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fh0 implements Runnable {
+public final /* synthetic */ class fh0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sh0 b;
-    public final /* synthetic */ TLRPC.TL_chatInviteExported c;
-    public final /* synthetic */ TLRPC.TL_error d;
-    public final /* synthetic */ TLObject e;
-    public final /* synthetic */ boolean f;
+    public final /* synthetic */ wh0 b;
 
-    public /* synthetic */ fh0(sh0 sh0Var, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_error tL_error, TLObject tLObject, boolean z10, int i10) {
+    public /* synthetic */ fh0(wh0 wh0Var, int i10) {
         this.a = i10;
-        this.b = sh0Var;
-        this.c = tL_chatInviteExported;
-        this.d = tL_error;
-        this.e = tLObject;
-        this.f = z10;
+        this.b = wh0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                sh0 sh0Var = this.b;
-                sh0Var.getNotificationCenter().doOnIdle(new fh0(sh0Var, this.c, this.d, this.e, this.f, 1));
+                AndroidUtilities.runOnUIThread(new kh0(this.b, tL_error, tLObject, 0));
                 break;
             default:
-                sh0.U(this.b, this.c, this.d, this.e, this.f);
+                AndroidUtilities.runOnUIThread(new h90(25, this.b, tL_error));
                 break;
         }
     }

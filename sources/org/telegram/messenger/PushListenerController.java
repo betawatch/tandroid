@@ -11,7 +11,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class PushListenerController {
     public static final int NOTIFICATION_ID = 1;
@@ -19,7 +19,7 @@ public class PushListenerController {
     public static final int PUSH_TYPE_HUAWEI = 13;
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static final class GooglePushListenerServiceProvider implements IPushListenerServiceProvider {
         public static final GooglePushListenerServiceProvider INSTANCE = new GooglePushListenerServiceProvider();
         private Boolean hasServices;
@@ -51,13 +51,13 @@ public class PushListenerController {
             try {
                 SharedConfig.pushStringGetTimeStart = SystemClock.elapsedRealtime();
                 k9.h.f(ApplicationLoader.applicationContext);
-                a4.m mVar = FirebaseMessaging.l;
+                com.google.firebase.messaging.u uVar = FirebaseMessaging.l;
                 synchronized (FirebaseMessaging.class) {
                     firebaseMessaging = FirebaseMessaging.getInstance(k9.h.c());
                 }
                 firebaseMessaging.getClass();
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-                firebaseMessaging.f.execute(new ci.y8(5, firebaseMessaging, taskCompletionSource));
+                firebaseMessaging.f.execute(new ci.x8(5, firebaseMessaging, taskCompletionSource));
                 taskCompletionSource.getTask().addOnCompleteListener(new c0(this, 11));
             } catch (Throwable th2) {
                 FileLog.e(th2);
@@ -79,8 +79,8 @@ public class PushListenerController {
             if (this.hasServices == null) {
                 try {
                     this.hasServices = Boolean.valueOf(k6.d.d.d(ApplicationLoader.applicationContext, k6.e.a) == 0);
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                     this.hasServices = Boolean.FALSE;
                 }
             }
@@ -101,7 +101,7 @@ public class PushListenerController {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public interface IPushListenerServiceProvider {
         String getLogTitle();
 
@@ -112,7 +112,7 @@ public class PushListenerController {
         void onRequestPushToken();
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PushType {
     }
@@ -326,9 +326,9 @@ public class PushListenerController {
         } catch (Throwable unused) {
         }
         if (BuildVars.DEBUG_VERSION) {
-            StringBuilder w10 = a4.a.w("finished ", str2, " service, time = ");
-            w10.append(SystemClock.elapsedRealtime() - elapsedRealtime);
-            FileLog.d(w10.toString());
+            StringBuilder v = a4.a.v("finished ", str2, " service, time = ");
+            v.append(SystemClock.elapsedRealtime() - elapsedRealtime);
+            FileLog.d(v.toString());
         }
     }
 

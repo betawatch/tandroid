@@ -1,63 +1,107 @@
 package w9;
 
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskCompletionSource;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
+import java.util.Locale;
+import java.util.UUID;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v implements Continuation {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TaskCompletionSource b;
+public final class v {
+    public static final Pattern g = Pattern.compile("[^\\p{Alnum}]");
+    public static final String h = Pattern.quote("/");
+    public final c5.i a;
+    public final Context b;
+    public final String c;
+    public final qa.d d;
+    public final s e;
+    public c f;
 
-    public /* synthetic */ v(int i10, TaskCompletionSource taskCompletionSource) {
-        this.a = i10;
-        this.b = taskCompletionSource;
+    public v(Context context, String str, qa.d dVar, s sVar) {
+        if (context == null) {
+            throw new IllegalArgumentException("appContext must not be null");
+        }
+        if (str == null) {
+            throw new IllegalArgumentException("appIdentifier must not be null");
+        }
+        this.b = context;
+        this.c = str;
+        this.d = dVar;
+        this.e = sVar;
+        this.a = new c5.i();
     }
 
-    @Override // com.google.android.gms.tasks.Continuation
-    public final Object then(Task task) {
-        switch (this.a) {
-            case 0:
-                boolean isSuccessful = task.isSuccessful();
-                TaskCompletionSource taskCompletionSource = this.b;
-                if (!isSuccessful) {
-                    if (task.getException() != null) {
-                        taskCompletionSource.trySetException(task.getException());
-                        break;
-                    }
-                } else {
-                    taskCompletionSource.trySetResult(task.getResult());
-                    break;
-                }
-                break;
-            case 1:
-                boolean isSuccessful2 = task.isSuccessful();
-                TaskCompletionSource taskCompletionSource2 = this.b;
-                if (!isSuccessful2) {
-                    if (task.getException() != null) {
-                        taskCompletionSource2.trySetException(task.getException());
-                        break;
-                    }
-                } else {
-                    taskCompletionSource2.trySetResult(task.getResult());
-                    break;
-                }
-                break;
-            default:
-                boolean isSuccessful3 = task.isSuccessful();
-                TaskCompletionSource taskCompletionSource3 = this.b;
-                if (!isSuccessful3) {
-                    if (task.getException() != null) {
-                        taskCompletionSource3.setException(task.getException());
-                        break;
-                    }
-                } else {
-                    taskCompletionSource3.setResult(task.getResult());
-                    break;
-                }
-                break;
+    public final synchronized String a(String str, SharedPreferences sharedPreferences) {
+        String lowerCase;
+        String uuid = UUID.randomUUID().toString();
+        lowerCase = uuid == null ? null : g.matcher(uuid).replaceAll("").toLowerCase(Locale.US);
+        String str2 = "Created new Crashlytics installation ID: " + lowerCase + " for FID: " + str;
+        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+            Log.v("FirebaseCrashlytics", str2, null);
         }
-        return null;
+        sharedPreferences.edit().putString("crashlytics.installation.id", lowerCase).putString("firebase.installation.id", str).apply();
+        return lowerCase;
+    }
+
+    public final synchronized c b() {
+        String str;
+        c cVar = this.f;
+        if (cVar != null && (cVar.b != null || !this.e.a())) {
+            return this.f;
+        }
+        t9.b bVar = t9.b.a;
+        bVar.c("Determining Crashlytics installation ID...");
+        SharedPreferences sharedPreferences = this.b.getSharedPreferences("com.google.firebase.crashlytics", 0);
+        String string = sharedPreferences.getString("firebase.installation.id", null);
+        bVar.c("Cached Firebase Installation ID: " + string);
+        if (this.e.a()) {
+            try {
+                str = (String) x.a(((qa.c) this.d).d());
+            } catch (Exception e7) {
+                Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e7);
+                str = null;
+            }
+            bVar.c("Fetched Firebase Installation ID: " + str);
+            if (str == null) {
+                if (string == null) {
+                    str = "SYN_" + UUID.randomUUID().toString();
+                } else {
+                    str = string;
+                }
+            }
+            if (str.equals(string)) {
+                this.f = new c(sharedPreferences.getString("crashlytics.installation.id", null), str);
+            } else {
+                this.f = new c(a(str, sharedPreferences), str);
+            }
+        } else if (string == null || !string.startsWith("SYN_")) {
+            this.f = new c(a("SYN_" + UUID.randomUUID().toString(), sharedPreferences), null);
+        } else {
+            this.f = new c(sharedPreferences.getString("crashlytics.installation.id", null), null);
+        }
+        bVar.c("Install IDs: " + this.f);
+        return this.f;
+    }
+
+    public final String c() {
+        String str;
+        c5.i iVar = this.a;
+        Context context = this.b;
+        synchronized (iVar) {
+            try {
+                if (iVar.a == null) {
+                    String installerPackageName = context.getPackageManager().getInstallerPackageName(context.getPackageName());
+                    if (installerPackageName == null) {
+                        installerPackageName = "";
+                    }
+                    iVar.a = installerPackageName;
+                }
+                str = "".equals(iVar.a) ? null : iVar.a;
+            } finally {
+            }
+        }
+        return str;
     }
 }

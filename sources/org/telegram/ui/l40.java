@@ -1,19 +1,20 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class l40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ d60 a;
-
-    public l40(d60 d60Var) {
-        this.a = d60Var;
+public final class l40 extends FrameLayout {
+    public l40(LaunchActivity launchActivity) {
+        super(launchActivity);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.a.X0 = null;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (getAlpha() <= 0.95f) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

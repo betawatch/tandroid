@@ -22,12 +22,12 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.ay;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.rq;
-import org.telegram.ui.Components.zx;
-import org.telegram.ui.a71;
+import org.telegram.ui.Components.sq;
+import org.telegram.ui.c71;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class d2 extends s4.h0 {
     public final TLRPC.TL_inputStickerSetShortName E;
@@ -95,7 +95,7 @@ public final class d2 extends s4.h0 {
         }
         c2Var.n(true);
         AndroidUtilities.cancelRunOnUIThread(a0Var);
-        i10 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
         MediaDataController mediaDataController = MediaDataController.getInstance(i10);
         this.x = 0;
         ArrayList arrayList3 = this.s;
@@ -163,19 +163,19 @@ public final class d2 extends s4.h0 {
             }
             c2 c2Var2 = c2Var;
             s2 s2Var2 = s2Var;
-            zx zxVar = new zx();
-            zxVar.c = tL_messages_stickerSet3.documents;
-            zxVar.b = tL_messages_stickerSet3.set;
-            zxVar.f = true;
-            zxVar.g = false;
-            zxVar.h = true;
-            zxVar.e = true;
+            ay ayVar = new ay();
+            ayVar.c = tL_messages_stickerSet3.documents;
+            ayVar.b = tL_messages_stickerSet3.set;
+            ayVar.f = true;
+            ayVar.g = false;
+            ayVar.h = true;
+            ayVar.e = true;
             if (tL_messages_stickerSet3 == this.F) {
-                zxVar.j = R.drawable.emoji_tabs_faves;
+                ayVar.j = R.drawable.emoji_tabs_faves;
             } else if (tL_messages_stickerSet3 == this.G) {
-                zxVar.j = R.drawable.msg_emoji_recent;
+                ayVar.j = R.drawable.msg_emoji_recent;
             }
-            arrayList6.add(zxVar);
+            arrayList6.add(ayVar);
             arrayList5.add(tL_messages_stickerSet3);
             i17++;
             s2Var = s2Var2;
@@ -192,7 +192,7 @@ public final class d2 extends s4.h0 {
                 while (i19 < featuredEmojiSets.size()) {
                     TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i19);
                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
-                        i15 = ((org.telegram.ui.ActionBar.e3) s2Var3).currentAccount;
+                        i15 = ((org.telegram.ui.ActionBar.f3) s2Var3).currentAccount;
                         tL_messages_stickerSet = MediaDataController.getInstance(i15).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), false);
                         if (tL_messages_stickerSet != null) {
                             e2Var2 = e2Var4;
@@ -202,7 +202,7 @@ public final class d2 extends s4.h0 {
                                 int i20 = 0;
                                 while (true) {
                                     if (i20 < arrayList6.size()) {
-                                        TLRPC.StickerSet stickerSet2 = ((zx) arrayList6.get(i20)).b;
+                                        TLRPC.StickerSet stickerSet2 = ((ay) arrayList6.get(i20)).b;
                                         if (stickerSet2 != null) {
                                             i14 = i20;
                                             if (stickerSet2.id == tL_messages_stickerSet.set.id) {
@@ -224,14 +224,14 @@ public final class d2 extends s4.h0 {
                                         for (int i21 = 0; i21 < tL_messages_stickerSet.documents.size(); i21++) {
                                             hashMap2.put(Long.valueOf(tL_messages_stickerSet.documents.get(i21).id), tL_messages_stickerSet);
                                         }
-                                        zx zxVar2 = new zx();
-                                        zxVar2.c = tL_messages_stickerSet.documents;
-                                        zxVar2.b = tL_messages_stickerSet.set;
-                                        zxVar2.f = false;
-                                        zxVar2.g = true;
-                                        zxVar2.h = true;
-                                        zxVar2.e = true;
-                                        arrayList6.add(zxVar2);
+                                        ay ayVar2 = new ay();
+                                        ayVar2.c = tL_messages_stickerSet.documents;
+                                        ayVar2.b = tL_messages_stickerSet.set;
+                                        ayVar2.f = false;
+                                        ayVar2.g = true;
+                                        ayVar2.h = true;
+                                        ayVar2.e = true;
+                                        arrayList6.add(ayVar2);
                                     }
                                 }
                             }
@@ -437,7 +437,7 @@ public final class d2 extends s4.h0 {
                 int i13 = this.K;
                 if (b2Var.b != i13) {
                     b2Var.b = i13;
-                    a71.D(UserConfig.selectedAccount, b2Var.a);
+                    c71.D(UserConfig.selectedAccount, b2Var.a);
                     return;
                 }
                 return;
@@ -450,21 +450,21 @@ public final class d2 extends s4.h0 {
         if (document == s2Var.e) {
             o1Var.setSticker(null);
             int dp = AndroidUtilities.dp(28.0f);
-            int i14 = org.telegram.ui.ActionBar.h6.Me;
-            ShapeDrawable b02 = org.telegram.ui.ActionBar.h6.b0(dp, org.telegram.ui.ActionBar.h6.l1(0.12f, s2Var.getThemedColor(i14)));
+            int i14 = org.telegram.ui.ActionBar.i6.Me;
+            ShapeDrawable b02 = org.telegram.ui.ActionBar.i6.b0(dp, org.telegram.ui.ActionBar.i6.l1(0.12f, s2Var.getThemedColor(i14)));
             Drawable mutate = e2Var.getResources().getDrawable(R.drawable.filled_add_sticker).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(s2Var.getThemedColor(i14), PorterDuff.Mode.MULTIPLY));
-            rq rqVar = new rq(b02, mutate);
+            sq sqVar = new sq(b02, mutate);
             int dp2 = AndroidUtilities.dp(56.0f);
             int dp3 = AndroidUtilities.dp(56.0f);
-            rqVar.h = dp2;
-            rqVar.n = dp3;
+            sqVar.h = dp2;
+            sqVar.n = dp3;
             int dp4 = AndroidUtilities.dp(24.0f);
             int dp5 = AndroidUtilities.dp(24.0f);
-            rqVar.e = dp4;
-            rqVar.f = dp5;
-            rqVar.r = true;
-            o1Var.setDrawable(rqVar);
+            sqVar.e = dp4;
+            sqVar.f = dp5;
+            sqVar.r = true;
+            o1Var.setDrawable(sqVar);
             return;
         }
         ArrayList arrayList3 = this.v;
@@ -517,7 +517,7 @@ public final class d2 extends s4.h0 {
             o8Var = new View(e2Var.getContext());
         } else if (i10 == 1) {
             Context context = e2Var.getContext();
-            d6Var = ((org.telegram.ui.ActionBar.e3) s2Var).resourcesProvider;
+            d6Var = ((org.telegram.ui.ActionBar.f3) s2Var).resourcesProvider;
             o8Var = new org.telegram.ui.Cells.o8(context, true, false, d6Var, false);
         } else if (i10 == 3) {
             Context context2 = e2Var.getContext();
@@ -526,12 +526,12 @@ public final class d2 extends s4.h0 {
             b2Var.b = -1;
             org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context2);
             b2Var.a = w9Var;
-            b2Var.addView(w9Var, w7.y5.e(36, 36, 17));
+            b2Var.addView(w9Var, w7.z5.e(36, 36, 17));
             TextView textView = new TextView(context2);
             textView.setTextSize(1, 14.0f);
             textView.setTextColor(-8553090);
             textView.setText(LocaleController.getString(z10 ? R.string.NoEmojiFound : R.string.NoStickersFound));
-            b2Var.addView(textView, w7.y5.d(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
+            b2Var.addView(textView, w7.z5.d(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
             o8Var = b2Var;
         } else if (i10 == 4) {
             q2 q2Var = new q2(s2Var, e2Var.getContext());

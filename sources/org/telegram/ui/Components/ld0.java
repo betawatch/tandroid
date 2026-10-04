@@ -11,12 +11,12 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class ld0 extends FrameLayout {
-    public static final vv0 I;
-    public static final vv0 J;
-    public static final vv0 K;
+    public static final ew0 I;
+    public static final ew0 J;
+    public static final ew0 K;
     public boolean E;
     public boolean F;
     public final org.telegram.ui.ActionBar.d6 G;
@@ -37,15 +37,15 @@ public class ld0 extends FrameLayout {
     public boolean y;
 
     static {
-        vv0 vv0Var = new vv0(new ha0(2), new ha0(3));
-        vv0Var.c = 100.0f;
-        I = vv0Var;
-        vv0 vv0Var2 = new vv0(new ha0(4), new ha0(5));
-        vv0Var2.c = 100.0f;
-        J = vv0Var2;
-        vv0 vv0Var3 = new vv0(new ha0(6), new ha0(7));
-        vv0Var3.c = 100.0f;
-        K = vv0Var3;
+        ew0 ew0Var = new ew0(new ru(4), new ru(5));
+        ew0Var.c = 100.0f;
+        I = ew0Var;
+        ew0 ew0Var2 = new ew0(new ru(6), new ru(7));
+        ew0Var2.c = 100.0f;
+        J = ew0Var2;
+        ew0 ew0Var3 = new ew0(new ru(8), new ru(9));
+        ew0Var3.c = 100.0f;
+        K = ew0Var3;
     }
 
     public ld0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
@@ -121,12 +121,12 @@ public class ld0 extends FrameLayout {
     }
 
     public final void f() {
-        int i10 = org.telegram.ui.ActionBar.h6.H6;
+        int i10 = org.telegram.ui.ActionBar.i6.H6;
         org.telegram.ui.ActionBar.d6 d6Var = this.G;
-        int d = i0.a.d((!this.y || this.F) ? this.n : 0.0f, org.telegram.ui.ActionBar.h6.v0(i10, d6Var), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.I6, d6Var));
-        int i11 = org.telegram.ui.ActionBar.h6.q7;
-        this.d.setColor(i0.a.d(this.s, d, org.telegram.ui.ActionBar.h6.v0(i11, d6Var)));
-        setColor(i0.a.d(this.s, i0.a.d((!this.y || this.F) ? this.f : 0.0f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.k6, d6Var), org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.l6, d6Var)), org.telegram.ui.ActionBar.h6.v0(i11, d6Var)));
+        int d = i0.a.d((!this.y || this.F) ? this.n : 0.0f, org.telegram.ui.ActionBar.i6.v0(i10, d6Var), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.I6, d6Var));
+        int i11 = org.telegram.ui.ActionBar.i6.q7;
+        this.d.setColor(i0.a.d(this.s, d, org.telegram.ui.ActionBar.i6.v0(i11, d6Var)));
+        setColor(i0.a.d(this.s, i0.a.d((!this.y || this.F) ? this.f : 0.0f, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.k6, d6Var), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.l6, d6Var)), org.telegram.ui.ActionBar.i6.v0(i11, d6Var)));
     }
 
     public EditText getAttachedEditText() {

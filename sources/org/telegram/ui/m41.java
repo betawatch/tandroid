@@ -2,51 +2,38 @@ package org.telegram.ui;
 
 import android.app.Activity;
 import android.graphics.Canvas;
-import android.graphics.Path;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class m41 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
-    public final Path a;
-    public ch.d b;
+public final class m41 extends org.telegram.ui.Components.p6 {
+    public boolean s;
+    public final org.telegram.ui.Components.e6 v;
+    public final /* synthetic */ SaveToGallerySettingsActivity w;
 
-    public m41(Activity activity) {
-        super(activity);
-        this.a = new Path();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipPath(this.a);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.ActionBar.x5
-    public final void e() {
-        ch.d dVar = this.b;
-        if (dVar != null) {
-            dVar.v();
-        }
-    }
-
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m41(SaveToGallerySettingsActivity saveToGallerySettingsActivity, Activity activity) {
+        super(activity, true, true, false);
+        this.w = saveToGallerySettingsActivity;
+        this.v = new org.telegram.ui.Components.e6(this);
+        getDrawable().D = true;
     }
 
     @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), i10 - AndroidUtilities.dp(9.0f), i11 - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
+    public final void dispatchDraw(Canvas canvas) {
+        float f7 = this.s ? 1.0f : 0.0f;
+        org.telegram.ui.Components.e6 e6Var = this.v;
+        e6Var.d(f7, false);
+        int i10 = org.telegram.ui.ActionBar.i6.y6;
+        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.w;
+        setTextColor(i0.a.d(e6Var.c, saveToGallerySettingsActivity.getThemedColor(i10), saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.i6.n6)));
+        super.dispatchDraw(canvas);
     }
 
-    public void setBlurredBackground(ch.d dVar) {
-        this.b = dVar;
-        setBackground(dVar);
+    public final void e(boolean z10, boolean z11) {
+        if (this.s != z10) {
+            this.s = z10;
+            this.v.d(z10 ? 1.0f : 0.0f, z11);
+            invalidate();
+        }
     }
 }

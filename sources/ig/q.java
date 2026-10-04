@@ -9,9 +9,9 @@ import android.graphics.RectF;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class q extends g {
     public final Matrix D1;
@@ -696,7 +696,7 @@ public class q extends g {
             canvas.save();
             canvas.clipRect(f36, i11, f35, getMeasuredHeight() - this.s);
             if (z15) {
-                canvas.drawColor(h6.w0(null, h6.rj, false));
+                canvas.drawColor(i6.w0(null, i6.rj, false));
             }
             for (int size = arrayList3.size() - 1; size >= 0; size--) {
                 kg.f fVar3 = (kg.f) arrayList3.get(size);
@@ -870,7 +870,7 @@ public class q extends g {
                 }
             }
             if (z12) {
-                canvas.drawColor(h6.w0(null, h6.rj, false));
+                canvas.drawColor(i6.w0(null, i6.rj, false));
             }
             for (int size2 = arrayList.size() - 1; size2 >= 0; size2--) {
                 kg.f fVar3 = (kg.f) arrayList.get(size2);

@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c {
     public long b;
@@ -122,15 +122,15 @@ public final class c {
     }
 
     public final long e() {
-        c6.q e = this.c.e();
-        if (e == null) {
+        c6.q e7 = this.c.e();
+        if (e7 == null) {
             return 0L;
         }
-        MediaInfo mediaInfo = e.a;
+        MediaInfo mediaInfo = e7.a;
         int i10 = mediaInfo == null ? -1 : mediaInfo.b;
-        int i11 = e.e;
-        int i12 = e.f;
-        int i13 = e.w;
+        int i11 = e7.e;
+        int i12 = e7.f;
+        int i13 = e7.w;
         if (i11 == 1) {
             if (i12 != 1) {
                 if (i12 != 2) {
@@ -145,7 +145,7 @@ public final class c {
                 return 0L;
             }
         }
-        return e.b;
+        return e7.b;
     }
 
     public final void f() {

@@ -1,66 +1,87 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
-import android.graphics.Shader;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class g20 {
-    public LinearGradient b;
-    public final Paint[] a = new Paint[4];
-    public final Matrix c = new Matrix();
+public final class g20 extends s4.v {
+    public final /* synthetic */ FiltersSetupActivity d;
 
-    public final void a(Canvas canvas, RectF rectF, float f7) {
-        Paint[] paintArr = this.a;
-        if (paintArr[0] == null) {
-            Paint paint = new Paint(1);
-            paintArr[0] = paint;
-            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        }
-        paintArr[0].setShader(this.b);
-        paintArr[0].setAlpha((int) (f7 * 255.0f));
-        canvas.drawRect(rectF, paintArr[0]);
+    public g20(FiltersSetupActivity filtersSetupActivity) {
+        this.d = filtersSetupActivity;
     }
 
-    public final void b(Canvas canvas, RectF rectF, int i10, float f7) {
-        if (f7 <= 0.0f) {
-            return;
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
+        super.a(recyclerView, c1Var);
+        View view = c1Var.a;
+        view.setPressed(false);
+        view.setTag(R.id.dragging, null);
+    }
+
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
+        return c1Var.f != 2 ? s4.v.l(0, 0) : s4.v.l(3, 0);
+    }
+
+    @Override // s4.v
+    public final boolean k() {
+        return true;
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
+        MessagesController.DialogFilter dialogFilter;
+        MessagesController.DialogFilter dialogFilter2;
+        if (c1Var.f != c1Var2.f) {
+            return false;
         }
-        if (this.b == null) {
-            this.b = new LinearGradient(0.0f, 0.0f, 0.0f, 16.0f, new int[]{-65536, 16711680}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        d20 d20Var = this.d.b;
+        int b10 = c1Var.b();
+        int b11 = c1Var2.b();
+        FiltersSetupActivity filtersSetupActivity = d20Var.e;
+        int i10 = filtersSetupActivity.r;
+        ArrayList arrayList = filtersSetupActivity.n;
+        if (b10 >= i10 && b11 >= i10) {
+            b20 b20Var = (b20) arrayList.get(b10);
+            b20 b20Var2 = (b20) arrayList.get(b11);
+            if (b20Var != null && b20Var2 != null && (dialogFilter = b20Var.d) != null && (dialogFilter2 = b20Var2.d) != null) {
+                int i11 = dialogFilter.order;
+                dialogFilter.order = dialogFilter2.order;
+                dialogFilter2.order = i11;
+                ArrayList<MessagesController.DialogFilter> arrayList2 = filtersSetupActivity.getMessagesController().dialogFilters;
+                try {
+                    arrayList2.set(b10 - filtersSetupActivity.r, b20Var2.d);
+                    arrayList2.set(b11 - filtersSetupActivity.r, b20Var.d);
+                } catch (Exception unused) {
+                }
+                filtersSetupActivity.e = true;
+                filtersSetupActivity.Y(true);
+            }
         }
-        Paint[] paintArr = this.a;
-        if (paintArr[i10] == null) {
-            paintArr[i10] = new Paint(1);
-            paintArr[i10].setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        return true;
+    }
+
+    @Override // s4.v
+    public final void p(s4.c1 c1Var, int i10) {
+        if (i10 != 0) {
+            this.d.a.J0(false);
+            c1Var.a.setPressed(true);
+        } else {
+            AndroidUtilities.cancelRunOnUIThread(new g10(this, 4));
+            AndroidUtilities.runOnUIThread(new g10(this, 4), 320L);
         }
-        paintArr[i10].setShader(this.b);
-        Matrix matrix = this.c;
-        matrix.reset();
-        if (i10 == 0) {
-            matrix.postScale(1.0f, rectF.width() / 16.0f);
-            matrix.postRotate(-90.0f);
-            matrix.postTranslate(rectF.left, rectF.top);
-        } else if (i10 == 1) {
-            matrix.postScale(1.0f, rectF.height() / 16.0f);
-            matrix.postTranslate(rectF.left, rectF.top);
-        } else if (i10 == 2) {
-            matrix.postScale(1.0f, rectF.width() / 16.0f);
-            matrix.postRotate(90.0f);
-            matrix.postTranslate(rectF.right, rectF.top);
-        } else if (i10 == 3) {
-            matrix.postScale(1.0f, rectF.height() / 16.0f);
-            matrix.postScale(1.0f, -1.0f);
-            matrix.postTranslate(rectF.left, rectF.bottom);
+        if (c1Var != null) {
+            c1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
         }
-        this.b.setLocalMatrix(matrix);
-        paintArr[i10].setAlpha((int) (f7 * 255.0f));
-        canvas.drawRect(rectF, paintArr[i10]);
+    }
+
+    @Override // s4.v
+    public final void q(s4.c1 c1Var) {
     }
 }

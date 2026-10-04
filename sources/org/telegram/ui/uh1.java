@@ -8,9 +8,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uh1 implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.voip.u1, r0.n, org.telegram.ui.Components.voip.j3 {
+public final /* synthetic */ class uh1 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.voip.u1, r0.n, org.telegram.ui.Components.voip.j3 {
     public final /* synthetic */ int a;
     public final /* synthetic */ mi1 b;
 
@@ -47,24 +47,8 @@ public final /* synthetic */ class uh1 implements org.telegram.ui.ActionBar.z1, 
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                ei1 ei1Var = this.b.u0;
-                if (ei1Var != null) {
-                    ei1Var.b();
-                    break;
-                }
-                break;
-            default:
-                this.b.u0.b();
-                break;
-        }
-    }
-
     @Override // org.telegram.ui.Components.voip.j3
-    public void h(org.telegram.ui.Components.voip.k3 k3Var) {
+    public void f(org.telegram.ui.Components.voip.k3 k3Var) {
         switch (this.a) {
             case 5:
                 VoIPService sharedInstance = VoIPService.getSharedInstance();
@@ -85,6 +69,22 @@ public final /* synthetic */ class uh1 implements org.telegram.ui.ActionBar.z1, 
                 break;
             default:
                 mi1.i(this.b);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                ei1 ei1Var = this.b.u0;
+                if (ei1Var != null) {
+                    ei1Var.b();
+                    break;
+                }
+                break;
+            default:
+                this.b.u0.b();
                 break;
         }
     }

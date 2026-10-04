@@ -20,9 +20,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class g4 extends org.telegram.ui.Components.xl0 {
+public final class g4 extends org.telegram.ui.Components.yl0 {
     public TLRPC.WebPage E;
     public TL_iv.pageBlockChannel F;
     public boolean G;
@@ -42,7 +42,7 @@ public final class g4 extends org.telegram.ui.Components.xl0 {
     public final HashMap w = new HashMap();
     public final ArrayList x = new ArrayList();
     public final HashMap y = new HashMap();
-    public final eu0 K = new eu0(this, 11);
+    public final hu0 K = new hu0(this, 11);
 
     public g4(i4 i4Var, Context context, boolean z10) {
         this.L = i4Var;
@@ -147,7 +147,7 @@ public final class g4 extends org.telegram.ui.Components.xl0 {
         return 100;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         int i10 = c1Var.f;
         return i10 == 23 || i10 == 24;
@@ -158,10 +158,10 @@ public final class g4 extends org.telegram.ui.Components.xl0 {
         ArrayList arrayList = this.f;
         if (z10) {
             TL_iv.pageBlockPhoto pageblockphoto = (TL_iv.pageBlockPhoto) pageBlock;
-            TLRPC.Photo e = f4.e(this.E, pageblockphoto.photo_id);
-            if (e != null) {
-                pageblockphoto.thumb = FileLoader.getClosestPhotoSizeWithSize(e.sizes, 56, true);
-                pageblockphoto.thumbObject = e;
+            TLRPC.Photo e7 = f4.e(this.E, pageblockphoto.photo_id);
+            if (e7 != null) {
+                pageblockphoto.thumb = FileLoader.getClosestPhotoSizeWithSize(e7.sizes, 56, true);
+                pageblockphoto.thumbObject = e7;
                 arrayList.add(pageBlock);
                 return;
             }
@@ -299,7 +299,7 @@ public final class g4 extends org.telegram.ui.Components.xl0 {
                 if (s1Var != null) {
                     photo = null;
                     r10 = 0;
-                    s1Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
+                    s1Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
                 } else {
                     photo = null;
                     r10 = 0;
@@ -322,8 +322,8 @@ public final class g4 extends org.telegram.ui.Components.xl0 {
                     if (s1Var3 != null) {
                         try {
                             s1Var3.loadUrl("about:blank");
-                        } catch (Exception e) {
-                            FileLog.e(e);
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
                         }
                     }
                     try {
@@ -335,9 +335,9 @@ public final class g4 extends org.telegram.ui.Components.xl0 {
                                 s1Var4.loadDataWithBaseURL("https://telegram.org/embed", str2, "text/html", "UTF-8", null);
                                 t1Var.a.setVisibility(0);
                             }
-                            org.telegram.ui.Components.q91 q91Var = t1Var.b;
-                            if (q91Var != null) {
-                                q91Var.setVisibility(4);
+                            org.telegram.ui.Components.z91 z91Var = t1Var.b;
+                            if (z91Var != null) {
+                                z91Var.setVisibility(4);
                                 t1Var.b.g(null, null, null, null, false);
                             }
                         } else {
@@ -349,9 +349,9 @@ public final class g4 extends org.telegram.ui.Components.xl0 {
                                     t1Var.a.stopLoading();
                                     t1Var.a.loadUrl("about:blank");
                                 }
-                                org.telegram.ui.Components.q91 q91Var2 = t1Var.b;
-                                if (q91Var2 != null) {
-                                    q91Var2.setVisibility(0);
+                                org.telegram.ui.Components.z91 z91Var2 = t1Var.b;
+                                if (z91Var2 != null) {
+                                    z91Var2.setVisibility(0);
                                 }
                             } else {
                                 s1 s1Var6 = t1Var.a;
@@ -361,15 +361,15 @@ public final class g4 extends org.telegram.ui.Components.xl0 {
                                     hashMap.put("Referer", ApplicationLoader.applicationContext.getPackageName());
                                     t1Var.a.loadUrl(t1Var.v.url, hashMap);
                                 }
-                                org.telegram.ui.Components.q91 q91Var3 = t1Var.b;
-                                if (q91Var3 != null) {
-                                    q91Var3.setVisibility(4);
+                                org.telegram.ui.Components.z91 z91Var3 = t1Var.b;
+                                if (z91Var3 != null) {
+                                    z91Var3.setVisibility(4);
                                     t1Var.b.g(null, null, null, null, false);
                                 }
                             }
                         }
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
                     }
                 }
                 t1Var.requestLayout();
@@ -454,11 +454,11 @@ public final class g4 extends org.telegram.ui.Components.xl0 {
                         while (i16 < size) {
                             TL_iv.PageBlock pageBlock3 = k1Var2.s.items.get(i16);
                             if (pageBlock3 instanceof TL_iv.pageBlockPhoto) {
-                                TLRPC.Photo e10 = f4.e(g4Var.E, ((TL_iv.pageBlockPhoto) pageBlock3).photo_id);
-                                if (e10 == null) {
+                                TLRPC.Photo e11 = f4.e(g4Var.E, ((TL_iv.pageBlockPhoto) pageBlock3).photo_id);
+                                if (e11 == null) {
                                     i16++;
                                 } else {
-                                    closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(e10.sizes, AndroidUtilities.getPhotoSize());
+                                    closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(e11.sizes, AndroidUtilities.getPhotoSize());
                                     MessageObject.GroupedMessagePosition groupedMessagePosition = new MessageObject.GroupedMessagePosition();
                                     groupedMessagePosition.last = i16 != size + (-1);
                                     f11 = closestPhotoSizeWithSize != null ? 1.0f : closestPhotoSizeWithSize.w / closestPhotoSizeWithSize.h;
@@ -806,7 +806,7 @@ public final class g4 extends org.telegram.ui.Components.xl0 {
                     }
                 }
                 k1Var.b.l();
-                k1Var.a.setGlowColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
+                k1Var.a.setGlowColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
                 k1Var.requestLayout();
                 break;
             case 18:
@@ -816,7 +816,7 @@ public final class g4 extends org.telegram.ui.Components.xl0 {
                 a1 a1Var = (a1) c1Var.a;
                 TL_iv.pageBlockAudio pageblockaudio = (TL_iv.pageBlockAudio) pageBlock2;
                 z11 = i11 == 0;
-                p70 p70Var = a1Var.a;
+                t70 t70Var = a1Var.a;
                 a1Var.K = pageblockaudio;
                 MessageObject messageObject = (MessageObject) a1Var.b.s.get(pageblockaudio);
                 a1Var.M = messageObject;
@@ -824,13 +824,13 @@ public final class g4 extends org.telegram.ui.Components.xl0 {
                     a1Var.L = messageObject.getDocument();
                 }
                 a1Var.h = z11;
-                org.telegram.ui.Components.qo0 qo0Var = a1Var.f;
-                int i51 = org.telegram.ui.ActionBar.h6.ud;
-                ((i4) p70Var).getClass();
-                int w02 = org.telegram.ui.ActionBar.h6.w0(null, i51, false);
-                int w03 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.vd, false);
-                int i52 = org.telegram.ui.ActionBar.h6.xd;
-                qo0Var.h(w02, w03, org.telegram.ui.ActionBar.h6.w0(null, i52, false), org.telegram.ui.ActionBar.h6.w0(null, i52, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.wd, false));
+                org.telegram.ui.Components.to0 to0Var = a1Var.f;
+                int i51 = org.telegram.ui.ActionBar.i6.ud;
+                ((i4) t70Var).getClass();
+                int w02 = org.telegram.ui.ActionBar.i6.w0(null, i51, false);
+                int w03 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.vd, false);
+                int i52 = org.telegram.ui.ActionBar.i6.xd;
+                to0Var.h(w02, w03, org.telegram.ui.ActionBar.i6.w0(null, i52, false), org.telegram.ui.ActionBar.i6.w0(null, i52, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.wd, false));
                 a1Var.a(false);
                 a1Var.requestLayout();
                 break;
@@ -1415,9 +1415,9 @@ public final class g4 extends org.telegram.ui.Components.xl0 {
                     }
             }
         } else {
-            View mnVar = new org.telegram.ui.Components.mn(context, 8);
-            mnVar.setImportantForAccessibility(2);
-            view = mnVar;
+            View nnVar = new org.telegram.ui.Components.nn(context, 8);
+            nnVar.setImportantForAccessibility(2);
+            view = nnVar;
         }
         view.setLayoutParams(new s4.p0(-1, -2));
         view.setFocusable(true);
@@ -1444,7 +1444,7 @@ public final class g4 extends org.telegram.ui.Components.xl0 {
                 textView.setGravity(21);
                 textView2.setText(LocaleController.formatPluralStringComma("Views", i11));
             }
-            int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.M6, false);
+            int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.M6, false);
             textView.setTextColor(i4Var.a());
             textView2.setTextColor(i4Var.a());
             textView.setBackgroundColor(Color.argb(34, Color.red(w02), Color.green(w02), Color.blue(w02)));

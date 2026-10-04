@@ -1,43 +1,22 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.ImageReceiver;
+import android.content.Context;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class jz0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ProfileActivity a;
+public final class jz0 extends org.telegram.ui.Components.bi0 {
+    public final /* synthetic */ ProfileActivity s1;
 
-    public jz0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jz0(ProfileActivity profileActivity, Context context, long j3, org.telegram.ui.ActionBar.k kVar, yy0 yy0Var, iz0 iz0Var, org.telegram.ui.Components.wh0 wh0Var, org.telegram.ui.Components.sh0 sh0Var) {
+        super(context, j3, kVar, yy0Var, iz0Var, wh0Var, sh0Var);
+        this.s1 = profileActivity;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.ActionBar.k kVar;
-        ProfileActivity profileActivity = this.a;
-        kVar = ((org.telegram.ui.ActionBar.m2) profileActivity).actionBar;
-        kVar.A(profileActivity.p2 ? 1090519039 : profileActivity.Q5 != null ? 553648127 : org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.f8, profileActivity.z0), false);
-        fz0 fz0Var = profileActivity.e0;
-        ImageReceiver imageReceiver = fz0Var.U;
-        org.telegram.ui.Components.d6 animation = imageReceiver.getAnimation();
-        if (animation != null) {
-            animation.w(fz0Var);
-        }
-        imageReceiver.clearImage();
-        ImageReceiver.BitmapHolder bitmapHolder = fz0Var.W;
-        if (bitmapHolder != null) {
-            bitmapHolder.release();
-            fz0Var.W = null;
-        }
-        fz0Var.V = 0.0f;
-        fz0Var.invalidate();
-        profileActivity.H0 = false;
-        profileActivity.l5(false);
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
+    @Override // org.telegram.ui.Components.bi0
+    public final void setCustomAvatarProgress(float f7) {
+        ProfileActivity profileActivity = this.s1;
+        profileActivity.n5 = f7;
+        profileActivity.B3();
     }
 }

@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class pd0 extends TextView {
     public final /* synthetic */ qd0 a;
@@ -31,7 +31,7 @@ public final class pd0 extends TextView {
         Drawable background = getBackground();
         qd0 qd0Var = this.a;
         if (background != null) {
-            org.telegram.ui.ActionBar.h6.B1(background, qd0Var.c(z10 ? 0.1f : 0.05f), true);
+            org.telegram.ui.ActionBar.i6.B1(background, qd0Var.c(z10 ? 0.1f : 0.05f), true);
         }
         setTextColor(qd0Var.c(z10 ? 0.8f : 0.6f));
     }

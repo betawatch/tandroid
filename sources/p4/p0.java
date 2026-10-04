@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class p0 extends p implements n0 {
     public final String f;
@@ -108,10 +108,10 @@ public final class p0 extends p implements n0 {
         m0 m0Var = this.l;
         if (m0Var != null) {
             int i11 = this.m;
-            Bundle g10 = c1.g(i10, "unselectReason");
+            Bundle h = c1.h(i10, "unselectReason");
             int i12 = m0Var.d;
             m0Var.d = i12 + 1;
-            m0Var.b(6, i12, i11, null, g10);
+            m0Var.b(6, i12, i11, null, h);
         }
     }
 

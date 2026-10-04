@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.bt;
+import org.telegram.ui.ft;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final /* synthetic */ class k2 implements View.OnClickListener {
                                 x2Var2.T = null;
                             }
                             textView.setText("");
-                            x2Var2.L.setText(LocaleController.formatString(R.string.GiftCraftProgressSuccessChance, ei.l.G0(x2Var2.getGiftsSuccessChance())));
+                            x2Var2.L.setText(LocaleController.formatString(R.string.GiftCraftProgressSuccessChance, ei.m.L0(x2Var2.getGiftsSuccessChance())));
                             for (int i11 = 0; i11 < v2VarArr.length; i11++) {
                                 v2 v2Var3 = v2VarArr[i11];
                                 if (v2Var3 != null) {
@@ -125,7 +125,7 @@ public final /* synthetic */ class k2 implements View.OnClickListener {
                                     arrayList2.add(starGift4);
                                 }
                             }
-                            x2Var2.e0.run(arrayList2, new ai.m0(23, x2Var2, arrayList2), new rg.q1(x2Var2, 27));
+                            x2Var2.e0.run(arrayList2, new ai.m0(23, x2Var2, arrayList2), new rg.s1(x2Var2, 27));
                             break;
                         } else {
                             AndroidUtilities.shakeViewSpring(linearLayout);
@@ -161,7 +161,7 @@ public final /* synthetic */ class k2 implements View.OnClickListener {
                             i13++;
                         }
                     }
-                    x2Var.f0.run(new bt(28, x2Var, v2Var7), Boolean.valueOf(z10));
+                    x2Var.f0.run(new ft(28, x2Var, v2Var7), Boolean.valueOf(z10));
                     break;
                 }
                 break;

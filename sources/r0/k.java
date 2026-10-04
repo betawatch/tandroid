@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class k {
     public ViewParent a;
@@ -19,35 +19,35 @@ public final class k {
     }
 
     public final boolean a(float f7, float f10, boolean z10) {
-        ViewParent e;
-        if (this.d && (e = e(0)) != null) {
+        ViewParent e7;
+        if (this.d && (e7 = e(0)) != null) {
             try {
-                return e.onNestedFling(this.c, f7, f10, z10);
-            } catch (AbstractMethodError e7) {
-                Log.e("ViewParentCompat", "ViewParent " + e + " does not implement interface method onNestedFling", e7);
+                return e7.onNestedFling(this.c, f7, f10, z10);
+            } catch (AbstractMethodError e10) {
+                Log.e("ViewParentCompat", "ViewParent " + e7 + " does not implement interface method onNestedFling", e10);
             }
         }
         return false;
     }
 
     public final boolean b(float f7, float f10) {
-        ViewParent e;
-        if (this.d && (e = e(0)) != null) {
+        ViewParent e7;
+        if (this.d && (e7 = e(0)) != null) {
             try {
-                return e.onNestedPreFling(this.c, f7, f10);
-            } catch (AbstractMethodError e7) {
-                Log.e("ViewParentCompat", "ViewParent " + e + " does not implement interface method onNestedPreFling", e7);
+                return e7.onNestedPreFling(this.c, f7, f10);
+            } catch (AbstractMethodError e10) {
+                Log.e("ViewParentCompat", "ViewParent " + e7 + " does not implement interface method onNestedPreFling", e10);
             }
         }
         return false;
     }
 
     public final boolean c(int i10, int i11, int i12, int[] iArr, int[] iArr2) {
-        ViewParent e;
+        ViewParent e7;
         int i13;
         int i14;
         int[] iArr3;
-        if (!this.d || (e = e(i12)) == null) {
+        if (!this.d || (e7 = e(i12)) == null) {
             return false;
         }
         if (i10 == 0 && i11 == 0) {
@@ -77,13 +77,13 @@ public final class k {
         }
         iArr3[0] = 0;
         iArr3[1] = 0;
-        if (e instanceof l) {
-            ((l) e).E(viewGroup, i10, i11, iArr3, i12);
+        if (e7 instanceof l) {
+            ((l) e7).t(viewGroup, i10, i11, iArr3, i12);
         } else if (i12 == 0) {
             try {
-                e.onNestedPreScroll(viewGroup, i10, i11, iArr3);
-            } catch (AbstractMethodError e7) {
-                Log.e("ViewParentCompat", "ViewParent " + e + " does not implement interface method onNestedPreScroll", e7);
+                e7.onNestedPreScroll(viewGroup, i10, i11, iArr3);
+            } catch (AbstractMethodError e10) {
+                Log.e("ViewParentCompat", "ViewParent " + e7 + " does not implement interface method onNestedPreScroll", e10);
             }
         }
         if (iArr2 != null) {
@@ -95,11 +95,11 @@ public final class k {
     }
 
     public final boolean d(int i10, int i11, int i12, int i13, int[] iArr, int i14, int[] iArr2) {
-        ViewParent e;
+        ViewParent e7;
         int i15;
         int i16;
         int[] iArr3;
-        if (this.d && (e = e(i14)) != null) {
+        if (this.d && (e7 = e(i14)) != null) {
             if (i10 != 0 || i11 != 0 || i12 != 0 || i13 != 0) {
                 ViewGroup viewGroup = this.c;
                 if (iArr != null) {
@@ -121,18 +121,18 @@ public final class k {
                 } else {
                     iArr3 = iArr2;
                 }
-                if (e instanceof m) {
-                    ((m) e).j(viewGroup, i10, i11, i12, i13, i14, iArr3);
+                if (e7 instanceof m) {
+                    ((m) e7).n(viewGroup, i10, i11, i12, i13, i14, iArr3);
                 } else {
                     iArr3[0] = iArr3[0] + i12;
                     iArr3[1] = iArr3[1] + i13;
-                    if (e instanceof l) {
-                        ((l) e).c(viewGroup, i10, i11, i12, i13, i14);
+                    if (e7 instanceof l) {
+                        ((l) e7).o(viewGroup, i10, i11, i12, i13, i14);
                     } else if (i14 == 0) {
                         try {
-                            e.onNestedScroll(viewGroup, i10, i11, i12, i13);
-                        } catch (AbstractMethodError e7) {
-                            Log.e("ViewParentCompat", "ViewParent " + e + " does not implement interface method onNestedScroll", e7);
+                            e7.onNestedScroll(viewGroup, i10, i11, i12, i13);
+                        } catch (AbstractMethodError e10) {
+                            Log.e("ViewParentCompat", "ViewParent " + e7 + " does not implement interface method onNestedScroll", e10);
                         }
                     }
                 }
@@ -180,8 +180,8 @@ public final class k {
                         if (i11 == 0) {
                             try {
                                 onStartNestedScroll = parent.onStartNestedScroll(view2, view, i10);
-                            } catch (AbstractMethodError e) {
-                                Log.e("ViewParentCompat", "ViewParent " + parent + " does not implement interface method onStartNestedScroll", e);
+                            } catch (AbstractMethodError e7) {
+                                Log.e("ViewParentCompat", "ViewParent " + parent + " does not implement interface method onStartNestedScroll", e7);
                             }
                         }
                         onStartNestedScroll = false;
@@ -197,8 +197,8 @@ public final class k {
                         } else if (i11 == 0) {
                             try {
                                 parent.onNestedScrollAccepted(view2, view, i10);
-                            } catch (AbstractMethodError e7) {
-                                Log.e("ViewParentCompat", "ViewParent " + parent + " does not implement interface method onNestedScrollAccepted", e7);
+                            } catch (AbstractMethodError e10) {
+                                Log.e("ViewParentCompat", "ViewParent " + parent + " does not implement interface method onNestedScrollAccepted", e10);
                             }
                         }
                     } else {
@@ -214,17 +214,17 @@ public final class k {
     }
 
     public final void h(int i10) {
-        ViewParent e = e(i10);
-        if (e != null) {
-            boolean z10 = e instanceof l;
+        ViewParent e7 = e(i10);
+        if (e7 != null) {
+            boolean z10 = e7 instanceof l;
             ViewGroup viewGroup = this.c;
             if (z10) {
-                ((l) e).o(i10, viewGroup);
+                ((l) e7).m(i10, viewGroup);
             } else if (i10 == 0) {
                 try {
-                    e.onStopNestedScroll(viewGroup);
-                } catch (AbstractMethodError e7) {
-                    Log.e("ViewParentCompat", "ViewParent " + e + " does not implement interface method onStopNestedScroll", e7);
+                    e7.onStopNestedScroll(viewGroup);
+                } catch (AbstractMethodError e10) {
+                    Log.e("ViewParentCompat", "ViewParent " + e7 + " does not implement interface method onStopNestedScroll", e10);
                 }
             }
             if (i10 == 0) {

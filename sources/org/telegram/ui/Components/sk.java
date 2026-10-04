@@ -1,78 +1,159 @@
 package org.telegram.ui.Components;
 
-import android.location.Location;
+import android.content.Context;
+import android.graphics.Point;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.IMapsProvider;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ il b;
+public final class sk extends pi {
+    public final nz n;
+    public final zl0 r;
+    public final s4.c0 s;
+    public final HorizontalScrollView v;
+    public final boolean w;
 
-    public /* synthetic */ sk(il ilVar, int i10) {
-        this.a = i10;
-        this.b = ilVar;
+    public sk(xi xiVar, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
+        super(context, d6Var, xiVar);
+        this.w = z10;
+        this.f = true;
+        org.telegram.ui.ActionBar.n2 n2Var = xiVar.f0;
+        boolean z11 = !z10;
+        nz nzVar = new nz(n2Var, z11, z10, false, getContext(), true, null, null, false, d6Var, false, true);
+        this.n = nzVar;
+        nzVar.w0 = false;
+        nzVar.G(z11, z10, false, false);
+        nzVar.n2 = true;
+        dx dxVar = nzVar.x;
+        if (dxVar != null) {
+            dxVar.setVisibility(8);
+        }
+        nzVar.o2 = true;
+        ImageView imageView = nzVar.y;
+        if (imageView != null) {
+            imageView.setVisibility(8);
+        }
+        nzVar.K2 = true;
+        addView(nzVar, w7.z5.c(-1.0f, -1));
+        HorizontalScrollView y3 = nzVar.y(z11 ? 1 : 0);
+        this.v = y3;
+        zl0 x10 = nzVar.x(z11 ? 1 : 0);
+        this.r = x10;
+        x10.j(new ai.r(this, 21));
+        this.s = (s4.c0) x10.getLayoutManager();
+        y3.setTranslationY(Math.max(0, getCurrentItemTop()));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Location location;
-        switch (this.a) {
-            case 0:
-                il ilVar = this.b;
-                double[] dArr = ilVar.b.x2;
-                ilVar.b0(dArr[0], dArr[1]);
-                break;
-            case 1:
-                il.M(this.b);
-                break;
-            case 2:
-                this.b.Y();
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new sk(this.b, 4));
-                break;
-            case 4:
-                View view = this.b.M;
-                view.setTag(1);
-                view.animate().alpha(0.0f).setDuration(180L).start();
-                break;
-            case 5:
-                il ilVar2 = this.b;
-                gg.t0 t0Var = ilVar2.O;
-                if (!ilVar2.t0) {
-                    IMapsProvider.IMap iMap = ilVar2.H;
-                    if (iMap != null && (location = ilVar2.r0) != null) {
-                        location.setLatitude(iMap.getCameraPosition().target.latitude);
-                        ilVar2.r0.setLongitude(ilVar2.H.getCameraPosition().target.longitude);
-                    }
-                    t0Var.L(ilVar2.r0);
-                    t0Var.I();
-                    break;
-                } else {
-                    ilVar2.t0 = false;
-                    break;
+    @Override // org.telegram.ui.Components.pi
+    public final void C(pi piVar) {
+        xi xiVar = this.b;
+        try {
+            xiVar.X0.getTitleTextView().setBuildFullLayout(true);
+        } catch (Exception unused) {
+        }
+        xiVar.X0.setTitle(LocaleController.getString(this.w ? R.string.SelectSticker : R.string.SelectEmoji));
+        this.s.h1(0, 0);
+    }
+
+    @Override // org.telegram.ui.Components.pi
+    public final void E() {
+        this.r.y0(0);
+    }
+
+    @Override // org.telegram.ui.Components.pi
+    public int getCurrentItemTop() {
+        zl0 zl0Var = this.r;
+        if (zl0Var.getChildCount() <= 0) {
+            zl0Var.setTopGlowOffset(zl0Var.getPaddingTop());
+            return ConnectionsManager.DEFAULT_DATACENTER_ID;
+        }
+        View childAt = zl0Var.getChildAt(0);
+        il0 il0Var = (il0) zl0Var.G(childAt);
+        int top = childAt.getTop() - AndroidUtilities.dp(36.0f);
+        int dp = AndroidUtilities.dp(7.0f);
+        if (top < AndroidUtilities.dp(7.0f) || il0Var == null || il0Var.b() != 0) {
+            top = dp;
+        }
+        zl0Var.setTopGlowOffset(top);
+        return top;
+    }
+
+    @Override // org.telegram.ui.Components.pi
+    public int getFirstOffset() {
+        return AndroidUtilities.dp(56.0f) + getListTopPadding();
+    }
+
+    @Override // org.telegram.ui.Components.pi
+    public int getListTopPadding() {
+        return this.r.getPaddingTop();
+    }
+
+    @Override // org.telegram.ui.Components.pi
+    public final int h() {
+        return 1;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.v.setTranslationY(Math.max(0, getCurrentItemTop()));
+    }
+
+    public void setDelegate(oy oyVar) {
+        this.n.setDelegate(oyVar);
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        this.b.getSheetContainer().invalidate();
+        invalidate();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:11:0x003d  */
+    /* JADX WARN: Removed duplicated region for block: B:14:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x002d  */
+    @Override // org.telegram.ui.Components.pi
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void y(int i10, int i11) {
+        int i12;
+        int dp;
+        int dp2;
+        zl0 zl0Var;
+        ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+        if (!AndroidUtilities.isTablet()) {
+            Point point = AndroidUtilities.displaySize;
+            if (point.x > point.y) {
+                i12 = (int) (i11 / 3.5f);
+                dp = i12 - AndroidUtilities.dp(52.0f);
+                if (dp < 0) {
+                    dp = 0;
                 }
-                break;
-            case 6:
-                fl flVar = this.b.F;
-                if (flVar != null) {
-                    flVar.a();
-                    break;
+                dp2 = AndroidUtilities.dp(36.0f) + dp;
+                zl0Var = this.r;
+                if (zl0Var.getPaddingTop() == dp2) {
+                    zl0Var.setPadding(AndroidUtilities.dp(6.0f), dp2, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
+                    return;
                 }
-                break;
-            case 7:
-                View view2 = this.b.M;
-                if (view2.getTag() == null) {
-                    view2.animate().alpha(0.0f).setDuration(180L).start();
-                    break;
-                }
-                break;
-            default:
-                this.b.b0(0.0d, 0.0d);
-                break;
+                return;
+            }
+        }
+        i12 = (i11 / 5) * 2;
+        dp = i12 - AndroidUtilities.dp(52.0f);
+        if (dp < 0) {
+        }
+        dp2 = AndroidUtilities.dp(36.0f) + dp;
+        zl0Var = this.r;
+        if (zl0Var.getPaddingTop() == dp2) {
         }
     }
 }

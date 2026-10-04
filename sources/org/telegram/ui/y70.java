@@ -1,351 +1,107 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.text.SpannableStringBuilder;
-import android.text.style.ImageSpan;
+import android.graphics.SurfaceTexture;
 import android.view.TextureView;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Intro;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class y70 extends org.telegram.ui.ActionBar.m2 implements NotificationCenter.NotificationCenterDelegate {
-    public Drawable E;
-    public CharSequence[] F;
-    public String[] G;
-    public int H;
-    public w70 I;
-    public long J;
-    public boolean K;
-    public LocaleController.LocaleInfo L;
-    public boolean M;
-    public boolean N;
-    public final Object a;
-    public final Object b;
-    public final int c;
-    public z4.g d;
-    public org.telegram.ui.Components.sa e;
-    public TextView f;
-    public GradientDrawable h;
-    public bi.o n;
-    public FrameLayout r;
-    public ci.m6 s;
-    public org.telegram.ui.Components.kj0 v;
-    public int w;
-    public boolean x;
-    public boolean y;
+public final class y70 implements TextureView.SurfaceTextureListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
 
-    public y70() {
-        super(null);
-        this.a = new Object();
-        this.b = new Object();
-        this.c = UserConfig.selectedAccount;
-        this.w = 0;
-        this.x = false;
-        this.y = false;
+    public /* synthetic */ y70(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        this.a = i10;
+        this.b = notificationCenterDelegate;
     }
 
-    public final void U() {
-        LocaleController.LocaleInfo currentLocaleInfo = LocaleController.getInstance().getCurrentLocaleInfo();
-        int i10 = this.c;
-        String str = MessagesController.getInstance(i10).suggestedLangCode;
-        if ((str == null || (str.equals("en") && LocaleController.getInstance().getSystemDefaultLocale().getLanguage() != null && !LocaleController.getInstance().getSystemDefaultLocale().getLanguage().equals("en"))) && (str = LocaleController.getInstance().getSystemDefaultLocale().getLanguage()) == null) {
-            str = "en";
-        }
-        String str2 = str.contains("-") ? str.split("-")[0] : str;
-        String localeAlias = LocaleController.getLocaleAlias(str2);
-        LocaleController.LocaleInfo localeInfo = null;
-        LocaleController.LocaleInfo localeInfo2 = null;
-        for (int i11 = 0; i11 < LocaleController.getInstance().languages.size(); i11++) {
-            LocaleController.LocaleInfo localeInfo3 = LocaleController.getInstance().languages.get(i11);
-            if (localeInfo3.shortName.equals("en")) {
-                localeInfo = localeInfo3;
-            }
-            if (localeInfo3.shortName.replace("_", "-").equals(str) || localeInfo3.shortName.equals(str2) || localeInfo3.shortName.equals(localeAlias)) {
-                localeInfo2 = localeInfo3;
-            }
-            if (localeInfo != null && localeInfo2 != null) {
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                c80 c80Var = (c80) this.b;
+                if (c80Var.I == null && surfaceTexture != null) {
+                    c80Var.I = new a80(c80Var, surfaceTexture);
+                    Intro.onSurfaceChanged(i10, i11, Math.min(i10 / 150.0f, i11 / 150.0f), 0);
+                    c80Var.I.postRunnable(new g10(this, 11));
+                    a80 a80Var = c80Var.I;
+                    a80Var.postRunnable(a80Var.w);
+                    break;
+                }
                 break;
-            }
-        }
-        if (localeInfo == null || localeInfo2 == null || localeInfo == localeInfo2) {
-            return;
-        }
-        TLRPC.TL_langpack_getStrings tL_langpack_getStrings = new TLRPC.TL_langpack_getStrings();
-        if (localeInfo2 != currentLocaleInfo) {
-            tL_langpack_getStrings.lang_code = localeInfo2.getLangCode();
-            this.L = localeInfo2;
-        } else {
-            tL_langpack_getStrings.lang_code = localeInfo.getLangCode();
-            this.L = localeInfo;
-        }
-        tL_langpack_getStrings.keys.add("ContinueOnThisLanguage");
-        ConnectionsManager.getInstance(i10).sendRequest(tL_langpack_getStrings, new lo(25, this, str), 8);
-    }
-
-    public final void V(boolean z10) {
-        GradientDrawable gradientDrawable = this.h;
-        int i10 = org.telegram.ui.ActionBar.h6.Oh;
-        gradientDrawable.setColors(new int[]{getThemedColor(i10), getThemedColor(org.telegram.ui.ActionBar.h6.Ph)});
-        this.E.setColorFilter(org.telegram.ui.ActionBar.h6.l1(0.9f, getThemedColor(org.telegram.ui.ActionBar.h6.A8)), PorterDuff.Mode.MULTIPLY);
-        View view = this.fragmentView;
-        int i11 = org.telegram.ui.ActionBar.h6.d6;
-        view.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
-        this.f.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q6, false));
-        this.n.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Sh, false));
-        bi.o oVar = this.n;
-        int dp = AndroidUtilities.dp(24.0f);
-        int w02 = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Qh, false);
-        oVar.setBackground(org.telegram.ui.ActionBar.h6.i0(dp, dp, dp, dp, 0, w02, w02));
-        this.v.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(null, i10, false), PorterDuff.Mode.SRC_IN));
-        this.e.invalidate();
-        if (!z10) {
-            Intro.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, i11, false));
-            return;
-        }
-        w70 w70Var = this.I;
-        if (w70Var != null) {
-            w70Var.postRunnable(new c10(this, 10));
-        }
-        for (int i12 = 0; i12 < this.d.getChildCount(); i12++) {
-            View childAt = this.d.getChildAt(i12);
-            TextView textView = (TextView) childAt.findViewWithTag(this.a);
-            int i13 = org.telegram.ui.ActionBar.h6.G6;
-            textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i13, false));
-            ((TextView) childAt.findViewWithTag(this.b)).setTextColor(org.telegram.ui.ActionBar.h6.w0(null, i13, false));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final View createView(Context context) {
-        Drawable mutate = context.getResources().getDrawable(R.drawable.telegram_logo).mutate();
-        this.E = mutate;
-        mutate.setBounds(0, AndroidUtilities.dp(8.666f), AndroidUtilities.dp(115.0f), AndroidUtilities.dp(35.0f));
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.Page1Title));
-        spannableStringBuilder.setSpan(new ImageSpan(this.E), 0, spannableStringBuilder.length(), 33);
-        this.F[0] = spannableStringBuilder;
-        this.actionBar.setAddToContainer(false);
-        ScrollView scrollView = new ScrollView(context);
-        scrollView.setFillViewport(true);
-        org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.addView(nj0Var, w7.y5.e(28, 28, 17));
-        ci.m6 m6Var = new ci.m6(this, context, frameLayout, 17);
-        this.s = m6Var;
-        scrollView.addView(m6Var, w7.y5.x(-1, -2, 51));
-        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.sun, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        this.v = kj0Var;
-        kj0Var.h = true;
-        kj0Var.Z = true;
-        kj0Var.o();
-        this.v.P(org.telegram.ui.ActionBar.h6.A0().q() ? this.v.e[0] - 1 : 0);
-        this.v.N(org.telegram.ui.ActionBar.h6.A0().q() ? this.v.e[0] - 1 : 0, false, false);
-        nj0Var.setContentDescription(LocaleController.getString(org.telegram.ui.ActionBar.h6.A0().q() ? R.string.AccDescrSwitchToDayTheme : R.string.AccDescrSwitchToNightTheme));
-        nj0Var.setAnimation(this.v);
-        frameLayout.setOnClickListener(new ov(11, this, nj0Var));
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        this.r = frameLayout2;
-        this.s.addView(frameLayout2, w7.y5.d(-1, -2.0f, 51, 0.0f, 78.0f, 0.0f, 0.0f));
-        TextureView textureView = new TextureView(context);
-        this.r.addView(textureView, w7.y5.e(200, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17));
-        int i10 = 0;
-        textureView.setSurfaceTextureListener(new u70(this, i10));
-        z4.g gVar = new z4.g(context);
-        this.d = gVar;
-        gVar.setAdapter(new x70(this, i10));
-        this.d.setPageMargin(0);
-        this.d.setOffscreenPageLimit(1);
-        this.s.addView(this.d, w7.y5.c(-1.0f, -1));
-        this.d.b(new m2(this, 1));
-        this.h = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, null);
-        bi.o oVar = new bi.o(this, context);
-        this.n = oVar;
-        w7.a6.b(oVar, 0.02f, 1.2f);
-        this.n.setText(LocaleController.getString(R.string.StartMessaging));
-        this.n.setGravity(17);
-        this.n.setTypeface(AndroidUtilities.bold());
-        this.n.setTextSize(1, 15.0f);
-        this.n.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-        this.s.addView(this.n, w7.y5.d(-1, 48.0f, 81, 16.0f, 0.0f, 16.0f, 76.0f));
-        final int i11 = 0;
-        this.n.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.t70
-            public final /* synthetic */ y70 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i11) {
-                    case 0:
-                        y70 y70Var = this.b;
-                        if (!y70Var.y) {
-                            y70Var.y = true;
-                            y70Var.presentFragment(new qg0(), true);
-                            y70Var.M = true;
-                            break;
-                        }
-                        break;
-                    default:
-                        y70 y70Var2 = this.b;
-                        if (!y70Var2.y && y70Var2.L != null) {
-                            y70Var2.y = true;
-                            org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(view.getContext(), 3, null);
-                            a2Var.g0 = false;
-                            a2Var.q(1000L);
-                            NotificationCenter.getGlobalInstance().addObserver(new v70(y70Var2, a2Var), NotificationCenter.reloadInterface);
-                            LocaleController.getInstance().applyLanguage(y70Var2.L, true, false, y70Var2.c);
-                            break;
-                        }
-                        break;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        switch (this.a) {
+            case 0:
+                c80 c80Var = (c80) this.b;
+                a80 a80Var = c80Var.I;
+                if (a80Var == null) {
+                    return true;
                 }
-            }
-        });
-        org.telegram.ui.Components.sa saVar = new org.telegram.ui.Components.sa(context, this.d, 6);
-        this.e = saVar;
-        this.s.addView(saVar, w7.y5.d(66, 5.0f, 49, 0.0f, 350.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.f = textView;
-        textView.setGravity(17);
-        this.f.setTextSize(1, 16.0f);
-        this.s.addView(this.f, w7.y5.d(-2, 30.0f, 81, 0.0f, 0.0f, 0.0f, 20.0f));
-        final int i12 = 1;
-        this.f.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.t70
-            public final /* synthetic */ y70 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i12) {
-                    case 0:
-                        y70 y70Var = this.b;
-                        if (!y70Var.y) {
-                            y70Var.y = true;
-                            y70Var.presentFragment(new qg0(), true);
-                            y70Var.M = true;
-                            break;
+                a80Var.postRunnable(new g10(a80Var, 13));
+                c80Var.I = null;
+                return true;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                if (photoViewer.B2 != null) {
+                    org.telegram.ui.Components.rg0 rg0Var = org.telegram.ui.Components.rg0.p0;
+                    if (rg0Var.P && org.telegram.ui.Components.rg0.p() != null && org.telegram.ui.Components.rg0.p().b.a != 0) {
+                        (rg0Var != null ? rg0Var.l0 : null).setSurfaceTexture(surfaceTexture);
+                        (rg0Var != null ? rg0Var.l0 : null).setVisibility(0);
+                        return false;
+                    }
+                    if (photoViewer.F3) {
+                        if (photoViewer.L3) {
+                            photoViewer.G3 = 2;
                         }
-                        break;
-                    default:
-                        y70 y70Var2 = this.b;
-                        if (!y70Var2.y && y70Var2.L != null) {
-                            y70Var2.y = true;
-                            org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(view.getContext(), 3, null);
-                            a2Var.g0 = false;
-                            a2Var.q(1000L);
-                            NotificationCenter.getGlobalInstance().addObserver(new v70(y70Var2, a2Var), NotificationCenter.reloadInterface);
-                            LocaleController.getInstance().applyLanguage(y70Var2.L, true, false, y70Var2.c);
-                            break;
-                        }
-                        break;
+                        photoViewer.B2.setSurfaceTexture(surfaceTexture);
+                        photoViewer.B2.setVisibility(0);
+                        photoViewer.F3 = false;
+                        photoViewer.e0.invalidate();
+                        return false;
+                    }
                 }
-            }
-        });
-        float f7 = 4;
-        this.s.addView(frameLayout, w7.y5.d(64, 64.0f, 53, 0.0f, f7, f7, 0.0f));
-        this.fragmentView = scrollView;
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.suggestedLangpack);
-        int i13 = this.c;
-        NotificationCenter.getInstance(i13).addObserver(this, NotificationCenter.configLoaded);
-        ConnectionsManager.getInstance(i13).updateDcSettings();
-        LocaleController.getInstance().loadRemoteLanguages(i13);
-        U();
-        this.x = true;
-        V(false);
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.suggestedLangpack || i10 == NotificationCenter.configLoaded) {
-            U();
+                return true;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final ArrayList getThemeDescriptions() {
-        return w7.b6.a(new e(this, 18), org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.q6, org.telegram.ui.ActionBar.h6.P9, org.telegram.ui.ActionBar.h6.Q9, org.telegram.ui.ActionBar.h6.Sh, org.telegram.ui.ActionBar.h6.G6);
-    }
-
-    @Override // org.telegram.ui.ActionBar.m2
-    public final boolean hasForceLightStatusBar() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.m2
-    public final boolean isLightStatusBar() {
-        return i0.a.f(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, true)) > 0.699999988079071d;
-    }
-
-    @Override // org.telegram.ui.ActionBar.m2
-    public final AnimatorSet onCustomTransitionAnimation(boolean z10, Runnable runnable) {
-        if (!this.N) {
-            return null;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                if (((c80) this.b).I != null) {
+                    Intro.onSurfaceChanged(i10, i11, Math.min(i10 / 150.0f, i11 / 150.0f), 0);
+                    break;
+                }
+                break;
         }
-        AnimatorSet duration = new AnimatorSet().setDuration(50L);
-        duration.playTogether(ValueAnimator.ofFloat(new float[0]));
-        return duration;
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final boolean onFragmentCreate() {
-        MessagesController.getGlobalMainSettings().edit().putLong("intro_crashed_time", System.currentTimeMillis()).apply();
-        this.F = new CharSequence[]{null, LocaleController.getString(R.string.Page2Title), LocaleController.getString(R.string.Page3Title), LocaleController.getString(R.string.Page5Title), LocaleController.getString(R.string.Page4Title), LocaleController.getString(R.string.Page6Title)};
-        this.G = new String[]{LocaleController.getString(R.string.Page1Message), LocaleController.getString(R.string.Page2Message), LocaleController.getString(R.string.Page3Message), LocaleController.getString(R.string.Page5Message), LocaleController.getString(R.string.Page4Message), LocaleController.getString(R.string.Page6Message)};
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.m2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        this.M = true;
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.suggestedLangpack);
-        NotificationCenter.getInstance(this.c).removeObserver(this, NotificationCenter.configLoaded);
-        MessagesController.getGlobalMainSettings().edit().putLong("intro_crashed_time", 0L).apply();
-    }
-
-    @Override // org.telegram.ui.ActionBar.m2
-    public final void onPause() {
-        super.onPause();
-        AndroidUtilities.unlockOrientation(getParentActivity());
-    }
-
-    @Override // org.telegram.ui.ActionBar.m2
-    public final void onResume() {
-        super.onResume();
-        if (this.x) {
-            if (LocaleController.isRTL) {
-                this.d.setCurrentItem(6);
-                this.w = 6;
-            } else {
-                this.d.setCurrentItem(0);
-                this.w = 0;
-            }
-            this.x = false;
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        switch (this.a) {
+            case 0:
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                if (photoViewer.G3 == 1) {
+                    photoViewer.x0(true);
+                    break;
+                }
+                break;
         }
-        AndroidUtilities.lockOrientation(getParentActivity(), 1);
+    }
+
+    private final void c(SurfaceTexture surfaceTexture) {
+    }
+
+    private final void a(SurfaceTexture surfaceTexture, int i10, int i11) {
+    }
+
+    private final void b(SurfaceTexture surfaceTexture, int i10, int i11) {
     }
 }

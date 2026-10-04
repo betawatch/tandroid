@@ -1,34 +1,40 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class tn0 implements mo0 {
-    public final /* synthetic */ oo0 a;
+public final /* synthetic */ class tn0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
 
-    public tn0(oo0 oo0Var) {
-        this.a = oo0Var;
+    public /* synthetic */ tn0(long j3, int i10) {
+        this.a = i10;
+        this.b = j3;
     }
 
-    @Override // org.telegram.ui.mo0
-    public final /* synthetic */ boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.mo0
-    public final void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
-        oo0 oo0Var = this.a;
-        oo0Var.I0 = tL_payments_validateRequestedInfo;
-        oo0Var.B0(tL_payments_validateRequestedInfo.info);
-    }
-
-    @Override // org.telegram.ui.mo0
-    public final /* synthetic */ void a(TL_account.Password password) {
-    }
-
-    @Override // org.telegram.ui.mo0
-    public final /* synthetic */ void b() {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U != null) {
+                    U.presentFragment(yn.Q9(this.b));
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
+                if (U2 != null) {
+                    U2.presentFragment(yn.Q9(this.b));
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.ActionBar.n2 U3 = LaunchActivity.U();
+                if (U3 != null) {
+                    U3.presentFragment(yn.Q9(this.b));
+                    break;
+                }
+                break;
+        }
     }
 }

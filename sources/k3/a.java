@@ -12,10 +12,11 @@ import c3.t;
 import e9.a1;
 import e9.g0;
 import e9.i0;
+import hg.k0;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a = 0;
@@ -30,10 +31,10 @@ public final class a implements o {
     }
 
     @Override // c3.o
-    public final boolean a(p pVar) {
+    public final boolean b(p pVar) {
         switch (this.a) {
             case 0:
-                return ((o) this.b).a(pVar);
+                return ((o) this.b).b(pVar);
             default:
                 return true;
         }
@@ -59,7 +60,7 @@ public final class a implements o {
                 r a2 = sVar.a();
                 a2.q = r0.n("text/x-unknown");
                 a2.j = sVar.r;
-                hg.c.s(a2, Z1);
+                k0.r(a2, Z1);
                 break;
         }
     }
@@ -105,7 +106,7 @@ public final class a implements o {
         this.b = sVar;
     }
 
-    private final void b() {
+    private final void a() {
     }
 
     private final void d(long j3, long j10) {

@@ -24,7 +24,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class z5 extends ReplacementSpan {
     private static boolean lockPositionChanging;
@@ -92,10 +92,10 @@ public class z5 extends ReplacementSpan {
 
     public static boolean c(Layout layout, int i10, int i11) {
         if (layout.getText() instanceof Spanned) {
-            e11[] e11VarArr = (e11[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i10), Math.min(layout.getText().length() - 1, i11), e11.class);
-            for (int i12 = 0; e11VarArr != null && i12 < e11VarArr.length; i12++) {
-                e11 e11Var = e11VarArr[i12];
-                if (e11Var != null && e11Var.c()) {
+            n11[] n11VarArr = (n11[]) ((Spanned) layout.getText()).getSpans(Math.max(0, i10), Math.min(layout.getText().length() - 1, i11), n11.class);
+            for (int i12 = 0; n11VarArr != null && i12 < n11VarArr.length; i12++) {
+                n11 n11Var = n11VarArr[i12];
+                if (n11Var != null && n11Var.c()) {
                     return true;
                 }
             }
@@ -207,7 +207,7 @@ public class z5 extends ReplacementSpan {
             ofFloat.addUpdateListener(new s5(this, f12, f11, f14, f10, 0));
             this.moveAnimator.addListener(new t5(this, 2));
             this.moveAnimator.setDuration(140L);
-            this.moveAnimator.setInterpolator(sr.f);
+            this.moveAnimator.setInterpolator(tr.f);
             this.moveAnimator.start();
             return;
         }
@@ -255,7 +255,7 @@ public class z5 extends ReplacementSpan {
             });
             this.scaleAnimator.addListener(new t5(this, i11));
             this.scaleAnimator.setDuration(130L);
-            this.scaleAnimator.setInterpolator(sr.f);
+            this.scaleAnimator.setInterpolator(tr.f);
             this.scaleAnimator.start();
         } else if (this.isRemoved) {
             this.isRemoved = false;
@@ -287,7 +287,7 @@ public class z5 extends ReplacementSpan {
                 }
             });
             this.scaleAnimator.addListener(new t5(this, i10));
-            this.scaleAnimator.setInterpolator(sr.f);
+            this.scaleAnimator.setInterpolator(tr.f);
             this.scaleAnimator.setDuration(130L);
             this.scaleAnimator.start();
         }
@@ -480,7 +480,7 @@ public class z5 extends ReplacementSpan {
                                     }
                                 }
                             } else if (q5Var2.k != null) {
-                                q5Var2.setColorFilter(colorFilter == null ? org.telegram.ui.ActionBar.h6.v3 : colorFilter);
+                                q5Var2.setColorFilter(colorFilter == null ? org.telegram.ui.ActionBar.i6.v3 : colorFilter);
                                 u5Var.f.q(currentTimeMillis);
                                 float extraScale2 = u5Var.d.getExtraScale();
                                 if (extraScale2 != 1.0f || u5Var.d.invert) {

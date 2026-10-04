@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class uf0 extends xl0 {
+public final class uf0 extends yl0 {
     public final Context c;
     public final /* synthetic */ vf0 d;
 
@@ -21,7 +21,7 @@ public final class uf0 extends xl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -128,13 +128,13 @@ public final class uf0 extends xl0 {
             textView.setMaxLines(1);
             textView.setSingleLine(true);
             textView.setEllipsize(TextUtils.TruncateAt.END);
-            v5Var.addView(textView, w7.y5.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+            v5Var.addView(textView, w7.z5.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
             TextView textView2 = new TextView(context);
             v5Var.b = textView2;
-            org.telegram.messenger.ok.n(org.telegram.ui.ActionBar.h6.zf, d6Var, textView2, 1, 12.0f);
+            org.telegram.messenger.ok.n(org.telegram.ui.ActionBar.i6.zf, d6Var, textView2, 1, 12.0f);
             textView2.setGravity(5);
             textView2.setSingleLine(true);
-            v5Var.addView(textView2, w7.y5.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+            v5Var.addView(textView2, w7.z5.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
             if0 if0Var = new if0(context);
             Paint paint = new Paint();
             if0Var.a = paint;
@@ -147,12 +147,12 @@ public final class uf0 extends xl0 {
             paint.setColor(-11711155);
             paint2.setColor(-1);
             v5Var.c = if0Var;
-            v5Var.addView(if0Var, w7.y5.d(-1, 40.0f, 19, 96.0f, 0.0f, 24.0f, 0.0f));
-            v5Var.setSeekBarDelegate(new ov(this, 11));
+            v5Var.addView(if0Var, w7.z5.d(-1, 40.0f, 19, 96.0f, 0.0f, 24.0f, 0.0f));
+            v5Var.setSeekBarDelegate(new pv(this, 11));
             u5Var = v5Var;
         } else {
             org.telegram.ui.Cells.u5 u5Var2 = new org.telegram.ui.Cells.u5(context);
-            u5Var2.setOnClickListener(new k80(this, 6));
+            u5Var2.setOnClickListener(new l80(this, 6));
             u5Var = u5Var2;
         }
         return new il0(u5Var);

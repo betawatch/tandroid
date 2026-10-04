@@ -3,9 +3,9 @@ package org.telegram.ui.Components.voip;
 import android.app.Activity;
 import android.widget.FrameLayout;
 import org.telegram.ui.uh1;
-import w7.y5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class p1 extends FrameLayout {
     public final m1 a;
@@ -25,13 +25,13 @@ public final class p1 extends FrameLayout {
         frameLayout.setVisibility(8);
         for (int i10 = 0; i10 < 5; i10++) {
             this.c[i10] = new o1(activity);
-            this.c[i10].setAllStarsProvider(new le.b(this, 13));
+            this.c[i10].setAllStarsProvider(new k2.v(this, 14));
             o1 o1Var = this.c[i10];
-            o1Var.d = new org.telegram.ui.Components.w2(20, this, activity);
+            o1Var.d = new org.telegram.ui.Components.w2(21, this, activity);
             o1Var.f = i10;
-            this.b.addView(o1Var, y5.d(-2, -2.0f, 51, i10 * 41, 0.0f, 0.0f, 0.0f));
+            this.b.addView(o1Var, z5.d(-2, -2.0f, 51, i10 * 41, 0.0f, 0.0f, 0.0f));
         }
-        addView(this.a, y5.d(300, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(this.b, y5.d(201, 100.0f, 49, 0.0f, 90.0f, 0.0f, 0.0f));
+        addView(this.a, z5.d(300, 152.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(this.b, z5.d(201, 100.0f, 49, 0.0f, 90.0f, 0.0f, 0.0f));
     }
 }

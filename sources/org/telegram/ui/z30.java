@@ -1,31 +1,21 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class z30 implements z4.e {
-    public final /* synthetic */ d60 a;
-
-    public z30(d60 d60Var) {
-        this.a = d60Var;
-    }
-
-    @Override // z4.e
-    public final void a(int i10) {
-        d60 d60Var = this.a;
-        d60Var.b.D0.k(i10);
-        w30 w30Var = d60Var.D2;
-        w30Var.J = w30Var.L;
-        w30Var.K = w30Var.M;
-        w30Var.N = 0.0f;
-        w30Var.O = 1;
-        w30Var.invalidate();
-    }
-
-    @Override // z4.e
-    public final void c(int i10) {
-    }
-
-    @Override // z4.e
-    public final void b(float f7, int i10, int i11) {
+public final class z30 extends s4.n0 {
+    @Override // s4.n0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
+        recyclerView.getClass();
+        RecyclerView.R(view);
+        if (h60.F3) {
+            rect.set(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
+        } else {
+            rect.set(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        }
     }
 }

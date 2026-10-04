@@ -1,333 +1,106 @@
 package rg;
 
-import ai.l4;
-import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.util.SparseArray;
-import android.widget.ImageView;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.q5;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public class b1 extends ImageView {
-    public static final /* synthetic */ int L = 0;
-    public ImageReceiver E;
-    public q5 F;
-    public float G;
-    public boolean H;
-    public boolean I;
-    public org.telegram.ui.Components.voip.h J;
-    public Integer K;
-    public final int a;
-    public final float[] b;
-    public final v1 c;
-    public final d6 d;
-    public boolean e;
-    public final float f;
-    public boolean h;
-    public int n;
-    public int r;
-    public int s;
-    public LinearGradient v;
-    public final Path w;
-    public Paint x;
-    public Paint y;
+public final class b1 {
+    public static b1 j;
+    public final a1 a;
+    public final Paint b;
+    public Paint c;
+    public final Drawable d;
+    public final Drawable e;
+    public z0 f;
+    public z0 g;
+    public final z0 h;
+    public int i;
 
-    public b1(Context context, int i10, d6 d6Var) {
-        super(context);
-        this.b = new float[3];
-        this.f = 1.0f;
-        this.h = false;
-        this.n = -1;
-        this.v = null;
-        this.w = new Path();
-        this.x = new Paint(1);
-        this.G = 1.0f;
-        this.a = i10;
-        this.d = d6Var;
-        setImageResource(i10 == 0 ? R.drawable.msg_premium_lock2 : R.drawable.msg_mini_premiumlock);
-        if (i10 == 0) {
-            v1 v1Var = new v1(5);
-            this.c = v1Var;
-            v1Var.g();
-            v1Var.M = false;
-            v1Var.s = 4;
-            v1Var.t = 4;
-            v1Var.r = 2;
-            v1Var.o = 0.1f;
-            v1Var.c();
-            return;
-        }
-        if (i10 == 2) {
-            this.f = 0.8f;
-            this.x.setColor(h6.w0(null, h6.a7, false));
-        } else if (i10 == 3) {
-            setScaleType(ImageView.ScaleType.CENTER);
-            setImageResource(R.drawable.msg_archive_hide);
-        } else if (i10 == 4) {
-            setScaleType(ImageView.ScaleType.CENTER);
-            setImageResource(R.drawable.msg_limit_pin);
-        }
+    public b1() {
+        a1 a1Var = new a1(i6.Lj, i6.Mj, i6.Nj, i6.Oj, null);
+        this.a = a1Var;
+        a1 a1Var2 = new a1(i6.fk, i6.gk, -1, -1, null);
+        this.b = a1Var.f;
+        this.e = ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_premium_liststar).mutate();
+        this.f = c(ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_settings_premium), a1Var);
+        this.h = c(ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_settings_premium), a1Var2);
+        this.g = c(ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_premium_normal), a1Var);
+        this.d = ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_premium_liststar).mutate();
+        a1Var.a();
+        b();
     }
 
-    public final void a() {
-        if (!this.e || getMeasuredHeight() == 0 || getMeasuredWidth() == 0) {
-            return;
+    public static z0 c(Drawable drawable, a1 a1Var) {
+        if (drawable == null) {
+            return null;
         }
-        int i10 = this.n;
-        float[] fArr = this.b;
-        Color.colorToHSV(i10, fArr);
-        fArr[1] = fArr[1] * 1.0f;
-        if (fArr[2] > 0.7f) {
-            fArr[2] = 0.7f;
-        }
-        int HSVToColor = Color.HSVToColor(fArr);
-        int i11 = h6.d6;
-        d6 d6Var = this.d;
-        int d = i0.a.d(0.5f, HSVToColor, h6.v0(i11, d6Var));
-        int d10 = i0.a.d(0.4f, HSVToColor, h6.v0(i11, d6Var));
-        if (this.v != null && this.r == d10 && this.s == d) {
-            return;
-        }
-        if (this.I) {
-            Paint paint = this.x;
-            this.y = paint;
-            paint.setAlpha(255);
-            this.G = 0.0f;
-        }
-        this.x = new Paint(1);
-        float measuredHeight = getMeasuredHeight();
-        this.r = d10;
-        this.s = d;
-        LinearGradient linearGradient = new LinearGradient(0.0f, measuredHeight, 0.0f, 0.0f, new int[]{d10, d}, (float[]) null, Shader.TileMode.CLAMP);
-        this.v = linearGradient;
-        this.x.setShader(linearGradient);
-        invalidate();
+        int intrinsicWidth = drawable.getIntrinsicWidth();
+        int minimumHeight = drawable.getMinimumHeight();
+        Bitmap createBitmap = Bitmap.createBitmap(intrinsicWidth, minimumHeight, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap);
+        drawable.setBounds(0, 0, intrinsicWidth, minimumHeight);
+        drawable.draw(canvas);
+        a1Var.f.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        a1Var.d(0, -intrinsicWidth, 0, intrinsicWidth, 0.0f, minimumHeight);
+        canvas.drawRect(0.0f, 0.0f, intrinsicWidth, minimumHeight, a1Var.f);
+        a1Var.f.setXfermode(null);
+        int[] iArr = a1Var.l;
+        z0 z0Var = new z0(ApplicationLoader.applicationContext.getResources(), createBitmap);
+        z0Var.b = drawable;
+        int[] iArr2 = new int[iArr.length];
+        z0Var.a = iArr2;
+        System.arraycopy(iArr, 0, iArr2, 0, iArr.length);
+        return z0Var;
     }
 
-    public ImageReceiver getImageReceiver() {
-        return this.E;
+    public static b1 d() {
+        if (j == null) {
+            j = new b1();
+        }
+        return j;
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.e = true;
-        if (this.a != 0) {
-            a();
-        }
+    public final z0 a(z0 z0Var) {
+        a1 a1Var = this.a;
+        int[] iArr = a1Var.l;
+        int i10 = iArr[0];
+        int[] iArr2 = z0Var.a;
+        return (i10 == iArr2[0] && iArr[1] == iArr2[1] && iArr[2] == iArr2[2] && iArr[3] == iArr2[3]) ? z0Var : c(z0Var.b, a1Var);
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.e = false;
-        Paint paint = this.x;
-        if (paint != null && this.a != 2) {
-            paint.setShader(null);
-            this.x = null;
+    public final void b() {
+        int i10 = i6.z9;
+        if (i6.w0(null, i10, false) != this.i) {
+            this.i = i6.w0(null, i10, false);
+            this.e.setColorFilter(new PorterDuffColorFilter(this.i, PorterDuff.Mode.MULTIPLY));
         }
-        this.v = null;
-        this.I = false;
+        this.f = a(this.f);
+        this.g = a(this.g);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x007b  */
-    @Override // android.widget.ImageView, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDraw(Canvas canvas) {
-        int intValue;
-        l4 l4Var;
-        if (this.H) {
-            ImageReceiver imageReceiver = this.E;
-            if (imageReceiver == null || imageReceiver.getBitmap() == null) {
-                q5 q5Var = this.F;
-                if (q5Var != null) {
-                    SparseArray sparseArray = q5.q;
-                    long i10 = q5Var.i();
-                    if (i10 != 0) {
-                        if (q5.w == null) {
-                            q5.w = new HashMap();
-                        }
-                        Integer num = (Integer) q5.w.get(Long.valueOf(i10));
-                        if (num == null && (l4Var = q5Var.k) != null && l4Var.getBitmap() != null) {
-                            HashMap hashMap = q5.w;
-                            Long valueOf = Long.valueOf(i10);
-                            Integer valueOf2 = Integer.valueOf(AndroidUtilities.getDominantColor(q5Var.k.getBitmap()));
-                            hashMap.put(valueOf, valueOf2);
-                            num = valueOf2;
-                        }
-                        if (num != null) {
-                            intValue = num.intValue();
-                            if (intValue == 0) {
-                                this.H = false;
-                                setColor(intValue);
-                            } else {
-                                invalidate();
-                            }
-                        }
-                    }
-                    intValue = 0;
-                    if (intValue == 0) {
-                    }
-                } else {
-                    invalidate();
-                }
-            } else {
-                this.H = false;
-                setColor(AndroidUtilities.getDominantColor(this.E.getBitmap()));
-            }
+    public final Paint e() {
+        if (!MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked()) {
+            return this.b;
         }
-        Paint paint = this.x;
-        if (paint != null) {
-            int i11 = this.a;
-            if (i11 == 2) {
-                float measuredWidth = getMeasuredWidth() / 2.0f;
-                canvas.drawCircle(measuredWidth, getMeasuredHeight() / 2.0f, measuredWidth, this.x);
-            } else if (i11 == 0) {
-                int i12 = this.n;
-                Path path = this.w;
-                if (i12 != 0) {
-                    canvas.drawPath(path, paint);
-                } else {
-                    a1.d().f(-AndroidUtilities.dp(24.0f), 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                    canvas.drawPath(path, a1.d().e());
-                }
-                if (this.J == null) {
-                    this.J = new org.telegram.ui.Components.voip.h();
-                }
-                this.J.f = getMeasuredWidth() / 2;
-                org.telegram.ui.Components.voip.h hVar = this.J;
-                hVar.k = false;
-                hVar.c(this);
-                canvas.drawPath(path, hVar.a);
-                if (hVar.k) {
-                    canvas.drawPath(path, hVar.c);
-                }
-                canvas.save();
-                canvas.clipPath(path);
-                this.c.d(canvas);
-                canvas.restore();
-                invalidate();
-            } else {
-                float measuredWidth2 = getMeasuredWidth() / 2.0f;
-                float measuredHeight = getMeasuredHeight() / 2.0f;
-                if (this.y == null) {
-                    this.G = 1.0f;
-                }
-                float f7 = this.G;
-                if (f7 != 1.0f) {
-                    this.x.setAlpha((int) (f7 * 255.0f));
-                    canvas.drawCircle(measuredWidth2, measuredHeight, measuredWidth2, this.y);
-                    canvas.drawCircle(measuredWidth2, measuredHeight, measuredWidth2, this.x);
-                    float f10 = this.G + 0.10666667f;
-                    this.G = f10;
-                    if (f10 > 1.0f) {
-                        this.G = 1.0f;
-                        this.y = null;
-                    }
-                    invalidate();
-                    this.x.setAlpha(255);
-                } else {
-                    canvas.drawCircle(measuredWidth2, measuredHeight, measuredWidth2, this.x);
-                }
-            }
+        if (this.c == null) {
+            this.c = new Paint(1);
         }
-        float f11 = this.f;
-        boolean z10 = f11 != 1.0f;
-        if (z10) {
-            canvas.save();
-            canvas.scale(f11, f11, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        }
-        super.onDraw(canvas);
-        if (z10) {
-            canvas.restore();
-        }
-        this.I = true;
+        this.c.setColor(i6.w0(null, i6.Oh, false));
+        return this.c;
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        if (this.a != 0) {
-            a();
-            return;
-        }
-        Path path = this.w;
-        path.rewind();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        float width = rectF.width() / 2.0f;
-        float centerY = rectF.centerY();
-        float width2 = rectF.width() / 2.0f;
-        Path.Direction direction = Path.Direction.CW;
-        path.addCircle(width, centerY, width2, direction);
-        rectF.set((getMeasuredWidth() / 2.0f) + AndroidUtilities.dp(2.5f), AndroidUtilities.dpf2(5.7f) + (getMeasuredHeight() / 2.0f), getMeasuredWidth() - AndroidUtilities.dpf2(0.2f), getMeasuredHeight());
-        path.addRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), direction);
-        path.close();
-        v1 v1Var = this.c;
-        v1Var.a.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        v1Var.a.inset(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
-    }
-
-    public void setAnimatedEmojiDrawable(q5 q5Var) {
-        this.F = q5Var;
-        if (q5Var != null) {
-            this.H = true;
-            invalidate();
-        }
-    }
-
-    public void setBlendWithColor(Integer num) {
-        this.K = num;
-    }
-
-    public void setColor(int i10) {
-        this.h = true;
-        Integer num = this.K;
-        if (num != null) {
-            i10 = h6.v(i10, num.intValue());
-        }
-        if (this.n != i10) {
-            this.n = i10;
-            int i11 = this.a;
-            if (i11 == 0 || i11 == 2) {
-                Paint paint = this.x;
-                if (paint != null) {
-                    paint.setColor(i10);
-                }
-            } else {
-                a();
-            }
-            invalidate();
-        }
-    }
-
-    public void setImageReceiver(ImageReceiver imageReceiver) {
-        this.E = imageReceiver;
-        if (imageReceiver != null) {
-            this.H = true;
-            invalidate();
-        }
-    }
-
-    public void setLocked(boolean z10) {
-        if (this.a != 0) {
-            setImageResource(z10 ? R.drawable.msg_mini_premiumlock : R.drawable.msg_mini_stickerstar);
-        }
+    public final void f(float f7, float f10, int i10, int i11) {
+        this.a.d(0, f7, 0, i10, f10, i11);
     }
 }

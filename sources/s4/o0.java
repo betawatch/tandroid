@@ -11,12 +11,13 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.recyclerview.widget.RecyclerView;
+import ii.n4;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class o0 {
     public la.h a;
@@ -35,10 +36,10 @@ public abstract class o0 {
     public int n;
 
     public o0() {
-        n2.e eVar = new n2.e(this, 20);
-        ka.c cVar = new ka.c(this, 22);
+        k2.e eVar = new k2.e(this, 20);
+        n4 n4Var = new n4(this, 24);
         this.c = new o0.a(eVar);
-        this.d = new o0.a(cVar);
+        this.d = new o0.a(n4Var);
         this.f = false;
         this.g = true;
         this.h = true;
@@ -235,7 +236,7 @@ public abstract class o0 {
         }
         c1 U = RecyclerView.U(view);
         U.a(128);
-        this.b.f.M(U);
+        this.b.f.F(U);
     }
 
     public void P(View view) {
@@ -293,7 +294,7 @@ public abstract class o0 {
             }
             i1Var.a |= 1;
         } else {
-            this.b.f.L(U);
+            this.b.f.E(U);
         }
         p0 p0Var = (p0) view.getLayoutParams();
         if (U.s() || U.k()) {
@@ -306,22 +307,22 @@ public abstract class o0 {
         } else if (view.getParent() == this.b) {
             la.h hVar = this.a;
             e6.n nVar = (e6.n) hVar.c;
-            int indexOfChild = ((RecyclerView) ((ka.c) hVar.b).b).indexOfChild(view);
-            int x10 = (indexOfChild == -1 || nVar.D(indexOfChild)) ? -1 : indexOfChild - nVar.x(indexOfChild);
+            int indexOfChild = ((hh.h) hVar.b).a.indexOfChild(view);
+            int v = (indexOfChild == -1 || nVar.y(indexOfChild)) ? -1 : indexOfChild - nVar.v(indexOfChild);
             if (i10 == -1) {
                 i10 = this.a.C();
             }
-            if (x10 == -1) {
+            if (v == -1) {
                 throw new IllegalStateException("Added View has RecyclerView as parent but view is not a real child. Unfiltered index:" + this.b.indexOfChild(view) + this.b.C());
             }
-            if (x10 != i10) {
+            if (v != i10) {
                 o0 o0Var = this.b.x;
-                View q6 = o0Var.q(x10);
+                View q6 = o0Var.q(v);
                 if (q6 == null) {
-                    throw new IllegalArgumentException("Cannot move a child from non-existing index:" + x10 + o0Var.b.toString());
+                    throw new IllegalArgumentException("Cannot move a child from non-existing index:" + v + o0Var.b.toString());
                 }
-                o0Var.q(x10);
-                o0Var.a.x(x10);
+                o0Var.q(v);
+                o0Var.a.x(v);
                 p0 p0Var2 = (p0) q6.getLayoutParams();
                 c1 U2 = RecyclerView.U(q6);
                 if (U2.j()) {
@@ -333,7 +334,7 @@ public abstract class o0 {
                     }
                     i1Var2.a = 1 | i1Var2.a;
                 } else {
-                    o0Var.b.f.L(U2);
+                    o0Var.b.f.E(U2);
                 }
                 o0Var.a.s(q6, i10, p0Var2, U2.j());
             }
@@ -448,15 +449,15 @@ public abstract class o0 {
         if (q(i10) != null) {
             la.h hVar = this.a;
             int J = hVar.J(i10);
-            ka.c cVar = (ka.c) hVar.b;
-            View childAt = ((RecyclerView) cVar.b).getChildAt(J);
+            hh.h hVar2 = (hh.h) hVar.b;
+            View childAt = hVar2.a.getChildAt(J);
             if (childAt == null) {
                 return;
             }
-            if (((e6.n) hVar.c).F(J)) {
+            if (((e6.n) hVar.c).A(J)) {
                 hVar.Y(childAt);
             }
-            cVar.j0(J);
+            hVar2.a(J);
         }
     }
 
@@ -496,7 +497,7 @@ public abstract class o0 {
                 recyclerView.scrollBy(i10, i11);
                 return true;
             }
-            recyclerView.v0(i10, i11, null);
+            recyclerView.w0(i10, i11, null);
             return true;
         }
         return false;

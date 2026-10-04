@@ -9,9 +9,9 @@ import e9.i0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import v7.u8;
+import v7.t8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d0 implements c3.o {
     public final int a;
@@ -20,7 +20,7 @@ public final class d0 implements c3.o {
     public final e2.v d;
     public final SparseIntArray e;
     public final f f;
-    public final z3.k g;
+    public final z3.l g;
     public final SparseArray h;
     public final SparseBooleanArray i;
     public final SparseBooleanArray j;
@@ -35,11 +35,11 @@ public final class d0 implements c3.o {
     public int s;
     public int t;
 
-    public d0(int i10, int i11, z3.k kVar, e2.b0 b0Var, f fVar) {
+    public d0(int i10, int i11, z3.l lVar, e2.b0 b0Var, f fVar) {
         this.f = fVar;
         this.a = i10;
         this.b = i11;
-        this.g = kVar;
+        this.g = lVar;
         if (i10 == 1 || i10 == 2) {
             this.c = Collections.singletonList(b0Var);
         } else {
@@ -76,10 +76,10 @@ public final class d0 implements c3.o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean a(c3.p pVar) {
+    public final boolean b(c3.p pVar) {
         byte[] bArr = this.d.a;
         c3.l lVar = (c3.l) pVar;
-        lVar.h(bArr, 0, 940, false);
+        lVar.f(bArr, 0, 940, false);
         int i10 = 0;
         while (i10 < 188) {
             for (int i11 = 0; i11 < 5; i11++) {
@@ -87,7 +87,7 @@ public final class d0 implements c3.o {
                     break;
                 }
             }
-            lVar.g(i10, false);
+            lVar.e(i10, false);
             return true;
         }
         return false;
@@ -191,8 +191,8 @@ public final class d0 implements c3.o {
                         return 1;
                     }
                     vVar.G(min);
-                    pVar.p();
-                    pVar.a(0, min, vVar.a);
+                    pVar.m();
+                    pVar.b(0, min, vVar.a);
                     int i16 = vVar.b;
                     int i17 = vVar.c;
                     while (true) {
@@ -200,7 +200,7 @@ public final class d0 implements c3.o {
                             break;
                         }
                         if (vVar.a[i16] == 71) {
-                            long a2 = u8.a(vVar, i16, i15);
+                            long a2 = t8.a(vVar, i16, i15);
                             if (a2 != -9223372036854775807L) {
                                 j3 = a2;
                                 break;
@@ -220,8 +220,8 @@ public final class d0 implements c3.o {
                     return 1;
                 }
                 vVar.G(min2);
-                pVar.p();
-                pVar.a(0, min2, vVar.a);
+                pVar.m();
+                pVar.b(0, min2, vVar.a);
                 int i18 = vVar.b;
                 int i19 = vVar.c;
                 int i20 = i19 - 188;
@@ -242,7 +242,7 @@ public final class d0 implements c3.o {
                         } else {
                             i22++;
                             if (i22 == 5) {
-                                long a10 = u8.a(vVar, i20, i15);
+                                long a10 = t8.a(vVar, i20, i15);
                                 if (a10 != -9223372036854775807L) {
                                     j3 = a10;
                                     break;

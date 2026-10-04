@@ -4,7 +4,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a2 extends h5 {
     private static final a2 zzb;
@@ -62,7 +62,7 @@ public final class a2 extends h5 {
             Object obj = arrayList.get(i10);
             i10++;
             if (obj == null) {
-                String i11 = hg.c.i(list.size() - size, "Element at index ", " is null.");
+                String i11 = hg.k0.i(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
@@ -94,7 +94,7 @@ public final class a2 extends h5 {
             Object obj = arrayList.get(i10);
             i10++;
             if (obj == null) {
-                String i11 = hg.c.i(list.size() - size, "Element at index ", " is null.");
+                String i11 = hg.k0.i(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
@@ -126,7 +126,7 @@ public final class a2 extends h5 {
             Object obj = arrayList.get(i10);
             i10++;
             if (obj == null) {
-                String i11 = hg.c.i(list.size() - size, "Element at index ", " is null.");
+                String i11 = hg.k0.i(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
@@ -158,7 +158,7 @@ public final class a2 extends h5 {
             Object obj = arrayList.get(i10);
             i10++;
             if (obj == null) {
-                String i11 = hg.c.i(list.size() - size, "Element at index ", " is null.");
+                String i11 = hg.k0.i(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;

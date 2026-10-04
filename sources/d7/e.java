@@ -3,17 +3,14 @@ package d7;
 import android.os.IBinder;
 import android.os.IInterface;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class e implements g, IInterface {
-    public final IBinder a;
-
-    public e(IBinder iBinder) {
-        this.a = iBinder;
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+public abstract class e extends o7.a implements f {
+    public static f asInterface(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.flags.IFlagProvider");
+        return queryLocalInterface instanceof f ? (f) queryLocalInterface : new d(iBinder);
     }
 }

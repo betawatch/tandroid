@@ -1,37 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class cx0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dx0 b;
+public final class cx0 {
+    public MessagesController.PeerColor a;
+    public org.telegram.ui.ActionBar.d6 b;
+    public int c;
+    public int d;
+    public float e;
 
-    public /* synthetic */ cx0(dx0 dx0Var, int i10) {
-        this.a = i10;
-        this.b = dx0Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                dx0 dx0Var = this.b;
-                dx0Var.y = 1.0f;
-                dx0Var.invalidate();
-                dx0Var.G = null;
-                break;
-            case 1:
-                dx0 dx0Var2 = this.b;
-                dx0Var2.m(((Float) dx0Var2.v.getAnimatedValue()).floatValue());
-                dx0Var2.v = null;
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                this.b.F = null;
-                break;
+    public final void a(MessagesController.PeerColor peerColor) {
+        this.a = peerColor;
+        if (peerColor == null) {
+            this.c = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.A8, this.b);
+            this.d = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.s8, this.b);
+            this.c = i0.a.d(this.e, this.c, 603979776);
+            this.d = i0.a.d(this.e, this.d, -1);
+            return;
         }
+        int bgColor1 = peerColor.getBgColor1(org.telegram.ui.ActionBar.i6.I.q());
+        int bgColor2 = peerColor.getBgColor2(org.telegram.ui.ActionBar.i6.I.q());
+        org.telegram.ui.ActionBar.d6 d6Var = this.b;
+        int d = i0.a.d(0.75f, bgColor2, bgColor1);
+        int v02 = AndroidUtilities.computePerceivedBrightness(d) > 0.721f ? org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v6, d6Var) : org.telegram.ui.ActionBar.i6.b(0.08f, -0.08f, d);
+        this.c = v02;
+        this.d = AndroidUtilities.computePerceivedBrightness(v02) > 0.721f ? -16777216 : -1;
+        this.c = i0.a.d(this.e, this.c, 603979776);
+        this.d = i0.a.d(this.e, this.d, -1);
     }
 }

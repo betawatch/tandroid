@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class AnimatedFileDrawableStream implements FileLoadOperationStream {
     private volatile boolean canceled;
@@ -117,12 +117,12 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                                 this.finishedLoadingFile = true;
                                 this.finishedFilePath = this.loadOperation.getCacheFileFinal().getAbsolutePath();
                             }
-                        } catch (Exception e) {
-                            e = e;
+                        } catch (Exception e7) {
+                            e = e7;
                             j11 = j10;
                         }
-                    } catch (Exception e7) {
-                        e = e7;
+                    } catch (Exception e10) {
+                        e = e10;
                     }
                     if (j10 == 0) {
                         synchronized (this.sync) {
@@ -162,7 +162,7 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                                 }
                             } finally {
                             }
-                            e = e;
+                            e = e7;
                             j11 = j10;
                             FileLog.e((Throwable) e, false);
                             return (int) j11;

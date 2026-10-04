@@ -7,9 +7,9 @@ import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import v7.s8;
+import v7.r8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d0 extends y {
     public final c0 e;
@@ -49,7 +49,7 @@ public final class d0 extends y {
         this.f = F;
         if (F != null) {
             F.setCallback(c0Var);
-            s8.b(c0Var.getLayoutDirection(), F);
+            r8.b(c0Var.getLayoutDirection(), F);
             if (F.isStateful()) {
                 F.setState(c0Var.getDrawableState());
             }
@@ -72,7 +72,7 @@ public final class d0 extends y {
         Drawable drawable = this.f;
         if (drawable != null) {
             if (this.i || this.j) {
-                Drawable d = s8.d(drawable.mutate());
+                Drawable d = r8.d(drawable.mutate());
                 this.f = d;
                 if (this.i) {
                     d.setTintList(this.g);

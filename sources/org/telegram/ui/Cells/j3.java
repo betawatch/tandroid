@@ -11,9 +11,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class j3 extends FrameLayout {
     public boolean a;
@@ -35,7 +35,7 @@ public class j3 extends FrameLayout {
         this.r = new org.telegram.ui.Components.h5(this);
         org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, true, true, false);
         this.v = o6Var;
-        o6Var.k(0.2f, 160L, sr.h);
+        o6Var.k(0.2f, 160L, tr.h);
         o6Var.t(AndroidUtilities.dp(15.33f));
         o6Var.b = 5;
         this.c = i10;
@@ -43,9 +43,9 @@ public class j3 extends FrameLayout {
         this.b = h3Var;
         o6Var.setCallback(h3Var);
         h3Var.setTextSize(1, 17.0f);
-        h3Var.setHintTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.H6, d6Var));
-        int i11 = org.telegram.ui.ActionBar.h6.G6;
-        h3Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+        h3Var.setHintTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.H6, d6Var));
+        int i11 = org.telegram.ui.ActionBar.i6.G6;
+        h3Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
         h3Var.setBackground(null);
         if (z10) {
             h3Var.setMaxLines(5);
@@ -59,12 +59,12 @@ public class j3 extends FrameLayout {
         h3Var.setInputType((z10 ? 131072 : 0) | 573441);
         h3Var.setRawInputType((z10 ? 131072 : 0) | 573441);
         h3Var.setHint(str);
-        h3Var.setCursorColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+        h3Var.setCursorColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
         h3Var.setCursorSize(AndroidUtilities.dp(19.0f));
         h3Var.setCursorWidth(1.5f);
         h3Var.addTextChangedListener(new i3(this, i10, z10));
         h3Var.setOnFocusChangeListener(new m.r2(this, 2));
-        addView(h3Var, w7.y5.e(-1, -1, 48));
+        addView(h3Var, w7.z5.e(-1, -1, 48));
         c();
     }
 
@@ -97,7 +97,7 @@ public class j3 extends FrameLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.w) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
         }
     }
 

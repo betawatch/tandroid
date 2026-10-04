@@ -1,35 +1,46 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_payments;
+import android.view.KeyEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yt implements org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class yt implements du, nl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ KeyEvent.Callback c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ yt(int i10, int i11, org.telegram.ui.ActionBar.m2 m2Var) {
+    public /* synthetic */ yt(eu euVar, int i10, int i11, Runnable runnable) {
+        this.c = euVar;
         this.a = i10;
         this.b = i11;
-        this.c = m2Var;
+        this.d = runnable;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.c;
-        nf.e g10 = a2Var.g(-1, true, true);
-        g10.d();
-        TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
-        tL_resolveStarGiftOffer.offer_msg_id = this.a;
-        int i11 = this.b;
-        ConnectionsManager.getInstance(i11).sendRequestTyped(tL_resolveStarGiftOffer, new ei.h1(i11, m2Var, g10, a2Var));
+    @Override // org.telegram.ui.Components.nl0
+    public void c(float f7, float f10, int i10, View view) {
+        tg.m1.O((tg.m1) this.c, this.a, (org.telegram.ui.ActionBar.d6) this.d, this.b, view);
     }
 
-    public /* synthetic */ yt(du duVar, int i10, int i11) {
-        this.c = duVar;
+    @Override // org.telegram.ui.Components.nl0
+    public /* synthetic */ boolean f1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.du
+    public void run(String str) {
+        eu.k((eu) this.c, this.a, this.b, (Runnable) this.d, str);
+    }
+
+    public /* synthetic */ yt(tg.m1 m1Var, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
+        this.c = m1Var;
         this.a = i10;
+        this.d = d6Var;
         this.b = i11;
+    }
+
+    @Override // org.telegram.ui.Components.nl0
+    public /* synthetic */ void s0(View view, float f7, float f10) {
     }
 }

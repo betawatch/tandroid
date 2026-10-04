@@ -2,9 +2,9 @@ package org.telegram.ui.Cells;
 
 import android.view.View;
 import org.telegram.ui.Components.zc;
-import org.telegram.ui.b11;
+import org.telegram.ui.d11;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class l0 extends zc {
     public final /* synthetic */ int j;
@@ -27,15 +27,15 @@ public final class l0 extends zc {
                 ((u1) this.k).a3();
                 break;
             default:
-                ((b11) this.k).invalidateSelf();
+                ((d11) this.k).invalidateSelf();
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l0(b11 b11Var) {
+    public l0(d11 d11Var) {
         super((View) null);
         this.j = 2;
-        this.k = b11Var;
+        this.k = d11Var;
     }
 }

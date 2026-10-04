@@ -1,44 +1,38 @@
 package org.telegram.ui;
 
+import android.view.TextureView;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class t40 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ ChatObject.VideoParticipant a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ d60 c;
+public final class t40 implements gv0 {
+    public final /* synthetic */ h60 a;
 
-    public t40(d60 d60Var, ChatObject.VideoParticipant videoParticipant, boolean z10) {
-        this.c = d60Var;
-        this.a = videoParticipant;
-        this.b = z10;
+    public t40(h60 h60Var) {
+        this.a = h60Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
+    @Override // org.telegram.ui.gv0
+    public final void G0(MessageObject messageObject) {
         ViewGroup viewGroup;
-        d60 d60Var = this.c;
-        j50 j50Var = d60Var.Q;
-        j50Var.getViewTreeObserver().removeOnPreDrawListener(this);
-        d60Var.q2 = null;
-        v30 v30Var = d60Var.a2;
-        ChatObject.VideoParticipant videoParticipant = this.a;
-        v30Var.j(videoParticipant);
-        if (d60Var.s0) {
-            d60Var.s0 = false;
-            d60Var.O0(true);
-            if (this.b && videoParticipant != null) {
-                j50Var.u0(0);
-            }
-            d60Var.s0 = true;
-        } else {
-            d60Var.O0(true);
-        }
-        viewGroup = ((org.telegram.ui.ActionBar.e3) d60Var).containerView;
-        viewGroup.requestLayout();
-        return false;
+        h60 h60Var = this.a;
+        h60Var.Q.J0(true);
+        h60Var.c2.f.setRoundRadius(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), 0, 0);
+        viewGroup = ((org.telegram.ui.ActionBar.f3) h60Var).containerView;
+        viewGroup.invalidate();
+    }
+
+    @Override // org.telegram.ui.gv0
+    public final void I(MessageObject messageObject) {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.a).containerView;
+        viewGroup.invalidate();
+    }
+
+    @Override // org.telegram.ui.gv0
+    public final /* synthetic */ TextureView k0() {
+        return null;
     }
 }

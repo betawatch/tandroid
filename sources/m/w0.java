@@ -18,10 +18,10 @@ import android.view.inputmethod.InputConnection;
 import android.widget.TextView;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
-import v7.w7;
-import w7.r7;
+import v7.v7;
+import w7.s7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class w0 {
     public final TextView a;
@@ -470,7 +470,7 @@ public final class w0 {
                     }
                 }
                 if (obtainStyledAttributes2.hasValue(11)) {
-                    if (!obtainStyledAttributes2.hasValue(11) || (resourceId = obtainStyledAttributes2.getResourceId(11, 0)) == 0 || (colorStateList4 = w7.a(context, resourceId)) == null) {
+                    if (!obtainStyledAttributes2.hasValue(11) || (resourceId = obtainStyledAttributes2.getResourceId(11, 0)) == 0 || (colorStateList4 = v7.a(context, resourceId)) == null) {
                         colorStateList4 = obtainStyledAttributes2.getColorStateList(11);
                     }
                     if (Build.VERSION.SDK_INT >= 24) {
@@ -492,10 +492,10 @@ public final class w0 {
                 dimensionPixelSize3 = obtainStyledAttributes2.getDimensionPixelSize(19, -1);
                 obtainStyledAttributes2.recycle();
                 if (dimensionPixelSize != -1) {
-                    r7.b(dimensionPixelSize, textView);
+                    s7.b(dimensionPixelSize, textView);
                 }
                 if (dimensionPixelSize2 != -1) {
-                    r7.c(dimensionPixelSize2, textView);
+                    s7.c(dimensionPixelSize2, textView);
                 }
                 if (dimensionPixelSize3 == -1) {
                     if (dimensionPixelSize3 < 0) {
@@ -679,7 +679,7 @@ public final class w0 {
                 return;
             }
             if (i10 != 1) {
-                throw new IllegalArgumentException(hg.c.h(i10, "Unknown auto-size text type: "));
+                throw new IllegalArgumentException(hg.k0.h(i10, "Unknown auto-size text type: "));
             }
             DisplayMetrics displayMetrics = g1Var.j.getResources().getDisplayMetrics();
             g1Var.k(TypedValue.applyDimension(2, 12.0f, displayMetrics), TypedValue.applyDimension(2, 112.0f, displayMetrics), 1.0f);

@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class q4 implements d6.h {
     public final /* synthetic */ cf.c a;
@@ -15,7 +15,7 @@ public final class q4 implements d6.h {
     public void c(d6.f fVar, String str) {
         y6 y6Var = new y6(new a5.a(7, 2));
         cf.c cVar = this.a;
-        cf.c.E(cVar, y6Var);
+        cf.c.B(cVar, y6Var);
         x6 x6Var = (x6) cVar.d;
         n6.l.h(x6Var);
         x6Var.a((d6.c) fVar);
@@ -33,42 +33,42 @@ public final class q4 implements d6.h {
     }
 
     @Override // d6.h
-    public void f(d6.f fVar, int i10) {
+    public void d(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(5, 2);
         aVar.c = Integer.valueOf(i10);
         y6 y6Var = new y6(aVar);
         cf.c cVar = this.a;
-        cf.c.E(cVar, y6Var);
-        cVar.G();
+        cf.c.B(cVar, y6Var);
+        cVar.D();
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void h(d6.f fVar, boolean z10) {
+    public /* bridge */ /* synthetic */ void g(d6.f fVar, boolean z10) {
         y6 y6Var = new y6(new a5.a(4, 2));
         cf.c cVar = this.a;
-        cf.c.E(cVar, y6Var);
+        cf.c.B(cVar, y6Var);
         x6 x6Var = (x6) cVar.d;
         n6.l.h(x6Var);
         x6Var.a((d6.c) fVar);
     }
 
     @Override // d6.h
-    public void j(d6.f fVar, int i10) {
+    public void i(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(9, 2);
         aVar.c = Integer.valueOf(i10);
         cf.c cVar = this.a;
         aVar.d = Boolean.valueOf(((d) cVar.b).d == 2);
-        cf.c.E(cVar, new y6(aVar));
-        cVar.G();
+        cf.c.B(cVar, new y6(aVar));
+        cVar.D();
     }
 
     @Override // d6.h
-    public void k(d6.f fVar) {
+    public void j(d6.f fVar) {
         d6.c cVar = (d6.c) fVar;
         a5.a aVar = new a5.a(2, 2);
         cf.c cVar2 = this.a;
         aVar.d = Boolean.valueOf(((d) cVar2.b).d == 2);
-        cf.c.E(cVar2, new y6(aVar));
+        cf.c.B(cVar2, new y6(aVar));
         x6 x6Var = (x6) cVar2.d;
         n6.l.h(x6Var);
         x6Var.a(cVar);
@@ -76,24 +76,24 @@ public final class q4 implements d6.h {
     }
 
     @Override // d6.h
-    public void m(d6.f fVar, int i10) {
+    public void k(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(8, 2);
         aVar.c = Integer.valueOf(i10);
         y6 y6Var = new y6(aVar);
         cf.c cVar = this.a;
-        cf.c.E(cVar, y6Var);
-        cVar.G();
+        cf.c.B(cVar, y6Var);
+        cVar.D();
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void v(d6.f fVar) {
+    public /* bridge */ /* synthetic */ void l(d6.f fVar) {
     }
 
     @Override // d6.h
-    public void x(d6.f fVar, String str) {
+    public void n(d6.f fVar, String str) {
         y6 y6Var = new y6(new a5.a(4, 2));
         cf.c cVar = this.a;
-        cf.c.E(cVar, y6Var);
+        cf.c.B(cVar, y6Var);
         x6 x6Var = (x6) cVar.d;
         n6.l.h(x6Var);
         x6Var.a((d6.c) fVar);
@@ -111,12 +111,12 @@ public final class q4 implements d6.h {
     }
 
     @Override // d6.h
-    public void y(d6.f fVar, int i10) {
+    public void p(d6.f fVar, int i10) {
         a5.a aVar = new a5.a(6, 2);
         aVar.c = Integer.valueOf(i10);
         y6 y6Var = new y6(aVar);
         cf.c cVar = this.a;
-        cf.c.E(cVar, y6Var);
+        cf.c.B(cVar, y6Var);
         x6 x6Var = (x6) cVar.d;
         n6.l.h(x6Var);
         x6Var.a((d6.c) fVar);

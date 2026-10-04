@@ -5,15 +5,15 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.du;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.eu;
 import org.telegram.ui.Components.h5;
 import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class a2 extends du {
+public final class a2 extends eu {
     public final h5 c;
     public int d;
     public final o6 e;
@@ -26,7 +26,7 @@ public final class a2 extends du {
         this.c = new h5(this);
         o6 o6Var = new o6(false, true, true, false);
         this.e = o6Var;
-        o6Var.k(0.2f, 160L, sr.h);
+        o6Var.k(0.2f, 160L, tr.h);
         o6Var.t(AndroidUtilities.dp(15.33f));
         o6Var.setCallback(this);
         o6Var.b = 5;
@@ -35,14 +35,14 @@ public final class a2 extends du {
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        int a2 = this.c.a(h6.v0(this.d < 0 ? h6.p7 : h6.P5, this.f.f), false);
+        int a2 = this.c.a(i6.v0(this.d < 0 ? i6.p7 : i6.P5, this.f.f), false);
         o6 o6Var = this.e;
         o6Var.r(a2);
         o6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
         o6Var.draw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.fu, android.widget.TextView
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.gu, android.widget.TextView
     public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
         super.onTextChanged(charSequence, i10, i11, i12);
         o6 o6Var = this.e;

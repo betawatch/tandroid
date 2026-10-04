@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class dl0 {
-    public final yl0 a;
+    public final zl0 a;
     public boolean d;
     public final boolean e;
     public final SparseArray b = new SparseArray();
@@ -24,10 +24,10 @@ public final class dl0 {
     public final ArrayList g = new ArrayList();
     public final ArrayList h = new ArrayList();
 
-    public dl0(yl0 yl0Var, boolean z10) {
-        this.a = yl0Var;
+    public dl0(zl0 zl0Var, boolean z10) {
+        this.a = zl0Var;
         this.e = z10;
-        yl0Var.setItemsEnterAnimator(this);
+        zl0Var.setItemsEnterAnimator(this);
     }
 
     public final void a() {
@@ -44,43 +44,43 @@ public final class dl0 {
         while (true) {
             ArrayList arrayList3 = this.h;
             int size = arrayList3.size();
-            yl0 yl0Var = this.a;
+            zl0 zl0Var = this.a;
             if (i10 >= size) {
                 arrayList3.clear();
                 this.b.clear();
-                yl0Var.invalidate();
+                zl0Var.invalidate();
                 this.d = true;
                 return;
             }
-            yl0Var.getViewTreeObserver().removeOnPreDrawListener((ViewTreeObserver.OnPreDrawListener) arrayList3.get(i10));
+            zl0Var.getViewTreeObserver().removeOnPreDrawListener((ViewTreeObserver.OnPreDrawListener) arrayList3.get(i10));
             i10++;
         }
     }
 
     public final void b(int i10) {
-        yl0 yl0Var = this.a;
-        int childCount = yl0Var.getChildCount();
+        zl0 zl0Var = this.a;
+        int childCount = zl0Var.getChildCount();
         View view = null;
         for (int i11 = 0; i11 < childCount; i11++) {
-            View childAt = yl0Var.getChildAt(i11);
-            if (RecyclerView.R(childAt) >= 0 && (childAt instanceof v00)) {
+            View childAt = zl0Var.getChildAt(i11);
+            if (RecyclerView.R(childAt) >= 0 && (childAt instanceof w00)) {
                 view = childAt;
             }
         }
-        s4.o0 layoutManager = yl0Var.getLayoutManager();
+        s4.o0 layoutManager = zl0Var.getLayoutManager();
         int i12 = 2;
         if (view != null && layoutManager != null) {
-            yl0Var.removeView(view);
+            zl0Var.removeView(view);
             this.c.add(view);
-            yl0Var.addView(view);
+            zl0Var.addView(view);
             layoutManager.M(view);
             Animator ofFloat = this.f ? ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, view.getAlpha(), 0.0f) : ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat.addListener(new ai.z(this, (v00) view, layoutManager));
+            ofFloat.addListener(new ai.z(this, (w00) view, layoutManager));
             ofFloat.start();
             i10--;
         }
-        org.telegram.ui.wq wqVar = new org.telegram.ui.wq(this, (v00) view, i10, i12);
-        this.h.add(wqVar);
-        yl0Var.getViewTreeObserver().addOnPreDrawListener(wqVar);
+        org.telegram.ui.yq yqVar = new org.telegram.ui.yq(this, (w00) view, i10, i12);
+        this.h.add(yqVar);
+        zl0Var.getViewTreeObserver().addOnPreDrawListener(yqVar);
     }
 }

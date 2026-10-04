@@ -6,7 +6,7 @@ import android.animation.AnimatorSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class qi0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final class qi0 extends AnimatorListenerAdapter {
                 AnimatorSet animatorSet3 = ri0Var.s;
                 if (animatorSet3 != null && animatorSet3.equals(animator)) {
                     ri0Var.s = null;
-                    AndroidUtilities.runOnUIThread(new kc0(this, 15));
+                    AndroidUtilities.runOnUIThread(new lc0(this, 15));
                 }
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
                 break;

@@ -21,7 +21,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class ph1 extends org.telegram.ui.Components.gl0 {
     public final Context c;
@@ -82,7 +82,7 @@ public final class ph1 extends org.telegram.ui.Components.gl0 {
         gg.c2 c2Var = new gg.c2(false);
         this.f = c2Var;
         c2Var.p = false;
-        c2Var.a = new ml0(this, 25);
+        c2Var.a = new jl0(this, 25);
     }
 
     @Override // s4.h0
@@ -93,7 +93,7 @@ public final class ph1 extends org.telegram.ui.Components.gl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 1;
     }
@@ -104,7 +104,7 @@ public final class ph1 extends org.telegram.ui.Components.gl0 {
     }
 
     @Override // org.telegram.ui.Components.gl0
-    public final void G(org.telegram.ui.Components.yl0 yl0Var, float f7, int[] iArr) {
+    public final void G(org.telegram.ui.Components.zl0 zl0Var, float f7, int[] iArr) {
         iArr[0] = (int) (h() * f7);
         iArr[1] = 0;
     }
@@ -243,14 +243,14 @@ public final class ph1 extends org.telegram.ui.Components.gl0 {
                             if (i14 > 0) {
                                 SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder();
                                 spannableStringBuilder4.append((CharSequence) "d");
-                                spannableStringBuilder4.setSpan(new org.telegram.ui.Components.qq(R.drawable.msg_mini_fireon, 0), 0, 1, 0);
+                                spannableStringBuilder4.setSpan(new org.telegram.ui.Components.rq(R.drawable.msg_mini_fireon, 0), 0, 1, 0);
                                 spannableStringBuilder4.append((CharSequence) LocaleController.formatString(R.string.AutoDeleteAfter, LocaleController.formatTTLString(i14)).toLowerCase());
                                 spannableStringBuilder = spannableStringBuilder4;
                                 z10 = true;
                             } else {
                                 SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder();
                                 spannableStringBuilder5.append((CharSequence) "d");
-                                spannableStringBuilder5.setSpan(new org.telegram.ui.Components.qq(R.drawable.msg_mini_fireoff, 0), 0, 1, 0);
+                                spannableStringBuilder5.setSpan(new org.telegram.ui.Components.rq(R.drawable.msg_mini_fireoff, 0), 0, 1, 0);
                                 spannableStringBuilder5.append((CharSequence) LocaleController.getString(R.string.AutoDeleteDisabled));
                                 spannableStringBuilder = spannableStringBuilder5;
                                 z10 = false;
@@ -263,7 +263,7 @@ public final class ph1 extends org.telegram.ui.Components.gl0 {
                                 if (canUserDoAdminAction) {
                                 }
                                 g4Var.d(obj, charSequence, spannableStringBuilder2);
-                                g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.h6.w0(null, !z11 ? org.telegram.ui.ActionBar.h6.n6 : org.telegram.ui.ActionBar.h6.y6, false));
+                                g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.i6.w0(null, !z11 ? org.telegram.ui.ActionBar.i6.n6 : org.telegram.ui.ActionBar.i6.y6, false));
                                 if (j3 == j10) {
                                 }
                             } else {
@@ -274,7 +274,7 @@ public final class ph1 extends org.telegram.ui.Components.gl0 {
                                 if (canUserDoAdminAction) {
                                 }
                                 g4Var.d(obj, charSequence, spannableStringBuilder2);
-                                g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.h6.w0(null, !z11 ? org.telegram.ui.ActionBar.h6.n6 : org.telegram.ui.ActionBar.h6.y6, false));
+                                g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.i6.w0(null, !z11 ? org.telegram.ui.ActionBar.i6.n6 : org.telegram.ui.ActionBar.i6.y6, false));
                                 if (j3 == j10) {
                                 }
                             }
@@ -303,7 +303,7 @@ public final class ph1 extends org.telegram.ui.Components.gl0 {
                                 g4Var.setAlpha(1.0f);
                             }
                             g4Var.d(obj, charSequence, spannableStringBuilder2);
-                            g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.h6.w0(null, !z11 ? org.telegram.ui.ActionBar.h6.n6 : org.telegram.ui.ActionBar.h6.y6, false));
+                            g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.i6.w0(null, !z11 ? org.telegram.ui.ActionBar.i6.n6 : org.telegram.ui.ActionBar.i6.y6, false));
                             if (j3 == j10) {
                                 g4Var.c(usersSelectActivity.N.h(j3) >= 0, false);
                                 g4Var.setCheckBoxEnabled(true);
@@ -320,7 +320,7 @@ public final class ph1 extends org.telegram.ui.Components.gl0 {
                     if (canUserDoAdminAction) {
                     }
                     g4Var.d(obj, charSequence, spannableStringBuilder2);
-                    g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.h6.w0(null, !z11 ? org.telegram.ui.ActionBar.h6.n6 : org.telegram.ui.ActionBar.h6.y6, false));
+                    g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.i6.w0(null, !z11 ? org.telegram.ui.ActionBar.i6.n6 : org.telegram.ui.ActionBar.i6.y6, false));
                     if (j3 == j10) {
                     }
                 } else if (i10 > size && !TextUtils.isEmpty(publicUsername)) {
@@ -340,7 +340,7 @@ public final class ph1 extends org.telegram.ui.Components.gl0 {
                             } else {
                                 indexOfIgnoreCase++;
                             }
-                            spannableStringBuilder6.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q6, false)), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
+                            spannableStringBuilder6.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q6, false)), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
                         }
                         charSequence2 = spannableStringBuilder6;
                     } catch (Exception unused) {
@@ -362,7 +362,7 @@ public final class ph1 extends org.telegram.ui.Components.gl0 {
                 if (canUserDoAdminAction) {
                 }
                 g4Var.d(obj, charSequence, spannableStringBuilder2);
-                g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.h6.w0(null, !z11 ? org.telegram.ui.ActionBar.h6.n6 : org.telegram.ui.ActionBar.h6.y6, false));
+                g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.i6.w0(null, !z11 ? org.telegram.ui.ActionBar.i6.n6 : org.telegram.ui.ActionBar.i6.y6, false));
                 if (j3 == j10) {
                 }
             }
@@ -442,7 +442,7 @@ public final class ph1 extends org.telegram.ui.Components.gl0 {
         if (canUserDoAdminAction) {
         }
         g4Var.d(obj, charSequence, spannableStringBuilder2);
-        g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.h6.w0(null, !z11 ? org.telegram.ui.ActionBar.h6.n6 : org.telegram.ui.ActionBar.h6.y6, false));
+        g4Var.getStatusTextView().setTextColor(org.telegram.ui.ActionBar.i6.w0(null, !z11 ? org.telegram.ui.ActionBar.i6.n6 : org.telegram.ui.ActionBar.i6.y6, false));
         if (j3 == j10) {
         }
     }

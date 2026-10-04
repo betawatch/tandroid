@@ -1,33 +1,64 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class m7 extends og.a {
-    public r6 c;
-    public zh.a d;
+public final class m7 extends FrameLayout {
+    public final org.telegram.ui.Components.qp a;
+    public final FrameLayout b;
+    public final TextView c;
+    public boolean d;
+    public int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ i7 h;
 
-    public final boolean equals(Object obj) {
-        zh.a aVar;
-        zh.a aVar2;
-        r6 r6Var;
-        r6 r6Var2;
-        if (this == obj) {
-            return true;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m7(i7 i7Var, Context context, int i10) {
+        super(context);
+        this.f = i10;
+        this.h = i7Var;
+        org.telegram.ui.Components.qp qpVar = new org.telegram.ui.Components.qp(context, 21, null);
+        this.a = qpVar;
+        qpVar.setDrawBackgroundAsArc(14);
+        qpVar.b(org.telegram.ui.ActionBar.i6.i7, org.telegram.ui.ActionBar.i6.g7, org.telegram.ui.ActionBar.i6.k7);
+        View view = new View(getContext());
+        view.setOnClickListener(new a(this, 8));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.b = frameLayout;
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 16.0f);
+        textView.setGravity(5);
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.n6, false));
+        if (LocaleController.isRTL) {
+            addView(qpVar, w7.z5.d(24, 24.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
+            addView(view, w7.z5.d(40, 40.0f, 21, 0.0f, 0.0f, 0.0f, 0.0f));
+            addView(frameLayout, w7.z5.d(-1, -2.0f, 0, 90.0f, 0.0f, 40.0f, 0.0f));
+            addView(textView, w7.z5.d(69, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+            return;
         }
-        if (obj != null && m7.class == obj.getClass()) {
-            m7 m7Var = (m7) obj;
-            int i10 = this.a;
-            if (i10 == m7Var.a) {
-                if (i10 == 1 && (r6Var = this.c) != null && (r6Var2 = m7Var.c) != null) {
-                    return r6Var.a == r6Var2.a;
-                }
-                if (i10 == 2 && (aVar = this.d) != null && (aVar2 = m7Var.d) != null) {
-                    return Objects.equals(aVar.a, aVar2.a);
-                }
+        addView(qpVar, w7.z5.d(24, 24.0f, 19, 18.0f, 0.0f, 0.0f, 0.0f));
+        addView(view, w7.z5.d(40, 40.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(frameLayout, w7.z5.d(-1, -2.0f, 0, 48.0f, 0.0f, 90.0f, 0.0f));
+        addView(textView, w7.z5.d(69, -2.0f, 21, 0.0f, 0.0f, 21.0f, 0.0f));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.d) {
+            if (LocaleController.isRTL) {
+                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(48.0f), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
+            } else {
+                canvas.drawLine(getMeasuredWidth() - AndroidUtilities.dp(90.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
             }
         }
-        return false;
     }
 }

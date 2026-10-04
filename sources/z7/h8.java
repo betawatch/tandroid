@@ -1,12 +1,12 @@
 package z7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class h8 implements ia.d {
     public static final h8 a = new h8();
 
     static {
-        v7.j.r(v7.j.m(w.class, v7.j.q(8, v7.j.m(w.class, v7.j.q(7, v7.j.m(w.class, v7.j.q(6, v7.j.m(w.class, v7.j.q(5, v7.j.m(w.class, v7.j.q(4, v7.j.m(w.class, v7.j.q(3, v7.j.m(w.class, v7.j.q(2, v7.j.m(w.class, new s(1)))))))))))))))));
+        t8.b.t(t8.b.o(w.class, t8.b.s(8, t8.b.o(w.class, t8.b.s(7, t8.b.o(w.class, t8.b.s(6, t8.b.o(w.class, t8.b.s(5, t8.b.o(w.class, t8.b.s(4, t8.b.o(w.class, t8.b.s(3, t8.b.o(w.class, t8.b.s(2, t8.b.o(w.class, new s(1)))))))))))))))));
     }
 
     @Override // ia.a

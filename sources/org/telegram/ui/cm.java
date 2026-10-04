@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class cm extends org.telegram.ui.Cells.b0 {
     public final /* synthetic */ jm f;
@@ -15,8 +15,8 @@ public final class cm extends org.telegram.ui.Cells.b0 {
 
     @Override // org.telegram.ui.Cells.b0
     public final int getSideMenuWidth() {
-        wn wnVar = this.f.Q;
-        int i10 = wn.Gc;
-        return wnVar.R8();
+        yn ynVar = this.f.Q;
+        int i10 = yn.Bc;
+        return ynVar.S8();
     }
 }

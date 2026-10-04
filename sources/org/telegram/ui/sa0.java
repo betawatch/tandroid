@@ -1,26 +1,106 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
+import java.util.regex.Pattern;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class sa0 implements hq {
-    public final /* synthetic */ qy a;
-    public final /* synthetic */ int b;
+public final /* synthetic */ class sa0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ h90 c;
+    public final /* synthetic */ Long d;
 
-    public sa0(qy qyVar, int i10) {
-        this.a = qyVar;
-        this.b = i10;
+    public /* synthetic */ sa0(LaunchActivity launchActivity, h90 h90Var, Long l4, int i10) {
+        this.a = i10;
+        this.b = launchActivity;
+        this.c = h90Var;
+        this.d = l4;
     }
 
-    @Override // org.telegram.ui.hq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        this.a.removeSelfFromStack();
-        NotificationCenter.getInstance(this.b).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-    }
-
-    @Override // org.telegram.ui.hq
-    public final void a(TLRPC.User user) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        org.telegram.ui.Components.yc X;
+        int i10;
+        int i11;
+        org.telegram.ui.Components.yc X2;
+        int i12;
+        int i13;
+        int i14 = this.a;
+        Long l4 = this.d;
+        h90 h90Var = this.c;
+        LaunchActivity launchActivity = this.b;
+        TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
+        switch (i14) {
+            case 0:
+                Pattern pattern = LaunchActivity.B1;
+                try {
+                    h90Var.run();
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                }
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                if (storyItem != null) {
+                    if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
+                        if (R != null) {
+                            storyItem.dialogId = l4.longValue();
+                            ai.jc createOverlayStoryViewer = R.createOverlayStoryViewer();
+                            createOverlayStoryViewer.v();
+                            createOverlayStoryViewer.F(launchActivity, storyItem, null);
+                            break;
+                        }
+                    } else {
+                        X = org.telegram.ui.Components.yc.X();
+                        if (X != null) {
+                            i10 = R.raw.story_bomb1;
+                            i11 = R.string.StoryNotFound;
+                        }
+                    }
+                } else {
+                    X = org.telegram.ui.Components.yc.X();
+                    if (X != null) {
+                        i10 = R.raw.story_bomb2;
+                        i11 = R.string.StoryNotFound;
+                    }
+                }
+                org.telegram.messenger.f0.p(i11, X, i10, 36);
+                break;
+            default:
+                Pattern pattern2 = LaunchActivity.B1;
+                try {
+                    h90Var.run();
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                }
+                org.telegram.ui.ActionBar.n2 R2 = LaunchActivity.R();
+                if (storyItem != null) {
+                    if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
+                        if (R2 != null) {
+                            storyItem.dialogId = l4.longValue();
+                            ai.jc createOverlayStoryViewer2 = R2.createOverlayStoryViewer();
+                            createOverlayStoryViewer2.v();
+                            createOverlayStoryViewer2.F(launchActivity, storyItem, null);
+                            break;
+                        }
+                    } else {
+                        X2 = org.telegram.ui.Components.yc.X();
+                        if (X2 != null) {
+                            i12 = R.raw.story_bomb1;
+                            i13 = R.string.StoryNotFound;
+                        }
+                    }
+                } else {
+                    X2 = org.telegram.ui.Components.yc.X();
+                    if (X2 != null) {
+                        i12 = R.raw.story_bomb2;
+                        i13 = R.string.StoryNotFound;
+                    }
+                }
+                org.telegram.messenger.f0.p(i13, X2, i12, 36);
+                break;
+        }
     }
 }

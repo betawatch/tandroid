@@ -1,26 +1,32 @@
 package za;
 
-import android.content.Context;
-import java.util.concurrent.atomic.AtomicReference;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class a0 implements u {
-    public static final w e = new w();
-    public static final m1.c f = w7.r.a(t.a);
-    public final Context a;
-    public final id.h b;
-    public final AtomicReference c;
-    public final o0.a d;
+public final class a0 {
+    public final j0 a;
+    public final b b;
 
-    public a0(Context context, id.h hVar) {
-        kotlin.jvm.internal.i.e(context, "context");
-        this.a = context;
-        this.b = hVar;
-        this.c = new AtomicReference();
-        e.getClass();
-        int i10 = 9;
-        this.d = new o0.a(29, new n4.y(i10, ((k1.a0) f.a(context, w.a[0]).b).c, new y(3, null)), this);
-        zd.e0.q(zd.e0.b(hVar), new v(this, null, 0));
+    public a0(j0 j0Var, b bVar) {
+        this.a = j0Var;
+        this.b = bVar;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof a0)) {
+            return false;
+        }
+        a0 a0Var = (a0) obj;
+        return this.a.equals(a0Var.a) && this.b.equals(a0Var.b);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + ((this.a.hashCode() + (k.b.hashCode() * 31)) * 31);
+    }
+
+    public final String toString() {
+        return "SessionEvent(eventType=" + k.b + ", sessionData=" + this.a + ", applicationInfo=" + this.b + ')';
     }
 }

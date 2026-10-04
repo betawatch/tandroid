@@ -1,48 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
+import android.content.Context;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class zs0 extends g.p {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ ViewGroup e;
+public final class zs0 extends tx0 {
+    public final /* synthetic */ pv0 K;
 
-    public /* synthetic */ zs0(ViewGroup viewGroup, Object obj, int i10) {
-        this.c = i10;
-        this.e = viewGroup;
-        this.d = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zs0(pv0 pv0Var, Context context, w00 w00Var) {
+        super(context, w00Var, 1, null);
+        this.K = pv0Var;
     }
 
-    @Override // g.p
-    public final int i(int i10) {
-        int i11;
-        switch (this.c) {
-            case 0:
-                eu0 eu0Var = (eu0) this.d;
-                s4.h0 adapter = eu0Var.r.getAdapter();
-                lv0 lv0Var = (lv0) this.e;
-                fv0 fv0Var = lv0Var.I;
-                if (adapter == fv0Var) {
-                    if (fv0Var.j(i10) == 2) {
-                        return eu0Var.s.J;
-                    }
-                    return 1;
-                }
-                if (lv0.v(lv0Var, adapter) == -1) {
-                    return 1;
-                }
-                ((iv0) adapter).getClass();
-                return 1;
-            default:
-                bi.i iVar = (bi.i) this.d;
-                l61 l61Var = ((t61) this.e).Y2;
-                if (l61Var == null) {
-                    return iVar.J;
-                }
-                x51 G = l61Var.G(i10);
-                return (G == null || (i11 = G.u) == -1) ? iVar.J : i11;
-        }
+    @Override // org.telegram.ui.Components.tx0
+    public final void a() {
+        invalidate();
+        this.K.E0();
     }
 }

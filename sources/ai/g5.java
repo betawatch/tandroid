@@ -22,18 +22,18 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.a61;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.b61;
-import org.telegram.ui.Components.d11;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.e40;
-import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.f40;
+import org.telegram.ui.Components.j61;
+import org.telegram.ui.Components.k61;
+import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.n61;
 import org.telegram.ui.Components.pa0;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class g5 extends xa {
     public final /* synthetic */ jc x0;
@@ -64,7 +64,7 @@ public final class g5 extends xa {
             }
             a5 a5Var = e6Var.c1;
             org.telegram.ui.ActionBar.d6 d6Var = this.y0;
-            org.telegram.ui.Components.qc h = new yc(a5Var, d6Var).h(document, 2, new c5(this, this.x0, d6Var, 0));
+            org.telegram.ui.Components.rc h = new yc(a5Var, d6Var).h(document, 2, new c5(this, this.x0, d6Var, 0));
             if (h == null) {
                 return;
             }
@@ -75,39 +75,39 @@ public final class g5 extends xa {
 
     @Override // ai.xa
     public final void G(CharacterStyle characterStyle, View view) {
-        boolean z10 = characterStyle instanceof e61;
+        boolean z10 = characterStyle instanceof n61;
         jc jcVar = this.x0;
         e6 e6Var = this.z0;
         if (z10) {
-            TLRPC.User user = MessagesController.getInstance(e6Var.C2).getUser(Utilities.parseLong(((e61) characterStyle).getURL()));
+            TLRPC.User user = MessagesController.getInstance(e6Var.C2).getUser(Utilities.parseLong(((n61) characterStyle).getURL()));
             if (user != null) {
                 MessagesController.getInstance(e6Var.C2).openChatOrProfileWith(user, null, jcVar.f, 0, false);
                 return;
             }
             return;
         }
-        if (!(characterStyle instanceof b61)) {
+        if (!(characterStyle instanceof k61)) {
             if (characterStyle instanceof URLSpan) {
-                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof d61);
+                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof m61);
                 return;
             }
-            if (!(characterStyle instanceof a61)) {
+            if (!(characterStyle instanceof j61)) {
                 if (characterStyle instanceof ClickableSpan) {
                     ((ClickableSpan) characterStyle).onClick(view);
                     return;
                 }
                 return;
             } else {
-                a61 a61Var = (a61) characterStyle;
-                AndroidUtilities.addToClipboard(a61Var.a.subSequence(a61Var.b, a61Var.c).toString());
+                j61 j61Var = (j61) characterStyle;
+                AndroidUtilities.addToClipboard(j61Var.a.subSequence(j61Var.b, j61Var.c).toString());
                 ok.o(R.string.TextCopied, new yc(e6Var.c1, this.y0));
                 return;
             }
         }
-        String url = ((b61) characterStyle).getURL();
+        String url = ((k61) characterStyle).getURL();
         if (url != null && (url.startsWith("#") || url.startsWith("$"))) {
             if (url.contains("@")) {
-                jcVar.H(new e40(url, null));
+                jcVar.H(new f40(url, null));
                 return;
             }
             Bundle bundle = new Bundle();
@@ -138,12 +138,12 @@ public final class g5 extends xa {
             try {
                 Uri parse = Uri.parse(url2);
                 url2 = nf.f.v(parse, null, null, nf.f.a(parse.getHost()), null);
-            } catch (Exception e) {
-                FileLog.e((Throwable) e, false);
+            } catch (Exception e7) {
+                FileLog.e((Throwable) e7, false);
             }
             str = URLDecoder.decode(url2.replaceAll("\\+", "%2b"), "UTF-8");
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e10) {
+            FileLog.e(e10);
             str = url2;
         }
         try {
@@ -152,11 +152,11 @@ public final class g5 extends xa {
         }
         Context context = getContext();
         org.telegram.ui.ActionBar.d6 d6Var = this.y0;
-        org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(1, context, d6Var, false);
-        e3Var.fixNavigationBar();
-        e3Var.title = str;
-        e3Var.bigTitle = false;
-        e3Var.multipleLinesTitle = true;
+        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, context, d6Var, false);
+        f3Var.fixNavigationBar();
+        f3Var.title = str;
+        f3Var.bigTitle = false;
+        f3Var.multipleLinesTitle = true;
         e6 e6Var = this.z0;
         c6 c6Var = e6Var.O1;
         CharSequence[] charSequenceArr = (c6Var == null || c6Var.d()) ? new CharSequence[]{LocaleController.getString(R.string.Open), LocaleController.getString(R.string.Copy)} : new CharSequence[]{LocaleController.getString(R.string.Open)};
@@ -173,11 +173,11 @@ public final class g5 extends xa {
                 }
             }
         };
-        e3Var.items = charSequenceArr;
-        e3Var.onClickListener = onClickListener;
-        e3Var.setOnHideListener(new f5(dVar, 0));
-        e3Var.fixNavigationBar(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.h5, d6Var));
-        ((ac) e6Var.Q1).h(e3Var);
+        f3Var.items = charSequenceArr;
+        f3Var.onClickListener = onClickListener;
+        f3Var.setOnHideListener(new f5(dVar, 0));
+        f3Var.fixNavigationBar(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h5, d6Var));
+        ((ac) e6Var.Q1).h(f3Var);
     }
 
     @Override // ai.xa
@@ -190,7 +190,7 @@ public final class g5 extends xa {
         jc jcVar = this.x0;
         final org.telegram.ui.ActionBar.d6 d6Var = this.y0;
         if (document != null) {
-            a80 F = a80.F(jcVar.v, d6Var, e6Var.K0);
+            b80 F = b80.F(jcVar.v, d6Var, e6Var.K0);
             F.i = 3;
             F.a0(-AndroidUtilities.dp(8.0f), 0.0f);
             final int i10 = 0;
@@ -280,24 +280,24 @@ public final class g5 extends xa {
                 bundle.putLong("chat_id", -saVar.b.longValue());
             }
             bundle.putInt("message_id", saVar.d.intValue());
-            jcVar.H(new wn(bundle));
+            jcVar.H(new yn(bundle));
             return;
         }
         if (saVar.b != null && saVar.c != null) {
             MessagesController.getInstance(e6Var.C2).getStoriesController().d0(saVar.b.longValue(), saVar.c.intValue(), new e4(this, saVar, jcVar, d6Var, 1));
             return;
         }
-        org.telegram.ui.Components.qc Q = new yc(e6Var.c1, d6Var).Q(R.raw.error, 36, LocaleController.getString(R.string.StoryHidAccount));
+        org.telegram.ui.Components.rc Q = new yc(e6Var.c1, d6Var).Q(R.raw.error, 36, LocaleController.getString(R.string.StoryHidAccount));
         Q.a = 3;
         Q.k(true);
     }
 
     public final void M(int i10, String str, CharacterStyle characterStyle, boolean z10) {
-        d11 d11Var;
+        m11 m11Var;
         if (z10 || AndroidUtilities.shouldShowUrlInAlert(str)) {
             jc jcVar = this.x0;
             if (i10 == 0 || i10 == 2) {
-                org.telegram.ui.Components.e5.r0(jcVar.f, str, true, true, true, (!(characterStyle instanceof d61) || (d11Var = ((d61) characterStyle).a) == null || (d11Var.a & 1024) == 0) ? false : true, null, null, this.y0);
+                org.telegram.ui.Components.e5.r0(jcVar.f, str, true, true, true, (!(characterStyle instanceof m61) || (m11Var = ((m61) characterStyle).a) == null || (m11Var.a & 1024) == 0) ? false : true, null, null, this.y0);
                 return;
             } else {
                 if (i10 == 1) {

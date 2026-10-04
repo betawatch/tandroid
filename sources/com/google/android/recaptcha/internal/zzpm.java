@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import hg.c;
+import hg.k0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 final class zzpm extends zzpo {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -23,7 +23,7 @@ final class zzpm extends zzpo {
         int length = zze.length();
         zzpk zzpkVar = this.zza;
         if (!zzpkVar.zzc(length)) {
-            throw new zzpn(c.h(zze.length(), "Invalid input length "));
+            throw new zzpn(k0.h(zze.length(), "Invalid input length "));
         }
         int i10 = 0;
         int i11 = 0;

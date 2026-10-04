@@ -1,43 +1,30 @@
 package za;
 
-import com.google.firebase.sessions.FirebaseSessionsRegistrar;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final /* synthetic */ class m implements q9.d {
-    public final /* synthetic */ int a;
+public final class m {
+    public final String a;
 
-    public /* synthetic */ m(int i10) {
-        this.a = i10;
+    public m(String str) {
+        this.a = str;
     }
 
-    @Override // q9.d
-    public Object G(cf.c cVar) {
-        n nVar;
-        k0 k0Var;
-        e0 e0Var;
-        bb.h hVar;
-        u uVar;
-        o0 o0Var;
-        switch (this.a) {
-            case 1:
-                nVar = FirebaseSessionsRegistrar.getComponents$lambda-0(cVar);
-                return nVar;
-            case 2:
-                k0Var = FirebaseSessionsRegistrar.getComponents$lambda-1(cVar);
-                return k0Var;
-            case 3:
-                e0Var = FirebaseSessionsRegistrar.getComponents$lambda-2(cVar);
-                return e0Var;
-            case 4:
-                hVar = FirebaseSessionsRegistrar.getComponents$lambda-3(cVar);
-                return hVar;
-            case 5:
-                uVar = FirebaseSessionsRegistrar.getComponents$lambda-4(cVar);
-                return uVar;
-            default:
-                o0Var = FirebaseSessionsRegistrar.getComponents$lambda-5(cVar);
-                return o0Var;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        return (obj instanceof m) && kotlin.jvm.internal.i.a(this.a, ((m) obj).a);
+    }
+
+    public final int hashCode() {
+        String str = this.a;
+        if (str == null) {
+            return 0;
+        }
+        return str.hashCode();
+    }
+
+    public final String toString() {
+        return "FirebaseSessionsData(sessionId=" + this.a + ')';
     }
 }

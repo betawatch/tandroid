@@ -25,9 +25,9 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.ok;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class f {
     public static final String[] a0 = {"models/star.binobj"};
@@ -156,8 +156,8 @@ public final class f {
                             for (int i17 = 0; i17 < readInt2; i17++) {
                                 try {
                                     arrayList2.add(Float.valueOf(dataInputStream.readFloat()));
-                                } catch (IOException e) {
-                                    e = e;
+                                } catch (IOException e7) {
+                                    e = e7;
                                     fArr2 = null;
                                     fArr3 = null;
                                     e.printStackTrace();
@@ -184,12 +184,12 @@ public final class f {
                             fArr3 = new float[i15];
                             try {
                                 fArr2 = new float[readInt * 2];
-                            } catch (IOException e7) {
-                                e = e7;
+                            } catch (IOException e10) {
+                                e = e10;
                                 fArr2 = null;
                             }
-                        } catch (IOException e10) {
-                            e = e10;
+                        } catch (IOException e11) {
+                            e = e11;
                             fArr2 = null;
                             fArr3 = null;
                             e.printStackTrace();
@@ -282,8 +282,8 @@ public final class f {
                                 arrayList2 = arrayList;
                                 readInt = i24;
                             }
-                        } catch (IOException e11) {
-                            e = e11;
+                        } catch (IOException e12) {
+                            e = e12;
                             e.printStackTrace();
                             this.d[i11] = ok.i(ByteBuffer.allocateDirect(fArr.length * 4));
                             this.d[i11].put(fArr).position(0);
@@ -294,8 +294,8 @@ public final class f {
                             this.t[i11] = fArr.length;
                             i11++;
                         }
-                    } catch (IOException e12) {
-                        e = e12;
+                    } catch (IOException e13) {
+                        e = e13;
                     }
                     this.d[i11] = ok.i(ByteBuffer.allocateDirect(fArr.length * 4));
                     this.d[i11].put(fArr).position(0);
@@ -309,7 +309,7 @@ public final class f {
                 this.U = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(this.U);
                 Paint paint = new Paint();
-                paint.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{h6.w0(null, h6.Lj, false), h6.w0(null, h6.Mj, false), h6.w0(null, h6.Nj, false), h6.w0(null, h6.Oj, false)}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP));
+                paint.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{i6.w0(null, i6.Lj, false), i6.w0(null, i6.Mj, false), i6.w0(null, i6.Nj, false), i6.w0(null, i6.Oj, false)}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP));
                 canvas.drawRect(0.0f, 0.0f, 100.0f, 100.0f, paint);
                 int[] iArr = new int[1];
                 GLES20.glGenTextures(1, iArr, 0);
@@ -477,7 +477,7 @@ public final class f {
         this.U = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
         Canvas canvas2 = new Canvas(this.U);
         Paint paint2 = new Paint();
-        paint2.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{h6.w0(null, h6.Lj, false), h6.w0(null, h6.Mj, false), h6.w0(null, h6.Nj, false), h6.w0(null, h6.Oj, false)}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP));
+        paint2.setShader(new LinearGradient(0.0f, 100.0f, 150.0f, 0.0f, new int[]{i6.w0(null, i6.Lj, false), i6.w0(null, i6.Mj, false), i6.w0(null, i6.Nj, false), i6.w0(null, i6.Oj, false)}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP));
         canvas2.drawRect(0.0f, 0.0f, 100.0f, 100.0f, paint2);
         int[] iArr8 = new int[1];
         GLES20.glGenTextures(1, iArr8, 0);
@@ -591,8 +591,8 @@ public final class f {
             }
             bufferedReader.close();
             open.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException e7) {
+            e7.printStackTrace();
         }
         return sb2.toString();
     }

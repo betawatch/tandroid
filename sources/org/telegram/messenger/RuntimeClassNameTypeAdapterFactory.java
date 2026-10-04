@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
     private final Class<?> baseType;
@@ -74,8 +74,8 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
                         z10 = false;
                         try {
                             iVar = (db.i) gb.h1.z.read(aVar3);
-                        } catch (EOFException e) {
-                            e = e;
+                        } catch (EOFException e7) {
+                            e = e7;
                             if (!z10) {
                                 throw new db.j(e);
                             }
@@ -84,8 +84,8 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
                             if (iVar instanceof db.l) {
                             }
                         }
-                    } catch (EOFException e7) {
-                        e = e7;
+                    } catch (EOFException e10) {
+                        e = e10;
                         z10 = true;
                     }
                     iVar.getClass();
@@ -104,17 +104,17 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements db.v {
                     if (uVar == null) {
                         try {
                             uVar = gVar.c(RuntimeClassNameTypeAdapterFactory.this, new kb.a(Class.forName(n10)));
-                        } catch (ClassNotFoundException e10) {
-                            throw new androidx.car.app.j(v7.j.g("Cannot find class ", n10), e10);
+                        } catch (ClassNotFoundException e11) {
+                            throw new androidx.car.app.j(t8.b.i("Cannot find class ", n10), e11);
                         }
                     }
                     return uVar.fromJsonTree(iVar);
-                } catch (NumberFormatException e11) {
-                    throw new db.j(e11);
-                } catch (lb.c e12) {
+                } catch (NumberFormatException e12) {
                     throw new db.j(e12);
-                } catch (IOException e13) {
+                } catch (lb.c e13) {
                     throw new db.j(e13);
+                } catch (IOException e14) {
+                    throw new db.j(e14);
                 }
             }
 

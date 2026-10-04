@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t2 implements Runnable {
     public final /* synthetic */ int a;
@@ -53,11 +53,11 @@ public final /* synthetic */ class t2 implements Runnable {
                     break;
                 } else {
                     Activity activity = AndroidUtilities.getActivity();
-                    org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                     org.telegram.ui.ActionBar.d6 dVar = (PhotoViewer.t1().R1() || (U != null && U.hasShownSheet())) ? new ai.d() : U != null ? U.getResourceProvider() : null;
                     if (activity != null) {
                         long j12 = this.d;
-                        new yh.l7(activity, dVar, j10, 13, DialogObject.getShortName(i11, j12), new org.telegram.ui.f6(j11, 1, callback), j12).show();
+                        new yh.m7(activity, dVar, j10, 13, DialogObject.getShortName(i11, j12), new org.telegram.ui.e6(j11, 1, callback), j12).show();
                         break;
                     }
                 }

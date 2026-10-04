@@ -1,6 +1,6 @@
 package r2;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class p extends Exception {
     public final String a;
@@ -8,8 +8,8 @@ public final class p extends Exception {
     public final o c;
     public final String d;
 
-    public p(b2.s sVar, t tVar, boolean z10, int i10) {
-        this("Decoder init failed: [" + i10 + "], " + sVar, tVar, sVar.r, z10, null, "androidx.media3.exoplayer.mediacodec.MediaCodecRenderer_" + (i10 < 0 ? "neg_" : "") + Math.abs(i10));
+    public p(b2.s sVar, u uVar, boolean z10, int i10) {
+        this("Decoder init failed: [" + i10 + "], " + sVar, uVar, sVar.r, z10, null, "androidx.media3.exoplayer.mediacodec.MediaCodecRenderer_" + (i10 < 0 ? "neg_" : "") + Math.abs(i10));
     }
 
     public p(String str, Throwable th2, String str2, boolean z10, o oVar, String str3) {

@@ -12,10 +12,10 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class x2 extends View {
     public float E;
@@ -24,7 +24,7 @@ public final class x2 extends View {
     public final w2 a;
     public final RectF b;
     public final Path c;
-    public final yh.i8 d;
+    public final yh.j8 d;
     public final org.telegram.ui.Components.e6 e;
     public final org.telegram.ui.Components.e6 f;
     public final org.telegram.ui.Components.o6 h;
@@ -40,9 +40,9 @@ public final class x2 extends View {
         super(context);
         this.b = new RectF();
         this.c = new Path();
-        sr srVar = sr.h;
-        this.e = new org.telegram.ui.Components.e6(this, 320L, srVar);
-        this.f = new org.telegram.ui.Components.e6(this, 320L, srVar);
+        tr trVar = tr.h;
+        this.e = new org.telegram.ui.Components.e6(this, 320L, trVar);
+        this.f = new org.telegram.ui.Components.e6(this, 320L, trVar);
         Paint paint = new Paint(1);
         this.n = paint;
         Paint paint2 = new Paint(1);
@@ -50,7 +50,7 @@ public final class x2 extends View {
         this.F = new int[2];
         this.G = 1.0f;
         this.a = w2Var;
-        w7.a6.a(this);
+        w7.b6.a(this);
         this.s = context.getResources().getDrawable(R.drawable.star).mutate();
         ah.l lVar = new ah.l();
         this.v = lVar;
@@ -64,23 +64,23 @@ public final class x2 extends View {
         o6Var.D = true;
         paint.setColor(-14670806);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        new qq(R.drawable.star, 0).setScale(1.8f, 1.8f);
+        new rq(R.drawable.star, 0).setScale(1.8f, 1.8f);
         setCount(0);
-        this.d = new yh.i8(1, 50);
+        this.d = new yh.j8(1, 50);
     }
 
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
         float dp = AndroidUtilities.dp(38.0f);
-        float e = this.e.e(this.x);
-        float e7 = this.f.e(this.w > 0);
+        float e7 = this.e.e(this.x);
+        float e10 = this.f.e(this.w > 0);
         float width = (getWidth() - dp) / 2.0f;
         float height = (getHeight() - dp) / 2.0f;
         float width2 = (getWidth() + dp) / 2.0f;
         float height2 = (getHeight() + dp) / 2.0f;
         RectF rectF = this.b;
         rectF.set(width, height, width2, height2);
-        int d = i0.a.d(e, -14670806, -548067);
+        int d = i0.a.d(e7, -14670806, -548067);
         Paint paint = this.n;
         paint.setColor(d);
         int i10 = (int) rectF.left;
@@ -105,20 +105,20 @@ public final class x2 extends View {
         path.rewind();
         path.addRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, Path.Direction.CW);
         canvas.clipPath(path);
-        float lerp = AndroidUtilities.lerp(5.0f, 15.0f, e);
-        yh.i8 i8Var = this.d;
-        i8Var.h = lerp;
-        i8Var.g(rectF);
-        i8Var.d();
-        i8Var.b(canvas, -1, AndroidUtilities.lerp(0.5f, 1.0f, e));
+        float lerp = AndroidUtilities.lerp(5.0f, 15.0f, e7);
+        yh.j8 j8Var = this.d;
+        j8Var.h = lerp;
+        j8Var.g(rectF);
+        j8Var.d();
+        j8Var.b(canvas, -1, AndroidUtilities.lerp(0.5f, 1.0f, e7));
         invalidate();
         canvas.restore();
-        if (e7 > 0.0f) {
+        if (e10 > 0.0f) {
             float dp3 = AndroidUtilities.dp(12.0f);
             float dp4 = AndroidUtilities.dp(6.0f);
             org.telegram.ui.Components.o6 o6Var = this.h;
             float max = Math.max(dp3, o6Var.d() + dp4);
-            float g10 = o6Var.g() * this.G * e7;
+            float g10 = o6Var.g() * this.G * e10;
             canvas.save();
             RectF rectF2 = AndroidUtilities.rectTmp;
             rectF2.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
@@ -128,7 +128,7 @@ public final class x2 extends View {
             rectF2.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
             canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, paint);
             canvas.translate(((max - o6Var.d()) / 2.0f) + rectF2.left, AndroidUtilities.dp(6.33f));
-            o6Var.r(i0.a.d(e, -9866632, -1));
+            o6Var.r(i0.a.d(e7, -9866632, -1));
             o6Var.draw(canvas);
             canvas.restore();
         }

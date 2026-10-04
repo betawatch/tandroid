@@ -25,7 +25,7 @@ import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.VideoCapturer;
 import org.webrtc.voiceengine.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class VideoCapturerDevice {
     private static final int CAPTURE_FPS = 30;
@@ -43,7 +43,7 @@ public class VideoCapturerDevice {
     private VideoCapturer videoCapturer;
     private SurfaceTextureHelper videoCapturerSurfaceTextureHelper;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public class 1 extends MediaProjection.Callback {
         public 1() {
         }
@@ -80,7 +80,7 @@ public class VideoCapturerDevice {
         }
         videoCapturerDevice.currentWidth = i11;
         videoCapturerDevice.currentHeight = screenCaptureSize.y;
-        videoCapturerDevice.handler.post(new ki.h0(18, videoCapturerDevice, screenCaptureSize));
+        videoCapturerDevice.handler.post(new ki.h0(16, videoCapturerDevice, screenCaptureSize));
     }
 
     public static EglBase getEglBase() {
@@ -114,7 +114,7 @@ public class VideoCapturerDevice {
     }
 
     private void init(long j3, String str) {
-        AndroidUtilities.runOnUIThread(new a3.h0(this, j3, str, 12));
+        AndroidUtilities.runOnUIThread(new a3.h0(this, j3, str, 11));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -188,7 +188,7 @@ public class VideoCapturerDevice {
                     return;
                 } else {
                     FileLog.d("VideoCapturerDevice init(" + j3 + "): videoCapturer.switchCamera CAMERA");
-                    this.handler.post(new ki.h0(19, this, str2));
+                    this.handler.post(new ki.h0(17, this, str2));
                     return;
                 }
             }
@@ -198,7 +198,7 @@ public class VideoCapturerDevice {
                 this.currentWidth = screenCaptureSize.x;
                 this.currentHeight = screenCaptureSize.y;
                 this.videoCapturerSurfaceTextureHelper = SurfaceTextureHelper.create("ScreenCapturerThread", eglBase.getEglBaseContext());
-                this.handler.post(new a3.h0(this, j3, screenCaptureSize, 13));
+                this.handler.post(new a3.h0(this, j3, screenCaptureSize, 12));
             }
         }
     }
@@ -227,8 +227,8 @@ public class VideoCapturerDevice {
                 this.videoCapturer.stopCapture();
                 this.videoCapturer.dispose();
                 this.videoCapturer = null;
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+            } catch (InterruptedException e7) {
+                throw new RuntimeException(e7);
             }
         }
         SurfaceTextureHelper surfaceTextureHelper = this.videoCapturerSurfaceTextureHelper;
@@ -255,8 +255,8 @@ public class VideoCapturerDevice {
         this.handler.post(new j(this, 0));
         try {
             this.thread.quitSafely();
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
@@ -277,8 +277,8 @@ public class VideoCapturerDevice {
         try {
             FileLog.d("VideoCapturerDevice onStateChanged(" + j3 + ", " + i10 + "): videoCapturer.stopCapture");
             this.videoCapturer.stopCapture();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        } catch (InterruptedException e7) {
+            throw new RuntimeException(e7);
         }
     }
 
@@ -293,7 +293,7 @@ public class VideoCapturerDevice {
     private static native CapturerObserver nativeGetJavaVideoCapturerObserver(long j3);
 
     private void onDestroy() {
-        hg.c.u(new StringBuilder("VideoCapturerDevice onDestroy ptr="), this.nativePtr);
+        hg.k0.t(new StringBuilder("VideoCapturerDevice onDestroy ptr="), this.nativePtr);
         this.nativePtr = 0L;
         AndroidUtilities.runOnUIThread(new j(this, 1));
     }
@@ -354,7 +354,7 @@ public class VideoCapturerDevice {
         return point;
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public class 2 implements CameraVideoCapturer.CameraEventsHandler {
         public 2() {
         }
@@ -392,7 +392,7 @@ public class VideoCapturerDevice {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public class 3 implements CameraVideoCapturer.CameraSwitchHandler {
         public 3() {
         }

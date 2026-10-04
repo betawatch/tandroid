@@ -12,9 +12,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.o5;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class a3 extends View {
     public boolean E;
@@ -64,7 +64,7 @@ public final class a3 extends View {
             ValueAnimator ofInt = ValueAnimator.ofInt(0, dp);
             this.c = ofInt;
             ofInt.addUpdateListener(new z2(this, 0));
-            this.c.setInterpolator(sr.g);
+            this.c.setInterpolator(tr.g);
             this.c.setDuration(200L);
             this.c.start();
         }

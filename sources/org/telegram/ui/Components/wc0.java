@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class wc0 extends Drawable {
     public final Drawable a;
@@ -25,7 +25,7 @@ public final class wc0 extends Drawable {
         this.b = paint;
         Paint paint2 = new Paint(1);
         this.c = paint2;
-        this.d = new e6(new kc0(this, 3), 200L, sr.g, 0);
+        this.d = new e6(new lc0(this, 3), 200L, tr.g, 0);
         this.a = context.getResources().getDrawable(R.drawable.filled_sound_on).mutate();
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
@@ -50,26 +50,26 @@ public final class wc0 extends Drawable {
         Drawable drawable = this.a;
         drawable.setBounds(bounds);
         drawable.draw(canvas);
-        float e = this.d.e(this.e);
-        if (e > 0.0f) {
+        float e7 = this.d.e(this.e);
+        if (e7 > 0.0f) {
             float dpf2 = AndroidUtilities.dpf2(0.783f);
             float centerX = (bounds.centerX() - AndroidUtilities.dp(9.0f)) + dpf2;
             float centerY = (bounds.centerY() - AndroidUtilities.dp(9.0f)) + dpf2;
             float dp = (AndroidUtilities.dp(9.0f) + bounds.centerX()) - dpf2;
             float dp2 = (AndroidUtilities.dp(9.0f) + bounds.centerY()) - dpf2;
             if (this.e) {
-                centerX = AndroidUtilities.lerp(dp, centerX, e);
-                centerY = AndroidUtilities.lerp(dp2, centerY, e);
+                centerX = AndroidUtilities.lerp(dp, centerX, e7);
+                centerY = AndroidUtilities.lerp(dp2, centerY, e7);
             } else {
-                dp = AndroidUtilities.lerp(centerX, dp, e);
-                dp2 = AndroidUtilities.lerp(centerY, dp2, e);
+                dp = AndroidUtilities.lerp(centerX, dp, e7);
+                dp2 = AndroidUtilities.lerp(centerY, dp2, e7);
             }
             float f7 = dp2;
             float f10 = centerX;
             float f11 = centerY;
             float f12 = dp;
             canvas.drawLine(f10, f11, f12, f7, this.c);
-            int min = (int) (Math.min(1.0f, e * 10.0f) * 255.0f);
+            int min = (int) (Math.min(1.0f, e7 * 10.0f) * 255.0f);
             Paint paint = this.b;
             paint.setAlpha(min);
             canvas.drawLine(f10, f11, f12, f7, paint);

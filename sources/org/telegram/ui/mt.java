@@ -1,28 +1,26 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class mt extends LinearLayout {
-    public final org.telegram.ui.Components.w9 a;
-    public final org.telegram.ui.ActionBar.h5 b;
-    public final org.telegram.ui.ActionBar.d6 c;
-    public TLRPC.StickerSetCovered d;
+public final class mt extends org.telegram.ui.ActionBar.n1 {
+    public final /* synthetic */ nt o;
 
-    public mt(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        this.c = d6Var;
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.a = w9Var;
-        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
-        this.b = h5Var;
-        h5Var.setTextSize(16);
-        h5Var.setTextColor(-1);
-        setOrientation(0);
-        addView(w9Var, w7.y5.t(24, 24, 17, 17, 0, 17, 0));
-        addView(h5Var, w7.y5.t(-2, -2, 17, 0, 0, 12, 0));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mt(nt ntVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = ntVar;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        rt rtVar = this.o.a;
+        rtVar.k = null;
+        rtVar.K = false;
+        if (rtVar.R) {
+            rtVar.n();
+        }
     }
 }

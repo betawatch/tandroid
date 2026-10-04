@@ -3,21 +3,21 @@ package org.telegram.ui.web;
 import android.view.KeyEvent;
 import android.webkit.JsPromptResult;
 import android.widget.TextView;
-import org.telegram.ui.Components.du;
+import org.telegram.ui.Components.eu;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class t0 implements TextView.OnEditorActionListener {
     public final /* synthetic */ boolean[] a;
     public final /* synthetic */ JsPromptResult b;
-    public final /* synthetic */ du c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.a2 d;
+    public final /* synthetic */ eu c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2 d;
 
-    public t0(boolean[] zArr, JsPromptResult jsPromptResult, du duVar, org.telegram.ui.ActionBar.a2 a2Var) {
+    public t0(boolean[] zArr, JsPromptResult jsPromptResult, eu euVar, org.telegram.ui.ActionBar.b2 b2Var) {
         this.a = zArr;
         this.b = jsPromptResult;
-        this.c = duVar;
-        this.d = a2Var;
+        this.c = euVar;
+        this.d = b2Var;
     }
 
     @Override // android.widget.TextView.OnEditorActionListener

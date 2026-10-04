@@ -2,20 +2,20 @@ package ai;
 
 import android.view.ViewGroup;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.hx;
+import org.telegram.ui.jx;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class v extends og.b {
     public final boolean d;
-    public final /* synthetic */ hx e;
+    public final /* synthetic */ jx e;
 
-    public v(hx hxVar, boolean z10) {
-        this.e = hxVar;
+    public v(jx jxVar, boolean z10) {
+        this.e = jxVar;
         this.d = z10;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         return false;
     }
@@ -23,8 +23,8 @@ public final class v extends og.b {
     @Override // s4.h0
     public final int h() {
         boolean z10 = this.d;
-        hx hxVar = this.e;
-        return (z10 ? hxVar.y : hxVar.x).size();
+        jx jxVar = this.e;
+        return (z10 ? jxVar.y : jxVar.x).size();
     }
 
     @Override // s4.h0
@@ -32,11 +32,11 @@ public final class v extends og.b {
         a0 a0Var = (a0) c1Var.a;
         a0Var.b = i10;
         boolean z10 = this.d;
-        hx hxVar = this.e;
+        jx jxVar = this.e;
         if (z10) {
-            a0Var.setDialogId(((w) hxVar.y.get(i10)).c);
+            a0Var.setDialogId(((w) jxVar.y.get(i10)).c);
         } else {
-            a0Var.setDialogId(((w) hxVar.x.get(i10)).c);
+            a0Var.setDialogId(((w) jxVar.x.get(i10)).c);
         }
     }
 

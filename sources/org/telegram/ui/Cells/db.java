@@ -21,11 +21,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBox;
-import org.telegram.ui.Components.oc0;
+import org.telegram.ui.Components.pc0;
 import org.telegram.ui.yi1;
 import org.telegram.ui.zi1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class db extends FrameLayout {
     public final ai.y5 a;
@@ -44,21 +44,21 @@ public final class db extends FrameLayout {
         setWillNotDraw(false);
         ai.y5 y5Var = new ai.y5(this, context, 4);
         this.a = y5Var;
-        addView(y5Var, w7.y5.e(-1, -1, 51));
+        addView(y5Var, w7.z5.e(-1, -1, 51));
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setImageResource(R.drawable.ic_gallery_background);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.y5.e(-1, -1, 51));
+        addView(imageView, w7.z5.e(-1, -1, 51));
         View view = new View(context);
         this.d = view;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.K0(false));
-        addView(view, w7.y5.c(-1.0f, -1));
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.K0(false));
+        addView(view, w7.z5.c(-1.0f, -1));
         CheckBox checkBox = new CheckBox(context, R.drawable.round_check2);
         this.c = checkBox;
         checkBox.setVisibility(4);
-        checkBox.c(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.i7, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.k7, false));
-        addView(checkBox, w7.y5.d(22, 22.0f, 53, 0.0f, 2.0f, 2.0f, 0.0f));
+        checkBox.c(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i7, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.k7, false));
+        addView(checkBox, w7.z5.d(22, 22.0f, 53, 0.0f, 2.0f, 2.0f, 0.0f));
     }
 
     public final void a(Object obj, Object obj2) {
@@ -93,19 +93,19 @@ public final class db extends FrameLayout {
             TLRPC.WallPaperSettings wallPaperSettings = tL_wallPaper.settings;
             if (wallPaperSettings.third_background_color != 0) {
                 TLRPC.WallPaperSettings wallPaperSettings2 = tL_wallPaper.settings;
-                oc0 oc0Var = new oc0(true, wallPaperSettings2.background_color, wallPaperSettings2.second_background_color, wallPaperSettings2.third_background_color, wallPaperSettings2.fourth_background_color);
-                if (tL_wallPaper.settings.intensity >= 0 || !org.telegram.ui.ActionBar.h6.I.q()) {
-                    y5Var2.setBackground(oc0Var);
+                pc0 pc0Var = new pc0(true, wallPaperSettings2.background_color, wallPaperSettings2.second_background_color, wallPaperSettings2.third_background_color, wallPaperSettings2.fourth_background_color);
+                if (tL_wallPaper.settings.intensity >= 0 || !org.telegram.ui.ActionBar.i6.I.q()) {
+                    y5Var2.setBackground(pc0Var);
                     if (Build.VERSION.SDK_INT >= 29) {
                         y5Var2.getImageReceiver().setBlendMode(BlendMode.SOFT_LIGHT);
                     }
                 } else {
-                    y5Var2.getImageReceiver().setGradientBitmap(oc0Var.k);
+                    y5Var2.getImageReceiver().setGradientBitmap(pc0Var.k);
                 }
                 TLRPC.WallPaperSettings wallPaperSettings3 = tL_wallPaper.settings;
-                patternColor2 = oc0.g(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
+                patternColor2 = pc0.g(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
             } else {
-                y5Var2.setBackgroundColor(org.telegram.ui.ActionBar.h6.X0(wallPaperSettings.background_color));
+                y5Var2.setBackgroundColor(org.telegram.ui.ActionBar.i6.X0(wallPaperSettings.background_color));
                 patternColor2 = AndroidUtilities.getPatternColor(tL_wallPaper.settings.background_color);
             }
             if (Build.VERSION.SDK_INT < 29 || tL_wallPaper.settings.third_background_color == 0) {
@@ -137,7 +137,7 @@ public final class db extends FrameLayout {
                     y5Var2.f(file2.getAbsolutePath(), "180_180", null);
                     return;
                 } else if ("t".equals(zi1Var.a)) {
-                    y5Var2.setImageDrawable(org.telegram.ui.ActionBar.h6.W0(y5Var2, true));
+                    y5Var2.setImageDrawable(org.telegram.ui.ActionBar.i6.W0(y5Var2, true));
                     return;
                 } else {
                     y5Var2.setImageResource(zi1Var.c);
@@ -170,7 +170,7 @@ public final class db extends FrameLayout {
         if (file3 == null && yi1Var.g == null && !"d".equals(yi1Var.a)) {
             y5Var2.setImageBitmap(null);
             if (yi1Var.k) {
-                y5Var2.setBackground(new oc0(true, yi1Var.b, yi1Var.c, yi1Var.d, yi1Var.e));
+                y5Var2.setBackground(new pc0(true, yi1Var.b, yi1Var.c, yi1Var.d, yi1Var.e));
                 return;
             } else if (i11 != 0) {
                 y5Var2.setBackground(new GradientDrawable(GradientDrawable.Orientation.BL_TR, new int[]{i12 | (-16777216), i11 | (-16777216)}));
@@ -181,16 +181,16 @@ public final class db extends FrameLayout {
             }
         }
         if (i10 != 0) {
-            oc0 oc0Var2 = new oc0(true, yi1Var.b, yi1Var.c, yi1Var.d, yi1Var.e);
+            pc0 pc0Var2 = new pc0(true, yi1Var.b, yi1Var.c, yi1Var.d, yi1Var.e);
             if (yi1Var.h >= 0.0f) {
-                y5Var2.setBackground(new oc0(true, yi1Var.b, yi1Var.c, yi1Var.d, yi1Var.e));
+                y5Var2.setBackground(new pc0(true, yi1Var.b, yi1Var.c, yi1Var.d, yi1Var.e));
                 if (Build.VERSION.SDK_INT >= 29) {
                     y5Var2.getImageReceiver().setBlendMode(BlendMode.SOFT_LIGHT);
                 }
             } else {
-                y5Var2.getImageReceiver().setGradientBitmap(oc0Var2.k);
+                y5Var2.getImageReceiver().setGradientBitmap(pc0Var2.k);
             }
-            patternColor = oc0.g(i12, i11, i10, yi1Var.e);
+            patternColor = pc0.g(i12, i11, i10, yi1Var.e);
         } else {
             patternColor = AndroidUtilities.getPatternColor(i12);
         }

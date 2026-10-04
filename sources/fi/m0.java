@@ -6,7 +6,7 @@ import android.text.Editable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import ii.e6;
+import ii.f6;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.messenger.ChatObject;
@@ -23,22 +23,22 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ad;
 import org.telegram.ui.Components.bd;
-import org.telegram.ui.Components.h21;
-import org.telegram.ui.Components.mx0;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.vv;
+import org.telegram.ui.Components.q21;
+import org.telegram.ui.Components.rc;
+import org.telegram.ui.Components.vx0;
+import org.telegram.ui.Components.wv;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.m80;
+import org.telegram.ui.h90;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
         Object obj4 = this.c;
         switch (i10) {
             case 0:
-                m2 m2Var = (m2) obj4;
+                n2 n2Var = (n2) obj4;
                 TLRPC.Chat chat = (TLRPC.Chat) obj3;
                 long j3 = ((TLRPC.Chat) obj2).id;
                 boolean booleanValue = ((Boolean) obj).booleanValue();
@@ -73,21 +73,21 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 int i13 = this.b;
                 if (isChannel) {
                     long j10 = chat.id;
-                    MessagesController.getInstance(i13).linkCommunity(-j10, j3, booleanValue, new o0(m2Var, j10, i11));
+                    MessagesController.getInstance(i13).linkCommunity(-j10, j3, booleanValue, new o0(n2Var, j10, i11));
                     break;
                 } else {
-                    a2 a2Var = new a2(m2Var.getContext(), 3, null);
-                    a2Var.q(250L);
-                    MessagesController.getInstance(i13).convertToMegaGroup(m2Var.getParentActivity(), chat.id, m2Var, new n0(a2Var, m2Var, i13, j3, booleanValue));
+                    b2 b2Var = new b2(n2Var.getContext(), 3, null);
+                    b2Var.q(250L);
+                    MessagesController.getInstance(i13).convertToMegaGroup(n2Var.getParentActivity(), chat.id, n2Var, new n0(b2Var, n2Var, i13, j3, booleanValue));
                     break;
                 }
             case 1:
-                e6 e6Var = (e6) obj4;
+                f6 f6Var = (f6) obj4;
                 ii.a aVar = (ii.a) obj3;
                 String str = (String) obj2;
                 SpannableString spannableString = (SpannableString) obj;
-                if (i12 == e6Var.I && e6Var.x == aVar) {
-                    Editable text = e6Var.f.getText();
+                if (i12 == f6Var.I && f6Var.x == aVar) {
+                    Editable text = f6Var.f.getText();
                     if (TextUtils.equals(str, text)) {
                         for (CodeHighlighting.ColorSpan colorSpan : (CodeHighlighting.ColorSpan[]) text.getSpans(0, text.length(), CodeHighlighting.ColorSpan.class)) {
                             text.removeSpan(colorSpan);
@@ -102,36 +102,36 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                             }
                             i11++;
                         }
-                        e6Var.H = str;
+                        f6Var.H = str;
                         break;
                     }
                 }
                 break;
             case 2:
-                vv vvVar = (vv) obj4;
+                wv wvVar = (wv) obj4;
                 int[] iArr = (int[]) obj3;
                 ArrayList arrayList = (ArrayList) obj2;
-                m2 m2Var2 = vvVar.c;
+                n2 n2Var2 = wvVar.c;
                 iArr[0] = iArr[0] + 1;
                 if (((Boolean) obj).booleanValue()) {
                     iArr[1] = iArr[1] + 1;
                 }
                 if (iArr[0] == i12 && iArr[1] > 0) {
-                    vvVar.dismiss();
-                    qc.g(m2Var2, new mx0(m2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, m2Var2.getResourceProvider()), 1500).j();
+                    wvVar.dismiss();
+                    rc.g(n2Var2, new vx0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;
             case 3:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
-                m80 m80Var = (m80) obj3;
+                h90 h90Var = (h90) obj3;
                 Long l4 = (Long) obj2;
                 TL_stories.TL_storyAlbum tL_storyAlbum = (TL_stories.TL_storyAlbum) obj;
                 Pattern pattern = LaunchActivity.B1;
                 try {
-                    m80Var.run();
-                } catch (Exception e) {
-                    FileLog.e(e);
+                    h90Var.run();
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
                 LaunchActivity.R();
                 if (tL_storyAlbum == null) {
@@ -182,7 +182,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(adVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) bd.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new h21(this.b, context, d6Var, savedStarGift, 18), d6Var, null));
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) bd.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new q21(this.b, context, d6Var, savedStarGift, 18), d6Var, null));
                     adVar.setText(spannableStringBuilder);
                     break;
                 }
@@ -190,18 +190,18 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
         }
     }
 
-    public /* synthetic */ m0(vv vvVar, int[] iArr, int i10, ArrayList arrayList) {
+    public /* synthetic */ m0(wv wvVar, int[] iArr, int i10, ArrayList arrayList) {
         this.a = 2;
-        this.c = vvVar;
+        this.c = wvVar;
         this.d = iArr;
         this.b = i10;
         this.e = arrayList;
     }
 
-    public /* synthetic */ m0(LaunchActivity launchActivity, m80 m80Var, Long l4, int i10) {
+    public /* synthetic */ m0(LaunchActivity launchActivity, h90 h90Var, Long l4, int i10) {
         this.a = 3;
         this.c = launchActivity;
-        this.d = m80Var;
+        this.d = h90Var;
         this.e = l4;
         this.b = i10;
     }

@@ -1,75 +1,36 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.util.SparseIntArray;
-import java.util.ArrayList;
+import android.graphics.Outline;
+import android.graphics.Rect;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class x51 extends c61 {
-    public final /* synthetic */ int f3;
-    public final /* synthetic */ a71 g3;
+public final class x51 extends ViewOutlineProvider {
+    public final Rect a = new Rect();
+    public final /* synthetic */ Integer b;
+    public final /* synthetic */ c71 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x51(a71 a71Var, Context context, int i10) {
-        super(a71Var, context);
-        this.g3 = a71Var;
-        this.f3 = i10;
+    public x51(c71 c71Var, Integer num) {
+        this.c = c71Var;
+        this.b = num;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void j0(int i10) {
-        a71 a71Var = this.g3;
-        r51 r51Var = a71Var.f0;
-        if (i10 == 0) {
-            a71Var.w1 = false;
-            if (a71Var.a == -1 || r51Var.getVisibility() != 0 || r51Var.getTranslationY() <= (-AndroidUtilities.dp(51.0f))) {
-                return;
-            }
-            a71.a(a71Var, r51Var.getTranslationY() > ((float) (-AndroidUtilities.dp(16.0f))) ? 0 : 1, 0);
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        float width = (this.b == null ? view.getWidth() / 2.0f : r0.intValue()) + AndroidUtilities.dp(20.0f);
+        float width2 = (view.getWidth() - view.getPaddingLeft()) - view.getPaddingRight();
+        float height = (view.getHeight() - view.getPaddingBottom()) - view.getPaddingTop();
+        c71 c71Var = this.c;
+        boolean n10 = c71Var.n();
+        Rect rect = this.a;
+        if (n10) {
+            rect.set((int) ((width - (c71Var.a1 * width)) + view.getPaddingLeft()), (int) com.google.android.gms.internal.vision.e2.z(1.0f, c71Var.b1, AndroidUtilities.dp(c71Var.d1), com.google.android.gms.internal.vision.e2.z(1.0f, c71Var.b1, height, view.getPaddingTop())), (int) (((width2 - width) * c71Var.a1) + view.getPaddingLeft() + width), (int) com.google.android.gms.internal.vision.e2.z(1.0f, c71Var.b1, AndroidUtilities.dp(c71Var.d1), view.getPaddingTop() + height));
+        } else {
+            rect.set((int) ((width - (c71Var.a1 * width)) + view.getPaddingLeft()), view.getPaddingTop(), (int) (((width2 - width) * c71Var.a1) + view.getPaddingLeft() + width), (int) ((height * c71Var.b1) + view.getPaddingTop()));
         }
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void k0(int i10, int i11) {
-        int i12;
-        a71 a71Var = this.g3;
-        a71Var.h();
-        if (!a71Var.w1) {
-            int I0 = a71Var.r0.I0();
-            ArrayList arrayList = a71Var.D0;
-            SparseIntArray sparseIntArray = a71Var.w0;
-            if (I0 != -1) {
-                if (I0 > ((arrayList.size() <= 40 || a71Var.C0) ? arrayList.size() + (a71Var.N0 ? 1 : 0) : 40) && I0 > a71Var.I0.size()) {
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 >= sparseIntArray.size()) {
-                            break;
-                        }
-                        int keyAt = sparseIntArray.keyAt(i13);
-                        int valueAt = sparseIntArray.valueAt(i13);
-                        org.telegram.ui.Components.zx zxVar = valueAt >= 0 ? (org.telegram.ui.Components.zx) a71Var.M0.get(valueAt) : null;
-                        if (zxVar != null) {
-                            boolean z10 = zxVar.h;
-                            int size = zxVar.c.size();
-                            if (!z10) {
-                                size = Math.min(24, size);
-                            }
-                            if (I0 > keyAt && I0 <= keyAt + 1 + size) {
-                                org.telegram.ui.Components.fw fwVar = a71Var.d0;
-                                fwVar.j(((fwVar.E == null || !fwVar.b0) ? 0 : 1) + (fwVar.y != null ? 1 : 0) + valueAt, true);
-                            }
-                        }
-                        i13++;
-                    }
-                } else {
-                    a71Var.d0.j(0, true);
-                }
-            }
-        }
-        a71Var.C();
-        AndroidUtilities.updateViewVisibilityAnimated(a71Var.e0, a71Var.h0.computeVerticalScrollOffset() != 0 || (i12 = this.f3) == 0 || i12 == 12 || i12 == 10 || i12 == 1 || i12 == 11 || i12 == 6, 1.0f, true);
-        a71Var.m();
+        outline.setRoundRect(rect, AndroidUtilities.dp(12.0f));
     }
 }

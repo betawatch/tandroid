@@ -1,13 +1,13 @@
 package tg;
 
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.k2;
+import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.sa1;
-import org.telegram.ui.v5;
+import org.telegram.ui.va1;
+import org.telegram.ui.w5;
 import yh.x3;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -23,14 +23,14 @@ public final /* synthetic */ class c implements Runnable {
             case 0:
                 TLRPC.Chat chat = this.b;
                 if (chat != null) {
-                    k2 k2Var = new k2();
-                    k2Var.a = true;
-                    LaunchActivity.R().showAsSheet(new v5(-chat.id), k2Var);
+                    l2 l2Var = new l2();
+                    l2Var.a = true;
+                    LaunchActivity.R().showAsSheet(new w5(-chat.id), l2Var);
                     break;
                 }
                 break;
             default:
-                x3.d2(sa1.d0(this.b, true));
+                x3.d2(va1.b0(this.b, true));
                 break;
         }
     }

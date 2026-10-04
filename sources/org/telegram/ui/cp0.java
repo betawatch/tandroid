@@ -2,67 +2,141 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class cp0 extends Drawable {
-    public final org.telegram.ui.Components.v01 a;
-    public final Drawable b;
-    public final rg.z0 c;
+public class cp0 extends View {
+    public boolean E;
+    public boolean F;
+    public int a;
+    public final org.telegram.ui.ActionBar.d6 b;
+    public float c;
+    public boolean d;
+    public int e;
+    public int f;
+    public final org.telegram.ui.Components.h5 h;
+    public final org.telegram.ui.Components.h5 n;
+    public int r;
+    public int s;
+    public int v;
+    public int w;
+    public RadialGradient x;
+    public final Paint y;
 
-    public cp0(int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        this.a = new org.telegram.ui.Components.v01(LocaleController.formatPluralString(z10 ? "BoostLevelPlus" : "BoostLevel", i10, new Object[0]), 12.0f, AndroidUtilities.bold());
-        Drawable mutate = context.getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
-        this.b = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        this.c = new rg.z0(org.telegram.ui.ActionBar.h6.Lj, org.telegram.ui.ActionBar.h6.Mj, -1, -1, d6Var);
+    public cp0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.c = 0.0f;
+        org.telegram.ui.Components.tr trVar = org.telegram.ui.Components.tr.h;
+        this.h = new org.telegram.ui.Components.h5(this, 350L, trVar);
+        this.n = new org.telegram.ui.Components.h5(this, 350L, trVar);
+        this.y = new Paint(1);
+        this.b = d6Var;
+        this.a = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.s8, d6Var);
+        b(-1, -1, false);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int i10 = getBounds().left;
-        int centerY = getBounds().centerY();
-        RectF rectF = AndroidUtilities.rectTmp;
-        float f7 = centerY;
-        rectF.set(i10, f7 - (AndroidUtilities.dp(18.33f) / 2.0f), getIntrinsicWidth() + i10, (AndroidUtilities.dp(18.33f) / 2.0f) + f7);
-        rg.z0 z0Var = this.c;
-        z0Var.e(rectF);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), z0Var.f);
-        int dp = AndroidUtilities.dp(3.33f) + i10;
-        Drawable drawable = this.b;
-        drawable.setBounds(dp, (int) (f7 - ((drawable.getIntrinsicHeight() * 0.875f) / 2.0f)), (int) ((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.33f) + i10), (int) a4.a.B(drawable.getIntrinsicHeight(), 0.875f, 2.0f, f7));
-        drawable.draw(canvas);
-        this.a.c((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.66f) + i10, f7, 1.0f, -1, canvas);
+    public final void b(int i10, int i11, boolean z10) {
+        MessagesController.PeerColors peerColors;
+        MessagesController.PeerColor peerColor = null;
+        if (i11 >= 0 && i10 >= 0 && (peerColors = MessagesController.getInstance(i10).profilePeerColors) != null) {
+            peerColor = peerColors.getColor(i11);
+        }
+        c(peerColor, z10);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(18.33f);
+    public final void c(MessagesController.PeerColor peerColor, boolean z10) {
+        this.d = false;
+        org.telegram.ui.ActionBar.d6 d6Var = this.b;
+        if (peerColor == null) {
+            this.d = true;
+            int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.s8, d6Var);
+            this.f = v02;
+            this.e = v02;
+        } else {
+            boolean a2 = d6Var != null ? d6Var.a() : org.telegram.ui.ActionBar.i6.I.q();
+            this.e = peerColor.getBgColor1(a2);
+            this.f = peerColor.getBgColor2(a2);
+        }
+        if (!z10) {
+            this.h.a(this.e, true);
+            this.n.a(this.f, true);
+        }
+        invalidate();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return (int) (this.a.l() + (this.b.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(9.66f));
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        int a2 = this.h.a(this.e, false);
+        int a10 = this.n.a(this.f, false);
+        RadialGradient radialGradient = this.x;
+        Paint paint = this.y;
+        if (radialGradient == null || this.r != a2 || this.s != a10 || this.v != getWidth() || this.w != getHeight()) {
+            this.v = getWidth();
+            this.w = getHeight();
+            float f7 = this.v;
+            float f10 = this.w;
+            float distance = AndroidUtilities.distance(0.0f, 0.0f, f7, f10) * 0.75f;
+            this.s = a10;
+            this.r = a2;
+            RadialGradient radialGradient2 = new RadialGradient(f7 / 2.0f, f10 * 0.4f, distance, new int[]{a10, a2}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+            this.x = radialGradient2;
+            paint.setShader(radialGradient2);
+            a();
+        }
+        if (this.c >= 1.0f || this.E) {
+            canvas2 = canvas;
+        } else {
+            canvas2 = canvas;
+            canvas2.drawColor(this.a);
+        }
+        paint.setAlpha(this.E ? 255 : (int) (this.c * 255.0f));
+        canvas2.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    public int getActionBarButtonColor() {
+        int i10 = org.telegram.ui.ActionBar.i6.v8;
+        org.telegram.ui.ActionBar.d6 d6Var = this.b;
+        return i0.a.d(this.c, org.telegram.ui.ActionBar.i6.v0(i10, d6Var), this.d ? org.telegram.ui.ActionBar.i6.v0(i10, d6Var) : -1);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    public int getColor() {
+        return i0.a.d(this.c, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.s8, this.b), i0.a.d(0.75f, this.h.c, this.n.c));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public int getTabsViewBackgroundColor() {
+        int i10 = org.telegram.ui.ActionBar.i6.s8;
+        org.telegram.ui.ActionBar.d6 d6Var = this.b;
+        int v02 = AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.i6.v0(i10, d6Var)) > 0.721f ? org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v8, d6Var) : org.telegram.ui.ActionBar.i6.b(0.08f, -0.08f, org.telegram.ui.ActionBar.i6.v0(i10, d6Var));
+        org.telegram.ui.Components.h5 h5Var = this.h;
+        int i11 = h5Var.c;
+        org.telegram.ui.Components.h5 h5Var2 = this.n;
+        return i0.a.d(this.c, v02, AndroidUtilities.computePerceivedBrightness(i0.a.d(0.75f, i11, h5Var2.c)) > 0.721f ? org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v6, d6Var) : org.telegram.ui.ActionBar.i6.b(0.08f, -0.08f, i0.a.d(0.75f, h5Var.c, h5Var2.c)));
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        if (!this.F) {
+            i11 = org.telegram.messenger.ok.B(230.0f, AndroidUtilities.statusBarHeight, TLObject.FLAG_30);
+        }
+        super.onMeasure(i10, i11);
+    }
+
+    public void setProgressToGradient(float f7) {
+        if (Math.abs(this.c - f7) > 0.001f) {
+            this.c = f7;
+            a();
+            invalidate();
+        }
+    }
+
+    public void a() {
     }
 }

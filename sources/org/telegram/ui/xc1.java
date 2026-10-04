@@ -1,22 +1,22 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final class xc1 extends od1 {
-    public final /* synthetic */ wn k2;
-    public final /* synthetic */ boolean l2;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xc1(Object obj, wn wnVar, boolean z10) {
-        super(obj, null, true);
-        this.k2 = wnVar;
-        this.l2 = z10;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final class xc1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ rd1 a;
+
+    public xc1(rd1 rd1Var) {
+        this.a = rd1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final void onFragmentClosed() {
-        super.onFragmentClosed();
-        un unVar = this.k2.ea;
-        unVar.i(unVar.f, unVar.h, false, Boolean.valueOf(this.l2), false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        rd1 rd1Var = this.a;
+        if (rd1Var.W0 == null) {
+            rd1Var.J0[0].setVisibility(4);
+        }
     }
 }

@@ -4,9 +4,9 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.o40;
+import org.telegram.ui.Components.p40;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class b3 extends FrameLayout {
     public final int[] a;
@@ -24,19 +24,19 @@ public final class b3 extends FrameLayout {
         FrameLayout frameLayout;
         super.onLayout(z10, i10, i11, i12, i13);
         c3 c3Var = this.b;
-        o40 o40Var = c3Var.i;
-        if (o40Var == null || o40Var.d.getChildCount() < 2 || c3Var.r == null || (frameLayout = c3Var.m) == null) {
+        p40 p40Var = c3Var.i;
+        if (p40Var == null || p40Var.d.getChildCount() < 2 || c3Var.r == null || (frameLayout = c3Var.m) == null) {
             return;
         }
         int[] iArr = this.a;
         frameLayout.getLocationInWindow(iArr);
         float translationX = iArr[0] - c3Var.m.getTranslationX();
         float translationY = iArr[1] - c3Var.m.getTranslationY();
-        View childAt = o40Var.d.getChildAt(1);
+        View childAt = p40Var.d.getChildAt(1);
         childAt.getLocationInWindow(iArr);
         float translationX2 = iArr[0] - childAt.getTranslationX();
         float translationY2 = iArr[1] - childAt.getTranslationY();
-        c3Var.r.setTranslationY(((translationY2 - translationY) - r1.getMeasuredHeight()) - o40Var.getMeasuredHeight());
+        c3Var.r.setTranslationY(((translationY2 - translationY) - r1.getMeasuredHeight()) - p40Var.getMeasuredHeight());
         c3Var.r.m(0.0f, ((childAt.getMeasuredWidth() / 2.0f) + (translationX2 - translationX)) - AndroidUtilities.dp(12.0f));
     }
 }

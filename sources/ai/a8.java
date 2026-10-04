@@ -13,12 +13,12 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.lv0;
+import org.telegram.ui.Components.pv0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.v90;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
+import org.telegram.ui.z90;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a8 implements Runnable {
     public final /* synthetic */ int a;
@@ -76,17 +76,17 @@ public final /* synthetic */ class a8 implements Runnable {
                 }
                 break;
             case 7:
-                lv0.n((lv0) this.d, this.c, this.b);
+                pv0.n((pv0) this.d, this.c, this.b);
                 break;
             default:
                 Long l4 = (Long) this.d;
-                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    wn R9 = wn.R9(l4.longValue());
-                    U.presentFragment(R9);
+                    yn Q9 = yn.Q9(l4.longValue());
+                    U.presentFragment(Q9);
                     TLRPC.Chat chat = MessagesController.getInstance(this.b).getChat(Long.valueOf(-l4.longValue()));
                     if (chat != null) {
-                        AndroidUtilities.runOnUIThread(new v90(R9, this.c, chat, 1), 250L);
+                        AndroidUtilities.runOnUIThread(new z90(Q9, this.c, chat, 1), 250L);
                         break;
                     }
                 }

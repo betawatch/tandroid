@@ -1,41 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class y20 implements ValueAnimator.AnimatorUpdateListener {
+public final class y20 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c30 b;
+    public final /* synthetic */ d30 b;
 
-    public /* synthetic */ y20(c30 c30Var, int i10) {
+    public /* synthetic */ y20(d30 d30Var, int i10) {
         this.a = i10;
-        this.b = c30Var;
+        this.b = d30Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c30 c30Var = this.b;
-                c30Var.r.x = (int) floatValue;
-                c30Var.h();
-                a30 a30Var = c30Var.a;
-                if (a30Var.getParent() != null) {
-                    c30Var.n.updateViewLayout(a30Var, c30Var.r);
-                    break;
-                }
+                d30 d30Var = this.b;
+                d30Var.b.setVisibility(8);
+                d30Var.y = false;
+                d30Var.E = 0.0f;
                 break;
             default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c30 c30Var2 = this.b;
-                c30Var2.r.y = (int) floatValue2;
-                a30 a30Var2 = c30Var2.a;
-                if (a30Var2.getParent() != null) {
-                    c30Var2.n.updateViewLayout(a30Var2, c30Var2.r);
-                    break;
-                }
+                this.b.e.setVisibility(8);
                 break;
         }
     }

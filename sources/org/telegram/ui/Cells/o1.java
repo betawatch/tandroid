@@ -7,9 +7,9 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class o1 extends Drawable {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public abstract class o1 extends Drawable {
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setStrokeJoin(Paint.Join.ROUND);
                 paint.setStrokeCap(Paint.Cap.ROUND);
-                this.d = new org.telegram.ui.Components.e6(new org.telegram.ui.web.q0(this, 4), 350L, sr.h, 0);
+                this.d = new org.telegram.ui.Components.e6(new org.telegram.ui.web.u0(this, 3), 350L, tr.h, 0);
                 break;
             default:
                 Paint paint2 = new Paint(1);
@@ -47,7 +47,7 @@ public abstract class o1 extends Drawable {
                 canvas.drawPath(this.b, this.c);
                 break;
             default:
-                float e = ((org.telegram.ui.Components.e6) this.d).e(true);
+                float e7 = ((org.telegram.ui.Components.e6) this.d).e(true);
                 float centerX = getBounds().centerX();
                 float centerY = getBounds().centerY();
                 float width = getBounds().width();
@@ -55,7 +55,7 @@ public abstract class o1 extends Drawable {
                 Path path = this.b;
                 path.rewind();
                 float f10 = f7 / 2.0f;
-                path.moveTo(centerX - AndroidUtilities.lerp(f10, (-f7) / 2.0f, e), centerY);
+                path.moveTo(centerX - AndroidUtilities.lerp(f10, (-f7) / 2.0f, e7), centerY);
                 float f11 = f10 + centerX;
                 path.lineTo(f11, centerY);
                 float f12 = f11 - (0.27f * width);
@@ -67,8 +67,8 @@ public abstract class o1 extends Drawable {
                 float dp = AndroidUtilities.dp(2.0f);
                 Paint paint = this.c;
                 paint.setStrokeWidth(dp);
-                canvas.translate(0.0f, (-width) * 0.1f * e);
-                canvas.rotate(e * 90.0f, centerX, centerY);
+                canvas.translate(0.0f, (-width) * 0.1f * e7);
+                canvas.rotate(e7 * 90.0f, centerX, centerY);
                 canvas.drawPath(path, paint);
                 canvas.restore();
                 break;

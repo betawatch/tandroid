@@ -1,77 +1,49 @@
 package di;
 
-import android.content.Context;
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import androidx.profileinstaller.ProfileInstallerInitializer;
-import java.util.Random;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
-import yh.s;
+import org.telegram.ui.Components.wv0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements Runnable {
+public final /* synthetic */ class a implements le.d, wv0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
+    public final /* synthetic */ k b;
 
-    public /* synthetic */ a(Context context, int i10) {
+    public /* synthetic */ a(k kVar, int i10) {
         this.a = i10;
-        this.b = context;
+        this.b = kVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // le.d
+    public /* synthetic */ void V(float f7, int i10) {
+        int i11 = this.a;
+    }
+
+    @Override // le.d
+    public void a0(int i10, float f7, float f10, le.e eVar) {
         switch (this.a) {
             case 0:
-                new s(this.b).show();
+                this.b.L0();
                 break;
             case 1:
-                nf.f.s(this.b, LocaleController.getString(R.string.ChannelAffiliateProgramJoinButtonInfoLink));
-                break;
-            case 2:
-                (Build.VERSION.SDK_INT >= 28 ? r4.f.a(Looper.getMainLooper()) : new Handler(Looper.getMainLooper())).postDelayed(new a(this.b, 3), new Random().nextInt(Math.max(MediaDataController.MAX_STYLE_RUNS_COUNT, 1)) + 5000);
-                break;
-            case 3:
-                new ThreadPoolExecutor(0, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue()).execute(new a(this.b, 4));
-                break;
-            case 4:
-                r4.d.s(this.b, new a3.b(2), r4.d.a, false);
-                break;
-            case 5:
-                new s(this.b).show();
-                break;
-            case 6:
-                nf.f.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
-                break;
-            case 7:
-                new s(this.b).show();
-                break;
-            case 8:
-                nf.f.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
-                break;
-            case 9:
-                nf.f.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
-                break;
-            case 10:
-                nf.f.s(this.b, LocaleController.getString(R.string.PaidContentInfoLink));
-                break;
-            case 11:
-                nf.f.s(this.b, LocaleController.getString(R.string.StarsSubscribeInfoLink));
+                this.b.L0();
                 break;
             default:
-                nf.f.s(this.b, LocaleController.getString(R.string.StarsReactionTermsLink));
+                this.b.U.setAlpha(f7);
                 break;
         }
     }
 
-    public /* synthetic */ a(ProfileInstallerInitializer profileInstallerInitializer, Context context) {
-        this.a = 2;
-        this.b = context;
+    @Override // org.telegram.ui.Components.wv0
+    public int b() {
+        return this.b.Y;
+    }
+
+    private final /* synthetic */ void a(float f7, int i10) {
+    }
+
+    private final /* synthetic */ void c(float f7, int i10) {
+    }
+
+    private final /* synthetic */ void d(float f7, int i10) {
     }
 }

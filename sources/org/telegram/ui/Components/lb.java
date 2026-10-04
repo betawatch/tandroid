@@ -1,70 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.app.Dialog;
 import android.content.Context;
-import android.os.Build;
-import android.view.ViewGroup;
-import android.view.Window;
+import android.view.View;
 import android.view.WindowManager;
-import java.util.WeakHashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class lb extends Dialog {
-    public final kb a;
-    public final WindowManager.LayoutParams b;
+public final class lb extends FrameLayout {
+    public final /* synthetic */ mb a;
 
-    public lb(Context context, ci.a9 a9Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lb(mb mbVar, Context context) {
         super(context);
-        AndroidUtilities.enableEdgeToEdge(getWindow());
-        kb kbVar = new kb(this, context);
-        this.a = kbVar;
-        setContentView(kbVar, new ViewGroup.LayoutParams(-1, -1));
-        s sVar = new s(this, 15);
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.j(kbVar, sVar);
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 30) {
-            kbVar.setSystemUiVisibility(1792);
-        } else {
-            kbVar.setSystemUiVisibility(1280);
-        }
-        qc.a(kbVar, new ai.w4(a9Var, 6));
+        this.a = mbVar;
+    }
+
+    @Override // android.view.ViewGroup
+    public final void addView(View view) {
+        super.addView(view);
+        this.a.show();
+    }
+
+    public WindowManager.LayoutParams getLayout() {
+        return this.a.b;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewManager
+    public final void removeView(View view) {
+        mb mbVar = this.a;
+        super.removeView(view);
         try {
-            Window window = getWindow();
-            window.setWindowAnimations(R.style.DialogNoAnimation);
-            window.setBackgroundDrawable(null);
-            WindowManager.LayoutParams attributes = window.getAttributes();
-            this.b = attributes;
-            attributes.width = -1;
-            attributes.height = -1;
-            attributes.gravity = 51;
-            attributes.dimAmount = 0.0f;
-            attributes.format = -3;
-            attributes.flags = (((-3) & attributes.flags) | (-1946091240)) & (-1025);
-            boolean z10 = true;
-            if (i10 >= 28) {
-                attributes.layoutInDisplayCutoutMode = 1;
-            }
-            window.setAttributes(attributes);
-            if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.a7, false)) <= 0.721f) {
-                z10 = false;
-            }
-            AndroidUtilities.setLightNavigationBar(this, z10);
+            mbVar.dismiss();
         } catch (Exception unused) {
         }
+        rc.h(mbVar.a);
     }
 
-    public static kb a(Context context) {
-        return new lb(context, null).a;
-    }
-
-    @Override // android.app.Dialog
-    public final void show() {
-        if (AndroidUtilities.isSafeToShow(getContext())) {
-            super.show();
+    public void setTouchable(boolean z10) {
+        mb mbVar = this.a;
+        WindowManager.LayoutParams layoutParams = mbVar.b;
+        if (layoutParams == null) {
+            return;
         }
+        if (z10) {
+            layoutParams.flags &= -17;
+        } else {
+            layoutParams.flags |= 16;
+        }
+        mbVar.getWindow().setAttributes(mbVar.b);
     }
 }

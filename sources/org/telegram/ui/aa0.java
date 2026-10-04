@@ -1,62 +1,105 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Pattern;
-import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.SharedPrefsHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class aa0 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
+public final /* synthetic */ class aa0 implements Runnable {
+    public final /* synthetic */ LaunchActivity a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ TLRPC.User d;
+    public final /* synthetic */ TLRPC.TL_messages_botApp e;
+    public final /* synthetic */ AtomicBoolean f;
+    public final /* synthetic */ String h;
+    public final /* synthetic */ boolean n;
+    public final /* synthetic */ boolean r;
+    public final /* synthetic */ boolean s;
+    public final /* synthetic */ boolean v;
 
-    public /* synthetic */ aa0(LaunchActivity launchActivity, int i10) {
-        this.a = i10;
-        this.b = launchActivity;
+    public /* synthetic */ aa0(LaunchActivity launchActivity, org.telegram.ui.ActionBar.n2 n2Var, int i10, TLRPC.User user, TLRPC.TL_messages_botApp tL_messages_botApp, AtomicBoolean atomicBoolean, String str, boolean z10, boolean z11, boolean z12, boolean z13) {
+        this.a = launchActivity;
+        this.b = n2Var;
+        this.c = i10;
+        this.d = user;
+        this.e = tL_messages_botApp;
+        this.f = atomicBoolean;
+        this.h = str;
+        this.n = z10;
+        this.r = z11;
+        this.s = z12;
+        this.v = z13;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        org.telegram.ui.ActionBar.m2 lastFragment;
-        int i10 = this.a;
-        LaunchActivity launchActivity = this.b;
-        switch (i10) {
-            case 0:
-                boolean booleanValue = ((Boolean) obj).booleanValue();
-                if (launchActivity.q0 != null && booleanValue && LiteMode.getPowerSaverLevel() < 100 && (lastFragment = launchActivity.q0.getLastFragment()) != null && !(lastFragment instanceof hc0)) {
-                    int batteryLevel = LiteMode.getBatteryLevel();
-                    org.telegram.ui.Components.yc a02 = org.telegram.ui.Components.yc.a0(lastFragment);
-                    org.telegram.ui.Components.y9 y9Var = new org.telegram.ui.Components.y9(batteryLevel / 100.0f, lastFragment.getThemedColor(org.telegram.ui.ActionBar.h6.Y5));
-                    String string = LocaleController.getString(R.string.LowPowerEnabledTitle);
-                    String formatString = LocaleController.formatString("LowPowerEnabledSubtitle", R.string.LowPowerEnabledSubtitle, String.format("%d%%", Integer.valueOf(batteryLevel)));
-                    String string2 = LocaleController.getString(R.string.Disable);
-                    b90 b90Var = new b90(launchActivity, 8);
-                    a02.getClass();
-                    Context W = a02.W();
-                    org.telegram.ui.ActionBar.d6 d6Var = a02.c;
-                    org.telegram.ui.Components.nc ncVar = new org.telegram.ui.Components.nc(W, d6Var);
-                    ncVar.a.setImageDrawable(y9Var);
-                    ncVar.b.setText(string);
-                    ncVar.c.setText(formatString);
-                    org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(a02.W(), d6Var, true);
-                    ocVar.e(string2);
-                    ocVar.a = b90Var;
-                    ncVar.setButton(ocVar);
-                    org.telegram.ui.Components.qc b10 = a02.b(ncVar, 2750);
-                    b10.j = 5000;
-                    b10.j();
-                    break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.TL_attachMenuBot tL_attachMenuBot;
+        Pattern pattern = LaunchActivity.B1;
+        org.telegram.ui.ActionBar.n2 n2Var = this.b;
+        if (n2Var == null || !LaunchActivity.C1) {
+            return;
+        }
+        LaunchActivity launchActivity = this.a;
+        if (launchActivity.isFinishing() || launchActivity.isDestroyed()) {
+            return;
+        }
+        TLRPC.User user = this.d;
+        long j3 = user.id;
+        TLRPC.TL_messages_botApp tL_messages_botApp = this.e;
+        TLRPC.BotApp botApp = tL_messages_botApp.app;
+        boolean z10 = this.f.get();
+        int i10 = this.c;
+        String str = this.h;
+        boolean z11 = this.n;
+        boolean z12 = this.r;
+        ei.f5 b10 = ei.f5.b(i10, j3, j3, null, null, 3, 0, 0L, botApp, z10, str, user, 0, z11, z12);
+        if (launchActivity.P() == null || launchActivity.P().k(b10) == null) {
+            SharedPrefsHelper.setWebViewConfirmShown(launchActivity.O, user.id, true);
+            ei.l3 l3Var = new ei.l3(launchActivity, n2Var.getResourceProvider());
+            ei.c3 c3Var = l3Var.x;
+            if (c3Var != null) {
+                c3Var.setWasOpenedByLinkIntent(this.s);
+            }
+            l3Var.w(!z11);
+            if (z12) {
+                l3Var.x(true, false, l3Var.e0);
+            }
+            l3Var.A0 = false;
+            l3Var.k0 = launchActivity;
+            l3Var.s(n2Var, b10);
+            l3Var.show();
+            if (tL_messages_botApp.inactive || this.v) {
+                TLRPC.User user2 = MessagesController.getInstance(l3Var.G).getUser(Long.valueOf(l3Var.H));
+                ArrayList<TLRPC.TL_attachMenuBot> arrayList = MediaDataController.getInstance(l3Var.G).getAttachMenuBots().bots;
+                int size = arrayList.size();
+                int i11 = 0;
+                while (true) {
+                    if (i11 >= size) {
+                        tL_attachMenuBot = null;
+                        break;
+                    }
+                    TLRPC.TL_attachMenuBot tL_attachMenuBot2 = arrayList.get(i11);
+                    i11++;
+                    tL_attachMenuBot = tL_attachMenuBot2;
+                    if (tL_attachMenuBot.bot_id == l3Var.H) {
+                        break;
+                    }
                 }
-                break;
-            default:
-                Pattern pattern = LaunchActivity.B1;
-                MessagesController.getInstance(launchActivity.O).openApp((TLRPC.User) obj, 0);
-                break;
+                if (tL_attachMenuBot == null) {
+                    return;
+                }
+                boolean z13 = tL_attachMenuBot.show_in_side_menu;
+                AndroidUtilities.runOnUIThread(new ci.x8(18, l3Var, (z13 && tL_attachMenuBot.show_in_attach_menu) ? LocaleController.formatString(R.string.BotAttachMenuShortcatAddedAttachAndSide, user2.first_name) : z13 ? LocaleController.formatString(R.string.BotAttachMenuShortcatAddedSide, user2.first_name) : LocaleController.formatString(R.string.BotAttachMenuShortcatAddedAttach, user2.first_name)), 200L);
+            }
         }
     }
 }

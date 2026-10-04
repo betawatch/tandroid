@@ -3,7 +3,7 @@ package fi;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class x implements TextWatcher {
     public final /* synthetic */ k0 a;
@@ -17,7 +17,7 @@ public final class x implements TextWatcher {
         String obj = editable.toString();
         k0 k0Var = this.a;
         k0Var.S = obj;
-        k0Var.G.Y2.N(true);
+        k0Var.G.f3.N(true);
     }
 
     @Override // android.text.TextWatcher

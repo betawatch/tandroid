@@ -18,9 +18,9 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class g0 extends View implements NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -50,7 +50,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
     public g0(Context context, int i10, long j3, org.telegram.ui.k0 k0Var) {
         super(context);
         this.d = true;
-        this.y = new org.telegram.ui.Components.e6(this, 0L, 350L, sr.h);
+        this.y = new org.telegram.ui.Components.e6(this, 0L, 350L, tr.h);
         this.E = 1.0f;
         this.G = new ArrayList();
         this.H = new ArrayList();
@@ -159,7 +159,7 @@ public final class g0 extends View implements NotificationCenter.NotificationCen
                         } else {
                             float dp = AndroidUtilities.dp(22.5f);
                             int i18 = f0Var6.d;
-                            f0Var6.h = new RadialGradient(0.0f, 0.0f, dp, new int[]{i18, org.telegram.ui.ActionBar.h6.l1(0.0f, i18)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                            f0Var6.h = new RadialGradient(0.0f, 0.0f, dp, new int[]{i18, org.telegram.ui.ActionBar.i6.l1(0.0f, i18)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
                             Paint paint = new Paint(1);
                             f0Var6.i = paint;
                             paint.setShader(f0Var6.h);

@@ -13,16 +13,17 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.z5;
 import yh.t5;
-import yh.w7;
+import yh.x7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a5 extends View {
     public final yh.z3 a;
@@ -43,7 +44,7 @@ public final class a5 extends View {
     public final void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, String str, boolean z10) {
         yh.z3 z3Var = this.a;
         o5 o5Var = z3Var.e;
-        m1 m1Var = z3Var.j;
+        l1 l1Var = z3Var.j;
         ImageReceiver imageReceiver = z3Var.d;
         z3Var.K = false;
         z3Var.N = null;
@@ -67,40 +68,40 @@ public final class a5 extends View {
             imageReceiver.setAutoRepeatCount(0);
             imageReceiver.clearDecorators();
             imageReceiver.setAutoRepeat(0);
-            w7.Z0(imageReceiver, z3Var.m.document, 110);
+            x7.f1(imageReceiver, z3Var.m.document, 110);
         }
         boolean z11 = tL_starGiftUnique.burned;
         z3Var.J = z11;
         if (z11) {
-            int v02 = h6.v0(h6.q7, z3Var.c);
-            Paint paint2 = m1Var.a;
+            int v02 = i6.v0(i6.q7, z3Var.c);
+            Paint paint2 = l1Var.a;
             paint2.setShader(null);
             paint2.setColor(v02);
-            m1Var.e(11, LocaleController.getString(R.string.Gift2UniqueRibbonBurned), true);
+            l1Var.e(11, LocaleController.getString(R.string.Gift2UniqueRibbonBurned), true);
         } else {
-            m1Var.d(z3Var.k, true, false);
-            m1Var.e(11, LocaleController.getString(R.string.Gift2UniqueRibbon), true);
+            l1Var.d(z3Var.k, true, false);
+            l1Var.e(11, LocaleController.getString(R.string.Gift2UniqueRibbon), true);
         }
         if (z3Var.P) {
             imageReceiver.onAttachedToWindow();
             o5Var.a();
             z3Var.y.d.onAttachedToWindow();
         }
-        z3Var.L = Math.min((int) (AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() * 0.6f : (AndroidUtilities.displaySize.x * 0.62f) - AndroidUtilities.dp(34.0f)), ((AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(64.0f));
+        z3Var.L = ok.C(64.0f, (AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, (int) (AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() * 0.6f : (AndroidUtilities.displaySize.x * 0.62f) - AndroidUtilities.dp(34.0f)));
         if (!AndroidUtilities.isTablet()) {
             z3Var.L = (int) (z3Var.L * 1.2f);
         }
         z3Var.L -= AndroidUtilities.dp(8.0f);
         z3Var.h(tL_starGiftUnique, j3, tL_textWithEntities, str);
-        le.f fVar = z3Var.Q;
+        le.e eVar = z3Var.Q;
         if (z10) {
-            int round = Math.round(fVar.g ? fVar.f : fVar.e);
+            int round = Math.round(eVar.g ? eVar.f : eVar.e);
             int i10 = z3Var.L;
             if (round != i10) {
-                fVar.a(i10);
+                eVar.a(i10);
             }
         } else {
-            fVar.c(z3Var.L);
+            eVar.c(z3Var.L);
         }
         requestLayout();
         invalidate();
@@ -142,7 +143,7 @@ public final class a5 extends View {
         if (d6Var != null) {
             d6Var.m(0.0f, getY(), getMeasuredWidth(), height);
         } else {
-            h6.q(0.0f, getY(), getMeasuredWidth(), height);
+            i6.q(0.0f, getY(), getMeasuredWidth(), height);
         }
         yh.z3 z3Var = this.a;
         this.c = (getWidth() - ((int) z3Var.Q.e)) / 2.0f;

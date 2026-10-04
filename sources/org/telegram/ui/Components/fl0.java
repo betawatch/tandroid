@@ -21,7 +21,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class fl0 extends View {
     public boolean E;
@@ -65,7 +65,7 @@ public final class fl0 extends View {
     public float m0;
     public boolean n;
     public float n0;
-    public final /* synthetic */ yl0 o0;
+    public final /* synthetic */ zl0 o0;
     public StaticLayout r;
     public StaticLayout s;
     public StaticLayout v;
@@ -74,10 +74,10 @@ public final class fl0 extends View {
     public float y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fl0(yl0 yl0Var, Context context, int i10) {
+    public fl0(zl0 zl0Var, Context context, int i10) {
         super(context);
-        org.telegram.ui.ActionBar.d6 d6Var = yl0Var.p2;
-        this.o0 = yl0Var;
+        org.telegram.ui.ActionBar.d6 d6Var = zl0Var.p2;
+        this.o0 = zl0Var;
         this.a = true;
         this.b = new RectF();
         this.c = new Paint(1);
@@ -100,18 +100,18 @@ public final class fl0 extends View {
             this.g0 = false;
             textPaint.setTextSize(AndroidUtilities.dp(13.0f));
             textPaint.setTypeface(AndroidUtilities.bold());
-            int i11 = org.telegram.ui.ActionBar.h6.d6;
-            paint.setColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+            int i11 = org.telegram.ui.ActionBar.i6.d6;
+            paint.setColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
             Drawable mutate = context.getDrawable(R.drawable.calendar_date).mutate();
             this.d0 = mutate;
-            mutate.setColorFilter(new PorterDuffColorFilter(i0.a.d(0.1f, org.telegram.ui.ActionBar.h6.v0(i11, d6Var), -1), PorterDuff.Mode.MULTIPLY));
+            mutate.setColorFilter(new PorterDuffColorFilter(i0.a.d(0.1f, org.telegram.ui.ActionBar.i6.v0(i11, d6Var), -1), PorterDuff.Mode.MULTIPLY));
         }
         for (int i12 = 0; i12 < 8; i12++) {
             this.L[i12] = AndroidUtilities.dp(44.0f);
         }
         int dp = AndroidUtilities.dp(this.g0 ? 10.0f : (i10 == 0 ? 132 : 240) - 15);
         this.Q = dp;
-        if (yl0Var.b1()) {
+        if (zl0Var.c1()) {
             this.Q = AndroidUtilities.dp(this.g0 ? -4.0f : 6.0f) + dp;
         }
         c();
@@ -121,19 +121,19 @@ public final class fl0 extends View {
     }
 
     public final void a(boolean z10) {
-        yl0 yl0Var = this.o0;
-        s4.o0 layoutManager = yl0Var.getLayoutManager();
+        zl0 zl0Var = this.o0;
+        s4.o0 layoutManager = zl0Var.getLayoutManager();
         if (layoutManager instanceof s4.c0) {
             s4.c0 c0Var = (s4.c0) layoutManager;
             if (c0Var.o == 1) {
-                s4.h0 adapter = yl0Var.getAdapter();
+                s4.h0 adapter = zl0Var.getAdapter();
                 if (adapter instanceof gl0) {
                     gl0 gl0Var = (gl0) adapter;
                     float f7 = this.e;
                     int[] iArr = this.W;
-                    gl0Var.G(yl0Var, f7, iArr);
+                    gl0Var.G(zl0Var, f7, iArr);
                     if (z10) {
-                        c0Var.h1(iArr[0], (-iArr[1]) + yl0Var.w1);
+                        c0Var.h1(iArr[0], (-iArr[1]) + zl0Var.w1);
                     }
                     String F = gl0Var.F(iArr[0]);
                     if (F == null) {
@@ -163,13 +163,13 @@ public final class fl0 extends View {
                             if (split != null && split2 != null && split.length == 2 && split2.length == 2 && split[1].equals(split2[1])) {
                                 String charSequence = this.v.getText().toString();
                                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-                                spannableStringBuilder.setSpan(new nz(false), split2[0].length(), charSequence.length(), 0);
+                                spannableStringBuilder.setSpan(new oz(false), split2[0].length(), charSequence.length(), 0);
                                 this.v = new StaticLayout(spannableStringBuilder, textPaint, ((int) textPaint.measureText(charSequence)) + 1, alignment, 1.0f, 0.0f, false);
                                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(F);
-                                spannableStringBuilder2.setSpan(new nz(false), split[0].length(), F.length(), 0);
+                                spannableStringBuilder2.setSpan(new oz(false), split[0].length(), F.length(), 0);
                                 this.w = new StaticLayout(spannableStringBuilder2, textPaint, measureText, alignment, 1.0f, 0.0f, false);
                                 SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(F);
-                                spannableStringBuilder3.setSpan(new nz(false), 0, split[0].length(), 0);
+                                spannableStringBuilder3.setSpan(new oz(false), 0, split[0].length(), 0);
                                 this.x = new StaticLayout(spannableStringBuilder3, textPaint, measureText, alignment, 1.0f, 0.0f, false);
                             } else {
                                 this.w = this.r;
@@ -211,16 +211,16 @@ public final class fl0 extends View {
     }
 
     public final void c() {
-        yl0 yl0Var = this.o0;
+        zl0 zl0Var = this.o0;
         int i10 = this.R;
-        this.S = i10 == 0 ? org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.m7, yl0Var.p2) : i0.a.k(-16777216, 102);
-        this.T = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.l7, yl0Var.p2);
+        this.S = i10 == 0 ? org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.m7, zl0Var.p2) : i0.a.k(-16777216, 102);
+        this.T = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.l7, zl0Var.p2);
         this.c.setColor(this.S);
         TextPaint textPaint = this.H;
         if (i10 == 0) {
-            textPaint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.n7, yl0Var.p2));
+            textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.n7, zl0Var.p2));
         } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, yl0Var.p2));
+            textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, zl0Var.p2));
         }
         invalidate();
     }
@@ -283,10 +283,10 @@ public final class fl0 extends View {
         } else {
             f7 = 12.0f;
             f10 = 36.0f;
-            int i12 = org.telegram.ui.ActionBar.h6.d6;
-            yl0 yl0Var = this.o0;
+            int i12 = org.telegram.ui.ActionBar.i6.d6;
+            zl0 zl0Var = this.o0;
             f11 = 8.0f;
-            paint.setColor(i0.a.d(0.1f, org.telegram.ui.ActionBar.h6.v0(i12, yl0Var.p2), -1));
+            paint.setColor(i0.a.d(0.1f, org.telegram.ui.ActionBar.i6.v0(i12, zl0Var.p2), -1));
             float dp6 = AndroidUtilities.dp(27.0f) + paddingTop;
             ch.d dVar = this.e0;
             if (dVar != null) {
@@ -305,7 +305,7 @@ public final class fl0 extends View {
                 drawable.draw(canvas);
                 canvas.drawCircle(AndroidUtilities.dp(8.0f) + i10, AndroidUtilities.dp(27.0f) + paddingTop, AndroidUtilities.dp(24.0f), paint);
             }
-            paint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, yl0Var.p2));
+            paint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, zl0Var.p2));
             canvas.save();
             canvas.translate(AndroidUtilities.dp(f13) + i10, (AndroidUtilities.dp(2.0f) * this.O) + AndroidUtilities.dp(34.0f) + paddingTop);
             Path path = this.K;
@@ -522,7 +522,7 @@ public final class fl0 extends View {
             return false;
         }
         int action = motionEvent.getAction();
-        yl0 yl0Var = this.o0;
+        zl0 zl0Var = this.o0;
         if (action == 0) {
             float x10 = motionEvent.getX();
             float y3 = motionEvent.getY();
@@ -546,7 +546,7 @@ public final class fl0 extends View {
                     this.k0 = false;
                     this.P = System.currentTimeMillis();
                     invalidate();
-                    s4.h0 adapter = yl0Var.getAdapter();
+                    s4.h0 adapter = zl0Var.getAdapter();
                     b();
                     if (adapter instanceof gl0) {
                         ((gl0) adapter).K();
@@ -588,7 +588,7 @@ public final class fl0 extends View {
                 }
             }
         }
-        s4.h0 adapter2 = yl0Var.getAdapter();
+        s4.h0 adapter2 = zl0Var.getAdapter();
         if (this.n && !this.k0 && System.currentTimeMillis() - this.l0 < 150 && (adapter2 instanceof gl0)) {
             ((gl0) adapter2).I();
         }
@@ -597,7 +597,7 @@ public final class fl0 extends View {
         this.P = System.currentTimeMillis();
         invalidate();
         if (adapter2 instanceof gl0) {
-            ((gl0) adapter2).J(yl0Var);
+            ((gl0) adapter2).J(zl0Var);
         }
         b();
         return true;

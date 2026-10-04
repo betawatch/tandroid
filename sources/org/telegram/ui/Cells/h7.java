@@ -11,10 +11,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.rq;
-import org.telegram.ui.Components.y80;
+import org.telegram.ui.Components.sq;
+import org.telegram.ui.Components.z80;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class h7 extends FrameLayout {
     public final org.telegram.ui.Components.w9 a;
@@ -33,17 +33,17 @@ public final class h7 extends FrameLayout {
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.a = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(28.0f));
-        addView(w9Var, w7.y5.d(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
+        addView(w9Var, w7.z5.d(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
-        ok.n(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 12.0f);
+        ok.n(org.telegram.ui.ActionBar.i6.j5, d6Var, textView, 1, 12.0f);
         textView.setMaxLines(2);
         textView.setGravity(49);
         textView.setLines(2);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, w7.y5.d(-1, -2.0f, 51, 6.0f, 66.0f, 6.0f, 0.0f));
+        addView(textView, w7.z5.d(-1, -2.0f, 51, 6.0f, 66.0f, 6.0f, 0.0f));
         this.b = new e7(this, d6Var, 1);
-        setBackground(org.telegram.ui.ActionBar.h6.Y(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.i6, false), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f)));
+        setBackground(org.telegram.ui.ActionBar.i6.Y(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f)));
     }
 
     public long getCurrentDialog() {
@@ -64,11 +64,11 @@ public final class h7 extends FrameLayout {
         org.telegram.ui.Components.w9 w9Var = this.a;
         w9Var.setAnimatedEmojiDrawable(null);
         ng.a aVar = new ng.a(ng.a.k[0]);
-        y80 y80Var = new y80(1, null);
-        y80Var.a("");
-        y80Var.i = 1.8f;
-        rq rqVar = new rq(aVar, y80Var, 0, 0);
-        rqVar.w = true;
-        w9Var.setImageDrawable(rqVar);
+        z80 z80Var = new z80(1, null);
+        z80Var.a("");
+        z80Var.i = 1.8f;
+        sq sqVar = new sq(aVar, z80Var, 0, 0);
+        sqVar.w = true;
+        w9Var.setImageDrawable(sqVar);
     }
 }

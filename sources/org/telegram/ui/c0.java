@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,9 +24,9 @@ public final /* synthetic */ class c0 implements Runnable {
                 i4Var.h0.M.c(this.b, true);
                 break;
             case 1:
-                org.telegram.ui.Components.ib ibVar = (org.telegram.ui.Components.ib) this.c;
-                if (ibVar.a.getTranslationX() == this.b) {
-                    ibVar.y.b();
+                org.telegram.ui.Components.jb jbVar = (org.telegram.ui.Components.jb) this.c;
+                if (jbVar.a.getTranslationX() == this.b) {
+                    jbVar.y.b();
                     break;
                 }
                 break;
@@ -48,7 +48,7 @@ public final /* synthetic */ class c0 implements Runnable {
                 a1Var.b = false;
                 break;
             case 3:
-                ((e80) this.c).f.e.smoothScrollTo(0, (int) this.b);
+                ((i80) this.c).f.e.smoothScrollTo(0, (int) this.b);
                 break;
             case 4:
                 ApplicationLoader.applicationContext.getSharedPreferences("media_saved_pos", 0).edit().putFloat((String) this.c, this.b).commit();

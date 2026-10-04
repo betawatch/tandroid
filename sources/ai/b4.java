@@ -13,31 +13,31 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.e60;
-import org.telegram.ui.Components.l40;
-import org.telegram.ui.Components.og;
-import org.telegram.ui.mn;
+import org.telegram.ui.Components.f60;
+import org.telegram.ui.Components.m40;
+import org.telegram.ui.Components.pg;
+import org.telegram.ui.on;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class b4 implements og {
+public final class b4 implements pg {
     public final /* synthetic */ e6 a;
 
     public b4(e6 e6Var) {
         this.a = e6Var;
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void A2() {
         this.a.P0();
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final /* synthetic */ boolean C0() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void H(CharSequence charSequence, boolean z10, int i10, int i11, long j3) {
         e6 e6Var = this.a;
         if (e6Var.G2) {
@@ -47,8 +47,8 @@ public final class b4 implements og {
         }
     }
 
-    @Override // org.telegram.ui.Components.og
-    public final TLRPC.TL_channels_sendAsPeers J() {
+    @Override // org.telegram.ui.Components.pg
+    public final TLRPC.TL_channels_sendAsPeers I() {
         d2 d2Var;
         e6 e6Var = this.a;
         if (!e6Var.O1.f) {
@@ -63,25 +63,25 @@ public final class b4 implements og {
         return e6Var.O3;
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void K(float f7, int i10) {
-        e60 e60Var = this.a.J2;
-        if (e60Var != null) {
-            e60Var.b(f7, i10);
+        f60 f60Var = this.a.J2;
+        if (f60Var != null) {
+            f60Var.b(f7, i10);
         }
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final int b1() {
         return this.a.getHeight();
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final TL_stories.StoryItem d1() {
         return this.a.O1.a;
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final boolean f1(long j3) {
         e6 e6Var = this.a;
         c6 c6Var = e6Var.O1;
@@ -102,19 +102,19 @@ public final class b4 implements og {
             }
             e6Var.r0(true);
             e6Var.b2.P1(true);
-            e6Var.b2.K(true);
+            e6Var.b2.I(true);
             e6Var.f1(false);
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final boolean i1() {
-        e60 e60Var = this.a.J2;
-        return (e60Var == null || e60Var.j0) ? false : true;
+        f60 f60Var = this.a.J2;
+        return (f60Var == null || f60Var.j0) ? false : true;
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void i2() {
         String str;
         e6 e6Var = this.a;
@@ -123,10 +123,10 @@ public final class b4 implements og {
             return;
         }
         if (e6Var.W2 == null) {
-            l40 l40Var = new l40(9, e6Var.getContext(), e6Var.B0, false);
-            e6Var.W2 = l40Var;
-            l40Var.setVisibility(8);
-            e6Var.addView(e6Var.W2, w7.y5.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
+            m40 m40Var = new m40(9, e6Var.getContext(), e6Var.B0, false);
+            e6Var.W2 = m40Var;
+            m40Var.setVisibility(8);
+            e6Var.addView(e6Var.W2, w7.z5.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
         }
         if (e6Var.B1 >= 0) {
             str = UserObject.getFirstName(MessagesController.getInstance(e6Var.C2).getUser(Long.valueOf(e6Var.B1)));
@@ -138,35 +138,35 @@ public final class b4 implements og {
         e6Var.W2.f(e6Var.b2.getAudioVideoButtonContainer(), true);
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void k2(int i10, int i11, int i12, long j3, long j10, boolean z10) {
         e6 e6Var = this.a;
         if (e6Var.J2 == null && CameraView.isCameraAllowed()) {
-            e6Var.J2 = new e60(e6Var.getContext(), new r4(e6Var), e6Var.B0, false);
-            e6Var.addView(e6Var.J2, Math.min(e6Var.indexOfChild(e6Var.b2.getRecordCircle()), e6Var.indexOfChild(e6Var.b2.O1)), w7.y5.e(-1, -1, 51));
+            e6Var.J2 = new f60(e6Var.getContext(), new r4(e6Var), e6Var.B0, false);
+            e6Var.addView(e6Var.J2, Math.min(e6Var.indexOfChild(e6Var.b2.getRecordCircle()), e6Var.indexOfChild(e6Var.b2.O1)), w7.z5.e(-1, -1, 51));
         }
-        e60 e60Var = e6Var.J2;
-        if (e60Var != null) {
+        f60 f60Var = e6Var.J2;
+        if (f60Var != null) {
             if (i10 == 0) {
-                e60Var.h(false);
+                f60Var.h(false);
                 return;
             }
             if (i10 == 1 || i10 == 3 || i10 == 4) {
-                e60Var.f(i10, i11, i12, j3, j10, z10);
+                f60Var.f(i10, i11, i12, j3, j10, z10);
             } else if (i10 == 2 || i10 == 5) {
-                e60Var.a(i10 == 2);
+                f60Var.a(i10 == 2);
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void l1(CharSequence charSequence, boolean z10, boolean z11) {
         e6 e6Var = this.a;
         if (e6Var.d3 == null) {
             c4 c4Var = new c4(e6Var, e6Var.getContext(), e6Var.B1, e6Var.J0.f, e6Var.B0);
             e6Var.d3 = c4Var;
             c4Var.p(new f4(e6Var));
-            e6Var.addView(e6Var.d3, w7.y5.e(-1, -1, 83));
+            e6Var.addView(e6Var.d3, w7.z5.e(-1, -1, 83));
         }
         if (e6Var.d3.getAdapter() != null) {
             e6Var.d3.setDialogId(e6Var.B1);
@@ -219,47 +219,47 @@ public final class b4 implements og {
         e6Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final /* synthetic */ boolean m() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void n1() {
-        e60 e60Var = this.a.J2;
-        if (e60Var != null) {
-            e60Var.i();
+        f60 f60Var = this.a.J2;
+        if (f60Var != null) {
+            f60Var.i();
         }
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final boolean o1() {
         TLRPC.User user;
         e6 e6Var = this.a;
         return (e6Var.B1 < 0 || (user = MessagesController.getInstance(e6Var.C2).getUser(Long.valueOf(e6Var.B1))) == null || UserObject.isUserSelf(user) || user.bot) ? false : true;
     }
 
-    @Override // org.telegram.ui.Components.og
-    public final /* synthetic */ mn p0() {
+    @Override // org.telegram.ui.Components.pg
+    public final /* synthetic */ on p0() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final /* synthetic */ int q() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void q1() {
         this.a.O0();
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void s1() {
         this.a.requestLayout();
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final TLRPC.Peer v() {
         d2 d2Var;
         jc jcVar = this.a.J0;
@@ -272,108 +272,108 @@ public final class b4 implements og {
         return d2Var.i();
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final /* synthetic */ boolean w1() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final /* synthetic */ void B(boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void X(boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void a1(int i10) {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void f2(int i10) {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void j2(boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void v1(CharSequence charSequence) {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final /* synthetic */ void y(float f7) {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void D() {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void E1() {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final /* synthetic */ void G0() {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final /* synthetic */ void J0() {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final /* synthetic */ void T0() {
     }
 
-    @Override // org.telegram.ui.Components.og
-    public final /* synthetic */ void W() {
+    @Override // org.telegram.ui.Components.pg
+    public final /* synthetic */ void V() {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final /* synthetic */ void d2() {
     }
 
-    @Override // org.telegram.ui.Components.og
-    public final void g() {
+    @Override // org.telegram.ui.Components.pg
+    public final void f() {
     }
 
-    @Override // org.telegram.ui.Components.og
-    public final /* synthetic */ void l() {
+    @Override // org.telegram.ui.Components.pg
+    public final /* synthetic */ void i() {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final /* synthetic */ void m0() {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void o2() {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final /* synthetic */ void r1() {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void s0() {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void w2() {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void x() {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final /* synthetic */ void z1() {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void E0(int i10, int i11) {
     }
 
-    @Override // org.telegram.ui.Components.og
+    @Override // org.telegram.ui.Components.pg
     public final void t1(View view, CharSequence charSequence, boolean z10) {
     }
 }

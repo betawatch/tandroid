@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements d9.i {
     public final /* synthetic */ int a;
@@ -21,8 +21,8 @@ public final /* synthetic */ class s implements d9.i {
             case 0:
                 try {
                     return Class.forName("androidx.media3.effect.DefaultVideoFrameProcessor$Factory$Builder");
-                } catch (Exception e) {
-                    throw new IllegalStateException(e);
+                } catch (Exception e7) {
+                    throw new IllegalStateException(e7);
                 }
             case 1:
                 throw new IllegalStateException();

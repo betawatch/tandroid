@@ -25,7 +25,7 @@ import android.provider.Settings;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
-import ei.q2;
+import ei.r2;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -48,7 +48,7 @@ import org.telegram.ui.VoIPPermissionActivity;
 import org.telegram.ui.mi1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class VoIPPreNotificationService {
     public static State currentState;
@@ -58,7 +58,7 @@ public class VoIPPreNotificationService {
     private static final Object sync = new Object();
     private static Vibrator vibrator;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static final class State implements VoIPServiceState {
         private final TL_phone.PhoneCall call;
         private final int currentAccount;
@@ -198,9 +198,9 @@ public class VoIPPreNotificationService {
                 try {
                     PendingIntent.getActivity(context, 0, new Intent(context, (Class<?>) VoIPPermissionActivity.class).addFlags(TLObject.FLAG_28), 1107296256).send();
                     return;
-                } catch (Exception e) {
+                } catch (Exception e7) {
                     if (BuildVars.LOGS_ENABLED) {
-                        FileLog.e("Error starting permission activity", e);
+                        FileLog.e("Error starting permission activity", e7);
                         return;
                     }
                     return;
@@ -242,7 +242,7 @@ public class VoIPPreNotificationService {
             discardcall.reason = new TLRPC.TL_phoneCallDiscardReasonBusy();
         }
         FileLog.e("discardCall " + discardcall.reason);
-        ConnectionsManager.getInstance(intExtra).sendRequest(discardcall, new q2(intExtra, 2), 2);
+        ConnectionsManager.getInstance(intExtra).sendRequest(discardcall, new r2(intExtra, 2), 2);
         dismiss(context, false);
     }
 
@@ -390,8 +390,8 @@ public class VoIPPreNotificationService {
                     NotificationChannel notificationChannel4 = new NotificationChannel("incoming_calls4" + i14, LocaleController.getString(R.string.IncomingCallsSystemSetting), 4);
                     try {
                         notificationChannel4.setSound(null, build);
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
                     }
                     notificationChannel4.setDescription(LocaleController.getString(R.string.IncomingCallsSystemSettingDescription));
                     notificationChannel4.enableVibration(false);
@@ -399,8 +399,8 @@ public class VoIPPreNotificationService {
                     notificationChannel4.setBypassDnd(true);
                     try {
                         notificationManager.createNotificationChannel(notificationChannel4);
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
                         return null;
                     }
                 }
@@ -565,8 +565,8 @@ public class VoIPPreNotificationService {
         if (z11 && ringtonePlayer == null) {
             synchronized (sync) {
                 try {
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                     MediaPlayer mediaPlayer = ringtonePlayer;
                     if (mediaPlayer != null) {
                         mediaPlayer.release();

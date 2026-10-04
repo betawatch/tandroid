@@ -2,29 +2,27 @@ package org.telegram.ui;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z6 b;
-    public final /* synthetic */ l6 c;
-    public final /* synthetic */ m6 d;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ e6(z6 z6Var, l6 l6Var, m6 m6Var, int i10) {
+    public /* synthetic */ e6(long j3, int i10, Utilities.Callback callback) {
         this.a = i10;
-        this.b = z6Var;
-        this.c = l6Var;
-        this.d = m6Var;
+        this.b = callback;
+        this.c = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                Utilities.globalQueue.postRunnable(new e6(this.b, this.c, this.d, 1));
+                this.b.run(Long.valueOf(this.c));
                 break;
             default:
-                z6.W(this.b, this.c, this.d);
+                this.b.run(Long.valueOf(this.c));
                 break;
         }
     }

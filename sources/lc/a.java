@@ -1,17 +1,18 @@
 package lc;
 
 import com.googlecode.mp4parser.c;
+import ii.n4;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import mc.k;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class a extends c {
     public static final Logger f;
-    public static final /* synthetic */ ka.c h;
+    public static final /* synthetic */ n4 h;
     public ByteBuffer e;
 
     static {
@@ -33,10 +34,10 @@ public abstract class a extends c {
         try {
             this.e.rewind();
             k.a(-1, this.e);
-        } catch (IOException e) {
-            logger.log(Level.WARNING, "Error parsing ObjectDescriptor", (Throwable) e);
-        } catch (IndexOutOfBoundsException e7) {
+        } catch (IOException e7) {
             logger.log(Level.WARNING, "Error parsing ObjectDescriptor", (Throwable) e7);
+        } catch (IndexOutOfBoundsException e10) {
+            logger.log(Level.WARNING, "Error parsing ObjectDescriptor", (Throwable) e10);
         }
     }
 

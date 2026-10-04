@@ -1,9 +1,10 @@
 package androidx.mediarouter.app;
 
 import android.widget.SeekBar;
+import ii.n4;
 import j$.util.DesugarCollections;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d extends p4.s {
     public final /* synthetic */ int a;
@@ -31,7 +32,7 @@ public final class d extends p4.s {
 
     @Override // p4.s
     public final void e(p4.v vVar) {
-        k2.u b10;
+        n4 b10;
         p4.o oVar;
         switch (this.a) {
             case 0:

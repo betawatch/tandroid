@@ -5,61 +5,61 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class vk extends org.telegram.ui.Components.wn0 {
-    public final /* synthetic */ wn I;
+public final class vk extends org.telegram.ui.Components.ao0 {
+    public final /* synthetic */ yn I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vk(wn wnVar, Context context, wn wnVar2, int i10, long j3, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(i10, j3, context, wnVar2, d6Var);
-        this.I = wnVar;
+    public vk(yn ynVar, Context context, yn ynVar2, int i10, long j3, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(i10, j3, context, ynVar2, d6Var);
+        this.I = ynVar;
     }
 
-    @Override // org.telegram.ui.Components.wn0
+    @Override // org.telegram.ui.Components.ao0
     public final void b(boolean z10) {
-        wn wnVar = this.I;
-        wnVar.t7();
-        wnVar.r7();
-        al alVar = wnVar.ab;
+        yn ynVar = this.I;
+        ynVar.t7();
+        ynVar.r7();
+        al alVar = ynVar.Ya;
         if (alVar != null) {
-            alVar.setTranslationY(wnVar.w9 + getCurrentHeight());
+            alVar.setTranslationY(ynVar.u9 + getCurrentHeight());
         }
         if (z10) {
-            wnVar.D9 = true;
-            wnVar.jc();
+            ynVar.B9 = true;
+            ynVar.ic();
         }
     }
 
-    @Override // org.telegram.ui.Components.wn0
+    @Override // org.telegram.ui.Components.ao0
     public final boolean f(zg.o0 o0Var) {
         int i10;
-        wn wnVar = this.I;
-        wnVar.q3 = o0Var;
-        wnVar.r3 = o0Var != null;
+        yn ynVar = this.I;
+        ynVar.o3 = o0Var;
+        ynVar.p3 = o0Var != null;
         if (o0Var == null) {
-            wnVar.getMediaDataController().clearFoundMessageObjects();
-            wnVar.kb(false);
-            wnVar.Fc(0, 0, -1);
+            ynVar.getMediaDataController().clearFoundMessageObjects();
+            ynVar.jb(false);
+            ynVar.Ec(0, 0, -1);
         }
-        wnVar.Ic();
-        wnVar.vc();
-        wnVar.t3 = wnVar.j0.getSearchField().getText().toString();
-        MediaDataController mediaDataController = wnVar.getMediaDataController();
-        String str = wnVar.t3;
-        long j3 = wnVar.T5;
-        long j10 = wnVar.L6;
-        i10 = ((org.telegram.ui.ActionBar.m2) wnVar).classGuid;
-        mediaDataController.searchMessagesInChat(str, j3, j10, i10, 0, wnVar.d4, false, wnVar.o3, wnVar.p3, (TextUtils.isEmpty(wnVar.t3) && wnVar.q3 == null) ? false : true, wnVar.q3);
-        AndroidUtilities.hideKeyboard(wnVar.j0.getSearchField());
+        ynVar.Hc();
+        ynVar.uc();
+        ynVar.r3 = ynVar.h0.getSearchField().getText().toString();
+        MediaDataController mediaDataController = ynVar.getMediaDataController();
+        String str = ynVar.r3;
+        long j3 = ynVar.R5;
+        long j10 = ynVar.J6;
+        i10 = ((org.telegram.ui.ActionBar.n2) ynVar).classGuid;
+        mediaDataController.searchMessagesInChat(str, j3, j10, i10, 0, ynVar.b4, false, ynVar.m3, ynVar.n3, (TextUtils.isEmpty(ynVar.r3) && ynVar.o3 == null) ? false : true, ynVar.o3);
+        AndroidUtilities.hideKeyboard(ynVar.h0.getSearchField());
         return true;
     }
 
-    @Override // org.telegram.ui.Components.wn0
+    @Override // org.telegram.ui.Components.ao0
     public final void h(boolean z10) {
         super.h(z10);
-        wn wnVar = this.I;
-        org.telegram.ui.ActionBar.u0 u0Var = wnVar.j0;
-        g(u0Var != null && u0Var.s() && a() && wnVar.u3 == null);
+        yn ynVar = this.I;
+        org.telegram.ui.ActionBar.v0 v0Var = ynVar.h0;
+        g(v0Var != null && v0Var.s() && a() && ynVar.s3 == null);
     }
 }

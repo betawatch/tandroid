@@ -23,10 +23,11 @@ import java.util.Map;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import v7.n7;
-import v7.s6;
+import v7.h0;
+import v7.m7;
+import v7.r6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j extends v2.k {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -87,7 +88,7 @@ public final class j extends v2.k {
     }
 
     public static byte[] e(String str) {
-        if (s6.b(str).startsWith("0x")) {
+        if (r6.b(str).startsWith("0x")) {
             str = str.substring(2);
         }
         byte[] byteArray = new BigInteger(str, 16).toByteArray();
@@ -98,17 +99,12 @@ public final class j extends v2.k {
     }
 
     @Override // y2.i
-    public final void D() {
-        this.W = true;
-    }
-
-    @Override // y2.i
     public final void a() {
         b bVar;
         this.T.getClass();
         if (this.S == null && (bVar = this.H) != null) {
             c3.o c10 = bVar.a.c();
-            if ((c10 instanceof d0) || (c10 instanceof w3.i)) {
+            if ((c10 instanceof d0) || (c10 instanceof w3.h)) {
                 this.S = this.H;
                 this.V = false;
             }
@@ -150,7 +146,7 @@ public final class j extends v2.k {
         try {
             c3.l h = h(hVar, b10);
             if (z11) {
-                h.g(this.U, false);
+                h.e(this.U, false);
             }
             do {
                 try {
@@ -158,9 +154,9 @@ public final class j extends v2.k {
                         if (this.W) {
                             break;
                         }
-                    } catch (EOFException e) {
+                    } catch (EOFException e7) {
                         if ((this.d.f & 16384) == 0) {
-                            throw e;
+                            throw e7;
                         }
                         this.S.a.h(0L, 0L);
                         j3 = h.d;
@@ -174,10 +170,10 @@ public final class j extends v2.k {
             this.U = (int) (j3 - mVar.e);
         } catch (Exception unused) {
         } catch (Throwable th3) {
-            n7.a(hVar);
+            m7.a(hVar);
             throw th3;
         }
-        n7.a(hVar);
+        m7.a(hVar);
     }
 
     public final int f(int i10) {
@@ -202,9 +198,9 @@ public final class j extends v2.k {
         ArrayList arrayList;
         c3.o aVar;
         boolean z10;
-        z3.k kVar;
+        z3.l lVar;
         boolean z11;
-        z3.k kVar2;
+        z3.l lVar2;
         List singletonList;
         int i11;
         c3.o dVar;
@@ -213,13 +209,13 @@ public final class j extends v2.k {
         long open = hVar.open(mVar);
         try {
             b0Var2.h(j12, this.I);
-            c3.l lVar = new c3.l(hVar, mVar.e, open);
+            c3.l lVar3 = new c3.l(hVar, mVar.e, open);
             if (this.S == null) {
                 v vVar = this.P;
-                lVar.f = 0;
+                lVar3.f = 0;
                 try {
                     vVar.G(10);
-                    lVar.h(vVar.a, 0, 10, false);
+                    lVar3.f(vVar.a, 0, 10, false);
                 } catch (EOFException unused) {
                     j3 = -9223372036854775807L;
                 }
@@ -236,7 +232,7 @@ public final class j extends v2.k {
                         vVar.G(i12);
                         System.arraycopy(bArr, 0, vVar.a, 0, 10);
                     }
-                    lVar.h(vVar.a, 10, w10, false);
+                    lVar3.f(vVar.a, 10, w10, false);
                     p0 c10 = this.O.c(w10, vVar.a);
                     if (c10 != null) {
                         for (o0 o0Var : c10.a) {
@@ -254,7 +250,7 @@ public final class j extends v2.k {
                     }
                     j10 = j3;
                 }
-                lVar.f = 0;
+                lVar3.f = 0;
                 b bVar2 = this.H;
                 if (bVar2 == null) {
                     Uri uri = mVar.a;
@@ -262,10 +258,10 @@ public final class j extends v2.k {
                     c cVar = this.L;
                     cVar.getClass();
                     b2.s sVar = this.d;
-                    int a2 = v7.i0.a(sVar.r);
+                    int a2 = h0.a(sVar.r);
                     List list = (List) responseHeaders.get("Content-Type");
-                    int a10 = v7.i0.a((list == null || list.isEmpty()) ? null : (String) list.get(0));
-                    int b10 = v7.i0.b(uri);
+                    int a10 = h0.a((list == null || list.isEmpty()) ? null : (String) list.get(0));
+                    int b10 = h0.b(uri);
                     ArrayList arrayList2 = new ArrayList(7);
                     c.a(a2, arrayList2);
                     c.a(a10, arrayList2);
@@ -275,7 +271,7 @@ public final class j extends v2.k {
                         c.a(c.c[i13], arrayList2);
                         i13++;
                     }
-                    lVar.f = 0;
+                    lVar3.f = 0;
                     int i15 = 0;
                     c3.o oVar = null;
                     while (true) {
@@ -306,20 +302,20 @@ public final class j extends v2.k {
                             aVar = new j4.d(0);
                         } else if (intValue != 7) {
                             List list2 = this.M;
-                            z3.k kVar3 = z3.k.D;
+                            z3.l lVar4 = z3.l.D;
                             if (intValue == 8) {
                                 i10 = i15;
                                 b0Var = b0Var3;
                                 arrayList = arrayList2;
-                                z3.k kVar4 = cVar.a;
+                                z3.l lVar5 = cVar.a;
                                 boolean z12 = cVar.b;
                                 p0 p0Var = sVar.l;
                                 if (p0Var != null) {
                                     int i16 = 0;
-                                    z3.k kVar5 = kVar4;
+                                    z3.l lVar6 = lVar5;
                                     while (true) {
                                         o0[] o0VarArr = p0Var.a;
-                                        kVar = kVar5;
+                                        lVar = lVar6;
                                         if (i16 >= o0VarArr.length) {
                                             break;
                                         }
@@ -329,24 +325,24 @@ public final class j extends v2.k {
                                             break;
                                         }
                                         i16++;
-                                        kVar5 = kVar;
+                                        lVar6 = lVar;
                                     }
                                 } else {
-                                    kVar = kVar4;
+                                    lVar = lVar5;
                                 }
                                 z11 = false;
                                 int i17 = z11 ? 4 : 0;
                                 if (z12) {
-                                    kVar2 = kVar;
+                                    lVar2 = lVar;
                                 } else {
                                     i17 |= 32;
-                                    kVar2 = kVar3;
+                                    lVar2 = lVar4;
                                 }
-                                aVar = new w3.i(kVar2, i17, b0Var, list2 != null ? list2 : a1.e, null);
+                                aVar = new w3.h(lVar2, i17, b0Var, list2 != null ? list2 : a1.e, null);
                             } else if (intValue == 11) {
                                 i10 = i15;
                                 arrayList = arrayList2;
-                                z3.k kVar6 = cVar.a;
+                                z3.l lVar7 = cVar.a;
                                 boolean z13 = cVar.b;
                                 if (list2 != null) {
                                     singletonList = list2;
@@ -366,7 +362,7 @@ public final class j extends v2.k {
                                         i11 |= 4;
                                     }
                                 }
-                                aVar = new d0(2, !z13 ? 1 : 0, !z13 ? kVar3 : kVar6, b0Var3, new j4.f(i11, singletonList));
+                                aVar = new d0(2, !z13 ? 1 : 0, !z13 ? lVar4 : lVar7, b0Var3, new j4.f(i11, singletonList));
                                 b0Var = b0Var3;
                             } else if (intValue != 13) {
                                 i10 = i15;
@@ -376,7 +372,7 @@ public final class j extends v2.k {
                             } else {
                                 i10 = i15;
                                 arrayList = arrayList2;
-                                aVar = new t(sVar.d, b0Var3, cVar.a, cVar.b);
+                                aVar = new u(sVar.d, b0Var3, cVar.a, cVar.b);
                                 b0Var = b0Var3;
                             }
                         } else {
@@ -387,13 +383,13 @@ public final class j extends v2.k {
                         }
                         aVar.getClass();
                         try {
-                            z10 = aVar.a(lVar);
-                            lVar.f = 0;
+                            z10 = aVar.b(lVar3);
+                            lVar3.f = 0;
                         } catch (EOFException unused2) {
-                            lVar.f = 0;
+                            lVar3.f = 0;
                             z10 = false;
                         } catch (Throwable th2) {
-                            lVar.f = 0;
+                            lVar3.f = 0;
                             throw th2;
                         }
                         if (z10) {
@@ -412,10 +408,10 @@ public final class j extends v2.k {
                 } else {
                     c3.o oVar2 = bVar2.a;
                     c3.o c11 = oVar2.c();
-                    e2.d.g(!((c11 instanceof d0) || (c11 instanceof w3.i)));
+                    e2.d.g(!((c11 instanceof d0) || (c11 instanceof w3.h)));
                     e2.d.f("Can't recreate wrapped extractors. Outer type: " + oVar2.getClass(), oVar2.c() == oVar2);
-                    if (oVar2 instanceof t) {
-                        dVar = new t(bVar2.b.d, bVar2.c, bVar2.d, bVar2.e);
+                    if (oVar2 instanceof u) {
+                        dVar = new u(bVar2.b.d, bVar2.c, bVar2.d, bVar2.e);
                     } else if (oVar2 instanceof j4.d) {
                         dVar = new j4.d(0);
                     } else if (oVar2 instanceof j4.a) {
@@ -480,11 +476,16 @@ public final class j extends v2.k {
                     i18++;
                 }
             }
-            return lVar;
+            return lVar3;
         } catch (InterruptedException unused3) {
             throw new InterruptedIOException();
-        } catch (TimeoutException e) {
-            throw new IOException(e);
+        } catch (TimeoutException e7) {
+            throw new IOException(e7);
         }
+    }
+
+    @Override // y2.i
+    public final void q() {
+        this.W = true;
     }
 }

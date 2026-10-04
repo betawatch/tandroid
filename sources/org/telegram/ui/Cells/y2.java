@@ -16,11 +16,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f11;
-import org.telegram.ui.Components.mt;
 import org.telegram.ui.Components.nj0;
+import org.telegram.ui.Components.nt;
+import org.telegram.ui.Components.o11;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class y2 extends LinearLayout {
     public static final /* synthetic */ int w = 0;
@@ -31,7 +31,7 @@ public final class y2 extends LinearLayout {
     public ValueAnimator e;
     public final nj0 f;
     public final TextView h;
-    public final f11 n;
+    public final o11 n;
     public int r;
     public int s;
     public final int v;
@@ -46,31 +46,31 @@ public final class y2 extends LinearLayout {
         nj0 nj0Var = new nj0(context);
         this.f = nj0Var;
         nj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(nj0Var, w7.y5.d(100, 100.0f, 17, 52.0f, 4.0f, 52.0f, 0.0f));
+        addView(nj0Var, w7.z5.d(100, 100.0f, 17, 52.0f, 4.0f, 52.0f, 0.0f));
         nj0Var.setOnClickListener(new a(this, 3));
         TextView textView = new TextView(context);
         this.h = textView;
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.m9, false));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.m9, false));
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
-        addView(textView, w7.y5.d(-1, -2.0f, 51, 52.0f, 10.0f, 52.0f, 0.0f));
-        f11 f11Var = new f11(context);
-        this.n = f11Var;
-        f11Var.setFactory(new ViewSwitcher.ViewFactory() { // from class: org.telegram.ui.Cells.v2
+        addView(textView, w7.z5.d(-1, -2.0f, 51, 52.0f, 10.0f, 52.0f, 0.0f));
+        o11 o11Var = new o11(context);
+        this.n = o11Var;
+        o11Var.setFactory(new ViewSwitcher.ViewFactory() { // from class: org.telegram.ui.Cells.v2
             @Override // android.widget.ViewSwitcher.ViewFactory
             public final View makeView() {
                 TextView textView2 = new TextView(context);
-                textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.g9, false));
+                textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.g9, false));
                 textView2.setTextSize(1, 14.0f);
                 textView2.setGravity(17);
                 textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                 return textView2;
             }
         });
-        f11Var.setInAnimation(context, R.anim.alpha_in);
-        f11Var.setOutAnimation(context, R.anim.alpha_out);
-        addView(f11Var, w7.y5.d(-1, -2.0f, 51, 52.0f, 7.0f, 52.0f, 0.0f));
+        o11Var.setInAnimation(context, R.anim.alpha_in);
+        o11Var.setOutAnimation(context, R.anim.alpha_out);
+        addView(o11Var, w7.z5.d(-1, -2.0f, 51, 52.0f, 7.0f, 52.0f, 0.0f));
     }
 
     public final void a(boolean z10) {
@@ -88,7 +88,7 @@ public final class y2 extends LinearLayout {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(this.a, 1.0f).setDuration(250L);
         this.e = duration;
-        duration.setInterpolator(mt.d);
+        duration.setInterpolator(nt.d);
         this.e.addUpdateListener(new w2(this, 0));
         this.e.addListener(new x2(this, 1));
         this.e.start();
@@ -157,8 +157,8 @@ public final class y2 extends LinearLayout {
         if (size2 == 0) {
             size2 = (AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight;
         }
-        if (getParent() instanceof org.telegram.ui.Components.ia) {
-            size2 -= ((org.telegram.ui.Components.ia) getParent()).X2;
+        if (getParent() instanceof org.telegram.ui.Components.ja) {
+            size2 -= ((org.telegram.ui.Components.ja) getParent()).e3;
         }
         ArrayList<TLRPC.RecentMeUrl> arrayList = MessagesController.getInstance(this.v).hintDialogs;
         if (!arrayList.isEmpty()) {

@@ -1,37 +1,121 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.KeyEvent;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.View;
-import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class cj extends FrameLayout {
-    public final /* synthetic */ wn a;
+public final class cj extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ boolean b;
+    public int c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cj(wn wnVar, Activity activity) {
-        super(activity);
-        this.a = wnVar;
+    public cj(org.telegram.ui.Components.pv0 pv0Var, boolean z10, int i10, org.telegram.ui.Components.iu0 iu0Var) {
+        this.e = pv0Var;
+        this.b = z10;
+        this.c = i10;
+        this.d = iu0Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-            this.a.A7(true);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.ActionBar.k kVar;
+        View m10;
+        int i10;
+        s4.h0 adapter;
+        switch (this.a) {
+            case 0:
+                yn ynVar = (yn) this.e;
+                ynVar.M5 = true;
+                ((org.telegram.ui.ActionBar.n2) ynVar).fragmentBeginToShow = true;
+                ynVar.T9 = null;
+                if (this.b) {
+                    ynVar.ia = false;
+                }
+                kVar = ((org.telegram.ui.ActionBar.n2) ynVar).actionBar;
+                kVar.invalidate();
+                ynVar.V0.invalidate();
+                AndroidUtilities.runOnUIThread(new bj(this, 0), 32L);
+                ((Runnable) this.d).run();
+                break;
+            default:
+                int i11 = this.c;
+                org.telegram.ui.Components.pv0 pv0Var = (org.telegram.ui.Components.pv0) this.e;
+                int[] iArr = pv0Var.m1;
+                org.telegram.ui.Components.iu0[] iu0VarArr = pv0Var.k0;
+                pv0Var.o1 = false;
+                boolean z10 = this.b;
+                if (z10) {
+                    int i12 = pv0Var.q1;
+                    iArr[i11] = i12;
+                    if (i11 == 0) {
+                        SharedConfig.setMediaColumnsCount(i12);
+                    } else if (pv0Var.c0(((org.telegram.ui.Components.iu0) this.d).F) >= 5) {
+                        SharedConfig.setStoriesColumnsCount(pv0Var.q1);
+                    }
+                }
+                for (int i13 = 0; i13 < iu0VarArr.length; i13++) {
+                    org.telegram.ui.Components.iu0 iu0Var = iu0VarArr[i13];
+                    if (iu0Var != null && iu0Var.h != null && (((i10 = iu0Var.F) == 0 || org.telegram.ui.Components.pv0.p0(i10)) && (adapter = iu0VarArr[i13].h.getAdapter()) != null)) {
+                        int h = adapter.h();
+                        if (i13 == 0) {
+                            pv0Var.t1[0].g(false);
+                        }
+                        if (z10) {
+                            iu0VarArr[i13].x.y1(iArr[i11]);
+                            iu0VarArr[i13].h.a0();
+                            if (adapter.h() == h) {
+                                AndroidUtilities.updateVisibleRows(iu0VarArr[i13].h);
+                            } else {
+                                adapter.l();
+                            }
+                        }
+                        iu0VarArr[i13].r.setVisibility(8);
+                    }
+                }
+                if (pv0Var.s >= 0) {
+                    for (int i14 = 0; i14 < iu0VarArr.length; i14++) {
+                        org.telegram.ui.Components.iu0 iu0Var2 = iu0VarArr[i14];
+                        if (iu0Var2.F == pv0Var.p1) {
+                            if (z10 && (m10 = iu0Var2.s.m(pv0Var.s)) != null) {
+                                pv0Var.v = m10.getTop();
+                            }
+                            org.telegram.ui.Components.iu0 iu0Var3 = iu0VarArr[i14];
+                            iu0Var3.x.h1(pv0Var.s, (-iu0Var3.h.getPaddingTop()) + pv0Var.v);
+                        }
+                    }
+                } else {
+                    pv0Var.X0();
+                }
+                super.onAnimationEnd(animator);
+                break;
         }
-        return super.dispatchKeyEvent(keyEvent);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int min = Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(300.0f));
-        if (min == 0) {
-            min = AndroidUtilities.dp(300.0f);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        int i10;
+        switch (this.a) {
+            case 0:
+                super.onAnimationStart(animator);
+                i10 = ((org.telegram.ui.ActionBar.n2) ((yn) this.e)).currentAccount;
+                this.c = NotificationCenter.getInstance(i10).setAnimationInProgress(this.c, null);
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_31));
+    }
+
+    public cj(yn ynVar, boolean z10, Runnable runnable) {
+        this.e = ynVar;
+        this.b = z10;
+        this.d = runnable;
     }
 }

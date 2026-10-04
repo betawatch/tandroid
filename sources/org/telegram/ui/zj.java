@@ -3,26 +3,26 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class zj extends org.telegram.ui.Components.p21 {
-    public final /* synthetic */ wn e;
+public final class zj extends org.telegram.ui.Components.y21 {
+    public final /* synthetic */ yn e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zj(wn wnVar, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+    public zj(yn ynVar, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context, i10, d6Var);
-        this.e = wnVar;
+        this.e = ynVar;
     }
 
-    @Override // org.telegram.ui.Components.p21, android.view.View
+    @Override // org.telegram.ui.Components.y21, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         org.telegram.ui.ActionBar.k kVar;
         if (getAlpha() == 0.0f) {
             return false;
         }
-        wn wnVar = this.e;
-        kVar = ((org.telegram.ui.ActionBar.m2) wnVar).actionBar;
-        if (kVar.s() || wnVar.A9()) {
+        yn ynVar = this.e;
+        kVar = ((org.telegram.ui.ActionBar.n2) ynVar).actionBar;
+        if (kVar.s() || ynVar.z9()) {
             return false;
         }
         return super.onTouchEvent(motionEvent);

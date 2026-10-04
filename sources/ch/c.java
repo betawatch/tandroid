@@ -5,10 +5,10 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
 import java.util.Arrays;
+import w7.e9;
 import w7.q;
-import yf.e0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class c {
     public int d;
@@ -29,7 +29,7 @@ public final class c {
 
     public final void a() {
         float[] fArr = this.b;
-        this.l = e0.c(fArr);
+        this.l = e9.a(fArr);
         Rect rect = this.a;
         Rect rect2 = this.m;
         rect2.set(rect);
@@ -45,7 +45,7 @@ public final class c {
         path.addRoundRect(f7, f10, f11, f12, this.b, direction);
         path.close();
         float min = Math.min(rect2.width(), rect2.height()) / 2.0f;
-        float[] fArr2 = d.E;
+        float[] fArr2 = d.F;
         Arrays.fill(fArr2, 0.0f);
         fArr2[0] = fArr[0];
         fArr2[1] = fArr[1];

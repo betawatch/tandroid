@@ -8,42 +8,42 @@ import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.k2;
+import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.n50;
+import org.telegram.ui.n20;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j0 b;
+    public final /* synthetic */ k0 b;
 
-    public /* synthetic */ w(j0 j0Var, int i10) {
+    public /* synthetic */ w(k0 k0Var, int i10) {
         this.a = i10;
-        this.b = j0Var;
+        this.b = k0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        j0 j0Var = this.b;
+        k0 k0Var = this.b;
         switch (i10) {
             case 0:
                 if (LaunchActivity.R() != null) {
-                    k2 k2Var = new k2();
-                    k2Var.a = true;
-                    j0Var.K0.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), k2Var);
+                    l2 l2Var = new l2();
+                    l2Var.a = true;
+                    k0Var.K0.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), l2Var);
                     break;
                 }
                 break;
             case 1:
-                j0Var.x0.e(j0Var.b0, false);
-                j0Var.z1();
+                k0Var.x0.e(k0Var.b0, false);
+                k0Var.z1();
                 break;
             case 2:
-                HashSet hashSet = j0Var.y0;
+                HashSet hashSet = k0Var.y0;
                 yc X = yc.X();
                 if (X != null) {
                     if (hashSet.size() != 1) {
@@ -56,20 +56,20 @@ public final /* synthetic */ class w implements Runnable {
                 }
                 break;
             case 3:
-                ci.d dVar = j0Var.S0;
-                TLRPC.ChatFull t12 = j0Var.t1();
+                ci.d dVar = k0Var.S0;
+                TLRPC.ChatFull t12 = k0Var.t1();
                 dVar.b(Math.max(t12.boosts_unrestrict - t12.boosts_applied, 0), false);
                 break;
             default:
-                if (ChatObject.hasAdminRights(j0Var.s1())) {
-                    if (j0Var.E0.getParent() != null) {
-                        ((ViewGroup) j0Var.E0.getParent()).removeView(j0Var.E0);
+                if (ChatObject.hasAdminRights(k0Var.s1())) {
+                    if (k0Var.E0.getParent() != null) {
+                        ((ViewGroup) k0Var.E0.getParent()).removeView(k0Var.E0);
                     }
-                    n50 n50Var = j0Var.L0;
-                    if (n50Var != null && n50Var.getParent() != null) {
-                        ((ViewGroup) j0Var.L0.getParent()).removeView(j0Var.L0);
+                    n20 n20Var = k0Var.L0;
+                    if (n20Var != null && n20Var.getParent() != null) {
+                        ((ViewGroup) k0Var.L0.getParent()).removeView(k0Var.L0);
                     }
-                    j0Var.d.setPadding(0, 0, 0, 0);
+                    k0Var.d.setPadding(0, 0, 0, 0);
                     break;
                 }
                 break;

@@ -1,17 +1,53 @@
 package le;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.graphics.RectF;
+import w7.q;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public interface g {
-    void a();
+public final class g implements Comparable {
+    public final Object a;
+    public int b;
+    public final m c;
+    public final m d;
+    public final n e;
+    public final m f;
+    public boolean h = false;
 
-    void e(boolean z10);
+    public g(int i10, Object obj, boolean z10) {
+        this.a = obj;
+        this.b = i10;
+        this.d = new m(z10 ? 1.0f : 0.0f);
+        this.c = new m(i10);
+        this.e = new n();
+        this.f = new m(0.0f);
+        a(false);
+    }
 
-    boolean g();
+    public final void a(boolean z10) {
+        this.c.c(z10);
+        this.d.c(z10);
+        this.e.c(z10);
+        this.f.c(z10);
+        Object obj = this.a;
+        if (obj instanceof n) {
+            ((n) obj).c(z10);
+        }
+    }
 
-    boolean h(float f7);
+    public final RectF b() {
+        n nVar = this.e;
+        RectF rectF = nVar.e;
+        rectF.set(nVar.a.a, nVar.b.a, nVar.c.a, nVar.d.a);
+        return rectF;
+    }
 
-    void i();
+    public final float c() {
+        return q.a(this.d.a, 0.0f, 1.0f);
+    }
 
-    void u();
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return Integer.compare(this.b, ((g) obj).b);
+    }
 }

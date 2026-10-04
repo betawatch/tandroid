@@ -3,7 +3,7 @@ package c3;
 import b2.s0;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d {
     public final ArrayList a;
@@ -112,8 +112,8 @@ public final class d {
                 f7 = 1.0f;
             }
             return new d(arrayList, x10, i10, i11, i12, i13, i14, i15, i16, i17, f7, str);
-        } catch (ArrayIndexOutOfBoundsException e) {
-            throw s0.a(e, "Error parsing AVC config");
+        } catch (ArrayIndexOutOfBoundsException e7) {
+            throw s0.a(e7, "Error parsing AVC config");
         }
     }
 }

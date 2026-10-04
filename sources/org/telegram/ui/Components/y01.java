@@ -1,32 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class y01 extends MetricAffectingSpan {
-    public TextPaint a;
+public final class y01 {
+    public final long a;
+    public final TLRPC.InputFile b;
+    public final TLRPC.InputEncryptedFile c;
+    public final byte[] d;
+    public final byte[] e;
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        TextPaint textPaint2 = this.a;
-        textPaint.setColor(textPaint2.getColor());
-        textPaint.setTypeface(textPaint2.getTypeface());
-        textPaint.setFlags(textPaint2.getFlags());
-        textPaint.setTextSize(textPaint2.getTextSize());
-        textPaint.baselineShift = textPaint2.baselineShift;
-        textPaint.bgColor = textPaint2.bgColor;
-    }
-
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        TextPaint textPaint2 = this.a;
-        textPaint.setColor(textPaint2.getColor());
-        textPaint.setTypeface(textPaint2.getTypeface());
-        textPaint.setFlags(textPaint2.getFlags());
-        textPaint.setTextSize(textPaint2.getTextSize());
-        textPaint.baselineShift = textPaint2.baselineShift;
-        textPaint.bgColor = textPaint2.bgColor;
+    public y01(long j3, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2) {
+        this.a = j3;
+        this.b = inputFile;
+        this.c = inputEncryptedFile;
+        this.d = bArr;
+        this.e = bArr2;
     }
 }

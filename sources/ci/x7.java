@@ -1,58 +1,60 @@
 package ci;
 
-import android.graphics.Paint;
-import android.view.KeyEvent;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.wi;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewGroup;
+import j$.util.Objects;
+import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class x7 implements Utilities.CallbackReturn {
+public final /* synthetic */ class x7 implements bh.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ KeyEvent.Callback b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ x7(KeyEvent.Callback callback, int i10) {
+    public /* synthetic */ x7(Object obj, int i10) {
         this.a = i10;
-        this.b = callback;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // bh.a
+    public final void b(ah.a aVar, RectF rectF) {
+        switch (this.a) {
+        }
+        aVar.a = true;
+    }
+
+    @Override // bh.a
+    public final void f(Canvas canvas, RectF rectF) {
         switch (this.a) {
             case 0:
-                MessageObject messageObject = (MessageObject) obj;
-                ((d8) this.b).r0 = messageObject;
-                return Boolean.valueOf(MediaController.getInstance().setPlaylist(org.telegram.messenger.f0.k(messageObject), messageObject, 0L));
-            case 1:
-                di.d dVar = (di.d) this.b;
-                return dVar.n[((Integer) obj).intValue() % dVar.n.length];
-            case 2:
-                return new org.telegram.ui.web.f1(2, (org.telegram.ui.l0) this.b, (Integer) obj);
-            case 3:
-                qg.n0 n0Var = (qg.n0) this.b;
-                if (((Integer) obj).intValue() == 2) {
-                    wi wiVar = new wi(n0Var.getContext(), new qg.y(n0Var), false, false, false, n0Var.Q1);
-                    wiVar.drawNavigationBar = true;
-                    wiVar.L1(LocaleController.getString(R.string.AddImage));
-                    wiVar.Z1 = new qg.z(n0Var, wiVar);
-                    wiVar.setOnDismissListener(new f1(7));
-                    wiVar.J1(1, false);
-                    wiVar.r1();
-                    MediaController.forceBroadcastNewPhotos = true;
-                    wiVar.j0.f0();
-                    wiVar.show();
-                }
-                return Boolean.TRUE;
-            case 4:
-                Paint[] paintArr = ((vg.r) this.b).h;
-                return paintArr[((Integer) obj).intValue() % paintArr.length];
+                c8 c8Var = (c8) this.b;
+                zl0 zl0Var = c8Var.d;
+                gh.d.b(zl0Var, canvas, rectF, zl0Var, c8Var.getContainerView(), 255);
+                break;
             default:
-                yh.y6 y6Var = (yh.y6) this.b;
-                return y6Var.n[((Integer) obj).intValue() % y6Var.n.length];
+                xh.s2 s2Var = (xh.s2) this.b;
+                for (View view : s2Var.h.getViewPages()) {
+                    if (view instanceof xh.o2) {
+                        xh.o2 o2Var = (xh.o2) view;
+                        if (o2Var.h == null) {
+                            final xh.j2 j2Var = o2Var.f;
+                            ViewGroup viewGroup = s2Var.S;
+                            Objects.requireNonNull(j2Var);
+                            o2Var.h = new ah.n(j2Var, viewGroup, new ah.m() { // from class: xh.s1
+                                @Override // ah.m
+                                public final boolean a(Canvas canvas2, View view2, long j3) {
+                                    return c71.this.drawChild(canvas2, view2, j3);
+                                }
+                            });
+                        }
+                        o2Var.h.f(canvas, rectF);
+                    }
+                }
+                break;
         }
     }
 }

@@ -9,8 +9,9 @@ import java.util.Locale;
 import java.util.regex.Pattern;
 import org.json.JSONException;
 import org.json.JSONObject;
+import w7.g0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a extends o6.a {
     public static final Parcelable.Creator<a> CREATOR = new v(0);
@@ -47,9 +48,9 @@ public final class a extends o6.a {
         }
         try {
             this.x = new JSONObject(str6);
-        } catch (JSONException e) {
+        } catch (JSONException e7) {
             Locale locale = Locale.ROOT;
-            Log.w("AdBreakClipInfo", "Error creating AdBreakClipInfo: " + e.getMessage());
+            Log.w("AdBreakClipInfo", "Error creating AdBreakClipInfo: " + e7.getMessage());
             this.h = null;
             this.x = new JSONObject();
         }
@@ -124,21 +125,21 @@ public final class a extends o6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.l(parcel, 2, this.a);
-        w7.f0.l(parcel, 3, this.b);
-        w7.f0.s(parcel, 4, 8);
+        int q6 = g0.q(parcel, 20293);
+        g0.l(parcel, 2, this.a);
+        g0.l(parcel, 3, this.b);
+        g0.s(parcel, 4, 8);
         parcel.writeLong(this.c);
-        w7.f0.l(parcel, 5, this.d);
-        w7.f0.l(parcel, 6, this.e);
-        w7.f0.l(parcel, 7, this.f);
-        w7.f0.l(parcel, 8, this.h);
-        w7.f0.l(parcel, 9, this.n);
-        w7.f0.l(parcel, 10, this.r);
-        w7.f0.s(parcel, 11, 8);
+        g0.l(parcel, 5, this.d);
+        g0.l(parcel, 6, this.e);
+        g0.l(parcel, 7, this.f);
+        g0.l(parcel, 8, this.h);
+        g0.l(parcel, 9, this.n);
+        g0.l(parcel, 10, this.r);
+        g0.s(parcel, 11, 8);
         parcel.writeLong(this.s);
-        w7.f0.l(parcel, 12, this.v);
-        w7.f0.k(parcel, 13, this.w, i10);
-        w7.f0.r(parcel, q6);
+        g0.l(parcel, 12, this.v);
+        g0.k(parcel, 13, this.w, i10);
+        g0.r(parcel, q6);
     }
 }

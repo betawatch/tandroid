@@ -3,7 +3,7 @@ package fi;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class h implements Runnable {
         p pVar = this.b;
         switch (i10) {
             case 0:
-                p.W(pVar);
+                p.U(pVar);
                 break;
             default:
                 pVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_CHAT));

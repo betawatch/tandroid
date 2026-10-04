@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.ui.Cells.a0;
 import org.telegram.ui.Cells.n7;
-import w7.o6;
+import w7.p6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j implements Runnable {
     public final /* synthetic */ int a;
@@ -92,7 +92,7 @@ public final class j implements Runnable {
 
     public j(List list, int i10, Throwable th2) {
         this.a = 0;
-        o6.a(list, "initCallbacks cannot be null");
+        p6.a(list, "initCallbacks cannot be null");
         this.c = new ArrayList(list);
         this.b = i10;
     }

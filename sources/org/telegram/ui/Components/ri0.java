@@ -25,15 +25,15 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class ri0 extends FrameLayout {
     public static final /* synthetic */ int R = 0;
     public boolean E;
-    public sr F;
+    public tr F;
     public gd0 G;
     public gd0 H;
-    public org.telegram.ui.kc0 I;
+    public org.telegram.ui.oc0 I;
     public pi0 J;
     public TextView K;
     public boolean L;
@@ -41,7 +41,7 @@ public final class ri0 extends FrameLayout {
     public int N;
     public boolean O;
     public oi0 P;
-    public org.telegram.ui.mc0 Q;
+    public org.telegram.ui.qc0 Q;
     public VelocityTracker a;
     public int b;
     public int c;
@@ -78,7 +78,7 @@ public final class ri0 extends FrameLayout {
         } else {
             this.s.setDuration(250L);
         }
-        this.s.setInterpolator(sr.f);
+        this.s.setInterpolator(tr.f);
         this.s.addListener(new qi0(this, 2));
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         this.s.start();
@@ -123,7 +123,7 @@ public final class ri0 extends FrameLayout {
                             this.h = animatorSet;
                             animatorSet.playTogether(ObjectAnimator.ofFloat(ni0Var, (Property<ni0, Float>) View.TRANSLATION_Y, 0.0f));
                             this.h.setDuration((int) ((Math.max(0.0f, r6) / AndroidUtilities.getPixelsInCM(0.8f, false)) * 150.0f));
-                            this.h.setInterpolator(sr.g);
+                            this.h.setInterpolator(tr.g);
                             this.h.addListener(new qi0(this, i10));
                             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
                             this.h.start();
@@ -183,43 +183,43 @@ public final class ri0 extends FrameLayout {
         float value = getValue();
         String formatDistance = LocaleController.formatDistance(value, 2, Boolean.valueOf(this.O));
         int i10 = (int) value;
-        org.telegram.ui.cd0 cd0Var = this.I.b;
-        ArrayList arrayList = cd0Var.g0;
-        IMapsProvider.ICircle iCircle = cd0Var.O;
+        org.telegram.ui.gd0 gd0Var = this.I.b;
+        ArrayList arrayList = gd0Var.g0;
+        IMapsProvider.ICircle iCircle = gd0Var.O;
         if (iCircle != null) {
             iCircle.setRadius(i10);
             if (z10) {
                 IMapsProvider.ILatLngBoundsBuilder onCreateLatLngBoundsBuilder = ApplicationLoader.getMapsProvider().onCreateLatLngBoundsBuilder();
-                onCreateLatLngBoundsBuilder.include(new IMapsProvider.LatLng(cd0Var.w0.getLatitude(), cd0Var.w0.getLongitude()));
+                onCreateLatLngBoundsBuilder.include(new IMapsProvider.LatLng(gd0Var.w0.getLatitude(), gd0Var.w0.getLongitude()));
                 try {
                     int max = Math.max(i10, MediaDataController.MAX_LINKS_COUNT);
                     IMapsProvider.LatLng center = onCreateLatLngBoundsBuilder.build().getCenter();
                     double d = max;
-                    IMapsProvider.LatLng p02 = org.telegram.ui.cd0.p0(center, d, d);
+                    IMapsProvider.LatLng p02 = org.telegram.ui.gd0.p0(center, d, d);
                     double d10 = -max;
-                    onCreateLatLngBoundsBuilder.include(org.telegram.ui.cd0.p0(center, d10, d10));
+                    onCreateLatLngBoundsBuilder.include(org.telegram.ui.gd0.p0(center, d10, d10));
                     onCreateLatLngBoundsBuilder.include(p02);
                     IMapsProvider.ILatLngBounds build = onCreateLatLngBoundsBuilder.build();
                     try {
-                        cd0Var.I.setPadding(AndroidUtilities.dp(70.0f), 0, AndroidUtilities.dp(70.0f), (int) ((cd0Var.R.getCustomView().getMeasuredHeight() - AndroidUtilities.dp(40.0f)) + cd0Var.S.getTranslationY()));
-                        cd0Var.I.animateCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLngBounds(build, 0), 500, null);
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                        gd0Var.I.setPadding(AndroidUtilities.dp(70.0f), 0, AndroidUtilities.dp(70.0f), (int) ((gd0Var.R.getCustomView().getMeasuredHeight() - AndroidUtilities.dp(40.0f)) + gd0Var.S.getTranslationY()));
+                        gd0Var.I.animateCamera(ApplicationLoader.getMapsProvider().newCameraUpdateLatLngBounds(build, 0), 500, null);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
                     }
                 } catch (Exception unused) {
                 }
             }
         }
-        if (!DialogObject.isChatDialog(cd0Var.e0)) {
+        if (!DialogObject.isChatDialog(gd0Var.e0)) {
             int size = arrayList.size();
             for (int i11 = 0; i11 < size; i11++) {
-                org.telegram.ui.wc0 wc0Var = (org.telegram.ui.wc0) arrayList.get(i11);
-                if (wc0Var.b != null && !UserObject.isUserSelf(wc0Var.c)) {
-                    TLRPC.GeoPoint geoPoint = wc0Var.b.media.geo;
+                org.telegram.ui.ad0 ad0Var = (org.telegram.ui.ad0) arrayList.get(i11);
+                if (ad0Var.b != null && !UserObject.isUserSelf(ad0Var.c)) {
+                    TLRPC.GeoPoint geoPoint = ad0Var.b.media.geo;
                     Location location = new Location("network");
                     location.setLatitude(geoPoint.lat);
                     location.setLongitude(geoPoint._long);
-                    if (cd0Var.w0.distanceTo(location) > i10) {
+                    if (gd0Var.w0.distanceTo(location) > i10) {
                     }
                 }
             }

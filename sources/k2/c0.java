@@ -1,38 +1,31 @@
 package k2;
 
-import android.media.AudioTrack;
+import android.os.Handler;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class c0 extends AudioTrack.StreamEventCallback {
-    public final /* synthetic */ d0 a;
+public final /* synthetic */ class c0 implements Executor {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public c0(d0 d0Var) {
-        this.a = d0Var;
+    public /* synthetic */ c0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.media.AudioTrack.StreamEventCallback
-    public final void onDataRequest(AudioTrack audioTrack, int i10) {
-        e0 e0Var;
-        n nVar;
-        if (audioTrack.equals(this.a.c.x) && (nVar = (e0Var = this.a.c).t) != null && e0Var.X) {
-            nVar.f0();
-        }
-    }
-
-    @Override // android.media.AudioTrack.StreamEventCallback
-    public final void onPresentationEnded(AudioTrack audioTrack) {
-        if (audioTrack.equals(this.a.c.x)) {
-            this.a.c.W = true;
-        }
-    }
-
-    @Override // android.media.AudioTrack.StreamEventCallback
-    public final void onTearDown(AudioTrack audioTrack) {
-        e0 e0Var;
-        n nVar;
-        if (audioTrack.equals(this.a.c.x) && (nVar = (e0Var = this.a.c).t) != null && e0Var.X) {
-            nVar.f0();
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                ((Handler) this.b).post(runnable);
+                break;
+            case 1:
+                e2.d0.U(((m4.a0) this.b).l, runnable);
+                break;
+            default:
+                ((p4.b) this.b).post(runnable);
+                break;
         }
     }
 }

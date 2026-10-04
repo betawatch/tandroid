@@ -15,14 +15,15 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertController$RecycleListView;
 import b2.q0;
 import com.google.android.gms.internal.play_billing.h4;
+import hg.k0;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b0 implements r2.u {
+public final /* synthetic */ class b0 implements r2.v {
     public final /* synthetic */ int a;
     public int b;
     public Object c;
@@ -31,12 +32,20 @@ public final /* synthetic */ class b0 implements r2.u {
         this.a = i10;
     }
 
-    @Override // r2.u
-    public boolean Z(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+    @Override // r2.v
+    public boolean Y(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
         return codecCapabilities.isFeatureRequired(str);
     }
 
-    public Object a() {
+    @Override // r2.v
+    public MediaCodecInfo a(int i10) {
+        if (((MediaCodecInfo[]) this.c) == null) {
+            this.c = new MediaCodecList(this.b).getCodecInfos();
+        }
+        return ((MediaCodecInfo[]) this.c)[i10];
+    }
+
+    public Object b() {
         Object[] objArr = (Object[]) this.c;
         int i10 = this.b;
         if (i10 <= 0) {
@@ -48,14 +57,6 @@ public final /* synthetic */ class b0 implements r2.u {
         objArr[i11] = null;
         this.b--;
         return obj;
-    }
-
-    @Override // r2.u
-    public MediaCodecInfo b(int i10) {
-        if (((MediaCodecInfo[]) this.c) == null) {
-            this.c = new MediaCodecList(this.b).getCodecInfos();
-        }
-        return ((MediaCodecInfo[]) this.c)[i10];
     }
 
     public void c(long j3) {
@@ -78,6 +79,14 @@ public final /* synthetic */ class b0 implements r2.u {
         }
         System.arraycopy(jArr, 0, (long[]) this.c, this.b, jArr.length);
         this.b = length;
+    }
+
+    @Override // r2.v
+    public int d0() {
+        if (((MediaCodecInfo[]) this.c) == null) {
+            this.c = new MediaCodecList(this.b).getCodecInfos();
+        }
+        return ((MediaCodecInfo[]) this.c).length;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -145,9 +154,9 @@ public final /* synthetic */ class b0 implements r2.u {
         gVar.setCanceledOnTouchOutside(true);
         gVar.setOnCancelListener(null);
         gVar.setOnDismissListener(null);
-        l.m mVar = cVar.h;
-        if (mVar != null) {
-            gVar.setOnKeyListener(mVar);
+        l.l lVar = cVar.h;
+        if (lVar != null) {
+            gVar.setOnKeyListener(lVar);
         }
         return gVar;
     }
@@ -156,7 +165,7 @@ public final /* synthetic */ class b0 implements r2.u {
         if (i10 >= 0 && i10 < this.b) {
             return ((long[]) this.c)[i10];
         }
-        StringBuilder j3 = hg.c.j(i10, "Invalid index ", ", size is ");
+        StringBuilder j3 = k0.j(i10, "Invalid index ", ", size is ");
         j3.append(this.b);
         throw new IndexOutOfBoundsException(j3.toString());
     }
@@ -165,18 +174,10 @@ public final /* synthetic */ class b0 implements r2.u {
         return DesugarCollections.unmodifiableList(new ArrayList((ArrayList) this.c));
     }
 
-    @Override // r2.u
-    public int g0() {
-        if (((MediaCodecInfo[]) this.c) == null) {
-            this.c = new MediaCodecList(this.b).getCodecInfos();
-        }
-        return ((MediaCodecInfo[]) this.c).length;
-    }
-
     public long h(c3.l lVar) {
         e2.v vVar = (e2.v) this.c;
         int i10 = 0;
-        lVar.h(vVar.a, 0, 1, false);
+        lVar.f(vVar.a, 0, 1, false);
         int i11 = vVar.a[0] & 255;
         if (i11 == 0) {
             return Long.MIN_VALUE;
@@ -188,7 +189,7 @@ public final /* synthetic */ class b0 implements r2.u {
             i13++;
         }
         int i14 = i11 & (~i12);
-        lVar.h(vVar.a, 1, i13, false);
+        lVar.f(vVar.a, 1, i13, false);
         while (i10 < i13) {
             i10++;
             i14 = (vVar.a[i10] & 255) + (i14 << 8);
@@ -238,15 +239,15 @@ public final /* synthetic */ class b0 implements r2.u {
                 U0.recycle();
                 throw th2;
             }
-        } catch (Exception e) {
+        } catch (Exception e7) {
             d0Var.F(95, 28, g0.p);
-            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An error occurred while retrieving billing override.", e);
+            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An error occurred while retrieving billing override.", e7);
             h4Var.a(0);
             return "billingOverrideService.getBillingOverride";
         }
     }
 
-    @Override // r2.u
+    @Override // r2.v
     public boolean p0() {
         return true;
     }
@@ -260,7 +261,7 @@ public final /* synthetic */ class b0 implements r2.u {
         }
     }
 
-    @Override // r2.u
+    @Override // r2.v
     public boolean v(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
         return codecCapabilities.isFeatureSupported(str);
     }
@@ -324,9 +325,9 @@ public final /* synthetic */ class b0 implements r2.u {
 
     public b0(Context context) {
         this.a = 3;
-        int e = g.g.e(context, 0);
-        this.c = new g.c(new ContextThemeWrapper(context, g.g.e(context, e)));
-        this.b = e;
+        int e7 = g.g.e(context, 0);
+        this.c = new g.c(new ContextThemeWrapper(context, g.g.e(context, e7)));
+        this.b = e7;
     }
 
     public b0(boolean z10, boolean z11, boolean z12) {

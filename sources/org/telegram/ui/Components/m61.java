@@ -1,26 +1,38 @@
 package org.telegram.ui.Components;
 
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
 import android.view.View;
-import org.telegram.messenger.Utilities;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m61 implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ o61 a;
+public final class m61 extends URLSpan {
+    public final m11 a;
+    public boolean b;
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(this.a.X((x51) obj, (View) obj2));
+    public m61(String str, m11 m11Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = m11Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        this.a.W((x51) obj, (View) obj2);
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        if (this.b && (view.getContext() instanceof LaunchActivity)) {
+            ((LaunchActivity) view.getContext()).X0 = true;
+        }
+        nf.f.p(view.getContext(), Uri.parse(getURL()));
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        m11 m11Var = this.a;
+        if (m11Var != null) {
+            m11Var.a(textPaint);
+            textPaint.setUnderlineText(textPaint.linkColor == color);
+        }
     }
 }

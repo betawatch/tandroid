@@ -7,7 +7,7 @@ import c3.o;
 import c3.q;
 import c3.s;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d implements q {
     public static final s s = new s();
@@ -45,11 +45,11 @@ public final class d implements q {
                 cVar.e = cVar.c;
             } else {
                 cVar.f = j3;
-                h0 U = aVar.U(i11);
-                cVar.e = U;
+                h0 L = aVar.L(i11);
+                cVar.e = L;
                 b2.s sVar = cVar.d;
                 if (sVar != null) {
-                    U.b(sVar);
+                    L.b(sVar);
                 }
             }
             sparseArray.put(i10, cVar);
@@ -85,11 +85,11 @@ public final class d implements q {
                 cVar.e = cVar.c;
             } else {
                 cVar.f = j10;
-                h0 U = aVar.U(cVar.a);
-                cVar.e = U;
+                h0 L = aVar.L(cVar.a);
+                cVar.e = L;
                 b2.s sVar = cVar.d;
                 if (sVar != null) {
-                    U.b(sVar);
+                    L.b(sVar);
                 }
             }
             i10++;

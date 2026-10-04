@@ -5,7 +5,7 @@ import c3.h0;
 import i2.m0;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class s implements i {
     public final c0 a;
@@ -128,9 +128,9 @@ public final class s implements i {
             }
         }
         m0 m0Var4 = this.j;
-        boolean e = m0Var4.e(i11);
+        boolean e7 = m0Var4.e(i11);
         e2.v vVar = this.n;
-        if (e) {
+        if (e7) {
             vVar.H(f2.o.m(m0Var4.e, (byte[]) m0Var4.f), (byte[]) m0Var4.f);
             vVar.K(5);
             cVar.a(j10, vVar);

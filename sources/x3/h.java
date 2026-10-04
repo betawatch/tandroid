@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import n7.z0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class h extends i {
     public static final byte[] o = {79, 112, 117, 115, 72, 101, 97, 100};
@@ -59,7 +59,7 @@ public final class h extends i {
             if (!this.n) {
                 this.n = true;
                 vVar.K(8);
-                p0 r10 = c3.b.r(i0.w(c3.b.v(vVar, false, false).a));
+                p0 r10 = c3.b.r(i0.w((String[]) c3.b.v(vVar, false, false).b));
                 if (r10 != null) {
                     r a10 = ((s) z0Var.b).a();
                     a10.k = r10.b(((s) z0Var.b).l);

@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ja implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -37,19 +37,19 @@ public final /* synthetic */ class ja implements RequestDelegate {
                 ((MessagesController) this.b).lambda$getSavedReactionTags$486(this.c, (TLRPC.messages_SavedReactionTags) this.d, (TLRPC.TL_messages_getSavedReactionTags) this.e, tLObject, tL_error);
                 break;
             case 2:
-                ((MessagesController) this.b).lambda$addUsersToChannel$274((org.telegram.ui.ActionBar.m2) this.d, (TLRPC.TL_channels_inviteToChannel) this.e, this.c, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$addUsersToChannel$274((org.telegram.ui.ActionBar.n2) this.d, (TLRPC.TL_channels_inviteToChannel) this.e, this.c, tLObject, tL_error);
                 break;
             case 3:
-                ((TopicsController) this.b).lambda$pinTopic$20((org.telegram.ui.ActionBar.m2) this.d, this.c, (ArrayList) this.e, tLObject, tL_error);
+                ((TopicsController) this.b).lambda$pinTopic$20((org.telegram.ui.ActionBar.n2) this.d, this.c, (ArrayList) this.e, tLObject, tL_error);
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f((org.telegram.ui.ActionBar.a2) this.b, tLObject, this.c, (AccountInstance) this.d, (MessagesStorage.BooleanCallback) this.e, 5));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f((org.telegram.ui.ActionBar.b2) this.b, tLObject, this.c, (AccountInstance) this.d, (MessagesStorage.BooleanCallback) this.e, 5));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new ai.ga((org.telegram.ui.ActionBar.m2) this.b, tLObject, (MessagesController.DialogFilter) this.d, tL_error, (Runnable) this.e, this.c, 3));
+                AndroidUtilities.runOnUIThread(new ai.ga((org.telegram.ui.ActionBar.n2) this.b, tLObject, (MessagesController.DialogFilter) this.d, tL_error, (Runnable) this.e, this.c, 3));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f((yh.o) this.b, (org.telegram.ui.ActionBar.a2) this.d, tLObject, this.c, (Utilities.Callback) this.e));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f((yh.o) this.b, (org.telegram.ui.ActionBar.b2) this.d, tLObject, this.c, (Utilities.Callback) this.e));
                 break;
             case 7:
                 AndroidUtilities.runOnUIThread(new ai.ga((yh.x3) this.b, tLObject, (String) this.d, (TL_stars.InputSavedStarGift) this.e, tL_error, this.c, 4));

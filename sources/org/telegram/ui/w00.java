@@ -1,56 +1,89 @@
 package org.telegram.ui;
 
-import android.text.Editable;
 import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class w00 implements TextWatcher {
-    public final /* synthetic */ y00 a;
+public final class w00 extends og.a {
+    public View.OnClickListener c;
+    public CharSequence d;
+    public String e;
+    public boolean f;
+    public boolean g;
+    public long h;
+    public String i;
+    public int j;
+    public int k;
+    public boolean l;
+    public TL_chatlists.TL_exportedChatlistInvite m;
 
-    public w00(y00 y00Var) {
-        this.a = y00Var;
+    public static w00 b(int i10, String str, boolean z10) {
+        w00 w00Var = new w00(4, false);
+        w00Var.k = i10;
+        w00Var.d = str;
+        w00Var.l = z10;
+        return w00Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        String str;
-        b10 b10Var = this.a.e;
-        if (!TextUtils.equals(editable, b10Var.w)) {
-            b10Var.n = !TextUtils.isEmpty(editable);
-            b10Var.w = org.telegram.ui.Components.z5.onlyEmojiSpans(editable);
-            p00 p00Var = b10Var.I;
-            if (p00Var != null) {
-                p00Var.e(org.telegram.ui.Components.z5.cloneSpans(b10Var.w, -1, p00Var.s.getPaint().getFontMetricsInt(), 0.5f), true);
+    public static w00 c(int i10, String str, String str2, boolean z10) {
+        w00 w00Var = new w00(1, false);
+        w00Var.g = z10;
+        w00Var.d = str;
+        w00Var.i = str2;
+        w00Var.j = i10;
+        return w00Var;
+    }
+
+    public static w00 d(String str) {
+        w00 w00Var = new w00(TextUtils.isEmpty(str) ? 3 : 6, false);
+        w00Var.d = str;
+        return w00Var;
+    }
+
+    public final boolean equals(Object obj) {
+        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite;
+        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite2;
+        if (this != obj) {
+            if (obj == null || w00.class != obj.getClass()) {
+                return false;
             }
-            q00 q00Var = b10Var.J;
-            if (q00Var != null) {
-                org.telegram.ui.Cells.u3 u3Var = q00Var.r;
-                if (b10.k0(b10Var.w)) {
-                    str = LocaleController.getString(b10Var.x ? R.string.FilterNameAnimationsDisable : R.string.FilterNameAnimationsEnable);
-                } else {
-                    str = null;
+            w00 w00Var = (w00) obj;
+            int i10 = this.a;
+            if (i10 != w00Var.a) {
+                return false;
+            }
+            if (i10 == 11) {
+                if (!TextUtils.equals(this.d, w00Var.d) || !TextUtils.equals(this.e, w00Var.e)) {
+                    return false;
                 }
-                u3Var.setText(str);
+            } else {
+                if ((i10 == 0 || i10 == 1 || i10 == 3 || i10 == 4) && !TextUtils.equals(this.d, w00Var.d)) {
+                    return false;
+                }
+                int i11 = this.a;
+                if (i11 == 0) {
+                    if (this.f != w00Var.f) {
+                        return false;
+                    }
+                } else if (i11 == 1) {
+                    if (this.h != w00Var.h || !TextUtils.equals(this.i, w00Var.i) || this.j != w00Var.j) {
+                        return false;
+                    }
+                } else if (i11 == 7 && (tL_exportedChatlistInvite = this.m) != (tL_exportedChatlistInvite2 = w00Var.m)) {
+                    if (!TextUtils.equals(tL_exportedChatlistInvite.url, tL_exportedChatlistInvite2.url)) {
+                        return false;
+                    }
+                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite3 = this.m;
+                    boolean z10 = tL_exportedChatlistInvite3.revoked;
+                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite4 = w00Var.m;
+                    if (z10 != tL_exportedChatlistInvite4.revoked || !TextUtils.equals(tL_exportedChatlistInvite3.title, tL_exportedChatlistInvite4.title) || this.m.peers.size() != w00Var.m.peers.size()) {
+                        return false;
+                    }
+                }
             }
-            kVar = ((org.telegram.ui.ActionBar.m2) b10Var).actionBar;
-            CharSequence charSequence = b10Var.w;
-            kVar2 = ((org.telegram.ui.ActionBar.m2) b10Var).actionBar;
-            kVar.setTitle(org.telegram.ui.Components.z5.cloneSpans(charSequence, -1, kVar2.getTitleFontMetricsInt()));
         }
-        b10Var.i0(true);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        return true;
     }
 }

@@ -8,13 +8,13 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.ui.Components.d60;
-import org.telegram.ui.Components.i60;
-import org.telegram.ui.Components.k81;
+import org.telegram.ui.Components.e60;
+import org.telegram.ui.Components.j60;
+import org.telegram.ui.Components.s81;
 import org.telegram.ui.jk;
-import org.telegram.ui.pe;
+import org.telegram.ui.re;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements Runnable {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class d0 implements Runnable {
         b2.f0 f0Var;
         File file;
         jk jkVar;
-        k81 k81Var;
+        s81 s81Var;
         switch (this.a) {
             case 0:
                 s0 s0Var = this.b;
@@ -101,15 +101,15 @@ public final /* synthetic */ class d0 implements Runnable {
                     s0Var2.S.W0(5, s0Var2.G);
                     s0Var2.m.b("preview player prepared: durationMs=" + s0Var2.E + ", trim=" + s0Var2.G + ".." + s0Var2.H);
                     s0Var2.v(5);
-                    l.d dVar = s0Var2.d;
+                    l2.g gVar = s0Var2.d;
                     long j12 = s0Var2.E;
                     long j13 = s0Var2.G;
                     long j14 = s0Var2.H;
-                    ((d60) dVar.a).w.setProgress(((float) j12) / 60000.0f);
-                    d60 d60Var = (d60) dVar.a;
-                    d60Var.h0 = r32;
-                    d60Var.I.setAlpha(0.0f);
-                    s0 s0Var3 = ((d60) dVar.a).P;
+                    ((e60) gVar.b).w.setProgress(((float) j12) / 60000.0f);
+                    e60 e60Var = (e60) gVar.b;
+                    e60Var.h0 = r32;
+                    e60Var.I.setAlpha(0.0f);
+                    s0 s0Var3 = ((e60) gVar.b).P;
                     if (s0Var3 == null) {
                         file = null;
                     } else {
@@ -117,16 +117,16 @@ public final /* synthetic */ class d0 implements Runnable {
                         file = s0Var3.R;
                     }
                     if (file != null) {
-                        d60 d60Var2 = (d60) dVar.a;
-                        d60Var2.U = d60Var2.p(file, j12, null);
-                        d60 d60Var3 = (d60) dVar.a;
-                        VideoEditedInfo videoEditedInfo = d60Var3.U;
+                        e60 e60Var2 = (e60) gVar.b;
+                        e60Var2.U = e60Var2.p(file, j12, null);
+                        e60 e60Var3 = (e60) gVar.b;
+                        VideoEditedInfo videoEditedInfo = e60Var3.U;
                         videoEditedInfo.startTime = j13 > j3 ? j13 : -1L;
                         videoEditedInfo.endTime = j14 < j12 ? j14 : -1L;
-                        NotificationCenter notificationCenter = NotificationCenter.getInstance(d60Var3.h);
+                        NotificationCenter notificationCenter = NotificationCenter.getInstance(e60Var3.h);
                         int i10 = NotificationCenter.audioDidSent;
-                        Integer valueOf = Integer.valueOf(((d60) dVar.a).n);
-                        VideoEditedInfo videoEditedInfo2 = ((d60) dVar.a).U;
+                        Integer valueOf = Integer.valueOf(((e60) gVar.b).n);
+                        VideoEditedInfo videoEditedInfo2 = ((e60) gVar.b).U;
                         String absolutePath = file.getAbsolutePath();
                         ArrayList arrayList = new ArrayList();
                         Object[] objArr = new Object[4];
@@ -138,12 +138,12 @@ public final /* synthetic */ class d0 implements Runnable {
                         float max = Math.max(1L, j12);
                         float f7 = j13 / max;
                         float f10 = j14 / max;
-                        i60 i60Var = ((d60) dVar.a).b;
-                        if (i60Var != null && (jkVar = ((pe) i60Var).b.Y) != null && (k81Var = jkVar.f1) != null) {
+                        j60 j60Var = ((e60) gVar.b).b;
+                        if (j60Var != null && (jkVar = ((re) j60Var).b.W) != null && (s81Var = jkVar.f1) != null) {
                             float max2 = Math.max(0.0f, Math.min(1.0f, f7));
-                            k81Var.b = max2;
-                            k81Var.c = Math.max(max2, Math.min(1.0f, f10));
-                            k81Var.invalidate();
+                            s81Var.b = max2;
+                            s81Var.c = Math.max(max2, Math.min(1.0f, f10));
+                            s81Var.invalidate();
                         }
                     }
                     s0Var2.q();

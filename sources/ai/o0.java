@@ -5,7 +5,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,9 +33,9 @@ public final /* synthetic */ class o0 implements Runnable {
             case 1:
                 r3 r3Var2 = this.b;
                 AndroidUtilities.cancelRunOnUIThread(r3Var2.d0);
-                org.telegram.ui.Components.qc qcVar = r3Var2.W;
-                if (qcVar != null) {
-                    qcVar.b();
+                org.telegram.ui.Components.rc rcVar = r3Var2.W;
+                if (rcVar != null) {
+                    rcVar.b();
                     r3Var2.W = null;
                 }
                 long j3 = r3Var2.R;

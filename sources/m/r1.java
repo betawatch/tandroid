@@ -16,7 +16,7 @@ import java.lang.reflect.InvocationTargetException;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class r1 extends ListView {
     public final Rect a;
@@ -153,8 +153,8 @@ public class r1 extends ListView {
                     if (field != null) {
                         try {
                             z11 = field.getBoolean(this);
-                        } catch (IllegalAccessException e) {
-                            e.printStackTrace();
+                        } catch (IllegalAccessException e7) {
+                            e7.printStackTrace();
                         }
                     }
                     z11 = false;
@@ -168,8 +168,8 @@ public class r1 extends ListView {
                         if (field2 != null) {
                             try {
                                 field2.set(this, Boolean.valueOf(z14));
-                            } catch (IllegalAccessException e7) {
-                                e7.printStackTrace();
+                            } catch (IllegalAccessException e10) {
+                                e10.printStackTrace();
                             }
                         }
                     }
@@ -323,10 +323,10 @@ public class r1 extends ListView {
                         n1.a.invoke(this, Integer.valueOf(pointToPosition), childAt, Boolean.FALSE, -1, -1);
                         n1.b.invoke(this, Integer.valueOf(pointToPosition));
                         n1.c.invoke(this, Integer.valueOf(pointToPosition));
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    } catch (InvocationTargetException e7) {
+                    } catch (IllegalAccessException e7) {
                         e7.printStackTrace();
+                    } catch (InvocationTargetException e10) {
+                        e10.printStackTrace();
                     }
                 }
             }

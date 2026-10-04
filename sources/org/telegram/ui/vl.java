@@ -3,16 +3,16 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class vl extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ wn d;
+    public final /* synthetic */ yn d;
 
-    public vl(wn wnVar, boolean z10, boolean z11, boolean z12) {
-        this.d = wnVar;
+    public vl(yn ynVar, boolean z10, boolean z11, boolean z12) {
+        this.d = ynVar;
         this.a = z10;
         this.b = z11;
         this.c = z12;
@@ -20,10 +20,10 @@ public final class vl extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        wn wnVar = this.d;
-        wnVar.M2 = null;
-        wnVar.J2.setVisibility(this.a ? 0 : 4);
-        wnVar.L2.setVisibility(this.b ? 0 : 4);
-        wnVar.K2.setVisibility(this.c ? 0 : 4);
+        yn ynVar = this.d;
+        ynVar.K2 = null;
+        ynVar.H2.setVisibility(this.a ? 0 : 4);
+        ynVar.J2.setVisibility(this.b ? 0 : 4);
+        ynVar.I2.setVisibility(this.c ? 0 : 4);
     }
 }

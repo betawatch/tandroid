@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class EmuDetector {
     private static final String IP = "10.0.2.15";
@@ -38,7 +38,7 @@ public class EmuDetector {
     private boolean isTelephony = false;
     private boolean isCheckPackage = true;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public enum EmulatorTypes {
         GENY,
         ANDY,
@@ -48,12 +48,12 @@ public class EmuDetector {
         X86
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public interface OnEmulatorDetectorListener {
         void onResult(boolean z10);
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class Property {
         public String name;
         public String seek_value;
@@ -222,8 +222,8 @@ public class EmuDetector {
                     FileInputStream fileInputStream = new FileInputStream(file);
                     fileInputStream.read(bArr);
                     fileInputStream.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
+                } catch (Exception e7) {
+                    e7.printStackTrace();
                 }
                 String str = new String(bArr);
                 for (String str2 : QEMU_DRIVERS) {

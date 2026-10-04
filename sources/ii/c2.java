@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class c2 extends Drawable {
     public final Context a;
@@ -24,7 +24,7 @@ public final class c2 extends Drawable {
 
     public c2(Context context, int i10) {
         Drawable mutate = context.getResources().getDrawable(i10).mutate();
-        this.d = org.telegram.ui.ActionBar.h6.d6;
+        this.d = org.telegram.ui.ActionBar.i6.d6;
         this.g = true;
         this.a = context;
         this.b = mutate;
@@ -44,12 +44,12 @@ public final class c2 extends Drawable {
         int centerX = bounds.centerX();
         int centerY = bounds.centerY();
         Drawable drawable = this.b;
-        drawable.setBounds(ok.z(2, centerX, drawable), ok.d(2, centerY, drawable), org.telegram.ui.Cells.c1.t(2, centerX, drawable), org.telegram.ui.Cells.c1.d(2, centerY, drawable));
+        drawable.setBounds(org.telegram.ui.Cells.c1.e(2, centerX, drawable), ok.d(2, centerY, drawable), org.telegram.ui.Cells.c1.w(2, centerX, drawable), org.telegram.ui.Cells.c1.t(2, centerY, drawable));
         drawable.draw(canvas);
         if (this.g) {
             int dp = AndroidUtilities.dp(9.0f) + centerX;
             int dp2 = AndroidUtilities.dp(9.0f) + centerY;
-            int w02 = org.telegram.ui.ActionBar.h6.w0(null, this.d, false);
+            int w02 = org.telegram.ui.ActionBar.i6.w0(null, this.d, false);
             Drawable drawable2 = this.c;
             Context context = this.a;
             if (drawable2 == null) {

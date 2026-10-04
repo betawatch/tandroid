@@ -1,58 +1,30 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class fg0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pg0 b;
+import android.view.View;
 
-    public /* synthetic */ fg0(pg0 pg0Var, int i10) {
-        this.a = i10;
-        this.b = pg0Var;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class fg0 implements View.OnClickListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ ig0 b;
+
+    public /* synthetic */ fg0(ig0 ig0Var) {
+        this.b = ig0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                pg0 pg0Var = this.b;
-                uj0 uj0Var = pg0Var.a;
-                qg0 qg0Var = pg0Var.V;
-                mg0 mg0Var = pg0Var.b;
-                if (mg0Var != null) {
-                    if (qg0Var.c0) {
-                        uj0Var.clearFocus();
-                        mg0Var.clearFocus();
-                    } else if (uj0Var.length() != 0) {
-                        mg0Var.requestFocus();
-                        if (!pg0Var.R) {
-                            mg0Var.setSelection(mg0Var.length());
-                        }
-                        qg0.T0(qg0Var, mg0Var);
-                    } else {
-                        uj0Var.requestFocus();
-                        qg0.T0(qg0Var, uj0Var);
-                    }
-                }
-                if (qg0Var.F == 0) {
-                    pg0Var.u(false);
-                    break;
-                }
-                break;
-            case 1:
-                pg0 pg0Var2 = this.b;
-                pg0Var2.postDelayed(new fg0(pg0Var2, 2), 200L);
-                break;
-            case 2:
-                this.b.h(null);
-                break;
-            case 3:
-                this.b.u(true);
+                this.b.a();
                 break;
             default:
-                pg0 pg0Var3 = this.b;
-                qg0.T0(pg0Var3.V, pg0Var3.b);
+                this.b.a();
                 break;
         }
+    }
+
+    public /* synthetic */ fg0(ig0 ig0Var, sg0 sg0Var) {
+        this.b = ig0Var;
     }
 }

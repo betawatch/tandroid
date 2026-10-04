@@ -1,39 +1,18 @@
 package za;
 
-import java.util.Locale;
-import java.util.UUID;
+import android.os.Message;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class k0 {
-    public final r0 a;
-    public final rd.a b;
-    public final String c;
-    public int d;
-    public b0 e;
-
-    public k0() {
-        j0 j0Var = j0.a;
-        this.a = r0.a;
-        this.b = j0Var;
-        this.c = a();
-        this.d = -1;
-    }
-
-    public final String a() {
-        String uuid = ((UUID) this.b.invoke()).toString();
-        kotlin.jvm.internal.i.d(uuid, "uuidGenerator().toString()");
-        String lowerCase = xd.j.g(uuid, "-", "").toLowerCase(Locale.ROOT);
-        kotlin.jvm.internal.i.d(lowerCase, "this as java.lang.String).toLowerCase(Locale.ROOT)");
-        return lowerCase;
-    }
-
-    public final b0 b() {
-        b0 b0Var = this.e;
-        if (b0Var != null) {
-            return b0Var;
+public final class k0 implements Comparator {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        Long valueOf = Long.valueOf(((Message) obj).getWhen());
+        Long valueOf2 = Long.valueOf(((Message) obj2).getWhen());
+        if (valueOf == valueOf2) {
+            return 0;
         }
-        kotlin.jvm.internal.i.h("currentSession");
-        throw null;
+        return valueOf.compareTo(valueOf2);
     }
 }

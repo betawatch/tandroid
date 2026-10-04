@@ -1,34 +1,11 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nt implements ot {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ nt(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
-    }
-
-    @Override // org.telegram.ui.Components.ot
-    public final void a(int i10, boolean z10) {
-        switch (this.a) {
-            case 0:
-                ArrayList arrayList = ((qt) this.b).b;
-                int size = arrayList.size();
-                int i11 = 0;
-                while (i11 < size) {
-                    Object obj = arrayList.get(i11);
-                    i11++;
-                    ((ot) obj).a(i10, z10);
-                }
-                break;
-            default:
-                ((Runnable) this.b).run();
-                break;
-        }
-    }
+public abstract class nt {
+    public static final tr a = new tr(0.39d, 0.575d, 0.565d, 1.0d);
+    public static final tr b = new tr(0.445d, 0.05d, 0.55d, 0.95d);
+    public static final tr c = new tr(0.55d, 0.085d, 0.68d, 0.53d);
+    public static final tr d = new tr(0.25d, 0.46d, 0.45d, 0.94d);
+    public static final tr e = new tr(0.455d, 0.03d, 0.515d, 0.955d);
 }

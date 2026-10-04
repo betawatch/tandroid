@@ -10,7 +10,7 @@ import e9.g0;
 import e9.i0;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a;
@@ -29,10 +29,10 @@ public final class a implements o {
     }
 
     @Override // c3.o
-    public final boolean a(p pVar) {
+    public final boolean b(p pVar) {
         switch (this.a) {
         }
-        return this.b.a(pVar);
+        return this.b.b(pVar);
     }
 
     @Override // c3.o
@@ -86,7 +86,7 @@ public final class a implements o {
         int i10 = this.a;
     }
 
-    private final void b() {
+    private final void a() {
     }
 
     private final void d() {

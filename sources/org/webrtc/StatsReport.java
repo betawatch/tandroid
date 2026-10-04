@@ -1,6 +1,6 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public class StatsReport {
     public final String id;
@@ -8,7 +8,7 @@ public class StatsReport {
     public final String type;
     public final Value[] values;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class Value {
         public final String name;
         public final String value;
@@ -22,7 +22,7 @@ public class StatsReport {
             StringBuilder sb2 = new StringBuilder("[");
             sb2.append(this.name);
             sb2.append(": ");
-            return a4.a.t(sb2, this.value, "]");
+            return a4.a.s(sb2, this.value, "]");
         }
     }
 

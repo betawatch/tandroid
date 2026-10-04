@@ -5,7 +5,7 @@ import android.os.Build;
 import android.os.Handler;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final class i implements androidx.lifecycle.a0 {
     }
 
     @Override // androidx.lifecycle.a0
-    public final void m0(Object obj) {
+    public final void w0(Object obj) {
         int i10;
         int i11 = this.a;
         p pVar = this.b;
@@ -50,11 +50,11 @@ public final class i implements androidx.lifecycle.a0 {
                     }
                     Context n10 = pVar.n();
                     int i13 = Build.VERSION.SDK_INT;
-                    if (i13 < 29 && ((i12 == 7 || i12 == 9) && n10 != null && v7.s.b(n10) && v7.o.a(pVar.l0.c()))) {
+                    if (i13 < 29 && ((i12 == 7 || i12 == 9) && n10 != null && v7.r.b(n10) && v7.n.a(pVar.l0.c()))) {
                         pVar.S();
                     } else if (pVar.R()) {
                         if (charSequence == null) {
-                            charSequence = v7.r.a(pVar.n(), i12);
+                            charSequence = v7.q.a(pVar.n(), i12);
                         }
                         if (i12 == 5) {
                             int i14 = pVar.l0.l;

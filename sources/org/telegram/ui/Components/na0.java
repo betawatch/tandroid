@@ -6,7 +6,7 @@ import android.animation.AnimatorSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class na0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class na0 extends AnimatorListenerAdapter {
     public void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 1:
-                AnimatorSet[] animatorSetArr = ((hy0) this.d).I;
+                AnimatorSet[] animatorSetArr = ((qy0) this.d).I;
                 int i10 = this.b;
                 AnimatorSet animatorSet = animatorSetArr[i10];
                 if (animatorSet != null && animatorSet.equals(animator)) {
@@ -45,15 +45,15 @@ public final class na0 extends AnimatorListenerAdapter {
             case 0:
                 pa0 pa0Var = (pa0) this.d;
                 p6[] p6VarArr = pa0Var.x;
-                org.telegram.ui.ActionBar.h5[] h5VarArr = pa0Var.w;
+                org.telegram.ui.ActionBar.i5[] i5VarArr = pa0Var.w;
                 float[] fArr = pa0Var.Z;
                 boolean z10 = this.c;
                 float f7 = z10 ? 1.0f : 0.0f;
                 int i10 = this.b;
                 fArr[i10] = f7;
-                h5VarArr[i10].setScaleX(z10 ? 1.0f : 1.111f);
-                h5VarArr[i10].setScaleY(z10 ? 1.0f : 1.111f);
-                h5VarArr[i10].setTranslationY(z10 ? 0.0f : AndroidUtilities.dp(8.0f));
+                i5VarArr[i10].setScaleX(z10 ? 1.0f : 1.111f);
+                i5VarArr[i10].setScaleY(z10 ? 1.0f : 1.111f);
+                i5VarArr[i10].setTranslationY(z10 ? 0.0f : AndroidUtilities.dp(8.0f));
                 p6VarArr[i10].setAlpha(z10 ? 1.0f : 0.0f);
                 if (!z10) {
                     p6VarArr[i10].setVisibility(8);
@@ -61,13 +61,13 @@ public final class na0 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                hy0 hy0Var = (hy0) this.d;
-                AnimatorSet[] animatorSetArr = hy0Var.I;
+                qy0 qy0Var = (qy0) this.d;
+                AnimatorSet[] animatorSetArr = qy0Var.I;
                 int i11 = this.b;
                 AnimatorSet animatorSet = animatorSetArr[i11];
                 if (animatorSet != null && animatorSet.equals(animator)) {
                     if (!this.c) {
-                        hy0Var.J[i11].setVisibility(4);
+                        qy0Var.J[i11].setVisibility(4);
                     }
                     animatorSetArr[i11] = null;
                     break;

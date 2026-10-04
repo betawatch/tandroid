@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -17,12 +17,12 @@ public abstract class w {
         try {
             kotlin.jvm.internal.i.d(constructor.newInstance(sVar), "{\n            constructo…tance(`object`)\n        }");
             throw new ClassCastException();
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InstantiationException e7) {
+        } catch (IllegalAccessException e7) {
             throw new RuntimeException(e7);
-        } catch (InvocationTargetException e10) {
+        } catch (InstantiationException e10) {
             throw new RuntimeException(e10);
+        } catch (InvocationTargetException e11) {
+            throw new RuntimeException(e11);
         }
     }
 
@@ -59,8 +59,8 @@ public abstract class w {
                 }
             } catch (ClassNotFoundException unused) {
                 constructor = null;
-            } catch (NoSuchMethodException e) {
-                throw new RuntimeException(e);
+            } catch (NoSuchMethodException e7) {
+                throw new RuntimeException(e7);
             }
             HashMap hashMap2 = b;
             if (constructor != null) {
@@ -89,8 +89,8 @@ public abstract class w {
                             }
                             i11++;
                         }
-                    } catch (NoClassDefFoundError e7) {
-                        throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e7);
+                    } catch (NoClassDefFoundError e10) {
+                        throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e10);
                     }
                 }
                 if (!z10) {

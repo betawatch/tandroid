@@ -2,7 +2,7 @@ package qc;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d {
     public static final d j = new d(1.0d, 0.0d, 0.0d, 1.0d, 0.0d, 0.0d, 1.0d, 0.0d, 0.0d);
@@ -34,8 +34,8 @@ public final class d {
     public static d a(ByteBuffer byteBuffer) {
         double f7 = e5.b.f(byteBuffer);
         double f10 = e5.b.f(byteBuffer);
-        double e = e5.b.e(byteBuffer);
-        return new d(f7, f10, e5.b.f(byteBuffer), e5.b.f(byteBuffer), e, e5.b.e(byteBuffer), e5.b.e(byteBuffer), e5.b.f(byteBuffer), e5.b.f(byteBuffer));
+        double e7 = e5.b.e(byteBuffer);
+        return new d(f7, f10, e5.b.f(byteBuffer), e5.b.f(byteBuffer), e7, e5.b.e(byteBuffer), e5.b.e(byteBuffer), e5.b.f(byteBuffer), e5.b.f(byteBuffer));
     }
 
     public final void b(ByteBuffer byteBuffer) {

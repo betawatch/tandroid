@@ -1,35 +1,136 @@
 package org.telegram.ui.Components;
 
-import java.util.Arrays;
-import java.util.Comparator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class tg0 implements Comparator {
-    public final /* synthetic */ ch0 a;
+public final class tg0 extends hx0 {
+    public boolean a = false;
+    public final Paint b = new Paint(1);
+    public final int c = UserConfig.selectedAccount;
+    public long d = 0;
+    public boolean e = false;
+    public final RectF f = new RectF();
+    public float g;
+    public final boolean h;
+    public final org.telegram.ui.ActionBar.d6 i;
 
-    public tg0(ch0 ch0Var) {
-        this.a = ch0Var;
+    public tg0(org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
+        this.h = z10;
+        this.i = d6Var;
     }
 
-    public final int a(bh0 bh0Var) {
-        ch0 ch0Var = this.a;
-        int size = ch0Var.r.answers.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            if (Arrays.equals(ch0Var.r.answers.get(i10).option, bh0Var.d)) {
-                return i10;
+    @Override // org.telegram.ui.Components.hx0
+    public final void c(boolean z10) {
+        this.a = z10;
+    }
+
+    @Override // org.telegram.ui.Components.hx0
+    public final void d() {
+        this.d = System.currentTimeMillis();
+        this.e = true;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int dp = AndroidUtilities.dp(10.0f);
+        int dp2 = ((AndroidUtilities.dp(18.0f) - dp) / 2) + getBounds().top;
+        if (!this.a) {
+            dp2 += AndroidUtilities.dp(1.0f);
+        }
+        int i10 = dp2;
+        boolean z10 = this.h;
+        int v02 = org.telegram.ui.ActionBar.i6.v0(z10 ? org.telegram.ui.ActionBar.i6.p9 : org.telegram.ui.ActionBar.i6.pa, this.i);
+        Paint paint = this.b;
+        paint.setColor(v02);
+        RectF rectF = this.f;
+        rectF.set(0.0f, i10, dp, i10 + dp);
+        float f7 = this.g;
+        int x10 = (int) (f7 < 0.5f ? org.telegram.messenger.ok.x(f7, 0.5f, 1.0f, 35.0f) : ((f7 - 0.5f) * 35.0f) / 0.5f);
+        for (int i11 = 0; i11 < 3; i11++) {
+            float dp3 = AndroidUtilities.dp(9.2f) + (AndroidUtilities.dp(5.0f) * i11);
+            float dp4 = AndroidUtilities.dp(5.0f);
+            float f10 = this.g;
+            float f11 = dp3 - (dp4 * f10);
+            if (i11 == 2) {
+                paint.setAlpha(Math.min(255, (int) ((f10 * 255.0f) / 0.5f)));
+            } else if (i11 != 0) {
+                paint.setAlpha(255);
+            } else if (f10 > 0.5f) {
+                paint.setAlpha((int) ((1.0f - ((f10 - 0.5f) / 0.5f)) * 255.0f));
+            } else {
+                paint.setAlpha(255);
             }
+            canvas.drawCircle(f11, (dp / 2) + i10, AndroidUtilities.dp(1.2f), paint);
         }
-        return 0;
+        paint.setAlpha(255);
+        canvas.drawArc(rectF, x10, 360 - (x10 * 2), true, paint);
+        paint.setColor(org.telegram.ui.ActionBar.i6.w0(null, z10 ? org.telegram.ui.ActionBar.i6.d6 : org.telegram.ui.ActionBar.i6.s8, false));
+        canvas.drawCircle(AndroidUtilities.dp(4.0f), ((dp / 2) + i10) - AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f), paint);
+        f();
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int a2 = a((bh0) obj);
-        int a10 = a((bh0) obj2);
-        if (a2 > a10) {
-            return 1;
+    @Override // org.telegram.ui.Components.hx0
+    public final void e() {
+        this.g = 0.0f;
+        this.e = false;
+    }
+
+    public final void f() {
+        if (this.e) {
+            if (NotificationCenter.getInstance(this.c).isAnimationInProgress()) {
+                AndroidUtilities.runOnUIThread(new lc0(this, 14), 100L);
+                return;
+            }
+            long currentTimeMillis = System.currentTimeMillis();
+            long j3 = currentTimeMillis - this.d;
+            this.d = currentTimeMillis;
+            if (j3 > 50) {
+                j3 = 50;
+            }
+            if (this.g >= 1.0f) {
+                this.g = 0.0f;
+            }
+            float f7 = (j3 / 300.0f) + this.g;
+            this.g = f7;
+            if (f7 > 1.0f) {
+                this.g = 1.0f;
+            }
+            a();
         }
-        return a2 < a10 ? -1 : 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(18.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(20.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // org.telegram.ui.Components.hx0
+    public final void b(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

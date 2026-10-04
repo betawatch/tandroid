@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class d3 extends org.telegram.ui.ActionBar.e5 {
+public final class d3 extends org.telegram.ui.ActionBar.f5 {
     public AnimatorSet f;
     public final /* synthetic */ w3 h;
 
@@ -24,7 +24,7 @@ public final class d3 extends org.telegram.ui.ActionBar.e5 {
         this.h = w3Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
+    @Override // org.telegram.ui.ActionBar.f5
     public final void m() {
         w3 w3Var = this.h;
         e3 e3Var = w3Var.d;
@@ -58,13 +58,13 @@ public final class d3 extends org.telegram.ui.ActionBar.e5 {
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.f = animatorSet2;
         animatorSet2.setDuration(320L);
-        this.f.setInterpolator(sr.h);
+        this.f.setInterpolator(tr.h);
         this.f.playTogether(arrayList);
         this.f.addListener(new ai.z(2, this, searchField));
         this.f.start();
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
+    @Override // org.telegram.ui.ActionBar.f5
     public final void n() {
         w3 w3Var = this.h;
         e3 e3Var = w3Var.d;
@@ -101,13 +101,13 @@ public final class d3 extends org.telegram.ui.ActionBar.e5 {
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.f = animatorSet2;
         animatorSet2.setDuration(320L);
-        this.f.setInterpolator(sr.h);
+        this.f.setInterpolator(tr.h);
         this.f.playTogether(arrayList);
         this.f.addListener(new ai.b(this, 13));
         this.f.start();
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
+    @Override // org.telegram.ui.ActionBar.f5
     public final void q(EditText editText) {
         String obj = editText.getText().toString();
         l3 l3Var = this.h.r;

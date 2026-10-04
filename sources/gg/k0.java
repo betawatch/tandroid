@@ -9,15 +9,15 @@ import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.at;
-import org.telegram.ui.Components.ct;
-import org.telegram.ui.Components.eu0;
-import org.telegram.ui.Components.lv0;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.bt;
+import org.telegram.ui.Components.dt;
+import org.telegram.ui.Components.iu0;
+import org.telegram.ui.Components.pv0;
 import org.telegram.ui.Components.voip.q2;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class k0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -86,20 +86,20 @@ public final class k0 extends AnimatorListenerAdapter {
             case 2:
                 ((s4.c1) this.b).a.setAlpha(1.0f);
                 ((AnimatorSet) this.c).removeAllListeners();
-                ct ctVar = (ct) this.e;
-                at atVar = (at) this.d;
-                ctVar.d(atVar.a);
-                ctVar.y.remove(atVar.a);
-                ctVar.A();
-                ctVar.d(atVar.b);
-                ctVar.y.remove(atVar.b);
-                ctVar.A();
+                dt dtVar = (dt) this.e;
+                bt btVar = (bt) this.d;
+                dtVar.d(btVar.a);
+                dtVar.y.remove(btVar.a);
+                dtVar.A();
+                dtVar.d(btVar.b);
+                dtVar.y.remove(btVar.b);
+                dtVar.A();
                 break;
             case 3:
-                ((lv0) this.e).H1 = false;
+                ((pv0) this.e).H1 = false;
                 View view3 = (View) this.c;
                 if (view3.getParent() != null) {
-                    ((eu0) this.b).removeView(view3);
+                    ((iu0) this.b).removeView(view3);
                     ((Bitmap) this.d).recycle();
                     break;
                 }
@@ -130,7 +130,7 @@ public final class k0 extends AnimatorListenerAdapter {
                         q2Var.e(true);
                     } else {
                         textViewArr[1].setText(q2Var.e);
-                        q2Var.a(textViewArr[0], textViewArr[1], new i2.h0(this, 25));
+                        q2Var.a(textViewArr[0], textViewArr[1], new i2.h0(this, 24));
                     }
                     q2Var.e = null;
                     break;
@@ -143,16 +143,16 @@ public final class k0 extends AnimatorListenerAdapter {
                 if (kVar2 != null) {
                     kVar2.setSkipDrawChild(false);
                 }
-                org.telegram.ui.ActionBar.u0 u0Var = (org.telegram.ui.ActionBar.u0) this.d;
-                if (u0Var != null) {
-                    u0Var.setAlpha(1.0f);
+                org.telegram.ui.ActionBar.v0 v0Var = (org.telegram.ui.ActionBar.v0) this.d;
+                if (v0Var != null) {
+                    v0Var.setAlpha(1.0f);
                 }
                 if (profileActivity.fragmentView != null) {
                     profileActivity.e0.setProgressToExpand(0.0f);
                     profileActivity.a.setLayerType(0, null);
                     if (profileActivity.P0 != null) {
-                        kVar = ((m2) profileActivity).actionBar;
-                        org.telegram.ui.ActionBar.y n10 = kVar.n();
+                        kVar = ((n2) profileActivity).actionBar;
+                        org.telegram.ui.ActionBar.z n10 = kVar.n();
                         ArrayList arrayList = n10.e;
                         if (arrayList != null) {
                             arrayList.clear();
@@ -190,12 +190,12 @@ public final class k0 extends AnimatorListenerAdapter {
                 ((ji.n) this.e).getClass();
                 break;
             case 2:
-                ct ctVar = (ct) this.e;
-                at atVar = (at) this.d;
-                s4.c1 c1Var = atVar.a;
-                ctVar.getClass();
-                s4.c1 c1Var2 = atVar.b;
-                ctVar.getClass();
+                dt dtVar = (dt) this.e;
+                bt btVar = (bt) this.d;
+                s4.c1 c1Var = btVar.a;
+                dtVar.getClass();
+                s4.c1 c1Var2 = btVar.b;
+                dtVar.getClass();
                 break;
             default:
                 super.onAnimationStart(animator);
@@ -219,10 +219,10 @@ public final class k0 extends AnimatorListenerAdapter {
         this.d = viewPropertyAnimator;
     }
 
-    public k0(ct ctVar, at atVar, s4.c1 c1Var, AnimatorSet animatorSet) {
+    public k0(dt dtVar, bt btVar, s4.c1 c1Var, AnimatorSet animatorSet) {
         this.a = 2;
-        this.e = ctVar;
-        this.d = atVar;
+        this.e = dtVar;
+        this.d = btVar;
         this.b = c1Var;
         this.c = animatorSet;
     }

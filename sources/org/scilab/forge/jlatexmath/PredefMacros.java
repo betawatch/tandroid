@@ -9,9 +9,9 @@ import org.scilab.forge.jlatexmath.dynamic.DynamicAtom;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.RichMessageLayout;
 import ru.noties.jlatexmath.awt.Color;
-import v7.j;
+import t8.b;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class PredefMacros {
     static {
@@ -127,7 +127,7 @@ public class PredefMacros {
     }
 
     public static final Atom Braket_macro(TeXParser teXParser, String[] strArr) {
-        return new TeXFormula(teXParser, a.q("\\left\\langle ", strArr[1].replaceAll("\\|", "\\\\middle\\\\vert "), "\\right\\rangle")).root;
+        return new TeXFormula(teXParser, a.p("\\left\\langle ", strArr[1].replaceAll("\\|", "\\\\middle\\\\vert "), "\\right\\rangle")).root;
     }
 
     public static final Atom DeclareMathSizes_macro(TeXParser teXParser, String[] strArr) {
@@ -175,7 +175,7 @@ public class PredefMacros {
     }
 
     public static final Atom Set_macro(TeXParser teXParser, String[] strArr) {
-        return new TeXFormula(teXParser, a.q("\\left\\{", strArr[1].replaceFirst("\\|", "\\\\middle\\\\vert "), "\\right\\}")).root;
+        return new TeXFormula(teXParser, a.p("\\left\\{", strArr[1].replaceFirst("\\|", "\\\\middle\\\\vert "), "\\right\\}")).root;
     }
 
     public static final Atom TStroke_macro(TeXParser teXParser, String[] strArr) {
@@ -386,8 +386,8 @@ public class PredefMacros {
     public static final Atom bgcolor_macro(TeXParser teXParser, String[] strArr) {
         try {
             return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, ColorAtom.getColor(strArr[1]), (Color) null);
-        } catch (NumberFormatException e) {
-            throw new ParseException(e.toString());
+        } catch (NumberFormatException e7) {
+            throw new ParseException(e7.toString());
         }
     }
 
@@ -720,8 +720,8 @@ public class PredefMacros {
     public static final Atom fgcolor_macro(TeXParser teXParser, String[] strArr) {
         try {
             return new ColorAtom(new TeXFormula(teXParser, strArr[2]).root, (Color) null, ColorAtom.getColor(strArr[1]));
-        } catch (NumberFormatException e) {
-            throw new ParseException(e.toString());
+        } catch (NumberFormatException e7) {
+            throw new ParseException(e7.toString());
         }
     }
 
@@ -858,8 +858,8 @@ public class PredefMacros {
                 return strArr[0].charAt(0) == 'h' ? new SpaceAtom(unit, parseFloat, 0.0f, 0.0f) : new SpaceAtom(unit, 0.0f, parseFloat, 0.0f);
             }
             throw new ParseException("Unknown unit \"" + strArr[1].substring(i10) + "\" !");
-        } catch (NumberFormatException e) {
-            throw new ParseException(e.toString());
+        } catch (NumberFormatException e7) {
+            throw new ParseException(e7.toString());
         }
     }
 
@@ -1251,7 +1251,7 @@ public class PredefMacros {
     public static final Atom newcommand_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
         if (!teXParser.isValidName(str)) {
-            throw new ParseException(j.g("Invalid name for the command :", str));
+            throw new ParseException(b.i("Invalid name for the command :", str));
         }
         String str2 = strArr[3];
         Integer num = str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2));
@@ -1410,7 +1410,7 @@ public class PredefMacros {
     public static final Atom renewcommand_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
         if (!teXParser.isValidName(str)) {
-            throw new ParseException(j.g("Invalid name for the command :", str));
+            throw new ParseException(b.i("Invalid name for the command :", str));
         }
         String str2 = strArr[3];
         NewCommandMacro.addReNewCommand(str.substring(1), strArr[2], (str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2))).intValue());
@@ -1454,9 +1454,9 @@ public class PredefMacros {
         String str = "";
         for (int i10 = 0; i10 < 13; i10++) {
             while (parseInt >= iArr[i10]) {
-                StringBuilder v = a.v(str);
-                v.append(strArr2[i10]);
-                str = v.toString();
+                StringBuilder u10 = a.u(str);
+                u10.append(strArr2[i10]);
+                str = u10.toString();
                 parseInt -= iArr[i10];
             }
         }

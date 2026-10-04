@@ -1,85 +1,214 @@
 package org.telegram.ui;
 
 import android.graphics.Bitmap;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
+import android.os.Looper;
+import android.util.LongSparseArray;
+import com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n21 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q21 b;
 
-    public /* synthetic */ n21(q21 q21Var, int i10) {
+    public /* synthetic */ n21(int i10) {
         this.a = i10;
-        this.b = q21Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        org.telegram.ui.Components.yc a02;
+        int i10 = 0;
         switch (this.a) {
             case 0:
-                q21 q21Var = this.b;
-                AndroidUtilities.cancelRunOnUIThread(q21Var.N);
-                boolean z10 = q21Var.r;
-                if (z10) {
-                    if (z10 && q21Var.F == null) {
-                        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.qr_matrix, AndroidUtilities.dp(200.0f), AndroidUtilities.dp(200.0f));
-                        q21Var.F = kj0Var;
-                        kj0Var.R(q21Var);
-                        q21Var.F.getPaint().setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-                        q21Var.F.K(1);
-                        q21Var.F.start();
-                    }
-                    if (q21Var.J == 0 || System.currentTimeMillis() / 1000 >= q21Var.J) {
-                        if (q21Var.J != 0) {
-                            q21Var.I = null;
-                            Utilities.themeQueue.postRunnable(new o21(q21Var, q21Var.getWidth(), q21Var.getHeight(), 2));
-                            q21Var.s.q("", true, true);
-                        }
-                        MessagesController.getInstance(UserConfig.selectedAccount).requestContactToken(q21Var.J == 0 ? 750L : 1750L, new t3(q21Var, 22));
-                    }
-                    int i10 = q21Var.J;
-                    if (i10 > 0 && q21Var.I != null) {
-                        long max = Math.max(0L, (i10 - (System.currentTimeMillis() / 1000)) - 1);
-                        int i11 = (int) (max % 60);
-                        int min = Math.min(99, (int) (max / 60));
-                        org.telegram.ui.Components.yo0 yo0Var = q21Var.s;
-                        StringBuilder sb2 = new StringBuilder();
-                        sb2.append(min < 10 ? "0" : "");
-                        sb2.append(min);
-                        sb2.append(":");
-                        sb2.append(i11 < 10 ? "0" : "");
-                        sb2.append(i11);
-                        yo0Var.q(sb2.toString(), true, false);
-                    }
-                    if (q21Var.isAttachedToWindow()) {
-                        AndroidUtilities.runOnUIThread(q21Var.N, 1000L);
-                        break;
-                    }
-                }
+                org.telegram.ui.Components.yc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 break;
-            default:
-                q21 q21Var2 = this.b;
-                q21Var2.S = false;
-                Bitmap bitmap = q21Var2.h;
-                if (bitmap != null) {
-                    q21Var2.h = null;
-                    q21Var2.x.d(0.0f, true);
-                    Bitmap bitmap2 = q21Var2.n;
-                    if (bitmap2 != null) {
-                        bitmap2.recycle();
-                    }
-                    q21Var2.n = bitmap;
-                    q21Var2.invalidate();
+            case 1:
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U != null && (a02 = org.telegram.ui.Components.yc.a0(U)) != null) {
+                    org.telegram.ui.Components.rc M = a02.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
+                    M.j = 5000;
+                    M.j();
                     break;
                 }
                 break;
+            case 2:
+                int i11 = m91.d0;
+                break;
+            case 3:
+                org.telegram.ui.ActionBar.i6.N = false;
+                org.telegram.ui.ActionBar.i6.E(false);
+                break;
+            case 4:
+                if (VoIPService.getSharedState() != null) {
+                    VoIPService.getSharedState().acceptIncomingCall();
+                    break;
+                }
+                break;
+            case 5:
+                int[][] iArr = WallpapersListActivity.i0;
+                PhotoViewer.t1().G0(false, false);
+                break;
+            case 6:
+                Utilities.globalQueue.postRunnable(new n21(8));
+                break;
+            case 7:
+                ArrayList arrayList = new ArrayList();
+                LongSparseArray longSparseArray = new LongSparseArray();
+                try {
+                    File file = new File(FileLoader.getDirectory(4), "webhistory.dat");
+                    if (file.exists()) {
+                        SerializedData serializedData = new SerializedData(file);
+                        long readInt64 = serializedData.readInt64(true);
+                        for (long j3 = 0; j3 < readInt64; j3++) {
+                            org.telegram.ui.web.d1 d1Var = new org.telegram.ui.web.d1();
+                            d1Var.readParams(serializedData, true);
+                            arrayList.add(d1Var);
+                            longSparseArray.put(d1Var.a, d1Var);
+                        }
+                    }
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                }
+                AndroidUtilities.runOnUIThread(new g91(26, arrayList, longSparseArray));
+                break;
+            case 8:
+                try {
+                    File file2 = new File(FileLoader.getDirectory(4), "webhistory.dat");
+                    if (!file2.exists()) {
+                        file2.createNewFile();
+                    }
+                    long size = org.telegram.ui.web.e1.c.size();
+                    SerializedData serializedData2 = new SerializedData(true);
+                    serializedData2.writeInt64(size);
+                    ArrayList arrayList2 = org.telegram.ui.web.e1.c;
+                    int size2 = arrayList2.size();
+                    int i12 = 0;
+                    while (i12 < size2) {
+                        Object obj = arrayList2.get(i12);
+                        i12++;
+                        ((org.telegram.ui.web.d1) obj).serializeToStream(serializedData2);
+                    }
+                    SerializedData serializedData3 = new SerializedData(serializedData2.length());
+                    serializedData3.writeInt64(size);
+                    ArrayList arrayList3 = org.telegram.ui.web.e1.c;
+                    int size3 = arrayList3.size();
+                    while (i10 < size3) {
+                        Object obj2 = arrayList3.get(i10);
+                        i10++;
+                        ((org.telegram.ui.web.d1) obj2).serializeToStream(serializedData3);
+                    }
+                    try {
+                        FileOutputStream fileOutputStream = new FileOutputStream(file2);
+                        fileOutputStream.write(serializedData3.toByteArray());
+                        fileOutputStream.close();
+                        break;
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
+                        return;
+                    }
+                } catch (Exception e11) {
+                    FileLog.e(e11);
+                    return;
+                }
+            case 9:
+                break;
+            case 10:
+                pg.k0.b();
+                break;
+            case 11:
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
+                    break;
+                }
+                break;
+            case 12:
+                Looper myLooper2 = Looper.myLooper();
+                if (myLooper2 != null) {
+                    myLooper2.quit();
+                    break;
+                }
+                break;
+            case 13:
+                NotificationCenter.getInstance(UserConfig.selectedAccount).postNotificationNameOnUIThread(NotificationCenter.customStickerCreated, new Object[0]);
+                break;
+            case 14:
+                int i13 = AlarmManagerSchedulerBroadcastReceiver.a;
+                break;
+            case 15:
+                float[] fArr = rg.b2.U;
+                break;
+            case 16:
+                tg.m1.e0(0, null);
+                break;
+            case 17:
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                if (R != null) {
+                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                    l2Var.a = true;
+                    R.showAsSheet(new PremiumPreviewFragment(0, "gifts"), l2Var);
+                    break;
+                }
+                break;
+            case 18:
+                a5.a aVar = yf.e.B;
+                if (aVar != null) {
+                    ArrayList arrayList4 = null;
+                    while (i10 < yf.e.y) {
+                        if (((Bitmap[]) aVar.d)[i10] != null) {
+                            if (arrayList4 == null) {
+                                arrayList4 = new ArrayList();
+                            }
+                            arrayList4.add(((Bitmap[]) aVar.d)[i10]);
+                        }
+                        ((Bitmap[]) aVar.d)[i10] = null;
+                        ((yf.z[]) aVar.c)[i10] = null;
+                        i10++;
+                    }
+                    if (!arrayList4.isEmpty()) {
+                        Utilities.globalQueue.postRunnable(new pg.f0(arrayList4, 1));
+                    }
+                    yf.e.B = null;
+                    break;
+                }
+                break;
+            case 19:
+                BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                break;
+            case 20:
+                org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
+                if (U2 != null) {
+                    U2.presentFragment(new yh.x7());
+                    break;
+                }
+                break;
+            case 21:
+                yh.t5[][] t5VarArr = yh.t5.S;
+                break;
+            default:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                break;
         }
+    }
+
+    public /* synthetic */ n21(l0 l0Var) {
+        this.a = 9;
+    }
+
+    private final void a() {
     }
 }

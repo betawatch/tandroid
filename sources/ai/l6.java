@@ -10,10 +10,10 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.r20;
-import org.telegram.ui.Components.ww0;
+import org.telegram.ui.Components.fx0;
+import org.telegram.ui.Components.s20;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class l6 {
     public final ImageReceiver a;
@@ -53,7 +53,7 @@ public final class l6 {
             ia.x(imageReceiver, storyItem);
         } else {
             k9 k9Var = r7Var.b;
-            r20[] r20VarArr = ia.a;
+            s20[] s20VarArr = ia.a;
             if (k9Var.c.K) {
                 imageReceiver.setImage(ImageLocation.getForPath(k9Var.f), "320_180", null, null, null, 0L, null, null, 0);
             } else {
@@ -77,12 +77,12 @@ public final class l6 {
         int i10 = (int) (m6Var.J + 1.0f);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
         TextPaint textPaint = this.d;
-        StaticLayout c10 = ww0.c(spannableStringBuilder, textPaint, i10, alignment, 0.0f, false, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
+        StaticLayout c10 = fx0.c(spannableStringBuilder, textPaint, i10, alignment, 0.0f, false, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
         this.c = c10;
         if (c10.getLineCount() > 1) {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("");
             m6.a(m6Var, spannableStringBuilder2, this.e.a.views, true);
-            this.c = ww0.c(spannableStringBuilder2, textPaint, (int) (m6Var.J + 1.0f), alignment, 0.0f, false, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
+            this.c = fx0.c(spannableStringBuilder2, textPaint, (int) (m6Var.J + 1.0f), alignment, 0.0f, false, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
         }
     }
 }

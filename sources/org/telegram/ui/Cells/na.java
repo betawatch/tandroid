@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class na implements Runnable {
     public final /* synthetic */ int a;
@@ -38,8 +38,8 @@ public final /* synthetic */ class na implements Runnable {
                 } else {
                     TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) tLObject;
                     String attachFileName = FileLoader.getAttachFileName(wallPaper.document);
-                    if (!paVar.Z2.containsKey(attachFileName)) {
-                        paVar.Z2.put(attachFileName, themesHorizontalListCell$InnerThemeView.b);
+                    if (!paVar.g3.containsKey(attachFileName)) {
+                        paVar.g3.put(attachFileName, themesHorizontalListCell$InnerThemeView.b);
                         FileLoader.getInstance(themesHorizontalListCell$InnerThemeView.b.E).loadFile(wallPaper.document, wallPaper, 1, 1);
                         break;
                     }
@@ -77,7 +77,7 @@ public final /* synthetic */ class na implements Runnable {
                 break;
             case 2:
                 final w0 w0Var = (w0) this.b;
-                final org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.c;
+                final org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
                 TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
                 tL_resolveStarGiftOffer.offer_msg_id = w0Var.getMessageObject().getId();
                 tL_resolveStarGiftOffer.decline = true;
@@ -90,14 +90,14 @@ public final /* synthetic */ class na implements Runnable {
                             MessagesController.getInstance(w0.this.H).processUpdates(updates, false);
                         }
                         if (tL_error != null) {
-                            AndroidUtilities.runOnUIThread(new na(3, m2Var, tL_error));
+                            AndroidUtilities.runOnUIThread(new na(3, n2Var, tL_error));
                         }
                     }
                 });
                 break;
             case 3:
-                org.telegram.ui.ActionBar.m2 m2Var2 = (org.telegram.ui.ActionBar.m2) this.b;
-                yc.a0(m2Var2).d0((TLRPC.TL_error) this.c, false);
+                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) this.b;
+                yc.a0(n2Var2).d0((TLRPC.TL_error) this.c, false);
                 break;
             case 4:
                 w0 w0Var2 = (w0) this.b;
@@ -123,7 +123,7 @@ public final /* synthetic */ class na implements Runnable {
                 }
                 break;
             default:
-                ((pa) this.b).w1((org.telegram.ui.ActionBar.g6) this.c);
+                ((pa) this.b).y1((org.telegram.ui.ActionBar.h6) this.c);
                 break;
         }
     }

@@ -9,7 +9,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class q7 extends s7 {
     public final /* synthetic */ TLRPC.User b;
@@ -31,16 +31,16 @@ public final class q7 extends s7 {
     }
 
     @Override // ci.s7
-    public final void c(org.telegram.ui.ActionBar.m2 m2Var) {
+    public final void c(org.telegram.ui.ActionBar.n2 n2Var) {
         TLRPC.User user = this.b;
         if (user.id != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) {
-            m2Var.presentFragment(ProfileActivity.m4(user.id));
+            n2Var.presentFragment(ProfileActivity.m4(user.id));
             return;
         }
         Bundle bundle = new Bundle();
         bundle.putLong("user_id", user.id);
         bundle.putBoolean("my_profile", true);
-        m2Var.presentFragment(new ProfileActivity(bundle, null));
+        n2Var.presentFragment(new ProfileActivity(bundle, null));
     }
 
     @Override // ci.s7

@@ -8,7 +8,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j9 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -24,10 +24,10 @@ public final /* synthetic */ class j9 implements Utilities.Callback {
         switch (this.a) {
             case 0:
                 k9 k9Var = this.b;
-                ci.l8 l8Var = k9Var.c;
-                l8Var.c0 = (TLRPC.Document) obj;
+                ci.k8 k8Var = k9Var.c;
+                k8Var.c0 = (TLRPC.Document) obj;
                 TLRPC.TL_inputFileStoryDocument tL_inputFileStoryDocument = new TLRPC.TL_inputFileStoryDocument();
-                tL_inputFileStoryDocument.doc = MessagesController.toInputDocument(l8Var.c0);
+                tL_inputFileStoryDocument.doc = MessagesController.toInputDocument(k8Var.c0);
                 k9Var.c(tL_inputFileStoryDocument);
                 break;
             default:

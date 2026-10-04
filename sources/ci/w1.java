@@ -15,11 +15,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class w1 extends xl0 {
+public final class w1 extends yl0 {
     public String e;
     public TLRPC.User f;
     public String h;
@@ -38,14 +38,14 @@ public final class w1 extends xl0 {
         z1 z1Var = w1Var.s;
         ArrayList arrayList = z1Var.h;
         arrayList.clear();
-        i10 = ((org.telegram.ui.ActionBar.e3) z1Var.r).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.f3) z1Var.r).currentAccount;
         arrayList.addAll(MediaDataController.getInstance(i10).getRecentGifs());
         if (z10) {
             w1Var.l();
         }
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 2;
     }
@@ -87,14 +87,14 @@ public final class w1 extends xl0 {
         this.r = true;
         z1Var.d.c(true);
         if (this.d >= 0) {
-            i16 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
+            i16 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
             ConnectionsManager.getInstance(i16).cancelRequest(this.d, true);
             this.d = -1;
         }
         if (this.f == null) {
-            i14 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
+            i14 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
             MessagesController messagesController = MessagesController.getInstance(i14);
-            i15 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
+            i15 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
             TLObject userOrChat = messagesController.getUserOrChat(MessagesController.getInstance(i15).gifSearchBot);
             if (userOrChat instanceof TLRPC.User) {
                 this.f = (TLRPC.User) userOrChat;
@@ -103,9 +103,9 @@ public final class w1 extends xl0 {
         TLRPC.User user = this.f;
         if (user == null && !this.n) {
             TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-            i12 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
+            i12 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
             tL_contacts_resolveUsername.username = MessagesController.getInstance(i12).gifSearchBot;
-            i13 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
+            i13 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
             this.d = ConnectionsManager.getInstance(i13).sendRequest(tL_contacts_resolveUsername, new ai.n8(this, 3));
             return;
         }
@@ -113,7 +113,7 @@ public final class w1 extends xl0 {
             return;
         }
         TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-        i10 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
         tL_messages_getInlineBotResults.bot = MessagesController.getInstance(i10).getInputUser(this.f);
         String str = this.e;
         if (str == null) {
@@ -125,7 +125,7 @@ public final class w1 extends xl0 {
         tL_messages_getInlineBotResults.offset = str2 != null ? str2 : "";
         tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
         String str3 = "gif_search_" + tL_messages_getInlineBotResults.query + "_" + tL_messages_getInlineBotResults.offset;
-        i11 = ((org.telegram.ui.ActionBar.e3) s2Var).currentAccount;
+        i11 = ((org.telegram.ui.ActionBar.f3) s2Var).currentAccount;
         MessagesStorage.getInstance(i11).getBotCache(str3, new t1(this, isEmpty, tL_messages_getInlineBotResults, str3));
     }
 
@@ -135,7 +135,7 @@ public final class w1 extends xl0 {
         l2 l2Var = z1Var.d;
         if (!TextUtils.equals(this.e, str)) {
             if (this.d != -1) {
-                i10 = ((org.telegram.ui.ActionBar.e3) z1Var.r).currentAccount;
+                i10 = ((org.telegram.ui.ActionBar.f3) z1Var.r).currentAccount;
                 ConnectionsManager.getInstance(i10).cancelRequest(this.d, true);
                 this.d = -1;
             }
@@ -222,7 +222,7 @@ public final class w1 extends xl0 {
             f2Var = new View(z1Var.getContext());
         } else if (i10 == 1) {
             Context context = z1Var.getContext();
-            d6Var = ((org.telegram.ui.ActionBar.e3) z1Var.r).resourcesProvider;
+            d6Var = ((org.telegram.ui.ActionBar.f3) z1Var.r).resourcesProvider;
             ?? o8Var = new org.telegram.ui.Cells.o8(context, false, false, d6Var, false);
             o8Var.b(0, LocaleController.getString(R.string.FeaturedGifs));
             s4.p0 p0Var = new s4.p0(-1, -2);

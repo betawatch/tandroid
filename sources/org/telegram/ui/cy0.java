@@ -1,38 +1,83 @@
 package org.telegram.ui;
 
-import java.util.List;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cy0 implements MessagesStorage.BooleanCallback, ls {
-    public final /* synthetic */ ProfileActivity a;
-    public final /* synthetic */ TLRPC.User b;
+public final /* synthetic */ class cy0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
+    public final /* synthetic */ TLRPC.User c;
 
-    public /* synthetic */ cy0(ProfileActivity profileActivity, TLRPC.User user) {
-        this.a = profileActivity;
-        this.b = user;
+    public /* synthetic */ cy0(ProfileActivity profileActivity, TLRPC.User user, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
+        this.c = user;
     }
 
-    @Override // org.telegram.ui.ls
-    public void b() {
-        ProfileActivity.j0(this.a, this.b);
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public void run(boolean z10) {
-        ProfileActivity profileActivity = this.a;
-        if (profileActivity.getParentLayout() != null) {
-            List fragmentStack = profileActivity.getParentLayout().getFragmentStack();
-            if (((fragmentStack == null || fragmentStack.size() < 2) ? null : (org.telegram.ui.ActionBar.m2) org.telegram.ui.Cells.c1.i(2, fragmentStack)) instanceof wn) {
-                ((ActionBarLayout) profileActivity.getParentLayout()).Y(fragmentStack.size() - 2);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ProfileActivity profileActivity = this.b;
+                TLRPC.User user = this.c;
+                profileActivity.getClass();
+                profileActivity.presentFragment(yn.Q9(user.id));
+                break;
+            case 1:
+                ProfileActivity profileActivity2 = this.b;
+                TLRPC.User user2 = this.c;
+                if (profileActivity2.getParentActivity() != null) {
+                    TLRPC.UserFull userFull = profileActivity2.v2;
+                    org.telegram.ui.Components.voip.g2.m(user2, false, userFull != null && userFull.video_calls_available, profileActivity2.getParentActivity(), profileActivity2.v2, profileActivity2.getAccountInstance());
+                    break;
+                }
+                break;
+            case 2:
+                ProfileActivity profileActivity3 = this.b;
+                TLRPC.User user3 = this.c;
+                if (profileActivity3.getParentActivity() != null) {
+                    TLRPC.UserFull userFull2 = profileActivity3.v2;
+                    org.telegram.ui.Components.voip.g2.m(user3, true, userFull2 != null && userFull2.video_calls_available, profileActivity3.getParentActivity(), profileActivity3.v2, profileActivity3.getAccountInstance());
+                    break;
+                }
+                break;
+            case 3:
+                ProfileActivity profileActivity4 = this.b;
+                TLRPC.User user4 = this.c;
+                profileActivity4.getClass();
+                try {
+                    Intent intent = new Intent("android.intent.action.DIAL", Uri.parse("tel:+" + user4.phone));
+                    intent.addFlags(TLObject.FLAG_28);
+                    profileActivity4.getParentActivity().startActivityForResult(intent, 500);
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return;
+                }
+            default:
+                ProfileActivity profileActivity5 = this.b;
+                TLRPC.User user5 = this.c;
+                try {
+                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", "+" + user5.phone));
+                    if (AndroidUtilities.shouldShowClipboardToast()) {
+                        org.telegram.ui.Components.yc.a0(profileActivity5).i(LocaleController.getString(R.string.PhoneCopied)).j();
+                        break;
+                    }
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                }
+                break;
         }
-        profileActivity.N1 = true;
-        profileActivity.finishFragment();
-        profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(profileActivity.i1), this.b, profileActivity.E2, Boolean.valueOf(z10));
     }
 }

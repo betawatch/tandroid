@@ -2,7 +2,7 @@ package ki;
 
 import android.os.Handler;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -56,9 +56,9 @@ public final /* synthetic */ class c implements Runnable {
                     qVar.a0 = true;
                     iVar3.j.b("common A/V start armed; waiting for next camera frame: segmentElapsedMs=" + i.m(iVar3.f0));
                     return;
-                } catch (RuntimeException e) {
+                } catch (RuntimeException e7) {
                     iVar3.d();
-                    iVar3.t(e);
+                    iVar3.t(e7);
                     return;
                 }
             default:

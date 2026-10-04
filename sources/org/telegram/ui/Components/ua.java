@@ -1,35 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public abstract class ua extends bb {
-    public final LinearLayout X;
-    public FrameLayout Y;
-    public ci.d Z;
+public final class ua extends View {
+    public int a;
 
-    public ua(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, null, false, false, d6Var);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.X = linearLayout;
-        linearLayout.setOrientation(1);
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
-    public final void setTitle(CharSequence charSequence) {
-        this.e.setTitle(charSequence);
-    }
-
-    @Override // org.telegram.ui.Components.bb
-    public final xl0 v(yl0 yl0Var) {
-        return new gg.n0(this, 1);
-    }
-
-    @Override // org.telegram.ui.Components.bb
-    public final CharSequence y() {
-        return null;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
     }
 }

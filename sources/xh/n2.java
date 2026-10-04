@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class n2 extends yh.x3 {
     public final /* synthetic */ int r1;
@@ -18,7 +18,7 @@ public final class n2 extends yh.x3 {
         this.s1 = o2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.e3
+    @Override // org.telegram.ui.ActionBar.f3
     public int getBottomInset() {
         switch (this.r1) {
             case 3:
@@ -28,7 +28,7 @@ public final class n2 extends yh.x3 {
         }
     }
 
-    @Override // yh.x3, org.telegram.ui.ActionBar.e3, org.telegram.ui.ActionBar.i2
+    @Override // yh.x3, org.telegram.ui.ActionBar.f3, org.telegram.ui.ActionBar.j2
     public yc getBulletinFactory() {
         switch (this.r1) {
             case 0:

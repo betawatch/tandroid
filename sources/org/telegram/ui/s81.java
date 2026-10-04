@@ -1,24 +1,20 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class s81 extends org.telegram.ui.Components.wq0 {
-    public final /* synthetic */ z81 b1;
+public final class s81 extends c11 {
+    public final /* synthetic */ a91 G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s81(z81 z81Var, Activity activity, String str) {
-        super(activity, null, str, false, null, false, null);
-        this.b1 = z81Var;
+    public s81(a91 a91Var, a91 a91Var2, Context context) {
+        super(context, a91Var2);
+        this.G = a91Var;
     }
 
-    @Override // org.telegram.ui.Components.wq0
-    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new n81(this, iVar, i10), 250L);
-        }
+    @Override // s4.h0
+    public final void l() {
+        this.G.c.f3.N(true);
     }
 }

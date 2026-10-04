@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.TextureView;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,16 +26,16 @@ public final /* synthetic */ class b0 implements Runnable {
         switch (this.a) {
             case 0:
                 d0 d0Var = (d0) ((c0) this.e).b;
-                l8 l8Var = d0Var.n;
-                if (l8Var != null) {
-                    int i10 = l8Var.k0;
+                k8 k8Var = d0Var.n;
+                if (k8Var != null) {
+                    int i10 = k8Var.k0;
                     int i11 = this.b;
                     int i12 = this.c;
                     int i13 = this.d;
-                    if (i10 != i11 || l8Var.l0 != i12 || l8Var.Q != i13) {
-                        l8Var.k0 = i11;
-                        l8Var.l0 = i12;
-                        l8Var.Q = i13;
+                    if (i10 != i11 || k8Var.l0 != i12 || k8Var.Q != i13) {
+                        k8Var.k0 = i11;
+                        k8Var.l0 = i12;
+                        k8Var.Q = i13;
                         TextureView textureView = d0Var.e;
                         if (textureView != null) {
                             textureView.requestLayout();
@@ -46,15 +46,15 @@ public final /* synthetic */ class b0 implements Runnable {
                 break;
             case 1:
                 ii.x3 x3Var = (ii.x3) this.e;
-                KeyEvent.Callback A4 = x3Var.A4(this.b);
-                if (A4 instanceof org.telegram.ui.Cells.p9) {
-                    x3Var.n3.c0(this.c, this.d, (org.telegram.ui.Cells.p9) A4);
+                KeyEvent.Callback C4 = x3Var.C4(this.b);
+                if (C4 instanceof org.telegram.ui.Cells.p9) {
+                    x3Var.u3.c0(this.c, this.d, (org.telegram.ui.Cells.p9) C4);
                     break;
                 }
                 break;
             case 2:
                 ii.m3 m3Var = (ii.m3) this.e;
-                ii.x3.K1(m3Var.b, this.b, this.c, this.d);
+                ii.x3.M1(m3Var.b, this.b, this.c, this.d);
                 break;
             default:
                 ((MessagesStorage) this.e).lambda$setMessageSeq$211(this.b, this.c, this.d);

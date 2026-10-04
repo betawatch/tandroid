@@ -1,45 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class fo extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ go b;
+public final class fo extends org.telegram.ui.ActionBar.n1 {
+    public final /* synthetic */ ho o;
 
-    public /* synthetic */ fo(go goVar, int i10) {
-        this.a = i10;
-        this.b = goVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fo(ho hoVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = hoVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.Q = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                go goVar = this.b;
-                if (goVar.Q == animator) {
-                    goVar.getSubtitleTextView().setVisibility(4);
-                    goVar.Q = null;
-                    break;
-                }
-                break;
-            default:
-                this.b.Q = null;
-                break;
+    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        org.telegram.ui.yn ynVar = this.o.G;
+        if (ynVar != null) {
+            ynVar.getClass();
+            ynVar.g8(false, true, 0.0f);
         }
     }
 }

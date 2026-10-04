@@ -1,259 +1,72 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
-import android.graphics.Typeface;
-import android.os.Build;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.view.View;
+import android.graphics.RectF;
+import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class v01 {
-    public final TextPaint a;
-    public StaticLayout b;
-    public float c;
-    public float d;
-    public float e;
-    public int f;
-    public Layout.Alignment g;
-    public float h;
-    public boolean i;
-    public View j;
-    public v5 k;
-    public int l;
-    public PorterDuffColorFilter m;
-    public int n;
-    public boolean o;
-    public float p;
-    public LinearGradient q;
-    public Matrix r;
-    public Paint s;
-    public int t;
+public final class v01 extends ReplacementSpan {
+    public final /* synthetic */ int a;
+    public int b;
+    public final Object c;
 
-    public v01(CharSequence charSequence, TextPaint textPaint) {
-        this.e = 9999.0f;
-        this.f = 1;
-        this.g = Layout.Alignment.ALIGN_NORMAL;
-        this.l = 0;
-        this.p = -1.0f;
-        this.a = textPaint;
-        r(charSequence);
+    public v01(int i10) {
+        this.a = 0;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.b = i10;
+        paint.setColor(org.telegram.ui.ActionBar.i6.l1(0.3f, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.nd, false)));
     }
 
-    public final void a() {
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        if (this.g != alignment) {
-            this.g = alignment;
-            r(this.b.getText());
+    public void a(int i10) {
+        org.telegram.ui.rp0 rp0Var = (org.telegram.ui.rp0) this.c;
+        if (rp0Var != null) {
+            rp0Var.a = i10 / 2.0f;
+            rp0Var.d();
+            this.b = i10;
         }
     }
 
-    public final float b() {
-        float f7 = 0.0f;
-        for (int i10 = 0; i10 < this.b.getLineCount(); i10++) {
-            f7 = Math.max(f7, this.b.getLineWidth(i10));
-        }
-        return f7;
-    }
-
-    public final void c(float f7, float f10, float f11, int i10, Canvas canvas) {
-        if (this.b == null) {
-            return;
-        }
-        TextPaint textPaint = this.a;
-        textPaint.setColor(i10);
-        textPaint.linkColor = i10;
-        int alpha = textPaint.getAlpha();
-        if (f11 != 1.0f) {
-            textPaint.setAlpha((int) (alpha * f11));
-        }
-        canvas.save();
-        canvas.translate(f7, f10 - (this.f > 1 ? 0.0f : this.b.getHeight() / 2.0f));
-        d(canvas);
-        canvas.restore();
-        textPaint.setAlpha(alpha);
-    }
-
-    public final void d(Canvas canvas) {
-        if (this.b == null) {
-            return;
-        }
-        float f7 = this.p;
-        if (f7 >= 0.0f && this.c > f7) {
-            canvas.saveLayerAlpha(0.0f, -this.t, f7 - 1.0f, r0.getHeight() + this.t, 255, 31);
-        }
-        canvas.save();
-        canvas.translate(-this.d, 0.0f);
-        boolean z10 = this.o;
-        TextPaint textPaint = this.a;
-        if (z10) {
-            canvas.drawText(this.b.getText().toString(), 0.0f, -textPaint.getFontMetricsInt().ascent, textPaint);
-        } else {
-            this.b.draw(canvas);
-        }
-        if (this.i) {
-            if (this.m == null || textPaint.getColor() != this.n) {
-                int color = textPaint.getColor();
-                this.n = color;
-                this.m = new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN);
-            }
-            z5.drawAnimatedEmojis(canvas, this.b, this.k, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.m);
-        }
-        canvas.restore();
-        float f10 = this.p;
-        if (f10 < 0.0f || this.c <= f10) {
-            return;
-        }
-        if (this.q == null) {
-            this.q = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(8.0f), 0.0f, new int[]{16777215, -1}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-            this.r = new Matrix();
-            Paint paint = new Paint(1);
-            this.s = paint;
-            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-            this.s.setShader(this.q);
-        }
-        canvas.save();
-        this.r.reset();
-        this.r.postTranslate(this.p - AndroidUtilities.dp(8.0f), 0.0f);
-        this.q.setLocalMatrix(this.r);
-        canvas.drawRect(this.p - AndroidUtilities.dp(8.0f), 0.0f, this.p, this.b.getHeight(), this.s);
-        canvas.restore();
-        canvas.restore();
-    }
-
-    public final void e(Canvas canvas, float f7, float f10) {
-        f(canvas, f7, f10, 1.0f);
-    }
-
-    public final void f(Canvas canvas, float f7, float f10, float f11) {
-        if (this.b == null) {
-            return;
-        }
-        canvas.save();
-        canvas.translate(f7, f10 - (this.f > 1 ? 0.0f : this.b.getHeight() / 2.0f));
-        TextPaint textPaint = this.a;
-        int alpha = textPaint.getAlpha();
-        textPaint.setAlpha((int) (alpha * f11));
-        d(canvas);
-        textPaint.setAlpha(alpha);
-        canvas.restore();
-    }
-
-    public final void g(float f7) {
-        this.p = f7;
-    }
-
-    public final float h() {
-        return this.c;
-    }
-
-    public final Paint.FontMetricsInt i() {
-        return this.a.getFontMetricsInt();
-    }
-
-    public final float j() {
-        return this.b.getHeight();
-    }
-
-    public final CharSequence k() {
-        StaticLayout staticLayout = this.b;
-        return (staticLayout == null || staticLayout.getText() == null) ? "" : this.b.getText();
-    }
-
-    public final float l() {
-        float f7 = this.p;
-        return f7 >= 0.0f ? Math.min(f7, this.c) : this.c;
-    }
-
-    public final void m(float f7) {
-        if (this.h != f7) {
-            this.h = f7;
-            r(this.b.getText());
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        switch (this.a) {
+            case 0:
+                float dp = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.33f);
+                float dp2 = AndroidUtilities.dp(6.66f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                float f10 = dp2 / 2.0f;
+                rectF.set(f7, dp - f10, this.b + f7, dp + f10);
+                canvas.drawRoundRect(rectF, f10, f10, (Paint) this.c);
+                break;
+            default:
+                org.telegram.ui.rp0 rp0Var = (org.telegram.ui.rp0) this.c;
+                if (rp0Var != null) {
+                    int i15 = (i12 + i14) / 2;
+                    int i16 = this.b;
+                    rp0Var.setBounds((int) (AndroidUtilities.dp(3.0f) + f7), i15 - this.b, (int) (f7 + AndroidUtilities.dp(5.0f) + i16), i15 + i16);
+                    rp0Var.draw(canvas);
+                    break;
+                }
+                break;
         }
     }
 
-    public final void n(int i10) {
-        this.f = i10;
-        r(this.b.getText());
-    }
-
-    public final void o(int i10) {
-        this.a.setColor(i10);
-    }
-
-    public final void p(int i10) {
-        if (this.l != i10) {
-            this.l = i10;
-            if (this.i) {
-                z5.release(this.j, this.k);
-                this.k = z5.update(this.l, this.j, this.k, this.b);
-            }
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        switch (this.a) {
+            case 0:
+                return this.b;
+            default:
+                return AndroidUtilities.dp(3.0f) + AndroidUtilities.dp(3.0f) + this.b;
         }
     }
 
-    public final void q(float f7) {
-        this.e = f7;
-        r(this.b.getText());
-    }
-
-    public final void r(CharSequence charSequence) {
-        if (this.f <= 1 || Build.VERSION.SDK_INT < 23) {
-            this.b = new StaticLayout(AndroidUtilities.replaceNewLines(charSequence), this.a, (int) Math.max(this.e, 1.0f), this.g, 1.0f, this.h, false);
-        } else {
-            this.b = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), this.a, (int) Math.max(this.e, 1.0f)).setAlignment(this.g).setMaxLines(this.f).setLineSpacing(this.h, 1.0f).build();
-        }
-        if (this.g == Layout.Alignment.ALIGN_CENTER) {
-            this.c = this.b.getWidth();
-            this.d = 0.0f;
-        } else {
-            this.c = 0.0f;
-            this.d = this.b.getWidth();
-            for (int i10 = 0; i10 < this.b.getLineCount(); i10++) {
-                this.c = Math.max(this.c, this.b.getLineWidth(i10));
-                this.d = Math.min(this.d, this.b.getLineLeft(i10));
-            }
-        }
-        View view = this.j;
-        if (view == null || !view.isAttachedToWindow()) {
-            return;
-        }
-        this.k = z5.update(this.l, this.j, this.k, this.b);
-    }
-
-    public final void s(View view) {
-        int i10 = 1;
-        this.i = true;
-        this.j = view;
-        if (view.isAttachedToWindow()) {
-            this.k = z5.update(this.l, view, this.k, this.b);
-        }
-        view.addOnAttachStateChangeListener(new la(i10, this, view));
-    }
-
-    public v01(String str, float f7) {
-        this(str, f7, null);
-    }
-
-    public v01(CharSequence charSequence, float f7, Typeface typeface) {
-        this.e = 9999.0f;
-        this.f = 1;
-        this.g = Layout.Alignment.ALIGN_NORMAL;
-        this.l = 0;
-        this.p = -1.0f;
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        textPaint.setTextSize(AndroidUtilities.dp(f7));
-        textPaint.setTypeface(typeface);
-        r(charSequence);
+    public v01(boolean z10, int i10, int i11) {
+        this.a = 1;
+        this.b = AndroidUtilities.dp(21.0f);
+        this.c = z10 ? org.telegram.ui.rp0.c(i10, i11) : org.telegram.ui.rp0.a(i10, i11);
     }
 }

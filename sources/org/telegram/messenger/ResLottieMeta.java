@@ -4,14 +4,14 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class ResLottieMeta {
     private static final String ASSET_NAME = "lottie_meta.bin";
     private static final int ENTRY_SIZE = 8;
     public static final long NOT_FOUND = -1;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static final class Holder {
         private static final long[] DATA = ResLottieMeta.load();
 
@@ -73,13 +73,13 @@ public final class ResLottieMeta {
                 return jArr;
             } finally {
             }
-        } catch (IOException e) {
-            throw new RuntimeException("Unable to load lottie_meta.bin", e);
-        } catch (RuntimeException e7) {
+        } catch (IOException e7) {
+            throw new RuntimeException("Unable to load lottie_meta.bin", e7);
+        } catch (RuntimeException e10) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.e("Unable to load lottie_meta.bin", e7);
+                FileLog.e("Unable to load lottie_meta.bin", e10);
             }
-            throw e7;
+            throw e10;
         }
     }
 

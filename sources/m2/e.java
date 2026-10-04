@@ -29,9 +29,9 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
-import v7.s6;
+import v7.r6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class e extends DefaultHandler implements y2.n {
     public static final Pattern b = Pattern.compile("(\\d+)(?:/(\\d+))?");
@@ -91,11 +91,11 @@ public final class e extends DefaultHandler implements y2.n {
     
         if (r13.equals("fa01") == false) goto L63;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x01a5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x01a7, code lost:
     
         if (r13 == 0) goto L135;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x01b8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x01ba, code lost:
     
         if (r13 < 33) goto L49;
      */
@@ -202,7 +202,7 @@ public final class e extends DefaultHandler implements y2.n {
                     } else {
                         String[] b02 = d0.b0(str);
                         if (b02.length != 0) {
-                            List x10 = new a5.a(new a6.i(new d9.b('.'), 16)).x(s6.b(b02[0].trim()));
+                            List x10 = new a5.a(new a6.i(new d9.b('.'), 17)).x(r6.b(b02[0].trim()));
                             if (x10.size() == 4 && ((String) x10.get(0)).equals("ac-4")) {
                                 String str2 = (String) x10.get(3);
                                 str2.getClass();
@@ -231,7 +231,7 @@ public final class e extends DefaultHandler implements y2.n {
             case 7:
                 String attributeValue5 = xmlPullParser.getAttributeValue(null, "value");
                 if (attributeValue5 != null) {
-                    String b10 = s6.b(attributeValue5);
+                    String b10 = r6.b(attributeValue5);
                     b10.getClass();
                     switch (b10.hashCode()) {
                         case 1596796:
@@ -401,7 +401,7 @@ public final class e extends DefaultHandler implements y2.n {
         String str4;
         String attributeValue = xmlPullParser.getAttributeValue(null, "schemeIdUri");
         if (attributeValue != null) {
-            String b10 = s6.b(attributeValue);
+            String b10 = r6.b(attributeValue);
             b10.getClass();
             switch (b10.hashCode()) {
                 case -1980789791:
@@ -486,7 +486,7 @@ public final class e extends DefaultHandler implements y2.n {
                         }
                         r72 = b2.i.b;
                         str3 = null;
-                        r82 = w3.o.a(r72, uuidArr, null);
+                        r82 = w3.n.a(r72, uuidArr, null);
                         break;
                     } else {
                         e2.a.n("MpdParser", "Ignoring <ContentProtection> with schemeIdUri=\"urn:mpeg:dash:mp4protection:2011\" (ClearKey) due to missing required default_KID attribute.");
@@ -515,7 +515,7 @@ public final class e extends DefaultHandler implements y2.n {
                         }
                         if (name.equals("pssh") && xmlPullParser.next() == 4) {
                             byte[] decode = Base64.decode(xmlPullParser.getText(), 0);
-                            j6.l j3 = w3.o.j(decode);
+                            j6.l j3 = w3.n.j(decode);
                             UUID uuid = j3 == null ? null : (UUID) j3.b;
                             if (uuid == null) {
                                 e2.a.n("MpdParser", "Skipping malformed cenc:pssh data");
@@ -531,7 +531,7 @@ public final class e extends DefaultHandler implements y2.n {
                     if (r82 == 0) {
                         ?? r10 = b2.i.e;
                         if (r10.equals(r72) && e2.d.m(xmlPullParser, "mspr:pro") && xmlPullParser.next() == 4) {
-                            r82 = w3.o.a(r10, null, Base64.decode(xmlPullParser.getText(), 0));
+                            r82 = w3.n.a(r10, null, Base64.decode(xmlPullParser.getText(), 0));
                         }
                     }
                     b(xmlPullParser);
@@ -1535,7 +1535,7 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                     int i39 = i37;
                                                                                                     f fVar2 = (f) arrayList60.get(i37);
                                                                                                     long j53 = j23;
-                                                                                                    if (s6.a("urn:mpeg:dash:role:2011", fVar2.a)) {
+                                                                                                    if (r6.a("urn:mpeg:dash:role:2011", fVar2.a)) {
                                                                                                         String str115 = fVar2.b;
                                                                                                         i38 |= (str115 != null && (str115.equals("forced_subtitle") || str115.equals("forced-subtitle"))) ? 2 : 0;
                                                                                                     }
@@ -1550,7 +1550,7 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                 while (i40 < arrayList61.size()) {
                                                                                                     f fVar3 = (f) arrayList61.get(i40);
                                                                                                     int i42 = i40;
-                                                                                                    if (s6.a("urn:mpeg:dash:role:2011", fVar3.a)) {
+                                                                                                    if (r6.a("urn:mpeg:dash:role:2011", fVar3.a)) {
                                                                                                         i41 |= m(fVar3.b);
                                                                                                     }
                                                                                                     i40 = i42 + 1;
@@ -1566,9 +1566,9 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                     String str116 = fVar4.a;
                                                                                                     String str117 = str46;
                                                                                                     String str118 = fVar4.b;
-                                                                                                    if (s6.a("urn:mpeg:dash:role:2011", str116)) {
+                                                                                                    if (r6.a("urn:mpeg:dash:role:2011", str116)) {
                                                                                                         i16 = m(str118);
-                                                                                                    } else if (s6.a("urn:tva:metadata:cs:AudioPurposeCS:2007", fVar4.a)) {
+                                                                                                    } else if (r6.a("urn:tva:metadata:cs:AudioPurposeCS:2007", fVar4.a)) {
                                                                                                         if (str118 != null) {
                                                                                                             switch (str118.hashCode()) {
                                                                                                                 case Maneuver.TYPE_FERRY_TRAIN_LEFT /* 49 */:
@@ -1649,7 +1649,7 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                     if (i48 < arrayList25.size()) {
                                                                                                         f fVar5 = (f) arrayList25.get(i48);
                                                                                                         int i49 = i48;
-                                                                                                        if ((s6.a("http://dashif.org/thumbnail_tile", fVar5.a) || s6.a("http://dashif.org/guidelines/thumbnail_tile", fVar5.a)) && (str48 = fVar5.b) != null) {
+                                                                                                        if ((r6.a("http://dashif.org/thumbnail_tile", fVar5.a) || r6.a("http://dashif.org/guidelines/thumbnail_tile", fVar5.a)) && (str48 = fVar5.b) != null) {
                                                                                                             String str120 = d0.a;
                                                                                                             String[] split = str48.split("x", -1);
                                                                                                             if (split.length != 2) {
@@ -2631,7 +2631,7 @@ public final class e extends DefaultHandler implements y2.n {
     public static int n(ArrayList arrayList) {
         int i10 = 0;
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            if (s6.a("http://dashif.org/guidelines/trickmode", ((f) arrayList.get(i11)).a)) {
+            if (r6.a("http://dashif.org/guidelines/trickmode", ((f) arrayList.get(i11)).a)) {
                 i10 = 16384;
             }
         }
@@ -2770,7 +2770,7 @@ public final class e extends DefaultHandler implements y2.n {
                 break;
             }
             f fVar = (f) list.get(i10);
-            if (s6.a("http://dashif.org/guidelines/last-segment-number", fVar.a)) {
+            if (r6.a("http://dashif.org/guidelines/last-segment-number", fVar.a)) {
                 j14 = Long.parseLong(fVar.b);
                 break;
             }

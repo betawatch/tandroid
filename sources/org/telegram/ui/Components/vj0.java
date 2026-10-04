@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class vj0 extends s4.h0 {
     public final /* synthetic */ int c;
@@ -56,9 +56,9 @@ public final class vj0 extends s4.h0 {
             Context context = this.d;
             o6Var = new FrameLayout(context);
             View view = new View(context);
-            view.setBackgroundColor(org.telegram.ui.ActionBar.h6.l1(0.06f, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.E8, this.e)));
-            o6Var.addView(view, w7.y5.c(8.0f, -1));
-            o6Var.addView(ck0Var.J, w7.y5.d(-1, -1.0f, 0, 0.0f, 8.0f, 0.0f, 0.0f));
+            view.setBackgroundColor(org.telegram.ui.ActionBar.i6.l1(0.06f, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.E8, this.e)));
+            o6Var.addView(view, w7.z5.c(8.0f, -1));
+            o6Var.addView(ck0Var.J, w7.z5.d(-1, -1.0f, 0, 0.0f, 8.0f, 0.0f, 0.0f));
         } else {
             o6Var = new org.telegram.ui.Cells.o6(0, this.c, this.d, this.e, true, this.f);
         }

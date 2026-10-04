@@ -2,7 +2,7 @@ package y2;
 
 import android.content.Context;
 import android.os.SystemClock;
-import ci.rc;
+import ci.qc;
 import e2.t;
 import e2.u;
 import e2.x;
@@ -15,7 +15,7 @@ import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f implements c, c0 {
     public static final a1 p = i0.y(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
@@ -27,7 +27,7 @@ public final class f implements c, c0 {
     public static f v;
     public final Context a;
     public final k0 b;
-    public final n2.e c;
+    public final k2.e c;
     public final x d;
     public final boolean e;
     public final q f;
@@ -46,7 +46,7 @@ public final class f implements c, c0 {
         x xVar = x.a;
         this.a = context == null ? null : context.getApplicationContext();
         this.b = k0.a(hashMap);
-        this.c = new n2.e(26);
+        this.c = new k2.e(25);
         this.f = new q();
         this.d = xVar;
         this.e = true;
@@ -75,7 +75,7 @@ public final class f implements c, c0 {
             z10 = a2.a;
         }
         if (z10) {
-            tVar2.b.execute(new rc(tVar2, 5));
+            tVar2.b.execute(new qc(tVar2, 5));
         }
     }
 
@@ -731,7 +731,7 @@ public final class f implements c, c0 {
                 i11 = i10;
                 j11 = j3;
                 j12 = j10;
-                bVar.a.post(new k2.i(bVar, i11, j11, j12, 1));
+                bVar.a.post(new k2.j(bVar, i11, j11, j12, 1));
             }
             i10 = i11;
             j3 = j11;

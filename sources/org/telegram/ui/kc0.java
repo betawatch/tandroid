@@ -1,235 +1,238 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.content.Intent;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.location.Location;
-import android.net.Uri;
-import android.util.Property;
-import android.view.MotionEvent;
+import android.os.Build;
+import android.text.TextUtils;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.IMapsProvider;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kc0 implements org.telegram.ui.ActionBar.q0, org.telegram.ui.ActionBar.z1, IMapsProvider.OnCameraMoveStartedListener, gg.b, IMapsProvider.ITouchInterceptor {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cd0 b;
+public final class kc0 extends FrameLayout {
+    public final ImageView a;
+    public final LinearLayout b;
+    public final ai.p4 c;
+    public final org.telegram.ui.Components.p6 d;
+    public final ImageView e;
+    public final Switch f;
+    public final org.telegram.ui.Components.qp h;
+    public boolean n;
+    public boolean r;
+    public boolean s;
+    public boolean v;
+    public int w;
+    public int x;
+    public final /* synthetic */ lc0 y;
 
-    public /* synthetic */ kc0(cd0 cd0Var, int i10) {
-        this.a = i10;
-        this.b = cd0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kc0(lc0 lc0Var, Context context) {
+        super(context);
+        this.y = lc0Var;
+        setImportantForAccessibility(1);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.m6, false);
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        imageView.setColorFilter(new PorterDuffColorFilter(w02, mode));
+        imageView.setVisibility(8);
+        addView(imageView, w7.z5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 20.0f, 0.0f, 20.0f, 0.0f));
+        ai.p4 p4Var = new ai.p4(context, 27);
+        this.c = p4Var;
+        p4Var.setLines(1);
+        p4Var.setSingleLine(true);
+        p4Var.setEllipsize(TextUtils.TruncateAt.END);
+        p4Var.setTextSize(1, 16.0f);
+        int i10 = org.telegram.ui.ActionBar.i6.G6;
+        p4Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
+        p4Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        p4Var.setImportantForAccessibility(2);
+        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, false, true, true);
+        this.d = p6Var;
+        p6Var.b(0.35f, 200L, org.telegram.ui.Components.tr.h);
+        p6Var.setTypeface(AndroidUtilities.bold());
+        p6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        p6Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
+        p6Var.setImportantForAccessibility(2);
+        ImageView imageView2 = new ImageView(context);
+        this.e = imageView2;
+        imageView2.setVisibility(8);
+        imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.w0(null, i10, false), mode));
+        imageView2.setImageResource(R.drawable.arrow_more);
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.b = linearLayout;
+        linearLayout.setOrientation(0);
+        linearLayout.setGravity(LocaleController.isRTL ? 5 : 3);
+        if (LocaleController.isRTL) {
+            linearLayout.addView(imageView2, w7.z5.p(16, 16, 0.0f, 16, 0, 0, 6, 0));
+            linearLayout.addView(p6Var, w7.z5.p(-2, -2, 0.0f, 16, 0, 0, 6, 0));
+            linearLayout.addView(p4Var, w7.z5.o(-2, -2, 1.0f, 16));
+        } else {
+            linearLayout.addView(p4Var, w7.z5.o(-2, -2, 1.0f, 16));
+            linearLayout.addView(p6Var, w7.z5.p(-2, -2, 0.0f, 16, 6, 0, 0, 0));
+            linearLayout.addView(imageView2, w7.z5.p(16, 16, 0.0f, 16, 2, 0, 0, 0));
+        }
+        addView(linearLayout, w7.z5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 64.0f, 0.0f, 8.0f, 0.0f));
+        Switch r32 = new Switch(context, null);
+        this.f = r32;
+        r32.setVisibility(8);
+        int i11 = org.telegram.ui.ActionBar.i6.M6;
+        int i12 = org.telegram.ui.ActionBar.i6.N6;
+        int i13 = org.telegram.ui.ActionBar.i6.d6;
+        r32.d(i11, i12, i13, i13);
+        r32.setImportantForAccessibility(2);
+        addView(r32, w7.z5.d(37, 50.0f, (LocaleController.isRTL ? 3 : 5) | 16, 19.0f, 0.0f, 19.0f, 0.0f));
+        org.telegram.ui.Components.qp qpVar = new org.telegram.ui.Components.qp(context, 21, null);
+        this.h = qpVar;
+        qpVar.b(org.telegram.ui.ActionBar.i6.h7, org.telegram.ui.ActionBar.i6.j7, org.telegram.ui.ActionBar.i6.k7);
+        qpVar.setDrawUnchecked(true);
+        qpVar.a(true, false);
+        qpVar.setDrawBackgroundAsArc(10);
+        qpVar.setVisibility(8);
+        qpVar.setImportantForAccessibility(2);
+        boolean z10 = LocaleController.isRTL;
+        addView(qpVar, w7.z5.d(21, 21.0f, (z10 ? 5 : 3) | 16, z10 ? 0.0f : 64.0f, 0.0f, z10 ? 64.0f : 0.0f, 0.0f));
+        setFocusable(true);
     }
 
-    @Override // gg.b
-    public void a(ArrayList arrayList) {
-        switch (this.a) {
-            case 5:
-                cd0 cd0Var = this.b;
-                ArrayList arrayList2 = cd0Var.k0;
-                if (arrayList != null) {
-                    int size = arrayList2.size();
-                    for (int i10 = 0; i10 < size; i10++) {
-                        ((bd0) arrayList2.get(i10)).b.remove();
-                    }
-                    arrayList2.clear();
-                    int size2 = arrayList.size();
-                    for (int i11 = 0; i11 < size2; i11++) {
-                        TLRPC.TL_messageMediaVenue tL_messageMediaVenue = (TLRPC.TL_messageMediaVenue) arrayList.get(i11);
-                        try {
-                            IMapsProvider.IMarkerOptions onCreateMarkerOptions = ApplicationLoader.getMapsProvider().onCreateMarkerOptions();
-                            TLRPC.GeoPoint geoPoint = tL_messageMediaVenue.geo;
-                            IMapsProvider.IMarkerOptions position = onCreateMarkerOptions.position(new IMapsProvider.LatLng(geoPoint.lat, geoPoint._long));
-                            position.icon(cd0Var.f0(i11));
-                            position.anchor(0.5f, 0.5f);
-                            position.title(tL_messageMediaVenue.title);
-                            position.snippet(tL_messageMediaVenue.address);
-                            bd0 bd0Var = new bd0();
-                            bd0Var.a = i11;
-                            IMapsProvider.IMarker addMarker = cd0Var.I.addMarker(position);
-                            bd0Var.b = addMarker;
-                            bd0Var.c = tL_messageMediaVenue;
-                            addMarker.setTag(bd0Var);
-                            arrayList2.add(bd0Var);
-                        } catch (Exception e) {
-                            FileLog.e(e);
-                        }
-                    }
-                    break;
-                }
-                break;
-            default:
-                cd0 cd0Var2 = this.b;
-                cd0Var2.t0 = false;
-                cd0Var2.B0();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        switch (this.a) {
-            case 1:
-                cd0 cd0Var = this.b;
-                if (cd0Var.getParentActivity() != null) {
-                    try {
-                        Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                        intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                        cd0Var.getParentActivity().startActivity(intent);
-                        break;
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        return;
-                    }
-                }
-                break;
-            default:
-                cd0 cd0Var2 = this.b;
-                if (cd0Var2.getParentActivity() != null) {
-                    try {
-                        cd0Var2.getParentActivity().startActivity(new Intent("android.settings.LOCATION_SOURCE_SETTINGS"));
-                        break;
-                    } catch (Exception unused) {
-                        return;
-                    }
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.q0
-    public void m(int i10) {
-        IMapsProvider.IMap iMap = this.b.I;
-        if (iMap == null) {
-            return;
-        }
-        if (i10 == 2) {
-            iMap.setMapType(0);
-        } else if (i10 == 3) {
-            iMap.setMapType(1);
-        } else if (i10 == 4) {
-            iMap.setMapType(2);
-        }
-    }
-
-    @Override // org.telegram.messenger.IMapsProvider.OnCameraMoveStartedListener
-    public void onCameraMoveStarted(int i10) {
-        View childAt;
-        cd0 cd0Var = this.b;
-        int i11 = cd0Var.G0;
-        if (i10 == 1) {
-            cd0Var.y0(true);
-            if (cd0Var.m0 != null) {
-                cd0Var.X.setVisibility(0);
-                zc0 zc0Var = cd0Var.x;
-                IMapsProvider.IMarker iMarker = cd0Var.m0;
-                HashMap hashMap = zc0Var.a;
-                View view = (View) hashMap.get(iMarker);
-                if (view != null) {
-                    zc0Var.removeView(view);
-                    hashMap.remove(iMarker);
-                }
-                cd0Var.m0 = null;
-                cd0Var.n0 = null;
-                cd0Var.o0 = null;
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x001e, code lost:
+    
+        if ((r5 & 16384) > 0) goto L12;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0020, code lost:
+    
+        r1 = r1 - 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x0031, code lost:
+    
+        if ((r5 & 4) > 0) goto L12;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int a(int i10) {
+        boolean isPremium = this.y.getUserConfig().isPremium();
+        int bitCount = Integer.bitCount(i10);
+        if (isPremium) {
+            if ((i10 & 4096) > 0) {
+                bitCount--;
             }
-            cd0Var.i0 = -1L;
-            if (cd0Var.j0) {
-                cd0Var.j0 = false;
-                cd0Var.C0();
+            if ((i10 & 8192) > 0) {
+                bitCount--;
             }
-            if (cd0Var.Q) {
+        } else {
+            if ((i10 & 16) > 0) {
+                bitCount--;
+            }
+            if ((i10 & 8) > 0) {
+                bitCount--;
+            }
+        }
+        if (SharedConfig.getDevicePerformanceClass() < 1 && (i10 & 256) > 0) {
+            bitCount--;
+        }
+        if ((Build.VERSION.SDK_INT < 33 || (SharedConfig.getDevicePerformanceClass() < 1 && !BuildVars.DEBUG_PRIVATE_VERSION)) && (262144 & i10) > 0) {
+            bitCount--;
+        }
+        return (org.telegram.ui.Components.v11.c() || (i10 & 65536) <= 0) ? bitCount : bitCount - 1;
+    }
+
+    public final void b(boolean z10, boolean z11) {
+        if (this.s != z10) {
+            this.s = z10;
+            org.telegram.ui.Components.qp qpVar = this.h;
+            Switch r12 = this.f;
+            LinearLayout linearLayout = this.b;
+            ImageView imageView = this.a;
+            if (z11) {
+                imageView.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
+                linearLayout.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
+                r12.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
+                org.telegram.messenger.ok.r(qpVar.animate(), z10 ? 0.5f : 1.0f, 220L);
+            } else {
+                imageView.setAlpha(z10 ? 0.5f : 1.0f);
+                linearLayout.setAlpha(z10 ? 0.5f : 1.0f);
+                r12.setAlpha(z10 ? 0.5f : 1.0f);
+                qpVar.setAlpha(z10 ? 0.5f : 1.0f);
+            }
+            setEnabled(!z10);
+        }
+    }
+
+    public final void c(fc0 fc0Var, boolean z10) {
+        int value = LiteMode.getValue(true);
+        int i10 = fc0Var.e;
+        this.w = a(value & i10);
+        this.x = a(i10);
+        boolean z11 = false;
+        String format = String.format("%d/%d", Integer.valueOf(this.w), Integer.valueOf(this.x));
+        if (z10 && !LocaleController.isRTL) {
+            z11 = true;
+        }
+        this.d.c(format, z11, true);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        boolean z10 = LocaleController.isRTL;
+        ai.p4 p4Var = this.c;
+        if (z10) {
+            if (this.r) {
+                float dp = AndroidUtilities.dp(75.0f);
+                canvas.drawRect(dp - AndroidUtilities.dp(0.66f), (getMeasuredHeight() - AndroidUtilities.dp(20.0f)) / 2.0f, dp, (AndroidUtilities.dp(20.0f) + getMeasuredHeight()) / 2.0f, org.telegram.ui.ActionBar.i6.k0);
+            }
+            if (this.n) {
+                canvas.drawLine((getMeasuredWidth() - AndroidUtilities.dp(64.0f)) + (p4Var.getTranslationX() < 0.0f ? AndroidUtilities.dp(-32.0f) : 0), getMeasuredHeight() - 1, 0.0f, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
                 return;
             }
-            if ((i11 == 0 || i11 == 1) && cd0Var.U.getChildCount() > 0 && (childAt = cd0Var.U.getChildAt(0)) != null) {
-                org.telegram.ui.Components.yl0 yl0Var = cd0Var.U;
-                View F = yl0Var.F(childAt);
-                s4.c1 T = F == null ? null : yl0Var.T(F);
-                if (T == null || T.b() != 0) {
-                    return;
-                }
-                int dp = i11 == 0 ? 0 : AndroidUtilities.dp(66.0f);
-                int top = childAt.getTop();
-                if (top < (-dp)) {
-                    IMapsProvider.CameraPosition cameraPosition = cd0Var.I.getCameraPosition();
-                    cd0Var.L = ApplicationLoader.getMapsProvider().newCameraUpdateLatLngZoom(cameraPosition.target, cameraPosition.zoom);
-                    cd0Var.U.v0(0, top + dp, null);
-                }
-            }
+            return;
+        }
+        if (this.r) {
+            float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(75.0f);
+            canvas.drawRect(measuredWidth - AndroidUtilities.dp(0.66f), (getMeasuredHeight() - AndroidUtilities.dp(20.0f)) / 2.0f, measuredWidth, (AndroidUtilities.dp(20.0f) + getMeasuredHeight()) / 2.0f, org.telegram.ui.ActionBar.i6.k0);
+        }
+        if (this.n) {
+            canvas.drawLine(p4Var.getTranslationX() + AndroidUtilities.dp(64.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
         }
     }
 
-    @Override // org.telegram.messenger.IMapsProvider.ITouchInterceptor
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent, IMapsProvider.ICallableMethod iCallableMethod) {
-        MotionEvent motionEvent2;
-        Location location;
-        int i10 = this.a;
-        cd0 cd0Var = this.b;
-        switch (i10) {
-            case 6:
-                if (cd0Var.N != 0.0f) {
-                    motionEvent = MotionEvent.obtain(motionEvent);
-                    motionEvent.offsetLocation(0.0f, (-cd0Var.N) / 2.0f);
-                    motionEvent2 = motionEvent;
-                } else {
-                    motionEvent2 = null;
-                }
-                boolean booleanValue = ((Boolean) iCallableMethod.call(motionEvent)).booleanValue();
-                if (motionEvent2 != null) {
-                    motionEvent2.recycle();
-                }
-                return booleanValue;
-            default:
-                if (cd0Var.B0 == null && cd0Var.z0 == null) {
-                    if (motionEvent.getAction() == 0) {
-                        AnimatorSet animatorSet = cd0Var.l0;
-                        if (animatorSet != null) {
-                            animatorSet.cancel();
-                        }
-                        AnimatorSet animatorSet2 = new AnimatorSet();
-                        cd0Var.l0 = animatorSet2;
-                        animatorSet2.setDuration(200L);
-                        cd0Var.l0.playTogether(ObjectAnimator.ofFloat(cd0Var.X, (Property<View, Float>) View.TRANSLATION_Y, cd0Var.y0 - AndroidUtilities.dp(10.0f)));
-                        cd0Var.l0.start();
-                    } else if (motionEvent.getAction() == 1) {
-                        AnimatorSet animatorSet3 = cd0Var.l0;
-                        if (animatorSet3 != null) {
-                            animatorSet3.cancel();
-                        }
-                        cd0Var.N = 0.0f;
-                        AnimatorSet animatorSet4 = new AnimatorSet();
-                        cd0Var.l0 = animatorSet4;
-                        animatorSet4.setDuration(200L);
-                        cd0Var.l0.playTogether(ObjectAnimator.ofFloat(cd0Var.X, (Property<View, Float>) View.TRANSLATION_Y, cd0Var.y0));
-                        cd0Var.l0.start();
-                        cd0Var.T.I();
-                    }
-                    if (motionEvent.getAction() == 2) {
-                        if (!cd0Var.C0) {
-                            ImageView imageView = cd0Var.a;
-                            int i11 = org.telegram.ui.ActionBar.h6.ui;
-                            imageView.setColorFilter(new PorterDuffColorFilter(cd0Var.getThemedColor(i11), PorterDuff.Mode.MULTIPLY));
-                            cd0Var.a.setTag(Integer.valueOf(i11));
-                            cd0Var.C0 = true;
-                        }
-                        IMapsProvider.IMap iMap = cd0Var.I;
-                        if (iMap != null && (location = cd0Var.x0) != null) {
-                            location.setLatitude(iMap.getCameraPosition().target.latitude);
-                            cd0Var.x0.setLongitude(cd0Var.I.getCameraPosition().target.longitude);
-                        }
-                        cd0Var.T.L(cd0Var.x0);
-                    }
-                }
-                return ((Boolean) iCallableMethod.call(motionEvent)).booleanValue();
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        org.telegram.ui.Components.qp qpVar = this.h;
+        accessibilityNodeInfo.setClassName(qpVar.getVisibility() == 0 ? "android.widget.CheckBox" : "android.widget.Switch");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setEnabled(true);
+        if (qpVar.getVisibility() == 0) {
+            accessibilityNodeInfo.setChecked(qpVar.a.q);
+        } else {
+            accessibilityNodeInfo.setChecked(this.f.h);
         }
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(this.c.getText());
+        if (this.v) {
+            sb2.append('\n');
+            sb2.append(LocaleController.formatString("Of", R.string.Of, Integer.valueOf(this.w), Integer.valueOf(this.x)));
+        }
+        accessibilityNodeInfo.setContentDescription(sb2);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
     }
 }

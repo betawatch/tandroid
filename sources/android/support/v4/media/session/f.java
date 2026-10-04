@@ -13,7 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f extends Handler {
     public final /* synthetic */ int a = 0;
@@ -132,15 +132,15 @@ public final class f extends Handler {
                         n2.b bVar = (n2.b) this.c;
                         th2 = bVar.k.i(bVar.l, (n2.p) aVar.c);
                     }
-                } catch (n2.w e) {
-                    boolean a2 = a(message, e);
-                    th2 = e;
+                } catch (n2.w e7) {
+                    boolean a2 = a(message, e7);
+                    th2 = e7;
                     if (a2) {
                         return;
                     }
-                } catch (Exception e7) {
-                    e2.a.o("DefaultDrmSession", "Key/provisioning request produced an unexpected exception. Not retrying.", e7);
-                    th2 = e7;
+                } catch (Exception e10) {
+                    e2.a.o("DefaultDrmSession", "Key/provisioning request produced an unexpected exception. Not retrying.", e10);
+                    th2 = e10;
                 }
                 qb.b bVar2 = ((n2.b) this.c).i;
                 long j3 = aVar.a;

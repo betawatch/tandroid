@@ -1,18 +1,19 @@
 package q9;
 
-import org.telegram.ui.ds0;
+import org.telegram.ui.fs0;
+import org.telegram.ui.web.w;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class p implements pa.b {
-    public static final org.webrtc.audio.b c = new org.webrtc.audio.b(11);
+    public static final w c = new w(13);
     public static final f d = new f(1);
     public pa.a a;
     public volatile pa.b b;
 
-    public p(org.webrtc.audio.b bVar, pa.b bVar2) {
-        this.a = bVar;
-        this.b = bVar2;
+    public p(w wVar, pa.b bVar) {
+        this.a = wVar;
+        this.b = bVar;
     }
 
     public final void a(pa.a aVar) {
@@ -21,7 +22,7 @@ public final class p implements pa.b {
         pa.b bVar3 = this.b;
         f fVar = d;
         if (bVar3 != fVar) {
-            aVar.g(bVar3);
+            aVar.f(bVar3);
             return;
         }
         synchronized (this) {
@@ -29,12 +30,12 @@ public final class p implements pa.b {
             if (bVar != fVar) {
                 bVar2 = bVar;
             } else {
-                this.a = new ds0(25, this.a, aVar);
+                this.a = new fs0(26, this.a, aVar);
                 bVar2 = null;
             }
         }
         if (bVar2 != null) {
-            aVar.g(bVar);
+            aVar.f(bVar);
         }
     }
 

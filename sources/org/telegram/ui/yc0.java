@@ -1,46 +1,21 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.util.Property;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class yc0 implements ValueAnimator.AnimatorUpdateListener {
-    public boolean a;
-    public final float[] b = {0.0f, 1.0f};
-    public final /* synthetic */ FrameLayout c;
-    public final /* synthetic */ zc0 d;
+public final class yc0 extends org.telegram.ui.ActionBar.n1 {
+    public final /* synthetic */ gd0 o;
 
-    public yc0(zc0 zc0Var, FrameLayout frameLayout) {
-        this.d = zc0Var;
-        this.c = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yc0(gd0 gd0Var, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = gd0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float lerp = AndroidUtilities.lerp(this.b, valueAnimator.getAnimatedFraction());
-        if (lerp >= 0.7f && !this.a) {
-            zc0 zc0Var = this.d;
-            cd0 cd0Var = zc0Var.b;
-            cd0 cd0Var2 = zc0Var.b;
-            if (cd0Var.o0 != null) {
-                AnimatorSet animatorSet = new AnimatorSet();
-                animatorSet.playTogether(ObjectAnimator.ofFloat(cd0Var2.o0, (Property<FrameLayout, Float>) View.SCALE_X, 0.0f, 1.0f), ObjectAnimator.ofFloat(cd0Var2.o0, (Property<FrameLayout, Float>) View.SCALE_Y, 0.0f, 1.0f), ObjectAnimator.ofFloat(cd0Var2.o0, (Property<FrameLayout, Float>) View.ALPHA, 0.0f, 1.0f));
-                animatorSet.setInterpolator(new OvershootInterpolator(1.02f));
-                animatorSet.setDuration(250L);
-                animatorSet.start();
-                this.a = true;
-            }
-        }
-        float interpolation = lerp <= 0.5f ? org.telegram.ui.Components.sr.g.getInterpolation(lerp / 0.5f) * 1.1f : lerp <= 0.75f ? 1.1f - (org.telegram.ui.Components.sr.g.getInterpolation((lerp - 0.5f) / 0.25f) * 0.2f) : (org.telegram.ui.Components.sr.g.getInterpolation((lerp - 0.75f) / 0.25f) * 0.1f) + 0.9f;
-        FrameLayout frameLayout = this.c;
-        frameLayout.setScaleX(interpolation);
-        frameLayout.setScaleY(interpolation);
+    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        this.o.I0 = null;
     }
 }

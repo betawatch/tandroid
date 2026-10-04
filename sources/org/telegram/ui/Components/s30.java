@@ -1,51 +1,54 @@
 package org.telegram.ui.Components;
 
 import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class s30 implements gg.b2 {
-    public final /* synthetic */ t30 a;
+public final /* synthetic */ class s30 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u30 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ int d;
 
-    public s30(t30 t30Var) {
-        this.a = t30Var;
+    public /* synthetic */ s30(u30 u30Var, String str, int i10, int i11) {
+        this.a = i11;
+        this.b = u30Var;
+        this.c = str;
+        this.d = i10;
     }
 
-    @Override // gg.b2
-    public final void a(int i10) {
-        t30 t30Var = this.a;
-        u30 u30Var = t30Var.w;
-        if (i10 < 0 || i10 != t30Var.n || t30Var.h) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                u30 u30Var = this.b;
+                String str = this.c;
+                int i10 = this.d;
+                if (u30Var.e != null) {
+                    u30Var.e = null;
+                    AndroidUtilities.runOnUIThread(new s30(u30Var, str, i10, 1));
+                    break;
+                }
+                break;
+            default:
+                u30 u30Var2 = this.b;
+                String str2 = this.c;
+                int i11 = this.d;
+                ArrayList arrayList = null;
+                u30Var2.e = null;
+                if (!ChatObject.isChannel(u30Var2.w.V) && u30Var2.w.W != null) {
+                    arrayList = new ArrayList(u30Var2.w.W.participants.participants);
+                }
+                if (arrayList != null) {
+                    Utilities.searchQueue.postRunnable(new ai.c9(u30Var2, str2, i11, arrayList));
+                } else {
+                    u30Var2.h = false;
+                }
+                u30Var2.d.g(str2, ChatObject.canAddUsers(u30Var2.w.V), false, true, false, ChatObject.isChannel(u30Var2.w.V) ? u30Var2.w.V.id : 0L, false, 2, i11);
+                break;
         }
-        int i11 = t30Var.f - 1;
-        boolean z10 = u30Var.s.getVisibility() == 0;
-        t30Var.l();
-        if (t30Var.f > i11) {
-            u30Var.J(i11);
-        }
-        if (t30Var.d.e() || !u30Var.d.S0()) {
-            return;
-        }
-        u30Var.s.e(false, z10);
-    }
-
-    @Override // gg.b2
-    public final a0.i i() {
-        return this.a.w.e0;
-    }
-
-    @Override // gg.b2
-    public final /* synthetic */ a0.i o() {
-        return null;
-    }
-
-    @Override // gg.b2
-    public final /* synthetic */ boolean s(int i10) {
-        return true;
-    }
-
-    @Override // gg.b2
-    public final /* synthetic */ void F(ArrayList arrayList) {
     }
 }

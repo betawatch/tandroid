@@ -21,14 +21,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.rq;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.v00;
+import org.telegram.ui.Components.sq;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.w00;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class u4 extends FrameLayout {
-    public static v00 x;
+    public static w00 x;
     public final org.telegram.ui.Components.p6 a;
     public final org.telegram.ui.Components.p6 b;
     public final org.telegram.ui.Components.w9 c;
@@ -48,36 +48,36 @@ public final class u4 extends FrameLayout {
         this.f = d6Var;
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.c = w9Var;
-        ShapeDrawable K = org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(42.0f), -1);
+        ShapeDrawable K = org.telegram.ui.ActionBar.i6.K(AndroidUtilities.dp(42.0f), -1);
         this.d = K;
         w9Var.setBackground(K);
         w9Var.s(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f));
         boolean z10 = LocaleController.isRTL;
-        addView(w9Var, w7.y5.d(42, 42.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 15.0f, 11.0f, z10 ? 15.0f : 0.0f, 0.0f));
+        addView(w9Var, w7.z5.d(42, 42.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 15.0f, 11.0f, z10 ? 15.0f : 0.0f, 0.0f));
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, true, true, true);
         this.a = p6Var;
-        sr srVar = sr.h;
-        p6Var.b(0.4f, 350L, srVar);
+        tr trVar = tr.h;
+        p6Var.b(0.4f, 350L, trVar);
         p6Var.setScaleProperty(0.6f);
         p6Var.setTextSize(AndroidUtilities.dp(16.0f));
         p6Var.setEllipsizeByGradient(true);
-        p6Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));
+        p6Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, d6Var));
         p6Var.setTypeface(AndroidUtilities.bold());
         p6Var.setGravity(LocaleController.isRTL ? 5 : 3);
         p6Var.getDrawable().G = AndroidUtilities.displaySize.x;
         NotificationCenter.listenEmojiLoading(p6Var);
         boolean z11 = LocaleController.isRTL;
-        addView(p6Var, w7.y5.d(-1, 22.0f, (z11 ? 5 : 3) | 48, z11 ? 16 : 73, 10.0f, z11 ? 73 : 16, 0.0f));
+        addView(p6Var, w7.z5.d(-1, 22.0f, (z11 ? 5 : 3) | 48, z11 ? 16 : 73, 10.0f, z11 ? 73 : 16, 0.0f));
         org.telegram.ui.Components.p6 p6Var2 = new org.telegram.ui.Components.p6(context, true, true, true);
         this.b = p6Var2;
         p6Var2.setScaleProperty(0.6f);
-        p6Var2.b(0.4f, 350L, srVar);
+        p6Var2.b(0.4f, 350L, trVar);
         p6Var2.setTextSize(AndroidUtilities.dp(14.0f));
         p6Var2.setEllipsizeByGradient(true);
-        p6Var2.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.A6, d6Var));
+        p6Var2.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.A6, d6Var));
         p6Var2.setGravity(LocaleController.isRTL ? 5 : 3);
         boolean z12 = LocaleController.isRTL;
-        addView(p6Var2, w7.y5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 16 : 73, 35.0f, z12 ? 73 : 16, 0.0f));
+        addView(p6Var2, w7.z5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 16 : 73, 35.0f, z12 ? 73 : 16, 0.0f));
         w9Var.setAlpha(this.v);
         p6Var.setAlpha(this.v);
         p6Var2.setAlpha(this.v);
@@ -131,17 +131,17 @@ public final class u4 extends FrameLayout {
         if (tL_messageMediaVenue != null && (str = tL_messageMediaVenue.icon) != null) {
             if ("pin".equals(str) || tL_messageMediaVenue.icon.startsWith("emoji")) {
                 Drawable mutate = getResources().getDrawable(R.drawable.pin).mutate();
-                mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.ni, this.f), PorterDuff.Mode.MULTIPLY));
-                rq rqVar = new rq(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(42.0f), 0), mutate);
+                mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.ni, this.f), PorterDuff.Mode.MULTIPLY));
+                sq sqVar = new sq(org.telegram.ui.ActionBar.i6.K(AndroidUtilities.dp(42.0f), 0), mutate);
                 int dp = AndroidUtilities.dp(42.0f);
                 int dp2 = AndroidUtilities.dp(42.0f);
-                rqVar.h = dp;
-                rqVar.n = dp2;
+                sqVar.h = dp;
+                sqVar.n = dp2;
                 int dp3 = AndroidUtilities.dp(24.0f);
                 int dp4 = AndroidUtilities.dp(24.0f);
-                rqVar.e = dp3;
-                rqVar.f = dp4;
-                w9Var.setImageDrawable(rqVar);
+                sqVar.e = dp3;
+                sqVar.f = dp4;
+                w9Var.setImageDrawable(sqVar);
             } else {
                 w9Var.f(tL_messageMediaVenue.icon, null, null);
             }
@@ -214,35 +214,35 @@ public final class u4 extends FrameLayout {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        v00 v00Var = x;
+        w00 w00Var = x;
         org.telegram.ui.ActionBar.d6 d6Var = this.f;
-        if (v00Var == null) {
-            v00 v00Var2 = new v00(getContext(), d6Var);
-            x = v00Var2;
-            v00Var2.setIsSingleCell(true);
+        if (w00Var == null) {
+            w00 w00Var2 = new w00(getContext(), d6Var);
+            x = w00Var2;
+            w00Var2.setIsSingleCell(true);
         }
         int indexOfChild = getParent() instanceof ViewGroup ? ((ViewGroup) getParent()).indexOfChild(this) : 0;
-        v00 v00Var3 = x;
+        w00 w00Var3 = x;
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
         int dp = AndroidUtilities.dp(56.0f);
-        v00Var3.O = measuredWidth;
-        v00Var3.P = measuredHeight;
-        v00Var3.Q = dp * (-indexOfChild);
+        w00Var3.O = measuredWidth;
+        w00Var3.P = measuredHeight;
+        w00Var3.Q = dp * (-indexOfChild);
         x.setViewType(4);
         x.e();
         x.h();
         canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - this.v) * 255.0f), 31);
-        canvas.translate(AndroidUtilities.dp(2.0f), ok.A(56.0f, getMeasuredHeight(), 2));
+        canvas.translate(AndroidUtilities.dp(2.0f), ok.z(56.0f, getMeasuredHeight(), 2));
         x.draw(canvas);
         canvas.restore();
         super.onDraw(canvas);
         if (this.e) {
-            Paint G = d6Var == null ? null : d6Var.G("paintDivider");
-            if (G == null) {
-                G = org.telegram.ui.ActionBar.h6.k0;
+            Paint H = d6Var == null ? null : d6Var.H("paintDivider");
+            if (H == null) {
+                H = org.telegram.ui.ActionBar.i6.k0;
             }
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(72.0f), getHeight() - 1, LocaleController.isRTL ? getWidth() - AndroidUtilities.dp(72.0f) : getWidth(), getHeight() - 1, G);
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(72.0f), getHeight() - 1, LocaleController.isRTL ? getWidth() - AndroidUtilities.dp(72.0f) : getWidth(), getHeight() - 1, H);
         }
     }
 

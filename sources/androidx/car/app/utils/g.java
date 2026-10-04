@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class g {
     public static IOnDoneCallback a() {
@@ -45,8 +45,8 @@ public abstract class g {
     public static void d(String str, b bVar) {
         try {
             e(str, bVar);
-        } catch (RemoteException e) {
-            Log.e("CarApp.Dispatch", "Host unresponsive when dispatching call " + str, e);
+        } catch (RemoteException e7) {
+            Log.e("CarApp.Dispatch", "Host unresponsive when dispatching call " + str, e7);
         }
     }
 
@@ -56,10 +56,10 @@ public abstract class g {
                 Log.d("CarApp", "Dispatching call " + str + " to host");
             }
             bVar.call();
-        } catch (SecurityException e) {
-            throw e;
-        } catch (RuntimeException e7) {
-            throw new j(a4.a.q("Remote ", str, " call failed"), e7);
+        } catch (SecurityException e7) {
+            throw e7;
+        } catch (RuntimeException e10) {
+            throw new j(a4.a.p("Remote ", str, " call failed"), e10);
         }
     }
 

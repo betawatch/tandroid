@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class e6 extends Drawable {
     public float[] b;
@@ -31,7 +31,7 @@ public final class e6 extends Drawable {
             rectF.set(getBounds());
             path.addRoundRect(rectF, this.b, Path.Direction.CW);
         }
-        canvas.drawPath(path, h6.z);
+        canvas.drawPath(path, i6.z);
     }
 
     @Override // android.graphics.drawable.Drawable

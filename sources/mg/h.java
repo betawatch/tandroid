@@ -8,14 +8,14 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.r6;
-import org.telegram.ui.Components.uo0;
+import org.telegram.ui.Components.yo0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout {
-    public uo0 a;
+    public yo0 a;
     public float b;
     public float c;
     public float d;
@@ -33,9 +33,9 @@ public final class h extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         TextPaint textPaint = this.h;
-        textPaint.setColor(h6.w0(null, h6.G6, false));
+        textPaint.setColor(i6.w0(null, i6.G6, false));
         canvas.drawText(this.f, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), textPaint);
-        textPaint.setColor(h6.w0(null, h6.I6, false));
+        textPaint.setColor(i6.w0(null, i6.I6, false));
         String format = String.format(Locale.ROOT, "%.2f", Float.valueOf(this.d));
         canvas.drawText(format, (getMeasuredWidth() - AndroidUtilities.dp(8.0f)) - textPaint.measureText(format), this.a.getY() + AndroidUtilities.dp(23.0f), textPaint);
     }
@@ -51,10 +51,10 @@ public final class h extends FrameLayout {
         super.onMeasure(i10, i11);
         int size = View.MeasureSpec.getSize(i10);
         if (this.n != size) {
-            uo0 uo0Var = this.a;
+            yo0 yo0Var = this.a;
             float floatValue = ((Float) this.e.get(null)).floatValue();
             float f7 = this.b;
-            uo0Var.setProgress((floatValue - f7) / (this.c - f7));
+            yo0Var.setProgress((floatValue - f7) / (this.c - f7));
             this.n = size;
         }
     }

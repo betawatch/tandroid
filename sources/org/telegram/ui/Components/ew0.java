@@ -1,37 +1,24 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ew0 extends k60 {
-    public final /* synthetic */ gw0 d;
+public final class ew0 extends o1.i {
+    public final cw0 a;
+    public final dw0 b;
+    public float c = 1.0f;
 
-    public ew0(gw0 gw0Var) {
-        this.d = gw0Var;
+    public ew0(cw0 cw0Var, dw0 dw0Var) {
+        this.a = cw0Var;
+        this.b = dw0Var;
     }
 
-    @Override // org.telegram.ui.Components.ro0
-    public final CharSequence d() {
-        gw0 gw0Var = this.d;
-        int i10 = gw0Var.I;
-        String[] strArr = gw0Var.F;
-        if (i10 < strArr.length) {
-            return strArr[i10];
-        }
-        return null;
+    @Override // o1.i
+    public final float a(Object obj) {
+        return this.a.get(obj) * this.c;
     }
 
-    @Override // org.telegram.ui.Components.k60
-    public final int i() {
-        return this.d.F.length - 1;
-    }
-
-    @Override // org.telegram.ui.Components.k60
-    public final int j() {
-        return this.d.I;
-    }
-
-    @Override // org.telegram.ui.Components.k60
-    public final void k(int i10) {
-        this.d.setOption(i10);
+    @Override // o1.i
+    public final void b(Object obj, float f7) {
+        this.b.b(obj, f7 / this.c);
     }
 }

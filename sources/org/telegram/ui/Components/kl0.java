@@ -8,16 +8,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class kl0 extends s4.n0 implements bh.a {
     public final Utilities.CallbackReturn a;
-    public final yl0 b;
+    public final zl0 b;
     public final int c;
     public final boolean d;
 
-    public kl0(yl0 yl0Var, Utilities.CallbackReturn callbackReturn, int i10, boolean z10) {
-        this.b = yl0Var;
+    public kl0(zl0 zl0Var, Utilities.CallbackReturn callbackReturn, int i10, boolean z10) {
+        this.b = zl0Var;
         this.a = callbackReturn;
         this.c = i10;
         this.d = z10;
@@ -53,8 +53,8 @@ public final class kl0 extends s4.n0 implements bh.a {
 
     @Override // s4.n0
     public final void c(Canvas canvas, RecyclerView recyclerView) {
-        if (recyclerView instanceof yl0) {
-            ((yl0) recyclerView).Q0(canvas);
+        if (recyclerView instanceof zl0) {
+            ((zl0) recyclerView).R0(canvas);
         }
     }
 
@@ -62,7 +62,7 @@ public final class kl0 extends s4.n0 implements bh.a {
     public final void f(Canvas canvas, RectF rectF) {
         canvas.save();
         canvas.clipRect(rectF);
-        this.b.Q0(canvas);
+        this.b.R0(canvas);
         canvas.restore();
     }
 }

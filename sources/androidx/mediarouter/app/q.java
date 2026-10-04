@@ -16,7 +16,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class q extends AsyncTask {
     public final Bitmap a;
@@ -116,8 +116,8 @@ public final class q extends AsyncTask {
                             } catch (IOException unused3) {
                                 return null;
                             }
-                        } catch (IOException e) {
-                            e = e;
+                        } catch (IOException e7) {
+                            e = e7;
                             Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri, e);
                             if (bufferedInputStream != null) {
                                 try {
@@ -136,8 +136,8 @@ public final class q extends AsyncTask {
                             }
                             return bitmap;
                         }
-                    } catch (IOException e7) {
-                        e = e7;
+                    } catch (IOException e10) {
+                        e = e10;
                         bufferedInputStream = null;
                     } catch (Throwable th2) {
                         th = th2;

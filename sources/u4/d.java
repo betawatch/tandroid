@@ -20,7 +20,7 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlSerializer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class d {
     public static volatile ArrayList a;
@@ -59,9 +59,9 @@ public abstract class d {
                 return fVar;
             } finally {
             }
-        } catch (Exception e) {
+        } catch (Exception e7) {
             file.delete();
-            Log.e("ShortcutInfoCompatSaver", "Failed to load saved values from file " + file.getAbsolutePath() + ". Old state removed, new added", e);
+            Log.e("ShortcutInfoCompatSaver", "Failed to load saved values from file " + file.getAbsolutePath() + ". Old state removed, new added", e7);
             return fVar;
         }
     }
@@ -129,8 +129,8 @@ public abstract class d {
                             if (next == 2 && loadXmlMetaData.getName().equals("share-target") && (d = d(loadXmlMetaData)) != null) {
                                 arrayList2.add(d);
                             }
-                        } catch (Exception e) {
-                            Log.e("ShareTargetXmlParser", "Failed to parse the Xml resource: ", e);
+                        } catch (Exception e7) {
+                            Log.e("ShareTargetXmlParser", "Failed to parse the Xml resource: ", e7);
                         }
                     }
                     loadXmlMetaData.close();

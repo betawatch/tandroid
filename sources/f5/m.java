@@ -1,27 +1,28 @@
 package f5;
 
 import com.google.android.gms.internal.vision.e2;
+import ii.n4;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import w7.u6;
+import w7.v6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class m extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ka.c I;
-    public static final /* synthetic */ ka.c J;
-    public static final /* synthetic */ ka.c K;
-    public static final /* synthetic */ ka.c L;
-    public static final /* synthetic */ ka.c M;
-    public static final /* synthetic */ ka.c N;
-    public static final /* synthetic */ ka.c O;
-    public static final /* synthetic */ ka.c P;
-    public static final /* synthetic */ ka.c Q;
-    public static final /* synthetic */ ka.c R;
-    public static final /* synthetic */ ka.c S;
-    public static final /* synthetic */ ka.c T;
-    public static final /* synthetic */ ka.c U;
-    public static final /* synthetic */ ka.c V;
+    public static final /* synthetic */ n4 I;
+    public static final /* synthetic */ n4 J;
+    public static final /* synthetic */ n4 K;
+    public static final /* synthetic */ n4 L;
+    public static final /* synthetic */ n4 M;
+    public static final /* synthetic */ n4 N;
+    public static final /* synthetic */ n4 O;
+    public static final /* synthetic */ n4 P;
+    public static final /* synthetic */ n4 Q;
+    public static final /* synthetic */ n4 R;
+    public static final /* synthetic */ n4 S;
+    public static final /* synthetic */ n4 T;
+    public static final /* synthetic */ n4 U;
+    public static final /* synthetic */ n4 V;
     public int E;
     public int F;
     public int G;
@@ -74,13 +75,13 @@ public final class m extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = u6.b(e5.b.j(byteBuffer));
-            this.f = u6.b(e5.b.j(byteBuffer));
+            this.e = v6.b(e5.b.j(byteBuffer));
+            this.f = v6.b(e5.b.j(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.j(byteBuffer);
         } else {
-            this.e = u6.b(e5.b.i(byteBuffer));
-            this.f = u6.b(e5.b.i(byteBuffer));
+            this.e = v6.b(e5.b.i(byteBuffer));
+            this.f = v6.b(e5.b.i(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.i(byteBuffer);
         }
@@ -103,13 +104,13 @@ public final class m extends com.googlecode.mp4parser.c {
     public final void getContent(ByteBuffer byteBuffer) {
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(u6.a(this.e));
-            byteBuffer.putLong(u6.a(this.f));
+            byteBuffer.putLong(v6.a(this.e));
+            byteBuffer.putLong(v6.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) u6.a(this.e));
-            byteBuffer.putInt((int) u6.a(this.f));
+            byteBuffer.putInt((int) v6.a(this.e));
+            byteBuffer.putInt((int) v6.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) this.n);
         }
@@ -135,7 +136,7 @@ public final class m extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.t b10 = re.a.b(P, this, this);
+        com.google.firebase.messaging.s b10 = re.a.b(P, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("MovieHeaderBox[creationTime=");
@@ -160,6 +161,6 @@ public final class m extends com.googlecode.mp4parser.c {
         sb2.append(this.v);
         sb2.append(";nextTrackId=");
         e2.q(re.a.b(O, this, this));
-        return a4.a.s(sb2, this.w, "]");
+        return a4.a.r(sb2, this.w, "]");
     }
 }

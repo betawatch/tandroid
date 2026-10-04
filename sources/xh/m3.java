@@ -9,28 +9,28 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.qq;
-import w7.a6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.rq;
+import w7.b6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class m3 extends TextView {
-    public final qq a;
+    public final rq a;
 
     public m3(Context context, d6 d6Var) {
         super(context);
-        int v02 = h6.v0(h6.y8, d6Var);
+        int v02 = i6.v0(i6.y8, d6Var);
         setTextColor(v02);
-        setBackground(h6.Z(h6.l1(0.08f, v02), h6.l1(0.15f, v02), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f)));
+        setBackground(i6.Z(i6.l1(0.08f, v02), i6.l1(0.15f, v02), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f)));
         setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f), 0);
         setGravity(17);
         setTypeface(AndroidUtilities.bold());
-        a6.a(this);
-        qq qqVar = new qq(R.drawable.arrows_select, 0);
-        this.a = qqVar;
-        qqVar.spaceScaleX = 0.8f;
-        qqVar.translate(0.0f, AndroidUtilities.dp(1.0f));
+        b6.a(this);
+        rq rqVar = new rq(R.drawable.arrows_select, 0);
+        this.a = rqVar;
+        rqVar.spaceScaleX = 0.8f;
+        rqVar.translate(0.0f, AndroidUtilities.dp(1.0f));
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -39,25 +39,25 @@ public final class m3 extends TextView {
     }
 
     public void setSorting(u3 u3Var) {
-        qq qqVar;
+        rq rqVar;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("v ");
         if (u3Var == u3.c) {
-            qqVar = new qq(R.drawable.mini_gift_sorting_date, 0);
-            spannableStringBuilder.setSpan(qqVar, 0, 1, 33);
+            rqVar = new rq(R.drawable.mini_gift_sorting_date, 0);
+            spannableStringBuilder.setSpan(rqVar, 0, 1, 33);
             spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.ResellGiftFilterSortDateShort));
         } else if (u3Var == u3.b) {
-            qqVar = new qq(R.drawable.mini_gift_sorting_price, 0);
-            spannableStringBuilder.setSpan(qqVar, 0, 1, 33);
+            rqVar = new rq(R.drawable.mini_gift_sorting_price, 0);
+            spannableStringBuilder.setSpan(rqVar, 0, 1, 33);
             spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.ResellGiftFilterSortPriceShort));
         } else if (u3Var == u3.d) {
-            qqVar = new qq(R.drawable.mini_gift_sorting_num, 0);
-            spannableStringBuilder.setSpan(qqVar, 0, 1, 33);
+            rqVar = new rq(R.drawable.mini_gift_sorting_num, 0);
+            spannableStringBuilder.setSpan(rqVar, 0, 1, 33);
             spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.ResellGiftFilterSortNumberShort));
         } else {
-            qqVar = null;
+            rqVar = null;
         }
-        if (qqVar != null) {
-            qqVar.translate(0.0f, AndroidUtilities.dp(1.0f));
+        if (rqVar != null) {
+            rqVar.translate(0.0f, AndroidUtilities.dp(1.0f));
         }
         setText(spannableStringBuilder);
     }

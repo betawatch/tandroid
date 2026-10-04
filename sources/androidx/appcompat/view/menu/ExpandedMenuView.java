@@ -7,30 +7,30 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import l.a0;
+import l.j;
 import l.k;
-import l.l;
-import l.n;
+import l.m;
+import l.z;
 import la.h;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class ExpandedMenuView extends ListView implements k, a0, AdapterView.OnItemClickListener {
+public final class ExpandedMenuView extends ListView implements j, z, AdapterView.OnItemClickListener {
     public static final int[] b = {R.attr.background, R.attr.divider};
-    public l a;
+    public k a;
 
     public ExpandedMenuView(Context context, AttributeSet attributeSet) {
         this(context, attributeSet, R.attr.listViewStyle);
     }
 
-    @Override // l.k
-    public final boolean a(n nVar) {
-        return this.a.q(nVar, null, 0);
+    @Override // l.j
+    public final boolean a(m mVar) {
+        return this.a.q(mVar, null, 0);
     }
 
-    @Override // l.a0
-    public final void b(l lVar) {
-        this.a = lVar;
+    @Override // l.z
+    public final void b(k kVar) {
+        this.a = kVar;
     }
 
     public int getWindowAnimations() {
@@ -45,7 +45,7 @@ public final class ExpandedMenuView extends ListView implements k, a0, AdapterVi
 
     @Override // android.widget.AdapterView.OnItemClickListener
     public final void onItemClick(AdapterView adapterView, View view, int i10, long j3) {
-        a((n) getAdapter().getItem(i10));
+        a((m) getAdapter().getItem(i10));
     }
 
     public ExpandedMenuView(Context context, AttributeSet attributeSet, int i10) {

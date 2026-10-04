@@ -9,7 +9,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class TeXSymbolParser {
     public static final String DELIMITER_ATTR = "del";
@@ -52,7 +52,7 @@ public class TeXSymbolParser {
             boolean z10 = attribute != null && attribute.equals("true");
             Integer num = typeMappings.get(attrValueAndCheckIfNotNull2);
             if (num == null) {
-                throw new XMLResourceParseException(RESOURCE_NAME, "Symbol", TYPE_ATTR, a.q("has an unknown value '", attrValueAndCheckIfNotNull2, "'!"));
+                throw new XMLResourceParseException(RESOURCE_NAME, "Symbol", TYPE_ATTR, a.p("has an unknown value '", attrValueAndCheckIfNotNull2, "'!"));
             }
             hashMap.put(attrValueAndCheckIfNotNull, new SymbolAtom(attrValueAndCheckIfNotNull, num.intValue(), z10));
         }
@@ -66,8 +66,8 @@ public class TeXSymbolParser {
             newInstance.setIgnoringComments(true);
             this.root = newInstance.newDocumentBuilder().parse(inputStream).getDocumentElement();
             setTypeMappings();
-        } catch (Exception e) {
-            throw new XMLResourceParseException(str, e);
+        } catch (Exception e7) {
+            throw new XMLResourceParseException(str, e7);
         }
     }
 }

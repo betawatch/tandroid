@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class DateTimeWithZone {
     private static final long MAX_ZONE_OFFSET_SECONDS = TimeUnit.HOURS.toSeconds(1) * 18;
@@ -69,7 +69,7 @@ public final class DateTimeWithZone {
         sb2.append(")  zone offset (s): ");
         sb2.append(this.mZoneOffsetSeconds);
         sb2.append(", zone: ");
-        return a4.a.t(sb2, this.mZoneShortName, "]");
+        return a4.a.s(sb2, this.mZoneShortName, "]");
     }
 
     private DateTimeWithZone(long j3, int i10, String str) {

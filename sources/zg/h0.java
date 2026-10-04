@@ -10,23 +10,23 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.w0;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.qk0;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.rj;
-import org.telegram.ui.wn;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.sj;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class h0 extends FrameLayout {
-    public final /* synthetic */ m2 a;
+    public final /* synthetic */ n2 a;
     public final /* synthetic */ View b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ wn e;
+    public final /* synthetic */ yn e;
     public final /* synthetic */ int f;
     public final /* synthetic */ int h;
     public final /* synthetic */ boolean n;
@@ -37,14 +37,14 @@ public final class h0 extends FrameLayout {
     public final /* synthetic */ k0 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h0(k0 k0Var, Context context, m2 m2Var, View view, boolean z10, MessageObject messageObject, wn wnVar, int i10, int i11, boolean z11, float f7, float f10, float f11, o0 o0Var) {
+    public h0(k0 k0Var, Context context, n2 n2Var, View view, boolean z10, MessageObject messageObject, yn ynVar, int i10, int i11, boolean z11, float f7, float f10, float f11, o0 o0Var) {
         super(context);
         this.x = k0Var;
-        this.a = m2Var;
+        this.a = n2Var;
         this.b = view;
         this.c = z10;
         this.d = messageObject;
-        this.e = wnVar;
+        this.e = ynVar;
         this.f = i10;
         this.h = i11;
         this.n = z11;
@@ -104,7 +104,7 @@ public final class h0 extends FrameLayout {
         float f20;
         m0 m0Var;
         int paddingTop;
-        wn wnVar;
+        yn ynVar;
         MessageObject messageObject;
         k0 k0Var = this.x;
         if (k0Var.l) {
@@ -153,15 +153,15 @@ public final class h0 extends FrameLayout {
             qk0Var.a.setAlpha(0.0f);
             this.x.t.c.setAlpha(0.0f);
         }
-        m2 m2Var = this.a;
-        if (m2Var instanceof wn) {
-            wn wnVar2 = (wn) m2Var;
+        n2 n2Var = this.a;
+        if (n2Var instanceof yn) {
+            yn ynVar2 = (yn) n2Var;
             int i12 = this.x.n;
-            rj rjVar = wnVar2.x0;
-            if (rjVar != null) {
-                int childCount = rjVar.getChildCount();
+            sj sjVar = ynVar2.v0;
+            if (sjVar != null) {
+                int childCount = sjVar.getChildCount();
                 for (int i13 = 0; i13 < childCount; i13++) {
-                    view = wnVar2.x0.getChildAt(i13);
+                    view = ynVar2.v0.getChildAt(i13);
                     if (view instanceof u1) {
                         messageObject = ((u1) view).getMessageObject();
                     } else if (view instanceof w0) {
@@ -215,9 +215,9 @@ public final class h0 extends FrameLayout {
                         f10 += rect.left;
                         f11 += rect.top;
                     }
-                    wnVar = this.e;
-                    if (wnVar != null) {
-                        f11 += wnVar.ya;
+                    ynVar = this.e;
+                    if (ynVar != null) {
+                        f11 += ynVar.wa;
                     }
                     k0 k0Var3 = this.x;
                     k0Var3.q = f10;
@@ -227,8 +227,8 @@ public final class h0 extends FrameLayout {
             f11 += paddingTop;
             if (m0Var != null) {
             }
-            wnVar = this.e;
-            if (wnVar != null) {
+            ynVar = this.e;
+            if (ynVar != null) {
             }
             k0 k0Var32 = this.x;
             k0Var32.q = f10;
@@ -245,8 +245,8 @@ public final class h0 extends FrameLayout {
                 f11 = k0Var4.r;
             }
         }
-        m2 m2Var2 = this.a;
-        if (m2Var2 != null && m2Var2.getParentActivity() != null && this.a.getFragmentView() != null && this.a.getFragmentView().getParent() != null && this.a.getFragmentView().getVisibility() == 0 && this.a.getFragmentView() != null) {
+        n2 n2Var2 = this.a;
+        if (n2Var2 != null && n2Var2.getParentActivity() != null && this.a.getFragmentView() != null && this.a.getFragmentView().getParent() != null && this.a.getFragmentView().getVisibility() == 0 && this.a.getFragmentView() != null) {
             this.a.getFragmentView().getLocationOnScreen(this.x.j);
             setAlpha(((View) this.a.getFragmentView().getParent()).getAlpha());
         } else if (!this.c && !(view instanceof lh.c)) {
@@ -267,16 +267,16 @@ public final class h0 extends FrameLayout {
                 f27 = (getMeasuredWidth() + this.x.j[0]) - this.f;
             }
         }
-        sr srVar = sr.f;
-        float interpolation = srVar.getInterpolation(this.x.h);
+        tr trVar = tr.f;
+        float interpolation = trVar.getInterpolation(this.x.h);
         if (this.h == 2) {
-            f13 = sr.h.getInterpolation(interpolation);
-            f14 = srVar.getInterpolation(interpolation);
+            f13 = tr.h.getInterpolation(interpolation);
+            f14 = trVar.getInterpolation(interpolation);
             f12 = 2.0f;
         } else if (this.n) {
             f12 = 2.0f;
-            f13 = sr.h.getInterpolation(this.x.g);
-            f14 = srVar.getInterpolation(this.x.g);
+            f13 = tr.h.getInterpolation(this.x.g);
+            f14 = trVar.getInterpolation(this.x.g);
         } else {
             f12 = 2.0f;
             f13 = this.x.g;
@@ -414,7 +414,7 @@ public final class h0 extends FrameLayout {
                                     }
                                 }
                                 if (f34 >= 1.0f) {
-                                    j0Var.l = a4.a.B(AndroidUtilities.dp(20.0f), 16.0f, 500.0f, j0Var.l);
+                                    j0Var.l = a4.a.A(AndroidUtilities.dp(20.0f), 16.0f, 500.0f, j0Var.l);
                                 }
                                 if (j0Var.k) {
                                     float f45 = j0Var.j;

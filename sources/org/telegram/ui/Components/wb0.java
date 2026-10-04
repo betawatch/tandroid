@@ -3,17 +3,17 @@ package org.telegram.ui.Components;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class wb0 extends ji.n {
     public int W;
     public Runnable X;
-    public final /* synthetic */ bc0 Y;
+    public final /* synthetic */ cc0 Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wb0(bc0 bc0Var, ub0 ub0Var, org.telegram.ui.ActionBar.d6 d6Var) {
+    public wb0(cc0 cc0Var, ub0 ub0Var, org.telegram.ui.ActionBar.d6 d6Var) {
         super(null, ub0Var, d6Var);
-        this.Y = bc0Var;
+        this.Y = cc0Var;
         this.W = -1;
     }
 
@@ -27,20 +27,20 @@ public final class wb0 extends ji.n {
         vb0 vb0Var = new vb0(this, 0);
         this.X = vb0Var;
         AndroidUtilities.runOnUIThread(vb0Var);
-        bc0 bc0Var = this.Y;
-        if (bc0Var.V) {
-            bc0Var.V = false;
+        cc0 cc0Var = this.Y;
+        if (cc0Var.V) {
+            cc0Var.V = false;
             AndroidUtilities.runOnUIThread(new vb0(this, 1));
         }
     }
 
     @Override // ji.n
     public final void W() {
-        hc0 hc0Var = this.Y.c0;
-        AndroidUtilities.cancelRunOnUIThread(hc0Var.y);
-        hc0Var.y.run();
+        ic0 ic0Var = this.Y.c0;
+        AndroidUtilities.cancelRunOnUIThread(ic0Var.y);
+        ic0Var.y.run();
         if (this.W == -1) {
-            this.W = NotificationCenter.getInstance(hc0Var.w).setAnimationInProgress(this.W, null, false);
+            this.W = NotificationCenter.getInstance(ic0Var.w).setAnimationInProgress(this.W, null, false);
         }
         Runnable runnable = this.X;
         if (runnable != null) {

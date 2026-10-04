@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements PopupWindow.OnDismissListener {
     public final /* synthetic */ int a;
@@ -28,34 +28,34 @@ public final /* synthetic */ class f0 implements PopupWindow.OnDismissListener {
                 }
                 break;
             case 1:
-                wn wnVar = (wn) this.b;
-                wnVar.Q8 = null;
-                wnVar.T8 = null;
-                wnVar.S8 = null;
-                wnVar.z0.R = true;
-                wnVar.g8(false, true, 0.0f);
-                jk jkVar = wnVar.Y;
+                yn ynVar = (yn) this.b;
+                ynVar.O8 = null;
+                ynVar.R8 = null;
+                ynVar.Q8 = null;
+                ynVar.x0.R = true;
+                ynVar.g8(false, true, 0.0f);
+                jk jkVar = ynVar.W;
                 if (jkVar != null && jkVar.getEditField() != null) {
-                    wnVar.Y.getEditField().setAllowDrawCursor(true);
+                    ynVar.W.getEditField().setAllowDrawCursor(true);
                     break;
                 }
                 break;
             case 2:
-                lj ljVar = (lj) this.b;
-                ljVar.b = null;
-                wn wnVar2 = ljVar.w;
-                wnVar2.Q8 = null;
-                wnVar2.T8 = null;
-                wnVar2.S8 = null;
-                wnVar2.z0.R = true;
-                if (wnVar2.R8) {
-                    wnVar2.g8(false, true, 0.0f);
+                mj mjVar = (mj) this.b;
+                mjVar.b = null;
+                yn ynVar2 = mjVar.w;
+                ynVar2.O8 = null;
+                ynVar2.R8 = null;
+                ynVar2.Q8 = null;
+                ynVar2.x0.R = true;
+                if (ynVar2.P8) {
+                    ynVar2.g8(false, true, 0.0f);
                 } else {
-                    wnVar2.R8 = true;
+                    ynVar2.P8 = true;
                 }
-                jk jkVar2 = wnVar2.Y;
+                jk jkVar2 = ynVar2.W;
                 if (jkVar2 != null && jkVar2.getEditField() != null) {
-                    wnVar2.Y.getEditField().setAllowDrawCursor(true);
+                    ynVar2.W.getEditField().setAllowDrawCursor(true);
                     break;
                 }
                 break;

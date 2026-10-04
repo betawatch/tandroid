@@ -1,23 +1,50 @@
 package yh;
 
-import org.telegram.messenger.NotificationCenter;
+import android.widget.LinearLayout;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.ou0;
+import org.telegram.ui.yu0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class t6 implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e3[] b;
+public final class t6 extends ou0 {
+    public final /* synthetic */ w9 a;
+    public final /* synthetic */ LinearLayout b;
+    public final /* synthetic */ long c;
 
-    public t6(boolean[] zArr, org.telegram.ui.ActionBar.e3[] e3VarArr) {
-        this.a = zArr;
-        this.b = e3VarArr;
+    public t6(w9 w9Var, LinearLayout linearLayout, long j3) {
+        this.a = w9Var;
+        this.b = linearLayout;
+        this.c = j3;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        org.telegram.ui.ActionBar.e3 e3Var;
-        if (i10 == NotificationCenter.starSubscriptionsLoaded && this.a[0] && (e3Var = this.b[0]) != null) {
-            e3Var.dismiss();
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    public final yu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        w9 w9Var = this.a;
+        ImageReceiver imageReceiver = w9Var.getImageReceiver();
+        int[] iArr = new int[2];
+        w9Var.getLocationInWindow(iArr);
+        yu0 yu0Var = new yu0();
+        yu0Var.b = iArr[0];
+        yu0Var.c = iArr[1];
+        yu0Var.d = this.b;
+        yu0Var.m = null;
+        yu0Var.a = imageReceiver;
+        if (z10) {
+            yu0Var.e = imageReceiver.getBitmapSafe();
         }
+        yu0Var.h = imageReceiver.getRoundRadius(true);
+        yu0Var.f = this.c;
+        yu0Var.j = 0;
+        yu0Var.i = 0;
+        return yu0Var;
+    }
+
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    public final boolean K() {
+        return true;
     }
 }

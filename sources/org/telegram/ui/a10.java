@@ -1,45 +1,56 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class a10 extends ReplacementSpan {
-    public final org.telegram.ui.ActionBar.d6 a;
-    public final Paint b;
-    public final int c;
-    public final org.telegram.ui.Components.v01 d;
+public final class a10 implements TextWatcher {
+    public final /* synthetic */ c10 a;
 
-    public a10(String str, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.a = d6Var;
-        this.c = i10;
-        this.d = new org.telegram.ui.Components.v01(str, 9.33f, AndroidUtilities.bold());
-        paint.setStyle(Paint.Style.FILL);
+    public a10(c10 c10Var) {
+        this.a = c10Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        int v02 = org.telegram.ui.ActionBar.h6.v0(this.c, this.a);
-        int l1 = org.telegram.ui.ActionBar.h6.l1(0.15f, v02);
-        Paint paint2 = this.b;
-        paint2.setColor(l1);
-        float f10 = (i14 + i12) / 2.0f;
-        float dp = AndroidUtilities.dp(14.66f);
-        RectF rectF = AndroidUtilities.rectTmp;
-        float f11 = dp / 2.0f;
-        rectF.set(f7, f10 - f11, this.d.l() + f7 + AndroidUtilities.dp(9.33f), f11 + f10);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint2);
-        this.d.c(f7 + AndroidUtilities.dp(4.66f), f10, 1.0f, v02, canvas);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        String str;
+        f10 f10Var = this.a.e;
+        if (!TextUtils.equals(editable, f10Var.w)) {
+            f10Var.n = !TextUtils.isEmpty(editable);
+            f10Var.w = org.telegram.ui.Components.z5.onlyEmojiSpans(editable);
+            t00 t00Var = f10Var.I;
+            if (t00Var != null) {
+                t00Var.e(org.telegram.ui.Components.z5.cloneSpans(f10Var.w, -1, t00Var.s.getPaint().getFontMetricsInt(), 0.5f), true);
+            }
+            u00 u00Var = f10Var.J;
+            if (u00Var != null) {
+                org.telegram.ui.Cells.u3 u3Var = u00Var.r;
+                if (f10.k0(f10Var.w)) {
+                    str = LocaleController.getString(f10Var.x ? R.string.FilterNameAnimationsDisable : R.string.FilterNameAnimationsEnable);
+                } else {
+                    str = null;
+                }
+                u3Var.setText(str);
+            }
+            kVar = ((org.telegram.ui.ActionBar.n2) f10Var).actionBar;
+            CharSequence charSequence = f10Var.w;
+            kVar2 = ((org.telegram.ui.ActionBar.n2) f10Var).actionBar;
+            kVar.setTitle(org.telegram.ui.Components.z5.cloneSpans(charSequence, -1, kVar2.getTitleFontMetricsInt()));
+        }
+        f10Var.i0(true);
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) (this.d.l() + AndroidUtilities.dp(9.33f));
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

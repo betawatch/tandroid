@@ -2,17 +2,18 @@ package pg;
 
 import android.graphics.SurfaceTexture;
 import android.view.TextureView;
-import org.telegram.ui.Components.ja;
+import org.telegram.ui.Components.ka;
+import org.telegram.ui.web.x1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class a1 implements TextureView.SurfaceTextureListener {
-    public final /* synthetic */ ja a;
+    public final /* synthetic */ ka a;
     public final /* synthetic */ f1 b;
 
-    public a1(f1 f1Var, ja jaVar) {
+    public a1(f1 f1Var, ka kaVar) {
         this.b = f1Var;
-        this.a = jaVar;
+        this.a = kaVar;
     }
 
     @Override // android.view.TextureView.SurfaceTextureListener
@@ -42,7 +43,7 @@ public final class a1 implements TextureView.SurfaceTextureListener {
         f1 f1Var = this.b;
         if (f1Var.d != null && !f1Var.y) {
             s0 s0Var = f1Var.c;
-            s0Var.f.f(new org.telegram.ui.web.f1(7, s0Var, new z0(this, 2)));
+            s0Var.f.f(new x1(4, s0Var, new z0(this, 2)));
         }
         return true;
     }

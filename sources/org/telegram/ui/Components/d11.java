@@ -1,74 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class d11 {
-    public int a;
-    public int b;
-    public int c;
-    public TLRPC.MessageEntity d;
-    public boolean e;
+public final class d11 extends FrameLayout {
+    public static final /* synthetic */ int e = 0;
+    public TextView a;
+    public c11 b;
+    public TLRPC.TL_help_termsOfService c;
+    public int d;
 
-    public d11() {
+    public final void a() {
+        c11 c11Var = this.b;
+        int i10 = this.d;
+        org.telegram.ui.va0 va0Var = (org.telegram.ui.va0) c11Var;
+        va0Var.getClass();
+        UserConfig.getInstance(i10).unacceptedTermsOfService = null;
+        UserConfig.getInstance(i10).saveConfig(false);
+        LaunchActivity launchActivity = va0Var.a;
+        ArrayList arrayList = launchActivity.d0;
+        if (!arrayList.isEmpty()) {
+            ((org.telegram.ui.ActionBar.n2) hg.k0.g(1, arrayList)).onResume();
+        }
+        launchActivity.C0.animate().alpha(0.0f).setDuration(150L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.g10(va0Var, 15)).start();
+        TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
+        tL_help_acceptTermsOfService.id = this.c.id;
+        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new ai.u7(16));
     }
 
-    public final void a(TextPaint textPaint) {
-        Typeface typeface;
-        if (this.e) {
-            typeface = (this.a & 2) != 0 ? AndroidUtilities.getTypeface("fonts/mw_bolditalic.ttf") : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
-        } else {
-            int i10 = this.a;
-            if ((i10 & 4) == 0 && (i10 & 2048) == 0) {
-                int i11 = i10 & 1;
-                typeface = (i11 == 0 || (i10 & 2) == 0) ? i11 != 0 ? AndroidUtilities.bold() : (i10 & 2) != 0 ? AndroidUtilities.getTypeface("fonts/ritalic.ttf") : null : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
-            } else {
-                typeface = Typeface.MONOSPACE;
-            }
-        }
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        if ((this.a & 16) != 0) {
-            textPaint.setFlags(textPaint.getFlags() | 8);
-        } else {
-            textPaint.setFlags(textPaint.getFlags() & (-9));
-        }
-        int i12 = this.a;
-        if ((i12 & 8) == 0 && (i12 & 8192) == 0) {
-            textPaint.setFlags(textPaint.getFlags() & (-17));
-        } else {
-            textPaint.setFlags(textPaint.getFlags() | 16);
-        }
-        if ((this.a & 512) != 0) {
-            textPaint.bgColor = org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.R9, false);
-        }
-        int i13 = this.a;
-        if ((i13 & 8192) != 0) {
-            textPaint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.q7, false));
-        } else if ((i13 & 4096) != 0) {
-            textPaint.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Oh, false));
-        }
-    }
-
-    public final void b(d11 d11Var) {
-        TLRPC.MessageEntity messageEntity;
-        this.a |= d11Var.a;
-        if (this.d != null || (messageEntity = d11Var.d) == null) {
-            return;
-        }
-        this.d = messageEntity;
-    }
-
-    public d11(d11 d11Var) {
-        this.a = d11Var.a;
-        this.b = d11Var.b;
-        this.c = d11Var.c;
-        this.d = d11Var.d;
-        this.e = d11Var.e;
+    public void setDelegate(c11 c11Var) {
+        this.b = c11Var;
     }
 }

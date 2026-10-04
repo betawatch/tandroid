@@ -19,7 +19,7 @@ import s4.c0;
 import s4.o0;
 import s4.z0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class h {
     public int a;
@@ -80,14 +80,14 @@ public final class h {
         if (hVar.a >= 100) {
             throw new b0("Protocol message had too many levels of nesting.  May be malicious.  Use CodedInputStream.setRecursionLimit() to increase the depth limit.");
         }
-        int e = hVar.e(A);
+        int e7 = hVar.e(A);
         Object a2 = b1Var.a();
         hVar.a++;
         b1Var.c(a2, this, mVar);
         b1Var.d(a2);
         hVar.a(0);
         hVar.a--;
-        hVar.d(e);
+        hVar.d(e7);
         return a2;
     }
 

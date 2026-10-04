@@ -2,61 +2,46 @@ package org.telegram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class ys extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int a;
     public final /* synthetic */ s4.c1 b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ ViewPropertyAnimator d;
-    public final /* synthetic */ ct e;
+    public final /* synthetic */ org.telegram.ui.Cells.s2 c;
+    public final /* synthetic */ dt d;
 
-    public ys(ct ctVar, s4.c1 c1Var, ViewPropertyAnimator viewPropertyAnimator, View view) {
-        this.e = ctVar;
+    public /* synthetic */ ys(dt dtVar, s4.c1 c1Var, org.telegram.ui.Cells.s2 s2Var, int i10) {
+        this.a = i10;
+        this.d = dtVar;
         this.b = c1Var;
-        this.d = viewPropertyAnimator;
-        this.c = view;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                this.c.setAlpha(1.0f);
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
+        this.c = s2Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.d.setListener(null);
-                this.c.setAlpha(1.0f);
-                ct ctVar = this.e;
+                animator.removeAllListeners();
+                org.telegram.ui.Cells.s2 s2Var = this.c;
+                s2Var.setClipProgress(0.0f);
+                s2Var.setElevation(0.0f);
+                dt dtVar = this.d;
                 s4.c1 c1Var = this.b;
-                ctVar.d(c1Var);
-                ctVar.x.remove(c1Var);
-                ctVar.A();
+                dtVar.d(c1Var);
+                dtVar.x.remove(c1Var);
+                dtVar.A();
                 break;
             default:
-                this.d.setListener(null);
-                ct ctVar2 = this.e;
+                animator.removeAllListeners();
+                org.telegram.ui.Cells.s2 s2Var2 = this.c;
+                s2Var2.setClipProgress(0.0f);
+                s2Var2.setElevation(0.0f);
+                dt dtVar2 = this.d;
                 s4.c1 c1Var2 = this.b;
-                ctVar2.u(c1Var2);
-                ctVar2.v.remove(c1Var2);
-                ctVar2.A();
-                View view = c1Var2.a;
-                if (view instanceof org.telegram.ui.Cells.s2) {
-                    ((org.telegram.ui.Cells.s2) view).setMoving(false);
-                    break;
-                }
+                dtVar2.d(c1Var2);
+                dtVar2.x.remove(c1Var2);
+                dtVar2.A();
                 break;
         }
     }
@@ -65,18 +50,11 @@ public final class ys extends AnimatorListenerAdapter {
     public final void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 0:
-                this.e.y();
+                this.d.y();
                 break;
             default:
-                this.e.getClass();
+                this.d.y();
                 break;
         }
-    }
-
-    public ys(ct ctVar, s4.c1 c1Var, View view, ViewPropertyAnimator viewPropertyAnimator) {
-        this.e = ctVar;
-        this.b = c1Var;
-        this.c = view;
-        this.d = viewPropertyAnimator;
     }
 }

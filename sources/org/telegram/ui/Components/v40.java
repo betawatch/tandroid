@@ -1,20 +1,43 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class v40 {
-    public final TLObject a;
-    public TLRPC.User b;
-    public final int c;
-    public final boolean d;
-    public boolean e;
+public final class v40 extends org.telegram.ui.ou0 {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ y40 b;
 
-    public v40(int i10, TLObject tLObject) {
-        this.a = tLObject;
-        this.c = i10;
-        this.d = (tLObject instanceof TLRPC.User) && ((TLRPC.User) tLObject).self;
+    public v40(y40 y40Var, ArrayList arrayList) {
+        this.b = y40Var;
+        this.a = arrayList;
+    }
+
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    public final org.telegram.ui.yu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        x40 x40Var = this.b.b;
+        if (x40Var == null) {
+            return null;
+        }
+        return x40Var.getCloseIntoObject();
+    }
+
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    public final boolean S() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        this.b.t((MediaController.PhotoEntry) this.a.get(0));
+    }
+
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    public final boolean z() {
+        return false;
     }
 }

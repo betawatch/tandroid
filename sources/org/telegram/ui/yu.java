@@ -1,34 +1,17 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class yu implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Activity d;
-    public final /* synthetic */ zu e;
+public final class yu extends FrameLayout {
+    public TextView a;
 
-    public yu(zu zuVar, float f7, int i10, int i11, Activity activity) {
-        this.e = zuVar;
-        this.a = f7;
-        this.b = i10;
-        this.c = i11;
-        this.d = activity;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float max = Math.max(0.0f, Math.min(1.0f, ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 350.0f) - this.a) / 150.0f));
-        bv bvVar = this.e.c;
-        bvVar.n = i0.a.d(max, this.b, this.c);
-        int i10 = bvVar.n;
-        Activity activity = this.d;
-        AndroidUtilities.setNavigationBarColor(activity, i10, false);
-        AndroidUtilities.setLightNavigationBar(activity, AndroidUtilities.computePerceivedBrightness(bvVar.n) >= 0.721f);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

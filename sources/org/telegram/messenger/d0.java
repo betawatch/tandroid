@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.List;
 import org.telegram.messenger.BillingController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d0 implements BillingController.ProductDetailsResponseListenerLegacy, c5.p {
     public final /* synthetic */ BillingController a;
@@ -13,7 +13,7 @@ public final /* synthetic */ class d0 implements BillingController.ProductDetail
     }
 
     @Override // c5.p
-    public void a(c5.h hVar, List list) {
+    public void b(c5.h hVar, List list) {
         this.a.onPurchasesUpdated(hVar, list);
     }
 

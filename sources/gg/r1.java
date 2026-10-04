@@ -1,42 +1,42 @@
 package gg;
 
 import java.util.ArrayList;
-import org.telegram.ui.ts;
+import org.telegram.ui.xs;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class r1 implements b2 {
-    public final /* synthetic */ ts a;
+    public final /* synthetic */ xs a;
 
-    public r1(ts tsVar) {
-        this.a = tsVar;
+    public r1(xs xsVar) {
+        this.a = xsVar;
     }
 
     @Override // gg.b2
     public final void a(int i10) {
-        ts tsVar = this.a;
-        tsVar.l();
+        xs xsVar = this.a;
+        xsVar.l();
         if (i10 != 0) {
-            tsVar.F();
+            xsVar.F();
         }
     }
 
     @Override // gg.b2
-    public final /* synthetic */ a0.i i() {
+    public final /* synthetic */ a0.i w() {
         return null;
     }
 
     @Override // gg.b2
-    public final a0.i o() {
+    public final a0.i y() {
         return null;
     }
 
     @Override // gg.b2
-    public final /* synthetic */ boolean s(int i10) {
+    public final /* synthetic */ boolean z(int i10) {
         return true;
     }
 
     @Override // gg.b2
-    public final /* synthetic */ void F(ArrayList arrayList) {
+    public final /* synthetic */ void C(ArrayList arrayList) {
     }
 }

@@ -7,9 +7,9 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.n2;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class g implements Runnable {
                 ActionBarLayout actionBarLayout = (ActionBarLayout) this.d;
                 if (actionBarLayout.e == this) {
                     actionBarLayout.e = null;
-                    ((m2) this.c).onTransitionAnimationStart(true, false);
+                    ((n2) this.c).onTransitionAnimationStart(true, false);
                     actionBarLayout.d0(true, true, this.b);
                     break;
                 }
@@ -60,13 +60,13 @@ public final class g implements Runnable {
                             accept.setSoTimeout(5000);
                             InputStream inputStream = accept.getInputStream();
                             yc.i iVar2 = (yc.i) this.d;
-                            iVar2.c.C(new yc.a(iVar2, inputStream, accept));
-                        } catch (IOException e) {
-                            yc.i.d.log(Level.FINE, "Communication with the client broken", (Throwable) e);
+                            iVar2.c.x(new yc.a(iVar2, inputStream, accept));
+                        } catch (IOException e7) {
+                            yc.i.d.log(Level.FINE, "Communication with the client broken", (Throwable) e7);
                         }
                     } while (!((yc.i) this.d).a.isClosed());
-                } catch (IOException e7) {
-                    this.c = e7;
+                } catch (IOException e10) {
+                    this.c = e10;
                     return;
                 }
         }

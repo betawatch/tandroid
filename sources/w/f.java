@@ -1,8 +1,6 @@
 package w;
 
-import v7.j;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class f extends Exception {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -11,8 +9,8 @@ public class f extends Exception {
     */
     public f(String str, e eVar) {
         super(r2.toString());
-        StringBuilder h = j.h(str, ", frames: ");
-        h.append(eVar.a());
+        StringBuilder j3 = t8.b.j(str, ", frames: ");
+        j3.append(eVar.a());
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -21,7 +19,7 @@ public class f extends Exception {
     */
     public f(String str, e eVar, Exception exc) {
         super(r2.toString(), exc);
-        StringBuilder h = j.h(str, ", frames: ");
-        h.append(eVar.a());
+        StringBuilder j3 = t8.b.j(str, ", frames: ");
+        j3.append(eVar.a());
     }
 }

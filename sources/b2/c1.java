@@ -2,7 +2,7 @@ package b2;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class c1 {
     public static final String a;
@@ -28,7 +28,7 @@ public abstract class c1 {
         }
         if (i10 != 2) {
             if (i10 != 3) {
-                throw new IllegalArgumentException(hg.c.h(i10, "Unknown RatingType: "));
+                throw new IllegalArgumentException(hg.k0.h(i10, "Unknown RatingType: "));
             }
             String str4 = f1.d;
             e2.d.b(bundle.getInt(str, -1) == 3);

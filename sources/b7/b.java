@@ -9,11 +9,12 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import hg.c;
+import hg.k0;
+import j7.c;
 import n7.j;
-import v7.h5;
+import v7.g5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b extends Binder implements IInterface {
     public final /* synthetic */ int a;
@@ -72,9 +73,9 @@ public final class b extends Binder implements IInterface {
                 PendingIntent pendingIntent = (PendingIntent) (parcel.readInt() != 0 ? (Parcelable) PendingIntent.CREATOR.createFromParcel(parcel) : null);
                 int dataAvail = parcel.dataAvail();
                 if (dataAvail > 0) {
-                    throw new BadParcelableException(c.h(dataAvail, "Parcel data not fully consumed, unread size: "));
+                    throw new BadParcelableException(k0.h(dataAvail, "Parcel data not fully consumed, unread size: "));
                 }
-                h5.a(createFromParcel, pendingIntent, (TaskCompletionSource) this.b);
+                g5.a(createFromParcel, pendingIntent, (TaskCompletionSource) this.b);
                 return true;
             case 1:
                 if (i10 > 16777215) {
@@ -86,13 +87,13 @@ public final class b extends Binder implements IInterface {
                     return false;
                 }
                 Parcelable.Creator<Status> creator2 = Status.CREATOR;
-                int i13 = j7.c.a;
+                int i13 = c.a;
                 Status createFromParcel2 = parcel.readInt() == 0 ? null : creator2.createFromParcel(parcel);
                 int dataAvail2 = parcel.dataAvail();
                 if (dataAvail2 > 0) {
-                    throw new BadParcelableException(c.h(dataAvail2, "Parcel data not fully consumed, unread size: "));
+                    throw new BadParcelableException(k0.h(dataAvail2, "Parcel data not fully consumed, unread size: "));
                 }
-                h5.a(createFromParcel2, null, (TaskCompletionSource) this.b);
+                g5.a(createFromParcel2, null, (TaskCompletionSource) this.b);
                 return true;
             default:
                 if (i10 > 16777215) {

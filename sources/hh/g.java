@@ -13,24 +13,24 @@ import android.view.RoundedCorner;
 import android.view.View;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
-import ci.bb;
+import ci.ab;
 import org.telegram.messenger.AndroidUtilities;
 import r0.l1;
-import w7.y5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class g extends FrameLayout {
     public float E;
     public int F;
     public final Rect G;
     public final RectF H;
-    public ah.d I;
+    public ah.e I;
     public float J;
     public float K;
     public boolean L;
     public ph.g a;
-    public final bb b;
+    public final ab b;
     public final FrameLayout c;
     public final f0 d;
     public boolean e;
@@ -52,11 +52,11 @@ public final class g extends FrameLayout {
         this.H = new RectF();
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        addView(frameLayout, y5.e(-1, -2, 80));
+        addView(frameLayout, z5.e(-1, -2, 80));
         f0 f0Var = new f0(this, context, 5);
         this.d = f0Var;
-        addView(f0Var, y5.e(-1, -2, 80));
-        this.b = new bb(this, context, 5);
+        addView(f0Var, z5.e(-1, -2, 80));
+        this.b = new ab(this, context, 5);
     }
 
     public final void a(boolean z10) {
@@ -82,8 +82,8 @@ public final class g extends FrameLayout {
     public final void b() {
         int i10;
         int measuredHeight;
-        ah.d dVar = this.I;
-        if (dVar == null || (i10 = dVar.getBounds().top) == (measuredHeight = getMeasuredHeight() - Math.round(this.J))) {
+        ah.e eVar = this.I;
+        if (eVar == null || (i10 = eVar.getBounds().top) == (measuredHeight = getMeasuredHeight() - Math.round(this.J))) {
             return;
         }
         this.I.setBounds(0, measuredHeight, getMeasuredWidth(), getMeasuredHeight());
@@ -140,7 +140,7 @@ public final class g extends FrameLayout {
                     i11 = roundedCorner2.getRadius();
                 }
             }
-            this.h.s(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i11, i10);
+            this.h.B(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i11, i10);
         }
     }
 
@@ -170,7 +170,7 @@ public final class g extends FrameLayout {
         boolean z10 = view == this.d;
         if (z10) {
             canvas.save();
-            canvas.clipPath(this.h.j.k);
+            canvas.clipPath(this.h.l.k);
         }
         boolean drawChild = super.drawChild(canvas, view, j3);
         if (z10) {
@@ -232,7 +232,7 @@ public final class g extends FrameLayout {
             int x10 = (int) motionEvent.getX();
             int y3 = (int) motionEvent.getY();
             ch.d dVar2 = this.f;
-            this.L = (dVar2 != null && dVar2.l == 255 && dVar2.getBounds().contains(x10, y3)) || ((dVar = this.h) != null && dVar.getBounds().contains(x10, y3));
+            this.L = (dVar2 != null && dVar2.b == 255 && dVar2.getBounds().contains(x10, y3)) || ((dVar = this.h) != null && dVar.getBounds().contains(x10, y3));
         }
         if (action == 1 || action == 3) {
             this.L = false;
@@ -240,8 +240,8 @@ public final class g extends FrameLayout {
         return this.L;
     }
 
-    public void setBackgroundWithFadeDrawable(ah.d dVar) {
-        this.I = dVar;
+    public void setBackgroundWithFadeDrawable(ah.e eVar) {
+        this.I = eVar;
     }
 
     public void setBlurredBottomHeight(float f7) {
@@ -271,18 +271,18 @@ public final class g extends FrameLayout {
 
     public void setInputIslandBubbleDrawable(ch.d dVar) {
         this.f = dVar;
-        dVar.p(AndroidUtilities.dp(7.0f));
-        this.f.q(AndroidUtilities.dp(22.0f));
+        dVar.y(AndroidUtilities.dp(7.0f));
+        this.f.z(AndroidUtilities.dp(22.0f));
     }
 
     public void setUnderKeyboardBackgroundDrawable(ch.d dVar) {
         this.h = dVar;
-        dVar.m = true;
-        dVar.r(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), 0.0f, 0.0f);
-        this.h.u(AndroidUtilities.dp(32.0f));
+        dVar.n = true;
+        dVar.A(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), 0.0f, 0.0f);
+        this.h.C(AndroidUtilities.dp(32.0f));
         ch.d dVar2 = this.h;
-        dVar2.j.g = 0.4f;
-        dVar2.k();
+        dVar2.l.g = 0.4f;
+        dVar2.u();
     }
 
     public void setWindowInsetsProvider(ph.g gVar) {

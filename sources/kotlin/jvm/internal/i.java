@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class i {
     public static final Object[] a = new Object[0];
@@ -53,9 +53,9 @@ public abstract class i {
                 i10++;
             }
             StackTraceElement stackTraceElement = stackTrace[i10];
-            StringBuilder x10 = a4.a.x("Parameter specified as non-null is null: method ", stackTraceElement.getClassName(), ".", stackTraceElement.getMethodName(), ", parameter ");
-            x10.append(str);
-            NullPointerException nullPointerException = new NullPointerException(x10.toString());
+            StringBuilder w10 = a4.a.w("Parameter specified as non-null is null: method ", stackTraceElement.getClassName(), ".", stackTraceElement.getMethodName(), ", parameter ");
+            w10.append(str);
+            NullPointerException nullPointerException = new NullPointerException(w10.toString());
             f(nullPointerException, i.class.getName());
             throw nullPointerException;
         }
@@ -78,7 +78,7 @@ public abstract class i {
     }
 
     public static void h(String str) {
-        androidx.car.app.j jVar = new androidx.car.app.j(a4.a.q("lateinit property ", str, " has not been initialized"));
+        androidx.car.app.j jVar = new androidx.car.app.j(a4.a.p("lateinit property ", str, " has not been initialized"));
         f(jVar, i.class.getName());
         throw jVar;
     }

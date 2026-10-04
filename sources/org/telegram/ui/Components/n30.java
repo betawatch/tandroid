@@ -1,64 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.accessibility.AccessibilityEvent;
 import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class n30 extends z4.a {
-    public final /* synthetic */ o30 c;
+public final class n30 extends ImageView {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public n30(o30 o30Var) {
-        this.c = o30Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ n30(Object obj, Context context, int i10, int i11) {
+        super(context);
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
     }
 
-    @Override // z4.a
-    public final void a(z4.g gVar, Object obj) {
-        gVar.removeView((View) obj);
-    }
-
-    @Override // z4.a
-    public final int b() {
-        return this.c.e.length;
-    }
-
-    @Override // z4.a
-    public final Object e(z4.g gVar, int i10) {
-        m30 m30Var = new m30(this, this.c.getContext(), i10, 0);
-        m30Var.setOnClickListener(new ci.n4(this, i10, 10));
-        m30Var.setFocusable(true);
-        m30Var.setTag(Integer.valueOf(i10));
-        m30Var.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        m30Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        m30Var.setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.dp(200.0f), -1));
-        if (i10 == 0) {
-            m30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordAudio));
-        } else if (i10 == 1) {
-            m30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordPortrait));
-        } else {
-            m30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordLandscape));
+    @Override // android.widget.ImageView, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                super.onDraw(canvas);
+                org.telegram.ui.z10 z10Var = (org.telegram.ui.z10) this.c;
+                u90 u90Var = z10Var.s;
+                if (z10Var.r) {
+                    int i10 = this.b / 2;
+                    u90Var.setBounds(i10, i10, getWidth() - i10, getHeight() - i10);
+                    u90Var.draw(canvas);
+                    break;
+                }
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
         }
-        SvgHelper.SvgDrawable drawable = SvgHelper.getDrawable(AndroidUtilities.readRes(i10 == 0 ? R.raw.record_audio : i10 == 1 ? R.raw.record_video_p : R.raw.record_video_l));
-        drawable.setAspectFill(false);
-        m30Var.setImageDrawable(drawable);
-        if (m30Var.getParent() != null) {
-            ((ViewGroup) m30Var.getParent()).removeView(m30Var);
+    }
+
+    @Override // android.view.View
+    public void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
+        switch (this.a) {
+            case 0:
+                super.onInitializeAccessibilityEvent(accessibilityEvent);
+                if (accessibilityEvent.getEventType() == 32768) {
+                    ((o30) this.c).c.b.x(this.b, true);
+                    break;
+                }
+                break;
+            default:
+                super.onInitializeAccessibilityEvent(accessibilityEvent);
+                break;
         }
-        gVar.addView(m30Var, 0);
-        return m30Var;
     }
 
-    @Override // z4.a
-    public final boolean f(View view, Object obj) {
-        return view.equals(obj);
-    }
-
-    @Override // z4.a
-    public final void h(int i10) {
+    @Override // android.widget.ImageView, android.view.View
+    public boolean verifyDrawable(Drawable drawable) {
+        switch (this.a) {
+            case 1:
+                return drawable == ((org.telegram.ui.z10) this.c).s || super.verifyDrawable(drawable);
+            default:
+                return super.verifyDrawable(drawable);
+        }
     }
 }

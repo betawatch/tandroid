@@ -5,9 +5,9 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class f {
     public final jg.a a;
@@ -65,10 +65,10 @@ public class f {
         jg.a aVar = this.a;
         int i10 = aVar.g;
         d6 d6Var = this.p;
-        if (i10 < 0 || !h6.c1(i10)) {
-            this.m = i0.a.f(h6.v0(h6.d6, d6Var)) < 0.5d ? aVar.i : aVar.h;
+        if (i10 < 0 || !i6.c1(i10)) {
+            this.m = i0.a.f(i6.v0(i6.d6, d6Var)) < 0.5d ? aVar.i : aVar.h;
         } else {
-            this.m = h6.v0(aVar.g, d6Var);
+            this.m = i6.v0(aVar.g, d6Var);
         }
         this.c.setColor(this.m);
         this.b.setColor(this.m);

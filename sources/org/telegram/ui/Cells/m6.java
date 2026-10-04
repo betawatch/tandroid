@@ -1,11 +1,11 @@
 package org.telegram.ui.Cells;
 
 import android.view.View;
-import org.telegram.ui.Components.bo;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.co;
+import org.telegram.ui.Components.zl0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class m6 extends ai.ca {
     public final /* synthetic */ int S = 0;
@@ -25,16 +25,16 @@ public final class m6 extends ai.ca {
                 break;
             case 1:
                 za zaVar = (za) this.T;
-                org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R != null) {
                     R.getOrCreateStoryViewer().getClass();
-                    R.getOrCreateStoryViewer().D(zaVar.getContext(), j3, ai.u9.a((yl0) zaVar.getParent()));
+                    R.getOrCreateStoryViewer().D(zaVar.getContext(), j3, ai.u9.a((zl0) zaVar.getParent()));
                     break;
                 }
                 break;
             default:
-                bo boVar = (bo) this.T;
-                boVar.H.getOrCreateStoryViewer().D(boVar.getContext(), j3, new org.telegram.ui.Components.s(this, 25));
+                co coVar = (co) this.T;
+                coVar.H.getOrCreateStoryViewer().D(coVar.getContext(), j3, new org.telegram.ui.Components.s(this, 25));
                 break;
         }
     }
@@ -46,8 +46,8 @@ public final class m6 extends ai.ca {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(bo boVar) {
+    public m6(co coVar) {
         super(null, true);
-        this.T = boVar;
+        this.T = coVar;
     }
 }

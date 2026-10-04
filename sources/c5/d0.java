@@ -29,9 +29,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.BillingController;
-import v7.b6;
+import v7.a6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d0 extends c {
     public final Context C;
@@ -62,11 +62,11 @@ public final class d0 extends c {
             b0Var.j(h4Var);
             h4Var.a = "billingOverrideService.getBillingOverride";
             return j4Var;
-        } catch (Exception e) {
-            g2 g2Var = new g2(e);
-            b6 b6Var = g4.f;
+        } catch (Exception e7) {
+            g2 g2Var = new g2(e7);
+            a6 a6Var = g4.f;
             i4 i4Var = j4Var.b;
-            if (b6Var.d(i4Var, null, g2Var)) {
+            if (a6Var.d(i4Var, null, g2Var)) {
                 g4.d(i4Var);
             }
             return j4Var;
@@ -77,7 +77,7 @@ public final class d0 extends c {
         int i12 = e0.a;
         g3 b10 = e0.b(i10, i11, hVar, null, m3.b);
         Objects.requireNonNull(b10, "ApiFailure should not be null");
-        this.h.X(b10);
+        this.h.T(b10);
     }
 
     public final void G(int i10, q0.a aVar, Runnable runnable) {
@@ -136,15 +136,15 @@ public final class d0 extends c {
         int i10 = 0;
         try {
             i10 = ((Integer) E(2).get(28500L, TimeUnit.MILLISECONDS)).intValue();
-        } catch (TimeoutException e) {
+        } catch (TimeoutException e7) {
             F(102, 28, g0.p);
-            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", e);
-        } catch (Exception e7) {
-            if (e7 instanceof InterruptedException) {
+            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", e7);
+        } catch (Exception e10) {
+            if (e10 instanceof InterruptedException) {
                 Thread.currentThread().interrupt();
             }
             F(95, 28, g0.p);
-            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An error occurred while retrieving billing override.", e7);
+            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An error occurred while retrieving billing override.", e10);
         }
         if (i10 > 0) {
             h a2 = g0.a(i10, "Billing override value was set by a license tester.");
@@ -154,10 +154,10 @@ public final class d0 extends c {
         }
         try {
             return super.b(activity, gVar);
-        } catch (Exception e10) {
+        } catch (Exception e11) {
             h hVar = g0.f;
             F(103, 2, hVar);
-            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An internal error occurred.", e10);
+            com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An internal error occurred.", e11);
             return hVar;
         }
     }
@@ -178,7 +178,7 @@ public final class d0 extends c {
                 of.b bVar = this.h;
                 bVar.getClass();
                 try {
-                    bVar.f0(c10, (p3) bVar.b);
+                    bVar.c0(c10, (p3) bVar.b);
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
                 }

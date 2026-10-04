@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class e6 {
     public View a;
@@ -23,7 +23,7 @@ public final class e6 {
     public e6(long j3, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        sr srVar = sr.f;
+        tr trVar = tr.f;
         this.a = null;
         this.g = j3;
         this.h = timeInterpolator;
@@ -95,7 +95,7 @@ public final class e6 {
     public e6(long j3, long j10, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        sr srVar = sr.f;
+        tr trVar = tr.f;
         this.a = null;
         this.f = j3;
         this.g = j10;
@@ -106,7 +106,7 @@ public final class e6 {
     public e6(View view) {
         this.f = 0L;
         this.g = 200L;
-        this.h = sr.f;
+        this.h = tr.f;
         this.a = view;
         this.e = true;
     }
@@ -114,7 +114,7 @@ public final class e6 {
     public e6(View view, long j3, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        sr srVar = sr.f;
+        tr trVar = tr.f;
         this.a = view;
         this.g = j3;
         this.h = timeInterpolator;
@@ -124,7 +124,7 @@ public final class e6 {
     public e6(View view, long j3, long j10, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        sr srVar = sr.f;
+        tr trVar = tr.f;
         this.a = view;
         this.f = j3;
         this.g = j10;
@@ -135,7 +135,7 @@ public final class e6 {
     public e6(Runnable runnable) {
         this.f = 0L;
         this.g = 200L;
-        this.h = sr.f;
+        this.h = tr.f;
         this.b = runnable;
         this.e = true;
     }
@@ -143,7 +143,7 @@ public final class e6 {
     public e6(Runnable runnable, long j3, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        sr srVar = sr.f;
+        tr trVar = tr.f;
         this.b = runnable;
         this.g = j3;
         this.h = timeInterpolator;
@@ -153,7 +153,7 @@ public final class e6 {
     public e6(Runnable runnable, long j3, TimeInterpolator timeInterpolator, int i10) {
         this.f = 0L;
         this.g = 200L;
-        sr srVar = sr.f;
+        tr trVar = tr.f;
         this.b = runnable;
         this.f = 0L;
         this.g = j3;
@@ -164,7 +164,7 @@ public final class e6 {
     public e6(float f7, View view, long j3, long j10, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        sr srVar = sr.f;
+        tr trVar = tr.f;
         this.a = view;
         this.d = f7;
         this.c = f7;
@@ -177,7 +177,7 @@ public final class e6 {
     public e6(float f7, Runnable runnable, long j3, long j10, TimeInterpolator timeInterpolator) {
         this.f = 0L;
         this.g = 200L;
-        sr srVar = sr.f;
+        tr trVar = tr.f;
         this.b = runnable;
         this.d = f7;
         this.c = f7;

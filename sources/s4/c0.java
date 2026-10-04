@@ -9,7 +9,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class c0 extends o0 {
     public int A;
@@ -255,14 +255,14 @@ public class c0 extends o0 {
             i12 = 4161;
             i13 = 4097;
         }
-        return this.o == 0 ? this.c.v(i10, i11, i12, i13) : this.d.v(i10, i11, i12, i13);
+        return this.o == 0 ? this.c.D(i10, i11, i12, i13) : this.d.D(i10, i11, i12, i13);
     }
 
     public final View P0(int i10, int i11, boolean z10, boolean z11) {
         G0();
         int i12 = z10 ? 24579 : 320;
         int i13 = z11 ? 320 : 0;
-        return this.o == 0 ? this.c.v(i10, i11, i12, i13) : this.d.v(i10, i11, i12, i13);
+        return this.o == 0 ? this.c.D(i10, i11, i12, i13) : this.d.D(i10, i11, i12, i13);
     }
 
     public View Q0(of.e eVar, z0 z0Var, int i10, int i11, int i12) {
@@ -644,7 +644,7 @@ public class c0 extends o0 {
                     c0Var.q(r10);
                     c0Var.a.x(r10);
                     eVar2.i(q6);
-                    c0Var.b.f.L(U);
+                    c0Var.b.f.E(U);
                 } else {
                     c0Var.j0(r10);
                     eVar2.h(U);
@@ -820,11 +820,11 @@ public class c0 extends o0 {
         if (i10 < 0) {
             return;
         }
-        int e = (this.q.e() - i10) + i11;
+        int e7 = (this.q.e() - i10) + i11;
         if (this.v) {
             for (int i12 = 0; i12 < r10; i12++) {
                 View q6 = q(i12);
-                if (q6 != null && (T2 = this.b.T(q6)) != null && !T2.r() && (this.q.d(q6) < e || this.q.m(q6) < e)) {
+                if (q6 != null && (T2 = this.b.T(q6)) != null && !T2.r() && (this.q.d(q6) < e7 || this.q.m(q6) < e7)) {
                     d1(eVar, 0, i12);
                     return;
                 }
@@ -834,7 +834,7 @@ public class c0 extends o0 {
         int i13 = r10 - 1;
         for (int i14 = i13; i14 >= 0; i14--) {
             View q10 = q(i14);
-            if (q10 != null && (T = this.b.T(q10)) != null && !T.r() && (this.q.d(q10) < e || this.q.m(q10) < e)) {
+            if (q10 != null && (T = this.b.T(q10)) != null && !T.r() && (this.q.d(q10) < e7 || this.q.m(q10) < e7)) {
                 d1(eVar, i13, i14);
                 return;
             }
@@ -991,7 +991,7 @@ public class c0 extends o0 {
     public final void j1(int i10) {
         f0 f0Var;
         if (i10 != 0 && i10 != 1) {
-            throw new IllegalArgumentException(hg.c.h(i10, "invalid orientation:"));
+            throw new IllegalArgumentException(hg.k0.h(i10, "invalid orientation:"));
         }
         b(null);
         if (i10 != this.o || this.q == null) {

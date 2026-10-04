@@ -4,11 +4,11 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.e9;
-import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.sq;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class d0 extends e9 {
     public final d6 v;
@@ -21,10 +21,10 @@ public final class d0 extends e9 {
     public void setBackground(boolean z10) {
         Context context = getContext();
         int i10 = z10 ? R.drawable.greydivider_bottom : R.drawable.greydivider;
-        int i11 = h6.b7;
+        int i11 = i6.b7;
         d6 d6Var = this.v;
-        rq rqVar = new rq(new ColorDrawable(h6.v0(h6.a7, d6Var)), h6.U0(context, i10, h6.v0(i11, d6Var)), 0, 0);
-        rqVar.w = true;
-        setBackground(rqVar);
+        sq sqVar = new sq(new ColorDrawable(i6.v0(i6.a7, d6Var)), i6.U0(context, i10, i6.v0(i11, d6Var)), 0, 0);
+        sqVar.w = true;
+        setBackground(sqVar);
     }
 }

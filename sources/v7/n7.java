@@ -1,16 +1,18 @@
 package v7;
 
-import java.io.IOException;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class n7 {
-    public static void a(g2.h hVar) {
-        if (hVar != null) {
-            try {
-                hVar.close();
-            } catch (IOException unused) {
-            }
+    public static long a(double d) {
+        if (!b(d)) {
+            throw new IllegalArgumentException("not a normal value");
         }
+        int exponent = Math.getExponent(d);
+        long doubleToRawLongBits = Double.doubleToRawLongBits(d) & 4503599627370495L;
+        return exponent == -1023 ? doubleToRawLongBits << 1 : doubleToRawLongBits | 4503599627370496L;
+    }
+
+    public static boolean b(double d) {
+        return Math.getExponent(d) <= 1023;
     }
 }

@@ -1,8 +1,6 @@
 package ae;
 
 import be.h;
-import com.google.firebase.messaging.t;
-import ee.v;
 import gd.i;
 import i9.s;
 import ie.g;
@@ -14,7 +12,7 @@ import kotlin.jvm.internal.j;
 import rd.l;
 import zd.i2;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d extends j implements l {
     public final /* synthetic */ int b;
@@ -44,16 +42,16 @@ public final class d extends j implements l {
             default:
                 Throwable th2 = (Throwable) obj;
                 ((g) this.c).invoke(th2);
-                be.b bVar = (be.b) ((t) this.d).d;
+                be.b bVar = (be.b) ((com.google.firebase.messaging.s) this.d).d;
                 bVar.getClass();
                 AtomicLongFieldUpdater atomicLongFieldUpdater = be.b.b;
                 AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = be.b.i;
-                v vVar = be.d.r;
+                com.google.android.gms.internal.clearcut.e eVar2 = be.d.r;
                 while (true) {
                     z10 = true;
-                    if (atomicReferenceFieldUpdater.compareAndSet(bVar, vVar, th2)) {
+                    if (atomicReferenceFieldUpdater.compareAndSet(bVar, eVar2, th2)) {
                         z11 = true;
-                    } else if (atomicReferenceFieldUpdater.get(bVar) != vVar) {
+                    } else if (atomicReferenceFieldUpdater.get(bVar) != eVar2) {
                         z11 = false;
                     }
                 }
@@ -80,8 +78,8 @@ public final class d extends j implements l {
                     AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = be.b.j;
                     while (true) {
                         Object obj2 = atomicReferenceFieldUpdater2.get(bVar);
-                        v vVar2 = obj2 == null ? be.d.p : be.d.q;
-                        while (!atomicReferenceFieldUpdater2.compareAndSet(bVar, obj2, vVar2)) {
+                        com.google.android.gms.internal.clearcut.e eVar3 = obj2 == null ? be.d.p : be.d.q;
+                        while (!atomicReferenceFieldUpdater2.compareAndSet(bVar, obj2, eVar3)) {
                             if (atomicReferenceFieldUpdater2.get(bVar) != obj2) {
                                 break;
                             }
@@ -114,12 +112,12 @@ public final class d extends j implements l {
                                     long j15 = andIncrement / j14;
                                     int i12 = (int) (andIncrement % j14);
                                     if (hVar.c != j15) {
-                                        h e = bVar.e(j15, hVar);
-                                        if (e == null) {
+                                        h e7 = bVar.e(j15, hVar);
+                                        if (e7 == null) {
                                             continue;
                                             z10 = true;
                                         } else {
-                                            hVar = e;
+                                            hVar = e7;
                                         }
                                     }
                                     Object o9 = bVar.o(hVar, i12, andIncrement, obj3);

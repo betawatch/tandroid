@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.util.Property;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class r6 extends Property {
     public final /* synthetic */ int a;
@@ -20,18 +20,22 @@ public abstract class r6 extends Property {
         }
     }
 
-    public abstract void a(int i10, Object obj);
+    public void a(Object obj, Float f7) {
+        c(obj, f7.floatValue());
+    }
 
-    public abstract void b(Object obj, float f7);
+    public abstract void b(int i10, Object obj);
+
+    public abstract void c(Object obj, float f7);
 
     @Override // android.util.Property
     public final void set(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                b(obj, ((Float) obj2).floatValue());
+                c(obj, ((Float) obj2).floatValue());
                 break;
             default:
-                a(((Integer) obj2).intValue(), obj);
+                b(((Integer) obj2).intValue(), obj);
                 break;
         }
     }

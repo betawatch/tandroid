@@ -14,31 +14,22 @@ import e9.g0;
 import e9.i0;
 import java.util.Arrays;
 import java.util.List;
-import u2.x0;
+import u2.y0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d implements o {
     public q a;
     public i b;
     public boolean c;
 
-    @Override // c3.o
     public final boolean a(p pVar) {
-        try {
-            return b(pVar);
-        } catch (s0 unused) {
-            return false;
-        }
-    }
-
-    public final boolean b(p pVar) {
         boolean z10;
         f fVar = new f();
         if (fVar.a(pVar, true) && (fVar.a & 2) == 2) {
             int min = Math.min(fVar.e, 8);
             v vVar = new v(min);
-            pVar.a(0, min, vVar.a);
+            pVar.b(0, min, vVar.a);
             vVar.J(0);
             if (vVar.a() >= 5 && vVar.x() == 127 && vVar.z() == 1179402563) {
                 this.b = new c();
@@ -61,6 +52,15 @@ public final class d implements o {
             return true;
         }
         return false;
+    }
+
+    @Override // c3.o
+    public final boolean b(p pVar) {
+        try {
+            return a(pVar);
+        } catch (s0 unused) {
+            return false;
+        }
     }
 
     @Override // c3.o
@@ -91,7 +91,7 @@ public final class d implements o {
                 iVar.e = j11;
                 g gVar = iVar.d;
                 String str = d0.a;
-                gVar.B(j11);
+                gVar.y(j11);
                 iVar.h = 2;
             }
         }
@@ -115,10 +115,10 @@ public final class d implements o {
         byte[] bArr;
         e2.d.h(this.a);
         if (this.b == null) {
-            if (!b(pVar)) {
+            if (!a(pVar)) {
                 throw s0.a(null, "Failed to determine bitstream type");
             }
-            pVar.p();
+            pVar.m();
         }
         if (!this.c) {
             h0 Z1 = this.a.Z1(0, 1);
@@ -137,7 +137,7 @@ public final class d implements o {
         long j3 = -1;
         if (i11 != 0) {
             if (i11 == 1) {
-                pVar.q((int) iVar2.f);
+                pVar.o((int) iVar2.f);
                 iVar2.h = 2;
                 return 0;
             }
@@ -156,11 +156,11 @@ public final class d implements o {
                 iVar2.a(-(b10 + 2));
             }
             if (!iVar2.l) {
-                b0 g10 = iVar2.d.g();
-                e2.d.h(g10);
-                iVar2.c.X1(g10);
+                b0 d = iVar2.d.d();
+                e2.d.h(d);
+                iVar2.c.X1(d);
                 h0 h0Var = iVar2.b;
-                g10.l();
+                d.l();
                 h0Var.getClass();
                 iVar2.l = true;
             }
@@ -203,9 +203,9 @@ public final class d implements o {
                     iVar2.b.b(sVar2);
                     iVar2.m = true;
                 }
-                x0 x0Var = (x0) iVar2.j.c;
-                if (x0Var != null) {
-                    iVar2.d = x0Var;
+                y0 y0Var = (y0) iVar2.j.c;
+                if (y0Var != null) {
+                    iVar2.d = y0Var;
                 } else {
                     if (pVar.getLength() != j11) {
                         f fVar = eVar.a;

@@ -12,7 +12,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final b a = new b("MetadataUtils", null);
@@ -47,8 +47,8 @@ public abstract class a {
         } else {
             try {
                 substring = str.substring(0, 8);
-            } catch (IndexOutOfBoundsException e) {
-                Log.e(bVar.a, bVar.d("Error extracting the date", new Object[0]), e);
+            } catch (IndexOutOfBoundsException e7) {
+                Log.e(bVar.a, bVar.d("Error extracting the date", new Object[0]), e7);
             }
             if (!TextUtils.isEmpty(substring)) {
                 bVar.b("Invalid date format", new Object[0]);
@@ -75,11 +75,11 @@ public abstract class a {
                                     substring2 = String.valueOf(substring2.substring(0, substring2.length() - 1)).concat("+0000");
                                 }
                             }
-                        } catch (IndexOutOfBoundsException e7) {
-                            Log.e(bVar.a, bVar.d("Error extracting the time substring: %s", new Object[0]), e7);
+                        } catch (IndexOutOfBoundsException e10) {
+                            Log.e(bVar.a, bVar.d("Error extracting the time substring: %s", new Object[0]), e10);
                         }
                         if (TextUtils.isEmpty(substring2)) {
-                            substring = a4.a.D(substring, "T", substring2);
+                            substring = a4.a.C(substring, "T", substring2);
                             str2 = substring2.length() == 6 ? "yyyyMMdd'T'HHmmss" : c;
                         } else {
                             str2 = "yyyyMMdd";
@@ -92,8 +92,8 @@ public abstract class a {
                 }
                 calendar.setTime(new SimpleDateFormat(str2).parse(substring));
                 return calendar;
-            } catch (ParseException e10) {
-                Log.e(bVar.a, bVar.d("Error parsing string", new Object[0]), e10);
+            } catch (ParseException e11) {
+                Log.e(bVar.a, bVar.d("Error parsing string", new Object[0]), e11);
                 return null;
             }
             substring2 = null;

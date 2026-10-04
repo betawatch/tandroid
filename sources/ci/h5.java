@@ -4,21 +4,21 @@ import android.view.KeyEvent;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h5 implements org.telegram.ui.ActionBar.k1, Utilities.Callback3Return {
+public final /* synthetic */ class h5 implements org.telegram.ui.ActionBar.l1, Utilities.Callback3Return {
     public final /* synthetic */ q6 a;
 
     public /* synthetic */ h5(q6 q6Var) {
         this.a = q6Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.k1
-    public void p(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.m1 m1Var;
+    @Override // org.telegram.ui.ActionBar.l1
+    public void o(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.n1 n1Var;
         q6 q6Var = this.a;
         q6Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (m1Var = q6Var.H1) != null && m1Var.isShowing()) {
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var = q6Var.H1) != null && n1Var.isShowing()) {
             q6Var.H1.d(true);
         }
     }

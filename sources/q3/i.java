@@ -15,12 +15,13 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-import v7.s6;
+import org.telegram.ui.web.w;
+import v7.r6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i extends w7.m {
-    public static final org.webrtc.audio.b b = new org.webrtc.audio.b(9);
+    public static final w b = new w(11);
     public final g a;
 
     public i(g gVar) {
@@ -36,14 +37,14 @@ public final class i extends w7.m {
         byte[] bArr = new byte[i12];
         vVar.h(0, i12, bArr);
         if (i11 == 2) {
-            concat = "image/" + s6.b(new String(bArr, 0, 3, StandardCharsets.ISO_8859_1));
+            concat = "image/" + r6.b(new String(bArr, 0, 3, StandardCharsets.ISO_8859_1));
             if ("image/jpg".equals(concat)) {
                 concat = "image/jpeg";
             }
             v = 2;
         } else {
             v = v(0, bArr);
-            String b10 = s6.b(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
+            String b10 = r6.b(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
             concat = b10.indexOf(47) == -1 ? "image/".concat(b10) : b10;
         }
         int i13 = bArr[v + 1] & 255;
@@ -255,8 +256,8 @@ public final class i extends w7.m {
                 th = th3;
                 vVar3 = vVar;
             }
-        } catch (Exception e) {
-            e = e;
+        } catch (Exception e7) {
+            e = e7;
             int i19 = i17;
             i17 = i12;
             i12 = i19;
@@ -270,8 +271,8 @@ public final class i extends w7.m {
             if (r122 == 0) {
             }
             return r122;
-        } catch (OutOfMemoryError e7) {
-            e = e7;
+        } catch (OutOfMemoryError e10) {
+            e = e10;
             int i192 = i17;
             i17 = i12;
             i12 = i192;
@@ -298,8 +299,8 @@ public final class i extends w7.m {
             if (r12 != 80 || i12 != 82 || x12 != 73 || x13 != 86) {
                 th2 = null;
                 try {
-                } catch (Exception e10) {
-                    e = e10;
+                } catch (Exception e11) {
+                    e = e11;
                     int i20 = i17;
                     i17 = i12;
                     i12 = i20;
@@ -312,8 +313,8 @@ public final class i extends w7.m {
                     if (r122 == 0) {
                     }
                     return r122;
-                } catch (OutOfMemoryError e11) {
-                    e = e11;
+                } catch (OutOfMemoryError e12) {
+                    e = e12;
                     int i202 = i17;
                     i17 = i12;
                     i12 = i202;
@@ -380,8 +381,8 @@ public final class i extends w7.m {
                                 bVar = e(vVar, i12, i16, z10, i11, gVar);
                                 i16 = i10;
                                 r12 = vVar;
-                            } catch (Exception e12) {
-                                e = e12;
+                            } catch (Exception e13) {
+                                e = e13;
                                 i16 = i10;
                                 vVar2 = vVar;
                                 vVar2.J(i18);
@@ -389,8 +390,8 @@ public final class i extends w7.m {
                                 if (r122 == 0) {
                                 }
                                 return r122;
-                            } catch (OutOfMemoryError e13) {
-                                e = e13;
+                            } catch (OutOfMemoryError e14) {
+                                e = e14;
                                 i16 = i10;
                                 vVar2 = vVar;
                                 vVar2.J(i18);
@@ -431,16 +432,16 @@ public final class i extends w7.m {
                                         r12 = vVar4;
                                     }
                                 }
-                            } catch (Exception e14) {
-                                e = e14;
+                            } catch (Exception e15) {
+                                e = e15;
                                 vVar2 = r12;
                                 vVar2.J(i18);
                                 r122 = th2;
                                 if (r122 == 0) {
                                 }
                                 return r122;
-                            } catch (OutOfMemoryError e15) {
-                                e = e15;
+                            } catch (OutOfMemoryError e16) {
+                                e = e16;
                                 vVar2 = r12;
                                 vVar2.J(i18);
                                 r122 = th2;

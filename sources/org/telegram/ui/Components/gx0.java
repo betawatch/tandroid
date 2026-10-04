@@ -1,46 +1,65 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.CacheFetcher;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class gx0 extends CacheFetcher {
-    @Override // org.telegram.messenger.CacheFetcher
-    public final void getLocal(int i10, Object obj, Utilities.Callback2 callback2) {
-        MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new ym(i10, (Integer) obj, callback2, 19));
+public final class gx0 {
+    public final o5 a;
+    public Drawable b;
+
+    public gx0(FrameLayout frameLayout) {
+        this(18, frameLayout);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.messenger.CacheFetcher
-    public final void getRemote(int i10, Object obj, long j3, Utilities.Callback4 callback4) {
-        TLRPC.TL_messages_getEmojiGroups tL_messages_getEmojiGroups;
-        Integer num = (Integer) obj;
-        if (num.intValue() == 1) {
-            TLRPC.TL_messages_getEmojiStatusGroups tL_messages_getEmojiStatusGroups = new TLRPC.TL_messages_getEmojiStatusGroups();
-            tL_messages_getEmojiStatusGroups.hash = (int) j3;
-            tL_messages_getEmojiGroups = tL_messages_getEmojiStatusGroups;
-        } else if (num.intValue() == 2) {
-            TLRPC.TL_messages_getEmojiProfilePhotoGroups tL_messages_getEmojiProfilePhotoGroups = new TLRPC.TL_messages_getEmojiProfilePhotoGroups();
-            tL_messages_getEmojiProfilePhotoGroups.hash = (int) j3;
-            tL_messages_getEmojiGroups = tL_messages_getEmojiProfilePhotoGroups;
-        } else if (num.intValue() == 3) {
-            TLRPC.TL_messages_getEmojiStickerGroups tL_messages_getEmojiStickerGroups = new TLRPC.TL_messages_getEmojiStickerGroups();
-            tL_messages_getEmojiStickerGroups.hash = (int) j3;
-            tL_messages_getEmojiGroups = tL_messages_getEmojiStickerGroups;
-        } else {
-            TLRPC.TL_messages_getEmojiGroups tL_messages_getEmojiGroups2 = new TLRPC.TL_messages_getEmojiGroups();
-            tL_messages_getEmojiGroups2.hash = (int) j3;
-            tL_messages_getEmojiGroups = tL_messages_getEmojiGroups2;
+    public final o5 a(TLRPC.User user, TLRPC.Chat chat, int i10, boolean z10) {
+        o5 o5Var = this.a;
+        if (chat != null && chat.verified) {
+            Drawable drawable = this.b;
+            if (drawable == null) {
+                drawable = new sq(org.telegram.ui.ActionBar.i6.f1, org.telegram.ui.ActionBar.i6.i1);
+            }
+            this.b = drawable;
+            o5Var.g(drawable, z10);
+            o5Var.k(null);
+            return o5Var;
         }
-        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getEmojiGroups, new fx0(callback4, 0));
+        if (chat != null && DialogObject.getEmojiStatusDocumentId(chat.emoji_status) != 0) {
+            o5Var.j(DialogObject.getEmojiStatusDocumentId(chat.emoji_status), z10);
+            o5Var.k(Integer.valueOf(i10));
+            return o5Var;
+        }
+        if (user != null && user.verified) {
+            Drawable drawable2 = this.b;
+            if (drawable2 == null) {
+                drawable2 = new sq(org.telegram.ui.ActionBar.i6.f1, org.telegram.ui.ActionBar.i6.i1);
+            }
+            this.b = drawable2;
+            o5Var.g(drawable2, z10);
+            o5Var.k(null);
+            return o5Var;
+        }
+        if (user != null && DialogObject.getEmojiStatusDocumentId(user.emoji_status) != 0) {
+            o5Var.j(DialogObject.getEmojiStatusDocumentId(user.emoji_status), z10);
+            o5Var.k(Integer.valueOf(i10));
+            return o5Var;
+        }
+        if (user == null || !user.premium) {
+            o5Var.g(null, z10);
+            o5Var.k(null);
+            return o5Var;
+        }
+        o5Var.g(rg.b1.d().e, z10);
+        o5Var.k(Integer.valueOf(i10));
+        return o5Var;
     }
 
-    @Override // org.telegram.messenger.CacheFetcher
-    public final void setLocal(int i10, Object obj, Object obj2, long j3) {
-        MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new ym(i10, (TLRPC.TL_messages_emojiGroups) obj2, (Integer) obj, 18));
+    public gx0(int i10, View view) {
+        this.a = new o5(AndroidUtilities.dp(i10), view);
     }
 }

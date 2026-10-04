@@ -21,9 +21,9 @@ import java.util.Set;
 import java.util.UUID;
 import ki.h0;
 import m4.o0;
-import w7.b0;
+import w7.c0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f implements n {
     public int E;
@@ -44,7 +44,7 @@ public final class f implements n {
     public final boolean h;
     public final of.b n;
     public final qb.b r;
-    public final e s;
+    public final l2.g s;
     public final long v;
     public final ArrayList w;
     public final Set x;
@@ -62,7 +62,7 @@ public final class f implements n {
         this.h = z11;
         this.r = bVar;
         this.n = new of.b(28);
-        this.s = new e(this, 0);
+        this.s = new l2.g(this, 4);
         this.w = new ArrayList();
         this.x = Collections.newSetFromMap(new IdentityHashMap());
         this.y = Collections.newSetFromMap(new IdentityHashMap());
@@ -77,7 +77,7 @@ public final class f implements n {
         g g10 = bVar.g();
         g10.getClass();
         Throwable cause = g10.getCause();
-        return (cause instanceof ResourceBusyException) || b0.c(cause);
+        return (cause instanceof ResourceBusyException) || c0.c(cause);
     }
 
     public static ArrayList f(b2.o oVar, UUID uuid, boolean z10) {
@@ -186,9 +186,9 @@ public final class f implements n {
                     b bVar2 = this.G;
                     if (bVar2 == null) {
                         g0 g0Var = i0.b;
-                        b e = e(a1.e, true, null, z10);
-                        this.w.add(e);
-                        this.G = e;
+                        b e7 = e(a1.e, true, null, z10);
+                        this.w.add(e7);
+                        this.G = e7;
                     } else {
                         bVar2.b(null);
                     }
@@ -200,12 +200,12 @@ public final class f implements n {
         if (this.K == null) {
             arrayList = f(oVar, this.a, false);
             if (arrayList.isEmpty()) {
-                c cVar = new c("Media does not support uuid: " + this.a);
-                e2.a.f("DefaultDrmSessionMgr", "DRM error", cVar);
+                d dVar = new d("Media does not support uuid: " + this.a);
+                e2.a.f("DefaultDrmSessionMgr", "DRM error", dVar);
                 if (kVar != null) {
-                    kVar.d(cVar);
+                    kVar.d(dVar);
                 }
-                return new o(new g(6003, cVar));
+                return new o(new g(6003, dVar));
             }
         } else {
             arrayList = null;
@@ -233,12 +233,12 @@ public final class f implements n {
             bVar.b(kVar);
             return bVar;
         }
-        b e7 = e(arrayList, false, kVar, z10);
+        b e10 = e(arrayList, false, kVar, z10);
         if (!this.e) {
-            this.H = e7;
+            this.H = e10;
         }
-        this.w.add(e7);
-        return e7;
+        this.w.add(e10);
+        return e10;
     }
 
     @Override // n2.n
@@ -261,12 +261,12 @@ public final class f implements n {
                     bVar = new qb.b(13);
                 }
                 this.F = bVar;
-                bVar.d(new l.d(this));
+                bVar.i(new c(this, 0));
                 return;
-            } catch (UnsupportedSchemeException e) {
-                throw new x(e);
-            } catch (Exception e7) {
+            } catch (UnsupportedSchemeException e7) {
                 throw new x(e7);
+            } catch (Exception e10) {
+                throw new x(e10);
             }
         }
         if (this.v == -9223372036854775807L) {
@@ -321,7 +321,7 @@ public final class f implements n {
             if (!set2.isEmpty()) {
                 o1 it2 = m0.v(set2).iterator();
                 while (it2.hasNext()) {
-                    ((d) it2.next()).release();
+                    ((e) it2.next()).release();
                 }
                 if (!set.isEmpty()) {
                     o1 it3 = m0.v(set).iterator();
@@ -365,11 +365,11 @@ public final class f implements n {
     public final m j0(k kVar, b2.s sVar) {
         e2.d.g(this.E > 0);
         e2.d.h(this.I);
-        d dVar = new d(this, kVar);
+        e eVar = new e(this, kVar);
         Handler handler = this.J;
         handler.getClass();
-        handler.post(new h0(9, dVar, sVar));
-        return dVar;
+        handler.post(new h0(9, eVar, sVar));
+        return eVar;
     }
 
     @Override // n2.n
@@ -388,7 +388,7 @@ public final class f implements n {
         }
         o1 it = m0.v(this.x).iterator();
         while (it.hasNext()) {
-            ((d) it.next()).release();
+            ((e) it.next()).release();
         }
         g();
     }

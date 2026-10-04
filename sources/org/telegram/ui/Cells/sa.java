@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class sa extends FrameLayout {
     public final org.telegram.ui.Components.w9 a;
@@ -25,13 +25,13 @@ public final class sa extends FrameLayout {
         this.a = w9Var;
         TextView textView = new TextView(context);
         this.b = textView;
-        org.telegram.messenger.f0.q(textView, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f);
+        org.telegram.messenger.f0.q(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f);
         if (LocaleController.isRTL) {
-            addView(w9Var, w7.y5.d(30, 30.0f, 21, 12.0f, 0.0f, 12.0f, 0.0f));
-            addView(textView, w7.y5.d(-1, -2.0f, 21, 12.0f, 0.0f, 56.0f, 0.0f));
+            addView(w9Var, w7.z5.d(30, 30.0f, 21, 12.0f, 0.0f, 12.0f, 0.0f));
+            addView(textView, w7.z5.d(-1, -2.0f, 21, 12.0f, 0.0f, 56.0f, 0.0f));
         } else {
-            addView(w9Var, w7.y5.d(30, 30.0f, 16, 12.0f, 0.0f, 12.0f, 0.0f));
-            addView(textView, w7.y5.d(-1, -2.0f, 16, 56.0f, 0.0f, 12.0f, 0.0f));
+            addView(w9Var, w7.z5.d(30, 30.0f, 16, 12.0f, 0.0f, 12.0f, 0.0f));
+            addView(textView, w7.z5.d(-1, -2.0f, 16, 56.0f, 0.0f, 12.0f, 0.0f));
         }
     }
 
@@ -41,9 +41,9 @@ public final class sa extends FrameLayout {
         if (this.d) {
             int dp = AndroidUtilities.dp(56.0f);
             if (LocaleController.isRTL) {
-                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - dp, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
+                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - dp, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
             } else {
-                canvas.drawLine(dp, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
+                canvas.drawLine(dp, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
             }
         }
     }
@@ -71,6 +71,6 @@ public final class sa extends FrameLayout {
         if (w9Var == null || w9Var.getImageReceiver() == null || !(w9Var.getImageReceiver().getDrawable() instanceof ng.c)) {
             return;
         }
-        ((ng.c) w9Var.getImageReceiver().getDrawable()).a(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.c9, false));
+        ((ng.c) w9Var.getImageReceiver().getDrawable()).a(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.c9, false));
     }
 }

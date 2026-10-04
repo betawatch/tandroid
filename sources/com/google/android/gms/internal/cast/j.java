@@ -8,7 +8,7 @@ import android.util.Log;
 import com.google.android.gms.cast.CastDevice;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j extends p4.s {
     public static final g6.b b = new g6.b("MediaRouterCallback", null);
@@ -29,8 +29,8 @@ public final class j extends p4.s {
             O0.writeString(str);
             v.c(O0, bundle);
             iVar.S0(O0, 1);
-        } catch (RemoteException e) {
-            b.a(e, "Unable to call %s on %s.", "onRouteAdded", i.class.getSimpleName());
+        } catch (RemoteException e7) {
+            b.a(e7, "Unable to call %s on %s.", "onRouteAdded", i.class.getSimpleName());
         }
     }
 
@@ -44,8 +44,8 @@ public final class j extends p4.s {
             O0.writeString(str);
             v.c(O0, bundle);
             iVar.S0(O0, 2);
-        } catch (RemoteException e) {
-            b.a(e, "Unable to call %s on %s.", "onRouteChanged", i.class.getSimpleName());
+        } catch (RemoteException e7) {
+            b.a(e7, "Unable to call %s on %s.", "onRouteChanged", i.class.getSimpleName());
         }
     }
 
@@ -59,8 +59,8 @@ public final class j extends p4.s {
             O0.writeString(str);
             v.c(O0, bundle);
             iVar.S0(O0, 3);
-        } catch (RemoteException e) {
-            b.a(e, "Unable to call %s on %s.", "onRouteRemoved", i.class.getSimpleName());
+        } catch (RemoteException e7) {
+            b.a(e7, "Unable to call %s on %s.", "onRouteRemoved", i.class.getSimpleName());
         }
     }
 
@@ -106,8 +106,8 @@ public final class j extends p4.s {
                                     break;
                                 }
                             }
-                        } catch (RemoteException e) {
-                            e = e;
+                        } catch (RemoteException e7) {
+                            e = e7;
                             String simpleName = i.class.getSimpleName();
                             Object[] objArr = new Object[2];
                             objArr[0] = "onRouteSelected";
@@ -117,8 +117,8 @@ public final class j extends p4.s {
                         }
                     }
                 }
-            } catch (RemoteException e7) {
-                e = e7;
+            } catch (RemoteException e10) {
+                e = e10;
                 c10 = 1;
             }
         }
@@ -160,8 +160,8 @@ public final class j extends p4.s {
             v.c(O0, bundle);
             O0.writeInt(i10);
             iVar.S0(O0, 6);
-        } catch (RemoteException e) {
-            bVar.a(e, "Unable to call %s on %s.", "onRouteUnselected", i.class.getSimpleName());
+        } catch (RemoteException e7) {
+            bVar.a(e7, "Unable to call %s on %s.", "onRouteUnselected", i.class.getSimpleName());
         }
     }
 }

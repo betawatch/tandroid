@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.os.RemoteException;
 import android.util.Log;
 import j$.util.Objects;
-import w7.q6;
+import w7.r6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class h3 {
     public final Context a;
@@ -91,8 +91,8 @@ public abstract class h3 {
             }
             try {
                 j();
-            } catch (RemoteException e) {
-                Log.e((String) this.f, "Could not finalize native handle", e);
+            } catch (RemoteException e7) {
+                Log.e((String) this.f, "Could not finalize native handle", e7);
             }
         }
     }
@@ -113,8 +113,8 @@ public abstract class h3 {
                 }
                 try {
                     eVar = y6.e.c(this.a, y6.e.b, str);
-                } catch (y6.b e) {
-                    q6.a(e, "Error loading optional module %s", str);
+                } catch (y6.b e7) {
+                    r6.a(e7, "Error loading optional module %s", str);
                     if (!this.b) {
                         String str2 = (String) this.n;
                         if (Log.isLoggable("Vision", 3)) {
@@ -134,8 +134,8 @@ public abstract class h3 {
             if (eVar != null) {
                 try {
                     this.e = i(eVar, this.a);
-                } catch (RemoteException | y6.b e7) {
-                    Log.e((String) this.f, "Error creating remote native handle", e7);
+                } catch (RemoteException | y6.b e10) {
+                    Log.e((String) this.f, "Error creating remote native handle", e10);
                 }
             }
             boolean z10 = this.c;
@@ -149,15 +149,15 @@ public abstract class h3 {
         }
     }
 
-    public h3(Context context, n2.e eVar) {
+    public h3(Context context, l2.g gVar) {
         this.e = new androidx.mediarouter.app.c(this, 10);
         if (context != null) {
             this.a = context;
-            if (eVar == null) {
-                this.d = new n2.e(new ComponentName(context, getClass()), 12);
+            if (gVar == null) {
+                this.d = new l2.g(new ComponentName(context, getClass()), 12);
                 return;
             } else {
-                this.d = eVar;
+                this.d = gVar;
                 return;
             }
         }

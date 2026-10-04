@@ -1,234 +1,189 @@
 package li;
 
-import android.graphics.RectF;
 import android.os.Build;
 import android.view.View;
-import hh.k;
-import java.util.ArrayList;
-import java.util.Iterator;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import k2.v;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.ok;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.g91;
+import org.telegram.ui.Components.zl0;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a {
-    public final /* synthetic */ e a;
+public final class a {
+    public final m a;
+    public final fh.c b;
+    public final ah.c c;
+    public final ah.i d;
+    public final d e;
+    public final oi.a f;
+    public FrameLayout g;
+    public ViewGroup h;
+    public bh.a i;
 
-    public final void a() {
-        boolean z10;
-        mi.a aVar;
-        boolean z11;
-        boolean z12;
-        boolean z13;
-        e eVar = this.a;
-        ArrayList arrayList = eVar.d;
-        mi.a aVar2 = eVar.p;
-        RectF rectF = eVar.m;
-        int width = eVar.i.getWidth();
-        int height = eVar.i.getHeight();
-        if (eVar.n == width && eVar.o == height) {
-            z10 = false;
-        } else {
-            eVar.n = width;
-            eVar.o = height;
-            z10 = true;
+    public a(m mVar, org.telegram.ui.ActionBar.n nVar) {
+        this.a = mVar;
+        mVar.a = new v(this, 2);
+        mVar.d = new ni.b(AndroidUtilities.dp(48.0f));
+        fh.c cVar = new fh.c();
+        this.b = cVar;
+        cVar.a(nVar.f());
+        mVar.z.add(new k(cVar, nVar));
+        if (Build.VERSION.SDK_INT < 31 || !SharedConfig.chatBlurEnabled()) {
+            this.f = oi.b.a;
+            this.e = null;
+            this.d = null;
+            ah.c cVar2 = new ah.c(cVar);
+            this.c = cVar2;
+            cVar2.h = mVar;
+            return;
         }
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            d dVar = (d) obj;
-            View view = dVar.a;
-            RectF rectF2 = dVar.f;
-            RectF rectF3 = dVar.d;
-            RectF rectF4 = dVar.c;
-            RectF rectF5 = dVar.e;
-            ch.d dVar2 = dVar.b;
-            boolean z14 = z10;
-            if (k.c(view, eVar.i, rectF)) {
-                if (rectF4.equals(rectF)) {
-                    z11 = z14;
-                } else {
-                    rectF4.set(rectF);
-                    dVar.g = true;
-                    dVar2.t(rectF4.left, rectF4.top);
-                    z11 = true;
-                }
-                rectF.set(dVar2.getBounds());
-                if (rectF3.equals(rectF)) {
-                    z12 = true;
-                } else {
-                    rectF3.set(rectF);
-                    z12 = true;
-                    dVar.g = true;
-                    z11 = true;
-                }
-                rectF.offset(rectF4.left, rectF4.top);
-                if (!rectF5.equals(rectF)) {
-                    rectF5.set(rectF);
-                    dVar.g = z12;
-                    z11 = true;
-                }
-                rectF.set(rectF5);
-                rectF.inset(-dVar2.h, -dVar2.i);
-                if (!rectF2.equals(rectF)) {
-                    rectF2.set(rectF);
-                    dVar.g = true;
-                    z11 = true;
-                }
-                View view2 = dVar.a;
-                boolean z15 = !rectF5.isEmpty() && view2.isAttachedToWindow() && rectF5.intersects(0.0f, 0.0f, (float) width, (float) height) && dVar2.l > 0 && view2.getVisibility() == 0 && view2.getAlpha() > 0.0f && view2.getScaleX() != 0.0f && view2.getScaleY() != 0.0f;
-                boolean z16 = z15 && dVar2.j();
-                if (dVar.h != z15 || (z15 && !z16)) {
-                    dVar.h = z15;
-                    dVar.g = true;
-                    z13 = true;
-                } else {
-                    z13 = z11;
-                }
-                z10 = z13;
-            } else {
-                z10 = z14;
-            }
+        ah.i iVar = new ah.i(false, false);
+        this.d = iVar;
+        d dVar = new d();
+        this.e = dVar;
+        mVar.a(iVar);
+        fh.d dVar2 = new fh.d(cVar);
+        dVar2.f = cVar;
+        ah.f.c();
+        ah.c cVar3 = new ah.c(dVar2);
+        this.c = cVar3;
+        cVar3.h = mVar;
+        int dp = AndroidUtilities.dp(LiteMode.isEnabled(262144) ? 8.0f : 48.0f);
+        cVar3.b = dp;
+        cVar3.c = dp;
+        cVar3.i = LiteMode.isEnabled(262144);
+        dVar2.h = dVar.d(2);
+        cVar3.b = 0;
+        cVar3.c = 0;
+        this.f = dVar.d(1);
+    }
+
+    public static void c(ViewGroup viewGroup, int i10, int i11, int i12, int i13) {
+        int C = ok.C(48.0f, i10, -AndroidUtilities.dp(8.0f));
+        int i14 = (i10 + i12) - C;
+        int C2 = ok.C(48.0f, i11, -AndroidUtilities.dp(8.0f));
+        AndroidUtilities.setViewLayoutMargins(viewGroup, 0, C, 0, C2);
+        viewGroup.setPadding(0, i14, 0, (i11 + i13) - C2);
+    }
+
+    public final mi.f a(View view) {
+        mi.f fVar = new mi.f(this.f);
+        mi.g gVar = new mi.g(AndroidUtilities.dp(32.0f));
+        mi.g gVar2 = new mi.g(AndroidUtilities.dp(56.0f));
+        mi.g gVar3 = new mi.g(AndroidUtilities.dp(48.0f));
+        if (fVar.l != 1) {
+            fVar.l = 1;
+            fVar.j = true;
+            fVar.k = true;
+            fVar.invalidateSelf();
         }
-        boolean z17 = z10;
-        if (z17) {
-            aVar2.b = 0;
-            int size2 = arrayList.size();
-            int i11 = 0;
-            while (i11 < size2) {
-                Object obj2 = arrayList.get(i11);
-                i11++;
-                d dVar3 = (d) obj2;
-                if (dVar3.h) {
-                    RectF rectF6 = dVar3.f;
-                    aVar2.a(rectF6.left, rectF6.top, rectF6.right, rectF6.bottom);
-                }
-            }
-            mi.b bVar = eVar.e;
-            mi.a aVar3 = eVar.q;
-            bVar.getClass();
-            if (aVar2 == aVar3) {
-                throw new IllegalArgumentException("positions and output must be different arrays");
-            }
-            aVar3.b = 0;
-            int i12 = aVar2.b;
-            for (int i13 = 0; i13 < i12; i13++) {
-                RectF b10 = aVar2.b(i13);
-                float f7 = b10.left;
-                float f10 = b10.top;
-                float f11 = b10.right;
-                float f12 = b10.bottom;
-                int i14 = 0;
-                while (i14 < aVar3.b) {
-                    RectF b11 = aVar3.b(i14);
-                    float f13 = b11.left;
-                    float f14 = b11.right;
-                    float f15 = bVar.a;
-                    if (f11 >= f13 ? f14 >= f7 || f7 - f14 <= f15 : f13 - f11 <= f15) {
-                        float f16 = b11.top;
-                        float f17 = b11.bottom;
-                        aVar = aVar2;
-                        float f18 = bVar.b;
-                        if (f12 >= f16 ? f17 >= f10 || f10 - f17 <= f18 : f16 - f12 <= f18) {
-                            if (f13 < f7) {
-                                f7 = f13;
-                            }
-                            if (f16 < f10) {
-                                f10 = f16;
-                            }
-                            if (f14 > f11) {
-                                f11 = f14;
-                            }
-                            if (f17 > f12) {
-                                f12 = f17;
-                            }
-                            aVar3.c(i14);
-                            i14 = 0;
-                            aVar2 = aVar;
-                        }
-                    } else {
-                        aVar = aVar2;
-                    }
-                    i14++;
-                    aVar2 = aVar;
-                }
-                aVar3.a(f7, f10, f11, f12);
-            }
-            int i15 = aVar3.b;
-            for (int i16 = 1; i16 < i15; i16++) {
-                RectF b12 = aVar3.b(i16);
-                float f19 = b12.left;
-                float f20 = b12.top;
-                float f21 = b12.right;
-                float f22 = b12.bottom;
-                int i17 = i16 - 1;
-                while (i17 >= 0) {
-                    RectF b13 = aVar3.b(i17);
-                    float f23 = b13.top;
-                    float f24 = b13.left;
-                    int compare = Float.compare(f23, f20);
-                    if (compare == 0) {
-                        compare = Float.compare(f24, f19);
-                    }
-                    if (compare <= 0) {
-                        break;
-                    }
-                    aVar3.b(i17 + 1).set(b13);
-                    i17--;
-                }
-                aVar3.b(i17 + 1).set(f19, f20, f21, f22);
-            }
+        fVar.p = this.b;
+        fVar.j = true;
+        fVar.k();
+        fVar.invalidateSelf();
+        fVar.r = 160;
+        fh.c cVar = fVar.p;
+        if (cVar != null) {
+            fVar.q = i6.l1(160 / 255.0f, cVar.b);
         }
-        ArrayList arrayList2 = eVar.s;
-        if (arrayList2.size() > 0) {
-            arrayList2.get(0).getClass();
-            throw new ClassCastException();
+        fVar.j = true;
+        fVar.invalidateSelf();
+        fVar.m = gVar;
+        fVar.j = true;
+        fVar.invalidateSelf();
+        fVar.n = gVar2;
+        fVar.j = true;
+        fVar.invalidateSelf();
+        fVar.t = 210;
+        fh.c cVar2 = fVar.p;
+        if (cVar2 != null) {
+            fVar.s = i6.l1(210 / 255.0f, cVar2.b);
         }
-        Iterator it = eVar.c.iterator();
-        if (it.hasNext()) {
-            throw a4.a.k(it);
+        fVar.k = true;
+        fVar.invalidateSelf();
+        fVar.o = gVar3;
+        fVar.k = true;
+        fVar.invalidateSelf();
+        this.a.c.add(new l(view, fVar));
+        return fVar;
+    }
+
+    public final mi.f b(View view) {
+        mi.f fVar = new mi.f(this.f);
+        mi.g gVar = new mi.g(AndroidUtilities.dp(28.0f));
+        mi.g gVar2 = new mi.g(AndroidUtilities.dp(40.0f));
+        mi.g gVar3 = new mi.g(AndroidUtilities.dp(30.0f));
+        if (fVar.l != 4) {
+            fVar.l = 4;
+            fVar.j = true;
+            fVar.k = true;
+            fVar.invalidateSelf();
         }
-        int i18 = z17 ? 4 : 0;
-        long j3 = eVar.l;
-        long j10 = eVar.h;
-        if (j3 != j10) {
-            eVar.l = j10;
-            i18 |= 8;
+        fVar.p = this.b;
+        fVar.j = true;
+        fVar.k();
+        fVar.invalidateSelf();
+        fVar.r = 160;
+        fh.c cVar = fVar.p;
+        if (cVar != null) {
+            fVar.q = i6.l1(160 / 255.0f, cVar.b);
         }
-        long j11 = eVar.k;
-        long j12 = eVar.g;
-        if (j11 != j12) {
-            eVar.k = j12;
-            i18 |= 2;
+        fVar.j = true;
+        fVar.invalidateSelf();
+        fVar.m = gVar;
+        fVar.j = true;
+        fVar.invalidateSelf();
+        fVar.n = gVar2;
+        fVar.j = true;
+        fVar.invalidateSelf();
+        fVar.t = 210;
+        fh.c cVar2 = fVar.p;
+        if (cVar2 != null) {
+            fVar.s = i6.l1(210 / 255.0f, cVar2.b);
         }
-        long j13 = eVar.j;
-        long j14 = eVar.f;
-        if (j13 != j14) {
-            eVar.j = j14;
-            i18 |= 1;
-        }
-        if (i18 != 0) {
-            c cVar = eVar.a;
-            if (cVar != null) {
-                cVar.b(i18);
-            }
-            int size3 = arrayList.size();
-            int i19 = 0;
-            while (i19 < size3) {
-                Object obj3 = arrayList.get(i19);
-                i19++;
-                d dVar4 = (d) obj3;
-                boolean z18 = dVar4.h;
-                ch.d dVar5 = dVar4.b;
-                if (z18 && dVar4.g) {
-                    dVar4.g = false;
-                    if (Build.VERSION.SDK_INT < 29 || !(dVar5 instanceof ch.e)) {
-                        dVar5.invalidateSelf();
-                    } else {
-                        dVar5.w();
-                    }
-                }
-            }
-        }
+        fVar.k = true;
+        fVar.invalidateSelf();
+        fVar.o = gVar3;
+        fVar.k = true;
+        fVar.invalidateSelf();
+        this.a.c.add(new l(view, fVar));
+        return fVar;
+    }
+
+    public final void d(FrameLayout frameLayout, zl0 zl0Var, org.telegram.ui.ActionBar.k kVar, d6 d6Var) {
+        this.g = frameLayout;
+        this.h = zl0Var;
+        zl0Var.setCaptureSectionsDecoratorAllowed(true);
+        this.i = new di.f(1, zl0Var, frameLayout);
+        this.a.b(zl0Var);
+        zl0Var.setClipToPadding(false);
+        AndroidUtilities.removeFromParent(kVar);
+        frameLayout.addView(kVar, z5.e(-1, -2, 48));
+        kVar.setAddToContainer(false);
+        kVar.setCenterTitleAndGlass(true);
+        kVar.setExtraHeight(AndroidUtilities.dp(6.0f));
+        kVar.T0 = true;
+        kVar.K(this.c, eh.b.m(d6Var), false);
+    }
+
+    public final void e(FrameLayout frameLayout, g91 g91Var, org.telegram.ui.ActionBar.k kVar, d6 d6Var) {
+        this.g = frameLayout;
+        this.h = g91Var;
+        this.a.c(g91Var);
+        AndroidUtilities.removeFromParent(kVar);
+        frameLayout.addView(kVar, z5.e(-1, -2, 48));
+        kVar.setAddToContainer(false);
+        kVar.setCenterTitleAndGlass(true);
+        kVar.setExtraHeight(AndroidUtilities.dp(6.0f));
+        kVar.T0 = true;
+        kVar.K(this.c, eh.b.m(d6Var), false);
     }
 }

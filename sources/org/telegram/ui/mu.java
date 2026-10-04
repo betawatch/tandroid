@@ -1,54 +1,41 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class mu extends og.a {
-    public final int c;
-    public final int d;
-    public final int e;
-    public final CharSequence f;
-    public final CharSequence g;
-    public final int h;
+public final /* synthetic */ class mu implements DialogInterface.OnClickListener {
+    public final /* synthetic */ DataSettingsActivity a;
+    public final /* synthetic */ SharedPreferences b;
+    public final /* synthetic */ int c;
 
-    public mu(int i10, String str) {
-        super(i10, false);
-        this.f = str;
+    public /* synthetic */ mu(DataSettingsActivity dataSettingsActivity, SharedPreferences sharedPreferences, int i10) {
+        this.a = dataSettingsActivity;
+        this.b = sharedPreferences;
+        this.c = i10;
     }
 
-    public static mu b(CharSequence charSequence, String str) {
-        return new mu(-1, 0, 0, 0, charSequence, str);
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof mu)) {
-            return false;
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i10) {
+        int i11;
+        DataSettingsActivity dataSettingsActivity = this.a;
+        dataSettingsActivity.getClass();
+        if (i10 != 0) {
+            i11 = 3;
+            if (i10 != 1) {
+                i11 = i10 != 2 ? i10 != 3 ? -1 : 2 : 1;
+            }
+        } else {
+            i11 = 0;
         }
-        mu muVar = (mu) obj;
-        CharSequence charSequence = muVar.f;
-        int i10 = muVar.a;
-        int i11 = this.a;
-        if (i10 != i11) {
-            return false;
+        if (i11 != -1) {
+            this.b.edit().putInt("VoipDataSaving", i11).commit();
+            dataSettingsActivity.V = true;
         }
-        CharSequence charSequence2 = this.f;
-        if (i11 == 1 || i11 == 4 || i11 == 3 || i11 == 5) {
-            return TextUtils.equals(charSequence2, charSequence);
+        nu nuVar = dataSettingsActivity.a;
+        if (nuVar != null) {
+            nuVar.m(this.c);
         }
-        if (i11 == 2) {
-            return muVar.h == this.h && TextUtils.equals(charSequence2, charSequence) && muVar.d == this.d && muVar.e == this.e && muVar.c == this.c;
-        }
-        return true;
-    }
-
-    public mu(int i10, int i11, int i12, int i13, CharSequence charSequence, CharSequence charSequence2) {
-        super(2, false);
-        this.h = i10;
-        this.c = i11;
-        this.d = i12;
-        this.e = i13;
-        this.f = charSequence;
-        this.g = charSequence2;
     }
 }

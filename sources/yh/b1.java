@@ -9,14 +9,14 @@ import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.t00;
-import org.telegram.ui.Components.u50;
+import org.telegram.ui.Components.rc;
+import org.telegram.ui.Components.u00;
+import org.telegram.ui.Components.v50;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.qy;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a;
@@ -47,10 +47,10 @@ public final /* synthetic */ class b1 implements Runnable {
                 x3Var.dismiss();
                 break;
             case 3:
-                x3.W(x3Var);
+                x3.U(x3Var);
                 break;
             case 4:
-                x3.Y(x3Var);
+                x3.X(x3Var);
                 break;
             case 5:
                 x3Var.j0.setLoading(false);
@@ -85,12 +85,12 @@ public final /* synthetic */ class b1 implements Runnable {
                 break;
             case 15:
                 x3Var.dismiss();
-                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 TL_stars.TL_starGiftUnique K1 = x3Var.K1();
                 if (U != null && K1 != null) {
-                    qy qyVar = new qy(ok.e(4, "onlySelect", "dialogsType", true));
-                    qyVar.C2 = new u50(x3Var, K1, qyVar, i11);
-                    U.presentFragment(qyVar);
+                    uy uyVar = new uy(ok.e(4, "onlySelect", "dialogsType", true));
+                    uyVar.C2 = new v50(x3Var, K1, uyVar, i11);
+                    U.presentFragment(uyVar);
                     break;
                 }
                 break;
@@ -119,18 +119,18 @@ public final /* synthetic */ class b1 implements Runnable {
                 } else {
                     str = "";
                 }
-                qc M = x3Var.getBulletinFactory().M(LocaleController.getString(R.string.Gift2UpgradedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2UpgradedText, str)), R.raw.gift_upgrade);
+                rc M = x3Var.getBulletinFactory().M(LocaleController.getString(R.string.Gift2UpgradedTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2UpgradedText, str)), R.raw.gift_upgrade);
                 M.j = 5000;
                 M.t = true;
                 M.j();
-                t00 t00Var = x3Var.a0;
-                if (t00Var != null) {
-                    t00Var.c(true);
+                u00 u00Var = x3Var.a0;
+                if (u00Var != null) {
+                    u00Var.c(true);
                     break;
                 }
                 break;
             case 21:
-                x3Var.d.u0(((x3) x3Var.Q0.d).P0.length - 1);
+                x3Var.d.v0(((x3) x3Var.Q0.d).P0.length - 1);
                 break;
             case 22:
                 x3Var.getBulletinFactory().Q(R.raw.copy, 36, LocaleController.getString(R.string.WalletAddressCopied)).k(false);
@@ -177,7 +177,7 @@ public final /* synthetic */ class b1 implements Runnable {
                 break;
             default:
                 x3Var.getClass();
-                new rg.x0((org.telegram.ui.ActionBar.m2) new ai.y3(x3Var, 12), 12, false).show();
+                new rg.y0((org.telegram.ui.ActionBar.n2) new ai.y3(x3Var, 12), 12, false).show();
                 break;
         }
     }

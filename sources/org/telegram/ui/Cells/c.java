@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class c extends TextView {
     public boolean a;
@@ -16,7 +16,7 @@ public final class c extends TextView {
         if (this.a) {
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.h6.U1);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), org.telegram.ui.ActionBar.i6.U1);
         }
         super.onDraw(canvas);
     }

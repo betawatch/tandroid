@@ -9,9 +9,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class n6 extends LinearLayout {
     public final TextView a;
@@ -29,38 +29,38 @@ public final class n6 extends LinearLayout {
         super(context);
         this.r = q6Var;
         setOrientation(0);
-        int i10 = org.telegram.ui.ActionBar.h6.i6;
+        int i10 = org.telegram.ui.ActionBar.i6.i6;
         d6 d6Var = q6Var.G1;
-        setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.v0(i10, d6Var), 2, -1));
+        setBackground(org.telegram.ui.ActionBar.i6.f0(org.telegram.ui.ActionBar.i6.v0(i10, d6Var), 2, -1));
         m6 m6Var = new m6(this, context);
         this.b = m6Var;
-        addView(m6Var, w7.y5.t(-2, -2, 19, 16, 0, 16, 0));
+        addView(m6Var, w7.z5.t(-2, -2, 19, 16, 0, 16, 0));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         ImageView imageView2 = this.c;
-        int i11 = org.telegram.ui.ActionBar.h6.E8;
-        imageView2.setColorFilter(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
-        m6Var.addView(this.c, w7.y5.e(-2, -2, 17));
+        int i11 = org.telegram.ui.ActionBar.i6.E8;
+        imageView2.setColorFilter(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
+        m6Var.addView(this.c, w7.z5.e(-2, -2, 17));
         ImageView imageView3 = new ImageView(context);
         this.d = imageView3;
         imageView3.setScaleType(scaleType);
-        this.d.setColorFilter(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+        this.d.setColorFilter(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
         this.d.setVisibility(8);
-        m6Var.addView(this.d, w7.y5.e(-2, -2, 17));
+        m6Var.addView(this.d, w7.z5.e(-2, -2, 17));
         TextView textView = new TextView(context);
         this.a = textView;
-        textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+        textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
         textView.setTextSize(1, 16.0f);
-        addView(textView, w7.y5.t(-2, -2, 19, 0, 0, 16, 0));
+        addView(textView, w7.z5.t(-2, -2, 19, 0, 0, 16, 0));
         ImageView imageView4 = new ImageView(context);
         this.n = imageView4;
         imageView4.setImageResource(R.drawable.msg_text_check);
         imageView4.setScaleType(scaleType);
-        imageView4.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.h7, d6Var), PorterDuff.Mode.MULTIPLY));
+        imageView4.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h7, d6Var), PorterDuff.Mode.MULTIPLY));
         imageView4.setVisibility(8);
-        addView(imageView4, w7.y5.n(50, -1));
+        addView(imageView4, w7.z5.n(50, -1));
     }
 
     public final void a(int i10, boolean z10, boolean z11) {
@@ -83,7 +83,7 @@ public final class n6 extends LinearLayout {
         this.h = ofFloat;
         ofFloat.addUpdateListener(new ai.bb(1, this, z10));
         this.h.addListener(new ai.b(this, 15));
-        this.h.setInterpolator(sr.h);
+        this.h.setInterpolator(tr.h);
         this.h.setDuration(420L);
         this.h.start();
     }
@@ -96,8 +96,8 @@ public final class n6 extends LinearLayout {
     @Override // android.view.View
     public final boolean performClick() {
         q6 q6Var = this.r;
-        org.telegram.ui.ActionBar.m1 m1Var = q6Var.H1;
-        if (m1Var != null && m1Var.isShowing()) {
+        org.telegram.ui.ActionBar.n1 n1Var = q6Var.H1;
+        if (n1Var != null && n1Var.isShowing()) {
             q6Var.H1.d(true);
         }
         return super.performClick();

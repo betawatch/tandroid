@@ -1,33 +1,11 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesStorage;
+import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ns implements MessagesStorage.IntCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ContactsActivity b;
-
-    public /* synthetic */ ns(ContactsActivity contactsActivity, int i10) {
-        this.a = i10;
-        this.b = contactsActivity;
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i10) {
-        switch (this.a) {
-            case 0:
-                ContactsActivity contactsActivity = this.b;
-                contactsActivity.getClass();
-                contactsActivity.b0 = i10 != 0;
-                if (i10 != 0) {
-                    contactsActivity.f0(false);
-                    break;
-                }
-                break;
-            default:
-                ContactsActivity.W(this.b, i10);
-                break;
-        }
+public final class ns implements View.OnFocusChangeListener {
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
     }
 }

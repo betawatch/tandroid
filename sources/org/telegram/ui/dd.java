@@ -1,49 +1,38 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dd implements View.OnClickListener {
+public final /* synthetic */ class dd implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ld b;
+    public final /* synthetic */ nd b;
 
-    public /* synthetic */ dd(ld ldVar, int i10) {
+    public /* synthetic */ dd(nd ndVar, int i10) {
         this.a = i10;
-        this.b = ldVar;
+        this.b = ndVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ld.X(this.b, view);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.g6(21, this.b, tLObject));
                 break;
             case 1:
-                ld ldVar = this.b;
-                ldVar.v.o(ldVar.x != null, new cd(ldVar, 1), new r5(ldVar, 2), 0);
-                ldVar.J.M(0);
-                ldVar.J.P(43);
-                ldVar.h.d();
+                if (tLObject instanceof TLRPC.TL_boolTrue) {
+                    AndroidUtilities.runOnUIThread(new ed(this.b, 3));
+                    break;
+                }
                 break;
             case 2:
-                ld ldVar2 = this.b;
-                if (!ldVar2.j0) {
-                    ldVar2.f0();
-                    break;
-                } else if (ldVar2.a0) {
-                    ldVar2.a0 = false;
-                    ldVar2.h0();
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.g6(19, this.b, tL_error));
                 break;
             default:
-                ld ldVar3 = this.b;
-                if (!ldVar3.a0) {
-                    ldVar3.a0 = true;
-                    ldVar3.h0();
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new r1(this.b, tL_error, tLObject, 11));
                 break;
         }
     }

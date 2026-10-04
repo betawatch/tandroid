@@ -16,7 +16,7 @@ import android.os.Build;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
-import ei.q2;
+import ei.r2;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
@@ -37,7 +37,7 @@ import org.telegram.ui.Components.voip.g2;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.mi1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class VoIPGroupNotification {
     public static long currentCallId;
@@ -45,7 +45,7 @@ public class VoIPGroupNotification {
     private static HashSet<Integer> ignoreCalls;
     private static Runnable missRunnable;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static final class State implements VoIPServiceState {
         public final long call_id;
         private final int currentAccount;
@@ -173,7 +173,7 @@ public class VoIPGroupNotification {
         VoIPPreNotificationService.stopRinging();
         TL_phone.declineConferenceCallInvite declineconferencecallinvite = new TL_phone.declineConferenceCallInvite();
         declineconferencecallinvite.msg_id = i11;
-        ConnectionsManager.getInstance(i10).sendRequest(declineconferencecallinvite, new q2(i10, 1));
+        ConnectionsManager.getInstance(i10).sendRequest(declineconferencecallinvite, new r2(i10, 1));
         mi1 mi1Var = mi1.n1;
         if (mi1Var != null) {
             mi1Var.n();
@@ -336,8 +336,8 @@ public class VoIPGroupNotification {
                     NotificationChannel notificationChannel4 = new NotificationChannel("incoming_calls4" + i15, LocaleController.getString(R.string.IncomingCallsSystemSetting), 4);
                     try {
                         notificationChannel4.setSound(null, build);
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
                     }
                     notificationChannel4.setDescription(LocaleController.getString(R.string.IncomingCallsSystemSettingDescription));
                     notificationChannel4.enableVibration(false);
@@ -345,8 +345,8 @@ public class VoIPGroupNotification {
                     notificationChannel4.setBypassDnd(true);
                     try {
                         notificationManager2.createNotificationChannel(notificationChannel4);
-                    } catch (Exception e7) {
-                        FileLog.e(e7);
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
                     }
                 }
                 contentIntent.setChannelId("incoming_calls4" + i15);

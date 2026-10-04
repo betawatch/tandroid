@@ -1,42 +1,161 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ed0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qg0 b;
+public final class ed0 extends org.telegram.ui.Components.lw0 implements r0.m {
+    public final b2.q0 w0;
+    public boolean x0;
+    public final /* synthetic */ gd0 y0;
 
-    public /* synthetic */ ed0(qg0 qg0Var, int i10) {
-        this.a = i10;
-        this.b = qg0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ed0(gd0 gd0Var, Context context) {
+        super(context, null);
+        this.y0 = gd0Var;
+        this.x0 = true;
+        this.w0 = new b2.q0();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                qg0 qg0Var = this.b;
-                qg0Var.r0 = false;
-                qg0Var.x1(true, true);
-                break;
-            case 1:
-                this.b.c0 = false;
-                break;
-            default:
-                qg0 qg0Var2 = this.b;
-                if (qg0Var2.getParentActivity() != null && !qg0Var2.getParentActivity().isFinishing() && qg0Var2.getParentActivity() != null) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(qg0Var2.getParentActivity());
-                    alertDialog$Builder.a.R = LocaleController.getString(R.string.RestorePasswordNoEmailTitle);
-                    alertDialog$Builder.a.T = LocaleController.getString(R.string.SafetyNetErrorOccurred);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new jd0(qg0Var2, 1));
-                    alertDialog$Builder.o();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.lw0
+    public final void L(Canvas canvas, ArrayList arrayList) {
+        gd0 gd0Var = this.y0;
+        if (gd0Var.K0 != null) {
+            canvas.save();
+            canvas.translate(0.0f, gd0Var.U.getY());
+            gd0Var.K0.Q(canvas, arrayList);
+            canvas.restore();
         }
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.c5 c5Var;
+        org.telegram.ui.ActionBar.c5 c5Var2;
+        org.telegram.ui.ActionBar.k kVar2;
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        gd0 gd0Var = this.y0;
+        kVar = ((org.telegram.ui.ActionBar.n2) gd0Var).actionBar;
+        if (view == kVar) {
+            c5Var = ((org.telegram.ui.ActionBar.n2) gd0Var).parentLayout;
+            if (c5Var != null) {
+                c5Var2 = ((org.telegram.ui.ActionBar.n2) gd0Var).parentLayout;
+                kVar2 = ((org.telegram.ui.ActionBar.n2) gd0Var).actionBar;
+                ((ActionBarLayout) c5Var2).q(canvas, kVar2.getMeasuredHeight());
+            }
+        }
+        return drawChild;
+    }
+
+    @Override // r0.l
+    public final void m(int i10, View view) {
+        this.w0.a = 0;
+    }
+
+    @Override // r0.m
+    public final void n(View view, int i10, int i11, int i12, int i13, int i14, int[] iArr) {
+        wc0 wc0Var;
+        gd0 gd0Var = this.y0;
+        try {
+            if (view == gd0Var.U && (wc0Var = gd0Var.K0) != null && wc0Var.isAttachedToWindow()) {
+                org.telegram.ui.Components.zl0 currentListView = gd0Var.K0.getCurrentListView();
+                int top = gd0Var.K0.getTop();
+                if (currentListView == null || top != 0) {
+                    return;
+                }
+                iArr[1] = i13;
+                currentListView.scrollBy(0, i13);
+            }
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+            AndroidUtilities.runOnUIThread(new g10(this, 17));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        gd0 gd0Var = this.y0;
+        if (!z10) {
+            gd0Var.A0(true);
+        } else {
+            gd0Var.k0(this.x0);
+            this.x0 = false;
+        }
+    }
+
+    @Override // r0.l
+    public final boolean p(View view, View view2, int i10, int i11) {
+        return this.y0.K0 != null && i10 == 2;
+    }
+
+    @Override // r0.l
+    public final void s(View view, View view2, int i10, int i11) {
+        this.w0.a = i10;
+    }
+
+    @Override // r0.l
+    public final void t(View view, int i10, int i11, int[] iArr, int i12) {
+        wc0 wc0Var;
+        org.telegram.ui.ActionBar.k kVar;
+        int i13;
+        org.telegram.ui.Components.zl0 currentListView;
+        gd0 gd0Var = this.y0;
+        if (view == gd0Var.U && (wc0Var = gd0Var.K0) != null && wc0Var.isAttachedToWindow()) {
+            kVar = ((org.telegram.ui.ActionBar.n2) gd0Var).actionBar;
+            boolean z10 = kVar.n0;
+            int top = gd0Var.K0.getTop();
+            boolean z11 = false;
+            if (i11 >= 0) {
+                if (z10) {
+                    org.telegram.ui.Components.zl0 currentListView2 = gd0Var.K0.getCurrentListView();
+                    iArr[1] = i11;
+                    if (top > 0) {
+                        iArr[1] = 0;
+                    }
+                    if (currentListView2 == null || (i13 = iArr[1]) <= 0) {
+                        return;
+                    }
+                    currentListView2.scrollBy(0, i13);
+                    return;
+                }
+                return;
+            }
+            if (top <= 0 && (currentListView = gd0Var.K0.getCurrentListView()) != null) {
+                int L0 = ((s4.c0) currentListView.getLayoutManager()).L0();
+                if (L0 != -1) {
+                    s4.c1 K = currentListView.K(L0);
+                    int top2 = K != null ? K.a.getTop() : -1;
+                    int paddingTop = currentListView.getPaddingTop();
+                    if (top2 != paddingTop || L0 != 0) {
+                        iArr[1] = L0 != 0 ? i11 : Math.max(i11, top2 - paddingTop);
+                        currentListView.scrollBy(0, i11);
+                        z11 = true;
+                    }
+                }
+            }
+            if (z10) {
+                if (z11 || top >= 0) {
+                    iArr[1] = i11;
+                } else {
+                    iArr[1] = i11 - Math.max(top, i11);
+                }
+            }
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewParent
+    public final void onStopNestedScroll(View view) {
+    }
+
+    @Override // r0.l
+    public final void o(View view, int i10, int i11, int i12, int i13, int i14) {
     }
 }

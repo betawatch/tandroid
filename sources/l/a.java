@@ -12,9 +12,9 @@ import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
-import v7.s8;
+import v7.r8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a implements l0.a {
     public CharSequence a;
@@ -35,12 +35,12 @@ public final class a implements l0.a {
     public int p;
 
     @Override // l0.a
-    public final l0.a a(o oVar) {
+    public final l0.a a(n nVar) {
         throw new UnsupportedOperationException();
     }
 
     @Override // l0.a
-    public final o b() {
+    public final n b() {
         return null;
     }
 
@@ -48,7 +48,7 @@ public final class a implements l0.a {
         Drawable drawable = this.h;
         if (drawable != null) {
             if (this.n || this.o) {
-                Drawable d = s8.d(drawable);
+                Drawable d = r8.d(drawable);
                 this.h = d;
                 Drawable mutate = d.mutate();
                 this.h = mutate;

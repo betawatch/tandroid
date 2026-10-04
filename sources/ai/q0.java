@@ -2,7 +2,7 @@ package ai;
 
 import android.os.Build;
 import android.text.TextUtils;
-import ci.wc;
+import ci.vc;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q0 implements Utilities.Callback3 {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class q0 implements Utilities.Callback3 {
 
     @Override // org.telegram.messenger.Utilities.Callback3
     public final void run(Object obj, Object obj2, Object obj3) {
-        ci.nb nbVar;
+        ci.mb mbVar;
         switch (this.a) {
             case 0:
                 r3 r3Var = (r3) this.b;
@@ -97,41 +97,41 @@ public final /* synthetic */ class q0 implements Utilities.Callback3 {
                 }
                 return;
             case 1:
-                ci.bc bcVar = (ci.bc) this.b;
+                ci.ac acVar = (ci.ac) this.b;
                 ci.p pVar = (ci.p) this.c;
                 File file = (File) obj;
                 String str = (String) obj2;
                 Long l4 = (Long) obj3;
-                ci.lc lcVar = bcVar.S1;
-                ci.zb zbVar = lcVar.X0;
-                if (zbVar != null) {
-                    zbVar.O = false;
-                    zbVar.c();
-                    ci.zb zbVar2 = lcVar.X0;
-                    zbVar2.m(0L);
-                    wc wcVar = zbVar2.F;
-                    if (wcVar != null) {
-                        wcVar.setProgress(0L);
+                ci.kc kcVar = acVar.S1;
+                ci.yb ybVar = kcVar.X0;
+                if (ybVar != null) {
+                    ybVar.O = false;
+                    ybVar.c();
+                    ci.yb ybVar2 = kcVar.X0;
+                    ybVar2.m(0L);
+                    vc vcVar = ybVar2.F;
+                    if (vcVar != null) {
+                        vcVar.setProgress(0L);
                     }
                 }
-                ci.l8 l8Var = lcVar.K1;
-                if (l8Var != null) {
-                    l8Var.o0 = file;
-                    l8Var.p0 = str;
-                    l8Var.q0 = l4.longValue();
-                    ci.l8 l8Var2 = lcVar.K1;
-                    l8Var2.s0 = 0.0f;
-                    l8Var2.t0 = 1.0f;
-                    l8Var2.r0 = 0L;
-                    l8Var2.u0 = 1.0f;
-                    lcVar.u();
-                    if (lcVar.X0 == null || (nbVar = lcVar.v1) == null) {
+                ci.k8 k8Var = kcVar.K1;
+                if (k8Var != null) {
+                    k8Var.o0 = file;
+                    k8Var.p0 = str;
+                    k8Var.q0 = l4.longValue();
+                    ci.k8 k8Var2 = kcVar.K1;
+                    k8Var2.s0 = 0.0f;
+                    k8Var2.t0 = 1.0f;
+                    k8Var2.r0 = 0L;
+                    k8Var2.u0 = 1.0f;
+                    kcVar.u();
+                    if (kcVar.X0 == null || (mbVar = kcVar.v1) == null) {
                         pVar.a(false);
                         return;
                     }
-                    qg.c2 m0 = nbVar.m0(lcVar.K1.p0, true);
-                    bcVar.setHasRoundVideo(true);
-                    lcVar.X0.s(lcVar.K1, m0, true);
+                    qg.b2 m0 = mbVar.m0(kcVar.K1.p0, true);
+                    acVar.setHasRoundVideo(true);
+                    kcVar.X0.s(kcVar.K1, m0, true);
                     AndroidUtilities.cancelRunOnUIThread(pVar.h);
                     pVar.a.destroy(true, null);
                     m0.setDraw(false);
@@ -140,30 +140,30 @@ public final /* synthetic */ class q0 implements Utilities.Callback3 {
                 }
                 return;
             default:
-                ei.r rVar = (ei.r) this.b;
+                ei.s sVar = (ei.s) this.b;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.c;
                 Boolean bool3 = (Boolean) obj;
-                androidx.biometric.s sVar = (androidx.biometric.s) obj2;
+                androidx.biometric.s sVar2 = (androidx.biometric.s) obj2;
                 androidx.biometric.t tVar = (androidx.biometric.t) obj3;
-                rVar.getClass();
+                sVar.getClass();
                 String str2 = null;
-                if (sVar != null) {
+                if (sVar2 != null) {
                     try {
                         int i13 = Build.VERSION.SDK_INT;
                         if (i13 < 23) {
-                            str2 = rVar.g;
+                            str2 = sVar.g;
                         } else {
                             if (i13 >= 30) {
-                                tVar = rVar.i(true);
+                                tVar = sVar.i(true);
                             }
                             if (tVar != null) {
-                                str2 = !TextUtils.isEmpty(rVar.g) ? new String(tVar.b.doFinal(Utilities.hexToBytes(rVar.g)), StandardCharsets.UTF_8) : rVar.g;
-                            } else if (!TextUtils.isEmpty(rVar.g)) {
+                                str2 = !TextUtils.isEmpty(sVar.g) ? new String(tVar.b.doFinal(Utilities.hexToBytes(sVar.g)), StandardCharsets.UTF_8) : sVar.g;
+                            } else if (!TextUtils.isEmpty(sVar.g)) {
                                 throw new RuntimeException("No cryptoObject found");
                             }
                         }
-                    } catch (Exception e) {
-                        FileLog.e(e);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
                         bool3 = Boolean.FALSE;
                     }
                 }

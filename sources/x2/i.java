@@ -11,10 +11,10 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Map;
 import org.telegram.messenger.MediaDataController;
-import u2.o1;
-import v7.z7;
+import u2.l0;
+import v7.y7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i extends q1 {
     public static final String A0;
@@ -129,12 +129,12 @@ public final class i extends q1 {
                 arrayList2.add((u2.p1) entry.getKey());
                 arrayList.add(Integer.valueOf(keyAt));
             }
-            c10.putIntArray(I0, z7.f(arrayList));
-            c10.putParcelableArrayList(J0, e2.d.p(arrayList2, new o1(12)));
+            c10.putIntArray(I0, y7.f(arrayList));
+            c10.putParcelableArrayList(J0, e2.d.p(arrayList2, new l0(14)));
             SparseArray<? extends Parcelable> sparseArray3 = new SparseArray<>(sparseArray.size());
             if (sparseArray.size() > 0) {
                 sparseArray.keyAt(0);
-                a4.a.z(sparseArray.valueAt(0));
+                a4.a.y(sparseArray.valueAt(0));
                 throw null;
             }
             c10.putSparseParcelableArray(K0, sparseArray3);

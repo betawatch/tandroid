@@ -1,107 +1,322 @@
 package org.telegram.ui;
 
-import android.graphics.SurfaceTexture;
-import android.view.TextureView;
-import org.telegram.messenger.Intro;
-import org.telegram.messenger.NotificationCenter;
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Bitmaps;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class u70 implements TextureView.SurfaceTextureListener {
+public final class u70 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ u70(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+    public /* synthetic */ u70(Object obj, int i10) {
         this.a = i10;
-        this.b = notificationCenterDelegate;
+        this.b = obj;
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        switch (this.a) {
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        Bitmap bitmap;
+        int i11 = this.a;
+        Object obj = this.b;
+        switch (i11) {
             case 0:
-                y70 y70Var = (y70) this.b;
-                if (y70Var.I == null && surfaceTexture != null) {
-                    y70Var.I = new w70(y70Var, surfaceTexture);
-                    Intro.onSurfaceChanged(i10, i11, Math.min(i10 / 150.0f, i11 / 150.0f), 0);
-                    y70Var.I.postRunnable(new c10(this, 11));
-                    w70 w70Var = y70Var.I;
-                    w70Var.postRunnable(w70Var.w);
+                if (i10 == -1) {
+                    ((v70) obj).finishFragment();
                     break;
                 }
                 break;
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        switch (this.a) {
-            case 0:
-                y70 y70Var = (y70) this.b;
-                w70 w70Var = y70Var.I;
-                if (w70Var == null) {
-                    return true;
+            case 1:
+                if (i10 == -1) {
+                    ((k80) obj).finishFragment();
+                    break;
                 }
-                w70Var.postRunnable(new c10(w70Var, 13));
-                y70Var.I = null;
-                return true;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                if (photoViewer.B2 != null) {
-                    org.telegram.ui.Components.qg0 qg0Var = org.telegram.ui.Components.qg0.p0;
-                    if (qg0Var.P && org.telegram.ui.Components.qg0.p() != null && org.telegram.ui.Components.qg0.p().b.a != 0) {
-                        (qg0Var != null ? qg0Var.l0 : null).setSurfaceTexture(surfaceTexture);
-                        (qg0Var != null ? qg0Var.l0 : null).setVisibility(0);
-                        return false;
+                break;
+            case 2:
+                if (i10 == -1) {
+                    ((LanguageSelectActivity) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 3:
+                vb0 vb0Var = (vb0) obj;
+                if (i10 == -1) {
+                    vb0Var.finishFragment();
+                    AndroidUtilities.hideKeyboard(vb0Var.F);
+                    break;
+                }
+                break;
+            case 4:
+                if (i10 == -1) {
+                    ((lc0) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 5:
+                ug0 ug0Var = (ug0) obj;
+                if (i10 != 1) {
+                    if (i10 == -1 && ug0Var.onBackPressed(true)) {
+                        ug0Var.finishFragment();
+                        break;
                     }
-                    if (photoViewer.F3) {
-                        if (photoViewer.L3) {
-                            photoViewer.G3 = 2;
+                } else {
+                    ug0Var.p1();
+                    break;
+                }
+                break;
+            case 6:
+                if (i10 == -1) {
+                    ((wg0) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 7:
+                if (i10 == -1) {
+                    ((wh0) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 8:
+                if (i10 == -1) {
+                    ((xh0) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 9:
+                hj0 hj0Var = (hj0) obj;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        Bundle bundle = new Bundle();
+                        bundle.putLong("chat_id", hj0Var.b);
+                        hj0Var.presentFragment(new va1(bundle));
+                        break;
+                    }
+                } else {
+                    hj0Var.finishFragment();
+                    break;
+                }
+                break;
+            case 10:
+                if (i10 == -1) {
+                    ((NotificationsCustomSettingsActivity) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 11:
+                if (i10 == -1) {
+                    ((NotificationsSettingsActivity) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 12:
+                if (i10 == -1) {
+                    ((PasscodeActivity) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 13:
+                if (i10 == -1) {
+                    ((PasskeysActivity) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 14:
+                iq0 iq0Var = (iq0) obj;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        if (iq0Var.c != null && !iq0Var.f) {
+                            gq0 gq0Var = iq0Var.d;
+                            float f7 = gq0Var.f - gq0Var.x;
+                            float f10 = gq0Var.v;
+                            float f11 = (gq0Var.h - gq0Var.y) / gq0Var.w;
+                            float f12 = gq0Var.d / f10;
+                            float f13 = gq0Var.e / f10;
+                            iq0 iq0Var2 = gq0Var.H;
+                            int width = (int) ((f7 / f10) * iq0Var2.a.getWidth());
+                            int height = (int) (f11 * iq0Var2.a.getHeight());
+                            int width2 = (int) (f12 * iq0Var2.a.getWidth());
+                            int width3 = (int) (f13 * iq0Var2.a.getWidth());
+                            if (width < 0) {
+                                width = 0;
+                            }
+                            if (height < 0) {
+                                height = 0;
+                            }
+                            if (width + width2 > iq0Var2.a.getWidth()) {
+                                width2 = iq0Var2.a.getWidth() - width;
+                            }
+                            if (height + width3 > iq0Var2.a.getHeight()) {
+                                width3 = iq0Var2.a.getHeight() - height;
+                            }
+                            try {
+                                bitmap = Bitmaps.createBitmap(iq0Var2.a, width, height, width2, width3);
+                            } catch (Throwable th2) {
+                                FileLog.e(th2);
+                                System.gc();
+                                try {
+                                    bitmap = Bitmaps.createBitmap(iq0Var2.a, width, height, width2, width3);
+                                } catch (Throwable th3) {
+                                    FileLog.e(th3);
+                                    bitmap = null;
+                                }
+                            }
+                            if (bitmap == iq0Var.a) {
+                                iq0Var.e = true;
+                            }
+                            ((org.telegram.ui.Components.y40) iq0Var.c).s(false, bitmap, null);
+                            iq0Var.f = true;
                         }
-                        photoViewer.B2.setSurfaceTexture(surfaceTexture);
-                        photoViewer.B2.setVisibility(0);
-                        photoViewer.F3 = false;
-                        photoViewer.e0.invalidate();
-                        return false;
+                        iq0Var.finishFragment();
+                        break;
                     }
-                }
-                return true;
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                if (((y70) this.b).I != null) {
-                    Intro.onSurfaceChanged(i10, i11, Math.min(i10 / 150.0f, i11 / 150.0f), 0);
+                } else {
+                    iq0Var.finishFragment();
                     break;
                 }
                 break;
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        switch (this.a) {
-            case 0:
+            case 15:
+                wq0 wq0Var = (wq0) obj;
+                if (i10 != -1) {
+                    if (i10 != 1) {
+                        if (i10 == 2) {
+                            vq0 vq0Var = wq0Var.s0;
+                            if (vq0Var != null) {
+                                vq0Var.g();
+                            }
+                            wq0Var.finishFragment();
+                            break;
+                        }
+                    } else {
+                        boolean z10 = wq0Var.Y;
+                        wq0Var.Y = !z10;
+                        if (z10) {
+                            wq0Var.K.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(50.0f));
+                        } else {
+                            wq0Var.K.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
+                        }
+                        wq0Var.K.C0();
+                        wq0Var.M.h1(0, 0);
+                        wq0Var.L.l();
+                        break;
+                    }
+                } else {
+                    wq0Var.finishFragment();
+                    break;
+                }
+                break;
+            case 16:
+                if (i10 == -1) {
+                    ((br0) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 17:
+                PopupNotificationActivity popupNotificationActivity = (PopupNotificationActivity) obj;
+                if (i10 != -1) {
+                    if (i10 != 1) {
+                        if (i10 == 2) {
+                            int i12 = PopupNotificationActivity.b0;
+                            popupNotificationActivity.p();
+                            break;
+                        }
+                    } else {
+                        int i13 = PopupNotificationActivity.b0;
+                        popupNotificationActivity.k();
+                        break;
+                    }
+                } else {
+                    popupNotificationActivity.i();
+                    popupNotificationActivity.finish();
+                    break;
+                }
+                break;
+            case 18:
+                nw0 nw0Var = (nw0) obj;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        nw0Var.X();
+                        break;
+                    }
+                } else if (nw0Var.onBackPressed(true)) {
+                    nw0Var.finishFragment();
+                    break;
+                }
+                break;
+            case 19:
+                if (i10 == -1) {
+                    ((PremiumPreviewFragment) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 20:
+                PrivacyControlActivity privacyControlActivity = (PrivacyControlActivity) obj;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        privacyControlActivity.z0();
+                        break;
+                    }
+                } else if (privacyControlActivity.v0(true)) {
+                    privacyControlActivity.finishFragment();
+                    break;
+                }
+                break;
+            case 21:
+                if (i10 == -1) {
+                    ((PrivacySettingsActivity) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 22:
+                if (i10 == -1) {
+                    ((by0) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 23:
+                if (i10 == -1) {
+                    ((ProxyListActivity) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 24:
+                if (i10 == -1) {
+                    ((a31) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 25:
+                if (i10 == -1) {
+                    ((f31) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 26:
+                if (i10 == -1) {
+                    ((y31) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 27:
+                if (i10 == -1) {
+                    ((h41) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 28:
+                if (i10 == -1) {
+                    ((SaveToGallerySettingsActivity) obj).finishFragment();
+                    break;
+                }
                 break;
             default:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                if (photoViewer.G3 == 1) {
-                    photoViewer.x0(true);
+                if (i10 == -1) {
+                    ((SecretMediaViewer) obj).e(true, false);
                     break;
                 }
                 break;
         }
-    }
-
-    private final void c(SurfaceTexture surfaceTexture) {
-    }
-
-    private final void a(SurfaceTexture surfaceTexture, int i10, int i11) {
-    }
-
-    private final void b(SurfaceTexture surfaceTexture, int i10, int i11) {
     }
 }

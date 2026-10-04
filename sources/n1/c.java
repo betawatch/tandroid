@@ -6,9 +6,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import kd.j;
 import rd.p;
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c extends j implements p {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final class c extends j implements p {
                 jd.a aVar = jd.a.a;
                 int i10 = this.b;
                 if (i10 == 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     b bVar = (b) this.c;
                     this.b = 1;
                     obj = this.d.invoke(bVar, this);
@@ -77,7 +77,7 @@ public final class c extends j implements p {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    u7.b(obj);
+                    t7.b(obj);
                 }
                 b bVar2 = (b) obj;
                 bVar2.b.set(true);
@@ -90,10 +90,10 @@ public final class c extends j implements p {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     b bVar3 = (b) this.c;
-                    u7.b(obj);
+                    t7.b(obj);
                     return bVar3;
                 }
-                u7.b(obj);
+                t7.b(obj);
                 Map unmodifiableMap = DesugarCollections.unmodifiableMap(((b) this.c).a);
                 kotlin.jvm.internal.i.d(unmodifiableMap, "unmodifiableMap(preferencesMap)");
                 b bVar4 = new b(new LinkedHashMap(unmodifiableMap), false);

@@ -1,21 +1,45 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.ui.dz;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class r extends dz {
-    public final /* synthetic */ ActionBarLayout a;
+public final class r extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ActionBarLayout b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r(ActionBarLayout actionBarLayout) {
-        super(null);
-        this.a = actionBarLayout;
+    public /* synthetic */ r(ActionBarLayout actionBarLayout, int i10) {
+        this.a = i10;
+        this.b = actionBarLayout;
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final void updateSheetsVisibility() {
-        super.updateSheetsVisibility();
-        this.a.invalidate();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10 = this.a;
+        ActionBarLayout actionBarLayout = this.b;
+        switch (i10) {
+            case 0:
+                Drawable drawable = ActionBarLayout.p1;
+                actionBarLayout.F(false);
+                break;
+            default:
+                Drawable drawable2 = ActionBarLayout.p1;
+                actionBarLayout.F(false);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.v0 = System.currentTimeMillis();
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

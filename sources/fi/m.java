@@ -4,20 +4,20 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.w9;
-import org.telegram.ui.lu0;
-import org.telegram.ui.vu0;
+import org.telegram.ui.ou0;
+import org.telegram.ui.yu0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class m extends lu0 {
+public final class m extends ou0 {
     public final /* synthetic */ p a;
 
     public m(p pVar) {
         this.a = pVar;
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
-    public final vu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    public final yu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         TLRPC.FileLocation fileLocation2;
         TLRPC.ChatPhoto chatPhoto;
         if (fileLocation != null) {
@@ -29,46 +29,46 @@ public final class m extends lu0 {
             if (fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id) {
                 int[] iArr = new int[2];
                 pVar.v.getLocationInWindow(iArr);
-                vu0 vu0Var = new vu0();
-                vu0Var.b = iArr[0];
-                vu0Var.c = iArr[1];
+                yu0 yu0Var = new yu0();
+                yu0Var.b = iArr[0];
+                yu0Var.c = iArr[1];
                 w9 w9Var = pVar.v;
-                vu0Var.d = w9Var;
+                yu0Var.d = w9Var;
                 ImageReceiver imageReceiver = w9Var.getImageReceiver();
-                vu0Var.a = imageReceiver;
-                vu0Var.f = -pVar.b;
-                vu0Var.e = imageReceiver.getBitmapSafe();
-                vu0Var.g = -1L;
-                vu0Var.h = pVar.v.getImageReceiver().getRoundRadius(true);
-                vu0Var.k = 1.0f;
-                vu0Var.p = true;
-                return vu0Var;
+                yu0Var.a = imageReceiver;
+                yu0Var.f = -pVar.b;
+                yu0Var.e = imageReceiver.getBitmapSafe();
+                yu0Var.g = -1L;
+                yu0Var.h = pVar.v.getImageReceiver().getRoundRadius(true);
+                yu0Var.k = 1.0f;
+                yu0Var.p = true;
+                return yu0Var;
             }
         }
         return null;
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
     public final void G() {
         this.a.v.getImageReceiver().setVisible(true, true);
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
     public final boolean M() {
         return true;
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
     public final void f(String str, String str2, boolean z10) {
         this.a.E.q(str, str2, z10);
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
     public final boolean t() {
         return false;
     }
 
-    @Override // org.telegram.ui.lu0, org.telegram.ui.tu0
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
     public final int y() {
         return 1;
     }

@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class v8 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -16,14 +16,14 @@ public final class v8 extends org.telegram.ui.ActionBar.j {
         switch (this.a) {
             case 0:
                 if (i10 == -1) {
-                    e9.U(this.b);
+                    e9.S(this.b);
                     break;
                 }
                 break;
             default:
                 e9 e9Var = this.b;
                 if (i10 == -1) {
-                    e9.U(e9Var);
+                    e9.S(e9Var);
                 }
                 if (i10 == 1) {
                     e9Var.f0();

@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import org.telegram.messenger.EmojiData;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class fd0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -12,8 +12,8 @@ public final class fd0 implements Runnable {
     public int c;
     public final /* synthetic */ Object d;
 
-    public fd0(org.telegram.ui.cz czVar, int i10, int i11) {
-        this.d = czVar;
+    public fd0(org.telegram.ui.gz gzVar, int i10, int i11) {
+        this.d = gzVar;
         this.b = i10;
         this.c = i11;
     }
@@ -35,7 +35,7 @@ public final class fd0 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         org.telegram.ui.Cells.u1 u1Var;
-        org.telegram.ui.wn wnVar;
+        org.telegram.ui.yn ynVar;
         switch (this.a) {
             case 0:
                 gd0 gd0Var = (gd0) this.d;
@@ -71,15 +71,15 @@ public final class fd0 implements Runnable {
                 }
                 break;
             default:
-                org.telegram.ui.cz czVar = (org.telegram.ui.cz) this.d;
+                org.telegram.ui.gz gzVar = (org.telegram.ui.gz) this.d;
                 int i13 = this.b;
                 int i14 = this.c;
-                yl0 yl0Var = czVar.H;
-                if (czVar.n) {
+                zl0 zl0Var = gzVar.H;
+                if (gzVar.n) {
                     int i15 = 0;
                     while (true) {
-                        if (i15 < yl0Var.getChildCount()) {
-                            View childAt = yl0Var.getChildAt(i15);
+                        if (i15 < zl0Var.getChildCount()) {
+                            View childAt = zl0Var.getChildAt(i15);
                             if (childAt instanceof org.telegram.ui.Cells.u1) {
                                 u1Var = (org.telegram.ui.Cells.u1) childAt;
                                 String stickerEmoji = u1Var.getMessageObject().getStickerEmoji();
@@ -94,15 +94,15 @@ public final class fd0 implements Runnable {
                             u1Var = null;
                         }
                     }
-                    if (u1Var != null && (wnVar = czVar.a) != null) {
-                        wnVar.Na(u1Var);
+                    if (u1Var != null && (ynVar = gzVar.a) != null) {
+                        ynVar.Ma(u1Var);
                         if (!EmojiData.hasEmojiSupportVibration(u1Var.getMessageObject().getStickerEmoji()) && !u1Var.getMessageObject().isPremiumSticker() && !u1Var.getMessageObject().isAnimatedAnimatedEmoji()) {
                             try {
                                 u1Var.performHapticFeedback(3);
                             } catch (Exception unused) {
                             }
                         }
-                        czVar.o(u1Var, i14, false, true);
+                        gzVar.o(u1Var, i14, false, true);
                         break;
                     }
                 }

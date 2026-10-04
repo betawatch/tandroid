@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.concurrent.locks.Lock;
 import m.p3;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d0 implements Runnable {
     public final /* synthetic */ g0 a;
@@ -121,9 +121,9 @@ public final class d0 implements Runnable {
                 if (!Thread.interrupted()) {
                     a();
                 }
-            } catch (RuntimeException e) {
+            } catch (RuntimeException e7) {
                 h0 h0Var = g0Var.a.e;
-                h0Var.sendMessage(h0Var.obtainMessage(2, e));
+                h0Var.sendMessage(h0Var.obtainMessage(2, e7));
             }
         } finally {
             lock.unlock();

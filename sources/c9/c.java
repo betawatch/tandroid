@@ -15,9 +15,9 @@ import android.os.ResultReceiver;
 import android.util.Log;
 import e0.t;
 import org.telegram.messenger.beta.R;
-import v7.f5;
+import v7.e5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class c extends IntentService {
     private static final int CONNECTION_TIMEOUT_IN_MS = 1000;
@@ -66,8 +66,8 @@ public abstract class c extends IntentService {
                 }
             }
             return false;
-        } catch (PackageManager.NameNotFoundException e) {
-            Log.w(TAG, "Couldn't find package name ".concat(str), e);
+        } catch (PackageManager.NameNotFoundException e7) {
+            Log.w(TAG, "Couldn't find package name ".concat(str), e7);
             return false;
         }
     }
@@ -80,7 +80,7 @@ public abstract class c extends IntentService {
         String message;
         boolean b10;
         if (str.equals("com.google.android.googlequicksearchbox") || str.equals("com.google.android.apps.assistant")) {
-            if (a() || f5.a(this, str)) {
+            if (a() || e5.a(this, str)) {
                 if (intent.hasExtra(EXTRA_INTENT)) {
                     Intent intent2 = (Intent) intent.getParcelableExtra(EXTRA_INTENT);
                     if (this.dbg) {
@@ -112,14 +112,14 @@ public abstract class c extends IntentService {
                             b10 = bVar.b(intent2, bundle);
                             performAction(intent2, b10, bundle);
                             message = "";
-                        } catch (RemoteException e) {
-                            String valueOf2 = String.valueOf(e.getMessage());
+                        } catch (RemoteException e7) {
+                            String valueOf2 = String.valueOf(e7.getMessage());
                             Log.e(TAG, valueOf2.length() != 0 ? "Remote exception: ".concat(valueOf2) : new String("Remote exception: "));
-                            message = e.getMessage();
-                        } catch (Exception e7) {
-                            String valueOf3 = String.valueOf(e7.getMessage());
-                            Log.e(TAG, valueOf3.length() != 0 ? "Exception: ".concat(valueOf3) : new String("Exception: "));
                             message = e7.getMessage();
+                        } catch (Exception e10) {
+                            String valueOf3 = String.valueOf(e10.getMessage());
+                            Log.e(TAG, valueOf3.length() != 0 ? "Exception: ".concat(valueOf3) : new String("Exception: "));
+                            message = e10.getMessage();
                         }
                         if (intent2.hasExtra(SEND_MESSAGE_RESULT_RECEIVER)) {
                             ResultReceiver resultReceiver = (ResultReceiver) intent2.getExtras().getParcelable(SEND_MESSAGE_RESULT_RECEIVER);
@@ -170,11 +170,11 @@ public abstract class c extends IntentService {
         }
         super.onCreate();
         this.searchActionVerificationServiceConnection = new b(this);
-        if (b("com.google.android.googlequicksearchbox") && (a() || f5.a(this, "com.google.android.googlequicksearchbox"))) {
+        if (b("com.google.android.googlequicksearchbox") && (a() || e5.a(this, "com.google.android.googlequicksearchbox"))) {
             bindService(this.gsaServiceIntent, this.searchActionVerificationServiceConnection, 1);
         }
         this.assistantGoVerificationServiceConnection = new b(this);
-        if (b("com.google.android.apps.assistant") && (a() || f5.a(this, "com.google.android.apps.assistant"))) {
+        if (b("com.google.android.apps.assistant") && (a() || e5.a(this, "com.google.android.apps.assistant"))) {
             bindService(this.assistantGoServiceIntent, this.assistantGoVerificationServiceConnection, 1);
         }
         if (Build.VERSION.SDK_INT >= 26) {
@@ -226,9 +226,9 @@ public abstract class c extends IntentService {
             if ((!z11 || !z10) && System.nanoTime() - nanoTime < this.connectionTimeout * MS_TO_NS) {
                 try {
                     Thread.sleep(50L);
-                } catch (InterruptedException e) {
+                } catch (InterruptedException e7) {
                     if (this.dbg) {
-                        String valueOf = String.valueOf(e);
+                        String valueOf = String.valueOf(e7);
                         StringBuilder sb2 = new StringBuilder(valueOf.length() + 33);
                         sb2.append("Unexpected InterruptedException: ");
                         sb2.append(valueOf);

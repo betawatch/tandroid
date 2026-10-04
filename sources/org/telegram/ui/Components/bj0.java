@@ -13,7 +13,7 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class bj0 {
     public final View a;
@@ -24,10 +24,10 @@ public final class bj0 {
     public final TextPaint f;
     public RectF g;
 
-    public bj0(fu fuVar, Layout layout, Spanned spanned, fj0 fj0Var) {
+    public bj0(gu guVar, Layout layout, Spanned spanned, fj0 fj0Var) {
         int i10;
         int i11;
-        this.a = fuVar;
+        this.a = guVar;
         this.e = fj0Var;
         this.f = layout.getPaint();
         fj0Var.c = spanned.getSpanStart(fj0Var);
@@ -71,8 +71,8 @@ public final class bj0 {
             lineForOffset++;
         }
         this.d = (int) Math.ceil(f7);
-        if (z10 && fuVar != null && fj0Var.J == null) {
-            fj0Var.J = new xi0(fuVar);
+        if (z10 && guVar != null && fj0Var.J == null) {
+            fj0Var.J = new xi0(guVar);
         }
     }
 

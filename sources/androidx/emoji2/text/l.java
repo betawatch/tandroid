@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import n4.y;
-import w7.o6;
+import w7.p6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class l {
     public static final Object i = new Object();
@@ -196,7 +196,7 @@ public final class l {
                             }
                         }
                         if (i10 != i11 && i10 < charSequence.length()) {
-                            r rVar = (r) ((com.google.firebase.messaging.t) yVar.b).d;
+                            r rVar = (r) ((com.google.firebase.messaging.s) yVar.b).d;
                             oVar = new o();
                             oVar.a = 1;
                             oVar.d = rVar;
@@ -220,7 +220,7 @@ public final class l {
                                             codePointAt = Character.codePointAt(charSequence, i10);
                                         }
                                     } else if (a2 == 3) {
-                                        if (!yVar.S(charSequence, i12, i10, ((r) oVar.f).b)) {
+                                        if (!yVar.U(charSequence, i12, i10, ((r) oVar.f).b)) {
                                             if (xVar == null) {
                                                 xVar = new x((Spannable) new SpannableString(charSequence));
                                             }
@@ -230,7 +230,7 @@ public final class l {
                                     }
                                 }
                             }
-                            if (oVar.a == 2 && ((r) oVar.e).b != null && ((oVar.c > 1 || oVar.e()) && i13 < Integer.MAX_VALUE && !yVar.S(charSequence, i12, i10, ((r) oVar.e).b))) {
+                            if (oVar.a == 2 && ((r) oVar.e).b != null && ((oVar.c > 1 || oVar.e()) && i13 < Integer.MAX_VALUE && !yVar.U(charSequence, i12, i10, ((r) oVar.e).b))) {
                                 if (xVar == null) {
                                     xVar = new x(charSequence);
                                 }
@@ -258,7 +258,7 @@ public final class l {
                 }
             }
             if (i10 != i11) {
-                r rVar2 = (r) ((com.google.firebase.messaging.t) yVar.b).d;
+                r rVar2 = (r) ((com.google.firebase.messaging.s) yVar.b).d;
                 oVar = new o();
                 oVar.a = 1;
                 oVar.d = rVar2;
@@ -287,7 +287,7 @@ public final class l {
     }
 
     public final void f(i iVar) {
-        o6.a(iVar, "initCallback cannot be null");
+        p6.a(iVar, "initCallback cannot be null");
         this.a.writeLock().lock();
         try {
             if (this.c != 1 && this.c != 2) {

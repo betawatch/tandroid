@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class ci1 implements RendererCommon.RendererEvents {
     public final /* synthetic */ mi1 a;
@@ -20,7 +20,7 @@ public final class ci1 implements RendererCommon.RendererEvents {
             pVar.run();
             mi1Var.l1 = null;
         }
-        AndroidUtilities.runOnUIThread(new vz0(this, 22));
+        AndroidUtilities.runOnUIThread(new hz0(this, 24));
     }
 
     @Override // org.webrtc.RendererCommon.RendererEvents

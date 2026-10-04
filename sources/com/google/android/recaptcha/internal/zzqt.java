@@ -4,7 +4,7 @@ import a4.a;
 import java.io.IOException;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class zzqt extends IOException {
     public zzqt() {
@@ -18,10 +18,10 @@ public final class zzqt extends IOException {
     public zzqt(long j3, long j10, int i10, Throwable th2) {
         super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(r3.toString()), th2);
         Locale locale = Locale.US;
-        StringBuilder u10 = a.u(j3, "Pos: ", ", limit: ");
-        u10.append(j10);
-        u10.append(", len: ");
-        u10.append(i10);
+        StringBuilder t10 = a.t(j3, "Pos: ", ", limit: ");
+        t10.append(j10);
+        t10.append(", len: ");
+        t10.append(i10);
     }
 
     public zzqt(Throwable th2) {

@@ -6,9 +6,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class b implements Runnable {
                     Bundle bundle = new Bundle();
                     bundle.putLong("chat_id", tL_messageMediaGiveawayResults.channel_id);
                     bundle.putInt("message_id", tL_messageMediaGiveawayResults.launch_msg_id);
-                    LaunchActivity.R().presentFragment(new wn(bundle));
+                    LaunchActivity.R().presentFragment(new yn(bundle));
                     break;
                 } else {
                     u1Var.getDelegate().b2(u1Var, tL_messageMediaGiveawayResults.launch_msg_id, 0.0f, 0.0f, false);

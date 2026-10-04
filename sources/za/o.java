@@ -1,30 +1,24 @@
 package za;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class o {
-    public final String a;
+public enum o implements ka.f {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF3(2),
+    b(3);
 
-    public o(String str) {
-        this.a = str;
+    public final int a;
+
+    o(int i10) {
+        this.a = i10;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return (obj instanceof o) && kotlin.jvm.internal.i.a(this.a, ((o) obj).a);
-    }
-
-    public final int hashCode() {
-        String str = this.a;
-        if (str == null) {
-            return 0;
-        }
-        return str.hashCode();
-    }
-
-    public final String toString() {
-        return "FirebaseSessionsData(sessionId=" + this.a + ')';
+    @Override // ka.f
+    public final int a() {
+        return this.a;
     }
 }

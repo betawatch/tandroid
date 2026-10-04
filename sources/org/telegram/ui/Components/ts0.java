@@ -1,60 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ts0 extends v00 {
-    public final /* synthetic */ hs0 U;
-    public final /* synthetic */ lv0 V;
+public final class ts0 extends org.telegram.ui.yn {
+    public boolean Kc;
+    public final /* synthetic */ int Lc;
+    public final /* synthetic */ pv0 Mc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ts0(lv0 lv0Var, Context context, hs0 hs0Var) {
-        super(context, null);
-        this.V = lv0Var;
-        this.U = hs0Var;
+    public ts0(pv0 pv0Var, Bundle bundle, int i10) {
+        super(bundle);
+        this.Mc = pv0Var;
+        this.Lc = i10;
+        this.Kc = true;
     }
 
-    @Override // org.telegram.ui.Components.v00
-    public final int getColumnsCount() {
-        return this.V.m1[lv0.p0(this.U.F) ? 1 : 0];
-    }
-
-    @Override // org.telegram.ui.Components.v00
-    public final int getViewType() {
-        setIsSingleCell(false);
-        int i10 = this.U.F;
-        if (i10 == 0 || i10 == 5) {
-            return 2;
-        }
-        if (i10 == 1) {
-            return 3;
-        }
-        if (i10 != 2 && i10 != 4) {
-            if (i10 == 3) {
-                return 5;
+    @Override // org.telegram.ui.yn, org.telegram.ui.ActionBar.n2
+    public final void onTransitionAnimationStart(boolean z10, boolean z11) {
+        pv0 pv0Var = this.Mc;
+        av0 av0Var = pv0Var.S;
+        if (this.Kc) {
+            if (this.h0 != null) {
+                ka("");
+                this.h0.H(av0Var.w, false);
             }
-            if (i10 != 7) {
-                if (i10 == 6) {
-                    if (this.V.I0.getTabsCount() == 1) {
-                        setIsSingleCell(true);
-                        return 1;
-                    }
-                } else if (lv0.p0(i10)) {
-                    return 27;
-                }
-                return 1;
+            org.telegram.ui.vk vkVar = this.m1;
+            if (vkVar != null) {
+                vkVar.e(av0Var.x, false);
             }
+            pv0Var.v1.getMediaDataController().portSavedSearchResults(getClassGuid(), av0Var.x, av0Var.w, av0Var.n, av0Var.h, this.Lc, av0Var.v, av0Var.s);
+            this.Kc = false;
         }
-        return 6;
-    }
-
-    @Override // org.telegram.ui.Components.v00, android.view.View
-    public final void onDraw(Canvas canvas) {
-        lv0 lv0Var = this.V;
-        lv0Var.T0.setColor(lv0Var.h0(org.telegram.ui.ActionBar.h6.d6));
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), lv0Var.T0);
-        super.onDraw(canvas);
+        super.onTransitionAnimationStart(z10, z11);
     }
 }

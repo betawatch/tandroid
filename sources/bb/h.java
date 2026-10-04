@@ -4,16 +4,15 @@ import a6.m;
 import android.content.Context;
 import android.os.Bundle;
 import org.telegram.tgnet.TLObject;
-import v7.u7;
+import v7.t7;
 import w7.r;
-import za.d0;
-import za.t;
+import za.b0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class h {
     public static final f c = new f();
-    public static final m1.c d = r.a(t.b);
+    public static final m1.c d = r.a(za.r.b);
     public final m a;
     public final d b;
 
@@ -21,8 +20,8 @@ public final class h {
         hVar.a();
         Context context = hVar.a;
         kotlin.jvm.internal.i.d(context, "firebaseApp.applicationContext");
-        d0 d0Var = d0.a;
-        za.b a2 = d0.a(hVar);
+        b0 b0Var = b0.a;
+        za.b a2 = b0.a(hVar);
         m mVar = new m(context);
         aa.a aVar = new aa.a(a2, hVar2);
         c.getClass();
@@ -76,7 +75,7 @@ public final class h {
                 i10 = gVar.d;
                 gd.i iVar = gd.i.a;
                 if (i10 != 0) {
-                    u7.b(obj);
+                    t7.b(obj);
                     gVar.a = this;
                     gVar.d = 1;
                     this.a.getClass();
@@ -86,12 +85,12 @@ public final class h {
                 }
                 if (i10 != 1) {
                     if (i10 == 2) {
-                        u7.b(obj);
+                        t7.b(obj);
                     }
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
                 hVar = gVar.a;
-                u7.b(obj);
+                t7.b(obj);
                 d dVar = hVar.b;
                 gVar.a = null;
                 gVar.d = 2;

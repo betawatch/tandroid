@@ -1,20 +1,44 @@
 package org.telegram.ui;
 
-import j$.util.function.Consumer$-CC;
-import java.util.function.Consumer;
-import java.util.regex.Pattern;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class xa0 implements Consumer {
-    @Override // java.util.function.Consumer
-    /* renamed from: accept */
-    public final void x(Object obj) {
-        ((Boolean) obj).getClass();
-        Pattern pattern = LaunchActivity.B1;
+public final /* synthetic */ class xa0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ya0 b;
+    public final /* synthetic */ AccountInstance c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 e;
+
+    public /* synthetic */ xa0(ya0 ya0Var, AccountInstance accountInstance, long j3, org.telegram.ui.ActionBar.n2 n2Var, int i10) {
+        this.a = i10;
+        this.b = ya0Var;
+        this.c = accountInstance;
+        this.d = j3;
+        this.e = n2Var;
     }
 
-    public /* synthetic */ Consumer andThen(Consumer consumer) {
-        return Consumer$-CC.$default$andThen(this, consumer);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new xa0(this.b, this.c, this.d, this.e, 1));
+                break;
+            default:
+                AccountInstance accountInstance = this.c;
+                MessagesController messagesController = accountInstance.getMessagesController();
+                long j3 = this.d;
+                long j10 = -j3;
+                ChatObject.Call groupCall = messagesController.getGroupCall(j10, false);
+                TLRPC.Chat chat = accountInstance.getMessagesController().getChat(Long.valueOf(j10));
+                accountInstance.getMessagesController().getInputPeer(j3);
+                org.telegram.ui.Components.voip.g2.l(chat, null, false, Boolean.valueOf(groupCall == null || !groupCall.call.rtmp_stream), this.b.g, this.e, accountInstance);
+                break;
+        }
     }
 }

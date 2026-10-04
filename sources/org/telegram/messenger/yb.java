@@ -6,7 +6,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.ui.NotificationsSettingsActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yb implements Runnable {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class yb implements Runnable {
                 ((MessagesController) this.b).lambda$processUpdateArray$417((LongSparseIntArray) this.c, (LongSparseIntArray) this.d, (SparseIntArray) this.e, (a0.i) this.f, (a0.i) this.h, (a0.i) this.n, (a0.i) this.r, (a0.i) this.s, (LongSparseIntArray) this.v);
                 break;
             default:
-                NotificationsSettingsActivity.U((NotificationsSettingsActivity) this.b, (ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.v, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (ArrayList) this.n, (ArrayList) this.r, (Runnable) this.s);
+                NotificationsSettingsActivity.S((NotificationsSettingsActivity) this.b, (ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.v, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (ArrayList) this.n, (ArrayList) this.r, (Runnable) this.s);
                 break;
         }
     }

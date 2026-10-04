@@ -6,7 +6,7 @@ import e2.d0;
 import java.io.EOFException;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final f a;
@@ -34,16 +34,6 @@ public final class b implements g {
             this.e = 0;
         }
         this.a = new f();
-    }
-
-    @Override // x3.g
-    public final void B(long j3) {
-        this.n = d0.i(j3, 0L, this.f - 1);
-        this.e = 2;
-        this.r = this.b;
-        this.s = this.c;
-        this.v = 0L;
-        this.w = this.f;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:26:0x00c4 A[RETURN] */
@@ -76,7 +66,7 @@ public final class b implements g {
                     long position2 = pVar.getPosition();
                     if (fVar.b(pVar, this.s)) {
                         fVar.a(pVar, false);
-                        pVar.p();
+                        pVar.m();
                         long j13 = this.n;
                         long j14 = fVar.b;
                         long j15 = j13 - j14;
@@ -131,11 +121,11 @@ public final class b implements g {
                 fVar.b(pVar, -1L);
                 fVar.a(pVar, false);
                 if (fVar.b > this.n) {
-                    pVar.p();
+                    pVar.m();
                     this.e = 4;
                     return -(this.v + j10);
                 }
-                pVar.q(fVar.d + fVar.e);
+                pVar.o(fVar.d + fVar.e);
                 this.r = pVar.getPosition();
                 this.v = fVar.b;
             }
@@ -151,11 +141,11 @@ public final class b implements g {
             throw new EOFException();
         }
         fVar.a(pVar, false);
-        pVar.q(fVar.d + fVar.e);
+        pVar.o(fVar.d + fVar.e);
         long j20 = fVar.b;
         while ((fVar.a & 4) != 4 && fVar.b(pVar, -1L) && pVar.getPosition() < j11 && fVar.a(pVar, true)) {
             try {
-                pVar.q(fVar.d + fVar.e);
+                pVar.o(fVar.d + fVar.e);
                 j20 = fVar.b;
             } catch (EOFException unused) {
             }
@@ -166,10 +156,20 @@ public final class b implements g {
     }
 
     @Override // x3.g
-    public final b0 g() {
+    public final b0 d() {
         if (this.f != 0) {
             return new a(this);
         }
         return null;
+    }
+
+    @Override // x3.g
+    public final void y(long j3) {
+        this.n = d0.i(j3, 0L, this.f - 1);
+        this.e = 2;
+        this.r = this.b;
+        this.s = this.c;
+        this.v = 0L;
+        this.w = this.f;
     }
 }

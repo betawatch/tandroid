@@ -5,7 +5,7 @@ import android.os.IInterface;
 import android.util.Log;
 import java.util.Set;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class r0 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,8 +38,8 @@ public final class r0 implements Runnable {
                             try {
                                 cVar.b(null, cVar.c());
                                 break;
-                            } catch (SecurityException e) {
-                                Log.e("GoogleApiManager", "Failed to get service from broker. ", e);
+                            } catch (SecurityException e7) {
+                                Log.e("GoogleApiManager", "Failed to get service from broker. ", e7);
                                 cVar.d("Failed to get service from broker.");
                                 p0Var.m(new k6.a(10), null);
                                 return;
@@ -56,7 +56,7 @@ public final class r0 implements Runnable {
                 o oVar = (o) this.c;
                 Object obj = pVar.b;
                 if (obj != null) {
-                    oVar.l(obj);
+                    oVar.q(obj);
                     break;
                 }
                 break;

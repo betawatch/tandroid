@@ -3,9 +3,9 @@ package com.google.android.gms.internal.cast;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class a5 extends v7.t5 {
+public final class a5 extends v7.s5 {
     public static final Logger e = Logger.getLogger(a5.class.getName());
     public static final boolean f = u6.e;
     public w5 a;

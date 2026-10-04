@@ -3,9 +3,9 @@ package g2;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.SocketTimeoutException;
-import v7.s6;
+import v7.r6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class v extends j {
     public final int c;
@@ -17,7 +17,7 @@ public class v extends j {
 
     public static v a(IOException iOException, int i10) {
         String message = iOException.getMessage();
-        int i11 = iOException instanceof SocketTimeoutException ? 2002 : iOException instanceof InterruptedIOException ? 1004 : (message == null || !s6.b(message).matches("cleartext.*not permitted.*")) ? 2001 : 2007;
+        int i11 = iOException instanceof SocketTimeoutException ? 2002 : iOException instanceof InterruptedIOException ? 1004 : (message == null || !r6.b(message).matches("cleartext.*not permitted.*")) ? 2001 : 2007;
         return i11 == 2007 ? new u("Cleartext HTTP traffic not permitted. See https://developer.android.com/guide/topics/media/issues/cleartext-not-permitted", iOException, 2007) : new v(iOException, i11, i10);
     }
 

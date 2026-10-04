@@ -8,7 +8,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class il extends org.telegram.ui.Components.w9 {
     public final /* synthetic */ int G = 0;
@@ -27,7 +27,7 @@ public final class il extends org.telegram.ui.Components.w9 {
                 vh.g gVar = (vh.g) this.I;
                 Path path = (Path) this.H;
                 super.draw(canvas);
-                if (((org.telegram.ui.Components.so) this.J).h) {
+                if (((org.telegram.ui.Components.to) this.J).h) {
                     path.rewind();
                     RectF rectF = AndroidUtilities.rectTmp;
                     rectF.set(this.a.getImageX(), this.a.getImageY(), this.a.getImageX2(), this.a.getImageY2());
@@ -91,9 +91,9 @@ public final class il extends org.telegram.ui.Components.w9 {
             case 2:
                 org.telegram.ui.Components.voip.h hVar = (org.telegram.ui.Components.voip.h) this.I;
                 super.onDraw(canvas);
-                org.telegram.ui.Components.e60 e60Var = (org.telegram.ui.Components.e60) this.J;
-                if (e60Var.x0) {
-                    int i10 = e60Var.S0;
+                org.telegram.ui.Components.f60 f60Var = (org.telegram.ui.Components.f60) this.J;
+                if (f60Var.x0) {
+                    int i10 = f60Var.S0;
                     hVar.f = i10;
                     RectF rectF2 = AndroidUtilities.rectTmp;
                     float f13 = i10;
@@ -109,7 +109,7 @@ public final class il extends org.telegram.ui.Components.w9 {
             case 3:
                 org.telegram.ui.Components.voip.h hVar2 = (org.telegram.ui.Components.voip.h) this.I;
                 super.onDraw(canvas);
-                if (((org.telegram.ui.Components.d60) this.J).k0) {
+                if (((org.telegram.ui.Components.e60) this.J).k0) {
                     float min = Math.min(getWidth(), getHeight()) * 0.5f;
                     RectF rectF3 = AndroidUtilities.rectTmp;
                     rectF3.set(0.0f, 0.0f, getWidth(), getHeight());
@@ -125,25 +125,25 @@ public final class il extends org.telegram.ui.Components.w9 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public il(org.telegram.ui.Components.so soVar, Context context, vh.g gVar) {
+    public il(org.telegram.ui.Components.to toVar, Context context, vh.g gVar) {
         super(context);
-        this.J = soVar;
+        this.J = toVar;
         this.I = gVar;
         this.H = new Path();
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public il(org.telegram.ui.Components.d60 d60Var, Context context, Paint paint) {
-        super(context);
-        this.J = d60Var;
-        this.H = paint;
-        this.I = new org.telegram.ui.Components.voip.h();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public il(org.telegram.ui.Components.e60 e60Var, Context context, Paint paint) {
         super(context);
         this.J = e60Var;
+        this.H = paint;
+        this.I = new org.telegram.ui.Components.voip.h();
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public il(org.telegram.ui.Components.f60 f60Var, Context context, Paint paint) {
+        super(context);
+        this.J = f60Var;
         this.H = paint;
         this.I = new org.telegram.ui.Components.voip.h();
     }

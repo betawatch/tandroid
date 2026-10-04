@@ -1,18 +1,20 @@
 package v7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class u8 {
-    public static long a(e2.v vVar, int i10, int i11) {
-        vVar.J(i10);
-        if (vVar.a() < 5) {
-            return -9223372036854775807L;
+    public static String a(String str, String str2) {
+        int length = str.length() - str2.length();
+        if (length < 0 || length > 1) {
+            throw new IllegalArgumentException("Invalid input received");
         }
-        int j3 = vVar.j();
-        if ((8388608 & j3) != 0 || ((2096896 & j3) >> 8) != i11 || (j3 & 32) == 0 || vVar.x() < 7 || vVar.a() < 7 || (vVar.x() & 16) != 16) {
-            return -9223372036854775807L;
+        StringBuilder sb2 = new StringBuilder(str2.length() + str.length());
+        for (int i10 = 0; i10 < str.length(); i10++) {
+            sb2.append(str.charAt(i10));
+            if (str2.length() > i10) {
+                sb2.append(str2.charAt(i10));
+            }
         }
-        vVar.h(0, 6, new byte[6]);
-        return ((r0[0] & 255) << 25) | ((r0[1] & 255) << 17) | ((r0[2] & 255) << 9) | ((r0[3] & 255) << 1) | ((255 & r0[4]) >> 7);
+        return sb2.toString();
     }
 }

@@ -2,9 +2,9 @@ package org.telegram.ui.Cells;
 
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.qy;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class k2 extends ai.ca {
     public final /* synthetic */ s2 S;
@@ -24,8 +24,8 @@ public final class k2 extends ai.ca {
     public final boolean d(long j3) {
         s2 s2Var = this.S;
         int i10 = s2Var.F0;
-        qy qyVar = s2Var.z4;
-        if (qyVar == null || s2Var.O0) {
+        uy uyVar = s2Var.z4;
+        if (uyVar == null || s2Var.O0) {
             return false;
         }
         if (j3 > 0) {
@@ -33,14 +33,14 @@ public final class k2 extends ai.ca {
             if (user == null || user.linked_community_id == 0) {
                 return false;
             }
-            qyVar.showDialog(new fi.k0(qyVar, user.linked_community_id));
+            uyVar.showDialog(new fi.k0(uyVar, user.linked_community_id));
             return true;
         }
         TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
         if (chat == null || chat.linked_community_id == 0) {
             return false;
         }
-        qyVar.showDialog(new fi.k0(qyVar, chat.linked_community_id));
+        uyVar.showDialog(new fi.k0(uyVar, chat.linked_community_id));
         return true;
     }
 

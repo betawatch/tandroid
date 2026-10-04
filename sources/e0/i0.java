@@ -18,10 +18,10 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.NotificationsController;
-import org.telegram.ui.Components.kz0;
-import org.telegram.ui.Components.mz0;
+import org.telegram.ui.Components.tz0;
+import org.telegram.ui.Components.vz0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i0 implements j4.a0 {
     public int a;
@@ -322,12 +322,12 @@ public final class i0 implements j4.a0 {
             return;
         }
         iArr[i10] = 1;
-        for (kz0 kz0Var : ((kz0[][]) this.c)[i10]) {
-            f(kz0Var.a.b);
-            kz0[] kz0VarArr = (kz0[]) this.b;
+        for (tz0 tz0Var : ((tz0[][]) this.c)[i10]) {
+            f(tz0Var.a.b);
+            tz0[] tz0VarArr = (tz0[]) this.b;
             int i11 = this.a;
             this.a = i11 - 1;
-            kz0VarArr[i11] = kz0Var;
+            tz0VarArr[i11] = tz0Var;
         }
         iArr[i10] = 2;
     }
@@ -424,7 +424,7 @@ public final class i0 implements j4.a0 {
                 b2.c.m(builder);
             }
             if (i19 >= 31) {
-                h0.c(builder);
+                h0.e(builder);
             }
             bundle2.putBoolean("android.support.action.showsUserInterface", kVar.e);
             builder.addExtras(bundle2);
@@ -633,11 +633,11 @@ public final class i0 implements j4.a0 {
     public void b(e2.b0 b0Var, c3.q qVar, j4.f0 f0Var) {
     }
 
-    public i0(c3.z zVar, c3.j0 j0Var, byte[] bArr, c3.k0[] k0VarArr, int i10) {
+    public i0(c3.z zVar, a4.m mVar, byte[] bArr, c3.j0[] j0VarArr, int i10) {
         this.b = zVar;
-        this.c = j0Var;
+        this.c = mVar;
         this.d = bArr;
-        this.e = k0VarArr;
+        this.e = j0VarArr;
         this.a = i10;
     }
 
@@ -649,30 +649,30 @@ public final class i0 implements j4.a0 {
         this.a = i10;
     }
 
-    public i0(mz0 mz0Var, kz0[] kz0VarArr) {
-        this.e = mz0Var;
-        int length = kz0VarArr.length;
-        this.b = new kz0[length];
+    public i0(vz0 vz0Var, tz0[] tz0VarArr) {
+        this.e = vz0Var;
+        int length = tz0VarArr.length;
+        this.b = new tz0[length];
         this.a = length - 1;
-        int e = mz0Var.e() + 1;
-        kz0[][] kz0VarArr2 = new kz0[e][];
-        int[] iArr = new int[e];
-        for (kz0 kz0Var : kz0VarArr) {
-            int i10 = kz0Var.a.a;
+        int e7 = vz0Var.e() + 1;
+        tz0[][] tz0VarArr2 = new tz0[e7][];
+        int[] iArr = new int[e7];
+        for (tz0 tz0Var : tz0VarArr) {
+            int i10 = tz0Var.a.a;
             iArr[i10] = iArr[i10] + 1;
         }
-        for (int i11 = 0; i11 < e; i11++) {
-            kz0VarArr2[i11] = new kz0[iArr[i11]];
+        for (int i11 = 0; i11 < e7; i11++) {
+            tz0VarArr2[i11] = new tz0[iArr[i11]];
         }
         Arrays.fill(iArr, 0);
-        for (kz0 kz0Var2 : kz0VarArr) {
-            int i12 = kz0Var2.a.a;
-            kz0[] kz0VarArr3 = kz0VarArr2[i12];
+        for (tz0 tz0Var2 : tz0VarArr) {
+            int i12 = tz0Var2.a.a;
+            tz0[] tz0VarArr3 = tz0VarArr2[i12];
             int i13 = iArr[i12];
             iArr[i12] = i13 + 1;
-            kz0VarArr3[i13] = kz0Var2;
+            tz0VarArr3[i13] = tz0Var2;
         }
-        this.c = kz0VarArr2;
-        this.d = new int[((mz0) this.e).e() + 1];
+        this.c = tz0VarArr2;
+        this.d = new int[((vz0) this.e).e() + 1];
     }
 }

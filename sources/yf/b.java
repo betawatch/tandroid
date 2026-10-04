@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class b {
     public static void a(Map map) {
@@ -25,8 +25,8 @@ public abstract class b {
                     map.put(next, Integer.valueOf(jSONObject.optJSONObject(next).optInt("exp")));
                 }
                 open.close();
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         }
     }
@@ -48,7 +48,7 @@ public abstract class b {
         String string = ApplicationLoader.applicationContext.getSharedPreferences("purchases", 0).getString(bytesToHex, null);
         if (string == null) {
             FileLog.d("BillingUtilities.getPurpose: purpose under " + bytesToHex + " not found");
-            throw new RuntimeException(a4.a.q("no purpose under ", bytesToHex, " found :("));
+            throw new RuntimeException(a4.a.p("no purpose under ", bytesToHex, " found :("));
         }
         FileLog.d("BillingUtilities.getPurpose: got {" + string + "} under " + bytesToHex);
         SerializedData serializedData3 = new SerializedData(Utilities.hexToBytes(string));

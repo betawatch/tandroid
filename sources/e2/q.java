@@ -2,26 +2,26 @@ package e2;
 
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class q implements w3.c {
+public final class q implements w3.b {
     public int a;
     public int b;
     public int c;
     public int d;
     public Object e;
 
-    @Override // w3.c
+    @Override // w3.b
     public int a() {
         return -1;
     }
 
-    @Override // w3.c
+    @Override // w3.b
     public int b() {
         return this.a;
     }
 
-    @Override // w3.c
+    @Override // w3.b
     public int c() {
         v vVar = (v) this.e;
         int i10 = this.b;

@@ -6,14 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class sk extends hv0 {
+public final class sk extends kv0 {
     public sk(ViewGroup viewGroup, ViewGroup viewGroup2) {
         super(viewGroup, viewGroup2);
     }
 
-    @Override // org.telegram.ui.hv0
+    @Override // org.telegram.ui.kv0
     public final void c(Canvas canvas, float f7, float f10, float f11, float f12, float f13) {
         if (f7 > 0.0f) {
             View view = this.e;

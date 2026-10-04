@@ -3,11 +3,11 @@ package jf;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.MediaMetadataRetriever;
-import hg.c;
+import hg.k0;
 import java.io.File;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b extends a {
     public final MediaMetadataRetriever r;
@@ -48,17 +48,17 @@ public final class b extends a {
                     this.p = this.o;
                 }
             }
-        } catch (Exception e) {
+        } catch (Exception e7) {
             this.s = true;
-            FileLog.e(e);
+            FileLog.e(e7);
         }
         try {
             MediaMetadataRetriever mediaMetadataRetriever2 = this.r;
             if (mediaMetadataRetriever2 != null) {
-                c.r(mediaMetadataRetriever2);
+                k0.q(mediaMetadataRetriever2);
             }
-        } catch (Exception e7) {
-            FileLog.e(e7);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 

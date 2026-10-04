@@ -12,10 +12,10 @@ import b2.x1;
 import b2.y0;
 import b2.z0;
 import java.util.List;
-import org.telegram.ui.Components.d60;
-import org.telegram.ui.Components.u71;
+import org.telegram.ui.Components.d81;
+import org.telegram.ui.Components.e60;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class i0 implements z0 {
     public final /* synthetic */ int a;
@@ -142,11 +142,11 @@ public final class i0 implements z0 {
             case 0:
                 break;
             default:
-                u71 u71Var = (u71) this.b;
-                if (!u71Var.H && i10 == 3) {
-                    u71Var.H = true;
-                    if (u71Var.G && u71Var.I) {
-                        u71Var.C();
+                d81 d81Var = (d81) this.b;
+                if (!d81Var.H && i10 == 3) {
+                    d81Var.H = true;
+                    if (d81Var.G && d81Var.I) {
+                        d81Var.C();
                         break;
                     }
                 }
@@ -170,7 +170,7 @@ public final class i0 implements z0 {
             case 0:
                 s0 s0Var = (s0) this.b;
                 if (s0Var.W == 5) {
-                    d60.l((d60) s0Var.d.a);
+                    e60.l((e60) s0Var.d.b);
                     break;
                 }
                 break;

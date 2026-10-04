@@ -1,72 +1,76 @@
 package ei;
 
-import ai.n8;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q4 b;
+public final class g4 extends FrameLayout {
+    public Path a;
+    public float b;
+    public int c;
+    public int d;
+    public int e;
+    public d0 f;
 
-    public /* synthetic */ g4(q4 q4Var, int i10) {
-        this.a = i10;
-        this.b = q4Var;
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        float height = (getHeight() - AndroidUtilities.dp(32.0f)) / 2.0f;
+        float max = Math.max((getWidth() - this.e) - AndroidUtilities.dp(4.0f), getHeight()) * this.b;
+        float dp = AndroidUtilities.dp(16.0f) + max;
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(AndroidUtilities.dp(14.0f) - max, (AndroidUtilities.dp(4.0f) + height) - max, AndroidUtilities.dp(6.0f) + this.e + max, (getHeight() - AndroidUtilities.dp(12.0f)) + max);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
+        canvas.clipPath(path);
+        canvas.drawColor(this.d);
+        canvas.saveLayerAlpha(rectF, (int) ((1.0f - (Math.min(0.5f, this.b) / 0.5f)) * 255.0f), 31);
+        canvas.translate(AndroidUtilities.dp(10.0f), height);
+        d0 d0Var = this.f;
+        if (d0Var != null) {
+            d0Var.setDrawBackgroundDrawable(false);
+            this.f.draw(canvas);
+            this.f.setDrawBackgroundDrawable(true);
+        }
+        canvas.restore();
+        canvas.translate((1.0f - this.b) * (-AndroidUtilities.dp(8.0f)), 0.0f);
+        super.draw(canvas);
+        canvas.restore();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        TLRPC.ChatFull chatFull;
-        TLRPC.Peer peer;
-        switch (this.a) {
-            case 0:
-                this.b.n.R();
-                break;
-            case 1:
-                this.b.L();
-                break;
-            case 2:
-                q4 q4Var = this.b;
-                if (!q4Var.T) {
-                    TLRPC.TL_messages_prolongWebView tL_messages_prolongWebView = new TLRPC.TL_messages_prolongWebView();
-                    tL_messages_prolongWebView.bot = MessagesController.getInstance(q4Var.F).getInputUser(q4Var.v);
-                    tL_messages_prolongWebView.peer = MessagesController.getInstance(q4Var.F).getInputPeer(q4Var.w);
-                    tL_messages_prolongWebView.query_id = q4Var.x;
-                    tL_messages_prolongWebView.silent = false;
-                    if (q4Var.y != 0) {
-                        TLRPC.InputReplyTo createReplyInput = SendMessagesHelper.getInstance(q4Var.F).createReplyInput(q4Var.y);
-                        tL_messages_prolongWebView.reply_to = createReplyInput;
-                        if (q4Var.E != 0) {
-                            createReplyInput.monoforum_peer_id = MessagesController.getInstance(q4Var.F).getInputPeer(q4Var.E);
-                            tL_messages_prolongWebView.reply_to.flags |= 32;
-                        }
-                        tL_messages_prolongWebView.flags |= 1;
-                    } else if (q4Var.E != 0) {
-                        TLRPC.TL_inputReplyToMonoForum tL_inputReplyToMonoForum = new TLRPC.TL_inputReplyToMonoForum();
-                        tL_messages_prolongWebView.reply_to = tL_inputReplyToMonoForum;
-                        tL_inputReplyToMonoForum.monoforum_peer_id = MessagesController.getInstance(q4Var.F).getInputPeer(q4Var.E);
-                        tL_messages_prolongWebView.flags |= 1;
-                    }
-                    if (q4Var.w < 0 && (chatFull = MessagesController.getInstance(q4Var.F).getChatFull(-q4Var.w)) != null && (peer = chatFull.default_send_as) != null) {
-                        tL_messages_prolongWebView.send_as = MessagesController.getInstance(q4Var.F).getInputPeer(peer);
-                        tL_messages_prolongWebView.flags |= 8192;
-                    }
-                    ConnectionsManager.getInstance(q4Var.F).sendRequest(tL_messages_prolongWebView, new n8(q4Var, 7));
-                    break;
-                }
-                break;
-            case 3:
-                q4 q4Var2 = this.b;
-                q4Var2.b.X1(q4Var2, 0);
-                q4Var2.n.o(false, false);
-                System.currentTimeMillis();
-                break;
-            default:
-                this.b.n.o(true, false);
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i11);
+        int height = getParent() instanceof View ? ((View) getParent()).getHeight() : 0;
+        if (height > 0) {
+            size = Math.min(size, height);
         }
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, View.MeasureSpec.getMode(i11)));
+    }
+
+    public void setBotMenuButton(d0 d0Var) {
+        this.f = d0Var;
+        invalidate();
+    }
+
+    public void setMeasuredButtonWidth(int i10) {
+        this.e = i10;
+        invalidate();
+    }
+
+    public void setProgress(float f7) {
+        this.b = f7;
+        this.d = i0.a.d(f7, i6.w0(null, i6.cf, false), this.c);
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            getChildAt(i10).setAlpha(f7);
+        }
+        invalidate();
     }
 }

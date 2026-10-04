@@ -9,9 +9,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class p extends org.telegram.ui.Components.xl0 {
+public final class p extends org.telegram.ui.Components.yl0 {
     public final Context c;
     public final /* synthetic */ q d;
 
@@ -20,7 +20,7 @@ public final class p extends org.telegram.ui.Components.xl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 0;
     }
@@ -71,7 +71,7 @@ public final class p extends org.telegram.ui.Components.xl0 {
         TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) arrayList.get(i12);
         wVar.b(stickerSetCovered, i12 != arrayList.size() - 1);
         org.telegram.ui.Components.ki0 ki0Var = wVar.f;
-        i11 = ((org.telegram.ui.ActionBar.m2) qVar).currentAccount;
+        i11 = ((org.telegram.ui.ActionBar.n2) qVar).currentAccount;
         boolean isStickerPackInstalled = MediaDataController.getInstance(i11).isStickerPackInstalled(stickerSetCovered.set.id);
         wVar.a(isStickerPackInstalled, false, false);
         if (isStickerPackInstalled) {
@@ -94,7 +94,7 @@ public final class p extends org.telegram.ui.Components.xl0 {
         View view = null;
         if (i10 == 0) {
             org.telegram.ui.Cells.w wVar = new org.telegram.ui.Cells.w(context, true);
-            wVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
+            wVar.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
             view = wVar;
         } else if (i10 == 1) {
             view = new org.telegram.ui.Cells.s4(context);

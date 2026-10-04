@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class t0 extends org.telegram.ui.Components.r6 {
     public final /* synthetic */ int b;
@@ -14,19 +14,19 @@ public final class t0 extends org.telegram.ui.Components.r6 {
     }
 
     @Override // org.telegram.ui.Components.r6
-    public final void b(Object obj, float f7) {
+    public final void c(Object obj, float f7) {
         switch (this.b) {
             case 0:
                 ((ArticleViewer$WindowView) obj).setInnerTranslationX(f7);
                 break;
             case 1:
-                wn.Gc = (int) f7;
+                yn.Bc = (int) f7;
                 break;
             case 2:
                 ((org.telegram.ui.Cells.u1) obj).setTimeAlpha(f7);
                 break;
             case 3:
-                ((d01) obj).setCrossfadeProgress(f7);
+                ((f01) obj).setCrossfadeProgress(f7);
                 break;
             case 4:
                 ((SecretMediaViewer) obj).setVideoCrossfadeAlpha(f7);
@@ -35,14 +35,14 @@ public final class t0 extends org.telegram.ui.Components.r6 {
                 ((SecretMediaViewer) obj).setAnimationValue(f7);
                 break;
             default:
-                v41 v41Var = (v41) obj;
-                if (v41Var.a != f7) {
-                    v41Var.a = f7;
-                    SecretMediaViewer secretMediaViewer = v41Var.r;
+                y41 y41Var = (y41) obj;
+                if (y41Var.a != f7) {
+                    y41Var.a = f7;
+                    SecretMediaViewer secretMediaViewer = y41Var.r;
                     secretMediaViewer.S.setAlpha(f7);
-                    if (!v41Var.b) {
-                        if (v41Var.c) {
-                            v41Var.setTranslationY((1.0f - f7) * AndroidUtilities.dpf2(24.0f));
+                    if (!y41Var.b) {
+                        if (y41Var.c) {
+                            y41Var.setTranslationY((1.0f - f7) * AndroidUtilities.dpf2(24.0f));
                         }
                         secretMediaViewer.R.setAlpha(f7);
                         break;
@@ -53,10 +53,10 @@ public final class t0 extends org.telegram.ui.Components.r6 {
                         float f11 = 1.0f - (0.1f * f10);
                         secretMediaViewer.S.setScaleX(f11);
                         secretMediaViewer.S.setScaleY(f11);
-                        org.telegram.ui.Components.w71 w71Var = secretMediaViewer.Q;
-                        if (w71Var.y != f10) {
-                            w71Var.y = f10;
-                            w71Var.v.invalidate();
+                        org.telegram.ui.Components.f81 f81Var = secretMediaViewer.Q;
+                        if (f81Var.y != f10) {
+                            f81Var.y = f10;
+                            f81Var.v.invalidate();
                             break;
                         }
                     }
@@ -71,17 +71,17 @@ public final class t0 extends org.telegram.ui.Components.r6 {
             case 0:
                 return Float.valueOf(((ArticleViewer$WindowView) obj).getInnerTranslationX());
             case 1:
-                return Float.valueOf(wn.Gc);
+                return Float.valueOf(yn.Bc);
             case 2:
                 return Float.valueOf(((org.telegram.ui.Cells.u1) obj).getTimeAlpha());
             case 3:
-                return Float.valueOf(((d01) obj).S);
+                return Float.valueOf(((f01) obj).S);
             case 4:
                 return Float.valueOf(((SecretMediaViewer) obj).getVideoCrossfadeAlpha());
             case 5:
                 return Float.valueOf(((SecretMediaViewer) obj).getAnimationValue());
             default:
-                return Float.valueOf(((v41) obj).a);
+                return Float.valueOf(((y41) obj).a);
         }
     }
 }

@@ -6,9 +6,9 @@ import c3.h0;
 import java.math.RoundingMode;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaDataController;
-import v7.z7;
+import v7.y7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class g implements i {
     public final e2.v a;
@@ -163,7 +163,7 @@ public final class g implements i {
                                     b12 = bArr2[6];
                                 }
                                 i13 = b12 & 60;
-                                this.k = z7.b(e2.d0.W(this.l.K, (((i13 >> 2) | i12) + 1) * 32));
+                                this.k = y7.b(e2.d0.W(this.l.K, (((i13 >> 2) | i12) + 1) * 32));
                                 vVar2.J(0);
                                 this.g.d(18, vVar2);
                                 this.h = 6;
@@ -173,7 +173,7 @@ public final class g implements i {
                                 b11 = bArr2[4];
                             }
                             i13 = b11 & 252;
-                            this.k = z7.b(e2.d0.W(this.l.K, (((i13 >> 2) | i12) + 1) * 32));
+                            this.k = y7.b(e2.d0.W(this.l.K, (((i13 >> 2) | i12) + 1) * 32));
                             vVar2.J(0);
                             this.g.d(18, vVar2);
                             this.h = 6;
@@ -189,7 +189,7 @@ public final class g implements i {
                         if (b14 == -2) {
                         }
                         i13 = b11 & 252;
-                        this.k = z7.b(e2.d0.W(this.l.K, (((i13 >> 2) | i12) + 1) * 32));
+                        this.k = y7.b(e2.d0.W(this.l.K, (((i13 >> 2) | i12) + 1) * 32));
                         vVar2.J(0);
                         this.g.d(18, vVar2);
                         this.h = 6;

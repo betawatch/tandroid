@@ -1,27 +1,46 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class jj0 extends ci.d {
-    public final /* synthetic */ lj0 h0;
+public final /* synthetic */ class jj0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ oj0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jj0(lj0 lj0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var, true);
-        this.h0 = lj0Var;
+    public /* synthetic */ jj0(oj0 oj0Var, int i10) {
+        this.a = i10;
+        this.b = oj0Var;
     }
 
-    @Override // ci.d
-    public final float a(float f7, float f10) {
-        lj0 lj0Var = this.h0;
-        boolean z10 = lj0Var.n0 == 0.0f;
-        lj0Var.n0 = f7;
-        if (z10) {
-            lj0Var.o0 = new org.telegram.ui.Components.fb0(lj0Var, 1);
-            lj0Var.S(false);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                oj0 oj0Var = this.b;
+                nj0 nj0Var = oj0Var.q0;
+                HashSet hashSet = oj0Var.d0;
+                if (hashSet.size() != 0 && nj0Var != null) {
+                    ArrayList arrayList = new ArrayList();
+                    for (TLRPC.User user : oj0Var.i0.values()) {
+                        if (hashSet.contains(Long.valueOf(user.id))) {
+                            arrayList.add(Long.valueOf(user.id));
+                        }
+                    }
+                    nj0Var.a(arrayList);
+                    oj0Var.dismiss();
+                    break;
+                }
+                break;
+            default:
+                oj0 oj0Var2 = this.b;
+                oj0Var2.d0.clear();
+                oj0Var2.Y.d.b(true);
+                oj0Var2.S(true, false);
+                break;
         }
-        return f7;
     }
 }

@@ -10,27 +10,27 @@ import android.view.ActionMode;
 import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MotionEvent;
-import ii.w5;
+import ii.x5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.du;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.eu;
 import yh.r5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public abstract class d0 extends du {
+public abstract class d0 extends eu {
     public final d6 c;
-    public final n2.e d;
+    public final k2.e d;
     public Runnable e;
     public int f;
 
     public d0(Context context, int i10, d6 d6Var) {
         super(context, d6Var);
         this.c = d6Var;
-        this.d = new n2.e(getContext(), new c0());
+        this.d = new k2.e(getContext(), new c0());
         setBackground(null);
         setIncludeFontPadding(true);
         int i11 = Build.VERSION.SDK_INT;
@@ -42,24 +42,24 @@ public abstract class d0 extends du {
         setTextSize(1, 22.0f);
         setGravity(80);
         setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(12.0f));
-        setTextColor(h6.v0(h6.Ud, d6Var));
-        setLinkTextColor(h6.v0(h6.hc, d6Var));
-        setHighlightColor(h6.v0(h6.uf, d6Var));
-        int i12 = h6.Vd;
-        setHintColor(h6.v0(i12, d6Var));
-        setHintTextColor(h6.v0(i12, d6Var));
-        setCursorColor(h6.v0(h6.Wd, d6Var));
-        setHandlesColor(h6.v0(h6.vf, d6Var));
+        setTextColor(i6.v0(i6.Ud, d6Var));
+        setLinkTextColor(i6.v0(i6.hc, d6Var));
+        setHighlightColor(i6.v0(i6.uf, d6Var));
+        int i12 = i6.Vd;
+        setHintColor(i6.v0(i12, d6Var));
+        setHintTextColor(i6.v0(i12, d6Var));
+        setCursorColor(i6.v0(i6.Wd, d6Var));
+        setHandlesColor(i6.v0(i6.vf, d6Var));
         if (i11 >= 28) {
             setFallbackLineSpacing(false);
         }
-        setOnFocusChangeListener(new w5((o) this, 7));
+        setOnFocusChangeListener(new x5((o) this, 7));
         setTextIsSelectable(true);
         setLongClickable(false);
         setFocusableInTouchMode(false);
     }
 
-    @Override // org.telegram.ui.Components.fu, android.view.View
+    @Override // org.telegram.ui.Components.gu, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (!((GestureDetector) this.d.b).onTouchEvent(motionEvent) || isLongClickable()) {
             return super.dispatchTouchEvent(motionEvent);
@@ -126,7 +126,7 @@ public abstract class d0 extends du {
         }
     }
 
-    @Override // org.telegram.ui.Components.fu, android.widget.TextView
+    @Override // org.telegram.ui.Components.gu, android.widget.TextView
     public final void onSelectionChanged(int i10, int i11) {
         super.onSelectionChanged(i10, i11);
         if (!hasSelection() || ((b[]) getText().getSpans(i10, i11, b.class)).length == 0) {

@@ -1,27 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Paint;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class j50 extends r50 {
-    public final /* synthetic */ e60 d;
+public final class j50 extends Paint {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j50(e60 e60Var, Context context) {
-        super(e60Var, context);
-        this.d = e60Var;
+    public /* synthetic */ j50(Object obj, int i10) {
+        super(1);
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        super.setAlpha(f7);
-        this.d.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void setRotationY(float f7) {
-        super.setRotationY(f7);
-        this.d.invalidate();
+    @Override // android.graphics.Paint
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                super.setAlpha(i10);
+                ((f60) this.b).invalidate();
+                break;
+            case 1:
+                super.setAlpha(i10);
+                om0 om0Var = (om0) this.b;
+                om0Var.a.setAlpha(Math.round(i10 * 0.2f));
+                om0Var.invalidate();
+                break;
+            default:
+                super.setAlpha(i10);
+                ((ProfileActivity) this.b).fragmentView.invalidate();
+                break;
+        }
     }
 }

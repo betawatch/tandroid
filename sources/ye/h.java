@@ -16,7 +16,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import n7.z0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class h implements cf.a {
     public static final Pattern i = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -79,25 +79,25 @@ public final class h implements cf.a {
         Iterator it = iterable.iterator();
         while (it.hasNext()) {
             ef.a aVar = (ef.a) it.next();
-            char e = aVar.e();
+            char e7 = aVar.e();
             char a2 = aVar.a();
-            if (e == a2) {
-                ef.a aVar2 = (ef.a) hashMap.get(Character.valueOf(e));
+            if (e7 == a2) {
+                ef.a aVar2 = (ef.a) hashMap.get(Character.valueOf(e7));
                 if (aVar2 == null || aVar2.e() != aVar2.a()) {
-                    b(e, aVar, hashMap);
+                    b(e7, aVar, hashMap);
                 } else {
                     if (aVar2 instanceof n) {
                         nVar = (n) aVar2;
                     } else {
-                        n nVar2 = new n(e);
+                        n nVar2 = new n(e7);
                         nVar2.f(aVar2);
                         nVar = nVar2;
                     }
                     nVar.f(aVar);
-                    hashMap.put(Character.valueOf(e), nVar);
+                    hashMap.put(Character.valueOf(e7), nVar);
                 }
             } else {
-                b(e, aVar, hashMap);
+                b(e7, aVar, hashMap);
                 b(a2, aVar, hashMap);
             }
         }
@@ -233,7 +233,7 @@ public final class h implements cf.a {
                     if (d11 != null) {
                         i10 = 1;
                         String i12 = e2.i(1, 1, d11);
-                        kVar = new bf.k(1, v7.j.g("mailto:", i12), null);
+                        kVar = new bf.k(1, t8.b.i("mailto:", i12), null);
                         kVar.b(new s(i12));
                     } else {
                         i10 = 1;
@@ -575,12 +575,12 @@ public final class h implements cf.a {
             if (!bVar2.d || aVar == null) {
                 bVar2 = bVar2.f;
             } else {
-                char e = aVar.e();
+                char e7 = aVar.e();
                 b bVar4 = bVar2.e;
                 int i10 = 0;
                 boolean z11 = false;
                 while (bVar4 != null && bVar4 != bVar && bVar4 != hashMap.get(Character.valueOf(c10))) {
-                    if (bVar4.c && bVar4.b == e) {
+                    if (bVar4.c && bVar4.b == e7) {
                         i10 = aVar.b(bVar4, bVar2);
                         z11 = true;
                         if (i10 > 0) {

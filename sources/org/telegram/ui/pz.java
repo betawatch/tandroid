@@ -1,20 +1,24 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.view.ViewTreeObserver;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class pz extends FrameLayout {
-    public vh.n a;
+public final class pz implements ViewTreeObserver.OnGlobalLayoutListener {
+    public final /* synthetic */ ExternalActionActivity a;
 
-    public vh.n getSubtitleTextView() {
-        return this.a;
+    public pz(ExternalActionActivity externalActionActivity) {
+        this.a = externalActionActivity;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        ExternalActionActivity externalActionActivity = this.a;
+        externalActionActivity.f();
+        ActionBarLayout actionBarLayout = externalActionActivity.c;
+        if (actionBarLayout != null) {
+            actionBarLayout.getView().getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        }
     }
 }

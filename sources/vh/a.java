@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bj0;
-import org.telegram.ui.Components.mt;
+import org.telegram.ui.Components.nt;
 import w7.q;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class a extends Path {
     public final /* synthetic */ View a;
@@ -65,7 +65,7 @@ public final class a extends Path {
         int i12 = this.f;
         gVar.setBounds(max, i11, (int) Math.min(f11, i12 <= 0 ? 2.14748365E9f : i12), (int) f12);
         gVar.h(this.b.getPaint().getColor());
-        gVar.t = mt.c;
+        gVar.t = nt.c;
         int width = gVar.getBounds().width() / AndroidUtilities.dp(6.0f);
         int i13 = g.B;
         int b10 = q.b(width * i13, i13, g.A);

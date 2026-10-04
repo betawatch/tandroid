@@ -1,46 +1,46 @@
 package tg;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ob;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.pb;
+import org.telegram.ui.Components.rc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class k0 implements ob {
-    @Override // org.telegram.ui.Components.ob
+public final class k0 implements pb {
+    @Override // org.telegram.ui.Components.pb
     public final /* synthetic */ boolean a() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ob
+    @Override // org.telegram.ui.Components.pb
     public final /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ob
+    @Override // org.telegram.ui.Components.pb
     public final /* synthetic */ int f(int i10) {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.ob
+    @Override // org.telegram.ui.Components.pb
     public final /* synthetic */ boolean g(int i10) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ob
+    @Override // org.telegram.ui.Components.pb
     public final int h(int i10) {
         return AndroidUtilities.statusBarHeight;
     }
 
-    @Override // org.telegram.ui.Components.ob
-    public final /* synthetic */ void b(qc qcVar) {
+    @Override // org.telegram.ui.Components.pb
+    public final /* synthetic */ void b(rc rcVar) {
     }
 
-    @Override // org.telegram.ui.Components.ob
+    @Override // org.telegram.ui.Components.pb
     public final /* synthetic */ void c(float f7) {
     }
 
-    @Override // org.telegram.ui.Components.ob
-    public final /* synthetic */ void d(qc qcVar) {
+    @Override // org.telegram.ui.Components.pb
+    public final /* synthetic */ void d(rc rcVar) {
     }
 }

@@ -1,37 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.ui.ProfileActivity;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class i50 extends Paint {
+public final class i50 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ f60 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i50(Object obj, int i10) {
-        super(1);
+    public /* synthetic */ i50(f60 f60Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = f60Var;
     }
 
-    @Override // android.graphics.Paint
-    public final void setAlpha(int i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                super.setAlpha(i10);
-                ((e60) this.b).invalidate();
+                f60 f60Var = this.b;
+                if (animator.equals(f60Var.L)) {
+                    f60Var.L = null;
+                    break;
+                }
                 break;
             case 1:
-                super.setAlpha(i10);
-                km0 km0Var = (km0) this.b;
-                km0Var.a.setAlpha(Math.round(i10 * 0.2f));
-                km0Var.invalidate();
+                f60 f60Var2 = this.b;
+                if (f60Var2.g1 != null) {
+                    f60Var2.g1 = null;
+                    break;
+                }
                 break;
             default:
-                super.setAlpha(i10);
-                ((ProfileActivity) this.b).fragmentView.invalidate();
+                f60 f60Var3 = this.b;
+                if (animator.equals(f60Var3.e0)) {
+                    f60Var3.c(true);
+                    f60Var3.b1 = false;
+                    f60Var3.setVisibility(4);
+                    break;
+                }
                 break;
         }
     }

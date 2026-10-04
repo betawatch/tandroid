@@ -1,29 +1,28 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.content.Context;
+import android.widget.LinearLayout;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class qt {
-    public String a;
-    public String b;
-    public String c;
-    public String d;
+public final class qt extends LinearLayout {
+    public final org.telegram.ui.Components.w9 a;
+    public final org.telegram.ui.ActionBar.i5 b;
+    public final org.telegram.ui.ActionBar.d6 c;
+    public TLRPC.StickerSetCovered d;
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && qt.class == obj.getClass()) {
-            qt qtVar = (qt) obj;
-            if (Objects.equals(this.a, qtVar.a) && Objects.equals(this.c, qtVar.c)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.a, this.c);
+    public qt(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.c = d6Var;
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+        this.a = w9Var;
+        org.telegram.ui.ActionBar.i5 i5Var = new org.telegram.ui.ActionBar.i5(context);
+        this.b = i5Var;
+        i5Var.setTextSize(16);
+        i5Var.setTextColor(-1);
+        setOrientation(0);
+        addView(w9Var, w7.z5.t(24, 24, 17, 17, 0, 17, 0));
+        addView(i5Var, w7.z5.t(-2, -2, 17, 0, 0, 12, 0));
     }
 }

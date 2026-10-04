@@ -1,16 +1,17 @@
 package ei;
 
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class a0 extends LinearLayout {
-    public TextView a;
-    public ai.p4 b;
-    public String c;
+public final class a0 extends org.telegram.ui.ActionBar.d5 {
+    public final /* synthetic */ d0 p;
 
-    public String getCommand() {
-        return this.c;
+    public a0(d0 d0Var) {
+        this.p = d0Var;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        super.invalidateSelf();
+        this.p.invalidate();
     }
 }

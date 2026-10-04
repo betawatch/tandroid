@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class h0 extends org.telegram.ui.Components.k9 {
     public final /* synthetic */ int e;
@@ -37,7 +37,7 @@ public final class h0 extends org.telegram.ui.Components.k9 {
     public void onMeasure(int i10, int i11) {
         switch (this.e) {
             case 1:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.a.n == 0 ? 0 : hg.c.f(r4, 1, 20, 24)), TLObject.FLAG_30), i11);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.a.n == 0 ? 0 : hg.k0.f(r4, 1, 20, 24)), TLObject.FLAG_30), i11);
                 break;
             default:
                 super.onMeasure(i10, i11);

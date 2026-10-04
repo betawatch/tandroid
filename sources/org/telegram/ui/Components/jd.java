@@ -12,7 +12,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class jd extends Drawable {
     public static final hd H = new hd(0);
@@ -47,7 +47,7 @@ public final class jd extends Drawable {
     public final float[] z = new float[4];
     public int A = -1;
     public float E = 1.0f;
-    public final pg F = new pg(this, 16);
+    public final qg F = new qg(this, 16);
     public int G = 255;
 
     public jd() {
@@ -309,7 +309,7 @@ public final class jd extends Drawable {
     public final void e(int i10, boolean z10) {
         if (i10 != this.A || this.E < 1.0f) {
             this.A = i10;
-            int w02 = i10 != 0 ? i10 != 1 ? i10 != 3 ? org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.bh, false) : i0.a.d(0.5f, i0.a.d(0.5f, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.ih, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.jh, false)), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.kh, false)) : i0.a.d(0.5f, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Zg, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.ah, false)) : i0.a.d(0.5f, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Xg, false), org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Yg, false));
+            int w02 = i10 != 0 ? i10 != 1 ? i10 != 3 ? org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.bh, false) : i0.a.d(0.5f, i0.a.d(0.5f, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.ih, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.jh, false)), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.kh, false)) : i0.a.d(0.5f, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Zg, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.ah, false)) : i0.a.d(0.5f, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Xg, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Yg, false));
             if (z10 && this.B != 0 && LiteMode.isEnabled(512)) {
                 this.C = this.B;
                 this.D = w02;

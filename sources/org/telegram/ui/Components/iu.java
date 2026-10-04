@@ -1,23 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class iu extends Dialog {
-    public final /* synthetic */ ai.y3 a;
+public final class iu extends nz {
+    public int N2;
+    public boolean O2;
+    public boolean P2;
+    public final /* synthetic */ mu Q2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iu(ai.y3 y3Var, Context context) {
-        super(context);
-        this.a = y3Var;
+    public iu(mu muVar, org.telegram.ui.ActionBar.n2 n2Var, boolean z10, Context context, boolean z11, boolean z12, org.telegram.ui.ActionBar.d6 d6Var, boolean z13) {
+        super(n2Var, z10, false, false, context, z11, null, null, z12, d6Var, false, z13);
+        this.Q2 = muVar;
     }
 
-    @Override // android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        ju juVar = (ju) this.a.b;
-        juVar.a.k(false);
-        juVar.a.e();
+    @Override // org.telegram.ui.Components.nz, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        mu muVar = this.Q2;
+        int i10 = muVar.L;
+        if (i10 == 2 || i10 == 3) {
+            muVar.g(canvas, this);
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // org.telegram.ui.Components.nz, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int i14;
+        super.onLayout(z10, i10, i11, i12, i13);
+        mu muVar = this.Q2;
+        if (muVar.b()) {
+            int i15 = i13 - i11;
+            if (!this.O2 && muVar.x) {
+                this.P2 = true;
+            }
+            if (this.P2 && (i14 = this.N2) > 0 && i15 > 0 && i15 != i14) {
+                setTranslationY(i15 - i14);
+                org.telegram.messenger.ok.s(animate().translationY(0.0f), org.telegram.ui.ActionBar.p1.w, 250L);
+                this.P2 = false;
+            }
+            this.O2 = muVar.x;
+            this.N2 = i15;
+        }
     }
 }

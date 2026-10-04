@@ -11,7 +11,7 @@ import b1.a;
 import b1.d;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class HiddenActivity extends Activity {
     public ResultReceiver a;
@@ -103,13 +103,13 @@ public class HiddenActivity extends Activity {
         try {
             this.b = true;
             startIntentSenderForResult(pendingIntent.getIntentSender(), intExtra, null, 0, 0, 0, null);
-        } catch (IntentSender.SendIntentException e) {
+        } catch (IntentSender.SendIntentException e7) {
             switch (stringExtra.hashCode()) {
                 case -441061071:
                     if (stringExtra.equals("BEGIN_SIGN_IN")) {
                         ResultReceiver resultReceiver6 = this.a;
                         i.b(resultReceiver6);
-                        a(resultReceiver6, "GET_UNKNOWN", "During begin sign in, one tap ui intent sender failure: " + e.getMessage());
+                        a(resultReceiver6, "GET_UNKNOWN", "During begin sign in, one tap ui intent sender failure: " + e7.getMessage());
                         break;
                     }
                     break;
@@ -117,7 +117,7 @@ public class HiddenActivity extends Activity {
                     if (stringExtra.equals("CREATE_PUBLIC_KEY_CREDENTIAL")) {
                         ResultReceiver resultReceiver7 = this.a;
                         i.b(resultReceiver7);
-                        a(resultReceiver7, "CREATE_UNKNOWN", "During public key credential, found IntentSender failure on public key creation: " + e.getMessage());
+                        a(resultReceiver7, "CREATE_UNKNOWN", "During public key credential, found IntentSender failure on public key creation: " + e7.getMessage());
                         break;
                     }
                     break;
@@ -125,7 +125,7 @@ public class HiddenActivity extends Activity {
                     if (stringExtra.equals("CREATE_PASSWORD")) {
                         ResultReceiver resultReceiver8 = this.a;
                         i.b(resultReceiver8);
-                        a(resultReceiver8, "CREATE_UNKNOWN", "During save password, found UI intent sender failure: " + e.getMessage());
+                        a(resultReceiver8, "CREATE_UNKNOWN", "During save password, found UI intent sender failure: " + e7.getMessage());
                         break;
                     }
                     break;
@@ -133,7 +133,7 @@ public class HiddenActivity extends Activity {
                     if (stringExtra.equals("SIGN_IN_INTENT")) {
                         ResultReceiver resultReceiver9 = this.a;
                         i.b(resultReceiver9);
-                        a(resultReceiver9, "GET_UNKNOWN", "During get sign-in intent, one tap ui intent sender failure: " + e.getMessage());
+                        a(resultReceiver9, "GET_UNKNOWN", "During get sign-in intent, one tap ui intent sender failure: " + e7.getMessage());
                         break;
                     }
                     break;

@@ -1,6 +1,6 @@
 package c3;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i0 {
     public final byte[] a = new byte[10];
@@ -42,8 +42,8 @@ public final class i0 {
             return;
         }
         byte[] bArr = this.a;
-        pVar.a(0, 10, bArr);
-        pVar.p();
+        pVar.b(0, 10, bArr);
+        pVar.m();
         if (bArr[4] == -8 && bArr[5] == 114 && bArr[6] == 111) {
             byte b10 = bArr[7];
             if ((b10 & 254) == 186) {

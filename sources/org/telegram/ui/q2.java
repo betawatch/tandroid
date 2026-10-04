@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class q2 extends FrameLayout implements org.telegram.ui.Cells.p9 {
     public final l2 a;
@@ -50,7 +50,7 @@ public final class q2 extends FrameLayout implements org.telegram.ui.Cells.p9 {
         o2 o2Var = new o2(this);
         this.b = o2Var;
         l2Var.setAdapter(o2Var);
-        AndroidUtilities.setViewPagerEdgeEffectColor(l2Var, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.d6, false));
+        AndroidUtilities.setViewPagerEdgeEffectColor(l2Var, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
         addView(l2Var);
         p2 p2Var = new p2(this, context);
         this.c = p2Var;
@@ -181,7 +181,7 @@ public final class q2 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             TL_iv.pageBlockSlideshow pageblockslideshow2 = this.d;
             TL_iv.RichText richText2 = pageblockslideshow2.caption.credit;
             if (this.w.G) {
-                alignment = org.telegram.ui.Components.ww0.a();
+                alignment = org.telegram.ui.Components.fx0.a();
             }
             b3 p10 = i4.p(i4Var, this, null, richText2, dp2, 0, pageblockslideshow2, alignment, 0, this.w);
             this.f = p10;

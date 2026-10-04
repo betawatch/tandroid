@@ -23,7 +23,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class hb0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -42,7 +42,7 @@ public final class hb0 extends FrameLayout implements NotificationCenter.Notific
     public final Rect c;
     public q5 d;
     public boolean e;
-    public final t90 f;
+    public final u90 f;
     public final TextPaint h;
     public final CharSequence n;
     public StaticLayout r;
@@ -72,26 +72,26 @@ public final class hb0 extends FrameLayout implements NotificationCenter.Notific
         this.K = true;
         this.M = 0.0f;
         this.a = i10;
-        setBackground(org.telegram.ui.ActionBar.h6.Y(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, d6Var), 0, 16));
+        setBackground(org.telegram.ui.ActionBar.i6.Y(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, d6Var), 0, 16));
         TextPaint textPaint = new TextPaint(1);
         this.h = textPaint;
         textPaint.setTextSize(AndroidUtilities.dp(13.0f));
-        textPaint.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.E8, d6Var));
+        textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.E8, d6Var));
         if (arrayList.size() > 1) {
             SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(i11 == 0 ? LocaleController.formatPluralString("MessageContainsEmojiPacks", arrayList.size(), new Object[0]) : LocaleController.formatPluralString("MessageContainsReactionsPacks", arrayList.size(), new Object[0]));
             this.n = replaceTags;
-            u51[] u51VarArr = (u51[]) replaceTags.getSpans(0, replaceTags.length(), u51.class);
-            for (int i12 = 0; u51VarArr != null && i12 < u51VarArr.length; i12++) {
-                int spanStart = replaceTags.getSpanStart(u51VarArr[i12]);
-                int spanEnd = replaceTags.getSpanEnd(u51VarArr[i12]);
-                replaceTags.removeSpan(u51VarArr[i12]);
-                replaceTags.setSpan(new ii.a6(1, this), spanStart, spanEnd, 33);
+            d61[] d61VarArr = (d61[]) replaceTags.getSpans(0, replaceTags.length(), d61.class);
+            for (int i12 = 0; d61VarArr != null && i12 < d61VarArr.length; i12++) {
+                int spanStart = replaceTags.getSpanStart(d61VarArr[i12]);
+                int spanEnd = replaceTags.getSpanEnd(d61VarArr[i12]);
+                replaceTags.removeSpan(d61VarArr[i12]);
+                replaceTags.setSpan(new ii.b6(1, this), spanStart, spanEnd, 33);
             }
             return;
         }
         if (arrayList.size() != 1) {
             if (i11 == 4) {
-                this.n = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StickersCheckStickersBotForMoreOptions), org.telegram.ui.ActionBar.h6.gc, 2, null, d6Var);
+                this.n = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StickersCheckStickersBotForMoreOptions), org.telegram.ui.ActionBar.i6.gc, 2, null, d6Var);
                 return;
             }
             return;
@@ -128,21 +128,21 @@ public final class hb0 extends FrameLayout implements NotificationCenter.Notific
         if (str == null || document == null) {
             this.n = split[0];
             this.s = split[1];
-            t90 t90Var = new t90(d6Var);
-            this.f = t90Var;
-            t90Var.l = org.telegram.ui.ActionBar.h6.G8;
-            t90Var.m = org.telegram.ui.ActionBar.h6.i6;
-            t90Var.j(4.0f);
+            u90 u90Var = new u90(d6Var);
+            this.f = u90Var;
+            u90Var.l = org.telegram.ui.ActionBar.i6.G8;
+            u90Var.m = org.telegram.ui.ActionBar.i6.i6;
+            u90Var.j(4.0f);
             return;
         }
         SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(document));
         spannableString.setSpan(new eb0(this, document, this.h.getFontMetricsInt()), 0, spannableString.length(), 33);
         q5 m10 = q5.m(i10, 0, document);
         this.d = m10;
-        m10.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.n6, d6Var), PorterDuff.Mode.SRC_IN));
+        m10.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.n6, d6Var), PorterDuff.Mode.SRC_IN));
         this.d.a(this);
         SpannableString spannableString2 = new SpannableString(str);
-        spannableString2.setSpan(new ii.a6(1, this), 0, spannableString2.length(), 33);
+        spannableString2.setSpan(new ii.b6(1, this), 0, spannableString2.length(), 33);
         this.n = new SpannableStringBuilder().append((CharSequence) split[0]).append((CharSequence) spannableString).append(' ').append((CharSequence) spannableString2).append((CharSequence) split[1]);
         this.M = 1.0f;
         this.b = null;
@@ -161,8 +161,8 @@ public final class hb0 extends FrameLayout implements NotificationCenter.Notific
             if (charSequence2 != null) {
                 StaticLayout staticLayout = new StaticLayout(charSequence2, 0, charSequence2.length(), textPaint, Math.max(i10, 0), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 this.r = staticLayout;
-                t90 t90Var = this.f;
-                if (t90Var != null && this.O == null) {
+                u90 u90Var = this.f;
+                if (u90Var != null && this.O == null) {
                     int lineCount = staticLayout.getLineCount() - 1;
                     this.x = AndroidUtilities.dp(2.0f) + ((int) this.r.getPrimaryHorizontal(charSequence2.length()));
                     this.y = this.r.getLineTop(lineCount);
@@ -174,7 +174,7 @@ public final class hb0 extends FrameLayout implements NotificationCenter.Notific
                     Rect rect = this.N;
                     int i12 = this.x;
                     rect.set(i12, this.y, (int) (i12 + min), r3);
-                    t90Var.setBounds(this.N);
+                    u90Var.setBounds(this.N);
                     this.e = true;
                 }
             } else {
@@ -261,7 +261,7 @@ public final class hb0 extends FrameLayout implements NotificationCenter.Notific
         SpannableString spannableString2 = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(document));
         spannableString2.setSpan(new gb0(this, document, this.h.getFontMetricsInt()), 0, spannableString2.length(), 33);
         SpannableString spannableString3 = new SpannableString(str);
-        spannableString3.setSpan(new ii.a6(1, this), 0, spannableString3.length(), 33);
+        spannableString3.setSpan(new ii.b6(1, this), 0, spannableString3.length(), 33);
         this.v = new SpannableStringBuilder().append((CharSequence) spannableString).append((CharSequence) spannableString2).append(' ').append((CharSequence) spannableString3).append((CharSequence) this.s);
         int measuredHeight = (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom();
         int a2 = a((this.J - getPaddingLeft()) - getPaddingRight(), true);
@@ -284,7 +284,7 @@ public final class hb0 extends FrameLayout implements NotificationCenter.Notific
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.M, 1.0f);
         this.L = ofFloat;
         ofFloat.addUpdateListener(new ai.bb(7, this, z10));
-        this.L.setInterpolator(sr.h);
+        this.L.setInterpolator(tr.h);
         this.L.setStartDelay(150L);
         this.L.setDuration(400L);
         this.L.start();
@@ -320,17 +320,17 @@ public final class hb0 extends FrameLayout implements NotificationCenter.Notific
             TextPaint textPaint = this.h;
             textPaint.setAlpha(255);
             this.r.draw(canvas);
-            t90 t90Var = this.f;
-            if (t90Var != null && this.e) {
-                t90Var.setAlpha((int) ((1.0f - this.M) * 255.0f));
+            u90 u90Var = this.f;
+            if (u90Var != null && this.e) {
+                u90Var.setAlpha((int) ((1.0f - this.M) * 255.0f));
                 Rect rect2 = this.N;
                 if (rect2 != null && (rect = this.O) != null) {
                     float f7 = this.M;
                     Rect rect3 = AndroidUtilities.rectTmp2;
                     AndroidUtilities.lerp(rect2, rect, f7, rect3);
-                    t90Var.setBounds(rect3);
+                    u90Var.setBounds(rect3);
                 }
-                t90Var.draw(canvas);
+                u90Var.draw(canvas);
                 invalidate();
             }
             if (this.w != null) {

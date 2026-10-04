@@ -5,7 +5,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class za0 extends s4.n0 {
     public final /* synthetic */ ab0 a;
@@ -22,7 +22,7 @@ public final class za0 extends s4.n0 {
         rect.top = 0;
         rect.bottom = 0;
         s4.o0 layoutManager = recyclerView.getLayoutManager();
-        bb0 bb0Var = this.a.b3;
+        bb0 bb0Var = this.a.i3;
         if (layoutManager != bb0Var.d || (R = RecyclerView.R(view)) == 0 || bb0Var.f.N()) {
             return;
         }

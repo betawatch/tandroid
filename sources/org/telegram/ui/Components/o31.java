@@ -1,39 +1,32 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o31 implements Runnable {
+public final /* synthetic */ class o31 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessageObject b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ String d;
+    public final /* synthetic */ q31 b;
 
-    public /* synthetic */ o31(String str, MessageObject messageObject, long j3, int i10) {
+    public /* synthetic */ o31(q31 q31Var, int i10) {
         this.a = i10;
-        this.b = messageObject;
-        this.c = j3;
-        this.d = str;
+        this.b = q31Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        String str = this.d;
-        long j3 = this.c;
-        MessageObject messageObject = this.b;
-        switch (i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                NotificationCenter notificationCenter = NotificationCenter.getInstance(messageObject.currentAccount);
-                int i11 = NotificationCenter.voiceTranscriptionUpdate;
-                Long valueOf = Long.valueOf(j3);
-                Boolean bool = Boolean.TRUE;
-                notificationCenter.lambda$postNotificationNameOnUIThread$1(i11, messageObject, valueOf, str, bool, bool);
+                ai.n4 n4Var = this.b.f;
+                n4Var.setScaleX(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                n4Var.setScaleY(Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                n4Var.invalidate();
                 break;
             default:
-                t31.g(messageObject, j3, str);
+                q31 q31Var = this.b;
+                q31Var.getClass();
+                q31Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                q31Var.h();
                 break;
         }
     }

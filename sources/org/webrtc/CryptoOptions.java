@@ -1,12 +1,12 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class CryptoOptions {
     private final SFrame sframe;
     private final Srtp srtp;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class Builder {
         private boolean enableAes128Sha1_32CryptoCipher;
         private boolean enableEncryptedRtpHeaderExtensions;
@@ -41,7 +41,7 @@ public final class CryptoOptions {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public final class SFrame {
         private final boolean requireFrameEncryption;
 
@@ -54,7 +54,7 @@ public final class CryptoOptions {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public final class Srtp {
         private final boolean enableAes128Sha1_32CryptoCipher;
         private final boolean enableEncryptedRtpHeaderExtensions;

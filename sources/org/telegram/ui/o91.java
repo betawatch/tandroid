@@ -1,28 +1,83 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o91 implements RequestDelegate {
+public final /* synthetic */ class o91 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sa1 b;
+    public final /* synthetic */ va1 b;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ o91(sa1 sa1Var, int i10) {
+    public /* synthetic */ o91(va1 va1Var, ArrayList arrayList, int i10) {
         this.a = i10;
-        this.b = sa1Var;
+        this.b = va1Var;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
         switch (this.a) {
             case 0:
-                sa1.U(this.b, tLObject);
+                va1 va1Var = this.b;
+                ai.d9 d9Var = va1Var.C0;
+                d9Var.getClass();
+                ArrayList arrayList = this.c;
+                int size = arrayList.size();
+                int i10 = 0;
+                while (true) {
+                    if (i10 < size) {
+                        Object obj = arrayList.get(i10);
+                        i10++;
+                        if (!d9Var.j.containsKey((Integer) obj)) {
+                            z10 = true;
+                        }
+                    } else {
+                        z10 = false;
+                    }
+                }
+                if (!d9Var.q(0, arrayList, z10)) {
+                    va1Var.h0();
+                    va1Var.m0();
+                    break;
+                }
                 break;
             default:
-                sa1.V(this.b, tLObject);
+                va1 va1Var2 = this.b;
+                ArrayList arrayList2 = va1Var2.v0;
+                ArrayList arrayList3 = va1Var2.u0;
+                int i11 = 0;
+                va1Var2.z0 = false;
+                ArrayList arrayList4 = this.c;
+                if (!arrayList4.isEmpty()) {
+                    int size2 = arrayList4.size();
+                    for (int i12 = 0; i12 < size2; i12++) {
+                        MessageObject messageObject = (MessageObject) arrayList4.get(i12);
+                        int i13 = va1Var2.s0.get(messageObject.getId(), -1);
+                        if (i13 >= 0 && ((sa1) arrayList3.get(i13)).b() == messageObject.getId()) {
+                            ((sa1) arrayList3.get(i13)).b = messageObject;
+                        }
+                    }
+                    arrayList2.clear();
+                    int size3 = arrayList3.size();
+                    while (true) {
+                        if (i11 < size3) {
+                            sa1 sa1Var = (sa1) arrayList3.get(i11);
+                            if (sa1Var.b == null) {
+                                va1Var2.r0 = sa1Var.b();
+                            } else {
+                                arrayList2.add(sa1Var);
+                                i11++;
+                            }
+                        }
+                    }
+                    va1Var2.m0();
+                    va1Var2.S.setItemAnimator(null);
+                    va1Var2.B0.f();
+                    break;
+                }
                 break;
         }
     }

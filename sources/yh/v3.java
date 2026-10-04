@@ -5,11 +5,11 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.tq;
+import org.telegram.ui.Components.uq;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class v3 extends tq {
+public final class v3 extends uq {
     public final View b;
     public final Paint c;
     public final Path d;
@@ -79,7 +79,7 @@ public final class v3 extends tq {
         return AndroidUtilities.dp(18.0f);
     }
 
-    @Override // org.telegram.ui.Components.tq, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.uq, android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
         this.f = i10 / 255.0f;
     }

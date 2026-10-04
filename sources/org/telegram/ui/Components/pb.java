@@ -1,10 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class pb extends qc {
-    @Override // org.telegram.ui.Components.qc
-    public final qc j() {
-        return this;
-    }
+public interface pb {
+    boolean a();
+
+    void b(rc rcVar);
+
+    void c(float f7);
+
+    void d(rc rcVar);
+
+    boolean e();
+
+    int f(int i10);
+
+    boolean g(int i10);
+
+    int h(int i10);
 }

@@ -1,24 +1,193 @@
 package ei;
 
-import android.os.Bundle;
-import org.telegram.ui.wn;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.b80;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class z3 extends wn {
-    public final /* synthetic */ org.telegram.ui.ActionBar.e3 Pc;
+public final class z3 extends ClickableSpan {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yh.m b;
+    public final /* synthetic */ f4 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z3(Bundle bundle, org.telegram.ui.ActionBar.e3 e3Var) {
-        super(bundle);
-        this.Pc = e3Var;
+    public z3(f4 f4Var, int i10, yh.m mVar) {
+        this.c = f4Var;
+        this.a = i10;
+        this.b = mVar;
     }
 
-    @Override // org.telegram.ui.wn, org.telegram.ui.ActionBar.m2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        org.telegram.ui.ActionBar.e3 e3Var = this.Pc;
-        e3Var.makeAttached(null);
-        e3Var.show();
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        b80 H = b80.H(this.c, view);
+        int i10 = this.a;
+        boolean z10 = i10 == 3;
+        String string = LocaleController.getString(R.string.ChannelAffiliateProgramProgramsSortDate);
+        final int i11 = 0;
+        final yh.m mVar = this.b;
+        H.i(new Runnable() { // from class: ei.y3
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i11) {
+                    case 0:
+                        yh.m mVar2 = mVar;
+                        if (mVar2.g != 3) {
+                            mVar2.g = 3;
+                            mVar2.c = 0;
+                            mVar2.d = false;
+                            mVar2.i = false;
+                            mVar2.f = 0L;
+                            mVar2.j = null;
+                            mVar2.h = false;
+                            mVar2.a();
+                            break;
+                        }
+                        break;
+                    case 1:
+                        yh.m mVar3 = mVar;
+                        if (mVar3.g != 2) {
+                            mVar3.g = 2;
+                            mVar3.c = 0;
+                            mVar3.d = false;
+                            mVar3.i = false;
+                            mVar3.f = 0L;
+                            mVar3.j = null;
+                            mVar3.h = false;
+                            mVar3.a();
+                            break;
+                        }
+                        break;
+                    default:
+                        yh.m mVar4 = mVar;
+                        if (mVar4.g != 1) {
+                            mVar4.g = 1;
+                            mVar4.c = 0;
+                            mVar4.d = false;
+                            mVar4.i = false;
+                            mVar4.f = 0L;
+                            mVar4.j = null;
+                            mVar4.h = false;
+                            mVar4.a();
+                            break;
+                        }
+                        break;
+                }
+            }
+        }, string, z10);
+        final int i12 = 1;
+        H.i(new Runnable() { // from class: ei.y3
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i12) {
+                    case 0:
+                        yh.m mVar2 = mVar;
+                        if (mVar2.g != 3) {
+                            mVar2.g = 3;
+                            mVar2.c = 0;
+                            mVar2.d = false;
+                            mVar2.i = false;
+                            mVar2.f = 0L;
+                            mVar2.j = null;
+                            mVar2.h = false;
+                            mVar2.a();
+                            break;
+                        }
+                        break;
+                    case 1:
+                        yh.m mVar3 = mVar;
+                        if (mVar3.g != 2) {
+                            mVar3.g = 2;
+                            mVar3.c = 0;
+                            mVar3.d = false;
+                            mVar3.i = false;
+                            mVar3.f = 0L;
+                            mVar3.j = null;
+                            mVar3.h = false;
+                            mVar3.a();
+                            break;
+                        }
+                        break;
+                    default:
+                        yh.m mVar4 = mVar;
+                        if (mVar4.g != 1) {
+                            mVar4.g = 1;
+                            mVar4.c = 0;
+                            mVar4.d = false;
+                            mVar4.i = false;
+                            mVar4.f = 0L;
+                            mVar4.j = null;
+                            mVar4.h = false;
+                            mVar4.a();
+                            break;
+                        }
+                        break;
+                }
+            }
+        }, LocaleController.getString(R.string.ChannelAffiliateProgramProgramsSortRevenue), i10 == 2);
+        final int i13 = 2;
+        H.i(new Runnable() { // from class: ei.y3
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i13) {
+                    case 0:
+                        yh.m mVar2 = mVar;
+                        if (mVar2.g != 3) {
+                            mVar2.g = 3;
+                            mVar2.c = 0;
+                            mVar2.d = false;
+                            mVar2.i = false;
+                            mVar2.f = 0L;
+                            mVar2.j = null;
+                            mVar2.h = false;
+                            mVar2.a();
+                            break;
+                        }
+                        break;
+                    case 1:
+                        yh.m mVar3 = mVar;
+                        if (mVar3.g != 2) {
+                            mVar3.g = 2;
+                            mVar3.c = 0;
+                            mVar3.d = false;
+                            mVar3.i = false;
+                            mVar3.f = 0L;
+                            mVar3.j = null;
+                            mVar3.h = false;
+                            mVar3.a();
+                            break;
+                        }
+                        break;
+                    default:
+                        yh.m mVar4 = mVar;
+                        if (mVar4.g != 1) {
+                            mVar4.g = 1;
+                            mVar4.c = 0;
+                            mVar4.d = false;
+                            mVar4.i = false;
+                            mVar4.f = 0L;
+                            mVar4.j = null;
+                            mVar4.h = false;
+                            mVar4.a();
+                            break;
+                        }
+                        break;
+                }
+            }
+        }, LocaleController.getString(R.string.ChannelAffiliateProgramProgramsSortProfitability), i10 == 1);
+        H.V(5);
+        H.t = false;
+        H.s = 0;
+        H.a0(AndroidUtilities.dp(24.0f), -AndroidUtilities.dp(24.0f));
+        H.Z();
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
+        textPaint.setColor(textPaint.linkColor);
     }
 }

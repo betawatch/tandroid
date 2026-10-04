@@ -10,9 +10,9 @@ import android.text.TextUtils;
 import e0.p0;
 import f0.h;
 import java.util.Arrays;
-import w7.o6;
+import w7.p6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b {
     public final c a;
@@ -87,7 +87,7 @@ public final class b {
             }
         } else if (shortcutInfo.getLocusId() != null) {
             LocusId locusId = shortcutInfo.getLocusId();
-            o6.a(locusId, "locusId cannot be null");
+            p6.a(locusId, "locusId cannot be null");
             String id2 = locusId.getId();
             if (TextUtils.isEmpty(id2)) {
                 throw new IllegalArgumentException("id cannot be empty");

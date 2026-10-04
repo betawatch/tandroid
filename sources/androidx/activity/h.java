@@ -10,7 +10,7 @@ import androidx.fragment.app.f0;
 import androidx.fragment.app.k0;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class h extends androidx.activity.result.f {
     public final /* synthetic */ l h;
@@ -21,7 +21,7 @@ public final class h extends androidx.activity.result.f {
 
     @Override // androidx.activity.result.f
     public final void b(int i10, f0 f0Var, Object obj) {
-        a9.r rVar;
+        e.a aVar;
         Intent input;
         Bundle bundleExtra;
         Bundle bundle;
@@ -33,7 +33,7 @@ public final class h extends androidx.activity.result.f {
                 String[] input2 = (String[]) obj;
                 kotlin.jvm.internal.i.e(input2, "input");
                 if (input2.length == 0) {
-                    rVar = new a9.r(hd.p.a);
+                    aVar = new e.a(hd.p.a);
                     break;
                 } else {
                     for (String str : input2) {
@@ -48,15 +48,15 @@ public final class h extends androidx.activity.result.f {
                     for (String str2 : input2) {
                         linkedHashMap.put(str2, Boolean.TRUE);
                     }
-                    rVar = new a9.r(linkedHashMap);
+                    aVar = new e.a(linkedHashMap);
                     break;
                 }
             default:
-                rVar = null;
+                aVar = null;
                 break;
         }
-        if (rVar != null) {
-            new Handler(Looper.getMainLooper()).post(new g(this, i10, rVar, 0));
+        if (aVar != null) {
+            new Handler(Looper.getMainLooper()).post(new g(this, i10, aVar, 0));
             return;
         }
         switch (f0Var.a) {
@@ -123,12 +123,12 @@ public final class h extends androidx.activity.result.f {
             i11 = i10;
             try {
                 lVar.startIntentSenderForResult(gVar2.a, i11, gVar2.b, gVar2.c, gVar2.d, 0, bundle2);
-            } catch (IntentSender.SendIntentException e) {
-                e = e;
+            } catch (IntentSender.SendIntentException e7) {
+                e = e7;
                 new Handler(Looper.getMainLooper()).post(new g(this, i11, e, 1));
             }
-        } catch (IntentSender.SendIntentException e7) {
-            e = e7;
+        } catch (IntentSender.SendIntentException e10) {
+            e = e10;
             i11 = i10;
         }
     }

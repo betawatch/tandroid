@@ -1,83 +1,96 @@
 package hg;
 
-import android.graphics.Rect;
+import android.content.Context;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.al;
-import org.telegram.ui.Components.gk;
-import org.telegram.ui.Components.il;
-import org.telegram.ui.Components.kn;
-import org.telegram.ui.Components.oi;
-import org.telegram.ui.Components.pj;
-import org.telegram.ui.Components.rz;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class g0 extends rz {
-    public final /* synthetic */ int U;
-    public final /* synthetic */ oi V;
+public final class g0 extends yl0 {
+    public final Context c;
+    public final ArrayList d = new ArrayList();
+    public String e;
+    public final /* synthetic */ i0 f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g0(oi oiVar, int i10, yl0 yl0Var, int i11) {
-        super(i10, 0, yl0Var);
-        this.U = i11;
-        this.V = oiVar;
+    public g0(i0 i0Var, Context context) {
+        this.f = i0Var;
+        this.c = context;
     }
 
-    @Override // s4.o0
-    public int[] t(View view, Rect rect) {
-        switch (this.U) {
-            case 4:
-                int C = this.n - C();
-                int top = (view.getTop() + rect.top) - view.getScrollY();
-                int height = rect.height() + top;
-                int min = Math.min(0, top);
-                int max = Math.max(0, height - C);
-                if (min == 0) {
-                    min = Math.min(top, max);
+    @Override // org.telegram.ui.Components.yl0
+    public final boolean D(s4.c1 c1Var) {
+        return c1Var.f == 0;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.d.size() + 2;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 1;
+        }
+        return i10 == h() - 1 ? 2 : 0;
+    }
+
+    @Override // s4.h0
+    public final void l() {
+        super.l();
+        this.f.J();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x002b  */
+    /* JADX WARN: Removed duplicated region for block: B:16:? A[RETURN, SYNTHETIC] */
+    @Override // s4.h0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void v(s4.c1 c1Var, int i10) {
+        Object obj;
+        if (c1Var.f != 0) {
+            return;
+        }
+        x1 x1Var = (x1) c1Var.a;
+        boolean z10 = i10 != h() + (-2);
+        int i11 = i10 - 1;
+        if (i11 >= 0) {
+            ArrayList arrayList = this.d;
+            if (i11 < arrayList.size()) {
+                obj = arrayList.get(i11);
+                if (obj instanceof a2) {
+                    return;
                 }
-                return new int[]{0, min};
-            default:
-                return super.t(view, rect);
+                a2 a2Var = (a2) obj;
+                x1Var.a(a2Var, this.e, z10);
+                x1Var.d.a(this.f.w.contains(Integer.valueOf(a2Var.a)), false);
+                return;
+            }
+        }
+        obj = null;
+        if (obj instanceof a2) {
         }
     }
 
-    @Override // s4.c0, s4.o0
-    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
-        switch (this.U) {
-            case 0:
-                f0 f0Var = new f0(this, recyclerView.getContext());
-                f0Var.a = i10;
-                w0(f0Var);
-                break;
-            case 1:
-                pj pjVar = new pj(this, recyclerView.getContext());
-                pjVar.a = i10;
-                w0(pjVar);
-                break;
-            case 2:
-                gk gkVar = new gk(this, recyclerView.getContext());
-                gkVar.a = i10;
-                w0(gkVar);
-                break;
-            case 3:
-                al alVar = new al(this, recyclerView.getContext());
-                alVar.a = i10;
-                w0(alVar);
-                break;
-            default:
-                kn knVar = new kn(this, recyclerView.getContext());
-                knVar.a = i10;
-                w0(knVar);
-                break;
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View x1Var;
+        Context context = this.c;
+        if (i10 == 0) {
+            x1Var = new x1(context, this.f.a, false);
+        } else if (i10 != 1) {
+            x1Var = new View(context);
+            x1Var.setTag(-33024);
+        } else {
+            x1Var = new View(context);
+            x1Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
+            x1Var.setTag(-33024);
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g0(il ilVar, ai.w0 w0Var) {
-        super(0, 0, w0Var);
-        this.U = 3;
-        this.V = ilVar;
+        return new il0(x1Var);
     }
 }

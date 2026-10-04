@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class d0 extends ci.d {
     public final RectF h0;
@@ -43,8 +43,8 @@ public final class d0 extends ci.d {
         float measuredHeight = getMeasuredHeight();
         RectF rectF = this.h0;
         rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-        rg.a1.d().f((-getMeasuredWidth()) * 0.1f * this.j0, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), rg.a1.d().e());
+        rg.b1.d().f((-getMeasuredWidth()) * 0.1f * this.j0, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), rg.b1.d().e());
         int measuredWidth2 = getMeasuredWidth();
         org.telegram.ui.Components.voip.h hVar = this.k0;
         hVar.f = measuredWidth2;

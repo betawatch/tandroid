@@ -1,30 +1,36 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.ViewTreeObserver;
-import org.telegram.ui.Components.sr;
+import android.transition.Transition;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class o0 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ u0 b;
+public final class o0 implements Transition.TransitionListener {
+    public final /* synthetic */ v0 a;
 
-    public o0(u0 u0Var, float f7) {
-        this.b = u0Var;
-        this.a = f7;
+    public o0(v0 v0Var) {
+        this.a = v0Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        u0 u0Var = this.b;
-        u0Var.e.getViewTreeObserver().removeOnPreDrawListener(this);
-        float x10 = u0Var.e.getX();
-        float f7 = this.a;
-        if (x10 != f7) {
-            ci.h2 h2Var = u0Var.e;
-            h2Var.setTranslationX(f7 - h2Var.getX());
-        }
-        u0Var.e.animate().translationX(0.0f).setDuration(250L).setStartDelay(0L).setInterpolator(sr.f).start();
-        return true;
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionCancel(Transition transition) {
+        this.a.i0.unlock();
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionEnd(Transition transition) {
+        this.a.i0.unlock();
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionStart(Transition transition) {
+        this.a.i0.lock();
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionPause(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionResume(Transition transition) {
     }
 }

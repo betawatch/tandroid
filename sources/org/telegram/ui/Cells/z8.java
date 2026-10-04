@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class z8 extends FrameLayout {
     public static Paint d;
@@ -33,7 +33,7 @@ public final class z8 extends FrameLayout {
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView.setPadding(0, 0, 0, AndroidUtilities.dp(3.0f));
         boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.y5.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 21 : 57, 0.0f, z10 ? 57 : 21, 0.0f));
+        addView(textView, w7.z5.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 21 : 57, 0.0f, z10 ? 57 : 21, 0.0f));
     }
 
     @Override // android.view.View

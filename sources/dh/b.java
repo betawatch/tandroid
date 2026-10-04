@@ -4,9 +4,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class b implements a {
     public final d6 a;
@@ -22,7 +22,7 @@ public class b implements a {
     }
 
     @Override // dh.a
-    public int H() {
+    public int B() {
         return this.d;
     }
 
@@ -32,7 +32,7 @@ public class b implements a {
     }
 
     public boolean b() {
-        return AndroidUtilities.computePerceivedBrightness(h6.v0(this.b, this.a)) < 0.721f;
+        return AndroidUtilities.computePerceivedBrightness(i6.v0(this.b, this.a)) < 0.721f;
     }
 
     @Override // dh.a
@@ -41,7 +41,7 @@ public class b implements a {
     }
 
     public final void d() {
-        this.d = h6.l1(this.c, h6.v0(this.b, this.a));
+        this.d = i6.l1(this.c, i6.v0(this.b, this.a));
         if (b()) {
             this.f = 687865855;
             this.h = 352321535;
@@ -54,7 +54,7 @@ public class b implements a {
     }
 
     @Override // dh.a
-    public int m() {
+    public int i() {
         return this.e;
     }
 

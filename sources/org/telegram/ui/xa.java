@@ -1,35 +1,42 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.ConnectionsManager;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xa implements Runnable {
+public final /* synthetic */ class xa implements bh.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ub b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ xa(ub ubVar, int i10) {
+    public /* synthetic */ xa(Object obj, int i10) {
         this.a = i10;
-        this.b = ubVar;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // bh.a
+    public final void b(ah.a aVar, RectF rectF) {
+        switch (this.a) {
+        }
+        aVar.a = true;
+    }
+
+    @Override // bh.a
+    public final void f(Canvas canvas, RectF rectF) {
         switch (this.a) {
             case 0:
-                ub ubVar = this.b;
-                ubVar.G0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                ubVar.H0 = -1;
-                ubVar.d1();
-                ubVar.I0 = null;
+                ((tb) this.b).Z(canvas, rectF);
                 break;
             case 1:
-                ub ubVar2 = this.b;
-                ubVar2.W0(false);
-                ubVar2.E.l();
+                PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
+                org.telegram.ui.Components.zl0 zl0Var = premiumPreviewFragment.a;
+                gh.d.a(zl0Var, canvas, rectF, zl0Var, premiumPreviewFragment.d0);
                 break;
             default:
-                this.b.V0();
+                a91 a91Var = (a91) this.b;
+                org.telegram.ui.Components.c71 c71Var = a91Var.c;
+                gh.d.a(c71Var, canvas, rectF, c71Var, a91Var.b);
                 break;
         }
     }

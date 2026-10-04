@@ -1,75 +1,57 @@
 package org.telegram.ui.ActionBar;
 
-import android.util.SparseIntArray;
-import org.telegram.ui.od1;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.os.SystemClock;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class o5 extends d5 {
-    public final /* synthetic */ int R = 1;
-    public final /* synthetic */ Object S;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o5(od1 od1Var, int i10, boolean z10) {
-        super(i10, true, z10, null);
-        this.S = od1Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d5
-    public int g(int i10) {
-        switch (this.R) {
-            case 0:
-                SparseIntArray sparseIntArray = (SparseIntArray) this.S;
-                int indexOfKey = sparseIntArray.indexOfKey(i10);
-                return indexOfKey > 0 ? sparseIntArray.valueAt(indexOfKey) : h6.nl[i10];
-            default:
-                return super.g(i10);
+public final class o5 implements SensorEventListener {
+    @Override // android.hardware.SensorEventListener
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        float f7 = sensorEvent.values[0];
+        if (f7 <= 0.0f) {
+            f7 = 0.1f;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d5
-    public int h(int i10) {
-        switch (this.R) {
-            case 0:
-                return ((SparseIntArray) this.S).get(i10);
-            default:
-                return super.h(i10);
+        if (ApplicationLoader.mainInterfacePaused || !ApplicationLoader.isScreenOn) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d5
-    public void n(int i10, int i11, int i12) {
-        switch (this.R) {
-            case 1:
-                if (!((od1) this.S).d2) {
-                    super.n(i10, i11, i12);
-                    break;
-                }
-                break;
-            default:
-                super.n(i10, i11, i12);
-                break;
+        if (f7 > 500.0f) {
+            i6.h = 1.0f;
+        } else {
+            i6.h = ((float) Math.ceil((Math.log(f7) * 9.932299613952637d) + 27.05900001525879d)) / 100.0f;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d5
-    public void o(int i10, int i11, int i12, int i13, int i14, int i15, boolean z10, boolean z11) {
-        switch (this.R) {
-            case 1:
-                if (!((od1) this.S).d2) {
-                    super.o(i10, i11, i12, i13, i14, i15, z10, z11);
-                    break;
-                }
-                break;
-            default:
-                super.o(i10, i11, i12, i13, i14, i15, z10, z11);
-                break;
+        if (i6.h > i6.q) {
+            if (i6.k) {
+                i6.k = false;
+                AndroidUtilities.cancelRunOnUIThread(i6.m);
+            }
+            if (i6.j) {
+                return;
+            }
+            i6.j = true;
+            AndroidUtilities.runOnUIThread(i6.l, Math.abs(i6.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
+            return;
         }
+        if (MediaController.getInstance().isRecordingOrListeningByProximity()) {
+            return;
+        }
+        if (i6.j) {
+            i6.j = false;
+            AndroidUtilities.cancelRunOnUIThread(i6.l);
+        }
+        if (i6.k) {
+            return;
+        }
+        i6.k = true;
+        AndroidUtilities.runOnUIThread(i6.m, Math.abs(i6.i - SystemClock.elapsedRealtime()) < 12000 ? 12000L : 1800L);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o5(boolean z10, SparseIntArray sparseIntArray) {
-        super(2, z10, false, null);
-        this.S = sparseIntArray;
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i10) {
     }
 }

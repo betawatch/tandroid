@@ -1,6 +1,59 @@
 package ii;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.graphics.Rect;
+import android.text.Layout;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Cells.ba;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public interface m5 {
+public final class m5 implements ba {
+    public final /* synthetic */ Layout a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ TL_iv.pageTableCell e;
+
+    public m5(Layout layout, int i10, int i11, int i12, TL_iv.pageTableCell pagetablecell) {
+        this.a = layout;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = pagetablecell;
+    }
+
+    @Override // org.telegram.ui.Cells.ba
+    public final Layout getLayout() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.Cells.ba
+    public final /* synthetic */ CharSequence getPrefix() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.ba
+    public final int getRow() {
+        return this.d;
+    }
+
+    @Override // org.telegram.ui.Cells.ba
+    public final /* synthetic */ Rect getSelectionBounds() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.ba
+    public final CharSequence getText() {
+        return j6.h(this.e);
+    }
+
+    @Override // org.telegram.ui.Cells.ba
+    public final int getX() {
+        return this.b;
+    }
+
+    @Override // org.telegram.ui.Cells.ba
+    public final int getY() {
+        return this.c;
+    }
 }

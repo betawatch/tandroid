@@ -3,13 +3,13 @@ package org.telegram.ui.Components;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class qb0 extends g.p {
-    public final /* synthetic */ bc0 c;
+    public final /* synthetic */ cc0 c;
 
-    public qb0(bc0 bc0Var) {
-        this.c = bc0Var;
+    public qb0(cc0 cc0Var) {
+        this.c = cc0Var;
     }
 
     @Override // g.p
@@ -19,7 +19,7 @@ public final class qb0 extends g.p {
         if (i10 < 0) {
             return MediaDataController.MAX_STYLE_RUNS_COUNT;
         }
-        bc0 bc0Var = this.c;
-        return (i10 >= bc0Var.r.previewMessages.size() || (a2 = bc0.a(bc0Var, (messageObject = bc0Var.r.previewMessages.get(i10)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : a2.getPosition(messageObject).spanSize;
+        cc0 cc0Var = this.c;
+        return (i10 >= cc0Var.r.previewMessages.size() || (a2 = cc0.a(cc0Var, (messageObject = cc0Var.r.previewMessages.get(i10)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : a2.getPosition(messageObject).spanSize;
     }
 }

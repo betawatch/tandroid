@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class x extends yh.u3 {
     public final Path A0;
@@ -16,8 +16,8 @@ public final class x extends yh.u3 {
     public final /* synthetic */ c0 D0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x(c0 c0Var, Context context, d6 d6Var, rg.q1 q1Var, ai.e2 e2Var, ai.e2 e2Var2, ai.e2 e2Var3, ai.e2 e2Var4, ai.e2 e2Var5, ai.e2 e2Var6, int i10) {
-        super(context, d6Var, q1Var, e2Var, null, e2Var2, e2Var3, e2Var4, e2Var5, e2Var6);
+    public x(c0 c0Var, Context context, d6 d6Var, rg.s1 s1Var, ai.e2 e2Var, ai.e2 e2Var2, ai.e2 e2Var3, ai.e2 e2Var4, ai.e2 e2Var5, ai.e2 e2Var6, int i10) {
+        super(context, d6Var, s1Var, e2Var, null, e2Var2, e2Var3, e2Var4, e2Var5, e2Var6);
         this.D0 = c0Var;
         this.C0 = i10;
         this.A0 = new Path();

@@ -7,7 +7,7 @@ import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 final class bg extends bm {
     final /* synthetic */ StandardIntegrityManager.StandardIntegrityTokenRequest a;
@@ -51,12 +51,12 @@ final class bg extends bm {
             a2.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(bkVar);
             xVar.H0(obtain, 3);
-        } catch (RemoteException e) {
+        } catch (RemoteException e7) {
             bn bnVar2 = this.e;
             StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest = this.a;
             j0Var = bnVar2.b;
-            j0Var.a(e, "requestExpressIntegrityToken(%s, %s, %s)", standardIntegrityTokenRequest.requestHash(), this.a.verdictOptOut(), Long.valueOf(this.b));
-            this.d.trySetException(new StandardIntegrityException(-100, e));
+            j0Var.a(e7, "requestExpressIntegrityToken(%s, %s, %s)", standardIntegrityTokenRequest.requestHash(), this.a.verdictOptOut(), Long.valueOf(this.b));
+            this.d.trySetException(new StandardIntegrityException(-100, e7));
         }
     }
 }

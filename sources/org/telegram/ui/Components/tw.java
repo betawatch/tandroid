@@ -6,34 +6,34 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class tw extends FrameLayout {
     public final /* synthetic */ boolean a;
-    public final /* synthetic */ mz b;
+    public final /* synthetic */ nz b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tw(mz mzVar, Context context, boolean z10) {
+    public tw(nz nzVar, Context context, boolean z10) {
         super(context);
-        this.b = mzVar;
+        this.b = nzVar;
         this.a = z10;
     }
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
-        mz mzVar = this.b;
-        zw zwVar = mzVar.B0;
-        vw vwVar = mzVar.D0;
-        yw ywVar = mzVar.G0;
-        if (this.a || !(view == vwVar || view == ywVar)) {
+        nz nzVar = this.b;
+        ax axVar = nzVar.B0;
+        vw vwVar = nzVar.D0;
+        zw zwVar = nzVar.G0;
+        if (this.a || !(view == vwVar || view == zwVar)) {
             return super.drawChild(canvas, view, j3);
         }
         canvas.save();
-        float y3 = zwVar.getY() + zwVar.getMeasuredHeight() + 1.0f;
+        float y3 = axVar.getY() + axVar.getMeasuredHeight() + 1.0f;
         if (view == vwVar) {
-            y3 = Math.max(y3, ywVar.getY() + ywVar.getMeasuredHeight() + 1.0f);
+            y3 = Math.max(y3, zwVar.getY() + zwVar.getMeasuredHeight() + 1.0f);
         }
-        canvas.clipRect(0.0f, y3 - (AndroidUtilities.dp(16.0f) * mzVar.a.e), getMeasuredWidth(), getMeasuredHeight());
+        canvas.clipRect(0.0f, y3 - (AndroidUtilities.dp(16.0f) * nzVar.a.e), getMeasuredWidth(), getMeasuredHeight());
         boolean drawChild = super.drawChild(canvas, view, j3);
         canvas.restore();
         return drawChild;
@@ -42,10 +42,10 @@ public final class tw extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        mz mzVar = this.b;
-        mzVar.K0 = true;
-        mzVar.Y();
-        gg.g1 g1Var = mzVar.T0;
+        nz nzVar = this.b;
+        nzVar.K0 = true;
+        nzVar.X();
+        gg.g1 g1Var = nzVar.T0;
         if (g1Var != null) {
             g1Var.a();
         }
@@ -54,10 +54,10 @@ public final class tw extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        mz mzVar = this.b;
-        mzVar.K0 = false;
-        mzVar.Y();
-        gg.g1 g1Var = mzVar.T0;
+        nz nzVar = this.b;
+        nzVar.K0 = false;
+        nzVar.X();
+        gg.g1 g1Var = nzVar.T0;
         if (g1Var != null) {
             g1Var.a();
         }

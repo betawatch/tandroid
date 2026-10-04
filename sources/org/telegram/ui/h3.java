@@ -10,7 +10,7 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h3 implements q0.a {
     public final /* synthetic */ int a;
@@ -41,46 +41,46 @@ public final /* synthetic */ class h3 implements q0.a {
                 break;
             case 2:
                 TLRPC.User user = (TLRPC.User) obj;
-                pr prVar = ((gr) this.b).b;
-                jr w02 = prVar.w0();
-                ArrayList arrayList = prVar.F;
-                a0.i iVar = prVar.M;
-                ArrayList arrayList2 = (iVar == null || iVar.m() == 0) ? arrayList : prVar.H;
+                rr rrVar = ((ir) this.b).b;
+                lr w02 = rrVar.w0();
+                ArrayList arrayList = rrVar.F;
+                a0.i iVar = rrVar.M;
+                ArrayList arrayList2 = (iVar == null || iVar.m() == 0) ? arrayList : rrVar.H;
                 if (iVar == null || iVar.m() == 0) {
-                    iVar = prVar.K;
+                    iVar = rrVar.K;
                 }
                 if (iVar.f(user.id) == null) {
-                    if (ChatObject.isChannel(prVar.r)) {
+                    if (ChatObject.isChannel(rrVar.r)) {
                         TLRPC.TL_channelParticipant tL_channelParticipant = new TLRPC.TL_channelParticipant();
-                        tL_channelParticipant.inviter_id = prVar.getUserConfig().getClientUserId();
+                        tL_channelParticipant.inviter_id = rrVar.getUserConfig().getClientUserId();
                         TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
                         tL_channelParticipant.peer = tL_peerUser;
                         tL_peerUser.user_id = user.id;
-                        tL_channelParticipant.date = prVar.getConnectionsManager().getCurrentTime();
+                        tL_channelParticipant.date = rrVar.getConnectionsManager().getCurrentTime();
                         arrayList2.add(0, tL_channelParticipant);
                         iVar.k(tL_channelParticipant, user.id);
                     } else {
                         TLRPC.TL_chatParticipant tL_chatParticipant = new TLRPC.TL_chatParticipant();
                         tL_chatParticipant.user_id = user.id;
-                        tL_chatParticipant.inviter_id = prVar.getUserConfig().getClientUserId();
+                        tL_chatParticipant.inviter_id = rrVar.getUserConfig().getClientUserId();
                         arrayList2.add(0, tL_chatParticipant);
                         iVar.k(tL_chatParticipant, user.id);
                     }
                 }
                 if (arrayList2 == arrayList) {
-                    Collections.sort(arrayList, new cf(4));
+                    Collections.sort(arrayList, new ff(4));
                 }
-                prVar.A0(w02);
+                rrVar.A0(w02);
                 break;
             case 3:
                 t3 t3Var = (t3) this.b;
                 int i10 = ((c5.h) obj).a;
-                AndroidUtilities.runOnUIThread(new m80(27, t3Var, i10 == 0 ? null : BillingController.getResponseCodeString(i10)));
+                AndroidUtilities.runOnUIThread(new h90(24, t3Var, i10 == 0 ? null : BillingController.getResponseCodeString(i10)));
                 break;
             case 4:
-                ki0 ki0Var = (ki0) this.b;
+                oi0 oi0Var = (oi0) this.b;
                 if (((c5.h) obj).a == 0) {
-                    AndroidUtilities.runOnUIThread(ki0Var);
+                    AndroidUtilities.runOnUIThread(oi0Var);
                     break;
                 }
                 break;
@@ -100,10 +100,10 @@ public final /* synthetic */ class h3 implements q0.a {
                 break;
             default:
                 View view = ((ProxyListActivity) this.b).b.T((View) obj).a;
-                if (view instanceof x11) {
-                    x11 x11Var = (x11) view;
-                    x11Var.setChecked(x11Var.d == SharedConfig.currentProxy);
-                    x11Var.b();
+                if (view instanceof y11) {
+                    y11 y11Var = (y11) view;
+                    y11Var.setChecked(y11Var.d == SharedConfig.currentProxy);
+                    y11Var.b();
                     break;
                 }
                 break;

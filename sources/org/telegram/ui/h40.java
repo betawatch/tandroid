@@ -1,32 +1,46 @@
 package org.telegram.ui;
 
-import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.voip.VoIPService;
+import android.os.Bundle;
+import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class h40 implements org.telegram.ui.ActionBar.y2 {
-    public final /* synthetic */ d60 a;
+public final class h40 implements lh.a {
+    public final /* synthetic */ h60 a;
 
-    public h40(d60 d60Var) {
-        this.a = d60Var;
+    public h40(h60 h60Var) {
+        this.a = h60Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.y2
-    public final boolean g() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.y2
-    public final void onOpenAnimationEnd() {
-        CountDownLatch groupCallBottomSheetLatch;
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance != null && (groupCallBottomSheetLatch = sharedInstance.getGroupCallBottomSheetLatch()) != null) {
-            groupCallBottomSheetLatch.countDown();
+    public final void a(GroupCallMessage groupCallMessage) {
+        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+        if (R == null) {
+            return;
         }
-        d60 d60Var = this.a;
-        if (d60Var.F1 == 6) {
-            d60.B0(d60Var);
+        boolean z10 = R instanceof ProfileActivity;
+        h60 h60Var = this.a;
+        if (z10 && ((ProfileActivity) R).a() == groupCallMessage.fromId) {
+            h60Var.dismiss();
+            return;
         }
+        int P0 = h60Var.P0();
+        Bundle bundle = new Bundle();
+        long j3 = groupCallMessage.fromId;
+        if (j3 > 0) {
+            bundle.putLong("user_id", j3);
+        } else {
+            bundle.putLong("chat_id", -j3);
+        }
+        long j10 = groupCallMessage.fromId;
+        boolean z11 = true;
+        if (j10 == h60Var.d.getUserConfig().getClientUserId()) {
+            bundle.putBoolean("my_profile", true);
+        }
+        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
+        if (P0 > 0 && P0 != Integer.MAX_VALUE) {
+            z11 = false;
+        }
+        R.presentFragment(profileActivity, false, z11);
+        h60Var.dismiss();
     }
 }

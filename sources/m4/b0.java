@@ -1,8 +1,8 @@
 package m4;
 
-import v7.m8;
+import v7.l8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements j0 {
     public final /* synthetic */ int a;
@@ -14,7 +14,7 @@ public final /* synthetic */ class b0 implements j0 {
     }
 
     @Override // m4.j0
-    public final void g(r rVar) {
+    public final void f(r rVar) {
         int i10 = this.a;
         k0 k0Var = this.b;
         switch (i10) {
@@ -27,7 +27,7 @@ public final /* synthetic */ class b0 implements j0 {
                     na.d dVar = a0Var.e;
                     a0Var.s(rVar);
                     dVar.getClass();
-                    m8.b(new k1(-6));
+                    l8.b(new k1(-6));
                     break;
                 }
                 break;

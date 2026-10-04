@@ -1,10 +1,10 @@
 package fi;
 
 import android.view.ViewGroup;
-import org.telegram.ui.ActionBar.e3;
+import org.telegram.ui.ActionBar.f3;
 import s4.c1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class g0 extends s4.j {
     public final /* synthetic */ h0 F;
@@ -17,7 +17,7 @@ public final class g0 extends s4.j {
     public final void M() {
         ViewGroup viewGroup;
         h0 h0Var = this.F;
-        viewGroup = ((e3) h0Var.f).containerView;
+        viewGroup = ((f3) h0Var.f).containerView;
         viewGroup.invalidate();
         h0Var.c.invalidate();
     }
@@ -26,7 +26,7 @@ public final class g0 extends s4.j {
     public final void O() {
         ViewGroup viewGroup;
         h0 h0Var = this.F;
-        viewGroup = ((e3) h0Var.f).containerView;
+        viewGroup = ((f3) h0Var.f).containerView;
         viewGroup.invalidate();
         h0Var.c.invalidate();
     }
@@ -35,7 +35,7 @@ public final class g0 extends s4.j {
     public final void P(c1 c1Var) {
         ViewGroup viewGroup;
         h0 h0Var = this.F;
-        viewGroup = ((e3) h0Var.f).containerView;
+        viewGroup = ((f3) h0Var.f).containerView;
         viewGroup.invalidate();
         h0Var.c.invalidate();
         h0Var.d.invalidate();
@@ -45,7 +45,7 @@ public final class g0 extends s4.j {
     public final void Q() {
         ViewGroup viewGroup;
         h0 h0Var = this.F;
-        viewGroup = ((e3) h0Var.f).containerView;
+        viewGroup = ((f3) h0Var.f).containerView;
         viewGroup.invalidate();
         h0Var.c.invalidate();
     }

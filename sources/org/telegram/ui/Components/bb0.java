@@ -15,7 +15,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class bb0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int U = 0;
@@ -24,7 +24,7 @@ public abstract class bb0 extends FrameLayout implements NotificationCenter.Noti
     public boolean G;
     public boolean H;
     public boolean I;
-    public final zp J;
+    public final aq J;
     public o1.k K;
     public boolean L;
     public float M;
@@ -41,7 +41,7 @@ public abstract class bb0 extends FrameLayout implements NotificationCenter.Noti
     public final ua0 d;
     public final gg.q1 e;
     public final gg.k1 f;
-    public final org.telegram.ui.ActionBar.m2 h;
+    public final org.telegram.ui.ActionBar.n2 h;
     public float n;
     public float r;
     public float s;
@@ -50,20 +50,20 @@ public abstract class bb0 extends FrameLayout implements NotificationCenter.Noti
     public ya0 x;
     public final Rect y;
 
-    public bb0(Context context, long j3, long j10, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.ActionBar.d6 d6Var) {
+    public bb0(Context context, long j3, long j10, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.y = new Rect();
         this.G = false;
         this.H = false;
         this.I = false;
-        this.J = new zp(this, 28);
+        this.J = new aq(this, 28);
         this.L = false;
         this.M = 0.0f;
         this.N = false;
         this.Q = new xa0(this);
         this.S = new Path();
         this.T = new RectF();
-        this.h = m2Var;
+        this.h = n2Var;
         this.a = d6Var;
         setVisibility(8);
         setWillNotDraw(false);
@@ -83,12 +83,12 @@ public abstract class bb0 extends FrameLayout implements NotificationCenter.Noti
         jVar.f = 150L;
         jVar.g = 150L;
         jVar.d = 150L;
-        jVar.o = sr.f;
+        jVar.o = tr.f;
         jVar.C = false;
         ab0Var.setItemAnimator(jVar);
         ab0Var.setClipToPadding(false);
         ab0Var.setLayoutManager(j0Var);
-        gg.k1 k1Var = new gg.k1(context, j3, j10, new wa0(this, m2Var), d6Var, h());
+        gg.k1 k1Var = new gg.k1(context, j3, j10, new wa0(this, n2Var), d6Var, h());
         this.f = k1Var;
         gg.q1 q1Var = new gg.q1();
         q1Var.d = null;
@@ -99,7 +99,7 @@ public abstract class bb0 extends FrameLayout implements NotificationCenter.Noti
         this.e = q1Var;
         ab0Var.setAdapter(q1Var);
         ab0Var.setTranslationY(AndroidUtilities.dp(6.0f));
-        addView(ab0Var, w7.y5.c(-1.0f, -1));
+        addView(ab0Var, w7.z5.c(-1.0f, -1));
         setReversed(false);
     }
 
@@ -130,7 +130,7 @@ public abstract class bb0 extends FrameLayout implements NotificationCenter.Noti
             dVar.setBounds(0, ((int) this.n) - AndroidUtilities.dp(5.0f), getMeasuredWidth(), AndroidUtilities.dp(5.0f) + ((int) this.r));
             Path path = this.S;
             path.rewind();
-            Rect rect = this.R.j.m;
+            Rect rect = this.R.l.m;
             RectF rectF = this.T;
             rectF.set(rect);
             if (ab0Var == null || (ua0Var = this.d) == null || ab0Var.getLayoutManager() != ua0Var || (k1Var = this.f) == null || k1Var.R == null) {
@@ -234,7 +234,7 @@ public abstract class bb0 extends FrameLayout implements NotificationCenter.Noti
         }
         Paint paint2 = this.E;
         Integer num = this.F;
-        paint2.setColor(num != null ? num.intValue() : org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Sd, this.a));
+        paint2.setColor(num != null ? num.intValue() : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Sd, this.a));
         f(canvas, rect, min);
         canvas.clipRect(rect);
         super.dispatchDraw(canvas);
@@ -304,14 +304,14 @@ public abstract class bb0 extends FrameLayout implements NotificationCenter.Noti
             this.H = false;
         }
         this.I = z10;
-        zp zpVar = this.J;
-        AndroidUtilities.cancelRunOnUIThread(zpVar);
+        aq aqVar = this.J;
+        AndroidUtilities.cancelRunOnUIThread(aqVar);
         o1.k kVar = this.K;
         if (kVar != null) {
             kVar.c();
         }
-        org.telegram.ui.ActionBar.m2 m2Var = this.h;
-        AndroidUtilities.runOnUIThread(zpVar, (m2Var == null || !m2Var.getFragmentBeginToShow()) ? 100L : 0L);
+        org.telegram.ui.ActionBar.n2 n2Var = this.h;
+        AndroidUtilities.runOnUIThread(aqVar, (n2Var == null || !n2Var.getFragmentBeginToShow()) ? 100L : 0L);
         if (z10) {
             m();
         } else {
@@ -349,7 +349,7 @@ public abstract class bb0 extends FrameLayout implements NotificationCenter.Noti
         ai.n6 n6Var = new ai.n6(12, this, ya0Var);
         this.w = n6Var;
         listView.setOnItemClickListener(n6Var);
-        getListView().setOnTouchListener(new xr(this, 3));
+        getListView().setOnTouchListener(new yr(this, 3));
     }
 
     @Override // android.view.View, android.view.ViewParent
@@ -362,8 +362,8 @@ public abstract class bb0 extends FrameLayout implements NotificationCenter.Noti
 
     public void setBackgroundDrawable(ch.d dVar) {
         this.R = dVar;
-        dVar.q(AndroidUtilities.dp(22.0f));
-        this.R.p(AndroidUtilities.dp(5.0f));
+        dVar.z(AndroidUtilities.dp(22.0f));
+        this.R.y(AndroidUtilities.dp(5.0f));
         c();
     }
 

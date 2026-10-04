@@ -3,34 +3,34 @@ package org.telegram.ui;
 import android.animation.AnimatorSet;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class kk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wn b;
+    public final /* synthetic */ yn b;
 
-    public /* synthetic */ kk(wn wnVar, int i10) {
+    public /* synthetic */ kk(yn ynVar, int i10) {
         this.a = i10;
-        this.b = wnVar;
+        this.b = ynVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.dh dhVar;
+        org.telegram.ui.Components.eh ehVar;
         FrameLayout frameLayout;
         switch (this.a) {
             case 0:
-                wn wnVar = this.b;
-                AnimatorSet animatorSet = wnVar.V9;
+                yn ynVar = this.b;
+                AnimatorSet animatorSet = ynVar.T9;
                 if (animatorSet != null && !animatorSet.isRunning()) {
-                    wnVar.V9.start();
+                    ynVar.T9.start();
                     break;
                 }
                 break;
             default:
-                wn wnVar2 = this.b;
-                if (wnVar2.O2 == this && (dhVar = wnVar2.M0) != null && (frameLayout = wnVar2.N2) != null) {
-                    dhVar.i(frameLayout, false, true);
+                yn ynVar2 = this.b;
+                if (ynVar2.M2 == this && (ehVar = ynVar2.K0) != null && (frameLayout = ynVar2.L2) != null) {
+                    ehVar.i(frameLayout, false, true);
                     break;
                 }
                 break;

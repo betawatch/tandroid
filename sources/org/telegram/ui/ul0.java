@@ -1,35 +1,75 @@
 package org.telegram.ui;
 
+import android.view.View;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ul0 implements RequestDelegate {
+public final /* synthetic */ class ul0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ gn0 b;
+    public final /* synthetic */ kn0 b;
 
-    public /* synthetic */ ul0(gn0 gn0Var, int i10) {
+    public /* synthetic */ ul0(kn0 kn0Var, int i10) {
         this.a = i10;
-        this.b = gn0Var;
+        this.b = kn0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        ViewGroup viewGroup;
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new jf0(this.b, tL_error, tLObject, 10));
+                kn0 kn0Var = this.b;
+                ViewGroup[] viewGroupArr = kn0Var.Z;
+                if (viewGroupArr != null && (viewGroup = viewGroupArr[0]) != null && viewGroup.getVisibility() == 0) {
+                    kn0Var.Y[0].requestFocus();
+                    AndroidUtilities.showKeyboard(kn0Var.Y[0]);
+                    break;
+                }
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new xi0(10, this.b, tL_error));
+                kn0 kn0Var2 = this.b;
+                kn0Var2.presentFragment(kn0Var2.h1, true);
+                kn0Var2.h1 = null;
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new ql0(this.b, 5));
+                kn0 kn0Var3 = this.b;
+                EditTextBoldCursor[] editTextBoldCursorArr = kn0Var3.a0;
+                if (editTextBoldCursorArr != null) {
+                    kn0Var3.I1(editTextBoldCursorArr[0]);
+                    break;
+                }
                 break;
+            case 3:
+                AndroidUtilities.showKeyboard(this.b.Y[2]);
+                break;
+            case 4:
+                this.b.x1();
+                break;
+            case 5:
+                int i10 = 0;
+                while (true) {
+                    kn0 kn0Var4 = this.b;
+                    if (i10 >= kn0Var4.c0.getChildCount()) {
+                        kn0Var4.x1();
+                        kn0Var4.q1.clear();
+                        kn0Var4.p1.clear();
+                        kn0Var4.y.values.clear();
+                        kn0Var4.Q1();
+                        break;
+                    } else {
+                        View childAt = kn0Var4.c0.getChildAt(i10);
+                        if (childAt instanceof jn0) {
+                            kn0Var4.c0.removeView(childAt);
+                            i10--;
+                        }
+                        i10++;
+                    }
+                }
             default:
-                AndroidUtilities.runOnUIThread(new xi0(9, this.b, tLObject));
+                this.b.finishFragment();
                 break;
         }
     }

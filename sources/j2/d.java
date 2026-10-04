@@ -24,13 +24,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.z1;
-import org.telegram.ui.Components.lv0;
-import z3.n;
+import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.Components.pv0;
+import z3.o;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements m, x0, z0, RequestDelegateTimestamp, z1, MessagesStorage.StringCallback, e2.h {
+public final /* synthetic */ class d implements m, x0, z0, RequestDelegateTimestamp, a2, MessagesStorage.StringCallback, e2.h {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ long c;
@@ -45,33 +45,33 @@ public final /* synthetic */ class d implements m, x0, z0, RequestDelegateTimest
 
     @Override // e2.h
     public void accept(Object obj) {
-        n nVar = (n) this.d;
+        o oVar = (o) this.d;
         z3.a aVar = (z3.a) obj;
-        e2.d.h(nVar.h);
+        e2.d.h(oVar.h);
         byte[] C2 = ob.a.C2(aVar.a, aVar.c);
-        v vVar = nVar.c;
+        v vVar = oVar.c;
         vVar.getClass();
         vVar.H(C2.length, C2);
-        nVar.a.d(C2.length, vVar);
+        oVar.a.d(C2.length, vVar);
         long j3 = aVar.b;
         long j10 = this.c;
         if (j3 == -9223372036854775807L) {
-            e2.d.g(nVar.h.w == Long.MAX_VALUE);
+            e2.d.g(oVar.h.w == Long.MAX_VALUE);
         } else {
-            long j11 = nVar.h.w;
+            long j11 = oVar.h.w;
             j10 = j11 == Long.MAX_VALUE ? j10 + j3 : j3 + j11;
         }
-        nVar.a.c(j10, this.b | 1, C2.length, 0, null);
+        oVar.a.c(j10, this.b | 1, C2.length, 0, null);
     }
 
     @Override // m4.x0
-    public void d(e1 e1Var, r rVar) {
+    public void c(e1 e1Var, r rVar) {
         a1 a1Var = (a1) this.d;
         e1Var.s(a1Var.K0(rVar, e1Var, this.b), this.c);
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(a2 a2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(b2 b2Var, int i10) {
         int i11 = this.a;
         Object obj = this.d;
         int i12 = this.b;
@@ -86,7 +86,7 @@ public final /* synthetic */ class d implements m, x0, z0, RequestDelegateTimest
                         String str = userFull.about;
                         if ((str != null ? str : "").equals(trim)) {
                             AndroidUtilities.hideKeyboard(editText);
-                            a2Var.dismiss();
+                            b2Var.dismiss();
                             break;
                         } else {
                             userFull.about = trim;
@@ -106,7 +106,7 @@ public final /* synthetic */ class d implements m, x0, z0, RequestDelegateTimest
                         String str2 = chatFull.about;
                         if ((str2 != null ? str2 : "").equals(obj2)) {
                             AndroidUtilities.hideKeyboard(editText);
-                            a2Var.dismiss();
+                            b2Var.dismiss();
                             break;
                         } else {
                             chatFull.about = obj2;
@@ -119,7 +119,7 @@ public final /* synthetic */ class d implements m, x0, z0, RequestDelegateTimest
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 2, Long.valueOf(j3));
                     MessagesController.getInstance(i12).updateChatAbout(j10, obj2, chatFull);
                 }
-                a2Var.dismiss();
+                b2Var.dismiss();
                 break;
             default:
                 Runnable runnable = (Runnable) obj;
@@ -160,7 +160,7 @@ public final /* synthetic */ class d implements m, x0, z0, RequestDelegateTimest
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        lv0.i((lv0) this.d, this.c, this.b, str);
+        pv0.i((pv0) this.d, this.c, this.b, str);
     }
 
     public /* synthetic */ d(a aVar, int i10, long j3, long j10) {

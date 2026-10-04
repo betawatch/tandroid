@@ -10,7 +10,7 @@ import android.util.Log;
 import android.util.SparseArray;
 import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class m0 implements IBinder.DeathRecipient {
     public final Messenger a;
@@ -50,11 +50,11 @@ public final class m0 implements IBinder.DeathRecipient {
             return true;
         } catch (DeadObjectException unused) {
             return false;
-        } catch (RemoteException e) {
+        } catch (RemoteException e7) {
             if (i10 == 2) {
                 return false;
             }
-            Log.e("MediaRouteProviderProxy", "Could not send message to service.", e);
+            Log.e("MediaRouteProviderProxy", "Could not send message to service.", e7);
             return false;
         }
     }
@@ -65,16 +65,16 @@ public final class m0 implements IBinder.DeathRecipient {
     }
 
     public final void c(int i10, int i11) {
-        Bundle g10 = c1.g(i11, "volume");
+        Bundle h = c1.h(i11, "volume");
         int i12 = this.d;
         this.d = i12 + 1;
-        b(7, i12, i10, null, g10);
+        b(7, i12, i10, null, h);
     }
 
     public final void d(int i10, int i11) {
-        Bundle g10 = c1.g(i11, "volume");
+        Bundle h = c1.h(i11, "volume");
         int i12 = this.d;
         this.d = i12 + 1;
-        b(8, i12, i10, null, g10);
+        b(8, i12, i10, null, h);
     }
 }

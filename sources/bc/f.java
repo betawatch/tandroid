@@ -21,8 +21,9 @@ import n6.o;
 import qb.g;
 import qb.j;
 import qb.m;
-import v7.a9;
-import w7.d8;
+import v7.k;
+import v7.z8;
+import w7.e8;
 import x7.da;
 import z7.ag;
 import z7.dg;
@@ -40,7 +41,7 @@ import z7.jg;
 import z7.vf;
 import z7.wf;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f extends qb.e {
     public static final k6.c[] k = {j.c};
@@ -48,18 +49,18 @@ public final class f extends qb.e {
     public final Context d;
     public final ac.e e;
     public final wf f;
-    public final a9 g;
+    public final z8 g;
     public boolean h = true;
     public boolean i;
     public dg j;
 
-    public f(g gVar, ac.e eVar, wf wfVar, a9 a9Var) {
+    public f(g gVar, ac.e eVar, wf wfVar, z8 z8Var) {
         l.i(gVar, "MlKitContext can not be null");
         l.i(eVar, "SubjectSegmenterOptions can not be null");
         this.d = gVar.b();
         this.e = eVar;
         this.f = wfVar;
-        this.g = a9Var;
+        this.g = z8Var;
     }
 
     @Override // qb.i
@@ -99,13 +100,13 @@ public final class f extends qb.e {
                     obtain.writeInterfaceToken(dgVar.c);
                     dgVar.S0(obtain, 1);
                     f(gb.b, elapsedRealtime);
-                } catch (RemoteException e) {
+                } catch (RemoteException e7) {
                     f(gb.d, elapsedRealtime);
-                    throw new mb.a("Failed to init module subject segmenter", e);
+                    throw new mb.a("Failed to init module subject segmenter", e7);
                 }
-            } catch (Exception e7) {
+            } catch (Exception e10) {
                 f(gb.f, elapsedRealtime);
-                throw new mb.a("Failed to load subject segmentation module", e7);
+                throw new mb.a("Failed to load subject segmentation module", e10);
             }
         } catch (Throwable th2) {
             throw th2;
@@ -154,7 +155,7 @@ public final class f extends qb.e {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     dg dgVar = this.j;
                     l.h(dgVar);
-                    ag agVar = new ag(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), d8.a(aVar.d));
+                    ag agVar = new ag(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), e8.a(aVar.d));
                     int i10 = aVar.e;
                     try {
                         if (i10 != -1) {
@@ -197,21 +198,21 @@ public final class f extends qb.e {
                                             FloatBuffer allocate2 = FloatBuffer.allocate(fArr2.length);
                                             allocate2.put(fArr2);
                                             allocate2.rewind();
-                                        } catch (RemoteException e) {
-                                            e = e;
+                                        } catch (RemoteException e7) {
+                                            e = e7;
                                             fVar.g(gb.e, elapsedRealtime, fVar.h, aVar2, null);
                                             throw new mb.a("Failed to run thin subject segmenter.", e);
                                         }
-                                    } catch (RemoteException e7) {
-                                        e = e7;
+                                    } catch (RemoteException e10) {
+                                        e = e10;
                                     }
                                 }
                                 return new ac.b(arrayList);
-                            } catch (RemoteException e10) {
-                                e = e10;
+                            } catch (RemoteException e11) {
+                                e = e11;
                             }
-                        } catch (RemoteException e11) {
-                            e = e11;
+                        } catch (RemoteException e12) {
+                            e = e12;
                             fVar = this;
                             aVar2 = aVar;
                         }
@@ -236,11 +237,11 @@ public final class f extends qb.e {
             public final a5.a zza() {
                 p3 p3Var = new p3();
                 p3Var.c = fb.b;
-                v7.l lVar = new v7.l(17, false);
-                lVar.d = f.this.e.a();
-                lVar.b = gbVar;
-                lVar.c = Long.valueOf((SystemClock.elapsedRealtime() - j3) & Long.MAX_VALUE);
-                p3Var.e = new fe(lVar);
+                k kVar = new k(17, false);
+                kVar.d = f.this.e.a();
+                kVar.b = gbVar;
+                kVar.c = Long.valueOf((SystemClock.elapsedRealtime() - j3) & Long.MAX_VALUE);
+                p3Var.e = new fe(kVar);
                 return new a5.a(p3Var, 0);
             }
         }, hb.O4);
@@ -249,22 +250,22 @@ public final class f extends qb.e {
     public final void g(gb gbVar, long j3, boolean z10, vb.a aVar, ig igVar) {
         long elapsedRealtime = SystemClock.elapsedRealtime() - j3;
         this.f.b(new d(this, elapsedRealtime, gbVar, z10, aVar, igVar), hb.P4);
-        v7.l lVar = new v7.l(15, false);
-        lVar.d = this.e.a();
-        lVar.b = gbVar;
-        lVar.c = Boolean.valueOf(z10);
-        m.a.execute(new da(this.f, new i1(lVar), elapsedRealtime));
+        k kVar = new k(15, false);
+        kVar.d = this.e.a();
+        kVar.b = gbVar;
+        kVar.c = Boolean.valueOf(z10);
+        m.a.execute(new da(this.f, new i1(kVar), elapsedRealtime));
         long currentTimeMillis = System.currentTimeMillis();
         long j10 = currentTimeMillis - elapsedRealtime;
-        a9 a9Var = this.g;
+        z8 z8Var = this.g;
         int i10 = gbVar.a;
-        synchronized (a9Var) {
-            AtomicLong atomicLong = a9Var.b;
+        synchronized (z8Var) {
+            AtomicLong atomicLong = z8Var.b;
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
-            if (atomicLong.get() != -1 && elapsedRealtime2 - a9Var.b.get() <= TimeUnit.MINUTES.toMillis(30L)) {
+            if (atomicLong.get() != -1 && elapsedRealtime2 - z8Var.b.get() <= TimeUnit.MINUTES.toMillis(30L)) {
                 return;
             }
-            a9Var.a.f(new o(0, Arrays.asList(new n6.j(24336, i10, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new n(a9Var, elapsedRealtime2, 10));
+            z8Var.a.f(new o(0, Arrays.asList(new n6.j(24336, i10, 0, j10, currentTimeMillis, null, null, 0, -1)))).addOnFailureListener(new n(z8Var, elapsedRealtime2, 10));
         }
     }
 }

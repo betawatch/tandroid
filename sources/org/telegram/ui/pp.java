@@ -1,37 +1,50 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pp implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qp b;
-    public final /* synthetic */ String c;
+public final class pp extends org.telegram.ui.Components.y80 {
+    public final /* synthetic */ TLRPC.Chat w;
+    public final /* synthetic */ qp x;
 
-    public /* synthetic */ pp(qp qpVar, String str, int i10) {
-        this.a = i10;
-        this.b = qpVar;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pp(qp qpVar, Context context, TLRPC.Chat chat, TLRPC.Chat chat2) {
+        super(context, chat);
+        this.x = qpVar;
+        this.w = chat2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                qp qpVar = this.b;
-                String str = this.c;
-                qpVar.getClass();
-                AndroidUtilities.runOnUIThread(new pp(qpVar, str, 1));
-                break;
-            default:
-                qp qpVar2 = this.b;
-                String str2 = this.c;
-                qpVar2.f = null;
-                Utilities.searchQueue.postRunnable(new r1(qpVar2, str2, new ArrayList(qpVar2.h.v), 28));
-                break;
+    @Override // org.telegram.ui.Components.y80
+    public final boolean a(boolean z10, org.telegram.ui.Components.w80 w80Var) {
+        tp tpVar = this.x.d;
+        if (tpVar.P) {
+            return false;
+        }
+        tpVar.P = true;
+        e(new oh(19, this, w80Var), new ai.s4(this, this.w, z10, w80Var, 16));
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.y80
+    public final boolean b(boolean z10, org.telegram.ui.Components.x80 x80Var) {
+        tp tpVar = this.x.d;
+        if (tpVar.O) {
+            return false;
+        }
+        tpVar.O = true;
+        e(new oh(19, this, x80Var), new ai.s4(this, this.w, z10, x80Var, 15));
+        return true;
+    }
+
+    public final void e(oh ohVar, Runnable runnable) {
+        tp tpVar = this.x.d;
+        if (ChatObject.isChannel(tpVar.f)) {
+            runnable.run();
+        } else {
+            tpVar.getMessagesController().convertToMegaGroup(tpVar.getParentActivity(), this.w.id, tpVar, new o(19, this, runnable), ohVar);
         }
     }
 }

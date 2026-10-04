@@ -12,9 +12,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
-import u2.o1;
+import u2.l0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class u extends BaseController {
     public static volatile u[] a = new u[4];
@@ -75,7 +75,7 @@ public final class u extends BaseController {
         }
         TLRPC.MessageReplyHeader messageReplyHeader = ephemeralMessage.reply_to;
         if (messageReplyHeader != null) {
-            TLRPC.MessageReplyHeader messageReplyHeader2 = (TLRPC.MessageReplyHeader) TLObject.deepCopy(messageReplyHeader, new o1(19));
+            TLRPC.MessageReplyHeader messageReplyHeader2 = (TLRPC.MessageReplyHeader) TLObject.deepCopy(messageReplyHeader, new l0(21));
             tL_message.reply_to = messageReplyHeader2;
             if (ephemeralMessage.reply_to.reply_to_ephemeral && (i11 = messageReplyHeader2.reply_to_msg_id) != 0) {
                 messageReplyHeader2.reply_to_msg_id = MessageObject.ephemeralMessageIdPack(i11);

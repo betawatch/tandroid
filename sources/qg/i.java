@@ -9,11 +9,11 @@ import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.uk0;
-import v7.a7;
+import v7.z6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class i extends FrameLayout {
     public final Paint a;
@@ -34,7 +34,7 @@ public abstract class i extends FrameLayout {
         this.b = paint2;
         Paint paint3 = new Paint(1);
         this.c = paint3;
-        this.e = new e6(this, 0L, 250L, sr.h);
+        this.e = new e6(this, 0L, 250L, tr.h);
         this.f = true;
         setWillNotDraw(false);
         paint.setColor(-1);
@@ -90,11 +90,11 @@ public abstract class i extends FrameLayout {
         float[] fArr = jVar.g0;
         float[] fArr2 = jVar.f0;
         float[] fArr3 = jVar.e0;
-        hVar2.u(rawX, rawY, fArr3);
+        hVar2.v(rawX, rawY, fArr3);
         boolean z11 = motionEvent.getPointerCount() > 1 && this.d == 3;
         if (z11) {
             if (Build.VERSION.SDK_INT >= 29) {
-                jVar.F.u(motionEvent.getRawX(1), motionEvent.getRawY(1), fArr2);
+                jVar.F.v(motionEvent.getRawX(1), motionEvent.getRawY(1), fArr2);
             } else {
                 z11 = false;
             }
@@ -135,23 +135,23 @@ public abstract class i extends FrameLayout {
                         float f14 = f10 - jVar.c;
                         if (jVar.s || Math.abs(f13) > AndroidUtilities.dp(2.0f) || Math.abs(f14) > AndroidUtilities.dp(2.0f)) {
                             if (!jVar.s && (hVar = jVar.F) != null) {
-                                hVar.w();
+                                hVar.x();
                             }
                             jVar.s = true;
                             AndroidUtilities.cancelRunOnUIThread(eVar);
-                            int[] C = jVar.F.C(jVar);
-                            float a2 = a7.a(C[0], C[1], jVar.b, jVar.c);
-                            float a10 = a7.a(C[0], C[1], f7, f10);
+                            int[] D = jVar.F.D(jVar);
+                            float a2 = z6.a(D[0], D[1], jVar.b, jVar.c);
+                            float a10 = z6.a(D[0], D[1], f7, f10);
                             float f15 = 0.0f;
                             if (a2 > 0.0f) {
                                 jVar.j(a10 / a2);
                             }
                             int i11 = this.d;
                             if (i11 == 1) {
-                                atan2 = Math.atan2(C[1] - f10, C[0] - f7);
+                                atan2 = Math.atan2(D[1] - f10, D[0] - f7);
                             } else {
                                 if (i11 == 2) {
-                                    atan2 = Math.atan2(f10 - C[1], f7 - C[0]);
+                                    atan2 = Math.atan2(f10 - D[1], f7 - D[0]);
                                 }
                                 jVar.f((float) Math.toDegrees(f15));
                                 jVar.b = f7;
@@ -185,7 +185,7 @@ public abstract class i extends FrameLayout {
                 if (getParent() instanceof d) {
                     ((d) getParent()).invalidate();
                 }
-                if (a11 == 3 && (jVar instanceof b2)) {
+                if (a11 == 3 && (jVar instanceof a2)) {
                     AndroidUtilities.runOnUIThread(eVar, ViewConfiguration.getLongPressTimeout());
                 }
                 z10 = true;

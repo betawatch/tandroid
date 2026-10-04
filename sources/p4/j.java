@@ -7,7 +7,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j extends MediaRouter2.TransferCallback {
     public final /* synthetic */ k a;
@@ -53,7 +53,7 @@ public final class j extends MediaRouter2.TransferCallback {
             return;
         }
         int i10 = 0;
-        String id2 = org.webrtc.audio.b.e(selectedRoutes.get(0)).getId();
+        String id2 = org.telegram.ui.web.w.e(selectedRoutes.get(0)).getId();
         this.a.v.put(routingController2, new g(this.a, routingController2, id2));
         e eVar2 = (e) this.a.s.b;
         ArrayList arrayList = eVar2.j;

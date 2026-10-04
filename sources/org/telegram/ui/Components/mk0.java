@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.graphics.Paint;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class mk0 extends s4.s0 {
     public boolean a;
@@ -19,7 +19,7 @@ public final class mk0 extends s4.s0 {
 
     public static ValueAnimator c(float f7, float f10, q0.a aVar, Runnable runnable) {
         ValueAnimator duration = ValueAnimator.ofFloat(f7, f10).setDuration((long) (Math.abs(f10 - f7) * 150.0f));
-        duration.addUpdateListener(new u70(aVar, 8));
+        duration.addUpdateListener(new v70(aVar, 8));
         duration.addListener(new org.telegram.ui.r0(1, runnable));
         duration.start();
         return duration;

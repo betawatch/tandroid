@@ -12,9 +12,9 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class v0 extends View {
     public final Paint a;
@@ -59,13 +59,13 @@ public final class v0 extends View {
 
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        float e = this.r.e(this.n);
-        if (e <= 0.0f) {
+        float e7 = this.r.e(this.n);
+        if (e7 <= 0.0f) {
             return;
         }
         canvas.save();
-        canvas.translate(0.0f, (this.n ? sr.k.getInterpolation(e) : 1.0f) * AndroidUtilities.dp(12.0f));
-        float interpolation = sr.h.getInterpolation(e);
+        canvas.translate(0.0f, (this.n ? tr.k.getInterpolation(e7) : 1.0f) * AndroidUtilities.dp(12.0f));
+        float interpolation = tr.h.getInterpolation(e7);
         float measuredWidth = getMeasuredWidth();
         float measuredHeight = getMeasuredHeight();
         float dp = AndroidUtilities.dp(22.0f) + this.d;

@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import androidx.car.app.j;
 import n6.l;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a {
     public final s7.h a;
@@ -29,8 +29,8 @@ public final class a {
             boolean z10 = N0.readInt() != 0;
             N0.recycle();
             return z10;
-        } catch (RemoteException e) {
-            throw new j(e);
+        } catch (RemoteException e7) {
+            throw new j(e7);
         }
     }
 
@@ -41,8 +41,8 @@ public final class a {
             int readInt = N0.readInt();
             N0.recycle();
             return readInt;
-        } catch (RemoteException e) {
-            throw new j(e);
+        } catch (RemoteException e7) {
+            throw new j(e7);
         }
     }
 }

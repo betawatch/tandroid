@@ -1,52 +1,70 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import android.webkit.WebView;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ln0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ oo0 b;
+    public final /* synthetic */ so0 b;
+    public final /* synthetic */ TLObject c;
 
-    public /* synthetic */ ln0(oo0 oo0Var, int i10) {
+    public /* synthetic */ ln0(so0 so0Var, TLObject tLObject, int i10) {
         this.a = i10;
-        this.b = oo0Var;
+        this.b = so0Var;
+        this.c = tLObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                oo0 oo0Var = this.b;
-                oo0Var.f[0].requestFocus();
-                AndroidUtilities.showKeyboard(oo0Var.f[0]);
+                so0.e0(this.b, this.c);
                 break;
             case 1:
-                this.b.t0();
-                break;
-            case 2:
-                oo0 oo0Var2 = this.b;
-                oo0Var2.getMessagesController().newMessageCallback = null;
-                if (oo0Var2.f1 == 3 && !oo0Var2.isFinishing()) {
-                    oo0Var2.f1 = 4;
-                    no0 no0Var = oo0Var2.Z0;
-                    if (no0Var != null) {
-                        no0Var.a(4);
-                    }
-                    oo0Var2.finishFragment();
-                    break;
-                } else if (oo0Var2.f1 == 1 && !oo0Var2.isFinishing()) {
-                    oo0Var2.finishFragment();
+                so0 so0Var = this.b;
+                Utilities.Callback callback = so0Var.d1;
+                TLObject tLObject = this.c;
+                if (callback != null) {
+                    callback.run((TLRPC.TL_payments_paymentVerificationNeeded) tLObject);
+                }
+                so0Var.D0(false);
+                so0Var.z0 = true;
+                so0Var.H0(true, true);
+                org.telegram.ui.Components.wq wqVar = so0Var.r;
+                if (wqVar != null) {
+                    wqVar.setVisibility(0);
+                }
+                org.telegram.ui.ActionBar.v0 v0Var = so0Var.n;
+                if (v0Var != null) {
+                    v0Var.setEnabled(false);
+                    so0Var.n.getContentView().setVisibility(4);
+                }
+                org.telegram.ui.ActionBar.c5 parentLayout = so0Var.getParentLayout();
+                Activity parentActivity = so0Var.getParentActivity();
+                so0Var.getMessagesController().newMessageCallback = new c7(so0Var, parentLayout, parentActivity, 17);
+                WebView webView = so0Var.w;
+                if (webView != null) {
+                    webView.setVisibility(0);
+                    WebView webView2 = so0Var.w;
+                    String str = ((TLRPC.TL_payments_paymentVerificationNeeded) tLObject).url;
+                    so0Var.x = str;
+                    webView2.loadUrl(str);
+                }
+                so0Var.a1 = true;
+                so0Var.f1 = 3;
+                ro0 ro0Var = so0Var.Z0;
+                if (ro0Var != null) {
+                    ro0Var.a(3);
                     break;
                 }
                 break;
             default:
-                oo0 oo0Var3 = this.b;
-                if (oo0Var3.d0 != null) {
-                    oo0Var3.w0();
-                    oo0Var3.d0 = null;
-                    break;
-                }
+                so0.c0(this.b, this.c);
                 break;
         }
     }

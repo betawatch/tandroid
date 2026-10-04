@@ -2,20 +2,20 @@ package ci;
 
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.fw;
+import org.telegram.ui.Components.gw;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class c2 extends fw {
+public final class c2 extends gw {
     public final /* synthetic */ e2 g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public c2(e2 e2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, d6Var, false, false, false, true, 0, null, org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.v6, d6Var), false);
+        super(context, d6Var, false, false, false, true, 0, null, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v6, d6Var), false);
         this.g0 = e2Var;
     }
 
-    @Override // org.telegram.ui.Components.fw
+    @Override // org.telegram.ui.Components.gw
     public final boolean h(int i10) {
         int i11;
         int paddingTop;
@@ -30,10 +30,10 @@ public final class c2 extends fw {
         }
         if (l2Var != null && (k2Var = l2Var.f) != null) {
             if (k2Var.getSelectedCategory() != null) {
-                p1.w1(p1Var, 0, 0);
-                l2Var.f.F1(null);
+                p1.y1(p1Var, 0, 0);
+                l2Var.f.H1(null);
             }
-            l2Var.f.D1();
+            l2Var.f.F1();
             l2Var.b();
         }
         if (d2Var != null) {
@@ -59,7 +59,7 @@ public final class c2 extends fw {
                 e2Var.n = f7;
                 paddingTop = p1Var.getPaddingTop();
             }
-            p1.w1(p1Var, i11, ((int) (f7 + paddingTop)) - AndroidUtilities.dp(102.0f));
+            p1.y1(p1Var, i11, ((int) (f7 + paddingTop)) - AndroidUtilities.dp(102.0f));
         }
         return true;
     }

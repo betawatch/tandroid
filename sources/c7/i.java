@@ -6,7 +6,7 @@ import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class i extends l {
     public static final Parcelable.Creator<i> CREATOR = new r0(15);
@@ -45,8 +45,8 @@ public final class i extends l {
             }
             jSONObject.put("userHandle", u6.b.c(s0Var == null ? null : s0Var.u()));
             return jSONObject;
-        } catch (JSONException e) {
-            throw new RuntimeException("Error encoding AuthenticatorAssertionResponse to JSON object", e);
+        } catch (JSONException e7) {
+            throw new RuntimeException("Error encoding AuthenticatorAssertionResponse to JSON object", e7);
         }
     }
 
@@ -83,13 +83,13 @@ public final class i extends l {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.c(parcel, 2, this.a.u());
-        w7.f0.c(parcel, 3, this.b.u());
-        w7.f0.c(parcel, 4, this.c.u());
-        w7.f0.c(parcel, 5, this.d.u());
+        int q6 = w7.g0.q(parcel, 20293);
+        w7.g0.c(parcel, 2, this.a.u());
+        w7.g0.c(parcel, 3, this.b.u());
+        w7.g0.c(parcel, 4, this.c.u());
+        w7.g0.c(parcel, 5, this.d.u());
         n7.s0 s0Var = this.e;
-        w7.f0.c(parcel, 6, s0Var == null ? null : s0Var.u());
-        w7.f0.r(parcel, q6);
+        w7.g0.c(parcel, 6, s0Var == null ? null : s0Var.u());
+        w7.g0.r(parcel, q6);
     }
 }

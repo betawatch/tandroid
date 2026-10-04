@@ -20,7 +20,7 @@ import java.util.LinkedList;
 import java.util.Set;
 import m.p3;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class p0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final com.google.android.gms.common.api.c b;
@@ -54,7 +54,7 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
             ((n6.g) a10).N = str3;
         }
         if (str3 != null && (a10 instanceof q)) {
-            a4.a.z(a10);
+            a4.a.y(a10);
             throw null;
         }
         this.b = a10;
@@ -318,11 +318,11 @@ public final class p0 implements com.google.android.gms.common.api.k, com.google
             }
             try {
                 cVar.e(s0Var);
-            } catch (SecurityException e) {
-                m(new k6.a(10), e);
+            } catch (SecurityException e7) {
+                m(new k6.a(10), e7);
             }
-        } catch (IllegalStateException e7) {
-            m(new k6.a(10), e7);
+        } catch (IllegalStateException e10) {
+            m(new k6.a(10), e10);
         }
     }
 

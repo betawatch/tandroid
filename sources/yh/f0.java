@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class f0 {
     public final long a;
@@ -17,7 +17,7 @@ public final class f0 {
     public final long c;
     public final int d;
     public final String e;
-    public i8 f;
+    public j8 f;
     public int g = -1;
     public RadialGradient h;
     public Paint i;
@@ -36,7 +36,7 @@ public final class f0 {
         this.c = document == null ? 0L : document.id;
         this.d = ((TL_stars.starGiftAttributeBackdrop) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class)).center_color | (-16777216);
         this.e = tL_starGiftUnique.slug;
-        this.f = new i8(1, 6);
+        this.f = new j8(1, 6);
         float dp = AndroidUtilities.dp(36.0f);
         float f7 = (-dp) / 2.0f;
         float f10 = dp / 2.0f;

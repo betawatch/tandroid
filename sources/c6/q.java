@@ -14,9 +14,10 @@ import java.util.regex.Pattern;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import v7.x7;
+import v7.w7;
+import w7.g0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class q extends o6.a {
     public static final Parcelable.Creator<q> CREATOR;
@@ -430,9 +431,9 @@ public final class q extends o6.a {
                                 optLong *= 1000;
                             }
                             cVar = new c(j142, j152, a102, a112, optLong);
-                        } catch (JSONException e) {
+                        } catch (JSONException e7) {
                             g6.b bVar3 = c.f;
-                            Log.e(bVar3.a, bVar3.d("Error while creating an AdBreakClipInfo from JSON", new Object[0]), e);
+                            Log.e(bVar3.a, bVar3.d("Error while creating an AdBreakClipInfo from JSON", new Object[0]), e7);
                         }
                         cVar2 = this.I;
                         if ((cVar2 == null && cVar != null) || (cVar2 != null && !cVar2.equals(cVar))) {
@@ -473,8 +474,8 @@ public final class q extends o6.a {
                                         bVar22.b("Unknown HDR type: %s", string3);
                                         i15 = 0;
                                         uVar = new u(optJSONObject2.getInt("width"), optJSONObject2.getInt("height"), i15);
-                                    } catch (JSONException e7) {
-                                        e = e7;
+                                    } catch (JSONException e10) {
+                                        e = e10;
                                         bVar22.a(e, "Error while creating a VideoInfo instance from JSON", new Object[0]);
                                         uVar = null;
                                         uVar2 = this.J;
@@ -500,8 +501,8 @@ public final class q extends o6.a {
                                     i15 = 0;
                                     uVar = new u(optJSONObject2.getInt("width"), optJSONObject2.getInt("height"), i15);
                                 }
-                            } catch (JSONException e10) {
-                                e = e10;
+                            } catch (JSONException e11) {
+                                e = e11;
                             }
                         }
                         uVar2 = this.J;
@@ -678,7 +679,7 @@ public final class q extends o6.a {
                                     i19 = i18;
                                     mVar = null;
                                 }
-                                Integer a15 = x7.a(jSONObject5.optString("repeatMode"));
+                                Integer a15 = w7.a(jSONObject5.optString("repeatMode"));
                                 int intValue = a15 != null ? a15.intValue() : 0;
                                 JSONArray optJSONArray3 = jSONObject5.optJSONArray("items");
                                 if (optJSONArray3 != null) {
@@ -811,7 +812,7 @@ public final class q extends o6.a {
                 }
             }
             if (jSONObject2.has("repeatMode")) {
-                Integer a16 = x7.a(jSONObject2.getString("repeatMode"));
+                Integer a16 = w7.a(jSONObject2.getString("repeatMode"));
                 int intValue2 = a16 == null ? this.F : a16.intValue();
                 if (this.F != intValue2) {
                     this.F = intValue2;
@@ -836,9 +837,9 @@ public final class q extends o6.a {
                             } else if (num.intValue() != this.c || (mediaInfo = this.a) == null) {
                                 arrayList7.add(new o(jSONObject6));
                             } else {
-                                o n02 = new a4.m(mediaInfo).n0();
-                                n02.b(jSONObject6);
-                                arrayList7.add(n02);
+                                o y02 = new a4.m(mediaInfo).y0();
+                                y02.b(jSONObject6);
+                                arrayList7.add(y02);
                             }
                             z10 = true;
                         }
@@ -1038,54 +1039,54 @@ public final class q extends o6.a {
     public final void writeToParcel(Parcel parcel, int i10) {
         JSONObject jSONObject = this.E;
         this.y = jSONObject == null ? null : jSONObject.toString();
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.k(parcel, 2, this.a, i10);
+        int q6 = g0.q(parcel, 20293);
+        g0.k(parcel, 2, this.a, i10);
         long j3 = this.b;
-        w7.f0.s(parcel, 3, 8);
+        g0.s(parcel, 3, 8);
         parcel.writeLong(j3);
         int i11 = this.c;
-        w7.f0.s(parcel, 4, 4);
+        g0.s(parcel, 4, 4);
         parcel.writeInt(i11);
         double d = this.d;
-        w7.f0.s(parcel, 5, 8);
+        g0.s(parcel, 5, 8);
         parcel.writeDouble(d);
         int i12 = this.e;
-        w7.f0.s(parcel, 6, 4);
+        g0.s(parcel, 6, 4);
         parcel.writeInt(i12);
         int i13 = this.f;
-        w7.f0.s(parcel, 7, 4);
+        g0.s(parcel, 7, 4);
         parcel.writeInt(i13);
         long j10 = this.h;
-        w7.f0.s(parcel, 8, 8);
+        g0.s(parcel, 8, 8);
         parcel.writeLong(j10);
         long j11 = this.n;
-        w7.f0.s(parcel, 9, 8);
+        g0.s(parcel, 9, 8);
         parcel.writeLong(j11);
         double d10 = this.r;
-        w7.f0.s(parcel, 10, 8);
+        g0.s(parcel, 10, 8);
         parcel.writeDouble(d10);
         boolean z10 = this.s;
-        w7.f0.s(parcel, 11, 4);
+        g0.s(parcel, 11, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        w7.f0.j(parcel, 12, this.v);
+        g0.j(parcel, 12, this.v);
         int i14 = this.w;
-        w7.f0.s(parcel, 13, 4);
+        g0.s(parcel, 13, 4);
         parcel.writeInt(i14);
         int i15 = this.x;
-        w7.f0.s(parcel, 14, 4);
+        g0.s(parcel, 14, 4);
         parcel.writeInt(i15);
-        w7.f0.l(parcel, 15, this.y);
+        g0.l(parcel, 15, this.y);
         int i16 = this.F;
-        w7.f0.s(parcel, 16, 4);
+        g0.s(parcel, 16, 4);
         parcel.writeInt(i16);
-        w7.f0.p(parcel, 17, this.G);
+        g0.p(parcel, 17, this.G);
         boolean z11 = this.H;
-        w7.f0.s(parcel, 18, 4);
+        g0.s(parcel, 18, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        w7.f0.k(parcel, 19, this.I, i10);
-        w7.f0.k(parcel, 20, this.J, i10);
-        w7.f0.k(parcel, 21, this.K, i10);
-        w7.f0.k(parcel, 22, this.L, i10);
-        w7.f0.r(parcel, q6);
+        g0.k(parcel, 19, this.I, i10);
+        g0.k(parcel, 20, this.J, i10);
+        g0.k(parcel, 21, this.K, i10);
+        g0.k(parcel, 22, this.L, i10);
+        g0.r(parcel, q6);
     }
 }

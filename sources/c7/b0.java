@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b0 extends o6.a {
     public static final Parcelable.Creator<b0> CREATOR = new r0(0);
@@ -36,21 +36,21 @@ public final class b0 extends o6.a {
     }
 
     public final String toString() {
-        StringBuilder w10 = a4.a.w("PublicKeyCredentialUserEntity{\n id=", u6.b.c(this.a.u()), ", \n name='");
-        w10.append(this.b);
-        w10.append("', \n icon='");
-        w10.append(this.c);
-        w10.append("', \n displayName='");
-        return a4.a.t(w10, this.d, "'}");
+        StringBuilder v = a4.a.v("PublicKeyCredentialUserEntity{\n id=", u6.b.c(this.a.u()), ", \n name='");
+        v.append(this.b);
+        v.append("', \n icon='");
+        v.append(this.c);
+        v.append("', \n displayName='");
+        return a4.a.s(v, this.d, "'}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.c(parcel, 2, this.a.u());
-        w7.f0.l(parcel, 3, this.b);
-        w7.f0.l(parcel, 4, this.c);
-        w7.f0.l(parcel, 5, this.d);
-        w7.f0.r(parcel, q6);
+        int q6 = w7.g0.q(parcel, 20293);
+        w7.g0.c(parcel, 2, this.a.u());
+        w7.g0.l(parcel, 3, this.b);
+        w7.g0.l(parcel, 4, this.c);
+        w7.g0.l(parcel, 5, this.d);
+        w7.g0.r(parcel, q6);
     }
 }

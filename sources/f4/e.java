@@ -23,15 +23,14 @@ import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
-import v7.j;
-import v7.s6;
-import w7.d9;
-import z3.l;
+import v7.r6;
+import w7.g9;
 import z3.m;
+import z3.n;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class e implements m {
+public final class e implements n {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
     public static final Pattern c = Pattern.compile("^([0-9]+(?:\\.[0-9]+)?)(h|m|s|ms|f|t)$");
     public static final Pattern d = Pattern.compile("^(([0-9]*.)?[0-9]+)(px|em|%)$");
@@ -100,13 +99,13 @@ public final class e implements m {
             matcher = pattern.matcher(str);
         } else {
             if (split.length != 2) {
-                throw new z3.f(a4.a.o(split.length, ".", new StringBuilder("Invalid number of entries for fontSize: ")));
+                throw new z3.f(a4.a.n(split.length, ".", new StringBuilder("Invalid number of entries for fontSize: ")));
             }
             matcher = pattern.matcher(split[1]);
             e2.a.n("TtmlParser", "Multiple values in fontSize attribute. Picking the second value for vertical font size and ignoring the first.");
         }
         if (!matcher.matches()) {
-            throw new z3.f(a4.a.q("Invalid expression for fontSize: '", str, "'."));
+            throw new z3.f(a4.a.p("Invalid expression for fontSize: '", str, "'."));
         }
         group = matcher.group(3);
         group.getClass();
@@ -121,7 +120,7 @@ public final class e implements m {
                 gVar.j = 1;
                 break;
             default:
-                throw new z3.f(a4.a.q("Invalid unit for fontSize: '", group, "'."));
+                throw new z3.f(a4.a.p("Invalid unit for fontSize: '", group, "'."));
         }
         String group2 = matcher.group(1);
         group2.getClass();
@@ -184,7 +183,7 @@ public final class e implements m {
             xmlPullParser.next();
             if (e2.d.m(xmlPullParser, "style")) {
                 String k14 = e2.d.k(xmlPullParser, "style");
-                g h10 = h(xmlPullParser, new g());
+                g i13 = i(xmlPullParser, new g());
                 if (k14 != null) {
                     String trim = k14.trim();
                     if (trim.isEmpty()) {
@@ -194,12 +193,12 @@ public final class e implements m {
                         split = trim.split("\\s+", -1);
                     }
                     for (String str2 : split) {
-                        h10.a((g) hashMap.get(str2));
+                        i13.a((g) hashMap.get(str2));
                     }
                 }
-                String str3 = h10.l;
+                String str3 = i13.l;
                 if (str3 != null) {
-                    hashMap.put(str3, h10);
+                    hashMap.put(str3, i13);
                 }
             } else if (e2.d.m(xmlPullParser, "region")) {
                 String k15 = e2.d.k(xmlPullParser, "id");
@@ -290,7 +289,7 @@ public final class e implements m {
                     }
                     String k18 = e2.d.k(xmlPullParser, "displayAlign");
                     if (k18 != null) {
-                        String b10 = s6.b(k18);
+                        String b10 = r6.b(k18);
                         b10.getClass();
                         if (b10.equals("center")) {
                             f14 = f10 + (f13 / 2.0f);
@@ -302,7 +301,7 @@ public final class e implements m {
                         float f17 = 1.0f / i10;
                         k11 = e2.d.k(xmlPullParser, "writingMode");
                         if (k11 != null) {
-                            String b11 = s6.b(k11);
+                            String b11 = r6.b(k11);
                             b11.getClass();
                             switch (b11.hashCode()) {
                                 case 3694:
@@ -381,15 +380,15 @@ public final class e implements m {
         String[] split;
         int attributeCount = xmlPullParser.getAttributeCount();
         String[] strArr = null;
-        g h10 = h(xmlPullParser, null);
+        g i10 = i(xmlPullParser, null);
         String str = null;
         String str2 = "";
         long j10 = -9223372036854775807L;
         long j11 = -9223372036854775807L;
         long j12 = -9223372036854775807L;
-        for (int i10 = 0; i10 < attributeCount; i10++) {
-            String attributeName = xmlPullParser.getAttributeName(i10);
-            String attributeValue = xmlPullParser.getAttributeValue(i10);
+        for (int i11 = 0; i11 < attributeCount; i11++) {
+            String attributeName = xmlPullParser.getAttributeName(i11);
+            String attributeValue = xmlPullParser.getAttributeValue(i11);
             attributeName.getClass();
             switch (attributeName.hashCode()) {
                 case -934795532:
@@ -447,13 +446,13 @@ public final class e implements m {
                         continue;
                     }
                 case 1:
-                    j12 = i(attributeValue, dVar);
+                    j12 = j(attributeValue, dVar);
                     break;
                 case 2:
-                    j11 = i(attributeValue, dVar);
+                    j11 = j(attributeValue, dVar);
                     break;
                 case 3:
-                    j10 = i(attributeValue, dVar);
+                    j10 = j(attributeValue, dVar);
                     break;
                 case 4:
                     String trim = attributeValue.trim();
@@ -494,23 +493,23 @@ public final class e implements m {
                 long j14 = cVar.e;
                 if (j14 != -9223372036854775807L) {
                     j3 = j14;
-                    return new c(xmlPullParser.getName(), null, j10, j3, h10, strArr, str2, str, cVar);
+                    return new c(xmlPullParser.getName(), null, j10, j3, i10, strArr, str2, str, cVar);
                 }
             }
         }
         j3 = j11;
-        return new c(xmlPullParser.getName(), null, j10, j3, h10, strArr, str2, str, cVar);
+        return new c(xmlPullParser.getName(), null, j10, j3, i10, strArr, str2, str, cVar);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x02d1  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x02d0  */
     /* JADX WARN: Removed duplicated region for block: B:73:0x022a  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x025a  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x02b1  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x02b0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static g h(XmlPullParser xmlPullParser, g gVar) {
+    public static g i(XmlPullParser xmlPullParser, g gVar) {
         char c10;
         char c11;
         char c12;
@@ -669,7 +668,7 @@ public final class e implements m {
                     break;
                 case 3:
                     gVar2 = a(gVar2);
-                    String b10 = s6.b(attributeValue);
+                    String b10 = r6.b(attributeValue);
                     b10.getClass();
                     switch (b10.hashCode()) {
                         case -1364013995:
@@ -731,7 +730,7 @@ public final class e implements m {
                     gVar2.t = attributeValue;
                     break;
                 case 5:
-                    String b11 = s6.b(attributeValue);
+                    String b11 = r6.b(attributeValue);
                     b11.getClass();
                     switch (b11.hashCode()) {
                         case -1461280213:
@@ -797,7 +796,7 @@ public final class e implements m {
                         break;
                     }
                 case '\b':
-                    String b12 = s6.b(attributeValue);
+                    String b12 = r6.b(attributeValue);
                     b12.getClass();
                     switch (b12.hashCode()) {
                         case -618561360:
@@ -895,7 +894,7 @@ public final class e implements m {
                     gVar2 = a2;
                     break;
                 case 11:
-                    String b13 = s6.b(attributeValue);
+                    String b13 = r6.b(attributeValue);
                     b13.getClass();
                     if (b13.equals("all")) {
                         gVar2 = a(gVar2);
@@ -921,7 +920,7 @@ public final class e implements m {
                     gVar2 = a(gVar2);
                     Pattern pattern = b.d;
                     if (attributeValue != null) {
-                        String b14 = s6.b(attributeValue.trim());
+                        String b14 = r6.b(attributeValue.trim());
                         if (!b14.isEmpty()) {
                             String[] split = TextUtils.split(b14, b.d);
                             int length = split.length;
@@ -1004,7 +1003,7 @@ public final class e implements m {
                     gVar2.r = bVar;
                     break;
                 case 14:
-                    String b15 = s6.b(attributeValue);
+                    String b15 = r6.b(attributeValue);
                     b15.getClass();
                     if (b15.equals("before")) {
                         gVar2 = a(gVar2);
@@ -1029,7 +1028,7 @@ public final class e implements m {
                     }
                 case 16:
                     gVar2 = a(gVar2);
-                    String b16 = s6.b(attributeValue);
+                    String b16 = r6.b(attributeValue);
                     b16.getClass();
                     switch (b16.hashCode()) {
                         case -1364013995:
@@ -1099,7 +1098,7 @@ public final class e implements m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static long i(String str, d dVar) {
+    public static long j(String str, d dVar) {
         double d10;
         double d11;
         Matcher matcher = b.matcher(str);
@@ -1117,7 +1116,7 @@ public final class e implements m {
         }
         Matcher matcher2 = c.matcher(str);
         if (!matcher2.matches()) {
-            throw new z3.f(j.g("Malformed time expression: ", str));
+            throw new z3.f(t8.b.i("Malformed time expression: ", str));
         }
         String group3 = matcher2.group(1);
         group3.getClass();
@@ -1183,7 +1182,7 @@ public final class e implements m {
         return (long) (parseDouble * 1000000.0d);
     }
 
-    public static q0 j(XmlPullParser xmlPullParser) {
+    public static q0 k(XmlPullParser xmlPullParser) {
         String k10 = e2.d.k(xmlPullParser, "extent");
         if (k10 == null) {
             return null;
@@ -1206,18 +1205,18 @@ public final class e implements m {
         }
     }
 
-    @Override // z3.m
+    @Override // z3.n
     public final int A() {
         return 1;
     }
 
-    @Override // z3.m
-    public final void C(byte[] bArr, int i10, int i11, l lVar, h hVar) {
-        d9.b(r(i10, i11, bArr), lVar, hVar);
+    @Override // z3.n
+    public final void F(byte[] bArr, int i10, int i11, m mVar, h hVar) {
+        g9.b(h(i10, i11, bArr), mVar, hVar);
     }
 
-    @Override // z3.m
-    public final z3.d r(int i10, int i11, byte[] bArr) {
+    @Override // z3.n
+    public final z3.d h(int i10, int i11, byte[] bArr) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
             HashMap hashMap = new HashMap();
@@ -1239,7 +1238,7 @@ public final class e implements m {
                         if ("tt".equals(name)) {
                             dVar = e(newPullParser);
                             i12 = c(newPullParser);
-                            q0Var = j(newPullParser);
+                            q0Var = k(newPullParser);
                         }
                         d dVar2 = dVar;
                         q0 q0Var2 = q0Var;
@@ -1302,7 +1301,7 @@ public final class e implements m {
         }
     }
 
-    @Override // z3.m
+    @Override // z3.n
     public final /* synthetic */ void reset() {
     }
 }

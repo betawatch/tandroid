@@ -1,26 +1,88 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
-/* loaded from: classes3.dex */
-public final class li implements org.telegram.ui.Components.gh0 {
-    public boolean a = true;
-    public final /* synthetic */ org.telegram.ui.Components.sk0 b;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
 
-    public li(org.telegram.ui.Components.sk0 sk0Var) {
-        this.b = sk0Var;
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes3.dex */
+public final class li implements View.OnTouchListener {
+    public final /* synthetic */ int a;
+    public final int[] b;
+    public final /* synthetic */ Rect c;
+    public final /* synthetic */ Object d;
+
+    public li(h60 h60Var, Rect rect) {
+        this.a = 1;
+        this.d = h60Var;
+        this.c = rect;
+        this.b = new int[2];
     }
 
-    @Override // org.telegram.ui.Components.gh0
-    public final void a(float f7, float f10) {
-        org.telegram.ui.Components.sk0 sk0Var = this.b;
-        if (f7 == 0.0f && !this.a) {
-            sk0Var.r(false);
-            this.a = true;
-        } else if (f7 == 1.0f && this.a) {
-            sk0Var.setAlpha(1.0f - f10);
-            if (f10 == 1.0f) {
-                this.a = false;
-            }
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        i50 i50Var;
+        switch (this.a) {
+            case 0:
+                yn ynVar = (yn) this.d;
+                if (motionEvent.getActionMasked() != 0) {
+                    if (motionEvent.getActionMasked() == 4) {
+                        ynVar.A7(true);
+                        break;
+                    }
+                } else {
+                    org.telegram.ui.ActionBar.n1 n1Var = ynVar.O8;
+                    if (n1Var != null && n1Var.isShowing()) {
+                        View contentView = ynVar.O8.getContentView();
+                        int[] iArr = this.b;
+                        contentView.getLocationInWindow(iArr);
+                        int i10 = iArr[0];
+                        int i11 = iArr[1];
+                        int measuredWidth = contentView.getMeasuredWidth() + i10;
+                        int measuredHeight = contentView.getMeasuredHeight() + iArr[1];
+                        Rect rect = this.c;
+                        rect.set(i10, i11, measuredWidth, measuredHeight);
+                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                            ynVar.A7(true);
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                h60 h60Var = (h60) this.d;
+                if (motionEvent.getActionMasked() != 0) {
+                    if (motionEvent.getActionMasked() == 4 && (i50Var = h60Var.f3) != null && i50Var.isShowing()) {
+                        h60Var.f3.dismiss();
+                        break;
+                    }
+                } else {
+                    i50 i50Var2 = h60Var.f3;
+                    if (i50Var2 != null && i50Var2.isShowing()) {
+                        View contentView2 = h60Var.f3.getContentView();
+                        int[] iArr2 = this.b;
+                        contentView2.getLocationInWindow(iArr2);
+                        int i12 = iArr2[0];
+                        int i13 = iArr2[1];
+                        int measuredWidth2 = contentView2.getMeasuredWidth() + i12;
+                        int measuredHeight2 = contentView2.getMeasuredHeight() + iArr2[1];
+                        Rect rect2 = this.c;
+                        rect2.set(i12, i13, measuredWidth2, measuredHeight2);
+                        if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                            h60Var.f3.dismiss();
+                            break;
+                        }
+                    }
+                }
+                break;
         }
+        return false;
+    }
+
+    public li(yn ynVar, Rect rect) {
+        this.a = 0;
+        this.d = ynVar;
+        this.c = rect;
+        this.b = new int[2];
     }
 }

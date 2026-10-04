@@ -13,7 +13,7 @@ import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class eb extends FrameLayout {
     public int a;
@@ -44,11 +44,12 @@ public abstract class eb extends FrameLayout {
                 this.v = context.getResources().getDrawable(R.drawable.background_selected).mutate();
                 Paint paint2 = new Paint();
                 this.s = paint2;
-                paint2.setColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.Lh, false));
+                paint2.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Lh, false));
                 return;
             }
             db dbVar = new db(this, context);
             dbVarArr[i11] = dbVar;
+            dbVar.setClipToOutline(true);
             addView(dbVar);
             dbVar.setOnClickListener(new ua(this, dbVar, i11, 1));
             dbVar.setOnLongClickListener(new cb(this, dbVar, i11));
@@ -90,6 +91,8 @@ public abstract class eb extends FrameLayout {
     }
 
     public final void d(int i10, boolean z10, boolean z11) {
+        boolean z12;
+        boolean z13;
         this.d = i10;
         this.e = z10;
         this.f = z11;
@@ -99,9 +102,32 @@ public abstract class eb extends FrameLayout {
             if (i11 >= dbVarArr.length) {
                 return;
             }
+            yf.e0 e0Var = null;
+            if ((z10 || z11) && (i11 == 0 || i11 == i10 - 1)) {
+                db dbVar = dbVarArr[i11];
+                int dp = AndroidUtilities.dp(16.0f);
+                boolean z14 = i11 == 0;
+                boolean z15 = i11 == i10 + (-1);
+                ai.k2 k2Var = yf.f0.a;
+                if ((z14 || z15) && (z10 || z11)) {
+                    z12 = z10;
+                    z13 = z11;
+                    e0Var = new yf.e0(dp, z14, z12, z15, z13);
+                } else {
+                    z12 = z10;
+                    z13 = z11;
+                }
+                dbVar.setOutlineProvider(e0Var);
+            } else {
+                dbVarArr[i11].setOutlineProvider(null);
+                z12 = z10;
+                z13 = z11;
+            }
             dbVarArr[i11].setVisibility(i11 < i10 ? 0 : 8);
             dbVarArr[i11].clearAnimation();
             i11++;
+            z10 = z12;
+            z11 = z13;
         }
     }
 
@@ -131,14 +157,14 @@ public abstract class eb extends FrameLayout {
             super.onLayout(z10, i10, i11, i12, i13);
             return;
         }
-        int dp = AndroidUtilities.dp(14.0f);
-        int dp2 = this.e ? AndroidUtilities.dp(14.0f) : 0;
+        int dp = AndroidUtilities.dp(12.0f);
+        int dp2 = this.e ? AndroidUtilities.dp(12.0f) : 0;
         for (int i14 = 0; i14 < this.d; i14++) {
             db[] dbVarArr = this.c;
             int measuredWidth = dbVarArr[i14].getMeasuredWidth();
             db dbVar = dbVarArr[i14];
             dbVar.layout(dp, dp2, dp + measuredWidth, dbVar.getMeasuredHeight() + dp2);
-            dp = org.telegram.messenger.f0.C(6.0f, measuredWidth, dp);
+            dp = org.telegram.messenger.f0.C(3.0f, measuredWidth, dp);
         }
     }
 
@@ -146,16 +172,16 @@ public abstract class eb extends FrameLayout {
     public final void onMeasure(int i10, int i11) {
         int i12 = 0;
         if (this.d == 1) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30), ok.C(6.0f, this.a, TLObject.FLAG_30));
-            setPadding(0, 0, 0, AndroidUtilities.dp(6.0f));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30), ok.B(3.0f, this.a, TLObject.FLAG_30));
+            setPadding(0, 0, 0, AndroidUtilities.dp(3.0f));
             return;
         }
         int size = View.MeasureSpec.getSize(i10);
-        int dp = size - AndroidUtilities.dp(hg.c.f(this.d, 1, 6, 28));
+        int dp = size - AndroidUtilities.dp(hg.k0.f(this.d, 1, 3, 24));
         int i13 = dp / this.d;
         int i14 = this.h;
         int dp2 = (i14 == 0 || i14 == 2 || i14 == 3) ? AndroidUtilities.dp(180.0f) : i13;
-        setMeasuredDimension(size, AndroidUtilities.dp(this.f ? 14.0f : 6.0f) + (this.e ? AndroidUtilities.dp(14.0f) : 0) + dp2);
+        setMeasuredDimension(size, AndroidUtilities.dp(this.f ? 12.0f : 3.0f) + (this.e ? AndroidUtilities.dp(12.0f) : 0) + dp2);
         while (true) {
             int i15 = this.d;
             if (i12 >= i15) {

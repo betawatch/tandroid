@@ -17,7 +17,7 @@ import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class h5 extends LinearLayout {
     public final org.telegram.ui.Components.w9 a;
@@ -40,23 +40,23 @@ public final class h5 extends LinearLayout {
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.a = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(14.0f));
-        addView(w9Var, w7.y5.k(8.0f, 4.0f, 0.0f, 0.0f, 28, 28));
+        addView(w9Var, w7.z5.k(8.0f, 4.0f, 0.0f, 0.0f, 28, 28));
         ai.p4 p4Var = new ai.p4(context, 6);
         this.b = p4Var;
-        p4Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));
+        p4Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, d6Var));
         p4Var.setTextSize(1, 15.0f);
         p4Var.setSingleLine(true);
         p4Var.setGravity(3);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         p4Var.setEllipsize(truncateAt);
-        addView(p4Var, w7.y5.t(-2, -2, 16, 12, 0, 0, 0));
+        addView(p4Var, w7.z5.t(-2, -2, 16, 12, 0, 0, 0));
         TextView textView = new TextView(context);
         this.c = textView;
-        ok.n(org.telegram.ui.ActionBar.h6.A6, d6Var, textView, 1, 15.0f);
+        ok.n(org.telegram.ui.ActionBar.i6.A6, d6Var, textView, 1, 15.0f);
         textView.setSingleLine(true);
         textView.setGravity(3);
         textView.setEllipsize(truncateAt);
-        addView(textView, w7.y5.t(-2, -2, 16, 12, 0, 8, 0));
+        addView(textView, w7.z5.t(-2, -2, 16, 12, 0, 8, 0));
     }
 
     public final void a() {
@@ -119,7 +119,7 @@ public final class h5 extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.h) {
-            canvas.drawLine(AndroidUtilities.dp(52.0f), getHeight() - 1, getWidth() - AndroidUtilities.dp(8.0f), getHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
+            canvas.drawLine(AndroidUtilities.dp(52.0f), getHeight() - 1, getWidth() - AndroidUtilities.dp(8.0f), getHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
         }
     }
 
@@ -213,10 +213,10 @@ public final class h5 extends LinearLayout {
             p4Var.setTextColor(-1);
             textView.setTextColor(-4473925);
         } else {
-            int i10 = org.telegram.ui.ActionBar.h6.G6;
+            int i10 = org.telegram.ui.ActionBar.i6.G6;
             org.telegram.ui.ActionBar.d6 d6Var = this.e;
-            p4Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(i10, d6Var));
-            textView.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.A6, d6Var));
+            p4Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(i10, d6Var));
+            textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.A6, d6Var));
         }
     }
 

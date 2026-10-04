@@ -5,17 +5,17 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class o7 implements to0 {
+public final class o7 implements xo0 {
     public final /* synthetic */ j8 a;
 
     public o7(j8 j8Var) {
         this.a = j8Var;
     }
 
-    @Override // org.telegram.ui.Components.to0
-    public final void X(float f7, boolean z10) {
+    @Override // org.telegram.ui.Components.xo0
+    public final void Y(float f7, boolean z10) {
         if (z10) {
             MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), f7);
         }
@@ -26,7 +26,7 @@ public final class o7 implements to0 {
         this.a.G0(playingMessageObject, false);
     }
 
-    @Override // org.telegram.ui.Components.to0
+    @Override // org.telegram.ui.Components.xo0
     public final CharSequence getContentDescription() {
         StringBuilder sb2 = new StringBuilder();
         j8 j8Var = this.a;
@@ -36,12 +36,12 @@ public final class o7 implements to0 {
         return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb2.toString(), LocaleController.formatPluralString("Minutes", j8Var.E0 / 60, new Object[0]) + ' ' + LocaleController.formatPluralString("Seconds", j8Var.E0 % 60, new Object[0]));
     }
 
-    @Override // org.telegram.ui.Components.to0
-    public final /* synthetic */ int m0() {
+    @Override // org.telegram.ui.Components.xo0
+    public final /* synthetic */ int p0() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.to0
+    @Override // org.telegram.ui.Components.xo0
     public final void B() {
     }
 }

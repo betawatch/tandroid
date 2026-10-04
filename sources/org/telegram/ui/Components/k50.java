@@ -1,36 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class k50 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ g50 b;
-    public final /* synthetic */ e60 c;
+public final class k50 extends s50 {
+    public final /* synthetic */ f60 d;
 
-    public k50(e60 e60Var, boolean[] zArr, g50 g50Var) {
-        this.c = e60Var;
-        this.a = zArr;
-        this.b = g50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k50(f60 f60Var, Context context) {
+        super(f60Var, context);
+        this.d = f60Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        if (floatValue > 0.5f) {
-            boolean[] zArr = this.a;
-            if (!zArr[0]) {
-                zArr[0] = true;
-                this.b.run();
-            }
-        }
-        if (floatValue >= 0.5f) {
-            floatValue -= 1.0f;
-        }
-        float f7 = floatValue * 180.0f;
-        e60 e60Var = this.c;
-        e60Var.h.setRotationY(f7);
-        e60Var.r0.setRotationY(f7);
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        super.setAlpha(f7);
+        this.d.invalidate();
+    }
+
+    @Override // android.view.View
+    public final void setRotationY(float f7) {
+        super.setRotationY(f7);
+        this.d.invalidate();
     }
 }

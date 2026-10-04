@@ -10,7 +10,7 @@ import org.webrtc.PeerConnection;
 import org.webrtc.audio.AudioDeviceModule;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public class PeerConnectionFactory {
     private static final String TAG = "PeerConnectionFactory";
@@ -28,7 +28,7 @@ public class PeerConnectionFactory {
     private volatile ThreadInfo signalingThread;
     private volatile ThreadInfo workerThread;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class Builder {
         private AudioDecoderFactoryFactory audioDecoderFactoryFactory;
         private AudioDeviceModule audioDeviceModule;
@@ -136,7 +136,7 @@ public class PeerConnectionFactory {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class InitializationOptions {
         final Context applicationContext;
         final boolean enableInternalTracer;
@@ -146,7 +146,7 @@ public class PeerConnectionFactory {
         final NativeLibraryLoader nativeLibraryLoader;
         final String nativeLibraryName;
 
-        /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+        /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
         public static class Builder {
             private final Context applicationContext;
             private boolean enableInternalTracer;
@@ -206,7 +206,7 @@ public class PeerConnectionFactory {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class Options {
         public static final int ADAPTER_TYPE_ANY = 32;
         public static final int ADAPTER_TYPE_CELLULAR = 4;
@@ -232,7 +232,7 @@ public class PeerConnectionFactory {
         }
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class ThreadInfo {
         final Thread thread;
         final int tid;

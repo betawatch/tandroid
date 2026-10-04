@@ -4,7 +4,7 @@ import android.util.Log;
 import com.google.firebase.components.ComponentRegistrar;
 import java.lang.reflect.InvocationTargetException;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements pa.b {
     public final /* synthetic */ int a;
@@ -29,14 +29,14 @@ public final /* synthetic */ class c implements pa.b {
                 } catch (ClassNotFoundException unused) {
                     Log.w("ComponentDiscovery", "Class " + str + " is not an found.");
                     return null;
-                } catch (IllegalAccessException e) {
-                    throw new m(a4.a.q("Could not instantiate ", str, "."), e);
-                } catch (InstantiationException e7) {
-                    throw new m(a4.a.q("Could not instantiate ", str, "."), e7);
-                } catch (NoSuchMethodException e10) {
-                    throw new m(v7.j.g("Could not instantiate ", str), e10);
-                } catch (InvocationTargetException e11) {
-                    throw new m(v7.j.g("Could not instantiate ", str), e11);
+                } catch (IllegalAccessException e7) {
+                    throw new m(a4.a.p("Could not instantiate ", str, "."), e7);
+                } catch (InstantiationException e10) {
+                    throw new m(a4.a.p("Could not instantiate ", str, "."), e10);
+                } catch (NoSuchMethodException e11) {
+                    throw new m(t8.b.i("Could not instantiate ", str), e11);
+                } catch (InvocationTargetException e12) {
+                    throw new m(t8.b.i("Could not instantiate ", str), e12);
                 }
             case 1:
                 return (ComponentRegistrar) this.b;

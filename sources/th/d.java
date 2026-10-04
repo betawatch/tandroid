@@ -4,11 +4,11 @@ import android.graphics.Canvas;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import s4.n0;
 import yf.y;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class d extends n0 {
     public final y a = new y(2);
@@ -24,12 +24,12 @@ public final class d extends n0 {
     public final void d(Canvas canvas, RecyclerView recyclerView) {
         f fVar = this.c;
         int max = Math.max(0, AndroidUtilities.dp(80.0f) + ((int) fVar.g0.getTranslationY()) + ((int) fVar.X.e));
-        int v02 = h6.v0(h6.h5, this.b);
+        int v02 = i6.v0(i6.h5, this.b);
         y yVar = this.a;
         yVar.b(v02);
         yVar.setBounds(0, max, recyclerView.getWidth(), AndroidUtilities.dp(8.0f) + max);
         yVar.draw(canvas);
-        fVar.Q();
-        fVar.R();
+        fVar.O();
+        fVar.P();
     }
 }

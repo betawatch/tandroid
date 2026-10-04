@@ -1,7 +1,6 @@
 package ie;
 
 import ee.t;
-import ee.v;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
@@ -9,7 +8,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import zd.l;
 import zd.m;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class i {
     public static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(i.class, Object.class, "head$volatile");
@@ -89,10 +88,10 @@ public class i {
                 int i10 = (int) (andIncrement % j.f);
                 while (!atomicReferenceArray.compareAndSet(i10, null, cVar)) {
                     if (atomicReferenceArray.get(i10) != null) {
-                        v vVar = j.b;
-                        v vVar2 = j.c;
-                        while (!atomicReferenceArray.compareAndSet(i10, vVar, vVar2)) {
-                            if (atomicReferenceArray.get(i10) != vVar) {
+                        com.google.android.gms.internal.clearcut.e eVar = j.b;
+                        com.google.android.gms.internal.clearcut.e eVar2 = j.c;
+                        while (!atomicReferenceArray.compareAndSet(i10, eVar, eVar2)) {
+                            if (atomicReferenceArray.get(i10) != eVar) {
                                 break;
                             }
                         }
@@ -172,13 +171,13 @@ public class i {
                     int i13 = 0;
                     while (true) {
                         if (i13 >= i12) {
-                            v vVar = j.b;
-                            v vVar2 = j.d;
+                            com.google.android.gms.internal.clearcut.e eVar = j.b;
+                            com.google.android.gms.internal.clearcut.e eVar2 = j.d;
                             while (true) {
-                                if (atomicReferenceArray.compareAndSet(i11, vVar, vVar2)) {
+                                if (atomicReferenceArray.compareAndSet(i11, eVar, eVar2)) {
                                     z11 = true;
                                     break;
-                                } else if (atomicReferenceArray.get(i11) != vVar) {
+                                } else if (atomicReferenceArray.get(i11) != eVar) {
                                     break;
                                 }
                             }
@@ -194,7 +193,7 @@ public class i {
                         throw new IllegalStateException(("unexpected: " + andSet).toString());
                     }
                     l lVar = (l) andSet;
-                    v b11 = lVar.b(this.a, gd.i.a);
+                    com.google.android.gms.internal.clearcut.e b11 = lVar.b(this.a, gd.i.a);
                     if (b11 != null) {
                         lVar.e(b11);
                     }

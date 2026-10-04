@@ -1,44 +1,31 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class z40 extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ org.telegram.ui.Components.tp t1;
-    public final /* synthetic */ d60 u1;
+public final class z40 implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ ChatObject.VideoParticipant a;
+    public final /* synthetic */ h60 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z40(d60 d60Var, LaunchActivity launchActivity, org.telegram.ui.Components.tp tpVar) {
-        super(launchActivity, null);
-        this.u1 = d60Var;
-        this.t1 = tpVar;
+    public z40(h60 h60Var, ChatObject.VideoParticipant videoParticipant) {
+        this.b = h60Var;
+        this.a = videoParticipant;
     }
 
-    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (getAdditionalSubtitleTextView().getVisibility() == 0) {
-            canvas.save();
-            canvas.translate(getSubtitleTextView().getLeft(), getSubtitleTextView().getY() - AndroidUtilities.dp(1.0f));
-            int alpha = (int) (getAdditionalSubtitleTextView().getAlpha() * 255.0f);
-            org.telegram.ui.Components.tp tpVar = this.t1;
-            tpVar.f = alpha;
-            tpVar.draw(canvas);
-            canvas.restore();
-            invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
         ViewGroup viewGroup;
-        if (getAlpha() != f7) {
-            super.setAlpha(f7);
-            viewGroup = ((org.telegram.ui.ActionBar.e3) this.u1).containerView;
-            viewGroup.invalidate();
-        }
+        h60 h60Var = this.b;
+        h60Var.Q.getViewTreeObserver().removeOnPreDrawListener(this);
+        h60Var.q2 = null;
+        h60Var.a2.j(this.a);
+        AndroidUtilities.updateVisibleRows(h60Var.m2);
+        viewGroup = ((org.telegram.ui.ActionBar.f3) h60Var).containerView;
+        viewGroup.requestLayout();
+        return false;
     }
 }

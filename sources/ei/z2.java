@@ -2,36 +2,89 @@ package ei;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.ActionBar.h6;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.KeyEvent;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.iu0;
+import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.v20;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class z2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ c2 c;
-    public final /* synthetic */ k3 d;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ KeyEvent.Callback d;
 
-    public z2(k3 k3Var, int i10, int i11, c2 c2Var) {
-        this.d = k3Var;
-        this.a = i10;
-        this.b = i11;
-        this.c = c2Var;
+    public /* synthetic */ z2(KeyEvent.Callback callback, int i10, int i11, int i12) {
+        this.a = i12;
+        this.d = callback;
+        this.b = i10;
+        this.c = i11;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        int d = i0.a.d(1.0f, this.a, this.b);
-        k3 k3Var = this.d;
-        k3Var.Q = d;
-        k3Var.h();
-        j3 j3Var = k3Var.e;
-        j3Var.invalidate();
-        h3 h3Var = k3Var.W;
-        h3Var.setBackgroundColor(k3Var.Q);
-        c2 c2Var = this.c;
-        c2Var.b(h3Var, 1.0f);
-        k3Var.a = c2Var.a(h6.Ii);
-        j3Var.invalidate();
+        int i10;
+        s4.h0 adapter;
+        switch (this.a) {
+            case 0:
+                l3 l3Var = (l3) this.d;
+                l3Var.R = i0.a.d(1.0f, this.b, this.c);
+                l3Var.h();
+                break;
+            case 1:
+                v20 v20Var = (v20) this.d;
+                v20Var.L = this.b;
+                v20Var.M = this.c;
+                v20Var.F.setColorFilter(new PorterDuffColorFilter(v20Var.L, PorterDuff.Mode.MULTIPLY));
+                v20Var.E.setColor(v20Var.L);
+                v20Var.r.setColor(v20Var.M);
+                v20Var.J.d(i0.a.k(v20Var.M, 38));
+                break;
+            case 2:
+                pv0 pv0Var = (pv0) this.d;
+                iu0[] iu0VarArr = pv0Var.k0;
+                pv0Var.I1.unlock();
+                pv0Var.o1 = false;
+                int[] iArr = pv0Var.m1;
+                int i11 = this.c;
+                int i12 = this.b;
+                iArr[i12] = i11;
+                for (int i13 = 0; i13 < iu0VarArr.length; i13++) {
+                    iu0 iu0Var = iu0VarArr[i13];
+                    if (iu0Var != null && iu0Var.h != null && (((i10 = iu0Var.F) == 0 || pv0.p0(i10)) && (adapter = iu0VarArr[i13].h.getAdapter()) != null)) {
+                        int h = adapter.h();
+                        if (i13 == 0) {
+                            pv0Var.t1[0].g(false);
+                        }
+                        iu0VarArr[i13].x.y1(iArr[i12]);
+                        iu0VarArr[i13].h.a0();
+                        if (adapter.h() == h) {
+                            AndroidUtilities.updateVisibleRows(iu0VarArr[i13].h);
+                        } else {
+                            adapter.l();
+                        }
+                        iu0VarArr[i13].r.setVisibility(8);
+                    }
+                }
+                pv0Var.X0();
+                break;
+            default:
+                org.telegram.ui.Components.voip.u uVar = (org.telegram.ui.Components.voip.u) this.d;
+                int i14 = this.b;
+                uVar.D0 = i14;
+                uVar.E0 = i14;
+                int i15 = this.c;
+                uVar.F0 = i15;
+                uVar.T.setColor(i15);
+                if (uVar.S > 0.0f) {
+                    uVar.invalidate();
+                    break;
+                }
+                break;
+        }
     }
 }

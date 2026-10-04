@@ -3,9 +3,9 @@ package androidx.fragment.app;
 import android.app.Dialog;
 import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class o extends v7.c0 {
+public final class o extends v7.b0 {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ s b;
 
@@ -13,7 +13,7 @@ public final class o extends v7.c0 {
         this.b = pVar;
     }
 
-    @Override // v7.c0
+    @Override // v7.b0
     public final View b(int i10) {
         switch (this.a) {
             case 0:
@@ -27,7 +27,7 @@ public final class o extends v7.c0 {
         }
     }
 
-    @Override // v7.c0
+    @Override // v7.b0
     public final boolean c() {
         switch (this.a) {
             case 0:

@@ -26,12 +26,12 @@ import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.i10;
+import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.j10;
 import org.telegram.ui.IUpdateLayout;
-import org.telegram.ui.fb0;
+import org.telegram.ui.jb0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class ApplicationLoader extends Application {
     public static volatile Context applicationContext = null;
@@ -69,8 +69,8 @@ public class ApplicationLoader extends Application {
         try {
             AtomicBoolean atomicBoolean = k6.g.a;
             return k6.g.b(this, 12451000) == 0;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return true;
         }
     }
@@ -89,8 +89,8 @@ public class ApplicationLoader extends Application {
         int i10;
         try {
             ensureCurrentNetworkGet(false);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
         if (currentNetworkInfo == null) {
             return 0;
@@ -128,8 +128,8 @@ public class ApplicationLoader extends Application {
             File file = new File(applicationContext.getApplicationInfo().dataDir, "files");
             file.mkdirs();
             return file;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return new File("/data/data/org.telegram.messenger/files");
         }
     }
@@ -184,8 +184,8 @@ public class ApplicationLoader extends Application {
                 }
                 return true;
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
         return false;
     }
@@ -202,8 +202,8 @@ public class ApplicationLoader extends Application {
                     return true;
                 }
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
         return false;
     }
@@ -251,8 +251,8 @@ public class ApplicationLoader extends Application {
                 return false;
             }
             return true;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return true;
         }
     }
@@ -275,8 +275,8 @@ public class ApplicationLoader extends Application {
                 return false;
             }
             return true;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return true;
         }
     }
@@ -290,8 +290,8 @@ public class ApplicationLoader extends Application {
                 }
             }
             return false;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return false;
         }
     }
@@ -330,8 +330,8 @@ public class ApplicationLoader extends Application {
         NativeLoader.initNativeLibs(applicationContext);
         try {
             LocaleController.getInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e7) {
+            e7.printStackTrace();
         }
         try {
             connectivityManager = (ConnectivityManager) applicationContext.getSystemService("connectivity");
@@ -349,23 +349,23 @@ public class ApplicationLoader extends Application {
                     }
                 }
             }, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
-        } catch (Exception e7) {
-            e7.printStackTrace();
+        } catch (Exception e10) {
+            e10.printStackTrace();
         }
         try {
             IntentFilter intentFilter = new IntentFilter("android.intent.action.SCREEN_ON");
             intentFilter.addAction("android.intent.action.SCREEN_OFF");
             applicationContext.registerReceiver(new ScreenReceiver(), intentFilter);
-        } catch (Exception e10) {
-            e10.printStackTrace();
+        } catch (Exception e11) {
+            e11.printStackTrace();
         }
         try {
             isScreenOn = ((PowerManager) applicationContext.getSystemService("power")).isScreenOn();
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.d("screen state = " + isScreenOn);
             }
-        } catch (Exception e11) {
-            e11.printStackTrace();
+        } catch (Exception e12) {
+            e12.printStackTrace();
         }
         SharedConfig.loadConfig();
         SharedPrefsHelper.init(applicationContext);
@@ -472,8 +472,8 @@ public class ApplicationLoader extends Application {
             AndroidUtilities.checkDisplaySize(applicationContext, configuration);
             VideoCapturerDevice.checkScreenCapturerSize();
             AndroidUtilities.resetTabletFlag();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e7) {
+            e7.printStackTrace();
         }
     }
 
@@ -493,7 +493,7 @@ public class ApplicationLoader extends Application {
             StringBuilder sb2 = new StringBuilder("app start time = ");
             long elapsedRealtime = SystemClock.elapsedRealtime();
             startTime = elapsedRealtime;
-            hg.c.u(sb2, elapsedRealtime);
+            hg.k0.t(sb2, elapsedRealtime);
             try {
                 PackageInfo packageInfo = applicationContext.getPackageManager().getPackageInfo(applicationContext.getPackageName(), 0);
                 int i11 = packageInfo.versionCode % 10;
@@ -506,8 +506,8 @@ public class ApplicationLoader extends Application {
                 }
                 Locale locale = Locale.US;
                 FileLog.d("buildVersion = ".concat("v" + packageInfo.versionName + " (" + (packageInfo.versionCode / 10) + "[" + (packageInfo.versionCode % 10) + "]) " + str));
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
             StringBuilder sb3 = new StringBuilder("device = manufacturer=");
             sb3.append(Build.MANUFACTURER);
@@ -524,8 +524,8 @@ public class ApplicationLoader extends Application {
         NativeLoader.initNativeLibs(applicationContext);
         try {
             ConnectionsManager.native_setJava(false);
-            new i10(this) { // from class: org.telegram.messenger.ApplicationLoader.2
-                @Override // org.telegram.ui.Components.i10, android.app.Application.ActivityLifecycleCallbacks
+            new j10(this) { // from class: org.telegram.messenger.ApplicationLoader.2
+                @Override // org.telegram.ui.Components.j10, android.app.Application.ActivityLifecycleCallbacks
                 public void onActivityStarted(Activity activity) {
                     boolean isBackground = isBackground();
                     super.onActivityStarted(activity);
@@ -540,13 +540,13 @@ public class ApplicationLoader extends Application {
             }
             applicationHandler = new Handler(applicationContext.getMainLooper());
             AndroidUtilities.runOnUIThread(new w1(6));
-            fb0[] values = fb0.values();
+            jb0[] values = jb0.values();
             int length = values.length;
             while (true) {
                 if (i10 >= length) {
-                    w7.f6.b(fb0.h);
+                    w7.g6.b(jb0.h);
                     break;
-                } else if (w7.f6.a(values[i10])) {
+                } else if (w7.g6.a(values[i10])) {
                     break;
                 } else {
                     i10++;
@@ -590,7 +590,7 @@ public class ApplicationLoader extends Application {
         return false;
     }
 
-    public org.telegram.ui.ActionBar.m2 openSettings(int i10) {
+    public org.telegram.ui.ActionBar.n2 openSettings(int i10) {
         return null;
     }
 
@@ -643,8 +643,8 @@ public class ApplicationLoader extends Application {
             File file = new File(getFilesDirFixed(), str);
             file.mkdirs();
             return file;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -661,7 +661,7 @@ public class ApplicationLoader extends Application {
     public void onResume() {
     }
 
-    public void addItemOptions(a80 a80Var) {
+    public void addItemOptions(b80 b80Var) {
     }
 
     public void appCenterLogInternal(Throwable th2) {

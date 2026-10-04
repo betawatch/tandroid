@@ -7,10 +7,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.rc;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class t3 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -85,7 +85,7 @@ public final class t3 extends FrameLayout {
                         if (f11 < 0.0f) {
                             f11 = 0.0f;
                         }
-                        a0Var.animate().translationY(f11).setDuration(250L).setUpdateListener(new zg.v(b0Var, 1)).setInterpolator(sr.f).start();
+                        a0Var.animate().translationY(f11).setDuration(250L).setUpdateListener(new zg.v(b0Var, 1)).setInterpolator(tr.f).start();
                     }
                 }
                 return super.fitSystemWindows(rect);
@@ -103,7 +103,7 @@ public final class t3 extends FrameLayout {
                 break;
             case 2:
                 super.onAttachedToWindow();
-                qc.a(this, (ai.w4) this.b);
+                rc.a(this, (ai.w4) this.b);
                 break;
             default:
                 super.onAttachedToWindow();
@@ -120,7 +120,7 @@ public final class t3 extends FrameLayout {
                 break;
             case 2:
                 super.onDetachedFromWindow();
-                qc.h(this);
+                rc.h(this);
                 break;
             default:
                 super.onDetachedFromWindow();

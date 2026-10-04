@@ -10,9 +10,9 @@ import v8.k;
 import v8.q;
 import v8.r;
 import v8.s;
-import w7.f0;
+import w7.g0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class FullWallet extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<FullWallet> CREATOR = new r(9);
@@ -30,18 +30,18 @@ public final class FullWallet extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q6 = f0.q(parcel, 20293);
-        f0.l(parcel, 2, this.a);
-        f0.l(parcel, 3, this.b);
-        f0.k(parcel, 4, this.c, i10);
-        f0.l(parcel, 5, this.d);
-        f0.k(parcel, 6, this.e, i10);
-        f0.k(parcel, 7, this.f, i10);
-        f0.m(parcel, 8, this.h);
-        f0.k(parcel, 9, this.n, i10);
-        f0.k(parcel, 10, this.r, i10);
-        f0.o(parcel, 11, this.s, i10);
-        f0.k(parcel, 12, this.v, i10);
-        f0.r(parcel, q6);
+        int q6 = g0.q(parcel, 20293);
+        g0.l(parcel, 2, this.a);
+        g0.l(parcel, 3, this.b);
+        g0.k(parcel, 4, this.c, i10);
+        g0.l(parcel, 5, this.d);
+        g0.k(parcel, 6, this.e, i10);
+        g0.k(parcel, 7, this.f, i10);
+        g0.m(parcel, 8, this.h);
+        g0.k(parcel, 9, this.n, i10);
+        g0.k(parcel, 10, this.r, i10);
+        g0.o(parcel, 11, this.s, i10);
+        g0.k(parcel, 12, this.v, i10);
+        g0.r(parcel, q6);
     }
 }

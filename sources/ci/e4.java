@@ -30,15 +30,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.j90;
+import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.m90;
-import org.telegram.ui.Components.q90;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.il0;
+import org.telegram.ui.Components.n90;
+import org.telegram.ui.Components.r90;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.nl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public class e4 extends View {
     public boolean A0;
@@ -58,13 +58,13 @@ public class e4 extends View {
     public final TextPaint J;
     public final RectF J0;
     public Layout.Alignment K;
-    public q90 K0;
+    public r90 K0;
     public StaticLayout L;
     public org.telegram.ui.Components.v5 M;
     public float N;
     public float O;
     public float P;
-    public final m90 Q;
+    public final n90 Q;
     public float R;
     public float S;
     public boolean T;
@@ -90,7 +90,7 @@ public class e4 extends View {
     public float j0;
     public int k0;
     public Runnable l0;
-    public final il0 m0;
+    public final nl0 m0;
     public Drawable n;
     public ValueAnimator n0;
     public float o0;
@@ -131,13 +131,13 @@ public class e4 extends View {
         TextPaint textPaint = new TextPaint(1);
         this.J = textPaint;
         this.K = Layout.Alignment.ALIGN_NORMAL;
-        this.Q = new m90();
+        this.Q = new n90();
         this.T = true;
         this.U = true;
-        sr srVar = sr.h;
-        this.W = new org.telegram.ui.Components.e6(this, 350L, srVar);
+        tr trVar = tr.h;
+        this.W = new org.telegram.ui.Components.e6(this, 350L, trVar);
         this.e0 = AndroidUtilities.dp(2.0f);
-        this.m0 = new il0(this, 26);
+        this.m0 = new nl0(this, 27);
         this.o0 = 1.0f;
         this.p0 = new org.telegram.ui.Components.zc(this, 2.0f, 5.0f);
         this.q0 = new Rect();
@@ -151,7 +151,7 @@ public class e4 extends View {
         paint.setPathEffect(new CornerPathEffect(this.v));
         org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(true, true, false, false);
         this.H = o6Var;
-        o6Var.k(0.4f, 320L, srVar);
+        o6Var.k(0.4f, 320L, trVar);
         o6Var.setCallback(this);
         t(14.0f);
         o6Var.r(-1);
@@ -257,7 +257,7 @@ public class e4 extends View {
             return textPaint.measureText(charSequence.toString());
         }
         Spanned spanned = (Spanned) charSequence;
-        u51[] u51VarArr = (u51[]) spanned.getSpans(0, charSequence.length(), u51.class);
+        d61[] d61VarArr = (d61[]) spanned.getSpans(0, charSequence.length(), d61.class);
         ReplacementSpan[] replacementSpanArr = (ReplacementSpan[]) spanned.getSpans(0, charSequence.length(), ReplacementSpan.class);
         int i10 = 0;
         int i11 = 0;
@@ -271,13 +271,13 @@ public class e4 extends View {
         }
         CharSequence charSequence2 = charSequence;
         TextPaint textPaint3 = textPaint;
-        if (u51VarArr == null || u51VarArr.length == 0) {
+        if (d61VarArr == null || d61VarArr.length == 0) {
             return textPaint3.measureText(charSequence2.toString()) + i11;
         }
         int i12 = 0;
-        for (int i13 = 0; i13 < u51VarArr.length; i13++) {
-            int spanStart = spanned.getSpanStart(u51VarArr[i13]);
-            int spanEnd = spanned.getSpanEnd(u51VarArr[i13]);
+        for (int i13 = 0; i13 < d61VarArr.length; i13++) {
+            int spanStart = spanned.getSpanStart(d61VarArr[i13]);
+            int spanEnd = spanned.getSpanEnd(d61VarArr[i13]);
             int max = Math.max(i12, spanStart);
             if (max - i12 > 0) {
                 f7 += textPaint3.measureText(spanned, i12, max);
@@ -285,7 +285,7 @@ public class e4 extends View {
             i12 = Math.max(max, spanEnd);
             if (i12 - max > 0) {
                 Typeface typeface = textPaint3.getTypeface();
-                textPaint3.setTypeface(u51VarArr[i13].a);
+                textPaint3.setTypeface(d61VarArr[i13].a);
                 float measureText = textPaint3.measureText(spanned, max, i12) + f7;
                 textPaint3.setTypeface(typeface);
                 f7 = measureText;
@@ -313,7 +313,7 @@ public class e4 extends View {
         int i10 = this.k0;
         Paint paint = this.F;
         if (i10 != 0) {
-            paint.setShadowLayer(this.i0, 0.0f, this.j0, org.telegram.ui.ActionBar.h6.l1(f7, i10));
+            paint.setShadowLayer(this.i0, 0.0f, this.j0, org.telegram.ui.ActionBar.i6.l1(f7, i10));
         }
         int alpha = paint.getAlpha();
         paint.setAlpha((int) (alpha * f7));
@@ -476,12 +476,12 @@ public class e4 extends View {
         if (this.I && this.L == null) {
             return;
         }
-        float e = this.W.e(this.V && !this.z0);
+        float e7 = this.W.e(this.V && !this.z0);
         if (this.z0) {
             this.z0 = false;
             invalidate();
         }
-        if (e <= 0.0f) {
+        if (e7 <= 0.0f) {
             return;
         }
         boolean z10 = this.I;
@@ -518,10 +518,10 @@ public class e4 extends View {
         } else {
             rectF = rectF3;
         }
-        float f16 = this.f ? e : 1.0f;
+        float f16 = this.f ? e7 : 1.0f;
         canvas.save();
-        if (e < 1.0f && this.e) {
-            float lerp = AndroidUtilities.lerp(0.75f, 1.0f, e);
+        if (e7 < 1.0f && this.e) {
+            float lerp = AndroidUtilities.lerp(0.75f, 1.0f, e7);
             canvas.scale(lerp, lerp, this.u0, this.v0);
         }
         float a2 = this.p0.a(0.025f);
@@ -793,33 +793,33 @@ public class e4 extends View {
                         ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(this.L.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
                         if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
                             clickableSpan = clickableSpanArr[0];
-                            il0 il0Var = this.m0;
-                            m90 m90Var = this.Q;
+                            nl0 nl0Var = this.m0;
+                            n90 n90Var = this.Q;
                             if (clickableSpan == null && motionEvent.getAction() == 0) {
-                                q90 q90Var = new q90(clickableSpan, null, motionEvent.getX(), motionEvent.getY(), 0);
-                                this.K0 = q90Var;
-                                m90Var.a(q90Var, null);
+                                r90 r90Var = new r90(clickableSpan, null, motionEvent.getX(), motionEvent.getY(), 0);
+                                this.K0 = r90Var;
+                                n90Var.a(r90Var, null);
                                 SpannableString spannableString = new SpannableString(this.L.getText());
                                 int spanStart = spannableString.getSpanStart(this.K0.i);
                                 int spanEnd = spannableString.getSpanEnd(this.K0.i);
-                                j90 b10 = this.K0.b();
+                                k90 b10 = this.K0.b();
                                 b10.d(this.L, spanStart, 0.0f);
                                 this.L.getSelectionPath(spanStart, spanEnd, b10);
                                 invalidate();
-                                AndroidUtilities.runOnUIThread(new c4(this, q90Var, clickableSpan), ViewConfiguration.getLongPressTimeout());
-                                AndroidUtilities.cancelRunOnUIThread(il0Var);
+                                AndroidUtilities.runOnUIThread(new c4(this, r90Var, clickableSpan), ViewConfiguration.getLongPressTimeout());
+                                AndroidUtilities.cancelRunOnUIThread(nl0Var);
                                 return true;
                             }
                             if (motionEvent.getAction() == 1) {
-                                m90Var.d(true);
+                                n90Var.d(true);
                                 invalidate();
-                                AndroidUtilities.cancelRunOnUIThread(il0Var);
+                                AndroidUtilities.cancelRunOnUIThread(nl0Var);
                                 long j3 = this.d;
                                 if (j3 > 0) {
-                                    AndroidUtilities.runOnUIThread(il0Var, j3);
+                                    AndroidUtilities.runOnUIThread(nl0Var, j3);
                                 }
-                                q90 q90Var2 = this.K0;
-                                if (q90Var2 != null && (characterStyle = q90Var2.i) == clickableSpan) {
+                                r90 r90Var2 = this.K0;
+                                if (r90Var2 != null && (characterStyle = r90Var2.i) == clickableSpan) {
                                     if (characterStyle != null) {
                                         ((ClickableSpan) characterStyle).onClick(this);
                                     }
@@ -829,12 +829,12 @@ public class e4 extends View {
                                 this.K0 = null;
                             }
                             if (motionEvent.getAction() == 3) {
-                                m90Var.d(true);
+                                n90Var.d(true);
                                 invalidate();
-                                AndroidUtilities.cancelRunOnUIThread(il0Var);
+                                AndroidUtilities.cancelRunOnUIThread(nl0Var);
                                 long j10 = this.d;
                                 if (j10 > 0) {
-                                    AndroidUtilities.runOnUIThread(il0Var, j10);
+                                    AndroidUtilities.runOnUIThread(nl0Var, j10);
                                 }
                                 this.K0 = null;
                             }
@@ -842,8 +842,8 @@ public class e4 extends View {
                     }
                 }
                 clickableSpan = null;
-                il0 il0Var2 = this.m0;
-                m90 m90Var2 = this.Q;
+                nl0 nl0Var2 = this.m0;
+                n90 n90Var2 = this.Q;
                 if (clickableSpan == null) {
                 }
                 if (motionEvent.getAction() == 1) {
@@ -944,18 +944,18 @@ public class e4 extends View {
             this.n0 = ofFloat;
             ofFloat.addUpdateListener(new ai.a(this, 19));
             this.n0.addListener(new ai.b(this, 14));
-            this.n0.setInterpolator(sr.k);
+            this.n0.setInterpolator(tr.k);
             this.n0.setDuration(300L);
             this.n0.start();
         }
         AndroidUtilities.makeAccessibilityAnnouncement(getText());
         this.V = true;
         invalidate();
-        il0 il0Var = this.m0;
-        AndroidUtilities.cancelRunOnUIThread(il0Var);
+        nl0 nl0Var = this.m0;
+        AndroidUtilities.cancelRunOnUIThread(nl0Var);
         long j3 = this.d;
         if (j3 > 0) {
-            AndroidUtilities.runOnUIThread(il0Var, j3);
+            AndroidUtilities.runOnUIThread(nl0Var, j3);
         }
         Runnable runnable = this.l0;
         if (runnable != null) {

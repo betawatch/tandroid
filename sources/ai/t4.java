@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t4 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -95,7 +95,7 @@ public final /* synthetic */ class t4 implements Utilities.Callback {
                     }
                 }
                 if (l4.longValue() <= 0) {
-                    org.telegram.ui.Components.qc q6 = new yc(e6Var.c1, e6Var.B0).q(f7, LocaleController.getString(R.string.ReactionSent), LocaleController.getString(R.string.ViewInChat), new a3.d(u4Var, 6));
+                    org.telegram.ui.Components.rc q6 = new yc(e6Var.c1, e6Var.B0).q(f7, LocaleController.getString(R.string.ReactionSent), LocaleController.getString(R.string.ViewInChat), new a3.d(u4Var, 6));
                     q6.j = 5000;
                     q6.j();
                 }
@@ -132,10 +132,10 @@ public final /* synthetic */ class t4 implements Utilities.Callback {
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj4;
                 int i14 = ChatActivityEnterView.n5;
-                ((org.telegram.ui.ActionBar.a2) obj3).dismiss();
-                xh.r1 r1Var = new xh.r1(chatActivityEnterView.getContext(), chatActivityEnterView.Q, ((TLRPC.User) obj2).id, tg.s.c(tg.s.b(1, (List) obj)), null);
-                r1Var.V(z10);
-                r1Var.show();
+                ((org.telegram.ui.ActionBar.b2) obj3).dismiss();
+                xh.q1 q1Var = new xh.q1(chatActivityEnterView.getContext(), chatActivityEnterView.Q, ((TLRPC.User) obj2).id, tg.s.c(tg.s.b(1, (List) obj)), null);
+                q1Var.T(z10);
+                q1Var.show();
                 break;
         }
     }
@@ -147,9 +147,9 @@ public final /* synthetic */ class t4 implements Utilities.Callback {
         this.e = d6Var;
     }
 
-    public /* synthetic */ t4(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.ActionBar.a2 a2Var, TLRPC.User user, boolean z10) {
+    public /* synthetic */ t4(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.ActionBar.b2 b2Var, TLRPC.User user, boolean z10) {
         this.c = chatActivityEnterView;
-        this.d = a2Var;
+        this.d = b2Var;
         this.e = user;
         this.b = z10;
     }

@@ -1,28 +1,24 @@
 package v7;
 
-import android.app.KeyguardManager;
-import android.content.Context;
-import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class s {
-    public static KeyguardManager a(Context context) {
-        if (Build.VERSION.SDK_INT >= 23) {
-            return androidx.biometric.g0.a(context);
-        }
-        Object systemService = context.getSystemService("keyguard");
-        if (systemService instanceof KeyguardManager) {
-            return (KeyguardManager) systemService;
+    public static Object a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() != 0) {
+            return creator.createFromParcel(parcel);
         }
         return null;
     }
 
-    public static boolean b(Context context) {
-        KeyguardManager a2 = a(context);
-        if (a2 == null) {
-            return false;
+    public static void b(Parcel parcel, Parcelable parcelable, int i10) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, i10);
         }
-        return Build.VERSION.SDK_INT >= 23 ? androidx.biometric.g0.b(a2) : androidx.biometric.f0.a(a2);
     }
 }

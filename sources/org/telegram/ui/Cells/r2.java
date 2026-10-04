@@ -15,9 +15,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.d61;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class r2 {
     public final s2 a;
@@ -44,7 +44,7 @@ public final class r2 {
             r2Var.d = false;
             r2Var.e = false;
             r2Var.b = id2;
-            TextPaint textPaint = org.telegram.ui.ActionBar.h6.F0[0];
+            TextPaint textPaint = org.telegram.ui.ActionBar.i6.F0[0];
             if (chat != null) {
                 ArrayList<TLRPC.TL_forumTopic> topics = MessagesController.getInstance(i10).getTopicsController().getTopics(chat.id);
                 boolean z11 = true;
@@ -97,13 +97,13 @@ public final class r2 {
                             spannableStringBuilder.append((CharSequence) "  ");
                         }
                         long peerDialogId = DialogObject.getPeerDialogId(((TLRPC.TL_forumTopic) arrayList.get(i12)).from_id);
-                        org.telegram.ui.g5 g5Var = new org.telegram.ui.g5(i10, r2Var.a);
-                        g5Var.h = false;
-                        g5Var.c(peerDialogId);
-                        r2Var.f.put(Long.valueOf(peerDialogId), g5Var);
+                        org.telegram.ui.h5 h5Var = new org.telegram.ui.h5(i10, r2Var.a);
+                        h5Var.h = false;
+                        h5Var.c(peerDialogId);
+                        r2Var.f.put(Long.valueOf(peerDialogId), h5Var);
                         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(DialogObject.getName(peerDialogId));
                         valueOf.insert(0, (CharSequence) "  ");
-                        valueOf.setSpan(g5Var, 0, 1, 33);
+                        valueOf.setSpan(h5Var, 0, 1, 33);
                         spannableStringBuilder.append((CharSequence) valueOf);
                     }
                 } else {
@@ -125,12 +125,12 @@ public final class r2 {
                 }
                 if (i11 > 0) {
                     Typeface bold = AndroidUtilities.bold();
-                    int i15 = org.telegram.ui.ActionBar.h6.X8;
-                    u51 u51Var = new u51();
-                    u51Var.a = bold;
-                    u51Var.c = i15;
-                    u51Var.b = org.telegram.ui.ActionBar.h6.w0(null, i15, false);
-                    spannableStringBuilder.setSpan(u51Var, 0, Math.min(spannableStringBuilder.length(), i11 + 2), 0);
+                    int i15 = org.telegram.ui.ActionBar.i6.X8;
+                    d61 d61Var = new d61();
+                    d61Var.a = bold;
+                    d61Var.c = i15;
+                    d61Var.b = org.telegram.ui.ActionBar.i6.w0(null, i15, false);
+                    spannableStringBuilder.setSpan(d61Var, 0, Math.min(spannableStringBuilder.length(), i11 + 2), 0);
                 }
                 r2Var.g = spannableStringBuilder;
             }

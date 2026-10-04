@@ -1,52 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class zm0 extends TextView {
-    public final /* synthetic */ int a;
+public final class zm0 extends ClickableSpan {
+    public final /* synthetic */ kn0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ zm0(Context context, int i10) {
-        super(context);
-        this.a = i10;
+    public zm0(kn0 kn0Var) {
+        this.a = kn0Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public CharSequence getAccessibilityClassName() {
-        switch (this.a) {
-            case 3:
-                return Button.class.getName();
-            default:
-                return super.getAccessibilityClassName();
-        }
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        kn0 kn0Var = this.a;
+        nf.f.s(kn0Var.getParentActivity(), kn0Var.y.privacy_policy_url);
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
-            case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
-            case 2:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
-                break;
-            case 3:
-            default:
-                super.onMeasure(i10, i11);
-                break;
-            case 4:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), TLObject.FLAG_30));
-                break;
-        }
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        textPaint.setUnderlineText(true);
+        textPaint.setTypeface(AndroidUtilities.bold());
     }
 }

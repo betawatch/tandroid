@@ -13,7 +13,7 @@ import org.telegram.messenger.TelegramMediaSession;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f1 implements Runnable {
     public final /* synthetic */ int a;
@@ -97,10 +97,10 @@ public final /* synthetic */ class f1 implements Runnable {
                 ((ImageReceiver) this.b).invalidate();
                 break;
             case 23:
-                MediaController.lambda$saveFile$46((org.telegram.ui.ActionBar.a2) this.b);
+                MediaController.lambda$saveFile$46((org.telegram.ui.ActionBar.b2) this.b);
                 break;
             case 24:
-                ((org.telegram.ui.Components.oc) this.b).f();
+                ((org.telegram.ui.Components.pc) this.b).f();
                 break;
             case 25:
                 MediaDataController.lambda$addRecentGif$27((TLRPC.Document) this.b);

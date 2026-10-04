@@ -3,107 +3,79 @@ package ci;
 import android.app.Activity;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class zc extends View {
-    public final kj0 a;
+    public final Paint a;
     public final org.telegram.ui.Components.o6 b;
-    public final Paint c;
-    public final Paint d;
-    public final org.telegram.ui.Components.zc e;
-    public boolean f;
-    public final org.telegram.ui.Components.e6 h;
+    public boolean c;
 
     public zc(Activity activity) {
         super(activity);
         Paint paint = new Paint(1);
-        this.c = paint;
-        Paint paint2 = new Paint(1);
-        this.d = paint2;
-        this.e = new org.telegram.ui.Components.zc(this);
-        sr srVar = sr.h;
-        this.h = new org.telegram.ui.Components.e6(this, 0L, 240L, srVar);
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dpf2(2.66f));
-        paint.setShadowLayer(AndroidUtilities.dpf2(3.0f), 0.0f, AndroidUtilities.dp(1.66f), 805306368);
-        paint2.setColor(855638016);
-        kj0 kj0Var = new kj0(R.raw.group_pip_delete_icon, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
-        this.a = kj0Var;
-        kj0Var.R(this);
-        kj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
-        kj0Var.h = true;
-        kj0Var.P(0);
-        kj0Var.J(true);
-        kj0Var.start();
-        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(true, true, false, false);
+        this.a = paint;
+        this.c = true;
+        paint.setColor(TLObject.FLAG_31);
+        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(false, true, true, false);
         this.b = o6Var;
-        o6Var.k(0.3f, 250L, srVar);
-        o6Var.G = AndroidUtilities.displaySize.x;
-        o6Var.t(AndroidUtilities.dp(14.0f));
+        o6Var.k(0.2f, 200L, tr.h);
+        o6Var.t(AndroidUtilities.dp(13.0f));
         o6Var.r(-1);
-        o6Var.p(AndroidUtilities.dpf2(1.33f), AndroidUtilities.dp(1.0f), TLObject.FLAG_30);
-        o6Var.q(LocaleController.getString(R.string.TrashHintDrag), true, true);
-        o6Var.b = 17;
+        o6Var.u(AndroidUtilities.bold());
+        o6Var.setCallback(this);
+        o6Var.b = 1;
+        StringBuilder sb2 = new StringBuilder(8);
+        sb2.append("00:00:00");
+        if (TextUtils.equals(sb2, o6Var.g)) {
+            return;
+        }
+        o6Var.b();
+        o6Var.q(sb2, false, true);
     }
 
-    public final void a(boolean z10, boolean z11) {
-        this.e.c(z10);
-        this.b.q(LocaleController.getString((z10 || z11) ? R.string.TrashHintRelease : R.string.TrashHintDrag), true, true);
-        boolean z12 = z10 && !z11;
-        this.f = z12;
-        kj0 kj0Var = this.a;
-        if (z12) {
-            if (kj0Var.a0 > 34) {
-                kj0Var.N(0, false, false);
+    public final void a(boolean z10) {
+        if (this.c || !z10) {
+            this.c = false;
+            animate().cancel();
+            if (z10) {
+                ok.s(animate().translationY(AndroidUtilities.dp(6.0f)).alpha(0.0f).scaleX(0.8f).scaleY(0.8f), tr.h, 220L);
+                return;
             }
-            kj0Var.P(33);
-            kj0Var.start();
-        } else {
-            kj0Var.P(z11 ? 66 : 0);
-            kj0Var.start();
+            setTranslationY(AndroidUtilities.dp(6.0f));
+            setScaleX(0.8f);
+            setScaleY(0.8f);
+            setAlpha(0.0f);
         }
-        invalidate();
     }
 
     @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float dp = AndroidUtilities.dp(30.0f);
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float e = (this.h.e(this.f) * AndroidUtilities.dp(3.0f)) + dp;
-        canvas.drawCircle(width, height, e, this.d);
-        canvas.drawCircle(width, height, e, this.c);
-        float dp2 = AndroidUtilities.dp(48.0f) / 2.0f;
-        kj0 kj0Var = this.a;
-        kj0Var.setBounds((int) (width - dp2), (int) (height - dp2), (int) (width + dp2), (int) (dp2 + height));
-        kj0Var.draw(canvas);
-        int dp3 = (int) (height + dp + AndroidUtilities.dp(7.0f));
-        int width2 = getWidth();
-        int height2 = getHeight();
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
         org.telegram.ui.Components.o6 o6Var = this.b;
-        o6Var.setBounds(0, dp3, width2, height2);
+        float d = o6Var.d();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(((getWidth() - d) / 2.0f) - AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.0f), ((getWidth() + d) / 2.0f) + AndroidUtilities.dp(6.0f), AndroidUtilities.dp(23.0f));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), this.a);
+        o6Var.setBounds((int) rectF.left, ((int) rectF.top) - AndroidUtilities.dp(1.0f), (int) rectF.right, (int) rectF.bottom);
         o6Var.draw(canvas);
     }
 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(i10, AndroidUtilities.dp(120.0f));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(25.0f), TLObject.FLAG_30));
     }
 
     @Override // android.view.View
     public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.b || super.verifyDrawable(drawable);
+        return this.b == drawable || super.verifyDrawable(drawable);
     }
 }

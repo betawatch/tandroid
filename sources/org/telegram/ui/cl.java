@@ -2,17 +2,17 @@ package org.telegram.ui;
 
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class cl implements MessagesStorage.IntCallback {
-    public final /* synthetic */ wn a;
+    public final /* synthetic */ yn a;
 
-    public cl(wn wnVar) {
-        this.a = wnVar;
+    public cl(yn ynVar) {
+        this.a = ynVar;
     }
 
     @Override // org.telegram.messenger.MessagesStorage.IntCallback
     public final void run(int i10) {
-        this.a.G9(i10);
+        this.a.F9(i10);
     }
 }

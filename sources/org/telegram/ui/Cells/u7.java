@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.pp;
+import org.telegram.ui.Components.qp;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class u7 extends FrameLayout {
     public q7[] a;
@@ -36,11 +36,11 @@ public final class u7 extends FrameLayout {
     public final void b(int i10, boolean z10) {
         q7 q7Var = this.a[i10];
         FrameLayout frameLayout = q7Var.f;
-        pp ppVar = q7Var.e;
-        if (ppVar.getVisibility() != 0) {
-            ppVar.setVisibility(0);
+        qp qpVar = q7Var.e;
+        if (qpVar.getVisibility() != 0) {
+            qpVar.setVisibility(0);
         }
-        ppVar.a(z10, true);
+        qpVar.a(z10, true);
         AnimatorSet animatorSet = q7Var.h;
         if (animatorSet != null) {
             animatorSet.cancel();
@@ -50,7 +50,7 @@ public final class u7 extends FrameLayout {
         q7Var.h = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) View.SCALE_X, z10 ? 0.81f : 1.0f), ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) View.SCALE_Y, z10 ? 0.81f : 1.0f));
         q7Var.h.setDuration(200L);
-        q7Var.h.addListener(new org.telegram.ui.t4(q7Var, 11));
+        q7Var.h.addListener(new org.telegram.ui.u4(q7Var, 11));
         q7Var.h.start();
     }
 
@@ -94,25 +94,25 @@ public final class u7 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         View[] viewArr = this.a;
-        int B = this.r == 1 ? ok.B(2.0f, this.e - 1, View.MeasureSpec.getSize(i10)) / this.e : a(this.e);
+        int A = this.r == 1 ? ok.A(2.0f, this.e - 1, View.MeasureSpec.getSize(i10)) / this.e : a(this.e);
         this.h = true;
         for (int i12 = 0; i12 < this.e; i12++) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i12].getLayoutParams();
             layoutParams.topMargin = this.f ? 0 : AndroidUtilities.dp(2.0f);
-            layoutParams.leftMargin = (AndroidUtilities.dp(2.0f) + B) * i12;
+            layoutParams.leftMargin = (AndroidUtilities.dp(2.0f) + A) * i12;
             if (i12 != this.e - 1) {
-                layoutParams.width = B;
+                layoutParams.width = A;
             } else if (AndroidUtilities.isTablet()) {
-                layoutParams.width = AndroidUtilities.dp(490.0f) - ((AndroidUtilities.dp(2.0f) + B) * (this.e - 1));
+                layoutParams.width = AndroidUtilities.dp(490.0f) - ((AndroidUtilities.dp(2.0f) + A) * (this.e - 1));
             } else {
-                layoutParams.width = AndroidUtilities.displaySize.x - ((AndroidUtilities.dp(2.0f) + B) * (this.e - 1));
+                layoutParams.width = AndroidUtilities.displaySize.x - ((AndroidUtilities.dp(2.0f) + A) * (this.e - 1));
             }
-            layoutParams.height = B;
+            layoutParams.height = A;
             layoutParams.gravity = 51;
             viewArr[i12].setLayoutParams(layoutParams);
         }
         this.h = false;
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((this.f ? 0 : AndroidUtilities.dp(2.0f)) + B, TLObject.FLAG_30));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((this.f ? 0 : AndroidUtilities.dp(2.0f)) + A, TLObject.FLAG_30));
     }
 
     @Override // android.view.View, android.view.ViewParent

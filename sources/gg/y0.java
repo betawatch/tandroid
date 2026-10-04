@@ -19,9 +19,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.wa0;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.wn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a;
@@ -134,7 +134,7 @@ public final /* synthetic */ class y0 implements Runnable {
                 ((MediaDataController) this.c).lambda$broadcastPinnedMessage$169((ArrayList) this.d, this.b, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (a0.i) this.n, (a0.i) this.r);
                 break;
             case 3:
-                ((SendMessagesHelper) this.c).lambda$sendCallback$43((TLRPC.TL_error) this.d, (TLObject) this.h, (TwoStepVerificationActivity) this.e, this.b, (MessageObject) this.f, (TL_keyboard.KeyboardButtonProto) this.n, (wn) this.r);
+                ((SendMessagesHelper) this.c).lambda$sendCallback$43((TLRPC.TL_error) this.d, (TLObject) this.h, (TwoStepVerificationActivity) this.e, this.b, (MessageObject) this.f, (TL_keyboard.KeyboardButtonProto) this.n, (yn) this.r);
                 break;
             default:
                 ((CameraController) this.c).lambda$recordVideo$14((Camera) this.d, (CameraSession) this.e, this.b, (File) this.f, (CameraInfo) this.h, (CameraController.VideoTakeCallback) this.n, (Runnable) this.r);
@@ -166,7 +166,7 @@ public final /* synthetic */ class y0 implements Runnable {
         this.r = iVar2;
     }
 
-    public /* synthetic */ y0(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_error tL_error, TL_keyboard.KeyboardButtonProto keyboardButtonProto, wn wnVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10) {
+    public /* synthetic */ y0(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_error tL_error, TL_keyboard.KeyboardButtonProto keyboardButtonProto, yn ynVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10) {
         this.a = 3;
         this.c = sendMessagesHelper;
         this.d = tL_error;
@@ -175,6 +175,6 @@ public final /* synthetic */ class y0 implements Runnable {
         this.b = z10;
         this.f = messageObject;
         this.n = keyboardButtonProto;
-        this.r = wnVar;
+        this.r = ynVar;
     }
 }

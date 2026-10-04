@@ -8,13 +8,13 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.gd0;
 import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.gn0;
-import org.telegram.ui.in;
-import org.telegram.ui.wn;
+import org.telegram.ui.kn;
+import org.telegram.ui.kn0;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zj implements org.telegram.ui.ActionBar.z1, e2.h {
+public final /* synthetic */ class zj implements org.telegram.ui.ActionBar.a2, e2.h {
     public final /* synthetic */ int a = 3;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -36,8 +36,8 @@ public final /* synthetic */ class zj implements org.telegram.ui.ActionBar.z1, e
         ((u2.k0) obj).f(aVar.b, (u2.f0) aVar.c, (u2.t) this.d, (u2.b0) this.e, (IOException) this.f, this.b);
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         int i11;
         int i12 = this.a;
         boolean z10 = this.b;
@@ -47,23 +47,23 @@ public final /* synthetic */ class zj implements org.telegram.ui.ActionBar.z1, e
         Object obj4 = this.c;
         switch (i12) {
             case 0:
-                ((SendMessagesHelper) obj4).lambda$sendCallback$41(this.b, (MessageObject) obj3, (TL_keyboard.KeyboardButtonProto) obj2, (wn) obj, a2Var, i10);
+                ((SendMessagesHelper) obj4).lambda$sendCallback$41(this.b, (MessageObject) obj3, (TL_keyboard.KeyboardButtonProto) obj2, (yn) obj, b2Var, i10);
                 break;
             case 1:
-                in inVar = (in) obj4;
+                kn knVar = (kn) obj4;
                 TL_account.contentSettings contentsettings = (TL_account.contentSettings) obj;
-                wn wnVar = inVar.a;
-                org.telegram.ui.oc ocVar = new org.telegram.ui.oc(11, inVar, (org.telegram.ui.Cells.u1) obj3);
+                yn ynVar = knVar.a;
+                org.telegram.ui.qc qcVar = new org.telegram.ui.qc(11, knVar, (org.telegram.ui.Cells.u1) obj3);
                 if (!((boolean[]) obj2)[0]) {
-                    ocVar.run(Boolean.FALSE);
+                    qcVar.run(Boolean.FALSE);
                     break;
                 } else if (!z10 && (contentsettings == null || !contentsettings.sensitive_can_change)) {
-                    ocVar.run(Boolean.TRUE);
+                    qcVar.run(Boolean.TRUE);
                     break;
                 } else {
-                    Activity parentActivity = wnVar.getParentActivity();
-                    i11 = ((org.telegram.ui.ActionBar.m2) wnVar).currentAccount;
-                    ThemeActivity.C0(i11, parentActivity, new org.telegram.ui.oc(12, inVar, ocVar), wnVar.getResourceProvider());
+                    Activity parentActivity = ynVar.getParentActivity();
+                    i11 = ((org.telegram.ui.ActionBar.n2) ynVar).currentAccount;
+                    ThemeActivity.C0(i11, parentActivity, new org.telegram.ui.qc(12, knVar, qcVar), ynVar.getResourceProvider());
                     break;
                 }
             default:
@@ -77,32 +77,32 @@ public final /* synthetic */ class zj implements org.telegram.ui.ActionBar.z1, e
                 int value = gd0Var3.getValue();
                 int value2 = gd0Var2.getValue();
                 int value3 = gd0Var.getValue();
-                gn0 gn0Var = (gn0) d2Var.c;
+                kn0 kn0Var = (kn0) d2Var.c;
                 int i13 = d2Var.b;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) d2Var.d;
                 if (i13 == 8) {
-                    int[] iArr = gn0Var.x;
+                    int[] iArr = kn0Var.x;
                     iArr[0] = value;
                     iArr[1] = value2 + 1;
                     iArr[2] = value3;
                 } else {
-                    gn0Var.getClass();
+                    kn0Var.getClass();
                 }
                 editTextBoldCursor.setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(value3), Integer.valueOf(value2 + 1), Integer.valueOf(value)));
                 break;
         }
     }
 
-    public /* synthetic */ zj(SendMessagesHelper sendMessagesHelper, boolean z10, MessageObject messageObject, TL_keyboard.KeyboardButtonProto keyboardButtonProto, wn wnVar) {
+    public /* synthetic */ zj(SendMessagesHelper sendMessagesHelper, boolean z10, MessageObject messageObject, TL_keyboard.KeyboardButtonProto keyboardButtonProto, yn ynVar) {
         this.c = sendMessagesHelper;
         this.b = z10;
         this.d = messageObject;
         this.e = keyboardButtonProto;
-        this.f = wnVar;
+        this.f = ynVar;
     }
 
-    public /* synthetic */ zj(in inVar, org.telegram.ui.Cells.u1 u1Var, boolean[] zArr, boolean z10, TL_account.contentSettings contentsettings) {
-        this.c = inVar;
+    public /* synthetic */ zj(kn knVar, org.telegram.ui.Cells.u1 u1Var, boolean[] zArr, boolean z10, TL_account.contentSettings contentsettings) {
+        this.c = knVar;
         this.d = u1Var;
         this.e = zArr;
         this.b = z10;

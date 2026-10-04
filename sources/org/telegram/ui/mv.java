@@ -1,39 +1,33 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.content.Context;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mv implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qy b;
+public final class mv extends FrameLayout {
+    public org.telegram.ui.ActionBar.n2 a;
+    public FrameLayout b;
+    public org.telegram.ui.ActionBar.k c;
+    public org.telegram.ui.Components.zl0 d;
+    public ai.w0 e;
+    public int f;
+    public final /* synthetic */ nv h;
 
-    public /* synthetic */ mv(qy qyVar, int i10) {
-        this.a = i10;
-        this.b = qyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mv(nv nvVar, Context context) {
+        super(context);
+        this.h = nvVar;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                qy.i0(this.b);
-                break;
-            case 1:
-                qy qyVar = this.b;
-                if (qyVar.R3 != null) {
-                    qyVar.getMessagesController().removeSuggestion(0L, qyVar.R3);
-                    qyVar.R3 = null;
-                    qyVar.L4();
-                    break;
-                }
-                break;
-            case 2:
-                this.b.b4(true);
-                break;
-            default:
-                this.b.b4(true);
-                break;
+    @Override // android.view.View
+    public final void setTranslationX(float f7) {
+        mv mvVar;
+        super.setTranslationX(f7);
+        nv nvVar = this.h;
+        mv[] mvVarArr = nvVar.f;
+        if (nvVar.n && (mvVar = mvVarArr[0]) == this) {
+            nvVar.e.j(Math.abs(mvVar.getTranslationX()) / mvVarArr[0].getMeasuredWidth(), mvVarArr[1].f);
         }
     }
 }

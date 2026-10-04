@@ -3,7 +3,7 @@ package qa;
 import java.io.IOException;
 import n7.z0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class b implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        ra.b E;
+        ra.b z10;
         ra.b i10;
         int i11;
         switch (this.a) {
@@ -36,15 +36,15 @@ public final /* synthetic */ class b implements Runnable {
                     try {
                         k9.h hVar = cVar.a;
                         hVar.a();
-                        z0 f7 = z0.f(hVar.a);
+                        z0 e7 = z0.e(hVar.a);
                         try {
-                            E = cVar.c.E();
-                            if (f7 != null) {
-                                f7.I();
+                            z10 = cVar.c.z();
+                            if (e7 != null) {
+                                e7.D();
                             }
                         } catch (Throwable th2) {
-                            if (f7 != null) {
-                                f7.I();
+                            if (e7 != null) {
+                                e7.D();
                             }
                             throw th2;
                         }
@@ -52,13 +52,13 @@ public final /* synthetic */ class b implements Runnable {
                     }
                 }
                 try {
-                    int i12 = E.b;
+                    int i12 = z10.b;
                     if (!(i12 == 5)) {
                         if (!(i12 == 3)) {
-                            if (cVar.d.a(E)) {
-                                i10 = cVar.c(E);
+                            if (cVar.d.a(z10)) {
+                                i10 = cVar.c(z10);
                                 cVar.f(i10);
-                                cVar.m(E, i10);
+                                cVar.m(z10, i10);
                                 if (i10.b == 4) {
                                     cVar.l(i10.a);
                                 }
@@ -77,16 +77,16 @@ public final /* synthetic */ class b implements Runnable {
                             return;
                         }
                     }
-                    i10 = cVar.i(E);
+                    i10 = cVar.i(z10);
                     cVar.f(i10);
-                    cVar.m(E, i10);
+                    cVar.m(z10, i10);
                     if (i10.b == 4) {
                     }
                     i11 = i10.b;
                     if (i11 != 5) {
                     }
-                } catch (e e) {
-                    cVar.j(e);
+                } catch (e e10) {
+                    cVar.j(e10);
                     return;
                 }
             default:

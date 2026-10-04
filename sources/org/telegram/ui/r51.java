@@ -1,51 +1,27 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class r51 extends p61 {
-    public final /* synthetic */ a71 E;
+public final class r51 extends y61 {
+    public final /* synthetic */ View Q;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique R;
+    public final /* synthetic */ s51 S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r51(a71 a71Var, Context context, boolean z10) {
-        super(a71Var, context, z10);
-        this.E = a71Var;
+    public r51(s51 s51Var, Context context, Runnable runnable, View view, l61 l61Var, org.telegram.ui.ActionBar.d6 d6Var, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        super(s51Var.e, context, runnable, view, l61Var, d6Var);
+        this.S = s51Var;
+        this.Q = view2;
+        this.R = tL_starGiftUnique;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        a71 a71Var = this.E;
-        m51 m51Var = a71Var.g0;
-        r51 r51Var = a71Var.f0;
-        a61 a61Var = a71Var.U;
-        if (a61Var != null) {
-            int measuredWidth = getMeasuredWidth();
-            int measuredHeight = getMeasuredHeight();
-            float x10 = m51Var.getX() + r51Var.getX();
-            float y3 = m51Var.getY() + r51Var.getY();
-            s5.e eVar = (s5.e) a61Var;
-            zg.b0 b0Var = (zg.b0) eVar.b;
-            zg.a0 a0Var = b0Var.a;
-            org.telegram.ui.Components.sk0 sk0Var = (org.telegram.ui.Components.sk0) eVar.c;
-            RectF rectF = AndroidUtilities.rectTmp;
-            float f7 = 0;
-            rectF.set(f7, f7, measuredWidth, measuredHeight);
-            sk0Var.getDelegate().m(canvas, rectF, 0.0f, a0Var.getX() + x10, (b0Var.y == 1 ? a0Var.getY() - AndroidUtilities.statusBarHeight : a0Var.getY() + b0Var.c.getY()) + y3, 255, true);
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (f7 != getTranslationY()) {
-            super.setTranslationY(f7);
-            if (this.E.U != null) {
-                invalidate();
-            }
-        }
+    @Override // org.telegram.ui.y61, android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        super.dismiss();
+        this.S.e.X0 = null;
     }
 }

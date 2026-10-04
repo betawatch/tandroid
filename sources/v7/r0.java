@@ -1,19 +1,6 @@
 package v7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class r0 implements ia.d {
-    public static final r0 a = new r0();
-
-    static {
-        j.r(j.j(h.class, j.n(7, j.j(h.class, j.n(6, j.j(h.class, j.n(5, j.j(h.class, j.n(4, j.j(h.class, j.n(3, j.j(h.class, j.n(2, j.j(h.class, new e(1)))))))))))))));
-    }
-
-    @Override // ia.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
-    }
+public final class r0 extends k {
 }

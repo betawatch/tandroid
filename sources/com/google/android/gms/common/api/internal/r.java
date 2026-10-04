@@ -22,7 +22,7 @@ import java.util.Random;
 import java.util.TimeZone;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class r {
     public int a;
@@ -88,7 +88,7 @@ public final class r {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void b() {
-        List e;
+        List e7;
         String str;
         String str2;
         int i10;
@@ -117,7 +117,7 @@ public final class r {
             }
             if (str3 != null) {
                 if (context == null) {
-                    e = Collections.EMPTY_LIST;
+                    e7 = Collections.EMPTY_LIST;
                 } else {
                     ConcurrentHashMap concurrentHashMap = c2.e;
                     com.google.android.gms.internal.clearcut.d dVar = (com.google.android.gms.internal.clearcut.d) concurrentHashMap.get(str3);
@@ -131,9 +131,9 @@ public final class r {
                             dVar = gVar;
                         }
                     }
-                    e = ((u1) dVar.a()).e();
+                    e7 = ((u1) dVar.a()).e();
                 }
-                Iterator it = e.iterator();
+                Iterator it = e7.iterator();
                 while (true) {
                     if (!it.hasNext()) {
                         break;
@@ -182,8 +182,8 @@ public final class r {
                         try {
                             parseLong = Long.parseLong(str.substring(i10, indexOf2));
                             parseLong2 = Long.parseLong(str.substring(indexOf2 + 1));
-                        } catch (NumberFormatException e7) {
-                            Log.e("LogSamplerImpl", str.length() != 0 ? "parseLong() failed while parsing: ".concat(str) : new String("parseLong() failed while parsing: "), e7);
+                        } catch (NumberFormatException e10) {
+                            Log.e("LogSamplerImpl", str.length() != 0 ? "parseLong() failed while parsing: ".concat(str) : new String("parseLong() failed while parsing: "), e10);
                         }
                         if (parseLong < 0 || parseLong2 < 0) {
                             StringBuilder sb2 = new StringBuilder(72);

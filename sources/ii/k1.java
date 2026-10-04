@@ -8,12 +8,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.zg;
-import org.telegram.ui.vi0;
+import org.telegram.ui.Components.ah;
+import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.nz;
+import org.telegram.ui.zi0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -26,58 +26,58 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        p5 R2;
-        s5 o9;
+        q5 T2;
+        t5 o9;
         switch (this.a) {
             case 0:
                 this.b.r0();
                 break;
             case 1:
                 e2 e2Var = this.b;
-                if (!e2Var.P.F2()) {
+                if (!e2Var.P.H2()) {
                     e2Var.finishFragment();
                     break;
                 }
                 break;
             case 2:
-                i2 i2Var = this.b.P.J3;
+                i2 i2Var = this.b.P.Q3;
                 if (i2Var != null) {
                     i2Var.k();
                     break;
                 }
                 break;
             case 3:
-                i2 i2Var2 = this.b.P.J3;
+                i2 i2Var2 = this.b.P.Q3;
                 if (i2Var2 != null) {
                     i2Var2.i();
                     break;
                 }
                 break;
             case 4:
-                e2.U(this.b);
+                e2.S(this.b);
                 break;
             case 5:
                 e2 e2Var2 = this.b;
                 if (!e2Var2.B0) {
                     if (e2Var2.A0 == null) {
-                        mz mzVar = new mz(e2Var2, true, false, false, e2Var2.getParentActivity(), true, null, e2Var2.O, true, e2Var2.getResourceProvider(), false, false);
-                        e2Var2.A0 = mzVar;
-                        mzVar.setVisibility(8);
-                        mz mzVar2 = e2Var2.A0;
-                        mzVar2.w2 = false;
-                        mzVar2.setDelegate(new v1(e2Var2));
+                        nz nzVar = new nz(e2Var2, true, false, false, e2Var2.getParentActivity(), true, null, e2Var2.O, true, e2Var2.getResourceProvider(), false, false);
+                        e2Var2.A0 = nzVar;
+                        nzVar.setVisibility(8);
+                        nz nzVar2 = e2Var2.A0;
+                        nzVar2.w2 = false;
+                        nzVar2.setDelegate(new v1(e2Var2));
                         int indexOfChild = e2Var2.O.indexOfChild(e2Var2.a0);
                         if (indexOfChild < 0) {
                             indexOfChild = e2Var2.O.getChildCount();
                         }
-                        FrameLayout.LayoutParams e = w7.y5.e(-1, e2Var2.j0(), 87);
-                        e.bottomMargin = e2Var2.T0;
-                        e2Var2.O.addView(e2Var2.A0, indexOfChild, e);
+                        FrameLayout.LayoutParams e7 = w7.z5.e(-1, e2Var2.j0(), 87);
+                        e7.bottomMargin = e2Var2.T0;
+                        e2Var2.O.addView(e2Var2.A0, indexOfChild, e7);
                     }
                     int j02 = e2Var2.j0();
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) e2Var2.A0.getLayoutParams();
                     if (layoutParams == null) {
-                        layoutParams = w7.y5.e(-1, j02, 87);
+                        layoutParams = w7.z5.e(-1, j02, 87);
                     } else {
                         layoutParams.height = j02;
                     }
@@ -86,77 +86,77 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                     e2Var2.A0.setVisibility(0);
                     e2Var2.B0 = true;
                     e2Var2.D0 = j02 + e2Var2.T0;
-                    i1 P2 = e2Var2.P.P2();
-                    if (P2 != null) {
-                        AndroidUtilities.hideKeyboard(P2);
+                    i1 R2 = e2Var2.P.R2();
+                    if (R2 != null) {
+                        AndroidUtilities.hideKeyboard(R2);
                     }
                     e2Var2.h0();
-                    e2Var2.b0.j(zg.d, true);
+                    e2Var2.b0.j(ah.d, true);
                     break;
                 } else {
                     e2Var2.k0(true);
-                    i1 P22 = e2Var2.P.P2();
-                    if (P22 != null) {
-                        P22.r();
-                        AndroidUtilities.showKeyboard(P22);
+                    i1 R22 = e2Var2.P.R2();
+                    if (R22 != null) {
+                        R22.r();
+                        AndroidUtilities.showKeyboard(R22);
                         break;
                     }
                 }
                 break;
             case 6:
                 final e2 e2Var3 = this.b;
-                a80 a80Var = e2Var3.x0;
-                if (a80Var != null) {
-                    a80Var.u();
+                b80 b80Var = e2Var3.x0;
+                if (b80Var != null) {
+                    b80Var.u();
                     e2Var3.x0 = null;
                 }
-                final a80 H = a80.H(e2Var3, view);
+                final b80 H = b80.H(e2Var3, view);
                 H.Q = true;
-                a Q2 = e2Var3.P.Q2();
-                H.j(Q2 == null || !Q2.b(), R.drawable.field_carret_empty, null, LocaleController.getString(R.string.ArticleNone), new n1(e2Var3, Q2, 5));
-                H.j((Q2 == null || !Q2.b() || Q2.a() || Q2.c()) ? false : true, R.drawable.iv_list, null, LocaleController.getString(R.string.ArticleListBulletedList), new n1(e2Var3, Q2, 6));
-                H.j(Q2 != null && Q2.b() && !Q2.a() && Q2.c(), R.drawable.iv_ordered_list, null, LocaleController.getString(R.string.ArticleListNumberedList), new n1(e2Var3, Q2, 7));
-                H.j(Q2 != null && Q2.b() && Q2.a() && !Q2.c(), R.drawable.iv_todo, null, LocaleController.getString(R.string.ArticleListChecklist), new n1(e2Var3, Q2, 8));
-                boolean z10 = Q2 != null && (Q2.b instanceof TL_iv.pageBlockDetails);
+                a S2 = e2Var3.P.S2();
+                H.j(S2 == null || !S2.b(), R.drawable.field_carret_empty, null, LocaleController.getString(R.string.ArticleNone), new n1(e2Var3, S2, 5));
+                H.j((S2 == null || !S2.b() || S2.a() || S2.c()) ? false : true, R.drawable.iv_list, null, LocaleController.getString(R.string.ArticleListBulletedList), new n1(e2Var3, S2, 6));
+                H.j(S2 != null && S2.b() && !S2.a() && S2.c(), R.drawable.iv_ordered_list, null, LocaleController.getString(R.string.ArticleListNumberedList), new n1(e2Var3, S2, 7));
+                H.j(S2 != null && S2.b() && S2.a() && !S2.c(), R.drawable.iv_todo, null, LocaleController.getString(R.string.ArticleListChecklist), new n1(e2Var3, S2, 8));
+                boolean z10 = S2 != null && (S2.b instanceof TL_iv.pageBlockDetails);
                 int i10 = R.drawable.iv_details;
                 String string = LocaleController.getString(R.string.ArticleToggleBlock);
                 x3 x3Var = e2Var3.P;
                 Objects.requireNonNull(x3Var);
                 H.j(z10, i10, null, string, new b(x3Var, 1));
-                boolean m22 = e2Var3.P.m2();
-                boolean p22 = e2Var3.P.p2();
-                if (m22 || p22) {
+                boolean o22 = e2Var3.P.o2();
+                boolean r22 = e2Var3.P.r2();
+                if (o22 || r22) {
                     H.k();
-                    if (m22) {
+                    if (o22) {
                         final int i11 = 0;
                         H.c(R.drawable.iv_list_tab, LocaleController.getString(R.string.ArticleIndent), new Runnable() { // from class: ii.r1
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i11) {
                                     case 0:
-                                        e2Var3.P.r3(false);
+                                        e2Var3.P.t3(false);
                                         H.u();
                                         break;
                                     default:
-                                        e2Var3.P.r3(true);
+                                        e2Var3.P.t3(true);
                                         H.u();
                                         break;
                                 }
                             }
                         }, false);
                     }
-                    if (p22) {
+                    if (r22) {
                         final int i12 = 1;
                         H.c(R.drawable.iv_list_untab, LocaleController.getString(R.string.ArticleOutdent), new Runnable() { // from class: ii.r1
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i12) {
                                     case 0:
-                                        e2Var3.P.r3(false);
+                                        e2Var3.P.t3(false);
                                         H.u();
                                         break;
                                     default:
-                                        e2Var3.P.r3(true);
+                                        e2Var3.P.t3(true);
                                         H.u();
                                         break;
                                 }
@@ -170,84 +170,84 @@ public final /* synthetic */ class k1 implements View.OnClickListener {
                 break;
             case 7:
                 e2 e2Var4 = this.b;
-                a80 a80Var2 = e2Var4.x0;
+                b80 b80Var2 = e2Var4.x0;
                 TL_iv.pageTableCell pagetablecell = null;
-                if (a80Var2 != null) {
-                    a80Var2.u();
+                if (b80Var2 != null) {
+                    b80Var2.u();
                     e2Var4.x0 = null;
                 }
                 x3 x3Var2 = e2Var4.P;
-                p5 p5Var = x3Var2.i4;
-                if (p5Var == null && (R2 = x3Var2.R2()) != null && R2.getModel() != null) {
+                q5 q5Var = x3Var2.p4;
+                if (q5Var == null && (T2 = x3Var2.T2()) != null && T2.getModel() != null) {
                     View findFocus = e2Var4.P.findFocus();
-                    if ((findFocus instanceof i1) && (o9 = R2.o((i1) findFocus)) != null) {
+                    if ((findFocus instanceof i1) && (o9 = T2.o((i1) findFocus)) != null) {
                         pagetablecell = o9.b;
                     }
                     if (pagetablecell != null) {
-                        e2Var4.P.g2(R2);
-                        if (R2.H.add(pagetablecell)) {
-                            R2.v.invalidate();
-                            R2.t();
+                        e2Var4.P.i2(T2);
+                        if (T2.H.add(pagetablecell)) {
+                            T2.v.invalidate();
+                            T2.t();
                         }
-                        p5Var = R2;
+                        q5Var = T2;
                     }
                 }
-                if (p5Var != null && p5Var.getModel() != null && !p5Var.H.isEmpty()) {
-                    e2Var4.P.F4(p5Var);
+                if (q5Var != null && q5Var.getModel() != null && !q5Var.H.isEmpty()) {
+                    e2Var4.P.H4(q5Var);
                     break;
                 } else {
-                    e2Var4.P.R1(e6.u(2, 2));
+                    e2Var4.P.T1(f6.u(2, 2));
                     break;
                 }
                 break;
             case 8:
                 e2 e2Var5 = this.b;
-                a80 a80Var3 = e2Var5.x0;
+                b80 b80Var3 = e2Var5.x0;
                 TL_iv.pageBlockMath pageblockmath = null;
-                if (a80Var3 != null) {
-                    a80Var3.u();
+                if (b80Var3 != null) {
+                    b80Var3.u();
                     e2Var5.x0 = null;
                 }
-                a Q22 = e2Var5.P.Q2();
-                if (Q22 != null) {
-                    TL_iv.PageBlock pageBlock = Q22.b;
+                a S22 = e2Var5.P.S2();
+                if (S22 != null) {
+                    TL_iv.PageBlock pageBlock = S22.b;
                     if (pageBlock instanceof TL_iv.pageBlockMath) {
                         pageblockmath = (TL_iv.pageBlockMath) pageBlock;
                     }
                 }
-                r.U(e2Var5.getParentActivity(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new ai.g3(21, e2Var5, pageblockmath), e2Var5.getResourceProvider());
+                r.S(e2Var5.getParentActivity(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new ai.g3(21, e2Var5, pageblockmath), e2Var5.getResourceProvider());
                 break;
             case 9:
                 e2 e2Var6 = this.b;
-                e2Var6.P.b4 = null;
+                e2Var6.P.i4 = null;
                 e2Var6.o0(90, 0);
                 break;
             case 10:
                 e2 e2Var7 = this.b;
                 e2Var7.r0();
-                vi0 vi0Var = e2Var7.O0;
-                if (vi0Var != null) {
-                    vi0Var.h(true);
+                zi0 zi0Var = e2Var7.O0;
+                if (zi0Var != null) {
+                    zi0Var.h(true);
                     e2Var7.O0 = null;
                     break;
                 }
                 break;
             case 11:
                 e2 e2Var8 = this.b;
-                e2Var8.P.Q4();
+                e2Var8.P.S4();
                 e2Var8.y0();
                 break;
             case 12:
-                this.b.P.Z3(view);
+                this.b.P.b4(view);
                 break;
             case 13:
-                this.b.P.a4();
+                this.b.P.c4();
                 break;
             case 14:
-                this.b.P.X3();
+                this.b.P.Z3();
                 break;
             case 15:
-                this.b.P.b4();
+                this.b.P.d4();
                 break;
             default:
                 this.b.n0();

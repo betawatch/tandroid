@@ -6,22 +6,22 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.as0;
-import org.telegram.ui.Components.y81;
+import org.telegram.ui.Components.es0;
+import org.telegram.ui.Components.g91;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class g2 extends y81 {
-    public final /* synthetic */ x3 T;
+public final class g2 extends g91 {
+    public final /* synthetic */ x3 U;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public g2(x3 x3Var, Context context) {
         super(context, null);
-        this.T = x3Var;
+        this.U = x3Var;
     }
 
-    @Override // org.telegram.ui.Components.y81
-    public final void E(View view, float f7) {
+    @Override // org.telegram.ui.Components.g91
+    public final void F(View view, float f7) {
         int i10;
         View view2;
         xh.n2 n2Var;
@@ -34,8 +34,8 @@ public final class g2 extends y81 {
             return;
         }
         float clamp = Utilities.clamp(f7 / getMeasuredWidth(), 1.0f, -1.0f);
-        x3 x3Var = this.T;
-        i10 = ((org.telegram.ui.ActionBar.e3) x3Var).backgroundPaddingLeft;
+        x3 x3Var = this.U;
+        i10 = ((org.telegram.ui.ActionBar.f3) x3Var).backgroundPaddingLeft;
         view.setTranslationX(((-clamp) * 2.0f * i10) + f7);
         view.setPivotX(clamp <= 0.0f ? view.getMeasuredWidth() : 0.0f);
         view.setCameraDistance(view.getMeasuredHeight() * 3.4f);
@@ -74,19 +74,19 @@ public final class g2 extends y81 {
     }
 
     /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
-    @Override // org.telegram.ui.Components.y81
-    public final void F() {
-        super.F();
+    @Override // org.telegram.ui.Components.g91
+    public final void G() {
+        super.G();
         int i10 = this.b;
-        x3 x3Var = this.T;
+        x3 x3Var = this.U;
         if (i10 != x3Var.L1(false)) {
-            AndroidUtilities.runOnUIThread(new as0(16, this, this.b > x3Var.L1(false)));
+            AndroidUtilities.runOnUIThread(new es0(16, this, this.b > x3Var.L1(false)));
         }
     }
 
-    @Override // org.telegram.ui.Components.y81
+    @Override // org.telegram.ui.Components.g91
     public final boolean i(MotionEvent motionEvent) {
-        f4.d dVar = this.T.Y0;
+        f4.d dVar = this.U.Y0;
         return dVar == null || dVar.c(0);
     }
 }

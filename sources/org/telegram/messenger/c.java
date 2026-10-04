@@ -3,9 +3,9 @@ package org.telegram.messenger;
 import com.android.billingclient.api.Purchase;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements jl0, c5.j {
     public final /* synthetic */ Object a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class c implements jl0, c5.j {
     @Override // org.telegram.ui.Components.jl0
     public int run() {
         int lambda$scrollToFragmentRow$24;
-        lambda$scrollToFragmentRow$24 = AndroidUtilities.lambda$scrollToFragmentRow$24((org.telegram.ui.ActionBar.m2) this.a, (String) this.b, (yl0) this.c);
+        lambda$scrollToFragmentRow$24 = AndroidUtilities.lambda$scrollToFragmentRow$24((org.telegram.ui.ActionBar.n2) this.a, (String) this.b, (zl0) this.c);
         return lambda$scrollToFragmentRow$24;
     }
 }

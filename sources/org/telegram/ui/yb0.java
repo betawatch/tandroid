@@ -1,35 +1,54 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class yb0 extends wn {
-    public boolean Pc;
-    public final /* synthetic */ TLRPC.User Qc;
-    public final /* synthetic */ TLRPC.User[] Rc;
-    public final /* synthetic */ long Sc;
+public final /* synthetic */ class yb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dc0 b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yb0(Bundle bundle, TLRPC.User user, TLRPC.User[] userArr, long j3) {
-        super(bundle);
-        this.Qc = user;
-        this.Rc = userArr;
-        this.Sc = j3;
+    public /* synthetic */ yb0(dc0 dc0Var, String str, int i10) {
+        this.a = i10;
+        this.b = dc0Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.wn, org.telegram.ui.ActionBar.m2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.Pc) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                dc0 dc0Var = this.b;
+                dc0Var.getClass();
+                String str = this.c;
+                if ("disable".equalsIgnoreCase(str)) {
+                    dc0Var.o("turnPasswordOffRow");
+                }
+                if ("change".equalsIgnoreCase(str)) {
+                    dc0Var.o("changePasswordRow");
+                }
+                if ("change-email".equalsIgnoreCase(str)) {
+                    dc0Var.o("emailRow");
+                    break;
+                }
+                break;
+            default:
+                dc0 dc0Var2 = this.b;
+                dc0Var2.getClass();
+                String str2 = this.c;
+                if ("disable".equalsIgnoreCase(str2)) {
+                    dc0Var2.o("disablePasscodeRow");
+                }
+                if ("change".equalsIgnoreCase(str2)) {
+                    dc0Var2.o("changePasscodeRow");
+                }
+                if ("auto-lock".equalsIgnoreCase(str2)) {
+                    dc0Var2.o("autoLockRow");
+                }
+                if ("fingerprint".equalsIgnoreCase(str2)) {
+                    dc0Var2.o("fingerprintRow");
+                    break;
+                }
+                break;
         }
-        this.Pc = true;
-        org.telegram.ui.Components.yc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Qc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Rc[0])), new ai.j(this, this.Sc, 25)), R.raw.contact_check).j();
     }
 }

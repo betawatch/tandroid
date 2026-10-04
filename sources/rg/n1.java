@@ -1,89 +1,48 @@
 package rg;
 
-import android.content.Context;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import w7.y5;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class n1 extends FrameLayout {
-    public float a;
-    public final m1 b;
-    public final ImageReceiver c;
-    public final ImageReceiver d;
-    public boolean e;
-    public boolean f;
-    public float h;
-    public float n;
-    public TLRPC.Document r;
-    public boolean s;
-    public final /* synthetic */ s0 v;
+public final class n1 extends yl0 {
+    public final /* synthetic */ t0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n1(s0 s0Var, Context context) {
-        super(context);
-        this.v = s0Var;
-        this.f = true;
-        m1 m1Var = new m1(this, context);
-        this.b = m1Var;
-        ImageReceiver imageReceiver = new ImageReceiver(m1Var);
-        this.c = imageReceiver;
-        ImageReceiver imageReceiver2 = new ImageReceiver(m1Var);
-        this.d = imageReceiver2;
-        imageReceiver.setAllowStartAnimation(false);
-        imageReceiver2.setAllowStartAnimation(false);
-        setClipChildren(false);
-        addView(m1Var, y5.e(-1, -2, 21));
+    public n1(t0 t0Var) {
+        this.c = t0Var;
     }
 
-    public final void a(boolean z10, boolean z11, boolean z12) {
-        boolean z13 = this.e;
-        m1 m1Var = this.b;
-        if (z13 != z11) {
-            this.e = z11;
-            if (!z12) {
-                this.h = z11 ? 1.0f : 0.0f;
-            }
-            m1Var.invalidate();
+    @Override // org.telegram.ui.Components.yl0
+    public final boolean D(s4.c1 c1Var) {
+        return false;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return ConnectionsManager.DEFAULT_DATACENTER_ID;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        t0 t0Var = this.c;
+        ArrayList arrayList = t0Var.e3;
+        if (arrayList.isEmpty()) {
+            return;
         }
-        if (this.f != z10) {
-            this.f = z10;
-            if (!z12) {
-                this.n = z10 ? 1.0f : 0.0f;
-            }
-            m1Var.invalidate();
-        }
+        p1 p1Var = (p1) c1Var.a;
+        p1Var.r = (TLRPC.Document) arrayList.get(i10 % arrayList.size());
+        p1Var.s = true;
+        p1Var.a(true ^ t0Var.j3, false, false);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.c.onAttachedToWindow();
-        this.d.onAttachedToWindow();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c.onDetachedFromWindow();
-        this.d.onDetachedFromWindow();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12 = (int) (this.v.k3 * 0.6f);
-        m1 m1Var = this.b;
-        ViewGroup.LayoutParams layoutParams = m1Var.getLayoutParams();
-        ViewGroup.LayoutParams layoutParams2 = m1Var.getLayoutParams();
-        int dp = i12 - AndroidUtilities.dp(16.0f);
-        layoutParams2.height = dp;
-        layoutParams.width = dp;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (i12 * 0.7f), TLObject.FLAG_30));
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        p1 p1Var = new p1(this.c, viewGroup.getContext());
+        p1Var.setLayoutParams(new s4.p0(-1, -2));
+        return new il0(p1Var);
     }
 }

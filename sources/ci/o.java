@@ -2,15 +2,15 @@ package ci;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bc b;
+    public final /* synthetic */ ac b;
 
-    public /* synthetic */ o(bc bcVar, int i10) {
+    public /* synthetic */ o(ac acVar, int i10) {
         this.a = i10;
-        this.b = bcVar;
+        this.b = acVar;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
@@ -19,9 +19,9 @@ public final /* synthetic */ class o implements Utilities.Callback {
         switch (this.a) {
             case 0:
                 int intValue = num.intValue();
-                bc bcVar = this.b;
-                bcVar.setPeriod(intValue);
-                Utilities.Callback callback = bcVar.B1;
+                ac acVar = this.b;
+                acVar.setPeriod(intValue);
+                Utilities.Callback callback = acVar.B1;
                 if (callback != null) {
                     callback.run(num);
                     break;

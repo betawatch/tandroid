@@ -1,37 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class rz0 extends ViewGroup.MarginLayoutParams {
-    public tz0 a;
-    public tz0 b;
+public final class rz0 {
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rz0() {
-        super(-2, -2);
-        tz0 tz0Var = tz0.e;
-        this.a = tz0Var;
-        this.b = tz0Var;
-        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
-        this.a = tz0Var;
-        this.b = tz0Var;
+    public /* synthetic */ rz0(int i10) {
+        this.a = i10;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final int a(yz0 yz0Var, int i10) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i10;
+            case 3:
+                return TLObject.FLAG_31;
+            default:
+                return TLObject.FLAG_31;
         }
-        if (obj == null || rz0.class != obj.getClass()) {
-            return false;
-        }
-        rz0 rz0Var = (rz0) obj;
-        return this.b.equals(rz0Var.b) && this.a.equals(rz0Var.a);
     }
 
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
+    public final int b(yz0 yz0Var, int i10) {
+        switch (this.a) {
+            case 0:
+                return TLObject.FLAG_31;
+            case 1:
+                return 0;
+            case 2:
+                return i10;
+            case 3:
+                return 0;
+            default:
+                return 0;
+        }
+    }
+
+    public int c(int i10, int i11) {
+        switch (this.a) {
+            case 4:
+                return i11;
+            default:
+                return i10;
+        }
     }
 }

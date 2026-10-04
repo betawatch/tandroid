@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e8 implements Comparator {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class e8 implements Comparator {
                 TLRPC.User user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(peerDialogId2));
                 ?? r12 = user2 == null ? 0 : user2.premium;
                 if (r02 == r12) {
-                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) hg.c.g(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) hg.c.g(1, peerStories.stories)).date);
+                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) hg.k0.g(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) hg.k0.g(1, peerStories.stories)).date);
                 }
                 return r12 - r02;
             case 1:
@@ -86,15 +86,15 @@ public final /* synthetic */ class e8 implements Comparator {
                 }
                 return -1;
             case 2:
-                ii.i6 i6Var = (ii.i6) this.b;
+                ii.j6 j6Var = (ii.j6) this.b;
                 TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) obj;
                 TL_iv.pageTableCell pagetablecell2 = (TL_iv.pageTableCell) obj2;
-                int b10 = i6Var.b(pagetablecell);
-                int b11 = i6Var.b(pagetablecell2);
-                return b10 != b11 ? Integer.compare(b10, b11) : Integer.compare(i6Var.a(pagetablecell), i6Var.a(pagetablecell2));
+                int b10 = j6Var.b(pagetablecell);
+                int b11 = j6Var.b(pagetablecell2);
+                return b10 != b11 ? Integer.compare(b10, b11) : Integer.compare(j6Var.a(pagetablecell), j6Var.a(pagetablecell2));
             case 3:
-                r2.v vVar = (r2.v) this.b;
-                return vVar.b(obj2) - vVar.b(obj);
+                r2.w wVar = (r2.w) this.b;
+                return wVar.d(obj2) - wVar.d(obj);
             case 4:
                 SparseIntArray sparseIntArray = (SparseIntArray) this.b;
                 return sparseIntArray.get(((rg.h) obj).e, ConnectionsManager.DEFAULT_DATACENTER_ID) - sparseIntArray.get(((rg.h) obj2).e, ConnectionsManager.DEFAULT_DATACENTER_ID);

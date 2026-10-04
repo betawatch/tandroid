@@ -3,9 +3,9 @@ package fi;
 import ai.g3;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.g61;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Utilities.Callback5, Utilities.Callback5Return, MessagesStorage.StringCallback {
     public final /* synthetic */ f a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class c implements Utilities.Callback5, Utilities.C
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        f.U(this.a, (x51) obj);
+        f.S(this.a, (g61) obj);
     }
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback

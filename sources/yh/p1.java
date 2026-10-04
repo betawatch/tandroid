@@ -4,7 +4,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p1 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -30,7 +30,7 @@ public final /* synthetic */ class p1 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                x3.H0(this.b, (org.telegram.ui.ActionBar.a2) this.n, this.c, this.d, this.e, this.h, this.f);
+                x3.H0(this.b, (org.telegram.ui.ActionBar.b2) this.n, this.c, this.d, this.e, this.h, this.f);
                 break;
             default:
                 x3.f0(this.b, this.c, this.d, this.e, (Utilities.Callback) this.n, this.f, this.h);
@@ -38,9 +38,9 @@ public final /* synthetic */ class p1 implements Runnable {
         }
     }
 
-    public /* synthetic */ p1(x3 x3Var, org.telegram.ui.ActionBar.a2 a2Var, TLObject tLObject, long j3, long j10, long j11, TLRPC.TL_error tL_error) {
+    public /* synthetic */ p1(x3 x3Var, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, long j3, long j10, long j11, TLRPC.TL_error tL_error) {
         this.b = x3Var;
-        this.n = a2Var;
+        this.n = b2Var;
         this.c = tLObject;
         this.d = j3;
         this.e = j10;

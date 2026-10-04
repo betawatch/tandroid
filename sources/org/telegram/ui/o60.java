@@ -1,47 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o60 implements org.telegram.ui.Components.f20, org.telegram.ui.ActionBar.z1, r0.n {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z60 b;
+public final class o60 implements ViewTreeObserver.OnGlobalLayoutListener {
+    public final /* synthetic */ FrameLayout a;
+    public final /* synthetic */ r60 b;
 
-    public /* synthetic */ o60(z60 z60Var, int i10) {
-        this.a = i10;
-        this.b = z60Var;
+    public o60(r60 r60Var, FrameLayout frameLayout) {
+        this.b = r60Var;
+        this.a = frameLayout;
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        int i10 = AndroidUtilities.getDefaultWindowInsets(l1Var, false).d;
-        z60 z60Var = this.b;
-        z60Var.m0 = i10;
-        ai.w7 w7Var = z60Var.F;
-        if (w7Var != null) {
-            w7Var.setPadding(0, 0, 0, i10);
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        this.a.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        r60 r60Var = this.b;
+        if (r60Var.z0 == null) {
+            r60Var.z0 = (vc) r60Var.y0(r60Var.Z);
         }
-        z60Var.j0();
-        z60Var.h0();
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.ui.Components.f20
-    public void a(int i10) {
-        this.b.b.a(Math.min(i10, r0.c0));
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        switch (this.a) {
-            case 1:
-                this.b.o0();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
-        }
+        r60Var.z0.f.setOnClickListener(new j60(this, 1));
     }
 }

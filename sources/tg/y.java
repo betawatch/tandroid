@@ -3,12 +3,13 @@ package tg;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ke;
-import org.telegram.ui.wn;
+import org.telegram.ui.gg;
+import org.telegram.ui.web.x1;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements Utilities.Callback {
     public final /* synthetic */ a0 a;
@@ -30,14 +31,14 @@ public final /* synthetic */ class y implements Utilities.Callback {
         a0 a0Var = this.a;
         a0Var.dismiss();
         if (this.b == null) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.f1(28, a0Var, this.e), 220L);
+            AndroidUtilities.runOnUIThread(new x1(28, a0Var, this.e), 220L);
             return;
         }
-        m2 U = LaunchActivity.U();
+        n2 U = LaunchActivity.U();
         if (U != null) {
-            wn R9 = wn.R9(this.c);
-            R9.whenFullyVisible(new ke(R9, this.d, 6));
-            U.presentFragment(R9);
+            yn Q9 = yn.Q9(this.c);
+            Q9.whenFullyVisible(new gg(Q9, this.d, 6));
+            U.presentFragment(Q9);
         }
     }
 }

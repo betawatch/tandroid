@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import m.p3;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class g implements com.google.android.gms.common.api.c {
     public static final k6.c[] T = new k6.c[0];
@@ -277,19 +277,19 @@ public abstract class g implements com.google.android.gms.common.api.c {
                 } finally {
                 }
             }
-        } catch (DeadObjectException e) {
-            Log.w("GmsClient", "IGmsServiceBroker.getService failed", e);
+        } catch (DeadObjectException e7) {
+            Log.w("GmsClient", "IGmsServiceBroker.getService failed", e7);
             int i12 = this.R.get();
             a0 a0Var = this.v;
             a0Var.sendMessage(a0Var.obtainMessage(6, i12, 3));
-        } catch (RemoteException e7) {
-            e = e7;
+        } catch (RemoteException e10) {
+            e = e10;
             Log.w("GmsClient", "IGmsServiceBroker.getService failed", e);
             B(8, null, null, this.R.get());
-        } catch (SecurityException e10) {
-            throw e10;
-        } catch (RuntimeException e11) {
-            e = e11;
+        } catch (SecurityException e11) {
+            throw e11;
+        } catch (RuntimeException e12) {
+            e = e12;
             Log.w("GmsClient", "IGmsServiceBroker.getService failed", e);
             B(8, null, null, this.R.get());
         }

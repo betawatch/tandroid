@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c implements Runnable {
     public static final a5.a c = new a5.a("RevokeAccessOperation", new String[0]);
@@ -34,10 +34,10 @@ public final class c implements Runnable {
                 Log.e((String) aVar.c, ((String) aVar.d).concat("Unable to revoke access!"));
             }
             aVar.i("Response Code: " + responseCode, new Object[0]);
-        } catch (IOException e) {
-            Log.e((String) aVar.c, ((String) aVar.d).concat("IOException when revoking access: ".concat(String.valueOf(e.toString()))));
-        } catch (Exception e7) {
-            Log.e((String) aVar.c, ((String) aVar.d).concat("Exception when revoking access: ".concat(String.valueOf(e7.toString()))));
+        } catch (IOException e7) {
+            Log.e((String) aVar.c, ((String) aVar.d).concat("IOException when revoking access: ".concat(String.valueOf(e7.toString()))));
+        } catch (Exception e10) {
+            Log.e((String) aVar.c, ((String) aVar.d).concat("Exception when revoking access: ".concat(String.valueOf(e10.toString()))));
         }
         this.b.a(status);
     }

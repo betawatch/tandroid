@@ -7,7 +7,7 @@ import android.os.Build;
 import android.util.Log;
 import com.google.android.gms.common.api.GoogleApiActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class r implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -44,8 +44,8 @@ public final class r implements DialogInterface.OnClickListener {
         try {
             try {
                 a();
-            } catch (ActivityNotFoundException e) {
-                Log.e("DialogRedirect", true == Build.FINGERPRINT.contains("generic") ? "Failed to start resolution intent. This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store." : "Failed to start resolution intent.", e);
+            } catch (ActivityNotFoundException e7) {
+                Log.e("DialogRedirect", true == Build.FINGERPRINT.contains("generic") ? "Failed to start resolution intent. This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store." : "Failed to start resolution intent.", e7);
             }
         } finally {
             dialogInterface.dismiss();

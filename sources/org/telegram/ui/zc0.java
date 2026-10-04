@@ -1,39 +1,33 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashMap;
-import java.util.Map;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.IMapsProvider;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class zc0 extends FrameLayout {
-    public final HashMap a;
-    public final /* synthetic */ cd0 b;
+public final class zc0 extends gg.u0 {
+    public final /* synthetic */ gd0 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zc0(cd0 cd0Var, Context context) {
-        super(context);
-        this.b = cd0Var;
-        this.a = new HashMap();
+    public zc0(gd0 gd0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
+        super(context, d6Var, false, z10);
+        this.N = gd0Var;
     }
 
-    public final void a() {
-        IMapsProvider.IMap iMap = this.b.I;
-        if (iMap == null) {
-            return;
+    @Override // s4.h0
+    public final void l() {
+        gd0 gd0Var = this.N;
+        org.telegram.ui.ActionBar.v0 v0Var = gd0Var.w;
+        if (v0Var != null) {
+            v0Var.setShowSearchProgress(gd0Var.W.J);
         }
-        IMapsProvider.IProjection projection = iMap.getProjection();
-        for (Map.Entry entry : this.a.entrySet()) {
-            IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
-            View view = (View) entry.getValue();
-            Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
-            view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
-            view.setTranslationY(AndroidUtilities.dp(22.0f) + (screenLocation.y - view.getMeasuredHeight()));
+        TextView textView = gd0Var.r;
+        if (textView != null) {
+            textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoPlacesFoundInfo", R.string.NoPlacesFoundInfo, gd0Var.W.x)));
         }
+        super.l();
     }
 }

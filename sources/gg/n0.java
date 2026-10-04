@@ -15,28 +15,28 @@ import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.t3;
+import org.telegram.ui.Components.ao0;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.o6;
-import org.telegram.ui.Components.ta;
-import org.telegram.ui.Components.tn0;
 import org.telegram.ui.Components.ua;
-import org.telegram.ui.Components.un0;
-import org.telegram.ui.Components.vn0;
-import org.telegram.ui.Components.wn0;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.va;
+import org.telegram.ui.Components.xn0;
+import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.yn0;
+import org.telegram.ui.Components.zn0;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.bj1;
+import org.telegram.ui.ci0;
+import org.telegram.ui.di0;
 import org.telegram.ui.xi1;
-import org.telegram.ui.yh0;
-import org.telegram.ui.zh0;
-import w7.y5;
+import w7.z5;
 import yh.x3;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class n0 extends xl0 {
+public final class n0 extends yl0 {
     public final /* synthetic */ int c;
     public final /* synthetic */ Object d;
 
@@ -45,7 +45,7 @@ public final class n0 extends xl0 {
         this.d = obj;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         switch (this.c) {
         }
@@ -68,15 +68,15 @@ public final class n0 extends xl0 {
         Object obj = this.d;
         switch (i10) {
             case 0:
-                return ((s0) obj).X2.size();
+                return ((s0) obj).e3.size();
             case 1:
                 return 1;
             case 2:
-                return ((wn0) obj).r.size();
+                return ((ao0) obj).r.size();
             case 3:
-                return ((zh0) obj).c.size();
+                return ((di0) obj).c.size();
             case 4:
-                int[][] iArr = WallpapersListActivity.k0;
+                int[][] iArr = WallpapersListActivity.i0;
                 return 12;
             case 5:
                 return ((rg.j) obj).d.size();
@@ -101,80 +101,80 @@ public final class n0 extends xl0 {
     public final void v(s4.c1 c1Var, int i10) {
         switch (this.c) {
             case 0:
-                ((r0) c1Var).v.setData((q0) ((s0) this.d).X2.get(i10));
+                ((r0) c1Var).v.setData((q0) ((s0) this.d).e3.get(i10));
                 break;
             case 1:
                 break;
             case 2:
                 View view = c1Var.a;
-                wn0 wn0Var = (wn0) this.d;
-                ArrayList arrayList = wn0Var.r;
+                ao0 ao0Var = (ao0) this.d;
+                ArrayList arrayList = ao0Var.r;
                 if (i10 >= 0 && i10 < arrayList.size()) {
-                    tn0 tn0Var = (tn0) arrayList.get(i10);
-                    vn0 vn0Var = (vn0) view;
-                    zg.o0 o0Var = vn0Var.d;
-                    boolean z10 = o0Var == null || !o0Var.equals(tn0Var.a);
+                    xn0 xn0Var = (xn0) arrayList.get(i10);
+                    zn0 zn0Var = (zn0) view;
+                    zg.o0 o0Var = zn0Var.d;
+                    boolean z10 = o0Var == null || !o0Var.equals(xn0Var.a);
                     if (z10) {
                         TLRPC.TL_reactionCount tL_reactionCount = new TLRPC.TL_reactionCount();
-                        tL_reactionCount.reaction = tn0Var.a.g();
-                        tL_reactionCount.count = tn0Var.b;
-                        wn0 wn0Var2 = vn0Var.s;
-                        un0 un0Var = new un0(vn0Var, wn0Var2.a, vn0Var, tL_reactionCount, wn0Var2.c);
-                        vn0Var.a = un0Var;
-                        un0Var.F.d(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(100.0f));
-                        un0 un0Var2 = vn0Var.a;
-                        un0Var2.q = true;
-                        un0Var2.S = true;
+                        tL_reactionCount.reaction = xn0Var.a.g();
+                        tL_reactionCount.count = xn0Var.b;
+                        ao0 ao0Var2 = zn0Var.s;
+                        yn0 yn0Var = new yn0(zn0Var, ao0Var2.a, zn0Var, tL_reactionCount, ao0Var2.c);
+                        zn0Var.a = yn0Var;
+                        yn0Var.F.d(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(100.0f));
+                        yn0 yn0Var2 = zn0Var.a;
+                        yn0Var2.q = true;
+                        yn0Var2.S = true;
                     } else {
-                        vn0Var.a.w = tn0Var.b;
+                        zn0Var.a.w = xn0Var.b;
                     }
-                    vn0Var.d = tn0Var.a;
+                    zn0Var.d = xn0Var.a;
                     if (!z10) {
-                        un0 un0Var3 = vn0Var.a;
-                        un0Var3.f = un0Var3.A;
+                        yn0 yn0Var3 = zn0Var.a;
+                        yn0Var3.f = yn0Var3.A;
                     }
-                    vn0Var.a.A = AndroidUtilities.dp(44.33f);
-                    vn0Var.a.u = !TextUtils.isEmpty(tn0Var.c);
-                    un0 un0Var4 = vn0Var.a;
-                    boolean z11 = un0Var4.u;
-                    o6 o6Var = un0Var4.G;
+                    zn0Var.a.A = AndroidUtilities.dp(44.33f);
+                    zn0Var.a.u = !TextUtils.isEmpty(xn0Var.c);
+                    yn0 yn0Var4 = zn0Var.a;
+                    boolean z11 = yn0Var4.u;
+                    o6 o6Var = yn0Var4.G;
                     if (z11) {
-                        o6Var.q(Emoji.replaceEmoji(tn0Var.c, o6Var.a.getFontMetricsInt(), false), !z10, true);
+                        o6Var.q(Emoji.replaceEmoji(xn0Var.c, o6Var.a.getFontMetricsInt(), false), !z10, true);
                     } else if (o6Var != null) {
                         o6Var.q("", !z10, true);
                     }
-                    un0 un0Var5 = vn0Var.a;
-                    Integer.toString(tn0Var.b);
-                    un0Var5.getClass();
-                    vn0Var.a.F.c(tn0Var.b, !z10);
-                    un0 un0Var6 = vn0Var.a;
-                    if (un0Var6.F != null && (un0Var6.w > 0 || un0Var6.u)) {
-                        un0Var6.A = (int) (AndroidUtilities.dp(vn0Var.a.u ? 4.0f : 0.0f) + ((int) Math.ceil(r3.m)) + vn0Var.a.G.d + un0Var6.A);
+                    yn0 yn0Var5 = zn0Var.a;
+                    Integer.toString(xn0Var.b);
+                    yn0Var5.getClass();
+                    zn0Var.a.F.c(xn0Var.b, !z10);
+                    yn0 yn0Var6 = zn0Var.a;
+                    if (yn0Var6.F != null && (yn0Var6.w > 0 || yn0Var6.u)) {
+                        yn0Var6.A = (int) (AndroidUtilities.dp(zn0Var.a.u ? 4.0f : 0.0f) + ((int) Math.ceil(r3.m)) + zn0Var.a.G.d + yn0Var6.A);
                     }
                     if (z10) {
-                        un0 un0Var7 = vn0Var.a;
-                        un0Var7.f = un0Var7.A;
+                        yn0 yn0Var7 = zn0Var.a;
+                        yn0Var7.f = yn0Var7.A;
                     }
-                    vn0Var.a.B = AndroidUtilities.dp(28.0f);
-                    un0 un0Var8 = vn0Var.a;
-                    un0Var8.p = vn0Var.e;
-                    if (vn0Var.r) {
-                        un0Var8.a();
+                    zn0Var.a.B = AndroidUtilities.dp(28.0f);
+                    yn0 yn0Var8 = zn0Var.a;
+                    yn0Var8.p = zn0Var.e;
+                    if (zn0Var.r) {
+                        yn0Var8.a();
                     }
                     if (!z10) {
-                        vn0Var.requestLayout();
+                        zn0Var.requestLayout();
                     }
-                    ((vn0) view).a(tn0Var.a.h == wn0Var.h, false);
+                    ((zn0) view).a(xn0Var.a.h == ao0Var.h, false);
                     break;
                 }
                 break;
             case 3:
-                yh0 yh0Var = (yh0) c1Var.a;
-                zh0 zh0Var = (zh0) this.d;
-                yh0Var.a((TLObject) zh0Var.c.get(i10), false, ((Integer) zh0Var.b.get(i10)).intValue());
+                ci0 ci0Var = (ci0) c1Var.a;
+                di0 di0Var = (di0) this.d;
+                ci0Var.a((TLObject) di0Var.c.get(i10), false, ((Integer) di0Var.b.get(i10)).intValue());
                 break;
             case 4:
-                ((xi1) c1Var.a).a = WallpapersListActivity.m0[i10];
+                ((xi1) c1Var.a).a = WallpapersListActivity.k0[i10];
                 break;
             case 5:
                 rg.j jVar = (rg.j) this.d;
@@ -189,11 +189,11 @@ public final class n0 extends xl0 {
                 }
                 break;
             default:
-                ta taVar = (ta) c1Var.a;
+                ua uaVar = (ua) c1Var.a;
                 int i11 = ((x3) this.d).P0[(r0.length - 1) - i10];
-                if (taVar.a != i11) {
-                    taVar.a = i11;
-                    taVar.requestLayout();
+                if (uaVar.a != i11) {
+                    uaVar.a = i11;
+                    uaVar.requestLayout();
                     break;
                 }
                 break;
@@ -211,14 +211,14 @@ public final class n0 extends xl0 {
                 p0Var.setLayoutParams(new s4.p0(-2, AndroidUtilities.dp(30.0f)));
                 return r0Var;
             case 1:
-                return new il0(((ua) this.d).X);
+                return new il0(((va) this.d).X);
             case 2:
-                wn0 wn0Var = (wn0) this.d;
-                return new il0(new vn0(wn0Var, wn0Var.getContext()));
+                ao0 ao0Var = (ao0) this.d;
+                return new il0(new zn0(ao0Var, ao0Var.getContext()));
             case 3:
-                yh0 yh0Var = new yh0(viewGroup.getContext());
-                yh0Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(50.0f)));
-                return new il0(yh0Var);
+                ci0 ci0Var = new ci0(viewGroup.getContext());
+                ci0Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(50.0f)));
+                return new il0(ci0Var);
             case 4:
                 bj1 bj1Var = (bj1) this.d;
                 return new il0(new xi1(bj1Var.E, bj1Var.c));
@@ -235,23 +235,23 @@ public final class n0 extends xl0 {
                     ImageView imageView = new ImageView(context);
                     iVar.c = imageView;
                     imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-                    iVar.addView(imageView, y5.d(28, 28.0f, 0, 25.0f, 12.0f, 16.0f, 0.0f));
+                    iVar.addView(imageView, z5.d(28, 28.0f, 0, 25.0f, 12.0f, 16.0f, 0.0f));
                     TextView textView = new TextView(context);
                     iVar.a = textView;
                     textView.setTypeface(AndroidUtilities.bold());
-                    ok.n(h6.G6, d6Var, textView, 1, 14.0f);
-                    iVar.addView(textView, y5.d(-1, -2.0f, 0, 68.0f, 8.0f, 16.0f, 0.0f));
+                    ok.n(i6.G6, d6Var, textView, 1, 14.0f);
+                    iVar.addView(textView, z5.d(-1, -2.0f, 0, 68.0f, 8.0f, 16.0f, 0.0f));
                     TextView textView2 = new TextView(context);
                     iVar.b = textView2;
-                    ok.n(h6.y6, d6Var, textView2, 1, 14.0f);
-                    iVar.addView(textView2, y5.d(-1, -2.0f, 0, 68.0f, 28.0f, 16.0f, 8.0f));
+                    ok.n(i6.y6, d6Var, textView2, 1, 14.0f);
+                    iVar.addView(textView2, z5.d(-1, -2.0f, 0, 68.0f, 28.0f, 16.0f, 8.0f));
                     view = iVar;
                 }
                 return com.google.android.gms.internal.vision.e2.k(view, view, -1, -2);
             default:
-                ta taVar = new ta(((x3) this.d).getContext());
-                taVar.a = 0;
-                return new il0(taVar);
+                ua uaVar = new ua(((x3) this.d).getContext());
+                uaVar.a = 0;
+                return new il0(uaVar);
         }
     }
 
@@ -259,11 +259,11 @@ public final class n0 extends xl0 {
     public void y(s4.c1 c1Var) {
         switch (this.c) {
             case 2:
-                wn0 wn0Var = (wn0) this.d;
-                ArrayList arrayList = wn0Var.r;
+                ao0 ao0Var = (ao0) this.d;
+                ArrayList arrayList = ao0Var.r;
                 int b10 = c1Var.b();
                 if (b10 >= 0 && b10 < arrayList.size()) {
-                    ((vn0) c1Var.a).a(((tn0) arrayList.get(b10)).a.h == wn0Var.h, false);
+                    ((zn0) c1Var.a).a(((xn0) arrayList.get(b10)).a.h == ao0Var.h, false);
                     break;
                 }
                 break;

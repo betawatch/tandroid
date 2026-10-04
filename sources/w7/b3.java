@@ -1,16 +1,16 @@
 package w7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b3 implements ia.d {
     public static final b3 a = new b3();
-    public static final ia.c b = new ia.c("durationMs", hg.c.m(v7.j.k(d.class, new a(1))));
-    public static final ia.c c = new ia.c("imageSource", hg.c.m(v7.j.k(d.class, new a(2))));
-    public static final ia.c d = new ia.c("imageFormat", hg.c.m(v7.j.k(d.class, new a(3))));
-    public static final ia.c e = new ia.c("imageByteSize", hg.c.m(v7.j.k(d.class, new a(4))));
-    public static final ia.c f = new ia.c("imageWidth", hg.c.m(v7.j.k(d.class, new a(5))));
-    public static final ia.c g = new ia.c("imageHeight", hg.c.m(v7.j.k(d.class, new a(6))));
-    public static final ia.c h = new ia.c("rotationDegrees", hg.c.m(v7.j.k(d.class, new a(7))));
+    public static final ia.c b = new ia.c("durationMs", hg.k0.m(t8.b.m(d.class, new a(1))));
+    public static final ia.c c = new ia.c("imageSource", hg.k0.m(t8.b.m(d.class, new a(2))));
+    public static final ia.c d = new ia.c("imageFormat", hg.k0.m(t8.b.m(d.class, new a(3))));
+    public static final ia.c e = new ia.c("imageByteSize", hg.k0.m(t8.b.m(d.class, new a(4))));
+    public static final ia.c f = new ia.c("imageWidth", hg.k0.m(t8.b.m(d.class, new a(5))));
+    public static final ia.c g = new ia.c("imageHeight", hg.k0.m(t8.b.m(d.class, new a(6))));
+    public static final ia.c h = new ia.c("rotationDegrees", hg.k0.m(t8.b.m(d.class, new a(7))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {

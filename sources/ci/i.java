@@ -8,17 +8,17 @@ import android.graphics.RectF;
 import android.view.KeyEvent;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.bb0;
-import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.xi;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class i extends bb0 {
     public final /* synthetic */ int V;
     public final /* synthetic */ KeyEvent.Callback W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i(KeyEvent.Callback callback, Context context, long j3, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
-        super(context, j3, 0L, m2Var, d6Var);
+    public /* synthetic */ i(KeyEvent.Callback callback, Context context, long j3, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, j3, 0L, n2Var, d6Var);
         this.V = i10;
         this.W = callback;
     }
@@ -67,9 +67,9 @@ public final class i extends bb0 {
     public void i() {
         switch (this.V) {
             case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((wi) this.W).j0;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((xi) this.W).j0;
                 if (chatAttachAlertPhotoLayout != null) {
-                    chatAttachAlertPhotoLayout.V();
+                    chatAttachAlertPhotoLayout.T();
                     break;
                 }
                 break;
@@ -80,9 +80,9 @@ public final class i extends bb0 {
     public void n(boolean z10) {
         switch (this.V) {
             case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((wi) this.W).j0;
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((xi) this.W).j0;
                 if (chatAttachAlertPhotoLayout != null) {
-                    chatAttachAlertPhotoLayout.V();
+                    chatAttachAlertPhotoLayout.T();
                     break;
                 }
                 break;

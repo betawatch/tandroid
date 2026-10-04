@@ -1,6 +1,6 @@
 package dd;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public enum p extends b2 {
     public p() {
@@ -16,9 +16,9 @@ public enum p extends b2 {
     @Override // dd.b2
     public final void d(l lVar, a aVar) {
         if (aVar.o()) {
-            String e = aVar.e();
-            lVar.i.h(e);
-            lVar.h.append(e);
+            String e7 = aVar.e();
+            lVar.i.h(e7);
+            lVar.h.append(e7);
             return;
         }
         char d = aVar.d();

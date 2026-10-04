@@ -13,7 +13,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FileStreamLoadOperation;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class ac implements x5 {
     public final /* synthetic */ d9 a;
@@ -39,16 +39,16 @@ public final class ac implements x5 {
 
     public final void b(boolean z10) {
         jc jcVar = this.d;
-        org.telegram.ui.ActionBar.m2 m2Var = jcVar.f;
+        org.telegram.ui.ActionBar.n2 n2Var = jcVar.f;
         if (jcVar.b) {
             if (jcVar.c) {
                 return;
             }
             if (z10) {
-                AndroidUtilities.requestAdjustNothing(m2Var.getParentActivity(), m2Var.getClassGuid());
+                AndroidUtilities.requestAdjustNothing(n2Var.getParentActivity(), n2Var.getClassGuid());
                 return;
             } else {
-                AndroidUtilities.requestAdjustResize(m2Var.getParentActivity(), m2Var.getClassGuid());
+                AndroidUtilities.requestAdjustResize(n2Var.getParentActivity(), n2Var.getClassGuid());
                 return;
             }
         }
@@ -56,8 +56,8 @@ public final class ac implements x5 {
         layoutParams.softInputMode = z10 ? 48 : 16;
         try {
             jcVar.n.updateViewLayout(jcVar.s, layoutParams);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 

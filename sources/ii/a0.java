@@ -4,9 +4,9 @@ import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import v7.p8;
+import v7.o8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public abstract class a0 extends FrameLayout implements m4 {
     public a a;
@@ -26,7 +26,7 @@ public abstract class a0 extends FrameLayout implements m4 {
     }
 
     public final void c(a aVar) {
-        this.b.a(aVar, new ei.d5(this, 13));
+        this.b.a(aVar, new ei.f(this, 14));
     }
 
     public int d() {
@@ -35,21 +35,21 @@ public abstract class a0 extends FrameLayout implements m4 {
 
     public void f(int i10) {
         int i11;
-        int d = p8.d(this.a);
+        int d = o8.d(this.a);
         int i12 = 0;
         int d10 = (i10 > 0 || d > 0) ? d() : 0;
         a aVar = this.a;
         if (aVar == null || !aVar.n) {
             i11 = this.e;
         } else {
-            i11 = aVar.l <= 0 ? 0 : AndroidUtilities.dp(hg.c.f(r3, 1, 16, 10));
+            i11 = aVar.l <= 0 ? 0 : AndroidUtilities.dp(hg.k0.f(r3, 1, 16, 10));
         }
         a aVar2 = this.a;
         if (aVar2 == null || !aVar2.o) {
             i12 = this.h;
         } else {
             if (aVar2.m > 0) {
-                i12 = AndroidUtilities.dp(hg.c.f(r7, 1, 16, 10));
+                i12 = AndroidUtilities.dp(hg.k0.f(r7, 1, 16, 10));
             }
         }
         int i13 = i10 + d10;

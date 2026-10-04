@@ -1,27 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.ViewGroup;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class eg extends mz {
-    public final /* synthetic */ ChatActivityEnterView P2;
+public final class eg extends org.telegram.ui.yn {
+    public boolean Kc;
+    public final /* synthetic */ TLRPC.User Lc;
+    public final /* synthetic */ TLRPC.User Mc;
+    public final /* synthetic */ long Nc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eg(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.ActionBar.m2 m2Var, boolean z10, Context context, TLRPC.ChatFull chatFull, ViewGroup viewGroup, boolean z11, org.telegram.ui.ActionBar.d6 d6Var, boolean z12, boolean z13) {
-        super(m2Var, z10, true, true, context, true, chatFull, viewGroup, z11, d6Var, z12, z13);
-        this.P2 = chatActivityEnterView;
+    public eg(Bundle bundle, TLRPC.User user, TLRPC.User user2, long j3) {
+        super(bundle);
+        this.Lc = user;
+        this.Mc = user2;
+        this.Nc = j3;
     }
 
-    @Override // org.telegram.ui.Components.mz, android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        ChatActivityEnterView chatActivityEnterView = this.P2;
-        if (chatActivityEnterView.V0 == null || chatActivityEnterView.o3 != 0) {
+    @Override // org.telegram.ui.yn, org.telegram.ui.ActionBar.n2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Kc) {
             return;
         }
-        chatActivityEnterView.Z2.y(f7);
+        this.Kc = true;
+        yc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Lc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Mc)), new ai.j(this, this.Nc, 20)), R.raw.contact_check).j();
     }
 }

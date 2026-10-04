@@ -4,10 +4,10 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.BasePendingResult;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class p extends BasePendingResult {
-    public a6.m o;
+    public xa.c o;
     public final boolean p;
     public final /* synthetic */ h q;
 
@@ -27,7 +27,7 @@ public abstract class p extends BasePendingResult {
 
     public final g6.n o() {
         if (this.o == null) {
-            this.o = new a6.m(this, 16);
+            this.o = new xa.c(this, 17);
         }
         return this.o;
     }
@@ -36,7 +36,8 @@ public abstract class p extends BasePendingResult {
         if (!this.p) {
             Iterator it = this.q.h.iterator();
             if (it.hasNext()) {
-                throw a4.a.k(it);
+                it.next().getClass();
+                throw new ClassCastException();
             }
             Iterator it2 = this.q.i.iterator();
             while (it2.hasNext()) {

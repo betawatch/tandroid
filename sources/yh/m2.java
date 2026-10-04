@@ -10,9 +10,9 @@ import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class m2 extends Drawable {
     public final Paint a;
@@ -20,7 +20,7 @@ public final class m2 extends Drawable {
     public final Matrix c;
     public final org.telegram.ui.Components.e6 d;
     public final Path e;
-    public final i8 f;
+    public final j8 f;
     public int g;
     public int h;
 
@@ -30,9 +30,9 @@ public final class m2 extends Drawable {
         this.a = new Paint(1);
         this.b = new LinearGradient[2];
         this.c = new Matrix();
-        this.d = new org.telegram.ui.Components.e6(1.0f, new rg.q1(this, 28), 0L, 420L, sr.h);
+        this.d = new org.telegram.ui.Components.e6(1.0f, new rg.s1(this, 28), 0L, 420L, tr.h);
         this.e = new Path();
-        this.f = new i8(1, 45);
+        this.f = new j8(1, 45);
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
         paint.setColor(117440511);
@@ -70,11 +70,11 @@ public final class m2 extends Drawable {
                 path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
                 canvas.save();
                 canvas.clipPath(path);
-                i8 i8Var = this.f;
-                i8Var.g(rectF);
-                i8Var.h = 30.0f;
-                i8Var.d();
-                i8Var.a(canvas, org.telegram.ui.ActionBar.h6.l1(0.6f, -1));
+                j8 j8Var = this.f;
+                j8Var.g(rectF);
+                j8Var.h = 30.0f;
+                j8Var.d();
+                j8Var.a(canvas, org.telegram.ui.ActionBar.i6.l1(0.6f, -1));
                 invalidateSelf();
                 canvas.restore();
                 AndroidUtilities.drawStroke(canvas, rectF, dp);

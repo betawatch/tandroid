@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class r extends db.u {
     public static final p c = new p(db.t.a, 1);
@@ -30,7 +30,7 @@ public final class r extends db.u {
             return Boolean.valueOf(aVar.n());
         }
         if (c10 != 8) {
-            throw new IllegalStateException("Unexpected token: ".concat(hg.c.D(i10)));
+            throw new IllegalStateException("Unexpected token: ".concat(hg.k0.C(i10)));
         }
         aVar.t();
         return null;

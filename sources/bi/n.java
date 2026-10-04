@@ -3,12 +3,12 @@ package bi;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.v00;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.w00;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class n extends v00 {
+public final class n extends w00 {
     public final Paint U;
     public final /* synthetic */ u V;
 
@@ -19,20 +19,20 @@ public final class n extends v00 {
         this.U = new Paint();
     }
 
-    @Override // org.telegram.ui.Components.v00
+    @Override // org.telegram.ui.Components.w00
     public final int getColumnsCount() {
         return this.V.d;
     }
 
-    @Override // org.telegram.ui.Components.v00
+    @Override // org.telegram.ui.Components.w00
     public final int getViewType() {
         setIsSingleCell(false);
         return 27;
     }
 
-    @Override // org.telegram.ui.Components.v00, android.view.View
+    @Override // org.telegram.ui.Components.w00, android.view.View
     public final void onDraw(Canvas canvas) {
-        int v02 = h6.v0(h6.d6, this.V.W.c);
+        int v02 = i6.v0(i6.d6, this.V.W.c);
         Paint paint = this.U;
         paint.setColor(v02);
         canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint);

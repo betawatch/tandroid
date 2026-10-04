@@ -12,7 +12,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class cd {
     public float A;
@@ -52,19 +52,19 @@ public final class cd {
         Paint paint = new Paint(3);
         this.a = paint;
         paint.setColor(-1);
-        sr srVar = sr.h;
-        this.e = new e6(edVar, 650L, srVar);
-        this.f = new e6(edVar, 650L, srVar);
-        sr srVar2 = sr.g;
-        this.h = new e6(edVar, 0L, 150L, srVar2);
+        tr trVar = tr.h;
+        this.e = new e6(edVar, 650L, trVar);
+        this.f = new e6(edVar, 650L, trVar);
+        tr trVar2 = tr.g;
+        this.h = new e6(edVar, 0L, 150L, trVar2);
         this.i = 1.0f;
-        this.j = new e6(edVar, 0L, 150L, srVar2);
+        this.j = new e6(edVar, 0L, 150L, trVar2);
         o6 o6Var = new o6(false, true, true, false);
         this.k = o6Var;
-        this.m = new e6(edVar, 0L, 150L, srVar2);
-        this.o = new e6(edVar, 0L, 200L, srVar);
+        this.m = new e6(edVar, 0L, 150L, trVar2);
+        this.o = new e6(edVar, 0L, 200L, trVar);
         o6Var.r(-1);
-        o6Var.k(0.35f, 200L, srVar);
+        o6Var.k(0.35f, 200L, trVar);
         o6Var.u(AndroidUtilities.bold());
         o6Var.t(AndroidUtilities.dp(15.0f));
         o6Var.b = 17;
@@ -105,17 +105,17 @@ public final class cd {
                 float f23 = f20 * sqrt;
                 float f24 = f19;
                 double lerp = AndroidUtilities.lerp(f15 - f23, f16 + f23, sin);
-                float e = (float) hg.c.e(ed.a(f22), lerp, f7);
+                float e7 = (float) hg.k0.e(ed.a(f22), lerp, f7);
                 int i10 = width;
                 float sin2 = (float) ((Math.sin(ed.a(f22)) * lerp) + f10);
                 float abs = (Math.abs(sin - 0.5f) * (-1.75f)) + 1.0f;
-                int max = (int) (Math.max(0.0f, Math.min(1.0f, AndroidUtilities.lerp(1.0f, Math.min(v7.a7.a(e, sin2, f11, f12) / AndroidUtilities.dpf2(64.0f), 1.0f), f17) * com.google.android.gms.internal.vision.e2.B((float) (Math.sin(sin * 3.141592653589793d) - 1.0d), 0.25f, 1.0f, abs * 0.65f * f18))) * 255.0f);
+                int max = (int) (Math.max(0.0f, Math.min(1.0f, AndroidUtilities.lerp(1.0f, Math.min(v7.z6.a(e7, sin2, f11, f12) / AndroidUtilities.dpf2(64.0f), 1.0f), f17) * com.google.android.gms.internal.vision.e2.B((float) (Math.sin(sin * 3.141592653589793d) - 1.0d), 0.25f, 1.0f, abs * 0.65f * f18))) * 255.0f);
                 Paint paint = this.a;
                 paint.setAlpha(max);
                 float f25 = dpf2;
                 float sin3 = f25 * ((float) ((((Math.sin(f22) + 1.0d) * 0.25d) + 0.800000011920929d) * com.google.android.gms.internal.vision.e2.B((float) (Math.sin(r12) - 1.0d), 0.25f, 1.0f, 0.75f)));
                 canvas.save();
-                canvas.translate(e, sin2);
+                canvas.translate(e7, sin2);
                 canvas.scale(sin3, sin3);
                 float f26 = -(i10 >> 1);
                 canvas.drawBitmap(this.b, f26, f26, paint);

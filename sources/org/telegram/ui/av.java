@@ -1,24 +1,13 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.view.MotionEvent;
+import android.view.View;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class av extends g.p {
-    public final /* synthetic */ int c;
-
-    @Override // g.p
-    public int h(int i10, int i11) {
-        switch (this.c) {
-            case 1:
-                return i10 % i11;
-            default:
-                return super.h(i10, i11);
-        }
-    }
-
-    @Override // g.p
-    public final int i(int i10) {
-        switch (this.c) {
-        }
-        return 1;
+public final class av implements View.OnTouchListener {
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        return true;
     }
 }

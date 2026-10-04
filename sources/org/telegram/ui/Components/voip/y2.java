@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class y2 extends View {
     public final TextPaint a;
@@ -44,7 +44,7 @@ public final class y2 extends View {
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         if (z10) {
-            Utilities.globalQueue.postRunnable(new i2.h0(this, 27));
+            Utilities.globalQueue.postRunnable(new i2.h0(this, 26));
         }
     }
 

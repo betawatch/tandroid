@@ -6,12 +6,12 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.ok;
-import org.telegram.ui.Components.pg;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.qg;
+import org.telegram.ui.Components.tr;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.zn;
+import org.telegram.ui.bo;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class l4 extends ImageReceiver {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final class l4 extends ImageReceiver {
     public void invalidate() {
         switch (this.a) {
             case 3:
-                View view = ((zn) this.b).b;
+                View view = ((bo) this.b).b;
                 if (view != null) {
                     view.invalidate();
                     break;
@@ -60,7 +60,7 @@ public final class l4 extends ImageReceiver {
                 return imageBitmapByKey;
             case 1:
                 if (drawable != null && i10 != 1) {
-                    ok.s(((hg.f1) ((y5) obj).H).n.animate().alpha(1.0f).translationY(0.0f), sr.k, 250L);
+                    ok.s(((hg.e1) ((y5) obj).H).n.animate().alpha(1.0f).translationY(0.0f), tr.k, 250L);
                 }
                 return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
             case 2:
@@ -73,7 +73,7 @@ public final class l4 extends ImageReceiver {
                 boolean imageBitmapByKey2 = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
                 if (q5Var.m && hasImageLoaded()) {
                     q5Var.m = false;
-                    AndroidUtilities.runOnUIThread(new pg(q5Var, 4));
+                    AndroidUtilities.runOnUIThread(new qg(q5Var, 4));
                 }
                 return imageBitmapByKey2;
             case 5:

@@ -2,7 +2,7 @@ package s3;
 
 import e2.v;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a extends b {
     public final /* synthetic */ int a;
@@ -38,12 +38,12 @@ public final class a extends b {
                 StringBuilder sb2 = new StringBuilder("SCTE-35 PrivateCommand { ptsAdjustment=");
                 sb2.append(this.b);
                 sb2.append(", identifier= ");
-                return a4.a.s(sb2, this.c, " }");
+                return a4.a.r(sb2, this.c, " }");
             default:
                 StringBuilder sb3 = new StringBuilder("SCTE-35 TimeSignalCommand { ptsTime=");
                 sb3.append(this.b);
                 sb3.append(", playbackPositionUs= ");
-                return a4.a.s(sb3, this.c, " }");
+                return a4.a.r(sb3, this.c, " }");
         }
     }
 }

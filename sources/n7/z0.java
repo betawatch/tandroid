@@ -20,7 +20,7 @@ import android.view.Surface;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import ci.pc;
+import ci.oc;
 import com.google.android.gms.tasks.SuccessContinuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
@@ -42,33 +42,33 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.g3;
 import org.telegram.ui.Cells.s2;
-import org.telegram.ui.Components.bu;
-import org.telegram.ui.Components.du;
-import org.telegram.ui.Components.g71;
-import org.telegram.ui.Components.kc0;
+import org.telegram.ui.Components.a81;
+import org.telegram.ui.Components.cu;
+import org.telegram.ui.Components.d81;
+import org.telegram.ui.Components.eu;
+import org.telegram.ui.Components.lc0;
 import org.telegram.ui.Components.pl0;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.to0;
-import org.telegram.ui.Components.u71;
+import org.telegram.ui.Components.q71;
 import org.telegram.ui.Components.wf0;
+import org.telegram.ui.Components.xo0;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.SecretMediaViewer;
-import org.telegram.ui.i5;
-import org.telegram.ui.ix0;
+import org.telegram.ui.j5;
+import org.telegram.ui.ky;
 import org.telegram.ui.l4;
-import org.telegram.ui.n41;
-import org.telegram.ui.nw;
-import org.telegram.ui.py;
-import org.telegram.ui.qy;
-import v7.e8;
+import org.telegram.ui.q41;
+import org.telegram.ui.ty;
+import org.telegram.ui.uy;
+import org.telegram.ui.wx0;
+import v7.d8;
 import w7.pa;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2.n, SuccessContinuation {
+public final class z0 implements d6, xo0, cu, oc, pl0, fh.a, a81, p2.s, r2.k, y2.n, SuccessContinuation {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -82,26 +82,26 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static z0 f(Context context) {
+    public static z0 e(Context context) {
         FileChannel fileChannel;
         FileLock fileLock;
         try {
             fileChannel = new RandomAccessFile(new File(context.getFilesDir(), "generatefid.lock"), "rw").getChannel();
             try {
                 fileLock = fileChannel.lock();
-            } catch (IOException | Error | OverlappingFileLockException e) {
-                e = e;
+            } catch (IOException | Error | OverlappingFileLockException e7) {
+                e = e7;
                 fileLock = null;
             }
-        } catch (IOException | Error | OverlappingFileLockException e7) {
-            e = e7;
+        } catch (IOException | Error | OverlappingFileLockException e10) {
+            e = e10;
             fileChannel = null;
             fileLock = null;
         }
         try {
             return new z0(13, fileChannel, fileLock);
-        } catch (IOException e10) {
-            e = e10;
+        } catch (IOException e11) {
+            e = e11;
             Log.e("CrossProcessLock", "encountered error while creating and acquiring the lock, ignoring", e);
             if (fileLock != null) {
                 try {
@@ -116,15 +116,7 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
                 }
             }
             return null;
-        } catch (Error e11) {
-            e = e11;
-            Log.e("CrossProcessLock", "encountered error while creating and acquiring the lock, ignoring", e);
-            if (fileLock != null) {
-            }
-            if (fileChannel != null) {
-            }
-            return null;
-        } catch (OverlappingFileLockException e12) {
+        } catch (Error e12) {
             e = e12;
             Log.e("CrossProcessLock", "encountered error while creating and acquiring the lock, ignoring", e);
             if (fileLock != null) {
@@ -132,134 +124,31 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
             if (fileChannel != null) {
             }
             return null;
+        } catch (OverlappingFileLockException e13) {
+            e = e13;
+            Log.e("CrossProcessLock", "encountered error while creating and acquiring the lock, ignoring", e);
+            if (fileLock != null) {
+            }
+            if (fileChannel != null) {
+            }
+            return null;
         }
     }
 
-    public static z0 k(View view) {
+    public static z0 n(View view) {
         return new z0(view);
     }
 
-    public b2.q0 C(s4.c1 c1Var, int i10) {
-        s4.i1 i1Var;
-        b2.q0 q0Var;
-        a0.f fVar = (a0.f) this.b;
-        int c10 = fVar.c(c1Var);
-        if (c10 >= 0 && (i1Var = (s4.i1) fVar.h(c10)) != null) {
-            int i11 = i1Var.a;
-            if ((i11 & i10) != 0) {
-                int i12 = i11 & (~i10);
-                i1Var.a = i12;
-                if (i10 == 4) {
-                    q0Var = i1Var.b;
-                } else {
-                    if (i10 != 8) {
-                        throw new IllegalArgumentException("Must provide flag PRE or POST");
-                    }
-                    q0Var = i1Var.c;
-                }
-                if ((i12 & 12) == 0) {
-                    fVar.f(c10);
-                    i1Var.a = 0;
-                    i1Var.b = null;
-                    i1Var.c = null;
-                    s4.i1.d.i(i1Var);
-                }
-                return q0Var;
-            }
-        }
-        return null;
-    }
-
-    public ra.b E() {
-        JSONObject jSONObject;
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        byte[] bArr = new byte[16384];
-        try {
-            FileInputStream fileInputStream = new FileInputStream(t());
-            while (true) {
-                try {
-                    int read = fileInputStream.read(bArr, 0, 16384);
-                    if (read < 0) {
-                        break;
-                    }
-                    byteArrayOutputStream.write(bArr, 0, read);
-                } finally {
-                }
-            }
-            jSONObject = new JSONObject(byteArrayOutputStream.toString());
-            fileInputStream.close();
-        } catch (IOException | JSONException unused) {
-            jSONObject = new JSONObject();
-        }
-        String optString = jSONObject.optString("Fid", null);
-        int optInt = jSONObject.optInt("Status", 0);
-        String optString2 = jSONObject.optString("AuthToken", null);
-        String optString3 = jSONObject.optString("RefreshToken", null);
-        long optLong = jSONObject.optLong("TokenCreationEpochInSecs", 0L);
-        long optLong2 = jSONObject.optLong("ExpiresInSecs", 0L);
-        String optString4 = jSONObject.optString("FisError", null);
-        int i10 = m1.j.d(5)[optInt];
-        if (i10 == 0) {
-            throw new NullPointerException("Null registrationStatus");
-        }
-        String str = i10 == 0 ? " registrationStatus" : "";
-        if (str.isEmpty()) {
-            return new ra.b(optString, i10, optString2, optString3, optLong2, optLong, optString4);
-        }
-        throw new IllegalStateException("Missing required properties:".concat(str));
-    }
-
-    @Override // ci.pc
-    public void F(float f7, boolean z10) {
-        kc0 kc0Var = (kc0) this.b;
-        wf0 wf0Var = (wf0) this.c;
-        u71 u71Var = wf0Var.d;
-        if (u71Var == null) {
-            return;
-        }
-        float max = 2.8f / Math.max(60L, r2);
-        long p5 = (long) ((((f7 / (1.0f - max)) * max) + f7) * u71Var.p());
-        wf0Var.e = p5;
-        wf0Var.d.L(p5, !z10);
-        if (z10) {
-            return;
-        }
-        AndroidUtilities.cancelRunOnUIThread(kc0Var);
-        AndroidUtilities.runOnUIThread(kc0Var, 120L);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d6
-    public Paint G(String str) {
-        return h6.S0(str);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d6
-    public int G0(int i10) {
-        SparseIntArray sparseIntArray = (SparseIntArray) this.b;
-        int indexOfKey = sparseIntArray.indexOfKey(i10);
-        return indexOfKey >= 0 ? sparseIntArray.valueAt(indexOfKey) : h6.w0(null, i10, false);
-    }
-
-    @Override // p2.s
-    public y2.n H() {
-        return new z0(17, ((p2.s) this.b).H(), (List) this.c);
-    }
-
-    public void I() {
+    public void D() {
         try {
             ((FileLock) this.c).release();
             ((FileChannel) this.b).close();
-        } catch (IOException e) {
-            Log.e("CrossProcessLock", "encountered error while releasing, ignoring", e);
+        } catch (IOException e7) {
+            Log.e("CrossProcessLock", "encountered error while releasing, ignoring", e7);
         }
     }
 
-    @Override // p2.s
-    public y2.n K(p2.o oVar, p2.l lVar) {
-        return new z0(17, ((p2.s) this.b).K(oVar, lVar), (List) this.c);
-    }
-
-    public void L(s4.c1 c1Var) {
+    public void E(s4.c1 c1Var) {
         s4.i1 i1Var = (s4.i1) ((a0.f) this.b).get(c1Var);
         if (i1Var == null) {
             return;
@@ -267,7 +156,7 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
         i1Var.a &= -2;
     }
 
-    public void M(s4.c1 c1Var) {
+    public void F(s4.c1 c1Var) {
         a0.f fVar = (a0.f) this.b;
         a0.i iVar = (a0.i) this.c;
         int m10 = iVar.m() - 1;
@@ -297,69 +186,82 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
         }
     }
 
-    @Override // org.telegram.ui.Components.to0
-    public void X(float f7, boolean z10) {
-        ((TextView) this.b).setText("Alpha " + i5.e);
-        i5.e = f7;
-        ((i5) this.c).b.M();
+    @Override // org.telegram.ui.ActionBar.d6
+    public Paint H(String str) {
+        return i6.S0(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public int H0(int i10) {
+        SparseIntArray sparseIntArray = (SparseIntArray) this.b;
+        int indexOfKey = sparseIntArray.indexOfKey(i10);
+        return indexOfKey >= 0 ? sparseIntArray.valueAt(indexOfKey) : i6.w0(null, i10, false);
+    }
+
+    @Override // p2.s
+    public y2.n K() {
+        return new z0(17, ((p2.s) this.b).K(), (List) this.c);
+    }
+
+    @Override // ci.oc
+    public void O(float f7, boolean z10) {
+        lc0 lc0Var = (lc0) this.b;
+        wf0 wf0Var = (wf0) this.c;
+        d81 d81Var = wf0Var.d;
+        if (d81Var == null) {
+            return;
+        }
+        float max = 2.8f / Math.max(60L, r2);
+        long p5 = (long) ((((f7 / (1.0f - max)) * max) + f7) * d81Var.p());
+        wf0Var.e = p5;
+        wf0Var.d.L(p5, !z10);
+        if (z10) {
+            return;
+        }
+        AndroidUtilities.cancelRunOnUIThread(lc0Var);
+        AndroidUtilities.runOnUIThread(lc0Var, 120L);
+    }
+
+    @Override // p2.s
+    public y2.n V(p2.o oVar, p2.l lVar) {
+        return new z0(17, ((p2.s) this.b).V(oVar, lVar), (List) this.c);
+    }
+
+    @Override // org.telegram.ui.Components.xo0
+    public void Y(float f7, boolean z10) {
+        ((TextView) this.b).setText("Alpha " + j5.e);
+        j5.e = f7;
+        ((j5) this.c).b.M();
     }
 
     @Override // org.telegram.ui.ActionBar.d6
     public boolean a() {
-        return h6.I.q();
+        return i6.I.q();
     }
 
     @Override // org.telegram.ui.Components.pl0
     public boolean c(float f7, float f10, int i10, View view) {
-        qy qyVar = (qy) this.c;
+        uy uyVar = (uy) this.c;
         if (view instanceof s2) {
             s2 s2Var = (s2) view;
             if (s2Var.n2) {
-                qyVar.N4(s2Var.getDialogId(), view);
+                uyVar.W4(s2Var.getDialogId(), view);
                 return true;
             }
         }
-        nw nwVar = qyVar.z0;
-        if (nwVar != null && nwVar.getVisibility() == 0 && qyVar.z0.n) {
+        ky kyVar = uyVar.z0;
+        if (kyVar != null && kyVar.getVisibility() == 0 && uyVar.z0.n) {
             return false;
         }
-        return qyVar.o4(view, i10, f7, ((py) this.b).d);
+        return uyVar.x4(view, i10, f7, ((ty) this.b).d);
     }
 
     @Override // fh.a
-    public ch.d d() {
+    public ch.d f() {
         return new ch.f(this);
     }
 
-    @Override // org.telegram.ui.Components.pl0
-    public void g() {
-        Point point = AndroidUtilities.displaySize;
-        if (point.x > point.y) {
-            ((qy) this.c).finishPreviewFragment();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.d6
-    public int g0(int i10) {
-        return G0(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d6
-    public int g1(int i10) {
-        return ((SparseIntArray) this.b).get(i10);
-    }
-
-    @Override // org.telegram.ui.Components.to0
-    public /* synthetic */ CharSequence getContentDescription() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.ActionBar.d6
-    public /* synthetic */ Drawable getDrawable(String str) {
-        return null;
-    }
-
-    public void h(s4.c1 c1Var, b2.q0 q0Var) {
+    public void g(s4.c1 c1Var, b2.q0 q0Var) {
         a0.f fVar = (a0.f) this.b;
         s4.i1 i1Var = (s4.i1) fVar.get(c1Var);
         if (i1Var == null) {
@@ -370,21 +272,44 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
         i1Var.a |= 8;
     }
 
-    @Override // org.telegram.ui.Components.bu
+    @Override // org.telegram.ui.Components.xo0
+    public /* synthetic */ CharSequence getContentDescription() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public /* synthetic */ Drawable getDrawable(String str) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.pl0
+    public void i() {
+        Point point = AndroidUtilities.displaySize;
+        if (point.x > point.y) {
+            ((uy) this.c).finishPreviewFragment();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.cu
     public void j() {
         g3 g3Var = (g3) this.c;
-        ((du) this.b).getText();
+        ((eu) this.b).getText();
         g3Var.b();
     }
 
     @Override // org.telegram.ui.ActionBar.d6
-    public void m(float f7, float f10, int i10, int i11) {
-        h6.q(f7, f10, i10, i11);
+    public int j0(int i10) {
+        return H0(i10);
     }
 
-    @Override // org.telegram.ui.Components.to0
-    public /* synthetic */ int m0() {
-        return 0;
+    @Override // org.telegram.ui.ActionBar.d6
+    public int j1(int i10) {
+        return ((SparseIntArray) this.b).get(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.d6
+    public void m(float f7, float f10, int i10, int i11) {
+        i6.q(f7, f10, i10, i11);
     }
 
     @Override // y2.n
@@ -400,13 +325,13 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
             ba.c cVar = (ba.c) this.c;
             cVar.getClass();
             new File(cVar.b, str).createNewFile();
-        } catch (IOException e) {
-            Log.e("FirebaseCrashlytics", "Error creating marker: ".concat(str), e);
+        } catch (IOException e7) {
+            Log.e("FirebaseCrashlytics", "Error creating marker: ".concat(str), e7);
         }
     }
 
-    @Override // org.telegram.ui.Components.r71
-    public void onError(u71 u71Var, Exception exc) {
+    @Override // org.telegram.ui.Components.a81
+    public void onError(d81 d81Var, Exception exc) {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
         int i10 = secretMediaViewer.b0;
         if (i10 <= 0) {
@@ -414,33 +339,33 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
             return;
         }
         secretMediaViewer.b0 = i10 - 1;
-        AndroidUtilities.runOnUIThread(new ix0(28, this, (File) this.b), 100L);
+        AndroidUtilities.runOnUIThread(new wx0(25, this, (File) this.b), 100L);
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public void onStateChanged(boolean z10, int i10) {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
-        n41 n41Var = secretMediaViewer.i1;
+        q41 q41Var = secretMediaViewer.i1;
         if (secretMediaViewer.y == null || secretMediaViewer.h0 == null) {
             return;
         }
-        AndroidUtilities.cancelRunOnUIThread(n41Var);
-        AndroidUtilities.runOnUIThread(n41Var);
+        AndroidUtilities.cancelRunOnUIThread(q41Var);
+        AndroidUtilities.runOnUIThread(q41Var);
         if (i10 == 4 || i10 == 1) {
             try {
                 secretMediaViewer.b.getWindow().clearFlags(128);
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         } else {
             try {
                 secretMediaViewer.b.getWindow().addFlags(128);
-            } catch (Exception e7) {
-                FileLog.e(e7);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
         }
         if (i10 == 3 && secretMediaViewer.w.getVisibility() != 0) {
@@ -465,12 +390,12 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
         }
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
         l4 l4Var = ((SecretMediaViewer) this.c).w;
         if (l4Var != null) {
@@ -494,8 +419,8 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
                     Surface surface = (Surface) nVar.d;
                     r2.c.l(cVar2, (MediaFormat) nVar.b, surface, (MediaCrypto) nVar.e, (surface == null && ((r2.o) nVar.a).h && Build.VERSION.SDK_INT >= 35) ? 8 : 0);
                     return cVar2;
-                } catch (Exception e) {
-                    e = e;
+                } catch (Exception e7) {
+                    e = e7;
                     cVar = cVar2;
                     if (cVar != null) {
                         cVar.release();
@@ -504,29 +429,29 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
                     }
                     throw e;
                 }
-            } catch (Exception e7) {
-                e = e7;
+            } catch (Exception e10) {
+                e = e10;
             }
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e11) {
+            e = e11;
             mediaCodec = null;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.d6
-    public /* synthetic */ boolean p0() {
-        return false;
+    @Override // org.telegram.ui.Components.xo0
+    public /* synthetic */ int p0() {
+        return 0;
     }
 
     @Override // org.telegram.ui.Components.pl0
     public void q(float f7) {
         Point point = AndroidUtilities.displaySize;
         if (point.x > point.y) {
-            ((qy) this.c).movePreviewFragment(f7);
+            ((uy) this.c).movePreviewFragment(f7);
         }
     }
 
-    public void s(String str, PrintWriter printWriter) {
+    public void r(String str, PrintWriter printWriter) {
         w1.b bVar = (w1.b) this.c;
         if (bVar.d.c <= 0) {
             return;
@@ -628,7 +553,12 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
         }
     }
 
-    public File t() {
+    @Override // org.telegram.ui.ActionBar.d6
+    public /* synthetic */ boolean r0() {
+        return false;
+    }
+
+    public File s() {
         if (((File) this.b) == null) {
             synchronized (this) {
                 try {
@@ -644,6 +574,30 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
         return (File) this.b;
     }
 
+    public void t(ra.b bVar) {
+        try {
+            JSONObject jSONObject = new JSONObject();
+            jSONObject.put("Fid", bVar.a);
+            jSONObject.put("Status", m1.j.c(bVar.b));
+            jSONObject.put("AuthToken", bVar.c);
+            jSONObject.put("RefreshToken", bVar.d);
+            jSONObject.put("TokenCreationEpochInSecs", bVar.f);
+            jSONObject.put("ExpiresInSecs", bVar.e);
+            jSONObject.put("FisError", bVar.g);
+            k9.h hVar = (k9.h) this.c;
+            hVar.a();
+            File createTempFile = File.createTempFile("PersistedInstallation", "tmp", hVar.a.getFilesDir());
+            FileOutputStream fileOutputStream = new FileOutputStream(createTempFile);
+            fileOutputStream.write(jSONObject.toString().getBytes("UTF-8"));
+            fileOutputStream.close();
+            if (createTempFile.renameTo(s())) {
+            } else {
+                throw new IOException("unable to rename the tmpfile to PersistedInstallation");
+            }
+        } catch (IOException | JSONException unused) {
+        }
+    }
+
     @Override // com.google.android.gms.tasks.SuccessContinuation
     public Task then(Object obj) {
         da.a aVar = (da.a) obj;
@@ -654,9 +608,9 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
         }
         o0.a aVar2 = (o0.a) gVar.c;
         o0.a aVar3 = (o0.a) gVar.c;
-        w9.m.b((w9.m) aVar2.c);
-        ((w9.m) aVar3.c).m.y((Executor) this.b, null);
-        ((w9.m) aVar3.c).q.trySetResult(null);
+        w9.n.b((w9.n) aVar2.c);
+        ((w9.n) aVar3.c).m.y((Executor) this.b, null);
+        ((w9.n) aVar3.c).q.trySetResult(null);
         return Tasks.forResult(null);
     }
 
@@ -678,47 +632,93 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.d6
-    public ColorFilter x() {
-        return h6.v3;
+    public b2.q0 w(s4.c1 c1Var, int i10) {
+        s4.i1 i1Var;
+        b2.q0 q0Var;
+        a0.f fVar = (a0.f) this.b;
+        int c10 = fVar.c(c1Var);
+        if (c10 >= 0 && (i1Var = (s4.i1) fVar.h(c10)) != null) {
+            int i11 = i1Var.a;
+            if ((i11 & i10) != 0) {
+                int i12 = i11 & (~i10);
+                i1Var.a = i12;
+                if (i10 == 4) {
+                    q0Var = i1Var.b;
+                } else {
+                    if (i10 != 8) {
+                        throw new IllegalArgumentException("Must provide flag PRE or POST");
+                    }
+                    q0Var = i1Var.c;
+                }
+                if ((i12 & 12) == 0) {
+                    fVar.f(c10);
+                    i1Var.a = 0;
+                    i1Var.b = null;
+                    i1Var.c = null;
+                    s4.i1.d.i(i1Var);
+                }
+                return q0Var;
+            }
+        }
+        return null;
     }
 
-    @Override // fh.a
+    @Override // org.telegram.ui.ActionBar.d6
+    public ColorFilter x() {
+        return i6.v3;
+    }
+
+    @Override // oi.a
     public void y(Canvas canvas, float f7, float f10, float f11, float f12) {
         Paint paint = (Paint) this.b;
         PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.c;
-        rg.z0 z0Var = premiumPreviewFragment.m0;
+        rg.a1 a1Var = premiumPreviewFragment.m0;
         if (premiumPreviewFragment.h0) {
-            paint.setColor(premiumPreviewFragment.getThemedColor(h6.a7));
+            paint.setColor(premiumPreviewFragment.getThemedColor(i6.a7));
             canvas.drawRect(f7, f10, f11, f12, paint);
         } else {
-            z0Var.d(0, (-premiumPreviewFragment.d0.getMeasuredWidth()) * 0.1f * premiumPreviewFragment.b0, 0, premiumPreviewFragment.d0.getMeasuredWidth(), 0.0f, premiumPreviewFragment.d0.getMeasuredHeight());
-            canvas.drawRect(f7, f10, f11, f12, z0Var.f);
+            a1Var.d(0, (-premiumPreviewFragment.d0.getMeasuredWidth()) * 0.1f * premiumPreviewFragment.b0, 0, premiumPreviewFragment.d0.getMeasuredWidth(), 0.0f, premiumPreviewFragment.d0.getMeasuredHeight());
+            canvas.drawRect(f7, f10, f11, f12, a1Var.f);
         }
     }
 
-    public void z(ra.b bVar) {
+    public ra.b z() {
+        JSONObject jSONObject;
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        byte[] bArr = new byte[16384];
         try {
-            JSONObject jSONObject = new JSONObject();
-            jSONObject.put("Fid", bVar.a);
-            jSONObject.put("Status", m1.j.c(bVar.b));
-            jSONObject.put("AuthToken", bVar.c);
-            jSONObject.put("RefreshToken", bVar.d);
-            jSONObject.put("TokenCreationEpochInSecs", bVar.f);
-            jSONObject.put("ExpiresInSecs", bVar.e);
-            jSONObject.put("FisError", bVar.g);
-            k9.h hVar = (k9.h) this.c;
-            hVar.a();
-            File createTempFile = File.createTempFile("PersistedInstallation", "tmp", hVar.a.getFilesDir());
-            FileOutputStream fileOutputStream = new FileOutputStream(createTempFile);
-            fileOutputStream.write(jSONObject.toString().getBytes("UTF-8"));
-            fileOutputStream.close();
-            if (createTempFile.renameTo(t())) {
-            } else {
-                throw new IOException("unable to rename the tmpfile to PersistedInstallation");
+            FileInputStream fileInputStream = new FileInputStream(s());
+            while (true) {
+                try {
+                    int read = fileInputStream.read(bArr, 0, 16384);
+                    if (read < 0) {
+                        break;
+                    }
+                    byteArrayOutputStream.write(bArr, 0, read);
+                } finally {
+                }
             }
+            jSONObject = new JSONObject(byteArrayOutputStream.toString());
+            fileInputStream.close();
         } catch (IOException | JSONException unused) {
+            jSONObject = new JSONObject();
         }
+        String optString = jSONObject.optString("Fid", null);
+        int optInt = jSONObject.optInt("Status", 0);
+        String optString2 = jSONObject.optString("AuthToken", null);
+        String optString3 = jSONObject.optString("RefreshToken", null);
+        long optLong = jSONObject.optLong("TokenCreationEpochInSecs", 0L);
+        long optLong2 = jSONObject.optLong("ExpiresInSecs", 0L);
+        String optString4 = jSONObject.optString("FisError", null);
+        int i10 = m1.j.d(5)[optInt];
+        if (i10 == 0) {
+            throw new NullPointerException("Null registrationStatus");
+        }
+        String str = i10 == 0 ? " registrationStatus" : "";
+        if (str.isEmpty()) {
+            return new ra.b(optString, i10, optString2, optString3, optLong2, optLong, optString4);
+        }
+        throw new IllegalStateException("Missing required properties:".concat(str));
     }
 
     public /* synthetic */ z0(int i10, Object obj, Object obj2) {
@@ -727,7 +727,7 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
         this.c = obj2;
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public void onRenderedFirstFrame() {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
         if (secretMediaViewer.c0) {
@@ -743,10 +743,10 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
         this.b = obj2;
     }
 
-    public z0(v7.l lVar) {
+    public z0(v7.k kVar) {
         this.a = 22;
-        this.c = new e8();
-        this.b = lVar;
+        this.c = new d8();
+        this.b = kVar;
         pa.b();
     }
 
@@ -764,21 +764,21 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
 
     public z0(View view) {
         this.a = 5;
-        g71 g71Var = new g71(this, view);
-        this.b = g71Var;
-        view.addOnLayoutChangeListener(g71Var);
+        q71 q71Var = new q71(this, view);
+        this.b = q71Var;
+        view.addOnLayoutChangeListener(q71Var);
     }
 
     public z0(androidx.lifecycle.t tVar, androidx.lifecycle.t0 t0Var) {
         this.a = 21;
         this.b = tVar;
-        this.c = (w1.b) new aa.a(t0Var, w1.b.f).k(w1.b.class);
+        this.c = (w1.b) new aa.a(t0Var, w1.b.f).j(w1.b.class);
     }
 
     public z0(wf0 wf0Var) {
         this.a = 4;
         this.c = wf0Var;
-        this.b = new kc0(this, 10);
+        this.b = new lc0(this, 10);
     }
 
     public z0(k9.h hVar) {
@@ -786,7 +786,7 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
         this.c = hVar;
     }
 
-    @Override // org.telegram.ui.Components.to0
+    @Override // org.telegram.ui.Components.xo0
     public void B() {
     }
 
@@ -794,12 +794,12 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
     public /* synthetic */ void b() {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void b0() {
+    @Override // ci.oc
+    public /* synthetic */ void m0() {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void r() {
+    @Override // ci.oc
+    public /* synthetic */ void u() {
     }
 
     public z0(String str, String str2) {
@@ -811,68 +811,68 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
         }
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void D(float f7) {
+    @Override // ci.oc
+    public /* synthetic */ void A(float f7) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void J(long j3) {
+    @Override // ci.oc
+    public /* synthetic */ void C(boolean z10) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void O(boolean z10) {
+    @Override // ci.oc
+    public /* synthetic */ void L(float f7) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void T(float f7) {
+    @Override // ci.oc
+    public /* synthetic */ void U(long j3) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void Y(float f7) {
+    @Override // ci.oc
+    public /* synthetic */ void X(boolean z10) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void a0(float f7) {
+    @Override // ci.oc
+    public /* synthetic */ void c0(float f7) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void e(int i10) {
+    @Override // ci.oc
+    public /* synthetic */ void d(int i10) {
     }
 
-    @Override // ci.pc
+    @Override // ci.oc
+    public /* synthetic */ void h(float f7) {
+    }
+
+    @Override // ci.oc
     public /* synthetic */ void h0(float f7) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void i(float f7) {
+    @Override // ci.oc
+    public /* synthetic */ void k(float f7) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void l(float f7) {
+    @Override // ci.oc
+    public /* synthetic */ void l0(float f7) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void l0(long j3) {
-    }
-
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.r71
+    @Override // org.telegram.ui.Components.a81
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void u(float f7) {
+    @Override // ci.oc
+    public /* synthetic */ void s0(float f7) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void w(boolean z10) {
+    @Override // ci.oc
+    public /* synthetic */ void u0(long j3) {
     }
 
     public z0(EditText editText) {
@@ -899,28 +899,28 @@ public final class z0 implements d6, to0, bu, pc, pl0, fh.a, r71, p2.s, r2.k, y2
         editText.setEditableFactory(q1.a.b);
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void A(float f7, int i10) {
+    @Override // ci.oc
+    public /* synthetic */ void I(float f7, int i10) {
     }
 
     @Override // org.telegram.ui.ActionBar.d6
     public /* synthetic */ void L0(int i10, int i11) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void R(float f7, int i10) {
+    @Override // ci.oc
+    public /* synthetic */ void b0(float f7, int i10) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void Z(float f7, int i10) {
+    @Override // ci.oc
+    public /* synthetic */ void k0(float f7, int i10) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void i0(int i10, long j3) {
+    @Override // ci.oc
+    public /* synthetic */ void l(long j3, boolean z10) {
     }
 
-    @Override // ci.pc
-    public /* synthetic */ void n(long j3, boolean z10) {
+    @Override // ci.oc
+    public /* synthetic */ void t0(int i10, long j3) {
     }
 
     public z0(PremiumPreviewFragment premiumPreviewFragment) {

@@ -1,63 +1,123 @@
 package ii;
 
-import android.graphics.Rect;
-import android.text.Layout;
+import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Cells.ba;
+import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class k5 implements ba {
-    public final /* synthetic */ Layout a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ p5 d;
+public final class k5 implements h1 {
+    public final /* synthetic */ t5 a;
+    public final /* synthetic */ q5 b;
 
-    public k5(p5 p5Var, Layout layout, int i10, int i11) {
-        this.d = p5Var;
-        this.a = layout;
-        this.b = i10;
-        this.c = i11;
+    public k5(q5 q5Var, t5 t5Var) {
+        this.b = q5Var;
+        this.a = t5Var;
     }
 
-    @Override // org.telegram.ui.Cells.ba
-    public final Layout getLayout() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.ba
-    public final /* synthetic */ CharSequence getPrefix() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.ba
-    public final int getRow() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Cells.ba
-    public final /* synthetic */ Rect getSelectionBounds() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.ba
-    public final CharSequence getText() {
-        TL_iv.RichText richText;
-        a aVar = this.d.a;
-        if (aVar == null) {
-            return "";
+    @Override // ii.h1
+    public final void B(Editable editable) {
+        TL_iv.pageTableCell pagetablecell = this.a.b;
+        if (pagetablecell != null) {
+            j6.d(pagetablecell, editable);
         }
-        TL_iv.PageBlock pageBlock = aVar.b;
-        return (!(pageBlock instanceof TL_iv.pageBlockTable) || (richText = ((TL_iv.pageBlockTable) pageBlock).title) == null) ? "" : g6.r(richText, null, true);
+        q5 q5Var = this.b;
+        q5Var.v.requestLayout();
+        d3 d3Var = q5Var.E;
+        if (d3Var == null || q5Var.a == null) {
+            return;
+        }
+        d3Var.a();
     }
 
-    @Override // org.telegram.ui.Cells.ba
-    public final int getX() {
-        return this.b;
+    @Override // ii.h1
+    public final boolean G(boolean z10) {
+        return this.b.s(this.a, z10);
     }
 
-    @Override // org.telegram.ui.Cells.ba
-    public final int getY() {
-        return this.c;
+    @Override // ii.h1
+    public final void b(i1 i1Var) {
+        d3 d3Var = this.b.E;
+        if (d3Var != null) {
+            x3 x3Var = d3Var.a;
+            x3.O1(x3Var, i1Var);
+            x3Var.o3.P(i1Var, true);
+        }
+    }
+
+    @Override // ii.h1
+    public final boolean e() {
+        q5 q5Var = this.b;
+        d3 d3Var = q5Var.E;
+        if (d3Var == null || q5Var.a == null) {
+            return false;
+        }
+        return d3Var.a.U4();
+    }
+
+    @Override // ii.h1
+    public final void f(int i10, int i11) {
+        i2 i2Var;
+        q5 q5Var = this.b;
+        d3 d3Var = q5Var.E;
+        if (d3Var == null || q5Var.a == null || (i2Var = d3Var.a.Q3) == null) {
+            return;
+        }
+        i2Var.f(i10, i11);
+    }
+
+    @Override // ii.h1
+    public final /* synthetic */ boolean n(i1 i1Var) {
+        return false;
+    }
+
+    @Override // ii.h1
+    public final /* synthetic */ boolean p(i1 i1Var) {
+        return false;
+    }
+
+    @Override // ii.h1
+    public final void t(final i1 i1Var, final int i10, final int i11) {
+        d3 d3Var;
+        final q9 textSelectionHelper;
+        final int k10;
+        q5 q5Var = this.b;
+        if (q5Var.G || i10 == i11 || (d3Var = q5Var.E) == null || (textSelectionHelper = d3Var.a.getTextSelectionHelper()) == null) {
+            return;
+        }
+        if (!(textSelectionHelper.y() && textSelectionHelper.W == q5Var) && (k10 = q5Var.k(this.a.b)) >= 0) {
+            q5Var.post(new Runnable() { // from class: ii.j5
+                @Override // java.lang.Runnable
+                public final void run() {
+                    q5 q5Var2 = k5.this.b;
+                    i1 i1Var2 = i1Var;
+                    int length = i1Var2.length();
+                    int i12 = i11;
+                    if (length < i12 || i1Var2.getSelectionStart() == i1Var2.getSelectionEnd() || !textSelectionHelper.k0(q5Var2, k10, i10, i12)) {
+                        return;
+                    }
+                    q5Var2.G = true;
+                    i1Var2.setSelection(i12);
+                    q5Var2.G = false;
+                }
+            });
+        }
+    }
+
+    @Override // ii.h1
+    public final void x(CharSequence charSequence) {
+        d3 d3Var = this.b.E;
+        if (d3Var == null || charSequence == null || charSequence.length() <= 0) {
+            return;
+        }
+        d3Var.a.v4(charSequence.toString());
+    }
+
+    @Override // ii.h1
+    public final /* synthetic */ void l(i1 i1Var) {
+    }
+
+    @Override // ii.h1
+    public final /* synthetic */ void r() {
     }
 }

@@ -1,31 +1,15 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class u40 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ ChatObject.VideoParticipant a;
-    public final /* synthetic */ d60 b;
+public final class u40 extends org.telegram.ui.Components.voip.x0 {
+    public final /* synthetic */ h60 E;
 
-    public u40(d60 d60Var, ChatObject.VideoParticipant videoParticipant) {
-        this.b = d60Var;
-        this.a = videoParticipant;
-    }
-
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        ViewGroup viewGroup;
-        d60 d60Var = this.b;
-        d60Var.Q.getViewTreeObserver().removeOnPreDrawListener(this);
-        d60Var.q2 = null;
-        d60Var.a2.j(this.a);
-        AndroidUtilities.updateVisibleRows(d60Var.m2);
-        viewGroup = ((org.telegram.ui.ActionBar.e3) d60Var).containerView;
-        viewGroup.requestLayout();
-        return false;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u40(h60 h60Var, Activity activity, boolean z10) {
+        super(activity, z10);
+        this.E = h60Var;
     }
 }

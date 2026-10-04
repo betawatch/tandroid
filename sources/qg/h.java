@@ -1,33 +1,33 @@
 package qg;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public interface h {
-    void A(boolean z10);
+    void A(j jVar);
 
-    void B();
+    void B(boolean z10);
 
-    int[] C(j jVar);
+    void C();
 
-    boolean d(j jVar);
+    int[] D(j jVar);
+
+    boolean c(j jVar);
+
+    void g(boolean z10);
 
     void h(boolean z10);
 
-    void i(boolean z10);
+    void i();
 
-    void k();
+    void j();
 
-    void l();
-
-    void n(boolean z10);
+    void l(boolean z10);
 
     boolean q();
 
     boolean r();
 
-    void u(float f7, float f10, float[] fArr);
+    void v(float f7, float f10, float[] fArr);
 
-    void w();
-
-    void z(j jVar);
+    void x();
 }

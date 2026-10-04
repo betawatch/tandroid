@@ -7,7 +7,7 @@ import b2.x1;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class y implements b2.z0 {
     public final WeakReference a;
@@ -81,8 +81,8 @@ public final class y implements b2.z0 {
             }
             a2.h.i.j(eVar);
             return;
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
             return;
         }
         z10 = true;
@@ -154,8 +154,8 @@ public final class y implements b2.z0 {
         a2.c.a(true, true);
         try {
             a2.h.i.getClass();
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
         }
         a2.t();
     }
@@ -207,8 +207,8 @@ public final class y implements b2.z0 {
         try {
             k0 k0Var = (k0) a2.h.i.e;
             k0Var.N(k0Var.g.t);
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
         }
         a2.t();
     }
@@ -272,8 +272,8 @@ public final class y implements b2.z0 {
             }
             a2.h.i.l(k0Var);
             return;
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
             return;
         }
         z10 = true;
@@ -341,8 +341,8 @@ public final class y implements b2.z0 {
             }
             a2.h.i.r();
             return;
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
             return;
         }
         z10 = true;
@@ -367,8 +367,8 @@ public final class y implements b2.z0 {
         try {
             k0 k0Var = (k0) a2.h.i.e;
             k0Var.N(k0Var.g.t);
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
         }
     }
 
@@ -433,8 +433,8 @@ public final class y implements b2.z0 {
             k0 k0Var2 = (k0) a2.h.i.e;
             k0Var2.N(k0Var2.g.t);
             return;
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
             return;
         }
         z10 = true;
@@ -493,8 +493,8 @@ public final class y implements b2.z0 {
             e1Var.W();
             k0 k0Var = (k0) i0Var.e;
             k0Var.N(k0Var.g.t);
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
         }
     }
 
@@ -514,8 +514,8 @@ public final class y implements b2.z0 {
         try {
             k0 k0Var = (k0) a2.h.i.e;
             k0Var.N(k0Var.g.t);
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
         }
     }
 
@@ -580,8 +580,8 @@ public final class y implements b2.z0 {
             k0 k0Var2 = (k0) a2.h.i.e;
             k0Var2.N(k0Var2.g.t);
             return;
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
             return;
         }
         z10 = true;
@@ -633,8 +633,8 @@ public final class y implements b2.z0 {
         a2.c.a(true, true);
         try {
             a2.h.i.n(n0Var);
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
         }
     }
 
@@ -649,12 +649,12 @@ public final class y implements b2.z0 {
             return;
         }
         a2.v();
-        oi.f fVar = a2.g.b;
+        qi.f fVar = a2.g.b;
         e9.i0 s10 = fVar.s();
         for (int i10 = 0; i10 < s10.size(); i10++) {
             r rVar = (r) s10.get(i10);
             fVar.v(rVar);
-            a2.c(rVar, new j2.e(23));
+            a2.c(rVar, new j2.e(24));
         }
     }
 
@@ -717,8 +717,8 @@ public final class y implements b2.z0 {
             }
             a2.h.i.o(i10);
             return;
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
             return;
         }
         z10 = true;
@@ -786,8 +786,8 @@ public final class y implements b2.z0 {
             }
             a2.h.i.p(z10);
             return;
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
             return;
         }
         z11 = true;
@@ -811,8 +811,8 @@ public final class y implements b2.z0 {
         a2.c.a(false, true);
         try {
             a2.h.i.q(k1Var);
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
         }
     }
 
@@ -828,7 +828,7 @@ public final class y implements b2.z0 {
         }
         a2.s = a2.s.d(q1Var);
         a2.c.a(true, true);
-        a2.d(new j2.e(q1Var, 24));
+        a2.d(new j2.e(q1Var, 25));
     }
 
     @Override // b2.z0
@@ -843,7 +843,7 @@ public final class y implements b2.z0 {
         }
         a2.s = a2.s.a(s1Var);
         a2.c.a(true, false);
-        a2.d(new j2.e(s1Var, 22));
+        a2.d(new j2.e(s1Var, 23));
     }
 
     @Override // b2.z0
@@ -889,8 +889,8 @@ public final class y implements b2.z0 {
         a2.c.a(true, true);
         try {
             a2.h.i.getClass();
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
         }
     }
 
@@ -937,8 +937,8 @@ public final class y implements b2.z0 {
         a2.c.a(true, true);
         try {
             a2.h.i.getClass();
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
         }
     }
 
@@ -1061,8 +1061,8 @@ public final class y implements b2.z0 {
             k0 k0Var2 = (k0) a2.h.i.e;
             k0Var2.N(k0Var2.g.t);
             return;
-        } catch (RemoteException e) {
-            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e);
+        } catch (RemoteException e7) {
+            e2.a.f("MediaSessionImpl", "Exception in using media1 API", e7);
             return;
         }
         z10 = true;

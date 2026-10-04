@@ -5,28 +5,28 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.pr;
-import org.telegram.ui.v30;
+import org.telegram.ui.Components.qr;
+import org.telegram.ui.a40;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class g0 extends View {
     public final /* synthetic */ org.telegram.ui.Cells.z a;
-    public final /* synthetic */ v30 b;
+    public final /* synthetic */ a40 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g0(v30 v30Var, Context context, org.telegram.ui.Cells.z zVar) {
+    public g0(a40 a40Var, Context context, org.telegram.ui.Cells.z zVar) {
         super(context);
-        this.b = v30Var;
+        this.b = a40Var;
         this.a = zVar;
     }
 
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        v30 v30Var = this.b;
-        float measuredWidth = v30Var.d0.getMeasuredWidth();
-        pr prVar = v30Var.c0;
-        float measuredWidth2 = (v30Var.e0.getMeasuredWidth() * prVar.g) + ((1.0f - prVar.g) * measuredWidth);
+        a40 a40Var = this.b;
+        float measuredWidth = a40Var.d0.getMeasuredWidth();
+        qr qrVar = a40Var.c0;
+        float measuredWidth2 = (a40Var.e0.getMeasuredWidth() * qrVar.g) + ((1.0f - qrVar.g) * measuredWidth);
         canvas.save();
         int dp = AndroidUtilities.dp(50.0f) + ((int) measuredWidth2);
         int measuredHeight = getMeasuredHeight();

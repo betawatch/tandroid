@@ -35,35 +35,35 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.Components.CheckBox;
-import org.telegram.ui.Components.j80;
-import org.telegram.ui.Components.rs;
+import org.telegram.ui.Components.k80;
 import org.telegram.ui.Components.ss;
+import org.telegram.ui.Components.ts;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.ar;
-import org.telegram.ui.br;
-import org.telegram.ui.kq;
-import org.telegram.ui.pr;
-import org.telegram.ui.rs0;
-import org.telegram.ui.tu0;
-import org.telegram.ui.wn;
+import org.telegram.ui.cr;
+import org.telegram.ui.dr;
+import org.telegram.ui.mq;
+import org.telegram.ui.rr;
+import org.telegram.ui.us0;
+import org.telegram.ui.wu0;
+import org.telegram.ui.yn;
+import xh.q1;
 import xh.r1;
-import xh.s1;
 import yh.k5;
-import yh.l7;
-import yh.o8;
+import yh.m7;
+import yh.p8;
 import yh.q5;
 import yh.r5;
 import yh.s5;
 import yh.t5;
-import yh.x7;
+import yh.y7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -84,7 +84,7 @@ public final /* synthetic */ class f implements Runnable {
 
     /* JADX WARN: Code restructure failed: missing block: B:184:0x0551, code lost:
     
-        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.rs(r2, 1));
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.ss(r2, 1));
      */
     /* JADX WARN: Code restructure failed: missing block: B:185:0x055a, code lost:
     
@@ -114,27 +114,27 @@ public final /* synthetic */ class f implements Runnable {
                 ((ConferenceCall) this.d).lambda$requestLastBlock$2(this.b, (TLObject) this.c, (TLRPC.TL_error) this.e, (Runnable) this.f);
                 return;
             case 1:
-                pr prVar = (pr) this.d;
+                rr rrVar = (rr) this.d;
                 long j3 = this.b;
                 TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) this.e;
                 String str2 = (String) this.f;
                 TLObject tLObject = (TLObject) this.c;
-                kq kqVar = new kq(j3, prVar.N, null, prVar.E, tL_chatBannedRights, str2, 1, true, false, null);
-                kqVar.X0 = new ar(prVar, tLObject);
-                prVar.presentFragment(kqVar);
+                mq mqVar = new mq(j3, rrVar.N, null, rrVar.E, tL_chatBannedRights, str2, 1, true, false, null);
+                mqVar.X0 = new cr(rrVar, tLObject);
+                rrVar.presentFragment(mqVar);
                 return;
             case 2:
-                pr prVar2 = (pr) this.d;
+                rr rrVar2 = (rr) this.d;
                 long j10 = this.b;
                 TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) this.e;
                 String str3 = (String) this.f;
                 TLObject tLObject2 = (TLObject) this.c;
-                kq kqVar2 = new kq(j10, prVar2.N, tL_chatAdminRights, null, null, str3, 0, true, false, null);
-                kqVar2.X0 = new br(prVar2, tLObject2);
-                prVar2.presentFragment(kqVar2);
+                mq mqVar2 = new mq(j10, rrVar2.N, tL_chatAdminRights, null, null, str3, 0, true, false, null);
+                mqVar2.X0 = new dr(rrVar2, tLObject2);
+                rrVar2.presentFragment(mqVar2);
                 return;
             case 3:
-                ss ssVar = (ss) this.d;
+                ts tsVar = (ts) this.d;
                 MessagesStorage messagesStorage = (MessagesStorage) this.c;
                 ArrayList arrayList = (ArrayList) this.e;
                 long j11 = this.b;
@@ -159,41 +159,41 @@ public final /* synthetic */ class f implements Runnable {
                             sQLitePreparedStatement.dispose();
                         }
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                     break;
                 }
             case 4:
-                ss ssVar2 = (ss) this.d;
+                ts tsVar2 = (ts) this.d;
                 ArrayList<TLRPC.User> arrayList2 = (ArrayList) this.c;
                 long j12 = this.b;
                 String str5 = (String) this.e;
-                rs rsVar = (rs) this.f;
-                MessagesController.getInstance(ssVar2.a).putUsers(arrayList2, true);
-                ssVar2.h.addAll(arrayList2);
-                ssVar2.f = j12;
-                ssVar2.g = str5;
-                ssVar2.e = TextUtils.isEmpty(str5);
-                ssVar2.d = true;
-                rsVar.run();
+                ss ssVar = (ss) this.f;
+                MessagesController.getInstance(tsVar2.a).putUsers(arrayList2, true);
+                tsVar2.h.addAll(arrayList2);
+                tsVar2.f = j12;
+                tsVar2.g = str5;
+                tsVar2.e = TextUtils.isEmpty(str5);
+                tsVar2.d = true;
+                ssVar.run();
                 return;
             case 5:
-                a2 a2Var = (a2) this.d;
+                b2 b2Var = (b2) this.d;
                 TLObject tLObject3 = (TLObject) this.c;
                 long j13 = this.b;
                 AccountInstance accountInstance = (AccountInstance) this.e;
                 MessagesStorage.BooleanCallback booleanCallback = (MessagesStorage.BooleanCallback) this.f;
                 try {
-                    a2Var.dismiss();
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                    b2Var.dismiss();
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                 }
                 if (tLObject3 != null) {
                     TL_phone.joinAsPeers joinaspeers = (TL_phone.joinAsPeers) tLObject3;
-                    j80.G = joinaspeers.peers;
-                    j80.I = j13;
-                    j80.H = SystemClock.elapsedRealtime();
-                    j80.J = accountInstance.getCurrentAccount();
+                    k80.G = joinaspeers.peers;
+                    k80.I = j13;
+                    k80.H = SystemClock.elapsedRealtime();
+                    k80.J = accountInstance.getCurrentAccount();
                     accountInstance.getMessagesController().putChats(joinaspeers.chats, false);
                     accountInstance.getMessagesController().putUsers(joinaspeers.users, false);
                     booleanCallback.run(joinaspeers.peers.size() == 1);
@@ -210,8 +210,8 @@ public final /* synthetic */ class f implements Runnable {
                 if (photoEntry.coverPath != null) {
                     try {
                         new File(photoEntry.coverPath).delete();
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
+                    } catch (Exception e11) {
+                        FileLog.e(e11);
                     }
                 }
                 photoEntry.coverSavedPosition = j14;
@@ -219,13 +219,13 @@ public final /* synthetic */ class f implements Runnable {
                 photoEntry.coverPhoto = null;
                 photoEntry.coverPhotoParentObject = null;
                 photoViewer.q5.b.setLoading(false);
-                tu0 tu0Var = photoViewer.d;
-                if (tu0Var != null) {
-                    tu0Var.W(photoViewer.P4);
+                wu0 wu0Var = photoViewer.d;
+                if (wu0Var != null) {
+                    wu0Var.W(photoViewer.P4);
                 }
-                rs0 rs0Var = photoViewer.g1;
-                if (rs0Var != null) {
-                    rs0Var.setImage(bitmap);
+                us0 us0Var = photoViewer.g1;
+                if (us0Var != null) {
+                    us0Var.setImage(bitmap);
                 }
                 photoViewer.e3(0);
                 CheckBox checkBox = photoViewer.N0;
@@ -248,12 +248,12 @@ public final /* synthetic */ class f implements Runnable {
                 profileActivity.getMessagesController().getStoriesController().n0(j15, arrayList3, false);
                 return;
             case 8:
-                r1 r1Var = (r1) this.d;
+                q1 q1Var = (q1) this.d;
                 k5 k5Var = (k5) this.c;
                 long j16 = this.b;
                 Utilities.Callback callback = (Utilities.Callback) this.e;
                 Context context = (Context) this.f;
-                xh.w0 w0Var2 = r1Var.l0;
+                xh.w0 w0Var2 = q1Var.l0;
                 int i15 = 0;
                 while (i15 < i11) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -262,7 +262,7 @@ public final /* synthetic */ class f implements Runnable {
                     } else {
                         int i16 = R.string.Gift2StarsInfo;
                         Object[] objArr = new Object[i12];
-                        objArr[i13] = r1Var.e0;
+                        objArr[i13] = q1Var.e0;
                         formatString = LocaleController.formatString(i16, objArr);
                     }
                     spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(formatString));
@@ -296,11 +296,11 @@ public final /* synthetic */ class f implements Runnable {
                             spannableStringBuilder2.setSpan(new z5(document2, w0Var3.getPaint().getFontMetricsInt()), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 33);
                         }
                         spannableStringBuilder2.append((CharSequence) " >");
-                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new xh.p0(r1Var, callback, j16, 0)), true));
+                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new xh.p0(q1Var, callback, j16, 0)), true));
                     } else {
-                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2StarsInfoLink), new di.a(context, 5)), true));
+                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2StarsInfoLink), new di.b(context, 5)), true));
                     }
-                    TextView textView = i15 == 0 ? w0Var3 : r1Var.m0;
+                    TextView textView = i15 == 0 ? w0Var3 : q1Var.m0;
                     textView.setText(spannableStringBuilder);
                     textView.setMaxWidth(e4.a(textView.getText(), textView.getPaint()));
                     i15++;
@@ -313,12 +313,12 @@ public final /* synthetic */ class f implements Runnable {
                 return;
             case 9:
                 yh.o oVar = (yh.o) this.d;
-                a2 a2Var2 = (a2) this.e;
+                b2 b2Var2 = (b2) this.e;
                 TLObject tLObject4 = (TLObject) this.c;
                 long j17 = this.b;
                 Utilities.Callback callback2 = (Utilities.Callback) this.f;
                 oVar.getClass();
-                a2Var2.dismiss();
+                b2Var2.dismiss();
                 if (tLObject4 instanceof TL_payments.connectedStarRefBots) {
                     TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject4;
                     MessagesController.getInstance(oVar.a).putUsers(connectedstarrefbots.users, false);
@@ -388,7 +388,7 @@ public final /* synthetic */ class f implements Runnable {
                 CharSequence charSequence = (CharSequence) this.e;
                 long j21 = this.b;
                 String str7 = (String) this.f;
-                AndroidUtilities.runOnUIThread(new s1(profileActivity2, i11), 200L);
+                AndroidUtilities.runOnUIThread(new r1(profileActivity2, i11), 200L);
                 yc a02 = yc.a0(profileActivity2);
                 TLRPC.Document document3 = starGift3.sticker;
                 String string = LocaleController.getString(R.string.StarsGiftCompleted);
@@ -426,7 +426,7 @@ public final /* synthetic */ class f implements Runnable {
                         if (parentActivity == null) {
                             parentActivity = ApplicationLoader.applicationContext;
                         }
-                        new l7(parentActivity, s5Var.c.getResourceProvider(), j22, 5, str8, new q5(s5Var, j22, i12), 0L).show();
+                        new m7(parentActivity, s5Var.c.getResourceProvider(), j22, 5, str8, new q5(s5Var, j22, i12), 0L).show();
                     }
                     s5Var.q.T(false);
                     s5Var.q.P();
@@ -434,27 +434,27 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 return;
             default:
-                o8 o8Var = (o8) this.d;
+                p8 p8Var = (p8) this.d;
                 long j23 = this.b;
                 t5 t5Var4 = (t5) this.c;
                 MessageObject messageObject2 = (MessageObject) this.e;
-                wn wnVar = (wn) this.f;
-                a1.c cVar = o8Var.P;
+                yn ynVar = (yn) this.f;
+                a1.c cVar = p8Var.P;
                 if (cVar == null) {
-                    s5 d02 = t5Var4.d0(messageObject2, wnVar, j23, false, true, Long.valueOf(o8Var.E));
+                    s5 d02 = t5Var4.d0(messageObject2, ynVar, j23, false, true, Long.valueOf(p8Var.E));
                     if (d02 == null) {
                         return;
                     }
-                    AndroidUtilities.runOnUIThread(new r5(i11, o8Var, d02));
+                    AndroidUtilities.runOnUIThread(new r5(i11, p8Var, d02));
                     return;
                 }
                 int intValue = o1.a((o1) cVar.b, Long.valueOf(j23)).intValue();
-                o8Var.O = intValue;
+                p8Var.O = intValue;
                 if (intValue == Integer.MIN_VALUE) {
-                    o8Var.dismiss();
+                    p8Var.dismiss();
                     return;
                 } else {
-                    AndroidUtilities.runOnUIThread(new x7(o8Var, i13));
+                    AndroidUtilities.runOnUIThread(new y7(p8Var, i13));
                     return;
                 }
         }
@@ -487,19 +487,19 @@ public final /* synthetic */ class f implements Runnable {
         this.b = j3;
     }
 
-    public /* synthetic */ f(pr prVar, long j3, TLObject tLObject, String str, TLObject tLObject2, int i10) {
+    public /* synthetic */ f(rr rrVar, long j3, TLObject tLObject, String str, TLObject tLObject2, int i10) {
         this.a = i10;
-        this.d = prVar;
+        this.d = rrVar;
         this.b = j3;
         this.e = tLObject;
         this.f = str;
         this.c = tLObject2;
     }
 
-    public /* synthetic */ f(yh.o oVar, a2 a2Var, TLObject tLObject, long j3, Utilities.Callback callback) {
+    public /* synthetic */ f(yh.o oVar, b2 b2Var, TLObject tLObject, long j3, Utilities.Callback callback) {
         this.a = 9;
         this.d = oVar;
-        this.e = a2Var;
+        this.e = b2Var;
         this.c = tLObject;
         this.b = j3;
         this.f = callback;

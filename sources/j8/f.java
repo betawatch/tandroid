@@ -3,10 +3,11 @@ package j8;
 import android.os.Parcel;
 import android.os.RemoteException;
 import androidx.car.app.j;
+import ii.n4;
 import n6.l;
 import s7.i;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f {
     public final s7.a a;
@@ -16,16 +17,16 @@ public final class f {
         this.a = aVar;
     }
 
-    public final void a(xa.c cVar) {
+    public final void a(n4 n4Var) {
         s7.a aVar = this.a;
         try {
-            x6.a aVar2 = (x6.a) cVar.b;
+            x6.a aVar2 = (x6.a) n4Var.b;
             i iVar = (i) aVar;
             Parcel O0 = iVar.O0();
             s7.b.c(O0, aVar2);
             iVar.S0(O0, 18);
-        } catch (RemoteException e) {
-            throw new j(e);
+        } catch (RemoteException e7) {
+            throw new j(e7);
         }
     }
 
@@ -43,8 +44,8 @@ public final class f {
             boolean z10 = N0.readInt() != 0;
             N0.recycle();
             return z10;
-        } catch (RemoteException e) {
-            throw new j(e);
+        } catch (RemoteException e7) {
+            throw new j(e7);
         }
     }
 
@@ -55,8 +56,8 @@ public final class f {
             int readInt = N0.readInt();
             N0.recycle();
             return readInt;
-        } catch (RemoteException e) {
-            throw new j(e);
+        } catch (RemoteException e7) {
+            throw new j(e7);
         }
     }
 }

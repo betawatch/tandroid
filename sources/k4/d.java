@@ -3,7 +3,7 @@ package k4;
 import c3.p;
 import e2.v;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d {
     public final int a;
@@ -15,7 +15,7 @@ public final class d {
     }
 
     public static d b(p pVar, v vVar) {
-        pVar.a(0, 8, vVar.a);
+        pVar.b(0, 8, vVar.a);
         vVar.J(0);
         return new d(vVar.j(), vVar.o(), false);
     }

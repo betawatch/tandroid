@@ -1,28 +1,28 @@
 package xh;
 
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.pz;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.qz;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class z0 extends g.p {
-    public final /* synthetic */ r1 c;
+    public final /* synthetic */ q1 c;
 
-    public z0(r1 r1Var) {
-        this.c = r1Var;
+    public z0(q1 q1Var) {
+        this.c = q1Var;
     }
 
     @Override // g.p
     public final int i(int i10) {
         int i11;
-        r1 r1Var = this.c;
-        pz pzVar = r1Var.j0;
-        l61 l61Var = r1Var.Y;
-        if (l61Var == null || i10 == 0) {
-            return pzVar.J;
+        q1 q1Var = this.c;
+        qz qzVar = q1Var.j0;
+        u61 u61Var = q1Var.Y;
+        if (u61Var == null || i10 == 0) {
+            return qzVar.J;
         }
-        x51 G = l61Var.G(i10 - 1);
-        return (G == null || (i11 = G.u) == -1) ? pzVar.J : i11;
+        g61 G = u61Var.G(i10 - 1);
+        return (G == null || (i11 = G.u) == -1) ? qzVar.J : i11;
     }
 }

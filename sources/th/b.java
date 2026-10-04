@@ -3,14 +3,14 @@ package th;
 import android.view.View;
 import android.view.WindowInsets;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.f20;
+import org.telegram.ui.Components.g20;
 import r0.l1;
 import r0.n;
-import rg.q1;
+import rg.s1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements f20, n {
+public final /* synthetic */ class b implements g20, n {
     public final /* synthetic */ f a;
 
     public /* synthetic */ b(f fVar) {
@@ -26,7 +26,7 @@ public final /* synthetic */ class b implements f20, n {
         return l1.b;
     }
 
-    @Override // org.telegram.ui.Components.f20
+    @Override // org.telegram.ui.Components.g20
     public void a(int i10) {
         int min = Math.min(i10, AndroidUtilities.dp(144.0f));
         if (i10 > 0) {
@@ -36,7 +36,7 @@ public final /* synthetic */ class b implements f20, n {
         if (fVar.l0 != min) {
             fVar.l0 = min;
             fVar.X.a(min);
-            fVar.h0.postOnAnimation(new q1(fVar, 10));
+            fVar.h0.postOnAnimation(new s1(fVar, 10));
         }
     }
 }

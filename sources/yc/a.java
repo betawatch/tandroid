@@ -1,6 +1,5 @@
 package yc;
 
-import c5.m;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
@@ -9,7 +8,7 @@ import java.net.SocketTimeoutException;
 import java.util.List;
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public final InputStream a;
@@ -32,20 +31,20 @@ public final class a implements Runnable {
         try {
             try {
                 outputStream = socket.getOutputStream();
-            } catch (Exception e) {
-                e = e;
+            } catch (Throwable th2) {
+                th = th2;
             }
-        } catch (Throwable th2) {
-            th = th2;
+        } catch (Exception e7) {
+            e = e7;
         }
         try {
-            d dVar = new d(iVar, new m(), this.a, outputStream, socket.getInetAddress());
+            d dVar = new d(iVar, new n2.c(26), this.a, outputStream, socket.getInetAddress());
             while (!socket.isClosed()) {
                 dVar.c();
             }
             i.d(outputStream);
-        } catch (Exception e7) {
-            e = e7;
+        } catch (Exception e10) {
+            e = e10;
             outputStream2 = outputStream;
             if ((!(e instanceof SocketException) || !"NanoHttpd Shutdown".equals(e.getMessage())) && !(e instanceof SocketTimeoutException)) {
                 i.d.log(Level.SEVERE, "Communication with the client broken, or an bug in the handler code", (Throwable) e);

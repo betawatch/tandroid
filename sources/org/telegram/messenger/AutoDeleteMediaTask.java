@@ -9,12 +9,12 @@ import java.util.Set;
 import org.telegram.messenger.CacheByChatsController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class AutoDeleteMediaTask {
     public static Set<String> usingFilePaths = Collections.newSetFromMap(new ConcurrentHashMap());
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class FileInfoInternal extends CacheByChatsController.KeepMediaFile {
         final long lastUsageDate;
 
@@ -96,7 +96,7 @@ public class AutoDeleteMediaTask {
         long j14 = Long.MAX_VALUE;
         boolean z11 = true;
         for (int i18 = 0; i18 < 4; i18++) {
-            int i19 = SharedConfig.getPreferences().getInt(hg.c.h(i18, "keep_media_type_"), CacheByChatsController.getDefault(i18));
+            int i19 = SharedConfig.getPreferences().getInt(hg.k0.h(i18, "keep_media_type_"), CacheByChatsController.getDefault(i18));
             iArr[i18] = i19;
             if (i19 != CacheByChatsController.KEEP_MEDIA_FOREVER) {
                 z11 = false;
@@ -180,8 +180,8 @@ public class AutoDeleteMediaTask {
                                             FileLog.d("delete file " + keepMediaFile.file.getPath() + " last_usage_time=" + lastUsageFileTime + " time_local=" + j13 + " story=" + keepMediaFile.isStory);
                                         }
                                         keepMediaFile.file.delete();
-                                    } catch (Exception e) {
-                                        FileLog.e(e);
+                                    } catch (Exception e7) {
+                                        FileLog.e(e7);
                                     }
                                 }
                             }

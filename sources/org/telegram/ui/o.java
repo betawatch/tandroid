@@ -2,7 +2,6 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -36,9 +35,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.telegram.ui.Components.nl0, org.telegram.ui.ActionBar.z1, ky, v4, org.telegram.ui.Components.d5, MessagesController.ErrorDelegate, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.bk0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, mg1 {
+public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.telegram.ui.Components.nl0, org.telegram.ui.ActionBar.a2, oy, w4, MessagesController.ErrorDelegate, org.telegram.ui.Components.d5, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.al0, org.telegram.ui.Components.bk0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, og1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -49,50 +48,49 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
         this.c = obj2;
     }
 
-    @Override // org.telegram.ui.ky
+    @Override // org.telegram.ui.oy
     public /* synthetic */ boolean A() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.d5
-    public void J(int i10, int i11, boolean z10) {
-        switch (this.a) {
-            case 7:
-                wn wnVar = (wn) this.b;
-                Uri uri = (Uri) this.c;
-                wnVar.l8(null, null);
-                SendMessagesHelper.prepareSendingPhoto(wnVar.getAccountInstance(), null, uri, wnVar.T5, wnVar.n5, wnVar.X3, wnVar.l5, null, null, null, null, 0, wnVar.p5, z10, i10, wnVar.R3, wnVar.C8());
-                break;
-            case 8:
-            default:
-                in inVar = (in) this.b;
-                MessageObject messageObject = (MessageObject) this.c;
-                if (!z10) {
-                    inVar.getClass();
-                    break;
-                } else {
-                    inVar.a.getMessagesController().approveSuggestedMessage(DialogObject.getPeerDialogId(messageObject.messageOwner.peer_id), messageObject.messageOwner.id, i10);
-                    break;
-                }
-            case 9:
-                wn wnVar2 = (wn) this.b;
-                wnVar2.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of((String) this.c, wnVar2.T5, wnVar2.n5, wnVar2.X3, null, false, null, null, null, z10, i10, 0, null, false));
-                wnVar2.Y.setFieldText("");
-                wnVar2.e9(false);
-                break;
-        }
+    @Override // org.telegram.ui.oy
+    public /* synthetic */ boolean H(uy uyVar) {
+        return false;
     }
 
-    @Override // org.telegram.ui.ky
-    public /* synthetic */ boolean K(qy qyVar) {
-        return false;
+    @Override // org.telegram.ui.Components.d5
+    public void K(int i10, int i11, boolean z10) {
+        switch (this.a) {
+            case 8:
+                yn ynVar = (yn) this.b;
+                ynVar.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of((String) this.c, ynVar.R5, ynVar.l5, ynVar.V3, null, false, null, null, null, z10, i10, 0, null, false));
+                ynVar.W.setFieldText("");
+                ynVar.f9(false);
+                break;
+            case 11:
+                yn ynVar2 = (yn) this.b;
+                Uri uri = (Uri) this.c;
+                ynVar2.l8(null, null);
+                SendMessagesHelper.prepareSendingPhoto(ynVar2.getAccountInstance(), null, uri, ynVar2.R5, ynVar2.l5, ynVar2.V3, ynVar2.j5, null, null, null, null, 0, ynVar2.n5, z10, i10, ynVar2.P3, ynVar2.D8());
+                break;
+            default:
+                kn knVar = (kn) this.b;
+                MessageObject messageObject = (MessageObject) this.c;
+                if (!z10) {
+                    knVar.getClass();
+                    break;
+                } else {
+                    knVar.a.getMessagesController().approveSuggestedMessage(DialogObject.getPeerDialogId(messageObject.messageOwner.peer_id), messageObject.messageOwner.id, i10);
+                    break;
+                }
+        }
     }
 
     @Override // org.telegram.ui.Components.bk0
     public void a(long j3, TLRPC.MessagePeerReaction messagePeerReaction) {
-        ei eiVar = (ei) this.b;
+        fi fiVar = (fi) this.b;
         MessageObject messageObject = (MessageObject) this.c;
-        wn wnVar = eiVar.p;
+        yn ynVar = fiVar.p;
         Bundle bundle = new Bundle();
         if (j3 > 0) {
             bundle.putLong("user_id", j3);
@@ -100,30 +98,30 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
             bundle.putLong("chat_id", -j3);
         }
         bundle.putInt("report_reaction_message_id", messageObject.getId());
-        bundle.putLong("report_reaction_from_dialog_id", wnVar.T5);
-        wnVar.presentFragment(new ProfileActivity(bundle, null));
-        wnVar.A7(true);
+        bundle.putLong("report_reaction_from_dialog_id", ynVar.R5);
+        ynVar.presentFragment(new ProfileActivity(bundle, null));
+        ynVar.A7(true);
     }
 
-    @Override // org.telegram.ui.v4
-    public void b(d5 d5Var) {
-        lb lbVar = (lb) this.b;
+    @Override // org.telegram.ui.w4
+    public void b(e5 e5Var) {
+        nb nbVar = (nb) this.b;
         TLRPC.User user = (TLRPC.User) this.c;
-        int ordinal = d5Var.ordinal();
+        int ordinal = e5Var.ordinal();
         if (ordinal == 0) {
-            lbVar.a(user);
+            nbVar.a(user);
             return;
         }
         if (ordinal != 3) {
             return;
         }
-        qb qbVar = lbVar.a;
+        sb sbVar = nbVar.a;
         if (user != null) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", user.id);
-            org.telegram.ui.ActionBar.m2 m2Var = qbVar.n;
-            if (m2Var.getMessagesController().checkCanOpenChat(bundle, m2Var)) {
-                m2Var.presentFragment(new wn(bundle));
+            org.telegram.ui.ActionBar.n2 n2Var = sbVar.n;
+            if (n2Var.getMessagesController().checkCanOpenChat(bundle, n2Var)) {
+                n2Var.presentFragment(new yn(bundle));
             }
         }
     }
@@ -209,57 +207,61 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
         }
     }
 
+    @Override // org.telegram.ui.Components.al0
+    public void e() {
+        yn ynVar = (yn) this.b;
+        li.m mVar = (li.m) this.c;
+        ynVar.getClass();
+        mVar.g();
+        ynVar.q9();
+    }
+
     @Override // org.telegram.ui.Components.nl0
-    public /* synthetic */ boolean d1(View view) {
+    public /* synthetic */ boolean f1(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.mg1
-    public void e(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-        ((kq) this.b).p0(tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         String str;
         switch (this.a) {
             case 2:
-                p4 p4Var = (p4) this.b;
+                q4 q4Var = (q4) this.b;
                 View view = (View) this.c;
-                p4Var.getClass();
-                a2Var.dismiss();
-                p4Var.W(view, true);
+                q4Var.getClass();
+                b2Var.dismiss();
+                q4Var.U(view, true);
                 break;
             case 4:
-                nf.f.o(((ub) this.b).getParentActivity(), (String) this.c, true);
+                nf.f.o(((wb) this.b).getParentActivity(), (String) this.c, true);
                 break;
             case 6:
-                ld.V((ld) this.b, (TLRPC.Chat) this.c);
+                nd.T((nd) this.b, (TLRPC.Chat) this.c);
                 break;
-            case 16:
-                fp fpVar = (fp) this.b;
+            case 17:
+                hp hpVar = (hp) this.b;
                 TLRPC.Chat chat = (TLRPC.Chat) this.c;
                 TLRPC.TL_channels_updateUsername tL_channels_updateUsername = new TLRPC.TL_channels_updateUsername();
                 tL_channels_updateUsername.channel = MessagesController.getInputChannel(chat);
                 tL_channels_updateUsername.username = "";
-                fpVar.getConnectionsManager().sendRequest(tL_channels_updateUsername, new so(fpVar, 0), 64);
-                break;
-            case 20:
-                org.telegram.ui.Components.e0.P((org.telegram.ui.Components.e0) this.b, (TL_aicompose.TL_aiComposeTone) this.c, a2Var);
+                hpVar.getConnectionsManager().sendRequest(tL_channels_updateUsername, new uo(hpVar, 0), 64);
                 break;
             case 21:
+                org.telegram.ui.Components.e0.N((org.telegram.ui.Components.e0) this.b, (TL_aicompose.TL_aiComposeTone) this.c, b2Var);
+                break;
+            case 22:
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
                 q0.a aVar = (q0.a) this.c;
                 atomicBoolean.set(true);
                 aVar.accept(Boolean.FALSE);
                 break;
-            case 22:
+            case 23:
                 int[] iArr = (int[]) this.b;
                 MessagesStorage.IntCallback intCallback = (MessagesStorage.IntCallback) this.c;
                 int i11 = iArr[0];
                 intCallback.run(i11 == 0 ? RichMessageLayout.PART_MAX_HEIGHT_DP : i11 == 1 ? 3600 : i11 == 2 ? 28800 : ConnectionsManager.DEFAULT_DATACENTER_ID);
                 break;
-            case 23:
+            case 24:
                 TLRPC.TL_langPackLanguage tL_langPackLanguage = (TLRPC.TL_langPackLanguage) this.b;
                 LaunchActivity launchActivity = (LaunchActivity) this.c;
                 if (tL_langPackLanguage.official) {
@@ -285,13 +287,13 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
                 LocaleController.getInstance().applyLanguage(languageFromDict, true, false, false, true, UserConfig.selectedAccount, null);
                 launchActivity.u0(true);
                 break;
-            case 24:
-                oc ocVar = (oc) this.b;
-                EditText editText = (EditText) this.c;
-                a2Var.dismiss();
-                ocVar.run(editText.getText().toString());
-                break;
             case 25:
+                qc qcVar = (qc) this.b;
+                EditText editText = (EditText) this.c;
+                b2Var.dismiss();
+                qcVar.run(editText.getText().toString());
+                break;
+            case 26:
                 org.telegram.ui.Components.f4 f4Var = (org.telegram.ui.Components.f4) this.b;
                 Utilities.Callback callback = (Utilities.Callback) this.c;
                 String trim = f4Var.getText().toString().trim();
@@ -300,22 +302,22 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
                     break;
                 } else {
                     callback.run(trim);
-                    a2Var.dismiss();
+                    b2Var.dismiss();
                     break;
-                }
-            case 26:
-                String str2 = (String) this.b;
-                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.c;
-                try {
-                    Intent intent = new Intent("android.intent.action.VIEW", Uri.fromParts("sms", str2, null));
-                    intent.putExtra("sms_body", ContactsController.getInstance(m2Var.getCurrentAccount()).getInviteText(1));
-                    m2Var.getParentActivity().startActivityForResult(intent, 500);
-                    break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
                 }
             case 27:
+                String str2 = (String) this.b;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
+                try {
+                    Intent intent = new Intent("android.intent.action.VIEW", Uri.fromParts("sms", str2, null));
+                    intent.putExtra("sms_body", ContactsController.getInstance(n2Var.getCurrentAccount()).getInviteText(1));
+                    n2Var.getParentActivity().startActivityForResult(intent, 500);
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return;
+                }
+            case 28:
                 TLRPC.EncryptedChat encryptedChat = (TLRPC.EncryptedChat) this.b;
                 org.telegram.ui.Components.gd0 gd0Var = (org.telegram.ui.Components.gd0) this.c;
                 int i12 = encryptedChat.ttl;
@@ -339,40 +341,34 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
                     break;
                 }
                 break;
-            case 28:
-                ((da) this.b).run(((boolean[]) this.c)[0]);
-                break;
             default:
-                String str3 = (String) this.b;
-                Runnable runnable = (Runnable) this.c;
-                SharedPreferences.Editor edit = MessagesController.getNotificationsSettings(UserConfig.selectedAccount).edit();
-                edit.remove("color_" + str3);
-                edit.commit();
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                ((fa) this.b).run(((boolean[]) this.c)[0]);
                 break;
         }
     }
 
+    @Override // org.telegram.ui.og1
+    public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
+        ((mq) this.b).p0(tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
+    }
+
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        un unVar = (un) this.b;
-        org.telegram.ui.Components.oc0 oc0Var = (org.telegram.ui.Components.oc0) this.c;
+        wn wnVar = (wn) this.b;
+        org.telegram.ui.Components.pc0 pc0Var = (org.telegram.ui.Components.pc0) this.c;
         Pair pair = (Pair) obj;
-        unVar.getClass();
+        wnVar.getClass();
         if (pair == null) {
             return;
         }
         long longValue = ((Long) pair.first).longValue();
         Bitmap bitmap = (Bitmap) pair.second;
-        org.telegram.ui.ActionBar.b4 b4Var = unVar.f;
-        if (b4Var == null || longValue != b4Var.i(unVar.G ? 1 : 0) || bitmap == null) {
+        org.telegram.ui.ActionBar.c4 c4Var = wnVar.f;
+        if (c4Var == null || longValue != c4Var.i(wnVar.G ? 1 : 0) || bitmap == null) {
             return;
         }
-        oc0Var.x = bitmap;
-        oc0Var.i();
+        pc0Var.x = bitmap;
+        pc0Var.i();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -382,16 +378,16 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
 
     @Override // org.telegram.messenger.MessagesController.ErrorDelegate
     public boolean run(TLRPC.TL_error tL_error) {
-        wn.e0((wn) this.b, (Context) this.c, tL_error);
+        yn.y1((yn) this.b, (Context) this.c, tL_error);
         return false;
     }
 
-    @Override // org.telegram.ui.ky
-    public boolean u(qy qyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
-        a6 a6Var = (a6) this.b;
-        qy qyVar2 = (qy) this.c;
-        ArrayList arrayList2 = a6Var.c;
-        qyVar2.finishFragment();
+    @Override // org.telegram.ui.oy
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, yf1 yf1Var) {
+        b6 b6Var = (b6) this.b;
+        uy uyVar2 = (uy) this.c;
+        ArrayList arrayList2 = b6Var.c;
+        uyVar2.finishFragment();
         CacheByChatsController.KeepMediaException keepMediaException = null;
         int i12 = 0;
         int i13 = 0;
@@ -402,35 +398,35 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
             }
             int i14 = 0;
             while (true) {
-                if (i14 >= a6Var.d.size()) {
+                if (i14 >= b6Var.d.size()) {
                     z12 = false;
                     break;
                 }
-                if (((CacheByChatsController.KeepMediaException) a6Var.d.get(i14)).dialogId == ((MessagesStorage.TopicKey) arrayList.get(i13)).dialogId) {
-                    keepMediaException = (CacheByChatsController.KeepMediaException) a6Var.d.get(i14);
+                if (((CacheByChatsController.KeepMediaException) b6Var.d.get(i14)).dialogId == ((MessagesStorage.TopicKey) arrayList.get(i13)).dialogId) {
+                    keepMediaException = (CacheByChatsController.KeepMediaException) b6Var.d.get(i14);
                     break;
                 }
                 i14++;
             }
             if (!z12) {
                 int i15 = CacheByChatsController.KEEP_MEDIA_FOREVER;
-                if (a6Var.getMessagesController().getCacheByChatsController().getKeepMedia(a6Var.e) == CacheByChatsController.KEEP_MEDIA_FOREVER) {
+                if (b6Var.getMessagesController().getCacheByChatsController().getKeepMedia(b6Var.e) == CacheByChatsController.KEEP_MEDIA_FOREVER) {
                     i15 = CacheByChatsController.KEEP_MEDIA_ONE_DAY;
                 }
-                ArrayList arrayList3 = a6Var.d;
+                ArrayList arrayList3 = b6Var.d;
                 CacheByChatsController.KeepMediaException keepMediaException2 = new CacheByChatsController.KeepMediaException(((MessagesStorage.TopicKey) arrayList.get(i13)).dialogId, i15);
                 arrayList3.add(keepMediaException2);
                 keepMediaException = keepMediaException2;
             }
             i13++;
         }
-        a6Var.getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(a6Var.e, a6Var.d);
-        a6Var.U();
+        b6Var.getMessagesController().getCacheByChatsController().saveKeepMediaExceptions(b6Var.e, b6Var.d);
+        b6Var.S();
         if (keepMediaException != null) {
             int i16 = 0;
             while (true) {
                 if (i16 < arrayList2.size()) {
-                    if (((z5) arrayList2.get(i16)).c != null && ((z5) arrayList2.get(i16)).c.dialogId == keepMediaException.dialogId) {
+                    if (((a6) arrayList2.get(i16)).c != null && ((a6) arrayList2.get(i16)).c.dialogId == keepMediaException.dialogId) {
                         i12 = i16;
                         break;
                     }
@@ -439,15 +435,15 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
                     break;
                 }
             }
-            a6Var.b.u0(i12);
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.a6(8, a6Var, keepMediaException), 150L);
+            b6Var.b.v0(i12);
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.g6(6, b6Var, keepMediaException), 150L);
         }
         return true;
     }
 
-    public /* synthetic */ o(lb lbVar, org.telegram.ui.Cells.u1 u1Var, TLRPC.User user) {
+    public /* synthetic */ o(nb nbVar, org.telegram.ui.Cells.u1 u1Var, TLRPC.User user) {
         this.a = 5;
-        this.b = lbVar;
+        this.b = nbVar;
         this.c = user;
     }
 
@@ -459,58 +455,58 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
     @Override // org.telegram.messenger.MessagesStorage.LongCallback
     public void run(long j3) {
         switch (this.a) {
-            case 15:
-                ro roVar = (ro) this.b;
-                org.telegram.ui.ActionBar.a2 a2Var = (org.telegram.ui.ActionBar.a2) this.c;
-                roVar.getClass();
-                a2Var.dismiss();
-                roVar.N0 = false;
+            case 16:
+                to toVar = (to) this.b;
+                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.c;
+                toVar.getClass();
+                b2Var.dismiss();
+                toVar.N0 = false;
                 if (j3 != 0) {
-                    roVar.w0 = j3;
-                    TLRPC.Chat chat = roVar.getMessagesController().getChat(Long.valueOf(j3));
-                    roVar.x0 = chat;
-                    TLRPC.ChatFull chatFull = roVar.y0;
+                    toVar.w0 = j3;
+                    TLRPC.Chat chat = toVar.getMessagesController().getChat(Long.valueOf(j3));
+                    toVar.x0 = chat;
+                    TLRPC.ChatFull chatFull = toVar.y0;
                     if (chatFull != null) {
                         chatFull.hidden_prehistory = true;
                     }
-                    boolean z10 = chat.forum_tabs != roVar.H0;
-                    roVar.getMessagesController().toggleChannelForum(roVar.w0, roVar.F0, roVar.H0);
-                    TLRPC.Chat chat2 = roVar.x0;
-                    chat2.forum = roVar.F0;
-                    chat2.forum_tabs = roVar.H0;
+                    boolean z10 = chat.forum_tabs != toVar.H0;
+                    toVar.getMessagesController().toggleChannelForum(toVar.w0, toVar.F0, toVar.H0);
+                    TLRPC.Chat chat2 = toVar.x0;
+                    chat2.forum = toVar.F0;
+                    chat2.forum_tabs = toVar.H0;
                     if (z10) {
-                        roVar.q0();
+                        toVar.q0();
                         break;
                     }
                 }
                 break;
-            case 16:
+            case 17:
             default:
-                np npVar = (np) this.b;
+                pp ppVar = (pp) this.b;
                 Runnable runnable = (Runnable) this.c;
                 if (j3 == 0) {
-                    npVar.getClass();
+                    ppVar.getClass();
                     break;
                 } else {
-                    rp rpVar = npVar.x.d;
-                    if (rpVar.s) {
-                        rpVar.v.set(0, rpVar.getMessagesController().getChat(Long.valueOf(j3)));
+                    tp tpVar = ppVar.x.d;
+                    if (tpVar.s) {
+                        tpVar.v.set(0, tpVar.getMessagesController().getChat(Long.valueOf(j3)));
                     } else {
-                        rpVar.E = j3;
-                        rpVar.f = rpVar.getMessagesController().getChat(Long.valueOf(j3));
+                        tpVar.E = j3;
+                        tpVar.f = tpVar.getMessagesController().getChat(Long.valueOf(j3));
                     }
                     runnable.run();
                     break;
                 }
-            case 17:
-                rp rpVar2 = (rp) this.b;
-                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.c;
+            case 18:
+                tp tpVar2 = (tp) this.b;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
                 if (j3 == 0) {
-                    rpVar2.getClass();
+                    tpVar2.getClass();
                     break;
                 } else {
-                    rpVar2.getMessagesController().toggleChannelInvitesHistory(j3, false);
-                    rpVar2.Y(rpVar2.getMessagesController().getChat(Long.valueOf(j3)), m2Var);
+                    tpVar2.getMessagesController().toggleChannelInvitesHistory(j3, false);
+                    tpVar2.X(tpVar2.getMessagesController().getChat(Long.valueOf(j3)), n2Var);
                     break;
                 }
         }
@@ -518,14 +514,14 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public void run(boolean z10) {
-        kj kjVar = (kj) this.b;
+        lj ljVar = (lj) this.b;
         long j3 = ((TLRPC.User) this.c).id;
-        wn wnVar = kjVar.b;
-        long j10 = wnVar.d4;
+        yn ynVar = ljVar.b;
+        long j10 = ynVar.b4;
         if (j3 != j10) {
             return;
         }
-        wnVar.qa(j10, false);
+        ynVar.pa(j10, false);
     }
 
     @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
@@ -541,6 +537,6 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
     }
 
     @Override // org.telegram.ui.Components.nl0
-    public /* synthetic */ void r0(View view, float f7, float f10) {
+    public /* synthetic */ void s0(View view, float f7, float f10) {
     }
 }

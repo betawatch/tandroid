@@ -13,6 +13,7 @@ import com.google.android.gms.internal.vision.e2;
 import e2.d0;
 import e2.h;
 import e2.v;
+import hg.k0;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -23,15 +24,14 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import v7.j;
-import v7.s6;
-import v7.z7;
-import z3.l;
+import v7.r6;
+import v7.y7;
 import z3.m;
+import z3.n;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class a implements m {
+public final class a implements n {
     public static final Pattern h = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)");
     public final boolean a;
     public final b4.b b;
@@ -87,18 +87,18 @@ public final class a implements m {
         return (Long.parseLong(matcher.group(4)) * 10000) + (Long.parseLong(matcher.group(3)) * 1000000) + (Long.parseLong(matcher.group(2)) * 60000000) + (Long.parseLong(group) * 3600000000L);
     }
 
-    @Override // z3.m
+    @Override // z3.n
     public final int A() {
         return 1;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:28:0x00c2  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x00ca  */
-    @Override // z3.m
+    @Override // z3.n
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void C(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+    public final void F(byte[] bArr, int i10, int i11, m mVar, h hVar) {
         Charset charset;
         long j3;
         b4.b bVar;
@@ -130,7 +130,7 @@ public final class a implements m {
         int i23;
         int i24;
         a aVar = this;
-        long j10 = lVar.a;
+        long j10 = mVar.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         v vVar2 = aVar.c;
@@ -149,7 +149,7 @@ public final class a implements m {
             String k10 = vVar2.k(F);
             if (k10 == null) {
                 long j11 = j10;
-                ArrayList arrayList3 = (j11 == -9223372036854775807L || !lVar.b) ? null : new ArrayList();
+                ArrayList arrayList3 = (j11 == -9223372036854775807L || !mVar.b) ? null : new ArrayList();
                 for (int i25 = 0; i25 < arrayList.size(); i25++) {
                     List list = (List) arrayList.get(i25);
                     if (!list.isEmpty() || i25 == 0) {
@@ -475,13 +475,13 @@ public final class a implements m {
                         break;
                     }
                     if (vVar.a() != 0) {
-                        if ((vVar.g(charset) != 0 ? z7.b(r2 >>> 8) : 1114112) == 91) {
+                        if ((vVar.g(charset) != 0 ? y7.b(r2 >>> 8) : 1114112) == 91) {
                             break;
                         }
                     }
                     String[] split = k11.split(":");
                     if (split.length == 2) {
-                        String b10 = s6.b(split[0].trim());
+                        String b10 = r6.b(split[0].trim());
                         b10.getClass();
                         if (b10.equals("playresx")) {
                             this.e = Float.parseFloat(split[1].trim());
@@ -500,7 +500,7 @@ public final class a implements m {
                     String k12 = vVar.k(charset);
                     if (k12 != null) {
                         if (vVar.a() != 0) {
-                            if ((vVar.g(charset) != 0 ? z7.b(r0 >>> 8) : 1114112) == i11) {
+                            if ((vVar.g(charset) != 0 ? y7.b(r0 >>> 8) : 1114112) == i11) {
                             }
                         }
                         int i12 = -1;
@@ -517,7 +517,7 @@ public final class a implements m {
                             int i21 = -1;
                             int i22 = -1;
                             for (int i23 = 0; i23 < split2.length; i23++) {
-                                String b11 = s6.b(split2[i23].trim());
+                                String b11 = r6.b(split2[i23].trim());
                                 b11.getClass();
                                 switch (b11.hashCode()) {
                                     case -1178781136:
@@ -641,7 +641,7 @@ public final class a implements m {
                                         int length2 = split3.length;
                                         String str = d0.a;
                                         Locale locale = Locale.US;
-                                        StringBuilder k13 = hg.c.k("Skipping malformed 'Style:' line (expected ", i24, " values, found ", length2, "): '");
+                                        StringBuilder k13 = k0.k("Skipping malformed 'Style:' line (expected ", i24, " values, found ", length2, "): '");
                                         k13.append(k12);
                                         k13.append("'");
                                         e2.a.n("SsaStyle", k13.toString());
@@ -660,8 +660,8 @@ public final class a implements m {
                                                 String trim2 = split3[i28].trim();
                                                 try {
                                                     f10 = Float.parseFloat(trim2);
-                                                } catch (NumberFormatException e) {
-                                                    e2.a.o("SsaStyle", "Failed to parse font size: '" + trim2 + "'", e);
+                                                } catch (NumberFormatException e7) {
+                                                    e2.a.o("SsaStyle", "Failed to parse font size: '" + trim2 + "'", e7);
                                                 }
                                                 f7 = f10;
                                             } else {
@@ -692,8 +692,8 @@ public final class a implements m {
                                                 i10 = -1;
                                             }
                                             dVar = new d(trim, a2, c11, c12, f7, z10, z11, z12, z13, i10);
-                                        } catch (RuntimeException e7) {
-                                            e2.a.o("SsaStyle", "Skipping malformed 'Style:' line: '" + k12 + "'", e7);
+                                        } catch (RuntimeException e10) {
+                                            e2.a.o("SsaStyle", "Skipping malformed 'Style:' line: '" + k12 + "'", e10);
                                         }
                                         if (dVar != null) {
                                             linkedHashMap.put(dVar.a, dVar);
@@ -717,12 +717,12 @@ public final class a implements m {
         }
     }
 
-    @Override // z3.m
-    public final /* synthetic */ z3.d r(int i10, int i11, byte[] bArr) {
-        return j.a(this, bArr, i11);
+    @Override // z3.n
+    public final /* synthetic */ z3.d h(int i10, int i11, byte[] bArr) {
+        return t8.b.a(this, bArr, i11);
     }
 
-    @Override // z3.m
+    @Override // z3.n
     public final /* synthetic */ void reset() {
     }
 }

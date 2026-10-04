@@ -11,15 +11,15 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.yn0;
+import org.telegram.ui.Components.yw;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cx0;
-import org.telegram.ui.h31;
-import org.telegram.ui.p60;
-import org.telegram.ui.qy;
-import org.telegram.ui.wl0;
+import org.telegram.ui.am0;
+import org.telegram.ui.fx0;
+import org.telegram.ui.j31;
+import org.telegram.ui.t60;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hi implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class hi implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new gg.e1((org.telegram.ui.i4) obj5, this.b, (nf.e) obj4, tLObject, (String) obj, (org.telegram.ui.g0) obj3, (TLRPC.TL_messages_getWebPage) obj2));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new gg.e1(tLObject, (org.telegram.ui.ActionBar.a2) obj5, (Context) obj4, this.b, (TL_phone.exportGroupCallInvite) obj3, (org.telegram.ui.ActionBar.d6) obj2, (p60) obj));
+                AndroidUtilities.runOnUIThread(new gg.e1(tLObject, (org.telegram.ui.ActionBar.b2) obj5, (Context) obj4, this.b, (TL_phone.exportGroupCallInvite) obj3, (org.telegram.ui.ActionBar.d6) obj2, (t60) obj));
                 break;
             case 3:
                 boolean[] zArr = (boolean[]) obj5;
@@ -77,34 +77,34 @@ public final /* synthetic */ class hi implements RequestDelegate {
             case 4:
                 String str = (String) obj;
                 Pattern pattern = LaunchActivity.B1;
-                AndroidUtilities.runOnUIThread(new gg.e1((LaunchActivity) obj5, tLObject, this.b, (qy) obj4, (org.telegram.ui.ActionBar.m2) obj3, (TLRPC.User) obj2, str));
+                AndroidUtilities.runOnUIThread(new gg.e1((LaunchActivity) obj5, tLObject, this.b, (uy) obj4, (org.telegram.ui.ActionBar.n2) obj3, (TLRPC.User) obj2, str));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new y5(tLObject, (org.telegram.ui.ActionBar.m2) obj5, (TLRPC.TL_inputStorePaymentPremiumSubscription) obj4, (cx0) obj3, (c5.f) obj2, this.b, tL_error, (TLRPC.TL_payments_canPurchaseStore) obj));
+                AndroidUtilities.runOnUIThread(new y5(tLObject, (org.telegram.ui.ActionBar.n2) obj5, (TLRPC.TL_inputStorePaymentPremiumSubscription) obj4, (fx0) obj3, (c5.f) obj2, this.b, tL_error, (TLRPC.TL_payments_canPurchaseStore) obj));
                 break;
             default:
                 Context context2 = (Context) obj5;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj4;
                 byte[] bArr = (byte[]) obj3;
-                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) obj2;
-                yn0 yn0Var = (yn0) obj;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj2;
+                yw ywVar = (yw) obj;
                 if (tLObject == null) {
                     if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        AndroidUtilities.runOnUIThread(new h31(m2Var, context2, d6Var, yn0Var, 1), 200L);
+                        AndroidUtilities.runOnUIThread(new j31(n2Var, context2, d6Var, ywVar, 1), 200L);
                         break;
                     }
                 } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
                     if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
                         if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            AndroidUtilities.runOnUIThread(new wl0(m2Var, i11, yn0Var, 7), 200L);
+                            AndroidUtilities.runOnUIThread(new am0(n2Var, i11, ywVar, 7), 200L);
                             break;
                         }
                     } else {
-                        AndroidUtilities.runOnUIThread(new h31(m2Var, context2, d6Var, yn0Var, 0), 200L);
+                        AndroidUtilities.runOnUIThread(new j31(n2Var, context2, d6Var, ywVar, 0), 200L);
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new ai.z8(tLObject, context2, d6Var, bArr, m2Var, yn0Var, 11));
+                    AndroidUtilities.runOnUIThread(new ai.z8(tLObject, context2, d6Var, bArr, n2Var, ywVar, 11));
                     break;
                 }
                 break;
@@ -121,24 +121,24 @@ public final /* synthetic */ class hi implements RequestDelegate {
         this.c = context;
     }
 
-    public /* synthetic */ hi(Context context, org.telegram.ui.ActionBar.d6 d6Var, byte[] bArr, org.telegram.ui.ActionBar.m2 m2Var, yn0 yn0Var, int i10) {
+    public /* synthetic */ hi(Context context, org.telegram.ui.ActionBar.d6 d6Var, byte[] bArr, org.telegram.ui.ActionBar.n2 n2Var, yw ywVar, int i10) {
         this.a = 6;
         this.d = context;
         this.e = d6Var;
         this.f = bArr;
-        this.g = m2Var;
-        this.c = yn0Var;
+        this.g = n2Var;
+        this.c = ywVar;
         this.b = i10;
     }
 
-    public /* synthetic */ hi(org.telegram.ui.ActionBar.a2 a2Var, Context context, int i10, TL_phone.exportGroupCallInvite exportgroupcallinvite, org.telegram.ui.ActionBar.d6 d6Var, p60 p60Var) {
+    public /* synthetic */ hi(org.telegram.ui.ActionBar.b2 b2Var, Context context, int i10, TL_phone.exportGroupCallInvite exportgroupcallinvite, org.telegram.ui.ActionBar.d6 d6Var, t60 t60Var) {
         this.a = 2;
-        this.d = a2Var;
+        this.d = b2Var;
         this.e = context;
         this.b = i10;
         this.f = exportgroupcallinvite;
         this.g = d6Var;
-        this.c = p60Var;
+        this.c = t60Var;
     }
 
     public /* synthetic */ hi(org.telegram.ui.i4 i4Var, int i10, nf.e eVar, String str, org.telegram.ui.g0 g0Var, TLRPC.TL_messages_getWebPage tL_messages_getWebPage) {
@@ -151,12 +151,12 @@ public final /* synthetic */ class hi implements RequestDelegate {
         this.g = tL_messages_getWebPage;
     }
 
-    public /* synthetic */ hi(LaunchActivity launchActivity, int i10, qy qyVar, org.telegram.ui.ActionBar.m2 m2Var, TLRPC.User user, String str) {
+    public /* synthetic */ hi(LaunchActivity launchActivity, int i10, uy uyVar, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.User user, String str) {
         this.a = 4;
         this.d = launchActivity;
         this.b = i10;
-        this.e = qyVar;
-        this.f = m2Var;
+        this.e = uyVar;
+        this.f = n2Var;
         this.g = user;
         this.c = str;
     }

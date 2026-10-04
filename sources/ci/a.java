@@ -17,9 +17,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.sq;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class a extends View {
     public final ImageReceiver a;
@@ -44,36 +44,36 @@ public final class a extends View {
         TextPaint textPaint2 = new TextPaint(1);
         this.n = textPaint2;
         setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        setBackground(org.telegram.ui.ActionBar.h6.K0(false));
+        setBackground(org.telegram.ui.ActionBar.i6.K0(false));
         setMinimumWidth(AndroidUtilities.dp(196.0f));
         setLayoutParams(new LinearLayout.LayoutParams(-1, 48));
-        int i11 = org.telegram.ui.ActionBar.h6.E8;
-        textPaint.setColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+        int i11 = org.telegram.ui.ActionBar.i6.E8;
+        textPaint.setColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
         textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-        textPaint2.setColor(org.telegram.ui.ActionBar.h6.v0(i11, d6Var));
+        textPaint2.setColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
         textPaint2.setAlpha(102);
         textPaint2.setTextSize(AndroidUtilities.dp(13.0f));
         String str3 = "";
         String str4 = "" + ((Object) str);
         this.b = str4;
-        this.c = hg.c.h(i10, "");
+        this.c = hg.k0.h(i10, "");
         imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
         Drawable mutate = context.getResources().getDrawable(R.drawable.msg_media_gallery).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(1308622847, PorterDuff.Mode.MULTIPLY));
-        rq rqVar = new rq(org.telegram.ui.ActionBar.h6.b0(AndroidUtilities.dp(6.0f), -13750737), mutate);
-        rqVar.w = false;
+        sq sqVar = new sq(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(6.0f), -13750737), mutate);
+        sqVar.w = false;
         int dp = AndroidUtilities.dp(18.0f);
         int dp2 = AndroidUtilities.dp(18.0f);
-        rqVar.e = dp;
-        rqVar.f = dp2;
+        sqVar.e = dp;
+        sqVar.f = dp2;
         if (photoEntry != null && (str2 = photoEntry.thumbPath) != null) {
-            imageReceiver.setImage(ImageLocation.getForPath(str2), "30.0_30.0", (ImageLocation) null, (String) null, rqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath(str2), "30.0_30.0", (ImageLocation) null, (String) null, sqVar, (Object) null, 0);
         } else if (photoEntry == null || photoEntry.path == null) {
-            imageReceiver.setImageBitmap(rqVar);
+            imageReceiver.setImageBitmap(sqVar);
         } else if (photoEntry.isVideo) {
-            imageReceiver.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, rqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, sqVar, (Object) null, 0);
         } else {
-            imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, rqVar, (Object) null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path), "30.0_30.0", (ImageLocation) null, (String) null, sqVar, (Object) null, 0);
         }
         StringBuilder sb2 = new StringBuilder();
         sb2.append((Object) str4);

@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class r1 extends AccessibilityNodeProvider {
     public final Path a = new Path();
@@ -815,7 +815,7 @@ public final class r1 extends AccessibilityNodeProvider {
                 obtain.setClassName("android.widget.ImageButton");
                 obtain.setEnabled(true);
                 messageObject5 = u1Var.y7;
-                if (u1.T(u1Var, messageObject5)) {
+                if (u1.R(u1Var, messageObject5)) {
                     obtain.setContentDescription(LocaleController.getString("AccDescrOpenChat", R.string.AccDescrOpenChat));
                 } else {
                     obtain.setContentDescription(LocaleController.getString("ShareFile", R.string.ShareFile));
@@ -2230,7 +2230,7 @@ public final class r1 extends AccessibilityNodeProvider {
                             if (l1Var3 != null && !e0Var.m) {
                                 BotInlineKeyboard.ButtonCustom buttonCustom = e0Var.j;
                                 if (buttonCustom != null) {
-                                    l1Var3.E(u1Var, buttonCustom);
+                                    l1Var3.F(u1Var, buttonCustom);
                                 } else {
                                     TL_keyboard.KeyboardInlineButton keyboardInlineButton = e0Var.i;
                                     if (keyboardInlineButton != null) {
@@ -2248,7 +2248,7 @@ public final class r1 extends AccessibilityNodeProvider {
                             if (u1Var.Jc != null) {
                                 ArrayList arrayList3 = new ArrayList();
                                 arrayList3.add(s1Var.s);
-                                u1Var.Jc.j(u1Var, arrayList3, -1, 0, 0);
+                                u1Var.Jc.k(u1Var, arrayList3, -1, 0, 0);
                             }
                             u1Var.I3(i10, 1, null);
                             return true;
@@ -2304,7 +2304,7 @@ public final class r1 extends AccessibilityNodeProvider {
                             if (l1Var10 != null) {
                                 TLRPC.Chat chat = u1Var.jc;
                                 if (chat != null) {
-                                    l1Var10.S(u1Var, chat, u1Var.y7.messageOwner.fwd_from.channel_post, u1Var.g1, u1Var.h1, false);
+                                    l1Var10.T(u1Var, chat, u1Var.y7.messageOwner.fwd_from.channel_post, u1Var.g1, u1Var.h1, false);
                                     return true;
                                 }
                                 TLRPC.User user = u1Var.hc;

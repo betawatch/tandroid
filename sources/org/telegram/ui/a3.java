@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class a3 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final class a3 implements Runnable {
                             articleViewer$WindowView.performHapticFeedback(0, 2);
                         } catch (Exception unused) {
                         }
-                        i4Var.Z(((org.telegram.ui.Components.z01) i4Var.b.i).b);
+                        i4Var.Z(((org.telegram.ui.Components.i11) i4Var.b.i).b);
                         i4Var.b = null;
                         i4Var.d = null;
                         View view = i4Var.f;
@@ -73,8 +73,8 @@ public final class a3 implements Runnable {
                             i4Var.f.invalidate();
                             i4Var.h = true;
                             View view3 = i4Var.f;
-                            org.telegram.ui.ActionBar.m1 m1Var = i4Var.H;
-                            if (m1Var == null || !m1Var.isShowing()) {
+                            org.telegram.ui.ActionBar.n1 n1Var = i4Var.H;
+                            if (n1Var == null || !n1Var.isShowing()) {
                                 if (i4Var.A0 == null) {
                                     i4Var.C0 = new Rect();
                                     ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(i4Var.L, null);
@@ -87,18 +87,18 @@ public final class a3 implements Runnable {
                                     i4Var.A0.setShownFromBottom(false);
                                     TextView textView = new TextView(i4Var.L);
                                     i4Var.B0 = textView;
-                                    textView.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.i6, false), 2, -1));
+                                    textView.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.f0(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false), 2, -1));
                                     i4Var.B0.setGravity(16);
                                     i4Var.B0.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
                                     i4Var.B0.setTextSize(1, 15.0f);
                                     i4Var.B0.setTypeface(AndroidUtilities.bold());
                                     i4Var.B0.setText(LocaleController.getString(R.string.Copy).toUpperCase());
                                     i4Var.B0.setOnClickListener(new t(i4Var, 5));
-                                    i4Var.A0.addView(i4Var.B0, w7.y5.c(48.0f, -2));
-                                    org.telegram.ui.ActionBar.m1 m1Var2 = new org.telegram.ui.ActionBar.m1(i4Var.A0, -2, -2);
-                                    i4Var.H = m1Var2;
-                                    m1Var2.b = false;
-                                    m1Var2.setAnimationStyle(R.style.PopupContextAnimation);
+                                    i4Var.A0.addView(i4Var.B0, w7.z5.c(48.0f, -2));
+                                    org.telegram.ui.ActionBar.n1 n1Var2 = new org.telegram.ui.ActionBar.n1(i4Var.A0, -2, -2);
+                                    i4Var.H = n1Var2;
+                                    n1Var2.b = false;
+                                    n1Var2.setAnimationStyle(R.style.PopupContextAnimation);
                                     i4Var.H.setOutsideTouchable(true);
                                     i4Var.H.setClippingEnabled(true);
                                     i4Var.H.setInputMethodMode(2);
@@ -106,10 +106,10 @@ public final class a3 implements Runnable {
                                     i4Var.H.getContentView().setFocusableInTouchMode(true);
                                     i4Var.H.setOnDismissListener(new f0(i4Var, 0));
                                 }
-                                i4Var.B0.setTextColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.E8, false));
+                                i4Var.B0.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.E8, false));
                                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = i4Var.A0;
                                 if (actionBarPopupWindow$ActionBarPopupWindowLayout2 != null) {
-                                    actionBarPopupWindow$ActionBarPopupWindowLayout2.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.G8, false));
+                                    actionBarPopupWindow$ActionBarPopupWindowLayout2.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G8, false));
                                 }
                                 i4Var.A0.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                                 i4Var.H.setFocusable(true);

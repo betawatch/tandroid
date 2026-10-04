@@ -2,9 +2,9 @@ package v2;
 
 import b2.s;
 import g2.b0;
-import v7.n7;
+import v7.m7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class j extends e {
     public final d s;
@@ -15,11 +15,6 @@ public final class j extends e {
     public j(g2.h hVar, g2.m mVar, s sVar, int i10, Object obj, d dVar) {
         super(hVar, mVar, 2, sVar, i10, obj, -9223372036854775807L, -9223372036854775807L);
         this.s = dVar;
-    }
-
-    @Override // y2.i
-    public final void D() {
-        this.x = true;
     }
 
     @Override // y2.i
@@ -48,7 +43,12 @@ public final class j extends e {
                 }
             }
         } finally {
-            n7.a(this.r);
+            m7.a(this.r);
         }
+    }
+
+    @Override // y2.i
+    public final void q() {
+        this.x = true;
     }
 }

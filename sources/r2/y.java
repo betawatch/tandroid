@@ -1,0 +1,131 @@
+package r2;
+
+import android.media.MediaCodec;
+import android.media.MediaFormat;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.Surface;
+import java.nio.ByteBuffer;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* loaded from: classes.dex */
+public final class y implements l {
+    public final MediaCodec a;
+    public final j b;
+
+    public y(MediaCodec mediaCodec, j jVar) {
+        this.a = mediaCodec;
+        this.b = jVar;
+        if (Build.VERSION.SDK_INT < 35 || jVar == null) {
+            return;
+        }
+        jVar.a(mediaCodec);
+    }
+
+    @Override // r2.l
+    public final void a(long j3, int i10, int i11, int i12) {
+        this.a.queueInputBuffer(i10, 0, i11, j3, i12);
+    }
+
+    @Override // r2.l
+    public final void b(int i10, h2.d dVar, long j3, int i11) {
+        this.a.queueSecureInputBuffer(i10, 0, dVar.i, j3, i11);
+    }
+
+    @Override // r2.l
+    public final void c(int i10) {
+        this.a.releaseOutputBuffer(i10, false);
+    }
+
+    @Override // r2.l
+    public final void d(a3.m mVar, Handler handler) {
+        this.a.setOnFrameRenderedListener(new a(this, mVar, 1), handler);
+    }
+
+    @Override // r2.l
+    public final void e() {
+        this.a.detachOutputSurface();
+    }
+
+    @Override // r2.l
+    public final /* synthetic */ boolean f(n2.c cVar) {
+        return false;
+    }
+
+    @Override // r2.l
+    public final void flush() {
+        this.a.flush();
+    }
+
+    @Override // r2.l
+    public final void g(int i10, long j3) {
+        this.a.releaseOutputBuffer(i10, j3);
+    }
+
+    @Override // r2.l
+    public final ByteBuffer getInputBuffer(int i10) {
+        return this.a.getInputBuffer(i10);
+    }
+
+    @Override // r2.l
+    public final ByteBuffer getOutputBuffer(int i10) {
+        return this.a.getOutputBuffer(i10);
+    }
+
+    @Override // r2.l
+    public final MediaFormat getOutputFormat() {
+        return this.a.getOutputFormat();
+    }
+
+    @Override // r2.l
+    public final int h() {
+        return this.a.dequeueInputBuffer(0L);
+    }
+
+    @Override // r2.l
+    public final int i(MediaCodec.BufferInfo bufferInfo) {
+        int dequeueOutputBuffer;
+        do {
+            dequeueOutputBuffer = this.a.dequeueOutputBuffer(bufferInfo, 0L);
+        } while (dequeueOutputBuffer == -3);
+        return dequeueOutputBuffer;
+    }
+
+    @Override // r2.l
+    public final void j(int i10) {
+        this.a.setVideoScalingMode(i10);
+    }
+
+    @Override // r2.l
+    public final void k(Surface surface) {
+        this.a.setOutputSurface(surface);
+    }
+
+    @Override // r2.l
+    public final void release() {
+        j jVar = this.b;
+        MediaCodec mediaCodec = this.a;
+        try {
+            int i10 = Build.VERSION.SDK_INT;
+            if (i10 >= 30 && i10 < 33) {
+                mediaCodec.stop();
+            }
+            if (i10 >= 35 && jVar != null) {
+                jVar.c(mediaCodec);
+            }
+            mediaCodec.release();
+        } catch (Throwable th2) {
+            if (Build.VERSION.SDK_INT >= 35 && jVar != null) {
+                jVar.c(mediaCodec);
+            }
+            mediaCodec.release();
+            throw th2;
+        }
+    }
+
+    @Override // r2.l
+    public final void setParameters(Bundle bundle) {
+        this.a.setParameters(bundle);
+    }
+}

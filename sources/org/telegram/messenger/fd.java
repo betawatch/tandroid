@@ -6,7 +6,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fd implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -31,7 +31,7 @@ public final /* synthetic */ class fd implements RequestDelegate {
                 ((MessagesController) this.d).lambda$loadFullUser$72(this.b, (Utilities.Callback) this.e, (TLRPC.User) this.f, this.c, tLObject, tL_error);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ei.p3((org.telegram.ui.Cells.g6) this.d, tLObject, (MessagesStorage) this.e, this.b, this.c, (ArrayList) this.f, 2));
+                AndroidUtilities.runOnUIThread(new ei.q3((org.telegram.ui.Cells.g6) this.d, tLObject, (MessagesStorage) this.e, this.b, this.c, (ArrayList) this.f, 2));
                 break;
         }
     }

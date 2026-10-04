@@ -5,21 +5,19 @@ import android.text.Layout;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.ba;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class l5 implements ba {
     public final /* synthetic */ Layout a;
     public final /* synthetic */ int b;
     public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ TL_iv.pageTableCell e;
+    public final /* synthetic */ q5 d;
 
-    public l5(Layout layout, int i10, int i11, int i12, TL_iv.pageTableCell pagetablecell) {
+    public l5(q5 q5Var, Layout layout, int i10, int i11) {
+        this.d = q5Var;
         this.a = layout;
         this.b = i10;
         this.c = i11;
-        this.d = i12;
-        this.e = pagetablecell;
     }
 
     @Override // org.telegram.ui.Cells.ba
@@ -34,7 +32,7 @@ public final class l5 implements ba {
 
     @Override // org.telegram.ui.Cells.ba
     public final int getRow() {
-        return this.d;
+        return 0;
     }
 
     @Override // org.telegram.ui.Cells.ba
@@ -44,7 +42,13 @@ public final class l5 implements ba {
 
     @Override // org.telegram.ui.Cells.ba
     public final CharSequence getText() {
-        return i6.h(this.e);
+        TL_iv.RichText richText;
+        a aVar = this.d.a;
+        if (aVar == null) {
+            return "";
+        }
+        TL_iv.PageBlock pageBlock = aVar.b;
+        return (!(pageBlock instanceof TL_iv.pageBlockTable) || (richText = ((TL_iv.pageBlockTable) pageBlock).title) == null) ? "" : h6.r(richText, null, true);
     }
 
     @Override // org.telegram.ui.Cells.ba

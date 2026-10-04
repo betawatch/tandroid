@@ -17,9 +17,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.k0;
 import pg.c1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class x extends View {
     public tf.a E;
@@ -84,7 +85,7 @@ public final class x extends View {
         }
     }
 
-    public static x b(LaunchActivity launchActivity, org.telegram.ui.k0 k0Var) {
+    public static x b(LaunchActivity launchActivity, k0 k0Var) {
         x xVar = new x(launchActivity);
         xVar.setObservedView(k0Var);
         xVar.r = (WindowManager) launchActivity.getSystemService("window");

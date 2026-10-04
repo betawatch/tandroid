@@ -15,9 +15,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.oj0;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class a6 extends FrameLayout {
     public final y5 a;
@@ -38,7 +38,7 @@ public final class a6 extends FrameLayout {
         y5 y5Var = new y5(this, context, 0);
         this.a = y5Var;
         y5Var.setRoundRadius(AndroidUtilities.dp(16.0f));
-        addView(y5Var, w7.y5.d(32, 32.0f, 0, 12.0f, 2.0f, 0.0f, 0.0f));
+        addView(y5Var, w7.z5.d(32, 32.0f, 0, 12.0f, 2.0f, 0.0f, 0.0f));
         setClipChildren(false);
         z5 z5Var = new z5(context, 0);
         this.b = z5Var;
@@ -48,7 +48,7 @@ public final class a6 extends FrameLayout {
         z5Var.setEllipsizeByGradient(AndroidUtilities.dp(4.0f));
         z5Var.setPivotX(0.0f);
         NotificationCenter.listenEmojiLoading(z5Var);
-        addView(z5Var, w7.y5.d(-2, -2.0f, 0, 54.0f, 0.0f, 86.0f, 0.0f));
+        addView(z5Var, w7.z5.d(-2, -2.0f, 0, 54.0f, 0.0f, 86.0f, 0.0f));
         for (int i10 = 0; i10 < 2; i10++) {
             this.c[i10] = new TextView(context);
             this.c[i10].setTextSize(1, 12.0f);
@@ -57,7 +57,7 @@ public final class a6 extends FrameLayout {
             this.c[i10].setEllipsize(TextUtils.TruncateAt.MIDDLE);
             this.c[i10].setTextColor(-1);
             this.c[i10].setPadding(AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(1.0f));
-            addView(this.c[i10], w7.y5.d(-2, -2.0f, 0, 51.0f, 18.0f, 83.0f, 0.0f));
+            addView(this.c[i10], w7.z5.d(-2, -2.0f, 0, 51.0f, 18.0f, 83.0f, 0.0f));
         }
         this.b.setTextColor(-1);
     }
@@ -155,7 +155,7 @@ public final class a6 extends FrameLayout {
         this.s = ofFloat;
         ofFloat.addUpdateListener(new a(this, i10));
         this.s.addListener(new b(this, 5));
-        this.s.setInterpolator(sr.h);
+        this.s.setInterpolator(tr.h);
         this.s.setDuration(340L);
         this.s.start();
     }
@@ -172,7 +172,7 @@ public final class a6 extends FrameLayout {
         TextView[] textViewArr = this.c;
         textViewArr[0].setOnClickListener(onClickListener);
         textViewArr[0].setClickable(onClickListener != null);
-        textViewArr[0].setBackground(onClickListener == null ? null : org.telegram.ui.ActionBar.h6.f0(822083583, 7, -1));
+        textViewArr[0].setBackground(onClickListener == null ? null : org.telegram.ui.ActionBar.i6.f0(822083583, 7, -1));
     }
 
     public void setSubtitle(CharSequence charSequence) {

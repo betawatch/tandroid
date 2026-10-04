@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class q0 implements Serializable, Iterable {
     public static final q0 c = new q0(j1.b);
@@ -171,6 +171,6 @@ public class q0 implements Serializable, Iterable {
         sb2.append(" size=");
         sb2.append(n10);
         sb2.append(" contents=\"");
-        return a4.a.t(sb2, concat, "\">");
+        return a4.a.s(sb2, concat, "\">");
     }
 }

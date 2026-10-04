@@ -4,28 +4,28 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.dl;
-import org.telegram.ui.Components.fj;
-import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.el;
+import org.telegram.ui.Components.gj;
+import org.telegram.ui.Components.xi;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s1 implements dl, fj {
+public final /* synthetic */ class s1 implements el, gj {
     public final /* synthetic */ e2 a;
-    public final /* synthetic */ wi b;
+    public final /* synthetic */ xi b;
 
-    public /* synthetic */ s1(e2 e2Var, wi wiVar) {
+    public /* synthetic */ s1(e2 e2Var, xi xiVar) {
         this.a = e2Var;
-        this.b = wiVar;
+        this.b = xiVar;
     }
 
-    @Override // org.telegram.ui.Components.dl
+    @Override // org.telegram.ui.Components.el
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j3) {
         e2 e2Var = this.a;
         e2Var.getClass();
-        wi wiVar = this.b;
+        xi xiVar = this.b;
         if (messageMedia == null || messageMedia.geo == null) {
-            wiVar.dismiss(true);
+            xiVar.dismiss(true);
             return;
         }
         TL_iv.pageBlockMap pageblockmap = new TL_iv.pageBlockMap();
@@ -33,14 +33,14 @@ public final /* synthetic */ class s1 implements dl, fj {
         pageblockmap.zoom = 15;
         pageblockmap.w = 600;
         pageblockmap.h = 400;
-        e2Var.P.R1(pageblockmap);
-        wiVar.dismiss(true);
+        e2Var.P.T1(pageblockmap);
+        xiVar.dismiss(true);
     }
 
-    @Override // org.telegram.ui.Components.fj
-    public void h(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
+    @Override // org.telegram.ui.Components.gj
+    public void j(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j3, boolean z11, long j10) {
         if (!arrayList.isEmpty()) {
-            this.a.P.b2((MessageObject) arrayList.get(0));
+            this.a.P.d2((MessageObject) arrayList.get(0));
         }
         this.b.dismiss(true);
     }

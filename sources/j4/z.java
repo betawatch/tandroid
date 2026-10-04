@@ -6,7 +6,7 @@ import e9.i0;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class z implements c3.o {
     public boolean e;
@@ -22,13 +22,13 @@ public final class z implements c3.o {
     public final x d = new x(0);
 
     @Override // c3.o
-    public final boolean a(c3.p pVar) {
+    public final boolean b(c3.p pVar) {
         byte[] bArr = new byte[14];
         c3.l lVar = (c3.l) pVar;
-        lVar.h(bArr, 0, 14, false);
+        lVar.f(bArr, 0, 14, false);
         if (442 == (((bArr[0] & 255) << 24) | ((bArr[1] & 255) << 16) | ((bArr[2] & 255) << 8) | (bArr[3] & 255)) && (bArr[4] & 196) == 68 && (bArr[6] & 4) == 4 && (bArr[8] & 4) == 4 && (bArr[9] & 1) == 1 && (bArr[12] & 3) == 3) {
-            lVar.t(bArr[13] & 7, false);
-            lVar.h(bArr, 0, 3, false);
+            lVar.s(bArr[13] & 7, false);
+            lVar.f(bArr, 0, 3, false);
             if (1 == (((bArr[0] & 255) << 16) | ((bArr[1] & 255) << 8) | (bArr[2] & 255))) {
                 return true;
             }
@@ -97,8 +97,8 @@ public final class z implements c3.o {
                     return 1;
                 }
                 vVar.G(min);
-                pVar.p();
-                pVar.a(0, min, vVar.a);
+                pVar.m();
+                pVar.b(0, min, vVar.a);
                 int i11 = vVar.b;
                 int i12 = vVar.c - 4;
                 while (true) {
@@ -141,8 +141,8 @@ public final class z implements c3.o {
                 return 1;
             }
             vVar.G(min2);
-            pVar.p();
-            pVar.a(0, min2, vVar.a);
+            pVar.m();
+            pVar.b(0, min2, vVar.a);
             int i13 = vVar.b;
             int i14 = vVar.c;
             while (true) {
@@ -187,13 +187,13 @@ public final class z implements c3.o {
         if (aVar2 != null && aVar2.c != null) {
             return aVar2.b(pVar, sVar);
         }
-        pVar.p();
-        long i15 = length != -1 ? length - pVar.i() : -1L;
-        if (i15 != -1 && i15 < 4) {
+        pVar.m();
+        long g10 = length != -1 ? length - pVar.g() : -1L;
+        if (g10 != -1 && g10 < 4) {
             return -1;
         }
         e2.v vVar2 = this.c;
-        if (!pVar.h(vVar2.a, 0, i10, true)) {
+        if (!pVar.f(vVar2.a, 0, i10, true)) {
             return -1;
         }
         vVar2.J(0);
@@ -202,27 +202,27 @@ public final class z implements c3.o {
             return -1;
         }
         if (j17 == 442) {
-            pVar.a(0, 10, vVar2.a);
+            pVar.b(0, 10, vVar2.a);
             vVar2.J(9);
-            pVar.q((vVar2.x() & 7) + 14);
+            pVar.o((vVar2.x() & 7) + 14);
             return 0;
         }
         if (j17 == 443) {
-            pVar.a(0, 2, vVar2.a);
+            pVar.b(0, 2, vVar2.a);
             vVar2.J(0);
-            pVar.q(vVar2.D() + 6);
+            pVar.o(vVar2.D() + 6);
             return 0;
         }
         if (((j17 & (-256)) >> 8) != 1) {
-            pVar.q(1);
+            pVar.o(1);
             return 0;
         }
-        int i16 = j17 & 255;
+        int i15 = j17 & 255;
         SparseArray sparseArray = this.b;
-        y yVar2 = (y) sparseArray.get(i16);
+        y yVar2 = (y) sparseArray.get(i15);
         if (!this.e) {
             if (yVar2 == null) {
-                if (i16 == 189) {
+                if (i15 == 189) {
                     iVar = new b("video/mp2p");
                     this.f = true;
                     this.h = pVar.getPosition();
@@ -238,9 +238,9 @@ public final class z implements c3.o {
                     iVar = null;
                 }
                 if (iVar != null) {
-                    iVar.d(this.j, new f0(i16, 256));
+                    iVar.d(this.j, new f0(i15, 256));
                     yVar2 = new y(iVar, this.a);
-                    sparseArray.put(i16, yVar2);
+                    sparseArray.put(i15, yVar2);
                 }
             }
             if (pVar.getPosition() > ((this.f && this.g) ? this.h + 8192 : 1048576L)) {
@@ -248,11 +248,11 @@ public final class z implements c3.o {
                 this.j.e1();
             }
         }
-        pVar.a(0, 2, vVar2.a);
+        pVar.b(0, 2, vVar2.a);
         vVar2.J(0);
         int D = vVar2.D() + 6;
         if (yVar2 == null) {
-            pVar.q(D);
+            pVar.o(D);
             return 0;
         }
         vVar2.G(D);
@@ -274,10 +274,10 @@ public final class z implements c3.o {
             hVar.t(4);
             hVar.t(1);
             hVar.t(1);
-            long i17 = (hVar.i(3) << 30) | (hVar.i(15) << 15) | hVar.i(15);
+            long i16 = (hVar.i(3) << 30) | (hVar.i(15) << 15) | hVar.i(15);
             hVar.t(1);
             if (yVar2.f || !yVar2.e) {
-                j3 = i17;
+                j3 = i16;
             } else {
                 hVar.t(4);
                 hVar.t(1);
@@ -285,7 +285,7 @@ public final class z implements c3.o {
                 hVar.t(1);
                 b0Var3.b((hVar.i(15) << 15) | (hVar.i(3) << 30) | hVar.i(15));
                 yVar2.f = true;
-                j3 = i17;
+                j3 = i16;
             }
             yVar2.g = b0Var3.b(j3);
         }

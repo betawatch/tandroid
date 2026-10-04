@@ -1,6 +1,6 @@
 package y9;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class o0 extends n1 {
     public final long a;
@@ -46,6 +46,6 @@ public final class o0 extends n1 {
         sb2.append(", name=");
         sb2.append(this.c);
         sb2.append(", uuid=");
-        return a4.a.t(sb2, this.d, "}");
+        return a4.a.s(sb2, this.d, "}");
     }
 }

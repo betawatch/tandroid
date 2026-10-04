@@ -1,53 +1,85 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.util.SparseArray;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class oi extends org.telegram.ui.ActionBar.m1 {
-    public final /* synthetic */ org.telegram.ui.Components.sk0 o;
-    public final /* synthetic */ wn p;
+public final class oi {
+    public boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ SparseArray c;
+    public final /* synthetic */ yn d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oi(wn wnVar, db dbVar, org.telegram.ui.Components.sk0 sk0Var) {
-        super(dbVar, -2, -2);
-        this.p = wnVar;
-        this.o = sk0Var;
+    public oi(yn ynVar, boolean z10, SparseArray sparseArray) {
+        this.d = ynVar;
+        this.b = z10;
+        this.c = sparseArray;
     }
 
-    @Override // org.telegram.ui.ActionBar.m1
-    public final void d(boolean z10) {
-        super.d(true);
-        org.telegram.ui.Components.sk0 sk0Var = this.o;
-        if (sk0Var != null) {
-            sk0Var.d();
+    public final boolean a(int i10) {
+        yn ynVar = this.d;
+        int i11 = i10 - ynVar.y0.J;
+        if (i11 < 0 || i11 >= ynVar.s6.size()) {
+            return false;
         }
+        MessageObject messageObject = (MessageObject) ynVar.s6.get(i11);
+        if (messageObject.contentType != 0) {
+            return false;
+        }
+        SparseArray sparseArray = this.c;
+        boolean z10 = this.b;
+        if (z10 || sparseArray.get(messageObject.getId(), null) != null) {
+            return z10 && sparseArray.get(messageObject.getId(), null) != null;
+        }
+        return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        wn wnVar = this.p;
-        if (wnVar.Q8 != this) {
+    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(int i10, boolean z10, float f7, float f10) {
+        s4.c1 K;
+        yn ynVar = this.d;
+        ArrayList arrayList = ynVar.s6;
+        SparseArray[] sparseArrayArr = ynVar.U5;
+        int i11 = i10 - ynVar.y0.J;
+        if (this.b) {
+            z10 = !z10;
+        }
+        if (i11 < 0 || i11 >= arrayList.size()) {
             return;
         }
-        org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
-        org.telegram.ui.Components.qc qcVar2 = wnVar.n1;
-        if (qcVar == qcVar2 && qcVar2 != null) {
-            qcVar2.b();
-            wnVar.n1 = null;
+        MessageObject messageObject = (MessageObject) arrayList.get(i11);
+        if (!z10 || (sparseArrayArr[0].indexOfKey(messageObject.getId()) < 0 && sparseArrayArr[1].indexOfKey(messageObject.getId()) < 0)) {
+            if ((z10 || sparseArrayArr[0].indexOfKey(messageObject.getId()) >= 0 || sparseArrayArr[1].indexOfKey(messageObject.getId()) >= 0) && messageObject.contentType == 0) {
+                if (z10) {
+                    if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
+                        this.a = true;
+                        K = ynVar.v0.K(i10);
+                        if (K != null) {
+                            View view = K.a;
+                            if (view instanceof org.telegram.ui.Cells.u1) {
+                                yn.b2(ynVar, view, false, f7, f10);
+                                return;
+                            }
+                        }
+                        ynVar.x6(messageObject, false, true);
+                        ynVar.cc();
+                        ynVar.Vc(false);
+                    }
+                }
+                this.a = false;
+                K = ynVar.v0.K(i10);
+                if (K != null) {
+                }
+                ynVar.x6(messageObject, false, true);
+                ynVar.cc();
+                ynVar.Vc(false);
+            }
         }
-        wnVar.Q8 = null;
-        wnVar.T8 = null;
-        wnVar.S8 = null;
-        wnVar.z0.R = true;
-        if (wnVar.R8) {
-            wnVar.g8(false, true, 0.0f);
-        } else {
-            wnVar.R8 = true;
-        }
-        jk jkVar = wnVar.Y;
-        if (jkVar == null || jkVar.getEditField() == null) {
-            return;
-        }
-        wnVar.Y.getEditField().setAllowDrawCursor(true);
     }
 }

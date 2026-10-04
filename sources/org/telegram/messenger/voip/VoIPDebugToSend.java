@@ -16,13 +16,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.voip.g2;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class VoIPDebugToSend {
     private final int currentAccount;
     private final HashMap<Long, Data> pending = new HashMap<>();
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public final class Data {
         long access_hash;
         long callId;
@@ -68,7 +68,7 @@ public class VoIPDebugToSend {
         if (!(tLObject instanceof TLRPC.TL_boolFalse) || TextUtils.isEmpty(data.logPath)) {
             return;
         }
-        Utilities.searchQueue.postRunnable(new m(this, data, new File(a4.a.t(new StringBuilder(), data.logPath, ".gzip")), savecalldebug, 0));
+        Utilities.searchQueue.postRunnable(new m(this, data, new File(a4.a.s(new StringBuilder(), data.logPath, ".gzip")), savecalldebug, 0));
     }
 
     public void done(long j3, boolean z10) {
@@ -91,8 +91,8 @@ public class VoIPDebugToSend {
         if (TextUtils.isEmpty(finalState.debugLog)) {
             try {
                 finalState.debugLog = VoIPService.getStringFromFile(g2.e("" + j3, true));
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (Exception e7) {
+                e7.printStackTrace();
             }
         }
         Data data = new Data();

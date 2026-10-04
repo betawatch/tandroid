@@ -3,12 +3,12 @@ package x3;
 import c3.b0;
 import c3.p;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public interface g {
-    void B(long j3);
-
     long b(p pVar);
 
-    b0 g();
+    b0 d();
+
+    void y(long j3);
 }

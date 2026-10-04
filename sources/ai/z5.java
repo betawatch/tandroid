@@ -3,9 +3,9 @@ package ai;
 import android.content.Context;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class z5 extends org.telegram.ui.ActionBar.h5 {
+public final class z5 extends org.telegram.ui.ActionBar.i5 {
     public final /* synthetic */ int M0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,7 +14,7 @@ public final class z5 extends org.telegram.ui.ActionBar.h5 {
         this.M0 = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.i5
     public boolean k(CharSequence charSequence) {
         switch (this.M0) {
             case 2:
@@ -29,7 +29,7 @@ public final class z5 extends org.telegram.ui.ActionBar.h5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
+    @Override // org.telegram.ui.ActionBar.i5
     public boolean l(CharSequence charSequence, boolean z10) {
         switch (this.M0) {
             case 1:
@@ -41,7 +41,7 @@ public final class z5 extends org.telegram.ui.ActionBar.h5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.h5, android.view.View
+    @Override // org.telegram.ui.ActionBar.i5, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.M0) {
             case 0:

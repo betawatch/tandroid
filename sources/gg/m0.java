@@ -3,7 +3,7 @@ package gg;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class m0 extends s4.o {
     public final /* synthetic */ s0 b;
@@ -20,8 +20,8 @@ public final class m0 extends s4.o {
     @Override // s4.o
     public final boolean b(int i10, int i11) {
         s0 s0Var = this.b;
-        q0 q0Var = (q0) s0Var.Y2.get(i10);
-        q0 q0Var2 = (q0) s0Var.X2.get(i11);
+        q0 q0Var = (q0) s0Var.f3.get(i10);
+        q0 q0Var2 = (q0) s0Var.e3.get(i11);
         if (!q0Var.b(q0Var2)) {
             return false;
         }
@@ -45,11 +45,11 @@ public final class m0 extends s4.o {
 
     @Override // s4.o
     public final int d() {
-        return this.b.X2.size();
+        return this.b.e3.size();
     }
 
     @Override // s4.o
     public final int e() {
-        return this.b.Y2.size();
+        return this.b.f3.size();
     }
 }

@@ -1,21 +1,31 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class u30 extends s4.n0 {
-    @Override // s4.n0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.z0 z0Var) {
-        recyclerView.getClass();
-        RecyclerView.R(view);
-        if (d60.F3) {
-            rect.set(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
-        } else {
-            rect.set(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        }
+public final class u30 extends TextView {
+    public final RectF a;
+    public final /* synthetic */ h60 b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u30(h60 h60Var, Context context) {
+        super(context);
+        this.b = h60Var;
+        this.a = new RectF();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, 0.0f, width, height);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.b.g1);
+        super.onDraw(canvas);
     }
 }

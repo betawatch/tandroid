@@ -6,21 +6,21 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.jc;
 import org.telegram.ui.Components.kc;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.pc;
+import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class o5 {
-    public final org.telegram.ui.ActionBar.m2 a;
+    public final org.telegram.ui.ActionBar.n2 a;
     public final long b;
-    public final qc c;
-    public final kc d;
-    public final oc e;
-    public final jc f;
+    public final rc c;
+    public final lc d;
+    public final pc e;
+    public final kc f;
     public int g;
     public long h;
     public ai.i3 i;
@@ -33,7 +33,7 @@ public final class o5 {
     public final n5 p;
 
     /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Runnable, yh.n5] */
-    public o5(org.telegram.ui.ActionBar.m2 m2Var, long j3) {
+    public o5(org.telegram.ui.ActionBar.n2 n2Var, long j3) {
         final int i10 = 0;
         ?? r22 = new Runnable(this) { // from class: yh.n5
             public final /* synthetic */ o5 b;
@@ -66,21 +66,21 @@ public final class o5 {
             }
         };
         this.p = r22;
-        this.a = m2Var;
+        this.a = n2Var;
         this.b = j3;
-        Context t10 = t5.t(m2Var);
-        kc kcVar = new kc(t10, m2Var.getResourceProvider());
-        this.d = kcVar;
-        kcVar.c(R.raw.stars_topup, new String[0]);
-        jc jcVar = new jc(t10, m2Var.getResourceProvider());
-        this.f = jcVar;
-        jcVar.b = 3000L;
-        jcVar.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.Gi, m2Var.getResourceProvider()));
-        oc ocVar = new oc(t10, m2Var.getResourceProvider(), true, false);
-        this.e = ocVar;
-        ocVar.e(LocaleController.getString(R.string.StarsSentUndo));
+        Context t10 = t5.t(n2Var);
+        lc lcVar = new lc(t10, n2Var.getResourceProvider());
+        this.d = lcVar;
+        lcVar.c(R.raw.stars_topup, new String[0]);
+        kc kcVar = new kc(t10, n2Var.getResourceProvider());
+        this.f = kcVar;
+        kcVar.b = 3000L;
+        kcVar.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Gi, n2Var.getResourceProvider()));
+        pc pcVar = new pc(t10, n2Var.getResourceProvider(), true, false);
+        this.e = pcVar;
+        pcVar.e(LocaleController.getString(R.string.StarsSentUndo));
         final int i11 = 1;
-        ocVar.a = new Runnable(this) { // from class: yh.n5
+        pcVar.a = new Runnable(this) { // from class: yh.n5
             public final /* synthetic */ o5 b;
 
             {
@@ -110,10 +110,10 @@ public final class o5 {
                 }
             }
         };
-        ocVar.addView(jcVar, w7.y5.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
-        ocVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
-        kcVar.setButton(ocVar);
-        qc b10 = yc.a0(m2Var).b(kcVar, -1);
+        pcVar.addView(kcVar, w7.z5.d(20, 20.0f, 21, 0.0f, 0.0f, 12.0f, 0.0f));
+        pcVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
+        lcVar.setButton(pcVar);
+        rc b10 = yc.a0(n2Var).b(lcVar, -1);
         this.c = b10;
         b10.r = false;
         b10.k(true);

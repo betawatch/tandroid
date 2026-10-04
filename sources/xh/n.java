@@ -5,9 +5,9 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.cb;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class n implements View.OnClickListener {
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                v.Q((v) this.f, this.b, this.c, (d6) this.d, (Runnable) this.e);
+                v.O((v) this.f, this.b, this.c, (d6) this.d, (Runnable) this.e);
                 break;
             case 1:
                 c0 c0Var = (c0) this.f;
@@ -46,14 +46,14 @@ public final /* synthetic */ class n implements View.OnClickListener {
                 new c0(this.c, (d6) this.d, this.b, (TL_stars.StarGift) this.f, (ArrayList) this.e, null, true).show();
                 break;
             default:
-                z4.S((z4) this.f, this.b, this.c, (Runnable) this.e, (TL_stars.StarGift) this.d);
+                z4.Q((z4) this.f, this.b, this.c, (Runnable) this.e, (TL_stars.StarGift) this.d);
                 break;
         }
     }
 
-    public /* synthetic */ n(bb bbVar, long j3, Context context, d6 d6Var, Runnable runnable, int i10) {
+    public /* synthetic */ n(cb cbVar, long j3, Context context, d6 d6Var, Runnable runnable, int i10) {
         this.a = i10;
-        this.f = bbVar;
+        this.f = cbVar;
         this.b = j3;
         this.c = context;
         this.d = d6Var;

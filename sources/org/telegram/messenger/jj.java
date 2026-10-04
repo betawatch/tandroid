@@ -8,13 +8,13 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.mg1;
-import org.telegram.ui.w31;
-import org.telegram.ui.wn;
+import org.telegram.ui.og1;
+import org.telegram.ui.y31;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final /* synthetic */ class jj implements mg1, org.telegram.ui.Components.d5, LanguageDetector.StringCallback {
+public final /* synthetic */ class jj implements og1, org.telegram.ui.Components.d5, LanguageDetector.StringCallback {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
     public final /* synthetic */ Object c;
@@ -22,17 +22,17 @@ public final /* synthetic */ class jj implements mg1, org.telegram.ui.Components
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ jj(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TL_keyboard.KeyboardButtonProto keyboardButtonProto, wn wnVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10) {
+    public /* synthetic */ jj(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TL_keyboard.KeyboardButtonProto keyboardButtonProto, yn ynVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10) {
         this.b = sendMessagesHelper;
         this.a = z10;
         this.c = messageObject;
         this.d = keyboardButtonProto;
         this.e = twoStepVerificationActivity;
-        this.f = wnVar;
+        this.f = ynVar;
     }
 
     @Override // org.telegram.ui.Components.d5
-    public void J(int i10, int i11, boolean z10) {
+    public void K(int i10, int i11, boolean z10) {
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
         TLRPC.Document document = (TLRPC.Document) this.c;
         String str = (String) this.d;
@@ -41,9 +41,9 @@ public final /* synthetic */ class jj implements mg1, org.telegram.ui.Components
         chatActivityEnterView.d(document, str, this.e, sendAnimationData, this.a, z10, i10, i11);
     }
 
-    @Override // org.telegram.ui.mg1
-    public void e(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-        ((SendMessagesHelper) this.b).lambda$sendCallback$40(this.a, (MessageObject) this.c, (TL_keyboard.KeyboardButtonProto) this.d, (TwoStepVerificationActivity) this.e, (wn) this.f, tL_inputCheckPasswordSRP);
+    @Override // org.telegram.ui.og1
+    public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
+        ((SendMessagesHelper) this.b).lambda$sendCallback$40(this.a, (MessageObject) this.c, (TL_keyboard.KeyboardButtonProto) this.d, (TwoStepVerificationActivity) this.e, (yn) this.f, tL_inputCheckPasswordSRP);
     }
 
     @Override // org.telegram.messenger.LanguageDetector.StringCallback
@@ -55,7 +55,7 @@ public final /* synthetic */ class jj implements mg1, org.telegram.ui.Components
         String str2 = (String) this.e;
         gg.e1 e1Var = (gg.e1) this.f;
         strArr[0] = str;
-        zArr[0] = str != null && (!str.equals(str2) || str.equals(TranslateController.UNKNOWN_LANGUAGE)) && ((this.a && !w31.Y().contains(str)) || ((chat = profileActivity.E2) != null && ((chat.has_link || ChatObject.isPublic(chat)) && ("uk".equals(str) || "ru".equals(str)))));
+        zArr[0] = str != null && (!str.equals(str2) || str.equals(TranslateController.UNKNOWN_LANGUAGE)) && ((this.a && !y31.X().contains(str)) || ((chat = profileActivity.E2) != null && ((chat.has_link || ChatObject.isPublic(chat)) && ("uk".equals(str) || "ru".equals(str)))));
         e1Var.run();
     }
 

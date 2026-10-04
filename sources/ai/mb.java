@@ -23,7 +23,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.FrameLayout;
-import ci.kd;
+import ci.jd;
 import java.util.ArrayList;
 import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
@@ -36,13 +36,13 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.qq;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.bz;
-import org.telegram.ui.cz;
-import org.telegram.ui.wn;
+import org.telegram.ui.Components.rq;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.fz;
+import org.telegram.ui.gz;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public abstract class mb extends FrameLayout implements View.OnClickListener {
     public final Path E;
@@ -81,7 +81,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
         this.h = view;
         this.n = d6Var;
         this.x = new org.telegram.ui.Components.e6(view, 0L, 120L, new LinearInterpolator());
-        this.y = new org.telegram.ui.Components.e6(view, 0L, 360L, sr.h);
+        this.y = new org.telegram.ui.Components.e6(view, 0L, 360L, tr.h);
         setClipChildren(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
@@ -89,14 +89,14 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
         setLayerType(2, null);
     }
 
-    public static ArrayList a(ci.l8 l8Var) {
-        if (l8Var == null || l8Var.T0 == null) {
+    public static ArrayList a(ci.k8 k8Var) {
+        if (k8Var == null || k8Var.T0 == null) {
             return null;
         }
         ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; i10 < l8Var.T0.size(); i10++) {
-            if (((VideoEditedInfo.MediaEntity) l8Var.T0.get(i10)).mediaArea instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
-                arrayList.add(((VideoEditedInfo.MediaEntity) l8Var.T0.get(i10)).mediaArea);
+        for (int i10 = 0; i10 < k8Var.T0.size(); i10++) {
+            if (((VideoEditedInfo.MediaEntity) k8Var.T0.get(i10)).mediaArea instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
+                arrayList.add(((VideoEditedInfo.MediaEntity) k8Var.T0.get(i10)).mediaArea);
             }
         }
         return arrayList;
@@ -104,7 +104,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
 
     public abstract void b(boolean z10);
 
-    public final void c(TL_stories.StoryItem storyItem, ArrayList arrayList, cz czVar) {
+    public final void c(TL_stories.StoryItem storyItem, ArrayList arrayList, gz gzVar) {
         FrameLayout frameLayout;
         View view;
         ArrayList arrayList2 = this.r;
@@ -143,24 +143,24 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
             TL_stories.MediaArea mediaArea = (TL_stories.MediaArea) arrayList.get(i11);
             if (mediaArea != null && mediaArea.coordinates != null) {
                 if (mediaArea instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
-                    pb pbVar = new pb(getContext(), this, (TL_stories.TL_mediaAreaSuggestedReaction) mediaArea, czVar);
+                    pb pbVar = new pb(getContext(), this, (TL_stories.TL_mediaAreaSuggestedReaction) mediaArea, gzVar);
                     if (storyItem != null) {
                         pbVar.c(storyItem.views, false);
                     }
-                    w7.a6.a(pbVar);
+                    w7.b6.a(pbVar);
                     view = pbVar;
                 } else if (mediaArea instanceof TL_stories.TL_mediaAreaWeather) {
                     TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = (TL_stories.TL_mediaAreaWeather) mediaArea;
-                    kd kdVar = new kd();
-                    kdVar.c = tL_mediaAreaWeather.emoji;
-                    kdVar.d = (float) tL_mediaAreaWeather.temperature_c;
-                    qg.t0 t0Var = new qg.t0(getContext(), AndroidUtilities.density);
-                    t0Var.setMaxWidth(AndroidUtilities.displaySize.x);
-                    t0Var.setIsVideo(true);
-                    t0Var.d(UserConfig.selectedAccount, kdVar.c);
-                    t0Var.setText(kdVar.a());
-                    t0Var.e(3, tL_mediaAreaWeather.color);
-                    view = new lb(getContext(), t0Var, mediaArea);
+                    jd jdVar = new jd();
+                    jdVar.c = tL_mediaAreaWeather.emoji;
+                    jdVar.d = (float) tL_mediaAreaWeather.temperature_c;
+                    qg.s0 s0Var = new qg.s0(getContext(), AndroidUtilities.density);
+                    s0Var.setMaxWidth(AndroidUtilities.displaySize.x);
+                    s0Var.setIsVideo(true);
+                    s0Var.d(UserConfig.selectedAccount, jdVar.c);
+                    s0Var.setText(jdVar.a());
+                    s0Var.e(3, tL_mediaAreaWeather.color);
+                    view = new lb(getContext(), s0Var, mediaArea);
                 } else {
                     view = new kb(getContext(), this.h, mediaArea);
                 }
@@ -172,8 +172,8 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
         frameLayout.bringToFront();
     }
 
-    public final void d(TL_stories.StoryItem storyItem, cz czVar) {
-        c(storyItem, storyItem != null ? storyItem.media_areas : null, czVar);
+    public final void d(TL_stories.StoryItem storyItem, gz gzVar) {
+        c(storyItem, storyItem != null ? storyItem.media_areas : null, gzVar);
     }
 
     @Override // android.view.ViewGroup
@@ -185,29 +185,29 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
         FrameLayout frameLayout = this.d;
         if (view == frameLayout) {
             kb kbVar = this.b;
-            float e = this.x.e((kbVar == null || !kbVar.s || kbVar.w) ? false : true);
+            float e7 = this.x.e((kbVar == null || !kbVar.s || kbVar.w) ? false : true);
             kb kbVar2 = this.b;
             boolean z10 = kbVar2 != null && kbVar2.w;
-            float e7 = this.y.e(z10);
+            float e10 = this.y.e(z10);
             RectF rectF2 = this.v;
-            if (e > 0.0f) {
+            if (e7 > 0.0f) {
                 canvas2 = canvas;
                 rectF = rectF2;
                 f7 = 0.0f;
                 f10 = 0.2f;
                 canvas2.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
-                canvas2.drawColor(org.telegram.ui.ActionBar.h6.l1(e, 402653184));
+                canvas2.drawColor(org.telegram.ui.ActionBar.i6.l1(e7, 402653184));
                 for (int i10 = 0; i10 < getChildCount(); i10++) {
                     View childAt = getChildAt(i10);
                     if (childAt != frameLayout) {
                         org.telegram.ui.Components.e6 e6Var = ((kb) childAt).a;
                         kb kbVar3 = this.b;
-                        float e10 = e6Var.e(childAt == kbVar3 && kbVar3.s);
-                        if (e10 > 0.0f) {
+                        float e11 = e6Var.e(childAt == kbVar3 && kbVar3.s);
+                        if (e11 > 0.0f) {
                             canvas2.save();
                             rectF.set(childAt.getX(), childAt.getY(), childAt.getX() + childAt.getMeasuredWidth(), childAt.getY() + childAt.getMeasuredHeight());
                             canvas2.rotate(childAt.getRotation(), rectF.centerX(), rectF.centerY());
-                            int i11 = (int) (e10 * 255.0f);
+                            int i11 = (int) (e11 * 255.0f);
                             Paint paint = this.w;
                             paint.setAlpha(i11);
                             canvas2.drawRoundRect(rectF, rectF.height() * 0.2f, rectF.height() * 0.2f, paint);
@@ -222,18 +222,18 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 f7 = 0.0f;
                 f10 = 0.2f;
             }
-            if ((z10 || e7 > f7) && this.a != null) {
+            if ((z10 || e10 > f7) && this.a != null) {
                 if (this.F == null) {
                     this.F = ((v4) this).I.getPlayingBitmap();
                 }
                 if (this.F != null) {
-                    canvas2.drawColor(org.telegram.ui.ActionBar.h6.l1(e7, 805306368));
+                    canvas2.drawColor(org.telegram.ui.ActionBar.i6.l1(e10, 805306368));
                     canvas2.save();
                     Path path = this.E;
                     path.rewind();
                     rectF.set(this.a.getX(), this.a.getY(), this.a.getX() + this.a.getMeasuredWidth(), this.a.getY() + this.a.getMeasuredHeight());
                     kb kbVar4 = this.a;
-                    float lerp = AndroidUtilities.lerp(1.0f, (kbVar4.x ? kbVar4.r.a(0.05f) : 1.0f) * 1.05f, e7);
+                    float lerp = AndroidUtilities.lerp(1.0f, (kbVar4.x ? kbVar4.r.a(0.05f) : 1.0f) * 1.05f, e10);
                     canvas2.scale(lerp, lerp, rectF.centerX(), rectF.centerY());
                     canvas2.rotate(this.a.getRotation(), rectF.centerX(), rectF.centerY());
                     TL_stories.MediaAreaCoordinates mediaAreaCoordinates = this.a.b.coordinates;
@@ -342,17 +342,17 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 }
                 pbVar.performHapticFeedback(3);
                 pbVar.K.a.startAnimation();
-                cz czVar = e6Var.k1;
-                Random random = czVar.h;
-                FrameLayout frameLayout = czVar.G;
-                ArrayList arrayList2 = czVar.F;
+                gz gzVar = e6Var.k1;
+                Random random = gzVar.h;
+                FrameLayout frameLayout = gzVar.G;
+                ArrayList arrayList2 = gzVar.F;
                 if (arrayList2.size() > 12) {
                     return;
                 }
                 zg.o0 d10 = zg.o0.d(mediaArea.reaction);
                 String str = d10.f;
                 if (str == null) {
-                    str = MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.q5.f(czVar.b, d10.g));
+                    str = MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.q5.f(gzVar.b, d10.g));
                 }
                 float measuredHeight = pbVar.getMeasuredHeight();
                 float measuredWidth = pbVar.getMeasuredWidth();
@@ -364,7 +364,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     f7 = measuredHeight;
                     f10 = measuredWidth;
                 }
-                String q6 = cz.q(str);
+                String q6 = gz.q(str);
                 int hashCode = pbVar.hashCode();
                 boolean z14 = pbVar.getTranslationX() > ((float) frameLayout.getMeasuredWidth()) / 2.0f;
                 if (d10.f != null) {
@@ -372,23 +372,23 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     f11 = f10;
                     f12 = f7;
                     z12 = z14;
-                    if (czVar.d(q6, hashCode, null, null, -1, false, false, f10, f7, z14)) {
+                    if (gzVar.d(q6, hashCode, null, null, -1, false, false, f10, f7, z14)) {
                         if (arrayList.isEmpty()) {
                             return;
                         }
-                        bz bzVar = (bz) hg.c.g(1, arrayList);
-                        bzVar.getClass();
-                        bzVar.e = f12;
-                        bzVar.d = f11;
-                        bzVar.a = pbVar.getTranslationX() - (bzVar.d / 2.0f);
+                        fz fzVar = (fz) hg.k0.g(1, arrayList);
+                        fzVar.getClass();
+                        fzVar.e = f12;
+                        fzVar.d = f11;
+                        fzVar.a = pbVar.getTranslationX() - (fzVar.d / 2.0f);
                         float translationY = pbVar.getTranslationY();
-                        float f13 = bzVar.d;
-                        bzVar.b = translationY - (1.5f * f13);
-                        if (bzVar.m) {
-                            bzVar.a = ((-f13) * 1.8f) + bzVar.a;
+                        float f13 = fzVar.d;
+                        fzVar.b = translationY - (1.5f * f13);
+                        if (fzVar.m) {
+                            fzVar.a = ((-f13) * 1.8f) + fzVar.a;
                             return;
                         } else {
-                            bzVar.a = ((-f13) * 0.2f) + bzVar.a;
+                            fzVar.a = ((-f13) * 0.2f) + fzVar.a;
                             return;
                         }
                     }
@@ -405,7 +405,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 int i12 = 0;
                 while (i11 < arrayList.size()) {
                     int i13 = i11;
-                    if (((bz) arrayList.get(i11)).k == d10.g) {
+                    if (((fz) arrayList.get(i11)).k == d10.g) {
                         i12++;
                     }
                     i11 = i13 + 1;
@@ -413,27 +413,27 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 if (i12 >= 4) {
                     return;
                 }
-                bz bzVar2 = new bz();
-                bzVar2.j = zg.d.a(pbVar.getAnimatedEmojiDrawable(), true, true);
-                if (!bzVar2.i) {
-                    bzVar2.f = ((random.nextInt() % 101) / 100.0f) * (f11 / 4.0f);
-                    bzVar2.g = ((random.nextInt() % 101) / 100.0f) * (f12 / 4.0f);
+                fz fzVar2 = new fz();
+                fzVar2.j = zg.d.a(pbVar.getAnimatedEmojiDrawable(), true, true);
+                if (!fzVar2.i) {
+                    fzVar2.f = ((random.nextInt() % 101) / 100.0f) * (f11 / 4.0f);
+                    fzVar2.g = ((random.nextInt() % 101) / 100.0f) * (f12 / 4.0f);
                 }
-                bzVar2.p = hashCode;
-                bzVar2.q = null;
-                bzVar2.k = d10.g;
-                bzVar2.m = z12;
-                bzVar2.e = f12;
-                bzVar2.d = f11;
-                bzVar2.a = pbVar.getTranslationX() - (bzVar2.d / 2.0f);
+                fzVar2.p = hashCode;
+                fzVar2.q = null;
+                fzVar2.k = d10.g;
+                fzVar2.m = z12;
+                fzVar2.e = f12;
+                fzVar2.d = f11;
+                fzVar2.a = pbVar.getTranslationX() - (fzVar2.d / 2.0f);
                 float translationY2 = pbVar.getTranslationY();
-                float f14 = bzVar2.d;
-                bzVar2.b = translationY2 - (1.5f * f14);
-                bzVar2.a = ((-f14) * 1.8f) + bzVar2.a;
-                if (czVar.n) {
-                    bzVar2.j.f(frameLayout);
+                float f14 = fzVar2.d;
+                fzVar2.b = translationY2 - (1.5f * f14);
+                fzVar2.a = ((-f14) * 1.8f) + fzVar2.a;
+                if (gzVar.n) {
+                    fzVar2.j.f(frameLayout);
                 }
-                arrayList.add(bzVar2);
+                arrayList.add(fzVar2);
                 return;
             }
             if (this.b == view) {
@@ -443,7 +443,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     Bundle bundle = new Bundle();
                     bundle.putLong("chat_id", ((TL_stories.TL_mediaAreaChannelPost) this.b.b).channel_id);
                     bundle.putInt("message_id", ((TL_stories.TL_mediaAreaChannelPost) this.b.b).msg_id);
-                    ((v4) this).H.H(new wn(bundle));
+                    ((v4) this).H.H(new yn(bundle));
                     this.b = null;
                     invalidate();
                     return;
@@ -528,19 +528,19 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     int length = spannableStringBuilder.length();
                     spannableStringBuilder.append(TextUtils.ellipsize(tL_mediaAreaUrl.url, this.c.getTextPaint(), AndroidUtilities.displaySize.x * 0.6f, TextUtils.TruncateAt.END));
                     spannableStringBuilder.setSpan(new RelativeSizeSpan(0.85f), length, spannableStringBuilder.length(), 33);
-                    spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.h6.l1(0.6f, -1)), length, spannableStringBuilder.length(), 33);
+                    spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.i6.l1(0.6f, -1)), length, spannableStringBuilder.length(), 33);
                     spannableStringBuilder.setSpan(new jb(0), length, spannableStringBuilder.length(), 33);
                     e4Var2.k(11.0f, 7.0f, 11.0f, 7.0f);
                     z10 = true;
                     SpannableString spannableString = new SpannableString(">");
-                    qq qqVar = new qq(R.drawable.photos_arrow, 0);
-                    qqVar.translate(AndroidUtilities.dp(!z10 ? 1.0f : 2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
-                    spannableString.setSpan(qqVar, 0, spannableString.length(), 33);
+                    rq rqVar = new rq(R.drawable.photos_arrow, 0);
+                    rqVar.translate(AndroidUtilities.dp(!z10 ? 1.0f : 2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
+                    spannableString.setSpan(rqVar, 0, spannableString.length(), 33);
                     SpannableString spannableString2 = new SpannableString("<");
-                    qq qqVar2 = new qq(R.drawable.attach_arrow_right, 0);
-                    qqVar2.translate(AndroidUtilities.dp(!z10 ? -1.0f : -2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
-                    qqVar2.setScale(-1.0f, 1.0f);
-                    spannableString2.setSpan(qqVar2, 0, spannableString2.length(), 33);
+                    rq rqVar2 = new rq(R.drawable.attach_arrow_right, 0);
+                    rqVar2.translate(AndroidUtilities.dp(!z10 ? -1.0f : -2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
+                    rqVar2.setScale(-1.0f, 1.0f);
+                    spannableString2.setSpan(rqVar2, 0, spannableString2.length(), 33);
                     if (AndroidUtilities.isRTL(spannableStringBuilder)) {
                         spannableString = spannableString2;
                     }
@@ -560,7 +560,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                     }
                     e4Var2.setOnClickListener(new v0(this, i10));
                     e4Var2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-                    this.d.addView(e4Var2, w7.y5.c(f15, -1));
+                    this.d.addView(e4Var2, w7.z5.c(f15, -1));
                     e4Var2.u();
                     b(true);
                 }
@@ -568,14 +568,14 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
             }
             z10 = false;
             SpannableString spannableString3 = new SpannableString(">");
-            qq qqVar3 = new qq(R.drawable.photos_arrow, 0);
-            qqVar3.translate(AndroidUtilities.dp(!z10 ? 1.0f : 2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
-            spannableString3.setSpan(qqVar3, 0, spannableString3.length(), 33);
+            rq rqVar3 = new rq(R.drawable.photos_arrow, 0);
+            rqVar3.translate(AndroidUtilities.dp(!z10 ? 1.0f : 2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
+            spannableString3.setSpan(rqVar3, 0, spannableString3.length(), 33);
             SpannableString spannableString22 = new SpannableString("<");
-            qq qqVar22 = new qq(R.drawable.attach_arrow_right, 0);
-            qqVar22.translate(AndroidUtilities.dp(!z10 ? -1.0f : -2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
-            qqVar22.setScale(-1.0f, 1.0f);
-            spannableString22.setSpan(qqVar22, 0, spannableString22.length(), 33);
+            rq rqVar22 = new rq(R.drawable.attach_arrow_right, 0);
+            rqVar22.translate(AndroidUtilities.dp(!z10 ? -1.0f : -2.0f), AndroidUtilities.dp(!z10 ? 0.0f : 1.0f));
+            rqVar22.setScale(-1.0f, 1.0f);
+            spannableString22.setSpan(rqVar22, 0, spannableString22.length(), 33);
             if (AndroidUtilities.isRTL(spannableStringBuilder)) {
             }
             AndroidUtilities.replaceCharSequence(">", spannableStringBuilder, spannableString3);
@@ -592,7 +592,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
             }
             e4Var2.setOnClickListener(new v0(this, i10));
             e4Var2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-            this.d.addView(e4Var2, w7.y5.c(f152, -1));
+            this.d.addView(e4Var2, w7.z5.c(f152, -1));
             e4Var2.u();
             b(true);
         }

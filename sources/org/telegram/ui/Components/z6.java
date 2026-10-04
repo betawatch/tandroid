@@ -4,9 +4,9 @@ import android.view.View;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z6 implements org.telegram.ui.ActionBar.q0, ol0 {
+public final /* synthetic */ class z6 implements org.telegram.ui.ActionBar.r0, ol0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ j8 b;
 
@@ -31,7 +31,7 @@ public final /* synthetic */ class z6 implements org.telegram.ui.ActionBar.q0, o
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.q0
+    @Override // org.telegram.ui.ActionBar.r0
     public void m(int i10) {
         switch (this.a) {
             case 0:
@@ -57,7 +57,7 @@ public final /* synthetic */ class z6 implements org.telegram.ui.ActionBar.q0, o
                     }
                     j8Var2.s.l();
                     if (z10 != SharedConfig.playOrderReversed) {
-                        j8Var2.n.B0();
+                        j8Var2.n.C0();
                         j8Var2.w0(false);
                     }
                 } else if (i10 == 4) {

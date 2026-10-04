@@ -14,7 +14,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class a1 {
     public final long A;
@@ -81,7 +81,7 @@ public final class a1 {
     public final String y;
     public final String z;
 
-    public a1(l8 l8Var) {
+    public a1(k8 k8Var) {
         float[] fArr = new float[9];
         this.s = fArr;
         ArrayList arrayList = new ArrayList();
@@ -90,182 +90,182 @@ public final class a1 {
         this.W = 1.0f;
         this.d0 = 1.0f;
         this.e0 = 1.0f;
-        this.a = l8Var.b;
-        this.b = l8Var.d;
-        File file = l8Var.O0;
+        this.a = k8Var.b;
+        this.b = k8Var.d;
+        File file = k8Var.O0;
         this.c = file == null ? "" : file.toString();
-        File file2 = l8Var.N0;
+        File file2 = k8Var.N0;
         this.d = file2 == null ? "" : file2.toString();
-        this.e = l8Var.K;
-        File file3 = l8Var.L;
+        this.e = k8Var.K;
+        File file3 = k8Var.L;
         this.f = file3 == null ? "" : file3.toString();
-        this.g = l8Var.M;
-        this.h = l8Var.Y;
-        float f7 = l8Var.Z;
-        long j3 = l8Var.h0;
+        this.g = k8Var.M;
+        this.h = k8Var.Y;
+        float f7 = k8Var.Z;
+        long j3 = k8Var.h0;
         this.i = (long) (f7 * j3);
-        this.j = (long) (l8Var.a0 * j3);
-        this.k = l8Var.Q;
-        this.l = l8Var.R;
-        this.m = l8Var.k0;
-        this.n = l8Var.l0;
-        this.o = l8Var.m0;
-        this.p = l8Var.i0;
-        this.q = l8Var.j0;
+        this.j = (long) (k8Var.a0 * j3);
+        this.k = k8Var.Q;
+        this.l = k8Var.R;
+        this.m = k8Var.k0;
+        this.n = k8Var.l0;
+        this.o = k8Var.m0;
+        this.p = k8Var.i0;
+        this.q = k8Var.j0;
         this.r = j3;
-        l8Var.n0.getValues(fArr);
-        this.t = l8Var.A0;
-        this.u = l8Var.B0;
-        CharSequence[] charSequenceArr = {l8Var.C0};
-        this.w = l8Var.D0 ? MediaDataController.getInstance(l8Var.a).getEntities(charSequenceArr, true) : null;
+        k8Var.n0.getValues(fArr);
+        this.t = k8Var.A0;
+        this.u = k8Var.B0;
+        CharSequence[] charSequenceArr = {k8Var.C0};
+        this.w = k8Var.D0 ? MediaDataController.getInstance(k8Var.a).getEntities(charSequenceArr, true) : null;
         CharSequence charSequence = charSequenceArr[0];
         this.v = charSequence == null ? "" : charSequence.toString();
-        arrayList.addAll(l8Var.F0);
-        File file4 = l8Var.P0;
+        arrayList.addAll(k8Var.F0);
+        File file4 = k8Var.P0;
         this.y = file4 == null ? "" : file4.toString();
-        File file5 = l8Var.R0;
+        File file5 = k8Var.R0;
         this.z = file5 == null ? "" : file5.toString();
-        this.A = l8Var.S0;
-        this.B = l8Var.T0;
-        this.C = l8Var.U0;
-        File file6 = l8Var.Z0;
+        this.A = k8Var.S0;
+        this.B = k8Var.T0;
+        this.C = k8Var.U0;
+        File file6 = k8Var.Z0;
         this.D = file6 != null ? file6.toString() : "";
-        this.E = l8Var.a1;
-        this.F = l8Var.I0;
-        this.M = l8Var.w;
-        this.N = l8Var.x;
-        this.O = l8Var.y;
-        this.P = l8Var.z;
-        this.Q = l8Var.A;
-        this.R = l8Var.B;
-        this.S = l8Var.C;
-        this.T = l8Var.D;
-        this.U = l8Var.E;
-        this.V = l8Var.F;
-        this.W = l8Var.G;
-        File file7 = l8Var.o0;
+        this.E = k8Var.a1;
+        this.F = k8Var.I0;
+        this.M = k8Var.w;
+        this.N = k8Var.x;
+        this.O = k8Var.y;
+        this.P = k8Var.z;
+        this.Q = k8Var.A;
+        this.R = k8Var.B;
+        this.S = k8Var.C;
+        this.T = k8Var.D;
+        this.U = k8Var.E;
+        this.V = k8Var.F;
+        this.W = k8Var.G;
+        File file7 = k8Var.o0;
         this.X = file7 != null ? file7.getAbsolutePath() : null;
-        this.Y = l8Var.p0;
-        this.Z = l8Var.q0;
-        this.a0 = l8Var.r0;
-        this.b0 = l8Var.s0;
-        this.c0 = l8Var.t0;
-        this.d0 = l8Var.u0;
-        this.e0 = l8Var.P;
-        this.f0 = l8Var.v0;
-        this.g0 = l8Var.J0;
-        this.h0 = l8Var.K0;
-        this.i0 = l8Var.L0;
-        this.j0 = l8Var.S;
-        this.k0 = VideoEditedInfo.Part.toParts(l8Var);
+        this.Y = k8Var.p0;
+        this.Z = k8Var.q0;
+        this.a0 = k8Var.r0;
+        this.b0 = k8Var.s0;
+        this.c0 = k8Var.t0;
+        this.d0 = k8Var.u0;
+        this.e0 = k8Var.P;
+        this.f0 = k8Var.v0;
+        this.g0 = k8Var.J0;
+        this.h0 = k8Var.K0;
+        this.i0 = k8Var.L0;
+        this.j0 = k8Var.S;
+        this.k0 = VideoEditedInfo.Part.toParts(k8Var);
     }
 
-    public final l8 a() {
-        l8 l8Var = new l8();
-        l8Var.b = this.a;
-        l8Var.c = true;
-        l8Var.d = this.b;
+    public final k8 a() {
+        k8 k8Var = new k8();
+        k8Var.b = this.a;
+        k8Var.c = true;
+        k8Var.d = this.b;
         String str = this.c;
         if (!TextUtils.isEmpty(str)) {
-            l8Var.O0 = new File(str);
+            k8Var.O0 = new File(str);
         }
         String str2 = this.d;
         if (!TextUtils.isEmpty(str2)) {
-            l8Var.N0 = new File(str2);
+            k8Var.N0 = new File(str2);
         }
-        l8Var.K = this.e;
+        k8Var.K = this.e;
         String str3 = this.f;
         if (str3 != null) {
-            l8Var.L = new File(str3);
+            k8Var.L = new File(str3);
         }
-        l8Var.M = this.g;
-        l8Var.Y = this.h;
+        k8Var.M = this.g;
+        k8Var.Y = this.h;
         long j3 = this.r;
-        l8Var.h0 = j3;
+        k8Var.h0 = j3;
         if (j3 > 0) {
-            l8Var.Z = this.i / j3;
-            l8Var.a0 = this.j / j3;
+            k8Var.Z = this.i / j3;
+            k8Var.a0 = this.j / j3;
         } else {
-            l8Var.Z = 0.0f;
-            l8Var.a0 = 1.0f;
+            k8Var.Z = 0.0f;
+            k8Var.a0 = 1.0f;
         }
-        l8Var.Q = this.k;
-        l8Var.R = this.l;
-        l8Var.k0 = this.m;
-        l8Var.l0 = this.n;
-        l8Var.m0 = this.o;
-        l8Var.i0 = this.p;
-        l8Var.j0 = this.q;
-        l8Var.n0.setValues(this.s);
-        l8Var.A0 = this.t;
-        l8Var.B0 = this.u;
+        k8Var.Q = this.k;
+        k8Var.R = this.l;
+        k8Var.k0 = this.m;
+        k8Var.l0 = this.n;
+        k8Var.m0 = this.o;
+        k8Var.i0 = this.p;
+        k8Var.j0 = this.q;
+        k8Var.n0.setValues(this.s);
+        k8Var.A0 = this.t;
+        k8Var.B0 = this.u;
         String str4 = this.v;
         if (str4 != null) {
             SpannableString spannableString = new SpannableString(str4);
-            if (org.telegram.ui.ActionBar.h6.o2 == null) {
-                org.telegram.ui.ActionBar.h6.O();
+            if (org.telegram.ui.ActionBar.i6.o2 == null) {
+                org.telegram.ui.ActionBar.i6.O();
             }
-            CharSequence replaceEmoji = Emoji.replaceEmoji(spannableString, org.telegram.ui.ActionBar.h6.o2.getFontMetricsInt(), true);
+            CharSequence replaceEmoji = Emoji.replaceEmoji(spannableString, org.telegram.ui.ActionBar.i6.o2.getFontMetricsInt(), true);
             MessageObject.addEntitiesToText(replaceEmoji, this.w, true, false, true, false);
-            l8Var.C0 = MessageObject.replaceAnimatedEmoji(replaceEmoji, this.w, org.telegram.ui.ActionBar.h6.o2.getFontMetricsInt());
+            k8Var.C0 = MessageObject.replaceAnimatedEmoji(replaceEmoji, this.w, org.telegram.ui.ActionBar.i6.o2.getFontMetricsInt());
         } else {
-            l8Var.C0 = "";
+            k8Var.C0 = "";
         }
-        ArrayList arrayList = l8Var.F0;
+        ArrayList arrayList = k8Var.F0;
         arrayList.clear();
         arrayList.addAll(this.x);
         String str5 = this.y;
         if (str5 != null) {
-            l8Var.P0 = new File(str5);
+            k8Var.P0 = new File(str5);
         }
         String str6 = this.z;
         if (str6 != null) {
-            l8Var.R0 = new File(str6);
+            k8Var.R0 = new File(str6);
         }
-        l8Var.S0 = this.A;
-        l8Var.T0 = this.B;
-        l8Var.U0 = this.C;
+        k8Var.S0 = this.A;
+        k8Var.T0 = this.B;
+        k8Var.U0 = this.C;
         String str7 = this.D;
         if (str7 != null) {
-            l8Var.Z0 = new File(str7);
+            k8Var.Z0 = new File(str7);
         }
-        l8Var.a1 = this.E;
-        l8Var.I0 = this.F;
-        l8Var.g = this.G;
-        l8Var.f = this.H;
-        l8Var.e = this.I;
-        l8Var.J = this.L;
-        l8Var.I = this.K;
-        l8Var.H = this.J;
-        l8Var.w = this.M;
-        l8Var.x = this.N;
-        l8Var.y = this.O;
-        l8Var.z = this.P;
-        l8Var.A = this.Q;
-        l8Var.B = this.R;
-        l8Var.C = this.S;
-        l8Var.D = this.T;
-        l8Var.E = this.U;
-        l8Var.F = this.V;
-        l8Var.G = this.W;
+        k8Var.a1 = this.E;
+        k8Var.I0 = this.F;
+        k8Var.g = this.G;
+        k8Var.f = this.H;
+        k8Var.e = this.I;
+        k8Var.J = this.L;
+        k8Var.I = this.K;
+        k8Var.H = this.J;
+        k8Var.w = this.M;
+        k8Var.x = this.N;
+        k8Var.y = this.O;
+        k8Var.z = this.P;
+        k8Var.A = this.Q;
+        k8Var.B = this.R;
+        k8Var.C = this.S;
+        k8Var.D = this.T;
+        k8Var.E = this.U;
+        k8Var.F = this.V;
+        k8Var.G = this.W;
         String str8 = this.X;
         if (str8 != null) {
-            l8Var.o0 = new File(str8);
+            k8Var.o0 = new File(str8);
         }
-        l8Var.p0 = this.Y;
-        l8Var.q0 = this.Z;
-        l8Var.r0 = this.a0;
-        l8Var.s0 = this.b0;
-        l8Var.t0 = this.c0;
-        l8Var.u0 = this.d0;
-        l8Var.P = this.e0;
-        l8Var.v0 = this.f0;
-        l8Var.J0 = this.g0;
-        l8Var.K0 = this.h0;
-        l8Var.L0 = this.i0;
-        l8Var.S = this.j0;
-        l8Var.T = VideoEditedInfo.Part.toStoryEntries(this.k0);
-        return l8Var;
+        k8Var.p0 = this.Y;
+        k8Var.q0 = this.Z;
+        k8Var.r0 = this.a0;
+        k8Var.s0 = this.b0;
+        k8Var.t0 = this.c0;
+        k8Var.u0 = this.d0;
+        k8Var.P = this.e0;
+        k8Var.v0 = this.f0;
+        k8Var.J0 = this.g0;
+        k8Var.K0 = this.h0;
+        k8Var.L0 = this.i0;
+        k8Var.S = this.j0;
+        k8Var.T = VideoEditedInfo.Part.toStoryEntries(this.k0);
+        return k8Var;
     }
 
     public final void b(NativeByteBuffer nativeByteBuffer) {

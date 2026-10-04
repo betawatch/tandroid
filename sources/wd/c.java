@@ -4,9 +4,9 @@ import id.h;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import kd.i;
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c implements Iterator, id.c {
     public int a;
@@ -93,7 +93,7 @@ public final class c implements Iterator, id.c {
 
     @Override // id.c
     public final void resumeWith(Object obj) {
-        u7.b(obj);
+        t7.b(obj);
         this.a = 4;
     }
 }

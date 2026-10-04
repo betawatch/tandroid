@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import hg.c;
+import hg.k0;
 import java.math.RoundingMode;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 final class zzpk {
     final int zza;
@@ -95,8 +95,8 @@ final class zzpk {
             }
             this.zzh = zArr;
             this.zzi = false;
-        } catch (ArithmeticException e) {
-            throw new IllegalArgumentException(c.h(cArr.length, "Illegal alphabet length "), e);
+        } catch (ArithmeticException e7) {
+            throw new IllegalArgumentException(k0.h(cArr.length, "Illegal alphabet length "), e7);
         }
     }
 }

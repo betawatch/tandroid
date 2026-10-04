@@ -12,9 +12,9 @@ import android.util.AttributeSet;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.MultiAutoCompleteTextView;
-import v7.w7;
+import v7.v7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class w extends MultiAutoCompleteTextView implements u0.k {
     public static final int[] d = {R.attr.popupBackground};
@@ -143,7 +143,7 @@ public final class w extends MultiAutoCompleteTextView implements u0.k {
 
     @Override // android.widget.AutoCompleteTextView
     public void setDropDownBackgroundResource(int i10) {
-        setDropDownBackgroundDrawable(w7.b(getContext(), i10));
+        setDropDownBackgroundDrawable(v7.b(getContext(), i10));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {

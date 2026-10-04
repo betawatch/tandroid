@@ -13,7 +13,7 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f implements y2.n {
     public static final Pattern a = Pattern.compile("(.+?)(Z|((\\+|-|−)(\\d\\d)(:?(\\d\\d))?))");
@@ -37,8 +37,8 @@ public final class f implements y2.n {
                 time -= (((parseLong * 60) + (TextUtils.isEmpty(group2) ? 0L : Long.parseLong(group2))) * 60000) * j3;
             }
             return Long.valueOf(time);
-        } catch (ParseException e) {
-            throw s0.b(null, e);
+        } catch (ParseException e7) {
+            throw s0.b(null, e7);
         }
     }
 }

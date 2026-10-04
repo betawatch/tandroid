@@ -11,9 +11,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.t31;
+import org.telegram.ui.v31;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -56,8 +56,8 @@ public final /* synthetic */ class k5 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.d6 d6Var2 = this.c;
                 yc ycVar = new yc(a5Var, d6Var2);
                 y1 y1Var = new y1(jcVar, 1);
-                int i12 = t31.v;
-                t31.K(i11, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), ycVar, d6Var2, new byte[0], null, y1Var);
+                int i12 = v31.v;
+                v31.I(i11, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), ycVar, d6Var2, new byte[0], null, y1Var);
                 v5 v5Var2 = e6Var.t1;
                 if (v5Var2 != null) {
                     v5Var2.a();
@@ -71,24 +71,24 @@ public final /* synthetic */ class k5 implements View.OnClickListener {
                 if (v5Var3 != null) {
                     v5Var3.a();
                 }
-                ci.fa faVar = new ci.fa(e6Var2.getContext(), 86400, d6Var);
-                faVar.o1();
-                faVar.p1(MessagesController.getInstance(e6Var2.C2).getInputPeer(e6Var2.B1));
-                faVar.L = true;
-                View[] viewPages = faVar.b.getViewPages();
+                ci.ea eaVar = new ci.ea(e6Var2.getContext(), 86400, d6Var);
+                eaVar.o1();
+                eaVar.p1(MessagesController.getInstance(e6Var2.C2).getInputPeer(e6Var2.B1));
+                eaVar.L = true;
+                View[] viewPages = eaVar.b.getViewPages();
                 View view4 = viewPages[0];
-                if (view4 instanceof ci.y9) {
-                    ci.y9 y9Var = (ci.y9) view4;
-                    y9Var.b(y9Var.a);
+                if (view4 instanceof ci.x9) {
+                    ci.x9 x9Var = (ci.x9) view4;
+                    x9Var.b(x9Var.a);
                 }
                 View view5 = viewPages[1];
-                if (view5 instanceof ci.y9) {
-                    ci.y9 y9Var2 = (ci.y9) view5;
-                    y9Var2.b(y9Var2.a);
+                if (view5 instanceof ci.x9) {
+                    ci.x9 x9Var2 = (ci.x9) view5;
+                    x9Var2.b(x9Var2.a);
                 }
-                faVar.e1(false);
-                faVar.m1(1);
-                faVar.k1(false);
+                eaVar.e1(false);
+                eaVar.m1(1);
+                eaVar.k1(false);
                 d2 d2Var = jcVar.A0;
                 if (d2Var != null) {
                     TLRPC.GroupCall groupCall = d2Var.v;
@@ -99,23 +99,23 @@ public final /* synthetic */ class k5 implements View.OnClickListener {
                         boolean z11 = storyItem2 == null && storyItem2.pinned;
                         d2 d2Var2 = jcVar.A0;
                         int j3 = d2Var2 != null ? 0 : (int) d2Var2.j();
-                        faVar.w = z10;
-                        faVar.x = d;
-                        faVar.y = z11;
-                        faVar.H = j3;
-                        View[] viewPages2 = faVar.b.getViewPages();
+                        eaVar.w = z10;
+                        eaVar.x = d;
+                        eaVar.y = z11;
+                        eaVar.H = j3;
+                        View[] viewPages2 = eaVar.b.getViewPages();
                         view2 = viewPages2[0];
-                        if (view2 instanceof ci.y9) {
-                            ci.y9 y9Var3 = (ci.y9) view2;
-                            y9Var3.b(y9Var3.a);
+                        if (view2 instanceof ci.x9) {
+                            ci.x9 x9Var3 = (ci.x9) view2;
+                            x9Var3.b(x9Var3.a);
                         }
                         view3 = viewPages2[1];
-                        if (view3 instanceof ci.y9) {
-                            ci.y9 y9Var4 = (ci.y9) view3;
-                            y9Var4.b(y9Var4.a);
+                        if (view3 instanceof ci.x9) {
+                            ci.x9 x9Var4 = (ci.x9) view3;
+                            x9Var4.b(x9Var4.a);
                         }
-                        faVar.T = new ah.b(2, v5Var, faVar);
-                        faVar.show();
+                        eaVar.T = new ah.b(2, v5Var, eaVar);
+                        eaVar.show();
                         break;
                     }
                 }
@@ -127,19 +127,19 @@ public final /* synthetic */ class k5 implements View.OnClickListener {
                 d2 d2Var22 = jcVar.A0;
                 if (d2Var22 != null) {
                 }
-                faVar.w = z10;
-                faVar.x = d10;
-                faVar.y = z11;
-                faVar.H = j3;
-                View[] viewPages22 = faVar.b.getViewPages();
+                eaVar.w = z10;
+                eaVar.x = d10;
+                eaVar.y = z11;
+                eaVar.H = j3;
+                View[] viewPages22 = eaVar.b.getViewPages();
                 view2 = viewPages22[0];
-                if (view2 instanceof ci.y9) {
+                if (view2 instanceof ci.x9) {
                 }
                 view3 = viewPages22[1];
-                if (view3 instanceof ci.y9) {
+                if (view3 instanceof ci.x9) {
                 }
-                faVar.T = new ah.b(2, v5Var, faVar);
-                faVar.show();
+                eaVar.T = new ah.b(2, v5Var, eaVar);
+                eaVar.show();
             default:
                 e6 e6Var3 = v5Var.l;
                 v5 v5Var4 = e6Var3.t1;
@@ -148,9 +148,9 @@ public final /* synthetic */ class k5 implements View.OnClickListener {
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e6Var3.getContext(), 0, d6Var);
                 String string = LocaleController.getString(R.string.LiveStoryEndAlertTitle);
-                org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
-                a2Var.R = string;
-                a2Var.T = LocaleController.getString(R.string.LiveStoryEndAlertText);
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                b2Var.R = string;
+                b2Var.T = LocaleController.getString(R.string.LiveStoryEndAlertText);
                 alertDialog$Builder.k(LocaleController.getString(R.string.LiveStoryEndAlertButton), new ah.b(3, v5Var, jcVar));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 alertDialog$Builder.d(-1);

@@ -1,42 +1,69 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class su extends org.telegram.ui.Components.p81 {
-    public final /* synthetic */ vu a;
+public final class su extends org.telegram.ui.Components.ed {
+    public final /* synthetic */ tu e0;
 
-    public su(vu vuVar) {
-        this.a = vuVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public su(tu tuVar, Context context, int i10, int[] iArr, int[] iArr2) {
+        super(context, i10, iArr, 1, iArr2);
+        this.e0 = tuVar;
     }
 
-    @Override // org.telegram.ui.Components.p81
-    public final void b(View view, int i10, int i11) {
-        ru ruVar = (ru) view;
-        ruVar.Y2 = i10;
-        ruVar.f3.clear();
-        ruVar.m3 = ruVar.w1(6) + ruVar.y1(6) <= 0;
-        ruVar.z1();
-        ruVar.A1(false);
-        ruVar.u0(0);
+    @Override // org.telegram.ui.Components.ed
+    public final int c() {
+        return 216;
     }
 
-    @Override // org.telegram.ui.Components.p81
-    public final View d(int i10) {
-        vu vuVar = this.a;
-        return new ru(vuVar, vuVar.getParentActivity());
+    @Override // org.telegram.ui.Components.ed
+    public final void d(int i10, boolean z10) {
+        int i11;
+        vu vuVar = (vu) this.e0.e;
+        if (!z10) {
+            vuVar.m1();
+            return;
+        }
+        if (i10 < 0 || i10 >= vuVar.n3.length) {
+            return;
+        }
+        int i12 = 0;
+        while (true) {
+            uu[] uuVarArr = vuVar.n3;
+            i11 = -1;
+            if (i12 >= uuVarArr.length) {
+                i12 = -1;
+                break;
+            } else if (uuVarArr[i12].d == i10) {
+                break;
+            } else {
+                i12++;
+            }
+        }
+        int i13 = 0;
+        while (true) {
+            if (i13 < vuVar.j3.size()) {
+                qu quVar = (qu) vuVar.j3.get(i13);
+                if (quVar != null && quVar.a == 2 && quVar.h == i12) {
+                    i11 = i13;
+                    break;
+                }
+                i13++;
+            } else {
+                break;
+            }
+        }
+        if (i11 >= 0) {
+            vuVar.f1(new i2.w(i11, 7), 0, true);
+        } else {
+            vuVar.m1();
+        }
     }
 
-    @Override // org.telegram.ui.Components.p81
+    @Override // org.telegram.ui.Components.ed
     public final int e() {
-        return 4;
-    }
-
-    @Override // org.telegram.ui.Components.p81
-    public final CharSequence g(int i10) {
-        return i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? "" : LocaleController.getString(R.string.NetworkUsageRoamingTab) : LocaleController.getString(R.string.NetworkUsageWiFiTab) : LocaleController.getString(R.string.NetworkUsageMobileTab) : LocaleController.getString(R.string.NetworkUsageAllTab);
+        return 10;
     }
 }

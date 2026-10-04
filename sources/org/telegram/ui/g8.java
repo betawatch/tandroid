@@ -1,9 +1,49 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.util.SparseArray;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class g8 {
-    public float a;
-    public float b;
-    public float c;
+public final class g8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ j8 a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ h8 h;
+
+    public g8(h8 h8Var, j8 j8Var, float f7, float f10, float f11, int i10, boolean z10) {
+        this.h = h8Var;
+        this.a = j8Var;
+        this.b = f7;
+        this.c = f10;
+        this.d = f11;
+        this.e = i10;
+        this.f = z10;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        float f7 = this.b;
+        j8 j8Var = this.a;
+        j8Var.a = f7;
+        j8Var.b = this.c;
+        j8Var.c = this.d;
+        this.h.invalidate();
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        h8 h8Var = this.h;
+        SparseArray sparseArray = h8Var.v;
+        int i10 = this.e;
+        sparseArray.remove(i10);
+        if (this.f) {
+            return;
+        }
+        h8Var.w.remove(i10);
+    }
 }

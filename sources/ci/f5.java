@@ -2,7 +2,7 @@ package ci;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f5 implements Runnable {
     public final /* synthetic */ int a;
@@ -17,14 +17,14 @@ public final /* synthetic */ class f5 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                qg.x1 x1Var = this.b.d1;
-                if (x1Var != null) {
-                    x1Var.invalidate();
+                qg.w1 w1Var = this.b.d1;
+                if (w1Var != null) {
+                    w1Var.invalidate();
                     break;
                 }
                 break;
             case 1:
-                new rg.x0((org.telegram.ui.ActionBar.m2) new ai.y3(this.b, 3), 14, true).show();
+                new rg.y0((org.telegram.ui.ActionBar.n2) new ai.y3(this.b, 3), 14, true).show();
                 break;
             case 2:
                 this.b.z0(false);
@@ -48,7 +48,7 @@ public final /* synthetic */ class f5 implements Runnable {
                         n6Var.setSelected(false);
                         n6Var.setOnClickListener(new ai.v0(s1Var, 10));
                         n6Var.setOnLongClickListener(new m5(q6Var, 0));
-                        q6Var.I1.a(n6Var, w7.y5.n(-1, 48));
+                        q6Var.I1.a(n6Var, w7.z5.n(-1, 48));
                         i10++;
                     }
                 }

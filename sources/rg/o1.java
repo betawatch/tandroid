@@ -3,202 +3,180 @@ package rg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.Components.wg0;
-import org.telegram.ui.Components.yl0;
-import org.telegram.ui.db1;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public abstract class o1 extends yl0 implements NotificationCenter.NotificationCenterDelegate, l0 {
-    public final ArrayList X2;
-    public final s4.c0 Y2;
-    public boolean Z2;
-    public boolean a3;
-    public final int b3;
-    public boolean c3;
-    public boolean d3;
-    public final pg.c1 e3;
-    public final sr f3;
-    public final ArrayList g3;
-    public final db1 h3;
-    public View i3;
-    public boolean j3;
-    public int k3;
-    public int l3;
-    public boolean m3;
-    public boolean n3;
+public final class o1 extends View {
+    public final /* synthetic */ p1 a;
 
-    public o1(Context context, int i10) {
-        super(context, null);
-        ArrayList arrayList = new ArrayList();
-        this.X2 = arrayList;
-        this.Z2 = true;
-        this.a3 = true;
-        s0 s0Var = (s0) this;
-        this.e3 = new pg.c1(s0Var, 2);
-        this.f3 = new sr(0.0f, 0.5f, 0.5f, 1.0f);
-        this.g3 = new ArrayList();
-        this.h3 = new db1(6);
-        this.l3 = -1;
-        this.b3 = i10;
-        s4.c0 c0Var = new s4.c0();
-        this.Y2 = c0Var;
-        setLayoutManager(c0Var);
-        setAdapter(new l1(s0Var));
-        setClipChildren(false);
-        setOnScrollListener(new wg0(s0Var, 11));
-        setOnItemClickListener(new ai.g(s0Var, 17));
-        MediaDataController.getInstance(i10).preloadPremiumPreviewStickers();
-        arrayList.clear();
-        arrayList.addAll(MediaDataController.getInstance(i10).premiumPreviewStickers);
-        getAdapter().l();
-        invalidate();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o1(p1 p1Var, Context context) {
+        super(context);
+        this.a = p1Var;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.premiumStickersPreviewLoaded) {
-            ArrayList arrayList = this.X2;
-            arrayList.clear();
-            arrayList.addAll(MediaDataController.getInstance(this.b3).premiumPreviewStickers);
-            getAdapter().l();
-            invalidate();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.yl0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.m3) {
-            ArrayList arrayList = this.g3;
-            arrayList.clear();
-            for (int i10 = 0; i10 < getChildCount(); i10++) {
-                n1 n1Var = (n1) getChildAt(i10);
-                float measuredHeight = ((n1Var.getMeasuredHeight() + n1Var.getTop()) + (n1Var.getMeasuredHeight() >> 1)) / (n1Var.getMeasuredHeight() + (getMeasuredHeight() >> 1));
-                if (measuredHeight > 1.0f) {
-                    measuredHeight = 2.0f - measuredHeight;
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00ee  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0153  */
+    /* JADX WARN: Removed duplicated region for block: B:43:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0050  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        ImageReceiver imageReceiver;
+        boolean z10;
+        boolean z11;
+        super.draw(canvas);
+        p1 p1Var = this.a;
+        t0 t0Var = p1Var.v;
+        ImageReceiver imageReceiver2 = p1Var.c;
+        ImageReceiver imageReceiver3 = p1Var.d;
+        if (p1Var.s) {
+            imageReceiver2.setImage(ImageLocation.getForDocument(p1Var.r), null, DocumentObject.getSvgThumb(p1Var.r, i6.a7, 0.5f), "webp", null, 1);
+            if (MessageObject.isPremiumSticker(p1Var.r)) {
+                imageReceiver = imageReceiver3;
+                imageReceiver.setImage(ImageLocation.getForDocument(MessageObject.getPremiumStickerAnimation(p1Var.r), p1Var.r), "140_140", (ImageLocation) null, (String) null, "tgs", (Object) null, 1);
+                if (!p1Var.e) {
+                    if (p1Var.h == 0.0f) {
+                        p1Var.h = 1.0f;
+                        if (imageReceiver.getLottieAnimation() != null) {
+                            imageReceiver.getLottieAnimation().N(0, false, false);
+                        }
+                    }
+                    if (imageReceiver.getLottieAnimation() != null) {
+                        imageReceiver.getLottieAnimation().start();
+                    }
+                    if (imageReceiver.getLottieAnimation() != null && imageReceiver.getLottieAnimation().A() && t0Var.u3) {
+                        AndroidUtilities.cancelRunOnUIThread(t0Var.l3);
+                        AndroidUtilities.runOnUIThread(t0Var.l3, 0L);
+                    }
+                } else if (imageReceiver.getLottieAnimation() != null) {
+                    imageReceiver.getLottieAnimation().stop();
                 }
-                float clamp = Utilities.clamp(measuredHeight, 1.0f, 0.0f);
-                n1Var.a = clamp;
-                n1Var.b.setTranslationX((1.0f - this.f3.getInterpolation(clamp)) * (-getMeasuredWidth()) * 2.0f);
-                arrayList.add(n1Var);
-            }
-            Collections.sort(arrayList, this.h3);
-            if ((this.a3 || this.j3) && arrayList.size() > 0 && !this.X2.isEmpty()) {
-                View view = (View) hg.c.g(1, arrayList);
-                this.i3 = view;
-                w1(view, !this.a3);
-                this.a3 = false;
-                this.j3 = false;
-            } else if (this.i3 != hg.c.g(1, arrayList)) {
-                this.i3 = (View) hg.c.g(1, arrayList);
-                if (this.d3) {
-                    try {
-                        performHapticFeedback(3);
-                    } catch (Exception unused) {
+                if (p1Var.f) {
+                    if (imageReceiver2.getLottieAnimation() != null) {
+                        imageReceiver2.getLottieAnimation().stop();
+                    }
+                } else if (imageReceiver2.getLottieAnimation() != null) {
+                    imageReceiver2.getLottieAnimation().start();
+                }
+                z10 = p1Var.f;
+                if (z10) {
+                    float f7 = p1Var.n;
+                    if (f7 != 1.0f) {
+                        p1Var.n = f7 + 0.10666667f;
+                        invalidate();
+                        p1Var.n = Utilities.clamp(p1Var.n, 1.0f, 0.0f);
+                        z11 = p1Var.e;
+                        if (z11) {
+                            float f10 = p1Var.h;
+                            if (f10 != 1.0f) {
+                                p1Var.h = f10 + 0.10666667f;
+                                invalidate();
+                                p1Var.h = Utilities.clamp(p1Var.h, 1.0f, 0.0f);
+                                float f11 = t0Var.r3 * 0.45f;
+                                float f12 = 1.499267f * f11;
+                                float measuredWidth = getMeasuredWidth() - f12;
+                                float measuredHeight = (getMeasuredHeight() - f12) / 2.0f;
+                                float f13 = f12 - f11;
+                                imageReceiver2.setImageCoords((f13 - (0.02f * f12)) + measuredWidth, (f13 / 2.0f) + measuredHeight, f11, f11);
+                                imageReceiver2.setAlpha((p1Var.n * 0.7f) + 0.3f);
+                                imageReceiver2.draw(canvas);
+                                if (p1Var.h == 0.0f) {
+                                    imageReceiver.setImageCoords(measuredWidth, measuredHeight, f12, f12);
+                                    imageReceiver.setAlpha(p1Var.h);
+                                    imageReceiver.draw(canvas);
+                                    return;
+                                }
+                                return;
+                            }
+                        }
+                        if (!z11) {
+                            float f14 = p1Var.h;
+                            if (f14 != 0.0f) {
+                                p1Var.h = f14 - 0.10666667f;
+                                invalidate();
+                            }
+                        }
+                        p1Var.h = Utilities.clamp(p1Var.h, 1.0f, 0.0f);
+                        float f112 = t0Var.r3 * 0.45f;
+                        float f122 = 1.499267f * f112;
+                        float measuredWidth2 = getMeasuredWidth() - f122;
+                        float measuredHeight2 = (getMeasuredHeight() - f122) / 2.0f;
+                        float f132 = f122 - f112;
+                        imageReceiver2.setImageCoords((f132 - (0.02f * f122)) + measuredWidth2, (f132 / 2.0f) + measuredHeight2, f112, f112);
+                        imageReceiver2.setAlpha((p1Var.n * 0.7f) + 0.3f);
+                        imageReceiver2.draw(canvas);
+                        if (p1Var.h == 0.0f) {
+                        }
                     }
                 }
-            }
-            for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                canvas.save();
-                canvas.translate(((n1) arrayList.get(i11)).getX(), ((n1) arrayList.get(i11)).getY());
-                ((n1) arrayList.get(i11)).draw(canvas);
-                canvas.restore();
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        NotificationCenter.getInstance(this.b3).addObserver(this, NotificationCenter.premiumStickersPreviewLoaded);
-        x1();
-    }
-
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getInstance(this.b3).removeObserver(this, NotificationCenter.premiumStickersPreviewLoaded);
-    }
-
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.Z2 && !this.X2.isEmpty() && getChildCount() > 0) {
-            this.Z2 = false;
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.q0(this, 29));
-        }
-        int i14 = this.l3;
-        if (i14 > 0) {
-            s4.c1 K = K(i14);
-            if (K != null) {
-                w1(K.a, false);
-            }
-            this.l3 = -1;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.yl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        if (View.MeasureSpec.getSize(i11) > View.MeasureSpec.getSize(i10)) {
-            this.k3 = View.MeasureSpec.getSize(i10);
-        } else {
-            this.k3 = View.MeasureSpec.getSize(i11);
-        }
-        super.onMeasure(i10, i11);
-    }
-
-    public void setAutoPlayEnabled(boolean z10) {
-        if (this.n3 != z10) {
-            this.n3 = z10;
-            if (!z10) {
-                AndroidUtilities.cancelRunOnUIThread(this.e3);
-                w1(null, true);
-            } else {
-                x1();
-                this.j3 = true;
-                invalidate();
+                if (!z10) {
+                    float f15 = p1Var.n;
+                    if (f15 != 0.0f) {
+                        p1Var.n = f15 - 0.10666667f;
+                        invalidate();
+                    }
+                }
+                p1Var.n = Utilities.clamp(p1Var.n, 1.0f, 0.0f);
+                z11 = p1Var.e;
+                if (z11) {
+                }
+                if (!z11) {
+                }
+                p1Var.h = Utilities.clamp(p1Var.h, 1.0f, 0.0f);
+                float f1122 = t0Var.r3 * 0.45f;
+                float f1222 = 1.499267f * f1122;
+                float measuredWidth22 = getMeasuredWidth() - f1222;
+                float measuredHeight22 = (getMeasuredHeight() - f1222) / 2.0f;
+                float f1322 = f1222 - f1122;
+                imageReceiver2.setImageCoords((f1322 - (0.02f * f1222)) + measuredWidth22, (f1322 / 2.0f) + measuredHeight22, f1122, f1122);
+                imageReceiver2.setAlpha((p1Var.n * 0.7f) + 0.3f);
+                imageReceiver2.draw(canvas);
+                if (p1Var.h == 0.0f) {
+                }
             }
         }
-    }
-
-    @Override // rg.l0
-    public void setOffset(float f7) {
-        boolean z10 = Math.abs(f7 / ((float) getMeasuredWidth())) < 1.0f;
-        if (this.m3 != z10) {
-            this.m3 = z10;
-            invalidate();
+        imageReceiver = imageReceiver3;
+        if (!p1Var.e) {
         }
-    }
-
-    public final void w1(View view, boolean z10) {
-        this.c3 = view != null;
-        for (int i10 = 0; i10 < getChildCount(); i10++) {
-            n1 n1Var = (n1) getChildAt(i10);
-            if (n1Var == view) {
-                n1Var.a(true, true, z10);
-            } else {
-                n1Var.a(!this.c3, false, z10);
-            }
+        if (p1Var.f) {
         }
-    }
-
-    public final void x1() {
-        if (this.n3) {
-            pg.c1 c1Var = this.e3;
-            AndroidUtilities.cancelRunOnUIThread(c1Var);
-            AndroidUtilities.runOnUIThread(c1Var, 2700L);
+        z10 = p1Var.f;
+        if (z10) {
+        }
+        if (!z10) {
+        }
+        p1Var.n = Utilities.clamp(p1Var.n, 1.0f, 0.0f);
+        z11 = p1Var.e;
+        if (z11) {
+        }
+        if (!z11) {
+        }
+        p1Var.h = Utilities.clamp(p1Var.h, 1.0f, 0.0f);
+        float f11222 = t0Var.r3 * 0.45f;
+        float f12222 = 1.499267f * f11222;
+        float measuredWidth222 = getMeasuredWidth() - f12222;
+        float measuredHeight222 = (getMeasuredHeight() - f12222) / 2.0f;
+        float f13222 = f12222 - f11222;
+        imageReceiver2.setImageCoords((f13222 - (0.02f * f12222)) + measuredWidth222, (f13222 / 2.0f) + measuredHeight222, f11222, f11222);
+        imageReceiver2.setAlpha((p1Var.n * 0.7f) + 0.3f);
+        imageReceiver2.draw(canvas);
+        if (p1Var.h == 0.0f) {
         }
     }
 }

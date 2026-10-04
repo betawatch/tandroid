@@ -1,106 +1,107 @@
 package rg;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.h6;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class a1 {
-    public static a1 j;
-    public final z0 a;
-    public final Paint b;
-    public Paint c;
-    public final Drawable d;
-    public final Drawable e;
-    public y0 f;
-    public y0 g;
-    public final y0 h;
-    public int i;
+public class a1 {
+    public final d6 a;
+    public LinearGradient d;
+    public final int g;
+    public final int h;
+    public final int i;
+    public final int j;
+    public boolean m;
+    public boolean n;
+    public float b = 0.5f;
+    public float c = 0.5f;
+    public final Matrix e = new Matrix();
+    public final Paint f = new Paint(1);
+    public final int[] l = new int[5];
+    public float o = 1.0f;
+    public float p = 1.5f;
+    public float q = 0.0f;
+    public final int k = -1;
 
-    public a1() {
-        z0 z0Var = new z0(h6.Lj, h6.Mj, h6.Nj, h6.Oj, null);
-        this.a = z0Var;
-        z0 z0Var2 = new z0(h6.fk, h6.gk, -1, -1, null);
-        this.b = z0Var.f;
-        this.e = ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_premium_liststar).mutate();
-        this.f = c(ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_settings_premium), z0Var);
-        this.h = c(ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_settings_premium), z0Var2);
-        this.g = c(ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_premium_normal), z0Var);
-        this.d = ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_premium_liststar).mutate();
-        z0Var.a();
-        b();
+    public a1(int i10, int i11, int i12, int i13, d6 d6Var) {
+        this.a = d6Var;
+        this.g = i10;
+        this.h = i11;
+        this.i = i12;
+        this.j = i13;
     }
 
-    public static y0 c(Drawable drawable, z0 z0Var) {
-        if (drawable == null) {
-            return null;
+    public final void a() {
+        int b10 = b(this.g);
+        int b11 = b(this.h);
+        int i10 = this.i;
+        int b12 = i10 < 0 ? 0 : b(i10);
+        int i11 = this.j;
+        int b13 = i11 < 0 ? 0 : b(i11);
+        int i12 = this.k;
+        int b14 = i12 < 0 ? 0 : b(i12);
+        LinearGradient linearGradient = this.d;
+        int[] iArr = this.l;
+        if (linearGradient != null && iArr[0] == b10 && iArr[1] == b11 && iArr[2] == b12 && iArr[3] == b13 && iArr[4] == b14) {
+            return;
         }
-        int intrinsicWidth = drawable.getIntrinsicWidth();
-        int minimumHeight = drawable.getMinimumHeight();
-        Bitmap createBitmap = Bitmap.createBitmap(intrinsicWidth, minimumHeight, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(createBitmap);
-        drawable.setBounds(0, 0, intrinsicWidth, minimumHeight);
-        drawable.draw(canvas);
-        z0Var.f.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        z0Var.d(0, -intrinsicWidth, 0, intrinsicWidth, 0.0f, minimumHeight);
-        canvas.drawRect(0.0f, 0.0f, intrinsicWidth, minimumHeight, z0Var.f);
-        z0Var.f.setXfermode(null);
-        int[] iArr = z0Var.l;
-        y0 y0Var = new y0(ApplicationLoader.applicationContext.getResources(), createBitmap);
-        y0Var.b = drawable;
-        int[] iArr2 = new int[iArr.length];
-        y0Var.a = iArr2;
-        System.arraycopy(iArr, 0, iArr2, 0, iArr.length);
-        return y0Var;
-    }
-
-    public static a1 d() {
-        if (j == null) {
-            j = new a1();
+        iArr[0] = b10;
+        iArr[1] = b11;
+        iArr[2] = b12;
+        iArr[3] = b13;
+        iArr[4] = b14;
+        if (b12 == 0) {
+            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1]}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        } else if (b13 == 0) {
+            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2]}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.CLAMP);
+        } else if (b14 == 0) {
+            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2], iArr[3]}, new float[]{0.0f, 0.5f, 0.78f, 1.0f}, Shader.TileMode.CLAMP);
+        } else {
+            this.d = new LinearGradient(0.0f, this.o * 100.0f, this.p * 100.0f, this.q * 100.0f, new int[]{iArr[0], iArr[1], iArr[2], iArr[3], iArr[4]}, new float[]{0.0f, 0.425f, 0.655f, 0.78f, 1.0f}, Shader.TileMode.CLAMP);
         }
-        return j;
+        this.d.setLocalMatrix(this.e);
+        this.f.setShader(this.d);
     }
 
-    public final y0 a(y0 y0Var) {
-        z0 z0Var = this.a;
-        int[] iArr = z0Var.l;
-        int i10 = iArr[0];
-        int[] iArr2 = y0Var.a;
-        return (i10 == iArr2[0] && iArr[1] == iArr2[1] && iArr[2] == iArr2[2] && iArr[3] == iArr2[3]) ? y0Var : c(y0Var.b, z0Var);
-    }
-
-    public final void b() {
-        int i10 = h6.z9;
-        if (h6.w0(null, i10, false) != this.i) {
-            this.i = h6.w0(null, i10, false);
-            this.e.setColorFilter(new PorterDuffColorFilter(this.i, PorterDuff.Mode.MULTIPLY));
+    public final int b(int i10) {
+        int c10 = c(i10);
+        if (!this.n) {
+            return c10;
         }
-        this.f = a(this.f);
-        this.g = a(this.g);
+        return Color.argb(Color.alpha(c10), Color.red(c10) - 15, Color.green(c10) - 15, Color.blue(c10) - 15);
     }
 
-    public final Paint e() {
-        if (!MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked()) {
-            return this.b;
-        }
-        if (this.c == null) {
-            this.c = new Paint(1);
-        }
-        this.c.setColor(h6.w0(null, h6.Oh, false));
-        return this.c;
+    public int c(int i10) {
+        return i6.v0(i10, this.a);
     }
 
-    public final void f(float f7, float f10, int i10, int i11) {
-        this.a.d(0, f7, 0, i10, f10, i11);
+    public final void d(int i10, float f7, int i11, int i12, float f10, int i13) {
+        a();
+        boolean z10 = this.m;
+        Matrix matrix = this.e;
+        if (z10) {
+            matrix.reset();
+            matrix.postScale((i12 - i10) / 100.0f, (i13 - i11) / 100.0f, this.b * 100.0f, this.c * 100.0f);
+            matrix.postTranslate(f7, f10);
+            this.d.setLocalMatrix(matrix);
+            return;
+        }
+        int i14 = i13 - i11;
+        a();
+        matrix.reset();
+        matrix.postScale((i12 - i10) / 100.0f, (i14 + i14) / 100.0f, 75.0f, 50.0f);
+        matrix.postTranslate(f7, (-r9) + f10);
+        this.d.setLocalMatrix(matrix);
+    }
+
+    public final void e(RectF rectF) {
+        d((int) rectF.left, 0.0f, (int) rectF.top, (int) rectF.right, 0.0f, (int) rectF.bottom);
     }
 }

@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class l0 {
     public final i1 a;
@@ -57,38 +57,38 @@ public final class l0 {
     public final void a() {
         i1 i1Var = this.a;
         i1Var.t();
-        int v02 = org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, this.b);
-        i1Var.setTextColor(org.telegram.ui.ActionBar.h6.l1(0.5f, v02));
-        i1Var.setHintTextColor(org.telegram.ui.ActionBar.h6.l1(0.35f, v02));
+        int v02 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, this.b);
+        i1Var.setTextColor(org.telegram.ui.ActionBar.i6.l1(0.5f, v02));
+        i1Var.setHintTextColor(org.telegram.ui.ActionBar.i6.l1(0.35f, v02));
     }
 
     public final void b() {
         TL_iv.PageBlock pageBlock;
-        a M = this.c.M();
-        if (M == null || (pageBlock = M.b) == null) {
+        a T = this.c.T();
+        if (T == null || (pageBlock = T.b) == null) {
             return;
         }
         d(pageBlock);
-        TL_iv.RichText richText = M.b.caption.text;
-        String l4 = g6.l(richText);
+        TL_iv.RichText richText = T.b.caption.text;
+        String l4 = h6.l(richText);
         i1 i1Var = this.a;
         if (String.valueOf(i1Var.getText()).equals(l4)) {
             return;
         }
-        i1Var.setTextSilently(g6.r(richText, null, true));
+        i1Var.setTextSilently(h6.r(richText, null, true));
         i1Var.invalidateEffects();
     }
 
     public final void c(Canvas canvas) {
         k0 k0Var = this.c;
-        q9 C = k0Var.C();
-        if (C != null) {
+        q9 J = k0Var.J();
+        if (J != null) {
             if (this.a.getLayout() == null) {
                 return;
             }
             canvas.save();
             canvas.translate(r2.getPaddingLeft() + r2.getLeft(), r2.getPaddingTop() + r2.getTop());
-            C.a0(canvas, k0Var.I(), 0);
+            J.a0(canvas, k0Var.R(), 0);
             canvas.restore();
         }
     }
@@ -137,11 +137,11 @@ public final class l0 {
 
     public final void i() {
         TL_iv.PageBlock pageBlock;
-        a M = this.c.M();
-        if (M == null || (pageBlock = M.b) == null) {
+        a T = this.c.T();
+        if (T == null || (pageBlock = T.b) == null) {
             return;
         }
         d(pageBlock);
-        M.b.caption.text = g6.f(this.a.getText());
+        T.b.caption.text = h6.f(this.a.getText());
     }
 }

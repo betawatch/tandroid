@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ol implements bq0 {
-    public final /* synthetic */ wn a;
+public final class ol implements eq0 {
+    public final /* synthetic */ yn a;
 
-    public ol(wn wnVar) {
-        this.a = wnVar;
+    public ol(yn ynVar) {
+        this.a = ynVar;
     }
 
-    @Override // org.telegram.ui.bq0
+    @Override // org.telegram.ui.eq0
     public final void b() {
         try {
             Intent intent = new Intent();
@@ -26,12 +26,12 @@ public final class ol implements bq0 {
             Intent createChooser = Intent.createChooser(intent2, null);
             createChooser.putExtra("android.intent.extra.INITIAL_INTENTS", new Intent[]{intent});
             this.a.startActivityForResult(createChooser, 1);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
-    @Override // org.telegram.ui.bq0
+    @Override // org.telegram.ui.eq0
     public final void a(ArrayList arrayList) {
     }
 }

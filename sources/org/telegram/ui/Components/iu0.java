@@ -1,59 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.drawable.GradientDrawable;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
+import android.animation.ObjectAnimator;
+import android.graphics.Canvas;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class iu0 extends FrameLayout {
-    public final org.telegram.ui.Cells.i6 a;
+public abstract class iu0 extends FrameLayout {
+    public bl0 E;
+    public int F;
+    public gr0 G;
+    public uo0 H;
+    public boolean I;
+    public int J;
+    public boolean K;
+    public float L;
+    public long a;
+    public boolean b;
+    public ObjectAnimator c;
+    public s4.j d;
+    public s4.u0 e;
+    public s4.u0 f;
+    public os0 h;
+    public ah.n n;
+    public hu0 r;
+    public qs0 s;
+    public xs0 v;
+    public zs0 w;
+    public ms0 x;
+    public ws0 y;
 
-    public iu0(int i10, Context context, boolean z10, org.telegram.ui.ActionBar.d6 d6Var, yq0 yq0Var) {
-        super(context);
-        org.telegram.ui.Cells.i6 i6Var = new org.telegram.ui.Cells.i6(context, d6Var);
-        this.a = i6Var;
-        i6Var.setBackground(org.telegram.ui.ActionBar.h6.f0(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.i6, d6Var), 2, -1));
-        addView(i6Var, w7.y5.c(-2.0f, -1));
-        View view = new View(context);
-        GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;
-        int i11 = org.telegram.ui.ActionBar.h6.d6;
-        view.setBackground(new GradientDrawable(orientation, new int[]{org.telegram.ui.ActionBar.h6.l1(0.4f, org.telegram.ui.ActionBar.h6.v0(i11, d6Var)), org.telegram.ui.ActionBar.h6.v0(i11, d6Var)}));
-        addView(view, w7.y5.c(60.0f, -1));
-        ci.d dVar = new ci.d(context, d6Var, true);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) LocaleController.getString(z10 ? R.string.MoreSimilarBotsButton : R.string.MoreSimilarButton));
-        spannableStringBuilder.append((CharSequence) " ");
-        SpannableString spannableString = new SpannableString("l");
-        spannableString.setSpan(new qq(R.drawable.msg_mini_lock2, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) spannableString);
-        dVar.g(spannableStringBuilder, false, true);
-        addView(dVar, w7.y5.d(-1, 48.0f, 48, 14.0f, 38.0f, 14.0f, 0.0f));
-        dVar.setOnClickListener(new k80(yq0Var, 17));
-        p90 p90Var = new p90(context, d6Var);
-        p90Var.setTextSize(1, 13.0f);
-        p90Var.setTextAlignment(4);
-        p90Var.setGravity(17);
-        p90Var.setTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G6, d6Var));
-        p90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.n6, d6Var));
-        p90Var.setLineSpacing(AndroidUtilities.dp(3.0f), 1.0f);
-        SpannableStringBuilder premiumText = AndroidUtilities.premiumText(LocaleController.getString(z10 ? R.string.MoreSimilarBotsText : R.string.MoreSimilarText), new yq0(yq0Var, 5));
-        SpannableString spannableString2 = new SpannableString("" + MessagesController.getInstance(i10).recommendedChannelsLimitPremium);
-        spannableString2.setSpan(new u51(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
-        p90Var.setText(AndroidUtilities.replaceCharSequence("%s", premiumText, spannableString2));
-        addView(p90Var, w7.y5.d(-1, -2.0f, 49, 24.0f, 96.0f, 24.0f, 12.0f));
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        gr0 gr0Var = this.G;
+        if (gr0Var == null || gr0Var.getVisibility() != 0) {
+            return;
+        }
+        fl0 fastScroll = this.h.getFastScroll();
+        if (fastScroll != null) {
+            float dp = AndroidUtilities.dp(36.0f) + fastScroll.getScrollBarY();
+            if (this.F == 9) {
+                dp += AndroidUtilities.dp(64.0f);
+            }
+            int i10 = this.F;
+            if (i10 == 8 || pv0.w0(i10)) {
+                dp += AndroidUtilities.dp(42.0f);
+            }
+            float measuredWidth = (getMeasuredWidth() - this.G.getMeasuredWidth()) - AndroidUtilities.dp(16.0f);
+            this.G.setPivotX(r2.getMeasuredWidth());
+            this.G.setPivotY(0.0f);
+            this.G.setTranslationX(measuredWidth);
+            this.G.setTranslationY(dp);
+        }
+        if (fastScroll.getProgress() > 0.85f) {
+            pv0.q(this, null, false);
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(145.0f), TLObject.FLAG_30));
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (view == this.r) {
+            return true;
+        }
+        return super.drawChild(canvas, view, j3);
     }
 }

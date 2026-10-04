@@ -15,15 +15,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.Emoji;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class CompoundEmoji {
     public static List<String> skinTones = Arrays.asList("🏻", "🏼", "🏽", "🏾", "🏿");
     private static Paint placeholderPaint = new Paint(2);
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class DrawableInfo {
         private static final SparseArray<Bitmap> bitmaps = new SparseArray<>();
         private static final ArrayList<Integer> loading = new ArrayList<>();
@@ -171,7 +171,7 @@ public class CompoundEmoji {
         return compoundEmojiDrawable;
     }
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class CompoundEmojiDrawable extends Emoji.EmojiDrawable {
         private static Paint paint = new Paint(2);
         private static Rect rect = new Rect();
@@ -230,7 +230,7 @@ public class CompoundEmoji {
             }
             if (this.newLeft != null) {
                 if (this.leftUpdateT == null) {
-                    this.leftUpdateT = new org.telegram.ui.Components.e6(0.0f, new f1(this, 16), 0L, 320L, sr.g);
+                    this.leftUpdateT = new org.telegram.ui.Components.e6(0.0f, new f1(this, 16), 0L, 320L, tr.g);
                 }
                 float d = this.leftUpdateT.d(1.0f, false);
                 drawDrawableInfo(canvas, this.newLeft, drawRect, Math.min(1.0f, d * 1.5f));
@@ -247,7 +247,7 @@ public class CompoundEmoji {
                 return;
             }
             if (this.rightUpdateT == null) {
-                this.rightUpdateT = new org.telegram.ui.Components.e6(0.0f, new f1(this, 16), 0L, 320L, sr.g);
+                this.rightUpdateT = new org.telegram.ui.Components.e6(0.0f, new f1(this, 16), 0L, 320L, tr.g);
             }
             float d10 = this.rightUpdateT.d(1.0f, false);
             drawDrawableInfo(canvas, this.newRight, drawRect, Math.min(1.0f, 1.5f * d10));

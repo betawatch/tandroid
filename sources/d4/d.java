@@ -2,9 +2,9 @@ package d4;
 
 import android.graphics.Color;
 import com.google.android.gms.internal.vision.e2;
-import v7.z7;
+import v7.y7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d {
     public final String a;
@@ -64,8 +64,8 @@ public final class d {
         try {
             int parseInt = Integer.parseInt(str);
             return parseInt == 1 || parseInt == -1;
-        } catch (NumberFormatException e) {
-            e2.a.o("SsaStyle", "Failed to parse boolean value: '" + str + "'", e);
+        } catch (NumberFormatException e7) {
+            e2.a.o("SsaStyle", "Failed to parse boolean value: '" + str + "'", e7);
             return false;
         }
     }
@@ -74,9 +74,9 @@ public final class d {
         try {
             long parseLong = str.startsWith("&H") ? Long.parseLong(str.substring(2), 16) : Long.parseLong(str);
             e2.d.b(parseLong <= 4294967295L);
-            return Integer.valueOf(Color.argb(z7.b(((parseLong >> 24) & 255) ^ 255), z7.b(parseLong & 255), z7.b((parseLong >> 8) & 255), z7.b((parseLong >> 16) & 255)));
-        } catch (IllegalArgumentException e) {
-            e2.a.o("SsaStyle", "Failed to parse color expression: '" + str + "'", e);
+            return Integer.valueOf(Color.argb(y7.b(((parseLong >> 24) & 255) ^ 255), y7.b(parseLong & 255), y7.b((parseLong >> 8) & 255), y7.b((parseLong >> 16) & 255)));
+        } catch (IllegalArgumentException e7) {
+            e2.a.o("SsaStyle", "Failed to parse color expression: '" + str + "'", e7);
             return null;
         }
     }

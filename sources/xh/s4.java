@@ -2,11 +2,11 @@ package xh;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class s4 implements org.telegram.ui.Cells.t0 {
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ org.telegram.ui.ActionBar.m2 O0() {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 O0() {
         return null;
     }
 
@@ -21,7 +21,7 @@ public final class s4 implements org.telegram.ui.Cells.t0 {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ boolean f() {
+    public final /* synthetic */ boolean g() {
         return true;
     }
 
@@ -35,7 +35,7 @@ public final class s4 implements org.telegram.ui.Cells.t0 {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ void Z(org.telegram.ui.Cells.w0 w0Var) {
+    public final /* synthetic */ void Y(org.telegram.ui.Cells.w0 w0Var) {
     }
 
     @Override // org.telegram.ui.Cells.t0
@@ -55,7 +55,7 @@ public final class s4 implements org.telegram.ui.Cells.t0 {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ void U(org.telegram.ui.Cells.w0 w0Var, int i10) {
+    public final /* synthetic */ void L(org.telegram.ui.Cells.w0 w0Var, int i10) {
     }
 
     @Override // org.telegram.ui.Cells.t0
@@ -67,7 +67,7 @@ public final class s4 implements org.telegram.ui.Cells.t0 {
     }
 
     @Override // org.telegram.ui.Cells.t0
-    public final /* synthetic */ void g0(org.telegram.ui.Cells.w0 w0Var, int i10, int i11) {
+    public final /* synthetic */ void d0(org.telegram.ui.Cells.w0 w0Var, int i10, int i11) {
     }
 
     @Override // org.telegram.ui.Cells.t0

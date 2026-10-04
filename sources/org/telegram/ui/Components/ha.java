@@ -5,35 +5,32 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class ha extends LinearLayout {
-    public final cw0 a;
+public abstract class ha extends FrameLayout {
+    public final lw0 a;
     public Paint b;
     public int c;
     public final boolean d;
     public final boolean e;
     public final Rect f;
 
-    public ha(Context context, cw0 cw0Var) {
+    public ha(Context context, lw0 lw0Var) {
         super(context);
         this.c = 0;
         this.d = true;
         this.e = true;
         this.f = new Rect();
-        this.a = cw0Var;
+        this.a = lw0Var;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
-        cw0 cw0Var;
-        if (!SharedConfig.chatBlurEnabled() || this.a == null || !this.e || this.c == 0) {
-            canvas2 = canvas;
-        } else {
+        if (SharedConfig.chatBlurEnabled() && this.a != null && this.e && this.c != 0) {
             if (this.b == null) {
                 this.b = new Paint();
             }
@@ -42,33 +39,40 @@ public final class ha extends LinearLayout {
             float f7 = 0.0f;
             View view = this;
             while (true) {
-                cw0Var = this.a;
-                if (view == cw0Var) {
+                lw0 lw0Var = this.a;
+                if (view == lw0Var) {
+                    canvas2 = canvas;
+                    lw0Var.J(canvas2, f7, this.f, this.b, this.d);
                     break;
                 }
                 f7 += view.getY();
-                view = (View) view.getParent();
+                Object parent = view.getParent();
+                if (!(parent instanceof View)) {
+                    super.dispatchDraw(canvas);
+                    return;
+                }
+                view = (View) parent;
             }
+        } else {
             canvas2 = canvas;
-            cw0Var.J(canvas2, f7, this.f, this.b, this.d);
         }
         super.dispatchDraw(canvas2);
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        cw0 cw0Var;
-        if (SharedConfig.chatBlurEnabled() && (cw0Var = this.a) != null) {
-            cw0Var.T.add(this);
+    public void onAttachedToWindow() {
+        lw0 lw0Var;
+        if (SharedConfig.chatBlurEnabled() && (lw0Var = this.a) != null) {
+            lw0Var.T.add(this);
         }
         super.onAttachedToWindow();
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        cw0 cw0Var = this.a;
-        if (cw0Var != null) {
-            cw0Var.T.remove(this);
+    public void onDetachedFromWindow() {
+        lw0 lw0Var = this.a;
+        if (lw0Var != null) {
+            lw0Var.T.remove(this);
         }
         super.onDetachedFromWindow();
     }
@@ -80,5 +84,13 @@ public final class ha extends LinearLayout {
         } else {
             this.c = i10;
         }
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        if (SharedConfig.chatBlurEnabled() && f7 != getTranslationY()) {
+            invalidate();
+        }
+        super.setTranslationY(f7);
     }
 }

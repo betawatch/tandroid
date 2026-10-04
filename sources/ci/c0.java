@@ -4,7 +4,7 @@ import android.view.TextureView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class c0 extends VideoPlayerHolderBase {
     public final /* synthetic */ int a;
@@ -34,9 +34,9 @@ public final class c0 extends VideoPlayerHolderBase {
                 d0Var.p.invalidate();
                 break;
             default:
-                rg.z1 z1Var = (rg.z1) this.b;
-                TextureView textureView = z1Var.J;
-                if (textureView != null && !z1Var.F) {
+                rg.b2 b2Var = (rg.b2) this.b;
+                TextureView textureView = b2Var.J;
+                if (textureView != null && !b2Var.F) {
                     textureView.setAlpha(0.0f);
                     textureView.animate().alpha(1.0f).setListener(new pg.d0(this, 5)).setDuration(200L);
                     break;
@@ -49,8 +49,8 @@ public final class c0 extends VideoPlayerHolderBase {
     public void onStateChanged(boolean z10, int i10) {
         switch (this.a) {
             case 1:
-                rg.z1 z1Var = (rg.z1) this.b;
-                c0 c0Var = z1Var.H;
+                rg.b2 b2Var = (rg.b2) this.b;
+                c0 c0Var = b2Var.H;
                 if (c0Var != null) {
                     if (i10 != 4) {
                         if (i10 == 1) {
@@ -59,7 +59,7 @@ public final class c0 extends VideoPlayerHolderBase {
                         }
                     } else {
                         c0Var.seekTo(0L);
-                        z1Var.H.play();
+                        b2Var.H.play();
                         break;
                     }
                 }

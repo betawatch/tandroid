@@ -13,12 +13,12 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.z5;
-import org.telegram.ui.a71;
+import org.telegram.ui.c71;
 import yh.r5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class p extends a71 {
+public final class p extends c71 {
     public boolean d2;
     public final /* synthetic */ q e2;
 
@@ -30,7 +30,7 @@ public final class p extends a71 {
         setDrawBackground(false);
     }
 
-    @Override // org.telegram.ui.a71, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.c71, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         if (this.d2) {
@@ -39,7 +39,7 @@ public final class p extends a71 {
         }
     }
 
-    @Override // org.telegram.ui.a71
+    @Override // org.telegram.ui.c71
     public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         q qVar = this.e2;
         int i10 = qVar.J;
@@ -49,9 +49,9 @@ public final class p extends a71 {
             arrayList.remove(l4);
             z5 z5Var = (z5) linkedHashMap.remove(l4);
             z5Var.setRemoved(new r5(5, this, z5Var));
-            qVar.W(z5Var);
+            qVar.U(z5Var);
             qVar.b.x(l4, true);
-            qVar.Y(false);
+            qVar.X(false);
             return;
         }
         if (linkedHashMap.size() - (linkedHashMap.containsKey(-1L) ? 1 : 0) >= i10) {
@@ -61,19 +61,19 @@ public final class p extends a71 {
         try {
             int editTextSelectionEnd = qVar.n.getEditTextSelectionEnd();
             SpannableString spannableString = new SpannableString("b");
-            z5 e = q0.e(document, l4, qVar.n.getFontMetricsInt());
-            e.cacheType = q5.g();
-            e.setAdded();
+            z5 e7 = q0.e(document, l4, qVar.n.getFontMetricsInt());
+            e7.cacheType = q5.g();
+            e7.setAdded();
             arrayList.add(w7.q.b(editTextSelectionEnd, 0, arrayList.size()), l4);
-            linkedHashMap.put(l4, e);
-            spannableString.setSpan(e, 0, spannableString.length(), 33);
+            linkedHashMap.put(l4, e7);
+            spannableString.setSpan(e7, 0, spannableString.length(), 33);
             qVar.n.getText().insert(editTextSelectionEnd, spannableString);
             qVar.n.setSelection(editTextSelectionEnd + spannableString.length());
             qVar.b.x(l4, true);
-            qVar.Y(true);
-            qVar.W(e);
-        } catch (Exception e7) {
-            FileLog.e(e7);
+            qVar.X(true);
+            qVar.U(e7);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 }

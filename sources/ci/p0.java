@@ -4,7 +4,7 @@ import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,9 +29,9 @@ public final /* synthetic */ class p0 implements Runnable {
                 break;
             case 1:
                 u0 u0Var2 = this.b;
-                l8 l8Var = u0Var2.r;
+                k8 k8Var = u0Var2.r;
                 File file = this.c;
-                l8Var.c(file);
+                k8Var.c(file);
                 if (u0Var2.c && u0Var2.r != null) {
                     AndroidUtilities.runOnUIThread(new p0(u0Var2, file, 2));
                     break;

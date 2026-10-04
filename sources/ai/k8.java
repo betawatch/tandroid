@@ -9,9 +9,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.zh0;
+import org.telegram.ui.di0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -20,11 +20,11 @@ public final /* synthetic */ class k8 implements RequestDelegate {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ k8(int i10, ci.d dVar, org.telegram.ui.ActionBar.e3 e3Var, long j3) {
+    public /* synthetic */ k8(int i10, ci.d dVar, org.telegram.ui.ActionBar.f3 f3Var, long j3) {
         this.a = 4;
         this.b = i10;
         this.d = dVar;
-        this.e = e3Var;
+        this.e = f3Var;
         this.c = j3;
     }
 
@@ -44,16 +44,16 @@ public final /* synthetic */ class k8 implements RequestDelegate {
                 ((MessagesController) this.d).lambda$checkPromoInfoInternal$167(this.b, (TLRPC.TL_help_promoData) this.e, this.c, tLObject, tL_error);
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new ei.p3(tLObject, this.b, (ci.d) this.d, (org.telegram.ui.ActionBar.e3) this.e, this.c, tL_error));
+                AndroidUtilities.runOnUIThread(new ei.q3(tLObject, this.b, (ci.d) this.d, (org.telegram.ui.ActionBar.f3) this.e, this.c, tL_error));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new ei.p3((zh0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e, 4));
+                AndroidUtilities.runOnUIThread(new ei.q3((di0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e, 4));
                 break;
             case 6:
                 AndroidUtilities.runOnUIThread(new m8((yh.o) this.d, (yh.n) this.e, this.b, tLObject, this.c));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.g7((ci.d) this.d, (org.telegram.ui.ActionBar.e3[]) this.e, this.b, this.c, 15));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.g7((ci.d) this.d, (org.telegram.ui.ActionBar.f3[]) this.e, this.b, this.c, 15));
                 break;
         }
     }
@@ -74,9 +74,9 @@ public final /* synthetic */ class k8 implements RequestDelegate {
         this.c = j3;
     }
 
-    public /* synthetic */ k8(zh0 zh0Var, long j3, int i10, TLRPC.Chat chat) {
+    public /* synthetic */ k8(di0 di0Var, long j3, int i10, TLRPC.Chat chat) {
         this.a = 5;
-        this.d = zh0Var;
+        this.d = di0Var;
         this.c = j3;
         this.b = i10;
         this.e = chat;

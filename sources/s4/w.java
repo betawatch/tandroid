@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class w extends GestureDetector.SimpleOnGestureListener {
     public boolean a = true;
@@ -32,9 +32,9 @@ public final class w extends GestureDetector.SimpleOnGestureListener {
                 return;
             }
             RecyclerView recyclerView = yVar.H;
-            int e = vVar.e(recyclerView, T);
+            int e7 = vVar.e(recyclerView, T);
             WeakHashMap weakHashMap = r0.i0.a;
-            if ((vVar.b(e, recyclerView.getLayoutDirection()) & 16711680) != 0) {
+            if ((vVar.b(e7, recyclerView.getLayoutDirection()) & 16711680) != 0) {
                 int pointerId = motionEvent.getPointerId(0);
                 int i10 = yVar.w;
                 if (pointerId == i10) {

@@ -1,249 +1,128 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.MediaDataController;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class wx0 implements org.telegram.ui.lt {
-    public final /* synthetic */ hy0 a;
+public final class wx0 extends Drawable {
+    public final int a;
+    public final int b;
+    public final q5[] c;
+    public final boolean e;
+    public int d = 255;
+    public final RectF f = new RectF();
+    public boolean g = false;
 
-    public wx0(hy0 hy0Var) {
-        this.a = hy0Var;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ MessageObject A() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ boolean B() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final boolean D() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ boolean E(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final void F(TLRPC.Document document) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        int i10;
-        hy0 hy0Var = this.a;
-        hy0Var.S.documents.remove(document);
-        boolean isEmpty = hy0Var.S.documents.isEmpty();
-        if (isEmpty) {
-            hy0Var.dismiss();
+    public wx0(int i10, ArrayList arrayList, boolean z10) {
+        this.e = z10;
+        int max = (int) Math.max(1.0d, Math.sqrt(arrayList.size()));
+        this.a = max;
+        int min = Math.min(max * max, arrayList.size());
+        this.b = min;
+        this.c = new q5[min];
+        if (!arrayList.isEmpty()) {
+            MessageObject.isAnimatedEmoji((TLRPC.Document) arrayList.get(0));
         }
-        hy0Var.d.l();
-        Context context = hy0Var.getContext();
-        d6Var = ((org.telegram.ui.ActionBar.e3) hy0Var).resourcesProvider;
-        org.telegram.ui.ActionBar.a2 a2Var = new org.telegram.ui.ActionBar.a2(context, 3, d6Var);
-        a2Var.q(350L);
-        TLRPC.TL_stickers_removeStickerFromSet tL_stickers_removeStickerFromSet = new TLRPC.TL_stickers_removeStickerFromSet();
-        tL_stickers_removeStickerFromSet.sticker = MediaDataController.getInputStickerSetItem(document, "").document;
-        i10 = ((org.telegram.ui.ActionBar.e3) hy0Var).currentAccount;
-        ConnectionsManager.getInstance(i10).sendRequest(tL_stickers_removeStickerFromSet, new ci.v1(this, isEmpty, a2Var, 3));
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ String G(boolean z10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final boolean I() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ boolean J() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ boolean N(TLRPC.Document document) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ Boolean P(TLRPC.Document document) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final boolean Q() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final long a() {
-        org.telegram.ui.ActionBar.m2 m2Var = this.a.L;
-        if (m2Var instanceof org.telegram.ui.wn) {
-            return ((org.telegram.ui.wn) m2Var).a();
+        int i11 = max < 2 ? 1 : 0;
+        for (int i12 = 0; i12 < this.b; i12++) {
+            this.c[i12] = q5.m(i10, i11, (TLRPC.Document) arrayList.get(i12));
         }
-        return 0L;
     }
 
-    @Override // org.telegram.ui.lt
+    public final void a(org.telegram.ui.Cells.u1 u1Var) {
+        for (int i10 = 0; i10 < this.b; i10++) {
+            this.c[i10].o(u1Var);
+        }
+    }
+
     public final boolean b() {
-        ey0 ey0Var = this.a.b0;
-        return ey0Var != null && ey0Var.b();
+        return this.g;
     }
 
-    @Override // org.telegram.ui.lt
-    public final boolean c() {
-        ey0 ey0Var = this.a.b0;
-        return ey0Var != null && ey0Var.c();
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ TLRPC.TL_messageMediaPoll d() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ boolean e(TLRPC.Document document) {
+    public final boolean c(ArrayList arrayList) {
+        q5[] q5VarArr = this.c;
+        if (q5VarArr.length == arrayList.size()) {
+            for (int i10 = 0; i10 < q5VarArr.length; i10++) {
+                TLRPC.Document document = q5VarArr[i10].e;
+                if ((document == null ? 0L : document.id) == ((TLRPC.Document) arrayList.get(i10)).id) {
+                }
+            }
+            return true;
+        }
         return false;
     }
 
-    @Override // org.telegram.ui.lt
-    public final boolean g() {
-        return this.a.X != null;
+    public final void d() {
+        this.g = false;
     }
 
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ TLRPC.PollAnswer h() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final boolean i() {
-        TLRPC.StickerSet stickerSet;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = this.a.S;
-        return tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null || !stickerSet.emojis;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ a80 j(ci.m6 m6Var) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final void k(SendMessagesHelper.ImportingSticker importingSticker) {
-        this.a.u0(importingSticker);
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ boolean l() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final boolean m(int i10) {
-        return this.a.b0 != null;
-    }
-
-    @Override // org.telegram.ui.lt
-    public final void n(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11) {
-        hy0 hy0Var = this.a;
-        ey0 ey0Var = hy0Var.b0;
-        if (ey0Var == null) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        q5 q5Var;
+        if (this.d <= 0) {
             return;
         }
-        ey0Var.d(document, str, obj, null, hy0Var.i0, z10, i10, 0);
-        hy0Var.dismiss();
+        Rect bounds = getBounds();
+        RectF rectF = this.f;
+        rectF.set(bounds);
+        float centerX = rectF.centerX() - (AndroidUtilities.dp(48.0f) / 2.0f);
+        float centerY = rectF.centerY() - (AndroidUtilities.dp(48.0f) / 2.0f);
+        int dp = AndroidUtilities.dp(48.0f);
+        int i10 = this.a;
+        float f7 = dp / i10;
+        float dp2 = AndroidUtilities.dp(48.0f) / i10;
+        canvas.save();
+        canvas.clipRect(centerX, centerY, AndroidUtilities.dp(48.0f) + centerX, AndroidUtilities.dp(48.0f) + centerY);
+        for (int i11 = 0; i11 < i10; i11++) {
+            for (int i12 = 0; i12 < i10; i12++) {
+                int i13 = (i11 * i10) + i12;
+                if (i13 >= 0) {
+                    q5[] q5VarArr = this.c;
+                    if (i13 < q5VarArr.length && (q5Var = q5VarArr[i13]) != null) {
+                        q5Var.setBounds((int) ((i12 * f7) + centerX), (int) ((i11 * dp2) + centerY), (int) (((i12 + 1) * f7) + centerX), (int) (((i11 + 1) * dp2) + centerY));
+                        q5VarArr[i13].setAlpha(this.d);
+                        q5VarArr[i13].setColorFilter(this.e ? org.telegram.ui.ActionBar.i6.w3 : org.telegram.ui.ActionBar.i6.v3);
+                        q5VarArr[i13].draw(canvas);
+                    }
+                }
+            }
+        }
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.lt
-    public final void p(TLRPC.Document document) {
-        hy0 hy0Var = this.a;
-        hy0.o0(hy0Var.L, hy0Var.S, document);
+    public final void e() {
+        this.g = true;
     }
 
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ boolean q() {
-        return false;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(48.0f);
     }
 
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ boolean y() {
-        return true;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(48.0f);
     }
 
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void C(TLRPC.Document document) {
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void H(TLRPC.Document document) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10;
     }
 
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void K() {
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void L() {
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void O(String str) {
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void o(String str) {
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void r(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void s() {
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void u() {
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void v(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void z(String str) {
-    }
-
-    @Override // org.telegram.ui.lt
-    public final void M(TLRPC.InputStickerSet inputStickerSet, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void w(TLRPC.StickerSet stickerSet, String str) {
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void x(TLObject tLObject, Object obj) {
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void f(CharSequence charSequence, String str, org.telegram.ui.bt btVar) {
-    }
-
-    @Override // org.telegram.ui.lt
-    public final /* synthetic */ void t(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

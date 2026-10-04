@@ -1,45 +1,45 @@
 package qg;
 
 import android.view.View;
-import ci.x7;
+import ci.y7;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.st0;
+import org.telegram.ui.vt0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n0 b;
+    public final /* synthetic */ m0 b;
 
-    public /* synthetic */ k(n0 n0Var, int i10) {
+    public /* synthetic */ k(m0 m0Var, int i10) {
         this.a = i10;
-        this.b = n0Var;
+        this.b = m0Var;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                n0 n0Var = this.b;
-                if (!n0Var.T0) {
-                    n0Var.C0(0);
+                m0 m0Var = this.b;
+                if (!m0Var.T0) {
+                    m0Var.C0(0);
                     break;
                 } else {
-                    n0Var.s0(null, true);
+                    m0Var.s0(null, true);
                     break;
                 }
             case 1:
-                n0 n0Var2 = this.b;
-                int i10 = n0Var2.g1;
-                n0Var2.C0(1);
-                n0Var2.postDelayed(new n(n0Var2, 1), 350L);
-                x xVar = new x(n0Var2.getContext(), n0Var2.Q1, false, false);
-                xVar.y = new q(n0Var2);
-                xVar.q0(new x7(n0Var2, 3));
-                xVar.setOnDismissListener(new s(n0Var2, i10));
-                xVar.show();
-                PhotoViewer photoViewer = ((st0) n0Var2).o2;
+                m0 m0Var2 = this.b;
+                int i10 = m0Var2.g1;
+                m0Var2.C0(1);
+                m0Var2.postDelayed(new n(m0Var2, 1), 350L);
+                w wVar = new w(m0Var2.getContext(), m0Var2.Q1, false, false);
+                wVar.y = new q(m0Var2);
+                wVar.q0(new y7(m0Var2, 3));
+                wVar.setOnDismissListener(new s(m0Var2, i10));
+                wVar.show();
+                PhotoViewer photoViewer = ((vt0) m0Var2).o2;
                 if (photoViewer.F2 != null) {
                     photoViewer.H2 = false;
                     photoViewer.u0();
@@ -48,30 +48,30 @@ public final /* synthetic */ class k implements View.OnClickListener {
                 }
                 break;
             case 2:
-                n0 n0Var3 = this.b;
-                j jVar = n0Var3.S0;
-                if ((jVar instanceof v2) && !n0Var3.T0) {
+                m0 m0Var3 = this.b;
+                j jVar = m0Var3.S0;
+                if ((jVar instanceof v2) && !m0Var3.T0) {
                     v2 v2Var = (v2) jVar;
-                    n0Var3.T0 = true;
+                    m0Var3.T0 = true;
                     v2Var.q();
                     View focusedView = v2Var.getFocusedView();
                     focusedView.requestFocus();
                     AndroidUtilities.showKeyboard(focusedView);
                 }
-                org.telegram.ui.ActionBar.m1 m1Var = n0Var3.R1;
-                if (m1Var != null && m1Var.isShowing()) {
-                    n0Var3.R1.d(true);
+                org.telegram.ui.ActionBar.n1 n1Var = m0Var3.R1;
+                if (n1Var != null && n1Var.isShowing()) {
+                    m0Var3.R1.d(true);
                     break;
                 }
                 break;
             case 3:
-                n0.b0(this.b);
+                m0.b0(this.b);
                 break;
             default:
-                n0 n0Var4 = this.b;
-                n0Var4.C0(2);
-                if (!(n0Var4.S0 instanceof v2)) {
-                    n0Var4.j0(true);
+                m0 m0Var4 = this.b;
+                m0Var4.C0(2);
+                if (!(m0Var4.S0 instanceof v2)) {
+                    m0Var4.j0(true);
                     break;
                 }
                 break;

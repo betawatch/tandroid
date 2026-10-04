@@ -16,15 +16,15 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class ShutterButton extends View {
     public Drawable a;
     public DecelerateInterpolator b;
     public Paint c;
     public Paint d;
-    public qv0 e;
-    public rv0 f;
+    public uv0 e;
+    public vv0 f;
     public boolean h;
     public float n;
     public long r;
@@ -47,23 +47,23 @@ public class ShutterButton extends View {
         animatorSet.start();
     }
 
-    public final void a(rv0 rv0Var) {
-        if (this.f != rv0Var) {
-            this.f = rv0Var;
+    public final void a(vv0 vv0Var) {
+        if (this.f != vv0Var) {
+            this.f = vv0Var;
             this.r = System.currentTimeMillis();
             this.s = 0L;
-            if (this.f != rv0.b) {
+            if (this.f != vv0.b) {
                 this.n = 0.0f;
             }
             invalidate();
         }
     }
 
-    public qv0 getDelegate() {
+    public uv0 getDelegate() {
         return this.e;
     }
 
-    public rv0 getState() {
+    public vv0 getState() {
         return this.f;
     }
 
@@ -88,7 +88,7 @@ public class ShutterButton extends View {
         float f7 = measuredWidth;
         float f10 = measuredHeight;
         canvas.drawCircle(f7, f10, AndroidUtilities.dp(26.0f), paint2);
-        if (this.f != rv0.b) {
+        if (this.f != vv0.b) {
             if (this.n != 0.0f) {
                 canvas.drawCircle(f7, f10, AndroidUtilities.dp(26.5f) * scaleX, paint);
                 return;
@@ -154,7 +154,7 @@ public class ShutterButton extends View {
             setHighlighted(false);
             AndroidUtilities.cancelRunOnUIThread(t6Var);
             if (this.v) {
-                ((tl) this.e).b();
+                ((ul) this.e).b();
             }
         } else if (action == 2) {
             if (x10 >= 0.0f && x10 <= getMeasuredWidth()) {
@@ -163,45 +163,45 @@ public class ShutterButton extends View {
             if (y3 >= 0.0f && y3 <= getMeasuredHeight()) {
                 y3 = 0.0f;
             }
-            tl tlVar = (tl) this.e;
-            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = tlVar.e;
-            s91 s91Var = chatAttachAlertPhotoLayout.l0;
-            org.telegram.ui.ActionBar.c3 c3Var = tlVar.d;
-            boolean z10 = c3Var.getWidth() < c3Var.getHeight();
+            ul ulVar = (ul) this.e;
+            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ulVar.e;
+            ba1 ba1Var = chatAttachAlertPhotoLayout.l0;
+            org.telegram.ui.ActionBar.d3 d3Var = ulVar.d;
+            boolean z10 = d3Var.getWidth() < d3Var.getHeight();
             float f7 = z10 ? x10 : y3;
             float f10 = z10 ? y3 : x10;
-            if (tlVar.b || Math.abs(f7) <= Math.abs(f10)) {
+            if (ulVar.b || Math.abs(f7) <= Math.abs(f10)) {
                 if (f10 < 0.0f) {
                     boolean z11 = ChatAttachAlertPhotoLayout.q1;
                     chatAttachAlertPhotoLayout.t0(true);
-                    s91Var.b((-f10) / AndroidUtilities.dp(200.0f), true);
-                    tlVar.b = true;
+                    ba1Var.b((-f10) / AndroidUtilities.dp(200.0f), true);
+                    ulVar.b = true;
                     return true;
                 }
-                if (tlVar.b) {
-                    s91Var.b(0.0f, true);
+                if (ulVar.b) {
+                    ba1Var.b(0.0f, true);
                 }
                 if (x10 == 0.0f && y3 == 0.0f) {
-                    tlVar.b = false;
+                    ulVar.b = false;
                 }
-                if (!tlVar.b) {
+                if (!ulVar.b) {
                     if (x10 == 0.0f) {
                     }
                     AndroidUtilities.cancelRunOnUIThread(t6Var);
-                    if (this.f == rv0.b) {
+                    if (this.f == vv0.b) {
                         this.v = false;
                         setHighlighted(false);
-                        tl tlVar2 = (tl) this.e;
-                        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = tlVar2.e;
-                        File file = tlVar2.a;
+                        ul ulVar2 = (ul) this.e;
+                        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ulVar2.e;
+                        File file = ulVar2.a;
                         if (file != null) {
                             file.delete();
-                            tlVar2.a = null;
+                            ulVar2.a = null;
                         }
                         boolean z12 = ChatAttachAlertPhotoLayout.q1;
                         chatAttachAlertPhotoLayout2.l0();
                         CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout2.P.getCameraSession(), true);
-                        a(rv0.a);
+                        a(vv0.a);
                         return true;
                     }
                 }
@@ -214,8 +214,8 @@ public class ShutterButton extends View {
         return true;
     }
 
-    public void setDelegate(qv0 qv0Var) {
-        this.e = qv0Var;
+    public void setDelegate(uv0 uv0Var) {
+        this.e = uv0Var;
     }
 
     @Override // android.view.View

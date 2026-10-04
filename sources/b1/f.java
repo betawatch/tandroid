@@ -11,7 +11,7 @@ import java.util.concurrent.Executor;
 import rd.l;
 import v0.i;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements l {
     public final /* synthetic */ int a;
@@ -30,9 +30,9 @@ public final /* synthetic */ class f implements l {
             case 0:
                 Executor executor = (Executor) this.b;
                 i iVar = (i) this.c;
-                w0.i e = (w0.i) obj;
-                kotlin.jvm.internal.i.e(e, "e");
-                executor.execute(new h(iVar, e, 1));
+                w0.i e7 = (w0.i) obj;
+                kotlin.jvm.internal.i.e(e7, "e");
+                executor.execute(new h(iVar, e7, 1));
                 return gd.i.a;
             case 1:
                 CancellationSignal cancellationSignal = (CancellationSignal) this.b;

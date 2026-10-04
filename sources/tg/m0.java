@@ -16,24 +16,25 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.e3;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.b7;
 import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Components.p90;
-import org.telegram.ui.Components.xl0;
-import rg.q1;
+import org.telegram.ui.Components.q90;
+import org.telegram.ui.Components.yl0;
+import qg.f2;
+import rg.s1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class m0 extends xl0 {
+public final class m0 extends yl0 {
     public final /* synthetic */ s0 c;
 
     public m0(s0 s0Var) {
         this.c = s0Var;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         return c1Var.f == 3;
     }
@@ -81,16 +82,16 @@ public final class m0 extends xl0 {
             r0 r0Var = (r0) view;
             s0Var.b0 = r0Var;
             TLRPC.Chat chat = s0Var.Z;
-            p90 p90Var = r0Var.e;
+            q90 q90Var = r0Var.e;
             try {
                 SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReassignBoostTextPluralWithLink", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, chat == null ? "" : chat.title, "%3$s"));
-                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("BoostingReassignBoostTextLink", R.string.BoostingReassignBoostTextLink), h6.gc, 2, new q1(s0Var, 9));
+                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("BoostingReassignBoostTextLink", R.string.BoostingReassignBoostTextLink), i6.gc, 2, new s1(s0Var, 9));
                 int indexOf = TextUtils.indexOf(replaceTags, "%3$s");
                 replaceTags.replace(indexOf, indexOf + 4, (CharSequence) replaceSingleTag);
-                p90Var.setText(replaceTags, TextView.BufferType.EDITABLE);
-                p90Var.post(new qg.v(r0Var, indexOf, 2));
-            } catch (Exception e) {
-                FileLog.e(e);
+                q90Var.setText(replaceTags, TextView.BufferType.EDITABLE);
+                q90Var.post(new f2(r0Var, indexOf, 1));
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         }
     }
@@ -106,13 +107,13 @@ public final class m0 extends xl0 {
             r0Var.a(s0Var.X, s0Var.Z);
             view = r0Var;
         } else if (i10 == 1) {
-            view = new b7(context, h6.w0(null, h6.a7, false), 0);
+            view = new b7(context, i6.w0(null, i6.a7, false), 0);
         } else if (i10 == 2) {
             view = new m4(context, 22);
         } else if (i10 != 3) {
             view = new View(context);
         } else {
-            d6Var = ((e3) s0Var).resourcesProvider;
+            d6Var = ((f3) s0Var).resourcesProvider;
             view = new xg.l(context, true, false, d6Var, true);
         }
         return e2.k(view, view, -1, -2);

@@ -1,40 +1,14 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class tz0 {
-    public static final tz0 e = new tz0(false, new qz0(TLObject.FLAG_31, -2147483647), wz0.R, 0.0f);
-    public final boolean a;
-    public final qz0 b;
-    public final iz0 c;
-    public final float d;
+    public final zz0 a;
+    public final b01 b;
+    public boolean c = true;
 
-    public tz0(boolean z10, qz0 qz0Var, iz0 iz0Var, float f7) {
-        this.a = z10;
-        this.b = qz0Var;
-        this.c = iz0Var;
-        this.d = f7;
-    }
-
-    public static iz0 a(tz0 tz0Var, boolean z10) {
-        iz0 iz0Var = tz0Var.c;
-        return iz0Var != wz0.R ? iz0Var : tz0Var.d == 0.0f ? z10 ? wz0.S : wz0.T : wz0.U;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || tz0.class != obj.getClass()) {
-            return false;
-        }
-        tz0 tz0Var = (tz0) obj;
-        return this.c.equals(tz0Var.c) && this.b.equals(tz0Var.b);
-    }
-
-    public final int hashCode() {
-        return this.c.hashCode() + (this.b.hashCode() * 31);
+    public tz0(zz0 zz0Var, b01 b01Var) {
+        this.a = zz0Var;
+        this.b = b01Var;
     }
 }

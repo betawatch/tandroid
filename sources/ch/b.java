@@ -7,16 +7,16 @@ import android.view.ViewOutlineProvider;
 import ci.i;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.k;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.bc0;
-import org.telegram.ui.Components.e60;
+import org.telegram.ui.Components.cc0;
+import org.telegram.ui.Components.f60;
 import org.telegram.ui.Components.voip.t2;
 import org.telegram.ui.Components.voip.v1;
-import org.telegram.ui.Components.wi;
+import org.telegram.ui.Components.xi;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class b extends ViewOutlineProvider {
     public final /* synthetic */ int a;
@@ -34,15 +34,15 @@ public final class b extends ViewOutlineProvider {
         Object obj = this.b;
         switch (i10) {
             case 0:
-                c cVar = ((d) obj).j;
-                d.h(outline, cVar.m, cVar.b);
+                c cVar = ((d) obj).l;
+                d.s(outline, cVar.m, cVar.b);
                 break;
             case 1:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) obj;
-                wi wiVar = chatAttachAlertPhotoLayout.b;
-                float f7 = wiVar.G0[1];
-                i iVar = wiVar.B2;
-                int min = (int) Math.min((wiVar.getContainerView().getTranslationY() + ((f7 - (iVar != null ? iVar.d() + AndroidUtilities.dp(16.0f) : 0.0f)) + chatAttachAlertPhotoLayout.W0)) - chatAttachAlertPhotoLayout.P.getTranslationY(), view.getMeasuredHeight());
+                xi xiVar = chatAttachAlertPhotoLayout.b;
+                float f7 = xiVar.G0[1];
+                i iVar = xiVar.B2;
+                int min = (int) Math.min((xiVar.getContainerView().getTranslationY() + ((f7 - (iVar != null ? iVar.d() + AndroidUtilities.dp(16.0f) : 0.0f)) + chatAttachAlertPhotoLayout.W0)) - chatAttachAlertPhotoLayout.P.getTranslationY(), view.getMeasuredHeight());
                 if (chatAttachAlertPhotoLayout.b0) {
                     min = view.getMeasuredHeight();
                 } else if (chatAttachAlertPhotoLayout.d0) {
@@ -69,11 +69,11 @@ public final class b extends ViewOutlineProvider {
                     break;
                 }
             case 2:
-                int i11 = ((e60) obj).S0;
+                int i11 = ((f60) obj).S0;
                 outline.setOval(0, 0, i11, i11);
                 break;
             case 3:
-                outline.setRoundRect(0, ((bc0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
+                outline.setRoundRect(0, ((cc0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
                 break;
             case 4:
                 v1 v1Var = (v1) obj;
@@ -104,7 +104,7 @@ public final class b extends ViewOutlineProvider {
                 }
             default:
                 int dp2 = AndroidUtilities.dp(12.0f);
-                kVar = ((m2) ((PremiumPreviewFragment) obj)).actionBar;
+                kVar = ((n2) ((PremiumPreviewFragment) obj)).actionBar;
                 outline.setRoundRect(dp2, AndroidUtilities.dp(12.0f) + kVar.getBottom(), view.getWidth() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f) + view.getMeasuredHeight(), AndroidUtilities.dp(16.0f));
                 break;
         }

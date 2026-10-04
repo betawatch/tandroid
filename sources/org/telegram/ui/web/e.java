@@ -12,9 +12,9 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import w7.y5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class e extends FrameLayout {
     public final ImageView a;
@@ -31,16 +31,16 @@ public final class e extends FrameLayout {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.menu_clear_recent);
-        addView(imageView, y5.d(32, 32.0f, 19, 10.0f, 8.0f, 8.0f, 8.0f));
+        addView(imageView, z5.d(32, 32.0f, 19, 10.0f, 8.0f, 8.0f, 8.0f));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 16.0f);
-        addView(textView, y5.d(-1, -2.0f, 19, 64.0f, 8.0f, 64.0f, 8.0f));
+        addView(textView, z5.d(-1, -2.0f, 19, 64.0f, 8.0f, 64.0f, 8.0f));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.menu_browser_arrowup);
-        addView(imageView2, y5.d(32, 32.0f, 21, 8.0f, 8.0f, 10.0f, 8.0f));
+        addView(imageView2, z5.d(32, 32.0f, 21, 8.0f, 8.0f, 10.0f, 8.0f));
     }
 
     @Override // android.view.View

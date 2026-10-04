@@ -26,13 +26,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.EmuDetector;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.voip.r0;
 import org.telegram.ui.Components.voip.x;
-import rg.w1;
-import yh.x7;
+import rg.y1;
+import yh.y7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class e extends TextureView implements TextureView.SurfaceTextureListener {
     public boolean E;
@@ -44,10 +44,10 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
     public int K;
     public final ArrayList L;
     public boolean M;
-    public w1 N;
+    public y1 N;
     public final int O;
     public volatile boolean P;
-    public volatile x7 Q;
+    public volatile y7 Q;
     public final GestureDetector R;
     public ValueAnimator S;
     public AnimatorSet T;
@@ -301,12 +301,12 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
         this.S.setDuration(600L);
         this.S.setInterpolator(new OvershootInterpolator());
         this.S.start();
-        w1 w1Var = this.N;
-        if (w1Var != null) {
+        y1 y1Var = this.N;
+        if (y1Var != null) {
             float abs = Math.abs(f12);
             float f13 = abs < 60.0f ? 5.0f : abs < 180.0f ? 9.0f : 15.0f;
             AnimatorSet animatorSet = new AnimatorSet();
-            r0 r0Var = new r0(w1Var, 17);
+            r0 r0Var = new r0(y1Var, 17);
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(1.0f, f13);
             ofFloat2.addUpdateListener(r0Var);
             ofFloat2.setDuration(600L);
@@ -360,7 +360,7 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
                     ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.b.g, f10);
                     ofFloat2.addUpdateListener(bVar2);
                     ofFloat2.setDuration(3000L);
-                    ofFloat2.setInterpolator(sr.h);
+                    ofFloat2.setInterpolator(tr.h);
                     ValueAnimator ofFloat3 = ValueAnimator.ofFloat(f10, 0.0f);
                     ofFloat3.addUpdateListener(bVar2);
                     ofFloat3.setDuration(1000L);
@@ -372,7 +372,7 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
                     ValueAnimator ofFloat4 = ValueAnimator.ofFloat(this.b.g, f11);
                     ofFloat4.addUpdateListener(bVar);
                     ofFloat4.setDuration(2300L);
-                    ofFloat4.setInterpolator(sr.h);
+                    ofFloat4.setInterpolator(tr.h);
                     ValueAnimator ofFloat5 = ValueAnimator.ofFloat(f11, 0.0f);
                     ofFloat5.addUpdateListener(bVar);
                     ofFloat5.setDuration(500L);
@@ -389,7 +389,7 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
                 ValueAnimator ofFloat6 = ValueAnimator.ofFloat(this.b.d, 360.0f);
                 ofFloat6.addUpdateListener(bVar2);
                 ofFloat6.setDuration(8000L);
-                ofFloat6.setInterpolator(sr.f);
+                ofFloat6.setInterpolator(tr.f);
                 this.T.playTogether(ofFloat6);
                 this.T.addListener(new d(this, 0));
                 this.T.start();
@@ -400,13 +400,13 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
                 ValueAnimator ofFloat7 = ValueAnimator.ofFloat(this.b.d, 180.0f);
                 ofFloat7.addUpdateListener(bVar2);
                 ofFloat7.setDuration(600L);
-                sr srVar = sr.f;
-                ofFloat7.setInterpolator(srVar);
+                tr trVar = tr.f;
+                ofFloat7.setInterpolator(trVar);
                 ValueAnimator ofFloat8 = ValueAnimator.ofFloat(180.0f, 360.0f);
                 ofFloat8.addUpdateListener(bVar2);
                 ofFloat8.setDuration(600L);
                 ofFloat8.setStartDelay(2000L);
-                ofFloat8.setInterpolator(srVar);
+                ofFloat8.setInterpolator(trVar);
                 this.T.playTogether(ofFloat7, ofFloat8);
                 this.T.addListener(new d(this, 2));
                 this.T.start();
@@ -416,12 +416,12 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
             ValueAnimator ofFloat9 = ValueAnimator.ofFloat(this.b.d, 184.0f);
             ofFloat9.addUpdateListener(bVar2);
             ofFloat9.setDuration(600L);
-            sr srVar2 = sr.g;
-            ofFloat9.setInterpolator(srVar2);
+            tr trVar2 = tr.g;
+            ofFloat9.setInterpolator(trVar2);
             ValueAnimator ofFloat10 = ValueAnimator.ofFloat(this.b.g, 50.0f);
             ofFloat10.addUpdateListener(bVar);
             ofFloat10.setDuration(600L);
-            ofFloat10.setInterpolator(srVar2);
+            ofFloat10.setInterpolator(trVar2);
             ValueAnimator ofFloat11 = ValueAnimator.ofFloat(180.0f, 0.0f);
             ofFloat11.addUpdateListener(bVar2);
             ofFloat11.setDuration(800L);
@@ -533,8 +533,8 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
         this.E = true;
     }
 
-    public void setStarParticlesView(w1 w1Var) {
-        this.N = w1Var;
+    public void setStarParticlesView(y1 y1Var) {
+        this.N = y1Var;
     }
 
     public void g() {

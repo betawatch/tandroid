@@ -1,104 +1,41 @@
 package org.telegram.ui;
 
-import android.app.Dialog;
-import android.text.TextUtils;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.Context;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class be0 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ ge0 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ TLObject f;
+public final class be0 extends cs {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ be0(ge0 ge0Var, TLRPC.TL_error tL_error, String str, String str2, TLObject tLObject) {
-        this.b = ge0Var;
-        this.c = tL_error;
-        this.d = str;
-        this.e = str2;
-        this.f = tLObject;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ be0(Object obj, Context context, int i10) {
+        super(context);
+        this.h = i10;
+        this.n = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        int i11 = this.a;
-        TLObject tLObject = this.f;
-        String str = this.e;
-        String str2 = this.d;
-        TLRPC.TL_error tL_error = this.c;
-        ge0 ge0Var = this.b;
-        switch (i11) {
+    @Override // org.telegram.ui.cs
+    public final void a() {
+        switch (this.h) {
             case 0:
-                ge0Var.getClass();
-                if (tL_error == null) {
-                    TL_account.Password password = (TL_account.Password) tLObject;
-                    ge0Var.s = password;
-                    TwoStepVerificationActivity.m0(password);
-                    ge0Var.o(str2, str);
-                    break;
-                }
+                ((ee0) this.n).h(null);
                 break;
-            default:
-                qg0 qg0Var = ge0Var.E;
-                int i12 = 1;
-                if (tL_error != null && ("SRP_ID_INVALID".equals(tL_error.text) || "NEW_SALT_INVALID".equals(tL_error.text))) {
-                    TL_account.getPassword getpassword = new TL_account.getPassword();
-                    i10 = ((org.telegram.ui.ActionBar.m2) qg0Var).currentAccount;
-                    ConnectionsManager.getInstance(i10).sendRequest(getpassword, new ee0(ge0Var, str2, str, i12), 8);
+            case 1:
+                ((ye0) this.n).h(null);
+                break;
+            case 2:
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.n;
+                if (passcodeActivity.E != 0) {
+                    passcodeActivity.g0();
                     break;
                 } else {
-                    qg0Var.k1(false, true);
-                    if (!(tLObject instanceof TLRPC.auth_Authorization)) {
-                        if (tL_error != null) {
-                            ge0Var.w = false;
-                            if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                                qg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
-                                break;
-                            } else {
-                                int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
-                                qg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
-                                break;
-                            }
-                        }
-                    } else {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(qg0Var.getParentActivity());
-                        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new ow(17, ge0Var, tLObject));
-                        boolean isEmpty = TextUtils.isEmpty(str2);
-                        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
-                        if (isEmpty) {
-                            a2Var.T = LocaleController.getString(R.string.YourPasswordReset);
-                        } else {
-                            a2Var.T = LocaleController.getString(R.string.YourPasswordChangedSuccessText);
-                        }
-                        a2Var.R = LocaleController.getString(R.string.TwoStepVerificationTitle);
-                        Dialog showDialog = qg0Var.showDialog(a2Var);
-                        if (showDialog != null) {
-                            showDialog.setCanceledOnTouchOutside(false);
-                            showDialog.setCancelable(false);
-                            break;
-                        }
-                    }
+                    postDelayed(new nl0(this, 0), 260L);
+                    break;
                 }
+            default:
+                ((bh1) this.n).C0();
                 break;
         }
-    }
-
-    public /* synthetic */ be0(ge0 ge0Var, TLRPC.TL_error tL_error, TLObject tLObject, String str, String str2) {
-        this.b = ge0Var;
-        this.c = tL_error;
-        this.f = tLObject;
-        this.d = str;
-        this.e = str2;
     }
 }

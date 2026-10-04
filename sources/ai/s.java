@@ -3,29 +3,29 @@ package ai;
 import android.content.Context;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.hx;
+import org.telegram.ui.jx;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class s extends org.telegram.ui.ActionBar.m {
     public final /* synthetic */ int d = 1;
     public final /* synthetic */ FrameLayout e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s(hx hxVar, Context context, com.google.firebase.messaging.m mVar) {
+    public s(jx jxVar, Context context, com.google.firebase.messaging.m mVar) {
         super(context, null, mVar);
-        this.e = hxVar;
+        this.e = jxVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.m, le.l
-    public final void c(le.m mVar) {
+    @Override // org.telegram.ui.ActionBar.m, le.k
+    public final void c(le.l lVar) {
         switch (this.d) {
             case 0:
-                super.c(mVar);
-                ((hx) this.e).invalidate();
+                super.c(lVar);
+                ((jx) this.e).invalidate();
                 break;
             default:
-                super.c(mVar);
+                super.c(lVar);
                 float totalVisibility = getTotalVisibility();
                 w5 w5Var = ((org.telegram.ui.ActionBar.k) this.e).F0;
                 if (w5Var != null) {

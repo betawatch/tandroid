@@ -3,15 +3,16 @@ package org.telegram.messenger.secretmedia;
 import android.net.Uri;
 import g2.c;
 import g2.c0;
+import g2.j;
 import g2.m;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Map;
 import org.telegram.messenger.FileLoader;
-import v7.j;
+import t8.b;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class EncryptedFileDataSource extends c {
     private int bytesRemaining;
@@ -19,7 +20,7 @@ public final class EncryptedFileDataSource extends c {
     private boolean opened;
     private Uri uri;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public static class EncryptedFileDataSourceException extends IOException {
         public EncryptedFileDataSourceException(Throwable th2) {
             super(th2);
@@ -34,8 +35,8 @@ public final class EncryptedFileDataSource extends c {
     public void close() {
         try {
             this.fileInputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException e7) {
+            e7.printStackTrace();
         }
         if (this.opened) {
             this.opened = false;
@@ -62,14 +63,14 @@ public final class EncryptedFileDataSource extends c {
         long j10 = mVar.e;
         this.uri = uri;
         File file = new File(mVar.a.getPath());
-        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(FileLoader.getInternalCacheDir(), j.t(file.getName(), ".key")));
+        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(FileLoader.getInternalCacheDir(), b.v(file.getName(), ".key")));
         this.fileInputStream = encryptedFileInputStream;
         encryptedFileInputStream.skip(j10);
         int length = (int) file.length();
         transferInitializing(mVar);
         long j11 = length;
         if (j10 > j11) {
-            throw new g2.j(2008);
+            throw new j(2008);
         }
         int i10 = (int) (j11 - j10);
         this.bytesRemaining = i10;
@@ -93,8 +94,8 @@ public final class EncryptedFileDataSource extends c {
         int min = Math.min(i11, i12);
         try {
             this.fileInputStream.read(bArr, i10, min);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException e7) {
+            e7.printStackTrace();
         }
         this.bytesRemaining -= min;
         bytesTransferred(min);

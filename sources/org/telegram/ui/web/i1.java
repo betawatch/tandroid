@@ -10,17 +10,17 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.SvgHelper;
-import org.telegram.ui.bt;
+import org.telegram.ui.ft;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class i1 extends AsyncTask {
     public final HashMap a = new HashMap();
-    public final bt b;
+    public final ft b;
     public Exception c;
 
-    public i1(bt btVar) {
-        this.b = btVar;
+    public i1(ft ftVar) {
+        this.b = ftVar;
     }
 
     @Override // android.os.AsyncTask
@@ -40,8 +40,8 @@ public final class i1 extends AsyncTask {
             }
             httpURLConnection.disconnect();
             return null;
-        } catch (Exception e) {
-            this.c = e;
+        } catch (Exception e7) {
+            this.c = e7;
             return null;
         }
     }
@@ -49,12 +49,12 @@ public final class i1 extends AsyncTask {
     @Override // android.os.AsyncTask
     public final void onPostExecute(Object obj) {
         Bitmap bitmap = (Bitmap) obj;
-        bt btVar = this.b;
-        if (btVar != null) {
+        ft ftVar = this.b;
+        if (ftVar != null) {
             if (this.c == null) {
-                btVar.run(bitmap);
+                ftVar.run(bitmap);
             } else {
-                btVar.run(null);
+                ftVar.run(null);
             }
         }
     }

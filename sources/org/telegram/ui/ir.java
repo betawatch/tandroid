@@ -1,16 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public interface ir {
-    void a(TLRPC.User user);
+public final class ir implements y60 {
+    public final /* synthetic */ d70 a;
+    public final /* synthetic */ rr b;
 
-    void b(long j3);
+    public ir(rr rrVar, d70 d70Var) {
+        this.b = rrVar;
+        this.a = d70Var;
+    }
 
-    void c(long j3, TLObject tLObject);
+    @Override // org.telegram.ui.y60
+    public final void c(TLRPC.User user) {
+        this.b.t0(user.id, null, null, null, "", true, 0, false);
+    }
 
-    void d(long j3);
+    @Override // org.telegram.ui.y60
+    public final void i(int i10, ArrayList arrayList) {
+        if (this.a.getParentActivity() == null) {
+            return;
+        }
+        rr rrVar = this.b;
+        rrVar.getMessagesController().addUsersToChat(rrVar.r, rrVar, arrayList, i10, new h3(this, 2), new hr(0), null);
+    }
 }

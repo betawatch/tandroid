@@ -1,59 +1,51 @@
 package ei;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class x2 extends AnimatorListenerAdapter {
+public final class x2 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ float b;
     public final /* synthetic */ float c;
-    public final /* synthetic */ k3 d;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ l3 f;
 
-    public x2(k3 k3Var, boolean z10, float f7, float f10) {
-        this.d = k3Var;
+    public x2(l3 l3Var, boolean z10, float f7, float f10, float f11, float f12) {
+        this.f = l3Var;
         this.a = z10;
         this.b = f7;
         this.c = f10;
+        this.d = f11;
+        this.e = f12;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        k3 k3Var = this.d;
-        b3 b3Var = k3Var.x;
-        h3 h3Var = k3Var.W;
-        a3 a3Var = k3Var.v;
-        k3Var.h0 = false;
-        boolean z10 = this.a;
-        if (z10) {
-            a3Var.setForceOffsetY(-AndroidUtilities.dp(24.0f));
-            a3Var.setTopActionBarOffsetY(-AndroidUtilities.dp(24.0f));
-            a3Var.setSwipeOffsetY(0.0f);
-        } else {
-            k3Var.D();
-            k3Var.G();
-            float dp = AndroidUtilities.dp(24.0f);
-            float f7 = this.b;
-            a3Var.setForceOffsetY(f7 - dp);
-            a3Var.setTopActionBarOffsetY(f7 - AndroidUtilities.dp(24.0f));
-            a3Var.setSwipeOffsetY(0.0f);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        l3 l3Var = this.f;
+        c3 c3Var = l3Var.x;
+        i3 i3Var = l3Var.W;
+        b3 b3Var = l3Var.v;
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        l3Var.g0 = floatValue;
+        if (!this.a) {
+            floatValue = 1.0f - floatValue;
         }
-        float f10 = z10 ? k3Var.g0 : 1.0f - k3Var.g0;
-        k3Var.f0 = f10;
-        h3Var.setAlpha(1.0f - f10);
-        h3Var.setTranslationY((-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) * k3Var.f0);
-        k3Var.m0.setAlpha(k3Var.f0);
-        if (z10) {
-            h3Var.setVisibility(8);
-        }
-        a3Var.setSwipeOffsetAnimationDisallowed(false);
-        a3Var.setTranslationX(AndroidUtilities.lerp(this.c, 0.0f, k3Var.g0));
-        k3Var.l0.setTranslationX(0.0f);
-        k3Var.e.invalidate();
-        b3Var.setViewPortHeightOffset(0.0f);
-        b3Var.o(true, true);
-        k3Var.C();
+        l3Var.f0 = floatValue;
+        i3Var.setAlpha(1.0f - floatValue);
+        i3Var.setTranslationY((-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) * l3Var.f0);
+        float f7 = this.b;
+        float f10 = l3Var.g0;
+        float f11 = this.c;
+        b3Var.setTranslationY(AndroidUtilities.lerp(f7, f11, f10));
+        b3Var.setTranslationX(AndroidUtilities.lerp(this.d, 0.0f, l3Var.g0));
+        l3Var.l0.setTranslationX(AndroidUtilities.lerp(this.e, 0.0f, l3Var.g0));
+        l3Var.m0.setAlpha(l3Var.f0);
+        l3Var.e.invalidate();
+        c3Var.setViewPortHeightOffset(b3Var.getTranslationY() - f11);
+        c3Var.o(false, false);
+        l3Var.C();
     }
 }

@@ -6,9 +6,9 @@ import java.lang.reflect.Modifier;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import v7.n8;
+import v7.m8;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class f implements v, Cloneable {
     public static final f c = new f();
@@ -25,14 +25,14 @@ public final class f implements v, Cloneable {
     public final f clone() {
         try {
             return (f) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError(e);
+        } catch (CloneNotSupportedException e7) {
+            throw new AssertionError(e7);
         }
     }
 
     public final boolean b(Class cls, boolean z10) {
         if (!z10 && !Enum.class.isAssignableFrom(cls)) {
-            n8 n8Var = ib.c.a;
+            m8 m8Var = ib.c.a;
             if (!Modifier.isStatic(cls.getModifiers()) && (cls.isAnonymousClass() || cls.isLocalClass())) {
                 return true;
             }

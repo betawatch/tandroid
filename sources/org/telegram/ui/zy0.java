@@ -1,33 +1,46 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zy0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cz0 b;
+public final class zy0 extends s4.j {
+    public int F = -1;
+    public final /* synthetic */ ProfileActivity G;
 
-    public /* synthetic */ zy0(cz0 cz0Var, int i10) {
-        this.a = i10;
-        this.b = cz0Var;
+    public zy0(ProfileActivity profileActivity) {
+        this.G = profileActivity;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
-                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
-                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
-                cz0 cz0Var = this.b;
-                cz0Var.c.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new zy0(cz0Var, 1));
-                break;
-            default:
-                this.b.c.getMessagesController().loadAppConfig();
-                break;
+    @Override // s4.j
+    public final long K(long j3, long j10, long j11) {
+        return 0L;
+    }
+
+    @Override // s4.j
+    public final void N() {
+        AndroidUtilities.runOnUIThread(new nl0(this, 29));
+    }
+
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.G.U4();
+    }
+
+    @Override // s4.j, s4.m0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.s.isEmpty();
+        boolean isEmpty4 = this.q.isEmpty();
+        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            ofFloat.addUpdateListener(new c3(this, 25));
+            ofFloat.setDuration(this.e);
+            ofFloat.start();
+            this.F = this.G.getNotificationCenter().setAnimationInProgress(this.F, null);
         }
+        super.m();
     }
 }

@@ -1,57 +1,81 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fr0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lv0 b;
+public final class fr0 extends View {
+    public Random a;
+    public Paint b;
+    public Paint c;
+    public Paint d;
+    public Paint e;
+    public float f;
+    public float h;
+    public float n;
 
-    public /* synthetic */ fr0(lv0 lv0Var, int i10) {
-        this.a = i10;
-        this.b = lv0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                lv0 lv0Var = this.b;
-                ms msVar = lv0Var.P0;
-                lv0Var.b2 = (int) msVar.c(AndroidUtilities.dp(14.0f));
-                bs0 bs0Var = lv0Var.V;
-                if (bs0Var != null) {
-                    bs0Var.setPaddingTop(AndroidUtilities.dp(48.0f) + ((int) msVar.c(AndroidUtilities.dp(7.0f))));
-                }
-                eu0[] eu0VarArr = lv0Var.k0;
-                if (eu0VarArr != null) {
-                    for (eu0 eu0Var : eu0VarArr) {
-                        if (eu0Var != null) {
-                            int paddingTop = eu0Var.h.getPaddingTop();
-                            ks0 ks0Var = eu0Var.h;
-                            int paddingLeft = ks0Var.getPaddingLeft();
-                            int Z = lv0Var.Z(eu0Var.F);
-                            int paddingRight = eu0Var.h.getPaddingRight();
-                            ks0 ks0Var2 = eu0Var.h;
-                            int Y = lv0Var.Y(lv0Var.v0());
-                            ks0Var2.e3 = Y;
-                            ks0Var.setPadding(paddingLeft, Z, paddingRight, Y);
-                            AndroidUtilities.doOnLayout(eu0Var.h, new ld(eu0Var, paddingTop - eu0Var.h.getPaddingTop(), 8));
-                        }
-                    }
-                    break;
-                }
-                break;
-            case 1:
-                lv0 lv0Var2 = this.b;
-                lv0Var2.b1(false);
-                lv0Var2.G.h(true);
-                lv0Var2.a1 = 0;
-                break;
-            default:
-                this.b.k0();
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.c;
+        Paint paint2 = this.b;
+        super.onDraw(canvas);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
+        float f7 = 3.0f;
+        int measuredWidth = (getMeasuredWidth() / 2) - AndroidUtilities.dp(3.0f);
+        int i10 = 7;
+        int dp = AndroidUtilities.dp(1.0f) + ((AndroidUtilities.dp(1.0f) + measuredWidth) * 7);
+        tr trVar = tr.g;
+        float f10 = this.f;
+        float interpolation = trVar.getInterpolation(f10 > 0.4f ? (f10 - 0.4f) / 0.6f : 0.0f);
+        float f11 = (this.n * interpolation) + ((1.0f - interpolation) * this.h);
+        canvas.save();
+        canvas.translate(0.0f, (-org.telegram.messenger.f0.A(4.0f, getMeasuredHeight(), dp)) * f11);
+        int i11 = 0;
+        while (i11 < i10) {
+            int dp2 = ((AndroidUtilities.dp(1.0f) + measuredWidth) * i11) + AndroidUtilities.dp(f7);
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f12 = dp2;
+            float f13 = dp2 + measuredWidth;
+            rectF.set(0.0f, f12, measuredWidth, f13);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint2);
+            rectF.set(AndroidUtilities.dp(1.0f) + measuredWidth, f12, org.telegram.messenger.f0.C(1.0f, measuredWidth, measuredWidth), f13);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint2);
+            i11++;
+            i10 = 7;
+            f7 = 3.0f;
         }
+        canvas.restore();
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(4.0f), this.d);
+        canvas.translate(0.0f, getMeasuredHeight() - AndroidUtilities.dp(4.0f));
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(4.0f), this.e);
+        canvas.restore();
+        float measuredHeight = ((getMeasuredHeight() - AndroidUtilities.dp(21.0f)) * f11) + AndroidUtilities.dp(3.0f);
+        RectF rectF2 = AndroidUtilities.rectTmp;
+        rectF2.set(getMeasuredWidth() - AndroidUtilities.dp(3.0f), measuredHeight, getMeasuredWidth(), AndroidUtilities.dp(15.0f) + measuredHeight);
+        canvas.drawRoundRect(rectF2, AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), paint);
+        float centerY = rectF2.centerY();
+        float dp3 = AndroidUtilities.dp(0.5f) + measuredWidth;
+        rectF2.set(dp3 - AndroidUtilities.dp(8.0f), centerY - AndroidUtilities.dp(3.0f), dp3 + AndroidUtilities.dp(8.0f), centerY + AndroidUtilities.dp(3.0f));
+        canvas.drawRoundRect(rectF2, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), paint);
+        float f14 = this.f + 0.016f;
+        this.f = f14;
+        if (f14 > 1.0f) {
+            this.h = this.n;
+            float f15 = org.telegram.ui.Cells.c1.f(this.a, 1001) / 1000.0f;
+            this.n = f15;
+            if (f15 > this.h) {
+                this.n = f15 + 0.3f;
+            } else {
+                this.n = f15 - 0.3f;
+            }
+            this.n = Math.max(0.0f, Math.min(1.0f, this.n));
+            this.f = 0.0f;
+        }
+        invalidate();
     }
 }

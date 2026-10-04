@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class aj0 extends Path {
     public final org.telegram.ui.Cells.u1 a;
@@ -25,7 +25,7 @@ public final class aj0 extends Path {
     public final byte[] g;
     public int h;
     public final Paint i;
-    public final wq j;
+    public final xq j;
     public final e6 k;
     public final ArrayList l;
     public final ArrayList m;
@@ -37,7 +37,7 @@ public final class aj0 extends Path {
     public aj0(final org.telegram.ui.Cells.u1 u1Var, int i10, int i11) {
         Paint paint = new Paint(1);
         this.i = paint;
-        this.j = new wq();
+        this.j = new xq();
         this.l = new ArrayList();
         this.m = new ArrayList();
         this.a = u1Var;
@@ -68,7 +68,7 @@ public final class aj0 extends Path {
                         break;
                 }
             }
-        }, 350L, 420L, sr.h);
+        }, 350L, 420L, tr.h);
         this.b = i10;
         int i13 = -i11;
         this.c = i13;
@@ -119,50 +119,50 @@ public final class aj0 extends Path {
         boolean z10 = this.f;
         Paint paint = this.i;
         org.telegram.ui.Cells.u1 u1Var = this.a;
-        wq wqVar = this.j;
+        xq xqVar = this.j;
         if (z10) {
             int lerp = AndroidUtilities.lerp(AndroidUtilities.dp(4.0f), 0, d);
             if (this.h != lerp) {
                 this.h = lerp;
                 paint.setPathEffect(new CornerPathEffect(lerp));
             }
-            wqVar.rewind();
+            xqVar.rewind();
             int I2 = u1Var.I2(this.g);
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(u1Var.getBackgroundDrawableLeft(), u1Var.H2(I2), u1Var.getBackgroundDrawableRight(), u1Var.G2(I2));
             AndroidUtilities.lerp(rect, rectF, d, rectF);
-            wqVar.addRect(rectF, Path.Direction.CW);
-            wqVar.a();
+            xqVar.addRect(rectF, Path.Direction.CW);
+            xqVar.a();
         } else if (this.e) {
             int lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(4.0f), 0, d);
             if (this.h != lerp2) {
                 this.h = lerp2;
                 paint.setPathEffect(new CornerPathEffect(lerp2));
             }
-            wqVar.rewind();
+            xqVar.rewind();
             int O2 = u1Var.O2(-this.c);
             RectF rectF2 = AndroidUtilities.rectTmp;
             rectF2.set(u1Var.getBackgroundDrawableLeft(), u1Var.H2(O2), u1Var.getBackgroundDrawableRight(), u1Var.G2(O2));
             AndroidUtilities.lerp(rect, rectF2, d, rectF2);
-            wqVar.addRect(rectF2, Path.Direction.CW);
-            wqVar.a();
+            xqVar.addRect(rectF2, Path.Direction.CW);
+            xqVar.a();
         } else {
             canvas.translate(f7, f10);
-            wqVar.rewind();
+            xqVar.rewind();
             while (true) {
                 ArrayList arrayList = this.l;
                 if (i10 >= arrayList.size()) {
                     break;
                 }
                 zi0 zi0Var = (zi0) arrayList.get(i10);
-                wqVar.addRect(AndroidUtilities.lerp(rect.left - f7, zi0Var.a, d), AndroidUtilities.lerp(zi0Var.e ? rect.top - f10 : zi0Var.g, zi0Var.c, d), AndroidUtilities.lerp(rect.right - f7, zi0Var.b, d), AndroidUtilities.lerp(zi0Var.f ? rect.bottom - f10 : zi0Var.h, zi0Var.d, d), Path.Direction.CW);
+                xqVar.addRect(AndroidUtilities.lerp(rect.left - f7, zi0Var.a, d), AndroidUtilities.lerp(zi0Var.e ? rect.top - f10 : zi0Var.g, zi0Var.c, d), AndroidUtilities.lerp(rect.right - f7, zi0Var.b, d), AndroidUtilities.lerp(zi0Var.f ? rect.bottom - f10 : zi0Var.h, zi0Var.d, d), Path.Direction.CW);
                 i10++;
             }
-            wqVar.a();
+            xqVar.a();
         }
         int alpha = paint.getAlpha();
         paint.setAlpha((int) (alpha * f11));
-        canvas.drawPath(wqVar, paint);
+        canvas.drawPath(xqVar, paint);
         paint.setAlpha(alpha);
         canvas.restore();
     }
@@ -170,7 +170,7 @@ public final class aj0 extends Path {
     public aj0(final org.telegram.ui.Cells.u1 u1Var, int i10, byte[] bArr) {
         Paint paint = new Paint(1);
         this.i = paint;
-        this.j = new wq();
+        this.j = new xq();
         this.l = new ArrayList();
         this.m = new ArrayList();
         this.a = u1Var;
@@ -201,7 +201,7 @@ public final class aj0 extends Path {
                         break;
                 }
             }
-        }, 350L, 420L, sr.h);
+        }, 350L, 420L, tr.h);
         this.b = i10;
         this.g = bArr;
         this.c = 0;
@@ -222,11 +222,11 @@ public final class aj0 extends Path {
         int i14 = i11;
         Paint paint = new Paint(1);
         this.i = paint;
-        this.j = new wq();
+        this.j = new xq();
         this.l = new ArrayList();
         this.m = new ArrayList();
         this.a = null;
-        this.k = new e6(0.0f, new dv(27, u1Var, viewParent), 350L, 420L, sr.h);
+        this.k = new e6(0.0f, new yw(25, u1Var, viewParent), 350L, 420L, tr.h);
         this.b = i10;
         this.c = i14;
         this.d = i12;
@@ -296,7 +296,7 @@ public final class aj0 extends Path {
         }
         if (this.l.size() > 0) {
             zi0 zi0Var = (zi0) this.l.get(0);
-            zi0 zi0Var2 = (zi0) hg.c.g(1, this.l);
+            zi0 zi0Var2 = (zi0) hg.k0.g(1, this.l);
             zi0Var.e = true;
             zi0Var.c -= AndroidUtilities.dp(0.66f);
             zi0Var2.f = true;

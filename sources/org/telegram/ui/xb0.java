@@ -1,18 +1,32 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class xb0 extends w21 {
-    public xb0(Bundle bundle) {
-        super(bundle);
+public final /* synthetic */ class xb0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dc0 b;
+
+    public /* synthetic */ xb0(dc0 dc0Var, int i10) {
+        this.a = i10;
+        this.b = dc0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        AndroidUtilities.runOnUIThread(new c10(this, 16));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                dc0 dc0Var = this.b;
+                if (dc0Var.h >= 0) {
+                    ConnectionsManager.getInstance(dc0Var.b).cancelRequest(dc0Var.h, true);
+                    dc0Var.h = -1;
+                    break;
+                }
+                break;
+            default:
+                this.b.a();
+                break;
+        }
     }
 }

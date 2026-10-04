@@ -30,29 +30,29 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.g5;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.bi0;
-import org.telegram.ui.Components.bs0;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.fs0;
+import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.zl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bt;
-import org.telegram.ui.wn;
+import org.telegram.ui.ft;
+import org.telegram.ui.yn;
 import xh.o2;
 import yh.b4;
 import yh.k5;
-import yh.o8;
+import yh.p8;
 import yh.s5;
 import yh.t5;
 import yh.x3;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -84,7 +84,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 ((e2.h) this.b).accept(this.c);
                 break;
             case 1:
-                ((u0) this.b).A((c3.b0) this.c);
+                ((v0) this.b).A((c3.b0) this.c);
                 break;
             case 2:
                 uf.c cVar = (uf.c) this.b;
@@ -188,18 +188,18 @@ public final /* synthetic */ class i0 implements Runnable {
                 wh.n nVar = (wh.n) this.b;
                 g5 g5Var = (g5) this.c;
                 int i19 = nVar.k;
-                m2 m2Var = nVar.g;
+                n2 n2Var = nVar.g;
                 TLRPC.TL_chatInviteImporter importer = g5Var.getImporter();
                 nVar.r = importer;
                 LongSparseArray longSparseArray = nVar.d;
                 TLRPC.User user = (TLRPC.User) longSparseArray.get(importer.user_id);
                 if (user != null) {
-                    m2Var.getMessagesController().putUser(user, false);
+                    n2Var.getMessagesController().putUser(user, false);
                     Point point = AndroidUtilities.displaySize;
                     boolean z10 = point.x > point.y;
                     if (user.photo != null && !z10) {
                         if (nVar.s == null) {
-                            wh.m mVar = new wh.m(nVar, m2Var.getParentActivity(), (yl0) g5Var.getParent(), m2Var.getResourceProvider(), nVar.a);
+                            wh.m mVar = new wh.m(nVar, n2Var.getParentActivity(), (zl0) g5Var.getParent(), n2Var.getResourceProvider(), nVar.a);
                             nVar.s = mVar;
                             TLRPC.TL_chatInviteImporter tL_chatInviteImporter = nVar.r;
                             w9 avatarImageView = g5Var.getAvatarImageView();
@@ -226,12 +226,12 @@ public final /* synthetic */ class i0 implements Runnable {
                         }
                     } else {
                         nVar.b = true;
-                        m2Var.dismissCurrentDialog();
+                        n2Var.dismissCurrentDialog();
                         Bundle bundle = new Bundle();
                         ProfileActivity profileActivity = new ProfileActivity(bundle, null);
                         bundle.putLong("user_id", user.id);
                         bundle.putBoolean("removeFragmentOnChatOpen", false);
-                        m2Var.presentFragment(profileActivity);
+                        n2Var.presentFragment(profileActivity);
                         break;
                     }
                 }
@@ -246,18 +246,18 @@ public final /* synthetic */ class i0 implements Runnable {
                 ((xh.c1) this.b).getBulletinFactory().d0((TLRPC.TL_error) this.c, false);
                 break;
             case 11:
-                xh.j1 j1Var = (xh.j1) this.b;
+                xh.i1 i1Var = (xh.i1) this.b;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
-                j1Var.getClass();
+                i1Var.getClass();
                 if (!savedStarGift.unsaved) {
-                    j1Var.F.setVisibility(8);
+                    i1Var.F.setVisibility(8);
                     break;
                 }
                 break;
             case 12:
-                bs0 bs0Var = (bs0) this.b;
+                fs0 fs0Var = (fs0) this.b;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.c;
-                bs0Var.h(tL_starGiftCollection.title, new bt(24, bs0Var, tL_starGiftCollection));
+                fs0Var.h(tL_starGiftCollection.title, new ft(24, fs0Var, tL_starGiftCollection));
                 break;
             case 13:
                 o2 o2Var = (o2) this.b;
@@ -318,7 +318,7 @@ public final /* synthetic */ class i0 implements Runnable {
                     x3Var.w1();
                     break;
                 } else {
-                    qc Q = x3Var.getBulletinFactory().Q(R.raw.error, 36, LocaleController.formatString(R.string.UnknownErrorCode, "NO_BALANCE"));
+                    rc Q = x3Var.getBulletinFactory().Q(R.raw.error, 36, LocaleController.formatString(R.string.UnknownErrorCode, "NO_BALANCE"));
                     Q.t = true;
                     Q.j();
                     break;
@@ -344,7 +344,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 break;
             case 22:
                 x3 x3Var4 = (x3) this.b;
-                yc.a0((wn) this.c).K(R.raw.gift, LocaleController.getString(R.string.StarsGiftUpgradeCompleted), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StarsGiftUpgradeCompletedText, DialogObject.getShortName(x3Var4.X))), LocaleController.getString(R.string.StarsGiftUpgradeCompletedMoreButton), new yh.b1(x3Var4, i13)).k(true);
+                yc.a0((yn) this.c).K(R.raw.gift, LocaleController.getString(R.string.StarsGiftUpgradeCompleted), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StarsGiftUpgradeCompletedText, DialogObject.getShortName(x3Var4.X))), LocaleController.getString(R.string.StarsGiftUpgradeCompletedMoreButton), new yh.b1(x3Var4, i13)).k(true);
                 break;
             case 23:
                 ((x3) this.b).n2((CharSequence) this.c);
@@ -353,10 +353,10 @@ public final /* synthetic */ class i0 implements Runnable {
                 x3.I0((x3) this.b, (TL_stars.TL_payments_uniqueStarGift) this.c);
                 break;
             case 25:
-                a2 a2Var = (a2) this.b;
+                b2 b2Var = (b2) this.b;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.c;
-                a2Var.dismiss();
-                m2 U = LaunchActivity.U();
+                b2Var.dismiss();
+                n2 U = LaunchActivity.U();
                 if (U != null) {
                     if (tL_error2 == null || !"STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error2.text)) {
                         a02 = yc.a0(U);
@@ -373,7 +373,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 break;
             case 26:
                 b4 b4Var = (b4) this.b;
-                wn wnVar = (wn) this.c;
+                yn ynVar = (yn) this.c;
                 org.telegram.ui.Cells.a0 a0Var = b4Var.b;
                 if (a0Var != null) {
                     try {
@@ -402,13 +402,13 @@ public final /* synthetic */ class i0 implements Runnable {
                     if (s5Var != null) {
                         s5Var.b();
                     }
-                    TLRPC.ChatFull chatFull = wnVar.Z7;
-                    o8 o8Var = new o8(b4Var.getContext(), wnVar.getCurrentAccount(), wnVar.a(), wnVar, messageObject2, arrayList7, chatFull == null || chatFull.paid_reactions_available, false, 0L, wnVar.getResourceProvider());
+                    TLRPC.ChatFull chatFull = ynVar.X7;
+                    p8 p8Var = new p8(b4Var.getContext(), ynVar.getCurrentAccount(), ynVar.a(), ynVar, messageObject2, arrayList7, chatFull == null || chatFull.paid_reactions_available, false, 0L, ynVar.getResourceProvider());
                     messageObject2.getId();
                     org.telegram.ui.Cells.a0 a0Var3 = b4Var.b;
-                    o8Var.T = wnVar;
-                    o8Var.U = a0Var3;
-                    o8Var.show();
+                    p8Var.T = ynVar;
+                    p8Var.U = a0Var3;
+                    p8Var.show();
                     break;
                 }
                 break;

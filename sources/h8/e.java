@@ -9,11 +9,11 @@ import android.util.Log;
 import java.util.ArrayList;
 import n6.l;
 import org.telegram.messenger.BuildConfig;
-import v7.d9;
-import v7.k8;
-import v7.y7;
+import v7.c9;
+import v7.j8;
+import v7.x7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class e {
     public static boolean a = false;
@@ -44,15 +44,15 @@ public abstract class e {
                     return 0;
                 }
                 try {
-                    i8.e a2 = k8.a(context);
+                    i8.e a2 = j8.a(context);
                     try {
                         i8.a W0 = a2.W0();
                         l.h(W0);
-                        y7.a = W0;
+                        x7.a = W0;
                         s7.e Y0 = a2.Y0();
-                        if (d9.b == null) {
+                        if (c9.b == null) {
                             l.i(Y0, "delegate must not be null");
-                            d9.b = Y0;
+                            c9.b = Y0;
                         }
                         a = true;
                         try {
@@ -67,17 +67,17 @@ public abstract class e {
                             s7.b.c(O0, bVar);
                             O0.writeInt(0);
                             a2.S0(O0, 10);
-                        } catch (RemoteException e) {
-                            Log.e("e", "Failed to retrieve renderer type or log initialization.", e);
+                        } catch (RemoteException e7) {
+                            Log.e("e", "Failed to retrieve renderer type or log initialization.", e7);
                         }
                         int i10 = b;
                         Log.d("e", "loadedRenderer: ".concat(i10 != 1 ? i10 != 2 ? BuildConfig.BETA_URL : "LATEST" : "LEGACY"));
                         return 0;
-                    } catch (RemoteException e7) {
-                        throw new androidx.car.app.j(e7);
+                    } catch (RemoteException e10) {
+                        throw new androidx.car.app.j(e10);
                     }
-                } catch (k6.f e10) {
-                    return e10.a;
+                } catch (k6.f e11) {
+                    return e11.a;
                 }
             } catch (Throwable th2) {
                 throw th2;

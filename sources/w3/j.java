@@ -1,11 +1,21 @@
 package w3;
 
-import c3.f0;
+import c3.h0;
+import c3.i0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class j implements f0 {
-    public static final j a = new j();
-    public static final j b = new j();
-    public static final j c = new j();
+public final class j {
+    public final o a;
+    public final r b;
+    public final h0 c;
+    public final i0 d;
+    public int e;
+
+    public j(o oVar, r rVar, h0 h0Var) {
+        this.a = oVar;
+        this.b = rVar;
+        this.c = h0Var;
+        this.d = "audio/true-hd".equals(oVar.g.r) ? new i0() : null;
+    }
 }

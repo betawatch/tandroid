@@ -8,7 +8,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ListAdapter;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class m0 extends d2 implements o0 {
     public CharSequence S;
@@ -34,7 +34,7 @@ public final class m0 extends d2 implements o0 {
     }
 
     @Override // m.o0
-    public final void g(CharSequence charSequence) {
+    public final void h(CharSequence charSequence) {
         this.S = charSequence;
     }
 
@@ -48,9 +48,9 @@ public final class m0 extends d2 implements o0 {
         ViewTreeObserver viewTreeObserver;
         x xVar = this.O;
         boolean isShowing = xVar.isShowing();
-        r();
+        q();
         xVar.setInputMethodMode(2);
-        h();
+        g();
         r1 r1Var = this.c;
         r1Var.setChoiceMode(1);
         g0.d(r1Var, i10);
@@ -79,7 +79,7 @@ public final class m0 extends d2 implements o0 {
         this.T = (j0) listAdapter;
     }
 
-    public final void r() {
+    public final void q() {
         int i10;
         p0 p0Var = this.W;
         Rect rect = p0Var.n;
@@ -103,11 +103,11 @@ public final class m0 extends d2 implements o0 {
             if (a2 > i12) {
                 a2 = i12;
             }
-            q(Math.max(a2, (width - paddingLeft) - paddingRight));
+            p(Math.max(a2, (width - paddingLeft) - paddingRight));
         } else if (i11 == -1) {
-            q((width - paddingLeft) - paddingRight);
+            p((width - paddingLeft) - paddingRight);
         } else {
-            q(i11);
+            p(i11);
         }
         this.f = s3.a(p0Var) ? (((width - paddingRight) - this.e) - this.V) + i10 : paddingLeft + this.V + i10;
     }

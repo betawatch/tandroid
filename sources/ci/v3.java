@@ -11,11 +11,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public abstract class v3 extends xl0 {
+public abstract class v3 extends yl0 {
     public boolean d;
     public String f;
     public String h;
@@ -31,7 +31,7 @@ public abstract class v3 extends xl0 {
         this.w = w3Var;
     }
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         return true;
     }

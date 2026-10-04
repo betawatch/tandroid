@@ -1,35 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class gi extends vg {
-    public final /* synthetic */ wi l0;
+public final class gi implements sj {
+    public final /* synthetic */ xi a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gi(int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, wi wiVar) {
-        super(i10, context, d6Var, false);
-        this.l0 = wiVar;
+    public gi(xi xiVar) {
+        this.a = xiVar;
     }
 
-    @Override // org.telegram.ui.Components.vg
-    public final boolean d() {
-        return false;
+    @Override // org.telegram.ui.Components.sj
+    public final void a(TLRPC.User user, boolean z10, int i10, long j3) {
+        org.telegram.ui.yn ynVar = (org.telegram.ui.yn) this.a.f0;
+        if (ynVar.f7()) {
+            SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(user, ynVar.R5, ynVar.l5, ynVar.V3, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, z10, i10, 0);
+            of2.sendMessageChatArguments = ynVar.D8();
+            of2.effect_id = 0L;
+            of2.invert_media = false;
+            of2.payStars = j3;
+            of2.monoForumPeer = ynVar.O8();
+            of2.suggestionParams = ynVar.e5;
+            ynVar.getSendMessagesHelper().sendMessage(of2);
+            ynVar.y6();
+        }
     }
 
-    @Override // org.telegram.ui.Components.vg
-    public final boolean e() {
-        return !this.l0.U0;
-    }
-
-    @Override // org.telegram.ui.Components.vg
-    public final boolean f() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.vg
-    public final int getFillColor() {
-        return this.l0.getThemedColor(org.telegram.ui.ActionBar.h6.S5);
+    @Override // org.telegram.ui.Components.sj
+    public final void b(ArrayList arrayList, String str, boolean z10, int i10, long j3, boolean z11) {
+        ((org.telegram.ui.yn) this.a.f0).cb(arrayList, str, z10, i10, j3, z11);
     }
 }

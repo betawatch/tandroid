@@ -1,56 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.util.SparseArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class u51 extends MetricAffectingSpan {
-    public Typeface a;
-    public int b;
-    public int c;
+public final class u51 extends g.p {
+    public final /* synthetic */ c61 c;
 
-    public u51(Typeface typeface) {
-        this.c = -1;
-        this.a = typeface;
+    public u51(c61 c61Var) {
+        this.c = c61Var;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int i10 = this.c;
-        if (i10 >= 0) {
-            this.b = org.telegram.ui.ActionBar.h6.w0(null, i10, false);
+    @Override // g.p
+    public final int i(int i10) {
+        c61 c61Var = this.c;
+        s4.h0 adapter = c61Var.n.getAdapter();
+        b61 b61Var = c61Var.s;
+        if (adapter == b61Var) {
+            if ((b61Var.d.get(i10) instanceof Integer) || i10 >= b61Var.w) {
+                return b61Var.v;
+            }
+            return 1;
         }
-        Typeface typeface = this.a;
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
+        gg.g2 g2Var = c61Var.v;
+        SparseArray sparseArray = g2Var.s;
+        if (i10 == g2Var.y || !(sparseArray.get(i10) == null || (sparseArray.get(i10) instanceof TLRPC.Document))) {
+            return g2Var.e.a();
         }
-        int i11 = this.b;
-        if (i11 != 0) {
-            textPaint.setColor(i11);
-        }
-        textPaint.setFlags(textPaint.getFlags() | 128);
-    }
-
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        Typeface typeface = this.a;
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        textPaint.setFlags(textPaint.getFlags() | 128);
-    }
-
-    public u51() {
-        Typeface typeface = Typeface.DEFAULT;
-        this.c = -1;
-        this.a = typeface;
-    }
-
-    public u51(Typeface typeface, int i10) {
-        this.c = -1;
-        this.a = typeface;
-        this.b = i10;
+        return 1;
     }
 }

@@ -1,41 +1,28 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.graphics.Canvas;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public class nz0 {
-    public int a;
-    public int b;
-    public int c;
+public final class nz0 extends gd0 {
+    public final /* synthetic */ oz0 w0;
 
-    public nz0() {
-        c();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nz0(oz0 oz0Var, Context context) {
+        super(context, 13, null);
+        this.w0 = oz0Var;
     }
 
-    public int a(wz0 wz0Var, pz0 pz0Var, iz0 iz0Var, int i10, boolean z10) {
-        return this.a - iz0Var.a(pz0Var, i10);
-    }
-
-    public void b(int i10, int i11) {
-        this.a = Math.max(this.a, i10);
-        this.b = Math.max(this.b, i11);
-    }
-
-    public void c() {
-        this.a = TLObject.FLAG_31;
-        this.b = TLObject.FLAG_31;
-        this.c = 2;
-    }
-
-    public int d(boolean z10) {
-        if (!z10) {
-            int i10 = this.c;
-            iz0 iz0Var = wz0.R;
-            if ((i10 & 2) != 0) {
-                return 100000;
-            }
-        }
-        return this.a + this.b;
+    @Override // org.telegram.ui.Components.gd0, android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float dp = AndroidUtilities.dp(31.0f);
+        oz0 oz0Var = this.w0;
+        oz0Var.d.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.h7, false));
+        canvas.drawLine(AndroidUtilities.dp(2.0f), dp, getMeasuredWidth() - AndroidUtilities.dp(2.0f), dp, oz0Var.d);
+        float measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(31.0f);
+        canvas.drawLine(AndroidUtilities.dp(2.0f), measuredHeight, getMeasuredWidth() - AndroidUtilities.dp(2.0f), measuredHeight, oz0Var.d);
     }
 }

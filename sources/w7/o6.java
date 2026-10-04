@@ -1,11 +1,16 @@
 package w7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.opengl.GLES20;
+import android.opengl.GLUtils;
+import android.util.Log;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class o6 {
-    public static void a(Object obj, String str) {
-        if (obj == null) {
-            throw new NullPointerException(str);
+    public static void a() {
+        int glGetError = GLES20.glGetError();
+        if (glGetError != 0) {
+            Log.d("Paint", GLUtils.getEGLErrorString(glGetError));
         }
     }
 }

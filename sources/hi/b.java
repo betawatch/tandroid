@@ -17,21 +17,20 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.i6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.j6;
-import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.zl0;
 import s4.p0;
-import w7.y5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class b extends bb {
-    public l61 X;
+public final class b extends cb {
+    public u61 X;
     public boolean Y;
     public final FrameLayout Z;
     public final boolean a0;
@@ -48,12 +47,12 @@ public final class b extends bb {
         this.L = false;
         this.K = AndroidUtilities.dp(12.0f);
         this.e.setTitle(y());
-        setBackgroundColor(h6.v0(h6.a7, this.resourcesProvider));
+        setBackgroundColor(i6.v0(i6.a7, this.resourcesProvider));
         FrameLayout frameLayout = new FrameLayout(context);
         this.Z = frameLayout;
         frameLayout.setPadding(0, AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f));
         frameLayout.setLayoutParams(new p0(-1, -2));
-        i6 i6Var = new i6(context, null);
+        org.telegram.ui.Cells.i6 i6Var = new org.telegram.ui.Cells.i6(context, null);
         if (chat2 != null) {
             i10 = -1;
             i6Var.t(chat2, null, chat2.title, LocaleController.formatPluralStringSpaced("Members", chat2.participants_count), false, false);
@@ -63,11 +62,11 @@ public final class b extends bb {
                 i6Var.t(user, null, DialogObject.getName(user), LocaleController.getString(R.string.Bot), false, false);
             }
         }
-        frameLayout.addView(i6Var, y5.c(-2.0f, i10));
-        yl0 yl0Var = this.d;
+        frameLayout.addView(i6Var, z5.c(-2.0f, i10));
+        zl0 zl0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
-        yl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
-        this.d.p1();
+        zl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
+        this.d.s1();
         this.d.setClipToPadding(false);
         this.d.setOnItemClickListener(new g(this, 12));
         d dVar = new d(context, this.resourcesProvider, true);
@@ -78,11 +77,11 @@ public final class b extends bb {
         }
         dVar.e();
         dVar.setOnClickListener(new d0(this, callback, chat, 9));
-        this.containerView.addView(dVar, y5.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
+        this.containerView.addView(dVar, z5.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
         this.X.N(false);
     }
 
-    public final void P(Utilities.Callback callback, boolean z10, boolean z11) {
+    public final void N(Utilities.Callback callback, boolean z10, boolean z11) {
         if (z11 && !z10 && !this.b0) {
             e5.P(getContext(), this.resourcesProvider, LocaleController.getString(R.string.CommunityAddToCommunityTitle), LocaleController.getString(this.a0 ? R.string.CommunityAddToCommunityChannelMessage : R.string.CommunityAddToCommunityGroupMessage), LocaleController.getString(R.string.Add), new y0(this, callback, z10, 3)).show();
         } else {
@@ -91,24 +90,24 @@ public final class b extends bb {
         }
     }
 
-    public final void Q(boolean z10) {
+    public final void O(boolean z10) {
         boolean z11;
         if (this.Y == z10) {
             return;
         }
         this.Y = z10;
         int i10 = this.c0 + 1;
-        yl0 yl0Var = this.d;
-        View U0 = yl0Var.U0(i10);
-        if (U0 instanceof j6) {
-            ((j6) U0).a(!z10);
+        zl0 zl0Var = this.d;
+        View V0 = zl0Var.V0(i10);
+        if (V0 instanceof j6) {
+            ((j6) V0).a(!z10);
             z11 = false;
         } else {
             z11 = true;
         }
-        View U02 = yl0Var.U0(this.c0 + 2);
-        if (U02 instanceof j6) {
-            ((j6) U02).a(z10);
+        View V02 = zl0Var.V0(this.c0 + 2);
+        if (V02 instanceof j6) {
+            ((j6) V02).a(z10);
         } else {
             z11 = true;
         }
@@ -117,15 +116,15 @@ public final class b extends bb {
         }
     }
 
-    @Override // org.telegram.ui.Components.bb
-    public final xl0 v(yl0 yl0Var) {
-        l61 l61Var = new l61(this.d, getContext(), this.currentAccount, 0, false, new a(this, 0), this.resourcesProvider);
-        this.X = l61Var;
-        l61Var.r = false;
-        return l61Var;
+    @Override // org.telegram.ui.Components.cb
+    public final yl0 v(zl0 zl0Var) {
+        u61 u61Var = new u61(this.d, getContext(), this.currentAccount, 0, false, new a(this, 0), this.resourcesProvider);
+        this.X = u61Var;
+        u61Var.r = false;
+        return u61Var;
     }
 
-    @Override // org.telegram.ui.Components.bb
+    @Override // org.telegram.ui.Components.cb
     public final CharSequence y() {
         return LocaleController.getString(this.b0 ? R.string.CommunityAddBotTitle : R.string.CommunityAddChatTitle);
     }

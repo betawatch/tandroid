@@ -4,7 +4,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jc implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -15,11 +15,11 @@ public final /* synthetic */ class jc implements Utilities.Callback {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
 
-    public /* synthetic */ jc(MessagesController messagesController, nf.e eVar, org.telegram.ui.ActionBar.a2[] a2VarArr, org.telegram.ui.ActionBar.m2 m2Var, boolean[] zArr, int i10) {
+    public /* synthetic */ jc(MessagesController messagesController, nf.e eVar, org.telegram.ui.ActionBar.b2[] b2VarArr, org.telegram.ui.ActionBar.n2 n2Var, boolean[] zArr, int i10) {
         this.b = messagesController;
         this.e = eVar;
-        this.f = a2VarArr;
-        this.g = m2Var;
+        this.f = b2VarArr;
+        this.g = n2Var;
         this.c = zArr;
         this.d = i10;
     }
@@ -28,7 +28,7 @@ public final /* synthetic */ class jc implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.lambda$openByUserName$455((nf.e) this.e, (org.telegram.ui.ActionBar.a2[]) this.f, (org.telegram.ui.ActionBar.m2) this.g, (boolean[]) this.c, this.d, (Long) obj);
+                this.b.lambda$openByUserName$455((nf.e) this.e, (org.telegram.ui.ActionBar.b2[]) this.f, (org.telegram.ui.ActionBar.n2) this.g, (boolean[]) this.c, this.d, (Long) obj);
                 break;
             case 1:
                 this.b.lambda$openApp$500((boolean[]) this.c, (TL_bots.BotInfo[]) this.e, (TLRPC.User) this.f, this.d, (c3) this.g, (TL_bots.BotInfo) obj);

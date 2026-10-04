@@ -15,9 +15,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.web.f1;
+import org.telegram.ui.web.x1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b implements y2.g {
     public final Uri a;
@@ -36,7 +36,7 @@ public final class b implements y2.g {
     public b(c cVar, Uri uri) {
         this.w = cVar;
         this.a = uri;
-        this.c = ((g2.g) cVar.a.a).createDataSource();
+        this.c = ((g2.g) cVar.a.b).createDataSource();
     }
 
     public static boolean a(b bVar, long j3) {
@@ -60,17 +60,6 @@ public final class b implements y2.g {
             }
         }
         return true;
-    }
-
-    @Override // y2.g
-    public final void E(y2.i iVar, long j3, long j10, boolean z10) {
-        y2.o oVar = (y2.o) iVar;
-        long j11 = oVar.a;
-        Uri uri = oVar.d.c;
-        u2.t tVar = new u2.t(j10);
-        c cVar = this.w;
-        cVar.c.getClass();
-        cVar.f.o(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
     public final Uri b() {
@@ -109,10 +98,10 @@ public final class b implements y2.g {
 
     public final void d(Uri uri) {
         c cVar = this.w;
-        y2.n K = cVar.b.K(cVar.s, this.d);
+        y2.n V = cVar.b.V(cVar.s, this.d);
         Map map = Collections.EMPTY_MAP;
         e2.d.i(uri, "The uri must be set.");
-        y2.o oVar = new y2.o(this.c, new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, K);
+        y2.o oVar = new y2.o(this.c, new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, V);
         this.b.f(oVar, this, cVar.c.L3(oVar.c));
     }
 
@@ -131,7 +120,7 @@ public final class b implements y2.g {
             d(uri);
         } else {
             this.r = true;
-            this.w.n.postDelayed(new f1(6, this, uri), j3 - elapsedRealtime);
+            this.w.n.postDelayed(new x1(3, this, uri), j3 - elapsedRealtime);
         }
     }
 
@@ -339,7 +328,7 @@ public final class b implements y2.g {
     }
 
     @Override // y2.g
-    public final k4.d m(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d s(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
         y2.o oVar = (y2.o) iVar;
         long j11 = oVar.a;
         int i11 = oVar.c;
@@ -381,7 +370,7 @@ public final class b implements y2.g {
     }
 
     @Override // y2.g
-    public final void n(y2.i iVar, long j3, long j10, int i10) {
+    public final void t(y2.i iVar, long j3, long j10, int i10) {
         u2.t tVar;
         y2.o oVar = (y2.o) iVar;
         if (i10 == 0) {
@@ -396,7 +385,7 @@ public final class b implements y2.g {
     }
 
     @Override // y2.g
-    public final void o(y2.i iVar, long j3, long j10) {
+    public final void v(y2.i iVar, long j3, long j10) {
         y2.o oVar = (y2.o) iVar;
         p pVar = (p) oVar.f;
         Uri uri = oVar.d.c;
@@ -410,5 +399,16 @@ public final class b implements y2.g {
             this.w.f.r(tVar, 4, b10, true);
         }
         this.w.c.getClass();
+    }
+
+    @Override // y2.g
+    public final void x0(y2.i iVar, long j3, long j10, boolean z10) {
+        y2.o oVar = (y2.o) iVar;
+        long j11 = oVar.a;
+        Uri uri = oVar.d.c;
+        u2.t tVar = new u2.t(j10);
+        c cVar = this.w;
+        cVar.c.getClass();
+        cVar.f.o(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

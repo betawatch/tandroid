@@ -5,17 +5,17 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rh implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wn b;
+    public final /* synthetic */ yn b;
     public final /* synthetic */ TLRPC.TL_attachMenuBot c;
     public final /* synthetic */ TLRPC.User d;
 
-    public /* synthetic */ rh(wn wnVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.User user, int i10) {
+    public /* synthetic */ rh(yn ynVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.User user, int i10) {
         this.a = i10;
-        this.b = wnVar;
+        this.b = ynVar;
         this.c = tL_attachMenuBot;
         this.d = user;
     }
@@ -24,10 +24,10 @@ public final /* synthetic */ class rh implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new sh(this.b, tL_error, this.c, this.d));
+                AndroidUtilities.runOnUIThread(new uh(this.b, this.c, tL_error, this.d));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new sh(this.b, this.c, tL_error, this.d));
+                AndroidUtilities.runOnUIThread(new uh(this.b, tL_error, this.c, this.d));
                 break;
         }
     }

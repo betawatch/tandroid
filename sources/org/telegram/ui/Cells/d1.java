@@ -3,9 +3,9 @@ package org.telegram.ui.Cells;
 import android.util.Property;
 import android.view.View;
 import org.telegram.ui.Components.sk0;
-import org.telegram.ui.cv0;
+import org.telegram.ui.fv0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class d1 extends Property {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final class d1 extends Property {
             case 2:
                 return Float.valueOf(((sk0) obj).v);
             default:
-                return Float.valueOf(((cv0) obj).a);
+                return Float.valueOf(((fv0) obj).a);
         }
     }
 
@@ -43,7 +43,7 @@ public final class d1 extends Property {
                 ((sk0) obj).setTransitionProgress(((Float) obj2).floatValue());
                 break;
             default:
-                ((cv0) obj).b(((Float) obj2).floatValue());
+                ((fv0) obj).b(((Float) obj2).floatValue());
                 break;
         }
     }

@@ -11,9 +11,9 @@ import android.graphics.RadialGradient;
 import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class t2 extends View {
     public final Paint a;
@@ -35,7 +35,7 @@ public final class t2 extends View {
         this.c = paint;
         this.d = new RadialGradient[2];
         this.e = new Matrix();
-        this.f = new org.telegram.ui.Components.e6(1.0f, this, 0L, 420L, sr.h);
+        this.f = new org.telegram.ui.Components.e6(1.0f, this, 0L, 420L, tr.h);
         this.h = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{0, -1, -1, 0}, new float[]{0.15f, 0.35f, 0.65f, 0.88f}, Shader.TileMode.CLAMP);
         this.n = new Path();
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
@@ -73,12 +73,12 @@ public final class t2 extends View {
         float height = getHeight() / 2.0f;
         float min = Math.min(getWidth(), getHeight()) / 2.0f;
         for (int i11 = 0; i11 < 6; i11++) {
-            float b10 = org.telegram.ui.Cells.c1.b(i11, 60.0f, 12.5f, currentTimeMillis);
+            float d10 = t8.b.d(i11, 60.0f, 12.5f, currentTimeMillis);
             path.moveTo(width, height);
-            double d10 = ((b10 - 12.5f) / 180.0f) * 3.141592653589793d;
-            path.lineTo((((float) Math.cos(d10)) * min) + width, (((float) Math.sin(d10)) * min) + height);
-            double d11 = ((b10 + 12.5f) / 180.0f) * 3.141592653589793d;
+            double d11 = ((d10 - 12.5f) / 180.0f) * 3.141592653589793d;
             path.lineTo((((float) Math.cos(d11)) * min) + width, (((float) Math.sin(d11)) * min) + height);
+            double d12 = ((d10 + 12.5f) / 180.0f) * 3.141592653589793d;
+            path.lineTo((((float) Math.cos(d12)) * min) + width, (((float) Math.sin(d12)) * min) + height);
             path.lineTo(width, height);
         }
         canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);

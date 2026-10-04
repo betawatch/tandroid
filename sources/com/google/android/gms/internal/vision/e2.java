@@ -10,11 +10,11 @@ import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.g61;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class e2 {
     public static float A(float f7, float f10, float f11, float f12) {
@@ -72,7 +72,7 @@ public abstract /* synthetic */ class e2 {
     }
 
     public static int c(int i10, int i11, int i12) {
-        return (r0.y(i10) * i11) + i12;
+        return zzqv.zzA(i10) + i11 + i12;
     }
 
     public static int d(int i10, int i11, int i12, int i13) {
@@ -121,7 +121,7 @@ public abstract /* synthetic */ class e2 {
     }
 
     public static void n(int i10, ArrayList arrayList) {
-        arrayList.add(x51.t(LocaleController.getString(i10)));
+        arrayList.add(g61.t(LocaleController.getString(i10)));
     }
 
     public static void o(int i10, HashMap hashMap, String str, int i11, String str2) {
@@ -130,13 +130,13 @@ public abstract /* synthetic */ class e2 {
     }
 
     public static void p(int i10, boolean[] zArr, boolean z10, TextView textView, int i11) {
-        textView.setTextColor(h6.w0(zArr, i10, z10));
+        textView.setTextColor(i6.w0(zArr, i10, z10));
         textView.setGravity(i11);
     }
 
-    public static void q(com.google.firebase.messaging.t tVar) {
+    public static void q(com.google.firebase.messaging.s sVar) {
         com.googlecode.mp4parser.g.a().getClass();
-        com.googlecode.mp4parser.g.b(tVar);
+        com.googlecode.mp4parser.g.b(sVar);
     }
 
     public static void r(gg.m mVar, int i10, ArrayList arrayList) {
@@ -160,8 +160,8 @@ public abstract /* synthetic */ class e2 {
         return (f11 - (f7 * f10)) / f12;
     }
 
-    public static int w(int i10, int i11, int i12) {
-        return zzqv.zzA(i10) + i11 + i12;
+    public static void w(int i10, ArrayList arrayList) {
+        arrayList.add(g61.B(LocaleController.getString(i10)));
     }
 
     public static float x(float f7, float f10, float f11, float f12) {

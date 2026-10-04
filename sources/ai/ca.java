@@ -12,11 +12,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.zl0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public class ca {
     public int A;
@@ -197,13 +197,13 @@ public class ca {
     }
 
     public void f(long j3) {
-        org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
+        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
         if (R == null || this.R == null) {
             return;
         }
         R.getOrCreateStoryViewer().getClass();
         ViewParent parent = this.R.getParent();
-        R.getOrCreateStoryViewer().D(R.getContext(), j3, parent instanceof RecyclerView ? u9.a((yl0) parent) : null);
+        R.getOrCreateStoryViewer().D(R.getContext(), j3, parent instanceof RecyclerView ? u9.a((zl0) parent) : null);
     }
 
     public final void g() {

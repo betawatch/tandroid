@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.PipRoundVideoView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class dm implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final class dm implements ViewTreeObserver.OnPreDrawListener {
         Object obj2 = this.b;
         switch (i10) {
             case 0:
-                wn wnVar = ((jm) obj).Q;
+                yn ynVar = ((jm) obj).Q;
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) obj2;
                 PipRoundVideoView pipRoundVideoView = PipRoundVideoView.F;
                 if (pipRoundVideoView != null) {
@@ -39,7 +39,7 @@ public final class dm implements ViewTreeObserver.OnPreDrawListener {
                 u1Var.getViewTreeObserver().removeOnPreDrawListener(this);
                 ImageReceiver photoImage = u1Var.getPhotoImage();
                 float imageWidth = photoImage.getImageWidth();
-                RectF cameraRect = wnVar.b3.getCameraRect();
+                RectF cameraRect = ynVar.Z2.getCameraRect();
                 float width = imageWidth / cameraRect.width();
                 u1Var.getTransitionParams().x0 = true;
                 u1Var.setAlpha(0.0f);
@@ -48,46 +48,46 @@ public final class dm implements ViewTreeObserver.OnPreDrawListener {
                 u1Var.getLocationOnScreen(iArr);
                 float f7 = iArr[0];
                 float f10 = iArr[1];
-                org.telegram.ui.Components.g60 cameraContainer = wnVar.b3.getCameraContainer();
+                org.telegram.ui.Components.h60 cameraContainer = ynVar.Z2.getCameraContainer();
                 cameraContainer.getLocationOnScreen(new int[2]);
                 cameraContainer.setPivotX(cameraRect.left - r11[0]);
                 cameraContainer.setPivotY(cameraRect.top - r11[1]);
                 AnimatorSet animatorSet = new AnimatorSet();
                 cameraContainer.setImageReceiver(photoImage);
                 AnimatorSet animatorSet2 = new AnimatorSet();
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.g60, Float>) View.SCALE_X, width);
-                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.g60, Float>) View.SCALE_Y, width);
-                ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.g60, Float>) View.TRANSLATION_Y, iArr[1] - cameraRect.top);
-                View buttonsLayout = wnVar.b3.getButtonsLayout();
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.h60, Float>) View.SCALE_X, width);
+                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.h60, Float>) View.SCALE_Y, width);
+                ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.h60, Float>) View.TRANSLATION_Y, iArr[1] - cameraRect.top);
+                View buttonsLayout = ynVar.Z2.getButtonsLayout();
                 Property property = View.ALPHA;
-                animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ObjectAnimator.ofFloat(buttonsLayout, (Property<View, Float>) property, 0.0f), ObjectAnimator.ofInt(wnVar.b3.getPaint(), org.telegram.ui.Components.s6.b, 0), ObjectAnimator.ofFloat(wnVar.b3.getMuteImageView(), (Property<View, Float>) property, 0.0f));
-                animatorSet.setInterpolator(org.telegram.ui.Components.sr.h);
-                ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.g60, Float>) View.TRANSLATION_X, iArr[0] - cameraRect.left);
-                ofFloat4.setInterpolator(org.telegram.ui.Components.sr.f);
+                animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ObjectAnimator.ofFloat(buttonsLayout, (Property<View, Float>) property, 0.0f), ObjectAnimator.ofInt(ynVar.Z2.getPaint(), org.telegram.ui.Components.s6.b, 0), ObjectAnimator.ofFloat(ynVar.Z2.getMuteImageView(), (Property<View, Float>) property, 0.0f));
+                animatorSet.setInterpolator(org.telegram.ui.Components.tr.h);
+                ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(cameraContainer, (Property<org.telegram.ui.Components.h60, Float>) View.TRANSLATION_X, iArr[0] - cameraRect.left);
+                ofFloat4.setInterpolator(org.telegram.ui.Components.tr.f);
                 animatorSet2.playTogether(ofFloat4, animatorSet);
                 animatorSet2.setDuration(300L);
-                org.telegram.ui.Components.j60 j60Var = wnVar.b3;
-                if (j60Var != null) {
-                    j60Var.setIsMessageTransition(true);
+                org.telegram.ui.Components.k60 k60Var = ynVar.Z2;
+                if (k60Var != null) {
+                    k60Var.setIsMessageTransition(true);
                 }
                 animatorSet2.addListener(new ai.z(14, this, cameraContainer));
                 animatorSet2.start();
                 return true;
             case 1:
-                ((vx) obj).b.e0[0].a.getViewTreeObserver().removeOnPreDrawListener(this);
+                ((cy) obj).a.e0[0].a.getViewTreeObserver().removeOnPreDrawListener(this);
                 AndroidUtilities.runOnUIThread((ai.j) obj2, 100L);
                 return false;
             default:
                 ((ViewTreeObserver) obj2).removeOnPreDrawListener(this);
                 uh.h hVar = (uh.h) obj;
-                org.telegram.ui.Components.yb ybVar = hVar.W;
-                if (ybVar != null) {
+                org.telegram.ui.Components.zb zbVar = hVar.W;
+                if (zbVar != null) {
                     int[] iArr2 = uh.h.d0;
-                    ybVar.getLocationInWindow(iArr2);
+                    zbVar.getLocationInWindow(iArr2);
                     float f11 = iArr2[0];
                     float translationY = iArr2[1] - hVar.W.getTranslationY();
-                    org.telegram.ui.Components.yb ybVar2 = hVar.W;
-                    float topOffset = ybVar2.top ? ybVar2.getTopOffset() : -ybVar2.getBottomOffset();
+                    org.telegram.ui.Components.zb zbVar2 = hVar.W;
+                    float topOffset = zbVar2.top ? zbVar2.getTopOffset() : -zbVar2.getBottomOffset();
                     hVar.a.getLocationInWindow(iArr2);
                     float f12 = iArr2[0];
                     float f13 = iArr2[1];

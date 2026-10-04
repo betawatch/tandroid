@@ -1,106 +1,48 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class td0 implements Runnable {
+public final class td0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ae0 b;
+    public final /* synthetic */ ug0 b;
 
-    public /* synthetic */ td0(ae0 ae0Var, int i10) {
+    public /* synthetic */ td0(ug0 ug0Var, int i10) {
         this.a = i10;
-        this.b = ae0Var;
+        this.b = ug0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.b.p();
-                break;
-            case 1:
-                ae0 ae0Var = this.b;
-                ae0Var.postDelayed(new td0(ae0Var, 2), 150L);
-                td0 td0Var = ae0Var.S;
-                ae0Var.removeCallbacks(td0Var);
-                ae0Var.postDelayed(td0Var, 3000L);
-                ae0Var.R = true;
-                break;
-            case 2:
-                xd0 xd0Var = this.b.a;
-                int i10 = 0;
-                xd0Var.e = false;
-                xd0Var.f[0].requestFocus();
-                while (true) {
-                    as[] asVarArr = xd0Var.f;
-                    if (i10 >= asVarArr.length) {
-                        break;
-                    } else {
-                        asVarArr[i10].i(0.0f);
-                        i10++;
-                    }
-                }
-            case 3:
-                ae0 ae0Var2 = this.b;
-                ae0Var2.postDelayed(new td0(ae0Var2, 5), 150L);
-                break;
-            case 4:
-                ae0 ae0Var3 = this.b;
-                zd0 zd0Var = ae0Var3.Q;
-                boolean z10 = false;
-                ae0Var3.R = false;
-                int i11 = 0;
-                while (true) {
-                    as[] asVarArr2 = ae0Var3.a.f;
-                    if (i11 >= asVarArr2.length) {
-                        if (zd0Var.getCurrentView() != ae0Var3.e) {
-                            zd0Var.showNext();
-                            FrameLayout frameLayout = ae0Var3.h;
-                            if (ae0Var3.f.getVisibility() != 0 && ae0Var3.W.F != 3 && !ae0Var3.P) {
-                                z10 = true;
-                            }
-                            AndroidUtilities.updateViewVisibilityAnimated(frameLayout, z10, 1.0f, true);
-                            break;
-                        }
-                    } else {
-                        asVarArr2[i11].i(0.0f);
-                        i11++;
-                    }
-                }
-                break;
-            case 5:
-                xd0 xd0Var2 = this.b.a;
-                int i12 = 0;
-                xd0Var2.e = false;
-                xd0Var2.f[0].requestFocus();
-                while (true) {
-                    as[] asVarArr3 = xd0Var2.f;
-                    if (i12 >= asVarArr3.length) {
-                        break;
-                    } else {
-                        asVarArr3[i12].i(0.0f);
-                        i12++;
-                    }
-                }
-            case 6:
-                this.b.q(true);
-                break;
-            case 7:
-                this.b.r();
-                break;
-            default:
-                ae0 ae0Var4 = this.b;
-                org.telegram.ui.Components.nj0 nj0Var = ae0Var4.w;
-                nj0Var.getAnimatedDrawable().N(0, false, false);
-                nj0Var.d();
-                xd0 xd0Var3 = ae0Var4.a;
-                if (xd0Var3 != null && xd0Var3.f != null) {
-                    xd0Var3.setText("");
-                    xd0Var3.f[0].requestFocus();
+                ug0 ug0Var = this.b;
+                if (ug0Var.d == animator) {
+                    ug0Var.d = null;
                     break;
                 }
+                break;
+            default:
+                ug0 ug0Var2 = this.b;
+                ug0Var2.c.setVisibility(8);
+                if (ug0Var2.d == animator) {
+                    ug0Var2.d = null;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.c.setVisibility(0);
+                break;
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

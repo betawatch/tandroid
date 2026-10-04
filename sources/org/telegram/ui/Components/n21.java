@@ -1,37 +1,64 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.widget.TextView;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class n21 extends TextView {
-    public View a;
-    public ViewPropertyAnimator b;
-    public boolean c;
-    public yq0 d;
+public final class n21 extends FrameLayout {
+    public final ImageView a;
+    public final l21 b;
+    public final /* synthetic */ ThemeEditorView.EditorAlert c;
 
-    public final void a() {
-        if (this.a == null) {
-            return;
-        }
-        View view = (View) getParent();
-        int i10 = 0;
-        int i11 = 0;
-        for (View view2 = this.a; view2 != view; view2 = (View) view2.getParent()) {
-            i11 += view2.getTop();
-            i10 += view2.getLeft();
-        }
-        int width = ((this.a.getWidth() / 2) + i10) - (getMeasuredWidth() / 2);
-        setTranslationX(width >= 0 ? getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - AndroidUtilities.dp(16.0f) : width : 0);
-        setTranslationY(i11 - getMeasuredHeight());
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        a();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n21(ThemeEditorView.EditorAlert editorAlert, Context context) {
+        super(context);
+        this.c = editorAlert;
+        View view = new View(context);
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(18.0f), -854795));
+        addView(view, w7.z5.d(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setImageResource(R.drawable.smiles_inputsearch);
+        imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
+        addView(imageView, w7.z5.d(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.a = imageView2;
+        imageView2.setScaleType(scaleType);
+        k21 k21Var = new k21();
+        imageView2.setImageDrawable(k21Var);
+        k21Var.f = AndroidUtilities.dp(7.0f);
+        imageView2.setScaleX(0.1f);
+        imageView2.setScaleY(0.1f);
+        imageView2.setAlpha(0.0f);
+        addView(imageView2, w7.z5.d(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
+        imageView2.setOnClickListener(new l80(this, 21));
+        l21 l21Var = new l21(this, context);
+        this.b = l21Var;
+        l21Var.setTextSize(1, 16.0f);
+        l21Var.setHintTextColor(-6774617);
+        l21Var.setTextColor(-14540254);
+        l21Var.setBackgroundDrawable(null);
+        l21Var.setPadding(0, 0, 0, 0);
+        l21Var.setMaxLines(1);
+        l21Var.setLines(1);
+        l21Var.setSingleLine(true);
+        l21Var.setImeOptions(268435459);
+        l21Var.setHint(LocaleController.getString(R.string.Search));
+        l21Var.setCursorColor(-11491093);
+        l21Var.setCursorSize(AndroidUtilities.dp(20.0f));
+        l21Var.setCursorWidth(1.5f);
+        addView(l21Var, w7.z5.d(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
+        l21Var.addTextChangedListener(new m21(this));
+        l21Var.setOnEditorActionListener(new e1(this, 9));
     }
 }

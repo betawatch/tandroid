@@ -1,41 +1,22 @@
 package v7;
 
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.os.Bundle;
+import com.google.android.gms.cast.framework.media.internal.ResourceProvider;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class x6 {
-    public static Intent a(Context context, ComponentName componentName) {
-        String b10 = b(context, componentName);
-        if (b10 == null) {
-            return null;
+    public static int a(String str) {
+        Integer num;
+        try {
+            Map map = ResourceProvider.a;
+            num = (Integer) ResourceProvider.class.getMethod("findResourceByName", String.class).invoke(null, str);
+        } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException | InvocationTargetException unused) {
         }
-        ComponentName componentName2 = new ComponentName(componentName.getPackageName(), b10);
-        return b(context, componentName2) == null ? Intent.makeMainActivity(componentName2) : new Intent().setComponent(componentName2);
-    }
-
-    public static String b(Context context, ComponentName componentName) {
-        String string;
-        PackageManager packageManager = context.getPackageManager();
-        int i10 = Build.VERSION.SDK_INT;
-        ActivityInfo activityInfo = packageManager.getActivityInfo(componentName, i10 >= 29 ? 269222528 : i10 >= 24 ? 787072 : 640);
-        String str = activityInfo.parentActivityName;
-        if (str != null) {
-            return str;
+        if (num == null) {
+            return 0;
         }
-        Bundle bundle = activityInfo.metaData;
-        if (bundle == null || (string = bundle.getString("android.support.PARENT_ACTIVITY")) == null) {
-            return null;
-        }
-        if (string.charAt(0) != '.') {
-            return string;
-        }
-        return context.getPackageName() + string;
+        return num.intValue();
     }
 }

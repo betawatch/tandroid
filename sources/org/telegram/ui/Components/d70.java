@@ -1,35 +1,28 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class d70 extends org.telegram.ui.Cells.e9 {
-    public final org.telegram.ui.Cells.t6 v;
-    public boolean w;
-    public final /* synthetic */ e70 x;
+public final class d70 extends org.telegram.ui.Cells.za {
+    public final TextView a0;
+    public final TextView b0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d70(e70 e70Var, Context context) {
-        super(context);
-        this.x = e70Var;
-        this.v = new org.telegram.ui.Cells.t6(this, 16);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        org.telegram.ui.Cells.t6 t6Var = this.v;
-        AndroidUtilities.cancelRunOnUIThread(t6Var);
-        if (this.w) {
-            AndroidUtilities.runOnUIThread(t6Var, 500L);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        AndroidUtilities.cancelRunOnUIThread(this.v);
+    public d70(Context context) {
+        super(context, 6, 0, true);
+        LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
+        TextView textView = new TextView(context);
+        this.a0 = textView;
+        org.telegram.messenger.f0.q(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f);
+        f7.addView(textView, w7.z5.q(-2, -2, 5));
+        TextView textView2 = new TextView(context);
+        this.b0 = textView2;
+        textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.z6, false));
+        textView2.setTextSize(1, 13.0f);
+        f7.addView(textView2, w7.z5.t(-2, -2, 5, 0, 1, 0, 0));
+        addView(f7, w7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
     }
 }

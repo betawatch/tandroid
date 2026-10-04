@@ -1,37 +1,45 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class n4 extends ArrayAdapter {
-    public final /* synthetic */ t4 a;
+public final class n4 extends Animation {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ u4 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n4(t4 t4Var, Context context) {
-        super(context, 0);
-        this.a = t4Var;
+    public /* synthetic */ n4(u4 u4Var, float f7, float f10, int i10, int i11) {
+        this.a = i11;
+        this.e = u4Var;
+        this.b = f7;
+        this.c = f10;
+        this.d = i10;
     }
 
-    @Override // android.widget.ArrayAdapter, android.widget.Adapter
-    public final View getView(int i10, View view, ViewGroup viewGroup) {
-        t4 t4Var = this.a;
-        com.google.firebase.messaging.p pVar = t4Var.q;
-        MenuItem menuItem = (MenuItem) getItem(i10);
-        int width = t4Var.I.getWidth();
-        if (view != null) {
-            int i11 = pVar.a;
-            v4.e(view, menuItem, ((t4) pVar.e).Q.j != null);
-        } else {
-            view = v4.b(((t4) pVar.e).Q, (Context) pVar.c, menuItem, true, false, false);
-            int i12 = pVar.b;
-            view.setPadding(i12, 0, i12, 0);
+    @Override // android.view.animation.Animation
+    public final void applyTransformation(float f7, Transformation transformation) {
+        switch (this.a) {
+            case 0:
+                float f10 = this.b;
+                float z10 = com.google.android.gms.internal.vision.e2.z(this.c, f10, f7, f10);
+                u4 u4Var = this.e;
+                u4Var.i.setX(z10 + (u4Var.f.getWidth() - this.d));
+                float f11 = 1.0f - f7;
+                u4Var.l.setAlpha(f11);
+                u4Var.j.setAlpha(f11);
+                break;
+            default:
+                float f12 = this.b;
+                float z11 = com.google.android.gms.internal.vision.e2.z(this.c, f12, f7, f12);
+                u4 u4Var2 = this.e;
+                u4Var2.i.setX(z11 + (u4Var2.f.getWidth() - this.d));
+                u4Var2.l.setAlpha(f7);
+                u4Var2.j.setAlpha(f7);
+                break;
         }
-        view.setMinimumWidth(width);
-        return view;
     }
 }

@@ -7,9 +7,9 @@ import android.net.Uri;
 import android.view.TextureView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class d0 {
     public int a;
@@ -20,7 +20,7 @@ public final class d0 {
     public boolean f;
     public s h;
     public boolean m;
-    public l8 n;
+    public k8 n;
     public ValueAnimator o;
     public final /* synthetic */ e0 p;
     public volatile long g = -1;
@@ -31,11 +31,11 @@ public final class d0 {
 
     public d0(e0 e0Var) {
         this.p = e0Var;
-        this.b = new org.telegram.ui.Components.e6(e0Var, 0L, 1200L, sr.g);
+        this.b = new org.telegram.ui.Components.e6(e0Var, 0L, 1200L, tr.g);
         this.c = new ImageReceiver(e0Var);
     }
 
-    public final void a(l8 l8Var) {
+    public final void a(k8 k8Var) {
         float f7;
         c0 c0Var = this.d;
         if (c0Var != null) {
@@ -49,29 +49,29 @@ public final class d0 {
             this.e = null;
         }
         this.f = false;
-        this.n = l8Var;
+        this.n = k8Var;
         StringBuilder sb2 = new StringBuilder();
         sb2.append((int) Math.ceil(AndroidUtilities.displaySize.x / AndroidUtilities.density));
         sb2.append("_");
         sb2.append((int) Math.ceil(AndroidUtilities.displaySize.y / AndroidUtilities.density));
-        String t10 = a4.a.t(sb2, (l8Var == null || !l8Var.K) ? "" : "_g", "_exif");
-        l8 l8Var2 = this.n;
+        String s10 = a4.a.s(sb2, (k8Var == null || !k8Var.K) ? "" : "_g", "_exif");
+        k8 k8Var2 = this.n;
         e0 e0Var = this.p;
         ImageReceiver imageReceiver = this.c;
-        if (l8Var2 == null) {
+        if (k8Var2 == null) {
             imageReceiver.clearImage();
-        } else if (l8Var2.K) {
-            Bitmap bitmap = l8Var2.M0;
+        } else if (k8Var2.K) {
+            Bitmap bitmap = k8Var2.M0;
             if (bitmap != null) {
                 imageReceiver.setImageBitmap(bitmap);
             } else {
-                Bitmap bitmap2 = l8Var2.b1;
+                Bitmap bitmap2 = k8Var2.b1;
                 if (bitmap2 != null) {
                     imageReceiver.setImageBitmap(bitmap2);
                 } else {
-                    String str = l8Var2.N;
+                    String str = k8Var2.N;
                     if (str != null) {
-                        imageReceiver.setImage(str, t10, null, null, 0L);
+                        imageReceiver.setImage(str, s10, null, null, 0L);
                     } else {
                         imageReceiver.clearImage();
                     }
@@ -87,9 +87,9 @@ public final class d0 {
             this.d.preparePlayer(Uri.fromFile(this.n.L), false, 1.0f);
             c0 c0Var3 = this.d;
             if (!e0Var.v0) {
-                l8 l8Var3 = this.n;
-                if (!l8Var3.Y && e0Var.n0) {
-                    f7 = l8Var3.P;
+                k8 k8Var3 = this.n;
+                if (!k8Var3.Y && e0Var.n0) {
+                    f7 = k8Var3.P;
                     c0Var3.setVolume(f7);
                     if (e0Var.n0 || e0Var.q0) {
                         this.d.play();
@@ -104,7 +104,7 @@ public final class d0 {
             }
             this.d.play();
         } else {
-            imageReceiver.setImage(l8Var2.L.getAbsolutePath(), t10, null, null, 0L);
+            imageReceiver.setImage(k8Var2.L.getAbsolutePath(), s10, null, null, 0L);
         }
         e0Var.invalidate();
     }
@@ -139,7 +139,7 @@ public final class d0 {
             this.o = ofFloat;
             ofFloat.addUpdateListener(new ai.k6(this, 2));
             this.o.addListener(new ai.b(this, 12));
-            this.o.setInterpolator(sr.h);
+            this.o.setInterpolator(tr.h);
             this.o.setDuration(360L);
             this.o.start();
         } else {

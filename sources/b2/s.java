@@ -11,7 +11,7 @@ import java.util.Locale;
 import java.util.UUID;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class s {
     public static final String A0;
@@ -259,21 +259,21 @@ public final class s {
         String str5 = sVar.q;
         int i20 = sVar.f;
         xa.c cVar = new xa.c(String.valueOf(','));
-        StringBuilder v = a4.a.v("id=");
-        v.append(sVar.a);
-        v.append(", mimeType=");
-        v.append(sVar.r);
+        StringBuilder u10 = a4.a.u("id=");
+        u10.append(sVar.a);
+        u10.append(", mimeType=");
+        u10.append(sVar.r);
         if (str5 != null) {
-            v.append(", container=");
-            v.append(str5);
+            u10.append(", container=");
+            u10.append(str5);
         }
         if (i19 != -1) {
-            v.append(", bitrate=");
-            v.append(i19);
+            u10.append(", bitrate=");
+            u10.append(i19);
         }
         if (str4 != null) {
-            v.append(", codecs=");
-            v.append(str4);
+            u10.append(", codecs=");
+            u10.append(str4);
         }
         if (oVar2 != null) {
             LinkedHashSet linkedHashSet = new LinkedHashSet();
@@ -301,38 +301,38 @@ public final class s {
                 i21++;
                 oVar2 = oVar;
             }
-            v.append(", drm=[");
-            cVar.p(v, linkedHashSet.iterator());
-            v.append(']');
+            u10.append(", drm=[");
+            cVar.k(u10, linkedHashSet.iterator());
+            u10.append(']');
         } else {
             c10 = 0;
         }
         if (i18 != -1 && i17 != -1) {
-            v.append(", res=");
-            v.append(i18);
-            v.append("x");
-            v.append(i17);
+            u10.append(", res=");
+            u10.append(i18);
+            u10.append("x");
+            u10.append(i17);
         }
         if (i16 != -1 && i15 != -1) {
-            v.append(", decRes=");
-            v.append(i16);
-            v.append("x");
-            v.append(i15);
+            u10.append(", decRes=");
+            u10.append(i16);
+            u10.append("x");
+            u10.append(i15);
         }
         double d = f10;
         int i22 = g9.c.a;
         if (Math.copySign(d - 1.0d, 1.0d) > 0.001d && d != 1.0d && (!Double.isNaN(d) || !Double.isNaN(1.0d))) {
-            v.append(", par=");
+            u10.append(", par=");
             Object[] objArr = new Object[1];
             objArr[c10] = Float.valueOf(f10);
             String str6 = e2.d0.a;
-            v.append(String.format(Locale.US, "%.3f", objArr));
+            u10.append(String.format(Locale.US, "%.3f", objArr));
         }
         if (jVar != null) {
             int i23 = jVar.f;
             int i24 = jVar.e;
             if ((i24 != -1 && i23 != -1) || jVar.d()) {
-                v.append(", color=");
+                u10.append(", color=");
                 if (jVar.d()) {
                     String b10 = j.b(jVar.a);
                     String a2 = j.a(jVar.b);
@@ -343,36 +343,36 @@ public final class s {
                 } else {
                     str2 = "NA/NA/NA";
                 }
-                v.append(str2 + "/" + ((i24 == -1 || i23 == -1) ? "NA/NA" : a4.a.l(i24, i23, "/")));
+                u10.append(str2 + "/" + ((i24 == -1 || i23 == -1) ? "NA/NA" : a4.a.k(i24, i23, "/")));
             }
         }
         if (f7 != -1.0f) {
-            v.append(", fps=");
-            v.append(f7);
+            u10.append(", fps=");
+            u10.append(f7);
         }
         if (i14 != -1) {
-            v.append(", maxSubLayers=");
-            v.append(i14);
+            u10.append(", maxSubLayers=");
+            u10.append(i14);
         }
         if (i13 != -1) {
-            v.append(", channels=");
-            v.append(i13);
+            u10.append(", channels=");
+            u10.append(i13);
         }
         if (i12 != -1) {
-            v.append(", sample_rate=");
-            v.append(i12);
+            u10.append(", sample_rate=");
+            u10.append(i12);
         }
         if (str3 != null) {
-            v.append(", language=");
-            v.append(str3);
+            u10.append(", language=");
+            u10.append(str3);
         }
         if (!i0Var.isEmpty()) {
-            v.append(", labels=[");
-            cVar.p(v, e9.q.w(i0Var, new ai.w1(10)).iterator());
-            v.append("]");
+            u10.append(", labels=[");
+            cVar.k(u10, e9.q.w(i0Var, new ai.w1(10)).iterator());
+            u10.append("]");
         }
         if (i11 != 0) {
-            v.append(", selectionFlags=[");
+            u10.append(", selectionFlags=[");
             String str8 = e2.d0.a;
             ArrayList arrayList = new ArrayList();
             if ((i11 & 4) != 0) {
@@ -384,11 +384,11 @@ public final class s {
             if ((i11 & 2) != 0) {
                 arrayList.add("forced");
             }
-            cVar.p(v, arrayList.iterator());
-            v.append("]");
+            cVar.k(u10, arrayList.iterator());
+            u10.append("]");
         }
         if (i20 != 0) {
-            v.append(", roleFlags=[");
+            u10.append(", roleFlags=[");
             String str9 = e2.d0.a;
             ArrayList arrayList2 = new ArrayList();
             if ((i20 & 1) != 0) {
@@ -440,13 +440,13 @@ public final class s {
             if ((i10 & 32768) != 0) {
                 arrayList2.add("auxiliary");
             }
-            cVar.p(v, arrayList2.iterator());
-            v.append("]");
+            cVar.k(u10, arrayList2.iterator());
+            u10.append("]");
         } else {
             i10 = i20;
         }
         if ((i10 & 32768) != 0) {
-            v.append(", auxiliaryTrackType=");
+            u10.append(", auxiliaryTrackType=");
             int i25 = sVar.g;
             String str10 = e2.d0.a;
             if (i25 == 0) {
@@ -463,9 +463,9 @@ public final class s {
                 }
                 str = "depth metadata";
             }
-            v.append(str);
+            u10.append(str);
         }
-        return v.toString();
+        return u10.toString();
     }
 
     public final r a() {
@@ -721,6 +721,6 @@ public final class s {
         sb2.append("], [");
         sb2.append(this.J);
         sb2.append(", ");
-        return a4.a.o(this.K, "])", sb2);
+        return a4.a.n(this.K, "])", sb2);
     }
 }

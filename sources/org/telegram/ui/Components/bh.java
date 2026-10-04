@@ -1,132 +1,59 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'd' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public class bh extends nj0 {
-    public zg r;
-    public ah s;
-    public final int v;
-    public final yg w;
+public final class bh {
+    public static final bh d;
+    public static final bh e;
+    public static final /* synthetic */ bh[] f;
+    public final ah a;
+    public final ah b;
+    public final int c;
 
-    public bh(Context context) {
-        this(context, 32);
+    static {
+        int i10 = R.raw.voice_and_video;
+        ah ahVar = ah.a;
+        ah ahVar2 = ah.b;
+        bh bhVar = new bh("VOICE_TO_VIDEO", 0, ahVar, ahVar2, i10);
+        d = bhVar;
+        int i11 = R.raw.sticker_to_keyboard;
+        ah ahVar3 = ah.c;
+        ah ahVar4 = ah.d;
+        bh bhVar2 = new bh("STICKER_TO_KEYBOARD", 1, ahVar3, ahVar4, i11);
+        int i12 = R.raw.smile_to_keyboard;
+        ah ahVar5 = ah.e;
+        bh bhVar3 = new bh("SMILE_TO_KEYBOARD", 2, ahVar5, ahVar4, i12);
+        bh bhVar4 = new bh("VIDEO_TO_VOICE", 3, ahVar2, ahVar, i10);
+        e = bhVar4;
+        bh bhVar5 = new bh("KEYBOARD_TO_STICKER", 4, ahVar4, ahVar3, R.raw.keyboard_to_sticker);
+        int i13 = R.raw.keyboard_to_gif;
+        ah ahVar6 = ah.f;
+        f = new bh[]{bhVar, bhVar2, bhVar3, bhVar4, bhVar5, new bh("KEYBOARD_TO_GIF", 5, ahVar4, ahVar6, i13), new bh("KEYBOARD_TO_SMILE", 6, ahVar4, ahVar5, R.raw.keyboard_to_smile), new bh("GIF_TO_KEYBOARD", 7, ahVar6, ahVar4, R.raw.gif_to_keyboard), new bh("GIF_TO_SMILE", 8, ahVar6, ahVar5, R.raw.gif_to_smile), new bh("SMILE_TO_GIF", 9, ahVar5, ahVar6, R.raw.smile_to_gif), new bh("SMILE_TO_STICKER", 10, ahVar5, ahVar3, R.raw.smile_to_sticker), new bh("STICKER_TO_SMILE", 11, ahVar3, ahVar5, R.raw.sticker_to_smile)};
     }
 
-    public zg getCurrentState() {
-        return this.r;
+    public bh(String str, int i10, ah ahVar, ah ahVar2, int i11) {
+        this.a = ahVar;
+        this.b = ahVar2;
+        this.c = i11;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00c1  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00cf  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void j(zg zgVar, boolean z10) {
-        int ordinal;
-        ah ahVar;
-        if (z10 && zgVar == this.r) {
-            return;
-        }
-        zg zgVar2 = this.r;
-        this.r = zgVar;
-        ah ahVar2 = null;
-        yg ygVar = this.w;
-        if (z10 && zgVar2 != null) {
-            ah[] values = ah.values();
-            int length = values.length;
-            int i10 = 0;
-            while (true) {
-                if (i10 >= length) {
-                    ahVar = null;
-                    break;
-                }
-                ahVar = values[i10];
-                if (ahVar.a == zgVar2 && ahVar.b == zgVar) {
-                    break;
-                } else {
-                    i10++;
-                }
-            }
-            if (ahVar != null) {
-                zg zgVar3 = this.r;
-                ah[] values2 = ah.values();
-                int length2 = values2.length;
-                int i11 = 0;
-                while (true) {
-                    if (i11 >= length2) {
-                        break;
-                    }
-                    ah ahVar3 = values2[i11];
-                    if (ahVar3.a == zgVar2 && ahVar3.b == zgVar3) {
-                        ahVar2 = ahVar3;
-                        break;
-                    }
-                    i11++;
-                }
-                if (ahVar2 == this.s) {
-                    return;
-                }
-                this.s = ahVar2;
-                kj0 kj0Var = (kj0) ygVar.get(ahVar2);
-                kj0Var.stop();
-                if (ahVar2 == ah.e) {
-                    kj0Var.P(30);
-                    kj0Var.T(0.0f, false);
-                } else if (ahVar2 == ah.d) {
-                    kj0Var.P(60);
-                    kj0Var.T(0.5f, false);
-                } else {
-                    kj0Var.T(0.0f, false);
-                }
-                kj0Var.K(0);
-                kj0Var.t0 = new pg(this, 20);
-                setAnimation(kj0Var);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Cells.q0(kj0Var, 1));
-                ordinal = zgVar.ordinal();
-                if (ordinal != 0) {
-                    setContentDescription(LocaleController.getString(R.string.AccDescrVoiceMessage));
-                    return;
-                } else {
-                    if (ordinal != 1) {
-                        return;
-                    }
-                    setContentDescription(LocaleController.getString(R.string.AccDescrVideoMessage));
-                    return;
-                }
-            }
-        }
-        zg zgVar4 = this.r;
-        ah[] values3 = ah.values();
-        int length3 = values3.length;
-        int i12 = 0;
-        while (true) {
-            if (i12 >= length3) {
-                break;
-            }
-            ah ahVar4 = values3[i12];
-            if (ahVar4.a == zgVar4) {
-                ahVar2 = ahVar4;
-                break;
-            }
-            i12++;
-        }
-        kj0 kj0Var2 = (kj0) ygVar.get(ahVar2);
-        kj0Var2.stop();
-        kj0Var2.T(zgVar != zg.a ? 0.0f : 0.5f, false);
-        setAnimation(kj0Var2);
-        ordinal = zgVar.ordinal();
-        if (ordinal != 0) {
-        }
+    public static bh valueOf(String str) {
+        return (bh) Enum.valueOf(bh.class, str);
     }
 
-    public bh(Context context, int i10) {
-        super(context);
-        this.w = new yg(this, 0);
-        this.v = i10;
+    public static bh[] values() {
+        return (bh[]) f.clone();
     }
 }

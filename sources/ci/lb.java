@@ -1,96 +1,27 @@
 package ci;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.animation.ValueAnimator;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class lb implements pc {
-    public final /* synthetic */ bi.v a;
+public final class lb implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kc b;
 
-    public lb(bi.v vVar) {
-        this.a = vVar;
+    public /* synthetic */ lb(kc kcVar, int i10) {
+        this.a = i10;
+        this.b = kcVar;
     }
 
-    @Override // ci.pc
-    public final void F(float f7, boolean z10) {
-        this.a.run(Boolean.FALSE, Float.valueOf(f7));
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void D(float f7) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void J(long j3) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void O(boolean z10) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void T(float f7) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void Y(float f7) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void a0(float f7) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void e(int i10) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void h0(float f7) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void i(float f7) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void l(float f7) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void l0(long j3) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void u(float f7) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void w(boolean z10) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void b0() {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void r() {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void A(float f7, int i10) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void R(float f7, int i10) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void Z(float f7, int i10) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void i0(int i10, long j3) {
-    }
-
-    @Override // ci.pc
-    public final /* synthetic */ void n(long j3, boolean z10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                this.b.c1.m();
+                break;
+            default:
+                this.b.n0();
+                break;
+        }
     }
 }

@@ -1,20 +1,20 @@
 package gg;
 
 import android.view.ViewGroup;
-import ci.bb;
+import ci.ab;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.xl0;
+import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class q1 extends xl0 {
+public final class q1 extends yl0 {
     public k1 c;
     public Integer d;
-    public bb e;
+    public ab e;
     public boolean f;
     public int h;
 
-    @Override // org.telegram.ui.Components.xl0
+    @Override // org.telegram.ui.Components.yl0
     public final boolean D(s4.c1 c1Var) {
         if (c1Var.b() == 0) {
             return false;
@@ -50,8 +50,8 @@ public final class q1 extends xl0 {
         if (i10 != -983904) {
             return this.c.x(viewGroup, i10);
         }
-        bb bbVar = new bb(this, viewGroup.getContext(), 4);
-        this.e = bbVar;
-        return new il0(bbVar);
+        ab abVar = new ab(this, viewGroup.getContext(), 4);
+        this.e = abVar;
+        return new il0(abVar);
     }
 }

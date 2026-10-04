@@ -24,13 +24,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.ok;
-import org.telegram.ui.Components.oc0;
-import org.telegram.ui.Components.s81;
-import org.telegram.ui.Components.sr;
+import org.telegram.ui.Components.a91;
+import org.telegram.ui.Components.pc0;
+import org.telegram.ui.Components.tr;
 import org.webrtc.RendererCommon;
-import w7.y5;
+import w7.z5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public class t2 extends FrameLayout {
     public boolean E;
@@ -204,7 +204,7 @@ public class t2 extends FrameLayout {
         if (this.n == null) {
             View view = new View(getContext());
             this.n = view;
-            addView(view, y5.g());
+            addView(view, z5.g());
         }
         return this.n;
     }
@@ -352,8 +352,8 @@ public class t2 extends FrameLayout {
         } else {
             this.b0.setDuration(350L);
         }
-        this.b0.setInterpolator(sr.f);
-        this.b0.addListener(new s81(this, 9));
+        this.b0.setInterpolator(tr.f);
+        this.b0.addListener(new a91(this, 9));
         this.b0.start();
         ArrayList arrayList = this.G;
         if (!arrayList.isEmpty()) {
@@ -464,28 +464,28 @@ public class t2 extends FrameLayout {
             View view = new View(context);
             this.h = view;
             view.setBackgroundColor(-14999773);
-            addView(view, y5.c(-1.0f, -1));
+            addView(view, z5.c(-1.0f, -1));
             if (z13) {
                 TextureView textureView = new TextureView(context);
                 this.e = textureView;
-                addView(textureView, y5.e(-1, -2, 17));
+                addView(textureView, z5.e(-1, -2, 17));
             }
             s2Var.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FIT);
-            addView(s2Var, y5.e(-1, -2, 17));
+            addView(s2Var, z5.e(-1, -2, 17));
         } else if (z10) {
             if (z13) {
                 TextureView textureView2 = new TextureView(context);
                 this.e = textureView2;
-                addView(textureView2, y5.e(-1, -2, 17));
+                addView(textureView2, z5.e(-1, -2, 17));
             }
             addView(s2Var);
         } else {
             if (z13) {
                 TextureView textureView3 = new TextureView(context);
                 this.e = textureView3;
-                addView(textureView3, y5.e(-1, -2, 17));
+                addView(textureView3, z5.e(-1, -2, 17));
             }
-            addView(s2Var, y5.e(-1, -2, 17));
+            addView(s2Var, z5.e(-1, -2, 17));
         }
         addView(imageView);
         TextureView textureView4 = this.e;
@@ -494,21 +494,21 @@ public class t2 extends FrameLayout {
         }
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.r = frameLayout;
-        frameLayout.setBackground(new oc0(true, -14602694, -13935795, -14395293, -14203560));
-        addView(frameLayout, y5.c(-1.0f, -1));
+        frameLayout.setBackground(new pc0(true, -14602694, -13935795, -14395293, -14203560));
+        addView(frameLayout, z5.c(-1.0f, -1));
         frameLayout.setVisibility(8);
         ImageView imageView2 = new ImageView(getContext());
         this.s = imageView2;
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
         imageView2.setImageResource(R.drawable.screencast_big);
-        frameLayout.addView(imageView2, y5.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
+        frameLayout.addView(imageView2, z5.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
         TextView textView = new TextView(getContext());
         this.v = textView;
         textView.setText(LocaleController.getString(R.string.VoipVideoScreenSharing));
         textView.setGravity(17);
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         org.telegram.messenger.f0.q(textView, -1, 1, 15.0f);
-        frameLayout.addView(textView, y5.d(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
+        frameLayout.addView(textView, z5.d(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
         if (z12) {
             setOutlineProvider(new ch.b(this, 5));
             setClipToOutline(true);

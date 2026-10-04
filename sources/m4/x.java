@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.RemoteException;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class x extends Handler {
     public boolean a;
@@ -49,7 +49,7 @@ public final class x extends Handler {
         boolean z10 = this.a;
         boolean z11 = this.b;
         c1 H0 = a1Var.H0(c10);
-        oi.f fVar = a1Var.b;
+        qi.f fVar = a1Var.b;
         e9.i0 s10 = fVar.s();
         for (int i11 = 0; i11 < s10.size(); i11++) {
             r rVar2 = (r) s10.get(i11);
@@ -80,21 +80,21 @@ public final class x extends Handler {
                             qVar.g(i10, c1Var, a2, z10, z11);
                         } catch (DeadObjectException unused) {
                             a1Var.b.M(rVar);
-                        } catch (RemoteException e) {
-                            e = e;
+                        } catch (RemoteException e7) {
+                            e = e7;
                             e2.a.o("MediaSessionImpl", "Exception in " + rVar, e);
                         }
                     } catch (DeadObjectException unused2) {
                         rVar = rVar2;
-                    } catch (RemoteException e7) {
-                        e = e7;
+                    } catch (RemoteException e10) {
+                        e = e10;
                         rVar = rVar2;
                     }
                 }
             } catch (DeadObjectException unused3) {
                 rVar = rVar2;
-            } catch (RemoteException e10) {
-                e = e10;
+            } catch (RemoteException e11) {
+                e = e11;
                 rVar = rVar2;
             }
         }

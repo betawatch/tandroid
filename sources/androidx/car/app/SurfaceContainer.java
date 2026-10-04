@@ -2,7 +2,7 @@ package androidx.car.app;
 
 import android.view.Surface;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class SurfaceContainer {
     private final int mDpi;
@@ -41,7 +41,7 @@ public final class SurfaceContainer {
         sb2.append("x");
         sb2.append(this.mHeight);
         sb2.append(", dpi: ");
-        return a4.a.o(this.mDpi, "]", sb2);
+        return a4.a.n(this.mDpi, "]", sb2);
     }
 
     private SurfaceContainer() {

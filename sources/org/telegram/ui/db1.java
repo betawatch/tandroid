@@ -1,140 +1,72 @@
 package org.telegram.ui;
 
-import android.graphics.RectF;
-import java.io.File;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.app.Activity;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class db1 implements Comparator {
-    public final /* synthetic */ int a;
+public final class db1 extends org.telegram.ui.ActionBar.f3 {
+    public static db1 b;
 
-    public /* synthetic */ db1(int i10) {
-        this.a = i10;
+    public static /* synthetic */ void m(db1 db1Var, uy uyVar) {
+        if (uyVar.getParentActivity() == null) {
+            return;
+        }
+        MessagesController.getInstance(db1Var.currentAccount).clearQueryTime();
+        uyVar.getMessagesStorage().clearLocalDatabase();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x008b A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0089 A[RETURN, SYNTHETIC] */
-    @Override // java.util.Comparator
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int compare(Object obj, Object obj2) {
-        int i10;
-        int i11;
-        switch (this.a) {
-            case 0:
-                return Integer.compare(((org.telegram.ui.ActionBar.g6) obj).V, ((org.telegram.ui.ActionBar.g6) obj2).V);
-            case 1:
-                long j3 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
-                long j10 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
-                if (j3 > j10) {
-                    return 1;
-                }
-                return j3 < j10 ? -1 : 0;
-            case 2:
-                long j11 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
-                long j12 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
-                if (j11 > j12) {
-                    return 1;
-                }
-                return j11 < j12 ? -1 : 0;
-            case 3:
-                return (int) (((org.telegram.ui.web.j) obj2).c - ((org.telegram.ui.web.j) obj).c);
-            case 4:
-                return (int) (((org.telegram.ui.web.j) obj2).c - ((org.telegram.ui.web.j) obj).c);
-            case 5:
-                return ((p2.d) obj).a.compareTo(((p2.d) obj2).a);
-            case 6:
-                return (int) ((((rg.n1) obj).a * 100.0f) - (((rg.n1) obj2).a * 100.0f));
-            case 7:
-                return ((String) obj).compareTo((String) obj2);
-            case 8:
-                return Long.compare(((File) obj2).lastModified(), ((File) obj).lastModified());
-            case 9:
-                return ((y9.d0) ((y9.h1) obj)).a.compareTo(((y9.d0) ((y9.h1) obj2)).a);
-            case 10:
-                i10 = ((b2.s) obj2).j;
-                i11 = ((b2.s) obj).j;
-                break;
-            case 11:
-                Integer num = (Integer) obj;
-                Integer num2 = (Integer) obj2;
-                if (num.intValue() == -1) {
-                    return num2.intValue() == -1 ? 0 : -1;
-                }
-                if (num2.intValue() == -1) {
-                    return 1;
-                }
-                return num.intValue() - num2.intValue();
-            case 12:
-                return Integer.compare(((x2.f) ((List) obj).get(0)).f, ((x2.f) ((List) obj2).get(0)).f);
-            case 13:
-                List list = (List) obj;
-                List list2 = (List) obj2;
-                int i12 = 17;
-                return e9.x.f(x2.o.c((x2.o) Collections.max(list, new db1(16)), (x2.o) Collections.max(list2, new db1(16)))).a(list.size(), list2.size()).b((x2.o) Collections.max(list, new db1(i12)), (x2.o) Collections.max(list2, new db1(i12)), new db1(i12)).e();
-            case 14:
-                return ((x2.e) Collections.max((List) obj)).compareTo((x2.e) Collections.max((List) obj2));
-            case 15:
-                return ((x2.l) ((List) obj).get(0)).compareTo((x2.l) ((List) obj2).get(0));
-            case 16:
-                return x2.o.c((x2.o) obj, (x2.o) obj2);
-            case 17:
-                x2.o oVar = (x2.o) obj;
-                x2.o oVar2 = (x2.o) obj2;
-                boolean z10 = oVar.e;
-                int i13 = oVar.s;
-                e9.y0 a2 = (z10 && oVar.n) ? x2.p.l : x2.p.l.a();
-                boolean z11 = oVar.f.B;
-                e9.z zVar = e9.z.a;
-                if (z11) {
-                    zVar = zVar.b(Integer.valueOf(i13), Integer.valueOf(oVar2.s), x2.p.l.a());
-                }
-                return zVar.b(Integer.valueOf(oVar.v), Integer.valueOf(oVar2.v), a2).b(Integer.valueOf(i13), Integer.valueOf(oVar2.s), a2).e();
-            case 18:
-                return ((y2.p) obj).a - ((y2.p) obj2).a;
-            case 19:
-                return Float.compare(((y2.p) obj).c, ((y2.p) obj2).c);
-            case 20:
-                RectF rectF = (RectF) obj;
-                RectF rectF2 = (RectF) obj2;
-                if (Math.abs(rectF.top - rectF2.top) > 1.0E-4f) {
-                    return rectF.top < rectF2.top ? -1 : 1;
-                }
-                if (Math.abs(rectF.left - rectF2.left) <= 1.0E-4f) {
-                    return 0;
-                }
-                if (rectF.left < rectF2.left) {
-                }
-            case 21:
-                i10 = ((TL_stars.SavedStarGift) obj2).date;
-                i11 = ((TL_stars.SavedStarGift) obj).date;
-                break;
-            case 22:
-                i10 = ((TL_stars.SavedStarGift) obj2).date;
-                i11 = ((TL_stars.SavedStarGift) obj).date;
-                break;
-            case 23:
-                return (int) (((yh.j8) obj2).d - ((yh.j8) obj).d);
-            case 24:
-                return Long.compare(((TLRPC.PollAnswer) obj).shuffle_hash ^ Long.MIN_VALUE, ((TLRPC.PollAnswer) obj2).shuffle_hash ^ Long.MIN_VALUE);
-            case 25:
-                return (int) (zg.p0.k((TLObject) obj) - zg.p0.k((TLObject) obj2));
-            default:
-                long j13 = ((zh.a) obj2).c;
-                long j14 = ((zh.a) obj).c;
-                if (j13 > j14) {
-                    return 1;
-                }
-                return j13 < j14 ? -1 : 0;
+    public static void n(uy uyVar) {
+        if (b == null) {
+            db1 db1Var = new db1(uyVar.getParentActivity(), false);
+            Activity parentActivity = uyVar.getParentActivity();
+            LinearLayout e7 = org.telegram.messenger.f0.e(parentActivity, 1);
+            org.telegram.ui.Components.ux0 ux0Var = new org.telegram.ui.Components.ux0(parentActivity, db1Var.currentAccount);
+            ux0Var.setStickerNum(7);
+            ux0Var.getImageReceiver().setAutoRepeat(1);
+            e7.addView(ux0Var, w7.z5.t(144, 144, 1, 0, 16, 0, 0));
+            TextView textView = new TextView(parentActivity);
+            textView.setGravity(8388611);
+            int i10 = org.telegram.ui.ActionBar.i6.j5;
+            org.telegram.messenger.f0.q(textView, org.telegram.ui.ActionBar.i6.w0(null, i10, false), 1, 20.0f);
+            textView.setText(LocaleController.getString(R.string.SuggestClearDatabaseTitle));
+            e7.addView(textView, w7.z5.d(-1, -2.0f, 0, 21.0f, 30.0f, 21.0f, 0.0f));
+            TextView textView2 = new TextView(parentActivity);
+            textView2.setGravity(8388611);
+            textView2.setTextSize(1, 15.0f);
+            textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
+            textView2.setText(AndroidUtilities.replaceTags(LocaleController.formatString("SuggestClearDatabaseMessage", R.string.SuggestClearDatabaseMessage, AndroidUtilities.formatFileSize(uyVar.getMessagesStorage().getDatabaseSize()))));
+            e7.addView(textView2, w7.z5.d(-1, -2.0f, 0, 21.0f, 15.0f, 21.0f, 16.0f));
+            TextView textView3 = new TextView(parentActivity);
+            textView3.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+            textView3.setGravity(17);
+            textView3.setTextSize(1, 14.0f);
+            textView3.setTypeface(AndroidUtilities.bold());
+            textView3.setText(LocaleController.getString(R.string.ClearLocalDatabase));
+            textView3.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false));
+            int dp = AndroidUtilities.dp(6.0f);
+            int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Oh, false);
+            int k10 = i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false), 120);
+            textView3.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.i0(dp, dp, dp, dp, w02, k10, k10));
+            e7.addView(textView3, w7.z5.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
+            textView3.setOnClickListener(new py0(8, db1Var, uyVar));
+            ScrollView scrollView = new ScrollView(parentActivity);
+            scrollView.addView(e7);
+            db1Var.setCustomView(scrollView);
+            b = db1Var;
+            db1Var.show();
         }
-        return i10 - i11;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        b = null;
     }
 }

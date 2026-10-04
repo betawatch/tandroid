@@ -8,6 +8,7 @@ import b2.k0;
 import b2.l0;
 import e9.i0;
 import g2.c0;
+import ii.n4;
 import j$.util.Objects;
 import java.io.IOException;
 import java.util.Collections;
@@ -16,13 +17,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import u2.d0;
-import u2.h1;
+import u2.i1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class l extends u2.a {
     public final c h;
-    public final l.d i;
+    public final n4 i;
     public final ob.a j;
     public final n2.n k;
     public final qb.b l;
@@ -38,10 +39,10 @@ public final class l extends u2.a {
         l0.a("media3.exoplayer.hls");
     }
 
-    public l(k0 k0Var, l.d dVar, c cVar, ob.a aVar, n2.n nVar, qb.b bVar, p2.c cVar2, long j3, boolean z10, int i10) {
+    public l(k0 k0Var, n4 n4Var, c cVar, ob.a aVar, n2.n nVar, qb.b bVar, p2.c cVar2, long j3, boolean z10, int i10) {
         this.s = k0Var;
         this.q = k0Var.c;
-        this.i = dVar;
+        this.i = n4Var;
         this.h = cVar;
         this.j = aVar;
         this.k = nVar;
@@ -131,7 +132,7 @@ public final class l extends u2.a {
         cVar.r = this;
         Map map = Collections.EMPTY_MAP;
         e2.d.i(uri, "The uri must be set.");
-        y2.o oVar = new y2.o(((g2.g) cVar.a.a).createDataSource(), new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, cVar.b.H());
+        y2.o oVar = new y2.o(((g2.g) cVar.a.b).createDataSource(), new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, cVar.b.K());
         e2.d.g(cVar.h == null);
         y2.l lVar = new y2.l("DefaultHlsPlaylistTracker:MultivariantPlaylist");
         cVar.h = lVar;
@@ -195,7 +196,7 @@ public final class l extends u2.a {
 
     public final void v(p2.l lVar) {
         long j3;
-        h1 h1Var;
+        i1 i1Var;
         long j10;
         long j11;
         long j12;
@@ -261,7 +262,7 @@ public final class l extends u2.a {
                 }
                 j17 = j12;
             }
-            h1Var = new h1(j16, e02, j19, lVar.u, j18, j17, true, !z12, i10 == 2 && lVar.f, dVar, i(), this.q);
+            i1Var = new i1(j16, e02, j19, lVar.u, j18, j17, true, !z12, i10 == 2 && lVar.f, dVar, i(), this.q);
         } else {
             if (j14 == -9223372036854775807L || i0Var.isEmpty()) {
                 j3 = 0;
@@ -272,8 +273,8 @@ public final class l extends u2.a {
                 j3 = j14;
             }
             long j22 = lVar.u;
-            h1Var = new h1(j16, e02, j22, j22, 0L, j3, true, false, true, dVar, i(), null);
+            i1Var = new i1(j16, e02, j22, j22, 0L, j3, true, false, true, dVar, i(), null);
         }
-        n(h1Var);
+        n(i1Var);
     }
 }

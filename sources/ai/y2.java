@@ -9,9 +9,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y2 implements org.telegram.ui.ActionBar.z1, jh.a {
+public final /* synthetic */ class y2 implements org.telegram.ui.ActionBar.a2, jh.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ e6 b;
 
@@ -36,8 +36,8 @@ public final /* synthetic */ class y2 implements org.telegram.ui.ActionBar.z1, j
     /* JADX WARN: Type inference failed for: r9v5 */
     /* JADX WARN: Type inference failed for: r9v6 */
     /* JADX WARN: Type inference failed for: r9v9 */
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         long j3;
         TLRPC.ChatFull chatFull;
         ?? r92;
@@ -209,7 +209,7 @@ public final /* synthetic */ class y2 implements org.telegram.ui.ActionBar.z1, j
     }
 
     @Override // jh.a
-    public void j(int i10) {
+    public void h(int i10) {
         if (i10 == 0) {
             this.b.P0();
         }

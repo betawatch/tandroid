@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class k {
     public static final /* synthetic */ int a = 0;
@@ -41,62 +41,62 @@ public abstract class k {
             case 6:
                 return 6L;
             default:
-                throw new IllegalArgumentException(hg.c.h(i10, "Unrecognized FolderType: "));
+                throw new IllegalArgumentException(hg.k0.h(i10, "Unrecognized FolderType: "));
         }
     }
 
     public static n4.m b(b2.n0 n0Var, String str, Uri uri, long j3, Bitmap bitmap) {
         Long l4;
-        com.google.firebase.messaging.q qVar = new com.google.firebase.messaging.q();
-        qVar.k("android.media.metadata.MEDIA_ID", str);
+        android.support.v4.media.c cVar = new android.support.v4.media.c(1);
+        cVar.e("android.media.metadata.MEDIA_ID", str);
         CharSequence charSequence = n0Var.a;
         Bundle bundle = n0Var.I;
         Integer num = n0Var.p;
         Uri uri2 = n0Var.m;
         if (charSequence != null) {
-            qVar.l(charSequence, "android.media.metadata.TITLE");
+            cVar.f(charSequence, "android.media.metadata.TITLE");
         }
         CharSequence charSequence2 = n0Var.e;
         if (charSequence2 != null) {
-            qVar.l(charSequence2, "android.media.metadata.DISPLAY_TITLE");
+            cVar.f(charSequence2, "android.media.metadata.DISPLAY_TITLE");
         }
         CharSequence charSequence3 = n0Var.f;
         if (charSequence3 != null) {
-            qVar.l(charSequence3, "android.media.metadata.DISPLAY_SUBTITLE");
+            cVar.f(charSequence3, "android.media.metadata.DISPLAY_SUBTITLE");
         }
         CharSequence charSequence4 = n0Var.g;
         if (charSequence4 != null) {
-            qVar.l(charSequence4, "android.media.metadata.DISPLAY_DESCRIPTION");
+            cVar.f(charSequence4, "android.media.metadata.DISPLAY_DESCRIPTION");
         }
         CharSequence charSequence5 = n0Var.b;
         if (charSequence5 != null) {
-            qVar.l(charSequence5, "android.media.metadata.ARTIST");
+            cVar.f(charSequence5, "android.media.metadata.ARTIST");
         }
         CharSequence charSequence6 = n0Var.c;
         if (charSequence6 != null) {
-            qVar.l(charSequence6, "android.media.metadata.ALBUM");
+            cVar.f(charSequence6, "android.media.metadata.ALBUM");
         }
         CharSequence charSequence7 = n0Var.d;
         if (charSequence7 != null) {
-            qVar.l(charSequence7, "android.media.metadata.ALBUM_ARTIST");
+            cVar.f(charSequence7, "android.media.metadata.ALBUM_ARTIST");
         }
         if (n0Var.t != null) {
-            qVar.i(r7.intValue(), "android.media.metadata.YEAR");
+            cVar.c(r7.intValue(), "android.media.metadata.YEAR");
         }
         if (uri != null) {
-            qVar.k("android.media.metadata.MEDIA_URI", uri.toString());
+            cVar.e("android.media.metadata.MEDIA_URI", uri.toString());
         }
         if (uri2 != null) {
-            qVar.k("android.media.metadata.DISPLAY_ICON_URI", uri2.toString());
-            qVar.k("android.media.metadata.ALBUM_ART_URI", uri2.toString());
-            qVar.k("android.media.metadata.ART_URI", uri2.toString());
+            cVar.e("android.media.metadata.DISPLAY_ICON_URI", uri2.toString());
+            cVar.e("android.media.metadata.ALBUM_ART_URI", uri2.toString());
+            cVar.e("android.media.metadata.ART_URI", uri2.toString());
         }
         if (bitmap != null) {
-            qVar.h("android.media.metadata.DISPLAY_ICON", bitmap);
-            qVar.h("android.media.metadata.ALBUM_ART", bitmap);
+            cVar.a("android.media.metadata.DISPLAY_ICON", bitmap);
+            cVar.a("android.media.metadata.ALBUM_ART", bitmap);
         }
         if (num != null && num.intValue() != -1) {
-            qVar.i(a(num.intValue()), "android.media.metadata.BT_FOLDER_TYPE");
+            cVar.c(a(num.intValue()), "android.media.metadata.BT_FOLDER_TYPE");
         }
         if (j3 == -9223372036854775807L && (l4 = n0Var.h) != null) {
             j3 = l4.longValue();
@@ -104,29 +104,29 @@ public abstract class k {
         if (j3 == -9223372036854775807L) {
             j3 = -1;
         }
-        qVar.i(j3, "android.media.metadata.DURATION");
+        cVar.c(j3, "android.media.metadata.DURATION");
         n4.i0 d = d(n0Var.i);
         if (d != null) {
-            qVar.j("android.media.metadata.USER_RATING", d);
+            cVar.d("android.media.metadata.USER_RATING", d);
         }
         n4.i0 d10 = d(n0Var.j);
         if (d10 != null) {
-            qVar.j("android.media.metadata.RATING", d10);
+            cVar.d("android.media.metadata.RATING", d10);
         }
         if (n0Var.H != null) {
-            qVar.i(r6.intValue(), "androidx.media3.session.EXTRAS_KEY_MEDIA_TYPE_COMPAT");
+            cVar.c(r6.intValue(), "androidx.media3.session.EXTRAS_KEY_MEDIA_TYPE_COMPAT");
         }
         if (bundle != null) {
             for (String str2 : bundle.keySet()) {
                 Object obj = bundle.get(str2);
                 if (obj == null || (obj instanceof CharSequence)) {
-                    qVar.l((CharSequence) obj, str2);
+                    cVar.f((CharSequence) obj, str2);
                 } else if ((obj instanceof Byte) || (obj instanceof Short) || (obj instanceof Integer) || (obj instanceof Long)) {
-                    qVar.i(((Number) obj).longValue(), str2);
+                    cVar.c(((Number) obj).longValue(), str2);
                 }
             }
         }
-        return new n4.m(qVar.a);
+        return new n4.m(cVar.b);
     }
 
     public static b2.c1 c(n4.i0 i0Var) {
@@ -198,12 +198,12 @@ public abstract class k {
     }
 
     public static int e(b2.e eVar) {
-        ka.c bVar = Build.VERSION.SDK_INT >= 26 ? new n4.b(4) : new ka.c(4);
+        k2.e bVar = Build.VERSION.SDK_INT >= 26 ? new n4.b(5) : new k2.e(5);
         AudioAttributes.Builder builder = (AudioAttributes.Builder) bVar.b;
         builder.setContentType(eVar.a);
         builder.setFlags(eVar.b);
-        bVar.p0(eVar.c);
-        AudioAttributes audioAttributes = bVar.G().a;
+        bVar.m(eVar.c);
+        AudioAttributes audioAttributes = bVar.a().a;
         audioAttributes.getClass();
         int flags = audioAttributes.getFlags();
         int usage = audioAttributes.getUsage();

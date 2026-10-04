@@ -23,7 +23,7 @@ import org.json.JSONObject;
 import q9.n;
 import t7.u;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
@@ -85,32 +85,32 @@ public final class c implements d {
         r2.c = r3;
         r2.b = 3;
         r2 = r2.a();
-        r4.z(r2);
+        r4.t(r2);
      */
     /* JADX WARN: Finally extract failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b() {
-        ra.b E;
+        ra.b z10;
         synchronized (m) {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                z0 f7 = z0.f(hVar.a);
+                z0 e7 = z0.e(hVar.a);
                 try {
-                    E = this.c.E();
-                    int i10 = E.b;
-                    boolean z10 = true;
+                    z10 = this.c.z();
+                    int i10 = z10.b;
+                    boolean z11 = true;
                     if (i10 != 2 && i10 != 1) {
-                        z10 = false;
+                        z11 = false;
                     }
-                    if (f7 != null) {
-                        f7.I();
+                    if (e7 != null) {
+                        e7.D();
                     }
                 } catch (Throwable th2) {
-                    if (f7 != null) {
-                        f7.I();
+                    if (e7 != null) {
+                        e7.D();
                     }
                     throw th2;
                 }
@@ -118,7 +118,7 @@ public final class c implements d {
                 throw th3;
             }
         }
-        k(E);
+        k(z10);
         this.i.execute(new b(this, 1));
     }
 
@@ -162,7 +162,7 @@ public final class c implements d {
                 if (responseCode == 401 || responseCode == 404) {
                     a5.a a10 = sa.b.a();
                     a10.b = 3;
-                    f7 = a10.c();
+                    f7 = a10.b();
                 } else {
                     if (responseCode == 429) {
                         throw new e("Firebase servers have received too many requests from this client in a short period of time. Please try again later.");
@@ -171,7 +171,7 @@ public final class c implements d {
                         Log.e("Firebase-Installations", "Firebase Installations can not communicate with Firebase server APIs due to invalid configuration. Please update your Firebase initialization process and set valid Firebase options (API key, Project ID, Application ID) when initializing Firebase.");
                         a5.a a11 = sa.b.a();
                         a11.b = 2;
-                        f7 = a11.c();
+                        f7 = a11.b();
                     }
                 }
             }
@@ -238,15 +238,15 @@ public final class c implements d {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
-                z0 f7 = z0.f(hVar.a);
+                z0 e7 = z0.e(hVar.a);
                 try {
-                    this.c.z(bVar);
-                    if (f7 != null) {
-                        f7.I();
+                    this.c.t(bVar);
+                    if (e7 != null) {
+                        e7.D();
                     }
                 } catch (Throwable th2) {
-                    if (f7 != null) {
-                        f7.I();
+                    if (e7 != null) {
+                        e7.D();
                     }
                     throw th2;
                 }
@@ -381,10 +381,10 @@ public final class c implements d {
                 } catch (IOException | AssertionError unused2) {
                 }
                 if (responseCode >= 200 && responseCode < 300) {
-                    sa.a e = sa.c.e(c10);
+                    sa.a e7 = sa.c.e(c10);
                     c10.disconnect();
                     TrafficStats.clearThreadStatsTag();
-                    aVar = e;
+                    aVar = e7;
                 } else {
                     try {
                         sa.c.b(c10, str7, str4, str6);

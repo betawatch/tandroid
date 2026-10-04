@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import s4.c1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c0 extends s4.h0 {
     public final ArrayList c = new ArrayList();
@@ -29,10 +29,10 @@ public final class c0 extends s4.h0 {
         this.r = d0Var;
         Context context = d0Var.n;
         this.d = LayoutInflater.from(context);
-        this.e = v7.f0.d(context, R.attr.mediaRouteDefaultIconDrawable);
-        this.f = v7.f0.d(context, R.attr.mediaRouteTvIconDrawable);
-        this.h = v7.f0.d(context, R.attr.mediaRouteSpeakerIconDrawable);
-        this.n = v7.f0.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
+        this.e = v7.e0.d(context, R.attr.mediaRouteDefaultIconDrawable);
+        this.f = v7.e0.d(context, R.attr.mediaRouteTvIconDrawable);
+        this.h = v7.e0.d(context, R.attr.mediaRouteSpeakerIconDrawable);
+        this.n = v7.e0.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
         D();
     }
 
@@ -95,8 +95,8 @@ public final class c0 extends s4.h0 {
         if (uri != null) {
             try {
                 createFromStream = Drawable.createFromStream(c0Var.r.n.getContentResolver().openInputStream(uri), null);
-            } catch (IOException e) {
-                Log.w("RecyclerAdapter", "Failed to load " + uri, e);
+            } catch (IOException e7) {
+                Log.w("RecyclerAdapter", "Failed to load " + uri, e7);
             }
         }
         int i11 = vVar.n;

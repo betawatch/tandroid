@@ -6,7 +6,7 @@ import g2.b0;
 import java.io.IOException;
 import u2.t;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class o implements i {
     public final long a = t.b.getAndIncrement();
@@ -47,6 +47,6 @@ public final class o implements i {
     }
 
     @Override // y2.i
-    public final void D() {
+    public final void q() {
     }
 }

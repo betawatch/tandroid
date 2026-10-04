@@ -17,11 +17,11 @@ import ci.e4;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.v5;
+import org.telegram.ui.w5;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class s extends View {
     public final Path a;
@@ -103,7 +103,7 @@ public final class s extends View {
         Paint paint = limitPreviewView.K;
         if (limitPreviewView.J) {
             measuredHeight = getMeasuredHeight();
-            a1 d = a1.d();
+            b1 d = b1.d();
             int measuredWidth = limitPreviewView.getMeasuredWidth();
             int measuredHeight2 = limitPreviewView.getMeasuredHeight();
             globalXOffset2 = limitPreviewView.getGlobalXOffset();
@@ -111,18 +111,18 @@ public final class s extends View {
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(0.0f, AndroidUtilities.dp(3.0f), getMeasuredWidth(), measuredHeight - AndroidUtilities.dp(3.0f));
             float f7 = measuredHeight / 2.0f;
-            a1 d10 = a1.d();
+            b1 d10 = b1.d();
             if (d10.c == null) {
                 d10.c = new Paint(1);
             }
-            d10.c.setColor(h6.w0(null, h6.Oh, false));
+            d10.c.setColor(i6.w0(null, i6.Oh, false));
             canvas.drawRoundRect(rectF, f7, f7, d10.c);
         } else {
             if (this.v) {
                 this.v = false;
                 b();
             }
-            a1 d11 = a1.d();
+            b1 d11 = b1.d();
             int measuredWidth2 = limitPreviewView.getMeasuredWidth();
             int measuredHeight3 = limitPreviewView.getMeasuredHeight();
             globalXOffset = limitPreviewView.getGlobalXOffset();
@@ -133,18 +133,18 @@ public final class s extends View {
             float f11 = f10 / 2.0f;
             boolean z10 = limitPreviewView.R;
             TextPaint textPaint = this.c;
-            canvas.drawRoundRect(rectF2, f11, f11, z10 ? paint : limitPreviewView.e0 != null ? textPaint : a1.d().e());
-            Paint e = a1.d().e();
+            canvas.drawRoundRect(rectF2, f11, f11, z10 ? paint : limitPreviewView.e0 != null ? textPaint : b1.d().e());
+            Paint e7 = b1.d().e();
             CornerPathEffect cornerPathEffect = this.b;
-            e.setPathEffect(cornerPathEffect);
+            e7.setPathEffect(cornerPathEffect);
             if (limitPreviewView.e0 != null) {
                 textPaint.setPathEffect(cornerPathEffect);
             }
             if (!limitPreviewView.R) {
-                paint = limitPreviewView.e0 != null ? textPaint : a1.d().e();
+                paint = limitPreviewView.e0 != null ? textPaint : b1.d().e();
             }
             canvas.drawPath(this.a, paint);
-            a1.d().e().setPathEffect(null);
+            b1.d().e().setPathEffect(null);
             if (limitPreviewView.e0 != null) {
                 textPaint.setPathEffect(null);
             }
@@ -209,7 +209,7 @@ public final class s extends View {
         if (limitPreviewView.e0 != null) {
             canvas.restore();
             canvas.saveLayer(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.x, 31);
-            canvas.drawRect(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f), getMeasuredWidth() - AndroidUtilities.dp(12.0f), getMeasuredHeight() - AndroidUtilities.dp(10.0f), ((v5) ((org.telegram.ui.z0) limitPreviewView.e0).b).t0(getX(), getY()));
+            canvas.drawRect(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(10.0f), getMeasuredWidth() - AndroidUtilities.dp(12.0f), getMeasuredHeight() - AndroidUtilities.dp(10.0f), ((w5) ((org.telegram.ui.z0) limitPreviewView.e0).b).x0(getX(), getY()));
             canvas.restore();
         }
     }

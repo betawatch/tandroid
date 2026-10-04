@@ -10,7 +10,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class y0 extends x0 implements j0 {
     public final Executor c;
@@ -36,9 +36,9 @@ public final class y0 extends x0 implements j0 {
         if (scheduledExecutorService != null) {
             try {
                 scheduledFuture = scheduledExecutorService.schedule(e2Var, j3, TimeUnit.MILLISECONDS);
-            } catch (RejectedExecutionException e) {
+            } catch (RejectedExecutionException e7) {
                 CancellationException cancellationException = new CancellationException("The task was rejected");
-                cancellationException.initCause(e);
+                cancellationException.initCause(e7);
                 e0.e(hVar, cancellationException);
             }
         }
@@ -55,9 +55,9 @@ public final class y0 extends x0 implements j0 {
             id.h hVar = mVar.e;
             try {
                 scheduledFuture = scheduledExecutorService.schedule(eVar, j3, TimeUnit.MILLISECONDS);
-            } catch (RejectedExecutionException e) {
+            } catch (RejectedExecutionException e7) {
                 CancellationException cancellationException = new CancellationException("The task was rejected");
-                cancellationException.initCause(e);
+                cancellationException.initCause(e7);
                 e0.e(hVar, cancellationException);
             }
         }
@@ -72,9 +72,9 @@ public final class y0 extends x0 implements j0 {
     public final void c(id.h hVar, Runnable runnable) {
         try {
             this.c.execute(runnable);
-        } catch (RejectedExecutionException e) {
+        } catch (RejectedExecutionException e7) {
             CancellationException cancellationException = new CancellationException("The task was rejected");
-            cancellationException.initCause(e);
+            cancellationException.initCause(e7);
             e0.e(hVar, cancellationException);
             m0.b.c(hVar, runnable);
         }

@@ -4,12 +4,13 @@ import android.graphics.SurfaceTexture;
 import android.opengl.GLES20;
 import android.os.Handler;
 import android.os.HandlerThread;
+import hg.k0;
 import java.util.concurrent.Callable;
 import org.webrtc.EglBase;
 import org.webrtc.TextureBufferImpl;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public class SurfaceTextureHelper {
     private static final String TAG = "SurfaceTextureHelper";
@@ -31,7 +32,7 @@ public class SurfaceTextureHelper {
     private final TimestampAligner timestampAligner;
     private final YuvConverter yuvConverter;
 
-    /* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
     public interface FrameRefMonitor {
         void onDestroyBuffer(VideoFrame.TextureBuffer textureBuffer);
 
@@ -51,8 +52,8 @@ public class SurfaceTextureHelper {
             public SurfaceTextureHelper call() {
                 try {
                     return new SurfaceTextureHelper(EglBase.Context.this, handler, z10, yuvConverter, frameRefMonitor);
-                } catch (RuntimeException e) {
-                    Logging.e(SurfaceTextureHelper.TAG, str + " create failure", e);
+                } catch (RuntimeException e7) {
+                    Logging.e(SurfaceTextureHelper.TAG, str + " create failure", e7);
                     return null;
                 }
             }
@@ -206,10 +207,10 @@ public class SurfaceTextureHelper {
 
     public void setTextureSize(int i10, int i11) {
         if (i10 <= 0) {
-            throw new IllegalArgumentException(hg.c.h(i10, "Texture width must be positive, but was "));
+            throw new IllegalArgumentException(k0.h(i10, "Texture width must be positive, but was "));
         }
         if (i11 <= 0) {
-            throw new IllegalArgumentException(hg.c.h(i11, "Texture height must be positive, but was "));
+            throw new IllegalArgumentException(k0.h(i11, "Texture height must be positive, but was "));
         }
         this.surfaceTexture.setDefaultBufferSize(i10, i11);
         this.handler.post(new gg.n(this, i10, i11, 12));
@@ -293,10 +294,10 @@ public class SurfaceTextureHelper {
                     SurfaceTextureHelper.this.lambda$new$0(surfaceTexture2);
                 }
             }, handler);
-        } catch (RuntimeException e) {
+        } catch (RuntimeException e7) {
             this.eglBase.release();
             handler.getLooper().quit();
-            throw e;
+            throw e7;
         }
     }
 

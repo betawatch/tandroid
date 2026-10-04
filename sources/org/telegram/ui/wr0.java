@@ -1,52 +1,19 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
-import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wr0 implements Runnable {
-    public final /* synthetic */ PhotoViewer a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ zs0 c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ AnimatorSet f;
-
-    public /* synthetic */ wr0(PhotoViewer photoViewer, View view, zs0 zs0Var, float f7, float f10, AnimatorSet animatorSet) {
-        this.a = photoViewer;
-        this.b = view;
-        this.c = zs0Var;
-        this.d = f7;
-        this.e = f10;
-        this.f = animatorSet;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
+public final /* synthetic */ class wr0 implements ValueAnimator.AnimatorUpdateListener {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        org.telegram.ui.Components.vb vbVar;
         Drawable[] drawableArr = PhotoViewer.U8;
-        View view = this.b;
-        zs0 zs0Var = this.c;
-        view.setOutlineProvider(zs0Var);
-        view.setClipToOutline(true);
-        PhotoViewer photoViewer = this.a;
-        photoViewer.x3.setOutlineProvider(zs0Var);
-        photoViewer.x3.setClipToOutline(true);
-        mu0 mu0Var = photoViewer.E2;
-        if (mu0Var != null) {
-            mu0Var.setOutlineProvider(zs0Var);
-            photoViewer.E2.setClipToOutline(true);
+        org.telegram.ui.Components.rc rcVar = org.telegram.ui.Components.rc.w;
+        if (rcVar == null || (vbVar = rcVar.e) == null) {
+            return;
         }
-        photoViewer.x3.setTranslationY(this.d);
-        float f7 = this.e;
-        view.setTranslationY(f7);
-        mu0 mu0Var2 = photoViewer.E2;
-        if (mu0Var2 != null) {
-            mu0Var2.setTranslationY(f7);
-        }
-        photoViewer.Y5 = 0.0f;
-        photoViewer.e0.invalidate();
-        this.f.start();
+        vbVar.updatePosition();
     }
 }

@@ -1,49 +1,28 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class bl extends s4.s0 {
-    public final /* synthetic */ il a;
+public final class bl extends s4.d0 {
+    public final /* synthetic */ hg.e0 r;
 
-    public bl(il ilVar) {
-        this.a = ilVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bl(hg.e0 e0Var, Context context) {
+        super(context);
+        this.r = e0Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        il0 il0Var;
-        il ilVar = this.a;
-        ai.w0 w0Var = ilVar.P;
-        wi wiVar = ilVar.b;
-        boolean z10 = i10 != 0;
-        ilVar.L = z10;
-        if (!z10 && ilVar.J != null) {
-            ilVar.J = null;
-        }
-        if (i10 == 0) {
-            int dp = AndroidUtilities.dp(13.0f);
-            int backgroundPaddingTop = wiVar.getBackgroundPaddingTop();
-            if (((wiVar.b2[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || (il0Var = (il0) w0Var.K(0)) == null) {
-                return;
-            }
-            View view = il0Var.a;
-            if (view.getTop() > ilVar.A0 - ilVar.z0) {
-                w0Var.v0(0, view.getTop() - (ilVar.A0 - ilVar.z0), null);
-            }
-        }
+    @Override // s4.d0
+    public final int k(int i10, View view) {
+        int k10 = super.k(i10, view);
+        jl jlVar = (jl) this.r.V;
+        return k10 - (jlVar.P.getPaddingTop() - (jlVar.A0 - jlVar.z0));
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        il ilVar = this.a;
-        ilVar.e0();
-        if (ilVar.J != null) {
-            ilVar.K += i11;
-        }
-        ilVar.b.X1(ilVar, i11);
+    @Override // s4.d0
+    public final int m(int i10) {
+        return super.m(i10) * 4;
     }
 }

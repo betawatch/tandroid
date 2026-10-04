@@ -1,13 +1,23 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public interface h90 {
-    void c();
+public final class h90 extends k9 {
+    public final /* synthetic */ ai.w7 e;
 
-    void e();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h90(ai.w7 w7Var, Context context) {
+        super(context, false);
+        this.e = w7Var;
+    }
 
-    void j();
-
-    void k();
+    @Override // org.telegram.ui.Components.k9, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(Math.min(3, ((j90) this.e.d).w) == 0 ? 0 : hg.k0.f(r4, 1, 20, 32)), TLObject.FLAG_30), i11);
+    }
 }

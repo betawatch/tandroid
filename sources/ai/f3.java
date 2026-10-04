@@ -4,7 +4,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class f3 implements Utilities.Callback {
                 e6Var2.L3 = longValue;
                 a4 a4Var = e6Var2.b2;
                 if (a4Var != null) {
-                    a4Var.K(true);
+                    a4Var.I(true);
                     e6Var2.b2.R1();
                 }
                 e6Var2.r0(true);

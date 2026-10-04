@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import u2.i0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c {
     public static volatile long g;
@@ -40,8 +40,8 @@ public final class c {
         try {
             g = d.getLong("hash", 0L);
             h = d.getLong("lastReload", 0L);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
         AndroidUtilities.runOnUIThread(new a(this, 0));
     }
@@ -79,8 +79,8 @@ public final class c {
                 if (arrayList.get(i10) != null && ((b) arrayList.get(i10)).a != null && ((b) arrayList.get(i10)).a.id == j3) {
                     return ((b) arrayList.get(i10)).a;
                 }
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
                 return null;
             }
         }

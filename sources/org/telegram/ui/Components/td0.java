@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class td0 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class td0 implements Runnable {
                 ofFloat.addUpdateListener(new ud0(ee0Var, 0));
                 ofFloat.addListener(new hd0(ee0Var, 1));
                 ofFloat.setDuration(420L);
-                ofFloat.setInterpolator(sr.h);
+                ofFloat.setInterpolator(tr.h);
                 ofFloat.start();
                 break;
         }

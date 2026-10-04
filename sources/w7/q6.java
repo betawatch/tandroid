@@ -1,23 +1,13 @@
 package w7;
 
-import android.util.Log;
+import android.text.InputFilter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class q6 {
-    public static void a(Exception exc, String str, Object... objArr) {
-        if (Log.isLoggable("Vision", 6)) {
-            if (Log.isLoggable("Vision", 3)) {
-                Log.e("Vision", String.format(str, objArr), exc);
-                return;
-            }
-            String format = String.format(str, objArr);
-            String valueOf = String.valueOf(exc);
-            StringBuilder sb2 = new StringBuilder(valueOf.length() + format.length() + 2);
-            sb2.append(format);
-            sb2.append(": ");
-            sb2.append(valueOf);
-            Log.e("Vision", sb2.toString());
-        }
-    }
+    public abstract InputFilter[] a(InputFilter[] inputFilterArr);
+
+    public abstract void b(boolean z10);
+
+    public abstract void c(boolean z10);
 }

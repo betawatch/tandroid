@@ -1,30 +1,27 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class l10 {
-    public long a;
-    public int b;
+public final class l10 extends org.telegram.ui.Components.w00 {
+    public final /* synthetic */ int U;
+    public final /* synthetic */ Object V;
 
-    public l10(int i10, long j3) {
-        this.a = j3;
-        this.b = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l10(Object obj, Context context, int i10) {
+        super(context, null);
+        this.U = i10;
+        this.V = obj;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.Components.w00
+    public final int getColumnsCount() {
+        switch (this.U) {
+            case 0:
+                return ((x10) this.V).s;
+            default:
+                return ((v10) this.V).d.s;
         }
-        if (obj != null && l10.class == obj.getClass()) {
-            l10 l10Var = (l10) obj;
-            if (this.a == l10Var.a && this.b == l10Var.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.b;
     }
 }

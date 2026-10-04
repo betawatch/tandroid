@@ -5,10 +5,10 @@ import android.util.SparseArray;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.ui.r6;
-import org.telegram.ui.s6;
+import org.telegram.ui.u6;
+import org.telegram.ui.v6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class b {
     public final boolean a;
@@ -113,16 +113,16 @@ public final class b {
         hashSet3.clear();
         Iterator it2 = hashSet.iterator();
         while (it2.hasNext()) {
-            r6 r6Var = (r6) this.c.get(((Long) it2.next()).longValue());
-            if (r6Var != null) {
-                SparseArray sparseArray = r6Var.d;
+            u6 u6Var = (u6) this.c.get(((Long) it2.next()).longValue());
+            if (u6Var != null) {
+                SparseArray sparseArray = u6Var.d;
                 int i10 = 0;
                 while (true) {
                     if (i10 >= sparseArray.size()) {
-                        hashSet3.add(Long.valueOf(r6Var.a));
+                        hashSet3.add(Long.valueOf(u6Var.a));
                         break;
                     }
-                    ArrayList arrayList = ((s6) sparseArray.valueAt(i10)).b;
+                    ArrayList arrayList = ((v6) sparseArray.valueAt(i10)).b;
                     int size = arrayList.size();
                     int i11 = 0;
                     while (i11 < size) {

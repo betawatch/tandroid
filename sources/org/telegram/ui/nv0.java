@@ -1,39 +1,34 @@
 package org.telegram.ui;
 
-import android.R;
-import android.content.Context;
-import android.view.ActionMode;
-import android.view.Menu;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class nv0 extends org.telegram.ui.Cells.d6 {
-    public final /* synthetic */ pv0 F;
+public final class nv0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ uv0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nv0(pv0 pv0Var, Context context, int i10) {
-        super(context, i10, null, null);
-        this.F = pv0Var;
+    public /* synthetic */ nv0(uv0 uv0Var, int i10) {
+        this.a = i10;
+        this.b = uv0Var;
     }
 
-    @Override // org.telegram.ui.Cells.d6
-    public final void g(org.telegram.ui.Cells.c6 c6Var, ActionMode actionMode) {
-        if (c6Var.isFocused() && c6Var.hasSelection()) {
-            Menu menu = actionMode.getMenu();
-            if (menu.findItem(R.id.copy) == null) {
-                return;
-            }
-            wn.k8(menu, this.F.d.f.h, false, true, true, true);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.R.setTranslationY(0.0f);
+                break;
+            case 1:
+                this.b.R.setTranslationY(0.0f);
+                break;
+            default:
+                uv0 uv0Var = this.b;
+                uv0Var.getClass();
+                uv0Var.R.setTranslationY(0.0f);
+                uv0Var.l0();
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Cells.d6
-    public final void i(boolean z10) {
-        rv0.d0(this.F.d, this, z10);
-    }
-
-    @Override // org.telegram.ui.Cells.d6
-    public final void j(org.telegram.ui.Cells.d6 d6Var) {
-        rv0.e0(this.F.d, d6Var);
     }
 }

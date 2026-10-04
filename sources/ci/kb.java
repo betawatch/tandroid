@@ -1,60 +1,96 @@
 package ci;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
-public final class kb extends w3 {
-    public final /* synthetic */ lc k0;
+public final class kb implements oc {
+    public final /* synthetic */ bi.v a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kb(lc lcVar, int i10, Context context, ai.d dVar, MediaController.AlbumEntry albumEntry, boolean z10, boolean z11, boolean z12) {
-        super(i10, context, dVar, albumEntry, z10, 1.39f, z11, z12);
-        this.k0 = lcVar;
+    public kb(bi.v vVar) {
+        this.a = vVar;
     }
 
-    @Override // ci.w3
-    public final void a() {
-        lc lcVar = this.k0;
-        lcVar.M0.setTranslationY(lcVar.n.getMeasuredHeight() - lcVar.M0.g());
-        ra raVar = lcVar.q2;
-        if (raVar != null) {
-            raVar.run();
-            lcVar.q2 = null;
-        }
+    @Override // ci.oc
+    public final void O(float f7, boolean z10) {
+        this.a.run(Boolean.FALSE, Float.valueOf(f7));
     }
 
-    @Override // ci.w3
-    public final void c(boolean z10) {
-        if (this.k0.f0 == 0 && z10) {
-            AndroidUtilities.runOnUIThread(new androidx.fragment.app.a0(this, 24));
-        }
+    @Override // ci.oc
+    public final /* synthetic */ void A(float f7) {
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0 || motionEvent.getY() >= g()) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        lc lcVar = this.k0;
-        lcVar.L0 = true;
-        lcVar.f(false);
-        return true;
+    @Override // ci.oc
+    public final /* synthetic */ void C(boolean z10) {
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        lc lcVar = this.k0;
-        if (lcVar.k2) {
-            float clamp = Utilities.clamp(1.0f - (f7 / (lcVar.n.getMeasuredHeight() - lcVar.M0.g())), 1.0f, 0.0f);
-            lcVar.r.b(AndroidUtilities.dp(-32.0f) * clamp);
-            lcVar.r.setAlpha(1.0f - (0.6f * clamp));
-            lcVar.i0.setAlpha(1.0f - clamp);
-        }
+    @Override // ci.oc
+    public final /* synthetic */ void L(float f7) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void U(long j3) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void X(boolean z10) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void c0(float f7) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void d(int i10) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void h(float f7) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void h0(float f7) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void k(float f7) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void l0(float f7) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void s0(float f7) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void u0(long j3) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void m0() {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void u() {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void I(float f7, int i10) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void b0(float f7, int i10) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void k0(float f7, int i10) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void l(long j3, boolean z10) {
+    }
+
+    @Override // ci.oc
+    public final /* synthetic */ void t0(int i10, long j3) {
     }
 }

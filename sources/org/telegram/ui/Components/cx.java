@@ -1,40 +1,63 @@
 package org.telegram.ui.Components;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.util.Property;
 import android.view.MotionEvent;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class cx extends ImageView {
-    public final /* synthetic */ mz a;
+public final class cx extends z4.g {
+    public final /* synthetic */ nz w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cx(mz mzVar, Context context) {
+    public cx(nz nzVar, Context context) {
         super(context);
-        this.a = mzVar;
+        this.w0 = nzVar;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ny nyVar;
-        int action = motionEvent.getAction();
-        mz mzVar = this.a;
-        if (action == 0) {
-            mzVar.P1 = true;
-            mzVar.Q1 = false;
-            AndroidUtilities.runOnUIThread(new ld(mzVar, 350, 3), 350);
-        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
-            mzVar.P1 = false;
-            if (!mzVar.Q1 && (nyVar = mzVar.t1) != null && nyVar.k()) {
-                try {
-                    mzVar.x.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
+    @Override // z4.g, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.w0.f) {
+            return false;
+        }
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
+        }
+        try {
+            return super.onInterceptTouchEvent(motionEvent);
+        } catch (IllegalArgumentException unused) {
+            return false;
+        }
+    }
+
+    @Override // z4.g
+    public final void x(int i10, boolean z10) {
+        nz nzVar = this.w0;
+        rx rxVar = nzVar.I;
+        nz.a(nzVar, i10 == 1);
+        if (i10 != getCurrentItem()) {
+            super.x(i10, z10);
+            return;
+        }
+        if (i10 != 0) {
+            if (i10 == 1) {
+                nzVar.h0.y0(0);
+                return;
+            } else {
+                nzVar.D0.y0(1);
+                return;
             }
         }
-        super.onTouchEvent(motionEvent);
-        return true;
+        nzVar.Q0[1] = 0;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(rxVar, (Property<rx, Float>) ViewGroup.TRANSLATION_Y, 0.0f);
+        ofFloat.setDuration(150L);
+        ofFloat.setInterpolator(tr.h);
+        ofFloat.start();
+        nzVar.E(1, 0);
+        if (rxVar != null) {
+            rxVar.j(0, true);
+        }
     }
 }

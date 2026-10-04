@@ -3,7 +3,7 @@ package ai;
 import android.content.Context;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class v7 extends FrameLayout {
     public final /* synthetic */ float a;
@@ -19,12 +19,12 @@ public final class v7 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        org.telegram.ui.Components.qc.a(this.b.container, new w4(this, 2));
+        org.telegram.ui.Components.rc.a(this.b.container, new w4(this, 2));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        org.telegram.ui.Components.qc.h(this.b.container);
+        org.telegram.ui.Components.rc.h(this.b.container);
     }
 }

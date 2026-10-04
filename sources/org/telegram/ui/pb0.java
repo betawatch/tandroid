@@ -1,54 +1,70 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.text.Editable;
-import android.text.TextUtils;
-import android.widget.TextView;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import android.text.TextWatcher;
+import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class pb0 extends org.telegram.ui.Cells.j3 {
-    public boolean x;
-    public final /* synthetic */ rb0 y;
+public final class pb0 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vb0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pb0(rb0 rb0Var, Context context, String str, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, str, false, false, -1, d6Var);
-        this.y = rb0Var;
+    public /* synthetic */ pb0(vb0 vb0Var, int i10) {
+        this.a = i10;
+        this.b = vb0Var;
     }
 
-    @Override // org.telegram.ui.Cells.j3
-    public final void b(Editable editable) {
-        int i10;
-        if (this.x) {
-            return;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
+            case 0:
+                Emoji.replaceEmoji(editable, this.b.K.getPaint().getFontMetricsInt(), false);
+                break;
+            default:
+                vb0 vb0Var = this.b;
+                if (!vb0Var.O) {
+                    if (editable.toString().equals("0")) {
+                        vb0Var.F.setText("");
+                        break;
+                    } else {
+                        try {
+                            int parseInt = Integer.parseInt(editable.toString());
+                            if (parseInt <= 100000) {
+                                vb0Var.U(parseInt);
+                                break;
+                            } else {
+                                vb0Var.W();
+                                break;
+                            }
+                        } catch (NumberFormatException unused) {
+                            vb0Var.W();
+                        }
+                    }
+                }
+                break;
         }
-        boolean isEmpty = TextUtils.isEmpty(editable);
-        rb0 rb0Var = this.y;
-        if (isEmpty) {
-            rb0Var.s.setText("");
-            return;
-        }
-        try {
-            long parseLong = Long.parseLong(editable.toString());
-            if (parseLong > rb0Var.getMessagesController().starsSubscriptionAmountMax) {
-                this.x = true;
-                parseLong = rb0Var.getMessagesController().starsSubscriptionAmountMax;
-                setText(Long.toString(parseLong));
-                this.x = false;
-            }
-            TextView textView = rb0Var.s;
-            int i11 = rb0Var.getConnectionsManager().isTestBackend() ? R.string.RequireMonthlyFeePriceTest5Minutes : R.string.RequireMonthlyFeePrice;
-            BillingController billingController = BillingController.getInstance();
-            i10 = ((org.telegram.ui.ActionBar.m2) rb0Var).currentAccount;
-            textView.setText(LocaleController.formatString(i11, billingController.formatCurrency((long) ((parseLong / 1000.0d) * MessagesController.getInstance(i10).starsUsdWithdrawRate1000), "USD")));
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

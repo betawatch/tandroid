@@ -10,7 +10,7 @@ import com.google.android.gms.internal.vision.g3;
 import com.google.android.gms.internal.vision.u2;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class n extends b2.g {
     public final u2 b;
@@ -48,8 +48,8 @@ public final class n extends b2.g {
                     m[] mVarArr2 = (m[]) P0.createTypedArray(m.CREATOR);
                     P0.recycle();
                     mVarArr = mVarArr2;
-                } catch (RemoteException e) {
-                    Log.e("BarcodeNativeHandle", "Error calling native barcode detector", e);
+                } catch (RemoteException e7) {
+                    Log.e("BarcodeNativeHandle", "Error calling native barcode detector", e7);
                     mVarArr = new m[0];
                 }
             } else {
@@ -74,8 +74,8 @@ public final class n extends b2.g {
                     m[] mVarArr3 = (m[]) P02.createTypedArray(m.CREATOR);
                     P02.recycle();
                     mVarArr = mVarArr3;
-                } catch (RemoteException e7) {
-                    Log.e("BarcodeNativeHandle", "Error calling native barcode detector", e7);
+                } catch (RemoteException e10) {
+                    Log.e("BarcodeNativeHandle", "Error calling native barcode detector", e10);
                     mVarArr = new m[0];
                 }
             } else {

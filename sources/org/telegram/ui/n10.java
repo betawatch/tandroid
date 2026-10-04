@@ -1,42 +1,36 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class n10 extends org.telegram.ui.Cells.j7 {
-    public final /* synthetic */ o10 l0;
+public final class n10 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ yq b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n10(o10 o10Var, Context context) {
-        super(context, 1, null);
-        this.l0 = o10Var;
+    public n10(yq yqVar) {
+        this.b = yqVar;
     }
 
-    @Override // org.telegram.ui.Cells.j7
-    public final boolean d(MessageObject messageObject) {
-        boolean isVoice = messageObject.isVoice();
-        o10 o10Var = this.l0;
-        if (isVoice || messageObject.isRoundVideo()) {
-            boolean playMessage = MediaController.getInstance().playMessage(messageObject);
-            MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? o10Var.v.f : null, false);
-            return playMessage;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ((x10) this.b.d).l0.unlock();
+                break;
+            default:
+                yq yqVar = this.b;
+                View view = yqVar.b;
+                view.setAlpha(1.0f);
+                s4.o0.x0(view);
+                ((x10) yqVar.d).b.removeView(view);
+                break;
         }
-        if (!messageObject.isMusic()) {
-            return false;
-        }
-        t10 t10Var = o10Var.v;
-        String str = t10Var.Q;
-        long j3 = t10Var.E;
-        long j10 = t10Var.H;
-        MediaController.PlaylistGlobalSearchParams playlistGlobalSearchParams = new MediaController.PlaylistGlobalSearchParams(str, j3, j10, j10, t10Var.y);
-        t10 t10Var2 = o10Var.v;
-        playlistGlobalSearchParams.endReached = t10Var2.N;
-        playlistGlobalSearchParams.nextSearchRate = t10Var2.v;
-        playlistGlobalSearchParams.totalCount = t10Var2.O;
-        playlistGlobalSearchParams.folderId = t10Var2.J ? 1 : 0;
-        return MediaController.getInstance().setPlaylist(o10Var.v.f, messageObject, 0L, playlistGlobalSearchParams);
+    }
+
+    public n10(yq yqVar, s4.o0 o0Var) {
+        this.b = yqVar;
     }
 }

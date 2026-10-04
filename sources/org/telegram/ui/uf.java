@@ -1,70 +1,32 @@
 package org.telegram.ui;
 
+import android.text.style.URLSpan;
 import android.view.View;
-import java.io.Serializable;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uf implements View.OnClickListener {
+public final /* synthetic */ class uf implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wn b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ String f;
-    public final /* synthetic */ Serializable h;
-    public final /* synthetic */ TLRPC.InputPeer n;
-    public final /* synthetic */ int[] r;
-    public final /* synthetic */ boolean s;
-    public final /* synthetic */ tf v;
-    public final /* synthetic */ Object w;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ uf(wn wnVar, int i10, ArrayList arrayList, String str, String str2, String str3, TLRPC.InputPeer inputPeer, int[] iArr, Object obj, boolean z10, tf tfVar, int i11) {
-        this.a = i11;
-        this.b = wnVar;
-        this.c = i10;
-        this.d = arrayList;
-        this.e = str;
-        this.f = str2;
-        this.h = str3;
-        this.n = inputPeer;
-        this.r = iArr;
-        this.w = obj;
-        this.s = z10;
-        this.v = tfVar;
+    public /* synthetic */ uf(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.messenger.Utilities.CallbackReturn
+    public final Object run(Object obj) {
         switch (this.a) {
             case 0:
-                wn.Y(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (TL_iv.RichMessage) this.w, this.s, this.v);
-                break;
-            case 1:
-                wn.w0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (CharSequence) this.w, this.s, this.v);
-                break;
+                yn ynVar = (yn) this.b;
+                View view = (View) this.c;
+                ynVar.U7((URLSpan) obj, false, ynVar.b5, view instanceof org.telegram.ui.Cells.u1 ? (org.telegram.ui.Cells.u1) view : null);
+                return Boolean.TRUE;
             default:
-                wn.W0(this.b, this.c, this.d, (String[]) this.h, this.e, this.f, this.n, this.r, (CharSequence) this.w, this.s, this.v);
-                break;
+                return rh.c.d((View) obj, (String) this.b, (String) this.c, null, null);
         }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ uf(wn wnVar, int i10, ArrayList arrayList, String[] strArr, String str, String str2, TLRPC.InputPeer inputPeer, int[] iArr, CharSequence charSequence, boolean z10, tf tfVar) {
-        this.a = 2;
-        this.b = wnVar;
-        this.c = i10;
-        this.d = arrayList;
-        this.h = strArr;
-        this.e = str;
-        this.f = str2;
-        this.n = inputPeer;
-        this.r = iArr;
-        this.w = charSequence;
-        this.s = z10;
-        this.v = tfVar;
     }
 }

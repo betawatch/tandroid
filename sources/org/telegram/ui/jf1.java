@@ -1,71 +1,28 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class jf1 extends s4.j {
-    public Runnable F;
-    public int G;
-    public final /* synthetic */ wf1 H;
+public final class jf1 extends wf1 {
+    public final /* synthetic */ yf1 p3;
 
-    public jf1(wf1 wf1Var) {
-        this.H = wf1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jf1(yf1 yf1Var, Context context) {
+        super(yf1Var, context);
+        this.p3 = yf1Var;
     }
 
-    @Override // s4.j
-    public final void F() {
-        if (this.G == -1) {
-            this.G = this.H.getNotificationCenter().setAnimationInProgress(this.G, null, false);
-            Runnable runnable = this.F;
-            if (runnable != null) {
-                AndroidUtilities.cancelRunOnUIThread(runnable);
-                this.F = null;
-            }
-        }
+    @Override // org.telegram.ui.Components.zl0
+    public final boolean T0() {
+        ArrayList arrayList = this.p3.b;
+        return (getAdapter() == null || this.X1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((pf1) arrayList.get(0)).c == null || ((pf1) arrayList.get(0)).c.id != 1 ? getAdapter().h() > 1 : getAdapter().h() > 2)) ? false : true;
     }
 
-    @Override // s4.j
-    public final void N() {
-        Runnable runnable = this.F;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.F = null;
-        }
-        if1 if1Var = new if1(this, 0);
-        this.F = if1Var;
-        AndroidUtilities.runOnUIThread(if1Var);
-    }
-
-    @Override // s4.j, s4.m0
-    public final void g() {
-        super.g();
-        Runnable runnable = this.F;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-        }
-        if1 if1Var = new if1(this, 1);
-        this.F = if1Var;
-        AndroidUtilities.runOnUIThread(if1Var);
-    }
-
-    @Override // s4.j
-    public final void z(s4.c1 c1Var) {
-        wf1 wf1Var = this.H;
-        View view = wf1Var.b1;
-        if (view == c1Var.a) {
-            view.setTranslationX(0.0f);
-            af1 af1Var = wf1Var.O;
-            if (af1Var != null) {
-                af1Var.F.clear();
-            }
-            View view2 = wf1Var.b1;
-            if (view2 instanceof tf1) {
-                tf1 tf1Var = (tf1) view2;
-                tf1Var.setTopicIcon(tf1Var.Y4);
-            }
-            wf1Var.b1 = null;
-        }
+    @Override // org.telegram.ui.wf1, org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.p3.y0();
     }
 }

@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class b1 implements DialogInterface.OnDismissListen
         Object obj = this.b;
         switch (i10) {
             case 0:
-                ((org.telegram.ui.rg) obj).run();
+                ((org.telegram.ui.ug) obj).run();
                 break;
             case 1:
                 AndroidUtilities.hideKeyboard((EditTextBoldCursor) obj);
@@ -33,24 +33,24 @@ public final /* synthetic */ class b1 implements DialogInterface.OnDismissListen
                 ((ChatActivityEnterView) obj).L0 = null;
                 break;
             case 4:
-                ((wi) obj).z2 = false;
+                ((xi) obj).z2 = false;
                 break;
             case 5:
-                du.i((du) obj);
+                eu.i((eu) obj);
                 break;
             case 6:
                 float[] fArr = FragmentContextView.P0;
                 ((FragmentContextView) obj).c(false);
                 break;
             case 7:
-                wn0.H = null;
+                ao0.H = null;
                 ((View) obj).requestFocus();
                 break;
             case 8:
-                AndroidUtilities.hideKeyboard((qn0) obj);
+                AndroidUtilities.hideKeyboard((un0) obj);
                 break;
             default:
-                ThemeEditorView themeEditorView = ((n11) obj).d;
+                ThemeEditorView themeEditorView = ((w11) obj).d;
                 themeEditorView.l = null;
                 if (themeEditorView.b != null) {
                     AndroidUtilities.setPreferredMaxRefreshRate(themeEditorView.h, themeEditorView.a, themeEditorView.g);

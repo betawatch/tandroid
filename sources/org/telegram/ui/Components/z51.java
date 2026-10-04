@@ -1,32 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
+import android.view.MotionEvent;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class z51 extends URLSpan {
-    public final d11 a;
+public abstract class z51 {
+    public String[] a = new String[0];
 
-    public z51(String str, d11 d11Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = d11Var;
+    public boolean a() {
+        return false;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        nf.f.p(view.getContext(), Uri.parse(getURL()), true, true);
+    public String[] b() {
+        return this.a;
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        d11 d11Var = this.a;
-        if (d11Var != null) {
-            d11Var.a(textPaint);
-        }
-        textPaint.setUnderlineText(true);
+    public boolean c() {
+        return false;
+    }
+
+    public boolean d(s51 s51Var, MotionEvent motionEvent) {
+        return false;
+    }
+
+    public boolean e(s51 s51Var, j jVar, MotionEvent motionEvent) {
+        return false;
+    }
+
+    public abstract void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10);
+
+    public abstract void h(TLRPC.StickerSetCovered stickerSetCovered);
+
+    public void i(String[] strArr) {
+        this.a = strArr;
+    }
+
+    public void f(TLRPC.Document document, Object obj, boolean z10, int i10) {
     }
 }

@@ -18,11 +18,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.sr;
-import org.telegram.ui.cz;
-import org.telegram.ui.hv0;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.gz;
+import org.telegram.ui.kv0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class a5 extends i0 {
     public final org.telegram.ui.Components.e6 d;
@@ -42,9 +42,9 @@ public final class a5 extends i0 {
         this.x = e6Var;
         this.v = b6Var;
         this.w = jcVar;
-        sr srVar = sr.f;
-        this.d = new org.telegram.ui.Components.e6(this, 150L, srVar);
-        this.e = new org.telegram.ui.Components.e6(this, 150L, srVar);
+        tr trVar = tr.f;
+        this.d = new org.telegram.ui.Components.e6(this, 150L, trVar);
+        this.e = new org.telegram.ui.Components.e6(this, 150L, trVar);
         this.f = new org.telegram.ui.Components.voip.h(32, 102, 240);
         org.telegram.ui.Components.e6 e6Var2 = new org.telegram.ui.Components.e6(this);
         this.h = e6Var2;
@@ -206,7 +206,7 @@ public final class a5 extends i0 {
         boolean z11 = c6Var.e && (icVar = (ic) d6Var.c) != null && icVar.isBuffering();
         boolean z12 = e6Var.L2;
         boolean z13 = z12 && c6Var != null && c6Var.e && jcVar2.k0;
-        float e = e6Var.P2.e(!z12 || z13);
+        float e7 = e6Var.P2.e(!z12 || z13);
         hb hbVar2 = e6Var.p1;
         int measuredWidth = getMeasuredWidth();
         int i16 = e6Var.M1;
@@ -227,14 +227,14 @@ public final class a5 extends i0 {
             float dp4 = ((measuredWidth - AndroidUtilities.dp(10.0f)) - ((i17 - 1) * dp3)) / i17;
             AndroidUtilities.dp(5.0f);
             float min = Math.min(dp4 / f13, AndroidUtilities.dp(f12));
-            float e7 = hbVar2.b.e(z13);
-            if (e7 > 0.0f) {
-                float lerp = AndroidUtilities.lerp(clamp, f10, e7);
+            float e10 = hbVar2.b.e(z13);
+            if (e10 > 0.0f) {
+                float lerp = AndroidUtilities.lerp(clamp, f10, e10);
                 canvas.save();
-                textPaint.setAlpha((int) (e7 * 255.0f));
+                textPaint.setAlpha((int) (e10 * 255.0f));
                 z10 = z14;
-                textPaint.setShadowLayer(AndroidUtilities.dp(3.0f), 0.0f, AndroidUtilities.dp(f12), org.telegram.ui.ActionBar.h6.l1(e7, 805306368));
-                canvas.translate(((measuredWidth - hbVar2.f) / f13) - hbVar2.e, AndroidUtilities.lerp(AndroidUtilities.dp(f11), AndroidUtilities.dp(16.0f), e7));
+                textPaint.setShadowLayer(AndroidUtilities.dp(3.0f), 0.0f, AndroidUtilities.dp(f12), org.telegram.ui.ActionBar.i6.l1(e10, 805306368));
+                canvas.translate(((measuredWidth - hbVar2.f) / f13) - hbVar2.e, AndroidUtilities.lerp(AndroidUtilities.dp(f11), AndroidUtilities.dp(16.0f), e10));
                 hbVar2.d.draw(canvas);
                 canvas.restore();
                 clamp = lerp;
@@ -247,7 +247,7 @@ public final class a5 extends i0 {
                 if (dp5 <= measuredWidth) {
                     float f22 = dp5 + dp4;
                     if (f22 >= 0.0f && f21 > 0.0f) {
-                        float lerp2 = AndroidUtilities.lerp(min, AndroidUtilities.dpf2(f13), e7);
+                        float lerp2 = AndroidUtilities.lerp(min, AndroidUtilities.dpf2(f13), e10);
                         if (i18 > i16 || i18 != i16) {
                             f15 = min;
                             hbVar = hbVar2;
@@ -260,7 +260,7 @@ public final class a5 extends i0 {
                             RectF rectF = AndroidUtilities.rectTmp;
                             f16 = clamp;
                             i11 = measuredWidth;
-                            rectF.set(dp5, 0.0f, f22, AndroidUtilities.lerp(AndroidUtilities.dpf2(f13), AndroidUtilities.dpf2(5.0f), (i16 == i18 ? 1 : 0) * e7));
+                            rectF.set(dp5, 0.0f, f22, AndroidUtilities.lerp(AndroidUtilities.dpf2(f13), AndroidUtilities.dpf2(5.0f), (i16 == i18 ? 1 : 0) * e10));
                             if (z10) {
                                 if (hbVar2.h) {
                                     float f23 = hbVar2.g + 0.026666667f;
@@ -276,17 +276,17 @@ public final class a5 extends i0 {
                                     }
                                 }
                                 f17 = lerp2;
-                                i13 = (int) (hbVar2.g * 51.0f * f21 * e);
+                                i13 = (int) (hbVar2.g * 51.0f * f21 * e7);
                             } else {
                                 f17 = lerp2;
                                 i13 = 0;
                             }
-                            paint2.setAlpha(((int) (85.0f * f21 * e)) + i13);
-                            if (e7 > 0.0f) {
+                            paint2.setAlpha(((int) (85.0f * f21 * e7)) + i13);
+                            if (e10 > 0.0f) {
                                 int i19 = i18 - i16;
                                 hbVar = hbVar2;
-                                rectF.left = Utilities.clamp(AndroidUtilities.lerp(rectF.left, AndroidUtilities.dp(5.0f) + (i19 * i11), e7), i11 - AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f));
-                                rectF.right = Utilities.clamp(AndroidUtilities.lerp(rectF.right, ((i19 + 1) * i11) - AndroidUtilities.dp(5.0f), e7), i11 - AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f));
+                                rectF.left = Utilities.clamp(AndroidUtilities.lerp(rectF.left, AndroidUtilities.dp(5.0f) + (i19 * i11), e10), i11 - AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f));
+                                rectF.right = Utilities.clamp(AndroidUtilities.lerp(rectF.right, ((i19 + 1) * i11) - AndroidUtilities.dp(5.0f), e10), i11 - AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f));
                             } else {
                                 hbVar = hbVar2;
                             }
@@ -295,18 +295,18 @@ public final class a5 extends i0 {
                         }
                         RectF rectF2 = AndroidUtilities.rectTmp;
                         i12 = i17;
-                        rectF2.set(dp5, 0.0f, f22, AndroidUtilities.lerp(AndroidUtilities.dpf2(f13), AndroidUtilities.dpf2(5.0f), (i16 == i18 ? 1 : 0) * e7));
-                        if (e7 > 0.0f) {
+                        rectF2.set(dp5, 0.0f, f22, AndroidUtilities.lerp(AndroidUtilities.dpf2(f13), AndroidUtilities.dpf2(5.0f), (i16 == i18 ? 1 : 0) * e10));
+                        if (e10 > 0.0f) {
                             int i20 = i18 - i16;
-                            rectF2.left = Utilities.clamp(AndroidUtilities.lerp(rectF2.left, AndroidUtilities.dp(5.0f) + (i20 * i11), e7), i11 - AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f));
-                            rectF2.right = Utilities.clamp(AndroidUtilities.lerp(rectF2.right, ((i20 + 1) * i11) - AndroidUtilities.dp(5.0f), e7), i11 - AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f));
+                            rectF2.left = Utilities.clamp(AndroidUtilities.lerp(rectF2.left, AndroidUtilities.dp(5.0f) + (i20 * i11), e10), i11 - AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f));
+                            rectF2.right = Utilities.clamp(AndroidUtilities.lerp(rectF2.right, ((i20 + 1) * i11) - AndroidUtilities.dp(5.0f), e10), i11 - AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f));
                         }
                         rectF2.right = AndroidUtilities.lerp(rectF2.left, rectF2.right, f18);
                         if (i18 <= i16) {
-                            paint3.setAlpha((int) (f21 * 255.0f * e));
+                            paint3.setAlpha((int) (f21 * 255.0f * e7));
                             paint = paint3;
                         } else {
-                            paint2.setAlpha((int) (85 * f21 * e));
+                            paint2.setAlpha((int) (85 * f21 * e7));
                             paint = paint2;
                         }
                         canvas.drawRoundRect(rectF2, f17, f17, paint);
@@ -370,7 +370,7 @@ public final class a5 extends i0 {
         float f11;
         float f12;
         float f13;
-        cz czVar;
+        gz gzVar;
         l6 l6Var;
         boolean z10;
         float f14;
@@ -402,17 +402,17 @@ public final class a5 extends i0 {
                 invalidate();
             }
             canvas2.save();
-            hv0 hv0Var = e6Var2.X2;
-            if (hv0Var.n) {
+            kv0 kv0Var = e6Var2.X2;
+            if (kv0Var.n) {
                 canvas2.save();
-                float f15 = hv0Var.O;
-                float f16 = hv0Var.A;
+                float f15 = kv0Var.O;
+                float f16 = kv0Var.A;
                 float f17 = ((f15 * f16) + 1.0f) - f16;
-                canvas2.scale(f17, f17, hv0Var.o + hv0Var.s, hv0Var.p + hv0Var.t);
-                float f18 = hv0Var.o;
-                float f19 = hv0Var.J;
-                float f20 = hv0Var.A;
-                canvas2.translate((f19 * f20) + f18, (hv0Var.K * f20) + hv0Var.p);
+                canvas2.scale(f17, f17, kv0Var.o + kv0Var.s, kv0Var.p + kv0Var.t);
+                float f18 = kv0Var.o;
+                float f19 = kv0Var.J;
+                float f20 = kv0Var.A;
+                canvas2.translate((f19 * f20) + f18, (kv0Var.K * f20) + kv0Var.p);
             }
             org.telegram.ui.l4 l4Var2 = (org.telegram.ui.l4) d6Var.e;
             if (l4Var2 == null || (!d6Var.a && ((d2) d6Var.b) == null)) {
@@ -496,7 +496,7 @@ public final class a5 extends i0 {
                         canvas2.drawBitmap(icVar3.playerStubBitmap, 0.0f, 0.0f, icVar3.playerStubPaint);
                         canvas2.restore();
                     } else {
-                        boolean z14 = Build.VERSION.SDK_INT >= 29 && (dVar = e6Var2.H3) != null && canvas2 == dVar.r;
+                        boolean z14 = Build.VERSION.SDK_INT >= 29 && (dVar = e6Var2.H3) != null && canvas2 == dVar.s;
                         if (!z13 || (e6Var2.b1 && !jcVar.H0 && !z14)) {
                             ((org.telegram.ui.l4) d6Var.e).draw(canvas2);
                         }
@@ -663,9 +663,9 @@ public final class a5 extends i0 {
                     super.dispatchDraw(canvas);
                     b(canvas);
                 }
-                czVar = e6Var2.k1;
-                if (czVar == null) {
-                    czVar.e(canvas2);
+                gzVar = e6Var2.k1;
+                if (gzVar == null) {
+                    gzVar.e(canvas2);
                     return;
                 }
                 return;
@@ -692,8 +692,8 @@ public final class a5 extends i0 {
         }
         if (f11 <= 0.0f) {
         }
-        czVar = e6Var2.k1;
-        if (czVar == null) {
+        gzVar = e6Var2.k1;
+        if (gzVar == null) {
         }
     }
 
@@ -716,8 +716,8 @@ public final class a5 extends i0 {
         if (!this.r) {
             return super.drawChild(canvas, view, j3);
         }
-        org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
-        if (qcVar == null || view != qcVar.e) {
+        org.telegram.ui.Components.rc rcVar = org.telegram.ui.Components.rc.w;
+        if (rcVar == null || view != rcVar.e) {
             return super.drawChild(canvas, view, j3);
         }
         if (this.s) {
@@ -730,7 +730,7 @@ public final class a5 extends i0 {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.x.k1.j();
-        org.telegram.ui.Components.qc.a(this, new w4(this, 0));
+        org.telegram.ui.Components.rc.a(this, new w4(this, 0));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -738,7 +738,7 @@ public final class a5 extends i0 {
         super.onDetachedFromWindow();
         e6 e6Var = this.x;
         e6Var.k1.k();
-        org.telegram.ui.Components.qc.h(this);
+        org.telegram.ui.Components.rc.h(this);
         x5 x5Var = e6Var.Q1;
         if (x5Var != null) {
             jc jcVar = ((ac) x5Var).d;

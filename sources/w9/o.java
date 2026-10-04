@@ -1,109 +1,60 @@
 package w9;
 
-import android.content.Context;
 import android.util.Log;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.android.gms.tasks.Tasks;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import java.util.concurrent.atomic.AtomicReference;
+import java.io.File;
+import java.util.concurrent.Callable;
 import n7.z0;
-import u2.o1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
-public final class o {
-    public final Context a;
-    public final r b;
-    public final o0.a c;
-    public z0 d;
-    public z0 e;
-    public m f;
-    public final u g;
-    public final ba.c h;
-    public final s9.a i;
-    public final s9.a j;
-    public final ExecutorService k;
-    public final com.google.firebase.messaging.t l;
-    public final j m;
-    public final t9.a n;
-    public final l.d o;
+public final class o implements Callable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p b;
 
-    public o(k9.h hVar, u uVar, t9.a aVar, r rVar, s9.a aVar2, s9.a aVar3, ba.c cVar, ExecutorService executorService, j jVar, l.d dVar) {
-        this.b = rVar;
-        hVar.a();
-        this.a = hVar.a;
-        this.g = uVar;
-        this.n = aVar;
-        this.i = aVar2;
-        this.j = aVar3;
-        this.k = executorService;
-        this.h = cVar;
-        this.l = new com.google.firebase.messaging.t(executorService);
-        this.m = jVar;
-        this.o = dVar;
-        System.currentTimeMillis();
-        this.c = new o0.a();
+    public /* synthetic */ o(p pVar, int i10) {
+        this.a = i10;
+        this.b = pVar;
     }
 
-    public static Task a(o oVar, da.b bVar) {
-        Task forException;
-        n nVar;
-        com.google.firebase.messaging.t tVar = oVar.l;
-        if (!Boolean.TRUE.equals(((ThreadLocal) tVar.e).get())) {
-            throw new IllegalStateException("Not running on background worker thread as intended.");
-        }
-        oVar.d.o();
-        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-            Log.v("FirebaseCrashlytics", "Initialization marker file was created.", null);
-        }
-        try {
-            try {
-                oVar.i.a(new o1(10));
-                oVar.f.g();
-                if (bVar.d().b.a) {
-                    if (!oVar.f.d(bVar)) {
-                        Log.w("FirebaseCrashlytics", "Previous sessions could not be finalized.", null);
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        switch (this.a) {
+            case 0:
+                try {
+                    z0 z0Var = this.b.d;
+                    ba.c cVar = (ba.c) z0Var.c;
+                    String str = (String) z0Var.b;
+                    cVar.getClass();
+                    boolean delete = new File(cVar.b, str).delete();
+                    if (!delete) {
+                        Log.w("FirebaseCrashlytics", "Initialization marker file was not properly removed.", null);
                     }
-                    forException = oVar.f.h(((TaskCompletionSource) ((AtomicReference) bVar.i).get()).getTask());
-                    nVar = new n(oVar, 0);
-                } else {
-                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                        Log.d("FirebaseCrashlytics", "Collection of crash reports disabled in Crashlytics settings.", null);
-                    }
-                    forException = Tasks.forException(new RuntimeException("Collection of crash reports disabled in Crashlytics settings."));
-                    nVar = new n(oVar, 0);
+                    return Boolean.valueOf(delete);
+                } catch (Exception e7) {
+                    Log.e("FirebaseCrashlytics", "Problem encountered deleting Crashlytics initialization marker.", e7);
+                    return Boolean.FALSE;
                 }
-            } catch (Exception e) {
-                Log.e("FirebaseCrashlytics", "Crashlytics encountered a problem during asynchronous initialization.", e);
-                forException = Tasks.forException(e);
-                nVar = new n(oVar, 0);
-            }
-            tVar.k(nVar);
-            return forException;
-        } catch (Throwable th2) {
-            tVar.k(new n(oVar, 0));
-            throw th2;
-        }
-    }
-
-    public final void b(da.b bVar) {
-        Future<?> submit = this.k.submit(new u4.e(5, this, bVar));
-        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", "Crashlytics detected incomplete initialization on previous app launch. Will initialize synchronously.", null);
-        }
-        try {
-            submit.get(3L, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            Log.e("FirebaseCrashlytics", "Crashlytics was interrupted during initialization.", e);
-        } catch (ExecutionException e7) {
-            Log.e("FirebaseCrashlytics", "Crashlytics encountered a problem during initialization.", e7);
-        } catch (TimeoutException e10) {
-            Log.e("FirebaseCrashlytics", "Crashlytics timed out during initialization.", e10);
+            default:
+                n nVar = this.b.f;
+                z0 z0Var2 = nVar.c;
+                ba.c cVar2 = (ba.c) z0Var2.c;
+                String str2 = (String) z0Var2.b;
+                cVar2.getClass();
+                boolean z10 = true;
+                if (new File(cVar2.b, str2).exists()) {
+                    if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                        Log.v("FirebaseCrashlytics", "Found previous crash marker.", null);
+                    }
+                    ba.c cVar3 = (ba.c) z0Var2.c;
+                    cVar3.getClass();
+                    new File(cVar3.b, str2).delete();
+                } else {
+                    String e10 = nVar.e();
+                    if (e10 == null || !nVar.j.c(e10)) {
+                        z10 = false;
+                    }
+                }
+                return Boolean.valueOf(z10);
         }
     }
 }

@@ -1,15 +1,50 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class p40 extends org.telegram.ui.Components.voip.x0 {
-    public final /* synthetic */ d60 E;
+public final class p40 extends TextView {
+    public final RectF a;
+    public final Paint b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p40(d60 d60Var, Activity activity, boolean z10) {
-        super(activity, z10);
-        this.E = d60Var;
+    public p40(LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.a = new RectF();
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(-16711936);
+    }
+
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float measuredWidth = getMeasuredWidth();
+        float measuredHeight = getMeasuredHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.b);
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.b;
+        paint.setColor(-16711936);
+        float measuredWidth = getMeasuredWidth();
+        float measuredHeight = getMeasuredHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
+        super.onDraw(canvas);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
     }
 }

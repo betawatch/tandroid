@@ -3,7 +3,7 @@ package ci;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes4.dex */
 public final class m3 extends s4.s0 {
     public final /* synthetic */ w3 a;
@@ -14,9 +14,9 @@ public final class m3 extends s4.s0 {
 
     @Override // s4.s0
     public final void b(RecyclerView recyclerView, int i10, int i11) {
-        org.telegram.ui.ActionBar.u0 u0Var;
+        org.telegram.ui.ActionBar.v0 v0Var;
         w3 w3Var = this.a;
-        if (!w3Var.n.K1 || (u0Var = w3Var.G) == null || u0Var.getSearchField() == null) {
+        if (!w3Var.n.K1 || (v0Var = w3Var.G) == null || v0Var.getSearchField() == null) {
             return;
         }
         AndroidUtilities.hideKeyboard(w3Var.G.getSearchContainer());

@@ -13,7 +13,7 @@ import androidx.lifecycle.v;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class f {
     public final HashMap a = new HashMap();
@@ -33,7 +33,7 @@ public abstract class f {
         if (dVar != null) {
             b bVar = dVar.a;
             if (this.d.contains(str)) {
-                bVar.k(dVar.b.a(intent, i11));
+                bVar.j(dVar.b.a(intent, i11));
                 this.d.remove(str);
                 return true;
             }
@@ -83,12 +83,12 @@ public abstract class f {
                 if (hashMap3.containsKey(str2)) {
                     Object obj = hashMap3.get(str2);
                     hashMap3.remove(str2);
-                    bVar2.k(obj);
+                    bVar2.j(obj);
                 }
                 a aVar = (a) bundle.getParcelable(str2);
                 if (aVar != null) {
                     bundle.remove(str2);
-                    bVar2.k(f0Var2.a(aVar.b, aVar.a));
+                    bVar2.j(f0Var2.a(aVar.b, aVar.a));
                 }
             }
         };
@@ -105,13 +105,13 @@ public abstract class f {
         if (hashMap.containsKey(str)) {
             Object obj = hashMap.get(str);
             hashMap.remove(str);
-            bVar.k(obj);
+            bVar.j(obj);
         }
         Bundle bundle = this.g;
         a aVar = (a) bundle.getParcelable(str);
         if (aVar != null) {
             bundle.remove(str);
-            bVar.k(f0Var.a(aVar.b, aVar.a));
+            bVar.j(f0Var.a(aVar.b, aVar.a));
         }
         return new c(this, str, f0Var, 1);
     }
@@ -146,16 +146,16 @@ public abstract class f {
         this.e.remove(str);
         HashMap hashMap = this.f;
         if (hashMap.containsKey(str)) {
-            StringBuilder w10 = a4.a.w("Dropping pending result for request ", str, ": ");
-            w10.append(hashMap.get(str));
-            Log.w("ActivityResultRegistry", w10.toString());
+            StringBuilder v = a4.a.v("Dropping pending result for request ", str, ": ");
+            v.append(hashMap.get(str));
+            Log.w("ActivityResultRegistry", v.toString());
             hashMap.remove(str);
         }
         Bundle bundle = this.g;
         if (bundle.containsKey(str)) {
-            StringBuilder w11 = a4.a.w("Dropping pending result for request ", str, ": ");
-            w11.append(bundle.getParcelable(str));
-            Log.w("ActivityResultRegistry", w11.toString());
+            StringBuilder v9 = a4.a.v("Dropping pending result for request ", str, ": ");
+            v9.append(bundle.getParcelable(str));
+            Log.w("ActivityResultRegistry", v9.toString());
             bundle.remove(str);
         }
         HashMap hashMap2 = this.c;

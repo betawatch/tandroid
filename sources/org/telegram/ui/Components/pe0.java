@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class pe0 {
     public static int a = 1500;
@@ -81,7 +81,7 @@ public abstract class pe0 {
                 for (String str2 : strArr) {
                     if (activity.shouldShowRequestPermissionRationale(str2)) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity, 0, null);
-                        alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.L5, false), null);
+                        alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.L5, false), null);
                         alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.getString(i11));
                         alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new j1(activity, 2));
                         alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
@@ -118,7 +118,7 @@ public abstract class pe0 {
         for (String str2 : strArr) {
             if (!activity.shouldShowRequestPermissionRationale(str2)) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity, 0, null);
-                alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.h6.w0(null, org.telegram.ui.ActionBar.h6.L5, false), null);
+                alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.L5, false), null);
                 alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.getString(i11));
                 alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new j1(activity, 1));
                 alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
@@ -179,8 +179,8 @@ public abstract class pe0 {
         intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
         try {
             activity.startActivity(intent);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 }

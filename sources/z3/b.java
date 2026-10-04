@@ -9,12 +9,12 @@ import e9.x0;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import u2.o1;
+import u2.l0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class b implements d {
-    public static final p c = new p(new o1(23), x0.b);
+    public static final p c = new p(new l0(26), x0.b);
     public final i0 a;
     public final long[] b;
 
@@ -109,7 +109,12 @@ public final class b implements d {
     }
 
     @Override // z3.d
-    public final int d(long j3) {
+    public final int G() {
+        return this.a.size();
+    }
+
+    @Override // z3.d
+    public final int c(long j3) {
         int a2 = d0.a(this.b, j3, false);
         if (a2 < this.a.size()) {
             return a2;
@@ -118,23 +123,18 @@ public final class b implements d {
     }
 
     @Override // z3.d
-    public final long g(int i10) {
+    public final long m(int i10) {
         e2.d.b(i10 < this.a.size());
         return this.b[i10];
     }
 
     @Override // z3.d
-    public final List s(long j3) {
-        int e = d0.e(this.b, j3, false);
-        if (e != -1) {
-            return (i0) this.a.get(e);
+    public final List z(long j3) {
+        int e7 = d0.e(this.b, j3, false);
+        if (e7 != -1) {
+            return (i0) this.a.get(e7);
         }
         g0 g0Var = i0.b;
         return a1.e;
-    }
-
-    @Override // z3.d
-    public final int v() {
-        return this.a.size();
     }
 }

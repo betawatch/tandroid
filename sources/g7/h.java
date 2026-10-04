@@ -3,9 +3,9 @@ package g7;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-import w7.f0;
+import w7.g0;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class h extends o6.a {
     public static final Parcelable.Creator<h> CREATOR = new e6.i(19);
@@ -35,20 +35,20 @@ public final class h extends o6.a {
             return;
         }
         StringBuilder sb2 = new StringBuilder(protocolType.length() + requestType.length() + type.length() + 31 + 19 + 69);
-        a4.a.A(sb2, "Either type: ", type, ", or requestType: ", requestType);
-        throw new IllegalArgumentException(a4.a.r(" and protocolType: ", protocolType, " must be specified, but at least one contains an invalid blank value.", sb2));
+        a4.a.z(sb2, "Either type: ", type, ", or requestType: ", requestType);
+        throw new IllegalArgumentException(a4.a.q(" and protocolType: ", protocolType, " must be specified, but at least one contains an invalid blank value.", sb2));
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel dest, int i10) {
         kotlin.jvm.internal.i.e(dest, "dest");
-        int q6 = f0.q(dest, 20293);
-        f0.l(dest, 1, this.a);
-        f0.b(dest, 2, this.b);
-        f0.b(dest, 3, this.c);
-        f0.l(dest, 4, this.d);
-        f0.l(dest, 5, this.e);
-        f0.l(dest, 6, this.f);
-        f0.r(dest, q6);
+        int q6 = g0.q(dest, 20293);
+        g0.l(dest, 1, this.a);
+        g0.b(dest, 2, this.b);
+        g0.b(dest, 3, this.c);
+        g0.l(dest, 4, this.d);
+        g0.l(dest, 5, this.e);
+        g0.l(dest, 6, this.f);
+        g0.r(dest, q6);
     }
 }

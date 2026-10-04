@@ -10,10 +10,10 @@ import com.google.android.recaptcha.RecaptchaAction;
 import gd.c;
 import gd.g;
 import kotlin.jvm.internal.i;
-import v7.t7;
+import v7.s7;
 import zd.d2;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class zzfp {
     private final String zza;
@@ -29,14 +29,14 @@ public final class zzfp {
     public zzfp(String str) {
         this.zza = str;
         int i10 = zzby.zza;
-        this.zzb = t7.a(zzff.zza);
-        this.zzc = t7.a(zzfg.zza);
-        this.zzd = t7.a(zzfh.zza);
-        this.zze = t7.a(zzfi.zza);
-        this.zzf = t7.a(zzfj.zza);
-        this.zzg = t7.a(zzfk.zza);
-        this.zzh = t7.a(zzfl.zza);
-        this.zzi = t7.a(zzfm.zza);
+        this.zzb = s7.a(zzff.zza);
+        this.zzc = s7.a(zzfg.zza);
+        this.zzd = s7.a(zzfh.zza);
+        this.zze = s7.a(zzfi.zza);
+        this.zzf = s7.a(zzfj.zza);
+        this.zzg = s7.a(zzfk.zza);
+        this.zzh = s7.a(zzfl.zza);
+        this.zzi = s7.a(zzfm.zza);
     }
 
     public static final /* synthetic */ zzq zzb(zzfp zzfpVar) {
@@ -107,9 +107,9 @@ public final class zzfp {
         try {
             zzxg zzj = zzxg.zzj(zzdb.zza(str));
             int i10 = zzby.zza;
-            ((zziq) t7.a(zzeu.zza).a()).zza(zzj);
-        } catch (Exception e) {
-            throw new zzcg(zzce.zzl, zzcd.zzan, e.getMessage(), null, 8, null);
+            ((zziq) s7.a(zzeu.zza).a()).zza(zzj);
+        } catch (Exception e7) {
+            throw new zzcg(zzce.zzl, zzcd.zzan, e7.getMessage(), null, 8, null);
         }
     }
 

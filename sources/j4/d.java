@@ -7,7 +7,7 @@ import java.io.EOFException;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class d implements c3.o {
     public final int a;
@@ -31,50 +31,11 @@ public final class d implements c3.o {
         this.e = new a4.h(bArr, bArr.length);
     }
 
-    @Override // c3.o
-    public final boolean a(c3.p pVar) {
-        int b10 = b(pVar);
-        int i10 = b10;
-        int i11 = 0;
-        int i12 = 0;
-        do {
-            e2.v vVar = this.d;
-            c3.l lVar = (c3.l) pVar;
-            lVar.h(vVar.a, 0, 2, false);
-            vVar.J(0);
-            if ((vVar.D() & 65526) == 65520) {
-                i11++;
-                if (i11 >= 4 && i12 > 188) {
-                    return true;
-                }
-                lVar.h(vVar.a, 0, 4, false);
-                a4.h hVar = this.e;
-                hVar.q(14);
-                int i13 = hVar.i(13);
-                if (i13 <= 6) {
-                    i10++;
-                    lVar.f = 0;
-                    lVar.t(i10, false);
-                } else {
-                    lVar.t(i13 - 6, false);
-                    i12 += i13;
-                }
-            } else {
-                i10++;
-                lVar.f = 0;
-                lVar.t(i10, false);
-            }
-            i11 = 0;
-            i12 = 0;
-        } while (i10 - b10 < 8192);
-        return false;
-    }
-
-    public final int b(c3.p pVar) {
+    public final int a(c3.p pVar) {
         int i10 = 0;
         while (true) {
             e2.v vVar = this.d;
-            pVar.a(0, 10, vVar.a);
+            pVar.b(0, 10, vVar.a);
             vVar.J(0);
             if (vVar.A() != 4801587) {
                 break;
@@ -82,14 +43,53 @@ public final class d implements c3.o {
             vVar.K(3);
             int w10 = vVar.w();
             i10 += w10 + 10;
-            pVar.l(w10);
+            pVar.h(w10);
         }
-        pVar.p();
-        pVar.l(i10);
+        pVar.m();
+        pVar.h(i10);
         if (this.h == -1) {
             this.h = i10;
         }
         return i10;
+    }
+
+    @Override // c3.o
+    public final boolean b(c3.p pVar) {
+        int a2 = a(pVar);
+        int i10 = a2;
+        int i11 = 0;
+        int i12 = 0;
+        do {
+            e2.v vVar = this.d;
+            c3.l lVar = (c3.l) pVar;
+            lVar.f(vVar.a, 0, 2, false);
+            vVar.J(0);
+            if ((vVar.D() & 65526) == 65520) {
+                i11++;
+                if (i11 >= 4 && i12 > 188) {
+                    return true;
+                }
+                lVar.f(vVar.a, 0, 4, false);
+                a4.h hVar = this.e;
+                hVar.q(14);
+                int i13 = hVar.i(13);
+                if (i13 <= 6) {
+                    i10++;
+                    lVar.f = 0;
+                    lVar.s(i10, false);
+                } else {
+                    lVar.s(i13 - 6, false);
+                    i12 += i13;
+                }
+            } else {
+                i10++;
+                lVar.f = 0;
+                lVar.s(i10, false);
+            }
+            i11 = 0;
+            i12 = 0;
+        } while (i10 - a2 < 8192);
+        return false;
     }
 
     @Override // c3.o
@@ -129,15 +129,15 @@ public final class d implements c3.o {
             e2.v vVar = this.d;
             if (!this.j) {
                 this.i = -1;
-                pVar.p();
+                pVar.m();
                 long j3 = 0;
                 if (pVar.getPosition() == 0) {
-                    b(pVar);
+                    a(pVar);
                 }
                 int i12 = 0;
                 while (true) {
                     try {
-                        if (!pVar.h(vVar.a, 0, 2, true)) {
+                        if (!pVar.f(vVar.a, 0, 2, true)) {
                             break;
                         }
                         vVar.J(0);
@@ -145,7 +145,7 @@ public final class d implements c3.o {
                             i12 = 0;
                             break;
                         }
-                        if (!pVar.h(vVar.a, 0, 4, true)) {
+                        if (!pVar.f(vVar.a, 0, 4, true)) {
                             break;
                         }
                         hVar.q(14);
@@ -156,12 +156,12 @@ public final class d implements c3.o {
                         }
                         j3 += i13;
                         i12++;
-                        if (i12 != 1000 && pVar.t(i13 - 6, true)) {
+                        if (i12 != 1000 && pVar.s(i13 - 6, true)) {
                         }
                     } catch (EOFException unused) {
                     }
                 }
-                pVar.p();
+                pVar.m();
                 if (i12 > 0) {
                     this.i = (int) (j3 / i12);
                 } else {

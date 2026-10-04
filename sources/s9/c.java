@@ -6,21 +6,21 @@ import android.util.Log;
 import b5.g;
 import c5.x;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.firebase.messaging.t;
+import com.google.firebase.messaging.m;
+import com.google.firebase.messaging.s;
 import com.google.firebase.messaging.v;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import m.p3;
-import w9.m;
-import w9.o;
-import w9.r;
+import w9.n;
+import w9.p;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class c {
-    public final o a;
+    public final p a;
 
-    public c(o oVar) {
-        this.a = oVar;
+    public c(p pVar) {
+        this.a = pVar;
     }
 
     public final void a(Throwable th2) {
@@ -28,36 +28,36 @@ public final class c {
             Log.w("FirebaseCrashlytics", "A null value was passed to recordException. Ignoring.", null);
             return;
         }
-        m mVar = this.a.f;
+        n nVar = this.a.f;
         Thread currentThread = Thread.currentThread();
-        mVar.getClass();
+        nVar.getClass();
         long currentTimeMillis = System.currentTimeMillis();
-        t tVar = mVar.e;
-        v vVar = new v(mVar, currentTimeMillis, th2, currentThread);
-        tVar.getClass();
-        tVar.k(new x(vVar, 7));
+        s sVar = nVar.e;
+        v vVar = new v(nVar, currentTimeMillis, th2, currentThread);
+        sVar.getClass();
+        sVar.l(new x(vVar, 7));
     }
 
     public final void b() {
-        o oVar = this.a;
+        p pVar = this.a;
         Boolean bool = Boolean.TRUE;
-        r rVar = oVar.b;
-        synchronized (rVar) {
-            rVar.f = false;
-            rVar.g = bool;
-            SharedPreferences.Editor edit = rVar.a.edit();
+        w9.s sVar = pVar.b;
+        synchronized (sVar) {
+            sVar.f = false;
+            sVar.g = bool;
+            SharedPreferences.Editor edit = sVar.a.edit();
             edit.putBoolean("firebase_crashlytics_collection_enabled", true);
             edit.apply();
-            synchronized (rVar.c) {
+            synchronized (sVar.c) {
                 try {
-                    if (rVar.a()) {
-                        if (!rVar.e) {
-                            rVar.d.trySetResult(null);
-                            rVar.e = true;
+                    if (sVar.a()) {
+                        if (!sVar.e) {
+                            sVar.d.trySetResult(null);
+                            sVar.e = true;
                         }
-                    } else if (rVar.e) {
-                        rVar.d = new TaskCompletionSource();
-                        rVar.e = false;
+                    } else if (sVar.e) {
+                        sVar.d = new TaskCompletionSource();
+                        sVar.e = false;
                     }
                 } finally {
                 }
@@ -66,14 +66,14 @@ public final class c {
     }
 
     public final void c(String str, String str2) {
-        m mVar = this.a.f;
-        mVar.getClass();
+        n nVar = this.a.f;
+        nVar.getClass();
         try {
-            ((com.google.firebase.messaging.m) mVar.d.d).u(str, str2);
-        } catch (IllegalArgumentException e) {
-            Context context = mVar.a;
+            ((m) nVar.d.d).u(str, str2);
+        } catch (IllegalArgumentException e7) {
+            Context context = nVar.a;
             if (context != null && (context.getApplicationInfo().flags & 2) != 0) {
-                throw e;
+                throw e7;
             }
             Log.e("FirebaseCrashlytics", "Attempting to set custom attribute with null key, ignoring.", null);
         }
@@ -90,7 +90,7 @@ public final class c {
                     return;
                 }
                 ((AtomicMarkableReference) p3Var.h).set(b10, true);
-                ((t) p3Var.b).k(new g(p3Var, 1));
+                ((s) p3Var.b).l(new g(p3Var, 1));
             } finally {
             }
         }

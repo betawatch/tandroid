@@ -12,7 +12,7 @@ import c5.h;
 import com.google.android.gms.internal.play_billing.m3;
 import com.google.android.gms.internal.play_billing.u;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public class ProxyBillingActivity extends Activity {
     public ResultReceiver a;
@@ -170,8 +170,8 @@ public class ProxyBillingActivity extends Activity {
         try {
             this.b = true;
             startIntentSenderForResult(pendingIntent.getIntentSender(), this.d, new Intent(), 0, 0, 0);
-        } catch (IntentSender.SendIntentException e) {
-            u.i("ProxyBillingActivity", "Got exception while trying to start a purchase flow.", e);
+        } catch (IntentSender.SendIntentException e7) {
+            u.i("ProxyBillingActivity", "Got exception while trying to start a purchase flow.", e7);
             ResultReceiver resultReceiver = this.a;
             if (resultReceiver != null) {
                 resultReceiver.send(0, null);

@@ -9,23 +9,23 @@ import java.util.LinkedHashMap;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.LaunchActivity;
 import yh.l1;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public abstract class q0 {
     public static void a(TLRPC.TL_availableReaction tL_availableReaction, LinkedHashMap linkedHashMap, ArrayList arrayList, SpannableStringBuilder spannableStringBuilder, p pVar, Paint.FontMetricsInt fontMetricsInt) {
         TLRPC.Document document = tL_availableReaction.activate_animation;
         long j3 = document.id;
-        z5 e = e(document, Long.valueOf(j3), fontMetricsInt);
-        linkedHashMap.put(Long.valueOf(j3), e);
+        z5 e7 = e(document, Long.valueOf(j3), fontMetricsInt);
+        linkedHashMap.put(Long.valueOf(j3), e7);
         arrayList.add(Long.valueOf(j3));
         SpannableString spannableString = new SpannableString(tL_availableReaction.reaction);
-        spannableString.setSpan(e, 0, spannableString.length(), 33);
+        spannableString.setSpan(e7, 0, spannableString.length(), 33);
         spannableStringBuilder.append((CharSequence) spannableString);
         if (pVar != null) {
             pVar.x(Long.valueOf(j3), false);
@@ -95,15 +95,15 @@ public abstract class q0 {
     }
 
     public static void f(long j3, int i10, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
-        m2 R = LaunchActivity.R();
+        n2 R = LaunchActivity.R();
         if (R == null || tL_premium_boostsStatus == null) {
             return;
         }
-        rg.j0 j0Var = new rg.j0(21, UserConfig.selectedAccount, R.getContext(), R, R.getResourceProvider());
-        j0Var.R0 = i10;
-        j0Var.F1(tL_premium_boostsStatus, true);
-        j0Var.H1(j3);
-        j0Var.Q0 = new l1(R, j3);
-        j0Var.show();
+        rg.k0 k0Var = new rg.k0(21, UserConfig.selectedAccount, R.getContext(), R, R.getResourceProvider());
+        k0Var.R0 = i10;
+        k0Var.F1(tL_premium_boostsStatus, true);
+        k0Var.H1(j3);
+        k0Var.Q0 = new l1(R, j3);
+        k0Var.show();
     }
 }

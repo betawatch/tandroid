@@ -11,38 +11,38 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Components.qq;
+import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.w9;
-import w7.y5;
-import yh.w7;
+import w7.z5;
+import yh.x7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class k extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public final w9 a;
     public final p6 b;
     public final p6 c;
     public final p6 d;
-    public final qq[] e;
+    public final rq[] e;
     public boolean f;
 
     public k(Context context, d6 d6Var) {
         super(context);
-        this.e = new qq[1];
+        this.e = new rq[1];
         setOrientation(0);
         p6 p6Var = new p6(context, false, false, false);
         this.c = p6Var;
-        int i10 = h6.G6;
-        p6Var.setTextColor(h6.v0(i10, d6Var));
+        int i10 = i6.G6;
+        p6Var.setTextColor(i6.v0(i10, d6Var));
         p6Var.setTextSize(AndroidUtilities.dp(15.0f));
         p6Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         p6Var.setEllipsizeByGradient(true);
         p6 p6Var2 = new p6(context, false, false, false);
         this.d = p6Var2;
-        p6Var2.setTextColor(h6.v0(h6.y6, d6Var));
+        p6Var2.setTextColor(i6.v0(i6.y6, d6Var));
         p6Var2.setTextSize(AndroidUtilities.dp(15.0f));
         w9 w9Var = new w9(context);
         this.a = w9Var;
@@ -50,17 +50,17 @@ public final class k extends LinearLayout implements NotificationCenter.Notifica
         this.b = p6Var3;
         p6Var3.setTextSize(AndroidUtilities.dp(15.0f));
         p6Var3.setPadding(AndroidUtilities.dp(20.0f), 0, 0, 0);
-        p6Var3.setTextColor(h6.v0(i10, d6Var));
+        p6Var3.setTextColor(i6.v0(i10, d6Var));
         p6Var3.setTypeface(AndroidUtilities.bold());
         p6Var3.setGravity(17);
-        addView(p6Var3, y5.o(66, -2, 0.0f, 16));
-        addView(w9Var, y5.o(32, 32, 0.0f, 16));
-        addView(p6Var, y5.o(0, -2, 1.0f, 16));
-        addView(p6Var2, y5.p(-2, -2, 0.0f, 16, 0, 0, 20, 0));
+        addView(p6Var3, z5.o(66, -2, 0.0f, 16));
+        addView(w9Var, z5.o(32, 32, 0.0f, 16));
+        addView(p6Var, z5.o(0, -2, 1.0f, 16));
+        addView(p6Var2, z5.p(-2, -2, 0.0f, 16, 0, 0, 20, 0));
     }
 
     public final void a(long j3, boolean z10) {
-        this.d.c(w7.X0(false, org.telegram.messenger.f0.h((int) j3, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
+        this.d.c(x7.d1(false, org.telegram.messenger.f0.h((int) j3, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
     }
 
     public final void b(int i10, boolean z10, boolean z11) {
@@ -103,7 +103,7 @@ public final class k extends LinearLayout implements NotificationCenter.Notifica
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.f) {
-            canvas.drawLine(AndroidUtilities.dp(112.0f), getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(16.0f), getMeasuredHeight(), h6.k0);
+            canvas.drawLine(AndroidUtilities.dp(112.0f), getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(16.0f), getMeasuredHeight(), i6.k0);
         }
     }
 

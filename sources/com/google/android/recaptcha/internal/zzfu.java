@@ -5,9 +5,9 @@ import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
-import v7.u7;
+import v7.t7;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 final class zzfu extends j implements p {
     int zza;
@@ -58,7 +58,7 @@ final class zzfu extends j implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                u7.b(obj);
+                t7.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzgb zzgbVar = this.zzb;
                 long j3 = this.zzc;
@@ -67,17 +67,17 @@ final class zzfu extends j implements p {
                 obj = zzgbVar.zzq(j3, this);
             } else if (i10 == 1) {
                 zzhkVar = (zzhk) this.zzd;
-                u7.b(obj);
+                t7.b(obj);
             } else {
                 if (i10 != 2) {
-                    u7.b(obj);
+                    t7.b(obj);
                     longValue = this.zzc - ((Number) obj).longValue();
                     if (longValue < 500) {
                         return new Long(longValue);
                     }
                     throw new zzcg(zzce.zzc, zzcd.zzas, null, null, 12, null);
                 }
-                u7.b(obj);
+                t7.b(obj);
                 zzgb zzgbVar2 = this.zzb;
                 zzft zzftVar = new zzft(this.zzc, zzgbVar2, null);
                 this.zza = 3;
@@ -91,10 +91,10 @@ final class zzfu extends j implements p {
             }
             this.zzd = null;
             this.zza = 2;
-        } catch (Exception e) {
-            zzcg zzcgVar2 = e instanceof zzcg ? (zzcg) e : null;
+        } catch (Exception e7) {
+            zzcg zzcgVar2 = e7 instanceof zzcg ? (zzcg) e7 : null;
             if (zzcgVar2 == null) {
-                zzcgVar2 = new zzcg(zzce.zzc, zzcd.zzas, e.getMessage(), null, 8, null);
+                zzcgVar2 = new zzcg(zzce.zzc, zzcd.zzas, e7.getMessage(), null, 8, null);
             }
             zzgb zzgbVar3 = this.zzb;
             zzdv zze = zzgbVar3.zze();

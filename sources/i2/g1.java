@@ -9,7 +9,7 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public final class g1 {
     public final j2.k a;
@@ -18,7 +18,7 @@ public final class g1 {
     public final e2.z i;
     public boolean k;
     public g2.c0 l;
-    public u2.g1 j = new u2.e1();
+    public u2.h1 j = new u2.f1();
     public final IdentityHashMap c = new IdentityHashMap();
     public final HashMap d = new HashMap();
     public final ArrayList b = new ArrayList();
@@ -32,9 +32,9 @@ public final class g1 {
         this.i = zVar;
     }
 
-    public final b2.k1 a(int i10, ArrayList arrayList, u2.g1 g1Var) {
+    public final b2.k1 a(int i10, ArrayList arrayList, u2.h1 h1Var) {
         if (!arrayList.isEmpty()) {
-            this.j = g1Var;
+            this.j = h1Var;
             for (int i11 = i10; i11 < arrayList.size() + i10; i11++) {
                 f1 f1Var = (f1) arrayList.get(i11 - i10);
                 ArrayList arrayList2 = this.b;

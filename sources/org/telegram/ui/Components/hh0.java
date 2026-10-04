@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
 public final class hh0 extends FrameLayout {
     public float E;
@@ -35,7 +35,7 @@ public final class hh0 extends FrameLayout {
     public SparseIntArray a;
     public float b;
     public float c;
-    public n2.e d;
+    public k2.e d;
     public boolean e;
     public boolean f;
     public boolean h;
@@ -49,10 +49,10 @@ public final class hh0 extends FrameLayout {
 
     public final void a(float f7, float f10) {
         ValueAnimator duration = ValueAnimator.ofFloat(this.b, f7).setDuration((long) (Math.max(0.5f, Math.abs(this.b - f7) - Math.min(0.2f, f10)) * 300.0f));
-        duration.setInterpolator(sr.f);
+        duration.setInterpolator(tr.f);
         this.H.lock();
         duration.addUpdateListener(new eh0(this, 0));
-        duration.addListener(new org.telegram.ui.ActionBar.y0(this, f7, 5));
+        duration.addListener(new org.telegram.ui.ActionBar.z0(this, f7, 5));
         duration.start();
     }
 
@@ -154,7 +154,7 @@ public final class hh0 extends FrameLayout {
     public final boolean d(MotionEvent motionEvent, View view) {
         Rect rect = this.L;
         view.getHitRect(rect);
-        if (rect.contains((int) motionEvent.getX(), (int) motionEvent.getY()) && (view.canScrollHorizontally(-1) || (view instanceof org.telegram.ui.ActionBar.b1))) {
+        if (rect.contains((int) motionEvent.getX(), (int) motionEvent.getY()) && (view.canScrollHorizontally(-1) || (view instanceof org.telegram.ui.ActionBar.c1))) {
             return true;
         }
         if (view instanceof ViewGroup) {
@@ -213,15 +213,15 @@ public final class hh0 extends FrameLayout {
         fh0 fh0Var = this.K;
         int height = (int) rectF.height();
         this.J = height;
-        org.telegram.ui.ActionBar.m2[] m2VarArr = (org.telegram.ui.ActionBar.m2[]) ((org.telegram.ui.du) fh0Var).b;
-        org.telegram.ui.ActionBar.m2 m2Var = m2VarArr[0];
-        if (m2Var == null || m2Var.getFragmentView() == null || !m2VarArr[0].isInPreviewMode()) {
+        org.telegram.ui.ActionBar.n2[] n2VarArr = (org.telegram.ui.ActionBar.n2[]) ((org.telegram.ui.bu) fh0Var).b;
+        org.telegram.ui.ActionBar.n2 n2Var = n2VarArr[0];
+        if (n2Var == null || n2Var.getFragmentView() == null || !n2VarArr[0].isInPreviewMode()) {
             return;
         }
-        ViewGroup.LayoutParams layoutParams = m2VarArr[0].getFragmentView().getLayoutParams();
+        ViewGroup.LayoutParams layoutParams = n2VarArr[0].getFragmentView().getLayoutParams();
         if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
             ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin = AndroidUtilities.dp(48.0f) + height;
-            m2VarArr[0].getFragmentView().setLayoutParams(layoutParams);
+            n2VarArr[0].getFragmentView().setLayoutParams(layoutParams);
         }
     }
 
@@ -280,7 +280,7 @@ public final class hh0 extends FrameLayout {
         if (indexOfChild != 0) {
             int i10 = this.s;
             if (i10 == 0) {
-                paint2.setColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.G8, this.I));
+                paint2.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G8, this.I));
             } else {
                 paint2.setColor(i10);
             }
@@ -324,7 +324,7 @@ public final class hh0 extends FrameLayout {
                 f7 = childAt.getMeasuredHeight();
             }
             ValueAnimator duration = ValueAnimator.ofFloat(f7, i11).setDuration(240L);
-            duration.setInterpolator(mt.e);
+            duration.setInterpolator(nt.e);
             duration.addUpdateListener(new eh0(this, 1));
             this.f = true;
             duration.addListener(new hd0(this, 5));

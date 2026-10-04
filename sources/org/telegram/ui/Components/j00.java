@@ -1,52 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final class j00 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ View d;
+public final class j00 {
+    public int a;
+    public CharSequence b;
+    public int c;
+    public int d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public final /* synthetic */ n00 h;
 
-    public /* synthetic */ j00(View view, int i10, float f7, int i11) {
-        this.a = i11;
-        this.d = view;
-        this.b = i10;
-        this.c = f7;
+    public j00(n00 n00Var, int i10, Spannable spannable, boolean z10) {
+        this.h = n00Var;
+        this.a = i10;
+        this.b = spannable;
+        this.g = z10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                k00 k00Var = (k00) this.d;
-                int i10 = this.b;
-                k00Var.b(i10 == 5 ? 0.0f : -this.c, i10 + 1);
-                k00Var.y = 0.0f;
-                k00Var.invalidate();
-                break;
-            case 1:
-                ((org.telegram.ui.web.v1) this.d).c(this.b, this.c, false);
-                break;
-            default:
-                yh.l8 l8Var = (yh.l8) this.d;
-                l8Var.c0 = this.c;
-                if (l8Var.getValue() != this.b) {
-                    l8Var.e(l8Var.getValue());
-                }
-                l8Var.invalidate();
-                break;
+    public final int a(boolean z10) {
+        int i10;
+        int i11;
+        CharSequence charSequence = this.b;
+        n00 n00Var = this.h;
+        int ceil = (int) Math.ceil(ci.e4.g(charSequence, n00Var.b));
+        this.c = ceil;
+        int i12 = 0;
+        if (z10) {
+            i10 = ((org.telegram.ui.ly) n00Var.J).a(this.a);
+            if (i10 < 0) {
+                i10 = 0;
+            }
+            if (z10) {
+                this.d = i10;
+            }
+        } else {
+            i10 = this.d;
         }
+        if (i10 > 0) {
+            i11 = AndroidUtilities.dp(-2.0f) + AndroidUtilities.dp(10.0f) + Math.max(AndroidUtilities.dp(7.333f), (int) Math.ceil(n00Var.c.measureText(String.format("%d", Integer.valueOf(i10)))));
+        } else {
+            if (!this.e && n00Var.n) {
+                i12 = AndroidUtilities.dp(12.333f);
+            }
+            i11 = i12;
+        }
+        return Math.max(AndroidUtilities.dp(16.0f), ceil + i11);
     }
 
-    public j00(yh.l8 l8Var, float f7, int i10) {
-        this.a = 2;
-        this.d = l8Var;
-        this.c = f7;
-        this.b = i10;
+    public final void b(String str) {
+        TextPaint textPaint = this.h.b;
+        if (TextUtils.equals(this.b, str)) {
+            return;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
+        this.b = spannableStringBuilder;
+        CharSequence replaceEmoji = Emoji.replaceEmoji(spannableStringBuilder, textPaint.getFontMetricsInt(), false);
+        this.b = replaceEmoji;
+        this.b = MessageObject.replaceAnimatedEmoji(replaceEmoji, null, textPaint.getFontMetricsInt());
+        this.g = false;
     }
 }

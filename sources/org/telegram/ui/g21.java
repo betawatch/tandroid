@@ -1,40 +1,34 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import android.transition.Transition;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g21 implements org.telegram.ui.ActionBar.z1, r0.n {
-    public final /* synthetic */ w21 a;
+public final class g21 implements Transition.TransitionListener {
+    public final /* synthetic */ Runnable a;
 
-    public /* synthetic */ g21(w21 w21Var) {
-        this.a = w21Var;
+    public g21(Runnable runnable) {
+        this.a = runnable;
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        w21 w21Var = this.a;
-        w21Var.Q = defaultWindowInsets;
-        w21Var.fragmentView.requestLayout();
-        return r0.l1.b;
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionEnd(Transition transition) {
+        this.a.run();
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void f(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        w21 w21Var = this.a;
-        w21Var.getClass();
-        try {
-            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-            w21Var.getParentActivity().startActivity(intent);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionCancel(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionPause(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionResume(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionStart(Transition transition) {
     }
 }

@@ -1,8 +1,8 @@
 package cc;
 
-import v7.a7;
+import v7.z6;
 
-/* compiled from: r8-map-id-518d3e50826c848a68038d28135b875c492a3e734bb6bb5b9a39b192f8b0e064 */
+/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
 /* loaded from: classes.dex */
 public abstract class j {
     public final float a;
@@ -14,7 +14,7 @@ public abstract class j {
     }
 
     public static float a(j jVar, j jVar2) {
-        return a7.a(jVar.a, jVar.b, jVar2.a, jVar2.b);
+        return z6.a(jVar.a, jVar.b, jVar2.a, jVar2.b);
     }
 
     public final boolean equals(Object obj) {
