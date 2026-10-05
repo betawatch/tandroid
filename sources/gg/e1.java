@@ -27,7 +27,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -39,10 +39,10 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.fs0;
+import org.telegram.ui.Components.gs0;
 import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.u80;
-import org.telegram.ui.Components.uo0;
+import org.telegram.ui.Components.vo0;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
@@ -63,14 +63,14 @@ import org.telegram.ui.uq;
 import org.telegram.ui.uy;
 import org.telegram.ui.v80;
 import org.telegram.ui.w8;
-import org.telegram.ui.yf1;
+import org.telegram.ui.wf1;
 import org.telegram.ui.yn;
 import org.telegram.ui.za0;
 import org.telegram.ui.zr0;
 import xh.p4;
-import yh.t5;
+import yh.u5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e1 implements Runnable {
     public final /* synthetic */ int a;
@@ -272,7 +272,7 @@ public final /* synthetic */ class e1 implements Runnable {
                     if (!MediaDataController.getInstance(i14).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
                         MediaDataController.getInstance(i14).toggleStickerSet(null, tLObject5, 2, null, false, false);
                     }
-                    AndroidUtilities.runOnUIThread(new uo0(i13, tLObject5, document), 250L);
+                    AndroidUtilities.runOnUIThread(new vo0(i13, tLObject5, document), 250L);
                     break;
                 } else if (tL_error2 != null) {
                     if (FileRefController.isFileRefError(tL_error2.text)) {
@@ -331,7 +331,7 @@ public final /* synthetic */ class e1 implements Runnable {
                             MessagesStorage.getInstance(i14).putUsersAndChats(null, arrayList5, false, true);
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", chatInvite.chat.id);
-                            if (arrayList4.isEmpty() || MessagesController.getInstance(i14).checkCanOpenChat(bundle, (n2) hg.k0.g(1, arrayList4))) {
+                            if (arrayList4.isEmpty() || MessagesController.getInstance(i14).checkCanOpenChat(bundle, (n2) hg.c.g(1, arrayList4))) {
                                 h90Var = h90Var2;
                                 boolean[] zArr = new boolean[1];
                                 b2Var2.setOnCancelListener(new eh(i15, zArr));
@@ -341,7 +341,7 @@ public final /* synthetic */ class e1 implements Runnable {
                                 } else {
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("chat_id", chatInvite.chat.id);
-                                    launchActivity.p0(yf1.F0(launchActivity, bundle2));
+                                    launchActivity.p0(wf1.F0(launchActivity, bundle2));
                                 }
                             } else {
                                 h90Var = h90Var2;
@@ -350,12 +350,12 @@ public final /* synthetic */ class e1 implements Runnable {
                         }
                         TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = chatInvite.subscription_pricing;
                         if (tL_starsSubscriptionPricing == null || chatInvite.can_refulfill_subscription) {
-                            n2 n2Var = (n2) hg.k0.g(1, arrayList4);
+                            n2 n2Var = (n2) hg.c.g(1, arrayList4);
                             n2Var.showDialog(new u80(launchActivity, chatInvite, str2, n2Var, n2Var instanceof yn ? ((yn) n2Var).ca : null));
                         } else {
                             long j3 = tL_starsSubscriptionPricing.amount;
                             MessagesController.getInstance(i14).putChat(chatInvite.chat, false);
-                            t5.y(launchActivity.O, false).j0(str2, chatInvite, new fi.o0(launchActivity, j3, 2));
+                            u5.y(launchActivity.O, false).j0(str2, chatInvite, new fi.o0(launchActivity, j3, 2));
                         }
                     }
                     try {
@@ -377,18 +377,18 @@ public final /* synthetic */ class e1 implements Runnable {
                 ArrayList arrayList6 = launchActivity2.d0;
                 if (tL_error4 != null) {
                     if ("SUBSCRIPTION_ALREADY_ACTIVE".equalsIgnoreCase(tL_error4.text)) {
-                        a02 = yc.a0((n2) hg.k0.g(1, arrayList6));
+                        a02 = yc.a0((n2) hg.c.g(1, arrayList6));
                         i10 = R.string.PaymentInvoiceSubscriptionLinkAlreadyPaid;
                     } else {
-                        a02 = yc.a0((n2) hg.k0.g(1, arrayList6));
+                        a02 = yc.a0((n2) hg.c.g(1, arrayList6));
                         i10 = R.string.PaymentInvoiceLinkInvalid;
                     }
-                    ok.p(i10, a02, null);
+                    bi.o(i10, a02, null);
                 } else if (!launchActivity2.isFinishing()) {
                     if (tLObject7 instanceof TLRPC.TL_payments_paymentFormStars) {
                         p4 p4Var = launchActivity2.Y0;
                         launchActivity2.Y0 = null;
-                        t5.y(launchActivity2.O, false).Y(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject7, new v80(h90Var3, 1), new j90(p4Var, i16));
+                        u5.y(launchActivity2.O, false).Y(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject7, new v80(h90Var3, 1), new j90(p4Var, i16));
                         break;
                     } else {
                         if (tLObject7 instanceof TLRPC.PaymentForm) {
@@ -435,9 +435,9 @@ public final /* synthetic */ class e1 implements Runnable {
                 String str6 = (String) obj2;
                 String str7 = (String) obj;
                 ug0 ug0Var = dg0Var.v;
-                StringBuilder v = a4.a.v("LoginBilling queried \"", str5, "\" product: ");
-                v.append(BillingController.getResponseCodeString(hVar.a));
-                FileLog.d(v.toString());
+                StringBuilder w10 = a4.a.w("LoginBilling queried \"", str5, "\" product: ");
+                w10.append(BillingController.getResponseCodeString(hVar.a));
+                FileLog.d(w10.toString());
                 if (hVar.a != 0) {
                     dg0Var.e = "BILLING_" + BillingController.getResponseCodeString(hVar.a);
                     new yc(ug0Var.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, BillingController.getResponseCodeString(hVar.a)));
@@ -452,15 +452,15 @@ public final /* synthetic */ class e1 implements Runnable {
                     tL_inputStorePaymentAuthCode.phone_number = str7;
                     int i19 = this.b;
                     tL_inputStorePaymentAuthCode.premium_days = i19;
-                    StringBuilder v9 = a4.a.v("LoginBilling found \"", str5, "\" product, with currency=");
-                    v9.append(tL_inputStorePaymentAuthCode.currency);
-                    v9.append(" amount=");
-                    v9.append(tL_inputStorePaymentAuthCode.amount);
-                    v9.append("; phone=");
-                    v9.append(str7);
-                    v9.append(", phone_code_hash=");
-                    v9.append(str6);
-                    FileLog.d(v9.toString());
+                    StringBuilder w11 = a4.a.w("LoginBilling found \"", str5, "\" product, with currency=");
+                    w11.append(tL_inputStorePaymentAuthCode.currency);
+                    w11.append(" amount=");
+                    w11.append(tL_inputStorePaymentAuthCode.amount);
+                    w11.append("; phone=");
+                    w11.append(str7);
+                    w11.append(", phone_code_hash=");
+                    w11.append(str6);
+                    FileLog.d(w11.toString());
                     TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                     tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentAuthCode;
                     i11 = ((n2) ug0Var).currentAccount;
@@ -481,7 +481,7 @@ public final /* synthetic */ class e1 implements Runnable {
                 String str9 = (String) obj;
                 if (profileActivity.getParentActivity() != null) {
                     b80 H = b80.H(profileActivity, view);
-                    H.W(profileActivity.a.W0(view, false));
+                    H.W(profileActivity.a.V0(view, false));
                     H.w = false;
                     H.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new am0(profileActivity, str8, i14, 5), false);
                     H.l(R.drawable.msg_translate, LocaleController.getString(R.string.TranslateMessage), new zr0(profileActivity, strArr, str9, str8, 8), zArr2[0]);
@@ -514,10 +514,10 @@ public final /* synthetic */ class e1 implements Runnable {
                 }
             default:
                 StringBuilder sb2 = new StringBuilder();
-                a4.a.z(sb2, MessagesController.getInstance(i14).linkPrefix, "/", (String) obj5, "/c/");
+                a4.a.A(sb2, MessagesController.getInstance(i14).linkPrefix, "/", (String) obj5, "/c/");
                 sb2.append(((TL_stars.TL_starGiftCollection) obj4).collection_id);
                 String sb3 = sb2.toString();
-                new xh.z1((fs0) obj6, (Context) obj3, sb3, sb3, (d6) obj2, (n2) obj).show();
+                new xh.z1((gs0) obj6, (Context) obj3, sb3, sb3, (d6) obj2, (n2) obj).show();
                 break;
         }
     }

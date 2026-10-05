@@ -11,10 +11,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.bh1;
 import org.telegram.ui.yn;
+import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final /* synthetic */ class o0 implements RequestDelegate {
                 ((SendMessagesHelper) this.d).lambda$sendEditRichMessageRequest$26(this.c, (MessageObject) this.e, (TLRPC.TL_messages_editMessage) this.b, (n2) this.f, tLObject, tL_error);
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new r0((bh1) this.d, tL_error, this.c, tLObject, (byte[]) this.e, (String) this.b, (TL_account.passwordInputSettings) this.f));
+                AndroidUtilities.runOnUIThread(new r0((zg1) this.d, tL_error, this.c, tLObject, (byte[]) this.e, (String) this.b, (TL_account.passwordInputSettings) this.f));
                 break;
             default:
                 wh.n nVar = (wh.n) this.d;

@@ -21,7 +21,6 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import fb.m;
 import fb.n;
-import hg.k0;
 import i5.e;
 import java.io.IOException;
 import java.nio.ShortBuffer;
@@ -43,16 +42,16 @@ import org.xml.sax.Attributes;
 import pb.b;
 import q9.d;
 import r2.k;
+import r2.l;
 import r2.o;
 import r2.y;
 import x3.g;
 import y6.c;
 import yf.j;
-import z3.l;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureListener, k, u5.a, Continuation, g, c, l {
+public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureListener, k, u5.a, Continuation, g, c, z3.k {
     public static volatile a b;
     public static a c;
     public final /* synthetic */ int a;
@@ -232,7 +231,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
 
     @Override // dh.a
     public int B() {
-        return 1711276032;
+        return 0;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -240,51 +239,14 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         int i10 = this.a;
     }
 
-    @Override // cg.a
-    public void C(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12) {
-        if (i10 < i11) {
-            throw new IllegalArgumentException("Illegal use of DownsampleAudioResampler");
-        }
-        if (i12 != 1 && i12 != 2) {
-            throw new IllegalArgumentException(k0.h(i12, "Illegal use of DownsampleAudioResampler. Channels:"));
-        }
-        int remaining = shortBuffer.remaining() / i12;
-        int ceil = (int) Math.ceil((i11 / i10) * remaining);
-        int i13 = remaining - ceil;
-        float f7 = ceil;
-        float f10 = f7 / f7;
-        float f11 = i13;
-        float f12 = f11 / f11;
-        while (ceil > 0 && i13 > 0) {
-            if (f10 >= f12) {
-                shortBuffer2.put(shortBuffer.get());
-                if (i12 == 2) {
-                    shortBuffer2.put(shortBuffer.get());
-                }
-                ceil--;
-                f10 = ceil / f7;
-            } else {
-                shortBuffer.position(shortBuffer.position() + i12);
-                i13--;
-                f12 = i13 / f11;
-            }
-        }
-    }
-
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void C1(u1 u1Var) {
         int i10 = this.a;
     }
 
-    @Override // ea.a
-    public StackTraceElement[] D(StackTraceElement[] stackTraceElementArr) {
-        if (stackTraceElementArr.length <= 1024) {
-            return stackTraceElementArr;
-        }
-        StackTraceElement[] stackTraceElementArr2 = new StackTraceElement[1024];
-        System.arraycopy(stackTraceElementArr, 0, stackTraceElementArr2, 0, 512);
-        System.arraycopy(stackTraceElementArr, stackTraceElementArr.length - 512, stackTraceElementArr2, 512, 512);
-        return stackTraceElementArr2;
+    @Override // z3.k
+    public int D(s sVar) {
+        return 1;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -301,7 +263,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
     public Object E(cf.c cVar) {
         switch (this.a) {
             case 14:
-                return new pb.c(cVar.v(b.class));
+                return new pb.c(cVar.q(b.class));
             default:
                 return new b(cVar.d(ob.a.class));
         }
@@ -329,9 +291,9 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         return false;
     }
 
-    @Override // z3.l
-    public int H(s sVar) {
-        return 1;
+    @Override // dh.a
+    public int H() {
+        return 1711276032;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -498,7 +460,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         int i10 = this.a;
     }
 
-    @Override // z3.l
+    @Override // z3.k
     public boolean V(s sVar) {
         return false;
     }
@@ -635,9 +597,35 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         int i10 = this.a;
     }
 
-    @Override // y6.c
-    public int f(Context context, String str, boolean z10) {
-        return y6.e.d(context, str, z10);
+    /* JADX WARN: Removed duplicated region for block: B:18:0x004c  */
+    @Override // r2.k
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public l f(com.google.firebase.messaging.n nVar) {
+        MediaCodec mediaCodec = null;
+        try {
+            mediaCodec = I(nVar);
+            Trace.beginSection("configureCodec");
+            Surface surface = (Surface) nVar.d;
+            mediaCodec.configure((MediaFormat) nVar.b, surface, (MediaCrypto) nVar.e, (surface == null && ((o) nVar.a).h && Build.VERSION.SDK_INT >= 35) ? 8 : 0);
+            Trace.endSection();
+            Trace.beginSection("startCodec");
+            mediaCodec.start();
+            Trace.endSection();
+            return new y(mediaCodec, (r2.j) nVar.f);
+        } catch (IOException e7) {
+            e = e7;
+            if (mediaCodec != null) {
+                mediaCodec.release();
+            }
+            throw e;
+        } catch (RuntimeException e10) {
+            e = e10;
+            if (mediaCodec != null) {
+            }
+            throw e;
+        }
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -684,9 +672,9 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         return c1.a(messageObject);
     }
 
-    @Override // dh.a
-    public int i() {
-        return 0;
+    @Override // y6.c
+    public int i(Context context, String str, boolean z10) {
+        return y6.e.d(context, str, z10);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -845,35 +833,9 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         int i10 = this.a;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x004c  */
-    @Override // r2.k
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public r2.l v(com.google.firebase.messaging.n nVar) {
-        MediaCodec mediaCodec = null;
-        try {
-            mediaCodec = I(nVar);
-            Trace.beginSection("configureCodec");
-            Surface surface = (Surface) nVar.d;
-            mediaCodec.configure((MediaFormat) nVar.b, surface, (MediaCrypto) nVar.e, (surface == null && ((o) nVar.a).h && Build.VERSION.SDK_INT >= 35) ? 8 : 0);
-            Trace.endSection();
-            Trace.beginSection("startCodec");
-            mediaCodec.start();
-            Trace.endSection();
-            return new y(mediaCodec, (r2.j) nVar.f);
-        } catch (IOException e7) {
-            e = e7;
-            if (mediaCodec != null) {
-                mediaCodec.release();
-            }
-            throw e;
-        } catch (RuntimeException e10) {
-            e = e10;
-            if (mediaCodec != null) {
-            }
-            throw e;
-        }
+    @Override // z3.k
+    public z3.m v(s sVar) {
+        throw new IllegalStateException("This SubtitleParser.Factory doesn't support any formats.");
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -902,14 +864,51 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
         return true;
     }
 
-    @Override // z3.l
-    public z3.n x(s sVar) {
-        throw new IllegalStateException("This SubtitleParser.Factory doesn't support any formats.");
+    @Override // cg.a
+    public void x(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12) {
+        if (i10 < i11) {
+            throw new IllegalArgumentException("Illegal use of DownsampleAudioResampler");
+        }
+        if (i12 != 1 && i12 != 2) {
+            throw new IllegalArgumentException(hg.c.h(i12, "Illegal use of DownsampleAudioResampler. Channels:"));
+        }
+        int remaining = shortBuffer.remaining() / i12;
+        int ceil = (int) Math.ceil((i11 / i10) * remaining);
+        int i13 = remaining - ceil;
+        float f7 = ceil;
+        float f10 = f7 / f7;
+        float f11 = i13;
+        float f12 = f11 / f11;
+        while (ceil > 0 && i13 > 0) {
+            if (f10 >= f12) {
+                shortBuffer2.put(shortBuffer.get());
+                if (i12 == 2) {
+                    shortBuffer2.put(shortBuffer.get());
+                }
+                ceil--;
+                f10 = ceil / f7;
+            } else {
+                shortBuffer.position(shortBuffer.position() + i12);
+                i13--;
+                f12 = i13 / f11;
+            }
+        }
     }
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void x2() {
         int i10 = this.a;
+    }
+
+    @Override // ea.a
+    public StackTraceElement[] y(StackTraceElement[] stackTraceElementArr) {
+        if (stackTraceElementArr.length <= 1024) {
+            return stackTraceElementArr;
+        }
+        StackTraceElement[] stackTraceElementArr2 = new StackTraceElement[1024];
+        System.arraycopy(stackTraceElementArr, 0, stackTraceElementArr2, 0, 512);
+        System.arraycopy(stackTraceElementArr, stackTraceElementArr.length - 512, stackTraceElementArr2, 512, 512);
+        return stackTraceElementArr2;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -1150,7 +1149,7 @@ public final class a implements bg.a, e, cg.a, ea.a, n, dh.a, d, l1, OnFailureLi
     }
 
     @Override // x3.g
-    public void y(long j3) {
+    public void C(long j3) {
     }
 
     private final /* synthetic */ void C0(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {

@@ -13,13 +13,14 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
+import sa.e;
 import z3.d;
+import z3.l;
 import z3.m;
-import z3.n;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class a implements n {
+public final class a implements m {
     public static final Pattern d = Pattern.compile("\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*-->\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*");
     public static final Pattern e = Pattern.compile("\\{\\\\.*?\\}");
     public final StringBuilder a = new StringBuilder();
@@ -207,17 +208,12 @@ public final class a implements n {
         return parseLong3 * 1000;
     }
 
-    @Override // z3.n
-    public final int A() {
-        return 1;
-    }
-
-    @Override // z3.n
-    public final void F(byte[] bArr, int i10, int i11, m mVar, h hVar) {
+    @Override // z3.m
+    public final void E(byte[] bArr, int i10, int i11, l lVar, h hVar) {
         String k10;
         String str;
         a aVar = this;
-        long j3 = mVar.a;
+        long j3 = lVar.a;
         v vVar = aVar.c;
         vVar.H(i10 + i11, bArr);
         vVar.J(i10);
@@ -226,7 +222,7 @@ public final class a implements n {
             F = StandardCharsets.UTF_8;
         }
         long j10 = -9223372036854775807L;
-        ArrayList arrayList = (j3 == -9223372036854775807L || !mVar.b) ? null : new ArrayList();
+        ArrayList arrayList = (j3 == -9223372036854775807L || !lVar.b) ? null : new ArrayList();
         while (true) {
             String k11 = vVar.k(F);
             if (k11 == null) {
@@ -315,12 +311,17 @@ public final class a implements n {
         }
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public final /* synthetic */ d h(int i10, int i11, byte[] bArr) {
-        return t8.b.a(this, bArr, i11);
+        return e.a(this, bArr, i11);
     }
 
-    @Override // z3.n
+    @Override // z3.m
+    public final int y() {
+        return 1;
+    }
+
+    @Override // z3.m
     public final /* synthetic */ void reset() {
     }
 }

@@ -1,49 +1,80 @@
 package org.telegram.ui;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class ea1 {
-    public final org.telegram.ui.Components.v00 a;
-    public kg.f b;
-    public final int c;
-    public final /* synthetic */ fa1 d;
+public abstract class ea1 extends da1 {
+    public final int v;
+    public final /* synthetic */ ta1 w;
 
-    public ea1(fa1 fa1Var, int i10) {
-        this.d = fa1Var;
-        this.c = i10;
-        org.telegram.ui.Components.v00 v00Var = new org.telegram.ui.Components.v00(fa1Var.getContext());
-        v00Var.c = true;
-        TextPaint textPaint = new TextPaint(1);
-        v00Var.e = textPaint;
-        v00Var.f = new Paint(1);
-        Paint paint = new Paint(1);
-        v00Var.h = paint;
-        Paint paint2 = new Paint(1);
-        v00Var.n = paint2;
-        v00Var.w = AndroidUtilities.dp(35.0f);
-        v00Var.x = AndroidUtilities.dp(22.0f);
-        v00Var.y = AndroidUtilities.dp(8.0f);
-        v00Var.E = AndroidUtilities.dp(3.5f);
-        v00Var.F = new RectF();
-        v00Var.G = 0.0f;
-        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
-        textPaint.setTextAlign(Paint.Align.CENTER);
-        textPaint.setTypeface(Typeface.create("sans-serif-medium", 0));
-        paint.setStrokeWidth(AndroidUtilities.dpf2(1.5f));
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint2.setStyle(style);
-        paint2.setStrokeCap(Paint.Cap.ROUND);
-        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        this.a = v00Var;
-        v00Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        fa1Var.h.addView(v00Var);
-        fa1Var.n.add(this);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ea1(ta1 ta1Var, Context context, int i10, int i11, ig.f fVar) {
+        super(context, i11, fVar, null);
+        this.w = ta1Var;
+        this.v = i10;
+    }
+
+    @Override // org.telegram.ui.da1
+    public final void b(fa1 fa1Var) {
+        int i10;
+        ta1 ta1Var = this.w;
+        i10 = ((org.telegram.ui.ActionBar.n2) ta1Var).classGuid;
+        fa1Var.a(this.v, i10, ta1Var.a.stats_dc, new org.telegram.ui.Components.s61(1, ta1Var, this.r));
+    }
+
+    @Override // org.telegram.ui.da1
+    public final void c() {
+        int i10;
+        if (this.r.c > 0) {
+            return;
+        }
+        performClick();
+        ig.g gVar = this.b;
+        if (gVar.t0.G) {
+            long selectedDate = gVar.getSelectedDate();
+            if (this.s == 4) {
+                fa1 fa1Var = this.r;
+                fa1Var.e = new jg.e(fa1Var.d, selectedDate);
+                g(false);
+                return;
+            }
+            if (this.r.g == null) {
+                return;
+            }
+            ta1 ta1Var = this.w;
+            ta1.W(ta1Var);
+            String str = this.r.g + "_" + selectedDate;
+            jg.b bVar = (jg.b) ta1Var.U.get(str);
+            if (bVar != null) {
+                this.r.e = bVar;
+                g(false);
+                return;
+            }
+            TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
+            tL_loadAsyncGraph.token = this.r.g;
+            if (selectedDate != 0) {
+                tL_loadAsyncGraph.x = selectedDate;
+                tL_loadAsyncGraph.flags |= 1;
+            }
+            sa1 sa1Var = new sa1();
+            ta1Var.Y = sa1Var;
+            ta1Var.S.getClass();
+            sa1Var.a = RecyclerView.R(this);
+            gVar.t0.d(true, false);
+            int i11 = this.v;
+            int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(tL_loadAsyncGraph, new is0(this, str, sa1Var, 10), null, null, 0, ta1Var.a.stats_dc, 1, true);
+            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i11);
+            i10 = ((org.telegram.ui.ActionBar.n2) ta1Var).classGuid;
+            connectionsManager.bindRequestToGuid(sendRequest, i10);
+        }
+    }
+
+    @Override // org.telegram.ui.da1
+    public final void f() {
+        ta1.W(this.w);
     }
 }

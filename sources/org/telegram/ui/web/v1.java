@@ -27,7 +27,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.f5;
@@ -36,8 +36,8 @@ import org.telegram.ui.Components.a90;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.k00;
 import org.telegram.ui.Components.tr;
+import org.telegram.ui.e91;
 import org.telegram.ui.g70;
-import org.telegram.ui.g91;
 import org.telegram.ui.i4;
 import org.telegram.ui.k20;
 import org.telegram.ui.m3;
@@ -46,7 +46,7 @@ import org.telegram.ui.v3;
 import org.telegram.ui.zd;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class v1 extends FrameLayout {
     public boolean A0;
@@ -147,7 +147,7 @@ public abstract class v1 extends FrameLayout {
         addView(frameLayout, z5.e(-1, 56, 87));
         FrameLayout frameLayout2 = new FrameLayout(context);
         addView(frameLayout2, z5.e(-1, 56, 87));
-        zd zdVar = new zd(context, 6);
+        zd zdVar = new zd(context, 5);
         this.H = zdVar;
         zdVar.setOrientation(0);
         addView(zdVar, z5.e(-2, 56, 83));
@@ -165,7 +165,7 @@ public abstract class v1 extends FrameLayout {
         this.N = f02;
         imageView.setBackground(f02);
         zdVar.addView(imageView, z5.n(54, 56));
-        zd zdVar2 = new zd(context, 7);
+        zd zdVar2 = new zd(context, 6);
         this.I = zdVar2;
         zdVar2.setOrientation(0);
         addView(zdVar2, z5.e(-2, 56, 85));
@@ -255,9 +255,9 @@ public abstract class v1 extends FrameLayout {
                                     org.telegram.ui.ActionBar.f1 y3 = F.y();
                                     y3.setEnabled(instantViewLoader.b() != null);
                                     y3.setAlpha(y3.isEnabled() ? 1.0f : 0.5f);
-                                    g91 g91Var = new g91(28, y3, instantViewLoader);
-                                    instantViewLoader.m.add(g91Var);
-                                    F.p = new x1(2, instantViewLoader, g91Var);
+                                    e91 e91Var = new e91(28, y3, instantViewLoader);
+                                    instantViewLoader.m.add(e91Var);
+                                    F.p = new x1(2, instantViewLoader, e91Var);
                                 }
                                 F.c(R.drawable.msg_reset, LocaleController.getString(R.string.Refresh), (Runnable) y7Var.run(5), false);
                                 F.c(R.drawable.msg_search, LocaleController.getString(R.string.Search), (Runnable) y7Var.run(1), false);
@@ -452,9 +452,9 @@ public abstract class v1 extends FrameLayout {
                                     org.telegram.ui.ActionBar.f1 y3 = F.y();
                                     y3.setEnabled(instantViewLoader.b() != null);
                                     y3.setAlpha(y3.isEnabled() ? 1.0f : 0.5f);
-                                    g91 g91Var = new g91(28, y3, instantViewLoader);
-                                    instantViewLoader.m.add(g91Var);
-                                    F.p = new x1(2, instantViewLoader, g91Var);
+                                    e91 e91Var = new e91(28, y3, instantViewLoader);
+                                    instantViewLoader.m.add(e91Var);
+                                    F.p = new x1(2, instantViewLoader, e91Var);
                                 }
                                 F.c(R.drawable.msg_reset, LocaleController.getString(R.string.Refresh), (Runnable) y7Var.run(5), false);
                                 F.c(R.drawable.msg_search, LocaleController.getString(R.string.Search), (Runnable) y7Var.run(1), false);
@@ -846,7 +846,7 @@ public abstract class v1 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, ok.B(56.0f, this.e0 ? AndroidUtilities.statusBarHeight : 0, TLObject.FLAG_30));
+        super.onMeasure(i10, bi.B(56.0f, this.e0 ? AndroidUtilities.statusBarHeight : 0, TLObject.FLAG_30));
     }
 
     public void setBackButton(boolean z10) {

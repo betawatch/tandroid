@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class h6 extends w4 implements RandomAccess {
     public static final h6 d = new h6(new Object[0], 0, false);
@@ -22,7 +22,7 @@ public final class h6 extends w4 implements RandomAccess {
         int i11;
         i();
         if (i10 < 0 || i10 > (i11 = this.c)) {
-            throw new IndexOutOfBoundsException(a4.a.l(i10, this.c, "Index:", ", Size:"));
+            throw new IndexOutOfBoundsException(a4.a.m(i10, this.c, "Index:", ", Size:"));
         }
         int i12 = i10 + 1;
         Object[] objArr = this.b;
@@ -47,7 +47,7 @@ public final class h6 extends w4 implements RandomAccess {
 
     public final void n(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IndexOutOfBoundsException(a4.a.l(i10, this.c, "Index:", ", Size:"));
+            throw new IndexOutOfBoundsException(a4.a.m(i10, this.c, "Index:", ", Size:"));
         }
     }
 

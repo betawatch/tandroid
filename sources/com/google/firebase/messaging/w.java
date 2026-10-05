@@ -4,7 +4,7 @@ import android.util.Log;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class w {
     public static final Pattern d = Pattern.compile("[a-zA-Z0-9-_.~%]{1,900}");
@@ -21,11 +21,11 @@ public final class w {
             str3 = str2.substring(8);
         }
         if (str3 == null || !d.matcher(str3).matches()) {
-            throw new IllegalArgumentException(a4.a.p("Invalid topic name: ", str3, " does not match the allowed format [a-zA-Z0-9-_.~%]{1,900}."));
+            throw new IllegalArgumentException(a4.a.q("Invalid topic name: ", str3, " does not match the allowed format [a-zA-Z0-9-_.~%]{1,900}."));
         }
         this.a = str3;
         this.b = str;
-        this.c = a4.a.C(str, "!", str2);
+        this.c = a4.a.D(str, "!", str2);
     }
 
     public final boolean equals(Object obj) {

@@ -1,36 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class dy0 extends zq0 {
-    public final /* synthetic */ qy0 X0;
+public final /* synthetic */ class dy0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLObject b;
+    public final /* synthetic */ Utilities.Callback c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dy0(qy0 qy0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, null, str, false, str2, false, d6Var);
-        this.X0 = qy0Var;
+    public /* synthetic */ dy0(TLObject tLObject, Utilities.Callback callback, int i10) {
+        this.a = i10;
+        this.b = tLObject;
+        this.c = callback;
     }
 
-    @Override // org.telegram.ui.Components.zq0
-    public final void O0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            AndroidUtilities.runOnUIThread(new zm(this, iVar, i10, 20), 100L);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.zq0, org.telegram.ui.ActionBar.f3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        org.telegram.ui.ActionBar.n2 n2Var = this.X0.L;
-        if (n2Var instanceof org.telegram.ui.yn) {
-            AndroidUtilities.requestAdjustResize(n2Var.getParentActivity(), n2Var.getClassGuid());
-            if (((org.telegram.ui.yn) n2Var).W.getVisibility() == 0) {
-                n2Var.getFragmentView().requestLayout();
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                TLObject tLObject = this.b;
+                if (tLObject instanceof TLRPC.TL_messages_stickerSet) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
+                    MediaDataController.getInstance(UserConfig.selectedAccount).putStickerSet(tL_messages_stickerSet);
+                    if (!MediaDataController.getInstance(UserConfig.selectedAccount).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
+                        MediaDataController.getInstance(UserConfig.selectedAccount).toggleStickerSet(null, tL_messages_stickerSet, 2, null, false, false);
+                    }
+                    z10 = true;
+                } else {
+                    z10 = false;
+                }
+                this.c.run(Boolean.valueOf(z10));
+                break;
+            default:
+                TLObject tLObject2 = this.b;
+                boolean z11 = tLObject2 instanceof TL_account.paidMessagesRevenue;
+                Utilities.Callback callback = this.c;
+                if (!z11) {
+                    callback.run(0L);
+                    break;
+                } else {
+                    callback.run(Long.valueOf(((TL_account.paidMessagesRevenue) tLObject2).stars_amount));
+                    break;
+                }
         }
     }
 }

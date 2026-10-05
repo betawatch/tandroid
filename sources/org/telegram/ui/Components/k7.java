@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k7 implements o1.g {
     public final /* synthetic */ int a;
@@ -15,6 +15,7 @@ public final /* synthetic */ class k7 implements o1.g {
 
     @Override // o1.g
     public final void a(o1.h hVar, float f7, float f10) {
+        li.p pVar;
         ViewGroup viewGroup;
         switch (this.a) {
             case 0:
@@ -35,9 +36,11 @@ public final /* synthetic */ class k7 implements o1.g {
                 xi xiVar = (xi) ((fi) this.b).d;
                 pi piVar = xiVar.z0;
                 if (piVar == xiVar.m0 || piVar == xiVar.n0 || (xiVar.F && xiVar.t1 != null)) {
-                    xiVar.X1(1);
+                    xiVar.Z1(1);
                 }
                 xiVar.z0.k(xiVar.l2);
+                pVar = ((org.telegram.ui.ActionBar.f3) xiVar).glassEngine;
+                pVar.g();
                 viewGroup = ((org.telegram.ui.ActionBar.f3) xiVar).containerView;
                 viewGroup.invalidate();
                 break;

@@ -12,7 +12,7 @@ import android.graphics.RuntimeShader;
 import java.util.Arrays;
 import w7.z;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class e extends z {
     public final RenderNode a = ah.f.o();
@@ -177,7 +177,7 @@ public final class e extends z {
                                 } else {
                                     beginRecording.save();
                                     beginRecording.translate(-rectF.left, -rectF.top);
-                                    fVar.e.y(beginRecording, rectF.left, rectF.top, rectF.right, rectF.bottom);
+                                    fVar.e.v(beginRecording, rectF.left, rectF.top, rectF.right, rectF.bottom);
                                     beginRecording.restore();
                                 }
                                 this.a.endRecording();

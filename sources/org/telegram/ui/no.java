@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class no implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -86,19 +86,19 @@ public final /* synthetic */ class no implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.o((org.telegram.ui.Components.ch0) obj2, (org.telegram.ui.Components.bh0) obj, tLObject, 29));
                 break;
             case 13:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.uo0((org.telegram.ui.Components.zq0) obj2, tLObject, (Context) obj, 3));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.vo0((org.telegram.ui.Components.br0) obj2, tLObject, (Context) obj, 3));
                 break;
             case 14:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.bo0((org.telegram.ui.Components.qy0) obj2, tL_error, tLObject, (MediaDataController) obj, 2));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.bo0((org.telegram.ui.Components.ry0) obj2, tL_error, tLObject, (MediaDataController) obj, 2));
                 break;
             case 15:
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.bo0((ms0) obj2, tL_error, tLObject, (TLRPC.TL_messages_getAttachedStickers) obj, 3));
                 break;
             case 16:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.bo0((org.telegram.ui.Components.d11) obj2, (org.telegram.ui.ActionBar.b2) obj, tLObject, tL_error, 4));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.bo0((org.telegram.ui.Components.e11) obj2, (org.telegram.ui.ActionBar.b2) obj, tLObject, tL_error, 4));
                 break;
             case 17:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.bo0((org.telegram.ui.Components.t41) obj2, tL_error, tLObject, (TLRPC.TL_textWithEntities) obj, 6));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.bo0((org.telegram.ui.Components.u41) obj2, tL_error, tLObject, (TLRPC.TL_textWithEntities) obj, 6));
                 break;
             case 18:
                 AndroidUtilities.runOnUIThread(new uq((gz) obj2, tLObject, (MessageObject) obj, 4));

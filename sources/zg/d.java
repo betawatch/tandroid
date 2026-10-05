@@ -19,7 +19,7 @@ import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.gz;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class d {
     public static int m;
@@ -217,7 +217,7 @@ public final class d {
                 imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.around_animation), f7 + "_" + f7 + "_pcache_compress", null, null, document3, 0);
             } else {
                 ImageLocation forDocument = ImageLocation.getForDocument(document);
-                String a2 = k0.a();
+                String a2 = i0.a();
                 TLRPC.Document document4 = tL_availableReaction.around_animation;
                 z10 = true;
                 imageReceiver.setImage(forDocument, a2, null, null, document4, 0);

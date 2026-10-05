@@ -11,7 +11,6 @@ import android.os.Message;
 import android.util.Log;
 import android.util.SparseArray;
 import ci.k8;
-import hg.k0;
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.nio.Buffer;
@@ -23,7 +22,6 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.camera.Size;
-import org.telegram.messenger.f0;
 import org.telegram.messenger.video.MP4Builder;
 import org.telegram.ui.Cells.t6;
 import org.telegram.ui.Components.c50;
@@ -42,7 +40,7 @@ import p4.p0;
 import p4.r0;
 import p4.s0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class d extends Handler {
     public final /* synthetic */ int a;
@@ -164,7 +162,7 @@ public final class d extends Handler {
                                         if (y50Var.c0 == -1) {
                                             y50Var.c0 = j16 / 1000;
                                             if (BuildVars.LOGS_ENABLED) {
-                                                k0.t(new StringBuilder("InstantCamera first video frame was at "), y50Var.c0);
+                                                org.telegram.messenger.q.r(new StringBuilder("InstantCamera first video frame was at "), y50Var.c0);
                                             }
                                         }
                                         y50Var.e0 = j16 - y50Var.d0;
@@ -452,11 +450,11 @@ public final class d extends Handler {
                                                         n50Var.e = i37;
                                                         y50Var.h0 = j20;
                                                         if (BuildVars.LOGS_ENABLED) {
-                                                            k0.t(k0.j(i37, "InstantCamera found first audio frame at ", " timestamp = "), n50Var.b[i37]);
+                                                            org.telegram.messenger.q.r(hg.c.j(i37, "InstantCamera found first audio frame at ", " timestamp = "), n50Var.b[i37]);
                                                         }
                                                     } else {
                                                         if (BuildVars.LOGS_ENABLED) {
-                                                            k0.t(k0.j(i37, "InstantCamera ignore first audio frame at ", " timestamp = "), n50Var.b[i37]);
+                                                            org.telegram.messenger.q.r(hg.c.j(i37, "InstantCamera ignore first audio frame at ", " timestamp = "), n50Var.b[i37]);
                                                         }
                                                         i37++;
                                                         j15 = j11;
@@ -467,13 +465,13 @@ public final class d extends Handler {
                                                     y50Var.b0 = j21 - j22;
                                                     y50Var.h0 = j22;
                                                     if (BuildVars.LOGS_ENABLED) {
-                                                        k0.t(new StringBuilder("InstantCamera detected desync between audio and video "), y50Var.b0);
+                                                        org.telegram.messenger.q.r(new StringBuilder("InstantCamera detected desync between audio and video "), y50Var.b0);
                                                     }
                                                 }
                                             }
                                             long j23 = j15;
                                             if (BuildVars.LOGS_ENABLED) {
-                                                f0.n(n50Var.d, new StringBuilder("InstantCamera first audio frame not found, removing buffers "));
+                                                org.telegram.messenger.q.n(n50Var.d, new StringBuilder("InstantCamera first audio frame not found, removing buffers "));
                                             }
                                             y50Var.L.remove(n50Var);
                                             if (y50Var.L.isEmpty()) {

@@ -34,7 +34,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ns0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 a;
@@ -65,7 +65,7 @@ public final class ns0 extends org.telegram.ui.ActionBar.j {
 
     /* JADX WARN: Code restructure failed: missing block: B:201:0x040b, code lost:
     
-        if (t8.b.u(r0) != false) goto L203;
+        if (sa.e.u(r0) != false) goto L203;
      */
     /* JADX WARN: Code restructure failed: missing block: B:326:0x07ed, code lost:
     
@@ -257,7 +257,7 @@ public final class ns0 extends org.telegram.ui.ActionBar.j {
         TLObject tLObject;
         Activity activity7;
         MessageObject messageObject16;
-        org.telegram.ui.Components.qy0 qy0Var;
+        org.telegram.ui.Components.ry0 ry0Var;
         MessageObject messageObject17;
         ImageLocation imageLocation;
         ImageLocation imageLocation2;
@@ -1008,9 +1008,9 @@ public final class ns0 extends org.telegram.ui.ActionBar.j {
             }
         } else {
             if (i10 == 24) {
-                of.b E = of.b.E();
+                of.b F = of.b.F();
                 m12 = photoViewer2.m1();
-                E.N(m12);
+                F.N(m12);
                 t7Var = photoViewer2.G0;
                 t7Var.performClick();
                 return;
@@ -1521,8 +1521,8 @@ public final class ns0 extends org.telegram.ui.ActionBar.j {
                             activity7 = photoViewer2.y;
                             messageObject16 = photoViewer2.T4;
                             photoViewer2.U3 = new ms0(this, activity7, messageObject16, tLObject2, this.a);
-                            qy0Var = photoViewer2.U3;
-                            qy0Var.show();
+                            ry0Var = photoViewer2.U3;
+                            ry0Var.show();
                             return;
                         }
                         return;
@@ -1862,10 +1862,10 @@ public final class ns0 extends org.telegram.ui.ActionBar.j {
                         photoViewer2.Z2 = !photoViewer2.Z2;
                         boolean z31 = photoViewer2.Z2;
                         messageObject18 = photoViewer2.T4;
-                        org.telegram.ui.Components.d81.I(messageObject18, z31);
-                        org.telegram.ui.Components.d81 d81Var = photoViewer2.F2;
-                        if (d81Var != null) {
-                            d81Var.N(photoViewer2.Z2);
+                        org.telegram.ui.Components.e81.I(messageObject18, z31);
+                        org.telegram.ui.Components.e81 e81Var = photoViewer2.F2;
+                        if (e81Var != null) {
+                            e81Var.N(photoViewer2.Z2);
                         }
                         photoViewer2.s0.d(photoViewer2.Z2);
                         photoViewer2.s0.setSelectorColor(photoViewer2.Z2 ? 259241196 : 268435455);

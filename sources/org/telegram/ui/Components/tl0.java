@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class tl0 implements s4.r0 {
     public final /* synthetic */ int a = 0;
@@ -148,7 +148,7 @@ public final class tl0 implements s4.r0 {
                         if (zl0Var.N1.isEnabled()) {
                             View view2 = zl0Var.N1;
                             if (zl0Var.I0(view2, x12 - view2.getX(), y11 - zl0Var.N1.getY())) {
-                                zl0Var.l1(zl0Var.O1, zl0Var.N1);
+                                zl0Var.k1(zl0Var.O1, zl0Var.N1);
                                 org.telegram.ui.Cells.z zVar = zl0Var.D1;
                                 if (zVar != null) {
                                     Drawable current = zVar.getCurrent();
@@ -161,7 +161,7 @@ public final class tl0 implements s4.r0 {
                                     }
                                     zl0Var.D1.setHotspot(motionEvent.getX(), motionEvent.getY());
                                 }
-                                zl0Var.x1();
+                                zl0Var.w1();
                             }
                         }
                         rect.setEmpty();
@@ -173,10 +173,10 @@ public final class tl0 implements s4.r0 {
                         zl0Var.e1 = null;
                     }
                     View view3 = zl0Var.N1;
-                    zl0Var.k1(view3, 0.0f, 0.0f, false);
+                    zl0Var.j1(view3, 0.0f, 0.0f, false);
                     zl0Var.N1 = null;
                     zl0Var.P1 = false;
-                    zl0Var.n1(motionEvent, view3);
+                    zl0Var.m1(motionEvent, view3);
                     if ((actionMasked == 1 || actionMasked == 6 || actionMasked == 3) && (pl0Var = zl0Var.Y0) != null && zl0Var.Z0) {
                         pl0Var.i();
                         zl0Var.Z0 = false;

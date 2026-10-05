@@ -10,11 +10,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class k3 extends FrameLayout {
     public final EditTextBoldCursor a;
-    public boolean b;
 
     public k3(Context context) {
         super(context);
@@ -34,6 +33,13 @@ public final class k3 extends FrameLayout {
         addView(editTextBoldCursor, w7.z5.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
     }
 
+    public final void a(String str) {
+        EditTextBoldCursor editTextBoldCursor = this.a;
+        editTextBoldCursor.setText("");
+        editTextBoldCursor.setHint(str);
+        setWillNotDraw(true);
+    }
+
     public String getText() {
         return this.a.getText().toString();
     }
@@ -42,20 +48,17 @@ public final class k3 extends FrameLayout {
         return this.a;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.b) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.i6.k0);
-        }
-    }
-
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(50.0f) + (this.b ? 1 : 0));
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(50.0f));
         this.a.measure(View.MeasureSpec.makeMeasureSpec(((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
     }
 
     public void setTextColor(int i10) {
         this.a.setTextColor(i10);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
     }
 }

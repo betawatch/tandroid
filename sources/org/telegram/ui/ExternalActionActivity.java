@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class ExternalActionActivity extends Activity implements org.telegram.ui.ActionBar.z4 {
     public static final ArrayList x = new ArrayList();
@@ -32,7 +32,7 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
     public org.telegram.ui.Components.ee0 b;
     public ActionBarLayout c;
     public ActionBarLayout d;
-    public org.telegram.ui.Components.lw0 e;
+    public org.telegram.ui.Components.mw0 e;
     public org.telegram.ui.ActionBar.y3 f;
     public Intent h;
     public boolean n;
@@ -106,7 +106,7 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
                     alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
                     alertDialog$Builder.a.T = LocaleController.getString(R.string.PleaseLoginPassport);
-                    org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
+                    org.telegram.messenger.q.o(R.string.OK, alertDialog$Builder, null);
                     return;
                 }
                 if (activatedAccountsCount >= 2) {

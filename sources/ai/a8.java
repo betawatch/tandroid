@@ -13,12 +13,12 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.qv0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.yn;
 import org.telegram.ui.z90;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a8 implements Runnable {
     public final /* synthetic */ int a;
@@ -76,7 +76,7 @@ public final /* synthetic */ class a8 implements Runnable {
                 }
                 break;
             case 7:
-                pv0.n((pv0) this.d, this.c, this.b);
+                qv0.n((qv0) this.d, this.c, this.b);
                 break;
             default:
                 Long l4 = (Long) this.d;

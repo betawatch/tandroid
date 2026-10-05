@@ -21,10 +21,10 @@ import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.nz;
 import org.telegram.ui.Components.z70;
 import org.telegram.ui.Components.zl0;
-import org.telegram.ui.c71;
+import org.telegram.ui.a71;
 import org.telegram.ui.f90;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class y4 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -189,9 +189,9 @@ public final class y4 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                c71 c71Var = (c71) this.d;
-                c71Var.r1 = null;
-                c71Var.invalidate();
+                a71 a71Var = (a71) this.d;
+                a71Var.r1 = null;
+                a71Var.invalidate();
                 boolean[] zArr3 = (boolean[]) this.b;
                 if (!zArr3[0]) {
                     zArr3[0] = true;

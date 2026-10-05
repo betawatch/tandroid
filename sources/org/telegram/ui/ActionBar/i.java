@@ -10,9 +10,9 @@ import android.transition.TransitionValues;
 import android.util.Property;
 import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.a91;
+import org.telegram.ui.Components.b91;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class i extends ChangeBounds {
     public final /* synthetic */ int a;
@@ -207,7 +207,7 @@ public final class i extends ChangeBounds {
                         }
                     });
                     animatorSet2.playTogether(ofInt3);
-                    animatorSet2.addListener(new a91(transitionValues, 3));
+                    animatorSet2.addListener(new b91(transitionValues, 3));
                     break;
                 } else {
                     break;

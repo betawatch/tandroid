@@ -10,13 +10,13 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class zn0 extends View {
     public yn0 a;
     public final e6 b;
     public final ch.d c;
-    public zg.o0 d;
+    public zg.m0 d;
     public boolean e;
     public final Path f;
     public final RectF h;
@@ -36,12 +36,12 @@ public final class zn0 extends View {
         ah.c cVar = ao0Var.v;
         if (cVar != null) {
             ch.d c10 = cVar.c(this, null, false);
-            c10.x(ao0Var.w);
-            c10.C(AndroidUtilities.dp(5.0f));
-            ch.d w10 = c10.w();
-            w10.z(AndroidUtilities.dp(6.0f));
-            w10.y(AndroidUtilities.dp(4.0f));
-            this.c = w10;
+            c10.w(ao0Var.w);
+            c10.B(AndroidUtilities.dp(5.0f));
+            ch.d v = c10.v();
+            v.y(AndroidUtilities.dp(6.0f));
+            v.x(AndroidUtilities.dp(4.0f));
+            this.c = v;
         }
     }
 
@@ -111,7 +111,7 @@ public final class zn0 extends View {
             Path path = this.f;
             if (!equals) {
                 rectF2.set(rectF);
-                zg.p0.h(rectF2, rectF, path);
+                zg.n0.h(rectF2, rectF, path);
             }
             rect.inset(-AndroidUtilities.dp(4.0f), -AndroidUtilities.dp(4.0f));
             rect.right = AndroidUtilities.dp(1.0f) + rect.right;

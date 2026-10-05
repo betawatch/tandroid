@@ -13,7 +13,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class vj extends s4.t {
     public boolean S;
@@ -142,7 +142,7 @@ public final class vj extends s4.t {
         float f7;
         float f10;
         float f11;
-        zg.k0 k0Var;
+        zg.i0 i0Var;
         boolean z11 = false;
         yn ynVar = this.T;
         if (i10 < 0) {
@@ -213,11 +213,11 @@ public final class vj extends s4.t {
                         float f15 = i10 * f7;
                         ynVar.L9 += f15;
                         int i14 = (int) f15;
-                        k0Var = zg.k0.B;
-                        if (k0Var != null) {
-                            k0Var.r -= i14;
+                        i0Var = zg.i0.B;
+                        if (i0Var != null) {
+                            i0Var.r -= i14;
                             if (i14 != 0) {
-                                k0Var.u = true;
+                                i0Var.u = true;
                             }
                         }
                         ynVar.v0.invalidate();
@@ -226,8 +226,8 @@ public final class vj extends s4.t {
                     float f152 = i10 * f7;
                     ynVar.L9 += f152;
                     int i142 = (int) f152;
-                    k0Var = zg.k0.B;
-                    if (k0Var != null) {
+                    i0Var = zg.i0.B;
+                    if (i0Var != null) {
                     }
                     ynVar.v0.invalidate();
                 }

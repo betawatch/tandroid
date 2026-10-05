@@ -16,13 +16,12 @@ import e2.v;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import hg.k0;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final v a;
@@ -209,7 +208,7 @@ public final class b implements o {
                                     int h = r0.h(sVar2.r);
                                     if (h == 1 || h == 2) {
                                         h0 Z1 = this.f.Z1(i17, h);
-                                        k0.r(a2, Z1);
+                                        hg.c.s(a2, Z1);
                                         this.h = Math.max(this.h, Y);
                                         eVar = new e(i17, dVar, Z1);
                                         if (eVar != null) {

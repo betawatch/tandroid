@@ -25,7 +25,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.di0;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q3 implements Runnable {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class q3 implements Runnable {
                 Context context = (Context) this.d;
                 long j10 = this.b;
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) this.e;
-                yh.o.g(i10).f(context, j10, connectedbotstarref.bot_id, new t3(i10, j10, context, connectedbotstarref, (org.telegram.ui.ActionBar.f3) this.f, (d6) this.h));
+                yh.p.g(i10).f(context, j10, connectedbotstarref.bot_id, new t3(i10, j10, context, connectedbotstarref, (org.telegram.ui.ActionBar.f3) this.f, (d6) this.h));
                 break;
             case 1:
                 ((TopicsController) this.d).lambda$loadTopics$5((TLRPC.TL_messages_forumTopics) this.e, this.b, (TLRPC.TL_messages_forumTopics) this.f, (a0.i) this.h, this.c);

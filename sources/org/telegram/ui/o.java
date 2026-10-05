@@ -35,9 +35,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.telegram.ui.Components.nl0, org.telegram.ui.ActionBar.a2, oy, w4, MessagesController.ErrorDelegate, org.telegram.ui.Components.d5, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.al0, org.telegram.ui.Components.bk0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, og1 {
+public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.telegram.ui.Components.nl0, org.telegram.ui.ActionBar.a2, oy, w4, MessagesController.ErrorDelegate, org.telegram.ui.Components.d5, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.al0, org.telegram.ui.Components.bk0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, mg1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -210,9 +210,9 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
     @Override // org.telegram.ui.Components.al0
     public void e() {
         yn ynVar = (yn) this.b;
-        li.m mVar = (li.m) this.c;
+        li.p pVar = (li.p) this.c;
         ynVar.getClass();
-        mVar.g();
+        pVar.g();
         ynVar.q9();
     }
 
@@ -347,7 +347,7 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
         }
     }
 
-    @Override // org.telegram.ui.og1
+    @Override // org.telegram.ui.mg1
     public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((mq) this.b).p0(tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
     }
@@ -383,7 +383,7 @@ public final /* synthetic */ class o implements org.telegram.ui.Cells.v, org.tel
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, yf1 yf1Var) {
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
         b6 b6Var = (b6) this.b;
         uy uyVar2 = (uy) this.c;
         ArrayList arrayList2 = b6Var.c;

@@ -11,15 +11,15 @@ import org.telegram.ui.Components.ab0;
 import org.telegram.ui.Components.bb0;
 import org.telegram.ui.Components.bk;
 import org.telegram.ui.Components.gk;
-import org.telegram.ui.Components.gz0;
+import org.telegram.ui.Components.hz0;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.jj;
 import org.telegram.ui.Components.jl;
-import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.m40;
 import org.telegram.ui.Components.mj;
 import org.telegram.ui.Components.mn;
 import org.telegram.ui.Components.mv;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.n00;
 import org.telegram.ui.Components.pf;
 import org.telegram.ui.Components.pp;
@@ -35,9 +35,9 @@ import org.telegram.ui.Components.xn;
 import org.telegram.ui.Components.yn;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.jx;
-import org.telegram.ui.zb1;
+import org.telegram.ui.xb1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class r extends s4.s0 {
     public final /* synthetic */ int a;
@@ -82,7 +82,7 @@ public final class r extends s4.s0 {
                 }
                 break;
             case 12:
-                ((li.m) this.b).e++;
+                ((li.p) this.b).e++;
                 break;
             case 15:
                 org.telegram.ui.Components.j8 j8Var = (org.telegram.ui.Components.j8) this.b;
@@ -170,13 +170,13 @@ public final class r extends s4.s0 {
                 break;
             case 23:
                 xn xnVar = (xn) this.b;
-                zb1 zb1Var = xnVar.s;
+                xb1 xb1Var = xnVar.s;
                 xi xiVar4 = xnVar.b;
                 if (i10 == 0) {
                     int dp7 = AndroidUtilities.dp(13.0f);
                     int backgroundPaddingTop4 = xiVar4.getBackgroundPaddingTop();
-                    if (((xiVar4.b2[0] - backgroundPaddingTop4) - dp7) + backgroundPaddingTop4 < org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && (il0Var5 = (il0) zb1Var.K(1)) != null && (top2 = (il0Var5.a.getTop() - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(65.0f)) > 0) {
-                        zb1Var.w0(0, top2, null);
+                    if (((xiVar4.b2[0] - backgroundPaddingTop4) - dp7) + backgroundPaddingTop4 < org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() && (il0Var5 = (il0) xb1Var.K(1)) != null && (top2 = (il0Var5.a.getTop() - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(65.0f)) > 0) {
+                        xb1Var.w0(0, top2, null);
                     }
                     int i15 = xnVar.W0;
                     if (i15 >= 0) {
@@ -321,9 +321,9 @@ public final class r extends s4.s0 {
                     }
                 }
                 i13 = ((org.telegram.ui.ActionBar.n2) f4Var).currentAccount;
-                yh.o.g(i13).d(j3).a();
+                yh.p.g(i13).d(j3).a();
                 i14 = ((org.telegram.ui.ActionBar.n2) f4Var).currentAccount;
-                yh.o.g(i14).e(j3).a();
+                yh.p.g(i14).e(j3).a();
                 break;
             case 6:
                 fi.s sVar = (fi.s) this.b;
@@ -338,18 +338,15 @@ public final class r extends s4.s0 {
                 j0Var.h.M.b(j0Var.d);
                 break;
             case 9:
-                hg.m.b0((hg.m) this.b);
+                hg.n.b0((hg.n) this.b);
                 break;
             case 10:
-                hg.i0 i0Var = (hg.i0) this.b;
-                i0Var.b.U1(i0Var, i11);
-                i0Var.K();
+                hg.j0 j0Var2 = (hg.j0) this.b;
+                j0Var2.b.W1(j0Var2, i11);
+                j0Var2.K();
                 break;
             case 12:
-                li.m mVar = (li.m) this.b;
-                mVar.e++;
-                mVar.i += i10;
-                mVar.j += i11;
+                ((li.p) this.b).h(i10, i11);
                 break;
             case 13:
                 ((ki.h0) this.b).run();
@@ -382,34 +379,34 @@ public final class r extends s4.s0 {
                 }
                 break;
             case 16:
-                ((lw0) this.b).invalidate();
+                ((mw0) this.b).invalidate();
                 break;
             case 17:
                 jj jjVar = (jj) this.b;
-                jjVar.b.U1(jjVar, i11);
+                jjVar.b.W1(jjVar, i11);
                 break;
             case 18:
                 mj mjVar = (mj) this.b;
                 if (mjVar.n.getChildCount() > 0) {
-                    mjVar.b.U1(mjVar, i11);
+                    mjVar.b.W1(mjVar, i11);
                     break;
                 }
                 break;
             case 19:
                 bk bkVar = (bk) this.b;
-                bkVar.b.U1(bkVar, i11);
+                bkVar.b.W1(bkVar, i11);
                 bkVar.M();
                 break;
             case 20:
                 rk rkVar = (rk) this.b;
-                hg.e0 e0Var = rkVar.E;
-                rkVar.b.U1(rkVar, i11);
+                hg.f0 f0Var = rkVar.E;
+                rkVar.b.W1(rkVar, i11);
                 rkVar.S();
                 s4.h0 adapter = rkVar.r.getAdapter();
                 qk qkVar = rkVar.y;
                 if (adapter == qkVar) {
-                    int L02 = e0Var.L0();
-                    int N0 = e0Var.N0();
+                    int L02 = f0Var.L0();
+                    int N0 = f0Var.N0();
                     int abs2 = Math.abs(N0 - L02) + 1;
                     int h10 = recyclerView.getAdapter().h();
                     if (abs2 > 0 && N0 >= h10 - 10) {
@@ -423,20 +420,20 @@ public final class r extends s4.s0 {
                 break;
             case 21:
                 sk skVar = (sk) this.b;
-                skVar.b.U1(skVar, i11);
+                skVar.b.W1(skVar, i11);
                 skVar.v.setTranslationY(Math.max(0, skVar.getCurrentItemTop()));
                 break;
             case 23:
                 xn xnVar = (xn) this.b;
-                hg.e0 e0Var2 = xnVar.w;
-                xnVar.b.U1(xnVar, i11);
+                hg.f0 f0Var2 = xnVar.w;
+                xnVar.b.W1(xnVar, i11);
                 mn mnVar = xnVar.x;
                 if (mnVar != null && mnVar.s) {
-                    gz0 delegate = mnVar.getDelegate();
+                    hz0 delegate = mnVar.getDelegate();
                     if (delegate instanceof org.telegram.ui.Cells.d6) {
-                        zb1 zb1Var = xnVar.s;
-                        View F = zb1Var.F((org.telegram.ui.Cells.d6) delegate);
-                        s4.c1 T = F == null ? null : zb1Var.T(F);
+                        xb1 xb1Var = xnVar.s;
+                        View F = xb1Var.F((org.telegram.ui.Cells.d6) delegate);
+                        s4.c1 T = F == null ? null : xb1Var.T(F);
                         if (T != null) {
                             View view = T.a;
                             int b10 = T.b();
@@ -445,7 +442,7 @@ public final class r extends s4.s0 {
                             } else {
                                 mnVar.setTranslationY(view.getY());
                             }
-                            if (b10 < e0Var2.L0() || b10 > e0Var2.N0()) {
+                            if (b10 < f0Var2.L0() || b10 > f0Var2.N0()) {
                                 mnVar.f();
                             }
                         } else {
@@ -462,7 +459,7 @@ public final class r extends s4.s0 {
                 break;
             case 24:
                 yn ynVar = (yn) this.b;
-                ynVar.b.U1(ynVar, i11);
+                ynVar.b.W1(ynVar, i11);
                 break;
             case 25:
                 pp ppVar = (pp) this.b;

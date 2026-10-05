@@ -37,7 +37,7 @@ import p4.l;
 import p4.m;
 import p4.w;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class f {
     public static volatile e a;
@@ -66,8 +66,7 @@ public abstract class f {
         j(context).a(p5);
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            it.next().getClass();
-            throw new ClassCastException();
+            throw a4.a.k(it);
         }
     }
 
@@ -306,8 +305,7 @@ public abstract class f {
         j(context).c();
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            it.next().getClass();
-            throw new ClassCastException();
+            throw a4.a.k(it);
         }
     }
 
@@ -318,8 +316,7 @@ public abstract class f {
         j(context).d(arrayList);
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            it.next().getClass();
-            throw new ClassCastException();
+            throw a4.a.k(it);
         }
     }
 
@@ -646,8 +643,7 @@ public abstract class f {
         j(context).a(p5);
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
-            it.next().getClass();
-            throw new ClassCastException();
+            throw a4.a.k(it);
         }
     }
 }

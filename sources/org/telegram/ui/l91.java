@@ -1,98 +1,29 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class l91 implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ org.telegram.ui.Components.ld0 d;
-    public final /* synthetic */ int[] e;
-    public final /* synthetic */ TextView f;
+public final /* synthetic */ class l91 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ta1 b;
 
-    public l91(int i10, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.Components.ld0 ld0Var, int[] iArr, TextView textView) {
-        this.b = i10;
-        this.c = editTextBoldCursor;
-        this.d = ld0Var;
-        this.e = iArr;
-        this.f = textView;
+    public /* synthetic */ l91(ta1 ta1Var, int i10) {
+        this.a = i10;
+        this.b = ta1Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x00c9  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x00d9  */
-    @Override // android.text.TextWatcher
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void afterTextChanged(Editable editable) {
-        double d;
-        org.telegram.ui.Components.ld0 ld0Var = this.d;
-        int i10 = this.b;
-        EditTextBoldCursor editTextBoldCursor = this.c;
-        if (this.a) {
-            return;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                ta1.T(this.b, tLObject);
+                break;
+            default:
+                ta1.S(this.b, tLObject);
+                break;
         }
-        try {
-            d = TextUtils.isEmpty(editable) ? 0.0d : Double.parseDouble(editable.toString());
-            try {
-                double d10 = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMax / 1.0E9d;
-                int[] iArr = this.e;
-                if (d > d10) {
-                    this.a = true;
-                    d = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMax / 1.0E9d;
-                    editTextBoldCursor.setText(Double.toString(d));
-                    editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-                    int i11 = -iArr[0];
-                    iArr[0] = i11;
-                    AndroidUtilities.shakeViewSpring(ld0Var, i11);
-                } else if (d > 0.0d && d < MessagesController.getInstance(i10).tonStakeddiceStakeAmountMin / 1.0E9d) {
-                    this.a = true;
-                    d = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMin / 1.0E9d;
-                    editTextBoldCursor.setText(Double.toString(d));
-                    editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-                    int i12 = -iArr[0];
-                    iArr[0] = i12;
-                    AndroidUtilities.shakeViewSpring(ld0Var, i12);
-                }
-            } catch (Exception unused) {
-                this.a = true;
-                editTextBoldCursor.setText(d <= 0.0d ? "" : Double.toString(d));
-                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-                this.a = false;
-                ld0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-                TextView textView = this.f;
-                if (d != 0.0d) {
-                }
-            }
-        } catch (Exception unused2) {
-            d = 0.0d;
-        }
-        this.a = false;
-        ld0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-        TextView textView2 = this.f;
-        if (d != 0.0d) {
-            textView2.animate().alpha(0.0f).start();
-            textView2.setText("");
-        } else {
-            textView2.animate().alpha(1.0f).start();
-            textView2.setText("≈" + BillingController.getInstance().formatCurrency((long) (MessagesController.getInstance(i10).config.tonUsdRate.get() * d * 100.0d), "USD", 2));
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

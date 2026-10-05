@@ -37,7 +37,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
@@ -56,9 +56,9 @@ import org.telegram.ui.Cells.na;
 import org.telegram.ui.Cells.pa;
 import org.telegram.ui.Cells.w0;
 import org.telegram.ui.Components.bh0;
-import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.c00;
 import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.cw0;
 import org.telegram.ui.Components.dg0;
 import org.telegram.ui.Components.e0;
 import org.telegram.ui.Components.e5;
@@ -73,8 +73,8 @@ import org.telegram.ui.Components.mb;
 import org.telegram.ui.Components.me0;
 import org.telegram.ui.Components.nc0;
 import org.telegram.ui.Components.np;
-import org.telegram.ui.Components.np0;
 import org.telegram.ui.Components.og;
+import org.telegram.ui.Components.op0;
 import org.telegram.ui.Components.p70;
 import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.pi;
@@ -98,7 +98,7 @@ import org.telegram.ui.sb;
 import org.telegram.ui.wb;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -224,8 +224,8 @@ public final /* synthetic */ class o implements Runnable {
             case 11:
                 hf hfVar = (hf) obj3;
                 hfVar.getClass();
-                ((bw0) obj2).getViewTreeObserver().removeOnDrawListener(hfVar);
-                ((np0) obj).a.setHideAvatar(true);
+                ((cw0) obj2).getViewTreeObserver().removeOnDrawListener(hfVar);
+                ((op0) obj).a.setHideAvatar(true);
                 return;
             case 12:
                 og ogVar = (og) obj3;
@@ -540,7 +540,7 @@ public final /* synthetic */ class o implements Runnable {
                 }
                 ViewPropertyAnimator alpha2 = nc0Var.d.animate().alpha(1.0f);
                 tr trVar = tr.h;
-                ok.s(alpha2, trVar, 320L);
+                bi.r(alpha2, trVar, 320L);
                 nc0Var.h.animate().alpha(0.0f).setInterpolator(trVar).setDuration(320L).start();
                 if (nc0Var.E) {
                     nc0Var.setBackground(i6.Y(i6.v0(i6.i6, d6Var), 6, 0));

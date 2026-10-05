@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class fi extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -46,16 +46,16 @@ public final class fi extends AnimatorListenerAdapter {
                 aVar.c = null;
                 break;
             default:
-                yh.x3 x3Var = (yh.x3) this.d;
-                x3Var.T1();
-                yh.h2 h2Var = x3Var.f0;
+                yh.y3 y3Var = (yh.y3) this.d;
+                y3Var.T1();
+                yh.i2 i2Var = y3Var.f0;
                 int i10 = this.b;
-                h2Var.setVisibility(i10 == 0 ? 0 : 8);
-                x3Var.r0.setVisibility(i10 == 1 ? 0 : 8);
-                x3Var.y0.setVisibility(i10 == 2 ? 0 : 8);
-                x3Var.A0.setVisibility(i10 == 3 ? 0 : 8);
-                x3Var.s2();
-                x3Var.Z0 = null;
+                i2Var.setVisibility(i10 == 0 ? 0 : 8);
+                y3Var.r0.setVisibility(i10 == 1 ? 0 : 8);
+                y3Var.y0.setVisibility(i10 == 2 ? 0 : 8);
+                y3Var.A0.setVisibility(i10 == 3 ? 0 : 8);
+                y3Var.s2();
+                y3Var.Z0 = null;
                 Runnable runnable = (Runnable) this.c;
                 if (runnable != null) {
                     runnable.run();

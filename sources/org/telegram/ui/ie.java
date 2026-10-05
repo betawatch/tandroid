@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ie extends LinearLayout {
     public static final /* synthetic */ int x = 0;
@@ -49,10 +49,10 @@ public final class ie extends LinearLayout {
         he heVar = new he(this, context, i10, j3, i11, d6Var);
         this.c = heVar;
         feVar.setAdapter(heVar);
-        org.telegram.ui.Components.f91 n10 = feVar.n(-2, true);
-        li.m mVar = meVar.g2;
-        if (mVar != null) {
-            mVar.c(feVar);
+        org.telegram.ui.Components.g91 n10 = feVar.n(-2, true);
+        li.p pVar = meVar.d1;
+        if (pVar != null) {
+            pVar.c(feVar);
         }
         k0 k0Var = new k0(this, context, 5);
         this.d = k0Var;
@@ -91,7 +91,7 @@ public final class ie extends LinearLayout {
         me meVar = this.w;
         int i11 = this.a;
         if (i10 == 1) {
-            if (this.h == null || !meVar.e2) {
+            if (this.h == null || !meVar.b1) {
                 return;
             }
             zArr[i10] = true;
@@ -260,7 +260,7 @@ public final class ie extends LinearLayout {
             });
             return;
         }
-        if (i10 == 0 && this.s != null && meVar.f2) {
+        if (i10 == 0 && this.s != null && meVar.c1) {
             zArr[i10] = true;
             TL_stars.TL_payments_getStarsTransactions tL_payments_getStarsTransactions2 = new TL_stars.TL_payments_getStarsTransactions();
             tL_payments_getStarsTransactions2.ton = false;
@@ -438,11 +438,11 @@ public final class ie extends LinearLayout {
             View view = feVar.getViewPages()[i10];
             if (view instanceof ge) {
                 ge geVar = (ge) view;
-                org.telegram.ui.Components.c71 c71Var = geVar.a;
-                c71Var.f3.N(true);
-                if (c71Var.canScrollVertically(1)) {
-                    for (int i11 = 0; i11 < c71Var.getChildCount(); i11++) {
-                        if (!(c71Var.getChildAt(i11) instanceof org.telegram.ui.Components.w00)) {
+                org.telegram.ui.Components.e71 e71Var = geVar.a;
+                e71Var.f3.N(true);
+                if (e71Var.canScrollVertically(1)) {
+                    for (int i11 = 0; i11 < e71Var.getChildCount(); i11++) {
+                        if (!(e71Var.getChildAt(i11) instanceof org.telegram.ui.Components.w00)) {
                         }
                     }
                 }
@@ -481,7 +481,7 @@ public final class ie extends LinearLayout {
         feVar.setPosition(i13);
         feVar.J();
         feVar.o(false);
-        this.w.k0();
+        this.w.l();
     }
 
     public org.telegram.ui.Components.zl0 getCurrentListView() {

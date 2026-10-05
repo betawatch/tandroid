@@ -2,7 +2,7 @@ package db;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class t {
     public static final p a;
@@ -23,9 +23,9 @@ public abstract class t {
                     }
                     throw new lb.c("JSON forbids NaN and infinities: " + valueOf + "; at path " + aVar.j());
                 } catch (NumberFormatException e7) {
-                    StringBuilder v = a4.a.v("Cannot parse ", str, "; at path ");
-                    v.append(aVar.j());
-                    throw new androidx.car.app.j(v.toString(), e7);
+                    StringBuilder w10 = a4.a.w("Cannot parse ", str, "; at path ");
+                    w10.append(aVar.j());
+                    throw new androidx.car.app.j(w10.toString(), e7);
                 }
             }
 
@@ -48,9 +48,9 @@ public abstract class t {
                 try {
                     return fb.d.i(v);
                 } catch (NumberFormatException e7) {
-                    StringBuilder v9 = a4.a.v("Cannot parse ", v, "; at path ");
-                    v9.append(aVar.j());
-                    throw new androidx.car.app.j(v9.toString(), e7);
+                    StringBuilder w10 = a4.a.w("Cannot parse ", v, "; at path ");
+                    w10.append(aVar.j());
+                    throw new androidx.car.app.j(w10.toString(), e7);
                 }
             }
         }};

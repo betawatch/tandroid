@@ -12,7 +12,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class s0 implements b1 {
     public static final int[] o = new int[0];
@@ -63,11 +63,11 @@ public final class s0 implements b1 {
                     return field;
                 }
             }
-            StringBuilder v = a4.a.v("Field ", str, " for ");
-            v.append(cls.getName());
-            v.append(" not found. Known fields are ");
-            v.append(Arrays.toString(declaredFields));
-            throw new RuntimeException(v.toString());
+            StringBuilder w10 = a4.a.w("Field ", str, " for ");
+            w10.append(cls.getName());
+            w10.append(" not found. Known fields are ");
+            w10.append(Arrays.toString(declaredFields));
+            throw new RuntimeException(w10.toString());
         }
     }
 

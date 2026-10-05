@@ -8,7 +8,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class t00 extends org.telegram.ui.Cells.m4 {
     public final TextView r;
@@ -32,7 +32,7 @@ public final class t00 extends org.telegram.ui.Cells.m4 {
         this.r = textView;
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(f10Var.getThemedColor(org.telegram.ui.ActionBar.i6.z6));
-        org.telegram.messenger.ok.l(f10Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium, textView, 5);
+        org.telegram.messenger.bi.k(f10Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium, textView, 5);
         int i11 = (LocaleController.isRTL ? 3 : 5) | 48;
         float f7 = this.b;
         addView(textView, w7.z5.d(-1, -1.0f, i11, f7, 16.66f, f7, this.c));

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class l1 implements d0, y2.g {
     public final g2.m a;
@@ -128,7 +128,7 @@ public final class l1 implements d0, y2.g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final k4.d s(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d v(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
         long j11;
         k4.d dVar;
         Uri uri = ((k1) iVar).b.c;
@@ -167,7 +167,7 @@ public final class l1 implements d0, y2.g {
     }
 
     @Override // y2.g
-    public final void t(y2.i iVar, long j3, long j10, int i10) {
+    public final void x(y2.i iVar, long j3, long j10, int i10) {
         t tVar;
         k1 k1Var = (k1) iVar;
         g2.b0 b0Var = k1Var.b;
@@ -181,7 +181,15 @@ public final class l1 implements d0, y2.g {
     }
 
     @Override // y2.g
-    public final void v(y2.i iVar, long j3, long j10) {
+    public final void x0(y2.i iVar, long j3, long j10, boolean z10) {
+        Uri uri = ((k1) iVar).b.c;
+        t tVar = new t(j10);
+        this.d.getClass();
+        this.e.o(tVar, 1, -1, null, 0, null, 0L, this.n);
+    }
+
+    @Override // y2.g
+    public final void y(y2.i iVar, long j3, long j10) {
         k1 k1Var = (k1) iVar;
         this.y = (int) k1Var.b.b;
         byte[] bArr = k1Var.c;
@@ -192,14 +200,6 @@ public final class l1 implements d0, y2.g {
         t tVar = new t(j10);
         this.d.getClass();
         this.e.p(tVar, 1, -1, this.s, 0, null, 0L, this.n);
-    }
-
-    @Override // y2.g
-    public final void x0(y2.i iVar, long j3, long j10, boolean z10) {
-        Uri uri = ((k1) iVar).b.c;
-        t tVar = new t(j10);
-        this.d.getClass();
-        this.e.o(tVar, 1, -1, null, 0, null, 0L, this.n);
     }
 
     @Override // u2.d0

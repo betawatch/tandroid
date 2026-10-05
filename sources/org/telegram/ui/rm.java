@@ -9,7 +9,7 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class rm extends org.telegram.ui.Cells.r9 {
     public yn B0;
@@ -55,11 +55,11 @@ public final class rm extends org.telegram.ui.Cells.r9 {
             ynVar2.d5 = new MessagePreviewParams(ynVar2.h != null, ynVar2.x9(), ChatObject.isMonoForum(this.B0.e));
             yn ynVar3 = this.B0;
             ynVar3.d5.updateReply(ynVar3.l5, ynVar3.z8(messageObject.getGroupId()), this.B0.a(), this.B0.j5);
-            Bundle e7 = org.telegram.messenger.ok.e(3, "onlySelect", "dialogsType", true);
-            e7.putBoolean("quote", true);
-            e7.putInt("messagesCount", 1);
-            e7.putBoolean("canSelectTopics", true);
-            uy uyVar = new uy(e7);
+            Bundle d = org.telegram.messenger.bi.d(3, "onlySelect", "dialogsType", true);
+            d.putBoolean("quote", true);
+            d.putInt("messagesCount", 1);
+            d.putBoolean("canSelectTopics", true);
+            uy uyVar = new uy(d);
             yn ynVar4 = this.B0;
             uyVar.C2 = ynVar4;
             ynVar4.presentFragment(uyVar);

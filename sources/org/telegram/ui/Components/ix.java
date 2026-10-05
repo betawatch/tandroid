@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ix implements org.telegram.ui.pt {
     public final /* synthetic */ nz a;
@@ -93,7 +93,7 @@ public final class ix implements org.telegram.ui.pt {
         if (AndroidUtilities.addToClipboard(valueOf)) {
             nz nzVar = this.a;
             org.telegram.ui.ActionBar.n2 n2Var = nzVar.Y1;
-            org.telegram.messenger.ok.o(R.string.EmojiCopied, n2Var != null ? yc.a0(n2Var) : new yc(nzVar.r, nzVar.Z1));
+            org.telegram.messenger.bi.n(R.string.EmojiCopied, n2Var != null ? yc.a0(n2Var) : new yc(nzVar.r, nzVar.Z1));
         }
     }
 
@@ -232,7 +232,7 @@ public final class ix implements org.telegram.ui.pt {
             }
         }
         nz nzVar = this.a;
-        qy0.o0(nzVar.Y1, MediaDataController.getInstance(nzVar.c1).getStickerSet(inputStickerSet, true), document);
+        ry0.o0(nzVar.Y1, MediaDataController.getInstance(nzVar.c1).getStickerSet(inputStickerSet, true), document);
     }
 
     @Override // org.telegram.ui.pt

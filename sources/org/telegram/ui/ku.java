@@ -8,7 +8,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ku implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -31,9 +31,9 @@ public final /* synthetic */ class ku implements Utilities.Callback {
                 DataSettingsActivity dataSettingsActivity = (DataSettingsActivity) this.c;
                 Long l4 = (Long) obj;
                 AndroidUtilities.cancelRunOnUIThread((ju) this.d);
-                dataSettingsActivity.W = dataSettingsActivity.W || System.currentTimeMillis() - this.b > 120;
-                dataSettingsActivity.Y = l4.longValue();
-                dataSettingsActivity.X = false;
+                dataSettingsActivity.V = dataSettingsActivity.V || System.currentTimeMillis() - this.b > 120;
+                dataSettingsActivity.X = l4.longValue();
+                dataSettingsActivity.W = false;
                 if (dataSettingsActivity.a != null && (i10 = dataSettingsActivity.s) >= 0) {
                     dataSettingsActivity.n0(i10);
                     break;
@@ -56,17 +56,17 @@ public final /* synthetic */ class ku implements Utilities.Callback {
                 ProfileActivity.k0((ProfileActivity) this.c, (Context) this.d, this.b, (TL_payments.connectedBotStarRef) obj);
                 break;
             default:
-                yh.x3 x3Var = (yh.x3) this.c;
+                yh.y3 y3Var = (yh.y3) this.c;
                 MessagesController messagesController = (MessagesController) this.d;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
                 if (tL_premium_boostsStatus != null && tL_premium_boostsStatus.level < messagesController.channelEmojiStatusLevelMin) {
                     ChannelBoostsController boostsController = messagesController.getBoostsController();
                     long j3 = this.b;
-                    boostsController.userCanBoostChannel(j3, tL_premium_boostsStatus, new ai.l(x3Var, tL_premium_boostsStatus, j3, messagesController, 10));
+                    boostsController.userCanBoostChannel(j3, tL_premium_boostsStatus, new ai.l(y3Var, tL_premium_boostsStatus, j3, messagesController, 10));
                     break;
                 } else {
-                    x3Var.j0.setLoading(false);
-                    x3Var.r2(true);
+                    y3Var.j0.setLoading(false);
+                    y3Var.r2(true);
                     break;
                 }
                 break;

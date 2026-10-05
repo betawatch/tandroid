@@ -10,11 +10,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class tc extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 a;
-    public final zb1 b;
+    public final xb1 b;
     public final s4.c0 c;
     public final int d;
     public int e;
@@ -23,16 +23,16 @@ public final class tc extends FrameLayout {
         super(activity);
         this.d = i10;
         this.a = d6Var;
-        zb1 zb1Var = new zb1(activity, 3, d6Var);
-        this.b = zb1Var;
-        zb1Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(6.0f), 0);
-        zb1Var.setClipToPadding(false);
-        zb1Var.setAdapter(new rc(this, activity, d6Var, i10));
+        xb1 xb1Var = new xb1(activity, 3, d6Var);
+        this.b = xb1Var;
+        xb1Var.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(6.0f), 0);
+        xb1Var.setClipToPadding(false);
+        xb1Var.setAdapter(new rc(this, activity, d6Var, i10));
         s4.c0 c0Var = new s4.c0();
         this.c = c0Var;
         c0Var.j1(0);
-        zb1Var.setLayoutManager(c0Var);
-        addView(zb1Var, w7.z5.c(-1.0f, -1));
+        xb1Var.setLayoutManager(c0Var);
+        addView(xb1Var, w7.z5.c(-1.0f, -1));
     }
 
     public final void a(int i10, boolean z10) {

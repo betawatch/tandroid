@@ -5,12 +5,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.h60;
 import org.telegram.ui.n60;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class l extends FrameLayout {
     public int a;
@@ -56,7 +56,7 @@ public abstract class l extends FrameLayout {
             super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(this.b.F(), TLObject.FLAG_30));
         } else {
             float f7 = h60.F3 ? 3.0f : 2.0f;
-            float A = ok.A(14.0f, 2, AndroidUtilities.displaySize.x) + (h60.F3 ? -AndroidUtilities.dp(90.0f) : 0);
+            float A = bi.A(14.0f, 2, AndroidUtilities.displaySize.x) + (h60.F3 ? -AndroidUtilities.dp(90.0f) : 0);
             super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) ((h60.G3 ? A / 2.0f : A / f7) + AndroidUtilities.dp(4.0f)), TLObject.FLAG_30));
         }
     }

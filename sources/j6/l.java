@@ -48,7 +48,7 @@ import v7.n;
 import v7.v7;
 import w7.e0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class l implements OnSuccessListener, le.k {
     public static l e;
@@ -184,9 +184,9 @@ public final class l implements OnSuccessListener, le.k {
                 l1.a(drawable3);
             }
             if (typedArray.hasValue(2)) {
-                ColorStateList D = Q.D(2);
+                ColorStateList y3 = Q.y(2);
                 int i11 = Build.VERSION.SDK_INT;
-                imageView.setImageTintList(D);
+                imageView.setImageTintList(y3);
                 if (i11 == 21 && (drawable2 = imageView.getDrawable()) != null && imageView.getImageTintList() != null) {
                     if (drawable2.isStateful()) {
                         drawable2.setState(imageView.getDrawableState());

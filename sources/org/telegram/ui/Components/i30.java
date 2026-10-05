@@ -6,7 +6,7 @@ import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class i30 {
     public float c;
@@ -100,10 +100,10 @@ public final class i30 {
     public final void b() {
         int i10 = this.i;
         if (i10 == 0) {
-            this.a = a4.a.A(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.2f);
-            this.b = a4.a.A(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.7f);
+            this.a = a4.a.B(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.2f);
+            this.b = a4.a.B(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.7f);
         } else if (i10 == 3) {
-            this.a = a4.a.A(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.6f);
+            this.a = a4.a.B(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.6f);
             this.b = (Utilities.random.nextInt(100) * 0.1f) / 100.0f;
         } else {
             this.a = a4.a.e(Utilities.random.nextInt(100), 100.0f, 0.2f, 0.8f);

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class w extends o6.a {
     public static final Parcelable.Creator<w> CREATOR;
@@ -55,7 +55,7 @@ public final class w extends o6.a {
     public final String toString() {
         String valueOf = String.valueOf(this.a);
         String c10 = u6.b.c(this.b.u());
-        return a4.a.s(a4.a.w("PublicKeyCredentialDescriptor{\n type=", valueOf, ", \n id=", c10, ", \n transports="), String.valueOf(this.c), "}");
+        return a4.a.t(a4.a.x("PublicKeyCredentialDescriptor{\n type=", valueOf, ", \n id=", c10, ", \n transports="), String.valueOf(this.c), "}");
     }
 
     @Override // android.os.Parcelable

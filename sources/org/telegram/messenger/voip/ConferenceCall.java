@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class ConferenceCall {
     public static final int PERMISSION_ADD = 1;
@@ -53,7 +53,7 @@ public class ConferenceCall {
     private final Runnable pollRunnable = new b(this, 2);
     private final int[] pollRequestId = new int[2];
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static final class CallParticipant {
         int permissions;
         long public_key_id;
@@ -63,11 +63,11 @@ public class ConferenceCall {
             StringBuilder sb2 = new StringBuilder("CallParticipant{user_id=");
             sb2.append(this.user_id);
             sb2.append(", public_key_id=");
-            return a4.a.r(sb2, this.public_key_id, "}");
+            return a4.a.s(sb2, this.public_key_id, "}");
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static final class CallState {
         int height;
         CallParticipant[] participants;
@@ -88,7 +88,7 @@ public class ConferenceCall {
         }
 
         public String toString() {
-            StringBuilder sb2 = new StringBuilder(a4.a.n(this.height, ", participants=[", new StringBuilder("CallState{height=")));
+            StringBuilder sb2 = new StringBuilder(a4.a.o(this.height, ", participants=[", new StringBuilder("CallState{height=")));
             for (int i10 = 0; i10 < this.participants.length; i10++) {
                 if (i10 > 0) {
                     sb2.append(", ");
@@ -105,7 +105,7 @@ public class ConferenceCall {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static final class CallVerificationState {
         byte[] emoji_hash;
         int height;
@@ -120,17 +120,17 @@ public class ConferenceCall {
             } else {
                 str = "{" + Utilities.bytesToHex(this.emoji_hash) + "}";
             }
-            return a4.a.s(sb2, str, "}");
+            return a4.a.t(sb2, str, "}");
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static final class CallVerificationWords {
         int height;
         String[] words;
 
         public String toString() {
-            StringBuilder sb2 = new StringBuilder(a4.a.n(this.height, ", words=[", new StringBuilder("CallVerificationWords{height=")));
+            StringBuilder sb2 = new StringBuilder(a4.a.o(this.height, ", words=[", new StringBuilder("CallVerificationWords{height=")));
             for (int i10 = 0; i10 < this.words.length; i10++) {
                 if (i10 > 0) {
                     sb2.append(", ");
@@ -564,9 +564,9 @@ public class ConferenceCall {
             long j3 = max;
             byte[] bArr = this.blocksQueue[i10].get(j3);
             if (bArr == null) {
-                StringBuilder k10 = hg.k0.k("[tde2e] {subchain: ", i10, "} got into hole (might be the end) in ", i10, " subchain at #");
-                hg.k0.s(k10, max, ", when our last_offset[", i10, "] = ");
-                org.telegram.messenger.f0.n(this.last_offset[i10], k10);
+                StringBuilder k10 = hg.c.k("[tde2e] {subchain: ", i10, "} got into hole (might be the end) in ", i10, " subchain at #");
+                hg.c.t(k10, max, ", when our last_offset[", i10, "] = ");
+                org.telegram.messenger.q.n(this.last_offset[i10], k10);
                 this.last_offset[i10] = max;
                 return;
             }
@@ -619,7 +619,7 @@ public class ConferenceCall {
             StringBuilder sb2 = new StringBuilder("[tde2e] received updateGroupCallChainBlocks for ");
             sb2.append(tL_updateGroupCallChainBlocks.call.id);
             sb2.append(" but we have ");
-            hg.k0.t(sb2, this.groupCall.id);
+            org.telegram.messenger.q.r(sb2, this.groupCall.id);
             return false;
         }
         StringBuilder sb3 = new StringBuilder("[tde2e] received update with ");

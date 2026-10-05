@@ -16,6 +16,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
@@ -23,8 +24,8 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.t41;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.u41;
 import org.telegram.ui.Components.us;
 import org.telegram.ui.Components.ws;
 import org.telegram.ui.Components.xi;
@@ -46,7 +47,7 @@ import org.telegram.ui.to;
 import org.telegram.ui.to0;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -83,9 +84,9 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
         TLRPC.WebPage webPage;
         ArrayList arrayList;
         int i10;
-        yh.v2 v2Var;
-        yh.v2 v2Var2;
-        yh.v2 v2Var3;
+        yh.w2 w2Var;
+        yh.w2 w2Var2;
+        yh.w2 w2Var3;
         int i11;
         int i12 = 16;
         switch (this.a) {
@@ -441,7 +442,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                                     if (ChatObject.isNotInChat(chat6) && (chat7 == null || ChatObject.isNotInChat(chat7))) {
                                         String lowerCase2 = chat6.title.toLowerCase();
                                         String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-                                        if (lowerCase2.startsWith(lowerCase) || org.telegram.messenger.f0.w(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || org.telegram.messenger.f0.w(" ", translitSafe, translitSafe2)) {
+                                        if (lowerCase2.startsWith(lowerCase) || bi.u(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || bi.u(" ", translitSafe, translitSafe2)) {
                                             if (!hashSet2.contains(Long.valueOf(chat6.id))) {
                                                 hashSet2.add(Long.valueOf(chat6.id));
                                                 arrayList10.add(chat6);
@@ -472,7 +473,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 }
                 break;
             case 13:
-                t41.m((t41) this.b, (TLRPC.TL_textWithEntities) this.c, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
+                u41.m((u41) this.b, (TLRPC.TL_textWithEntities) this.c, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
                 break;
             case 14:
                 h60.q((h60) this.b, (ChatObject.Call) this.c, (Boolean) obj, (HashSet) obj2);
@@ -591,7 +592,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                             }
                         } else if (str3 != null) {
                             a0Var.dismiss();
-                            hg.k0.p(R.string.UnknownErrorCode, new Object[]{str3}, yc.a0(U), R.raw.error, 36);
+                            hg.c.q(R.string.UnknownErrorCode, new Object[]{str3}, yc.a0(U), R.raw.error, 36);
                             break;
                         }
                     }
@@ -600,7 +601,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
             case 22:
                 xh.r2 r2Var = (xh.r2) this.b;
                 ArrayList arrayList15 = (ArrayList) obj;
-                ArrayList arrayList16 = ((yh.k5) this.c).l;
+                ArrayList arrayList16 = ((yh.l5) this.c).l;
                 int size7 = arrayList16.size();
                 int i26 = 0;
                 while (i26 < size7) {
@@ -609,35 +610,35 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                     TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj4;
                     if (savedStarGift.pinned_to_top) {
                         int i27 = dp0.a;
-                        g61 J = g61.J(dp0.class);
-                        J.G = savedStarGift;
-                        J.K(r2Var.b == savedStarGift.gift.id);
-                        J.u = 1;
-                        arrayList15.add(J);
+                        h61 K = h61.K(dp0.class);
+                        K.G = savedStarGift;
+                        K.L(r2Var.b == savedStarGift.gift.id);
+                        K.u = 1;
+                        arrayList15.add(K);
                     }
                 }
                 break;
             case 23:
-                yh.x2 x2Var = (yh.x2) this.b;
+                yh.y2 y2Var = (yh.y2) this.b;
                 ArrayList arrayList17 = (ArrayList) this.c;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
                 Runnable runnable = (Runnable) obj2;
-                yh.v2[] v2VarArr = x2Var.n;
-                ci.e4 e4Var = x2Var.T;
+                yh.w2[] w2VarArr = y2Var.n;
+                ci.e4 e4Var = y2Var.T;
                 if (e4Var != null) {
                     e4Var.e(true);
-                    x2Var.T = null;
+                    y2Var.T = null;
                 }
-                x2Var.i0 = true;
-                x2Var.j0 = starGift == null;
-                x2Var.k0 = runnable;
-                yh.o2 o2Var = new yh.o2(x2Var.h);
-                ArrayList arrayList18 = o2Var.b;
+                y2Var.i0 = true;
+                y2Var.j0 = starGift == null;
+                y2Var.k0 = runnable;
+                yh.q2 q2Var = new yh.q2(y2Var.h);
+                ArrayList arrayList18 = q2Var.b;
                 ArrayList arrayList19 = new ArrayList();
-                for (int i28 = 0; i28 < v2VarArr.length; i28++) {
-                    yh.v2 v2Var4 = v2VarArr[i28];
-                    if (v2Var4 != null) {
-                        TL_stars.StarGift starGift2 = v2Var4.h;
+                for (int i28 = 0; i28 < w2VarArr.length; i28++) {
+                    yh.w2 w2Var4 = w2VarArr[i28];
+                    if (w2Var4 != null) {
+                        TL_stars.StarGift starGift2 = w2Var4.h;
                         if (starGift2 == null) {
                             starGift2 = null;
                         }
@@ -648,125 +649,125 @@ public final /* synthetic */ class m0 implements Utilities.Callback2 {
                 }
                 int i29 = 4;
                 if (arrayList19.size() == 1) {
-                    o2Var.e(v2VarArr[((Integer) arrayList19.get(0)).intValue()], 5, 0.0f);
-                    o2Var.d(false);
-                    o2Var.c(26.0f, -26.0f);
-                    o2Var.a(90);
-                    o2Var.d(true);
-                    o2Var.a(20);
+                    q2Var.e(w2VarArr[((Integer) arrayList19.get(0)).intValue()], 5, 0.0f);
+                    q2Var.d(false);
+                    q2Var.c(26.0f, -26.0f);
+                    q2Var.a(90);
+                    q2Var.d(true);
+                    q2Var.a(20);
                     i11 = 40;
                 } else {
                     int[] iArr = {5, 0, 2, 3, 4};
-                    yh.v2 v2Var5 = v2VarArr[0];
-                    if (v2Var5 != null) {
-                        TL_stars.StarGift starGift3 = v2Var5.h;
+                    yh.w2 w2Var5 = w2VarArr[0];
+                    if (w2Var5 != null) {
+                        TL_stars.StarGift starGift3 = w2Var5.h;
                         if (starGift3 == null) {
                             starGift3 = null;
                         }
                         if (starGift3 != null) {
-                            o2Var.e(v2Var5, iArr[0], 0.0f);
-                            o2Var.c(25.0f, -22.0f);
+                            q2Var.e(w2Var5, iArr[0], 0.0f);
+                            q2Var.c(25.0f, -22.0f);
                             i10 = 1;
-                            v2Var = v2VarArr[1];
-                            if (v2Var != null) {
-                                TL_stars.StarGift starGift4 = v2Var.h;
+                            w2Var = w2VarArr[1];
+                            if (w2Var != null) {
+                                TL_stars.StarGift starGift4 = w2Var.h;
                                 if (starGift4 == null) {
                                     starGift4 = null;
                                 }
                                 if (starGift4 != null) {
                                     if (i10 > 0) {
-                                        o2Var.a(42);
+                                        q2Var.a(42);
                                     }
-                                    o2Var.e(v2VarArr[1], iArr[i10], 0.0f);
-                                    o2Var.c(25.0f, 31.0f);
+                                    q2Var.e(w2VarArr[1], iArr[i10], 0.0f);
+                                    q2Var.c(25.0f, 31.0f);
                                     i10++;
                                 }
                             }
-                            v2Var2 = v2VarArr[2];
-                            if (v2Var2 != null) {
-                                TL_stars.StarGift starGift5 = v2Var2.h;
+                            w2Var2 = w2VarArr[2];
+                            if (w2Var2 != null) {
+                                TL_stars.StarGift starGift5 = w2Var2.h;
                                 if (starGift5 == null) {
                                     starGift5 = null;
                                 }
                                 if (starGift5 != null) {
                                     if (i10 > 0) {
-                                        o2Var.a(42);
+                                        q2Var.a(42);
                                     }
-                                    o2Var.e(v2VarArr[2], iArr[i10], 180.0f);
-                                    o2Var.c(-36.0f, -36.0f);
+                                    q2Var.e(w2VarArr[2], iArr[i10], 180.0f);
+                                    q2Var.c(-36.0f, -36.0f);
                                     i10++;
                                 }
                             }
-                            v2Var3 = v2VarArr[3];
-                            if (v2Var3 != null) {
-                                TL_stars.StarGift starGift6 = v2Var3.h;
+                            w2Var3 = w2VarArr[3];
+                            if (w2Var3 != null) {
+                                TL_stars.StarGift starGift6 = w2Var3.h;
                                 if ((starGift6 != null ? starGift6 : null) != null) {
                                     if (i10 > 0) {
-                                        o2Var.a(42);
+                                        q2Var.a(42);
                                     }
-                                    o2Var.e(v2VarArr[3], iArr[i10], 0.0f);
-                                    o2Var.c(-31.0f, 31.0f);
+                                    q2Var.e(w2VarArr[3], iArr[i10], 0.0f);
+                                    q2Var.c(-31.0f, 31.0f);
                                     i10++;
                                 }
                             }
-                            o2Var.d(false);
-                            o2Var.a(40);
-                            o2Var.d(true);
-                            o2Var.a(40);
+                            q2Var.d(false);
+                            q2Var.a(40);
+                            q2Var.d(true);
+                            q2Var.a(40);
                             i29 = iArr[i10];
                             i11 = 80;
                         }
                     }
                     i10 = 0;
-                    v2Var = v2VarArr[1];
-                    if (v2Var != null) {
+                    w2Var = w2VarArr[1];
+                    if (w2Var != null) {
                     }
-                    v2Var2 = v2VarArr[2];
-                    if (v2Var2 != null) {
+                    w2Var2 = w2VarArr[2];
+                    if (w2Var2 != null) {
                     }
-                    v2Var3 = v2VarArr[3];
-                    if (v2Var3 != null) {
+                    w2Var3 = w2VarArr[3];
+                    if (w2Var3 != null) {
                     }
-                    o2Var.d(false);
-                    o2Var.a(40);
-                    o2Var.d(true);
-                    o2Var.a(40);
+                    q2Var.d(false);
+                    q2Var.a(40);
+                    q2Var.d(true);
+                    q2Var.a(40);
                     i29 = iArr[i10];
                     i11 = 80;
                 }
-                arrayList18.add(new yh.n2(1, 0.0f, 0.0f, 0, -1, 0.0f, null, new am0(x2Var, i29, starGift, 15)));
-                arrayList18.add(new yh.n2(4, 0.0f, 0.0f, i11, i29, -90, null, null));
-                yh.j1 j1Var = new yh.j1(x2Var, starGift, arrayList17, runnable, 3);
-                yh.p2 p2Var = o2Var.a;
-                o2Var.d = j1Var;
-                o2Var.e = false;
-                o2Var.c = 0;
-                o2Var.l = false;
+                arrayList18.add(new yh.p2(1, 0.0f, 0.0f, 0, -1, 0.0f, null, new am0(y2Var, i29, starGift, 15)));
+                arrayList18.add(new yh.p2(4, 0.0f, 0.0f, i11, i29, -90, null, null));
+                yh.z0 z0Var = new yh.z0(y2Var, starGift, arrayList17, runnable, 4);
+                yh.r2 r2Var2 = q2Var.a;
+                q2Var.d = z0Var;
+                q2Var.e = false;
+                q2Var.c = 0;
+                q2Var.l = false;
                 int size8 = arrayList18.size();
                 int i30 = 0;
                 while (i30 < size8) {
                     Object obj5 = arrayList18.get(i30);
                     i30++;
-                    yh.n2 n2Var = (yh.n2) obj5;
-                    int i31 = n2Var.e;
+                    yh.p2 p2Var = (yh.p2) obj5;
+                    int i31 = p2Var.e;
                     if (i31 >= 0 && i31 < 6) {
-                        float f7 = n2Var.f;
+                        float f7 = p2Var.f;
                         if (f7 != 0.0f) {
-                            p2Var.y[i31] = f7;
+                            r2Var2.y[i31] = f7;
                         }
                     }
                 }
-                p2Var.H = o2Var;
-                o2Var.b();
+                r2Var2.H = q2Var;
+                q2Var.b();
                 break;
             case 24:
-                yh.x7.F0((yh.x7) this.b, (g61) this.c, (Boolean) obj, (String) obj2);
+                yh.z7.F0((yh.z7) this.b, (h61) this.c, (Boolean) obj, (String) obj2);
                 break;
             case 25:
-                yh.m7.O((yh.m7) this.b, (g61) this.c, (Boolean) obj, (String) obj2);
+                yh.n7.O((yh.n7) this.b, (h61) this.c, (Boolean) obj, (String) obj2);
                 break;
             default:
-                yh.n7.O((yh.n7) this.b, (g61) this.c, (Boolean) obj, (String) obj2);
+                yh.p7.O((yh.p7) this.b, (h61) this.c, (Boolean) obj, (String) obj2);
                 break;
         }
     }

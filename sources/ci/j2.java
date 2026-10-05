@@ -5,9 +5,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.az;
 import org.telegram.ui.Components.iq;
 import org.telegram.ui.Components.pn0;
-import org.telegram.ui.t51;
+import org.telegram.ui.r51;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class j2 extends iq {
     public final /* synthetic */ int h;
@@ -30,7 +30,7 @@ public final class j2 extends iq {
             case 3:
                 return org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Q5, ((pn0) this.i).f);
             default:
-                return org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Je, ((t51) this.i).y.Z0);
+                return org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Je, ((r51) this.i).y.Z0);
         }
     }
 
@@ -51,10 +51,10 @@ public final class j2 extends iq {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j2(t51 t51Var) {
+    public j2(r51 r51Var) {
         super(1.25f);
         this.h = 4;
-        this.i = t51Var;
+        this.i = r51Var;
         this.f = AndroidUtilities.dp(7.0f);
     }
 }

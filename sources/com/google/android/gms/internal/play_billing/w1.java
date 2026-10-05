@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class w1 extends f1 implements RandomAccess, y1 {
     public static final int[] d;
@@ -33,7 +33,7 @@ public final class w1 extends f1 implements RandomAccess, y1 {
         int intValue = ((Integer) obj).intValue();
         i();
         if (i10 < 0 || i10 > (i11 = this.c)) {
-            throw new IndexOutOfBoundsException(a4.a.l(i10, this.c, "Index:", ", Size:"));
+            throw new IndexOutOfBoundsException(a4.a.m(i10, this.c, "Index:", ", Size:"));
         }
         int i12 = i10 + 1;
         int[] iArr = this.b;
@@ -157,7 +157,7 @@ public final class w1 extends f1 implements RandomAccess, y1 {
 
     public final void p(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IndexOutOfBoundsException(a4.a.l(i10, this.c, "Index:", ", Size:"));
+            throw new IndexOutOfBoundsException(a4.a.m(i10, this.c, "Index:", ", Size:"));
         }
     }
 

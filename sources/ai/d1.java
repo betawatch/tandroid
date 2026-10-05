@@ -14,7 +14,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.q90;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class d1 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -64,14 +64,14 @@ public final class d1 extends LinearLayout {
                     path.addRoundRect(rectF, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), Path.Direction.CW);
                     canvas.save();
                     canvas.clipPath(path);
-                    if (((yh.j8) this.b) == null) {
-                        this.b = new yh.j8(1, MediaDataController.MAX_LINKS_COUNT);
+                    if (((yh.l8) this.b) == null) {
+                        this.b = new yh.l8(1, MediaDataController.MAX_LINKS_COUNT);
                     }
-                    ((yh.j8) this.b).f(0, 0, getWidth(), getHeight());
-                    yh.j8 j8Var = (yh.j8) this.b;
-                    j8Var.h = 30.0f;
-                    j8Var.d();
-                    ((yh.j8) this.b).b(canvas, -1, 0.85f);
+                    ((yh.l8) this.b).f(0, 0, getWidth(), getHeight());
+                    yh.l8 l8Var = (yh.l8) this.b;
+                    l8Var.h = 30.0f;
+                    l8Var.d();
+                    ((yh.l8) this.b).b(canvas, -1, 0.85f);
                     invalidate();
                     canvas.restore();
                 }
@@ -129,7 +129,7 @@ public final class d1 extends LinearLayout {
                 FrameLayout frameLayout = new FrameLayout(context);
                 frameLayout.setClipChildren(false);
                 frameLayout.setClipToPadding(false);
-                frameLayout.addView(new yh.b7(context, 70, 0), w7.z5.c(-1.0f, -1));
+                frameLayout.addView(new yh.c7(context, 70, 0), w7.z5.c(-1.0f, -1));
                 org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
                 this.b = w9Var;
                 w9Var.setRoundRadius(AndroidUtilities.dp(50.0f));

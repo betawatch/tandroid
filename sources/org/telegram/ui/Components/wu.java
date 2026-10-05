@@ -6,7 +6,7 @@ import java.util.Locale;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class wu extends org.telegram.ui.ActionBar.f5 {
     public final /* synthetic */ boolean f;
@@ -20,13 +20,13 @@ public final class wu extends org.telegram.ui.ActionBar.f5 {
     @Override // org.telegram.ui.ActionBar.f5, org.telegram.ui.ActionBar.z2
     public final boolean g() {
         zu zuVar = this.h;
-        z91 z91Var = zuVar.c;
-        boolean z10 = z91Var.T;
+        aa1 aa1Var = zuVar.c;
+        boolean z10 = aa1Var.T;
         if (z10) {
             if (z10) {
-                z91Var.T = false;
-                z91Var.m();
-                z91Var.l(false);
+                aa1Var.T = false;
+                aa1Var.m();
+                aa1Var.l(false);
             }
             return false;
         }
@@ -47,11 +47,11 @@ public final class wu extends org.telegram.ui.ActionBar.f5 {
         int i10 = zuVar.Q;
         RadialProgressView radialProgressView = zuVar.n;
         tu tuVar = zuVar.b;
-        z91 z91Var = zuVar.c;
+        aa1 aa1Var = zuVar.c;
         if (this.f && zuVar.c.g(zuVar.K, null, null, zuVar.I, true)) {
             radialProgressView.setVisibility(4);
             tuVar.setVisibility(4);
-            z91Var.setVisibility(0);
+            aa1Var.setVisibility(0);
             return;
         }
         radialProgressView.setVisibility(0);
@@ -59,17 +59,17 @@ public final class wu extends org.telegram.ui.ActionBar.f5 {
         zuVar.s.setVisibility(0);
         zuVar.v.setVisibility(4);
         tuVar.setKeepScreenOn(true);
-        z91Var.setVisibility(4);
-        z91Var.getControlsView().setVisibility(4);
-        z91Var.getTextureView().setVisibility(4);
-        if (z91Var.getTextureImageView() != null) {
-            z91Var.getTextureImageView().setVisibility(4);
+        aa1Var.setVisibility(4);
+        aa1Var.getControlsView().setVisibility(4);
+        aa1Var.getTextureView().setVisibility(4);
+        if (aa1Var.getTextureImageView() != null) {
+            aa1Var.getTextureImageView().setVisibility(4);
         }
         zuVar.c.g(null, null, null, null, false);
         HashMap hashMap = new HashMap();
         hashMap.put("Referer", "messenger.telegram.org");
         try {
-            String youtubeId = z91Var.getYoutubeId();
+            String youtubeId = aa1Var.getYoutubeId();
             if (youtubeId == null) {
                 tuVar.loadUrl(zuVar.K, hashMap);
                 return;

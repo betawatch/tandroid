@@ -21,10 +21,10 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.eu;
 import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.n11;
+import org.telegram.ui.Components.n61;
+import org.telegram.ui.Components.o11;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class i1 extends eu {
     public boolean E;
@@ -71,7 +71,7 @@ public final class i1 extends eu {
                 }
                 h1 h1Var = i1Var.c;
                 if (h1Var != null && charSequence != null && i11 > i10 && i12 == i13) {
-                    h1Var.x(charSequence.subSequence(i10, i11));
+                    h1Var.w(charSequence.subSequence(i10, i11));
                 }
                 return spanned.subSequence(i12, i13);
             }
@@ -113,7 +113,7 @@ public final class i1 extends eu {
     }
 
     @Override // org.telegram.ui.Components.eu
-    public final m61 createUrlSpan(String str) {
+    public final n61 createUrlSpan(String str) {
         return h6.k(str);
     }
 
@@ -134,7 +134,7 @@ public final class i1 extends eu {
                 this.c.l(this);
             }
         } else if (keyEvent.getAction() == 0 && (h1Var = this.c) != null) {
-            h1Var.G(keyEvent.isShiftPressed());
+            h1Var.C(keyEvent.isShiftPressed());
             return true;
         }
         return true;
@@ -251,15 +251,15 @@ public final class i1 extends eu {
                 this.F = null;
                 if (text instanceof Spanned) {
                     Spanned spanned = (Spanned) text;
-                    n11[] n11VarArr = (n11[]) spanned.getSpans(0, spanned.length(), n11.class);
-                    int length = n11VarArr.length;
+                    o11[] o11VarArr = (o11[]) spanned.getSpans(0, spanned.length(), o11.class);
+                    int length = o11VarArr.length;
                     int i11 = 0;
                     while (i11 < length) {
-                        n11 n11Var = n11VarArr[i11];
-                        int i12 = n11Var.b.a;
+                        o11 o11Var = o11VarArr[i11];
+                        int i12 = o11Var.b.a;
                         if ((65536 & i12) != 0) {
-                            int spanStart = spanned.getSpanStart(n11Var);
-                            int spanEnd = spanned.getSpanEnd(n11Var);
+                            int spanStart = spanned.getSpanStart(o11Var);
+                            int spanEnd = spanned.getSpanEnd(o11Var);
                             k90Var = k90Var;
                             if (spanStart >= 0 && spanEnd > spanStart) {
                                 if (k90Var == null) {

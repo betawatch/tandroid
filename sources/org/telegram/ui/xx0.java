@@ -14,7 +14,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class xx0 extends org.telegram.ui.Components.yl0 {
     public final Context c;
@@ -630,12 +630,12 @@ public final class xx0 extends org.telegram.ui.Components.yl0 {
                         int indexOf = privacySettingsActivity.d.login_email_pattern.indexOf(42);
                         int lastIndexOf = privacySettingsActivity.d.login_email_pattern.lastIndexOf(42);
                         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                            org.telegram.ui.Components.m11 m11Var = new org.telegram.ui.Components.m11();
-                            m11Var.a |= 256;
-                            m11Var.b = indexOf;
+                            org.telegram.ui.Components.n11 n11Var = new org.telegram.ui.Components.n11();
+                            n11Var.a |= 256;
+                            n11Var.b = indexOf;
                             int i44 = lastIndexOf + 1;
-                            m11Var.c = i44;
-                            valueOf.setSpan(new org.telegram.ui.Components.n11(m11Var, 0), indexOf, i44, 0);
+                            n11Var.c = i44;
+                            valueOf.setSpan(new org.telegram.ui.Components.o11(n11Var, 0), indexOf, i44, 0);
                         }
                         z12 = false;
                         str4 = valueOf;

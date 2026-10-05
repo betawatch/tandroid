@@ -1,8 +1,8 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class i20 implements org.telegram.ui.Components.xo0 {
+public final class i20 implements org.telegram.ui.Components.yo0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ sg.a b;
 
@@ -11,12 +11,12 @@ public final class i20 implements org.telegram.ui.Components.xo0 {
         this.b = aVar;
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public final void B() {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public final void Y(float f7, boolean z10) {
         switch (this.a) {
             case 0:
@@ -50,14 +50,14 @@ public final class i20 implements org.telegram.ui.Components.xo0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public final /* synthetic */ CharSequence getContentDescription() {
         switch (this.a) {
         }
         return null;
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public final /* synthetic */ int p0() {
         switch (this.a) {
         }

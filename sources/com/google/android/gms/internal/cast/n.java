@@ -12,7 +12,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class n extends p4.s {
     public static final g6.b f = new g6.b("MRDiscoveryCallback", null);
@@ -46,7 +46,7 @@ public final class n extends p4.s {
 
     public final void m() {
         g6.b bVar = f;
-        bVar.b(hg.k0.i(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
+        bVar.b(hg.c.i(this.d.size(), "Starting RouteDiscovery with ", " IDs"), new Object[0]);
         bVar.b("appIdToRouteInfo has these appId route keys: ".concat(String.valueOf(this.c.keySet())), new Object[0]);
         if (Looper.myLooper() == Looper.getMainLooper()) {
             n();

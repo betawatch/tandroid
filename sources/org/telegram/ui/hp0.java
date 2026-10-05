@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class hp0 extends org.telegram.ui.Components.zl0 {
     public final /* synthetic */ int e3;
@@ -17,10 +17,10 @@ public final class hp0 extends org.telegram.ui.Components.zl0 {
     }
 
     @Override // org.telegram.ui.Components.zl0
-    public final Integer X0(int i10) {
+    public final Integer W0(int i10) {
         qp0 qp0Var = this.f3;
         if ((i10 < qp0Var.b0 || i10 >= qp0Var.c0) && (i10 < qp0Var.d0 || i10 >= qp0Var.e0)) {
-            return super.X0(i10);
+            return super.W0(i10);
         }
         return 0;
     }
@@ -51,10 +51,10 @@ public final class hp0 extends org.telegram.ui.Components.zl0 {
             qp0Var.J.g(false);
             return;
         }
-        yh.k5 k5Var = this.e3 == 1 ? wp0Var.c : wp0Var.b;
-        if (k5Var == null || !qp0Var.c()) {
+        yh.l5 l5Var = this.e3 == 1 ? wp0Var.c : wp0Var.b;
+        if (l5Var == null || !qp0Var.c()) {
             return;
         }
-        k5Var.a();
+        l5Var.a();
     }
 }

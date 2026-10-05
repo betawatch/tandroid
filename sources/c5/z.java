@@ -2,7 +2,7 @@ package c5;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements q0.a {
     public final /* synthetic */ int a;
@@ -18,14 +18,14 @@ public final /* synthetic */ class z implements q0.a {
         switch (this.a) {
             case 0:
                 s sVar = new s(new ArrayList(), new ArrayList());
-                ((org.telegram.messenger.c0) this.b).a((h) obj, sVar);
+                ((org.telegram.messenger.d0) this.b).a((h) obj, sVar);
                 return;
             case 1:
                 o0.g gVar = (o0.g) obj;
                 if (gVar == null) {
                     gVar = new o0.g(-3);
                 }
-                ((o0.a) this.b).I(gVar);
+                ((o0.a) this.b).E(gVar);
                 return;
             default:
                 o0.g gVar2 = (o0.g) obj;

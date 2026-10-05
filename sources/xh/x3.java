@@ -5,9 +5,9 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x3 implements Utilities.Callback5 {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final /* synthetic */ class x3 implements Utilities.Callback5 {
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        g61 g61Var = (g61) obj;
+        h61 h61Var = (h61) obj;
         switch (this.a) {
             case 0:
-                long j3 = ((TL_stars.starGiftAttributeModel) g61Var.G).document.id;
+                long j3 = ((TL_stars.starGiftAttributeModel) h61Var.G).document.id;
                 v3 v3Var = this.b.c;
                 HashSet hashSet = v3Var.j;
                 HashSet hashSet2 = v3Var.j;
@@ -50,7 +50,7 @@ public final /* synthetic */ class x3 implements Utilities.Callback5 {
                 this.c.u();
                 break;
             case 1:
-                int i11 = ((TL_stars.starGiftAttributeBackdrop) g61Var.G).backdrop_id;
+                int i11 = ((TL_stars.starGiftAttributeBackdrop) h61Var.G).backdrop_id;
                 v3 v3Var2 = this.b.c;
                 HashSet hashSet3 = v3Var2.k;
                 HashSet hashSet4 = v3Var2.k;
@@ -75,7 +75,7 @@ public final /* synthetic */ class x3 implements Utilities.Callback5 {
                 this.c.u();
                 break;
             default:
-                long j11 = ((TL_stars.starGiftAttributePattern) g61Var.G).document.id;
+                long j11 = ((TL_stars.starGiftAttributePattern) h61Var.G).document.id;
                 v3 v3Var3 = this.b.c;
                 HashSet hashSet5 = v3Var3.l;
                 HashSet hashSet6 = v3Var3.l;

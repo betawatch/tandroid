@@ -6,16 +6,16 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class y extends cb {
     public final int X;
     public final CharSequence Y;
-    public u61 Z;
+    public w61 Z;
 
     public y(n2 n2Var, String str, y1 y1Var) {
         super(n2Var, true, false, n2Var.getResourceProvider());
@@ -37,10 +37,10 @@ public final class y extends cb {
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(zl0Var, getContext(), this.X, 0, false, new v(this, 0), this.resourcesProvider);
-        this.Z = u61Var;
-        u61Var.r = false;
-        return u61Var;
+        w61 w61Var = new w61(zl0Var, getContext(), this.X, 0, false, new v(this, 0), this.resourcesProvider);
+        this.Z = w61Var;
+        w61Var.r = false;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

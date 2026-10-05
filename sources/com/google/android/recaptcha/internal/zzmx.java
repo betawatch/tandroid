@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import t8.b;
+import sa.e;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class zzmx {
     private final String zza;
@@ -21,7 +21,7 @@ public class zzmx {
         Class cls = this.zzb;
         String name = getClass().getName();
         String name2 = cls.getName();
-        StringBuilder j3 = b.j(name, "/");
+        StringBuilder j3 = e.j(name, "/");
         j3.append(this.zza);
         j3.append("[");
         j3.append(name2);

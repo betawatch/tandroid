@@ -1,20 +1,27 @@
 package yh;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
-/* loaded from: classes4.dex */
-public final class i8 {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public long f;
-    public long g;
-    public float h;
-    public float i;
-    public final /* synthetic */ j8 j;
+import android.os.Bundle;
+import org.telegram.ui.yn;
 
-    public i8(j8 j8Var) {
-        this.j = j8Var;
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+/* loaded from: classes4.dex */
+public final class i8 extends yn {
+    public final /* synthetic */ boolean Kc;
+    public final /* synthetic */ r8 Lc;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i8(r8 r8Var, Bundle bundle, boolean z10) {
+        super(bundle);
+        this.Lc = r8Var;
+        this.Kc = z10;
+    }
+
+    @Override // org.telegram.ui.yn, org.telegram.ui.ActionBar.n2
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        if (this.Kc) {
+            return;
+        }
+        this.Lc.show();
     }
 }

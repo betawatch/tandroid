@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class fp extends org.telegram.ui.Components.yl0 {
     public final /* synthetic */ gp c;
@@ -22,7 +22,7 @@ public final class fp extends org.telegram.ui.Components.yl0 {
 
     @Override // s4.h0
     public final int h() {
-        return this.c.h3.N.size() + 2;
+        return this.c.h3.O.size() + 2;
     }
 
     @Override // s4.h0
@@ -30,7 +30,7 @@ public final class fp extends org.telegram.ui.Components.yl0 {
         if (i10 == 0) {
             return 0;
         }
-        return i10 <= this.c.h3.N.size() ? 1 : 2;
+        return i10 <= this.c.h3.O.size() ? 1 : 2;
     }
 
     @Override // s4.h0
@@ -54,16 +54,16 @@ public final class fp extends org.telegram.ui.Components.yl0 {
             e9Var.setBackground(org.telegram.ui.ActionBar.i6.V0(gpVar.getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.i6.b7));
             return;
         }
-        TLRPC.TL_username tL_username = (TLRPC.TL_username) hpVar.N.get(i10 - 1);
+        TLRPC.TL_username tL_username = (TLRPC.TL_username) hpVar.O.get(i10 - 1);
         pa paVar = (pa) view;
         if (paVar.H) {
-            hpVar.O = null;
+            hpVar.P = null;
         }
-        paVar.a(tL_username, i10 < hpVar.N.size(), false, 0L);
+        paVar.a(tL_username, i10 < hpVar.O.size(), false, 0L);
         if (tL_username == null || !tL_username.editable) {
             return;
         }
-        hpVar.O = paVar;
+        hpVar.P = paVar;
     }
 
     @Override // s4.h0

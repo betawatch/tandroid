@@ -5,7 +5,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vo0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -28,23 +28,23 @@ public final /* synthetic */ class vo0 implements Utilities.Callback2 {
     public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                wp0.S((wp0) this.d, (boolean[]) this.e, this.b, this.c, (to0) this.f, (yh.a3) obj, (nf.e) obj2);
+                wp0.S((wp0) this.d, (boolean[]) this.e, this.b, this.c, (to0) this.f, (yh.b3) obj, (nf.e) obj2);
                 break;
             default:
-                yh.x3 x3Var = (yh.x3) this.d;
+                yh.y3 y3Var = (yh.y3) this.d;
                 nf.e eVar = (nf.e) this.e;
                 xh.j0 j0Var = (xh.j0) this.f;
                 eVar.b();
                 if (((Boolean) obj).booleanValue()) {
-                    yh.j2 j2Var = x3Var.O0;
-                    if (j2Var != null) {
-                        j2Var.b(this.b, this.c, j0Var != null);
+                    yh.k2 k2Var = y3Var.O0;
+                    if (k2Var != null) {
+                        k2Var.b(this.b, this.c, j0Var != null);
                     }
                     if (j0Var != null) {
                         AndroidUtilities.runOnUIThread(new xh.d0(j0Var, 2));
-                        x3Var.skipDismissAnimation();
+                        y3Var.skipDismissAnimation();
                     }
-                    x3Var.dismiss();
+                    y3Var.dismiss();
                     break;
                 }
                 break;

@@ -21,7 +21,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class dk0 extends FrameLayout {
     public final Paint a;
@@ -34,7 +34,7 @@ public final class dk0 extends FrameLayout {
     public float n;
     public final Drawable r;
     public int s;
-    public zg.o0 v;
+    public zg.m0 v;
 
     public dk0(Context context) {
         super(context);
@@ -71,7 +71,7 @@ public final class dk0 extends FrameLayout {
         int i11 = reactionCount.count;
         this.s = i11;
         this.f.setText(LocaleController.formatShortNumber(i11, null));
-        zg.o0 d = zg.o0.d(reactionCount.reaction);
+        zg.m0 d = zg.m0.d(reactionCount.reaction);
         this.v = d;
         String str = d.f;
         ImageView imageView = this.e;
@@ -111,9 +111,9 @@ public final class dk0 extends FrameLayout {
         if (this.n > 0.5d) {
             accessibilityNodeInfo.setSelected(true);
         }
-        zg.o0 o0Var = this.v;
-        if (o0Var != null) {
-            accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrNumberOfPeopleReactions", this.s, o0Var));
+        zg.m0 m0Var = this.v;
+        if (m0Var != null) {
+            accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrNumberOfPeopleReactions", this.s, m0Var));
         } else {
             accessibilityNodeInfo.setText(LocaleController.formatPluralString("ReactionsCount", this.s, new Object[0]));
         }

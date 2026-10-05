@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mh implements bh.a {
     public final /* synthetic */ int a;
@@ -57,18 +57,18 @@ public final /* synthetic */ class mh implements bh.a {
                 gh.d.a(vwVar, canvas, rectF, vwVar, nzVar);
                 break;
             case 2:
-                zq0.n((zq0) this.b, canvas, rectF);
+                br0.n((br0) this.b, canvas, rectF);
                 break;
             default:
-                pv0 pv0Var = (pv0) this.b;
-                for (iu0 iu0Var : pv0Var.k0) {
-                    ah.n nVar = iu0Var.n;
+                qv0 qv0Var = (qv0) this.b;
+                for (ju0 ju0Var : qv0Var.k0) {
+                    ah.n nVar = ju0Var.n;
                     if (nVar != null) {
                         nVar.f(canvas, rectF);
                     }
                 }
-                fs0 fs0Var = pv0Var.V;
-                if (fs0Var != null && (x7Var = fs0Var.R) != null) {
+                gs0 gs0Var = qv0Var.V;
+                if (gs0Var != null && (x7Var = gs0Var.R) != null) {
                     x7Var.f(canvas, rectF);
                     break;
                 }

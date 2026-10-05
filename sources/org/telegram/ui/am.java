@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class am implements org.telegram.ui.Cells.t0 {
     public final /* synthetic */ jm a;
@@ -195,7 +195,7 @@ public final class am implements org.telegram.ui.Cells.t0 {
                 fzVar.r.setUniqKeyPrefix(intValue + "_" + fzVar.p + "_");
             }
             fzVar.q = document;
-            fzVar.r.setImage(ImageLocation.getForDocument(videoSize, document), a4.a.k(f7, f7, "_"), null, "tgs", ukVar.c, 1);
+            fzVar.r.setImage(ImageLocation.getForDocument(videoSize, document), a4.a.l(f7, f7, "_"), null, "tgs", ukVar.c, 1);
             fzVar.r.setLayerNum(ConnectionsManager.DEFAULT_DATACENTER_ID);
             fzVar.r.setAutoRepeat(0);
             if (fzVar.r.getLottieAnimation() != null) {
@@ -268,30 +268,30 @@ public final class am implements org.telegram.ui.Cells.t0 {
                 if (wallPaper2.pattern || wallPaper2.document == null) {
                     String str2 = wallPaper2.slug;
                     TLRPC.WallPaperSettings wallPaperSettings = wallPaper2.settings;
-                    yi1 yi1Var = new yi1(str2, wallPaperSettings.background_color, wallPaperSettings.second_background_color, wallPaperSettings.third_background_color, wallPaperSettings.fourth_background_color, AndroidUtilities.getWallpaperRotation(wallPaperSettings.rotation, false), r3.intensity / 100.0f, wallPaper2.settings.motion, null);
-                    wallPaper = yi1Var;
+                    wi1 wi1Var = new wi1(str2, wallPaperSettings.background_color, wallPaperSettings.second_background_color, wallPaperSettings.third_background_color, wallPaperSettings.fourth_background_color, AndroidUtilities.getWallpaperRotation(wallPaperSettings.rotation, false), r3.intensity / 100.0f, wallPaper2.settings.motion, null);
+                    wallPaper = wi1Var;
                     if (wallPaper2 instanceof TLRPC.TL_wallPaper) {
-                        yi1Var.g = (TLRPC.TL_wallPaper) wallPaper2;
-                        wallPaper = yi1Var;
+                        wi1Var.g = (TLRPC.TL_wallPaper) wallPaper2;
+                        wallPaper = wi1Var;
                     }
                 } else {
                     wallPaper = wallPaper2;
                 }
                 boolean q6 = org.telegram.ui.ActionBar.i6.I.q();
-                ad1 ad1Var = new ad1(wallPaper, ynVar, q6);
+                yc1 yc1Var = new yc1(wallPaper, ynVar, q6);
                 TLRPC.WallPaperSettings wallPaperSettings2 = wallPaper2.settings;
                 if (wallPaperSettings2 != null) {
                     boolean z10 = wallPaperSettings2.blur;
                     boolean z11 = wallPaperSettings2.motion;
-                    ad1Var.F1 = z10;
-                    ad1Var.E1 = z11;
-                    ad1Var.n1 = wallPaperSettings2.intensity / 100.0f;
+                    yc1Var.F1 = z10;
+                    yc1Var.E1 = z11;
+                    yc1Var.n1 = wallPaperSettings2.intensity / 100.0f;
                 }
-                ad1Var.q0 = messageObject;
-                ad1Var.c1(messageObject.getDialogId());
-                ad1Var.a.a = ynVar.ca;
-                ad1Var.p1 = new bd1(ynVar, q6);
-                ynVar.presentFragment(ad1Var);
+                yc1Var.q0 = messageObject;
+                yc1Var.c1(messageObject.getDialogId());
+                yc1Var.a.a = ynVar.ca;
+                yc1Var.p1 = new zc1(ynVar, q6);
+                ynVar.presentFragment(yc1Var);
                 return;
             }
             return;

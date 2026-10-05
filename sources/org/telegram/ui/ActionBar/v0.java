@@ -38,7 +38,7 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.b80;
@@ -46,11 +46,11 @@ import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.qo;
-import org.telegram.ui.Components.t21;
 import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.u21;
 import org.telegram.ui.vh;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class v0 extends FrameLayout {
     public final TextView E;
@@ -176,9 +176,9 @@ public class v0 extends FrameLayout {
             return;
         }
         ch.d c10 = cVar.c(actionBarPopupWindow$ActionBarPopupWindowLayout, null, true);
-        c10.x(eVar);
-        c10.z(AndroidUtilities.dp(12.0f));
-        c10.y(AndroidUtilities.dp(8.0f));
+        c10.w(eVar);
+        c10.y(AndroidUtilities.dp(12.0f));
+        c10.x(AndroidUtilities.dp(8.0f));
         actionBarPopupWindow$ActionBarPopupWindowLayout.setBackground(c10);
     }
 
@@ -247,7 +247,7 @@ public class v0 extends FrameLayout {
             return;
         }
         findViewWithTag.setAlpha(0.0f);
-        ok.s(findViewWithTag.animate().alpha(1.0f), tr.f, 150L);
+        bi.r(findViewWithTag.animate().alpha(1.0f), tr.f, 150L);
         findViewWithTag.setVisibility(0);
     }
 
@@ -483,9 +483,9 @@ public class v0 extends FrameLayout {
                         ah.c cVar = this.q0;
                         if (cVar != null) {
                             ch.d c10 = cVar.c(this.b, null, true);
-                            c10.x(this.r0);
-                            c10.z(AndroidUtilities.dp(12.0f));
-                            c10.y(AndroidUtilities.dp(f7));
+                            c10.w(this.r0);
+                            c10.y(AndroidUtilities.dp(12.0f));
+                            c10.x(AndroidUtilities.dp(f7));
                             c10.l.e = true;
                             frameLayout.setBackground(c10);
                         } else {
@@ -548,7 +548,7 @@ public class v0 extends FrameLayout {
                         }
                     }
                 });
-                actionBarPopupWindow$ActionBarPopupWindowLayout.measure(ok.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.measure(bi.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
                 if (frameLayout != null && frameLayout.getLayoutParams() != null && this.b.getSwipeBack() != null && (childAt = this.b.getSwipeBack().getChildAt(0)) != null && childAt.getMeasuredWidth() > 0) {
                     frameLayout.getLayoutParams().width = AndroidUtilities.dp(16.0f) + childAt.getMeasuredWidth();
                 }
@@ -843,10 +843,10 @@ public class v0 extends FrameLayout {
         kVar.setBackgroundDrawable(i6.K0(false));
     }
 
-    public final f1 i(int i10, t21 t21Var, String str, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+    public final f1 i(int i10, u21 u21Var, String str, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
         o();
         f1 f1Var = new f1(0, getContext(), this.m0, false, false);
-        f1Var.g(str, i10, t21Var);
+        f1Var.g(str, i10, u21Var);
         f1Var.setMinimumWidth(AndroidUtilities.dp(196.0f));
         f1Var.setRightIcon(R.drawable.msg_arrowright);
         this.b.addView(f1Var);
@@ -1152,9 +1152,9 @@ public class v0 extends FrameLayout {
         ah.c cVar = this.q0;
         if (cVar != null) {
             ch.d c10 = cVar.c(actionBarPopupWindow$ActionBarPopupWindowLayout, null, true);
-            c10.x(this.r0);
-            c10.z(AndroidUtilities.dp(12.0f));
-            c10.y(AndroidUtilities.dp(8.0f));
+            c10.w(this.r0);
+            c10.y(AndroidUtilities.dp(12.0f));
+            c10.x(AndroidUtilities.dp(8.0f));
             actionBarPopupWindow$ActionBarPopupWindowLayout.setBackground(c10);
         }
         this.b.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.ActionBar.i0

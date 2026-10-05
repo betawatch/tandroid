@@ -18,16 +18,16 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BringAppForegroundService;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class vu implements w91 {
+public final class vu implements x91 {
     public final /* synthetic */ zu a;
 
     public vu(zu zuVar) {
         this.a = zuVar;
     }
 
-    @Override // org.telegram.ui.Components.w91
+    @Override // org.telegram.ui.Components.x91
     public final TextureView a(View view, boolean z10, float f7, int i10, boolean z11) {
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
@@ -76,7 +76,7 @@ public final class vu implements w91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w91
+    @Override // org.telegram.ui.Components.x91
     public final void b() {
         zu zuVar = this.a;
         if (zuVar.c.f()) {
@@ -84,7 +84,7 @@ public final class vu implements w91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w91
+    @Override // org.telegram.ui.Components.x91
     public final void d() {
         zu zuVar = this.a;
         tu tuVar = zuVar.b;
@@ -92,12 +92,12 @@ public final class vu implements w91 {
         zuVar.s.setVisibility(0);
         zuVar.v.setVisibility(4);
         tuVar.setKeepScreenOn(true);
-        z91 z91Var = zuVar.c;
-        z91Var.setVisibility(4);
-        z91Var.getControlsView().setVisibility(4);
-        z91Var.getTextureView().setVisibility(4);
-        if (z91Var.getTextureImageView() != null) {
-            z91Var.getTextureImageView().setVisibility(4);
+        aa1 aa1Var = zuVar.c;
+        aa1Var.setVisibility(4);
+        aa1Var.getControlsView().setVisibility(4);
+        aa1Var.getTextureView().setVisibility(4);
+        if (aa1Var.getTextureImageView() != null) {
+            aa1Var.getTextureImageView().setVisibility(4);
         }
         zuVar.c.g(null, null, null, null, false);
         HashMap hashMap = new HashMap();
@@ -109,8 +109,8 @@ public final class vu implements w91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w91
-    public final void e(z91 z91Var, boolean z10) {
+    @Override // org.telegram.ui.Components.x91
+    public final void e(aa1 aa1Var, boolean z10) {
         Activity activity = this.a.r;
         if (z10) {
             try {
@@ -128,14 +128,14 @@ public final class vu implements w91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.w91
+    @Override // org.telegram.ui.Components.x91
     public final TextureView f(View view, boolean z10, int i10, int i11, boolean z11) {
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
         ViewGroup viewGroup3;
         org.telegram.ui.ActionBar.e3 e3Var;
         zu zuVar = this.a;
-        z91 z91Var = zuVar.c;
+        aa1 aa1Var = zuVar.c;
         int[] iArr = zuVar.E;
         if (z10) {
             view.setTranslationY(0.0f);
@@ -152,13 +152,13 @@ public final class vu implements w91 {
             return null;
         }
         zuVar.O = true;
-        z91Var.getAspectRatioView().getLocationInWindow(iArr);
+        aa1Var.getAspectRatioView().getLocationInWindow(iArr);
         iArr[0] = iArr[0] - zuVar.getLeftInset();
         float f7 = iArr[1];
         viewGroup2 = ((org.telegram.ui.ActionBar.f3) zuVar).containerView;
         iArr[1] = (int) (f7 - viewGroup2.getTranslationY());
-        TextureView textureView2 = z91Var.getTextureView();
-        ImageView textureImageView = z91Var.getTextureImageView();
+        TextureView textureView2 = aa1Var.getTextureView();
+        ImageView textureImageView = aa1Var.getTextureImageView();
         AnimatorSet animatorSet = new AnimatorSet();
         Property property = View.SCALE_X;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(textureImageView, (Property<ImageView, Float>) property, 1.0f);
@@ -183,18 +183,18 @@ public final class vu implements w91 {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.w91
+    @Override // org.telegram.ui.Components.x91
     public final ViewGroup g() {
         return this.a.container;
     }
 
-    @Override // org.telegram.ui.Components.w91
+    @Override // org.telegram.ui.Components.x91
     public final boolean h() {
         return this.a.E();
     }
 
-    @Override // org.telegram.ui.Components.w91
-    public final void i(boolean z10, r91 r91Var, float f7, boolean z11) {
+    @Override // org.telegram.ui.Components.x91
+    public final void i(boolean z10, s91 s91Var, float f7, boolean z11) {
         org.telegram.ui.ActionBar.e3 e3Var;
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
@@ -272,7 +272,7 @@ public final class vu implements w91 {
                 this.a.e.setAlpha(1.0f);
                 this.a.e.setVisibility(4);
             }
-            r91Var.run();
+            s91Var.run();
             this.a.dismissInternal();
             return;
         }
@@ -304,11 +304,11 @@ public final class vu implements w91 {
         animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4, ofFloat5, ofFloat6, ofFloat7, ofFloat8, ofFloat9, ofInt, ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) property5, 0.0f), ObjectAnimator.ofFloat(controlsView, (Property<View, Float>) property5, 0.0f));
         animatorSet.setInterpolator(new DecelerateInterpolator());
         animatorSet.setDuration(250L);
-        animatorSet.addListener(new ai.z(23, this, r91Var));
+        animatorSet.addListener(new ai.z(23, this, s91Var));
         animatorSet.start();
     }
 
-    @Override // org.telegram.ui.Components.w91
+    @Override // org.telegram.ui.Components.x91
     public final void c(float f7) {
     }
 }

@@ -1,8 +1,8 @@
 package xh;
 
-import yh.n7;
+import yh.p7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p4 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class p4 implements Runnable {
                 v.S(r0.getContext(), r0.c0, this.b.resourcesProvider);
                 break;
             case 4:
-                new n7(r0.getContext(), this.b.resourcesProvider).show();
+                new p7(r0.getContext(), this.b.resourcesProvider).show();
                 break;
             default:
                 this.b.dismiss();

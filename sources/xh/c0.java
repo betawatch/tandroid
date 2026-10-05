@@ -18,7 +18,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.q90;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
@@ -35,7 +35,7 @@ import org.telegram.ui.ow0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class c0 extends cb implements GiftAuctionController.OnAuctionUpdateListener {
     public static final /* synthetic */ int f0 = 0;
@@ -46,7 +46,7 @@ public final class c0 extends cb implements GiftAuctionController.OnAuctionUpdat
     public final TextView b0;
     public final z c0;
     public GiftAuctionController.Auction d0;
-    public u61 e0;
+    public w61 e0;
 
     /* JADX WARN: Multi-variable type inference failed */
     public c0(Context context, d6 d6Var, long j3, TL_stars.StarGift starGift, ArrayList arrayList, Runnable runnable, boolean z10) {
@@ -111,7 +111,7 @@ public final class c0 extends cb implements GiftAuctionController.OnAuctionUpdat
         w9Var.e(chat, h9Var);
         TextView textView = new TextView(context);
         this.b0 = textView;
-        ok.k(21.0f, 1, textView);
+        bi.j(21.0f, 1, textView);
         textView.setText(DialogObject.getShortName(j3 != 0 ? j3 : UserConfig.getInstance(this.currentAccount).getClientUserId()));
         textView.setGravity(17);
         textView.setTextColor(-1);
@@ -292,7 +292,7 @@ public final class c0 extends cb implements GiftAuctionController.OnAuctionUpdat
             imageView4.setColorFilter(i6.v0(i16, d6Var3));
             linearLayout.addView(ow0Var3, z5.k(6.0f, 0.0f, 6.0f, 14.0f, -1, -2));
         }
-        dVar.g(yh.x3.g2(LocaleController.getString(R.string.Understood)), false, true);
+        dVar.g(yh.y3.g2(LocaleController.getString(R.string.Understood)), false, true);
         dVar.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 16));
     }
 
@@ -309,10 +309,10 @@ public final class c0 extends cb implements GiftAuctionController.OnAuctionUpdat
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 15), this.resourcesProvider);
-        this.e0 = u61Var;
-        u61Var.r = false;
-        return u61Var;
+        w61 w61Var = new w61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 15), this.resourcesProvider);
+        this.e0 = w61Var;
+        w61Var.r = false;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

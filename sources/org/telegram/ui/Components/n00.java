@@ -29,7 +29,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class n00 extends FrameLayout {
     public static final /* synthetic */ int A0 = 0;
@@ -190,7 +190,7 @@ public abstract class n00 extends FrameLayout {
         j00 j00Var = new j00(this, i10, MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, textPaint.getFontMetricsInt(), false), arrayList, textPaint.getFontMetricsInt()), z10);
         j00Var.e = z11;
         j00Var.f = z12;
-        this.M = org.telegram.messenger.f0.C(24.0f, j00Var.a(true), this.M);
+        this.M = org.telegram.messenger.q.C(24.0f, j00Var.a(true), this.M);
         arrayList2.add(j00Var);
     }
 
@@ -237,7 +237,7 @@ public abstract class n00 extends FrameLayout {
                             d.b(LocaleController.getString(R.string.FilterAllChats));
                         }
                         for (int i11 = 0; i11 < size; i11++) {
-                            this.M = org.telegram.messenger.f0.C(24.0f, ((j00) arrayList.get(i11)).a(true), this.M);
+                            this.M = org.telegram.messenger.q.C(24.0f, ((j00) arrayList.get(i11)).a(true), this.M);
                         }
                         z10 = true;
                         if (z10) {
@@ -419,7 +419,7 @@ public abstract class n00 extends FrameLayout {
             z11 = r3;
         }
         if (z11) {
-            w0Var.h1();
+            w0Var.g1();
             w0Var.invalidate();
             invalidate();
         }
@@ -488,7 +488,7 @@ public abstract class n00 extends FrameLayout {
         }
         this.P = f7;
         ai.w0 w0Var = this.F;
-        w0Var.h1();
+        w0Var.g1();
         w0Var.invalidate();
         invalidate();
         e(i11);
@@ -665,7 +665,7 @@ public abstract class n00 extends FrameLayout {
     public void setAnimationIdicatorProgress(float f7) {
         this.P = f7;
         ai.w0 w0Var = this.F;
-        w0Var.h1();
+        w0Var.g1();
         w0Var.invalidate();
         invalidate();
         h00 h00Var = this.J;
@@ -687,7 +687,7 @@ public abstract class n00 extends FrameLayout {
         this.n = z10;
         this.s = true;
         ai.w0 w0Var = this.F;
-        w0Var.h1();
+        w0Var.g1();
         w0Var.invalidate();
         this.I.l();
         invalidate();

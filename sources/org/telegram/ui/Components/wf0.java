@@ -7,13 +7,13 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class wf0 extends FrameLayout {
     public final ci.vc a;
     public final ci.d b;
     public final st c;
-    public d81 d;
+    public e81 d;
     public long e;
     public float f;
     public ci.a4 h;
@@ -27,8 +27,8 @@ public final class wf0 extends FrameLayout {
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, d6Var);
         kVar.setBackButtonImage(R.drawable.ic_ab_back);
         kVar.setTitle(LocaleController.getString(R.string.EditorSetCoverTitle));
-        kVar.B(-1, false);
-        kVar.A(587202559, false);
+        kVar.A(-1, false);
+        kVar.z(587202559, false);
         kVar.setActionBarMenuOnItemClick(new org.telegram.ui.qo(this, 10));
         addView(kVar, w7.z5.e(-1, -2, 55));
         ci.vc vcVar = new ci.vc(context, null, null, d6Var, kaVar);
@@ -47,7 +47,7 @@ public final class wf0 extends FrameLayout {
         vcVar.setDelegate(new n7.z0(this));
     }
 
-    public final void a(MediaController.PhotoEntry photoEntry, d81 d81Var, org.telegram.ui.ActionBar.d6 d6Var) {
+    public final void a(MediaController.PhotoEntry photoEntry, e81 e81Var, org.telegram.ui.ActionBar.d6 d6Var) {
         int i10;
         ci.d dVar = this.b;
         dVar.a = d6Var;
@@ -58,22 +58,22 @@ public final class wf0 extends FrameLayout {
         } else {
             this.f = Utilities.clamp(i10 / i11, 1.39f, 0.85f);
         }
-        this.d = d81Var;
+        this.d = e81Var;
         long j3 = photoEntry.coverSavedPosition;
         if (j3 >= 0) {
             this.e = j3;
-            d81Var.L(j3, false);
+            e81Var.L(j3, false);
         } else {
-            this.e = d81Var.n();
+            this.e = e81Var.n();
         }
-        String path = d81Var.F.getPath();
-        long p5 = d81Var.p();
-        i2.f0 f0Var = d81Var.d;
+        String path = e81Var.F.getPath();
+        long p5 = e81Var.p();
+        i2.f0 f0Var = e81Var.d;
         f0Var.B1();
         this.a.o(false, path, p5, f0Var.Z);
-        long p10 = d81Var.p();
+        long p10 = e81Var.p();
         float max = 2.8f / Math.max(60L, p10);
-        float max2 = (1.0f - max) * (this.e / Math.max(1L, d81Var.p()));
+        float max2 = (1.0f - max) * (this.e / Math.max(1L, e81Var.p()));
         ci.vc vcVar = this.a;
         vcVar.setVideoLeft(max2);
         vcVar.setVideoRight(max2 + max);

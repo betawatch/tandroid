@@ -31,7 +31,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class ee0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] a0 = {R.id.passcode_btn_0, R.id.passcode_btn_1, R.id.passcode_btn_2, R.id.passcode_btn_3, R.id.passcode_btn_4, R.id.passcode_btn_5, R.id.passcode_btn_6, R.id.passcode_btn_7, R.id.passcode_btn_8, R.id.passcode_btn_9, R.id.passcode_btn_backspace, R.id.passcode_btn_fingerprint};
@@ -735,7 +735,7 @@ public class ee0 extends FrameLayout implements NotificationCenter.NotificationC
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.b = frameLayout3;
         w5Var.addView(frameLayout3, w7.z5.e(-2, -2, 49));
-        TextView f7 = org.telegram.messenger.f0.f(context, 1, 15.0f);
+        TextView f7 = org.telegram.messenger.q.f(context, 1, 15.0f);
         f7.setTypeface(AndroidUtilities.bold());
         f7.setTextColor(-1);
         f7.setText(LocaleController.getString(R.string.UnlockToUse));
@@ -1097,7 +1097,7 @@ public class ee0 extends FrameLayout implements NotificationCenter.NotificationC
         boolean z10 = i9Var == null || ((StringBuilder) i9Var.d).length() > 0;
         if (frameLayout != null) {
             frameLayout.animate().cancel();
-            org.telegram.messenger.ok.s(frameLayout.animate().alpha(z10 ? 0.0f : 1.0f).scaleX(z10 ? 0.8f : 1.0f).scaleY(z10 ? 0.8f : 1.0f), tr.h, 320L);
+            org.telegram.messenger.bi.r(frameLayout.animate().alpha(z10 ? 0.0f : 1.0f).scaleX(z10 ? 0.8f : 1.0f).scaleY(z10 ? 0.8f : 1.0f), tr.h, 320L);
         }
     }
 
@@ -1133,7 +1133,7 @@ public class ee0 extends FrameLayout implements NotificationCenter.NotificationC
                 LaunchActivity launchActivity = (LaunchActivity) findActivity;
                 ArrayList arrayList = launchActivity.B0;
                 if (!arrayList.isEmpty() || (ge0Var = launchActivity.A0) == null) {
-                    if (hg.k0.g(1, arrayList) != this) {
+                    if (hg.c.g(1, arrayList) != this) {
                         return;
                     }
                 } else if (this != ge0Var.b) {
@@ -1577,7 +1577,7 @@ public class ee0 extends FrameLayout implements NotificationCenter.NotificationC
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) frameLayout2.getLayoutParams();
             layoutParams.width = SharedConfig.passcodeType == 0 ? size / 2 : size;
             layoutParams.height = AndroidUtilities.dp(180.0f);
-            layoutParams.topMargin = org.telegram.messenger.ok.z(140.0f, i13, 2) + (SharedConfig.passcodeType == 0 ? AndroidUtilities.dp(40.0f) : 0);
+            layoutParams.topMargin = org.telegram.messenger.bi.z(140.0f, i13, 2) + (SharedConfig.passcodeType == 0 ? AndroidUtilities.dp(40.0f) : 0);
             frameLayout2.setLayoutParams(layoutParams);
             FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) frameLayout.getLayoutParams();
             layoutParams2.height = i13;
@@ -1596,13 +1596,13 @@ public class ee0 extends FrameLayout implements NotificationCenter.NotificationC
             int i15 = AndroidUtilities.statusBarHeight;
             if (AndroidUtilities.isTablet()) {
                 if (size > AndroidUtilities.dp(498.0f)) {
-                    i12 = org.telegram.messenger.ok.z(498.0f, size, 2);
+                    i12 = org.telegram.messenger.bi.z(498.0f, size, 2);
                     size = AndroidUtilities.dp(498.0f);
                 } else {
                     i12 = 0;
                 }
                 if (i13 > AndroidUtilities.dp(528.0f)) {
-                    i15 = org.telegram.messenger.ok.z(528.0f, i13, 2);
+                    i15 = org.telegram.messenger.bi.z(528.0f, i13, 2);
                     i13 = AndroidUtilities.dp(528.0f);
                 }
             } else {

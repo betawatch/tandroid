@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class i2 {
     public final a6.m a;
@@ -210,7 +210,7 @@ public final class i2 {
         ArrayList arrayList3 = x3Var.s3;
         arrayList3.clear();
         arrayList3.addAll(arrayList2);
-        x3Var.u4();
+        x3Var.t4();
         x3Var.f3.N(false);
         if (f2Var.a >= 0) {
             x3Var.post(new gg.x1(15, x3Var, f2Var));
@@ -286,8 +286,8 @@ public final class i2 {
             ?? r12 = (i1) findFocus;
             int selectionStart = r12.getSelectionStart();
             int selectionEnd = r12.getSelectionEnd();
-            ?? W2 = x3.W2(r12);
-            if (W2 == 0 || W2.getRow() == null) {
+            ?? V2 = x3.V2(r12);
+            if (V2 == 0 || V2.getRow() == null) {
                 if (!(r12 instanceof m0)) {
                     ViewParent parent = r12.getParent();
                     while (true) {
@@ -318,11 +318,11 @@ public final class i2 {
                 } else {
                     f2Var = new f2(m0Var.getRow().a, -1, selectionStart, selectionEnd);
                 }
-            } else if (r12 == W2.getTitleEditText()) {
-                f2Var = new f2(W2.getRow().a, 0, selectionStart, selectionEnd);
+            } else if (r12 == V2.getTitleEditText()) {
+                f2Var = new f2(V2.getRow().a, 0, selectionStart, selectionEnd);
             } else {
-                t5 o9 = W2.o(r12);
-                f2Var = new f2(W2.getRow().a, o9 != null ? W2.k(o9.b) : -1, selectionStart, selectionEnd);
+                t5 o9 = V2.o(r12);
+                f2Var = new f2(V2.getRow().a, o9 != null ? V2.k(o9.b) : -1, selectionStart, selectionEnd);
             }
             return new h2(g2VarArr, f2Var);
         }

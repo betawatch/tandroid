@@ -4,7 +4,7 @@ import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sl implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -29,7 +29,7 @@ public final /* synthetic */ class sl implements Utilities.Callback {
                 if (xiVar != null) {
                     xiVar.I1 = true;
                 }
-                xiVar.Z1.B1(7, true, this.b, this.d, 0, 0L, xiVar.p1(), this.c, l4.longValue());
+                xiVar.Z1.B1(7, true, this.b, this.d, 0, 0L, xiVar.r1(), this.c, l4.longValue());
                 HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
                 hashMap.clear();
                 ChatAttachAlertPhotoLayout.r1.clear();
@@ -52,7 +52,7 @@ public final /* synthetic */ class sl implements Utilities.Callback {
                 chatAttachAlertPhotoLayout.Z(false);
                 vi viVar = xiVar2.Z1;
                 boolean z10 = this.b;
-                viVar.B1(z10 ? 4 : 8, true, this.c, this.d, 0, 0L, xiVar2.p1(), z10, l10.longValue());
+                viVar.B1(z10 ? 4 : 8, true, this.c, this.d, 0, 0L, xiVar2.r1(), z10, l10.longValue());
                 ChatAttachAlertPhotoLayout.r1.clear();
                 ChatAttachAlertPhotoLayout.t1.clear();
                 ChatAttachAlertPhotoLayout.s1.clear();

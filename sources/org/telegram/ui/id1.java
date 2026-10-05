@@ -1,11 +1,12 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+import org.telegram.messenger.MessageObject;
+
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public interface id1 {
-    boolean a();
-
-    boolean a1();
-
-    void q1(boolean z10);
+public final class id1 extends MessageObject {
+    @Override // org.telegram.messenger.MessageObject
+    public final boolean needDrawAvatar() {
+        return false;
+    }
 }

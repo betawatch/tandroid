@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.gq;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.u90;
 import org.telegram.ui.j01;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class h6 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -42,13 +42,13 @@ public abstract class h6 extends FrameLayout implements org.telegram.ui.ActionBa
         Context context = n2Var.getContext();
         org.telegram.ui.ActionBar.d6 resourceProvider = n2Var.getResourceProvider();
         this.a = resourceProvider;
-        LinearLayout f7 = ok.f(context, 0);
-        addView(f7, w7.z5.d(-1, -2.0f, 55, 16.66f, 11.6f, 16.66f, 0.0f));
+        LinearLayout e7 = bi.e(context, 0);
+        addView(e7, w7.z5.d(-1, -2.0f, 55, 16.66f, 11.6f, 16.66f, 0.0f));
         TextView textView = new TextView(context);
         this.b = textView;
-        ok.k(14.0f, 1, textView);
+        bi.j(14.0f, 1, textView);
         textView.setText(LocaleController.getString(R.string.ProfileChannel));
-        f7.addView(textView, w7.z5.q(-2, -2, 51));
+        e7.addView(textView, w7.z5.q(-2, -2, 51));
         gq gqVar = new gq(context);
         this.c = gqVar;
         gqVar.getDrawable().o(true, true, false);
@@ -57,7 +57,7 @@ public abstract class h6 extends FrameLayout implements org.telegram.ui.ActionBa
         gqVar.setTextSize(AndroidUtilities.dp(11.0f));
         gqVar.setPadding(AndroidUtilities.dp(4.33f), 0, AndroidUtilities.dp(4.33f), 0);
         gqVar.setGravity(3);
-        f7.addView(gqVar, w7.z5.t(-1, 17, 51, 4, 1, 4, 0));
+        e7.addView(gqVar, w7.z5.t(-1, 17, 51, 4, 1, 4, 0));
         s2 s2Var = new s2(null, context, true, UserConfig.selectedAccount, resourceProvider);
         this.d = s2Var;
         s2Var.setBackgroundColor(0);
@@ -104,7 +104,7 @@ public abstract class h6 extends FrameLayout implements org.telegram.ui.ActionBa
             if (z12) {
                 s2Var.U(-chat.id, null, 0, false, z10);
             } else {
-                MessageObject messageObject = (MessageObject) hg.k0.g(1, arrayList);
+                MessageObject messageObject = (MessageObject) hg.c.g(1, arrayList);
                 long j3 = -chat.id;
                 int i11 = messageObject.messageOwner.date;
                 if (s2Var.H0 != j3) {

@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ba extends s4.n0 implements bh.a {
     public final RectF E;
@@ -235,11 +235,11 @@ public final class ba extends s4.n0 implements bh.a {
                     View childAt = zl0Var.getChildAt(i14);
                     s4.c1 T = zl0Var.T(childAt);
                     int R = RecyclerView.R(childAt);
-                    if (childAt != zl0Var.getEmptyView() && childAt.getVisibility() == 0 && childAt.getAlpha() > 0.0f && R != -1 && ((T == null || !T.j()) && baVar.s(childAt) && !zl0Var.i1(R))) {
+                    if (childAt != zl0Var.getEmptyView() && childAt.getVisibility() == 0 && childAt.getAlpha() > 0.0f && R != -1 && ((T == null || !T.j()) && baVar.s(childAt) && !zl0Var.h1(R))) {
                         float x10 = childAt.getX();
                         float width2 = x10 + childAt.getWidth();
                         if (!baVar.t(R - 1)) {
-                            baVar.o(canvas, x10, width2, zl0.v1(childAt), 1.0f);
+                            baVar.o(canvas, x10, width2, zl0.u1(childAt), 1.0f);
                         }
                         if (!baVar.t(R + 1)) {
                             baVar.i(canvas, x10, width2, zl0.H0(childAt), 1.0f);
@@ -252,13 +252,13 @@ public final class ba extends s4.n0 implements bh.a {
             if (zl0Var.L2 != null) {
                 for (int i15 = 0; i15 < zl0Var.L2.size(); i15++) {
                     long longValue = ((Long) zl0Var.L2.get(i15)).longValue();
-                    View V0 = zl0Var.V0(AndroidUtilities.unpackA(longValue));
-                    View V02 = zl0Var.V0(AndroidUtilities.unpackB(longValue));
-                    if (V0 != null) {
-                        o(canvas, V0.getX(), V0.getWidth() + V0.getX(), zl0.v1(V0), 1.0f);
+                    View U0 = zl0Var.U0(AndroidUtilities.unpackA(longValue));
+                    View U02 = zl0Var.U0(AndroidUtilities.unpackB(longValue));
+                    if (U0 != null) {
+                        o(canvas, U0.getX(), U0.getWidth() + U0.getX(), zl0.u1(U0), 1.0f);
                     }
-                    if (V02 != null) {
-                        i(canvas, V02.getX(), V02.getX() + V02.getWidth(), zl0.H0(V02), 1.0f);
+                    if (U02 != null) {
+                        i(canvas, U02.getX(), U02.getX() + U02.getWidth(), zl0.H0(U02), 1.0f);
                     }
                 }
             }
@@ -534,13 +534,13 @@ public final class ba extends s4.n0 implements bh.a {
             View childAt = zl0Var.getChildAt(i11);
             int R = RecyclerView.R(childAt);
             s4.c1 T = zl0Var.T(childAt);
-            if (childAt != zl0Var.getEmptyView() && childAt.getVisibility() == 0 && childAt.getAlpha() > 0.0f && ((!zl0Var.b0() || T == null || !T.j() || childAt.getAlpha() >= 1.0f) && s(childAt) && !zl0Var.i1(R))) {
-                float v12 = zl0.v1(childAt);
+            if (childAt != zl0Var.getEmptyView() && childAt.getVisibility() == 0 && childAt.getAlpha() > 0.0f && ((!zl0Var.b0() || T == null || !T.j() || childAt.getAlpha() >= 1.0f) && s(childAt) && !zl0Var.h1(R))) {
+                float u12 = zl0.u1(childAt);
                 float H0 = zl0.H0(childAt);
                 if (childAt instanceof y80) {
                     H0 -= ((y80) childAt).getBottomInfoMargin();
                 }
-                e(v12, H0);
+                e(u12, H0);
             }
         }
         if (zl0Var.L2 != null) {
@@ -554,7 +554,7 @@ public final class ba extends s4.n0 implements bh.a {
                     View childAt2 = zl0Var.getChildAt(i13);
                     int R2 = RecyclerView.R(childAt2);
                     if (R2 >= unpackA && R2 <= unpackB) {
-                        f12 = Math.min(f12, zl0.v1(childAt2));
+                        f12 = Math.min(f12, zl0.u1(childAt2));
                         f13 = Math.max(f13, zl0.H0(childAt2));
                     }
                 }
@@ -650,7 +650,7 @@ public final class ba extends s4.n0 implements bh.a {
         float left = view.getLeft();
         this.a.getClass();
         float f7 = this.f;
-        float max = Math.max(-f7, zl0.v1(view) - (z10 ? f7 : 0.0f));
+        float max = Math.max(-f7, zl0.u1(view) - (z10 ? f7 : 0.0f));
         float right = view.getRight();
         float min = Math.min(r3.getHeight() - (-f7), (zl0.H0(view2) + (z11 ? f7 : 0.0f)) - bottomInfoMargin);
         RectF rectF = this.x;
@@ -691,7 +691,7 @@ public final class ba extends s4.n0 implements bh.a {
     public final void n(Canvas canvas) {
         int i10;
         float[] fArr;
-        View V0;
+        View U0;
         s4.c1 T;
         Canvas canvas2 = canvas;
         zl0 zl0Var = this.a;
@@ -704,11 +704,11 @@ public final class ba extends s4.n0 implements bh.a {
             for (int i12 = 0; i12 < zl0Var.getChildCount(); i12++) {
                 View childAt = zl0Var.getChildAt(i12);
                 if (childAt != zl0Var.getEmptyView() && childAt.getVisibility() == 0 && childAt.getAlpha() > 0.0f && s(childAt)) {
-                    float v12 = zl0.v1(childAt);
+                    float u12 = zl0.u1(childAt);
                     float H0 = zl0.H0(childAt);
                     s4.c1 T2 = zl0Var.T(childAt);
                     if (T2 == null || !T2.j() || childAt.getAlpha() >= 1.0f) {
-                        if (zl0Var.i1(RecyclerView.R(childAt))) {
+                        if (zl0Var.h1(RecyclerView.R(childAt))) {
                         }
                         float alpha = childAt.getAlpha();
                         int i13 = this.c0;
@@ -723,7 +723,7 @@ public final class ba extends s4.n0 implements bh.a {
                         int i14 = this.c0;
                         int i15 = i14 + 1;
                         this.c0 = i15;
-                        fArr3[i14] = v12;
+                        fArr3[i14] = u12;
                         int i16 = i14 + 2;
                         this.c0 = i16;
                         fArr3[i15] = H0;
@@ -731,10 +731,10 @@ public final class ba extends s4.n0 implements bh.a {
                         fArr3[i16] = alpha;
                     } else {
                         int i17 = T2.i;
-                        if (i17 >= 0 && (V0 = zl0Var.V0(((int) Math.ceil(i17 / 1000.0d)) + 1)) != null && H0 > V0.getY() && s(V0) && (T = zl0Var.T(V0)) != null && !T.j()) {
-                            v12 -= 1.0f;
-                            H0 = V0.getY();
-                            if (H0 < v12) {
+                        if (i17 >= 0 && (U0 = zl0Var.U0(((int) Math.ceil(i17 / 1000.0d)) + 1)) != null && H0 > U0.getY() && s(U0) && (T = zl0Var.T(U0)) != null && !T.j()) {
+                            u12 -= 1.0f;
+                            H0 = U0.getY();
+                            if (H0 < u12) {
                             }
                         }
                         float alpha2 = childAt.getAlpha();
@@ -747,7 +747,7 @@ public final class ba extends s4.n0 implements bh.a {
                         int i142 = this.c0;
                         int i152 = i142 + 1;
                         this.c0 = i152;
-                        fArr32[i142] = v12;
+                        fArr32[i142] = u12;
                         int i162 = i142 + 2;
                         this.c0 = i162;
                         fArr32[i152] = H0;
@@ -867,7 +867,7 @@ public final class ba extends s4.n0 implements bh.a {
             int i31 = 0;
             while (i31 < zl0Var.getChildCount()) {
                 View childAt2 = zl0Var.getChildAt(i31);
-                if (childAt2 == zl0Var.getEmptyView() || childAt2.getVisibility() != 0 || childAt2.getAlpha() <= 0.0f || !s(childAt2) || zl0Var.i1(RecyclerView.R(childAt2))) {
+                if (childAt2 == zl0Var.getEmptyView() || childAt2.getVisibility() != 0 || childAt2.getAlpha() <= 0.0f || !s(childAt2) || zl0Var.h1(RecyclerView.R(childAt2))) {
                     l(canvas, view, view2, q(i29, view), r(i30, view2));
                     view = null;
                     view2 = null;
@@ -907,7 +907,7 @@ public final class ba extends s4.n0 implements bh.a {
                 View childAt3 = zl0Var.getChildAt(i33);
                 int R = RecyclerView.R(childAt3);
                 if (R >= unpackA && R <= unpackB) {
-                    f28 = Math.min(f28, zl0.v1(childAt3));
+                    f28 = Math.min(f28, zl0.u1(childAt3));
                     f29 = Math.max(f29, zl0.H0(childAt3));
                 }
             }
@@ -968,11 +968,11 @@ public final class ba extends s4.n0 implements bh.a {
         zl0 zl0Var = this.a;
         s4.h0 adapter = zl0Var.getAdapter();
         if (i10 >= 0 && adapter != null && i10 < adapter.h()) {
-            View V0 = zl0Var.V0(i10);
-            if (V0 != null) {
-                return s(V0) && !zl0Var.i1(i10);
+            View U0 = zl0Var.U0(i10);
+            if (U0 != null) {
+                return s(U0) && !zl0Var.h1(i10);
             }
-            if (((Boolean) this.c.run(Integer.valueOf(adapter.j(i10)))).booleanValue() && !zl0Var.i1(i10)) {
+            if (((Boolean) this.c.run(Integer.valueOf(adapter.j(i10)))).booleanValue() && !zl0Var.h1(i10)) {
                 return true;
             }
         }

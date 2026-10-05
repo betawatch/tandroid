@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nl0 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class nl0 implements Runnable {
         int i13 = 16;
         switch (this.a) {
             case 0:
-                ((PasscodeActivity) ((be0) this.b).n).h0();
+                ((PasscodeActivity) ((be0) this.b).n).n0();
                 break;
             case 1:
                 PasskeysActivity.W((PasskeysActivity) this.b);
@@ -345,18 +345,18 @@ public final /* synthetic */ class nl0 implements Runnable {
                 org.telegram.ui.Components.cl0 cl0Var = (org.telegram.ui.Components.cl0) ((ap0) this.b).b;
                 PhotoViewer photoViewer3 = (PhotoViewer) cl0Var.c;
                 photoViewer3.H2 = false;
-                org.telegram.ui.Components.d81 d81Var = photoViewer3.F2;
-                if (d81Var != null) {
-                    d81Var.C();
+                org.telegram.ui.Components.e81 e81Var = photoViewer3.F2;
+                if (e81Var != null) {
+                    e81Var.C();
                 }
                 ((PhotoViewer) cl0Var.c).I2 = null;
                 break;
             case 19:
                 PhotoViewer photoViewer4 = ((os0) this.b).a;
                 photoViewer4.H2 = false;
-                org.telegram.ui.Components.d81 d81Var2 = photoViewer4.F2;
-                if (d81Var2 != null) {
-                    d81Var2.C();
+                org.telegram.ui.Components.e81 e81Var2 = photoViewer4.F2;
+                if (e81Var2 != null) {
+                    e81Var2.C();
                 }
                 photoViewer4.I2 = null;
                 break;
@@ -388,10 +388,10 @@ public final /* synthetic */ class nl0 implements Runnable {
                 break;
             case 24:
                 PremiumPreviewFragment premiumPreviewFragment = ((ww0) this.b).c;
-                premiumPreviewFragment.showDialog(new b41(premiumPreviewFragment.getParentActivity(), false, premiumPreviewFragment.getResourceProvider(), null));
+                premiumPreviewFragment.showDialog(new z31(premiumPreviewFragment.getParentActivity(), false, premiumPreviewFragment.getResourceProvider(), null));
                 break;
             case 25:
-                ((org.telegram.messenger.lk) this.b).run(0);
+                ((org.telegram.messenger.mk) this.b).run(0);
                 break;
             case 26:
                 AndroidUtilities.addToClipboard((String) this.b);

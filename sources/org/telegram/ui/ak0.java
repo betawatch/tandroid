@@ -46,7 +46,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ak0 extends org.telegram.ui.ActionBar.f3 implements AdapterView.OnItemSelectedListener {
     public static final /* synthetic */ int d0 = 0;
@@ -1080,7 +1080,7 @@ public final class ak0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
             for (int i10 = 4; i10 >= 1; i10--) {
                 String substring = str2.substring(0, i10);
                 if (((String) hashMap.get(substring)) != null) {
-                    return a4.a.p("+", substring, str);
+                    return a4.a.q("+", substring, str);
                 }
             }
         }
@@ -1309,7 +1309,7 @@ public final class ak0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
     public final void w(boolean z10) {
         ViewPropertyAnimator translationY = this.U.animate().translationY(z10 ? -AndroidUtilities.dp(21.33f) : 0.0f);
         org.telegram.ui.Components.tr trVar = org.telegram.ui.Components.tr.h;
-        org.telegram.messenger.ok.s(translationY, trVar, 420L);
+        org.telegram.messenger.bi.r(translationY, trVar, 420L);
         this.f.animate().translationY(z10 ? -AndroidUtilities.dp(10.665f) : 0.0f).setInterpolator(trVar).setDuration(420L).start();
     }
 
@@ -1473,12 +1473,12 @@ public final class ak0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
             this.c0 = -1;
         }
         if (TextUtils.isEmpty(str)) {
-            org.telegram.messenger.ok.s(this.R.animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f), org.telegram.ui.Components.tr.h, 420L);
+            org.telegram.messenger.bi.r(this.R.animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f), org.telegram.ui.Components.tr.h, 420L);
             this.v.setText("");
             w(true);
             return;
         }
-        org.telegram.messenger.ok.s(this.R.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), org.telegram.ui.Components.tr.h, 420L);
+        org.telegram.messenger.bi.r(this.R.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), org.telegram.ui.Components.tr.h, 420L);
         this.R.setImageDrawable(new org.telegram.ui.Components.wp(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(3.0f), getThemedColor(org.telegram.ui.ActionBar.i6.m5)));
         this.v.setText("");
         w(true);

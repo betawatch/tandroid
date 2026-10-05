@@ -12,7 +12,7 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public class FileVideoCapturer implements VideoCapturer {
     private static final String TAG = "FileVideoCapturer";
@@ -26,14 +26,14 @@ public class FileVideoCapturer implements VideoCapturer {
         }
     };
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public interface VideoReader {
         void close();
 
         VideoFrame getNextFrame();
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class VideoReaderY4M implements VideoReader {
         private static final int FRAME_DELIMETER_LENGTH = 6;
         private static final String TAG = "VideoReaderY4M";
@@ -52,7 +52,7 @@ public class FileVideoCapturer implements VideoCapturer {
             while (true) {
                 int read = this.mediaFile.read();
                 if (read == -1) {
-                    throw new RuntimeException(t8.b.i("Found end of file before end of header for file: ", str));
+                    throw new RuntimeException(sa.e.i("Found end of file before end of header for file: ", str));
                 }
                 if (read == 10) {
                     this.videoStart = this.mediaFileChannel.position();

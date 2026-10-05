@@ -5,7 +5,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.q90;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class d6 {
     public static q90 a(Context context, float f7, int i10, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
@@ -21,7 +21,7 @@ public abstract class d6 {
     }
 
     public static TextView b(Context context, float f7, int i10, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
-        TextView f10 = org.telegram.messenger.f0.f(context, 1, f7);
+        TextView f10 = org.telegram.messenger.q.f(context, 1, f7);
         f10.setTextColor(org.telegram.ui.ActionBar.i6.v0(i10, d6Var));
         if (z10) {
             f10.setTypeface(AndroidUtilities.bold());

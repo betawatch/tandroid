@@ -3,9 +3,9 @@ package ai;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.gm;
-import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.ry0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class w4 implements org.telegram.ui.Components.pb {
     public final /* synthetic */ int a;
@@ -47,8 +47,8 @@ public final class w4 implements org.telegram.ui.Components.pb {
                 float dpf22 = AndroidUtilities.dpf2(0.5f);
                 eVar.f = dpf2;
                 eVar.h = dpf22;
-                c10.x(eVar);
-                c10.z(AndroidUtilities.dp(16.0f));
+                c10.w(eVar);
+                c10.y(AndroidUtilities.dp(16.0f));
                 vbVar.setCustomBackground(c10);
                 break;
         }
@@ -114,7 +114,7 @@ public final class w4 implements org.telegram.ui.Components.pb {
                 dp = ((gm) this.b).c.b.getBottomInset();
                 break;
             case 8:
-                FrameLayout frameLayout = ((qy0) this.b).w;
+                FrameLayout frameLayout = ((ry0) this.b).w;
                 if (frameLayout != null) {
                     return frameLayout.getHeight();
                 }
@@ -129,7 +129,7 @@ public final class w4 implements org.telegram.ui.Components.pb {
             case 10:
                 return 0;
             default:
-                return (int) ((zg.b0) ((yh.t3) this.b).c).u;
+                return (int) ((zg.z) ((yh.u3) this.b).c).u;
         }
         return dp + editTextHeight;
     }

@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class td implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -32,7 +32,7 @@ public final /* synthetic */ class td implements View.OnClickListener {
                 me meVar = (me) this.d;
                 Context context = (Context) this.e;
                 if (view.isEnabled()) {
-                    ci.d dVar = meVar.M1;
+                    ci.d dVar = meVar.J0;
                     if (!dVar.N) {
                         dVar.setLoading(true);
                         TLRPC.TL_payments_getStarsRevenueAdsAccountUrl tL_payments_getStarsRevenueAdsAccountUrl = new TLRPC.TL_payments_getStarsRevenueAdsAccountUrl();

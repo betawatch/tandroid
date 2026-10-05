@@ -20,7 +20,7 @@ import n4.y;
 import n6.l;
 import q9.n;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object k = new Object();
@@ -50,13 +50,13 @@ public final class h {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList C = new o0.a(12, context, new k2.e(ComponentDiscoveryService.class, 14)).C();
+        ArrayList y3 = new o0.a(12, context, new k2.e(ComponentDiscoveryService.class, 14)).y();
         Trace.endSection();
         Trace.beginSection("Runtime");
         r9.j jVar2 = r9.j.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        arrayList.addAll(C);
+        arrayList.addAll(y3);
         int i10 = 1;
         arrayList.add(new q9.c(new FirebaseCommonRegistrar(), i10));
         arrayList.add(new q9.c(new ExecutorsRegistrar(), i10));

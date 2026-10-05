@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class du extends org.telegram.ui.Components.cb {
     public final FrameLayout X;
@@ -30,7 +30,7 @@ public final class du extends org.telegram.ui.Components.cb {
     public final ArrayList a0;
     public final HashSet b0;
     public boolean c0;
-    public org.telegram.ui.Components.u61 d0;
+    public org.telegram.ui.Components.w61 d0;
 
     public du(Activity activity, HashSet hashSet) {
         super(activity, null, false, false, new ai.d());
@@ -44,7 +44,7 @@ public final class du extends org.telegram.ui.Components.cb {
         this.drawDoubleNavigationBar = false;
         FrameLayout frameLayout = new FrameLayout(activity);
         this.X = frameLayout;
-        LinearLayout e7 = org.telegram.messenger.f0.e(activity, 1);
+        LinearLayout e7 = org.telegram.messenger.q.e(activity, 1);
         frameLayout.addView(e7, w7.z5.e(-1, -1, 119));
         ImageView imageView = new ImageView(activity);
         imageView.setImageResource(R.drawable.ic_close_white);
@@ -90,9 +90,9 @@ public final class du extends org.telegram.ui.Components.cb {
         a10.setGravity(17);
         a10.setMaxWidth(ci.e4.a(a10.getText(), a10.getPaint()));
         e7.addView(a10, w7.z5.t(-1, -2, 1, 2, 0, 2, 23));
-        org.telegram.ui.Components.u61 u61Var = this.d0;
-        if (u61Var != null) {
-            u61Var.N(false);
+        org.telegram.ui.Components.w61 w61Var = this.d0;
+        if (w61Var != null) {
+            w61Var.N(false);
         }
         s4.j jVar = new s4.j();
         jVar.m = false;
@@ -102,7 +102,7 @@ public final class du extends org.telegram.ui.Components.cb {
         this.d.setItemAnimator(jVar);
         this.d.setOnItemClickListener(new bu(this, 0));
         FrameLayout frameLayout3 = new FrameLayout(activity);
-        LinearLayout e10 = org.telegram.messenger.f0.e(activity, 0);
+        LinearLayout e10 = org.telegram.messenger.q.e(activity, 0);
         e10.setPadding(AndroidUtilities.dp(14.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f));
         frameLayout3.addView(e10, w7.z5.e(-1, -2, 87));
         ci.d dVar = new ci.d(activity, this.resourcesProvider, true);
@@ -224,8 +224,8 @@ public final class du extends org.telegram.ui.Components.cb {
     }
 
     public static void P(du duVar, ArrayList arrayList) {
-        arrayList.add(org.telegram.ui.Components.g61.k(duVar.X));
-        arrayList.add(org.telegram.ui.Components.g61.B(null));
+        arrayList.add(org.telegram.ui.Components.h61.k(duVar.X));
+        arrayList.add(org.telegram.ui.Components.h61.C(null));
         ArrayList arrayList2 = duVar.a0;
         if (arrayList2 == null || arrayList2.isEmpty()) {
             return;
@@ -239,10 +239,10 @@ public final class du extends org.telegram.ui.Components.cb {
                 return;
             }
             int i11 = xg.k.a;
-            org.telegram.ui.Components.g61 J = org.telegram.ui.Components.g61.J(xg.k.class);
-            J.G = user;
-            J.K(duVar.b0.contains(l4));
-            arrayList.add(J);
+            org.telegram.ui.Components.h61 K = org.telegram.ui.Components.h61.K(xg.k.class);
+            K.G = user;
+            K.L(duVar.b0.contains(l4));
+            arrayList.add(K);
         }
     }
 
@@ -262,9 +262,9 @@ public final class du extends org.telegram.ui.Components.cb {
 
     @Override // org.telegram.ui.Components.cb
     public final org.telegram.ui.Components.yl0 v(org.telegram.ui.Components.zl0 zl0Var) {
-        org.telegram.ui.Components.u61 u61Var = new org.telegram.ui.Components.u61(zl0Var, getContext(), this.currentAccount, 0, true, new c5(this, 10), this.resourcesProvider);
-        this.d0 = u61Var;
-        return u61Var;
+        org.telegram.ui.Components.w61 w61Var = new org.telegram.ui.Components.w61(zl0Var, getContext(), this.currentAccount, 0, true, new c5(this, 10), this.resourcesProvider);
+        this.d0 = w61Var;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

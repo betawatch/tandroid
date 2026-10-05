@@ -4,12 +4,12 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.pc0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class f0 extends lw0 {
+public final class f0 extends mw0 {
     public final /* synthetic */ j0 w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -18,17 +18,17 @@ public final class f0 extends lw0 {
         this.w0 = j0Var;
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public final boolean P() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public final boolean Q() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public final void U(Drawable drawable) {
         if (drawable instanceof pc0) {
             ((pc0) drawable).p();
@@ -47,17 +47,17 @@ public final class f0 extends lw0 {
         if (aVar instanceof fh.b) {
             ((fh.b) aVar).c(getWidth(), getHeight());
         }
-        j0Var.d.y(canvas, 0.0f, 0.0f, getWidth(), getHeight());
+        j0Var.d.v(canvas, 0.0f, 0.0f, getWidth(), getHeight());
         return false;
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public final Drawable getNewDrawable() {
         Drawable drawable = this.w0.y;
         return drawable != null ? drawable : super.getNewDrawable();
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         this.w0.o();

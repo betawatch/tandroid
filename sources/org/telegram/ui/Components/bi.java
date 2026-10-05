@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class bi extends mu {
     public final /* synthetic */ xi V;
@@ -43,9 +43,9 @@ public final class bi extends mu {
         bi biVar = xiVar.P0;
         if (!xiVar.u1) {
             if (motionEvent.getX() <= biVar.getEditText().getLeft() || motionEvent.getX() >= biVar.getEditText().getRight() || motionEvent.getY() <= biVar.getEditText().getTop() || motionEvent.getY() >= biVar.getEditText().getBottom()) {
-                xiVar.q1(biVar.getEditText(), false);
+                xiVar.s1(biVar.getEditText(), false);
             } else {
-                xiVar.q1(biVar.getEditText(), true);
+                xiVar.s1(biVar.getEditText(), true);
             }
         }
         return super.onInterceptTouchEvent(motionEvent);
@@ -54,15 +54,15 @@ public final class bi extends mu {
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        this.V.Y1();
+        this.V.a2();
     }
 
     @Override // org.telegram.ui.Components.mu
     public final void q(int i10, int i11) {
         xi xiVar = this.V;
-        xiVar.Y1();
+        xiVar.a2();
         if (xiVar.c0) {
-            xiVar.J1(i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
+            xiVar.L1(i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
         }
     }
 }

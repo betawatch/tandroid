@@ -14,7 +14,6 @@ import com.google.android.gms.internal.cast.g1;
 import com.google.android.gms.internal.cast.n4;
 import com.google.android.gms.internal.cast.o4;
 import com.google.android.gms.internal.cast.s4;
-import hg.k0;
 import j$.util.DesugarCollections;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
@@ -26,7 +25,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import v7.j5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class a {
     public static final g6.b l = new g6.b("CastContext", null);
@@ -137,7 +136,7 @@ public final class a {
                             com.google.android.gms.internal.cast.n nVar = this.h;
                             List unmodifiableList = DesugarCollections.unmodifiableList(this.e.w);
                             nVar.getClass();
-                            com.google.android.gms.internal.cast.n.f.b(k0.i(unmodifiableList.size(), "SetRouteDiscovery for ", " IDs"), new Object[0]);
+                            com.google.android.gms.internal.cast.n.f.b(hg.c.i(unmodifiableList.size(), "SetRouteDiscovery for ", " IDs"), new Object[0]);
                             LinkedHashSet<String> linkedHashSet = new LinkedHashSet();
                             Iterator it2 = unmodifiableList.iterator();
                             while (it2.hasNext()) {

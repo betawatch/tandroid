@@ -29,17 +29,17 @@ import l5.o;
 import la.h;
 import m.p3;
 import m1.j;
-import m5.e;
 import org.json.JSONObject;
 import org.telegram.ui.fs0;
 import r2.s;
 import rg.x;
 import s5.g;
+import sa.e;
 import w7.h6;
 import y9.b0;
 import y9.k0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class b {
     public Object a;
@@ -53,9 +53,9 @@ public final class b {
     public Object i;
 
     public static void f(String str, JSONObject jSONObject) {
-        StringBuilder u10 = a4.a.u(str);
-        u10.append(jSONObject.toString());
-        String sb2 = u10.toString();
+        StringBuilder v = a4.a.v(str);
+        v.append(jSONObject.toString());
+        String sb2 = v.toString();
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
             Log.d("FirebaseCrashlytics", sb2, null);
         }
@@ -67,19 +67,19 @@ public final class b {
             str = str.concat(" processName");
         }
         if (((Integer) this.c) == null) {
-            str = t8.b.v(str, " reasonCode");
+            str = e.v(str, " reasonCode");
         }
         if (((Integer) this.d) == null) {
-            str = t8.b.v(str, " importance");
+            str = e.v(str, " importance");
         }
         if (((Long) this.e) == null) {
-            str = t8.b.v(str, " pss");
+            str = e.v(str, " pss");
         }
         if (((Long) this.f) == null) {
-            str = t8.b.v(str, " rss");
+            str = e.v(str, " rss");
         }
         if (((Long) this.g) == null) {
-            str = t8.b.v(str, " timestamp");
+            str = e.v(str, " timestamp");
         }
         if (str.isEmpty()) {
             return new b0(((Integer) this.a).intValue(), (String) this.b, ((Integer) this.c).intValue(), ((Integer) this.d).intValue(), ((Long) this.e).longValue(), ((Long) this.f).longValue(), ((Long) this.g).longValue(), (String) this.h, (List) this.i);
@@ -93,25 +93,25 @@ public final class b {
             str = str.concat(" model");
         }
         if (((Integer) this.c) == null) {
-            str = t8.b.v(str, " cores");
+            str = e.v(str, " cores");
         }
         if (((Long) this.d) == null) {
-            str = t8.b.v(str, " ram");
+            str = e.v(str, " ram");
         }
         if (((Long) this.e) == null) {
-            str = t8.b.v(str, " diskSpace");
+            str = e.v(str, " diskSpace");
         }
         if (((Boolean) this.f) == null) {
-            str = t8.b.v(str, " simulator");
+            str = e.v(str, " simulator");
         }
         if (((Integer) this.g) == null) {
-            str = t8.b.v(str, " state");
+            str = e.v(str, " state");
         }
         if (((String) this.h) == null) {
-            str = t8.b.v(str, " manufacturer");
+            str = e.v(str, " manufacturer");
         }
         if (((String) this.i) == null) {
-            str = t8.b.v(str, " modelClass");
+            str = e.v(str, " modelClass");
         }
         if (str.isEmpty()) {
             return new k0(((Integer) this.a).intValue(), (String) this.b, ((Integer) this.c).intValue(), ((Long) this.d).longValue(), ((Long) this.e).longValue(), ((Boolean) this.f).booleanValue(), ((Integer) this.g).intValue(), (String) this.h, (String) this.i);
@@ -182,7 +182,7 @@ public final class b {
         final l5.i iVar2 = iVar;
         byte[] bArr2 = iVar2.b;
         t5.c cVar = (t5.c) bVar.f;
-        e a2 = ((m5.d) bVar.b).a(iVar2.a);
+        m5.e a2 = ((m5.d) bVar.b).a(iVar2.a);
         long j10 = 0;
         while (true) {
             final int i13 = 0;
@@ -306,7 +306,7 @@ public final class b {
                     hVar.getClass();
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     try {
-                        hVar.y(aVar2, byteArrayOutputStream);
+                        hVar.t(aVar2, byteArrayOutputStream);
                     } catch (IOException unused) {
                     }
                     nVar.c = new l5.m(cVar3, byteArrayOutputStream.toByteArray());
@@ -390,7 +390,7 @@ public final class b {
                             str6 = str6.concat(" eventUptimeMs");
                         }
                         if (((Long) p3Var.f) == null) {
-                            str6 = t8.b.v(str6, " timezoneOffsetSeconds");
+                            str6 = e.v(str6, " timezoneOffsetSeconds");
                         }
                         if (!str6.isEmpty()) {
                             throw new IllegalStateException("Missing required properties:".concat(str6));

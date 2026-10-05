@@ -23,7 +23,7 @@ import org.telegram.ui.i80;
 import org.telegram.ui.k80;
 import org.telegram.ui.ve0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class h2 extends EditTextBoldCursor {
     public final /* synthetic */ int b;
@@ -76,10 +76,10 @@ public final class h2 extends EditTextBoldCursor {
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append((CharSequence) getText());
                 hp hpVar = (hp) this.c;
-                bp bpVar = hpVar.f;
-                if (bpVar != null && bpVar.getTextView() != null && !TextUtils.isEmpty(hpVar.f.getTextView().getText())) {
+                bp bpVar = hpVar.h;
+                if (bpVar != null && bpVar.getTextView() != null && !TextUtils.isEmpty(hpVar.h.getTextView().getText())) {
                     sb2.append("\n");
-                    sb2.append(hpVar.f.getTextView().getText());
+                    sb2.append(hpVar.h.getTextView().getText());
                 }
                 accessibilityNodeInfo.setText(sb2);
                 break;
@@ -101,7 +101,7 @@ public final class h2 extends EditTextBoldCursor {
                     v0Var.s.callOnClick();
                     return true;
                 }
-                gg.q0 q0Var = (gg.q0) hg.k0.g(1, v0Var.g0);
+                gg.q0 q0Var = (gg.q0) hg.c.g(1, v0Var.g0);
                 org.telegram.ui.ActionBar.f5 f5Var = v0Var.H;
                 if (f5Var != null) {
                     f5Var.o(q0Var);
@@ -116,7 +116,7 @@ public final class h2 extends EditTextBoldCursor {
                 if (!f20Var.d()) {
                     return true;
                 }
-                gg.q0 q0Var2 = (gg.q0) hg.k0.g(1, f20Var.F);
+                gg.q0 q0Var2 = (gg.q0) hg.c.g(1, f20Var.F);
                 e20 e20Var = f20Var.H;
                 if (e20Var != null) {
                     ((cy) e20Var).d(q0Var2);
@@ -129,7 +129,7 @@ public final class h2 extends EditTextBoldCursor {
                 if (i10 != 67 || i80Var.d.length() != 0 || k80Var.G.isEmpty()) {
                     return super.onKeyDown(i10, keyEvent);
                 }
-                k80Var.f.a((q30) hg.k0.g(1, k80Var.G));
+                k80Var.f.a((q30) hg.c.g(1, k80Var.G));
                 k80Var.c.e(!k80Var.G.isEmpty(), true);
                 k80Var.c0();
                 return true;

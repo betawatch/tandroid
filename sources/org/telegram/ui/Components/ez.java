@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ez extends yl0 {
     public final Context c;
@@ -371,7 +371,7 @@ public final class ez extends yl0 {
                 l3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int A = org.telegram.messenger.ok.A(82.0f, (int) Math.ceil(arrayList.size() / this.d), nzVar.h.getHeight());
+                int A = org.telegram.messenger.bi.A(82.0f, (int) Math.ceil(arrayList.size() / this.d), nzVar.h.getHeight());
                 l3Var.setHeight(A > 0 ? A : 1);
                 return;
             }
@@ -490,7 +490,7 @@ public final class ez extends yl0 {
                 n8Var.a = textView2;
                 textView2.setPadding(AndroidUtilities.dp(17.0f), 0, AndroidUtilities.dp(17.0f), 0);
                 textView2.setGravity(17);
-                org.telegram.messenger.f0.q(textView2, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false), 1, 14.0f);
+                org.telegram.messenger.q.q(textView2, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Sh, false), 1, 14.0f);
                 textView2.setBackground(org.telegram.ui.ActionBar.x5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.i6.Oh));
                 textView2.setText(LocaleController.getString(R.string.ChooseStickerSet).toUpperCase());
                 n8Var.addView(textView2, w7.z5.t(-2, 28, 51, 17, 10, 14, 8));

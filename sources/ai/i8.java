@@ -9,15 +9,15 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.av0;
+import org.telegram.ui.Components.bv0;
 import org.telegram.ui.Components.uh;
 import org.telegram.ui.Components.zm;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.am0;
-import org.telegram.ui.bj1;
 import org.telegram.ui.ki;
+import org.telegram.ui.zi1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class i8 implements RequestDelegate {
                 ((VoIPService) obj).lambda$startScreenCapture$60(i13, tLObject, tL_error);
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new zm((av0) obj, tLObject, i13, 16));
+                AndroidUtilities.runOnUIThread(new zm((bv0) obj, tLObject, i13, 16));
                 break;
             case 5:
                 LaunchActivity launchActivity = (LaunchActivity) obj;
@@ -84,13 +84,13 @@ public final /* synthetic */ class i8 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new zm((ki) obj, tLObject, i13, 29));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new am0((bj1) obj, i13, tLObject, i11));
+                AndroidUtilities.runOnUIThread(new am0((zi1) obj, i13, tLObject, i11));
                 break;
             case 8:
-                yh.x3.S((yh.x3) obj, i13, tLObject);
+                yh.y3.S((yh.y3) obj, i13, tLObject);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new am0((yh.t5) obj, i13, tLObject, 17));
+                AndroidUtilities.runOnUIThread(new am0((yh.u5) obj, i13, tLObject, 17));
                 break;
         }
     }

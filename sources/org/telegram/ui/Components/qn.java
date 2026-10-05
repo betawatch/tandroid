@@ -6,7 +6,7 @@ import android.view.ActionMode;
 import android.view.Menu;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class qn extends org.telegram.ui.Cells.d6 {
     public final /* synthetic */ int F;
@@ -43,7 +43,7 @@ public final class qn extends org.telegram.ui.Cells.d6 {
 
     @Override // org.telegram.ui.Cells.d6
     public final void k(org.telegram.ui.Cells.c6 c6Var) {
-        this.G.d.b.q1(c6Var, true);
+        this.G.d.b.s1(c6Var, true);
     }
 
     @Override // org.telegram.ui.Cells.d6

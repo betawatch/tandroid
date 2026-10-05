@@ -1,27 +1,45 @@
 package org.telegram.ui;
 
-import org.webrtc.RendererCommon;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.LinearLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.voip.VoIPServiceState;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class gi1 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ mi1 a;
+public final class gi1 extends LinearLayout {
+    public final /* synthetic */ ki1 a;
 
-    public gi1(mi1 mi1Var) {
-        this.a = mi1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gi1(ki1 ki1Var, Activity activity) {
+        super(activity);
+        this.a = ki1Var;
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        mi1 mi1Var = this.a;
-        com.google.android.gms.internal.cast.p pVar = mi1Var.l1;
-        if (pVar != null) {
-            pVar.run();
-            mi1Var.l1 = null;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        VoIPServiceState sharedState = VoIPService.getSharedState();
+        CharSequence text = this.a.E.getText();
+        if (sharedState == null || TextUtils.isEmpty(text)) {
+            return;
         }
-    }
-
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
+        StringBuilder sb2 = new StringBuilder(text);
+        sb2.append(", ");
+        if (sharedState.getPrivateCall() == null || !sharedState.getPrivateCall().video) {
+            sb2.append(LocaleController.getString(R.string.VoipInCallBranding));
+        } else {
+            sb2.append(LocaleController.getString(R.string.VoipInVideoCallBranding));
+        }
+        long callDuration = sharedState.getCallDuration();
+        if (callDuration > 0) {
+            sb2.append(", ");
+            sb2.append(LocaleController.formatDuration((int) (callDuration / 1000)));
+        }
+        accessibilityNodeInfo.setText(sb2);
     }
 }

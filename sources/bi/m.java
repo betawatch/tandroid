@@ -2,9 +2,9 @@ package bi;
 
 import ai.d9;
 import android.content.Context;
-import org.telegram.ui.Components.tx0;
+import org.telegram.ui.Components.ux0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class m extends t {
     public final /* synthetic */ u v;
@@ -22,10 +22,10 @@ public final class m extends t {
         if (uVar.r.getVisibility() == 0) {
             uVar.w.l();
         }
-        tx0 tx0Var = uVar.y;
-        if (tx0Var != null) {
+        ux0 ux0Var = uVar.y;
+        if (ux0Var != null) {
             d9 d9Var = this.e;
-            tx0Var.e(d9Var != null && d9Var.k(), true);
+            ux0Var.e(d9Var != null && d9Var.k(), true);
         }
     }
 }

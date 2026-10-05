@@ -8,7 +8,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class pc extends ReplacementSpan {
     public View a;
@@ -56,12 +56,12 @@ public final class pc extends ReplacementSpan {
             float f15 = measureText / 2.0f;
             float f16 = (i16 * measureText) + f7 + f15;
             if (i16 == this.b) {
-                f16 = AndroidUtilities.lerp(f16, t8.b.d(measureText, i16 + 1, f7, f15), this.d);
+                f16 = AndroidUtilities.lerp(f16, sa.e.d(measureText, i16 + 1, f7, f15), this.d);
                 float f17 = this.d;
-                f10 = AndroidUtilities.lerp(f13, f13 - f15, this.h.getInterpolation(f17 < 0.5f ? f17 / 0.5f : org.telegram.messenger.f0.x(f17, 0.5f, 0.5f, 1.0f)));
+                f10 = AndroidUtilities.lerp(f13, f13 - f15, this.h.getInterpolation(f17 < 0.5f ? f17 / 0.5f : org.telegram.messenger.q.x(f17, 0.5f, 0.5f, 1.0f)));
             } else {
                 if (i16 == this.c) {
-                    f16 = AndroidUtilities.lerp(f16, t8.b.d(measureText, i16 - 1, f7, f15), this.d);
+                    f16 = AndroidUtilities.lerp(f16, sa.e.d(measureText, i16 - 1, f7, f15), this.d);
                 }
                 f10 = f13;
             }

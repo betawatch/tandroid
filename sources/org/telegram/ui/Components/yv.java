@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class yv extends LinearLayout {
     public final a0.i a;
@@ -139,7 +139,7 @@ public final class yv extends LinearLayout {
         int i14 = (i13 - i11) / 2;
         if (!this.h) {
             int childCount = (getChildCount() - (!gwVar.W ? 1 : 0)) - (!gwVar.b0 ? 1 : 0);
-            int A = (int) (org.telegram.messenger.ok.A(30.0f, childCount, ((i12 - i10) - getPaddingLeft()) - getPaddingRight()) / Math.max(1, childCount - 1));
+            int A = (int) (org.telegram.messenger.bi.A(30.0f, childCount, ((i12 - i10) - getPaddingLeft()) - getPaddingRight()) / Math.max(1, childCount - 1));
             int paddingLeft = getPaddingLeft();
             for (int i15 = 0; i15 < childCount; i15++) {
                 View childAt = getChildAt((!gwVar.W ? 1 : 0) + (!gwVar.b0 ? 1 : 0) + i15);
@@ -191,7 +191,7 @@ public final class yv extends LinearLayout {
                         childAt2.setScaleX(0.0f);
                         childAt2.setScaleY(0.0f);
                         childAt2.setAlpha(0.0f);
-                        childAt2.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(zg.e0.d() ? 0L : 200L).setInterpolator(tr.h).start();
+                        childAt2.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(zg.c0.d() ? 0L : 200L).setInterpolator(tr.h).start();
                     }
                 }
                 if (l4 != null) {
@@ -203,7 +203,7 @@ public final class yv extends LinearLayout {
                     iVar.k(Integer.valueOf(paddingLeft2), l4.longValue());
                 }
                 if ((childAt2 != gwVar.y || gwVar.W) && (childAt2 != gwVar.E || gwVar.b0)) {
-                    paddingLeft2 = org.telegram.messenger.f0.C(3.0f, childAt2.getMeasuredWidth(), paddingLeft2);
+                    paddingLeft2 = org.telegram.messenger.q.C(3.0f, childAt2.getMeasuredWidth(), paddingLeft2);
                 }
             }
             i16++;

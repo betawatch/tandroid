@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.ya;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
@@ -24,16 +24,16 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.jk;
 import org.telegram.ui.yn;
 import w7.z5;
-import yh.t5;
+import yh.u5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class j extends cb implements NotificationCenter.NotificationCenterDelegate {
     public final zf.a X;
     public final d1 Y;
     public final FrameLayout Z;
     public Runnable a0;
-    public u61 b0;
+    public w61 b0;
 
     public j(Context context, d6 d6Var, zf.a aVar, boolean z10, Runnable runnable) {
         super(context, null, false, false, d6Var);
@@ -56,7 +56,7 @@ public final class j extends cb implements NotificationCenter.NotificationCenter
         final int i12 = 1;
         d1 d1Var = new d1(context, 1, d6Var);
         this.Y = d1Var;
-        ((TextView) d1Var.c).setText(LocaleController.formatString(R.string.TonNeededTitle, zf.a.i(aVar.b - t5.y(this.currentAccount, true).s().b, zf.b.b).d()));
+        ((TextView) d1Var.c).setText(LocaleController.formatString(R.string.TonNeededTitle, zf.a.i(aVar.b - u5.y(this.currentAccount, true).s().b, zf.b.b).d()));
         TextView textView = (TextView) d1Var.d;
         textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.FragmentAddFunds)));
         textView.setMaxWidth(e4.a(textView.getText(), textView.getPaint()));
@@ -108,9 +108,9 @@ public final class j extends cb implements NotificationCenter.NotificationCenter
                 }
             });
         }
-        u61 u61Var = this.b0;
-        if (u61Var != null) {
-            u61Var.N(false);
+        w61 w61Var = this.b0;
+        if (w61Var != null) {
+            w61Var.N(false);
         }
     }
 
@@ -118,11 +118,11 @@ public final class j extends cb implements NotificationCenter.NotificationCenter
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         Runnable runnable;
         if (i10 == NotificationCenter.starOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) {
-            u61 u61Var = this.b0;
-            if (u61Var != null) {
-                u61Var.N(true);
+            w61 w61Var = this.b0;
+            if (w61Var != null) {
+                w61Var.N(true);
             }
-            zf.a s10 = t5.y(this.currentAccount, true).s();
+            zf.a s10 = u5.y(this.currentAccount, true).s();
             TextView textView = (TextView) this.Y.c;
             int i12 = R.string.TonNeededTitle;
             zf.a aVar = this.X;
@@ -159,7 +159,7 @@ public final class j extends cb implements NotificationCenter.NotificationCenter
     @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
     public final void show() {
         jk jkVar;
-        if (t5.y(this.currentAccount, true).s().b >= this.X.b) {
+        if (u5.y(this.currentAccount, true).s().b >= this.X.b) {
             Runnable runnable = this.a0;
             if (runnable != null) {
                 runnable.run();
@@ -182,9 +182,9 @@ public final class j extends cb implements NotificationCenter.NotificationCenter
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(this.d, getContext(), this.currentAccount, 0, true, new v(this, 11), this.resourcesProvider);
-        this.b0 = u61Var;
-        return u61Var;
+        w61 w61Var = new w61(this.d, getContext(), this.currentAccount, 0, true, new v(this, 11), this.resourcesProvider);
+        this.b0 = w61Var;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

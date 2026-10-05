@@ -15,13 +15,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.nz;
 import org.telegram.ui.Components.sk0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class jc extends lw0 {
+public final class jc extends mw0 {
     public boolean A0;
     public float B0;
     public float C0;
@@ -98,7 +98,7 @@ public final class jc extends lw0 {
     /* JADX WARN: Type inference failed for: r11v3, types: [boolean] */
     /* JADX WARN: Type inference failed for: r11v5 */
     /* JADX WARN: Type inference failed for: r11v7 */
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -288,7 +288,7 @@ public final class jc extends lw0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public int getBottomPadding() {
         int height = getHeight();
         kc kcVar = this.E0;
@@ -299,7 +299,7 @@ public final class jc extends lw0 {
         return getHeight() - this.E0.r.getBottom();
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -310,7 +310,7 @@ public final class jc extends lw0 {
         return (height - kcVar.b0) - kcVar.r.getBottom();
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
         nz emojiView;
@@ -367,10 +367,10 @@ public final class jc extends lw0 {
             if (sk0Var != null) {
                 int i21 = kcVar.Y;
                 sk0Var.layout(i21, kcVar.Z, sk0Var.getMeasuredWidth() + i21, kcVar.v1.Z1.getMeasuredHeight() + kcVar.Z);
-                yh.t3 t3Var = kcVar.v1.Z1.getReactionsWindow() != null ? kcVar.v1.Z1.getReactionsWindow().c : null;
-                if (t3Var != null) {
+                yh.u3 u3Var = kcVar.v1.Z1.getReactionsWindow() != null ? kcVar.v1.Z1.getReactionsWindow().c : null;
+                if (u3Var != null) {
                     int i22 = kcVar.Y;
-                    t3Var.layout(i22, kcVar.Z, t3Var.getMeasuredWidth() + i22, t3Var.getMeasuredHeight() + kcVar.Z);
+                    u3Var.layout(i22, kcVar.Z, u3Var.getMeasuredWidth() + i22, u3Var.getMeasuredHeight() + kcVar.Z);
                 }
             }
         }

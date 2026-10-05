@@ -1,43 +1,103 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.FileLog;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class q51 extends s4.s {
-    public final /* synthetic */ int Q;
-    public final /* synthetic */ c71 R;
+public final class q51 implements org.telegram.ui.Components.pl0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
+    public final /* synthetic */ Integer d;
+    public final /* synthetic */ a71 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q51(c71 c71Var, int i10) {
-        super(40);
-        this.Q = i10;
-        this.R = c71Var;
+    public q51(a71 a71Var, int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, Integer num) {
+        this.e = a71Var;
+        this.a = i10;
+        this.b = context;
+        this.c = d6Var;
+        this.d = num;
     }
 
-    @Override // s4.c0, s4.o0
-    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
-        switch (this.Q) {
-            case 0:
+    @Override // org.telegram.ui.Components.pl0
+    public final boolean c(float f7, float f10, int i10, View view) {
+        a71 a71Var = this.e;
+        int i11 = a71Var.V;
+        int i12 = this.a;
+        if (i12 != 11 && i12 != 13 && a71Var.h1) {
+            boolean z10 = view instanceof j61;
+            if (z10 && (i12 == 1 || i12 == 8)) {
+                a71Var.l();
                 try {
-                    ci.m1 m1Var = new ci.m1(this, recyclerView.getContext(), 3);
-                    m1Var.a = i10;
-                    w0(m1Var);
-                    break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
+                    a71Var.performHapticFeedback(0);
+                } catch (Exception unused) {
                 }
-            default:
-                try {
-                    ci.m1 m1Var2 = new ci.m1(this, recyclerView.getContext(), 5);
-                    m1Var2.a = i10;
-                    w0(m1Var2);
-                    break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
+                j61 j61Var = (j61) view;
+                if (!j61Var.s && !UserConfig.getInstance(i11).isPremium()) {
+                    org.telegram.ui.Components.z5 z5Var = j61Var.e;
+                    TLRPC.Document document = z5Var.document;
+                    if (document == null) {
+                        document = org.telegram.ui.Components.q5.f(i11, z5Var.documentId);
+                    }
+                    a71Var.p(j61Var, Long.valueOf(j61Var.e.documentId), document, j61Var.v, null);
+                    return true;
                 }
+                a71Var.S0 = j61Var;
+                a71Var.U0 = 0.0f;
+                a71Var.T0 = false;
+                if (j61Var.s) {
+                    a71Var.setBigReactionAnimatedEmoji(null);
+                    TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i11).getReactionsMap().get(a71Var.S0.x.f);
+                    if (tL_availableReaction != null) {
+                        a71Var.V0.setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60_pcache", null, null, null, 0L, "tgs", a71Var.S0.x, 0);
+                    }
+                } else {
+                    a71Var.setBigReactionAnimatedEmoji(new org.telegram.ui.Components.q5(4, i11, a71Var.S0.e.documentId));
+                }
+                a71Var.h0.invalidate();
+                a71Var.m();
+                return true;
+            }
+            if (z10) {
+                j61 j61Var2 = (j61) view;
+                if (j61Var2.e != null && (i12 == 0 || i12 == 12 || i12 == 9 || i12 == 10)) {
+                    TL_stars.TL_starGiftUnique tL_starGiftUnique = j61Var2.v;
+                    p51 p51Var = new p51(this, this.b, a71Var.T1, a71Var, j61Var2, this.c, view, tL_starGiftUnique);
+                    a71Var.X0 = p51Var;
+                    p51Var.show();
+                    try {
+                        view.performHapticFeedback(0, 1);
+                    } catch (Exception unused2) {
+                    }
+                    return true;
+                }
+            }
         }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.pl0
+    public final void i() {
+        a71 a71Var = this.e;
+        if (a71Var.S0 != null) {
+            a71Var.T0 = true;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(a71Var.U0, 0.0f);
+            ofFloat.addUpdateListener(new b21(this, 7));
+            ofFloat.addListener(new ap0(this, 20));
+            ofFloat.setDuration(150L);
+            ofFloat.setInterpolator(org.telegram.ui.Components.tr.f);
+            ofFloat.start();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.pl0
+    public final /* synthetic */ void q(float f7) {
     }
 }

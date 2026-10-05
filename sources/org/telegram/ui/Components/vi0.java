@@ -15,9 +15,9 @@ import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
-import org.telegram.ui.vf1;
+import org.telegram.ui.tf1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class vi0 {
     public ValueAnimator A;
@@ -190,7 +190,7 @@ public abstract class vi0 {
         if (!this.X || this.Y || (s2Var = this.H) == null || this.I == null) {
             return;
         }
-        boolean z12 = s2Var instanceof vf1;
+        boolean z12 = s2Var instanceof tf1;
         int dp = AndroidUtilities.dp(z12 ? 15.0f : 28.0f);
         int dp2 = AndroidUtilities.dp(8.0f);
         int dp3 = AndroidUtilities.dp(9.0f);
@@ -487,7 +487,7 @@ public abstract class vi0 {
                 float z16 = com.google.android.gms.internal.vision.e2.z(1.0f, this.o, 0.1f, 0.9f);
                 canvas.scale(z16, z16, width2, height2 - (AndroidUtilities.dp(8.0f) * this.o));
             }
-            canvas.saveLayerAlpha(0.0f, 0.0f, this.H.getMeasuredWidth(), this.H.getMeasuredHeight(), (int) (org.telegram.messenger.f0.z(1.0f, this.o, 255.0f, f12) * this.x), 31);
+            canvas.saveLayerAlpha(0.0f, 0.0f, this.H.getMeasuredWidth(), this.H.getMeasuredHeight(), (int) (org.telegram.messenger.q.z(1.0f, this.o, 255.0f, f12) * this.x), 31);
             canvas.translate((width2 - this.V) - (this.W / 2.0f), ((AndroidUtilities.dp(8.0f) * this.o) + height2) - this.T.getHeight());
             float f53 = this.U;
             canvas.scale(f53, f53, (this.W / 2.0f) + this.V, this.T.getHeight());
@@ -508,7 +508,7 @@ public abstract class vi0 {
         float f55 = i27;
         float dp7 = AndroidUtilities.dp(24.0f) / f55;
         float f56 = this.C;
-        float d10 = t8.b.d(1.0f - dp7, f56, dp7, f7);
+        float d10 = sa.e.d(1.0f - dp7, f56, dp7, f7);
         float f57 = i16 - f23;
         float f58 = 1.0f - f56;
         canvas.translate(f57 * f58, (height3 - f13) * f58);

@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.sf0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class VideoEditedInfo {
     public int account;
@@ -84,7 +84,7 @@ public class VideoEditedInfo {
     public boolean shouldLimitFps = true;
     public ArrayList<MediaCodecVideoConvertor.MixedSoundInfo> mixedSoundInfos = new ArrayList<>();
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class EmojiEntity extends TLRPC.TL_messageEntityCustomEmoji {
         public String documentAbsolutePath;
         public MediaEntity entity;
@@ -255,28 +255,28 @@ public class VideoEditedInfo {
         long j12 = this.videoOffset;
         String str3 = bytesToHex;
         String str4 = this.originalPath;
-        StringBuilder t10 = a4.a.t(j3, "-1_", "_");
-        t10.append(j10);
-        t10.append("_");
-        t10.append(i14);
-        t10.append("_");
-        t10.append(i15);
-        t10.append("_");
-        t10.append(i16);
-        t10.append("_");
-        t10.append(i17);
-        t10.append("_");
-        t10.append(i18);
-        t10.append("_");
-        t10.append(i19);
-        t10.append("_");
-        t10.append(j11);
-        t10.append("_");
-        t10.append(i20);
-        t10.append("_");
-        t10.append(j12);
-        t10.append("_-");
-        return a4.a.q(str3, "_", str4, t10);
+        StringBuilder u10 = a4.a.u(j3, "-1_", "_");
+        u10.append(j10);
+        u10.append("_");
+        u10.append(i14);
+        u10.append("_");
+        u10.append(i15);
+        u10.append("_");
+        u10.append(i16);
+        u10.append("_");
+        u10.append(i17);
+        u10.append("_");
+        u10.append(i18);
+        u10.append("_");
+        u10.append(i19);
+        u10.append("_");
+        u10.append(j11);
+        u10.append("_");
+        u10.append(i20);
+        u10.append("_");
+        u10.append(j12);
+        u10.append("_-");
+        return a4.a.r(str3, "_", str4, u10);
     }
 
     public boolean needConvert() {
@@ -436,7 +436,7 @@ public class VideoEditedInfo {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class Part extends TLObject {
         public org.telegram.ui.Components.d6 animatedFileDrawable;
         public float currentFrame;
@@ -561,7 +561,7 @@ public class VideoEditedInfo {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class MediaEntity {
         public static final byte TYPE_LINK = 7;
         public static final byte TYPE_LOCATION = 3;
@@ -620,7 +620,7 @@ public class VideoEditedInfo {
         public View view;
         public int viewHeight;
         public int viewWidth;
-        public zg.o0 visibleReaction;
+        public zg.m0 visibleReaction;
         public ci.jd weather;
         public float width;
         public float x;

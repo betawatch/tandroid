@@ -1,71 +1,45 @@
 package yh;
 
-import java.util.ArrayList;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
+import android.os.Bundle;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.ta1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x3 b;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
-    public final /* synthetic */ zf.a d;
-    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ m1(x3 x3Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, zf.a aVar, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = x3Var;
-        this.c = tL_starGiftUnique;
-        this.d = aVar;
-        this.e = runnable;
+    public /* synthetic */ m1(long j3, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.c = j3;
+        this.b = n2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
-        zf.b bVar = zf.b.a;
-        zf.b bVar2 = zf.b.b;
-        Runnable runnable = this.e;
-        zf.a aVar = this.d;
-        TL_stars.TL_starGiftUnique tL_starGiftUnique = this.c;
-        x3 x3Var = this.b;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                x3Var.getClass();
-                tL_starGiftUnique.flags |= 16;
-                tL_starGiftUnique.resale_ton_only = aVar.a == bVar2;
-                ArrayList<TL_stars.StarsAmount> arrayList = new ArrayList<>();
-                tL_starGiftUnique.resell_amount = arrayList;
-                arrayList.add(aVar.e(bVar).o());
-                tL_starGiftUnique.resell_amount.add(aVar.e(bVar2).o());
-                x3Var.e0.setResellPrice(aVar);
-                xh.d2 d2Var = x3Var.d1;
-                if (d2Var != null) {
-                    d2Var.run();
+                Bundle bundle = new Bundle();
+                long j3 = this.c;
+                if (j3 >= 0) {
+                    bundle.putLong("user_id", j3);
+                } else {
+                    bundle.putLong("chat_id", -j3);
                 }
-                if (runnable != null) {
-                    runnable.run();
-                }
-                hg.k0.p(R.string.Gift2ResaleEnable, new Object[]{x3Var.C1()}, x3Var.getBulletinFactory(), R.raw.contact_check, 36);
+                bundle.putBoolean("my_profile", true);
+                bundle.putBoolean("open_gifts", true);
+                this.b.presentFragment(new ProfileActivity(bundle, null));
                 break;
             default:
-                tL_starGiftUnique.flags |= 16;
-                tL_starGiftUnique.resale_ton_only = aVar.a == bVar2;
-                ArrayList<TL_stars.StarsAmount> arrayList2 = new ArrayList<>();
-                tL_starGiftUnique.resell_amount = arrayList2;
-                arrayList2.add(aVar.e(bVar).o());
-                tL_starGiftUnique.resell_amount.add(aVar.e(bVar2).o());
-                x3Var.e0.setResellPrice(aVar);
-                xh.d2 d2Var2 = x3Var.d1;
-                if (d2Var2 != null) {
-                    d2Var2.run();
-                }
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                org.telegram.ui.ActionBar.n2 n2Var = this.b;
+                n2Var.presentFragment(ta1.b0(n2Var.getMessagesController().getChat(Long.valueOf(-this.c)), true));
                 break;
         }
+    }
+
+    public /* synthetic */ m1(org.telegram.ui.ActionBar.n2 n2Var, long j3) {
+        this.b = n2Var;
+        this.c = j3;
     }
 }

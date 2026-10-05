@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class i0 extends View {
     public final Paint a;
@@ -177,7 +177,7 @@ public final class i0 extends View {
         matrix.preScale(b7Var.getWidth() / j0Var.x.i0, b7Var.getHeight() / j0Var.x.j0);
         matrix.preConcat(j0Var.x.n0);
         matrix.preTranslate(b7Var.getContentWidth() / f7, b7Var.getContentHeight() / f7);
-        matrix2.preTranslate((getContainerWidth() / f7) + AndroidUtilities.dp(16.0f), org.telegram.messenger.f0.a(getContainerHeight(), AndroidUtilities.dp(32.0f), f7, !(getContext() instanceof BubbleActivity) ? AndroidUtilities.statusBarHeight : 0.0f));
+        matrix2.preTranslate((getContainerWidth() / f7) + AndroidUtilities.dp(16.0f), org.telegram.messenger.q.a(getContainerHeight(), AndroidUtilities.dp(32.0f), f7, !(getContext() instanceof BubbleActivity) ? AndroidUtilities.statusBarHeight : 0.0f));
         if (z10) {
             Matrix matrix3 = this.d;
             float f13 = j0Var.r;
@@ -225,7 +225,7 @@ public final class i0 extends View {
                 float f18 = 1.0f - (e7 * f11);
                 matrix2.preScale(f18, 1.0f);
                 matrix.preScale(f18, 1.0f);
-                float z13 = org.telegram.messenger.f0.z(1.0f, e7, 4.0f * e7, 0.25f);
+                float z13 = org.telegram.messenger.q.z(1.0f, e7, 4.0f * e7, 0.25f);
                 matrix2.preSkew(0.0f, z13);
                 matrix.preSkew(0.0f, z13);
                 matrix2.preTranslate((-b7Var.getContentWidth()) / f11, (-b7Var.getContentHeight()) / f11);
@@ -266,7 +266,7 @@ public final class i0 extends View {
         float f182 = 1.0f - (e72 * f11);
         matrix2.preScale(f182, 1.0f);
         matrix.preScale(f182, 1.0f);
-        float z132 = org.telegram.messenger.f0.z(1.0f, e72, 4.0f * e72, 0.25f);
+        float z132 = org.telegram.messenger.q.z(1.0f, e72, 4.0f * e72, 0.25f);
         matrix2.preSkew(0.0f, z132);
         matrix.preSkew(0.0f, z132);
         matrix2.preTranslate((-b7Var.getContentWidth()) / f11, (-b7Var.getContentHeight()) / f11);

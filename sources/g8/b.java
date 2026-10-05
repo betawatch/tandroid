@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import java.util.Arrays;
 import w7.g0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class b extends o6.a {
     public static final Parcelable.Creator<b> CREATOR = new j(3);
@@ -37,15 +37,15 @@ public final class b extends o6.a {
 
     public final String toString() {
         String str;
-        StringBuilder u10 = a4.a.u("LastLocationRequest[");
+        StringBuilder v = a4.a.v("LastLocationRequest[");
         long j3 = this.a;
         if (j3 != Long.MAX_VALUE) {
-            u10.append("maxAge=");
-            r7.p.a(u10, j3);
+            v.append("maxAge=");
+            r7.p.a(v, j3);
         }
         int i10 = this.b;
         if (i10 != 0) {
-            u10.append(", ");
+            v.append(", ");
             if (i10 == 0) {
                 str = "GRANULARITY_PERMISSION_LEVEL";
             } else if (i10 == 1) {
@@ -56,23 +56,23 @@ public final class b extends o6.a {
                 }
                 str = "GRANULARITY_FINE";
             }
-            u10.append(str);
+            v.append(str);
         }
         if (this.c) {
-            u10.append(", bypass");
+            v.append(", bypass");
         }
         String str2 = this.d;
         if (str2 != null) {
-            u10.append(", moduleId=");
-            u10.append(str2);
+            v.append(", moduleId=");
+            v.append(str2);
         }
         r7.j jVar = this.e;
         if (jVar != null) {
-            u10.append(", impersonation=");
-            u10.append(jVar);
+            v.append(", impersonation=");
+            v.append(jVar);
         }
-        u10.append(']');
-        return u10.toString();
+        v.append(']');
+        return v.toString();
     }
 
     @Override // android.os.Parcelable

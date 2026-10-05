@@ -4,18 +4,18 @@ import android.content.DialogInterface;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.vt0;
-import yh.w6;
+import yh.x6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ int b;
     public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
 
-    public /* synthetic */ s(int i10, w6 w6Var) {
+    public /* synthetic */ s(int i10, x6 x6Var) {
         this.b = i10;
-        this.c = w6Var;
+        this.c = x6Var;
     }
 
     @Override // android.content.DialogInterface.OnDismissListener
@@ -32,7 +32,7 @@ public final /* synthetic */ class s implements DialogInterface.OnDismissListene
                 m0Var.C0(this.b);
                 break;
             default:
-                NotificationCenter.getInstance(this.b).removeObserver((w6) this.c, NotificationCenter.starSubscriptionsLoaded);
+                NotificationCenter.getInstance(this.b).removeObserver((x6) this.c, NotificationCenter.starSubscriptionsLoaded);
                 break;
         }
     }

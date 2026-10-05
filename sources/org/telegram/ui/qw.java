@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qw implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -34,13 +34,13 @@ public final /* synthetic */ class qw implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ew((uy) this.d, this.b, tLObject, (TLRPC.User) this.e, (TLRPC.Chat) this.f, this.c, tL_error, (TLRPC.TL_messages_checkHistoryImportPeer) this.g));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ew((yh.x3) this.d, (nf.e) this.e, this.b, tLObject, (TL_stars.TL_starGiftUnique) this.f, tL_error, this.c, (CharSequence) this.g));
+                AndroidUtilities.runOnUIThread(new ew((yh.y3) this.d, (nf.e) this.e, this.b, tLObject, (TL_stars.TL_starGiftUnique) this.f, tL_error, this.c, (CharSequence) this.g));
                 break;
         }
     }
 
-    public /* synthetic */ qw(yh.x3 x3Var, nf.e eVar, org.telegram.ui.ActionBar.b2 b2Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, CharSequence charSequence) {
-        this.d = x3Var;
+    public /* synthetic */ qw(yh.y3 y3Var, nf.e eVar, org.telegram.ui.ActionBar.b2 b2Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, CharSequence charSequence) {
+        this.d = y3Var;
         this.e = eVar;
         this.b = b2Var;
         this.f = tL_starGiftUnique;

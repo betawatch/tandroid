@@ -23,20 +23,20 @@ import org.telegram.ui.Components.qg;
 import org.telegram.ui.Components.sg0;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.a00;
-import org.telegram.ui.bh1;
-import org.telegram.ui.c71;
+import org.telegram.ui.a71;
 import org.telegram.ui.ff0;
 import org.telegram.ui.k70;
 import org.telegram.ui.ld;
 import org.telegram.ui.nd;
+import org.telegram.ui.pd1;
 import org.telegram.ui.qs;
-import org.telegram.ui.rd1;
 import org.telegram.ui.to;
 import org.telegram.ui.vz;
 import org.telegram.ui.wn;
 import org.telegram.ui.yn;
+import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class r6 extends View implements le.d {
     public final /* synthetic */ int a;
@@ -414,7 +414,7 @@ public final class r6 extends View implements le.d {
                 }
                 break;
             case 14:
-                if (((c71) this.c).Q0) {
+                if (((a71) this.c).Q0) {
                     canvas.drawColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G8, (org.telegram.ui.ActionBar.d6) this.b));
                     break;
                 } else {
@@ -422,11 +422,11 @@ public final class r6 extends View implements le.d {
                     break;
                 }
             case 15:
-                rd1 rd1Var = (rd1) this.c;
-                int currentItem = rd1Var.j0.getCurrentItem();
+                pd1 pd1Var = (pd1) this.c;
+                int currentItem = pd1Var.j0.getCurrentItem();
                 Paint paint11 = (Paint) this.b;
                 int i13 = org.telegram.ui.ActionBar.i6.Ae;
-                paint11.setColor(rd1Var.d ? org.telegram.ui.ActionBar.i6.C0(i13) : rd1Var.getThemedColor(i13));
+                paint11.setColor(pd1Var.d ? org.telegram.ui.ActionBar.i6.C0(i13) : pd1Var.getThemedColor(i13));
                 int i14 = 0;
                 while (i14 < 2) {
                     paint11.setAlpha(i14 == currentItem ? 255 : 127);
@@ -439,7 +439,7 @@ public final class r6 extends View implements le.d {
                 paint12.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
                 int measuredHeight2 = getMeasuredHeight() - AndroidUtilities.dp(3.0f);
                 canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), measuredHeight2, paint12);
-                c5Var = ((org.telegram.ui.ActionBar.n2) ((bh1) this.c)).parentLayout;
+                c5Var = ((org.telegram.ui.ActionBar.n2) ((zg1) this.c)).parentLayout;
                 ((ActionBarLayout) c5Var).q(canvas, measuredHeight2);
                 break;
             case 17:
@@ -624,18 +624,18 @@ public final class r6 extends View implements le.d {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r6(bh1 bh1Var, Context context) {
+    public r6(zg1 zg1Var, Context context) {
         super(context);
         this.a = 16;
-        this.c = bh1Var;
+        this.c = zg1Var;
         this.b = new Paint();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r6(Context context, rd1 rd1Var) {
+    public r6(Context context, pd1 pd1Var) {
         super(context);
         this.a = 15;
-        this.c = rd1Var;
+        this.c = pd1Var;
         this.b = new Paint(1);
     }
 

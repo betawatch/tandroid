@@ -7,7 +7,7 @@ import android.os.Bundle;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
@@ -17,7 +17,7 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.oj0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -85,18 +85,18 @@ public final /* synthetic */ class u implements Utilities.Callback2 {
                                 break;
                             }
                         } else {
-                            Bundle e7 = ok.e(15, "onlySelect", "dialogsType", true);
-                            e7.putLong("requestPeerBotId", c1Var2.U.id);
+                            Bundle d = bi.d(15, "onlySelect", "dialogsType", true);
+                            d.putLong("requestPeerBotId", c1Var2.U.id);
                             try {
                                 SerializedData serializedData = new SerializedData(tL_buttonTypeRequestPeer.peer_type.getObjectSize());
                                 tL_buttonTypeRequestPeer.peer_type.serializeToStream(serializedData);
-                                e7.putByteArray("requestPeerType", serializedData.toByteArray());
+                                d.putByteArray("requestPeerType", serializedData.toByteArray());
                                 serializedData.cleanup();
-                            } catch (Exception e10) {
-                                FileLog.e(e10);
+                            } catch (Exception e7) {
+                                FileLog.e(e7);
                             }
                             boolean[] zArr2 = new boolean[1];
-                            g0 g0Var = new g0(c1Var2, e7, zArr2, daVar2);
+                            g0 g0Var = new g0(c1Var2, d, zArr2, daVar2);
                             g0Var.C2 = new c0(c1Var2, zArr2, str2, tL_buttonTypeRequestPeer, daVar2);
                             org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                             if (U != null) {

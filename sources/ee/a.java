@@ -16,7 +16,7 @@ import zd.f1;
 import zd.g2;
 import zd.w0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("NO_DECISION", 1);
@@ -110,7 +110,7 @@ public abstract class a {
         if (!(obj instanceof y)) {
             Object fold = hVar.fold(null, w.d);
             kotlin.jvm.internal.i.c(fold, "null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>");
-            a4.a.y(fold);
+            a4.a.z(fold);
             throw null;
         }
         y yVar = (y) obj;
@@ -285,7 +285,7 @@ public abstract class a {
         if (obj instanceof Integer) {
             return hVar.fold(new y(((Number) obj).intValue(), hVar), w.e);
         }
-        a4.a.y(obj);
+        a4.a.z(obj);
         throw null;
     }
 }

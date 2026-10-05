@@ -1,137 +1,38 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
-/* loaded from: classes3.dex */
-public final class h81 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-    public /* synthetic */ h81(Object obj, int i10) {
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class h81 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i81 b;
+
+    public /* synthetic */ h81(i81 i81Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = i81Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        String sb2;
         switch (this.a) {
             case 0:
-                if (i10 == -1) {
-                    ((SessionsActivity) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 1:
-                a91 a91Var = (a91) this.b;
-                if (i10 != -1) {
-                    if (i10 == 2) {
-                        a91Var.k0(new wg0(null));
-                        break;
-                    }
+                i81 i81Var = this.b;
+                String str = i81Var.b.text;
+                if (str == null || !str.equals("AUTH_TOKEN_EXCEPTION")) {
+                    StringBuilder sb3 = new StringBuilder();
+                    org.telegram.ui.Cells.c1.n(R.string.ErrorOccurred, "\n", sb3);
+                    sb3.append(i81Var.b.text);
+                    sb2 = sb3.toString();
                 } else {
-                    a91Var.finishFragment();
-                    break;
+                    sb2 = LocaleController.getString(R.string.AccountAlreadyLoggedIn);
                 }
-                break;
-            case 2:
-                if (i10 == -1) {
-                    ((va1) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 3:
-                StickersActivity stickersActivity = (StickersActivity) this.b;
-                if (i10 != -1) {
-                    StickersActivity.d0(stickersActivity, i10);
-                    break;
-                } else if (stickersActivity.onBackPressed(true)) {
-                    stickersActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 4:
-                wd1 wd1Var = (wd1) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        wd1.X(wd1Var);
-                        break;
-                    }
-                } else {
-                    wd1Var.finishFragment();
-                    break;
-                }
-                break;
-            case 5:
-                if (i10 == -1) {
-                    ((ne1) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 6:
-                if (i10 == -1) {
-                    ((eg1) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 7:
-                if (i10 == -1) {
-                    TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
-                    if (twoStepVerificationActivity.X < 0) {
-                        twoStepVerificationActivity.finishFragment();
-                        break;
-                    } else {
-                        twoStepVerificationActivity.x0();
-                        break;
-                    }
-                }
-                break;
-            case 8:
-                UserInfoActivity userInfoActivity = (UserInfoActivity) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        userInfoActivity.c0(true);
-                        break;
-                    }
-                } else if (userInfoActivity.onBackPressed(true)) {
-                    userInfoActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 9:
-                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        usersSelectActivity.W();
-                        break;
-                    }
-                } else {
-                    usersSelectActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 10:
-                if (i10 == -1) {
-                    ((rg.y0) this.b).dismiss();
-                    break;
-                }
-                break;
-            case 11:
-                if (i10 == -1) {
-                    ((xh.i4) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 12:
-                if (i10 == -1) {
-                    ((yh.g) this.b).finishFragment();
-                    break;
-                }
+                org.telegram.ui.Components.e5.u0(i81Var.c, LocaleController.getString(R.string.AuthAnotherClient), sb2, null);
                 break;
             default:
-                zg.q qVar = (zg.q) this.b;
-                if (i10 == -1 && !qVar.W(true)) {
-                    qVar.finishFragment();
-                    break;
-                }
+                org.telegram.ui.Components.e5.u0(this.b.c, LocaleController.getString(R.string.AuthAnotherClient), LocaleController.getString(R.string.ErrorOccurred), null);
                 break;
         }
     }

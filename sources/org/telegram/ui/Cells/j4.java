@@ -13,9 +13,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class j4 implements DownloadController.FileDownloadProgressListener {
     public TLRPC.MessageExtendedMedia E;
@@ -25,7 +25,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
     public final int I;
     public final int J;
     public int K;
-    public e11 L;
+    public f11 L;
     public boolean M;
     public int a;
     public int b;
@@ -63,7 +63,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
         if (this.x) {
             int i12 = this.J;
             this.K = i12;
-            this.L = new e11(AndroidUtilities.formatLongDuration(i12), 12.0f, null);
+            this.L = new f11(AndroidUtilities.formatLongDuration(i12), 12.0f, null);
         }
         ImageReceiver imageReceiver = new ImageReceiver(u1Var);
         this.f = imageReceiver;
@@ -99,13 +99,13 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
         this.y = false;
         int i10 = this.n;
         int i11 = this.r;
-        String k10 = a4.a.k(i10, i11, "_");
+        String l4 = a4.a.l(i10, i11, "_");
         boolean z10 = messageExtendedMedia instanceof TLRPC.TL_messageExtendedMediaPreview;
         ImageReceiver imageReceiver = this.f;
         if (z10) {
             this.h = true;
             this.v = null;
-            this.f.setImage(ImageLocation.getForObject(((TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia).thumb, messageObject.messageOwner), t8.b.v(k10, "_b2"), null, null, messageObject, 0);
+            this.f.setImage(ImageLocation.getForObject(((TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia).thumb, messageObject.messageOwner), sa.e.v(l4, "_b2"), null, null, messageObject, 0);
             ColorMatrix colorMatrix = new ColorMatrix();
             colorMatrix.setSaturation(1.4f);
             AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, -0.1f);
@@ -116,7 +116,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
             boolean z11 = messageObject.isRepostPreview;
             this.h = z11;
             if (z11) {
-                k10 = t8.b.v(k10, "_b3");
+                l4 = sa.e.v(l4, "_b3");
             }
             imageReceiver.setColorFilter(null);
             TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media;
@@ -124,7 +124,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
             if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
                 TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = (TLRPC.TL_messageMediaPhoto) messageMedia;
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaPhoto.photo.sizes, AndroidUtilities.getPhotoSize(), true, null, true);
-                this.f.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, tL_messageMediaPhoto.photo), k10, ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaPhoto.photo.sizes, Math.min(i10, i11) / 100, false, closestPhotoSizeWithSize, false), tL_messageMediaPhoto.photo), k10, 0L, null, messageObject, 0);
+                this.f.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, tL_messageMediaPhoto.photo), l4, ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaPhoto.photo.sizes, Math.min(i10, i11) / 100, false, closestPhotoSizeWithSize, false), tL_messageMediaPhoto.photo), l4, 0L, null, messageObject, 0);
                 return;
             }
             if (messageMedia instanceof TLRPC.TL_messageMediaDocument) {
@@ -137,7 +137,7 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
                     TLRPC.Document document2 = tL_messageMediaDocument.document;
                     if (document2 != null) {
                         TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document2.thumbs, AndroidUtilities.getPhotoSize(), true, null, true);
-                        this.f.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize2, tL_messageMediaDocument.document), k10, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaDocument.document.thumbs, Math.min(i10, i11), false, closestPhotoSizeWithSize2, false), tL_messageMediaDocument.document), k10, 0L, null, messageObject, 0);
+                        this.f.setImage(ImageLocation.getForDocument(closestPhotoSizeWithSize2, tL_messageMediaDocument.document), l4, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(tL_messageMediaDocument.document.thumbs, Math.min(i10, i11), false, closestPhotoSizeWithSize2, false), tL_messageMediaDocument.document), l4, 0L, null, messageObject, 0);
                         return;
                     }
                     return;
@@ -148,10 +148,10 @@ public final class j4 implements DownloadController.FileDownloadProgressListener
                 ImageLocation forDocument2 = ImageLocation.getForDocument(closestPhotoSizeWithSize3, tL_messageMediaDocument.document);
                 ImageLocation forDocument3 = ImageLocation.getForDocument(closestPhotoSizeWithSize4, tL_messageMediaDocument.document);
                 ImageLocation imageLocation = this.y ? forDocument : null;
-                StringBuilder u10 = a4.a.u(k10);
-                u10.append(this.y ? "_g" : "");
-                String str = k10;
-                this.f.setImage(imageLocation, u10.toString(), forDocument2, str, forDocument3, str, null, 0L, null, messageObject, 0);
+                StringBuilder v = a4.a.v(l4);
+                v.append(this.y ? "_g" : "");
+                String str = l4;
+                this.f.setImage(imageLocation, v.toString(), forDocument2, str, forDocument3, str, null, 0L, null, messageObject, 0);
             }
         }
     }

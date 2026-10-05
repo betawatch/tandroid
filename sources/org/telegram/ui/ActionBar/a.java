@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.hz0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
             case 0:
                 k kVar = this.b;
                 kVar.getClass();
-                kVar.u1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                kVar.t1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 kVar.b();
                 break;
             case 1:
@@ -39,7 +39,7 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 if (kVar2.a != null && kVar2.R0) {
                     float dp = AndroidUtilities.dp(23.0f);
                     float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(18.33f), AndroidUtilities.dp(23.0f), kVar2.o0);
-                    kVar2.a.A(lerp, dp, dp, lerp);
+                    kVar2.a.z(lerp, dp, dp, lerp);
                     kVar2.invalidate();
                 }
                 if (kVar2.P0 && (zVar = kVar2.E) != null) {
@@ -61,7 +61,7 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
             default:
                 k kVar3 = this.b;
                 kVar3.getClass();
-                kVar3.u1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                kVar3.t1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 kVar3.b();
                 break;
         }

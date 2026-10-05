@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
 import org.telegram.tgnet.ConnectionsManager;
 import v7.b8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class e extends AbstractList implements List {
     public static final Object[] d = new Object[0];
@@ -22,7 +22,7 @@ public final class e extends AbstractList implements List {
         int i11;
         int i12 = this.c;
         if (i10 < 0 || i10 > i12) {
-            throw new IndexOutOfBoundsException(a4.a.l(i10, i12, "index: ", ", size: "));
+            throw new IndexOutOfBoundsException(a4.a.m(i10, i12, "index: ", ", size: "));
         }
         if (i10 == i12) {
             addLast(obj);
@@ -87,7 +87,7 @@ public final class e extends AbstractList implements List {
         kotlin.jvm.internal.i.e(elements, "elements");
         int i11 = this.c;
         if (i10 < 0 || i10 > i11) {
-            throw new IndexOutOfBoundsException(a4.a.l(i10, i11, "index: ", ", size: "));
+            throw new IndexOutOfBoundsException(a4.a.m(i10, i11, "index: ", ", size: "));
         }
         if (elements.isEmpty()) {
             return false;
@@ -206,7 +206,7 @@ public final class e extends AbstractList implements List {
     public final Object get(int i10) {
         int i11 = this.c;
         if (i10 < 0 || i10 >= i11) {
-            throw new IndexOutOfBoundsException(a4.a.l(i10, i11, "index: ", ", size: "));
+            throw new IndexOutOfBoundsException(a4.a.m(i10, i11, "index: ", ", size: "));
         }
         return this.b[r(this.a + i10)];
     }
@@ -380,7 +380,7 @@ public final class e extends AbstractList implements List {
     public final Object remove(int i10) {
         int i11 = this.c;
         if (i10 < 0 || i10 >= i11) {
-            throw new IndexOutOfBoundsException(a4.a.l(i10, i11, "index: ", ", size: "));
+            throw new IndexOutOfBoundsException(a4.a.m(i10, i11, "index: ", ", size: "));
         }
         if (i10 == h.a(this)) {
             return removeLast();
@@ -638,7 +638,7 @@ public final class e extends AbstractList implements List {
     public final Object set(int i10, Object obj) {
         int i11 = this.c;
         if (i10 < 0 || i10 >= i11) {
-            throw new IndexOutOfBoundsException(a4.a.l(i10, i11, "index: ", ", size: "));
+            throw new IndexOutOfBoundsException(a4.a.m(i10, i11, "index: ", ", size: "));
         }
         int r10 = r(this.a + i10);
         Object[] objArr = this.b;

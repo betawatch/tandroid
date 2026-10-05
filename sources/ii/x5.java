@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.ae;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x5 implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -37,27 +37,27 @@ public final /* synthetic */ class x5 implements View.OnFocusChangeListener {
                 }
                 break;
             case 3:
-                ae aeVar = ((yh.g) this.b).M;
+                ae aeVar = ((yh.h) this.b).V;
                 float f7 = z10 ? 1.0f : 0.0f;
                 aeVar.b(f7, f7, true);
                 break;
             case 4:
-                ((yh.a0) this.b).c0.c(z10, !TextUtils.isEmpty(r2.d0.getText()));
+                ((yh.b0) this.b).c0.c(z10, !TextUtils.isEmpty(r2.d0.getText()));
                 break;
             case 5:
-                ((yh.e0) this.b).f.c(z10, !TextUtils.isEmpty(r2.h.getText()));
+                ((yh.f0) this.b).f.c(z10, !TextUtils.isEmpty(r2.h.getText()));
                 break;
             case 6:
-                ((yh.i0) this.b).b.c(z10, !TextUtils.isEmpty(r2.c.getText()));
+                ((yh.j0) this.b).b.c(z10, !TextUtils.isEmpty(r2.c.getText()));
                 break;
             default:
-                zg.o oVar = (zg.o) this.b;
+                zg.l lVar = (zg.l) this.b;
                 if (!z10) {
-                    oVar.m();
+                    lVar.m();
                     break;
                 } else {
-                    oVar.n(true);
-                    Runnable runnable = oVar.e;
+                    lVar.n(true);
+                    Runnable runnable = lVar.e;
                     if (runnable != null) {
                         runnable.run();
                         break;

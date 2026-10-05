@@ -1,42 +1,43 @@
 package yh;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class r3 extends AnimatorListenerAdapter {
+public final /* synthetic */ class r3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ u3 b;
+    public final /* synthetic */ v3 b;
 
-    public /* synthetic */ r3(u3 u3Var, int i10) {
+    public /* synthetic */ r3(v3 v3Var, int i10) {
         this.a = i10;
-        this.b = u3Var;
+        this.b = v3Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.d0 = false;
+                v3 v3Var = this.b;
+                v3Var.getClass();
+                v3Var.s0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v3Var.d(v3Var.U);
                 break;
             case 1:
-                this.b.d0 = false;
-                break;
-            case 2:
-                this.b.N.setVisibility(4);
-                break;
-            case 3:
-                u3 u3Var = this.b;
-                u3Var.s0 = u3Var.r0;
-                u3Var.d(u3Var.U);
+                v3 v3Var2 = this.b;
+                v3Var2.getClass();
+                float x10 = com.google.android.gms.internal.vision.e2.x((float) Math.pow((r6 * 2.0f) - 2.0f, 2.0d), 0.075f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
+                v3Var2.t0 = x10;
+                FrameLayout frameLayout = v3Var2.b;
+                frameLayout.setScaleX(x10);
+                frameLayout.setScaleY(v3Var2.t0);
+                v3Var2.invalidate();
                 break;
             default:
-                u3 u3Var2 = this.b;
-                u3Var2.t0 = 1.0f;
-                u3Var2.b.setScaleX(1.0f);
-                u3Var2.b.setScaleY(u3Var2.t0);
-                u3Var2.invalidate();
+                v3 v3Var3 = this.b;
+                v3Var3.getClass();
+                v3Var3.s0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v3Var3.d(v3Var3.U);
                 break;
         }
     }

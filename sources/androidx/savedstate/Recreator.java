@@ -18,9 +18,8 @@ import kotlin.jvm.internal.i;
 import m.p;
 import t4.c;
 import t4.e;
-import t8.b;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class Recreator implements r {
     public final e a;
@@ -78,13 +77,13 @@ public final class Recreator implements r {
                             g10.g();
                         }
                     } catch (Exception e7) {
-                        throw new RuntimeException(b.i("Failed to instantiate ", str2), e7);
+                        throw new RuntimeException(sa.e.i("Failed to instantiate ", str2), e7);
                     }
                 } catch (NoSuchMethodException e10) {
                     throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e10);
                 }
             } catch (ClassNotFoundException e11) {
-                throw new RuntimeException(a.p("Class ", str2, " wasn't found"), e11);
+                throw new RuntimeException(a.q("Class ", str2, " wasn't found"), e11);
             }
         }
     }

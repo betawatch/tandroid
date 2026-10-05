@@ -1,14 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LanguageDetector;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class f41 extends FrameLayout {
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+public final /* synthetic */ class f41 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ Utilities.Callback2 c;
+
+    public /* synthetic */ f41(String str, String str2, Utilities.Callback2 callback2) {
+        this.a = str;
+        this.b = str2;
+        this.c = callback2;
+    }
+
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        u41.x(this.a, str, this.b, this.c);
+    }
+
+    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+    public void run(Exception exc) {
+        u41.x(this.a, "en", this.b, this.c);
     }
 }

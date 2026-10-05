@@ -43,11 +43,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class rk extends pi {
     public static final /* synthetic */ int g0 = 0;
-    public final hg.e0 E;
+    public final hg.f0 E;
     public final org.telegram.ui.ActionBar.v0 F;
     public final org.telegram.ui.ActionBar.v0 G;
     public final gg.s0 H;
@@ -212,16 +212,16 @@ public final class rk extends pi {
         gkVar.setVisibility(8);
         gk gkVar2 = new gk(this, context, d6Var, 1);
         this.r = gkVar2;
-        gkVar2.s1();
+        gkVar2.r1();
         setBlur3Capture(gkVar2);
         this.d = gkVar2;
         this.h = true;
         this.f = true;
         gkVar2.setSectionsType(2);
         gkVar2.setVerticalScrollBarEnabled(false);
-        hg.e0 e0Var = new hg.e0(this, AndroidUtilities.dp(56.0f) + AndroidUtilities.statusBarHeight, gkVar2, 2);
-        this.E = e0Var;
-        gkVar2.setLayoutManager(e0Var);
+        hg.f0 f0Var = new hg.f0(this, AndroidUtilities.dp(56.0f) + AndroidUtilities.statusBarHeight, gkVar2, 2);
+        this.E = f0Var;
+        gkVar2.setLayoutManager(f0Var);
         gkVar2.setClipToPadding(false);
         gkVar2.setAdapter(this.v);
         addView(gkVar2, w7.z5.c(-1.0f, -1));
@@ -397,7 +397,7 @@ public final class rk extends pi {
         }
         int topForScroll = rkVar.getTopForScroll();
         rkVar.O();
-        jk jkVar2 = (jk) hg.k0.w(1, kkVar.d);
+        jk jkVar2 = (jk) hg.c.w(1, kkVar.d);
         xiVar.X0.setTitle(jkVar2.b);
         File file2 = jkVar2.a;
         if (file2 != null) {
@@ -452,10 +452,10 @@ public final class rk extends pi {
         }
         final ArrayList arrayList2 = new ArrayList(this.S);
         xi xiVar = this.b;
-        CharSequence[] charSequenceArr = {xiVar.k1().getText()};
+        CharSequence[] charSequenceArr = {xiVar.m1().getText()};
         final ArrayList<TLRPC.MessageEntity> entities = MediaDataController.getInstance(xiVar.J1).getEntities(charSequenceArr, true);
         final String charSequence = charSequenceArr[0].toString();
-        return e5.b0(xiVar.J1, xiVar.l1(), xiVar.h1() + arrayList2.size() + (1 ^ (TextUtils.isEmpty(charSequence) ? 1 : 0)), new Utilities.Callback() { // from class: org.telegram.ui.Components.fk
+        return e5.b0(xiVar.J1, xiVar.n1(), xiVar.j1() + arrayList2.size() + (1 ^ (TextUtils.isEmpty(charSequence) ? 1 : 0)), new Utilities.Callback() { // from class: org.telegram.ui.Components.fk
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 rk rkVar = rk.this;
@@ -572,7 +572,7 @@ public final class rk extends pi {
             lk lkVar2 = new lk();
             lkVar2.b = "..";
             if (arrayList2.size() > 0) {
-                File file3 = ((jk) hg.k0.g(1, arrayList2)).a;
+                File file3 = ((jk) hg.c.g(1, arrayList2)).a;
                 if (file3 == null) {
                     lkVar2.c = LocaleController.getString(R.string.Folder);
                 } else {
@@ -814,7 +814,7 @@ public final class rk extends pi {
                 if (view instanceof org.telegram.ui.Cells.k7) {
                     ((org.telegram.ui.Cells.k7) view).b(z10, true);
                 }
-                xiVar.S1(z10 ? 1 : 2);
+                xiVar.U1(z10 ? 1 : 2);
                 return true;
             }
             if ((!hashMap.isEmpty() || !hashMap2.isEmpty()) && this.Q != null && !this.K) {
@@ -848,9 +848,9 @@ public final class rk extends pi {
         gkVar.setVisibility(0);
         gk gkVar2 = this.r;
         gkVar.setPadding(gkVar2.getPaddingLeft(), gkVar2.getPaddingTop(), gkVar2.getPaddingRight(), gkVar2.getPaddingBottom());
-        hg.e0 e0Var = this.E;
-        int L0 = e0Var.L0();
-        if (L0 < 0 || (m10 = e0Var.m(L0)) == null) {
+        hg.f0 f0Var = this.E;
+        int L0 = f0Var.L0();
+        if (L0 < 0 || (m10 = f0Var.m(L0)) == null) {
             return;
         }
         this.x.h1(L0, m10.getTop() - gkVar.getPaddingTop());
@@ -922,7 +922,7 @@ public final class rk extends pi {
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         b2Var.R = string;
         b2Var.T = str;
-        org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
+        org.telegram.messenger.q.o(R.string.OK, alertDialog$Builder, null);
     }
 
     public final void R() {
@@ -1026,7 +1026,7 @@ public final class rk extends pi {
             return false;
         }
         O();
-        jk jkVar = (jk) hg.k0.w(1, kkVar.d);
+        jk jkVar = (jk) hg.c.w(1, kkVar.d);
         this.b.X0.setTitle(jkVar.b);
         int topForScroll = getTopForScroll();
         File file = jkVar.a;
@@ -1132,7 +1132,7 @@ public final class rk extends pi {
             }
             xiVar.setAllowNestedScroll(true);
         }
-        this.r.r1(0, dp + AndroidUtilities.statusBarHeight, 0, this.e);
+        this.r.q1(0, dp + AndroidUtilities.statusBarHeight, 0, this.e);
         ((FrameLayout.LayoutParams) this.H.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
     }
 

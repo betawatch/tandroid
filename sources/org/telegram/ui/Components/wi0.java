@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.TelegramQRCodeWriter;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class wi0 extends org.telegram.ui.ActionBar.f3 {
     public final Bitmap b;
@@ -30,10 +30,10 @@ public class wi0 extends org.telegram.ui.ActionBar.f3 {
         Bitmap bitmap = null;
         fixNavigationBar();
         setTitle(str, true);
-        hg.k kVar = new hg.k(context, 3);
-        kVar.setScaleType(ImageView.ScaleType.FIT_XY);
-        kVar.setOutlineProvider(new ai.k2(15));
-        kVar.setClipToOutline(true);
+        hg.l lVar = new hg.l(context, 3);
+        lVar.setScaleType(ImageView.ScaleType.FIT_XY);
+        lVar.setOutlineProvider(new ai.k2(15));
+        lVar.setClipToOutline(true);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setPadding(0, AndroidUtilities.dp(16.0f), 0, 0);
@@ -50,13 +50,13 @@ public class wi0 extends org.telegram.ui.ActionBar.f3 {
             FileLog.e(e7);
         }
         this.b = bitmap;
-        kVar.setImageBitmap(bitmap);
+        lVar.setImageBitmap(bitmap);
         nj0 nj0Var = new nj0(context);
         this.h = nj0Var;
         nj0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
         nj0Var.setBackgroundColor(-1);
-        org.telegram.ui.em0 em0Var = new org.telegram.ui.em0(this, context, kVar);
-        em0Var.addView(kVar, w7.z5.c(-1.0f, -1));
+        org.telegram.ui.em0 em0Var = new org.telegram.ui.em0(this, context, lVar);
+        em0Var.addView(lVar, w7.z5.c(-1.0f, -1));
         em0Var.addView(nj0Var, w7.z5.e(60, 60, 17));
         linearLayout.addView(em0Var, w7.z5.t(220, 220, 1, 30, 0, 30, 0));
         TextView textView = new TextView(context);

@@ -5,7 +5,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class gj0 extends LinearLayout {
     public static final /* synthetic */ int d = 0;
@@ -23,10 +23,10 @@ public final class gj0 extends LinearLayout {
         setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
         int i10 = 0;
         while (i10 < 2) {
-            LinearLayout f7 = org.telegram.messenger.ok.f(context, 0);
+            LinearLayout e7 = org.telegram.messenger.bi.e(context, 0);
             for (int i11 = 0; i11 < 2; i11++) {
-                LinearLayout f10 = org.telegram.messenger.ok.f(context, 1);
-                LinearLayout f11 = org.telegram.messenger.ok.f(context, 0);
+                LinearLayout e10 = org.telegram.messenger.bi.e(context, 1);
+                LinearLayout e11 = org.telegram.messenger.bi.e(context, 0);
                 int i12 = (i10 * 2) + i11;
                 this.a[i12] = new TextView(context);
                 this.b[i12] = new TextView(context);
@@ -34,12 +34,12 @@ public final class gj0 extends LinearLayout {
                 this.a[i12].setTextSize(1, 17.0f);
                 this.b[i12].setTextSize(1, 13.0f);
                 this.b[i12].setGravity(3);
-                f11.addView(this.a[i12]);
-                f10.addView(f11);
-                f10.addView(this.b[i12]);
-                f7.addView(f10, w7.z5.l(1.0f, -1, -2));
+                e11.addView(this.a[i12]);
+                e10.addView(e11);
+                e10.addView(this.b[i12]);
+                e7.addView(e10, w7.z5.l(1.0f, -1, -2));
             }
-            addView(f7, w7.z5.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, i10 == 0 ? 16.0f : 0.0f));
+            addView(e7, w7.z5.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, i10 == 0 ? 16.0f : 0.0f));
             i10++;
         }
     }

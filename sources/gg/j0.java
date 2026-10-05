@@ -5,20 +5,20 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import ci.m6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.a91;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.bb0;
-import org.telegram.ui.Components.f91;
+import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.g00;
-import org.telegram.ui.Components.j31;
+import org.telegram.ui.Components.g91;
+import org.telegram.ui.Components.k31;
 import org.telegram.ui.Components.n00;
 import org.telegram.ui.Components.sk0;
-import org.telegram.ui.Components.z81;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.ly;
 import org.telegram.ui.rr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class j0 extends s4.c0 {
     public final /* synthetic */ int I;
@@ -43,7 +43,7 @@ public final class j0 extends s4.c0 {
                 break;
             case 7:
                 super.S(eVar, z0Var, dVar);
-                if (((f91) this.J).V) {
+                if (((g91) this.J).V) {
                     dVar.p(false);
                     break;
                 }
@@ -58,7 +58,7 @@ public final class j0 extends s4.c0 {
     public int W0(s4.z0 z0Var) {
         switch (this.I) {
             case 6:
-                if (!((j31) this.J).h3) {
+                if (!((k31) this.J).h3) {
                     break;
                 } else {
                     break;
@@ -152,14 +152,14 @@ public final class j0 extends s4.c0 {
                 }
                 break;
             case 5:
-                aw0 aw0Var = (aw0) this.J;
-                if (i10 > 0 && aw0Var.T0 != null) {
+                bw0 bw0Var = (bw0) this.J;
+                if (i10 > 0 && bw0Var.N != null) {
                     int i11 = 0;
                     while (i11 < i10) {
-                        int min = Math.min(i10 - i11, Math.max(1, Math.round((aw0Var.getHeight() - aw0Var.a1) * 0.5f)));
-                        float j02 = aw0Var.j0();
-                        if (!Float.isInfinite(j02)) {
-                            min = Math.min(min, Math.max(0, Math.round(j02 - aw0Var.a1)));
+                        int min = Math.min(i10 - i11, Math.max(1, Math.round((bw0Var.getHeight() - bw0Var.U) * 0.5f)));
+                        float k10 = bw0Var.k();
+                        if (!Float.isInfinite(k10)) {
+                            min = Math.min(min, Math.max(0, Math.round(k10 - bw0Var.U)));
                         }
                         if (min == 0) {
                             break;
@@ -189,9 +189,9 @@ public final class j0 extends s4.c0 {
                 w0(g00Var);
                 break;
             case 7:
-                z81 z81Var = new z81(this, recyclerView.getContext());
-                z81Var.a = i10;
-                w0(z81Var);
+                a91 a91Var = new a91(this, recyclerView.getContext());
+                a91Var.a = i10;
+                w0(a91Var);
                 break;
             default:
                 super.v0(recyclerView, z0Var, i10);

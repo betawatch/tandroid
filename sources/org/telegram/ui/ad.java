@@ -13,13 +13,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ad extends FrameLayout {
     public final int a;
     public final org.telegram.ui.ActionBar.d6 b;
     public final ArrayList c;
-    public final zb1 d;
+    public final xb1 d;
     public final org.telegram.ui.Components.w00 e;
     public boolean f;
     public final yc h;
@@ -42,20 +42,20 @@ public final class ad extends FrameLayout {
         w00Var.setViewType(14);
         w00Var.setVisibility(0);
         addView(w00Var, w7.z5.d(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
-        zb1 zb1Var = new zb1(activity, 4, d6Var);
-        this.d = zb1Var;
-        zb1Var.setClipToPadding(false);
-        zb1Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
+        xb1 xb1Var = new xb1(activity, 4, d6Var);
+        this.d = xb1Var;
+        xb1Var.setClipToPadding(false);
+        xb1Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
         getContext();
         s4.c0 c0Var = new s4.c0();
         c0Var.j1(0);
-        zb1Var.setLayoutManager(c0Var);
-        zb1Var.setAlpha(0.0f);
+        xb1Var.setLayoutManager(c0Var);
+        xb1Var.setAlpha(0.0f);
         yc ycVar = new yc(this, i10, d6Var);
         this.h = ycVar;
-        zb1Var.setAdapter(ycVar);
-        addView(zb1Var, w7.z5.c(130.0f, -1));
-        zb1Var.setOnItemClickListener(new i(this, 2));
+        xb1Var.setAdapter(ycVar);
+        addView(xb1Var, w7.z5.c(130.0f, -1));
+        xb1Var.setOnItemClickListener(new i(this, 2));
         ChatThemeController chatThemeController = ChatThemeController.getInstance(i10);
         chatThemeController.preloadAllWallpaperThumbs(true);
         chatThemeController.preloadAllWallpaperThumbs(false);
@@ -91,14 +91,14 @@ public final class ad extends FrameLayout {
             }
             i11++;
         }
-        zb1 zb1Var = this.d;
-        if (i10 >= 0 && !z10 && (zb1Var.getLayoutManager() instanceof s4.c0)) {
-            ((s4.c0) zb1Var.getLayoutManager()).h1(i10, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
+        xb1 xb1Var = this.d;
+        if (i10 >= 0 && !z10 && (xb1Var.getLayoutManager() instanceof s4.c0)) {
+            ((s4.c0) xb1Var.getLayoutManager()).h1(i10, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
         }
-        for (int i12 = 0; i12 < zb1Var.getChildCount(); i12++) {
-            View childAt = zb1Var.getChildAt(i12);
-            if ((childAt instanceof org.telegram.ui.Components.s21) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
-                ((org.telegram.ui.Components.s21) childAt).g(((org.telegram.ui.Components.op) arrayList.get(R)).d, true);
+        for (int i12 = 0; i12 < xb1Var.getChildCount(); i12++) {
+            View childAt = xb1Var.getChildAt(i12);
+            if ((childAt instanceof org.telegram.ui.Components.t21) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
+                ((org.telegram.ui.Components.t21) childAt).g(((org.telegram.ui.Components.op) arrayList.get(R)).d, true);
             }
         }
     }

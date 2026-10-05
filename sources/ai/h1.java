@@ -28,11 +28,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class h1 extends FrameLayout implements a80 {
     public final TextView E;
@@ -311,14 +311,14 @@ public final class h1 extends FrameLayout implements a80 {
                         textView.setText(charSequence);
                         textView2.setVisibility(0);
                         textView2.setBackground(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(13.0f), org.telegram.ui.ActionBar.i6.l1(0.25f, b12)));
-                        textView2.setText(yh.x7.a1(false, org.telegram.messenger.f0.h(m1Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.G, AndroidUtilities.dp(0.66f), 1.0f));
+                        textView2.setText(yh.z7.a1(false, org.telegram.messenger.q.h(m1Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.G, AndroidUtilities.dp(0.66f), 1.0f));
                         rq rqVar = this.G[0];
                         if (rqVar != null) {
                             rqVar.draw = this.b;
                         }
                     } else {
                         textView.setVisibility(0);
-                        textView.setText(yh.x7.a1(false, org.telegram.messenger.f0.h(m1Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.H, 0.0f, 1.0f));
+                        textView.setText(yh.z7.a1(false, org.telegram.messenger.q.h(m1Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.H, 0.0f, 1.0f));
                         textView2.setVisibility(8);
                         textView2.setText(charSequence);
                     }
@@ -375,7 +375,7 @@ public final class h1 extends FrameLayout implements a80 {
             i10 = 0;
             i11 = 33;
         }
-        spannableStringBuilder.setSpan(new d61(AndroidUtilities.bold()), i10, spannableStringBuilder.length(), i11);
+        spannableStringBuilder.setSpan(new e61(AndroidUtilities.bold()), i10, spannableStringBuilder.length(), i11);
         spannableStringBuilder.append((CharSequence) " ");
         int b132 = g0.b(i12, (int) m1Var.g, 1);
         int b142 = g0.b(i12, (int) m1Var.g, 2);

@@ -14,9 +14,9 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.yc;
-import yh.k5;
+import yh.l5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -65,13 +65,13 @@ public final /* synthetic */ class l0 implements Runnable {
                 M.j();
                 break;
             default:
-                k5 k5Var = (k5) obj3;
+                l5 l5Var = (l5) obj3;
                 TLObject tLObject = (TLObject) obj;
-                ArrayList arrayList = k5Var.l;
-                int i13 = k5Var.a;
-                if (((int[]) obj2)[0] == k5Var.m) {
-                    k5Var.i = false;
-                    k5Var.m = -1;
+                ArrayList arrayList = l5Var.l;
+                int i13 = l5Var.a;
+                if (((int[]) obj2)[0] == l5Var.m) {
+                    l5Var.i = false;
+                    l5Var.m = -1;
                     if (tLObject instanceof TL_stars.TL_payments_savedStarGifts) {
                         TL_stars.TL_payments_savedStarGifts tL_payments_savedStarGifts = (TL_stars.TL_payments_savedStarGifts) tLObject;
                         MessagesController.getInstance(i13).putUsers(tL_payments_savedStarGifts.users, false);
@@ -80,14 +80,14 @@ public final /* synthetic */ class l0 implements Runnable {
                             arrayList.clear();
                         }
                         arrayList.addAll(tL_payments_savedStarGifts.gifts);
-                        k5Var.k = tL_payments_savedStarGifts.next_offset;
-                        k5Var.n = tL_payments_savedStarGifts.count;
-                        k5Var.h = (tL_payments_savedStarGifts.flags & 2) != 0 ? Boolean.valueOf(tL_payments_savedStarGifts.chat_notifications_enabled) : null;
-                        k5Var.j = arrayList.size() > k5Var.n || k5Var.k == null;
+                        l5Var.k = tL_payments_savedStarGifts.next_offset;
+                        l5Var.n = tL_payments_savedStarGifts.count;
+                        l5Var.h = (tL_payments_savedStarGifts.flags & 2) != 0 ? Boolean.valueOf(tL_payments_savedStarGifts.chat_notifications_enabled) : null;
+                        l5Var.j = arrayList.size() > l5Var.n || l5Var.k == null;
                     } else {
-                        k5Var.j = true;
+                        l5Var.j = true;
                     }
-                    NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(k5Var.b), k5Var);
+                    NotificationCenter.getInstance(i13).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(l5Var.b), l5Var);
                     break;
                 }
                 break;

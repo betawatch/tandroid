@@ -17,12 +17,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.us;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.ws;
-import yh.e7;
+import yh.f7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class e0 implements Runnable {
                             break;
                         }
                     } else {
-                        StringBuilder j3 = hg.k0.j(i10, "Ignore incoming player command before initialization. command=", ", pid=");
+                        StringBuilder j3 = hg.c.j(i10, "Ignore incoming player command before initialization. command=", ", pid=");
                         j3.append(a0Var.a.b);
                         e2.a.n("MediaSessionLegacyStub", j3.toString());
                         break;
@@ -217,7 +217,7 @@ public final /* synthetic */ class e0 implements Runnable {
                 }
                 if (document != null) {
                     imageReceiver.setAllowStartLottieAnimation(true);
-                    imageReceiver.setDelegate(new e7(zArr));
+                    imageReceiver.setDelegate(new f7(zArr));
                     SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, i6.a7, 0.3f);
                     TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 160, true, null, true);
                     imageReceiver.setAutoRepeat(0);
@@ -240,9 +240,9 @@ public final /* synthetic */ class e0 implements Runnable {
         this.f = aVar;
     }
 
-    public /* synthetic */ e0(u61 u61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
+    public /* synthetic */ e0(w61 w61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, TLObject tLObject, int i11) {
         this.a = i11;
-        this.d = u61Var;
+        this.d = w61Var;
         this.c = i10;
         this.e = tL_messages_searchGlobal;
         this.b = z10;

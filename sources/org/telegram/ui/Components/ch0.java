@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ch0 extends org.telegram.ui.ActionBar.f3 {
     public static final org.telegram.ui.Cells.t8 O = new org.telegram.ui.Cells.t8("placeholderAlpha", 9);
@@ -183,8 +183,8 @@ public final class ch0 extends org.telegram.ui.ActionBar.f3 {
         this.f = y7Var;
         y7Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.h5, false));
         y7Var.setBackButtonImage(R.drawable.ic_ab_back);
-        y7Var.B(org.telegram.ui.ActionBar.i6.w0(null, i16, false), false);
-        y7Var.A(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.I5, false), false);
+        y7Var.A(org.telegram.ui.ActionBar.i6.w0(null, i16, false), false);
+        y7Var.z(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.I5, false), false);
         y7Var.setTitleColor(org.telegram.ui.ActionBar.i6.w0(null, i16, false));
         y7Var.setSubtitleColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.Pi, false));
         y7Var.setOccupyStatusBar(false);
@@ -405,7 +405,7 @@ public final class ch0 extends org.telegram.ui.ActionBar.f3 {
             ch0Var.h.start();
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) wg0Var.getLayoutParams();
-        int D = org.telegram.messenger.ok.D(11.0f, layoutParams.topMargin, top);
+        int D = org.telegram.messenger.bi.D(11.0f, layoutParams.topMargin, top);
         if (ch0Var.E != D) {
             ch0Var.E = D;
             wg0Var.setTopGlowOffset(D - layoutParams.topMargin);

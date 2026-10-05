@@ -53,11 +53,11 @@ import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.oa;
-import org.telegram.ui.Components.w01;
-import org.telegram.ui.Components.xo0;
-import org.telegram.ui.Components.xy0;
+import org.telegram.ui.Components.x01;
+import org.telegram.ui.Components.yo0;
+import org.telegram.ui.Components.yy0;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.iv;
@@ -80,9 +80,9 @@ import s4.g1;
 import s4.h1;
 import u2.b1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessContinuation, n, ce.b {
+public class a implements yo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessContinuation, n, ce.b {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -96,51 +96,7 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         return false;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v5, types: [java.util.ArrayList] */
-    /* JADX WARN: Type inference failed for: r1v6, types: [java.util.List] */
-    /* JADX WARN: Type inference failed for: r1v9, types: [java.util.List] */
-    public ArrayList C() {
-        ?? arrayList;
-        ArrayList arrayList2 = new ArrayList();
-        k2.e eVar = (k2.e) this.c;
-        Context context = (Context) this.b;
-        Class cls = (Class) eVar.b;
-        Bundle bundle = null;
-        try {
-            PackageManager packageManager = context.getPackageManager();
-            if (packageManager == null) {
-                Log.w("ComponentDiscovery", "Context has no PackageManager.");
-            } else {
-                ServiceInfo serviceInfo = packageManager.getServiceInfo(new ComponentName(context, (Class<?>) cls), 128);
-                if (serviceInfo == null) {
-                    Log.w("ComponentDiscovery", cls + " has no service info.");
-                } else {
-                    bundle = serviceInfo.metaData;
-                }
-            }
-        } catch (PackageManager.NameNotFoundException unused) {
-            Log.w("ComponentDiscovery", "Application info not found.");
-        }
-        if (bundle == null) {
-            Log.w("ComponentDiscovery", "Could not retrieve metadata, returning empty list of registrars.");
-            arrayList = Collections.EMPTY_LIST;
-        } else {
-            arrayList = new ArrayList();
-            for (String str : bundle.keySet()) {
-                if ("com.google.firebase.components.ComponentRegistrar".equals(bundle.get(str)) && str.startsWith("com.google.firebase.components:")) {
-                    arrayList.add(str.substring(31));
-                }
-            }
-        }
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            arrayList2.add(new q9.c((String) it.next(), 0));
-        }
-        return arrayList2;
-    }
-
-    public View D(int i10, int i11, int i12, int i13) {
+    public View C(int i10, int i11, int i12, int i13) {
         g1 g1Var = (g1) this.c;
         h1 h1Var = (h1) this.b;
         int l4 = h1Var.l();
@@ -172,7 +128,7 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         return view;
     }
 
-    public boolean E(View view) {
+    public boolean D(View view) {
         g1 g1Var = (g1) this.c;
         h1 h1Var = (h1) this.b;
         int l4 = h1Var.l();
@@ -185,6 +141,17 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         g1Var.e = r10;
         g1Var.a = 24579;
         return g1Var.a();
+    }
+
+    public void E(g gVar) {
+        androidx.biometric.n nVar = (androidx.biometric.n) this.c;
+        m mVar = (m) this.b;
+        int i10 = gVar.b;
+        if (i10 != 0) {
+            nVar.execute(new q4(mVar, i10));
+        } else {
+            nVar.execute(new i9.s(19, mVar, gVar.a));
+        }
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -220,23 +187,12 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         }
     }
 
-    public void I(g gVar) {
-        androidx.biometric.n nVar = (androidx.biometric.n) this.c;
-        m mVar = (m) this.b;
-        int i10 = gVar.b;
-        if (i10 != 0) {
-            nVar.execute(new q4(mVar, i10));
-        } else {
-            nVar.execute(new i9.s(19, mVar, gVar.a));
-        }
-    }
-
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean I1() {
         return false;
     }
 
-    public h0 L(int i10) {
+    public h0 K(int i10) {
         int i11 = 0;
         while (true) {
             int[] iArr = (int[]) this.b;
@@ -268,7 +224,7 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
 
     @Override // org.telegram.ui.Cells.l1
     public boolean M0(long j3) {
-        return ((w01) this.c).v;
+        return ((x01) this.c).v;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -376,13 +332,13 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public void Y(float f7, boolean z10) {
         j5.c = f7;
         ((TextView) this.b).setText("Saturation " + (f7 * 5.0f));
-        lw0 lw0Var = ((j5) this.c).b;
-        lw0Var.N();
-        lw0Var.M();
+        mw0 mw0Var = ((j5) this.c).b;
+        mw0Var.N();
+        mw0Var.M();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -414,7 +370,7 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
 
     @Override // org.telegram.ui.Cells.l1
     public boolean a2(long j3) {
-        return ((w01) this.c).s;
+        return ((x01) this.c).s;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x008c A[Catch: all -> 0x0060, TryCatch #0 {all -> 0x0060, blocks: (B:18:0x004d, B:22:0x005a, B:23:0x006e, B:25:0x008c, B:28:0x0099, B:29:0x0177, B:34:0x00b9, B:37:0x00f9, B:40:0x0118, B:43:0x0125, B:48:0x010f, B:50:0x0063), top: B:17:0x004d }] */
@@ -520,6 +476,16 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         }
     }
 
+    @Override // fh.a
+    public ch.d b() {
+        if (Build.VERSION.SDK_INT < 29) {
+            return new ch.f(this);
+        }
+        ch.e eVar = new ch.e(this);
+        ((PhotoViewer) this.c).Z.add(eVar);
+        return eVar;
+    }
+
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean b0(u1 u1Var) {
         return false;
@@ -566,14 +532,54 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         return false;
     }
 
-    @Override // fh.a
-    public ch.d f() {
-        if (Build.VERSION.SDK_INT < 29) {
-            return new ch.f(this);
+    @Override // org.telegram.ui.k7
+    public void f(u6 u6Var, zh.a aVar, boolean z10) {
+        jv jvVar = (jv) this.c;
+        iv ivVar = jvVar.X;
+        if (aVar != null) {
+            ((zh.b) this.b).i(aVar);
+            jvVar.e0.e();
+            zh.b bVar = jvVar.g0;
+            yy0[] yy0VarArr = jvVar.b0;
+            a2[] a2VarArr = jvVar.c0;
+            a2 a2Var = a2VarArr[0];
+            if (a2Var != null) {
+                yy0 yy0Var = yy0VarArr[0];
+                boolean z11 = bVar.m;
+                yy0Var.c = z11;
+                a2Var.c(z11, true);
+            }
+            a2 a2Var2 = a2VarArr[1];
+            if (a2Var2 != null) {
+                yy0 yy0Var2 = yy0VarArr[1];
+                boolean z12 = bVar.n;
+                yy0Var2.c = z12;
+                a2Var2.c(z12, true);
+            }
+            a2 a2Var3 = a2VarArr[2];
+            if (a2Var3 != null) {
+                yy0 yy0Var3 = yy0VarArr[2];
+                boolean z13 = bVar.o;
+                yy0Var3.c = z13;
+                a2Var3.c(z13, true);
+            }
+            a2 a2Var4 = a2VarArr[3];
+            if (a2Var4 != null) {
+                yy0 yy0Var4 = yy0VarArr[3];
+                boolean z14 = bVar.p;
+                yy0Var4.c = z14;
+                a2Var4.c(z14, true);
+            }
+            a2 a2Var5 = a2VarArr[4];
+            if (a2Var5 != null) {
+                yy0 yy0Var5 = yy0VarArr[4];
+                boolean z15 = bVar.q;
+                yy0Var5.c = z15;
+                a2Var5.c(z15, true);
+            }
+            jvVar.a0.a(ivVar.d(), true);
+            ivVar.c(true);
         }
-        ch.e eVar = new ch.e(this);
-        ((PhotoViewer) this.c).Z.add(eVar);
-        return eVar;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -596,7 +602,7 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         return new s5.g(aVar, bVar, s5.a.f, (s5.i) obj, aVar2);
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
@@ -625,56 +631,6 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean h1(MessageObject messageObject) {
         return c1.a(messageObject);
-    }
-
-    @Override // org.telegram.ui.k7
-    public void i(u6 u6Var, zh.a aVar, boolean z10) {
-        jv jvVar = (jv) this.c;
-        iv ivVar = jvVar.X;
-        if (aVar != null) {
-            ((zh.b) this.b).i(aVar);
-            jvVar.e0.e();
-            zh.b bVar = jvVar.g0;
-            xy0[] xy0VarArr = jvVar.b0;
-            a2[] a2VarArr = jvVar.c0;
-            a2 a2Var = a2VarArr[0];
-            if (a2Var != null) {
-                xy0 xy0Var = xy0VarArr[0];
-                boolean z11 = bVar.m;
-                xy0Var.c = z11;
-                a2Var.c(z11, true);
-            }
-            a2 a2Var2 = a2VarArr[1];
-            if (a2Var2 != null) {
-                xy0 xy0Var2 = xy0VarArr[1];
-                boolean z12 = bVar.n;
-                xy0Var2.c = z12;
-                a2Var2.c(z12, true);
-            }
-            a2 a2Var3 = a2VarArr[2];
-            if (a2Var3 != null) {
-                xy0 xy0Var3 = xy0VarArr[2];
-                boolean z13 = bVar.o;
-                xy0Var3.c = z13;
-                a2Var3.c(z13, true);
-            }
-            a2 a2Var4 = a2VarArr[3];
-            if (a2Var4 != null) {
-                xy0 xy0Var4 = xy0VarArr[3];
-                boolean z14 = bVar.p;
-                xy0Var4.c = z14;
-                a2Var4.c(z14, true);
-            }
-            a2 a2Var5 = a2VarArr[4];
-            if (a2Var5 != null) {
-                xy0 xy0Var5 = xy0VarArr[4];
-                boolean z15 = bVar.q;
-                xy0Var5.c = z15;
-                a2Var5.c(z15, true);
-            }
-            jvVar.a0.a(ivVar.d(), true);
-            ivVar.c(true);
-        }
     }
 
     @Override // org.telegram.ui.ActionBar.d6
@@ -732,7 +688,7 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public /* synthetic */ int p0() {
         return 0;
     }
@@ -774,6 +730,15 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         }
     }
 
+    @Override // oi.a
+    public void v(Canvas canvas, float f7, float f10, float f11, float f12) {
+        canvas.save();
+        canvas.clipRect(f7, f10, f11, f12);
+        ((PhotoViewer) this.c).T0(canvas, (oa) this.b, -14277082, 855638016, false, true, true);
+        canvas.drawColor(637534208);
+        canvas.restore();
+    }
+
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean v2(int i10) {
         return false;
@@ -785,7 +750,7 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         if (trim.length() > 16) {
             trim = trim.substring(0, 16);
         }
-        if (((w01) this.c).s || !TextUtils.isEmpty(trim)) {
+        if (((x01) this.c).s || !TextUtils.isEmpty(trim)) {
             return trim;
         }
         return null;
@@ -807,13 +772,48 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         }
     }
 
-    @Override // oi.a
-    public void y(Canvas canvas, float f7, float f10, float f11, float f12) {
-        canvas.save();
-        canvas.clipRect(f7, f10, f11, f12);
-        ((PhotoViewer) this.c).T0(canvas, (oa) this.b, -14277082, 855638016, false, true, true);
-        canvas.drawColor(637534208);
-        canvas.restore();
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v5, types: [java.util.ArrayList] */
+    /* JADX WARN: Type inference failed for: r1v6, types: [java.util.List] */
+    /* JADX WARN: Type inference failed for: r1v9, types: [java.util.List] */
+    public ArrayList y() {
+        ?? arrayList;
+        ArrayList arrayList2 = new ArrayList();
+        k2.e eVar = (k2.e) this.c;
+        Context context = (Context) this.b;
+        Class cls = (Class) eVar.b;
+        Bundle bundle = null;
+        try {
+            PackageManager packageManager = context.getPackageManager();
+            if (packageManager == null) {
+                Log.w("ComponentDiscovery", "Context has no PackageManager.");
+            } else {
+                ServiceInfo serviceInfo = packageManager.getServiceInfo(new ComponentName(context, (Class<?>) cls), 128);
+                if (serviceInfo == null) {
+                    Log.w("ComponentDiscovery", cls + " has no service info.");
+                } else {
+                    bundle = serviceInfo.metaData;
+                }
+            }
+        } catch (PackageManager.NameNotFoundException unused) {
+            Log.w("ComponentDiscovery", "Application info not found.");
+        }
+        if (bundle == null) {
+            Log.w("ComponentDiscovery", "Could not retrieve metadata, returning empty list of registrars.");
+            arrayList = Collections.EMPTY_LIST;
+        } else {
+            arrayList = new ArrayList();
+            for (String str : bundle.keySet()) {
+                if ("com.google.firebase.components.ComponentRegistrar".equals(bundle.get(str)) && str.startsWith("com.google.firebase.components:")) {
+                    arrayList.add(str.substring(31));
+                }
+            }
+        }
+        Iterator it = arrayList.iterator();
+        while (it.hasNext()) {
+            arrayList2.add(new q9.c((String) it.next(), 0));
+        }
+        return arrayList2;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -843,7 +843,7 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         this.a = 9;
         this.b = new SparseIntArray();
         this.c = d6Var;
-        v();
+        q();
     }
 
     public a() {
@@ -873,7 +873,7 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         this.c = new BitmapShader(createBitmap, tileMode, tileMode);
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public void B() {
     }
 
@@ -881,12 +881,12 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
     public /* synthetic */ void R1() {
     }
 
-    @Override // fh.a
-    public /* synthetic */ void b() {
+    @Override // org.telegram.ui.k7
+    public void clear() {
     }
 
     @Override // org.telegram.ui.k7
-    public void clear() {
+    public void i() {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -901,7 +901,6 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
     public /* synthetic */ void p() {
     }
 
-    @Override // org.telegram.ui.k7
     public void q() {
     }
 
@@ -911,9 +910,6 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void s() {
-    }
-
-    public void v() {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -1051,7 +1047,7 @@ public class a implements xo0, l1, k7, ym0, fh.a, d6, le.d, s, n5.b, SuccessCont
         this.b = new oa(photoViewer.b0, photoViewer.e0, 0, false);
     }
 
-    private final /* synthetic */ void K(int i10, int i11) {
+    private final /* synthetic */ void I(int i10, int i11) {
     }
 
     @Override // org.telegram.ui.Cells.l1

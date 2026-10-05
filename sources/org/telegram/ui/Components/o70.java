@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class o70 extends ViewGroup {
     public boolean a;
@@ -115,11 +115,11 @@ public final class o70 extends ViewGroup {
                 v1Var = v1Var2;
                 childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
                 if (childAt != this.c && childAt.getMeasuredWidth() + i14 > dp) {
-                    dp2 = org.telegram.messenger.f0.C(8.0f, childAt.getMeasuredHeight(), dp2);
+                    dp2 = org.telegram.messenger.q.C(8.0f, childAt.getMeasuredHeight(), dp2);
                     i14 = 0;
                 }
                 if (childAt.getMeasuredWidth() + i15 > dp) {
-                    dp3 = org.telegram.messenger.f0.C(8.0f, childAt.getMeasuredHeight(), dp3);
+                    dp3 = org.telegram.messenger.q.C(8.0f, childAt.getMeasuredHeight(), dp3);
                     i15 = 0;
                 }
                 int dp4 = AndroidUtilities.dp(13.0f) + i14;
@@ -148,9 +148,9 @@ public final class o70 extends ViewGroup {
                     }
                 }
                 if (childAt != this.c) {
-                    i14 = org.telegram.messenger.f0.C(9.0f, childAt.getMeasuredWidth(), i14);
+                    i14 = org.telegram.messenger.q.C(9.0f, childAt.getMeasuredWidth(), i14);
                 }
-                i15 = org.telegram.messenger.f0.C(9.0f, childAt.getMeasuredWidth(), i15);
+                i15 = org.telegram.messenger.q.C(9.0f, childAt.getMeasuredWidth(), i15);
             } else {
                 v1Var = v1Var2;
             }
@@ -160,7 +160,7 @@ public final class o70 extends ViewGroup {
         org.telegram.ui.ActionBar.v1 v1Var3 = v1Var2;
         int dp5 = AndroidUtilities.dp(42.0f) + dp3;
         final int dp6 = AndroidUtilities.dp(42.0f) + dp2;
-        int min = p70Var.m0 != null ? p70Var.g0 ? Math.min(p70Var.s0, dp6) : 0 : org.telegram.messenger.f0.b(52.0f, Math.min(p70Var.s0, dp6), 0);
+        int min = p70Var.m0 != null ? p70Var.g0 ? Math.min(p70Var.s0, dp6) : 0 : org.telegram.messenger.q.b(52.0f, Math.min(p70Var.s0, dp6), 0);
         int i16 = p70Var.u0;
         int dp7 = (p70Var.m0 != null || p70Var.f0.m() <= 0) ? 0 : AndroidUtilities.dp(56.0f);
         p70Var.u0 = dp7;

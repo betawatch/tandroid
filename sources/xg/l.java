@@ -21,13 +21,13 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i5;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.gx0;
 import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.hx0;
 import org.telegram.ui.Components.qp;
 import org.telegram.ui.Components.w9;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class l extends vg.c {
     public final ImageView E;
@@ -35,7 +35,7 @@ public final class l extends vg.c {
     public TLRPC.User G;
     public TLRPC.Chat H;
     public TL_stories.TL_myBoost I;
-    public final gx0 J;
+    public final hx0 J;
     public final boolean[] r;
     public final qp s;
     public final ImageView v;
@@ -47,7 +47,7 @@ public final class l extends vg.c {
         super(context, d6Var);
         this.r = new boolean[1];
         this.F = true;
-        this.J = new gx0(this);
+        this.J = new hx0(this);
         this.d.setTypeface(AndroidUtilities.bold());
         this.f.setVisibility(8);
         if (z11) {
@@ -353,7 +353,7 @@ public final class l extends vg.c {
         }
         int w02 = i6.w0(null, i6.z9, false);
         boolean u10 = e2.u(user);
-        gx0 gx0Var = this.J;
-        z5Var.i(u10 ? gx0Var.a(user, null, w02, false) : gx0Var.a(null, null, w02, false));
+        hx0 hx0Var = this.J;
+        z5Var.i(u10 ? hx0Var.a(user, null, w02, false) : hx0Var.a(null, null, w02, false));
     }
 }

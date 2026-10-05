@@ -1,28 +1,110 @@
 package org.telegram.ui;
 
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class pf1 extends og.a {
-    public final TLRPC.TL_forumTopic c;
+public final class pf1 extends org.telegram.ui.Components.yl0 {
+    public final /* synthetic */ sf1 c;
 
-    public pf1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
-        super(i10, true);
-        this.c = tL_forumTopic;
+    public pf1(sf1 sf1Var) {
+        this.c = sf1Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.Components.yl0
+    public final boolean D(s4.c1 c1Var) {
+        int i10 = c1Var.f;
+        return i10 == 3 || i10 == 2;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        sf1 sf1Var = this.c;
+        if (sf1Var.n0) {
+            return 0;
         }
-        if (obj != null && pf1.class == obj.getClass()) {
-            pf1 pf1Var = (pf1) obj;
-            int i10 = this.a;
-            if (i10 == pf1Var.a && i10 == 0 && this.c.id == pf1Var.c.id) {
-                return true;
+        return sf1Var.m0;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        sf1 sf1Var = this.c;
+        if (i10 == sf1Var.j0 || i10 == sf1Var.g0) {
+            return 1;
+        }
+        if (i10 < sf1Var.h0 || i10 >= sf1Var.i0) {
+            return (i10 < sf1Var.k0 || i10 >= sf1Var.l0) ? 0 : 3;
+        }
+        return 2;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        int i11;
+        View view = c1Var.a;
+        sf1 sf1Var = this.c;
+        wf1 wf1Var = sf1Var.v0;
+        if (j(i10) == 1) {
+            org.telegram.ui.Cells.v3 v3Var = (org.telegram.ui.Cells.v3) view;
+            if (i10 == sf1Var.g0) {
+                v3Var.setText(LocaleController.getString(R.string.Topics));
+            }
+            if (i10 == sf1Var.j0) {
+                v3Var.setText(LocaleController.getString(R.string.SearchMessages));
             }
         }
-        return false;
+        if (j(i10) == 2) {
+            org.telegram.ui.Cells.sa saVar = (org.telegram.ui.Cells.sa) view;
+            saVar.setTopic((TLRPC.TL_forumTopic) sf1Var.e0.get(i10 - sf1Var.h0));
+            saVar.d = i10 != sf1Var.i0 - 1;
+        }
+        if (j(i10) == 3) {
+            MessageObject messageObject = (MessageObject) sf1Var.f0.get(i10 - sf1Var.k0);
+            tf1 tf1Var = (tf1) view;
+            tf1Var.W4 = i10 != sf1Var.l0 - 1;
+            i11 = ((org.telegram.ui.ActionBar.n2) wf1Var).currentAccount;
+            long topicId = MessageObject.getTopicId(i11, messageObject.messageOwner, true);
+            if (topicId == 0) {
+                topicId = 1;
+            }
+            TLRPC.TL_forumTopic findTopic = wf1Var.s.findTopic(wf1Var.a, topicId);
+            if (findTopic != null) {
+                tf1Var.X(findTopic, messageObject.getDialogId(), messageObject, false, false);
+                tf1Var.setTopicIcon(findTopic);
+            } else {
+                FileLog.d("cant find topic " + topicId);
+            }
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v5, types: [org.telegram.ui.Cells.s2, org.telegram.ui.tf1] */
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout frameLayout;
+        boolean z10;
+        wf1 wf1Var = this.c.v0;
+        if (i10 == 1) {
+            frameLayout = new org.telegram.ui.Cells.v3(viewGroup.getContext(), null);
+        } else if (i10 == 2) {
+            frameLayout = new org.telegram.ui.Cells.sa(viewGroup.getContext());
+        } else {
+            if (i10 != 3) {
+                throw new RuntimeException("unsupported view type");
+            }
+            ?? tf1Var = new tf1(wf1Var, viewGroup.getContext(), true);
+            z10 = ((org.telegram.ui.ActionBar.n2) wf1Var).inPreviewMode;
+            tf1Var.k0 = z10;
+            frameLayout = tf1Var;
+        }
+        frameLayout.setLayoutParams(new s4.p0(-1, -2));
+        return new org.telegram.ui.Components.il0(frameLayout);
     }
 }

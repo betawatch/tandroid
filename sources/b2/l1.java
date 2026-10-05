@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class l1 {
     public static final String f;
@@ -49,12 +49,12 @@ public final class l1 {
     }
 
     public static void b(String str, int i10, String str2, String str3) {
-        StringBuilder w10 = a4.a.w("Different ", str, " combined in one TrackGroup: '", str2, "' (track 0) and '");
-        w10.append(str3);
-        w10.append("' (track ");
-        w10.append(i10);
-        w10.append(")");
-        e2.a.f("TrackGroup", "", new IllegalStateException(w10.toString()));
+        StringBuilder x10 = a4.a.x("Different ", str, " combined in one TrackGroup: '", str2, "' (track 0) and '");
+        x10.append(str3);
+        x10.append("' (track ");
+        x10.append(i10);
+        x10.append(")");
+        e2.a.f("TrackGroup", "", new IllegalStateException(x10.toString()));
     }
 
     public final int a(s sVar) {

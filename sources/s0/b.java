@@ -39,7 +39,7 @@ import w9.v;
 import w9.w;
 import w9.x;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, cd0, d9.e {
     public final /* synthetic */ int a;
@@ -111,10 +111,10 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, cd0, d9.e 
         da.a c10;
         int i11 = CrashlyticsRegistrar.a;
         k9.h hVar = (k9.h) cVar.a(k9.h.class);
-        p s10 = cVar.s(t9.a.class);
-        p s11 = cVar.s(l9.a.class);
+        p n10 = cVar.n(t9.a.class);
+        p n11 = cVar.n(l9.a.class);
         qa.d dVar = (qa.d) cVar.a(qa.d.class);
-        p s12 = cVar.s(ya.a.class);
+        p n12 = cVar.n(ya.a.class);
         hVar.a();
         Context context = hVar.a;
         String packageName = context.getPackageName();
@@ -122,8 +122,8 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, cd0, d9.e 
         ba.c cVar2 = new ba.c(context);
         s sVar = new s(hVar);
         v vVar2 = new v(context, packageName, dVar, sVar);
-        t9.a aVar2 = new t9.a(s10);
-        androidx.emoji2.text.f fVar = new androidx.emoji2.text.f(s11);
+        t9.a aVar2 = new t9.a(n10);
+        androidx.emoji2.text.f fVar = new androidx.emoji2.text.f(n11);
         ExecutorService a2 = w9.h.a("Crashlytics Exception Handler");
         w9.j jVar = new w9.j(sVar, cVar2);
         ab.c cVar3 = ab.c.a;
@@ -139,7 +139,7 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, cd0, d9.e 
             str = null;
             a10.a.e(null);
         }
-        l2.g gVar = new l2.g(s12, 20);
+        l2.g gVar = new l2.g(n12, 20);
         s9.a aVar3 = new s9.a(fVar);
         v vVar3 = vVar2;
         s9.a aVar4 = new s9.a(fVar);
@@ -189,7 +189,7 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, cd0, d9.e 
             th2 = null;
             i10 = 3;
         }
-        String i14 = t8.b.i("Mapping file ID is: ", string);
+        String i14 = sa.e.i("Mapping file ID is: ", string);
         if (Log.isLoggable("FirebaseCrashlytics", i10)) {
             Log.d("FirebaseCrashlytics", i14, th2);
         }
@@ -203,9 +203,9 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, cd0, d9.e 
             String str6 = eVar.b;
             String str7 = eVar.c;
             int i16 = size;
-            StringBuilder w10 = a4.a.w("Build id for ", str5, " on ", str6, ": ");
-            w10.append(str7);
-            String sb2 = w10.toString();
+            StringBuilder x10 = a4.a.x("Build id for ", str5, " on ", str6, ": ");
+            x10.append(str7);
+            String sb2 = x10.toString();
             if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                 Log.d("FirebaseCrashlytics", sb2, null);
             }
@@ -227,15 +227,15 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, cd0, d9.e 
             a6.i iVar = new a6.i(dVar3, 18);
             m mVar = new m(cVar2);
             Locale locale = Locale.US;
-            String p5 = a4.a.p("https://firebase-settings.crashlytics.com/spi/v2/platforms/android/gmp/", str4, "/settings");
+            String q6 = a4.a.q("https://firebase-settings.crashlytics.com/spi/v2/platforms/android/gmp/", str4, "/settings");
             c5.i iVar2 = new c5.i();
-            if (p5 == null) {
+            if (q6 == null) {
                 throw new IllegalArgumentException("url must not be null.");
             }
-            iVar2.a = p5;
+            iVar2.a = q6;
             String str11 = Build.MANUFACTURER;
             String str12 = v.h;
-            String C = a4.a.C(str11.replaceAll(str12, ""), "/", Build.MODEL.replaceAll(str12, ""));
+            String D = a4.a.D(str11.replaceAll(str12, ""), "/", Build.MODEL.replaceAll(str12, ""));
             String replaceAll = Build.VERSION.INCREMENTAL.replaceAll(str12, "");
             String replaceAll2 = Build.VERSION.RELEASE.replaceAll(str12, "");
             int e13 = w9.h.e(context, "com.google.firebase.crashlytics.mapping_file_id", "string");
@@ -265,7 +265,7 @@ public final /* synthetic */ class b implements s5.e, pa.a, q9.d, a2, cd0, d9.e 
                 arrayList2 = arrayList2;
             }
             String sb4 = sb3.toString();
-            da.d dVar4 = new da.d(str4, C, replaceAll, replaceAll2, vVar4, sb4.length() > 0 ? w9.h.i(sb4) : null, str10, str9, t8.b.c(c11 != null ? 4 : 1));
+            da.d dVar4 = new da.d(str4, D, replaceAll, replaceAll2, vVar4, sb4.length() > 0 ? w9.h.i(sb4) : null, str10, str9, sa.e.c(c11 != null ? 4 : 1));
             da.b bVar2 = new da.b();
             AtomicReference atomicReference = new AtomicReference();
             bVar2.h = atomicReference;

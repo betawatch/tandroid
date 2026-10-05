@@ -16,11 +16,11 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.ca1;
 import org.telegram.ui.cu;
-import org.telegram.ui.ea1;
-import org.telegram.ui.fa1;
+import org.telegram.ui.da1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q3 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -124,29 +124,29 @@ public final /* synthetic */ class q3 implements View.OnLongClickListener {
                 undoView.e(1, true);
                 return true;
             default:
-                ea1 ea1Var = (ea1) this.b;
+                ca1 ca1Var = (ca1) this.b;
                 kg.f fVar = (kg.f) this.c;
-                fa1 fa1Var = ea1Var.d;
-                v00 v00Var = ea1Var.a;
+                da1 da1Var = ca1Var.d;
+                v00 v00Var = ca1Var.a;
                 boolean z10 = false;
                 if (v00Var.c) {
-                    fa1Var.f();
-                    ArrayList arrayList = fa1Var.n;
-                    ig.g gVar = fa1Var.c;
+                    da1Var.f();
+                    ArrayList arrayList = da1Var.n;
+                    ig.g gVar = da1Var.c;
                     int size = arrayList.size();
                     for (int i10 = 0; i10 < size; i10++) {
-                        ((ea1) arrayList.get(i10)).a.setChecked(false);
-                        ((ea1) arrayList.get(i10)).b.n = false;
-                        if (fa1Var.r.c > 0 && i10 < gVar.d.size()) {
+                        ((ca1) arrayList.get(i10)).a.setChecked(false);
+                        ((ca1) arrayList.get(i10)).b.n = false;
+                        if (da1Var.r.c > 0 && i10 < gVar.d.size()) {
                             ((kg.f) gVar.d.get(i10)).n = false;
                         }
                     }
                     z10 = true;
                     v00Var.setChecked(true);
                     fVar.n = true;
-                    fa1Var.b.z();
-                    if (fa1Var.r.c > 0) {
-                        ((kg.f) gVar.d.get(ea1Var.c)).n = true;
+                    da1Var.b.z();
+                    if (da1Var.r.c > 0) {
+                        ((kg.f) gVar.d.get(ca1Var.c)).n = true;
                         gVar.z();
                     }
                 }

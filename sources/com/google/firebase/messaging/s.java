@@ -39,9 +39,9 @@ import y9.x0;
 import zd.f1;
 import zd.i2;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class s implements z3.n {
+public final class s implements z3.m {
     public static s f;
     public final /* synthetic */ int a;
     public Object b;
@@ -80,20 +80,13 @@ public final class s implements z3.n {
         }
     }
 
-    @Override // z3.n
-    public int A() {
-        switch (this.a) {
-        }
-        return 2;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:74:0x01f7  */
     /* JADX WARN: Removed duplicated region for block: B:79:0x01fd  */
-    @Override // z3.n
+    @Override // z3.m
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void F(byte[] bArr, int i10, int i11, z3.m mVar, e2.h hVar) {
+    public void E(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
         int[] iArr;
         d2.b bVar;
         int i12;
@@ -379,10 +372,10 @@ public final class s implements z3.n {
             str = str.concat(" parameterKey");
         }
         if (((String) this.d) == null) {
-            str = t8.b.v(str, " parameterValue");
+            str = sa.e.v(str, " parameterValue");
         }
         if (((Long) this.e) == null) {
-            str = t8.b.v(str, " templateVersion");
+            str = sa.e.v(str, " templateVersion");
         }
         if (str.isEmpty()) {
             return new w0((x0) this.c, (String) this.b, (String) this.d, ((Long) this.e).longValue());
@@ -726,11 +719,11 @@ public final class s implements z3.n {
         }
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public /* synthetic */ z3.d h(int i10, int i11, byte[] bArr) {
         switch (this.a) {
         }
-        return t8.b.a(this, bArr, i11);
+        return sa.e.a(this, bArr, i11);
     }
 
     public m2.b k(List list) {
@@ -802,7 +795,7 @@ public final class s implements z3.n {
         return continueWithTask;
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public /* synthetic */ void reset() {
         int i10 = this.a;
     }
@@ -814,6 +807,13 @@ public final class s implements z3.n {
             default:
                 return super.toString();
         }
+    }
+
+    @Override // z3.m
+    public int y() {
+        switch (this.a) {
+        }
+        return 2;
     }
 
     public /* synthetic */ s(Object obj, Object obj2, Object obj3, Object obj4, int i10) {

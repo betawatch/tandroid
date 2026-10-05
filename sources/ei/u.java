@@ -28,7 +28,7 @@ import org.telegram.ui.sa;
 import org.telegram.ui.w9;
 import org.telegram.ui.wb;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class u extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -135,26 +135,26 @@ public final class u extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 9:
-                hg.c cVar = (hg.c) obj;
+                hg.d dVar = (hg.d) obj;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        cVar.W();
+                        dVar.W();
                         break;
                     }
-                } else if (cVar.onBackPressed(true)) {
-                    cVar.finishFragment();
+                } else if (dVar.onBackPressed(true)) {
+                    dVar.finishFragment();
                     break;
                 }
                 break;
             case 10:
-                hg.m mVar = (hg.m) obj;
+                hg.n nVar = (hg.n) obj;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        mVar.h0();
+                        nVar.h0();
                         break;
                     }
-                } else if (mVar.onBackPressed(true)) {
-                    mVar.finishFragment();
+                } else if (nVar.onBackPressed(true)) {
+                    nVar.finishFragment();
                     break;
                 }
                 break;

@@ -28,15 +28,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.fn0;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class vc extends View {
     public final Paint A0;
@@ -124,7 +123,7 @@ public final class vc extends View {
     public boolean o1;
     public final Path p0;
     public VelocityTracker p1;
-    public final e11 q0;
+    public final f11 q0;
     public boolean q1;
     public final ArrayList r;
     public final Drawable r0;
@@ -238,7 +237,7 @@ public final class vc extends View {
         paint3.setColor(-16777216);
         paint5.setColor(-1);
         paint4.setColor(637534208);
-        this.q0 = new e11(LocaleController.getString(R.string.StoryTimeline), 12.0f, AndroidUtilities.bold());
+        this.q0 = new f11(LocaleController.getString(R.string.StoryTimeline), 12.0f, AndroidUtilities.bold());
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.timeline).mutate();
         this.r0 = mutate;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -920,10 +919,10 @@ public final class vc extends View {
                     float h = ((vcVar.q0.h() + AndroidUtilities.dp(3.66f)) + drawable.getIntrinsicWidth()) / 2.0f;
                     int centerX = (int) (rectF9.centerX() - h);
                     int centerY = (int) rectF9.centerY();
-                    drawable.setBounds(centerX, ok.d(2, centerY, drawable), drawable.getIntrinsicWidth() + centerX, org.telegram.ui.Cells.c1.t(2, centerY, drawable));
+                    drawable.setBounds(centerX, org.telegram.ui.Cells.c1.e(2, centerY, drawable), drawable.getIntrinsicWidth() + centerX, org.telegram.ui.Cells.c1.w(2, centerY, drawable));
                     drawable.setAlpha(191);
                     drawable.draw(canvas);
-                    e11 e11Var = vcVar.q0;
+                    f11 f11Var = vcVar.q0;
                     float centerX2 = (rectF9.centerX() - h) + drawable.getIntrinsicWidth() + AndroidUtilities.dp(3.66f);
                     float f63 = centerY;
                     paint = paint4;
@@ -931,7 +930,7 @@ public final class vc extends View {
                     arrayList = arrayList21;
                     oaVar = oaVar2;
                     f7 = 0.4f;
-                    e11Var.c(centerX2, f63, 0.75f, -1, canvas);
+                    f11Var.c(centerX2, f63, 0.75f, -1, canvas);
                     canvas.restore();
                 }
             } else {
@@ -950,10 +949,10 @@ public final class vc extends View {
             float h10 = ((vcVar.q0.h() + AndroidUtilities.dp(3.66f)) + drawable.getIntrinsicWidth()) / 2.0f;
             int centerX3 = (int) (rectF9.centerX() - h10);
             int centerY2 = (int) rectF9.centerY();
-            drawable.setBounds(centerX3, ok.d(2, centerY2, drawable), drawable.getIntrinsicWidth() + centerX3, org.telegram.ui.Cells.c1.t(2, centerY2, drawable));
+            drawable.setBounds(centerX3, org.telegram.ui.Cells.c1.e(2, centerY2, drawable), drawable.getIntrinsicWidth() + centerX3, org.telegram.ui.Cells.c1.w(2, centerY2, drawable));
             drawable.setAlpha(191);
             drawable.draw(canvas);
-            e11 e11Var2 = vcVar.q0;
+            f11 f11Var2 = vcVar.q0;
             float centerX22 = (rectF9.centerX() - h10) + drawable.getIntrinsicWidth() + AndroidUtilities.dp(3.66f);
             float f632 = centerY2;
             paint = paint4;
@@ -961,7 +960,7 @@ public final class vc extends View {
             arrayList = arrayList21;
             oaVar = oaVar2;
             f7 = 0.4f;
-            e11Var2.c(centerX22, f632, 0.75f, -1, canvas);
+            f11Var2.c(centerX22, f632, 0.75f, -1, canvas);
             canvas.restore();
         } else {
             rectF = rectF6;
@@ -1936,7 +1935,7 @@ public final class vc extends View {
         float f14 = f7 + f10;
         float f15 = (f14 - dp2) / 2.0f;
         float f16 = (f14 + dp2) / 2.0f;
-        rectF.set(org.telegram.messenger.f0.x(AndroidUtilities.dp(this.X0 ? 2.0f : 10.0f), dp, 2.0f, f11), f15, f11 - ((AndroidUtilities.dp(this.X0 ? 2.0f : 10.0f) + dp) / 2.0f), f16);
+        rectF.set(org.telegram.messenger.q.x(AndroidUtilities.dp(this.X0 ? 2.0f : 10.0f), dp, 2.0f, f11), f15, f11 - ((AndroidUtilities.dp(this.X0 ? 2.0f : 10.0f) + dp) / 2.0f), f16);
         if (!this.X0) {
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), paint5);
             if (paint != null && !this.X0) {
@@ -1944,7 +1943,7 @@ public final class vc extends View {
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), paint4);
             }
         }
-        rectF.set(com.google.android.gms.internal.vision.e2.A(AndroidUtilities.dp(this.X0 ? 2.5f : 10.0f), dp, 2.0f, f12), f15, org.telegram.messenger.f0.a(AndroidUtilities.dp(this.X0 ? 2.5f : 10.0f), dp, 2.0f, f12), f16);
+        rectF.set(com.google.android.gms.internal.vision.e2.A(AndroidUtilities.dp(this.X0 ? 2.5f : 10.0f), dp, 2.0f, f12), f15, org.telegram.messenger.q.a(AndroidUtilities.dp(this.X0 ? 2.5f : 10.0f), dp, 2.0f, f12), f16);
         if (!this.X0) {
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), paint5);
             if (paint != null) {

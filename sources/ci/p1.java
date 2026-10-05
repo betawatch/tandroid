@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.bl0;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class p1 extends zl0 {
     public bl0 e3;
@@ -39,7 +39,7 @@ public final class p1 extends zl0 {
         this.o3 = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
     }
 
-    public static void y1(p1 p1Var, int i10, int i11) {
+    public static void x1(p1 p1Var, int i10, int i11) {
         if (p1Var.e3 == null || !(p1Var.getLayoutManager() instanceof s4.s)) {
             return;
         }
@@ -108,7 +108,7 @@ public final class p1 extends zl0 {
                     int y3 = this.i3 ? (int) o1Var.getY() : o1Var.getTop();
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(y3);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.k0.w(1, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.c.w(1, arrayList) : new ArrayList();
                         sparseArray.put(y3, arrayList4);
                     }
                     arrayList4.add(o1Var);
@@ -151,7 +151,7 @@ public final class p1 extends zl0 {
                     n1Var = new n1(this);
                     n1Var.l(7);
                 } else {
-                    n1Var = (n1) hg.k0.w(1, arrayList2);
+                    n1Var = (n1) hg.c.w(1, arrayList2);
                 }
                 n1Var.M = R;
                 n1Var.e();

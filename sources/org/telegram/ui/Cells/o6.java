@@ -28,11 +28,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.et;
-import org.telegram.ui.Components.gx0;
+import org.telegram.ui.Components.hx0;
 import org.telegram.ui.Components.oc0;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class o6 extends FrameLayout {
     public static final oc0 G;
@@ -50,7 +50,7 @@ public class o6 extends FrameLayout {
     public final org.telegram.ui.Components.w9 h;
     public int n;
     public final org.telegram.ui.Components.h9 r;
-    public final gx0 s;
+    public final hx0 s;
     public final org.telegram.ui.ActionBar.d6 v;
     public final int w;
     public long x;
@@ -102,10 +102,10 @@ public class o6 extends FrameLayout {
         float f10 = i10 == 1 ? 7.66f : 5.33f;
         float f11 = i10 == 1 ? 73.0f : 55.0f;
         addView(z5Var, w7.z5.i(-1.0f, -2.0f, 55, f11, f10, 12.0f, 0.0f));
-        gx0 gx0Var = new gx0(this);
-        this.s = gx0Var;
+        hx0 hx0Var = new hx0(this);
+        this.s = hx0Var;
         z5Var.setDrawablePadding(AndroidUtilities.dp(3.0f));
-        z5Var.i(gx0Var.a);
+        z5Var.i(hx0Var.a);
         org.telegram.ui.ActionBar.i5 i5Var = new org.telegram.ui.ActionBar.i5(context);
         this.e = i5Var;
         i5Var.setTextSize(13);
@@ -260,7 +260,7 @@ public class o6 extends FrameLayout {
             formatString = LocaleController.formatString("AccDescrLike", R.string.AccDescrLike, new Object[0]);
             z14 = true;
         } else if (reaction != null) {
-            zg.o0 d = zg.o0.d(reaction);
+            zg.m0 d = zg.m0.d(reaction);
             if (d.f != null) {
                 if (w9Var22 != null) {
                     w9Var22.setAnimatedEmojiDrawable(null);
@@ -323,7 +323,7 @@ public class o6 extends FrameLayout {
             if (j3 <= 0) {
                 j10 = storyItem.date;
                 if (j10 != 0) {
-                    StringBuilder j11 = t8.b.j(formatString, " ");
+                    StringBuilder j11 = sa.e.j(formatString, " ");
                     j11.append(LocaleController.formatSeenDate(j10));
                     formatString = j11.toString();
                 }

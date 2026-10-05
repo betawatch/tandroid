@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class vo extends LinearLayout {
     public sk0 a;
@@ -68,7 +68,7 @@ public abstract class vo extends LinearLayout {
             }
             sk0 sk0Var2 = this.a;
             if (!sk0Var2.e1 && sk0Var2.Q0 && sk0Var2.getMeasuredWidth() > 0) {
-                int C = org.telegram.messenger.ok.C(16.0f, sk0Var2.getMeasuredWidth(), AndroidUtilities.dp(320.0f));
+                int C = org.telegram.messenger.bi.C(16.0f, sk0Var2.getMeasuredWidth(), AndroidUtilities.dp(320.0f));
                 StaticLayout staticLayout = new StaticLayout(sk0Var2.R0.getText(), sk0Var2.R0.getPaint(), C, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 sk0Var2.T0 = staticLayout.getHeight();
                 sk0Var2.S0 = 0;

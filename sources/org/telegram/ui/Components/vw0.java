@@ -1,21 +1,62 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
-/* loaded from: classes3.dex */
-public final class vw0 {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public int j;
-    public final /* synthetic */ ww0 k;
+import android.content.Context;
+import android.graphics.PointF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 
-    public vw0(ww0 ww0Var) {
-        this.k = ww0Var;
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+/* loaded from: classes3.dex */
+public class vw0 extends s4.d0 {
+    public final tr r;
+    public int s;
+    public float t;
+
+    public vw0(Context context) {
+        super(context);
+        this.r = tr.f;
+        this.t = 1.0f;
+    }
+
+    @Override // s4.d0, s4.y0
+    public final void g(View view, s4.x0 x0Var) {
+        int j3 = j(o(), view);
+        int k10 = k(p(), view);
+        int m10 = m((int) Math.sqrt((k10 * k10) + (j3 * j3)));
+        if (m10 > 0) {
+            x0Var.b(-j3, -k10, m10, this.r);
+        }
+        AndroidUtilities.runOnUIThread(new gq0(this, 10), Math.max(0, m10));
+    }
+
+    @Override // s4.d0
+    public final int k(int i10, View view) {
+        return super.k(i10, view) - this.s;
+    }
+
+    @Override // s4.d0
+    public final int m(int i10) {
+        return Math.round(Math.min(super.m(i10), 500) * this.t);
+    }
+
+    @Override // s4.d0
+    public final int n(int i10) {
+        return Math.round(Math.min(super.n(i10), ImageReceiver.DEFAULT_CROSSFADE_DURATION) * this.t);
+    }
+
+    @Override // s4.d0
+    public final void q(s4.x0 x0Var) {
+        PointF a2 = a(this.a);
+        if (a2 == null || (a2.x == 0.0f && a2.y == 0.0f)) {
+            x0Var.d = this.a;
+            h();
+            return;
+        }
+        s4.y0.b(a2);
+        this.k = a2;
+        this.o = (int) (a2.x * 10000.0f);
+        this.p = (int) (a2.y * 10000.0f);
+        x0Var.b((int) (this.o * 1.2f), (int) (this.p * 1.2f), (int) (n(10000) * 1.2f), this.r);
     }
 }

@@ -21,7 +21,6 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.f0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
@@ -30,15 +29,15 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.t7;
-import org.telegram.ui.Components.ds0;
-import org.telegram.ui.Components.f91;
+import org.telegram.ui.Components.es0;
+import org.telegram.ui.Components.g91;
 import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.xi;
 import org.telegram.ui.Components.zl0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class z extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static LongSparseArray E;
@@ -51,7 +50,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
     public final ArrayList f;
     public final ArrayList h;
     public final a n;
-    public final f91 r;
+    public final g91 r;
     public Boolean s;
     public int v;
     public float w;
@@ -90,16 +89,16 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             u8Var = u8Var2;
         }
         this.e = u8Var;
-        ds0 ds0Var = (ds0) this;
-        a aVar = new a(ds0Var, context);
+        es0 es0Var = (es0) this;
+        a aVar = new a(es0Var, context);
         this.n = aVar;
         aVar.setAllowDisallowInterceptTouch(true);
-        aVar.setAdapter(new b(ds0Var, context));
+        aVar.setAdapter(new b(es0Var, context));
         addView(aVar, z5.e(-1, -1, 119));
-        f91 n10 = aVar.n(9, true);
+        g91 n10 = aVar.n(9, true);
         this.r = n10;
         n10.r = 12;
-        n10.setPreTabClick(new a1.c(ds0Var, 11));
+        n10.setPreTabClick(new a1.c(es0Var, 11));
         addView(n10, z5.e(-1, 42, 48));
         i(false);
     }
@@ -110,7 +109,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             return;
         }
         xi xiVar = new xi(n2Var.getParentActivity(), this.a, false, false, false, this.c);
-        xiVar.G1(1, false);
+        xiVar.I1(1, false);
         xiVar.T0 = true;
         xiVar.S0 = false;
         xiVar.j1.setText(LocaleController.getString(R.string.ChoosePhotoOrVideo));
@@ -120,7 +119,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             AndroidUtilities.hideKeyboard(n2Var.getFragmentView().findFocus());
         }
         xiVar.Z1 = new c(this, xiVar, str);
-        xiVar.o1();
+        xiVar.q1();
         xiVar.show();
     }
 
@@ -413,14 +412,14 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
         }
         a aVar = this.n;
         aVar.o(true);
-        SpannableString spannableString = new SpannableString(f0.g(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
+        SpannableString spannableString = new SpannableString(org.telegram.messenger.q.g(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
         rq rqVar = new rq(R.drawable.msg_filled_plus, 0);
         rqVar.setScale(0.9f, 0.9f);
         rqVar.spaceScaleX = 0.85f;
         spannableString.setSpan(rqVar, 0, 1, 33);
-        f91 f91Var = this.r;
-        f91Var.a(-1, spannableString);
-        f91Var.x.l();
+        g91 g91Var = this.r;
+        g91Var.a(-1, spannableString);
+        g91Var.x.l();
         boolean z11 = arrayList3.size() + 1 > 1;
         Boolean bool = this.s;
         if (bool == null || bool.booleanValue() != z11) {
@@ -431,7 +430,7 @@ public abstract class z extends FrameLayout implements NotificationCenter.Notifi
             this.s = Boolean.valueOf(z11);
             if (!z10) {
                 this.w = z11 ? 1.0f : 0.0f;
-                f91Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
+                g91Var.setTranslationY(AndroidUtilities.dp(z11 ? 0.0f : -42.0f));
                 aVar.setTranslationY(AndroidUtilities.dp(z11 ? 42.0f : 0.0f));
                 return;
             }

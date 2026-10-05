@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class zu extends org.telegram.ui.ActionBar.n2 {
     public static final int[][] r = {new int[]{-14899731, -15431455}, new int[]{-11154873, -14175180}, new int[]{-11565578, -13276952}, new int[]{-1007845, -1996271}, new int[]{-765355, -2148011}, new int[]{-3903756, -6335009}, new int[]{-13451058, -14836538}};
@@ -18,8 +18,8 @@ public final class zu extends org.telegram.ui.ActionBar.n2 {
     public static final int[] v = {R.drawable.msg_filled_data_videos, R.drawable.msg_filled_data_files, R.drawable.msg_filled_data_photos, R.drawable.msg_filled_data_messages, R.drawable.msg_filled_data_music, R.drawable.msg_filled_data_voice, R.drawable.msg_filled_data_calls};
     public static final int[] w = {R.string.LocalVideoCache, R.string.LocalDocumentCache, R.string.LocalPhotoCache, R.string.MessagesSettings, R.string.LocalMusicCache, R.string.LocalAudioCache, R.string.CallsDataUsage};
     public static final int[] x = {2, 5, 4, 1, 7, 3, 0};
-    public org.telegram.ui.Components.g91 a;
-    public org.telegram.ui.Components.f91 b;
+    public org.telegram.ui.Components.h91 a;
+    public org.telegram.ui.Components.g91 b;
     public FrameLayout c;
     public View d;
     public final pe.b e;
@@ -40,15 +40,15 @@ public final class zu extends org.telegram.ui.ActionBar.n2 {
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.i6.G6;
         kVar.setTitleColor(getThemedColor(i10));
-        this.actionBar.B(getThemedColor(i10), false);
-        this.actionBar.A(getThemedColor(org.telegram.ui.ActionBar.i6.i6), false);
+        this.actionBar.A(getThemedColor(i10), false);
+        this.actionBar.z(getThemedColor(org.telegram.ui.ActionBar.i6.i6), false);
         this.actionBar.setCastShadows(false);
         this.actionBar.setActionBarMenuOnItemClick(new qo(this, 19));
         ai.w5 w5Var = new ai.w5(context, 23);
         w5Var.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.i6.a7));
-        org.telegram.ui.Components.g91 g91Var = new org.telegram.ui.Components.g91(context, null);
-        this.a = g91Var;
-        g91Var.setAdapter(new wu(this));
+        org.telegram.ui.Components.h91 h91Var = new org.telegram.ui.Components.h91(context, null);
+        this.a = h91Var;
+        h91Var.setAdapter(new wu(this));
         this.c = new FrameLayout(context);
         this.b = this.a.n(-2, true);
         w5Var.addView(this.a, w7.z5.e(-1, -1, 119));
@@ -61,12 +61,12 @@ public final class zu extends org.telegram.ui.ActionBar.n2 {
         this.c.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
         FrameLayout frameLayout = this.c;
         ch.d c10 = getBaseSimpleGlass().c.c(this.c, null, false);
-        c10.x(eh.b.m(this.resourceProvider));
-        c10.y(AndroidUtilities.dp(9.66f));
-        c10.z(AndroidUtilities.dp(18.0f));
+        c10.w(eh.b.m(this.resourceProvider));
+        c10.x(AndroidUtilities.dp(9.66f));
+        c10.y(AndroidUtilities.dp(18.0f));
         frameLayout.setBackground(c10);
         getBaseSimpleGlass().e(w5Var, this.a, this.actionBar, this.resourceProvider);
-        getBaseSimpleGlass().i = new di.f(3, this, w5Var);
+        getBaseSimpleGlass().i = new di.f(4, this, w5Var);
         getBaseSimpleGlass().h = null;
         w5Var.addView(this.c, w7.z5.d(-1, -2.0f, 48, -4.0f, 0.0f, -4.0f, 0.0f));
         this.d.setBackground(getBaseSimpleGlass().a(this.d));
@@ -127,7 +127,7 @@ public final class zu extends org.telegram.ui.ActionBar.n2 {
         View currentView = this.a.getCurrentView();
         if (currentView instanceof vu) {
             vu vuVar = (vu) currentView;
-            vuVar.f1(new ru(vuVar), 700, true);
+            vuVar.e1(new ru(vuVar), 700, true);
         }
     }
 }

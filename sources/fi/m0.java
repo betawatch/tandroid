@@ -28,17 +28,17 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ad;
 import org.telegram.ui.Components.bd;
-import org.telegram.ui.Components.q21;
+import org.telegram.ui.Components.r21;
 import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.vx0;
 import org.telegram.ui.Components.wv;
+import org.telegram.ui.Components.wx0;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.h90;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -118,7 +118,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 }
                 if (iArr[0] == i12 && iArr[1] > 0) {
                     wvVar.dismiss();
-                    rc.g(n2Var2, new vx0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
+                    rc.g(n2Var2, new wx0(n2Var2.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, n2Var2.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;
@@ -137,7 +137,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 if (tL_storyAlbum == null) {
                     yc X = yc.X();
                     if (X != null) {
-                        org.telegram.messenger.f0.p(R.string.StoryAlbumNotFound, X, R.raw.story_bomb2, 36);
+                        org.telegram.messenger.q.p(R.string.StoryAlbumNotFound, X, R.raw.story_bomb2, 36);
                         break;
                     }
                 } else {
@@ -182,7 +182,7 @@ public final /* synthetic */ class m0 implements Utilities.Callback {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (savedStarGift != null) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(adVar.getText());
-                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) bd.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new q21(this.b, context, d6Var, savedStarGift, 18), d6Var, null));
+                    spannableStringBuilder.append((CharSequence) " ").append((CharSequence) bd.b(LocaleController.getString(R.string.StarGiftReasonUpgradeView), new r21(this.b, context, d6Var, savedStarGift, 18), d6Var, null));
                     adVar.setText(spannableStringBuilder);
                     break;
                 }

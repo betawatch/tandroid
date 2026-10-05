@@ -12,9 +12,9 @@ import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
-import yh.s;
+import yh.t;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class b implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                new s(this.b).show();
+                new t(this.b).show();
                 break;
             case 1:
                 nf.f.s(this.b, LocaleController.getString(R.string.ChannelAffiliateProgramJoinButtonInfoLink));
@@ -44,13 +44,13 @@ public final /* synthetic */ class b implements Runnable {
                 r4.d.s(this.b, new a3.b(2), r4.d.a, false);
                 break;
             case 5:
-                new s(this.b).show();
+                new t(this.b).show();
                 break;
             case 6:
                 nf.f.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
                 break;
             case 7:
-                new s(this.b).show();
+                new t(this.b).show();
                 break;
             case 8:
                 nf.f.s(this.b, LocaleController.getString(R.string.StarsTOSLink));

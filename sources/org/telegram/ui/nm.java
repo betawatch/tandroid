@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewPropertyAnimator;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AppGlobalConfig;
 import org.telegram.messenger.BotForumHelper;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.FileLog;
@@ -18,12 +19,13 @@ import org.telegram.messenger.MessageSuggestionParams;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class nm implements org.telegram.ui.Components.pg {
     public int a;
@@ -39,7 +41,7 @@ public final class nm implements org.telegram.ui.Components.pg {
         yn ynVar = this.c;
         ai.g4 g4Var = ynVar.H1;
         if (g4Var != null) {
-            g4Var.F1(null, 0);
+            g4Var.H1(null, 0);
         }
         ynVar.W9();
     }
@@ -88,9 +90,9 @@ public final class nm implements org.telegram.ui.Components.pg {
         }
         kVar = ((org.telegram.ui.ActionBar.n2) ynVar).actionBar;
         final org.telegram.ui.ActionBar.z n10 = kVar.n();
-        org.telegram.ui.Components.iz0 iz0Var = ynVar.b1;
-        if (iz0Var != null) {
-            iz0Var.e();
+        org.telegram.ui.Components.jz0 jz0Var = ynVar.b1;
+        if (jz0Var != null) {
+            jz0Var.e();
         }
         final int i12 = 1;
         final int i13 = 0;
@@ -309,7 +311,7 @@ public final class nm implements org.telegram.ui.Components.pg {
         for (int i14 = 1; i14 < Math.min(5, arrayList.size()); i14++) {
             MessageObject messageObject3 = (MessageObject) arrayList.get(i14);
             if (messageObject3 != null && !messageObject3.isOutOwner() && ((messageObject3.isVoice() || messageObject3.isRoundVideo()) && messageObject3.isContentUnread())) {
-                org.telegram.ui.Components.c41.u(messageObject3, true);
+                org.telegram.ui.Components.d41.u(messageObject3, true);
             }
         }
     }
@@ -382,9 +384,9 @@ public final class nm implements org.telegram.ui.Components.pg {
 
     @Override // org.telegram.ui.Components.pg
     public final void d2() {
-        org.telegram.ui.Components.iz0 iz0Var = this.c.b1;
-        if (iz0Var != null) {
-            iz0Var.e();
+        org.telegram.ui.Components.jz0 jz0Var = this.c.b1;
+        if (jz0Var != null) {
+            jz0Var.e();
         }
     }
 
@@ -423,9 +425,9 @@ public final class nm implements org.telegram.ui.Components.pg {
 
     @Override // org.telegram.ui.Components.pg
     public final void i() {
-        org.telegram.ui.Components.iz0 iz0Var = this.c.b1;
-        if (iz0Var != null) {
-            iz0Var.f();
+        org.telegram.ui.Components.jz0 jz0Var = this.c.b1;
+        if (jz0Var != null) {
+            jz0Var.f();
         }
     }
 
@@ -510,12 +512,21 @@ public final class nm implements org.telegram.ui.Components.pg {
 
     @Override // org.telegram.ui.Components.pg
     public final void k2(int i10, int i11, int i12, long j3, long j10, boolean z10) {
+        boolean z11;
         yn ynVar = this.c;
         if (ynVar.Z2 == null && CameraView.isCameraAllowed() && ynVar.getParentActivity() != null) {
             Activity parentActivity = ynVar.getParentActivity();
             wn wnVar = ynVar.ca;
             int i13 = org.telegram.ui.Components.k60.e;
-            org.telegram.ui.Components.k60 e60Var = ri.e.b.a() ? new org.telegram.ui.Components.e60(parentActivity, ynVar, wnVar) : new org.telegram.ui.Components.f60(parentActivity, ynVar, wnVar, true);
+            ri.a aVar = ri.e.b;
+            aVar.a();
+            if (aVar.c) {
+                aVar.a();
+                z11 = aVar.d;
+            } else {
+                z11 = AppGlobalConfig.getInstance(UserConfig.selectedAccount).roundVideoRecorder2Allowed.get();
+            }
+            org.telegram.ui.Components.k60 e60Var = z11 ? new org.telegram.ui.Components.e60(parentActivity, ynVar, wnVar) : new org.telegram.ui.Components.f60(parentActivity, ynVar, wnVar, true);
             ynVar.Z2 = e60Var;
             e60Var.setAnimationCallback(new re(ynVar, 0));
             ynVar.Z2.setTrimCallback(new re(ynVar, 1));
@@ -528,12 +539,12 @@ public final class nm implements org.telegram.ui.Components.pg {
             }
             ynVar.V0.addView(ynVar.Z2, Math.min(indexOfChild + 1, ynVar.V0.getChildCount()), w7.z5.e(-1, -1, 51));
         }
-        org.telegram.ui.Components.k60 k60Var = ynVar.Z2;
+        org.telegram.ui.Components.k60 k60Var = this.c.Z2;
         if (k60Var != null) {
             if (i10 == 0) {
                 k60Var.h(false);
-                ynVar.v0.C0();
-                ynVar.y0.T();
+                this.c.v0.C0();
+                this.c.y0.T();
             } else if (i10 == 1 || i10 == 3 || i10 == 4) {
                 k60Var.f(i10, i11, i12, j3, j10, z10);
             } else if (i10 == 2 || i10 == 5) {
@@ -585,13 +596,13 @@ public final class nm implements org.telegram.ui.Components.pg {
                 ((fz) arrayList.get(i10)).n = true;
             }
         }
-        zg.k0 k0Var = zg.k0.B;
-        if (k0Var != null) {
-            k0Var.l = true;
+        zg.i0 i0Var = zg.i0.B;
+        if (i0Var != null) {
+            i0Var.l = true;
         }
-        zg.k0 k0Var2 = zg.k0.C;
-        if (k0Var2 != null) {
-            k0Var2.l = true;
+        zg.i0 i0Var2 = zg.i0.C;
+        if (i0Var2 != null) {
+            i0Var2.l = true;
         }
         if (z11) {
             return;
@@ -627,9 +638,9 @@ public final class nm implements org.telegram.ui.Components.pg {
 
     @Override // org.telegram.ui.Components.pg
     public final void m0() {
-        org.telegram.ui.Components.iz0 iz0Var = this.c.b1;
-        if (iz0Var != null) {
-            iz0Var.f();
+        org.telegram.ui.Components.jz0 jz0Var = this.c.b1;
+        if (jz0Var != null) {
+            jz0Var.f();
         }
     }
 
@@ -682,7 +693,7 @@ public final class nm implements org.telegram.ui.Components.pg {
         if (messageSuggestionParams == null) {
             messageSuggestionParams = MessageSuggestionParams.empty();
         }
-        new yh.e0(parentActivity, i10, j3, messageSuggestionParams, ynVar, ynVar.getResourceProvider(), 0, new xe(ynVar, 3)).show();
+        new yh.f0(parentActivity, i10, j3, messageSuggestionParams, ynVar, ynVar.getResourceProvider(), 0, new xe(ynVar, 3)).show();
     }
 
     @Override // org.telegram.ui.Components.pg
@@ -746,9 +757,9 @@ public final class nm implements org.telegram.ui.Components.pg {
         if (ckVar != null) {
             ckVar.animate().alpha((z10 || ynVar.isInPreviewMode()) ? 0.0f : 1.0f).setInterpolator(org.telegram.ui.Components.tr.f).start();
         }
-        org.telegram.ui.Components.iz0 iz0Var = ynVar.b1;
-        if (iz0Var != null) {
-            iz0Var.setVisibility(0);
+        org.telegram.ui.Components.jz0 jz0Var = ynVar.b1;
+        if (jz0Var != null) {
+            jz0Var.setVisibility(0);
             ViewPropertyAnimator animate = ynVar.b1.animate();
             if (!z10 && !ynVar.isInPreviewMode()) {
                 f7 = 1.0f;

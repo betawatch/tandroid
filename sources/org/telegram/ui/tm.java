@@ -9,7 +9,7 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class tm extends ou0 {
     public final ArrayList a;
@@ -57,7 +57,7 @@ public final class tm extends ou0 {
                         yu0Var.e = imageReceiver.getBitmapSafe();
                         yu0Var.h = imageReceiver.getRoundRadius(true);
                         yu0Var.j = (int) ((ynVar.q9 - ynVar.s9) - AndroidUtilities.dp(4.0f));
-                        yu0Var.i = (int) (ynVar.X8(org.telegram.ui.Components.r31.c) + ynVar.v.c() + AndroidUtilities.dp(9.0f) + ynVar.ya + ynVar.pc);
+                        yu0Var.i = (int) (ynVar.X8(org.telegram.ui.Components.s31.c) + ynVar.v.c() + AndroidUtilities.dp(9.0f) + ynVar.ya + ynVar.pc);
                         return yu0Var;
                     }
                 }

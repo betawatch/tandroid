@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.pc0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class w0 extends z4.a {
     public final /* synthetic */ x0 c;
@@ -54,7 +54,7 @@ public final class w0 extends z4.a {
             textView.setText(LocaleController.getString(R.string.VoipVideoPrivateScreenSharing));
             textView.setGravity(17);
             textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-            org.telegram.messenger.f0.q(textView, -1, 1, 15.0f);
+            org.telegram.messenger.q.q(textView, -1, 1, 15.0f);
             frameLayout.addView(textView, z5.d(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
             imageView = frameLayout;
         } else {

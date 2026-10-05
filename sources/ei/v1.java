@@ -42,14 +42,14 @@ import org.telegram.ui.Components.ld0;
 import org.telegram.ui.Components.op;
 import org.telegram.ui.Components.pc0;
 import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.s21;
+import org.telegram.ui.Components.t21;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.oy;
 import org.telegram.ui.uy;
-import org.telegram.ui.yf1;
+import org.telegram.ui.wf1;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements oy, org.telegram.ui.ActionBar.a2, ResultCallback {
     public final /* synthetic */ int a = 1;
@@ -159,7 +159,7 @@ public final /* synthetic */ class v1 implements oy, org.telegram.ui.ActionBar.a
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        s21 s21Var = (s21) this.d;
+        t21 t21Var = (t21) this.d;
         op opVar = (op) this.e;
         Pair pair = (Pair) obj;
         if (pair == null || ((Long) pair.first).longValue() != this.c) {
@@ -168,10 +168,10 @@ public final /* synthetic */ class v1 implements oy, org.telegram.ui.ActionBar.a
         Drawable drawable = opVar.b;
         if (drawable instanceof pc0) {
             pc0 pc0Var = (pc0) drawable;
-            pc0Var.t(s21.e((Bitmap) pair.second), this.b >= 0 ? 100 : -100);
-            pc0Var.u(s21Var.L);
+            pc0Var.t(t21.e((Bitmap) pair.second), this.b >= 0 ? 100 : -100);
+            pc0Var.u(t21Var.L);
         }
-        s21Var.invalidate();
+        t21Var.invalidate();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -181,7 +181,7 @@ public final /* synthetic */ class v1 implements oy, org.telegram.ui.ActionBar.a
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, yf1 yf1Var) {
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
         Activity activity;
         String str;
         TLRPC.Chat chat;
@@ -196,7 +196,7 @@ public final /* synthetic */ class v1 implements oy, org.telegram.ui.ActionBar.a
         final long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
         Activity parentActivity = uyVar2.getParentActivity();
         final int i13 = this.b;
-        w1 w1Var = new w1(yf1Var, uyVar2, j3, i13);
+        w1 w1Var = new w1(wf1Var, uyVar2, j3, i13);
         if (parentActivity == null) {
             return true;
         }
@@ -229,7 +229,7 @@ public final /* synthetic */ class v1 implements oy, org.telegram.ui.ActionBar.a
         }
         final org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, (Context) activity, (d6) null, true);
         f3Var.fixNavigationBar();
-        LinearLayout e7 = org.telegram.messenger.f0.e(activity, 1);
+        LinearLayout e7 = org.telegram.messenger.q.e(activity, 1);
         TLRPC.User user3 = user;
         TLRPC.Chat chat4 = chat;
         e7.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
@@ -381,8 +381,8 @@ public final /* synthetic */ class v1 implements oy, org.telegram.ui.ActionBar.a
         org.telegram.tgnet.l.b(this, tL_error);
     }
 
-    public /* synthetic */ v1(s21 s21Var, long j3, op opVar, int i10) {
-        this.d = s21Var;
+    public /* synthetic */ v1(t21 t21Var, long j3, op opVar, int i10) {
+        this.d = t21Var;
         this.c = j3;
         this.e = opVar;
         this.b = i10;

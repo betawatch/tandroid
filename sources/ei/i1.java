@@ -27,7 +27,7 @@ import org.telegram.ui.o6;
 import org.telegram.ui.s5;
 import org.telegram.ui.zr0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -93,7 +93,7 @@ public final /* synthetic */ class i1 implements Utilities.Callback2 {
                     break;
                 } else if (arrayList != null) {
                     if (arrayList.isEmpty()) {
-                        org.telegram.messenger.f0.p(R.string.CommunityNoChatsToAdd, yc.a0(n2Var), R.raw.info, 36);
+                        org.telegram.messenger.q.p(R.string.CommunityNoChatsToAdd, yc.a0(n2Var), R.raw.info, 36);
                         break;
                     } else if (arrayList.isEmpty()) {
                         yc.a0(n2Var).Q(R.raw.info, 36, "").j();
@@ -235,7 +235,7 @@ public final /* synthetic */ class i1 implements Utilities.Callback2 {
                 if (updates2 != null && tL_error3 == null) {
                     MessagesController.getInstance(this.b).processUpdates(updates2, false);
                 }
-                AndroidUtilities.runOnUIThread(new zr0(n2Var2, tL_error3, eVar, b2Var2, 28));
+                AndroidUtilities.runOnUIThread(new zr0(n2Var2, tL_error3, eVar, b2Var2, 29));
                 break;
         }
     }

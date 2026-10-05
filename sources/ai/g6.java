@@ -24,11 +24,11 @@ import org.telegram.ui.Components.ed0;
 import org.telegram.ui.Components.gd0;
 import org.telegram.ui.Components.r80;
 import org.telegram.ui.Stories.ProfileStoriesView;
+import org.telegram.ui.a71;
 import org.telegram.ui.bf;
-import org.telegram.ui.c71;
 import org.telegram.ui.lz0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g6 implements dc, OnFailureListener, org.telegram.ui.ActionBar.a2, ed0, c5.p, MediaDataController.KeywordResultCallback, BillingController.ProductDetailsResponseListenerLegacy {
     public final /* synthetic */ Object a;
@@ -109,7 +109,7 @@ public final /* synthetic */ class g6 implements dc, OnFailureListener, org.tele
 
     @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
     public void onProductDetailsResponse(c5.h hVar, List list) {
-        AndroidUtilities.runOnUIThread(new bf((yh.t5) this.a, list, (r80) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, hVar, (Activity) this.e, 12));
+        AndroidUtilities.runOnUIThread(new bf((yh.u5) this.a, list, (r80) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, hVar, (Activity) this.e, 12));
     }
 
     @Override // org.telegram.ui.Components.ed0
@@ -120,20 +120,20 @@ public final /* synthetic */ class g6 implements dc, OnFailureListener, org.tele
     @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
     public void run(ArrayList arrayList, String str) {
         TLRPC.TL_availableReaction tL_availableReaction;
-        c71 c71Var = (c71) this.a;
+        a71 a71Var = (a71) this.a;
         LinkedHashSet linkedHashSet = (LinkedHashSet) this.b;
         HashMap hashMap = (HashMap) this.c;
         ArrayList arrayList2 = (ArrayList) this.d;
         Runnable runnable = (Runnable) this.e;
-        c71Var.getClass();
+        a71Var.getClass();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             try {
                 if (((MediaDataController.KeywordResult) arrayList.get(i10)).emoji.startsWith("animated_")) {
                     linkedHashSet.add(Long.valueOf(Long.parseLong(((MediaDataController.KeywordResult) arrayList.get(i10)).emoji.substring(9))));
                 } else {
-                    int i11 = c71Var.W;
+                    int i11 = a71Var.W;
                     if ((i11 == 1 || i11 == 11 || i11 == 2) && (tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(((MediaDataController.KeywordResult) arrayList.get(i10)).emoji)) != null) {
-                        arrayList2.add(zg.o0.c(tL_availableReaction));
+                        arrayList2.add(zg.m0.c(tL_availableReaction));
                     }
                 }
             } catch (Exception unused) {

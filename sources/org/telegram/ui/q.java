@@ -12,7 +12,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class q extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -58,7 +58,7 @@ public final class q extends org.telegram.ui.ActionBar.n2 implements Notificatio
         }
         TLRPC.TL_messages_getArchivedStickers tL_messages_getArchivedStickers = new TLRPC.TL_messages_getArchivedStickers();
         ArrayList arrayList = this.h;
-        tL_messages_getArchivedStickers.offset_id = arrayList.isEmpty() ? 0L : ((TLRPC.StickerSetCovered) hg.k0.g(1, arrayList)).set.id;
+        tL_messages_getArchivedStickers.offset_id = arrayList.isEmpty() ? 0L : ((TLRPC.StickerSetCovered) hg.c.g(1, arrayList)).set.id;
         tL_messages_getArchivedStickers.limit = 15;
         int i10 = this.H;
         tL_messages_getArchivedStickers.masks = i10 == 1;
@@ -161,7 +161,6 @@ public final class q extends org.telegram.ui.ActionBar.n2 implements Notificatio
         } else {
             pzVar.setText(LocaleController.getString(R.string.ArchivedMasksEmpty));
         }
-        frameLayout.addView(this.c, w7.z5.c(-1.0f, -1));
         if (this.I) {
             this.c.b();
         } else {
@@ -175,9 +174,10 @@ public final class q extends org.telegram.ui.ActionBar.n2 implements Notificatio
         s4.c0 c0Var = new s4.c0(1, false);
         this.d = c0Var;
         zl0Var2.setLayoutManager(c0Var);
-        this.e.s1();
-        frameLayout.addView(this.e, w7.z5.c(-1.0f, -1));
+        this.e.r1();
         this.e.setSectionsDrawBackground(true);
+        frameLayout.addView(this.e, w7.z5.c(-1.0f, -1));
+        frameLayout.addView(this.c, w7.z5.c(-1.0f, -1));
         this.e.setAdapter(this.b);
         int i11 = 1;
         this.e.setOnItemClickListener(new i(this, i11));

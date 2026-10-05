@@ -6,9 +6,9 @@ import android.graphics.RectF;
 import android.os.SystemClock;
 import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public abstract class tb extends org.telegram.ui.Components.lw0 {
+public abstract class tb extends org.telegram.ui.Components.mw0 {
     public final /* synthetic */ wb w0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -21,7 +21,7 @@ public abstract class tb extends org.telegram.ui.Components.lw0 {
         boolean z10;
         long uptimeMillis = SystemClock.uptimeMillis();
         wb wbVar = this.w0;
-        if (wbVar.v.a1()) {
+        if (wbVar.v.Z0()) {
             canvas.save();
             canvas.clipRect(rectF);
             drawChild(canvas, wbVar.v, uptimeMillis);
@@ -75,7 +75,7 @@ public abstract class tb extends org.telegram.ui.Components.lw0 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }

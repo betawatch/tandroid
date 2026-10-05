@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class k8 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -164,7 +164,7 @@ public final class k8 extends org.telegram.ui.ActionBar.n2 implements Notificati
             if (tL_messages_searchResultsCalendar.messages.isEmpty()) {
                 k8Var.T = true;
             } else {
-                k8Var.V = ((TLRPC.Message) hg.k0.g(1, tL_messages_searchResultsCalendar.messages)).id;
+                k8Var.V = ((TLRPC.Message) hg.c.g(1, tL_messages_searchResultsCalendar.messages)).id;
                 k8Var.T = false;
                 k8Var.p0();
             }
@@ -242,9 +242,9 @@ public final class k8 extends org.telegram.ui.ActionBar.n2 implements Notificati
         r6Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
         ci.r6 r6Var2 = this.j0;
         ch.d c10 = getBaseSimpleGlass().c.c(this.j0, null, false);
-        c10.x(eh.b.m(this.resourceProvider));
-        c10.y(AndroidUtilities.dp(9.66f));
-        c10.z(AndroidUtilities.dp(18.0f));
+        c10.w(eh.b.m(this.resourceProvider));
+        c10.x(AndroidUtilities.dp(9.66f));
+        c10.y(AndroidUtilities.dp(18.0f));
         r6Var2.setBackground(c10);
         this.j0.setTranslationY(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - AndroidUtilities.dp(9.0f));
         this.actionBar.setActionBarMenuOnItemClick(new ei.u(this, 23));
@@ -255,7 +255,7 @@ public final class k8 extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.J = i10;
         int i11 = this.Z;
         if (i11 != 0) {
-            int f7 = hg.k0.f(this.I, i11, 12, i10) - this.a0;
+            int f7 = hg.c.f(this.I, i11, 12, i10) - this.a0;
             this.K = f7 + 1;
             this.c.h1(f7, AndroidUtilities.dp(120.0f));
         }
@@ -274,8 +274,8 @@ public final class k8 extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.f.setColor(org.telegram.ui.ActionBar.i6.w0(null, i12, false));
         this.actionBar.setTitleColor(org.telegram.ui.ActionBar.i6.w0(null, i12, false));
         this.H.a(org.telegram.ui.ActionBar.i6.w0(null, i12, false));
-        this.actionBar.B(org.telegram.ui.ActionBar.i6.w0(null, i12, false), false);
-        this.actionBar.A(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false), false);
+        this.actionBar.A(org.telegram.ui.ActionBar.i6.w0(null, i12, false), false);
+        this.actionBar.z(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false), false);
         textPaint3.setColor(-1);
         if (z10) {
             ai.w5 w5Var = new ai.w5(context, 8);
@@ -766,7 +766,7 @@ public final class k8 extends org.telegram.ui.ActionBar.n2 implements Notificati
         } else if (abs > 0 || this.G) {
             this.n.setText(LocaleController.formatString("ClearHistoryForThisDay", R.string.ClearHistoryForThisDay, new Object[0]));
         }
-        this.actionBar.H(str, z11, 150L, null);
+        this.actionBar.G(str, z11, 150L, null);
         if ((!this.G || abs > 0) && (m40Var = this.O) != null) {
             m40Var.b(true);
         }

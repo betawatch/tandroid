@@ -44,7 +44,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.BillingController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class c extends b {
     public final Long A;
@@ -236,8 +236,8 @@ public class c extends b {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0727  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x0732 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x071f  */
+    /* JADX WARN: Removed duplicated region for block: B:174:0x072a A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:273:0x017c  */
     /* JADX WARN: Removed duplicated region for block: B:64:0x016f  */
     /* JADX WARN: Removed duplicated region for block: B:67:0x02e9  */
@@ -596,8 +596,7 @@ public class c extends b {
                         new ArrayList();
                         Iterator it3 = arrayList.iterator();
                         if (it3.hasNext()) {
-                            it3.next().getClass();
-                            throw new ClassCastException();
+                            throw a4.a.k(it3);
                         }
                         if (!arrayList14.isEmpty()) {
                             bundle.putStringArrayList("skuDetailsTokens", arrayList14);
@@ -863,13 +862,13 @@ public class c extends b {
     }
 
     @Override // c5.b
-    public void c(a4.m mVar, org.telegram.messenger.c0 c0Var) {
-        if (f(new u(this, c0Var, mVar, 1), 30000L, new i9.s(5, this, c0Var), r(), e()) == null) {
+    public void c(a4.m mVar, org.telegram.messenger.d0 d0Var) {
+        if (f(new u(this, d0Var, mVar, 1), 30000L, new i9.s(5, this, d0Var), r(), e()) == null) {
             h u10 = u();
             y(25, 7, u10);
             com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
             com.google.android.gms.internal.play_billing.v vVar = com.google.android.gms.internal.play_billing.v.e;
-            c0Var.a(u10, new s(vVar, vVar));
+            d0Var.a(u10, new s(vVar, vVar));
         }
     }
 

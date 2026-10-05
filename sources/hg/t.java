@@ -2,99 +2,70 @@ package hg;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.i5;
 import org.telegram.ui.ActionBar.i6;
-import w7.z5;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.h5;
+import org.telegram.ui.Components.o6;
+import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class t extends FrameLayout {
-    public final i5 a;
-    public final vh.n b;
-    public final i5 c;
-    public final d6 d;
-    public boolean e;
-    public TL_account.TL_businessChatLink f;
+public final class t extends EditTextBoldCursor {
+    public final h5 b;
+    public int c;
+    public final o6 d;
+    public final /* synthetic */ d6 e;
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public t(Context context, d6 d6Var) {
         super(context);
-        this.d = d6Var;
-        setWillNotDraw(false);
-        ImageView imageView = new ImageView(context);
-        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        imageView.setImageResource(R.drawable.msg_limit_links);
-        imageView.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f));
-        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        imageView.setBackground(i6.K(AndroidUtilities.dp(36.0f), i6.w0(null, i6.Oh, false)));
-        imageView.setOnClickListener(new ai.v0(this, 25));
-        addView(imageView, z5.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
-        i5 i5Var = new i5(context);
-        this.a = i5Var;
-        i5Var.setTextSize(15);
-        i5Var.setTextColor(i6.w0(null, i6.G6, false));
-        i5Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(i5Var, z5.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
-        i5 i5Var2 = new i5(context);
-        this.c = i5Var2;
-        i5Var2.setTextSize(14);
-        int i10 = i6.z6;
-        i5Var2.setTextColor(i6.w0(null, i10, false));
-        i5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(i5Var2, z5.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
-        vh.n nVar = new vh.n(context);
-        this.b = nVar;
-        nVar.setTextSize(1, 13.0f);
-        nVar.setMaxLines(1);
-        nVar.setEllipsize(TextUtils.TruncateAt.END);
-        nVar.setTextColor(i6.v0(i10, d6Var));
-        nVar.setGravity(LocaleController.isRTL ? 5 : 3);
-        nVar.f = false;
-        nVar.setUseAlphaForEmoji(false);
-        NotificationCenter.listenEmojiLoading(nVar);
-        addView(nVar, z5.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
+        this.e = d6Var;
+        this.b = new h5(this);
+        o6 o6Var = new o6(false, true, true, false);
+        this.d = o6Var;
+        o6Var.k(0.2f, 160L, tr.h);
+        o6Var.t(AndroidUtilities.dp(15.33f));
+        o6Var.setCallback(this);
+        o6Var.b = 5;
     }
 
     @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.e) {
-            Paint T0 = i6.T0("paintDivider", this.d);
-            if (T0 == null) {
-                T0 = i6.k0;
-            }
-            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 64.0f : 0.0f), getMeasuredHeight(), T0);
-        }
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a2 = this.b.a(i6.v0(this.c < 0 ? i6.p7 : i6.P5, this.e), false);
+        o6 o6Var = this.d;
+        o6Var.r(a2);
+        o6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        o6Var.draw(canvas);
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        boolean z11 = LocaleController.isRTL;
-        i5 i5Var = this.c;
-        i5 i5Var2 = this.a;
-        if (z11) {
-            i5Var2.setPadding(i5Var.getTextWidth(), 0, 0, 0);
-        } else {
-            i5Var2.setPadding(0, 0, i5Var.getTextWidth(), 0);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f) + (this.e ? 1 : 0), TLObject.FLAG_30));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.gu, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        o6 o6Var = this.d;
+        if (o6Var != null) {
+            this.c = 32 - charSequence.length();
+            o6Var.b();
+            String str = "";
+            if (this.c <= 4) {
+                str = "" + this.c;
+            }
+            o6Var.q(str, true, true);
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.d || super.verifyDrawable(drawable);
     }
 }

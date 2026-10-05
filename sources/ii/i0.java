@@ -8,6 +8,7 @@ import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.bi;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.q9;
@@ -17,7 +18,7 @@ import org.telegram.ui.Components.xj;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -145,10 +146,10 @@ public final /* synthetic */ class i0 implements Runnable {
                         while (i17 < i15) {
                             int i18 = i17;
                             String str4 = strArr2[i18];
-                            if ((str == null || !(str.startsWith(str4) || org.telegram.messenger.f0.w(" ", str4, str))) && (str2 == null || !(str2.startsWith(str4) || org.telegram.messenger.f0.w(" ", str4, str2)))) {
+                            if ((str == null || !(str.startsWith(str4) || bi.u(" ", str4, str))) && (str2 == null || !(str2.startsWith(str4) || bi.u(" ", str4, str2)))) {
                                 str3 = str;
                                 TLRPC.User user2 = contact.user;
-                                r22 = (user2 == null || (publicUsername = UserObject.getPublicUsername(user2)) == null || !publicUsername.startsWith(str4)) ? (lowerCase2.startsWith(str4) || org.telegram.messenger.f0.w(" ", str4, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str4) || org.telegram.messenger.f0.w(" ", str4, translitString2)))) ? 3 : z10 : 2;
+                                r22 = (user2 == null || (publicUsername = UserObject.getPublicUsername(user2)) == null || !publicUsername.startsWith(str4)) ? (lowerCase2.startsWith(str4) || bi.u(" ", str4, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str4) || bi.u(" ", str4, translitString2)))) ? 3 : z10 : 2;
                             } else {
                                 str3 = str;
                                 r22 = 1;
@@ -200,7 +201,7 @@ public final /* synthetic */ class i0 implements Runnable {
                             int i20 = 0;
                             while (i20 < i15) {
                                 String str6 = strArr3[i20];
-                                if (lowerCase3.startsWith(str6) || org.telegram.messenger.f0.w(" ", str6, lowerCase3) || (translitString3 != null && (translitString3.startsWith(str6) || org.telegram.messenger.f0.w(" ", str6, translitString3)))) {
+                                if (lowerCase3.startsWith(str6) || bi.u(" ", str6, lowerCase3) || (translitString3 != null && (translitString3.startsWith(str6) || bi.u(" ", str6, translitString3)))) {
                                     i10 = i19;
                                     c10 = 1;
                                 } else {
@@ -264,7 +265,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 }
                 if (ChatAttachAlertPhotoLayout.R()) {
                     PhotoViewer t13 = PhotoViewer.t1();
-                    Editable text = xiVar.k1().getText();
+                    Editable text = xiVar.m1().getText();
                     t13.p7 = true;
                     t13.q7 = text;
                     t13.A2(null, text, false, false);

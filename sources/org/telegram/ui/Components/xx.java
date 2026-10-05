@@ -11,7 +11,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class xx extends lt {
     public int M;
@@ -37,7 +37,7 @@ public final class xx extends lt {
         boolean z10 = true;
         boolean z11 = arrayList.size() <= 4 || SharedConfig.getDevicePerformanceClass() == 0 || !LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD);
         if (!z11) {
-            boolean z12 = nzVar.u2 > 0 && SystemClock.elapsedRealtime() - nzVar.u2 < zxVar.y1();
+            boolean z12 = nzVar.u2 > 0 && SystemClock.elapsedRealtime() - nzVar.u2 < zxVar.x1();
             for (int i13 = 0; i13 < this.O.size(); i13++) {
                 wy wyVar = (wy) this.O.get(i13);
                 if (wyVar.h != 0.0f || wyVar.n != null || ((i12 = wyVar.a) > nzVar.s2 && i12 < nzVar.t2 && z12)) {
@@ -109,7 +109,7 @@ public final class xx extends lt {
                     rect.set(wyVar.getPaddingLeft() + wyVar.getLeft(), height, wyVar.getRight() - wyVar.getPaddingRight(), ((wyVar.getMeasuredHeight() + height) - wyVar.getPaddingBottom()) - wyVar.getPaddingTop());
                     float f12 = wyVar.h;
                     float f13 = f12 != f10 ? (((1.0f - f12) * 0.2f) + 0.8f) * 1.0f : 1.0f;
-                    if (nzVar.u2 > 0 && SystemClock.elapsedRealtime() - nzVar.u2 < zxVar2.y1() && nzVar.s2 >= 0 && nzVar.t2 >= 0 && nzVar.u2 > 0) {
+                    if (nzVar.u2 > 0 && SystemClock.elapsedRealtime() - nzVar.u2 < zxVar2.x1() && nzVar.s2 >= 0 && nzVar.t2 >= 0 && nzVar.u2 > 0) {
                         int R = RecyclerView.R(wyVar);
                         int i12 = nzVar.s2;
                         int i13 = R - i12;

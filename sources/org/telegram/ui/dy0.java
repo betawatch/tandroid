@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dy0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class dy0 implements View.OnClickListener {
                             mx mxVar = uyVar.F3;
                             if (mxVar != null) {
                                 org.telegram.ui.ActionBar.n2 fragment = mxVar.getFragment();
-                                if ((fragment instanceof yf1) && (-((yf1) fragment).a) == profileActivity.a()) {
+                                if ((fragment instanceof wf1) && (-((wf1) fragment).a) == profileActivity.a()) {
                                     uyVar.F3.a();
                                 }
                             }
@@ -77,8 +77,8 @@ public final /* synthetic */ class dy0 implements View.OnClickListener {
                                 ((ActionBarLayout) profileActivity.getParentLayout()).a0(n2Var, false);
                                 i11--;
                             }
-                        } else if (n2Var instanceof yf1) {
-                            if ((-((yf1) n2Var).a) == profileActivity.a()) {
+                        } else if (n2Var instanceof wf1) {
+                            if ((-((wf1) n2Var).a) == profileActivity.a()) {
                                 ((ActionBarLayout) profileActivity.getParentLayout()).a0(n2Var, false);
                                 i11--;
                             }
@@ -95,8 +95,8 @@ public final /* synthetic */ class dy0 implements View.OnClickListener {
                 profileActivity.J1 = 0;
                 Bundle bundle2 = new Bundle();
                 bundle2.putLong("chat_id", profileActivity.f1);
-                HashSet hashSet = yf1.n1;
-                profileActivity.presentFragment(yf1.E0(profileActivity.getMessagesController(), profileActivity.getMessagesStorage(), bundle2));
+                HashSet hashSet = wf1.n1;
+                profileActivity.presentFragment(wf1.E0(profileActivity.getMessagesController(), profileActivity.getMessagesStorage(), bundle2));
                 break;
             case 11:
                 profileActivity.t4(view);

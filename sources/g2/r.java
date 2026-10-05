@@ -3,7 +3,6 @@ package g2;
 import android.net.Uri;
 import android.text.TextUtils;
 import e9.f1;
-import hg.k0;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InterruptedIOException;
@@ -19,7 +18,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class r extends c {
     public final boolean a;
@@ -109,7 +108,7 @@ public final class r extends c {
             URL url2 = new URL(url, str);
             String protocol = url2.getProtocol();
             if (!"https".equals(protocol) && !"http".equals(protocol)) {
-                throw new v(t8.b.i("Unsupported protocol redirect: ", protocol), 2001);
+                throw new v(sa.e.i("Unsupported protocol redirect: ", protocol), 2001);
             }
             if (this.a || protocol.equals(url.getProtocol())) {
                 return url2;
@@ -136,7 +135,7 @@ public final class r extends c {
         while (true) {
             int i13 = i12 + 1;
             if (i12 > 20) {
-                throw new v(new NoRouteToHostException(k0.h(i13, "Too many redirects: ")), 2001, 1);
+                throw new v(new NoRouteToHostException(hg.c.h(i13, "Too many redirects: ")), 2001, 1);
             }
             k10 = k(url, i10, bArr, j3, j10, z10, false, mVar.d);
             int responseCode = k10.getResponseCode();
@@ -179,11 +178,11 @@ public final class r extends c {
         if (j3 == 0 && j10 == -1) {
             sb2 = null;
         } else {
-            StringBuilder t10 = a4.a.t(j3, "bytes=", "-");
+            StringBuilder u10 = a4.a.u(j3, "bytes=", "-");
             if (j10 != -1) {
-                t10.append((j3 + j10) - 1);
+                u10.append((j3 + j10) - 1);
             }
-            sb2 = t10.toString();
+            sb2 = u10.toString();
         }
         if (sb2 != null) {
             httpURLConnection.setRequestProperty("Range", sb2);

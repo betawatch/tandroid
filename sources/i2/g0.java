@@ -8,9 +8,9 @@ import org.telegram.ui.Components.qn0;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.f10;
-import yh.t5;
+import yh.u5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -55,15 +55,15 @@ public final /* synthetic */ class g0 implements Runnable {
                 M.j();
                 break;
             default:
-                t5 t5Var = (t5) this.d;
+                u5 u5Var = (u5) this.d;
                 if (!this.b) {
-                    t5Var.getClass();
+                    u5Var.getClass();
                     break;
                 } else {
-                    Set set = t5Var.Q;
+                    Set set = u5Var.Q;
                     int i14 = this.c;
                     set.remove(Integer.valueOf(i14));
-                    Runnable runnable = (Runnable) t5Var.R.remove(Integer.valueOf(i14));
+                    Runnable runnable = (Runnable) u5Var.R.remove(Integer.valueOf(i14));
                     if (runnable != null) {
                         runnable.run();
                         break;

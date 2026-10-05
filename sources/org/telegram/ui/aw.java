@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class aw implements org.telegram.ui.Components.ml0 {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class aw implements org.telegram.ui.Components.ml0 
         switch (this.a) {
             case 0:
                 uy uyVar = this.b;
-                Object obj = uyVar.C0.w0.G(i10).G;
+                Object obj = uyVar.C0.x0.G(i10).G;
                 if (!(obj instanceof MessageObject)) {
                     if (obj instanceof ai.v8) {
                         ai.v8 v8Var = (ai.v8) obj;

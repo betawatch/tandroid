@@ -28,7 +28,7 @@ import org.telegram.ui.Components.tr;
 import org.telegram.ui.zd;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class t2 extends Dialog {
     public ValueAnimator E;
@@ -58,8 +58,9 @@ public final class t2 extends Dialog {
         this.a = i10;
         ai.f0 f0Var = new ai.f0(this, context, 27);
         this.b = f0Var;
-        f0Var.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 7));
-        zd zdVar = new zd(context, 8);
+        int i11 = 7;
+        f0Var.setOnClickListener(new org.telegram.ui.Components.voip.o(this, i11));
+        zd zdVar = new zd(context, i11);
         this.c = zdVar;
         zdVar.setOrientation(1);
         f0Var.addView(zdVar, z5.d(-2, -2.0f, 17, 8.0f, 8.0f, 8.0f, 8.0f));
@@ -74,11 +75,11 @@ public final class t2 extends Dialog {
         textView.setTextColor(-1);
         textView.setTextSize(1, 18.0f);
         textView.setTypeface(AndroidUtilities.bold());
-        TextView i11 = org.telegram.ui.Cells.c1.i(frameLayout, textView, z5.d(-1, -2.0f, 55, 18.0f, 8.33f, 18.0f, 0.0f), context);
-        i11.setText(LocaleController.getString(R.string.StoryLinkPreviewSubtitle));
-        i11.setTextColor(-8421505);
-        i11.setTextSize(1, 14.0f);
-        frameLayout.addView(i11, z5.d(-1, -2.0f, 55, 18.0f, 31.0f, 18.0f, 0.0f));
+        TextView i12 = org.telegram.ui.Cells.c1.i(frameLayout, textView, z5.d(-1, -2.0f, 55, 18.0f, 8.33f, 18.0f, 0.0f), context);
+        i12.setText(LocaleController.getString(R.string.StoryLinkPreviewSubtitle));
+        i12.setTextColor(-8421505);
+        i12.setTextSize(1, 14.0f);
+        frameLayout.addView(i12, z5.d(-1, -2.0f, 55, 18.0f, 31.0f, 18.0f, 0.0f));
         w7 w7Var2 = new w7(this, context, 10);
         this.d = w7Var2;
         w7Var.addView(w7Var2, z5.d(-1, -1.0f, 119, 0.0f, 56.0f, 0.0f, 0.0f));
@@ -92,7 +93,7 @@ public final class t2 extends Dialog {
         b80 F = b80.F(f0Var, dVar, f0Var);
         hc0 hc0Var = new hc0(getContext(), R.raw.position_below, LocaleController.getString(R.string.StoryLinkCaptionAbove), R.raw.position_above, LocaleController.getString(R.string.StoryLinkCaptionBelow), dVar);
         this.w = hc0Var;
-        final int i12 = 0;
+        final int i13 = 0;
         hc0Var.setOnClickListener(new View.OnClickListener(this) { // from class: qg.q2
             public final /* synthetic */ t2 b;
 
@@ -102,7 +103,7 @@ public final class t2 extends Dialog {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                switch (i12) {
+                switch (i13) {
                     case 0:
                         t2 t2Var = this.b;
                         n0 n0Var = t2Var.G;
@@ -125,7 +126,7 @@ public final class t2 extends Dialog {
         F.q(hc0Var);
         hc0 hc0Var2 = new hc0(context, R.raw.media_shrink, LocaleController.getString(R.string.LinkMediaLarger), R.raw.media_enlarge, LocaleController.getString(R.string.LinkMediaSmaller), dVar);
         this.x = hc0Var2;
-        final int i13 = 1;
+        final int i14 = 1;
         hc0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: qg.q2
             public final /* synthetic */ t2 b;
 
@@ -135,7 +136,7 @@ public final class t2 extends Dialog {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                switch (i13) {
+                switch (i14) {
                     case 0:
                         t2 t2Var = this.b;
                         n0 n0Var = t2Var.G;

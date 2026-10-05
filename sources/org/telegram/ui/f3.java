@@ -15,7 +15,7 @@ import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class f3 extends ou0 {
     public final int[] a = new int[2];
@@ -70,7 +70,7 @@ public final class f3 extends ou0 {
     */
     public final void X(int i10) {
         TL_iv.PageBlock pageBlock;
-        org.telegram.ui.Components.d81 d81Var;
+        org.telegram.ui.Components.e81 e81Var;
         TextureView textureView;
         a0.i iVar;
         int i11;
@@ -84,7 +84,7 @@ public final class f3 extends ou0 {
             List list = this.b;
             if (i10 < list.size()) {
                 pageBlock = (TL_iv.PageBlock) list.get(i10);
-                d81Var = PhotoViewer.t1().F2;
+                e81Var = PhotoViewer.t1().F2;
                 textureView = PhotoViewer.t1().B2;
                 SurfaceView surfaceView = PhotoViewer.t1().C2;
                 i4 i4Var = this.c;
@@ -107,10 +107,10 @@ public final class f3 extends ou0 {
                     }
                     i11++;
                 }
-                if (x2Var != null && d81Var != null && textureView != null) {
+                if (x2Var != null && e81Var != null && textureView != null) {
                     long j3 = x2Var.L.video_id;
                     y2 y2Var3 = new y2();
-                    y2Var3.a = d81Var.n();
+                    y2Var3.a = e81Var.n();
                     if (textureView.getSurfaceTexture() != null) {
                         if (Build.VERSION.SDK_INT >= 24) {
                             Surface surface = new Surface(textureView.getSurfaceTexture());
@@ -131,10 +131,10 @@ public final class f3 extends ou0 {
                         x2Var.e.setImageBitmap(bitmap2);
                     }
                 }
-                if (x2Var != null && d81Var != null && surfaceView != null) {
+                if (x2Var != null && e81Var != null && surfaceView != null) {
                     long j10 = x2Var.L.video_id;
                     y2 y2Var4 = new y2();
-                    y2Var4.a = d81Var.n();
+                    y2Var4.a = e81Var.n();
                     if (Build.VERSION.SDK_INT >= 24) {
                         Bitmap createBitmap2 = Bitmap.createBitmap(surfaceView.getMeasuredWidth(), surfaceView.getMeasuredHeight(), Bitmap.Config.ARGB_8888);
                         AndroidUtilities.getBitmapFromSurface(surfaceView, createBitmap2);
@@ -153,7 +153,7 @@ public final class f3 extends ou0 {
             }
         }
         pageBlock = null;
-        d81Var = PhotoViewer.t1().F2;
+        e81Var = PhotoViewer.t1().F2;
         textureView = PhotoViewer.t1().B2;
         SurfaceView surfaceView2 = PhotoViewer.t1().C2;
         i4 i4Var2 = this.c;
@@ -170,7 +170,7 @@ public final class f3 extends ou0 {
         if (x2Var != null) {
             long j32 = x2Var.L.video_id;
             y2 y2Var32 = new y2();
-            y2Var32.a = d81Var.n();
+            y2Var32.a = e81Var.n();
             if (textureView.getSurfaceTexture() != null) {
             }
             x2Var.c(y2Var32);
@@ -185,7 +185,7 @@ public final class f3 extends ou0 {
         if (x2Var != null) {
             long j102 = x2Var.L.video_id;
             y2 y2Var42 = new y2();
-            y2Var42.a = d81Var.n();
+            y2Var42.a = e81Var.n();
             if (Build.VERSION.SDK_INT >= 24) {
             }
             x2Var.c(y2Var42);

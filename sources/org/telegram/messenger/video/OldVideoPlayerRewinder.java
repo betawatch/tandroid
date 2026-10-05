@@ -1,10 +1,10 @@
 package org.telegram.messenger.video;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.d81;
 import org.telegram.ui.Components.dg0;
+import org.telegram.ui.Components.e81;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class OldVideoPlayerRewinder {
     private long rewindBackSeekPlayerPosition;
@@ -15,7 +15,7 @@ public class OldVideoPlayerRewinder {
     private long rewindLastUpdatePlayerTime;
     private long startRewindFrom;
     private Runnable updateRewindRunnable;
-    private d81 videoPlayer;
+    private e81 videoPlayer;
     private dg0 webView;
     private float playSpeed = 1.0f;
     private final Runnable backSeek = new Runnable() { // from class: org.telegram.messenger.video.OldVideoPlayerRewinder.1
@@ -86,11 +86,11 @@ public class OldVideoPlayerRewinder {
         if (this.webView != null) {
             return r0.getCurrentPosition();
         }
-        d81 d81Var = this.videoPlayer;
-        if (d81Var == null) {
+        e81 e81Var = this.videoPlayer;
+        if (e81Var == null) {
             return 0L;
         }
-        return d81Var.n();
+        return e81Var.n();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -98,11 +98,11 @@ public class OldVideoPlayerRewinder {
         if (this.webView != null) {
             return r0.getVideoDuration();
         }
-        d81 d81Var = this.videoPlayer;
-        if (d81Var == null) {
+        e81 e81Var = this.videoPlayer;
+        if (e81Var == null) {
             return 0L;
         }
-        return d81Var.p();
+        return e81Var.p();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:39:0x0048, code lost:
@@ -184,11 +184,11 @@ public class OldVideoPlayerRewinder {
         if (dg0Var != null) {
             return dg0Var.G;
         }
-        d81 d81Var = this.videoPlayer;
-        if (d81Var == null) {
+        e81 e81Var = this.videoPlayer;
+        if (e81Var == null) {
             return false;
         }
-        return d81Var.y();
+        return e81Var.y();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -204,11 +204,11 @@ public class OldVideoPlayerRewinder {
             dg0Var.i(j3);
             return;
         }
-        d81 d81Var = this.videoPlayer;
-        if (d81Var == null) {
+        e81 e81Var = this.videoPlayer;
+        if (e81Var == null) {
             return;
         }
-        d81Var.K(j3);
+        e81Var.K(j3);
     }
 
     private void setPlaybackSpeed(float f7) {
@@ -217,11 +217,11 @@ public class OldVideoPlayerRewinder {
             dg0Var.setPlaybackSpeed(f7);
             return;
         }
-        d81 d81Var = this.videoPlayer;
-        if (d81Var == null) {
+        e81 e81Var = this.videoPlayer;
+        if (e81Var == null) {
             return;
         }
-        d81Var.Q(f7);
+        e81Var.Q(f7);
     }
 
     public void cancelRewind() {
@@ -257,8 +257,8 @@ public class OldVideoPlayerRewinder {
         incrementRewindCount();
     }
 
-    public void startRewind(d81 d81Var, boolean z10, float f7) {
-        this.videoPlayer = d81Var;
+    public void startRewind(e81 e81Var, boolean z10, float f7) {
+        this.videoPlayer = e81Var;
         this.playSpeed = f7;
         this.rewindForward = z10;
         cancelRewind();

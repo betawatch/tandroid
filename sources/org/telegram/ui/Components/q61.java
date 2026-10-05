@@ -1,82 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ga1;
-import org.telegram.ui.ha1;
-import org.telegram.ui.ta1;
-import org.telegram.ui.va1;
+import android.view.TextureView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q61 implements Utilities.Callback0Return {
+public final /* synthetic */ class q61 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
 
-    public /* synthetic */ q61(int i10, Object obj, Object obj2) {
+    public /* synthetic */ q61(Object obj, int i10) {
         this.a = i10;
         this.b = obj;
-        this.c = obj2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:31:0x007b  */
-    /* JADX WARN: Removed duplicated region for block: B:33:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.messenger.Utilities.Callback0Return
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object run() {
-        View childAt;
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
             case 0:
-                u61 u61Var = (u61) this.b;
-                Object obj = ((g61) this.c).G;
-                zl0 zl0Var = u61Var.d;
-                int i10 = 0;
-                while (true) {
-                    if (i10 < u61Var.x.size()) {
-                        g61 G = u61Var.G(i10);
-                        if (G == null || G.G != obj) {
-                            i10++;
-                        }
-                    } else {
-                        i10 = -1;
-                    }
+                UndoView undoView = (UndoView) obj;
+                int i11 = UndoView.e0;
+                undoView.getClass();
+                try {
+                    undoView.f.performHapticFeedback(3, 2);
+                    break;
+                } catch (Exception unused) {
+                    return;
                 }
-                if (i10 != -1) {
-                    for (int i11 = 0; i11 < zl0Var.getChildCount(); i11++) {
-                        childAt = zl0Var.getChildAt(i11);
-                        int R = RecyclerView.R(childAt);
-                        if (R != -1 && R == i10) {
-                            if (childAt instanceof ta1) {
-                                return null;
-                            }
-                            return (ta1) childAt;
-                        }
-                    }
-                }
-                childAt = null;
-                if (childAt instanceof ta1) {
+            case 1:
+                ((h71) obj).invalidateSelf();
+                break;
+            case 2:
+                yz yzVar = ((u71) obj).b;
+                if (yzVar != null) {
+                    yzVar.e(false, true, false);
+                    break;
                 }
                 break;
-            default:
-                va1 va1Var = (va1) this.b;
-                ha1 ha1Var = (ha1) this.c;
-                int childCount = va1Var.S.getChildCount();
-                for (int i12 = 0; i12 < childCount; i12++) {
-                    View childAt2 = va1Var.S.getChildAt(i12);
-                    if (childAt2 instanceof ga1) {
-                        ga1 ga1Var = (ga1) childAt2;
-                        if (ga1Var.r == ha1Var) {
-                            return ga1Var;
-                        }
+            case 3:
+                e81 e81Var = (e81) obj;
+                i2.f0 f0Var = e81Var.d;
+                if (f0Var != null) {
+                    TextureView textureView = e81Var.n;
+                    f0Var.B1();
+                    if (textureView != null && textureView == f0Var.V) {
+                        f0Var.B1();
+                        f0Var.o1();
+                        f0Var.t1(null);
+                        f0Var.m1(0, 0);
                     }
+                    e81Var.d.v1(e81Var.n);
+                    ArrayList arrayList = e81Var.N;
+                    if (arrayList != null) {
+                        e81Var.F(arrayList, e81Var.O);
+                    } else if (e81Var.U) {
+                        e81Var.G(e81Var.Q, e81Var.S, e81Var.R, e81Var.T);
+                    } else {
+                        e81Var.D(e81Var.Q, e81Var.S);
+                    }
+                    e81Var.C();
+                    break;
                 }
-                va1Var.S.setItemAnimator(null);
-                va1Var.B0.f();
-                return null;
+                break;
+            case 4:
+                e81 e81Var2 = ((d81) obj).f;
+                e81Var2.a0.removeCallbacksAndMessages(null);
+                e81Var2.K.onVisualizerUpdate(false, true, null);
+                break;
+            case 5:
+                ((g81) obj).g = false;
+                break;
+            case 6:
+                ((aa1) ((ki.d) ((org.telegram.ui.Cells.fa) obj).b).b).v.b();
+                break;
+            default:
+                ((w91) obj).d(false, true);
+                break;
         }
     }
 }

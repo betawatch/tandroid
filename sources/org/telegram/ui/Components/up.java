@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class up extends hx0 {
+public final class up extends ix0 {
     public final /* synthetic */ int a;
     public boolean b;
     public long c;
@@ -30,7 +30,7 @@ public final class up extends hx0 {
         paint.setStrokeWidth(AndroidUtilities.dpf2(1.2f));
     }
 
-    @Override // org.telegram.ui.Components.hx0
+    @Override // org.telegram.ui.Components.ix0
     public final void b(int i10) {
         switch (this.a) {
             case 0:
@@ -50,7 +50,7 @@ public final class up extends hx0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.hx0
+    @Override // org.telegram.ui.Components.ix0
     public final void c(boolean z10) {
         switch (this.a) {
             case 0:
@@ -61,7 +61,7 @@ public final class up extends hx0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.hx0
+    @Override // org.telegram.ui.Components.ix0
     public final void d() {
         switch (this.a) {
             case 0:
@@ -182,7 +182,7 @@ public final class up extends hx0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.hx0
+    @Override // org.telegram.ui.Components.ix0
     public final void e() {
         switch (this.a) {
             case 0:

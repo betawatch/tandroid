@@ -11,12 +11,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class v2 {
     public final long a;
@@ -25,7 +25,7 @@ public final class v2 {
     public final kj0 d;
     public final Paint e;
     public final ImageReceiver f;
-    public final e11 g;
+    public final f11 g;
     public boolean h;
     public final org.telegram.ui.Components.e6 i;
     public final org.telegram.ui.Components.e6 j;
@@ -64,7 +64,7 @@ public final class v2 {
         spannableStringBuilder.setSpan(rqVar, 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.append((CharSequence) " ");
         spannableStringBuilder.append((CharSequence) LocaleController.formatNumber(i11, ','));
-        this.g = new e11(spannableStringBuilder, 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+        this.g = new f11(spannableStringBuilder, 10.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
         org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(view, 2000L, new LinearInterpolator());
         this.i = e6Var;
         e6Var.d(0.0f, true);

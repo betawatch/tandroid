@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class d2 {
     public final SparseIntArray a = new SparseIntArray();
@@ -24,12 +24,12 @@ public final class d2 {
         int i10 = i6.G6;
         kVar.setTitleColor(a(i10));
         kVar.setSubtitleColor(i6.l1(0.45f, a(i10)));
-        kVar.B(a(i10), false);
+        kVar.A(a(i10), false);
         ImageView imageView = kVar.e;
         if (imageView != null) {
             imageView.setColorFilter(new PorterDuffColorFilter(a(i10), PorterDuff.Mode.SRC_IN));
         }
-        kVar.A(a(i6.u8), false);
+        kVar.z(a(i6.u8), false);
     }
 
     public final void c(SparseIntArray sparseIntArray, int i10, d6 d6Var) {

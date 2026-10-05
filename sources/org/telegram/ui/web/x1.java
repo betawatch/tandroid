@@ -38,11 +38,11 @@ import org.telegram.ui.Components.t90;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.zl0;
+import org.telegram.ui.e91;
 import org.telegram.ui.ft;
-import org.telegram.ui.g91;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -161,7 +161,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 h2Var.c();
                 return;
             case 2:
-                ((h2) this.b).m.remove((g91) this.c);
+                ((h2) this.b).m.remove((e91) this.c);
                 return;
             case 3:
                 p2.b bVar = (p2.b) this.b;

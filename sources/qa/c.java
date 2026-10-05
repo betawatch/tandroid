@@ -23,7 +23,7 @@ import org.json.JSONObject;
 import q9.n;
 import t7.u;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
@@ -85,32 +85,32 @@ public final class c implements d {
         r2.c = r3;
         r2.b = 3;
         r2 = r2.a();
-        r4.t(r2);
+        r4.u(r2);
      */
     /* JADX WARN: Finally extract failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b() {
-        ra.b z10;
+        ra.b y3;
         synchronized (m) {
             try {
                 k9.h hVar = this.a;
                 hVar.a();
                 z0 e7 = z0.e(hVar.a);
                 try {
-                    z10 = this.c.z();
-                    int i10 = z10.b;
-                    boolean z11 = true;
+                    y3 = this.c.y();
+                    int i10 = y3.b;
+                    boolean z10 = true;
                     if (i10 != 2 && i10 != 1) {
-                        z11 = false;
+                        z10 = false;
                     }
                     if (e7 != null) {
-                        e7.D();
+                        e7.z();
                     }
                 } catch (Throwable th2) {
                     if (e7 != null) {
-                        e7.D();
+                        e7.z();
                     }
                     throw th2;
                 }
@@ -118,7 +118,7 @@ public final class c implements d {
                 throw th3;
             }
         }
-        k(z10);
+        k(y3);
         this.i.execute(new b(this, 1));
     }
 
@@ -240,13 +240,13 @@ public final class c implements d {
                 hVar.a();
                 z0 e7 = z0.e(hVar.a);
                 try {
-                    this.c.t(bVar);
+                    this.c.u(bVar);
                     if (e7 != null) {
-                        e7.D();
+                        e7.z();
                     }
                 } catch (Throwable th2) {
                     if (e7 != null) {
-                        e7.D();
+                        e7.z();
                     }
                     throw th2;
                 }

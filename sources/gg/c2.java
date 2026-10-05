@@ -17,9 +17,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.m5;
-import org.telegram.ui.Components.nq0;
+import org.telegram.ui.Components.pq0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class c2 {
     public b2 a;
@@ -117,8 +117,8 @@ public class c2 {
                 if (obj instanceof h0) {
                     obj = ((h0) obj).a;
                 }
-                if (obj instanceof nq0) {
-                    obj = ((nq0) obj).b;
+                if (obj instanceof pq0) {
+                    obj = ((pq0) obj).b;
                 }
                 boolean z10 = obj instanceof TLRPC.User;
                 ArrayList arrayList3 = this.d;
@@ -320,11 +320,11 @@ public class c2 {
                                             a0.i iVar4 = c2Var2.f;
                                             b2 b2Var = c2Var2.a;
                                             if (b2Var != null) {
-                                                a0.i y3 = b2Var.y();
-                                                if (y3 != null) {
-                                                    int m10 = y3.m();
+                                                a0.i x10 = b2Var.x();
+                                                if (x10 != null) {
+                                                    int m10 = x10.m();
                                                     for (int i20 = 0; i20 < m10; i20++) {
-                                                        TLRPC.User user2 = (TLRPC.User) iVar4.f(y3.j(i20));
+                                                        TLRPC.User user2 = (TLRPC.User) iVar4.f(x10.j(i20));
                                                         if (user2 != null) {
                                                             arrayList18.remove(user2);
                                                             arrayList17.remove(user2);
@@ -332,11 +332,11 @@ public class c2 {
                                                         }
                                                     }
                                                 }
-                                                a0.i w10 = c2Var2.a.w();
-                                                if (w10 != null) {
-                                                    int m11 = w10.m();
+                                                a0.i s10 = c2Var2.a.s();
+                                                if (s10 != null) {
+                                                    int m11 = s10.m();
                                                     for (int i21 = 0; i21 < m11; i21++) {
-                                                        TLRPC.User user3 = (TLRPC.User) iVar4.f(w10.j(i21));
+                                                        TLRPC.User user3 = (TLRPC.User) iVar4.f(s10.j(i21));
                                                         if (user3 != null) {
                                                             arrayList18.remove(user3);
                                                             arrayList17.remove(user3);

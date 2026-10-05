@@ -15,13 +15,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d3;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class c0 extends cb {
     public final TLRPC.TL_payments_checkedGiftCode X;
@@ -98,7 +98,7 @@ public final class c0 extends cb {
     }
 
     @Override // org.telegram.ui.Components.cb
-    public final void E(lw0 lw0Var) {
+    public final void E(mw0 mw0Var) {
         rc.a(this.container, new z8(14));
     }
 

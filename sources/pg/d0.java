@@ -8,12 +8,12 @@ import android.widget.ImageView;
 import java.util.Iterator;
 import org.telegram.ui.s00;
 import rg.b2;
-import yh.l7;
-import yh.o2;
-import yh.p2;
-import yh.r5;
+import yh.m7;
+import yh.q2;
+import yh.r2;
+import yh.s5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class d0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -111,36 +111,39 @@ public final class d0 extends AnimatorListenerAdapter {
                 ((xh.h0) this.b).b.w.setVisibility(8);
                 break;
             case 10:
-                p2 p2Var = (p2) this.b;
-                p2Var.E = 1.0f;
-                p2Var.F = -1;
-                o2 o2Var = p2Var.H;
-                if (o2Var != null && (z10 = o2Var.l) && z10) {
-                    o2Var.l = false;
-                    o2Var.b();
+                r2 r2Var = (r2) this.b;
+                r2Var.E = 1.0f;
+                r2Var.F = -1;
+                q2 q2Var = r2Var.H;
+                if (q2Var != null && (z10 = q2Var.l) && z10) {
+                    q2Var.l = false;
+                    q2Var.b();
                 }
-                p2Var.G = null;
+                r2Var.G = null;
                 break;
             case 11:
-                s00 s00Var = ((l7) this.b).c;
+                s00 s00Var = ((m7) this.b).c;
                 s00Var.setScaleX(1.0f);
                 s00Var.setScaleY(1.0f);
                 break;
             case 12:
-                ((r5) this.b).run();
+                ((s5) this.b).run();
                 break;
             case 13:
-                zg.t tVar = (zg.t) this.b;
-                tVar.setVisibility(8);
-                zg.s sVar = tVar.b;
-                if (sVar != null) {
-                    tVar.removeView(sVar);
-                    tVar.b = null;
+                ((zg.o) this.b).v.setVisibility(4);
+                break;
+            case 14:
+                zg.r rVar = (zg.r) this.b;
+                rVar.setVisibility(8);
+                zg.q qVar = rVar.b;
+                if (qVar != null) {
+                    rVar.removeView(qVar);
+                    rVar.b = null;
                 }
-                tVar.e = null;
+                rVar.e = null;
                 break;
             default:
-                ((zg.h0) this.b).x.c();
+                ((zg.f0) this.b).x.c();
                 break;
         }
     }

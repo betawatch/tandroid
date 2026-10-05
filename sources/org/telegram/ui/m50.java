@@ -29,9 +29,9 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class m50 extends org.telegram.ui.Components.lw0 {
+public final class m50 extends org.telegram.ui.Components.mw0 {
     public boolean A0;
     public boolean B0;
     public final HashMap C0;
@@ -52,7 +52,7 @@ public final class m50 extends org.telegram.ui.Components.lw0 {
 
     /* JADX WARN: Removed duplicated region for block: B:134:0x039c  */
     /* JADX WARN: Removed duplicated region for block: B:136:0x03a1  */
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -91,9 +91,9 @@ public final class m50 extends org.telegram.ui.Components.lw0 {
             if (Build.VERSION.SDK_INT >= 31 && canvas.isHardwareAccelerated() && !AndroidUtilities.makingGlobalBlurBitmap) {
                 if (h60Var.Q2 == null) {
                     h60Var.Q2 = new RenderNode("CallActivity.Blur");
-                    h60Var.R2 = org.telegram.ui.Components.lw0.getRenderNodeScale();
+                    h60Var.R2 = org.telegram.ui.Components.mw0.getRenderNodeScale();
                     ColorMatrix colorMatrix = new ColorMatrix(new float[]{0.5f, 0.0f, 0.0f, 0.0f, 8.5f, 0.0f, 0.5f, 0.0f, 0.0f, 8.5f, 0.0f, 0.0f, 0.5f, 0.0f, 8.5f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f});
-                    float blurRadius = org.telegram.ui.Components.lw0.getBlurRadius();
+                    float blurRadius = org.telegram.ui.Components.mw0.getBlurRadius();
                     RenderNode renderNode = h60Var.Q2;
                     tileMode = Shader.TileMode.DECAL;
                     renderNode.setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(blurRadius, blurRadius, tileMode), RenderEffect.createColorFilterEffect(new ColorMatrixColorFilter(colorMatrix))));
@@ -559,13 +559,13 @@ public final class m50 extends org.telegram.ui.Components.lw0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.D0.Z.onAttachedToWindow();
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.D0.Z.onDetachedFromWindow();
@@ -701,7 +701,7 @@ public final class m50 extends org.telegram.ui.Components.lw0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         float f7;
         boolean z11;
@@ -978,7 +978,7 @@ public final class m50 extends org.telegram.ui.Components.lw0 {
             i12 = 0;
         } else {
             i12 = 0;
-            y3 = org.telegram.messenger.f0.y(8.0f, paddingTop - max, 0);
+            y3 = org.telegram.messenger.q.y(8.0f, paddingTop - max, 0);
         }
         if (o50Var.getPaddingTop() != y3 || o50Var.getPaddingBottom() != dp) {
             o50Var.setPadding(i12, y3, i12, dp);
@@ -990,7 +990,7 @@ public final class m50 extends org.telegram.ui.Components.lw0 {
             if (I0 != null) {
                 int measuredHeight = ((n30Var.getMeasuredHeight() / 2) + n30Var.getTop()) - (h60Var.s.getMeasuredHeight() / 2);
                 int measuredHeight2 = I0.getMeasuredHeight() + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + y3;
-                layoutParams9.topMargin = hg.k0.y(measuredHeight, measuredHeight2, 2, measuredHeight2) - AndroidUtilities.dp(32.0f);
+                layoutParams9.topMargin = hg.c.y(measuredHeight, measuredHeight2, 2, measuredHeight2) - AndroidUtilities.dp(32.0f);
                 layoutParams9.height = AndroidUtilities.dp(70.0f);
             }
         }

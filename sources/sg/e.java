@@ -30,9 +30,9 @@ import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.voip.r0;
 import org.telegram.ui.Components.voip.x;
 import rg.y1;
-import yh.y7;
+import yh.a8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class e extends TextureView implements TextureView.SurfaceTextureListener {
     public boolean E;
@@ -47,7 +47,7 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
     public y1 N;
     public final int O;
     public volatile boolean P;
-    public volatile y7 Q;
+    public volatile a8 Q;
     public final GestureDetector R;
     public ValueAnimator S;
     public AnimatorSet T;

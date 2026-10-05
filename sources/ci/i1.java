@@ -9,37 +9,37 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.g91;
+import org.telegram.ui.Components.h91;
 import org.telegram.ui.Components.zl0;
-import org.telegram.ui.ge1;
+import org.telegram.ui.ee1;
 import org.telegram.ui.gw0;
 import org.telegram.ui.hk;
 import org.telegram.ui.qp0;
+import org.telegram.ui.r31;
+import org.telegram.ui.s31;
 import org.telegram.ui.t31;
-import org.telegram.ui.u31;
-import org.telegram.ui.v31;
 import org.telegram.ui.wp0;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class i1 extends g91 {
-    public final /* synthetic */ int U;
-    public final /* synthetic */ Object V;
+public final class i1 extends h91 {
+    public final /* synthetic */ int V;
+    public final /* synthetic */ Object W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ i1(Object obj, Context context, int i10) {
         super(context, null);
-        this.U = i10;
-        this.V = obj;
+        this.V = i10;
+        this.W = obj;
     }
 
-    @Override // org.telegram.ui.Components.g91
+    @Override // org.telegram.ui.Components.h91
     public void A(int i10) {
-        switch (this.U) {
+        switch (this.V) {
             case 3:
                 if (i10 == 0) {
-                    yn ynVar = (yn) this.V;
+                    yn ynVar = (yn) this.W;
                     if (ynVar.q1) {
                         ynVar.q1 = false;
                         ynVar.o1.h.clear();
@@ -54,7 +54,7 @@ public final class i1 extends g91 {
     /* JADX WARN: Removed duplicated region for block: B:54:0x00d8  */
     /* JADX WARN: Removed duplicated region for block: B:56:0x00de A[ORIG_RETURN, RETURN] */
     /* JADX WARN: Removed duplicated region for block: B:57:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.g91
+    @Override // org.telegram.ui.Components.h91
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -62,9 +62,9 @@ public final class i1 extends g91 {
         int i10;
         View E;
         int R;
-        switch (this.U) {
+        switch (this.V) {
             case 1:
-                ea eaVar = (ea) this.V;
+                ea eaVar = (ea) this.W;
                 View currentView = eaVar.b.getCurrentView();
                 if (!(currentView instanceof x9)) {
                     return true;
@@ -116,14 +116,14 @@ public final class i1 extends g91 {
             default:
                 return super.i(motionEvent);
             case 3:
-                hk hkVar = ((yn) this.V).n1;
+                hk hkVar = ((yn) this.W).n1;
                 return hkVar != null && hkVar.b > 0.5f;
         }
     }
 
-    @Override // org.telegram.ui.Components.g91
+    @Override // org.telegram.ui.Components.h91
     public boolean j(MotionEvent motionEvent) {
-        switch (this.U) {
+        switch (this.V) {
             case 2:
                 return getCurrentPosition() != 2;
             default:
@@ -131,9 +131,9 @@ public final class i1 extends g91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g91
+    @Override // org.telegram.ui.Components.h91
     public boolean k(MotionEvent motionEvent) {
-        switch (this.U) {
+        switch (this.V) {
             case 2:
                 return false;
             case 6:
@@ -143,9 +143,9 @@ public final class i1 extends g91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g91, android.view.View
+    @Override // org.telegram.ui.Components.h91, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.U) {
+        switch (this.V) {
             case 3:
                 return false;
             default:
@@ -153,12 +153,12 @@ public final class i1 extends g91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g91
+    @Override // org.telegram.ui.Components.h91
     public void t(View view, View view2, int i10, int i11) {
         boolean z10;
-        switch (this.U) {
+        switch (this.V) {
             case 1:
-                ea eaVar = (ea) this.V;
+                ea eaVar = (ea) this.W;
                 z10 = ((org.telegram.ui.ActionBar.f3) eaVar).keyboardVisible;
                 if (z10) {
                     eaVar.f1();
@@ -168,40 +168,40 @@ public final class i1 extends g91 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g91
+    @Override // org.telegram.ui.Components.h91
     public void u() {
-        switch (this.U) {
+        switch (this.V) {
             case 2:
                 if (getCurrentPosition() == 1) {
-                    ((fi.k0) this.V).v.d.f3.N(false);
+                    ((fi.k0) this.W).v.d.f3.N(false);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.g91
+    @Override // org.telegram.ui.Components.h91
     public void v() {
-        t31 t31Var;
-        switch (this.U) {
+        r31 r31Var;
+        switch (this.V) {
             case 6:
-                if ((getCurrentView() instanceof u31) && (t31Var = ((u31) getCurrentView()).n) != null) {
-                    AndroidUtilities.hideKeyboard(t31Var);
+                if ((getCurrentView() instanceof s31) && (r31Var = ((s31) getCurrentView()).n) != null) {
+                    AndroidUtilities.hideKeyboard(r31Var);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.g91
+    @Override // org.telegram.ui.Components.h91
     public final void w(boolean z10) {
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
         ViewGroup viewGroup3;
         ViewGroup viewGroup4;
-        switch (this.U) {
+        switch (this.V) {
             case 0:
-                s2 s2Var = (s2) this.V;
+                s2 s2Var = (s2) this.W;
                 i1 i1Var = s2Var.f;
                 r2 r2Var = s2Var.h;
                 if (r2Var != null) {
@@ -214,21 +214,21 @@ public final class i1 extends g91 {
                 s2.G = i1Var.getCurrentPosition();
                 break;
             case 1:
-                viewGroup2 = ((org.telegram.ui.ActionBar.f3) ((ea) this.V)).containerView;
+                viewGroup2 = ((org.telegram.ui.ActionBar.f3) ((ea) this.W)).containerView;
                 viewGroup2.invalidate();
                 break;
             case 2:
-                viewGroup3 = ((org.telegram.ui.ActionBar.f3) ((fi.k0) this.V)).containerView;
+                viewGroup3 = ((org.telegram.ui.ActionBar.f3) ((fi.k0) this.W)).containerView;
                 viewGroup3.invalidate();
                 break;
             case 3:
-                yn ynVar = (yn) this.V;
+                yn ynVar = (yn) this.W;
                 ynVar.V0.getClass();
                 ynVar.V0.getClass();
                 ynVar.l7();
                 break;
             case 4:
-                wp0 wp0Var = (wp0) this.V;
+                wp0 wp0Var = (wp0) this.W;
                 float positionAnimated = wp0Var.I.getPositionAnimated();
                 wp0Var.M.setSelected(positionAnimated);
                 wp0Var.e.setProgressToGradient(1.0f - w7.q.a((positionAnimated - 0.333333f) / 0.333333f, 0.0f, 1.0f));
@@ -244,14 +244,14 @@ public final class i1 extends g91 {
                 }
                 break;
             case 5:
-                ((gw0) this.V).e();
+                ((gw0) this.W).e();
                 break;
             case 6:
-                viewGroup4 = ((org.telegram.ui.ActionBar.f3) ((v31) this.V)).containerView;
+                viewGroup4 = ((org.telegram.ui.ActionBar.f3) ((t31) this.W)).containerView;
                 viewGroup4.invalidate();
                 break;
             default:
-                ((ge1) this.V).e();
+                ((ee1) this.W).e();
                 break;
         }
     }
@@ -259,7 +259,7 @@ public final class i1 extends g91 {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public i1(Context context, org.telegram.ui.ActionBar.d6 d6Var, yn ynVar) {
         super(context, d6Var);
-        this.U = 3;
-        this.V = ynVar;
+        this.V = 3;
+        this.W = ynVar;
     }
 }

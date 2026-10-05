@@ -24,10 +24,10 @@ import org.telegram.ui.Components.mb;
 import org.telegram.ui.Components.pi;
 import org.telegram.ui.Components.xi;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.v31;
+import org.telegram.ui.t31;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class r4 extends pi implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -348,7 +348,7 @@ public final class r4 extends pi implements NotificationCenter.NotificationCente
                 i12++;
                 TLRPC.TL_attachMenuBot tL_attachMenuBot2 = tL_attachMenuBot;
                 if (tL_attachMenuBot2.bot_id == this.v) {
-                    xiVar.t1(tL_attachMenuBot2, MessagesController.getInstance(this.F).getUser(Long.valueOf(this.v)));
+                    xiVar.v1(tL_attachMenuBot2, MessagesController.getInstance(this.F).getUser(Long.valueOf(this.v)));
                     return;
                 }
             }
@@ -372,8 +372,8 @@ public final class r4 extends pi implements NotificationCenter.NotificationCente
                 Context context = getContext();
                 yc ycVar = new yc(mb.a(getContext()), this.a);
                 long j3 = this.v;
-                int i14 = v31.v;
-                v31.I(i13, context, j3, false, false, new ArrayList(), ycVar, null, new byte[0], null, null);
+                int i14 = t31.v;
+                t31.I(i13, context, j3, false, false, new ArrayList(), ycVar, null, new byte[0], null, null);
             }
         }
     }

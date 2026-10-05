@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import v7.m8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class w extends t {
     public static final HashMap e;
@@ -83,9 +83,9 @@ public final class w extends t {
         if (read != null || !sVar.g) {
             objArr[intValue] = read;
         } else {
-            StringBuilder v = a4.a.v("null is not allowed as value for record component '", str, "' of primitive type; at path ");
-            v.append(aVar.h());
-            throw new androidx.car.app.j(v.toString());
+            StringBuilder w10 = a4.a.w("null is not allowed as value for record component '", str, "' of primitive type; at path ");
+            w10.append(aVar.h());
+            throw new androidx.car.app.j(w10.toString());
         }
     }
 }

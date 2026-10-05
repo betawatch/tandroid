@@ -14,7 +14,7 @@ import l.m;
 import l.n;
 import l.r;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class g {
     public CharSequence A;
@@ -90,9 +90,9 @@ public final class g {
                 fVar.b = cls.getMethod(str, f.c);
                 menuItem.setOnMenuItemClickListener(fVar);
             } catch (Exception e7) {
-                StringBuilder v = a4.a.v("Couldn't resolve menu item onClick handler ", str, " in class ");
-                v.append(cls.getName());
-                InflateException inflateException = new InflateException(v.toString());
+                StringBuilder w10 = a4.a.w("Couldn't resolve menu item onClick handler ", str, " in class ");
+                w10.append(cls.getName());
+                InflateException inflateException = new InflateException(w10.toString());
                 inflateException.initCause(e7);
                 throw inflateException;
             }

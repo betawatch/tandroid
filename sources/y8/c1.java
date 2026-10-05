@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import java.util.Arrays;
 import w7.a9;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class c1 extends o6.a {
     public static final Parcelable.Creator<c1> CREATOR = new n0(10);
@@ -47,13 +47,13 @@ public final class c1 extends o6.a {
     public final String toString() {
         String valueOf = String.valueOf(this.h);
         String valueOf2 = String.valueOf(this.c);
-        StringBuilder w10 = a4.a.w("AppParcelable{title='", this.b, "', developerName='", this.d, "', formattedPrice='");
-        w10.append(this.e);
-        w10.append("', starRating=");
-        w10.append(this.f);
-        w10.append(", wearDetails=");
-        a4.a.z(w10, valueOf, ", deepLinkUri='", this.a, "', icon=");
-        return a4.a.s(w10, valueOf2, "}");
+        StringBuilder x10 = a4.a.x("AppParcelable{title='", this.b, "', developerName='", this.d, "', formattedPrice='");
+        x10.append(this.e);
+        x10.append("', starRating=");
+        x10.append(this.f);
+        x10.append(", wearDetails=");
+        a4.a.A(x10, valueOf, ", deepLinkUri='", this.a, "', icon=");
+        return a4.a.t(x10, valueOf2, "}");
     }
 
     @Override // android.os.Parcelable

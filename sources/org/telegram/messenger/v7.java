@@ -13,13 +13,13 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.y51;
+import org.telegram.ui.Components.z51;
 import org.telegram.ui.cv;
 import org.telegram.ui.dv;
 import org.telegram.ui.fv;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v7 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -144,7 +144,7 @@ public final /* synthetic */ class v7 implements Runnable {
                 kj0 kj0Var2 = fvVar.d;
                 kj0Var2.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new y51(dvVar, i15, w02));
+                ofFloat.addUpdateListener(new z51(dvVar, i15, w02));
                 ofFloat.addListener(new org.telegram.ui.u0(dvVar, w02, i17));
                 ofFloat.setDuration(350L);
                 ofFloat.start();

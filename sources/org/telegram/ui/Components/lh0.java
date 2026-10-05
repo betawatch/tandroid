@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class lh0 extends FrameLayout {
     public final w9 E;
@@ -40,7 +40,7 @@ public final class lh0 extends FrameLayout {
     public final ih0 V;
     public final org.telegram.ui.uy a;
     public final int b;
-    public final c71 c;
+    public final e71 c;
     public TLRPC.SearchPostsFlood d;
     public final ArrayList e;
     public int f;
@@ -65,10 +65,10 @@ public final class lh0 extends FrameLayout {
         this.a = uyVar;
         int currentAccount = uyVar.getCurrentAccount();
         this.b = currentAccount;
-        c71 c71Var = new c71(context, currentAccount, 0, false, new d(this, 18), new pv(this, 12), null, null);
-        this.c = c71Var;
-        c71Var.j(new ii.n3(3, this, uyVar));
-        addView(c71Var, w7.z5.e(-1, -1, 119));
+        e71 e71Var = new e71(context, currentAccount, 0, false, new d(this, 18), new pv(this, 12), null, null);
+        this.c = e71Var;
+        e71Var.j(new ii.n3(3, this, uyVar));
+        addView(e71Var, w7.z5.e(-1, -1, 119));
         FrameLayout frameLayout = new FrameLayout(context);
         this.x = frameLayout;
         org.telegram.ui.zd zdVar = new org.telegram.ui.zd(context, 3);
@@ -97,19 +97,19 @@ public final class lh0 extends FrameLayout {
         textView2.setMaxLines(4);
         textView2.setEllipsize(truncateAt);
         zdVar.addView(textView2, w7.z5.t(-2, -2, 1, 0, 9, 0, 0));
-        ci.d g10 = org.telegram.messenger.ok.g(24, context, null, true);
-        this.H = g10;
-        zdVar.addView(g10, w7.z5.t(-1, 44, 7, 0, 19, 0, 0));
+        ci.d f7 = org.telegram.messenger.bi.f(24, context, null, true);
+        this.H = f7;
+        zdVar.addView(f7, w7.z5.t(-1, 44, 7, 0, 19, 0, 0));
         TextView textView3 = new TextView(context);
         this.I = textView3;
         textView3.setTextSize(1, 12.0f);
         textView3.setGravity(17);
         zdVar.addView(textView3, w7.z5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
         addView(frameLayout, w7.z5.e(-1, -1, 119));
-        c71Var.setHideIfEmpty(false);
-        c71Var.setEmptyView(frameLayout);
-        c71Var.Y1 = true;
-        c71Var.Z1 = 0;
+        e71Var.setHideIfEmpty(false);
+        e71Var.setEmptyView(frameLayout);
+        e71Var.Y1 = true;
+        e71Var.Z1 = 0;
         c();
         d();
     }
@@ -139,7 +139,7 @@ public final class lh0 extends FrameLayout {
                     if (arrayList.isEmpty()) {
                         tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
                     } else {
-                        MessageObject messageObject = (MessageObject) hg.k0.g(1, arrayList);
+                        MessageObject messageObject = (MessageObject) hg.c.g(1, arrayList);
                         tL_channels_searchPosts.offset_rate = this.f;
                         tL_channels_searchPosts.offset_id = messageObject.getRealId();
                         tL_channels_searchPosts.offset_peer = messagesController.getInputPeer(messageObject.messageOwner.peer_id);
@@ -149,7 +149,7 @@ public final class lh0 extends FrameLayout {
                     if (arrayList2.isEmpty()) {
                         tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
                     } else {
-                        MessageObject messageObject2 = (MessageObject) hg.k0.g(1, arrayList2);
+                        MessageObject messageObject2 = (MessageObject) hg.c.g(1, arrayList2);
                         tL_channels_searchPosts.offset_rate = this.r;
                         tL_channels_searchPosts.offset_id = messageObject2.getRealId();
                         tL_channels_searchPosts.offset_peer = messagesController.getInputPeer(messageObject2.messageOwner.peer_id);
@@ -194,9 +194,9 @@ public final class lh0 extends FrameLayout {
         int i10 = org.telegram.ui.ActionBar.i6.y6;
         this.I.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
         this.G.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
-        c71 c71Var = this.c;
-        c71Var.setAdapter(null);
-        c71Var.setAdapter(c71Var.f3);
+        e71 e71Var = this.c;
+        e71Var.setAdapter(null);
+        e71Var.setAdapter(e71Var.f3);
         if (this.T != null) {
             this.T = null;
             d();
@@ -283,13 +283,13 @@ public final class lh0 extends FrameLayout {
                 int i17 = i16 / 60;
                 int i18 = i16 - (i17 * 60);
                 dVar.setVisibility(0);
-                dVar.g(yh.x7.X0(LocaleController.formatPluralStringComma("SearchPostsButtonPay", (int) this.d.stars_amount), 1.13f, this.U), true, true);
+                dVar.g(yh.z7.X0(LocaleController.formatPluralStringComma("SearchPostsButtonPay", (int) this.d.stars_amount), 1.13f, this.U), true, true);
                 int i19 = R.string.SearchPostsFreeSearchUnlocksIn;
                 StringBuilder sb2 = new StringBuilder();
-                sb2.append(i15 > 0 ? a4.a.m(i15, ":") : "");
-                sb2.append(i17 < 10 ? hg.k0.h(i17, "0") : Integer.valueOf(i17));
+                sb2.append(i15 > 0 ? a4.a.n(i15, ":") : "");
+                sb2.append(i17 < 10 ? hg.c.h(i17, "0") : Integer.valueOf(i17));
                 sb2.append(":");
-                sb2.append(i18 < 10 ? hg.k0.h(i18, "0") : Integer.valueOf(i18));
+                sb2.append(i18 < 10 ? hg.c.h(i18, "0") : Integer.valueOf(i18));
                 dVar.f(LocaleController.formatString(i19, sb2.toString()), true);
                 dVar.e.o(false, true, false);
                 dVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.jh0
@@ -420,7 +420,7 @@ public final class lh0 extends FrameLayout {
         }
         this.P = true;
         MessagesController.getGlobalMainSettings().edit().putInt("searchpostsnew", MessagesController.getGlobalMainSettings().getInt("searchpostsnew", 0) + 1).apply();
-        yh.t5.y(this.b, false).p();
+        yh.u5.y(this.b, false).p();
     }
 
     @Override // android.view.View, android.view.ViewParent

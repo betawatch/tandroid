@@ -45,7 +45,7 @@ import qb.k;
 import v2.l;
 import v7.l8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuation, l, xf.a, y6.d {
     public final /* synthetic */ int a;
@@ -216,42 +216,60 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
         int i10 = this.a;
     }
 
-    @Override // cg.a
-    public void C(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12) {
-        if (i10 > i11) {
-            throw new IllegalArgumentException("Illegal use of UpsampleAudioResampler");
-        }
-        if (i12 != 1 && i12 != 2) {
-            throw new IllegalArgumentException(hg.k0.h(i12, "Illegal use of UpsampleAudioResampler. Channels:"));
-        }
-        int remaining = shortBuffer.remaining() / i12;
-        int ceil = ((int) Math.ceil((i11 / i10) * remaining)) - remaining;
-        float f7 = remaining;
-        float f10 = f7 / f7;
-        float f11 = ceil;
-        float f12 = f11 / f11;
-        while (remaining > 0 && ceil > 0) {
-            if (f10 >= f12) {
-                shortBuffer2.put(shortBuffer.get());
-                if (i12 == 2) {
-                    shortBuffer2.put(shortBuffer.get());
-                }
-                remaining--;
-                f10 = remaining / f7;
-            } else {
-                shortBuffer2.put(shortBuffer2.get(shortBuffer2.position() - i12));
-                if (i12 == 2) {
-                    shortBuffer2.put(shortBuffer2.get(shortBuffer2.position() - i12));
-                }
-                ceil--;
-                f12 = ceil / f11;
-            }
-        }
+    @Override // r4.c
+    public void C() {
+        Log.d("ProfileInstaller", "DIAGNOSTIC_PROFILE_IS_COMPRESSED");
     }
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void C1(u1 u1Var) {
         int i10 = this.a;
+    }
+
+    @Override // r4.c
+    public void D(int i10, Object obj) {
+        String str;
+        switch (i10) {
+            case 1:
+                str = "RESULT_INSTALL_SUCCESS";
+                break;
+            case 2:
+                str = "RESULT_ALREADY_INSTALLED";
+                break;
+            case 3:
+                str = "RESULT_UNSUPPORTED_ART_VERSION";
+                break;
+            case 4:
+                str = "RESULT_NOT_WRITABLE";
+                break;
+            case 5:
+                str = "RESULT_DESIRED_FORMAT_UNSUPPORTED";
+                break;
+            case 6:
+                str = "RESULT_BASELINE_PROFILE_NOT_FOUND";
+                break;
+            case 7:
+                str = "RESULT_IO_EXCEPTION";
+                break;
+            case 8:
+                str = "RESULT_PARSE_EXCEPTION";
+                break;
+            case 9:
+            default:
+                str = "";
+                break;
+            case 10:
+                str = "RESULT_INSTALL_SKIP_FILE_SUCCESS";
+                break;
+            case 11:
+                str = "RESULT_DELETE_SKIP_FILE_SUCCESS";
+                break;
+        }
+        if (i10 == 6 || i10 == 7 || i10 == 8) {
+            Log.e("ProfileInstaller", str, (Throwable) obj);
+        } else {
+            Log.d("ProfileInstaller", str);
+        }
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -601,18 +619,18 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
         a3.l lVar = new a3.l();
         lVar.a = cVar.m(context, str);
         int i10 = 1;
-        int f7 = cVar.f(context, str, true);
-        lVar.b = f7;
-        int i11 = lVar.a;
-        if (i11 == 0) {
-            i11 = 0;
-            if (f7 == 0) {
+        int i11 = cVar.i(context, str, true);
+        lVar.b = i11;
+        int i12 = lVar.a;
+        if (i12 == 0) {
+            i12 = 0;
+            if (i11 == 0) {
                 i10 = 0;
                 lVar.c = i10;
                 return lVar;
             }
         }
-        if (f7 < i11) {
+        if (i11 < i12) {
             i10 = -1;
         }
         lVar.c = i10;
@@ -870,60 +888,42 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
         return true;
     }
 
-    @Override // r4.c
-    public void x() {
-        Log.d("ProfileInstaller", "DIAGNOSTIC_PROFILE_IS_COMPRESSED");
+    @Override // cg.a
+    public void x(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12) {
+        if (i10 > i11) {
+            throw new IllegalArgumentException("Illegal use of UpsampleAudioResampler");
+        }
+        if (i12 != 1 && i12 != 2) {
+            throw new IllegalArgumentException(hg.c.h(i12, "Illegal use of UpsampleAudioResampler. Channels:"));
+        }
+        int remaining = shortBuffer.remaining() / i12;
+        int ceil = ((int) Math.ceil((i11 / i10) * remaining)) - remaining;
+        float f7 = remaining;
+        float f10 = f7 / f7;
+        float f11 = ceil;
+        float f12 = f11 / f11;
+        while (remaining > 0 && ceil > 0) {
+            if (f10 >= f12) {
+                shortBuffer2.put(shortBuffer.get());
+                if (i12 == 2) {
+                    shortBuffer2.put(shortBuffer.get());
+                }
+                remaining--;
+                f10 = remaining / f7;
+            } else {
+                shortBuffer2.put(shortBuffer2.get(shortBuffer2.position() - i12));
+                if (i12 == 2) {
+                    shortBuffer2.put(shortBuffer2.get(shortBuffer2.position() - i12));
+                }
+                ceil--;
+                f12 = ceil / f11;
+            }
+        }
     }
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void x2() {
         int i10 = this.a;
-    }
-
-    @Override // r4.c
-    public void y(int i10, Object obj) {
-        String str;
-        switch (i10) {
-            case 1:
-                str = "RESULT_INSTALL_SUCCESS";
-                break;
-            case 2:
-                str = "RESULT_ALREADY_INSTALLED";
-                break;
-            case 3:
-                str = "RESULT_UNSUPPORTED_ART_VERSION";
-                break;
-            case 4:
-                str = "RESULT_NOT_WRITABLE";
-                break;
-            case 5:
-                str = "RESULT_DESIRED_FORMAT_UNSUPPORTED";
-                break;
-            case 6:
-                str = "RESULT_BASELINE_PROFILE_NOT_FOUND";
-                break;
-            case 7:
-                str = "RESULT_IO_EXCEPTION";
-                break;
-            case 8:
-                str = "RESULT_PARSE_EXCEPTION";
-                break;
-            case 9:
-            default:
-                str = "";
-                break;
-            case 10:
-                str = "RESULT_INSTALL_SKIP_FILE_SUCCESS";
-                break;
-            case 11:
-                str = "RESULT_DELETE_SKIP_FILE_SUCCESS";
-                break;
-        }
-        if (i10 == 6 || i10 == 7 || i10 == 8) {
-            Log.e("ProfileInstaller", str, (Throwable) obj);
-        } else {
-            Log.d("ProfileInstaller", str);
-        }
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -1010,7 +1010,7 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
     }
 
     @Override // a3.m0
-    public /* synthetic */ void D() {
+    public /* synthetic */ void H() {
     }
 
     @Override // a3.m0
@@ -1177,9 +1177,6 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
     private final /* synthetic */ void y3(int i10) {
     }
 
-    private final /* synthetic */ void H(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
-    }
-
     private final /* synthetic */ void Q2(u1 u1Var, long j3) {
     }
 
@@ -1235,6 +1232,9 @@ public class d implements m0, bg.a, q, q9.e, cg.a, n, q9.d, l1, r4.c, Continuati
     }
 
     private final /* synthetic */ void v(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    }
+
+    private final /* synthetic */ void y(u1 u1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
     private final /* synthetic */ void y1(int i10, u1 u1Var) {

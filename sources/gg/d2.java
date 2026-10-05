@@ -43,7 +43,7 @@ import org.telegram.ui.h50;
 import org.telegram.ui.l50;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d2 implements MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.a2, e2.m, m4.j0, e2.h, NativeInstance.PayloadCallback, Utilities.Callback3Return, t5.b {
     public final /* synthetic */ int a;
@@ -188,11 +188,11 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
     public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
-                hg.s sVar = (hg.s) this.c;
+                hg.t tVar = (hg.t) this.c;
                 TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) this.d;
-                String obj = sVar.getText().toString();
+                String obj = tVar.getText().toString();
                 if (obj.length() <= 32) {
-                    hg.y d = hg.y.d(this.b);
+                    hg.z d = hg.z.d(this.b);
                     TL_account.TL_businessChatLink c10 = d.c(tL_businessChatLink.link);
                     if (c10 != null) {
                         TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink = new TL_account.TL_inputBusinessChatLink();
@@ -204,7 +204,7 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
                     b2Var.dismiss();
                     break;
                 } else {
-                    AndroidUtilities.shakeView(sVar);
+                    AndroidUtilities.shakeView(tVar);
                     break;
                 }
             case 2:
@@ -245,7 +245,7 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
                 TLRPC.Reaction reaction = (TLRPC.Reaction) this.d;
                 String obj2 = un0Var.getText().toString();
                 if (obj2.length() <= 12) {
-                    MessagesController.getInstance(this.b).renameSavedReactionTag(zg.o0.d(reaction), obj2);
+                    MessagesController.getInstance(this.b).renameSavedReactionTag(zg.m0.d(reaction), obj2);
                     b2Var.dismiss();
                     break;
                 } else {
@@ -271,7 +271,7 @@ public final /* synthetic */ class d2 implements MediaDataController.KeywordResu
                 LaunchActivity launchActivity = (LaunchActivity) this.c;
                 HashMap hashMap = (HashMap) this.d;
                 ArrayList arrayList = launchActivity.d0;
-                if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((n2) hg.k0.g(1, arrayList))) {
+                if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((n2) hg.c.g(1, arrayList))) {
                     gd0 gd0Var = new gd0(0);
                     gd0Var.F0 = new i2.s(hashMap, this.b, 12);
                     launchActivity.p0(gd0Var);

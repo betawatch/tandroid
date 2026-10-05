@@ -19,16 +19,16 @@ import org.telegram.ui.Components.q90;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.am0;
-import org.telegram.ui.fi1;
+import org.telegram.ui.di1;
 import org.telegram.ui.o20;
 import org.telegram.ui.ug;
-import yh.l7;
-import yh.n7;
-import yh.w3;
-import yh.x7;
-import yh.z5;
+import yh.a6;
+import yh.m7;
+import yh.p7;
+import yh.x3;
+import yh.z7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -64,13 +64,13 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 }
                 break;
             case 2:
-                fi1 fi1Var = (fi1) this.b;
-                if (!fi1Var.a) {
-                    if (fi1Var.w != 0) {
-                        fi1Var.a(false, true);
+                di1 di1Var = (di1) this.b;
+                if (!di1Var.a) {
+                    if (di1Var.w != 0) {
+                        di1Var.a(false, true);
                         break;
                     } else {
-                        ((Activity) fi1Var.getContext()).startActivityForResult(((MediaProjectionManager) fi1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        ((Activity) di1Var.getContext()).startActivityForResult(((MediaProjectionManager) di1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
                         break;
                     }
                 }
@@ -94,7 +94,7 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.WebRecentClearTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.WebRecentClearText);
                 alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.web.a(kVar));
-                hg.k0.o(R.string.Cancel, alertDialog$Builder, null);
+                hg.c.p(R.string.Cancel, alertDialog$Builder, null);
                 break;
             case 5:
                 ((pg.x) this.b).dismiss();
@@ -186,58 +186,58 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 if (((xh.q1) this.b).f0.f > 0 && (R = LaunchActivity.R()) != null) {
                     org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
                     l2Var.a = true;
-                    R.showAsSheet(new x7(), l2Var);
+                    R.showAsSheet(new z7(), l2Var);
                     break;
                 }
                 break;
             case 18:
-                ((yh.s) this.b).dismiss();
+                ((yh.t) this.b).dismiss();
                 break;
             case 19:
-                ((yh.e0) this.b).dismiss();
+                ((yh.f0) this.b).dismiss();
                 break;
             case 20:
-                yh.i0 i0Var = (yh.i0) this.b;
-                zf.b bVar = i0Var.E.a;
+                yh.j0 j0Var = (yh.j0) this.b;
+                zf.b bVar = j0Var.E.a;
                 zf.b bVar2 = zf.b.b;
                 if (bVar == bVar2) {
                     bVar2 = zf.b.a;
                 }
-                i0Var.n(zf.a.i(0L, bVar2), true, false, true);
-                i0Var.c.setText("");
+                j0Var.n(zf.a.i(0L, bVar2), true, false, true);
+                j0Var.c.setText("");
                 break;
             case 21:
-                ((yh.s0) this.b).dismiss();
+                ((yh.t0) this.b).dismiss();
                 break;
             case 22:
-                ((yh.r1) this.b).run();
+                ((yh.s1) this.b).run();
                 break;
             case 23:
-                ((yh.r1) this.b).run();
+                ((yh.s1) this.b).run();
                 break;
             case 24:
-                yh.c3 c3Var = (yh.c3) this.b;
-                c3Var.getClass();
-                new n7(c3Var.b, c3Var.g).show();
+                yh.d3 d3Var = (yh.d3) this.b;
+                d3Var.getClass();
+                new p7(d3Var.b, d3Var.g).show();
                 break;
             case 25:
-                ((w3) this.b).dismiss();
+                ((x3) this.b).dismiss();
                 break;
             case 26:
-                ((z5) this.b).run();
+                ((a6) this.b).run();
                 break;
             case 27:
-                if (((l7) ((o20) this.b).d).f > 0 && (R2 = LaunchActivity.R()) != null) {
+                if (((m7) ((o20) this.b).d).f > 0 && (R2 = LaunchActivity.R()) != null) {
                     org.telegram.ui.ActionBar.l2 l2Var2 = new org.telegram.ui.ActionBar.l2();
                     l2Var2.a = true;
-                    R2.showAsSheet(new x7(), l2Var2);
+                    R2.showAsSheet(new z7(), l2Var2);
                     break;
                 }
                 break;
             default:
-                zg.b0 b0Var = (zg.b0) this.b;
-                if (b0Var.k) {
-                    b0Var.d();
+                zg.z zVar = (zg.z) this.b;
+                if (zVar.k) {
+                    zVar.d();
                     break;
                 }
                 break;

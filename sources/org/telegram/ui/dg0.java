@@ -31,12 +31,12 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class dg0 extends org.telegram.ui.Components.qw0 {
+public final class dg0 extends org.telegram.ui.Components.rw0 {
     public final ImageView a;
     public final ci.d b;
-    public final yh.r[] c;
+    public final yh.s[] c;
     public Bundle d;
     public String e;
     public boolean f;
@@ -54,8 +54,8 @@ public final class dg0 extends org.telegram.ui.Components.qw0 {
         org.telegram.ui.ActionBar.d6 d6Var3;
         org.telegram.ui.ActionBar.d6 d6Var4;
         this.v = ug0Var;
-        yh.r[] rVarArr = {r4, r4, r4};
-        this.c = rVarArr;
+        yh.s[] sVarArr = {r4, r4, r4};
+        this.c = sVarArr;
         this.s = -1;
         setOrientation(1);
         setClipChildren(false);
@@ -96,22 +96,22 @@ public final class dg0 extends org.telegram.ui.Components.qw0 {
         textView.setGravity(17);
         frameLayout.addView(textView, w7.z5.d(-1, -2.0f, 49, 16.0f, 152.0f, 16.0f, 0.0f));
         d6Var2 = ((org.telegram.ui.ActionBar.n2) ug0Var).resourceProvider;
-        yh.r rVar = new yh.r(context, 1, d6Var2);
-        rVar.a(LocaleController.getString(R.string.SMSFee1Title), LocaleController.getString(R.string.SMSFee1Text), R.drawable.menu_high_price);
-        addView(rVarArr[0], w7.z5.t(-1, -2, 55, 0, 0, 0, 6));
+        yh.s sVar = new yh.s(context, 1, d6Var2);
+        sVar.a(LocaleController.getString(R.string.SMSFee1Title), LocaleController.getString(R.string.SMSFee1Text), R.drawable.menu_high_price);
+        addView(sVarArr[0], w7.z5.t(-1, -2, 55, 0, 0, 0, 6));
         d6Var3 = ((org.telegram.ui.ActionBar.n2) ug0Var).resourceProvider;
-        yh.r rVar2 = new yh.r(context, 1, d6Var3);
-        rVar2.a(LocaleController.getString(R.string.SMSFee2Title), LocaleController.getString(R.string.SMSFee2Text), R.drawable.menu_feature_code);
-        addView(rVarArr[1], w7.z5.t(-1, -2, 55, 0, 0, 0, 6));
+        yh.s sVar2 = new yh.s(context, 1, d6Var3);
+        sVar2.a(LocaleController.getString(R.string.SMSFee2Title), LocaleController.getString(R.string.SMSFee2Text), R.drawable.menu_feature_code);
+        addView(sVarArr[1], w7.z5.t(-1, -2, 55, 0, 0, 0, 6));
         d6Var4 = ((org.telegram.ui.ActionBar.n2) ug0Var).resourceProvider;
-        yh.r rVar3 = new yh.r(context, 1, d6Var4);
-        rVar3.a(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SMSFee3Title), new zf0(this, 4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)), LocaleController.getString(R.string.SMSFee3Text), R.drawable.menu_feature_hands);
-        addView(rVarArr[2], w7.z5.t(-1, -2, 55, 0, 0, 0, 6));
+        yh.s sVar3 = new yh.s(context, 1, d6Var4);
+        sVar3.a(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SMSFee3Title), new zf0(this, 4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)), LocaleController.getString(R.string.SMSFee3Text), R.drawable.menu_feature_hands);
+        addView(sVarArr[2], w7.z5.t(-1, -2, 55, 0, 0, 0, 6));
         addView(new Space(context), w7.z5.o(0, 0, 1.0f, 119));
-        ci.d g10 = org.telegram.messenger.ok.g(24, context, null, true);
-        this.b = g10;
-        g10.setLoading(true);
-        addView(g10, w7.z5.t(-1, 48, 7, 0, 16, 0, 16));
+        ci.d f7 = org.telegram.messenger.bi.f(24, context, null, true);
+        this.b = f7;
+        f7.setLoading(true);
+        addView(f7, w7.z5.t(-1, 48, 7, 0, 16, 0, 16));
     }
 
     public static /* synthetic */ void o(dg0 dg0Var, String str, String str2, String str3) {
@@ -256,7 +256,7 @@ public final class dg0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void g() {
         int i10;
         if (this.s >= 0) {
@@ -268,7 +268,7 @@ public final class dg0 extends org.telegram.ui.Components.qw0 {
         this.b.setLoading(false);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void m(Bundle bundle, boolean z10) {
         this.d = bundle;
         String countryName = LocaleController.getCountryName(bundle == null ? null : bundle.getString("country"));
@@ -281,13 +281,13 @@ public final class dg0 extends org.telegram.ui.Components.qw0 {
         long j3 = bundle == null ? 0L : bundle.getLong("amount");
         int i10 = bundle == null ? 0 : bundle.getInt("premium_days");
         boolean isEmpty = TextUtils.isEmpty(countryName);
-        yh.r[] rVarArr = this.c;
+        yh.s[] sVarArr = this.c;
         if (isEmpty) {
-            rVarArr[0].c.setText(LocaleController.getString(R.string.SMSFee1Text));
+            sVarArr[0].c.setText(LocaleController.getString(R.string.SMSFee1Text));
         } else {
-            rVarArr[0].c.setText(LocaleController.formatString(R.string.SMSFee1TextCountry, countryName));
+            sVarArr[0].c.setText(LocaleController.formatString(R.string.SMSFee1TextCountry, countryName));
         }
-        rVarArr[2].setSubtitle(i10 == 7 ? LocaleController.getString(R.string.SMSFee3Text) : LocaleController.formatPluralStringComma("SMSFee3TextDays", i10));
+        sVarArr[2].setSubtitle(i10 == 7 ? LocaleController.getString(R.string.SMSFee3Text) : LocaleController.formatPluralStringComma("SMSFee3TextDays", i10));
         this.a.setOnClickListener(new ai.o5(this, string4, string5, string2, 14));
         ci.d dVar = this.b;
         dVar.setEnabled(true);

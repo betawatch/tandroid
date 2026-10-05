@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class m extends FrameLayout implements GiftAuctionController.OnActiveAuctionsUpdateListeners {
     public final int a;
@@ -29,7 +29,7 @@ public final class m extends FrameLayout implements GiftAuctionController.OnActi
         super(activity);
         this.e = new ArrayList();
         this.a = i10;
-        LinearLayout e7 = org.telegram.messenger.f0.e(activity, 1);
+        LinearLayout e7 = org.telegram.messenger.q.e(activity, 1);
         org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(activity, false, false, false);
         this.b = p6Var;
         p6Var.setTextSize(AndroidUtilities.dp(14.0f));

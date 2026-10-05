@@ -23,7 +23,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class qp0 extends FrameLayout {
     public static final /* synthetic */ int q0 = 0;
@@ -194,8 +194,8 @@ public final class qp0 extends FrameLayout {
         eVar3.f(0, 0);
         eVar3.e(0, 0);
         eVar3.d(0, 0);
-        c10.x(eVar3);
-        c10.z(AndroidUtilities.dp(18.0f));
+        c10.w(eVar3);
+        c10.y(AndroidUtilities.dp(18.0f));
         c10.l.e = true;
         vp0Var.H = c10;
         vp0Var.G = c10;
@@ -351,10 +351,10 @@ public final class qp0 extends FrameLayout {
         if (tL_starGiftUnique != null) {
             zf.a resellAmount = tL_starGiftUnique.getResellAmount(zf.b.a);
             if (tL_starGiftUnique.resale_ton_only) {
-                z0Var.b = yh.x7.Y0(LocaleController.formatString(R.string.ResellGiftBuyTON, tL_starGiftUnique.getResellAmount(zf.b.b).d()), true);
-                z0Var.c = yh.x7.W0(LocaleController.formatPluralStringComma("ResellGiftBuyEq", (int) resellAmount.a()));
+                z0Var.b = yh.z7.Y0(LocaleController.formatString(R.string.ResellGiftBuyTON, tL_starGiftUnique.getResellAmount(zf.b.b).d()), true);
+                z0Var.c = yh.z7.W0(LocaleController.formatPluralStringComma("ResellGiftBuyEq", (int) resellAmount.a()));
             } else {
-                z0Var.b = yh.x7.W0(LocaleController.formatPluralStringComma("ResellGiftBuy", (int) resellAmount.a()));
+                z0Var.b = yh.z7.W0(LocaleController.formatPluralStringComma("ResellGiftBuy", (int) resellAmount.a()));
                 z0Var.c = null;
             }
         } else {
@@ -534,7 +534,7 @@ public final class qp0 extends FrameLayout {
     public final void k() {
         int i10;
         wp0 wp0Var = this.p0;
-        yh.k5 k5Var = wp0Var.b;
+        yh.l5 l5Var = wp0Var.b;
         this.V = -1;
         this.W = -1;
         this.a0 = -1;
@@ -560,9 +560,9 @@ public final class qp0 extends FrameLayout {
             this.k0 = 5;
             this.W = 4;
         }
-        yh.k5 k5Var2 = i12 == 1 ? wp0Var.c : k5Var;
-        if ((i12 == 0 || i12 == 1) && k5Var2 != null) {
-            ArrayList arrayList2 = k5Var2.l;
+        yh.l5 l5Var2 = i12 == 1 ? wp0Var.c : l5Var;
+        if ((i12 == 0 || i12 == 1) && l5Var2 != null) {
+            ArrayList arrayList2 = l5Var2.l;
             int i13 = this.k0;
             this.k0 = i13 + 1;
             this.h0 = i13;
@@ -580,7 +580,7 @@ public final class qp0 extends FrameLayout {
                 this.f0 = size;
                 int i16 = this.k0;
                 this.c0 = i16;
-                if (k5Var.i || !k5Var.j) {
+                if (l5Var.i || !l5Var.j) {
                     this.d0 = i16;
                     int i17 = 3 - (size % 3);
                     if (size <= 0) {
@@ -599,7 +599,7 @@ public final class qp0 extends FrameLayout {
                     this.i0 = i19 + 1;
                 }
                 if (c()) {
-                    k5Var2.a();
+                    l5Var2.a();
                 }
             } else if (this.J != null) {
                 i10 = ((org.telegram.ui.ActionBar.n2) wp0Var).currentAccount;

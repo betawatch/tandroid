@@ -5,7 +5,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ql0 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class ql0 implements Runnable {
             case 0:
                 zl0 zl0Var = (zl0) ((tl0) obj).b;
                 if (zl0Var.e1 != null && (view = zl0Var.N1) != null) {
-                    zl0Var.k1(view, f10, f7, true);
+                    zl0Var.j1(view, f10, f7, true);
                     zl0Var.e1 = null;
                     break;
                 }

@@ -36,14 +36,14 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.e60;
+import org.telegram.ui.Components.e71;
 import org.telegram.ui.Components.ee0;
 import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.lh0;
 import org.telegram.ui.Components.pa0;
 import org.telegram.ui.Components.pc0;
-import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.ry0;
 import org.telegram.ui.Components.w00;
 import org.telegram.ui.Components.wv;
 import org.telegram.ui.Components.xi;
@@ -63,7 +63,7 @@ import org.telegram.ui.tp;
 import org.telegram.ui.uy;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ int a;
@@ -71,9 +71,9 @@ public final /* synthetic */ class y0 implements Runnable {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ y0(hg.y yVar, MessagesStorage messagesStorage, boolean z10) {
+    public /* synthetic */ y0(hg.z zVar, MessagesStorage messagesStorage, boolean z10) {
         this.a = 2;
-        this.d = yVar;
+        this.d = zVar;
         this.c = messagesStorage;
         this.b = z10;
     }
@@ -184,7 +184,7 @@ public final /* synthetic */ class y0 implements Runnable {
                 }
                 return;
             case 2:
-                hg.y yVar = (hg.y) obj;
+                hg.z zVar = (hg.z) obj;
                 MessagesStorage messagesStorage2 = (MessagesStorage) obj2;
                 ArrayList arrayList5 = new ArrayList();
                 ArrayList<TLRPC.User> arrayList6 = new ArrayList<>();
@@ -223,7 +223,7 @@ public final /* synthetic */ class y0 implements Runnable {
                         break;
                     }
                     sQLiteCursor.dispose();
-                    AndroidUtilities.runOnUIThread(new u1(yVar, arrayList5, arrayList6, arrayList7, this.b, 2));
+                    AndroidUtilities.runOnUIThread(new u1(zVar, arrayList5, arrayList6, arrayList7, this.b, 2));
                     return;
                 } finally {
                     if (sQLiteCursor != null) {
@@ -275,11 +275,11 @@ public final /* synthetic */ class y0 implements Runnable {
                 if (d3Var != null && q5Var.a != null) {
                     d3Var.a();
                 }
-                x3Var.O2();
+                x3Var.N2();
                 return;
             case 6:
                 ii.w3 w3Var = (ii.w3) obj;
-                w3Var.f.q3(true);
+                w3Var.f.p3(true);
                 ii.k4.k((org.telegram.ui.ActionBar.n2) obj2, z10, new ii.h4(w3Var, i13));
                 return;
             case 7:
@@ -510,9 +510,9 @@ public final /* synthetic */ class y0 implements Runnable {
                 tL_inputStickerSetID.access_hash = stickerSet.access_hash;
                 tL_inputStickerSetID.id = stickerSet.id;
                 if (!z10) {
-                    qy0 qy0Var = new qy0(ynVar.getParentActivity(), ynVar, tL_inputStickerSetID, null, ynVar.W, ynVar.ca);
-                    qy0Var.setCalcMandatoryInsets(ynVar.w9());
-                    ynVar.showDialog(qy0Var);
+                    ry0 ry0Var = new ry0(ynVar.getParentActivity(), ynVar, tL_inputStickerSetID, null, ynVar.W, ynVar.ca);
+                    ry0Var.setCalcMandatoryInsets(ynVar.w9());
+                    ynVar.showDialog(ry0Var);
                     return;
                 } else {
                     ArrayList arrayList11 = new ArrayList(1);
@@ -586,7 +586,7 @@ public final /* synthetic */ class y0 implements Runnable {
                 return;
             case 23:
                 lh0 lh0Var = (lh0) obj2;
-                c71 c71Var = lh0Var.c;
+                e71 e71Var = lh0Var.c;
                 ArrayList arrayList12 = (ArrayList) obj;
                 if (z10) {
                     arrayList12 = lh0Var.e;
@@ -594,9 +594,9 @@ public final /* synthetic */ class y0 implements Runnable {
                 if (arrayList12.isEmpty()) {
                     return;
                 }
-                if (c71Var.canScrollVertically(1)) {
-                    for (int i22 = 0; i22 < c71Var.getChildCount(); i22++) {
-                        if (!(c71Var.getChildAt(i22) instanceof w00)) {
+                if (e71Var.canScrollVertically(1)) {
+                    for (int i22 = 0; i22 < e71Var.getChildCount(); i22++) {
+                        if (!(e71Var.getChildAt(i22) instanceof w00)) {
                         }
                     }
                     return;

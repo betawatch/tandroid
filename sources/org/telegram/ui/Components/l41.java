@@ -1,25 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class l41 extends t41 {
-    public final /* synthetic */ Runnable T;
+public final class l41 extends ClickableSpan {
+    public final /* synthetic */ URLSpan a;
+    public final /* synthetic */ u41 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l41(Context context, String str, String str2, CharSequence charSequence, TLRPC.InputPeer inputPeer, int i10, boolean z10, Runnable runnable) {
-        super(context, str, str2, charSequence, inputPeer, i10, z10, null);
-        this.T = runnable;
+    public l41(u41 u41Var, URLSpan uRLSpan) {
+        this.b = u41Var;
+        this.a = uRLSpan;
     }
 
-    @Override // org.telegram.ui.Components.t41, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
-    public final void dismiss() {
-        super.dismiss();
-        Runnable runnable = this.T;
-        if (runnable != null) {
-            runnable.run();
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        u41 u41Var = this.b;
+        Utilities.CallbackReturn callbackReturn = u41Var.N;
+        URLSpan uRLSpan = this.a;
+        if (callbackReturn != null) {
+            if (((Boolean) callbackReturn.run(uRLSpan)).booleanValue()) {
+                u41Var.dismiss();
+            }
+        } else {
+            org.telegram.ui.ActionBar.n2 n2Var = u41Var.M;
+            if (n2Var != null) {
+                e5.q0(n2Var, uRLSpan.getURL(), false, false);
+            }
         }
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & 255);
+        if (!(this.a instanceof l61)) {
+            textPaint.setUnderlineText(true);
+        }
+        textPaint.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.k5, false));
+        textPaint.setAlpha(min);
     }
 }

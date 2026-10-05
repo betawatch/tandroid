@@ -19,14 +19,14 @@ import e2.d0;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import hg.k0;
+import hg.c;
 import java.io.EOFException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -183,7 +183,7 @@ public final class a implements o {
             rVar.r = i12;
             rVar.I = 1;
             rVar.J = i11;
-            k0.r(rVar, h0Var);
+            c.s(rVar, h0Var);
         }
         int i13 = 0;
         if (this.g == 0) {

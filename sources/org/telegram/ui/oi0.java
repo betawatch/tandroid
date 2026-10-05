@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oi0 implements Runnable {
     public final /* synthetic */ int a;
@@ -53,10 +53,10 @@ public final /* synthetic */ class oi0 implements Runnable {
                 this.b.presentFragment(new DataSettingsActivity());
                 break;
             case 3:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 4:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 5:
                 this.b.presentFragment(new WallpapersListActivity(0));
@@ -71,13 +71,13 @@ public final /* synthetic */ class oi0 implements Runnable {
                 this.b.presentFragment(new WallpapersListActivity(0));
                 break;
             case 9:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 10:
-                org.telegram.messenger.ok.m(3, this.b);
+                org.telegram.messenger.bi.l(3, this.b);
                 break;
             case 11:
-                org.telegram.messenger.ok.m(3, this.b);
+                org.telegram.messenger.bi.l(3, this.b);
                 break;
             case 12:
                 org.telegram.ui.ActionBar.n2 n2Var2 = this.b;
@@ -86,49 +86,49 @@ public final /* synthetic */ class oi0 implements Runnable {
                 n2Var2.showDialog(y0Var);
                 break;
             case 13:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 14:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 15:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 16:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 17:
-                org.telegram.messenger.ok.m(1, this.b);
+                org.telegram.messenger.bi.l(1, this.b);
                 break;
             case 18:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 19:
                 this.b.presentFragment(new NotificationsSettingsActivity());
                 break;
             case 20:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 21:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 22:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 23:
                 this.b.presentFragment(new NotificationsSettingsActivity());
                 break;
             case 24:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 25:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 26:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 27:
-                org.telegram.messenger.ok.m(0, this.b);
+                org.telegram.messenger.bi.l(0, this.b);
                 break;
             case 28:
                 this.b.presentFragment(new StickersActivity(0, null));

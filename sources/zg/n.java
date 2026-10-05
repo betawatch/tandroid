@@ -1,54 +1,40 @@
 package zg;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.c5;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.ActionBar.p1;
-import org.telegram.ui.Components.es0;
-import yh.t3;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class n extends p1 {
-    public final /* synthetic */ t3 x;
+public final class n extends z5 {
+    public final Bitmap a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(t3 t3Var, t3 t3Var2) {
-        super(t3Var2);
-        this.x = t3Var;
+    public n(o oVar) {
+        super(-1L, (Paint.FontMetricsInt) null);
+        Bitmap createBitmap = Bitmap.createBitmap(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), Bitmap.Config.ARGB_8888);
+        this.a = createBitmap;
+        Drawable mutate = oVar.getParentActivity().getResources().getDrawable(R.drawable.star_small_inner).mutate();
+        mutate.setBounds(0, 0, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
+        mutate.draw(new Canvas(createBitmap));
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final boolean b() {
-        boolean z10;
-        boolean z11;
-        q qVar = (q) this.x.c;
-        c5 parentLayout = qVar.getParentLayout();
-        z10 = ((n2) qVar).inPreviewMode;
-        if (z10 || AndroidUtilities.isTablet()) {
-            return false;
-        }
-        z11 = ((n2) qVar).inBubbleMode;
-        return (z11 || AndroidUtilities.isInMultiwindow || parentLayout == null) ? false : true;
+    @Override // org.telegram.ui.Components.z5, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
+        canvas.save();
+        canvas.translate(f7, ((i12 + i14) / 2.0f) - AndroidUtilities.dp(12.0f));
+        float f10 = this.extraScale;
+        canvas.scale(f10, f10, f7 + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
+        canvas.drawBitmap(this.a, 0.0f, 0.0f, (Paint) null);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void e(float f7, float f10, boolean z10) {
-        q qVar = (q) this.x.c;
-        if (qVar.getParentLayout() != null) {
-            boolean z11 = ((ActionBarLayout) qVar.getParentLayout()).n;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void g(int i10, boolean z10) {
-        q qVar = (q) this.x.c;
-        qVar.w.setVisibility(0);
-        qVar.w.animate().alpha(!z10 ? 1.0f : 0.0f).withEndAction(new es0(17, this, z10)).start();
-    }
-
-    @Override // org.telegram.ui.ActionBar.p1
-    public final void f() {
+    @Override // org.telegram.ui.Components.z5, android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return AndroidUtilities.dp(5.0f) + super.getSize(paint, charSequence, i10, i11, fontMetricsInt);
     }
 }

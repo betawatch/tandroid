@@ -19,7 +19,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class yg0 extends ul0 {
     public final Context r;
@@ -289,12 +289,12 @@ public final class yg0 extends ul0 {
                     }
                 }
                 i5Var.l(pollVotesAlert$UserCell.r, z10);
-                gx0 gx0Var = pollVotesAlert$UserCell.f;
+                hx0 hx0Var = pollVotesAlert$UserCell.f;
                 TLRPC.User user3 = pollVotesAlert$UserCell.h;
                 TLRPC.Chat chat4 = pollVotesAlert$UserCell.n;
                 int i12 = org.telegram.ui.ActionBar.i6.z9;
                 d6Var = ((org.telegram.ui.ActionBar.f3) pollVotesAlert$UserCell.F).resourcesProvider;
-                i5Var.i(gx0Var.a(user3, chat4, org.telegram.ui.ActionBar.i6.v0(i12, d6Var), z10));
+                i5Var.i(hx0Var.a(user3, chat4, org.telegram.ui.ActionBar.i6.v0(i12, d6Var), z10));
                 TLRPC.Chat chat5 = pollVotesAlert$UserCell.n;
                 if (chat5 != null) {
                     w9Var.e(chat5, h9Var);

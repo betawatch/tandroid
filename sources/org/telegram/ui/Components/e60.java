@@ -37,7 +37,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class e60 extends k60 {
     public boolean A0;
@@ -58,7 +58,7 @@ public final class e60 extends k60 {
     public ki.q0 Q;
     public ki.r0 R;
     public ki.k0 S;
-    public z01 T;
+    public a11 T;
     public VideoEditedInfo U;
     public d60 V;
     public AnimatorSet W;
@@ -188,7 +188,7 @@ public final class e60 extends k60 {
                             int i13 = s0Var.W;
                             if (i13 != 7 && i13 != 8 && i13 != 9 && i13 != 10) {
                                 if (s0Var.p != l0Var2) {
-                                    s0Var.m.b("camera facing requested: " + s0Var.p + " -> " + l0Var2 + ", state=" + hg.k0.B(s0Var.W));
+                                    s0Var.m.b("camera facing requested: " + s0Var.p + " -> " + l0Var2 + ", state=" + hg.c.B(s0Var.W));
                                     s0Var.p = l0Var2;
                                     int i14 = s0Var.W;
                                     if (i14 == 3 || i14 == 2) {
@@ -272,7 +272,7 @@ public final class e60 extends k60 {
                             int i13 = s0Var.W;
                             if (i13 != 7 && i13 != 8 && i13 != 9 && i13 != 10) {
                                 if (s0Var.p != l0Var2) {
-                                    s0Var.m.b("camera facing requested: " + s0Var.p + " -> " + l0Var2 + ", state=" + hg.k0.B(s0Var.W));
+                                    s0Var.m.b("camera facing requested: " + s0Var.p + " -> " + l0Var2 + ", state=" + hg.c.B(s0Var.W));
                                     s0Var.p = l0Var2;
                                     int i14 = s0Var.W;
                                     if (i14 == 3 || i14 == 2) {
@@ -433,9 +433,9 @@ public final class e60 extends k60 {
         }
         r(z10 ? 0 : 6);
         this.P.a();
-        z01 z01Var = this.T;
-        if (z01Var != null) {
-            z01Var.d(true);
+        a11 a11Var = this.T;
+        if (a11Var != null) {
+            a11Var.d(true);
         }
         this.T = null;
         MediaController.getInstance().requestRecordAudioFocus(false);
@@ -512,9 +512,9 @@ public final class e60 extends k60 {
             }
             this.P = null;
         }
-        z01 z01Var = this.T;
-        if (z01Var != null) {
-            z01Var.d(true ^ this.i0);
+        a11 a11Var = this.T;
+        if (a11Var != null) {
+            a11Var.d(true ^ this.i0);
             this.T = null;
         }
         setScreenFlashEnabled(false);
@@ -580,7 +580,7 @@ public final class e60 extends k60 {
             ki.s0.t();
             int i13 = s0Var2.W;
             if (i13 == 3 || i13 == 5) {
-                s0Var2.m.b("finish requested: state=" + hg.k0.B(s0Var2.W) + ", includeAudio=" + z12 + ", durationMs=" + s0Var2.j() + ", trim=" + s0Var2.G + ".." + s0Var2.H);
+                s0Var2.m.b("finish requested: state=" + hg.c.B(s0Var2.W) + ", includeAudio=" + z12 + ", durationMs=" + s0Var2.j() + ", trim=" + s0Var2.G + ".." + s0Var2.H);
                 s0Var2.z = z12;
                 if (s0Var2.W != 3) {
                     s0Var2.r();
@@ -607,8 +607,8 @@ public final class e60 extends k60 {
     public final void g(ah.c cVar, org.telegram.ui.hj hjVar) {
         LinearLayout linearLayout = this.F;
         ch.d c10 = cVar.c(linearLayout, hjVar, false);
-        c10.y(AndroidUtilities.dp(6.0f));
-        c10.z(AndroidUtilities.dp(21.0f));
+        c10.x(AndroidUtilities.dp(6.0f));
+        c10.y(AndroidUtilities.dp(21.0f));
         linearLayout.setBackground(c10);
     }
 
@@ -677,7 +677,7 @@ public final class e60 extends k60 {
             ilVar.setAlpha(1.0f);
             ilVar.invalidate();
         }
-        this.T = new z01(this.h, this.r);
+        this.T = new a11(this.h, this.r);
         this.Q = (ki.q0) ri.e.c.a();
         ki.j0 j0Var = new ki.j0(getContext(), this.y);
         j0Var.c = new File(ApplicationLoader.getFilesDirFixed(), "cache");
@@ -686,11 +686,13 @@ public final class e60 extends k60 {
         j0Var.h = ri.e.f.a();
         j0Var.f = (ki.m0) ri.e.d.a();
         j0Var.g = (ki.n0) ri.e.e.a();
-        j0Var.i = ri.e.g.a();
+        ri.a aVar = ri.e.g;
+        aVar.a();
+        j0Var.i = aVar.d;
         l2.g gVar = this.C0;
         j0Var.j = gVar;
-        z01 z01Var = this.T;
-        j0Var.k = z01Var;
+        a11 a11Var = this.T;
+        j0Var.k = a11Var;
         j0Var.l = new pv(this, 6);
         if (j0Var.d == null) {
             throw new IllegalStateException("Initial camera is required");
@@ -710,7 +712,7 @@ public final class e60 extends k60 {
         if (gVar == null) {
             throw new IllegalStateException("Session listener is required");
         }
-        if (z01Var == null) {
+        if (a11Var == null) {
             throw new IllegalStateException("Output listener is required");
         }
         this.P = new ki.s0(j0Var);
@@ -853,13 +855,13 @@ public final class e60 extends k60 {
         return motionEvent.getAction() != 0 || motionEvent.getY() <= ((float) (getMeasuredHeight() - getPaddingBottom()));
     }
 
-    public final VideoEditedInfo p(File file, long j3, y01 y01Var) {
+    public final VideoEditedInfo p(File file, long j3, z01 z01Var) {
         ki.n0 n0Var;
         VideoEditedInfo videoEditedInfo = new VideoEditedInfo();
         videoEditedInfo.startTime = -1L;
         videoEditedInfo.endTime = -1L;
         videoEditedInfo.estimatedDuration = j3;
-        videoEditedInfo.estimatedSize = Math.max(1L, y01Var == null ? file.length() : y01Var.a);
+        videoEditedInfo.estimatedSize = Math.max(1L, z01Var == null ? file.length() : z01Var.a);
         videoEditedInfo.roundVideo = true;
         ki.s0 s0Var = this.P;
         videoEditedInfo.framerate = (s0Var == null || (n0Var = s0Var.s) == null) ? 30 : n0Var.a;
@@ -870,11 +872,11 @@ public final class e60 extends k60 {
         videoEditedInfo.originalHeight = i10;
         videoEditedInfo.resultHeight = i10;
         videoEditedInfo.originalPath = file.getAbsolutePath();
-        if (y01Var != null) {
-            videoEditedInfo.file = y01Var.b;
-            videoEditedInfo.encryptedFile = y01Var.c;
-            videoEditedInfo.key = y01Var.d;
-            videoEditedInfo.iv = y01Var.e;
+        if (z01Var != null) {
+            videoEditedInfo.file = z01Var.b;
+            videoEditedInfo.encryptedFile = z01Var.c;
+            videoEditedInfo.key = z01Var.d;
+            videoEditedInfo.iv = z01Var.e;
         }
         return videoEditedInfo;
     }

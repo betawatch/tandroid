@@ -34,7 +34,7 @@ import w0.h;
 import w7.i8;
 import x5.g;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
@@ -134,7 +134,7 @@ public final class e extends b1.d {
                     String str6 = kVar3.b;
                     x0.a aVar = (x0.a) f.a.get(rVar);
                     if (aVar == null) {
-                        throw new y0.b(new x0.a(26), t8.b.i("unknown fido gms exception - ", str6));
+                        throw new y0.b(new x0.a(26), sa.e.i("unknown fido gms exception - ", str6));
                     }
                     if (rVar == r.w && str6 != null && xd.j.b(str6, "Unable to get sync account")) {
                         throw new w0.g("Passkey retrieval was cancelled by the user.");

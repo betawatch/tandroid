@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.b80;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v3 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -60,7 +60,7 @@ public final /* synthetic */ class v3 implements View.OnClickListener {
             default:
                 LinearLayout linearLayout = (LinearLayout) this.n;
                 int i11 = this.b;
-                yh.o g10 = yh.o.g(i11);
+                yh.p g10 = yh.p.g(i11);
                 g10.n();
                 g10.o();
                 ArrayList arrayList = new ArrayList();

@@ -2,9 +2,8 @@ package t;
 
 import androidx.car.app.model.CarIcon;
 import androidx.core.graphics.drawable.IconCompat;
-import hg.k0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class b {
     public static final b b = new b(new int[]{1, 2});
@@ -31,6 +30,6 @@ public final class b {
                 throw new IllegalArgumentException("Unsupported URI scheme for: " + icon);
             }
         }
-        throw new IllegalArgumentException(k0.h(i10, "Custom icon type is not allowed: "));
+        throw new IllegalArgumentException(hg.c.h(i10, "Custom icon type is not allowed: "));
     }
 }

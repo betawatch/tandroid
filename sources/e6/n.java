@@ -13,16 +13,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.f0;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ro;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.eg1;
+import org.telegram.ui.cg1;
 import org.telegram.ui.p11;
 import v7.z8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l2.i, ro {
     public final /* synthetic */ int a;
@@ -159,12 +158,12 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
     public void j() {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", this.b);
-        eg1 eg1Var = new eg1(bundle);
-        eg1Var.d = new ArrayList();
-        eg1Var.e = new HashSet();
+        cg1 cg1Var = new cg1(bundle);
+        cg1Var.d = new ArrayList();
+        cg1Var.e = new HashSet();
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        eg1Var.e = profileActivity.h5;
-        profileActivity.presentFragment(eg1Var);
+        cg1Var.e = profileActivity.h5;
+        profileActivity.presentFragment(cg1Var);
     }
 
     @Override // l2.i
@@ -262,9 +261,9 @@ public final /* synthetic */ class n implements OnFailureListener, c3.p, c3.q, l
         SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i10);
         StringBuilder sb2 = new StringBuilder("sound_enabled_");
         long j3 = this.b;
-        boolean z10 = notificationsSettings.getBoolean(f0.i(j3, profileActivity.g1, sb2), true);
+        boolean z10 = notificationsSettings.getBoolean(org.telegram.messenger.q.i(j3, profileActivity.g1, sb2), true);
         boolean z11 = !z10;
-        notificationsSettings.edit().putBoolean(f0.i(j3, profileActivity.g1, new StringBuilder("sound_enabled_")), z11).apply();
+        notificationsSettings.edit().putBoolean(org.telegram.messenger.q.i(j3, profileActivity.g1, new StringBuilder("sound_enabled_")), z11).apply();
         if (yc.a(profileActivity)) {
             yc.S(z10 ? 1 : 0, profileActivity, profileActivity.z0).j();
         }

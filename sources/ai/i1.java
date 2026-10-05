@@ -10,10 +10,10 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class i1 extends LinearLayout {
-    public yh.j8 a;
+    public yh.l8 a;
     public final Path b;
     public final Paint c;
     public long d;
@@ -65,12 +65,12 @@ public final class i1 extends LinearLayout {
             canvas2 = canvas;
         }
         if (this.a == null) {
-            this.a = new yh.j8(1, MediaDataController.MAX_LINKS_COUNT);
+            this.a = new yh.l8(1, MediaDataController.MAX_LINKS_COUNT);
         }
         this.a.f(0, 0, getWidth(), getHeight());
-        yh.j8 j8Var = this.a;
-        j8Var.h = 30.0f;
-        j8Var.d();
+        yh.l8 l8Var = this.a;
+        l8Var.h = 30.0f;
+        l8Var.d();
         this.a.b(canvas2, -1, 0.85f);
         invalidate();
         canvas2.restore();

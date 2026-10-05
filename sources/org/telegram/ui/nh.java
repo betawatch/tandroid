@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nh implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class nh implements Utilities.Callback {
             default:
                 Boolean bool = (Boolean) obj;
                 i10 = ((org.telegram.ui.ActionBar.n2) ((lj) this.e).b).currentAccount;
-                yh.t5.y(i10, false).i0(this.b, this.c, this.d.longValue() > 0 && bool.booleanValue(), true);
+                yh.u5.y(i10, false).i0(this.b, this.c, this.d.longValue() > 0 && bool.booleanValue(), true);
                 break;
         }
     }

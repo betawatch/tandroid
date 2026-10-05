@@ -4,13 +4,13 @@ import android.content.Context;
 import android.graphics.PointF;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.uk0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class t0 extends j {
     public final s0 q0;
@@ -36,17 +36,17 @@ public final class t0 extends j {
     public static String q(double d) {
         double abs = Math.abs(d);
         double floor = Math.floor(abs);
-        String n10 = a4.a.n((int) floor, "°", new StringBuilder(""));
+        String o9 = a4.a.o((int) floor, "°", new StringBuilder(""));
         double floor2 = Math.floor((abs - floor) * 60.0d);
-        StringBuilder u10 = a4.a.u(n10);
-        u10.append(floor2 <= 0.0d ? "0" : "");
-        u10.append(floor2 < 10.0d ? "0" : "");
-        String n11 = a4.a.n((int) floor2, "'", u10);
+        StringBuilder v = a4.a.v(o9);
+        v.append(floor2 <= 0.0d ? "0" : "");
+        v.append(floor2 < 10.0d ? "0" : "");
+        String o10 = a4.a.o((int) floor2, "'", v);
         double floor3 = Math.floor(Math.floor(floor2) * 60.0d);
-        StringBuilder u11 = a4.a.u(n11);
-        u11.append(floor3 <= 0.0d ? "0" : "");
-        u11.append(floor3 < 10.0d ? "0" : "");
-        return a4.a.n((int) floor3, "\"", u11);
+        StringBuilder v9 = a4.a.v(o10);
+        v9.append(floor3 <= 0.0d ? "0" : "");
+        v9.append(floor3 < 10.0d ? "0" : "");
+        return a4.a.o((int) floor3, "\"", v9);
     }
 
     @Override // qg.j
@@ -72,8 +72,8 @@ public final class t0 extends j {
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float x10 = ok.x(dp, 2.0f, getPositionX(), scaleX);
-        return new uk0(x10, ok.x(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + x10) - x10, dp2 * scaleX);
+        float x10 = bi.x(dp, 2.0f, getPositionX(), scaleX);
+        return new uk0(x10, bi.x(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + x10) - x10, dp2 * scaleX);
     }
 
     @Override // qg.j

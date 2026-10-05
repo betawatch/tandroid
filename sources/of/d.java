@@ -12,7 +12,6 @@ import c6.l;
 import e6.n;
 import g2.h;
 import g2.m;
-import hg.k0;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -38,7 +37,7 @@ import org.telegram.ui.Components.zg;
 import t7.u;
 import yc.i;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class d extends i {
     public static final f l;
@@ -98,14 +97,14 @@ public final class d extends i {
     }
 
     public static String j(String str, String str2) {
-        return a4.a.p("http://", str, str2);
+        return a4.a.q("http://", str, str2);
     }
 
     @Override // yc.i
     public final yc.g e(yc.d dVar) {
         String str;
         int incrementAndGet = this.k.incrementAndGet();
-        StringBuilder j3 = k0.j(incrementAndGet, "Request ", " ");
+        StringBuilder j3 = hg.c.j(incrementAndGet, "Request ", " ");
         switch (dVar.g) {
             case 1:
                 str = "GET";

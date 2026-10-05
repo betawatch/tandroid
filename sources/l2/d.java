@@ -4,7 +4,7 @@ import android.net.Uri;
 import java.io.IOException;
 import u2.t;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class d implements y2.g {
     public final /* synthetic */ h a;
@@ -24,7 +24,7 @@ public final class d implements y2.g {
     }
 
     @Override // y2.g
-    public k4.d s(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
+    public k4.d v(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
         y2.o oVar = (y2.o) iVar;
         h hVar = this.a;
         a5.a aVar = hVar.q;
@@ -37,7 +37,12 @@ public final class d implements y2.g {
     }
 
     @Override // y2.g
-    public void v(y2.i iVar, long j3, long j10) {
+    public void x0(y2.i iVar, long j3, long j10, boolean z10) {
+        this.a.w((y2.o) iVar, j10);
+    }
+
+    @Override // y2.g
+    public void y(y2.i iVar, long j3, long j10) {
         y2.o oVar = (y2.o) iVar;
         h hVar = this.a;
         long j11 = oVar.a;
@@ -50,11 +55,6 @@ public final class d implements y2.g {
     }
 
     @Override // y2.g
-    public void x0(y2.i iVar, long j3, long j10, boolean z10) {
-        this.a.w((y2.o) iVar, j10);
-    }
-
-    @Override // y2.g
-    public /* synthetic */ void t(y2.i iVar, long j3, long j10, int i10) {
+    public /* synthetic */ void x(y2.i iVar, long j3, long j10, int i10) {
     }
 }

@@ -44,12 +44,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.d81;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.e81;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.ld;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -96,7 +96,7 @@ public final /* synthetic */ class x1 implements Runnable {
         TLRPC.Photo photo;
         int i11 = -1;
         int i12 = 4;
-        View B1 = null;
+        View A1 = null;
         r8 = null;
         r8 = null;
         String str3 = null;
@@ -147,17 +147,17 @@ public final /* synthetic */ class x1 implements Runnable {
                 ((e2.a0) this.b).e((Typeface) this.c);
                 return;
             case 2:
-                hg.f fVar = (hg.f) this.b;
+                hg.g gVar = (hg.g) this.b;
                 TLObject tLObject = (TLObject) this.c;
-                fVar.e = false;
+                gVar.e = false;
                 TL_account.connectedBots connectedbots = tLObject instanceof TL_account.connectedBots ? (TL_account.connectedBots) tLObject : null;
-                fVar.c = connectedbots;
+                gVar.c = connectedbots;
                 if (connectedbots != null) {
-                    MessagesController.getInstance(fVar.a).putUsers(fVar.c.users, false);
+                    MessagesController.getInstance(gVar.a).putUsers(gVar.c.users, false);
                 }
-                fVar.b = System.currentTimeMillis();
-                fVar.f = true;
-                fVar.d();
+                gVar.b = System.currentTimeMillis();
+                gVar.f = true;
+                gVar.d();
                 return;
             case 3:
                 hg.l0.P((hg.l0) this.b, (ld) this.c);
@@ -167,9 +167,9 @@ public final /* synthetic */ class x1 implements Runnable {
                 return;
             case 5:
                 hg.g1 g1Var = (hg.g1) this.b;
-                g61 g61Var = (g61) this.c;
+                h61 h61Var = (h61) this.c;
                 g1Var.getClass();
-                g1Var.W(g61Var.d);
+                g1Var.W(h61Var.d);
                 return;
             case 6:
                 MessagesStorage messagesStorage = (MessagesStorage) this.b;
@@ -340,7 +340,7 @@ public final /* synthetic */ class x1 implements Runnable {
                 while (i14 < size) {
                     Object obj2 = arrayList6.get(i14);
                     i14++;
-                    ((d81) ((b2.w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
+                    ((e81) ((b2.w1) obj2)).J.onSurfaceTextureUpdated(surfaceTexture);
                 }
                 return;
             case 11:
@@ -373,9 +373,9 @@ public final /* synthetic */ class x1 implements Runnable {
                 xVar.c0.set(richMessage);
                 dVar.g(LocaleController.getString(R.string.ArticleAIAddToPage), true, true);
                 xVar.N();
-                u61 u61Var = xVar.Z;
-                if (u61Var != null) {
-                    u61Var.N(true);
+                w61 w61Var = xVar.Z;
+                if (w61Var != null) {
+                    w61Var.N(true);
                     return;
                 }
                 return;
@@ -388,7 +388,7 @@ public final /* synthetic */ class x1 implements Runnable {
                     FileLog.e(e12);
                     str = null;
                 }
-                if (TextUtils.isEmpty(str) || !t8.b.u(str)) {
+                if (TextUtils.isEmpty(str) || !sa.e.u(str)) {
                     try {
                         query = x3Var.getContext().getContentResolver().query(uri, new String[]{"_display_name"}, null, null, null);
                     } catch (Exception e13) {
@@ -474,13 +474,13 @@ public final /* synthetic */ class x1 implements Runnable {
                     }
                     str = str3;
                 }
-                if (TextUtils.isEmpty(str) || !t8.b.u(str)) {
+                if (TextUtils.isEmpty(str) || !sa.e.u(str)) {
                     return;
                 }
                 AndroidUtilities.runOnUIThread(new x1(14, x3Var, str));
                 return;
             case 14:
-                ((x3) this.b).e2((String) this.c);
+                ((x3) this.b).d2((String) this.c);
                 return;
             case 15:
                 x3 x3Var2 = (x3) this.b;
@@ -540,10 +540,10 @@ public final /* synthetic */ class x1 implements Runnable {
                 if (aVar == null) {
                     o3Var.getClass();
                 } else {
-                    B1 = o3Var.e.B1(aVar);
+                    A1 = o3Var.e.A1(aVar);
                 }
-                if (B1 instanceof f6) {
-                    f6 f6Var2 = (f6) B1;
+                if (A1 instanceof f6) {
+                    f6 f6Var2 = (f6) A1;
                     f6Var2.B();
                     f6Var2.getEditText().setSelection(f6Var2.getEditText().length());
                     return;
@@ -637,12 +637,12 @@ public final /* synthetic */ class x1 implements Runnable {
                 String str5 = (String) this.c;
                 k2.k kVar = (k2.k) yVar.c;
                 String str6 = e2.d0.a;
-                j2.f fVar2 = ((i2.c0) kVar).a.s;
-                j2.a p5 = fVar2.p();
-                fVar2.q(p5, 1012, new j2.c(p5, str5, 27));
+                j2.f fVar = ((i2.c0) kVar).a.s;
+                j2.a p5 = fVar.p();
+                fVar.q(p5, 1012, new j2.c(p5, str5, 27));
                 return;
             case 26:
-                ((k2.o) this.b).C((k2.l) this.c);
+                ((k2.o) this.b).A((k2.l) this.c);
                 return;
             case 27:
                 ((ki.i) this.b).F((ki.l0) this.c);

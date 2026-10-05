@@ -31,22 +31,21 @@ import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.bi;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.ok;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RLottieNative;
 import org.telegram.ui.Components.eu;
-import org.telegram.ui.Components.hy0;
+import org.telegram.ui.Components.iy0;
 import org.telegram.ui.Components.nz;
 import org.telegram.ui.Components.sy;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.vy;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.bh1;
 import org.telegram.ui.hy;
 import org.telegram.ui.lg;
 import org.telegram.ui.me;
@@ -54,8 +53,9 @@ import org.telegram.ui.rt;
 import org.telegram.ui.so0;
 import org.telegram.ui.uy;
 import org.telegram.ui.yn;
+import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements Runnable {
     public final /* synthetic */ int a;
@@ -144,20 +144,20 @@ public final /* synthetic */ class u1 implements Runnable {
                 AndroidUtilities.runOnUIThread(new a3.k0(kcVar, k8Var, file2, 19));
                 return;
             case 2:
-                hg.y yVar = (hg.y) this.c;
+                hg.z zVar = (hg.z) this.c;
                 ArrayList arrayList2 = (ArrayList) this.d;
                 ArrayList<TLRPC.User> arrayList3 = (ArrayList) this.e;
                 ArrayList<TLRPC.Chat> arrayList4 = (ArrayList) this.f;
                 boolean z13 = this.b;
-                ArrayList arrayList5 = yVar.b;
+                ArrayList arrayList5 = zVar.b;
                 arrayList5.clear();
                 arrayList5.addAll(arrayList2);
-                int i19 = yVar.a;
+                int i19 = zVar.a;
                 MessagesController.getInstance(i19).putUsers(arrayList3, true);
                 MessagesController.getInstance(i19).putChats(arrayList4, true);
                 NotificationCenter.getInstance(i19).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
-                yVar.c = false;
-                yVar.e(false, z13);
+                zVar.c = false;
+                zVar.e(false, z13);
                 return;
             case 3:
                 ii.k4.f((org.telegram.ui.ActionBar.n2) this.c, (Context) this.d, (org.telegram.ui.ActionBar.d6) this.e, (ii.u3) this.f, this.b);
@@ -177,12 +177,12 @@ public final /* synthetic */ class u1 implements Runnable {
                         if (z14) {
                             try {
                                 synchronized (r32) {
-                                    r32.u = true;
+                                    r32.v = true;
                                     try {
-                                        r32.f();
-                                        r32.u = false;
+                                        r32.g();
+                                        r32.v = false;
                                     } catch (Throwable th2) {
-                                        r32.u = false;
+                                        r32.v = false;
                                         throw th2;
                                     }
                                 }
@@ -291,7 +291,7 @@ public final /* synthetic */ class u1 implements Runnable {
                     TL_account.Password password = (TL_account.Password) tLObject2;
                     twoStepVerificationActivity.I = password;
                     TwoStepVerificationActivity.m0(password);
-                    meVar.y0(z15, twoStepVerificationActivity.l0(), twoStepVerificationActivity);
+                    meVar.F(z15, twoStepVerificationActivity.l0(), twoStepVerificationActivity);
                     return;
                 }
                 return;
@@ -351,7 +351,7 @@ public final /* synthetic */ class u1 implements Runnable {
                 TextView textView = (TextView) this.e;
                 ClipboardManager clipboardManager = (ClipboardManager) euVar.getContext().getSystemService("clipboard");
                 boolean z19 = z18 && (TextUtils.isEmpty(oVar.getText()) || TextUtils.equals(oVar.getText().toString(), str3)) && clipboardManager != null && clipboardManager.hasPrimaryClip();
-                ok.s(textView.animate().alpha(z19 ? 1.0f : 0.0f).scaleX(z19 ? 1.0f : 0.7f).scaleY(z19 ? 1.0f : 0.7f), tr.h, 300L);
+                bi.r(textView.animate().alpha(z19 ? 1.0f : 0.0f).scaleX(z19 ? 1.0f : 0.7f).scaleY(z19 ? 1.0f : 0.7f), tr.h, 300L);
                 return;
             case 18:
                 vy vyVar = (vy) this.c;
@@ -447,7 +447,7 @@ public final /* synthetic */ class u1 implements Runnable {
                     photoEntry.averageDuration = (long) (MessageObject.getDocumentDuration(document) * 1000.0d);
                 }
                 PhotoViewer.t1().K2(n2Var.getParentActivity(), null, n2Var.getResourceProvider());
-                PhotoViewer.t1().g2(arrayList6, 0, 11, false, new hy0(), ynVar2);
+                PhotoViewer.t1().g2(arrayList6, 0, 11, false, new iy0(), ynVar2);
                 PhotoViewer.t1().X0(document, z21 ? document : null, true, null);
                 rt.q().T = z21 ? tL_messages_stickerSet : null;
                 return;
@@ -496,16 +496,16 @@ public final /* synthetic */ class u1 implements Runnable {
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(uyVar.b4.volume_id);
                         sb2.append("_");
-                        String n10 = a4.a.n(uyVar.b4.local_id, "@50_50", sb2);
+                        String o9 = a4.a.o(uyVar.b4.local_id, "@50_50", sb2);
                         StringBuilder sb3 = new StringBuilder();
                         sb3.append(closestPhotoSizeWithSize.location.volume_id);
                         sb3.append("_");
-                        String n11 = a4.a.n(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3);
+                        String o10 = a4.a.o(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3);
                         ImageLoader imageLoader = ImageLoader.getInstance();
                         i18 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
                         user = user3;
                         z10 = true;
-                        imageLoader.replaceImageInCache(n10, n11, ImageLocation.getForUserOrChat(i18, user, 1), false);
+                        imageLoader.replaceImageInCache(o9, o10, ImageLocation.getForUserOrChat(i18, user, 1), false);
                     }
                     if (closestVideoSizeWithSize != null && str6 != null) {
                         i15 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
@@ -551,7 +551,7 @@ public final /* synthetic */ class u1 implements Runnable {
                     button.setScaleY(0.6f);
                     button.setAlpha(0.0f);
                     button.setVisibility(0);
-                    ok.s(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), tr.h, 360L);
+                    bi.r(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), tr.h, 360L);
                     org.telegram.ui.Components.rc rcVar2 = uyVar.d4;
                     rcVar2.j = 5000;
                     rcVar2.i(false);
@@ -566,7 +566,7 @@ public final /* synthetic */ class u1 implements Runnable {
                 so0.i0((so0) this.c, (TLRPC.TL_error) this.e, this.b, (TLObject) this.d, (String) this.f);
                 return;
             case 23:
-                bh1.S((bh1) this.c, (TLObject) this.d, this.b, (String) this.f, (TL_account.passwordInputSettings) this.e);
+                zg1.S((zg1) this.c, (TLObject) this.d, this.b, (String) this.f, (TL_account.passwordInputSettings) this.e);
                 return;
             default:
                 TLRPC.payments_GiveawayInfo payments_giveawayinfo = (TLRPC.payments_GiveawayInfo) this.c;
@@ -677,9 +677,9 @@ public final /* synthetic */ class u1 implements Runnable {
         this.e = updatepasswordsettings;
     }
 
-    public /* synthetic */ u1(bh1 bh1Var, TLObject tLObject, boolean z10, String str, TL_account.passwordInputSettings passwordinputsettings) {
+    public /* synthetic */ u1(zg1 zg1Var, TLObject tLObject, boolean z10, String str, TL_account.passwordInputSettings passwordinputsettings) {
         this.a = 23;
-        this.c = bh1Var;
+        this.c = zg1Var;
         this.d = tLObject;
         this.b = z10;
         this.f = str;

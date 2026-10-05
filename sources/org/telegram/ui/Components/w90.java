@@ -16,7 +16,7 @@ import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class w90 extends Drawable {
     public final Bitmap a;
@@ -69,7 +69,7 @@ public final class w90 extends Drawable {
             abs = 16;
         }
         this.c = elapsedRealtime;
-        this.f = a4.a.A(abs, this.g, 1800.0f, this.f);
+        this.f = a4.a.B(abs, this.g, 1800.0f, this.f);
         while (true) {
             float f7 = this.f;
             float f10 = this.g * 2.0f;

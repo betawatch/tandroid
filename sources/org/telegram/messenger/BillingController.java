@@ -32,7 +32,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ug0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class BillingController implements c5.q, c5.d {
     public static final r PREMIUM_PRODUCT;
@@ -53,7 +53,7 @@ public class BillingController implements c5.q, c5.d {
     private ArrayList<Runnable> setupListeners = new ArrayList<>();
     private int triesLeft = 0;
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public interface ProductDetailsResponseListenerLegacy {
         void onProductDetailsResponse(c5.h hVar, List<c5.o> list);
     }
@@ -199,7 +199,7 @@ public class BillingController implements c5.q, c5.d {
             return;
         }
         FileLog.d("BillingController.launchBillingFlow, checked consumables: OK");
-        a0 a0Var = new a0(this, activity, accountInstance, inputStorePaymentPurpose, list, fVar, 0);
+        b0 b0Var = new b0(this, activity, accountInstance, inputStorePaymentPurpose, list, fVar, 0);
         final AtomicInteger atomicInteger = new AtomicInteger(0);
         final ArrayList arrayList = new ArrayList();
         Iterator it = list2.iterator();
@@ -220,12 +220,12 @@ public class BillingController implements c5.q, c5.d {
                             }
                             c5.i iVar = new c5.i();
                             iVar.a = c10;
-                            final a0 a0Var2 = a0Var;
-                            a0Var = a0Var2;
-                            bVar.a(iVar, new c5.j() { // from class: org.telegram.messenger.b0
+                            final b0 b0Var2 = b0Var;
+                            b0Var = b0Var2;
+                            bVar.a(iVar, new c5.j() { // from class: org.telegram.messenger.c0
                                 @Override // c5.j
                                 public final void a(c5.h hVar2, String str2) {
-                                    BillingController.lambda$launchBillingFlow$2(Purchase.this, arrayList, str, atomicInteger, a0Var2, hVar2, str2);
+                                    BillingController.lambda$launchBillingFlow$2(Purchase.this, arrayList, str, atomicInteger, b0Var2, hVar2, str2);
                                 }
                             });
                         }
@@ -235,17 +235,17 @@ public class BillingController implements c5.q, c5.d {
                 atomicInteger.incrementAndGet();
                 c3.a a2 = c5.h.a();
                 a2.b = 0;
-                onPurchasesUpdatedInternal(a2.a(), Collections.singletonList(purchase), new g0(arrayList, (Object) atomicInteger, (Object) a0Var, 9));
+                onPurchasesUpdatedInternal(a2.a(), Collections.singletonList(purchase), new g0(arrayList, (Object) atomicInteger, (Object) b0Var, 9));
             }
         }
         if (atomicInteger.get() == 0) {
-            a0Var.run();
+            b0Var.run();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$onPurchasesUpdatedInternal$10(org.telegram.ui.ActionBar.b2[] b2VarArr, Purchase purchase, TLRPC.TL_payments_assignPlayMarketTransaction tL_payments_assignPlayMarketTransaction, AccountInstance accountInstance, c5.h hVar, AtomicInteger atomicInteger, AtomicInteger atomicInteger2, Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new e0(b2VarArr, 0));
+        AndroidUtilities.runOnUIThread(new f0(b2VarArr, 0));
         this.requestingTokens.remove(purchase.c());
         int i10 = 1;
         if (!(tLObject instanceof TLRPC.Updates)) {
@@ -262,7 +262,7 @@ public class BillingController implements c5.q, c5.d {
             if (tL_error != null) {
                 NotificationCenter.getGlobalInstance().postNotificationNameOnUIThread(NotificationCenter.billingConfirmPurchaseError, tL_payments_assignPlayMarketTransaction, tL_error);
             }
-            AndroidUtilities.runOnUIThread(new x(atomicInteger, atomicInteger2, runnable, i11));
+            AndroidUtilities.runOnUIThread(new y(atomicInteger, atomicInteger2, runnable, i11));
             return;
         }
         FileLog.d("BillingController.onPurchasesUpdatedInternal: " + purchase.a() + " purchase is purchased and now assigned");
@@ -288,7 +288,7 @@ public class BillingController implements c5.q, c5.d {
                 remove.accept(hVar);
             }
         }
-        consumeGiftPurchase(purchase, tL_payments_assignPlayMarketTransaction.purpose, new x(atomicInteger, atomicInteger2, runnable, i10));
+        consumeGiftPurchase(purchase, tL_payments_assignPlayMarketTransaction.purpose, new y(atomicInteger, atomicInteger2, runnable, i10));
         JSONObject jSONObject = purchase.c;
         String optString = jSONObject.optString("obfuscatedAccountId");
         String optString2 = jSONObject.optString("obfuscatedProfileId");
@@ -363,7 +363,7 @@ public class BillingController implements c5.q, c5.d {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onQueriedPremiumProductDetails$14() {
         try {
-            queryProductDetails(Collections.singletonList(PREMIUM_PRODUCT), new d0(this));
+            queryProductDetails(Collections.singletonList(PREMIUM_PRODUCT), new e0(this));
         } catch (Exception e7) {
             FileLog.e(e7);
         }
@@ -382,7 +382,7 @@ public class BillingController implements c5.q, c5.d {
             int i10 = this.triesLeft - 1;
             this.triesLeft = i10;
             if (i10 > 0) {
-                AndroidUtilities.runOnUIThread(new y(this, 0), i10 == 2 ? 1000L : 10000L);
+                AndroidUtilities.runOnUIThread(new z(this, 0), i10 == 2 ? 1000L : 10000L);
                 return;
             }
             return;
@@ -465,7 +465,7 @@ public class BillingController implements c5.q, c5.d {
         FileLog.d("Billing: Service disconnected");
         int i10 = this.isDisconnected ? 15000 : 5000;
         this.isDisconnected = true;
-        AndroidUtilities.runOnUIThread(new y(this, 1), i10);
+        AndroidUtilities.runOnUIThread(new z(this, 1), i10);
     }
 
     @Override // c5.d
@@ -481,12 +481,12 @@ public class BillingController implements c5.q, c5.d {
         this.isDisconnected = false;
         this.triesLeft = 3;
         try {
-            queryProductDetails(Collections.singletonList(PREMIUM_PRODUCT), new d0(this));
+            queryProductDetails(Collections.singletonList(PREMIUM_PRODUCT), new e0(this));
         } catch (Exception e7) {
             FileLog.e(e7);
         }
-        queryPurchases("inapp", new d0(this));
-        queryPurchases("subs", new d0(this));
+        queryPurchases("inapp", new e0(this));
+        queryPurchases("subs", new e0(this));
         if (this.setupListeners.isEmpty()) {
             return;
         }
@@ -607,7 +607,7 @@ public class BillingController implements c5.q, c5.d {
                                 if (jSONObject.optBoolean("acknowledged", true)) {
                                     FileLog.d("BillingController.onPurchasesUpdatedInternal: " + purchase.a() + " purchase is purchased and acknowledged: consuming");
                                     atomicInteger.incrementAndGet();
-                                    consumeGiftPurchase(purchase, (TLRPC.InputStorePaymentPurpose) obj2, new x(atomicInteger2, atomicInteger, runnable, 0));
+                                    consumeGiftPurchase(purchase, (TLRPC.InputStorePaymentPurpose) obj2, new y(atomicInteger2, atomicInteger, runnable, 0));
                                 } else {
                                     StringBuilder sb2 = new StringBuilder("BillingController.onPurchasesUpdatedInternal: ");
                                     sb2.append(purchase.a());
@@ -625,9 +625,9 @@ public class BillingController implements c5.q, c5.d {
                                     tL_dataJSON.data = purchase.a;
                                     tL_payments_assignPlayMarketTransaction.purpose = (TLRPC.InputStorePaymentPurpose) obj2;
                                     final org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
-                                    AndroidUtilities.runOnUIThread(new e0(b2VarArr, 1));
+                                    AndroidUtilities.runOnUIThread(new f0(b2VarArr, 1));
                                     atomicInteger.incrementAndGet();
-                                    accountInstance3.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new RequestDelegate() { // from class: org.telegram.messenger.w
+                                    accountInstance3.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new RequestDelegate() { // from class: org.telegram.messenger.x
                                         @Override // org.telegram.tgnet.RequestDelegate
                                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                             BillingController.this.lambda$onPurchasesUpdatedInternal$10(b2VarArr, purchase, tL_payments_assignPlayMarketTransaction, accountInstance3, hVar2, atomicInteger2, atomicInteger, runnable, tLObject, tL_error);
@@ -686,7 +686,7 @@ public class BillingController implements c5.q, c5.d {
         if (u10 == null) {
             throw new IllegalArgumentException("Product list must be set to a non empty list.");
         }
-        bVar.c(new a4.m(iVar), new c0(productDetailsResponseListenerLegacy, 0));
+        bVar.c(new a4.m(iVar), new d0(productDetailsResponseListenerLegacy, 0));
     }
 
     public void queryPurchases(String str, c5.p pVar) {
@@ -748,7 +748,7 @@ public class BillingController implements c5.q, c5.d {
         }
         if (((inputStorePaymentPurpose instanceof TLRPC.TL_inputStorePaymentGiftPremium) || (inputStorePaymentPurpose instanceof TLRPC.TL_inputStorePaymentStarsTopup) || (inputStorePaymentPurpose instanceof TLRPC.TL_inputStorePaymentStarsGift)) && !z10) {
             FileLog.d("BillingController.launchBillingFlow, checking consumables");
-            queryPurchases("inapp", new c5.p() { // from class: org.telegram.messenger.z
+            queryPurchases("inapp", new c5.p() { // from class: org.telegram.messenger.a0
                 @Override // c5.p
                 public final void b(c5.h hVar, List list2) {
                     BillingController.this.lambda$launchBillingFlow$4(activity, accountInstance, inputStorePaymentPurpose, list, fVar, hVar, list2);
@@ -860,7 +860,7 @@ public class BillingController implements c5.q, c5.d {
                 return "TON " + (j3 / 1.0E9d);
             }
             if ("XTR".equalsIgnoreCase(str)) {
-                return f0.h(j3, ',', new StringBuilder("XTR "));
+                return q.h(j3, ',', new StringBuilder("XTR "));
             }
             Currency currency = Currency.getInstance(str);
             if (currency != null) {

@@ -8,7 +8,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class a6 {
     public String a = "";
@@ -40,12 +40,12 @@ public final class a6 {
 
     public final String b() {
         if (this.q == null) {
-            return a4.a.s(new StringBuilder(), this.p.a, "_owp");
+            return a4.a.t(new StringBuilder(), this.p.a, "_owp");
         }
         StringBuilder sb2 = new StringBuilder();
         sb2.append(this.p.a);
         sb2.append("_");
-        return a4.a.n(this.q.a, "_owp", sb2);
+        return a4.a.o(this.q.a, "_owp", sb2);
     }
 
     public final void c() {

@@ -3,7 +3,7 @@ package gg;
 import java.util.ArrayList;
 import org.telegram.ui.xs;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class r1 implements b2 {
     public final /* synthetic */ xs a;
@@ -22,12 +22,12 @@ public final class r1 implements b2 {
     }
 
     @Override // gg.b2
-    public final /* synthetic */ a0.i w() {
+    public final /* synthetic */ a0.i s() {
         return null;
     }
 
     @Override // gg.b2
-    public final a0.i y() {
+    public final a0.i x() {
         return null;
     }
 
@@ -37,6 +37,6 @@ public final class r1 implements b2 {
     }
 
     @Override // gg.b2
-    public final /* synthetic */ void C(ArrayList arrayList) {
+    public final /* synthetic */ void F(ArrayList arrayList) {
     }
 }

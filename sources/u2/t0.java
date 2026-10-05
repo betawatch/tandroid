@@ -2,7 +2,7 @@ package u2;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class t0 implements c1 {
     public final int a;
@@ -49,10 +49,10 @@ public final class t0 implements c1 {
             return -3;
         }
         int i11 = this.a;
-        v0Var.x(i11);
+        v0Var.u(i11);
         int C = v0Var.K[i11].C(yVar, hVar, i10, v0Var.e0);
         if (C == -3) {
-            v0Var.y(i11);
+            v0Var.w(i11);
         }
         return C;
     }
@@ -64,12 +64,12 @@ public final class t0 implements c1 {
             return 0;
         }
         int i10 = this.a;
-        v0Var.x(i10);
+        v0Var.u(i10);
         b1 b1Var = v0Var.K[i10];
         int v = b1Var.v(j3, v0Var.e0);
         b1Var.H(v);
         if (v == 0) {
-            v0Var.y(i10);
+            v0Var.w(i10);
         }
         return v;
     }

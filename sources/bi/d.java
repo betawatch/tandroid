@@ -10,19 +10,19 @@ import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.Cells.y2;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.UndoView;
+import org.telegram.ui.Components.br0;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.ee0;
 import org.telegram.ui.Components.j8;
 import org.telegram.ui.Components.jl;
 import org.telegram.ui.Components.pp;
-import org.telegram.ui.Components.pv0;
 import org.telegram.ui.Components.pz;
 import org.telegram.ui.Components.qo0;
-import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.qv0;
 import org.telegram.ui.Components.ri0;
 import org.telegram.ui.Components.rk;
+import org.telegram.ui.Components.ry0;
 import org.telegram.ui.Components.xi;
-import org.telegram.ui.Components.zq0;
 import org.telegram.ui.Components.zu;
 import org.telegram.ui.PopupNotificationActivity;
 import org.telegram.ui.ak0;
@@ -33,7 +33,7 @@ import org.telegram.ui.so0;
 import org.telegram.ui.wb;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -105,16 +105,16 @@ public final /* synthetic */ class d implements View.OnTouchListener {
                 int i22 = ri0.R;
                 break;
             case 21:
-                int i23 = qo0.Z0;
+                int i23 = qo0.a1;
                 break;
             case 22:
-                int i24 = zq0.W0;
+                int i24 = br0.W0;
                 break;
             case 23:
-                int[] iArr2 = pv0.d2;
+                int[] iArr2 = qv0.d2;
                 break;
             case 24:
-                int i25 = qy0.u0;
+                int i25 = ry0.u0;
                 break;
             case 25:
                 int i26 = UndoView.e0;

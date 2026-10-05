@@ -33,7 +33,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class s {
     public static final WeakHashMap k = new WeakHashMap();
@@ -180,9 +180,9 @@ public final class s {
                 byte[] bArr = new byte[32];
                 new SecureRandom().nextBytes(bArr);
                 SharedPreferences.Editor edit = sharedPreferences.edit();
-                String o9 = a4.a.o(j3, "device_id");
+                String p5 = a4.a.p(j3, "device_id");
                 string = Utilities.bytesToHex(bArr);
-                edit.putString(o9, string).apply();
+                edit.putString(p5, string).apply();
             }
             jSONObject.put("device_id", string);
             return jSONObject;

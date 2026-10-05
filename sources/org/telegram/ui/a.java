@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -120,10 +120,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 m7 m7Var = (m7) obj;
                 switch (m7Var.f) {
                     case 0:
-                        ((n7) m7Var.h).r.E.i(null, (zh.a) m7Var.getTag(), true);
+                        ((n7) m7Var.h).r.E.f(null, (zh.a) m7Var.getTag(), true);
                         break;
                     default:
-                        ((s7) m7Var.h).n.E.i(null, (zh.a) m7Var.getTag(), true);
+                        ((s7) m7Var.h).n.E.f(null, (zh.a) m7Var.getTag(), true);
                         break;
                 }
             case 9:
@@ -174,7 +174,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ynVar.f0.n();
                 ai.g4 g4Var = ynVar.H1;
                 if (g4Var != null) {
-                    g4Var.F1(null, 0);
+                    g4Var.H1(null, 0);
                 }
                 ynVar.W9();
                 break;
@@ -198,7 +198,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 runnable.run();
                 break;
             case 18:
-                org.telegram.messenger.ok.m(3, (org.telegram.ui.ActionBar.n2) obj);
+                org.telegram.messenger.bi.l(3, (org.telegram.ui.ActionBar.n2) obj);
                 break;
             case 19:
                 final jv jvVar = (jv) obj;
@@ -389,7 +389,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 if (LocaleController.isRTL) {
                     H.i = 3;
                 }
-                H.W(filtersSetupActivity.a.W0(z10Var2, false));
+                H.W(filtersSetupActivity.a.V0(z10Var2, false));
                 H.Z();
                 break;
             default:

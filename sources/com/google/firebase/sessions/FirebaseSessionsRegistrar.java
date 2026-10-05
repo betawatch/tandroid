@@ -4,9 +4,9 @@ import android.content.Context;
 import com.google.firebase.components.ComponentRegistrar;
 import i5.f;
 import java.util.List;
+import k2.e;
 import k9.h;
 import kotlin.jvm.internal.i;
-import l2.g;
 import m9.a;
 import m9.b;
 import q9.j;
@@ -24,7 +24,7 @@ import za.s;
 import za.y;
 import zd.a0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
 
@@ -82,10 +82,10 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
         i.d(g12, "container[sessionsSettings]");
         pa.b e7 = bVar.e(transportFactory);
         i.d(e7, "container.getProvider(transportFactory)");
-        g gVar = new g(e7, 24);
+        e eVar = new e(e7, 27);
         Object g13 = bVar.g(backgroundDispatcher);
         i.d(g13, "container[backgroundDispatcher]");
-        return new g0((h) g10, (d) g11, (bb.h) g12, gVar, (id.h) g13);
+        return new g0((h) g10, (d) g11, (bb.h) g12, eVar, (id.h) g13);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

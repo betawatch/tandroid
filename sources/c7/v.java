@@ -15,7 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class v extends o6.a {
     public static final Parcelable.Creator<v> CREATOR = new w.a(24);
@@ -296,23 +296,23 @@ public final class v extends o6.a {
         String valueOf6 = String.valueOf(this.r);
         String valueOf7 = String.valueOf(this.s);
         String valueOf8 = String.valueOf(this.v);
-        StringBuilder w10 = a4.a.w("PublicKeyCredentialCreationOptions{\n rp=", valueOf, ", \n user=", valueOf2, ", \n challenge=");
-        a4.a.z(w10, c10, ", \n parameters=", valueOf3, ", \n timeoutSeconds=");
-        w10.append(this.e);
-        w10.append(", \n excludeList=");
-        w10.append(valueOf4);
-        w10.append(", \n authenticatorSelection=");
-        w10.append(valueOf5);
-        w10.append(", \n requestId=");
-        w10.append(this.n);
-        w10.append(", \n tokenBinding=");
-        w10.append(valueOf6);
-        w10.append(", \n attestationConveyancePreference=");
-        w10.append(valueOf7);
-        w10.append(", \n authenticationExtensions=");
-        w10.append(valueOf8);
-        w10.append("}");
-        return w10.toString();
+        StringBuilder x10 = a4.a.x("PublicKeyCredentialCreationOptions{\n rp=", valueOf, ", \n user=", valueOf2, ", \n challenge=");
+        a4.a.A(x10, c10, ", \n parameters=", valueOf3, ", \n timeoutSeconds=");
+        x10.append(this.e);
+        x10.append(", \n excludeList=");
+        x10.append(valueOf4);
+        x10.append(", \n authenticatorSelection=");
+        x10.append(valueOf5);
+        x10.append(", \n requestId=");
+        x10.append(this.n);
+        x10.append(", \n tokenBinding=");
+        x10.append(valueOf6);
+        x10.append(", \n attestationConveyancePreference=");
+        x10.append(valueOf7);
+        x10.append(", \n authenticationExtensions=");
+        x10.append(valueOf8);
+        x10.append("}");
+        return x10.toString();
     }
 
     @Override // android.os.Parcelable

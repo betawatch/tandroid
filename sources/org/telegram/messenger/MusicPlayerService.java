@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class MusicPlayerService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private static final int ID_NOTIFICATION = 5;
@@ -101,13 +101,13 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
             long j10 = z11 ? peer.user_id : peer instanceof TLRPC.TL_peerChat ? peer.chat_id : peer instanceof TLRPC.TL_peerChannel ? peer.channel_id : 0L;
             if (j10 != 0) {
                 if (z11) {
-                    StringBuilder t10 = a4.a.t(j10, "tg://openmessage?user_id=", "&message_id=");
-                    t10.append(messageObject.getId());
-                    intent.setData(Uri.parse(t10.toString()));
+                    StringBuilder u10 = a4.a.u(j10, "tg://openmessage?user_id=", "&message_id=");
+                    u10.append(messageObject.getId());
+                    intent.setData(Uri.parse(u10.toString()));
                 } else {
-                    StringBuilder t11 = a4.a.t(j10, "tg://openmessage?chat_id=", "&message_id=");
-                    t11.append(messageObject.getId());
-                    intent.setData(Uri.parse(t11.toString()));
+                    StringBuilder u11 = a4.a.u(j10, "tg://openmessage?chat_id=", "&message_id=");
+                    u11.append(messageObject.getId());
+                    intent.setData(Uri.parse(u11.toString()));
                 }
             }
         }
@@ -617,7 +617,7 @@ public class MusicPlayerService extends Service implements NotificationCenter.No
         }
         ImageReceiver imageReceiver = new ImageReceiver(null);
         this.imageReceiver = imageReceiver;
-        imageReceiver.setDelegate(new c0(this, 9));
+        imageReceiver.setDelegate(new d0(this, 9));
         this.mediaSession = new android.support.v4.media.session.b0(this, "telegramAudioPlayer", null, null);
         this.playbackState = new android.support.v4.media.session.e0();
         this.albumArtPlaceholder = Bitmap.createBitmap(AndroidUtilities.dp(102.0f), AndroidUtilities.dp(102.0f), Bitmap.Config.ARGB_8888);

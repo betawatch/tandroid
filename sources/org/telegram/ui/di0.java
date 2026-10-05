@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class di0 extends FrameLayout {
     public final ArrayList a;
@@ -30,7 +30,7 @@ public final class di0 extends FrameLayout {
     public final boolean h;
     public final org.telegram.ui.Components.w00 n;
     public boolean r;
-    public zb1 s;
+    public xb1 s;
 
     public di0(Context context, int i10, MessageObject messageObject, TLRPC.Chat chat) {
         super(context);
@@ -75,14 +75,14 @@ public final class di0 extends FrameLayout {
     }
 
     public final org.telegram.ui.Components.zl0 a() {
-        zb1 zb1Var = this.s;
-        if (zb1Var != null) {
-            return zb1Var;
+        xb1 xb1Var = this.s;
+        if (xb1Var != null) {
+            return xb1Var;
         }
-        zb1 zb1Var2 = new zb1(getContext(), 10, null);
-        this.s = zb1Var2;
+        xb1 xb1Var2 = new xb1(getContext(), 10, null);
+        this.s = xb1Var2;
         getContext();
-        zb1Var2.setLayoutManager(new s4.c0());
+        xb1Var2.setLayoutManager(new s4.c0());
         this.s.i(new ci.r1(this, 5));
         this.s.setAdapter(new gg.n0(this, 3));
         return this.s;
@@ -130,9 +130,9 @@ public final class di0 extends FrameLayout {
         k9Var.animate().alpha(1.0f).setDuration(220L).start();
         org.telegram.ui.Components.w00 w00Var = this.n;
         w00Var.animate().alpha(0.0f).setDuration(220L).setListener(new org.telegram.ui.Components.da(w00Var)).start();
-        zb1 zb1Var = this.s;
-        if (zb1Var != null) {
-            zb1Var.getAdapter();
+        xb1 xb1Var = this.s;
+        if (xb1Var != null) {
+            xb1Var.getAdapter();
         }
     }
 

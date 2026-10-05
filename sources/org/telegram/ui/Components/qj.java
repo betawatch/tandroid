@@ -4,20 +4,20 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class qj extends s4.d0 {
-    public final /* synthetic */ hg.e0 r;
+    public final /* synthetic */ hg.f0 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qj(hg.e0 e0Var, Context context) {
+    public qj(hg.f0 f0Var, Context context) {
         super(context);
-        this.r = e0Var;
+        this.r = f0Var;
     }
 
     @Override // s4.d0
     public final int k(int i10, View view) {
-        return org.telegram.messenger.f0.A(8.0f, ((bk) this.r.V).s.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
+        return org.telegram.messenger.q.A(8.0f, ((bk) this.r.V).s.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
     }
 
     @Override // s4.d0

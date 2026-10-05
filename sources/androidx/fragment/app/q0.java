@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class q0 {
     public final n4.y a;
@@ -55,7 +55,7 @@ public final class q0 {
         l0Var.I = false;
         l0Var.O.i = false;
         l0Var.u(4);
-        this.a.y(sVar, false);
+        this.a.x(sVar, false);
     }
 
     public final void b() {
@@ -81,7 +81,7 @@ public final class q0 {
                 StringBuilder sb2 = new StringBuilder("Fragment ");
                 sb2.append(sVar);
                 sb2.append(" declared target fragment ");
-                throw new IllegalStateException(a4.a.s(sb2, sVar.n, " that does not belong to this FragmentManager!"));
+                throw new IllegalStateException(a4.a.t(sb2, sVar.n, " that does not belong to this FragmentManager!"));
             }
         }
         if (q0Var != null) {
@@ -117,7 +117,7 @@ public final class q0 {
         l0Var.I = false;
         l0Var.O.i = false;
         l0Var.u(0);
-        yVar.A(sVar, false);
+        yVar.D(sVar, false);
     }
 
     public final int c() {
@@ -245,7 +245,7 @@ public final class q0 {
         sVar.a0 = true;
         if (sVar.U) {
             sVar.d0.e(androidx.lifecycle.m.ON_CREATE);
-            yVar.C(sVar, false);
+            yVar.E(sVar, false);
         } else {
             throw new x0("Fragment " + sVar + " did not call through to super.onCreate()");
         }
@@ -341,7 +341,7 @@ public final class q0 {
         if (!sVar.U) {
             throw new x0("Fragment " + sVar + " did not call through to super.onDestroy()");
         }
-        this.a.E(sVar, false);
+        this.a.F(sVar, false);
         ArrayList p5 = fVar.p();
         int size = p5.size();
         while (i10 < size) {
@@ -406,7 +406,7 @@ public final class q0 {
             l0Var.l();
             sVar.L = new l0();
         }
-        this.a.F(sVar, false);
+        this.a.G(sVar, false);
         sVar.a = -1;
         sVar.K = null;
         sVar.M = null;

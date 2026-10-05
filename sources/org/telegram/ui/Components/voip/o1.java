@@ -9,10 +9,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.nj0;
-import org.telegram.ui.uh1;
+import org.telegram.ui.sh1;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class o1 extends FrameLayout {
     public final nj0 a;
@@ -110,9 +110,9 @@ public final class o1 extends FrameLayout {
                     nj0Var7.setOnAnimationEndListener(new l1(p1Var, nj0Var7, 0));
                     nj0Var7.d();
                 }
-                uh1 uh1Var = p1Var.d;
-                if (uh1Var != null) {
-                    uh1Var.b.L = i16;
+                sh1 sh1Var = p1Var.d;
+                if (sh1Var != null) {
+                    sh1Var.b.L = i16;
                 }
             }
         } else if (action == 3 && (n1Var = this.e) != null) {

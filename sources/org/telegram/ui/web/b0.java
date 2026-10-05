@@ -40,7 +40,7 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -131,7 +131,7 @@ public final /* synthetic */ class b0 implements Runnable {
                     linearLayout.addView(imageView, z5.t(44, 44, 19, 0, 0, 10, 0));
                     ?? linearLayout2 = new LinearLayout(context);
                     linearLayout2.setOrientation(1);
-                    TextView f7 = org.telegram.messenger.f0.f(context, 1, 15.0f);
+                    TextView f7 = org.telegram.messenger.q.f(context, 1, 15.0f);
                     f7.setTypeface(AndroidUtilities.bold());
                     f7.setText(str6);
                     f7.setTextColor(i6.w0(null, i6.n5, false));
@@ -349,7 +349,7 @@ public final /* synthetic */ class b0 implements Runnable {
                                         File directory = FileLoader.getDirectory(4);
                                         StringBuilder sb3 = new StringBuilder();
                                         sb3.append(FileLoader.fixFileName(str14 == null ? "file" : str14));
-                                        sb3.append(i12 > 0 ? hg.k0.i(i12, " (", ")") : "");
+                                        sb3.append(i12 > 0 ? hg.c.i(i12, " (", ")") : "");
                                         file = new File(directory, sb3.toString());
                                         i12++;
                                     } else {

@@ -15,10 +15,11 @@ import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import ci.ab;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.q;
 import r0.l1;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class g extends FrameLayout {
     public float E;
@@ -140,13 +141,13 @@ public final class g extends FrameLayout {
                     i11 = roundedCorner2.getRadius();
                 }
             }
-            this.h.B(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i11, i10);
+            this.h.A(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i11, i10);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        this.h.setBounds(0, getMeasuredHeight() - ((int) this.v), getMeasuredWidth(), org.telegram.messenger.f0.y(58.0f, getMeasuredHeight() - ((int) this.v), getMeasuredHeight()));
+        this.h.setBounds(0, getMeasuredHeight() - ((int) this.v), getMeasuredWidth(), q.y(58.0f, getMeasuredHeight() - ((int) this.v), getMeasuredHeight()));
         int measuredHeight = getMeasuredHeight() - this.r;
         int round = Math.round(this.x);
         int measuredWidth = getMeasuredWidth() - Math.round(this.y);
@@ -271,15 +272,15 @@ public final class g extends FrameLayout {
 
     public void setInputIslandBubbleDrawable(ch.d dVar) {
         this.f = dVar;
-        dVar.y(AndroidUtilities.dp(7.0f));
-        this.f.z(AndroidUtilities.dp(22.0f));
+        dVar.x(AndroidUtilities.dp(7.0f));
+        this.f.y(AndroidUtilities.dp(22.0f));
     }
 
     public void setUnderKeyboardBackgroundDrawable(ch.d dVar) {
         this.h = dVar;
         dVar.n = true;
-        dVar.A(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), 0.0f, 0.0f);
-        this.h.C(AndroidUtilities.dp(32.0f));
+        dVar.z(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), 0.0f, 0.0f);
+        this.h.B(AndroidUtilities.dp(32.0f));
         ch.d dVar2 = this.h;
         dVar2.l.g = 0.4f;
         dVar2.u();

@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yr implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class yr implements View.OnTouchListener {
                                 videoEditedInfo.muted = e60Var.h0;
                             }
                             imageView.animate().cancel();
-                            org.telegram.messenger.ok.r(imageView.animate(), e60Var.h0 ? 1.0f : 0.0f, 180L);
+                            org.telegram.messenger.bi.q(imageView.animate(), e60Var.h0 ? 1.0f : 0.0f, 180L);
                         }
                     }
                 } else {
@@ -148,7 +148,7 @@ public final /* synthetic */ class yr implements View.OnTouchListener {
                 }
                 return true;
             default:
-                return qy0.v((qy0) this.b, motionEvent);
+                return ry0.v((ry0) this.b, motionEvent);
         }
     }
 }

@@ -5,7 +5,7 @@ import android.util.Log;
 import java.util.HashMap;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class i implements fb.n {
     public String a;
@@ -68,12 +68,12 @@ public final class i implements fb.n {
             }
             str = "dav1";
         }
-        StringBuilder u10 = a4.a.u(str);
-        u10.append(i10 < 10 ? ".0" : ".");
-        u10.append(i10);
-        u10.append(x11 < 10 ? ".0" : ".");
-        u10.append(x11);
-        return new i(u10.toString());
+        StringBuilder v = a4.a.v(str);
+        v.append(i10 < 10 ? ".0" : ".");
+        v.append(i10);
+        v.append(x11 < 10 ? ".0" : ".");
+        v.append(x11);
+        return new i(v.toString());
     }
 
     public JSONObject c(aa.b bVar) {

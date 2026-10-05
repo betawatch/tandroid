@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ug implements Runnable {
     public final /* synthetic */ int a;
@@ -138,7 +138,7 @@ public final /* synthetic */ class ug implements Runnable {
                 break;
             case 15:
                 ynVar.A7(true);
-                org.telegram.messenger.f0.p(R.string.TranscriptionReportSent, org.telegram.ui.Components.yc.a0(ynVar), R.raw.chats_infotip, 36);
+                org.telegram.messenger.q.p(R.string.TranscriptionReportSent, org.telegram.ui.Components.yc.a0(ynVar), R.raw.chats_infotip, 36);
                 break;
             case 16:
                 ynVar.y0.M.clear();
@@ -150,7 +150,7 @@ public final /* synthetic */ class ug implements Runnable {
             case 17:
                 ynVar.fc = 0;
                 ynVar.gc = false;
-                ynVar.v0.h1();
+                ynVar.v0.g1();
                 break;
             case 18:
                 ynVar.o9();

@@ -12,7 +12,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class nj0 extends ImageView {
     public HashMap a;
@@ -89,7 +89,7 @@ public class nj0 extends ImageView {
         String str2 = document.localThumbPath;
         if (str2 != null) {
             ImageLocation forPath = ImageLocation.getForPath(str2);
-            str = a4.a.k(i10, i11, "_");
+            str = a4.a.l(i10, i11, "_");
             imageLocation = forPath;
         } else {
             imageLocation = null;
@@ -97,7 +97,7 @@ public class nj0 extends ImageView {
         }
         TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
         if (this.n) {
-            this.c.setImage(ImageLocation.getForDocument(document), i10 + "_" + i11 + "_lastframe", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), a4.a.k(i10, i11, "_"), imageLocation, str, null, 0L, null, document, 1);
+            this.c.setImage(ImageLocation.getForDocument(document), i10 + "_" + i11 + "_lastframe", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), a4.a.l(i10, i11, "_"), imageLocation, str, null, 0L, null, document, 1);
         } else if ("video/webm".equals(document.mime_type)) {
             lj0 lj0Var3 = this.c;
             ImageLocation forDocument = ImageLocation.getForDocument(document);
@@ -111,7 +111,7 @@ public class nj0 extends ImageView {
             if (svgThumb != null) {
                 svgThumb.overrideWidthAndHeight(512, 512);
             }
-            this.c.setImage(ImageLocation.getForDocument(document), i10 + "_" + i11 + "", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), a4.a.k(i10, i11, "_"), imageLocation, str, svgThumb, 0L, null, document, 1);
+            this.c.setImage(ImageLocation.getForDocument(document), i10 + "_" + i11 + "", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), a4.a.l(i10, i11, "_"), imageLocation, str, svgThumb, 0L, null, document, 1);
         }
         this.c.setAspectFit(true);
         this.c.setParentView(this);

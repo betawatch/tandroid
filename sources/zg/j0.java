@@ -1,20 +1,47 @@
 package zg;
 
-import org.telegram.messenger.ImageReceiver;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class j0 {
-    public ImageReceiver a;
-    public int b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public float j;
-    public boolean k;
-    public float l;
+public final class j0 implements Comparator {
+    public long a;
+
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        k0 k0Var = (k0) obj;
+        k0 k0Var2 = (k0) obj2;
+        if (this.a >= 0) {
+            boolean z10 = k0Var.m;
+            if (z10 != k0Var2.m) {
+                return z10 ? -1 : 1;
+            }
+            boolean z11 = k0Var.Q;
+            if (z11 != k0Var2.Q) {
+                return z11 ? -1 : 1;
+            }
+            if (z11 && (i12 = k0Var.k) != (i13 = k0Var2.k)) {
+                return i12 - i13;
+            }
+            i10 = k0Var.a.lastDrawnPosition;
+            i11 = k0Var2.a.lastDrawnPosition;
+        } else {
+            boolean z12 = k0Var.m;
+            if (z12 != k0Var2.m) {
+                return z12 ? -1 : 1;
+            }
+            int i14 = k0Var.j;
+            int i15 = k0Var2.j;
+            if (i14 != i15) {
+                return i15 - i14;
+            }
+            i10 = k0Var.a.lastDrawnPosition;
+            i11 = k0Var2.a.lastDrawnPosition;
+        }
+        return i10 - i11;
+    }
 }

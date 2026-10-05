@@ -9,7 +9,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class zi implements org.telegram.ui.Components.nl0 {
     public final /* synthetic */ yn a;
@@ -149,7 +149,7 @@ public final class zi implements org.telegram.ui.Components.nl0 {
         }
         TLRPC.Chat chat = ynVar.e;
         if (chat == null || ChatObject.isChannelAndNotMegaGroup(chat) || ChatObject.canUserDoAction(ynVar.e, 26)) {
-            zg.k0.b(false);
+            zg.i0.b(false);
             String doubleTapReaction = ynVar.getMediaDataController().getDoubleTapReaction();
             if (doubleTapReaction.startsWith("animated_")) {
                 z10 = ynVar.R5 >= 0;
@@ -157,7 +157,7 @@ public final class zi implements org.telegram.ui.Components.nl0 {
                     z10 = ChatObject.reactionIsAvailable(chatFull2, doubleTapReaction);
                 }
                 if (z10) {
-                    ynVar.Za(view, messageObject2, null, null, f7, f10, zg.o0.b(doubleTapReaction), true, false, false, false);
+                    ynVar.Za(view, messageObject2, null, null, f7, f10, zg.m0.b(doubleTapReaction), true, false, false, false);
                     return;
                 }
                 return;
@@ -171,7 +171,7 @@ public final class zi implements org.telegram.ui.Components.nl0 {
                 z10 = ChatObject.reactionIsAvailable(chatFull, tL_availableReaction.reaction);
             }
             if (z10) {
-                ynVar.Za(view, messageObject2, null, null, f7, f10, zg.o0.c(tL_availableReaction), true, false, false, false);
+                ynVar.Za(view, messageObject2, null, null, f7, f10, zg.m0.c(tL_availableReaction), true, false, false, false);
             }
         }
     }

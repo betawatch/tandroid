@@ -12,7 +12,7 @@ import android.view.View;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class t01 extends View implements org.telegram.ui.Components.wh0 {
     public boolean E;
@@ -275,7 +275,7 @@ public final class t01 extends View implements org.telegram.ui.Components.wh0 {
                 paint3.setAlpha((int) (this.G * 255.0f));
             }
             f7 = 180.0f;
-            int z12 = org.telegram.messenger.ok.z((realCount - 1) * 2, getMeasuredWidth() - AndroidUtilities.dp(10.0f), realCount);
+            int z12 = org.telegram.messenger.bi.z((realCount - 1) * 2, getMeasuredWidth() - AndroidUtilities.dp(10.0f), realCount);
             int dp = AndroidUtilities.dp(4.0f);
             z11 = ((org.telegram.ui.ActionBar.n2) profileActivity).inBubbleMode;
             int i15 = dp + (!z11 ? AndroidUtilities.statusBarHeight : 0);

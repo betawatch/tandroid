@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class s70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -31,7 +31,7 @@ public final class s70 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public final boolean N;
     public p70 O;
     public FrameLayout a;
-    public org.telegram.ui.Components.tx0 b;
+    public org.telegram.ui.Components.ux0 b;
     public org.telegram.ui.Components.w00 c;
     public org.telegram.ui.Components.zl0 d;
     public q70 e;
@@ -127,14 +127,14 @@ public final class s70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         int i10 = s70Var.n;
         if (tL_messages_stickerSet == null) {
             if (s70Var.r != null) {
-                org.telegram.messenger.f0.p(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.yc.a0(s70Var), R.raw.done, 36);
+                org.telegram.messenger.q.p(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.yc.a0(s70Var), R.raw.done, 36);
             }
             s70Var.r = null;
             s70Var.s = true;
         } else {
             s70Var.r = tL_messages_stickerSet;
             s70Var.s = false;
-            org.telegram.messenger.f0.p(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.yc.a0(s70Var), R.raw.done, 36);
+            org.telegram.messenger.q.p(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.yc.a0(s70Var), R.raw.done, 36);
         }
         s70Var.h0();
         s70Var.f0(s70Var.r, false);
@@ -209,14 +209,14 @@ public final class s70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.c.setIsSingleCell(true);
         this.c.setItemsCount((int) Math.ceil(AndroidUtilities.displaySize.y / AndroidUtilities.dpf2(58.0f)));
         this.a.addView(this.c, w7.z5.c(-1.0f, -1));
-        org.telegram.ui.Components.tx0 tx0Var = new org.telegram.ui.Components.tx0(context, this.c, 1, null);
-        this.b = tx0Var;
-        n7.z0.n(tx0Var);
+        org.telegram.ui.Components.ux0 ux0Var = new org.telegram.ui.Components.ux0(context, this.c, 1, null);
+        this.b = ux0Var;
+        n7.z0.n(ux0Var);
         this.a.addView(this.b);
-        frameLayout.addView(this.a);
         this.a.setVisibility(8);
         this.d.setEmptyView(this.a);
         frameLayout.addView(this.d, w7.z5.c(-1.0f, -1));
+        frameLayout.addView(this.a);
         this.d.setAdapter(this.e);
         this.d.setOnItemClickListener(new i(this, 13));
         this.d.setOnScrollListener(new i3(this, 16));
@@ -232,11 +232,11 @@ public final class s70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         } else {
             tL_inputStickerSetShortName = null;
         }
-        org.telegram.ui.Components.qy0 qy0Var = new org.telegram.ui.Components.qy0(getParentActivity(), this, tL_inputStickerSetShortName, !z11 ? tL_messages_stickerSet : null, null, null);
-        qy0Var.d0 = new n70(this, z10, tL_messages_stickerSet);
-        qy0Var.B0();
+        org.telegram.ui.Components.ry0 ry0Var = new org.telegram.ui.Components.ry0(getParentActivity(), this, tL_inputStickerSetShortName, !z11 ? tL_messages_stickerSet : null, null, null);
+        ry0Var.d0 = new n70(this, z10, tL_messages_stickerSet);
+        ry0Var.B0();
         AndroidUtilities.hideKeyboard(getParentActivity().getCurrentFocus());
-        qy0Var.show();
+        ry0Var.show();
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

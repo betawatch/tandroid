@@ -16,7 +16,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class dk0 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final ck0 b;
@@ -29,7 +29,7 @@ public final class dk0 extends org.telegram.ui.ActionBar.f3 implements Notificat
         final int i10 = 0;
         this.d = callback;
         final int i11 = 1;
-        LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
+        LinearLayout e7 = org.telegram.messenger.bi.e(context, 1);
         FrameLayout frameLayout = new FrameLayout(context);
         org.telegram.ui.Components.nj0 nj0Var = new org.telegram.ui.Components.nj0(context);
         this.c = nj0Var;
@@ -74,7 +74,7 @@ public final class dk0 extends org.telegram.ui.ActionBar.f3 implements Notificat
                 }
             }
         });
-        f7.addView(frameLayout, w7.z5.n(-1, 110));
+        e7.addView(frameLayout, w7.z5.n(-1, 110));
         TextView textView = new TextView(context);
         int i13 = org.telegram.ui.ActionBar.i6.j5;
         textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i13, false));
@@ -82,17 +82,17 @@ public final class dk0 extends org.telegram.ui.ActionBar.f3 implements Notificat
         textView.setTextSize(1, 20.0f);
         textView.setGravity(1);
         textView.setPadding(org.telegram.ui.Cells.c1.d(30.0f, R.string.NotificationsPermissionAlertTitle, textView), 0, AndroidUtilities.dp(30.0f), 0);
-        f7.addView(textView, w7.z5.n(-1, -2));
+        e7.addView(textView, w7.z5.n(-1, -2));
         TextView textView2 = new TextView(context);
         textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i13, false));
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(1);
         textView2.setPadding(org.telegram.ui.Cells.c1.d(30.0f, R.string.NotificationsPermissionAlertSubtitle, textView2), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(21.0f));
-        f7.addView(textView2, w7.z5.n(-1, -2));
-        f7.addView(new ai.w5(context, LocaleController.getString(R.string.NotificationsPermissionAlert1), R.drawable.msg_message_s), w7.z5.n(-1, -2));
-        f7.addView(new ai.w5(context, LocaleController.getString(R.string.NotificationsPermissionAlert2), R.drawable.msg_members_list2), w7.z5.n(-1, -2));
-        f7.addView(new ai.w5(context, LocaleController.getString(R.string.NotificationsPermissionAlert3), R.drawable.msg_customize_s), w7.z5.n(-1, -2));
-        setCustomView(f7);
+        e7.addView(textView2, w7.z5.n(-1, -2));
+        e7.addView(new ai.w5(context, LocaleController.getString(R.string.NotificationsPermissionAlert1), R.drawable.msg_message_s), w7.z5.n(-1, -2));
+        e7.addView(new ai.w5(context, LocaleController.getString(R.string.NotificationsPermissionAlert2), R.drawable.msg_members_list2), w7.z5.n(-1, -2));
+        e7.addView(new ai.w5(context, LocaleController.getString(R.string.NotificationsPermissionAlert3), R.drawable.msg_customize_s), w7.z5.n(-1, -2));
+        setCustomView(e7);
         fixNavigationBar(getThemedColor(org.telegram.ui.ActionBar.i6.h5));
         TextView textView3 = new TextView(context);
         textView3.setText(LocaleController.getString(z10 ? R.string.NotificationsPermissionSettings : R.string.NotificationsPermissionContinue));
@@ -131,7 +131,7 @@ public final class dk0 extends org.telegram.ui.ActionBar.f3 implements Notificat
                 }
             }
         });
-        f7.addView(textView3, w7.z5.k(14.0f, 14.0f, 14.0f, 10.0f, -1, 48));
+        e7.addView(textView3, w7.z5.k(14.0f, 14.0f, 14.0f, 10.0f, -1, 48));
         while (i10 < 4) {
             try {
                 NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.updateInterfaces);

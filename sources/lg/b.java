@@ -7,14 +7,13 @@ import android.widget.ImageView;
 import i2.h0;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.f0;
+import org.telegram.messenger.q;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.lc0;
 import org.telegram.ui.Components.rg0;
 import org.telegram.ui.Components.voip.k1;
-import w7.q;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class b implements ScaleGestureDetector.OnScaleGestureListener {
     public final /* synthetic */ int a;
@@ -74,7 +73,7 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                         if (f7 * scaleFactor > 30.0f) {
                             scaleFactor = 30.0f / f7;
                         }
-                        n.g(pVar.L, scaleFactor, n.a(pVar.L) * ((focusX - (imageView.getWidth() / 2)) / cropAreaView.getCropWidth()), n.b(pVar.L) * (f0.x((imageView.getHeight() - pVar.y) - (!pVar.r ? AndroidUtilities.statusBarHeight : 0), pVar.E, 2.0f, focusY) / cropAreaView.getCropHeight()));
+                        n.g(pVar.L, scaleFactor, n.a(pVar.L) * ((focusX - (imageView.getWidth() / 2)) / cropAreaView.getCropWidth()), n.b(pVar.L) * (q.x((imageView.getHeight() - pVar.y) - (!pVar.r ? AndroidUtilities.statusBarHeight : 0), pVar.E, 2.0f, focusY) / cropAreaView.getCropHeight()));
                         pVar.r(false);
                         break;
                     }
@@ -82,7 +81,7 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                 break;
             case 1:
                 rg0 rg0Var = (rg0) this.b;
-                rg0Var.J = q.a(scaleGestureDetector.getScaleFactor() * rg0Var.J, 0.75f, rg0Var.a);
+                rg0Var.J = w7.q.a(scaleGestureDetector.getScaleFactor() * rg0Var.J, 0.75f, rg0Var.a);
                 rg0Var.H = (int) (rg0Var.t() * rg0Var.J);
                 rg0Var.I = (int) (rg0Var.r() * rg0Var.J);
                 AndroidUtilities.runOnUIThread(new lc0(this, 13));
@@ -96,7 +95,7 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                     kVar.u.i = dp;
                 }
                 kVar.f();
-                float a2 = q.a(scaleGestureDetector.getFocusY() - (rg0Var.I / 2.0f), AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - rg0Var.I) - AndroidUtilities.dp(16.0f));
+                float a2 = w7.q.a(scaleGestureDetector.getFocusY() - (rg0Var.I / 2.0f), AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - rg0Var.I) - AndroidUtilities.dp(16.0f));
                 o1.k kVar2 = rg0Var.N;
                 if (kVar2.f) {
                     kVar2.u.i = a2;
@@ -109,7 +108,7 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                 break;
             default:
                 k1 k1Var = (k1) this.b;
-                k1Var.P = q.a(scaleGestureDetector.getScaleFactor() * k1Var.P, 0.6f, k1Var.a);
+                k1Var.P = w7.q.a(scaleGestureDetector.getScaleFactor() * k1Var.P, 0.6f, k1Var.a);
                 k1Var.M = (int) (k1Var.m() * k1Var.P);
                 k1Var.N = (int) (k1Var.l() * k1Var.P);
                 AndroidUtilities.runOnUIThread(new h0(this, 20));
@@ -124,7 +123,7 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                 o1.k kVar5 = k1Var.T;
                 kVar5.b = k1Var.R;
                 kVar5.c = true;
-                kVar5.u.i = q.a(scaleGestureDetector.getFocusY() - (k1Var.N / 2.0f), AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - k1Var.N) - AndroidUtilities.dp(16.0f));
+                kVar5.u.i = w7.q.a(scaleGestureDetector.getFocusY() - (k1Var.N / 2.0f), AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - k1Var.N) - AndroidUtilities.dp(16.0f));
                 o1.k kVar6 = k1Var.T;
                 if (!kVar6.f) {
                     kVar6.f();

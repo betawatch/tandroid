@@ -9,10 +9,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.nx0;
+import org.telegram.ui.Components.ox0;
 import org.telegram.ui.Components.qn0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class l2 extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -104,7 +104,7 @@ public final class l2 extends FrameLayout {
                             l2Var.b();
                             k2 k2Var = l2Var.f;
                             if (k2Var != null) {
-                                k2Var.F1();
+                                k2Var.E1();
                                 break;
                             }
                         }
@@ -139,7 +139,7 @@ public final class l2 extends FrameLayout {
                             l2Var.b();
                             k2 k2Var = l2Var.f;
                             if (k2Var != null) {
-                                k2Var.F1();
+                                k2Var.E1();
                                 break;
                             }
                         }
@@ -179,13 +179,13 @@ public final class l2 extends FrameLayout {
                             l2Var.d(false);
                             break;
                         default:
-                            nx0 nx0Var = (nx0) obj;
+                            ox0 ox0Var = (ox0) obj;
                             l2 l2Var2 = this.b;
                             k2 k2Var3 = l2Var2.f;
                             if (k2Var3 != null) {
-                                if (k2Var3.getSelectedCategory() != nx0Var) {
-                                    l2Var2.f.H1(nx0Var);
-                                    String str = nx0Var.a;
+                                if (k2Var3.getSelectedCategory() != ox0Var) {
+                                    l2Var2.f.G1(ox0Var);
+                                    String str = ox0Var.a;
                                     int categoryIndex = l2Var2.f.getCategoryIndex();
                                     Utilities.Callback2 callback2 = l2Var2.v;
                                     if (callback2 != null) {
@@ -193,7 +193,7 @@ public final class l2 extends FrameLayout {
                                         break;
                                     }
                                 } else {
-                                    l2Var2.f.H1(null);
+                                    l2Var2.f.G1(null);
                                     Utilities.Callback2 callback22 = l2Var2.v;
                                     if (callback22 != null) {
                                         callback22.run(null, -1);
@@ -224,13 +224,13 @@ public final class l2 extends FrameLayout {
                             l2Var.d(false);
                             break;
                         default:
-                            nx0 nx0Var = (nx0) obj;
+                            ox0 ox0Var = (ox0) obj;
                             l2 l2Var2 = this.b;
                             k2 k2Var3 = l2Var2.f;
                             if (k2Var3 != null) {
-                                if (k2Var3.getSelectedCategory() != nx0Var) {
-                                    l2Var2.f.H1(nx0Var);
-                                    String str = nx0Var.a;
+                                if (k2Var3.getSelectedCategory() != ox0Var) {
+                                    l2Var2.f.G1(ox0Var);
+                                    String str = ox0Var.a;
                                     int categoryIndex = l2Var2.f.getCategoryIndex();
                                     Utilities.Callback2 callback2 = l2Var2.v;
                                     if (callback2 != null) {
@@ -238,7 +238,7 @@ public final class l2 extends FrameLayout {
                                         break;
                                     }
                                 } else {
-                                    l2Var2.f.H1(null);
+                                    l2Var2.f.G1(null);
                                     Utilities.Callback2 callback22 = l2Var2.v;
                                     if (callback22 != null) {
                                         callback22.run(null, -1);
@@ -262,7 +262,7 @@ public final class l2 extends FrameLayout {
         }
         k2 k2Var = this.f;
         if (k2Var != null) {
-            k2Var.H1(null);
+            k2Var.G1(null);
         }
     }
 

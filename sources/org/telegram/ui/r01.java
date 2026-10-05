@@ -10,10 +10,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.ld;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.bh1;
 import org.telegram.ui.r01;
+import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class r01 extends org.telegram.ui.Cells.a7 {
     public final /* synthetic */ s01 h;
@@ -78,7 +78,7 @@ public final class r01 extends org.telegram.ui.Cells.a7 {
                                 int i13 = r01Var2.e;
                                 ProfileActivity profileActivity = r01Var2.h.e;
                                 if (i13 != 0) {
-                                    profileActivity.presentFragment(new bh1(8, null));
+                                    profileActivity.presentFragment(new zg1(8, null));
                                     break;
                                 } else {
                                     profileActivity.presentFragment(new org.telegram.ui.h(3));
@@ -108,7 +108,7 @@ public final class r01 extends org.telegram.ui.Cells.a7 {
                                 int i13 = r01Var2.e;
                                 ProfileActivity profileActivity = r01Var2.h.e;
                                 if (i13 != 0) {
-                                    profileActivity.presentFragment(new bh1(8, null));
+                                    profileActivity.presentFragment(new zg1(8, null));
                                     break;
                                 } else {
                                     profileActivity.presentFragment(new org.telegram.ui.h(3));

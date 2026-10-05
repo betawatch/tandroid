@@ -2,10 +2,9 @@ package c5;
 
 import android.os.Bundle;
 import e9.a1;
-import hg.k0;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class m implements w2.a {
     public ArrayList a;
@@ -148,7 +147,7 @@ public final class m implements w2.a {
     }
 
     public void g(StringBuilder sb2) {
-        sb2.append(((Boolean) k0.w(1, this.a)).booleanValue() ? "</ol>" : "</ul>");
+        sb2.append(((Boolean) hg.c.w(1, this.a)).booleanValue() ? "</ol>" : "</ul>");
     }
 
     public void h(StringBuilder sb2) {

@@ -23,9 +23,9 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.gk0;
 import org.telegram.ui.h60;
 import org.telegram.ui.i50;
-import org.telegram.ui.yf1;
+import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t7 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -122,19 +122,19 @@ public final /* synthetic */ class t7 implements View.OnClickListener {
                     return;
                 }
             default:
-                yf1 yf1Var = (yf1) this.c;
+                wf1 wf1Var = (wf1) this.c;
                 TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) this.d;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout[] actionBarPopupWindow$ActionBarPopupWindowLayoutArr = (ActionBarPopupWindow$ActionBarPopupWindowLayout[]) this.e;
-                MessagesController messagesController = yf1Var.getMessagesController();
-                long j3 = -yf1Var.a;
+                MessagesController messagesController = wf1Var.getMessagesController();
+                long j3 = -wf1Var.a;
                 if (!messagesController.isDialogMuted(j3, tL_forumTopic.id)) {
                     actionBarPopupWindow$ActionBarPopupWindowLayoutArr[0].getSwipeBack().e(this.b);
                     break;
                 } else {
-                    yf1Var.getNotificationsController().muteDialog(j3, tL_forumTopic.id, false);
-                    yf1Var.finishPreviewFragment();
-                    if (yc.a(yf1Var)) {
-                        yc.z(yf1Var, 4, 0, yf1Var.getResourceProvider()).j();
+                    wf1Var.getNotificationsController().muteDialog(j3, tL_forumTopic.id, false);
+                    wf1Var.finishPreviewFragment();
+                    if (yc.a(wf1Var)) {
+                        yc.z(wf1Var, 4, 0, wf1Var.getResourceProvider()).j();
                         break;
                     }
                 }

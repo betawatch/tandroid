@@ -26,15 +26,15 @@ import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.r9;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.xo0;
+import org.telegram.ui.Components.yo0;
 import org.telegram.ui.Components.z5;
-import org.telegram.ui.b71;
 import org.telegram.ui.kv0;
+import org.telegram.ui.z61;
 import org.telegram.ui.zd;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class u implements bg.a, c3.g, cg.a, ea.a, fb.n, g2.g, com.google.android.gms.common.api.internal.s, w, n6.k, q9.d, xo0, l1, p2.s, OnFailureListener, r4.c, u9.a, SuccessContinuation, x9.c, y6.d, y2.i, b71 {
+public final class u implements bg.a, c3.g, cg.a, ea.a, fb.n, g2.g, com.google.android.gms.common.api.internal.s, w, n6.k, q9.d, yo0, l1, p2.s, OnFailureListener, r4.c, u9.a, SuccessContinuation, x9.c, y6.d, y2.i, z61 {
     public static u a;
     public static u b;
 
@@ -44,56 +44,6 @@ public final class u implements bg.a, c3.g, cg.a, ea.a, fb.n, g2.g, com.google.a
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean A1() {
         return false;
-    }
-
-    @Override // cg.a
-    public void C(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12) {
-        if (i10 != i11) {
-            throw new IllegalArgumentException("Illegal use of PassThroughAudioResampler");
-        }
-        shortBuffer2.put(shortBuffer);
-    }
-
-    @Override // ea.a
-    public StackTraceElement[] D(StackTraceElement[] stackTraceElementArr) {
-        int i10;
-        HashMap hashMap = new HashMap();
-        StackTraceElement[] stackTraceElementArr2 = new StackTraceElement[stackTraceElementArr.length];
-        int i11 = 0;
-        int i12 = 0;
-        int i13 = 1;
-        while (i11 < stackTraceElementArr.length) {
-            StackTraceElement stackTraceElement = stackTraceElementArr[i11];
-            Integer num = (Integer) hashMap.get(stackTraceElement);
-            if (num != null) {
-                int intValue = num.intValue();
-                int i14 = i11 - intValue;
-                if (i11 + i14 <= stackTraceElementArr.length) {
-                    for (int i15 = 0; i15 < i14; i15++) {
-                        if (stackTraceElementArr[intValue + i15].equals(stackTraceElementArr[i11 + i15])) {
-                        }
-                    }
-                    int intValue2 = i11 - num.intValue();
-                    if (i13 < 10) {
-                        System.arraycopy(stackTraceElementArr, i11, stackTraceElementArr2, i12, intValue2);
-                        i12 += intValue2;
-                        i13++;
-                    }
-                    i10 = (intValue2 - 1) + i11;
-                    hashMap.put(stackTraceElement, Integer.valueOf(i11));
-                    i11 = i10 + 1;
-                }
-            }
-            stackTraceElementArr2[i12] = stackTraceElementArr[i11];
-            i12++;
-            i10 = i11;
-            i13 = 1;
-            hashMap.put(stackTraceElement, Integer.valueOf(i11));
-            i11 = i10 + 1;
-        }
-        StackTraceElement[] stackTraceElementArr3 = new StackTraceElement[i12];
-        System.arraycopy(stackTraceElementArr2, 0, stackTraceElementArr3, 0, i12);
-        return i12 < stackTraceElementArr.length ? stackTraceElementArr3 : stackTraceElementArr;
     }
 
     @Override // q9.d
@@ -193,7 +143,7 @@ public final class u implements bg.a, c3.g, cg.a, ea.a, fb.n, g2.g, com.google.a
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public void Y(float f7, boolean z10) {
         zd.b = f7 * 2.0f;
     }
@@ -277,9 +227,9 @@ public final class u implements bg.a, c3.g, cg.a, ea.a, fb.n, g2.g, com.google.a
     @Override // y6.d
     public a3.l d(Context context, String str, y6.c cVar) {
         a3.l lVar = new a3.l();
-        int f7 = cVar.f(context, str, true);
-        lVar.b = f7;
-        if (f7 != 0) {
+        int i10 = cVar.i(context, str, true);
+        lVar.b = i10;
+        if (i10 != 0) {
             lVar.c = 1;
             return lVar;
         }
@@ -311,7 +261,7 @@ public final class u implements bg.a, c3.g, cg.a, ea.a, fb.n, g2.g, com.google.a
         return true;
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
@@ -356,7 +306,7 @@ public final class u implements bg.a, c3.g, cg.a, ea.a, fb.n, g2.g, com.google.a
         Log.e("OptionalModuleUtils", "Failed to check feature availability", exc);
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public /* synthetic */ int p0() {
         return 0;
     }
@@ -391,13 +341,67 @@ public final class u implements bg.a, c3.g, cg.a, ea.a, fb.n, g2.g, com.google.a
         return true;
     }
 
+    @Override // cg.a
+    public void x(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12) {
+        if (i10 != i11) {
+            throw new IllegalArgumentException("Illegal use of PassThroughAudioResampler");
+        }
+        shortBuffer2.put(shortBuffer);
+    }
+
+    @Override // ea.a
+    public StackTraceElement[] y(StackTraceElement[] stackTraceElementArr) {
+        int i10;
+        HashMap hashMap = new HashMap();
+        StackTraceElement[] stackTraceElementArr2 = new StackTraceElement[stackTraceElementArr.length];
+        int i11 = 0;
+        int i12 = 0;
+        int i13 = 1;
+        while (i11 < stackTraceElementArr.length) {
+            StackTraceElement stackTraceElement = stackTraceElementArr[i11];
+            Integer num = (Integer) hashMap.get(stackTraceElement);
+            if (num != null) {
+                int intValue = num.intValue();
+                int i14 = i11 - intValue;
+                if (i11 + i14 <= stackTraceElementArr.length) {
+                    for (int i15 = 0; i15 < i14; i15++) {
+                        if (stackTraceElementArr[intValue + i15].equals(stackTraceElementArr[i11 + i15])) {
+                        }
+                    }
+                    int intValue2 = i11 - num.intValue();
+                    if (i13 < 10) {
+                        System.arraycopy(stackTraceElementArr, i11, stackTraceElementArr2, i12, intValue2);
+                        i12 += intValue2;
+                        i13++;
+                    }
+                    i10 = (intValue2 - 1) + i11;
+                    hashMap.put(stackTraceElement, Integer.valueOf(i11));
+                    i11 = i10 + 1;
+                }
+            }
+            stackTraceElementArr2[i12] = stackTraceElementArr[i11];
+            i12++;
+            i10 = i11;
+            i13 = 1;
+            hashMap.put(stackTraceElement, Integer.valueOf(i11));
+            i11 = i10 + 1;
+        }
+        StackTraceElement[] stackTraceElementArr3 = new StackTraceElement[i12];
+        System.arraycopy(stackTraceElementArr2, 0, stackTraceElementArr3, 0, i12);
+        return i12 < stackTraceElementArr.length ? stackTraceElementArr3 : stackTraceElementArr;
+    }
+
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ r9 z2() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public void B() {
+    }
+
+    @Override // r4.c
+    public void C() {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -430,10 +434,6 @@ public final class u implements bg.a, c3.g, cg.a, ea.a, fb.n, g2.g, com.google.a
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void s() {
-    }
-
-    @Override // r4.c
-    public void x() {
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -553,6 +553,10 @@ public final class u implements bg.a, c3.g, cg.a, ea.a, fb.n, g2.g, com.google.a
     public /* synthetic */ void z(u1 u1Var) {
     }
 
+    @Override // r4.c
+    public void D(int i10, Object obj) {
+    }
+
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void D1(u1 u1Var, boolean z10) {
     }
@@ -599,10 +603,6 @@ public final class u implements bg.a, c3.g, cg.a, ea.a, fb.n, g2.g, com.google.a
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ void p1(u1 u1Var, TLRPC.Document document) {
-    }
-
-    @Override // r4.c
-    public void y(int i10, Object obj) {
     }
 
     @Override // org.telegram.ui.Cells.l1

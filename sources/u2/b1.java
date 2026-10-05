@@ -5,9 +5,9 @@ import j$.util.Objects;
 import java.io.EOFException;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ap0;
+import org.telegram.ui.Components.bp0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class b1 implements c3.h0 {
     public b2.s A;
@@ -16,7 +16,7 @@ public class b1 implements c3.h0 {
     public boolean E;
     public long F;
     public boolean G;
-    public final ap0 a;
+    public final bp0 a;
     public final n2.n d;
     public final n2.k e;
     public Object f;
@@ -47,7 +47,7 @@ public class b1 implements c3.h0 {
     public b1(y2.d dVar, n2.n nVar, n2.k kVar) {
         this.d = nVar;
         this.e = kVar;
-        this.a = new ap0(dVar);
+        this.a = new bp0(dVar);
     }
 
     public final void A(b2.s sVar, n4.y yVar) {
@@ -139,11 +139,11 @@ public class b1 implements c3.h0 {
             boolean z12 = (i10 & 1) != 0;
             if ((i10 & 4) == 0) {
                 if (z12) {
-                    ap0 ap0Var = this.a;
-                    ap0.f((y0) ap0Var.f, hVar, this.b, (e2.v) ap0Var.d);
+                    bp0 bp0Var = this.a;
+                    bp0.f((y0) bp0Var.f, hVar, this.b, (e2.v) bp0Var.d);
                 } else {
-                    ap0 ap0Var2 = this.a;
-                    ap0Var2.f = ap0.f((y0) ap0Var2.f, hVar, this.b, (e2.v) ap0Var2.d);
+                    bp0 bp0Var2 = this.a;
+                    bp0Var2.f = bp0.f((y0) bp0Var2.f, hVar, this.b, (e2.v) bp0Var2.d);
                 }
             }
             if (!z12) {
@@ -154,18 +154,18 @@ public class b1 implements c3.h0 {
     }
 
     public final void D(boolean z10) {
-        ap0 ap0Var = this.a;
-        ap0Var.a((y0) ap0Var.e);
-        y0 y0Var = (y0) ap0Var.e;
-        int i10 = ap0Var.a;
+        bp0 bp0Var = this.a;
+        bp0Var.a((y0) bp0Var.e);
+        y0 y0Var = (y0) bp0Var.e;
+        int i10 = bp0Var.a;
         e2.d.g(((y2.a) y0Var.c) == null);
         y0Var.a = 0L;
         y0Var.b = i10;
-        y0 y0Var2 = (y0) ap0Var.e;
-        ap0Var.f = y0Var2;
-        ap0Var.g = y0Var2;
-        ap0Var.b = 0L;
-        ((y2.d) ap0Var.c).b();
+        y0 y0Var2 = (y0) bp0Var.e;
+        bp0Var.f = y0Var2;
+        bp0Var.g = y0Var2;
+        bp0Var.b = 0L;
+        ((y2.d) bp0Var.c).b();
         this.p = 0;
         this.q = 0;
         this.r = 0;
@@ -192,8 +192,8 @@ public class b1 implements c3.h0 {
 
     public final synchronized void E() {
         this.s = 0;
-        ap0 ap0Var = this.a;
-        ap0Var.f = (y0) ap0Var.e;
+        bp0 bp0Var = this.a;
+        bp0Var.f = (y0) bp0Var.e;
     }
 
     public final synchronized boolean F(int i10) {
@@ -402,22 +402,22 @@ public class b1 implements c3.h0 {
 
     @Override // c3.h0
     public final int e(b2.k kVar, int i10, boolean z10) {
-        ap0 ap0Var = this.a;
-        int c10 = ap0Var.c(i10);
-        y0 y0Var = (y0) ap0Var.g;
+        bp0 bp0Var = this.a;
+        int c10 = bp0Var.c(i10);
+        y0 y0Var = (y0) bp0Var.g;
         y2.a aVar = (y2.a) y0Var.c;
-        int read = kVar.read(aVar.a, ((int) (ap0Var.b - y0Var.a)) + aVar.b, c10);
+        int read = kVar.read(aVar.a, ((int) (bp0Var.b - y0Var.a)) + aVar.b, c10);
         if (read == -1) {
             if (z10) {
                 return -1;
             }
             throw new EOFException();
         }
-        long j3 = ap0Var.b + read;
-        ap0Var.b = j3;
-        y0 y0Var2 = (y0) ap0Var.g;
+        long j3 = bp0Var.b + read;
+        bp0Var.b = j3;
+        y0 y0Var2 = (y0) bp0Var.g;
         if (j3 == y0Var2.b) {
-            ap0Var.g = (y0) y0Var2.d;
+            bp0Var.g = (y0) y0Var2.d;
         }
         return read;
     }
@@ -425,21 +425,21 @@ public class b1 implements c3.h0 {
     @Override // c3.h0
     public final void f(e2.v vVar, int i10, int i11) {
         while (true) {
-            ap0 ap0Var = this.a;
+            bp0 bp0Var = this.a;
             if (i10 <= 0) {
-                ap0Var.getClass();
+                bp0Var.getClass();
                 return;
             }
-            int c10 = ap0Var.c(i10);
-            y0 y0Var = (y0) ap0Var.g;
+            int c10 = bp0Var.c(i10);
+            y0 y0Var = (y0) bp0Var.g;
             y2.a aVar = (y2.a) y0Var.c;
-            vVar.h(((int) (ap0Var.b - y0Var.a)) + aVar.b, c10, aVar.a);
+            vVar.h(((int) (bp0Var.b - y0Var.a)) + aVar.b, c10, aVar.a);
             i10 -= c10;
-            long j3 = ap0Var.b + c10;
-            ap0Var.b = j3;
-            y0 y0Var2 = (y0) ap0Var.g;
+            long j3 = bp0Var.b + c10;
+            bp0Var.b = j3;
+            y0 y0Var2 = (y0) bp0Var.g;
             if (j3 == y0Var2.b) {
-                ap0Var.g = (y0) y0Var2.d;
+                bp0Var.g = (y0) y0Var2.d;
             }
         }
     }
@@ -587,7 +587,7 @@ public class b1 implements c3.h0 {
 
     public final void j(long j3, boolean z10) {
         Throwable th2;
-        ap0 ap0Var = this.a;
+        bp0 bp0Var = this.a;
         synchronized (this) {
             try {
                 try {
@@ -612,10 +612,10 @@ public class b1 implements c3.h0 {
                             if (o9 != -1) {
                                 j10 = i(o9);
                             }
-                            ap0Var.b(j10);
+                            bp0Var.b(j10);
                         }
                     }
-                    ap0Var.b(j10);
+                    bp0Var.b(j10);
                 } catch (Throwable th4) {
                     th = th4;
                     th2 = th;
@@ -631,12 +631,12 @@ public class b1 implements c3.h0 {
 
     public final void k() {
         long i10;
-        ap0 ap0Var = this.a;
+        bp0 bp0Var = this.a;
         synchronized (this) {
             int i11 = this.p;
             i10 = i11 == 0 ? -1L : i(i11);
         }
-        ap0Var.b(i10);
+        bp0Var.b(i10);
     }
 
     public final void l(long j3) {
@@ -676,37 +676,37 @@ public class b1 implements c3.h0 {
 
     public final void n(int i10) {
         long m10 = m(i10);
-        ap0 ap0Var = this.a;
-        int i11 = ap0Var.a;
-        e2.d.b(m10 <= ap0Var.b);
-        ap0Var.b = m10;
+        bp0 bp0Var = this.a;
+        int i11 = bp0Var.a;
+        e2.d.b(m10 <= bp0Var.b);
+        bp0Var.b = m10;
         if (m10 != 0) {
-            y0 y0Var = (y0) ap0Var.e;
+            y0 y0Var = (y0) bp0Var.e;
             if (m10 != y0Var.a) {
-                while (ap0Var.b > y0Var.b) {
+                while (bp0Var.b > y0Var.b) {
                     y0Var = (y0) y0Var.d;
                 }
                 y0 y0Var2 = (y0) y0Var.d;
                 y0Var2.getClass();
-                ap0Var.a(y0Var2);
+                bp0Var.a(y0Var2);
                 y0 y0Var3 = new y0(y0Var.b, i11);
                 y0Var.d = y0Var3;
-                if (ap0Var.b == y0Var.b) {
+                if (bp0Var.b == y0Var.b) {
                     y0Var = y0Var3;
                 }
-                ap0Var.g = y0Var;
-                if (((y0) ap0Var.f) == y0Var2) {
-                    ap0Var.f = y0Var3;
+                bp0Var.g = y0Var;
+                if (((y0) bp0Var.f) == y0Var2) {
+                    bp0Var.f = y0Var3;
                     return;
                 }
                 return;
             }
         }
-        ap0Var.a((y0) ap0Var.e);
-        y0 y0Var4 = new y0(ap0Var.b, i11);
-        ap0Var.e = y0Var4;
-        ap0Var.f = y0Var4;
-        ap0Var.g = y0Var4;
+        bp0Var.a((y0) bp0Var.e);
+        y0 y0Var4 = new y0(bp0Var.b, i11);
+        bp0Var.e = y0Var4;
+        bp0Var.f = y0Var4;
+        bp0Var.g = y0Var4;
     }
 
     public final int o(long j3, int i10, int i11, boolean z10) {

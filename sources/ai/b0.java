@@ -36,7 +36,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.gd;
 import org.telegram.ui.Components.oj0;
 import org.telegram.ui.Components.s20;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.tr;
 import org.telegram.ui.jx;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class b0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, le.d {
     public boolean A0;
@@ -820,7 +820,7 @@ public abstract class b0 extends FrameLayout implements NotificationCenter.Notif
             int dp5 = AndroidUtilities.dp(72.0f);
             float f32 = this.N;
             float lerp9 = AndroidUtilities.lerp(AndroidUtilities.dp(48.0f), AndroidUtilities.dp(26.33f), f32) / f11;
-            float d10 = t8.b.d(lerp9, 2.0f, AndroidUtilities.lerp((dp5 / f11) - lerp9, 0.0f, f32), -dp5) + AndroidUtilities.dp(12.0f) + f12;
+            float d10 = sa.e.d(lerp9, 2.0f, AndroidUtilities.lerp((dp5 / f11) - lerp9, 0.0f, f32), -dp5) + AndroidUtilities.dp(12.0f) + f12;
             p6Var.setTranslationX(d10);
             org.telegram.ui.Components.o6 drawable = p6Var.getDrawable();
             drawable.H = (this.q0.E.getVisibleItemsMeasuredWidthWithAlpha() * min) + (d10 - AndroidUtilities.dp(12.0f));
@@ -1238,7 +1238,7 @@ public abstract class b0 extends FrameLayout implements NotificationCenter.Notif
             SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("StoriesPremiumHint2").replace('\n', ' '), org.telegram.ui.ActionBar.i6.Gi, 0, new h(this, 1));
             ClickableSpan[] clickableSpanArr = (ClickableSpan[]) replaceSingleTag.getSpans(0, replaceSingleTag.length(), ClickableSpan.class);
             if (clickableSpanArr != null && clickableSpanArr.length >= 1) {
-                replaceSingleTag.setSpan(new d61(AndroidUtilities.bold()), replaceSingleTag.getSpanStart(clickableSpanArr[0]), replaceSingleTag.getSpanEnd(clickableSpanArr[0]), 33);
+                replaceSingleTag.setSpan(new e61(AndroidUtilities.bold()), replaceSingleTag.getSpanStart(clickableSpanArr[0]), replaceSingleTag.getSpanEnd(clickableSpanArr[0]), 33);
             }
             ci.e4 e4Var2 = this.J;
             e4Var2.h = ci.e4.a(replaceSingleTag, e4Var2.getTextPaint());

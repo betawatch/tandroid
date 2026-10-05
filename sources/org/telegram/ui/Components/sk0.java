@@ -44,7 +44,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class sk0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final org.telegram.ui.Cells.d1 k1 = new org.telegram.ui.Cells.d1(Float.class, "transitionProgress", 2);
@@ -121,7 +121,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
     public final boolean j0;
     public LinearGradient j1;
     public final org.telegram.ui.ActionBar.d6 k0;
-    public zg.o0 l0;
+    public zg.m0 l0;
     public int m0;
     public final Paint n;
     public float n0;
@@ -139,7 +139,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
     public final RectF w;
     public float w0;
     public final Path x;
-    public zg.b0 x0;
+    public zg.z x0;
     public float y;
     public ValueAnimator y0;
     public final qk0 z0;
@@ -239,29 +239,29 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         if (sk0Var.x0 != null) {
             return;
         }
-        zg.b0 b0Var = new zg.b0(sk0Var.M0, sk0Var.t0, sk0Var.V, sk0Var.d0, sk0Var, sk0Var.k0, sk0Var.a);
-        sk0Var.x0 = b0Var;
+        zg.z zVar = new zg.z(sk0Var.M0, sk0Var.t0, sk0Var.V, sk0Var.d0, sk0Var, sk0Var.k0, sk0Var.a);
+        sk0Var.x0 = zVar;
         ah.c cVar = sk0Var.Z0;
         boolean z10 = true;
         if (cVar != null) {
             dh.e eVar = sk0Var.a1;
-            org.telegram.ui.t51 t51Var = b0Var.m.f0;
-            t51Var.x = true;
-            t51Var.setBackground(null);
-            t51Var.e();
-            t51Var.invalidate();
-            ch.d c10 = cVar.c(b0Var.a, null, true);
-            c10.x(eVar);
-            c10.z(AndroidUtilities.dp(12.0f));
-            c10.y(AndroidUtilities.dp(8.0f));
-            b0Var.z = c10;
+            org.telegram.ui.r51 r51Var = zVar.m.f0;
+            r51Var.x = true;
+            r51Var.setBackground(null);
+            r51Var.e();
+            r51Var.invalidate();
+            ch.d c10 = cVar.c(zVar.a, null, true);
+            c10.w(eVar);
+            c10.y(AndroidUtilities.dp(12.0f));
+            c10.x(AndroidUtilities.dp(8.0f));
+            zVar.z = c10;
         }
-        zg.b0 b0Var2 = sk0Var.x0;
+        zg.z zVar2 = sk0Var.x0;
         rk0 rk0Var = sk0Var.g0;
-        if (rk0Var != null && !rk0Var.j()) {
+        if (rk0Var != null && !rk0Var.B()) {
             z10 = false;
         }
-        b0Var2.m.setLongPressEnabled(z10);
+        zVar2.m.setLongPressEnabled(z10);
         sk0Var.j();
         sk0Var.x0.p = new lc0(sk0Var, 17);
         sk0Var.m();
@@ -292,7 +292,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
             if (messageObject != null && (tL_messageReactions = messageObject.messageOwner.reactions) != null && tL_messageReactions.results != null) {
                 for (int i11 = 0; i11 < messageObject.messageOwner.reactions.results.size(); i11++) {
                     if (messageObject.messageOwner.reactions.results.get(i11).chosen) {
-                        zg.o0 d = zg.o0.d(messageObject.messageOwner.reactions.results.get(i11).reaction);
+                        zg.m0 d = zg.m0.d(messageObject.messageOwner.reactions.results.get(i11).reaction);
                         if (z10 || longSparseArray.indexOfKey(d.h) >= 0) {
                             hashSet.add(Long.valueOf(d.h));
                             longSparseArray.put(d.h, d);
@@ -314,20 +314,20 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         HashSet hashSet2 = new HashSet();
         for (int i13 = 0; i13 < longSparseArray.size(); i13++) {
             if (longSparseArray.valueAt(i13) != null) {
-                hashSet2.add((zg.o0) longSparseArray.valueAt(i13));
+                hashSet2.add((zg.m0) longSparseArray.valueAt(i13));
             }
         }
         return hashSet2;
     }
 
     public final void d() {
-        zg.b0 b0Var = this.x0;
-        if (b0Var != null) {
-            if (!b0Var.q) {
-                b0Var.q = true;
+        zg.z zVar = this.x0;
+        if (zVar != null) {
+            if (!zVar.q) {
+                zVar.q = true;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new zg.v(b0Var, 0));
-                ofFloat.addListener(new zg.z(b0Var, 0));
+                ofFloat.addUpdateListener(new zg.t(zVar, 0));
+                ofFloat.addListener(new zg.x(zVar, 0));
                 ofFloat.setDuration(150L);
                 ofFloat.start();
             }
@@ -358,7 +358,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
             invalidate();
             ai.w0 w0Var = this.b;
             w0Var.invalidate();
-            w0Var.h1();
+            w0Var.g1();
             for (int i12 = 0; i12 < w0Var.getChildCount(); i12++) {
                 View childAt = w0Var.getChildAt(i12);
                 if (childAt instanceof qk0) {
@@ -396,9 +396,9 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
     */
     public final void dispatchDraw(Canvas canvas) {
         q90 q90Var;
-        zg.o0 o0Var;
+        zg.m0 m0Var;
         int i10;
-        zg.o0 o0Var2;
+        zg.m0 m0Var2;
         float width;
         float f7;
         float f10;
@@ -459,9 +459,9 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
                 if (this.b1) {
                     invalidate();
                 }
-                o0Var = this.l0;
+                m0Var = this.l0;
                 i10 = this.M0;
-                if (o0Var != null && i10 != 5 && ((rk0Var = this.g0) == null || rk0Var.j())) {
+                if (m0Var != null && i10 != 5 && ((rk0Var = this.g0) == null || rk0Var.B())) {
                     f22 = this.n0;
                     if (f22 != 1.0f) {
                         float longPressTimeout = (16.0f / (this.l0.a ? ViewConfiguration.getLongPressTimeout() : 1500.0f)) + f22;
@@ -472,8 +472,8 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
                         invalidate();
                     }
                 }
-                o0Var2 = this.l0;
-                if (o0Var2 == null && o0Var2.a) {
+                m0Var2 = this.l0;
+                if (m0Var2 == null && m0Var2.a) {
                     this.p0 = 1.0f;
                     this.q0 = 1.0f;
                 } else {
@@ -542,13 +542,13 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
                     } else {
                         f14 = 2.0f;
                     }
-                    if (i10 == 1 || this.g0.p()) {
+                    if (i10 == 1 || this.g0.K()) {
                         i15 = save2;
                         i11 = i10;
                         rectF = rectF5;
                         f13 = f27;
                         i16 = 1;
-                        this.g0.n(canvas, rectF, this.y, getX(), getY(), 255, false);
+                        this.g0.H(canvas, rectF, this.y, getX(), getY(), 255, false);
                         canvas2 = canvas;
                     } else {
                         ch.d dVar = this.W0;
@@ -593,7 +593,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
                                 this.j1.setLocalMatrix(this.i1);
                                 this.h1.setAlpha((int) (clamp01 * f12));
                                 canvas2.drawRoundRect(rectF, f32, f32, this.h1);
-                            } else if (((zg.o0) it.next()).a) {
+                            } else if (((zg.m0) it.next()).a) {
                                 break;
                             }
                         }
@@ -634,13 +634,13 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
                                     i13 = save3;
                                     f19 = 0.0f;
                                 }
-                                zg.o0 o0Var3 = qk0Var.e;
+                                zg.m0 m0Var3 = qk0Var.e;
                                 pk0 pk0Var = qk0Var.a;
                                 float f35 = f19;
                                 pk0 pk0Var2 = qk0Var.b;
                                 pk0 pk0Var3 = qk0Var.c;
                                 rectF4 = rectF;
-                                if (o0Var3.equals(this.l0)) {
+                                if (m0Var3.equals(this.l0)) {
                                     pk0 pk0Var4 = pk0Var2.getVisibility() == 0 ? pk0Var2 : pk0Var;
                                     qk0Var.setPivotX(qk0Var.getMeasuredWidth() >> 1);
                                     qk0Var.setPivotY(pk0Var4.getY() + pk0Var4.getMeasuredHeight());
@@ -664,7 +664,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
                                             if (System.currentTimeMillis() - this.s0 > 300) {
                                                 this.s0 = System.currentTimeMillis();
                                                 w0Var2 = w0Var3;
-                                                this.g0.h(qk0Var, qk0Var.e, true, false);
+                                                this.g0.i(qk0Var, qk0Var.e, true, false);
                                                 canvas2.save();
                                                 x10 = qk0Var.getX() + w0Var2.getX();
                                                 scaleX = ((qk0Var.getScaleX() * qk0Var.getMeasuredWidth()) - qk0Var.getMeasuredWidth()) / f14;
@@ -869,7 +869,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
                             }
                         }
                         if (!this.c1 && this.x0 != null) {
-                            int z12 = (int) org.telegram.messenger.f0.z(1.0f, this.w0, Utilities.clamp(1.0f - (this.w0 / 0.2f), 1.0f, 0.0f), 255.0f);
+                            int z12 = (int) org.telegram.messenger.q.z(1.0f, this.w0, Utilities.clamp(1.0f - (this.w0 / 0.2f), 1.0f, 0.0f), 255.0f);
                             canvas.save();
                             f(f24, max2, f16, z12, canvas);
                             canvas.restore();
@@ -943,15 +943,15 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         hashSet22.clear();
         if (this.b1) {
         }
-        o0Var = this.l0;
+        m0Var = this.l0;
         i10 = this.M0;
-        if (o0Var != null) {
+        if (m0Var != null) {
             f22 = this.n0;
             if (f22 != 1.0f) {
             }
         }
-        o0Var2 = this.l0;
-        if (o0Var2 == null) {
+        m0Var2 = this.l0;
+        if (m0Var2 == null) {
         }
         float f262 = this.n0;
         this.p0 = (f262 * 2.0f) + 1.0f;
@@ -1027,9 +1027,9 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
     }
 
     public final void e() {
-        zg.b0 b0Var = this.x0;
-        if (b0Var != null) {
-            b0Var.d();
+        zg.z zVar = this.x0;
+        if (zVar != null) {
+            zVar.d();
         }
     }
 
@@ -1063,13 +1063,13 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         float f19 = paddingTop + f7;
         drawable.setBounds((int) (f14 - f16), (int) (f17 - f16), (int) (f18 + f16), (int) (f16 + f19));
         drawable.draw(canvas);
-        boolean p5 = this.g0.p();
+        boolean K = this.g0.K();
         float f20 = paddingTop;
         RectF rectF2 = this.b0;
-        if (p5) {
+        if (K) {
             rectF2.set(f14, f17, f18, f19);
             f12 = f7;
-            this.g0.n(canvas, rectF2, f12, getX(), getY(), i10, false);
+            this.g0.H(canvas, rectF2, f12, getX(), getY(), i10, false);
         } else {
             f12 = f7;
             if (this.X0 != null) {
@@ -1094,9 +1094,9 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         float f23 = (-AndroidUtilities.dp(1.0f)) * f10;
         drawable.setBounds((int) ((width2 - f12) - f23), (int) ((lerp - f12) - f23), (int) (width2 + f12 + f23), (int) (f12 + lerp + f23));
         drawable.draw(canvas);
-        if (this.g0.p()) {
+        if (this.g0.K()) {
             rectF2.set(width2 - f11, lerp - f11, width2 + f11, lerp + f11);
-            this.g0.n(canvas, rectF2, f11, getX(), getY(), i10, false);
+            this.g0.H(canvas, rectF2, f11, getX(), getY(), i10, false);
         } else if (this.Y0 != null) {
             RectF rectF4 = AndroidUtilities.rectTmp;
             rectF4.set(width2 - f11, lerp - f11, width2 + f11, lerp + f11);
@@ -1134,7 +1134,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         return Utilities.clamp(this.B0 / AndroidUtilities.dp(42.0f), 2.0f, 0.0f);
     }
 
-    public zg.b0 getReactionsWindow() {
+    public zg.z getReactionsWindow() {
         return this.x0;
     }
 
@@ -1144,19 +1144,19 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         if (hashSet.isEmpty()) {
             return "";
         }
-        zg.o0 o0Var = (zg.o0) hashSet.iterator().next();
-        long j3 = o0Var.g;
+        zg.m0 m0Var = (zg.m0) hashSet.iterator().next();
+        long j3 = m0Var.g;
         String str = null;
         if (j3 != 0 && (f7 = q5.f(this.J, j3)) != null) {
             str = MessageObject.findAnimatedEmojiEmoticon(f7, null);
         }
         if (TextUtils.isEmpty(str)) {
-            str = o0Var.f;
+            str = m0Var.f;
         }
         return TextUtils.isEmpty(str) ? "👍" : str;
     }
 
-    public HashSet<zg.o0> getSelectedReactions() {
+    public HashSet<zg.m0> getSelectedReactions() {
         return this.d0;
     }
 
@@ -1172,10 +1172,10 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         if (q()) {
             return (AndroidUtilities.dp(36.0f) * itemsCount) - AndroidUtilities.dp(4.0f);
         }
-        return AndroidUtilities.dp(16.0f) + hg.k0.f(itemsCount, 1, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(36.0f) * itemsCount);
+        return AndroidUtilities.dp(16.0f) + hg.c.f(itemsCount, 1, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(36.0f) * itemsCount);
     }
 
-    public List<zg.o0> getVisibleReactionsList() {
+    public List<zg.m0> getVisibleReactionsList() {
         return this.T;
     }
 
@@ -1194,11 +1194,11 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
     }
 
     public View getWindowView() {
-        zg.b0 b0Var = this.x0;
-        if (b0Var == null) {
+        zg.z zVar = this.x0;
+        if (zVar == null) {
             return null;
         }
-        return b0Var.c;
+        return zVar.c;
     }
 
     public final void h(ArrayList arrayList) {
@@ -1209,10 +1209,10 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
             Iterator it = this.d0.iterator();
             int i12 = 0;
             while (it.hasNext()) {
-                zg.o0 o0Var = (zg.o0) it.next();
-                if (!hashSet.contains(o0Var)) {
-                    hashSet.add(o0Var);
-                    arrayList.add(o0Var);
+                zg.m0 m0Var = (zg.m0) it.next();
+                if (!hashSet.contains(m0Var)) {
+                    hashSet.add(m0Var);
+                    arrayList.add(m0Var);
                     i12++;
                     if (i12 >= 8) {
                         return;
@@ -1221,7 +1221,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
             }
             List<TLRPC.TL_availableReaction> enabledReactionsList = MediaDataController.getInstance(this.J).getEnabledReactionsList();
             while (i10 < enabledReactionsList.size()) {
-                zg.o0 c10 = zg.o0.c(enabledReactionsList.get(i10));
+                zg.m0 c10 = zg.m0.c(enabledReactionsList.get(i10));
                 if (!hashSet.contains(c10)) {
                     hashSet.add(c10);
                     arrayList.add(c10);
@@ -1238,7 +1238,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
             if (i11 != 3) {
                 List<TLRPC.TL_availableReaction> enabledReactionsList2 = MediaDataController.getInstance(this.J).getEnabledReactionsList();
                 while (i10 < enabledReactionsList2.size()) {
-                    arrayList.add(zg.o0.c(enabledReactionsList2.get(i10)));
+                    arrayList.add(zg.m0.c(enabledReactionsList2.get(i10)));
                     i10++;
                 }
                 return;
@@ -1246,7 +1246,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
             ArrayList<TLRPC.Reaction> savedReactions = MediaDataController.getInstance(this.J).getSavedReactions();
             int i13 = 0;
             while (i10 < savedReactions.size()) {
-                zg.o0 d = zg.o0.d(savedReactions.get(i10));
+                zg.m0 d = zg.m0.d(savedReactions.get(i10));
                 if (!hashSet.contains(d)) {
                     hashSet.add(d);
                     arrayList.add(d);
@@ -1264,7 +1264,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
             TLRPC.messages_AvailableEffects availableEffects = MessagesController.getInstance(this.J).getAvailableEffects();
             if (availableEffects != null) {
                 while (i10 < availableEffects.effects.size()) {
-                    zg.o0 e7 = zg.o0.e(availableEffects.effects.get(i10));
+                    zg.m0 e7 = zg.m0.e(availableEffects.effects.get(i10));
                     if (!hashSet.contains(e7)) {
                         hashSet.add(e7);
                         arrayList.add(e7);
@@ -1280,7 +1280,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
             TLRPC.TL_messages_savedReactionsTags savedReactionTags = MessagesController.getInstance(this.J).getSavedReactionTags(0L);
             if (savedReactionTags != null) {
                 for (int i14 = 0; i14 < savedReactionTags.tags.size(); i14++) {
-                    zg.o0 d10 = zg.o0.d(savedReactionTags.tags.get(i14).reaction);
+                    zg.m0 d10 = zg.m0.d(savedReactionTags.tags.get(i14).reaction);
                     if (!hashSet.contains(d10)) {
                         hashSet.add(d10);
                         arrayList.add(d10);
@@ -1288,7 +1288,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
                 }
             }
             for (int i15 = 0; i15 < savedReactions2.size(); i15++) {
-                zg.o0 d11 = zg.o0.d(savedReactions2.get(i15));
+                zg.m0 d11 = zg.m0.d(savedReactions2.get(i15));
                 if (!hashSet.contains(d11)) {
                     hashSet.add(d11);
                     arrayList.add(d11);
@@ -1296,7 +1296,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
             }
         } else {
             for (int i16 = 0; i16 < savedReactions2.size(); i16++) {
-                zg.o0 d12 = zg.o0.d(savedReactions2.get(i16));
+                zg.m0 d12 = zg.m0.d(savedReactions2.get(i16));
                 if (!hashSet.contains(d12) && (i11 == 3 || UserConfig.getInstance(this.J).isPremium() || d12.g == 0)) {
                     hashSet.add(d12);
                     arrayList.add(d12);
@@ -1306,7 +1306,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         if (i11 != 3 || UserConfig.getInstance(this.J).isPremium()) {
             ArrayList<TLRPC.Reaction> recentReactions = MediaDataController.getInstance(this.J).getRecentReactions();
             for (int i17 = 0; i17 < recentReactions.size(); i17++) {
-                zg.o0 d13 = zg.o0.d(recentReactions.get(i17));
+                zg.m0 d13 = zg.m0.d(recentReactions.get(i17));
                 if (!hashSet.contains(d13)) {
                     hashSet.add(d13);
                     arrayList.add(d13);
@@ -1314,7 +1314,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
             }
             List<TLRPC.TL_availableReaction> enabledReactionsList3 = MediaDataController.getInstance(this.J).getEnabledReactionsList();
             while (i10 < enabledReactionsList3.size()) {
-                zg.o0 c11 = zg.o0.c(enabledReactionsList3.get(i10));
+                zg.m0 c11 = zg.m0.c(enabledReactionsList3.get(i10));
                 if (!hashSet.contains(c11)) {
                     hashSet.add(c11);
                     arrayList.add(c11);
@@ -1349,10 +1349,10 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         invalidate();
     }
 
-    public final void l(View view, zg.o0 o0Var, boolean z10) {
+    public final void l(View view, zg.m0 m0Var, boolean z10) {
         rk0 rk0Var = this.g0;
         if (rk0Var != null) {
-            rk0Var.h(view, o0Var, z10, true);
+            rk0Var.i(view, m0Var, z10, true);
         }
         if (this.M0 == 5) {
             try {
@@ -1385,19 +1385,19 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         this.Z0 = cVar;
         this.a1 = eVar;
         ch.d c10 = cVar.c(this, null, true);
-        c10.x(eVar);
-        c10.z(AndroidUtilities.dp(24.0f));
-        c10.y(AndroidUtilities.dp(8.0f));
+        c10.w(eVar);
+        c10.y(AndroidUtilities.dp(24.0f));
+        c10.x(AndroidUtilities.dp(8.0f));
         this.W0 = c10;
         ch.d c11 = cVar.c(this, null, true);
-        c11.x(eVar);
-        c11.z(AndroidUtilities.dp(8.0f));
+        c11.w(eVar);
         c11.y(AndroidUtilities.dp(8.0f));
+        c11.x(AndroidUtilities.dp(8.0f));
         this.X0 = c11;
         ch.d c12 = cVar.c(this, null, true);
-        c12.x(eVar);
-        c12.z(AndroidUtilities.dp(4.0f));
-        c12.y(AndroidUtilities.dp(8.0f));
+        c12.w(eVar);
+        c12.y(AndroidUtilities.dp(4.0f));
+        c12.x(AndroidUtilities.dp(8.0f));
         this.Y0 = c12;
     }
 
@@ -1469,9 +1469,9 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
             this.E0 = false;
             if (chatFull != null && chatFull.paid_reactions_available) {
                 this.c0 = true;
-                zg.o0 o0Var = new zg.o0();
-                o0Var.a = true;
-                arrayList2.add(o0Var);
+                zg.m0 m0Var = new zg.m0();
+                m0Var.a = true;
+                arrayList2.add(m0Var);
             }
             ArrayList<TLRPC.ReactionCount> arrayList3 = this.H.messageOwner.reactions.results;
             int size2 = arrayList3.size();
@@ -1479,14 +1479,14 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
             while (i13 < size2) {
                 TLRPC.ReactionCount reactionCount2 = arrayList3.get(i13);
                 i13++;
-                arrayList2.add(zg.o0.d(reactionCount2.reaction));
+                arrayList2.add(zg.m0.d(reactionCount2.reaction));
             }
         } else if (chatFull != null) {
             if (chatFull.paid_reactions_available) {
                 this.c0 = true;
-                zg.o0 o0Var2 = new zg.o0();
-                o0Var2.a = true;
-                arrayList2.add(o0Var2);
+                zg.m0 m0Var2 = new zg.m0();
+                m0Var2.a = true;
+                arrayList2.add(m0Var2);
             }
             TLRPC.ChatReactions chatReactions = chatFull.available_reactions;
             if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
@@ -1511,11 +1511,11 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
                             TLRPC.TL_availableReaction next = it.next();
                             if (!(reaction2 instanceof TLRPC.TL_reactionEmoji) || !next.reaction.equals(((TLRPC.TL_reactionEmoji) reaction2).emoticon)) {
                                 if (reaction2 instanceof TLRPC.TL_reactionCustomEmoji) {
-                                    arrayList2.add(zg.o0.d(reaction2));
+                                    arrayList2.add(zg.m0.d(reaction2));
                                     break;
                                 }
                             } else {
-                                arrayList2.add(zg.o0.d(reaction2));
+                                arrayList2.add(zg.m0.d(reaction2));
                                 break;
                             }
                         }
@@ -1533,7 +1533,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
                 i15--;
                 arrayList2.remove(i15);
             } else {
-                hashSet.add((zg.o0) arrayList2.get(i15));
+                hashSet.add((zg.m0) arrayList2.get(i15));
             }
             i15++;
         }
@@ -1556,18 +1556,18 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
             }
             int i16 = 0;
             while (i16 < Math.min(arrayList2.size(), dp)) {
-                arrayList5.add((zg.o0) arrayList2.get(i16));
+                arrayList5.add((zg.m0) arrayList2.get(i16));
                 i16++;
             }
             if (i16 < arrayList2.size()) {
-                qk0.a(this.z0, (zg.o0) arrayList2.get(i16), -1);
+                qk0.a(this.z0, (zg.m0) arrayList2.get(i16), -1);
             }
         } else {
             arrayList5.addAll(arrayList2);
         }
         this.G0 = true;
         for (int i17 = 0; i17 < arrayList5.size(); i17++) {
-            if (((zg.o0) arrayList5.get(i17)).g != 0) {
+            if (((zg.m0) arrayList5.get(i17)).g != 0) {
                 this.G0 = false;
             }
         }
@@ -1586,8 +1586,8 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         arrayList7.addAll(arrayList9);
         arrayList9.clear();
         for (int i18 = 0; i18 < arrayList8.size(); i18++) {
-            zg.o0 o0Var3 = (zg.o0) arrayList8.get(i18);
-            arrayList9.add(new jk0(o0Var3.f == null ? 3 : 0, o0Var3));
+            zg.m0 m0Var3 = (zg.m0) arrayList8.get(i18);
+            arrayList9.add(new jk0(m0Var3.f == null ? 3 : 0, m0Var3));
         }
         if (!sk0Var.U.isEmpty() && !MessagesController.getInstance(sk0Var.J).premiumFeaturesBlocked()) {
             arrayList9.add(new jk0(1, null));
@@ -1605,7 +1605,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         }
         for (int i19 = 0; i19 < messageObject.messageOwner.reactions.results.size(); i19++) {
             if (messageObject.messageOwner.reactions.results.get(i19).chosen) {
-                this.d0.add(zg.o0.d(messageObject.messageOwner.reactions.results.get(i19).reaction));
+                this.d0.add(zg.m0.d(messageObject.messageOwner.reactions.results.get(i19).reaction));
             }
         }
     }
@@ -1745,36 +1745,36 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         while (i10 < size) {
             String str = arrayList.get(i10);
             i10++;
-            zg.o0 b10 = zg.o0.b(str);
+            zg.m0 b10 = zg.m0.b(str);
             hashSet.add(b10);
             this.e0.add(b10);
         }
         AndroidUtilities.forEachViews((RecyclerView) this.b, (Utilities.Callback<View>) new ek0(this, 0));
     }
 
-    public void setSelectedReaction(zg.o0 o0Var) {
+    public void setSelectedReaction(zg.m0 m0Var) {
         HashSet hashSet = this.d0;
         hashSet.clear();
-        if (o0Var != null) {
-            hashSet.add(o0Var);
+        if (m0Var != null) {
+            hashSet.add(m0Var);
         }
         this.a0.l();
     }
 
-    public void setSelectedReactionAnimated(zg.o0 o0Var) {
+    public void setSelectedReactionAnimated(zg.m0 m0Var) {
         HashSet hashSet = this.d0;
         hashSet.clear();
-        if (o0Var != null) {
-            hashSet.add(o0Var);
+        if (m0Var != null) {
+            hashSet.add(m0Var);
         }
         AndroidUtilities.forEachViews((RecyclerView) this.b, (Utilities.Callback<View>) new ek0(this, 0));
     }
 
-    public void setSelectedReactionInclusive(zg.o0 o0Var) {
+    public void setSelectedReactionInclusive(zg.m0 m0Var) {
         HashSet hashSet = this.d0;
         hashSet.clear();
-        if (o0Var != null) {
-            hashSet.add(o0Var);
+        if (m0Var != null) {
+            hashSet.add(m0Var);
         }
         AndroidUtilities.forEachViews((RecyclerView) this.b, (Utilities.Callback<View>) new ek0(this, 0));
     }
@@ -1788,7 +1788,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
             if (messageObject != null && (tL_messageReactions = messageObject.messageOwner.reactions) != null && tL_messageReactions.results != null) {
                 for (int i11 = 0; i11 < messageObject.messageOwner.reactions.results.size(); i11++) {
                     if (messageObject.messageOwner.reactions.results.get(i11).chosen) {
-                        hashSet.add(zg.o0.d(messageObject.messageOwner.reactions.results.get(i11).reaction));
+                        hashSet.add(zg.m0.d(messageObject.messageOwner.reactions.results.get(i11).reaction));
                     }
                 }
             }
@@ -1838,7 +1838,7 @@ public class sk0 extends FrameLayout implements NotificationCenter.NotificationC
         HashSet hashSet = this.d0;
         hashSet.clear();
         if (storyItem != null && (reaction = storyItem.sent_reaction) != null) {
-            hashSet.add(zg.o0.d(reaction));
+            hashSet.add(zg.m0.d(reaction));
         }
         this.a0.l();
     }

@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class lj extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -115,7 +115,7 @@ public final class lj extends org.telegram.ui.ActionBar.j {
                     return;
                 } else {
                     ynVar.getMessagesController().getTopicsController().toggleViewForumAsMessages(-ynVar.R5, false);
-                    yf1.I0(ynVar);
+                    wf1.I0(ynVar);
                     return;
                 }
             }
@@ -170,7 +170,7 @@ public final class lj extends org.telegram.ui.ActionBar.j {
                             }
                         }
                         i16 = ((org.telegram.ui.ActionBar.n2) ynVar).currentAccount;
-                        yh.t5.y(i16, false).i0(j11, j3, false, false);
+                        yh.u5.y(i16, false).i0(j11, j3, false, false);
                         return;
                     }
                     if (i10 == 71) {
@@ -185,7 +185,7 @@ public final class lj extends org.telegram.ui.ActionBar.j {
                         long j13 = j12;
                         long j14 = j3;
                         i14 = ((org.telegram.ui.ActionBar.n2) ynVar).currentAccount;
-                        yh.t5.y(i14, false).C(j13, j14, new kg(this, j13, j14, 1));
+                        yh.u5.y(i14, false).C(j13, j14, new kg(this, j13, j14, 1));
                         return;
                     }
                     if (i10 == 28) {
@@ -287,14 +287,14 @@ public final class lj extends org.telegram.ui.ActionBar.j {
                         return;
                     }
                     if (i10 == 21) {
-                        int i26 = v31.v;
+                        int i26 = t31.v;
                         int currentAccount = ynVar.getCurrentAccount();
                         Activity parentActivity = ynVar.getParentActivity();
                         long a2 = ynVar.a();
                         if (parentActivity == null) {
                             return;
                         }
-                        v31.I(currentAccount, parentActivity, a2, false, false, new ArrayList(), null, null, new byte[0], null, null);
+                        t31.I(currentAccount, parentActivity, a2, false, false, new ArrayList(), null, null, new byte[0], null, null);
                         return;
                     }
                     if (i10 == 22) {
@@ -491,7 +491,7 @@ public final class lj extends org.telegram.ui.ActionBar.j {
                         return;
                     }
                     if (i10 == 61) {
-                        yf1.I0(ynVar);
+                        wf1.I0(ynVar);
                         return;
                     }
                     if (i10 == 65) {
@@ -539,7 +539,7 @@ public final class lj extends org.telegram.ui.ActionBar.j {
                         i11 = ((org.telegram.ui.ActionBar.n2) ynVar).currentAccount;
                         TL_account.TL_businessChatLink tL_businessChatLink = ynVar.N3;
                         d6Var = ((org.telegram.ui.ActionBar.n2) ynVar).resourceProvider;
-                        hg.v.b0(parentActivity3, i11, tL_businessChatLink, d6Var);
+                        hg.w.b0(parentActivity3, i11, tL_businessChatLink, d6Var);
                         return;
                     }
                     if (i10 == 68) {
@@ -559,7 +559,7 @@ public final class lj extends org.telegram.ui.ActionBar.j {
                         return;
                     }
                     if (i10 == 73) {
-                        ue1 Z = ue1.Z(-ynVar.R5, 0L);
+                        se1 Z = se1.Z(-ynVar.R5, 0L);
                         Z.y = ynVar;
                         ynVar.presentFragment(Z);
                         return;

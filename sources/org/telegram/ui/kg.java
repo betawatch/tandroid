@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kg implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -62,12 +62,12 @@ public final /* synthetic */ class kg implements Utilities.Callback {
                 }
                 break;
             default:
-                yh.x2 x2Var = (yh.x2) obj2;
+                yh.y2 y2Var = (yh.y2) obj2;
                 ArrayList arrayList = (ArrayList) obj;
-                org.telegram.ui.Components.y5 y5Var = x2Var.E;
+                org.telegram.ui.Components.y5 y5Var = y2Var.E;
                 if (this.b == this.c) {
-                    x2Var.d0 = arrayList;
-                    y5Var.animate().alpha(x2Var.s ? 0.0f : x2Var.d0 != null ? 1.0f : 0.25f).setInterpolator(org.telegram.ui.Components.tr.h).setDuration(420L).start();
+                    y2Var.d0 = arrayList;
+                    y5Var.animate().alpha(y2Var.s ? 0.0f : y2Var.d0 != null ? 1.0f : 0.25f).setInterpolator(org.telegram.ui.Components.tr.h).setDuration(420L).start();
                     ArrayList arrayList2 = new ArrayList();
                     for (int i13 = 0; i13 < arrayList.size(); i13++) {
                         if ((arrayList.get(i13) instanceof TL_stars.starGiftAttributeModel) && !(((TL_stars.StarGiftAttribute) arrayList.get(i13)).rarity instanceof TL_stars.TL_starGiftAttributeRarity)) {

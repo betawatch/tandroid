@@ -79,11 +79,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.p21;
 import org.telegram.ui.Components.pc0;
-import org.telegram.ui.Components.tw0;
+import org.telegram.ui.Components.q21;
+import org.telegram.ui.Components.uw0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class ImageLoader {
     public static final String AUTOPLAY_FILTER = "g";
@@ -92,6 +92,7 @@ public class ImageLoader {
     public static final int CACHE_TYPE_ENCRYPTED = 2;
     public static final int CACHE_TYPE_NONE = 0;
     private static final boolean DEBUG_MODE = false;
+    private static Bitmap strippedPhotoFallbackBitmap;
     private ff.c cacheOutQueue;
     private DispatchQueue cacheThumbOutQueue;
     private boolean canForce8888;
@@ -133,7 +134,7 @@ public class ImageLoader {
     private LinkedList<HttpImageTask> httpTasks = new LinkedList<>();
     private LinkedList<ArtworkLoadTask> artworkTasks = new LinkedList<>();
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public class 5 implements FileLoader.FileLoaderDelegate {
         final /* synthetic */ int val$currentAccount;
 
@@ -317,7 +318,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public class 6 extends BroadcastReceiver {
         public 6() {
         }
@@ -341,7 +342,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static /* synthetic */ class 7 {
         static final /* synthetic */ int[] $SwitchMap$android$graphics$Bitmap$CompressFormat;
 
@@ -366,7 +367,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public class ArtworkLoadTask extends AsyncTask<Void, Void, String> {
         private CacheImage cacheImage;
         private boolean canRetry = true;
@@ -584,7 +585,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public class CacheImage {
         protected ArtworkLoadTask artworkTask;
         protected CacheOutTask cacheTask;
@@ -916,7 +917,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public class CacheOutTask implements Runnable {
         private CacheImage cacheImage;
         private boolean isCancelled;
@@ -1234,7 +1235,7 @@ public class ImageLoader {
             Code decompiled incorrectly, please refer to instructions dump.
         */
         public void run() {
-            p21 p21Var;
+            q21 q21Var;
             Bitmap bitmap;
             Object obj;
             byte[] bArr;
@@ -1355,12 +1356,12 @@ public class ImageLoader {
                     if (i28 == 5) {
                         try {
                             CacheImage cacheImage3 = this.cacheImage;
-                            p21Var = new p21(cacheImage3.finalFilePath, (DocumentObject.ThemeDocument) cacheImage3.imageLocation.document);
+                            q21Var = new q21(cacheImage3.finalFilePath, (DocumentObject.ThemeDocument) cacheImage3.imageLocation.document);
                         } catch (Throwable th3) {
                             FileLog.e(th3);
-                            p21Var = null;
+                            q21Var = null;
                         }
-                        onPostExecute(p21Var);
+                        onPostExecute(q21Var);
                         return;
                     }
                     if (i28 == 3 || i28 == 4) {
@@ -1526,7 +1527,7 @@ public class ImageLoader {
                             r22 = min;
                         }
                         if (str8 != null) {
-                            kj0Var2 = "🎰".equals(str8) ? new tw0(str8, i21, i20) : new ij0(str8, i21, i20);
+                            kj0Var2 = "🎰".equals(str8) ? new uw0(str8, i21, i20) : new ij0(str8, i21, i20);
                             i24 = i20;
                             i25 = i21;
                         } else {
@@ -2913,7 +2914,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public class HttpFileTask extends AsyncTask<Void, Void, Boolean> {
         private int currentAccount;
         private String ext;
@@ -3143,7 +3144,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public class HttpImageTask extends AsyncTask<Void, Void, Boolean> {
         private CacheImage cacheImage;
         private boolean canRetry = true;
@@ -3521,7 +3522,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class MessageThumb {
         BitmapDrawable drawable;
         String key;
@@ -3532,7 +3533,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class PhotoSizeFromPhoto extends TLRPC.PhotoSize {
         public final TLRPC.InputPhoto inputPhoto;
         public final TLRPC.Photo photo;
@@ -3547,7 +3548,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class ThumbGenerateInfo {
         private boolean big;
         private String filter;
@@ -3561,7 +3562,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public class ThumbGenerateTask implements Runnable {
         private ThumbGenerateInfo info;
         private int mediaType;
@@ -3582,7 +3583,7 @@ public class ImageLoader {
         public /* synthetic */ void lambda$run$1(String str, ArrayList arrayList, BitmapDrawable bitmapDrawable, ArrayList arrayList2) {
             removeTask();
             if (this.info.filter != null) {
-                StringBuilder j3 = t8.b.j(str, "@");
+                StringBuilder j3 = sa.e.j(str, "@");
                 j3.append(this.info.filter);
                 str = j3.toString();
             }
@@ -4034,7 +4035,7 @@ public class ImageLoader {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(tL_fileLocationToBeDeprecated.volume_id);
             sb2.append("_");
-            File file = new File(z10 ? FileLoader.getDirectory(4) : tL_fileLocationToBeDeprecated.volume_id != -2147483648L ? FileLoader.getDirectory(0) : FileLoader.getDirectory(4), a4.a.n(tL_fileLocationToBeDeprecated.local_id, ".jpg", sb2));
+            File file = new File(z10 ? FileLoader.getDirectory(4) : tL_fileLocationToBeDeprecated.volume_id != -2147483648L ? FileLoader.getDirectory(0) : FileLoader.getDirectory(4), a4.a.o(tL_fileLocationToBeDeprecated.local_id, ".jpg", sb2));
             new File(str).renameTo(file);
             tL_photoSize_layer127.size = (int) file.length();
             return tL_photoSize_layer127;
@@ -4288,45 +4289,95 @@ public class ImageLoader {
         return file;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0080 A[Catch: Exception -> 0x00fa, TryCatch #0 {Exception -> 0x00fa, blocks: (B:5:0x0008, B:7:0x001d, B:11:0x0024, B:12:0x002b, B:14:0x005f, B:17:0x006a, B:21:0x0073, B:22:0x0078, B:24:0x0080, B:28:0x0087, B:29:0x00e8, B:31:0x00ee, B:33:0x00f6, B:35:0x0076), top: B:4:0x0008 }] */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0085  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public static Bitmap getStrippedPhotoBitmap(byte[] bArr, String str) {
-        int length = (bArr.length - 3) + Bitmaps.header.length + Bitmaps.footer.length;
-        byte[] bArr2 = bytesLocal.get();
-        if (bArr2 == null || bArr2.length < length) {
-            bArr2 = null;
+        Bitmap.Config config;
+        Bitmap decodeByteArray;
+        if (bArr == null || bArr.length < 3) {
+            return getStrippedPhotoFallbackBitmap();
         }
-        if (bArr2 == null) {
-            bArr2 = new byte[length];
-            bytesLocal.set(bArr2);
+        try {
+            int length = (bArr.length - 3) + Bitmaps.header.length + Bitmaps.footer.length;
+            byte[] bArr2 = bytesLocal.get();
+            if (bArr2 == null || bArr2.length < length) {
+                bArr2 = null;
+            }
+            if (bArr2 == null) {
+                bArr2 = new byte[length];
+                bytesLocal.set(bArr2);
+            }
+            byte[] bArr3 = Bitmaps.header;
+            System.arraycopy(bArr3, 0, bArr2, 0, bArr3.length);
+            System.arraycopy(bArr, 3, bArr2, Bitmaps.header.length, bArr.length - 3);
+            byte[] bArr4 = Bitmaps.footer;
+            System.arraycopy(bArr4, 0, bArr2, (Bitmaps.header.length + bArr.length) - 3, bArr4.length);
+            boolean z10 = true;
+            bArr2[164] = bArr[1];
+            bArr2[166] = bArr[2];
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            if (TextUtils.isEmpty(str) || !str.contains("r")) {
+                z10 = false;
+            }
+            if (!SharedConfig.deviceIsHigh() && !z10) {
+                config = Bitmap.Config.RGB_565;
+                options.inPreferredConfig = config;
+                decodeByteArray = BitmapFactory.decodeByteArray(bArr2, 0, length, options);
+                if (decodeByteArray != null) {
+                    return getStrippedPhotoFallbackBitmap();
+                }
+                if (z10) {
+                    Bitmap createBitmap = Bitmap.createBitmap(decodeByteArray.getWidth(), decodeByteArray.getHeight(), decodeByteArray.getConfig());
+                    Canvas canvas = new Canvas(createBitmap);
+                    canvas.save();
+                    canvas.scale(1.2f, 1.2f, decodeByteArray.getWidth() / 2.0f, decodeByteArray.getHeight() / 2.0f);
+                    canvas.drawBitmap(decodeByteArray, 0.0f, 0.0f, (Paint) null);
+                    canvas.restore();
+                    Path path = new Path();
+                    path.addCircle(decodeByteArray.getWidth() / 2.0f, decodeByteArray.getHeight() / 2.0f, Math.min(decodeByteArray.getWidth(), decodeByteArray.getHeight()) / 2.0f, Path.Direction.CW);
+                    canvas.clipPath(path);
+                    canvas.drawBitmap(decodeByteArray, 0.0f, 0.0f, (Paint) null);
+                    decodeByteArray.recycle();
+                    decodeByteArray = createBitmap;
+                }
+                if (!TextUtils.isEmpty(str) && str.contains("b")) {
+                    Utilities.blurBitmap(decodeByteArray, 3);
+                }
+                return decodeByteArray;
+            }
+            config = Bitmap.Config.ARGB_8888;
+            options.inPreferredConfig = config;
+            decodeByteArray = BitmapFactory.decodeByteArray(bArr2, 0, length, options);
+            if (decodeByteArray != null) {
+            }
+        } catch (Exception e7) {
+            FileLog.e(e7);
+            return getStrippedPhotoFallbackBitmap();
         }
-        byte[] bArr3 = Bitmaps.header;
-        System.arraycopy(bArr3, 0, bArr2, 0, bArr3.length);
-        System.arraycopy(bArr, 3, bArr2, Bitmaps.header.length, bArr.length - 3);
-        byte[] bArr4 = Bitmaps.footer;
-        System.arraycopy(bArr4, 0, bArr2, (Bitmaps.header.length + bArr.length) - 3, bArr4.length);
-        bArr2[164] = bArr[1];
-        bArr2[166] = bArr[2];
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        boolean z10 = !TextUtils.isEmpty(str) && str.contains("r");
-        options.inPreferredConfig = (SharedConfig.deviceIsHigh() || z10) ? Bitmap.Config.ARGB_8888 : Bitmap.Config.RGB_565;
-        Bitmap decodeByteArray = BitmapFactory.decodeByteArray(bArr2, 0, length, options);
-        if (z10) {
-            Bitmap createBitmap = Bitmap.createBitmap(decodeByteArray.getWidth(), decodeByteArray.getHeight(), decodeByteArray.getConfig());
-            Canvas canvas = new Canvas(createBitmap);
-            canvas.save();
-            canvas.scale(1.2f, 1.2f, decodeByteArray.getWidth() / 2.0f, decodeByteArray.getHeight() / 2.0f);
-            canvas.drawBitmap(decodeByteArray, 0.0f, 0.0f, (Paint) null);
-            canvas.restore();
-            Path path = new Path();
-            path.addCircle(decodeByteArray.getWidth() / 2.0f, decodeByteArray.getHeight() / 2.0f, Math.min(decodeByteArray.getWidth(), decodeByteArray.getHeight()) / 2.0f, Path.Direction.CW);
-            canvas.clipPath(path);
-            canvas.drawBitmap(decodeByteArray, 0.0f, 0.0f, (Paint) null);
-            decodeByteArray.recycle();
-            decodeByteArray = createBitmap;
+    }
+
+    private static synchronized Bitmap getStrippedPhotoFallbackBitmap() {
+        Bitmap bitmap;
+        synchronized (ImageLoader.class) {
+            try {
+                Bitmap bitmap2 = strippedPhotoFallbackBitmap;
+                if (bitmap2 != null) {
+                    if (bitmap2.isRecycled()) {
+                    }
+                    bitmap = strippedPhotoFallbackBitmap;
+                }
+                Bitmap createBitmap = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+                strippedPhotoFallbackBitmap = createBitmap;
+                createBitmap.eraseColor(-16777216);
+                bitmap = strippedPhotoFallbackBitmap;
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        if (decodeByteArray != null && !TextUtils.isEmpty(str) && str.contains("b")) {
-            Utilities.blurBitmap(decodeByteArray, 3);
-        }
-        return decodeByteArray;
+        return bitmap;
     }
 
     public static boolean hasAutoplayFilter(String str) {
@@ -4632,7 +4683,7 @@ public class ImageLoader {
                         sb2.append(document2.dc_id);
                         sb2.append("_");
                         str7 = "_";
-                        file3 = new File(directory, a4.a.r(sb2, document2.id, ".jpg"));
+                        file3 = new File(directory, a4.a.s(sb2, document2.id, ".jpg"));
                         if (file3.exists()) {
                             z14 = true;
                             if (!TextUtils.isEmpty(str8)) {
@@ -4751,7 +4802,7 @@ public class ImageLoader {
                             } else {
                                 i23 = i15;
                                 if (i23 == 2) {
-                                    file5 = new File(FileLoader.getDirectory(4), t8.b.v(str9, ".enc"));
+                                    file5 = new File(FileLoader.getDirectory(4), sa.e.v(str9, ".enc"));
                                 }
                                 z18 = z23;
                             }
@@ -4802,7 +4853,7 @@ public class ImageLoader {
                                 sb3.append(document5.dc_id);
                                 sb3.append(str7);
                                 str15 = ".svg";
-                                file6 = new File(directory2, a4.a.r(sb3, document5.id, ".temp"));
+                                file6 = new File(directory2, a4.a.s(sb3, document5.id, ".temp"));
                             } else {
                                 str15 = ".svg";
                                 str14 = AUTOPLAY_FILTER_NONLOOP;
@@ -4866,7 +4917,7 @@ public class ImageLoader {
                                 str11 = str13;
                                 sb4.append(imageLocation.location.volume_id);
                                 sb4.append(str18);
-                                file = new File(directory3, a4.a.n(imageLocation.location.local_id, ".temp", sb4));
+                                file = new File(directory3, a4.a.o(imageLocation.location.local_id, ".temp", sb4));
                                 z14 = z23;
                                 j11 = 0;
                             }
@@ -4895,7 +4946,7 @@ public class ImageLoader {
                             cacheImage6.imageType = i22;
                         }
                         if (i20 == 2) {
-                            cacheImage6.encryptionKeyPath = new File(FileLoader.getInternalCacheDir(), t8.b.v(str9, ".enc.key"));
+                            cacheImage6.encryptionKeyPath = new File(FileLoader.getInternalCacheDir(), sa.e.v(str9, ".enc.key"));
                         }
                         boolean z25 = z14;
                         String str19 = str6;
@@ -4928,7 +4979,7 @@ public class ImageLoader {
                         }
                         String str20 = imageLocation.path;
                         if (str20 != null) {
-                            cacheImage6.tempFilePath = new File(FileLoader.getDirectory(4), t8.b.v(Utilities.MD5(str20), "_temp.jpg"));
+                            cacheImage6.tempFilePath = new File(FileLoader.getDirectory(4), sa.e.v(Utilities.MD5(str20), "_temp.jpg"));
                             cacheImage6.finalFilePath = file;
                             if (imageLocation.path.startsWith(str19)) {
                                 ArtworkLoadTask artworkLoadTask = new ArtworkLoadTask(cacheImage6);
@@ -5119,7 +5170,7 @@ public class ImageLoader {
         }
         cacheImage.url = str2;
         this.imageLoadingByUrl.put(str2, cacheImage);
-        cacheImage.tempFilePath = new File(FileLoader.getDirectory(4), t8.b.v(Utilities.MD5(forPath.path), "_temp.jpg"));
+        cacheImage.tempFilePath = new File(FileLoader.getDirectory(4), sa.e.v(Utilities.MD5(forPath.path), "_temp.jpg"));
         cacheImage.finalFilePath = file;
         ArtworkLoadTask artworkLoadTask = new ArtworkLoadTask(cacheImage);
         cacheImage.artworkTask = artworkLoadTask;
@@ -5541,10 +5592,10 @@ public class ImageLoader {
             if (filterKeys != null) {
                 for (int i11 = 0; i11 < filterKeys.size(); i11++) {
                     String str3 = filterKeys.get(i11);
-                    String C = a4.a.C(str, "@", str3);
-                    String C2 = a4.a.C(str2, "@", str3);
-                    performReplace(C, C2);
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didReplacedPhotoInMemCache, C, C2, imageLocation);
+                    String D = a4.a.D(str, "@", str3);
+                    String D2 = a4.a.D(str2, "@", str3);
+                    performReplace(D, D2);
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didReplacedPhotoInMemCache, D, D2, imageLocation);
                 }
             } else {
                 performReplace(str, str2);
@@ -5733,7 +5784,7 @@ public class ImageLoader {
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(tL_fileLocationToBeDeprecated.volume_id);
                 sb2.append("_");
-                FileOutputStream fileOutputStream = new FileOutputStream(new File(!z13 ? FileLoader.getDirectory(4) : tL_fileLocationToBeDeprecated.volume_id != -2147483648L ? FileLoader.getDirectory(0) : FileLoader.getDirectory(4), a4.a.n(tL_fileLocationToBeDeprecated.local_id, str, sb2)));
+                FileOutputStream fileOutputStream = new FileOutputStream(new File(!z13 ? FileLoader.getDirectory(4) : tL_fileLocationToBeDeprecated.volume_id != -2147483648L ? FileLoader.getDirectory(0) : FileLoader.getDirectory(4), a4.a.o(tL_fileLocationToBeDeprecated.local_id, str, sb2)));
                 createScaledBitmap.compress(compressFormat, i12, fileOutputStream);
                 if (!z11) {
                     photoSize.size = (int) fileOutputStream.getChannel().size();
@@ -5781,7 +5832,7 @@ public class ImageLoader {
         StringBuilder sb22 = new StringBuilder();
         sb22.append(tL_fileLocationToBeDeprecated.volume_id);
         sb22.append("_");
-        FileOutputStream fileOutputStream2 = new FileOutputStream(new File(!z13 ? FileLoader.getDirectory(4) : tL_fileLocationToBeDeprecated.volume_id != -2147483648L ? FileLoader.getDirectory(0) : FileLoader.getDirectory(4), a4.a.n(tL_fileLocationToBeDeprecated.local_id, str, sb22)));
+        FileOutputStream fileOutputStream2 = new FileOutputStream(new File(!z13 ? FileLoader.getDirectory(4) : tL_fileLocationToBeDeprecated.volume_id != -2147483648L ? FileLoader.getDirectory(0) : FileLoader.getDirectory(4), a4.a.o(tL_fileLocationToBeDeprecated.local_id, str, sb22)));
         createScaledBitmap.compress(compressFormat, i12, fileOutputStream2);
         if (!z11) {
         }
@@ -6254,7 +6305,7 @@ public class ImageLoader {
             str3 = Utilities.MD5(((WebFile) tLObject).url);
         }
         if (str2 != null) {
-            str3 = a4.a.C(str3, "@", str2);
+            str3 = a4.a.D(str3, "@", str2);
         }
         return getFromMemCache(str3);
     }
@@ -6687,7 +6738,7 @@ public class ImageLoader {
                                                 z16 = z12;
                                                 String key2 = imageLocation6.getKey(parentObject, imageLocation3 != null ? imageLocation3 : imageLocation2, true);
                                                 if (imageLocation6.path != null) {
-                                                    StringBuilder j3 = t8.b.j(key2, ".");
+                                                    StringBuilder j3 = sa.e.j(key2, ".");
                                                     j3.append(getHttpUrlExtension(imageLocation6.path, "jpg"));
                                                     key2 = j3.toString();
                                                     imageLocation7 = imageLocation2;
@@ -6695,14 +6746,14 @@ public class ImageLoader {
                                                     TLRPC.PhotoSize photoSize = imageLocation6.photoSize;
                                                     imageLocation7 = imageLocation2;
                                                     if ((photoSize instanceof TLRPC.TL_photoStrippedSize) || (photoSize instanceof TLRPC.TL_photoPathSize)) {
-                                                        key2 = a4.a.C(key2, ".", str11);
+                                                        key2 = a4.a.D(key2, ".", str11);
                                                     } else {
                                                         if (imageLocation6.location != null) {
-                                                            String C = a4.a.C(key2, ".", str11);
+                                                            String D = a4.a.D(key2, ".", str11);
                                                             if (imageReceiver.getExt() == null) {
                                                                 TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = imageLocation6.location;
                                                                 if (tL_fileLocationToBeDeprecated.key == null) {
-                                                                    str12 = C;
+                                                                    str12 = D;
                                                                     if (tL_fileLocationToBeDeprecated.volume_id != -2147483648L || tL_fileLocationToBeDeprecated.local_id >= 0) {
                                                                         key2 = str12;
                                                                     }
@@ -6710,18 +6761,18 @@ public class ImageLoader {
                                                                     z192 = true;
                                                                 }
                                                             }
-                                                            str12 = C;
+                                                            str12 = D;
                                                             key2 = str12;
                                                             z192 = true;
                                                         } else {
                                                             WebFile webFile = imageLocation6.webFile;
                                                             if (webFile != null) {
                                                                 String mimeTypePart = FileLoader.getMimeTypePart(webFile.mime_type);
-                                                                StringBuilder j10 = t8.b.j(key2, ".");
+                                                                StringBuilder j10 = sa.e.j(key2, ".");
                                                                 j10.append(getHttpUrlExtension(imageLocation6.webFile.url, mimeTypePart));
                                                                 key2 = j10.toString();
                                                             } else if (imageLocation6.secureDocument != null) {
-                                                                key2 = a4.a.C(key2, ".", str11);
+                                                                key2 = a4.a.D(key2, ".", str11);
                                                             } else if (imageLocation6.document != null) {
                                                                 if (i12 == 0 && z182) {
                                                                     key = "q_".concat(key);
@@ -6737,13 +6788,13 @@ public class ImageLoader {
                                                                 } else if ("video/x-matroska".equals(imageLocation6.document.mime_type)) {
                                                                     str20 = ".mkv";
                                                                 }
-                                                                key2 = t8.b.v(key2, str20);
+                                                                key2 = sa.e.v(key2, str20);
                                                                 if (MessageObject.isVideoDocument(imageLocation6.document) || MessageObject.isGifDocument(imageLocation6.document) || MessageObject.isRoundVideoDocument(imageLocation6.document) || MessageObject.canPreviewDocument(imageLocation6.document)) {
                                                                     z192 = false;
                                                                 }
                                                                 z192 = true;
                                                             } else if (parentObject instanceof TLRPC.StickerSet) {
-                                                                key2 = a4.a.C(key2, ".", str11);
+                                                                key2 = a4.a.D(key2, ".", str11);
                                                             }
                                                         }
                                                         i10 = i12 + 1;
@@ -6803,15 +6854,15 @@ public class ImageLoader {
                                         String key3 = thumbLocation.getKey(parentObject, strippedLocation, false);
                                         String key4 = thumbLocation.getKey(parentObject, strippedLocation, true);
                                         if (thumbLocation.path != null) {
-                                            StringBuilder j11 = t8.b.j(key4, ".");
+                                            StringBuilder j11 = sa.e.j(key4, ".");
                                             j11.append(getHttpUrlExtension(thumbLocation.path, "jpg"));
                                             key4 = j11.toString();
                                         } else {
                                             TLRPC.PhotoSize photoSize2 = thumbLocation.photoSize;
                                             if ((photoSize2 instanceof TLRPC.TL_photoStrippedSize) || (photoSize2 instanceof TLRPC.TL_photoPathSize)) {
-                                                key4 = a4.a.C(key4, ".", ext);
+                                                key4 = a4.a.D(key4, ".", ext);
                                             } else if (thumbLocation.location != null) {
-                                                key4 = a4.a.C(key4, ".", ext);
+                                                key4 = a4.a.D(key4, ".", ext);
                                             }
                                         }
                                         str132 = key4;
@@ -6820,13 +6871,13 @@ public class ImageLoader {
                                         str5 = null;
                                     }
                                     if (str3 != null && mediaFilter2 != null) {
-                                        str3 = a4.a.C(str3, "@", mediaFilter2);
+                                        str3 = a4.a.D(str3, "@", mediaFilter2);
                                     }
                                     if (str4 != null && imageFilter2 != null) {
-                                        str4 = a4.a.C(str4, "@", imageFilter2);
+                                        str4 = a4.a.D(str4, "@", imageFilter2);
                                     }
                                     if (str5 != null && thumbFilter2 != null) {
-                                        str5 = a4.a.C(str5, "@", thumbFilter2);
+                                        str5 = a4.a.D(str5, "@", thumbFilter2);
                                     }
                                     if (imageReceiver.getUniqKeyPrefix() != null && str4 != null) {
                                         str4 = imageReceiver.getUniqKeyPrefix() + str4;
@@ -6918,13 +6969,13 @@ public class ImageLoader {
                                 if (thumbLocation != null) {
                                 }
                                 if (str3 != null) {
-                                    str3 = a4.a.C(str3, "@", mediaFilter2);
+                                    str3 = a4.a.D(str3, "@", mediaFilter2);
                                 }
                                 if (str4 != null) {
-                                    str4 = a4.a.C(str4, "@", imageFilter2);
+                                    str4 = a4.a.D(str4, "@", imageFilter2);
                                 }
                                 if (str5 != null) {
-                                    str5 = a4.a.C(str5, "@", thumbFilter2);
+                                    str5 = a4.a.D(str5, "@", thumbFilter2);
                                 }
                                 if (imageReceiver.getUniqKeyPrefix() != null) {
                                     str4 = imageReceiver.getUniqKeyPrefix() + str4;

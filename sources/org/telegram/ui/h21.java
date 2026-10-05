@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class h21 extends org.telegram.ui.ActionBar.n2 {
     public float[] E;
@@ -210,6 +210,7 @@ public final class h21 extends org.telegram.ui.ActionBar.n2 {
         SharedConfig.ProxyInfo proxyInfo = this.J;
         org.telegram.ui.Cells.b7[] b7VarArr = this.e;
         org.telegram.ui.Cells.k6[] k6VarArr = this.s;
+        setHasOwnBackground(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.ProxyDetails));
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(false);
@@ -223,12 +224,12 @@ public final class h21 extends org.telegram.ui.ActionBar.n2 {
         g10.setContentDescription(LocaleController.getString(R.string.Done));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false));
         this.c = new d21(context);
         e21 e21Var = new e21(context, this.c, this.resourceProvider, true);
         this.b = e21Var;
-        this.actionBar.setAdaptiveBackground(e21Var);
+        e21Var.setDrawBackground(true);
         this.b.setFillViewport(true);
+        this.b.setOverScrollMode(0);
         AndroidUtilities.setScrollViewEdgeEffectColor(this.b, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.s8, false));
         int i10 = -1;
         frameLayout.addView(this.b, w7.z5.c(-1.0f, -1));
@@ -505,12 +506,16 @@ public final class h21 extends org.telegram.ui.ActionBar.n2 {
     }
 
     @Override // org.telegram.ui.ActionBar.n2
+    public final org.telegram.ui.Components.so0 getScrollViewForSimpleGlass() {
+        return this.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
         org.telegram.ui.Cells.e9[] e9VarArr = this.f;
         org.telegram.ui.Cells.k6[] k6VarArr = this.s;
         qy0 qy0Var = new qy0(2, this);
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.i6.a7));
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.i6.s8;
         arrayList.add(new org.telegram.ui.ActionBar.k6(kVar, 1, null, null, null, null, i10));
@@ -583,6 +588,11 @@ public final class h21 extends org.telegram.ui.ActionBar.n2 {
             arrayList.add(new org.telegram.ui.ActionBar.k6(e9VarArr[i18], 2, new Class[]{org.telegram.ui.Cells.e9.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.i6.J6));
         }
         return arrayList;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
     }
 
     @Override // org.telegram.ui.ActionBar.n2

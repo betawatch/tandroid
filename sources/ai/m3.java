@@ -38,11 +38,11 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.cz0;
-import org.telegram.ui.Components.g91;
+import org.telegram.ui.Components.dz0;
+import org.telegram.ui.Components.h91;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.qy0;
-import org.telegram.ui.Components.v31;
+import org.telegram.ui.Components.ry0;
+import org.telegram.ui.Components.w31;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.LaunchActivity;
@@ -60,7 +60,7 @@ import org.telegram.ui.to;
 import org.telegram.ui.uy;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m3 implements Runnable {
     public final /* synthetic */ int a;
@@ -209,7 +209,7 @@ public final /* synthetic */ class m3 implements Runnable {
                         new yc(a5Var, d6Var2).Q(R.raw.contact_check, 36, LocaleController.formatPluralString("StorySharedToAllContactsExcluded", arrayList3.size(), new Object[0])).j();
                     }
                 } else {
-                    org.telegram.messenger.f0.p(R.string.UnknownError, new yc(a5Var, d6Var2), R.raw.error, 36);
+                    org.telegram.messenger.q.p(R.string.UnknownError, new yc(a5Var, d6Var2), R.raw.error, 36);
                 }
                 z10 = false;
                 e6Var2.f1(z10);
@@ -286,7 +286,7 @@ public final /* synthetic */ class m3 implements Runnable {
                 arrayList5.add(user);
                 k7 k7Var = s6Var.b;
                 ContactsController.getInstance(k7Var.v).deleteContact(arrayList5, false);
-                hg.k0.p(R.string.DeletedFromYourContacts, new Object[]{str2}, new yc(k7Var, k7Var.s), R.raw.ic_ban, 36);
+                hg.c.q(R.string.DeletedFromYourContacts, new Object[]{str2}, new yc(k7Var, k7Var.s), R.raw.ic_ban, 36);
                 o6Var.a(k7Var.d(storyView) ? 1.0f : 0.5f, true);
                 break;
             case 4:
@@ -427,9 +427,9 @@ public final /* synthetic */ class m3 implements Runnable {
                 aVar.e.b = false;
                 tL_documentAttributeAudio.title = str4;
                 tL_documentAttributeAudio.performer = str5;
-                g91 g91Var = v7Var.h;
-                for (int i24 = 0; i24 < g91Var.getViewPages().length; i24++) {
-                    zl0 c10 = org.telegram.ui.v7.c(g91Var.getViewPages()[i24]);
+                h91 h91Var = v7Var.h;
+                for (int i24 = 0; i24 < h91Var.getViewPages().length; i24++) {
+                    zl0 c10 = org.telegram.ui.v7.c(h91Var.getViewPages()[i24]);
                     if (c10 != null && ((org.telegram.ui.h7) c10.getAdapter()).d == 3) {
                         org.telegram.ui.h7 h7Var = (org.telegram.ui.h7) c10.getAdapter();
                         int i25 = 0;
@@ -517,7 +517,7 @@ public final /* synthetic */ class m3 implements Runnable {
                         org.telegram.ui.wb.A0(wbVar, tL_messages_exportedChatInvite, wbVar.z0);
                         break;
                     } else {
-                        org.telegram.messenger.f0.p(R.string.LinkHashExpired, yc.a0(wbVar), R.raw.linkbroken, 36);
+                        org.telegram.messenger.q.p(R.string.LinkHashExpired, yc.a0(wbVar), R.raw.linkbroken, 36);
                         break;
                     }
                 }
@@ -536,7 +536,7 @@ public final /* synthetic */ class m3 implements Runnable {
                             break;
                         } else {
                             cdVar.P.setLoading(false);
-                            hg.k0.p(R.string.UnknownErrorCode, new Object[]{tL_error5.text}, yc.a0(cdVar), R.raw.error, 36);
+                            hg.c.q(R.string.UnknownErrorCode, new Object[]{tL_error5.text}, yc.a0(cdVar), R.raw.error, 36);
                             break;
                         }
                     } else {
@@ -549,7 +549,7 @@ public final /* synthetic */ class m3 implements Runnable {
                                 if (n2Var instanceof to) {
                                     ((to) n2Var).o0();
                                 }
-                                org.telegram.messenger.f0.p(cdVar.d ? R.string.GroupAppearanceUpdated : R.string.ChannelAppearanceUpdated, yc.a0(cdVar.l0), R.raw.contact_check, 36);
+                                org.telegram.messenger.q.p(cdVar.d ? R.string.GroupAppearanceUpdated : R.string.ChannelAppearanceUpdated, yc.a0(cdVar.l0), R.raw.contact_check, 36);
                                 cdVar.l0 = null;
                             }
                             cdVar.P.setLoading(false);
@@ -642,33 +642,33 @@ public final /* synthetic */ class m3 implements Runnable {
                 TLRPC.TL_error tL_error7 = (TLRPC.TL_error) this.e;
                 TLObject tLObject6 = (TLObject) this.f;
                 TLRPC.TL_channels_checkUsername tL_channels_checkUsername2 = (TLRPC.TL_channels_checkUsername) this.b;
-                hpVar.h0 = 0;
-                String str11 = hpVar.i0;
+                hpVar.i0 = 0;
+                String str11 = hpVar.j0;
                 if (str11 != null && str11.equals(str10)) {
                     if (tL_error7 != null || !(tLObject6 instanceof TLRPC.TL_boolTrue)) {
                         if (tL_error7 != null && "USERNAME_INVALID".equals(tL_error7.text) && tL_channels_checkUsername2.username.length() == 4) {
-                            hpVar.f.setText(LocaleController.getString(R.string.UsernameInvalidShort));
-                            hpVar.f.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.p7, false));
+                            hpVar.h.setText(LocaleController.getString(R.string.UsernameInvalidShort));
+                            hpVar.h.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.p7, false));
                         } else if (tL_error7 != null && "USERNAME_PURCHASE_AVAILABLE".equals(tL_error7.text)) {
                             if (tL_channels_checkUsername2.username.length() == 4) {
-                                hpVar.f.setText(LocaleController.getString(R.string.UsernameInvalidShortPurchase));
+                                hpVar.h.setText(LocaleController.getString(R.string.UsernameInvalidShortPurchase));
                             } else {
-                                hpVar.f.setText(LocaleController.getString(R.string.UsernameInUsePurchase));
+                                hpVar.h.setText(LocaleController.getString(R.string.UsernameInUsePurchase));
                             }
-                            hpVar.f.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.F6, false));
+                            hpVar.h.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.F6, false));
                         } else if (tL_error7 == null || !"CHANNELS_ADMIN_PUBLIC_TOO_MUCH".equals(tL_error7.text)) {
-                            hpVar.f.setText(LocaleController.getString(R.string.LinkInUse));
-                            hpVar.f.setTextColorByKey(org.telegram.ui.ActionBar.i6.p7);
+                            hpVar.h.setText(LocaleController.getString(R.string.LinkInUse));
+                            hpVar.h.setTextColorByKey(org.telegram.ui.ActionBar.i6.p7);
                         } else {
-                            hpVar.c0 = false;
+                            hpVar.d0 = false;
                             hpVar.Y();
                         }
-                        hpVar.k0 = false;
+                        hpVar.l0 = false;
                         break;
                     } else {
-                        hpVar.f.setText(LocaleController.formatString("LinkAvailable", R.string.LinkAvailable, str10));
-                        hpVar.f.setTextColorByKey(org.telegram.ui.ActionBar.i6.w6);
-                        hpVar.k0 = true;
+                        hpVar.h.setText(LocaleController.formatString("LinkAvailable", R.string.LinkAvailable, str10));
+                        hpVar.h.setTextColorByKey(org.telegram.ui.ActionBar.i6.w6);
+                        hpVar.l0 = true;
                         break;
                     }
                 }
@@ -720,29 +720,29 @@ public final /* synthetic */ class m3 implements Runnable {
                 windowManager.removeView(view4);
                 break;
             case 23:
-                qy0 qy0Var = (qy0) this.c;
+                ry0 ry0Var = (ry0) this.c;
                 String str12 = (String) this.d;
                 TLRPC.TL_error tL_error8 = (TLRPC.TL_error) this.e;
                 TLObject tLObject7 = (TLObject) this.f;
                 TextView textView = (TextView) this.b;
-                qy0Var.p0 = 0;
-                String str13 = qy0Var.o0;
+                ry0Var.p0 = 0;
+                String str13 = ry0Var.o0;
                 if (str13 != null && str13.equals(str12)) {
                     if (tL_error8 != null || !(tLObject7 instanceof TLRPC.TL_boolTrue)) {
                         textView.setText(LocaleController.getString(R.string.ImportStickersLinkTaken));
-                        textView.setTextColor(qy0Var.getThemedColor(org.telegram.ui.ActionBar.i6.p7));
-                        qy0Var.q0 = false;
+                        textView.setTextColor(ry0Var.getThemedColor(org.telegram.ui.ActionBar.i6.p7));
+                        ry0Var.q0 = false;
                         break;
                     } else {
                         textView.setText(LocaleController.getString(R.string.ImportStickersLinkAvailable));
-                        textView.setTextColor(qy0Var.getThemedColor(org.telegram.ui.ActionBar.i6.w6));
-                        qy0Var.q0 = true;
+                        textView.setTextColor(ry0Var.getThemedColor(org.telegram.ui.ActionBar.i6.w6));
+                        ry0Var.q0 = true;
                         break;
                     }
                 }
                 break;
             case 24:
-                cz0 cz0Var = (cz0) this.c;
+                dz0 dz0Var = (dz0) this.c;
                 TLObject tLObject8 = (TLObject) this.d;
                 TLRPC.UserFull userFull = (TLRPC.UserFull) this.e;
                 TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) this.f;
@@ -762,33 +762,33 @@ public final /* synthetic */ class m3 implements Runnable {
                                 userFull.flags2 |= 32;
                             }
                             userFull.birthday = tL_birthday;
-                            MessagesStorage.getInstance(cz0Var.a).updateUserInfo(userFull, false);
+                            MessagesStorage.getInstance(dz0Var.a).updateUserInfo(userFull, false);
                         }
                         if (tL_error9 != null && (str = tL_error9.text) != null && str.startsWith("FLOOD_WAIT_")) {
-                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cz0Var.b.getContext());
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(dz0Var.b.getContext());
                             alertDialog$Builder.a.R = LocaleController.getString(R.string.PrivacyBirthdayTooOftenTitle);
                             alertDialog$Builder.a.T = LocaleController.getString(R.string.PrivacyBirthdayTooOftenMessage);
-                            org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
+                            org.telegram.messenger.q.o(R.string.OK, alertDialog$Builder, null);
                             break;
                         } else {
-                            org.telegram.messenger.f0.p(R.string.UnknownError, yc.a0(U), R.raw.error, 36);
+                            org.telegram.messenger.q.p(R.string.UnknownError, yc.a0(U), R.raw.error, 36);
                             break;
                         }
                     }
                 }
                 break;
             case 25:
-                v31 v31Var = (v31) this.c;
+                w31 w31Var = (w31) this.c;
                 MessagesController messagesController = (MessagesController) this.d;
                 TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) this.e;
                 b80 b80Var = (b80) this.f;
                 b80 b80Var2 = (b80) this.b;
-                yn ynVar3 = v31Var.h;
-                if (messagesController.isDialogMuted(v31Var.c, tL_forumTopic.id)) {
+                yn ynVar3 = w31Var.h;
+                if (messagesController.isDialogMuted(w31Var.c, tL_forumTopic.id)) {
                     b80Var.u();
-                    NotificationsController.getInstance(v31Var.b).muteDialog(v31Var.c, tL_forumTopic.id, false);
+                    NotificationsController.getInstance(w31Var.b).muteDialog(w31Var.c, tL_forumTopic.id, false);
                     if (yc.a(ynVar3)) {
-                        yc.z(ynVar3, 4, 0, v31Var.d).j();
+                        yc.z(ynVar3, 4, 0, w31Var.d).j();
                         break;
                     }
                 } else {
@@ -821,7 +821,7 @@ public final /* synthetic */ class m3 implements Runnable {
                         }
                     }
                     if (tL_messages_myStickers.sets.size() == tL_messages_getMyStickers.limit) {
-                        tL_messages_getMyStickers.offset_id = ((TLRPC.StickerSetCovered) hg.k0.g(1, tL_messages_myStickers.sets)).set.id;
+                        tL_messages_getMyStickers.offset_id = ((TLRPC.StickerSetCovered) hg.c.g(1, tL_messages_myStickers.sets)).set.id;
                         ConnectionsManager.getInstance(rtVar.r).sendRequest(tL_messages_getMyStickers, new org.telegram.ui.ca(rtVar, arrayList19, tL_messages_getMyStickers, 7));
                         break;
                     }

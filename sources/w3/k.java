@@ -17,7 +17,6 @@ import e2.v;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import hg.k0;
 import j$.util.Objects;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -28,7 +27,7 @@ import java.util.Locale;
 import org.telegram.messenger.MediaController;
 import u2.l0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class k implements c3.o, b0 {
     public j[] A;
@@ -37,7 +36,7 @@ public final class k implements c3.o, b0 {
     public long D;
     public int E;
     public r3.a F;
-    public final z3.l a;
+    public final z3.k a;
     public final int b;
     public final v c;
     public final v d;
@@ -64,8 +63,8 @@ public final class k implements c3.o, b0 {
     public long y;
     public c3.q z;
 
-    public k(z3.l lVar, int i10) {
-        this.a = lVar;
+    public k(z3.k kVar, int i10) {
+        this.a = kVar;
         this.b = i10;
         g0 g0Var = i0.b;
         this.j = a1.e;
@@ -346,7 +345,7 @@ public final class k implements c3.o, b0 {
                             p0 p0Var = aVar == null ? null : new p0(aVar);
                             b2.r rVar = new b2.r();
                             rVar.k = p0Var;
-                            k0.r(rVar, Z1);
+                            hg.c.s(rVar, Z1);
                             this.z.e1();
                             this.z.X1(new t(-9223372036854775807L));
                         }
@@ -972,7 +971,7 @@ public final class k implements c3.o, b0 {
                         ArrayList arrayList6 = this.i;
                         n.m(i20, p0Var4, a2, p0Var7, arrayList6.isEmpty() ? null : new p0(arrayList6), p0Var2, p0Var6);
                         a2.p = r0.n(str);
-                        k0.r(a2, Z1);
+                        hg.c.s(a2, Z1);
                         if (i20 == 2 && i15 == -1) {
                             i15 = arrayList4.size();
                         }

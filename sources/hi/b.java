@@ -21,16 +21,16 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.j6;
 import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
 import s4.p0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class b extends cb {
-    public u61 X;
+    public w61 X;
     public boolean Y;
     public final FrameLayout Z;
     public final boolean a0;
@@ -66,7 +66,7 @@ public final class b extends cb {
         zl0 zl0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
         zl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
-        this.d.s1();
+        this.d.r1();
         this.d.setClipToPadding(false);
         this.d.setOnItemClickListener(new g(this, 12));
         d dVar = new d(context, this.resourcesProvider, true);
@@ -98,16 +98,16 @@ public final class b extends cb {
         this.Y = z10;
         int i10 = this.c0 + 1;
         zl0 zl0Var = this.d;
-        View V0 = zl0Var.V0(i10);
-        if (V0 instanceof j6) {
-            ((j6) V0).a(!z10);
+        View U0 = zl0Var.U0(i10);
+        if (U0 instanceof j6) {
+            ((j6) U0).a(!z10);
             z11 = false;
         } else {
             z11 = true;
         }
-        View V02 = zl0Var.V0(this.c0 + 2);
-        if (V02 instanceof j6) {
-            ((j6) V02).a(z10);
+        View U02 = zl0Var.U0(this.c0 + 2);
+        if (U02 instanceof j6) {
+            ((j6) U02).a(z10);
         } else {
             z11 = true;
         }
@@ -118,10 +118,10 @@ public final class b extends cb {
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(this.d, getContext(), this.currentAccount, 0, false, new a(this, 0), this.resourcesProvider);
-        this.X = u61Var;
-        u61Var.r = false;
-        return u61Var;
+        w61 w61Var = new w61(this.d, getContext(), this.currentAccount, 0, false, new a(this, 0), this.resourcesProvider);
+        this.X = w61Var;
+        w61Var.r = false;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

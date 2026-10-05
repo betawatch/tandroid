@@ -9,7 +9,7 @@ import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n9 implements Runnable {
     public final /* synthetic */ int a;
@@ -77,20 +77,20 @@ public final /* synthetic */ class n9 implements Runnable {
                 yn.d0((yn) this.d, this.b, this.c);
                 break;
             default:
-                yh.p8 p8Var = (yh.p8) this.d;
+                yh.r8 r8Var = (yh.r8) this.d;
                 long j11 = this.b;
-                p8Var.F = j11;
-                p8Var.E = j11;
+                r8Var.F = j11;
+                r8Var.E = j11;
                 if (this.c) {
-                    ai.m1 m1Var = p8Var.G;
+                    ai.m1 m1Var = r8Var.G;
                     m1Var.c = j11;
-                    p8Var.H.set(m1Var);
+                    r8Var.H.set(m1Var);
                 }
-                p8Var.r();
-                p8Var.I.a(true, true);
-                yh.o8 o8Var = p8Var.y;
-                if (o8Var != null) {
-                    o8Var.setMyPrivacy(p8Var.E);
+                r8Var.r();
+                r8Var.I.a(true, true);
+                yh.q8 q8Var = r8Var.y;
+                if (q8Var != null) {
+                    q8Var.setMyPrivacy(r8Var.E);
                     break;
                 }
                 break;

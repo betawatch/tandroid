@@ -4,7 +4,7 @@ import android.content.Context;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class t7 extends nd {
     public final /* synthetic */ int b;
@@ -36,9 +36,9 @@ public final class t7 extends nd {
                     f1Var.d(z10);
                     photoViewer.F0.setSelectorColor(z10 ? 259241196 : 268435455);
                 }
-                d81 d81Var = photoViewer.F2;
-                if (d81Var != null) {
-                    d81Var.O(b5.d.u() || photoViewer.r);
+                e81 e81Var = photoViewer.F2;
+                if (e81Var != null) {
+                    e81Var.O(b5.d.u() || photoViewer.r);
                 }
                 org.telegram.ui.xr xrVar2 = photoViewer.w0;
                 if (xrVar2 != null) {

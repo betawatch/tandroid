@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class jd0 extends vk0 implements DownloadController.FileDownloadProgressListener {
     public static final Paint H;
@@ -149,8 +149,8 @@ public final class jd0 extends vk0 implements DownloadController.FileDownloadPro
         canvas.save();
         canvas.translate(bounds.left, bounds.top);
         canvas.drawRect(0.0f, 0.0f, width, height, H);
-        int z10 = org.telegram.messenger.ok.z(240.0f, height, 2);
-        int z11 = org.telegram.messenger.ok.z(48.0f, width, 2);
+        int z10 = org.telegram.messenger.bi.z(240.0f, height, 2);
+        int z11 = org.telegram.messenger.bi.z(48.0f, width, 2);
         Drawable drawable = this.x;
         drawable.setBounds(z11, z10, AndroidUtilities.dp(48.0f) + z11, AndroidUtilities.dp(48.0f) + z10);
         drawable.draw(canvas);
@@ -166,12 +166,12 @@ public final class jd0 extends vk0 implements DownloadController.FileDownloadPro
             dp = AndroidUtilities.dp(28.0f);
             textPaint = M;
         }
-        canvas.drawText(upperCase, (width - ((int) Math.ceil(textPaint.measureText(upperCase)))) / 2, org.telegram.messenger.f0.C(235.0f, z10, dp), textPaint);
+        canvas.drawText(upperCase, (width - ((int) Math.ceil(textPaint.measureText(upperCase)))) / 2, org.telegram.messenger.q.C(235.0f, z10, dp), textPaint);
         if (this.h) {
             if (this.G != null) {
                 canvas.drawText(this.G, (width - ((int) Math.ceil(r4.measureText(r3)))) / 2, AndroidUtilities.dp(210.0f) + z10, N);
             }
-            int z12 = org.telegram.messenger.ok.z(240.0f, width, 2);
+            int z12 = org.telegram.messenger.bi.z(240.0f, width, 2);
             int dp2 = AndroidUtilities.dp(232.0f) + z10;
             Paint paint = I;
             paint.setColor(-10327179);

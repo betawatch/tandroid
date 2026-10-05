@@ -5,10 +5,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class y5 extends FrameLayout {
     public w5[] a;
@@ -46,7 +46,7 @@ public final class y5 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         View[] viewArr = this.a;
-        int A = AndroidUtilities.isTablet() ? ok.A(4.0f, this.c - 1, AndroidUtilities.dp(490.0f) - AndroidUtilities.dp(12.0f)) / this.c : ok.A(4.0f, this.c - 1, AndroidUtilities.displaySize.x - AndroidUtilities.dp(12.0f)) / this.c;
+        int A = AndroidUtilities.isTablet() ? bi.A(4.0f, this.c - 1, AndroidUtilities.dp(490.0f) - AndroidUtilities.dp(12.0f)) / this.c : bi.A(4.0f, this.c - 1, AndroidUtilities.displaySize.x - AndroidUtilities.dp(12.0f)) / this.c;
         for (int i12 = 0; i12 < this.c; i12++) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i12].getLayoutParams();
             layoutParams.topMargin = AndroidUtilities.dp(4.0f);
@@ -56,7 +56,7 @@ public final class y5 extends FrameLayout {
             layoutParams.gravity = 51;
             viewArr[i12].setLayoutParams(layoutParams);
         }
-        super.onMeasure(i10, ok.B(4.0f, A, TLObject.FLAG_30));
+        super.onMeasure(i10, bi.B(4.0f, A, TLObject.FLAG_30));
     }
 
     public void setAlbumsCount(int i10) {

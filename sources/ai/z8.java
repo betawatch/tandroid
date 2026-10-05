@@ -42,7 +42,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.in0;
 import org.telegram.ui.Components.q90;
-import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.ry0;
 import org.telegram.ui.Components.sm0;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yw;
@@ -52,17 +52,17 @@ import org.telegram.ui.af;
 import org.telegram.ui.an0;
 import org.telegram.ui.bf;
 import org.telegram.ui.bj;
-import org.telegram.ui.fh1;
+import org.telegram.ui.dh1;
 import org.telegram.ui.gl0;
+import org.telegram.ui.k71;
 import org.telegram.ui.kn0;
-import org.telegram.ui.m71;
+import org.telegram.ui.n31;
 import org.telegram.ui.oh;
-import org.telegram.ui.p31;
 import org.telegram.ui.se;
-import org.telegram.ui.v31;
+import org.telegram.ui.t31;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z8 implements Runnable {
     public final /* synthetic */ int a;
@@ -84,65 +84,65 @@ public final /* synthetic */ class z8 implements Runnable {
     }
 
     private final void a() {
-        yh.t5 t5Var = (yh.t5) this.b;
+        yh.u5 u5Var = (yh.u5) this.b;
         List list = (List) this.c;
         m0 m0Var = (m0) this.d;
         TLRPC.TL_inputStorePaymentStarsGiveaway tL_inputStorePaymentStarsGiveaway = (TLRPC.TL_inputStorePaymentStarsGiveaway) this.e;
         c5.h hVar = (c5.h) this.f;
         Activity activity = (Activity) this.h;
         if (list.isEmpty()) {
-            AndroidUtilities.runOnUIThread(new yh.j4(m0Var, 0));
+            AndroidUtilities.runOnUIThread(new yh.k4(m0Var, 0));
             return;
         }
         c5.o oVar = (c5.o) list.get(0);
         if (oVar.a() == null) {
-            AndroidUtilities.runOnUIThread(new yh.j4(m0Var, 1));
+            AndroidUtilities.runOnUIThread(new yh.k4(m0Var, 1));
             return;
         }
         TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
         tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentStarsGiveaway;
-        ConnectionsManager.getInstance(t5Var.a).sendRequest(tL_payments_canPurchaseStore, new fh1(oVar, hVar, m0Var, activity, tL_inputStorePaymentStarsGiveaway, list, 3));
+        ConnectionsManager.getInstance(u5Var.a).sendRequest(tL_payments_canPurchaseStore, new dh1(oVar, hVar, m0Var, activity, tL_inputStorePaymentStarsGiveaway, list, 3));
     }
 
     private final void b() {
-        yh.t5 t5Var = (yh.t5) this.b;
+        yh.u5 u5Var = (yh.u5) this.b;
         Runnable runnable = (Runnable) this.c;
         MessageObject messageObject = (MessageObject) this.d;
         TLRPC.InputInvoice inputInvoice = (TLRPC.InputInvoice) this.e;
         TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars = (TLRPC.TL_payments_paymentFormStars) this.f;
         Utilities.Callback callback = (Utilities.Callback) this.h;
-        if (t5Var.e) {
-            t5Var.Y(messageObject, inputInvoice, tL_payments_paymentFormStars, runnable, callback);
+        if (u5Var.e) {
+            u5Var.Y(messageObject, inputInvoice, tL_payments_paymentFormStars, runnable, callback);
         } else {
-            yh.t5.e("NO_BALANCE");
+            yh.u5.e("NO_BALANCE");
             runnable.run();
         }
     }
 
     private final void c() {
-        yh.t5 t5Var = (yh.t5) this.b;
+        yh.u5 u5Var = (yh.u5) this.b;
         TLObject tLObject = (TLObject) this.c;
         MessageObject messageObject = (MessageObject) this.d;
         TLRPC.TL_inputInvoiceMessage tL_inputInvoiceMessage = (TLRPC.TL_inputInvoiceMessage) this.e;
         bj bjVar = (bj) this.f;
         TLRPC.TL_error tL_error = (TLRPC.TL_error) this.h;
         if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
-            t5Var.Y(messageObject, tL_inputInvoiceMessage, (TLRPC.TL_payments_paymentFormStars) tLObject, bjVar, null);
+            u5Var.Y(messageObject, tL_inputInvoiceMessage, (TLRPC.TL_payments_paymentFormStars) tLObject, bjVar, null);
         } else {
-            yh.t5.e(tL_error == null ? "NO_PAYMENT_FORM" : tL_error.text);
+            yh.u5.e(tL_error == null ? "NO_PAYMENT_FORM" : tL_error.text);
         }
         bjVar.run();
     }
 
     private final void e() {
-        yh.t5 t5Var = (yh.t5) this.b;
+        yh.u5 u5Var = (yh.u5) this.b;
         boolean[] zArr = (boolean[]) this.c;
         MessageObject messageObject = (MessageObject) this.d;
         TLRPC.InputInvoice inputInvoice = (TLRPC.InputInvoice) this.e;
         TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars = (TLRPC.TL_payments_paymentFormStars) this.f;
         Utilities.Callback callback = (Utilities.Callback) this.h;
         zArr[0] = true;
-        t5Var.a0(messageObject, inputInvoice, tL_payments_paymentFormStars, new yh.w0(1, callback));
+        u5Var.a0(messageObject, inputInvoice, tL_payments_paymentFormStars, new yh.x0(1, callback));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:107:0x03f0, code lost:
@@ -846,19 +846,19 @@ public final /* synthetic */ class z8 implements Runnable {
                     break;
                 }
             case 8:
-                qy0 qy0Var = (qy0) this.b;
+                ry0 ry0Var = (ry0) this.b;
                 TLObject tLObject5 = (TLObject) this.c;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
                 TextView textView = (TextView) this.e;
                 TextView textView2 = (TextView) this.f;
                 int[] iArr2 = (int[]) this.h;
-                qy0Var.getClass();
+                ry0Var.getClass();
                 if (!(tLObject5 instanceof TLRPC.TL_stickers_suggestedShortName) || (str5 = ((TLRPC.TL_stickers_suggestedShortName) tLObject5).short_name) == null) {
                     z14 = false;
                 } else {
                     editTextBoldCursor.setText(str5);
                     editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
-                    qy0Var.m0(textView, editTextBoldCursor.getText().toString(), true);
+                    ry0Var.m0(textView, editTextBoldCursor.getText().toString(), true);
                     z14 = true;
                 }
                 textView2.setVisibility(0);
@@ -872,7 +872,7 @@ public final /* synthetic */ class z8 implements Runnable {
                 kn0.U((kn0) this.b, (TLRPC.TL_error) this.c, (String) this.d, (an0) this.e, (TLObject) this.f, (TL_account.sendVerifyPhoneCode) this.h);
                 break;
             case 10:
-                v31.n((v31) this.b, (TLObject) this.c, (CharSequence) this.d, (TLRPC.TL_error) this.e, (byte[]) this.f, (String) this.h);
+                t31.n((t31) this.b, (TLObject) this.c, (CharSequence) this.d, (TLRPC.TL_error) this.e, (byte[]) this.f, (String) this.h);
                 break;
             case 11:
                 TLObject tLObject6 = (TLObject) this.b;
@@ -881,13 +881,13 @@ public final /* synthetic */ class z8 implements Runnable {
                 byte[] bArr = (byte[]) this.e;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.f;
                 yw ywVar = (yw) this.h;
-                v31 v31Var = new v31(context2, d6Var3, 0L, bArr);
-                v31Var.M((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject6);
-                v31Var.s = new p31(n2Var, context2, d6Var3, ywVar);
-                v31Var.show();
+                t31 t31Var = new t31(context2, d6Var3, 0L, bArr);
+                t31Var.M((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject6);
+                t31Var.s = new n31(n2Var, context2, d6Var3, ywVar);
+                t31Var.show();
                 break;
             case 12:
-                m71.P((m71) this.b, (TLRPC.TL_error) this.c, (TLRPC.InputCheckPasswordSRP) this.d, (TLRPC.User) this.e, (TwoStepVerificationActivity) this.f, (TLRPC.TL_channels_editCreator) this.h);
+                k71.P((k71) this.b, (TLRPC.TL_error) this.c, (TLRPC.InputCheckPasswordSRP) this.d, (TLRPC.User) this.e, (TwoStepVerificationActivity) this.f, (TLRPC.TL_channels_editCreator) this.h);
                 break;
             case 13:
                 org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) this.b;
@@ -937,10 +937,10 @@ public final /* synthetic */ class z8 implements Runnable {
                 xh.q1.N((xh.q1) this.b, (org.telegram.ui.ActionBar.b2) this.c, (TLObject) this.d, (xh.o0) this.e, (Utilities.Callback) this.f, (TLRPC.TL_error) this.h);
                 break;
             case 16:
-                yh.x3.c1((yh.x3) this.b, (TLObject) this.c, (CharSequence) this.d, (TL_stars.TL_starGiftUnique) this.e, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) this.f, (TLRPC.TL_error) this.h);
+                yh.y3.c1((yh.y3) this.b, (TLObject) this.c, (CharSequence) this.d, (TL_stars.TL_starGiftUnique) this.e, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) this.f, (TLRPC.TL_error) this.h);
                 break;
             case 17:
-                yh.x3.y0((yh.x3) this.b, (TLObject) this.c, (tg.m1[]) this.d, (Long) this.e, (tg.q) this.f, (TLRPC.TL_error) this.h);
+                yh.y3.y0((yh.y3) this.b, (TLObject) this.c, (tg.m1[]) this.d, (Long) this.e, (tg.q) this.f, (TLRPC.TL_error) this.h);
                 break;
             case 18:
                 a();
@@ -955,27 +955,27 @@ public final /* synthetic */ class z8 implements Runnable {
                 e();
                 break;
             default:
-                yh.j5 j5Var = (yh.j5) this.b;
+                yh.k5 k5Var = (yh.k5) this.b;
                 TLObject tLObject8 = (TLObject) this.c;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.d;
-                yh.k5 k5Var = (yh.k5) this.e;
+                yh.l5 l5Var = (yh.l5) this.e;
                 Utilities.Callback callback = (Utilities.Callback) this.f;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.h;
-                long j3 = j5Var.b;
-                int i22 = j5Var.a;
-                HashMap hashMap = j5Var.h;
-                ArrayList arrayList11 = j5Var.e;
-                j5Var.k = false;
+                long j3 = k5Var.b;
+                int i22 = k5Var.a;
+                HashMap hashMap = k5Var.h;
+                ArrayList arrayList11 = k5Var.e;
+                k5Var.k = false;
                 if (tLObject8 instanceof TL_stars.TL_starGiftCollection) {
                     TL_stars.TL_starGiftCollection tL_starGiftCollection2 = (TL_stars.TL_starGiftCollection) tLObject8;
                     arrayList11.remove(tL_starGiftCollection);
                     arrayList11.add(tL_starGiftCollection2);
                     hashMap.remove(-1);
                     int i23 = tL_starGiftCollection2.collection_id;
-                    k5Var.d = i23;
-                    hashMap.put(Integer.valueOf(i23), k5Var);
-                    j5Var.j();
-                    NotificationCenter.getInstance(i22).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j3), j5Var);
+                    l5Var.d = i23;
+                    hashMap.put(Integer.valueOf(i23), l5Var);
+                    k5Var.j();
+                    NotificationCenter.getInstance(i22).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j3), k5Var);
                     if (callback != null) {
                         callback.run(tL_starGiftCollection2);
                         break;
@@ -986,8 +986,8 @@ public final /* synthetic */ class z8 implements Runnable {
                     }
                     arrayList11.remove(tL_starGiftCollection);
                     hashMap.remove(-1);
-                    j5Var.j();
-                    NotificationCenter.getInstance(i22).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j3), j5Var);
+                    k5Var.j();
+                    NotificationCenter.getInstance(i22).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j3), k5Var);
                     break;
                 }
                 break;

@@ -8,7 +8,7 @@ import m.p3;
 import n4.y;
 import n7.z0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class j implements r2.k {
     public Context a;
@@ -56,14 +56,14 @@ public final class j implements r2.k {
     }
 
     @Override // r2.k
-    public r2.l v(com.google.firebase.messaging.n nVar) {
+    public r2.l f(com.google.firebase.messaging.n nVar) {
         Context context;
         int i10 = Build.VERSION.SDK_INT;
         if (i10 < 23 || (i10 < 31 && ((context = this.a) == null || i10 < 28 || !context.getPackageManager().hasSystemFeature("com.amazon.hardware.tv_screen")))) {
-            return new rb.a(20).v(nVar);
+            return new rb.a(20).f(nVar);
         }
         int h = r0.h(((b2.s) nVar.c).r);
         e2.a.i("DMCodecAdapterFactory", "Creating an asynchronous MediaCodec adapter for track type " + d0.G(h));
-        return new z0(14, new r2.b(h, 0), new r2.b(h, 1)).v(nVar);
+        return new z0(14, new r2.b(h, 0), new r2.b(h, 1)).f(nVar);
     }
 }

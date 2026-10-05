@@ -8,17 +8,17 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.b80;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class z3 extends ClickableSpan {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yh.m b;
+    public final /* synthetic */ yh.n b;
     public final /* synthetic */ f4 c;
 
-    public z3(f4 f4Var, int i10, yh.m mVar) {
+    public z3(f4 f4Var, int i10, yh.n nVar) {
         this.c = f4Var;
         this.a = i10;
-        this.b = mVar;
+        this.b = nVar;
     }
 
     @Override // android.text.style.ClickableSpan
@@ -28,50 +28,50 @@ public final class z3 extends ClickableSpan {
         boolean z10 = i10 == 3;
         String string = LocaleController.getString(R.string.ChannelAffiliateProgramProgramsSortDate);
         final int i11 = 0;
-        final yh.m mVar = this.b;
+        final yh.n nVar = this.b;
         H.i(new Runnable() { // from class: ei.y3
             @Override // java.lang.Runnable
             public final void run() {
                 switch (i11) {
                     case 0:
-                        yh.m mVar2 = mVar;
-                        if (mVar2.g != 3) {
-                            mVar2.g = 3;
-                            mVar2.c = 0;
-                            mVar2.d = false;
-                            mVar2.i = false;
-                            mVar2.f = 0L;
-                            mVar2.j = null;
-                            mVar2.h = false;
-                            mVar2.a();
+                        yh.n nVar2 = nVar;
+                        if (nVar2.g != 3) {
+                            nVar2.g = 3;
+                            nVar2.c = 0;
+                            nVar2.d = false;
+                            nVar2.i = false;
+                            nVar2.f = 0L;
+                            nVar2.j = null;
+                            nVar2.h = false;
+                            nVar2.a();
                             break;
                         }
                         break;
                     case 1:
-                        yh.m mVar3 = mVar;
-                        if (mVar3.g != 2) {
-                            mVar3.g = 2;
-                            mVar3.c = 0;
-                            mVar3.d = false;
-                            mVar3.i = false;
-                            mVar3.f = 0L;
-                            mVar3.j = null;
-                            mVar3.h = false;
-                            mVar3.a();
+                        yh.n nVar3 = nVar;
+                        if (nVar3.g != 2) {
+                            nVar3.g = 2;
+                            nVar3.c = 0;
+                            nVar3.d = false;
+                            nVar3.i = false;
+                            nVar3.f = 0L;
+                            nVar3.j = null;
+                            nVar3.h = false;
+                            nVar3.a();
                             break;
                         }
                         break;
                     default:
-                        yh.m mVar4 = mVar;
-                        if (mVar4.g != 1) {
-                            mVar4.g = 1;
-                            mVar4.c = 0;
-                            mVar4.d = false;
-                            mVar4.i = false;
-                            mVar4.f = 0L;
-                            mVar4.j = null;
-                            mVar4.h = false;
-                            mVar4.a();
+                        yh.n nVar4 = nVar;
+                        if (nVar4.g != 1) {
+                            nVar4.g = 1;
+                            nVar4.c = 0;
+                            nVar4.d = false;
+                            nVar4.i = false;
+                            nVar4.f = 0L;
+                            nVar4.j = null;
+                            nVar4.h = false;
+                            nVar4.a();
                             break;
                         }
                         break;
@@ -84,44 +84,44 @@ public final class z3 extends ClickableSpan {
             public final void run() {
                 switch (i12) {
                     case 0:
-                        yh.m mVar2 = mVar;
-                        if (mVar2.g != 3) {
-                            mVar2.g = 3;
-                            mVar2.c = 0;
-                            mVar2.d = false;
-                            mVar2.i = false;
-                            mVar2.f = 0L;
-                            mVar2.j = null;
-                            mVar2.h = false;
-                            mVar2.a();
+                        yh.n nVar2 = nVar;
+                        if (nVar2.g != 3) {
+                            nVar2.g = 3;
+                            nVar2.c = 0;
+                            nVar2.d = false;
+                            nVar2.i = false;
+                            nVar2.f = 0L;
+                            nVar2.j = null;
+                            nVar2.h = false;
+                            nVar2.a();
                             break;
                         }
                         break;
                     case 1:
-                        yh.m mVar3 = mVar;
-                        if (mVar3.g != 2) {
-                            mVar3.g = 2;
-                            mVar3.c = 0;
-                            mVar3.d = false;
-                            mVar3.i = false;
-                            mVar3.f = 0L;
-                            mVar3.j = null;
-                            mVar3.h = false;
-                            mVar3.a();
+                        yh.n nVar3 = nVar;
+                        if (nVar3.g != 2) {
+                            nVar3.g = 2;
+                            nVar3.c = 0;
+                            nVar3.d = false;
+                            nVar3.i = false;
+                            nVar3.f = 0L;
+                            nVar3.j = null;
+                            nVar3.h = false;
+                            nVar3.a();
                             break;
                         }
                         break;
                     default:
-                        yh.m mVar4 = mVar;
-                        if (mVar4.g != 1) {
-                            mVar4.g = 1;
-                            mVar4.c = 0;
-                            mVar4.d = false;
-                            mVar4.i = false;
-                            mVar4.f = 0L;
-                            mVar4.j = null;
-                            mVar4.h = false;
-                            mVar4.a();
+                        yh.n nVar4 = nVar;
+                        if (nVar4.g != 1) {
+                            nVar4.g = 1;
+                            nVar4.c = 0;
+                            nVar4.d = false;
+                            nVar4.i = false;
+                            nVar4.f = 0L;
+                            nVar4.j = null;
+                            nVar4.h = false;
+                            nVar4.a();
                             break;
                         }
                         break;
@@ -134,44 +134,44 @@ public final class z3 extends ClickableSpan {
             public final void run() {
                 switch (i13) {
                     case 0:
-                        yh.m mVar2 = mVar;
-                        if (mVar2.g != 3) {
-                            mVar2.g = 3;
-                            mVar2.c = 0;
-                            mVar2.d = false;
-                            mVar2.i = false;
-                            mVar2.f = 0L;
-                            mVar2.j = null;
-                            mVar2.h = false;
-                            mVar2.a();
+                        yh.n nVar2 = nVar;
+                        if (nVar2.g != 3) {
+                            nVar2.g = 3;
+                            nVar2.c = 0;
+                            nVar2.d = false;
+                            nVar2.i = false;
+                            nVar2.f = 0L;
+                            nVar2.j = null;
+                            nVar2.h = false;
+                            nVar2.a();
                             break;
                         }
                         break;
                     case 1:
-                        yh.m mVar3 = mVar;
-                        if (mVar3.g != 2) {
-                            mVar3.g = 2;
-                            mVar3.c = 0;
-                            mVar3.d = false;
-                            mVar3.i = false;
-                            mVar3.f = 0L;
-                            mVar3.j = null;
-                            mVar3.h = false;
-                            mVar3.a();
+                        yh.n nVar3 = nVar;
+                        if (nVar3.g != 2) {
+                            nVar3.g = 2;
+                            nVar3.c = 0;
+                            nVar3.d = false;
+                            nVar3.i = false;
+                            nVar3.f = 0L;
+                            nVar3.j = null;
+                            nVar3.h = false;
+                            nVar3.a();
                             break;
                         }
                         break;
                     default:
-                        yh.m mVar4 = mVar;
-                        if (mVar4.g != 1) {
-                            mVar4.g = 1;
-                            mVar4.c = 0;
-                            mVar4.d = false;
-                            mVar4.i = false;
-                            mVar4.f = 0L;
-                            mVar4.j = null;
-                            mVar4.h = false;
-                            mVar4.a();
+                        yh.n nVar4 = nVar;
+                        if (nVar4.g != 1) {
+                            nVar4.g = 1;
+                            nVar4.c = 0;
+                            nVar4.d = false;
+                            nVar4.i = false;
+                            nVar4.f = 0L;
+                            nVar4.j = null;
+                            nVar4.h = false;
+                            nVar4.a();
                             break;
                         }
                         break;

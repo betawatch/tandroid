@@ -21,9 +21,9 @@ import org.telegram.ui.Components.oc0;
 import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.w00;
 import org.telegram.ui.Components.yl0;
-import org.telegram.ui.xb1;
+import org.telegram.ui.vb1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class e7 extends yl0 {
     public final ArrayList c = new ArrayList();
@@ -171,7 +171,7 @@ public final class e7 extends yl0 {
         boolean remove = k7Var.F.p.remove(Long.valueOf(j3));
         if (storyView != null) {
             TLRPC.Reaction reaction = storyView.reaction;
-            if (reaction == null || (str2 = zg.o0.d(reaction).f) == null || !str2.equals("❤")) {
+            if (reaction == null || (str2 = zg.m0.d(reaction).f) == null || !str2.equals("❤")) {
                 j10 = 0;
                 z10 = false;
             } else {
@@ -205,7 +205,7 @@ public final class e7 extends yl0 {
             if (storyReaction instanceof TL_stories.TL_storyReaction) {
                 TL_stories.TL_storyReaction tL_storyReaction = (TL_stories.TL_storyReaction) storyReaction;
                 TLRPC.Reaction reaction2 = tL_storyReaction.reaction;
-                boolean z11 = (reaction2 == null || (str = zg.o0.d(reaction2).f) == null || !str.equals("❤")) ? false : true;
+                boolean z11 = (reaction2 == null || (str = zg.m0.d(reaction2).f) == null || !str.equals("❤")) ? false : true;
                 i11 = 12;
                 o6Var.c(user4, chat, z11 ? null : tL_storyReaction.reaction, z11, tL_storyReaction.date, null, false, true, remove);
             } else {
@@ -328,9 +328,9 @@ public final class e7 extends yl0 {
                         w5Var.setBackground(org.telegram.ui.ActionBar.i6.i0(dp, dp, dp, dp, v02, k10, k10));
                         w7.b6.b(w5Var, 0.05f, 1.5f);
                         w5Var.addView(textView);
-                        xb1 xb1Var = d7Var.a;
-                        xb1Var.setClipChildren(false);
-                        xb1Var.addView(w5Var, w7.z5.t(-2, -2, 1, 0, 28, 0, 4));
+                        vb1 vb1Var = d7Var.a;
+                        vb1Var.setClipChildren(false);
+                        vb1Var.addView(w5Var, w7.z5.t(-2, -2, 1, 0, 28, 0, 4));
                     }
                     q90Var.setText(spannableStringBuilder);
                 } else {

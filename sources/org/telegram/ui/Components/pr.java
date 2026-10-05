@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class pr extends cb {
     public final boolean X;
@@ -27,7 +27,7 @@ public final class pr extends cb {
     public String b0;
     public String c0;
     public SpannableStringBuilder d0;
-    public u61 e0;
+    public w61 e0;
     public final boolean f0;
     public or g0;
 
@@ -79,11 +79,11 @@ public final class pr extends cb {
         cbVar.c0 = groupcallstreamrtmpurl.key;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(cbVar.c0);
         cbVar.d0 = spannableStringBuilder;
-        m11 m11Var = new m11();
-        m11Var.a |= 256;
-        m11Var.b = 0;
-        m11Var.c = spannableStringBuilder.length();
-        cbVar.d0.setSpan(new n11(m11Var, 0), 0, cbVar.d0.length(), 0);
+        n11 n11Var = new n11();
+        n11Var.a |= 256;
+        n11Var.b = 0;
+        n11Var.c = spannableStringBuilder.length();
+        cbVar.d0.setSpan(new o11(n11Var, 0), 0, cbVar.d0.length(), 0);
         cbVar.e0.N(false);
     }
 
@@ -130,30 +130,30 @@ public final class pr extends cb {
             orVar.addView(textView2, w7.z5.t(-2, -2, 1, 28, 0, 28, 17));
             prVar.g0 = orVar;
         }
-        arrayList.add(g61.k(prVar.g0));
-        arrayList.add(g61.B(null));
+        arrayList.add(h61.k(prVar.g0));
+        arrayList.add(h61.C(null));
         com.google.android.gms.internal.vision.e2.n(R.string.VoipChatStreamSettings, arrayList);
         String str2 = prVar.b0;
         String string = LocaleController.getString(R.string.VoipChatStreamServerUrl);
         int i10 = nr.a;
-        g61 J = g61.J(nr.class);
-        J.l = str2;
-        J.n = string;
-        J.j = false;
-        J.g = false;
-        arrayList.add(J);
+        h61 K = h61.K(nr.class);
+        K.l = str2;
+        K.n = string;
+        K.j = false;
+        K.g = false;
+        arrayList.add(K);
         SpannableStringBuilder spannableStringBuilder = prVar.d0;
         String string2 = LocaleController.getString(R.string.VoipChatStreamKey);
-        g61 J2 = g61.J(nr.class);
-        J2.l = spannableStringBuilder;
-        J2.n = string2;
-        J2.j = true;
-        J2.g = false;
-        arrayList.add(J2);
+        h61 K2 = h61.K(nr.class);
+        K2.l = spannableStringBuilder;
+        K2.n = string2;
+        K2.j = true;
+        K2.g = false;
+        arrayList.add(K2);
         if (prVar.f0) {
             str = LocaleController.getString(prVar.X ? R.string.VoipChatStreamWithAnotherAppDescriptionStory : R.string.VoipChatStreamWithAnotherAppDescription);
         }
-        arrayList.add(g61.B(str));
+        arrayList.add(h61.C(str));
     }
 
     public static void Q(pr prVar, Context context, ci.d dVar, long j3) {
@@ -179,9 +179,9 @@ public final class pr extends cb {
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(zl0Var, getContext(), this.currentAccount, 0, true, new d(this, 7), this.resourcesProvider);
-        this.e0 = u61Var;
-        return u61Var;
+        w61 w61Var = new w61(zl0Var, getContext(), this.currentAccount, 0, true, new d(this, 7), this.resourcesProvider);
+        this.e0 = w61Var;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

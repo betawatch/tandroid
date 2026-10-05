@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class f0 extends androidx.emoji2.text.g {
     public final /* synthetic */ int d;
@@ -222,9 +222,9 @@ public final class f0 extends androidx.emoji2.text.g {
             case 0:
                 RecyclerView recyclerView = ((c0) this.b).b;
                 if (recyclerView != null) {
-                    int C = recyclerView.e.C();
-                    for (int i11 = 0; i11 < C; i11++) {
-                        recyclerView.e.B(i11).offsetLeftAndRight(i10);
+                    int x10 = recyclerView.e.x();
+                    for (int i11 = 0; i11 < x10; i11++) {
+                        recyclerView.e.w(i11).offsetLeftAndRight(i10);
                     }
                     break;
                 }
@@ -232,9 +232,9 @@ public final class f0 extends androidx.emoji2.text.g {
             default:
                 RecyclerView recyclerView2 = ((c0) this.b).b;
                 if (recyclerView2 != null) {
-                    int C2 = recyclerView2.e.C();
-                    for (int i12 = 0; i12 < C2; i12++) {
-                        recyclerView2.e.B(i12).offsetTopAndBottom(i10);
+                    int x11 = recyclerView2.e.x();
+                    for (int i12 = 0; i12 < x11; i12++) {
+                        recyclerView2.e.w(i12).offsetTopAndBottom(i10);
                     }
                     break;
                 }

@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.qp;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class y extends FrameLayout {
     public final org.telegram.ui.ActionBar.i5 a;
@@ -98,15 +98,14 @@ public final class y extends FrameLayout {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        int i10 = 0;
-        canvas.drawColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
         float strokeWidth = org.telegram.ui.ActionBar.i6.k0.getStrokeWidth();
         int dp = AndroidUtilities.dp(81.0f);
-        if (!LocaleController.isRTL) {
+        int i10 = 0;
+        if (LocaleController.isRTL) {
             i10 = dp;
             dp = 0;
         }
-        canvas.drawLine(getPaddingLeft() + i10, getHeight() - strokeWidth, (getWidth() - getPaddingRight()) - dp, getHeight() - strokeWidth, org.telegram.ui.ActionBar.i6.k0);
+        canvas.drawLine(getPaddingLeft() + dp, getHeight() - strokeWidth, (getWidth() - getPaddingRight()) - i10, getHeight() - strokeWidth, org.telegram.ui.ActionBar.i6.k0);
     }
 
     @Override // android.view.View

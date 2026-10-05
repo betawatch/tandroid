@@ -2,7 +2,7 @@ package ci;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class f extends dh.b {
     public final /* synthetic */ int n;
@@ -11,6 +11,19 @@ public final class f extends dh.b {
     public /* synthetic */ f(int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         super(i10, d6Var);
         this.n = 2;
+    }
+
+    @Override // dh.b, dh.a
+    public int B() {
+        switch (this.n) {
+            case 2:
+                if (b()) {
+                    return 83886079;
+                }
+                return TLObject.FLAG_29;
+            default:
+                return super.B();
+        }
     }
 
     @Override // dh.b, dh.a
@@ -45,19 +58,6 @@ public final class f extends dh.b {
                 return TLObject.FLAG_29;
             default:
                 return super.c();
-        }
-    }
-
-    @Override // dh.b, dh.a
-    public int i() {
-        switch (this.n) {
-            case 2:
-                if (b()) {
-                    return 83886079;
-                }
-                return TLObject.FLAG_29;
-            default:
-                return super.i();
         }
     }
 

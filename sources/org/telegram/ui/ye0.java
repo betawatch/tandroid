@@ -12,9 +12,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class ye0 extends org.telegram.ui.Components.qw0 {
+public final class ye0 extends org.telegram.ui.Components.rw0 {
     public final be0 a;
     public final TextView b;
     public final TextView c;
@@ -127,17 +127,17 @@ public final class ye0 extends org.telegram.ui.Components.qw0 {
         n7.z0.n(nVar2);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final boolean a() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final boolean b() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final boolean c(boolean z10) {
         this.y.k1(true, true);
         this.f = null;
@@ -145,17 +145,17 @@ public final class ye0 extends org.telegram.ui.Components.qw0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void d() {
         this.n = false;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public String getHeaderName() {
         return LocaleController.getString("LoginPassword", R.string.LoginPassword);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void h(String str) {
         int i10;
         if (this.n) {
@@ -180,12 +180,12 @@ public final class ye0 extends org.telegram.ui.Components.qw0 {
         ConnectionsManager.getInstance(i10).sendRequest(tL_auth_checkRecoveryPassword, new zb0(2, this, code), 10);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void j() {
         AndroidUtilities.runOnUIThread(new we0(this, 0), ug0.t0);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void k(Bundle bundle) {
         Bundle bundle2 = bundle.getBundle("recoveryview_params");
         this.f = bundle2;
@@ -198,7 +198,7 @@ public final class ye0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void l(Bundle bundle) {
         String code = this.a.getCode();
         if (code != null && code.length() != 0) {
@@ -210,7 +210,7 @@ public final class ye0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void m(Bundle bundle, boolean z10) {
         if (bundle == null) {
             return;
@@ -227,19 +227,19 @@ public final class ye0 extends org.telegram.ui.Components.qw0 {
         int indexOf = string.indexOf(42);
         int lastIndexOf = string.lastIndexOf(42);
         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-            org.telegram.ui.Components.m11 m11Var = new org.telegram.ui.Components.m11();
-            m11Var.a |= 256;
-            m11Var.b = indexOf;
+            org.telegram.ui.Components.n11 n11Var = new org.telegram.ui.Components.n11();
+            n11Var.a |= 256;
+            n11Var.b = indexOf;
             int i10 = lastIndexOf + 1;
-            m11Var.c = i10;
-            valueOf.setSpan(new org.telegram.ui.Components.n11(m11Var, 0), indexOf, i10, 0);
+            n11Var.c = i10;
+            valueOf.setSpan(new org.telegram.ui.Components.o11(n11Var, 0), indexOf, i10, 0);
         }
         this.d.setText(AndroidUtilities.formatSpannable(LocaleController.getString(R.string.RestoreEmailNoAccess), valueOf));
         ug0.T0(this.y, be0Var);
         be0Var.requestFocus();
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void n() {
         this.b.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false));
         this.c.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.D6, false));

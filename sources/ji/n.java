@@ -40,21 +40,21 @@ import org.telegram.ui.Cells.v0;
 import org.telegram.ui.Cells.w0;
 import org.telegram.ui.Components.mo;
 import org.telegram.ui.Components.of;
-import org.telegram.ui.Components.t11;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.u11;
 import org.telegram.ui.Components.v11;
+import org.telegram.ui.Components.w11;
 import org.telegram.ui.Components.zl0;
-import org.telegram.ui.fb1;
+import org.telegram.ui.db1;
 import org.telegram.ui.jk;
-import org.telegram.ui.pi1;
+import org.telegram.ui.ni1;
 import org.telegram.ui.xh;
 import org.telegram.ui.yn;
 import r0.i0;
 import s4.c1;
 import s4.z0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class n extends s4.j {
     public static final tr V = new tr(0.19919472913616398d, 0.010644531250000006d, 0.27920937042459737d, 0.91025390625d);
@@ -116,7 +116,7 @@ public abstract class n extends s4.j {
 
     @Override // s4.j
     public final boolean J(s4.h hVar, c1 c1Var) {
-        v11 v11Var;
+        w11 w11Var;
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("end change if necessary");
         }
@@ -125,8 +125,8 @@ public abstract class n extends s4.j {
             animator.cancel();
         }
         View view = c1Var.a;
-        if (this.K.contains(view) && (v11Var = (v11) this.U.run()) != null) {
-            v11Var.a(view);
+        if (this.K.contains(view) && (w11Var = (w11) this.U.run()) != null) {
+            w11Var.a(view);
         }
         if (hVar.b == c1Var) {
             hVar.b = null;
@@ -446,7 +446,7 @@ public abstract class n extends s4.j {
     }
 
     public final void U() {
-        v11 v11Var;
+        w11 w11Var;
         HashMap hashMap = this.J;
         ArrayList arrayList = new ArrayList(hashMap.values());
         hashMap.clear();
@@ -461,34 +461,34 @@ public abstract class n extends s4.j {
                 animator.cancel();
             }
         }
-        if (this.K.isEmpty() || (v11Var = (v11) this.U.run()) == null) {
+        if (this.K.isEmpty() || (w11Var = (w11) this.U.run()) == null) {
             return;
         }
-        ArrayList arrayList2 = v11Var.c;
-        if (v11Var.e) {
+        ArrayList arrayList2 = w11Var.c;
+        if (w11Var.e) {
             return;
         }
-        v11Var.e = true;
+        w11Var.e = true;
         int size2 = arrayList2.size();
         while (i10 < size2) {
             Object obj2 = arrayList2.get(i10);
             i10++;
-            u11 u11Var = (u11) obj2;
-            Runnable runnable = u11Var.d;
+            v11 v11Var = (v11) obj2;
+            Runnable runnable = v11Var.d;
             if (runnable != null) {
-                v11.b(runnable);
-                u11Var.d = null;
+                w11.b(runnable);
+                v11Var.d = null;
             }
         }
         arrayList2.clear();
-        t11 t11Var = v11Var.a;
-        if (t11Var != null) {
-            t11Var.i();
+        u11 u11Var = w11Var.a;
+        if (u11Var != null) {
+            u11Var.i();
         }
-        Runnable runnable2 = v11Var.d;
+        Runnable runnable2 = w11Var.d;
         if (runnable2 != null) {
-            v11Var.d = null;
-            v11.b(runnable2);
+            w11Var.d = null;
+            w11.b(runnable2);
         }
     }
 
@@ -633,14 +633,14 @@ public abstract class n extends s4.j {
 
     @Override // s4.j, s4.m0
     public final void f(c1 c1Var) {
-        v11 v11Var;
+        w11 w11Var;
         Animator animator = (Animator) this.J.remove(c1Var);
         if (animator != null) {
             animator.cancel();
         }
         View view = c1Var.a;
-        if (this.K.contains(view) && (v11Var = (v11) this.U.run()) != null) {
-            v11Var.a(view);
+        if (this.K.contains(view) && (w11Var = (w11) this.U.run()) != null) {
+            w11Var.a(view);
         }
         super.f(c1Var);
         X(view);
@@ -923,11 +923,11 @@ public abstract class n extends s4.j {
                                         if (z19) {
                                             if (u1Var2.getMessageObject().isVoice()) {
                                                 if (Math.abs(view2.getTranslationY()) < view2.getMeasuredHeight() * 3.0f) {
-                                                    new pi1(u1Var2, ynVar2.W, nVar.G, ynVar2.K9, nVar.R).f.start();
+                                                    new ni1(u1Var2, ynVar2.W, nVar.G, ynVar2.K9, nVar.R).f.start();
                                                 }
                                             } else if (SharedConfig.getDevicePerformanceClass() != 0 && Math.abs(view2.getTranslationY()) < zl0Var4.getMeasuredHeight()) {
                                                 ynVar = ynVar2;
-                                                ValueAnimator valueAnimator = new fb1(u1Var2, ynVar2, nVar.G, ynVar2.K9, nVar.R).d;
+                                                ValueAnimator valueAnimator = new db1(u1Var2, ynVar2, nVar.G, ynVar2.K9, nVar.R).d;
                                                 if (valueAnimator != null) {
                                                     valueAnimator.start();
                                                 }
@@ -1035,7 +1035,7 @@ public abstract class n extends s4.j {
                                         FileLog.d("animate remove group impl with thanos");
                                     }
                                     arrayList13.addAll(arrayList17);
-                                    v11 v11Var = (v11) nVar.U.run();
+                                    w11 w11Var = (w11) nVar.U.run();
                                     for (int i24 = 0; i24 < arrayList17.size(); i24++) {
                                     }
                                     ArrayList arrayList18 = new ArrayList();
@@ -1044,12 +1044,12 @@ public abstract class n extends s4.j {
                                         arrayList18.add(((c1) arrayList17.get(i25)).a);
                                     }
                                     t tVar = new t(nVar, arrayList18, arrayList17, 19);
-                                    t11 t11Var = v11Var.a;
-                                    if (t11Var != null) {
-                                        t11Var.f(arrayList18, tVar);
-                                        Choreographer.getInstance().postFrameCallback(v11Var.b);
+                                    u11 u11Var = w11Var.a;
+                                    if (u11Var != null) {
+                                        u11Var.f(arrayList18, tVar);
+                                        Choreographer.getInstance().postFrameCallback(w11Var.b);
                                     } else {
-                                        v11Var.c.add(new u11(arrayList18, tVar));
+                                        w11Var.c.add(new v11(arrayList18, tVar));
                                     }
                                     arrayList12.add((View) arrayList18.get(0));
                                     zl0Var.C0();
@@ -1095,15 +1095,15 @@ public abstract class n extends s4.j {
                                 hashMap.put(c1Var3, ofFloat);
                                 ofFloat.start();
                             } else {
-                                v11 v11Var2 = (v11) xhVar.run();
+                                w11 w11Var2 = (w11) xhVar.run();
                                 i13 = i26;
                                 t tVar2 = new t(nVar, view6, c1Var3, 20);
-                                t11 t11Var2 = v11Var2.a;
-                                if (t11Var2 != null) {
-                                    t11Var2.e(view6, 1.0f, tVar2);
-                                    Choreographer.getInstance().postFrameCallback(v11Var2.b);
+                                u11 u11Var2 = w11Var2.a;
+                                if (u11Var2 != null) {
+                                    u11Var2.e(view6, 1.0f, tVar2);
+                                    Choreographer.getInstance().postFrameCallback(w11Var2.b);
                                 } else {
-                                    v11Var2.c.add(new u11(view6, tVar2));
+                                    w11Var2.c.add(new v11(view6, tVar2));
                                 }
                                 arrayList12.add(view6);
                                 arrayList3 = arrayList13;

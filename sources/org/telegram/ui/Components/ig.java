@@ -24,7 +24,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.StickersActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ig implements oy {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -99,10 +99,10 @@ public final class ig implements oy {
             inputStickerSet.access_hash = stickerSet.access_hash;
             inputStickerSet.id = stickerSet.id;
         }
-        qy0 qy0Var = new qy0(chatActivityEnterView.O2, n2Var2, inputStickerSet, null, chatActivityEnterView, chatActivityEnterView.W3);
-        n2Var2.showDialog(qy0Var);
+        ry0 ry0Var = new ry0(chatActivityEnterView.O2, n2Var2, inputStickerSet, null, chatActivityEnterView, chatActivityEnterView.W3);
+        n2Var2.showDialog(ry0Var);
         if (z10) {
-            qy0Var.p0();
+            ry0Var.p0();
         }
     }
 
@@ -266,7 +266,7 @@ public final class ig implements oy {
     }
 
     @Override // org.telegram.ui.Components.oy
-    public final void o(c61 c61Var) {
+    public final void o(d61 d61Var) {
         ChatActivityEnterView chatActivityEnterView = this.a;
         org.telegram.ui.ActionBar.n2 n2Var = chatActivityEnterView.P2;
         if (n2Var == null) {
@@ -274,7 +274,7 @@ public final class ig implements oy {
         }
         org.telegram.ui.ActionBar.n2 n2Var2 = n2Var;
         if (n2Var2 != null) {
-            chatActivityEnterView.a3 = new hg(this, chatActivityEnterView.getContext(), n2Var2, c61Var, chatActivityEnterView.W3);
+            chatActivityEnterView.a3 = new hg(this, chatActivityEnterView.getContext(), n2Var2, d61Var, chatActivityEnterView.W3);
             pg pgVar = chatActivityEnterView.Z2;
             if (pgVar != null) {
                 pgVar.B(true);

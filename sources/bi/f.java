@@ -27,24 +27,24 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c4;
-import org.telegram.ui.Components.ds0;
+import org.telegram.ui.Components.es0;
 import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.f40;
 import org.telegram.ui.Components.f60;
 import org.telegram.ui.Components.gw;
-import org.telegram.ui.Components.iz0;
+import org.telegram.ui.Components.jz0;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.on0;
 import org.telegram.ui.Components.op;
 import org.telegram.ui.Components.pa0;
 import org.telegram.ui.Components.pp;
-import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.qv0;
 import org.telegram.ui.Components.y50;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.nm;
 import org.telegram.ui.to;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -66,12 +66,12 @@ public final /* synthetic */ class f implements Runnable {
         switch (i10) {
             case 0:
                 u uVar = (u) obj;
-                ds0 ds0Var = uVar.W;
+                es0 es0Var = uVar.W;
                 if (!z10) {
-                    ds0Var.b(uVar.a.E);
+                    es0Var.b(uVar.a.E);
                     break;
                 } else {
-                    new y(ds0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new y1(ds0Var, 4)).show();
+                    new y(es0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new y1(es0Var, 4)).show();
                     break;
                 }
             case 1:
@@ -169,9 +169,9 @@ public final /* synthetic */ class f implements Runnable {
                 nf.f.s((Context) obj, LocaleController.getString(z10 ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
                 break;
             case 20:
-                iz0 iz0Var = ((nm) obj).c.b1;
-                if (iz0Var != null && z10) {
-                    iz0Var.setVisibility(8);
+                jz0 jz0Var = ((nm) obj).c.b1;
+                if (jz0Var != null && z10) {
+                    jz0Var.setVisibility(8);
                     break;
                 }
                 break;
@@ -255,12 +255,12 @@ public final /* synthetic */ class f implements Runnable {
                 ((on0) obj).G.presentFragment(new PremiumPreviewFragment(0, z10 ? "upload_speed" : "download_speed"));
                 break;
             default:
-                pv0 pv0Var = (pv0) obj;
+                qv0 qv0Var = (qv0) obj;
                 if (!z10) {
-                    pv0Var.m0.setVisibility(8);
+                    qv0Var.m0.setVisibility(8);
                     break;
                 } else {
-                    pv0Var.getClass();
+                    qv0Var.getClass();
                     break;
                 }
         }

@@ -7,7 +7,6 @@ import c3.f0;
 import com.google.android.gms.internal.vision.e2;
 import e2.v;
 import e9.i0;
-import hg.k0;
 import j$.util.Objects;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -15,7 +14,7 @@ import java.util.Arrays;
 import java.util.UUID;
 import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class n {
     public static final int[] a = {1769172845, 1769172786, 1769172787, 1769172788, 1769172789, 1769172790, 1769172793, 1635148593, 1752589105, 1751479857, 1635135537, 1836069937, 1836069938, 862401121, 862401122, 862417462, 862417718, 862414134, 862414646, 1295275552, 1295270176, 1714714144, 1801741417, 1295275600, 1903435808, 1297305174, 1684175153, 1769172332, 1885955686};
@@ -143,7 +142,7 @@ public abstract class n {
             vVar.K(10);
             int D = vVar.D();
             if (D > 0) {
-                String h = k0.h(D, "");
+                String h = hg.c.h(D, "");
                 int D2 = vVar.D();
                 if (D2 > 0) {
                     h = h + "/" + D2;

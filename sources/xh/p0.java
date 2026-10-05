@@ -8,7 +8,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,20 +44,20 @@ public final /* synthetic */ class p0 implements Runnable {
                 }
                 break;
             case 1:
-                yh.x3 x3Var = (yh.x3) this.c;
+                yh.y3 y3Var = (yh.y3) this.c;
                 Runnable runnable = (Runnable) this.d;
-                x3Var.p2((int) this.b, x3Var.getContext(), true);
+                y3Var.p2((int) this.b, y3Var.getContext(), true);
                 if (runnable != null) {
                     runnable.run();
                     break;
                 }
                 break;
             case 2:
-                yh.x3 x3Var2 = (yh.x3) this.c;
+                yh.y3 y3Var2 = (yh.y3) this.c;
                 nf.e eVar = (nf.e) this.d;
-                x3Var2.getClass();
+                y3Var2.getClass();
                 eVar.b();
-                x3Var2.p2((int) this.b, x3Var2.getContext(), true);
+                y3Var2.p2((int) this.b, y3Var2.getContext(), true);
                 break;
             default:
                 org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.c;

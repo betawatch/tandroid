@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class g4 extends org.telegram.ui.Components.yl0 {
     public TLRPC.WebPage E;
@@ -335,9 +335,9 @@ public final class g4 extends org.telegram.ui.Components.yl0 {
                                 s1Var4.loadDataWithBaseURL("https://telegram.org/embed", str2, "text/html", "UTF-8", null);
                                 t1Var.a.setVisibility(0);
                             }
-                            org.telegram.ui.Components.z91 z91Var = t1Var.b;
-                            if (z91Var != null) {
-                                z91Var.setVisibility(4);
+                            org.telegram.ui.Components.aa1 aa1Var = t1Var.b;
+                            if (aa1Var != null) {
+                                aa1Var.setVisibility(4);
                                 t1Var.b.g(null, null, null, null, false);
                             }
                         } else {
@@ -349,9 +349,9 @@ public final class g4 extends org.telegram.ui.Components.yl0 {
                                     t1Var.a.stopLoading();
                                     t1Var.a.loadUrl("about:blank");
                                 }
-                                org.telegram.ui.Components.z91 z91Var2 = t1Var.b;
-                                if (z91Var2 != null) {
-                                    z91Var2.setVisibility(0);
+                                org.telegram.ui.Components.aa1 aa1Var2 = t1Var.b;
+                                if (aa1Var2 != null) {
+                                    aa1Var2.setVisibility(0);
                                 }
                             } else {
                                 s1 s1Var6 = t1Var.a;
@@ -361,9 +361,9 @@ public final class g4 extends org.telegram.ui.Components.yl0 {
                                     hashMap.put("Referer", ApplicationLoader.applicationContext.getPackageName());
                                     t1Var.a.loadUrl(t1Var.v.url, hashMap);
                                 }
-                                org.telegram.ui.Components.z91 z91Var3 = t1Var.b;
-                                if (z91Var3 != null) {
-                                    z91Var3.setVisibility(4);
+                                org.telegram.ui.Components.aa1 aa1Var3 = t1Var.b;
+                                if (aa1Var3 != null) {
+                                    aa1Var3.setVisibility(4);
                                     t1Var.b.g(null, null, null, null, false);
                                 }
                             }
@@ -824,13 +824,13 @@ public final class g4 extends org.telegram.ui.Components.yl0 {
                     a1Var.L = messageObject.getDocument();
                 }
                 a1Var.h = z11;
-                org.telegram.ui.Components.to0 to0Var = a1Var.f;
+                org.telegram.ui.Components.uo0 uo0Var = a1Var.f;
                 int i51 = org.telegram.ui.ActionBar.i6.ud;
                 ((i4) t70Var).getClass();
                 int w02 = org.telegram.ui.ActionBar.i6.w0(null, i51, false);
                 int w03 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.vd, false);
                 int i52 = org.telegram.ui.ActionBar.i6.xd;
-                to0Var.h(w02, w03, org.telegram.ui.ActionBar.i6.w0(null, i52, false), org.telegram.ui.ActionBar.i6.w0(null, i52, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.wd, false));
+                uo0Var.h(w02, w03, org.telegram.ui.ActionBar.i6.w0(null, i52, false), org.telegram.ui.ActionBar.i6.w0(null, i52, false), org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.wd, false));
                 a1Var.a(false);
                 a1Var.requestLayout();
                 break;

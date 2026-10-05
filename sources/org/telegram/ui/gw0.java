@@ -21,7 +21,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class gw0 extends Dialog {
     public float E;
@@ -106,16 +106,16 @@ public final class gw0 extends Dialog {
         bw0Var2.addView(gc0Var, w7.z5.e(-1, 66, 80));
         gc0Var.setOnTabClick(new t3(i1Var, 17));
         ch.d c10 = cVar.c(gc0Var, null, false);
-        c10.x(eh.b.k(d6Var));
+        c10.w(eh.b.k(d6Var));
         c10.l.e = true;
-        c10.y(AndroidUtilities.dp(8.0f));
-        c10.z(AndroidUtilities.dp(16.0f));
+        c10.x(AndroidUtilities.dp(8.0f));
+        c10.y(AndroidUtilities.dp(16.0f));
         gc0Var.setBackground(c10);
         TextView textView = new TextView(activity);
         this.h = textView;
         textView.setTextSize(1, 13.0f);
         textView.setTextColor(gc0Var.getColor());
-        org.telegram.messenger.ok.l(R.string.PollMenuHint, textView, 17);
+        org.telegram.messenger.bi.k(R.string.PollMenuHint, textView, 17);
         bw0Var2.addView(textView, w7.z5.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 66.0f));
         dw0 dw0Var = new dw0(this, i10);
         WeakHashMap weakHashMap = r0.i0.a;

@@ -12,7 +12,7 @@ import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class e extends d {
     public final fh.a H;
@@ -45,7 +45,7 @@ public final class e extends d {
         paint3.setStyle(style);
     }
 
-    public final void D() {
+    public final void C() {
         float f7 = this.c;
         float f10 = this.d;
         c cVar = this.l;
@@ -70,7 +70,7 @@ public final class e extends d {
             float[] fArr = cVar.c;
             jVar.a(width, height, fArr[0], fArr[2], fArr[4], fArr[6], max, cVar.g, cVar.h, this.g);
         }
-        this.H.y(beginRecording, f11, f12, f13, f14);
+        this.H.v(beginRecording, f11, f12, f13, f14);
         beginRecording.save();
         this.L.endRecording();
         RecordingCanvas beginRecording2 = this.K.beginRecording();
@@ -93,7 +93,7 @@ public final class e extends d {
 
     @Override // ch.d, li.e
     public final void a() {
-        D();
+        C();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -102,17 +102,14 @@ public final class e extends d {
         if (cVar.m.isEmpty()) {
             return;
         }
-        boolean isHardwareAccelerated = canvas.isHardwareAccelerated();
-        fh.a aVar = this.H;
-        if (!isHardwareAccelerated) {
-            n(canvas, aVar);
+        if (!canvas.isHardwareAccelerated()) {
+            n(canvas, this.H);
             return;
         }
         if (!this.K.hasDisplayList()) {
-            aVar.b();
-            D();
+            C();
         } else if (this.P) {
-            D();
+            C();
         }
         this.P = false;
         int l1 = i6.l1(this.K.getAlpha() * this.q, this.f);
@@ -136,13 +133,9 @@ public final class e extends d {
     }
 
     @Override // li.e
-    public final void f(int i10, int i11) {
-        this.K.setAlpha(i11 / 255.0f);
+    public final void f(int i10) {
+        this.K.setAlpha(i10 / 255.0f);
         this.P = true;
-        if (i10 != 0 || i11 <= 0) {
-            return;
-        }
-        this.H.b();
     }
 
     @Override // ch.d, li.e
@@ -189,12 +182,7 @@ public final class e extends d {
     }
 
     @Override // ch.d
-    public final void v() {
-        this.H.b();
-    }
-
-    @Override // ch.d
-    public final d w() {
+    public final d v() {
         this.K.setClipToOutline(false);
         return this;
     }

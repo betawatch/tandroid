@@ -21,7 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class u implements r {
     public static final o0 d = new o0(25);
@@ -43,7 +43,17 @@ public final class u implements r {
     }
 
     @Override // n2.r
-    public final byte[] B() {
+    public final h2.b B(byte[] bArr) {
+        int i10 = Build.VERSION.SDK_INT;
+        UUID uuid = this.a;
+        if (i10 < 27 && Objects.equals(uuid, b2.i.c)) {
+            uuid = b2.i.b;
+        }
+        return new s(uuid, bArr);
+    }
+
+    @Override // n2.r
+    public final byte[] C() {
         return this.b.openSession();
     }
 
@@ -355,15 +365,5 @@ public final class u implements r {
         if (i10 == 0) {
             this.b.release();
         }
-    }
-
-    @Override // n2.r
-    public final h2.b y(byte[] bArr) {
-        int i10 = Build.VERSION.SDK_INT;
-        UUID uuid = this.a;
-        if (i10 < 27 && Objects.equals(uuid, b2.i.c)) {
-            uuid = b2.i.b;
-        }
-        return new s(uuid, bArr);
     }
 }

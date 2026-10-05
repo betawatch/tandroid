@@ -6,7 +6,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sa0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final /* synthetic */ class sa0 implements Utilities.Callback {
                         i11 = R.string.StoryNotFound;
                     }
                 }
-                org.telegram.messenger.f0.p(i11, X, i10, 36);
+                org.telegram.messenger.q.p(i11, X, i10, 36);
                 break;
             default:
                 Pattern pattern2 = LaunchActivity.B1;
@@ -99,7 +99,7 @@ public final /* synthetic */ class sa0 implements Utilities.Callback {
                         i13 = R.string.StoryNotFound;
                     }
                 }
-                org.telegram.messenger.f0.p(i13, X2, i12, 36);
+                org.telegram.messenger.q.p(i13, X2, i12, 36);
                 break;
         }
     }

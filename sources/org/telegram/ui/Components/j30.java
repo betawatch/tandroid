@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class j30 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener {
     public final int E;
@@ -255,9 +255,9 @@ public final class j30 extends FrameLayout implements NotificationCenter.Notific
                     long currentTimeMillis = System.currentTimeMillis();
                     if (currentTimeMillis - this.H > 1000) {
                         this.H = currentTimeMillis;
-                        float A = a4.a.A(org.telegram.ui.Cells.c1.f(this.J, 100), 0.5f, 100.0f, 0.5f);
-                        this.e = A;
-                        this.f = (A - this.d) / 595.0f;
+                        float B = a4.a.B(org.telegram.ui.Cells.c1.f(this.J, 100), 0.5f, 100.0f, 0.5f);
+                        this.e = B;
+                        this.f = (B - this.d) / 595.0f;
                     }
                 }
                 f7 = this.e;
@@ -345,12 +345,12 @@ public final class j30 extends FrameLayout implements NotificationCenter.Notific
                                                     paint.setAlpha((int) (76.0f * f11 * this.v));
                                                 }
                                                 if (this.y != 0.0f) {
-                                                    float min = Math.min((1.0f - this.O) * t8.b.d(this.d, 0.3f, 1.0f, interpolation), 1.3f) * interpolation2;
+                                                    float min = Math.min((1.0f - this.O) * sa.e.d(this.d, 0.3f, 1.0f, interpolation), 1.3f) * interpolation2;
                                                     canvas.save();
                                                     canvas.scale(min, min, measuredWidth, measuredHeight);
                                                     caVar.a(measuredWidth, measuredHeight, canvas, paint);
                                                     canvas.restore();
-                                                    float min2 = Math.min((1.0f - this.O) * t8.b.d(this.d, 0.26f, 1.0f, interpolation), 1.3f) * interpolation2;
+                                                    float min2 = Math.min((1.0f - this.O) * sa.e.d(this.d, 0.26f, 1.0f, interpolation), 1.3f) * interpolation2;
                                                     canvas.save();
                                                     canvas.scale(min2, min2, measuredWidth, measuredHeight);
                                                     caVar2.a(measuredWidth, measuredHeight, canvas, paint);
@@ -644,11 +644,11 @@ public final class j30 extends FrameLayout implements NotificationCenter.Notific
             VoIPService sharedInstance = VoIPService.getSharedInstance();
             String string = (sharedInstance == null || !ChatObject.isChannelOrGiga(sharedInstance.getChat())) ? LocaleController.getString(R.string.VoipGroupVoiceChat) : LocaleController.getString(R.string.VoipChannelVoiceChat);
             if (i10 == 0) {
-                string = org.telegram.messenger.f0.g(R.string.VoipTapToMute, t8.b.j(string, ", "));
+                string = org.telegram.messenger.q.g(R.string.VoipTapToMute, sa.e.j(string, ", "));
             } else if (i10 == 2) {
-                string = org.telegram.messenger.f0.g(R.string.Connecting, t8.b.j(string, ", "));
+                string = org.telegram.messenger.q.g(R.string.Connecting, sa.e.j(string, ", "));
             } else if (i10 == 3) {
-                string = org.telegram.messenger.f0.g(R.string.VoipMutedByAdmin, t8.b.j(string, ", "));
+                string = org.telegram.messenger.q.g(R.string.VoipMutedByAdmin, sa.e.j(string, ", "));
             }
             setContentDescription(string);
             invalidate();

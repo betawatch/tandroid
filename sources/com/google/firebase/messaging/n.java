@@ -62,9 +62,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.e5;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.py0;
+import org.telegram.ui.Components.qy0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.gb1;
+import org.telegram.ui.eb1;
 import v7.d8;
 import v7.v7;
 import y9.a2;
@@ -86,7 +86,7 @@ import y9.x0;
 import y9.y0;
 import y9.z1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class n implements d6 {
     public Object a;
@@ -271,7 +271,7 @@ public final class n implements d6 {
             }
             arrayList.add(new y9.d0(str, str2));
         }
-        Collections.sort(arrayList, new gb1(9));
+        Collections.sort(arrayList, new eb1(9));
         return DesugarCollections.unmodifiableList(arrayList);
     }
 
@@ -408,7 +408,7 @@ public final class n implements d6 {
             ((ValueAnimator) arrayList3.get(i10)).cancel();
             if (z10) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i10)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new py0(this, i10, 0));
+                ofFloat.addUpdateListener(new qy0(this, i10, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
@@ -417,7 +417,7 @@ public final class n implements d6 {
             ((ValueAnimator) arrayList2.get(i11)).cancel();
             if (z10) {
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i11)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new py0(this, i11, 1));
+                ofFloat2.addUpdateListener(new qy0(this, i11, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
@@ -426,7 +426,7 @@ public final class n implements d6 {
             ((ValueAnimator) arrayList.get(i12)).cancel();
             if (z10) {
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i12)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new py0(this, i12, 2));
+                ofFloat3.addUpdateListener(new qy0(this, i12, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }
@@ -626,13 +626,13 @@ public final class n implements d6 {
             str = str.concat(" encodedPayload");
         }
         if (((Long) this.d) == null) {
-            str = t8.b.v(str, " eventMillis");
+            str = sa.e.v(str, " eventMillis");
         }
         if (((Long) this.e) == null) {
-            str = t8.b.v(str, " uptimeMillis");
+            str = sa.e.v(str, " uptimeMillis");
         }
         if (((HashMap) this.f) == null) {
-            str = t8.b.v(str, " autoMetadata");
+            str = sa.e.v(str, " autoMetadata");
         }
         if (str.isEmpty()) {
             return new l5.h((String) this.a, (Integer) this.b, (l5.m) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f);
@@ -724,10 +724,10 @@ public final class n implements d6 {
             str = str.concat(" type");
         }
         if (((u1) this.c) == null) {
-            str = t8.b.v(str, " app");
+            str = sa.e.v(str, " app");
         }
         if (((v1) this.d) == null) {
-            str = t8.b.v(str, " device");
+            str = sa.e.v(str, " device");
         }
         if (str.isEmpty()) {
             return new l0(((Long) this.a).longValue(), (String) this.b, (u1) this.c, (v1) this.d, (w1) this.e, (z1) this.f);
@@ -741,13 +741,13 @@ public final class n implements d6 {
             str = str.concat(" proximityOn");
         }
         if (((Integer) this.d) == null) {
-            str = t8.b.v(str, " orientation");
+            str = sa.e.v(str, " orientation");
         }
         if (((Long) this.e) == null) {
-            str = t8.b.v(str, " ramUsed");
+            str = sa.e.v(str, " ramUsed");
         }
         if (((Long) this.f) == null) {
-            str = t8.b.v(str, " diskUsed");
+            str = sa.e.v(str, " diskUsed");
         }
         if (str.isEmpty()) {
             return new u0((Double) this.a, ((Integer) this.b).intValue(), ((Boolean) this.c).booleanValue(), ((Integer) this.d).intValue(), ((Long) this.e).longValue(), ((Long) this.f).longValue());
@@ -879,7 +879,7 @@ public final class n implements d6 {
         s sVar = null;
         while (!stack.isEmpty()) {
             Throwable th4 = (Throwable) stack.pop();
-            sVar = new s(th4.getLocalizedMessage(), th4.getClass().getName(), yVar2.D(th4.getStackTrace()), sVar, 3);
+            sVar = new s(th4.getLocalizedMessage(), th4.getClass().getName(), yVar2.y(th4.getStackTrace()), sVar, 3);
         }
         s sVar2 = sVar;
         n nVar = new n();
@@ -909,13 +909,13 @@ public final class n implements d6 {
                     it = it2;
                     yVar = yVar2;
                 } else {
-                    StackTraceElement[] D = yVar2.D(next.getValue());
+                    StackTraceElement[] y3 = yVar2.y(next.getValue());
                     String name2 = key.getName();
                     if (name2 == null) {
                         throw new NullPointerException("Null name");
                     }
                     it = it2;
-                    List d10 = w9.q.d(D, 0);
+                    List d10 = w9.q.d(y3, 0);
                     if (d10 == null) {
                         throw new NullPointerException("Null frames");
                     }

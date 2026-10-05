@@ -12,7 +12,7 @@ import com.google.android.gms.internal.cast.q4;
 import com.google.android.gms.tasks.Task;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class c extends f {
     public static final g6.b m = new g6.b("CastSession", null);
@@ -63,12 +63,12 @@ public final class c extends f {
             iVar.c.L0(null);
             cf.c cVar2 = iVar.h;
             if (cVar2 != null) {
-                cVar2.A();
+                cVar2.u();
                 cVar2.e = null;
             }
             cf.c cVar3 = iVar.i;
             if (cVar3 != null) {
-                cVar3.A();
+                cVar3.u();
                 cVar3.e = null;
             }
             android.support.v4.media.session.b0 b0Var = iVar.p;

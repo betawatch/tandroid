@@ -9,12 +9,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.sq;
 import org.telegram.ui.Components.z80;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class h7 extends FrameLayout {
     public final org.telegram.ui.Components.w9 a;
@@ -36,7 +36,7 @@ public final class h7 extends FrameLayout {
         addView(w9Var, w7.z5.d(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
-        ok.n(org.telegram.ui.ActionBar.i6.j5, d6Var, textView, 1, 12.0f);
+        bi.m(org.telegram.ui.ActionBar.i6.j5, d6Var, textView, 1, 12.0f);
         textView.setMaxLines(2);
         textView.setGravity(49);
         textView.setLines(2);

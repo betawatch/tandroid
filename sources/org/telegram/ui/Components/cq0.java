@@ -1,51 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class cq0 extends s4.s0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zq0 b;
+public final class cq0 extends g.p {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ br0 d;
 
-    public /* synthetic */ cq0(zq0 zq0Var, int i10) {
-        this.a = i10;
-        this.b = zq0Var;
+    public /* synthetic */ cq0(br0 br0Var, int i10) {
+        this.c = i10;
+        this.d = br0Var;
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        vb vbVar;
-        switch (this.a) {
+    @Override // g.p
+    public final int i(int i10) {
+        switch (this.c) {
             case 0:
-                zq0 zq0Var = this.b;
-                if (i11 != 0) {
-                    zq0.k0(zq0Var);
-                    zq0Var.q0 = zq0Var.p0;
+                if (i10 == 0) {
+                    return this.d.H.J;
                 }
-                rc rcVar = rc.w;
-                if (rcVar != null && (vbVar = rcVar.e) != null && (vbVar.getParent() instanceof View) && ((View) rc.w.e.getParent()).getParent() == zq0Var.w) {
-                    rc.e();
-                    break;
-                }
-                break;
+                return 1;
             case 1:
-                if (i11 != 0) {
-                    zq0 zq0Var2 = this.b;
-                    zq0.k0(zq0Var2);
-                    zq0Var2.q0 = zq0Var2.p0;
-                    break;
-                }
-                break;
+                xq0 xq0Var = this.d.M;
+                return (i10 == xq0Var.w || i10 == xq0Var.x || i10 == xq0Var.y || i10 == xq0Var.F || xq0Var.j(i10) == 0) ? 4 : 1;
             default:
-                if (i11 != 0) {
-                    zq0 zq0Var3 = this.b;
-                    zq0.k0(zq0Var3);
-                    zq0Var3.q0 = zq0Var3.p0;
-                    break;
+                if (i10 == 0) {
+                    return this.d.I.J;
                 }
-                break;
+                return 1;
         }
     }
 }

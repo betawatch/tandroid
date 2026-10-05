@@ -1,150 +1,100 @@
 package yh;
 
-import android.content.Context;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.WebFile;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.w9;
-import org.telegram.ui.Components.zl0;
-import org.telegram.ui.w70;
+import org.telegram.ui.Cells.w8;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.w61;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class o7 extends f61 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class o7 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
 
-    static {
-        f61.setup(new o7());
+    public /* synthetic */ o7(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        this.a = i10;
+        this.b = notificationCenterDelegate;
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final void bindView(View view, g61 g61Var, boolean z10, u61 u61Var, c71 c71Var) {
-        String userName;
-        boolean z11;
-        boolean z12;
-        org.telegram.ui.ActionBar.i5 i5Var;
-        p7 p7Var = (p7) view;
-        TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) g61Var.G;
-        org.telegram.ui.ActionBar.i5 i5Var2 = p7Var.d;
-        w9 w9Var = p7Var.c;
-        org.telegram.ui.ActionBar.d6 d6Var = p7Var.b;
-        TextView textView = p7Var.h;
-        TextView textView2 = p7Var.f;
-        TextView textView3 = p7Var.e;
-        int i10 = p7Var.a;
-        TextView textView4 = p7Var.n;
-        long peerDialogId = DialogObject.getPeerDialogId(starsSubscription.peer);
-        p7Var.r = !TextUtils.isEmpty(starsSubscription.title);
-        if (peerDialogId < 0) {
-            TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-peerDialogId));
-            h9 h9Var = new h9((org.telegram.ui.ActionBar.d6) null);
-            h9Var.q(chat);
-            w9Var.e(chat, h9Var);
-            userName = chat != null ? chat.title : null;
-            z11 = false;
-        } else {
-            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(peerDialogId));
-            h9 h9Var2 = new h9((org.telegram.ui.ActionBar.d6) null);
-            h9Var2.r(user);
-            w9Var.e(user, h9Var2);
-            userName = UserObject.getUserName(user);
-            z11 = !UserObject.isBot(user);
-        }
-        long currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
-        i5Var2.l(Emoji.replaceEmoji(userName, i5Var2.getPaint().getFontMetricsInt(), false), false);
-        if (TextUtils.isEmpty(starsSubscription.title)) {
-            z12 = z11;
-            textView3.setVisibility(8);
-        } else {
-            textView3.setVisibility(0);
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            if (starsSubscription.photo != null) {
-                w70 w70Var = new w70(textView3, 14.0f, i10);
-                w70Var.a(4.0f);
-                w70Var.f = false;
-                SpannableString spannableString = new SpannableString("x");
-                i5Var = i5Var2;
-                z12 = z11;
-                spannableString.setSpan(w70Var, 0, 1, 33);
-                w70Var.b.setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(starsSubscription.photo)), "14_14", null, null, 0, 0);
-                spannableStringBuilder.append((CharSequence) spannableString).append((CharSequence) " ");
-            } else {
-                i5Var = i5Var2;
-                z12 = z11;
-            }
-            spannableStringBuilder.append(Emoji.replaceEmoji(starsSubscription.title, i5Var.getPaint().getFontMetricsInt(), false));
-            textView3.setText(spannableStringBuilder);
-        }
-        textView2.setTextSize(1, p7Var.r ? 13.0f : 14.0f);
-        if (starsSubscription.canceled || starsSubscription.bot_canceled) {
-            long j3 = starsSubscription.until_date;
-            textView2.setText(LocaleController.formatString(j3 < currentTime ? R.string.StarsSubscriptionExpired : R.string.StarsSubscriptionExpires, LocaleController.formatDateChat(j3)));
-            textView.setVisibility(8);
-            textView4.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.wj, d6Var));
-            textView4.setText(LocaleController.getString(starsSubscription.bot_canceled ? z12 ? R.string.StarsSubscriptionStatusBizCancelled : R.string.StarsSubscriptionStatusBotCancelled : R.string.StarsSubscriptionStatusCancelled));
-        } else {
-            long j10 = starsSubscription.until_date;
-            if (j10 < currentTime) {
-                textView2.setText(LocaleController.formatString(R.string.StarsSubscriptionExpired, LocaleController.formatDateChat(j10)));
-                textView.setVisibility(8);
-                textView4.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.wj, d6Var));
-                textView4.setText(LocaleController.getString(R.string.StarsSubscriptionStatusExpired));
-            } else {
-                textView2.setText(LocaleController.formatString(R.string.StarsSubscriptionRenews, LocaleController.formatDateChat(j10)));
-                textView.setVisibility(0);
-                textView.setText(x7.d1(false, "⭐️ " + Long.toString(starsSubscription.pricing.amount), 0.8f, null));
-                textView4.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.z6, d6Var));
-                int i11 = starsSubscription.pricing.period;
-                if (i11 == 2592000) {
-                    textView4.setText(LocaleController.getString(R.string.StarsParticipantSubscriptionPerMonth));
-                } else if (i11 == 60) {
-                    textView4.setText("per minute");
-                } else if (i11 == 300) {
-                    textView4.setText("per 5 minutes");
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        int i10 = this.a;
+        int i11 = 0;
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
+        switch (i10) {
+            case 0:
+                ((p7) notificationCenterDelegate).P((ArrayList) obj, (w61) obj2);
+                break;
+            case 1:
+                w7 w7Var = (w7) notificationCenterDelegate;
+                ArrayList arrayList = (ArrayList) obj;
+                int i12 = w7Var.c;
+                int i13 = w7Var.d;
+                long j3 = w7Var.f;
+                if (j3 == 0) {
+                    u5 y3 = u5.y(i12, w7Var.e);
+                    ArrayList arrayList2 = y3.q[i13];
+                    int size = arrayList2.size();
+                    int i14 = 0;
+                    while (i14 < size) {
+                        Object obj3 = arrayList2.get(i14);
+                        i14++;
+                        int i15 = s7.a;
+                        h61 K = h61.K(s7.class);
+                        K.G = (TL_stars.StarsTransaction) obj3;
+                        K.q = false;
+                        arrayList.add(K);
+                    }
+                    if (!y3.u[i13]) {
+                        arrayList.add(h61.q(arrayList.size(), 7));
+                        arrayList.add(h61.q(arrayList.size(), 7));
+                        arrayList.add(h61.q(arrayList.size(), 7));
+                        break;
+                    }
+                } else {
+                    p g10 = p.g(i12);
+                    ArrayList arrayList3 = g10.k(j3).a[i13];
+                    int size2 = arrayList3.size();
+                    while (i11 < size2) {
+                        Object obj4 = arrayList3.get(i11);
+                        i11++;
+                        int i16 = s7.a;
+                        h61 K2 = h61.K(s7.class);
+                        K2.G = (TL_stars.StarsTransaction) obj4;
+                        K2.q = true;
+                        arrayList.add(K2);
+                    }
+                    if (!g10.k(j3).e[i13]) {
+                        arrayList.add(h61.q(arrayList.size(), 7));
+                        arrayList.add(h61.q(arrayList.size(), 7));
+                        arrayList.add(h61.q(arrayList.size(), 7));
+                        break;
+                    }
                 }
-            }
+                break;
+            default:
+                zg.o oVar = (zg.o) notificationCenterDelegate;
+                ArrayList arrayList4 = (ArrayList) obj;
+                ArrayList arrayList5 = oVar.F;
+                w8 w8Var = oVar.e;
+                if (w8Var != null && oVar.f != null) {
+                    arrayList4.add(h61.j(1, w8Var));
+                    arrayList4.add(h61.l(2, oVar.f));
+                    int i17 = oVar.X;
+                    if (i17 == 1 || i17 == 0 || oVar.a) {
+                        while (i11 < arrayList5.size()) {
+                            View view = (View) arrayList5.get(i11);
+                            arrayList4.add(((Boolean) oVar.G.get(i11)).booleanValue() ? h61.l(i11 + 100, view) : h61.j(i11 + 100, view));
+                            i11++;
+                        }
+                        break;
+                    }
+                }
+                break;
         }
-        p7Var.s = z10;
-        p7Var.setWillNotDraw(!z10);
-    }
-
-    @Override // org.telegram.ui.Components.f61
-    public final View createView(Context context, zl0 zl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        p7 p7Var = (p7) getCached();
-        return p7Var != null ? p7Var : new p7(context, i10, d6Var);
-    }
-
-    @Override // org.telegram.ui.Components.f61
-    public final boolean equals(g61 g61Var, g61 g61Var2) {
-        if (g61Var2 == null) {
-            return false;
-        }
-        Object obj = g61Var.G;
-        if (!(obj instanceof TL_stars.StarsSubscription)) {
-            return false;
-        }
-        Object obj2 = g61Var2.G;
-        if (obj2 instanceof TL_stars.StarsSubscription) {
-            return TextUtils.equals(((TL_stars.StarsSubscription) obj).id, ((TL_stars.StarsSubscription) obj2).id);
-        }
-        return false;
     }
 }

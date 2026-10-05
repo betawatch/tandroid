@@ -34,13 +34,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.s20;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class ia {
     public static s20 b;
@@ -50,7 +50,7 @@ public abstract class ia {
     public static RectF f;
     public static Paint g;
     public static Paint h;
-    public static e11 i;
+    public static f11 i;
     public static int j;
     public static BitmapDrawable m;
     public static final s20[] a = new s20[2];
@@ -716,7 +716,7 @@ public abstract class ia {
     public static void k(Canvas canvas, RectF rectF, float f7, boolean z10, float f10) {
         Canvas canvas2;
         if (i == null) {
-            i = new e11(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
+            i = new f11(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
         }
         if (g == null) {
             Paint paint = new Paint(1);
@@ -748,10 +748,10 @@ public abstract class ia {
             f.set(rectF.centerX() - f11, rectF.bottom - f12, rectF.centerX() + f11, rectF.bottom + f13);
             RectF rectF3 = f;
             canvas.drawRoundRect(rectF3, rectF3.height() / 2.0f, f.height() / 2.0f, h);
-            e11 e11Var = i;
+            f11 f11Var = i;
             RectF rectF4 = f;
             canvas2 = canvas;
-            e11Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
+            f11Var.c(rectF4.left + lerp, rectF4.centerY(), f7, -1, canvas2);
         } else {
             canvas2 = canvas;
         }
@@ -1050,7 +1050,7 @@ public abstract class ia {
             }
             ((aa) daVar.e).setImage(null, null, ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(arrayList2, ConnectionsManager.DEFAULT_DATACENTER_ID), photo2), s10, null, null, null, 0L, null, storyItem2, 0);
         } else {
-            ((aa) daVar.e).setImage(ImageLocation.getForDocument(document), t8.b.v(s10, "_pframe"), null, null, null, 0L, null, storyItem2, 0);
+            ((aa) daVar.e).setImage(ImageLocation.getForDocument(document), sa.e.v(s10, "_pframe"), null, null, null, 0L, null, storyItem2, 0);
         }
         return daVar;
     }
@@ -1133,7 +1133,7 @@ public abstract class ia {
 
     public static String s() {
         int max = (int) (Math.max(AndroidUtilities.getRealScreenSize().x, AndroidUtilities.getRealScreenSize().y) / AndroidUtilities.density);
-        return a4.a.k(max, max, "_");
+        return a4.a.l(max, max, "_");
     }
 
     public static Paint t(ImageReceiver imageReceiver, boolean z10) {

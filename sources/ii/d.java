@@ -3,7 +3,7 @@ package ii;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.zi0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class d implements Runnable {
                 r rVar4 = this.b;
                 c4 c4Var = rVar4.s;
                 if (c4Var != null) {
-                    c4Var.setSendEnabled(rVar4.r.O3());
+                    c4Var.setSendEnabled(rVar4.r.N3());
                     break;
                 }
                 break;

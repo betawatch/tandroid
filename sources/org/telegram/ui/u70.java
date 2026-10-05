@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class u70 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -91,7 +91,7 @@ public final class u70 extends org.telegram.ui.ActionBar.j {
                     if (i10 == 1) {
                         Bundle bundle = new Bundle();
                         bundle.putLong("chat_id", hj0Var.b);
-                        hj0Var.presentFragment(new va1(bundle));
+                        hj0Var.presentFragment(new ta1(bundle));
                         break;
                     }
                 } else {
@@ -283,37 +283,37 @@ public final class u70 extends org.telegram.ui.ActionBar.j {
                 break;
             case 24:
                 if (i10 == -1) {
-                    ((a31) obj).finishFragment();
+                    ((d31) obj).finishFragment();
                     break;
                 }
                 break;
             case 25:
                 if (i10 == -1) {
-                    ((f31) obj).finishFragment();
+                    ((w31) obj).finishFragment();
                     break;
                 }
                 break;
             case 26:
                 if (i10 == -1) {
-                    ((y31) obj).finishFragment();
+                    ((f41) obj).finishFragment();
                     break;
                 }
                 break;
             case 27:
                 if (i10 == -1) {
-                    ((h41) obj).finishFragment();
+                    ((SaveToGallerySettingsActivity) obj).finishFragment();
                     break;
                 }
                 break;
             case 28:
                 if (i10 == -1) {
-                    ((SaveToGallerySettingsActivity) obj).finishFragment();
+                    ((SecretMediaViewer) obj).e(true, false);
                     break;
                 }
                 break;
             default:
                 if (i10 == -1) {
-                    ((SecretMediaViewer) obj).e(true, false);
+                    ((SessionsActivity) obj).finishFragment();
                     break;
                 }
                 break;

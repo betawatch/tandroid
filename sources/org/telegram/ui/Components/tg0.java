@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class tg0 extends hx0 {
+public final class tg0 extends ix0 {
     public boolean a = false;
     public final Paint b = new Paint(1);
     public final int c = UserConfig.selectedAccount;
@@ -26,12 +26,12 @@ public final class tg0 extends hx0 {
         this.i = d6Var;
     }
 
-    @Override // org.telegram.ui.Components.hx0
+    @Override // org.telegram.ui.Components.ix0
     public final void c(boolean z10) {
         this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.hx0
+    @Override // org.telegram.ui.Components.ix0
     public final void d() {
         this.d = System.currentTimeMillis();
         this.e = true;
@@ -53,7 +53,7 @@ public final class tg0 extends hx0 {
         RectF rectF = this.f;
         rectF.set(0.0f, i10, dp, i10 + dp);
         float f7 = this.g;
-        int x10 = (int) (f7 < 0.5f ? org.telegram.messenger.ok.x(f7, 0.5f, 1.0f, 35.0f) : ((f7 - 0.5f) * 35.0f) / 0.5f);
+        int x10 = (int) (f7 < 0.5f ? org.telegram.messenger.bi.x(f7, 0.5f, 1.0f, 35.0f) : ((f7 - 0.5f) * 35.0f) / 0.5f);
         for (int i11 = 0; i11 < 3; i11++) {
             float dp3 = AndroidUtilities.dp(9.2f) + (AndroidUtilities.dp(5.0f) * i11);
             float dp4 = AndroidUtilities.dp(5.0f);
@@ -77,7 +77,7 @@ public final class tg0 extends hx0 {
         f();
     }
 
-    @Override // org.telegram.ui.Components.hx0
+    @Override // org.telegram.ui.Components.ix0
     public final void e() {
         this.g = 0.0f;
         this.e = false;
@@ -122,7 +122,7 @@ public final class tg0 extends hx0 {
         return -2;
     }
 
-    @Override // org.telegram.ui.Components.hx0
+    @Override // org.telegram.ui.Components.ix0
     public final void b(int i10) {
     }
 

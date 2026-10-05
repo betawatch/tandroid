@@ -45,7 +45,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class y21 extends org.telegram.ui.ActionBar.n2 {
     public static final a0.f R;
@@ -277,7 +277,7 @@ public class y21 extends org.telegram.ui.ActionBar.n2 {
         final int i11 = 0;
         this.actionBar.setAddToContainer(false);
         this.actionBar.setBackground(null);
-        this.actionBar.B(-1, false);
+        this.actionBar.A(-1, false);
         org.telegram.ui.ActionBar.q0 q0Var = new org.telegram.ui.ActionBar.q0(this, context, 2);
         n20 n20Var = new n20(this, context, 8);
         this.w = n20Var;
@@ -394,12 +394,12 @@ public class y21 extends org.telegram.ui.ActionBar.n2 {
         this.E = s21Var;
         s21Var.a.n(-9324972, -13856649, -6636738, -9915042);
         s21Var.invalidate();
-        String q6 = str != null ? a4.a.q(MessagesController.getInstance(this.currentAccount).linkPrefix, "/", str, new StringBuilder("https://")) : null;
+        String r10 = str != null ? a4.a.r(MessagesController.getInstance(this.currentAccount).linkPrefix, "/", str, new StringBuilder("https://")) : null;
         s21 s21Var2 = this.E;
         if (str2 != null) {
             str = str2;
         }
-        s21Var2.c(q6, str, z10, z11);
+        s21Var2.c(r10, str, z10, z11);
         s21 s21Var3 = this.E;
         s21Var3.e = new i21(this);
         q0Var.addView(s21Var3);
@@ -740,7 +740,7 @@ public class y21 extends org.telegram.ui.ActionBar.n2 {
         int i11 = 0;
         arrayList.add(new org.telegram.ui.ActionBar.k6(null, 32, null, null, new Drawable[]{x21Var.f}, w21Var, i10));
         arrayList.add(new org.telegram.ui.ActionBar.k6(x21Var.n, 4, null, null, null, null, org.telegram.ui.ActionBar.i6.j5));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(x21Var.y, 16, new Class[]{org.telegram.ui.Components.s21.class}, null, null, null, org.telegram.ui.ActionBar.i6.i5));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(x21Var.y, 16, new Class[]{org.telegram.ui.Components.t21.class}, null, null, null, org.telegram.ui.ActionBar.i6.i5));
         int size = arrayList.size();
         int i12 = 0;
         while (i12 < size) {

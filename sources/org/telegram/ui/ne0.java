@@ -16,9 +16,9 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class ne0 extends org.telegram.ui.Components.qw0 {
+public final class ne0 extends org.telegram.ui.Components.rw0 {
     public final EditTextBoldCursor a;
     public final TextView b;
     public final TextView c;
@@ -160,12 +160,12 @@ public final class ne0 extends org.telegram.ui.Components.qw0 {
         textView32.setOnClickListener(new tv(19, this, context));
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final boolean b() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final boolean c(boolean z10) {
         this.h = false;
         this.y.k1(true, true);
@@ -173,17 +173,17 @@ public final class ne0 extends org.telegram.ui.Components.qw0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void d() {
         this.h = false;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public String getHeaderName() {
         return LocaleController.getString("LoginPassword", R.string.LoginPassword);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void h(String str) {
         if (this.h || this.n == null) {
             return;
@@ -202,12 +202,12 @@ public final class ne0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void j() {
         AndroidUtilities.runOnUIThread(new g10(this, 19), ug0.t0);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void k(Bundle bundle) {
         Bundle bundle2 = bundle.getBundle("passview_params");
         this.f = bundle2;
@@ -220,7 +220,7 @@ public final class ne0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void l(Bundle bundle) {
         String obj = this.a.getText().toString();
         if (obj.length() != 0) {
@@ -232,7 +232,7 @@ public final class ne0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void m(Bundle bundle, boolean z10) {
         if (bundle == null) {
             return;
@@ -262,7 +262,7 @@ public final class ne0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void n() {
         int i10 = org.telegram.ui.ActionBar.i6.G6;
         this.d.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));

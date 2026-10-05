@@ -1,7 +1,6 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Rect;
-import android.os.Build;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
@@ -11,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class xb0 extends s4.s0 {
     public final /* synthetic */ int a;
@@ -80,9 +79,9 @@ public final class xb0 extends s4.s0 {
                     zl0Var.N1.onTouchEvent(obtain);
                     obtain.recycle();
                     View view2 = zl0Var.N1;
-                    zl0Var.k1(view2, 0.0f, 0.0f, false);
+                    zl0Var.j1(view2, 0.0f, 0.0f, false);
                     zl0Var.N1 = null;
-                    zl0Var.n1(null, view2);
+                    zl0Var.m1(null, view2);
                     zl0Var.P1 = false;
                 }
                 s4.s0 s0Var = zl0Var.a1;
@@ -104,11 +103,11 @@ public final class xb0 extends s4.s0 {
                 on0Var.a();
                 break;
             case 9:
-                n71 n71Var = (n71) obj;
-                ai.w0 w0Var = n71Var.d;
-                if (i10 == 0 && n71Var.G) {
-                    int i17 = n71Var.y;
-                    i13 = ((org.telegram.ui.ActionBar.f3) n71Var).backgroundPaddingTop;
+                o71 o71Var = (o71) obj;
+                ai.w0 w0Var = o71Var.d;
+                if (i10 == 0 && o71Var.G) {
+                    int i17 = o71Var.y;
+                    i13 = ((org.telegram.ui.ActionBar.f3) o71Var).backgroundPaddingTop;
                     if (AndroidUtilities.dp(13.0f) + i13 + i17 < AndroidUtilities.statusBarHeight * 2 && w0Var.canScrollVertically(1) && (il0Var = (il0) w0Var.K(0)) != null) {
                         View view3 = il0Var.a;
                         if (view3.getTop() > 0) {
@@ -131,11 +130,11 @@ public final class xb0 extends s4.s0 {
                         }
                     }
                     if (p1Var != null) {
-                        t0Var.y1(p1Var, true);
+                        t0Var.x1(p1Var, true);
                         t0Var.k3 = false;
                         t0Var.w0(0, p1Var.getTop() - ((t0Var.getMeasuredHeight() - p1Var.getMeasuredHeight()) / 2), AndroidUtilities.overshootInterpolator);
                     }
-                    t0Var.z1();
+                    t0Var.y1();
                     break;
                 } else {
                     AndroidUtilities.cancelRunOnUIThread(t0Var.l3);
@@ -151,7 +150,14 @@ public final class xb0 extends s4.s0 {
         }
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x008b, code lost:
+    
+        r0 = r0 - r1;
+     */
     @Override // s4.s0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public void b(RecyclerView recyclerView, int i10, int i11) {
         fl0 fl0Var;
         float f7;
@@ -234,34 +240,34 @@ public final class xb0 extends s4.s0 {
                 }
                 jl0 jl0Var = zl0Var.U1;
                 if (jl0Var != null) {
-                    zl0Var.f1(jl0Var, 700, false);
+                    zl0Var.e1(jl0Var, 700, false);
                     break;
                 }
                 break;
             case 5:
-                tv0.m((tv0) this.b);
+                uv0.m((uv0) this.b);
                 break;
             case 6:
-                aw0 aw0Var = (aw0) this.b;
-                if (recyclerView == aw0Var.M0) {
-                    aw0Var.X0 += i11;
+                bw0 bw0Var = (bw0) this.b;
+                if (recyclerView == bw0Var.G) {
+                    bw0Var.R += i11;
                 }
-                if (aw0Var.V0 == null && aw0Var.W0 == 0) {
-                    aw0Var.u0();
+                if (bw0Var.P == null && bw0Var.Q == 0) {
+                    bw0Var.B();
                     break;
                 }
                 break;
             case 7:
-                ((ax0) this.b).X.V();
+                ((bx0) this.b).X.V();
                 break;
             case 8:
-                qy0.M((qy0) this.b);
+                ry0.M((ry0) this.b);
                 break;
             case 9:
-                ((n71) this.b).J();
+                ((o71) this.b).J();
                 break;
             case 10:
-                ((f91) this.b).invalidate();
+                ((g91) this.b).invalidate();
                 break;
             case 11:
                 org.telegram.ui.web.o oVar = (org.telegram.ui.web.o) this.b;
@@ -290,7 +296,7 @@ public final class xb0 extends s4.s0 {
             case 13:
                 rg.t0 t0Var = (rg.t0) this.b;
                 if (recyclerView.getScrollState() == 1) {
-                    t0Var.y1(null, true);
+                    t0Var.x1(null, true);
                 }
                 t0Var.invalidate();
                 break;
@@ -321,31 +327,26 @@ public final class xb0 extends s4.s0 {
                         }
                     }
                 }
-                org.telegram.messenger.ok.s(i4Var.h.animate().alpha((i4Var.K && i4Var.n.canScrollVertically(-1)) ? 1.0f : 0.0f), tr.h, 320L);
+                org.telegram.messenger.bi.r(i4Var.h.animate().alpha((i4Var.K && i4Var.n.canScrollVertically(-1)) ? 1.0f : 0.0f), tr.h, 320L);
                 break;
             case 18:
                 ((xh.h4) this.b).Y();
                 break;
             case 19:
                 yh.g gVar = (yh.g) this.b;
-                if (gVar.a == 1) {
-                    if (gVar.e.canScrollVertically(1)) {
-                        for (int i16 = 0; i16 < gVar.e.getChildCount(); i16++) {
-                            if (!(gVar.e.getChildAt(i16) instanceof w00)) {
-                            }
-                        }
-                        break;
-                    }
-                    yh.g.e0(gVar);
+                rg.s1 s1Var = gVar.n;
+                if (!recyclerView.canScrollVertically(1)) {
+                    gVar.removeCallbacks(s1Var);
+                    gVar.post(s1Var);
                     break;
                 }
                 break;
             case 20:
-                yh.s0 s0Var2 = (yh.s0) this.b;
-                ah.i iVar2 = s0Var2.s0;
-                View view = s0Var2.q0;
-                FrameLayout frameLayout = s0Var2.l0;
-                zl0 zl0Var2 = s0Var2.d;
+                yh.t0 t0Var2 = (yh.t0) this.b;
+                View view = t0Var2.q0;
+                FrameLayout frameLayout = t0Var2.l0;
+                zl0 zl0Var2 = t0Var2.d;
+                boolean z12 = true;
                 int childCount = zl0Var2.getChildCount() - 1;
                 while (true) {
                     if (childCount >= 0) {
@@ -355,11 +356,13 @@ public final class xb0 extends s4.s0 {
                             if (R == 2) {
                                 y3 = childAt4.getY();
                                 measuredHeight = frameLayout.getMeasuredHeight();
+                                break;
                             } else if (R == 1) {
                                 f7 = childAt4.getY();
                             } else if (R == 0) {
                                 y3 = childAt4.getY();
                                 measuredHeight = frameLayout.getMeasuredHeight();
+                                break;
                             }
                         }
                         childCount--;
@@ -368,36 +371,30 @@ public final class xb0 extends s4.s0 {
                         z10 = false;
                     }
                 }
-                f7 = y3 - measuredHeight;
                 z10 = true;
-                boolean z12 = !z10 || ((float) frameLayout.getHeight()) + f7 < 0.0f;
-                if (s0Var2.x0 != z12) {
-                    s0Var2.x0 = z12;
+                float height = frameLayout.getHeight() + f7;
+                if (z10 && height >= 0.0f) {
+                    z12 = false;
+                }
+                if (t0Var2.v0 != z12) {
+                    t0Var2.v0 = z12;
                     if (z12) {
                         view.setVisibility(0);
                     }
-                    view.animate().alpha(z12 ? 1.0f : 0.0f).setDuration(200L).withEndAction(new es0(14, s0Var2, z12)).start();
+                    view.animate().alpha(z12 ? 1.0f : 0.0f).setDuration(200L).withEndAction(new fs0(14, t0Var2, z12)).start();
                 }
-                s0Var2.K = f7 <= 0.0f ? 0 : AndroidUtilities.dp(6.0f);
+                t0Var2.K = f7 <= 0.0f ? 0 : AndroidUtilities.dp(6.0f);
                 frameLayout.setVisibility(z10 ? 0 : 8);
                 frameLayout.setTranslationY(f7);
-                int i17 = Build.VERSION.SDK_INT;
-                if (i17 >= 31 && iVar2 != null) {
-                    iVar2.f(i10, i11);
-                    if (i17 >= 31 && iVar2 != null) {
-                        s0Var2.O(1);
-                        break;
-                    }
-                }
                 break;
             case 21:
-                ((yh.x3) this.b).Y.e();
+                ((yh.y3) this.b).Y.e();
                 break;
             case 22:
-                yh.x7 x7Var = (yh.x7) this.b;
-                le.b bVar = x7Var.V;
-                if (!x7Var.c.canScrollVertically(-1)) {
-                    kVar = ((org.telegram.ui.ActionBar.n2) x7Var).actionBar;
+                yh.z7 z7Var = (yh.z7) this.b;
+                le.b bVar = z7Var.V;
+                if (!z7Var.c.canScrollVertically(-1)) {
+                    kVar = ((org.telegram.ui.ActionBar.n2) z7Var).actionBar;
                     if (!kVar.s()) {
                         z11 = false;
                         bVar.a(z11, true);
@@ -407,19 +404,19 @@ public final class xb0 extends s4.s0 {
                 z11 = true;
                 bVar.a(z11, true);
             case 23:
-                yh.u7 u7Var = (yh.u7) this.b;
-                c71 c71Var = u7Var.a;
-                if (c71Var.canScrollVertically(1)) {
-                    for (int i18 = 0; i18 < c71Var.getChildCount(); i18++) {
-                        if (!(c71Var.getChildAt(i18) instanceof w00)) {
+                yh.w7 w7Var = (yh.w7) this.b;
+                e71 e71Var = w7Var.a;
+                if (e71Var.canScrollVertically(1)) {
+                    for (int i16 = 0; i16 < e71Var.getChildCount(); i16++) {
+                        if (!(e71Var.getChildAt(i16) instanceof w00)) {
                         }
                     }
                     break;
                 }
-                u7Var.h.run();
+                w7Var.h.run();
                 break;
             case 24:
-                ((zg.t) this.b).c(true);
+                ((zg.r) this.b).c(true);
                 break;
         }
     }

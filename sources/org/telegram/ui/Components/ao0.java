@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class ao0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static org.telegram.ui.ActionBar.b2 H;
@@ -65,7 +65,7 @@ public abstract class ao0 extends FrameLayout implements NotificationCenter.Noti
         this.b = n2Var;
         this.c = d6Var;
         this.y = j3;
-        zg.p0.o(d6Var);
+        zg.n0.o(d6Var);
         ai.w0 w0Var = new ai.w0(this, context, d6Var, 20);
         this.d = w0Var;
         w0Var.setPadding(AndroidUtilities.dp(5.66f), 0, AndroidUtilities.dp(5.66f), 0);
@@ -95,11 +95,11 @@ public abstract class ao0 extends FrameLayout implements NotificationCenter.Noti
         org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
         Activity findActivity = AndroidUtilities.findActivity(context);
         View currentFocus = findActivity != null ? findActivity.getCurrentFocus() : null;
-        boolean z10 = R != null && (R.getFragmentView() instanceof lw0) && ((lw0) R.getFragmentView()).R() > AndroidUtilities.dp(20.0f);
+        boolean z10 = R != null && (R.getFragmentView() instanceof mw0) && ((mw0) R.getFragmentView()).R() > AndroidUtilities.dp(20.0f);
         org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
         ?? e2Var = z10 ? new org.telegram.ui.ActionBar.e2(context, 0, d6Var) : new AlertDialog$Builder(context, 0, d6Var);
         String savedTagName = MessagesController.getInstance(i10).getSavedTagName(reaction);
-        zg.o0 d = zg.o0.d(reaction);
+        zg.m0 d = zg.m0.d(reaction);
         TextPaint textPaint = new TextPaint();
         textPaint.setTextSize(AndroidUtilities.dp(20));
         if (TextUtils.isEmpty(d.f)) {
@@ -131,13 +131,13 @@ public abstract class ao0 extends FrameLayout implements NotificationCenter.Noti
         un0Var.setImeOptions(6);
         un0Var.setBackgroundDrawable(null);
         un0Var.setPadding(0, 0, AndroidUtilities.dp(42.0f), 0);
-        LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
+        LinearLayout e7 = org.telegram.messenger.bi.e(context, 1);
         TextView textView = new TextView(context);
-        org.telegram.messenger.ok.n(i11, d6Var, textView, 1, 16.0f);
+        org.telegram.messenger.bi.m(i11, d6Var, textView, 1, 16.0f);
         textView.setText(LocaleController.getString(R.string.SavedTagLabelTagText));
-        f7.addView(textView, w7.z5.k(24.0f, 5.0f, 24.0f, 12.0f, -1, -2));
-        f7.addView(un0Var, w7.z5.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
-        e2Var.n(f7);
+        e7.addView(textView, w7.z5.k(24.0f, 5.0f, 24.0f, 12.0f, -1, -2));
+        e7.addView(un0Var, w7.z5.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
+        e2Var.n(e7);
         b2Var.a = AndroidUtilities.dp(292.0f);
         e2Var.k(LocaleController.getString(R.string.Save), new gg.d2(un0Var, i10, reaction, 9));
         e2Var.h(LocaleController.getString(R.string.Cancel), new ru(17));
@@ -207,10 +207,10 @@ public abstract class ao0 extends FrameLayout implements NotificationCenter.Noti
         LinearLayout linearLayout = this.f;
         if (linearLayout != null) {
             ch.d c10 = cVar.c(linearLayout, null, false);
-            c10.x(eh.b.p(this.c));
-            c10.A(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(9.0f));
-            c10.C(AndroidUtilities.dp(5.0f));
-            c10.y(AndroidUtilities.dp(4.0f));
+            c10.w(eh.b.p(this.c));
+            c10.z(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(9.0f));
+            c10.B(AndroidUtilities.dp(5.0f));
+            c10.x(AndroidUtilities.dp(4.0f));
             linearLayout.setBackground(c10);
         }
     }
@@ -254,9 +254,9 @@ public abstract class ao0 extends FrameLayout implements NotificationCenter.Noti
         return drawChild;
     }
 
-    public final void e(zg.o0 o0Var, boolean z10) {
+    public final void e(zg.m0 m0Var, boolean z10) {
         gg.n0 n0Var = this.e;
-        if (o0Var == null) {
+        if (m0Var == null) {
             this.h = 0L;
             if (z10) {
                 f(null);
@@ -271,13 +271,13 @@ public abstract class ao0 extends FrameLayout implements NotificationCenter.Noti
                 return;
             }
             xn0 xn0Var = (xn0) arrayList.get(i10);
-            long j3 = o0Var.h;
-            zg.o0 o0Var2 = xn0Var.a;
-            long j10 = o0Var2.h;
+            long j3 = m0Var.h;
+            zg.m0 m0Var2 = xn0Var.a;
+            long j10 = m0Var2.h;
             if (j3 == j10) {
                 this.h = j10;
                 if (z10) {
-                    f(o0Var2);
+                    f(m0Var2);
                 }
                 n0Var.l();
                 this.d.v0(i10);
@@ -287,7 +287,7 @@ public abstract class ao0 extends FrameLayout implements NotificationCenter.Noti
         }
     }
 
-    public abstract boolean f(zg.o0 o0Var);
+    public abstract boolean f(zg.m0 m0Var);
 
     public final void g(boolean z10) {
         ValueAnimator valueAnimator = this.G;
@@ -328,7 +328,7 @@ public abstract class ao0 extends FrameLayout implements NotificationCenter.Noti
             z11 = false;
             while (i11 < savedReactionTags.tags.size()) {
                 TLRPC.TL_savedReactionTag tL_savedReactionTag = savedReactionTags.tags.get(i11);
-                zg.o0 d = zg.o0.d(tL_savedReactionTag.reaction);
+                zg.m0 d = zg.m0.d(tL_savedReactionTag.reaction);
                 int i12 = i11;
                 if (!hashSet.contains(Long.valueOf(d.h)) && (j3 == 0 || tL_savedReactionTag.count > 0)) {
                     int i13 = tL_savedReactionTag.count;

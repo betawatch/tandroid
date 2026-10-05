@@ -11,7 +11,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.fd;
 import org.telegram.ui.web.u0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final /* synthetic */ class b {
                                 e eVar3 = eVar;
                                 if (eVar3.a == 1) {
                                     Log.i("PIP_DEBUG", "[HANDLER] attach");
-                                    eVar3.h.x();
+                                    eVar3.h.s();
                                     eVar3.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar3, 2), 400L));
                                     eVar3.a = 2;
                                     if (!eVar3.n) {
@@ -153,7 +153,7 @@ public final /* synthetic */ class b {
                                 e eVar3 = eVar2;
                                 if (eVar3.a == 1) {
                                     Log.i("PIP_DEBUG", "[HANDLER] attach");
-                                    eVar3.h.x();
+                                    eVar3.h.s();
                                     eVar3.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar3, 2), 400L));
                                     eVar3.a = 2;
                                     if (!eVar3.n) {
@@ -250,7 +250,7 @@ public final /* synthetic */ class b {
                                 e eVar32 = eVar3;
                                 if (eVar32.a == 1) {
                                     Log.i("PIP_DEBUG", "[HANDLER] attach");
-                                    eVar32.h.x();
+                                    eVar32.h.s();
                                     eVar32.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar32, 2), 400L));
                                     eVar32.a = 2;
                                     if (!eVar32.n) {

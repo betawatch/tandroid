@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.eu;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.r80;
 import org.telegram.ui.Components.tn;
 import org.telegram.ui.Components.tr;
@@ -38,10 +38,10 @@ import org.telegram.ui.Components.zl0;
 import org.telegram.ui.py0;
 import org.telegram.ui.uo0;
 import w7.z5;
-import yh.k5;
-import yh.t5;
+import yh.l5;
+import yh.u5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class h4 extends cb {
     public static final /* synthetic */ int k0 = 0;
@@ -52,8 +52,8 @@ public final class h4 extends cb {
     public final m3 b0;
     public final m3 c0;
     public final m3 d0;
-    public final yh.i2 e0;
-    public yh.w0 f0;
+    public final yh.j2 e0;
+    public yh.x0 f0;
     public final HashSet g0;
     public boolean h0;
     public f4 i0;
@@ -178,17 +178,17 @@ public final class h4 extends cb {
         jVar.n(350L);
         this.d.setItemAnimator(jVar);
         this.d.setItemSelectorColorProvider(new u2.l0(19));
-        yh.i2 i2Var = new yh.i2(context);
-        this.e0 = i2Var;
+        yh.j2 j2Var = new yh.j2(context);
+        this.e0 = j2Var;
         int dp = AndroidUtilities.dp(20.0f);
         int dp2 = AndroidUtilities.dp(9.0f);
-        i2Var.h = dp;
-        i2Var.n = dp2;
-        i2Var.setRoundRadius(AndroidUtilities.dp(22.0f));
-        i2Var.setFullRect(true);
-        AndroidUtilities.makeGlobalBlurBitmap(new ii.q1(i2Var, 26), 12.0f, 12, null, new ArrayList());
-        i2Var.setPivotY(0.0f);
-        this.container.addView(i2Var, z5.e(-1, -2, 55));
+        j2Var.h = dp;
+        j2Var.n = dp2;
+        j2Var.setRoundRadius(AndroidUtilities.dp(22.0f));
+        j2Var.setFullRect(true);
+        AndroidUtilities.makeGlobalBlurBitmap(new ii.q1(j2Var, 26), 12.0f, 12, null, new ArrayList());
+        j2Var.setPivotY(0.0f);
+        this.container.addView(j2Var, z5.e(-1, -2, 55));
         this.i0.N(false);
         g4Var.d = new z3(this, 1);
     }
@@ -206,7 +206,7 @@ public final class h4 extends cb {
 
     public static void O(h4 h4Var, g4 g4Var, int i10) {
         TL_stars.SavedStarGift savedStarGift;
-        g61 G = h4Var.i0.G(i10 - 1);
+        h61 G = h4Var.i0.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -220,7 +220,7 @@ public final class h4 extends cb {
                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                 b2Var.R = string;
                 b2Var.T = LocaleController.getString(R.string.GiftCraftCantChooseFirst);
-                org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
+                org.telegram.messenger.q.o(R.string.OK, alertDialog$Builder, null);
                 return;
             }
             if (z10 && (starGift instanceof TL_stars.TL_starGiftUnique)) {
@@ -229,7 +229,7 @@ public final class h4 extends cb {
                 b2Var2.q(400L);
                 long clientUserId = UserConfig.getInstance(h4Var.currentAccount).getClientUserId();
                 zf.b bVar = tL_starGiftUnique.resale_ton_only ? zf.b.b : zf.b.a;
-                t5.x(h4Var.currentAccount, bVar).H(tL_starGiftUnique, clientUserId, null, true, new uo0(h4Var, b2Var2, bVar, tL_starGiftUnique, clientUserId));
+                u5.x(h4Var.currentAccount, bVar).H(tL_starGiftUnique, clientUserId, null, true, new uo0(h4Var, b2Var2, bVar, tL_starGiftUnique, clientUserId));
                 return;
             }
             if (!z10) {
@@ -254,7 +254,7 @@ public final class h4 extends cb {
                     org.telegram.ui.ActionBar.b2 b2Var3 = alertDialog$Builder2.a;
                     b2Var3.R = string2;
                     b2Var3.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCraftUnavailableTextTime, LocaleController.formatDateTime(savedStarGift.can_craft_at, true)));
-                    org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder2, null);
+                    org.telegram.messenger.q.o(R.string.OK, alertDialog$Builder2, null);
                     return;
                 }
             }
@@ -360,14 +360,14 @@ public final class h4 extends cb {
     public static void R(h4 h4Var, ArrayList arrayList) {
         g4 g4Var = h4Var.Y;
         if (g4Var != null) {
-            k5 k5Var = g4Var.b;
+            l5 l5Var = g4Var.b;
             v3 v3Var = g4Var.c;
-            if (k5Var == null || v3Var == null) {
+            if (l5Var == null || v3Var == null) {
                 return;
             }
             int currentTime = ConnectionsManager.getInstance(h4Var.currentAccount).getCurrentTime();
-            arrayList.add(g61.s(-1, LocaleController.getString(R.string.GiftCraftSelectYour)));
-            ArrayList arrayList2 = k5Var.l;
+            arrayList.add(h61.t(-1, LocaleController.getString(R.string.GiftCraftSelectYour)));
+            ArrayList arrayList2 = l5Var.l;
             int size = arrayList2.size();
             int i10 = 0;
             boolean z10 = true;
@@ -379,34 +379,34 @@ public final class h4 extends cb {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (!h4Var.g0.contains(Long.valueOf(savedStarGift.gift.id))) {
                     boolean z11 = savedStarGift.can_craft_at <= currentTime;
-                    g61 a2 = h1.a(0, savedStarGift.gift, false, true, false, false, true);
+                    h61 a2 = h1.a(0, savedStarGift.gift, false, true, false, false, true);
                     a2.g = z11;
                     arrayList.add(a2);
                     i11++;
                     z10 = false;
                 }
             }
-            if (k5Var.i || !k5Var.j) {
+            if (l5Var.i || !l5Var.j) {
                 int i13 = i11 % 3;
                 int i14 = 6 - i13;
                 for (int i15 = 0; i15 < i14; i15++) {
-                    g61 p5 = g61.p((i15 - i13) + 1, 35);
-                    p5.u = 1;
-                    arrayList.add(p5);
+                    h61 q6 = h61.q((i15 - i13) + 1, 35);
+                    q6.u = 1;
+                    arrayList.add(q6);
                 }
             } else if (z10) {
-                arrayList.add(g61.g(LocaleController.getString(R.string.GiftCraftSelectYourEmpty)));
+                arrayList.add(h61.g(LocaleController.getString(R.string.GiftCraftSelectYourEmpty)));
             }
             if (v3Var.e > 0 || h4Var.j0) {
                 h4Var.j0 = true;
                 String string = LocaleController.getString(R.string.GiftCraftSelectResale);
-                g61 g61Var = new g61(42);
-                g61Var.d = -2;
-                g61Var.o = string;
-                arrayList.add(g61Var);
+                h61 h61Var = new h61(42);
+                h61Var.d = -2;
+                h61Var.o = string;
+                arrayList.add(h61Var);
                 HorizontalScrollView horizontalScrollView = h4Var.Z;
                 if (horizontalScrollView != null) {
-                    arrayList.add(g61.j(-3, horizontalScrollView));
+                    arrayList.add(h61.j(-3, horizontalScrollView));
                 }
                 ArrayList arrayList3 = v3Var.d;
                 int size2 = arrayList3.size();
@@ -416,24 +416,24 @@ public final class h4 extends cb {
                     arrayList.add(h1.a(0, (TL_stars.TL_starGiftUnique) obj2, false, true, false, true, true));
                 }
                 if (v3Var.t || !v3Var.u) {
-                    g61 p10 = g61.p(10, 35);
-                    p10.u = 1;
-                    arrayList.add(p10);
-                    g61 p11 = g61.p(11, 35);
-                    p11.u = 1;
-                    arrayList.add(p11);
-                    g61 p12 = g61.p(12, 35);
-                    p12.u = 1;
-                    arrayList.add(p12);
-                    g61 p13 = g61.p(13, 35);
-                    p13.u = 1;
-                    arrayList.add(p13);
-                    g61 p14 = g61.p(14, 35);
-                    p14.u = 1;
-                    arrayList.add(p14);
-                    g61 p15 = g61.p(15, 35);
-                    p15.u = 1;
-                    arrayList.add(p15);
+                    h61 q10 = h61.q(10, 35);
+                    q10.u = 1;
+                    arrayList.add(q10);
+                    h61 q11 = h61.q(11, 35);
+                    q11.u = 1;
+                    arrayList.add(q11);
+                    h61 q12 = h61.q(12, 35);
+                    q12.u = 1;
+                    arrayList.add(q12);
+                    h61 q13 = h61.q(13, 35);
+                    q13.u = 1;
+                    arrayList.add(q13);
+                    h61 q14 = h61.q(14, 35);
+                    q14.u = 1;
+                    arrayList.add(q14);
+                    h61 q15 = h61.q(15, 35);
+                    q15.u = 1;
+                    arrayList.add(q15);
                 }
             }
         }
@@ -444,19 +444,19 @@ public final class h4 extends cb {
         if (tL_payments_paymentFormStarGift == null) {
             return;
         }
-        yh.a3 a3Var = new yh.a3(bVar, tL_payments_paymentFormStarGift);
+        yh.b3 b3Var = new yh.b3(bVar, tL_payments_paymentFormStarGift);
         Context context = h4Var.getContext();
         d6 d6Var = h4Var.resourcesProvider;
         int i10 = h4Var.currentAccount;
         StringBuilder sb2 = new StringBuilder();
         sb2.append(tL_starGiftUnique.title);
         sb2.append(" #");
-        new yh.c3(context, d6Var, tL_starGiftUnique, a3Var, i10, j3, org.telegram.messenger.f0.h(tL_starGiftUnique.num, ',', sb2), true, new r80(h4Var, tL_starGiftUnique, j3, 1)).b();
+        new yh.d3(context, d6Var, tL_starGiftUnique, b3Var, i10, j3, org.telegram.messenger.q.h(tL_starGiftUnique.num, ',', sb2), true, new r80(h4Var, tL_starGiftUnique, j3, 1)).b();
     }
 
-    public static void T(h4 h4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, yh.a3 a3Var, nf.e eVar) {
+    public static void T(h4 h4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, yh.b3 b3Var, nf.e eVar) {
         eVar.d();
-        t5.x(h4Var.currentAccount, a3Var.a).h(a3Var.b, tL_starGiftUnique, j3, null, true, new org.telegram.tgnet.e(h4Var, eVar, tL_starGiftUnique, 6));
+        u5.x(h4Var.currentAccount, b3Var.a).h(b3Var.b, tL_starGiftUnique, j3, null, true, new org.telegram.tgnet.e(h4Var, eVar, tL_starGiftUnique, 6));
     }
 
     public static void U(h4 h4Var, g4 g4Var, Context context) {
@@ -509,22 +509,22 @@ public final class h4 extends cb {
     @Override // org.telegram.ui.Components.cb
     public final void D(float f7) {
         float y3 = this.containerView.getY() + f7;
-        yh.i2 i2Var = this.e0;
-        float measuredHeight = y3 - i2Var.getMeasuredHeight();
-        float clamp01 = 1.0f - Utilities.clamp01(Math.max(0.0f, (-measuredHeight) + AndroidUtilities.dp(8.0f)) / i2Var.getMeasuredHeight());
+        yh.j2 j2Var = this.e0;
+        float measuredHeight = y3 - j2Var.getMeasuredHeight();
+        float clamp01 = 1.0f - Utilities.clamp01(Math.max(0.0f, (-measuredHeight) + AndroidUtilities.dp(8.0f)) / j2Var.getMeasuredHeight());
         float height = this.container.getHeight() / 2.0f;
         if (measuredHeight > height) {
             clamp01 = Math.min(clamp01, Utilities.clamp01(1.0f - ((measuredHeight - height) / AndroidUtilities.dpf2(128.0f))));
         }
-        i2Var.setScaleX(clamp01);
-        i2Var.setScaleY(clamp01);
-        i2Var.setAlpha(AndroidUtilities.ilerp(clamp01, 0.5f, 1.0f));
-        i2Var.setTranslationY(measuredHeight);
+        j2Var.setScaleX(clamp01);
+        j2Var.setScaleY(clamp01);
+        j2Var.setAlpha(AndroidUtilities.ilerp(clamp01, 0.5f, 1.0f));
+        j2Var.setTranslationY(measuredHeight);
     }
 
     public final void Y() {
         int R;
-        g61 G;
+        h61 G;
         int i10 = 0;
         boolean z10 = false;
         boolean z11 = false;

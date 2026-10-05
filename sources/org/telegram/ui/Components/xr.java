@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class xr extends ViewGroup {
     public static final /* synthetic */ int s = 0;
@@ -122,8 +122,8 @@ public final class xr extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int z11 = org.telegram.messenger.ok.z(32.0f, getWidth(), 3);
-        int z12 = org.telegram.messenger.ok.z(42.0f, getHeight(), 4);
+        int z11 = org.telegram.messenger.bi.z(32.0f, getWidth(), 3);
+        int z12 = org.telegram.messenger.bi.z(42.0f, getHeight(), 4);
         int i14 = 0;
         while (true) {
             View[] viewArr = this.c;
@@ -145,8 +145,8 @@ public final class xr extends ViewGroup {
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
-        int z10 = org.telegram.messenger.ok.z(32.0f, getWidth(), 3);
-        int z11 = org.telegram.messenger.ok.z(42.0f, getHeight(), 4);
+        int z10 = org.telegram.messenger.bi.z(32.0f, getWidth(), 3);
+        int z11 = org.telegram.messenger.bi.z(42.0f, getHeight(), 4);
         for (View view : this.c) {
             if (view != null) {
                 view.measure(View.MeasureSpec.makeMeasureSpec(z10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(z11, TLObject.FLAG_30));

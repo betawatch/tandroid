@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class zu0 extends org.telegram.ui.Components.l60 {
     public final /* synthetic */ av0 d;
@@ -12,7 +12,7 @@ public final class zu0 extends org.telegram.ui.Components.l60 {
         this.d = av0Var;
     }
 
-    @Override // org.telegram.ui.Components.vo0
+    @Override // org.telegram.ui.Components.wo0
     public final CharSequence d() {
         StringBuilder sb2 = new StringBuilder();
         sb2.append(LocaleController.getString("AccDescrVideoQuality", R.string.AccDescrVideoQuality));

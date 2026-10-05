@@ -1,6 +1,6 @@
 package ii;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k2 implements Runnable {
     public final /* synthetic */ int a;
@@ -17,16 +17,16 @@ public final /* synthetic */ class k2 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.f4(this.c);
+                this.b.e4(this.c);
                 break;
             case 1:
-                this.b.h4(this.c);
+                this.b.g4(this.c);
                 break;
             case 2:
                 this.b.scrollBy(0, this.c);
                 break;
             default:
-                this.b.g4(this.c);
+                this.b.f4(this.c);
                 break;
         }
     }

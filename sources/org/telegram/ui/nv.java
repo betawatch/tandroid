@@ -20,10 +20,10 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class nv extends org.telegram.ui.ActionBar.n2 {
-    public static final org.telegram.ui.Components.as0 x = new org.telegram.ui.Components.as0(2);
+    public static final org.telegram.ui.Components.bs0 x = new org.telegram.ui.Components.bs0(2);
     public uy a;
     public ContactsActivity b;
     public org.telegram.ui.ActionBar.v0 c;
@@ -104,7 +104,7 @@ public final class nv extends org.telegram.ui.ActionBar.n2 {
                 mvVar2.d = uyVar.e0[0].a;
                 uyVar.V3();
                 dy dyVar = uyVar.C0;
-                mvVar2.e = dyVar != null ? dyVar.W : null;
+                mvVar2.e = dyVar != null ? dyVar.a0 : null;
             } else if (i10 == 1) {
                 mv mvVar3 = mvVarArr[i10];
                 mvVar3.a = contactsActivity;

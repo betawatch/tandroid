@@ -6,7 +6,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class oi extends org.telegram.ui.ou0 {
     public final /* synthetic */ MediaController.PhotoEntry a;
@@ -26,7 +26,7 @@ public final class oi extends org.telegram.ui.ou0 {
         }
         final MediaController.PhotoEntry photoEntry = this.a;
         photoEntry.editedInfo = videoEditedInfo;
-        e5.a0(xiVar.J1, xiVar.h1() + 1, 0L, new Utilities.Callback() { // from class: org.telegram.ui.Components.ni
+        e5.a0(xiVar.J1, xiVar.j1() + 1, 0L, new Utilities.Callback() { // from class: org.telegram.ui.Components.ni
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 ArrayList arrayList = ChatAttachAlertPhotoLayout.t1;

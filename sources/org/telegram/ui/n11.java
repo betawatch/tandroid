@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class n11 extends org.telegram.ui.Components.yl0 {
     public final Context c;
@@ -28,47 +28,47 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
     public final boolean D(s4.c1 c1Var) {
         int b10 = c1Var.b();
         p11 p11Var = this.d;
-        if (b10 == p11Var.E) {
-            return p11Var.n;
+        if (b10 == p11Var.F) {
+            return p11Var.r;
         }
-        if (c1Var.b() == p11Var.W) {
+        if (c1Var.b() == p11Var.X) {
             return true;
         }
         switch (c1Var.f) {
         }
-        return p11Var.n;
+        return p11Var.r;
     }
 
     @Override // s4.h0
     public final int h() {
-        return this.d.Y;
+        return this.d.Z;
     }
 
     @Override // s4.h0
     public final int j(int i10) {
         p11 p11Var = this.d;
-        if (i10 == p11Var.v || i10 == p11Var.K || i10 == p11Var.T || i10 == p11Var.P) {
+        if (i10 == p11Var.w || i10 == p11Var.L || i10 == p11Var.U || i10 == p11Var.Q) {
             return 0;
         }
-        if (i10 == p11Var.F || i10 == p11Var.G || i10 == p11Var.I || i10 == p11Var.H || i10 == p11Var.Q || i10 == p11Var.R || i10 == p11Var.W) {
+        if (i10 == p11Var.G || i10 == p11Var.H || i10 == p11Var.J || i10 == p11Var.I || i10 == p11Var.R || i10 == p11Var.S || i10 == p11Var.X) {
             return 1;
         }
-        if (i10 == p11Var.N || i10 == p11Var.V || i10 == p11Var.J || i10 == p11Var.S) {
+        if (i10 == p11Var.O || i10 == p11Var.W || i10 == p11Var.K || i10 == p11Var.T) {
             return 2;
         }
-        if (i10 == p11Var.U) {
+        if (i10 == p11Var.V) {
             return 3;
         }
-        if (i10 == p11Var.L || i10 == p11Var.M) {
+        if (i10 == p11Var.M || i10 == p11Var.N) {
             return 4;
         }
-        if (i10 == p11Var.w) {
+        if (i10 == p11Var.x) {
             return 5;
         }
-        if (i10 == p11Var.x || i10 == p11Var.X) {
+        if (i10 == p11Var.y || i10 == p11Var.Y) {
             return 6;
         }
-        return (i10 == p11Var.y || i10 == p11Var.E || i10 == p11Var.O) ? 7 : 0;
+        return (i10 == p11Var.E || i10 == p11Var.F || i10 == p11Var.P) ? 7 : 0;
     }
 
     @Override // s4.h0
@@ -81,17 +81,17 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
         int i15;
         int i16;
         p11 p11Var = this.d;
-        long j3 = p11Var.f;
-        long j10 = p11Var.e;
+        long j3 = p11Var.h;
+        long j10 = p11Var.f;
         int i17 = c1Var.f;
         View view = c1Var.a;
         switch (i17) {
             case 0:
                 org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
-                if (i10 != p11Var.v) {
-                    if (i10 != p11Var.K) {
-                        if (i10 != p11Var.T) {
-                            if (i10 == p11Var.P) {
+                if (i10 != p11Var.w) {
+                    if (i10 != p11Var.L) {
+                        if (i10 != p11Var.U) {
+                            if (i10 == p11Var.Q) {
                                 m4Var.setText(LocaleController.getString(R.string.VoipNotificationSettings));
                                 break;
                             }
@@ -113,15 +113,15 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
                 String sharedPrefKey = NotificationsController.getSharedPrefKey(j10, j3);
                 i11 = ((org.telegram.ui.ActionBar.n2) p11Var).currentAccount;
                 SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i11);
-                if (i10 != p11Var.W) {
+                if (i10 != p11Var.X) {
                     eaVar.setTextColor(p11Var.getThemedColor(org.telegram.ui.ActionBar.i6.G6));
-                    if (i10 != p11Var.F) {
-                        if (i10 != p11Var.Q) {
-                            if (i10 != p11Var.G) {
-                                if (i10 != p11Var.I) {
-                                    if (i10 != p11Var.H) {
-                                        if (i10 == p11Var.R) {
-                                            int c10 = org.telegram.messenger.f0.c("calls_vibrate_", sharedPrefKey, notificationsSettings, 0);
+                    if (i10 != p11Var.G) {
+                        if (i10 != p11Var.R) {
+                            if (i10 != p11Var.H) {
+                                if (i10 != p11Var.J) {
+                                    if (i10 != p11Var.I) {
+                                        if (i10 == p11Var.S) {
+                                            int c10 = org.telegram.messenger.q.c("calls_vibrate_", sharedPrefKey, notificationsSettings, 0);
                                             if (c10 != 0 && c10 != 4) {
                                                 if (c10 != 1) {
                                                     if (c10 != 2) {
@@ -143,18 +143,18 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
                                             }
                                         }
                                     } else {
-                                        int c11 = org.telegram.messenger.f0.c("smart_max_count_", sharedPrefKey, notificationsSettings, 2);
-                                        int c12 = org.telegram.messenger.f0.c("smart_delay_", sharedPrefKey, notificationsSettings, 180);
+                                        int c11 = org.telegram.messenger.q.c("smart_max_count_", sharedPrefKey, notificationsSettings, 2);
+                                        int c12 = org.telegram.messenger.q.c("smart_delay_", sharedPrefKey, notificationsSettings, 180);
                                         if (c11 != 0) {
-                                            eaVar.c(LocaleController.getString(R.string.SmartNotifications), LocaleController.formatString("SmartNotificationsInfo", R.string.SmartNotificationsInfo, Integer.valueOf(c11), LocaleController.formatPluralString("Minutes", c12 / 60, new Object[0])), false, p11Var.I != -1);
+                                            eaVar.c(LocaleController.getString(R.string.SmartNotifications), LocaleController.formatString("SmartNotificationsInfo", R.string.SmartNotificationsInfo, Integer.valueOf(c11), LocaleController.formatPluralString("Minutes", c12 / 60, new Object[0])), false, p11Var.J != -1);
                                             break;
                                         } else {
-                                            eaVar.c(LocaleController.getString(R.string.SmartNotifications), LocaleController.getString(R.string.SmartNotificationsDisabled), false, p11Var.I != -1);
+                                            eaVar.c(LocaleController.getString(R.string.SmartNotifications), LocaleController.getString(R.string.SmartNotificationsDisabled), false, p11Var.J != -1);
                                             break;
                                         }
                                     }
                                 } else {
-                                    int c13 = org.telegram.messenger.f0.c("priority_", sharedPrefKey, notificationsSettings, 3);
+                                    int c13 = org.telegram.messenger.q.c("priority_", sharedPrefKey, notificationsSettings, 3);
                                     if (c13 != 0) {
                                         if (c13 != 1 && c13 != 2) {
                                             if (c13 != 3) {
@@ -181,14 +181,14 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
                                     }
                                 }
                             } else {
-                                int c14 = org.telegram.messenger.f0.c("vibrate_", sharedPrefKey, notificationsSettings, 0);
+                                int c14 = org.telegram.messenger.q.c("vibrate_", sharedPrefKey, notificationsSettings, 0);
                                 if (c14 != 0 && c14 != 4) {
                                     if (c14 != 1) {
                                         if (c14 != 2) {
                                             if (c14 == 3) {
                                                 String string = LocaleController.getString(R.string.Vibrate);
                                                 String string2 = LocaleController.getString(R.string.Long);
-                                                if (p11Var.H == -1 && p11Var.I == -1) {
+                                                if (p11Var.I == -1 && p11Var.J == -1) {
                                                     r9 = false;
                                                 }
                                                 eaVar.c(string, string2, false, r9);
@@ -197,7 +197,7 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
                                         } else {
                                             String string3 = LocaleController.getString(R.string.Vibrate);
                                             String string4 = LocaleController.getString(R.string.VibrationDisabled);
-                                            if (p11Var.H == -1 && p11Var.I == -1) {
+                                            if (p11Var.I == -1 && p11Var.J == -1) {
                                                 r9 = false;
                                             }
                                             eaVar.c(string3, string4, false, r9);
@@ -206,7 +206,7 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
                                     } else {
                                         String string5 = LocaleController.getString(R.string.Vibrate);
                                         String string6 = LocaleController.getString(R.string.Short);
-                                        if (p11Var.H == -1 && p11Var.I == -1) {
+                                        if (p11Var.I == -1 && p11Var.J == -1) {
                                             r9 = false;
                                         }
                                         eaVar.c(string5, string6, false, r9);
@@ -215,7 +215,7 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
                                 } else {
                                     String string7 = LocaleController.getString(R.string.Vibrate);
                                     String string8 = LocaleController.getString(R.string.VibrationDefault);
-                                    if (p11Var.H == -1 && p11Var.I == -1) {
+                                    if (p11Var.I == -1 && p11Var.J == -1) {
                                         r9 = false;
                                     }
                                     eaVar.c(string7, string8, false, r9);
@@ -223,7 +223,7 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
                                 }
                             }
                         } else {
-                            String string9 = notificationsSettings.getString(t8.b.i("ringtone_", sharedPrefKey), LocaleController.getString(R.string.DefaultRingtone));
+                            String string9 = notificationsSettings.getString(sa.e.i("ringtone_", sharedPrefKey), LocaleController.getString(R.string.DefaultRingtone));
                             if (string9.equals("NoSound")) {
                                 string9 = LocaleController.getString(R.string.NoSound);
                             }
@@ -231,7 +231,7 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
                             break;
                         }
                     } else {
-                        String string10 = notificationsSettings.getString(t8.b.i("sound_", sharedPrefKey), LocaleController.getString(R.string.SoundDefault));
+                        String string10 = notificationsSettings.getString(sa.e.i("sound_", sharedPrefKey), LocaleController.getString(R.string.SoundDefault));
                         long j11 = notificationsSettings.getLong("sound_document_id_" + sharedPrefKey, 0L);
                         if (j11 != 0) {
                             TLRPC.Document c15 = p11Var.getMediaDataController().ringtoneDataStore.c(j11);
@@ -253,14 +253,14 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
             case 2:
                 org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
                 e9Var.setFixedSize(0);
-                if (i10 != p11Var.N) {
-                    if (i10 != p11Var.V) {
-                        if (i10 != p11Var.J) {
-                            if (i10 == p11Var.S) {
+                if (i10 != p11Var.O) {
+                    if (i10 != p11Var.W) {
+                        if (i10 != p11Var.K) {
+                            if (i10 == p11Var.T) {
                                 e9Var.setText(LocaleController.getString(R.string.VoipRingtoneInfo));
                                 break;
                             }
-                        } else if (p11Var.I != -1) {
+                        } else if (p11Var.J != -1) {
                             e9Var.setText(LocaleController.getString(R.string.PriorityInfo));
                             break;
                         } else {
@@ -283,7 +283,7 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
                 SharedPreferences notificationsSettings2 = MessagesController.getNotificationsSettings(i12);
                 StringBuilder sb2 = new StringBuilder("color_");
                 sb2.append(sharedPrefKey2);
-                int c16 = notificationsSettings2.contains(sb2.toString()) ? org.telegram.messenger.f0.c("color_", sharedPrefKey2, notificationsSettings2, -16776961) : DialogObject.isChatDialog(j10) ? notificationsSettings2.getInt("GroupLed", -16776961) : notificationsSettings2.getInt("MessagesLed", -16776961);
+                int c16 = notificationsSettings2.contains(sb2.toString()) ? org.telegram.messenger.q.c("color_", sharedPrefKey2, notificationsSettings2, -16776961) : DialogObject.isChatDialog(j10) ? notificationsSettings2.getInt("GroupLed", -16776961) : notificationsSettings2.getInt("MessagesLed", -16776961);
                 int i18 = 0;
                 while (true) {
                     if (i18 < 9) {
@@ -300,12 +300,12 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
                 org.telegram.ui.Cells.k6 k6Var = (org.telegram.ui.Cells.k6) view;
                 i13 = ((org.telegram.ui.ActionBar.n2) p11Var).currentAccount;
                 SharedPreferences notificationsSettings3 = MessagesController.getNotificationsSettings(i13);
-                int c17 = org.telegram.messenger.f0.c("popup_", NotificationsController.getSharedPrefKey(j10, j3), notificationsSettings3, 0);
+                int c17 = org.telegram.messenger.q.c("popup_", NotificationsController.getSharedPrefKey(j10, j3), notificationsSettings3, 0);
                 if (c17 == 0) {
                     c17 = notificationsSettings3.getInt(DialogObject.isChatDialog(j10) ? "popupGroup" : "popupAll", 0) != 0 ? 1 : 2;
                 }
-                if (i10 != p11Var.L) {
-                    if (i10 == p11Var.M) {
+                if (i10 != p11Var.M) {
+                    if (i10 == p11Var.N) {
                         k6Var.c(LocaleController.getString(R.string.PopupDisabled), c17 == 2, false);
                         k6Var.setTag(2);
                         break;
@@ -330,7 +330,7 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
             case 6:
                 org.telegram.ui.Cells.b7 b7Var = (org.telegram.ui.Cells.b7) view;
                 boolean z10 = i10 > 0;
-                r9 = i10 < p11Var.Y - 1;
+                r9 = i10 < p11Var.Z - 1;
                 if (b7Var.c != z10 || b7Var.d != r9) {
                     b7Var.c = z10;
                     b7Var.d = r9;
@@ -348,11 +348,11 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
                 org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) view;
                 i16 = ((org.telegram.ui.ActionBar.n2) p11Var).currentAccount;
                 SharedPreferences notificationsSettings4 = MessagesController.getNotificationsSettings(i16);
-                if (i10 != p11Var.y) {
-                    if (i10 != p11Var.E) {
-                        if (i10 == p11Var.O) {
-                            String i20 = t8.b.i(NotificationsSettingsFacade.PROPERTY_STORIES_NOTIFY, NotificationsController.getSharedPrefKey(j10, j3));
-                            if (p11Var.Z || (notificationsSettings4.contains("EnableAllStories") && notificationsSettings4.getBoolean("EnableAllStories", true))) {
+                if (i10 != p11Var.E) {
+                    if (i10 != p11Var.F) {
+                        if (i10 == p11Var.P) {
+                            String i20 = sa.e.i(NotificationsSettingsFacade.PROPERTY_STORIES_NOTIFY, NotificationsController.getSharedPrefKey(j10, j3));
+                            if (p11Var.a0 || (notificationsSettings4.contains("EnableAllStories") && notificationsSettings4.getBoolean("EnableAllStories", true))) {
                                 r10 = true;
                             }
                             w8Var.f(LocaleController.getString(R.string.StoriesSoundEnabled), notificationsSettings4.getBoolean(i20, r10), true);
@@ -364,7 +364,7 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
                         break;
                     }
                 } else {
-                    w8Var.f(LocaleController.getString(R.string.Notifications), p11Var.n, true);
+                    w8Var.f(LocaleController.getString(R.string.Notifications), p11Var.r, true);
                     break;
                 }
                 break;
@@ -375,7 +375,7 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         View m4Var;
         p11 p11Var = this.d;
-        org.telegram.ui.ActionBar.d6 d6Var = p11Var.d;
+        org.telegram.ui.ActionBar.d6 d6Var = p11Var.e;
         Context context = this.c;
         switch (i10) {
             case 0:
@@ -418,39 +418,39 @@ public final class n11 extends org.telegram.ui.Components.yl0 {
         View view = c1Var.a;
         p11 p11Var = this.d;
         if (i10 == 0) {
-            ((org.telegram.ui.Cells.m4) view).a(null, p11Var.n);
+            ((org.telegram.ui.Cells.m4) view).a(null, p11Var.r);
             return;
         }
         if (i10 == 1) {
             org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) view;
-            if (c1Var.b() == p11Var.W) {
+            if (c1Var.b() == p11Var.X) {
                 eaVar.a(null, true);
                 return;
             } else {
-                eaVar.a(null, p11Var.n);
+                eaVar.a(null, p11Var.r);
                 return;
             }
         }
         if (i10 == 2) {
-            ((org.telegram.ui.Cells.e9) view).c(null, p11Var.n);
+            ((org.telegram.ui.Cells.e9) view).c(null, p11Var.r);
             return;
         }
         if (i10 == 3) {
-            ((org.telegram.ui.Cells.y8) view).a(null, p11Var.n);
+            ((org.telegram.ui.Cells.y8) view).a(null, p11Var.r);
             return;
         }
         if (i10 == 4) {
-            ((org.telegram.ui.Cells.k6) view).b(null, p11Var.n);
+            ((org.telegram.ui.Cells.k6) view).b(null, p11Var.r);
             return;
         }
         if (i10 != 7) {
             return;
         }
         org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) view;
-        if (c1Var.b() == p11Var.E) {
-            w8Var.e(null, p11Var.n);
-        } else if (c1Var.b() == p11Var.O) {
-            w8Var.e(null, p11Var.n);
+        if (c1Var.b() == p11Var.F) {
+            w8Var.e(null, p11Var.r);
+        } else if (c1Var.b() == p11Var.P) {
+            w8Var.e(null, p11Var.r);
         } else {
             w8Var.e(null, true);
         }

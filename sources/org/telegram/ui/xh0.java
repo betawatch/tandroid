@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class xh0 extends org.telegram.ui.ActionBar.n2 {
     public final org.telegram.ui.Components.qa0 a;
@@ -37,10 +37,10 @@ public final class xh0 extends org.telegram.ui.ActionBar.n2 {
             org.telegram.ui.Components.w00 b10 = qa0Var.b();
             qa0Var.q = b10;
             qa0Var.m.addView(b10, -1, -1);
-            org.telegram.ui.Components.tx0 c10 = qa0Var.c();
+            org.telegram.ui.Components.ux0 c10 = qa0Var.c();
             qa0Var.o = c10;
             qa0Var.m.addView(c10, -1, -1);
-            org.telegram.ui.Components.tx0 a10 = qa0Var.a();
+            org.telegram.ui.Components.ux0 a10 = qa0Var.a();
             qa0Var.n = a10;
             qa0Var.m.addView(a10, w7.z5.c(-1.0f, -1));
             n2Var.getParentActivity();
@@ -48,7 +48,7 @@ public final class xh0 extends org.telegram.ui.ActionBar.n2 {
             org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(n2Var.getParentActivity(), null);
             qa0Var.p = zl0Var;
             zl0Var.setAdapter(qa0Var.f);
-            qa0Var.p.s1();
+            qa0Var.p.r1();
             qa0Var.p.setLayoutManager(c0Var);
             qa0Var.p.setOnItemClickListener(new ai.g(qa0Var, 19));
             qa0Var.p.setOnScrollListener(qa0Var.D);
@@ -62,7 +62,10 @@ public final class xh0 extends org.telegram.ui.ActionBar.n2 {
             qa0Var.p.setItemAnimator(jVar);
         }
         FrameLayout frameLayout2 = qa0Var.m;
-        this.actionBar.z(qa0Var.p, false);
+        org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
+        org.telegram.ui.Components.zl0 zl0Var2 = qa0Var.p;
+        kVar2.getClass();
+        kVar2.y(zl0Var2, org.telegram.ui.ActionBar.i6.a7, org.telegram.ui.ActionBar.i6.s8);
         qa0Var.e();
         this.fragmentView = frameLayout2;
         return frameLayout2;

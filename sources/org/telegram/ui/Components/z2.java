@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z2 implements Utilities.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -84,21 +84,21 @@ public final /* synthetic */ class z2 implements Utilities.Callback2 {
                         ai.m8 m8Var = new ai.m8(context, i12, auction, j10, runnable);
                         TLObject user = peerDialogId >= 0 ? MessagesController.getInstance(i12).getUser(Long.valueOf(peerDialogId)) : MessagesController.getInstance(i12).getChat(Long.valueOf(-peerDialogId));
                         TLObject user2 = j10 >= 0 ? MessagesController.getInstance(i12).getUser(Long.valueOf(j10)) : MessagesController.getInstance(i12).getChat(Long.valueOf(-j10));
-                        LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
-                        f7.addView(new gi.a(context, user, user2), w7.z5.t(-1, -2, 48, 0, -4, 0, 0));
+                        LinearLayout e7 = org.telegram.messenger.bi.e(context, 1);
+                        e7.addView(new gi.a(context, user, user2), w7.z5.t(-1, -2, 48, 0, -4, 0, 0));
                         TextView textView = new TextView(context);
                         NotificationCenter.listenEmojiLoading(textView);
                         textView.setText(LocaleController.getString(R.string.Gift2AuctionsChangeRecipient));
                         int i13 = org.telegram.ui.ActionBar.i6.j5;
                         org.telegram.ui.Cells.c1.p(i13, d6Var, textView, 1, 20.0f);
                         textView.setGravity(LocaleController.isRTL ? 5 : 3);
-                        f7.addView(textView, w7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
+                        e7.addView(textView, w7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 19.0f, 24.0f, 2.0f));
                         TextView textView2 = new TextView(context);
-                        org.telegram.messenger.ok.n(i13, d6Var, textView2, 1, 16.0f);
-                        org.telegram.messenger.ok.q(R.string.Gift2AuctionsChangeRecipient2, new Object[]{DialogObject.getShortName(peerDialogId), DialogObject.getShortName(j10)}, textView2);
-                        f7.addView(textView2, w7.z5.t(-1, -2, 48, 24, 4, 24, 4));
+                        org.telegram.messenger.bi.m(i13, d6Var, textView2, 1, 16.0f);
+                        org.telegram.messenger.bi.p(R.string.Gift2AuctionsChangeRecipient2, new Object[]{DialogObject.getShortName(peerDialogId), DialogObject.getShortName(j10)}, textView2);
+                        e7.addView(textView2, w7.z5.t(-1, -2, 48, 24, 4, 24, 4));
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
-                        alertDialog$Builder.n(f7);
+                        alertDialog$Builder.n(e7);
                         alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new r2.s(m8Var, 17));
                         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                         alertDialog$Builder.a.show();

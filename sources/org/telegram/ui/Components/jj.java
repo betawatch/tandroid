@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class jj extends pi implements NotificationCenter.NotificationCenterDelegate, le.d {
     public int E;
@@ -141,7 +141,7 @@ public final class jj extends pi implements NotificationCenter.NotificationCente
                     case 3:
                         jj jjVar = this.b;
                         jjVar.J();
-                        jjVar.b.U1(jjVar, 0);
+                        jjVar.b.W1(jjVar, 0);
                         return;
                     default:
                         jj jjVar2 = this.b;
@@ -281,7 +281,7 @@ public final class jj extends pi implements NotificationCenter.NotificationCente
                     case 3:
                         jj jjVar = this.b;
                         jjVar.J();
-                        jjVar.b.U1(jjVar, 0);
+                        jjVar.b.W1(jjVar, 0);
                         return;
                     default:
                         jj jjVar2 = this.b;
@@ -421,7 +421,7 @@ public final class jj extends pi implements NotificationCenter.NotificationCente
                     case 3:
                         jj jjVar = this.b;
                         jjVar.J();
-                        jjVar.b.U1(jjVar, 0);
+                        jjVar.b.W1(jjVar, 0);
                         return;
                     default:
                         jj jjVar2 = this.b;
@@ -566,7 +566,7 @@ public final class jj extends pi implements NotificationCenter.NotificationCente
                     case 3:
                         jj jjVar = this.b;
                         jjVar.J();
-                        jjVar.b.U1(jjVar, 0);
+                        jjVar.b.W1(jjVar, 0);
                         return;
                     default:
                         jj jjVar2 = this.b;
@@ -722,7 +722,7 @@ public final class jj extends pi implements NotificationCenter.NotificationCente
                     case 3:
                         jj jjVar = this.b;
                         jjVar.J();
-                        jjVar.b.U1(jjVar, 0);
+                        jjVar.b.W1(jjVar, 0);
                         return;
                     default:
                         jj jjVar2 = this.b;
@@ -821,12 +821,12 @@ public final class jj extends pi implements NotificationCenter.NotificationCente
             viewGroup = frameLayout;
         }
         FrameLayout.LayoutParams d10 = w7.z5.d(-1, -2.0f, 51, 0.0f, 8.0f, 0.0f, 4.0f);
-        ((ViewGroup.MarginLayoutParams) d10).topMargin = org.telegram.messenger.f0.C(27.0f, AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) d10).topMargin);
+        ((ViewGroup.MarginLayoutParams) d10).topMargin = org.telegram.messenger.q.C(27.0f, AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) d10).topMargin);
         viewGroup.addView(nsVar, d10);
         fj fjVar = new fj(this, context, xiVar.J1, new d(this, 5), new bj(this), new bj(this), d6Var);
         this.v = fjVar;
         fjVar.f3.r = false;
-        fjVar.s1();
+        fjVar.r1();
         setBlur3Capture(fjVar);
         this.d = fjVar;
         this.h = true;
@@ -846,7 +846,7 @@ public final class jj extends pi implements NotificationCenter.NotificationCente
 
     public static boolean I(jj jjVar, MessageObject messageObject) {
         jjVar.O = messageObject;
-        return MediaController.getInstance().setPlaylist(org.telegram.messenger.f0.k(messageObject), messageObject, 0L);
+        return MediaController.getInstance().setPlaylist(org.telegram.messenger.q.k(messageObject), messageObject, 0L);
     }
 
     @Override // org.telegram.ui.Components.pi
@@ -876,13 +876,13 @@ public final class jj extends pi implements NotificationCenter.NotificationCente
             arrayList.add(((MediaController.AudioEntry) it.next()).messageObject);
         }
         xi xiVar = this.b;
-        return e5.b0(xiVar.J1, xiVar.l1(), xiVar.h1() + arrayList.size(), new Utilities.Callback() { // from class: org.telegram.ui.Components.cj
+        return e5.b0(xiVar.J1, xiVar.n1(), xiVar.j1() + arrayList.size(), new Utilities.Callback() { // from class: org.telegram.ui.Components.cj
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
                 jj jjVar = jj.this;
                 gj gjVar = jjVar.N;
                 xi xiVar2 = jjVar.b;
-                gjVar.j(arrayList, xiVar2.k1().getText(), z10, i10, i11, j3, z11, ((Long) obj).longValue());
+                gjVar.j(arrayList, xiVar2.m1().getText(), z10, i10, i11, j3, z11, ((Long) obj).longValue());
                 xiVar2.dismiss(true);
             }
         }, 0L);
@@ -908,16 +908,16 @@ public final class jj extends pi implements NotificationCenter.NotificationCente
         this.v.setPadding(0, (int) (this.x.c(0.0f) + AndroidUtilities.dp(56.0f) + i10 + AndroidUtilities.statusBarHeight), 0, this.e);
     }
 
-    public final void K(g61 g61Var, View view) {
-        if (g61Var != null && g61Var.d == this.R) {
+    public final void K(h61 h61Var, View view) {
+        if (h61Var != null && h61Var.d == this.R) {
             this.J.load();
             return;
         }
-        if (g61Var != null && g61Var.d == this.P) {
+        if (h61Var != null && h61Var.d == this.P) {
             L();
             return;
         }
-        if (g61Var != null && g61Var.d == this.Q) {
+        if (h61Var != null && h61Var.d == this.Q) {
             M();
             return;
         }
@@ -931,12 +931,12 @@ public final class jj extends pi implements NotificationCenter.NotificationCente
                 this.F = true;
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(audioEntry.messageObject);
-                this.N.j(arrayList, xiVar.k1().getText(), false, 0, 0, 0L, false, 0L);
+                this.N.j(arrayList, xiVar.m1().getText(), false, 0, 0, 0L, false, 0L);
             } else {
                 HashSet hashSet = this.I;
                 if (hashSet.contains(audioEntry)) {
                     hashSet.remove(audioEntry);
-                    g61Var.e = false;
+                    h61Var.e = false;
                     j7Var.e(false, true);
                     i10 = 2;
                 } else {
@@ -950,16 +950,16 @@ public final class jj extends pi implements NotificationCenter.NotificationCente
                             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                             b2Var.R = string;
                             b2Var.T = formatString;
-                            org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
+                            org.telegram.messenger.q.o(R.string.OK, alertDialog$Builder, null);
                             return;
                         }
                     }
-                    g61Var.e = true;
+                    h61Var.e = true;
                     hashSet.add(audioEntry);
                     j7Var.e(true, true);
                 }
             }
-            xiVar.S1(i10);
+            xiVar.U1(i10);
         }
     }
 
@@ -1007,7 +1007,7 @@ public final class jj extends pi implements NotificationCenter.NotificationCente
         tL_messages_searchGlobal.q = str2;
         tL_messages_searchGlobal.limit = arrayList.isEmpty() ? 3 : 15;
         if (arrayList.size() > 0) {
-            MessageObject messageObject = ((MediaController.AudioEntry) hg.k0.g(1, arrayList)).messageObject;
+            MessageObject messageObject = ((MediaController.AudioEntry) hg.c.g(1, arrayList)).messageObject;
             tL_messages_searchGlobal.offset_id = messageObject.getId();
             tL_messages_searchGlobal.offset_rate = this.b0;
             tL_messages_searchGlobal.offset_peer = messagesController.getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
@@ -1256,8 +1256,8 @@ public final class jj extends pi implements NotificationCenter.NotificationCente
         ns nsVar = this.x;
         if (nsVar != null) {
             ch.d c10 = cVar.c(nsVar, eh.b.o(d6Var), false);
-            c10.z(AndroidUtilities.dp(24.0f));
-            c10.y(AndroidUtilities.dp(7.0f));
+            c10.y(AndroidUtilities.dp(24.0f));
+            c10.x(AndroidUtilities.dp(7.0f));
             nsVar.setBlurredBackground(c10);
         }
     }

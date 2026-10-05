@@ -12,9 +12,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class gf0 extends org.telegram.ui.Components.qw0 {
+public final class gf0 extends org.telegram.ui.Components.rw0 {
     public final /* synthetic */ ug0 E;
     public final org.telegram.ui.Components.nj0 a;
     public final TextView b;
@@ -89,12 +89,12 @@ public final class gf0 extends org.telegram.ui.Components.qw0 {
         textView5.setOnClickListener(new j60(this, 7));
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final boolean b() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final boolean c(boolean z10) {
         this.E.k1(true, true);
         AndroidUtilities.cancelRunOnUIThread(this.h);
@@ -103,12 +103,12 @@ public final class gf0 extends org.telegram.ui.Components.qw0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public String getHeaderName() {
         return LocaleController.getString("ResetAccount", R.string.ResetAccount);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void k(Bundle bundle) {
         Bundle bundle2 = bundle.getBundle("resetview_params");
         this.n = bundle2;
@@ -117,7 +117,7 @@ public final class gf0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void l(Bundle bundle) {
         Bundle bundle2 = this.n;
         if (bundle2 != null) {
@@ -125,7 +125,7 @@ public final class gf0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void m(Bundle bundle, boolean z10) {
         if (bundle == null) {
             return;
@@ -143,7 +143,7 @@ public final class gf0 extends org.telegram.ui.Components.qw0 {
         AndroidUtilities.runOnUIThread(x5Var, 1000L);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void n() {
         int i10 = org.telegram.ui.ActionBar.i6.G6;
         this.b.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));

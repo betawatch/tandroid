@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fa implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.m6, org.telegram.ui.Components.ol0, MessagesStorage.BooleanCallback, c5.p, org.telegram.ui.Components.voip.j3, BillingController.ProductDetailsResponseListenerLegacy, e2.h, org.telegram.ui.Components.x40 {
     public final /* synthetic */ int a;
@@ -142,14 +142,14 @@ public final /* synthetic */ class fa implements org.telegram.ui.ActionBar.a2, o
 
     @Override // org.telegram.ui.Components.voip.j3
     public void f(org.telegram.ui.Components.voip.k3 k3Var) {
-        mi1 mi1Var = (mi1) this.c;
+        ki1 ki1Var = (ki1) this.c;
         org.telegram.ui.Components.voip.l3 l3Var = (org.telegram.ui.Components.voip.l3) this.d;
         VoIPService voIPService = (VoIPService) this.e;
         if (VoIPService.getSharedInstance() != null) {
-            AndroidUtilities.cancelRunOnUIThread(mi1Var.S0);
-            mi1Var.R0 = false;
-            VoIPService.getSharedInstance().toggleSpeakerphoneOrShowRouteSheet(mi1Var.b, false, Integer.valueOf(this.b));
-            mi1Var.u(l3Var, voIPService);
+            AndroidUtilities.cancelRunOnUIThread(ki1Var.S0);
+            ki1Var.R0 = false;
+            VoIPService.getSharedInstance().toggleSpeakerphoneOrShowRouteSheet(ki1Var.b, false, Integer.valueOf(this.b));
+            ki1Var.u(l3Var, voIPService);
         }
     }
 
@@ -192,7 +192,7 @@ public final /* synthetic */ class fa implements org.telegram.ui.ActionBar.a2, o
                 connectionsManager.sendRequest(toggleusername, new RequestDelegate() { // from class: org.telegram.ui.ga
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.bj(ha.this, str, tLObject, i15, z11, tL_error, tL_username, z10));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.cj(ha.this, str, tLObject, i15, z11, tL_error, tL_username, z10));
                     }
                 });
                 saVar.w.add(tL_username.username);
@@ -215,9 +215,9 @@ public final /* synthetic */ class fa implements org.telegram.ui.ActionBar.a2, o
                 }
                 break;
             case 4:
-                org.telegram.ui.Components.pv0 pv0Var = (org.telegram.ui.Components.pv0) obj3;
+                org.telegram.ui.Components.qv0 qv0Var = (org.telegram.ui.Components.qv0) obj3;
                 MessageObject messageObject = (MessageObject) obj;
-                org.telegram.ui.ActionBar.b2[] b2VarArr = {new org.telegram.ui.ActionBar.b2(pv0Var.getContext(), 3, (org.telegram.ui.ActionBar.d6) obj2)};
+                org.telegram.ui.ActionBar.b2[] b2VarArr = {new org.telegram.ui.ActionBar.b2(qv0Var.getContext(), 3, (org.telegram.ui.ActionBar.d6) obj2)};
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
                 TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) messageObject.messageOwner.media;
                 TLRPC.TL_inputMediaPoll tL_inputMediaPoll = new TLRPC.TL_inputMediaPoll();
@@ -230,10 +230,10 @@ public final /* synthetic */ class fa implements org.telegram.ui.ActionBar.a2, o
                 tL_poll.closed = true;
                 tL_messages_editMessage.media = tL_inputMediaPoll;
                 int i16 = this.b;
-                tL_messages_editMessage.peer = MessagesController.getInstance(i16).getInputPeer(pv0Var.j1);
+                tL_messages_editMessage.peer = MessagesController.getInstance(i16).getInputPeer(qv0Var.j1);
                 tL_messages_editMessage.id = messageObject.getId();
                 tL_messages_editMessage.flags |= 16384;
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.sr0(b2VarArr, i16, ConnectionsManager.getInstance(i16).sendRequest(tL_messages_editMessage, new ai.za(pv0Var, b2VarArr, i16, tL_messages_editMessage, 5)), i14), 500L);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.tr0(b2VarArr, i16, ConnectionsManager.getInstance(i16).sendRequest(tL_messages_editMessage, new ai.za(qv0Var, b2VarArr, i16, tL_messages_editMessage, 5)), i14), 500L);
                 break;
         }
     }

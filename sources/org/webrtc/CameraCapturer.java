@@ -4,13 +4,12 @@ import android.content.Context;
 import android.media.MediaRecorder;
 import android.os.Handler;
 import android.os.Looper;
-import hg.k0;
 import java.util.Arrays;
 import java.util.List;
 import org.webrtc.CameraSession;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 abstract class CameraCapturer implements CameraVideoCapturer {
     private static final int MAX_OPEN_CAMERA_ATTEMPTS = 3;
@@ -202,7 +201,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     private final Object stateLock = new Object();
     private SwitchState switchState = SwitchState.IDLE;
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public enum SwitchState {
         IDLE,
         PENDING,
@@ -243,7 +242,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
             throw new RuntimeException("No cameras attached.");
         }
         if (!asList.contains(this.cameraName)) {
-            throw new IllegalArgumentException(a4.a.s(new StringBuilder("Camera name "), this.cameraName, " does not match any known camera device."));
+            throw new IllegalArgumentException(a4.a.t(new StringBuilder("Camera name "), this.cameraName, " does not match any known camera device."));
         }
     }
 
@@ -286,7 +285,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     public void switchCameraInternal(CameraVideoCapturer.CameraSwitchHandler cameraSwitchHandler, String str) {
         Logging.d(TAG, "switchCamera internal");
         if (!Arrays.asList(this.cameraEnumerator.getDeviceNames()).contains(str)) {
-            reportCameraSwitchError(t8.b.i("Attempted to switch to unknown camera device ", str), cameraSwitchHandler);
+            reportCameraSwitchError(sa.e.i("Attempted to switch to unknown camera device ", str), cameraSwitchHandler);
             return;
         }
         synchronized (this.stateLock) {
@@ -336,7 +335,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     @Override // org.webrtc.VideoCapturer
     public void changeCaptureFormat(int i10, int i11, int i12) {
-        StringBuilder k10 = k0.k("changeCaptureFormat: ", i10, "x", i11, "@");
+        StringBuilder k10 = hg.c.k("changeCaptureFormat: ", i10, "x", i11, "@");
         k10.append(i12);
         Logging.d(TAG, k10.toString());
         synchronized (this.stateLock) {
@@ -395,7 +394,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     @Override // org.webrtc.VideoCapturer
     public void startCapture(int i10, int i11, int i12) {
-        StringBuilder k10 = k0.k("startCapture: ", i10, "x", i11, "@");
+        StringBuilder k10 = hg.c.k("startCapture: ", i10, "x", i11, "@");
         k10.append(i12);
         Logging.d(TAG, k10.toString());
         if (this.applicationContext == null) {

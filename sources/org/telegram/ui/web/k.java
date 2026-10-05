@@ -31,11 +31,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.nn;
-import org.telegram.ui.gb1;
+import org.telegram.ui.eb1;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public int E;
@@ -162,7 +162,7 @@ public final class k extends FrameLayout {
                     jVar2.c = jSONObject.optDouble("rank", 0.0d);
                     arrayList.add(jVar2);
                 }
-                Collections.sort(arrayList, new gb1(4));
+                Collections.sort(arrayList, new eb1(4));
             } catch (Exception e7) {
                 FileLog.e(e7);
             }
@@ -238,7 +238,7 @@ public final class k extends FrameLayout {
         sparseIntArray2.put(i6.f7, v9);
         sparseIntArray2.put(i6.G8, i6.l1(0.2f, i11));
         sparseIntArray2.put(i6.i6, i6.l1(AndroidUtilities.lerp(0.05f, 0.12f, f7), i11));
-        this.w.h1();
+        this.w.g1();
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -299,9 +299,9 @@ public final class k extends FrameLayout {
         j1 j1Var = new j1(new i3(7, this, z10));
         String str3 = o1.a().c;
         if (str3 != null) {
-            StringBuilder u10 = a4.a.u(str3);
-            u10.append(URLEncoder.encode(str));
-            str2 = u10.toString();
+            StringBuilder v = a4.a.v(str3);
+            v.append(URLEncoder.encode(str));
+            str2 = v.toString();
         }
         this.O = j1Var.execute(str2);
     }

@@ -19,7 +19,7 @@ import org.telegram.ui.Components.zl0;
 import org.telegram.ui.k20;
 import org.telegram.ui.rt;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class v extends zl0 {
     public final /* synthetic */ int e3 = 0;
@@ -187,7 +187,7 @@ public final class v extends zl0 {
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         switch (this.e3) {
             case 1:
-                y1(z10, i10, i11, i12, i13);
+                x1(z10, i10, i11, i12, i13);
                 ((org.telegram.ui.m3) this.g3).I = -1.0f;
                 break;
             case 2:
@@ -230,7 +230,7 @@ public final class v extends zl0 {
         return super.onTouchEvent(motionEvent);
     }
 
-    public void y1(boolean z10, int i10, int i11, int i12, int i13) {
+    public void x1(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         int childCount = getChildCount();
         for (int i14 = 0; i14 < childCount; i14++) {

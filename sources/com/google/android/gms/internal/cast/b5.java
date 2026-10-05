@@ -3,7 +3,7 @@ package com.google.android.gms.internal.cast;
 import java.io.IOException;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class b5 extends IOException {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -31,10 +31,10 @@ public final class b5 extends IOException {
     public b5(long j3, long j10, int i10, IndexOutOfBoundsException indexOutOfBoundsException) {
         super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(r3.toString()), indexOutOfBoundsException);
         Locale locale = Locale.US;
-        StringBuilder t10 = a4.a.t(j3, "Pos: ", ", limit: ");
-        t10.append(j10);
-        t10.append(", len: ");
-        t10.append(i10);
+        StringBuilder u10 = a4.a.u(j3, "Pos: ", ", limit: ");
+        u10.append(j10);
+        u10.append(", len: ");
+        u10.append(i10);
     }
 
     public b5(String str, IndexOutOfBoundsException indexOutOfBoundsException) {

@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class u80 extends org.telegram.ui.ActionBar.f3 {
     public static final /* synthetic */ int r = 0;
@@ -167,7 +167,7 @@ public final class u80 extends org.telegram.ui.ActionBar.f3 {
                 TLRPC.ChatInvite chatInvite7 = this.d;
                 z13 = (chatInvite7 == null && ((chatInvite7.channel && !chatInvite7.megagroup) || ChatObject.isChannelAndNotMegaGroup(chatInvite7.chat))) || (ChatObject.isChannel(this.e) && !this.e.megagroup);
                 isEmpty = TextUtils.isEmpty(str3);
-                TextView f10 = org.telegram.messenger.f0.f(context, 1, 13.0f);
+                TextView f10 = org.telegram.messenger.q.f(context, 1, 13.0f);
                 int i13 = org.telegram.ui.ActionBar.i6.r5;
                 f10.setTextColor(getThemedColor(i13));
                 f10.setSingleLine(true);
@@ -316,7 +316,7 @@ public final class u80 extends org.telegram.ui.ActionBar.f3 {
         if (chatInvite72 == null) {
         }
         isEmpty = TextUtils.isEmpty(str3);
-        TextView f102 = org.telegram.messenger.f0.f(context, 1, 13.0f);
+        TextView f102 = org.telegram.messenger.q.f(context, 1, 13.0f);
         int i132 = org.telegram.ui.ActionBar.i6.r5;
         f102.setTextColor(getThemedColor(i132));
         f102.setSingleLine(true);
@@ -407,7 +407,7 @@ public final class u80 extends org.telegram.ui.ActionBar.f3 {
         long j3 = chat.id;
         boolean z10 = !ChatObject.isChannelAndNotMegaGroup(chat);
         u80Var.getClass();
-        Bundle f7 = t8.b.f(j3, "chat_id");
+        Bundle f7 = sa.e.f(j3, "chat_id");
         MessagesController messagesController = MessagesController.getInstance(u80Var.currentAccount);
         org.telegram.ui.ActionBar.n2 n2Var2 = u80Var.c;
         if (messagesController.checkCanOpenChat(f7, n2Var2)) {

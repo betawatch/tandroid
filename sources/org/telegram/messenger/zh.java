@@ -7,7 +7,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class zh implements Runnable {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class zh implements Runnable {
                 ((SendMessagesHelper) this.c).lambda$performSendDelayedMessage$57((TLObject) this.b, (SendMessagesHelper.DelayedMessage) this.d, (String) this.e);
                 break;
             case 2:
-                ((SendMessagesHelper) this.c).lambda$sendMessage$19((TLRPC.TL_messages_forwardMessages) this.b, (ArrayList) this.d, (fj) this.e);
+                ((SendMessagesHelper) this.c).lambda$sendMessage$19((TLRPC.TL_messages_forwardMessages) this.b, (ArrayList) this.d, (gj) this.e);
                 break;
             case 3:
                 ((SendMessagesHelper) this.c).lambda$didReceivedNotification$4((SendMessagesHelper.DelayedMessage) this.b, (File) this.d, (MessageObject) this.e);

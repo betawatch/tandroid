@@ -21,7 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class bk extends pi implements NotificationCenter.NotificationCenterDelegate, le.d {
     public final vj E;
@@ -34,7 +34,7 @@ public final class bk extends pi implements NotificationCenter.NotificationCente
     public final le.b n;
     public final FrameLayout r;
     public final ai.w0 s;
-    public final hg.e0 v;
+    public final hg.f0 v;
     public final HashMap w;
     public final ArrayList x;
     public boolean y;
@@ -73,13 +73,13 @@ public final class bk extends pi implements NotificationCenter.NotificationCente
         this.d = w0Var;
         this.h = true;
         this.f = true;
-        w0Var.s1();
+        w0Var.r1();
         w0Var.setClipToPadding(false);
         getContext();
-        hg.e0 e0Var = new hg.e0(this, AndroidUtilities.dp(9.0f), w0Var, 1);
-        this.v = e0Var;
-        w0Var.setLayoutManager(e0Var);
-        e0Var.P = false;
+        hg.f0 f0Var = new hg.f0(this, AndroidUtilities.dp(9.0f), w0Var, 1);
+        this.v = f0Var;
+        w0Var.setLayoutManager(f0Var);
+        f0Var.P = false;
         w0Var.setHorizontalScrollBarEnabled(false);
         w0Var.setVerticalScrollBarEnabled(false);
         w0Var.setClipToPadding(false);
@@ -144,13 +144,13 @@ public final class bk extends pi implements NotificationCenter.NotificationCente
             arrayList.add(K(hashMap.get((rj) obj)));
         }
         xi xiVar = this.b;
-        return e5.b0(xiVar.J1, xiVar.l1(), xiVar.h1() + arrayList.size(), new Utilities.Callback() { // from class: org.telegram.ui.Components.oj
+        return e5.b0(xiVar.J1, xiVar.n1(), xiVar.j1() + arrayList.size(), new Utilities.Callback() { // from class: org.telegram.ui.Components.oj
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj2) {
                 bk bkVar = bk.this;
                 sj sjVar = bkVar.J;
                 xi xiVar2 = bkVar.b;
-                String obj3 = xiVar2.k1().getText().toString();
+                String obj3 = xiVar2.m1().getText().toString();
                 ((Long) obj2).getClass();
                 sjVar.b(arrayList, obj3, z10, i10, j3, z11);
                 xiVar2.dismiss();
@@ -168,7 +168,7 @@ public final class bk extends pi implements NotificationCenter.NotificationCente
             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
             b2Var.R = string;
             b2Var.T = formatString;
-            org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
+            org.telegram.messenger.q.o(R.string.OK, alertDialog$Builder, null);
             return;
         }
         rj a2 = rj.a(obj);
@@ -188,7 +188,7 @@ public final class bk extends pi implements NotificationCenter.NotificationCente
             qpVar.setVisibility(0);
         }
         qpVar.a(z10, true);
-        this.b.S1(z10 ? 1 : 2);
+        this.b.U1(z10 ? 1 : 2);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:39:0x00dc  */
@@ -490,7 +490,7 @@ public final class bk extends pi implements NotificationCenter.NotificationCente
             i12 = (i11 / 5) * 2;
             xiVar.setAllowNestedScroll(true);
         }
-        this.s.r1(0, i12 + AndroidUtilities.statusBarHeight, 0, this.e);
+        this.s.q1(0, i12 + AndroidUtilities.statusBarHeight, 0, this.e);
     }
 
     @Override // le.d

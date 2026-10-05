@@ -15,26 +15,26 @@ import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.qz;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.w00;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.py0;
 import w7.b6;
 import w7.z5;
-import yh.k5;
+import yh.l5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class m4 extends cb implements NotificationCenter.NotificationCenterDelegate {
     public final int X;
-    public final k5 Y;
+    public final l5 Y;
     public final HashSet Z;
     public final qz a0;
     public final FrameLayout b0;
     public final ci.d c0;
     public b80 d0;
-    public u61 e0;
+    public w61 e0;
     public i0.b f0;
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -63,7 +63,7 @@ public final class m4 extends cb implements NotificationCenter.NotificationCente
         setBackgroundColor(getThemedColor(i11));
         I();
         this.X = i10;
-        this.Y = new k5(this.currentAccount, j3, true);
+        this.Y = new l5(this.currentAccount, j3, true);
         this.e.setActionBarMenuOnItemClick(new j4(this, this.e.n().a(1, R.drawable.ic_ab_other), j3));
         ci.d dVar = new ci.d(getContext(), this.resourcesProvider, true);
         this.c0 = dVar;
@@ -80,9 +80,9 @@ public final class m4 extends cb implements NotificationCenter.NotificationCente
         frameLayout2.addView(dVar, z5.c(-1.0f, -1));
         frameLayout2.setOnClickListener(new py0(27, this, s4Var));
         ch.d c10 = cVar2.c(frameLayout2, null, false);
-        c10.x(eh.b.j(this.resourcesProvider));
-        c10.z(AndroidUtilities.dp(28.0f));
-        c10.y(AndroidUtilities.dp(5.0f));
+        c10.w(eh.b.j(this.resourcesProvider));
+        c10.y(AndroidUtilities.dp(28.0f));
+        c10.x(AndroidUtilities.dp(5.0f));
         frameLayout2.setBackground(c10);
         b6.b(frameLayout2, 0.02f, 1.5f);
         frameLayout.addView(frameLayout2, z5.d(-1, 64.0f, 80, 4.0f, 0.0f, 4.0f, 0.0f));
@@ -135,11 +135,11 @@ public final class m4 extends cb implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        u61 u61Var;
-        if (i10 != NotificationCenter.starUserGiftsLoaded || (u61Var = this.e0) == null) {
+        w61 w61Var;
+        if (i10 != NotificationCenter.starUserGiftsLoaded || (w61Var = this.e0) == null) {
             return;
         }
-        u61Var.N(true);
+        w61Var.N(true);
         if (R()) {
             this.Y.a();
         }
@@ -160,10 +160,10 @@ public final class m4 extends cb implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(zl0Var, getContext(), this.currentAccount, 0, false, new hi.a(this, 20), this.resourcesProvider);
-        this.e0 = u61Var;
-        u61Var.r = false;
-        return u61Var;
+        w61 w61Var = new w61(zl0Var, getContext(), this.currentAccount, 0, false, new hi.a(this, 20), this.resourcesProvider);
+        this.e0 = w61Var;
+        w61Var.r = false;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

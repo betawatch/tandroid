@@ -4,7 +4,7 @@ import ai.q4;
 import android.os.Looper;
 import java.util.Map;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class z {
     public static final Object k = new Object();
@@ -30,7 +30,7 @@ public class z {
     public static void a(String str) {
         n.a.a().a.getClass();
         if (Looper.getMainLooper().getThread() != Thread.currentThread()) {
-            throw new IllegalStateException(a4.a.p("Cannot invoke ", str, " on a background thread"));
+            throw new IllegalStateException(a4.a.q("Cannot invoke ", str, " on a background thread"));
         }
     }
 

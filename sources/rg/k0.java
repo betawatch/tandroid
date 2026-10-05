@@ -51,8 +51,8 @@ import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.dl0;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.lw0;
-import org.telegram.ui.Components.q21;
+import org.telegram.ui.Components.mw0;
+import org.telegram.ui.Components.r21;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.t90;
@@ -76,7 +76,7 @@ import org.telegram.ui.yn;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class k0 extends cb implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int V0 = 0;
@@ -418,7 +418,7 @@ public class k0 extends cb implements NotificationCenter.NotificationCenterDeleg
                     arrayList.add(LocaleController.formatString("InactiveChatSignature", R.string.InactiveChatSignature, LocaleController.formatPluralString("Members", chat.participants_count, new Object[0]), formatPluralString));
                 }
             }
-            AndroidUtilities.runOnUIThread(new q21(k0Var, arrayList, min, tL_messages_inactiveChats, 17));
+            AndroidUtilities.runOnUIThread(new r21(k0Var, arrayList, min, tL_messages_inactiveChats, 17));
         }
     }
 
@@ -854,9 +854,9 @@ public class k0 extends cb implements NotificationCenter.NotificationCenterDeleg
     }
 
     @Override // org.telegram.ui.Components.cb
-    public final void E(lw0 lw0Var) {
+    public final void E(mw0 mw0Var) {
         int i10;
-        Context context = lw0Var.getContext();
+        Context context = mw0Var.getContext();
         ci.d dVar = new ci.d(context, this.resourcesProvider, true);
         this.G0 = dVar;
         dVar.setFlickeringLoading(true);
@@ -869,11 +869,11 @@ public class k0 extends cb implements NotificationCenter.NotificationCenterDeleg
             n20 n20Var = new n20(this, context, 12);
             this.L0 = n20Var;
             n20Var.setBackgroundColor(i6.v0(i6.h5, this.resourcesProvider));
-            lw0Var.addView(this.L0, z5.d(-1, 72.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+            mw0Var.addView(this.L0, z5.d(-1, 72.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         a0 a0Var2 = this.E0;
         float f7 = (this.backgroundPaddingLeft / AndroidUtilities.density) + 16.0f;
-        lw0Var.addView(a0Var2, z5.d(-1, 48.0f, 80, f7, 0.0f, f7, 12.0f));
+        mw0Var.addView(a0Var2, z5.d(-1, 48.0f, 80, f7, 0.0f, f7, 12.0f));
         int dp = AndroidUtilities.dp(72.0f);
         zl0 zl0Var = this.d;
         zl0Var.setPadding(0, 0, 0, dp);
@@ -1396,11 +1396,11 @@ public class k0 extends cb implements NotificationCenter.NotificationCenterDeleg
         boolean booleanValue = ((Boolean) objArr[1]).booleanValue();
         n2 n2Var = this.n;
         n2 lastFragment = n2Var.getParentLayout().getLastFragment();
-        if (lastFragment instanceof zg.q) {
+        if (lastFragment instanceof zg.o) {
             List fragmentStack = n2Var.getParentLayout().getFragmentStack();
-            n2 n2Var2 = fragmentStack.size() >= 2 ? (n2) t8.b.h(2, fragmentStack) : null;
-            n2 n2Var3 = fragmentStack.size() >= 3 ? (n2) t8.b.h(3, fragmentStack) : null;
-            r6 = fragmentStack.size() >= 4 ? (n2) t8.b.h(4, fragmentStack) : null;
+            n2 n2Var2 = fragmentStack.size() >= 2 ? (n2) sa.e.h(2, fragmentStack) : null;
+            n2 n2Var3 = fragmentStack.size() >= 3 ? (n2) sa.e.h(3, fragmentStack) : null;
+            r6 = fragmentStack.size() >= 4 ? (n2) sa.e.h(4, fragmentStack) : null;
             if (n2Var2 instanceof to) {
                 ((ActionBarLayout) n2Var.getParentLayout()).a0(n2Var2, false);
             }
@@ -1472,7 +1472,7 @@ public class k0 extends cb implements NotificationCenter.NotificationCenterDeleg
             return;
         }
         List fragmentStack3 = n2Var.getParentLayout().getFragmentStack();
-        r6 = fragmentStack3.size() >= 2 ? (n2) t8.b.h(2, fragmentStack3) : null;
+        r6 = fragmentStack3.size() >= 2 ? (n2) sa.e.h(2, fragmentStack3) : null;
         n2Var.finishFragment();
         dismiss();
         if (r6 instanceof yn) {
@@ -1595,7 +1595,7 @@ public class k0 extends cb implements NotificationCenter.NotificationCenterDeleg
         long j3 = -this.a0;
         TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(j3));
         if (TextUtils.isEmpty(ChatObject.getPublicUsername(chat))) {
-            return a4.a.o(j3, "https://t.me/boost/?c=");
+            return a4.a.p(j3, "https://t.me/boost/?c=");
         }
         return "https://t.me/boost/" + ChatObject.getPublicUsername(chat);
     }

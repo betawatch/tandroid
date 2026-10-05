@@ -22,7 +22,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class on0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -37,7 +37,7 @@ public final class on0 extends FrameLayout implements NotificationCenter.Notific
     public final dl0 N;
     public boolean O;
     public boolean P;
-    public final tx0 a;
+    public final ux0 a;
     public final ai.w0 b;
     public final nn0 c;
     public final int d;
@@ -91,10 +91,10 @@ public final class on0 extends FrameLayout implements NotificationCenter.Notific
         w00Var.setUseHeaderOffset(true);
         w00Var.setViewType(3);
         w00Var.setVisibility(8);
-        tx0 tx0Var = new tx0(getContext(), w00Var, 1, null);
-        this.a = tx0Var;
-        addView(tx0Var);
-        w0Var.setEmptyView(tx0Var);
+        ux0 ux0Var = new ux0(getContext(), w00Var, 1, null);
+        this.a = ux0Var;
+        addView(ux0Var);
+        w0Var.setEmptyView(ux0Var);
         FileLoader.getInstance(i10).getCurrentLoadingFiles(arrayList);
     }
 
@@ -130,7 +130,7 @@ public final class on0 extends FrameLayout implements NotificationCenter.Notific
         setPadding(0, i10, 0, i11);
         ai.w0 w0Var = this.b;
         if (z10) {
-            w0Var.r1(0, i10, 0, i11);
+            w0Var.q1(0, i10, 0, i11);
         } else {
             w0Var.setPadding(0, i10, 0, i11);
         }
@@ -156,7 +156,7 @@ public final class on0 extends FrameLayout implements NotificationCenter.Notific
             return;
         }
         SpannableString spannableString = new SpannableString(Double.toString(Math.round((z10 ? MessagesController.getInstance(i10).uploadPremiumSpeedupUpload : MessagesController.getInstance(i10).uploadPremiumSpeedupDownload) * 10.0f) / 10.0d).replaceAll("\\.0$", ""));
-        spannableString.setSpan(new d61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+        spannableString.setSpan(new e61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
         if (n2Var.hasStoryViewer()) {
             return;
         }

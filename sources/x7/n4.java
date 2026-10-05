@@ -1,14 +1,14 @@
 package x7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class n4 implements ia.d {
     public static final n4 a = new n4();
-    public static final ia.c b = new ia.c("inferenceCommonLogEvent", hg.k0.m(t8.b.n(c0.class, new z(1))));
-    public static final ia.c c = new ia.c("options", hg.k0.m(t8.b.n(c0.class, new z(2))));
-    public static final ia.c d = new ia.c("imageInfo", hg.k0.m(t8.b.n(c0.class, new z(3))));
-    public static final ia.c e = new ia.c("labelCount", hg.k0.m(t8.b.n(c0.class, new z(4))));
-    public static final ia.c f = new ia.c("highestConfidence", hg.k0.m(t8.b.n(c0.class, new z(5))));
+    public static final ia.c b = new ia.c("inferenceCommonLogEvent", hg.c.m(sa.e.n(c0.class, new z(1))));
+    public static final ia.c c = new ia.c("options", hg.c.m(sa.e.n(c0.class, new z(2))));
+    public static final ia.c d = new ia.c("imageInfo", hg.c.m(sa.e.n(c0.class, new z(3))));
+    public static final ia.c e = new ia.c("labelCount", hg.c.m(sa.e.n(c0.class, new z(4))));
+    public static final ia.c f = new ia.c("highestConfidence", hg.c.m(sa.e.n(c0.class, new z(5))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {

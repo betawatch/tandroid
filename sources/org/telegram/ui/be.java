@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class be implements TextWatcher {
     public final /* synthetic */ me a;
@@ -17,25 +17,25 @@ public final class be implements TextWatcher {
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
         me meVar = this.a;
-        qd qdVar = meVar.i2;
-        fi.o oVar = meVar.R1;
-        if (meVar.O1) {
+        qd qdVar = meVar.f1;
+        fi.o oVar = meVar.O0;
+        if (meVar.L0) {
             return;
         }
         long parseLong = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
-        meVar.Q1 = parseLong;
-        long j3 = meVar.G1.amount;
+        meVar.N0 = parseLong;
+        long j3 = meVar.D0.amount;
         if (parseLong > j3) {
-            meVar.Q1 = j3;
-            meVar.O1 = true;
+            meVar.N0 = j3;
+            meVar.L0 = true;
             oVar.setText(Long.toString(j3));
             oVar.setSelection(oVar.getText().length());
-            meVar.O1 = false;
+            meVar.L0 = false;
         }
-        meVar.P1 = meVar.Q1 == meVar.G1.amount;
+        meVar.M0 = meVar.N0 == meVar.D0.amount;
         AndroidUtilities.cancelRunOnUIThread(qdVar);
         qdVar.run();
-        meVar.P1 = false;
+        meVar.M0 = false;
     }
 
     @Override // android.text.TextWatcher

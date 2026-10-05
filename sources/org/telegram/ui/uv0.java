@@ -28,9 +28,9 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class uv0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.kw0 {
+public final class uv0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.lw0 {
     public boolean A0;
     public boolean B0;
     public CharSequence E;
@@ -45,7 +45,7 @@ public final class uv0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public final int N;
     public int O;
     public boolean P;
-    public org.telegram.ui.Components.iz0 Q;
+    public org.telegram.ui.Components.jz0 Q;
     public org.telegram.ui.Components.nz R;
     public ci.i4 S;
     public boolean T;
@@ -59,7 +59,7 @@ public final class uv0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public boolean a0;
     public sv0 b;
     public org.telegram.ui.Cells.d6 b0;
-    public zb1 c;
+    public xb1 c;
     public final boolean c0;
     public s4.c0 d;
     public final boolean d0;
@@ -166,16 +166,16 @@ public final class uv0 extends org.telegram.ui.ActionBar.n2 implements Notificat
             org.telegram.ui.Components.ch emojiButton = d6Var.getEmojiButton();
             org.telegram.ui.Components.ah ahVar = org.telegram.ui.Components.ah.e;
             emojiButton.j(ahVar, false);
-            zb1 zb1Var = uv0Var.c;
-            View F = zb1Var.F(d6Var);
-            s4.c1 T = F == null ? null : zb1Var.T(F);
-            org.telegram.ui.Components.iz0 iz0Var = uv0Var.Q;
-            if (iz0Var != null) {
-                iz0Var.f();
-                org.telegram.ui.Components.iz0 iz0Var2 = uv0Var.Q;
-                if (iz0Var2 != null && T != null) {
+            xb1 xb1Var = uv0Var.c;
+            View F = xb1Var.F(d6Var);
+            s4.c1 T = F == null ? null : xb1Var.T(F);
+            org.telegram.ui.Components.jz0 jz0Var = uv0Var.Q;
+            if (jz0Var != null) {
+                jz0Var.f();
+                org.telegram.ui.Components.jz0 jz0Var2 = uv0Var.Q;
+                if (jz0Var2 != null && T != null) {
                     View view = T.a;
-                    if ((view instanceof org.telegram.ui.Cells.d6) && iz0Var2.getDelegate() != view) {
+                    if ((view instanceof org.telegram.ui.Cells.d6) && jz0Var2.getDelegate() != view) {
                         uv0Var.Q.setDelegate((org.telegram.ui.Cells.d6) view);
                     }
                 }
@@ -203,7 +203,7 @@ public final class uv0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public final void F(int i10, boolean z10) {
         boolean z11;
         if (this.c0) {
@@ -271,9 +271,9 @@ public final class uv0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.actionBar.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.i6.d6));
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.i6.G6;
-        kVar.B(getThemedColor(i10), false);
-        this.actionBar.B(getThemedColor(i10), true);
-        this.actionBar.A(getThemedColor(org.telegram.ui.ActionBar.i6.z8), false);
+        kVar.A(getThemedColor(i10), false);
+        this.actionBar.A(getThemedColor(i10), true);
+        this.actionBar.z(getThemedColor(org.telegram.ui.ActionBar.i6.z8), false);
         this.actionBar.setTitleColor(getThemedColor(i10));
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         boolean z10 = this.d0;
@@ -305,7 +305,7 @@ public final class uv0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.fragmentView = jdVar2;
         jdVar2.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false));
         FrameLayout frameLayout = (FrameLayout) this.fragmentView;
-        this.c = new zb1(context, 11, null);
+        this.c = new xb1(context, 11, null);
         s4.j jVar = new s4.j();
         jVar.m = false;
         jVar.C = false;
@@ -330,11 +330,11 @@ public final class uv0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         frameLayout.addView(this.h, w7.z5.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
         if (this.c0) {
             NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
-            org.telegram.ui.Components.iz0 iz0Var = new org.telegram.ui.Components.iz0(context, this.currentAccount, null, this.resourceProvider);
-            this.Q = iz0Var;
-            iz0Var.y = true;
-            iz0Var.E = true;
-            iz0Var.setHorizontalPadding(AndroidUtilities.dp(24.0f));
+            org.telegram.ui.Components.jz0 jz0Var = new org.telegram.ui.Components.jz0(context, this.currentAccount, null, this.resourceProvider);
+            this.Q = jz0Var;
+            jz0Var.y = true;
+            jz0Var.E = true;
+            jz0Var.setHorizontalPadding(AndroidUtilities.dp(24.0f));
             frameLayout.addView(this.Q, w7.z5.e(-2, 160, 51));
         }
         this.S = new ci.i4(this.e, false, null);
@@ -347,7 +347,7 @@ public final class uv0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         if (i10 == NotificationCenter.emojiLoaded) {
             org.telegram.ui.Components.nz nzVar = this.R;
             if (nzVar != null) {
-                nzVar.P.h1();
+                nzVar.P.g1();
             }
             org.telegram.ui.Cells.d6 d6Var = this.b0;
             if (d6Var != null) {
@@ -360,9 +360,9 @@ public final class uv0 extends org.telegram.ui.ActionBar.n2 implements Notificat
 
     public final void f0() {
         int i10;
-        org.telegram.ui.Components.iz0 iz0Var = this.Q;
-        if (iz0Var != null) {
-            iz0Var.setDelegate(null);
+        org.telegram.ui.Components.jz0 jz0Var = this.Q;
+        if (jz0Var != null) {
+            jz0Var.setDelegate(null);
             this.Q.f();
         }
         int i11 = this.y;
@@ -713,9 +713,9 @@ public final class uv0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         super.onPause();
         if (this.c0) {
             k0(false);
-            org.telegram.ui.Components.iz0 iz0Var = this.Q;
-            if (iz0Var != null) {
-                iz0Var.f();
+            org.telegram.ui.Components.jz0 jz0Var = this.Q;
+            if (jz0Var != null) {
+                jz0Var.f();
             }
             org.telegram.ui.Cells.d6 d6Var = this.b0;
             if (d6Var != null) {

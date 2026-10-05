@@ -1,44 +1,37 @@
 package hg;
 
 import android.content.DialogInterface;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.c6;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r implements DialogInterface.OnShowListener {
+public final /* synthetic */ class r implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ r(int i10, EditTextBoldCursor editTextBoldCursor) {
+    public /* synthetic */ r(int i10, View view) {
         this.a = i10;
-        this.b = editTextBoldCursor;
+        this.b = view;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                s sVar = (s) this.b;
-                sVar.requestFocus();
-                AndroidUtilities.showKeyboard(sVar);
-                break;
-            case 1:
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                editTextBoldCursor.requestFocus();
-                AndroidUtilities.showKeyboard(editTextBoldCursor);
-                editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
-                break;
-            case 2:
-                c6 c6Var = (c6) this.b;
-                c6Var.requestFocus();
-                AndroidUtilities.showKeyboard(c6Var);
+                w.e = null;
+                View view = this.b;
+                if (view != null) {
+                    view.requestFocus();
+                    break;
+                }
                 break;
             default:
-                xh.a2 a2Var = (xh.a2) this.b;
-                a2Var.requestFocus();
-                AndroidUtilities.showKeyboard(a2Var);
+                y1.h = null;
+                View view2 = this.b;
+                if (view2 != null) {
+                    view2.requestFocus();
+                    break;
+                }
                 break;
         }
     }

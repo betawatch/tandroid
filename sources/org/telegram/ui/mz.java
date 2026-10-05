@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class mz extends org.telegram.ui.ActionBar.n2 {
     public long a;
@@ -33,6 +33,7 @@ public final class mz extends org.telegram.ui.ActionBar.n2 {
 
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
+        setHasOwnBackground(true);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new qo(this, 21));
@@ -40,12 +41,21 @@ public final class mz extends org.telegram.ui.ActionBar.n2 {
         FrameLayout frameLayout = new FrameLayout(context);
         jz jzVar = new jz(this, new c5(this, 13), new bu(this, 8), null);
         this.e = jzVar;
-        jzVar.s1();
-        this.e.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.a7, this.resourceProvider));
+        jzVar.r1();
+        this.e.setSectionsDrawBackground(true);
         frameLayout.addView(this.e, w7.z5.e(-1, -1, 119));
-        this.actionBar.setAdaptiveBackground(this.e);
         this.fragmentView = frameLayout;
         return frameLayout;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final org.telegram.ui.Components.zl0 getListViewForSimpleGlass() {
+        return this.e;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
     }
 
     @Override // org.telegram.ui.ActionBar.n2

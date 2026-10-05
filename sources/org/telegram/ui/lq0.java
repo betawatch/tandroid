@@ -9,7 +9,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class lq0 extends ou0 {
     public final /* synthetic */ wq0 a;
@@ -224,7 +224,7 @@ public final class lq0 extends ou0 {
     @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
     public final boolean u() {
         wq0 wq0Var = this.a;
-        wq0Var.s0.i(0, true, true);
+        wq0Var.s0.h(0, true, true);
         wq0Var.finishFragment();
         return true;
     }

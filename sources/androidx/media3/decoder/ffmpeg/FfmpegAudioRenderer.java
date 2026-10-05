@@ -20,7 +20,7 @@ import gg.x1;
 import h2.e;
 import h2.h;
 import h2.l;
-import hg.k0;
+import hg.c;
 import i2.f;
 import i2.g;
 import i2.n1;
@@ -35,7 +35,7 @@ import k2.q;
 import n4.y;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class FfmpegAudioRenderer extends f implements t0 {
     public final y I;
@@ -96,7 +96,7 @@ public final class FfmpegAudioRenderer extends f implements t0 {
         int i11 = sVar.K;
         int i12 = sVar.J;
         if (!r0.i(str)) {
-            return k0.b(0, 0, 0, 0);
+            return c.b(0, 0, 0, 0);
         }
         String str2 = sVar.r;
         str2.getClass();
@@ -116,7 +116,7 @@ public final class FfmpegAudioRenderer extends f implements t0 {
         } else {
             i10 = 0;
         }
-        return i10 <= 2 ? k0.b(i10, 0, 0, 0) : i10 | 168;
+        return i10 <= 2 ? c.b(i10, 0, 0, 0) : i10 | 168;
     }
 
     @Override // i2.f
@@ -298,7 +298,7 @@ public final class FfmpegAudioRenderer extends f implements t0 {
             return;
         }
         n2.h hVar = this.U;
-        k0.z(this.T, hVar);
+        c.z(this.T, hVar);
         this.T = hVar;
         if (hVar != null && hVar.h() == null && this.T.g() == null) {
             return;
@@ -334,7 +334,7 @@ public final class FfmpegAudioRenderer extends f implements t0 {
         s sVar = (s) yVar.c;
         sVar.getClass();
         n2.h hVar = (n2.h) yVar.b;
-        k0.z(this.U, hVar);
+        c.z(this.U, hVar);
         this.U = hVar;
         s sVar2 = this.M;
         this.M = sVar;
@@ -388,7 +388,7 @@ public final class FfmpegAudioRenderer extends f implements t0 {
             }
             this.Q = null;
         }
-        k0.z(this.T, null);
+        c.z(this.T, null);
         this.T = null;
     }
 
@@ -537,12 +537,12 @@ public final class FfmpegAudioRenderer extends f implements t0 {
         this.f0 = false;
         this.j0 = -9223372036854775807L;
         try {
-            k0.z(this.U, null);
+            c.z(this.U, null);
             this.U = null;
             H();
             ((f0) this.J).y();
         } finally {
-            yVar.w(this.L);
+            yVar.v(this.L);
         }
     }
 

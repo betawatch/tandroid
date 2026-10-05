@@ -1,91 +1,120 @@
 package hg;
 
-import ai.n8;
-import java.util.ArrayList;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
+import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.gq;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.yn;
+import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class f {
-    public static volatile f[] g = new f[4];
-    public static final Object[] h = new Object[4];
+public final class f extends FrameLayout {
     public final int a;
-    public long b;
-    public TL_account.connectedBots c;
-    public final ArrayList d = new ArrayList();
-    public boolean e;
-    public boolean f;
+    public final h9 b;
+    public final w9 c;
+    public final LinearLayout d;
+    public final p6 e;
+    public final p6 f;
+    public final gq h;
+    public final ImageView n;
+    public boolean r;
+    public long s;
+    public long v;
+    public int w;
+    public String x;
+    public float y;
 
-    static {
-        for (int i10 = 0; i10 < 4; i10++) {
-            h[i10] = new Object();
-        }
+    public f(Activity activity, d6 d6Var, yn ynVar) {
+        super(activity);
+        this.a = ynVar.getCurrentAccount();
+        this.r = false;
+        w9 w9Var = new w9(activity);
+        this.c = w9Var;
+        TLRPC.User user = ynVar.getMessagesController().getUser(Long.valueOf(this.v));
+        h9 h9Var = new h9((d6) null);
+        this.b = h9Var;
+        h9Var.r(user);
+        w9Var.setRoundRadius(AndroidUtilities.dp(16.0f));
+        w9Var.e(user, h9Var);
+        addView(w9Var, z5.d(32, 32.0f, 19, 10.0f, 0.0f, 10.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(activity);
+        this.d = linearLayout;
+        linearLayout.setOrientation(1);
+        p6 p6Var = new p6(activity, false, false, false);
+        this.e = p6Var;
+        p6Var.n = false;
+        p6Var.getDrawable().o(true, false, false);
+        p6Var.setTypeface(AndroidUtilities.bold());
+        p6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        p6Var.setText(UserObject.getUserName(user));
+        p6Var.setTextColor(i6.v0(i6.G6, d6Var));
+        p6Var.setEllipsizeByGradient(true);
+        linearLayout.addView(p6Var, z5.k(0.0f, 0.0f, 0.0f, 1.0f, -1, 17));
+        p6 p6Var2 = new p6(activity, false, false, false);
+        this.f = p6Var2;
+        p6Var2.n = false;
+        p6Var2.getDrawable().o(true, false, false);
+        p6Var2.setTextSize(AndroidUtilities.dp(13.0f));
+        p6Var2.setText(LocaleController.getString(R.string.BizBotStatusManages));
+        p6Var2.setTextColor(i6.v0(i6.ge, d6Var));
+        p6Var2.setEllipsizeByGradient(true);
+        linearLayout.addView(p6Var2, z5.n(-1, 17));
+        addView(linearLayout, z5.d(-2, -2.0f, 16, 52.0f, 0.0f, 49.0f, 0.0f));
+        gq gqVar = new gq(activity);
+        this.h = gqVar;
+        gqVar.getDrawable().o(true, true, false);
+        gqVar.b(0.75f, 350L, tr.h);
+        gqVar.setScaleProperty(0.6f);
+        gqVar.setTypeface(AndroidUtilities.bold());
+        int dp = AndroidUtilities.dp(14.0f);
+        int i10 = i6.Oh;
+        int v02 = i6.v0(i10, d6Var);
+        int v = i6.v(i6.v0(i10, d6Var), i6.l1(0.12f, -1));
+        gqVar.setBackgroundDrawable(i6.i0(dp, dp, dp, dp, v02, v, v));
+        gqVar.setTextSize(AndroidUtilities.dp(14.0f));
+        gqVar.setGravity(5);
+        gqVar.setTextColor(i6.v0(i6.Sh, d6Var));
+        gqVar.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), 0);
+        gqVar.setOnClickListener(new ai.v0(this, 24));
+        gqVar.setOnWidthUpdatedListener(new e(this, 0));
+        gqVar.setText(LocaleController.getString(this.r ? R.string.BizBotStart : R.string.BizBotStop));
+        addView(gqVar, z5.d(64, 28.0f, 21, 0.0f, 0.0f, 46.0f, 0.0f));
+        ImageView imageView = new ImageView(activity);
+        this.n = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.msg_mini_customize);
+        imageView.setBackground(i6.M(i6.v0(i6.i6, d6Var), 0, 0));
+        imageView.setColorFilter(new PorterDuffColorFilter(i6.v0(i6.de, d6Var), PorterDuff.Mode.MULTIPLY));
+        imageView.setOnClickListener(new ai.d0(this, ynVar, d6Var, 7));
+        addView(imageView, z5.d(32, 32.0f, 21, 8.0f, 0.0f, 6.0f, 0.0f));
     }
 
-    public f(int i10) {
-        this.a = i10;
+    public final void a() {
+        float f7 = this.y;
+        float d = this.h.getDrawable().d() + f7 + r1.getPaddingLeft() + r1.getPaddingRight() + AndroidUtilities.dp(12.0f);
+        this.e.setRightPadding(d);
+        this.f.setRightPadding(d);
     }
 
-    public static f a(int i10) {
-        f fVar;
-        f fVar2 = g[i10];
-        if (fVar2 != null) {
-            return fVar2;
-        }
-        synchronized (h[i10]) {
-            try {
-                fVar = g[i10];
-                if (fVar == null) {
-                    f[] fVarArr = g;
-                    f fVar3 = new f(i10);
-                    fVarArr[i10] = fVar3;
-                    fVar = fVar3;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return fVar;
-    }
-
-    public final void b() {
-        this.f = false;
-        c(null);
-    }
-
-    public final void c(Utilities.Callback callback) {
-        boolean z10;
-        if (callback != null) {
-            this.d.add(callback);
-        }
-        if (this.e) {
-            return;
-        }
-        if (System.currentTimeMillis() - this.b > 60000 || !(z10 = this.f)) {
-            this.e = true;
-            ConnectionsManager.getInstance(this.a).sendRequest(new TL_account.getConnectedBots(), new n8(this, 11));
-        } else if (z10) {
-            d();
-        }
-    }
-
-    public final void d() {
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.d;
-            if (i10 >= arrayList.size()) {
-                arrayList.clear();
-                NotificationCenter.getInstance(this.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updatedChatbot, new Object[0]);
-                return;
-            } else {
-                if (arrayList.get(i10) != null) {
-                    ((Utilities.Callback) arrayList.get(i10)).run(this.c);
-                }
-                i10++;
-            }
-        }
+    public void setLeftMargin(float f7) {
+        this.y = f7;
+        this.c.setTranslationX(f7);
+        this.d.setTranslationX(f7);
+        a();
     }
 }

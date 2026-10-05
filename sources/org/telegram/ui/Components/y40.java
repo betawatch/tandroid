@@ -40,7 +40,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class y40 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.hq0 {
     public String E;
@@ -382,7 +382,7 @@ public final class y40 implements NotificationCenter.NotificationCenterDelegate,
         xi xiVar = this.c;
         if (xiVar != null) {
             xiVar.dismissInternal();
-            this.c.s1();
+            this.c.u1();
         }
     }
 
@@ -487,7 +487,7 @@ public final class y40 implements NotificationCenter.NotificationCenterDelegate,
     public final void j() {
         xi xiVar = this.c;
         if (xiVar != null) {
-            xiVar.u1();
+            xiVar.w1();
         }
     }
 
@@ -506,7 +506,7 @@ public final class y40 implements NotificationCenter.NotificationCenterDelegate,
     public final void l() {
         xi xiVar = this.c;
         if (xiVar != null) {
-            xiVar.v1();
+            xiVar.x1();
         }
     }
 
@@ -576,13 +576,13 @@ public final class y40 implements NotificationCenter.NotificationCenterDelegate,
             f();
             xi xiVar = this.c;
             xiVar.U1 = this.H;
-            xiVar.G1(1, false);
+            xiVar.I1(1, false);
             this.c.j0.f0();
             int i11 = Build.VERSION.SDK_INT;
             if (i11 == 21 || i11 == 22) {
                 AndroidUtilities.hideKeyboard(this.a.getFragmentView().findFocus());
             }
-            this.c.o1();
+            this.c.q1();
             this.c.setOnHideListener(onDismissListener);
             int i12 = this.U;
             if (i12 != 0) {
@@ -707,7 +707,7 @@ public final class y40 implements NotificationCenter.NotificationCenterDelegate,
             sb2.append("/");
             sb2.append(this.h.location.volume_id);
             sb2.append("_");
-            this.v = a4.a.n(this.h.location.local_id, ".jpg", sb2);
+            this.v = a4.a.o(this.h.location.local_id, ".jpg", sb2);
             if (this.K) {
                 if (messageObject == null || messageObject.videoEditedInfo == null) {
                     x40 x40Var = this.b;

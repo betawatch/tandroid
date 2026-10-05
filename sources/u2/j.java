@@ -3,11 +3,11 @@ package u2;
 import j$.util.Objects;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.messenger.zj;
+import org.telegram.messenger.ak;
 import org.telegram.ui.Components.v50;
 import org.telegram.ui.fa;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class j implements k0, n2.l {
     public final Object a;
@@ -73,7 +73,7 @@ public final class j implements k0, n2.l {
             a5.a aVar = this.b;
             b0 m10 = m(b0Var, f0Var);
             aVar.getClass();
-            aVar.j(new zj(aVar, tVar, m10, iOException, z10));
+            aVar.j(new ak(aVar, tVar, m10, iOException, z10));
         }
     }
 

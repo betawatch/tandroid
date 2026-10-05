@@ -2,7 +2,7 @@ package lf;
 
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
@@ -50,15 +50,15 @@ public final class f {
         }
         byte b13 = 8;
         if (i11 == 2) {
-            this.c = ((gVar.D() & 255) << 16) | ((gVar.D() & 255) << 8) | (gVar.D() & 255);
+            this.c = ((gVar.d0() & 255) << 16) | ((gVar.d0() & 255) << 8) | (gVar.d0() & 255);
         } else if (i11 == 3) {
-            this.c = gVar.H();
+            this.c = gVar.j0();
         } else {
-            this.c = gVar.I();
+            this.c = gVar.k0();
         }
         if (i11 > 2) {
-            gVar.D();
-            byte D = gVar.D();
+            gVar.d0();
+            byte d02 = gVar.d0();
             byte b14 = 64;
             if (i11 == 3) {
                 b13 = 128;
@@ -70,35 +70,35 @@ public final class f {
                 b10 = 64;
                 b11 = 1;
             }
-            boolean z10 = (b13 & D) != 0;
+            boolean z10 = (b13 & d02) != 0;
             this.e = z10;
-            this.d = (b12 & D) != 0;
-            boolean z11 = (D & b14) != 0;
+            this.d = (b12 & d02) != 0;
+            boolean z11 = (d02 & b14) != 0;
             this.f = z11;
             if (i11 == 3) {
                 if (z10) {
-                    this.g = gVar.H();
+                    this.g = gVar.j0();
                     this.c -= 4;
                 }
                 if (z11) {
-                    gVar.D();
+                    gVar.d0();
                     this.c--;
                 }
-                if ((D & b10) != 0) {
-                    gVar.D();
+                if ((d02 & b10) != 0) {
+                    gVar.d0();
                     this.c--;
                 }
             } else {
-                if ((D & b10) != 0) {
-                    gVar.D();
+                if ((d02 & b10) != 0) {
+                    gVar.d0();
                     this.c--;
                 }
                 if (z11) {
-                    gVar.D();
+                    gVar.d0();
                     this.c--;
                 }
-                if ((D & b11) != 0) {
-                    this.g = gVar.I();
+                if ((d02 & b11) != 0) {
+                    this.g = gVar.k0();
                     this.c -= 4;
                 }
             }

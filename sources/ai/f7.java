@@ -6,7 +6,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class f7 extends zl0 implements s9 {
     public final /* synthetic */ int e3;
@@ -29,7 +29,7 @@ public abstract class f7 extends zl0 implements s9 {
             default:
                 yn ynVar = (yn) this.f3;
                 iArr[0] = ((int) ynVar.q9) - AndroidUtilities.dp(4.0f);
-                iArr[1] = org.telegram.messenger.f0.A(3.0f, ynVar.v0.getPaddingBottom(), ynVar.v0.getMeasuredHeight());
+                iArr[1] = org.telegram.messenger.q.A(3.0f, ynVar.v0.getPaddingBottom(), ynVar.v0.getMeasuredHeight());
                 break;
         }
     }

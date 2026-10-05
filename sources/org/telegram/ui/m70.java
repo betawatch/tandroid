@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class m70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public l70 a;
@@ -50,13 +50,13 @@ public final class m70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         org.telegram.ui.Components.pz pzVar = new org.telegram.ui.Components.pz(context, null);
         this.c = pzVar;
         pzVar.b();
-        frameLayout.addView(this.c, w7.z5.e(-1, -1, 51));
         org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
         this.b = zl0Var;
         zl0Var.setLayoutManager(new s4.c0(1, false));
         this.b.setEmptyView(this.c);
         this.b.setVerticalScrollBarEnabled(false);
         frameLayout.addView(this.b, w7.z5.e(-1, -1, 51));
+        frameLayout.addView(this.c, w7.z5.e(-1, -1, 51));
         this.b.setAdapter(this.a);
         this.b.setOnItemClickListener(new i(this, 12));
         return this.fragmentView;

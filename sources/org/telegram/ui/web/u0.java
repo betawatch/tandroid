@@ -15,10 +15,10 @@ import org.telegram.ui.Components.bl0;
 import org.telegram.ui.Components.in0;
 import org.telegram.ui.Components.nj0;
 import org.telegram.ui.oo;
-import org.telegram.ui.va1;
+import org.telegram.ui.ta1;
 import qg.v2;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u0 implements Runnable {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final /* synthetic */ class u0 implements Runnable {
             case 9:
                 l2.g gVar = ((pg.r0) this.b).b.a;
                 if (gVar != null) {
-                    gVar.m();
+                    gVar.V();
                     return;
                 }
                 return;
@@ -189,11 +189,11 @@ public final /* synthetic */ class u0 implements Runnable {
                 ((s5.g) ((t5.c) sVar.e)).f(new r2.s(sVar, 4));
                 return;
             case 25:
-                ((cf.c) this.b).x();
+                ((cf.c) this.b).s();
                 return;
             case 26:
                 rg.k0 k0Var = ((rg.d0) this.b).c;
-                k0Var.n.presentFragment(va1.b0(k0Var.s1(), true));
+                k0Var.n.presentFragment(ta1.b0(k0Var.s1(), true));
                 return;
             case 27:
                 nj0 nj0Var = ((rg.q0) this.b).y;
@@ -209,7 +209,7 @@ public final /* synthetic */ class u0 implements Runnable {
                 s4.c0 c0Var = q1Var.f3;
                 q1Var.s3 = size;
                 c0Var.h1(size, (q1Var.getMeasuredHeight() - q1Var.getChildAt(0).getMeasuredHeight()) >> 1);
-                q1Var.y1(null, false);
+                q1Var.x1(null, false);
                 return;
         }
     }

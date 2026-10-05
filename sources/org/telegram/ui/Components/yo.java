@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yo implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -26,11 +26,11 @@ public final /* synthetic */ class yo implements View.OnClickListener {
                 if (xiVar.y0 != xiVar.j0) {
                     ppVar.a0.setText(LocaleController.getString(R.string.SetColorAsBackground));
                     xi xiVar2 = ppVar.Y;
-                    xiVar2.N1(xiVar2.j0);
+                    xiVar2.P1(xiVar2.j0);
                     break;
                 } else {
                     ppVar.a0.setText(LocaleController.getString(R.string.ChooseBackgroundFromGallery));
-                    ppVar.Y.z1();
+                    ppVar.Y.B1();
                     mj mjVar = ppVar.Y.r0;
                     boolean z10 = ppVar.N;
                     ab abVar = mjVar.v;

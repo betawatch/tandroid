@@ -31,7 +31,7 @@ import org.telegram.ui.yn;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class o extends FrameLayout {
     public static final /* synthetic */ int n = 0;
@@ -46,7 +46,7 @@ public final class o extends FrameLayout {
     public o(Activity activity, d6 d6Var) {
         super(activity);
         this.a = d6Var;
-        LinearLayout e7 = org.telegram.messenger.f0.e(activity, 0);
+        LinearLayout e7 = org.telegram.messenger.q.e(activity, 0);
         e7.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f));
         b6.b(e7, 0.025f, 1.4f);
         addView(e7, z5.e(-1, -1, 119));

@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class r20 extends org.telegram.ui.ActionBar.n2 {
     public int E;
@@ -77,7 +77,7 @@ public abstract class r20 extends org.telegram.ui.ActionBar.n2 {
     }
 
     public boolean B0() {
-        return this instanceof yh.x7;
+        return this instanceof yh.z7;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -106,7 +106,7 @@ public abstract class r20 extends org.telegram.ui.ActionBar.n2 {
         }
         s4.h0 o02 = o0();
         this.c.setAdapter(o02);
-        if (o02 instanceof org.telegram.ui.Components.u61) {
+        if (o02 instanceof org.telegram.ui.Components.w61) {
             org.telegram.ui.Components.zl0 zl0Var = this.c;
             l20 l20Var = new l20(this, 0);
             int dp = AndroidUtilities.dp(12.0f);
@@ -114,7 +114,7 @@ public abstract class r20 extends org.telegram.ui.ActionBar.n2 {
             zl0Var.getClass();
             SparseIntArray sparseIntArray = new SparseIntArray();
             Pair pair = new Pair(new ci.o5(zl0Var, l20Var, sparseIntArray, 3), new org.telegram.ui.Components.zi(sparseIntArray, 2));
-            zl0Var.u1((Utilities.CallbackReturn) pair.first, (Utilities.CallbackReturn) pair.second, dp, dp2, true);
+            zl0Var.t1((Utilities.CallbackReturn) pair.first, (Utilities.CallbackReturn) pair.second, dp, dp2, true);
         } else {
             this.c.setSections(true);
         }
@@ -243,7 +243,7 @@ public abstract class r20 extends org.telegram.ui.ActionBar.n2 {
     }
 
     public boolean r0() {
-        return !(this instanceof yh.x7);
+        return !(this instanceof yh.z7);
     }
 
     public View s0(Context context) {
@@ -326,8 +326,8 @@ public abstract class r20 extends org.telegram.ui.ActionBar.n2 {
         this.K.setColor(getThemedColor(org.telegram.ui.ActionBar.i6.h5));
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.i6.Tj;
-        kVar.B(org.telegram.ui.ActionBar.i6.w0(null, i10, false), false);
-        this.actionBar.A(i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, i10, false), 60), false);
+        kVar.A(org.telegram.ui.ActionBar.i6.w0(null, i10, false), false);
+        this.actionBar.z(i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, i10, false), 60), false);
         this.e.a.g();
         o20 o20Var = this.y;
         if (o20Var != null) {

@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class i6 implements org.telegram.ui.Components.xv0, k7 {
+public final class i6 implements org.telegram.ui.Components.yv0, k7 {
     public final /* synthetic */ a7 a;
 
     public /* synthetic */ i6(a7 a7Var) {
         this.a = a7Var;
     }
 
-    @Override // org.telegram.ui.Components.xv0
+    @Override // org.telegram.ui.Components.yv0
     public void E(boolean z10) {
         le.b bVar = this.a.T;
         if (bVar == null || bVar.f == z10) {
@@ -23,9 +23,9 @@ public final class i6 implements org.telegram.ui.Components.xv0, k7 {
         bVar.a(z10, true);
     }
 
-    @Override // org.telegram.ui.Components.xv0
+    @Override // org.telegram.ui.Components.yv0
     public float Y0() {
-        return org.telegram.messenger.f0.b(9.0f, ((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2) * 2) + this.a.P, 0);
+        return org.telegram.messenger.q.b(9.0f, ((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2) * 2) + this.a.P, 0);
     }
 
     @Override // org.telegram.ui.k7
@@ -33,13 +33,13 @@ public final class i6 implements org.telegram.ui.Components.xv0, k7 {
         this.a.j0();
     }
 
-    @Override // org.telegram.ui.Components.xv0
+    @Override // org.telegram.ui.Components.yv0
     public int e1() {
         return this.a.Q;
     }
 
     @Override // org.telegram.ui.k7
-    public void i(u6 u6Var, zh.a aVar, boolean z10) {
+    public void f(u6 u6Var, zh.a aVar, boolean z10) {
         HashSet hashSet;
         a7 a7Var = this.a;
         if (u6Var == null) {
@@ -156,18 +156,18 @@ public final class i6 implements org.telegram.ui.Components.xv0, k7 {
         bVar2.o = z11;
         bVar2.p = z11;
         bVar2.q = z11;
-        Collections.sort(arrayList3, new gb1(25));
-        Collections.sort(arrayList4, new gb1(25));
-        Collections.sort(arrayList5, new gb1(25));
-        Collections.sort(arrayList6, new gb1(25));
-        Collections.sort(bVar2.h, new gb1(25));
+        Collections.sort(arrayList3, new eb1(25));
+        Collections.sort(arrayList4, new eb1(25));
+        Collections.sort(arrayList5, new eb1(25));
+        Collections.sort(arrayList6, new eb1(25));
+        Collections.sort(bVar2.h, new eb1(25));
         jv jvVar = new jv(a7Var, u6Var, bVar2, new o0.a(a7Var, u6Var, false, 2));
         a7Var.Z = jvVar;
         a7Var.showDialog(jvVar);
     }
 
     @Override // org.telegram.ui.k7
-    public void q() {
+    public void i() {
         a7 a7Var = this.a;
         zh.b bVar = a7Var.e0;
         if (bVar == null || bVar.j.size() <= 0) {

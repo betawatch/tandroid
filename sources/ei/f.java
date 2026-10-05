@@ -43,13 +43,13 @@ import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Cells.w8;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.cu;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.oy;
 import org.telegram.ui.uy;
-import org.telegram.ui.yf1;
+import org.telegram.ui.wf1;
 import w7.h6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Utilities.Callback5, OnSuccessListener, c3.g, e2.m, cu, ii.p0, oy, r5, f2.s {
     public final /* synthetic */ int a;
@@ -302,7 +302,7 @@ public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Ut
                 }
                 ii.e3 e3Var = u0Var.h;
                 if (e3Var != null && u0Var.f != null) {
-                    ii.x3.Q1(e3Var.a);
+                    ii.x3.P1(e3Var.a);
                     break;
                 }
                 break;
@@ -319,7 +319,7 @@ public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Ut
                 q5Var.u();
                 ii.d3 d3Var = q5Var.E;
                 if (d3Var != null && q5Var.a != null) {
-                    ii.x3.Q1(d3Var.a);
+                    ii.x3.P1(d3Var.a);
                     break;
                 }
                 break;
@@ -344,7 +344,7 @@ public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Ut
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                ((e5) this.b).T((g61) obj);
+                ((e5) this.b).T((h61) obj);
                 break;
             case 2:
             case 3:
@@ -366,12 +366,12 @@ public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Ut
                 break;
             case 4:
                 hg.g1 g1Var = (hg.g1) this.b;
-                g61 g61Var = (g61) obj;
+                h61 h61Var = (h61) obj;
                 View view2 = (View) obj2;
                 ((Integer) obj3).getClass();
                 float floatValue = ((Float) obj4).floatValue();
                 ((Float) obj5).getClass();
-                int i11 = g61Var.d;
+                int i11 = h61Var.d;
                 if (i11 == -1) {
                     boolean z10 = !g1Var.e;
                     g1Var.e = z10;
@@ -385,9 +385,9 @@ public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Ut
                     e2Var.c = new ai.g3(18, g1Var, view2);
                     g1Var.presentFragment(e2Var);
                     break;
-                } else if (g61Var.a == 5 && i11 >= 0 && i11 < g1Var.h.length) {
+                } else if (h61Var.a == 5 && i11 >= 0 && i11 < g1Var.h.length) {
                     if (!LocaleController.isRTL ? floatValue < view2.getMeasuredWidth() - AndroidUtilities.dp(76.0f) : floatValue > AndroidUtilities.dp(76.0f)) {
-                        int i12 = (g61Var.d + 6) % 7;
+                        int i12 = (h61Var.d + 6) % 7;
                         int i13 = 0;
                         for (int i14 = 0; i14 < g1Var.h[i12].size(); i14++) {
                             if (((hg.f1) g1Var.h[i12].get(i14)).b > i13) {
@@ -395,7 +395,7 @@ public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Ut
                             }
                         }
                         int max = Math.max(0, i13 - 1439);
-                        int i15 = (g61Var.d + 1) % 7;
+                        int i15 = (h61Var.d + 1) % 7;
                         int i16 = 1440;
                         for (int i17 = 0; i17 < g1Var.h[i15].size(); i17++) {
                             if (((hg.f1) g1Var.h[i15].get(i17)).a < i16) {
@@ -403,8 +403,8 @@ public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Ut
                             }
                         }
                         int i18 = i16 + 1439;
-                        CharSequence charSequence = g61Var.l;
-                        ArrayList arrayList = g1Var.h[g61Var.d];
+                        CharSequence charSequence = h61Var.l;
+                        ArrayList arrayList = g1Var.h[h61Var.d];
                         int i19 = 0;
                         for (int i20 = 0; i20 < 7; i20++) {
                             ArrayList arrayList2 = g1Var.h[i20];
@@ -414,19 +414,19 @@ public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Ut
                         }
                         hg.i1 i1Var = new hg.i1(charSequence, arrayList, max, i18, 28 - i19);
                         i1Var.f = new qc(g1Var, 23);
-                        i1Var.h = new gg.x1(5, g1Var, g61Var);
+                        i1Var.h = new gg.x1(5, g1Var, h61Var);
                         g1Var.presentFragment(i1Var);
                         break;
                     } else {
-                        if (g1Var.h[g61Var.d].isEmpty()) {
+                        if (g1Var.h[h61Var.d].isEmpty()) {
                             ((j5) view2).setChecked(true);
-                            g1Var.h[g61Var.d].add(new hg.f1(0, 1439));
-                            g1Var.W(g61Var.d);
+                            g1Var.h[h61Var.d].add(new hg.f1(0, 1439));
+                            g1Var.W(h61Var.d);
                         } else {
-                            g1Var.h[g61Var.d].clear();
+                            g1Var.h[h61Var.d].clear();
                             ((j5) view2).setChecked(false);
                         }
-                        ((j5) view2).setValue(hg.g1.Z(g1Var.h[g61Var.d]));
+                        ((j5) view2).setValue(hg.g1.Z(g1Var.h[h61Var.d]));
                         g1Var.X(true);
                         break;
                     }
@@ -434,7 +434,7 @@ public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Ut
                 break;
             case 5:
                 final hg.i1 i1Var2 = (hg.i1) this.b;
-                g61 g61Var2 = (g61) obj;
+                h61 h61Var2 = (h61) obj;
                 final View view3 = (View) obj2;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
@@ -442,7 +442,7 @@ public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Ut
                 int i21 = i1Var2.c;
                 int i22 = i1Var2.d;
                 ArrayList arrayList3 = i1Var2.b;
-                int i23 = g61Var2.d;
+                int i23 = h61Var2.d;
                 if (i23 == -1) {
                     i1Var2.r = !i1Var2.r;
                     arrayList3.clear();
@@ -451,7 +451,7 @@ public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Ut
                     }
                     w8 w8Var = (w8) view3;
                     boolean z11 = i1Var2.r;
-                    g61Var2.e = z11;
+                    h61Var2.e = z11;
                     w8Var.setChecked(z11);
                     boolean z12 = i1Var2.r;
                     w8Var.b(i6.w0(null, z12 ? i6.f6 : i6.e6, false), z12);
@@ -469,7 +469,7 @@ public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Ut
                         int clamp = Utilities.clamp(480, i22 - 1, i21);
                         arrayList3.add(new hg.f1(clamp, Utilities.clamp(1200, i22, clamp + 1)));
                     } else {
-                        int i24 = ((hg.f1) hg.k0.g(1, arrayList3)).b;
+                        int i24 = ((hg.f1) hg.c.g(1, arrayList3)).b;
                         int clamp2 = Utilities.clamp(i24 + 30, i22 - 1, i21);
                         arrayList3.add(new hg.f1(clamp2, Utilities.clamp((i24 + 1560) / 2, i22, clamp2 + 1)));
                     }
@@ -479,13 +479,13 @@ public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Ut
                     }
                     i1Var2.n.f3.N(true);
                     break;
-                } else if (g61Var2.a == 3 && (i10 = i23 / 3) >= 0 && i10 < arrayList3.size()) {
+                } else if (h61Var2.a == 3 && (i10 = i23 / 3) >= 0 && i10 < arrayList3.size()) {
                     int i25 = i10 - 1;
                     hg.f1 f1Var = i25 >= 0 ? (hg.f1) arrayList3.get(i25) : null;
                     final hg.f1 f1Var2 = (hg.f1) arrayList3.get(i10);
                     int i26 = i10 + 1;
                     hg.f1 f1Var3 = i26 < arrayList3.size() ? (hg.f1) arrayList3.get(i26) : null;
-                    int i27 = g61Var2.d % 3;
+                    int i27 = h61Var2.d % 3;
                     if (i27 == 0) {
                         Activity parentActivity = i1Var2.getParentActivity();
                         String string = LocaleController.getString(R.string.BusinessHoursDayOpenHourPicker);
@@ -603,13 +603,13 @@ public final /* synthetic */ class f implements org.telegram.ui.ActionBar.a2, Ut
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                hg.e2.S((hg.e2) this.b, (g61) obj, (View) obj2);
+                hg.e2.S((hg.e2) this.b, (h61) obj, (View) obj2);
                 break;
         }
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, yf1 yf1Var) {
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
         ii.j4 j4Var = (ii.j4) this.b;
         if (arrayList.isEmpty() || ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId <= 0) {
             return false;

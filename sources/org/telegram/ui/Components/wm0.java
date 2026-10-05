@@ -12,7 +12,7 @@ import java.util.Map;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class wm0 extends Transition {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public final class wm0 extends Transition {
             case 1:
                 transitionValues.values.put("start", Boolean.FALSE);
                 Map map = transitionValues.values;
-                qy0 qy0Var = (qy0) this.b;
-                viewGroup = ((org.telegram.ui.ActionBar.f3) qy0Var).containerView;
-                map.put("offset", Integer.valueOf(viewGroup.getTop() + qy0Var.e0));
+                ry0 ry0Var = (ry0) this.b;
+                viewGroup = ((org.telegram.ui.ActionBar.f3) ry0Var).containerView;
+                map.put("offset", Integer.valueOf(viewGroup.getTop() + ry0Var.e0));
                 break;
             case 2:
                 View view = transitionValues.view;
@@ -64,9 +64,9 @@ public final class wm0 extends Transition {
             case 1:
                 transitionValues.values.put("start", Boolean.TRUE);
                 Map map = transitionValues.values;
-                qy0 qy0Var = (qy0) this.b;
-                viewGroup = ((org.telegram.ui.ActionBar.f3) qy0Var).containerView;
-                map.put("offset", Integer.valueOf(viewGroup.getTop() + qy0Var.e0));
+                ry0 ry0Var = (ry0) this.b;
+                viewGroup = ((org.telegram.ui.ActionBar.f3) ry0Var).containerView;
+                map.put("offset", Integer.valueOf(viewGroup.getTop() + ry0Var.e0));
                 break;
             case 2:
                 View view = transitionValues.view;
@@ -101,7 +101,7 @@ public final class wm0 extends Transition {
                 ofFloat.addUpdateListener(new v70(this, 13));
                 return ofFloat;
             case 1:
-                int i13 = ((qy0) obj).e0;
+                int i13 = ((ry0) obj).e0;
                 int intValue3 = ((Integer) transitionValues.values.get("offset")).intValue() - ((Integer) transitionValues2.values.get("offset")).intValue();
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
                 ofFloat2.setDuration(250L);
@@ -125,7 +125,7 @@ public final class wm0 extends Transition {
                 SecretMediaViewer secretMediaViewer = (SecretMediaViewer) obj;
                 if (transitionValues.view == secretMediaViewer.a0) {
                     ValueAnimator ofInt2 = ValueAnimator.ofInt(((Integer) transitionValues.values.get("scrollY")).intValue(), 0);
-                    ofInt2.addListener(new org.telegram.ui.u41(this, i12));
+                    ofInt2.addListener(new org.telegram.ui.s41(this, i12));
                     ofInt2.addUpdateListener(new org.telegram.ui.b21(this, 5));
                     return ofInt2;
                 }
@@ -133,7 +133,7 @@ public final class wm0 extends Transition {
                     return null;
                 }
                 ObjectAnimator ofFloat4 = ObjectAnimator.ofFloat(secretMediaViewer.Z, (Property<org.telegram.ui.mu0, Float>) View.TRANSLATION_Y, 0.0f, intValue2);
-                ofFloat4.addListener(new org.telegram.ui.u41(this, i11));
+                ofFloat4.addListener(new org.telegram.ui.s41(this, i11));
                 return ofFloat4;
         }
     }

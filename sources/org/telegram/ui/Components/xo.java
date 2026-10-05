@@ -1,8 +1,8 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.va1;
+import org.telegram.ui.ta1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xo implements Runnable {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class xo implements Runnable {
             case 2:
                 pp ppVar = this.b;
                 org.telegram.ui.yn ynVar = ppVar.v;
-                org.telegram.ui.ActionBar.n2 b02 = va1.b0(ynVar.getMessagesController().getChat(Long.valueOf(-ynVar.a())), true);
+                org.telegram.ui.ActionBar.n2 b02 = ta1.b0(ynVar.getMessagesController().getChat(Long.valueOf(-ynVar.a())), true);
                 org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
                 l2Var.a = true;
                 b02.setResourceProvider(ynVar.getResourceProvider());

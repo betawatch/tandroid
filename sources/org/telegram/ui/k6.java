@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class k6 extends v7 {
     public final /* synthetic */ int F = 0;
@@ -31,7 +31,7 @@ public final class k6 extends v7 {
             bVar.a(true, true);
         }
         kVar2 = ((org.telegram.ui.ActionBar.n2) a7Var).actionBar;
-        kVar2.M(null, null);
+        kVar2.L(null, null);
     }
 
     @Override // org.telegram.ui.v7, android.widget.FrameLayout, android.view.View
@@ -47,8 +47,8 @@ public final class k6 extends v7 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k6(a7 a7Var, Context context, a7 a7Var2, li.m mVar, org.telegram.ui.Components.aw0 aw0Var) {
-        super(context, a7Var2, mVar, aw0Var);
+    public k6(a7 a7Var, Context context, a7 a7Var2, li.p pVar, org.telegram.ui.Components.bw0 bw0Var) {
+        super(context, a7Var2, pVar, bw0Var);
         this.G = a7Var;
     }
 }

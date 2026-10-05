@@ -10,10 +10,10 @@ import java.util.List;
 import org.telegram.messenger.CodeHighlighting;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.fj0;
-import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.n11;
+import org.telegram.ui.Components.o11;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class e5 {
     public static Object a(Spanned spanned, int i10, int i11, Class cls) {
@@ -201,7 +201,7 @@ public abstract class e5 {
                                 TL_iv.PageListOrderedItem pageListOrderedItem2 = pageListOrderedItem;
                                 SpannableStringBuilder r12 = pageListOrderedItem2 instanceof TL_iv.TL_pageListOrderedItemText ? h6.r(((TL_iv.TL_pageListOrderedItemText) pageListOrderedItem2).text, null, true) : pageListOrderedItem2 instanceof TL_iv.TL_pageListOrderedItemBlocks ? c(((TL_iv.TL_pageListOrderedItemBlocks) pageListOrderedItem2).blocks) : null;
                                 if (r12 != null) {
-                                    SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(t8.b.v(!TextUtils.isEmpty(pageListOrderedItem2.num) ? pageListOrderedItem2.num : String.valueOf(i11), ".  "));
+                                    SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(sa.e.v(!TextUtils.isEmpty(pageListOrderedItem2.num) ? pageListOrderedItem2.num : String.valueOf(i11), ".  "));
                                     spannableStringBuilder4.append((CharSequence) r12);
                                     arrayList7.add(spannableStringBuilder4);
                                 }
@@ -454,9 +454,9 @@ public abstract class e5 {
             return spannableStringBuilder;
         }
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(spannableStringBuilder);
-        m11 m11Var = new m11();
-        m11Var.a = i10;
-        spannableStringBuilder2.setSpan(new n11(m11Var, 0), 0, spannableStringBuilder2.length(), 33);
+        n11 n11Var = new n11();
+        n11Var.a = i10;
+        spannableStringBuilder2.setSpan(new o11(n11Var, 0), 0, spannableStringBuilder2.length(), 33);
         return spannableStringBuilder2;
     }
 }

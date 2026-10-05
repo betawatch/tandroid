@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class te implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -73,7 +73,7 @@ public final /* synthetic */ class te implements Runnable {
                 }
                 break;
             default:
-                yh.x3.A0((yh.x3) this.e, (TLObject) this.c, this.b, (TLRPC.Document) this.f, this.d, (TLRPC.TL_error) this.h, (TL_stars.saveStarGift) this.n);
+                yh.y3.A0((yh.y3) this.e, (TLObject) this.c, this.b, (TLRPC.Document) this.f, this.d, (TLRPC.TL_error) this.h, (TL_stars.saveStarGift) this.n);
                 break;
         }
     }
@@ -88,8 +88,8 @@ public final /* synthetic */ class te implements Runnable {
         this.d = z11;
     }
 
-    public /* synthetic */ te(yh.x3 x3Var, TLObject tLObject, boolean z10, TLRPC.Document document, boolean z11, TLRPC.TL_error tL_error, TL_stars.saveStarGift savestargift) {
-        this.e = x3Var;
+    public /* synthetic */ te(yh.y3 y3Var, TLObject tLObject, boolean z10, TLRPC.Document document, boolean z11, TLRPC.TL_error tL_error, TL_stars.saveStarGift savestargift) {
+        this.e = y3Var;
         this.c = tLObject;
         this.b = z10;
         this.f = document;

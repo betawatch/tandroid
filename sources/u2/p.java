@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class p implements e0 {
     public final c5.g a;
@@ -214,7 +214,7 @@ public final class p implements e0 {
                             b2.r a12 = sVar.a();
                             a12.q = b2.r0.n("application/x-media3-cues");
                             a12.j = sVar.r;
-                            a12.O = this.c.H(sVar);
+                            a12.O = this.c.D(sVar);
                             sVar = new b2.s(a12);
                         }
                         b2.s sVar3 = sVar;
@@ -231,7 +231,7 @@ public final class p implements e0 {
                         b2.f0 f0Var4 = parse != null ? new b2.f0(parse, null, b0Var4.a != null ? new b2.c0(b0Var4) : uri, null, list3, null, a1Var, -9223372036854775807L) : uri;
                         b2.k0 k0Var3 = new b2.k0("", new b2.a0(yVar2), f0Var4, new b2.e0(d0Var), b2.n0.K, g0Var3);
                         f0Var4.getClass();
-                        aVarArr[i11] = new x0(k0Var3, bVar, sVar2, hVar.A(k0Var3), bVar2, 1048576, sVar3);
+                        aVarArr[i11] = new x0(k0Var3, bVar, sVar2, hVar.v(k0Var3), bVar2, 1048576, sVar3);
                     } else {
                         of.b bVar3 = this.b;
                         bVar3.getClass();

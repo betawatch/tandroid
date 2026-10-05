@@ -32,7 +32,7 @@ import org.telegram.ui.Components.pe0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.wx0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class x0 {
     public static final HashMap g = new HashMap();
@@ -362,7 +362,7 @@ public final class x0 {
         SharedPreferences.Editor edit = this.a.getSharedPreferences("botlocation_" + this.b, 0).edit();
         StringBuilder sb2 = new StringBuilder();
         long j3 = this.c;
-        edit.putBoolean(a4.a.r(sb2, j3, "_granted"), this.e);
+        edit.putBoolean(a4.a.s(sb2, j3, "_granted"), this.e);
         edit.putBoolean(j3 + "_requested", this.d);
         edit.apply();
     }

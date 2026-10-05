@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class fj extends c71 {
+public final class fj extends e71 {
     public final /* synthetic */ jj m3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,10 +14,10 @@ public final class fj extends c71 {
         this.m3 = jjVar;
     }
 
-    @Override // org.telegram.ui.Components.c71
-    public final void E1() {
+    @Override // org.telegram.ui.Components.e71
+    public final void D1() {
         jj jjVar = this.m3;
-        jjVar.b.U1(jjVar, 0);
+        jjVar.b.W1(jjVar, 0);
     }
 
     @Override // org.telegram.ui.Components.zl0
@@ -30,6 +30,6 @@ public final class fj extends c71 {
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         jj jjVar = this.m3;
-        jjVar.b.U1(jjVar, 0);
+        jjVar.b.W1(jjVar, 0);
     }
 }

@@ -14,20 +14,20 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class e extends cb implements GiftAuctionController.OnActiveAuctionsUpdateListeners {
-    public final g61 X;
+    public final h61 X;
     public final LongSparseArray Y;
     public ArrayList Z;
     public boolean a0;
-    public u61 b0;
+    public w61 b0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public e(Context context) {
@@ -45,7 +45,7 @@ public final class e extends cb implements GiftAuctionController.OnActiveAuction
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setClickable(true);
-        this.X = g61.j(-1, linearLayout);
+        this.X = h61.j(-1, linearLayout);
         this.d.setPadding(this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f), this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f));
         this.d.setOverScrollMode(2);
         this.b0.N(false);
@@ -96,10 +96,10 @@ public final class e extends cb implements GiftAuctionController.OnActiveAuction
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 12), this.resourcesProvider);
-        this.b0 = u61Var;
-        u61Var.r = false;
-        return u61Var;
+        w61 w61Var = new w61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 12), this.resourcesProvider);
+        this.b0 = w61Var;
+        w61Var.r = false;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

@@ -15,7 +15,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class bb0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int U = 0;
@@ -362,8 +362,8 @@ public abstract class bb0 extends FrameLayout implements NotificationCenter.Noti
 
     public void setBackgroundDrawable(ch.d dVar) {
         this.R = dVar;
-        dVar.z(AndroidUtilities.dp(22.0f));
-        this.R.y(AndroidUtilities.dp(5.0f));
+        dVar.y(AndroidUtilities.dp(22.0f));
+        this.R.x(AndroidUtilities.dp(5.0f));
         c();
     }
 

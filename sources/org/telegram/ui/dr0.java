@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.video.VideoAds;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dr0 implements Runnable {
     public final /* synthetic */ int a;
@@ -172,9 +172,9 @@ public final /* synthetic */ class dr0 implements Runnable {
                 break;
             case 24:
                 PhotoViewer photoViewer22 = this.b;
-                org.telegram.ui.Components.d81 d81Var = photoViewer22.F2;
-                if (d81Var != null && photoViewer22.a6 <= 1.35f) {
-                    long n10 = d81Var.n();
+                org.telegram.ui.Components.e81 e81Var = photoViewer22.F2;
+                if (e81Var != null && photoViewer22.a6 <= 1.35f) {
+                    long n10 = e81Var.n();
                     long p5 = photoViewer22.F2.p();
                     if (n10 != -9223372036854775807L && p5 >= 8000) {
                         float f7 = photoViewer22.E7;
@@ -196,18 +196,18 @@ public final /* synthetic */ class dr0 implements Runnable {
             case 25:
                 PhotoViewer photoViewer23 = this.b;
                 if (!photoViewer23.U4.isPopupShown()) {
-                    org.telegram.ui.Components.d81 d81Var2 = photoViewer23.F2;
-                    if (d81Var2 != null && photoViewer23.U4.videoWasPlaying) {
-                        d81Var2.C();
+                    org.telegram.ui.Components.e81 e81Var2 = photoViewer23.F2;
+                    if (e81Var2 != null && photoViewer23.U4.videoWasPlaying) {
+                        e81Var2.C();
                         break;
                     }
                 } else {
                     VideoAds videoAds = photoViewer23.U4;
-                    org.telegram.ui.Components.d81 d81Var3 = photoViewer23.F2;
-                    videoAds.videoWasPlaying = d81Var3 != null ? d81Var3.y() : true;
-                    org.telegram.ui.Components.d81 d81Var4 = photoViewer23.F2;
-                    if (d81Var4 != null) {
-                        d81Var4.B();
+                    org.telegram.ui.Components.e81 e81Var3 = photoViewer23.F2;
+                    videoAds.videoWasPlaying = e81Var3 != null ? e81Var3.y() : true;
+                    org.telegram.ui.Components.e81 e81Var4 = photoViewer23.F2;
+                    if (e81Var4 != null) {
+                        e81Var4.B();
                         break;
                     }
                 }

@@ -20,9 +20,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.oy;
 import org.telegram.ui.uy;
-import org.telegram.ui.yf1;
+import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n1 implements org.telegram.ui.ActionBar.a2, oy {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class n1 implements org.telegram.ui.ActionBar.a2, o
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, yf1 yf1Var) {
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
         TLRPC.TL_chatAdminRights tL_chatAdminRights;
         final LaunchActivity launchActivity = (LaunchActivity) this.b;
         final TLRPC.User user = (TLRPC.User) this.c;

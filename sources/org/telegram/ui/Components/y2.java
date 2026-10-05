@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -135,12 +135,12 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                 callback2.run(applyColorMatrix, applyColorMatrix2);
                 break;
             case 12:
-                cz0 cz0Var = (cz0) this.b;
+                dz0 dz0Var = (dz0) this.b;
                 TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) obj;
                 TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
                 updatebirthday.flags |= 1;
                 updatebirthday.birthday = tL_birthday;
-                int i12 = cz0Var.a;
+                int i12 = dz0Var.a;
                 TLRPC.UserFull userFull = MessagesController.getInstance(i12).getUserFull(UserConfig.getInstance(i12).getClientUserId());
                 TL_account.TL_birthday tL_birthday2 = userFull != null ? userFull.birthday : null;
                 if (userFull != null) {
@@ -148,14 +148,14 @@ public final /* synthetic */ class y2 implements Utilities.Callback {
                     userFull.birthday = tL_birthday;
                     MessagesStorage.getInstance(i12).updateUserInfo(userFull, false);
                 }
-                ConnectionsManager.getInstance(i12).sendRequest(updatebirthday, new ai.s5(cz0Var, userFull, tL_birthday2, 13), 1024);
+                ConnectionsManager.getInstance(i12).sendRequest(updatebirthday, new ai.s5(dz0Var, userFull, tL_birthday2, 13), 1024);
                 MessagesController.getInstance(i12).invalidateContentSettings();
                 MessagesController.getInstance(i12).removeSuggestion(0L, "BIRTHDAY_SETUP");
                 NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);
                 break;
             default:
-                c71 c71Var = (c71) this.b;
-                c71Var.f3.Q(c71Var.T((View) obj), c71Var.j3);
+                e71 e71Var = (e71) this.b;
+                e71Var.f3.Q(e71Var.T((View) obj), e71Var.j3);
                 break;
         }
     }

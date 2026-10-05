@@ -21,15 +21,15 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.e11;
 import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.x6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class c5 extends Drawable implements x6, NotificationCenter.NotificationCenterDelegate {
     public final Paint a;
@@ -38,7 +38,7 @@ public final class c5 extends Drawable implements x6, NotificationCenter.Notific
     public final ImageReceiver d;
     public int e;
     public final q5[] f;
-    public final e11 h;
+    public final f11 h;
     public final RectF n;
     public final boolean r;
     public final e6 s;
@@ -68,7 +68,7 @@ public final class c5 extends Drawable implements x6, NotificationCenter.Notific
         imageReceiver.setForUserOrChat(user, h9Var);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(16.0f));
         d();
-        this.h = new e11(UserObject.getUserName(user), 14.0f, null);
+        this.h = new f11(UserObject.getUserName(user), 14.0f, null);
     }
 
     @Override // org.telegram.ui.Components.x6
@@ -243,7 +243,7 @@ public final class c5 extends Drawable implements x6, NotificationCenter.Notific
         imageReceiver.setForUserOrChat(user, h9Var);
         imageReceiver.setRoundRadius(AndroidUtilities.dp(16.0f));
         imageReceiver2.setImage(ImageLocation.getForDocument(document), "120_120", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 120), document), "120_120", DocumentObject.getSvgThumb(document.thumbs, i6.a7, 0.35f), 0L, null, null, 0);
-        this.h = new e11(UserObject.getUserName(user), 14.0f, null);
+        this.h = new f11(UserObject.getUserName(user), 14.0f, null);
     }
 
     @Override // android.graphics.drawable.Drawable

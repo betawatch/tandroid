@@ -5,13 +5,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class f extends LinearLayout {
     public final TextView a;
@@ -29,7 +29,7 @@ public final class f extends LinearLayout {
         addView(textView, z5.p(-1, -2, 0.0f, 0, 16, 0, 16, 0));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        ok.n(i6.y6, d6Var, textView2, 1, 14.0f);
+        bi.m(i6.y6, d6Var, textView2, 1, 14.0f);
         addView(textView2, z5.p(-1, -2, 0.0f, 0, 16, 1, 16, 0));
         LimitPreviewView limitPreviewView = new LimitPreviewView(context, 0, 10, d6Var, 20);
         this.c = limitPreviewView;

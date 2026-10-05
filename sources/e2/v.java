@@ -1,7 +1,6 @@
 package e2;
 
 import e9.m0;
-import hg.k0;
 import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -10,7 +9,7 @@ import v7.a8;
 import v7.t6;
 import v7.y7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class v {
     public static final char[] d = {'\r', '\n'};
@@ -56,7 +55,7 @@ public final class v {
         if (j3 >= 0) {
             return j3;
         }
-        throw new IllegalStateException(k0.h(j3, "Top bit not zero: "));
+        throw new IllegalStateException(hg.c.h(j3, "Top bit not zero: "));
     }
 
     public final long C() {
@@ -64,7 +63,7 @@ public final class v {
         if (r10 >= 0) {
             return r10;
         }
-        throw new IllegalStateException(a4.a.o(r10, "Top bit not zero: "));
+        throw new IllegalStateException(a4.a.p(r10, "Top bit not zero: "));
     }
 
     public final int D() {
@@ -97,11 +96,11 @@ public final class v {
         }
         i11 = 0;
         if (i11 == 0) {
-            throw new NumberFormatException(a4.a.o(j3, "Invalid UTF-8 sequence first byte: "));
+            throw new NumberFormatException(a4.a.p(j3, "Invalid UTF-8 sequence first byte: "));
         }
         for (i10 = 1; i10 < i11; i10++) {
             if ((this.a[this.b + i10] & 192) != 128) {
-                throw new NumberFormatException(a4.a.o(j3, "Invalid UTF-8 sequence continuation byte: "));
+                throw new NumberFormatException(a4.a.p(j3, "Invalid UTF-8 sequence continuation byte: "));
             }
             j3 = (j3 << 6) | (r3 & 63);
         }
@@ -398,7 +397,7 @@ public final class v {
         if (l4 >= 0) {
             return l4;
         }
-        throw new IllegalStateException(k0.h(l4, "Top bit not zero: "));
+        throw new IllegalStateException(hg.c.h(l4, "Top bit not zero: "));
     }
 
     public final int q() {

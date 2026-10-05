@@ -25,15 +25,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.yv0;
-import org.telegram.ui.bh1;
+import org.telegram.ui.Components.zv0;
+import org.telegram.ui.zg1;
 import xh.h4;
-import yh.u7;
-import yh.x3;
+import yh.w7;
+import yh.y3;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l0 implements d9.e, e2.h, q3.g, Continuation, q9.d, a2, GenericProvider, Vector.TLDeserializer, yv0, z9.b {
+public final /* synthetic */ class l0 implements d9.e, e2.h, q3.g, Continuation, q9.d, a2, GenericProvider, Vector.TLDeserializer, zv0, z9.b {
     public final /* synthetic */ int a;
 
     public /* synthetic */ l0(int i10) {
@@ -46,7 +46,7 @@ public final /* synthetic */ class l0 implements d9.e, e2.h, q3.g, Continuation,
 
     @Override // q9.d
     public Object E(cf.c cVar) {
-        Set v = cVar.v(xa.a.class);
+        Set q6 = cVar.q(xa.a.class);
         xa.c cVar2 = xa.c.c;
         if (cVar2 == null) {
             synchronized (xa.c.class) {
@@ -60,7 +60,7 @@ public final /* synthetic */ class l0 implements d9.e, e2.h, q3.g, Continuation,
                 }
             }
         }
-        return new xa.b(v, cVar2);
+        return new xa.b(q6, cVar2);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -135,7 +135,7 @@ public final /* synthetic */ class l0 implements d9.e, e2.h, q3.g, Continuation,
                     str = str.concat(" libraryName");
                 }
                 if (str4 == null) {
-                    str = t8.b.v(str, " buildId");
+                    str = sa.e.v(str, " buildId");
                 }
                 if (str.isEmpty()) {
                     return new y9.c0(str2, str3, str4);
@@ -575,25 +575,25 @@ public final /* synthetic */ class l0 implements d9.e, e2.h, q3.g, Continuation,
                 b2Var.dismiss();
                 break;
             case 22:
-                x3.d2(new bh1(6, null));
+                y3.d2(new zg1(6, null));
                 break;
             default:
-                int i11 = x3.q1;
+                int i11 = y3.q1;
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.yv0
+    @Override // org.telegram.ui.Components.zv0
     public /* synthetic */ float h(RecyclerView recyclerView) {
         return org.telegram.ui.Cells.c1.c(recyclerView);
     }
 
-    @Override // org.telegram.ui.Components.yv0
+    @Override // org.telegram.ui.Components.zv0
     public RecyclerView i(View view) {
-        return ((u7) view).a;
+        return ((w7) view).a;
     }
 
-    @Override // org.telegram.ui.Components.yv0
+    @Override // org.telegram.ui.Components.zv0
     public /* synthetic */ void n(RecyclerView recyclerView) {
         org.telegram.ui.Cells.c1.b(recyclerView);
     }

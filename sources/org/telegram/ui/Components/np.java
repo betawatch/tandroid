@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class np extends yl0 {
     public final org.telegram.ui.ActionBar.d6 c;
@@ -54,9 +54,9 @@ public final class np extends yl0 {
         if (i11 >= 0) {
             m(i11);
             WeakReference weakReference = this.e;
-            s21 s21Var = weakReference == null ? null : (s21) weakReference.get();
-            if (s21Var != null) {
-                s21Var.setSelected(false);
+            t21 t21Var = weakReference == null ? null : (t21) weakReference.get();
+            if (t21Var != null) {
+                t21Var.setSelected(false);
             }
         }
         this.f = i10;
@@ -78,7 +78,7 @@ public final class np extends yl0 {
         int s10;
         int intValue;
         String[] split;
-        s21 s21Var = (s21) c1Var.a;
+        t21 t21Var = (t21) c1Var.a;
         org.telegram.ui.ActionBar.h6 j3 = ((op) this.d.get(i10)).a.j(((op) this.d.get(i10)).c);
         if (j3 != null && j3.b != null && !j3.T && new File(j3.b).exists() && j3.b != null) {
             try {
@@ -247,15 +247,15 @@ public final class np extends yl0 {
             }
         }
         op opVar = (op) this.d.get(i10);
-        op opVar2 = s21Var.G;
-        boolean z11 = opVar2 != null && fg.b.a(opVar2.a.c, opVar.a.c) && !org.telegram.ui.uy.v4 && s21Var.V == opVar.c;
-        s21Var.setFocusable(true);
-        s21Var.setEnabled(true);
-        s21Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i5, false));
-        s21Var.f(opVar, this.r, z11);
-        s21Var.g(i10 == this.f, z11);
+        op opVar2 = t21Var.G;
+        boolean z11 = opVar2 != null && fg.b.a(opVar2.a.c, opVar.a.c) && !org.telegram.ui.uy.v4 && t21Var.V == opVar.c;
+        t21Var.setFocusable(true);
+        t21Var.setEnabled(true);
+        t21Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i5, false));
+        t21Var.f(opVar, this.r, z11);
+        t21Var.g(i10 == this.f, z11);
         if (i10 == this.f) {
-            this.e = new WeakReference(s21Var);
+            this.e = new WeakReference(t21Var);
         }
     }
 
@@ -263,7 +263,7 @@ public final class np extends yl0 {
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         Context context = viewGroup.getContext();
         org.telegram.ui.ActionBar.d6 d6Var = this.c;
-        return new il0(new s21(this.h, this.n, context, d6Var));
+        return new il0(new t21(this.h, this.n, context, d6Var));
     }
 
     public np(int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {

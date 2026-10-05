@@ -10,13 +10,13 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.nz;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class w1 extends lw0 {
+public final class w1 extends mw0 {
     public boolean w0;
     public final Paint x0;
     public final RectF y0;
@@ -31,7 +31,7 @@ public final class w1 extends lw0 {
         this.y0 = new RectF();
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         e2 e2Var = this.z0;
         Rect rect = e2Var.w;
@@ -52,7 +52,7 @@ public final class w1 extends lw0 {
         AndroidUtilities.lerp(e2Var.y, rectF, e2Var.I, rectF);
         rect.set(e2Var.x.getBounds());
         e2Var.x.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        e2Var.x.z(lerp);
+        e2Var.x.y(lerp);
         e2Var.x.setAlpha((int) ((1.0f - e2Var.I) * 255.0f));
         e2Var.x.draw(canvas);
         e2Var.x.setBounds(rect);
@@ -83,10 +83,10 @@ public final class w1 extends lw0 {
         e2 e2Var = this.z0;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
             if (e2Var.q0()) {
-                org.telegram.messenger.f0.p(R.string.RichEditorDraftSaved, new yc(e2Var.X, e2Var.getResourceProvider()), R.raw.contact_check, 36);
+                org.telegram.messenger.q.p(R.string.RichEditorDraftSaved, new yc(e2Var.X, e2Var.getResourceProvider()), R.raw.contact_check, 36);
                 return true;
             }
-        } else if (!e2Var.P.j3(keyEvent)) {
+        } else if (!e2Var.P.i3(keyEvent)) {
             return super.dispatchKeyEvent(keyEvent);
         }
         return true;
@@ -115,7 +115,7 @@ public final class w1 extends lw0 {
                 if (motionEvent.getAction() == 0) {
                     this.w0 = e2Var.a0.getVisibility() == 0 && motionEvent.getY() >= ((float) ((getHeight() - AndroidUtilities.dp(60.0f)) - Math.max(Math.max(e2Var.D0, e2Var.T0), e2Var.U0)));
                 }
-                if (!this.w0 || !e2Var.P.k3(motionEvent)) {
+                if (!this.w0 || !e2Var.P.j3(motionEvent)) {
                     return super.dispatchTouchEvent(motionEvent);
                 }
             }

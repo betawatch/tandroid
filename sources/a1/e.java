@@ -71,7 +71,8 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
+import org.telegram.messenger.q;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
@@ -92,7 +93,7 @@ import rg.y0;
 import v0.i;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -181,15 +182,15 @@ public final /* synthetic */ class e implements Runnable {
                     b1 b1Var = new b1();
                     f3 f3Var = new f3(1, context, (d6) b1Var, false);
                     f3Var.fixNavigationBar();
-                    LinearLayout f7 = ok.f(context, 1);
-                    TextView f10 = org.telegram.messenger.f0.f(context, 1, 20.0f);
-                    f10.setTextColor(b1Var.H0(i6.j5));
-                    f10.setTypeface(AndroidUtilities.bold());
-                    f10.setText(LocaleController.getString(R.string.DeleteSingleMessagesTitle));
-                    f7.addView(f10, z5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
+                    LinearLayout e7 = bi.e(context, 1);
+                    TextView f7 = q.f(context, 1, 20.0f);
+                    f7.setTextColor(b1Var.H0(i6.j5));
+                    f7.setTypeface(AndroidUtilities.bold());
+                    f7.setText(LocaleController.getString(R.string.DeleteSingleMessagesTitle));
+                    e7.addView(f7, z5.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
                     m4 m4Var = new m4(context, b1Var);
                     m4Var.setText(LocaleController.getString(R.string.DeleteAdditionalActions));
-                    f7.addView(m4Var, z5.k(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
+                    e7.addView(m4Var, z5.k(0.0f, 0.0f, 0.0f, 4.0f, -1, -2));
                     final a2 a2Var = new a2(4, 21, context, b1Var, true);
                     qp checkBoxRound = a2Var.getCheckBoxRound();
                     int i13 = i6.V6;
@@ -215,7 +216,7 @@ public final /* synthetic */ class e implements Runnable {
                     });
                     int i16 = i6.i6;
                     a2Var.setBackground(i6.f0(b1Var.H0(i16), 2, -1));
-                    f7.addView(a2Var, z5.n(-1, -2));
+                    e7.addView(a2Var, z5.n(-1, -2));
                     final a2 a2Var2 = new a2(4, 21, context, b1Var, true);
                     a2Var2.getCheckBoxRound().b(i13, i14, i15);
                     final int i17 = 1;
@@ -237,7 +238,7 @@ public final /* synthetic */ class e implements Runnable {
                         }
                     });
                     a2Var2.setBackground(i6.f0(b1Var.H0(i16), 2, -1));
-                    f7.addView(a2Var2, z5.n(-1, -2));
+                    e7.addView(a2Var2, z5.n(-1, -2));
                     final a2 a2Var3 = new a2(4, 21, context, b1Var, true);
                     a2Var3.getCheckBoxRound().b(i13, i14, i15);
                     a2Var3.e(LocaleController.formatString(R.string.DeleteBan, DialogObject.getName(j10)), null, false, false, false);
@@ -259,18 +260,18 @@ public final /* synthetic */ class e implements Runnable {
                         }
                     });
                     a2Var3.setBackground(i6.f0(b1Var.H0(i16), 2, -1));
-                    f7.addView(a2Var3, z5.n(-1, -2));
+                    e7.addView(a2Var3, z5.n(-1, -2));
                     e9 e9Var = new e9(context, b1Var);
                     e9Var.setBackgroundColor(-16777216);
                     e9Var.setFixedSize(12);
-                    f7.addView(e9Var, z5.n(-1, -2));
+                    e7.addView(e9Var, z5.n(-1, -2));
                     FrameLayout frameLayout = new FrameLayout(context);
                     ci.d dVar = new ci.d(context, b1Var, true);
                     dVar.g(LocaleController.getString(R.string.DeleteProceedBtn), false, true);
                     dVar.setOnClickListener(new s0(a2Var, a2Var2, a2Var3, q0Var, f3Var, 0));
                     frameLayout.addView(dVar, z5.d(-1, 48.0f, 119, 16.0f, 16.0f, 16.0f, 16.0f));
-                    f7.addView(frameLayout, z5.n(-1, -2));
-                    f3Var.setCustomView(f7);
+                    e7.addView(frameLayout, z5.n(-1, -2));
+                    f3Var.setCustomView(e7);
                     f3Var.show();
                     break;
                 }
@@ -654,8 +655,8 @@ public final /* synthetic */ class e implements Runnable {
                     while (queryFinalized4.next()) {
                         longSparseIntArray.put(queryFinalized4.longValue(0), queryFinalized4.intValue(1));
                     }
-                } catch (Exception e7) {
-                    messagesStorage2.checkSQLException(e7);
+                } catch (Exception e10) {
+                    messagesStorage2.checkSQLException(e10);
                 }
                 AndroidUtilities.runOnUIThread(new e(27, z7Var, longSparseIntArray));
                 break;

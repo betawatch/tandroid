@@ -29,9 +29,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.e61;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class ea extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int d0 = 0;
@@ -489,14 +489,14 @@ public final class ea extends org.telegram.ui.ActionBar.f3 implements Notificati
                 spannableStringBuilder.append((CharSequence) ", ");
             }
             SpannableString spannableString = new SpannableString("@" + ((String) arrayList.get(i11)));
-            spannableString.setSpan(new d61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+            spannableString.setSpan(new e61(AndroidUtilities.bold()), 0, spannableString.length(), 33);
             spannableStringBuilder.append((CharSequence) spannableString);
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, this.resourcesProvider);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.StoryRestrictions);
         alertDialog$Builder.a.T = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.StoryRestrictionsInfo), spannableStringBuilder);
         alertDialog$Builder.k(LocaleController.getString(R.string.Proceed), new ai.q5(this, caVar, runnable, 5));
-        hg.k0.o(R.string.Cancel, alertDialog$Builder, null);
+        hg.c.p(R.string.Cancel, alertDialog$Builder, null);
     }
 
     public final ArrayList h1() {

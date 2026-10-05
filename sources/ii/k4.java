@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -16,7 +16,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class k4 {
     public static EditTextBoldCursor a(Context context, org.telegram.ui.ActionBar.d6 d6Var, String str, String str2) {
@@ -85,7 +85,7 @@ public abstract class k4 {
         } else if (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeCopy) {
             h(w3Var, z10);
         } else if (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUserProfile) {
-            w3Var.f.q3(true);
+            w3Var.f.p3(true);
             k(n2Var, z10, new h4(w3Var, 2));
         }
         return null;
@@ -159,21 +159,21 @@ public abstract class k4 {
 
     public static void f(org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, u3 u3Var, boolean z10) {
         boolean c10 = u3Var.c();
-        LinearLayout f7 = ok.f(context, 1);
+        LinearLayout e7 = bi.e(context, 1);
         int i10 = 0;
-        f7.setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
+        e7.setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
         String string = LocaleController.getString(R.string.RichEditorButtonText);
         int i11 = u3Var.b;
         TL_iv.pageBlockButtonRow d = u3Var.d();
         TL_keyboard.PageButton pageButton = (d == null || i11 < 0 || i11 >= d.buttons.size()) ? null : d.buttons.get(i11);
         EditTextBoldCursor a2 = a(context, d6Var, string, pageButton == null ? "" : h6.l(pageButton.text));
-        f7.addView(a2, w7.z5.n(-1, 64));
+        e7.addView(a2, w7.z5.n(-1, 64));
         ai.s4 s4Var = new ai.s4(a2, n2Var, z10, u3Var, 5);
         AlertDialog$Builder alertDialog$Builder = z10 ? new AlertDialog$Builder(context, 0, d6Var) : new org.telegram.ui.ActionBar.e2(context, 0, d6Var);
         String string2 = LocaleController.getString(c10 ? R.string.RichEditorEditProfileButton : R.string.RichEditorCreateProfileButton);
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         b2Var.R = string2;
-        alertDialog$Builder.n(f7);
+        alertDialog$Builder.n(e7);
         alertDialog$Builder.k(LocaleController.getString(R.string.OK), new ca.b(c10, s4Var, a2, u3Var, 2));
         if (c10) {
             alertDialog$Builder.i(LocaleController.getString(R.string.RichEditorChangeUser), new ei.f(s4Var, 18));
@@ -191,19 +191,19 @@ public abstract class k4 {
     }
 
     public static void g(Context context, org.telegram.ui.ActionBar.d6 d6Var, u3 u3Var, boolean z10, String str, String str2, String str3, f4 f4Var) {
-        LinearLayout f7 = ok.f(context, 1);
-        f7.setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
+        LinearLayout e7 = bi.e(context, 1);
+        e7.setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
         String string = LocaleController.getString(R.string.RichEditorButtonText);
         int i10 = u3Var.b;
         TL_iv.pageBlockButtonRow d = u3Var.d();
         TL_keyboard.PageButton pageButton = (d == null || i10 < 0 || i10 >= d.buttons.size()) ? null : d.buttons.get(i10);
         EditTextBoldCursor a2 = a(context, d6Var, string, pageButton == null ? "" : h6.l(pageButton.text));
         EditTextBoldCursor a10 = a(context, d6Var, str2, str3);
-        f7.addView(a2, w7.z5.n(-1, 64));
-        f7.addView(a10, w7.z5.n(-1, 64));
+        e7.addView(a2, w7.z5.n(-1, 64));
+        e7.addView(a10, w7.z5.n(-1, 64));
         AlertDialog$Builder alertDialog$Builder = z10 ? new AlertDialog$Builder(context, 0, d6Var) : new org.telegram.ui.ActionBar.e2(context, 0, d6Var);
         alertDialog$Builder.a.R = str;
-        alertDialog$Builder.n(f7);
+        alertDialog$Builder.n(e7);
         alertDialog$Builder.k(LocaleController.getString(R.string.OK), new ai.q5(a2, a10, f4Var, 12));
         if (u3Var.c()) {
             alertDialog$Builder.i(LocaleController.getString(R.string.Delete), new f4(u3Var, 0));
@@ -223,7 +223,7 @@ public abstract class k4 {
         TL_keyboard.InlineButtonType inlineButtonType = (l4Var == null || (textbutton = l4Var.a) == null) ? null : textbutton.type;
         boolean z11 = inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeCopy;
         String l4 = z11 ? ((TL_keyboard.TL_inlineButtonTypeCopy) inlineButtonType).copy_text : h6.l(w3Var.e);
-        w3Var.f.q3(false);
+        w3Var.f.p3(false);
         w3Var.a.showInputDialog(LocaleController.getString(z11 ? R.string.RichEditorEditCopyButton : R.string.RichEditorCreateCopyButton), LocaleController.getString(R.string.RichEditorButtonCopyText), l4, false, !z10, new h4(w3Var, 1));
     }
 
@@ -233,13 +233,13 @@ public abstract class k4 {
         TL_keyboard.InlineButtonType inlineButtonType = (l4Var == null || (textbutton = l4Var.a) == null) ? null : textbutton.type;
         boolean z11 = inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUrl;
         String str = z11 ? ((TL_keyboard.TL_inlineButtonTypeUrl) inlineButtonType).url : "http://";
-        w3Var.f.q3(false);
+        w3Var.f.p3(false);
         w3Var.a.showInputDialog(LocaleController.getString(z11 ? R.string.RichEditorEditLinkButton : R.string.RichEditorCreateLinkButton), LocaleController.getString(R.string.RichEditorButtonURL), str, true, !z10, new h4(w3Var, 0));
     }
 
     public static void j(AlertDialog$Builder alertDialog$Builder, EditTextBoldCursor editTextBoldCursor, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        b2Var.setOnShowListener(new hg.r(1, editTextBoldCursor));
+        b2Var.setOnShowListener(new hg.s(1, editTextBoldCursor));
         b2Var.q(250L);
         if (i10 == 0 || !(b2Var.d(i10) instanceof TextView)) {
             return;

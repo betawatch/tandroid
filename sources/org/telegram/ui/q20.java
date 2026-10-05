@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class q20 extends org.telegram.ui.Components.yc0 {
     public boolean C0;
@@ -46,7 +46,7 @@ public final class q20 extends org.telegram.ui.Components.yc0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
@@ -272,7 +272,7 @@ public final class q20 extends org.telegram.ui.Components.yc0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.yc0, org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.yc0, org.telegram.ui.Components.mw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }

@@ -5,7 +5,7 @@ import android.graphics.PointF;
 import android.graphics.RectF;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iw implements bh.a {
     public final /* synthetic */ int a;
@@ -80,21 +80,21 @@ public final /* synthetic */ class iw implements bh.a {
                 }
                 break;
             default:
-                va1 va1Var = (va1) this.b;
+                ta1 ta1Var = (ta1) this.b;
                 d6 d6Var = (d6) this.d;
-                u91 u91Var = va1Var.S;
+                s91 s91Var = ta1Var.S;
                 FrameLayout frameLayout = this.c;
-                if (u91Var != null) {
-                    gh.d.a(u91Var, canvas, rectF, u91Var, frameLayout);
+                if (s91Var != null) {
+                    gh.d.a(s91Var, canvas, rectF, s91Var, frameLayout);
                 }
-                dc dcVar = va1Var.i0;
+                dc dcVar = ta1Var.i0;
                 if (dcVar != null) {
                     org.telegram.ui.Components.zl0 zl0Var = dcVar.F;
                     gh.d.a(zl0Var, canvas, rectF, zl0Var, frameLayout);
                 }
-                me meVar = va1Var.j0;
-                if (meVar != null && meVar.getParent() == va1Var.h0 && va1Var.j0.getVisibility() == 0) {
-                    va1Var.j0.c0(canvas, rectF, d6Var);
+                me meVar = ta1Var.j0;
+                if (meVar != null && meVar.getParent() == ta1Var.h0 && ta1Var.j0.getVisibility() == 0) {
+                    ta1Var.j0.d(canvas, rectF, d6Var);
                     break;
                 }
                 break;

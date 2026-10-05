@@ -1,33 +1,50 @@
 package yh;
 
-import android.content.Context;
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.widget.LinearLayout;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.ou0;
+import org.telegram.ui.yu0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class u6 extends ClickableSpan {
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ boolean c;
+public final class u6 extends ou0 {
+    public final /* synthetic */ w9 a;
+    public final /* synthetic */ LinearLayout b;
+    public final /* synthetic */ long c;
 
-    public u6(org.telegram.ui.ActionBar.f3[] f3VarArr, Context context, boolean z10) {
-        this.a = f3VarArr;
-        this.b = context;
-        this.c = z10;
+    public u6(w9 w9Var, LinearLayout linearLayout, long j3) {
+        this.a = w9Var;
+        this.b = linearLayout;
+        this.c = j3;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.a[0].dismiss();
-        nf.f.s(this.b, LocaleController.getString(this.c ? R.string.StarsTransactionTONFromFragmentLink : R.string.StarsTransactionUnknownLink));
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    public final yu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        w9 w9Var = this.a;
+        ImageReceiver imageReceiver = w9Var.getImageReceiver();
+        int[] iArr = new int[2];
+        w9Var.getLocationInWindow(iArr);
+        yu0 yu0Var = new yu0();
+        yu0Var.b = iArr[0];
+        yu0Var.c = iArr[1];
+        yu0Var.d = this.b;
+        yu0Var.m = null;
+        yu0Var.a = imageReceiver;
+        if (z10) {
+            yu0Var.e = imageReceiver.getBitmapSafe();
+        }
+        yu0Var.h = imageReceiver.getRoundRadius(true);
+        yu0Var.f = this.c;
+        yu0Var.j = 0;
+        yu0Var.i = 0;
+        return yu0Var;
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
+    @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
+    public final boolean K() {
+        return true;
     }
 }

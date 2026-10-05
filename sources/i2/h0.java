@@ -26,11 +26,11 @@ import org.telegram.ui.Components.voip.q2;
 import org.telegram.ui.Components.voip.u2;
 import org.telegram.ui.Components.voip.y2;
 import org.telegram.ui.il;
-import org.telegram.ui.yf1;
+import org.telegram.ui.wf1;
 import org.telegram.ui.yn;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -132,19 +132,19 @@ public final /* synthetic */ class h0 implements Runnable {
                 ((n2.b) this.b).a(null);
                 return;
             case 15:
-                yf1 yf1Var = (yf1) this.b;
-                if (yf1Var.getParentLayout() != null) {
-                    yf1Var.H = true;
+                wf1 wf1Var = (wf1) this.b;
+                if (wf1Var.getParentLayout() != null) {
+                    wf1Var.H = true;
                     Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", yf1Var.a);
+                    bundle.putLong("chat_id", wf1Var.a);
                     yn ynVar = new yn(bundle);
                     ynVar.ha = true;
-                    yf1Var.presentFragment(ynVar);
+                    wf1Var.presentFragment(ynVar);
                     return;
                 }
                 return;
             case 16:
-                ((l2.g) this.b).C();
+                ((l2.g) this.b).a0();
                 return;
             case 17:
                 TLParseException.lambda$doThrowOrLog$0((TLParseException) this.b);

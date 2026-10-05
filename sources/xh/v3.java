@@ -6,12 +6,12 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ui1;
-import yh.l5;
+import org.telegram.ui.si1;
+import yh.m5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class v3 implements l5 {
+public final class v3 implements m5 {
     public final int a;
     public final long b;
     public final Utilities.Callback c;
@@ -41,22 +41,22 @@ public final class v3 implements l5 {
         this.c = callback;
     }
 
-    @Override // yh.l5
+    @Override // yh.m5
     public final void a() {
         g(false);
     }
 
-    @Override // yh.l5
+    @Override // yh.m5
     public final int b(int i10) {
         return -1;
     }
 
-    @Override // yh.l5
+    @Override // yh.m5
     public final int c() {
         return this.e;
     }
 
-    @Override // yh.l5
+    @Override // yh.m5
     public final int e() {
         return this.d.size();
     }
@@ -156,11 +156,11 @@ public final class v3 implements l5 {
                     }
                 }
             }
-            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new ui1(5, this, getresalestargifts));
+            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new si1(5, this, getresalestargifts));
         }
     }
 
-    @Override // yh.l5
+    @Override // yh.m5
     public final Object get(int i10) {
         return this.d.get(i10);
     }
@@ -183,12 +183,12 @@ public final class v3 implements l5 {
         }
     }
 
-    @Override // yh.l5
+    @Override // yh.m5
     public final int indexOf(Object obj) {
         return this.d.indexOf(obj);
     }
 
-    @Override // yh.l5
+    @Override // yh.m5
     public final void d() {
     }
 }

@@ -16,13 +16,13 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.eu;
 import org.telegram.ui.Components.iu;
-import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.md;
 import org.telegram.ui.Components.mu;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.nz;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class g extends mu {
     public org.telegram.ui.Components.oa V;
@@ -32,8 +32,8 @@ public final class g extends mu {
     public final /* synthetic */ m c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(m mVar, Context context, lw0 lw0Var, int i10, ai.d dVar, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ka kaVar) {
-        super(context, lw0Var, null, i10, true, dVar);
+    public g(m mVar, Context context, mw0 mw0Var, int i10, ai.d dVar, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ka kaVar) {
+        super(context, mw0Var, null, i10, true, dVar);
         this.c0 = mVar;
         this.a0 = d6Var;
         this.b0 = kaVar;
@@ -104,12 +104,12 @@ public final class g extends mu {
                     i10 = roundedCorner2 == null ? 0 : roundedCorner2.getRadius();
                 }
                 ch.d c10 = mVar.h0.c(iuVar, null, false);
-                c10.x(eh.b.i(this.a0));
+                c10.w(eh.b.i(this.a0));
                 this.W = c10;
-                c10.B(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i10, i11);
+                c10.A(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i10, i11);
                 ch.d dVar = this.W;
                 dVar.n = true;
-                dVar.C(AndroidUtilities.dp(32.0f));
+                dVar.B(AndroidUtilities.dp(32.0f));
                 ch.d dVar2 = this.W;
                 dVar2.l.g = 0.4f;
                 dVar2.u();

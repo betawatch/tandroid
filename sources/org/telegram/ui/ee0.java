@@ -29,9 +29,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class ee0 extends org.telegram.ui.Components.qw0 {
+public final class ee0 extends org.telegram.ui.Components.rw0 {
     public boolean E;
     public GoogleSignInAccount F;
     public int G;
@@ -618,20 +618,20 @@ public final class ee0 extends org.telegram.ui.Components.qw0 {
         addView(frameLayout42, w7.z5.l(1.0f, -1, 0));
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void g() {
         if (this.H != 0) {
             AndroidUtilities.cancelRunOnUIThread(this.U);
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public String getHeaderName() {
         return LocaleController.getString(R.string.VerificationCode);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void h(String str) {
         TLRPC.TL_auth_signIn tL_auth_signIn;
         int i10;
@@ -711,7 +711,7 @@ public final class ee0 extends org.telegram.ui.Components.qw0 {
         ConnectionsManager.getInstance(i10).sendRequest(tL_auth_signIn, new ud0(this, code, 0), 10);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void j() {
         if (this.x) {
             this.x = false;
@@ -720,7 +720,7 @@ public final class ee0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void k(Bundle bundle) {
         Bundle bundle2 = bundle.getBundle("emailcode_params");
         this.y = bundle2;
@@ -733,7 +733,7 @@ public final class ee0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void l(Bundle bundle) {
         String code = this.a.getCode();
         if (code != null && code.length() != 0) {
@@ -745,7 +745,7 @@ public final class ee0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void m(Bundle bundle, boolean z10) {
         if (bundle == null) {
             return;
@@ -794,12 +794,12 @@ public final class ee0 extends org.telegram.ui.Components.qw0 {
             int indexOf = string.indexOf(42);
             int lastIndexOf = string.lastIndexOf(42);
             if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                org.telegram.ui.Components.m11 m11Var = new org.telegram.ui.Components.m11();
-                m11Var.a |= 256;
-                m11Var.b = indexOf;
+                org.telegram.ui.Components.n11 n11Var = new org.telegram.ui.Components.n11();
+                n11Var.a |= 256;
+                n11Var.b = indexOf;
                 int i13 = lastIndexOf + 1;
-                m11Var.c = i13;
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.n11(m11Var, 0), indexOf, i13, 0);
+                n11Var.c = i13;
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.o11(n11Var, 0), indexOf, i13, 0);
             }
             nVar.setText(AndroidUtilities.formatSpannable(LocaleController.getString(R.string.CheckYourEmailSubtitle), spannableStringBuilder));
         }
@@ -818,7 +818,7 @@ public final class ee0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void n() {
         this.b.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false));
         int i10 = org.telegram.ui.ActionBar.i6.D6;

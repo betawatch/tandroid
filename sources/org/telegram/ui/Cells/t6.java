@@ -23,11 +23,11 @@ import org.telegram.ui.Components.ShutterButton;
 import org.telegram.ui.Components.dm0;
 import org.telegram.ui.Components.dn0;
 import org.telegram.ui.Components.e70;
-import org.telegram.ui.Components.e91;
 import org.telegram.ui.Components.ee0;
 import org.telegram.ui.Components.f70;
 import org.telegram.ui.Components.f91;
 import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.g91;
 import org.telegram.ui.Components.gd;
 import org.telegram.ui.Components.h00;
 import org.telegram.ui.Components.hu;
@@ -39,10 +39,10 @@ import org.telegram.ui.Components.qk;
 import org.telegram.ui.Components.s60;
 import org.telegram.ui.Components.sm;
 import org.telegram.ui.Components.tm;
-import org.telegram.ui.Components.tx0;
 import org.telegram.ui.Components.ul;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.ux0;
 import org.telegram.ui.Components.vi0;
+import org.telegram.ui.Components.vv0;
 import org.telegram.ui.Components.xn;
 import org.telegram.ui.Components.y50;
 import org.telegram.ui.Components.yw;
@@ -52,7 +52,7 @@ import org.telegram.ui.ly;
 import org.telegram.ui.oi;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class t6 implements Runnable {
     public final /* synthetic */ int a;
@@ -448,48 +448,48 @@ public final class t6 implements Runnable {
                 return;
             case 24:
                 ShutterButton shutterButton = (ShutterButton) this.b;
-                uv0 uv0Var = shutterButton.e;
-                if (uv0Var == null || ((ul) uv0Var).a()) {
+                vv0 vv0Var = shutterButton.e;
+                if (vv0Var == null || ((ul) vv0Var).a()) {
                     return;
                 }
                 shutterButton.v = false;
                 return;
             case 25:
-                tx0 tx0Var = (tx0) this.b;
-                View view = tx0Var.s;
+                ux0 ux0Var = (ux0) this.b;
+                View view = ux0Var.s;
                 if (view == null) {
-                    tx0Var.c.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
+                    ux0Var.c.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(150L).start();
                     return;
                 }
                 if (view.getVisibility() != 0) {
-                    tx0Var.s.setVisibility(0);
-                    tx0Var.s.setAlpha(0.0f);
+                    ux0Var.s.setVisibility(0);
+                    ux0Var.s.setAlpha(0.0f);
                 }
-                tx0Var.s.animate().setListener(null).cancel();
-                tx0Var.s.animate().alpha(1.0f).setDuration(150L).start();
+                ux0Var.s.animate().setListener(null).cancel();
+                ux0Var.s.animate().alpha(1.0f).setDuration(150L).start();
                 return;
             case 26:
-                f91 f91Var = (f91) this.b;
-                if (f91Var.J) {
+                g91 g91Var = (g91) this.b;
+                if (g91Var.J) {
                     long elapsedRealtime3 = SystemClock.elapsedRealtime();
                     if (elapsedRealtime3 > 17) {
                         elapsedRealtime3 = 17;
                     }
-                    float f13 = f91Var.f0 + (elapsedRealtime3 / 200.0f);
-                    f91Var.f0 = f13;
-                    f91Var.setAnimationIdicatorProgress(f91Var.a0.getInterpolation(f13));
-                    if (f91Var.f0 > 1.0f) {
-                        f91Var.f0 = 1.0f;
+                    float f13 = g91Var.f0 + (elapsedRealtime3 / 200.0f);
+                    g91Var.f0 = f13;
+                    g91Var.setAnimationIdicatorProgress(g91Var.a0.getInterpolation(f13));
+                    if (g91Var.f0 > 1.0f) {
+                        g91Var.f0 = 1.0f;
                     }
-                    if (f91Var.f0 < 1.0f) {
-                        AndroidUtilities.runOnUIThread(f91Var.i0);
+                    if (g91Var.f0 < 1.0f) {
+                        AndroidUtilities.runOnUIThread(g91Var.i0);
                         return;
                     }
-                    f91Var.J = false;
-                    f91Var.setEnabled(true);
-                    e91 e91Var = f91Var.y;
-                    if (e91Var != null) {
-                        ((n2.c) e91Var).k(1.0f);
+                    g91Var.J = false;
+                    g91Var.setEnabled(true);
+                    f91 f91Var = g91Var.y;
+                    if (f91Var != null) {
+                        ((n2.c) f91Var).k(1.0f);
                         return;
                     }
                     return;

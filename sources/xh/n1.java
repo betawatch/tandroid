@@ -9,16 +9,16 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import org.telegram.messenger.LiteMode;
-import yh.j8;
+import yh.l8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class n1 extends Drawable {
     public final int a;
     public final RectF b;
     public final Path c;
     public final Paint d;
-    public final j8 e;
+    public final l8 e;
     public boolean f;
     public rg.s1 g;
     public ii.q1 h;
@@ -50,15 +50,15 @@ public final class n1 extends Drawable {
         Paint paint = this.d;
         Path path = this.c;
         canvas.drawPath(path, paint);
-        j8 j8Var = this.e;
-        if (j8Var != null) {
+        l8 l8Var = this.e;
+        if (l8Var != null) {
             if (this.f || !this.i) {
                 canvas.save();
                 canvas.clipPath(path);
                 if (this.g == null) {
-                    j8Var.d();
+                    l8Var.d();
                 }
-                j8Var.a(canvas, this.a);
+                l8Var.a(canvas, this.a);
                 canvas.restore();
                 if (this.g == null) {
                     invalidateSelf();
@@ -81,9 +81,9 @@ public final class n1 extends Drawable {
         Path path = this.c;
         path.rewind();
         path.addRoundRect(rectF, min, min, Path.Direction.CW);
-        j8 j8Var = this.e;
-        if (j8Var != null) {
-            j8Var.g(rectF);
+        l8 l8Var = this.e;
+        if (l8Var != null) {
+            l8Var.g(rectF);
         }
     }
 
@@ -105,7 +105,7 @@ public final class n1 extends Drawable {
         this.a = i10;
         paint.setColor(i11);
         if (Build.VERSION.SDK_INT >= 29) {
-            this.e = new j8(1, 25);
+            this.e = new l8(1, 25);
         } else {
             this.e = null;
         }

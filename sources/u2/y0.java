@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class y0 implements x3.g {
     public long a;
@@ -12,6 +12,12 @@ public final class y0 implements x3.g {
         e2.d.g(((y2.a) this.c) == null);
         this.a = j3;
         this.b = j3 + i10;
+    }
+
+    @Override // x3.g
+    public void C(long j3) {
+        long[] jArr = (long[]) ((of.b) this.d).b;
+        this.b = jArr[e2.d0.e(jArr, j3, true)];
     }
 
     @Override // x3.g
@@ -29,12 +35,6 @@ public final class y0 implements x3.g {
     public c3.b0 d() {
         e2.d.g(this.a != -1);
         return new c3.t((c3.u) this.c, this.a, 0);
-    }
-
-    @Override // x3.g
-    public void y(long j3) {
-        long[] jArr = (long[]) ((of.b) this.d).b;
-        this.b = jArr[e2.d0.e(jArr, j3, true)];
     }
 
     public y0(String str, byte[] bArr, long j3, long j10) {

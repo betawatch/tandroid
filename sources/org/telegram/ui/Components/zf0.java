@@ -20,9 +20,9 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.hj1;
+import org.telegram.ui.fj1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class zf0 extends WebViewClient {
     public final /* synthetic */ int a;
@@ -41,8 +41,8 @@ public final class zf0 extends WebViewClient {
         if (!"tg".equals(parse.getScheme())) {
             return false;
         }
-        ((hj1) this.b).getClass();
-        ((hj1) this.b).finishFragment(false);
+        ((fj1) this.b).getClass();
+        ((fj1) this.b).finishFragment(false);
         try {
             Intent intent = new Intent("android.intent.action.VIEW", parse);
             intent.setComponent(new ComponentName(ApplicationLoader.applicationContext.getPackageName(), LaunchActivity.class.getName()));
@@ -89,13 +89,13 @@ public final class zf0 extends WebViewClient {
                 break;
             case 1:
                 super.onPageFinished(webView, str);
-                hj1 hj1Var = (hj1) obj;
-                wq wqVar = hj1Var.c;
+                fj1 fj1Var = (fj1) obj;
+                wq wqVar = fj1Var.c;
                 if (wqVar != null && wqVar.getVisibility() == 0) {
                     AnimatorSet animatorSet = new AnimatorSet();
-                    hj1Var.b.getContentView().setVisibility(0);
-                    hj1Var.b.setEnabled(true);
-                    animatorSet.playTogether(ObjectAnimator.ofFloat(hj1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(hj1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(hj1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(hj1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(hj1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(hj1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
+                    fj1Var.b.getContentView().setVisibility(0);
+                    fj1Var.b.setEnabled(true);
+                    animatorSet.playTogether(ObjectAnimator.ofFloat(fj1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(fj1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(fj1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(fj1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(fj1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(fj1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
                     animatorSet.addListener(new org.telegram.ui.ap0(this, 28));
                     animatorSet.setDuration(150L);
                     animatorSet.start();

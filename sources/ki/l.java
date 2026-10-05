@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.MediaController;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class l implements p {
     public long A;
@@ -122,7 +122,7 @@ public final class l implements p {
         this.m = createEncoderByType;
         MediaCodecInfo.VideoCapabilities videoCapabilities = createEncoderByType.getCodecInfo().getCapabilitiesForType(MediaController.VIDEO_MIME_TYPE).getVideoCapabilities();
         if (!videoCapabilities.isSizeSupported(i10, i10) || !videoCapabilities.areSizeAndRateSupported(i10, i10, i11)) {
-            throw new IOException(a4.a.n(i11, " fps", hg.k0.k("Video encoder does not support ", i10, "x", i10, " at ")));
+            throw new IOException(a4.a.o(i11, " fps", hg.c.k("Video encoder does not support ", i10, "x", i10, " at ")));
         }
         this.f.b("video encoder configure: codec=" + this.m.getName() + ", format=" + createVideoFormat);
         this.m.configure(createVideoFormat, (Surface) null, (MediaCrypto) null, 1);
@@ -229,11 +229,11 @@ public final class l implements p {
         }
         arrayList.clear();
         this.X = true;
-        StringBuilder t10 = a4.a.t(j3, "A/V start aligned: videoPtsUs=", ", audioPtsUs=");
-        t10.append(kVar.b.presentationTimeUs);
-        t10.append(", deltaUs=");
-        t10.append(this.Y);
-        this.f.b(t10.toString());
+        StringBuilder u10 = a4.a.u(j3, "A/V start aligned: videoPtsUs=", ", audioPtsUs=");
+        u10.append(kVar.b.presentationTimeUs);
+        u10.append(", deltaUs=");
+        u10.append(this.Y);
+        this.f.b(u10.toString());
     }
 
     public final boolean e() {
@@ -457,7 +457,7 @@ public final class l implements p {
                 throw new IllegalStateException(e7);
             }
         }
-        this.a.k(mediaFormat, z10);
+        this.a.l(mediaFormat, z10);
         m mVar = this.f;
         StringBuilder sb2 = new StringBuilder();
         sb2.append(z10 ? MediaStreamTrack.VIDEO_TRACK_KIND : MediaStreamTrack.AUDIO_TRACK_KIND);
@@ -865,6 +865,6 @@ public final class l implements p {
                 throw new IllegalStateException(e7);
             }
         }
-        this.a.m(z10, byteBuffer, bufferInfo, this.b);
+        this.a.o(z10, byteBuffer, bufferInfo, this.b);
     }
 }

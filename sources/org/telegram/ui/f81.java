@@ -1,38 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f81 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SessionsActivity b;
+public final class f81 extends UndoView {
+    public final /* synthetic */ SessionsActivity f0;
 
-    public /* synthetic */ f81(SessionsActivity sessionsActivity, int i10) {
-        this.a = i10;
-        this.b = sessionsActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f81(SessionsActivity sessionsActivity, Context context) {
+        super(context);
+        this.f0 = sessionsActivity;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
-                SessionsActivity sessionsActivity = this.b;
-                sessionsActivity.getClass();
-                if (connectedbots != null) {
-                    sessionsActivity.h = connectedbots.connected_bots;
-                    if (sessionsActivity.a != null) {
-                        sessionsActivity.m0();
-                        sessionsActivity.a.l();
-                        break;
-                    }
-                }
-                break;
-            default:
-                SessionsActivity.T(this.b, (Boolean) obj);
-                break;
+    @Override // org.telegram.ui.Components.UndoView
+    public final void e(int i10, boolean z10) {
+        int i11;
+        if (!z10 && getCurrentInfoObject() != null) {
+            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
+            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
+            resetauthorization.hash = tL_authorization.hash;
+            i11 = ((org.telegram.ui.ActionBar.n2) this.f0).currentAccount;
+            ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new zb0(19, this, tL_authorization));
         }
+        super.e(i10, z10);
     }
 }

@@ -12,7 +12,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class m0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -137,7 +137,7 @@ public final class m0 implements TextWatcher {
                                         obj = str6;
                                     } else if (list.size() > i11) {
                                         String string = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + substring, str6);
-                                        Object obj2 = (ut) t8.b.h(i11, list);
+                                        Object obj2 = (ut) sa.e.h(i11, list);
                                         if (string != null) {
                                             int size = arrayList.size();
                                             int i14 = 0;
@@ -219,7 +219,7 @@ public final class m0 implements TextWatcher {
                             utVar = null;
                         } else if (list2.size() > 1) {
                             String string2 = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + d, null);
-                            ut utVar6 = (ut) t8.b.h(1, list2);
+                            ut utVar6 = (ut) sa.e.h(1, list2);
                             if (string2 != null) {
                                 int size3 = arrayList.size();
                                 int i18 = 0;
@@ -284,7 +284,7 @@ public final class m0 implements TextWatcher {
                                     if (list3 != null) {
                                         if (list3.size() > 1) {
                                             String string3 = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + str4, str8);
-                                            Object obj7 = (ut) t8.b.h(1, list3);
+                                            Object obj7 = (ut) sa.e.h(1, list3);
                                             if (string3 != null) {
                                                 int size4 = arrayList2.size();
                                                 int i20 = 0;
@@ -356,7 +356,7 @@ public final class m0 implements TextWatcher {
                             utVar2 = null;
                         } else if (list4.size() > 1) {
                             String string4 = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + str4, null);
-                            ut utVar10 = (ut) t8.b.h(1, list4);
+                            ut utVar10 = (ut) sa.e.h(1, list4);
                             if (string4 != null) {
                                 int size6 = arrayList2.size();
                                 int i23 = 0;
@@ -418,34 +418,34 @@ public final class m0 implements TextWatcher {
                 }
                 break;
             case 15:
-                t51 t51Var = (t51) this.b;
-                org.telegram.ui.Cells.c6 c6Var = t51Var.h;
+                r51 r51Var = (r51) this.b;
+                org.telegram.ui.Cells.c6 c6Var = r51Var.h;
                 String obj11 = (c6Var.getText() == null || AndroidUtilities.trim(c6Var.getText(), null).length() == 0) ? null : c6Var.getText().toString();
-                t51Var.y.v(obj11, true, true);
-                q61 q61Var = t51Var.n;
-                if (q61Var != null) {
-                    q61Var.H1(null);
-                    t51Var.n.I1(TextUtils.isEmpty(obj11), true);
+                r51Var.y.v(obj11, true, true);
+                o61 o61Var = r51Var.n;
+                if (o61Var != null) {
+                    o61Var.G1(null);
+                    r51Var.n.H1(TextUtils.isEmpty(obj11), true);
                 }
                 if (c6Var != null) {
                     c6Var.clearAnimation();
                     c6Var.animate().translationX(0.0f).setInterpolator(org.telegram.ui.Components.tr.h).start();
                 }
-                t51Var.c(false);
+                r51Var.c(false);
                 break;
             case 16:
                 String trim = editable.toString().trim();
-                ue1 ue1Var = (ue1) this.b;
-                String str10 = ue1Var.n;
+                se1 se1Var = (se1) this.b;
+                String str10 = se1Var.n;
                 if (trim.length() > 0) {
-                    ue1Var.n = trim.substring(0, 1).toUpperCase();
+                    se1Var.n = trim.substring(0, 1).toUpperCase();
                 } else {
-                    ue1Var.n = "";
+                    se1Var.n = "";
                 }
-                if (!str10.equals(ue1Var.n)) {
+                if (!str10.equals(se1Var.n)) {
                     org.telegram.ui.Components.z80 z80Var = new org.telegram.ui.Components.z80(1, null);
-                    z80Var.a(ue1Var.n);
-                    org.telegram.ui.Components.hm0 hm0Var = ue1Var.v;
+                    z80Var.a(se1Var.n);
+                    org.telegram.ui.Components.hm0 hm0Var = se1Var.v;
                     if (hm0Var != null) {
                         hm0Var.b(z80Var, true);
                         break;
@@ -454,10 +454,10 @@ public final class m0 implements TextWatcher {
                 break;
             default:
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
-                hg1 hg1Var = twoStepVerificationActivity.V;
+                fg1 fg1Var = twoStepVerificationActivity.V;
                 if (twoStepVerificationActivity.U) {
-                    AndroidUtilities.cancelRunOnUIThread(hg1Var);
-                    hg1Var.run();
+                    AndroidUtilities.cancelRunOnUIThread(fg1Var);
+                    fg1Var.run();
                     break;
                 }
                 break;
@@ -524,9 +524,9 @@ public final class m0 implements TextWatcher {
                 break;
             case 3:
                 hp hpVar = (hp) this.b;
-                if (!hpVar.m0) {
-                    String obj = hpVar.a.getText().toString();
-                    pa paVar = hpVar.O;
+                if (!hpVar.n0) {
+                    String obj = hpVar.b.getText().toString();
+                    pa paVar = hpVar.P;
                     if (paVar != null) {
                         paVar.b(obj);
                     }

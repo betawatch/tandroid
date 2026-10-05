@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
@@ -28,7 +28,7 @@ import org.telegram.ui.cg0;
 import rg.x1;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class r extends FrameLayout {
     public final cg0 a;
@@ -43,7 +43,7 @@ public final class r extends FrameLayout {
     public r(Context context, d6 d6Var) {
         super(context);
         this.e = d6Var;
-        LinearLayout f7 = ok.f(context, 1);
+        LinearLayout e7 = bi.e(context, 1);
         cg0 cg0Var = new cg0(context, 1, 0, 3);
         this.a = cg0Var;
         Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
@@ -55,7 +55,7 @@ public final class r extends FrameLayout {
         aVar.w = i10;
         aVar.x = i6.Lj;
         aVar.b();
-        f7.addView(cg0Var, z5.q(160, 160, 1));
+        e7.addView(cg0Var, z5.q(160, 160, 1));
         o oVar = new o(this, context);
         this.b = oVar;
         this.h = new Paint[20];
@@ -70,11 +70,11 @@ public final class r extends FrameLayout {
         cg0Var.setStarParticlesView(oVar);
         TextView textView = new TextView(context);
         this.c = textView;
-        ok.k(22.0f, 1, textView);
+        bi.j(22.0f, 1, textView);
         int i11 = i6.G6;
         textView.setTextColor(i6.v0(i11, d6Var));
         textView.setGravity(1);
-        f7.addView(textView, z5.t(-2, -2, 1, 24, -8, 24, 0));
+        e7.addView(textView, z5.t(-2, -2, 1, 24, -8, 24, 0));
         n90 n90Var = new n90(this);
         this.f = n90Var;
         q90 q90Var = new q90(context, n90Var, d6Var);
@@ -85,10 +85,10 @@ public final class r extends FrameLayout {
         q90Var.setMovementMethod(LinkMovementMethod.getInstance());
         q90Var.setLinkTextColor(i6.v0(i6.J6, d6Var));
         q90Var.setImportantForAccessibility(2);
-        f7.addView(q90Var, z5.d(-1, -2.0f, 17, 24.0f, 8.0f, 24.0f, 18.0f));
+        e7.addView(q90Var, z5.d(-1, -2.0f, 17, 24.0f, 8.0f, 24.0f, 18.0f));
         setClipChildren(false);
         addView(oVar, z5.e(-1, 234, 48));
-        addView(f7);
+        addView(e7);
         setWillNotDraw(false);
     }
 

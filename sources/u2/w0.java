@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class w0 implements e0 {
     public final g2.g a;
@@ -24,7 +24,7 @@ public final class w0 implements e0 {
     /* renamed from: e, reason: merged with bridge method [inline-methods] */
     public final x0 a(b2.k0 k0Var) {
         k0Var.b.getClass();
-        return new x0(k0Var, this.a, this.b, this.c.A(k0Var), this.d, this.e, null);
+        return new x0(k0Var, this.a, this.b, this.c.v(k0Var), this.d, this.e, null);
     }
 
     @Override // u2.e0

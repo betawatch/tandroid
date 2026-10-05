@@ -14,7 +14,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class f2 {
     public static volatile f2[] e = new f2[4];
@@ -75,13 +75,13 @@ public final class f2 {
         int abs = Math.abs(tL_timezone.utc_offset) / 60;
         int i11 = abs / 60;
         int i12 = abs % 60;
-        StringBuilder u10 = a4.a.u(concat);
-        u10.append(i11 < 10 ? "0" : "");
-        u10.append(i11);
-        StringBuilder u11 = a4.a.u(t8.b.v(u10.toString(), ":"));
-        u11.append(i12 < 10 ? "0" : "");
-        u11.append(i12);
-        return u11.toString();
+        StringBuilder v = a4.a.v(concat);
+        v.append(i11 < 10 ? "0" : "");
+        v.append(i11);
+        StringBuilder v9 = a4.a.v(sa.e.v(v.toString(), ":"));
+        v9.append(i12 < 10 ? "0" : "");
+        v9.append(i12);
+        return v9.toString();
     }
 
     public final TLRPC.TL_timezone a(String str) {

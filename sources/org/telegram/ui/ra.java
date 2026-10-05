@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ra extends FrameLayout {
     public final org.telegram.ui.Components.q90 a;
@@ -60,7 +60,7 @@ public final class ra extends FrameLayout {
         if (indexOf != -1 && lastIndexOf != -1 && indexOf != lastIndexOf) {
             spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.k61("https://fragment.com", (org.telegram.ui.Components.m11) null), indexOf, lastIndexOf - 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.l61("https://fragment.com", (org.telegram.ui.Components.n11) null), indexOf, lastIndexOf - 1, 33);
         }
         q90Var.setText(spannableStringBuilder);
     }

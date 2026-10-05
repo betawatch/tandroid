@@ -1,17 +1,14 @@
 package yf;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class f {
     public final long a;
-    public final int b;
-    public long c;
-    public final pe.b d = new pe.b();
-    public final pe.b e = new pe.b();
-    public pe.b f;
+    public final pe.b b = new pe.b();
+    public final pe.b c = new pe.b();
+    public pe.b d;
 
-    public f(long j3, int i10) {
+    public f(long j3) {
         this.a = j3;
-        this.b = i10;
     }
 }

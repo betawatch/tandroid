@@ -16,7 +16,6 @@ import e2.v;
 import e9.a1;
 import e9.f0;
 import e9.i0;
-import hg.k0;
 import j$.util.Objects;
 import java.math.RoundingMode;
 import java.nio.ByteBuffer;
@@ -34,7 +33,7 @@ import s4.g1;
 import u2.y0;
 import v7.y7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final byte[] a;
@@ -2433,7 +2432,7 @@ public abstract class c {
                                         i39 = i39;
                                     }
                                     i36 = i39;
-                                    StringBuilder k10 = k0.k("size: ", i127, "x", i128, "\npalette: ");
+                                    StringBuilder k10 = hg.c.k("size: ", i127, "x", i128, "\npalette: ");
                                     xa.c cVar3 = new xa.c(", ");
                                     Iterator it = arrayList.iterator();
                                     StringBuilder sb2 = new StringBuilder();
@@ -3128,8 +3127,8 @@ public abstract class c {
                                         StringBuilder sb2 = new StringBuilder("Inconsistent stbl box for track ");
                                         jArr6 = jArr5;
                                         iArr4 = iArr2;
-                                        k0.s(sb2, oVar3.a, ": remainingSynchronizationSamples ", i25, ", remainingSamplesAtTimestampDelta ");
-                                        k0.s(sb2, i26, ", remainingSamplesInChunk ", i27, ", remainingTimestampDeltaChanges ");
+                                        hg.c.t(sb2, oVar3.a, ": remainingSynchronizationSamples ", i25, ", remainingSamplesAtTimestampDelta ");
+                                        hg.c.t(sb2, i26, ", remainingSamplesInChunk ", i27, ", remainingTimestampDeltaChanges ");
                                         sb2.append(i19);
                                         sb2.append(", remainingSamplesAtTimestampOffset ");
                                         sb2.append(i22);
@@ -3391,8 +3390,8 @@ public abstract class c {
                         StringBuilder sb22 = new StringBuilder("Inconsistent stbl box for track ");
                         jArr6 = jArr5;
                         iArr4 = iArr2;
-                        k0.s(sb22, oVar3.a, ": remainingSynchronizationSamples ", i25, ", remainingSamplesAtTimestampDelta ");
-                        k0.s(sb22, i26, ", remainingSamplesInChunk ", i27, ", remainingTimestampDeltaChanges ");
+                        hg.c.t(sb22, oVar3.a, ": remainingSynchronizationSamples ", i25, ", remainingSamplesAtTimestampDelta ");
+                        hg.c.t(sb22, i26, ", remainingSamplesInChunk ", i27, ", remainingTimestampDeltaChanges ");
                         sb22.append(i19);
                         sb22.append(", remainingSamplesAtTimestampOffset ");
                         sb22.append(i22);

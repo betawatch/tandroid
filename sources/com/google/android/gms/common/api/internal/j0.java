@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.ReentrantLock;
 import m.p3;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class j0 extends com.google.android.gms.common.api.m implements v0 {
     public final a0.f E;
@@ -291,7 +291,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
             this.L = Integer.valueOf(i10);
         } else if (num.intValue() != i10) {
             int intValue = this.L.intValue();
-            throw new IllegalStateException(a4.a.q(i10 != 1 ? i10 != 2 ? i10 != 3 ? "UNKNOWN" : "SIGN_IN_MODE_NONE" : "SIGN_IN_MODE_OPTIONAL" : "SIGN_IN_MODE_REQUIRED", ". Mode was already set to ", intValue != 1 ? intValue != 2 ? intValue != 3 ? "UNKNOWN" : "SIGN_IN_MODE_NONE" : "SIGN_IN_MODE_OPTIONAL" : "SIGN_IN_MODE_REQUIRED", new StringBuilder("Cannot use sign-in mode: ")));
+            throw new IllegalStateException(a4.a.r(i10 != 1 ? i10 != 2 ? i10 != 3 ? "UNKNOWN" : "SIGN_IN_MODE_NONE" : "SIGN_IN_MODE_OPTIONAL" : "SIGN_IN_MODE_REQUIRED", ". Mode was already set to ", intValue != 1 ? intValue != 2 ? intValue != 3 ? "UNKNOWN" : "SIGN_IN_MODE_NONE" : "SIGN_IN_MODE_OPTIONAL" : "SIGN_IN_MODE_REQUIRED", new StringBuilder("Cannot use sign-in mode: ")));
         }
         if (this.d != null) {
             return;
@@ -452,7 +452,7 @@ public final class j0 extends com.google.android.gms.common.api.m implements v0 
     }
 
     @Override // com.google.android.gms.common.api.internal.v0
-    public final void s(Bundle bundle) {
+    public final void u(Bundle bundle) {
         while (!this.n.isEmpty()) {
             e eVar = (e) this.n.remove();
             a0.f fVar = this.E;

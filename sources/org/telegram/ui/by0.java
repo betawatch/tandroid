@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class by0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Components.zl0 a;
@@ -121,10 +121,9 @@ public final class by0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         } else {
             pzVar.setText(LocaleController.getString(R.string.NoContacts));
         }
-        frameLayout.addView(this.d, w7.z5.c(-1.0f, -1));
         org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
         this.a = zl0Var;
-        zl0Var.s1();
+        zl0Var.r1();
         this.a.setItemSelectorColorProvider(new yx0(this));
         this.a.setSectionsDrawBackground(true);
         this.a.setEmptyView(this.d);
@@ -139,6 +138,7 @@ public final class by0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         zl0Var3.setAdapter(ay0Var);
         this.a.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
         frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
+        frameLayout.addView(this.d, w7.z5.c(-1.0f, -1));
         this.a.setOnItemClickListener(new i(this, 27));
         this.a.setOnItemLongClickListener(new yx0(this));
         if (i10 == 1) {

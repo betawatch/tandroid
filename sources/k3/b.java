@@ -16,12 +16,11 @@ import e6.n;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import hg.k0;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParserException;
 import w3.k;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q b;
@@ -163,7 +162,7 @@ public final class b implements o {
             }
             pVar.m();
             if (this.j == null) {
-                this.j = new k(z3.l.D, 8);
+                this.j = new k(z3.k.D, 8);
             }
             n nVar2 = new n(pVar, this.f);
             this.i = nVar2;
@@ -184,7 +183,7 @@ public final class b implements o {
             r rVar = new r();
             rVar.p = r0.n("image/jpeg");
             rVar.k = new p0(aVar2);
-            k0.r(rVar, Z1);
+            hg.c.s(rVar, Z1);
             this.c = 5;
             return 0;
         }

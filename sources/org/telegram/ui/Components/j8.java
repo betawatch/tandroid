@@ -58,7 +58,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class j8 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
     public static j8 T0;
@@ -192,8 +192,8 @@ public final class j8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         y7Var.setBackgroundColor(0);
         y7Var.setBackButtonImage(R.drawable.ic_ab_back);
         int i14 = org.telegram.ui.ActionBar.i6.Oi;
-        y7Var.B(getThemedColor(i14), false);
-        y7Var.A(getThemedColor(org.telegram.ui.ActionBar.i6.Ni), false);
+        y7Var.A(getThemedColor(i14), false);
+        y7Var.z(getThemedColor(org.telegram.ui.ActionBar.i6.Ni), false);
         y7Var.setTitleColor(getThemedColor(i14));
         y7Var.setSubtitleColor(getThemedColor(org.telegram.ui.ActionBar.i6.Pi));
         y7Var.setOccupyStatusBar(true);
@@ -544,7 +544,7 @@ public final class j8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         searchField.setHintTextColor(getThemedColor(org.telegram.ui.ActionBar.i6.Si));
         searchField.setCursorColor(getThemedColor(i24));
         if (z10) {
-            u7Var.s1();
+            u7Var.r1();
             setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.a7, d6Var));
             this.c.setAlpha(1.0f);
             this.b.setAlpha(0.0f);
@@ -571,7 +571,7 @@ public final class j8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         } else if (playingMessageObject != null && !MediaController.getInstance().currentPlaylistIsGlobalSearch()) {
             long dialogId = playingMessageObject.getDialogId();
             if (DialogObject.isEncryptedDialog(dialogId)) {
-                TLRPC.EncryptedChat l4 = org.telegram.messenger.f0.l(MessagesController.getInstance(this.currentAccount), dialogId);
+                TLRPC.EncryptedChat l4 = org.telegram.messenger.q.l(MessagesController.getInstance(this.currentAccount), dialogId);
                 if (l4 != null && (user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(l4.user_id))) != null) {
                     this.c.setTitle(ContactsController.formatName(user.first_name, user.last_name));
                 }
@@ -661,7 +661,7 @@ public final class j8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
         j8Var.v0(playingMessageObject, false, new ai.f(24), false);
         j8Var.y0(false);
-        org.telegram.messenger.f0.p(R.string.AudioSaveToMyProfileUnsaved, new yc((FrameLayout) j8Var.containerView, d6Var), R.raw.ic_delete, 36);
+        org.telegram.messenger.q.p(R.string.AudioSaveToMyProfileUnsaved, new yc((FrameLayout) j8Var.containerView, d6Var), R.raw.ic_delete, 36);
     }
 
     public static void C(j8 j8Var, org.telegram.ui.ActionBar.d6 d6Var) {
@@ -671,7 +671,7 @@ public final class j8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
         j8Var.v0(playingMessageObject, true, new ai.f(24), false);
         j8Var.y0(true);
-        org.telegram.messenger.f0.p(R.string.AudioSaveToMyProfileSaved, new yc((FrameLayout) j8Var.containerView, d6Var), R.raw.saved_messages, 36);
+        org.telegram.messenger.q.p(R.string.AudioSaveToMyProfileSaved, new yc((FrameLayout) j8Var.containerView, d6Var), R.raw.saved_messages, 36);
     }
 
     public static void D(j8 j8Var, float[] fArr) {
@@ -789,9 +789,9 @@ public final class j8 extends org.telegram.ui.ActionBar.f3 implements Notificati
             }
             i10 = 36;
             b80Var.u();
-            org.telegram.messenger.f0.p(R.string.AudioSaveToSavedMessagesSaved, new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.saved_messages, i10);
+            org.telegram.messenger.q.p(R.string.AudioSaveToSavedMessagesSaved, new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.saved_messages, i10);
         }
-        k10 = org.telegram.messenger.f0.k(messageObject);
+        k10 = org.telegram.messenger.q.k(messageObject);
         if (k10 != null) {
             SendMessagesHelper.getInstance(j8Var.currentAccount).sendMessage(k10, clientUserId, false, false, true, 0, 0L);
         } else {
@@ -805,11 +805,11 @@ public final class j8 extends org.telegram.ui.ActionBar.f3 implements Notificati
             i10 = 36;
             yc.a0(R).Q(R.raw.forward, 36, clientUserId == UserConfig.getInstance(j8Var.currentAccount).getClientUserId() ? LocaleController.getString(R.string.FwdMessageToSavedMessages) : clientUserId > 0 ? LocaleController.formatString(R.string.FwdMessageToUser, DialogObject.getShortName(clientUserId)) : LocaleController.formatString(R.string.FwdMessageToGroup, DialogObject.getShortName(clientUserId))).j();
             b80Var.u();
-            org.telegram.messenger.f0.p(R.string.AudioSaveToSavedMessagesSaved, new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.saved_messages, i10);
+            org.telegram.messenger.q.p(R.string.AudioSaveToSavedMessagesSaved, new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.saved_messages, i10);
         }
         i10 = 36;
         b80Var.u();
-        org.telegram.messenger.f0.p(R.string.AudioSaveToSavedMessagesSaved, new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.saved_messages, i10);
+        org.telegram.messenger.q.p(R.string.AudioSaveToSavedMessagesSaved, new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.saved_messages, i10);
     }
 
     public static void N(j8 j8Var) {
@@ -857,7 +857,7 @@ public final class j8 extends org.telegram.ui.ActionBar.f3 implements Notificati
             j8Var.C0.start();
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) u7Var.getLayoutParams();
-        int D = org.telegram.messenger.ok.D(11.0f, layoutParams.topMargin - AndroidUtilities.statusBarHeight, top);
+        int D = org.telegram.messenger.bi.D(11.0f, layoutParams.topMargin - AndroidUtilities.statusBarHeight, top);
         if (j8Var.A0 != D) {
             j8Var.A0 = D;
             u7Var.setTopGlowOffset((D - layoutParams.topMargin) - AndroidUtilities.statusBarHeight);
@@ -1088,7 +1088,7 @@ public final class j8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         j8Var.s.l();
         b80Var.u();
         j8Var.y0(false);
-        org.telegram.messenger.f0.p(R.string.AudioSaveToMyProfileUnsaved, new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.ic_delete, 36);
+        org.telegram.messenger.q.p(R.string.AudioSaveToMyProfileUnsaved, new yc((FrameLayout) j8Var.containerView, j8Var.resourcesProvider), R.raw.ic_delete, 36);
     }
 
     public static void w(j8 j8Var, TLRPC.TL_error tL_error) {
@@ -2030,11 +2030,11 @@ public final class j8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         if (i10 != i11) {
             launchActivity.K0(i11);
         }
-        Bundle e7 = org.telegram.messenger.ok.e(3, "onlySelect", "dialogsType", true);
-        e7.putBoolean("canSelectTopics", true);
-        org.telegram.ui.uy uyVar = new org.telegram.ui.uy(e7);
+        Bundle d = org.telegram.messenger.bi.d(3, "onlySelect", "dialogsType", true);
+        d.putBoolean("canSelectTopics", true);
+        org.telegram.ui.uy uyVar = new org.telegram.ui.uy(d);
         if (messageObject.getId() >= 0) {
-            k10 = org.telegram.messenger.f0.k(messageObject);
+            k10 = org.telegram.messenger.q.k(messageObject);
             tL_document = null;
         } else {
             if (!(messageObject.getDocument() instanceof TLRPC.TL_document)) {
@@ -2079,7 +2079,7 @@ public final class j8 extends org.telegram.ui.ActionBar.f3 implements Notificati
                 return;
             }
             if (i10 == 6) {
-                of.b.E().N(MediaController.getInstance().getCurrentChromecastMedia());
+                of.b.F().N(MediaController.getInstance().getCurrentChromecastMedia());
                 this.Q.performClick();
                 return;
             } else {
@@ -2138,7 +2138,7 @@ public final class j8 extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
         String str = documentFileName;
         String str2 = messageObject.messageOwner.attachPath;
-        if (str2 != null && str2.length() > 0 && !t8.b.u(str2)) {
+        if (str2 != null && str2.length() > 0 && !sa.e.u(str2)) {
             str2 = null;
         }
         if (str2 == null || str2.length() == 0) {

@@ -2,16 +2,16 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class zo0 extends org.telegram.ui.Components.x81 {
+public final class zo0 extends org.telegram.ui.Components.y81 {
     public final /* synthetic */ wp0 a;
 
     public zo0(wp0 wp0Var) {
         this.a = wp0Var;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final View d(int i10) {
         wp0 wp0Var = this.a;
         if (i10 == 1) {
@@ -23,17 +23,17 @@ public final class zo0 extends org.telegram.ui.Components.x81 {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final int e() {
         return 2;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final int h(int i10) {
         return i10;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final void b(View view, int i10, int i11) {
     }
 }

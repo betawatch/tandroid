@@ -9,7 +9,7 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class k {
     public static a3.z a(File file, ki.t tVar, long j3, long j10, boolean z10) {
@@ -40,9 +40,9 @@ public abstract class k {
                 if (d10 < 0 || (z10 && d11 < 0)) {
                     throw new IOException("Source file has no required tracks");
                 }
-                tVar.k(mediaExtractor.getTrackFormat(d10), true);
+                tVar.l(mediaExtractor.getTrackFormat(d10), true);
                 if (z10) {
-                    tVar.k(mediaExtractor.getTrackFormat(d11), false);
+                    tVar.l(mediaExtractor.getTrackFormat(d11), false);
                 }
                 mediaExtractor.release();
                 ByteBuffer allocateDirect = ByteBuffer.allocateDirect(TLObject.FLAG_21);
@@ -78,7 +78,7 @@ public abstract class k {
                 int readSampleData = mediaExtractor.readSampleData(byteBuffer, 0);
                 if (readSampleData >= 0) {
                     bufferInfo.set(0, readSampleData, mediaExtractor.getSampleTime(), mediaExtractor.getSampleFlags());
-                    tVar.m(z11, byteBuffer, bufferInfo, -j3);
+                    tVar.o(z11, byteBuffer, bufferInfo, -j3);
                     mediaExtractor.advance();
                     z11 = z10;
                 }

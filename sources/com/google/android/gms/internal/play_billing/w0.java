@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import org.telegram.messenger.BuildConfig;
 import v7.y5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -256,15 +256,15 @@ public final class w0 extends l0 implements g0 {
         if (t0Var == null) {
             return null;
         }
-        String p5 = a4.a.p("inputFuture=[", t0Var.toString(), "]");
+        String q6 = a4.a.q("inputFuture=[", t0Var.toString(), "]");
         if (scheduledFuture == null) {
-            return p5;
+            return q6;
         }
         long delay = scheduledFuture.getDelay(TimeUnit.MILLISECONDS);
         if (delay <= 0) {
-            return p5;
+            return q6;
         }
-        return p5 + ", remaining delay=[" + delay + " ms]";
+        return q6 + ", remaining delay=[" + delay + " ms]";
     }
 
     @Override // java.util.concurrent.Future
@@ -527,7 +527,7 @@ public final class w0 extends l0 implements g0 {
                         if (isDone()) {
                             throw new TimeoutException(str.concat(" but future completed as timeout expired"));
                         }
-                        throw new TimeoutException(a4.a.C(str, " for ", w0Var));
+                        throw new TimeoutException(a4.a.D(str, " for ", w0Var));
                     }
                 }
                 Object obj5 = this.a;

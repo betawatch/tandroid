@@ -30,12 +30,12 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.rw0;
 import org.telegram.ui.Components.sw0;
 import org.telegram.ui.Components.tw0;
+import org.telegram.ui.Components.uw0;
 import org.telegram.ui.wq0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s2 implements Runnable {
     public final /* synthetic */ int a;
@@ -127,7 +127,7 @@ public final /* synthetic */ class s2 implements Runnable {
                 }
                 final boolean z11 = this.c;
                 int i22 = this.b;
-                if (str == null || !t8.b.u(str)) {
+                if (str == null || !sa.e.u(str)) {
                     Context context = x3Var.getContext();
                     try {
                         try {
@@ -234,7 +234,7 @@ public final /* synthetic */ class s2 implements Runnable {
                     str = null;
                 }
                 str2 = str;
-                if (str2 == null || !t8.b.u(str2)) {
+                if (str2 == null || !sa.e.u(str2)) {
                     return;
                 }
                 if (z11) {
@@ -275,10 +275,10 @@ public final /* synthetic */ class s2 implements Runnable {
                                                 MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
                                                 photoEntry.setOrientation(i18, i17);
                                                 a aVar2 = aVar;
-                                                if (aVar2 == null || !x3.F3(aVar2.b)) {
-                                                    x3Var2.h2(photoEntry);
+                                                if (aVar2 == null || !x3.E3(aVar2.b)) {
+                                                    x3Var2.g2(photoEntry);
                                                 } else {
-                                                    x3Var2.V1(aVar2, photoEntry);
+                                                    x3Var2.U1(aVar2, photoEntry);
                                                 }
                                             }
                                         });
@@ -311,10 +311,10 @@ public final /* synthetic */ class s2 implements Runnable {
                                                 MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
                                                 photoEntry.setOrientation(i18, i17);
                                                 a aVar2 = aVar;
-                                                if (aVar2 == null || !x3.F3(aVar2.b)) {
-                                                    x3Var2.h2(photoEntry);
+                                                if (aVar2 == null || !x3.E3(aVar2.b)) {
+                                                    x3Var2.g2(photoEntry);
                                                 } else {
-                                                    x3Var2.V1(aVar2, photoEntry);
+                                                    x3Var2.U1(aVar2, photoEntry);
                                                 }
                                             }
                                         });
@@ -366,10 +366,10 @@ public final /* synthetic */ class s2 implements Runnable {
                                     MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
                                     photoEntry.setOrientation(i18, i17);
                                     a aVar2 = aVar;
-                                    if (aVar2 == null || !x3.F3(aVar2.b)) {
-                                        x3Var2.h2(photoEntry);
+                                    if (aVar2 == null || !x3.E3(aVar2.b)) {
+                                        x3Var2.g2(photoEntry);
                                     } else {
-                                        x3Var2.V1(aVar2, photoEntry);
+                                        x3Var2.U1(aVar2, photoEntry);
                                     }
                                 }
                             });
@@ -420,10 +420,10 @@ public final /* synthetic */ class s2 implements Runnable {
                                 MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
                                 photoEntry.setOrientation(i18, i17);
                                 a aVar2 = aVar;
-                                if (aVar2 == null || !x3.F3(aVar2.b)) {
-                                    x3Var2.h2(photoEntry);
+                                if (aVar2 == null || !x3.E3(aVar2.b)) {
+                                    x3Var2.g2(photoEntry);
                                 } else {
-                                    x3Var2.V1(aVar2, photoEntry);
+                                    x3Var2.U1(aVar2, photoEntry);
                                 }
                             }
                         });
@@ -446,10 +446,10 @@ public final /* synthetic */ class s2 implements Runnable {
                         MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i12, 0L, str2, z12 ? i14 : 0, z12, i16, i19, 0L);
                         photoEntry.setOrientation(i18, i17);
                         a aVar2 = aVar;
-                        if (aVar2 == null || !x3.F3(aVar2.b)) {
-                            x3Var2.h2(photoEntry);
+                        if (aVar2 == null || !x3.E3(aVar2.b)) {
+                            x3Var2.g2(photoEntry);
                         } else {
-                            x3Var2.V1(aVar2, photoEntry);
+                            x3Var2.U1(aVar2, photoEntry);
                         }
                     }
                 });
@@ -499,15 +499,15 @@ public final /* synthetic */ class s2 implements Runnable {
                 ((SendMessagesHelper) this.d).lambda$performSendMessageRequestMulti$65((TLObject) this.e, this.b, (SendMessagesHelper.DelayedMessage) this.f, (ArrayList) this.h, this.c);
                 return;
             case 4:
-                tw0 tw0Var = (tw0) this.d;
+                uw0 uw0Var = (uw0) this.d;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.e;
                 MessageObject messageObject = (MessageObject) this.f;
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.h;
-                RLottieNative[] rLottieNativeArr = tw0Var.f1;
-                RLottieNative[] rLottieNativeArr2 = tw0Var.i1;
-                int[] iArr = tw0Var.e;
-                if (tw0Var.W0) {
-                    AndroidUtilities.runOnUIThread(new rw0(tw0Var, 0));
+                RLottieNative[] rLottieNativeArr = uw0Var.f1;
+                RLottieNative[] rLottieNativeArr2 = uw0Var.i1;
+                int[] iArr = uw0Var.e;
+                if (uw0Var.W0) {
+                    AndroidUtilities.runOnUIThread(new sw0(uw0Var, 0));
                     return;
                 }
                 boolean z13 = false;
@@ -517,23 +517,23 @@ public final /* synthetic */ class s2 implements Runnable {
                     int i25 = this.b;
                     if (i24 >= length) {
                         if (z13) {
-                            AndroidUtilities.runOnUIThread(new rw0(tw0Var, 1));
+                            AndroidUtilities.runOnUIThread(new sw0(uw0Var, 1));
                             return;
                         } else {
-                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(tw0Var, this.c, i25, u1Var));
+                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(uw0Var, this.c, i25, u1Var));
                             return;
                         }
                     }
                     if (i24 <= 2) {
                         if (rLottieNativeArr2[i24] == null) {
                             if (i24 == 0) {
-                                int i26 = tw0Var.b1;
+                                int i26 = uw0Var.b1;
                                 i20 = i26 == 1 ? 5 : i26 == 2 ? 6 : i26 == 3 ? 7 : i26 == 4 ? 4 : 3;
                             } else if (i24 == 1) {
-                                int i27 = tw0Var.c1;
+                                int i27 = uw0Var.c1;
                                 i20 = i27 == 1 ? 11 : i27 == 2 ? 12 : i27 == 3 ? 13 : i27 == 4 ? 10 : 9;
                             } else {
-                                int i28 = tw0Var.d1;
+                                int i28 = uw0Var.d1;
                                 i20 = i28 == 1 ? 17 : i28 == 2 ? 18 : i28 == 3 ? 19 : i28 == 4 ? 16 : 15;
                             }
                             TLRPC.Document document = tL_messages_stickerSet.documents.get(i20);
@@ -542,13 +542,13 @@ public final /* synthetic */ class s2 implements Runnable {
                                 RLottieNative b10 = RLottieNative.b(readRes, iArr, null, null);
                                 if (i24 <= 2) {
                                     rLottieNativeArr2[i24] = b10;
-                                    tw0Var.j1[i24] = iArr[0];
+                                    uw0Var.j1[i24] = iArr[0];
                                 } else {
                                     rLottieNativeArr[i24 == 3 ? (char) 0 : (char) 4] = b10;
-                                    tw0Var.g1[i24 == 3 ? (char) 0 : (char) 4] = iArr[0];
+                                    uw0Var.g1[i24 == 3 ? (char) 0 : (char) 4] = iArr[0];
                                 }
                             } else {
-                                AndroidUtilities.runOnUIThread(new sw0(document, i25, messageObject, u1Var, tL_messages_stickerSet, 0));
+                                AndroidUtilities.runOnUIThread(new tw0(document, i25, messageObject, u1Var, tL_messages_stickerSet, 0));
                                 z13 = true;
                             }
                         }
@@ -590,7 +590,7 @@ public final /* synthetic */ class s2 implements Runnable {
                 }
                 arrayList2.add(0, str4);
                 while (arrayList2.size() > 20) {
-                    a4.a.x(1, arrayList2);
+                    a4.a.y(1, arrayList2);
                 }
                 wq0Var.c0();
                 if (this.b != wq0Var.y) {

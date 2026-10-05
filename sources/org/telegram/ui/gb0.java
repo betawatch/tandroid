@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class gb0 implements OnBackAnimationCallback {
     public boolean b;
@@ -93,7 +93,7 @@ public final class gb0 implements OnBackAnimationCallback {
                     }
                 }
                 if (!actionBarLayout2.d1 && !actionBarLayout2.c1 && !actionBarLayout2.a0 && !actionBarLayout2.Q && !actionBarLayout2.j() && actionBarLayout2.O0.size() > 1 && !actionBarLayout2.y() && ((sVar = actionBarLayout2.G) == null || !sVar.hasShownSheet())) {
-                    org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) t8.b.h(1, actionBarLayout2.O0);
+                    org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) sa.e.h(1, actionBarLayout2.O0);
                     if (n2Var.onBackPressed(false) && !n2Var.hasShownSheet() && n2Var.canBeginSlide()) {
                         actionBarLayout2.e1 = false;
                         actionBarLayout2.d1 = true;

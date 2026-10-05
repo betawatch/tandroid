@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.f0;
+import org.telegram.messenger.q;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.t8;
 import org.telegram.ui.Cells.u1;
@@ -34,7 +34,7 @@ import org.telegram.ui.Components.zb;
 import r2.s;
 import u2.i0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class h extends Drawable implements Animator.AnimatorListener {
     public static final RectF b0 = new RectF();
@@ -127,14 +127,14 @@ public final class h extends Drawable implements Animator.AnimatorListener {
         }
         float f17 = ((sqrt * sqrt) + ((f11 * f11) - (f14 * f14))) / (2.0f * sqrt);
         float sqrt2 = (float) Math.sqrt(r8 - (f17 * f17));
-        float A = a4.a.A(f17, f15, sqrt, f7);
-        float A2 = a4.a.A(f17, f16, sqrt, f10);
+        float B = a4.a.B(f17, f15, sqrt, f7);
+        float B2 = a4.a.B(f17, f16, sqrt, f10);
         float f18 = (f16 * sqrt2) / sqrt;
-        float f19 = A + f18;
+        float f19 = B + f18;
         float f20 = (sqrt2 * f15) / sqrt;
-        float f21 = A2 - f20;
-        float f22 = A - f18;
-        float f23 = A2 + f20;
+        float f21 = B2 - f20;
+        float f22 = B - f18;
+        float f23 = B2 + f20;
         return (f19 == f22 || f19 >= f22) ? f21 > f23 ? new PointF(f19, f21) : new PointF(f22, f23) : z10 ? new PointF(f19, f21) : new PointF(f22, f23);
     }
 
@@ -458,7 +458,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                         canvas2.scale(f27, f27, f7, centerY2);
                         float f28 = dVar2.o * f20;
                         i13 = i12;
-                        float D = f0.D(8, 2, dVar2.h.getWidth());
+                        float D = q.D(8, 2, dVar2.h.getWidth());
                         dVar2.i = d.b(d.b(f7, D, f24, f25), D, dp5, measuredWidth) - (D / 2.0f);
                         dVar2.j = centerY2 - AndroidUtilities.dp(58.0f);
                         if (dVar2.f == null) {

@@ -2,18 +2,18 @@ package xh;
 
 import android.content.Context;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.fs0;
+import org.telegram.ui.Components.e71;
+import org.telegram.ui.Components.gs0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class j2 extends c71 {
-    public final /* synthetic */ fs0 m3;
+public final class j2 extends e71 {
+    public final /* synthetic */ gs0 m3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j2(Context context, int i10, hi.a aVar, i2 i2Var, i2 i2Var2, d6 d6Var, fs0 fs0Var) {
+    public j2(Context context, int i10, hi.a aVar, i2 i2Var, i2 i2Var2, d6 d6Var, gs0 gs0Var) {
         super(context, i10, 0, false, aVar, i2Var, i2Var2, d6Var, 3, 1);
-        this.m3 = fs0Var;
+        this.m3 = gs0Var;
     }
 
     @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View

@@ -15,7 +15,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class sy extends s4.v {
     public s4.c1 d;
@@ -263,7 +263,7 @@ public final class sy extends s4.v {
     @Override // s4.v
     public final void p(s4.c1 c1Var, int i10) {
         if (c1Var != null) {
-            this.g.a.e1(false);
+            this.g.a.d1(false);
         }
         this.d = c1Var;
         if (c1Var != null) {
@@ -289,7 +289,7 @@ public final class sy extends s4.v {
         if (isFolderDialogId) {
             qy qyVar = tyVar.a;
             int i11 = qy.C3;
-            qyVar.B1(false, s2Var);
+            qyVar.A1(false, s2Var);
             return;
         }
         TLRPC.Dialog dialog = (TLRPC.Dialog) uyVar.getMessagesController().dialogs_dict.f(dialogId);

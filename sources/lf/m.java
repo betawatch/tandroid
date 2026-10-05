@@ -1,7 +1,6 @@
 package lf;
 
 import c3.s;
-import hg.k0;
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.EOFException;
@@ -10,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import n4.y;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class m extends jf.a {
     public static final Logger r = Logger.getLogger(m.class.getName());
@@ -25,7 +24,7 @@ public final class m extends jf.a {
      */
     /* JADX WARN: Code restructure failed: missing block: B:104:0x0206, code lost:
     
-        r2 = r6.z(r0);
+        r2 = r6.u(r0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:106:0x020a, code lost:
     
@@ -33,7 +32,7 @@ public final class m extends jf.a {
      */
     /* JADX WARN: Code restructure failed: missing block: B:108:0x023a, code lost:
     
-        r2.d.K(r2.a.e());
+        r2.d.m0(r2.a.e());
      */
     /* JADX WARN: Code restructure failed: missing block: B:111:0x0210, code lost:
     
@@ -41,7 +40,7 @@ public final class m extends jf.a {
      */
     /* JADX WARN: Code restructure failed: missing block: B:112:0x0249, code lost:
     
-        r2.d.K(r2.a.e());
+        r2.d.m0(r2.a.e());
      */
     /* JADX WARN: Code restructure failed: missing block: B:113:0x0254, code lost:
     
@@ -121,52 +120,52 @@ public final class m extends jf.a {
                 if (!"ID3".equals(str5)) {
                     throw new c("Invalid ID3 identifier: ".concat(str5));
                 }
-                byte D = gVar.D();
-                iVar.a = D;
-                if (D != 2 && D != 3 && D != 4) {
-                    throw new c(k0.h(D, "Unsupported ID3v2 version: "));
+                byte d02 = gVar.d0();
+                iVar.a = d02;
+                if (d02 != 2 && d02 != 3 && d02 != 4) {
+                    throw new c(hg.c.h(d02, "Unsupported ID3v2 version: "));
                 }
-                byte D2 = gVar.D();
-                byte D3 = gVar.D();
-                int I = gVar.I();
-                iVar.b = I + 10;
-                if (D == 2) {
-                    iVar.d = (D3 & 128) != 0;
-                    iVar.e = (D3 & 64) != 0;
+                byte d03 = gVar.d0();
+                byte d04 = gVar.d0();
+                int k02 = gVar.k0();
+                iVar.b = k02 + 10;
+                if (d02 == 2) {
+                    iVar.d = (d04 & 128) != 0;
+                    iVar.e = (d04 & 64) != 0;
                 } else {
-                    iVar.d = (D3 & 128) != 0;
-                    if ((D3 & 64) == 0) {
-                        b11 = D3;
-                    } else if (D == 3) {
-                        int H = gVar.H();
-                        gVar.D();
-                        gVar.D();
-                        gVar.H();
-                        b11 = D3;
-                        gVar.K(H - 6);
+                    iVar.d = (d04 & 128) != 0;
+                    if ((d04 & 64) == 0) {
+                        b11 = d04;
+                    } else if (d02 == 3) {
+                        int j02 = gVar.j0();
+                        gVar.d0();
+                        gVar.d0();
+                        gVar.j0();
+                        b11 = d04;
+                        gVar.m0(j02 - 6);
                     } else {
-                        b11 = D3;
-                        i10 = I;
-                        gVar.K(gVar.I() - 4);
-                        if (D >= 4 && (b11 & 16) != 0) {
+                        b11 = d04;
+                        i10 = k02;
+                        gVar.m0(gVar.k0() - 4);
+                        if (d02 >= 4 && (b11 & 16) != 0) {
                             iVar.c = 10;
                             iVar.b = i10 + 20;
                         }
                     }
-                    i10 = I;
-                    if (D >= 4) {
+                    i10 = k02;
+                    if (d02 >= 4) {
                         iVar.c = 10;
                         iVar.b = i10 + 20;
                     }
                 }
                 int i14 = (int) (dVar.b - j15);
                 hVar2.a = "ID3";
-                String.format("2.%d.%d", Integer.valueOf(D), Integer.valueOf(D2));
+                String.format("2.%d.%d", Integer.valueOf(d02), Integer.valueOf(d03));
                 int i15 = iVar.b;
                 if (iVar.e) {
                     throw new c("Tag compression is not supported");
                 }
-                if (D >= 4 || !iVar.d) {
+                if (d02 >= 4 || !iVar.d) {
                     logger = logger2;
                     hVar = new la.h(nVar, i14, (i15 - i14) - iVar.c, iVar);
                 } else {
@@ -222,7 +221,7 @@ public final class m extends jf.a {
                                 if (logger.isLoggable(level)) {
                                     logger.log(level, "ID3 exception occured: " + e.getMessage());
                                 }
-                                gVar2.K(aVar.e());
+                                gVar2.m0(aVar.e());
                                 i11 = iVar.c;
                                 if (i11 > 0) {
                                 }
@@ -274,7 +273,7 @@ public final class m extends jf.a {
                                     i22++;
                                 }
                             }
-                            gVar2.K(i20);
+                            gVar2.m0(i20);
                             aVar2 = aVar;
                         } else if (logger.isLoggable(level)) {
                             logger.log(level, "ID3 frame claims to extend frames area");
@@ -284,7 +283,7 @@ public final class m extends jf.a {
                         aVar = aVar2;
                     }
                 }
-                gVar2.K(aVar.e());
+                gVar2.m0(aVar.e());
                 i11 = iVar.c;
                 if (i11 > 0) {
                     nVar.skip(i11);
@@ -351,8 +350,8 @@ public final class m extends jf.a {
                 s10 = 0;
             }
             str = a.b(97, 30, bArr3);
-            int a2 = k0.a(bArr3[127]);
-            r2 = a2 != 0 ? k0.c(a2) : null;
+            int a2 = hg.c.a(bArr3[127]);
+            r2 = a2 != 0 ? hg.c.c(a2) : null;
             if (bArr3[125] == 0 && (b10 = bArr3[126]) != 0) {
                 s11 = (short) (b10 & 255);
                 str2 = r2;

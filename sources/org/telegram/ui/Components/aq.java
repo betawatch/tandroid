@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class aq implements Runnable {
     public final /* synthetic */ int a;
@@ -255,8 +255,8 @@ public final /* synthetic */ class aq implements Runnable {
                 break;
             case 20:
                 org.telegram.ui.dy dyVar = ((ho0) ((i40) obj)).c0;
-                if (!dyVar.v0.canScrollVertically(-1)) {
-                    dyVar.u0.h1(0, 0);
+                if (!dyVar.w0.canScrollVertically(-1)) {
+                    dyVar.v0.h1(0, 0);
                     break;
                 }
                 break;
@@ -279,14 +279,14 @@ public final /* synthetic */ class aq implements Runnable {
             case 24:
                 f60 f60Var = (f60) ((ci.o2) obj).b;
                 try {
-                    d81 d81Var = f60Var.T;
-                    if (d81Var != null && (videoEditedInfo = f60Var.S) != null && videoEditedInfo.endTime > 0) {
-                        long n10 = d81Var.n();
+                    e81 e81Var = f60Var.T;
+                    if (e81Var != null && (videoEditedInfo = f60Var.S) != null && videoEditedInfo.endTime > 0) {
+                        long n10 = e81Var.n();
                         VideoEditedInfo videoEditedInfo2 = f60Var.S;
                         if (n10 >= videoEditedInfo2.endTime) {
-                            d81 d81Var2 = f60Var.T;
+                            e81 e81Var2 = f60Var.T;
                             long j3 = videoEditedInfo2.startTime;
-                            d81Var2.K(j3 > 0 ? j3 : 0L);
+                            e81Var2.K(j3 > 0 ? j3 : 0L);
                             break;
                         }
                     }

@@ -1,41 +1,34 @@
 package yh;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class h3 extends e3 {
-    public final boolean c;
-    public final ImageReceiver d;
+public final class h3 extends f3 {
+    public final Paint c;
+    public final Matrix d;
+    public final RadialGradient e;
+    public final int f;
+    public final int g;
+    public final int h;
 
-    public h3(View view, TL_stars.starGiftAttributeModel stargiftattributemodel) {
-        this.a = stargiftattributemodel.name;
-        this.b = stargiftattributemodel.getRarityPermille();
-        this.c = true;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.d = imageReceiver;
-        x7.f1(imageReceiver, stargiftattributemodel.document, 160);
-    }
-
-    @Override // yh.e3
-    public final void a() {
-        if (this.c) {
-            this.d.onDetachedFromWindow();
-        }
-    }
-
-    @Override // yh.e3
-    public final boolean b() {
-        return this.d.getLottieAnimation() != null;
-    }
-
-    public h3(w9 w9Var, TL_stars.starGiftAttributeModel stargiftattributemodel) {
-        this.a = stargiftattributemodel.name;
-        this.b = stargiftattributemodel.getRarityPermille();
-        this.c = false;
-        this.d = w9Var.getImageReceiver();
+    public h3(TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop) {
+        this.a = stargiftattributebackdrop.name;
+        this.b = stargiftattributebackdrop.getRarityPermille();
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = new Matrix();
+        RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, AndroidUtilities.dp(200.0f), new int[]{stargiftattributebackdrop.center_color | (-16777216), stargiftattributebackdrop.edge_color | (-16777216)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.e = radialGradient;
+        paint.setShader(radialGradient);
+        this.g = stargiftattributebackdrop.text_color | (-16777216);
+        int i10 = stargiftattributebackdrop.pattern_color;
+        this.h = i10 | (-16777216);
+        this.f = i0.a.d(0.25f, stargiftattributebackdrop.edge_color | (-16777216), i10 | (-16777216));
     }
 }

@@ -23,7 +23,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class m40 extends FrameLayout {
     public long E;
@@ -178,7 +178,7 @@ public class m40 extends FrameLayout {
                     left = u1Var.getLeft() + forwardNameCenterX;
                     int dp3 = AndroidUtilities.dp(19.0f);
                     if (i14 == 5) {
-                        int b10 = org.telegram.messenger.f0.b(19.1f, forwardNameCenterX - (getMeasuredWidth() / 2), 0);
+                        int b10 = org.telegram.messenger.q.b(19.1f, forwardNameCenterX - (getMeasuredWidth() / 2), 0);
                         setTranslationX(b10);
                         dp3 += b10;
                     } else if (left > view.getMeasuredWidth() / 2) {
@@ -334,7 +334,7 @@ public class m40 extends FrameLayout {
                             dp = AndroidUtilities.dp(20.0f) + dp6;
                         }
                     } else {
-                        dp = org.telegram.messenger.ok.D(50.0f, u1Var.getMeasuredHeight() - Math.max(0, u1Var.getBottom() - view.getMeasuredHeight()), i16);
+                        dp = org.telegram.messenger.bi.D(50.0f, u1Var.getMeasuredHeight() - Math.max(0, u1Var.getBottom() - view.getMeasuredHeight()), i16);
                     }
                     i12 = dp;
                     if (!z11) {
@@ -442,9 +442,9 @@ public class m40 extends FrameLayout {
         if (i12 == 4) {
             dp += AndroidUtilities.dp(4.0f);
         } else if (i12 == 6 && z10) {
-            dp = org.telegram.messenger.f0.C(10.0f, getMeasuredHeight() + view.getMeasuredHeight(), dp);
+            dp = org.telegram.messenger.q.C(10.0f, getMeasuredHeight() + view.getMeasuredHeight(), dp);
         } else if (i12 == 7 || (i12 == 8 && z10)) {
-            dp = org.telegram.messenger.f0.C(8.0f, getMeasuredHeight() + view.getMeasuredHeight(), dp);
+            dp = org.telegram.messenger.q.C(8.0f, getMeasuredHeight() + view.getMeasuredHeight(), dp);
         } else if (i12 == 8) {
             dp -= AndroidUtilities.dp(10.0f);
         }

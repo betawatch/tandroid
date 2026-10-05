@@ -5,7 +5,6 @@ import android.media.MediaMetadataRetriever;
 import android.os.Build;
 import android.system.OsConstants;
 import android.util.Log;
-import hg.k0;
 import j$.util.DesugarTimeZone;
 import java.io.BufferedInputStream;
 import java.io.EOFException;
@@ -29,7 +28,7 @@ import java.util.zip.CRC32;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 import w7.a7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class g {
     public static final String[] E;
@@ -1161,7 +1160,7 @@ public final class g {
         }
         int readInt = fVar.readInt();
         if (readInt < 8) {
-            throw new IOException(k0.h(readInt, "Invalid first Ifd offset: "));
+            throw new IOException(hg.c.h(readInt, "Invalid first Ifd offset: "));
         }
         int i11 = readInt - 8;
         if (i11 > 0) {
@@ -1176,7 +1175,7 @@ public final class g {
             if (i10 >= hashMapArr.length) {
                 return;
             }
-            StringBuilder j3 = k0.j(i10, "The size of tag group[", "]: ");
+            StringBuilder j3 = hg.c.j(i10, "The size of tag group[", "]: ");
             j3.append(hashMapArr[i10].size());
             Log.d("ExifInterface", j3.toString());
             for (Map.Entry entry : hashMapArr[i10].entrySet()) {

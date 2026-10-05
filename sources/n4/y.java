@@ -29,12 +29,12 @@ import android.view.ActionMode;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.ViewGroup;
-import androidx.fragment.app.k0;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import ii.h1;
 import ii.i1;
+import ii.k0;
 import ii.l0;
 import ii.n4;
 import j$.util.DesugarCollections;
@@ -63,7 +63,7 @@ import org.telegram.ui.Cells.q9;
 import p4.t0;
 import v7.t7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, le.f, n5.b {
     public final /* synthetic */ int a;
@@ -136,7 +136,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
         return sb2.toString();
     }
 
-    public static boolean v(Editable editable, KeyEvent keyEvent, boolean z10) {
+    public static boolean u(Editable editable, KeyEvent keyEvent, boolean z10) {
         androidx.emoji2.text.u[] uVarArr;
         if (KeyEvent.metaStateHasNoModifiers(keyEvent.getMetaState())) {
             int selectionStart = Selection.getSelectionStart(editable);
@@ -155,37 +155,45 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
         return false;
     }
 
-    public void A(androidx.fragment.app.s f7, boolean z10) {
-        kotlin.jvm.internal.i.e(f7, "f");
-        k0 k0Var = (k0) this.b;
-        androidx.fragment.app.v vVar = k0Var.w.b;
-        androidx.fragment.app.s sVar = k0Var.y;
-        if (sVar != null) {
-            sVar.p().o.A(f7, true);
-        }
-        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
-        if (it.hasNext()) {
-            if (it.next() != null) {
-                throw new ClassCastException();
+    @Override // g6.n
+    public void A(String str, long j3, int i10, Object obj, long j10, long j11) {
+        int i11;
+        g6.m mVar = (g6.m) this.c;
+        if (((g6.n) this.b) != null) {
+            if (i10 == 2001) {
+                Object[] objArr = {Integer.valueOf(mVar.i)};
+                g6.b bVar = mVar.a;
+                Log.w(bVar.a, bVar.d("Possibility of local queue out of sync with receiver queue. Refetching sequence number. Current Local Sequence Number = %d", objArr));
+                Iterator it = ((e6.h) mVar.h.b).i.iterator();
+                while (it.hasNext()) {
+                    ((e6.g) it.next()).o();
+                }
+                i11 = 2001;
+            } else {
+                i11 = i10;
             }
-            if (!z10) {
-                throw null;
-            }
-            throw null;
+            ((g6.n) this.b).A(str, j3, i11, obj, j10, j11);
         }
     }
 
     @Override // ii.h1
     public void B(Editable editable) {
         ((l0) this.c).i();
-        ((ii.k0) this.b).g0();
+        ((k0) this.b).g0();
     }
 
-    public void C(androidx.fragment.app.s f7, boolean z10) {
+    @Override // ii.h1
+    public /* synthetic */ boolean C(boolean z10) {
+        return false;
+    }
+
+    public void D(androidx.fragment.app.s f7, boolean z10) {
         kotlin.jvm.internal.i.e(f7, "f");
-        androidx.fragment.app.s sVar = ((k0) this.b).y;
+        androidx.fragment.app.k0 k0Var = (androidx.fragment.app.k0) this.b;
+        androidx.fragment.app.v vVar = k0Var.w.b;
+        androidx.fragment.app.s sVar = k0Var.y;
         if (sVar != null) {
-            sVar.p().o.C(f7, true);
+            sVar.p().o.D(f7, true);
         }
         Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
         if (it.hasNext()) {
@@ -199,26 +207,9 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
         }
     }
 
-    @Override // ea.a
-    public StackTraceElement[] D(StackTraceElement[] stackTraceElementArr) {
-        if (stackTraceElementArr.length <= 1024) {
-            return stackTraceElementArr;
-        }
-        ea.a[] aVarArr = (ea.a[]) this.b;
-        StackTraceElement[] stackTraceElementArr2 = stackTraceElementArr;
-        for (int i10 = 0; i10 < 1; i10++) {
-            ea.a aVar = aVarArr[i10];
-            if (stackTraceElementArr2.length <= 1024) {
-                break;
-            }
-            stackTraceElementArr2 = aVar.D(stackTraceElementArr);
-        }
-        return stackTraceElementArr2.length > 1024 ? ((rb.a) this.c).D(stackTraceElementArr2) : stackTraceElementArr2;
-    }
-
     public void E(androidx.fragment.app.s f7, boolean z10) {
         kotlin.jvm.internal.i.e(f7, "f");
-        androidx.fragment.app.s sVar = ((k0) this.b).y;
+        androidx.fragment.app.s sVar = ((androidx.fragment.app.k0) this.b).y;
         if (sVar != null) {
             sVar.p().o.E(f7, true);
         }
@@ -236,7 +227,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
 
     public void F(androidx.fragment.app.s f7, boolean z10) {
         kotlin.jvm.internal.i.e(f7, "f");
-        androidx.fragment.app.s sVar = ((k0) this.b).y;
+        androidx.fragment.app.s sVar = ((androidx.fragment.app.k0) this.b).y;
         if (sVar != null) {
             sVar.p().o.F(f7, true);
         }
@@ -252,14 +243,27 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
         }
     }
 
-    @Override // ii.h1
-    public /* synthetic */ boolean G(boolean z10) {
-        return false;
+    public void G(androidx.fragment.app.s f7, boolean z10) {
+        kotlin.jvm.internal.i.e(f7, "f");
+        androidx.fragment.app.s sVar = ((androidx.fragment.app.k0) this.b).y;
+        if (sVar != null) {
+            sVar.p().o.G(f7, true);
+        }
+        Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
+        if (it.hasNext()) {
+            if (it.next() != null) {
+                throw new ClassCastException();
+            }
+            if (!z10) {
+                throw null;
+            }
+            throw null;
+        }
     }
 
     public void H(androidx.fragment.app.s f7, boolean z10) {
         kotlin.jvm.internal.i.e(f7, "f");
-        androidx.fragment.app.s sVar = ((k0) this.b).y;
+        androidx.fragment.app.s sVar = ((androidx.fragment.app.k0) this.b).y;
         if (sVar != null) {
             sVar.p().o.H(f7, true);
         }
@@ -277,7 +281,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
 
     public void I(androidx.fragment.app.s f7, boolean z10) {
         kotlin.jvm.internal.i.e(f7, "f");
-        k0 k0Var = (k0) this.b;
+        androidx.fragment.app.k0 k0Var = (androidx.fragment.app.k0) this.b;
         androidx.fragment.app.v vVar = k0Var.w.b;
         androidx.fragment.app.s sVar = k0Var.y;
         if (sVar != null) {
@@ -297,7 +301,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
 
     public void J(androidx.fragment.app.s f7, boolean z10) {
         kotlin.jvm.internal.i.e(f7, "f");
-        androidx.fragment.app.s sVar = ((k0) this.b).y;
+        androidx.fragment.app.s sVar = ((androidx.fragment.app.k0) this.b).y;
         if (sVar != null) {
             sVar.p().o.J(f7, true);
         }
@@ -315,7 +319,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
 
     public void K(androidx.fragment.app.s f7, boolean z10) {
         kotlin.jvm.internal.i.e(f7, "f");
-        androidx.fragment.app.s sVar = ((k0) this.b).y;
+        androidx.fragment.app.s sVar = ((androidx.fragment.app.k0) this.b).y;
         if (sVar != null) {
             sVar.p().o.K(f7, true);
         }
@@ -333,7 +337,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
 
     public void L(androidx.fragment.app.s f7, Bundle bundle, boolean z10) {
         kotlin.jvm.internal.i.e(f7, "f");
-        androidx.fragment.app.s sVar = ((k0) this.b).y;
+        androidx.fragment.app.s sVar = ((androidx.fragment.app.k0) this.b).y;
         if (sVar != null) {
             sVar.p().o.L(f7, bundle, true);
         }
@@ -351,7 +355,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
 
     public void M(androidx.fragment.app.s f7, boolean z10) {
         kotlin.jvm.internal.i.e(f7, "f");
-        androidx.fragment.app.s sVar = ((k0) this.b).y;
+        androidx.fragment.app.s sVar = ((androidx.fragment.app.k0) this.b).y;
         if (sVar != null) {
             sVar.p().o.M(f7, true);
         }
@@ -369,7 +373,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
 
     public void N(androidx.fragment.app.s f7, boolean z10) {
         kotlin.jvm.internal.i.e(f7, "f");
-        androidx.fragment.app.s sVar = ((k0) this.b).y;
+        androidx.fragment.app.s sVar = ((androidx.fragment.app.k0) this.b).y;
         if (sVar != null) {
             sVar.p().o.N(f7, true);
         }
@@ -387,7 +391,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
 
     public void O(androidx.fragment.app.s f7, boolean z10) {
         kotlin.jvm.internal.i.e(f7, "f");
-        androidx.fragment.app.s sVar = ((k0) this.b).y;
+        androidx.fragment.app.s sVar = ((androidx.fragment.app.k0) this.b).y;
         if (sVar != null) {
             sVar.p().o.O(f7, true);
         }
@@ -565,7 +569,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
         ViewGroup viewGroup = sVar.J;
         WeakHashMap weakHashMap = r0.i0.a;
         r0.y.c(viewGroup);
-        sVar.w();
+        sVar.x();
     }
 
     public boolean W(k.a aVar, Menu menu) {
@@ -684,7 +688,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
 
     @Override // ii.h1
     public void b(i1 i1Var) {
-        ((ii.k0) this.b).b(i1Var);
+        ((k0) this.b).b(i1Var);
     }
 
     public int b0(Context context, com.google.android.gms.common.api.c cVar) {
@@ -862,12 +866,12 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
 
     @Override // ii.h1
     public boolean e() {
-        return ((ii.k0) this.b).W();
+        return ((k0) this.b).W();
     }
 
     @Override // ii.h1
     public void f(int i10, int i11) {
-        ((ii.k0) this.b).Z(i10, i11);
+        ((k0) this.b).Z(i10, i11);
     }
 
     @Override // c3.i
@@ -895,11 +899,11 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
 
     @Override // ii.h1
     public void l(i1 i1Var) {
-        ((ii.k0) this.b).g();
+        ((k0) this.b).g();
     }
 
     public void m(Object obj, String str) {
-        ((ArrayList) this.b).add(a4.a.C(str, "=", String.valueOf(obj)));
+        ((ArrayList) this.b).add(a4.a.D(str, "=", String.valueOf(obj)));
     }
 
     @Override // ii.h1
@@ -951,7 +955,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
     @Override // ii.h1
     public void t(i1 i1Var, int i10, int i11) {
         q9 J;
-        ii.k0 k0Var = (ii.k0) this.b;
+        k0 k0Var = (k0) this.b;
         if (((l0) this.c).d || i10 == i11 || (J = k0Var.J()) == null) {
             return;
         }
@@ -982,28 +986,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
         }
     }
 
-    @Override // g6.n
-    public void u(String str, long j3, int i10, Object obj, long j10, long j11) {
-        int i11;
-        g6.m mVar = (g6.m) this.c;
-        if (((g6.n) this.b) != null) {
-            if (i10 == 2001) {
-                Object[] objArr = {Integer.valueOf(mVar.i)};
-                g6.b bVar = mVar.a;
-                Log.w(bVar.a, bVar.d("Possibility of local queue out of sync with receiver queue. Refetching sequence number. Current Local Sequence Number = %d", objArr));
-                Iterator it = ((e6.h) mVar.h.b).i.iterator();
-                while (it.hasNext()) {
-                    ((e6.g) it.next()).o();
-                }
-                i11 = 2001;
-            } else {
-                i11 = i10;
-            }
-            ((g6.n) this.b).u(str, j3, i11, obj, j10, j11);
-        }
-    }
-
-    public void w(i2.g gVar) {
+    public void v(i2.g gVar) {
         synchronized (gVar) {
         }
         Handler handler = (Handler) this.b;
@@ -1013,15 +996,15 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
     }
 
     @Override // ii.h1
-    public void x(CharSequence charSequence) {
-        ((ii.k0) this.b).N(charSequence);
+    public void w(CharSequence charSequence) {
+        ((k0) this.b).N(charSequence);
     }
 
-    public void y(androidx.fragment.app.s f7, boolean z10) {
+    public void x(androidx.fragment.app.s f7, boolean z10) {
         kotlin.jvm.internal.i.e(f7, "f");
-        androidx.fragment.app.s sVar = ((k0) this.b).y;
+        androidx.fragment.app.s sVar = ((androidx.fragment.app.k0) this.b).y;
         if (sVar != null) {
-            sVar.p().o.y(f7, true);
+            sVar.p().o.x(f7, true);
         }
         Iterator it = ((CopyOnWriteArrayList) this.c).iterator();
         if (it.hasNext()) {
@@ -1033,6 +1016,23 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
             }
             throw null;
         }
+    }
+
+    @Override // ea.a
+    public StackTraceElement[] y(StackTraceElement[] stackTraceElementArr) {
+        if (stackTraceElementArr.length <= 1024) {
+            return stackTraceElementArr;
+        }
+        ea.a[] aVarArr = (ea.a[]) this.b;
+        StackTraceElement[] stackTraceElementArr2 = stackTraceElementArr;
+        for (int i10 = 0; i10 < 1; i10++) {
+            ea.a aVar = aVarArr[i10];
+            if (stackTraceElementArr2.length <= 1024) {
+                break;
+            }
+            stackTraceElementArr2 = aVar.y(stackTraceElementArr);
+        }
+        return stackTraceElementArr2.length > 1024 ? ((rb.a) this.c).y(stackTraceElementArr2) : stackTraceElementArr2;
     }
 
     @Override // le.f
@@ -1113,7 +1113,7 @@ public final class y implements OnCompleteListener, ce.b, ea.a, g6.n, h1, c3.i, 
         this.c = eVar;
     }
 
-    public y(k0 k0Var) {
+    public y(androidx.fragment.app.k0 k0Var) {
         this.a = 5;
         this.b = k0Var;
         this.c = new CopyOnWriteArrayList();

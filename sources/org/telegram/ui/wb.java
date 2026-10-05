@@ -69,7 +69,7 @@ import org.telegram.ui.Components.PipRoundVideoView;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class wb extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public static int Q0 = 10;
@@ -179,9 +179,9 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.L0 = new vb(this);
         this.N0 = -1;
         this.P0 = new RectF();
-        li.m mVar = this.glassEngine;
-        mVar.a = new ab(this);
-        mVar.d = new ni.b(AndroidUtilities.dp(48.0f));
+        li.p pVar = this.glassEngine;
+        pVar.a = new ab(this);
+        pVar.d = new ni.b(AndroidUtilities.dp(48.0f));
         fh.e eVar = new fh.e();
         this.a = eVar;
         ah.c cVar = new ah.c(eVar);
@@ -465,10 +465,10 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
                 spannableStringBuilder.append(messageObject.messageText);
             }
             AndroidUtilities.addToClipboard(spannableStringBuilder);
-            org.telegram.messenger.ok.o(R.string.MessageCopied, org.telegram.ui.Components.yc.a0(wbVar));
+            org.telegram.messenger.bi.n(R.string.MessageCopied, org.telegram.ui.Components.yc.a0(wbVar));
         } else if (intValue == 4) {
             String str = messageObject.messageOwner.attachPath;
-            if (str != null && str.length() > 0 && !t8.b.u(str)) {
+            if (str != null && str.length() > 0 && !sa.e.u(str)) {
                 str = null;
             }
             if (str == null || str.length() == 0) {
@@ -516,7 +516,7 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
                     }
                     org.telegram.ui.ActionBar.h6 u10 = org.telegram.ui.ActionBar.i6.u(file, wbVar.Y.getDocumentName(), null, true);
                     if (u10 != null) {
-                        wbVar.presentFragment(new rd1(u10));
+                        wbVar.presentFragment(new pd1(u10));
                     } else {
                         wbVar.g0 = -1;
                         if (wbVar.getParentActivity() == null) {
@@ -547,7 +547,7 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
             }
         } else if (intValue == 6) {
             String str3 = messageObject.messageOwner.attachPath;
-            if (str3 != null && str3.length() > 0 && !t8.b.u(str3)) {
+            if (str3 != null && str3.length() > 0 && !sa.e.u(str3)) {
                 str3 = null;
             }
             if (str3 == null || str3.length() == 0) {
@@ -572,7 +572,7 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
         } else if (intValue != 7) {
             switch (intValue) {
                 case 9:
-                    wbVar.showDialog(new org.telegram.ui.Components.qy0(wbVar.getParentActivity(), wbVar, wbVar.Y.getInputStickerSet(), null, null, null));
+                    wbVar.showDialog(new org.telegram.ui.Components.ry0(wbVar.getParentActivity(), wbVar, wbVar.Y.getInputStickerSet(), null, null, null));
                     break;
                 case 10:
                     int i13 = Build.VERSION.SDK_INT;
@@ -587,7 +587,7 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
                         documentFileName = wbVar.Y.getFileName();
                     }
                     String str4 = wbVar.Y.messageOwner.attachPath;
-                    if (str4 != null && str4.length() > 0 && !t8.b.u(str4)) {
+                    if (str4 != null && str4.length() > 0 && !sa.e.u(str4)) {
                         str4 = null;
                     }
                     if (str4 == null || str4.length() == 0) {
@@ -609,7 +609,7 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
                             break;
                         case 16:
                             AndroidUtilities.addToClipboard(messageObject.messageOwner.media.phone_number);
-                            org.telegram.messenger.ok.o(R.string.PhoneCopied, org.telegram.ui.Components.yc.a0(wbVar));
+                            org.telegram.messenger.bi.n(R.string.PhoneCopied, org.telegram.ui.Components.yc.a0(wbVar));
                             break;
                         case 17:
                             try {
@@ -668,7 +668,7 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
             }
         } else {
             String str5 = messageObject.messageOwner.attachPath;
-            if (str5 != null && str5.length() > 0 && !t8.b.u(str5)) {
+            if (str5 != null && str5.length() > 0 && !sa.e.u(str5)) {
                 str5 = null;
             }
             if (str5 == null || str5.length() == 0) {
@@ -932,7 +932,7 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
             spannableStringBuilder.setSpan(new org.telegram.ui.Components.rq(0, S0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         }
         messageObject.messageText = spannableStringBuilder;
-        MessageObject messageObject2 = arrayList.size() > 0 ? (MessageObject) hg.k0.g(1, arrayList) : null;
+        MessageObject messageObject2 = arrayList.size() > 0 ? (MessageObject) hg.c.g(1, arrayList) : null;
         if (messageObject2 != null) {
             long j11 = messageObject2.eventId;
             a0.i iVar = this.E0;
@@ -1141,7 +1141,7 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
                                 }
                                 TLRPC.InputStickerSet inputStickerSet3 = inputStickerSet2;
                                 if (inputStickerSet3 != null) {
-                                    showDialog(new org.telegram.ui.Components.qy0(getParentActivity(), this, inputStickerSet3, null, null, null));
+                                    showDialog(new org.telegram.ui.Components.ry0(getParentActivity(), this, inputStickerSet3, null, null, null));
                                     return true;
                                 }
                                 arrayList = arrayList3;
@@ -1366,7 +1366,7 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
                 if (arrayList3.isEmpty()) {
                     arrayList = arrayList3;
                 } else {
-                    MessageObject messageObject3 = (MessageObject) hg.k0.g(1, arrayList3);
+                    MessageObject messageObject3 = (MessageObject) hg.c.g(1, arrayList3);
                     boolean z11 = TextUtils.isEmpty(this.v0) && arrayList3.size() > 3;
                     Long valueOf = Long.valueOf(messageObject3.eventId);
                     HashSet hashSet = this.p0;
@@ -1391,7 +1391,7 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
                     arrayList2.add(N0);
                 }
                 if (!arrayList6.isEmpty()) {
-                    MessageObject messageObject4 = (MessageObject) hg.k0.g(1, arrayList6);
+                    MessageObject messageObject4 = (MessageObject) hg.c.g(1, arrayList6);
                     arrayList2.addAll(arrayList6);
                     arrayList2.add(N0(messageObject4.eventId, messageObject4.currentEvent.user_id, arrayList6, true, false));
                 }
@@ -1888,7 +1888,7 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.actionBar.setCastShadows(false);
         this.actionBar.setBackground(null);
         this.actionBar.setOccupyStatusBar(!AndroidUtilities.isTablet());
-        hg.k0.u(false, this.actionBar);
+        hg.c.u(false, this.actionBar);
         this.actionBar.setActionBarMenuOnItemClick(new ei.u(this, 28));
         org.telegram.ui.Components.ho hoVar = new org.telegram.ui.Components.ho(context, null, false, null);
         this.I = hoVar;
@@ -1923,7 +1923,7 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         dh.e p5 = eh.b.p(this.resourceProvider);
         ah.c cVar = this.c;
-        kVar.K(cVar, p5, false);
+        kVar.J(cVar, p5, false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.H = frameLayout;
         frameLayout.setVisibility(4);
@@ -2023,9 +2023,9 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.G.c(4, true, false);
         jh.e eVar2 = this.G;
         ch.d c10 = eVar2.n.c(eVar2, null, false);
-        c10.x(eVar2.r);
-        c10.z(AndroidUtilities.dp(22.0f));
-        c10.y(AndroidUtilities.dp(6.0f));
+        c10.w(eVar2.r);
+        c10.y(AndroidUtilities.dp(22.0f));
+        c10.x(AndroidUtilities.dp(6.0f));
         eVar2.s = c10;
         this.X.addView(this.G, w7.z5.d(-1, 56.0f, 80, 54.0f, 0.0f, 0.0f, 3.0f));
         TextView textView = new TextView(context);
@@ -2270,7 +2270,7 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
         if (i10 == NotificationCenter.emojiLoaded) {
             lb lbVar = this.v;
             if (lbVar != null) {
-                lbVar.h1();
+                lbVar.g1();
                 return;
             }
             return;
@@ -2304,7 +2304,7 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
                 if (p4Var != null) {
                     p4Var.invalidate();
                 }
-                this.v.h1();
+                this.v.g1();
                 return;
             }
             Integer num = (Integer) objArr[0];
@@ -2671,9 +2671,9 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
         super.onPause();
         tb tbVar = this.X;
         if (tbVar != null) {
-            org.telegram.ui.Components.j91 j91Var = tbVar.v;
-            if (j91Var != null) {
-                j91Var.c(false);
+            org.telegram.ui.Components.k91 k91Var = tbVar.v;
+            if (k91Var != null) {
+                k91Var.c(false);
             }
             tbVar.F = true;
         }
@@ -2707,9 +2707,9 @@ public final class wb extends org.telegram.ui.ActionBar.n2 implements Notificati
         System.currentTimeMillis();
         tb tbVar = this.X;
         if (tbVar != null) {
-            org.telegram.ui.Components.j91 j91Var = tbVar.v;
-            if (j91Var != null) {
-                j91Var.c(true);
+            org.telegram.ui.Components.k91 k91Var = tbVar.v;
+            if (k91Var != null) {
+                k91Var.c(true);
             }
             tbVar.F = false;
         }

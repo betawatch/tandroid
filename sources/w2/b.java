@@ -4,26 +4,26 @@ import h2.f;
 import h2.h;
 import h2.l;
 import java.nio.ByteBuffer;
+import z3.i;
 import z3.j;
-import z3.k;
-import z3.n;
+import z3.m;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class b extends l implements z3.e {
     public final String o;
-    public final n p;
+    public final m p;
 
-    public b(String str, n nVar) {
-        super(new j[2], new k[2]);
+    public b(String str, m mVar) {
+        super(new i[2], new j[2]);
         this.o = str;
         o(1024);
-        this.p = nVar;
+        this.p = mVar;
     }
 
     @Override // h2.l
     public final h f() {
-        return new j();
+        return new i();
     }
 
     @Override // h2.l
@@ -43,27 +43,27 @@ public final class b extends l implements z3.e {
 
     @Override // h2.l
     public final f i(h hVar, h2.j jVar, boolean z10) {
-        j jVar2 = (j) hVar;
-        k kVar = (k) jVar;
+        i iVar = (i) hVar;
+        j jVar2 = (j) jVar;
         try {
-            ByteBuffer byteBuffer = jVar2.c;
+            ByteBuffer byteBuffer = iVar.c;
             byteBuffer.getClass();
             byte[] array = byteBuffer.array();
             int limit = byteBuffer.limit();
-            n nVar = this.p;
+            m mVar = this.p;
             if (z10) {
-                nVar.reset();
+                mVar.reset();
             }
-            z3.d h = nVar.h(0, limit, array);
-            long j3 = jVar2.e;
-            long j10 = jVar2.r;
-            kVar.timeUs = j3;
-            kVar.a = h;
+            z3.d h = mVar.h(0, limit, array);
+            long j3 = iVar.e;
+            long j10 = iVar.r;
+            jVar2.timeUs = j3;
+            jVar2.a = h;
             if (j10 != Long.MAX_VALUE) {
                 j3 = j10;
             }
-            kVar.b = j3;
-            kVar.shouldBeSkipped = false;
+            jVar2.b = j3;
+            jVar2.shouldBeSkipped = false;
             return null;
         } catch (z3.f e7) {
             return e7;

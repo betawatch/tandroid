@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.di0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class k8 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ei.q3((di0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e, 4));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new m8((yh.o) this.d, (yh.n) this.e, this.b, tLObject, this.c));
+                AndroidUtilities.runOnUIThread(new m8((yh.p) this.d, (yh.o) this.e, this.b, tLObject, this.c));
                 break;
             default:
                 AndroidUtilities.runOnUIThread(new org.telegram.messenger.g7((ci.d) this.d, (org.telegram.ui.ActionBar.f3[]) this.e, this.b, this.c, 15));

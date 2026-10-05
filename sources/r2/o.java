@@ -10,14 +10,13 @@ import e2.d0;
 import e9.a1;
 import e9.f0;
 import e9.i0;
-import hg.k0;
 import j$.util.Objects;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 import w7.b7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class o {
     public final String a;
@@ -421,7 +420,7 @@ public final class o {
             int b10 = (i12 < 29 || ((bool = b7.a) != null && bool.booleanValue())) ? 0 : b2.c.b(videoCapabilities, i10, i11, d);
             if (b10 != 2) {
                 if (b10 == 1) {
-                    StringBuilder k10 = k0.k("sizeAndRate.cover, ", i10, "x", i11, "@");
+                    StringBuilder k10 = hg.c.k("sizeAndRate.cover, ", i10, "x", i11, "@");
                     k10.append(d);
                     h(k10.toString());
                     return false;
@@ -433,18 +432,18 @@ public final class o {
             if (i10 < i11) {
                 String str = this.a;
                 if ((!"OMX.MTK.VIDEO.DECODER.HEVC".equals(str) || !"mcv5a".equals(Build.DEVICE)) && a(videoCapabilities, i11, i10, d)) {
-                    StringBuilder k11 = k0.k("sizeAndRate.rotated, ", i10, "x", i11, "@");
+                    StringBuilder k11 = hg.c.k("sizeAndRate.rotated, ", i10, "x", i11, "@");
                     k11.append(d);
-                    StringBuilder w10 = a4.a.w("AssumedSupport [", k11.toString(), "] [", str, ", ");
-                    w10.append(this.b);
-                    w10.append("] [");
-                    w10.append(d0.a);
-                    w10.append("]");
-                    e2.a.d("MediaCodecInfo", w10.toString());
+                    StringBuilder x10 = a4.a.x("AssumedSupport [", k11.toString(), "] [", str, ", ");
+                    x10.append(this.b);
+                    x10.append("] [");
+                    x10.append(d0.a);
+                    x10.append("]");
+                    e2.a.d("MediaCodecInfo", x10.toString());
                     return true;
                 }
             }
-            StringBuilder k12 = k0.k("sizeAndRate.support, ", i10, "x", i11, "@");
+            StringBuilder k12 = hg.c.k("sizeAndRate.support, ", i10, "x", i11, "@");
             k12.append(d);
             h(k12.toString());
             return false;
@@ -453,14 +452,14 @@ public final class o {
     }
 
     public final void h(String str) {
-        StringBuilder v = a4.a.v("NoSupport [", str, "] [");
-        v.append(this.a);
-        v.append(", ");
-        v.append(this.b);
-        v.append("] [");
-        v.append(d0.a);
-        v.append("]");
-        e2.a.d("MediaCodecInfo", v.toString());
+        StringBuilder w10 = a4.a.w("NoSupport [", str, "] [");
+        w10.append(this.a);
+        w10.append(", ");
+        w10.append(this.b);
+        w10.append("] [");
+        w10.append(d0.a);
+        w10.append("]");
+        e2.a.d("MediaCodecInfo", w10.toString());
     }
 
     public final String toString() {

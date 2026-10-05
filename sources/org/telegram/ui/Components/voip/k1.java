@@ -31,7 +31,7 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.fw0;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.uh;
@@ -39,11 +39,11 @@ import org.telegram.ui.Components.w9;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class k1 implements NotificationCenter.NotificationCenterDelegate, rf.a {
-    public static final ew0 b0 = new ew0(new e1(0), new e1(1));
-    public static final ew0 c0 = new ew0(new e1(2), new e1(3));
+    public static final fw0 b0 = new fw0(new e1(0), new e1(1));
+    public static final fw0 c0 = new fw0(new e1(2), new e1(3));
     public static final k1 d0;
     public AccountInstance E;
     public ScaleGestureDetector F;
@@ -422,7 +422,7 @@ public final class k1 implements NotificationCenter.NotificationCenterDelegate, 
         float f7 = this.Q;
         kVar.b = f7;
         kVar.c = true;
-        kVar.u.i = a4.a.A(m(), this.P, 2.0f, f7) >= AndroidUtilities.displaySize.x / 2.0f ? (r3 - (m() * this.P)) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+        kVar.u.i = a4.a.B(m(), this.P, 2.0f, f7) >= AndroidUtilities.displaySize.x / 2.0f ? (r3 - (m() * this.P)) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
         this.S.f();
         o1.k kVar2 = this.T;
         kVar2.b = this.R;

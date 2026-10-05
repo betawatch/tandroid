@@ -4,7 +4,7 @@ import android.view.SurfaceView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class ic extends VideoPlayerHolderBase {
     public boolean a;
@@ -64,7 +64,7 @@ public final class ic extends VideoPlayerHolderBase {
                                         StringBuilder sb2 = new StringBuilder("StoryViewer displayed story buffering dialogId=");
                                         sb2.append(t10.getCurrentPeer());
                                         sb2.append(" storyId=");
-                                        org.telegram.messenger.f0.n(c6Var.a.id, sb2);
+                                        org.telegram.messenger.q.n(c6Var.a.id, sb2);
                                         break;
                                     }
                                 }
@@ -77,7 +77,7 @@ public final class ic extends VideoPlayerHolderBase {
                                         StringBuilder sb3 = new StringBuilder("StoryViewer displayed story playing dialogId=");
                                         sb3.append(t11.getCurrentPeer());
                                         sb3.append(" storyId=");
-                                        org.telegram.messenger.f0.n(c6Var2.a.id, sb3);
+                                        org.telegram.messenger.q.n(c6Var2.a.id, sb3);
                                         break;
                                     }
                                 }
@@ -107,7 +107,7 @@ public final class ic extends VideoPlayerHolderBase {
                                         StringBuilder sb2 = new StringBuilder("StoryViewer displayed story buffering dialogId=");
                                         sb2.append(t10.getCurrentPeer());
                                         sb2.append(" storyId=");
-                                        org.telegram.messenger.f0.n(c6Var.a.id, sb2);
+                                        org.telegram.messenger.q.n(c6Var.a.id, sb2);
                                         break;
                                     }
                                 }
@@ -120,7 +120,7 @@ public final class ic extends VideoPlayerHolderBase {
                                         StringBuilder sb3 = new StringBuilder("StoryViewer displayed story playing dialogId=");
                                         sb3.append(t11.getCurrentPeer());
                                         sb3.append(" storyId=");
-                                        org.telegram.messenger.f0.n(c6Var2.a.id, sb3);
+                                        org.telegram.messenger.q.n(c6Var2.a.id, sb3);
                                         break;
                                     }
                                 }

@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wj0 implements Runnable {
     public final /* synthetic */ int a;
@@ -76,8 +76,8 @@ public final /* synthetic */ class wj0 implements Runnable {
                 PasscodeActivity passcodeActivity2 = ll0Var.b;
                 f1Var.setText(LocaleController.getString(passcodeActivity2.y == 0 ? R.string.PasscodeSwitchToPassword : R.string.PasscodeSwitchToPIN));
                 f1Var.setIcon(passcodeActivity2.y == 0 ? R.drawable.msg_permissions : R.drawable.msg_pin_code);
-                passcodeActivity2.k0();
-                if (passcodeActivity2.e0()) {
+                passcodeActivity2.q0();
+                if (passcodeActivity2.k0()) {
                     passcodeActivity2.h.setInputType(524417);
                     AndroidUtilities.updateViewVisibilityAnimated(passcodeActivity2.s, true, 0.1f, false);
                     break;
@@ -284,7 +284,6 @@ public final /* synthetic */ class wj0 implements Runnable {
                         AndroidUtilities.shakeViewSpring(k3Var, 2.5f);
                         org.telegram.ui.Cells.k3 k3Var2 = so0Var2.S;
                         k3Var2.a.setText("");
-                        k3Var2.b = false;
                         k3Var2.setWillNotDraw(true);
                         break;
                     }
@@ -372,7 +371,7 @@ public final /* synthetic */ class wj0 implements Runnable {
                 break;
             case 13:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
-                b41.R(photoViewer.E, photoViewer.m4, false, (ai.d) this.c, null);
+                z31.R(photoViewer.E, photoViewer.m4, false, (ai.d) this.c, null);
                 break;
             case 14:
                 PhotoViewer photoViewer2 = (PhotoViewer) this.b;
@@ -444,9 +443,9 @@ public final /* synthetic */ class wj0 implements Runnable {
                 break;
             case 19:
                 mt0 mt0Var = (mt0) this.b;
-                org.telegram.ui.Components.d81 d81Var = (org.telegram.ui.Components.d81) this.c;
+                org.telegram.ui.Components.e81 e81Var = (org.telegram.ui.Components.e81) this.c;
                 mt0Var.getClass();
-                if (d81Var.p() > 0 && d81Var.n() >= d81Var.p() - 590) {
+                if (e81Var.p() > 0 && e81Var.n() >= e81Var.p() - 590) {
                     mt0Var.a.e0.invalidate();
                     break;
                 }

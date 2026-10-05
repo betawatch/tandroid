@@ -20,13 +20,13 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.gy;
 import org.telegram.ui.Components.my;
 import org.telegram.ui.Components.t90;
-import org.telegram.ui.Components.uy0;
+import org.telegram.ui.Components.vy0;
 import org.telegram.ui.Components.wv;
 import org.telegram.ui.Components.xn;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c5 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -166,13 +166,13 @@ public final /* synthetic */ class c5 implements Utilities.Callback {
                 break;
             case 8:
                 org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj3;
-                uy0 uy0Var = (uy0) obj2;
+                vy0 vy0Var = (vy0) obj2;
                 ((org.telegram.ui.ActionBar.b2) obj4).dismiss();
                 if (!((Boolean) obj).booleanValue()) {
-                    uy0Var.setErrorText(".");
-                    AndroidUtilities.shakeViewSpring(uy0Var, -6.0f);
+                    vy0Var.setErrorText(".");
+                    AndroidUtilities.shakeViewSpring(vy0Var, -6.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    AndroidUtilities.showKeyboard(uy0Var);
+                    AndroidUtilities.showKeyboard(vy0Var);
                     break;
                 } else {
                     b2Var.dismiss();
@@ -233,21 +233,21 @@ public final /* synthetic */ class c5 implements Utilities.Callback {
                 }
                 break;
             case 13:
-                yh.x3 x3Var = (yh.x3) obj4;
+                yh.y3 y3Var = (yh.y3) obj4;
                 nf.e eVar = (nf.e) obj;
                 eVar.d();
-                x3Var.v1(((Long) obj3).longValue(), new c5(x3Var, eVar, (tg.m1[]) obj2, 14));
+                y3Var.v1(((Long) obj3).longValue(), new c5(y3Var, eVar, (tg.m1[]) obj2, 14));
                 break;
             default:
-                yh.x3 x3Var2 = (yh.x3) obj4;
+                yh.y3 y3Var2 = (yh.y3) obj4;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 ((nf.e) obj3).b();
                 ((tg.m1[]) obj2)[0].dismiss();
                 if (tL_error == null) {
-                    x3Var2.dismiss();
+                    y3Var2.dismiss();
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new u2.i0(18, x3Var2, tL_error));
+                    AndroidUtilities.runOnUIThread(new u2.i0(18, y3Var2, tL_error));
                     break;
                 }
         }

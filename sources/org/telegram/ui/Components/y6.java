@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y6 implements org.telegram.ui.ActionBar.j6 {
     public final /* synthetic */ int a;
@@ -104,7 +104,7 @@ public final /* synthetic */ class y6 implements org.telegram.ui.ActionBar.j6 {
                 ((ch0) this.b).Q();
                 break;
             case 7:
-                NumberTextView numberTextView = ((qo0) this.b).y0;
+                NumberTextView numberTextView = ((qo0) this.b).z0;
                 if (numberTextView != null) {
                     numberTextView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.y8, false));
                     break;
@@ -114,10 +114,10 @@ public final /* synthetic */ class y6 implements org.telegram.ui.ActionBar.j6 {
                 ((Runnable) this.b).run();
                 break;
             case 9:
-                ((qy0) this.b).z0(false);
+                ((ry0) this.b).z0(false);
                 break;
             default:
-                ((c61) this.b).d();
+                ((d61) this.b).d();
                 break;
         }
     }

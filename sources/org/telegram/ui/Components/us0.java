@@ -1,44 +1,38 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class us0 extends s4.s0 {
-    public final /* synthetic */ ls0 a;
-    public final /* synthetic */ ms0 b;
-    public final /* synthetic */ pv0 c;
+public final class us0 extends org.telegram.ui.yn {
+    public boolean Kc;
+    public final /* synthetic */ int Lc;
+    public final /* synthetic */ qv0 Mc;
 
-    public us0(pv0 pv0Var, ls0 ls0Var, ms0 ms0Var) {
-        this.c = pv0Var;
-        this.a = ls0Var;
-        this.b = ms0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public us0(qv0 qv0Var, Bundle bundle, int i10) {
+        super(bundle);
+        this.Mc = qv0Var;
+        this.Lc = i10;
+        this.Kc = true;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        this.c.b1 = i10 != 0;
-    }
-
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        int i12;
-        int i13;
-        pv0 pv0Var = this.c;
-        ev0[] ev0VarArr = pv0Var.t1;
-        ms0 ms0Var = this.b;
-        ls0 ls0Var = this.a;
-        pv0Var.G(ls0Var, (zl0) recyclerView, ms0Var);
-        if (i11 != 0 && ((i13 = pv0Var.k0[0].F) == 0 || i13 == 5)) {
-            ev0VarArr[0].a.isEmpty();
+    @Override // org.telegram.ui.yn, org.telegram.ui.ActionBar.n2
+    public final void onTransitionAnimationStart(boolean z10, boolean z11) {
+        qv0 qv0Var = this.Mc;
+        bv0 bv0Var = qv0Var.S;
+        if (this.Kc) {
+            if (this.h0 != null) {
+                ka("");
+                this.h0.H(bv0Var.w, false);
+            }
+            org.telegram.ui.vk vkVar = this.m1;
+            if (vkVar != null) {
+                vkVar.e(bv0Var.x, false);
+            }
+            qv0Var.v1.getMediaDataController().portSavedSearchResults(getClassGuid(), bv0Var.x, bv0Var.w, bv0Var.n, bv0Var.h, this.Lc, bv0Var.v, bv0Var.s);
+            this.Kc = false;
         }
-        if (i11 != 0 && ((i12 = ls0Var.F) == 0 || pv0.p0(i12))) {
-            pv0.q(ls0Var, ev0VarArr, true);
-        }
-        ls0Var.h.M0(true);
-        if (ls0Var.G != null) {
-            ls0Var.invalidate();
-        }
-        pv0Var.o0();
+        super.onTransitionAnimationStart(z10, z11);
     }
 }

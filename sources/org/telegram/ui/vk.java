@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class vk extends org.telegram.ui.Components.ao0 {
     public final /* synthetic */ yn I;
@@ -32,12 +32,12 @@ public final class vk extends org.telegram.ui.Components.ao0 {
     }
 
     @Override // org.telegram.ui.Components.ao0
-    public final boolean f(zg.o0 o0Var) {
+    public final boolean f(zg.m0 m0Var) {
         int i10;
         yn ynVar = this.I;
-        ynVar.o3 = o0Var;
-        ynVar.p3 = o0Var != null;
-        if (o0Var == null) {
+        ynVar.o3 = m0Var;
+        ynVar.p3 = m0Var != null;
+        if (m0Var == null) {
             ynVar.getMediaDataController().clearFoundMessageObjects();
             ynVar.jb(false);
             ynVar.Ec(0, 0, -1);

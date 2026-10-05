@@ -8,7 +8,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class yj extends s4.s0 {
     public boolean b;
@@ -70,8 +70,8 @@ public final class yj extends s4.s0 {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopSpoilers, new Object[0]);
-        zg.t tVar = ynVar.W9;
-        if (tVar == null || !tVar.d()) {
+        zg.r rVar = ynVar.W9;
+        if (rVar == null || !rVar.d()) {
             return;
         }
         ynVar.W9.setHiddenByScroll(true);
@@ -178,11 +178,11 @@ public final class yj extends s4.s0 {
                 ((fz) arrayList.get(i13)).b -= i11;
             }
         }
-        zg.k0 k0Var = zg.k0.B;
-        if (k0Var != null) {
-            k0Var.r -= i11;
+        zg.i0 i0Var = zg.i0.B;
+        if (i0Var != null) {
+            i0Var.r -= i11;
             if (i11 != 0) {
-                k0Var.u = true;
+                i0Var.u = true;
             }
         }
         ynVar.i7(false);
@@ -215,9 +215,9 @@ public final class yj extends s4.s0 {
         if (jkVar != null) {
             jkVar.l0();
         }
-        yh.b4 b4Var = ynVar.nc;
-        if (b4Var != null) {
-            b4Var.invalidate();
+        yh.c4 c4Var = ynVar.nc;
+        if (c4Var != null) {
+            c4Var.invalidate();
         }
         hh.a aVar2 = ynVar.Nb;
         if (aVar2 == null || aVar2.b <= 0) {

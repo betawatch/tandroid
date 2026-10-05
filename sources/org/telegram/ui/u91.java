@@ -1,26 +1,95 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class u91 extends org.telegram.ui.Components.zl0 {
-    public int e3;
-    public final /* synthetic */ va1 f3;
+public final class u91 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u91(va1 va1Var, Context context) {
-        super(context, null);
-        this.f3 = va1Var;
+    public /* synthetic */ u91(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        aa1 aa1Var;
-        super.onMeasure(i10, i11);
-        if (this.e3 != getMeasuredHeight() && (aa1Var = this.f3.W) != null) {
-            aa1Var.l();
+    @Override // s4.s0
+    public void a(RecyclerView recyclerView, int i10) {
+        switch (this.a) {
+            case 1:
+                if (i10 == 0) {
+                    ((pd1) this.b).r0 = false;
+                    break;
+                }
+                break;
+            case 2:
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(((le1) this.b).getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            case 4:
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(((UsersSelectActivity) this.b).c);
+                    break;
+                }
+                break;
+            case 5:
+                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(wallpapersListActivity.getParentActivity().getCurrentFocus());
+                }
+                wallpapersListActivity.h0 = i10 != 0;
+                break;
         }
-        this.e3 = getMeasuredHeight();
+    }
+
+    @Override // s4.s0
+    public void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                ta1 ta1Var = (ta1) this.b;
+                if (ta1Var.u0.size() != ta1Var.v0.size() && !ta1Var.z0 && ta1Var.T.N0() > ta1Var.W.c0 - 20) {
+                    ta1Var.f0();
+                    break;
+                }
+                break;
+            case 1:
+                pd1 pd1Var = (pd1) this.b;
+                pd1Var.u0.g1();
+                pd1Var.r0 = true;
+                break;
+            case 3:
+                sf1 sf1Var = (sf1) this.b;
+                if (sf1Var.o0 && sf1Var.a0.N0() + 5 >= sf1Var.m0) {
+                    sf1Var.L(sf1Var.d0);
+                }
+                wf1 wf1Var = sf1Var.v0;
+                if (wf1Var.s0) {
+                    if (i10 != 0 || i11 != 0) {
+                        AndroidUtilities.hideKeyboard(wf1Var.p0.getSearchField());
+                        break;
+                    }
+                }
+                break;
+            case 5:
+                WallpapersListActivity wallpapersListActivity = (WallpapersListActivity) this.b;
+                if (wallpapersListActivity.F.getAdapter() == wallpapersListActivity.H) {
+                    int L0 = wallpapersListActivity.I.L0();
+                    int abs = L0 == -1 ? 0 : Math.abs(wallpapersListActivity.I.N0() - L0) + 1;
+                    if (abs > 0) {
+                        int B = wallpapersListActivity.I.B();
+                        if (abs != 0 && L0 + abs > B - 2) {
+                            zi1 zi1Var = wallpapersListActivity.H;
+                            if (!zi1Var.f && zi1Var.s == 0) {
+                                zi1Var.F(zi1Var.h, zi1Var.r, true);
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
+        }
     }
 }

@@ -16,7 +16,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class am extends fm {
     public final /* synthetic */ ChatAttachAlertPhotoLayout b;
@@ -68,7 +68,7 @@ public final class am extends fm {
         yu0Var.a = imageReceiver;
         yu0Var.e = imageReceiver.getBitmapSafe();
         yu0Var.k = J.getScale();
-        yu0Var.i = (int) xiVar.j1();
+        yu0Var.i = (int) xiVar.l1();
         J.g(false);
         return yu0Var;
     }
@@ -80,7 +80,7 @@ public final class am extends fm {
         if (xiVar == null || xiVar.c0 == z10) {
             return;
         }
-        xiVar.E1(z10, true);
+        xiVar.G1(z10, true);
         chatAttachAlertPhotoLayout.d1.a(!chatAttachAlertPhotoLayout.b.c0, true);
     }
 
@@ -180,7 +180,7 @@ public final class am extends fm {
                     MessageObject.addEntitiesToText(spannableStringBuilder, arrayList3, false, false, false, false);
                     charSequence2 = spannableStringBuilder;
                 }
-                this.b.b.k1().setText(z5.cloneSpans(charSequence2, 3));
+                this.b.b.m1().setText(z5.cloneSpans(charSequence2, 3));
             }
         }
     }
@@ -219,10 +219,10 @@ public final class am extends fm {
         if (hashMap.isEmpty() && b02 != null) {
             chatAttachAlertPhotoLayout.O(b02, -1);
         }
-        if (xiVar.Z0(xiVar.k1().getText())) {
+        if (xiVar.b1(xiVar.m1().getText())) {
             return;
         }
-        xiVar.X0();
+        xiVar.Z0();
         if (PhotoViewer.t1().p7) {
             ArrayList arrayList = ChatAttachAlertPhotoLayout.t1;
             if (!hashMap.isEmpty()) {
@@ -235,7 +235,7 @@ public final class am extends fm {
                             photoEntry.entities = MediaDataController.getInstance(UserConfig.selectedAccount).getEntities(charSequenceArr, false);
                             CharSequence charSequence = charSequenceArr[0];
                             photoEntry.caption = charSequence;
-                            if (xiVar.Z0(charSequence)) {
+                            if (xiVar.b1(charSequence)) {
                                 return;
                             }
                         } else {
@@ -251,7 +251,7 @@ public final class am extends fm {
         PhotoViewer.t1();
         PhotoViewer.t1().O = false;
         PhotoViewer.t1().u2 = false;
-        e5.a0(xiVar.J1, xiVar.h1() + ChatAttachAlertPhotoLayout.s1.size(), xiVar.l1(), new sl(this, z10, i11, z11));
+        e5.a0(xiVar.J1, xiVar.j1() + ChatAttachAlertPhotoLayout.s1.size(), xiVar.n1(), new sl(this, z10, i11, z11));
     }
 
     @Override // org.telegram.ui.ou0, org.telegram.ui.wu0

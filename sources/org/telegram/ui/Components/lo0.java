@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class lo0 extends ws {
     public final /* synthetic */ org.telegram.ui.uy d0;
@@ -19,14 +19,14 @@ public final class lo0 extends ws {
         this.d0 = uyVar;
     }
 
-    @Override // org.telegram.ui.Components.u61
+    @Override // org.telegram.ui.Components.w61
     public final void N(boolean z10) {
         ArrayList arrayList;
         ArrayList arrayList2;
         ArrayList arrayList3;
         ArrayList arrayList4;
         super.N(z10);
-        do0 do0Var = this.e0.h0;
+        do0 do0Var = this.e0.i0;
         do0Var.e(this.W || this.X || (arrayList = this.P) == null || !arrayList.isEmpty() || (arrayList2 = this.Q) == null || !arrayList2.isEmpty() || (arrayList3 = this.S) == null || !arrayList3.isEmpty() || (arrayList4 = this.R) == null || !arrayList4.isEmpty(), z10);
         if (!TextUtils.isEmpty(this.b0)) {
             do0Var.d.setText(LocaleController.getString(R.string.NoResult));

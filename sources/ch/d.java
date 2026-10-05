@@ -22,7 +22,7 @@ import v7.u7;
 import w7.e9;
 import w7.q;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class d extends li.e {
     public static final float[] F = new float[8];
@@ -214,21 +214,6 @@ public abstract class d extends li.e {
         fArr[0] = f7;
         fArr[3] = f10;
         fArr[2] = f10;
-        fArr[5] = f11;
-        fArr[4] = f11;
-        fArr[7] = f12;
-        fArr[6] = f12;
-        cVar.a();
-        u();
-    }
-
-    public final void B(float f7, float f10, float f11, float f12) {
-        c cVar = this.l;
-        float[] fArr = cVar.b;
-        fArr[1] = f7;
-        fArr[0] = f7;
-        fArr[3] = f10;
-        fArr[2] = f10;
         fArr[5] = 0.0f;
         fArr[4] = 0.0f;
         fArr[7] = 0.0f;
@@ -246,7 +231,7 @@ public abstract class d extends li.e {
         u();
     }
 
-    public final void C(int i10) {
+    public final void B(int i10) {
         this.l.f = i10;
         u();
     }
@@ -306,8 +291,8 @@ public abstract class d extends li.e {
         if (aVar == null) {
             return;
         }
-        this.g = aVar.B();
-        this.f = this.e.i();
+        this.g = aVar.H();
+        this.f = this.e.B();
         this.h = this.e.a();
         this.i = this.e.c();
     }
@@ -352,7 +337,6 @@ public abstract class d extends li.e {
             return;
         }
         rectF2.set(rectF);
-        v();
     }
 
     public final void n(Canvas canvas, fh.a aVar) {
@@ -459,7 +443,7 @@ public abstract class d extends li.e {
         canvas.clipPath(cVar.k);
         canvas.translate(rect2.left, rect2.top);
         canvas.translate(-f15, -f17);
-        aVar.y(canvas, f15, f17, f19, f21);
+        aVar.v(canvas, f15, f17, f19, f21);
         canvas.restore();
         if (Color.alpha(l12) > 0) {
             Paint paint4 = this.r;
@@ -519,7 +503,7 @@ public abstract class d extends li.e {
         m();
     }
 
-    public final void x(dh.a aVar) {
+    public final void w(dh.a aVar) {
         this.e = aVar;
         k();
         if (aVar instanceof dh.e) {
@@ -536,7 +520,7 @@ public abstract class d extends li.e {
         }
     }
 
-    public final void y(int i10) {
+    public final void x(int i10) {
         c cVar = this.l;
         if (cVar.d != i10) {
             cVar.d = i10;
@@ -545,10 +529,25 @@ public abstract class d extends li.e {
         }
     }
 
-    public final void z(float f7) {
+    public final void y(float f7) {
         c cVar = this.l;
         Arrays.fill(cVar.b, f7);
         Arrays.fill(cVar.c, f7);
+        cVar.a();
+        u();
+    }
+
+    public final void z(float f7, float f10, float f11, float f12) {
+        c cVar = this.l;
+        float[] fArr = cVar.b;
+        fArr[1] = f7;
+        fArr[0] = f7;
+        fArr[3] = f10;
+        fArr[2] = f10;
+        fArr[5] = f11;
+        fArr[4] = f11;
+        fArr[7] = f12;
+        fArr[6] = f12;
         cVar.a();
         u();
     }
@@ -561,10 +560,7 @@ public abstract class d extends li.e {
     public final void setColorFilter(ColorFilter colorFilter) {
     }
 
-    public void v() {
-    }
-
-    public d w() {
+    public d v() {
         return this;
     }
 }

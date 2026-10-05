@@ -6,14 +6,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.d8;
 import org.telegram.ui.Components.dl0;
 import org.telegram.ui.Components.fy;
-import org.telegram.ui.Components.kt0;
+import org.telegram.ui.Components.lt0;
 import org.telegram.ui.Components.o6;
 import org.telegram.ui.Components.tp;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.vh0;
 import org.telegram.ui.yq;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class w2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -96,9 +96,9 @@ public final class w2 extends AnimatorListenerAdapter {
                 dl0Var.a.invalidate();
                 break;
             case 10:
-                kt0 kt0Var = (kt0) this.c;
-                kt0Var.e.O1.remove(this.b);
-                kt0Var.a.invalidate();
+                lt0 lt0Var = (lt0) this.c;
+                lt0Var.e.O1.remove(this.b);
+                lt0Var.a.invalidate();
                 break;
             default:
                 org.telegram.ui.Components.voip.d1 d1Var = (org.telegram.ui.Components.voip.d1) this.c;

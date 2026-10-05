@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class dm implements cm0 {
     public final /* synthetic */ ChatAttachAlertPhotoLayout a;
@@ -16,7 +16,7 @@ public final class dm implements cm0 {
     public final void a(boolean z10) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
         chatAttachAlertPhotoLayout.L = z10 ? 1 : 0;
-        chatAttachAlertPhotoLayout.E.e1(true);
+        chatAttachAlertPhotoLayout.E.d1(true);
     }
 
     @Override // org.telegram.ui.Components.cm0

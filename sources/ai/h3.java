@@ -28,7 +28,7 @@ import org.telegram.ui.mq;
 import org.telegram.ui.uy;
 import org.telegram.ui.zz0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -128,7 +128,7 @@ public final /* synthetic */ class h3 implements Runnable {
                         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                         b2Var.R = string;
                         b2Var.T = LocaleController.getString(R.string.LiveStoryAlreadyStreaming);
-                        org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
+                        org.telegram.messenger.q.o(R.string.OK, alertDialog$Builder, null);
                     }
                     callback.run(Boolean.FALSE);
                     return;
@@ -194,14 +194,14 @@ public final /* synthetic */ class h3 implements Runnable {
                 profileActivity.presentFragment(mqVar);
                 return;
             default:
-                yh.g gVar = (yh.g) obj4;
+                yh.h hVar = (yh.h) obj4;
                 TLObject tLObject2 = (TLObject) obj2;
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) obj;
                 if (((TLRPC.TL_error) obj3) == null) {
                     TL_account.Password password = (TL_account.Password) tLObject2;
                     twoStepVerificationActivity.I = password;
                     TwoStepVerificationActivity.m0(password);
-                    gVar.h0(this.b, this.c, twoStepVerificationActivity.l0(), twoStepVerificationActivity);
+                    hVar.p0(this.b, this.c, twoStepVerificationActivity.l0(), twoStepVerificationActivity);
                     return;
                 }
                 return;
@@ -244,8 +244,8 @@ public final /* synthetic */ class h3 implements Runnable {
         this.h = uyVar;
     }
 
-    public /* synthetic */ h3(yh.g gVar, TLRPC.TL_error tL_error, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10, long j3) {
-        this.d = gVar;
+    public /* synthetic */ h3(yh.h hVar, TLRPC.TL_error tL_error, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10, long j3) {
+        this.d = hVar;
         this.e = tL_error;
         this.h = tLObject;
         this.f = twoStepVerificationActivity;

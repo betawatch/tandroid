@@ -44,7 +44,7 @@ import org.telegram.ui.rn;
 import org.telegram.ui.wp;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class z extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -210,7 +210,7 @@ public final class z extends AnimatorListenerAdapter {
                 e2Var.E = false;
                 e2Var.v.setAlpha(1.0f);
                 e2Var.v.A1.setVisibility(0);
-                e2Var.x.z(AndroidUtilities.dp(22.0f));
+                e2Var.x.y(AndroidUtilities.dp(22.0f));
                 e2Var.x.setAlpha(255);
                 hh.g gVar3 = e2Var.s;
                 gVar3.e = true;
@@ -449,7 +449,7 @@ public final class z extends AnimatorListenerAdapter {
                 ((zl0) bl0Var.e).setScrollEnabled(true);
                 ((zl0) bl0Var.e).setVerticalScrollBarEnabled(true);
                 if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                    if (((zl0) bl0Var.e).e.C() != ((zl0) bl0Var.e).getChildCount()) {
+                    if (((zl0) bl0Var.e).e.x() != ((zl0) bl0Var.e).getChildCount()) {
                         throw new RuntimeException("views count in child helper must be quals views count in recycler view");
                     }
                     if (((ArrayList) ((zl0) bl0Var.e).e.d).size() != 0) {

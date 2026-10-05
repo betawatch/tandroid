@@ -9,30 +9,30 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.e71;
 import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.sq;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.pk;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class y1 extends f61 {
+public final class y1 extends g61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        f61.setup(new y1());
+        g61.setup(new y1());
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final void bindView(View view, g61 g61Var, boolean z10, u61 u61Var, c71 c71Var) {
+    @Override // org.telegram.ui.Components.g61
+    public final void bindView(View view, h61 h61Var, boolean z10, w61 w61Var, e71 e71Var) {
         z1 z1Var = (z1) view;
-        String str = g61Var.n;
-        String str2 = (String) g61Var.l;
-        long j3 = g61Var.B;
+        String str = h61Var.n;
+        String str2 = (String) h61Var.l;
+        long j3 = h61Var.B;
         ImageView imageView = z1Var.a;
         z1Var.b.setText(str);
         pk pkVar = z1Var.c;
@@ -73,7 +73,7 @@ public final class y1 extends f61 {
         z1Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.g61
     public final View createView(Context context, zl0 zl0Var, int i10, int i11, d6 d6Var) {
         return new z1(context);
     }

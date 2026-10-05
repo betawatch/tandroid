@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.r50;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class t2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -75,10 +75,10 @@ public final class t2 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                yh.b4 b4Var = (yh.b4) obj;
-                b4Var.y = f7;
-                b4Var.invalidate();
-                if (animator == b4Var.E && runnable != null) {
+                yh.c4 c4Var = (yh.c4) obj;
+                c4Var.y = f7;
+                c4Var.invalidate();
+                if (animator == c4Var.E && runnable != null) {
                     runnable.run();
                     break;
                 }

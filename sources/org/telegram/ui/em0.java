@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class em0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -156,7 +156,7 @@ public final class em0 extends FrameLayout {
             default:
                 super.onMeasure(i10, i11);
                 org.telegram.ui.Components.nj0 nj0Var = ((org.telegram.ui.Components.wi0) this.d).h;
-                float measuredHeight = (r0.f / 768.0f) * ((hg.k) this.b).getMeasuredHeight();
+                float measuredHeight = (r0.f / 768.0f) * ((hg.l) this.b).getMeasuredHeight();
                 if (this.c != measuredHeight) {
                     this.c = measuredHeight;
                     ViewGroup.LayoutParams layoutParams = nj0Var.getLayoutParams();
@@ -171,10 +171,10 @@ public final class em0 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public em0(org.telegram.ui.Components.wi0 wi0Var, Context context, hg.k kVar) {
+    public em0(org.telegram.ui.Components.wi0 wi0Var, Context context, hg.l lVar) {
         super(context);
         this.a = 3;
         this.d = wi0Var;
-        this.b = kVar;
+        this.b = lVar;
     }
 }

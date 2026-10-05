@@ -3,12 +3,22 @@ package ai;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
-import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class l2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 1:
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                break;
+        }
+    }
 
     @Override // android.animation.Animator.AnimatorListener
     public void onAnimationEnd(Animator animator, boolean z10) {
@@ -23,20 +33,6 @@ public final class l2 extends AnimatorListenerAdapter {
                 break;
             default:
                 super.onAnimationEnd(animator, z10);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 1:
-                break;
-            case 2:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                break;
-            default:
-                super.onAnimationEnd(animator);
                 break;
         }
     }

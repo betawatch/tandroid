@@ -15,13 +15,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertController$RecycleListView;
 import b2.q0;
 import com.google.android.gms.internal.play_billing.h4;
-import hg.k0;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements r2.v {
     public final /* synthetic */ int a;
@@ -165,7 +164,7 @@ public final /* synthetic */ class b0 implements r2.v {
         if (i10 >= 0 && i10 < this.b) {
             return ((long[]) this.c)[i10];
         }
-        StringBuilder j3 = k0.j(i10, "Invalid index ", ", size is ");
+        StringBuilder j3 = hg.c.j(i10, "Invalid index ", ", size is ");
         j3.append(this.b);
         throw new IndexOutOfBoundsException(j3.toString());
     }
@@ -262,7 +261,7 @@ public final /* synthetic */ class b0 implements r2.v {
     }
 
     @Override // r2.v
-    public boolean v(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+    public boolean y(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
         return codecCapabilities.isFeatureSupported(str);
     }
 

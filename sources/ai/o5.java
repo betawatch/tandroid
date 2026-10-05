@@ -33,15 +33,15 @@ import org.telegram.ui.Components.hc0;
 import org.telegram.ui.Components.j90;
 import org.telegram.ui.Components.xi;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.b41;
 import org.telegram.ui.dg0;
-import org.telegram.ui.gb1;
+import org.telegram.ui.eb1;
 import org.telegram.ui.k11;
 import org.telegram.ui.p11;
 import org.telegram.ui.yn;
+import org.telegram.ui.z31;
 import org.telegram.ui.zi0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -203,7 +203,7 @@ public final /* synthetic */ class o5 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj;
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = xiVar.j0;
                 if (chatAttachAlertPhotoLayout != null) {
-                    yh.x7.m1(context, chatAttachAlertPhotoLayout.getStarsPrice(), true, new m0(9, xiVar, f1Var), d6Var);
+                    yh.z7.m1(context, chatAttachAlertPhotoLayout.getStarsPrice(), true, new m0(9, xiVar, f1Var), d6Var);
                     break;
                 }
                 break;
@@ -275,7 +275,7 @@ public final /* synthetic */ class o5 implements View.OnClickListener {
                 H.Z();
                 break;
             case 15:
-                b80 G = b80.G(((b41) obj4).container, (org.telegram.ui.ActionBar.d6) obj2, (ImageView) obj, true);
+                b80 G = b80.G(((z31) obj4).container, (org.telegram.ui.ActionBar.d6) obj2, (ImageView) obj, true);
                 G.V(5);
                 G.t = false;
                 G.a0(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(-32.0f));
@@ -283,10 +283,10 @@ public final /* synthetic */ class o5 implements View.OnClickListener {
                 break;
             default:
                 xh.r2 r2Var = (xh.r2) obj4;
-                yh.k5 k5Var = (yh.k5) obj3;
+                yh.l5 l5Var = (yh.l5) obj3;
                 TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj2;
                 Utilities.Callback0Return callback0Return = (Utilities.Callback0Return) obj;
-                ArrayList h = k5Var.h();
+                ArrayList h = l5Var.h();
                 int i19 = 0;
                 while (true) {
                     if (i19 >= h.size()) {
@@ -303,16 +303,16 @@ public final /* synthetic */ class o5 implements View.OnClickListener {
                     savedStarGift.pinned_to_top = false;
                     h.set(i10, savedStarGift2);
                     savedStarGift2.pinned_to_top = true;
-                    ArrayList arrayList4 = k5Var.l;
+                    ArrayList arrayList4 = l5Var.l;
                     arrayList4.removeAll(h);
-                    if (k5Var.e && !k5Var.c) {
-                        Collections.sort(arrayList4, new gb1(21));
+                    if (l5Var.e && !l5Var.c) {
+                        Collections.sort(arrayList4, new eb1(21));
                     }
                     arrayList4.addAll(0, h);
-                    NotificationCenter.getInstance(k5Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(k5Var.b), k5Var);
-                    k5Var.l();
+                    NotificationCenter.getInstance(l5Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(l5Var.b), l5Var);
+                    l5Var.l();
                     r2Var.dismiss();
-                    ((yc) callback0Return.run()).M(LocaleController.formatString(R.string.Gift2ReplacedPinTitle, yh.x3.D1(savedStarGift2.gift)), LocaleController.formatString(R.string.Gift2ReplacedPinSubtitle, yh.x3.D1(savedStarGift.gift)), R.raw.ic_pin).j();
+                    ((yc) callback0Return.run()).M(LocaleController.formatString(R.string.Gift2ReplacedPinTitle, yh.y3.D1(savedStarGift2.gift)), LocaleController.formatString(R.string.Gift2ReplacedPinSubtitle, yh.y3.D1(savedStarGift.gift)), R.raw.ic_pin).j();
                     break;
                 }
                 break;

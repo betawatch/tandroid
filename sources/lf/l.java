@@ -1,9 +1,8 @@
 package lf;
 
-import hg.k0;
 import org.telegram.messenger.OneUIUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class l {
     public static final int[][] h = {new int[]{11025, -1, 22050, 44100}, new int[]{12000, -1, 24000, 48000}, new int[]{8000, -1, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 32000}, new int[]{-1, -1, -1, -1}};
@@ -52,7 +51,7 @@ public final class l {
         int i19 = i18 != 0 ? 4 : 6;
         i19 = i14 == 1 ? i19 + m[i17][i13] : i19;
         if (b() < i19) {
-            throw new j(k0.h(i19, "Frame size must be at least "));
+            throw new j(hg.c.h(i19, "Frame size must be at least "));
         }
     }
 

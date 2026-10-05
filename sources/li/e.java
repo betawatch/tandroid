@@ -3,10 +3,10 @@ package li;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class e extends Drawable {
-    public n a = m.f();
+    public q a = p.f();
     public int b = 255;
     public float c;
     public float d;
@@ -47,19 +47,18 @@ public abstract class e extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
-        int i11 = this.b;
-        if (i11 != i10) {
+        if (this.b != i10) {
             this.b = i10;
-            f(i11, i10);
+            f(i10);
         }
     }
 
-    public void g(n nVar) {
+    public void f(int i10) {
+    }
+
+    public void g(q qVar) {
     }
 
     public void h() {
-    }
-
-    public void f(int i10, int i11) {
     }
 }

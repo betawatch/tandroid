@@ -50,10 +50,10 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.fa1;
-import org.telegram.ui.ua1;
+import org.telegram.ui.da1;
+import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bo0 implements Runnable {
     public final /* synthetic */ int a;
@@ -109,28 +109,28 @@ public final /* synthetic */ class bo0 implements Runnable {
                 byte[] bArr = tL_sponsoredPeer.random_id;
                 org.telegram.ui.ActionBar.d6 resourceProvider = uyVar.getResourceProvider();
                 yw ywVar = new yw(28, (jo0) obj4, tL_sponsoredPeer);
-                int i24 = org.telegram.ui.v31.v;
+                int i24 = org.telegram.ui.t31.v;
                 int currentAccount = uyVar.getCurrentAccount();
                 Activity parentActivity = uyVar.getParentActivity();
                 if (parentActivity != null) {
                     TLRPC.TL_messages_reportSponsoredMessage tL_messages_reportSponsoredMessage = new TLRPC.TL_messages_reportSponsoredMessage();
                     tL_messages_reportSponsoredMessage.random_id = bArr;
                     tL_messages_reportSponsoredMessage.option = new byte[0];
-                    ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new org.telegram.messenger.hi(parentActivity, resourceProvider, bArr, uyVar, ywVar, currentAccount));
+                    ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new org.telegram.messenger.ii(parentActivity, resourceProvider, bArr, uyVar, ywVar, currentAccount));
                 }
                 b80Var.u();
                 break;
             case 1:
-                zq0.r((zq0) obj4, (AtomicReference) obj3, (gq0) obj2, (TLRPC.Dialog) obj);
+                br0.r((br0) obj4, (AtomicReference) obj3, (iq0) obj2, (TLRPC.Dialog) obj);
                 break;
             case 2:
-                qy0.D((qy0) obj4, (TLRPC.TL_error) obj3, (TLObject) obj2, (MediaDataController) obj);
+                ry0.D((ry0) obj4, (TLRPC.TL_error) obj3, (TLObject) obj2, (MediaDataController) obj);
                 break;
             case 3:
-                qy0.o((org.telegram.ui.ms0) obj4, (TLRPC.TL_error) obj3, (TLObject) obj2, (TLRPC.TL_messages_getAttachedStickers) obj);
+                ry0.o((org.telegram.ui.ms0) obj4, (TLRPC.TL_error) obj3, (TLObject) obj2, (TLRPC.TL_messages_getAttachedStickers) obj);
                 break;
             case 4:
-                d11 d11Var = (d11) obj4;
+                e11 e11Var = (e11) obj4;
                 TLObject tLObject = (TLObject) obj2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 try {
@@ -139,31 +139,31 @@ public final /* synthetic */ class bo0 implements Runnable {
                     FileLog.e(e7);
                 }
                 if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    MessagesController.getInstance(d11Var.d).performLogout(0);
+                    MessagesController.getInstance(e11Var.d).performLogout(0);
                     break;
                 } else if (tL_error == null || tL_error.code != -1000) {
                     String string = LocaleController.getString(R.string.ErrorOccurred);
                     if (tL_error != null) {
-                        StringBuilder j3 = t8.b.j(string, "\n");
+                        StringBuilder j3 = sa.e.j(string, "\n");
                         j3.append(tL_error.text);
                         string = j3.toString();
                     }
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(d11Var.getContext());
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e11Var.getContext());
                     String string2 = LocaleController.getString(R.string.AppName);
                     org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                     b2Var.R = string2;
                     b2Var.T = string;
-                    org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
+                    org.telegram.messenger.q.o(R.string.OK, alertDialog$Builder, null);
                     break;
                 }
                 break;
             case 5:
-                v31 v31Var = (v31) obj4;
+                w31 w31Var = (w31) obj4;
                 ((b80) obj).u();
-                ((MessagesController) obj3).getTopicsController().pinTopic(-v31Var.c, ((TLRPC.TL_forumTopic) obj2).id, !r6.pinned, v31Var.h);
+                ((MessagesController) obj3).getTopicsController().pinTopic(-w31Var.c, ((TLRPC.TL_forumTopic) obj2).id, !r6.pinned, w31Var.h);
                 break;
             case 6:
-                t41.n((t41) obj4, (TLRPC.TL_error) obj3, (TLObject) obj2, (TLRPC.TL_textWithEntities) obj);
+                u41.n((u41) obj4, (TLRPC.TL_error) obj3, (TLObject) obj2, (TLRPC.TL_textWithEntities) obj);
                 break;
             case 7:
                 org.telegram.ui.h60 h60Var2 = (org.telegram.ui.h60) obj4;
@@ -268,15 +268,15 @@ public final /* synthetic */ class bo0 implements Runnable {
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(p50Var.c.volume_id);
                         sb2.append("_");
-                        String n10 = a4.a.n(p50Var.c.local_id, "@50_50", sb2);
+                        String o9 = a4.a.o(p50Var.c.local_id, "@50_50", sb2);
                         StringBuilder sb3 = new StringBuilder();
                         h60Var = h60Var3;
                         sb3.append(closestPhotoSizeWithSize.location.volume_id);
                         sb3.append("_");
-                        String n11 = a4.a.n(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3);
+                        String o10 = a4.a.o(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3);
                         ImageLoader imageLoader = ImageLoader.getInstance();
                         i15 = ((org.telegram.ui.ActionBar.f3) h60Var).currentAccount;
-                        imageLoader.replaceImageInCache(n10, n11, ImageLocation.getForUser(i15, user, 1), false);
+                        imageLoader.replaceImageInCache(o9, o10, ImageLocation.getForUser(i15, user, 1), false);
                     }
                     if (closestPhotoSizeWithSize2 != null && p50Var.b != null) {
                         i11 = ((org.telegram.ui.ActionBar.f3) h60Var).currentAccount;
@@ -544,7 +544,7 @@ public final /* synthetic */ class bo0 implements Runnable {
                 AccountInstance accountInstance3 = AccountInstance.getInstance(i18);
                 of.b bVar = new of.b(7, z10);
                 bVar.O(oVar);
-                billingController.launchBillingFlow(parentActivity2, accountInstance3, (TLRPC.TL_inputStorePaymentAuthCode) obj, Collections.singletonList(bVar.s()));
+                billingController.launchBillingFlow(parentActivity2, accountInstance3, (TLRPC.TL_inputStorePaymentAuthCode) obj, Collections.singletonList(bVar.i()));
                 break;
             case 23:
                 org.telegram.ui.tg0 tg0Var = (org.telegram.ui.tg0) obj4;
@@ -576,18 +576,18 @@ public final /* synthetic */ class bo0 implements Runnable {
                 org.telegram.ui.ej0 ej0Var = (org.telegram.ui.ej0) obj4;
                 jg.b bVar2 = (jg.b) obj3;
                 String str9 = (String) obj2;
-                ua1 ua1Var = (ua1) obj;
+                sa1 sa1Var = (sa1) obj;
                 org.telegram.ui.hj0 hj0Var = ej0Var.v.d;
                 if (bVar2 != null) {
                     hj0Var.v.put(str9, bVar2);
                 }
-                if (bVar2 != null && !ua1Var.b && (i19 = ua1Var.a) >= 0) {
+                if (bVar2 != null && !sa1Var.b && (i19 = sa1Var.a) >= 0) {
                     View m10 = hj0Var.h.m(i19);
-                    if (m10 instanceof fa1) {
+                    if (m10 instanceof da1) {
                         ej0Var.r.e = bVar2;
-                        fa1 fa1Var = (fa1) m10;
-                        fa1Var.b.t0.d(false, false);
-                        fa1Var.g(false);
+                        da1 da1Var = (da1) m10;
+                        da1Var.b.t0.d(false, false);
+                        da1Var.g(false);
                     }
                 }
                 ej0Var.f();
@@ -752,9 +752,9 @@ public final /* synthetic */ class bo0 implements Runnable {
         }
     }
 
-    public /* synthetic */ bo0(v31 v31Var, b80 b80Var, MessagesController messagesController, TLRPC.TL_forumTopic tL_forumTopic) {
+    public /* synthetic */ bo0(w31 w31Var, b80 b80Var, MessagesController messagesController, TLRPC.TL_forumTopic tL_forumTopic) {
         this.a = 5;
-        this.b = v31Var;
+        this.b = w31Var;
         this.e = b80Var;
         this.c = messagesController;
         this.d = tL_forumTopic;

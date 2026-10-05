@@ -19,10 +19,10 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.xb1;
+import org.telegram.ui.vb1;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class j0 extends rg.m1 {
     public final ArrayList Q0;
@@ -107,10 +107,10 @@ public final class j0 extends rg.m1 {
     }
 
     @Override // rg.m1
-    public final void U(xb1 xb1Var) {
+    public final void U(vb1 vb1Var) {
         View view = this.B0;
         ArrayList arrayList = this.Q0;
-        xb1Var.addView(view, z5.k(0.0f, arrayList.size() == 1 ? 28.0f : 34.0f, 0.0f, arrayList.size() == 1 ? 9.0f : 14.0f, -1, arrayList.size() == 1 ? 94 : 83));
+        vb1Var.addView(view, z5.k(0.0f, arrayList.size() == 1 ? 28.0f : 34.0f, 0.0f, arrayList.size() == 1 ? 9.0f : 14.0f, -1, arrayList.size() == 1 ? 94 : 83));
     }
 
     @Override // rg.m1

@@ -12,13 +12,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.bp0;
-import org.telegram.ui.Components.qw0;
+import org.telegram.ui.Components.cp0;
+import org.telegram.ui.Components.rw0;
 import org.telegram.ui.Components.sm0;
+import org.telegram.ui.a51;
 import org.telegram.ui.c51;
 import org.telegram.ui.d40;
-import org.telegram.ui.e51;
-import org.telegram.ui.ge1;
+import org.telegram.ui.ee1;
 import org.telegram.ui.gw0;
 import org.telegram.ui.h60;
 import org.telegram.ui.to;
@@ -28,7 +28,7 @@ import org.telegram.ui.yn;
 import org.telegram.ui.zd;
 import qg.t2;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final class g extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator anim) {
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
-        c51 c51Var;
+        a51 a51Var;
         switch (this.a) {
             case 0:
                 kotlin.jvm.internal.i.e(anim, "anim");
@@ -178,14 +178,14 @@ public final class g extends AnimatorListenerAdapter {
                 h60Var.Q.invalidate();
                 return;
             case 8:
-                qw0 qw0Var = (qw0) this.c;
+                rw0 rw0Var = (rw0) this.c;
                 ug0 ug0Var = (ug0) this.d;
                 if (ug0Var.J == 0 && this.b) {
                     ug0Var.v1(true, true);
                 }
-                qw0Var.setVisibility(8);
-                qw0Var.g();
-                qw0Var.setX(0.0f);
+                rw0Var.setVisibility(8);
+                rw0Var.g();
+                rw0Var.setX(0.0f);
                 return;
             case 9:
                 gw0 gw0Var = (gw0) this.d;
@@ -200,21 +200,21 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             case 10:
-                e51 e51Var = (e51) this.d;
-                e51Var.s = this.b ? 1.0f : 0.0f;
-                e51Var.b.invalidate();
-                e51Var.c.invalidate();
-                e51Var.e();
-                TextView textView = e51Var.y;
+                c51 c51Var = (c51) this.d;
+                c51Var.s = this.b ? 1.0f : 0.0f;
+                c51Var.b.invalidate();
+                c51Var.c.invalidate();
+                c51Var.e();
+                TextView textView = c51Var.y;
                 if (textView != null) {
-                    textView.setAlpha(e51Var.s);
+                    textView.setAlpha(c51Var.s);
                 }
-                if (e51Var.S) {
-                    e51Var.N.invalidate();
+                if (c51Var.S) {
+                    c51Var.N.invalidate();
                 }
-                if (!e51Var.S && (c51Var = e51Var.N) != null && c51Var.getSeekBarWaveform() != null) {
-                    bp0 seekBarWaveform = e51Var.N.getSeekBarWaveform();
-                    seekBarWaveform.L = e51Var.s;
+                if (!c51Var.S && (a51Var = c51Var.N) != null && a51Var.getSeekBarWaveform() != null) {
+                    cp0 seekBarWaveform = c51Var.N.getSeekBarWaveform();
+                    seekBarWaveform.L = c51Var.s;
                     u1 u1Var2 = seekBarWaveform.n;
                     if (u1Var2 != null) {
                         u1Var2.invalidate();
@@ -227,11 +227,11 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             case 11:
-                ge1 ge1Var = (ge1) this.d;
-                ge1Var.x = this.b ? 1.0f : 0.0f;
-                ge1Var.b.invalidate();
-                ge1Var.c.invalidate();
-                ge1Var.e();
+                ee1 ee1Var = (ee1) this.d;
+                ee1Var.x = this.b ? 1.0f : 0.0f;
+                ee1Var.b.invalidate();
+                ee1Var.c.invalidate();
+                ee1Var.e();
                 Runnable runnable5 = (Runnable) this.c;
                 if (runnable5 != null) {
                     runnable5.run();
@@ -255,9 +255,9 @@ public final class g extends AnimatorListenerAdapter {
                 return;
             default:
                 super.onAnimationEnd(anim);
-                zg.b0 b0Var = (zg.b0) this.d;
-                b0Var.E.remove((ValueAnimator) this.c);
-                zg.b0.a(b0Var, this.b);
+                zg.z zVar = (zg.z) this.d;
+                zVar.E.remove((ValueAnimator) this.c);
+                zg.z.a(zVar, this.b);
                 return;
         }
     }

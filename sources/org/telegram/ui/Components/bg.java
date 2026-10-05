@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class bg extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -31,9 +31,9 @@ public final class bg extends AnimatorListenerAdapter {
             int i10 = ChatActivityEnterView.n5;
             chatActivityEnterView.b0();
         }
-        pp0 pp0Var = chatActivityEnterView.p0;
-        if (pp0Var != null) {
-            pp0Var.setVisibility(z10 ? 0 : 8);
+        qp0 qp0Var = chatActivityEnterView.p0;
+        if (qp0Var != null) {
+            qp0Var.setVisibility(z10 ? 0 : 8);
             chatActivityEnterView.p0.setAlpha(this.d);
             chatActivityEnterView.p0.setTranslationX(this.e);
             f7 = chatActivityEnterView.p0.getTranslationX();
@@ -52,9 +52,9 @@ public final class bg extends AnimatorListenerAdapter {
             return;
         }
         ChatActivityEnterView chatActivityEnterView = this.f;
-        pp0 pp0Var = chatActivityEnterView.p0;
-        if (pp0Var != null) {
-            pp0Var.setVisibility(8);
+        qp0 qp0Var = chatActivityEnterView.p0;
+        if (qp0Var != null) {
+            qp0Var.setVisibility(8);
         }
         chatActivityEnterView.Q0.setTranslationX(0.0f);
         chatActivityEnterView.G = 0.0f;
@@ -71,9 +71,9 @@ public final class bg extends AnimatorListenerAdapter {
             chatActivityEnterView.b0();
             chatActivityEnterView.p0.setVisibility(0);
         }
-        pp0 pp0Var = chatActivityEnterView.p0;
-        if (pp0Var != null) {
-            pp0Var.setAlpha(this.b);
+        qp0 qp0Var = chatActivityEnterView.p0;
+        if (qp0Var != null) {
+            qp0Var.setAlpha(this.b);
             chatActivityEnterView.p0.setTranslationX(this.c);
             f7 = chatActivityEnterView.p0.getTranslationX();
         } else {

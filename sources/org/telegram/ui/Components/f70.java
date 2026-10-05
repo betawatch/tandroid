@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class f70 extends org.telegram.ui.ActionBar.f3 {
     public int E;
@@ -119,7 +119,7 @@ public final class f70 extends org.telegram.ui.ActionBar.f3 {
         this.containerView.addView(view, layoutParams);
         s60 s60Var = new s60(this, context);
         this.V = s60Var;
-        s60Var.s1();
+        s60Var.r1();
         s60Var.setTag(14);
         getContext();
         s4.c0 c0Var = new s4.c0(1, false);
@@ -216,14 +216,14 @@ public final class f70 extends org.telegram.ui.ActionBar.f3 {
         char c10;
         Object obj;
         int i11;
-        org.telegram.ui.ActionBar.f3 j10 = org.telegram.messenger.ok.j(1, context, d6Var, false);
+        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.bi.i(1, context, d6Var, false);
         org.telegram.ui.ActionBar.f3[] f3VarArr = new org.telegram.ui.ActionBar.f3[1];
-        LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
-        f7.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(4.0f));
-        f7.setClipChildren(false);
-        f7.setClipToPadding(false);
+        LinearLayout e7 = org.telegram.messenger.bi.e(context, 1);
+        e7.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(4.0f));
+        e7.setClipChildren(false);
+        e7.setClipToPadding(false);
         FrameLayout frameLayout = new FrameLayout(context);
-        f7.addView(frameLayout, w7.z5.t(-1, -2, 7, 0, 0, 0, 10));
+        e7.addView(frameLayout, w7.z5.t(-1, -2, 7, 0, 0, 0, 10));
         w9 w9Var = new w9(context);
         w9Var.setRoundRadius(AndroidUtilities.dp(50.0f));
         h9 h9Var = new h9((org.telegram.ui.ActionBar.d6) null);
@@ -258,42 +258,42 @@ public final class f70 extends org.telegram.ui.ActionBar.f3 {
         org.telegram.ui.Cells.c1.p(org.telegram.ui.ActionBar.i6.j5, d6Var, textView, 1, 20.0f);
         textView.setGravity(17);
         textView.setText(LocaleController.getString(R.string.StarsSubscriptionTitle));
-        TextView h = com.google.android.gms.internal.vision.e2.h(f7, textView, w7.z5.t(-1, -2, 17, 20, 0, 20, 4), context);
+        TextView h = com.google.android.gms.internal.vision.e2.h(e7, textView, w7.z5.t(-1, -2, 17, 20, 0, 20, 4), context);
         h.setTextSize(1, 14.0f);
         h.setGravity(17);
-        int i12 = org.telegram.ui.ActionBar.i6.B6;
-        h.setTextColor(org.telegram.ui.ActionBar.i6.v0(i12, d6Var));
-        int i13 = tL_starsSubscriptionPricing.period;
-        if (i13 == 2592000) {
-            int i14 = R.string.StarsSubscriptionPrice;
+        int i13 = org.telegram.ui.ActionBar.i6.B6;
+        h.setTextColor(org.telegram.ui.ActionBar.i6.v0(i13, d6Var));
+        int i14 = tL_starsSubscriptionPricing.period;
+        if (i14 == 2592000) {
+            int i15 = R.string.StarsSubscriptionPrice;
             obj = "min";
             Object[] objArr = new Object[1];
             objArr[c10] = Long.valueOf(tL_starsSubscriptionPricing.amount);
-            h.setText(yh.x7.d1(false, LocaleController.formatString(i14, objArr), 0.8f, null));
-            i11 = i12;
+            h.setText(yh.z7.d1(false, LocaleController.formatString(i15, objArr), 0.8f, null));
+            i11 = i13;
         } else {
             obj = "min";
-            i11 = i12;
-            h.setText(yh.x7.d1(false, String.format(Locale.US, "⭐%1$d/%2$s", Long.valueOf(tL_starsSubscriptionPricing.amount), i13 == 300 ? "5min" : obj), 0.8f, null));
+            i11 = i13;
+            h.setText(yh.z7.d1(false, String.format(Locale.US, "⭐%1$d/%2$s", Long.valueOf(tL_starsSubscriptionPricing.amount), i14 == 300 ? "5min" : obj), 0.8f, null));
         }
-        TextView h10 = com.google.android.gms.internal.vision.e2.h(f7, h, w7.z5.t(-1, -2, 17, 20, 0, 20, 4), context);
+        TextView h10 = com.google.android.gms.internal.vision.e2.h(e7, h, w7.z5.t(-1, -2, 17, 20, 0, 20, 4), context);
         h10.setTextSize(1, 14.0f);
         h10.setGravity(17);
         h10.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
-        int i15 = tL_starsSubscriptionPricing.period;
-        if (i15 == 2592000) {
+        int i16 = tL_starsSubscriptionPricing.period;
+        if (i16 == 2592000) {
             h10.setText(LocaleController.formatString(R.string.StarsParticipantSubscriptionApproxMonth, BillingController.getInstance().formatCurrency((int) (MessagesController.getInstance(i10).starsUsdWithdrawRate1000 * (tL_starsSubscriptionPricing.amount / 1000.0d)), "USD")));
         } else {
-            h10.setText(String.format(Locale.US, "appx. %1$s per %2$s", BillingController.getInstance().formatCurrency((int) (MessagesController.getInstance(i10).starsUsdWithdrawRate1000 * (tL_starsSubscriptionPricing.amount / 1000.0d)), "USD"), i15 == 300 ? "5min" : obj));
+            h10.setText(String.format(Locale.US, "appx. %1$s per %2$s", BillingController.getInstance().formatCurrency((int) (MessagesController.getInstance(i10).starsUsdWithdrawRate1000 * (tL_starsSubscriptionPricing.amount / 1000.0d)), "USD"), i16 == 300 ? "5min" : obj));
         }
-        f7.addView(h10, w7.z5.t(-1, -2, 17, 20, 0, 20, 4));
-        k01 k01Var = new k01(context, d6Var);
+        e7.addView(h10, w7.z5.t(-1, -2, 17, 20, 0, 20, 4));
+        l01 l01Var = new l01(context, d6Var);
         q90 q90Var = new q90(context, d6Var);
         q90Var.setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f));
         q90Var.setEllipsize(TextUtils.TruncateAt.END);
-        int i16 = org.telegram.ui.ActionBar.i6.gc;
-        q90Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(i16, d6Var));
-        q90Var.setLinkTextColor(org.telegram.ui.ActionBar.i6.v0(i16, d6Var));
+        int i17 = org.telegram.ui.ActionBar.i6.gc;
+        q90Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(i17, d6Var));
+        q90Var.setLinkTextColor(org.telegram.ui.ActionBar.i6.v0(i17, d6Var));
         q90Var.setTextSize(1, 14.0f);
         q90Var.setSingleLine(true);
         q90Var.setDisablePaddingsOffsetY(true);
@@ -307,29 +307,29 @@ public final class f70 extends org.telegram.ui.ActionBar.f3 {
         spannableStringBuilder.setSpan(new u60(f3VarArr, tL_chatInviteImporter), 3, spannableStringBuilder.length(), 33);
         q90Var.setText(spannableStringBuilder);
         if (!z10) {
-            k01Var.i(q90Var, LocaleController.getString(R.string.StarsParticipantSubscription));
+            l01Var.i(q90Var, LocaleController.getString(R.string.StarsParticipantSubscription));
         }
-        k01Var.c(LocaleController.getString(R.string.StarsParticipantSubscriptionStart), LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterGiveawayCard().format(new Date(tL_chatInviteImporter.date * 1000)), LocaleController.getInstance().getFormatterDay().format(new Date(tL_chatInviteImporter.date * 1000))), null, null);
+        l01Var.c(LocaleController.getString(R.string.StarsParticipantSubscriptionStart), LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterGiveawayCard().format(new Date(tL_chatInviteImporter.date * 1000)), LocaleController.getInstance().getFormatterDay().format(new Date(tL_chatInviteImporter.date * 1000))), null, null);
         int currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
         if (channelParticipant != null) {
-            k01Var.c(LocaleController.getString(channelParticipant.subscription_until_date > currentTime ? R.string.StarsParticipantSubscriptionRenews : R.string.StarsParticipantSubscriptionExpired), LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterGiveawayCard().format(new Date(channelParticipant.subscription_until_date * 1000)), LocaleController.getInstance().getFormatterDay().format(new Date(channelParticipant.subscription_until_date * 1000))), null, null);
+            l01Var.c(LocaleController.getString(channelParticipant.subscription_until_date > currentTime ? R.string.StarsParticipantSubscriptionRenews : R.string.StarsParticipantSubscriptionExpired), LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterGiveawayCard().format(new Date(channelParticipant.subscription_until_date * 1000)), LocaleController.getInstance().getFormatterDay().format(new Date(channelParticipant.subscription_until_date * 1000))), null, null);
         }
-        f7.addView(k01Var, w7.z5.k(0.0f, 17.0f, 0.0f, 0.0f, -1, -2));
+        e7.addView(l01Var, w7.z5.k(0.0f, 17.0f, 0.0f, 0.0f, -1, -2));
         q90 q90Var2 = new q90(context, d6Var);
         q90Var2.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.z6, d6Var));
-        q90Var2.setLinkTextColor(org.telegram.ui.ActionBar.i6.v0(i16, d6Var));
+        q90Var2.setLinkTextColor(org.telegram.ui.ActionBar.i6.v0(i17, d6Var));
         q90Var2.setTextSize(1, 14.0f);
         q90Var2.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StarsTransactionTOS), new f30(context, 1)));
         q90Var2.setGravity(17);
-        f7.addView(q90Var2, w7.z5.k(14.0f, 15.0f, 14.0f, 15.0f, -1, -2));
+        e7.addView(q90Var2, w7.z5.k(14.0f, 15.0f, 14.0f, 15.0f, -1, -2));
         ci.d dVar = new ci.d(context, d6Var, true);
         dVar.g(LocaleController.getString(R.string.OK), false, true);
-        f7.addView(dVar, w7.z5.n(-1, 48));
+        e7.addView(dVar, w7.z5.n(-1, 48));
         dVar.setOnClickListener(new k2(f3VarArr, 2));
-        j10.customView = f7;
-        f3VarArr[0] = j10;
-        j10.useBackgroundTopPadding = false;
-        j10.fixNavigationBar();
+        i12.customView = e7;
+        f3VarArr[0] = i12;
+        i12.useBackgroundTopPadding = false;
+        i12.fixNavigationBar();
         f3VarArr[0].show();
     }
 

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class f80 extends FrameLayout {
     public final /* synthetic */ k80 a;
@@ -61,9 +61,9 @@ public final class f80 extends FrameLayout {
         g80 g80Var = k80Var.d;
         ((FrameLayout.LayoutParams) g80Var.getLayoutParams()).topMargin = AndroidUtilities.dp(65.0f) + measuredHeight;
         getMeasuredWidth();
-        int D = org.telegram.messenger.f0.D(58.0f, k80Var.h.size(), AndroidUtilities.dp(80.0f));
+        int D = org.telegram.messenger.q.D(58.0f, k80Var.h.size(), AndroidUtilities.dp(80.0f));
         i12 = ((org.telegram.ui.ActionBar.f3) k80Var).backgroundPaddingTop;
-        int C = org.telegram.messenger.f0.C(55.0f, i12 + D, measuredHeight);
+        int C = org.telegram.messenger.q.C(55.0f, i12 + D, measuredHeight);
         int i13 = size / 5;
         int i14 = C < i13 * 3 ? size - C : i13 * 2;
         if (g80Var.getPaddingTop() != i14) {

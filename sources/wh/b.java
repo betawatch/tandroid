@@ -3,7 +3,7 @@ package wh;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ra0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class b extends ra0 {
     public final /* synthetic */ d a0;
@@ -14,7 +14,7 @@ public final class b extends ra0 {
         this.a0 = dVar;
     }
 
-    @Override // org.telegram.ui.Components.n71, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.Components.o71, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
     public final void dismiss() {
         d dVar = this.a0;
         b bVar = dVar.i;

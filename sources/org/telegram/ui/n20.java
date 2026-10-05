@@ -11,7 +11,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class n20 extends View {
     public final /* synthetic */ int a;
@@ -206,13 +206,13 @@ public final class n20 extends View {
         switch (this.a) {
             case 10:
                 super.onLayout(z10, i10, i11, i12, i13);
-                r51 r51Var = (r51) this.b;
-                int[] iArr = r51Var.G;
+                p51 p51Var = (p51) this.b;
+                int[] iArr = p51Var.G;
                 getLocationOnScreen(iArr);
-                Rect rect = r51Var.d;
+                Rect rect = p51Var.d;
                 int i14 = iArr[0];
                 rect.set(i14, iArr[1], getWidth() + i14, getHeight() + iArr[1]);
-                AndroidUtilities.lerp(r51Var.c, rect, r51Var.I, r51Var.e);
+                AndroidUtilities.lerp(p51Var.c, rect, p51Var.I, p51Var.e);
                 break;
             default:
                 super.onLayout(z10, i10, i11, i12, i13);
@@ -261,15 +261,15 @@ public final class n20 extends View {
                 super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(ww0Var.c.Y, TLObject.FLAG_30));
                 break;
             case 14:
-                yh.x7 x7Var = (yh.x7) this.b;
-                if (x7Var.H) {
-                    int i15 = x7Var.I;
-                    kVar2 = ((org.telegram.ui.ActionBar.n2) x7Var).actionBar;
+                yh.z7 z7Var = (yh.z7) this.b;
+                if (z7Var.H) {
+                    int i15 = z7Var.I;
+                    kVar2 = ((org.telegram.ui.ActionBar.n2) z7Var).actionBar;
                     i12 = (kVar2.getMeasuredHeight() + i15) - AndroidUtilities.dp(16.0f);
                 } else {
-                    int dp3 = AndroidUtilities.dp(140.0f) + x7Var.I;
-                    if (AndroidUtilities.dp(24.0f) + x7Var.y.getMeasuredHeight() > dp3) {
-                        dp3 = AndroidUtilities.dp(24.0f) + x7Var.y.getMeasuredHeight();
+                    int dp3 = AndroidUtilities.dp(140.0f) + z7Var.I;
+                    if (AndroidUtilities.dp(24.0f) + z7Var.y.getMeasuredHeight() > dp3) {
+                        dp3 = AndroidUtilities.dp(24.0f) + z7Var.y.getMeasuredHeight();
                     }
                     i12 = dp3;
                 }
@@ -294,7 +294,7 @@ public final class n20 extends View {
                 break;
             case 11:
                 super.setAlpha(f7);
-                View view2 = ((yf1) this.b).fragmentView;
+                View view2 = ((wf1) this.b).fragmentView;
                 if (view2 != null) {
                     view2.invalidate();
                     break;

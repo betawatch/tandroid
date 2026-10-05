@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.ry0;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.an0;
 import org.telegram.ui.bj;
@@ -24,9 +24,9 @@ import org.telegram.ui.kn0;
 import org.telegram.ui.mq;
 import org.telegram.ui.ms0;
 import org.telegram.ui.no;
-import org.telegram.ui.v31;
+import org.telegram.ui.t31;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -100,7 +100,7 @@ public final /* synthetic */ class p3 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new m3((mq) obj4, tL_error, (TLRPC.InputCheckPasswordSRP) obj, (TwoStepVerificationActivity) obj3, (TLRPC.TL_channels_editCreator) obj2, 20));
                 break;
             case 7:
-                qy0.p((ms0) obj4, this.d, (TLRPC.TL_messages_getAttachedStickers) obj3, (no) obj2, tLObject, tL_error);
+                ry0.p((ms0) obj4, this.d, (TLRPC.TL_messages_getAttachedStickers) obj3, (no) obj2, tLObject, tL_error);
                 break;
             case 8:
                 AndroidUtilities.runOnUIThread(new f90(obj4, tL_error, obj, obj3, obj2, 5));
@@ -115,9 +115,9 @@ public final /* synthetic */ class p3 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new f90(obj4, tL_error, obj, obj3, obj2, 16));
                 break;
             case 12:
-                v31 v31Var = (v31) obj4;
-                v31Var.getClass();
-                AndroidUtilities.runOnUIThread(new z8(v31Var, tLObject, (CharSequence) obj, tL_error, (byte[]) obj3, (String) obj2, 10));
+                t31 t31Var = (t31) obj4;
+                t31Var.getClass();
+                AndroidUtilities.runOnUIThread(new z8(t31Var, tLObject, (CharSequence) obj, tL_error, (byte[]) obj3, (String) obj2, 10));
                 break;
             case 13:
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.web.b0((org.telegram.ui.web.c1) obj4, tLObject, (da) obj, (String) obj3, (String) obj2));
@@ -131,21 +131,21 @@ public final /* synthetic */ class p3 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new z8((xh.q1) obj4, (org.telegram.ui.ActionBar.b2) obj, tLObject, (xh.o0) obj3, (Utilities.Callback) obj2, tL_error, 15));
                 break;
             case 16:
-                AndroidUtilities.runOnUIThread(new z8((yh.x3) obj4, tLObject, (CharSequence) obj, (TL_stars.TL_starGiftUnique) obj3, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) obj2, tL_error, 16));
+                AndroidUtilities.runOnUIThread(new z8((yh.y3) obj4, tLObject, (CharSequence) obj, (TL_stars.TL_starGiftUnique) obj3, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) obj2, tL_error, 16));
                 break;
             case 17:
-                AndroidUtilities.runOnUIThread(new z8((yh.x3) obj4, tLObject, (tg.m1[]) obj, (Long) obj3, (tg.q) obj2, tL_error, 17));
+                AndroidUtilities.runOnUIThread(new z8((yh.y3) obj4, tLObject, (tg.m1[]) obj, (Long) obj3, (tg.q) obj2, tL_error, 17));
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new yh.u((yh.t5) obj4, (org.telegram.ui.ActionBar.b2) obj, tLObject, (TL_stars.InputSavedStarGift) obj3, (Utilities.Callback) obj2));
+                AndroidUtilities.runOnUIThread(new yh.v((yh.u5) obj4, (org.telegram.ui.ActionBar.b2) obj, tLObject, (TL_stars.InputSavedStarGift) obj3, (Utilities.Callback) obj2));
                 break;
             case 19:
-                AndroidUtilities.runOnUIThread(new z8((yh.t5) obj4, tLObject, (MessageObject) obj, (TLRPC.TL_inputInvoiceMessage) obj3, (bj) obj2, tL_error, 20));
+                AndroidUtilities.runOnUIThread(new z8((yh.u5) obj4, tLObject, (MessageObject) obj, (TLRPC.TL_inputInvoiceMessage) obj3, (bj) obj2, tL_error, 20));
                 break;
             default:
-                yh.j5 j5Var = (yh.j5) obj4;
-                j5Var.getClass();
-                AndroidUtilities.runOnUIThread(new z8(j5Var, tLObject, (TL_stars.TL_starGiftCollection) obj, (yh.k5) obj3, (Utilities.Callback) obj2, tL_error, 22));
+                yh.k5 k5Var = (yh.k5) obj4;
+                k5Var.getClass();
+                AndroidUtilities.runOnUIThread(new z8(k5Var, tLObject, (TL_stars.TL_starGiftCollection) obj, (yh.l5) obj3, (Utilities.Callback) obj2, tL_error, 22));
                 break;
         }
     }

@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.ui.Components.rk0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class u4 implements rk0 {
     public final /* synthetic */ e6 a;
@@ -16,27 +16,17 @@ public final class u4 implements rk0 {
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final void h(View view, zg.o0 o0Var, boolean z10, boolean z11) {
-        e6 e6Var = this.a;
-        if (z10) {
-            org.telegram.ui.Components.e5.a0(e6Var.C2, 1, e6Var.B1, new t4(this, z10, o0Var, view));
-        } else {
-            e6Var.n0(new s4(this, view, o0Var, z10, z11));
-        }
-    }
-
-    @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ boolean j() {
+    public final /* synthetic */ boolean B() {
         return true;
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final boolean k() {
+    public final boolean E() {
         return this.a.N0();
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    public final void H(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
         e6 e6Var = this.a;
         Paint paint = e6Var.n2;
         com.google.firebase.messaging.n nVar = e6Var.P1;
@@ -53,12 +43,22 @@ public final class u4 implements rk0 {
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final void o() {
+    public final void I() {
         ((ac) this.a.Q1).b(false);
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ boolean p() {
+    public final /* synthetic */ boolean K() {
         return false;
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public final void i(View view, zg.m0 m0Var, boolean z10, boolean z11) {
+        e6 e6Var = this.a;
+        if (z10) {
+            org.telegram.ui.Components.e5.a0(e6Var.C2, 1, e6Var.B1, new t4(this, z10, m0Var, view));
+        } else {
+            e6Var.n0(new s4(this, view, m0Var, z10, z11));
+        }
     }
 }

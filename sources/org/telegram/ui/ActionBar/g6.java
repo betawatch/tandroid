@@ -19,12 +19,12 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.e71;
 import org.telegram.ui.Components.op;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.v11;
 import org.telegram.ui.Components.w00;
+import org.telegram.ui.Components.w11;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.wi0;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.a7;
@@ -39,17 +39,17 @@ import org.telegram.ui.n9;
 import org.telegram.ui.nd;
 import org.telegram.ui.o80;
 import org.telegram.ui.sa;
+import org.telegram.ui.ta1;
 import org.telegram.ui.ua;
 import org.telegram.ui.v9;
-import org.telegram.ui.va1;
 import org.telegram.ui.w9;
 import org.telegram.ui.wb;
+import org.telegram.ui.xb1;
 import org.telegram.ui.yn;
 import org.telegram.ui.z8;
-import org.telegram.ui.zb1;
 import org.telegram.ui.zc;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g6 implements Runnable {
     public final /* synthetic */ int a;
@@ -78,8 +78,8 @@ public final /* synthetic */ class g6 implements Runnable {
         yc a02;
         int i11;
         int i12;
-        u61 u61Var;
-        v11 v11Var;
+        w61 w61Var;
+        w11 w11Var;
         int i13 = this.a;
         int i14 = -1;
         int i15 = 0;
@@ -174,7 +174,7 @@ public final /* synthetic */ class g6 implements Runnable {
                 wi0Var.show();
                 break;
             case 9:
-                ((z8) obj2).b.d0(((TLRPC.Message) hg.k0.g(1, ((i9) obj).c)).id, 100);
+                ((z8) obj2).b.d0(((TLRPC.Message) hg.c.g(1, ((i9) obj).c)).id, 100);
                 break;
             case 10:
                 w9 w9Var = (w9) obj2;
@@ -288,7 +288,7 @@ public final /* synthetic */ class g6 implements Runnable {
                     i11 = R.raw.error;
                     i12 = R.string.UnknownError;
                 }
-                org.telegram.messenger.f0.p(i12, a02, i11, 36);
+                org.telegram.messenger.q.p(i12, a02, i11, 36);
                 break;
             case 16:
                 dc dcVar = (dc) obj2;
@@ -301,13 +301,13 @@ public final /* synthetic */ class g6 implements Runnable {
             case 17:
                 cd cdVar = (cd) obj2;
                 cdVar.getClass();
-                cdVar.presentFragment(va1.b0((TLRPC.Chat) obj, true));
+                cdVar.presentFragment(ta1.b0((TLRPC.Chat) obj, true));
                 break;
             case 18:
                 List list = (List) obj;
                 ad adVar = ((zc) obj2).b;
                 int i22 = adVar.a;
-                zb1 zb1Var = adVar.d;
+                xb1 xb1Var = adVar.d;
                 ArrayList arrayList3 = adVar.c;
                 if (list != null && !list.isEmpty()) {
                     adVar.n = true;
@@ -337,15 +337,15 @@ public final /* synthetic */ class g6 implements Runnable {
                     if (ycVar != null) {
                         ycVar.l();
                     }
-                    zb1Var.animate().alpha(1.0f).setDuration(150L).start();
+                    xb1Var.animate().alpha(1.0f).setDuration(150L).start();
                     w00 w00Var = adVar.e;
                     if (adVar.n) {
                         AndroidUtilities.updateViewVisibilityAnimated(w00Var, false, 1.0f, true, true);
                     } else {
                         AndroidUtilities.updateViewVisibilityAnimated(w00Var, true, 1.0f, true, true);
                     }
-                    if (i14 >= 0 && (zb1Var.getLayoutManager() instanceof s4.c0)) {
-                        ((s4.c0) zb1Var.getLayoutManager()).h1(i14, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
+                    if (i14 >= 0 && (xb1Var.getLayoutManager() instanceof s4.c0)) {
+                        ((s4.c0) xb1Var.getLayoutManager()).h1(i14, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
                         break;
                     }
                 }
@@ -389,28 +389,28 @@ public final /* synthetic */ class g6 implements Runnable {
             case 22:
                 me meVar = (me) obj2;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = (TL_stories.TL_premium_boostsStatus) obj;
-                meVar.t1 = tL_premium_boostsStatus2;
+                meVar.q0 = tL_premium_boostsStatus2;
                 if (tL_premium_boostsStatus2 != null) {
-                    meVar.u1 = tL_premium_boostsStatus2.level;
+                    meVar.r0 = tL_premium_boostsStatus2.level;
                 }
-                c71 c71Var = meVar.a2;
-                if (c71Var != null && (u61Var = c71Var.f3) != null) {
-                    u61Var.N(true);
+                e71 e71Var = meVar.X0;
+                if (e71Var != null && (w61Var = e71Var.f3) != null) {
+                    w61Var.N(true);
                     break;
                 }
                 break;
             case 23:
-                ((me) obj2).w0((TLRPC.TL_payments_starsRevenueStats) obj);
+                ((me) obj2).D((TLRPC.TL_payments_starsRevenueStats) obj);
                 break;
             case 24:
                 yn ynVar = (yn) obj2;
-                v11[] v11VarArr = (v11[]) obj;
-                if (!ynVar.hb && (v11Var = v11VarArr[0]) != null) {
-                    v11VarArr[0] = null;
-                    if (ynVar.t0 == v11Var) {
+                w11[] w11VarArr = (w11[]) obj;
+                if (!ynVar.hb && (w11Var = w11VarArr[0]) != null) {
+                    w11VarArr[0] = null;
+                    if (ynVar.t0 == w11Var) {
                         ynVar.t0 = null;
                     }
-                    AndroidUtilities.removeFromParent(v11Var);
+                    AndroidUtilities.removeFromParent(w11Var);
                     break;
                 }
                 break;

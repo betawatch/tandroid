@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class tp0 extends View {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -171,7 +171,7 @@ public final class tp0 extends View {
                             sp0Var.k = drawable;
                             drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                         }
-                        sp0Var.k.setBounds((int) org.telegram.messenger.ok.b(sp0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) org.telegram.messenger.ok.b(sp0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()), (int) a4.a.e(sp0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) a4.a.e(sp0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()));
+                        sp0Var.k.setBounds((int) org.telegram.messenger.bi.b(sp0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) org.telegram.messenger.bi.b(sp0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()), (int) a4.a.e(sp0Var.k.getIntrinsicWidth(), 2.0f, 1.2f, rectF.centerX()), (int) a4.a.e(sp0Var.k.getIntrinsicHeight(), 2.0f, 1.2f, rectF.centerY()));
                         sp0Var.k.draw(canvas);
                     } else {
                         if (sp0Var.i == null) {

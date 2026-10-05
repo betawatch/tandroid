@@ -19,21 +19,21 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.f40;
-import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.m11;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.n11;
 import org.telegram.ui.Components.n61;
+import org.telegram.ui.Components.o61;
 import org.telegram.ui.Components.pa0;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class g5 extends xa {
     public final /* synthetic */ jc x0;
@@ -75,36 +75,36 @@ public final class g5 extends xa {
 
     @Override // ai.xa
     public final void G(CharacterStyle characterStyle, View view) {
-        boolean z10 = characterStyle instanceof n61;
+        boolean z10 = characterStyle instanceof o61;
         jc jcVar = this.x0;
         e6 e6Var = this.z0;
         if (z10) {
-            TLRPC.User user = MessagesController.getInstance(e6Var.C2).getUser(Utilities.parseLong(((n61) characterStyle).getURL()));
+            TLRPC.User user = MessagesController.getInstance(e6Var.C2).getUser(Utilities.parseLong(((o61) characterStyle).getURL()));
             if (user != null) {
                 MessagesController.getInstance(e6Var.C2).openChatOrProfileWith(user, null, jcVar.f, 0, false);
                 return;
             }
             return;
         }
-        if (!(characterStyle instanceof k61)) {
+        if (!(characterStyle instanceof l61)) {
             if (characterStyle instanceof URLSpan) {
-                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof m61);
+                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof n61);
                 return;
             }
-            if (!(characterStyle instanceof j61)) {
+            if (!(characterStyle instanceof k61)) {
                 if (characterStyle instanceof ClickableSpan) {
                     ((ClickableSpan) characterStyle).onClick(view);
                     return;
                 }
                 return;
             } else {
-                j61 j61Var = (j61) characterStyle;
-                AndroidUtilities.addToClipboard(j61Var.a.subSequence(j61Var.b, j61Var.c).toString());
-                ok.o(R.string.TextCopied, new yc(e6Var.c1, this.y0));
+                k61 k61Var = (k61) characterStyle;
+                AndroidUtilities.addToClipboard(k61Var.a.subSequence(k61Var.b, k61Var.c).toString());
+                bi.n(R.string.TextCopied, new yc(e6Var.c1, this.y0));
                 return;
             }
         }
-        String url = ((k61) characterStyle).getURL();
+        String url = ((l61) characterStyle).getURL();
         if (url != null && (url.startsWith("#") || url.startsWith("$"))) {
             if (url.contains("@")) {
                 jcVar.H(new f40(url, null));
@@ -293,11 +293,11 @@ public final class g5 extends xa {
     }
 
     public final void M(int i10, String str, CharacterStyle characterStyle, boolean z10) {
-        m11 m11Var;
+        n11 n11Var;
         if (z10 || AndroidUtilities.shouldShowUrlInAlert(str)) {
             jc jcVar = this.x0;
             if (i10 == 0 || i10 == 2) {
-                org.telegram.ui.Components.e5.r0(jcVar.f, str, true, true, true, (!(characterStyle instanceof m61) || (m11Var = ((m61) characterStyle).a) == null || (m11Var.a & 1024) == 0) ? false : true, null, null, this.y0);
+                org.telegram.ui.Components.e5.r0(jcVar.f, str, true, true, true, (!(characterStyle instanceof n61) || (n11Var = ((n61) characterStyle).a) == null || (n11Var.a & 1024) == 0) ? false : true, null, null, this.y0);
                 return;
             } else {
                 if (i10 == 1) {

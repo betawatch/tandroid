@@ -22,7 +22,7 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.a91;
+import org.telegram.ui.Components.b91;
 import org.telegram.ui.Components.gt;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.nj0;
@@ -32,7 +32,7 @@ import org.telegram.ui.u40;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class x0 extends FrameLayout implements VoIPService.StateListener {
     public boolean a;
@@ -78,7 +78,7 @@ public abstract class x0 extends FrameLayout implements VoIPService.StateListene
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, null);
         kVar.setBackButtonDrawable(new org.telegram.ui.ActionBar.g2(false));
         kVar.setBackgroundColor(0);
-        kVar.B(i6.w0(null, i6.hg, false), false);
+        kVar.A(i6.w0(null, i6.hg, false), false);
         kVar.setOccupyStatusBar(true);
         kVar.setActionBarMenuOnItemClick(new qo(this, 14));
         addView(kVar);
@@ -191,7 +191,7 @@ public abstract class x0 extends FrameLayout implements VoIPService.StateListene
         } else if (sharedInstance != null) {
             sharedInstance.setVideoState(false, 0);
         }
-        animate().alpha(0.0f).translationX(AndroidUtilities.dp(32.0f)).setDuration(150L).setListener(new a91(this, 5));
+        animate().alpha(0.0f).translationX(AndroidUtilities.dp(32.0f)).setDuration(150L).setListener(new b91(this, 5));
         invalidate();
     }
 

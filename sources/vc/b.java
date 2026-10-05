@@ -21,13 +21,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.ui.Cells.c1;
+import sa.e;
 import tc.d;
-import tc.e;
 import tc.f;
 import w7.a8;
 import w7.s8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final c a = new c();
@@ -204,7 +204,7 @@ public abstract class b {
         List list = (List) obj;
         LinkedList linkedList3 = new LinkedList();
         Iterator it = list.iterator();
-        String v = t8.b.v(str, "[]");
+        String v = e.v(str, "[]");
         if (list.isEmpty()) {
             linkedList3.add(new a(str, ""));
             return linkedList3;
@@ -295,7 +295,7 @@ public abstract class b {
             case 402:
                 throw new d(str3, str2, null);
             case 403:
-                throw new e(str3, str2);
+                throw new tc.e(str3, str2);
             case 404:
                 throw new d(str3, str2, null);
             default:

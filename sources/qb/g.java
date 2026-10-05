@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.concurrent.Executor;
 import org.telegram.ui.web.w;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object b = new Object();
@@ -33,11 +33,11 @@ public final class g {
             if (applicationContext != null) {
                 context = applicationContext;
             }
-            ArrayList C = new o0.a(12, context, new k2.e(MlKitComponentDiscoveryService.class, 14)).C();
+            ArrayList y3 = new o0.a(12, context, new k2.e(MlKitComponentDiscoveryService.class, 14)).y();
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
             w wVar = q9.e.A;
-            arrayList.addAll(C);
+            arrayList.addAll(y3);
             arrayList2.add(q9.a.c(context, Context.class, new Class[0]));
             arrayList2.add(q9.a.c(gVar2, g.class, new Class[0]));
             q9.g gVar3 = new q9.g(executor, arrayList, arrayList2, wVar);

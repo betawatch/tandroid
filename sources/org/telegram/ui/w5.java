@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class w5 extends r20 implements NotificationCenter.NotificationCenterDelegate {
     public final long P;
@@ -106,7 +106,7 @@ public final class w5 extends r20 implements NotificationCenter.NotificationCent
                     w5Var.presentFragment(ProfileActivity.m4(bVar.getDialogId()));
                 }
             } else {
-                yh.x7.k1(context, w5Var.Q, w5Var.P, boost, w5Var.getResourceProvider());
+                yh.z7.k1(context, w5Var.Q, w5Var.P, boost, w5Var.getResourceProvider());
             }
         }
         if (view instanceof org.telegram.ui.Cells.r8) {
@@ -307,12 +307,12 @@ public final class w5 extends r20 implements NotificationCenter.NotificationCent
         TLRPC.Chat chat = (TLRPC.Chat) objArr[0];
         boolean booleanValue = ((Boolean) objArr[1]).booleanValue();
         List fragmentStack = getParentLayout().getFragmentStack();
-        org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.n2) t8.b.h(2, fragmentStack) : null;
+        org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.n2) sa.e.h(2, fragmentStack) : null;
         if (n2Var instanceof to) {
             ((ActionBarLayout) getParentLayout()).a0(n2Var, false);
         }
         List fragmentStack2 = getParentLayout().getFragmentStack();
-        org.telegram.ui.ActionBar.n2 n2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.n2) t8.b.h(2, fragmentStack2) : null;
+        org.telegram.ui.ActionBar.n2 n2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.n2) sa.e.h(2, fragmentStack2) : null;
         if (!booleanValue) {
             finishFragment();
             if ((n2Var2 instanceof ProfileActivity) || (n2Var2 instanceof yn)) {
@@ -321,7 +321,7 @@ public final class w5 extends r20 implements NotificationCenter.NotificationCent
             }
             return;
         }
-        org.telegram.ui.ActionBar.n2 n2Var3 = fragmentStack2.size() >= 3 ? (org.telegram.ui.ActionBar.n2) t8.b.h(3, fragmentStack2) : null;
+        org.telegram.ui.ActionBar.n2 n2Var3 = fragmentStack2.size() >= 3 ? (org.telegram.ui.ActionBar.n2) sa.e.h(3, fragmentStack2) : null;
         if (n2Var2 instanceof ProfileActivity) {
             ((ActionBarLayout) getParentLayout()).a0(n2Var2, false);
         }

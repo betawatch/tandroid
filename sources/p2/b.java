@@ -17,7 +17,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.web.x1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class b implements y2.g {
     public final Uri a;
@@ -328,7 +328,7 @@ public final class b implements y2.g {
     }
 
     @Override // y2.g
-    public final k4.d s(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
+    public final k4.d v(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
         y2.o oVar = (y2.o) iVar;
         long j11 = oVar.a;
         int i11 = oVar.c;
@@ -370,7 +370,7 @@ public final class b implements y2.g {
     }
 
     @Override // y2.g
-    public final void t(y2.i iVar, long j3, long j10, int i10) {
+    public final void x(y2.i iVar, long j3, long j10, int i10) {
         u2.t tVar;
         y2.o oVar = (y2.o) iVar;
         if (i10 == 0) {
@@ -385,7 +385,18 @@ public final class b implements y2.g {
     }
 
     @Override // y2.g
-    public final void v(y2.i iVar, long j3, long j10) {
+    public final void x0(y2.i iVar, long j3, long j10, boolean z10) {
+        y2.o oVar = (y2.o) iVar;
+        long j11 = oVar.a;
+        Uri uri = oVar.d.c;
+        u2.t tVar = new u2.t(j10);
+        c cVar = this.w;
+        cVar.c.getClass();
+        cVar.f.o(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+    }
+
+    @Override // y2.g
+    public final void y(y2.i iVar, long j3, long j10) {
         y2.o oVar = (y2.o) iVar;
         p pVar = (p) oVar.f;
         Uri uri = oVar.d.c;
@@ -399,16 +410,5 @@ public final class b implements y2.g {
             this.w.f.r(tVar, 4, b10, true);
         }
         this.w.c.getClass();
-    }
-
-    @Override // y2.g
-    public final void x0(y2.i iVar, long j3, long j10, boolean z10) {
-        y2.o oVar = (y2.o) iVar;
-        long j11 = oVar.a;
-        Uri uri = oVar.d.c;
-        u2.t tVar = new u2.t(j10);
-        c cVar = this.w;
-        cVar.c.getClass();
-        cVar.f.o(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

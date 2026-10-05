@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class d5 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int F = 0;
@@ -74,10 +74,10 @@ public abstract class d5 extends FrameLayout implements NotificationCenter.Notif
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert, 0, context, d6Var);
         this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
         ch.d c10 = cVar.c(actionBarPopupWindow$ActionBarPopupWindowLayout, null, false);
-        c10.x(eh.b.k(d6Var));
-        c10.y(AndroidUtilities.dp(8.0f));
+        c10.w(eh.b.k(d6Var));
+        c10.x(AndroidUtilities.dp(8.0f));
         c10.l.e = true;
-        c10.z(AndroidUtilities.dp(12.0f));
+        c10.y(AndroidUtilities.dp(12.0f));
         actionBarPopupWindow$ActionBarPopupWindowLayout.setBackground(c10);
         k0Var.addView(actionBarPopupWindow$ActionBarPopupWindowLayout, w7.z5.h(-2.0f, -2.0f, 8388611));
     }

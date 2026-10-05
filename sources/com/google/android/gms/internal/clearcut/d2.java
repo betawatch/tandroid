@@ -65,7 +65,7 @@ public final class d2 extends o6.a {
         sb2.append(",isAnonymous=");
         sb2.append(this.n);
         sb2.append(",qosTier=");
-        return a4.a.n(this.r, "]", sb2);
+        return a4.a.o(this.r, "]", sb2);
     }
 
     @Override // android.os.Parcelable

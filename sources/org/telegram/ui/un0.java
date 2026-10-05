@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class un0 implements TextWatcher {
     public boolean a;
@@ -58,10 +58,10 @@ public final class un0 implements TextWatcher {
         String substring2 = a2 >= 0 ? str.substring(a2 + 1) : "";
         long longValue2 = Utilities.parseLong(gf.b.d(substring, false)).longValue() * currencyExpDivider;
         long longValue3 = Utilities.parseLong(gf.b.d(substring2, false)).longValue();
-        String o9 = a4.a.o(longValue3, "");
+        String p5 = a4.a.p(longValue3, "");
         String str3 = "" + (currencyExpDivider - 1);
-        if (a2 > 0 && o9.length() > str3.length()) {
-            longValue3 = Utilities.parseLong(this.e - a2 < o9.length() ? o9.substring(0, str3.length()) : o9.substring(o9.length() - str3.length())).longValue();
+        if (a2 > 0 && p5.length() > str3.length()) {
+            longValue3 = Utilities.parseLong(this.e - a2 < p5.length() ? p5.substring(0, str3.length()) : p5.substring(p5.length() - str3.length())).longValue();
         }
         Long valueOf = Long.valueOf(longValue2 + longValue3);
         so0Var.H0 = valueOf;

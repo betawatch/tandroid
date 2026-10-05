@@ -15,7 +15,7 @@ import java.util.Arrays;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class TelegramQRCodeWriter {
     private static final int QUIET_ZONE_SIZE = 4;
@@ -567,7 +567,7 @@ public final class TelegramQRCodeWriter {
                                             throw new IllegalArgumentException("No data bytes provided");
                                         }
                                         if (i72 >= arrayList4.size()) {
-                                            fc.b bVar7 = (fc.b) hg.k0.g(1, arrayList4);
+                                            fc.b bVar7 = (fc.b) hg.c.g(1, arrayList4);
                                             int size2 = arrayList4.size();
                                             fc.b bVar8 = bVar7;
                                             while (size2 <= i72) {
@@ -687,7 +687,7 @@ public final class TelegramQRCodeWriter {
                                         }
                                     }
                                     if (i85 != aVar10.e()) {
-                                        StringBuilder j3 = hg.k0.j(i85, "Interleaving error: ", " and ");
+                                        StringBuilder j3 = hg.c.j(i85, "Interleaving error: ", " and ");
                                         j3.append(aVar10.e());
                                         j3.append(" differ.");
                                         throw new cc.k(j3.toString());

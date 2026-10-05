@@ -15,7 +15,7 @@ import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.qs;
 import org.telegram.ui.Components.rq;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class a extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
@@ -32,14 +32,14 @@ public final class a extends LinearLayout implements NotificationCenter.Notifica
     public final void a() {
         zf.b bVar = this.e;
         int i10 = this.a;
-        zf.a s10 = t5.x(i10, bVar).s();
+        zf.a s10 = u5.x(i10, bVar).s();
         zf.b bVar2 = this.e;
         zf.b bVar3 = zf.b.a;
         TextView textView = this.c;
         org.telegram.ui.ActionBar.d6 d6Var = this.b;
         q90 q90Var = this.d;
         if (bVar2 == bVar3) {
-            textView.setText(x7.d1(false, LocaleController.formatString(R.string.Gift2MessageStarsInfo, LocaleController.formatNumber(s10.a(), ',')), 0.6f, null));
+            textView.setText(z7.d1(false, LocaleController.formatString(R.string.Gift2MessageStarsInfo, LocaleController.formatNumber(s10.a(), ',')), 0.6f, null));
             int i11 = org.telegram.ui.ActionBar.i6.Gi;
             q90Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
             q90Var.setLinkTextColor(org.telegram.ui.ActionBar.i6.v0(i11, d6Var));
@@ -49,7 +49,7 @@ public final class a extends LinearLayout implements NotificationCenter.Notifica
         if (bVar2 == zf.b.b) {
             SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2MessageStarsInfoTON, s10.b()));
             rq[] rqVarArr = this.f;
-            textView.setText(x7.d1(true, replaceTags, 0.6f, rqVarArr));
+            textView.setText(z7.d1(true, replaceTags, 0.6f, rqVarArr));
             rqVarArr[0].setColorKey(org.telegram.ui.ActionBar.i6.Gi);
             StringBuilder sb2 = new StringBuilder(10);
             sb2.append('~');

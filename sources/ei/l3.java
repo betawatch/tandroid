@@ -56,20 +56,20 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.ee0;
-import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.fw0;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.hu0;
-import org.telegram.ui.nb1;
+import org.telegram.ui.lb1;
 import org.telegram.ui.yn;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class l3 extends Dialog implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.t3 {
     public static final HashSet W0 = new HashSet();
-    public static final ew0 X0;
+    public static final fw0 X0;
     public static int Y0;
     public boolean A0;
     public b1 B0;
@@ -82,7 +82,7 @@ public final class l3 extends Dialog implements NotificationCenter.NotificationC
     public int G;
     public float G0;
     public long H;
-    public nb1 H0;
+    public lb1 H0;
     public long I;
     public Drawable I0;
     public long J;
@@ -157,9 +157,9 @@ public final class l3 extends Dialog implements NotificationCenter.NotificationC
     public Boolean z0;
 
     static {
-        ew0 ew0Var = new ew0(new d2.c(17), new d2.c(18));
-        ew0Var.c = 100.0f;
-        X0 = ew0Var;
+        fw0 fw0Var = new fw0(new d2.c(17), new d2.c(18));
+        fw0Var.c = 100.0f;
+        X0 = fw0Var;
         Y0 = 0;
     }
 
@@ -323,7 +323,7 @@ public final class l3 extends Dialog implements NotificationCenter.NotificationC
         b2Var.R = string;
         b2Var.T = AndroidUtilities.replaceTags(formatString);
         alertDialog$Builder.k(LocaleController.getString(R.string.OK), new v1(i10, j3, tL_attachMenuBot, runnable));
-        hg.k0.o(R.string.Cancel, alertDialog$Builder, null);
+        hg.c.p(R.string.Cancel, alertDialog$Builder, null);
     }
 
     public static JSONObject p(d6 d6Var, final boolean z10) {
@@ -367,12 +367,12 @@ public final class l3 extends Dialog implements NotificationCenter.NotificationC
             int v02 = i6.v0(i10, d6Var);
             i3 i3Var = this.W;
             i3Var.setTitleColor(v02);
-            i3Var.B(i6.v0(i10, d6Var), false);
-            i3Var.A(i6.v0(i6.u8, d6Var), false);
-            i3Var.C(i6.v0(i6.G8, d6Var), false);
-            i3Var.D(i6.v0(i6.E8, d6Var), false, false);
-            i3Var.D(i6.v0(i6.F8, d6Var), true, false);
-            i3Var.E(i6.v0(i6.I5, d6Var), false);
+            i3Var.A(i6.v0(i10, d6Var), false);
+            i3Var.z(i6.v0(i6.u8, d6Var), false);
+            i3Var.B(i6.v0(i6.G8, d6Var), false);
+            i3Var.C(i6.v0(i6.E8, d6Var), false, false);
+            i3Var.C(i6.v0(i6.F8, d6Var), true, false);
+            i3Var.D(i6.v0(i6.I5, d6Var), false);
         }
         this.x.setFlickerViewColor(this.P.getColor());
     }

@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class mc extends View {
     public final /* synthetic */ int a;
@@ -86,24 +86,24 @@ public final class mc extends View {
                 break;
             default:
                 super.onDraw(canvas);
-                rd1 rd1Var = (rd1) this.v;
-                boolean a2 = rd1Var.a.a();
+                pd1 pd1Var = (pd1) this.v;
+                boolean a2 = pd1Var.a.a();
                 Paint paint3 = this.n;
                 float f17 = this.e;
                 float f18 = this.d;
                 float f19 = this.c;
                 if (a2) {
-                    float f20 = rd1Var.i2;
+                    float f20 = pd1Var.i2;
                     if (f20 > 0.0f) {
                         this.b.drawCircle(f19, f18, f17 * f20, this.f);
                     }
                     canvas.drawBitmap(this.h, 0.0f, 0.0f, paint3);
                 } else {
-                    canvas.drawCircle(f19, f18, (1.0f - rd1Var.i2) * f17, paint3);
+                    canvas.drawCircle(f19, f18, (1.0f - pd1Var.i2) * f17, paint3);
                 }
                 canvas.save();
                 canvas.translate(this.r, this.s);
-                rd1Var.O1.draw(canvas);
+                pd1Var.O1.draw(canvas);
                 canvas.restore();
                 break;
         }

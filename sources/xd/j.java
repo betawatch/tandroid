@@ -1,9 +1,8 @@
 package xd;
 
 import com.google.android.gms.internal.vision.e2;
-import hg.k0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class j extends i {
     public static boolean b(String str, String str2) {
@@ -104,7 +103,7 @@ public abstract class j extends i {
         CharSequence charSequence;
         kotlin.jvm.internal.i.e(str, "<this>");
         if (i10 < 0) {
-            throw new IllegalArgumentException(k0.i(i10, "Desired length ", " is less than zero."));
+            throw new IllegalArgumentException(hg.c.i(i10, "Desired length ", " is less than zero."));
         }
         if (i10 <= str.length()) {
             charSequence = str.subSequence(0, str.length());

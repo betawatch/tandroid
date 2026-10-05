@@ -18,18 +18,18 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.jl;
 import org.telegram.ui.Components.nj0;
-import org.telegram.ui.Components.t71;
+import org.telegram.ui.Components.u71;
 import org.telegram.ui.Components.vf0;
 import org.telegram.ui.Components.yz;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.r60;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class l4 implements Utilities.Callback {
                 if (view instanceof s4) {
                     o4Var.getClass();
                     int R = RecyclerView.R(view);
-                    g61 G = o4Var.f3.G(R);
+                    h61 G = o4Var.f3.G(R);
                     if (G != null) {
                         s4 s4Var = (s4) view;
                         s4Var.setPosition(t4Var.b(R));
@@ -79,14 +79,14 @@ public final /* synthetic */ class l4 implements Utilities.Callback {
                 k8Var.B0 = i15;
                 b7Var.T.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, i12, iArr, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
                 b7Var.invalidate();
-                t71 t71Var = b7Var.n;
-                if (t71Var != null) {
+                u71 u71Var = b7Var.n;
+                if (u71Var != null) {
                     int i16 = b7Var.U;
                     int i17 = b7Var.V;
-                    yz yzVar = t71Var.b;
+                    yz yzVar = u71Var.b;
                     if (yzVar == null) {
-                        t71Var.n = i16;
-                        t71Var.r = i17;
+                        u71Var.n = i16;
+                        u71Var.r = i17;
                     } else {
                         yzVar.i(i16, i17);
                     }
@@ -118,7 +118,7 @@ public final /* synthetic */ class l4 implements Utilities.Callback {
                 waVar.getClass();
                 if (LaunchActivity.C1) {
                     if (arrayList == null || arrayList.size() == 0) {
-                        ok.p(R.string.UnknownError, new org.telegram.ui.Components.yc(org.telegram.ui.Components.mb.a(waVar.getContext()), null), null);
+                        bi.o(R.string.UnknownError, new org.telegram.ui.Components.yc(org.telegram.ui.Components.mb.a(waVar.getContext()), null), null);
                     } else {
                         LinearLayout linearLayout = new LinearLayout(waVar.getContext());
                         linearLayout.setOrientation(1);
@@ -144,7 +144,7 @@ public final /* synthetic */ class l4 implements Utilities.Callback {
                         } else {
                             String str = "\n";
                             for (int i20 = 0; i20 < Math.min(arrayList.size(), 10); i20++) {
-                                StringBuilder j3 = t8.b.j(str, "• ");
+                                StringBuilder j3 = sa.e.j(str, "• ");
                                 j3.append(org.telegram.ui.Cells.wa.a((UnconfirmedAuthController.UnconfirmedAuth) arrayList.get(i20)));
                                 j3.append("\n");
                                 str = j3.toString();

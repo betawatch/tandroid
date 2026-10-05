@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class h0 extends a0 implements org.telegram.ui.ActionBar.y5 {
     public f0 E;
@@ -69,7 +69,7 @@ public final class h0 extends a0 implements org.telegram.ui.ActionBar.y5 {
                         f0 f0Var = h0Var.E;
                         if (f0Var != null && (aVar = h0Var.a) != null) {
                             x3 x3Var = ((p3) f0Var).a;
-                            x3Var.q3(false);
+                            x3Var.p3(false);
                             x3Var.o3.o0(new u3(x3Var, aVar, -1), view);
                             break;
                         }
@@ -79,7 +79,7 @@ public final class h0 extends a0 implements org.telegram.ui.ActionBar.y5 {
                         f0 f0Var2 = h0Var2.E;
                         if (f0Var2 != null && (aVar2 = h0Var2.a) != null) {
                             x3 x3Var2 = ((p3) f0Var2).a;
-                            x3Var2.q3(false);
+                            x3Var2.p3(false);
                             x3Var2.o3.o0(new u3(x3Var2, aVar2, -1), view);
                             break;
                         }
@@ -114,7 +114,7 @@ public final class h0 extends a0 implements org.telegram.ui.ActionBar.y5 {
                         f0 f0Var = h0Var.E;
                         if (f0Var != null && (aVar = h0Var.a) != null) {
                             x3 x3Var = ((p3) f0Var).a;
-                            x3Var.q3(false);
+                            x3Var.p3(false);
                             x3Var.o3.o0(new u3(x3Var, aVar, -1), view);
                             break;
                         }
@@ -124,7 +124,7 @@ public final class h0 extends a0 implements org.telegram.ui.ActionBar.y5 {
                         f0 f0Var2 = h0Var2.E;
                         if (f0Var2 != null && (aVar2 = h0Var2.a) != null) {
                             x3 x3Var2 = ((p3) f0Var2).a;
-                            x3Var2.q3(false);
+                            x3Var2.p3(false);
                             x3Var2.o3.o0(new u3(x3Var2, aVar2, -1), view);
                             break;
                         }

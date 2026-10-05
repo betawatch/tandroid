@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Set;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class o extends h implements Set, j$.util.Set {
     public static final /* synthetic */ int c = 0;
@@ -28,7 +28,7 @@ public abstract class o extends h implements Set, j$.util.Set {
         for (int i14 = 0; i14 < i10; i14++) {
             Object obj2 = objArr[i14];
             if (obj2 == null) {
-                throw new NullPointerException(hg.k0.h(i14, "at index "));
+                throw new NullPointerException(hg.c.h(i14, "at index "));
             }
             int hashCode = obj2.hashCode();
             int rotateLeft = (int) (Integer.rotateLeft((int) (hashCode * (-862048943)), 15) * 461845907);

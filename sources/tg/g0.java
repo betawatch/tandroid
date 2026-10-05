@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
@@ -19,7 +19,7 @@ import org.telegram.ui.Components.zl0;
 import org.telegram.ui.uy;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class g0 extends rg.m1 {
     public static g0 S0;
@@ -63,7 +63,7 @@ public final class g0 extends rg.m1 {
 
     public static void e0(g0 g0Var) {
         String str = "https://t.me/giftcode/" + g0Var.R0;
-        uy uyVar = new uy(ok.e(3, "onlySelect", "dialogsType", true));
+        uy uyVar = new uy(bi.d(3, "onlySelect", "dialogsType", true));
         uyVar.C2 = new rg.x(6, g0Var, str);
         g0Var.n.presentFragment(uyVar);
         g0Var.dismiss();

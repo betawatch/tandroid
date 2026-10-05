@@ -18,11 +18,11 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.gw0;
 import org.telegram.ui.Components.hw0;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.iw0;
+import org.telegram.ui.Components.mw0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -157,18 +157,18 @@ public final class g implements Runnable {
                 return;
             case 7:
                 long currentTimeMillis = System.currentTimeMillis();
-                Utilities.stackBlurBitmap(((hw0) this.d).c, this.b);
-                ((hw0) this.d).getClass();
-                lw0 lw0Var = (lw0) this.c;
-                lw0Var.j0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + lw0Var.j0);
-                int i16 = lw0Var.i0 + 1;
-                lw0Var.i0 = i16;
+                Utilities.stackBlurBitmap(((iw0) this.d).c, this.b);
+                ((iw0) this.d).getClass();
+                mw0 mw0Var = (mw0) this.c;
+                mw0Var.j0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + mw0Var.j0);
+                int i16 = mw0Var.i0 + 1;
+                mw0Var.i0 = i16;
                 if (i16 > 1000) {
-                    FileLog.d("chat blur generating average time" + (lw0Var.j0 / lw0Var.i0));
-                    lw0Var.i0 = 0;
-                    lw0Var.j0 = 0;
+                    FileLog.d("chat blur generating average time" + (mw0Var.j0 / mw0Var.i0));
+                    mw0Var.i0 = 0;
+                    mw0Var.j0 = 0;
                 }
-                AndroidUtilities.runOnUIThread(new gw0(this, i10));
+                AndroidUtilities.runOnUIThread(new hw0(this, i10));
                 return;
             default:
                 visionClearcutLogger = ((DynamiteClearcutLogger) this.c).zzc;
@@ -184,8 +184,8 @@ public final class g implements Runnable {
         this.b = i10;
     }
 
-    public g(lw0 lw0Var) {
+    public g(mw0 mw0Var) {
         this.a = 7;
-        this.c = lw0Var;
+        this.c = mw0Var;
     }
 }

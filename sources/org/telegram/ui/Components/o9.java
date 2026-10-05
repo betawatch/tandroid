@@ -24,9 +24,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.yf1;
+import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class o9 {
     public static void a(org.telegram.ui.yn ynVar, int i10, TLRPC.Chat chat, TLRPC.User user, TLRPC.TL_forumTopic tL_forumTopic, long j3, int i11, int i12) {
@@ -434,11 +434,11 @@ public abstract class o9 {
                 } else {
                     i16 = -1;
                 }
-                if (parentLayout3.getFragmentStack().size() <= 1 || !(parentLayout3.getFragmentStack().get(parentLayout3.getFragmentStack().size() - 2) instanceof yf1)) {
+                if (parentLayout3.getFragmentStack().size() <= 1 || !(parentLayout3.getFragmentStack().get(parentLayout3.getFragmentStack().size() - 2) instanceof wf1)) {
                     n9 n9Var6 = new n9();
                     arrayList.add(n9Var6);
                     n9Var6.b = -1;
-                    n9Var6.a = yf1.class;
+                    n9Var6.a = wf1.class;
                     n9Var6.c = MessagesController.getInstance(n2Var.getCurrentAccount()).getChat(Long.valueOf(-j3));
                 } else {
                     n9 n9Var7 = new n9();
@@ -448,7 +448,7 @@ public abstract class o9 {
                     n9 n9Var8 = new n9();
                     arrayList.add(n9Var8);
                     n9Var8.b = -1;
-                    n9Var8.a = yf1.class;
+                    n9Var8.a = wf1.class;
                     n9Var8.c = MessagesController.getInstance(n2Var.getCurrentAccount()).getChat(Long.valueOf(-j3));
                 }
                 Collections.sort(arrayList, new org.telegram.ui.ff(7));

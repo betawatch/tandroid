@@ -4,7 +4,7 @@ import b2.m0;
 import b2.o0;
 import b2.s;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class a implements o0 {
     public final int a;
@@ -29,7 +29,7 @@ public final class a implements o0 {
         StringBuilder sb2 = new StringBuilder("Ait(controlCode=");
         sb2.append(this.a);
         sb2.append(",url=");
-        return a4.a.s(sb2, this.b, ")");
+        return a4.a.t(sb2, this.b, ")");
     }
 
     @Override // b2.o0

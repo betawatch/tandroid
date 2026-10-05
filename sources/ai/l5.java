@@ -20,11 +20,11 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ex0;
 import org.telegram.ui.ju;
 import org.telegram.ui.kn0;
-import org.telegram.ui.rd1;
+import org.telegram.ui.pd1;
 import org.telegram.ui.so0;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -92,7 +92,7 @@ public final /* synthetic */ class l5 implements View.OnClickListener {
                         alertDialog$Builder2.a.R = LocaleController.getString(R.string.DecreaseSpeed);
                         alertDialog$Builder2.a.T = LocaleController.getString(R.string.SdCardAlert);
                         alertDialog$Builder2.k(LocaleController.getString(R.string.Proceed), new org.telegram.ui.c7(dataSettingsActivity, str, alertDialog$Builder, 12));
-                        hg.k0.o(R.string.Back, alertDialog$Builder2, null);
+                        hg.c.p(R.string.Back, alertDialog$Builder2, null);
                         break;
                     }
                 }
@@ -254,7 +254,7 @@ public final /* synthetic */ class l5 implements View.OnClickListener {
                 }
                 if (this.b || y0Var.F) {
                     PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, PremiumPreviewFragment.l0(ex0Var.a));
-                    if (n2Var instanceof rd1) {
+                    if (n2Var instanceof pd1) {
                         org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
                         l2Var.a = true;
                         n2Var.showAsSheet(premiumPreviewFragment, l2Var);

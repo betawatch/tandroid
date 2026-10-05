@@ -1,58 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class hq0 implements View.OnTouchListener {
-    public final /* synthetic */ int a;
-    public final Rect b;
-    public final /* synthetic */ zq0 c;
+public final class hq0 implements gg.g0 {
+    public final /* synthetic */ br0 a;
 
-    public hq0(zq0 zq0Var, int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = zq0Var;
-                this.b = new Rect();
-                break;
-            default:
-                this.c = zq0Var;
-                this.b = new Rect();
-                break;
-        }
+    public hq0(br0 br0Var) {
+        this.a = br0Var;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        zq0 zq0Var;
-        org.telegram.ui.ActionBar.n1 n1Var;
-        zq0 zq0Var2;
-        org.telegram.ui.ActionBar.n1 n1Var2;
-        switch (this.a) {
-            case 0:
-                if (motionEvent.getActionMasked() == 0 && (n1Var = (zq0Var = this.c).J0) != null && n1Var.isShowing()) {
-                    Rect rect = this.b;
-                    view.getHitRect(rect);
-                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        zq0Var.J0.d(true);
-                        break;
-                    }
-                }
-                break;
-            default:
-                if (motionEvent.getActionMasked() == 0 && (n1Var2 = (zq0Var2 = this.c).J0) != null && n1Var2.isShowing()) {
-                    Rect rect2 = this.b;
-                    view.getHitRect(rect2);
-                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        zq0Var2.J0.d(true);
-                        break;
-                    }
-                }
-                break;
+    @Override // gg.g0
+    public final void a(a0.i iVar, ArrayList arrayList) {
+        int i10;
+        int i11;
+        int i12;
+        int i13 = 0;
+        while (i13 < arrayList.size()) {
+            TLObject tLObject = ((gg.h0) arrayList.get(i13)).a;
+            if ((tLObject instanceof TLRPC.Chat) && !ChatObject.canWriteToChat((TLRPC.Chat) tLObject)) {
+                arrayList.remove(i13);
+                i13--;
+            }
+            i13++;
         }
-        return false;
+        br0 br0Var = this.a;
+        br0Var.E0 = arrayList;
+        for (int i14 = 0; i14 < br0Var.E0.size(); i14++) {
+            gg.h0 h0Var = (gg.h0) br0Var.E0.get(i14);
+            TLObject tLObject2 = h0Var.a;
+            if (tLObject2 instanceof TLRPC.User) {
+                i12 = ((org.telegram.ui.ActionBar.f3) br0Var).currentAccount;
+                MessagesController.getInstance(i12).putUser((TLRPC.User) h0Var.a, true);
+            } else if (tLObject2 instanceof TLRPC.Chat) {
+                i11 = ((org.telegram.ui.ActionBar.f3) br0Var).currentAccount;
+                MessagesController.getInstance(i11).putChat((TLRPC.Chat) h0Var.a, true);
+            } else if (tLObject2 instanceof TLRPC.EncryptedChat) {
+                i10 = ((org.telegram.ui.ActionBar.f3) br0Var).currentAccount;
+                MessagesController.getInstance(i10).putEncryptedChat((TLRPC.EncryptedChat) h0Var.a, true);
+            }
+        }
+        br0Var.M.l();
     }
 }

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class NumberTextView extends View {
     public final ArrayList a;
@@ -76,8 +76,8 @@ public class NumberTextView extends View {
         int i12 = 0;
         if (this.h) {
             Locale locale = Locale.US;
-            sb2 = hg.k0.h(this.f, "#");
-            sb3 = hg.k0.h(i10, "#");
+            sb2 = hg.c.h(this.f, "#");
+            sb3 = hg.c.h(i10, "#");
         } else {
             Locale locale2 = Locale.US;
             int i13 = this.f;

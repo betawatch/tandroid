@@ -31,7 +31,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class vf0 extends FrameLayout implements b00, ci.gc {
     public final ImageView A0;
@@ -110,7 +110,7 @@ public final class vf0 extends FrameLayout implements b00, ci.gc {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public vf0(Context context, t71 t71Var, Bitmap bitmap, Bitmap bitmap2, int i10, MediaController.SavedFilterState savedFilterState, sd0 sd0Var, int i11, boolean z10, boolean z11, ka kaVar, org.telegram.ui.ActionBar.d6 d6Var) {
+    public vf0(Context context, u71 u71Var, Bitmap bitmap, Bitmap bitmap2, int i10, MediaController.SavedFilterState savedFilterState, sd0 sd0Var, int i11, boolean z10, boolean z11, ka kaVar, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.u0 = new RadioButton[4];
         this.E0 = new Rect();
@@ -145,7 +145,7 @@ public final class vf0 extends FrameLayout implements b00, ci.gc {
             this.F = i12 + 10;
             this.n = i13;
         }
-        if (t71Var == null) {
+        if (u71Var == null) {
             int i14 = this.F;
             this.F = i14 + 1;
             this.w = i14;
@@ -191,9 +191,9 @@ public final class vf0 extends FrameLayout implements b00, ci.gc {
         this.C0 = bitmap;
         this.D0 = bitmap2;
         this.H0 = i10;
-        if (t71Var != null) {
-            this.i0 = t71Var;
-            t71Var.setDelegate(new nf0(this));
+        if (u71Var != null) {
+            this.i0 = u71Var;
+            u71Var.setDelegate(new nf0(this));
         } else {
             this.j0 = true;
             pf0 pf0Var = new pf0(this, context);
@@ -206,7 +206,7 @@ public final class vf0 extends FrameLayout implements b00, ci.gc {
         }
         kf0 kf0Var = new kf0(context);
         kf0Var.a = new PointF();
-        kf0Var.d = new fw0();
+        kf0Var.d = new gw0();
         kf0Var.e = new PointF(0.5f, 0.5f);
         kf0Var.f = 0.15f;
         kf0Var.h = 0.35f;
@@ -479,7 +479,7 @@ public final class vf0 extends FrameLayout implements b00, ci.gc {
                 }
             }
         });
-        if (t71Var != null) {
+        if (u71Var != null) {
             imageView2.setVisibility(8);
         }
         ImageView imageView3 = new ImageView(context);
@@ -1273,11 +1273,11 @@ public final class vf0 extends FrameLayout implements b00, ci.gc {
             textureView.setVisibility(8);
             return;
         }
-        if (textureView instanceof t71) {
-            t71 t71Var = (t71) textureView;
+        if (textureView instanceof u71) {
+            u71 u71Var = (u71) textureView;
             MediaController.SavedFilterState savedFilterState = this.e0;
             if (savedFilterState == null) {
-                t71Var.setDelegate(null);
+                u71Var.setDelegate(null);
                 return;
             }
             yz yzVar2 = this.l0;
@@ -1573,10 +1573,10 @@ public final class vf0 extends FrameLayout implements b00, ci.gc {
     public final boolean k(MotionEvent motionEvent) {
         if (motionEvent.getActionMasked() == 0 || motionEvent.getActionMasked() == 5) {
             TextureView textureView = this.i0;
-            if (textureView instanceof t71) {
+            if (textureView instanceof u71) {
                 float x10 = motionEvent.getX();
                 float y3 = motionEvent.getY();
-                uk0 uk0Var = ((t71) textureView).c;
+                uk0 uk0Var = ((u71) textureView).c;
                 float f7 = uk0Var.a;
                 if (x10 >= f7 && x10 <= f7 + uk0Var.c) {
                     float f10 = uk0Var.b;
@@ -1652,9 +1652,9 @@ public final class vf0 extends FrameLayout implements b00, ci.gc {
             uk0Var.c = f14;
             uk0Var.d = f15;
             kf0 kf0Var = this.o0;
-            fw0 fw0Var = kf0Var.d;
-            fw0Var.a = f14;
-            fw0Var.b = f15;
+            gw0 gw0Var = kf0Var.d;
+            gw0Var.a = f14;
+            gw0Var.b = f15;
             ((FrameLayout.LayoutParams) kf0Var.getLayoutParams()).height = AndroidUtilities.dp(38.0f) + i12;
             ((FrameLayout.LayoutParams) mf0Var.getLayoutParams()).height = AndroidUtilities.dp(28.0f) + i12;
             if (AndroidUtilities.isTablet()) {

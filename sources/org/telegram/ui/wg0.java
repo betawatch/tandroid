@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class wg0 extends org.telegram.ui.ActionBar.n2 {
     public vg0 a;
@@ -57,7 +57,7 @@ public final class wg0 extends org.telegram.ui.ActionBar.n2 {
             }
         }
         if (i10 == wg0Var.d) {
-            wg0Var.presentFragment(PasscodeActivity.b0());
+            wg0Var.presentFragment(PasscodeActivity.h0());
             return;
         }
         if (i10 == wg0Var.e) {
@@ -111,7 +111,7 @@ public final class wg0 extends org.telegram.ui.ActionBar.n2 {
         frameLayout.addView(this.b, w7.z5.e(-1, -1, 51));
         this.b.setAdapter(this.a);
         this.b.setOnItemClickListener(new bu(this, 22));
-        this.b.s1();
+        this.b.r1();
         this.b.setSectionsDrawBackground(true);
         return this.fragmentView;
     }

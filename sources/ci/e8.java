@@ -19,9 +19,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.hc1;
+import org.telegram.ui.fc1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public class e8 extends View {
     public final Path E;
@@ -130,8 +130,8 @@ public class e8 extends View {
         this.c = 0.9f;
     }
 
-    public final void c(hc1 hc1Var) {
-        this.h = hc1Var;
+    public final void c(fc1 fc1Var) {
+        this.h = fc1Var;
     }
 
     public final void d(float f7) {

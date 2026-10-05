@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class c10 extends og.b {
     public final Context d;
@@ -194,10 +194,10 @@ public final class c10 extends og.b {
                 view = zaVar;
                 break;
             case 2:
-                org.telegram.ui.Components.lw0 lw0Var = (org.telegram.ui.Components.lw0) f10Var.fragmentView;
+                org.telegram.ui.Components.mw0 mw0Var = (org.telegram.ui.Components.mw0) f10Var.fragmentView;
                 String string = LocaleController.getString(R.string.FilterNameHint);
                 d6Var = ((org.telegram.ui.ActionBar.n2) f10Var).resourceProvider;
-                z00 z00Var = new z00(this.d, lw0Var, string, false, 12, d6Var);
+                z00 z00Var = new z00(this.d, mw0Var, string, false, 12, d6Var);
                 f10Var.K = z00Var;
                 z00Var.n = false;
                 org.telegram.ui.Cells.e3 e3Var = z00Var.b;

@@ -48,7 +48,7 @@ import org.telegram.ui.wc0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class t0 extends c implements LocationController.LocationFetchCallback {
     public final int K;
@@ -772,7 +772,7 @@ public class t0 extends c implements LocationController.LocationFetchCallback {
                 x4 x4Var = new x4(context);
                 LinearLayout linearLayout = new LinearLayout(context);
                 x4Var.addView(linearLayout, z5.e(-2, -2, 17));
-                TextView f7 = org.telegram.messenger.f0.f(context, 1, 16.0f);
+                TextView f7 = org.telegram.messenger.q.f(context, 1, 16.0f);
                 int i11 = i6.A6;
                 f7.setTextColor(i6.v0(i11, d6Var));
                 f7.setText("Powered by");

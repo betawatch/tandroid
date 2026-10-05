@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class tg extends FrameLayout {
     public final Drawable E;
@@ -486,7 +486,7 @@ public final class tg extends FrameLayout {
         r46.drawPath(r2, r6);
         r46.restore();
         r46.save();
-        r4.setBounds(r7 - (r4.getIntrinsicWidth() / 2), (int) (org.telegram.messenger.AndroidUtilities.dpf2(20.0f) + (r45.f.getHeight() + r14)), org.telegram.ui.Cells.c1.w(2, r7, r4), r4.getIntrinsicHeight() + ((int) (org.telegram.messenger.AndroidUtilities.dpf2(20.0f) + (r45.f.getHeight() + r14))));
+        r4.setBounds(r7 - (r4.getIntrinsicWidth() / 2), (int) (org.telegram.messenger.AndroidUtilities.dpf2(20.0f) + (r45.f.getHeight() + r14)), org.telegram.ui.Cells.c1.x(2, r7, r4), r4.getIntrinsicHeight() + ((int) (org.telegram.messenger.AndroidUtilities.dpf2(20.0f) + (r45.f.getHeight() + r14))));
         r4.draw(r46);
         r46.restore();
      */
@@ -607,7 +607,7 @@ public final class tg extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:72:0x03e8, code lost:
     
-        r2 = org.telegram.messenger.f0.z(1.0f, r2, (1.0f - r10) * r8.i4, r5);
+        r2 = org.telegram.messenger.q.z(1.0f, r2, (1.0f - r10) * r8.i4, r5);
         r9 = r7;
         r6 = r30 + r26;
         r46.scale(r2, r2, r9, r6);
@@ -915,7 +915,7 @@ public final class tg extends FrameLayout {
                             alertDialog$Builder.a.R = LocaleController.getString(R.string.RecordingTrimTitle);
                             alertDialog$Builder.a.T = LocaleController.getString(R.string.RecordingTrimText);
                             alertDialog$Builder.k(LocaleController.getString(R.string.OK), new s(beVar, 19));
-                            hg.k0.o(R.string.Cancel, alertDialog$Builder, null);
+                            hg.c.p(R.string.Cancel, alertDialog$Builder, null);
                         } else {
                             beVar.run();
                         }
@@ -964,12 +964,12 @@ public final class tg extends FrameLayout {
         }
         ch.d c10 = cVar.c(this, this.P, false);
         this.R = c10;
-        c10.z(AndroidUtilities.dp(18.0f));
-        this.R.y(AndroidUtilities.dp(3.0f));
+        c10.y(AndroidUtilities.dp(18.0f));
+        this.R.x(AndroidUtilities.dp(3.0f));
         ch.d c11 = cVar.c(this, this.P, false);
         this.S = c11;
-        c11.z(AndroidUtilities.dp(18.0f));
-        this.S.y(AndroidUtilities.dp(3.0f));
+        c11.y(AndroidUtilities.dp(18.0f));
+        this.S.x(AndroidUtilities.dp(3.0f));
         c();
     }
 

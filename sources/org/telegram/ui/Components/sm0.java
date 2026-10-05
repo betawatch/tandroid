@@ -33,7 +33,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class sm0 extends Dialog {
     public static final /* synthetic */ int O = 0;
@@ -57,7 +57,7 @@ public final class sm0 extends Dialog {
     public final ah.c n;
     public float r;
     public final ai.f0 s;
-    public final lw0 v;
+    public final mw0 v;
     public b80 w;
     public FrameLayout x;
     public ViewGroup y;
@@ -72,10 +72,10 @@ public final class sm0 extends Dialog {
         ai.f0 f0Var = new ai.f0(this, context, 17);
         this.s = f0Var;
         f0Var.setOnClickListener(new l80(this, 10));
-        lw0 lw0Var = new lw0(context, null);
-        this.v = lw0Var;
-        lw0Var.setClipToPadding(false);
-        f0Var.addView(lw0Var, w7.z5.e(-1, -1, 119));
+        mw0 mw0Var = new mw0(context, null);
+        this.v = mw0Var;
+        mw0Var.setClipToPadding(false);
+        f0Var.addView(mw0Var, w7.z5.e(-1, -1, 119));
         fh.b bVar = new fh.b();
         this.h = bVar;
         ah.c cVar = new ah.c(bVar);

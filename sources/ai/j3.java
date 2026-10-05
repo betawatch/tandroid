@@ -41,12 +41,12 @@ import org.telegram.ui.pu0;
 import org.telegram.ui.tg0;
 import org.telegram.ui.ug0;
 import org.telegram.ui.vb0;
+import org.telegram.ui.vb1;
 import org.telegram.ui.wq0;
-import org.telegram.ui.xb1;
 import org.telegram.ui.yn;
 import org.telegram.ui.yu0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -117,10 +117,10 @@ public final /* synthetic */ class j3 implements View.OnClickListener {
                 }
                 break;
             case 3:
-                xb1 xb1Var = (xb1) this.c;
+                vb1 vb1Var = (vb1) this.c;
                 boolean z14 = this.b;
                 for (int i10 = 0; i10 < 2; i10++) {
-                    org.telegram.ui.Cells.y0 y0Var = ((org.telegram.ui.Cells.y0[]) xb1Var.b)[i10];
+                    org.telegram.ui.Cells.y0 y0Var = ((org.telegram.ui.Cells.y0[]) vb1Var.b)[i10];
                     y0Var.a.a(y0Var == view, true);
                 }
                 SharedConfig.setUseThreeLinesLayout(z14);

@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import w7.g0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class d extends o6.a {
     public static final Parcelable.Creator<d> CREATOR = new v(17);
@@ -54,14 +54,14 @@ public final class d extends o6.a {
         List list = this.c;
         int size = list == null ? 0 : list.size();
         String valueOf = String.valueOf(this.e);
-        StringBuilder w10 = a4.a.w("applicationId: ", this.a, ", name: ", this.b, ", namespaces.count: ");
-        w10.append(size);
-        w10.append(", senderAppIdentifier: ");
-        w10.append(this.d);
-        w10.append(", senderAppLaunchUrl: ");
-        a4.a.z(w10, valueOf, ", iconUrl: ", this.f, ", type: ");
-        w10.append(this.h);
-        return w10.toString();
+        StringBuilder x10 = a4.a.x("applicationId: ", this.a, ", name: ", this.b, ", namespaces.count: ");
+        x10.append(size);
+        x10.append(", senderAppIdentifier: ");
+        x10.append(this.d);
+        x10.append(", senderAppLaunchUrl: ");
+        a4.a.A(x10, valueOf, ", iconUrl: ", this.f, ", type: ");
+        x10.append(this.h);
+        return x10.toString();
     }
 
     @Override // android.os.Parcelable

@@ -32,11 +32,11 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cc0;
 import org.telegram.ui.h60;
 import org.telegram.ui.ki;
+import org.telegram.ui.ta1;
 import org.telegram.ui.uy;
-import org.telegram.ui.va1;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final /* synthetic */ class j implements Runnable {
                 AndroidUtilities.runOnUIThread((m5) obj, Math.max(0L, 500 - (System.currentTimeMillis() - j3)));
                 break;
             case 3:
-                org.telegram.ui.ActionBar.n2 b02 = va1.b0(MessagesController.getInstance(((l9) obj).a).getChat(Long.valueOf(-j3)), true);
+                org.telegram.ui.ActionBar.n2 b02 = ta1.b0(MessagesController.getInstance(((l9) obj).a).getChat(Long.valueOf(-j3)), true);
                 org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
                 if (R != null) {
                     ci.kc kcVar = ci.kc.F2;
@@ -200,7 +200,7 @@ public final /* synthetic */ class j implements Runnable {
                 }
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    U.presentFragment(new yn(t8.b.f(j3, "user_id")));
+                    U.presentFragment(new yn(sa.e.f(j3, "user_id")));
                     break;
                 }
                 break;
@@ -228,7 +228,7 @@ public final /* synthetic */ class j implements Runnable {
                 } else if (U2 != null) {
                     d6Var2 = U2.getResourceProvider();
                 }
-                new yh.m7(activity2, d6Var2, this.b, 15, "", new ih0(lh0Var, 0), 0L).show();
+                new yh.n7(activity2, d6Var2, this.b, 15, "", new ih0(lh0Var, 0), 0L).show();
                 break;
             case 23:
                 uy uyVar = (uy) obj;

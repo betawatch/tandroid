@@ -11,11 +11,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class l5 extends FrameLayout {
     public final TextView a;
@@ -54,7 +54,7 @@ public final class l5 extends FrameLayout {
         addView(textView2, w7.z5.d(-1, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 10.0f : 123.0f, 33.0f, z11 ? 123.0f : 10.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.c = textView3;
-        ok.t(textView3, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.z6, false), 1, 14.0f, 1);
+        bi.s(textView3, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.z6, false), 1, 14.0f, 1);
         textView3.setMaxLines(1);
         textView3.setSingleLine(true);
         textView3.setEllipsize(truncateAt);
@@ -97,7 +97,7 @@ public final class l5 extends FrameLayout {
         textView3.setLayoutParams(w7.z5.d(-1, -2.0f, (z12 ? 5 : 3) | 48, z12 ? 10.0f : 123.0f, 90.0f, z12 ? 123.0f : 10.0f, 0.0f));
         w9Var.setVisibility(0);
         Locale locale = Locale.US;
-        w9Var.getImageReceiver().setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument)), a4.a.k(i10, i11, "_"), null, null, -1L, null, obj, 1);
+        w9Var.getImageReceiver().setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument)), a4.a.l(i10, i11, "_"), null, null, -1L, null, obj, 1);
     }
 
     public final void b(TLRPC.TL_messageMediaInvoice tL_messageMediaInvoice, String str) {

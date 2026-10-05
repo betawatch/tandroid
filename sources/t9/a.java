@@ -5,9 +5,10 @@ import ci.p9;
 import java.util.concurrent.atomic.AtomicReference;
 import q9.p;
 import r2.s;
+import sa.e;
 import y9.b1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class a {
     public static final b c = new b();
@@ -35,7 +36,7 @@ public final class a {
     }
 
     public final void d(String str, long j3, b1 b1Var) {
-        String i10 = t8.b.i("Deferring native open session: ", str);
+        String i10 = e.i("Deferring native open session: ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", i10, null);
         }

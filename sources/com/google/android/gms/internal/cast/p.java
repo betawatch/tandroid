@@ -34,7 +34,7 @@ import z7.hb;
 import z7.we;
 import z7.wf;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -267,11 +267,11 @@ public final /* synthetic */ class p implements Runnable {
                             a5.a aVar = new a5.a(10, 2);
                             cf.c cVar = (cf.c) a1Var.b;
                             aVar.d = Boolean.valueOf(((d) cVar.b).d == 2);
-                            cf.c.B(cVar, new y6(aVar));
-                            x6 C = cVar.C();
+                            cf.c.v(cVar, new y6(aVar));
+                            x6 w10 = cVar.w();
                             b bVar2 = new b(new a(i12));
-                            bVar2.c = C.h;
-                            C.c.add(bVar2);
+                            bVar2.c = w10.h;
+                            w10.c.add(bVar2);
                             break;
                     }
                 }
@@ -323,10 +323,10 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 return;
             case 2:
-                ((k2.e) this.b).h((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
+                ((k2.e) this.b).i((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
                 return;
             case 3:
-                ((k2.e) this.b).h((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
+                ((k2.e) this.b).i((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
                 return;
             case 4:
                 r0.q0.h((View) this.b, (r0.v0) this.c, (o0.a) this.d);

@@ -43,8 +43,9 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import e2.d;
 import e2.d0;
-import e2.h;
 import e2.v;
+import e6.g;
+import e6.h;
 import e6.o;
 import ei.y4;
 import g6.i;
@@ -55,7 +56,6 @@ import gg.a2;
 import gg.b2;
 import hc.e;
 import hc.f;
-import i4.g;
 import ii.d3;
 import ii.h1;
 import ii.i1;
@@ -93,19 +93,19 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.jo0;
-import org.telegram.ui.Components.oq0;
+import org.telegram.ui.Components.qq0;
 import org.telegram.ui.fy;
 import org.telegram.ui.zi0;
-import pg.m;
 import pg.t1;
 import pg.u0;
 import qg.v1;
 import v7.i5;
 import v7.t7;
+import z3.m;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1, v0, OnSuccessListener, SuccessContinuation, n, f6.a, fb.n, w, b2, z3.n, d5, h1 {
+public final class c implements s, qq0, a0, androidx.activity.result.b, ce.b, v1, v0, OnSuccessListener, SuccessContinuation, n, f6.a, fb.n, w, b2, m, d5, h1 {
     public static volatile c c;
     public final /* synthetic */ int a;
     public Object b;
@@ -121,9 +121,42 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
         return new p(looper, obj, str);
     }
 
-    @Override // z3.n
-    public int A() {
-        return 2;
+    /* JADX WARN: Removed duplicated region for block: B:18:0x004d A[LOOP:0: B:16:0x0047->B:18:0x004d, LOOP_END] */
+    @Override // g6.n
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void A(String str, long j3, int i10, Object obj, long j10, long j11) {
+        int i11;
+        Iterator it;
+        e6.p pVar = (e6.p) this.b;
+        try {
+            i11 = i10;
+            try {
+                Status status = new Status(i11, null, null, null);
+                Object obj2 = true == (obj instanceof g6.l) ? obj : null;
+                if (obj2 != null) {
+                }
+                if (obj2 != null) {
+                }
+                pVar.a(new o(status, 2));
+            } catch (IllegalStateException e7) {
+                e = e7;
+                g6.b bVar = h.k;
+                Log.e(bVar.a, bVar.d("Result already set when calling onRequestCompleted", new Object[0]), e);
+                it = pVar.q.i.iterator();
+                while (it.hasNext()) {
+                }
+            }
+        } catch (IllegalStateException e10) {
+            e = e10;
+            i11 = i10;
+        }
+        it = pVar.q.i.iterator();
+        while (it.hasNext()) {
+            ((g) it.next()).h(str, j3, i11, j10, j11);
+            i11 = i10;
+        }
     }
 
     @Override // ii.h1
@@ -142,34 +175,13 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
         d3Var.a();
     }
 
-    @Override // gg.b2
-    public void C(ArrayList arrayList) {
-        switch (this.a) {
-            case 23:
-                jo0 jo0Var = (jo0) this.b;
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    jo0Var.J.add(((a2) arrayList.get(i10)).a);
-                }
-                fy fyVar = jo0Var.U;
-                if (fyVar != null) {
-                    fyVar.d(jo0Var.D0 > 0, false);
-                }
-                jo0Var.l();
-                break;
-        }
+    @Override // ii.h1
+    public /* synthetic */ boolean C(boolean z10) {
+        return false;
     }
 
-    @Override // qg.v1
-    public void E(float f7) {
-        mb mbVar = (mb) this.b;
-        u0.e(mbVar.F1).k(String.valueOf(m.a.indexOf(mbVar.O0.getCurrentBrush())), f7);
-        t1 t1Var = mbVar.A1;
-        t1Var.c = f7;
-        mbVar.E0(t1Var, null, false);
-    }
-
-    @Override // z3.n
-    public void F(byte[] bArr, int i10, int i11, z3.m mVar, h hVar) {
+    @Override // z3.m
+    public void E(byte[] bArr, int i10, int i11, z3.l lVar, e2.h hVar) {
         d2.b a2;
         v vVar = (v) this.b;
         vVar.H(i10 + i11, bArr);
@@ -194,7 +206,7 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
                     vVar.K(i13);
                     i12 = (i12 - 8) - i13;
                     if (j11 == 1937011815) {
-                        g gVar = new g();
+                        i4.g gVar = new i4.g();
                         i4.h.e(str2, gVar);
                         aVar = gVar.a();
                     } else if (j11 == 1885436268) {
@@ -210,7 +222,7 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
                     a2 = aVar.a();
                 } else {
                     Pattern pattern = i4.h.a;
-                    g gVar2 = new g();
+                    i4.g gVar2 = new i4.g();
                     gVar2.c = charSequence;
                     a2 = gVar2.a().a();
                 }
@@ -222,9 +234,21 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
         hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, arrayList));
     }
 
-    @Override // ii.h1
-    public /* synthetic */ boolean G(boolean z10) {
-        return false;
+    @Override // gg.b2
+    public void F(ArrayList arrayList) {
+        switch (this.a) {
+            case 23:
+                jo0 jo0Var = (jo0) this.b;
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    jo0Var.J.add(((a2) arrayList.get(i10)).a);
+                }
+                fy fyVar = jo0Var.U;
+                if (fyVar != null) {
+                    fyVar.d(jo0Var.D0 > 0, false);
+                }
+                jo0Var.l();
+                break;
+        }
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:222:0x0346, code lost:
@@ -236,7 +260,7 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public dc.d H(com.google.firebase.messaging.m mVar) {
+    public dc.d G(com.google.firebase.messaging.m mVar) {
         int e7;
         e eVar;
         hc.c cVar;
@@ -399,11 +423,11 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
                 iArr2[i55] = bArr3[i55] & 255;
             }
             try {
-                int I = ((c) this.b).I(bArr3.length - i54, iArr2);
+                int H = ((c) this.b).H(bArr3.length - i54, iArr2);
                 for (int i56 = 0; i56 < i54; i56++) {
                     bArr3[i56] = (byte) iArr2[i56];
                 }
-                i51 += I;
+                i51 += H;
                 int i57 = i53;
                 int i58 = 0;
                 while (i58 < i54) {
@@ -567,7 +591,7 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
         }
     }
 
-    public int I(int i10, int[] iArr) {
+    public int H(int i10, int[] iArr) {
         int[] iArr2;
         int[] iArr3;
         int i11;
@@ -714,12 +738,16 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
         return iArr3.length;
     }
 
-    public Set J() {
+    public Set I() {
         Set unmodifiableSet;
         synchronized (((HashSet) this.b)) {
             unmodifiableSet = DesugarCollections.unmodifiableSet((HashSet) this.b);
         }
         return unmodifiableSet;
+    }
+
+    public void J() {
+        ((u) this.b).d.R();
     }
 
     @Override // org.telegram.ui.Components.d5
@@ -741,8 +769,13 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
         }
     }
 
-    public void L() {
-        ((u) this.b).d.R();
+    @Override // qg.v1
+    public void X(float f7) {
+        mb mbVar = (mb) this.b;
+        u0.e(mbVar.F1).k(String.valueOf(pg.m.a.indexOf(mbVar.O0.getCurrentBrush())), f7);
+        t1 t1Var = mbVar.A1;
+        t1Var.c = f7;
+        mbVar.E0(t1Var, null, false);
     }
 
     @Override // gg.b2
@@ -808,7 +841,7 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
         d3 d3Var = ((q5) this.b).E;
         if (d3Var != null) {
             x3 x3Var = d3Var.a;
-            x3.O1(x3Var, i1Var);
+            x3.N1(x3Var, i1Var);
             x3Var.o3.P(i1Var, true);
         }
     }
@@ -893,7 +926,7 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
         if (d3Var == null || q5Var.a == null) {
             return false;
         }
-        return d3Var.a.U4();
+        return d3Var.a.T4();
     }
 
     @Override // ii.h1
@@ -920,13 +953,13 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
     public float get() {
         mb mbVar = (mb) this.b;
         int i10 = mbVar.F1;
-        m currentBrush = mbVar.O0.getCurrentBrush();
-        return currentBrush == null ? u0.e(i10).i : u0.e(i10).f(String.valueOf(m.a.indexOf(currentBrush)), currentBrush.d());
+        pg.m currentBrush = mbVar.O0.getCurrentBrush();
+        return currentBrush == null ? u0.e(i10).i : u0.e(i10).f(String.valueOf(pg.m.a.indexOf(currentBrush)), currentBrush.d());
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public /* synthetic */ z3.d h(int i10, int i11, byte[] bArr) {
-        return t8.b.a(this, bArr, i11);
+        return sa.e.a(this, bArr, i11);
     }
 
     @Override // com.google.android.gms.common.api.internal.v0
@@ -985,14 +1018,14 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
             int width = bitmap.getWidth();
             float f7 = width;
             int height = bitmap.getHeight();
-            int A = (int) a4.a.A(f7, 9.0f, 16.0f, 0.5f);
-            float f10 = (A - height) / 2.0f;
+            int B = (int) a4.a.B(f7, 9.0f, 16.0f, 0.5f);
+            float f10 = (B - height) / 2.0f;
             RectF rectF = new RectF(0.0f, f10, f7, height + f10);
             Bitmap.Config config = bitmap.getConfig();
             if (config == null) {
                 config = Bitmap.Config.ARGB_8888;
             }
-            Bitmap createBitmap = Bitmap.createBitmap(width, A, config);
+            Bitmap createBitmap = Bitmap.createBitmap(width, B, config);
             new Canvas(createBitmap).drawBitmap(bitmap, (Rect) null, rectF, (Paint) null);
             bitmap2 = createBitmap;
         }
@@ -1055,31 +1088,20 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
         try {
             pVar.a(new o(new Status(2103, null, null, null), 1));
         } catch (IllegalStateException e7) {
-            g6.b bVar = e6.h.k;
+            g6.b bVar = h.k;
             Log.e(bVar.a, bVar.d("Result already set when calling onRequestReplaced", new Object[0]), e7);
         }
         Iterator it = pVar.q.i.iterator();
         while (it.hasNext()) {
-            ((e6.g) it.next()).h(str, j3, 2103, j10, j11);
+            ((g) it.next()).h(str, j3, 2103, j10, j11);
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.v0
-    public void s(Bundle bundle) {
-        x xVar = (x) this.b;
-        xVar.o.lock();
-        try {
-            Bundle bundle2 = xVar.k;
-            if (bundle2 == null) {
-                xVar.k = bundle;
-            } else if (bundle != null) {
-                bundle2.putAll(bundle);
-            }
-            xVar.l = k6.a.e;
-            x.l(xVar);
-        } finally {
-            xVar.o.unlock();
+    @Override // gg.b2
+    public /* synthetic */ a0.i s() {
+        switch (this.a) {
         }
+        return null;
     }
 
     @Override // ii.h1
@@ -1178,41 +1200,21 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
         return Tasks.forResult(null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x004d A[LOOP:0: B:16:0x0047->B:18:0x004d, LOOP_END] */
-    @Override // g6.n
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void u(String str, long j3, int i10, Object obj, long j10, long j11) {
-        int i11;
-        Iterator it;
-        e6.p pVar = (e6.p) this.b;
+    @Override // com.google.android.gms.common.api.internal.v0
+    public void u(Bundle bundle) {
+        x xVar = (x) this.b;
+        xVar.o.lock();
         try {
-            i11 = i10;
-            try {
-                Status status = new Status(i11, null, null, null);
-                Object obj2 = true == (obj instanceof g6.l) ? obj : null;
-                if (obj2 != null) {
-                }
-                if (obj2 != null) {
-                }
-                pVar.a(new o(status, 2));
-            } catch (IllegalStateException e7) {
-                e = e7;
-                g6.b bVar = e6.h.k;
-                Log.e(bVar.a, bVar.d("Result already set when calling onRequestCompleted", new Object[0]), e);
-                it = pVar.q.i.iterator();
-                while (it.hasNext()) {
-                }
+            Bundle bundle2 = xVar.k;
+            if (bundle2 == null) {
+                xVar.k = bundle;
+            } else if (bundle != null) {
+                bundle2.putAll(bundle);
             }
-        } catch (IllegalStateException e10) {
-            e = e10;
-            i11 = i10;
-        }
-        it = pVar.q.i.iterator();
-        while (it.hasNext()) {
-            ((e6.g) it.next()).h(str, j3, i11, j10, j11);
-            i11 = i10;
+            xVar.l = k6.a.e;
+            x.l(xVar);
+        } finally {
+            xVar.o.unlock();
         }
     }
 
@@ -1226,11 +1228,13 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
         return true;
     }
 
-    @Override // gg.b2
-    public /* synthetic */ a0.i w() {
-        switch (this.a) {
+    @Override // ii.h1
+    public void w(CharSequence charSequence) {
+        d3 d3Var = ((q5) this.b).E;
+        if (d3Var == null || charSequence == null || charSequence.length() <= 0) {
+            return;
         }
-        return null;
+        d3Var.a.u4(charSequence.toString());
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:26:0x0043, code lost:
@@ -1288,25 +1292,21 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
         handler.postDelayed(q4Var, 2000L);
     }
 
-    @Override // ii.h1
-    public void x(CharSequence charSequence) {
-        d3 d3Var = ((q5) this.b).E;
-        if (d3Var == null || charSequence == null || charSequence.length() <= 0) {
-            return;
+    @Override // gg.b2
+    public /* synthetic */ a0.i x() {
+        switch (this.a) {
         }
-        d3Var.a.v4(charSequence.toString());
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.oq0
+    @Override // org.telegram.ui.Components.qq0
     public void x0() {
         e6.j0((e6) this.b);
     }
 
-    @Override // gg.b2
-    public /* synthetic */ a0.i y() {
-        switch (this.a) {
-        }
-        return null;
+    @Override // z3.m
+    public int y() {
+        return 2;
     }
 
     @Override // gg.b2
@@ -1353,7 +1353,7 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
         this.b = str;
     }
 
-    @Override // org.telegram.ui.Components.oq0
+    @Override // org.telegram.ui.Components.qq0
     public /* synthetic */ void V() {
     }
 
@@ -1361,11 +1361,11 @@ public final class c implements s, oq0, a0, androidx.activity.result.b, ce.b, v1
     public /* synthetic */ void r() {
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public /* synthetic */ void reset() {
     }
 
-    private final /* synthetic */ void M(ArrayList arrayList) {
+    private final /* synthetic */ void L(ArrayList arrayList) {
     }
 
     @Override // ii.h1

@@ -8,9 +8,9 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.ui.zb1;
+import org.telegram.ui.xb1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class un extends org.telegram.ui.Cells.d6 {
     public final /* synthetic */ vn F;
@@ -24,9 +24,9 @@ public final class un extends org.telegram.ui.Cells.d6 {
     @Override // org.telegram.ui.Cells.d6
     public final boolean e() {
         xn xnVar = this.F.d;
-        zb1 zb1Var = xnVar.s;
-        View F = zb1Var.F(this);
-        s4.c1 T = F == null ? null : zb1Var.T(F);
+        xb1 xb1Var = xnVar.s;
+        View F = xb1Var.F(this);
+        s4.c1 T = F == null ? null : xb1Var.T(F);
         if (T != null) {
             int b10 = T.b();
             int i10 = xnVar.M;
@@ -41,9 +41,9 @@ public final class un extends org.telegram.ui.Cells.d6 {
     public final boolean f(org.telegram.ui.Cells.d6 d6Var) {
         int b10;
         xn xnVar = this.F.d;
-        zb1 zb1Var = xnVar.s;
-        View F = zb1Var.F(d6Var);
-        s4.c1 T = F == null ? null : zb1Var.T(F);
+        xb1 xb1Var = xnVar.s;
+        View F = xb1Var.F(d6Var);
+        s4.c1 T = F == null ? null : xb1Var.T(F);
         if (T == null || (b10 = T.b()) == -1) {
             return false;
         }
@@ -80,9 +80,9 @@ public final class un extends org.telegram.ui.Cells.d6 {
             }
         }
         super.h(d6Var, z10);
-        zb1 zb1Var = xnVar.s;
-        View F = zb1Var.F(d6Var);
-        s4.c1 T = F == null ? null : zb1Var.T(F);
+        xb1 xb1Var = xnVar.s;
+        View F = xb1Var.F(d6Var);
+        s4.c1 T = F == null ? null : xb1Var.T(F);
         if (T != null && (b10 = T.b()) != -1) {
             xnVar.L[b10 - xnVar.t0] = z10;
         }
@@ -101,7 +101,7 @@ public final class un extends org.telegram.ui.Cells.d6 {
 
     @Override // org.telegram.ui.Cells.d6
     public final void k(org.telegram.ui.Cells.c6 c6Var) {
-        this.F.d.b.q1(c6Var, true);
+        this.F.d.b.s1(c6Var, true);
     }
 
     @Override // org.telegram.ui.Cells.d6

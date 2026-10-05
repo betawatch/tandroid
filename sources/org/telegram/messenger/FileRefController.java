@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class FileRefController extends BaseController {
     private static volatile FileRefController[] Instance = new FileRefController[4];
@@ -32,7 +32,7 @@ public class FileRefController extends BaseController {
     private ArrayList<Waiter> savedGifsWaiters;
     private ArrayList<Waiter> wallpaperWaiters;
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class CachedResult {
         private long firstQueryTime;
         private TLObject response;
@@ -41,7 +41,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class Requester {
         private Object[] args;
         private boolean completed;
@@ -52,7 +52,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class Waiter {
         private String locationKey;
         private String parentKey;
@@ -793,7 +793,7 @@ public class FileRefController extends BaseController {
             return "bot_info_" + ((TL_bots.BotInfo) obj).user_id;
         }
         if (obj instanceof TLRPC.TL_attachMenuBot) {
-            return a4.a.o(((TLRPC.TL_attachMenuBot) obj).bot_id, "attach_menu_bot_");
+            return a4.a.p(((TLRPC.TL_attachMenuBot) obj).bot_id, "attach_menu_bot_");
         }
         if (obj instanceof MessageObject) {
             MessageObject messageObject = (MessageObject) obj;
@@ -850,7 +850,7 @@ public class FileRefController extends BaseController {
             StringBuilder sb2 = new StringBuilder("story(dialogId=");
             sb2.append(storyItem.dialogId);
             sb2.append(" id=");
-            return a4.a.n(storyItem.id, ")", sb2);
+            return a4.a.o(storyItem.id, ")", sb2);
         }
         if (!(obj instanceof MessageObject)) {
             if (obj == null) {

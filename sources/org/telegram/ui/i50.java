@@ -5,7 +5,7 @@ import android.animation.ObjectAnimator;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class i50 extends org.telegram.ui.ActionBar.n1 {
     public final /* synthetic */ h60 o;
@@ -35,7 +35,7 @@ public final class i50 extends org.telegram.ui.ActionBar.n1 {
         arrayList.add(ObjectAnimator.ofInt(h60Var.W2, org.telegram.ui.Components.s6.b, 0));
         h60Var.e3.playTogether(arrayList);
         h60Var.e3.setDuration(220L);
-        h60Var.e3.addListener(new org.telegram.ui.Components.a91(this, 22));
+        h60Var.e3.addListener(new org.telegram.ui.Components.b91(this, 22));
         h60Var.e3.start();
     }
 }

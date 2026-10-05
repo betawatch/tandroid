@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j60 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
     */
     public final void onClick(View view) {
         int b10;
-        org.telegram.ui.Components.iz0 iz0Var;
+        org.telegram.ui.Components.jz0 jz0Var;
         int i10 = 20;
         final int i11 = 4;
         final int i12 = 3;
@@ -210,7 +210,7 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder3, null);
+                                            hg.c.p(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
                                             th0 th0Var3 = th0Var;
@@ -271,7 +271,7 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder4, null);
+                                            hg.c.p(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
@@ -304,7 +304,7 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder3, null);
+                                            hg.c.p(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
                                             th0 th0Var3 = th0Var;
@@ -365,7 +365,7 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder4, null);
+                                            hg.c.p(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
@@ -394,7 +394,7 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder3, null);
+                                            hg.c.p(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
                                             th0 th0Var3 = th0Var;
@@ -455,7 +455,7 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder4, null);
+                                            hg.c.p(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
@@ -484,7 +484,7 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder3, null);
+                                            hg.c.p(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
                                             th0 th0Var3 = th0Var;
@@ -545,7 +545,7 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder4, null);
+                                            hg.c.p(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
@@ -574,7 +574,7 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder3, null);
+                                            hg.c.p(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
                                             th0 th0Var3 = th0Var;
@@ -635,13 +635,13 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            hg.k0.o(R.string.Cancel, alertDialog$Builder4, null);
+                                            hg.c.p(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
                             });
                         }
-                        F.W(wh0Var.b.W0(th0Var, false));
+                        F.W(wh0Var.b.V0(th0Var, false));
                         F.Z();
                         break;
                     }
@@ -658,7 +658,7 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                             break;
                         }
                     }
-                    Bundle f7 = t8.b.f(j3, "chat_id");
+                    Bundle f7 = sa.e.f(j3, "chat_id");
                     f7.putInt("message_id", hj0Var.c);
                     f7.putBoolean("need_remove_previous_same_chat_activity", false);
                     hj0Var.presentFragment(new yn(f7));
@@ -682,14 +682,14 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                 int i16 = passcodeActivity.x;
                 if (i16 != 1) {
                     if (i16 == 2) {
-                        passcodeActivity.g0();
+                        passcodeActivity.m0();
                         break;
                     }
                 } else if (passcodeActivity.E != 0) {
-                    passcodeActivity.g0();
+                    passcodeActivity.m0();
                     break;
                 } else {
-                    passcodeActivity.h0();
+                    passcodeActivity.n0();
                     break;
                 }
                 break;
@@ -834,9 +834,9 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                                     textView.clearFocus();
                                     uv0Var.i0();
                                     uv0Var.r0();
-                                    iz0Var = uv0Var.Q;
-                                    if (iz0Var != null) {
-                                        iz0Var.f();
+                                    jz0Var = uv0Var.Q;
+                                    if (jz0Var != null) {
+                                        jz0Var.f();
                                         uv0Var.Q.setDelegate(null);
                                     }
                                     uv0Var.b.m(uv0Var.p0);
@@ -852,8 +852,8 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                             textView.clearFocus();
                             uv0Var.i0();
                             uv0Var.r0();
-                            iz0Var = uv0Var.Q;
-                            if (iz0Var != null) {
+                            jz0Var = uv0Var.Q;
+                            if (jz0Var != null) {
                             }
                             uv0Var.b.m(uv0Var.p0);
                         }
@@ -934,23 +934,23 @@ public final /* synthetic */ class j60 implements View.OnClickListener {
                     x21Var.N.setInterpolator(org.telegram.ui.Components.nt.e);
                     x21Var.N.start();
                     frameLayout2.addView(x21Var.O, new ViewGroup.LayoutParams(-1, -1));
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.es0(11, x21Var, z11));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.fs0(11, x21Var, z11));
                     break;
                 }
                 break;
             case 28:
-                u31 u31Var = (u31) this.b;
-                ci.d dVar = u31Var.s;
+                s31 s31Var = (s31) this.b;
+                ci.d dVar = s31Var.s;
                 if (dVar.W && !dVar.N) {
                     dVar.setLoading(true);
-                    v31.F(u31Var.v, ((TextView) u31Var.h.d).getText(), u31Var.d.option, u31Var.n.getText().toString());
+                    t31.F(s31Var.v, ((TextView) s31Var.h.d).getText(), s31Var.d.option, s31Var.n.getText().toString());
                     break;
                 }
                 break;
             default:
-                s31 s31Var = (s31) ((u5) this.b).e;
-                if (s31Var != null) {
-                    s31Var.run();
+                q31 q31Var = (q31) ((u5) this.b).e;
+                if (q31Var != null) {
+                    q31Var.run();
                     break;
                 }
                 break;

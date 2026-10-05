@@ -1,39 +1,47 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ProfileActivity;
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bx0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ex0 b;
+public final class bx0 extends cb {
+    public us X;
 
-    public /* synthetic */ bx0(ex0 ex0Var, int i10) {
-        this.a = i10;
-        this.b = ex0Var;
+    public bx0(Context context) {
+        super(context, null, true, false, null);
+        fixNavigationBar();
+        this.E = true;
+        this.y = true;
+        I();
+        zl0 zl0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        zl0Var.setPadding(i10, 0, i10, 0);
+        this.d.j(new xb0(this, 7));
+        this.d.setOnItemClickListener(new j(this, 14));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ex0 ex0Var = this.b;
-                ex0Var.invalidate();
-                AndroidUtilities.runOnUIThread(new bx0(ex0Var, 1));
-                break;
-            default:
-                ex0 ex0Var2 = this.b;
-                dx0 dx0Var = ex0Var2.e;
-                if (dx0Var != null) {
-                    ex0Var2.getVisibilityFactor();
-                    ProfileActivity profileActivity = ((org.telegram.ui.ey0) dx0Var).b;
-                    org.telegram.ui.ActionBar.i5[] i5VarArr = profileActivity.r;
-                    i5VarArr[1].setTranslationX(profileActivity.W3(profileActivity.Z5));
-                    i5VarArr[1].setTranslationY(profileActivity.X3(profileActivity.a6));
-                    break;
-                }
-                break;
+    public static void N(bx0 bx0Var, int i10) {
+        h61 G = bx0Var.X.G(i10 - 1);
+        Object obj = G != null ? G.G : null;
+        if (obj instanceof TLRPC.User) {
+            MessagesController.getInstance(bx0Var.currentAccount).openApp(bx0Var.attachedFragment, (TLRPC.User) obj, null, 0, null);
         }
+    }
+
+    @Override // org.telegram.ui.Components.cb
+    public final yl0 v(zl0 zl0Var) {
+        us usVar = new us(zl0Var, getContext(), this.currentAccount, 0, true, this.resourcesProvider);
+        this.X = usVar;
+        usVar.r = false;
+        return usVar;
+    }
+
+    @Override // org.telegram.ui.Components.cb
+    public final CharSequence y() {
+        return LocaleController.getString(R.string.SearchAppsExamples);
     }
 }

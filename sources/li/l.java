@@ -1,22 +1,7 @@
 package li;
 
-import android.graphics.RectF;
-import android.view.View;
-
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class l {
-    public final View a;
-    public final e b;
-    public final RectF c = new RectF();
-    public final RectF d = new RectF();
-    public final RectF e = new RectF();
-    public final RectF f = new RectF();
-    public boolean g;
-    public boolean h;
-
-    public l(View view, e eVar) {
-        this.a = view;
-        this.b = eVar;
-    }
+public interface l {
+    void k(int i10);
 }

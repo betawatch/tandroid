@@ -15,12 +15,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.gz;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class pb extends kb {
-    public final zg.o0 I;
+    public final zg.m0 I;
     public final ob J;
-    public final zg.f0 K;
+    public final zg.d0 K;
     public final ImageReceiver L;
     public final org.telegram.ui.Components.e6 M;
     public final org.telegram.ui.Components.o6 N;
@@ -32,18 +32,18 @@ public final class pb extends kb {
         ArrayList arrayList;
         ob obVar = new ob(this);
         this.J = obVar;
-        zg.f0 f0Var = new zg.f0(this);
-        this.K = f0Var;
+        zg.d0 d0Var = new zg.d0(this);
+        this.K = d0Var;
         this.L = new ImageReceiver(this);
         this.M = new org.telegram.ui.Components.e6(this);
         this.N = new org.telegram.ui.Components.o6(false, false, false, false);
-        zg.o0 d = zg.o0.d(tL_mediaAreaSuggestedReaction.reaction);
+        zg.m0 d = zg.m0.d(tL_mediaAreaSuggestedReaction.reaction);
         this.I = d;
         if (tL_mediaAreaSuggestedReaction.flipped) {
             obVar.b(true, false);
         }
         obVar.c(getScaleX());
-        f0Var.e(d);
+        d0Var.e(d);
         gzVar.getClass();
         String str = d.f;
         str = str == null ? MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.q5.f(gzVar.b, d.g)) : str;
@@ -86,10 +86,10 @@ public final class pb extends kb {
         Rect rect = AndroidUtilities.rectTmp2;
         rect.set((int) centerX, (int) AndroidUtilities.lerp(centerY, f7, d), (int) centerX2, (int) AndroidUtilities.lerp(centerY2, f10, d));
         int i10 = obVar.a == 1 ? -1 : -16777216;
-        zg.f0 f0Var = this.K;
-        f0Var.d(i10);
-        f0Var.c(rect);
-        f0Var.a(canvas);
+        zg.d0 d0Var = this.K;
+        d0Var.d(i10);
+        d0Var.c(rect);
+        d0Var.a(canvas);
         float height2 = (obVar.getBounds().height() * 0.839f) + obVar.getBounds().top;
         org.telegram.ui.Components.o6 o6Var = this.N;
         o6Var.setBounds(obVar.getBounds().left, (int) (height2 - AndroidUtilities.dp(10.0f)), obVar.getBounds().right, (int) (AndroidUtilities.dp(10.0f) + height2));
@@ -103,7 +103,7 @@ public final class pb extends kb {
         org.telegram.ui.Components.e6 e6Var = this.M;
         if (storyViews != null) {
             for (int i10 = 0; i10 < storyViews.reactions.size(); i10++) {
-                if (zg.q0.d(storyViews.reactions.get(i10).reaction, this.I)) {
+                if (zg.o0.d(storyViews.reactions.get(i10).reaction, this.I)) {
                     boolean z11 = z10 && this.O;
                     this.O = storyViews.reactions.get(i10).count > 0;
                     this.N.q(AndroidUtilities.formatWholeNumber(storyViews.reactions.get(i10).count, 0), z11, true);

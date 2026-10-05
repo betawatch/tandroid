@@ -31,14 +31,14 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.f0;
+import org.telegram.messenger.q;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.t71;
+import org.telegram.ui.Components.u71;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class p extends FrameLayout implements a {
     public float E;
@@ -55,7 +55,7 @@ public class p extends FrameLayout implements a {
     public final CropAreaView a;
     public final ImageView b;
     public final Matrix c;
-    public t71 d;
+    public u71 d;
     public g e;
     public final RectF f;
     public final RectF h;
@@ -345,7 +345,7 @@ public class p extends FrameLayout implements a {
         float f10 = nVar.f * cropWidth;
         cropState.transformRotation = (int) nVar.h;
         if (BuildVars.LOGS_ENABLED) {
-            f0.n(cropState.transformRotation, new StringBuilder("set transformRotation = "));
+            q.n(cropState.transformRotation, new StringBuilder("set transformRotation = "));
         }
         while (true) {
             i10 = cropState.transformRotation;
@@ -552,9 +552,9 @@ public class p extends FrameLayout implements a {
     }
 
     public int getCurrentHeight() {
-        t71 t71Var = this.d;
-        if (t71Var != null) {
-            return t71Var.getVideoHeight();
+        u71 u71Var = this.d;
+        if (u71Var != null) {
+            return u71Var.getVideoHeight();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -565,9 +565,9 @@ public class p extends FrameLayout implements a {
     }
 
     public int getCurrentWidth() {
-        t71 t71Var = this.d;
-        if (t71Var != null) {
-            return t71Var.getVideoWidth();
+        u71 u71Var = this.d;
+        if (u71Var != null) {
+            return u71Var.getVideoWidth();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {

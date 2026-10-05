@@ -24,7 +24,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -33,7 +33,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.c6;
 import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.m7;
 import org.telegram.ui.Components.nc;
 import org.telegram.ui.Components.p6;
@@ -41,25 +41,26 @@ import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.h91;
+import org.telegram.ui.f91;
 import org.telegram.ui.yn;
 import w7.b6;
-import yh.t5;
-import yh.x7;
+import yh.n7;
+import yh.u5;
+import yh.z7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class m extends cb implements GiftAuctionController.OnAuctionUpdateListener {
     public static final /* synthetic */ int A0 = 0;
     public final long X;
-    public final g61 Y;
+    public final h61 Y;
     public final yh.a Z;
     public final i a0;
     public final yf.n b0;
@@ -84,7 +85,7 @@ public final class m extends cb implements GiftAuctionController.OnAuctionUpdate
     public final le.b u0;
     public final rq[] v0;
     public boolean w0;
-    public u61 x0;
+    public w61 x0;
     public boolean y0;
     public boolean z0;
 
@@ -116,7 +117,7 @@ public final class m extends cb implements GiftAuctionController.OnAuctionUpdate
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setClickable(true);
-        this.Y = g61.j(-1, linearLayout);
+        this.Y = h61.j(-1, linearLayout);
         h hVar = new h(this, context, d6Var);
         this.c0 = hVar;
         hVar.O = true;
@@ -272,7 +273,7 @@ public final class m extends cb implements GiftAuctionController.OnAuctionUpdate
         aVar.setClickable(false);
         this.container.addView(aVar, w7.z5.d(-2, -2.0f, 49, 0.0f, 48.0f, 0.0f, 0.0f));
         b6.a(aVar);
-        aVar.setOnClickListener(new h91(context, 1, d6Var));
+        aVar.setOnClickListener(new f91(context, 1, d6Var));
         FrameLayout frameLayout = new FrameLayout(context);
         this.k0 = frameLayout;
         this.container.addView(frameLayout, w7.z5.e(-1, 100, 48));
@@ -346,11 +347,11 @@ public final class m extends cb implements GiftAuctionController.OnAuctionUpdate
             textView2.setMaxLines(5);
             mVar.X();
             rc.f(frameLayout, ncVar, 2750).j();
-            t5.y(mVar.currentAccount, false).q(false, true, null);
+            u5.y(mVar.currentAccount, false).q(false, true, null);
         }
         if (str != null) {
             mVar.X();
-            hg.k0.p(R.string.UnknownErrorCode, new Object[]{str}, new yc(frameLayout, mVar.resourcesProvider), R.raw.error, 36);
+            hg.c.q(R.string.UnknownErrorCode, new Object[]{str}, new yc(frameLayout, mVar.resourcesProvider), R.raw.error, 36);
         }
     }
 
@@ -403,7 +404,7 @@ public final class m extends cb implements GiftAuctionController.OnAuctionUpdate
             AndroidUtilities.requestAdjustNothing(findActivity, R.getClassGuid());
         }
         b2VarArr[0].setOnDismissListener(new ei.u0(c6Var, R, findActivity, 5));
-        b2VarArr[0].setOnShowListener(new hg.r(i10, c6Var));
+        b2VarArr[0].setOnShowListener(new hg.s(i10, c6Var));
         b2VarArr[0].show();
         View d = b2VarArr[0].d(-1);
         viewArr[0] = d;
@@ -420,7 +421,7 @@ public final class m extends cb implements GiftAuctionController.OnAuctionUpdate
             if (aVar != null) {
                 aVar.setEnabled(z10);
                 aVar.setClickable(z10);
-                ok.r(aVar.animate().scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f), z10 ? 1.0f : 0.0f, 180L);
+                bi.q(aVar.animate().scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f), z10 ? 1.0f : 0.0f, 180L);
             }
         }
     }
@@ -461,8 +462,8 @@ public final class m extends cb implements GiftAuctionController.OnAuctionUpdate
             j10 -= j3;
         }
         long j11 = j10;
-        if (t5.y(this.currentAccount, false).e && t5.y(this.currentAccount, false).q(false, false, null).amount < j11) {
-            new yh.m7(getContext(), this.resourcesProvider, j11, 14, null, null, 0L).show();
+        if (u5.y(this.currentAccount, false).e && u5.y(this.currentAccount, false).q(false, false, null).amount < j11) {
+            new n7(getContext(), this.resourcesProvider, j11, 14, null, null, 0L).show();
             return;
         }
         this.z0 = true;
@@ -493,9 +494,9 @@ public final class m extends cb implements GiftAuctionController.OnAuctionUpdate
         long j3 = tL_StarGiftAuctionUserState.bid_amount;
         rq[] rqVarArr = this.v0;
         if (j3 >= value || tL_StarGiftAuctionUserState.returned) {
-            iVar.g(x7.b1(false, LocaleController.formatString(R.string.Gift2AuctionPlaceBid, LocaleController.formatNumber(value, ',')), rqVarArr), z10, true);
+            iVar.g(z7.b1(false, LocaleController.formatString(R.string.Gift2AuctionPlaceBid, LocaleController.formatNumber(value, ',')), rqVarArr), z10, true);
         } else {
-            iVar.g(x7.b1(false, LocaleController.formatString(R.string.Gift2AuctionPlaceBidAdd, LocaleController.formatNumber(value - j3, ',')), rqVarArr), z10, true);
+            iVar.g(z7.b1(false, LocaleController.formatString(R.string.Gift2AuctionPlaceBidAdd, LocaleController.formatNumber(value - j3, ',')), rqVarArr), z10, true);
         }
         iVar.setOnClickListener(new g(this, i11));
     }
@@ -579,7 +580,7 @@ public final class m extends cb implements GiftAuctionController.OnAuctionUpdate
     public final void e0(boolean z10) {
         org.telegram.ui.ActionBar.n2 R;
         int i10;
-        ((p6) this.d0.b).c(x7.d1(false, "⭐️" + LocaleController.formatNumberWithMillion((int) this.l0.getMinimumBid(), ','), 0.78f, this.r0), z10, true);
+        ((p6) this.d0.b).c(z7.d1(false, "⭐️" + LocaleController.formatNumberWithMillion((int) this.l0.getMinimumBid(), ','), 0.78f, this.r0), z10, true);
         if (this.l0.auctionStateActive != null) {
             int currentTime = ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
             boolean isUpcoming = this.l0.isUpcoming(currentTime);
@@ -692,10 +693,10 @@ public final class m extends cb implements GiftAuctionController.OnAuctionUpdate
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 13), this.resourcesProvider);
-        this.x0 = u61Var;
-        u61Var.r = false;
-        return u61Var;
+        w61 w61Var = new w61(this.d, getContext(), this.currentAccount, 0, true, new hi.a(this, 13), this.resourcesProvider);
+        this.x0 = w61Var;
+        w61Var.r = false;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

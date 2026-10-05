@@ -21,7 +21,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.f0;
+import org.telegram.messenger.q;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.z;
@@ -30,9 +30,9 @@ import org.telegram.ui.Components.sq;
 import org.telegram.ui.Components.y5;
 import org.telegram.ui.me;
 import w7.z5;
-import yh.x7;
+import yh.z7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean E;
@@ -202,7 +202,7 @@ public class e extends FrameLayout {
                             i15 = 2;
                         }
                         decimalFormat2.setMaximumFractionDigits(i15);
-                        charSequence = me.D0("TON " + this.L.format(j11 / 1.0E9d), y5Var.getPaint(), 0.82f, 0.0f, false);
+                        charSequence = me.K("TON " + this.L.format(j11 / 1.0E9d), y5Var.getPaint(), 0.82f, 0.0f, false);
                     } else {
                         charSequence = "≈" + BillingController.getInstance().formatCurrency((long) (j11 / f7), "USD");
                     }
@@ -227,7 +227,7 @@ public class e extends FrameLayout {
                         objArr[0] = aVar.d;
                         textView3.setText(LocaleController.formatString(i24, objArr));
                     } else if (i11 == 2) {
-                        textView3.setText(x7.d1(false, LocaleController.formatString(i21 == 0 ? R.string.ChartInXTR : R.string.ChartInUSD, aVar.d), 0.7f, null));
+                        textView3.setText(z7.d1(false, LocaleController.formatString(i21 == 0 ? R.string.ChartInXTR : R.string.ChartInUSD, aVar.d), 0.7f, null));
                     } else {
                         textView3.setText(aVar.d);
                     }
@@ -259,7 +259,7 @@ public class e extends FrameLayout {
                         i18 = 0;
                     }
                 } else if (i21 == 0) {
-                    charSequence = x7.d1(false, f0.h(j11, ' ', new StringBuilder("XTR ")), 0.7f, null);
+                    charSequence = z7.d1(false, q.h(j11, ' ', new StringBuilder("XTR ")), 0.7f, null);
                 } else {
                     charSequence = "≈" + BillingController.getInstance().formatCurrency((long) (j11 / f7), "USD");
                 }

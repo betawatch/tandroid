@@ -1,53 +1,24 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r81 implements Utilities.Callback5, Utilities.Callback5Return, li.i, r0.n, li.j {
-    public final /* synthetic */ a91 a;
+public final class r81 extends org.telegram.ui.Components.br0 {
+    public final /* synthetic */ y81 X0;
 
-    public /* synthetic */ r81(a91 a91Var) {
-        this.a = a91Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r81(y81 y81Var, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.X0 = y81Var;
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        int i10 = defaultWindowInsets.d;
-        a91 a91Var = this.a;
-        a91Var.R = i10;
-        li.a.c(a91Var.c, defaultWindowInsets.b, i10, AndroidUtilities.dp(12.0f), a91Var.S);
-        return r0.l1.b;
-    }
-
-    @Override // li.j
-    public int f() {
-        a91 a91Var = this.a;
-        a91Var.getClass();
-        return a91Var.getThemedColor(org.telegram.ui.ActionBar.i6.a7);
-    }
-
-    @Override // li.i
-    public void k(int i10) {
-        a91.U(this.a, i10);
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(a91.S(this.a, (org.telegram.ui.Components.g61) obj, (View) obj2));
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        a91.g0(this.a, (org.telegram.ui.Components.g61) obj);
+    @Override // org.telegram.ui.Components.br0
+    public final void O0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new wx0(this, iVar, i10, 29), 250L);
+        }
     }
 }

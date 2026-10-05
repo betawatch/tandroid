@@ -14,7 +14,7 @@ import org.telegram.messenger.IMapsProvider;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements org.telegram.ui.ActionBar.j6 {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.j6 {
                 }
                 ai.g4 g4Var = ynVar.H1;
                 if (g4Var != null) {
-                    g4Var.a1();
+                    g4Var.c1();
                 }
                 sj sjVar = ynVar.v0;
                 if (sjVar != null) {
@@ -143,9 +143,9 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.j6 {
                 nj njVar = ynVar.Y0;
                 if (njVar != null) {
                     org.telegram.ui.ActionBar.d6 d6Var = njVar.d0;
-                    org.telegram.ui.Components.hx0 hx0Var = njVar.N;
-                    if (hx0Var != null) {
-                        hx0Var.b(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.pa, d6Var));
+                    org.telegram.ui.Components.ix0 ix0Var = njVar.N;
+                    if (ix0Var != null) {
+                        ix0Var.b(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.pa, d6Var));
                     }
                     Drawable drawable = njVar.q0;
                     if (drawable != null) {
@@ -186,10 +186,10 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.j6 {
                     Color.alpha(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
                     ehVar.invalidate();
                 }
-                org.telegram.ui.Components.iz0 iz0Var = ynVar.b1;
-                if (iz0Var != null) {
-                    org.telegram.ui.ActionBar.d6 d6Var2 = iz0Var.b;
-                    Paint paint = iz0Var.O;
+                org.telegram.ui.Components.jz0 jz0Var = ynVar.b1;
+                if (jz0Var != null) {
+                    org.telegram.ui.ActionBar.d6 d6Var2 = jz0Var.b;
+                    Paint paint = jz0Var.O;
                     if (paint != null) {
                         paint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Be, d6Var2));
                     }
@@ -246,11 +246,11 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.j6 {
                 break;
             case 6:
                 hp hpVar = (hp) this.b;
-                LinearLayout linearLayout2 = hpVar.x;
+                LinearLayout linearLayout2 = hpVar.y;
                 if (linearLayout2 != null) {
                     int childCount4 = linearLayout2.getChildCount();
                     for (int i15 = 0; i15 < childCount4; i15++) {
-                        View childAt4 = hpVar.x.getChildAt(i15);
+                        View childAt4 = hpVar.y.getChildAt(i15);
                         if (childAt4 instanceof org.telegram.ui.Cells.n) {
                             org.telegram.ui.Cells.n nVar3 = (org.telegram.ui.Cells.n) childAt4;
                             nVar3.d.k(nVar3.n, nVar3.f);
@@ -258,8 +258,8 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.j6 {
                         }
                     }
                 }
-                hpVar.G.f();
-                org.telegram.ui.Components.f70 f70Var = hpVar.p0;
+                hpVar.H.f();
+                org.telegram.ui.Components.f70 f70Var = hpVar.q0;
                 if (f70Var != null) {
                     f70Var.b0();
                     break;
@@ -280,7 +280,7 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.j6 {
                 }
                 break;
             case 8:
-                ((aq) this.b).U();
+                ((aq) this.b).h.l();
                 break;
             case 9:
                 mq mqVar = (mq) this.b;

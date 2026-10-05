@@ -30,9 +30,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b, NotificationCenter.NotificationCenterDelegate {
+public final class pa0 extends org.telegram.ui.ActionBar.n2 implements jv0, mg.b, NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.ActionBar.g2 E;
     public p6 F;
     public org.telegram.ui.ActionBar.v0 G;
@@ -57,7 +57,7 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
     public final float[] Z;
     public int a;
     public final boolean[] a0;
-    public hv0 b;
+    public iv0 b;
     public final ValueAnimator[] b0;
     public TLRPC.ChatFull c;
     public TLRPC.UserFull d;
@@ -72,7 +72,7 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
     public final p6[] x;
     public ka0 y;
 
-    public pa0(Bundle bundle, hv0 hv0Var) {
+    public pa0(Bundle bundle, iv0 iv0Var) {
         super(bundle);
         this.v = new FrameLayout[2];
         this.w = new org.telegram.ui.ActionBar.i5[2];
@@ -84,15 +84,15 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
         this.Z = new float[2];
         this.a0 = new boolean[]{true, true};
         this.b0 = new ValueAnimator[2];
-        this.b = hv0Var;
+        this.b = iv0Var;
     }
 
-    @Override // org.telegram.ui.Components.iv0
+    @Override // org.telegram.ui.Components.jv0
     public final void K() {
-        hv0 hv0Var;
+        iv0 iv0Var;
         ma0 ma0Var = this.V;
-        if (ma0Var != null && (hv0Var = this.b) != null) {
-            ma0Var.setNewMediaCounts(hv0Var.c);
+        if (ma0Var != null && (iv0Var = this.b) != null) {
+            ma0Var.setNewMediaCounts(iv0Var.c);
         }
         Z();
     }
@@ -152,9 +152,9 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
         this.actionBar.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false));
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.i6.G6;
-        kVar.B(org.telegram.ui.ActionBar.i6.w0(null, i10, false), false);
-        this.actionBar.B(org.telegram.ui.ActionBar.i6.w0(null, i10, false), true);
-        this.actionBar.A(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.z8, false), false);
+        kVar.A(org.telegram.ui.ActionBar.i6.w0(null, i10, false), false);
+        this.actionBar.A(org.telegram.ui.ActionBar.i6.w0(null, i10, false), true);
+        this.actionBar.z(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.z8, false), false);
         this.actionBar.setTitleColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
         org.telegram.ui.ActionBar.i5[] i5VarArr = this.w;
         org.telegram.ui.ActionBar.i5 i5Var = i5VarArr[0];
@@ -174,7 +174,7 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
     */
     public final void Z() {
         boolean z10;
-        iu0 iu0Var;
+        ju0 ju0Var;
         ma0 ma0Var = this.V;
         if (ma0Var != null) {
             p6[] p6VarArr = this.x;
@@ -255,9 +255,9 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                 org.telegram.ui.ActionBar.f1 f1Var3 = this.P;
                 if (f1Var3 != null) {
                     ma0 ma0Var2 = this.V;
-                    iu0[] iu0VarArr = ma0Var2.k0;
-                    if (iu0VarArr != null && (iu0Var = iu0VarArr[0]) != null) {
-                        boolean p02 = pv0.p0(iu0Var.F);
+                    ju0[] ju0VarArr = ma0Var2.k0;
+                    if (ju0VarArr != null && (ju0Var = ju0VarArr[0]) != null) {
+                        boolean p02 = qv0.p0(ju0Var.F);
                         int i12 = ma0Var2.m1[p02 ? 1 : 0];
                         if (i12 != ma0Var2.X(p02 ? 1 : 0, i12, true)) {
                             z10 = true;
@@ -445,14 +445,14 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                                 ma0 ma0Var2 = pa0Var.V;
                                 boolean z12 = pa0Var.L;
                                 boolean z13 = pa0Var.M;
-                                xt0 xt0Var = ma0Var2.c0;
-                                if (xt0Var != null && (d9Var2 = xt0Var.s) != null) {
+                                yt0 yt0Var = ma0Var2.c0;
+                                if (yt0Var != null && (d9Var2 = yt0Var.s) != null) {
                                     d9Var2.n = z12;
                                     d9Var2.o = z13;
                                     d9Var2.d(true);
                                 }
-                                cs0 cs0Var = ma0Var2.e0;
-                                if (cs0Var != null && (d9Var = cs0Var.s) != null) {
+                                ds0 ds0Var = ma0Var2.e0;
+                                if (ds0Var != null && (d9Var = ds0Var.s) != null) {
                                     d9Var.n = z12;
                                     d9Var.o = z13;
                                     d9Var.d(true);
@@ -477,14 +477,14 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                                 ma0 ma0Var3 = pa0Var.V;
                                 boolean z16 = pa0Var.L;
                                 boolean z17 = pa0Var.M;
-                                xt0 xt0Var2 = ma0Var3.c0;
-                                if (xt0Var2 != null && (d9Var4 = xt0Var2.s) != null) {
+                                yt0 yt0Var2 = ma0Var3.c0;
+                                if (yt0Var2 != null && (d9Var4 = yt0Var2.s) != null) {
                                     d9Var4.n = z16;
                                     d9Var4.o = z17;
                                     d9Var4.d(true);
                                 }
-                                cs0 cs0Var2 = ma0Var3.e0;
-                                if (cs0Var2 != null && (d9Var3 = cs0Var2.s) != null) {
+                                ds0 ds0Var2 = ma0Var3.e0;
+                                if (ds0Var2 != null && (d9Var3 = ds0Var2.s) != null) {
                                     d9Var3.n = z16;
                                     d9Var3.o = z17;
                                     d9Var3.d(true);
@@ -600,14 +600,14 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                                 ma0 ma0Var2 = pa0Var.V;
                                 boolean z12 = pa0Var.L;
                                 boolean z13 = pa0Var.M;
-                                xt0 xt0Var = ma0Var2.c0;
-                                if (xt0Var != null && (d9Var2 = xt0Var.s) != null) {
+                                yt0 yt0Var = ma0Var2.c0;
+                                if (yt0Var != null && (d9Var2 = yt0Var.s) != null) {
                                     d9Var2.n = z12;
                                     d9Var2.o = z13;
                                     d9Var2.d(true);
                                 }
-                                cs0 cs0Var = ma0Var2.e0;
-                                if (cs0Var != null && (d9Var = cs0Var.s) != null) {
+                                ds0 ds0Var = ma0Var2.e0;
+                                if (ds0Var != null && (d9Var = ds0Var.s) != null) {
                                     d9Var.n = z12;
                                     d9Var.o = z13;
                                     d9Var.d(true);
@@ -632,14 +632,14 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                                 ma0 ma0Var3 = pa0Var.V;
                                 boolean z16 = pa0Var.L;
                                 boolean z17 = pa0Var.M;
-                                xt0 xt0Var2 = ma0Var3.c0;
-                                if (xt0Var2 != null && (d9Var4 = xt0Var2.s) != null) {
+                                yt0 yt0Var2 = ma0Var3.c0;
+                                if (yt0Var2 != null && (d9Var4 = yt0Var2.s) != null) {
                                     d9Var4.n = z16;
                                     d9Var4.o = z17;
                                     d9Var4.d(true);
                                 }
-                                cs0 cs0Var2 = ma0Var3.e0;
-                                if (cs0Var2 != null && (d9Var3 = cs0Var2.s) != null) {
+                                ds0 ds0Var2 = ma0Var3.e0;
+                                if (ds0Var2 != null && (d9Var3 = ds0Var2.s) != null) {
                                     d9Var3.n = z16;
                                     d9Var3.o = z17;
                                     d9Var3.d(true);
@@ -752,14 +752,14 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                                 ma0 ma0Var2 = pa0Var.V;
                                 boolean z12 = pa0Var.L;
                                 boolean z13 = pa0Var.M;
-                                xt0 xt0Var = ma0Var2.c0;
-                                if (xt0Var != null && (d9Var2 = xt0Var.s) != null) {
+                                yt0 yt0Var = ma0Var2.c0;
+                                if (yt0Var != null && (d9Var2 = yt0Var.s) != null) {
                                     d9Var2.n = z12;
                                     d9Var2.o = z13;
                                     d9Var2.d(true);
                                 }
-                                cs0 cs0Var = ma0Var2.e0;
-                                if (cs0Var != null && (d9Var = cs0Var.s) != null) {
+                                ds0 ds0Var = ma0Var2.e0;
+                                if (ds0Var != null && (d9Var = ds0Var.s) != null) {
                                     d9Var.n = z12;
                                     d9Var.o = z13;
                                     d9Var.d(true);
@@ -784,14 +784,14 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                                 ma0 ma0Var3 = pa0Var.V;
                                 boolean z16 = pa0Var.L;
                                 boolean z17 = pa0Var.M;
-                                xt0 xt0Var2 = ma0Var3.c0;
-                                if (xt0Var2 != null && (d9Var4 = xt0Var2.s) != null) {
+                                yt0 yt0Var2 = ma0Var3.c0;
+                                if (yt0Var2 != null && (d9Var4 = yt0Var2.s) != null) {
                                     d9Var4.n = z16;
                                     d9Var4.o = z17;
                                     d9Var4.d(true);
                                 }
-                                cs0 cs0Var2 = ma0Var3.e0;
-                                if (cs0Var2 != null && (d9Var3 = cs0Var2.s) != null) {
+                                ds0 ds0Var2 = ma0Var3.e0;
+                                if (ds0Var2 != null && (d9Var3 = ds0Var2.s) != null) {
                                     d9Var3.n = z16;
                                     d9Var3.o = z17;
                                     d9Var3.d(true);
@@ -911,14 +911,14 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                                 ma0 ma0Var2 = pa0Var.V;
                                 boolean z12 = pa0Var.L;
                                 boolean z13 = pa0Var.M;
-                                xt0 xt0Var = ma0Var2.c0;
-                                if (xt0Var != null && (d9Var2 = xt0Var.s) != null) {
+                                yt0 yt0Var = ma0Var2.c0;
+                                if (yt0Var != null && (d9Var2 = yt0Var.s) != null) {
                                     d9Var2.n = z12;
                                     d9Var2.o = z13;
                                     d9Var2.d(true);
                                 }
-                                cs0 cs0Var = ma0Var2.e0;
-                                if (cs0Var != null && (d9Var = cs0Var.s) != null) {
+                                ds0 ds0Var = ma0Var2.e0;
+                                if (ds0Var != null && (d9Var = ds0Var.s) != null) {
                                     d9Var.n = z12;
                                     d9Var.o = z13;
                                     d9Var.d(true);
@@ -943,14 +943,14 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                                 ma0 ma0Var3 = pa0Var.V;
                                 boolean z16 = pa0Var.L;
                                 boolean z17 = pa0Var.M;
-                                xt0 xt0Var2 = ma0Var3.c0;
-                                if (xt0Var2 != null && (d9Var4 = xt0Var2.s) != null) {
+                                yt0 yt0Var2 = ma0Var3.c0;
+                                if (yt0Var2 != null && (d9Var4 = yt0Var2.s) != null) {
                                     d9Var4.n = z16;
                                     d9Var4.o = z17;
                                     d9Var4.d(true);
                                 }
-                                cs0 cs0Var2 = ma0Var3.e0;
-                                if (cs0Var2 != null && (d9Var3 = cs0Var2.s) != null) {
+                                ds0 ds0Var2 = ma0Var3.e0;
+                                if (ds0Var2 != null && (d9Var3 = ds0Var2.s) != null) {
                                     d9Var3.n = z16;
                                     d9Var3.o = z17;
                                     d9Var3.d(true);
@@ -1065,14 +1065,14 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                                 ma0 ma0Var2 = pa0Var.V;
                                 boolean z12 = pa0Var.L;
                                 boolean z13 = pa0Var.M;
-                                xt0 xt0Var = ma0Var2.c0;
-                                if (xt0Var != null && (d9Var2 = xt0Var.s) != null) {
+                                yt0 yt0Var = ma0Var2.c0;
+                                if (yt0Var != null && (d9Var2 = yt0Var.s) != null) {
                                     d9Var2.n = z12;
                                     d9Var2.o = z13;
                                     d9Var2.d(true);
                                 }
-                                cs0 cs0Var = ma0Var2.e0;
-                                if (cs0Var != null && (d9Var = cs0Var.s) != null) {
+                                ds0 ds0Var = ma0Var2.e0;
+                                if (ds0Var != null && (d9Var = ds0Var.s) != null) {
                                     d9Var.n = z12;
                                     d9Var.o = z13;
                                     d9Var.d(true);
@@ -1097,14 +1097,14 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                                 ma0 ma0Var3 = pa0Var.V;
                                 boolean z16 = pa0Var.L;
                                 boolean z17 = pa0Var.M;
-                                xt0 xt0Var2 = ma0Var3.c0;
-                                if (xt0Var2 != null && (d9Var4 = xt0Var2.s) != null) {
+                                yt0 yt0Var2 = ma0Var3.c0;
+                                if (yt0Var2 != null && (d9Var4 = yt0Var2.s) != null) {
                                     d9Var4.n = z16;
                                     d9Var4.o = z17;
                                     d9Var4.d(true);
                                 }
-                                cs0 cs0Var2 = ma0Var3.e0;
-                                if (cs0Var2 != null && (d9Var3 = cs0Var2.s) != null) {
+                                ds0 ds0Var2 = ma0Var3.e0;
+                                if (ds0Var2 != null && (d9Var3 = ds0Var2.s) != null) {
                                     d9Var3.n = z16;
                                     d9Var3.o = z17;
                                     d9Var3.d(true);
@@ -1291,14 +1291,14 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                                 ma0 ma0Var2 = pa0Var.V;
                                 boolean z12 = pa0Var.L;
                                 boolean z13 = pa0Var.M;
-                                xt0 xt0Var = ma0Var2.c0;
-                                if (xt0Var != null && (d9Var2 = xt0Var.s) != null) {
+                                yt0 yt0Var = ma0Var2.c0;
+                                if (yt0Var != null && (d9Var2 = yt0Var.s) != null) {
                                     d9Var2.n = z12;
                                     d9Var2.o = z13;
                                     d9Var2.d(true);
                                 }
-                                cs0 cs0Var = ma0Var2.e0;
-                                if (cs0Var != null && (d9Var = cs0Var.s) != null) {
+                                ds0 ds0Var = ma0Var2.e0;
+                                if (ds0Var != null && (d9Var = ds0Var.s) != null) {
                                     d9Var.n = z12;
                                     d9Var.o = z13;
                                     d9Var.d(true);
@@ -1323,14 +1323,14 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                                 ma0 ma0Var3 = pa0Var.V;
                                 boolean z16 = pa0Var.L;
                                 boolean z17 = pa0Var.M;
-                                xt0 xt0Var2 = ma0Var3.c0;
-                                if (xt0Var2 != null && (d9Var4 = xt0Var2.s) != null) {
+                                yt0 yt0Var2 = ma0Var3.c0;
+                                if (yt0Var2 != null && (d9Var4 = yt0Var2.s) != null) {
                                     d9Var4.n = z16;
                                     d9Var4.o = z17;
                                     d9Var4.d(true);
                                 }
-                                cs0 cs0Var2 = ma0Var3.e0;
-                                if (cs0Var2 != null && (d9Var3 = cs0Var2.s) != null) {
+                                ds0 ds0Var2 = ma0Var3.e0;
+                                if (ds0Var2 != null && (d9Var3 = ds0Var2.s) != null) {
                                     d9Var3.n = z16;
                                     d9Var3.o = z17;
                                     d9Var3.d(true);
@@ -1451,7 +1451,7 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                     h9 h9Var5 = h9Var3;
                     if (this.f == 0 || j3 != getUserConfig().getClientUserId()) {
                         if (DialogObject.isEncryptedDialog(j3)) {
-                            TLRPC.EncryptedChat l4 = org.telegram.messenger.f0.l(getMessagesController(), j3);
+                            TLRPC.EncryptedChat l4 = org.telegram.messenger.q.l(getMessagesController(), j3);
                             h9Var2 = h9Var5;
                             if (l4 != null) {
                                 TLRPC.User user3 = getMessagesController().getUser(Long.valueOf(l4.user_id));
@@ -1517,9 +1517,9 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                             this.V.A(!r0.s0(r0.k0[0].F), false);
                             this.V.getSearchOptionsItem().setVisibility(0);
                         }
-                        iu0[] iu0VarArr = this.V.k0;
-                        i12 = iu0VarArr[r10].F;
-                        if ((i12 != 0 || pv0.p0(i12) || iu0VarArr[r10].F == i11) && this.a != 1) {
+                        ju0[] ju0VarArr = this.V.k0;
+                        i12 = ju0VarArr[r10].F;
+                        if ((i12 != 0 || qv0.p0(i12) || ju0VarArr[r10].F == i11) && this.a != 1) {
                             this.V.r0.setVisibility(r10);
                         } else {
                             this.V.r0.setVisibility(4);
@@ -1555,8 +1555,8 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
                 if (this.V.getSearchOptionsItem() != null) {
                 }
                 r10 = 0;
-                iu0[] iu0VarArr2 = this.V.k0;
-                i12 = iu0VarArr2[r10].F;
+                ju0[] ju0VarArr2 = this.V.k0;
+                i12 = ju0VarArr2[r10].F;
                 if (i12 != 0) {
                 }
                 this.V.r0.setVisibility(r10);
@@ -1588,8 +1588,8 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
         if (this.V.getSearchOptionsItem() != null) {
         }
         r10 = 0;
-        iu0[] iu0VarArr22 = this.V.k0;
-        i12 = iu0VarArr22[r10].F;
+        ju0[] ju0VarArr22 = this.V.k0;
+        i12 = ju0VarArr22[r10].F;
         if (i12 != 0) {
         }
         this.V.r0.setVisibility(r10);
@@ -1697,7 +1697,7 @@ public final class pa0 extends org.telegram.ui.ActionBar.n2 implements iv0, mg.b
             }
         }
         if (this.b == null) {
-            this.b = new hv0(this);
+            this.b = new iv0(this);
         }
         this.b.x.add(this);
         return super.onFragmentCreate();

@@ -23,15 +23,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.fw0;
 import org.telegram.ui.Components.nn;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class m2 implements NotificationCenter.NotificationCenterDelegate, rf.a {
-    public static final ew0 X = new ew0(new w1(1), new w1(2));
-    public static final ew0 Y = new ew0(new w1(3), new w1(4));
+    public static final fw0 X = new fw0(new w1(1), new w1(2));
+    public static final fw0 Y = new fw0(new w1(3), new w1(4));
     public static final m2 Z;
     public boolean E;
     public boolean F;
@@ -320,7 +320,7 @@ public final class m2 implements NotificationCenter.NotificationCenterDelegate, 
         float f7 = this.N;
         kVar.b = f7;
         kVar.c = true;
-        kVar.u.i = a4.a.A(n(), this.M, 2.0f, f7) >= AndroidUtilities.displaySize.x / 2.0f ? (r3 - (n() * this.M)) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+        kVar.u.i = a4.a.B(n(), this.M, 2.0f, f7) >= AndroidUtilities.displaySize.x / 2.0f ? (r3 - (n() * this.M)) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
         this.P.f();
         o1.k kVar2 = this.Q;
         kVar2.b = this.O;

@@ -1,22 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public interface xz0 extends org.telegram.ui.Cells.ba {
-    void attach(View view);
+public class xz0 {
+    public int a;
+    public int b;
+    public int c;
 
-    void detach(View view);
+    public xz0() {
+        c();
+    }
 
-    void draw(Canvas canvas, View view);
+    public int a(g01 g01Var, zz0 zz0Var, sz0 sz0Var, int i10, boolean z10) {
+        return this.a - sz0Var.a(zz0Var, i10);
+    }
 
-    int getEmojiOnlyCount();
+    public void b(int i10, int i11) {
+        this.a = Math.max(this.a, i10);
+        this.b = Math.max(this.b, i11);
+    }
 
-    void setRow(int i10);
+    public void c() {
+        this.a = TLObject.FLAG_31;
+        this.b = TLObject.FLAG_31;
+        this.c = 2;
+    }
 
-    void setX(int i10);
-
-    void setY(int i10);
+    public int d(boolean z10) {
+        if (!z10) {
+            int i10 = this.c;
+            sz0 sz0Var = g01.R;
+            if ((i10 & 2) != 0) {
+                return 100000;
+            }
+        }
+        return this.a + this.b;
+    }
 }

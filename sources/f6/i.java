@@ -35,7 +35,7 @@ import n6.l;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class i {
     public static final g6.b v = new g6.b("MediaSessionManager", null);
@@ -225,7 +225,7 @@ public final class i {
                         if (yVar != null || !g6.a.d(uri, (Uri) yVar.b)) {
                             cf.c cVar = gVar.i;
                             cVar.e = new of.b(16, gVar, yVar2);
-                            cVar.y(uri);
+                            cVar.t(uri);
                         }
                     }
                     z10 = false;
@@ -252,7 +252,7 @@ public final class i {
                     }
                     cf.c cVar2 = gVar.i;
                     cVar2.e = new of.b(16, gVar, yVar22);
-                    cVar2.y(uri);
+                    cVar2.t(uri);
                 }
             }
             if (hVar.k()) {
@@ -540,7 +540,7 @@ public final class i {
         if (gVar != null) {
             v.b("Stopping media notification.", new Object[0]);
             cf.c cVar = gVar.i;
-            cVar.A();
+            cVar.u();
             cVar.e = null;
             NotificationManager notificationManager = gVar.b;
             if (notificationManager != null) {
@@ -696,7 +696,7 @@ public final class i {
         b0Var.e(new MediaMetadataCompat(cVar.b));
         Uri d = d(lVar);
         if (d != null) {
-            this.h.y(d);
+            this.h.t(d);
             bitmap = null;
         } else {
             bitmap = null;
@@ -704,7 +704,7 @@ public final class i {
         }
         Uri d10 = d(lVar);
         if (d10 != null) {
-            this.i.y(d10);
+            this.i.t(d10);
         } else {
             e(bitmap, 3);
         }

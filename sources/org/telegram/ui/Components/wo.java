@@ -4,10 +4,10 @@ import android.animation.ValueAnimator;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class wo extends FrameLayout {
-    public f91 a;
+    public g91 a;
     public float b;
     public boolean c;
     public float d;
@@ -45,9 +45,9 @@ public abstract class wo extends FrameLayout {
 
     public void setShown(float f7) {
         this.b = f7;
-        f91 f91Var = this.a;
-        if (f91Var != null) {
-            f91Var.setPivotX(f91Var.getWidth() / 2.0f);
+        g91 g91Var = this.a;
+        if (g91Var != null) {
+            g91Var.setPivotX(g91Var.getWidth() / 2.0f);
             this.a.setPivotY(0.0f);
             this.a.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f7));
             this.a.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, f7));
@@ -56,8 +56,8 @@ public abstract class wo extends FrameLayout {
         invalidate();
     }
 
-    public void setTabs(f91 f91Var) {
-        this.a = f91Var;
-        addView(f91Var, w7.z5.c(-1.0f, -1));
+    public void setTabs(g91 g91Var) {
+        this.a = g91Var;
+        addView(g91Var, w7.z5.c(-1.0f, -1));
     }
 }

@@ -12,7 +12,7 @@ import org.telegram.ui.h90;
 import org.telegram.ui.kn0;
 import org.telegram.ui.ug0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jb implements Runnable {
     public final /* synthetic */ int a;
@@ -134,9 +134,9 @@ public final /* synthetic */ class jb implements Runnable {
                 }
                 break;
             default:
-                yh.t5 t5Var = (yh.t5) obj8;
+                yh.u5 u5Var = (yh.u5) obj8;
                 ((boolean[]) obj7)[0] = true;
-                t5Var.a0((MessageObject) obj6, (TLRPC.InputInvoice) obj5, (TLRPC.TL_payments_paymentFormStars) obj4, new yh.a5(t5Var, (boolean[]) obj3, this.b, (Utilities.Callback) obj2, (Utilities.Callback) obj));
+                u5Var.a0((MessageObject) obj6, (TLRPC.InputInvoice) obj5, (TLRPC.TL_payments_paymentFormStars) obj4, new yh.b5(u5Var, (boolean[]) obj3, this.b, (Utilities.Callback) obj2, (Utilities.Callback) obj));
                 break;
         }
     }
@@ -167,9 +167,9 @@ public final /* synthetic */ class jb implements Runnable {
         this.s = tL_payments_canPurchaseStore;
     }
 
-    public /* synthetic */ jb(yh.t5 t5Var, boolean[] zArr, MessageObject messageObject, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, boolean[] zArr2, int i10, Utilities.Callback callback, Utilities.Callback callback2) {
+    public /* synthetic */ jb(yh.u5 u5Var, boolean[] zArr, MessageObject messageObject, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, boolean[] zArr2, int i10, Utilities.Callback callback, Utilities.Callback callback2) {
         this.a = 4;
-        this.c = t5Var;
+        this.c = u5Var;
         this.d = zArr;
         this.e = messageObject;
         this.f = inputInvoice;

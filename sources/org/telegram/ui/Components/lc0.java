@@ -11,7 +11,7 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lc0 implements Runnable {
     public final /* synthetic */ int a;
@@ -113,7 +113,7 @@ public final /* synthetic */ class lc0 implements Runnable {
                 sk0Var.j();
                 rk0 rk0Var = sk0Var.g0;
                 if (rk0Var != null) {
-                    rk0Var.o();
+                    rk0Var.I();
                     break;
                 }
                 break;
@@ -122,9 +122,9 @@ public final /* synthetic */ class lc0 implements Runnable {
                 break;
             case 19:
                 tk0 tk0Var = (tk0) this.b;
-                d81 d81Var = tk0Var.n;
-                if (d81Var != null) {
-                    boolean y3 = d81Var.y();
+                e81 e81Var = tk0Var.n;
+                if (e81Var != null) {
+                    boolean y3 = e81Var.y();
                     float n10 = tk0Var.n.n() / tk0Var.n.p();
                     float f7 = tk0Var.s;
                     if (n10 < f7) {
@@ -190,22 +190,22 @@ public final /* synthetic */ class lc0 implements Runnable {
                 ((b80) this.b).s();
                 break;
             case 26:
-                ((yo0) this.b).getClass();
+                ((so0) this.b).setOverscrolling(false);
                 break;
             case 27:
-                org.telegram.ui.Cells.u1 u1Var = ((bp0) this.b).n;
+                ((zo0) this.b).getClass();
+                break;
+            case 28:
+                org.telegram.ui.Cells.u1 u1Var = ((cp0) this.b).n;
                 if (u1Var != null) {
                     u1Var.invalidate();
                     break;
                 }
                 break;
-            case 28:
-                dp0 dp0Var = (dp0) this.b;
-                dp0Var.q = false;
-                dp0Var.b.run();
-                break;
             default:
-                ((zq0) ((ci.i2) this.b).b).X0(1);
+                ep0 ep0Var = (ep0) this.b;
+                ep0Var.q = false;
+                ep0Var.b.run();
                 break;
         }
     }

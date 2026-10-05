@@ -52,7 +52,7 @@ import r0.i0;
 import v7.v7;
 import w7.p;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class Toolbar extends ViewGroup {
     public final int E;
@@ -481,7 +481,7 @@ public class Toolbar extends ViewGroup {
             l3Var.f = getNavigationIcon();
             h Q = h.Q(getContext(), null, f.a.a, R.attr.actionBarStyle);
             TypedArray typedArray = (TypedArray) Q.c;
-            l3Var.o = Q.F(15);
+            l3Var.o = Q.A(15);
             CharSequence text = typedArray.getText(27);
             if (!TextUtils.isEmpty(text)) {
                 l3Var.g = true;
@@ -500,14 +500,14 @@ public class Toolbar extends ViewGroup {
                     setSubtitle(text2);
                 }
             }
-            Drawable F = Q.F(20);
-            if (F != null) {
-                l3Var.e = F;
+            Drawable A = Q.A(20);
+            if (A != null) {
+                l3Var.e = A;
                 l3Var.c();
             }
-            Drawable F2 = Q.F(17);
-            if (F2 != null) {
-                l3Var.d = F2;
+            Drawable A2 = Q.A(17);
+            if (A2 != null) {
+                l3Var.d = A2;
                 l3Var.c();
             }
             if (l3Var.f == null && (drawable = l3Var.o) != null) {
@@ -1628,7 +1628,7 @@ public class Toolbar extends ViewGroup {
         }
         this.K = typedArray.getDimensionPixelOffset(10, TLObject.FLAG_31);
         this.L = typedArray.getDimensionPixelOffset(6, TLObject.FLAG_31);
-        this.f = Q.F(4);
+        this.f = Q.A(4);
         this.h = typedArray.getText(3);
         CharSequence text = typedArray.getText(21);
         if (!TextUtils.isEmpty(text)) {
@@ -1640,27 +1640,27 @@ public class Toolbar extends ViewGroup {
         }
         this.s = getContext();
         setPopupTheme(typedArray.getResourceId(17, 0));
-        Drawable F = Q.F(16);
-        if (F != null) {
-            setNavigationIcon(F);
+        Drawable A = Q.A(16);
+        if (A != null) {
+            setNavigationIcon(A);
         }
         CharSequence text3 = typedArray.getText(15);
         if (!TextUtils.isEmpty(text3)) {
             setNavigationContentDescription(text3);
         }
-        Drawable F2 = Q.F(11);
-        if (F2 != null) {
-            setLogo(F2);
+        Drawable A2 = Q.A(11);
+        if (A2 != null) {
+            setLogo(A2);
         }
         CharSequence text4 = typedArray.getText(12);
         if (!TextUtils.isEmpty(text4)) {
             setLogoDescription(text4);
         }
         if (typedArray.hasValue(29)) {
-            setTitleTextColor(Q.D(29));
+            setTitleTextColor(Q.y(29));
         }
         if (typedArray.hasValue(20)) {
-            setSubtitleTextColor(Q.D(20));
+            setSubtitleTextColor(Q.y(20));
         }
         if (typedArray.hasValue(14)) {
             getMenuInflater().inflate(typedArray.getResourceId(14, 0), getMenu());

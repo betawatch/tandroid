@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.widget.Button;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class u3 extends org.telegram.ui.Components.p6 {
     public final /* synthetic */ int s;
@@ -32,7 +32,7 @@ public final class u3 extends org.telegram.ui.Components.p6 {
     public void invalidate() {
         switch (this.s) {
             case 4:
-                if (!zg.e0.b(this)) {
+                if (!zg.c0.b(this)) {
                     super.invalidate();
                     break;
                 }
@@ -75,7 +75,7 @@ public final class u3 extends org.telegram.ui.Components.p6 {
     public void invalidate(int i10, int i11, int i12, int i13) {
         switch (this.s) {
             case 4:
-                if (!zg.e0.b(this)) {
+                if (!zg.c0.b(this)) {
                     super.invalidate(i10, i11, i12, i13);
                     break;
                 }

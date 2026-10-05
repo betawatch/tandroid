@@ -21,7 +21,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class bo extends Drawable {
     public final boolean a;
@@ -37,7 +37,7 @@ public final class bo extends Drawable {
 
     public bo(TLRPC.WallPaper wallPaper, boolean z10, boolean z11) {
         TLRPC.WallPaperSettings wallPaperSettings;
-        String n10;
+        String o9;
         TLRPC.WallPaperSettings wallPaperSettings2;
         ai.l4 l4Var = new ai.l4(this, 3);
         this.e = l4Var;
@@ -67,18 +67,18 @@ public final class bo extends Drawable {
         Point point2 = AndroidUtilities.displaySize;
         int max = Math.max(point2.x, point2.y);
         if (z11) {
-            n10 = "150_150_wallpaper";
+            o9 = "150_150_wallpaper";
         } else {
             StringBuilder sb2 = new StringBuilder();
             sb2.append((int) (min / AndroidUtilities.density));
             sb2.append("_");
-            n10 = a4.a.n((int) (max / AndroidUtilities.density), "_wallpaper", sb2);
+            o9 = a4.a.o((int) (max / AndroidUtilities.density), "_wallpaper", sb2);
         }
-        StringBuilder u10 = a4.a.u(n10);
-        u10.append(wallPaper.id);
-        StringBuilder u11 = a4.a.u(u10.toString());
-        u11.append(e(wallPaper.settings));
-        String sb3 = u11.toString();
+        StringBuilder v = a4.a.v(o9);
+        v.append(wallPaper.id);
+        StringBuilder v9 = a4.a.v(v.toString());
+        v9.append(e(wallPaper.settings));
+        String sb3 = v9.toString();
         Drawable b10 = b(wallPaper);
         String str = wallPaper.uploadingImage;
         if (str != null) {

@@ -44,7 +44,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.messenger.voip.VoIPDebugToSend;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -52,15 +52,15 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.b80;
+import org.telegram.ui.Components.br0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.xi;
-import org.telegram.ui.Components.zq0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.jk;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -111,7 +111,7 @@ public final /* synthetic */ class g3 implements Utilities.Callback {
                 str4 = i4Var.u0[0].getWebView().getUrl();
             }
             String v = org.telegram.ui.web.c1.v(str4);
-            i4Var.a0(new zq0(i4Var.L, null, v, false, v, false, AndroidUtilities.computePerceivedBrightness(i4Var.h0.getBackgroundColor()) < 0.721f ? new d() : null));
+            i4Var.a0(new br0(i4Var.L, null, v, false, v, false, AndroidUtilities.computePerceivedBrightness(i4Var.h0.getBackgroundColor()) < 0.721f ? new d() : null));
             return;
         }
         if (num.intValue() == 6) {
@@ -257,7 +257,7 @@ public final /* synthetic */ class g3 implements Utilities.Callback {
             boolean z10 = LocaleController.isRTL;
             k0Var.addView(radioButton, w7.z5.d(22, 22.0f, (z10 ? 5 : 3) | 48, z10 ? 0 : 22, 13.0f, z10 ? 22 : 0, 0.0f));
             TextView textView = new TextView(activity3);
-            ok.t(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f, 1);
+            bi.s(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f, 1);
             textView.setMaxLines(1);
             textView.setSingleLine(true);
             textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
@@ -639,22 +639,22 @@ public final /* synthetic */ class g3 implements Utilities.Callback {
                 break;
             case 16:
                 View view = (View) obj3;
-                hg.s sVar = (hg.s) obj2;
+                hg.t tVar = (hg.t) obj2;
                 Runnable runnable2 = (Runnable) obj;
                 if (view != null) {
                     view.requestFocus();
                 }
-                AndroidUtilities.hideKeyboard(sVar);
+                AndroidUtilities.hideKeyboard(tVar);
                 AndroidUtilities.runOnUIThread(runnable2, 80L);
                 break;
             case 17:
                 hg.a2 a2Var = (hg.a2) obj2;
                 hg.b2 f10 = hg.b2.f(UserConfig.selectedAccount);
-                xi xiVar = ((hg.i0) obj3).b;
-                long l1 = xiVar.l1();
+                xi xiVar = ((hg.j0) obj3).b;
+                long n12 = xiVar.n1();
                 int i19 = f10.a;
                 TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages = new TLRPC.TL_messages_sendQuickReplyMessages();
-                TLRPC.InputPeer inputPeer = MessagesController.getInstance(i19).getInputPeer(l1);
+                TLRPC.InputPeer inputPeer = MessagesController.getInstance(i19).getInputPeer(n12);
                 tL_messages_sendQuickReplyMessages.peer = inputPeer;
                 if (inputPeer != null) {
                     tL_messages_sendQuickReplyMessages.shortcut_id = a2Var.a;
@@ -677,18 +677,18 @@ public final /* synthetic */ class g3 implements Utilities.Callback {
                 } else {
                     TL_iv.pageBlockMath pageblockmath2 = new TL_iv.pageBlockMath();
                     pageblockmath2.source = str2;
-                    x3Var.T1(pageblockmath2);
+                    x3Var.S1(pageblockmath2);
                     break;
                 }
             case 20:
                 ii.i1 i1Var = (ii.i1) obj3;
-                ii.t tVar = (ii.t) obj2;
+                ii.t tVar2 = (ii.t) obj2;
                 String str3 = (String) obj;
                 i1Var.getClass();
                 if (!TextUtils.isEmpty(str3)) {
                     Editable text = i1Var.getText();
-                    int spanStart = text.getSpanStart(tVar);
-                    int spanEnd = text.getSpanEnd(tVar);
+                    int spanStart = text.getSpanStart(tVar2);
+                    int spanEnd = text.getSpanEnd(tVar2);
                     if (spanStart >= 0 && spanEnd >= 0 && (a2 = ii.t.a(str3, i1Var.getCurrentTextColor(), AndroidUtilities.dp(SharedConfig.fontSize + 4))) != null) {
                         boolean z13 = i1Var.v;
                         if (z13) {
@@ -718,7 +718,7 @@ public final /* synthetic */ class g3 implements Utilities.Callback {
                 } else {
                     TL_iv.pageBlockMath pageblockmath4 = new TL_iv.pageBlockMath();
                     pageblockmath4.source = str4;
-                    e2Var.P.T1(pageblockmath4);
+                    e2Var.P.S1(pageblockmath4);
                     break;
                 }
             case 22:
@@ -931,9 +931,9 @@ public final /* synthetic */ class g3 implements Utilities.Callback {
                             org.telegram.ui.web.z0 webView = m3Var2.getWebView();
                             String str9 = org.telegram.ui.web.o1.a().b;
                             if (str9 != null) {
-                                StringBuilder u10 = a4.a.u(str9);
-                                u10.append(URLEncoder.encode(str8));
-                                str = u10.toString();
+                                StringBuilder v = a4.a.v(str9);
+                                v.append(URLEncoder.encode(str8));
+                                str = v.toString();
                             }
                             webView.loadUrl(str);
                             break;

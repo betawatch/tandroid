@@ -1,28 +1,30 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class aj implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ TLRPC.Updates c;
+    public final /* synthetic */ TL_update.TL_updateNewChannelMessage c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ aj(SendMessagesHelper sendMessagesHelper, TLRPC.Updates updates, int i10) {
+    public /* synthetic */ aj(SendMessagesHelper sendMessagesHelper, TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage, long j3, int i10) {
         this.a = i10;
         this.b = sendMessagesHelper;
-        this.c = updates;
+        this.c = tL_updateNewChannelMessage;
+        this.d = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$performSendMessageRequest$94(this.c);
+                this.b.lambda$performSendMessageRequest$93(this.c, this.d);
                 break;
             default:
-                this.b.lambda$performSendMessageRequestMulti$72(this.c);
+                this.b.lambda$performSendMessageRequestMulti$68(this.c, this.d);
                 break;
         }
     }

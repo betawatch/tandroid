@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class dv implements View.OnClickListener {
     public final /* synthetic */ Context a;
@@ -57,7 +57,7 @@ public final class dv implements View.OnClickListener {
             org.telegram.ui.Components.kj0 kj0Var = this.c.d;
             kj0Var.P(q6 ? kj0Var.e[0] - 1 : 0);
             this.c.e.getImageView().d();
-            int[] iArr = {(this.c.e.getImageView().getMeasuredWidth() / 2) + r2, org.telegram.messenger.f0.C(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, r2)};
+            int[] iArr = {(this.c.e.getImageView().getMeasuredWidth() / 2) + r2, org.telegram.messenger.q.C(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, r2)};
             this.c.e.getImageView().getLocationInWindow(iArr);
             int i10 = iArr[0];
             int i11 = iArr[1];
@@ -71,7 +71,7 @@ public final class dv implements View.OnClickListener {
         org.telegram.ui.Components.kj0 kj0Var2 = this.c.d;
         kj0Var2.P(q62 ? kj0Var2.e[0] - 1 : 0);
         this.c.e.getImageView().d();
-        int[] iArr2 = {(this.c.e.getImageView().getMeasuredWidth() / 2) + i10, org.telegram.messenger.f0.C(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, i11)};
+        int[] iArr2 = {(this.c.e.getImageView().getMeasuredWidth() / 2) + i10, org.telegram.messenger.q.C(3.0f, this.c.e.getImageView().getMeasuredHeight() / 2, i11)};
         this.c.e.getImageView().getLocationInWindow(iArr2);
         int i102 = iArr2[0];
         int i112 = iArr2[1];

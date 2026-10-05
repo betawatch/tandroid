@@ -31,7 +31,7 @@ import org.telegram.ui.Cells.t6;
 import org.telegram.ui.Components.bl0;
 import org.telegram.ui.web.u0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
@@ -168,7 +168,7 @@ public final class e {
     public final String b(u uVar, String str) {
         String flattenToShortString = ((ComponentName) uVar.d.b).flattenToShortString();
         boolean z10 = uVar.c;
-        String C = z10 ? str : a4.a.C(flattenToShortString, ":", str);
+        String D = z10 ? str : a4.a.D(flattenToShortString, ":", str);
         HashMap hashMap = this.k;
         if (!z10) {
             ArrayList arrayList = this.j;
@@ -179,7 +179,7 @@ public final class e {
                     i10 = -1;
                     break;
                 }
-                if (((v) arrayList.get(i10)).c.equals(C)) {
+                if (((v) arrayList.get(i10)).c.equals(D)) {
                     break;
                 }
                 i10++;
@@ -189,7 +189,7 @@ public final class e {
                 int i11 = 2;
                 while (true) {
                     Locale locale = Locale.US;
-                    String str2 = C + "_" + i11;
+                    String str2 = D + "_" + i11;
                     int size2 = arrayList.size();
                     int i12 = 0;
                     while (true) {
@@ -210,8 +210,8 @@ public final class e {
                 }
             }
         }
-        hashMap.put(new q0.b(flattenToShortString, str), C);
-        return C;
+        hashMap.put(new q0.b(flattenToShortString, str), D);
+        return D;
     }
 
     public final v c() {
@@ -579,7 +579,7 @@ public final class e {
         if (vVar == null) {
             la.h hVar = this.C;
             if (hVar != null) {
-                hVar.u();
+                hVar.p();
                 return;
             }
             return;
@@ -608,7 +608,7 @@ public final class e {
                 throw new IllegalStateException("There is no default route.  The media router has not yet been fully initialized.");
             }
             if (vVar2 == vVar3 || vVar2 == this.w) {
-                hVar2.u();
+                hVar2.p();
                 return;
             }
             int i11 = qVar.c == 1 ? 2 : 0;

@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class c {
     public final int a;
@@ -346,7 +346,7 @@ public final class c {
         StringBuilder sb2 = new StringBuilder("(");
         sb2.append(g.E[this.a]);
         sb2.append(", data length:");
-        return a4.a.n(this.d.length, ")", sb2);
+        return a4.a.o(this.d.length, ")", sb2);
     }
 
     public c(long j3, byte[] bArr, int i10, int i11) {

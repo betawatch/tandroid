@@ -25,7 +25,7 @@ import ii.n4;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import w7.p6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class y {
     public static final int[] d = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
@@ -55,10 +55,10 @@ public class y {
             case 0:
                 AbsSeekBar absSeekBar = (AbsSeekBar) this.b;
                 la.h Q = la.h.Q(absSeekBar.getContext(), attributeSet, d, i10);
-                Drawable G = Q.G(0);
-                if (G != null) {
-                    if (G instanceof AnimationDrawable) {
-                        AnimationDrawable animationDrawable = (AnimationDrawable) G;
+                Drawable C = Q.C(0);
+                if (C != null) {
+                    if (C instanceof AnimationDrawable) {
+                        AnimationDrawable animationDrawable = (AnimationDrawable) C;
                         int numberOfFrames = animationDrawable.getNumberOfFrames();
                         AnimationDrawable animationDrawable2 = new AnimationDrawable();
                         animationDrawable2.setOneShot(animationDrawable.isOneShot());
@@ -68,13 +68,13 @@ public class y {
                             animationDrawable2.addFrame(e7, animationDrawable.getDuration(i11));
                         }
                         animationDrawable2.setLevel(10000);
-                        G = animationDrawable2;
+                        C = animationDrawable2;
                     }
-                    absSeekBar.setIndeterminateDrawable(G);
+                    absSeekBar.setIndeterminateDrawable(C);
                 }
-                Drawable G2 = Q.G(1);
-                if (G2 != null) {
-                    absSeekBar.setProgressDrawable(e(G2, false));
+                Drawable C2 = Q.C(1);
+                if (C2 != null) {
+                    absSeekBar.setProgressDrawable(e(C2, false));
                 }
                 Q.R();
                 return;

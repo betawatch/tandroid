@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import java.io.File;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,11 +26,11 @@ public final /* synthetic */ class b0 implements Runnable {
                 if (tVar != null) {
                     try {
                         synchronized (tVar) {
-                            tVar.u = true;
+                            tVar.v = true;
                             try {
-                                tVar.f();
+                                tVar.g();
                             } finally {
-                                tVar.u = false;
+                                tVar.v = false;
                             }
                         }
                     } catch (IOException unused) {
@@ -69,7 +69,7 @@ public final /* synthetic */ class b0 implements Runnable {
             default:
                 s0 s0Var4 = this.b;
                 s0Var4.B = false;
-                s0Var4.m.b("recording segment stopped: state=" + hg.k0.B(s0Var4.W) + ", retainedDurationMs=" + s0Var4.E);
+                s0Var4.m.b("recording segment stopped: state=" + hg.c.B(s0Var4.W) + ", retainedDurationMs=" + s0Var4.E);
                 if (s0Var4.A) {
                     s0Var4.A = false;
                     s0Var4.i();

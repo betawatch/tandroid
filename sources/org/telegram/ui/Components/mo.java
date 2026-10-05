@@ -29,7 +29,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class mo extends LinearLayout {
     public static final /* synthetic */ int L = 0;
@@ -174,7 +174,7 @@ public abstract class mo extends LinearLayout {
         int i15 = (int) (f12 / f13);
         int i16 = (int) (i13 / f13);
         Locale locale = Locale.US;
-        return a4.a.k(i15, i16, "_");
+        return a4.a.l(i15, i16, "_");
     }
 
     public final void c(boolean z10, boolean z11, SpannableStringBuilder spannableStringBuilder, String str, View.OnClickListener onClickListener) {

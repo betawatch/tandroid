@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class o extends View {
     public final int a;
@@ -35,13 +35,13 @@ public final class o extends View {
         this.c = 60;
     }
 
-    public final void a(zg.o0 o0Var) {
+    public final void a(zg.m0 m0Var) {
         TLRPC.TL_availableReaction tL_availableReaction;
         TLRPC.Document document;
         String findAnimatedEmojiEmoticon;
-        TLRPC.TL_availableReaction tL_availableReaction2 = o0Var.f != null ? MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(o0Var.f) : null;
+        TLRPC.TL_availableReaction tL_availableReaction2 = m0Var.f != null ? MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(m0Var.f) : null;
         if (tL_availableReaction2 == null) {
-            document = org.telegram.ui.Components.q5.f(UserConfig.selectedAccount, o0Var.g);
+            document = org.telegram.ui.Components.q5.f(UserConfig.selectedAccount, m0Var.g);
             if (document != null && (findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(document, null)) != null) {
                 tL_availableReaction2 = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(findAnimatedEmojiEmoticon);
             }
@@ -52,7 +52,7 @@ public final class o extends View {
         }
         ArrayList arrayList = this.e;
         if (document != null || tL_availableReaction == null) {
-            org.telegram.ui.Components.q5 n10 = document == null ? org.telegram.ui.Components.q5.n(2, o0Var.g, null, UserConfig.selectedAccount) : org.telegram.ui.Components.q5.m(2, UserConfig.selectedAccount, document);
+            org.telegram.ui.Components.q5 n10 = document == null ? org.telegram.ui.Components.q5.n(2, m0Var.g, null, UserConfig.selectedAccount) : org.telegram.ui.Components.q5.m(2, UserConfig.selectedAccount, document);
             if (this.n != null) {
                 n10.setColorFilter(new PorterDuffColorFilter(this.n.intValue(), PorterDuff.Mode.MULTIPLY));
             }

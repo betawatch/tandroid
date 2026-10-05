@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e90 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class e90 implements Runnable {
                 break;
             case 3:
                 if (!launchActivity.q0.getFragmentStack().isEmpty()) {
-                    launchActivity.q0.getFragmentStack().get(0).showDialog(new org.telegram.ui.Components.qy0(launchActivity, launchActivity.j0, launchActivity.h0, launchActivity.i0));
+                    launchActivity.q0.getFragmentStack().get(0).showDialog(new org.telegram.ui.Components.ry0(launchActivity, launchActivity.j0, launchActivity.h0, launchActivity.i0));
                     break;
                 }
                 break;
@@ -75,10 +75,10 @@ public final /* synthetic */ class e90 implements Runnable {
                 ArrayList arrayList2 = launchActivity.e0;
                 if (AndroidUtilities.isTablet()) {
                     if (!arrayList2.isEmpty()) {
-                        n2Var = (org.telegram.ui.ActionBar.n2) hg.k0.g(1, arrayList2);
+                        n2Var = (org.telegram.ui.ActionBar.n2) hg.c.g(1, arrayList2);
                     }
                 } else if (!arrayList.isEmpty()) {
-                    n2Var = (org.telegram.ui.ActionBar.n2) hg.k0.g(1, arrayList);
+                    n2Var = (org.telegram.ui.ActionBar.n2) hg.c.g(1, arrayList);
                 }
                 if (!(n2Var instanceof ProxyListActivity) && !(n2Var instanceof h21)) {
                     launchActivity.p0(new ProxyListActivity());
@@ -100,11 +100,11 @@ public final /* synthetic */ class e90 implements Runnable {
                 break;
             case 7:
                 if (launchActivity.T0 != null) {
-                    File file = new File(ApplicationLoader.getFilesDirFixed(), a4.a.r(new StringBuilder("remote"), launchActivity.T0.id, ".attheme"));
+                    File file = new File(ApplicationLoader.getFilesDirFixed(), a4.a.s(new StringBuilder("remote"), launchActivity.T0.id, ".attheme"));
                     TLRPC.TL_theme tL_theme = launchActivity.T0;
                     org.telegram.ui.ActionBar.h6 u10 = org.telegram.ui.ActionBar.i6.u(file, tL_theme.title, tL_theme, true);
                     if (u10 != null) {
-                        launchActivity.p0(new rd1(u10, true, 0, false, false));
+                        launchActivity.p0(new pd1(u10, true, 0, false, false));
                     }
                     launchActivity.h0();
                     break;

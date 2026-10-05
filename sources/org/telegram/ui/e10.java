@@ -6,20 +6,20 @@ import android.graphics.RectF;
 import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class e10 extends ReplacementSpan {
     public final org.telegram.ui.ActionBar.d6 a;
     public final Paint b;
     public final int c;
-    public final org.telegram.ui.Components.e11 d;
+    public final org.telegram.ui.Components.f11 d;
 
     public e10(String str, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
         Paint paint = new Paint(1);
         this.b = paint;
         this.a = d6Var;
         this.c = i10;
-        this.d = new org.telegram.ui.Components.e11(str, 9.33f, AndroidUtilities.bold());
+        this.d = new org.telegram.ui.Components.f11(str, 9.33f, AndroidUtilities.bold());
         paint.setStyle(Paint.Style.FILL);
     }
 

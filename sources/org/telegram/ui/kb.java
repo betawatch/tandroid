@@ -10,7 +10,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class kb extends tb {
     public final hh.l x0;
@@ -23,7 +23,7 @@ public final class kb extends tb {
         this.x0 = new hh.l();
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public final void U(Drawable drawable) {
         if (drawable instanceof org.telegram.ui.Components.pc0) {
             ((org.telegram.ui.Components.pc0) drawable).p();
@@ -53,7 +53,7 @@ public final class kb extends tb {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
@@ -71,7 +71,7 @@ public final class kb extends tb {
     /* JADX WARN: Removed duplicated region for block: B:23:0x0092  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x00b1  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x0083  */
-    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

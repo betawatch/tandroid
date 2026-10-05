@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import x2.r;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class l {
     public final y2.m a;
@@ -88,7 +88,7 @@ public final class l {
                 d = j10;
                 i13 = 0;
             } else if (pVar.b) {
-                hVar2 = new z3.i(((qb.b) pVar.c).x(sVar3), sVar3);
+                hVar2 = new z3.h(((qb.b) pVar.c).v(sVar3), sVar3);
             } else {
                 dVar = null;
                 mVar2 = mVar3;

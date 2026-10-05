@@ -10,10 +10,10 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.ui.ActionBar.x5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class n1 extends TextView {
     public boolean a;
@@ -35,7 +35,7 @@ public final class n1 extends TextView {
         super.onDraw(canvas);
         canvas.restore();
         if (this.a) {
-            int z10 = ok.z(16.0f, getHeight(), 2);
+            int z10 = bi.z(16.0f, getHeight(), 2);
             if (LocaleController.isRTL) {
                 this.b.setBounds(AndroidUtilities.dp(7.0f), z10, AndroidUtilities.dp(23.0f), AndroidUtilities.dp(16.0f) + z10);
             } else {

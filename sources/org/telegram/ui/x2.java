@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class x2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.p9 {
     public static final /* synthetic */ int V = 0;
@@ -434,7 +434,7 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
                     } else {
                         i16 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(i21 * 14);
                         this.x = i16;
-                        i15 = org.telegram.messenger.ok.y(18.0f, i16, i12);
+                        i15 = org.telegram.messenger.bi.y(18.0f, i16, i12);
                         dp = i15;
                     }
                     TLRPC.Document document = this.O;
@@ -552,7 +552,7 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
                         if (q6 != null) {
                             int height = this.c.d.getHeight() + AndroidUtilities.dp(4.0f);
                             this.E = height;
-                            i17 = org.telegram.messenger.f0.C(4.0f, height, i17);
+                            i17 = org.telegram.messenger.q.C(4.0f, height, i17);
                             b3 b3Var = this.c;
                             b3Var.s = this.x;
                             b3Var.v = this.y;
@@ -560,7 +560,7 @@ public final class x2 extends FrameLayout implements DownloadController.FileDown
                         int i27 = i17;
                         TL_iv.pageBlockVideo pageblockvideo3 = this.L;
                         g4Var = g4Var2;
-                        b3 p5 = i4.p(this.a, this, null, pageblockvideo3.caption.credit, dp, 0, pageblockvideo3, (g4Var2 == null || !g4Var2.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.fx0.a(), 0, this.b);
+                        b3 p5 = i4.p(this.a, this, null, pageblockvideo3.caption.credit, dp, 0, pageblockvideo3, (g4Var2 == null || !g4Var2.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.gx0.a(), 0, this.b);
                         this.d = p5;
                         if (p5 != null) {
                             i17 = this.d.d.getHeight() + AndroidUtilities.dp(4.0f) + i27;

@@ -7,7 +7,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class p1 extends s4.j0 {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final class p1 extends s4.j0 {
                 ArrayList arrayList = (ArrayList) aVar.d;
                 if (i11 >= 1) {
                     if (BuildVars.DEBUG_VERSION) {
-                        StringBuilder k10 = hg.k0.k("onItemRangeChanged(", i10, ", ", i11, ", ");
+                        StringBuilder k10 = hg.c.k("onItemRangeChanged(", i10, ", ", i11, ", ");
                         k10.append(obj);
                         k10.append(")");
                         aVar.i(k10.toString());
@@ -101,7 +101,7 @@ public final class p1 extends s4.j0 {
                 View view = zl0Var.r1;
                 if (view != null && view.getAlpha() == 0.0f) {
                     zl0Var.s1 = -1;
-                    zl0Var.h1();
+                    zl0Var.g1();
                     break;
                 }
                 break;

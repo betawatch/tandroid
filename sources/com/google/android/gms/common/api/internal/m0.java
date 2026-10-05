@@ -12,7 +12,7 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import m.p3;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class m0 implements x0, com.google.android.gms.common.api.k {
     public final Lock a;
@@ -62,7 +62,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
     @Override // com.google.android.gms.common.api.internal.x0
     public final e c(e eVar) {
         eVar.l();
-        return this.m.E(eVar);
+        return this.m.D(eVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.x0
@@ -93,7 +93,7 @@ public final class m0 implements x0, com.google.android.gms.common.api.k {
         this.a.lock();
         try {
             this.m = new a6.i(this, 13);
-            this.m.u();
+            this.m.w();
             this.b.signalAll();
         } finally {
             this.a.unlock();

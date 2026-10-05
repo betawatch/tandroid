@@ -59,9 +59,9 @@ import org.telegram.ui.Components.z5;
 import org.telegram.ui.kv0;
 import r2.v;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public class b implements s0, bg.a, cg.a, da.c, fb.n, vi, n5.b, n2.r, q9.d, ub, l1, v, u5.a, z3.l {
+public class b implements s0, bg.a, cg.a, da.c, fb.n, vi, n5.b, n2.r, q9.d, ub, l1, v, u5.a, z3.k {
     public final /* synthetic */ int a;
 
     public /* synthetic */ b(int i10) {
@@ -134,8 +134,8 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, vi, n5.b, n2.r, q9.d, ub, 
     }
 
     @Override // n2.r
-    public byte[] B() {
-        throw new MediaDrmException("Attempting to open a session using a dummy ExoMediaDrm.");
+    public h2.b B(byte[] bArr) {
+        throw new IllegalStateException();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -143,18 +143,9 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, vi, n5.b, n2.r, q9.d, ub, 
         int i10 = this.a;
     }
 
-    @Override // cg.a
-    public void C(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12) {
-        if (i10 < i11) {
-            cg.a.q.C(shortBuffer, i10, shortBuffer2, i11, i12);
-        } else if (i10 > i11) {
-            cg.a.p.C(shortBuffer, i10, shortBuffer2, i11, i12);
-        } else {
-            if (i10 != i11) {
-                throw new IllegalArgumentException("Illegal use of PassThroughAudioResampler");
-            }
-            shortBuffer2.put(shortBuffer);
-        }
+    @Override // n2.r
+    public byte[] C() {
+        throw new MediaDrmException("Attempting to open a session using a dummy ExoMediaDrm.");
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -162,11 +153,29 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, vi, n5.b, n2.r, q9.d, ub, 
         int i10 = this.a;
     }
 
-    @Override // androidx.lifecycle.s0
-    public p0 D(Class cls, v1.b bVar) {
-        switch (this.a) {
+    @Override // z3.k
+    public int D(b2.s sVar) {
+        String str = sVar.r;
+        if (str != null) {
+            switch (str) {
+                case "application/dvbsubs":
+                case "application/pgs":
+                case "application/x-mp4-vtt":
+                    return 2;
+                case "text/vtt":
+                    return 1;
+                case "application/x-quicktime-tx3g":
+                    return 2;
+                case "text/x-ssa":
+                    return 1;
+                case "application/vobsub":
+                    return 2;
+                case "application/x-subrip":
+                case "application/ttml+xml":
+                    return 1;
+            }
         }
-        return f(cls);
+        throw new IllegalArgumentException(sa.e.i("Unsupported MIME type: ", str));
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -225,29 +234,11 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, vi, n5.b, n2.r, q9.d, ub, 
         return false;
     }
 
-    @Override // z3.l
-    public int H(b2.s sVar) {
-        String str = sVar.r;
-        if (str != null) {
-            switch (str) {
-                case "application/dvbsubs":
-                case "application/pgs":
-                case "application/x-mp4-vtt":
-                    return 2;
-                case "text/vtt":
-                    return 1;
-                case "application/x-quicktime-tx3g":
-                    return 2;
-                case "text/x-ssa":
-                    return 1;
-                case "application/vobsub":
-                    return 2;
-                case "application/x-subrip":
-                case "application/ttml+xml":
-                    return 1;
-            }
+    @Override // androidx.lifecycle.s0
+    public p0 H(Class cls, v1.b bVar) {
+        switch (this.a) {
         }
-        throw new IllegalArgumentException(t8.b.i("Unsupported MIME type: ", str));
+        return f(cls);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -454,7 +445,7 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, vi, n5.b, n2.r, q9.d, ub, 
         int i10 = this.a;
     }
 
-    @Override // z3.l
+    @Override // z3.k
     public boolean V(b2.s sVar) {
         String str = sVar.r;
         return Objects.equals(str, "text/x-ssa") || Objects.equals(str, "text/vtt") || Objects.equals(str, "application/x-mp4-vtt") || Objects.equals(str, "application/x-subrip") || Objects.equals(str, "application/x-quicktime-tx3g") || Objects.equals(str, "application/pgs") || Objects.equals(str, "application/vobsub") || Objects.equals(str, "application/dvbsubs") || Objects.equals(str, "application/ttml+xml");
@@ -878,9 +869,33 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, vi, n5.b, n2.r, q9.d, ub, 
         int i10 = this.a;
     }
 
-    @Override // r2.v
-    public boolean v(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return "secure-playback".equals(str) && MediaController.VIDEO_MIME_TYPE.equals(str2);
+    @Override // z3.k
+    public z3.m v(b2.s sVar) {
+        String str = sVar.r;
+        List list = sVar.u;
+        if (str != null) {
+            switch (str) {
+                case "application/dvbsubs":
+                    return new b4.i(list);
+                case "application/pgs":
+                    return new com.google.firebase.messaging.s(2);
+                case "application/x-mp4-vtt":
+                    return new xa.c(26);
+                case "text/vtt":
+                    return new of.b(21);
+                case "application/x-quicktime-tx3g":
+                    return new g4.a(list);
+                case "text/x-ssa":
+                    return new d4.a(list);
+                case "application/vobsub":
+                    return new com.google.firebase.messaging.s(list);
+                case "application/x-subrip":
+                    return new e4.a();
+                case "application/ttml+xml":
+                    return new f4.e();
+            }
+        }
+        throw new IllegalArgumentException(sa.e.i("Unsupported MIME type: ", str));
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -909,33 +924,18 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, vi, n5.b, n2.r, q9.d, ub, 
         return true;
     }
 
-    @Override // z3.l
-    public z3.n x(b2.s sVar) {
-        String str = sVar.r;
-        List list = sVar.u;
-        if (str != null) {
-            switch (str) {
-                case "application/dvbsubs":
-                    return new b4.i(list);
-                case "application/pgs":
-                    return new com.google.firebase.messaging.s(2);
-                case "application/x-mp4-vtt":
-                    return new xa.c(26);
-                case "text/vtt":
-                    return new of.b(21);
-                case "application/x-quicktime-tx3g":
-                    return new g4.a(list);
-                case "text/x-ssa":
-                    return new d4.a(list);
-                case "application/vobsub":
-                    return new com.google.firebase.messaging.s(list);
-                case "application/x-subrip":
-                    return new e4.a();
-                case "application/ttml+xml":
-                    return new f4.e();
+    @Override // cg.a
+    public void x(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12) {
+        if (i10 < i11) {
+            cg.a.q.x(shortBuffer, i10, shortBuffer2, i11, i12);
+        } else if (i10 > i11) {
+            cg.a.p.x(shortBuffer, i10, shortBuffer2, i11, i12);
+        } else {
+            if (i10 != i11) {
+                throw new IllegalArgumentException("Illegal use of PassThroughAudioResampler");
             }
+            shortBuffer2.put(shortBuffer);
         }
-        throw new IllegalArgumentException(t8.b.i("Unsupported MIME type: ", str));
     }
 
     @Override // org.telegram.ui.Components.vi
@@ -948,9 +948,9 @@ public class b implements s0, bg.a, cg.a, da.c, fb.n, vi, n5.b, n2.r, q9.d, ub, 
         int i10 = this.a;
     }
 
-    @Override // n2.r
-    public h2.b y(byte[] bArr) {
-        throw new IllegalStateException();
+    @Override // r2.v
+    public boolean y(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+        return "secure-playback".equals(str) && MediaController.VIDEO_MIME_TYPE.equals(str2);
     }
 
     @Override // org.telegram.ui.Cells.l1

@@ -3,7 +3,7 @@ package hd;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class a extends cd.b implements ListIterator {
     public final /* synthetic */ c d;
@@ -14,7 +14,7 @@ public final class a extends cd.b implements ListIterator {
         this.d = cVar;
         int i11 = cVar.i();
         if (i10 < 0 || i10 > i11) {
-            throw new IndexOutOfBoundsException(a4.a.l(i10, i11, "index: ", ", size: "));
+            throw new IndexOutOfBoundsException(a4.a.m(i10, i11, "index: ", ", size: "));
         }
         this.b = i10;
     }

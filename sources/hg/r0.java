@@ -15,19 +15,19 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.d61;
 import org.telegram.ui.Components.dc;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.gy0;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.hy0;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.bh1;
 import org.telegram.ui.rt;
 import org.telegram.ui.yn;
+import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -75,7 +75,7 @@ public final /* synthetic */ class r0 implements Runnable {
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
                 arrayList2.add(new MediaController.PhotoEntry(0, 0, 0L, ((File) obj5).getAbsolutePath(), 0, false, 0, 0, 0L));
                 PhotoViewer.t1().K2(n2Var.getParentActivity(), null, n2Var.getResourceProvider());
-                PhotoViewer.t1().g2(arrayList2, 0, 11, false, new gy0(), (yn) obj3);
+                PhotoViewer.t1().g2(arrayList2, 0, 11, false, new hy0(), (yn) obj3);
                 PhotoViewer.t1().X0(document, z10 ? document : null, false, null);
                 rt q6 = rt.q();
                 if (!z10) {
@@ -84,7 +84,7 @@ public final /* synthetic */ class r0 implements Runnable {
                 q6.T = tL_messages_stickerSet;
                 break;
             case 3:
-                bh1.d0((bh1) obj5, (TLRPC.TL_error) obj4, this.d, (TLObject) obj3, (byte[]) obj2, (String) obj, (TL_account.passwordInputSettings) tLObject);
+                zg1.d0((zg1) obj5, (TLRPC.TL_error) obj4, this.d, (TLObject) obj3, (byte[]) obj2, (String) obj, (TL_account.passwordInputSettings) tLObject);
                 break;
             default:
                 wh.n nVar = (wh.n) obj5;
@@ -150,7 +150,7 @@ public final /* synthetic */ class r0 implements Runnable {
                             String formatString = nVar.a ? LocaleController.formatString("HasBeenAddedToChannel", R.string.HasBeenAddedToChannel, firstName) : LocaleController.formatString("HasBeenAddedToGroup", R.string.HasBeenAddedToGroup, firstName);
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(formatString);
                             int indexOf = formatString.indexOf(firstName);
-                            spannableStringBuilder.setSpan(new d61(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
+                            spannableStringBuilder.setSpan(new e61(AndroidUtilities.bold()), indexOf, firstName.length() + indexOf, 18);
                             dcVar.b.setText(spannableStringBuilder);
                             if (arrayList3.isEmpty()) {
                                 rc.g(n2Var2, dcVar, 2750).j();
@@ -189,8 +189,8 @@ public final /* synthetic */ class r0 implements Runnable {
         this.n = tLObject2;
     }
 
-    public /* synthetic */ r0(bh1 bh1Var, TLRPC.TL_error tL_error, boolean z10, TLObject tLObject, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
-        this.f = bh1Var;
+    public /* synthetic */ r0(zg1 zg1Var, TLRPC.TL_error tL_error, boolean z10, TLObject tLObject, byte[] bArr, String str, TL_account.passwordInputSettings passwordinputsettings) {
+        this.f = zg1Var;
         this.b = tL_error;
         this.d = z10;
         this.c = tLObject;

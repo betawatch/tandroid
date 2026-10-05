@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i2 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -95,13 +95,13 @@ public final /* synthetic */ class i2 implements Utilities.Callback {
                 r3Var.invalidate();
                 break;
             default:
-                yh.x3.E0((yh.x3) this.e, this.b, this.c, this.d, (TL_stars.TL_starGiftUnique) this.f, (tg.m1[]) this.g, (Long) obj);
+                yh.y3.E0((yh.y3) this.e, this.b, this.c, this.d, (TL_stars.TL_starGiftUnique) this.f, (tg.m1[]) this.g, (Long) obj);
                 break;
         }
     }
 
-    public /* synthetic */ i2(yh.x3 x3Var, int i10, int i11, int i12, TL_stars.TL_starGiftUnique tL_starGiftUnique, tg.m1[] m1VarArr) {
-        this.e = x3Var;
+    public /* synthetic */ i2(yh.y3 y3Var, int i10, int i11, int i12, TL_stars.TL_starGiftUnique tL_starGiftUnique, tg.m1[] m1VarArr) {
+        this.e = y3Var;
         this.b = i10;
         this.c = i11;
         this.d = i12;

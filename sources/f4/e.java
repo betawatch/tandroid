@@ -25,12 +25,12 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import v7.r6;
 import w7.g9;
+import z3.l;
 import z3.m;
-import z3.n;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class e implements n {
+public final class e implements m {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
     public static final Pattern c = Pattern.compile("^([0-9]+(?:\\.[0-9]+)?)(h|m|s|ms|f|t)$");
     public static final Pattern d = Pattern.compile("^(([0-9]*.)?[0-9]+)(px|em|%)$");
@@ -99,13 +99,13 @@ public final class e implements n {
             matcher = pattern.matcher(str);
         } else {
             if (split.length != 2) {
-                throw new z3.f(a4.a.n(split.length, ".", new StringBuilder("Invalid number of entries for fontSize: ")));
+                throw new z3.f(a4.a.o(split.length, ".", new StringBuilder("Invalid number of entries for fontSize: ")));
             }
             matcher = pattern.matcher(split[1]);
             e2.a.n("TtmlParser", "Multiple values in fontSize attribute. Picking the second value for vertical font size and ignoring the first.");
         }
         if (!matcher.matches()) {
-            throw new z3.f(a4.a.p("Invalid expression for fontSize: '", str, "'."));
+            throw new z3.f(a4.a.q("Invalid expression for fontSize: '", str, "'."));
         }
         group = matcher.group(3);
         group.getClass();
@@ -120,7 +120,7 @@ public final class e implements n {
                 gVar.j = 1;
                 break;
             default:
-                throw new z3.f(a4.a.p("Invalid unit for fontSize: '", group, "'."));
+                throw new z3.f(a4.a.q("Invalid unit for fontSize: '", group, "'."));
         }
         String group2 = matcher.group(1);
         group2.getClass();
@@ -502,10 +502,10 @@ public final class e implements n {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x02d0  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x02d1  */
     /* JADX WARN: Removed duplicated region for block: B:73:0x022a  */
     /* JADX WARN: Removed duplicated region for block: B:83:0x025a  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x02b0  */
+    /* JADX WARN: Removed duplicated region for block: B:97:0x02b1  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1116,7 +1116,7 @@ public final class e implements n {
         }
         Matcher matcher2 = c.matcher(str);
         if (!matcher2.matches()) {
-            throw new z3.f(t8.b.i("Malformed time expression: ", str));
+            throw new z3.f(sa.e.i("Malformed time expression: ", str));
         }
         String group3 = matcher2.group(1);
         group3.getClass();
@@ -1205,17 +1205,12 @@ public final class e implements n {
         }
     }
 
-    @Override // z3.n
-    public final int A() {
-        return 1;
+    @Override // z3.m
+    public final void E(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+        g9.b(h(i10, i11, bArr), lVar, hVar);
     }
 
-    @Override // z3.n
-    public final void F(byte[] bArr, int i10, int i11, m mVar, h hVar) {
-        g9.b(h(i10, i11, bArr), mVar, hVar);
-    }
-
-    @Override // z3.n
+    @Override // z3.m
     public final z3.d h(int i10, int i11, byte[] bArr) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
@@ -1301,7 +1296,12 @@ public final class e implements n {
         }
     }
 
-    @Override // z3.n
+    @Override // z3.m
+    public final int y() {
+        return 1;
+    }
+
+    @Override // z3.m
     public final /* synthetic */ void reset() {
     }
 }

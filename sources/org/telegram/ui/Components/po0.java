@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class po0 extends x81 {
+public final class po0 extends y81 {
     public final ArrayList a = new ArrayList();
     public final /* synthetic */ org.telegram.ui.dy b;
 
@@ -16,46 +16,46 @@ public final class po0 extends x81 {
         i();
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final void b(View view, int i10, int i11) {
         org.telegram.ui.dy dyVar = this.b;
-        dyVar.Q(view, i10, dyVar.L0, true);
+        dyVar.Q(view, i10, dyVar.M0, true);
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final View d(int i10) {
         org.telegram.ui.dy dyVar = this.b;
-        org.telegram.ui.uy uyVar = dyVar.K0;
+        org.telegram.ui.uy uyVar = dyVar.L0;
         if (i10 == 1) {
-            return dyVar.V;
+            return dyVar.W;
         }
         if (i10 == 3) {
-            return dyVar.g0;
+            return dyVar.h0;
         }
         if (i10 == 4) {
-            return dyVar.l0;
+            return dyVar.m0;
         }
         if (i10 == 5) {
-            return dyVar.s0;
+            return dyVar.t0;
         }
         if (i10 == 2) {
-            on0 on0Var = new on0(dyVar.I0, uyVar);
-            dyVar.H0 = on0Var;
-            on0Var.b(dyVar.V0, dyVar.W0, false);
-            dyVar.H0.b.setClipToPadding(false);
-            dyVar.H0.b.j(new no0(this, 0));
-            dyVar.H0.b.D0(new lc0(dyVar, 24));
-            dyVar.H0.setUiCallback(dyVar);
-            return dyVar.H0;
+            on0 on0Var = new on0(dyVar.J0, uyVar);
+            dyVar.I0 = on0Var;
+            on0Var.b(dyVar.W0, dyVar.X0, false);
+            dyVar.I0.b.setClipToPadding(false);
+            dyVar.I0.b.j(new no0(this, 0));
+            dyVar.I0.b.D0(new lc0(dyVar, 24));
+            dyVar.I0.setUiCallback(dyVar);
+            return dyVar.I0;
         }
         if (i10 == 6) {
-            return dyVar.q0;
+            return dyVar.r0;
         }
         org.telegram.ui.x10 x10Var = new org.telegram.ui.x10(uyVar);
-        x10Var.setChatPreviewDelegate(dyVar.Q0);
+        x10Var.setChatPreviewDelegate(dyVar.R0);
         x10Var.setUiCallback(dyVar);
-        x10Var.j(dyVar.V0, dyVar.W0, false);
-        ah.c cVar = dyVar.Y0;
+        x10Var.j(dyVar.W0, dyVar.X0, false);
+        ah.c cVar = dyVar.Z0;
         if (cVar != null) {
             x10Var.setBlurredBackgroundDrawableFactory(cVar);
         }
@@ -66,12 +66,12 @@ public final class po0 extends x81 {
         return x10Var;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final int e() {
         return this.a.size();
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final CharSequence g(int i10) {
         ArrayList arrayList = this.a;
         if (((oo0) arrayList.get(i10)).a == 0) {
@@ -97,7 +97,7 @@ public final class po0 extends x81 {
         return str != null ? str : LocaleController.getString(q0Var.b);
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final int h(int i10) {
         ArrayList arrayList = this.a;
         if (((oo0) arrayList.get(i10)).a == 0) {
@@ -126,22 +126,22 @@ public final class po0 extends x81 {
         arrayList.clear();
         arrayList.add(new oo0(0));
         org.telegram.ui.dy dyVar = this.b;
-        if (dyVar.U0 != 0) {
+        if (dyVar.V0 != 0) {
             return;
         }
-        if (dyVar.r0) {
+        if (dyVar.s0) {
             arrayList.add(new oo0(5));
         }
         arrayList.add(new oo0(1));
         arrayList.add(new oo0(4));
         arrayList.add(new oo0(6));
-        if (dyVar.P0) {
+        if (dyVar.Q0) {
             return;
         }
         oo0 oo0Var = new oo0(3);
         oo0Var.b = 0;
         arrayList.add(oo0Var);
-        org.telegram.ui.mx mxVar = dyVar.c1.F3;
+        org.telegram.ui.mx mxVar = dyVar.d1.F3;
         if (mxVar == null || !mxVar.c()) {
             arrayList.add(new oo0(2));
         }

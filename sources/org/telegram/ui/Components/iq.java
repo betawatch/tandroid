@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class iq extends Drawable {
     public final Paint a;
@@ -80,7 +80,7 @@ public abstract class iq extends Drawable {
         float f15 = this.d;
         if (f15 < 0.0f || f15 >= 90.0f) {
             if (f15 >= 90.0f && f15 < 180.0f) {
-                f11 = org.telegram.messenger.f0.x(f15, 90.0f, 90.0f, 1.0f);
+                f11 = org.telegram.messenger.q.x(f15, 90.0f, 90.0f, 1.0f);
                 f7 = 0.0f;
                 f10 = 1.0f;
                 f12 = 0.0f;
@@ -128,7 +128,7 @@ public abstract class iq extends Drawable {
                     }
                     f10 = 0.0f;
                 } else {
-                    x10 = org.telegram.messenger.f0.x(f15, 360.0f, 90.0f, 1.0f);
+                    x10 = org.telegram.messenger.q.x(f15, 360.0f, 90.0f, 1.0f);
                 }
                 f12 = x10;
                 f7 = 0.0f;
@@ -168,7 +168,7 @@ public abstract class iq extends Drawable {
                 canvas.drawArc(rectF2, f202, f13, false, paint);
                 this.b = currentTimeMillis;
             }
-            f10 = org.telegram.messenger.f0.x(f15, 180.0f, 90.0f, 1.0f);
+            f10 = org.telegram.messenger.q.x(f15, 180.0f, 90.0f, 1.0f);
             f7 = 0.0f;
             f11 = 0.0f;
             f12 = 0.0f;

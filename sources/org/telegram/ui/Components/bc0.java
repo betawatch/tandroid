@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagePreviewParams;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class bc0 extends s4.h0 {
     public final /* synthetic */ cc0 c;
@@ -33,7 +33,7 @@ public final class bc0 extends s4.h0 {
                     int i11 = u1Var.r0;
                     CharSequence charSequence2 = messageObject.messageText;
                     ArrayList<MessageObject.TextLayoutBlock> arrayList2 = messageObject.textLayoutBlocks;
-                    C = u1Var.t1 ? org.telegram.messenger.f0.C(10.0f, u1Var.m2, i11) : i11;
+                    C = u1Var.t1 ? org.telegram.messenger.q.C(10.0f, u1Var.m2, i11) : i11;
                     arrayList = arrayList2;
                     charSequence = charSequence2;
                 } else {

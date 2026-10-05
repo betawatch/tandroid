@@ -20,7 +20,7 @@ import y9.o0;
 import y9.p0;
 import y9.u0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class q {
     public static final HashMap f;
@@ -99,7 +99,7 @@ public final class q {
             cVar.b = str;
             cVar.c = fileName;
             cVar.d = Long.valueOf(j3);
-            arrayList.add(cVar.l());
+            arrayList.add(cVar.j());
         }
         return DesugarCollections.unmodifiableList(arrayList);
     }

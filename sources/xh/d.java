@@ -17,9 +17,9 @@ import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.rq;
 import w7.z5;
-import yh.x7;
+import yh.z7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class d extends FrameLayout {
     public final ci.d a;
@@ -81,15 +81,15 @@ public final class d extends FrameLayout {
         if (auction.auctionStateActive != null) {
             this.b.c(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveRound, LocaleController.formatNumber(r1.current_round, ','), LocaleController.formatNumber(auction.auctionStateActive.total_rounds, ',')), z10, true);
         }
-        String h = org.telegram.messenger.f0.h(auction.auctionUserState.bid_amount, ',', new StringBuilder("⭐️"));
+        String h = org.telegram.messenger.q.h(auction.auctionUserState.bid_amount, ',', new StringBuilder("⭐️"));
         boolean isOutbid = auction.getBidStatus().isOutbid();
         rq[] rqVarArr = this.n;
         p6 p6Var = this.c;
         if (isOutbid) {
-            p6Var.c(x7.d1(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, h)), 0.66f, rqVarArr), z10, true);
+            p6Var.c(z7.d1(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, h)), 0.66f, rqVarArr), z10, true);
             p6Var.setTextColor(i6.w0(null, i6.q7, false));
         } else {
-            p6Var.c(x7.d1(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, h, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, rqVarArr), z10, true);
+            p6Var.c(z7.d1(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, h, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, rqVarArr), z10, true);
             p6Var.setTextColor(i6.w0(null, i6.G6, false));
         }
     }

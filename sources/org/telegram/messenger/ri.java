@@ -2,29 +2,31 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ri implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ TLRPC.Message c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 d;
+    public final /* synthetic */ TLRPC.TL_messages_editMessage e;
 
-    public /* synthetic */ ri(SendMessagesHelper sendMessagesHelper, TLRPC.Message message, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ ri(SendMessagesHelper sendMessagesHelper, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_messages_editMessage tL_messages_editMessage, int i10) {
+        this.a = i10;
         this.b = sendMessagesHelper;
-        this.c = message;
-        this.d = i10;
+        this.c = tL_error;
+        this.d = n2Var;
+        this.e = tL_messages_editMessage;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$performSendMessageRequest$102(this.c, this.d);
+                this.b.lambda$sendEditRichMessageRequest$25(this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$sendMessage$15(this.c, this.d);
+                this.b.lambda$editMessage$20(this.c, this.d, this.e);
                 break;
         }
     }

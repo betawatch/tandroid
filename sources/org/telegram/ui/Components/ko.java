@@ -3,16 +3,16 @@ package org.telegram.ui.Components;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ko implements ImageReceiver.ImageReceiverDelegate {
     public boolean a;
-    public final /* synthetic */ hg.g b;
+    public final /* synthetic */ hg.h b;
     public final /* synthetic */ mo c;
 
-    public ko(hg.i iVar, hg.g gVar) {
-        this.c = iVar;
-        this.b = gVar;
+    public ko(hg.j jVar, hg.h hVar) {
+        this.c = jVar;
+        this.b = hVar;
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -25,12 +25,12 @@ public final class ko implements ImageReceiver.ImageReceiverDelegate {
         if ((i10 == 0 || i10 == 3) && drawable != null) {
             this.a = true;
             boolean z10 = drawable instanceof kj0;
-            hg.g gVar = this.b;
+            hg.h hVar = this.b;
             if (z10 && (eVar = (kj0Var = (kj0) drawable).B0) != null && eVar.g()) {
-                kj0Var.A0 = new be(17, this, gVar);
+                kj0Var.A0 = new be(17, this, hVar);
             } else {
                 mo.a(this.c);
-                gVar.run();
+                hVar.run();
             }
         }
     }

@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import v7.d6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class m1 extends d6 {
     public static final Logger e = Logger.getLogger(m1.class.getName());
@@ -20,7 +20,7 @@ public final class m1 extends d6 {
         int length = bArr.length;
         if (((length - i10) | i10) < 0) {
             Locale locale = Locale.US;
-            throw new IllegalArgumentException(a4.a.l(length, i10, "Array range is invalid. Buffer.length=", ", offset=0, length="));
+            throw new IllegalArgumentException(a4.a.m(length, i10, "Array range is invalid. Buffer.length=", ", offset=0, length="));
         }
         this.b = bArr;
         this.d = 0;

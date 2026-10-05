@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class vb extends FrameLayout {
     public static final o1.i IN_OUT_OFFSET_Y = new rb(0);
@@ -145,7 +145,7 @@ public abstract class vb extends FrameLayout {
         if (bVar.c == null) {
             bVar.a(getMeasuredWidth(), getMeasuredHeight(), 6.0f, AndroidUtilities.dp(10.0f));
         }
-        this.blurVisibilityDrawable.i = w7.q.b((int) org.telegram.messenger.ok.x(this.inOutOffset, getMeasuredHeight(), 1.0f, 255.0f), 0, 255);
+        this.blurVisibilityDrawable.i = w7.q.b((int) org.telegram.messenger.bi.x(this.inOutOffset, getMeasuredHeight(), 1.0f, 255.0f), 0, 255);
         this.blurVisibilityDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
         this.blurVisibilityDrawable.draw(canvas);
     }

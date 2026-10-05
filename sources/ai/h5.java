@@ -56,7 +56,7 @@ import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h5 implements Runnable {
     public final /* synthetic */ int a;
@@ -949,7 +949,7 @@ public final /* synthetic */ class h5 implements Runnable {
                     StringBuilder sb3 = new StringBuilder("story bitrate, original = ");
                     sb3.append(videoEditedInfo.originalBitrate);
                     sb3.append(" => ");
-                    org.telegram.messenger.f0.n(videoEditedInfo.bitrate, sb3);
+                    org.telegram.messenger.q.n(videoEditedInfo.bitrate, sb3);
                     int i22 = iArr2[0][4];
                     long j23 = i22;
                     k8Var4.h0 = j23;
@@ -962,7 +962,7 @@ public final /* synthetic */ class h5 implements Runnable {
                     videoEditedInfo.estimatedDuration = j25 - j24;
                     videoEditedInfo.volume = k8Var4.P;
                     videoEditedInfo.muted = k8Var4.Y;
-                    videoEditedInfo.estimatedSize = (long) a4.a.A(i22 / 1000.0f, extractRealEncoderBitrate, 8.0f, r5[5]);
+                    videoEditedInfo.estimatedSize = (long) a4.a.B(i22 / 1000.0f, extractRealEncoderBitrate, 8.0f, r5[5]);
                     videoEditedInfo.estimatedSize = Math.max(k8Var4.L.length(), videoEditedInfo.estimatedSize);
                     videoEditedInfo.filterState = k8Var4.a1;
                     File file7 = k8Var4.Q0;
@@ -1142,7 +1142,7 @@ public final /* synthetic */ class h5 implements Runnable {
                                 tL_messageMediaVenue.geo = tL_botInlineMessageMediaVenue.geo;
                                 tL_messageMediaVenue.address = tL_botInlineMessageMediaVenue.address;
                                 tL_messageMediaVenue.title = tL_botInlineMessageMediaVenue.title;
-                                tL_messageMediaVenue.icon = a4.a.s(new StringBuilder("https://ss3.4sqi.net/img/categories_v2/"), tL_botInlineMessageMediaVenue.venue_type, "_64.png");
+                                tL_messageMediaVenue.icon = a4.a.t(new StringBuilder("https://ss3.4sqi.net/img/categories_v2/"), tL_botInlineMessageMediaVenue.venue_type, "_64.png");
                                 tL_messageMediaVenue.venue_type = tL_botInlineMessageMediaVenue.venue_type;
                                 tL_messageMediaVenue.venue_id = tL_botInlineMessageMediaVenue.venue_id;
                                 tL_messageMediaVenue.provider = tL_botInlineMessageMediaVenue.provider;
@@ -1184,21 +1184,21 @@ public final /* synthetic */ class h5 implements Runnable {
                 }
                 return;
             case 15:
-                hg.y yVar = (hg.y) this.b;
+                hg.z zVar = (hg.z) this.b;
                 TLObject tLObject6 = (TLObject) this.c;
                 TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) this.d;
                 Runnable runnable2 = (Runnable) this.e;
-                ArrayList arrayList12 = yVar.b;
+                ArrayList arrayList12 = zVar.b;
                 if (tLObject6 instanceof TL_account.TL_businessChatLink) {
                     TL_account.TL_businessChatLink tL_businessChatLink2 = (TL_account.TL_businessChatLink) tLObject6;
                     int indexOf = arrayList12.indexOf(tL_businessChatLink);
                     if (indexOf != -1) {
                         arrayList12.set(indexOf, tL_businessChatLink2);
-                        NotificationCenter.getInstance(yVar.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
+                        NotificationCenter.getInstance(zVar.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
                         if (runnable2 != null) {
                             runnable2.run();
                         }
-                        yVar.f();
+                        zVar.f();
                         return;
                     }
                     return;
@@ -1254,7 +1254,7 @@ public final /* synthetic */ class h5 implements Runnable {
                 ii.a aVar2 = (ii.a) this.c;
                 TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) this.d;
                 b80 b80Var = (b80) this.e;
-                rVar.r.X4(aVar2, pageBlock);
+                rVar.r.W4(aVar2, pageBlock);
                 b80Var.u();
                 return;
             case 19:

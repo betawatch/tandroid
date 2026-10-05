@@ -12,12 +12,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class e9 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final int b;
@@ -72,7 +72,7 @@ public final class e9 extends org.telegram.ui.ActionBar.f3 implements Notificati
         zl0Var.setOnScrollListener(new c9(this));
         TextView textView = new TextView(getContext());
         this.n = textView;
-        ok.n(org.telegram.ui.ActionBar.i6.G6, d6Var, textView, 1, 20.0f);
+        bi.m(org.telegram.ui.ActionBar.i6.G6, d6Var, textView, 1, 20.0f);
         textView.setPadding(AndroidUtilities.dp(22.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(22.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f));
         textView.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h5, d6Var));
         textView.setTypeface(AndroidUtilities.bold());

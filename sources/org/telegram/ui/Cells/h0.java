@@ -33,14 +33,14 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.hq;
-import org.telegram.ui.Components.k61;
 import org.telegram.ui.Components.k90;
+import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.r90;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class h0 extends View {
     public final ImageReceiver E;
@@ -205,7 +205,7 @@ public abstract class h0 extends View {
                             z11 = false;
                             MessageObject.addLinks(false, spannableStringBuilder);
                             if (z10) {
-                                spannableStringBuilder.setSpan(new d61(AndroidUtilities.bold()), 0, string.length(), 33);
+                                spannableStringBuilder.setSpan(new e61(AndroidUtilities.bold()), 0, string.length(), 33);
                             }
                         }
                         Emoji.replaceEmoji(spannableStringBuilder, org.telegram.ui.ActionBar.i6.o2.getFontMetricsInt(), z11);
@@ -233,7 +233,7 @@ public abstract class h0 extends View {
                         int i15 = this.f;
                         int i16 = (int) (dp5 * 0.5625d);
                         this.y = i16;
-                        this.f = org.telegram.messenger.f0.C(4.0f, i16, i15);
+                        this.f = org.telegram.messenger.q.C(4.0f, i16, i15);
                         return;
                     }
                     return;
@@ -448,8 +448,8 @@ public abstract class h0 extends View {
                     if (r90Var != null) {
                         try {
                             ClickableSpan clickableSpan = (ClickableSpan) r90Var.i;
-                            if (clickableSpan instanceof k61) {
-                                String url = ((k61) clickableSpan).getURL();
+                            if (clickableSpan instanceof l61) {
+                                String url = ((l61) clickableSpan).getURL();
                                 if (!url.startsWith("@")) {
                                     if (!url.startsWith("#")) {
                                         if (!url.startsWith("/")) {

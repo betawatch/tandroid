@@ -12,7 +12,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.v90;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public final RadioButton a;
@@ -67,7 +67,7 @@ public final class w extends FrameLayout {
         spannableString2.setSpan(new v90(AndroidUtilities.dp(70.0f), p6Var2), 0, 1, 33);
         TextView textView = new TextView(context);
         this.f = textView;
-        ok.n(i10, d6Var, textView, 1, 16.0f);
+        bi.m(i10, d6Var, textView, 1, 16.0f);
         textView.setGravity(5);
         addView(textView, z5.d(-2, -2.0f, 21, 0.0f, 0.0f, 19.0f, 0.0f));
         RadioButton radioButton = new RadioButton(context);

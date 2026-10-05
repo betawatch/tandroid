@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class rv0 extends org.telegram.ui.Cells.d6 {
     public final /* synthetic */ sv0 F;
@@ -23,9 +23,9 @@ public final class rv0 extends org.telegram.ui.Cells.d6 {
     @Override // org.telegram.ui.Cells.d6
     public final boolean e() {
         uv0 uv0Var = this.F.d;
-        zb1 zb1Var = uv0Var.c;
-        View F = zb1Var.F(this);
-        s4.c1 T = F == null ? null : zb1Var.T(F);
+        xb1 xb1Var = uv0Var.c;
+        View F = xb1Var.F(this);
+        s4.c1 T = F == null ? null : xb1Var.T(F);
         if (T != null) {
             int b10 = T.b();
             int i10 = uv0Var.y;
@@ -40,9 +40,9 @@ public final class rv0 extends org.telegram.ui.Cells.d6 {
     public final boolean f(org.telegram.ui.Cells.d6 d6Var) {
         int b10;
         uv0 uv0Var = this.F.d;
-        zb1 zb1Var = uv0Var.c;
-        View F = zb1Var.F(d6Var);
-        s4.c1 T = F == null ? null : zb1Var.T(F);
+        xb1 xb1Var = uv0Var.c;
+        View F = xb1Var.F(d6Var);
+        s4.c1 T = F == null ? null : xb1Var.T(F);
         if (T == null || (b10 = T.b()) == -1) {
             return false;
         }
@@ -78,9 +78,9 @@ public final class rv0 extends org.telegram.ui.Cells.d6 {
             }
         }
         super.h(d6Var, z10);
-        zb1 zb1Var = uv0Var.c;
-        View F = zb1Var.F(d6Var);
-        s4.c1 T = F == null ? null : zb1Var.T(F);
+        xb1 xb1Var = uv0Var.c;
+        View F = xb1Var.F(d6Var);
+        s4.c1 T = F == null ? null : xb1Var.T(F);
         if (T != null && (b10 = T.b()) != -1) {
             uv0Var.w[b10 - uv0Var.n0] = z10;
         }

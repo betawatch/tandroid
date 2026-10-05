@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -152,9 +152,9 @@ public final /* synthetic */ class t3 implements Utilities.Callback {
             case 18:
                 nw0 nw0Var = (nw0) obj2;
                 nw0Var.s = ((Integer) obj).intValue();
-                View A1 = nw0Var.d.A1(4);
-                if (A1 instanceof org.telegram.ui.Cells.e9) {
-                    org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) A1;
+                View z12 = nw0Var.d.z1(4);
+                if (z12 instanceof org.telegram.ui.Cells.e9) {
+                    org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) z12;
                     if (e9Var.getFixedSize() <= 0 && nw0Var.s > 0) {
                         e9Var.setText(nw0Var.U());
                         nw0Var.T(true);
@@ -176,7 +176,7 @@ public final /* synthetic */ class t3 implements Utilities.Callback {
                 Boolean bool = (Boolean) obj;
                 ViewPropertyAnimator scaleY = q90VarArr[0].animate().alpha(bool.booleanValue() ? 0.0f : 1.0f).scaleX(bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 0.8f : 1.0f);
                 org.telegram.ui.Components.tr trVar = org.telegram.ui.Components.tr.h;
-                org.telegram.messenger.ok.s(scaleY, trVar, 600L);
+                org.telegram.messenger.bi.r(scaleY, trVar, 600L);
                 q90VarArr[1].animate().alpha(bool.booleanValue() ? 1.0f : 0.0f).scaleX(!bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 1.0f : 0.8f).setInterpolator(trVar).setDuration(600L).start();
                 break;
             case 21:
@@ -205,10 +205,10 @@ public final /* synthetic */ class t3 implements Utilities.Callback {
                 ((ci.i1) obj2).E(((Integer) obj).intValue());
                 break;
             case 26:
-                ((yf1) obj2).X = (TL_stories.TL_premium_boostsStatus) obj;
+                ((wf1) obj2).X = (TL_stories.TL_premium_boostsStatus) obj;
                 break;
             default:
-                ((mi1) obj2).E(true);
+                ((ki1) obj2).E(true);
                 break;
         }
     }

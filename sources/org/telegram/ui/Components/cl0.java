@@ -18,10 +18,10 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
 import org.telegram.ui.UsersSelectActivity;
-import org.telegram.ui.mi1;
-import org.telegram.ui.qh1;
+import org.telegram.ui.ki1;
+import org.telegram.ui.oh1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class cl0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -75,31 +75,31 @@ public final class cl0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 1:
-                op0 op0Var = (op0) obj2;
+                pp0 pp0Var = (pp0) obj2;
                 try {
-                    ((WindowManager) obj).removeViewImmediate(op0Var.B);
+                    ((WindowManager) obj).removeViewImmediate(pp0Var.B);
                 } catch (Exception unused) {
                 }
-                uo0 uo0Var = op0Var.C;
-                if (uo0Var != null) {
-                    AndroidUtilities.cancelRunOnUIThread(uo0Var);
+                vo0 vo0Var = pp0Var.C;
+                if (vo0Var != null) {
+                    AndroidUtilities.cancelRunOnUIThread(vo0Var);
                     break;
                 }
                 break;
             case 2:
                 androidx.activity.g gVar = (androidx.activity.g) obj2;
-                lw0 lw0Var = (lw0) gVar.c;
-                lw0Var.f0 = 1.0f;
-                lw0Var.S.add((hw0) obj);
-                ((lw0) gVar.c).a0.setShader(null);
-                ((lw0) gVar.c).c0.setShader(null);
-                ((lw0) gVar.c).N();
+                mw0 mw0Var = (mw0) gVar.c;
+                mw0Var.f0 = 1.0f;
+                mw0Var.S.add((iw0) obj);
+                ((mw0) gVar.c).a0.setShader(null);
+                ((mw0) gVar.c).c0.setShader(null);
+                ((mw0) gVar.c).N();
                 super.onAnimationEnd(animator);
                 break;
             case 3:
-                yx0 yx0Var = (yx0) obj2;
-                yx0Var.b = 0.0f;
-                yx0Var.invalidate();
+                zx0 zx0Var = (zx0) obj2;
+                zx0Var.b = 0.0f;
+                zx0Var.invalidate();
                 ((an0) obj).invalidate();
                 break;
             case 4:
@@ -126,9 +126,9 @@ public final class cl0 extends AnimatorListenerAdapter {
                 j80Var.b = false;
                 break;
             case 8:
-                qw0 qw0Var = (qw0) obj2;
-                qw0Var.setVisibility(8);
-                qw0Var.setX(0.0f);
+                rw0 rw0Var = (rw0) obj2;
+                rw0Var.setVisibility(8);
+                rw0Var.setX(0.0f);
                 break;
             case 9:
                 PhotoViewer photoViewer = (PhotoViewer) obj2;
@@ -220,14 +220,14 @@ public final class cl0 extends AnimatorListenerAdapter {
                 y21Var.h.s(1.0f);
                 break;
             case 13:
-                org.telegram.ui.f41 f41Var = (org.telegram.ui.f41) obj2;
-                if (f41Var.h != null) {
-                    f41Var.h = null;
-                    f41Var.n.unlock();
+                org.telegram.ui.d41 d41Var = (org.telegram.ui.d41) obj2;
+                if (d41Var.h != null) {
+                    d41Var.h = null;
+                    d41Var.n.unlock();
                     ((org.telegram.ui.tx) obj).onTransitionAnimationEnd(true, false);
-                    f41Var.e = 1.0f;
-                    f41Var.g();
-                    f41Var.d(false);
+                    d41Var.e = 1.0f;
+                    d41Var.g();
+                    d41Var.d(false);
                     break;
                 }
                 break;
@@ -240,22 +240,22 @@ public final class cl0 extends AnimatorListenerAdapter {
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.hz0(this, 12));
                 break;
             case 15:
-                ((org.telegram.ui.s61) obj).run();
-                org.telegram.ui.c71 c71Var = (org.telegram.ui.c71) obj2;
-                org.telegram.ui.r51 r51Var = c71Var.X0;
-                if (r51Var != null) {
-                    r51Var.dismiss();
-                    c71Var.X0 = null;
+                ((org.telegram.ui.q61) obj).run();
+                org.telegram.ui.a71 a71Var = (org.telegram.ui.a71) obj2;
+                org.telegram.ui.p51 p51Var = a71Var.X0;
+                if (p51Var != null) {
+                    p51Var.dismiss();
+                    a71Var.X0 = null;
                     break;
                 }
                 break;
             case 16:
-                qh1 qh1Var = (qh1) obj2;
-                qh1Var.removeView((q30) obj);
-                qh1Var.e = null;
-                qh1Var.a = null;
-                qh1Var.b = false;
-                UsersSelectActivity usersSelectActivity = qh1Var.f;
+                oh1 oh1Var = (oh1) obj2;
+                oh1Var.removeView((q30) obj);
+                oh1Var.e = null;
+                oh1Var.a = null;
+                oh1Var.b = false;
+                UsersSelectActivity usersSelectActivity = oh1Var.f;
                 usersSelectActivity.c.setAllowDrawCursor(true);
                 if (usersSelectActivity.O.isEmpty()) {
                     usersSelectActivity.c.setHintVisible(true, true);
@@ -264,13 +264,13 @@ public final class cl0 extends AnimatorListenerAdapter {
                 break;
             case 17:
                 ((Runnable) obj).run();
-                mi1 mi1Var = (mi1) obj2;
-                mi1Var.e0.setScaleX(1.15f);
-                mi1Var.e0.setScaleY(1.15f);
-                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) mi1Var.e0.getLayoutParams();
+                ki1 ki1Var = (ki1) obj2;
+                ki1Var.e0.setScaleX(1.15f);
+                ki1Var.e0.setScaleY(1.15f);
+                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) ki1Var.e0.getLayoutParams();
                 marginLayoutParams.leftMargin = AndroidUtilities.dp(10.0f);
                 marginLayoutParams.rightMargin = AndroidUtilities.dp(10.0f);
-                mi1Var.e0.setVisibility(8);
+                ki1Var.e0.setVisibility(8);
                 break;
             case 18:
                 qg.a2 a2Var = (qg.a2) obj2;
@@ -314,9 +314,9 @@ public final class cl0 extends AnimatorListenerAdapter {
                 ((xg.i) aaVar.n).b.setAllowDrawCursor(true);
                 break;
             default:
-                yh.r8 r8Var = (yh.r8) obj2;
-                r8Var.b.remove((yh.q8) obj);
-                r8Var.a1();
+                yh.t8 t8Var = (yh.t8) obj2;
+                t8Var.b.remove((yh.s8) obj);
+                t8Var.a1();
                 break;
         }
     }
@@ -325,7 +325,7 @@ public final class cl0 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 8:
-                ((qw0) this.b).setVisibility(0);
+                ((rw0) this.b).setVisibility(0);
                 break;
             default:
                 super.onAnimationStart(animator);

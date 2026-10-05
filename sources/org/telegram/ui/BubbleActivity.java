@@ -18,7 +18,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class BubbleActivity extends i5 implements org.telegram.ui.ActionBar.z4 {
     public static BubbleActivity a0;
@@ -70,11 +70,11 @@ public class BubbleActivity extends i5 implements org.telegram.ui.ActionBar.z4 {
 
     @Override // androidx.fragment.app.v, androidx.activity.l, android.app.Activity
     public final void onActivityResult(int i10, int i11, Intent intent) {
-        org.telegram.ui.Components.n91 n91Var;
+        org.telegram.ui.Components.o91 o91Var;
         super.onActivityResult(i10, i11, intent);
         ThemeEditorView themeEditorView = ThemeEditorView.n;
-        if (themeEditorView != null && (n91Var = themeEditorView.k) != null) {
-            n91Var.a(i10, i11, intent);
+        if (themeEditorView != null && (o91Var = themeEditorView.k) != null) {
+            o91Var.a(i10, i11, intent);
         }
         if (this.S.getFragmentStack().isEmpty()) {
             return;
@@ -220,7 +220,7 @@ public class BubbleActivity extends i5 implements org.telegram.ui.ActionBar.z4 {
             if (!this.S.getFragmentStack().isEmpty()) {
                 ((org.telegram.ui.ActionBar.n2) this.S.getFragmentStack().get(this.S.getFragmentStack().size() - 1)).onRequestPermissionsResultFragment(i10, strArr, iArr);
             }
-            mi1.q(i10, iArr);
+            ki1.q(i10, iArr);
         }
     }
 

@@ -8,21 +8,21 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class s11 extends org.telegram.ui.Components.x81 {
+public final class s11 extends org.telegram.ui.Components.y81 {
     public boolean a;
-    public final /* synthetic */ org.telegram.ui.Components.ks0 b;
+    public final /* synthetic */ org.telegram.ui.Components.ls0 b;
 
-    public s11(org.telegram.ui.Components.ks0 ks0Var) {
-        this.b = ks0Var;
+    public s11(org.telegram.ui.Components.ls0 ls0Var) {
+        this.b = ls0Var;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final void a(ArrayList arrayList) {
-        org.telegram.ui.Components.ks0 ks0Var = this.b;
-        hz0 hz0Var = ks0Var.G;
-        org.telegram.ui.Components.f91 f91Var = ks0Var.n;
+        org.telegram.ui.Components.ls0 ls0Var = this.b;
+        hz0 hz0Var = ls0Var.G;
+        org.telegram.ui.Components.g91 g91Var = ls0Var.n;
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
         int i10 = 0;
@@ -36,8 +36,8 @@ public final class s11 extends org.telegram.ui.Components.x81 {
                 arrayList2.add(num);
             }
         }
-        int f7 = f(f91Var.getCurrentPosition());
-        ai.x8 x8Var = ks0Var.r;
+        int f7 = f(g91Var.getCurrentPosition());
+        ai.x8 x8Var = ls0Var.r;
         x8Var.getClass();
         HashMap hashMap = new HashMap();
         ArrayList arrayList3 = x8Var.h;
@@ -65,13 +65,13 @@ public final class s11 extends org.telegram.ui.Components.x81 {
         arrayList3.addAll(arrayList4);
         if (f7 >= 0) {
             int i13 = i(f7);
-            f91Var.e(0.0f, i13, i13);
+            g91Var.e(0.0f, i13, i13);
         }
         AndroidUtilities.cancelRunOnUIThread(hz0Var);
         AndroidUtilities.runOnUIThread(hz0Var, 1000L);
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final boolean c(int i10) {
         if (i10 == 0) {
             return false;
@@ -79,7 +79,7 @@ public final class s11 extends org.telegram.ui.Components.x81 {
         return (this.a && i10 == e() - 1) ? false : true;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final View d(int i10) {
         if (i10 == -1) {
             return null;
@@ -87,12 +87,12 @@ public final class s11 extends org.telegram.ui.Components.x81 {
         return new View(this.b.getContext());
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final int e() {
         return this.b.r.h.size() + 1 + (this.a ? 1 : 0);
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final int f(int i10) {
         if (i10 == 0) {
             return 0;
@@ -103,7 +103,7 @@ public final class s11 extends org.telegram.ui.Components.x81 {
         return ((ai.e9) this.b.r.h.get(i10 - 1)).a;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final CharSequence g(int i10) {
         if (i10 == 0) {
             return LocaleController.getString(R.string.StoriesAlbumNameAllStories);
@@ -119,7 +119,7 @@ public final class s11 extends org.telegram.ui.Components.x81 {
         return spannableStringBuilder;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final int h(int i10) {
         if (this.a && i10 == e() - 1) {
             return -1;
@@ -138,7 +138,7 @@ public final class s11 extends org.telegram.ui.Components.x81 {
         return c10 + 1;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final void b(View view, int i10, int i11) {
     }
 }

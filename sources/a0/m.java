@@ -1,11 +1,10 @@
 package a0;
 
-import hg.k0;
 import java.util.Arrays;
 import java.util.ConcurrentModificationException;
 import java.util.Map;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class m {
     public int[] a;
@@ -109,7 +108,7 @@ public class m {
 
     public final Object e(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IllegalArgumentException(k0.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(hg.c.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         return this.b[i10 << 1];
     }
@@ -164,7 +163,7 @@ public class m {
     public final Object f(int i10) {
         int i11;
         if (i10 < 0 || i10 >= (i11 = this.c)) {
-            throw new IllegalArgumentException(k0.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(hg.c.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         Object[] objArr = this.b;
         int i12 = i10 << 1;
@@ -216,7 +215,7 @@ public class m {
 
     public final Object g(int i10, Object obj) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IllegalArgumentException(k0.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(hg.c.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         int i11 = (i10 << 1) + 1;
         Object[] objArr = this.b;
@@ -240,7 +239,7 @@ public class m {
 
     public final Object h(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IllegalArgumentException(k0.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
+            throw new IllegalArgumentException(hg.c.h(i10, "Expected index to be within 0..size()-1, but was ").toString());
         }
         return this.b[(i10 << 1) + 1];
     }

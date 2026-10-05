@@ -23,9 +23,9 @@ import org.telegram.ui.NotificationsSettingsActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SessionsActivity;
-import org.telegram.ui.mi1;
+import org.telegram.ui.ki1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ld implements Runnable {
     public final /* synthetic */ int a;
@@ -207,71 +207,71 @@ public final /* synthetic */ class ld implements Runnable {
                     break;
                 }
             case 7:
-                ((pv0) obj).d1(i18);
+                ((qv0) obj).d1(i18);
                 break;
             case 8:
-                ((iu0) obj).h.scrollBy(0, i18);
+                ((ju0) obj).h.scrollBy(0, i18);
                 break;
             case 9:
-                pv0 pv0Var = ((ht0) obj).a;
-                org.telegram.ui.ActionBar.n2 n2Var = pv0Var.v1;
+                qv0 qv0Var = ((it0) obj).a;
+                org.telegram.ui.ActionBar.n2 n2Var = qv0Var.v1;
                 if (n2Var != null) {
-                    if (pv0Var.d1 instanceof TLRPC.TL_channelFull) {
+                    if (qv0Var.d1 instanceof TLRPC.TL_channelFull) {
                         TLRPC.TL_channels_setMainProfileTab tL_channels_setMainProfileTab = new TLRPC.TL_channels_setMainProfileTab();
-                        tL_channels_setMainProfileTab.tab = pv0.d0(i18, true);
-                        tL_channels_setMainProfileTab.channel = n2Var.getMessagesController().getInputChannel(pv0Var.d1.id);
-                        TLRPC.ChatFull chatFull = pv0Var.d1;
+                        tL_channels_setMainProfileTab.tab = qv0.d0(i18, true);
+                        tL_channels_setMainProfileTab.channel = n2Var.getMessagesController().getInputChannel(qv0Var.d1.id);
+                        TLRPC.ChatFull chatFull = qv0Var.d1;
                         chatFull.flags2 |= TLObject.FLAG_22;
                         chatFull.main_tab = tL_channels_setMainProfileTab.tab;
                         tL_account_setMainProfileTab = tL_channels_setMainProfileTab;
                     } else {
                         TLRPC.TL_account_setMainProfileTab tL_account_setMainProfileTab2 = new TLRPC.TL_account_setMainProfileTab();
-                        TLRPC.ProfileTab d02 = pv0.d0(i18, true);
+                        TLRPC.ProfileTab d02 = qv0.d0(i18, true);
                         tL_account_setMainProfileTab2.tab = d02;
-                        TLRPC.UserFull userFull = pv0Var.e1;
+                        TLRPC.UserFull userFull = qv0Var.e1;
                         tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
                         if (userFull != null) {
                             userFull.flags2 |= 1048576;
                             userFull.main_tab = d02;
-                            n2Var.getMessagesStorage().updateUserInfo(pv0Var.e1, true);
+                            n2Var.getMessagesStorage().updateUserInfo(qv0Var.e1, true);
                             tL_account_setMainProfileTab = tL_account_setMainProfileTab2;
                         }
                     }
                     n2Var.getConnectionsManager().sendRequest(tL_account_setMainProfileTab, null);
-                    pv0Var.v1(true);
+                    qv0Var.v1(true);
                     break;
                 }
                 break;
             case 10:
-                e51 e51Var = (e51) obj;
-                e51Var.S();
-                e51Var.g0 = i18;
-                t41.G(e51Var.f0);
-                e51Var.T();
+                f51 f51Var = (f51) obj;
+                f51Var.S();
+                f51Var.g0 = i18;
+                u41.G(f51Var.f0);
+                f51Var.T();
                 break;
             case 11:
-                ((f91) obj).v.y0(i18);
+                ((g91) obj).v.y0(i18);
                 break;
             case 12:
-                z91 z91Var = (z91) obj;
-                d81 d81Var = z91Var.a;
+                aa1 aa1Var = (aa1) obj;
+                e81 e81Var = aa1Var.a;
                 if (i18 == -1) {
-                    if (d81Var.y()) {
-                        d81Var.B();
-                        z91Var.n();
+                    if (e81Var.y()) {
+                        e81Var.B();
+                        aa1Var.n();
                     }
-                    z91Var.J = false;
+                    aa1Var.J = false;
                     break;
                 } else if (i18 == 1) {
-                    if (z91Var.K) {
-                        z91Var.K = false;
-                        d81Var.C();
+                    if (aa1Var.K) {
+                        aa1Var.K = false;
+                        e81Var.C();
                         break;
                     }
-                } else if (i18 != -3 && i18 == -2 && d81Var.y()) {
-                    z91Var.K = true;
-                    d81Var.B();
-                    z91Var.n();
+                } else if (i18 != -3 && i18 == -2 && e81Var.y()) {
+                    aa1Var.K = true;
+                    e81Var.B();
+                    aa1Var.n();
                     break;
                 }
                 break;
@@ -418,17 +418,17 @@ public final /* synthetic */ class ld implements Runnable {
                 SessionsActivity sessionsActivity = (SessionsActivity) obj;
                 sessionsActivity.h.remove(i18);
                 sessionsActivity.m0();
-                org.telegram.ui.m81 m81Var = sessionsActivity.a;
-                if (m81Var != null) {
-                    m81Var.l();
+                org.telegram.ui.j81 j81Var = sessionsActivity.a;
+                if (j81Var != null) {
+                    j81Var.l();
                     break;
                 }
                 break;
             case 27:
-                mi1 mi1Var = (mi1) obj;
-                mi1Var.F.setSignalBarCount(i18);
+                ki1 ki1Var = (ki1) obj;
+                ki1Var.F.setSignalBarCount(i18);
                 if (i18 <= 1) {
-                    org.telegram.ui.Components.voip.d3 d3Var = mi1Var.v;
+                    org.telegram.ui.Components.voip.d3 d3Var = ki1Var.v;
                     if (d3Var.V != 3) {
                         d3Var.V = 3;
                         ValueAnimator ofInt = ValueAnimator.ofInt(d3Var.H, 255);
@@ -437,10 +437,10 @@ public final /* synthetic */ class ld implements Runnable {
                         d3Var.O.setDuration(500L);
                         d3Var.O.start();
                     }
-                    mi1Var.F.c(true);
+                    ki1Var.F.c(true);
                     break;
                 } else {
-                    org.telegram.ui.Components.voip.d3 d3Var2 = mi1Var.v;
+                    org.telegram.ui.Components.voip.d3 d3Var2 = ki1Var.v;
                     if (d3Var2.V != 2) {
                         d3Var2.V = 2;
                         d3Var2.c();
@@ -455,7 +455,7 @@ public final /* synthetic */ class ld implements Runnable {
                         d3Var2.O.setDuration(500L);
                         d3Var2.O.start();
                     }
-                    mi1Var.F.c(false);
+                    ki1Var.F.c(false);
                     break;
                 }
             case 28:

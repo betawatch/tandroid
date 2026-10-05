@@ -1,7 +1,6 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import android.app.Dialog;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.View;
@@ -11,7 +10,6 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Pattern;
@@ -32,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ha0 implements Runnable {
     public final /* synthetic */ int a;
@@ -48,8 +46,8 @@ public final /* synthetic */ class ha0 implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:203:0x0344 A[Catch: Exception -> 0x0238, TryCatch #6 {Exception -> 0x0238, blocks: (B:135:0x0227, B:137:0x022d, B:139:0x023b, B:141:0x0248, B:142:0x024b, B:144:0x0258, B:146:0x0260, B:148:0x0271, B:150:0x0277, B:152:0x027f, B:154:0x0287, B:203:0x0344, B:205:0x0349, B:206:0x034c, B:193:0x0332, B:196:0x0322, B:197:0x0338), top: B:134:0x0227 }] */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x0349 A[Catch: Exception -> 0x0238, TryCatch #6 {Exception -> 0x0238, blocks: (B:135:0x0227, B:137:0x022d, B:139:0x023b, B:141:0x0248, B:142:0x024b, B:144:0x0258, B:146:0x0260, B:148:0x0271, B:150:0x0277, B:152:0x027f, B:154:0x0287, B:203:0x0344, B:205:0x0349, B:206:0x034c, B:193:0x0332, B:196:0x0322, B:197:0x0338), top: B:134:0x0227 }] */
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0341 A[Catch: Exception -> 0x0236, TryCatch #8 {Exception -> 0x0236, blocks: (B:135:0x0225, B:137:0x022b, B:139:0x0239, B:141:0x0246, B:142:0x0249, B:144:0x0256, B:146:0x025e, B:148:0x026f, B:150:0x0275, B:152:0x027d, B:154:0x0285, B:203:0x0341, B:205:0x0346, B:206:0x0349, B:193:0x0330, B:196:0x0320, B:197:0x0336), top: B:134:0x0225 }] */
+    /* JADX WARN: Removed duplicated region for block: B:205:0x0346 A[Catch: Exception -> 0x0236, TryCatch #8 {Exception -> 0x0236, blocks: (B:135:0x0225, B:137:0x022b, B:139:0x0239, B:141:0x0246, B:142:0x0249, B:144:0x0256, B:146:0x025e, B:148:0x026f, B:150:0x0275, B:152:0x027d, B:154:0x0285, B:203:0x0341, B:205:0x0346, B:206:0x0349, B:193:0x0330, B:196:0x0320, B:197:0x0336), top: B:134:0x0225 }] */
     /* JADX WARN: Type inference failed for: r5v6 */
     /* JADX WARN: Type inference failed for: r5v7, types: [boolean] */
     /* JADX WARN: Type inference failed for: r5v8 */
@@ -66,17 +64,18 @@ public final /* synthetic */ class ha0 implements Runnable {
         ZipOutputStream zipOutputStream;
         int i11;
         int i12;
+        int i13;
         TLRPC.WallPaperSettings wallPaperSettings;
         boolean z10;
         TLRPC.WallPaperSettings wallPaperSettings2;
         TLRPC.WallPaperSettings wallPaperSettings3;
         TLRPC.Document document;
-        int i13 = this.a;
-        int i14 = 1;
+        int i14 = this.a;
+        int i15 = 1;
         Object obj = this.d;
         boolean z11 = this.b;
         Object obj2 = this.c;
-        switch (i13) {
+        switch (i14) {
             case 0:
                 LaunchActivity launchActivity = (LaunchActivity) obj2;
                 BetaUpdate betaUpdate = (BetaUpdate) obj;
@@ -127,10 +126,10 @@ public final /* synthetic */ class ha0 implements Runnable {
                     formatPluralString = LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0]);
                 }
                 String string = LocaleController.getString(R.string.AppName);
-                int i15 = R.string.FloodWaitTime;
+                int i16 = R.string.FloodWaitTime;
                 Object[] objArr = new Object[1];
                 objArr[c10] = formatPluralString;
-                kn0Var.M1(string, LocaleController.formatString("FloodWaitTime", i15, objArr));
+                kn0Var.M1(string, LocaleController.formatString("FloodWaitTime", i16, objArr));
                 return;
             case 3:
                 wq0.S((wq0) obj2, (TLObject) obj, z11);
@@ -219,93 +218,93 @@ public final /* synthetic */ class ha0 implements Runnable {
                     long currentTimeMillis = System.currentTimeMillis();
                     try {
                         zipOutputStream = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(file)));
-                        int i16 = 65536;
-                        try {
-                            byte[] bArr = new byte[65536];
-                            int i17 = 0;
-                            while (i17 < arrayList.size()) {
-                                File file5 = (File) arrayList.get(i17);
-                                if (!file5.getName().contains("cache4")) {
-                                    if (!z11) {
-                                        if (file5.getName().contains("_mtproto")) {
-                                        }
-                                    }
-                                    if (currentTimeMillis - file5.lastModified() > 86400000) {
-                                        i17++;
-                                        i16 = 65536;
+                        i11 = 65536;
+                    } catch (Exception e7) {
+                        e = e7;
+                        bufferedInputStream = null;
+                        zipOutputStream = null;
+                    } catch (Throwable th2) {
+                        th = th2;
+                        bufferedInputStream = null;
+                        zipOutputStream = null;
+                    }
+                    try {
+                        byte[] bArr = new byte[65536];
+                        int i17 = 0;
+                        while (i17 < arrayList.size()) {
+                            File file5 = (File) arrayList.get(i17);
+                            if (!file5.getName().contains("cache4")) {
+                                if (!z11) {
+                                    if (file5.getName().contains("_mtproto")) {
                                     }
                                 }
-                                if (file5.exists() && !file5.isDirectory()) {
-                                    bufferedInputStream = new BufferedInputStream(new FileInputStream(file5), i16);
+                                if (currentTimeMillis - file5.lastModified() > 86400000) {
+                                    i17++;
+                                    i11 = 65536;
+                                }
+                            }
+                            if (file5.exists() && !file5.isDirectory()) {
+                                bufferedInputStream = new BufferedInputStream(new FileInputStream(file5), i11);
+                                try {
                                     try {
-                                        try {
-                                            zipOutputStream.putNextEntry(new ZipEntry(file5.getName()));
-                                            while (true) {
-                                                int read = bufferedInputStream.read(bArr, 0, i16);
-                                                if (read != -1) {
-                                                    zipOutputStream.write(bArr, 0, read);
-                                                    i16 = 65536;
-                                                } else {
-                                                    bufferedInputStream.close();
-                                                }
-                                            }
-                                        } catch (Exception e7) {
-                                            e = e7;
-                                            e.printStackTrace();
-                                            if (bufferedInputStream != null) {
+                                        zipOutputStream.putNextEntry(new ZipEntry(file5.getName()));
+                                        while (true) {
+                                            int read = bufferedInputStream.read(bArr, 0, i11);
+                                            if (read != -1) {
+                                                zipOutputStream.write(bArr, 0, read);
+                                                i11 = 65536;
+                                            } else {
                                                 bufferedInputStream.close();
                                             }
-                                            if (zipOutputStream != null) {
-                                                zipOutputStream.close();
-                                            }
-                                            AndroidUtilities.runOnUIThread(new zr0((Dialog) b2Var, zArr2, (Object) activity, (Serializable) file, 5));
-                                            return;
                                         }
-                                    } catch (Throwable th2) {
-                                        th = th2;
+                                    } catch (Exception e10) {
+                                        e = e10;
+                                        e.printStackTrace();
                                         if (bufferedInputStream != null) {
                                             bufferedInputStream.close();
                                         }
                                         if (zipOutputStream != null) {
                                             zipOutputStream.close();
                                         }
-                                        throw th;
+                                        AndroidUtilities.runOnUIThread(new zr0(b2Var, zArr2, activity, file));
+                                        return;
                                     }
+                                } catch (Throwable th3) {
+                                    th = th3;
+                                    if (bufferedInputStream != null) {
+                                        bufferedInputStream.close();
+                                    }
+                                    if (zipOutputStream != null) {
+                                        zipOutputStream.close();
+                                    }
+                                    throw th;
                                 }
-                                i17++;
-                                i16 = 65536;
                             }
-                            zArr2[0] = true;
-                        } catch (Exception e10) {
-                            e = e10;
-                            bufferedInputStream = null;
-                        } catch (Throwable th3) {
-                            th = th3;
-                            bufferedInputStream = null;
-                            if (bufferedInputStream != null) {
-                            }
-                            if (zipOutputStream != null) {
-                            }
-                            throw th;
+                            i17++;
+                            i11 = 65536;
                         }
+                        zArr2[0] = true;
                     } catch (Exception e11) {
                         e = e11;
                         bufferedInputStream = null;
-                        zipOutputStream = null;
                     } catch (Throwable th4) {
                         th = th4;
                         bufferedInputStream = null;
-                        zipOutputStream = null;
+                        if (bufferedInputStream != null) {
+                        }
+                        if (zipOutputStream != null) {
+                        }
+                        throw th;
                     }
                     zipOutputStream.close();
-                    AndroidUtilities.runOnUIThread(new zr0((Dialog) b2Var, zArr2, (Object) activity, (Serializable) file, 5));
+                    AndroidUtilities.runOnUIThread(new zr0(b2Var, zArr2, activity, file));
                     return;
                 } catch (Exception e12) {
                     e12.printStackTrace();
                     return;
                 }
             case 8:
-                o41.N((o41) obj2, z11, (org.telegram.ui.Components.yw) obj);
+                m41.N((m41) obj2, z11, (org.telegram.ui.Components.yw) obj);
                 return;
             case 9:
                 TwoStepVerificationActivity.W((TwoStepVerificationActivity) obj2, z11, (byte[]) obj);
@@ -334,36 +333,36 @@ public final /* synthetic */ class ha0 implements Runnable {
                     while (i19 < size) {
                         TLRPC.WallPaper wallPaper = tL_wallPapers.wallpapers.get(i19);
                         if ("fqv01SQemVIBAAAApND8LDRUhRU".equals(wallPaper.slug)) {
-                            i11 = i19;
+                            i12 = i19;
                         } else if (!(wallPaper instanceof TLRPC.TL_wallPaper) || (wallPaper.document instanceof TLRPC.TL_documentEmpty)) {
-                            i11 = i19;
+                            i12 = i19;
                             if (wallPaper.settings.background_color != 0 && (org.telegram.ui.ActionBar.i6.I.q() || (wallPaperSettings = wallPaper.settings) == null || wallPaperSettings.intensity >= 0)) {
                                 TLRPC.WallPaperSettings wallPaperSettings4 = wallPaper.settings;
                                 int i20 = wallPaperSettings4.second_background_color;
-                                yi1 yi1Var = (i20 == 0 || (i12 = wallPaperSettings4.third_background_color) == 0) ? new yi1(wallPaperSettings4.background_color, i20, null, wallPaperSettings4.rotation) : new yi1(null, wallPaperSettings4.background_color, i20, i12, wallPaperSettings4.fourth_background_color);
-                                yi1Var.a = wallPaper.slug;
-                                yi1Var.h = wallPaperSettings4.intensity / 100.0f;
-                                yi1Var.f = AndroidUtilities.getWallpaperRotation(wallPaperSettings4.rotation, false);
-                                yi1Var.l = wallPaper;
-                                arrayList3.add(yi1Var);
+                                wi1 wi1Var = (i20 == 0 || (i13 = wallPaperSettings4.third_background_color) == 0) ? new wi1(wallPaperSettings4.background_color, i20, null, wallPaperSettings4.rotation) : new wi1(null, wallPaperSettings4.background_color, i20, i13, wallPaperSettings4.fourth_background_color);
+                                wi1Var.a = wallPaper.slug;
+                                wi1Var.h = wallPaperSettings4.intensity / 100.0f;
+                                wi1Var.f = AndroidUtilities.getWallpaperRotation(wallPaperSettings4.rotation, false);
+                                wi1Var.l = wallPaper;
+                                arrayList3.add(wi1Var);
                             }
                         } else {
                             hashMap.put(wallPaper.slug, wallPaper);
                             if (!wallPaper.pattern || (document = wallPaper.document) == null) {
-                                i11 = i19;
+                                i12 = i19;
                             } else {
-                                i11 = i19;
+                                i12 = i19;
                                 if (!hashMap2.containsKey(Long.valueOf(document.id))) {
                                     wallpapersListActivity.e0.add(wallPaper);
                                     hashMap2.put(Long.valueOf(wallPaper.document.id), wallPaper);
                                 }
                             }
-                            if (i18 != i14 && ((!(z10 = wallPaper.pattern) || ((wallPaperSettings3 = wallPaper.settings) != null && wallPaperSettings3.background_color != 0)) && ((i18 != 2 || z10) && (org.telegram.ui.ActionBar.i6.I.q() || (wallPaperSettings2 = wallPaper.settings) == null || wallPaperSettings2.intensity >= 0)))) {
+                            if (i18 != i15 && ((!(z10 = wallPaper.pattern) || ((wallPaperSettings3 = wallPaper.settings) != null && wallPaperSettings3.background_color != 0)) && ((i18 != 2 || z10) && (org.telegram.ui.ActionBar.i6.I.q() || (wallPaperSettings2 = wallPaper.settings) == null || wallPaperSettings2.intensity >= 0)))) {
                                 arrayList3.add(wallPaper);
                             }
                         }
-                        i19 = i11 + 1;
-                        i14 = 1;
+                        i19 = i12 + 1;
+                        i15 = 1;
                     }
                     wallpapersListActivity.A0();
                     wallpapersListActivity.getMessagesStorage().putWallpapers(tL_wallPapers.wallpapers, 1);

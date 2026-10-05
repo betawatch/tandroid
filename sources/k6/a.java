@@ -3,12 +3,11 @@ package k6;
 import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
-import hg.k0;
 import java.util.Arrays;
 import n4.y;
 import w7.g0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class a extends o6.a {
     public final int a;
@@ -88,7 +87,7 @@ public final class a extends o6.a {
                     case 25:
                         return "API_INSTALL_REQUIRED";
                     default:
-                        return k0.i(i10, "UNKNOWN_ERROR_CODE(", ")");
+                        return hg.c.i(i10, "UNKNOWN_ERROR_CODE(", ")");
                 }
         }
     }

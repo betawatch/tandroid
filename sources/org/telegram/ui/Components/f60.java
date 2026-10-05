@@ -53,7 +53,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class f60 extends k60 implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] h1 = {285904780, -1394191079};
@@ -91,7 +91,7 @@ public final class f60 extends k60 implements NotificationCenter.NotificationCen
     public int R0;
     public VideoEditedInfo S;
     public int S0;
-    public d81 T;
+    public e81 T;
     public boolean T0;
     public Bitmap U;
     public final org.telegram.ui.ActionBar.d6 U0;
@@ -385,9 +385,9 @@ public final class f60 extends k60 implements NotificationCenter.NotificationCen
     @Override // org.telegram.ui.Components.k60
     public final void a(boolean z10) {
         s();
-        d81 d81Var = this.T;
-        if (d81Var != null) {
-            d81Var.H();
+        e81 e81Var = this.T;
+        if (e81Var != null) {
+            e81Var.H();
             this.T = null;
         }
         if (this.q0 == null) {
@@ -423,8 +423,8 @@ public final class f60 extends k60 implements NotificationCenter.NotificationCen
 
     @Override // org.telegram.ui.Components.k60
     public final void b(float f7, int i10) {
-        d81 d81Var = this.T;
-        if (d81Var == null) {
+        e81 e81Var = this.T;
+        if (e81Var == null) {
             return;
         }
         if (i10 == 0) {
@@ -434,7 +434,7 @@ public final class f60 extends k60 implements NotificationCenter.NotificationCen
             s();
             this.T.B();
         } else if (i10 == 2) {
-            d81Var.L((long) (f7 * d81Var.p()), false);
+            e81Var.L((long) (f7 * e81Var.p()), false);
         }
     }
 
@@ -514,9 +514,9 @@ public final class f60 extends k60 implements NotificationCenter.NotificationCen
             return;
         }
         s();
-        d81 d81Var = this.T;
-        if (d81Var != null) {
-            d81Var.H();
+        e81 e81Var = this.T;
+        if (e81Var != null) {
+            e81Var.H();
             this.T = null;
         }
         int i14 = this.f;
@@ -625,8 +625,8 @@ public final class f60 extends k60 implements NotificationCenter.NotificationCen
     public final void g(ah.c cVar, org.telegram.ui.hj hjVar) {
         LinearLayout linearLayout = this.W0;
         ch.d c10 = cVar.c(linearLayout, hjVar, false);
-        c10.y(AndroidUtilities.dp(6.0f));
-        c10.z(AndroidUtilities.dp(21.0f));
+        c10.x(AndroidUtilities.dp(6.0f));
+        c10.y(AndroidUtilities.dp(21.0f));
         linearLayout.setBackground(c10);
     }
 
@@ -780,9 +780,9 @@ public final class f60 extends k60 implements NotificationCenter.NotificationCen
             if (y50Var != null) {
                 y50Var.T.sendMessage(y50Var.T.obtainMessage(5));
                 c(false);
-                d81 d81Var = this.T;
-                if (d81Var != null) {
-                    d81Var.H();
+                e81 e81Var = this.T;
+                if (e81Var != null) {
+                    e81Var.H();
                     this.T = null;
                 }
                 h(true);
@@ -954,7 +954,7 @@ public final class f60 extends k60 implements NotificationCenter.NotificationCen
             StringBuilder sb2 = new StringBuilder("InstantCamera preview w = ");
             sb2.append(sizeArr[0].mWidth);
             sb2.append(" h = ");
-            org.telegram.messenger.f0.n(sizeArr[0].mHeight, sb2);
+            org.telegram.messenger.q.n(sizeArr[0].mHeight, sb2);
         }
         return true;
     }
@@ -1047,12 +1047,12 @@ public final class f60 extends k60 implements NotificationCenter.NotificationCen
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        d81 d81Var;
+        e81 e81Var;
         if (motionEvent.getAction() == 0 && motionEvent.getY() > getMeasuredHeight() - getPaddingBottom()) {
             return false;
         }
-        if (motionEvent.getAction() == 0 && this.n != null && (d81Var = this.T) != null) {
-            boolean x10 = d81Var.x();
+        if (motionEvent.getAction() == 0 && this.n != null && (e81Var = this.T) != null) {
+            boolean x10 = e81Var.x();
             this.T.O(!x10);
             AnimatorSet animatorSet = this.L;
             if (animatorSet != null) {

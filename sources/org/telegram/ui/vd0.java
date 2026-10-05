@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vd0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class vd0 implements RequestDelegate {
                                                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                                                 b2Var.R = string;
                                                 b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LoginEmailResetPremiumRequiredMessage, LocaleController.addNbsp(gf.b.c().b("+" + ee0Var2.L))));
-                                                org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
+                                                org.telegram.messenger.q.o(R.string.OK, alertDialog$Builder, null);
                                                 break;
                                             }
                                         }
@@ -148,7 +148,7 @@ public final /* synthetic */ class vd0 implements RequestDelegate {
                                                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                                                 b2Var.R = string;
                                                 b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.LoginEmailResetPremiumRequiredMessage, LocaleController.addNbsp(gf.b.c().b("+" + ee0Var22.L))));
-                                                org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
+                                                org.telegram.messenger.q.o(R.string.OK, alertDialog$Builder, null);
                                                 break;
                                             }
                                         }

@@ -32,9 +32,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.d91;
 import org.telegram.ui.Components.e91;
 import org.telegram.ui.Components.f91;
+import org.telegram.ui.Components.g91;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
@@ -44,7 +44,7 @@ import org.telegram.ui.ha0;
 import org.telegram.ui.tc;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
     */
     public final void run(Object obj) {
         int[] iArr;
-        e91 e91Var;
+        f91 f91Var;
         ci.x8 x8Var = null;
         r4 = false;
         boolean z10 = false;
@@ -238,13 +238,13 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 }
                 break;
             case 5:
-                f91 f91Var = (f91) this.c;
+                g91 g91Var = (g91) this.c;
                 boolean z16 = this.b;
                 View view3 = (View) obj;
-                f91Var.v.getClass();
+                g91Var.v.getClass();
                 int R = RecyclerView.R(view3);
-                if (view3 instanceof d91) {
-                    ((d91) view3).setReordering(z16 && (e91Var = f91Var.y) != null && ((n2.c) e91Var).b(R));
+                if (view3 instanceof e91) {
+                    ((e91) view3).setReordering(z16 && (f91Var = g91Var.y) != null && ((n2.c) f91Var).b(R));
                     break;
                 }
                 break;
@@ -266,13 +266,13 @@ public final /* synthetic */ class i3 implements Utilities.Callback {
                 a2Var.a.f3.N(true);
                 break;
             default:
-                yh.t5 t5Var = (yh.t5) this.c;
+                yh.u5 u5Var = (yh.u5) this.c;
                 HashSet hashSet = (HashSet) obj;
                 if (this.b) {
-                    SendMessagesHelper.getInstance(t5Var.a).cancelSendingMessage(new ArrayList<>(hashSet));
+                    SendMessagesHelper.getInstance(u5Var.a).cancelSendingMessage(new ArrayList<>(hashSet));
                     break;
                 } else {
-                    t5Var.getClass();
+                    u5Var.getClass();
                     break;
                 }
         }

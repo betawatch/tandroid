@@ -7,7 +7,7 @@ import org.telegram.messenger.MessageSuggestionParams;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xe implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -112,9 +112,9 @@ public final /* synthetic */ class xe implements Utilities.Callback {
                 break;
             case 7:
                 Long l4 = (Long) obj;
-                org.telegram.ui.Components.v31 v31Var = ynVar.P1;
-                if (v31Var != null) {
-                    v31Var.m(l4.longValue(), true);
+                org.telegram.ui.Components.w31 w31Var = ynVar.P1;
+                if (w31Var != null) {
+                    w31Var.m(l4.longValue(), true);
                     break;
                 }
                 break;

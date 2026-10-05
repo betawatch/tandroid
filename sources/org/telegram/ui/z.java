@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -80,9 +80,9 @@ public final /* synthetic */ class z implements Utilities.Callback {
                         org.telegram.ui.web.z0 webView = m3Var.getWebView();
                         String str3 = org.telegram.ui.web.o1.a().b;
                         if (str3 != null) {
-                            StringBuilder u10 = a4.a.u(str3);
-                            u10.append(URLEncoder.encode(str2));
-                            str = u10.toString();
+                            StringBuilder v = a4.a.v(str3);
+                            v.append(URLEncoder.encode(str2));
+                            str = v.toString();
                         }
                         webView.loadUrl(str);
                         break;
@@ -154,7 +154,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                     int diceValue = messageObject2.getDiceValue();
                     messageObject2.getStakedDiceAmount();
                     qc qcVar = new qc(10, knVar, messageObject2);
-                    int i16 = m91.d0;
+                    int i16 = k91.d0;
                     TLRPC.EmojiGameInfo emojiGameInfo = MessagesController.getInstance(ynVar2.getCurrentAccount()).stakeDiceInfo;
                     if (emojiGameInfo instanceof TLRPC.TL_emojiGameDiceInfo) {
                         long j3 = ((TLRPC.TL_emojiGameDiceInfo) emojiGameInfo).prev_stake;
@@ -180,8 +180,8 @@ public final /* synthetic */ class z implements Utilities.Callback {
                             nj0Var.setImageDrawable(Emoji.getEmojiBigDrawable("🎲"));
                         }
                         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.StakeDiceToast));
-                        spannableStringBuilder2.append((CharSequence) yh.x7.S0(j3));
-                        spannableStringBuilder2.append((CharSequence) "  ").append((CharSequence) org.telegram.ui.Components.bd.b(LocaleController.getString(R.string.StakeDiceToastChange), new g91(i12, ynVar2, qcVar), ynVar2.getResourceProvider(), null));
+                        spannableStringBuilder2.append((CharSequence) yh.z7.S0(j3));
+                        spannableStringBuilder2.append((CharSequence) "  ").append((CharSequence) org.telegram.ui.Components.bd.b(LocaleController.getString(R.string.StakeDiceToastChange), new e91(i12, ynVar2, qcVar), ynVar2.getResourceProvider(), null));
                         AndroidUtilities.removeFromParent(zbVar.b);
                         org.telegram.ui.Components.ad adVar = new org.telegram.ui.Components.ad(ynVar2.getContext(), null);
                         zbVar.b = adVar;
@@ -191,7 +191,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                         zbVar.b.setEllipsize(TextUtils.TruncateAt.END);
                         zbVar.b.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
                         zbVar.addView(zbVar.b, w7.z5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
-                        zbVar.b.setText(yh.x7.V0(spannableStringBuilder2, 0.9f, 0.0f, 1.0f));
+                        zbVar.b.setText(yh.z7.V0(spannableStringBuilder2, 0.9f, 0.0f, 1.0f));
                         zbVar.b.setLinkTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Gi, ynVar2.getResourceProvider()));
                         zbVar.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Hi, ynVar2.getResourceProvider()));
                         zbVar.b.setSingleLine(false);
@@ -234,7 +234,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 b2Var.G = 9;
                 alertDialog$Builder.h(LocaleController.getString(z12 ? R.string.MessageShowSensitiveContentMediaTextClosedButton : R.string.Cancel), null);
                 if (!z12) {
-                    alertDialog$Builder.k(LocaleController.getString(R.string.MessageShowSensitiveContentButton), new org.telegram.messenger.zj(knVar2, u1Var, zArr, z11, contentsettings));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.MessageShowSensitiveContentButton), new org.telegram.messenger.ak(knVar2, u1Var, zArr, z11, contentsettings));
                 }
                 ynVar3.showDialog(b2Var);
                 break;
@@ -285,7 +285,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 userArr[0] = user;
                 if (user == null) {
                     dc0Var.a();
-                    org.telegram.messenger.ok.p(R.string.NoUsernameFound, dc0.b(), null);
+                    org.telegram.messenger.bi.o(R.string.NoUsernameFound, dc0.b(), null);
                     break;
                 } else {
                     bo0Var.run();
@@ -299,9 +299,9 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 Iterator it = ((HashSet) obj3).iterator();
                 while (it.hasNext()) {
                     Integer num = (Integer) it.next();
-                    TLRPC.Document k10 = c71.k(num + "️⃣", tL_messages_stickerSet);
+                    TLRPC.Document k10 = a71.k(num + "️⃣", tL_messages_stickerSet);
                     if (k10 == null) {
-                        k10 = c71.k(num + "⃣", tL_messages_stickerSet);
+                        k10 = a71.k(num + "⃣", tL_messages_stickerSet);
                     }
                     if (k10 == null) {
                         String[] strArr = j11.s;
@@ -334,18 +334,18 @@ public final /* synthetic */ class z implements Utilities.Callback {
             case 12:
                 ArrayList arrayList3 = (ArrayList) obj2;
                 Runnable runnable2 = (Runnable) obj;
-                int i18 = ((c71) obj4).V;
+                int i18 = ((a71) obj4).V;
                 ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i18).getStickerSets(5);
                 HashSet hashSet = new HashSet();
                 String translitSafe = AndroidUtilities.translitSafe((String) obj3);
-                String i19 = t8.b.i(" ", translitSafe);
+                String i19 = sa.e.i(" ", translitSafe);
                 if (stickerSets != null) {
                     for (int i20 = 0; i20 < stickerSets.size(); i20++) {
                         TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = stickerSets.get(i20);
                         if (tL_messages_stickerSet2 != null && (stickerSet2 = tL_messages_stickerSet2.set) != null && stickerSet2.title != null && tL_messages_stickerSet2.documents != null && !hashSet.contains(Long.valueOf(stickerSet2.id))) {
                             String translitSafe2 = AndroidUtilities.translitSafe(tL_messages_stickerSet2.set.title);
                             if (translitSafe2.startsWith(translitSafe) || translitSafe2.contains(i19)) {
-                                arrayList3.add(new z61(translitSafe2));
+                                arrayList3.add(new x61(translitSafe2));
                                 arrayList3.addAll(tL_messages_stickerSet2.documents);
                                 hashSet.add(Long.valueOf(tL_messages_stickerSet2.set.id));
                             }
@@ -366,7 +366,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                                     arrayList = stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered ? ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents : stickerSetCovered.covers;
                                 }
                                 if (arrayList != null && arrayList.size() != 0) {
-                                    arrayList3.add(new z61(stickerSetCovered.set.title));
+                                    arrayList3.add(new x61(stickerSetCovered.set.title));
                                     arrayList3.addAll(arrayList);
                                     hashSet.add(Long.valueOf(stickerSetCovered.set.id));
                                 }
@@ -381,7 +381,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 LinkedHashSet linkedHashSet = (LinkedHashSet) obj3;
                 Runnable runnable3 = (Runnable) obj2;
                 ArrayList arrayList4 = (ArrayList) obj;
-                org.telegram.ui.Components.q5.h(((c71) obj4).V).f(arrayList4);
+                org.telegram.ui.Components.q5.h(((a71) obj4).V).f(arrayList4);
                 int size = arrayList4.size();
                 while (i12 < size) {
                     Object obj5 = arrayList4.get(i12);

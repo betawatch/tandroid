@@ -15,7 +15,7 @@ import org.telegram.ui.Components.md0;
 import org.telegram.ui.Components.rv;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class y3 extends org.telegram.ui.ActionBar.n2 {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final class y3 extends org.telegram.ui.ActionBar.n2 {
             case 4:
                 return ((ku) this.b).a.getContext();
             case 12:
-                return ((yh.x3) this.b).getContext();
+                return ((yh.y3) this.b).getContext();
             default:
                 return super.getContext();
         }
@@ -164,7 +164,7 @@ public final class y3 extends org.telegram.ui.ActionBar.n2 {
                 }
                 return ownerActivity == null ? AndroidUtilities.findActivity(z4Var.getContext()) : ownerActivity;
             case 12:
-                for (Context context2 = ((yh.x3) this.b).getContext(); context2 instanceof ContextWrapper; context2 = ((ContextWrapper) context2).getBaseContext()) {
+                for (Context context2 = ((yh.y3) this.b).getContext(); context2 instanceof ContextWrapper; context2 = ((ContextWrapper) context2).getBaseContext()) {
                     if (context2 instanceof Activity) {
                         return (Activity) context2;
                     }

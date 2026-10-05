@@ -30,7 +30,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -48,8 +48,8 @@ import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.jo0;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.rq;
-import org.telegram.ui.Components.v81;
 import org.telegram.ui.Components.w00;
+import org.telegram.ui.Components.w81;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
@@ -57,11 +57,11 @@ import org.telegram.ui.dy;
 import org.telegram.ui.fy;
 import org.telegram.ui.o10;
 import org.telegram.ui.uy;
+import org.telegram.ui.xb1;
 import org.telegram.ui.xv;
-import org.telegram.ui.zb1;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class i0 extends yl0 {
     public o10 A0;
@@ -97,7 +97,7 @@ public abstract class i0 extends yl0 {
     public final int h0;
     public final s4.j i0;
     public final z j0;
-    public zb1 k0;
+    public xb1 k0;
     public final long l0;
     public long n0;
     public View o0;
@@ -291,7 +291,7 @@ public abstract class i0 extends yl0 {
         return spannableStringBuilder;
     }
 
-    public final zb1 I() {
+    public final xb1 I() {
         return this.k0;
     }
 
@@ -820,7 +820,7 @@ public abstract class i0 extends yl0 {
                     this.d = false;
                 }
                 if (str.equals(this.Z) && this.a0 == this.c.a && !arrayList.isEmpty() && this.g0 == this.d0) {
-                    MessageObject messageObject = (MessageObject) hg.k0.g(1, arrayList);
+                    MessageObject messageObject = (MessageObject) hg.c.g(1, arrayList);
                     tL_messages_searchGlobal.offset_id = messageObject.getId();
                     tL_messages_searchGlobal.offset_rate = this.c0;
                     tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(i12).getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
@@ -1559,8 +1559,8 @@ public abstract class i0 extends yl0 {
                                     break;
                                 case 1:
                                     dy dyVar = ((jo0) this.b).K0;
-                                    ho0 ho0Var = dyVar.w0;
-                                    jo0 jo0Var = dyVar.c0;
+                                    ho0 ho0Var = dyVar.x0;
+                                    jo0 jo0Var = dyVar.d0;
                                     String str10 = jo0Var.y;
                                     ArrayList arrayList14 = jo0Var.x;
                                     int i26 = jo0Var.w;
@@ -1576,14 +1576,14 @@ public abstract class i0 extends yl0 {
                                         ho0Var.Y = str10;
                                         ho0Var.N(true);
                                     }
-                                    dyVar.r0 = true;
-                                    dyVar.u0.h1(0, 0);
+                                    dyVar.s0 = true;
+                                    dyVar.v0.h1(0, 0);
                                     dyVar.T();
-                                    v81 v81Var = dyVar.M;
-                                    if (v81Var != null && v81Var.getCurrentTabId() != 1) {
+                                    w81 w81Var = dyVar.M;
+                                    if (w81Var != null && w81Var.getCurrentTabId() != 1) {
                                         dyVar.M.d(1, 1);
                                     }
-                                    ho0Var.Y(dyVar.L0);
+                                    ho0Var.Y(dyVar.M0);
                                     break;
                                 case 2:
                                     fy fyVar2 = this.b.U;
@@ -1626,8 +1626,8 @@ public abstract class i0 extends yl0 {
                                         break;
                                     case 1:
                                         dy dyVar = ((jo0) this.b).K0;
-                                        ho0 ho0Var = dyVar.w0;
-                                        jo0 jo0Var = dyVar.c0;
+                                        ho0 ho0Var = dyVar.x0;
+                                        jo0 jo0Var = dyVar.d0;
                                         String str10 = jo0Var.y;
                                         ArrayList arrayList14 = jo0Var.x;
                                         int i26 = jo0Var.w;
@@ -1643,14 +1643,14 @@ public abstract class i0 extends yl0 {
                                             ho0Var.Y = str10;
                                             ho0Var.N(true);
                                         }
-                                        dyVar.r0 = true;
-                                        dyVar.u0.h1(0, 0);
+                                        dyVar.s0 = true;
+                                        dyVar.v0.h1(0, 0);
                                         dyVar.T();
-                                        v81 v81Var = dyVar.M;
-                                        if (v81Var != null && v81Var.getCurrentTabId() != 1) {
+                                        w81 w81Var = dyVar.M;
+                                        if (w81Var != null && w81Var.getCurrentTabId() != 1) {
                                             dyVar.M.d(1, 1);
                                         }
-                                        ho0Var.Y(dyVar.L0);
+                                        ho0Var.Y(dyVar.M0);
                                         break;
                                     case 2:
                                         fy fyVar2 = this.b.U;
@@ -1708,8 +1708,8 @@ public abstract class i0 extends yl0 {
                                                 break;
                                             case 1:
                                                 dy dyVar = ((jo0) this.b).K0;
-                                                ho0 ho0Var = dyVar.w0;
-                                                jo0 jo0Var = dyVar.c0;
+                                                ho0 ho0Var = dyVar.x0;
+                                                jo0 jo0Var = dyVar.d0;
                                                 String str10 = jo0Var.y;
                                                 ArrayList arrayList142 = jo0Var.x;
                                                 int i262 = jo0Var.w;
@@ -1725,14 +1725,14 @@ public abstract class i0 extends yl0 {
                                                     ho0Var.Y = str10;
                                                     ho0Var.N(true);
                                                 }
-                                                dyVar.r0 = true;
-                                                dyVar.u0.h1(0, 0);
+                                                dyVar.s0 = true;
+                                                dyVar.v0.h1(0, 0);
                                                 dyVar.T();
-                                                v81 v81Var = dyVar.M;
-                                                if (v81Var != null && v81Var.getCurrentTabId() != 1) {
+                                                w81 w81Var = dyVar.M;
+                                                if (w81Var != null && w81Var.getCurrentTabId() != 1) {
                                                     dyVar.M.d(1, 1);
                                                 }
-                                                ho0Var.Y(dyVar.L0);
+                                                ho0Var.Y(dyVar.M0);
                                                 break;
                                             case 2:
                                                 fy fyVar2 = this.b.U;
@@ -1773,8 +1773,8 @@ public abstract class i0 extends yl0 {
                                                 break;
                                             case 1:
                                                 dy dyVar = ((jo0) this.b).K0;
-                                                ho0 ho0Var = dyVar.w0;
-                                                jo0 jo0Var = dyVar.c0;
+                                                ho0 ho0Var = dyVar.x0;
+                                                jo0 jo0Var = dyVar.d0;
                                                 String str10 = jo0Var.y;
                                                 ArrayList arrayList142 = jo0Var.x;
                                                 int i262 = jo0Var.w;
@@ -1790,14 +1790,14 @@ public abstract class i0 extends yl0 {
                                                     ho0Var.Y = str10;
                                                     ho0Var.N(true);
                                                 }
-                                                dyVar.r0 = true;
-                                                dyVar.u0.h1(0, 0);
+                                                dyVar.s0 = true;
+                                                dyVar.v0.h1(0, 0);
                                                 dyVar.T();
-                                                v81 v81Var = dyVar.M;
-                                                if (v81Var != null && v81Var.getCurrentTabId() != 1) {
+                                                w81 w81Var = dyVar.M;
+                                                if (w81Var != null && w81Var.getCurrentTabId() != 1) {
                                                     dyVar.M.d(1, 1);
                                                 }
-                                                ho0Var.Y(dyVar.L0);
+                                                ho0Var.Y(dyVar.M0);
                                                 break;
                                             case 2:
                                                 fy fyVar2 = this.b.U;
@@ -2032,7 +2032,7 @@ public abstract class i0 extends yl0 {
             case 8:
                 i6 i6Var2 = (i6) view;
                 ContactsController.Contact contact = (ContactsController.Contact) J(i16);
-                i6Var2.t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), ok.h(new StringBuilder("+"), contact.shortPhones.get(0), gf.b.c()), false, false);
+                i6Var2.t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), bi.g(new StringBuilder("+"), contact.shortPhones.get(0), gf.b.c()), false, false);
                 break;
         }
     }
@@ -2077,20 +2077,20 @@ public abstract class i0 extends yl0 {
                 view2 = l4Var;
                 break;
             case 6:
-                zb1 zb1Var = new zb1(context, 2, d6Var);
-                zb1Var.setSelectorDrawableColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false));
+                xb1 xb1Var = new xb1(context, 2, d6Var);
+                xb1Var.setSelectorDrawableColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.i6, false));
                 int i13 = 9;
-                zb1Var.setTag(9);
-                zb1Var.setItemAnimator(null);
-                zb1Var.setLayoutAnimation(null);
+                xb1Var.setTag(9);
+                xb1Var.setItemAnimator(null);
+                xb1Var.setLayoutAnimation(null);
                 b0 b0Var = new b0(i12);
                 b0Var.j1(0);
-                zb1Var.setLayoutManager(b0Var);
-                zb1Var.setAdapter(new c0(this.s0, this.e, null, false, i11 == 3));
-                zb1Var.setOnItemClickListener(new ai.g(this, i13));
-                zb1Var.setOnItemLongClickListener(new y(this));
-                this.k0 = zb1Var;
-                view = zb1Var;
+                xb1Var.setLayoutManager(b0Var);
+                xb1Var.setAdapter(new c0(this.s0, this.e, null, false, i11 == 3));
+                xb1Var.setOnItemClickListener(new ai.g(this, i13));
+                xb1Var.setOnItemLongClickListener(new y(this));
+                this.k0 = xb1Var;
+                view = xb1Var;
                 view2 = view;
                 break;
             case 7:
@@ -2112,7 +2112,7 @@ public abstract class i0 extends yl0 {
                 int i14 = org.telegram.ui.ActionBar.i6.G6;
                 textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i14, false));
                 textView.setTypeface(AndroidUtilities.bold());
-                ok.l(R.string.SearchMessagesFilterEmptyTitle, textView, 17);
+                bi.k(R.string.SearchMessagesFilterEmptyTitle, textView, 17);
                 e0Var.addView(textView, z5.t(-1, -2, 1, 0, 8, 0, 9));
                 TextView textView2 = new TextView(context);
                 e0Var.a = textView2;

@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class iz extends yl0 {
     public int L;
@@ -334,7 +334,7 @@ public final class iz extends yl0 {
                 l3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int A = org.telegram.messenger.ok.A(82.0f, (int) Math.ceil(num.intValue() / nzVar.y0.d), nzVar.h.getHeight());
+                int A = org.telegram.messenger.bi.A(82.0f, (int) Math.ceil(num.intValue() / nzVar.y0.d), nzVar.h.getHeight());
                 l3Var.setHeight(A > 0 ? A : 1);
                 return;
             }

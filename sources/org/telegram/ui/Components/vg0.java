@@ -20,7 +20,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class vg0 extends FrameLayout {
     public final /* synthetic */ int a = 4;
@@ -62,8 +62,8 @@ public final class vg0 extends FrameLayout {
                 super.dispatchDraw(canvas);
                 break;
             case 3:
-                org.telegram.ui.t51 t51Var = (org.telegram.ui.t51) obj;
-                if (!this.b && t51Var.r > 0.0f) {
+                org.telegram.ui.r51 r51Var = (org.telegram.ui.r51) obj;
+                if (!this.b && r51Var.r > 0.0f) {
                     if (((Paint) this.c) == null) {
                         Paint paint3 = new Paint();
                         this.c = paint3;
@@ -72,7 +72,7 @@ public final class vg0 extends FrameLayout {
                     }
                     canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
                     super.dispatchDraw(canvas);
-                    ((Paint) this.c).setAlpha((int) (t51Var.r * 255.0f));
+                    ((Paint) this.c).setAlpha((int) (r51Var.r * 255.0f));
                     canvas.drawRect(0.0f, 0.0f, AndroidUtilities.dp(18.0f), getMeasuredHeight(), (Paint) this.c);
                     canvas.restore();
                     break;
@@ -329,9 +329,9 @@ public final class vg0 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vg0(org.telegram.ui.t51 t51Var, Context context, boolean z10) {
+    public vg0(org.telegram.ui.r51 r51Var, Context context, boolean z10) {
         super(context);
-        this.d = t51Var;
+        this.d = r51Var;
         this.b = z10;
     }
 

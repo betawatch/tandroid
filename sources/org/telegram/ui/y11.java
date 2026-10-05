@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class y11 extends FrameLayout {
     public final TextView a;
@@ -37,7 +37,7 @@ public final class y11 extends FrameLayout {
         this.s = proxyListActivity;
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.messenger.ok.t(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f, 1);
+        org.telegram.messenger.bi.s(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -195,7 +195,7 @@ public final class y11 extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), org.telegram.messenger.ok.B(64.0f, 1, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), org.telegram.messenger.bi.B(64.0f, 1, TLObject.FLAG_30));
     }
 
     public void setChecked(boolean z10) {
@@ -221,7 +221,7 @@ public final class y11 extends FrameLayout {
     public void setProxy(SharedConfig.ProxyInfo proxyInfo) {
         String str;
         if (proxyInfo.settings.a == 3) {
-            str = a4.a.s(new StringBuilder(), proxyInfo.settings.b, " (WEB)");
+            str = a4.a.t(new StringBuilder(), proxyInfo.settings.b, " (WEB)");
         } else {
             str = proxyInfo.settings.b + ":" + proxyInfo.settings.c;
         }

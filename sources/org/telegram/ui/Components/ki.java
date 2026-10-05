@@ -18,9 +18,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class ki extends lw0 {
+public final class ki extends mw0 {
     public final ji A0;
     public final /* synthetic */ xi B0;
     public int w0;
@@ -36,7 +36,7 @@ public final class ki extends lw0 {
         this.A0 = new ji(this, this);
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int i10;
         int i11;
@@ -79,9 +79,9 @@ public final class ki extends lw0 {
             int alpha2 = (int) (piVar2.getAlpha() * 255.0f);
             int h = piVar2.h();
             int dp3 = AndroidUtilities.dp(13.0f) + ((int) ((whVar != null ? whVar.getAlpha() : 0.0f) * AndroidUtilities.dp(26.0f))) + ((int) (m6Var != null ? m6Var.getAlpha() * m6Var.getMeasuredHeight() : 0.0f));
-            int m12 = xiVar.m1(0);
+            int o12 = xiVar.o1(0);
             i10 = ((org.telegram.ui.ActionBar.f3) xiVar).backgroundPaddingTop;
-            int i25 = (m12 - i10) - dp3;
+            int i25 = (o12 - i10) - dp3;
             i11 = ((org.telegram.ui.ActionBar.f3) xiVar).currentSheetAnimationType;
             if (i11 == 1 || xiVar.t1 != null) {
                 i25 = (int) (piVar2.getTranslationY() + i25);
@@ -132,7 +132,7 @@ public final class ki extends lw0 {
                 i25 += i27;
                 dp4 += i27;
             }
-            int customBackground = xiVar.y0.f() ? xiVar.y0.getCustomBackground() : xiVar.n1(true);
+            int customBackground = xiVar.y0.f() ? xiVar.y0.getCustomBackground() : xiVar.p1(true);
             drawable = ((org.telegram.ui.ActionBar.f3) xiVar).shadowDrawable;
             drawable.setAlpha(alpha2);
             drawable2 = ((org.telegram.ui.ActionBar.f3) xiVar).shadowDrawable;
@@ -176,16 +176,16 @@ public final class ki extends lw0 {
             if (xiVar.y0.e()) {
                 org.telegram.ui.ActionBar.i6.t0.setColor(xiVar.y0.getCustomActionBarBackground());
                 org.telegram.ui.ActionBar.i6.t0.setAlpha(alpha2);
-                int m13 = xiVar.m1(0);
+                int o13 = xiVar.o1(0);
                 if (!z10) {
-                    m13 += AndroidUtilities.statusBarHeight;
+                    o13 += AndroidUtilities.statusBarHeight;
                 }
                 i13 = ((org.telegram.ui.ActionBar.f3) xiVar).backgroundPaddingLeft;
                 i14 = ((org.telegram.ui.ActionBar.f3) xiVar).backgroundPaddingTop;
                 float dp6 = (AndroidUtilities.dp(12.0f) + i14 + i25) * f11;
                 int measuredWidth4 = getMeasuredWidth();
                 i15 = ((org.telegram.ui.ActionBar.f3) xiVar).backgroundPaddingLeft;
-                rectF.set(i13, dp6, measuredWidth4 - i15, AndroidUtilities.dp(12.0f) + m13);
+                rectF.set(i13, dp6, measuredWidth4 - i15, AndroidUtilities.dp(12.0f) + o13);
                 canvas.save();
                 canvas.drawRect(rectF, org.telegram.ui.ActionBar.i6.t0);
                 canvas.restore();
@@ -288,9 +288,9 @@ public final class ki extends lw0 {
             if (piVar2 != null) {
                 int h = piVar2.h();
                 int dp5 = AndroidUtilities.dp(13.0f) + ((int) ((whVar != null ? whVar.getAlpha() : 0.0f) * AndroidUtilities.dp(26.0f))) + ((int) (m6Var != null ? m6Var.getAlpha() * m6Var.getMeasuredHeight() : 0.0f));
-                int m12 = xiVar.m1(0);
+                int o12 = xiVar.o1(0);
                 i10 = ((org.telegram.ui.ActionBar.f3) xiVar).backgroundPaddingTop;
-                int i27 = (m12 - i10) - dp5;
+                int i27 = (o12 - i10) - dp5;
                 i11 = ((org.telegram.ui.ActionBar.f3) xiVar).currentSheetAnimationType;
                 if (i11 == 1 || xiVar.t1 != null) {
                     i27 = (int) (piVar2.getTranslationY() + i27);
@@ -336,9 +336,9 @@ public final class ki extends lw0 {
         pi piVar3 = (pi) view;
         int h10 = piVar3.h();
         int dp7 = AndroidUtilities.dp(13.0f) + (whVar != null ? AndroidUtilities.dp(whVar.getAlpha() * 26.0f) : 0) + ((int) (m6Var != null ? m6Var.getAlpha() * m6Var.getMeasuredHeight() : 0.0f));
-        int m13 = xiVar.m1(piVar3 == xiVar.y0 ? 0 : 1);
+        int o13 = xiVar.o1(piVar3 == xiVar.y0 ? 0 : 1);
         i13 = ((org.telegram.ui.ActionBar.f3) xiVar).backgroundPaddingTop;
-        int i28 = (m13 - i13) - dp7;
+        int i28 = (o13 - i13) - dp7;
         i14 = ((org.telegram.ui.ActionBar.f3) xiVar).currentSheetAnimationType;
         if (i14 == 1 || xiVar.t1 != null) {
             i28 = (int) (view.getTranslationY() + i28);
@@ -397,7 +397,7 @@ public final class ki extends lw0 {
             i29 -= i31;
         }
         int i32 = i29;
-        int customBackground = xiVar.y0.f() ? xiVar.y0.getCustomBackground() : xiVar.n1(true);
+        int customBackground = xiVar.y0.f() ? xiVar.y0.getCustomBackground() : xiVar.p1(true);
         pi piVar4 = xiVar.y0;
         tm tmVar = xiVar.q0;
         boolean z11 = (piVar4 == tmVar || (piVar = xiVar.z0) == tmVar || (piVar4 == xiVar.j0 && piVar == null)) ? false : true;
@@ -460,7 +460,7 @@ public final class ki extends lw0 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         ji jiVar = this.A0;
@@ -471,7 +471,7 @@ public final class ki extends lw0 {
         xiVar.P0.setAdjustPanLayoutHelper(jiVar);
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.A0.d();
@@ -519,7 +519,7 @@ public final class ki extends lw0 {
     /* JADX WARN: Removed duplicated region for block: B:77:0x012d  */
     /* JADX WARN: Removed duplicated region for block: B:84:0x0158  */
     /* JADX WARN: Removed duplicated region for block: B:88:0x0161  */
-    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -569,7 +569,7 @@ public final class ki extends lw0 {
                 xn xnVar4 = xiVar.n0;
                 if (xnVar4 == null || xiVar.y0 != xnVar4 || xnVar4.E == null) {
                     if (i23 <= AndroidUtilities.dp(20.0f) && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
-                        emojiPadding = xiVar.k1().getEmojiPadding();
+                        emojiPadding = xiVar.m1().getEmojiPadding();
                         if (emojiPadding > 0) {
                             paddingBottom += emojiPadding;
                         }
@@ -658,7 +658,7 @@ public final class ki extends lw0 {
                             }
                         } else if (childAt == xiVar.w1) {
                             i20 = i19 + AndroidUtilities.navigationBarHeight;
-                            max = Math.max(i23, xi.e0(xiVar));
+                            max = Math.max(i23, xi.g0(xiVar));
                             i19 = i20 + max;
                         }
                         childAt.layout(i16, i19, measuredWidth + i16, i19 + measuredHeight3);
@@ -697,10 +697,10 @@ public final class ki extends lw0 {
             i22 = 8;
         }
         S();
-        xiVar.U1(xiVar.y0, 0);
-        xiVar.U1(xiVar.z0, 0);
+        xiVar.W1(xiVar.y0, 0);
+        xiVar.W1(xiVar.z0, 0);
         if (xiVar.c0) {
-            xiVar.R1();
+            xiVar.T1();
         }
         if (chatAttachAlertPhotoLayout == null || (wlVar = chatAttachAlertPhotoLayout.E) == null || wlVar.getFastScroll() == null) {
             return;
@@ -717,7 +717,7 @@ public final class ki extends lw0 {
         xn xnVar;
         xn xnVar2;
         boolean z10;
-        int e02;
+        int g02;
         int i15;
         int i16;
         ki kiVar = this;
@@ -793,19 +793,19 @@ public final class ki extends lw0 {
                 pi piVar = xiVar.y0;
                 xn xnVar5 = xiVar.m0;
                 if (piVar == xnVar5 && xnVar5.E != null && xnVar5.h1) {
-                    e02 = AndroidUtilities.dp(120.0f);
+                    g02 = AndroidUtilities.dp(120.0f);
                 } else {
                     xn xnVar6 = xiVar.n0;
-                    e02 = (piVar == xnVar6 && xnVar6.E != null && xnVar6.h1) ? AndroidUtilities.dp(120.0f) : 0;
+                    g02 = (piVar == xnVar6 && xnVar6.E != null && xnVar6.h1) ? AndroidUtilities.dp(120.0f) : 0;
                 }
             } else {
-                e02 = xi.e0(xiVar);
+                g02 = xi.g0(xiVar);
             }
             r0.l1 f7 = r0.i0.f(kiVar);
             int i19 = f7 != null ? f7.a.f(8).d : 0;
             r0.l1 f10 = r0.i0.f(kiVar);
-            Math.max(f10 != null ? f10.a.f(527).d : 0, e02);
-            int max = Math.max(i19 > 0 ? 0 : AndroidUtilities.navigationBarHeight, e02);
+            Math.max(f10 != null ? f10.a.f(527).d : 0, g02);
+            int max = Math.max(i19 > 0 ? 0 : AndroidUtilities.navigationBarHeight, g02);
             kiVar.y0 = true;
             pi piVar2 = xiVar.y0;
             if (piVar2.f) {
@@ -813,7 +813,7 @@ public final class ki extends lw0 {
                 xiVar.y0.y(i18, size4);
             } else {
                 piVar2.e = AndroidUtilities.navigationBarHeight;
-                piVar2.y(i18, size4 - e02);
+                piVar2.y(i18, size4 - g02);
             }
             pi piVar3 = xiVar.z0;
             if (piVar3 != null) {
@@ -822,7 +822,7 @@ public final class ki extends lw0 {
                     xiVar.z0.y(i18, size4);
                 } else {
                     piVar3.e = AndroidUtilities.navigationBarHeight;
-                    piVar3.y(i18, size4 - e02);
+                    piVar3.y(i18, size4 - g02);
                 }
             }
             kiVar.y0 = false;
@@ -885,7 +885,7 @@ public final class ki extends lw0 {
         }
         ch.d dVar = this.B0.A0;
         if (dVar != null) {
-            dVar.B(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i15, i14);
+            dVar.A(AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f), i15, i14);
         }
     }
 
@@ -942,7 +942,7 @@ public final class ki extends lw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public final void J(Canvas canvas, float f7, Rect rect, Paint paint, boolean z10) {
     }
 }

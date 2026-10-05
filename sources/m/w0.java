@@ -21,7 +21,7 @@ import java.util.Arrays;
 import v7.v7;
 import w7.s7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class w0 {
     public final TextView a;
@@ -258,10 +258,10 @@ public final class w0 {
             }
             n(context, hVar);
             if (i14 < 23) {
-                colorStateList = obtainStyledAttributes3.hasValue(3) ? hVar.D(3) : null;
-                colorStateList2 = obtainStyledAttributes3.hasValue(4) ? hVar.D(4) : null;
+                colorStateList = obtainStyledAttributes3.hasValue(3) ? hVar.y(3) : null;
+                colorStateList2 = obtainStyledAttributes3.hasValue(4) ? hVar.y(4) : null;
                 if (obtainStyledAttributes3.hasValue(5)) {
-                    colorStateList3 = hVar.D(5);
+                    colorStateList3 = hVar.y(5);
                     i13 = 15;
                     str2 = !obtainStyledAttributes3.hasValue(i13) ? obtainStyledAttributes3.getString(i13) : null;
                     str = (i14 >= 26 || !obtainStyledAttributes3.hasValue(13)) ? null : obtainStyledAttributes3.getString(13);
@@ -298,13 +298,13 @@ public final class w0 {
         boolean z13 = z11;
         if (i14 < 23) {
             if (obtainStyledAttributes4.hasValue(3)) {
-                colorStateList = hVar2.D(3);
+                colorStateList = hVar2.y(3);
             }
             if (obtainStyledAttributes4.hasValue(4)) {
-                colorStateList2 = hVar2.D(4);
+                colorStateList2 = hVar2.y(4);
             }
             if (obtainStyledAttributes4.hasValue(5)) {
-                colorStateList3 = hVar2.D(5);
+                colorStateList3 = hVar2.y(5);
             }
         }
         ColorStateList colorStateList5 = colorStateList;
@@ -592,9 +592,9 @@ public final class w0 {
 
     public final void g(Context context, int i10) {
         String string;
-        ColorStateList D;
-        ColorStateList D2;
-        ColorStateList D3;
+        ColorStateList y3;
+        ColorStateList y10;
+        ColorStateList y11;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(i10, f.a.w);
         la.h hVar = new la.h(context, obtainStyledAttributes);
         boolean hasValue = obtainStyledAttributes.hasValue(14);
@@ -604,14 +604,14 @@ public final class w0 {
         }
         int i11 = Build.VERSION.SDK_INT;
         if (i11 < 23) {
-            if (obtainStyledAttributes.hasValue(3) && (D3 = hVar.D(3)) != null) {
-                textView.setTextColor(D3);
+            if (obtainStyledAttributes.hasValue(3) && (y11 = hVar.y(3)) != null) {
+                textView.setTextColor(y11);
             }
-            if (obtainStyledAttributes.hasValue(5) && (D2 = hVar.D(5)) != null) {
-                textView.setLinkTextColor(D2);
+            if (obtainStyledAttributes.hasValue(5) && (y10 = hVar.y(5)) != null) {
+                textView.setLinkTextColor(y10);
             }
-            if (obtainStyledAttributes.hasValue(4) && (D = hVar.D(4)) != null) {
-                textView.setHintTextColor(D);
+            if (obtainStyledAttributes.hasValue(4) && (y3 = hVar.y(4)) != null) {
+                textView.setHintTextColor(y3);
             }
         }
         if (obtainStyledAttributes.hasValue(0) && obtainStyledAttributes.getDimensionPixelSize(0, -1) == 0) {
@@ -679,7 +679,7 @@ public final class w0 {
                 return;
             }
             if (i10 != 1) {
-                throw new IllegalArgumentException(hg.k0.h(i10, "Unknown auto-size text type: "));
+                throw new IllegalArgumentException(hg.c.h(i10, "Unknown auto-size text type: "));
             }
             DisplayMetrics displayMetrics = g1Var.j.getResources().getDisplayMetrics();
             g1Var.k(TypedValue.applyDimension(2, 12.0f, displayMetrics), TypedValue.applyDimension(2, 112.0f, displayMetrics), 1.0f);
@@ -764,12 +764,12 @@ public final class w0 {
             a0Var.b = i16;
             a0Var.c = weakReference;
             try {
-                Typeface H = hVar.H(i14, this.j, a0Var);
-                if (H != null) {
+                Typeface D = hVar.D(i14, this.j, a0Var);
+                if (D != null) {
                     if (i11 < 28 || this.k == -1) {
-                        this.l = H;
+                        this.l = D;
                     } else {
-                        this.l = v0.a(Typeface.create(H, 0), this.k, (this.j & 2) != 0);
+                        this.l = v0.a(Typeface.create(D, 0), this.k, (this.j & 2) != 0);
                     }
                 }
                 this.m = this.l == null;

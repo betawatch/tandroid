@@ -19,7 +19,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class sx0 extends org.telegram.ui.Components.yl0 {
     public final Context c;
@@ -320,7 +320,7 @@ public final class sx0 extends org.telegram.ui.Components.yl0 {
                             } else {
                                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                                 Locale locale = Locale.ENGLISH;
-                                String i36 = t8.b.i("https://t.me/+", privacyControlActivity.getUserConfig().getClientPhone());
+                                String i36 = sa.e.i("https://t.me/+", privacyControlActivity.getUserConfig().getClientPhone());
                                 SpannableString spannableString = new SpannableString(i36);
                                 spannableString.setSpan(new rx0(this, i36), 0, i36.length(), 33);
                                 spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.PrivacyPhoneInfo)).append((CharSequence) "\n\n").append((CharSequence) LocaleController.getString(R.string.PrivacyPhoneInfo4)).append((CharSequence) "\n").append((CharSequence) spannableString);

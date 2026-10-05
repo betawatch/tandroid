@@ -22,10 +22,10 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class br0 extends org.telegram.ui.ActionBar.n2 {
-    public static final org.telegram.ui.Components.as0 y = new org.telegram.ui.Components.as0(4);
+    public static final org.telegram.ui.Components.bs0 y = new org.telegram.ui.Components.bs0(4);
     public final wq0 a;
     public final wq0 b;
     public org.telegram.ui.ActionBar.v0 c;
@@ -77,8 +77,8 @@ public final class br0 extends org.telegram.ui.ActionBar.n2 {
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.i6.j5;
         kVar.setTitleColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
-        this.actionBar.B(org.telegram.ui.ActionBar.i6.w0(null, i10, false), false);
-        this.actionBar.A(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.I5, false), false);
+        this.actionBar.A(org.telegram.ui.ActionBar.i6.w0(null, i10, false), false);
+        this.actionBar.z(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.I5, false), false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         org.telegram.ui.ActionBar.c5 c5Var = this.parentLayout;
         if (c5Var != null && ((ActionBarLayout) c5Var).M0) {

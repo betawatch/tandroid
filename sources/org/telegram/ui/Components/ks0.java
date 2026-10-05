@@ -1,43 +1,19 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Rect;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class ks0 extends org.telegram.ui.t11 {
-    public final /* synthetic */ pv0 H;
+public final class ks0 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
+    public final /* synthetic */ qv0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ks0(pv0 pv0Var, Context context, lw0 lw0Var, ai.x8 x8Var, js0 js0Var) {
-        super(context, lw0Var, x8Var, js0Var);
-        this.H = pv0Var;
-    }
-
-    @Override // org.telegram.ui.t11
-    public final void a() {
-        os0 os0Var;
-        int measuredWidth = getMeasuredWidth();
-        int visualHeight = (int) getVisualHeight();
-        Rect rect = this.F;
-        rect.set(0, 0, measuredWidth, visualHeight);
-        setClipBounds(rect);
-        invalidate();
-        pv0 pv0Var = this.H;
-        iu0[] iu0VarArr = pv0Var.k0;
-        if (iu0VarArr != null) {
-            for (iu0 iu0Var : iu0VarArr) {
-                if (iu0Var != null && (os0Var = iu0Var.h) != null) {
-                    int paddingLeft = os0Var.getPaddingLeft();
-                    int Z = pv0Var.Z(iu0Var.F);
-                    int paddingRight = iu0Var.h.getPaddingRight();
-                    os0 os0Var2 = iu0Var.h;
-                    int Y = pv0Var.Y(pv0Var.v0());
-                    os0Var2.l3 = Y;
-                    os0Var.setPadding(paddingLeft, Z, paddingRight, Y);
-                }
-            }
-        }
-        pv0Var.K();
+    public ks0(qv0 qv0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.d = qv0Var;
+        this.a = context;
+        this.b = n2Var;
+        this.c = d6Var;
     }
 }

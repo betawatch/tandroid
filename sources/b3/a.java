@@ -3,13 +3,13 @@ package b3;
 import b2.s;
 import e2.v;
 import h2.h;
-import hg.k0;
+import hg.c;
 import i2.d0;
 import i2.f;
 import java.nio.ByteBuffer;
 import n4.y;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class a extends f {
     public final h I;
@@ -25,7 +25,7 @@ public final class a extends f {
 
     @Override // i2.f
     public final int A(s sVar) {
-        return "application/x-camera-motion".equals(sVar.r) ? k0.b(4, 0, 0, 0) : k0.b(0, 0, 0, 0);
+        return "application/x-camera-motion".equals(sVar.r) ? c.b(4, 0, 0, 0) : c.b(0, 0, 0, 0);
     }
 
     @Override // i2.f, i2.j1

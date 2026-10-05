@@ -18,14 +18,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.rq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -179,7 +179,7 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
             case 6:
                 r3 r3Var = e6Var.L0;
                 if (!e6Var.D0(false)) {
-                    yh.t5 y3 = yh.t5.y(e6Var.C2, false);
+                    yh.u5 y3 = yh.u5.y(e6Var.C2, false);
                     if (y3.e && y3.f.amount <= 0) {
                         r3Var.k(e6Var.D0(false));
                         break;
@@ -206,13 +206,13 @@ public final /* synthetic */ class e3 implements View.OnClickListener {
                 TextView textView = new TextView(e6Var.getContext());
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setGravity(17);
-                ok.n(org.telegram.ui.ActionBar.i6.j5, d6Var, textView, 1, 20.0f);
+                bi.m(org.telegram.ui.ActionBar.i6.j5, d6Var, textView, 1, 20.0f);
                 textView.setText(LocaleController.getString(R.string.StoryQualityPremium));
                 linearLayout.addView(textView, w7.z5.t(-1, -2, 1, 12, 0, 12, 0));
                 TextView textView2 = new TextView(e6Var.getContext());
                 textView2.setGravity(17);
-                ok.n(org.telegram.ui.ActionBar.i6.r5, d6Var, textView2, 1, 14.0f);
-                org.telegram.messenger.f0.m(R.string.StoryQualityPremiumText, textView2);
+                bi.m(org.telegram.ui.ActionBar.i6.r5, d6Var, textView2, 1, 14.0f);
+                org.telegram.messenger.q.m(R.string.StoryQualityPremiumText, textView2);
                 linearLayout.addView(textView2, w7.z5.t(-1, -2, 1, 32, 9, 32, 19));
                 ci.d dVar = new ci.d(e6Var.getContext(), d6Var, true);
                 dVar.g(LocaleController.getString(R.string.StoryQualityIncrease), false, true);

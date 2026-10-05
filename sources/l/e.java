@@ -19,7 +19,6 @@ import android.widget.HeaderViewListAdapter;
 import android.widget.ListAdapter;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import hg.k0;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
@@ -30,7 +29,7 @@ import m.r1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class e extends s implements View.OnKeyListener, PopupWindow.OnDismissListener {
     public View E;
@@ -184,7 +183,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         if (arrayList.isEmpty()) {
             return null;
         }
-        return ((d) k0.g(1, arrayList)).a.c;
+        return ((d) hg.c.g(1, arrayList)).a.c;
     }
 
     @Override // l.b0
@@ -403,7 +402,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         j2Var.w = this.x;
         ArrayList arrayList = this.n;
         if (arrayList.size() > 0) {
-            dVar = (d) k0.g(1, arrayList);
+            dVar = (d) hg.c.g(1, arrayList);
             k kVar2 = dVar.b;
             int size2 = kVar2.f.size();
             int i15 = 0;
@@ -472,7 +471,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
             if (i17 >= 23) {
                 f2.a(xVar, null);
             }
-            r1 r1Var2 = ((d) k0.g(1, arrayList)).a.c;
+            r1 r1Var2 = ((d) hg.c.g(1, arrayList)).a.c;
             int[] iArr = new int[2];
             r1Var2.getLocationOnScreen(iArr);
             Rect rect = new Rect();

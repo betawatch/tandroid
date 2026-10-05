@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import b2.n1;
-import hg.k0;
 import j$.util.Comparator$-CC;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.File;
@@ -33,7 +32,7 @@ import org.telegram.ui.Components.kj0;
 import org.telegram.ui.n21;
 import pg.c1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class e {
     public static int A;
@@ -94,7 +93,7 @@ public final class e {
         sb2.append("_");
         sb2.append(i11);
         sb2.append(z10 ? "_nolimit" : " ");
-        File file3 = new File(file2, a4.a.s(sb2, i12 != 0 ? k0.h(i12, "_fitz") : "", ".pcache2"));
+        File file3 = new File(file2, a4.a.t(sb2, i12 != 0 ? hg.c.h(i12, "_fitz") : "", ".pcache2"));
         this.m = file3;
         this.f = i10 < AndroidUtilities.dp(60.0f) && i11 < AndroidUtilities.dp(60.0f);
         if (SharedConfig.getDevicePerformanceClass() < 2) {

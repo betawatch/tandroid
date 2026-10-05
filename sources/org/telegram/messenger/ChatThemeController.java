@@ -31,7 +31,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.bo;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class ChatThemeController extends BaseController {
     public static final int THEME_LIST_WITH_DEFAULT = 1;
@@ -50,7 +50,7 @@ public class ChatThemeController extends BaseController {
     private final Map<String, Long> usedGiftThemesBySlug;
     private final Map<Long, String> usedGiftThemesByUsers;
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class ThemeList {
         private boolean completed;
         private long hash;
@@ -380,7 +380,7 @@ public class ChatThemeController extends BaseController {
                 AndroidUtilities.runOnUIThread(new a1(resultCallback, tL_error, 0));
                 list = null;
                 if (z11) {
-                    AndroidUtilities.runOnUIThread(new tj(this, list, resultCallback, z10, 3));
+                    AndroidUtilities.runOnUIThread(new uj(this, list, resultCallback, z10, 3));
                     return;
                 }
                 return;
@@ -844,7 +844,7 @@ public class ChatThemeController extends BaseController {
 
     public void loadWallpaperBitmap(long j3, int i10, Utilities.Callback<dg.a> callback) {
         if (i10 == 0) {
-            getWallpaperBitmap(j3, new c0(callback, 1));
+            getWallpaperBitmap(j3, new d0(callback, 1));
         } else if (i10 == 1) {
             loadWallpaperPatternBitmap(j3, callback);
         }
@@ -863,7 +863,7 @@ public class ChatThemeController extends BaseController {
         for (org.telegram.ui.ActionBar.c4 c4Var : this.allChatThemes) {
             long i10 = c4Var.i(z10 ? 1 : 0);
             if (i10 != 0 && !this.themeIdWallpaperThumbMap.containsKey(Long.valueOf(i10))) {
-                c4Var.p(z10 ? 1 : 0, new c0(this, 2));
+                c4Var.p(z10 ? 1 : 0, new d0(this, 2));
             }
         }
     }

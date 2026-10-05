@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class n extends lb.b {
     public static final m H = new m();
@@ -51,7 +51,7 @@ public final class n extends lb.b {
         if (!(v() instanceof db.h)) {
             throw new IllegalStateException();
         }
-        a4.a.x(1, arrayList);
+        a4.a.y(1, arrayList);
     }
 
     @Override // lb.b
@@ -63,7 +63,7 @@ public final class n extends lb.b {
         if (!(v() instanceof db.l)) {
             throw new IllegalStateException();
         }
-        a4.a.x(1, arrayList);
+        a4.a.y(1, arrayList);
     }
 
     @Override // lb.b
@@ -145,7 +145,7 @@ public final class n extends lb.b {
     }
 
     public final db.i v() {
-        return (db.i) hg.k0.g(1, this.E);
+        return (db.i) hg.c.g(1, this.E);
     }
 
     public final void w(db.i iVar) {

@@ -5,84 +5,114 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class g0 extends yl0 {
-    public final Context c;
-    public final ArrayList d = new ArrayList();
-    public String e;
-    public final /* synthetic */ i0 f;
+public final class g0 extends ul0 {
+    public final ArrayList r;
+    public final int s;
+    public final Context v;
+    public final /* synthetic */ j0 w;
 
-    public g0(i0 i0Var, Context context) {
-        this.f = i0Var;
-        this.c = context;
+    public g0(j0 j0Var, Context context) {
+        this.w = j0Var;
+        ArrayList arrayList = new ArrayList();
+        this.r = arrayList;
+        int i10 = UserConfig.selectedAccount;
+        this.s = i10;
+        this.v = context;
+        arrayList.addAll(b2.f(i10).e());
     }
 
-    @Override // org.telegram.ui.Components.yl0
-    public final boolean D(s4.c1 c1Var) {
-        return c1Var.f == 0;
+    @Override // org.telegram.ui.Components.gl0
+    public final String F(int i10) {
+        return null;
     }
 
-    @Override // s4.h0
-    public final int h() {
-        return this.d.size() + 2;
+    @Override // org.telegram.ui.Components.gl0
+    public final void G(zl0 zl0Var, float f7, int[] iArr) {
+        iArr[0] = 0;
+        iArr[1] = 0;
     }
 
-    @Override // s4.h0
-    public final int j(int i10) {
+    @Override // org.telegram.ui.Components.ul0
+    public final int M(int i10) {
+        if (i10 == 0 || i10 == 2) {
+            return 1;
+        }
+        return this.r.size();
+    }
+
+    @Override // org.telegram.ui.Components.ul0
+    public final Object O(int i10, int i11) {
+        if (i10 != 0 && i11 >= 0) {
+            ArrayList arrayList = this.r;
+            if (i11 < arrayList.size()) {
+                return arrayList.get(i11);
+            }
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.ul0
+    public final int P(int i10, int i11) {
         if (i10 == 0) {
             return 1;
         }
-        return i10 == h() - 1 ? 2 : 0;
+        return i10 == 2 ? 2 : 0;
     }
 
-    @Override // s4.h0
-    public final void l() {
-        super.l();
-        this.f.J();
+    @Override // org.telegram.ui.Components.ul0
+    public final int R() {
+        return 3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x002b  */
-    /* JADX WARN: Removed duplicated region for block: B:16:? A[RETURN, SYNTHETIC] */
-    @Override // s4.h0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void v(s4.c1 c1Var, int i10) {
-        Object obj;
-        if (c1Var.f != 0) {
-            return;
-        }
-        x1 x1Var = (x1) c1Var.a;
-        boolean z10 = i10 != h() + (-2);
-        int i11 = i10 - 1;
-        if (i11 >= 0) {
-            ArrayList arrayList = this.d;
-            if (i11 < arrayList.size()) {
-                obj = arrayList.get(i11);
-                if (obj instanceof a2) {
-                    return;
-                }
-                a2 a2Var = (a2) obj;
-                x1Var.a(a2Var, this.e, z10);
-                x1Var.d.a(this.f.w.contains(Integer.valueOf(a2Var.a)), false);
-                return;
+    @Override // org.telegram.ui.Components.ul0
+    public final View T(int i10, View view) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.ul0
+    public final boolean V(int i10, int i11, s4.c1 c1Var) {
+        return (i10 == 0 || i10 == 2 || i11 >= this.r.size()) ? false : true;
+    }
+
+    @Override // org.telegram.ui.Components.ul0
+    public final void W(int i10, int i11, s4.c1 c1Var) {
+        if (c1Var.f == 0) {
+            x1 x1Var = (x1) c1Var.a;
+            Object O = O(i10, i11);
+            boolean z10 = true;
+            if (i10 == 1 && i11 == M(i10) - 1) {
+                z10 = false;
+            }
+            if (O instanceof a2) {
+                a2 a2Var = (a2) O;
+                x1Var.a(a2Var, null, z10);
+                x1Var.d.a(this.w.w.contains(Integer.valueOf(a2Var.a)), false);
             }
         }
-        obj = null;
-        if (obj instanceof a2) {
-        }
+    }
+
+    @Override // org.telegram.ui.Components.ul0, s4.h0
+    public final void l() {
+        ArrayList arrayList = this.r;
+        arrayList.clear();
+        arrayList.addAll(b2.f(this.s).e());
+        X(false);
+        this.w.J();
     }
 
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
         View x1Var;
-        Context context = this.c;
+        Context context = this.v;
         if (i10 == 0) {
-            x1Var = new x1(context, this.f.a, false);
+            x1Var = new x1(context, this.w.a, false);
         } else if (i10 != 1) {
             x1Var = new View(context);
             x1Var.setTag(-33024);

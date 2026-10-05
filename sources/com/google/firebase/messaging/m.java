@@ -48,7 +48,7 @@ import org.telegram.ui.w4;
 import org.telegram.ui.z0;
 import r0.i0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class m implements c3.q {
     public static m e;
@@ -138,13 +138,13 @@ public final class m implements c3.q {
             this.a = true;
             return qVar.Z1(i10, i11);
         }
-        z3.o oVar = (z3.o) sparseArray.get(i10);
-        if (oVar != null) {
-            return oVar;
+        z3.n nVar = (z3.n) sparseArray.get(i10);
+        if (nVar != null) {
+            return nVar;
         }
-        z3.o oVar2 = new z3.o(qVar.Z1(i10, i11), (z3.l) this.c);
-        sparseArray.put(i10, oVar2);
-        return oVar2;
+        z3.n nVar2 = new z3.n(qVar.Z1(i10, i11), (z3.k) this.c);
+        sparseArray.put(i10, nVar2);
+        return nVar2;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x006c  */
@@ -246,7 +246,7 @@ public final class m implements c3.q {
         ((c3.q) this.b).e1();
         if (this.a) {
             for (int i10 = 0; i10 < sparseArray.size(); i10++) {
-                ((z3.o) sparseArray.valueAt(i10)).i = true;
+                ((z3.n) sparseArray.valueAt(i10)).i = true;
             }
         }
     }
@@ -300,7 +300,7 @@ public final class m implements c3.q {
         if (i14 >= 0) {
             return new aa.a(this, fVar, eVarArr[length][i14][i15]);
         }
-        throw new cc.k(a4.a.p("Internal error: failed to encode \"", str, "\""));
+        throw new cc.k(a4.a.q("Internal error: failed to encode \"", str, "\""));
     }
 
     public byte[] i(UUID uuid, n2.p pVar) {
@@ -583,9 +583,9 @@ public final class m implements c3.q {
         }
     }
 
-    public m(c3.q qVar, z3.l lVar) {
+    public m(c3.q qVar, z3.k kVar) {
         this.b = qVar;
-        this.c = lVar;
+        this.c = kVar;
         this.d = new SparseArray();
     }
 

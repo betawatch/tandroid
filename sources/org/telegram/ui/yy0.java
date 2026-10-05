@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class yy0 extends org.telegram.ui.Components.zl0 implements ai.s9 {
     public final /* synthetic */ ProfileActivity e3;
@@ -61,16 +61,16 @@ public final class yy0 extends org.telegram.ui.Components.zl0 implements ai.s9 {
             }
             if (profileActivity.O.C()) {
                 e01 e01Var3 = profileActivity.O;
-                if (e01Var3.C1 && (e01Var3.getClosestTab() == 8 || org.telegram.ui.Components.pv0.w0(profileActivity.O.getClosestTab()))) {
+                if (e01Var3.C1 && (e01Var3.getClosestTab() == 8 || org.telegram.ui.Components.qv0.w0(profileActivity.O.getClosestTab()))) {
                     return false;
                 }
             }
-            org.telegram.ui.Components.fs0 fs0Var = profileActivity.O.V;
-            if (fs0Var != null && fs0Var.g()) {
+            org.telegram.ui.Components.gs0 gs0Var = profileActivity.O.V;
+            if (gs0Var != null && gs0Var.g()) {
                 return false;
             }
-            org.telegram.ui.Components.ks0 ks0Var = profileActivity.O.W;
-            if (ks0Var != null && ks0Var.w) {
+            org.telegram.ui.Components.ls0 ls0Var = profileActivity.O.W;
+            if (ls0Var != null && ls0Var.w) {
                 return false;
             }
         }

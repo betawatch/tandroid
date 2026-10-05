@@ -10,7 +10,6 @@ import e2.v;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import hg.k0;
 import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
@@ -18,24 +17,24 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class u implements c3.o {
     public static final Pattern i = Pattern.compile("LOCAL:([^,]+)");
     public static final Pattern j = Pattern.compile("MPEGTS:(-?\\d+)");
     public final String a;
     public final b0 b;
-    public final z3.l d;
+    public final z3.k d;
     public final boolean e;
     public c3.q f;
     public int h;
     public final v c = new v();
     public byte[] g = new byte[1024];
 
-    public u(String str, b0 b0Var, z3.l lVar, boolean z10) {
+    public u(String str, b0 b0Var, z3.k kVar, boolean z10) {
         this.a = str;
         this.b = b0Var;
-        this.d = lVar;
+        this.d = kVar;
         this.e = z10;
     }
 
@@ -45,7 +44,7 @@ public final class u implements c3.o {
         rVar.q = r0.n("text/vtt");
         rVar.d = this.a;
         rVar.v = j3;
-        k0.r(rVar, Z1);
+        hg.c.s(rVar, Z1);
         this.f.e1();
         return Z1;
     }

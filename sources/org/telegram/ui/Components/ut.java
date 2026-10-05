@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ut implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -30,23 +30,23 @@ public final /* synthetic */ class ut implements ViewTreeObserver.OnPreDrawListe
                 ((z70) this.b).invalidate();
                 break;
             default:
-                aw0 aw0Var = (aw0) this.b;
-                if (aw0Var.w0 && aw0Var.x0 > 0) {
-                    aw0Var.e0("PRE_DRAW_BEFORE", null, 0, 0, true);
+                bw0 bw0Var = (bw0) this.b;
+                if (bw0Var.a && bw0Var.b > 0) {
+                    bw0Var.f("PRE_DRAW_BEFORE", null, 0, 0, true);
                 }
-                aw0Var.k0();
-                if (aw0Var.j1 && (recyclerView = aw0Var.K0) != null && !recyclerView.c0()) {
-                    float j02 = aw0Var.j0();
-                    if (!Float.isInfinite(j02)) {
-                        aw0Var.j1 = false;
-                        aw0Var.m0(aw0Var.K0, Math.round(j02 - aw0Var.a1));
-                        aw0Var.u0();
+                bw0Var.l();
+                if (bw0Var.g0 && (recyclerView = bw0Var.E) != null && !recyclerView.c0()) {
+                    float k10 = bw0Var.k();
+                    if (!Float.isInfinite(k10)) {
+                        bw0Var.g0 = false;
+                        bw0Var.r(bw0Var.E, Math.round(k10 - bw0Var.U));
+                        bw0Var.B();
                     }
                 }
-                if (aw0Var.w0 && aw0Var.x0 > 0) {
-                    aw0Var.e0("PRE_DRAW_AFTER", null, 0, 0, true);
-                    aw0Var.x0--;
-                    aw0Var.y0++;
+                if (bw0Var.a && bw0Var.b > 0) {
+                    bw0Var.f("PRE_DRAW_AFTER", null, 0, 0, true);
+                    bw0Var.b--;
+                    bw0Var.c++;
                     break;
                 }
                 break;

@@ -27,6 +27,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -34,7 +35,7 @@ import org.telegram.ui.Components.q30;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class x9 extends FrameLayout implements View.OnClickListener, NotificationCenter.NotificationCenterDelegate {
     public final i9 E;
@@ -246,7 +247,7 @@ public final class x9 extends FrameLayout implements View.OnClickListener, Notif
 
     public final float c() {
         int i10 = 0;
-        float f7 = -org.telegram.messenger.f0.b(150.0f, Math.min(AndroidUtilities.dp(150.0f), this.x.J), 0);
+        float f7 = -org.telegram.messenger.q.b(150.0f, Math.min(AndroidUtilities.dp(150.0f), this.x.J), 0);
         while (true) {
             zl0 zl0Var = this.f;
             if (i10 >= zl0Var.getChildCount()) {
@@ -762,9 +763,9 @@ public final class x9 extends FrameLayout implements View.OnClickListener, Notif
                                 if (tLObject3 instanceof TLRPC.User) {
                                     TLRPC.User user2 = (TLRPC.User) tLObject3;
                                     String lowerCase2 = AndroidUtilities.translitSafe(UserObject.getUserName(user2)).toLowerCase();
-                                    if (!lowerCase2.startsWith(lowerCase) && !org.telegram.messenger.f0.w(" ", lowerCase, lowerCase2)) {
+                                    if (!lowerCase2.startsWith(lowerCase) && !bi.u(" ", lowerCase, lowerCase2)) {
                                         String lowerCase3 = AndroidUtilities.translitSafe(UserObject.getPublicUsername(user2)).toLowerCase();
-                                        if (!lowerCase3.startsWith(lowerCase) && !org.telegram.messenger.f0.w(" ", lowerCase, lowerCase3)) {
+                                        if (!lowerCase3.startsWith(lowerCase) && !bi.u(" ", lowerCase, lowerCase3)) {
                                             ArrayList<TLRPC.TL_username> arrayList8 = user2.usernames;
                                             if (arrayList8 != null) {
                                                 int i35 = 0;
@@ -789,9 +790,9 @@ public final class x9 extends FrameLayout implements View.OnClickListener, Notif
                                     if (tLObject3 instanceof TLRPC.Chat) {
                                         TLRPC.Chat chat2 = (TLRPC.Chat) tLObject3;
                                         String lowerCase4 = AndroidUtilities.translitSafe(chat2.title).toLowerCase();
-                                        if (!lowerCase4.startsWith(lowerCase) && !org.telegram.messenger.f0.w(" ", lowerCase, lowerCase4)) {
+                                        if (!lowerCase4.startsWith(lowerCase) && !bi.u(" ", lowerCase, lowerCase4)) {
                                             String lowerCase5 = AndroidUtilities.translitSafe(ChatObject.getPublicUsername(chat2)).toLowerCase();
-                                            if (!lowerCase5.startsWith(lowerCase) && !org.telegram.messenger.f0.w(" ", lowerCase, lowerCase5)) {
+                                            if (!lowerCase5.startsWith(lowerCase) && !bi.u(" ", lowerCase, lowerCase5)) {
                                                 ArrayList<TLRPC.TL_username> arrayList9 = chat2.usernames;
                                                 if (arrayList9 != null) {
                                                     for (int i36 = 0; i36 < arrayList9.size(); i36++) {

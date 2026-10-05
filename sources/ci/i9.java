@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ae0;
 import org.telegram.ui.Components.ee0;
 import org.telegram.ui.Components.kf;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class i9 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -199,7 +199,7 @@ public final class i9 extends FrameLayout {
     }
 
     public int c(int i10) {
-        return org.telegram.messenger.f0.D(30.0f, i10, (getMeasuredWidth() - (AndroidUtilities.dp(30.0f) * ((StringBuilder) this.d).length())) / 2) - AndroidUtilities.dp(10.0f);
+        return org.telegram.messenger.q.D(30.0f, i10, (getMeasuredWidth() - (AndroidUtilities.dp(30.0f) * ((StringBuilder) this.d).length())) / 2) - AndroidUtilities.dp(10.0f);
     }
 
     public void d(boolean z10) {
@@ -289,7 +289,7 @@ public final class i9 extends FrameLayout {
         this.b = d6Var;
         TextView textView = new TextView(context);
         this.d = textView;
-        ok.k(20.0f, 1, textView);
+        bi.j(20.0f, 1, textView);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.j5, d6Var));
         boolean z10 = LocaleController.isRTL;

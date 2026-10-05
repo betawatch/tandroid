@@ -88,8 +88,8 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.a20;
 import org.telegram.ui.Components.b20;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.hx0;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.ix0;
 import org.telegram.ui.Components.k8;
 import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.kj0;
@@ -98,7 +98,7 @@ import org.telegram.ui.Components.mm0;
 import org.telegram.ui.Components.pc0;
 import org.telegram.ui.Components.pm0;
 import org.telegram.ui.Components.q9;
-import org.telegram.ui.Components.qp0;
+import org.telegram.ui.Components.rp0;
 import org.telegram.ui.Components.sq;
 import org.telegram.ui.Components.tg0;
 import org.telegram.ui.Components.up;
@@ -106,10 +106,10 @@ import org.telegram.ui.Components.v9;
 import org.telegram.ui.Components.vc0;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.gd1;
+import org.telegram.ui.ed1;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class i6 {
     public static int A;
@@ -1281,7 +1281,7 @@ public abstract class i6 {
     public static final int[] D = new int[4];
     public static final long[] E = new long[4];
     public static final Drawable[] r0 = new Drawable[25];
-    public static final hx0[] u3 = new hx0[6];
+    public static final ix0[] u3 = new ix0[6];
     public static final Drawable[] G4 = new Drawable[2];
     public static final Drawable[] H4 = new Drawable[2];
     public static final Drawable[] I4 = new Drawable[2];
@@ -4942,7 +4942,7 @@ public abstract class i6 {
             h6Var.F = tL_theme;
             h6Var.a = tL_theme.title;
             File file = new File(h6Var.b);
-            File file2 = new File(ApplicationLoader.getFilesDirFixed(), t8.b.v(str, ".attheme"));
+            File file2 = new File(ApplicationLoader.getFilesDirFixed(), sa.e.v(str, ".attheme"));
             if (!file.equals(file2)) {
                 try {
                     AndroidUtilities.copyFile(file, file2);
@@ -5001,10 +5001,10 @@ public abstract class i6 {
         } else if (computePerceivedBrightness >= computePerceivedBrightness2) {
             return HSVToColor;
         }
-        float A10 = a4.a.A(0.39999998f, computePerceivedBrightness, computePerceivedBrightness2, 0.6f);
-        int red = (int) (Color.red(HSVToColor) * A10);
-        int green = (int) (Color.green(HSVToColor) * A10);
-        int blue = (int) (Color.blue(HSVToColor) * A10);
+        float B10 = a4.a.B(0.39999998f, computePerceivedBrightness, computePerceivedBrightness2, 0.6f);
+        int red = (int) (Color.red(HSVToColor) * B10);
+        int green = (int) (Color.green(HSVToColor) * B10);
+        int blue = (int) (Color.blue(HSVToColor) * B10);
         return Color.argb(Color.alpha(HSVToColor), red < 0 ? 0 : Math.min(red, 255), green < 0 ? 0 : Math.min(green, 255), blue >= 0 ? Math.min(blue, 255) : 0);
     }
 
@@ -6626,7 +6626,7 @@ public abstract class i6 {
             String lowerCase4 = i13 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i13 >> 16)) & 255), Integer.valueOf(((byte) (a6Var.g >> 8)) & 255), Byte.valueOf((byte) (a6Var.g & 255))).toLowerCase() : null;
             if (lowerCase2 == null || lowerCase3 == null) {
                 if (lowerCase2 != null) {
-                    StringBuilder j10 = t8.b.j(a4.a.C(lowerCase, "-", lowerCase2), "&rotation=");
+                    StringBuilder j10 = sa.e.j(a4.a.D(lowerCase, "-", lowerCase2), "&rotation=");
                     j10.append(a6Var.h);
                     lowerCase = j10.toString();
                 }
@@ -6637,7 +6637,7 @@ public abstract class i6 {
                 sb3.append(lowerCase2);
                 sb3.append("~");
                 sb3.append(lowerCase3);
-                lowerCase = a4.a.s(sb3, "~", lowerCase4);
+                lowerCase = a4.a.t(sb3, "~", lowerCase4);
             } else {
                 lowerCase = lowerCase + "~" + lowerCase2 + "~" + lowerCase3;
             }
@@ -6646,7 +6646,7 @@ public abstract class i6 {
         if (sb2.length() <= 0) {
             return str;
         }
-        StringBuilder j11 = t8.b.j(str, "&mode=");
+        StringBuilder j11 = sa.e.j(str, "&mode=");
         j11.append(sb2.toString());
         return j11.toString();
     }
@@ -7342,11 +7342,11 @@ public abstract class i6 {
         x1(i31, Y4);
         int i32 = 0;
         while (true) {
-            hx0[] hx0VarArr = u3;
-            if (i32 >= hx0VarArr.length) {
+            ix0[] ix0VarArr = u3;
+            if (i32 >= ix0VarArr.length) {
                 break;
             }
-            x1(p9, hx0VarArr[i32]);
+            x1(p9, ix0VarArr[i32]);
             i32++;
         }
         for (int i33 = 0; i33 < 5; i33++) {
@@ -8302,15 +8302,15 @@ public abstract class i6 {
         int i10 = iArr[0];
         int i11 = iArr[1];
         view2.getLocationOnScreen(iArr);
-        if (view2 instanceof gd1) {
+        if (view2 instanceof ed1) {
             Bitmap bitmap = Y;
             if (bitmap != null) {
                 float width = bitmap.getWidth();
-                i10 = (int) ((((view2.getMeasuredWidth() - (Math.max(view2.getMeasuredWidth() / width, view2.getMeasuredHeight() / Y.getHeight()) * width)) / 2.0f) - ((gd1) view2).I) + i10);
+                i10 = (int) ((((view2.getMeasuredWidth() - (Math.max(view2.getMeasuredWidth() / width, view2.getMeasuredHeight() / Y.getHeight()) * width)) / 2.0f) - ((ed1) view2).I) + i10);
             } else {
-                i10 = (int) (i10 + (-((gd1) view2).I));
+                i10 = (int) (i10 + (-((ed1) view2).I));
             }
-            i11 = (int) (i11 + (-((gd1) view2).J));
+            i11 = (int) (i11 + (-((ed1) view2).J));
         }
         if (d6Var != null) {
             d6Var.m(i10, i11 - iArr[1], view2.getMeasuredWidth(), view2.getMeasuredHeight());
@@ -8537,32 +8537,32 @@ public abstract class i6 {
         }
     }
 
-    public static hx0 t0(int i10) {
+    public static ix0 t0(int i10) {
         if (i10 < 0 || i10 > 5) {
             return null;
         }
-        hx0[] hx0VarArr = u3;
-        hx0 hx0Var = hx0VarArr[i10];
-        if (hx0Var != null) {
-            return hx0Var;
+        ix0[] ix0VarArr = u3;
+        ix0 ix0Var = ix0VarArr[i10];
+        if (ix0Var != null) {
+            return ix0Var;
         }
         if (i10 == 0) {
-            hx0VarArr[0] = new e61(true);
+            ix0VarArr[0] = new f61(true);
         } else if (i10 == 1) {
-            hx0VarArr[1] = new up(true);
+            ix0VarArr[1] = new up(true);
         } else if (i10 == 2) {
-            hx0VarArr[2] = new qp0(true);
+            ix0VarArr[2] = new rp0(true);
         } else if (i10 == 3) {
-            hx0VarArr[3] = new tg0(null, true);
+            ix0VarArr[3] = new tg0(null, true);
         } else if (i10 == 4) {
-            hx0VarArr[4] = new mm0(true);
+            ix0VarArr[4] = new mm0(true);
         } else if (i10 == 5) {
-            hx0VarArr[5] = new up();
+            ix0VarArr[5] = new up();
         }
-        hx0 hx0Var2 = hx0VarArr[i10];
-        hx0Var2.d();
-        hx0Var2.b(w0(null, p9, false));
-        return hx0Var2;
+        ix0 ix0Var2 = ix0VarArr[i10];
+        ix0Var2.d();
+        ix0Var2.b(w0(null, p9, false));
+        return ix0Var2;
     }
 
     public static void t1(h6 h6Var, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
@@ -8889,8 +8889,8 @@ public abstract class i6 {
         if (drawable == null) {
             return;
         }
-        if (drawable instanceof hx0) {
-            ((hx0) drawable).b(i10);
+        if (drawable instanceof ix0) {
+            ((ix0) drawable).b(i10);
             return;
         }
         if (drawable instanceof vc0) {

@@ -5,25 +5,25 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class f7 extends org.telegram.ui.Components.x81 {
+public final class f7 extends org.telegram.ui.Components.y81 {
     public org.telegram.ui.ActionBar.n1 a;
     public final /* synthetic */ Context b;
-    public final /* synthetic */ li.m c;
+    public final /* synthetic */ li.p c;
     public final /* synthetic */ a7 d;
-    public final /* synthetic */ org.telegram.ui.Components.aw0 e;
+    public final /* synthetic */ org.telegram.ui.Components.bw0 e;
     public final /* synthetic */ v7 f;
 
-    public f7(v7 v7Var, Context context, li.m mVar, a7 a7Var, org.telegram.ui.Components.aw0 aw0Var) {
+    public f7(v7 v7Var, Context context, li.p pVar, a7 a7Var, org.telegram.ui.Components.bw0 bw0Var) {
         this.f = v7Var;
         this.b = context;
-        this.c = mVar;
+        this.c = pVar;
         this.d = a7Var;
-        this.e = aw0Var;
+        this.e = bw0Var;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final void b(View view, int i10, int i11) {
         org.telegram.ui.Components.zl0 c10 = v7.c(view);
         v7 v7Var = this.f;
@@ -43,19 +43,19 @@ public final class f7 extends org.telegram.ui.Components.x81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final View d(int i10) {
         Context context = this.b;
         org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
-        li.m mVar = this.c;
-        if (mVar != null) {
-            mVar.b(zl0Var);
+        li.p pVar = this.c;
+        if (pVar != null) {
+            pVar.b(zl0Var);
         }
         s4.j jVar = (s4.j) zl0Var.getItemAnimator();
         jVar.C = false;
         jVar.m = false;
         zl0Var.setClipToPadding(false);
-        if (i10 != 1 && i10 != 4 && mVar != null) {
+        if (i10 != 1 && i10 != 4 && pVar != null) {
             zl0Var.setSections(false);
         }
         zl0Var.setCaptureSectionsDecoratorAllowed(true);
@@ -70,22 +70,22 @@ public final class f7 extends org.telegram.ui.Components.x81 {
         return this.e == null ? zl0Var : new u7(context, zl0Var);
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final int e() {
         return this.f.e.size();
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final int f(int i10) {
         return ((t7) this.f.e.get(i10)).b;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final CharSequence g(int i10) {
         return ((t7) this.f.e.get(i10)).a;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final int h(int i10) {
         return ((t7) this.f.e.get(i10)).b;
     }

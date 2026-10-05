@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class f11 extends FrameLayout {
     public final Matrix E;
@@ -215,11 +215,11 @@ public final class f11 extends FrameLayout {
                     int measuredWidth = getMeasuredWidth();
                     float y3 = profileActivity.y3();
                     k0 k0Var = profileActivity.Y;
-                    float[][] fArr = yh.j0.a;
+                    float[][] fArr = yh.k0.a;
                     RectF rectF = AndroidUtilities.rectTmp;
                     f7 = 1.0f;
                     rectF.set(k0Var.getX(), k0Var.getY(), (k0Var.getScaleX() * k0Var.getWidth()) + k0Var.getX(), (k0Var.getScaleY() * k0Var.getHeight()) + k0Var.getY());
-                    yh.j0.c(canvas2, o5Var, measuredWidth, A, y3, rectF, 1.0f);
+                    yh.k0.c(canvas2, o5Var, measuredWidth, A, y3, rectF, 1.0f);
                     canvas2.restore();
                     obj = profileActivity.g5;
                     if (obj != null && (zVar = (actionBar = ((org.telegram.ui.ActionBar.n2) obj).getActionBar()).E) != null) {

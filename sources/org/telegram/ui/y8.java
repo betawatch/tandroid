@@ -17,9 +17,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class y8 extends org.telegram.ui.Components.lw0 {
+public final class y8 extends org.telegram.ui.Components.mw0 {
     public final /* synthetic */ int w0;
     public final /* synthetic */ Object x0;
 
@@ -30,7 +30,7 @@ public final class y8 extends org.telegram.ui.Components.lw0 {
         this.x0 = obj;
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public void J(Canvas canvas, float f7, Rect rect, Paint paint, boolean z10) {
         switch (this.w0) {
             case 3:
@@ -38,28 +38,12 @@ public final class y8 extends org.telegram.ui.Components.lw0 {
                 if (Build.VERSION.SDK_INT >= 29 && SharedConfig.chatBlurEnabled() && contactsActivity.u0 != null) {
                     canvas.save();
                     canvas.translate(0.0f, -f7);
-                    contactsActivity.u0.y(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
+                    contactsActivity.u0.v(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
                     canvas.restore();
                     int alpha = paint.getAlpha();
                     paint.setAlpha(178);
                     canvas.drawRect(rect, paint);
                     paint.setAlpha(alpha);
-                    break;
-                } else {
-                    canvas.drawRect(rect, paint);
-                    break;
-                }
-            case 7:
-                a91 a91Var = (a91) this.x0;
-                if (Build.VERSION.SDK_INT >= 29 && SharedConfig.chatBlurEnabled() && a91Var.V != null) {
-                    canvas.save();
-                    canvas.translate(0.0f, -f7);
-                    a91Var.V.y(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
-                    canvas.restore();
-                    int alpha2 = paint.getAlpha();
-                    paint.setAlpha(178);
-                    canvas.drawRect(rect, paint);
-                    paint.setAlpha(alpha2);
                     break;
                 } else {
                     canvas.drawRect(rect, paint);
@@ -71,7 +55,7 @@ public final class y8 extends org.telegram.ui.Components.lw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public boolean P() {
         switch (this.w0) {
             case 2:
@@ -81,7 +65,7 @@ public final class y8 extends org.telegram.ui.Components.lw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public boolean Q() {
         switch (this.w0) {
             case 2:
@@ -91,9 +75,9 @@ public final class y8 extends org.telegram.ui.Components.lw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
-        li.m mVar;
+        li.p pVar;
         switch (this.w0) {
             case 3:
                 ContactsActivity contactsActivity = (ContactsActivity) this.x0;
@@ -125,11 +109,11 @@ public final class y8 extends org.telegram.ui.Components.lw0 {
                 break;
             case 7:
                 super.dispatchDraw(canvas);
-                a91 a91Var = (a91) this.x0;
-                mVar = ((org.telegram.ui.ActionBar.n2) a91Var).glassEngine;
-                mVar.g();
-                if (!a91Var.L) {
-                    AndroidUtilities.drawNavigationBarProtection(canvas, this, a91Var.getThemedColor(org.telegram.ui.ActionBar.i6.d6), a91Var.R);
+                y81 y81Var = (y81) this.x0;
+                pVar = ((org.telegram.ui.ActionBar.n2) y81Var).glassEngine;
+                pVar.g();
+                if (!y81Var.L) {
+                    AndroidUtilities.drawNavigationBarProtection(canvas, this, y81Var.getThemedColor(org.telegram.ui.ActionBar.i6.d6), y81Var.T);
                     break;
                 }
                 break;
@@ -152,16 +136,16 @@ public final class y8 extends org.telegram.ui.Components.lw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.lw0, org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.Components.mw0, org.telegram.ui.ActionBar.y5
     public void e() {
         switch (this.w0) {
             case 7:
-                ((a91) this.x0).o0();
+                ((y81) this.x0).n0();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public Drawable getNewDrawable() {
         switch (this.w0) {
             case 1:
@@ -174,11 +158,11 @@ public final class y8 extends org.telegram.ui.Components.lw0 {
         return super.getNewDrawable();
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public org.telegram.ui.ActionBar.d6 getResourceProvider() {
         switch (this.w0) {
             case 2:
-                return ((org.telegram.ui.Components.w01) this.x0).c;
+                return ((org.telegram.ui.Components.x01) this.x0).c;
             default:
                 return super.getResourceProvider();
         }
@@ -188,7 +172,7 @@ public final class y8 extends org.telegram.ui.Components.lw0 {
     /* JADX WARN: Removed duplicated region for block: B:28:0x0090  */
     /* JADX WARN: Removed duplicated region for block: B:35:0x0099  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x007c  */
-    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -314,7 +298,7 @@ public final class y8 extends org.telegram.ui.Components.lw0 {
                 break;
             case 2:
                 super.onMeasure(i10, i11);
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), ((org.telegram.ui.Components.w01) this.x0).d.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
+                setMeasuredDimension(View.MeasureSpec.getSize(i10), ((org.telegram.ui.Components.x01) this.x0).d.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
                 break;
             case 3:
                 ContactsActivity contactsActivity = (ContactsActivity) this.x0;
@@ -352,7 +336,7 @@ public final class y8 extends org.telegram.ui.Components.lw0 {
                     marginLayoutParams3.bottomMargin = AndroidUtilities.dp(14.0f) + dp;
                 } else {
                     super.onMeasure(i10, i11);
-                    marginLayoutParams3.bottomMargin = org.telegram.messenger.ok.D(10.0f, org.telegram.ui.Components.rc.w.e.getMeasuredHeight() + AndroidUtilities.dp(14.0f), dp);
+                    marginLayoutParams3.bottomMargin = org.telegram.messenger.bi.D(10.0f, org.telegram.ui.Components.rc.w.e.getMeasuredHeight() + AndroidUtilities.dp(14.0f), dp);
                 }
                 int i13 = AndroidUtilities.isTablet() ? 0 : AndroidUtilities.statusBarHeight;
                 ((ViewGroup.MarginLayoutParams) ug0Var.U.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;

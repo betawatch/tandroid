@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ap0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -197,8 +197,8 @@ public final class ap0 extends AnimatorListenerAdapter {
                 break;
             case 16:
                 p11 p11Var = (p11) obj;
-                if (animator.equals(p11Var.c)) {
-                    p11Var.c = null;
+                if (animator.equals(p11Var.d)) {
+                    p11Var.d = null;
                     break;
                 }
                 break;
@@ -215,96 +215,96 @@ public final class ap0 extends AnimatorListenerAdapter {
                 super.onAnimationEnd(animator);
                 break;
             case 18:
-                ((t41) obj).d.a0.k0 = 1.0f;
+                ((r41) obj).d.a0.k0 = 1.0f;
                 break;
             case 19:
-                SecretMediaViewer secretMediaViewer = ((t41) obj).d;
+                SecretMediaViewer secretMediaViewer = ((r41) obj).d;
                 secretMediaViewer.a0.setVisibility(4);
                 secretMediaViewer.a0.k0 = 1.0f;
                 break;
             case 20:
-                c71 c71Var = ((s51) obj).e;
-                c71Var.S0.G = 0.0f;
-                c71Var.S0 = null;
-                c71Var.h0.invalidate();
+                a71 a71Var = ((q51) obj).e;
+                a71Var.S0.G = 0.0f;
+                a71Var.S0 = null;
+                a71Var.h0.invalidate();
                 break;
             case 21:
-                zg.e0.a();
-                c71 c71Var2 = (c71) obj;
-                z51 z51Var = c71Var2.h0;
-                z51 z51Var2 = c71Var2.h0;
-                z51Var.setLayerType(0, null);
-                t51 t51Var = c71Var2.f0;
-                t51Var.setLayerType(0, null);
-                c71Var2.e0.setLayerType(0, null);
-                c71Var2.b0.setLayerType(0, null);
-                org.telegram.ui.Components.nn nnVar = c71Var2.n0;
+                zg.c0.a();
+                a71 a71Var2 = (a71) obj;
+                x51 x51Var = a71Var2.h0;
+                x51 x51Var2 = a71Var2.h0;
+                x51Var.setLayerType(0, null);
+                r51 r51Var = a71Var2.f0;
+                r51Var.setLayerType(0, null);
+                a71Var2.e0.setLayerType(0, null);
+                a71Var2.b0.setLayerType(0, null);
+                org.telegram.ui.Components.nn nnVar = a71Var2.n0;
                 if (nnVar != null) {
                     nnVar.setLayerType(0, null);
                 }
-                View view = c71Var2.m0;
+                View view = a71Var2.m0;
                 if (view != null) {
                     view.setLayerType(0, null);
                 }
-                t51Var.b();
-                c71Var2.d0.m(false);
+                r51Var.b();
+                a71Var2.d0.m(false);
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
-                c71Var2.W1.unlock();
+                a71Var2.W1.unlock();
                 NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
                 Objects.requireNonNull(globalInstance);
                 AndroidUtilities.runOnUIThread(new hz0(globalInstance, 14));
-                c71Var2.h();
-                c71Var2.E(1.0f);
-                for (int i11 = 0; i11 < z51Var2.getChildCount(); i11++) {
-                    View childAt = z51Var2.getChildAt(i11);
+                a71Var2.h();
+                a71Var2.E(1.0f);
+                for (int i11 = 0; i11 < x51Var2.getChildCount(); i11++) {
+                    View childAt = x51Var2.getChildAt(i11);
                     childAt.setScaleX(1.0f);
                     childAt.setScaleY(1.0f);
                 }
-                for (int i12 = 0; i12 < c71Var2.d0.b.getChildCount(); i12++) {
-                    View childAt2 = c71Var2.d0.b.getChildAt(i12);
+                for (int i12 = 0; i12 < a71Var2.d0.b.getChildCount(); i12++) {
+                    View childAt2 = a71Var2.d0.b.getChildAt(i12);
                     childAt2.setScaleX(1.0f);
                     childAt2.setScaleY(1.0f);
                 }
-                c71Var2.d0.b.invalidate();
-                c71Var2.k0.invalidate();
-                z51Var2.invalidate();
+                a71Var2.d0.b.invalidate();
+                a71Var2.k0.invalidate();
+                x51Var2.invalidate();
                 break;
             case 22:
-                ((va1) obj).a0.setVisibility(8);
+                ((ta1) obj).a0.setVisibility(8);
                 break;
             case 23:
-                rd1 rd1Var = ((fd1) obj).a;
-                if (!rd1Var.p1.a()) {
-                    rd1Var.R1.setVisibility(8);
+                pd1 pd1Var = ((dd1) obj).a;
+                if (!pd1Var.p1.a()) {
+                    pd1Var.R1.setVisibility(8);
                     break;
                 }
                 break;
             case 24:
                 super.onAnimationEnd(animator);
-                ((se1) obj).a = null;
+                ((qe1) obj).a = null;
                 break;
             case 25:
                 super.onAnimationEnd(animator);
-                ((wf1) obj).setScrollEnabled(true);
+                ((uf1) obj).setScrollEnabled(true);
                 break;
             case 26:
-                ah1 ah1Var = (ah1) obj;
-                if (animator.equals(ah1Var.e.K)) {
-                    ah1Var.e.K = null;
+                yg1 yg1Var = (yg1) obj;
+                if (animator.equals(yg1Var.e.K)) {
+                    yg1Var.e.K = null;
                     break;
                 }
                 break;
             case 27:
-                qh1 qh1Var = (qh1) obj;
-                qh1Var.d = null;
-                qh1Var.a = null;
-                qh1Var.b = false;
-                qh1Var.f.c.setAllowDrawCursor(true);
+                oh1 oh1Var = (oh1) obj;
+                oh1Var.d = null;
+                oh1Var.a = null;
+                oh1Var.b = false;
+                oh1Var.f.c.setAllowDrawCursor(true);
                 break;
             case 28:
                 org.telegram.ui.Components.zf0 zf0Var = (org.telegram.ui.Components.zf0) obj;
-                ((hj1) zf0Var.b).getClass();
-                ((hj1) zf0Var.b).c.setVisibility(4);
+                ((fj1) zf0Var.b).getClass();
+                ((fj1) zf0Var.b).c.setVisibility(4);
                 break;
             default:
                 ((org.telegram.ui.web.c1) obj).s.setVisibility(8);

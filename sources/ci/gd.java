@@ -22,21 +22,21 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bo0;
 import org.telegram.ui.Components.q90;
-import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.ry0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.bf;
 import org.telegram.ui.dg0;
 import org.telegram.ui.g10;
+import org.telegram.ui.k71;
 import org.telegram.ui.kn;
 import org.telegram.ui.lg;
-import org.telegram.ui.m71;
 import org.telegram.ui.nf0;
 import org.telegram.ui.tg0;
 import org.telegram.ui.yn;
 import org.telegram.ui.zf0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class gd implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -83,7 +83,7 @@ public final /* synthetic */ class gd implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ai.z8(tL_error, (Context) obj5, (org.telegram.ui.ActionBar.d6) obj4, (d) obj3, (org.telegram.ui.ActionBar.f3) obj2, (Runnable) obj, 7));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new ai.z8((qy0) obj4, tLObject, (EditTextBoldCursor) obj3, (TextView) obj2, (TextView) obj, (int[]) obj5, 8));
+                AndroidUtilities.runOnUIThread(new ai.z8((ry0) obj4, tLObject, (EditTextBoldCursor) obj3, (TextView) obj2, (TextView) obj, (int[]) obj5, 8));
                 break;
             case 7:
                 Pattern pattern = LaunchActivity.B1;
@@ -127,7 +127,7 @@ public final /* synthetic */ class gd implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new bf(obj5, (Object) tLObject, (String) obj4, (TLObject) obj3, obj2, (Object) tL_error, obj, 6));
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new ai.z8((m71) obj5, tL_error, (TLRPC.InputCheckPasswordSRP) obj4, (TLRPC.User) obj3, (TwoStepVerificationActivity) obj2, (TLRPC.TL_channels_editCreator) obj, 12));
+                AndroidUtilities.runOnUIThread(new ai.z8((k71) obj5, tL_error, (TLRPC.InputCheckPasswordSRP) obj4, (TLRPC.User) obj3, (TwoStepVerificationActivity) obj2, (TLRPC.TL_channels_editCreator) obj, 12));
                 break;
             case 12:
                 AndroidUtilities.runOnUIThread(new bf(tL_error, (tg.v) obj5, tLObject, (MessagesController) obj4, (TLRPC.TL_inputInvoicePremiumGiftCode) obj3, (org.telegram.ui.ActionBar.n2) obj2, (tg.v) obj, 8));
@@ -136,14 +136,14 @@ public final /* synthetic */ class gd implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new bf(tL_error, (Utilities.Callback) obj5, tLObject, (MessagesController) obj4, (TLRPC.TL_inputInvoicePremiumGiftCode) obj3, (org.telegram.ui.ActionBar.n2) obj2, (Utilities.Callback) obj, 9));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new bf((yh.t5) obj5, tLObject, (MessageObject) obj4, (TLRPC.InputInvoice) obj3, (Utilities.Callback) obj2, (org.telegram.ui.Components.yc) obj, tL_error, 11));
+                AndroidUtilities.runOnUIThread(new bf((yh.u5) obj5, tLObject, (MessageObject) obj4, (TLRPC.InputInvoice) obj3, (Utilities.Callback) obj2, (org.telegram.ui.Components.yc) obj, tL_error, 11));
                 break;
         }
     }
 
-    public /* synthetic */ gd(qy0 qy0Var, EditTextBoldCursor editTextBoldCursor, TextView textView, TextView textView2, int[] iArr) {
+    public /* synthetic */ gd(ry0 ry0Var, EditTextBoldCursor editTextBoldCursor, TextView textView, TextView textView2, int[] iArr) {
         this.a = 6;
-        this.c = qy0Var;
+        this.c = ry0Var;
         this.d = editTextBoldCursor;
         this.e = textView;
         this.f = textView2;

@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zb0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -158,32 +158,32 @@ public final /* synthetic */ class zb0 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new nf0(this.b, (Object) tL_error, this.c, 27));
                 break;
             case 20:
-                AndroidUtilities.runOnUIThread(new nf0((j81) this.b, tL_error, (TLRPC.TL_authorization) this.c, 28));
+                AndroidUtilities.runOnUIThread(new nf0((g81) this.b, tL_error, (TLRPC.TL_authorization) this.c, 28));
                 break;
             case 21:
-                AndroidUtilities.runOnUIThread(new zr0((l81) this.b, tLObject, tL_error, (n9) this.c, 14));
+                AndroidUtilities.runOnUIThread(new zr0((i81) this.b, tLObject, tL_error, (n9) this.c, 14));
                 break;
             case 22:
-                AndroidUtilities.runOnUIThread(new zr0((a91) this.b, tL_error, tLObject, (String) this.c, 15));
+                AndroidUtilities.runOnUIThread(new wx0(27, (y81) this.b, (TLRPC.TL_attachMenuBot) this.c));
                 break;
             case 23:
-                AndroidUtilities.runOnUIThread(new wx0(28, (a91) this.b, (TLRPC.TL_attachMenuBot) this.c));
+                AndroidUtilities.runOnUIThread(new zr0((y81) this.b, tL_error, tLObject, (String) this.c, 15));
                 break;
             case 24:
-                ha1 ha1Var = (ha1) this.b;
+                fa1 fa1Var = (fa1) this.b;
                 Utilities.Callback0Return callback0Return = (Utilities.Callback0Return) this.c;
-                int i11 = ha1Var.i;
+                int i11 = fa1Var.i;
                 String str3 = null;
                 if (tL_error == null) {
                     if (tLObject instanceof TL_stats.TL_statsGraph) {
                         try {
-                            jg.b c02 = va1.c0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), i11, ha1Var.m);
+                            jg.b c02 = ta1.c0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), i11, fa1Var.m);
                             try {
                                 str3 = ((TL_stats.TL_statsGraph) tLObject).zoom_token;
                                 if (i11 == 4 && (jArr = c02.a) != null && jArr.length > 0) {
                                     long j3 = jArr[jArr.length - 1];
-                                    ha1Var.e = new jg.e(c02, j3);
-                                    ha1Var.c = j3;
+                                    fa1Var.e = new jg.e(c02, j3);
+                                    fa1Var.c = j3;
                                 }
                                 str2 = str3;
                                 str3 = c02;
@@ -195,7 +195,7 @@ public final /* synthetic */ class zb0 implements RequestDelegate {
                                 if (tLObject instanceof TL_stats.TL_statsGraphError) {
                                 }
                                 str = str2;
-                                AndroidUtilities.runOnUIThread(new zr0(ha1Var, str3, str, callback0Return, 17));
+                                AndroidUtilities.runOnUIThread(new zr0(fa1Var, str3, str, callback0Return, 17));
                                 return;
                             }
                         } catch (JSONException e10) {
@@ -206,43 +206,43 @@ public final /* synthetic */ class zb0 implements RequestDelegate {
                         str2 = null;
                     }
                     if (tLObject instanceof TL_stats.TL_statsGraphError) {
-                        ha1Var.l = false;
-                        ha1Var.a = true;
-                        ha1Var.b = ((TL_stats.TL_statsGraphError) tLObject).error;
+                        fa1Var.l = false;
+                        fa1Var.a = true;
+                        fa1Var.b = ((TL_stats.TL_statsGraphError) tLObject).error;
                     }
                     str = str2;
                 } else {
                     str = null;
                 }
-                AndroidUtilities.runOnUIThread(new zr0(ha1Var, str3, str, callback0Return, 17));
+                AndroidUtilities.runOnUIThread(new zr0(fa1Var, str3, str, callback0Return, 17));
                 break;
             case 25:
-                AndroidUtilities.runOnUIThread(new td1((wd1) this.b, (String) this.c, tL_error, 0));
+                AndroidUtilities.runOnUIThread(new rd1((ud1) this.b, (String) this.c, tL_error, 0));
                 break;
             case 26:
-                wd1 wd1Var = (wd1) this.b;
+                ud1 ud1Var = (ud1) this.b;
                 TL_account.updateTheme updatetheme = (TL_account.updateTheme) this.c;
                 if (!(tLObject instanceof TLRPC.TL_theme)) {
-                    AndroidUtilities.runOnUIThread(new td1(wd1Var, tL_error, updatetheme));
+                    AndroidUtilities.runOnUIThread(new rd1(ud1Var, tL_error, updatetheme));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new g91(6, wd1Var, (TLRPC.TL_theme) tLObject));
+                    AndroidUtilities.runOnUIThread(new e91(6, ud1Var, (TLRPC.TL_theme) tLObject));
                     break;
                 }
             case 27:
-                AndroidUtilities.runOnUIThread(new td1((uf1) this.b, (String) this.c, tLObject, 5));
+                AndroidUtilities.runOnUIThread(new rd1((sf1) this.b, (String) this.c, tLObject, 5));
                 break;
             case 28:
-                AndroidUtilities.runOnUIThread(new zr0((bh1) this.b, tLObject, (String) this.c, tL_error, 20));
+                AndroidUtilities.runOnUIThread(new zr0((zg1) this.b, tLObject, (String) this.c, tL_error, 20));
                 break;
             default:
-                bh1 bh1Var = (bh1) this.b;
+                zg1 zg1Var = (zg1) this.b;
                 byte[] bArr = (byte[]) this.c;
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new xg1(bh1Var, tL_error, 3));
+                    AndroidUtilities.runOnUIThread(new vg1(zg1Var, tL_error, 3));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new vg1(bh1Var, bArr, 1));
+                    AndroidUtilities.runOnUIThread(new tg1(zg1Var, bArr, 1));
                     break;
                 }
         }

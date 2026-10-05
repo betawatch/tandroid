@@ -11,12 +11,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class sa {
     public static CharSequence[] y;
@@ -29,8 +29,8 @@ public final class sa {
     public SpannableStringBuilder k;
     public String l;
     public boolean m;
-    public e11 n;
-    public e11 o;
+    public f11 n;
+    public f11 o;
     public boolean p;
     public boolean q;
     public View r;
@@ -68,11 +68,11 @@ public final class sa {
                 charSequence = "";
             }
             TLRPC.Document document = this.g;
-            this.n = new e11(charSequence, document != null ? 12.0f : 14.0f, document != null ? null : AndroidUtilities.bold());
+            this.n = new f11(charSequence, document != null ? 12.0f : 14.0f, document != null ? null : AndroidUtilities.bold());
         }
         if (this.o == null || this.m) {
             String str = this.l;
-            this.o = new e11(str != null ? str : "", 14.0f, null);
+            this.o = new f11(str != null ? str : "", 14.0f, null);
         }
         float e7 = this.h.e(this.f);
         Paint paint = this.t;
@@ -111,13 +111,13 @@ public final class sa {
         if (f10 < f7) {
             dp = (int) Math.min(AndroidUtilities.dp(12.0f) + dp, f7 - AndroidUtilities.dp(20.0f));
         }
-        e11 e11Var = this.n;
+        f11 f11Var = this.n;
         float f12 = dp;
-        e11Var.p = f12;
-        e11Var.c(AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(7.0f), e7), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(11.0f), e7), 1.0f, -1, canvas);
-        e11 e11Var2 = this.o;
-        e11Var2.p = f12;
-        e11Var2.c(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(30.0f), f11, -1, canvas);
+        f11Var.p = f12;
+        f11Var.c(AndroidUtilities.lerp(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(7.0f), e7), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(11.0f), e7), 1.0f, -1, canvas);
+        f11 f11Var2 = this.o;
+        f11Var2.p = f12;
+        f11Var2.c(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(30.0f), f11, -1, canvas);
         canvas.restore();
     }
 

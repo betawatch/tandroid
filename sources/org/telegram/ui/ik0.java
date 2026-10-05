@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.NotificationsSettingsFacade;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ik0 implements org.telegram.ui.Components.ro {
     public final /* synthetic */ long a;
@@ -99,8 +99,8 @@ public final class ik0 implements org.telegram.ui.Components.ro {
     public final void l() {
         long j3 = this.a;
         if (j3 != 0) {
-            p11 p11Var = new p11(t8.b.f(j3, "dialog_id"), null);
-            p11Var.r = new g(this, 28);
+            p11 p11Var = new p11(sa.e.f(j3, "dialog_id"), null);
+            p11Var.s = new g(this, 28);
             this.h.presentFragment(p11Var);
         }
     }

@@ -4,36 +4,36 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.e71;
 import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.q90;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.yb;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class p2 extends f61 {
+public final class p2 extends g61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        f61.setup(new p2());
+        g61.setup(new p2());
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final void bindView(View view, g61 g61Var, boolean z10, u61 u61Var, c71 c71Var) {
+    @Override // org.telegram.ui.Components.g61
+    public final void bindView(View view, h61 h61Var, boolean z10, w61 w61Var, e71 e71Var) {
         q90 q90Var = (q90) view;
-        q90Var.setGravity(g61Var.z);
-        q90Var.setTextColor((int) g61Var.B);
-        q90Var.setTextSize(1, g61Var.A);
-        q90Var.setTypeface(g61Var.q ? AndroidUtilities.bold() : null);
-        int i10 = g61Var.i;
-        q90Var.setPadding(i10, 0, i10, g61Var.k);
-        q90Var.setText(g61Var.l);
+        q90Var.setGravity(h61Var.z);
+        q90Var.setTextColor((int) h61Var.B);
+        q90Var.setTextSize(1, h61Var.A);
+        q90Var.setTypeface(h61Var.q ? AndroidUtilities.bold() : null);
+        int i10 = h61Var.i;
+        q90Var.setPadding(i10, 0, i10, h61Var.k);
+        q90Var.setText(h61Var.l);
     }
 
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.g61
     public final View createView(Context context, zl0 zl0Var, int i10, int i11, d6 d6Var) {
         return new yb(context, 5, null);
     }

@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class di implements TextWatcher {
     public boolean a;
@@ -84,15 +84,15 @@ public final class di implements TextWatcher {
         }
         if (!xiVar.i2 && !MessagesController.getInstance(i11).premiumFeaturesBlocked() && !UserConfig.getInstance(i11).isPremium() && xiVar.L > MessagesController.getInstance(i11).captionLengthLimitDefault && xiVar.L < MessagesController.getInstance(i11).captionLengthLimitPremium) {
             xiVar.i2 = true;
-            xiVar.L1(this.c);
+            xiVar.N1(this.c);
         }
         if (xiVar.c0) {
             if (biVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(biVar.getText().toString().trim())) {
                 z11 = true;
             }
-            xiVar.J1(z11);
+            xiVar.L1(z11);
         }
-        xiVar.b1(true);
+        xiVar.d1(true);
     }
 
     @Override // android.text.TextWatcher
@@ -107,7 +107,7 @@ public final class di implements TextWatcher {
         if (xiVar.B2.getAdapter() != null) {
             xiVar.B2.setReversed(true);
             xiVar.B2.getAdapter().U(charSequence, xiVar.P0.getEditText().getSelectionStart(), null, false, false);
-            xiVar.R1();
+            xiVar.T1();
         }
     }
 

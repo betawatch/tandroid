@@ -47,13 +47,13 @@ public final class x1 extends o1 implements Cloneable {
         }
         byte[] bArr2 = n1.d;
         if (!Arrays.equals(bArr, bArr2)) {
-            mVar.D(4, bArr);
+            mVar.H(4, bArr);
         }
         if (!Arrays.equals(this.f, bArr2)) {
-            mVar.D(6, this.f);
+            mVar.H(6, this.f);
         }
         if (str4 != null && !str4.equals("")) {
-            mVar.z(8, str4);
+            mVar.G(8, str4);
         }
         int i11 = this.c;
         if (i11 != 0) {
@@ -65,10 +65,10 @@ public final class x1 extends o1 implements Cloneable {
             }
         }
         if (str3 != null && !str3.equals("")) {
-            mVar.z(13, str3);
+            mVar.G(13, str3);
         }
         if (str2 != null && !str2.equals("")) {
-            mVar.z(14, str2);
+            mVar.G(14, str2);
         }
         long j10 = this.s;
         if (j10 != 180000) {
@@ -81,7 +81,7 @@ public final class x1 extends o1 implements Cloneable {
             mVar.Q(j11);
         }
         if (!Arrays.equals(this.v, bArr2)) {
-            mVar.D(18, this.v);
+            mVar.H(18, this.v);
         }
         int[] iArr = this.x;
         if (iArr != null && iArr.length > 0) {
@@ -102,7 +102,7 @@ public final class x1 extends o1 implements Cloneable {
             }
         }
         if (str != null && !str.equals("")) {
-            mVar.z(24, str);
+            mVar.G(24, str);
         }
         boolean z10 = this.y;
         if (z10) {

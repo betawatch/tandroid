@@ -11,9 +11,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fh implements el, le.k, org.telegram.ui.ActionBar.a2, ol0, li.j, dh.d, li.i, org.telegram.ui.ActionBar.r0, AndroidUtilities.IntColorCallback, wn, d5, gj {
+public final /* synthetic */ class fh implements el, le.k, org.telegram.ui.ActionBar.a2, ol0, li.m, dh.d, li.l, org.telegram.ui.ActionBar.r0, AndroidUtilities.IntColorCallback, wn, d5, gj {
     public final /* synthetic */ int a;
     public final /* synthetic */ xi b;
 
@@ -24,19 +24,19 @@ public final /* synthetic */ class fh implements el, le.k, org.telegram.ui.Actio
 
     @Override // org.telegram.ui.Components.d5
     public void K(int i10, int i11, boolean z10) {
-        boolean D1;
+        boolean F1;
         switch (this.a) {
             case 14:
                 xi xiVar = this.b;
                 pi piVar = xiVar.y0;
                 if (piVar != xiVar.j0 && piVar != xiVar.q0) {
-                    if (!piVar.G(i10, z10, i11, xiVar.p1(), 0L)) {
+                    if (!piVar.G(i10, z10, i11, xiVar.r1(), 0L)) {
                         xiVar.A2 = true;
                         xiVar.dismiss();
                         break;
                     }
                 } else {
-                    xiVar.D1(i10, z10, 0, xiVar.p1(), xiVar.N0);
+                    xiVar.F1(i10, z10, 0, xiVar.r1(), xiVar.N0);
                     break;
                 }
                 break;
@@ -49,16 +49,16 @@ public final /* synthetic */ class fh implements el, le.k, org.telegram.ui.Actio
                 eiVar.setEffect(k10);
                 pi piVar2 = xiVar2.y0;
                 if (piVar2 == xiVar2.j0 || piVar2 == xiVar2.q0) {
-                    D1 = xiVar2.D1(i10, z10, i11, xiVar2.p1(), k10);
+                    F1 = xiVar2.F1(i10, z10, i11, xiVar2.r1(), k10);
                 } else {
-                    if (!piVar2.G(i10, z10, i11, xiVar2.p1(), k10)) {
+                    if (!piVar2.G(i10, z10, i11, xiVar2.r1(), k10)) {
                         xiVar2.dismiss();
                     }
-                    D1 = false;
+                    F1 = false;
                 }
                 of ofVar2 = xiVar2.h0;
                 if (ofVar2 != null) {
-                    ofVar2.h(!D1);
+                    ofVar2.h(!F1);
                     xiVar2.h0 = null;
                     break;
                 }
@@ -83,7 +83,7 @@ public final /* synthetic */ class fh implements el, le.k, org.telegram.ui.Actio
 
     @Override // le.k
     public void c(le.l lVar) {
-        this.b.r1();
+        this.b.t1();
     }
 
     @Override // org.telegram.ui.Components.ol0
@@ -97,7 +97,7 @@ public final /* synthetic */ class fh implements el, le.k, org.telegram.ui.Actio
         if (xiVar.V || (user = qiVar.b) == null) {
             return false;
         }
-        xiVar.t1(qiVar.c, user);
+        xiVar.v1(qiVar.c, user);
         return true;
     }
 
@@ -144,7 +144,7 @@ public final /* synthetic */ class fh implements el, le.k, org.telegram.ui.Actio
         }
     }
 
-    @Override // li.j
+    @Override // li.m
     public int f() {
         xi xiVar = this.b;
         xiVar.getClass();
@@ -215,7 +215,7 @@ public final /* synthetic */ class fh implements el, le.k, org.telegram.ui.Actio
         }
     }
 
-    @Override // li.i
+    @Override // li.l
     public void k(int i10) {
         xi.t(this.b, i10);
     }

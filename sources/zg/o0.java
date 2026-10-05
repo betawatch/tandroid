@@ -1,138 +1,109 @@
 package zg;
 
+import android.graphics.Paint;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import j$.util.Objects;
-import org.telegram.messenger.MessageObject;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.z5;
+import org.telegram.ui.LaunchActivity;
+import yh.m1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class o0 {
-    public boolean a;
-    public boolean b;
-    public long c;
-    public boolean d;
-    public boolean e;
-    public String f;
-    public long g;
-    public long h;
-
-    public static o0 b(String str) {
-        if (str == null) {
-            str = "";
-        }
-        o0 o0Var = new o0();
-        if (!str.startsWith("animated_")) {
-            o0Var.f = str;
-            o0Var.h = str.hashCode();
-            return o0Var;
-        }
-        try {
-            long parseLong = Long.parseLong(str.substring(9));
-            o0Var.g = parseLong;
-            o0Var.h = parseLong;
-            return o0Var;
-        } catch (Exception unused) {
-            o0Var.f = str;
-            o0Var.h = str.hashCode();
-            return o0Var;
+public abstract class o0 {
+    public static void a(TLRPC.TL_availableReaction tL_availableReaction, LinkedHashMap linkedHashMap, ArrayList arrayList, SpannableStringBuilder spannableStringBuilder, m mVar, Paint.FontMetricsInt fontMetricsInt) {
+        TLRPC.Document document = tL_availableReaction.activate_animation;
+        long j3 = document.id;
+        z5 e7 = e(document, Long.valueOf(j3), fontMetricsInt);
+        linkedHashMap.put(Long.valueOf(j3), e7);
+        arrayList.add(Long.valueOf(j3));
+        SpannableString spannableString = new SpannableString(tL_availableReaction.reaction);
+        spannableString.setSpan(e7, 0, spannableString.length(), 33);
+        spannableStringBuilder.append((CharSequence) spannableString);
+        if (mVar != null) {
+            mVar.x(Long.valueOf(j3), false);
         }
     }
 
-    public static o0 c(TLRPC.TL_availableReaction tL_availableReaction) {
-        o0 o0Var = new o0();
-        o0Var.f = tL_availableReaction.reaction;
-        o0Var.h = r3.hashCode();
-        return o0Var;
-    }
-
-    public static o0 d(TLRPC.Reaction reaction) {
-        o0 o0Var = new o0();
-        if (reaction instanceof TLRPC.TL_reactionPaid) {
-            o0Var.a = true;
-            return o0Var;
+    public static void b(TLRPC.Reaction reaction, TLRPC.Reaction reaction2, TL_stories.StoryViews storyViews) {
+        if (storyViews == null) {
+            return;
         }
-        if (reaction instanceof TLRPC.TL_reactionEmoji) {
-            o0Var.f = ((TLRPC.TL_reactionEmoji) reaction).emoticon;
-            o0Var.h = r3.hashCode();
-            return o0Var;
+        int i10 = 0;
+        boolean z10 = false;
+        while (i10 < storyViews.reactions.size()) {
+            TLRPC.ReactionCount reactionCount = storyViews.reactions.get(i10);
+            if (reaction != null && c(reactionCount.reaction, reaction)) {
+                int i11 = reactionCount.count - 1;
+                reactionCount.count = i11;
+                if (i11 <= 0) {
+                    storyViews.reactions.remove(i10);
+                    i10--;
+                    i10++;
+                }
+            }
+            if (reaction2 != null && c(reactionCount.reaction, reaction2)) {
+                reactionCount.count++;
+                z10 = true;
+            }
+            i10++;
         }
-        if (reaction instanceof TLRPC.TL_reactionCustomEmoji) {
-            long j3 = ((TLRPC.TL_reactionCustomEmoji) reaction).document_id;
-            o0Var.g = j3;
-            o0Var.h = j3;
+        if (z10) {
+            return;
         }
-        return o0Var;
+        TLRPC.TL_reactionCount tL_reactionCount = new TLRPC.TL_reactionCount();
+        tL_reactionCount.count = 1;
+        tL_reactionCount.reaction = reaction2;
+        storyViews.reactions.add(tL_reactionCount);
     }
 
-    public static o0 e(TLRPC.TL_availableEffect tL_availableEffect) {
-        o0 o0Var = new o0();
-        o0Var.b = true;
-        long j3 = tL_availableEffect.id;
-        o0Var.c = j3;
-        o0Var.e = tL_availableEffect.effect_animation_id == 0;
-        o0Var.g = tL_availableEffect.effect_sticker_id;
-        o0Var.h = j3;
-        o0Var.d = tL_availableEffect.premium_required;
-        o0Var.f = tL_availableEffect.emoticon;
-        return o0Var;
-    }
-
-    public final o0 a() {
-        String findAnimatedEmojiEmoticon;
-        long j3 = this.g;
-        return (j3 == 0 || (findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(q5.f(UserConfig.selectedAccount, j3), null)) == null) ? this : b(findAnimatedEmojiEmoticon);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
+    public static boolean c(TLRPC.Reaction reaction, TLRPC.Reaction reaction2) {
+        if ((reaction instanceof TLRPC.TL_reactionEmoji) && (reaction2 instanceof TLRPC.TL_reactionEmoji) && TextUtils.equals(((TLRPC.TL_reactionEmoji) reaction).emoticon, ((TLRPC.TL_reactionEmoji) reaction2).emoticon)) {
             return true;
         }
-        if (obj != null && o0.class == obj.getClass()) {
-            o0 o0Var = (o0) obj;
-            if (this.g == o0Var.g && Objects.equals(this.f, o0Var.f)) {
-                return true;
-            }
-        }
-        return false;
+        return (reaction instanceof TLRPC.TL_reactionCustomEmoji) && (reaction2 instanceof TLRPC.TL_reactionCustomEmoji) && ((TLRPC.TL_reactionCustomEmoji) reaction).document_id == ((TLRPC.TL_reactionCustomEmoji) reaction2).document_id;
     }
 
-    public final boolean f(TLRPC.Reaction reaction) {
-        return reaction instanceof TLRPC.TL_reactionEmoji ? TextUtils.equals(((TLRPC.TL_reactionEmoji) reaction).emoticon, this.f) : (reaction instanceof TLRPC.TL_reactionCustomEmoji) && ((TLRPC.TL_reactionCustomEmoji) reaction).document_id == this.g;
+    public static boolean d(TLRPC.Reaction reaction, m0 m0Var) {
+        if ((reaction instanceof TLRPC.TL_reactionEmoji) && m0Var.g == 0 && TextUtils.equals(((TLRPC.TL_reactionEmoji) reaction).emoticon, m0Var.f)) {
+            return true;
+        }
+        if (!(reaction instanceof TLRPC.TL_reactionCustomEmoji)) {
+            return false;
+        }
+        long j3 = m0Var.g;
+        return j3 != 0 && ((TLRPC.TL_reactionCustomEmoji) reaction).document_id == j3;
     }
 
-    public final TLRPC.Reaction g() {
-        if (this.a) {
-            return new TLRPC.TL_reactionPaid();
+    public static z5 e(TLRPC.Document document, Long l4, Paint.FontMetricsInt fontMetricsInt) {
+        z5 z5Var;
+        if (document != null) {
+            z5Var = new z5(document.id, 1.0f, fontMetricsInt);
+            z5Var.document = document;
+        } else {
+            z5Var = new z5(l4.longValue(), 1.0f, fontMetricsInt);
         }
-        if (this.f != null) {
-            TLRPC.TL_reactionEmoji tL_reactionEmoji = new TLRPC.TL_reactionEmoji();
-            tL_reactionEmoji.emoticon = this.f;
-            return tL_reactionEmoji;
-        }
-        TLRPC.TL_reactionCustomEmoji tL_reactionCustomEmoji = new TLRPC.TL_reactionCustomEmoji();
-        tL_reactionCustomEmoji.document_id = this.g;
-        return tL_reactionCustomEmoji;
+        z5Var.cacheType = q5.g();
+        return z5Var;
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.f, Long.valueOf(this.g));
-    }
-
-    public final String toString() {
-        TLRPC.Document f7;
-        if (!TextUtils.isEmpty(this.f)) {
-            return this.f;
+    public static void f(long j3, int i10, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
+        n2 R = LaunchActivity.R();
+        if (R == null || tL_premium_boostsStatus == null) {
+            return;
         }
-        long j3 = this.g;
-        if (j3 != 0 && (f7 = q5.f(UserConfig.selectedAccount, j3)) != null) {
-            return MessageObject.findAnimatedEmojiEmoticon(f7, null);
-        }
-        StringBuilder sb2 = new StringBuilder("VisibleReaction{");
-        sb2.append(this.g);
-        sb2.append(", ");
-        return a4.a.s(sb2, this.f, "}");
+        rg.k0 k0Var = new rg.k0(21, UserConfig.selectedAccount, R.getContext(), R, R.getResourceProvider());
+        k0Var.R0 = i10;
+        k0Var.F1(tL_premium_boostsStatus, true);
+        k0Var.H1(j3);
+        k0Var.Q0 = new m1(R, j3);
+        k0Var.show();
     }
 }

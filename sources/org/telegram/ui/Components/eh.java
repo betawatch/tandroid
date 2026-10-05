@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class eh extends g6 {
     public ch.d s;
@@ -123,7 +123,7 @@ public final class eh extends g6 {
         if (dVar != null) {
             dVar.setAlpha((int) (f10 * 255.0f));
             this.s.setBounds(getPaddingLeft() - AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f) + (getMeasuredWidth() - getPaddingRight()), getPaddingBottom() + getPaddingTop() + ((int) f7));
-            this.s.z(Math.min(AndroidUtilities.dp(18.0f), f7 / 2.0f));
+            this.s.y(Math.min(AndroidUtilities.dp(18.0f), f7 / 2.0f));
         }
     }
 

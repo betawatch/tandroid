@@ -25,10 +25,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.Components.pv0;
-import z3.o;
+import org.telegram.ui.Components.qv0;
+import z3.n;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements m, x0, z0, RequestDelegateTimestamp, a2, MessagesStorage.StringCallback, e2.h {
     public final /* synthetic */ int a;
@@ -45,23 +45,23 @@ public final /* synthetic */ class d implements m, x0, z0, RequestDelegateTimest
 
     @Override // e2.h
     public void accept(Object obj) {
-        o oVar = (o) this.d;
+        n nVar = (n) this.d;
         z3.a aVar = (z3.a) obj;
-        e2.d.h(oVar.h);
+        e2.d.h(nVar.h);
         byte[] C2 = ob.a.C2(aVar.a, aVar.c);
-        v vVar = oVar.c;
+        v vVar = nVar.c;
         vVar.getClass();
         vVar.H(C2.length, C2);
-        oVar.a.d(C2.length, vVar);
+        nVar.a.d(C2.length, vVar);
         long j3 = aVar.b;
         long j10 = this.c;
         if (j3 == -9223372036854775807L) {
-            e2.d.g(oVar.h.w == Long.MAX_VALUE);
+            e2.d.g(nVar.h.w == Long.MAX_VALUE);
         } else {
-            long j11 = oVar.h.w;
+            long j11 = nVar.h.w;
             j10 = j11 == Long.MAX_VALUE ? j10 + j3 : j3 + j11;
         }
-        oVar.a.c(j10, this.b | 1, C2.length, 0, null);
+        nVar.a.c(j10, this.b | 1, C2.length, 0, null);
     }
 
     @Override // m4.x0
@@ -160,7 +160,7 @@ public final /* synthetic */ class d implements m, x0, z0, RequestDelegateTimest
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        pv0.i((pv0) this.d, this.c, this.b, str);
+        qv0.i((qv0) this.d, this.c, this.b, str);
     }
 
     public /* synthetic */ d(a aVar, int i10, long j3, long j10) {

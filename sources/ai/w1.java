@@ -19,12 +19,12 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.ui.Components.cw0;
 import org.telegram.ui.Components.dw0;
+import org.telegram.ui.Components.ew0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallback, cw0, dw0, org.telegram.ui.ActionBar.a2, d9.e, i5.e, GenericProvider, Utilities.Callback2Return, Continuation, q9.d {
+public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallback, dw0, ew0, org.telegram.ui.ActionBar.a2, d9.e, i5.e, GenericProvider, Utilities.Callback2Return, Continuation, q9.d {
     public final /* synthetic */ int a;
 
     public /* synthetic */ w1(int i10) {
@@ -261,7 +261,7 @@ public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallb
                 hVar.getClass();
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 try {
-                    hVar.y(eVar, byteArrayOutputStream);
+                    hVar.t(eVar, byteArrayOutputStream);
                 } catch (IOException unused) {
                 }
                 return byteArrayOutputStream.toByteArray();
@@ -271,7 +271,7 @@ public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallb
         }
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.ew0
     public void b(Object obj, float f7) {
         m2 m2Var = (m2) obj;
         switch (this.a) {
@@ -302,7 +302,7 @@ public final /* synthetic */ class w1 implements NativeInstance.AudioLevelsCallb
         }
     }
 
-    @Override // org.telegram.ui.Components.cw0
+    @Override // org.telegram.ui.Components.dw0
     public float get(Object obj) {
         m2 m2Var = (m2) obj;
         switch (this.a) {

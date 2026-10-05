@@ -8,7 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import ch.f;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class b implements a {
     public final Paint a;
@@ -45,6 +45,11 @@ public final class b implements a {
         }
     }
 
+    @Override // fh.a
+    public final ch.d b() {
+        return new f(this);
+    }
+
     public final void c(int i10, int i11) {
         if (this.h == i10 && this.n == i11) {
             return;
@@ -78,13 +83,8 @@ public final class b implements a {
         matrix.postTranslate((f7 - (f10 * max)) * 0.5f, ((f11 - (f12 * max)) * 0.5f) + 0);
     }
 
-    @Override // fh.a
-    public final ch.d f() {
-        return new f(this);
-    }
-
     @Override // oi.a
-    public final void y(Canvas canvas, float f7, float f10, float f11, float f12) {
+    public final void v(Canvas canvas, float f7, float f10, float f11, float f12) {
         Bitmap bitmap = this.d;
         if (bitmap == null || bitmap.isRecycled() || this.c == null) {
             return;
@@ -95,9 +95,5 @@ public final class b implements a {
         matrix.postTranslate(f7, f10);
         this.c.setLocalMatrix(matrix2);
         canvas.drawRect(f7, f10, f11, f12, this.a);
-    }
-
-    @Override // fh.a
-    public final /* synthetic */ void b() {
     }
 }

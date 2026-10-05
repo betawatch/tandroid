@@ -2,14 +2,13 @@ package o2;
 
 import com.google.android.gms.internal.cast.b5;
 import e2.d0;
-import hg.k0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import n4.y;
 import u2.c1;
 import v7.y7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class m implements c1 {
     public final int a;
@@ -27,7 +26,7 @@ public final class m implements c1 {
         q qVar = this.b;
         if (i10 == -2) {
             qVar.e();
-            throw new b5(a4.a.p("Unable to bind a sample queue to TrackGroup with MIME type ", qVar.Y.a(this.a).d[0].r, "."));
+            throw new b5(a4.a.q("Unable to bind a sample queue to TrackGroup with MIME type ", qVar.Y.a(this.a).d[0].r, "."));
         }
         if (i10 == -1) {
             qVar.C();
@@ -155,7 +154,7 @@ public final class m implements c1 {
         ArrayList arrayList = qVar.y;
         if (arrayList != null) {
             if (!arrayList.isEmpty()) {
-                obj = k0.g(1, arrayList);
+                obj = hg.c.g(1, arrayList);
             }
             obj = null;
         } else {

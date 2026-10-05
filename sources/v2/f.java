@@ -4,7 +4,7 @@ import n4.y;
 import u2.b1;
 import u2.c1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class f implements c1 {
     public final h a;
@@ -35,13 +35,13 @@ public final class f implements c1 {
     @Override // u2.c1
     public final boolean e() {
         h hVar = this.e;
-        return !hVar.y() && this.b.x(hVar.O);
+        return !hVar.w() && this.b.x(hVar.O);
     }
 
     @Override // u2.c1
     public final int f(y yVar, h2.h hVar, int i10) {
         h hVar2 = this.e;
-        if (hVar2.y()) {
+        if (hVar2.w()) {
             return -3;
         }
         a aVar = hVar2.L;
@@ -56,7 +56,7 @@ public final class f implements c1 {
     @Override // u2.c1
     public final int j(long j3) {
         h hVar = this.e;
-        if (hVar.y()) {
+        if (hVar.w()) {
             return 0;
         }
         boolean z10 = hVar.O;

@@ -8,7 +8,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class p60 extends org.telegram.ui.Components.zl0 {
     public final /* synthetic */ int e3;
@@ -25,7 +25,7 @@ public final class p60 extends org.telegram.ui.Components.zl0 {
     public boolean I0(View view, float f7, float f10) {
         switch (this.e3) {
             case 3:
-                ((yh.s0) this.f3).getClass();
+                ((yh.t0) this.f3).getClass();
                 return true;
             default:
                 return super.I0(view, f7, f10);
@@ -33,7 +33,7 @@ public final class p60 extends org.telegram.ui.Components.zl0 {
     }
 
     @Override // org.telegram.ui.Components.zl0
-    public Integer X0(int i10) {
+    public Integer W0(int i10) {
         int i11;
         switch (this.e3) {
             case 2:
@@ -41,7 +41,7 @@ public final class p60 extends org.telegram.ui.Components.zl0 {
                 org.telegram.ui.ActionBar.d6 d6Var = this.p2;
                 return i10 == i11 ? Integer.valueOf(org.telegram.ui.ActionBar.i6.l1(0.1f, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.p7, d6Var))) : Integer.valueOf(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, d6Var));
             default:
-                return super.X0(i10);
+                return super.W0(i10);
         }
     }
 
@@ -120,10 +120,8 @@ public final class p60 extends org.telegram.ui.Components.zl0 {
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         switch (this.e3) {
             case 3:
-                yh.s0 s0Var = (yh.s0) this.f3;
-                s0Var.s();
+                ((yh.t0) this.f3).s();
                 super.onLayout(z10, i10, i11, i12, i13);
-                s0Var.O(2);
                 break;
             default:
                 super.onLayout(z10, i10, i11, i12, i13);

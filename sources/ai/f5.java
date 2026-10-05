@@ -4,9 +4,9 @@ import android.content.DialogInterface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.cg0;
-import org.telegram.ui.g31;
+import org.telegram.ui.e31;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f5 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class f5 implements DialogInterface.OnDismissListen
                 }
                 break;
             case 2:
-                AndroidUtilities.hideKeyboard((hg.s) this.b);
+                AndroidUtilities.hideKeyboard((hg.t) this.b);
                 break;
             case 3:
                 AndroidUtilities.hideKeyboard((hg.r1) this.b);
@@ -86,7 +86,7 @@ public final /* synthetic */ class f5 implements DialogInterface.OnDismissListen
                 ((wh.n) this.b).s = null;
                 break;
             case 12:
-                ((g31) this.b).run();
+                ((e31) this.b).run();
                 break;
             case 13:
                 AndroidUtilities.hideKeyboard((EditTextBoldCursor) this.b);

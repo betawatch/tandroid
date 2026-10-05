@@ -6,9 +6,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class jd extends org.telegram.ui.Components.lw0 {
+public final class jd extends org.telegram.ui.Components.mw0 {
     public final /* synthetic */ int w0;
     public boolean x0;
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 y0;
@@ -40,7 +40,7 @@ public final class jd extends org.telegram.ui.Components.lw0 {
     /* JADX WARN: Removed duplicated region for block: B:85:0x0170  */
     /* JADX WARN: Removed duplicated region for block: B:87:0x017a  */
     /* JADX WARN: Removed duplicated region for block: B:94:0x0154  */
-    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

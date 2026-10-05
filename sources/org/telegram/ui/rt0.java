@@ -11,7 +11,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class rt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final class rt0 extends AnimatorListenerAdapter {
         }
         Bitmap bitmap = photoViewer.C4.getBitmap();
         if (bitmap != null || photoViewer.r1) {
-            photoViewer.C1.b(bitmap, photoViewer.C4.getOrientation(), photoViewer.c2 != 1, false, photoViewer.D1, photoViewer.r1 ? (org.telegram.ui.Components.t71) photoViewer.B2 : null, nu0Var.c);
+            photoViewer.C1.b(bitmap, photoViewer.C4.getOrientation(), photoViewer.c2 != 1, false, photoViewer.D1, photoViewer.r1 ? (org.telegram.ui.Components.u71) photoViewer.B2 : null, nu0Var.c);
             photoViewer.C1.a();
             int bitmapWidth = photoViewer.C4.getBitmapWidth();
             int bitmapHeight = photoViewer.C4.getBitmapHeight();

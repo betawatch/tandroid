@@ -34,7 +34,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class nb implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ sb a;
@@ -208,17 +208,17 @@ public final class nb implements org.telegram.ui.Cells.l1 {
             return;
         }
         MessageObject messageObject = u1Var.getMessageObject();
-        if (characterStyle instanceof org.telegram.ui.Components.j61) {
-            org.telegram.ui.Components.j61 j61Var = (org.telegram.ui.Components.j61) characterStyle;
-            AndroidUtilities.addToClipboard(j61Var.a.subSequence(j61Var.b, j61Var.c).toString());
+        if (characterStyle instanceof org.telegram.ui.Components.k61) {
+            org.telegram.ui.Components.k61 k61Var = (org.telegram.ui.Components.k61) characterStyle;
+            AndroidUtilities.addToClipboard(k61Var.a.subSequence(k61Var.b, k61Var.c).toString());
             if (AndroidUtilities.shouldShowClipboardToast()) {
                 Toast.makeText(wbVar.getParentActivity(), LocaleController.getString(R.string.TextCopied), 0).show();
                 return;
             }
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.n61) {
-            Long parseLong = Utilities.parseLong(((org.telegram.ui.Components.n61) characterStyle).getURL());
+        if (characterStyle instanceof org.telegram.ui.Components.o61) {
+            Long parseLong = Utilities.parseLong(((org.telegram.ui.Components.o61) characterStyle).getURL());
             long longValue = parseLong.longValue();
             if (longValue > 0) {
                 i13 = ((org.telegram.ui.ActionBar.n2) wbVar).currentAccount;
@@ -239,8 +239,8 @@ public final class nb implements org.telegram.ui.Cells.l1 {
             }
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.k61) {
-            String url = ((org.telegram.ui.Components.k61) characterStyle).getURL();
+        if (characterStyle instanceof org.telegram.ui.Components.l61) {
+            String url = ((org.telegram.ui.Components.l61) characterStyle).getURL();
             if (url.startsWith("@")) {
                 i10 = ((org.telegram.ui.ActionBar.n2) wbVar).currentAccount;
                 MessagesController.getInstance(i10).openByUserName(url.substring(1), wbVar, 0);
@@ -268,8 +268,8 @@ public final class nb implements org.telegram.ui.Cells.l1 {
             wbVar.showDialog(f3Var);
             return;
         }
-        if (characterStyle instanceof org.telegram.ui.Components.m61) {
-            String url3 = ((org.telegram.ui.Components.m61) characterStyle).getURL();
+        if (characterStyle instanceof org.telegram.ui.Components.n61) {
+            String url3 = ((org.telegram.ui.Components.n61) characterStyle).getURL();
             if (nf.f.f(Uri.parse(url3), false, null)) {
                 nf.f.o(wbVar.getParentActivity(), url3, true);
                 return;
@@ -493,7 +493,7 @@ public final class nb implements org.telegram.ui.Cells.l1 {
         if (wbVar.getParentActivity() == null) {
             return;
         }
-        wbVar.showDialog(org.telegram.ui.Components.zq0.K0(sbVar.c, u1Var.getMessageObject(), null, ChatObject.isChannel(wbVar.f) && !wbVar.f.megagroup, null));
+        wbVar.showDialog(org.telegram.ui.Components.br0.K0(sbVar.c, u1Var.getMessageObject(), null, ChatObject.isChannel(wbVar.f) && !wbVar.f.megagroup, null));
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -522,7 +522,7 @@ public final class nb implements org.telegram.ui.Cells.l1 {
         wb wbVar = this.a.n;
         MessageObject messageObject = u1Var.getMessageObject();
         if (messageObject.getInputStickerSet() != null) {
-            wbVar.showDialog(new org.telegram.ui.Components.qy0(wbVar.getParentActivity(), wbVar, messageObject.getInputStickerSet(), null, null, null));
+            wbVar.showDialog(new org.telegram.ui.Components.ry0(wbVar.getParentActivity(), wbVar, messageObject.getInputStickerSet(), null, null, null));
             return;
         }
         File file2 = null;
@@ -593,7 +593,7 @@ public final class nb implements org.telegram.ui.Cells.l1 {
                 }
                 org.telegram.ui.ActionBar.h6 u10 = org.telegram.ui.ActionBar.i6.u(file, messageObject.getDocumentName(), null, true);
                 if (u10 != null) {
-                    wbVar.presentFragment(new rd1(u10));
+                    wbVar.presentFragment(new pd1(u10));
                     return;
                 }
                 wbVar.g0 = -1;

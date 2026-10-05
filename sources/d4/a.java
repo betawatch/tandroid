@@ -13,7 +13,6 @@ import com.google.android.gms.internal.vision.e2;
 import e2.d0;
 import e2.h;
 import e2.v;
-import hg.k0;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -24,14 +23,15 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
+import sa.e;
 import v7.r6;
 import v7.y7;
+import z3.l;
 import z3.m;
-import z3.n;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class a implements n {
+public final class a implements m {
     public static final Pattern h = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)");
     public final boolean a;
     public final b4.b b;
@@ -87,18 +87,13 @@ public final class a implements n {
         return (Long.parseLong(matcher.group(4)) * 10000) + (Long.parseLong(matcher.group(3)) * 1000000) + (Long.parseLong(matcher.group(2)) * 60000000) + (Long.parseLong(group) * 3600000000L);
     }
 
-    @Override // z3.n
-    public final int A() {
-        return 1;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:28:0x00c2  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x00ca  */
-    @Override // z3.n
+    @Override // z3.m
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void F(byte[] bArr, int i10, int i11, m mVar, h hVar) {
+    public final void E(byte[] bArr, int i10, int i11, l lVar, h hVar) {
         Charset charset;
         long j3;
         b4.b bVar;
@@ -130,7 +125,7 @@ public final class a implements n {
         int i23;
         int i24;
         a aVar = this;
-        long j10 = mVar.a;
+        long j10 = lVar.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         v vVar2 = aVar.c;
@@ -149,7 +144,7 @@ public final class a implements n {
             String k10 = vVar2.k(F);
             if (k10 == null) {
                 long j11 = j10;
-                ArrayList arrayList3 = (j11 == -9223372036854775807L || !mVar.b) ? null : new ArrayList();
+                ArrayList arrayList3 = (j11 == -9223372036854775807L || !lVar.b) ? null : new ArrayList();
                 for (int i25 = 0; i25 < arrayList.size(); i25++) {
                     List list = (List) arrayList.get(i25);
                     if (!list.isEmpty() || i25 == 0) {
@@ -641,7 +636,7 @@ public final class a implements n {
                                         int length2 = split3.length;
                                         String str = d0.a;
                                         Locale locale = Locale.US;
-                                        StringBuilder k13 = k0.k("Skipping malformed 'Style:' line (expected ", i24, " values, found ", length2, "): '");
+                                        StringBuilder k13 = hg.c.k("Skipping malformed 'Style:' line (expected ", i24, " values, found ", length2, "): '");
                                         k13.append(k12);
                                         k13.append("'");
                                         e2.a.n("SsaStyle", k13.toString());
@@ -717,12 +712,17 @@ public final class a implements n {
         }
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public final /* synthetic */ z3.d h(int i10, int i11, byte[] bArr) {
-        return t8.b.a(this, bArr, i11);
+        return e.a(this, bArr, i11);
     }
 
-    @Override // z3.n
+    @Override // z3.m
+    public final int y() {
+        return 1;
+    }
+
+    @Override // z3.m
     public final /* synthetic */ void reset() {
     }
 }

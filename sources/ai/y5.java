@@ -9,17 +9,16 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.cw;
 import org.telegram.ui.ff0;
 import org.telegram.ui.k70;
 import org.telegram.ui.nd;
 import org.telegram.ui.to;
-import org.telegram.ui.yi1;
-import org.telegram.ui.zi1;
+import org.telegram.ui.wi1;
+import org.telegram.ui.xi1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class y5 extends org.telegram.ui.Components.w9 {
     public final /* synthetic */ int G;
@@ -90,7 +89,7 @@ public final class y5 extends org.telegram.ui.Components.w9 {
                 super.onDraw(canvas);
                 org.telegram.ui.Cells.db dbVar = (org.telegram.ui.Cells.db) this.H;
                 Object obj = dbVar.h;
-                if ((obj instanceof yi1) || (obj instanceof zi1)) {
+                if ((obj instanceof wi1) || (obj instanceof xi1)) {
                     canvas.drawLine(1.0f, 0.0f, getMeasuredWidth() - 1, 0.0f, dbVar.n.n);
                     canvas2 = canvas;
                     canvas2.drawLine(0.0f, 0.0f, 0.0f, getMeasuredHeight(), dbVar.n.n);
@@ -105,7 +104,7 @@ public final class y5 extends org.telegram.ui.Components.w9 {
                     int measuredHeight = getMeasuredHeight() / 2;
                     canvas2.drawCircle(measuredWidth, measuredHeight, AndroidUtilities.dp(20.0f), dbVar.n.r);
                     Drawable drawable = dbVar.n.v;
-                    drawable.setBounds(org.telegram.ui.Cells.c1.e(2, measuredWidth, drawable), ok.d(2, measuredHeight, dbVar.n.v), org.telegram.ui.Cells.c1.w(2, measuredWidth, dbVar.n.v), org.telegram.ui.Cells.c1.t(2, measuredHeight, dbVar.n.v));
+                    drawable.setBounds(org.telegram.ui.Cells.c1.t(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.e(2, measuredHeight, dbVar.n.v), org.telegram.ui.Cells.c1.x(2, measuredWidth, dbVar.n.v), org.telegram.ui.Cells.c1.w(2, measuredHeight, dbVar.n.v));
                     dbVar.n.v.draw(canvas2);
                     break;
                 }
@@ -192,7 +191,7 @@ public final class y5 extends org.telegram.ui.Components.w9 {
                 ((org.telegram.ui.Components.d9) this.H).invalidate();
                 break;
             case 8:
-                if (!zg.e0.b(this)) {
+                if (!zg.c0.b(this)) {
                     super.invalidate();
                     ((cw) this.H).f();
                     break;
@@ -240,7 +239,7 @@ public final class y5 extends org.telegram.ui.Components.w9 {
                 ((org.telegram.ui.Components.d9) this.H).invalidate();
                 break;
             case 8:
-                if (!zg.e0.b(this)) {
+                if (!zg.c0.b(this)) {
                     super.invalidate(i10, i11, i12, i13);
                     break;
                 }

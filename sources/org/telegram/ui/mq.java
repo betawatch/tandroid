@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class mq extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean A0;
@@ -1143,7 +1143,7 @@ public class mq extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                 return;
             }
             if (mqVar.getParentActivity() == null || AccountInstance.getInstance(mqVar.currentAccount).getUserConfig().isPremium()) {
-                mqVar.presentFragment(new ne1(1));
+                mqVar.presentFragment(new le1(1));
                 return;
             } else {
                 mqVar.showDialog(new rg.k0(5, mqVar.currentAccount, mqVar.getParentActivity(), mqVar, null));
@@ -1185,7 +1185,7 @@ public class mq extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i12, false));
         textView2.setTextSize(1, 16.0f);
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        org.telegram.messenger.f0.m(R.string.EditAdminTransferAlertText1, textView2);
+        org.telegram.messenger.q.m(R.string.EditAdminTransferAlertText1, textView2);
         if (LocaleController.isRTL) {
             linearLayout2.addView(textView2, w7.z5.n(-1, -2));
             linearLayout2.addView(imageView, w7.z5.q(-2, -2, 5));
@@ -1204,7 +1204,7 @@ public class mq extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         textView3.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i12, false));
         textView3.setTextSize(1, 16.0f);
         textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        org.telegram.messenger.f0.m(R.string.EditAdminTransferAlertText2, textView3);
+        org.telegram.messenger.q.m(R.string.EditAdminTransferAlertText2, textView3);
         if (LocaleController.isRTL) {
             linearLayout3.addView(textView3, w7.z5.n(-1, -2));
             linearLayout3.addView(imageView2, w7.z5.q(-2, -2, 5));
@@ -1368,7 +1368,7 @@ public class mq extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         this.b.setItemAnimator(jVar);
         this.b.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
         x7Var.addView(this.b, w7.z5.c(-1.0f, -1));
-        this.b.s1();
+        this.b.r1();
         this.b.setOnScrollListener(new i3(this, 7));
         this.b.setSectionsDrawBackground(true);
         this.b.setOnItemClickListener(new ai.n6(7, this, context));

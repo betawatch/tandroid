@@ -18,9 +18,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class v30 extends n71 {
+public final class v30 extends o71 {
     public final u30 T;
     public int U;
     public final TLRPC.Chat V;
@@ -119,7 +119,7 @@ public final class v30 extends n71 {
         a0.i iVar;
         ArrayList arrayList;
         a0.i iVar2;
-        tx0 tx0Var = v30Var.s;
+        ux0 ux0Var = v30Var.s;
         a0.i iVar3 = v30Var.a0;
         a0.i iVar4 = v30Var.b0;
         ArrayList arrayList2 = v30Var.X;
@@ -198,13 +198,13 @@ public final class v30 extends n71 {
         yl0 yl0Var2 = v30Var.f;
         if (yl0Var2 != null) {
             yl0Var2.l();
-            if (tx0Var != null && v30Var.f.h() == 0 && v30Var.d0) {
-                tx0Var.e(false, true);
+            if (ux0Var != null && v30Var.f.h() == 0 && v30Var.d0) {
+                ux0Var.e(false, true);
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.n71
+    @Override // org.telegram.ui.Components.o71
     public final void C(MotionEvent motionEvent, ci.h2 h2Var) {
         org.telegram.ui.h60 h60Var = this.g0.a;
         if (h60Var.w0) {
@@ -217,7 +217,7 @@ public final class v30 extends n71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.n71
+    @Override // org.telegram.ui.Components.o71
     public final void E(String str) {
         u30 u30Var = this.T;
         gg.c2 c2Var = u30Var.d;
@@ -254,7 +254,7 @@ public final class v30 extends n71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.n71
+    @Override // org.telegram.ui.Components.o71
     public final void I() {
         this.I = org.telegram.ui.ActionBar.i6.Pg;
         this.J = org.telegram.ui.ActionBar.i6.eg;
@@ -299,9 +299,9 @@ public final class v30 extends n71 {
         TLRPC.ChatFull chatFull = this.W;
         if (isChannel) {
             this.c0 = true;
-            tx0 tx0Var = this.s;
-            if (tx0Var != null) {
-                tx0Var.e(true, false);
+            ux0 ux0Var = this.s;
+            if (ux0Var != null) {
+                ux0Var.e(true, false);
             }
             yl0 yl0Var = this.f;
             if (yl0Var != null) {

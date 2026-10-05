@@ -6,10 +6,10 @@ import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.Components.nj0;
-import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.ry0;
 import org.telegram.ui.Components.wm0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c5 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -61,13 +61,13 @@ public final /* synthetic */ class c5 implements ValueAnimator.AnimatorUpdateLis
                 break;
             case 4:
                 float animatedFraction = valueAnimator.getAnimatedFraction();
-                qy0 qy0Var = (qy0) ((wm0) obj).b;
-                qy0Var.c.setAlpha(animatedFraction);
-                qy0Var.h.setAlpha(animatedFraction);
+                ry0 ry0Var = (ry0) ((wm0) obj).b;
+                ry0Var.c.setAlpha(animatedFraction);
+                ry0Var.h.setAlpha(animatedFraction);
                 if (i12 != 0) {
                     int i14 = (int) ((1.0f - animatedFraction) * i12);
-                    qy0Var.y0(i11 + i14);
-                    qy0Var.c.setTranslationY(i14);
+                    ry0Var.y0(i11 + i14);
+                    ry0Var.c.setTranslationY(i14);
                     break;
                 }
                 break;

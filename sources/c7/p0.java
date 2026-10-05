@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class p0 extends o6.a {
     public static final Parcelable.Creator<p0> CREATOR = new w.a(22);
@@ -39,10 +39,10 @@ public final class p0 extends o6.a {
         String c11 = u6.b.c(s0Var2 == null ? null : s0Var2.u());
         n7.s0 s0Var3 = this.c;
         String c12 = u6.b.c(s0Var3 != null ? s0Var3.u() : null);
-        StringBuilder w10 = a4.a.w("HmacSecretExtension{coseKeyAgreement=", c10, ", saltEnc=", c11, ", saltAuth=");
-        w10.append(c12);
-        w10.append(", getPinUvAuthProtocol=");
-        return a4.a.n(this.d, "}", w10);
+        StringBuilder x10 = a4.a.x("HmacSecretExtension{coseKeyAgreement=", c10, ", saltEnc=", c11, ", saltAuth=");
+        x10.append(c12);
+        x10.append(", getPinUvAuthProtocol=");
+        return a4.a.o(this.d, "}", x10);
     }
 
     @Override // android.os.Parcelable

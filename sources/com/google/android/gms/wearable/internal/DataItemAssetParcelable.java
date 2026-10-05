@@ -9,7 +9,7 @@ import w7.g0;
 import x8.f;
 import y8.c;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class DataItemAssetParcelable extends a implements f, ReflectedParcelable {
     public static final Parcelable.Creator<DataItemAssetParcelable> CREATOR = new c(7);
@@ -42,7 +42,7 @@ public class DataItemAssetParcelable extends a implements f, ReflectedParcelable
             sb2.append(str);
         }
         sb2.append(", key=");
-        return a4.a.s(sb2, this.b, "]");
+        return a4.a.t(sb2, this.b, "]");
     }
 
     @Override // android.os.Parcelable

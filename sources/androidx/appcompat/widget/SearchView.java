@@ -54,7 +54,7 @@ import org.telegram.tgnet.TLObject;
 import r0.i0;
 import w7.p;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class SearchView extends w1 implements k.b {
     public static final f w0;
@@ -99,7 +99,7 @@ public class SearchView extends w1 implements k.b {
     public final q2 u0;
     public final WeakHashMap v0;
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class SearchAutoComplete extends l {
         public int e;
         public SearchView f;
@@ -903,14 +903,14 @@ public class SearchView extends w1 implements k.b {
         this.M = imageView4;
         ImageView imageView5 = (ImageView) findViewById(R.id.search_mag_icon);
         this.T = imageView5;
-        findViewById.setBackground(hVar.F(10));
-        findViewById2.setBackground(hVar.F(14));
-        imageView.setImageDrawable(hVar.F(13));
-        imageView2.setImageDrawable(hVar.F(7));
-        imageView3.setImageDrawable(hVar.F(4));
-        imageView4.setImageDrawable(hVar.F(16));
-        imageView5.setImageDrawable(hVar.F(13));
-        this.U = hVar.F(12);
+        findViewById.setBackground(hVar.A(10));
+        findViewById2.setBackground(hVar.A(14));
+        imageView.setImageDrawable(hVar.A(13));
+        imageView2.setImageDrawable(hVar.A(7));
+        imageView3.setImageDrawable(hVar.A(4));
+        imageView4.setImageDrawable(hVar.A(16));
+        imageView5.setImageDrawable(hVar.A(13));
+        this.U = hVar.A(12);
         p.a(imageView, getResources().getString(R.string.abc_searchview_description_search));
         this.V = obtainStyledAttributes.getResourceId(15, R.layout.abc_search_dropdown_item_icons_2line);
         this.W = obtainStyledAttributes.getResourceId(5, 0);

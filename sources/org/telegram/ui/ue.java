@@ -4,7 +4,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ue implements Runnable {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class ue implements Runnable {
                 break;
             case 7:
                 AndroidUtilities.addToClipboard(this.c);
-                org.telegram.messenger.ok.o(R.string.PhoneCopied, org.telegram.ui.Components.yc.a0(this.b));
+                org.telegram.messenger.bi.n(R.string.PhoneCopied, org.telegram.ui.Components.yc.a0(this.b));
                 break;
             case 8:
                 yn.v1(this.b, this.c);
@@ -62,7 +62,7 @@ public final /* synthetic */ class ue implements Runnable {
                 break;
             case 10:
                 AndroidUtilities.addToClipboard(this.c);
-                org.telegram.messenger.ok.o(R.string.PhoneCopied, org.telegram.ui.Components.yc.a0(this.b));
+                org.telegram.messenger.bi.n(R.string.PhoneCopied, org.telegram.ui.Components.yc.a0(this.b));
                 break;
             default:
                 nf.f.s(this.b.getParentActivity(), "https://fragment.com/username/" + this.c);

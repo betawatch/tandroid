@@ -17,7 +17,6 @@ import com.google.android.play.core.integrity.IntegrityManagerFactory;
 import com.google.android.play.core.integrity.IntegrityTokenRequest;
 import com.google.android.play.core.integrity.IntegrityTokenResponse;
 import ei.s2;
-import hg.k0;
 import i2.a0;
 import j$.util.Objects;
 import j$.util.concurrent.ConcurrentHashMap;
@@ -69,15 +68,14 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.StatsController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.f0;
 import org.telegram.messenger.kh;
 import org.telegram.messenger.voip.m0;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d81;
+import org.telegram.ui.Components.e81;
 import org.telegram.ui.ug0;
 import org.telegram.ui.zr0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class ConnectionsManager extends BaseController {
     private static final int CORE_POOL_SIZE;
@@ -132,7 +130,7 @@ public class ConnectionsManager extends BaseController {
     private AtomicInteger lastRequestToken;
     private final ConcurrentHashMap<Integer, RequestCallbacks> requestCallbacks;
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class GoogleDnsLoadTask extends AsyncTask<Void, Void, NativeByteBuffer> {
         private int currentAccount;
         private int responseDate;
@@ -287,12 +285,12 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public interface INativeTlTest {
         boolean test(long j3);
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class MozillaDnsLoadTask extends AsyncTask<Void, Void, NativeByteBuffer> {
         private int currentAccount;
         private int responseDate;
@@ -421,7 +419,7 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class RequestCallbacks {
         public Runnable onCancelled;
         public RequestDelegateInternal onComplete;
@@ -435,7 +433,7 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class ResolveHostByNameTask extends AsyncTask<Void, Void, ResolvedDomain> {
         private ArrayList<Long> addresses = new ArrayList<>();
         private String currentHostName;
@@ -564,7 +562,7 @@ public class ConnectionsManager extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class ResolvedDomain {
         public ArrayList<String> addresses;
         long ttl;
@@ -622,7 +620,7 @@ public class ConnectionsManager extends BaseController {
         this.connectionState = native_getConnectionState(this.currentAccount);
         File filesDirFixed = ApplicationLoader.getFilesDirFixed();
         if (i10 != 0) {
-            File file = new File(filesDirFixed, k0.h(i10, "account"));
+            File file = new File(filesDirFixed, hg.c.h(i10, "account"));
             file.mkdirs();
             filesDirFixed = file;
         }
@@ -714,7 +712,7 @@ public class ConnectionsManager extends BaseController {
     private String getRegId() {
         String str = SharedConfig.pushString;
         if (!TextUtils.isEmpty(str) && SharedConfig.pushType == 13) {
-            str = t8.b.i("huawei://", str);
+            str = sa.e.i("huawei://", str);
         }
         if (TextUtils.isEmpty(str) && !TextUtils.isEmpty(SharedConfig.pushStringStatus)) {
             str = SharedConfig.pushStringStatus;
@@ -722,10 +720,10 @@ public class ConnectionsManager extends BaseController {
         if (!TextUtils.isEmpty(str)) {
             return str;
         }
-        StringBuilder v = a4.a.v("__", SharedConfig.pushType == 2 ? "FIREBASE" : "HUAWEI", "_GENERATING_SINCE_");
-        v.append(getCurrentTime());
-        v.append("__");
-        String sb2 = v.toString();
+        StringBuilder w10 = a4.a.w("__", SharedConfig.pushType == 2 ? "FIREBASE" : "HUAWEI", "_GENERATING_SINCE_");
+        w10.append(getCurrentTime());
+        w10.append("__");
+        String sb2 = w10.toString();
         SharedConfig.pushStringStatus = sb2;
         return sb2;
     }
@@ -790,7 +788,7 @@ public class ConnectionsManager extends BaseController {
     public static /* synthetic */ void lambda$onIntegrityCheckClassic$25(int i10, long j3, int i11, String str, IntegrityTokenResponse integrityTokenResponse) {
         String str2 = integrityTokenResponse.token();
         if (str2 == null) {
-            StringBuilder j10 = k0.j(i10, "account", ": integrity check gave null token in ");
+            StringBuilder j10 = hg.c.j(i10, "account", ": integrity check gave null token in ");
             j10.append(System.currentTimeMillis() - j3);
             j10.append("ms");
             FileLog.e(j10.toString());
@@ -807,7 +805,7 @@ public class ConnectionsManager extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onIntegrityCheckClassic$26(int i10, long j3, int i11, String str, Exception exc) {
-        StringBuilder j10 = k0.j(i10, "account", ": integrity check failed to give a token in ");
+        StringBuilder j10 = hg.c.j(i10, "account", ": integrity check failed to give a token in ");
         j10.append(System.currentTimeMillis() - j3);
         j10.append("ms");
         FileLog.e(j10.toString(), exc);
@@ -917,8 +915,8 @@ public class ConnectionsManager extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$onUnparsedMessageReceived$12(int i10, TLObject tLObject) {
-        AccountInstance.getInstance(i10).getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
+    public static /* synthetic */ void lambda$onUnparsedMessageReceived$12(int i10, TLRPC.Updates updates) {
+        AccountInstance.getInstance(i10).getMessagesController().processUpdates(updates, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -983,7 +981,7 @@ public class ConnectionsManager extends BaseController {
                 }
                 i17 = 0;
             }
-            if ((i10 & 2) != 0 && d81.k0.isEmpty()) {
+            if ((i10 & 2) != 0 && e81.k0.isEmpty()) {
                 y2.f.b(ApplicationLoader.applicationContext).d(i17, Math.max(0L, (System.currentTimeMillis() - j3) - native_getCurrentPingTime(this.currentAccount)));
             }
             if (BuildVars.DEBUG_PRIVATE_VERSION) {
@@ -1264,10 +1262,10 @@ public class ConnectionsManager extends BaseController {
             wrap.setDataSourceType(TLDataSourceType.NETWORK);
             wrap.reused = true;
             int readInt32 = wrap.readInt32(true);
-            TLObject TLdeserialize = TLClassStore.Instance().TLdeserialize(wrap, readInt32, true);
+            TLRPC.Updates TLdeserialize = TLRPC.Updates.TLdeserialize(wrap, readInt32, true);
             FileLog.dumpUnparsedMessage(TLdeserialize, j10, i10);
             int i11 = 0;
-            if (!(TLdeserialize instanceof TLRPC.Updates)) {
+            if (TLdeserialize == null) {
                 if (BuildVars.LOGS_ENABLED) {
                     FileLog.d(String.format("java received unknown constructor 0x%x", Integer.valueOf(readInt32)));
                 }
@@ -1276,7 +1274,7 @@ public class ConnectionsManager extends BaseController {
                     FileLog.d("java received " + TLdeserialize);
                 }
                 KeepAliveJob.finishJob();
-                Utilities.stageQueue.postRunnable(new h(i10, (TLRPC.Updates) TLdeserialize, i11));
+                Utilities.stageQueue.postRunnable(new h(i10, TLdeserialize, i11));
             }
         } catch (Exception e7) {
             FileLog.e(e7);
@@ -1425,16 +1423,16 @@ public class ConnectionsManager extends BaseController {
 
     public static void setRegId(String str, int i10, String str2) {
         if (!TextUtils.isEmpty(str) && i10 == 13) {
-            str = t8.b.i("huawei://", str);
+            str = sa.e.i("huawei://", str);
         }
         if (!TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
             str2 = str;
         }
         if (TextUtils.isEmpty(str2)) {
-            StringBuilder v = a4.a.v("__", i10 == 2 ? "FIREBASE" : "HUAWEI", "_GENERATING_SINCE_");
-            v.append(getInstance(0).getCurrentTime());
-            v.append("__");
-            str2 = v.toString();
+            StringBuilder w10 = a4.a.w("__", i10 == 2 ? "FIREBASE" : "HUAWEI", "_GENERATING_SINCE_");
+            w10.append(getInstance(0).getCurrentTime());
+            w10.append("__");
+            str2 = w10.toString();
             SharedConfig.pushStringStatus = str2;
         }
         for (int i11 = 0; i11 < 4; i11++) {
@@ -1711,7 +1709,7 @@ public class ConnectionsManager extends BaseController {
                 this.appResumeCount++;
             }
             if (BuildVars.LOGS_ENABLED) {
-                f0.n(this.appResumeCount, new StringBuilder("app resume count "));
+                org.telegram.messenger.q.n(this.appResumeCount, new StringBuilder("app resume count "));
             }
             if (this.appResumeCount < 0) {
                 this.appResumeCount = 0;

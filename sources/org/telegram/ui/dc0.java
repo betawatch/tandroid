@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class dc0 {
     public final LaunchActivity a;
@@ -520,7 +520,7 @@ public final class dc0 {
             return false;
         }
         if (list.isEmpty()) {
-            m(new a91());
+            m(new y81());
             return true;
         }
         String str = (String) list.get(0);
@@ -562,7 +562,7 @@ public final class dc0 {
             }
             if ("language".equalsIgnoreCase(str)) {
                 if ("do-not-translate".equalsIgnoreCase(str2)) {
-                    m(new y31());
+                    m(new w31());
                     return true;
                 }
                 m(new LanguageSelectActivity());
@@ -686,7 +686,7 @@ public final class dc0 {
                                 }
                                 NotificationsSettingsActivity notificationsSettingsActivity = new NotificationsSettingsActivity();
                                 k();
-                                notificationsSettingsActivity.A0(new org.telegram.ui.Components.q21(this, notificationsSettingsActivity, i12, str7, 4));
+                                notificationsSettingsActivity.A0(new org.telegram.ui.Components.r21(this, notificationsSettingsActivity, i12, str7, 4));
                                 return true;
                             }
                             m(new NotificationsSettingsActivity());
@@ -760,14 +760,14 @@ public final class dc0 {
                                 }
                             } else if (!TextUtils.isEmpty(str7) && "passcode".equalsIgnoreCase(str2)) {
                                 yb0 yb0Var = new yb0(this, str7, 1);
-                                org.telegram.ui.ActionBar.n2 b02 = PasscodeActivity.b0();
-                                m(b02);
-                                if (b02 instanceof h) {
-                                    ((h) b02).Z(yb0Var);
+                                org.telegram.ui.ActionBar.n2 h02 = PasscodeActivity.h0();
+                                m(h02);
+                                if (h02 instanceof h) {
+                                    ((h) h02).Z(yb0Var);
                                     return true;
                                 }
-                                if (b02 instanceof PasscodeActivity) {
-                                    ((PasscodeActivity) b02).j0(yb0Var);
+                                if (h02 instanceof PasscodeActivity) {
+                                    ((PasscodeActivity) h02).p0(yb0Var);
                                     return true;
                                 }
                             } else {
@@ -1171,15 +1171,15 @@ public final class dc0 {
                                 LaunchActivity launchActivity = this.a;
                                 if (equalsIgnoreCase2) {
                                     if ("top-up".equalsIgnoreCase(str2)) {
-                                        new yh.n7(launchActivity, null).show();
+                                        new yh.p7(launchActivity, null).show();
                                         return true;
                                     }
                                     if ("stats".equalsIgnoreCase(str2)) {
-                                        m(new yh.g(0, d().getClientUserId()));
+                                        m(new yh.h(0, d().getClientUserId()));
                                         return true;
                                     }
                                     if ("gift".equalsIgnoreCase(str2)) {
-                                        yh.t5.w(i13).u();
+                                        yh.u5.w(i13).u();
                                         tg.m1.e0(1, BirthdayController.getInstance(i13).getState());
                                         return true;
                                     }
@@ -1187,7 +1187,7 @@ public final class dc0 {
                                         m(new ei.f4(d().getClientUserId()));
                                         return true;
                                     }
-                                    m(new yh.x7());
+                                    m(new yh.z7());
                                     return true;
                                 }
                                 if ("premium".equalsIgnoreCase(str)) {
@@ -1230,7 +1230,7 @@ public final class dc0 {
                                     nf.f.s(launchActivity, LocaleController.getString(R.string.PrivacyPolicyUrl));
                                     return true;
                                 }
-                                m(new a91());
+                                m(new y81());
                                 return true;
                             }
                             lc0 lc0Var = new lc0();
@@ -1264,7 +1264,7 @@ public final class dc0 {
                                         break;
                                     }
                                     if (((fc0) arrayList.get(i14)).f == 1) {
-                                        lc0Var.b.f1(new i2.s(lc0Var, i14, 13), 700, true);
+                                        lc0Var.b.e1(new i2.s(lc0Var, i14, 13), 700, true);
                                         return true;
                                     }
                                     i14++;

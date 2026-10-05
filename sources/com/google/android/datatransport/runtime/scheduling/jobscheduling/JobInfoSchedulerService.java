@@ -8,10 +8,10 @@ import da.b;
 import java.util.concurrent.Executor;
 import l5.i;
 import l5.t;
-import org.telegram.ui.Components.q21;
+import org.telegram.ui.Components.r21;
 import org.telegram.ui.web.x1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class JobInfoSchedulerService extends JobService {
     public static final /* synthetic */ int a = 0;
@@ -30,7 +30,7 @@ public class JobInfoSchedulerService extends JobService {
             a2.c = Base64.decode(string2, 0);
         }
         b bVar = t.a().d;
-        ((Executor) bVar.e).execute(new q21(bVar, a2.e(), i11, new x1(15, this, jobParameters), 16));
+        ((Executor) bVar.e).execute(new r21(bVar, a2.e(), i11, new x1(15, this, jobParameters), 16));
         return true;
     }
 

@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class z2 extends h1.b implements View.OnClickListener {
     public static final /* synthetic */ int N = 0;
@@ -172,7 +172,7 @@ public final class z2 extends h1.b implements View.OnClickListener {
                         if (iconResource != 0) {
                             Drawable drawable = packageManager.getDrawable(searchActivity.getPackageName(), iconResource, activityInfo.applicationInfo);
                             if (drawable == null) {
-                                StringBuilder j3 = hg.k0.j(iconResource, "Invalid icon resource ", " for ");
+                                StringBuilder j3 = hg.c.j(iconResource, "Invalid icon resource ", " for ");
                                 j3.append(searchActivity.flattenToShortString());
                                 Log.w("SuggestionsAdapter", j3.toString());
                             } else {

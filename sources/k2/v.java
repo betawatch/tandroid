@@ -38,7 +38,7 @@ import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.uo0;
+import org.telegram.ui.Components.vo0;
 import org.telegram.ui.Components.voip.n1;
 import org.telegram.ui.dr0;
 import org.telegram.ui.vt0;
@@ -52,9 +52,9 @@ import qg.o2;
 import qg.x1;
 import w7.n6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v implements le.d, li.i, m4.z, z0, e2.h, x0, q9.d, Vector.TLDeserializer, GlGenericDrawer.TextureCallback, n1, a2, pg.i0, v1, i8, OnSuccessListener, ImageReceiver.ImageReceiverDelegate {
+public final /* synthetic */ class v implements le.d, li.l, m4.z, z0, e2.h, x0, q9.d, Vector.TLDeserializer, GlGenericDrawer.TextureCallback, n1, a2, pg.i0, v1, i8, OnSuccessListener, ImageReceiver.ImageReceiverDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -67,7 +67,7 @@ public final /* synthetic */ class v implements le.d, li.i, m4.z, z0, e2.h, x0, 
     public Object E(cf.c cVar) {
         switch (this.a) {
             case 9:
-                return new na.c((Context) cVar.a(Context.class), ((k9.h) cVar.a(k9.h.class)).d(), cVar.v(na.d.class), cVar.d(xa.b.class), (Executor) cVar.g((q9.r) this.b));
+                return new na.c((Context) cVar.a(Context.class), ((k9.h) cVar.a(k9.h.class)).d(), cVar.q(na.d.class), cVar.d(xa.b.class), (Executor) cVar.g((q9.r) this.b));
             default:
                 return this.b;
         }
@@ -200,17 +200,17 @@ public final /* synthetic */ class v implements le.d, li.i, m4.z, z0, e2.h, x0, 
         textView.setClickable(a2);
     }
 
-    @Override // li.i
+    @Override // li.l
     public void k(int i10) {
         li.a aVar = (li.a) this.b;
-        li.m mVar = aVar.a;
+        li.p pVar = aVar.a;
         ah.i iVar = aVar.d;
         li.d dVar = aVar.e;
         if (Build.VERSION.SDK_INT < 31 || iVar == null) {
             return;
         }
         if (w7.e0.a(i10, 4) || w7.e0.a(i10, 2)) {
-            ni.a e7 = mVar.e();
+            ni.a e7 = pVar.e();
             ViewGroup viewGroup = aVar.h;
             if (viewGroup != null) {
                 e7.b(viewGroup.getY(), aVar.g.getWidth(), aVar.h.getY() + aVar.h.getHeight());
@@ -240,7 +240,7 @@ public final /* synthetic */ class v implements le.d, li.i, m4.z, z0, e2.h, x0, 
         if (dVar != null) {
             dVar.c = aVar.i;
             dVar.d = aVar.g;
-            boolean z10 = mVar.h > 0;
+            boolean z10 = pVar.h > 0;
             boolean z11 = !z10;
             if (dVar.i != z11) {
                 dVar.i = z11;
@@ -254,8 +254,8 @@ public final /* synthetic */ class v implements le.d, li.i, m4.z, z0, e2.h, x0, 
                 }
                 dVar.f();
             }
-            int i19 = mVar.i;
-            int i20 = mVar.j;
+            int i19 = pVar.i;
+            int i20 = pVar.j;
             dVar.q = i19;
             dVar.r = i20;
             dVar.f();
@@ -334,7 +334,7 @@ public final /* synthetic */ class v implements le.d, li.i, m4.z, z0, e2.h, x0, 
             return;
         }
         Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / 180));
-        AndroidUtilities.runOnUIThread(new uo0(25, uVar, bitmap));
+        AndroidUtilities.runOnUIThread(new vo0(25, uVar, bitmap));
     }
 
     public /* synthetic */ v(s0 s0Var, r0 r0Var) {

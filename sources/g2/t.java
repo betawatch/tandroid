@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class t extends c {
     public RandomAccessFile a;
@@ -76,9 +76,9 @@ public final class t extends c {
             String path2 = uri.getPath();
             String query = uri.getQuery();
             String fragment = uri.getFragment();
-            StringBuilder w10 = a4.a.w("uri has query and/or fragment, which are not supported. Did you call Uri.parse() on a string containing '?' or '#'? Use Uri.fromFile(new File(path)) to avoid this. path=", path2, ",query=", query, ",fragment=");
-            w10.append(fragment);
-            throw new s(w10.toString(), e10, 1004);
+            StringBuilder x10 = a4.a.x("uri has query and/or fragment, which are not supported. Did you call Uri.parse() on a string containing '?' or '#'? Use Uri.fromFile(new File(path)) to avoid this. path=", path2, ",query=", query, ",fragment=");
+            x10.append(fragment);
+            throw new s(x10.toString(), e10, 1004);
         } catch (SecurityException e11) {
             throw new s(e11, 2006);
         } catch (RuntimeException e12) {

@@ -21,17 +21,17 @@ import org.telegram.ui.Components.ad;
 import org.telegram.ui.Components.bd;
 import org.telegram.ui.Components.e0;
 import org.telegram.ui.Components.y;
-import org.telegram.ui.g91;
+import org.telegram.ui.e91;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 import org.telegram.ui.web.c1;
 import org.telegram.ui.web.h0;
 import w7.z5;
 import xh.h4;
-import yh.a0;
-import yh.w0;
-import yh.x3;
+import yh.b0;
+import yh.x0;
+import yh.y3;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                     if (h0Var != null) {
                         h0Var.c();
                     }
-                    AndroidUtilities.runOnUIThread(new g91(25, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
+                    AndroidUtilities.runOnUIThread(new e91(25, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
                     break;
                 }
             case 5:
@@ -126,19 +126,19 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.d;
                 eVar.b();
                 if (((Boolean) obj).booleanValue()) {
-                    w0 w0Var = h4Var.f0;
-                    if (w0Var != null) {
-                        w0Var.run(tL_starGiftUnique);
+                    x0 x0Var = h4Var.f0;
+                    if (x0Var != null) {
+                        x0Var.run(tL_starGiftUnique);
                     }
                     h4Var.dismiss();
                     break;
                 }
                 break;
             case 7:
-                a0.P((a0) this.b, (nf.e) this.c, (b2) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                b0.P((b0) this.b, (nf.e) this.c, (b2) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                x3 x3Var = (x3) this.b;
+                y3 y3Var = (y3) this.b;
                 e4[] e4VarArr2 = (e4[]) this.c;
                 FrameLayout frameLayout2 = (FrameLayout) this.d;
                 View view2 = (View) obj;
@@ -162,7 +162,7 @@ public final /* synthetic */ class e implements Utilities.Callback2 {
                         }
                     }
                 }
-                e4 e4Var4 = new e4(x3Var.getContext(), 3);
+                e4 e4Var4 = new e4(y3Var.getContext(), 3);
                 e4VarArr2[0] = e4Var4;
                 e4Var4.p(true);
                 e4Var4.k(11.0f, 8.0f, 11.0f, 7.0f);

@@ -28,13 +28,13 @@ import java.util.ArrayList;
 import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
-import org.telegram.messenger.ok;
-import org.telegram.ui.Components.fx0;
-import org.telegram.ui.Components.hx0;
+import org.telegram.messenger.bi;
+import org.telegram.ui.Components.gx0;
+import org.telegram.ui.Components.ix0;
 import org.telegram.ui.Components.oz;
 import org.telegram.ui.d11;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class i5 extends View implements Drawable.Callback {
     public final Path A0;
@@ -301,7 +301,7 @@ public class i5 extends View implements Drawable.Callback {
                     } else {
                         Layout.Alignment alignment = getAlignment();
                         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                        StaticLayout c10 = fx0.c(charSequence4, textPaint, i16, alignment, 0.0f, false, truncateAt, i16, this.x0, false);
+                        StaticLayout c10 = gx0.c(charSequence4, textPaint, i16, alignment, 0.0f, false, truncateAt, i16, this.x0, false);
                         i14 = i16;
                         this.e = c10;
                         if (c10 != null) {
@@ -319,12 +319,12 @@ public class i5 extends View implements Drawable.Callback {
                             }
                             CharSequence charSequence6 = subSequence2;
                             this.f = new StaticLayout(charSequence6, 0, charSequence6.length(), textPaint, this.P ? AndroidUtilities.dp(2000.0f) : i14 + AndroidUtilities.dp(8.0f), getAlignment(), 1.0f, 0.0f, false);
-                            this.e = fx0.c(valueOf2, textPaint, i14 + AndroidUtilities.dp(8.0f) + this.t0, getAlignment(), 0.0f, false, truncateAt, i14 + this.t0, this.x0, false);
+                            this.e = gx0.c(valueOf2, textPaint, i14 + AndroidUtilities.dp(8.0f) + this.t0, getAlignment(), 0.0f, false, truncateAt, i14 + this.t0, this.x0, false);
                         }
                     }
                     i13 = i14;
                 } else if (this.r > 1) {
-                    StaticLayout c11 = fx0.c(charSequence4, textPaint, i16, getAlignment(), 0.0f, false, TextUtils.TruncateAt.END, i16, this.r, false);
+                    StaticLayout c11 = gx0.c(charSequence4, textPaint, i16, getAlignment(), 0.0f, false, TextUtils.TruncateAt.END, i16, this.r, false);
                     i13 = i16;
                     this.c = c11;
                 } else {
@@ -398,7 +398,7 @@ public class i5 extends View implements Drawable.Callback {
         float f12 = this.a;
         float f13 = -this.u0;
         float f14 = this.M;
-        this.a = t8.b.d(this.v0, f14, f13 * f14, f12);
+        this.a = sa.e.d(this.v0, f14, f13 * f14, f12);
         canvas.save();
         c(canvas);
         org.telegram.ui.Components.v5 v5Var2 = this.H0;
@@ -431,17 +431,17 @@ public class i5 extends View implements Drawable.Callback {
         return true;
     }
 
-    public final void g(hx0 hx0Var, String str) {
+    public final void g(ix0 ix0Var, String str) {
         Drawable drawable = this.y;
-        if (drawable == hx0Var) {
+        if (drawable == ix0Var) {
             return;
         }
         if (drawable != null) {
             drawable.setCallback(null);
         }
-        this.y = hx0Var;
-        if (hx0Var != null) {
-            hx0Var.setCallback(this);
+        this.y = ix0Var;
+        if (ix0Var != null) {
+            ix0Var.setCallback(this);
         }
         f();
         this.E = str;
@@ -809,7 +809,7 @@ public class i5 extends View implements Drawable.Callback {
                 y17 = (getMeasuredHeight() - intrinsicHeight) / 2;
                 i18 = this.K;
             } else {
-                y17 = hg.k0.y(this.g0, intrinsicHeight, 2, getPaddingTop());
+                y17 = hg.c.y(this.g0, intrinsicHeight, 2, getPaddingTop());
                 i18 = this.K;
             }
             int i28 = y17 + i18;
@@ -835,7 +835,7 @@ public class i5 extends View implements Drawable.Callback {
                 y16 = (getMeasuredHeight() - intrinsicHeight2) / 2;
                 i17 = this.K;
             } else {
-                y16 = hg.k0.y(this.g0, intrinsicHeight2, 2, getPaddingTop());
+                y16 = hg.c.y(this.g0, intrinsicHeight2, 2, getPaddingTop());
                 i17 = this.K;
             }
             int i31 = y16 + i17;
@@ -863,7 +863,7 @@ public class i5 extends View implements Drawable.Callback {
                     y15 = (getMeasuredHeight() - intrinsicHeight3) / 2;
                     i16 = this.K;
                 } else {
-                    y15 = hg.k0.y(this.g0, intrinsicHeight3, 2, getPaddingTop());
+                    y15 = hg.c.y(this.g0, intrinsicHeight3, 2, getPaddingTop());
                     i16 = this.K;
                 }
                 int i34 = y15 + i16;
@@ -884,7 +884,7 @@ public class i5 extends View implements Drawable.Callback {
                     y14 = (getMeasuredHeight() - intrinsicHeight4) / 2;
                     i15 = this.K;
                 } else {
-                    y14 = hg.k0.y(this.g0, intrinsicHeight4, 2, getPaddingTop());
+                    y14 = hg.c.y(this.g0, intrinsicHeight4, 2, getPaddingTop());
                     i15 = this.K;
                 }
                 int i36 = y14 + i15;
@@ -978,7 +978,7 @@ public class i5 extends View implements Drawable.Callback {
                     y13 = (getMeasuredHeight() - intrinsicHeight5) / 2;
                     i14 = this.K;
                 } else {
-                    y13 = hg.k0.y(this.g0, intrinsicHeight5, 2, getPaddingTop());
+                    y13 = hg.c.y(this.g0, intrinsicHeight5, 2, getPaddingTop());
                     i14 = this.K;
                 }
                 int i43 = y13 + i14;
@@ -1003,7 +1003,7 @@ public class i5 extends View implements Drawable.Callback {
                     y12 = (getMeasuredHeight() - intrinsicHeight6) / 2;
                     i13 = this.K;
                 } else {
-                    y12 = hg.k0.y(this.g0, intrinsicHeight6, 2, getPaddingTop());
+                    y12 = hg.c.y(this.g0, intrinsicHeight6, 2, getPaddingTop());
                     i13 = this.K;
                 }
                 int i46 = y12 + i13;
@@ -1016,7 +1016,7 @@ public class i5 extends View implements Drawable.Callback {
                     this.U.setAlpha((int) ((this.R / AndroidUtilities.dp(10.0f)) * 255.0f));
                 } else {
                     if (this.R > (AndroidUtilities.dp(f10) + this.f0) - AndroidUtilities.dp(10.0f)) {
-                        this.U.setAlpha((int) ok.x(this.R - ((AndroidUtilities.dp(f10) + this.f0) - AndroidUtilities.dp(10.0f)), AndroidUtilities.dp(10.0f), 1.0f, 255.0f));
+                        this.U.setAlpha((int) bi.x(this.R - ((AndroidUtilities.dp(f10) + this.f0) - AndroidUtilities.dp(10.0f)), AndroidUtilities.dp(10.0f), 1.0f, 255.0f));
                     } else {
                         this.U.setAlpha(255);
                     }
@@ -1056,7 +1056,7 @@ public class i5 extends View implements Drawable.Callback {
                         z10 = true;
                     } else {
                         z10 = true;
-                        b10 = this.R >= ((float) (dp2 - AndroidUtilities.dp(100.0f))) ? ok.b(this.R - (dp2 - AndroidUtilities.dp(100.0f)), AndroidUtilities.dp(100.0f), 20.0f, 50.0f) : 50.0f;
+                        b10 = this.R >= ((float) (dp2 - AndroidUtilities.dp(100.0f))) ? bi.b(this.R - (dp2 - AndroidUtilities.dp(100.0f)), AndroidUtilities.dp(100.0f), 20.0f, 50.0f) : 50.0f;
                     }
                     float dp3 = ((j3 / 1000.0f) * AndroidUtilities.dp(b10)) + this.R;
                     this.R = dp3;
@@ -1082,7 +1082,7 @@ public class i5 extends View implements Drawable.Callback {
                 y11 = (getMeasuredHeight() - intrinsicHeight7) / 2;
                 i12 = this.J;
             } else {
-                y11 = hg.k0.y(this.g0, intrinsicHeight7, 2, getPaddingTop());
+                y11 = hg.c.y(this.g0, intrinsicHeight7, 2, getPaddingTop());
                 i12 = this.J;
             }
             int i48 = y11 + i12;
@@ -1099,7 +1099,7 @@ public class i5 extends View implements Drawable.Callback {
                 y10 = (getMeasuredHeight() - intrinsicHeight8) / 2;
                 i11 = this.K;
             } else {
-                y10 = hg.k0.y(this.g0, intrinsicHeight8, 2, getPaddingTop());
+                y10 = hg.c.y(this.g0, intrinsicHeight8, 2, getPaddingTop());
                 i11 = this.K;
             }
             int i50 = y10 + i11;
@@ -1123,7 +1123,7 @@ public class i5 extends View implements Drawable.Callback {
             y3 = (getMeasuredHeight() - intrinsicHeight9) / 2;
             i10 = this.K;
         } else {
-            y3 = hg.k0.y(this.g0, intrinsicHeight9, 2, getPaddingTop());
+            y3 = hg.c.y(this.g0, intrinsicHeight9, 2, getPaddingTop());
             i10 = this.K;
         }
         int i52 = y3 + i10;
@@ -1171,7 +1171,7 @@ public class i5 extends View implements Drawable.Callback {
         }
         setMeasuredDimension(size, size2);
         if ((this.n & 112) == 16) {
-            this.d0 = hg.k0.y((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom(), this.g0, 2, getPaddingTop());
+            this.d0 = hg.c.y((getMeasuredHeight() - getPaddingTop()) - getPaddingBottom(), this.g0, 2, getPaddingTop());
         } else {
             this.d0 = getPaddingTop();
         }

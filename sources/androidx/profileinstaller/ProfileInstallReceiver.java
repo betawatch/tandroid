@@ -14,7 +14,7 @@ import l2.g;
 import r4.a;
 import r4.d;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class ProfileInstallReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -44,10 +44,10 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
                 g gVar = new g(this, 15);
                 try {
                     d.e(context.getPackageManager().getPackageInfo(context.getApplicationContext().getPackageName(), 0), context.getFilesDir());
-                    gVar.y(10, null);
+                    gVar.D(10, null);
                     return;
                 } catch (PackageManager.NameNotFoundException e7) {
-                    gVar.y(7, e7);
+                    gVar.D(7, e7);
                     return;
                 }
             }
@@ -56,11 +56,11 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
         if ("androidx.profileinstaller.action.SAVE_PROFILE".equals(action)) {
             g gVar2 = new g(this, 15);
             if (Build.VERSION.SDK_INT < 24) {
-                gVar2.y(13, null);
+                gVar2.D(13, null);
                 return;
             } else {
                 Process.sendSignal(Process.myPid(), 10);
-                gVar2.y(12, null);
+                gVar2.D(12, null);
                 return;
             }
         }
@@ -70,14 +70,14 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
         String string2 = extras.getString("EXTRA_BENCHMARK_OPERATION");
         g gVar3 = new g(this, 15);
         if (!"DROP_SHADER_CACHE".equals(string2)) {
-            gVar3.y(16, null);
+            gVar3.D(16, null);
             return;
         }
         int i10 = Build.VERSION.SDK_INT;
         if (d.c(i10 >= 24 ? a.a(context) : i10 >= 23 ? context.getCodeCacheDir() : context.getCacheDir())) {
-            gVar3.y(14, null);
+            gVar3.D(14, null);
         } else {
-            gVar3.y(15, null);
+            gVar3.D(15, null);
         }
     }
 }

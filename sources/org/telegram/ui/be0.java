@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class be0 extends cs {
     public final /* synthetic */ int h;
@@ -27,14 +27,14 @@ public final class be0 extends cs {
             case 2:
                 PasscodeActivity passcodeActivity = (PasscodeActivity) this.n;
                 if (passcodeActivity.E != 0) {
-                    passcodeActivity.g0();
+                    passcodeActivity.m0();
                     break;
                 } else {
                     postDelayed(new nl0(this, 0), 260L);
                     break;
                 }
             default:
-                ((bh1) this.n).C0();
+                ((zg1) this.n).C0();
                 break;
         }
     }

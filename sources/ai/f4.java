@@ -4,7 +4,7 @@ import android.graphics.Paint;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ya0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class f4 implements ya0 {
     public final /* synthetic */ e6 a;
@@ -14,7 +14,7 @@ public final class f4 implements ya0 {
     }
 
     @Override // org.telegram.ui.Components.ya0
-    public final void F(int i10, int i11, CharSequence charSequence, boolean z10) {
+    public final void C(int i10, int i11, CharSequence charSequence, boolean z10) {
         this.a.b2.O0(i10, i11, charSequence, z10);
     }
 
@@ -37,7 +37,7 @@ public final class f4 implements ya0 {
     }
 
     @Override // org.telegram.ui.Components.ya0
-    public final void x(TLRPC.TL_document tL_document, String str, Object obj) {
+    public final void y(TLRPC.TL_document tL_document, String str, Object obj) {
         e6 e6Var = this.a;
         org.telegram.ui.Components.e5.a0(e6Var.C2, 1, e6Var.B1, new e4(this, tL_document, str, obj, 0));
     }

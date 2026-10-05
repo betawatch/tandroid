@@ -69,7 +69,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class so0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public static final List g1 = Arrays.asList("http", "https");
@@ -334,7 +334,7 @@ public final class so0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public static void c0(so0 so0Var, TLObject tLObject) {
         org.telegram.ui.ActionBar.n2 R;
         if (tLObject instanceof TLRPC.TL_payments_paymentReceiptStars) {
-            yh.x7.p1(so0Var.getParentActivity(), so0Var.currentAccount, (TLRPC.TL_payments_paymentReceiptStars) tLObject, so0Var.Y0);
+            yh.z7.p1(so0Var.getParentActivity(), so0Var.currentAccount, (TLRPC.TL_payments_paymentReceiptStars) tLObject, so0Var.Y0);
             return;
         }
         if (!(tLObject instanceof TLRPC.PaymentReceipt) || (R = LaunchActivity.R()) == null) {
@@ -373,7 +373,7 @@ public final class so0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public static void e0(so0 so0Var, TLObject tLObject) {
         org.telegram.ui.ActionBar.n2 R;
         if (tLObject instanceof TLRPC.TL_payments_paymentReceiptStars) {
-            yh.x7.p1(so0Var.getParentActivity(), so0Var.currentAccount, (TLRPC.TL_payments_paymentReceiptStars) tLObject, so0Var.Y0);
+            yh.z7.p1(so0Var.getParentActivity(), so0Var.currentAccount, (TLRPC.TL_payments_paymentReceiptStars) tLObject, so0Var.Y0);
             return;
         }
         if (!(tLObject instanceof TLRPC.PaymentReceipt) || (R = LaunchActivity.R()) == null) {
@@ -949,8 +949,8 @@ public final class so0 extends org.telegram.ui.ActionBar.n2 implements Notificat
             sb2.append(str2);
             sb2.append(", ");
             sb2.append(str3);
-            a4.a.z(sb2, ", ", str4, ", ", str5);
-            d9VarArr[2].b(R.drawable.msg_payment_address, a4.a.s(sb2, ", ", str6), LocaleController.getString(R.string.PaymentShippingAddress), true);
+            a4.a.A(sb2, ", ", str4, ", ", str5);
+            d9VarArr[2].b(R.drawable.msg_payment_address, a4.a.t(sb2, ", ", str6), LocaleController.getString(R.string.PaymentShippingAddress), true);
         }
         d9VarArr[2].setVisibility(tL_paymentRequestedInfo.shipping_address != null ? 0 : 8);
         String str7 = tL_paymentRequestedInfo.name;
@@ -1339,8 +1339,8 @@ public final class so0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     /* JADX WARN: Type inference failed for: r3v303, types: [android.view.ViewGroup] */
     /* JADX WARN: Type inference failed for: r3v304, types: [android.view.ViewGroup] */
     /* JADX WARN: Type inference failed for: r3v339, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout] */
-    /* JADX WARN: Type inference failed for: r4v155, types: [android.view.ViewGroup, android.widget.LinearLayout] */
-    /* JADX WARN: Type inference failed for: r4v313, types: [android.view.ViewGroup, android.widget.LinearLayout] */
+    /* JADX WARN: Type inference failed for: r4v160, types: [android.view.ViewGroup, android.widget.LinearLayout] */
+    /* JADX WARN: Type inference failed for: r4v318, types: [android.view.ViewGroup, android.widget.LinearLayout] */
     @Override // org.telegram.ui.ActionBar.n2
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1974,9 +1974,9 @@ public final class so0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                     this.n.setEnabled(false);
                     this.n.getContentView().setVisibility(4);
                     AndroidUtilities.checkAndroidTheme(context, true);
-                    org.telegram.ui.Components.s91 s91Var = new org.telegram.ui.Components.s91(this, context);
-                    this.w = s91Var;
-                    s91Var.getSettings().setJavaScriptEnabled(true);
+                    org.telegram.ui.Components.t91 t91Var = new org.telegram.ui.Components.t91(this, context);
+                    this.w = t91Var;
+                    t91Var.getSettings().setJavaScriptEnabled(true);
                     this.w.getSettings().setDomStorageEnabled(true);
                     this.w.getSettings().setSupportZoom(true);
                     this.w.getSettings().setBuiltInZoomControls(true);
@@ -2412,7 +2412,7 @@ public final class so0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                     this.h[i30] = new org.telegram.ui.Cells.k6(context);
                     this.h[i30].setTag(Integer.valueOf(i30));
                     this.h[i30].setBackgroundDrawable(org.telegram.ui.ActionBar.i6.K0(true));
-                    this.h[i30].c(a4.a.C(s0(tL_shippingOption.prices), " - ", tL_shippingOption.title), i30 == 0, i30 != size + (-1));
+                    this.h[i30].c(a4.a.D(s0(tL_shippingOption.prices), " - ", tL_shippingOption.title), i30 == 0, i30 != size + (-1));
                     this.h[i30].setOnClickListener(new mn0(this, 11));
                     this.Q.addView(this.h[i30]);
                     i30++;
@@ -2710,7 +2710,7 @@ public final class so0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                             while (i43 < size2) {
                                 long longValue = LocaleController.isRTL ? this.C0.invoice.suggested_tip_amounts.get((size2 - i43) - 1).longValue() : this.C0.invoice.suggested_tip_amounts.get(i43).longValue();
                                 String formatCurrencyString = LocaleController.getInstance().formatCurrencyString(longValue, this.C0.invoice.currency);
-                                TextView f10 = org.telegram.messenger.f0.f(context, 1, f7);
+                                TextView f10 = org.telegram.messenger.q.f(context, 1, f7);
                                 f10.setTypeface(AndroidUtilities.bold());
                                 f10.setLines(1);
                                 f10.setTag(Long.valueOf(longValue));
@@ -2892,7 +2892,7 @@ public final class so0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                                 int lastIndexOf = string2.lastIndexOf(42);
                                 if (indexOf != -1 && lastIndexOf != -1) {
                                     SpannableString spannableString = new SpannableString(string2.substring(indexOf + 1, lastIndexOf));
-                                    spannableString.setSpan(new org.telegram.ui.Components.k61(this.C0.invoice.terms_url), 0, spannableString.length(), 33);
+                                    spannableString.setSpan(new org.telegram.ui.Components.l61(this.C0.invoice.terms_url), 0, spannableString.length(), 33);
                                     int i50 = lastIndexOf + 1;
                                     spannableStringBuilder.replace(indexOf, i50, (CharSequence) spannableString);
                                     string2.substring(0, indexOf);
@@ -2906,7 +2906,7 @@ public final class so0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                                 int lastIndexOf2 = string3.lastIndexOf(42);
                                 if (indexOf2 != -1 && lastIndexOf2 != -1) {
                                     SpannableString spannableString2 = new SpannableString(string3.substring(indexOf2 + 1, lastIndexOf2));
-                                    spannableString2.setSpan(new org.telegram.ui.Components.k61(this.C0.invoice.terms_url), 0, spannableString2.length(), 33);
+                                    spannableString2.setSpan(new org.telegram.ui.Components.l61(this.C0.invoice.terms_url), 0, spannableString2.length(), 33);
                                     int i51 = lastIndexOf2 + 1;
                                     spannableStringBuilder.replace(indexOf2, i51, (CharSequence) spannableString2);
                                     string3 = string3.substring(0, indexOf2) + ((Object) spannableString2) + string3.substring(i51);
@@ -2914,7 +2914,7 @@ public final class so0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                                 int indexOf3 = string3.indexOf("%1$s");
                                 if (indexOf3 != -1) {
                                     spannableStringBuilder.replace(indexOf3, indexOf3 + 4, (CharSequence) this.p0);
-                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.d61(AndroidUtilities.bold()), indexOf3, this.p0.length() + indexOf3, 33);
+                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.e61(AndroidUtilities.bold()), indexOf3, this.p0.length() + indexOf3, 33);
                                 }
                             }
                             this.V.setText(spannableStringBuilder);
@@ -2940,17 +2940,12 @@ public final class so0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                 } else if (i16 == 6) {
                     org.telegram.ui.Cells.k3 k3Var = new org.telegram.ui.Cells.k3(context);
                     this.S = k3Var;
-                    String string4 = LocaleController.getString(R.string.PasswordCode);
-                    EditTextBoldCursor editTextBoldCursor8 = k3Var.a;
-                    editTextBoldCursor8.setText("");
-                    editTextBoldCursor8.setHint(string4);
-                    final int i52 = 0;
-                    k3Var.b = false;
-                    k3Var.setWillNotDraw(true);
+                    k3Var.a(LocaleController.getString(R.string.PasswordCode));
                     this.S.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.i6.d6));
                     EditTextBoldCursor textView3 = this.S.getTextView();
                     textView3.setInputType(3);
                     textView3.setImeOptions(6);
+                    final int i52 = 0;
                     textView3.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.on0
                         public final /* synthetic */ so0 b;
 
@@ -3102,9 +3097,9 @@ public final class so0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                         this.f[i55].setTag(Integer.valueOf(i55));
                         this.f[i55].setTextSize(1, 16.0f);
                         this.f[i55].setHintTextColor(getThemedColor(org.telegram.ui.ActionBar.i6.H6));
-                        EditTextBoldCursor editTextBoldCursor9 = this.f[i55];
+                        EditTextBoldCursor editTextBoldCursor8 = this.f[i55];
                         int i58 = org.telegram.ui.ActionBar.i6.G6;
-                        editTextBoldCursor9.setTextColor(getThemedColor(i58));
+                        editTextBoldCursor8.setTextColor(getThemedColor(i58));
                         this.f[i55].setBackgroundDrawable(null);
                         this.f[i55].setCursorColor(getThemedColor(i58));
                         this.f[i55].setCursorSize(AndroidUtilities.dp(20.0f));
@@ -3954,7 +3949,7 @@ public final class so0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         int i10 = this.C0.invoice.test ? 3 : 1;
         if (i10 != 2 && i10 != 1 && i10 != 3) {
             Locale locale = Locale.US;
-            throw new IllegalArgumentException(hg.k0.h(i10, "Invalid environment value "));
+            throw new IllegalArgumentException(hg.c.h(i10, "Invalid environment value "));
         }
         aVar.a = i10;
         this.e = new com.google.android.gms.internal.clearcut.v0(context, v8.p.a, new v8.o(aVar), com.google.android.gms.common.api.i.c);

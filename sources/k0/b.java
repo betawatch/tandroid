@@ -9,8 +9,7 @@ import b2.p;
 import b2.r0;
 import b2.s;
 import e2.d0;
-import hg.k0;
-import id.c;
+import hg.c;
 import kotlin.jvm.internal.i;
 import v0.e;
 import v0.h;
@@ -18,7 +17,7 @@ import v0.j;
 import v0.k;
 import w7.g;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class b implements h {
     public final Context a;
@@ -42,7 +41,7 @@ public final class b implements h {
     public static int c(s sVar) {
         String str = sVar.r;
         if (str == null || !r0.k(str)) {
-            return k0.b(0, 0, 0, 0);
+            return c.b(0, 0, 0, 0);
         }
         String str2 = sVar.r;
         String str3 = d0.a;
@@ -52,9 +51,9 @@ public final class b implements h {
             case "image/webp":
             case "image/bmp":
             case "image/png":
-                return k0.b(4, 0, 0, 0);
+                return c.b(4, 0, 0, 0);
         }
-        return k0.b(1, 0, 0, 0);
+        return c.b(1, 0, 0, 0);
     }
 
     public void a(aa.a aVar, p pVar, m mVar) {
@@ -83,7 +82,7 @@ public final class b implements h {
         e0.b.a(g10, e0.b.M(aVar), cancellationSignal, new a(mVar));
     }
 
-    public Object b(Context context, e eVar, c cVar) {
+    public Object b(Context context, e eVar, id.c cVar) {
         zd.m mVar = new zd.m(1, g.b(cVar));
         mVar.s();
         CancellationSignal cancellationSignal = new CancellationSignal();

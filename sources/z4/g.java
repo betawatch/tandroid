@@ -26,7 +26,6 @@ import android.view.accessibility.AccessibilityEvent;
 import android.widget.EdgeEffect;
 import android.widget.Scroller;
 import fb.i;
-import hg.k0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.WeakHashMap;
@@ -39,7 +38,7 @@ import r0.a0;
 import r0.i0;
 import s4.d1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
@@ -566,7 +565,7 @@ public class g extends ViewGroup {
         }
         ArrayList arrayList = this.b;
         if (arrayList.size() > 0) {
-            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) k0.g(1, arrayList)).b));
+            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) hg.c.g(1, arrayList)).b));
         }
         return i10;
     }
@@ -1441,7 +1440,7 @@ public class g extends ViewGroup {
         ArrayList arrayList = this.b;
         boolean z12 = false;
         c cVar = (c) arrayList.get(0);
-        c cVar2 = (c) k0.g(1, arrayList);
+        c cVar2 = (c) hg.c.g(1, arrayList);
         if (cVar.b != 0) {
             f11 = cVar.e * clientWidth;
             z10 = false;
@@ -1660,7 +1659,7 @@ public class g extends ViewGroup {
                 hexString = Integer.toHexString(getId());
             }
             StringBuilder sb2 = new StringBuilder("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: ");
-            k0.s(sb2, this.a, ", found: ", b10, " Pager id: ");
+            hg.c.t(sb2, this.a, ", found: ", b10, " Pager id: ");
             sb2.append(hexString);
             sb2.append(" Pager class: ");
             sb2.append(getClass());

@@ -11,15 +11,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class fp0 extends Drawable {
-    public final org.telegram.ui.Components.e11 a;
+    public final org.telegram.ui.Components.f11 a;
     public final Drawable b;
     public final rg.a1 c;
 
     public fp0(int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
-        this.a = new org.telegram.ui.Components.e11(LocaleController.formatPluralString(z10 ? "BoostLevelPlus" : "BoostLevel", i10, new Object[0]), 12.0f, AndroidUtilities.bold());
+        this.a = new org.telegram.ui.Components.f11(LocaleController.formatPluralString(z10 ? "BoostLevelPlus" : "BoostLevel", i10, new Object[0]), 12.0f, AndroidUtilities.bold());
         Drawable mutate = context.getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
         this.b = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
@@ -38,7 +38,7 @@ public final class fp0 extends Drawable {
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), a1Var.f);
         int dp = AndroidUtilities.dp(3.33f) + i10;
         Drawable drawable = this.b;
-        drawable.setBounds(dp, (int) (f7 - ((drawable.getIntrinsicHeight() * 0.875f) / 2.0f)), (int) ((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.33f) + i10), (int) a4.a.A(drawable.getIntrinsicHeight(), 0.875f, 2.0f, f7));
+        drawable.setBounds(dp, (int) (f7 - ((drawable.getIntrinsicHeight() * 0.875f) / 2.0f)), (int) ((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.33f) + i10), (int) a4.a.B(drawable.getIntrinsicHeight(), 0.875f, 2.0f, f7));
         drawable.draw(canvas);
         this.a.c((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.66f) + i10, f7, 1.0f, -1, canvas);
     }

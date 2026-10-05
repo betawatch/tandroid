@@ -19,7 +19,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.yf;
 import org.telegram.ui.zi0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -159,27 +159,27 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 }
                 break;
             case 24:
-                hg.e eVar2 = (hg.e) this.b;
-                org.telegram.ui.Components.p6 p6Var = eVar2.f;
-                int i10 = eVar2.a;
-                boolean z10 = eVar2.r;
-                eVar2.r = !z10;
-                eVar2.h.c(LocaleController.getString(!z10 ? R.string.BizBotStart : R.string.BizBotStop), true, true);
+                hg.f fVar = (hg.f) this.b;
+                org.telegram.ui.Components.p6 p6Var = fVar.f;
+                int i10 = fVar.a;
+                boolean z10 = fVar.r;
+                fVar.r = !z10;
+                fVar.h.c(LocaleController.getString(!z10 ? R.string.BizBotStart : R.string.BizBotStop), true, true);
                 p6Var.a();
-                p6Var.c(LocaleController.getString(eVar2.r ? R.string.BizBotStatusStopped : R.string.BizBotStatusManages), true, true);
-                if (eVar2.r) {
-                    eVar2.w |= 1;
+                p6Var.c(LocaleController.getString(fVar.r ? R.string.BizBotStatusStopped : R.string.BizBotStatusManages), true, true);
+                if (fVar.r) {
+                    fVar.w |= 1;
                 } else {
-                    eVar2.w &= -2;
+                    fVar.w &= -2;
                 }
-                MessagesController.getNotificationsSettings(i10).edit().putInt("dialog_botflags" + eVar2.s, eVar2.w).apply();
+                MessagesController.getNotificationsSettings(i10).edit().putInt("dialog_botflags" + fVar.s, fVar.w).apply();
                 TL_account.toggleConnectedBotPaused toggleconnectedbotpaused = new TL_account.toggleConnectedBotPaused();
-                toggleconnectedbotpaused.peer = MessagesController.getInstance(i10).getInputPeer(eVar2.s);
-                toggleconnectedbotpaused.paused = eVar2.r;
+                toggleconnectedbotpaused.peer = MessagesController.getInstance(i10).getInputPeer(fVar.s);
+                toggleconnectedbotpaused.paused = fVar.r;
                 ConnectionsManager.getInstance(i10).sendRequest(toggleconnectedbotpaused, null);
                 break;
             case 25:
-                TL_account.TL_businessChatLink tL_businessChatLink = ((hg.t) this.b).f;
+                TL_account.TL_businessChatLink tL_businessChatLink = ((hg.u) this.b).f;
                 if (tL_businessChatLink != null) {
                     AndroidUtilities.addToClipboard(tL_businessChatLink.link);
                     yc.a0(LaunchActivity.R()).k(false).j();
@@ -205,7 +205,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 if (e3Var != null && (aVar = u0Var.f) != null) {
                     ii.x3 x3Var = e3Var.a;
                     x3Var.getClass();
-                    if (ii.x3.z3(aVar)) {
+                    if (ii.x3.y3(aVar)) {
                         TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) aVar.b;
                         ii.i2 i2Var = x3Var.Q3;
                         if (i2Var != null) {

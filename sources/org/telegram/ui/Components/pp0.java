@@ -1,158 +1,219 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class pp0 extends View {
-    public static final ew0 v;
-    public ImageReceiver a;
-    public h9 b;
-    public org.telegram.ui.Cells.z c;
-    public Paint d;
-    public Paint e;
-    public o1.k f;
-    public ValueAnimator h;
-    public float n;
-    public boolean r;
-    public boolean s;
+public abstract class pp0 extends org.telegram.ui.ActionBar.n1 {
+    public boolean A;
+    public mp0 B;
+    public vo0 C;
+    public boolean D;
+    public int E;
+    public int F;
+    public ArrayList G;
+    public jp0 o;
+    public TextView p;
+    public boolean q;
+    public TLRPC.Peer r;
+    public TLRPC.TL_channels_sendAsPeers s;
+    public ai.f0 t;
+    public View u;
+    public zl0 v;
+    public s4.c0 w;
+    public Boolean x;
+    public boolean y;
+    public ArrayList z;
 
-    static {
-        ew0 ew0Var = new ew0(new ru(19), new ru(20));
-        ew0Var.c = 100.0f;
-        v = ew0Var;
-    }
-
-    public final void a(boolean z10, boolean z11, float f7) {
-        if (!z10) {
-            this.n = f7;
-            invalidate();
+    public static void k(gf gfVar, List list, Context context, org.telegram.ui.yn ynVar, boolean z10, ai.q5 q5Var, View view, int i10) {
+        TLRPC.User user;
+        TLRPC.TL_sendAsPeer tL_sendAsPeer = (TLRPC.TL_sendAsPeer) list.get(i10);
+        if (gfVar.y) {
             return;
         }
-        o1.k kVar = this.f;
-        if (kVar != null) {
-            kVar.c();
-        }
-        ValueAnimator valueAnimator = this.h;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        this.s = false;
-        this.r = false;
-        if (!z11) {
-            ValueAnimator duration = ValueAnimator.ofFloat(this.n, f7).setDuration(200L);
-            this.h = duration;
-            duration.setInterpolator(tr.f);
-            this.h.addUpdateListener(new v70(this, 16));
-            this.h.addListener(new hd0(this, 12));
-            this.h.start();
+        if (!tL_sendAsPeer.premium_required || UserConfig.getInstance(UserConfig.selectedAccount).isPremium()) {
+            gfVar.y = true;
+            zl0 zl0Var = gfVar.v;
+            op0 op0Var = (op0) view;
+            TLRPC.Peer peer = tL_sendAsPeer.peer;
+            ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) q5Var.b;
+            TLRPC.ChatFull chatFull = (TLRPC.ChatFull) q5Var.c;
+            MessagesController messagesController = (MessagesController) q5Var.d;
+            if (chatActivityEnterView.q0 == null) {
+                return;
+            }
+            if (chatFull != null) {
+                chatFull.default_send_as = peer;
+            }
+            chatActivityEnterView.P1(true);
+            pg pgVar = chatActivityEnterView.Z2;
+            if (pgVar == null || !pgVar.f1(DialogObject.getPeerDialogId(peer))) {
+                messagesController.setDefaultSendAs(chatActivityEnterView.Q2, DialogObject.getPeerDialogId(peer));
+            }
+            int[] iArr = new int[2];
+            cw0 cw0Var = op0Var.a;
+            boolean isSelected = cw0Var.isSelected();
+            cw0Var.getLocationInWindow(iArr);
+            cw0Var.a(true, true);
+            cw0 cw0Var2 = new cw0(chatActivityEnterView.getContext());
+            long j3 = peer.channel_id;
+            if (j3 != 0) {
+                TLRPC.Chat chat = messagesController.getChat(Long.valueOf(j3));
+                if (chat != null) {
+                    cw0Var2.setAvatar(chat);
+                }
+            } else {
+                long j10 = peer.user_id;
+                if (j10 != 0 && (user = messagesController.getUser(Long.valueOf(j10))) != null) {
+                    cw0Var2.setAvatar(user);
+                }
+            }
+            for (int i11 = 0; i11 < zl0Var.getChildCount(); i11++) {
+                View childAt = zl0Var.getChildAt(i11);
+                if ((childAt instanceof op0) && childAt != op0Var) {
+                    ((op0) childAt).a.a(false, true);
+                }
+            }
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.m5(chatActivityEnterView, cw0Var2, iArr, op0Var, 18), isSelected ? 0L : 200L);
             return;
         }
-        float f10 = this.n * 100.0f;
-        o1.k kVar2 = new o1.k(this, v);
-        kVar2.b = f10;
-        kVar2.c = true;
-        this.f = kVar2;
-        boolean z12 = f7 < this.n;
-        float f11 = f7 * 100.0f;
-        this.s = z12;
-        this.r = !z12;
-        o1.l lVar = new o1.l(f11);
-        lVar.i = f11;
-        lVar.b(450.0f);
-        lVar.a(1.0f);
-        kVar2.u = lVar;
-        this.f.b(new qh(this, z12, f10, f11));
-        this.f.a(new ib(this, 3));
-        this.f.f();
-    }
-
-    @Override // android.view.View
-    public final void drawableStateChanged() {
-        super.drawableStateChanged();
-        this.c.setState(getDrawableState());
-    }
-
-    public float getProgress() {
-        return this.n;
-    }
-
-    @Override // android.view.View
-    public final void jumpDrawablesToCurrentState() {
-        super.jumpDrawablesToCurrentState();
-        this.c.jumpToCurrentState();
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Paint paint = this.d;
-        Paint paint2 = this.e;
-        canvas.save();
-        float f7 = 1.0f;
-        if (this.r) {
-            f7 = 1.0f - this.n;
-        } else if (this.s) {
-            f7 = this.n;
+        try {
+            view.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
         }
-        canvas.scale(f7, f7, getWidth() / 2.0f, getHeight() / 2.0f);
-        super.onDraw(canvas);
-        this.a.draw(canvas);
-        int i10 = (int) (this.n * 255.0f);
-        paint.setAlpha(i10);
-        canvas.drawCircle(getWidth() / 2.0f, getHeight() / 2.0f, Math.min(getWidth(), getHeight()) / 2.0f, paint);
-        canvas.save();
-        paint2.setAlpha(i10);
-        float strokeWidth = paint2.getStrokeWidth() + AndroidUtilities.dp(10.0f);
-        canvas.drawLine(strokeWidth, strokeWidth, getWidth() - strokeWidth, getHeight() - strokeWidth, paint2);
-        canvas.drawLine(strokeWidth, getHeight() - strokeWidth, getWidth() - strokeWidth, strokeWidth, paint2);
-        canvas.restore();
-        this.c.setBounds(0, 0, getWidth(), getHeight());
-        this.c.draw(canvas);
-        canvas.restore();
+        WindowManager windowManager = (WindowManager) context.getSystemService("window");
+        if (gfVar.B == null) {
+            gfVar.B = new mp0(gfVar, context);
+        }
+        vo0 vo0Var = gfVar.C;
+        if (vo0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(vo0Var);
+        }
+        if (gfVar.B.getParent() == null) {
+            WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+            layoutParams.height = -1;
+            layoutParams.width = -1;
+            layoutParams.format = -3;
+            layoutParams.type = 99;
+            int i12 = Build.VERSION.SDK_INT;
+            layoutParams.flags |= TLObject.FLAG_31;
+            if (i12 >= 28) {
+                layoutParams.layoutInDisplayCutoutMode = 1;
+            }
+            AndroidUtilities.setPreferredMaxRefreshRate(windowManager, gfVar.B, layoutParams);
+            windowManager.addView(gfVar.B, layoutParams);
+        }
+        if (ynVar != null) {
+            mp0 mp0Var = gfVar.B;
+            org.telegram.ui.wn wnVar = ynVar.ca;
+            vo0 vo0Var2 = new vo0(1, gfVar, ynVar);
+            fp0 fp0Var = new fp0(context, wnVar);
+            Drawable drawable = context.getDrawable(R.drawable.msg_premium_prolfilestar);
+            w9 w9Var = fp0Var.a;
+            w9Var.setImageDrawable(drawable);
+            w9Var.setColorFilter(new PorterDuffColorFilter(fp0Var.getThemedColor(org.telegram.ui.ActionBar.i6.Hi), PorterDuff.Mode.SRC_IN));
+            fp0Var.b.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.SelectSendAsPeerPremiumHint)));
+            pc pcVar = new pc(context, wnVar, true);
+            pcVar.e(LocaleController.getString(R.string.SelectSendAsPeerPremiumOpen));
+            pcVar.a = vo0Var2;
+            fp0Var.setButton(pcVar);
+            rc f7 = rc.f(mp0Var, fp0Var, 1500);
+            f7.e.addCallback(new np0(gfVar, f7));
+            f7.j();
+        }
+        vo0 vo0Var3 = new vo0(2, gfVar, windowManager);
+        gfVar.C = vo0Var3;
+        AndroidUtilities.runOnUIThread(vo0Var3, 2500L);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getLayoutParams().width, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getLayoutParams().height, TLObject.FLAG_30));
-        this.a.setImageCoords(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
+    public void dismiss() {
+        if (this.A) {
+            return;
+        }
+        mp0 mp0Var = this.B;
+        if (mp0Var != null && mp0Var.getAlpha() == 1.0f) {
+            this.B.animate().alpha(0.0f).setDuration(150L).setListener(new cl0(1, this, (WindowManager) this.B.getContext().getSystemService("window")));
+        }
+        this.A = true;
+        d(true);
     }
 
-    public void setAvatar(TLObject tLObject) {
-        h9 h9Var = this.b;
-        setContentDescription(LocaleController.formatString("AccDescrSendAsPeer", R.string.AccDescrSendAsPeer, tLObject instanceof TLRPC.User ? UserObject.getFirstName((TLRPC.User) tLObject) : tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : tLObject instanceof TLRPC.ChatInvite ? ((TLRPC.ChatInvite) tLObject).title : ""));
-        h9Var.p(tLObject);
-        this.a.setForUserOrChat(tLObject, h9Var);
+    public final void l(o1.k... kVarArr) {
+        jp0 jp0Var = this.o;
+        ai.f0 f0Var = this.t;
+        ArrayList arrayList = this.z;
+        ArrayList arrayList2 = new ArrayList(arrayList);
+        int size = arrayList2.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList2.get(i10);
+            i10++;
+            ((o1.k) obj).c();
+        }
+        arrayList.clear();
+        f0Var.setPivotX(AndroidUtilities.dp(8.0f));
+        f0Var.setPivotY(f0Var.getMeasuredHeight() - AndroidUtilities.dp(8.0f));
+        jp0Var.setPivotX(0.0f);
+        jp0Var.setPivotY(0.0f);
+        f0Var.setScaleX(1.0f);
+        f0Var.setScaleY(1.0f);
+        jp0Var.setAlpha(1.0f);
+        ArrayList arrayList3 = new ArrayList();
+        o1.k kVar = new o1.k(f0Var, o1.h.o);
+        kVar.u = org.telegram.ui.Cells.c1.l(0.25f, 750.0f, 1.0f);
+        kVar.b(new gp0(this, 0));
+        o1.k kVar2 = new o1.k(f0Var, o1.h.p);
+        kVar2.u = org.telegram.ui.Cells.c1.l(0.25f, 750.0f, 1.0f);
+        kVar2.b(new gp0(this, 1));
+        o1.c cVar = o1.h.t;
+        o1.k kVar3 = new o1.k(f0Var, cVar);
+        kVar3.u = org.telegram.ui.Cells.c1.l(0.0f, 750.0f, 1.0f);
+        o1.k kVar4 = new o1.k(jp0Var, cVar);
+        kVar4.u = org.telegram.ui.Cells.c1.l(0.25f, 750.0f, 1.0f);
+        int i11 = 2;
+        arrayList3.addAll(Arrays.asList(kVar, kVar2, kVar3, kVar4));
+        for (o1.k kVar5 : kVarArr) {
+            if (kVar5 != null) {
+                arrayList3.add(kVar5);
+            }
+        }
+        this.q = kVarArr.length > 0;
+        ((o1.k) arrayList3.get(0)).a(new ib(this, i11));
+        int size2 = arrayList3.size();
+        int i12 = 0;
+        while (i12 < size2) {
+            Object obj2 = arrayList3.get(i12);
+            i12++;
+            o1.k kVar6 = (o1.k) obj2;
+            arrayList.add(kVar6);
+            kVar6.a(new hp0(this, kVar6, 0));
+            kVar6.f();
+        }
     }
 
-    public void setProgress(float f7) {
-        a(true, f7 != 0.0f, f7);
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return super.verifyDrawable(drawable) || this.c == drawable;
+    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
+    public final void showAtLocation(View view, int i10, int i11, int i12) {
+        this.E = i11;
+        this.F = i12;
+        super.showAtLocation(view, i10, i11, i12);
     }
 }

@@ -12,13 +12,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ez;
 import org.telegram.ui.Components.fd;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.pg;
 import org.telegram.ui.Components.rf;
 import org.telegram.ui.Components.tx;
 import r0.m0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class a implements m0, tx {
     public boolean a;
@@ -62,7 +62,7 @@ public final class a implements m0, tx {
 
     public void e() {
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-        lw0 lw0Var = chatActivityEnterView.m1;
+        mw0 mw0Var = chatActivityEnterView.m1;
         if (d()) {
             AnimatorSet animatorSet = chatActivityEnterView.B3;
             if (animatorSet != null) {
@@ -72,7 +72,7 @@ public final class a implements m0, tx {
             this.a = chatActivityEnterView.z3;
             chatActivityEnterView.z3 = true;
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 1);
-            int height = ((((lw0Var.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
+            int height = ((((mw0Var.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
             chatActivityEnterView.D3 = height;
             if (chatActivityEnterView.R1 == 2) {
                 int dp = AndroidUtilities.dp(175.0f);
@@ -83,9 +83,9 @@ public final class a implements m0, tx {
                 chatActivityEnterView.U0.getLayoutParams().height = chatActivityEnterView.D3;
             }
             chatActivityEnterView.U0.setLayerType(2, null);
-            lw0Var.requestLayout();
+            mw0Var.requestLayout();
             if (chatActivityEnterView.y4) {
-                lw0Var.setForeground(new fd(chatActivityEnterView));
+                mw0Var.setForeground(new fd(chatActivityEnterView));
             }
             this.b = (int) chatActivityEnterView.getTranslationY();
             pg pgVar = chatActivityEnterView.Z2;

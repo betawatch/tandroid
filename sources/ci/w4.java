@@ -1,11 +1,11 @@
 package ci;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.Components.kt0;
-import org.telegram.ui.Components.mw0;
+import org.telegram.ui.Components.lt0;
+import org.telegram.ui.Components.nw0;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -13,9 +13,9 @@ public final /* synthetic */ class w4 implements ValueAnimator.AnimatorUpdateLis
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ w4(kt0 kt0Var, int i10, zl0 zl0Var) {
+    public /* synthetic */ w4(lt0 lt0Var, int i10, zl0 zl0Var) {
         this.a = 1;
-        this.c = kt0Var;
+        this.c = lt0Var;
         this.b = i10;
         this.d = zl0Var;
     }
@@ -35,9 +35,9 @@ public final /* synthetic */ class w4 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 1:
-                kt0 kt0Var = (kt0) this.c;
+                lt0 lt0Var = (lt0) this.c;
                 zl0 zl0Var = (zl0) this.d;
-                kt0Var.e.O1.put(this.b, (Float) valueAnimator.getAnimatedValue());
+                lt0Var.e.O1.put(this.b, (Float) valueAnimator.getAnimatedValue());
                 zl0Var.invalidate();
                 break;
             default:
@@ -54,9 +54,9 @@ public final /* synthetic */ class w4 implements ValueAnimator.AnimatorUpdateLis
         }
     }
 
-    public /* synthetic */ w4(mw0 mw0Var, Integer num, int i10, int i11) {
+    public /* synthetic */ w4(nw0 nw0Var, Integer num, int i10, int i11) {
         this.a = i11;
-        this.c = mw0Var;
+        this.c = nw0Var;
         this.d = num;
         this.b = i10;
     }

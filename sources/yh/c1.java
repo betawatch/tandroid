@@ -1,65 +1,35 @@
 package yh;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c1 implements Runnable {
+public final /* synthetic */ class c1 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x3 b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ y3 b;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
+    public final /* synthetic */ zf.a d;
+    public final /* synthetic */ Runnable e;
 
-    public /* synthetic */ c1(x3 x3Var, long j3, int i10) {
+    public /* synthetic */ c1(y3 y3Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, zf.a aVar, Runnable runnable, int i10) {
         this.a = i10;
-        this.b = x3Var;
-        this.c = j3;
+        this.b = y3Var;
+        this.c = tL_starGiftUnique;
+        this.d = aVar;
+        this.e = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                x3 x3Var = this.b;
-                b1 b1Var = x3Var.n1;
-                x3Var.q2(1, true, null);
-                if (this.c > 0) {
-                    AndroidUtilities.cancelRunOnUIThread(b1Var);
-                    AndroidUtilities.runOnUIThread(b1Var);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.X1(this.c);
-                break;
-            case 2:
-                x3.P0(this.b, this.c);
-                break;
-            case 3:
-                x3.d1(this.b, this.c);
-                break;
-            case 4:
-                this.b.X1(this.c);
-                break;
-            case 5:
-                x3.l0(this.b, this.c);
-                break;
-            case 6:
-                this.b.X1(this.c);
-                break;
-            case 7:
-                x3.N(this.b, this.c);
-                break;
-            case 8:
-                this.b.X1(this.c);
-                break;
-            case 9:
-                x3.B0(this.b, this.c);
-                break;
-            case 10:
-                this.b.X1(this.c);
+                y3.M0(this.b, this.c, this.d, this.e, tLObject, tL_error);
                 break;
             default:
-                this.b.X1(this.c);
+                y3.t0(this.b, this.c, this.d, this.e, tLObject, tL_error);
                 break;
         }
     }

@@ -42,7 +42,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nf0 implements Runnable {
     public final /* synthetic */ int a;
@@ -258,7 +258,7 @@ public final /* synthetic */ class nf0 implements Runnable {
                     org.telegram.ui.ActionBar.c5 parentLayout = ug0Var2.getParentLayout();
                     if (parentLayout != null && parentLayout.getFragmentStack() != null) {
                         List fragmentStack = parentLayout.getFragmentStack();
-                        org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.isEmpty() ? null : (org.telegram.ui.ActionBar.n2) t8.b.h(1, fragmentStack);
+                        org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.isEmpty() ? null : (org.telegram.ui.ActionBar.n2) sa.e.h(1, fragmentStack);
                         ArrayList arrayList3 = new ArrayList(fragmentStack);
                         int size = arrayList3.size();
                         int i29 = 0;
@@ -405,7 +405,7 @@ public final /* synthetic */ class nf0 implements Runnable {
                     while (i33 < arrayList6.size()) {
                         rk0 rk0Var = (rk0) arrayList6.get(i33);
                         if (DialogObject.isEncryptedDialog(rk0Var.d)) {
-                            TLRPC.EncryptedChat l4 = org.telegram.messenger.f0.l(notificationsCustomSettingsActivity.getMessagesController(), rk0Var.d);
+                            TLRPC.EncryptedChat l4 = org.telegram.messenger.q.l(notificationsCustomSettingsActivity.getMessagesController(), rk0Var.d);
                             if (l4 != null) {
                                 strArr = strArr2;
                                 c10 = 0;
@@ -440,7 +440,7 @@ public final /* synthetic */ class nf0 implements Runnable {
                                         String str6 = strArr[i17];
                                         String str7 = strArr3[0];
                                         arrayList = arrayList6;
-                                        if ((str7 == null || !(str7.startsWith(str6) || org.telegram.messenger.f0.w(" ", str6, strArr3[0]))) && (translitString == null || !(translitString.startsWith(str6) || org.telegram.messenger.f0.w(" ", str6, translitString)))) {
+                                        if ((str7 == null || !(str7.startsWith(str6) || org.telegram.messenger.bi.u(" ", str6, strArr3[0]))) && (translitString == null || !(translitString.startsWith(str6) || org.telegram.messenger.bi.u(" ", str6, translitString)))) {
                                             String str8 = strArr3[1];
                                             r32 = (str8 == null || !str8.startsWith(str6)) ? z12 : 2;
                                         } else {
@@ -715,10 +715,10 @@ public final /* synthetic */ class nf0 implements Runnable {
                         }
                         PhotoViewer photoViewer8 = eu0Var.d;
                         if (!photoViewer8.J4) {
-                            org.telegram.ui.Components.r71 r71Var = photoViewer8.j1;
+                            org.telegram.ui.Components.s71 s71Var = photoViewer8.j1;
                             boolean z13 = photoViewer8.Z7 > 1;
                             PhotoViewer photoViewer9 = eu0Var.d;
-                            r71Var.a(Math.min(photoViewer9.e8, eu0Var.d.f8), z13, photoViewer9.r);
+                            s71Var.a(Math.min(photoViewer9.e8, eu0Var.d.f8), z13, photoViewer9.r);
                         }
                         if (BuildVars.LOGS_ENABLED) {
                             StringBuilder sb2 = new StringBuilder("compressionsCount = ");
@@ -728,7 +728,7 @@ public final /* synthetic */ class nf0 implements Runnable {
                             sb2.append(" h = ");
                             sb2.append(eu0Var.d.d8);
                             sb2.append(" r = ");
-                            org.telegram.messenger.f0.n(eu0Var.d.b8, sb2);
+                            org.telegram.messenger.q.n(eu0Var.d.b8, sb2);
                         }
                         eu0Var.d.O7.invalidate();
                     } else {
@@ -770,7 +770,7 @@ public final /* synthetic */ class nf0 implements Runnable {
                     org.telegram.ui.Components.yc.b0(tL_error6);
                     break;
                 } else if (!(tLObject6 instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.messenger.ok.p(R.string.UnknownError, org.telegram.ui.Components.yc.a0(premiumPreviewFragment), null);
+                    org.telegram.messenger.bi.o(R.string.UnknownError, org.telegram.ui.Components.yc.a0(premiumPreviewFragment), null);
                     break;
                 }
                 break;
@@ -837,15 +837,15 @@ public final /* synthetic */ class nf0 implements Runnable {
                 if (m6Var != null) {
                     m6Var.setLayerType(0, null);
                     secretMediaViewer.e.invalidate();
-                    x41 x41Var = secretMediaViewer.n;
+                    v41 v41Var = secretMediaViewer.n;
                     TLRPC.Message message2 = messageObject2.messageOwner;
                     long j3 = message2.destroyTimeMillis;
                     long j10 = message2.ttl;
-                    x41Var.e = false;
-                    x41Var.f = j3;
-                    x41Var.h = j10;
-                    x41Var.n.start();
-                    x41Var.invalidate();
+                    v41Var.e = false;
+                    v41Var.f = j3;
+                    v41Var.h = j10;
+                    v41Var.n.start();
+                    v41Var.invalidate();
                     if (secretMediaViewer.h1) {
                         secretMediaViewer.e(true, true);
                         break;
@@ -856,51 +856,51 @@ public final /* synthetic */ class nf0 implements Runnable {
                 }
                 break;
             case 27:
-                i81 i81Var = (i81) this.b;
+                f81 f81Var = (f81) this.b;
                 TLRPC.TL_error tL_error7 = (TLRPC.TL_error) this.d;
                 TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) this.c;
-                SessionsActivity sessionsActivity = i81Var.f0;
+                SessionsActivity sessionsActivity = f81Var.f0;
                 if (tL_error7 == null) {
                     sessionsActivity.e.remove(tL_authorization);
                     sessionsActivity.f.remove(tL_authorization);
                     sessionsActivity.m0();
-                    m81 m81Var = sessionsActivity.a;
-                    if (m81Var != null) {
-                        m81Var.l();
+                    j81 j81Var = sessionsActivity.a;
+                    if (j81Var != null) {
+                        j81Var.l();
                     }
                     sessionsActivity.k0(true);
                     break;
                 }
                 break;
             case 28:
-                j81 j81Var = (j81) this.b;
+                g81 g81Var = (g81) this.b;
                 TLRPC.TL_error tL_error8 = (TLRPC.TL_error) this.d;
                 TLRPC.TL_authorization tL_authorization2 = (TLRPC.TL_authorization) this.c;
-                SessionsActivity sessionsActivity2 = j81Var.a;
+                SessionsActivity sessionsActivity2 = g81Var.a;
                 if (tL_error8 == null) {
                     sessionsActivity2.e.remove(tL_authorization2);
                     sessionsActivity2.f.remove(tL_authorization2);
                     sessionsActivity2.m0();
-                    m81 m81Var2 = sessionsActivity2.a;
-                    if (m81Var2 != null) {
-                        m81Var2.l();
+                    j81 j81Var2 = sessionsActivity2.a;
+                    if (j81Var2 != null) {
+                        j81Var2.l();
                         break;
                     }
                 }
                 break;
             default:
-                l81 l81Var = (l81) this.b;
+                i81 i81Var = (i81) this.b;
                 String str11 = (String) this.d;
                 n9 n9Var = (n9) this.c;
                 try {
                     byte[] decode = Base64.decode(str11.substring(17).replaceAll("\\/", "_").replaceAll("\\+", "-"), 8);
                     TLRPC.TL_auth_acceptLoginToken tL_auth_acceptLoginToken = new TLRPC.TL_auth_acceptLoginToken();
                     tL_auth_acceptLoginToken.token = decode;
-                    l81Var.c.getConnectionsManager().sendRequest(tL_auth_acceptLoginToken, new zb0(21, l81Var, n9Var));
+                    i81Var.c.getConnectionsManager().sendRequest(tL_auth_acceptLoginToken, new zb0(21, i81Var, n9Var));
                     break;
                 } catch (Exception e7) {
                     FileLog.e("Failed to pass qr code auth", e7);
-                    AndroidUtilities.runOnUIThread(new k81(l81Var, i23));
+                    AndroidUtilities.runOnUIThread(new h81(i81Var, i23));
                     n9Var.run();
                 }
         }

@@ -2,7 +2,7 @@ package n7;
 
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class b0 extends o {
     public final transient Object d;
@@ -48,7 +48,7 @@ public final class b0 extends o {
         for (int i10 = 0; i10 < 1; i10++) {
             i iVar = m.b;
             if (objArr[i10] == null) {
-                throw new NullPointerException(hg.k0.h(i10, "at index "));
+                throw new NullPointerException(hg.c.h(i10, "at index "));
             }
         }
         return m.t(1, objArr);
@@ -56,6 +56,6 @@ public final class b0 extends o {
 
     @Override // java.util.AbstractCollection
     public final String toString() {
-        return a4.a.p("[", this.d.toString(), "]");
+        return a4.a.q("[", this.d.toString(), "]");
     }
 }

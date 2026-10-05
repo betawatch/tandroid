@@ -14,7 +14,7 @@ import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.StatsController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class nu extends org.telegram.ui.Components.yl0 {
     public final Context c;
@@ -42,7 +42,7 @@ public final class nu extends org.telegram.ui.Components.yl0 {
                 i11 = dataSettingsActivity.proxyRow;
                 if (b10 != i11) {
                     i12 = dataSettingsActivity.clearDraftsRow;
-                    if (b10 != i12 && b10 != dataSettingsActivity.E && b10 != dataSettingsActivity.y && b10 != dataSettingsActivity.F && b10 != dataSettingsActivity.G && b10 != dataSettingsActivity.N && b10 != dataSettingsActivity.K && b10 != dataSettingsActivity.J && b10 != dataSettingsActivity.n) {
+                    if (b10 != i12 && b10 != dataSettingsActivity.E && b10 != dataSettingsActivity.y && b10 != dataSettingsActivity.F && b10 != dataSettingsActivity.G && b10 != dataSettingsActivity.K && b10 != dataSettingsActivity.J && b10 != dataSettingsActivity.n) {
                         i13 = dataSettingsActivity.saveToGalleryGroupsRow;
                         if (b10 != i13) {
                             i14 = dataSettingsActivity.saveToGalleryPeerRow;
@@ -65,7 +65,7 @@ public final class nu extends org.telegram.ui.Components.yl0 {
 
     @Override // s4.h0
     public final int h() {
-        return this.d.U;
+        return this.d.T;
     }
 
     @Override // s4.h0
@@ -74,10 +74,10 @@ public final class nu extends org.telegram.ui.Components.yl0 {
         int i12;
         int i13;
         DataSettingsActivity dataSettingsActivity = this.d;
-        if (i10 == dataSettingsActivity.r || i10 == dataSettingsActivity.w || i10 == dataSettingsActivity.O || i10 == dataSettingsActivity.Q || i10 == dataSettingsActivity.L || i10 == dataSettingsActivity.R || i10 == dataSettingsActivity.T) {
+        if (i10 == dataSettingsActivity.r || i10 == dataSettingsActivity.w || i10 == dataSettingsActivity.N || i10 == dataSettingsActivity.P || i10 == dataSettingsActivity.L || i10 == dataSettingsActivity.Q || i10 == dataSettingsActivity.S) {
             return 0;
         }
-        if (i10 == dataSettingsActivity.d || i10 == dataSettingsActivity.x || i10 == dataSettingsActivity.M || i10 == 0 || i10 == dataSettingsActivity.P || i10 == dataSettingsActivity.I || i10 == dataSettingsActivity.S) {
+        if (i10 == dataSettingsActivity.d || i10 == dataSettingsActivity.x || i10 == dataSettingsActivity.M || i10 == 0 || i10 == dataSettingsActivity.O || i10 == dataSettingsActivity.I || i10 == dataSettingsActivity.R) {
             return 2;
         }
         if (i10 == dataSettingsActivity.E || i10 == dataSettingsActivity.y || i10 == dataSettingsActivity.F || i10 == dataSettingsActivity.G || i10 == dataSettingsActivity.J || i10 == dataSettingsActivity.K) {
@@ -159,16 +159,10 @@ public final class nu extends org.telegram.ui.Components.yl0 {
                     if (i10 != i12) {
                         i13 = dataSettingsActivity.resetDownloadRow;
                         if (i10 != i13) {
-                            if (i10 != dataSettingsActivity.N) {
-                                i14 = dataSettingsActivity.clearDraftsRow;
-                                if (i10 == i14) {
-                                    eaVar.setIcon(0);
-                                    eaVar.b(LocaleController.getString(R.string.PrivacyDeleteCloudDrafts), false);
-                                    break;
-                                }
-                            } else {
+                            i14 = dataSettingsActivity.clearDraftsRow;
+                            if (i10 == i14) {
                                 eaVar.setIcon(0);
-                                eaVar.b(LocaleController.getString(R.string.VoipQuickReplies), false);
+                                eaVar.b(LocaleController.getString(R.string.PrivacyDeleteCloudDrafts), false);
                                 break;
                             }
                         } else {
@@ -195,8 +189,8 @@ public final class nu extends org.telegram.ui.Components.yl0 {
                     } else if (i32 == 3) {
                         str = LocaleController.getString(R.string.UseLessDataOnRoaming);
                     }
-                    eaVar.c(LocaleController.getString(R.string.VoipUseLessData), str, dataSettingsActivity.V, true);
-                    dataSettingsActivity.V = false;
+                    eaVar.c(LocaleController.getString(R.string.VoipUseLessData), str, dataSettingsActivity.U, true);
+                    dataSettingsActivity.U = false;
                     break;
                 }
                 break;
@@ -205,10 +199,10 @@ public final class nu extends org.telegram.ui.Components.yl0 {
                 if (i10 != dataSettingsActivity.d) {
                     if (i10 != 0) {
                         if (i10 != dataSettingsActivity.M) {
-                            if (i10 != dataSettingsActivity.P) {
+                            if (i10 != dataSettingsActivity.O) {
                                 if (i10 != dataSettingsActivity.x) {
                                     if (i10 != dataSettingsActivity.I) {
-                                        if (i10 == dataSettingsActivity.S) {
+                                        if (i10 == dataSettingsActivity.R) {
                                             m4Var.setText(LocaleController.getString(R.string.SaveToGallerySettings));
                                             break;
                                         }
@@ -434,16 +428,16 @@ public final class nu extends org.telegram.ui.Components.yl0 {
                         break;
                     }
                 } else {
-                    if (dataSettingsActivity.X) {
+                    if (dataSettingsActivity.W) {
                         r8Var.p(LocaleController.getString(R.string.StorageUsage), "", false, R.drawable.msg_filled_storageusage, -11565578, -13276952, true);
-                        r8Var.f(45, true, dataSettingsActivity.W);
+                        r8Var.f(45, true, dataSettingsActivity.V);
                     } else {
                         String string4 = LocaleController.getString(R.string.StorageUsage);
-                        long j3 = dataSettingsActivity.Y;
+                        long j3 = dataSettingsActivity.X;
                         r8Var.p(string4, j3 <= 0 ? "" : AndroidUtilities.formatFileSize(j3), true, R.drawable.msg_filled_storageusage, -11565578, -13276952, true);
-                        r8Var.f(45, false, dataSettingsActivity.W);
+                        r8Var.f(45, false, dataSettingsActivity.V);
                     }
-                    dataSettingsActivity.W = false;
+                    dataSettingsActivity.V = false;
                     break;
                 }
                 break;

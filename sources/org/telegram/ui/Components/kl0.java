@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class kl0 extends s4.n0 implements bh.a {
     public final Utilities.CallbackReturn a;
@@ -54,7 +54,7 @@ public final class kl0 extends s4.n0 implements bh.a {
     @Override // s4.n0
     public final void c(Canvas canvas, RecyclerView recyclerView) {
         if (recyclerView instanceof zl0) {
-            ((zl0) recyclerView).R0(canvas);
+            ((zl0) recyclerView).Q0(canvas);
         }
     }
 
@@ -62,7 +62,7 @@ public final class kl0 extends s4.n0 implements bh.a {
     public final void f(Canvas canvas, RectF rectF) {
         canvas.save();
         canvas.clipRect(rectF);
-        this.b.R0(canvas);
+        this.b.Q0(canvas);
         canvas.restore();
     }
 }

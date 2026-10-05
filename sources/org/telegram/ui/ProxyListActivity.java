@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class ProxyListActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public NumberTextView E;
@@ -281,7 +281,7 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.n2 implements N
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         setHasOwnBackground(true);
-        hg.k0.u(false, this.actionBar);
+        hg.c.u(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.ProxySettings));
         org.telegram.ui.ActionBar.c5 c5Var = this.parentLayout;
@@ -295,7 +295,7 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.n2 implements N
         this.fragmentView = frameLayout;
         org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
         this.b = zl0Var;
-        zl0Var.s1();
+        zl0Var.r1();
         ((s4.j) this.b.getItemAnimator()).C = false;
         ((s4.j) this.b.getItemAnimator()).o = org.telegram.ui.Components.tr.f;
         this.b.setSectionsDrawBackground(true);

@@ -21,9 +21,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.xb1;
+import org.telegram.ui.vb1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements org.telegram.ui.ActionBar.y5 {
     public static final /* synthetic */ int o0 = 0;
@@ -46,7 +46,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
     public int U;
     public int V;
     public float W;
-    public final xb1 a;
+    public final vb1 a;
     public float a0;
     public dn0 b;
     public long b0;
@@ -104,12 +104,12 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
         setFillViewport(true);
         setWillNotDraw(false);
         setHorizontalScrollBarEnabled(false);
-        xb1 xb1Var = new xb1(this, context, 9);
-        this.a = xb1Var;
-        xb1Var.setOrientation(0);
-        xb1Var.setPadding(AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f), 0);
-        xb1Var.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
-        addView(xb1Var);
+        vb1 vb1Var = new vb1(this, context, 9);
+        this.a = vb1Var;
+        vb1Var.setOrientation(0);
+        vb1Var.setPadding(AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f), 0);
+        vb1Var.setLayoutParams(new FrameLayout.LayoutParams(-1, -1));
+        addView(vb1Var);
         e();
     }
 
@@ -176,15 +176,15 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
         if (dVar != null) {
             dVar.setAlpha(255);
             this.e0.setBounds(((int) rectF.left) - AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f) + ((int) rectF.right), getMeasuredHeight());
-            this.e0.z(height);
+            this.e0.y(height);
         }
     }
 
     public final void c() {
         SparseIntArray sparseIntArray;
         SparseIntArray sparseIntArray2;
-        xb1 xb1Var = this.a;
-        int childCount = xb1Var.getChildCount();
+        vb1 vb1Var = this.a;
+        int childCount = vb1Var.getChildCount();
         int i10 = 0;
         while (true) {
             sparseIntArray = this.Q;
@@ -192,7 +192,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
             if (i10 >= childCount) {
                 break;
             }
-            TextView textView = (TextView) xb1Var.getChildAt(i10);
+            TextView textView = (TextView) vb1Var.getChildAt(i10);
             textView.setTag(Integer.valueOf(this.n == i10 ? this.L : this.M));
             textView.setTextColor(f(org.telegram.ui.ActionBar.i6.v0(this.n == i10 ? this.L : this.M, this.c)));
             if (this.e) {
@@ -238,22 +238,22 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j3) {
-        xb1 xb1Var = this.a;
-        if (view != xb1Var) {
+        vb1 vb1Var = this.a;
+        if (view != vb1Var) {
             return super.drawChild(canvas, view, j3);
         }
         boolean drawChild = super.drawChild(canvas, view, j3);
         int measuredHeight = getMeasuredHeight();
         float f7 = this.v + this.W;
         float f10 = this.w + f7 + this.a0;
-        View childAt = xb1Var.getChildAt(this.n);
+        View childAt = vb1Var.getChildAt(this.n);
         if (this.n0 && childAt != null) {
             f7 += childAt.getTranslationX();
             f10 += childAt.getTranslationX();
         }
         GradientDrawable gradientDrawable = this.K;
         int alpha = gradientDrawable.getAlpha();
-        gradientDrawable.setAlpha((int) (xb1Var.getAlpha() * alpha));
+        gradientDrawable.setAlpha((int) (vb1Var.getAlpha() * alpha));
         gradientDrawable.setBounds(AndroidUtilities.dp(4.0f) + getPaddingLeft() + ((int) f7), AndroidUtilities.dp(4.0f) + getPaddingTop(), (getPaddingLeft() + ((int) f10)) - AndroidUtilities.dp(4.0f), (measuredHeight - getPaddingBottom()) - AndroidUtilities.dp(4.0f));
         gradientDrawable.draw(canvas);
         gradientDrawable.setAlpha(alpha);
@@ -262,8 +262,8 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
 
     @Override // org.telegram.ui.ActionBar.y5
     public final void e() {
-        xb1 xb1Var = this.a;
-        int childCount = xb1Var.getChildCount();
+        vb1 vb1Var = this.a;
+        int childCount = vb1Var.getChildCount();
         int i10 = 0;
         while (true) {
             org.telegram.ui.ActionBar.d6 d6Var = this.c;
@@ -272,7 +272,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
                 invalidate();
                 return;
             } else {
-                TextView textView = (TextView) xb1Var.getChildAt(i10);
+                TextView textView = (TextView) vb1Var.getChildAt(i10);
                 textView.setTextColor(f(org.telegram.ui.ActionBar.i6.v0(this.n == i10 ? this.L : this.M, d6Var)));
                 textView.setBackground(new InsetDrawable((Drawable) org.telegram.ui.ActionBar.i6.f0(org.telegram.ui.ActionBar.i6.l1(0.15f, f(org.telegram.ui.ActionBar.i6.v0(this.L, d6Var))), 7, AndroidUtilities.dp(14.0f)), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f)));
                 i10++;
@@ -284,20 +284,20 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
         SparseArray sparseArray = new SparseArray();
         int i10 = 0;
         while (true) {
-            xb1 xb1Var = this.a;
-            int childCount = xb1Var.getChildCount();
+            vb1 vb1Var = this.a;
+            int childCount = vb1Var.getChildCount();
             SparseIntArray sparseIntArray = this.O;
             if (i10 >= childCount) {
                 sparseIntArray.clear();
                 this.P.clear();
                 this.Q.clear();
                 this.R.clear();
-                xb1Var.removeAllViews();
+                vb1Var.removeAllViews();
                 this.s = 0;
                 this.h = 0;
                 return sparseArray;
             }
-            sparseArray.put(sparseIntArray.get(i10), xb1Var.getChildAt(i10));
+            sparseArray.put(sparseIntArray.get(i10), vb1Var.getChildAt(i10));
             i10++;
         }
     }
@@ -372,7 +372,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
                 TextView textView = (TextView) view;
                 textView.getLayout();
                 this.G = textView.getMeasuredWidth();
-                this.F = hg.k0.y(textView.getMeasuredWidth(), this.G, 2, textView.getLeft());
+                this.F = hg.c.y(textView.getMeasuredWidth(), this.G, 2, textView.getLeft());
             }
             setEnabled(false);
             AndroidUtilities.runOnUIThread(t6Var, 16L);
@@ -424,22 +424,22 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
             } else if (f7 > 1.0f) {
                 f7 = 1.0f;
             }
-            xb1 xb1Var = this.a;
-            TextView textView = (TextView) xb1Var.getChildAt(i11);
-            TextView textView2 = (TextView) xb1Var.getChildAt(i12);
+            vb1 vb1Var = this.a;
+            TextView textView = (TextView) vb1Var.getChildAt(i11);
+            TextView textView2 = (TextView) vb1Var.getChildAt(i12);
             if (textView != null && textView2 != null) {
                 textView.getLayout();
                 this.E = textView.getMeasuredWidth();
-                this.y = hg.k0.y(textView.getMeasuredWidth(), this.E, 2, textView.getLeft());
+                this.y = hg.c.y(textView.getMeasuredWidth(), this.E, 2, textView.getLeft());
                 textView2.getLayout();
                 this.G = textView2.getMeasuredWidth();
-                this.F = hg.k0.y(textView2.getMeasuredWidth(), this.G, 2, textView2.getLeft());
+                this.F = hg.c.y(textView2.getMeasuredWidth(), this.G, 2, textView2.getLeft());
                 k(textView2, textView, f7);
                 if (f7 >= 1.0f) {
                     textView.setTag(Integer.valueOf(this.M));
                     textView2.setTag(Integer.valueOf(this.L));
                 }
-                i(xb1Var.indexOfChild(textView2), true);
+                i(vb1Var.indexOfChild(textView2), true);
             }
             if (f7 >= 1.0f) {
                 this.n = i12;
@@ -492,7 +492,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
                 int left = textView.getLeft();
                 int measuredWidth = textView.getMeasuredWidth();
                 int i16 = this.w;
-                int y3 = hg.k0.y(measuredWidth, i16, 2, left);
+                int y3 = hg.c.y(measuredWidth, i16, 2, left);
                 this.v = y3;
                 int i17 = this.U;
                 if (i17 > 0 && (i14 = this.V) > 0) {
@@ -514,10 +514,10 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
     @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(22.0f);
-        xb1 xb1Var = this.a;
-        int childCount = xb1Var.getChildCount();
+        vb1 vb1Var = this.a;
+        int childCount = vb1Var.getChildCount();
         for (int i12 = 0; i12 < childCount; i12++) {
-            View childAt = xb1Var.getChildAt(i12);
+            View childAt = vb1Var.getChildAt(i12);
             LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) childAt.getLayoutParams();
             float f7 = layoutParams.weight;
             int i13 = layoutParams.width;
@@ -547,14 +547,14 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
                 childAt.requestLayout();
             }
         }
-        float weightSum = xb1Var.getWeightSum();
+        float weightSum = vb1Var.getWeightSum();
         if (childCount == 1 || this.s > size) {
-            xb1Var.setWeightSum(0.0f);
+            vb1Var.setWeightSum(0.0f);
         } else {
-            xb1Var.setWeightSum(1.0f);
+            vb1Var.setWeightSum(1.0f);
         }
-        if (Math.abs(weightSum - xb1Var.getWeightSum()) > 0.1f) {
-            xb1Var.requestLayout();
+        if (Math.abs(weightSum - vb1Var.getWeightSum()) > 0.1f) {
+            vb1Var.requestLayout();
         }
         super.onMeasure(i10, i11);
         this.f = getMeasuredWidth() < View.MeasureSpec.getSize(i10);
@@ -564,9 +564,9 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
     public void setAnimationIdicatorProgress(float f7) {
         this.I = f7;
         int i10 = this.n;
-        xb1 xb1Var = this.a;
-        TextView textView = (TextView) xb1Var.getChildAt(i10);
-        TextView textView2 = (TextView) xb1Var.getChildAt(this.T);
+        vb1 vb1Var = this.a;
+        TextView textView = (TextView) vb1Var.getChildAt(i10);
+        TextView textView2 = (TextView) vb1Var.getChildAt(this.T);
         if (textView2 == null || textView == null) {
             return;
         }
@@ -593,10 +593,10 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
     @Override // android.view.View
     public void setEnabled(boolean z10) {
         super.setEnabled(z10);
-        xb1 xb1Var = this.a;
-        int childCount = xb1Var.getChildCount();
+        vb1 vb1Var = this.a;
+        int childCount = vb1Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            xb1Var.getChildAt(i10).setEnabled(z10);
+            vb1Var.getChildAt(i10).setEnabled(z10);
         }
     }
 

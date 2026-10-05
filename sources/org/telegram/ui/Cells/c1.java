@@ -14,12 +14,12 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.w00;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class c1 {
     public static boolean a(MessageObject messageObject) {
@@ -37,7 +37,7 @@ public abstract /* synthetic */ class c1 {
     }
 
     public static float c(RecyclerView recyclerView) {
-        int i10 = aw0.o1;
+        int i10 = bw0.l0;
         s4.o0 layoutManager = recyclerView.getLayoutManager();
         if (layoutManager == null || !recyclerView.canScrollVertically(-1)) {
             return 0.0f;
@@ -54,7 +54,7 @@ public abstract /* synthetic */ class c1 {
     }
 
     public static int e(int i10, int i11, Drawable drawable) {
-        return i11 - (drawable.getIntrinsicWidth() / i10);
+        return i11 - (drawable.getIntrinsicHeight() / i10);
     }
 
     public static int f(Random random, int i10) {
@@ -125,7 +125,7 @@ public abstract /* synthetic */ class c1 {
     }
 
     public static int t(int i10, int i11, Drawable drawable) {
-        return (drawable.getIntrinsicHeight() / i10) + i11;
+        return i11 - (drawable.getIntrinsicWidth() / i10);
     }
 
     public static void u(int i10, int i11, ArrayList arrayList, ArrayList arrayList2) {
@@ -139,10 +139,14 @@ public abstract /* synthetic */ class c1 {
     }
 
     public static int w(int i10, int i11, Drawable drawable) {
+        return (drawable.getIntrinsicHeight() / i10) + i11;
+    }
+
+    public static int x(int i10, int i11, Drawable drawable) {
         return (drawable.getIntrinsicWidth() / i10) + i11;
     }
 
-    public static /* synthetic */ String x(int i10) {
+    public static /* synthetic */ String y(int i10) {
         if (i10 == 1) {
             return "PAID";
         }

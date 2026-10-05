@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class FiltersSetupActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public ai.w0 a;
@@ -211,7 +211,7 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.n2 implement
         this.fragmentView = frameLayout;
         ai.w0 w0Var = new ai.w0(this, context, 29);
         this.a = w0Var;
-        w0Var.s1();
+        w0Var.r1();
         s4.j jVar = new s4.j();
         jVar.n(350L);
         jVar.o(org.telegram.ui.Components.tr.h);

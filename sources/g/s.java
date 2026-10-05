@@ -58,7 +58,7 @@ import r0.l0;
 import v7.k7;
 import w7.x6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class s extends h implements l.i, LayoutInflater.Factory2 {
     public static final a0.m q0 = new a0.m(0);
@@ -447,7 +447,7 @@ public final class s extends h implements l.i, LayoutInflater.Factory2 {
             this.p0 = null;
         }
         this.o0 = null;
-        w();
+        x();
     }
 
     public final void f(int i10, r rVar, l.k kVar) {
@@ -527,7 +527,7 @@ public final class s extends h implements l.i, LayoutInflater.Factory2 {
             this.V = null;
         }
         if (rVar.a == 0) {
-            w();
+            x();
         }
     }
 
@@ -1098,7 +1098,7 @@ public final class s extends h implements l.i, LayoutInflater.Factory2 {
             windowManager.addView(rVar.e, layoutParams3);
             rVar.m = true;
             if (i11 != 0) {
-                w();
+                x();
                 return;
             }
             return;
@@ -1255,24 +1255,6 @@ public final class s extends h implements l.i, LayoutInflater.Factory2 {
         }
     }
 
-    public final void w() {
-        OnBackInvokedCallback onBackInvokedCallback;
-        if (Build.VERSION.SDK_INT >= 33) {
-            boolean z10 = false;
-            if (this.o0 != null && (o(0).m || this.x != null)) {
-                z10 = true;
-            }
-            if (z10 && this.p0 == null) {
-                this.p0 = m.b(this.o0, this);
-            } else {
-                if (z10 || (onBackInvokedCallback = this.p0) == null) {
-                    return;
-                }
-                m.c(this.o0, onBackInvokedCallback);
-            }
-        }
-    }
-
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0048, code lost:
     
         if (r6.g() != false) goto L20;
@@ -1281,7 +1263,7 @@ public final class s extends h implements l.i, LayoutInflater.Factory2 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void y(l.k kVar) {
+    public final void w(l.k kVar) {
         ActionMenuView actionMenuView;
         m.h hVar;
         m.h hVar2;
@@ -1350,6 +1332,24 @@ public final class s extends h implements l.i, LayoutInflater.Factory2 {
         o10.n = true;
         h(o10, false);
         s(o10, null);
+    }
+
+    public final void x() {
+        OnBackInvokedCallback onBackInvokedCallback;
+        if (Build.VERSION.SDK_INT >= 33) {
+            boolean z10 = false;
+            if (this.o0 != null && (o(0).m || this.x != null)) {
+                z10 = true;
+            }
+            if (z10 && this.p0 == null) {
+                this.p0 = m.b(this.o0, this);
+            } else {
+                if (z10 || (onBackInvokedCallback = this.p0) == null) {
+                    return;
+                }
+                m.c(this.o0, onBackInvokedCallback);
+            }
+        }
     }
 
     @Override // android.view.LayoutInflater.Factory

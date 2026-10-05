@@ -5,61 +5,61 @@ import android.text.SpannableStringBuilder;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.f91;
-import org.telegram.ui.Components.fs0;
 import org.telegram.ui.Components.g91;
+import org.telegram.ui.Components.gs0;
+import org.telegram.ui.Components.h91;
 import org.telegram.ui.Components.rq;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class x1 extends g91 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 U;
-    public final /* synthetic */ fs0 V;
+public final class x1 extends h91 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 V;
+    public final /* synthetic */ gs0 W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(fs0 fs0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var) {
+    public x1(gs0 gs0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var) {
         super(context, null);
-        this.V = fs0Var;
-        this.U = n2Var;
+        this.W = gs0Var;
+        this.V = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.g91
+    @Override // org.telegram.ui.Components.h91
     public final void A(int i10) {
-        this.V.l();
-        org.telegram.ui.ActionBar.n2 n2Var = this.U;
+        this.W.l();
+        org.telegram.ui.ActionBar.n2 n2Var = this.V;
         if (n2Var instanceof ProfileActivity) {
             ((ProfileActivity) n2Var).P();
         }
     }
 
-    @Override // org.telegram.ui.Components.g91
+    @Override // org.telegram.ui.Components.h91
     public final void h() {
-        fs0 fs0Var = this.V;
-        f91 f91Var = fs0Var.n;
-        if (!fs0Var.b() || f91Var == null) {
+        gs0 gs0Var = this.W;
+        g91 g91Var = gs0Var.n;
+        if (!gs0Var.b() || g91Var == null) {
             return;
         }
-        if (fs0Var.J == null) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.f0.g(R.string.Gift2NewCollection, new StringBuilder("+ ")));
+        if (gs0Var.J == null) {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.q.g(R.string.Gift2NewCollection, new StringBuilder("+ ")));
             rq rqVar = new rq(R.drawable.poll_add_plus, 0);
             rqVar.spaceScaleX = 0.8f;
             spannableStringBuilder.setSpan(rqVar, 0, 1, 33);
-            fs0Var.J = spannableStringBuilder;
+            gs0Var.J = spannableStringBuilder;
         }
-        f91Var.a(-1, fs0Var.J);
+        g91Var.a(-1, gs0Var.J);
     }
 
-    @Override // org.telegram.ui.Components.g91
+    @Override // org.telegram.ui.Components.h91
     public final boolean i(MotionEvent motionEvent) {
-        return !this.V.g();
+        return !this.W.g();
     }
 
-    @Override // org.telegram.ui.Components.g91
+    @Override // org.telegram.ui.Components.h91
     public final void w(boolean z10) {
-        fs0 fs0Var = this.V;
-        fs0Var.l();
-        org.telegram.ui.ActionBar.n2 n2Var = this.U;
+        gs0 gs0Var = this.W;
+        gs0Var.l();
+        org.telegram.ui.ActionBar.n2 n2Var = this.V;
         if (n2Var instanceof ProfileActivity) {
             ((ProfileActivity) n2Var).P();
             View fragmentView = n2Var.getFragmentView();
@@ -67,6 +67,6 @@ public final class x1 extends g91 {
                 fragmentView.invalidate();
             }
         }
-        fs0Var.o();
+        gs0Var.o();
     }
 }

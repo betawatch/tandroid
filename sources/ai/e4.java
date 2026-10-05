@@ -29,20 +29,20 @@ import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.eg;
 import org.telegram.ui.Components.jl;
 import org.telegram.ui.Components.ny;
-import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.qv0;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.xn;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.a71;
 import org.telegram.ui.bl0;
-import org.telegram.ui.c71;
 import org.telegram.ui.cd;
 import org.telegram.ui.nd;
 import org.telegram.ui.uq;
 import org.telegram.ui.uy;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -232,19 +232,19 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 }
                 break;
             case 10:
-                pv0.m((pv0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (b80) obj2, (e9) obj);
+                qv0.m((qv0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (b80) obj2, (e9) obj);
                 break;
             case 11:
                 uy uyVar = (uy) obj5;
                 uyVar.Z4(uyVar.getMessagesController().getChat((Long) obj4), (Runnable) obj, new uq(uyVar, (nd) obj3, (org.telegram.ui.ActionBar.n2) obj2, i13));
                 break;
             case 12:
-                c71 c71Var = (c71) obj5;
+                a71 a71Var = (a71) obj5;
                 String[] strArr = (String[]) obj4;
                 String str2 = (String) obj3;
                 LinkedHashSet linkedHashSet = (LinkedHashSet) obj2;
                 Runnable runnable2 = (Runnable) obj;
-                int i16 = c71Var.V;
+                int i16 = a71Var.V;
                 if (ConnectionsManager.getInstance(i16).getConnectionState() != 3) {
                     runnable2.run();
                     break;
@@ -252,17 +252,17 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                     if (strArr != null && strArr.length != 0) {
                         str = strArr[0];
                     }
-                    MediaDataController.getInstance(i16).searchStickers(true, str, str2, new org.telegram.ui.z(c71Var, linkedHashSet, runnable2, 13));
+                    MediaDataController.getInstance(i16).searchStickers(true, str, str2, new org.telegram.ui.z(a71Var, linkedHashSet, runnable2, 13));
                     break;
                 }
             case 13:
-                c71 c71Var2 = (c71) obj5;
+                a71 a71Var2 = (a71) obj5;
                 String str3 = (String) obj3;
                 ArrayList arrayList5 = (ArrayList) obj4;
                 HashMap hashMap = (HashMap) obj2;
                 Runnable runnable3 = (Runnable) obj;
-                int i17 = c71Var2.V;
-                if (c71Var2.W != 4) {
+                int i17 = a71Var2.V;
+                if (a71Var2.W != 4) {
                     runnable3.run();
                     break;
                 } else {
@@ -313,7 +313,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                         }
                     }
                     if (allStickers != null && !allStickers.isEmpty() && str3.length() > 1) {
-                        MediaDataController.getInstance(i17).getEmojiSuggestions(c71.a2, str3, false, new a1.d(allStickers, hashMap, arrayList5, runnable3, 16), false);
+                        MediaDataController.getInstance(i17).getEmojiSuggestions(a71.a2, str3, false, new a1.d(allStickers, hashMap, arrayList5, runnable3, 16), false);
                         break;
                     }
                 }

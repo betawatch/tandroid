@@ -10,12 +10,12 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.gw0;
 import org.telegram.ui.Components.kf0;
 import org.telegram.ui.Components.mf0;
 import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class wb extends FrameLayout {
     public final Rect a;
@@ -103,9 +103,9 @@ public final class wb extends FrameLayout {
         if (kf0Var != null) {
             float measuredWidth2 = kf0Var.getMeasuredWidth();
             float measuredHeight2 = kcVar.E1.getMeasuredHeight();
-            fw0 fw0Var = kf0Var.d;
-            fw0Var.a = measuredWidth2;
-            fw0Var.b = measuredHeight2;
+            gw0 gw0Var = kf0Var.d;
+            gw0Var.a = measuredWidth2;
+            gw0Var.b = measuredHeight2;
         }
     }
 

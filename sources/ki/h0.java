@@ -41,13 +41,13 @@ import org.telegram.ui.ActionBar.c6;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.e60;
-import org.telegram.ui.Components.ro0;
+import org.telegram.ui.Components.so0;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.b41;
 import org.telegram.ui.il;
+import org.telegram.ui.z31;
 import rg.y0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -193,7 +193,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 ((VideoAds) obj2).lambda$show$16((Utilities.Callback) obj);
                 break;
             case 14:
-                b41.R((Context) obj2, null, false, (ai.a1) obj, null);
+                z31.R((Context) obj2, null, false, (ai.a1) obj, null);
                 break;
             case 15:
                 ((ConferenceCall) obj2).lambda$processUpdates$4((TLRPC.Updates) obj);
@@ -224,22 +224,22 @@ public final /* synthetic */ class h0 implements Runnable {
                 break;
             case 24:
                 org.telegram.ui.ActionBar.k kVar = (org.telegram.ui.ActionBar.k) obj2;
-                boolean canScrollVertically = ((ro0) obj).canScrollVertically(-1);
+                boolean canScrollVertically = ((so0) obj).canScrollVertically(-1);
                 boolean z10 = !canScrollVertically;
-                if (kVar.t1 != z10) {
-                    ValueAnimator valueAnimator = kVar.v1;
+                if (kVar.s1 != z10) {
+                    ValueAnimator valueAnimator = kVar.u1;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    float f11 = kVar.u1;
-                    kVar.t1 = z10;
+                    float f11 = kVar.t1;
+                    kVar.s1 = z10;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(f11, canScrollVertically ? 0.0f : 1.0f);
-                    kVar.v1 = ofFloat;
+                    kVar.u1 = ofFloat;
                     ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar, objArr == true ? 1 : 0));
-                    kVar.v1.addListener(new org.telegram.ui.ActionBar.c(kVar, z10, i12));
-                    kVar.v1.setDuration(320L);
-                    kVar.v1.setInterpolator(tr.h);
-                    kVar.v1.start();
+                    kVar.u1.addListener(new org.telegram.ui.ActionBar.c(kVar, z10, i12));
+                    kVar.u1.setDuration(320L);
+                    kVar.u1.setInterpolator(tr.h);
+                    kVar.u1.start();
                     break;
                 }
                 break;
@@ -247,20 +247,20 @@ public final /* synthetic */ class h0 implements Runnable {
                 org.telegram.ui.ActionBar.k kVar2 = (org.telegram.ui.ActionBar.k) obj2;
                 boolean canScrollVertically2 = ((RecyclerView) obj).canScrollVertically(-1);
                 boolean z11 = !canScrollVertically2;
-                if (kVar2.t1 != z11) {
-                    ValueAnimator valueAnimator2 = kVar2.v1;
+                if (kVar2.s1 != z11) {
+                    ValueAnimator valueAnimator2 = kVar2.u1;
                     if (valueAnimator2 != null) {
                         valueAnimator2.cancel();
                     }
-                    float f12 = kVar2.u1;
-                    kVar2.t1 = z11;
+                    float f12 = kVar2.t1;
+                    kVar2.s1 = z11;
                     ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f12, canScrollVertically2 ? 0.0f : 1.0f);
-                    kVar2.v1 = ofFloat2;
+                    kVar2.u1 = ofFloat2;
                     ofFloat2.addUpdateListener(new org.telegram.ui.ActionBar.a(kVar2, i11));
-                    kVar2.v1.addListener(new org.telegram.ui.ActionBar.c(kVar2, z11, objArr2 == true ? 1 : 0));
-                    kVar2.v1.setDuration(320L);
-                    kVar2.v1.setInterpolator(tr.h);
-                    kVar2.v1.start();
+                    kVar2.u1.addListener(new org.telegram.ui.ActionBar.c(kVar2, z11, objArr2 == true ? 1 : 0));
+                    kVar2.u1.setDuration(320L);
+                    kVar2.u1.setInterpolator(tr.h);
+                    kVar2.u1.start();
                     break;
                 }
                 break;

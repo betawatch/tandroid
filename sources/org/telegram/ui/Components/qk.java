@@ -24,7 +24,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class qk extends ul0 {
     public long E;
@@ -365,7 +365,7 @@ public final class qk extends ul0 {
                         tL_messages_search.max_date = (int) (j16 / 1000);
                     }
                     if (z13 && str5.equals(qkVar.J) && !arrayList5.isEmpty()) {
-                        tL_messages_search.offset_id = ((MessageObject) hg.k0.g(1, arrayList5)).getId();
+                        tL_messages_search.offset_id = ((MessageObject) hg.c.g(1, arrayList5)).getId();
                     } else {
                         tL_messages_search.offset_id = 0;
                     }
@@ -397,7 +397,7 @@ public final class qk extends ul0 {
                         tL_messages_searchGlobal2.max_date = (int) (j12 / 1000);
                     }
                     if (z13 && str4.equals(qkVar.J) && !arrayList5.isEmpty()) {
-                        MessageObject messageObject = (MessageObject) hg.k0.g(1, arrayList5);
+                        MessageObject messageObject = (MessageObject) hg.c.g(1, arrayList5);
                         tL_messages_searchGlobal2.offset_id = messageObject.getId();
                         tL_messages_searchGlobal2.offset_rate = qkVar.G;
                         TLRPC.Peer peer = messageObject.messageOwner.peer_id;
@@ -423,7 +423,7 @@ public final class qk extends ul0 {
                 qkVar.J = str4;
                 qkVar.I = str2;
                 final ArrayList arrayList7 = new ArrayList();
-                gg.s0.A1(qkVar.J, arrayList7);
+                gg.s0.z1(qkVar.J, arrayList7);
                 ConnectionsManager connectionsManager = accountInstance2.getConnectionsManager();
                 final int i12 = i10;
                 final String str6 = str4;
@@ -499,10 +499,10 @@ public final class qk extends ul0 {
                 arrayList2 = null;
             }
             if (arrayList != null || arrayList2 != null) {
-                s0Var.C1(arrayList, arrayList2, false);
+                s0Var.B1(arrayList, arrayList2, false);
                 z11 = true;
                 if (!z11) {
-                    s0Var.C1(null, null, false);
+                    s0Var.B1(null, null, false);
                 }
                 s0Var.setEnabled(z11);
                 if (z11 || s0Var.getTag() == null) {

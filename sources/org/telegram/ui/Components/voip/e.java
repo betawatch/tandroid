@@ -20,13 +20,13 @@ import android.view.accessibility.AccessibilityNodeProvider;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.zc;
-import org.telegram.ui.ki1;
+import org.telegram.ui.ii1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class e extends View {
     public boolean E;
@@ -197,7 +197,7 @@ public final class e extends View {
         this.x = (AndroidUtilities.dp(8.0f) * 0.005f) + this.x;
         int measuredWidth = getMeasuredWidth();
         int i10 = this.v;
-        int B = org.telegram.messenger.f0.B(46.0f, measuredWidth, i10);
+        int B = org.telegram.messenger.q.B(46.0f, measuredWidth, i10);
         int dp5 = AndroidUtilities.dp(40.0f);
         int measuredWidth2 = getMeasuredWidth() - AndroidUtilities.dp(46.0f);
         int dp6 = AndroidUtilities.dp(40.0f) + i10;
@@ -321,7 +321,7 @@ public final class e extends View {
         super.onMeasure(i10, i11);
         int i12 = this.v;
         this.L = (getMeasuredWidth() / 2.0f) - ((i12 / 2.0f) + AndroidUtilities.dp(46.0f));
-        int z10 = ok.z(28.0f, i12, 2);
+        int z10 = bi.z(28.0f, i12, 2);
         this.c.setBounds(z10, z10, AndroidUtilities.dp(28.0f) + z10, AndroidUtilities.dp(28.0f) + z10);
         this.d.setBounds(z10, z10, AndroidUtilities.dp(28.0f) + z10, AndroidUtilities.dp(28.0f) + z10);
         float dp = AndroidUtilities.dp(3.0f);
@@ -361,7 +361,7 @@ public final class e extends View {
                         ofFloat.start();
                         this.O = ofFloat;
                         if (this.Q != null && (Math.abs(y3) < f7 || this.J > this.L * 0.8f)) {
-                            ((ki1) this.Q).b();
+                            ((ii1) this.Q).b();
                         }
                     } else {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.K, 0.0f);
@@ -369,7 +369,7 @@ public final class e extends View {
                         ofFloat2.start();
                         this.P = ofFloat2;
                         if (this.Q != null && (Math.abs(y3) < f7 || (-this.K) > this.L * 0.8f)) {
-                            ((ki1) this.Q).a();
+                            ((ii1) this.Q).a();
                         }
                     }
                 }

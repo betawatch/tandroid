@@ -21,11 +21,11 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class qc implements Runnable {
     public final /* synthetic */ int a;
@@ -146,11 +146,11 @@ public final /* synthetic */ class qc implements Runnable {
                 return;
             case 4:
                 di.k kVar = (di.k) this.b;
-                aw0 aw0Var = kVar.S;
-                if (aw0Var == null || kVar.Y == -1) {
+                bw0 bw0Var = kVar.S;
+                if (bw0Var == null || kVar.Y == -1) {
                     return;
                 }
-                aw0Var.Z();
+                bw0Var.a();
                 return;
             case 5:
                 a();
@@ -197,9 +197,9 @@ public final /* synthetic */ class qc implements Runnable {
                 ((e2.a0) this.b).getClass();
                 return;
             case 18:
-                hg.c cVar2 = (hg.c) this.b;
-                cVar2.c.f3.N(true);
-                cVar2.T(true);
+                hg.d dVar = (hg.d) this.b;
+                dVar.c.f3.N(true);
+                dVar.T(true);
                 return;
             case 19:
                 AndroidUtilities.addToClipboard(((TL_account.TL_businessChatLink) this.b).link);
@@ -207,9 +207,9 @@ public final /* synthetic */ class qc implements Runnable {
                 return;
             case 20:
                 hg.l0 l0Var = (hg.l0) this.b;
-                u61 u61Var = l0Var.d0;
-                if (u61Var != null) {
-                    u61Var.N(true);
+                w61 w61Var = l0Var.d0;
+                if (w61Var != null) {
+                    w61Var.N(true);
                 }
                 l0Var.R(true);
                 return;
@@ -247,13 +247,13 @@ public final /* synthetic */ class qc implements Runnable {
                 return;
             case 28:
                 i2.f0 f0Var = (i2.f0) this.b;
-                e2.c cVar3 = f0Var.E;
+                e2.c cVar2 = f0Var.E;
                 Context context = f0Var.e;
                 String str2 = e2.d0.a;
                 Integer valueOf = Integer.valueOf(c2.d.e(context).generateAudioSessionId());
-                cVar3.f = valueOf;
-                e2.b bVar2 = new e2.b(cVar3, valueOf, i11);
-                e2.z zVar = (e2.z) cVar3.c;
+                cVar2.f = valueOf;
+                e2.b bVar2 = new e2.b(cVar2, valueOf, i11);
+                e2.z zVar = (e2.z) cVar2.c;
                 if (zVar.a.getLooper().getThread().isAlive()) {
                     zVar.c(bVar2);
                     return;

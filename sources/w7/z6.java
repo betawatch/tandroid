@@ -1,6 +1,6 @@
 package w7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class z6 {
     public static int a(int i10) {
@@ -34,6 +34,6 @@ public abstract class z6 {
         if (i10 == 512) {
             return 9;
         }
-        throw new IllegalArgumentException(hg.k0.h(i10, "type needs to be >= FIRST and <= LAST, type="));
+        throw new IllegalArgumentException(hg.c.h(i10, "type needs to be >= FIRST and <= LAST, type="));
     }
 }

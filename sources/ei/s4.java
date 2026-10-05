@@ -14,9 +14,9 @@ import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.jr0;
 import org.telegram.ui.o6;
-import yh.j5;
+import yh.k5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -69,17 +69,17 @@ public final /* synthetic */ class s4 implements Utilities.Callback {
                 xh.o2 o2Var = (xh.o2) this.d;
                 ArrayList arrayList = (ArrayList) obj;
                 org.telegram.ui.ActionBar.n2 n2Var2 = s2Var.a;
-                j5 j5Var = s2Var.e;
-                j5Var.a(i12, arrayList);
+                k5 k5Var = s2Var.e;
+                k5Var.a(i12, arrayList);
                 o2Var.f(true);
                 s2Var.f(true);
                 s2Var.n();
-                TL_stars.TL_starGiftCollection c10 = j5Var.c(i12);
+                TL_stars.TL_starGiftCollection c10 = k5Var.c(i12);
                 if (c10 != null) {
                     if (arrayList.size() <= 1) {
                         if (arrayList.size() == 1) {
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) arrayList.get(0);
-                            rc R = yc.a0(n2Var2).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.x3.D1(savedStarGift.gift), c10.title)));
+                            rc R = yc.a0(n2Var2).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, yh.y3.D1(savedStarGift.gift), c10.title)));
                             R.r = false;
                             R.j();
                             break;

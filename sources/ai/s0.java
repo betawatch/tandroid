@@ -35,10 +35,10 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.bo0;
-import org.telegram.ui.Components.br0;
+import org.telegram.ui.Components.gq0;
 import org.telegram.ui.Components.ld;
-import org.telegram.ui.Components.t41;
-import org.telegram.ui.Components.wy0;
+import org.telegram.ui.Components.u41;
+import org.telegram.ui.Components.xy0;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.ProfileActivity;
@@ -46,17 +46,17 @@ import org.telegram.ui.dg0;
 import org.telegram.ui.dl0;
 import org.telegram.ui.hu0;
 import org.telegram.ui.nt;
+import org.telegram.ui.pd1;
 import org.telegram.ui.pt;
-import org.telegram.ui.rd1;
 import org.telegram.ui.rt;
 import org.telegram.ui.uy;
+import org.telegram.ui.w31;
+import org.telegram.ui.wf1;
 import org.telegram.ui.wk;
-import org.telegram.ui.y31;
-import org.telegram.ui.yf1;
+import org.telegram.ui.xb1;
 import org.telegram.ui.yn;
-import org.telegram.ui.zb1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -90,10 +90,11 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
         TLRPC.User user;
         Long l4;
         Long l10;
+        int i10 = 27;
         SpannableStringBuilder spannableStringBuilder = null;
         boolean z12 = false;
         boolean z13 = false;
-        int i10 = 1;
+        int i11 = 1;
         switch (this.a) {
             case 0:
                 org.telegram.ui.Cells.a2 a2Var = (org.telegram.ui.Cells.a2) this.b;
@@ -124,7 +125,7 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                     ci.b1 b1Var = MessagesController.getInstance(e6Var.C2).getStoriesController().w;
                     if (!b1Var.c && !b1Var.d) {
                         b1Var.d = true;
-                        ci.x0 x0Var = new ci.x0(b1Var, i10);
+                        ci.x0 x0Var = new ci.x0(b1Var, i11);
                         MessagesStorage messagesStorage = MessagesStorage.getInstance(b1Var.a);
                         messagesStorage.getStorageQueue().postRunnable(new ci.y0(messagesStorage, z12, x0Var, z12 ? 1 : 0));
                     }
@@ -134,8 +135,8 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                 if (!e6Var.C1) {
                     l9 storiesController2 = MessagesController.getInstance(e6Var.C2).getStoriesController();
                     TL_stories.StoryItem storyItem = c6Var.a;
-                    int i11 = storiesController2.a;
-                    if (storyItem == null || storyItem.dialogId == UserConfig.getInstance(i11).getClientUserId() || ((storyItem.dialogId <= j3 || (user = MessagesController.getInstance(i11).getUser(Long.valueOf(storyItem.dialogId))) == null || !user.bot || !user.bot_can_edit) && (storyItem.dialogId >= j3 || (chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-storyItem.dialogId))) == null || (!chat.creator && ((!(z11 = storyItem.out) || (tL_chatAdminRights2 = chat.admin_rights) == null || (!tL_chatAdminRights2.post_stories && !tL_chatAdminRights2.edit_stories)) && (z11 || (tL_chatAdminRights = chat.admin_rights) == null || !tL_chatAdminRights.edit_stories)))))) {
+                    int i12 = storiesController2.a;
+                    if (storyItem == null || storyItem.dialogId == UserConfig.getInstance(i12).getClientUserId() || ((storyItem.dialogId <= j3 || (user = MessagesController.getInstance(i12).getUser(Long.valueOf(storyItem.dialogId))) == null || !user.bot || !user.bot_can_edit) && (storyItem.dialogId >= j3 || (chat = MessagesController.getInstance(i12).getChat(Long.valueOf(-storyItem.dialogId))) == null || (!chat.creator && ((!(z11 = storyItem.out) || (tL_chatAdminRights2 = chat.admin_rights) == null || (!tL_chatAdminRights2.post_stories && !tL_chatAdminRights2.edit_stories)) && (z11 || (tL_chatAdminRights = chat.admin_rights) == null || !tL_chatAdminRights.edit_stories)))))) {
                         z10 = false;
                         v5 v5Var = new v5(e6Var, e6Var.getContext(), d6Var, d6Var, jcVar, c6Var.e, !e6Var.C1 || ((e6Var.D1 || e6Var.I0()) && z10), z10, context, b6Var, zArr);
                         e6Var.t1 = v5Var;
@@ -162,9 +163,9 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                 b6 b6Var2 = (b6) this.f;
                 e6 e6Var2 = v5Var3.l;
                 if (view.getAlpha() < 1.0f) {
-                    int i12 = -e6Var2.r1;
-                    e6Var2.r1 = i12;
-                    AndroidUtilities.shakeViewSpring(view, i12);
+                    int i13 = -e6Var2.r1;
+                    e6Var2.r1 = i13;
+                    AndroidUtilities.shakeViewSpring(view, i13);
                     new yc(e6Var2.c1, d6Var2).t("Wait until current upload is complete", null).j();
                     break;
                 } else {
@@ -264,10 +265,10 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                 actionBarPopupWindow$ActionBarPopupWindowLayout.setBackground(mutate);
                 org.telegram.ui.ActionBar.f1 f1Var = new org.telegram.ui.ActionBar.f1(ynVar.getParentActivity(), true, true);
                 f1Var.g(LocaleController.getString(R.string.TranslateMessage), R.drawable.msg_translate, null);
-                f1Var.setOnClickListener(new s0(ynVar, str, str2, charSequence, r11, 8));
+                f1Var.setOnClickListener(new s0(ynVar, str, str2, charSequence, r12, 8));
                 actionBarPopupWindow$ActionBarPopupWindowLayout.addView(f1Var);
                 org.telegram.ui.ActionBar.n1 n1Var2 = new org.telegram.ui.ActionBar.n1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-                Runnable[] runnableArr = {new hu0(n1Var2, 27)};
+                Runnable[] runnableArr = {new hu0(n1Var2, i10)};
                 n1Var2.e = true;
                 n1Var2.c = 220;
                 n1Var2.setOutsideTouchable(true);
@@ -282,7 +283,7 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                 String str4 = (String) this.d;
                 CharSequence charSequence2 = (CharSequence) this.e;
                 Runnable[] runnableArr2 = (Runnable[]) this.f;
-                t41.I(ynVar2.getParentActivity(), ynVar2, str3, str4, charSequence2, null, null);
+                u41.I(ynVar2.getParentActivity(), ynVar2, str3, str4, charSequence2, null, null);
                 Runnable runnable = runnableArr2[0];
                 if (runnable != null) {
                     runnable.run();
@@ -304,7 +305,7 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                         AndroidUtilities.shakeView(editTextBoldCursor);
                         break;
                     } else {
-                        if (n2Var instanceof rd1) {
+                        if (n2Var instanceof pd1) {
                             org.telegram.ui.ActionBar.i6.o();
                             n2Var.finishFragment();
                         }
@@ -349,11 +350,11 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                             ArrayList arrayList = new ArrayList(c5Var.getFragmentStack());
                             int size2 = arrayList.size() - 2;
                             while (true) {
-                                int i13 = n9Var.b;
-                                if (size2 > i13) {
+                                int i14 = n9Var.b;
+                                if (size2 > i14) {
                                     ((org.telegram.ui.ActionBar.n2) arrayList.get(size2)).removeSelfFromStack();
                                     size2--;
-                                } else if (i13 < c5Var.getFragmentStack().size()) {
+                                } else if (i14 < c5Var.getFragmentStack().size()) {
                                     ((ActionBarLayout) c5Var).l(true, false);
                                     break;
                                 }
@@ -392,10 +393,10 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                     bundle2.putLong("dialog_id", n9Var.f);
                     n2Var2.presentFragment(new ProfileActivity(bundle2, null), true);
                 }
-                if (n9Var.a == yf1.class) {
+                if (n9Var.a == wf1.class) {
                     Bundle bundle3 = new Bundle();
                     bundle3.putLong("chat_id", n9Var.c.id);
-                    n2Var2.presentFragment(new yf1(bundle3), true);
+                    n2Var2.presentFragment(new wf1(bundle3), true);
                 }
                 if (n9Var.a == uy.class) {
                     n2Var2.presentFragment(new uy(null), true);
@@ -411,7 +412,7 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                 int intValue = ((Integer) view.getTag()).intValue();
                 n1Var3.dismiss();
                 if (((Integer) arrayList2.get(intValue)).intValue() == 1) {
-                    wy0.a(tL_messages_stickerSet, n2Var4, d6Var3);
+                    xy0.a(tL_messages_stickerSet, n2Var4, d6Var3);
                     break;
                 } else {
                     ((yn) n2Var4).X9();
@@ -427,30 +428,30 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                 if (str5 != null) {
                     String lowerCase = str5.toLowerCase();
                     LocaleController.LocaleInfo currentLocaleInfo = LocaleController.getInstance().getCurrentLocaleInfo();
-                    HashSet X = y31.X();
+                    HashSet X = w31.X();
                     X.add(lowerCase);
                     if (X.size() == 1 && X.contains(currentLocaleInfo.pluralLangCode)) {
-                        y31.Z(null, Boolean.FALSE);
+                        w31.Z(null, Boolean.FALSE);
                     } else {
-                        y31.Z(X, Boolean.FALSE);
+                        w31.Z(X, Boolean.FALSE);
                     }
                     TranslateController.invalidateSuggestedLanguageCodes();
                 }
                 translateController.checkRestrictedLanguagesUpdate();
                 translateController.setHideTranslateDialog(wkVar.b, true);
                 SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(wkVar.r[0] ? LocaleController.formatString(R.string.AddedToDoNotTranslate, str6) : LocaleController.formatString(R.string.AddedToDoNotTranslateOther, str6));
-                String[] strArr2 = t41.R;
+                String[] strArr2 = u41.R;
                 if (replaceTags != null && replaceTags.length() > 0) {
                     replaceTags.replace(0, 1, (CharSequence) replaceTags.toString().substring(0, 1).toUpperCase());
                     spannableStringBuilder = replaceTags;
                 }
-                yc.a0(wkVar.c).J(R.raw.msg_translate, spannableStringBuilder, LocaleController.getString(R.string.Settings), new br0(wkVar, 26)).j();
+                yc.a0(wkVar.c).J(R.raw.msg_translate, spannableStringBuilder, LocaleController.getString(R.string.Settings), new gq0(wkVar, i10)).j();
                 n1Var4.d(true);
                 break;
             case 13:
                 nt ntVar = (nt) this.b;
                 ArrayList arrayList3 = (ArrayList) this.c;
-                zb1 zb1Var = (zb1) this.d;
+                xb1 xb1Var = (xb1) this.d;
                 LinearLayout linearLayout = (LinearLayout) this.e;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.f;
                 rt rtVar = ntVar.a;
@@ -459,9 +460,9 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                     if (((Integer) arrayList3.get(intValue2)).intValue() == 2) {
                         TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = rtVar.T;
                         if (tL_messages_stickerSet2 == null) {
-                            zb1Var.requestLayout();
+                            xb1Var.requestLayout();
                             linearLayout.requestLayout();
-                            zb1Var.getAdapter().l();
+                            xb1Var.getAdapter().l();
                             actionBarPopupWindow$ActionBarPopupWindowLayout2.getSwipeBack().e(1);
                             break;
                         } else {
@@ -512,10 +513,10 @@ public final /* synthetic */ class s0 implements View.OnClickListener {
                 dl0 dl0Var = (dl0) this.e;
                 b80 F = b80.F(f3Var3.container, f3Var3.getResourcesProvider(), frameLayout);
                 int size3 = arrayList4.size();
-                int i14 = 0;
-                while (i14 < size3) {
-                    Object obj = arrayList4.get(i14);
-                    i14++;
+                int i15 = 0;
+                while (i15 < size3) {
+                    Object obj = arrayList4.get(i15);
+                    i15++;
                     int intValue3 = ((Integer) obj).intValue();
                     if (UserConfig.getInstance(intValue3).getCurrentUser() != null) {
                         F.e(intValue3, iArr[0] == intValue3, new ld(dl0Var, intValue3, 19));

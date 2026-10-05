@@ -29,13 +29,13 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.eu;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.w61;
+import org.telegram.ui.Components.y61;
 import org.telegram.ui.Components.zb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class q1 implements Utilities.Callback {
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        u61 u61Var;
+        w61 w61Var;
         int i10;
         TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
         String str;
@@ -57,7 +57,7 @@ public final /* synthetic */ class q1 implements Utilities.Callback {
         Object obj2 = this.b;
         switch (i11) {
             case 0:
-                ((e2) obj2).P.W1((TL_iv.RichMessage) obj);
+                ((e2) obj2).P.V1((TL_iv.RichMessage) obj);
                 break;
             case 1:
                 x3 x3Var = (x3) obj2;
@@ -66,7 +66,7 @@ public final /* synthetic */ class q1 implements Utilities.Callback {
                 if (!TextUtils.isEmpty(str2)) {
                     TL_iv.pageBlockMath pageblockmath = new TL_iv.pageBlockMath();
                     pageblockmath.source = str2;
-                    x3Var.T1(pageblockmath);
+                    x3Var.S1(pageblockmath);
                     break;
                 }
                 break;
@@ -84,18 +84,18 @@ public final /* synthetic */ class q1 implements Utilities.Callback {
             case 4:
                 org.telegram.ui.web.h1 h1Var = (org.telegram.ui.web.h1) obj2;
                 h1Var.f = (ArrayList) obj;
-                w61 w61Var = h1Var.a;
-                if (w61Var.G) {
-                    w61Var.f3.N(true);
+                y61 y61Var = h1Var.a;
+                if (y61Var.G) {
+                    y61Var.f3.N(true);
                     break;
                 }
                 break;
             case 5:
                 org.telegram.ui.web.a2 a2Var = (org.telegram.ui.web.a2) obj2;
                 a2Var.r = ((ArrayList) obj).size();
-                w61 w61Var2 = a2Var.a;
-                if (w61Var2 != null && (u61Var = w61Var2.f3) != null && w61Var2.G) {
-                    u61Var.N(true);
+                y61 y61Var2 = a2Var.a;
+                if (y61Var2 != null && (w61Var = y61Var2.f3) != null && y61Var2.G) {
+                    w61Var.N(true);
                     break;
                 }
                 break;
@@ -283,35 +283,35 @@ public final /* synthetic */ class q1 implements Utilities.Callback {
                 tg.i.j(((xh.z4) obj2).getContext(), (TLRPC.TL_error) obj);
                 break;
             case 24:
-                yh.a0 a0Var = (yh.a0) obj2;
-                int i13 = yh.a0.w0[((Integer) obj).intValue()];
-                if (a0Var.n0 != i13) {
-                    a0Var.n0 = i13;
-                    a0Var.f0.setText(LocaleController.formatPluralString("GiftOfferHours", i13 / 3600, new Object[0]));
+                yh.b0 b0Var = (yh.b0) obj2;
+                int i13 = yh.b0.w0[((Integer) obj).intValue()];
+                if (b0Var.n0 != i13) {
+                    b0Var.n0 = i13;
+                    b0Var.f0.setText(LocaleController.formatPluralString("GiftOfferHours", i13 / 3600, new Object[0]));
                 }
-                a0Var.R(true);
+                b0Var.R(true);
                 break;
             case 25:
-                yh.s0 s0Var2 = (yh.s0) obj2;
-                s0Var2.i0.g();
-                s0Var2.k0.N(true);
+                yh.t0 t0Var = (yh.t0) obj2;
+                t0Var.i0.g();
+                t0Var.k0.N(true);
                 break;
             case 26:
-                yh.i2 i2Var = (yh.i2) obj2;
-                i2Var.getClass();
-                i2Var.s = new Matrix();
-                i2Var.v = new Matrix();
+                yh.j2 j2Var = (yh.j2) obj2;
+                j2Var.getClass();
+                j2Var.s = new Matrix();
+                j2Var.v = new Matrix();
                 Shader.TileMode tileMode3 = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader2 = new BitmapShader((Bitmap) obj, tileMode3, tileMode3);
-                i2Var.r = bitmapShader2;
-                Paint paint3 = i2Var.c;
+                j2Var.r = bitmapShader2;
+                Paint paint3 = j2Var.c;
                 paint3.setShader(bitmapShader2);
                 ColorMatrix colorMatrix3 = new ColorMatrix();
                 AndroidUtilities.adjustSaturationColorMatrix(colorMatrix3, 0.25f);
                 paint3.setColorFilter(new ColorMatrixColorFilter(colorMatrix3));
                 break;
             case 27:
-                yh.t5.a((yh.t5) obj2, (TL_stars.StarGifts) obj);
+                yh.u5.a((yh.u5) obj2, (TL_stars.StarGifts) obj);
                 break;
             case 28:
                 ((org.telegram.ui.ActionBar.f3) obj2).dismiss(((Boolean) obj).booleanValue());

@@ -24,7 +24,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class wp implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -384,7 +384,7 @@ public final class wp implements NotificationCenter.NotificationCenterDelegate {
             canvas2.drawLine(AndroidUtilities.dpf2(21.5f), AndroidUtilities.dpf2(12.0f), AndroidUtilities.dpf2(12.5f), AndroidUtilities.dpf2(3.5f), paint2);
             canvas2.restore();
             if (this.R) {
-                float d = t8.b.d(f13 - AndroidUtilities.dp(2.0f), this.K, (1.0f - this.K) * (((-AndroidUtilities.dp(8.0f)) - (AndroidUtilities.dp2(8.0f) * f7)) - f14), f17);
+                float d = sa.e.d(f13 - AndroidUtilities.dp(2.0f), this.K, (1.0f - this.K) * (((-AndroidUtilities.dp(8.0f)) - (AndroidUtilities.dp2(8.0f) * f7)) - f14), f17);
                 paint2.setAlpha(alpha4);
                 canvas2.save();
                 canvas2.scale(f7, f7, f16, AndroidUtilities.dp(28.0f) + d);
@@ -466,7 +466,7 @@ public final class wp implements NotificationCenter.NotificationCenterDelegate {
             canvas2.restore();
         }
         if (!this.R && f14 > 0.0f) {
-            float d10 = t8.b.d((-f18) + AndroidUtilities.dp(4.0f), this.K, (1.0f - this.K) * (((-AndroidUtilities.dp(8.0f)) - (AndroidUtilities.dp2(8.0f) * f7)) - f14), f17);
+            float d10 = sa.e.d((-f18) + AndroidUtilities.dp(4.0f), this.K, (1.0f - this.K) * (((-AndroidUtilities.dp(8.0f)) - (AndroidUtilities.dp2(8.0f) * f7)) - f14), f17);
             org.telegram.ui.Components.q5 q5Var2 = this.k0;
             if (q5Var2 == null || (imageReceiver = q5Var2.k) == null) {
                 imageReceiver = this.F;

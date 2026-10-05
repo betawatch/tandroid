@@ -1,10 +1,10 @@
 package xh;
 
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.qz;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class k4 extends g.p {
     public final /* synthetic */ m4 c;
@@ -18,11 +18,11 @@ public final class k4 extends g.p {
         int i11;
         m4 m4Var = this.c;
         qz qzVar = m4Var.a0;
-        u61 u61Var = m4Var.e0;
-        if (u61Var == null) {
+        w61 w61Var = m4Var.e0;
+        if (w61Var == null) {
             return qzVar.J;
         }
-        g61 G = u61Var.G(i10 - 1);
+        h61 G = w61Var.G(i10 - 1);
         return (G == null || (i11 = G.u) == -1) ? qzVar.J : i11;
     }
 }

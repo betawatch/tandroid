@@ -19,7 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class mv extends FrameLayout {
     public final Paint a;
@@ -185,7 +185,7 @@ public final class mv extends FrameLayout {
                                 q5Var.setColorFilter(wvVar.T);
                                 ArrayList arrayList4 = (ArrayList) sparseArray.get(childAt.getTop());
                                 if (arrayList4 == null) {
-                                    arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.k0.w(1, arrayList) : new ArrayList();
+                                    arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.c.w(1, arrayList) : new ArrayList();
                                     sparseArray.put(childAt.getTop(), arrayList4);
                                 }
                                 arrayList4.add(nvVar);
@@ -237,7 +237,7 @@ public final class mv extends FrameLayout {
                             lvVar = new lv(this);
                             lvVar.l(7);
                         } else {
-                            lvVar = (lv) hg.k0.w(1, arrayList2);
+                            lvVar = (lv) hg.c.w(1, arrayList2);
                         }
                         lvVar.M = R;
                         lvVar.e();

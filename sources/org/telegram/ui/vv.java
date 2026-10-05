@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vv implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class vv implements DialogInterface.OnClickListener
                                     org.telegram.ui.Cells.s2 Z3 = uy.Z3(uyVar.e0[i11]);
                                     qy qyVar = uyVar.e0[i11].a;
                                     int i12 = qy.C3;
-                                    qyVar.B1(true, Z3);
+                                    qyVar.A1(true, Z3);
                                 }
                                 i11++;
                             }
@@ -58,7 +58,7 @@ public final /* synthetic */ class vv implements DialogInterface.OnClickListener
                     ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0).edit().putBoolean("logsEnabled", BuildVars.LOGS_ENABLED).commit();
                     org.telegram.ui.Components.yc.a0(tg0Var.V).Q(R.raw.chats_infotip, 36, BuildVars.LOGS_ENABLED ? "Logs enabled." : "Logs disabled.").j();
                     if (BuildVars.LOGS_ENABLED) {
-                        hg.k0.t(new StringBuilder("app start time = "), ApplicationLoader.startTime);
+                        org.telegram.messenger.q.r(new StringBuilder("app start time = "), ApplicationLoader.startTime);
                         try {
                             FileLog.d("buildVersion = " + ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode);
                             break;
@@ -86,7 +86,7 @@ public final /* synthetic */ class vv implements DialogInterface.OnClickListener
                     break;
                 }
             default:
-                a91.c0((a91) this.b, i10);
+                y81.Z((y81) this.b, i10);
                 break;
         }
     }

@@ -1,49 +1,83 @@
 package org.telegram.ui.Components;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fu0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gu0 b;
-    public final /* synthetic */ String c;
+public final /* synthetic */ class fu0 implements gg.b2, org.telegram.ui.Cells.a5 {
+    public final /* synthetic */ hu0 a;
 
-    public /* synthetic */ fu0(gu0 gu0Var, String str, int i10) {
-        this.a = i10;
-        this.b = gu0Var;
-        this.c = str;
+    public /* synthetic */ fu0(hu0 hu0Var) {
+        this.a = hu0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                gu0 gu0Var = this.b;
-                String str = this.c;
-                gu0Var.getClass();
-                AndroidUtilities.runOnUIThread(new fu0(gu0Var, str, 1));
-                break;
-            default:
-                gu0 gu0Var2 = this.b;
-                String str2 = this.c;
-                ArrayList arrayList = null;
-                gu0Var2.f = null;
-                if (!ChatObject.isChannel(gu0Var2.n) && gu0Var2.s.d1 != null) {
-                    arrayList = new ArrayList(gu0Var2.s.d1.participants.participants);
-                }
-                gu0Var2.r = 2;
-                if (arrayList != null) {
-                    Utilities.searchQueue.postRunnable(new in0((Object) gu0Var2, (Serializable) str2, arrayList, 6));
-                } else {
-                    gu0Var2.r = 1;
-                }
-                gu0Var2.e.g(str2, false, false, true, false, ChatObject.isChannel(gu0Var2.n) ? gu0Var2.n.id : 0L, false, 2, 1);
-                break;
+    @Override // gg.b2
+    public void a(int i10) {
+        hu0 hu0Var = this.a;
+        hu0Var.l();
+        if (i10 != 1) {
+            return;
         }
+        int i11 = hu0Var.r - 1;
+        hu0Var.r = i11;
+        if (i11 != 0) {
+            return;
+        }
+        int i12 = 0;
+        while (true) {
+            qv0 qv0Var = hu0Var.s;
+            ju0[] ju0VarArr = qv0Var.k0;
+            if (i12 >= ju0VarArr.length) {
+                return;
+            }
+            ju0 ju0Var = ju0VarArr[i12];
+            if (ju0Var.F == 7) {
+                if (hu0Var.h == 0) {
+                    ju0Var.w.e(false, true);
+                } else {
+                    qv0Var.z(ju0Var.h, 0, null);
+                }
+            }
+            i12++;
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.a5
+    public boolean e(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
+        int intValue = ((Integer) b5Var.getTag()).intValue();
+        hu0 hu0Var = this.a;
+        TLObject E = hu0Var.E(intValue);
+        if (!(E instanceof TLRPC.ChannelParticipant)) {
+            return false;
+        }
+        TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) E;
+        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = new TLRPC.TL_chatChannelParticipant();
+        tL_chatChannelParticipant.channelParticipant = channelParticipant;
+        tL_chatChannelParticipant.user_id = MessageObject.getPeerId(channelParticipant.peer);
+        tL_chatChannelParticipant.inviter_id = channelParticipant.inviter_id;
+        tL_chatChannelParticipant.date = channelParticipant.date;
+        return hu0Var.s.D1.h(tL_chatChannelParticipant, true, !z10, b5Var);
+    }
+
+    @Override // gg.b2
+    public /* synthetic */ a0.i s() {
+        return null;
+    }
+
+    @Override // gg.b2
+    public /* synthetic */ a0.i x() {
+        return null;
+    }
+
+    @Override // gg.b2
+    public /* synthetic */ boolean z(int i10) {
+        return true;
+    }
+
+    @Override // gg.b2
+    public /* synthetic */ void F(ArrayList arrayList) {
     }
 }

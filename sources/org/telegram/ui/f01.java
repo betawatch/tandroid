@@ -11,9 +11,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public class f01 extends org.telegram.ui.Components.w9 implements org.telegram.ui.Components.iw0 {
+public class f01 extends org.telegram.ui.Components.w9 implements org.telegram.ui.Components.jw0 {
     public static final t0 g0 = new t0("crossfadeProgress", 3);
     public boolean G;
     public float H;
@@ -58,7 +58,7 @@ public class f01 extends org.telegram.ui.Components.w9 implements org.telegram.u
         paint.setColor(-16777216);
     }
 
-    @Override // org.telegram.ui.Components.iw0
+    @Override // org.telegram.ui.Components.jw0
     public final void g(Runnable runnable) {
         this.f0 = runnable;
     }
@@ -125,7 +125,7 @@ public class f01 extends org.telegram.ui.Components.w9 implements org.telegram.u
         } else {
             sh0Var = null;
         }
-        float z12 = org.telegram.messenger.f0.z(1.0f, this.V, this.e0, (1.0f - this.b0) * (this.d0 ? (int) AndroidUtilities.dpf2(3.5f) : 0.0f));
+        float z12 = org.telegram.messenger.q.z(1.0f, this.V, this.e0, (1.0f - this.b0) * (this.d0 ? (int) AndroidUtilities.dpf2(3.5f) : 0.0f));
         org.telegram.ui.Components.q5 q5Var = this.e;
         ImageReceiver imageReceiver = q5Var != null ? q5Var.k : this.a;
         int i10 = this.K;

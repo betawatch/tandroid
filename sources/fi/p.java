@@ -36,9 +36,9 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.j6;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.e71;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.w9;
@@ -51,7 +51,7 @@ import org.telegram.ui.yu0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class p extends n2 implements x40, NotificationCenter.NotificationCenterDelegate, le.d {
     public y40 E;
@@ -64,7 +64,7 @@ public final class p extends n2 implements x40, NotificationCenter.NotificationC
     public final le.b a;
     public long b;
     public w7 c;
-    public c71 d;
+    public e71 d;
     public String e;
     public boolean f;
     public boolean h;
@@ -83,12 +83,12 @@ public final class p extends n2 implements x40, NotificationCenter.NotificationC
         this.K = new m(this);
     }
 
-    public static boolean S(p pVar, g61 g61Var, View view) {
+    public static boolean S(p pVar, h61 h61Var, View view) {
         long j3;
         boolean canRemoveBotFromCommunity;
         boolean z10;
         boolean z11;
-        Object obj = g61Var.G;
+        Object obj = h61Var.G;
         if (!(obj instanceof TLRPC.Chat)) {
             if (obj instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) obj;
@@ -114,17 +114,17 @@ public final class p extends n2 implements x40, NotificationCenter.NotificationC
             b80 F = b80.F(pVar.c, null, view);
             F.l(R.drawable.msg_viewintopic, LocaleController.getString(z10 ? R.string.CommunityMenuViewBot : z11 ? R.string.CommunityMenuViewChannel : R.string.CommunityMenuViewGroup), new g(pVar, j10, 1), z13);
             F.m(z12, R.drawable.msg_cancel, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), true, new l(pVar, z10, z11, j10, 0));
-            F.W(pVar.d.W0(view, true));
+            F.W(pVar.d.V0(view, true));
             F.Z();
             return true;
         }
         return false;
     }
 
-    public static void T(p pVar, g61 g61Var) {
+    public static void T(p pVar, h61 h61Var) {
         TLRPC.Chat chat;
         TLRPC.ChatPhoto chatPhoto;
-        int i10 = g61Var.d;
+        int i10 = h61Var.d;
         if (i10 == 140) {
             if (pVar.E.h() || (chatPhoto = (chat = pVar.getMessagesController().getChat(Long.valueOf(pVar.b))).photo) == null || chatPhoto.photo_big == null) {
                 return;
@@ -190,7 +190,7 @@ public final class p extends n2 implements x40, NotificationCenter.NotificationC
             u0.e(pVar.J, pVar, pVar.currentAccount, pVar.H);
             return;
         }
-        Object obj = g61Var.G;
+        Object obj = h61Var.G;
         if (obj instanceof TLRPC.Chat) {
             pVar.presentFragment(yn.Q9(-((TLRPC.Chat) obj).id));
         } else if (obj instanceof TLRPC.User) {
@@ -236,11 +236,11 @@ public final class p extends n2 implements x40, NotificationCenter.NotificationC
         if (this.h == z10) {
             return;
         }
-        j6 j6Var = (j6) this.d.A1(151);
+        j6 j6Var = (j6) this.d.z1(151);
         if (j6Var != null) {
             j6Var.a(!z10);
         }
-        j6 j6Var2 = (j6) this.d.A1(ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        j6 j6Var2 = (j6) this.d.z1(ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         if (j6Var2 != null) {
             j6Var2.a(z10);
         }
@@ -302,7 +302,7 @@ public final class p extends n2 implements x40, NotificationCenter.NotificationC
     public final View createView(Context context) {
         int i10 = 1;
         setHasOwnBackground(true);
-        hg.k0.u(false, this.actionBar);
+        hg.c.u(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setAllowOverlayTitle(true);
@@ -310,7 +310,7 @@ public final class p extends n2 implements x40, NotificationCenter.NotificationC
         this.actionBar.setActionBarMenuOnItemClick(new ei.u(this, i11));
         fh.c cVar = new fh.c();
         cVar.a(getThemedColor(i6.d6));
-        this.actionBar.K(new ah.c(cVar), eh.b.p(this.resourceProvider), false);
+        this.actionBar.J(new ah.c(cVar), eh.b.p(this.resourceProvider), false);
         this.actionBar.Q0 = true;
         w7 w7Var = new w7(this, context);
         this.c = w7Var;
@@ -363,12 +363,12 @@ public final class p extends n2 implements x40, NotificationCenter.NotificationC
         this.x.setNoProgress(false);
         this.r.addView(this.x, z5.d(64, 64.0f, 81, 0.0f, 0.0f, 0.0f, 32.0f));
         Z(false, false);
-        c71 c71Var = new c71(this, new i(this, i10), new j(this), new j(this));
-        this.d = c71Var;
-        c71Var.setClipToPadding(false);
-        c71 c71Var2 = this.d;
-        c71Var2.f3.r = false;
-        c71Var2.s1();
+        e71 e71Var = new e71(this, new i(this, i10), new j(this), new j(this));
+        this.d = e71Var;
+        e71Var.setClipToPadding(false);
+        e71 e71Var2 = this.d;
+        e71Var2.f3.r = false;
+        e71Var2.r1();
         this.actionBar.setBackground(null);
         this.c.addView(this.d, z5.c(-1.0f, -1));
         this.c.addView(this.actionBar, z5.e(-1, -2, 48));

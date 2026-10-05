@@ -31,9 +31,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public class p70 extends n71 implements NotificationCenter.NotificationCenterDelegate {
+public class p70 extends o71 implements NotificationCenter.NotificationCenterDelegate {
     public final a0.i T;
     public final o70 U;
     public final org.telegram.ui.ActionBar.v1 V;
@@ -159,7 +159,7 @@ public class p70 extends n71 implements NotificationCenter.NotificationCenterDel
             if (chat != null) {
                 String publicUsername = ChatObject.getPublicUsername(chat);
                 if (!TextUtils.isEmpty(publicUsername)) {
-                    str = a4.a.q(MessagesController.getInstance(p70Var.currentAccount).linkPrefix, "/", publicUsername, new StringBuilder("https://"));
+                    str = a4.a.r(MessagesController.getInstance(p70Var.currentAccount).linkPrefix, "/", publicUsername, new StringBuilder("https://"));
                     if (str != null) {
                         return;
                     }
@@ -251,14 +251,14 @@ public class p70 extends n71 implements NotificationCenter.NotificationCenterDel
             String format = String.format("%d", Integer.valueOf(iVar.m()));
             int indexOf = TextUtils.indexOf(spannableStringBuilder, format);
             if (indexOf >= 0) {
-                spannableStringBuilder.setSpan(new d61(AndroidUtilities.bold()), indexOf, format.length() + indexOf, 33);
+                spannableStringBuilder.setSpan(new e61(AndroidUtilities.bold()), indexOf, format.length() + indexOf, 33);
             }
             b2Var.T = spannableStringBuilder;
         } else {
             b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("AddMembersAlertNamesText", R.string.AddMembersAlertNamesText, sb2, chat.title));
         }
         alertDialog$Builder.k(LocaleController.getString(R.string.Add), new pv(p70Var, 7));
-        hg.k0.o(R.string.Cancel, alertDialog$Builder, null);
+        hg.c.p(R.string.Cancel, alertDialog$Builder, null);
     }
 
     public static /* synthetic */ void M(p70 p70Var, TLRPC.TL_error tL_error, TLObject tLObject) {
@@ -296,12 +296,12 @@ public class p70 extends n71 implements NotificationCenter.NotificationCenterDel
         p70Var.dismiss();
     }
 
-    @Override // org.telegram.ui.Components.n71
-    public final l71 B(Context context) {
+    @Override // org.telegram.ui.Components.o71
+    public final m71 B(Context context) {
         return new g70(this, context);
     }
 
-    @Override // org.telegram.ui.Components.n71
+    @Override // org.telegram.ui.Components.o71
     public final void C(MotionEvent motionEvent, ci.h2 h2Var) {
         org.telegram.ui.ActionBar.n2 n2Var;
         if (motionEvent.getAction() == 0) {
@@ -330,7 +330,7 @@ public class p70 extends n71 implements NotificationCenter.NotificationCenterDel
         }
     }
 
-    @Override // org.telegram.ui.Components.n71
+    @Override // org.telegram.ui.Components.o71
     public final void E(String str) {
         l70 l70Var = this.W;
         if (l70Var.h != null) {
@@ -426,14 +426,14 @@ public class p70 extends n71 implements NotificationCenter.NotificationCenterDel
                     if (childAt instanceof q30) {
                         childAt.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
                         if (childAt.getMeasuredWidth() + i13 > dp) {
-                            dp2 = org.telegram.messenger.f0.C(8.0f, childAt.getMeasuredHeight(), dp2);
+                            dp2 = org.telegram.messenger.q.C(8.0f, childAt.getMeasuredHeight(), dp2);
                             i13 = 0;
                         }
-                        i13 = org.telegram.messenger.f0.C(9.0f, childAt.getMeasuredWidth(), i13);
+                        i13 = org.telegram.messenger.q.C(9.0f, childAt.getMeasuredWidth(), i13);
                     }
                 }
                 int dp3 = AndroidUtilities.dp(42.0f) + dp2;
-                min = this.m0 == null ? this.g0 ? Math.min(this.s0, dp3) : 0 : org.telegram.messenger.f0.b(52.0f, Math.min(this.s0, dp3), 0);
+                min = this.m0 == null ? this.g0 ? Math.min(this.s0, dp3) : 0 : org.telegram.messenger.q.b(52.0f, Math.min(this.s0, dp3), 0);
                 int i14 = this.u0;
                 int dp4 = this.f0.m() > 0 ? AndroidUtilities.dp(56.0f) : 0;
                 this.u0 = dp4;
@@ -553,7 +553,7 @@ public class p70 extends n71 implements NotificationCenter.NotificationCenterDel
         }
     }
 
-    @Override // org.telegram.ui.Components.n71, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    @Override // org.telegram.ui.Components.o71, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
     public final void dismiss() {
         super.dismiss();
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.dialogsNeedReload);

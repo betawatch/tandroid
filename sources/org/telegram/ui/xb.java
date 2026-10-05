@@ -10,7 +10,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xb implements org.telegram.ui.Components.ml0 {
     public final /* synthetic */ int a = 1;
@@ -20,12 +20,12 @@ public final /* synthetic */ class xb implements org.telegram.ui.Components.ml0 
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ xb(dc dcVar, Context context, long j3, org.telegram.ui.ActionBar.d6 d6Var, va1 va1Var) {
+    public /* synthetic */ xb(dc dcVar, Context context, long j3, org.telegram.ui.ActionBar.d6 d6Var, ta1 ta1Var) {
         this.d = dcVar;
         this.c = context;
         this.b = j3;
         this.e = d6Var;
-        this.f = va1Var;
+        this.f = ta1Var;
     }
 
     @Override // org.telegram.ui.Components.ml0
@@ -34,7 +34,7 @@ public final /* synthetic */ class xb implements org.telegram.ui.Components.ml0 
             case 0:
                 dc dcVar = (dc) this.d;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.e;
-                va1 va1Var = (va1) this.f;
+                ta1 ta1Var = (ta1) this.f;
                 boolean z10 = view instanceof yg.b;
                 long j3 = this.b;
                 if (z10) {
@@ -60,26 +60,26 @@ public final /* synthetic */ class xb implements org.telegram.ui.Components.ml0 
                             } else {
                                 tL_payments_checkedGiftCode.boost = boost;
                             }
-                            new tg.c0(va1Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
+                            new tg.c0(ta1Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
                         } else if (z11 && boost.user_id == -1) {
-                            org.telegram.ui.Components.zb zbVar = new org.telegram.ui.Components.zb(va1Var.getParentActivity(), va1Var.getResourceProvider());
+                            org.telegram.ui.Components.zb zbVar = new org.telegram.ui.Components.zb(ta1Var.getParentActivity(), ta1Var.getResourceProvider());
                             zbVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
                             zbVar.b.setText(LocaleController.getString(R.string.BoostingRecipientWillBeSelected));
                             zbVar.b.setSingleLine(false);
                             zbVar.b.setMaxLines(2);
-                            org.telegram.ui.Components.rc.g(va1Var, zbVar, 2750).j();
+                            org.telegram.ui.Components.rc.g(ta1Var, zbVar, 2750).j();
                         } else if (!z12 && !z11) {
-                            va1Var.presentFragment(ProfileActivity.m4(bVar.getDialogId()));
+                            ta1Var.presentFragment(ProfileActivity.m4(bVar.getDialogId()));
                         }
                     } else {
-                        yh.x7.k1(this.c, dcVar.b, j3, boost, d6Var);
+                        yh.z7.k1(this.c, dcVar.b, j3, boost, d6Var);
                     }
                 }
                 if (view instanceof org.telegram.ui.Cells.r8) {
-                    tg.m.m(va1Var, d6Var, j3, null);
+                    tg.m.m(ta1Var, d6Var, j3, null);
                 }
                 if (view instanceof yg.c) {
-                    tg.m.m(va1Var, d6Var, j3, ((yg.c) view).getPrepaidGiveaway());
+                    tg.m.m(ta1Var, d6Var, j3, ((yg.c) view).getPrepaidGiveaway());
                 }
                 if (((cc) dcVar.x.get(i10)).a == 9) {
                     dcVar.c(Boolean.valueOf(dcVar.y == 1));

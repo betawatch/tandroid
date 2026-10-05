@@ -20,7 +20,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class sj0 extends FrameLayout {
     public final w00 a;
@@ -50,7 +50,7 @@ public final class sj0 extends FrameLayout {
         addView(w00Var, w7.z5.c(-1.0f, -2));
         TextView textView = new TextView(context);
         this.b = textView;
-        org.telegram.messenger.ok.t(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.E8, false), 1, 16.0f, 1);
+        org.telegram.messenger.bi.s(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.E8, false), 1, 16.0f, 1);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         addView(textView, w7.z5.i(-2.0f, -2.0f, 8388627, 40.0f, 0.0f, 62.0f, 0.0f));
         k9 k9Var = new k9(context, false);

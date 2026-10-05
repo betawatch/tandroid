@@ -3,11 +3,10 @@ package c5;
 import android.content.Context;
 import androidx.media3.exoplayer.dash.DashMediaSource$Factory;
 import androidx.media3.exoplayer.hls.HlsMediaSource$Factory;
-import hg.k0;
 import java.lang.reflect.GenericDeclaration;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class g {
     public boolean a;
@@ -43,7 +42,7 @@ public final class g {
                         iVar = new i2.o(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(u2.e0.class), 3);
                     } else {
                         if (i10 != 4) {
-                            throw new IllegalArgumentException(k0.h(i10, "Unrecognized contentType: "));
+                            throw new IllegalArgumentException(hg.c.h(i10, "Unrecognized contentType: "));
                         }
                         iVar = new d9.i() { // from class: u2.o
                             @Override // d9.i

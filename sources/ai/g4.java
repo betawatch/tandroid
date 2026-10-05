@@ -8,7 +8,7 @@ import org.telegram.ui.Components.xi;
 import org.telegram.ui.jk;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class g4 extends xi {
     public final /* synthetic */ int I2;
@@ -28,11 +28,11 @@ public final class g4 extends xi {
         int i11;
         switch (this.I2) {
             case 1:
-                hg.m mVar = (hg.m) this.J2;
-                g4 g4Var = mVar.M;
+                hg.n nVar = (hg.n) this.J2;
+                g4 g4Var = nVar.M;
                 if (g4Var != null && g4Var.isShowing()) {
-                    Activity parentActivity = mVar.getParentActivity();
-                    i10 = ((org.telegram.ui.ActionBar.n2) mVar).classGuid;
+                    Activity parentActivity = nVar.getParentActivity();
+                    i10 = ((org.telegram.ui.ActionBar.n2) nVar).classGuid;
                     AndroidUtilities.requestAdjustResize(parentActivity, i10);
                 }
                 super.dismissInternal();
@@ -72,15 +72,15 @@ public final class g4 extends xi {
                 }
                 break;
             case 1:
-                hg.m mVar = (hg.m) this.J2;
-                g4 g4Var2 = mVar.M;
+                hg.n nVar = (hg.n) this.J2;
+                g4 g4Var2 = nVar.M;
                 if (g4Var2 != null) {
                     g4Var2.setFocusable(false);
                 }
-                g4 g4Var3 = mVar.M;
+                g4 g4Var3 = nVar.M;
                 if (g4Var3 != null && g4Var3.isShowing()) {
-                    Activity parentActivity = mVar.getParentActivity();
-                    i10 = ((org.telegram.ui.ActionBar.n2) mVar).classGuid;
+                    Activity parentActivity = nVar.getParentActivity();
+                    i10 = ((org.telegram.ui.ActionBar.n2) nVar).classGuid;
                     AndroidUtilities.requestAdjustResize(parentActivity, i10);
                     break;
                 }

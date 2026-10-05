@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vd implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -92,7 +92,7 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                     if (chatActivityEnterView.c0 - chatActivityEnterView.d0 >= 0) {
                         lg x10 = chatActivityEnterView.x();
                         chatActivityEnterView.c2 = x10;
-                        hg.y d = hg.y.d(chatActivityEnterView.Q);
+                        hg.z d = hg.z.d(chatActivityEnterView.Q);
                         String str = chatActivityEnterView.b2.link;
                         String str2 = x10.a;
                         ArrayList<TLRPC.MessageEntity> arrayList = x10.b;
@@ -507,7 +507,7 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                             View view2 = gfVar3.u;
                             zl0 zl0Var = gfVar3.v;
                             TLRPC.Peer peer3 = gfVar3.r;
-                            ip0 ip0Var = gfVar3.o;
+                            jp0 jp0Var = gfVar3.o;
                             ai.f0 f0Var = gfVar3.t;
                             ArrayList arrayList2 = gfVar3.z;
                             int size = arrayList2.size();
@@ -520,8 +520,8 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                             arrayList2.clear();
                             f0Var.setPivotX(AndroidUtilities.dp(8.0f));
                             f0Var.setPivotY(f0Var.getMeasuredHeight() - AndroidUtilities.dp(8.0f));
-                            ip0Var.setPivotX(0.0f);
-                            ip0Var.setPivotY(0.0f);
+                            jp0Var.setPivotX(0.0f);
+                            jp0Var.setPivotY(0.0f);
                             ArrayList<TLRPC.TL_sendAsPeer> arrayList3 = gfVar3.s.peers;
                             if (peer3 != null) {
                                 int dp = AndroidUtilities.dp(54.0f);
@@ -552,21 +552,21 @@ public final /* synthetic */ class vd implements View.OnClickListener {
                             }
                             f0Var.setScaleX(0.25f);
                             f0Var.setScaleY(0.25f);
-                            ip0Var.setAlpha(0.25f);
+                            jp0Var.setAlpha(0.25f);
                             o1.k kVar = new o1.k(f0Var, o1.h.o);
                             kVar.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
-                            kVar.b(new fp0(gfVar3, 2));
+                            kVar.b(new gp0(gfVar3, 2));
                             o1.k kVar2 = new o1.k(f0Var, o1.h.p);
                             kVar2.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
-                            kVar2.b(new fp0(gfVar3, 3));
+                            kVar2.b(new gp0(gfVar3, 3));
                             o1.c cVar = o1.h.t;
                             o1.k kVar3 = new o1.k(f0Var, cVar);
                             kVar3.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
-                            o1.k kVar4 = new o1.k(ip0Var, cVar);
+                            o1.k kVar4 = new o1.k(jp0Var, cVar);
                             kVar4.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
                             for (o1.k kVar5 : Arrays.asList(kVar, kVar2, kVar3, kVar4)) {
                                 arrayList2.add(kVar5);
-                                kVar5.a(new gp0(gfVar3, kVar5, 1));
+                                kVar5.a(new hp0(gfVar3, kVar5, 1));
                                 kVar5.f();
                             }
                             gf gfVar4 = chatActivityEnterView4.q0;

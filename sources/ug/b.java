@@ -49,9 +49,9 @@ import vg.v;
 import vg.w;
 import vg.x;
 import vg.y;
-import yh.g7;
+import yh.h7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class b extends og.b {
     public final d6 d;
@@ -412,25 +412,25 @@ public final class b extends og.b {
                 view = new w(context, d6Var);
                 break;
             case 18:
-                g7 g7Var = new g7(context);
+                h7 h7Var = new h7(context);
                 String string = LocaleController.getString(R.string.NotifyMoreOptions);
-                boolean z10 = g7Var.c == -1;
-                g7Var.c = -1;
-                p6 p6Var = g7Var.a;
+                boolean z10 = h7Var.c == -1;
+                h7Var.c = -1;
+                p6 p6Var = h7Var.a;
                 p6Var.c(string, z10, true);
                 int w02 = i6.w0(null, i6.o6, false);
                 p6Var.setTextColor(w02);
                 PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN);
-                ImageView imageView = g7Var.b;
+                ImageView imageView = h7Var.b;
                 imageView.setColorFilter(porterDuffColorFilter);
                 if (z10) {
                     imageView.animate().rotation(0.0f).setDuration(340L).setInterpolator(tr.h);
                 } else {
                     imageView.setRotation(0.0f);
                 }
-                g7Var.d = false;
-                g7Var.setWillNotDraw(true);
-                view = g7Var;
+                h7Var.d = false;
+                h7Var.setWillNotDraw(true);
+                view = h7Var;
                 break;
             default:
                 view = new r(context, d6Var);

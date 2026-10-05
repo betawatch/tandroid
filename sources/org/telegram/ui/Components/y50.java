@@ -47,7 +47,7 @@ import org.telegram.messenger.video.Mp4Movie;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class y50 implements Runnable {
     public DispatchQueue B0;
@@ -523,7 +523,7 @@ public final class y50 implements Runnable {
             } else {
                 ByteBuffer outputBuffer = this.E.getOutputBuffer(dequeueOutputBuffer);
                 if (outputBuffer == null) {
-                    throw new RuntimeException(hg.k0.i(dequeueOutputBuffer, "encoderOutputBuffer ", " was null"));
+                    throw new RuntimeException(hg.c.i(dequeueOutputBuffer, "encoderOutputBuffer ", " was null"));
                 }
                 MediaCodec.BufferInfo bufferInfo = this.I;
                 int i10 = bufferInfo.size;
@@ -618,7 +618,7 @@ public final class y50 implements Runnable {
                 } else {
                     ByteBuffer outputBuffer2 = this.F.getOutputBuffer(dequeueOutputBuffer2);
                     if (outputBuffer2 == null) {
-                        throw new RuntimeException(hg.k0.i(dequeueOutputBuffer2, "encoderOutputBuffer ", " was null"));
+                        throw new RuntimeException(hg.c.i(dequeueOutputBuffer2, "encoderOutputBuffer ", " was null"));
                     }
                     MediaCodec.BufferInfo bufferInfo3 = this.J;
                     if ((bufferInfo3.flags & 2) != 0) {
@@ -697,11 +697,11 @@ public final class y50 implements Runnable {
     }
 
     public final void h(File file) {
-        d81 d81Var = new d81();
+        e81 e81Var = new e81();
         f60 f60Var = this.H0;
-        f60Var.T = d81Var;
-        d81Var.J = new n2.c(this, 7);
-        d81Var.V(f60Var.q0);
+        f60Var.T = e81Var;
+        e81Var.J = new n2.c(this, 7);
+        e81Var.V(f60Var.q0);
         f60Var.T.D(Uri.fromFile(file), "other");
         f60Var.T.C();
         f60Var.T.O(true);

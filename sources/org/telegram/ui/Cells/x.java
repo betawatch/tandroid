@@ -31,7 +31,7 @@ import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.et;
 import org.telegram.ui.x10;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class x extends FrameLayout implements DownloadController.FileDownloadProgressListener {
     public static final /* synthetic */ int L = 0;
@@ -352,7 +352,7 @@ public final class x extends FrameLayout implements DownloadController.FileDownl
             FileLog.e(e10);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
-        int B = LocaleController.isRTL ? org.telegram.messenger.f0.B(8.0f, View.MeasureSpec.getSize(i10), AndroidUtilities.dp(52.0f)) : AndroidUtilities.dp(8.0f);
+        int B = LocaleController.isRTL ? org.telegram.messenger.q.B(8.0f, View.MeasureSpec.getSize(i10), AndroidUtilities.dp(52.0f)) : AndroidUtilities.dp(8.0f);
         int dp = AndroidUtilities.dp(4.0f) + B;
         this.c = dp;
         int dp2 = AndroidUtilities.dp(6.0f);

@@ -46,13 +46,14 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.pb;
+import org.telegram.ui.Components.so0;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.f41;
+import org.telegram.ui.d41;
 import org.telegram.ui.hz;
 import org.telegram.ui.jl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class n2 {
     protected k actionBar;
@@ -68,11 +69,11 @@ public abstract class n2 {
     protected boolean inPreviewMode;
     public boolean isFinished;
     private boolean isFullyVisible;
+    private ViewGroup listViewForSimpleGlass;
     protected View navigationBarFadeView;
     protected Dialog parentDialog;
     protected c5 parentLayout;
     private m2 previewDelegate;
-    private zl0 recyclerListViewForSimpleGlass;
     private boolean removingFromStack;
     protected d6 resourceProvider;
     public ArrayList<j2> sheetsStack;
@@ -82,7 +83,7 @@ public abstract class n2 {
     protected boolean hasOwnBackground = false;
     protected boolean isPaused = true;
     protected boolean inTransitionAnimation = false;
-    protected final li.m glassEngine = new li.m();
+    protected final li.p glassEngine = new li.p();
     protected i0.b mSystemInsets = i0.b.e;
     protected int classGuid = ConnectionsManager.generateClassGuid();
 
@@ -223,10 +224,10 @@ public abstract class n2 {
         c5 c5Var;
         k kVar = new k(context, getResourceProvider());
         kVar.setBackgroundColor(getThemedColor(i6.s8));
-        kVar.A(getThemedColor(i6.t8), false);
-        kVar.A(getThemedColor(i6.z8), true);
-        kVar.B(getThemedColor(i6.v8), false);
-        kVar.B(getThemedColor(i6.y8), true);
+        kVar.z(getThemedColor(i6.t8), false);
+        kVar.z(getThemedColor(i6.z8), true);
+        kVar.A(getThemedColor(i6.v8), false);
+        kVar.A(getThemedColor(i6.y8), true);
         if (!this.inPreviewMode && !this.inBubbleMode && ((c5Var = this.parentLayout) == null || !((ActionBarLayout) c5Var).M0)) {
             return kVar;
         }
@@ -323,7 +324,7 @@ public abstract class n2 {
         } else if (!this.inPreviewMode || (m2Var = this.previewDelegate) == null) {
             finishFragment(true);
         } else {
-            ((f41) ((jl0) m2Var).b).a();
+            ((d41) ((jl0) m2Var).b).a();
         }
     }
 
@@ -549,7 +550,7 @@ public abstract class n2 {
         if (this.sheetsStack == null) {
             this.sheetsStack = new ArrayList<>();
         }
-        jc jcVar = (this.sheetsStack.isEmpty() || !(hg.k0.g(1, this.sheetsStack) instanceof jc)) ? null : (jc) hg.k0.g(1, this.sheetsStack);
+        jc jcVar = (this.sheetsStack.isEmpty() || !(hg.c.g(1, this.sheetsStack) instanceof jc)) ? null : (jc) hg.c.g(1, this.sheetsStack);
         if (jcVar == null) {
             jcVar = new jc(this);
             c5 c5Var = this.parentLayout;
@@ -580,6 +581,10 @@ public abstract class n2 {
 
     public d6 getResourceProvider() {
         return this.resourceProvider;
+    }
+
+    public so0 getScrollViewForSimpleGlass() {
+        return null;
     }
 
     public SecretChatHelper getSecretChatHelper() {
@@ -820,7 +825,7 @@ public abstract class n2 {
         k kVar = this.actionBar;
         if (kVar != null) {
             kVar.D0 = false;
-            kVar.N();
+            kVar.M();
             z zVar = kVar.E;
             if (zVar != null) {
                 int childCount = zVar.getChildCount();
@@ -867,9 +872,9 @@ public abstract class n2 {
     public r0.l1 onInsetsInternal(View view, r0.l1 l1Var) {
         i0.b f7 = l1Var.a.f(3);
         this.mSystemInsets = f7;
-        zl0 zl0Var = this.recyclerListViewForSimpleGlass;
-        if (zl0Var != null) {
-            li.a.c(zl0Var, f7.b, f7.d, k.getCurrentActionBarHeight(), 0);
+        ViewGroup viewGroup = this.listViewForSimpleGlass;
+        if (viewGroup != null) {
+            li.a.c(viewGroup, f7.b, f7.d, k.getCurrentActionBarHeight(), 0);
         }
         if (this.navigationBarFadeView != null) {
             int i10 = this.mSystemInsets.d < AndroidUtilities.dp(40.0f) ? 8 : 0;
@@ -889,7 +894,7 @@ public abstract class n2 {
         k kVar = this.actionBar;
         if (kVar != null) {
             kVar.D0 = false;
-            kVar.N();
+            kVar.M();
             z zVar = kVar.E;
             if (zVar != null) {
                 int childCount = zVar.getChildCount();
@@ -955,7 +960,7 @@ public abstract class n2 {
         k kVar = this.actionBar;
         if (kVar != null) {
             kVar.D0 = true;
-            kVar.N();
+            kVar.M();
         }
         if (getLastStoryViewer() != null) {
             jc lastStoryViewer = getLastStoryViewer();
@@ -986,31 +991,59 @@ public abstract class n2 {
     }
 
     public void onViewCreated(View view) {
-        this.glassEngine.h(view);
+        this.glassEngine.i(view);
     }
 
     public View performCreateView(Context context) {
         View createView = createView(context);
         zl0 listViewForSimpleGlass = getListViewForSimpleGlass();
-        this.recyclerListViewForSimpleGlass = listViewForSimpleGlass;
-        if (listViewForSimpleGlass != null && (createView instanceof FrameLayout)) {
+        so0 scrollViewForSimpleGlass = getScrollViewForSimpleGlass();
+        zl0 zl0Var = listViewForSimpleGlass != null ? listViewForSimpleGlass : scrollViewForSimpleGlass;
+        this.listViewForSimpleGlass = zl0Var;
+        if (zl0Var != null && (createView instanceof FrameLayout)) {
             li.a baseSimpleGlass = getBaseSimpleGlass();
-            FrameLayout frameLayout = (FrameLayout) createView;
-            baseSimpleGlass.d(frameLayout, this.recyclerListViewForSimpleGlass, this.actionBar, this.resourceProvider);
-            if (useFadeDrawableForActionBar()) {
+            if (listViewForSimpleGlass != null) {
+                baseSimpleGlass.d((FrameLayout) createView, listViewForSimpleGlass, this.actionBar, this.resourceProvider);
+            } else if (scrollViewForSimpleGlass != null) {
+                FrameLayout frameLayout = (FrameLayout) createView;
                 k kVar = this.actionBar;
-                kVar.setBackground(baseSimpleGlass.a(kVar));
+                d6 d6Var = this.resourceProvider;
+                baseSimpleGlass.g = frameLayout;
+                baseSimpleGlass.h = scrollViewForSimpleGlass;
+                baseSimpleGlass.i = new di.f(2, scrollViewForSimpleGlass, frameLayout);
+                li.p pVar = baseSimpleGlass.a;
+                pVar.getClass();
+                scrollViewForSimpleGlass.L.add(new li.j(pVar, scrollViewForSimpleGlass));
+                li.k kVar2 = new li.k(pVar);
+                if (scrollViewForSimpleGlass.J == null) {
+                    scrollViewForSimpleGlass.J = new ArrayList();
+                }
+                if (!scrollViewForSimpleGlass.J.contains(kVar2)) {
+                    scrollViewForSimpleGlass.J.add(kVar2);
+                }
+                scrollViewForSimpleGlass.setClipToPadding(false);
+                AndroidUtilities.removeFromParent(kVar);
+                frameLayout.addView(kVar, w7.z5.e(-1, -2, 48));
+                kVar.setAddToContainer(false);
+                kVar.setCenterTitleAndGlass(true);
+                kVar.setExtraHeight(AndroidUtilities.dp(6.0f));
+                kVar.T0 = true;
+                kVar.J(baseSimpleGlass.c, eh.b.m(d6Var), false);
             }
-            zl0 zl0Var = this.recyclerListViewForSimpleGlass;
+            if (useFadeDrawableForActionBar()) {
+                k kVar3 = this.actionBar;
+                kVar3.setBackground(baseSimpleGlass.a(kVar3));
+            }
+            ViewGroup viewGroup = this.listViewForSimpleGlass;
             i0.b bVar = this.mSystemInsets;
-            li.a.c(zl0Var, bVar.b, bVar.d, k.getCurrentActionBarHeight(), 0);
+            li.a.c(viewGroup, bVar.b, bVar.d, k.getCurrentActionBarHeight(), 0);
             if (drawEdgeNavigationBar()) {
                 View view = new View(context);
                 this.navigationBarFadeView = view;
                 view.setBackground(baseSimpleGlass.b(view));
                 FrameLayout.LayoutParams e7 = w7.z5.e(-1, 0, 80);
                 e7.height = this.mSystemInsets.d;
-                frameLayout.addView(this.navigationBarFadeView, e7);
+                ((FrameLayout) createView).addView(this.navigationBarFadeView, e7);
             }
         }
         onViewCreated(createView);
@@ -1250,7 +1283,7 @@ public abstract class n2 {
     public void setTitleOverlayText(String str, int i10, Runnable runnable) {
         k kVar = this.actionBar;
         if (kVar != null) {
-            kVar.I(str, i10, runnable);
+            kVar.H(str, i10, runnable);
         }
     }
 
@@ -1442,7 +1475,7 @@ public abstract class n2 {
             this.sheetsStack = new ArrayList<>();
         }
         jc jcVar = null;
-        jc jcVar2 = (this.sheetsStack.isEmpty() || !(hg.k0.g(1, this.sheetsStack) instanceof jc)) ? null : (jc) hg.k0.g(1, this.sheetsStack);
+        jc jcVar2 = (this.sheetsStack.isEmpty() || !(hg.c.g(1, this.sheetsStack) instanceof jc)) ? null : (jc) hg.c.g(1, this.sheetsStack);
         if (jcVar2 == null || jcVar2.h == i10) {
             jcVar = jcVar2;
         } else {

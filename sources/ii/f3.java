@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class f3 implements c6 {
     public final /* synthetic */ x3 a;
@@ -31,7 +31,7 @@ public final class f3 implements c6 {
         x3 x3Var = this.a;
         v3 v3Var = x3Var.o3;
         if (i10 == 7) {
-            x3Var.T4(aVar, new TL_iv.pageBlockButtonRow(), 0, 0, false, false);
+            x3Var.S4(aVar, new TL_iv.pageBlockButtonRow(), 0, 0, false, false);
         }
         x3Var.i4 = null;
         x3Var.j4 = aVar;
@@ -41,9 +41,9 @@ public final class f3 implements c6 {
         }
         if (aVar != null) {
             f6.f(aVar.b, "");
-            View B1 = x3Var.B1(aVar);
-            if (B1 instanceof f6) {
-                ((f6) B1).getEditText().setTextSilently("");
+            View A1 = x3Var.A1(aVar);
+            if (A1 instanceof f6) {
+                ((f6) A1).getEditText().setTextSilently("");
             }
         }
         i2 i2Var2 = x3Var.Q3;
@@ -65,7 +65,7 @@ public final class f3 implements c6 {
                 v3Var.r(1);
                 break;
             case 6:
-                x3Var.v3();
+                x3Var.u3();
                 break;
         }
     }
@@ -74,15 +74,15 @@ public final class f3 implements c6 {
         boolean z12 = pageBlock instanceof TL_iv.pageBlockBlockquote;
         x3 x3Var = this.a;
         if (!z12) {
-            x3Var.T4(aVar, pageBlock, i10, i11, z10, z11);
+            x3Var.S4(aVar, pageBlock, i10, i11, z10, z11);
             return;
         }
         if (aVar == null) {
-            aVar = x3Var.Z4();
+            aVar = x3Var.Y4();
         }
         if (aVar != null) {
             ArrayList arrayList = aVar.k;
-            if (x3Var.s3.indexOf(aVar) < 0 || x3.z3(aVar) || aVar.i) {
+            if (x3Var.s3.indexOf(aVar) < 0 || x3.y3(aVar) || aVar.i) {
                 return;
             }
             i2 i2Var = x3Var.Q3;
@@ -106,14 +106,14 @@ public final class f3 implements c6 {
                 aVar.b = new TL_iv.pageBlockParagraph();
                 arrayList.add(Long.valueOf(q0.a()));
             }
-            x3Var.u4();
+            x3Var.t4();
             if (z13 && (x3Var.findFocus() instanceof i1)) {
-                x3Var.Z1();
+                x3Var.Y1();
                 i2 i2Var2 = x3Var.Q3;
                 if (i2Var2 != null) {
                     i2Var2.h();
                 }
-                x3Var.f3(aVar);
+                x3Var.e3(aVar);
                 return;
             }
             x3Var.f3.N(false);

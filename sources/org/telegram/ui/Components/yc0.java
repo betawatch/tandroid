@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public abstract class yc0 extends lw0 implements r0.m, View.OnLayoutChangeListener {
+public abstract class yc0 extends mw0 implements r0.m, View.OnLayoutChangeListener {
     public int A0;
     public boolean B0;
     public final b2.q0 w0;
@@ -26,7 +26,7 @@ public abstract class yc0 extends lw0 implements r0.m, View.OnLayoutChangeListen
         this.A0 = (view.getMeasuredHeight() - this.x0.getPaddingBottom()) - this.y0.getMeasuredHeight();
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -53,7 +53,7 @@ public abstract class yc0 extends lw0 implements r0.m, View.OnLayoutChangeListen
         }
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.B0 = true;
@@ -63,7 +63,7 @@ public abstract class yc0 extends lw0 implements r0.m, View.OnLayoutChangeListen
         }
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.B0 = false;

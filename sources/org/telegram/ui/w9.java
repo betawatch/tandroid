@@ -43,7 +43,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class w9 extends org.telegram.ui.ActionBar.n2 {
     public final PointF[] E;
@@ -329,12 +329,12 @@ public class w9 extends org.telegram.ui.ActionBar.n2 {
     public final View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         if (this.w) {
-            this.actionBar.B(-1, false);
             this.actionBar.A(-1, false);
+            this.actionBar.z(-1, false);
             this.actionBar.setTitleColor(-1);
         } else {
-            this.actionBar.B(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.z6, false), false);
-            this.actionBar.A(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.u8, false), false);
+            this.actionBar.A(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.z6, false), false);
+            this.actionBar.z(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.u8, false), false);
             this.actionBar.setTitleColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.A8, false));
         }
         this.actionBar.setCastShadows(false);
@@ -375,8 +375,8 @@ public class w9 extends org.telegram.ui.ActionBar.n2 {
             this.actionBar.setBackgroundDrawable(null);
             this.actionBar.setAddToContainer(false);
             this.actionBar.setTitleColor(-1);
-            this.actionBar.B(-1, false);
-            this.actionBar.A(587202559, false);
+            this.actionBar.A(-1, false);
+            this.actionBar.z(587202559, false);
             t9Var.setBackgroundColor(-16777216);
             t9Var.addView(this.actionBar);
         }
@@ -425,8 +425,8 @@ public class w9 extends org.telegram.ui.ActionBar.n2 {
                     this.a.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
                     spannableStringBuilder.replace(indexOf2, indexOf2 + 1, (CharSequence) " ");
                     spannableStringBuilder.replace(indexOf, i14, (CharSequence) " ");
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.k61(strArr[i12], 0), i14, indexOf2, 33);
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.d61(AndroidUtilities.bold()), i14, indexOf2, 33);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.l61(strArr[i12], 0), i14, indexOf2, 33);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.e61(AndroidUtilities.bold()), i14, indexOf2, 33);
                     i12++;
                 }
                 this.a.setLinkTextColor(-1);

@@ -27,7 +27,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class f8 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, og.c {
     public static final AccelerateInterpolator N = new AccelerateInterpolator(0.5f);
@@ -418,7 +418,7 @@ public class f8 extends FrameLayout implements NotificationCenter.NotificationCe
                         String str2 = documentAttribute.alt;
                         TextView textView = this.h;
                         textView.setText(Emoji.replaceEmoji(str2, textView.getPaint().getFontMetricsInt(), false));
-                        string = a4.a.q(documentAttribute.alt, " ", string, new StringBuilder());
+                        string = a4.a.r(documentAttribute.alt, " ", string, new StringBuilder());
                     }
                 } else {
                     i10++;

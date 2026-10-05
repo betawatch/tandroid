@@ -55,9 +55,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.CheckBoxSquare;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class tg0 extends org.telegram.ui.Components.qw0 implements AdapterView.OnItemSelectedListener, NotificationCenter.NotificationCenterDelegate {
+public final class tg0 extends org.telegram.ui.Components.rw0 implements AdapterView.OnItemSelectedListener, NotificationCenter.NotificationCenterDelegate {
     public final ArrayList E;
     public final HashMap F;
     public final HashMap G;
@@ -79,7 +79,7 @@ public final class tg0 extends org.telegram.ui.Components.qw0 implements Adapter
     public final yj0 a;
     public final qg0 b;
     public final TextView c;
-    public final org.telegram.ui.Components.o11 d;
+    public final org.telegram.ui.Components.p11 d;
     public final org.telegram.ui.Components.ld0 e;
     public final org.telegram.ui.Components.ld0 f;
     public final TextView h;
@@ -127,19 +127,19 @@ public final class tg0 extends org.telegram.ui.Components.qw0 implements Adapter
         q90Var.setGravity(17);
         q90Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         addView(q90Var, w7.z5.t(-1, -2, 1, 32, 8, 32, 0));
-        org.telegram.ui.Components.o11 o11Var = new org.telegram.ui.Components.o11(context);
-        this.d = o11Var;
-        o11Var.setFactory(new pg0(context, 0));
+        org.telegram.ui.Components.p11 p11Var = new org.telegram.ui.Components.p11(context);
+        this.d = p11Var;
+        p11Var.setFactory(new pg0(context, 0));
         Animation loadAnimation = AnimationUtils.loadAnimation(context, R.anim.text_in);
         loadAnimation.setInterpolator(org.telegram.ui.Components.nt.e);
-        o11Var.setInAnimation(loadAnimation);
+        p11Var.setInAnimation(loadAnimation);
         ImageView imageView = new ImageView(context);
         this.s = imageView;
         imageView.setImageResource(R.drawable.msg_inputarrow);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         linearLayout.setGravity(16);
-        linearLayout.addView(o11Var, w7.z5.m(1.0f, 0, -2, 0, 0, 0));
+        linearLayout.addView(p11Var, w7.z5.m(1.0f, 0, -2, 0, 0, 0));
         linearLayout.addView(imageView, w7.z5.u(24.0f, 24.0f, 0, 0.0f, 0.0f, 14.0f, 0.0f));
         org.telegram.ui.Components.ld0 ld0Var = new org.telegram.ui.Components.ld0(context, null);
         this.e = ld0Var;
@@ -455,12 +455,12 @@ public final class tg0 extends org.telegram.ui.Components.qw0 implements Adapter
         ld0Var.b(f7, f7, true);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final boolean a() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void d() {
         this.K = false;
     }
@@ -472,7 +472,7 @@ public final class tg0 extends org.telegram.ui.Components.qw0 implements Adapter
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void f() {
         Runnable runnable = this.U;
         if (runnable != null) {
@@ -481,13 +481,13 @@ public final class tg0 extends org.telegram.ui.Components.qw0 implements Adapter
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public String getHeaderName() {
         return LocaleController.getString("YourPhone", R.string.YourPhone);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void h(String str) {
         boolean z10;
         boolean z11;
@@ -740,7 +740,7 @@ public final class tg0 extends org.telegram.ui.Components.qw0 implements Adapter
         this.V.n1(ConnectionsManager.getInstance(i11).sendRequest(tL_auth_sendCode3, new ci.gd(this, bundle, d, hVar, tL_auth_sendCode3, 9), 27), true);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void j() {
         q();
         org.telegram.ui.Cells.a2 a2Var = this.v;
@@ -750,7 +750,7 @@ public final class tg0 extends org.telegram.ui.Components.qw0 implements Adapter
         AndroidUtilities.runOnUIThread(new jg0(this, 0), ug0.t0);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void k(Bundle bundle) {
         String string = bundle.getString("phoneview_code");
         if (string != null) {
@@ -762,7 +762,7 @@ public final class tg0 extends org.telegram.ui.Components.qw0 implements Adapter
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void l(Bundle bundle) {
         String obj = this.a.getText().toString();
         if (obj.length() != 0) {
@@ -774,7 +774,7 @@ public final class tg0 extends org.telegram.ui.Components.qw0 implements Adapter
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void n() {
         this.c.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false));
         int w02 = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.D6, false);
@@ -783,11 +783,11 @@ public final class tg0 extends org.telegram.ui.Components.qw0 implements Adapter
         q90Var.setLinkTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.gc, false));
         int i10 = 0;
         while (true) {
-            org.telegram.ui.Components.o11 o11Var = this.d;
-            if (i10 >= o11Var.getChildCount()) {
+            org.telegram.ui.Components.p11 p11Var = this.d;
+            if (i10 >= p11Var.getChildCount()) {
                 break;
             }
-            TextView textView = (TextView) o11Var.getChildAt(i10);
+            TextView textView = (TextView) p11Var.getChildAt(i10);
             textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false));
             textView.setHintTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.H6, false));
             i10++;

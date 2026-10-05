@@ -14,10 +14,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.nn;
-import org.telegram.ui.Components.tx0;
+import org.telegram.ui.Components.ux0;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class t9 extends og.b {
     public final Context d;
@@ -153,7 +153,7 @@ public final class t9 extends og.b {
         }
         if (i14 == 5) {
             try {
-                ((tx0) view).b.getImageReceiver().startAnimation();
+                ((ux0) view).b.getImageReceiver().startAnimation();
                 return;
             } catch (Exception unused) {
                 return;
@@ -242,11 +242,11 @@ public final class t9 extends og.b {
                     z7Var = new org.telegram.ui.Cells.m4(context, d6Var);
                     z7Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h5, d6Var));
                 } else if (i10 == 5) {
-                    tx0 tx0Var = new tx0(context, null, 1, d6Var);
-                    tx0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                    tx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                    tx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
-                    view = tx0Var;
+                    ux0 ux0Var = new ux0(context, null, 1, d6Var);
+                    ux0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                    ux0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                    ux0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
+                    view = ux0Var;
                 } else if (i10 == 6) {
                     z7Var = new org.telegram.ui.Cells.e9(context, d6Var);
                     z7Var.setBackgroundColor(-15921907);

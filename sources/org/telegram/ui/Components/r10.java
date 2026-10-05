@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class r10 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final class r10 extends AnimatorListenerAdapter {
                     fragmentContextView3.setVisibility(8);
                     z10 z10Var = fragmentContextView3.o0;
                     if (z10Var != null) {
-                        ((jr0) z10Var).a(false);
+                        ((kr0) z10Var).a(false);
                     }
                     fragmentContextView3.f = null;
                     if (fragmentContextView3.w0) {
@@ -69,7 +69,7 @@ public final class r10 extends AnimatorListenerAdapter {
                 if (animatorSet4 != null && animatorSet4.equals(animator)) {
                     z10 z10Var2 = fragmentContextView4.o0;
                     if (z10Var2 != null) {
-                        ((jr0) z10Var2).a(false);
+                        ((kr0) z10Var2).a(false);
                     }
                     fragmentContextView4.f = null;
                     if (fragmentContextView4.w0) {
@@ -118,7 +118,7 @@ public final class r10 extends AnimatorListenerAdapter {
                 if (animatorSet6 != null && animatorSet6.equals(animator)) {
                     z10 z10Var3 = fragmentContextView6.o0;
                     if (z10Var3 != null) {
-                        ((jr0) z10Var3).a(false);
+                        ((kr0) z10Var3).a(false);
                     }
                     fragmentContextView6.f = null;
                     if (fragmentContextView6.w0) {

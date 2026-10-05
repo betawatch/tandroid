@@ -2,7 +2,7 @@ package v7;
 
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class p7 {
     public static long a(long j3, long j10) {
@@ -10,7 +10,7 @@ public abstract class p7 {
         if (((j3 ^ j10) < 0) || ((j3 ^ j11) >= 0)) {
             return j11;
         }
-        throw new ArithmeticException(a4.a.r(a4.a.t(j3, "overflow: checkedAdd(", ", "), j10, ")"));
+        throw new ArithmeticException(a4.a.s(a4.a.u(j3, "overflow: checkedAdd(", ", "), j10, ")"));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0049, code lost:

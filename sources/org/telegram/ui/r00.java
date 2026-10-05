@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class r00 extends org.telegram.ui.Components.cb {
     public final MessagesController.DialogFilter X;
@@ -69,7 +69,7 @@ public final class r00 extends org.telegram.ui.Components.cb {
     }
 
     @Override // org.telegram.ui.Components.cb
-    public final void E(org.telegram.ui.Components.lw0 lw0Var) {
+    public final void E(org.telegram.ui.Components.mw0 mw0Var) {
         org.telegram.ui.Components.zl0 zl0Var = this.d;
         zl0Var.setOverScrollMode(2);
         zl0Var.setOnItemClickListener(new i(this, 10));

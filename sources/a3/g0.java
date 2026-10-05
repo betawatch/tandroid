@@ -17,15 +17,15 @@ import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.Components.a11;
 import org.telegram.ui.Components.so;
-import org.telegram.ui.Components.z01;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.uy;
-import org.telegram.ui.yf1;
+import org.telegram.ui.wf1;
 import org.telegram.ui.yn;
-import yh.x3;
+import yh.y3;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -77,7 +77,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 long j14 = this.c;
                 synchronized (s0Var.g) {
                     if (!o0Var.d && !o0Var.e) {
-                        ((z01) s0Var.e).a(o0Var.a, o0Var.b, j13, j14);
+                        ((a11) s0Var.e).a(o0Var.a, o0Var.b, j13, j14);
                         return;
                     }
                     return;
@@ -116,14 +116,14 @@ public final /* synthetic */ class g0 implements Runnable {
                 uy uyVar = (uy) this.d;
                 long j15 = this.b;
                 long j16 = this.c;
-                yf1 yf1Var = (yf1) this.e;
+                wf1 wf1Var = (wf1) this.e;
                 if (uyVar.C2 == null) {
                     uyVar.finishFragment();
                     return;
                 }
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(MessagesStorage.TopicKey.of(j15, j16));
-                uyVar.C2.u(uyVar, arrayList, null, false, uyVar.J2, uyVar.K2, uyVar.L2, yf1Var);
+                uyVar.C2.u(uyVar, arrayList, null, false, uyVar.J2, uyVar.K2, uyVar.L2, wf1Var);
                 if (uyVar.i2) {
                     uyVar.C2 = null;
                     return;
@@ -136,11 +136,11 @@ public final /* synthetic */ class g0 implements Runnable {
                 yn ynVar = (yn) this.e;
                 Pattern pattern = LaunchActivity.B1;
                 TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(launchActivity.O).getTopicsController().findTopic(j17, j18);
-                StringBuilder t10 = a4.a.t(j17, "LaunchActivity openForum after load ", " ");
-                t10.append(j18);
-                t10.append(" TL_forumTopic ");
-                t10.append(findTopic);
-                FileLog.d(t10.toString());
+                StringBuilder u10 = a4.a.u(j17, "LaunchActivity openForum after load ", " ");
+                u10.append(j18);
+                u10.append(" TL_forumTopic ");
+                u10.append(findTopic);
+                FileLog.d(u10.toString());
                 if (launchActivity.q0 != null) {
                     ng.d.a(ynVar, MessagesStorage.TopicKey.of(-j17, j18));
                     ((ActionBarLayout) launchActivity.O()).P(ynVar);
@@ -148,7 +148,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 }
                 return;
             default:
-                x3.e0((x3) this.d, this.b, this.c, (Utilities.Callback) this.e);
+                y3.e0((y3) this.d, this.b, this.c, (Utilities.Callback) this.e);
                 return;
         }
     }

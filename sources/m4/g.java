@@ -7,7 +7,7 @@ import e9.o1;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class g {
     public static final String l;
@@ -81,7 +81,7 @@ public final class g {
             ArrayList<? extends Parcelable> arrayList = new ArrayList<>(i0Var.size());
             Iterator<E> it = i0Var.iterator();
             if (it.hasNext()) {
-                a4.a.y(it.next());
+                a4.a.z(it.next());
                 throw null;
             }
             bundle.putParcelableArrayList(str, arrayList);
@@ -92,7 +92,7 @@ public final class g {
                 ArrayList<? extends Parcelable> arrayList2 = new ArrayList<>(i0Var2.size());
                 Iterator<E> it2 = i0Var2.iterator();
                 if (it2.hasNext()) {
-                    a4.a.y(it2.next());
+                    a4.a.z(it2.next());
                     throw null;
                 }
                 bundle.putParcelableArrayList(p, arrayList2);
@@ -101,7 +101,7 @@ public final class g {
                 ArrayList<? extends Parcelable> arrayList3 = new ArrayList<>(a2.d);
                 e9.g0 listIterator = a2.listIterator(0);
                 if (listIterator.hasNext()) {
-                    a4.a.y(listIterator.next());
+                    a4.a.z(listIterator.next());
                     throw null;
                 }
                 bundle.putParcelableArrayList(str, arrayList3);
@@ -112,7 +112,7 @@ public final class g {
             ArrayList<? extends Parcelable> arrayList4 = new ArrayList<>(i0Var3.size());
             Iterator<E> it3 = i0Var3.iterator();
             if (it3.hasNext()) {
-                a4.a.y(it3.next());
+                a4.a.z(it3.next());
                 throw null;
             }
             bundle.putParcelableArrayList(q, arrayList4);

@@ -8,7 +8,7 @@ import g2.b0;
 import u2.b1;
 import v7.m7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class i extends a {
     public final int E;
@@ -63,12 +63,12 @@ public final class i extends a {
             int i10 = sVar.Q;
             int i11 = sVar.R;
             if (r0.k(str) && ((i10 > 1 || i11 > 1) && i10 != -1 && i11 != -1)) {
-                h0 L = aVar.L(4);
+                h0 K = aVar.K(4);
                 int i12 = i10 * i11;
                 long j13 = (this.n - this.h) / i12;
                 for (int i13 = 1; i13 < i12; i13++) {
-                    L.d(0, new v());
-                    L.c(i13 * j13, 0, 0, 0, null);
+                    K.d(0, new v());
+                    K.c(i13 * j13, 0, 0, 0, null);
                 }
             }
             m7.a(this.r);

@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class qo extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final class qo extends org.telegram.ui.ActionBar.j {
                     hpVar.finishFragment();
                     break;
                 } else if (i10 == 1) {
-                    org.telegram.ui.Components.sr srVar = hpVar.r;
+                    org.telegram.ui.Components.sr srVar = hpVar.s;
                     if (srVar == null || srVar.c <= 0.0f) {
                         hpVar.X();
                         break;
@@ -124,11 +124,11 @@ public final class qo extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 12:
-                ((org.telegram.ui.Components.zq0) this.b).onBackPressed();
+                ((org.telegram.ui.Components.br0) this.b).onBackPressed();
                 break;
             case 13:
                 if (i10 == -1) {
-                    ((org.telegram.ui.Components.x61) this.b).finishFragment();
+                    ((org.telegram.ui.Components.z61) this.b).finishFragment();
                     break;
                 }
                 break;
@@ -140,7 +140,7 @@ public final class qo extends org.telegram.ui.ActionBar.j {
                 break;
             case 15:
                 if (i10 == -1) {
-                    ((fi1) this.b).a(false, false);
+                    ((di1) this.b).a(false, false);
                     break;
                 }
                 break;

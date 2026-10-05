@@ -26,7 +26,7 @@ import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.ld;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yl0;
@@ -34,18 +34,18 @@ import org.telegram.ui.Components.zl0;
 import org.telegram.ui.LaunchActivity;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class l0 extends cb {
     public static final int g0 = -1;
     public static final int h0 = -2;
     public final TL_account.TL_connectedBot X;
     public final TLRPC.User Y;
-    public final a0 Z;
+    public final b0 Z;
     public final LinearLayout a0;
     public final ci.d b0;
     public final ci.d c0;
-    public u61 d0;
+    public w61 d0;
     public boolean e0;
     public Boolean f0;
 
@@ -56,11 +56,11 @@ public final class l0 extends cb {
         this.Y = user;
         this.K = AndroidUtilities.dp(36.0f);
         this.v = 0.15f;
-        a0 a0Var = new a0(activity, this.currentAccount, new qc(this, 20), d6Var);
-        this.Z = a0Var;
+        b0 b0Var = new b0(activity, this.currentAccount, new qc(this, 20), d6Var);
+        this.Z = b0Var;
         TL_account.TL_businessBotRecipients tL_businessBotRecipients = tL_connectedBot.recipients;
         this.e0 = tL_businessBotRecipients.exclude_selected;
-        a0Var.i(tL_businessBotRecipients);
+        b0Var.i(tL_businessBotRecipients);
         LinearLayout linearLayout = new LinearLayout(activity);
         this.a0 = linearLayout;
         linearLayout.setOrientation(1);
@@ -99,7 +99,7 @@ public final class l0 extends cb {
         zl0 zl0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
         zl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(72.0f));
-        this.d.s1();
+        this.d.r1();
         this.d.setOnItemClickListener(new ai.g(this, 11));
         FrameLayout frameLayout = new FrameLayout(activity);
         frameLayout.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
@@ -130,24 +130,24 @@ public final class l0 extends cb {
         jVar.o(tr.h);
         jVar.n(350L);
         this.d.setItemAnimator(jVar);
-        u61 u61Var = this.d0;
-        if (u61Var != null) {
-            u61Var.N(false);
+        w61 w61Var = this.d0;
+        if (w61Var != null) {
+            w61Var.N(false);
         }
     }
 
     public static void N(l0 l0Var, TL_account.TL_connectedBot tL_connectedBot, TL_account.TL_businessBotRecipients tL_businessBotRecipients) {
-        f.a(l0Var.currentAccount).b();
+        g.a(l0Var.currentAccount).b();
         l0Var.dismiss();
         tL_connectedBot.recipients = tL_businessBotRecipients;
         n2 U = LaunchActivity.U();
         if (U != null) {
-            k0.p(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(l0Var.Y)}, yc.a0(U), R.raw.contact_check, 36);
+            c.q(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(l0Var.Y)}, yc.a0(U), R.raw.contact_check, 36);
         }
     }
 
     public static void O(l0 l0Var, TL_account.TL_connectedBot tL_connectedBot) {
-        a0 a0Var = l0Var.Z;
+        b0 b0Var = l0Var.Z;
         ci.d dVar = l0Var.c0;
         if (dVar.N) {
             return;
@@ -155,12 +155,12 @@ public final class l0 extends cb {
         dVar.setLoading(true);
         TL_account.updateConnectedBot updateconnectedbot = new TL_account.updateConnectedBot();
         updateconnectedbot.bot = MessagesController.getInstance(l0Var.currentAccount).getInputUser(tL_connectedBot.bot_id);
-        updateconnectedbot.recipients = a0Var.b();
-        ConnectionsManager.getInstance(l0Var.currentAccount).sendRequest(updateconnectedbot, new s5(l0Var, tL_connectedBot, a0Var.c(), 5));
+        updateconnectedbot.recipients = b0Var.b();
+        ConnectionsManager.getInstance(l0Var.currentAccount).sendRequest(updateconnectedbot, new s5(l0Var, tL_connectedBot, b0Var.c(), 5));
     }
 
     public static /* synthetic */ void P(l0 l0Var, ld ldVar) {
-        f.a(l0Var.currentAccount).b();
+        g.a(l0Var.currentAccount).b();
         ldVar.run();
         l0Var.dismiss();
     }
@@ -187,8 +187,8 @@ public final class l0 extends cb {
     }
 
     public final void R(boolean z10) {
-        a0 a0Var = this.Z;
-        final boolean z11 = a0Var != null && a0Var.g();
+        b0 b0Var = this.Z;
+        final boolean z11 = b0Var != null && b0Var.g();
         Boolean bool = this.f0;
         if (bool == null || bool.booleanValue() != z11) {
             this.f0 = Boolean.valueOf(z11);
@@ -199,7 +199,7 @@ public final class l0 extends cb {
                 ViewPropertyAnimator duration = dVar2.animate().alpha(z11 ? 1.0f : 0.0f).scaleX(z11 ? 1.0f : 0.8f).scaleY(z11 ? 1.0f : 0.8f).setDuration(320L);
                 tr trVar = tr.h;
                 final int i10 = 0;
-                duration.setInterpolator(trVar).withEndAction(new Runnable(this) { // from class: hg.j0
+                duration.setInterpolator(trVar).withEndAction(new Runnable(this) { // from class: hg.k0
                     public final /* synthetic */ l0 b;
 
                     {
@@ -234,7 +234,7 @@ public final class l0 extends cb {
                 }).start();
                 dVar.setVisibility(0);
                 final int i11 = 1;
-                dVar.animate().alpha(z11 ? 0.0f : 1.0f).scaleX(!z11 ? 1.0f : 0.8f).scaleY(z11 ? 0.8f : 1.0f).setDuration(320L).setInterpolator(trVar).withEndAction(new Runnable(this) { // from class: hg.j0
+                dVar.animate().alpha(z11 ? 0.0f : 1.0f).scaleX(!z11 ? 1.0f : 0.8f).scaleY(z11 ? 0.8f : 1.0f).setDuration(320L).setInterpolator(trVar).withEndAction(new Runnable(this) { // from class: hg.k0
                     public final /* synthetic */ l0 b;
 
                     {
@@ -284,17 +284,17 @@ public final class l0 extends cb {
 
     @Override // org.telegram.ui.Components.cb, org.telegram.ui.ActionBar.f3
     public final boolean canDismissWithSwipe() {
-        a0 a0Var = this.Z;
-        if (a0Var != null) {
-            a0Var.g();
+        b0 b0Var = this.Z;
+        if (b0Var != null) {
+            b0Var.g();
         }
         return false;
     }
 
     @Override // org.telegram.ui.ActionBar.f3
     public final boolean canDismissWithTouchOutside() {
-        a0 a0Var = this.Z;
-        if (a0Var == null || !a0Var.g()) {
+        b0 b0Var = this.Z;
+        if (b0Var == null || !b0Var.g()) {
             return super.canDismissWithTouchOutside();
         }
         return false;
@@ -302,10 +302,10 @@ public final class l0 extends cb {
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(zl0Var, getContext(), this.currentAccount, 0, true, new bi.v(this, 23), this.resourcesProvider);
-        this.d0 = u61Var;
-        u61Var.r = false;
-        return u61Var;
+        w61 w61Var = new w61(zl0Var, getContext(), this.currentAccount, 0, true, new bi.v(this, 23), this.resourcesProvider);
+        this.d0 = w61Var;
+        w61Var.r = false;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

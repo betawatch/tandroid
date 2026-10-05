@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.y5;
 import org.telegram.ui.Components.dc0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class j extends LinearLayout implements y5 {
     public final d6 a;
@@ -44,11 +44,11 @@ public final class j extends LinearLayout implements y5 {
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         frameLayout.addView(imageView, z5.e(24, 24, 17));
-        LinearLayout f7 = ok.f(context, 1);
+        LinearLayout e7 = bi.e(context, 1);
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 16.0f);
-        TextView h = e2.h(f7, textView, z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        TextView h = e2.h(e7, textView, z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
         this.f = h;
         h.setGravity(17);
         h.setMinWidth(AndroidUtilities.dp(20.66f));
@@ -56,11 +56,11 @@ public final class j extends LinearLayout implements y5 {
         h.setTextSize(1, 16.0f);
         if (LocaleController.isRTL) {
             addView(h, z5.j(13.33f, 0.0f));
-            addView(f7, z5.p(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
+            addView(e7, z5.p(0, -2, 1.0f, 23, 20, 0, z10 ? 12 : 16, 0));
             addView(frameLayout, z5.t(28, 28, 21, 0, 0, z10 ? 9 : 14, 0));
         } else {
             addView(frameLayout, z5.t(28, 28, 19, z10 ? 9 : 14, 0, 0, 0));
-            addView(f7, z5.p(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
+            addView(e7, z5.p(0, -2, 1.0f, 23, z10 ? 12 : 16, 0, 20, 0));
             addView(h, z5.j(0.0f, 13.33f));
         }
         e();

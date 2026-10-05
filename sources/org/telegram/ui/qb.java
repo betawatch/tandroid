@@ -11,7 +11,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class qb implements org.telegram.ui.Cells.t0 {
     public final /* synthetic */ sb a;
@@ -38,7 +38,7 @@ public final class qb implements org.telegram.ui.Cells.t0 {
                 wb.A0(wbVar, (TLRPC.TL_messages_exportedChatInvite) obj, wbVar.z0);
                 return;
             } else {
-                org.telegram.messenger.f0.p(R.string.LinkHashExpired, org.telegram.ui.Components.yc.a0(wbVar), R.raw.linkbroken, 36);
+                org.telegram.messenger.q.p(R.string.LinkHashExpired, org.telegram.ui.Components.yc.a0(wbVar), R.raw.linkbroken, 36);
                 return;
             }
         }
@@ -120,7 +120,7 @@ public final class qb implements org.telegram.ui.Cells.t0 {
         }
         i10 = ((org.telegram.ui.ActionBar.n2) wbVar).currentAccount;
         if (j3 != UserConfig.getInstance(i10).getClientUserId()) {
-            Bundle f7 = t8.b.f(j3, "user_id");
+            Bundle f7 = sa.e.f(j3, "user_id");
             wb.p0(wbVar, f7, j3);
             ProfileActivity profileActivity = new ProfileActivity(f7, null);
             profileActivity.N4(0);

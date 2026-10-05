@@ -1,76 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class m21 implements TextWatcher {
-    public final /* synthetic */ n21 a;
+public final class m21 extends EditTextBoldCursor {
+    public final /* synthetic */ o21 b;
 
-    public m21(n21 n21Var) {
-        this.a = n21Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m21(o21 o21Var, Context context) {
+        super(context);
+        this.b = o21Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        boolean z10 = this.a.b.length() > 0;
-        if (z10 != (this.a.a.getAlpha() != 0.0f)) {
-            this.a.a.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).scaleX(z10 ? 1.0f : 0.1f).scaleY(z10 ? 1.0f : 0.1f).start();
-        }
-        String obj = this.a.b.getText().toString();
-        if (obj.length() != 0) {
-            pz pzVar = this.a.c.e;
-            if (pzVar != null) {
-                pzVar.setText(LocaleController.getString(R.string.NoResult));
-            }
-        } else {
-            s4.h0 adapter = this.a.c.c.getAdapter();
-            ThemeEditorView.EditorAlert editorAlert = this.a.c;
-            if (adapter != editorAlert.n) {
-                int H = ThemeEditorView.EditorAlert.H(editorAlert);
-                this.a.c.e.setText(LocaleController.getString(R.string.NoChats));
-                this.a.c.e.c();
-                ThemeEditorView.EditorAlert editorAlert2 = this.a.c;
-                editorAlert2.c.setAdapter(editorAlert2.n);
-                this.a.c.n.l();
-                if (H > 0) {
-                    this.a.c.h.h1(0, -H);
-                }
-            }
-        }
-        j21 j21Var = this.a.c.r;
-        if (j21Var == null || obj.equals(j21Var.n)) {
-            return;
-        }
-        j21Var.n = obj;
-        if (j21Var.h != null) {
-            Utilities.searchQueue.cancelRunnable(j21Var.h);
-            j21Var.h = null;
-        }
-        if (obj.length() != 0) {
-            int i10 = j21Var.d + 1;
-            j21Var.d = i10;
-            j21Var.h = new zm(j21Var, obj, i10, 22);
-            Utilities.searchQueue.postRunnable(j21Var.h, 300L);
-            return;
-        }
-        j21Var.e.clear();
-        ThemeEditorView.EditorAlert editorAlert3 = j21Var.r;
-        editorAlert3.F = ThemeEditorView.EditorAlert.H(editorAlert3);
-        j21Var.d = -1;
-        j21Var.l();
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Components.gu, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        ViewGroup viewGroup;
+        MotionEvent obtain = MotionEvent.obtain(motionEvent);
+        float rawX = obtain.getRawX();
+        float rawY = obtain.getRawY();
+        ThemeEditorView.EditorAlert editorAlert = this.b.c;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) editorAlert).containerView;
+        obtain.setLocation(rawX, rawY - viewGroup.getTranslationY());
+        editorAlert.c.dispatchTouchEvent(obtain);
+        obtain.recycle();
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

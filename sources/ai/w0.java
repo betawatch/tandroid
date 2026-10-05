@@ -15,25 +15,25 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.ao0;
 import org.telegram.ui.Components.bk;
-import org.telegram.ui.Components.d91;
-import org.telegram.ui.Components.f91;
+import org.telegram.ui.Components.e91;
+import org.telegram.ui.Components.g91;
 import org.telegram.ui.Components.jl;
 import org.telegram.ui.Components.jo0;
 import org.telegram.ui.Components.l00;
 import org.telegram.ui.Components.lz;
 import org.telegram.ui.Components.mj;
 import org.telegram.ui.Components.n00;
-import org.telegram.ui.Components.n71;
 import org.telegram.ui.Components.nz;
+import org.telegram.ui.Components.o71;
 import org.telegram.ui.Components.on0;
 import org.telegram.ui.Components.pf;
 import org.telegram.ui.Components.q00;
 import org.telegram.ui.Components.qk0;
-import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.ry0;
 import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.sm;
 import org.telegram.ui.Components.tm;
-import org.telegram.ui.Components.tv0;
+import org.telegram.ui.Components.uv0;
 import org.telegram.ui.Components.v70;
 import org.telegram.ui.Components.xi;
 import org.telegram.ui.Components.zl0;
@@ -50,7 +50,7 @@ import org.telegram.ui.w00;
 import org.telegram.ui.x10;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class w0 extends zl0 {
     public final /* synthetic */ int e3;
@@ -67,7 +67,7 @@ public final class w0 extends zl0 {
     public boolean F0(float f7) {
         switch (this.e3) {
             case 3:
-                xi xiVar = ((hg.i0) this.f3).b;
+                xi xiVar = ((hg.j0) this.f3).b;
                 return f7 >= ((float) ((AndroidUtilities.dp(30.0f) + xiVar.b2[0]) + (!xiVar.g0 ? AndroidUtilities.statusBarHeight : 0)));
             case 12:
                 xi xiVar2 = ((bk) this.f3).b;
@@ -106,9 +106,9 @@ public final class w0 extends zl0 {
                 }
                 return true;
             case 25:
-                if (((f91) this.f3).n) {
+                if (((g91) this.f3).n) {
                     int dp2 = AndroidUtilities.dp(6.0f);
-                    RectF rectF2 = ((d91) view).c;
+                    RectF rectF2 = ((e91) view).c;
                     float f12 = dp2;
                     if (rectF2.left - f12 < f7 && rectF2.right + f12 > f7) {
                         return false;
@@ -121,17 +121,17 @@ public final class w0 extends zl0 {
     }
 
     @Override // org.telegram.ui.Components.zl0
-    public boolean T0() {
+    public boolean S0() {
         switch (this.e3) {
             case 24:
-                return getAdapter() != null && ((n71) this.f3).H && getAdapter().h() <= 2;
+                return getAdapter() != null && ((o71) this.f3).H && getAdapter().h() <= 2;
             default:
-                return super.T0();
+                return super.S0();
         }
     }
 
     @Override // org.telegram.ui.Components.zl0
-    public Integer X0(int i10) {
+    public Integer W0(int i10) {
         int i11;
         switch (this.e3) {
             case 0:
@@ -148,7 +148,7 @@ public final class w0 extends zl0 {
                 org.telegram.ui.ActionBar.d6 d6Var2 = this.p2;
                 return (w00Var == null || !w00Var.l) ? Integer.valueOf(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, d6Var2)) : Integer.valueOf(org.telegram.ui.ActionBar.i6.l1(0.12f, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.p7, d6Var2)));
             default:
-                return super.X0(i10);
+                return super.W0(i10);
         }
     }
 
@@ -157,7 +157,7 @@ public final class w0 extends zl0 {
         switch (this.e3) {
             case 25:
                 super.addView(view, i10, layoutParams);
-                if (!((f91) this.f3).V) {
+                if (!((g91) this.f3).V) {
                     view.setScaleX(1.0f);
                     view.setScaleY(1.0f);
                     view.setAlpha(1.0f);
@@ -228,9 +228,9 @@ public final class w0 extends zl0 {
                 break;
             case 21:
                 dy dyVar = (dy) this.f3;
-                s4.c0 c0Var = dyVar.d0;
-                s4.j jVar = dyVar.b0;
-                jo0 jo0Var = dyVar.c0;
+                s4.c0 c0Var = dyVar.e0;
+                s4.j jVar = dyVar.c0;
+                jo0 jo0Var = dyVar.d0;
                 if (jo0Var != null && jVar != null && c0Var != null && jo0Var.m0) {
                     canvas.save();
                     invalidate();
@@ -321,18 +321,18 @@ public final class w0 extends zl0 {
     public boolean drawChild(Canvas canvas, View view, long j3) {
         switch (this.e3) {
             case 18:
-                zg.o0 o0Var = ((sk0) this.f3).l0;
-                if (o0Var == null || !(view instanceof qk0) || !((qk0) view).e.equals(o0Var)) {
+                zg.m0 m0Var = ((sk0) this.f3).l0;
+                if (m0Var == null || !(view instanceof qk0) || !((qk0) view).e.equals(m0Var)) {
                     break;
                 }
                 break;
             case 23:
-                qy0 qy0Var = (qy0) this.f3;
-                com.google.firebase.messaging.n nVar = qy0Var.l0;
-                if (!(view instanceof org.telegram.ui.Cells.f8) || !qy0Var.R) {
+                ry0 ry0Var = (ry0) this.f3;
+                com.google.firebase.messaging.n nVar = ry0Var.l0;
+                if (!(view instanceof org.telegram.ui.Cells.f8) || !ry0Var.R) {
                     break;
                 } else {
-                    int b10 = qy0Var.c.T(view).b();
+                    int b10 = ry0Var.c.T(view).b();
                     canvas.save();
                     ArrayList arrayList = (ArrayList) nVar.d;
                     canvas.rotate(arrayList.isEmpty() ? 0.0f : ((Float) arrayList.get(b10 - ((b10 / 6) * 6))).floatValue(), (view.getMeasuredWidth() / 2.0f) + view.getLeft(), (view.getMeasuredHeight() / 2.0f) + view.getTop());
@@ -384,7 +384,7 @@ public final class w0 extends zl0 {
             case 14:
                 tm tmVar = (tm) this.f3;
                 tmVar.invalidate();
-                tmVar.b.U1(tmVar, i10);
+                tmVar.b.W1(tmVar, i10);
                 sm smVar = tmVar.v;
                 boolean z10 = true;
                 int i11 = 0;
@@ -479,16 +479,16 @@ public final class w0 extends zl0 {
                 }
                 break;
             case 22:
-                boolean r11 = rt.q().r(motionEvent, ((tv0) this.f3).b, null, this.p2);
+                boolean r11 = rt.q().r(motionEvent, ((uv0) this.f3).b, null, this.p2);
                 if (super.onInterceptTouchEvent(motionEvent) || r11) {
                 }
                 break;
             case 23:
-                qy0 qy0Var = (qy0) this.f3;
-                if (qy0Var.R) {
+                ry0 ry0Var = (ry0) this.f3;
+                if (ry0Var.R) {
                     break;
                 } else {
-                    boolean r12 = rt.q().r(motionEvent, qy0Var.c, qy0Var.m0, this.p2);
+                    boolean r12 = rt.q().r(motionEvent, ry0Var.c, ry0Var.m0, this.p2);
                     if (super.onInterceptTouchEvent(motionEvent) || r12) {
                     }
                 }
@@ -589,13 +589,13 @@ public final class w0 extends zl0 {
                 }
                 break;
             case 22:
-                if (!((tv0) this.f3).h) {
+                if (!((uv0) this.f3).h) {
                     super.requestLayout();
                     break;
                 }
                 break;
             case 23:
-                if (!((qy0) this.f3).g0) {
+                if (!((ry0) this.f3).g0) {
                     super.requestLayout();
                     break;
                 }
@@ -615,7 +615,7 @@ public final class w0 extends zl0 {
                 break;
             case 25:
                 super.setAlpha(f7);
-                ((f91) this.f3).invalidate();
+                ((g91) this.f3).invalidate();
                 break;
             default:
                 super.setAlpha(f7);
@@ -660,6 +660,6 @@ public final class w0 extends zl0 {
         setAdapter(lzVar);
     }
 
-    private final void y1(int i10) {
+    private final void x1(int i10) {
     }
 }

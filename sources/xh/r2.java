@@ -11,10 +11,10 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import w7.z5;
-import yh.k5;
-import yh.t5;
+import yh.l5;
+import yh.u5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class r2 extends org.telegram.ui.ActionBar.f3 {
     public long b;
@@ -32,7 +32,7 @@ public final class r2 extends org.telegram.ui.ActionBar.f3 {
         b11.setText(LocaleController.getString(R.string.Gift2UnpinAlertSubtitle));
         linearLayout.addView(b11, z5.k(22.0f, 4.33f, 22.0f, 10.0f, -1, -2));
         ci.d dVar = new ci.d(context, d6Var, true);
-        k5 G = t5.y(this.currentAccount, false).G(j3, true);
+        l5 G = u5.y(this.currentAccount, false).G(j3, true);
         q2 q2Var = new q2(context, this.currentAccount, 0, false, new ai.m0(22, this, G), new rg.x(15, this, dVar), null, d6Var);
         q2Var.setSpanCount(3);
         q2Var.setOverScrollMode(2);

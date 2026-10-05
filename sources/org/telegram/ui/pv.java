@@ -13,7 +13,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pv implements Runnable {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class pv implements Runnable {
             case 5:
                 uy uyVar5 = this.b;
                 uyVar5.getClass();
-                uyVar5.presentFragment(new a91(null));
+                uyVar5.presentFragment(new y81(null));
                 break;
             case 6:
                 uy uyVar6 = this.b;
@@ -260,7 +260,7 @@ public final /* synthetic */ class pv implements Runnable {
             case 28:
                 uy uyVar20 = this.b;
                 dy dyVar = uyVar20.C0;
-                if (dyVar == null || !dyVar.z0) {
+                if (dyVar == null || !dyVar.A0) {
                     uyVar20.X.r.getText().clear();
                     AndroidUtilities.hideKeyboard(uyVar20.X.r);
                     uyVar20.X.r.clearFocus();

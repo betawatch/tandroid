@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ns extends g6 {
     public boolean E;
@@ -138,7 +138,7 @@ public final class ns extends g6 {
         if (dVar != null) {
             dVar.setAlpha((int) (f10 * 255.0f));
             this.s.setBounds(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(14.0f), getMeasuredWidth() - AndroidUtilities.dp(4.0f), ((getPaddingBottom() + getPaddingTop()) + ((int) f7)) - AndroidUtilities.dp(14.0f));
-            this.s.z(Math.min(AndroidUtilities.dp(this.x), f7 / 2.0f));
+            this.s.y(Math.min(AndroidUtilities.dp(this.x), f7 / 2.0f));
         }
     }
 

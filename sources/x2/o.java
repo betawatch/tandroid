@@ -5,12 +5,11 @@ import e9.i0;
 import e9.x0;
 import e9.y0;
 import e9.z;
-import hg.k0;
 import j$.util.Objects;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class o extends n {
     public final int E;
@@ -94,7 +93,7 @@ public final class o extends n {
                     if ((f7 != -1.0f || f7 >= iVar.g) && ((i22 = sVar2.j) == -1 || i22 >= iVar.h)) {
                         z12 = true;
                         this.h = z12;
-                        this.n = k0.d(i12, false);
+                        this.n = hg.c.d(i12, false);
                         b2.s sVar4 = this.d;
                         float f11 = sVar4.C;
                         this.r = f11 == -1.0f && f11 >= 10.0f;
@@ -204,8 +203,8 @@ public final class o extends n {
                             this.L = i18;
                             z13 = this.e;
                             iVar2 = this.f;
-                            if ((sVar.f & 16384) == 0 && k0.d(i12, iVar2.t0) && (z13 || iVar2.o0)) {
-                                i27 = (k0.d(i12, false) || !this.h || !z13 || sVar.j == -1 || iVar2.C || iVar2.B || (i26 & i12) == 0) ? 1 : 2;
+                            if ((sVar.f & 16384) == 0 && hg.c.d(i12, iVar2.t0) && (z13 || iVar2.o0)) {
+                                i27 = (hg.c.d(i12, false) || !this.h || !z13 || sVar.j == -1 || iVar2.C || iVar2.B || (i26 & i12) == 0) ? 1 : 2;
                             }
                             this.I = i27;
                         }
@@ -214,7 +213,7 @@ public final class o extends n {
                         z13 = this.e;
                         iVar2 = this.f;
                         if ((sVar.f & 16384) == 0) {
-                            if (k0.d(i12, false)) {
+                            if (hg.c.d(i12, false)) {
                             }
                         }
                         this.I = i27;
@@ -222,7 +221,7 @@ public final class o extends n {
                 }
                 z12 = false;
                 this.h = z12;
-                this.n = k0.d(i12, false);
+                this.n = hg.c.d(i12, false);
                 b2.s sVar42 = this.d;
                 float f112 = sVar42.C;
                 this.r = f112 == -1.0f && f112 >= 10.0f;
@@ -276,7 +275,7 @@ public final class o extends n {
             }
             z12 = true;
             this.h = z12;
-            this.n = k0.d(i12, false);
+            this.n = hg.c.d(i12, false);
             b2.s sVar422 = this.d;
             float f1122 = sVar422.C;
             this.r = f1122 == -1.0f && f1122 >= 10.0f;
@@ -323,7 +322,7 @@ public final class o extends n {
         }
         z12 = false;
         this.h = z12;
-        this.n = k0.d(i12, false);
+        this.n = hg.c.d(i12, false);
         b2.s sVar4222 = this.d;
         float f11222 = sVar4222.C;
         this.r = f11222 == -1.0f && f11222 >= 10.0f;

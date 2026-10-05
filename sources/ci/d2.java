@@ -25,9 +25,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ay;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.sq;
-import org.telegram.ui.c71;
+import org.telegram.ui.a71;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class d2 extends s4.h0 {
     public final TLRPC.TL_inputStickerSetShortName E;
@@ -437,7 +437,7 @@ public final class d2 extends s4.h0 {
                 int i13 = this.K;
                 if (b2Var.b != i13) {
                     b2Var.b = i13;
-                    c71.D(UserConfig.selectedAccount, b2Var.a);
+                    a71.D(UserConfig.selectedAccount, b2Var.a);
                     return;
                 }
                 return;

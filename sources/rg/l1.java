@@ -23,11 +23,11 @@ import org.telegram.ui.Components.yl0;
 import org.telegram.ui.cg0;
 import org.telegram.ui.ex0;
 import org.telegram.ui.ow0;
+import org.telegram.ui.vb1;
 import org.telegram.ui.vw0;
-import org.telegram.ui.xb1;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class l1 extends yl0 {
     public final /* synthetic */ m1 c;
@@ -99,9 +99,9 @@ public final class l1 extends yl0 {
             return e2.k(Y, Y, -1, -2);
         }
         if (i10 == 0) {
-            xb1 xb1Var = new xb1(this, context, 17);
-            m1Var.s0 = xb1Var;
-            xb1Var.setOrientation(1);
+            vb1 vb1Var = new vb1(this, context, 17);
+            m1Var.s0 = vb1Var;
+            vb1Var.setOrientation(1);
             View view2 = m1Var.B0;
             if (view2 == null) {
                 m1Var.r0 = new cg0(context, 1, 0, 2);
@@ -114,12 +114,12 @@ public final class l1 extends yl0 {
                 aVar.w = i11;
                 aVar.x = i6.Lj;
                 aVar.b();
-                xb1Var.addView(m1Var.r0, z5.q(160, 160, 1));
+                vb1Var.addView(m1Var.r0, z5.q(160, 160, 1));
             } else {
                 if (view2.getParent() != null) {
                     ((ViewGroup) m1Var.B0.getParent()).removeView(m1Var.B0);
                 }
-                m1Var.U(xb1Var);
+                m1Var.U(vb1Var);
             }
             if (m1Var.N0 == null) {
                 FrameLayout frameLayout = new FrameLayout(context);
@@ -146,7 +146,7 @@ public final class l1 extends yl0 {
             if (m1Var.N0.getParent() != null) {
                 ((ViewGroup) m1Var.N0.getParent()).removeView(m1Var.N0);
             }
-            xb1Var.addView(m1Var.N0, z5.p(-2, -2, 0.0f, 1, 40, 0, 40, 0));
+            vb1Var.addView(m1Var.N0, z5.p(-2, -2, 0.0f, 1, 40, 0, 40, 0));
             if (m1Var.P0 == null) {
                 Context context2 = m1Var.getContext();
                 d6Var = ((f3) m1Var).resourcesProvider;
@@ -160,13 +160,13 @@ public final class l1 extends yl0 {
             if (m1Var.P0.getParent() != null) {
                 ((ViewGroup) m1Var.P0.getParent()).removeView(m1Var.P0);
             }
-            xb1Var.addView(m1Var.P0, z5.p(-1, -2, 0.0f, 0, 24, 9, 24, 20));
+            vb1Var.addView(m1Var.P0, z5.p(-1, -2, 0.0f, 0, 24, 9, 24, 20));
             m1Var.Z(false);
             m1Var.q0 = new ei.g(context, 5);
             j1 j1Var = new j1(this, context, 0);
             j1Var.setClipChildren(false);
             j1Var.addView(m1Var.q0);
-            j1Var.addView(xb1Var);
+            j1Var.addView(vb1Var);
             cg0 cg0Var = m1Var.r0;
             view = j1Var;
             if (cg0Var != null) {

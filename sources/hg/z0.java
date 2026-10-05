@@ -7,10 +7,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.gd0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements Utilities.Callback5, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
@@ -47,12 +47,12 @@ public final /* synthetic */ class z0 implements Utilities.Callback5, org.telegr
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         e1 e1Var = this.b;
-        g61 g61Var = (g61) obj;
+        h61 h61Var = (h61) obj;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        int i10 = g61Var.d;
-        if (i10 != 1 && g61Var.c != e1Var.h) {
+        int i10 = h61Var.d;
+        if (i10 != 1 && h61Var.c != e1Var.h) {
             if (i10 == 2) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(e1Var.getParentActivity());
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.BusinessLocationClearTitle);
@@ -64,7 +64,7 @@ public final /* synthetic */ class z0 implements Utilities.Callback5, org.telegr
             }
             return;
         }
-        if (e1Var.x != null && g61Var.c != e1Var.h) {
+        if (e1Var.x != null && h61Var.c != e1Var.h) {
             e1Var.x = null;
             e1Var.a.f3.N(true);
             return;

@@ -15,12 +15,12 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.fw0;
-import org.telegram.ui.Components.q21;
+import org.telegram.ui.Components.gw0;
+import org.telegram.ui.Components.r21;
 import org.telegram.ui.Components.tr;
 import v7.z6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class e0 {
     public static final tr B = new tr(0.0d, 0.5d, 0.0d, 1.0d);
@@ -141,7 +141,7 @@ public final class e0 {
                                     }
                                     long j10 = currentTimeMillis;
                                     if (arrayList.size() == 47) {
-                                        arrayList.add((k1) hg.k0.g(1, f7));
+                                        arrayList.add((k1) hg.c.g(1, f7));
                                     }
                                     ArrayList f10 = n1.f(arrayList);
                                     k1 b10 = n1.b(f10);
@@ -270,13 +270,13 @@ public final class e0 {
                                             sb2.append(i1Var != null ? " (template#" + i21 + " shape#" + i23 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        AndroidUtilities.runOnUIThread(new q21(n1Var3, i1Var, i21, f10, 14));
+                                        AndroidUtilities.runOnUIThread(new r21(n1Var3, i1Var, i21, f10, 14));
                                         n1Var3.j.set(false);
                                     }
                                     i1Var = null;
                                     if (BuildVars.LOGS_ENABLED) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new q21(n1Var3, i1Var, i21, f10, 14));
+                                    AndroidUtilities.runOnUIThread(new r21(n1Var3, i1Var, i21, f10, 14));
                                     n1Var3.j.set(false);
                                 }
                             } finally {
@@ -422,7 +422,7 @@ public final class e0 {
                                     }
                                     long j10 = currentTimeMillis;
                                     if (arrayList.size() == 47) {
-                                        arrayList.add((k1) hg.k0.g(1, f7));
+                                        arrayList.add((k1) hg.c.g(1, f7));
                                     }
                                     ArrayList f10 = n1.f(arrayList);
                                     k1 b10 = n1.b(f10);
@@ -551,13 +551,13 @@ public final class e0 {
                                             sb2.append(i1Var != null ? " (template#" + i21 + " shape#" + i23 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        AndroidUtilities.runOnUIThread(new q21(n1Var3, i1Var, i21, f10, 14));
+                                        AndroidUtilities.runOnUIThread(new r21(n1Var3, i1Var, i21, f10, 14));
                                         n1Var3.j.set(false);
                                     }
                                     i1Var = null;
                                     if (BuildVars.LOGS_ENABLED) {
                                     }
-                                    AndroidUtilities.runOnUIThread(new q21(n1Var3, i1Var, i21, f10, 14));
+                                    AndroidUtilities.runOnUIThread(new r21(n1Var3, i1Var, i21, f10, 14));
                                     n1Var3.j.set(false);
                                 }
                             } finally {
@@ -647,15 +647,15 @@ public final class e0 {
             if (z10 && (e1Var = f1Var.a) != null) {
                 e1Var.f();
             }
-            fw0 fw0Var = f1Var.getPainting().g;
+            gw0 gw0Var = f1Var.getPainting().g;
             w0 w0Var = this.g;
             float a2 = z6.a((float) w0Var.a, (float) w0Var.b, 0.0f, 0.0f);
             w0 w0Var2 = this.g;
-            float max = Math.max(a2, z6.a((float) w0Var2.a, (float) w0Var2.b, fw0Var.a, 0.0f));
+            float max = Math.max(a2, z6.a((float) w0Var2.a, (float) w0Var2.b, gw0Var.a, 0.0f));
             w0 w0Var3 = this.g;
-            float a10 = z6.a((float) w0Var3.a, (float) w0Var3.b, 0.0f, fw0Var.b);
+            float a10 = z6.a((float) w0Var3.a, (float) w0Var3.b, 0.0f, gw0Var.b);
             w0 w0Var4 = this.g;
-            final float max2 = Math.max(max, Math.max(a10, z6.a((float) w0Var4.a, (float) w0Var4.b, fw0Var.a, fw0Var.b))) / 0.84f;
+            final float max2 = Math.max(max, Math.max(a10, z6.a((float) w0Var4.a, (float) w0Var4.b, gw0Var.a, gw0Var.b))) / 0.84f;
             ValueAnimator valueAnimator = this.r;
             if (valueAnimator != null) {
                 valueAnimator.cancel();

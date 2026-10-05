@@ -39,7 +39,7 @@ import org.telegram.ui.web.c2;
 import org.telegram.ui.web.u0;
 import org.telegram.ui.web.x1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class j implements i10 {
     public static j A;
@@ -75,8 +75,8 @@ public final class j implements i10 {
         String str2 = (String) hVar.b;
         this.c = str2;
         String str3 = (String) hVar.c;
-        String p5 = str3.isEmpty() ? "/" : a4.a.p("/", str3, "/");
-        this.d = p5;
+        String q6 = str3.isEmpty() ? "/" : a4.a.q("/", str3, "/");
+        this.d = q6;
         this.e = str;
         String concat = "https://".concat(str2);
         this.f = concat;
@@ -87,7 +87,7 @@ public final class j implements i10 {
         String concat2 = str3.isEmpty() ? "tdesktop-web-proxy-bridge-v1\n".concat(str2) : e2.j("tdesktop-web-proxy-bridge-v2\n", str2, "\n", str3);
         Mac mac = Mac.getInstance("HmacSHA256");
         mac.init(new SecretKeySpec(bArr, "HmacSHA256"));
-        this.g = concat + p5 + "?bridge=" + Base64.encodeToString(mac.doFinal(concat2.getBytes(StandardCharsets.UTF_8)), 11) + "#android=" + encodeToString;
+        this.g = concat + q6 + "?bridge=" + Base64.encodeToString(mac.doFinal(concat2.getBytes(StandardCharsets.UTF_8)), 11) + "#android=" + encodeToString;
         this.i = new ServerSocket(0, 64, InetAddress.getByName("127.0.0.1"));
     }
 

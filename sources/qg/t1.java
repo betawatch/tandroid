@@ -5,11 +5,11 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class t1 extends zl0 implements NotificationCenter.NotificationCenterDelegate {
     public final Path e3;
@@ -26,7 +26,7 @@ public final class t1 extends zl0 implements NotificationCenter.NotificationCent
     }
 
     @Override // org.telegram.ui.Components.zl0
-    public final Integer X0(int i10) {
+    public final Integer W0(int i10) {
         return 285212671;
     }
 
@@ -66,7 +66,7 @@ public final class t1 extends zl0 implements NotificationCenter.NotificationCent
 
     @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, ok.B(16.0f, AndroidUtilities.dp(48.0f) * Math.min(pg.k0.c().size(), 6), TLObject.FLAG_30));
+        super.onMeasure(i10, bi.B(16.0f, AndroidUtilities.dp(48.0f) * Math.min(pg.k0.c().size(), 6), TLObject.FLAG_30));
     }
 
     public void setMaskProvider(q0.a aVar) {

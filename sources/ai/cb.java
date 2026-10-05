@@ -24,7 +24,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hi;
+import org.telegram.messenger.ii;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -41,13 +41,13 @@ import org.telegram.ui.fs0;
 import org.telegram.ui.ft;
 import org.telegram.ui.fx0;
 import org.telegram.ui.gl0;
-import org.telegram.ui.m71;
+import org.telegram.ui.k71;
 import org.telegram.ui.oi0;
 import org.telegram.ui.qs;
 import org.telegram.ui.t60;
 import org.telegram.ui.t70;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class cb implements Runnable {
     public final /* synthetic */ int a;
@@ -158,7 +158,7 @@ public final /* synthetic */ class cb implements Runnable {
                     TLRPC.GroupCall groupCall2 = groupcall.call;
                     tL_inputGroupCall2.id = groupCall2.id;
                     tL_inputGroupCall2.access_hash = groupCall2.access_hash;
-                    ConnectionsManager.getInstance(i11).sendRequest(exportgroupcallinvite, new hi(b2Var, context, i11, exportgroupcallinvite, d6Var, t60Var));
+                    ConnectionsManager.getInstance(i11).sendRequest(exportgroupcallinvite, new ii(b2Var, context, i11, exportgroupcallinvite, d6Var, t60Var));
                     break;
                 } else {
                     b2Var.dismiss();
@@ -171,7 +171,7 @@ public final /* synthetic */ class cb implements Runnable {
                 TLRPC.Chat chat2 = (TLRPC.Chat) this.c;
                 TLRPC.User user = (TLRPC.User) this.f;
                 MessagesStorage.BooleanCallback booleanCallback = (MessagesStorage.BooleanCallback) this.d;
-                new m71(context2, chat2, user, new o8(this.b, booleanCallback, 27), (org.telegram.ui.ActionBar.d6) this.h).show();
+                new k71(context2, chat2, user, new o8(this.b, booleanCallback, 27), (org.telegram.ui.ActionBar.d6) this.h).show();
                 break;
             case 7:
                 org.telegram.ui.Components.v9.a((org.telegram.ui.Components.v9) this.e, (Runnable[]) this.c, (Bitmap) this.f, (m60) this.d, this.b, (w7.w5[]) this.h);
@@ -229,7 +229,7 @@ public final /* synthetic */ class cb implements Runnable {
                         tL_inputStorePaymentPremiumSubscription2.upgrade = true;
                     }
                     tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumSubscription2;
-                    ConnectionsManager.getInstance(i13).sendRequest(tL_payments_canPurchaseStore, new hi(i13, 5, n2Var2, fx0Var, fVar, tL_payments_canPurchaseStore, tL_inputStorePaymentPremiumSubscription2));
+                    ConnectionsManager.getInstance(i13).sendRequest(tL_payments_canPurchaseStore, new ii(i13, 5, n2Var2, fx0Var, fVar, tL_payments_canPurchaseStore, tL_inputStorePaymentPremiumSubscription2));
                     break;
                 }
                 break;
@@ -286,12 +286,12 @@ public final /* synthetic */ class cb implements Runnable {
                             StringBuilder sb2 = new StringBuilder();
                             sb2.append(photoSize2.location.volume_id);
                             sb2.append("_");
-                            String n10 = a4.a.n(photoSize2.location.local_id, "@50_50", sb2);
+                            String o9 = a4.a.o(photoSize2.location.local_id, "@50_50", sb2);
                             StringBuilder sb3 = new StringBuilder();
                             photoSize = closestPhotoSizeWithSize2;
                             sb3.append(closestPhotoSizeWithSize.location.volume_id);
                             sb3.append("_");
-                            ImageLoader.getInstance().replaceImageInCache(n10, a4.a.n(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3), ImageLocation.getForUser(i15, user2, 1), false);
+                            ImageLoader.getInstance().replaceImageInCache(o9, a4.a.o(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3), ImageLocation.getForUser(i15, user2, 1), false);
                         }
                         if (photoSize != null && photoSize3 != null && photoSize3.location != null) {
                             FileLoader.getInstance(i15).getPathToAttach(photoSize3.location, true).renameTo(FileLoader.getInstance(i15).getPathToAttach(photoSize, true));
@@ -321,7 +321,7 @@ public final /* synthetic */ class cb implements Runnable {
                     } else {
                         final long j3 = tL_starsSubscriptionPricing.amount;
                         final int i16 = this.b;
-                        yh.t5.y(i16, false).j0(tL_messages_checkChatInvite.hash, chatInvite, new Utilities.Callback2() { // from class: yh.v5
+                        yh.u5.y(i16, false).j0(tL_messages_checkChatInvite.hash, chatInvite, new Utilities.Callback2() { // from class: yh.w5
                             @Override // org.telegram.messenger.Utilities.Callback2
                             public final void run(Object obj2, Object obj3) {
                                 Long l4 = (Long) obj3;

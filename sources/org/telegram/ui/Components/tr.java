@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import android.view.animation.Interpolator;
 import android.view.animation.PathInterpolator;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class tr implements Interpolator {
     public static final tr f = new tr(0.25d, 0.1d, 0.25d, 1.0d);

@@ -27,7 +27,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class k0 {
     public final d0 A;
@@ -1221,7 +1221,7 @@ public abstract class k0 {
                 String str3 = (String) obj3;
                 s k10 = fVar.k(str3);
                 if (k10 == null) {
-                    throw new IllegalStateException(a4.a.p("No instantiated fragment for (", str3, ")"));
+                    throw new IllegalStateException(a4.a.q("No instantiated fragment for (", str3, ")"));
                 }
                 if (K(2)) {
                     Log.v("FragmentManager", "restoreSaveState: added (" + str3 + "): " + k10);
@@ -1292,7 +1292,7 @@ public abstract class k0 {
                 }
                 aVar.c(1);
                 if (K(2)) {
-                    StringBuilder j3 = hg.k0.j(i14, "restoreAllState: back stack #", " (index ");
+                    StringBuilder j3 = hg.c.j(i14, "restoreAllState: back stack #", " (index ");
                     j3.append(aVar.s);
                     j3.append("): ");
                     j3.append(aVar);
@@ -1420,7 +1420,7 @@ public abstract class k0 {
                 for (i10 = 0; i10 < size2; i10++) {
                     bVarArr[i10] = new b((a) this.d.get(i10));
                     if (K(2)) {
-                        StringBuilder j3 = hg.k0.j(i10, "saveAllState: adding back stack #", ": ");
+                        StringBuilder j3 = hg.c.j(i10, "saveAllState: adding back stack #", ": ");
                         j3.append(this.d.get(i10));
                         Log.v("FragmentManager", j3.toString());
                     }
@@ -1447,10 +1447,10 @@ public abstract class k0 {
             m0Var.n = new ArrayList(this.F);
             bundle2.putParcelable("state", m0Var);
             for (String str2 : this.m.keySet()) {
-                bundle2.putBundle(t8.b.i("result_", str2), (Bundle) this.m.get(str2));
+                bundle2.putBundle(sa.e.i("result_", str2), (Bundle) this.m.get(str2));
             }
             for (String str3 : hashMap2.keySet()) {
-                bundle2.putBundle(t8.b.i("fragment_", str3), (Bundle) hashMap2.get(str3));
+                bundle2.putBundle(sa.e.i("fragment_", str3), (Bundle) hashMap2.get(str3));
             }
         } else if (K(2)) {
             Log.v("FragmentManager", "saveAllState: no fragments!");
@@ -1554,10 +1554,10 @@ public abstract class k0 {
         u uVar3 = this.w;
         if (uVar3 != null) {
             androidx.activity.h hVar = uVar3.e.w;
-            String i10 = t8.b.i("FragmentManager:", sVar != 0 ? a4.a.s(new StringBuilder(), sVar.e, ":") : "");
-            this.C = hVar.d(t8.b.v(i10, "StartActivityForResult"), new f0(2), new a4.m(this, 2));
-            this.D = hVar.d(t8.b.v(i10, "StartIntentSenderForResult"), new f0(0), new a6.m(this, 6));
-            this.E = hVar.d(t8.b.v(i10, "RequestPermissions"), new f0(1), new a6.i(this, 5));
+            String i10 = sa.e.i("FragmentManager:", sVar != 0 ? a4.a.t(new StringBuilder(), sVar.e, ":") : "");
+            this.C = hVar.d(sa.e.v(i10, "StartActivityForResult"), new f0(2), new a4.m(this, 2));
+            this.D = hVar.d(sa.e.v(i10, "StartIntentSenderForResult"), new f0(0), new a6.m(this, 6));
+            this.E = hVar.d(sa.e.v(i10, "RequestPermissions"), new f0(1), new a6.i(this, 5));
         }
         u uVar4 = this.w;
         if (uVar4 != null) {
@@ -2112,10 +2112,10 @@ public abstract class k0 {
 
     public final void w(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
         int size;
-        String v = t8.b.v(str, "    ");
+        String v = sa.e.v(str, "    ");
         qi.f fVar = this.c;
         ArrayList arrayList = (ArrayList) fVar.a;
-        String v9 = t8.b.v(str, "    ");
+        String v9 = sa.e.v(str, "    ");
         HashMap hashMap = (HashMap) fVar.b;
         if (!hashMap.isEmpty()) {
             printWriter.print(str);

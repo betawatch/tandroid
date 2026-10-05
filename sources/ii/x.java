@@ -16,23 +16,23 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class x extends cb {
     public final int X;
     public final Utilities.Callback Y;
-    public u61 Z;
+    public w61 Z;
     public final FrameLayout a0;
     public final FrameLayout b0;
     public final RichMessageLayout.PreviewView c0;
@@ -133,11 +133,11 @@ public final class x extends cb {
         h3Var.addTextChangedListener(new w(this));
         frameLayout3.addView(j3Var, w7.z5.c(-2.0f, -1));
         frameLayout3.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        ci.d g10 = ok.g(24, context, d6Var, true);
-        this.f0 = g10;
-        g10.g(LocaleController.getString(R.string.ArticleAIGenerate), false, true);
+        ci.d f7 = bi.f(24, context, d6Var, true);
+        this.f0 = f7;
+        f7.g(LocaleController.getString(R.string.ArticleAIGenerate), false, true);
         final int i15 = 1;
-        g10.setOnClickListener(new View.OnClickListener(this) { // from class: ii.v
+        f7.setOnClickListener(new View.OnClickListener(this) { // from class: ii.v
             public final /* synthetic */ x b;
 
             {
@@ -181,9 +181,9 @@ public final class x extends cb {
                 }
             }
         });
-        this.containerView.addView(g10, w7.z5.d(-1, 48.0f, 87, 12.0f, 12.0f, 12.0f, 12.0f));
-        ((ViewGroup.MarginLayoutParams) g10.getLayoutParams()).leftMargin += this.backgroundPaddingLeft;
-        ((ViewGroup.MarginLayoutParams) g10.getLayoutParams()).rightMargin += this.backgroundPaddingLeft;
+        this.containerView.addView(f7, w7.z5.d(-1, 48.0f, 87, 12.0f, 12.0f, 12.0f, 12.0f));
+        ((ViewGroup.MarginLayoutParams) f7.getLayoutParams()).leftMargin += this.backgroundPaddingLeft;
+        ((ViewGroup.MarginLayoutParams) f7.getLayoutParams()).rightMargin += this.backgroundPaddingLeft;
         s4.j jVar = new s4.j();
         jVar.m = false;
         jVar.C = false;
@@ -226,9 +226,9 @@ public final class x extends cb {
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(zl0Var, getContext(), this.X, 0, true, new hi.a(this, 3), this.resourcesProvider);
-        this.Z = u61Var;
-        return u61Var;
+        w61 w61Var = new w61(zl0Var, getContext(), this.X, 0, true, new hi.a(this, 3), this.resourcesProvider);
+        this.Z = w61Var;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

@@ -5,9 +5,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.cy0;
+import org.telegram.ui.Components.dy0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class f8 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new a1.e(14, this.b, tL_error));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new cy0(tLObject, this.b, 1));
+                AndroidUtilities.runOnUIThread(new dy0(tLObject, this.b, 1));
                 break;
         }
     }

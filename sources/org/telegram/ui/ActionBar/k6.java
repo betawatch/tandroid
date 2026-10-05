@@ -32,9 +32,9 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.a90;
-import org.telegram.ui.Components.d61;
 import org.telegram.ui.Components.d8;
 import org.telegram.ui.Components.db0;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.eu;
 import org.telegram.ui.Components.fl0;
 import org.telegram.ui.Components.h9;
@@ -48,11 +48,11 @@ import org.telegram.ui.Components.q30;
 import org.telegram.ui.Components.sq;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.wq;
-import org.telegram.ui.Components.yo0;
 import org.telegram.ui.Components.z80;
 import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.zo0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class k6 {
     public final View a;
@@ -168,12 +168,12 @@ public final class k6 {
             CharSequence text = textView.getText();
             if (text instanceof SpannedString) {
                 SpannedString spannedString = (SpannedString) text;
-                d61[] d61VarArr = (d61[]) spannedString.getSpans(0, spannedString.length(), d61.class);
-                if (d61VarArr == null || d61VarArr.length <= 0) {
+                e61[] e61VarArr = (e61[]) spannedString.getSpans(0, spannedString.length(), e61.class);
+                if (e61VarArr == null || e61VarArr.length <= 0) {
                     return;
                 }
-                for (d61 d61Var : d61VarArr) {
-                    d61Var.b = i10;
+                for (e61 e61Var : e61VarArr) {
+                    e61Var.b = i10;
                 }
                 return;
             }
@@ -300,12 +300,12 @@ public final class k6 {
             view.invalidate();
             return;
         }
-        if (obj instanceof yo0) {
+        if (obj instanceof zo0) {
             if ((i11 & 2048) != 0) {
-                ((yo0) obj).setOuterColor(i10);
+                ((zo0) obj).setOuterColor(i10);
                 return;
             } else {
-                ((yo0) obj).setInnerColor(i10);
+                ((zo0) obj).setInnerColor(i10);
                 return;
             }
         }
@@ -319,10 +319,10 @@ public final class k6 {
                         CharSequence text2 = textView2.getText();
                         if (text2 instanceof SpannedString) {
                             SpannedString spannedString2 = (SpannedString) text2;
-                            d61[] d61VarArr2 = (d61[]) spannedString2.getSpans(0, spannedString2.length(), d61.class);
-                            if (d61VarArr2 != null && d61VarArr2.length > 0) {
-                                for (d61 d61Var2 : d61VarArr2) {
-                                    d61Var2.b = i10;
+                            e61[] e61VarArr2 = (e61[]) spannedString2.getSpans(0, spannedString2.length(), e61.class);
+                            if (e61VarArr2 != null && e61VarArr2.length > 0) {
+                                for (e61 e61Var2 : e61VarArr2) {
+                                    e61Var2.b = i10;
                                 }
                             }
                         }
@@ -342,10 +342,10 @@ public final class k6 {
                             CharSequence text3 = textView3.getText();
                             if (text3 instanceof SpannedString) {
                                 SpannedString spannedString3 = (SpannedString) text3;
-                                d61[] d61VarArr3 = (d61[]) spannedString3.getSpans(0, spannedString3.length(), d61.class);
-                                if (d61VarArr3 != null && d61VarArr3.length > 0) {
-                                    for (d61 d61Var3 : d61VarArr3) {
-                                        d61Var3.b = i10;
+                                e61[] e61VarArr3 = (e61[]) spannedString3.getSpans(0, spannedString3.length(), e61.class);
+                                if (e61VarArr3 != null && e61VarArr3.length > 0) {
+                                    for (e61 e61Var3 : e61VarArr3) {
+                                        e61Var3.b = i10;
                                     }
                                 }
                             }
@@ -559,19 +559,19 @@ public final class k6 {
         }
         if (view instanceof k) {
             if ((i13 & 64) != 0) {
-                ((k) view).B(i10, false);
+                ((k) view).A(i10, false);
             }
             if ((i13 & 128) != 0) {
                 ((k) view).setTitleColor(i10);
             }
             if ((i13 & 256) != 0) {
-                ((k) view).A(i10, false);
+                ((k) view).z(i10, false);
             }
             if ((4194304 & i13) != 0) {
-                ((k) view).A(i10, true);
+                ((k) view).z(i10, true);
             }
             if ((i13 & 512) != 0) {
-                ((k) view).B(i10, true);
+                ((k) view).A(i10, true);
             }
             if ((i13 & 1024) != 0) {
                 ((k) view).setSubtitleColor(i10);
@@ -583,16 +583,16 @@ public final class k6 {
                 ((k) view).setActionModeTopColor(i10);
             }
             if ((67108864 & i13) != 0) {
-                ((k) view).F(i10, true);
+                ((k) view).E(i10, true);
             }
             if ((134217728 & i13) != 0) {
-                ((k) view).F(i10, false);
+                ((k) view).E(i10, false);
             }
             if ((1073741824 & i13) != 0) {
-                ((k) view).D(i10, (i13 & 8) != 0, false);
+                ((k) view).C(i10, (i13 & 8) != 0, false);
             }
             if ((Integer.MIN_VALUE & i13) != 0) {
-                ((k) view).C(i10, false);
+                ((k) view).B(i10, false);
             }
         }
         if (view instanceof pz) {
@@ -612,8 +612,8 @@ public final class k6 {
             }
         } else if (view instanceof wq) {
             ((wq) view).b();
-        } else if ((view instanceof yo0) && (i13 & 2048) != 0) {
-            ((yo0) view).setOuterColor(i10);
+        } else if ((view instanceof zo0) && (i13 & 2048) != 0) {
+            ((zo0) view).setOuterColor(i10);
         }
         if ((i13 & 4) != 0 && ((i13 & 262144) == 0 || b(i11, view))) {
             if (view instanceof TextView) {

@@ -27,7 +27,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class qh0 extends View {
     public float E;
@@ -703,9 +703,9 @@ public final class qh0 extends View {
                         canvas.save();
                         float f31 = nh0Var11.m;
                         f7 = f25;
-                        canvas.scale(f31, f31, centerX2, a4.a.A(nh0Var11.l.j(), nh0Var11.m, 2.0f, j3));
-                        e11 e11Var = nh0Var11.l;
-                        e11Var.c(centerX2 - (e11Var.l() / 2.0f), j3, b10, d, canvas);
+                        canvas.scale(f31, f31, centerX2, a4.a.B(nh0Var11.l.j(), nh0Var11.m, 2.0f, j3));
+                        f11 f11Var = nh0Var11.l;
+                        f11Var.c(centerX2 - (f11Var.l() / 2.0f), j3, b10, d, canvas);
                         canvas.restore();
                         float f32 = nh0Var11.q;
                         if (f32 != 1.0f) {

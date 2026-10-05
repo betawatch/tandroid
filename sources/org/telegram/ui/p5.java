@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class p5 extends og.b {
     public final /* synthetic */ w5 d;
@@ -66,25 +66,25 @@ public final class p5 extends og.b {
             return;
         }
         if (i13 == 0) {
-            pa1 pa1Var = (pa1) view;
-            pa1Var.a(Integer.toString(w5Var.R.level), 0, null, LocaleController.getString(R.string.BoostsLevel2));
+            na1 na1Var = (na1) view;
+            na1Var.a(Integer.toString(w5Var.R.level), 0, null, LocaleController.getString(R.string.BoostsLevel2));
             TL_stats.TL_statsPercentValue tL_statsPercentValue = w5Var.R.premium_audience;
             if (tL_statsPercentValue != null) {
                 double d = tL_statsPercentValue.total;
                 if (d != 0.0d) {
-                    pa1Var.a("≈" + ((int) w5Var.R.premium_audience.part), 1, String.format(Locale.US, "%.1f", Float.valueOf((((float) tL_statsPercentValue.part) / ((float) d)) * 100.0f)).concat("%"), LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.PremiumSubscribers : R.string.PremiumMembers));
-                    pa1Var.a(String.valueOf(w5Var.R.boosts), 2, null, LocaleController.getString(R.string.BoostsExisting));
+                    na1Var.a("≈" + ((int) w5Var.R.premium_audience.part), 1, String.format(Locale.US, "%.1f", Float.valueOf((((float) tL_statsPercentValue.part) / ((float) d)) * 100.0f)).concat("%"), LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.PremiumSubscribers : R.string.PremiumMembers));
+                    na1Var.a(String.valueOf(w5Var.R.boosts), 2, null, LocaleController.getString(R.string.BoostsExisting));
                     TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = w5Var.R;
-                    pa1Var.a(String.valueOf(Math.max(0, tL_premium_boostsStatus.next_level_boosts - tL_premium_boostsStatus.boosts)), 3, null, LocaleController.getString(R.string.BoostsToLevel));
-                    pa1Var.setPadding(AndroidUtilities.dp(23.0f), pa1Var.getPaddingTop(), AndroidUtilities.dp(23.0f), pa1Var.getPaddingBottom());
+                    na1Var.a(String.valueOf(Math.max(0, tL_premium_boostsStatus.next_level_boosts - tL_premium_boostsStatus.boosts)), 3, null, LocaleController.getString(R.string.BoostsToLevel));
+                    na1Var.setPadding(AndroidUtilities.dp(23.0f), na1Var.getPaddingTop(), AndroidUtilities.dp(23.0f), na1Var.getPaddingBottom());
                     return;
                 }
             }
-            pa1Var.a("~0", 1, "0%", LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.PremiumSubscribers : R.string.PremiumMembers));
-            pa1Var.a(String.valueOf(w5Var.R.boosts), 2, null, LocaleController.getString(R.string.BoostsExisting));
+            na1Var.a("~0", 1, "0%", LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.PremiumSubscribers : R.string.PremiumMembers));
+            na1Var.a(String.valueOf(w5Var.R.boosts), 2, null, LocaleController.getString(R.string.BoostsExisting));
             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = w5Var.R;
-            pa1Var.a(String.valueOf(Math.max(0, tL_premium_boostsStatus2.next_level_boosts - tL_premium_boostsStatus2.boosts)), 3, null, LocaleController.getString(R.string.BoostsToLevel));
-            pa1Var.setPadding(AndroidUtilities.dp(23.0f), pa1Var.getPaddingTop(), AndroidUtilities.dp(23.0f), pa1Var.getPaddingBottom());
+            na1Var.a(String.valueOf(Math.max(0, tL_premium_boostsStatus2.next_level_boosts - tL_premium_boostsStatus2.boosts)), 3, null, LocaleController.getString(R.string.BoostsToLevel));
+            na1Var.setPadding(AndroidUtilities.dp(23.0f), na1Var.getPaddingTop(), AndroidUtilities.dp(23.0f), na1Var.getPaddingBottom());
             return;
         }
         if (i13 == 5) {
@@ -154,7 +154,7 @@ public final class p5 extends og.b {
         w5 w5Var = this.d;
         switch (i10) {
             case 0:
-                view = new pa1(w5Var.getParentActivity(), 2);
+                view = new na1(w5Var.getParentActivity(), 2);
                 return com.google.android.gms.internal.vision.e2.k(view, view, -1, -2);
             case 1:
             case 16:

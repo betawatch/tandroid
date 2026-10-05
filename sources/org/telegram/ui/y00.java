@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class y00 extends FrameLayout {
     public final org.telegram.ui.ActionBar.n2 a;
@@ -107,7 +107,7 @@ public abstract class y00 extends FrameLayout {
         if (n2Var instanceof f10) {
             ai.w0 w0Var = ((f10) n2Var).a;
             org.telegram.ui.Components.b80 H = org.telegram.ui.Components.b80.H(n2Var, this);
-            H.W(w0Var.W0(this, false));
+            H.W(w0Var.V0(this, false));
             H.c(R.drawable.msg_qrcode, LocaleController.getString(R.string.GetQRCode), new x00(this, 0), false);
             H.c(R.drawable.msg_delete, LocaleController.getString(R.string.DeleteLink), new x00(this, 1), true);
             if (LocaleController.isRTL) {
@@ -205,7 +205,7 @@ public abstract class y00 extends FrameLayout {
         StringBuilder sb2 = new StringBuilder();
         TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite = this.y;
         String str = "";
-        sb2.append((tL_exportedChatlistInvite == null || TextUtils.isEmpty(tL_exportedChatlistInvite.title)) ? "" : a4.a.s(new StringBuilder(), this.y.title, "\n "));
+        sb2.append((tL_exportedChatlistInvite == null || TextUtils.isEmpty(tL_exportedChatlistInvite.title)) ? "" : a4.a.t(new StringBuilder(), this.y.title, "\n "));
         org.telegram.ui.Cells.c1.n(R.string.InviteLink, ", ", sb2);
         sb2.append((Object) this.h.getText());
         TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite2 = this.y;

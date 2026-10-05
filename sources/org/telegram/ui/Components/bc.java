@@ -9,7 +9,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class bc implements rk0 {
     public final /* synthetic */ cc a;
@@ -19,7 +19,22 @@ public final class bc implements rk0 {
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final void h(View view, zg.o0 o0Var, boolean z10, boolean z11) {
+    public final /* synthetic */ boolean B() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public final /* synthetic */ boolean E() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public final /* synthetic */ boolean K() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public final void i(View view, zg.m0 m0Var, boolean z10, boolean z11) {
         cc ccVar = this.a;
         org.telegram.ui.ActionBar.n2 n2Var = ccVar.f;
         if (ccVar.e == null) {
@@ -33,36 +48,21 @@ public final class bc implements rk0 {
             message.dialog_id = n2Var.getUserConfig().getClientUserId();
             message.id = keyAt;
             MessageObject messageObject = new MessageObject(n2Var.getCurrentAccount(), message, false, false);
-            ArrayList<zg.o0> arrayList = new ArrayList<>();
-            arrayList.add(o0Var);
-            n2Var.getSendMessagesHelper().sendReaction(messageObject, arrayList, o0Var, false, false, ccVar.f, null);
+            ArrayList<zg.m0> arrayList = new ArrayList<>();
+            arrayList.add(m0Var);
+            n2Var.getSendMessagesHelper().sendReaction(messageObject, arrayList, m0Var, false, false, ccVar.f, null);
             i10 = message.id;
         }
         ccVar.f();
         rc.e();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.qj(this, o0Var, !z12, n2Var.getCurrentAccount(), i10), 300L);
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.rj(this, m0Var, !z12, n2Var.getCurrentAccount(), i10), 300L);
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ boolean j() {
-        return true;
+    public final /* synthetic */ void I() {
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ boolean k() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ boolean p() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ void o() {
-    }
-
-    @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    public final /* synthetic */ void H(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

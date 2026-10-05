@@ -41,7 +41,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -56,10 +56,10 @@ import org.telegram.ui.Components.d5;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.ed0;
 import org.telegram.ui.Components.gd0;
-import org.telegram.ui.Components.h01;
+import org.telegram.ui.Components.i01;
 import org.telegram.ui.Components.j8;
-import org.telegram.ui.Components.k01;
 import org.telegram.ui.Components.kd0;
+import org.telegram.ui.Components.l01;
 import org.telegram.ui.Components.md0;
 import org.telegram.ui.Components.xi;
 import org.telegram.ui.Components.xn;
@@ -67,30 +67,29 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.a71;
 import org.telegram.ui.ak0;
-import org.telegram.ui.c71;
 import org.telegram.ui.h60;
 import org.telegram.ui.i4;
-import org.telegram.ui.m71;
+import org.telegram.ui.k71;
 import org.telegram.ui.n40;
 import org.telegram.ui.o40;
 import org.telegram.ui.oy;
 import org.telegram.ui.pt;
-import org.telegram.ui.td1;
+import org.telegram.ui.rd1;
+import org.telegram.ui.ue1;
 import org.telegram.ui.ug0;
 import org.telegram.ui.uy;
-import org.telegram.ui.we1;
-import org.telegram.ui.yf1;
+import org.telegram.ui.wf1;
 import org.telegram.ui.yn;
 import v0.i;
 import w7.z5;
 import x2.m;
 import x2.o;
-import yh.t5;
-import yh.u;
-import zg.o0;
+import yh.u5;
+import yh.v;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements OnFailureListener, oy, a2, d5, ed0, MediaDataController.KeywordResultCallback, MessagesStorage.LongCallback, Utilities.Callback2Return, m, BillingController.ProductDetailsResponseListenerLegacy {
     public final /* synthetic */ int a;
@@ -276,15 +275,15 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, d5, e
                 notificationsCustomSettingsActivity.getNotificationsController().updateServerNotificationsSettings(notificationsCustomSettingsActivity.s);
                 break;
             default:
-                yf1 yf1Var = (yf1) obj4;
+                wf1 wf1Var = (wf1) obj4;
                 HashSet hashSet = (HashSet) obj3;
                 HashSet hashSet2 = new HashSet();
-                yf1Var.A0 = hashSet2;
+                wf1Var.A0 = hashSet2;
                 hashSet2.addAll(hashSet);
-                yf1Var.U0(true, false);
+                wf1Var.U0(true, false);
                 int i12 = 4;
-                yc.a0(yf1Var).U(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), false, new we1(yf1Var, i12), new td1(yf1Var, (ArrayList) obj2, (Runnable) obj, i12)).j();
-                yf1Var.C0();
+                yc.a0(wf1Var).U(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), false, new ue1(wf1Var, i12), new rd1(wf1Var, (ArrayList) obj2, (Runnable) obj, i12)).j();
+                wf1Var.C0();
                 b2Var.dismiss();
                 break;
         }
@@ -316,10 +315,10 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, d5, e
     public void onProductDetailsResponse(h hVar, List list) {
         switch (this.a) {
             case 21:
-                AndroidUtilities.runOnUIThread(new u(list, (Utilities.Callback2) this.e, (TLRPC.TL_inputStorePaymentStarsTopup) this.b, (TL_stars.TL_starsTopupOption) this.c, (Activity) this.d, 7));
+                AndroidUtilities.runOnUIThread(new v(list, (Utilities.Callback2) this.e, (TLRPC.TL_inputStorePaymentStarsTopup) this.b, (TL_stars.TL_starsTopupOption) this.c, (Activity) this.d, 7));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new z8((t5) this.e, list, (m0) this.b, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.c, hVar, (Activity) this.d, 18));
+                AndroidUtilities.runOnUIThread(new z8((u5) this.e, list, (m0) this.b, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.c, hVar, (Activity) this.d, 18));
                 break;
         }
     }
@@ -339,11 +338,11 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, d5, e
 
     @Override // org.telegram.messenger.MessagesStorage.LongCallback
     public void run(long j3) {
-        m71.N((m71) this.e, (TLRPC.User) this.b, (TLRPC.InputCheckPasswordSRP) this.c, (TwoStepVerificationActivity) this.d, j3);
+        k71.N((k71) this.e, (TLRPC.User) this.b, (TLRPC.InputCheckPasswordSRP) this.c, (TwoStepVerificationActivity) this.d, j3);
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, yf1 yf1Var) {
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
         switch (this.a) {
             case 2:
                 g3 g3Var = (g3) this.e;
@@ -428,12 +427,12 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, d5, e
         Context context = (Context) this.e;
         int[] iArr = (int[]) this.b;
         d6 d6Var = (d6) this.c;
-        k01 k01Var = (k01) this.d;
+        l01 l01Var = (l01) this.d;
         Integer num = (Integer) obj;
         Float f7 = (Float) obj2;
-        LinearLayout f10 = ok.f(context, 1);
+        LinearLayout e7 = bi.e(context, 1);
         LinearLayout linearLayout = new LinearLayout(context);
-        f10.addView(linearLayout, z5.t(-2, -2, 1, 0, 0, 0, 0));
+        e7.addView(linearLayout, z5.t(-2, -2, 1, 0, 0, 0, 0));
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(iArr[num.intValue() - 1]);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -459,19 +458,19 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, d5, e
         textView.setText(sb2.toString());
         textView.setTextSize(1, 13.0f);
         textView.setGravity(17);
-        f10.addView(textView, z5.k(0.0f, 3.0f, 0.0f, 0.0f, -1, -2));
-        return new h01(k01Var, f10, false);
+        e7.addView(textView, z5.k(0.0f, 3.0f, 0.0f, 0.0f, -1, -2));
+        return new i01(l01Var, e7, false);
     }
 
     @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
     public void run(ArrayList arrayList, String str) {
         switch (this.a) {
             case 15:
-                c71 c71Var = (c71) this.e;
+                a71 a71Var = (a71) this.e;
                 ArrayList arrayList2 = (ArrayList) this.b;
                 ArrayList arrayList3 = (ArrayList) this.c;
                 Runnable runnable = (Runnable) this.d;
-                TLRPC.messages_AvailableEffects availableEffects = MessagesController.getInstance(c71Var.V).getAvailableEffects();
+                TLRPC.messages_AvailableEffects availableEffects = MessagesController.getInstance(a71Var.V).getAvailableEffects();
                 HashSet hashSet = new HashSet();
                 if (availableEffects != null) {
                     for (int i10 = 0; i10 < arrayList.size(); i10++) {
@@ -481,7 +480,7 @@ public final /* synthetic */ class d implements OnFailureListener, oy, a2, d5, e
                                 for (int i11 = 0; i11 < availableEffects.effects.size(); i11++) {
                                     TLRPC.TL_availableEffect tL_availableEffect = availableEffects.effects.get(i11);
                                     if (!hashSet.contains(Long.valueOf(tL_availableEffect.id)) && (tL_availableEffect.emoticon.contains(fixEmoji) || fixEmoji.contains(tL_availableEffect.emoticon))) {
-                                        (tL_availableEffect.effect_animation_id == 0 ? arrayList2 : arrayList3).add(o0.e(tL_availableEffect));
+                                        (tL_availableEffect.effect_animation_id == 0 ? arrayList2 : arrayList3).add(zg.m0.e(tL_availableEffect));
                                         hashSet.add(Long.valueOf(tL_availableEffect.id));
                                     }
                                 }

@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cu implements Runnable {
     public final /* synthetic */ int a;
@@ -71,9 +71,9 @@ public final /* synthetic */ class cu implements Runnable {
                 CharSequence charSequence = (CharSequence) obj;
                 uy uyVar3 = ((dx) obj2).a;
                 uyVar3.H2 = null;
-                org.telegram.ui.Components.er0 er0Var = uyVar3.G2;
-                if (er0Var != null && er0Var.h) {
-                    er0Var.e(charSequence, false);
+                org.telegram.ui.Components.fr0 fr0Var = uyVar3.G2;
+                if (fr0Var != null && fr0Var.h) {
+                    fr0Var.e(charSequence, false);
                     break;
                 }
                 break;
@@ -113,9 +113,9 @@ public final /* synthetic */ class cu implements Runnable {
             case 9:
                 gz gzVar = (gz) obj2;
                 yn ynVar = gzVar.a;
-                org.telegram.ui.Components.qy0 qy0Var = new org.telegram.ui.Components.qy0(ynVar.getParentActivity(), gzVar.a, ((MessageObject) obj).getInputStickerSet(), null, ynVar.W, ynVar.getResourceProvider());
-                qy0Var.setCalcMandatoryInsets(ynVar.w9());
-                ynVar.showDialog(qy0Var);
+                org.telegram.ui.Components.ry0 ry0Var = new org.telegram.ui.Components.ry0(ynVar.getParentActivity(), gzVar.a, ((MessageObject) obj).getInputStickerSet(), null, ynVar.W, ynVar.getResourceProvider());
+                ry0Var.setCalcMandatoryInsets(ynVar.w9());
+                ynVar.showDialog(ry0Var);
                 break;
             case 10:
                 a00 a00Var = (a00) obj2;

@@ -54,16 +54,16 @@ import org.telegram.ui.wu0;
 import org.telegram.ui.yn;
 import xh.q1;
 import xh.r1;
-import yh.k5;
-import yh.m7;
-import yh.p8;
-import yh.q5;
+import yh.a8;
+import yh.l5;
+import yh.n7;
 import yh.r5;
+import yh.r8;
 import yh.s5;
 import yh.t5;
-import yh.y7;
+import yh.u5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -249,7 +249,7 @@ public final /* synthetic */ class f implements Runnable {
                 return;
             case 8:
                 q1 q1Var = (q1) this.d;
-                k5 k5Var = (k5) this.c;
+                l5 l5Var = (l5) this.c;
                 long j16 = this.b;
                 Utilities.Callback callback = (Utilities.Callback) this.e;
                 Context context = (Context) this.f;
@@ -269,8 +269,8 @@ public final /* synthetic */ class f implements Runnable {
                     spannableStringBuilder.append((CharSequence) " ");
                     HashSet hashSet = new HashSet();
                     HashSet hashSet2 = new HashSet();
-                    while (i13 < k5Var.l.size() && hashSet.size() < i10) {
-                        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) k5Var.l.get(i13);
+                    while (i13 < l5Var.l.size() && hashSet.size() < i10) {
+                        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) l5Var.l.get(i13);
                         if (savedStarGift == null || (starGift = savedStarGift.gift) == null || (document = starGift.getDocument()) == null) {
                             w0Var = w0Var2;
                         } else {
@@ -312,16 +312,16 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 return;
             case 9:
-                yh.o oVar = (yh.o) this.d;
+                yh.p pVar = (yh.p) this.d;
                 b2 b2Var2 = (b2) this.e;
                 TLObject tLObject4 = (TLObject) this.c;
                 long j17 = this.b;
                 Utilities.Callback callback2 = (Utilities.Callback) this.f;
-                oVar.getClass();
+                pVar.getClass();
                 b2Var2.dismiss();
                 if (tLObject4 instanceof TL_payments.connectedStarRefBots) {
                     TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject4;
-                    MessagesController.getInstance(oVar.a).putUsers(connectedstarrefbots.users, false);
+                    MessagesController.getInstance(pVar.a).putUsers(connectedstarrefbots.users, false);
                     while (i13 < connectedstarrefbots.connected_bots.size()) {
                         if (connectedstarrefbots.connected_bots.get(i13).bot_id == j17 && !connectedstarrefbots.connected_bots.get(i13).revoked) {
                             callback2.run(connectedstarrefbots.connected_bots.get(i13));
@@ -333,12 +333,12 @@ public final /* synthetic */ class f implements Runnable {
                 callback2.run(null);
                 return;
             case 10:
-                t5 t5Var = (t5) this.d;
+                u5 u5Var = (u5) this.d;
                 TLObject tLObject5 = (TLObject) this.c;
                 MessageObject messageObject = (MessageObject) this.e;
                 long j18 = this.b;
                 Runnable runnable = (Runnable) this.f;
-                int i17 = t5Var.a;
+                int i17 = u5Var.a;
                 if (!(tLObject5 instanceof TLRPC.TL_messages_messages)) {
                     runnable.run();
                     return;
@@ -351,34 +351,34 @@ public final /* synthetic */ class f implements Runnable {
                     return;
                 } else {
                     messageObject.messageOwner = tL_messages_messages.messages.get(0);
-                    t5Var.l0(messageObject, j18, runnable, true);
+                    u5Var.l0(messageObject, j18, runnable, true);
                     return;
                 }
             case 11:
-                t5 t5Var2 = (t5) this.d;
+                u5 u5Var2 = (u5) this.d;
                 Utilities.Callback2 callback22 = (Utilities.Callback2) this.e;
                 long j19 = this.b;
                 TLObject tLObject6 = (TLObject) this.c;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.f;
-                if (t5Var2.e) {
-                    t5Var2.g(j19, tLObject6, tL_textWithEntities, callback22);
+                if (u5Var2.e) {
+                    u5Var2.g(j19, tLObject6, tL_textWithEntities, callback22);
                     return;
                 } else {
-                    t5.e("NO_BALANCE");
+                    u5.e("NO_BALANCE");
                     callback22.run(Boolean.FALSE, null);
                     return;
                 }
             case 12:
-                t5 t5Var3 = (t5) this.d;
+                u5 u5Var3 = (u5) this.d;
                 Utilities.Callback2 callback23 = (Utilities.Callback2) this.c;
                 TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) this.e;
                 TL_stars.StarGift starGift2 = (TL_stars.StarGift) this.f;
                 long j20 = this.b;
-                if (t5Var3.e) {
-                    t5Var3.h(tL_payments_paymentFormStarGift, starGift2, j20, null, true, callback23);
+                if (u5Var3.e) {
+                    u5Var3.h(tL_payments_paymentFormStarGift, starGift2, j20, null, true, callback23);
                     return;
                 } else {
-                    t5.e("NO_BALANCE");
+                    u5.e("NO_BALANCE");
                     callback23.run(Boolean.FALSE, null);
                     return;
                 }
@@ -398,63 +398,63 @@ public final /* synthetic */ class f implements Runnable {
                 a02.s(document3, string, charSequence).k(false);
                 return;
             case 14:
-                s5 s5Var = (s5) this.d;
+                t5 t5Var = (t5) this.d;
                 TLObject tLObject7 = (TLObject) this.c;
                 MessagesController messagesController = (MessagesController) this.f;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.e;
                 long j22 = this.b;
-                s5Var.getClass();
+                t5Var.getClass();
                 if (tLObject7 != null) {
-                    Utilities.stageQueue.postRunnable(new r5(i13, messagesController, tLObject7));
+                    Utilities.stageQueue.postRunnable(new s5(i13, messagesController, tLObject7));
                     return;
                 }
                 if (tL_error != null) {
-                    s5Var.b.addPaidReactions((int) (-s5Var.h), s5Var.g, s5Var.c());
-                    NotificationCenter.getInstance(s5Var.q.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(s5Var.b.getDialogId()), Integer.valueOf(s5Var.b.getId()), s5Var.b.messageOwner.reactions);
+                    t5Var.b.addPaidReactions((int) (-t5Var.h), t5Var.g, t5Var.c());
+                    NotificationCenter.getInstance(t5Var.q.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(t5Var.b.getDialogId()), Integer.valueOf(t5Var.b.getId()), t5Var.b.messageOwner.reactions);
                     if ("BALANCE_TOO_LOW".equals(tL_error.text)) {
-                        if (s5Var.a.a >= 0) {
-                            str = UserObject.getForcedFirstName(s5Var.c.getMessagesController().getUser(Long.valueOf(s5Var.a.a)));
+                        if (t5Var.a.a >= 0) {
+                            str = UserObject.getForcedFirstName(t5Var.c.getMessagesController().getUser(Long.valueOf(t5Var.a.a)));
                         } else {
-                            TLRPC.Chat chat = s5Var.c.getMessagesController().getChat(Long.valueOf(-s5Var.a.a));
+                            TLRPC.Chat chat = t5Var.c.getMessagesController().getChat(Long.valueOf(-t5Var.a.a));
                             str = chat == null ? "" : chat.title;
                         }
                         String str8 = str;
-                        Context parentActivity = s5Var.c.getParentActivity();
+                        Context parentActivity = t5Var.c.getParentActivity();
                         if (parentActivity == null) {
                             parentActivity = LaunchActivity.G1;
                         }
                         if (parentActivity == null) {
                             parentActivity = ApplicationLoader.applicationContext;
                         }
-                        new m7(parentActivity, s5Var.c.getResourceProvider(), j22, 5, str8, new q5(s5Var, j22, i12), 0L).show();
+                        new n7(parentActivity, t5Var.c.getResourceProvider(), j22, 5, str8, new r5(t5Var, j22, i12), 0L).show();
                     }
-                    s5Var.q.T(false);
-                    s5Var.q.P();
+                    t5Var.q.T(false);
+                    t5Var.q.P();
                     return;
                 }
                 return;
             default:
-                p8 p8Var = (p8) this.d;
+                r8 r8Var = (r8) this.d;
                 long j23 = this.b;
-                t5 t5Var4 = (t5) this.c;
+                u5 u5Var4 = (u5) this.c;
                 MessageObject messageObject2 = (MessageObject) this.e;
                 yn ynVar = (yn) this.f;
-                a1.c cVar = p8Var.P;
+                a1.c cVar = r8Var.P;
                 if (cVar == null) {
-                    s5 d02 = t5Var4.d0(messageObject2, ynVar, j23, false, true, Long.valueOf(p8Var.E));
+                    t5 d02 = u5Var4.d0(messageObject2, ynVar, j23, false, true, Long.valueOf(r8Var.E));
                     if (d02 == null) {
                         return;
                     }
-                    AndroidUtilities.runOnUIThread(new r5(i11, p8Var, d02));
+                    AndroidUtilities.runOnUIThread(new s5(i11, r8Var, d02));
                     return;
                 }
                 int intValue = o1.a((o1) cVar.b, Long.valueOf(j23)).intValue();
-                p8Var.O = intValue;
+                r8Var.O = intValue;
                 if (intValue == Integer.MIN_VALUE) {
-                    p8Var.dismiss();
+                    r8Var.dismiss();
                     return;
                 } else {
-                    AndroidUtilities.runOnUIThread(new y7(p8Var, i13));
+                    AndroidUtilities.runOnUIThread(new a8(r8Var, i13));
                     return;
                 }
         }
@@ -496,27 +496,27 @@ public final /* synthetic */ class f implements Runnable {
         this.c = tLObject2;
     }
 
-    public /* synthetic */ f(yh.o oVar, b2 b2Var, TLObject tLObject, long j3, Utilities.Callback callback) {
+    public /* synthetic */ f(yh.p pVar, b2 b2Var, TLObject tLObject, long j3, Utilities.Callback callback) {
         this.a = 9;
-        this.d = oVar;
+        this.d = pVar;
         this.e = b2Var;
         this.c = tLObject;
         this.b = j3;
         this.f = callback;
     }
 
-    public /* synthetic */ f(s5 s5Var, TLObject tLObject, MessagesController messagesController, TLRPC.TL_error tL_error, long j3) {
+    public /* synthetic */ f(t5 t5Var, TLObject tLObject, MessagesController messagesController, TLRPC.TL_error tL_error, long j3) {
         this.a = 14;
-        this.d = s5Var;
+        this.d = t5Var;
         this.c = tLObject;
         this.f = messagesController;
         this.e = tL_error;
         this.b = j3;
     }
 
-    public /* synthetic */ f(t5 t5Var, Utilities.Callback2 callback2, long j3, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
+    public /* synthetic */ f(u5 u5Var, Utilities.Callback2 callback2, long j3, TLObject tLObject, TLRPC.TL_textWithEntities tL_textWithEntities) {
         this.a = 11;
-        this.d = t5Var;
+        this.d = u5Var;
         this.e = callback2;
         this.b = j3;
         this.c = tLObject;

@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class w1 extends ViewGroup {
     public int E;
@@ -58,7 +58,7 @@ public abstract class w1 extends ViewGroup {
         this.h = typedArray.getFloat(4, -1.0f);
         this.b = typedArray.getInt(3, -1);
         this.n = typedArray.getBoolean(7, false);
-        setDividerDrawable(Q.F(5));
+        setDividerDrawable(Q.A(5));
         this.y = typedArray.getInt(8, 0);
         this.E = typedArray.getDimensionPixelSize(6, 0);
         Q.R();
@@ -126,7 +126,7 @@ public abstract class w1 extends ViewGroup {
         int i12 = this.c;
         if (this.d == 1 && (i10 = this.e & 112) != 48) {
             if (i10 == 16) {
-                i12 = hg.k0.y(((getBottom() - getTop()) - getPaddingTop()) - getPaddingBottom(), this.f, 2, i12);
+                i12 = hg.c.y(((getBottom() - getTop()) - getPaddingTop()) - getPaddingBottom(), this.f, 2, i12);
             } else if (i10 == 80) {
                 i12 = ((getBottom() - getTop()) - getPaddingBottom()) - this.f;
             }
@@ -287,7 +287,7 @@ public abstract class w1 extends ViewGroup {
             int i24 = this.e;
             int i25 = i24 & 112;
             int i26 = 8388615 & i24;
-            int paddingTop = i25 != 16 ? i25 != 80 ? getPaddingTop() : ((getPaddingTop() + i13) - i11) - this.f : hg.k0.y(i13 - i11, this.f, 2, getPaddingTop());
+            int paddingTop = i25 != 16 ? i25 != 80 ? getPaddingTop() : ((getPaddingTop() + i13) - i11) - this.f : hg.c.y(i13 - i11, this.f, 2, getPaddingTop());
             int i27 = 0;
             while (i27 < virtualChildCount) {
                 View childAt = getChildAt(i27);
@@ -301,7 +301,7 @@ public abstract class w1 extends ViewGroup {
                     }
                     WeakHashMap weakHashMap = r0.i0.a;
                     int absoluteGravity = Gravity.getAbsoluteGravity(i28, getLayoutDirection()) & 7;
-                    int y11 = absoluteGravity != 1 ? absoluteGravity != 5 ? ((LinearLayout.LayoutParams) v1Var).leftMargin + paddingLeft : (paddingRight - measuredWidth) - ((LinearLayout.LayoutParams) v1Var).rightMargin : (hg.k0.y(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin) - ((LinearLayout.LayoutParams) v1Var).rightMargin;
+                    int y11 = absoluteGravity != 1 ? absoluteGravity != 5 ? ((LinearLayout.LayoutParams) v1Var).leftMargin + paddingLeft : (paddingRight - measuredWidth) - ((LinearLayout.LayoutParams) v1Var).rightMargin : (hg.c.y(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin) - ((LinearLayout.LayoutParams) v1Var).rightMargin;
                     if (h(i27)) {
                         paddingTop += this.x;
                     }
@@ -333,7 +333,7 @@ public abstract class w1 extends ViewGroup {
             c10 = 1;
         } else {
             c10 = 1;
-            y3 = hg.k0.y(i12 - i10, this.f, 2, getPaddingLeft());
+            y3 = hg.c.y(i12 - i10, this.f, 2, getPaddingLeft());
         }
         if (a2) {
             i14 = virtualChildCount2 - 1;
@@ -366,7 +366,7 @@ public abstract class w1 extends ViewGroup {
                             i20 = i19 & 112;
                             i21 = i34;
                             if (i20 != 16) {
-                                y10 = (hg.k0.y(paddingBottom2, measuredHeight2, 2, paddingTop2) + ((LinearLayout.LayoutParams) v1Var2).topMargin) - ((LinearLayout.LayoutParams) v1Var2).bottomMargin;
+                                y10 = (hg.c.y(paddingBottom2, measuredHeight2, 2, paddingTop2) + ((LinearLayout.LayoutParams) v1Var2).topMargin) - ((LinearLayout.LayoutParams) v1Var2).bottomMargin;
                             } else if (i20 == 48) {
                                 y10 = ((LinearLayout.LayoutParams) v1Var2).topMargin + paddingTop2;
                                 if (i18 != -1) {

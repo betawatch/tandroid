@@ -13,11 +13,11 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class a40 extends cb {
     public final LinearLayout X;
-    public u61 Y;
+    public w61 Y;
 
     public a40(Activity activity, org.telegram.ui.ActionBar.d6 d6Var, TLRPC.User user, TLObject tLObject, org.telegram.ui.cq cqVar) {
         super(activity, null, false, false, 1, d6Var);
@@ -89,10 +89,10 @@ public final class a40 extends cb {
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(this.d, getContext(), this.currentAccount, 0, true, new d(this, 14), this.resourcesProvider);
-        this.Y = u61Var;
-        u61Var.r = false;
-        return u61Var;
+        w61 w61Var = new w61(this.d, getContext(), this.currentAccount, 0, true, new d(this, 14), this.resourcesProvider);
+        this.Y = w61Var;
+        w61Var.r = false;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

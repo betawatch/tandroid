@@ -32,7 +32,7 @@ import org.telegram.ui.Components.sq;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class j7 extends View implements w2 {
     public boolean A0;
@@ -609,7 +609,7 @@ public final class j7 extends View implements w2 {
         if (d19 < 1.0f) {
             canvas3.save();
             f25 = f16;
-            float z11 = org.telegram.messenger.f0.z(1.0f, d19, zcVar4.a(0.2f), f25);
+            float z11 = org.telegram.messenger.q.z(1.0f, d19, zcVar4.a(0.2f), f25);
             canvas3.scale(z11, z11, this.l0, this.j0);
             canvas3.rotate(e6Var2.d(this.M, false) - getRotation(), this.l0, this.j0);
             canvas3.drawCircle(this.l0, this.j0, AndroidUtilities.dp(22.0f), this.w);

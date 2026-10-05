@@ -2,7 +2,7 @@ package org.telegram.ui.Cells;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cb implements View.OnLongClickListener {
     public final /* synthetic */ int a = 0;
@@ -24,16 +24,16 @@ public final /* synthetic */ class cb implements View.OnLongClickListener {
                 db dbVar = (db) this.d;
                 return ebVar.b(dbVar.h, this.b);
             default:
-                yh.k5 k5Var = (yh.k5) this.c;
+                yh.l5 l5Var = (yh.l5) this.c;
                 Runnable runnable = (Runnable) this.d;
-                k5Var.f(this.b, true);
+                l5Var.f(this.b, true);
                 runnable.run();
                 return true;
         }
     }
 
-    public /* synthetic */ cb(yh.k5 k5Var, int i10, Runnable runnable) {
-        this.c = k5Var;
+    public /* synthetic */ cb(yh.l5 l5Var, int i10, Runnable runnable) {
+        this.c = l5Var;
         this.b = i10;
         this.d = runnable;
     }

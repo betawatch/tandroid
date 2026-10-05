@@ -1,41 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.text.Selection;
-import android.text.Spannable;
-import android.text.method.LinkMovementMethod;
-import android.text.style.CharacterStyle;
-import android.view.MotionEvent;
-import android.widget.TextView;
-import org.telegram.messenger.FileLog;
+import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class p61 extends LinkMovementMethod {
-    public final /* synthetic */ UndoView a;
+public final /* synthetic */ class p61 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UndoView b;
 
-    public p61(UndoView undoView) {
-        this.a = undoView;
+    public /* synthetic */ p61(UndoView undoView, int i10) {
+        this.a = i10;
+        this.b = undoView;
     }
 
-    @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
-    public final boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
-        CharacterStyle[] characterStyleArr;
-        try {
-            if (motionEvent.getAction() != 0 || ((characterStyleArr = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class)) != null && characterStyleArr.length != 0)) {
-                if (motionEvent.getAction() != 1) {
-                    return super.onTouchEvent(textView, spannable, motionEvent);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        UndoView undoView = this.b;
+        switch (i10) {
+            case 0:
+                int i11 = UndoView.e0;
+                if (undoView.a()) {
+                    undoView.e(1, false);
+                    break;
                 }
-                CharacterStyle[] characterStyleArr2 = (CharacterStyle[]) spannable.getSpans(textView.getSelectionStart(), textView.getSelectionEnd(), CharacterStyle.class);
-                if (characterStyleArr2 != null && characterStyleArr2.length > 0) {
-                    this.a.b(characterStyleArr2[0]);
-                }
-                Selection.removeSelection(spannable);
-                return true;
-            }
-            return false;
-        } catch (Exception e7) {
-            FileLog.e(e7);
-            return false;
+                break;
+            default:
+                int i12 = UndoView.e0;
+                undoView.e(1, false);
+                break;
         }
     }
 }

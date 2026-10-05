@@ -9,14 +9,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public abstract class ra0 extends n71 {
+public abstract class ra0 extends o71 {
     public final int T;
     public final qa0 U;
     public final w00 V;
-    public final tx0 W;
-    public final tx0 X;
+    public final ux0 W;
+    public final ux0 X;
     public float Y;
     public boolean Z;
 
@@ -40,7 +40,7 @@ public abstract class ra0 extends n71 {
         this.f = gVar;
         this.e = gVar;
         this.d.setAdapter(gVar);
-        this.d.s1();
+        this.d.r1();
         ai.w0 w0Var = this.d;
         qa0Var.p = w0Var;
         w0Var.setOnItemClickListener(new ai.g(qa0Var, 18));
@@ -54,16 +54,16 @@ public abstract class ra0 extends n71 {
         w00 b10 = qa0Var.b();
         this.V = b10;
         this.containerView.addView(b10, indexOfChild, w7.z5.c(-1.0f, -1));
-        tx0 a2 = qa0Var.a();
+        ux0 a2 = qa0Var.a();
         this.W = a2;
         this.containerView.addView(a2, indexOfChild, w7.z5.c(-1.0f, -1));
-        tx0 c10 = qa0Var.c();
+        ux0 c10 = qa0Var.c();
         this.X = c10;
         this.containerView.addView(c10, indexOfChild, w7.z5.c(-1.0f, -1));
         qa0Var.e();
     }
 
-    @Override // org.telegram.ui.Components.n71
+    @Override // org.telegram.ui.Components.o71
     public final void C(MotionEvent motionEvent, ci.h2 h2Var) {
         org.telegram.ui.ActionBar.n2 n2Var;
         int action = motionEvent.getAction();
@@ -95,12 +95,12 @@ public abstract class ra0 extends n71 {
         }
     }
 
-    @Override // org.telegram.ui.Components.n71
+    @Override // org.telegram.ui.Components.o71
     public final void E(String str) {
         this.U.j(str);
     }
 
-    @Override // org.telegram.ui.Components.n71
+    @Override // org.telegram.ui.Components.o71
     public final void G(int i10) {
         super.G(i10);
         this.V.setTranslationY(this.c.getMeasuredHeight() + i10);
@@ -109,7 +109,7 @@ public abstract class ra0 extends n71 {
         this.X.setTranslationY(f7);
     }
 
-    @Override // org.telegram.ui.Components.n71
+    @Override // org.telegram.ui.Components.o71
     public final void J() {
         ai.w0 w0Var = this.d;
         if (w0Var.getChildCount() > 0) {

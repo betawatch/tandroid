@@ -29,9 +29,9 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.so0;
 import org.telegram.ui.uy;
 import org.telegram.ui.yn;
-import yh.t5;
+import yh.u5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class g3 implements org.telegram.ui.web.h0 {
     public boolean a;
@@ -190,7 +190,7 @@ public final class g3 implements org.telegram.ui.web.h0 {
             AndroidUtilities.hideKeyboard(k3Var);
             org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(l3Var.getContext(), 3, null);
             b2Var.q(150L);
-            t5.y(l3Var.G, false).Y(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new f3(b2Var, 0), new ai.g3(12, this, str));
+            u5.y(l3Var.G, false).Y(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new f3(b2Var, 0), new ai.g3(12, this, str));
             return;
         }
         if (tLObject instanceof TLRPC.PaymentForm) {

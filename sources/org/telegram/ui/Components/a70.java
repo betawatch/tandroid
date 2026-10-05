@@ -20,7 +20,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class a70 extends yl0 {
     public final /* synthetic */ f70 c;
@@ -264,8 +264,8 @@ public final class a70 extends yl0 {
             if (i25 == 2592000) {
                 StringBuilder sb4 = new StringBuilder();
                 sb4.append(LocaleController.formatString(R.string.LinkRevenuePrice, Long.valueOf(tL_starsSubscriptionPricing2.amount)));
-                sb4.append(i24 > 0 ? hg.k0.h(i24, " x ") : "");
-                textView2.setText(yh.x7.d1(false, sb4.toString(), 0.8f, null));
+                sb4.append(i24 > 0 ? hg.c.h(i24, " x ") : "");
+                textView2.setText(yh.z7.d1(false, sb4.toString(), 0.8f, null));
                 if (i24 == 0) {
                     formatString = LocaleController.getString(R.string.NoOneSubscribed);
                 } else {
@@ -282,8 +282,8 @@ public final class a70 extends yl0 {
             StringBuilder sb5 = new StringBuilder();
             Locale locale2 = Locale.US;
             sb5.append(String.format(locale2, "⭐%1$d/%2$s", Long.valueOf(tL_starsSubscriptionPricing2.amount), str5));
-            sb5.append(i24 > 0 ? hg.k0.h(i24, " x ") : "");
-            textView2.setText(yh.x7.d1(false, sb5.toString(), 0.8f, null));
+            sb5.append(i24 > 0 ? hg.c.h(i24, " x ") : "");
+            textView2.setText(yh.z7.d1(false, sb5.toString(), 0.8f, null));
             if (i24 == 0) {
                 format = LocaleController.getString(R.string.NoOneSubscribed);
             } else {
@@ -409,7 +409,7 @@ public final class a70 extends yl0 {
                             int i31 = tL_chatInviteImporter.date;
                             TextView textView3 = d70Var.b0;
                             TextView textView4 = d70Var.a0;
-                            SpannableStringBuilder d12 = yh.x7.d1(false, "⭐️" + tL_starsSubscriptionPricing.amount, 0.7f, null);
+                            SpannableStringBuilder d12 = yh.z7.d1(false, "⭐️" + tL_starsSubscriptionPricing.amount, 0.7f, null);
                             int i32 = tL_starsSubscriptionPricing.period;
                             String string = i32 == 2592000 ? LocaleController.getString(R.string.StarsParticipantSubscriptionPerMonth) : i32 == 300 ? "per 5 minutes" : "per each minute";
                             textView4.setText(d12);

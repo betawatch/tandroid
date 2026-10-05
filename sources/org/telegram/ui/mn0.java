@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mn0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final /* synthetic */ class mn0 implements View.OnClickListener {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(so0Var.getParentActivity());
                 String string = LocaleController.getString(R.string.TurnPasswordOffQuestion);
                 if (so0Var.a0.has_secure_values) {
-                    string = org.telegram.messenger.f0.g(R.string.TurnPasswordOffPassport, t8.b.j(string, "\n\n"));
+                    string = org.telegram.messenger.q.g(R.string.TurnPasswordOffPassport, sa.e.j(string, "\n\n"));
                 }
                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                 b2Var.T = string;

@@ -23,14 +23,14 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
-import org.telegram.ui.Components.a91;
+import org.telegram.messenger.bi;
+import org.telegram.ui.Components.b91;
 import org.telegram.ui.Components.pc0;
 import org.telegram.ui.Components.tr;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class t2 extends FrameLayout {
     public boolean E;
@@ -132,7 +132,7 @@ public class t2 extends FrameLayout {
         if (this.c) {
             float scaleX = ((View) getParent()).getScaleX();
             this.v.setAlpha(1.0f - f7);
-            float b10 = !z10 ? ok.b(0.4f, scaleX, f7, 1.0f / scaleX) : 1.0f - (0.4f * f7);
+            float b10 = !z10 ? bi.b(0.4f, scaleX, f7, 1.0f / scaleX) : 1.0f - (0.4f * f7);
             ImageView imageView = this.s;
             imageView.setScaleX(b10);
             imageView.setScaleY(b10);
@@ -353,7 +353,7 @@ public class t2 extends FrameLayout {
             this.b0.setDuration(350L);
         }
         this.b0.setInterpolator(tr.f);
-        this.b0.addListener(new a91(this, 9));
+        this.b0.addListener(new b91(this, 9));
         this.b0.start();
         ArrayList arrayList = this.G;
         if (!arrayList.isEmpty()) {
@@ -507,7 +507,7 @@ public class t2 extends FrameLayout {
         textView.setText(LocaleController.getString(R.string.VoipVideoScreenSharing));
         textView.setGravity(17);
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        org.telegram.messenger.f0.q(textView, -1, 1, 15.0f);
+        org.telegram.messenger.q.q(textView, -1, 1, 15.0f);
         frameLayout.addView(textView, z5.d(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
         if (z12) {
             setOutlineProvider(new ch.b(this, 5));

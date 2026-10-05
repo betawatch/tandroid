@@ -6,14 +6,14 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.wl;
 import org.telegram.ui.Components.xi;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class r9 extends s4.s0 {
     public final /* synthetic */ int a;
@@ -106,13 +106,13 @@ public final class r9 extends s4.s0 {
                 xi xiVar = chatAttachAlertPhotoLayout.b;
                 wl wlVar = chatAttachAlertPhotoLayout.E;
                 if (wlVar.getChildCount() > 0) {
-                    xiVar.U1(chatAttachAlertPhotoLayout, i11);
+                    xiVar.W1(chatAttachAlertPhotoLayout, i11);
                     if (chatAttachAlertPhotoLayout.G.h() > 30) {
                         boolean z10 = this.b;
                         boolean z11 = xiVar.R;
                         if (z10 != z11) {
                             this.b = z11;
-                            ok.r(wlVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
+                            bi.q(wlVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
                         }
                     } else {
                         wlVar.getFastScroll().setAlpha(0.0f);

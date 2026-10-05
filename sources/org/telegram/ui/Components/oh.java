@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oh implements Utilities.Callback4 {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class oh implements Utilities.Callback4 {
                 zh zhVar = xiVar.E0;
                 zhVar.setText(charSequence);
                 zhVar.w(charSequence.length(), charSequence.length());
-                xiVar.w1();
+                xiVar.y1();
                 break;
             case 1:
                 xi xiVar2 = (xi) this.b;
@@ -32,7 +32,7 @@ public final /* synthetic */ class oh implements Utilities.Callback4 {
                 bi biVar = xiVar2.P0;
                 biVar.setText(charSequence2);
                 biVar.w(charSequence2.length(), charSequence2.length());
-                xiVar2.w1();
+                xiVar2.y1();
                 break;
             default:
                 md mdVar = (md) this.b;

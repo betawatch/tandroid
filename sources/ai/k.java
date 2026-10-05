@@ -18,12 +18,12 @@ import org.telegram.ui.f10;
 import org.telegram.ui.h60;
 import org.telegram.ui.jk;
 import org.telegram.ui.l50;
-import org.telegram.ui.nh1;
+import org.telegram.ui.lh1;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k implements t9, nh1, m4.z0, e2.h, org.telegram.ui.ActionBar.a2, yf.m, MessagesController.ErrorDelegate, vh.k {
+public final /* synthetic */ class k implements t9, lh1, m4.z0, e2.h, org.telegram.ui.ActionBar.a2, yf.m, MessagesController.ErrorDelegate, vh.k {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -34,16 +34,16 @@ public final /* synthetic */ class k implements t9, nh1, m4.z0, e2.h, org.telegr
         this.b = z10;
     }
 
-    @Override // org.telegram.ui.nh1
+    @Override // org.telegram.ui.lh1
     public void a(int i10, ArrayList arrayList) {
         switch (this.a) {
             case 1:
-                hg.a0 a0Var = (hg.a0) this.c;
-                ArrayList arrayList2 = a0Var.k;
-                ArrayList arrayList3 = a0Var.j;
+                hg.b0 b0Var = (hg.b0) this.c;
+                ArrayList arrayList2 = b0Var.k;
+                ArrayList arrayList3 = b0Var.j;
                 int i11 = 0;
                 if (this.b) {
-                    a0Var.f = i10;
+                    b0Var.f = i10;
                     arrayList3.clear();
                     arrayList3.addAll(arrayList);
                     while (i11 < arrayList3.size()) {
@@ -51,7 +51,7 @@ public final /* synthetic */ class k implements t9, nh1, m4.z0, e2.h, org.telegr
                         i11++;
                     }
                 } else {
-                    a0Var.g = i10;
+                    b0Var.g = i10;
                     arrayList2.clear();
                     arrayList2.addAll(arrayList);
                     while (i11 < arrayList2.size()) {
@@ -59,7 +59,7 @@ public final /* synthetic */ class k implements t9, nh1, m4.z0, e2.h, org.telegr
                         i11++;
                     }
                 }
-                a0Var.e.run();
+                b0Var.e.run();
                 break;
             default:
                 f10 f10Var = (f10) this.c;

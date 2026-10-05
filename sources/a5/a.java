@@ -59,7 +59,7 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.zj;
+import org.telegram.messenger.ak;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.fi;
 import org.telegram.ui.Components.tr;
@@ -95,7 +95,7 @@ import z7.x;
 import z7.y;
 import z7.zf;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class a implements i, r {
     public final /* synthetic */ int a;
@@ -316,7 +316,7 @@ public class a implements i, r {
     public void A(String str, l lVar) {
         Map map = (Map) this.c;
         if (map.containsKey(str)) {
-            throw new IllegalArgumentException(a4.a.p("LifecycleCallback with tag ", str, " already added to this fragment."));
+            throw new IllegalArgumentException(a4.a.q("LifecycleCallback with tag ", str, " already added to this fragment."));
         }
         map.put(str, lVar);
         if (this.b > 0) {
@@ -690,7 +690,7 @@ public class a implements i, r {
     }
 
     public void q(t tVar, int i10, int i11, s sVar, int i12, Object obj, long j3, long j10, IOException iOException, boolean z10) {
-        j(new zj(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), iOException, z10));
+        j(new ak(this, tVar, new u2.b0(i10, i11, sVar, i12, obj, e2.d0.e0(j3), e2.d0.e0(j10)), iOException, z10));
     }
 
     public void r(t tVar, int i10, IOException iOException, boolean z10) {

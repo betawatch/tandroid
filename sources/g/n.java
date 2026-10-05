@@ -29,7 +29,7 @@ import r0.i0;
 import r0.l0;
 import w7.r7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class n implements Window.Callback {
     public final Window.Callback a;
@@ -280,10 +280,10 @@ public final class n implements Window.Callback {
                     sVar.x = null;
                 }
             }
-            sVar.w();
+            sVar.x();
             sVar.x = sVar.x;
         }
-        sVar.w();
+        sVar.x();
         k.a aVar3 = sVar.x;
         if (aVar3 != null) {
             return fVar.o(aVar3);

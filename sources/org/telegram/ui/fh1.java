@@ -1,54 +1,42 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import android.text.Editable;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fh1 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+public final class fh1 extends org.telegram.ui.Cells.j3 {
+    public final /* synthetic */ int x;
+    public final /* synthetic */ UserInfoActivity y;
 
-    public /* synthetic */ fh1(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
-        this.f = obj5;
-        this.g = obj6;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ fh1(UserInfoActivity userInfoActivity, Context context, String str, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, str, false, false, -1, d6Var);
+        this.x = i10;
+        this.y = userInfoActivity;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Cells.j3
+    public final void b(Editable editable) {
+        switch (this.x) {
             case 0:
-                AndroidUtilities.runOnUIThread(new ii.k((UserInfoActivity) this.b, tL_error, (TLObject) this.c, (TL_account.TL_birthday) this.d, (TLRPC.UserFull) this.e, tLObject, (int[]) this.f, (ArrayList) this.g));
+                this.y.b0(true);
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new ii.k(tL_error, (tg.v) this.b, tLObject, (List) this.c, (c5.h) this.d, (tg.v) this.e, (org.telegram.ui.ActionBar.n2) this.f, (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.g, 3));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new ii.k(tL_error, (Utilities.Callback) this.b, tLObject, (List) this.c, (c5.h) this.d, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.n2) this.f, (TLRPC.TL_inputStorePaymentPremiumGiftCode) this.g, 4));
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new ii.k(tLObject, (c5.o) this.b, (c5.h) this.c, (ai.m0) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.f, (List) this.g, tL_error, 5));
+                this.y.b0(true);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ii.k(tLObject, (c5.o) this.b, (c5.h) this.c, (org.telegram.ui.Components.r80) this.d, (Activity) this.e, (TLRPC.TL_inputStorePaymentStarsGift) this.f, (List) this.g, tL_error, 6));
+                UserInfoActivity userInfoActivity = this.y;
+                userInfoActivity.b0(true);
+                userInfoActivity.e0();
                 break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fh1(UserInfoActivity userInfoActivity, Context context, String str, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, str, true, false, i10, d6Var);
+        this.x = 2;
+        this.y = userInfoActivity;
     }
 }

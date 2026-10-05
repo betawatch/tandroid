@@ -9,11 +9,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class eb extends FrameLayout {
     public int a;
@@ -164,7 +164,7 @@ public abstract class eb extends FrameLayout {
             int measuredWidth = dbVarArr[i14].getMeasuredWidth();
             db dbVar = dbVarArr[i14];
             dbVar.layout(dp, dp2, dp + measuredWidth, dbVar.getMeasuredHeight() + dp2);
-            dp = org.telegram.messenger.f0.C(3.0f, measuredWidth, dp);
+            dp = org.telegram.messenger.q.C(3.0f, measuredWidth, dp);
         }
     }
 
@@ -172,12 +172,12 @@ public abstract class eb extends FrameLayout {
     public final void onMeasure(int i10, int i11) {
         int i12 = 0;
         if (this.d == 1) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30), ok.B(3.0f, this.a, TLObject.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30), bi.B(3.0f, this.a, TLObject.FLAG_30));
             setPadding(0, 0, 0, AndroidUtilities.dp(3.0f));
             return;
         }
         int size = View.MeasureSpec.getSize(i10);
-        int dp = size - AndroidUtilities.dp(hg.k0.f(this.d, 1, 3, 24));
+        int dp = size - AndroidUtilities.dp(hg.c.f(this.d, 1, 3, 24));
         int i13 = dp / this.d;
         int i14 = this.h;
         int dp2 = (i14 == 0 || i14 == 2 || i14 == 3) ? AndroidUtilities.dp(180.0f) : i13;

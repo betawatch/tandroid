@@ -5,20 +5,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.fs0;
+import org.telegram.ui.Components.gs0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import yh.k5;
+import yh.l5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class l2 extends s4.v {
-    public final /* synthetic */ fs0 d;
+    public final /* synthetic */ gs0 d;
     public final /* synthetic */ o2 e;
 
-    public l2(o2 o2Var, fs0 fs0Var) {
+    public l2(o2 o2Var, gs0 gs0Var) {
         this.e = o2Var;
-        this.d = fs0Var;
+        this.d = gs0Var;
     }
 
     @Override // s4.v
@@ -45,7 +45,7 @@ public final class l2 extends s4.v {
 
     @Override // s4.v
     public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
-        yh.g0 g0Var;
+        yh.h0 h0Var;
         o2 o2Var = this.e;
         j2 j2Var = o2Var.f;
         if (o2Var.e == null || !o2Var.n) {
@@ -62,26 +62,26 @@ public final class l2 extends s4.v {
         int b10 = c1Var.b();
         int b11 = c1Var2.b();
         boolean z10 = o2Var.d;
-        fs0 fs0Var = this.d;
+        gs0 gs0Var = this.d;
         if (z10) {
             o2Var.e.k(b10, b11);
-            fs0Var.e.n(o2Var.e.d);
+            gs0Var.e.n(o2Var.e.d);
         } else {
-            k5 k5Var = o2Var.e;
-            if (k5Var.q == null) {
-                k5Var.q = k5Var.h();
+            l5 l5Var = o2Var.e;
+            if (l5Var.q == null) {
+                l5Var.q = l5Var.h();
             }
-            k5Var.k(b10, b11);
+            l5Var.k(b10, b11);
         }
         j2Var.f3.p(b10, b11);
         j2Var.f3.S();
         if (o2Var.d) {
             HashMap hashMap = s2.T;
-            fs0Var.f(true);
+            gs0Var.f(true);
         }
         org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-        if ((U instanceof ProfileActivity) && (g0Var = ((ProfileActivity) U).v0) != null) {
-            g0Var.a();
+        if ((U instanceof ProfileActivity) && (h0Var = ((ProfileActivity) U).v0) != null) {
+            h0Var.a();
         }
         return true;
     }
@@ -100,22 +100,22 @@ public final class l2 extends s4.v {
             }
             return;
         }
-        k5 k5Var = o2Var.e;
-        if (k5Var != null) {
-            ArrayList arrayList = k5Var.q;
+        l5 l5Var = o2Var.e;
+        if (l5Var != null) {
+            ArrayList arrayList = l5Var.q;
             if (arrayList != null) {
-                ArrayList h = k5Var.h();
+                ArrayList h = l5Var.h();
                 if (arrayList.size() == h.size()) {
                     for (int i11 = 0; i11 < arrayList.size(); i11++) {
                         if (arrayList.get(i11) == h.get(i11)) {
                         }
                     }
                 }
-                k5Var.l();
-                k5Var.q = null;
+                l5Var.l();
+                l5Var.q = null;
                 return;
             }
-            k5Var.q = null;
+            l5Var.q = null;
         }
     }
 

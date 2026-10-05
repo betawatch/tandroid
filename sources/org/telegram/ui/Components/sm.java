@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class sm extends ViewGroup {
     public rm E;
@@ -342,13 +342,13 @@ public final class sm extends ViewGroup {
             }
         }
         if (size != this.h.size()) {
-            this.P.b.S1(1);
+            this.P.b.U1(1);
         }
     }
 
     @Override // android.view.View
     public final void invalidate() {
-        int b10 = org.telegram.messenger.f0.b(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
+        int b10 = org.telegram.messenger.q.b(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
         if (this.s != b10) {
             this.s = b10;
             requestLayout();
@@ -469,7 +469,7 @@ public final class sm extends ViewGroup {
             } else {
                 if (rmVar.u == null || rmVar.v != j3) {
                     rmVar.v = j3;
-                    rmVar.u = new e11(yh.x7.d1(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                    rmVar.u = new f11(yh.z7.d1(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j3), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
                 float dp = AndroidUtilities.dp(28.0f) + rmVar.u.c;
                 float dp2 = AndroidUtilities.dp(32.0f);
@@ -481,7 +481,7 @@ public final class sm extends ViewGroup {
                 i11 = i13;
                 float f18 = rmVar.s;
                 i12 = i14;
-                rectF.set(A, com.google.android.gms.internal.vision.e2.A(f18, dp2, 2.0f, f17), org.telegram.messenger.f0.a(f16, dp, 2.0f, f15), org.telegram.messenger.f0.a(f18, dp2, 2.0f, f17));
+                rectF.set(A, com.google.android.gms.internal.vision.e2.A(f18, dp2, 2.0f, f17), org.telegram.messenger.q.a(f16, dp, 2.0f, f15), org.telegram.messenger.q.a(f18, dp2, 2.0f, f17));
                 paint.setColor(1610612736);
                 float f19 = dp2 / 2.0f;
                 canvas.drawRoundRect(rectF, f19, f19, paint);
@@ -528,7 +528,7 @@ public final class sm extends ViewGroup {
     public final void onMeasure(int i10, int i11) {
         this.a.measure(i10, View.MeasureSpec.makeMeasureSpec(9999, TLObject.FLAG_31));
         if (this.s <= 0) {
-            this.s = org.telegram.messenger.f0.b(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
+            this.s = org.telegram.messenger.q.b(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
         }
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i11), this.s), TLObject.FLAG_30));
     }
@@ -767,7 +767,7 @@ public final class sm extends ViewGroup {
                                 tmVar.P.getClass();
                                 if (ChatAttachAlertPhotoLayout.R()) {
                                     PhotoViewer t13 = PhotoViewer.t1();
-                                    Editable text = xiVar.k1().getText();
+                                    Editable text = xiVar.m1().getText();
                                     t13.p7 = true;
                                     t13.q7 = text;
                                     qmVar4 = null;

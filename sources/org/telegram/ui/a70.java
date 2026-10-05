@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a70 implements Runnable {
     public final /* synthetic */ int a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class a70 implements Runnable {
                         boolean z11 = false;
                         while (i10 < i11) {
                             String str5 = strArr[i10];
-                            ?? r72 = (str.startsWith(str5) || org.telegram.messenger.f0.w(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.f0.w(" ", str5, translitString2)))) ? 1 : (publicUsername == null || !publicUsername.startsWith(str5)) ? z11 : 2;
+                            ?? r72 = (str.startsWith(str5) || org.telegram.messenger.bi.u(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.bi.u(" ", str5, translitString2)))) ? 1 : (publicUsername == null || !publicUsername.startsWith(str5)) ? z11 : 2;
                             if (r72 != 0) {
                                 arrayList = arrayList2;
                                 if (r72 == 1) {
@@ -112,7 +112,7 @@ public final /* synthetic */ class a70 implements Runnable {
                                     obj = null;
                                 } else {
                                     obj = null;
-                                    arrayList4.add(AndroidUtilities.generateSearchName(t8.b.i("@", publicUsername), null, "@" + str5));
+                                    arrayList4.add(AndroidUtilities.generateSearchName(sa.e.i("@", publicUsername), null, "@" + str5));
                                 }
                                 arrayList3.add(tLObject);
                                 i12++;

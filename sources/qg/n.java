@@ -2,11 +2,11 @@ package qg;
 
 import ci.m5;
 import java.util.List;
-import org.telegram.ui.Components.v11;
+import org.telegram.ui.Components.w11;
 import org.telegram.ui.am0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final /* synthetic */ class n implements Runnable {
         switch (this.a) {
             case 0:
                 m0 m0Var = this.b;
-                v11 v11Var = m0Var.a1;
-                if (v11Var != null) {
+                w11 w11Var = m0Var.a1;
+                if (w11Var != null) {
                     m0Var.a1 = null;
-                    m0Var.removeView(v11Var);
+                    m0Var.removeView(w11Var);
                     break;
                 }
                 break;

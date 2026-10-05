@@ -1,31 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class bd1 implements id1 {
-    public boolean a;
-    public final /* synthetic */ yn b;
+public final class bd1 extends org.telegram.ui.Components.br0 {
+    public final /* synthetic */ dd1 X0;
 
-    public bd1(yn ynVar, boolean z10) {
-        this.b = ynVar;
-        this.a = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bd1(dd1 dd1Var, Activity activity, String str, String str2) {
+        super(activity, null, str, false, str2, false, null);
+        this.X0 = dd1Var;
     }
 
-    @Override // org.telegram.ui.id1
-    public final boolean a() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.id1
-    public final boolean a1() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.id1
-    public final void q1(boolean z10) {
-        boolean z11 = !this.a;
-        this.a = z11;
-        wn wnVar = this.b.ca;
-        wnVar.i(wnVar.f, wnVar.h, z10, Boolean.valueOf(z11), false);
+    @Override // org.telegram.ui.Components.br0
+    public final void O0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            int m10 = iVar.m();
+            dd1 dd1Var = this.X0;
+            if (m10 == 1) {
+                dd1Var.a.l0.m(((TLRPC.Dialog) iVar.n(0)).id, Integer.valueOf(i10), 61);
+            } else {
+                dd1Var.a.l0.k(0L, 61, Integer.valueOf(i10), Integer.valueOf(iVar.m()), null, null);
+            }
+        }
     }
 }

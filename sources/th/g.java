@@ -11,18 +11,18 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.z;
 import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
-import org.telegram.ui.ha1;
+import org.telegram.ui.fa1;
 import org.telegram.ui.qc;
-import org.telegram.ui.va1;
+import org.telegram.ui.ta1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class g extends cb {
-    public u61 X;
-    public final ha1 Y;
+    public w61 X;
+    public final fa1 Y;
 
     public g(Activity activity, d6 d6Var, TL_stats.TL_statsPollStats tL_statsPollStats) {
         super(activity, null, true, false, 2, d6Var);
@@ -31,7 +31,7 @@ public final class g extends cb {
         this.drawNavigationBar = false;
         this.L = false;
         this.K = AndroidUtilities.dp(12.0f);
-        this.Y = va1.d0(tL_statsPollStats.votes_graph, LocaleController.getString(R.string.PollV2StatsVoteTimeline), 2, false);
+        this.Y = ta1.d0(tL_statsPollStats.votes_graph, LocaleController.getString(R.string.PollV2StatsVoteTimeline), 2, false);
         zl0 zl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
         zl0Var.setPadding(i10, 0, i10, AndroidUtilities.navigationBarHeight);
@@ -52,10 +52,10 @@ public final class g extends cb {
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(zl0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 9), this.resourcesProvider);
-        this.X = u61Var;
-        u61Var.r = false;
-        return u61Var;
+        w61 w61Var = new w61(zl0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 9), this.resourcesProvider);
+        this.X = w61Var;
+        w61Var.r = false;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

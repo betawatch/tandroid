@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class fq extends org.telegram.ui.ActionBar.f3 {
     public final Drawable b;
@@ -76,7 +76,7 @@ public final class fq extends org.telegram.ui.ActionBar.f3 {
         nj0Var.d();
         cqVar.addView(nj0Var, w7.z5.t(160, 160, 49, 17, 0, 17, 0));
         TextView textView = new TextView(activity);
-        org.telegram.messenger.ok.k(24.0f, 1, textView);
+        org.telegram.messenger.bi.j(24.0f, 1, textView);
         textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.i6.j5));
         textView.setText(LocaleController.getString(R.string.AutoDeleteAlertTitle));
         cqVar.addView(textView, w7.z5.t(-2, -2, 49, 17, 18, 17, 0));
@@ -90,10 +90,10 @@ public final class fq extends org.telegram.ui.ActionBar.f3 {
             textView2.setText(LocaleController.getString(R.string.AutoDeleteAlertChannelInfo));
         }
         cqVar.addView(textView2, w7.z5.t(-2, -2, 49, 30, 22, 30, 20));
-        pw0 pw0Var = new pw0(activity, null);
-        pw0Var.setCallback(new dq(this, bqVar));
-        pw0Var.b(this.n, null, LocaleController.getString(R.string.AutoDeleteNever), LocaleController.getString(R.string.AutoDelete24Hours), LocaleController.getString(R.string.AutoDelete7Days), LocaleController.getString(R.string.AutoDelete1Month));
-        cqVar.addView(pw0Var, w7.z5.k(0.0f, 8.0f, 0.0f, 0.0f, -1, -2));
+        qw0 qw0Var = new qw0(activity, null);
+        qw0Var.setCallback(new dq(this, bqVar));
+        qw0Var.b(this.n, null, LocaleController.getString(R.string.AutoDeleteNever), LocaleController.getString(R.string.AutoDelete24Hours), LocaleController.getString(R.string.AutoDelete7Days), LocaleController.getString(R.string.AutoDelete1Month));
+        cqVar.addView(qw0Var, w7.z5.k(0.0f, 8.0f, 0.0f, 0.0f, -1, -2));
         FrameLayout frameLayout = new FrameLayout(activity);
         sq sqVar = new sq(new ColorDrawable(getThemedColor(org.telegram.ui.ActionBar.i6.a7)), org.telegram.ui.ActionBar.i6.V0(activity, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.i6.b7));
         sqVar.w = true;

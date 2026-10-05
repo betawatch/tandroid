@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wx0 implements Runnable {
     public final /* synthetic */ int a;
@@ -338,21 +338,21 @@ public final /* synthetic */ class wx0 implements Runnable {
                 }
                 break;
             case 19:
-                u31 u31Var = (u31) ((View[]) obj2)[0];
-                u31Var.b = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) obj;
-                u31Var.c = null;
-                u31Var.d = null;
-                u31Var.f.f3.N(false);
+                s31 s31Var = (s31) ((View[]) obj2)[0];
+                s31Var.b = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) obj;
+                s31Var.c = null;
+                s31Var.d = null;
+                s31Var.f.f3.N(false);
                 break;
             case 20:
-                ((u31) ((View[]) obj2)[0]).b((TLRPC.TL_reportResultAddComment) obj);
+                ((s31) ((View[]) obj2)[0]).b((TLRPC.TL_reportResultAddComment) obj);
                 break;
             case 21:
-                u31 u31Var2 = (u31) ((View[]) obj2)[0];
-                u31Var2.b = null;
-                u31Var2.c = (TLRPC.TL_reportResultChooseOption) obj;
-                u31Var2.d = null;
-                u31Var2.f.f3.N(false);
+                s31 s31Var2 = (s31) ((View[]) obj2)[0];
+                s31Var2.b = null;
+                s31Var2.c = (TLRPC.TL_reportResultChooseOption) obj;
+                s31Var2.d = null;
+                s31Var2.f.f3.N(false);
                 break;
             case 22:
                 ((org.telegram.messenger.video.a) obj2).run();
@@ -370,34 +370,34 @@ public final /* synthetic */ class wx0 implements Runnable {
                 ((SecretMediaViewer) ((n7.z0) obj2).c).h((File) obj);
                 break;
             case 26:
-                c71 c71Var = (c71) obj2;
-                c71Var.v(null, false, false);
-                ((org.telegram.ui.ActionBar.n2) obj).presentFragment(new StickersActivity(5, c71Var.L0));
-                Runnable runnable = c71Var.T1;
+                a71 a71Var = (a71) obj2;
+                a71Var.v(null, false, false);
+                ((org.telegram.ui.ActionBar.n2) obj).presentFragment(new StickersActivity(5, a71Var.L0));
+                Runnable runnable = a71Var.T1;
                 if (runnable != null) {
                     runnable.run();
                     break;
                 }
                 break;
             case 27:
-                AndroidUtilities.addToClipboard((String) obj);
-                org.telegram.ui.Components.yc.a0((a91) obj2).k(false).j();
+                y81.Y((y81) obj2, (TLRPC.TL_attachMenuBot) obj);
                 break;
             case 28:
-                a91.Z((a91) obj2, (TLRPC.TL_attachMenuBot) obj);
+                AndroidUtilities.addToClipboard((String) obj);
+                org.telegram.ui.Components.yc.a0((y81) obj2).k(false).j();
                 break;
             default:
-                t81 t81Var = (t81) obj2;
+                r81 r81Var = (r81) obj2;
                 a0.i iVar3 = (a0.i) obj;
-                a91 a91Var = t81Var.X0;
-                org.telegram.ui.Components.yc.x(a91Var.getParentActivity(), a91Var.b, iVar3.m(), iVar3.m() == 1 ? ((TLRPC.Dialog) iVar3.n(0)).id : 0L, t81Var.getThemedColor(org.telegram.ui.ActionBar.i6.Fi), t81Var.getThemedColor(org.telegram.ui.ActionBar.i6.Hi)).j();
+                y81 y81Var = r81Var.X0;
+                org.telegram.ui.Components.yc.x(y81Var.getParentActivity(), y81Var.b, iVar3.m(), iVar3.m() == 1 ? ((TLRPC.Dialog) iVar3.n(0)).id : 0L, r81Var.getThemedColor(org.telegram.ui.ActionBar.i6.Fi), r81Var.getThemedColor(org.telegram.ui.ActionBar.i6.Hi)).j();
                 break;
         }
     }
 
-    public /* synthetic */ wx0(org.telegram.ui.Components.zq0 zq0Var, a0.i iVar, int i10, int i11) {
+    public /* synthetic */ wx0(org.telegram.ui.Components.br0 br0Var, a0.i iVar, int i10, int i11) {
         this.a = i11;
-        this.b = zq0Var;
+        this.b = br0Var;
         this.c = iVar;
     }
 }

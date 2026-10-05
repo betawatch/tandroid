@@ -13,20 +13,20 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.z5;
-import yh.t5;
-import yh.x7;
+import yh.u5;
+import yh.z7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class a5 extends View {
-    public final yh.z3 a;
+    public final yh.a4 a;
     public final d6 b;
     public float c;
     public float d;
@@ -35,102 +35,102 @@ public final class a5 extends View {
     public a5(Context context, int i10, d6 d6Var) {
         super(context);
         this.b = d6Var;
-        yh.z3 z3Var = new yh.z3(i10, this, d6Var);
-        this.a = z3Var;
-        z3Var.y.setCallback(this);
+        yh.a4 a4Var = new yh.a4(i10, this, d6Var);
+        this.a = a4Var;
+        a4Var.y.setCallback(this);
         NotificationCenter.listenEmojiLoading(this);
     }
 
     public final void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, TLRPC.TL_textWithEntities tL_textWithEntities, String str, boolean z10) {
-        yh.z3 z3Var = this.a;
-        o5 o5Var = z3Var.e;
-        l1 l1Var = z3Var.j;
-        ImageReceiver imageReceiver = z3Var.d;
-        z3Var.K = false;
-        z3Var.N = null;
-        z3Var.O = null;
-        z3Var.p = false;
-        z3Var.k = (TL_stars.starGiftAttributeBackdrop) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        z3Var.l = (TL_stars.starGiftAttributePattern) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
-        TL_stars.starGiftAttributeModel stargiftattributemodel = z3Var.m;
-        z3Var.m = (TL_stars.starGiftAttributeModel) t5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
-        Paint paint = z3Var.f;
-        z3Var.h = null;
+        yh.a4 a4Var = this.a;
+        o5 o5Var = a4Var.e;
+        l1 l1Var = a4Var.j;
+        ImageReceiver imageReceiver = a4Var.d;
+        a4Var.K = false;
+        a4Var.N = null;
+        a4Var.O = null;
+        a4Var.p = false;
+        a4Var.k = (TL_stars.starGiftAttributeBackdrop) u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        a4Var.l = (TL_stars.starGiftAttributePattern) u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+        TL_stars.starGiftAttributeModel stargiftattributemodel = a4Var.m;
+        a4Var.m = (TL_stars.starGiftAttributeModel) u5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+        Paint paint = a4Var.f;
+        a4Var.h = null;
         paint.setShader(null);
-        TL_stars.starGiftAttributePattern stargiftattributepattern = z3Var.l;
+        TL_stars.starGiftAttributePattern stargiftattributepattern = a4Var.l;
         if (stargiftattributepattern != null) {
             o5Var.i(stargiftattributepattern.document, false);
         } else {
             o5Var.g(null, false);
         }
-        TL_stars.starGiftAttributeModel stargiftattributemodel2 = z3Var.m;
+        TL_stars.starGiftAttributeModel stargiftattributemodel2 = a4Var.m;
         if (stargiftattributemodel2 != null && (stargiftattributemodel == null || stargiftattributemodel.document.id != stargiftattributemodel2.document.id)) {
             imageReceiver.setAutoRepeatCount(0);
             imageReceiver.clearDecorators();
             imageReceiver.setAutoRepeat(0);
-            x7.f1(imageReceiver, z3Var.m.document, 110);
+            z7.f1(imageReceiver, a4Var.m.document, 110);
         }
         boolean z11 = tL_starGiftUnique.burned;
-        z3Var.J = z11;
+        a4Var.J = z11;
         if (z11) {
-            int v02 = i6.v0(i6.q7, z3Var.c);
+            int v02 = i6.v0(i6.q7, a4Var.c);
             Paint paint2 = l1Var.a;
             paint2.setShader(null);
             paint2.setColor(v02);
             l1Var.e(11, LocaleController.getString(R.string.Gift2UniqueRibbonBurned), true);
         } else {
-            l1Var.d(z3Var.k, true, false);
+            l1Var.d(a4Var.k, true, false);
             l1Var.e(11, LocaleController.getString(R.string.Gift2UniqueRibbon), true);
         }
-        if (z3Var.P) {
+        if (a4Var.P) {
             imageReceiver.onAttachedToWindow();
             o5Var.a();
-            z3Var.y.d.onAttachedToWindow();
+            a4Var.y.d.onAttachedToWindow();
         }
-        z3Var.L = ok.C(64.0f, (AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, (int) (AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() * 0.6f : (AndroidUtilities.displaySize.x * 0.62f) - AndroidUtilities.dp(34.0f)));
+        a4Var.L = bi.C(64.0f, (AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, (int) (AndroidUtilities.isTablet() ? AndroidUtilities.getMinTabletSide() * 0.6f : (AndroidUtilities.displaySize.x * 0.62f) - AndroidUtilities.dp(34.0f)));
         if (!AndroidUtilities.isTablet()) {
-            z3Var.L = (int) (z3Var.L * 1.2f);
+            a4Var.L = (int) (a4Var.L * 1.2f);
         }
-        z3Var.L -= AndroidUtilities.dp(8.0f);
-        z3Var.h(tL_starGiftUnique, j3, tL_textWithEntities, str);
-        le.e eVar = z3Var.Q;
+        a4Var.L -= AndroidUtilities.dp(8.0f);
+        a4Var.h(tL_starGiftUnique, j3, tL_textWithEntities, str);
+        le.e eVar = a4Var.Q;
         if (z10) {
             int round = Math.round(eVar.g ? eVar.f : eVar.e);
-            int i10 = z3Var.L;
+            int i10 = a4Var.L;
             if (round != i10) {
                 eVar.a(i10);
             }
         } else {
-            eVar.c(z3Var.L);
+            eVar.c(a4Var.L);
         }
         requestLayout();
         invalidate();
     }
 
-    public yh.z3 getLayout() {
+    public yh.a4 getLayout() {
         return this.a;
     }
 
     @Override // android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        yh.z3 z3Var = this.a;
-        z3Var.P = true;
-        if (z3Var.N != null) {
-            z3Var.d.onAttachedToWindow();
-            z3Var.e.a();
-            z3Var.y.d.onAttachedToWindow();
+        yh.a4 a4Var = this.a;
+        a4Var.P = true;
+        if (a4Var.N != null) {
+            a4Var.d.onAttachedToWindow();
+            a4Var.e.a();
+            a4Var.y.d.onAttachedToWindow();
         }
     }
 
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        yh.z3 z3Var = this.a;
-        z3Var.P = false;
-        z3Var.d.onDetachedFromWindow();
-        z3Var.e.b();
-        k0 k0Var = z3Var.y;
+        yh.a4 a4Var = this.a;
+        a4Var.P = false;
+        a4Var.d.onDetachedFromWindow();
+        a4Var.e.b();
+        k0 k0Var = a4Var.y;
         k0Var.d.onDetachedFromWindow();
         z5.release((View) null, k0Var.q);
         k0Var.q = null;
@@ -145,21 +145,21 @@ public final class a5 extends View {
         } else {
             i6.q(0.0f, getY(), getMeasuredWidth(), height);
         }
-        yh.z3 z3Var = this.a;
-        this.c = (getWidth() - ((int) z3Var.Q.e)) / 2.0f;
-        float dp = z3Var.Q.e + AndroidUtilities.dp(8.0f);
+        yh.a4 a4Var = this.a;
+        this.c = (getWidth() - ((int) a4Var.Q.e)) / 2.0f;
+        float dp = a4Var.Q.e + AndroidUtilities.dp(8.0f);
         float width = (getWidth() - dp) / 2.0f;
         float dp2 = this.d - AndroidUtilities.dp(4.0f);
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(width, dp2, dp + width, z3Var.M + dp2 + AndroidUtilities.dp(8.0f));
+        rectF.set(width, dp2, dp + width, a4Var.M + dp2 + AndroidUtilities.dp(8.0f));
         Rect rect = AndroidUtilities.rectTmp2;
         rectF.round(rect);
         this.e.setBounds(rect);
         this.e.draw(canvas);
         canvas.save();
         canvas.translate(this.c, this.d);
-        z3Var.a(canvas);
-        z3Var.b(canvas);
+        a4Var.a(canvas);
+        a4Var.b(canvas);
         canvas.restore();
     }
 

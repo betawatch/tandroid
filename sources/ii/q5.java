@@ -23,7 +23,7 @@ import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
 import v7.o8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class q5 extends a0 implements org.telegram.ui.ActionBar.y5, p9 {
     public d3 E;
@@ -502,11 +502,11 @@ public final class q5 extends a0 implements org.telegram.ui.ActionBar.y5, p9 {
         a aVar = this.a;
         int i18 = 0;
         if (aVar != null && (i14 = aVar.l) > 0) {
-            i18 = AndroidUtilities.dp(hg.k0.f(i14, 1, 16, 10));
+            i18 = AndroidUtilities.dp(hg.c.f(i14, 1, 16, 10));
         }
         int i19 = i15 - i16;
         int i20 = measuredHeight + i18;
-        i1Var.layout(AndroidUtilities.dp(16.0f) + i17, i18, org.telegram.messenger.f0.b(16.0f, i19, AndroidUtilities.dp(16.0f) + i17), i20);
+        i1Var.layout(AndroidUtilities.dp(16.0f) + i17, i18, org.telegram.messenger.q.b(16.0f, i19, AndroidUtilities.dp(16.0f) + i17), i20);
         int dp = AndroidUtilities.dp(9.0f) + i20;
         b4 b4Var = this.s;
         b4Var.layout(i17, dp, i19, b4Var.getMeasuredHeight() + dp);
@@ -529,10 +529,10 @@ public final class q5 extends a0 implements org.telegram.ui.ActionBar.y5, p9 {
         b4 b4Var = this.s;
         b4Var.measure(makeMeasureSpec3, makeMeasureSpec4);
         a aVar = this.a;
-        int dp = (aVar != null && (i12 = aVar.l) > 0) ? AndroidUtilities.dp(hg.k0.f(i12, 1, 16, 10)) : 0;
+        int dp = (aVar != null && (i12 = aVar.l) > 0) ? AndroidUtilities.dp(hg.c.f(i12, 1, 16, 10)) : 0;
         a aVar2 = this.a;
         if (aVar2 != null && (i13 = aVar2.m) > 0) {
-            i14 = AndroidUtilities.dp(hg.k0.f(i13, 1, 16, 10));
+            i14 = AndroidUtilities.dp(hg.c.f(i13, 1, 16, 10));
         }
         setMeasuredDimension(size, b4Var.getMeasuredHeight() + AndroidUtilities.dp(9.0f) + i14 + dp + measuredHeight);
     }
@@ -656,12 +656,12 @@ public final class q5 extends a0 implements org.telegram.ui.ActionBar.y5, p9 {
                 return;
             }
             if (this.H.isEmpty()) {
-                x3Var.O2();
+                x3Var.N2();
             } else {
                 if (x3Var.I3) {
                     return;
                 }
-                x3Var.H4(this);
+                x3Var.G4(this);
             }
         }
     }

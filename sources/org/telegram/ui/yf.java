@@ -11,7 +11,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yf implements Runnable {
     public final /* synthetic */ int a;
@@ -166,7 +166,7 @@ public final /* synthetic */ class yf implements Runnable {
             case 21:
                 nk nkVar = ynVar.r8;
                 if (nkVar != null && nkVar.getParent() != null) {
-                    ynVar.v0.h1();
+                    ynVar.v0.g1();
                     ynVar.t8.setDrawingReady(false);
                     ynVar.r8.setTag(null);
                     ynVar.V0.removeView(ynVar.r8);

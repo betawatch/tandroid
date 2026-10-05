@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ck0 extends FrameLayout {
     public bk0 E;
@@ -82,7 +82,7 @@ public final class ck0 extends FrameLayout {
         addView(xj0Var, w7.z5.c(-1.0f, -1));
         if (reaction != null && (reaction instanceof TLRPC.TL_reactionCustomEmoji) && !MessagesController.getInstance(i10).premiumFeaturesBlocked()) {
             arrayList.clear();
-            arrayList.add(zg.o0.d(reaction));
+            arrayList.add(zg.m0.d(reaction));
             i();
         }
         xj0Var.setViewType(arrayList.isEmpty() ? 16 : 23);
@@ -116,7 +116,7 @@ public final class ck0 extends FrameLayout {
                 }
                 i12++;
             }
-            zg.o0 d = zg.o0.d(tL_messages_messageReactionsList.reactions.get(i11).reaction);
+            zg.m0 d = zg.m0.d(tL_messages_messageReactionsList.reactions.get(i11).reaction);
             if (d.g != 0) {
                 hashSet.add(d);
             }
@@ -263,7 +263,7 @@ public final class ck0 extends FrameLayout {
             if (i11 >= size) {
                 break;
             }
-            TLRPC.InputStickerSet inputStickerSet = MessageObject.getInputStickerSet(q5.f(i10, ((zg.o0) arrayList3.get(i11)).g));
+            TLRPC.InputStickerSet inputStickerSet = MessageObject.getInputStickerSet(q5.f(i10, ((zg.m0) arrayList3.get(i11)).g));
             if (inputStickerSet != null && !hashSet.contains(Long.valueOf(inputStickerSet.id))) {
                 arrayList2.add(inputStickerSet);
                 hashSet.add(Long.valueOf(inputStickerSet.id));
@@ -288,7 +288,7 @@ public final class ck0 extends FrameLayout {
             int dp = AndroidUtilities.dp(size * 50);
             hb0 hb0Var = this.J;
             if (hb0Var != null) {
-                dp = org.telegram.messenger.f0.C(8.0f, hb0Var.getMeasuredHeight(), dp);
+                dp = org.telegram.messenger.q.C(8.0f, hb0Var.getMeasuredHeight(), dp);
             }
             uj0 uj0Var = this.e;
             if (uj0Var.getMeasuredHeight() != 0) {

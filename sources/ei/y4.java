@@ -14,12 +14,13 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y4 implements Runnable {
     public final /* synthetic */ int a;
@@ -142,7 +143,7 @@ public final /* synthetic */ class y4 implements Runnable {
                                         i11 = i20;
                                         for (int i22 = 0; i22 < 3; i22++) {
                                             String str3 = strArr2[i22];
-                                            if (str3 != null && (str3.startsWith(str2) || org.telegram.messenger.f0.w(" ", str2, str3))) {
+                                            if (str3 != null && (str3.startsWith(str2) || bi.u(" ", str2, str3))) {
                                                 z10 = true;
                                                 String publicUsername = UserObject.getPublicUsername(user2);
                                                 r42 = (z10 && publicUsername != null && publicUsername.startsWith(str2)) ? 2 : z10;

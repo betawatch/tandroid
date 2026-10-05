@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ll implements aa1, d5, ol0 {
+public final /* synthetic */ class ll implements ba1, d5, ol0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatAttachAlertPhotoLayout b;
 
@@ -21,19 +21,19 @@ public final /* synthetic */ class ll implements aa1, d5, ol0 {
             case 1:
                 boolean z11 = ChatAttachAlertPhotoLayout.q1;
                 xi xiVar = chatAttachAlertPhotoLayout.b;
-                xiVar.X0();
-                xiVar.Z1.B1(7, false, z10, i10, 0, 0L, xiVar.p1(), false, 0L);
+                xiVar.Z0();
+                xiVar.Z1.B1(7, false, z10, i10, 0, 0L, xiVar.r1(), false, 0L);
                 break;
             default:
                 boolean z12 = ChatAttachAlertPhotoLayout.q1;
                 xi xiVar2 = chatAttachAlertPhotoLayout.b;
-                xiVar2.X0();
-                xiVar2.Z1.B1(4, true, z10, i10, 0, 0L, xiVar2.p1(), false, 0L);
+                xiVar2.Z0();
+                xiVar2.Z1.B1(4, true, z10, i10, 0, 0L, xiVar2.r1(), false, 0L);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.aa1
+    @Override // org.telegram.ui.Components.ba1
     public void a(float f7) {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
         gm gmVar = chatAttachAlertPhotoLayout.P;
@@ -53,7 +53,7 @@ public final /* synthetic */ class ll implements aa1, d5, ol0 {
             if (i10 == 0 && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0) {
                 vi viVar = xiVar.Z1;
                 if (viVar != null) {
-                    viVar.B1(0, false, true, 0, 0, 0L, xiVar.p1(), false, 0L);
+                    viVar.B1(0, false, true, 0, 0, 0L, xiVar.r1(), false, 0L);
                 }
                 return true;
             }

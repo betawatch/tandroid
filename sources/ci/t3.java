@@ -9,7 +9,6 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.me0;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.bh1;
 import org.telegram.ui.ha0;
 import org.telegram.ui.hp;
 import org.telegram.ui.kn;
@@ -19,8 +18,9 @@ import org.telegram.ui.so0;
 import org.telegram.ui.to;
 import org.telegram.ui.wm0;
 import org.telegram.ui.wq0;
+import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -104,7 +104,7 @@ public final /* synthetic */ class t3 implements RequestDelegate {
                 }
                 break;
             case 12:
-                AndroidUtilities.runOnUIThread(new ai.s4((bh1) obj, tL_error, tLObject, this.b, 29));
+                AndroidUtilities.runOnUIThread(new ai.s4((zg1) obj, tL_error, tLObject, this.b, 29));
                 break;
             default:
                 int[][] iArr = WallpapersListActivity.i0;

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ae extends org.telegram.ui.Components.ld0 {
     public final /* synthetic */ int L;
@@ -21,31 +21,31 @@ public final class ae extends org.telegram.ui.Components.ld0 {
         switch (this.L) {
             case 0:
                 me meVar = (me) this.M;
-                org.telegram.ui.Components.c71 c71Var = meVar.a2;
-                fi.o oVar = meVar.R1;
+                org.telegram.ui.Components.e71 e71Var = meVar.X0;
+                fi.o oVar = meVar.O0;
                 if (oVar != null && !oVar.isFocusable()) {
                     oVar.setFocusable(true);
                     oVar.setFocusableInTouchMode(true);
-                    int z12 = c71Var.z1(3);
-                    if (z12 >= 0 && z12 < c71Var.f3.x.size()) {
-                        c71Var.C0();
-                        c71Var.y0(z12);
+                    int y12 = e71Var.y1(3);
+                    if (y12 >= 0 && y12 < e71Var.f3.x.size()) {
+                        e71Var.C0();
+                        e71Var.y0(y12);
                     }
                     oVar.requestFocus();
                 }
                 break;
             default:
-                yh.g gVar = (yh.g) this.M;
-                fi.o oVar2 = gVar.Q;
+                yh.h hVar = (yh.h) this.M;
+                fi.o oVar2 = hVar.Z;
                 if (oVar2 != null && !oVar2.isFocusable()) {
-                    gVar.Q.setFocusable(true);
-                    gVar.Q.setFocusableInTouchMode(true);
-                    int z13 = gVar.e.z1(1);
-                    if (z13 >= 0 && z13 < gVar.e.f3.x.size()) {
-                        gVar.e.C0();
-                        gVar.e.y0(z13);
+                    hVar.Z.setFocusable(true);
+                    hVar.Z.setFocusableInTouchMode(true);
+                    int y13 = hVar.e.y1(1);
+                    if (y13 >= 0 && y13 < hVar.e.f3.x.size()) {
+                        hVar.e.C0();
+                        hVar.e.y0(y13);
                     }
-                    gVar.Q.requestFocus();
+                    hVar.Z.requestFocus();
                 }
                 break;
         }

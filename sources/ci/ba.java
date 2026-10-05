@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.q30;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class ba extends ScrollView {
     public final Paint E;
@@ -139,8 +139,8 @@ public abstract class ba extends ScrollView {
             return false;
         }
         rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = org.telegram.messenger.f0.C(20.0f, this.H, rect.top);
-        rect.bottom = org.telegram.messenger.f0.C(50.0f, this.H, rect.bottom);
+        rect.top = org.telegram.messenger.q.C(20.0f, this.H, rect.top);
+        rect.bottom = org.telegram.messenger.q.C(50.0f, this.H, rect.bottom);
         return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 

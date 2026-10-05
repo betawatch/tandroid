@@ -15,10 +15,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.mb;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.v31;
+import org.telegram.ui.t31;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f2 implements Runnable {
     public final /* synthetic */ int a;
@@ -149,8 +149,8 @@ public final /* synthetic */ class f2 implements Runnable {
                 Context context = l3Var.getContext();
                 yc ycVar = new yc(mb.a(l3Var.getContext()), l3Var.E);
                 long j3 = l3Var.H;
-                int i14 = v31.v;
-                v31.I(i13, context, j3, false, false, new ArrayList(), ycVar, null, new byte[0], null, null);
+                int i14 = t31.v;
+                t31.I(i13, context, j3, false, false, new ArrayList(), ycVar, null, new byte[0], null, null);
                 break;
             case 15:
                 l3.j(l3Var.G, l3Var.H, new f2(l3Var, 16));

@@ -37,7 +37,7 @@ import org.telegram.ui.ze;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class j0 extends org.telegram.ui.ActionBar.f3 {
     public final int E;
@@ -180,13 +180,13 @@ public final class j0 extends org.telegram.ui.ActionBar.f3 {
                             if (zeVar != null) {
                                 TLRPC.TL_textWithEntities textWithEntities = j0Var.n.getTextWithEntities();
                                 boolean z10 = j0Var.G;
-                                yh.x3 x3Var = (yh.x3) zeVar.c;
+                                yh.y3 y3Var = (yh.y3) zeVar.c;
                                 j0 j0Var2 = (j0) zeVar.d;
                                 TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) zeVar.e;
                                 long j10 = zeVar.b;
                                 zf.b bVar = (zf.b) zeVar.f;
                                 if (!j0Var2.L) {
-                                    x3Var.c2(tL_starGiftUnique2, j10, bVar, textWithEntities, z10, j0Var2);
+                                    y3Var.c2(tL_starGiftUnique2, j10, bVar, textWithEntities, z10, j0Var2);
                                     break;
                                 }
                             }
@@ -255,13 +255,13 @@ public final class j0 extends org.telegram.ui.ActionBar.f3 {
                             if (zeVar != null) {
                                 TLRPC.TL_textWithEntities textWithEntities = j0Var.n.getTextWithEntities();
                                 boolean z10 = j0Var.G;
-                                yh.x3 x3Var = (yh.x3) zeVar.c;
+                                yh.y3 y3Var = (yh.y3) zeVar.c;
                                 j0 j0Var2 = (j0) zeVar.d;
                                 TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) zeVar.e;
                                 long j10 = zeVar.b;
                                 zf.b bVar = (zf.b) zeVar.f;
                                 if (!j0Var2.L) {
-                                    x3Var.c2(tL_starGiftUnique2, j10, bVar, textWithEntities, z10, j0Var2);
+                                    y3Var.c2(tL_starGiftUnique2, j10, bVar, textWithEntities, z10, j0Var2);
                                     break;
                                 }
                             }
@@ -309,13 +309,13 @@ public final class j0 extends org.telegram.ui.ActionBar.f3 {
                             if (zeVar != null) {
                                 TLRPC.TL_textWithEntities textWithEntities = j0Var.n.getTextWithEntities();
                                 boolean z10 = j0Var.G;
-                                yh.x3 x3Var = (yh.x3) zeVar.c;
+                                yh.y3 y3Var = (yh.y3) zeVar.c;
                                 j0 j0Var2 = (j0) zeVar.d;
                                 TL_stars.TL_starGiftUnique tL_starGiftUnique2 = (TL_stars.TL_starGiftUnique) zeVar.e;
                                 long j10 = zeVar.b;
                                 zf.b bVar = (zf.b) zeVar.f;
                                 if (!j0Var2.L) {
-                                    x3Var.c2(tL_starGiftUnique2, j10, bVar, textWithEntities, z10, j0Var2);
+                                    y3Var.c2(tL_starGiftUnique2, j10, bVar, textWithEntities, z10, j0Var2);
                                     break;
                                 }
                             }
@@ -394,7 +394,7 @@ public final class j0 extends org.telegram.ui.ActionBar.f3 {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(this.I.title);
             sb2.append(" #");
-            new yc(this.container, this.resourcesProvider).V(Arrays.asList(userOrChat), LocaleController.getString(R.string.GiftMessageAddTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftMessageAddDescription, DialogObject.getShortName(userOrChat), org.telegram.messenger.f0.h(r3.num, ',', sb2))), null).k(true);
+            new yc(this.container, this.resourcesProvider).V(Arrays.asList(userOrChat), LocaleController.getString(R.string.GiftMessageAddTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftMessageAddDescription, DialogObject.getShortName(userOrChat), org.telegram.messenger.q.h(r3.num, ',', sb2))), null).k(true);
         }
     }
 

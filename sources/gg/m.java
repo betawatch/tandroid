@@ -61,7 +61,7 @@ import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.nn;
 import org.telegram.ui.Components.nt;
-import org.telegram.ui.Components.o11;
+import org.telegram.ui.Components.p11;
 import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.sq;
 import org.telegram.ui.Components.v6;
@@ -75,7 +75,7 @@ import org.telegram.ui.ty;
 import org.telegram.ui.uy;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class m extends yl0 implements o2 {
     public static final boolean c0 = BuildVars.DEBUG_PRIVATE_VERSION;
@@ -833,7 +833,7 @@ public class m extends yl0 implements o2 {
             int i17 = this.b0;
             int E = E();
             this.b0 = E;
-            o11 o11Var = y2Var.n;
+            p11 p11Var = y2Var.n;
             TextView textView = y2Var.h;
             nj0 nj0Var = y2Var.f;
             if (y2Var.r != E) {
@@ -867,7 +867,7 @@ public class m extends yl0 implements o2 {
                             if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
                                 string2 = string2.replace('\n', ' ');
                             }
-                            o11Var.a(string2, true, false);
+                            p11Var.a(string2, true, false);
                             y2Var.requestLayout();
                         } else {
                             y2Var.a(true);
@@ -884,7 +884,7 @@ public class m extends yl0 implements o2 {
                 if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
                     string = string.replace('\n', ' ');
                 }
-                o11Var.a(string, false, false);
+                p11Var.a(string, false, false);
             }
             int i18 = this.h;
             if (i18 != 7 && i18 != 8) {

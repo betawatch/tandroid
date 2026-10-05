@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class nr extends org.telegram.ui.Components.yl0 {
     public final Context c;
@@ -675,7 +675,7 @@ public final class nr extends org.telegram.ui.Components.yl0 {
                     int n02 = rr.n0(rrVar.E);
                     v8Var.d(LocaleController.getString("UserRestrictionsSendMedia", R.string.UserRestrictionsSendMedia), n02 > 0, true, z39);
                     Locale locale = Locale.US;
-                    v8Var.a(new i9.s(this, v8Var, false, 22), a4.a.m(n02, "/10"), !rrVar.l1);
+                    v8Var.a(new i9.s(this, v8Var, false, 22), a4.a.n(n02, "/10"), !rrVar.l1);
                 } else if (i10 == rrVar.e0) {
                     v8Var.d(LocaleController.getString("UserRestrictionsSendStickers", R.string.UserRestrictionsSendStickers), !rrVar.E.send_stickers, true, z39);
                 } else if (i10 == rrVar.f0) {
@@ -930,10 +930,10 @@ public final class nr extends org.telegram.ui.Components.yl0 {
                 break;
             case 9:
             default:
-                org.telegram.ui.Components.pw0 pw0Var = new org.telegram.ui.Components.pw0(context, null);
-                pw0Var.b(rrVar.p1, null, LocaleController.getString("SlowmodeOff", R.string.SlowmodeOff), LocaleController.formatString(R.string.SlowmodeSeconds, 5), LocaleController.formatString(R.string.SlowmodeSeconds, 10), LocaleController.formatString(R.string.SlowmodeSeconds, 30), LocaleController.formatString(R.string.SlowmodeMinutes, 1), LocaleController.formatString(R.string.SlowmodeMinutes, 5), LocaleController.formatString(R.string.SlowmodeMinutes, 15), LocaleController.formatString(R.string.SlowmodeHours, 1));
-                pw0Var.setCallback(new mr(this, 1));
-                view = pw0Var;
+                org.telegram.ui.Components.qw0 qw0Var = new org.telegram.ui.Components.qw0(context, null);
+                qw0Var.b(rrVar.p1, null, LocaleController.getString("SlowmodeOff", R.string.SlowmodeOff), LocaleController.formatString(R.string.SlowmodeSeconds, 5), LocaleController.formatString(R.string.SlowmodeSeconds, 10), LocaleController.formatString(R.string.SlowmodeSeconds, 30), LocaleController.formatString(R.string.SlowmodeMinutes, 1), LocaleController.formatString(R.string.SlowmodeMinutes, 5), LocaleController.formatString(R.string.SlowmodeMinutes, 15), LocaleController.formatString(R.string.SlowmodeHours, 1));
+                qw0Var.setCallback(new mr(this, 1));
+                view = qw0Var;
                 break;
             case 10:
                 view = new org.telegram.ui.Cells.s4(context, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(120.0f));
@@ -966,12 +966,12 @@ public final class nr extends org.telegram.ui.Components.yl0 {
                 view = a2Var;
                 break;
             case 15:
-                org.telegram.ui.Components.pw0 pw0Var2 = new org.telegram.ui.Components.pw0(context, null);
+                org.telegram.ui.Components.qw0 qw0Var2 = new org.telegram.ui.Components.qw0(context, null);
                 Drawable[] drawableArr = {rrVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge), rrVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge2), rrVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge2), rrVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge2), rrVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge2)};
                 int i12 = rrVar.s1;
-                pw0Var2.b(i12 > 0 ? i12 - 1 : 0, drawableArr, "1", "2", "3", "4", "5");
-                pw0Var2.setCallback(new mr(this, 2));
-                view2 = pw0Var2;
+                qw0Var2.b(i12 > 0 ? i12 - 1 : 0, drawableArr, "1", "2", "3", "4", "5");
+                qw0Var2.setCallback(new mr(this, 2));
+                view2 = qw0Var2;
                 view = view2;
                 break;
             case 16:

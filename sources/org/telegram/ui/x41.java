@@ -1,85 +1,67 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class x41 extends FrameLayout {
-    public final Paint a;
-    public final Paint b;
-    public final RectF c;
-    public final org.telegram.ui.Components.v21 d;
-    public boolean e;
-    public long f;
-    public long h;
-    public final org.telegram.ui.Components.kj0 n;
-    public final TextPaint r;
-    public StaticLayout s;
-    public float v;
-    public float w;
-    public final /* synthetic */ SecretMediaViewer x;
+public final /* synthetic */ class x41 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c51 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x41(SecretMediaViewer secretMediaViewer, Activity activity) {
-        super(activity);
-        this.x = secretMediaViewer;
-        this.c = new RectF();
-        this.d = new org.telegram.ui.Components.v21();
-        this.r = new TextPaint(1);
-        setWillNotDraw(false);
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setStrokeWidth(AndroidUtilities.dp(1.5f));
-        paint.setColor(-1644826);
-        Paint.Cap cap = Paint.Cap.ROUND;
-        paint.setStrokeCap(cap);
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        Paint paint2 = new Paint(1);
-        this.a = paint2;
-        paint2.setStyle(style);
-        paint2.setStrokeCap(cap);
-        paint2.setColor(-1644826);
-        paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        new Paint(1).setColor(2130706432);
-        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.fire_on, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
-        this.n = kj0Var;
-        kj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        kj0Var.R(this);
-        kj0Var.start();
+    public /* synthetic */ x41(c51 c51Var, int i10) {
+        this.a = i10;
+        this.b = c51Var;
     }
 
-    /*  JADX ERROR: NullPointerException in pass: LoopRegionVisitor
-        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.SSAVar.use(jadx.core.dex.instructions.args.RegisterArg)" because "ssaVar" is null
-        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:493)
-        	at jadx.core.dex.nodes.InsnNode.rebindArgs(InsnNode.java:496)
-        */
-    @Override // android.view.View
-    public final void onDraw(android.graphics.Canvas r11) {
-        /*
-            Method dump skipped, instructions count: 227
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.x41.onDraw(android.graphics.Canvas):void");
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(35.0f);
-        float measuredHeight = getMeasuredHeight() / 2.0f;
-        float dpf2 = AndroidUtilities.dpf2(10.5f);
-        this.c.set(measuredWidth - dpf2, measuredHeight - dpf2, measuredWidth + dpf2, dpf2 + measuredHeight);
-        setPivotX(measuredWidth);
-        setPivotY(measuredHeight);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                c51 c51Var = this.b;
+                x41 x41Var = c51Var.Z;
+                if (c51Var.w != null) {
+                    c51Var.a0 = r2.n() / c51Var.w.p();
+                    a51 a51Var = c51Var.N;
+                    if (a51Var != null) {
+                        a51Var.Xd = (c51Var.w.p() - c51Var.w.n()) / 1000;
+                        c51Var.N.q4();
+                        org.telegram.ui.Components.cp0 seekBarWaveform = c51Var.N.getSeekBarWaveform();
+                        if (seekBarWaveform != null) {
+                            float f7 = c51Var.a0;
+                            seekBarWaveform.J = true;
+                            seekBarWaveform.K = f7;
+                            org.telegram.ui.Cells.u1 u1Var = seekBarWaveform.n;
+                            if (u1Var != null) {
+                                u1Var.invalidate();
+                            }
+                        }
+                    }
+                    if (c51Var.w.y()) {
+                        AndroidUtilities.cancelRunOnUIThread(x41Var);
+                        AndroidUtilities.runOnUIThread(x41Var, 16L);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            case 2:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            default:
+                c51 c51Var2 = this.b;
+                if (c51Var2.d == null) {
+                    AndroidUtilities.runOnUIThread(new x41(c51Var2, 2));
+                    org.telegram.ui.Cells.u1 u1Var2 = c51Var2.O;
+                    if (u1Var2 != null) {
+                        u1Var2.setVisibility(0);
+                        c51Var2.O.invalidate();
+                    }
+                }
+                MediaController.getInstance().tryResumePausedAudio();
+                break;
+        }
     }
 }

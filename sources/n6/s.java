@@ -7,7 +7,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class s implements Handler.Callback {
     public final a4.m a;
@@ -44,7 +44,7 @@ public final class s implements Handler.Callback {
     public final boolean handleMessage(Message message) {
         int i10 = message.what;
         if (i10 != 1) {
-            Log.wtf("GmsClientEvents", hg.k0.h(i10, "Don't know how to handle message: "), new Exception());
+            Log.wtf("GmsClientEvents", hg.c.h(i10, "Don't know how to handle message: "), new Exception());
             return false;
         }
         com.google.android.gms.common.api.k kVar = (com.google.android.gms.common.api.k) message.obj;

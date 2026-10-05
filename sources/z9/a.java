@@ -6,6 +6,7 @@ import bb.h;
 import com.google.firebase.sessions.FirebaseSessionsRegistrar;
 import java.util.List;
 import q9.d;
+import sa.e;
 import y9.e2;
 import y9.o0;
 import y9.r0;
@@ -15,7 +16,7 @@ import za.l;
 import za.m0;
 import za.s;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements b, d {
     public final /* synthetic */ int a;
@@ -123,7 +124,7 @@ public final /* synthetic */ class a implements b, d {
                     str2 = str2.concat(" importance");
                 }
                 if (list == null) {
-                    str2 = t8.b.v(str2, " frames");
+                    str2 = e.v(str2, " frames");
                 }
                 if (str2.isEmpty()) {
                     return new r0(str, num.intValue(), list);
@@ -198,7 +199,7 @@ public final /* synthetic */ class a implements b, d {
                     str5 = str5.concat(" size");
                 }
                 if (str3 == null) {
-                    str5 = t8.b.v(str5, " name");
+                    str5 = e.v(str5, " name");
                 }
                 if (str5.isEmpty()) {
                     return new o0(str3, l4.longValue(), l10.longValue(), str4);

@@ -10,13 +10,28 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class bl implements org.telegram.ui.Components.rk0 {
     public final /* synthetic */ yn a;
 
     public bl(yn ynVar) {
         this.a = ynVar;
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public final /* synthetic */ boolean B() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public final /* synthetic */ boolean E() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public final /* synthetic */ boolean K() {
+        return false;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:23:0x008b, code lost:
@@ -27,7 +42,7 @@ public final class bl implements org.telegram.ui.Components.rk0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void h(View view, zg.o0 o0Var, boolean z10, boolean z11) {
+    public final void i(View view, zg.m0 m0Var, boolean z10, boolean z11) {
         TLRPC.Document f7;
         boolean z12;
         HashSet hashSet;
@@ -45,7 +60,7 @@ public final class bl implements org.telegram.ui.Components.rk0 {
             ynVar.z7(false);
             return;
         }
-        boolean contains = ynVar.Ya.getSelectedReactions().contains(o0Var);
+        boolean contains = ynVar.Ya.getSelectedReactions().contains(m0Var);
         HashSet hashSet2 = new HashSet();
         int i12 = 0;
         boolean z13 = false;
@@ -73,13 +88,13 @@ public final class bl implements org.telegram.ui.Components.rk0 {
                     contains = z12;
                     i12 = i10;
                 }
-                if (messageObject2.hasReaction(o0Var) == contains) {
+                if (messageObject2.hasReaction(m0Var) == contains) {
                     hashSet = hashSet2;
                     messageObject = messageObject2;
                     z12 = contains;
                     i10 = i12;
                     i11 = i15;
-                    ynVar.Za(ynVar.q8(messageObject2.getId(), false), messageObject, null, null, 0.0f, 0.0f, o0Var, false, false, false, true);
+                    ynVar.Za(ynVar.q8(messageObject2.getId(), false), messageObject, null, null, 0.0f, 0.0f, m0Var, false, false, false, true);
                     if (!z12) {
                         i14++;
                     }
@@ -132,9 +147,9 @@ public final class bl implements org.telegram.ui.Components.rk0 {
         }
         ynVar.z7(true);
         if (i13 > 0) {
-            long j3 = o0Var.g;
+            long j3 = m0Var.g;
             if (j3 == 0) {
-                TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(o0Var.f);
+                TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(m0Var.f);
                 if (tL_availableReaction == null) {
                     return;
                 } else {
@@ -151,25 +166,10 @@ public final class bl implements org.telegram.ui.Components.rk0 {
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ boolean j() {
-        return true;
+    public final /* synthetic */ void I() {
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ boolean k() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ boolean p() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ void o() {
-    }
-
-    @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    public final /* synthetic */ void H(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

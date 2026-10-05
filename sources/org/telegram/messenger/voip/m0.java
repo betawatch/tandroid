@@ -21,9 +21,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.tw0;
-import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.us;
+import org.telegram.ui.Components.uw0;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.ws;
 import org.telegram.ui.am0;
 import org.telegram.ui.h60;
@@ -33,7 +33,7 @@ import org.telegram.ui.nm0;
 import org.telegram.ui.wj0;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m0 implements Runnable {
     public final /* synthetic */ int a;
@@ -109,23 +109,23 @@ public final /* synthetic */ class m0 implements Runnable {
                 }
                 break;
             case 5:
-                tw0 tw0Var = (tw0) this.d;
+                uw0 uw0Var = (uw0) this.d;
                 boolean z13 = this.c;
                 int i15 = this.b;
                 u1 u1Var = (u1) this.e;
-                if (z13 && tw0Var.Q == null && tw0Var.R == null && tw0Var.P == null) {
-                    tw0Var.J = 2;
-                    tw0Var.X0 = true;
+                if (z13 && uw0Var.Q == null && uw0Var.R == null && uw0Var.P == null) {
+                    uw0Var.J = 2;
+                    uw0Var.X0 = true;
                 }
-                tw0Var.V0 = false;
-                if (tw0Var.Y0 || !tw0Var.W0) {
-                    tw0Var.U0 = tw0Var.i1[0];
+                uw0Var.V0 = false;
+                if (uw0Var.Y0 || !uw0Var.W0) {
+                    uw0Var.U0 = uw0Var.i1[0];
                     DownloadController.getInstance(i15).removeLoadingFileObserver(u1Var);
-                    tw0Var.I();
-                    tw0Var.x();
+                    uw0Var.I();
+                    uw0Var.x();
                     break;
                 } else {
-                    tw0Var.C(true);
+                    uw0Var.C(true);
                     break;
                 }
                 break;
@@ -189,12 +189,12 @@ public final /* synthetic */ class m0 implements Runnable {
                         sb2.append(tL_secureFile.dc_id);
                         sb2.append("_");
                         i10 = i20;
-                        String r10 = a4.a.r(sb2, tL_secureFile.id, ".jpg");
+                        String s10 = a4.a.s(sb2, tL_secureFile.id, ".jpg");
                         kn0 kn0Var2 = nm0Var.d;
-                        byte[] bArr = new byte[(int) new File(r10).length()];
+                        byte[] bArr = new byte[(int) new File(s10).length()];
                         RandomAccessFile randomAccessFile2 = null;
                         try {
-                            randomAccessFile = new RandomAccessFile(r10, "rws");
+                            randomAccessFile = new RandomAccessFile(s10, "rws");
                         } catch (Exception unused) {
                         }
                         try {
@@ -206,7 +206,7 @@ public final /* synthetic */ class m0 implements Runnable {
                             randomAccessFile.seek(0L);
                             randomAccessFile.write((byte[]) k12.c);
                             randomAccessFile.close();
-                            SecureDocument secureDocument = new SecureDocument((SecureDocumentKey) k12.e, tL_secureFile, r10, (byte[]) k12.d, (byte[]) k12.a);
+                            SecureDocument secureDocument = new SecureDocument((SecureDocumentKey) k12.e, tL_secureFile, s10, (byte[]) k12.d, (byte[]) k12.a);
                             secureDocument.type = i18;
                             AndroidUtilities.runOnUIThread(new am0(kn0Var, secureDocument, i18, 0));
                             if (z15) {
@@ -228,7 +228,7 @@ public final /* synthetic */ class m0 implements Runnable {
                             randomAccessFile.close();
                         } catch (Exception unused3) {
                         }
-                        SecureDocument secureDocument2 = new SecureDocument((SecureDocumentKey) k122.e, tL_secureFile, r10, (byte[]) k122.d, (byte[]) k122.a);
+                        SecureDocument secureDocument2 = new SecureDocument((SecureDocumentKey) k122.e, tL_secureFile, s10, (byte[]) k122.d, (byte[]) k122.a);
                         secureDocument2.type = i18;
                         AndroidUtilities.runOnUIThread(new am0(kn0Var, secureDocument2, i18, 0));
                         if (z15 && !z17) {
@@ -263,17 +263,17 @@ public final /* synthetic */ class m0 implements Runnable {
         this.b = i10;
     }
 
-    public /* synthetic */ m0(tw0 tw0Var, boolean z10, int i10, u1 u1Var) {
+    public /* synthetic */ m0(uw0 uw0Var, boolean z10, int i10, u1 u1Var) {
         this.a = 5;
-        this.d = tw0Var;
+        this.d = uw0Var;
         this.c = z10;
         this.b = i10;
         this.e = u1Var;
     }
 
-    public /* synthetic */ m0(u61 u61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
+    public /* synthetic */ m0(w61 w61Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i11) {
         this.a = i11;
-        this.d = u61Var;
+        this.d = w61Var;
         this.b = i10;
         this.e = tL_messages_searchGlobal;
         this.c = z10;

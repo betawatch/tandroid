@@ -14,7 +14,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class n2 implements t2 {
     public static final int[] j = new int[0];
@@ -53,9 +53,9 @@ public final class n2 implements t2 {
             }
             String name = cls.getName();
             String arrays = Arrays.toString(declaredFields);
-            StringBuilder w10 = a4.a.w("Field ", str, " for ", name, " not found. Known fields are ");
-            w10.append(arrays);
-            throw new RuntimeException(w10.toString(), e7);
+            StringBuilder x10 = a4.a.x("Field ", str, " for ", name, " not found. Known fields are ");
+            x10.append(arrays);
+            throw new RuntimeException(x10.toString(), e7);
         }
     }
 

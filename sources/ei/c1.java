@@ -13,12 +13,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.h31;
+import org.telegram.ui.f31;
 import org.telegram.ui.h60;
 import org.telegram.ui.yn;
 import org.telegram.ui.zh;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c1 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -68,7 +68,7 @@ public final /* synthetic */ class c1 implements RequestDelegate {
                 MessageObject messageObject = (MessageObject) obj;
                 if (tLObject == null) {
                     if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        AndroidUtilities.runOnUIThread(new h31(ynVar, activity, d6Var, messageObject, 1), 200L);
+                        AndroidUtilities.runOnUIThread(new f31(ynVar, activity, d6Var, messageObject, 1), 200L);
                         break;
                     }
                 } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
@@ -78,7 +78,7 @@ public final /* synthetic */ class c1 implements RequestDelegate {
                             break;
                         }
                     } else {
-                        AndroidUtilities.runOnUIThread(new h31(ynVar, activity, d6Var, messageObject, 0), 200L);
+                        AndroidUtilities.runOnUIThread(new f31(ynVar, activity, d6Var, messageObject, 0), 200L);
                         break;
                     }
                 } else {

@@ -19,7 +19,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class gf0 extends FrameLayout {
     public final df0 E;
@@ -70,20 +70,20 @@ public final class gf0 extends FrameLayout {
         cropAreaView.invalidate();
     }
 
-    public final void b(Bitmap bitmap, int i10, boolean z10, boolean z11, lg.g gVar, t71 t71Var, MediaController.CropState cropState) {
+    public final void b(Bitmap bitmap, int i10, boolean z10, boolean z11, lg.g gVar, u71 u71Var, MediaController.CropState cropState) {
         requestLayout();
         this.f = false;
         this.e.setImageBitmap((Drawable) null);
         lg.p pVar = this.b;
         ImageView imageView = pVar.b;
         pVar.x = z10;
-        pVar.d = t71Var;
+        pVar.d = u71Var;
         pVar.e = gVar;
         pVar.K = i10;
         pVar.w = bitmap;
         CropAreaView cropAreaView = pVar.a;
-        cropAreaView.setIsVideo(t71Var != null);
-        if (bitmap == null && t71Var == null) {
+        cropAreaView.setIsVideo(u71Var != null);
+        if (bitmap == null && u71Var == null) {
             pVar.L = null;
             imageView.setImageDrawable(null);
         } else {
@@ -109,7 +109,7 @@ public final class gf0 extends FrameLayout {
                 matrix.postTranslate(fArr[2], fArr[5]);
                 pVar2.r(false);
             }
-            imageView.setImageBitmap(t71Var == null ? pVar.w : null);
+            imageView.setImageBitmap(u71Var == null ? pVar.w : null);
         }
         lg.f fVar = this.c;
         fVar.setFreeform(z10);

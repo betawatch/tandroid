@@ -11,10 +11,10 @@ import org.telegram.ui.g40;
 import org.telegram.ui.h60;
 import s4.c1;
 import s4.j;
-import zg.k0;
-import zg.o0;
+import zg.i0;
+import zg.m0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class f extends j {
     public final /* synthetic */ h F;
@@ -30,7 +30,7 @@ public final class f extends j {
 
     @Override // s4.f1
     public final void w(c1 c1Var) {
-        o0 o0Var;
+        m0 m0Var;
         g gVar;
         int i10;
         h hVar = this.F;
@@ -41,7 +41,7 @@ public final class f extends j {
         if (list != null && b10 >= 0 && b10 < list.size()) {
             groupCallMessage = (GroupCallMessage) eVar.c.get(b10);
         }
-        if (groupCallMessage == null || (o0Var = groupCallMessage.visibleReaction) == null) {
+        if (groupCallMessage == null || (m0Var = groupCallMessage.visibleReaction) == null) {
             return;
         }
         View view = c1Var.a;
@@ -52,11 +52,11 @@ public final class f extends j {
         Context context = h60Var.getContext();
         sk0 sk0Var = h60Var.K;
         i10 = ((f3) h60Var).currentAccount;
-        k0 k0Var = new k0(context, null, sk0Var, (c) view, null, 0.0f, 0.0f, o0Var, i10, 1, false);
-        k0.B = k0Var;
-        k0Var.i.setTag(R.id.parent_tag, 1);
-        h60Var.container.addView(k0Var.i);
-        k0Var.s = true;
-        k0Var.y = System.currentTimeMillis();
+        i0 i0Var = new i0(context, null, sk0Var, (c) view, null, 0.0f, 0.0f, m0Var, i10, 1, false);
+        i0.B = i0Var;
+        i0Var.i.setTag(R.id.parent_tag, 1);
+        h60Var.container.addView(i0Var.i);
+        i0Var.s = true;
+        i0Var.y = System.currentTimeMillis();
     }
 }

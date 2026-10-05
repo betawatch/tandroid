@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r1 implements Runnable {
     public final /* synthetic */ int a;
@@ -181,7 +181,7 @@ public final /* synthetic */ class r1 implements Runnable {
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.c;
                 AndroidUtilities.addToClipboard(strArr[0]);
-                org.telegram.messenger.ok.o(R.string.LinkCopied, new org.telegram.ui.Components.yc(f3Var.topBulletinContainer, d6Var));
+                org.telegram.messenger.bi.n(R.string.LinkCopied, new org.telegram.ui.Components.yc(f3Var.topBulletinContainer, d6Var));
                 return;
             case 8:
                 sa.W((sa) this.d, (org.telegram.ui.ActionBar.b2) this.b, (TLRPC.User) this.c);
@@ -220,7 +220,7 @@ public final /* synthetic */ class r1 implements Runnable {
                 j90Var.setLink(tL_chatInviteExported != null ? tL_chatInviteExported.link : null);
                 return;
             case 12:
-                ((va1) this.d).showDialog(me.B0((Context) this.b, (org.telegram.ui.ActionBar.d6) this.c, false));
+                ((ta1) this.d).showDialog(me.I((Context) this.b, (org.telegram.ui.ActionBar.d6) this.c, false));
                 return;
             case 13:
                 me meVar = (me) this.d;
@@ -351,7 +351,7 @@ public final /* synthetic */ class r1 implements Runnable {
                     while (true) {
                         if (i13 < i11) {
                             String str11 = strArr2[i13];
-                            if (lowerCase2.startsWith(str11) || org.telegram.messenger.f0.w(" ", str11, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str11) || org.telegram.messenger.f0.w(" ", str11, translitString2)))) {
+                            if (lowerCase2.startsWith(str11) || org.telegram.messenger.bi.u(" ", str11, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str11) || org.telegram.messenger.bi.u(" ", str11, translitString2)))) {
                                 arrayList = arrayList3;
                                 r32 = 1;
                             } else {
@@ -383,7 +383,7 @@ public final /* synthetic */ class r1 implements Runnable {
                                 if (r32 == 1) {
                                     arrayList5.add(AndroidUtilities.generateSearchName(chat.title, null, str11));
                                 } else {
-                                    arrayList5.add(AndroidUtilities.generateSearchName(t8.b.i("@", str10), null, "@" + str11));
+                                    arrayList5.add(AndroidUtilities.generateSearchName(sa.e.i("@", str10), null, "@" + str11));
                                 }
                                 arrayList4.add(chat);
                             } else {

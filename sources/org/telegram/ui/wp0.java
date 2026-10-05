@@ -36,7 +36,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class wp0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public final ah.c E;
@@ -63,9 +63,9 @@ public final class wp0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public ValueAnimator Z;
     public final boolean a;
     public boolean a0;
-    public final yh.k5 b;
+    public final yh.l5 b;
     public i0.b b0;
-    public final yh.k5 c;
+    public final yh.l5 c;
     public final pe.b c0;
     public k0 d;
     public final pe.b d0;
@@ -105,16 +105,16 @@ public final class wp0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         cVar4.e = bVar;
         cVar4.d = bVar2;
         this.a = false;
-        yh.t5.y(this.currentAccount, false).V();
-        yh.k5 k5Var = new yh.k5(this.currentAccount, 0L, false);
-        this.b = k5Var;
-        k5Var.f(8, false);
-        k5Var.a();
-        yh.k5 k5Var2 = new yh.k5(this.currentAccount, 0L, false);
-        this.c = k5Var2;
-        k5Var2.f(8, false);
-        k5Var2.f = true;
-        k5Var2.a();
+        yh.u5.y(this.currentAccount, false).V();
+        yh.l5 l5Var = new yh.l5(this.currentAccount, 0L, false);
+        this.b = l5Var;
+        l5Var.f(8, false);
+        l5Var.a();
+        yh.l5 l5Var2 = new yh.l5(this.currentAccount, 0L, false);
+        this.c = l5Var2;
+        l5Var2.f(8, false);
+        l5Var2.f = true;
+        l5Var2.a();
         this.resourceProvider = new g(this, 29);
         this.w = new org.telegram.ui.ActionBar.e5(0, false, false, this.resourceProvider);
         this.x = new org.telegram.ui.ActionBar.e5(0, false, true, this.resourceProvider);
@@ -128,24 +128,24 @@ public final class wp0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         return (tL_emojiStatusCollectible != null) == z10 && tL_emojiStatusCollectible != null && z10 && ((TLRPC.TL_emojiStatusCollectible) emojiStatus).collectible_id == tL_emojiStatusCollectible.collectible_id;
     }
 
-    public static void S(wp0 wp0Var, boolean[] zArr, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, to0 to0Var, yh.a3 a3Var, nf.e eVar) {
+    public static void S(wp0 wp0Var, boolean[] zArr, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, to0 to0Var, yh.b3 b3Var, nf.e eVar) {
         zArr[0] = true;
         eVar.d();
-        yh.t5.x(wp0Var.currentAccount, a3Var.a).h(a3Var.b, tL_starGiftUnique, j3, null, true, new ai.m0(18, eVar, to0Var));
+        yh.u5.x(wp0Var.currentAccount, b3Var.a).h(b3Var.b, tL_starGiftUnique, j3, null, true, new ai.m0(18, eVar, to0Var));
     }
 
     public static void T(wp0 wp0Var, zf.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, to0 to0Var, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift) {
         if (tL_payments_paymentFormStarGift == null) {
             return;
         }
-        yh.a3 a3Var = new yh.a3(bVar, tL_payments_paymentFormStarGift);
+        yh.b3 b3Var = new yh.b3(bVar, tL_payments_paymentFormStarGift);
         StringBuilder sb2 = new StringBuilder();
         sb2.append(tL_starGiftUnique.title);
         sb2.append(" #");
         boolean[] zArr = new boolean[1];
-        yh.c3 c3Var = new yh.c3(wp0Var.getParentActivity(), wp0Var.resourceProvider, tL_starGiftUnique, a3Var, wp0Var.currentAccount, j3, org.telegram.messenger.f0.h(tL_starGiftUnique.num, ',', sb2), false, new vo0(wp0Var, zArr, tL_starGiftUnique, j3, to0Var, 0));
-        c3Var.h.setOnDismissListener(new ei.f0(10, zArr, to0Var));
-        c3Var.b();
+        yh.d3 d3Var = new yh.d3(wp0Var.getParentActivity(), wp0Var.resourceProvider, tL_starGiftUnique, b3Var, wp0Var.currentAccount, j3, org.telegram.messenger.q.h(tL_starGiftUnique.num, ',', sb2), false, new vo0(wp0Var, zArr, tL_starGiftUnique, j3, to0Var, 0));
+        d3Var.h.setOnDismissListener(new ei.f0(10, zArr, to0Var));
+        d3Var.b();
     }
 
     public static int w0(int i10) {
@@ -242,7 +242,7 @@ public final class wp0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                     zbVar.b.setMaxLines(3);
                     a03.b(zbVar, 2750).j();
                 } else {
-                    org.telegram.messenger.f0.p(z11 ? R.string.ChannelProfileColorResetApplied : R.string.UserProfileColorResetApplied, org.telegram.ui.Components.yc.a0(this.H), R.raw.contact_check, 36);
+                    org.telegram.messenger.q.p(z11 ? R.string.ChannelProfileColorResetApplied : R.string.UserProfileColorResetApplied, org.telegram.ui.Components.yc.a0(this.H), R.raw.contact_check, 36);
                 }
             }
             this.H = null;
@@ -382,9 +382,9 @@ public final class wp0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.O.addView(this.Q, w7.z5.c(-1.0f, -1));
         View view = this.O;
         ch.d c10 = this.E.c(view, null, false);
-        c10.x(eh.b.j(this.resourceProvider));
-        c10.z(AndroidUtilities.dp(28.0f));
-        c10.y(AndroidUtilities.dp(5.0f));
+        c10.w(eh.b.j(this.resourceProvider));
+        c10.y(AndroidUtilities.dp(28.0f));
+        c10.x(AndroidUtilities.dp(5.0f));
         view.setBackground(c10);
         w7.b6.b(this.O, 0.02f, 1.5f);
         FrameLayout frameLayout2 = new FrameLayout(context);
@@ -889,7 +889,7 @@ public final class wp0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         to0 to0Var = new to0(this, 1);
         long clientUserId = UserConfig.getInstance(this.currentAccount).getClientUserId();
         zf.b bVar = tL_starGiftUnique.resale_ton_only ? zf.b.b : zf.b.a;
-        yh.t5.x(this.currentAccount, bVar).H(tL_starGiftUnique, clientUserId, null, true, new uo0(this, bVar, tL_starGiftUnique, clientUserId, to0Var));
+        yh.u5.x(this.currentAccount, bVar).H(tL_starGiftUnique, clientUserId, null, true, new uo0(this, bVar, tL_starGiftUnique, clientUserId, to0Var));
     }
 
     public final void z0() {

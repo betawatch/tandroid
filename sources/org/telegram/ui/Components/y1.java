@@ -8,7 +8,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -83,38 +83,38 @@ public final /* synthetic */ class y1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new tj0((ck0) obj, tLObject, i15));
                 break;
             case 12:
-                au0 au0Var = (au0) obj;
-                au0Var.getClass();
-                AndroidUtilities.runOnUIThread(new in0(au0Var, tL_error, tLObject, i13));
+                bu0 bu0Var = (bu0) obj;
+                bu0Var.getClass();
+                AndroidUtilities.runOnUIThread(new in0(bu0Var, tL_error, tLObject, i13));
                 break;
             case 13:
-                AndroidUtilities.runOnUIThread(new in0((qy0) obj, tL_error, tLObject, 11));
+                AndroidUtilities.runOnUIThread(new in0((ry0) obj, tL_error, tLObject, 11));
                 break;
             case 14:
-                AndroidUtilities.runOnUIThread(new cy0(tLObject, (Utilities.Callback) obj, i15));
+                AndroidUtilities.runOnUIThread(new dy0(tLObject, (Utilities.Callback) obj, i15));
                 break;
             case 15:
-                v31 v31Var = (v31) obj;
+                w31 w31Var = (w31) obj;
                 if (tLObject != null) {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                    MessagesController.getInstance(v31Var.b).processUpdates(updates, false);
+                    MessagesController.getInstance(w31Var.b).processUpdates(updates, false);
                     if (!updates.chats.isEmpty()) {
-                        AndroidUtilities.runOnUIThread(new uo0(12, v31Var, updates), 1000L);
+                        AndroidUtilities.runOnUIThread(new vo0(12, w31Var, updates), 1000L);
                         break;
                     }
                 }
                 break;
             case 16:
-                AndroidUtilities.runOnUIThread(new uo0(i14, (t41) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new vo0(i14, (u41) obj, tLObject));
                 break;
             case 17:
-                b61 b61Var = (b61) obj;
-                b61Var.getClass();
-                AndroidUtilities.runOnUIThread(new in0(b61Var, tL_error, tLObject, i14));
+                c61 c61Var = (c61) obj;
+                c61Var.getClass();
+                AndroidUtilities.runOnUIThread(new in0(c61Var, tL_error, tLObject, i14));
                 break;
             default:
                 int i17 = UndoView.e0;
-                AndroidUtilities.runOnUIThread(new uo0(18, (UndoView) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new vo0(18, (UndoView) obj, tLObject));
                 break;
         }
     }

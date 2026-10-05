@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class b0 extends o6.a {
     public static final Parcelable.Creator<b0> CREATOR = new r0(0);
@@ -36,12 +36,12 @@ public final class b0 extends o6.a {
     }
 
     public final String toString() {
-        StringBuilder v = a4.a.v("PublicKeyCredentialUserEntity{\n id=", u6.b.c(this.a.u()), ", \n name='");
-        v.append(this.b);
-        v.append("', \n icon='");
-        v.append(this.c);
-        v.append("', \n displayName='");
-        return a4.a.s(v, this.d, "'}");
+        StringBuilder w10 = a4.a.w("PublicKeyCredentialUserEntity{\n id=", u6.b.c(this.a.u()), ", \n name='");
+        w10.append(this.b);
+        w10.append("', \n icon='");
+        w10.append(this.c);
+        w10.append("', \n displayName='");
+        return a4.a.t(w10, this.d, "'}");
     }
 
     @Override // android.os.Parcelable

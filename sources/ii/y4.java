@@ -8,7 +8,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class y4 implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
@@ -77,7 +77,7 @@ public final class y4 implements NotificationCenter.NotificationCenterDelegate {
         u uVar = i3Var.a;
         identityHashMap.remove(uVar);
         uVar.a = 3;
-        x3Var.s4(i3Var.b, uVar);
+        x3Var.r4(i3Var.b, uVar);
         x3Var.o3.onContentChanged();
     }
 
@@ -106,10 +106,10 @@ public final class y4 implements NotificationCenter.NotificationCenterDelegate {
         }
         long longValue = ((Long) objArr[3]).longValue();
         uVar.f = ((Float) objArr[4]).floatValue();
-        View B1 = x3Var.B1(aVar);
-        if (B1 instanceof w4) {
-            B1.requestLayout();
-            B1.invalidate();
+        View A1 = x3Var.A1(aVar);
+        if (A1 instanceof w4) {
+            A1.requestLayout();
+            A1.invalidate();
         }
         if (longValue > 0) {
             this.n = true;
@@ -131,8 +131,8 @@ public final class y4 implements NotificationCenter.NotificationCenterDelegate {
             uVar.l = 0;
             uVar.m = 0;
             uVar.f = 0.0f;
-            x3Var.p4(aVar);
-            x3Var.N4(i3Var.b, uVar, str, true, uVar.j, uVar.k, ceil);
+            x3Var.o4(aVar);
+            x3Var.M4(i3Var.b, uVar, str, true, uVar.j, uVar.k, ceil);
         }
     }
 }

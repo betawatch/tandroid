@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.y5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class f extends View implements y5 {
     public ah.e a;
@@ -28,12 +28,12 @@ public final class f extends View implements y5 {
 
     public final void b(ah.c cVar, dh.e eVar) {
         ch.d c10 = cVar.c(this, null, false);
-        c10.x(eVar);
+        c10.w(eVar);
         ah.e eVar2 = new ah.e(c10);
         this.a = eVar2;
         eVar2.b(-AndroidUtilities.dp(30.0f), true);
         ch.d c11 = cVar.c(this, null, false);
-        c11.x(eVar);
+        c11.w(eVar);
         ah.e eVar3 = new ah.e(c11);
         this.b = eVar3;
         eVar3.b(AndroidUtilities.dp(30.0f), true);

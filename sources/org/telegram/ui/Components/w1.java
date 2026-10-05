@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w1 implements cd0, org.telegram.ui.ActionBar.a2, d5, ImageReceiver.ImageReceiverDelegate, GenericProvider {
     public final /* synthetic */ int a;
@@ -146,7 +146,7 @@ public final /* synthetic */ class w1 implements cd0, org.telegram.ui.ActionBar.
             case 17:
                 return String.format("%02d", Integer.valueOf(i10));
             case 18:
-                return hg.k0.h(i10, "");
+                return hg.c.h(i10, "");
             case 19:
                 return String.format("%02d", Integer.valueOf(i10));
             case 20:
@@ -154,7 +154,7 @@ public final /* synthetic */ class w1 implements cd0, org.telegram.ui.ActionBar.
             case 21:
                 return i10 == 0 ? LocaleController.getString(R.string.ShortMessageLifetimeForever) : (i10 < 1 || i10 >= 16) ? i10 == 16 ? LocaleController.formatTTLString(30) : i10 == 17 ? LocaleController.formatTTLString(60) : i10 == 18 ? LocaleController.formatTTLString(3600) : i10 == 19 ? LocaleController.formatTTLString(86400) : i10 == 20 ? LocaleController.formatTTLString(604800) : "" : LocaleController.formatTTLString(i10);
             case 23:
-                return hg.k0.h(i10, "");
+                return hg.c.h(i10, "");
         }
     }
 

@@ -5,15 +5,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.bp0;
+import org.telegram.ui.Components.cp0;
 import org.telegram.ui.Components.f60;
 import org.telegram.ui.Components.hb0;
 import org.telegram.ui.Components.tr;
+import org.telegram.ui.a51;
 import org.telegram.ui.c51;
-import org.telegram.ui.e51;
 import org.telegram.ui.zi0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         ViewGroup viewGroup;
-        c51 c51Var;
+        a51 a51Var;
         switch (this.a) {
             case 0:
                 db dbVar = (db) this.c;
@@ -137,21 +137,21 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
                 zi0Var.G.invalidate();
                 break;
             case 10:
-                e51 e51Var = (e51) this.c;
-                e51Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                e51Var.b.invalidate();
-                e51Var.c.invalidate();
-                if (e51Var.S) {
-                    e51Var.N.invalidate();
+                c51 c51Var = (c51) this.c;
+                c51Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c51Var.b.invalidate();
+                c51Var.c.invalidate();
+                if (c51Var.S) {
+                    c51Var.N.invalidate();
                 }
-                e51Var.e();
-                TextView textView = e51Var.y;
+                c51Var.e();
+                TextView textView = c51Var.y;
                 if (textView != null) {
-                    textView.setAlpha(e51Var.s);
+                    textView.setAlpha(c51Var.s);
                 }
-                if (!e51Var.S && (c51Var = e51Var.N) != null && c51Var.getSeekBarWaveform() != null) {
-                    bp0 seekBarWaveform = e51Var.N.getSeekBarWaveform();
-                    seekBarWaveform.L = (this.b ? tr.g : tr.i).getInterpolation(Utilities.clamp(e51Var.s * 1.25f, 1.0f, 0.0f));
+                if (!c51Var.S && (a51Var = c51Var.N) != null && a51Var.getSeekBarWaveform() != null) {
+                    cp0 seekBarWaveform = c51Var.N.getSeekBarWaveform();
+                    seekBarWaveform.L = (this.b ? tr.g : tr.i).getInterpolation(Utilities.clamp(c51Var.s * 1.25f, 1.0f, 0.0f));
                     org.telegram.ui.Cells.u1 u1Var2 = seekBarWaveform.n;
                     if (u1Var2 != null) {
                         u1Var2.invalidate();
@@ -169,16 +169,16 @@ public final /* synthetic */ class bb implements ValueAnimator.AnimatorUpdateLis
                 l0Var.b.invalidate();
                 break;
             default:
-                zg.b0 b0Var = (zg.b0) this.c;
-                b0Var.x = null;
-                b0Var.j = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b0Var.k();
-                b0Var.l();
-                b0Var.n.setCustomEmojiEnterProgress(Utilities.clamp(b0Var.j, 1.0f, 0.0f));
-                b0Var.a.invalidate();
-                b0Var.m.invalidateOutline();
-                if (b0Var.w) {
-                    b0Var.j(b0Var.j, this.b);
+                zg.z zVar = (zg.z) this.c;
+                zVar.x = null;
+                zVar.j = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                zVar.k();
+                zVar.l();
+                zVar.n.setCustomEmojiEnterProgress(Utilities.clamp(zVar.j, 1.0f, 0.0f));
+                zVar.a.invalidate();
+                zVar.m.invalidateOutline();
+                if (zVar.w) {
+                    zVar.j(zVar.j, this.b);
                     break;
                 }
                 break;

@@ -11,30 +11,30 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.fs0;
-import org.telegram.ui.Components.x81;
+import org.telegram.ui.Components.gs0;
+import org.telegram.ui.Components.y81;
 import org.telegram.ui.Components.z5;
-import yh.j5;
 import yh.k5;
+import yh.l5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class y1 extends x81 {
+public final class y1 extends y81 {
     public final /* synthetic */ int a;
     public final /* synthetic */ d6 b;
-    public final /* synthetic */ fs0 c;
+    public final /* synthetic */ gs0 c;
 
-    public y1(fs0 fs0Var, int i10, d6 d6Var) {
-        this.c = fs0Var;
+    public y1(gs0 gs0Var, int i10, d6 d6Var) {
+        this.c = gs0Var;
         this.a = i10;
         this.b = d6Var;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final void a(ArrayList arrayList) {
-        fs0 fs0Var = this.c;
-        u1 u1Var = fs0Var.N;
-        j5 j5Var = fs0Var.e;
+        gs0 gs0Var = this.c;
+        u1 u1Var = gs0Var.N;
+        k5 k5Var = gs0Var.e;
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
         int i10 = 0;
@@ -47,9 +47,9 @@ public final class y1 extends x81 {
                 arrayList2.add(num);
             }
         }
-        j5Var.getClass();
+        k5Var.getClass();
         HashMap hashMap = new HashMap();
-        ArrayList arrayList3 = j5Var.e;
+        ArrayList arrayList3 = k5Var.e;
         int size2 = arrayList3.size();
         int i11 = 0;
         while (i11 < size2) {
@@ -73,57 +73,57 @@ public final class y1 extends x81 {
         }
         arrayList3.clear();
         arrayList3.addAll(arrayList4);
-        j5Var.j();
-        o2 currentPage = fs0Var.getCurrentPage();
+        k5Var.j();
+        o2 currentPage = gs0Var.getCurrentPage();
         if (currentPage != null) {
-            int f7 = currentPage.d ? j5Var.f(currentPage.e.d) + 1 : 0;
-            fs0Var.n.e(0.0f, f7, f7);
+            int f7 = currentPage.d ? k5Var.f(currentPage.e.d) + 1 : 0;
+            gs0Var.n.e(0.0f, f7, f7);
         }
         AndroidUtilities.cancelRunOnUIThread(u1Var);
         AndroidUtilities.runOnUIThread(u1Var, 1000L);
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final void b(View view, int i10, int i11) {
-        k5 k5Var;
+        l5 l5Var;
         boolean z10;
-        fs0 fs0Var = this.c;
-        j5 j5Var = fs0Var.e;
+        gs0 gs0Var = this.c;
+        k5 k5Var = gs0Var.e;
         o2 o2Var = (o2) view;
         if (i11 == 0) {
-            k5Var = fs0Var.d;
+            l5Var = gs0Var.d;
             z10 = false;
         } else {
             int i12 = i10 - 1;
             if (i12 < 0) {
-                j5Var.getClass();
-            } else if (i12 < j5Var.d().size()) {
-                k5Var = j5Var.e(((TL_stars.TL_starGiftCollection) j5Var.d().get(i12)).collection_id);
+                k5Var.getClass();
+            } else if (i12 < k5Var.d().size()) {
+                l5Var = k5Var.e(((TL_stars.TL_starGiftCollection) k5Var.d().get(i12)).collection_id);
                 z10 = true;
             }
-            k5Var = null;
+            l5Var = null;
             z10 = true;
         }
         o2Var.d = z10;
-        o2Var.e = k5Var;
-        if (k5Var != null) {
-            k5Var.a();
+        o2Var.e = l5Var;
+        if (l5Var != null) {
+            l5Var.a();
         }
         o2Var.f(false);
         LinearLayout linearLayout = o2Var.E;
         if (linearLayout != null) {
             linearLayout.setVisibility(o2Var.a.e.h() ? 0 : 8);
         }
-        o2Var.setVisibleHeight(fs0Var.Q);
-        o2Var.setHasTabs(!j5Var.d().isEmpty());
+        o2Var.setVisibleHeight(gs0Var.Q);
+        o2Var.setHasTabs(!k5Var.d().isEmpty());
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final boolean c(int i10) {
         return i10 != 0;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final View d(int i10) {
         if (i10 == -1) {
             return null;
@@ -131,12 +131,12 @@ public final class y1 extends x81 {
         return new o2(this.c, this.a, this.b);
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final int e() {
         return this.c.e.d().size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final int f(int i10) {
         if (i10 == 0) {
             return -2;
@@ -144,7 +144,7 @@ public final class y1 extends x81 {
         return ((TL_stars.TL_starGiftCollection) this.c.e.d().get(i10 - 1)).collection_id;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final CharSequence g(int i10) {
         if (i10 == 0) {
             return LocaleController.getString(R.string.Gift2CollectionAll);
@@ -164,7 +164,7 @@ public final class y1 extends x81 {
         return spannableStringBuilder;
     }
 
-    @Override // org.telegram.ui.Components.x81
+    @Override // org.telegram.ui.Components.y81
     public final int h(int i10) {
         return i10 == 0 ? 0 : 1;
     }

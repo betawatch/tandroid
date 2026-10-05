@@ -5,9 +5,9 @@ import android.view.ViewTreeObserver;
 import java.util.ArrayList;
 import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.uq;
-import org.telegram.ui.Components.vo0;
+import org.telegram.ui.Components.wo0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class u2 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -109,15 +109,15 @@ public final class u2 implements View.OnAttachStateChangeListener {
                 }
                 break;
             default:
-                ArrayList arrayList2 = ((yh.j3) this.b).e;
+                ArrayList arrayList2 = ((yh.k3) this.b).e;
                 int size = arrayList2.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList2.get(i10);
                     i10++;
-                    yh.h3 h3Var = (yh.h3) obj;
-                    if (h3Var.c) {
-                        h3Var.d.onAttachedToWindow();
+                    yh.i3 i3Var = (yh.i3) obj;
+                    if (i3Var.c) {
+                        i3Var.d.onAttachedToWindow();
                     }
                 }
                 break;
@@ -190,7 +190,7 @@ public final class u2 implements View.OnAttachStateChangeListener {
                 }
                 break;
             case 9:
-                view.removeCallbacks((Runnable) ((vo0) this.b).a.remove(view));
+                view.removeCallbacks((Runnable) ((wo0) this.b).a.remove(view));
                 view.removeOnAttachStateChangeListener(this);
                 break;
             case 10:
@@ -223,13 +223,13 @@ public final class u2 implements View.OnAttachStateChangeListener {
                 }
                 break;
             default:
-                ArrayList arrayList = ((yh.j3) this.b).e;
+                ArrayList arrayList = ((yh.k3) this.b).e;
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    ((yh.h3) obj).a();
+                    ((yh.i3) obj).a();
                 }
                 break;
         }

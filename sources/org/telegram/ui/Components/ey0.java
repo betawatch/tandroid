@@ -1,83 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.TextView;
-import java.io.Serializable;
-import java.util.HashMap;
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class ey0 implements TextWatcher {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ Serializable c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
+public final class ey0 extends br0 {
+    public final /* synthetic */ ry0 X0;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public ey0(qy0 qy0Var, int[] iArr, TextView textView, EditTextBoldCursor editTextBoldCursor) {
-        this.e = qy0Var;
-        this.c = iArr;
-        this.d = textView;
-        this.b = editTextBoldCursor;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ey0(ry0 ry0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, null, str, false, str2, false, d6Var);
+        this.X0 = ry0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                org.telegram.ui.kn0 kn0Var = (org.telegram.ui.kn0) this.e;
-                String str = (String) this.c;
-                boolean z10 = ((HashMap) this.d) == kn0Var.t1;
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                org.telegram.ui.kn0.J0(kn0Var, editTextBoldCursor, str, editable, z10);
-                int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
-                EditTextBoldCursor editTextBoldCursor2 = kn0Var.Y[intValue];
-                if (intValue == 6) {
-                    kn0Var.Y0(true);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.br0
+    public final void O0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new zm(this, iVar, i10, 20), 100L);
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-                if (((int[]) this.c)[0] == 2) {
-                    ((qy0) this.e).m0((TextView) this.d, this.b.getText().toString(), false);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.br0, org.telegram.ui.ActionBar.f3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        org.telegram.ui.ActionBar.n2 n2Var = this.X0.L;
+        if (n2Var instanceof org.telegram.ui.yn) {
+            AndroidUtilities.requestAdjustResize(n2Var.getParentActivity(), n2Var.getClassGuid());
+            if (((org.telegram.ui.yn) n2Var).W.getVisibility() == 0) {
+                n2Var.getFragmentView().requestLayout();
+            }
         }
-    }
-
-    public ey0(org.telegram.ui.kn0 kn0Var, EditTextBoldCursor editTextBoldCursor, String str, HashMap hashMap) {
-        this.e = kn0Var;
-        this.b = editTextBoldCursor;
-        this.c = str;
-        this.d = hashMap;
-    }
-
-    private final void a(Editable editable) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

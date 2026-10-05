@@ -1,88 +1,66 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class ce1 implements org.telegram.ui.Components.rk0 {
-    public final /* synthetic */ yn a;
-    public final /* synthetic */ MessageObject b;
-    public final /* synthetic */ org.telegram.ui.Components.sk0 c;
-    public final /* synthetic */ ge1 d;
+public final class ce1 extends org.telegram.ui.Cells.u1 {
+    public final Path Ge;
+    public final Paint He;
+    public final /* synthetic */ int Ie;
+    public final /* synthetic */ int Je;
+    public final /* synthetic */ int Ke;
+    public final /* synthetic */ ee1 Le;
 
-    public ce1(ge1 ge1Var, yn ynVar, MessageObject messageObject, org.telegram.ui.Components.sk0 sk0Var) {
-        this.d = ge1Var;
-        this.a = ynVar;
-        this.b = messageObject;
-        this.c = sk0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ce1(ee1 ee1Var, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11, int i12, int i13) {
+        super(context, i10, false, null, d6Var);
+        this.Le = ee1Var;
+        this.Ie = i11;
+        this.Je = i12;
+        this.Ke = i13;
+        this.Ge = new Path();
+        this.He = new Paint(1);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:9:0x005f  */
-    @Override // org.telegram.ui.Components.rk0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void h(View view, zg.o0 o0Var, boolean z10, boolean z11) {
-        float f7;
-        zg.p0 p0Var;
-        zg.m0 m10;
-        float f10;
-        int i10;
-        float f11;
-        int id2 = this.b.getId();
-        yn ynVar = this.a;
-        org.telegram.ui.Cells.a0 q82 = ynVar.q8(id2, true);
-        float f12 = 0.0f;
-        if (q82 instanceof org.telegram.ui.Cells.u1) {
-            zg.p0 p0Var2 = ((org.telegram.ui.Cells.u1) q82).N;
-            zg.m0 m11 = p0Var2.m(o0Var);
-            if (m11 == null) {
-                f11 = 0.0f;
-                f7 = f11;
-                ynVar.Za(q82, this.b, this.c, view, f12, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
-                this.d.c(false);
-            }
-            f12 = p0Var2.c + m11.x + (m11.A / 2.0f);
-            f10 = p0Var2.d + m11.y;
-            i10 = m11.B;
-        } else if (!(q82 instanceof org.telegram.ui.Cells.w0) || (m10 = (p0Var = ((org.telegram.ui.Cells.w0) q82).C0).m(o0Var)) == null) {
-            f7 = 0.0f;
-            ynVar.Za(q82, this.b, this.c, view, f12, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
-            this.d.c(false);
-        } else {
-            f12 = p0Var.c + m10.x + (m10.A / 2.0f);
-            f10 = p0Var.d + m10.y;
-            i10 = m10.B;
-        }
-        f11 = f10 + (i10 / 2.0f);
-        f7 = f11;
-        ynVar.Za(q82, this.b, this.c, view, f12, f7, o0Var, false, (o0Var == null && o0Var.a) ? true : z10, z11, false);
-        this.d.c(false);
+    @Override // org.telegram.ui.Cells.u1
+    public final void Y1(Canvas canvas) {
+        this.i6 = 0;
+        this.j6 = this.Y5.size() - 1;
+        super.Y1(canvas);
     }
 
-    @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ boolean j() {
-        return true;
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        int O2 = O2(this.Ie);
+        float H2 = H2(O2);
+        float G2 = G2(O2);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getPollButtonsLeft(), H2, getPollButtonsRight(), G2);
+        Path path = this.Ge;
+        path.rewind();
+        path.addRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), Path.Direction.CW);
+        Paint paint = this.He;
+        paint.setColor(0);
+        paint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.i6.l1(this.Le.x * 0.2f, -16777216));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
+        canvas.clipPath(path);
+        S1(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ boolean k() {
-        return false;
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(this.Je, this.Ke);
     }
 
-    @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ boolean p() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ void o() {
-    }
-
-    @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void setPressed(boolean z10) {
     }
 }

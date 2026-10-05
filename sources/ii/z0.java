@@ -7,28 +7,28 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.e71;
 import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class z0 extends f61 {
+public final class z0 extends g61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        f61.setup(new z0());
+        g61.setup(new z0());
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final void bindView(View view, g61 g61Var, boolean z10, u61 u61Var, c71 c71Var) {
+    @Override // org.telegram.ui.Components.g61
+    public final void bindView(View view, h61 h61Var, boolean z10, w61 w61Var, e71 e71Var) {
         MessageObject messageObject;
         u uVar;
         a1 a1Var = (a1) view;
-        a aVar = (a) g61Var.G;
-        s3 s3Var = (s3) g61Var.H;
+        a aVar = (a) h61Var.G;
+        s3 s3Var = (s3) h61Var.H;
         a1Var.a = aVar;
         a1Var.S = s3Var;
         a1Var.M = LocaleController.isRTL;
@@ -75,14 +75,14 @@ public final class z0 extends f61 {
         a1Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.g61
     public final View createView(Context context, zl0 zl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
         a1 a1Var = new a1(context, i10, d6Var);
         a1Var.setBackground(new b2(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.d6, d6Var)));
         return a1Var;
     }
 
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.g61
     public final boolean isClickable() {
         return false;
     }

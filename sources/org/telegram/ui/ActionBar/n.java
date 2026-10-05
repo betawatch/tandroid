@@ -2,9 +2,9 @@ package org.telegram.ui.ActionBar;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n implements r0.n, li.j {
+public final /* synthetic */ class n implements r0.n, li.m {
     public final /* synthetic */ n2 a;
 
     public /* synthetic */ n(n2 n2Var) {
@@ -16,7 +16,7 @@ public final /* synthetic */ class n implements r0.n, li.j {
         return this.a.onInsetsInternal(view, l1Var);
     }
 
-    @Override // li.j
+    @Override // li.m
     public int f() {
         n2 n2Var = this.a;
         n2Var.getClass();

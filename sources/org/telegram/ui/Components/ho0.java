@@ -4,7 +4,7 @@ import android.content.Context;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ho0 extends i40 {
     public final /* synthetic */ org.telegram.ui.dy c0;
@@ -15,10 +15,10 @@ public final class ho0 extends i40 {
         this.c0 = dyVar;
     }
 
-    @Override // org.telegram.ui.Components.u61
+    @Override // org.telegram.ui.Components.w61
     public final void N(boolean z10) {
         super.N(z10);
-        do0 do0Var = this.c0.t0;
+        do0 do0Var = this.c0.u0;
         do0Var.e(false, z10);
         do0Var.d.setText(LocaleController.getString(R.string.NoResult));
         do0Var.e.setVisibility(8);

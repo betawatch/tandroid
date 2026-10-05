@@ -31,7 +31,7 @@ import w7.sa;
 import w7.ua;
 import y8.k0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -141,7 +141,7 @@ public final /* synthetic */ class v implements Runnable {
                 jVar.a(hVar, iVar.a);
                 return;
             case 1:
-                super/*c5.c*/.c((a4.m) this.c, (org.telegram.messenger.c0) this.d);
+                super/*c5.c*/.c((a4.m) this.c, (org.telegram.messenger.d0) this.d);
                 return;
             case 2:
                 super/*c5.c*/.a((i) this.d, (j) this.c);
@@ -257,7 +257,7 @@ public final /* synthetic */ class v implements Runnable {
                     }
                 } catch (IOException | OutOfMemoryError | RuntimeException e10) {
                     Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e10);
-                    throw new RuntimeException(t8.b.i("Unable to write bitmap to file ", str3), e10);
+                    throw new RuntimeException(sa.e.i("Unable to write bitmap to file ", str3), e10);
                 }
             case 12:
                 b();

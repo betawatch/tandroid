@@ -15,14 +15,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e11;
-import org.telegram.ui.Components.fx0;
+import org.telegram.ui.Components.f11;
+import org.telegram.ui.Components.gx0;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class n0 {
     public final u1 a;
@@ -35,7 +35,7 @@ public final class n0 {
     public final Drawable h;
     public final Paint i;
     public final Paint j;
-    public final e11 k;
+    public final f11 k;
     public boolean l;
     public boolean m;
     public final zc n;
@@ -79,7 +79,7 @@ public final class n0 {
         if (c(this.o) == null) {
             this.k = null;
         } else {
-            this.k = new e11(hg.k0.h(i11, "+"), 9.33f, AndroidUtilities.bold());
+            this.k = new f11(hg.c.h(i11, "+"), 9.33f, AndroidUtilities.bold());
         }
     }
 
@@ -120,7 +120,7 @@ public final class n0 {
                 CharSequence charSequence = this.e;
                 this.f = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i10).setMaxLines(2).setEllipsize(TextUtils.TruncateAt.END).setBreakStrategy(0).setAlignment(Layout.Alignment.ALIGN_CENTER).build();
             } else {
-                this.f = fx0.c(this.e, textPaint, i10, Layout.Alignment.ALIGN_CENTER, 0.0f, false, TextUtils.TruncateAt.END, i10 - AndroidUtilities.dp(16.0f), 2, false);
+                this.f = gx0.c(this.e, textPaint, i10, Layout.Alignment.ALIGN_CENTER, 0.0f, false, TextUtils.TruncateAt.END, i10 - AndroidUtilities.dp(16.0f), 2, false);
             }
         }
         if (this.f != null) {
@@ -137,15 +137,15 @@ public final class n0 {
             this.f.draw(canvas);
             canvas.restore();
         }
-        e11 e11Var = this.k;
-        if (e11Var != null) {
-            e11Var.p = i10 - AndroidUtilities.dp(32.0f);
+        f11 f11Var = this.k;
+        if (f11Var != null) {
+            f11Var.p = i10 - AndroidUtilities.dp(32.0f);
             Drawable drawable = this.h;
-            float l4 = (f10 - (e11Var.l() + AndroidUtilities.dp(drawable != null ? 17.0f : 8.0f))) / 2.0f;
+            float l4 = (f10 - (f11Var.l() + AndroidUtilities.dp(drawable != null ? 17.0f : 8.0f))) / 2.0f;
             float dp = AndroidUtilities.dp(54.0f) + AndroidUtilities.dp(4.165f);
             boolean z10 = this.g;
             if (drawable != null) {
-                drawable.setBounds((int) ((z10 ? e11Var.l() + AndroidUtilities.dp(1.33f) : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) ok.b(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z10 ? AndroidUtilities.dp(1.33f) + e11Var.l() : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) a4.a.e(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp));
+                drawable.setBounds((int) ((z10 ? f11Var.l() + AndroidUtilities.dp(1.33f) : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) bi.b(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z10 ? AndroidUtilities.dp(1.33f) + f11Var.l() : 0.0f) + l4 + AndroidUtilities.dp(3.0f)), (int) a4.a.e(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp));
                 drawable.draw(canvas);
             }
             this.k.c(l4 + AndroidUtilities.dp(!z10 ? 12.66f : 4.0f), dp, f7, -1, canvas);
@@ -195,7 +195,7 @@ public final class n0 {
         if (c(tLObject) == null) {
             this.k = null;
         } else {
-            this.k = new e11(c(tLObject), 9.33f, AndroidUtilities.bold());
+            this.k = new f11(c(tLObject), 9.33f, AndroidUtilities.bold());
         }
     }
 }

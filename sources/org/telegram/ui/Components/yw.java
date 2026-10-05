@@ -31,7 +31,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yw implements Runnable {
     public final /* synthetic */ int a;
@@ -121,7 +121,7 @@ public final /* synthetic */ class yw implements Runnable {
                                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = stickerSets.get(i17);
                                             if (tL_messages_stickerSet3 != null && (stickerSet2 = tL_messages_stickerSet3.set) != null && stickerSet2.title != null && (arrayList5 = tL_messages_stickerSet3.documents) != null && !arrayList5.isEmpty() && !hashSet.contains(Long.valueOf(tL_messages_stickerSet3.set.id))) {
                                                 String translitSafe2 = AndroidUtilities.translitSafe(tL_messages_stickerSet3.set.title.toLowerCase());
-                                                if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.f0.w(" ", translitSafe, translitSafe2)) {
+                                                if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.bi.u(" ", translitSafe, translitSafe2)) {
                                                     arrayList6.add(new gy(tL_messages_stickerSet3, tL_messages_stickerSet3.documents));
                                                     hashSet.add(Long.valueOf(tL_messages_stickerSet3.set.id));
                                                 }
@@ -134,7 +134,7 @@ public final /* synthetic */ class yw implements Runnable {
                                             TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i18);
                                             if (stickerSetCovered != null && (stickerSet = stickerSetCovered.set) != null && stickerSet.title != null && !hashSet.contains(Long.valueOf(stickerSet.id))) {
                                                 String translitSafe3 = AndroidUtilities.translitSafe(stickerSetCovered.set.title.toLowerCase());
-                                                if (translitSafe3.startsWith(translitSafe) || org.telegram.messenger.f0.w(" ", translitSafe, translitSafe3)) {
+                                                if (translitSafe3.startsWith(translitSafe) || org.telegram.messenger.bi.u(" ", translitSafe, translitSafe3)) {
                                                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
                                                         arrayList4 = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
                                                     } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
@@ -182,7 +182,7 @@ public final /* synthetic */ class yw implements Runnable {
                                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = stickerSets.get(i17);
                                             if (tL_messages_stickerSet3 != null && (stickerSet2 = tL_messages_stickerSet3.set) != null && stickerSet2.title != null && (arrayList5 = tL_messages_stickerSet3.documents) != null && !arrayList5.isEmpty() && !hashSet.contains(Long.valueOf(tL_messages_stickerSet3.set.id))) {
                                                 String translitSafe2 = AndroidUtilities.translitSafe(tL_messages_stickerSet3.set.title.toLowerCase());
-                                                if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.f0.w(" ", translitSafe, translitSafe2)) {
+                                                if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.bi.u(" ", translitSafe, translitSafe2)) {
                                                     arrayList6.add(new gy(tL_messages_stickerSet3, tL_messages_stickerSet3.documents));
                                                     hashSet.add(Long.valueOf(tL_messages_stickerSet3.set.id));
                                                 }
@@ -195,7 +195,7 @@ public final /* synthetic */ class yw implements Runnable {
                                             TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i18);
                                             if (stickerSetCovered != null && (stickerSet = stickerSetCovered.set) != null && stickerSet.title != null && !hashSet.contains(Long.valueOf(stickerSet.id))) {
                                                 String translitSafe3 = AndroidUtilities.translitSafe(stickerSetCovered.set.title.toLowerCase());
-                                                if (translitSafe3.startsWith(translitSafe) || org.telegram.messenger.f0.w(" ", translitSafe, translitSafe3)) {
+                                                if (translitSafe3.startsWith(translitSafe) || org.telegram.messenger.bi.u(" ", translitSafe, translitSafe3)) {
                                                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
                                                         arrayList4 = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
                                                     } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
@@ -328,7 +328,7 @@ public final /* synthetic */ class yw implements Runnable {
                     break;
                 } else {
                     ArrayList arrayList6 = y50Var2.A0;
-                    arrayList6.add((Bitmap) hg.k0.g(1, arrayList6));
+                    arrayList6.add((Bitmap) hg.c.g(1, arrayList6));
                     break;
                 }
             case 13:

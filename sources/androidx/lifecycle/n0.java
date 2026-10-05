@@ -5,7 +5,7 @@ import android.os.Bundle;
 import java.lang.reflect.Constructor;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class n0 implements s0 {
     public final Application a;
@@ -33,7 +33,7 @@ public final class n0 implements s0 {
     }
 
     @Override // androidx.lifecycle.s0
-    public final p0 D(Class cls, v1.b bVar) {
+    public final p0 H(Class cls, v1.b bVar) {
         q0 q0Var = q0.b;
         LinkedHashMap linkedHashMap = (LinkedHashMap) bVar.a;
         String str = (String) linkedHashMap.get(q0Var);
@@ -49,7 +49,7 @@ public final class n0 implements s0 {
         Application application = (Application) linkedHashMap.get(q0.a);
         boolean isAssignableFrom = a.class.isAssignableFrom(cls);
         Constructor a2 = (!isAssignableFrom || application == null) ? o0.a(o0.b, cls) : o0.a(o0.a, cls);
-        return a2 == null ? this.b.D(cls, bVar) : (!isAssignableFrom || application == null) ? o0.b(cls, a2, j0.c(bVar)) : o0.b(cls, a2, application, j0.c(bVar));
+        return a2 == null ? this.b.H(cls, bVar) : (!isAssignableFrom || application == null) ? o0.b(cls, a2, j0.c(bVar)) : o0.b(cls, a2, application, j0.c(bVar));
     }
 
     /* JADX WARN: Multi-variable type inference failed */

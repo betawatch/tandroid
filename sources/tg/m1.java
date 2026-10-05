@@ -70,10 +70,10 @@ import org.telegram.ui.yn;
 import w7.b6;
 import w7.z5;
 import xh.q1;
-import yh.i7;
-import yh.t5;
+import yh.j7;
+import yh.u5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class m1 extends cb implements NotificationCenter.NotificationCenterDelegate {
     public static f1 G0;
@@ -283,7 +283,7 @@ public class m1 extends cb implements NotificationCenter.NotificationCenterDeleg
             s.j(i10, null, new b1(this, 0));
         }
         if (i11 == 0 || i11 == 2) {
-            t5.y(i10, false).V();
+            u5.y(i10, false).V();
         }
     }
 
@@ -373,11 +373,11 @@ public class m1 extends cb implements NotificationCenter.NotificationCenterDeleg
                 if (h1Var != null) {
                     AndroidUtilities.hideKeyboard(h1Var.getEditText());
                 }
-                i7 i7Var = new i7(m1Var.getContext(), d6Var, user, new a1(m1Var, 11));
+                j7 j7Var = new j7(m1Var.getContext(), d6Var, user, new a1(m1Var, 11));
                 if (!AndroidUtilities.isTablet()) {
-                    i7Var.makeAttached(m1Var.attachedFragment);
+                    j7Var.makeAttached(m1Var.attachedFragment);
                 }
-                i7Var.show();
+                j7Var.show();
                 return;
             }
             if (i10 == 0 || i10 == 2) {
@@ -451,12 +451,12 @@ public class m1 extends cb implements NotificationCenter.NotificationCenterDeleg
             MessagesStorage.getInstance(m1Var.currentAccount).updateUserInfo(userFull, false);
         }
         if (tL_error == null || (str = tL_error.text) == null || !str.startsWith("FLOOD_WAIT_")) {
-            org.telegram.messenger.f0.p(R.string.UnknownError, new yc(frameLayout, m1Var.resourcesProvider), R.raw.error, 36);
+            org.telegram.messenger.q.p(R.string.UnknownError, new yc(frameLayout, m1Var.resourcesProvider), R.raw.error, 36);
         } else if (m1Var.getContext() != null) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(m1Var.getContext(), 0, m1Var.resourcesProvider);
             alertDialog$Builder.a.R = LocaleController.getString(R.string.PrivacyBirthdayTooOftenTitle);
             alertDialog$Builder.a.T = LocaleController.getString(R.string.PrivacyBirthdayTooOftenMessage);
-            org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
+            org.telegram.messenger.q.o(R.string.OK, alertDialog$Builder, null);
         }
     }
 

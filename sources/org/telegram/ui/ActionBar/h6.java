@@ -29,7 +29,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.pc0;
 import org.telegram.ui.Components.v9;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class h6 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -206,7 +206,7 @@ public final class h6 implements NotificationCenter.NotificationCenterDelegate {
     public static void c(h6 h6Var, SharedPreferences sharedPreferences) {
         ArrayList arrayList = h6Var.b0;
         if (arrayList == null || arrayList.isEmpty()) {
-            h6Var.r(sharedPreferences, null, a4.a.s(new StringBuilder(), h6Var.a, "_owp"));
+            h6Var.r(sharedPreferences, null, a4.a.t(new StringBuilder(), h6Var.a, "_owp"));
             return;
         }
         int size = h6Var.b0.size();
@@ -215,7 +215,7 @@ public final class h6 implements NotificationCenter.NotificationCenterDelegate {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(h6Var.a);
             sb2.append("_");
-            h6Var.r(sharedPreferences, f6Var, a4.a.n(f6Var.a, "_owp", sb2));
+            h6Var.r(sharedPreferences, f6Var, a4.a.o(f6Var.a, "_owp", sb2));
         }
     }
 
@@ -442,13 +442,13 @@ public final class h6 implements NotificationCenter.NotificationCenterDelegate {
     }
 
     public final String j(f6 f6Var, boolean z10) {
-        String n10;
+        String o9;
         if (f6Var == null) {
             f6Var = k(false);
         }
         if (f6Var == null) {
             StringBuilder sb2 = new StringBuilder();
-            sb2.append(z10 ? a4.a.s(new StringBuilder(), this.a, "_wp_o") : a4.a.s(new StringBuilder(), this.a, "_wp"));
+            sb2.append(z10 ? a4.a.t(new StringBuilder(), this.a, "_wp_o") : a4.a.t(new StringBuilder(), this.a, "_wp"));
             sb2.append(Utilities.random.nextInt());
             sb2.append(".jpg");
             return sb2.toString();
@@ -458,14 +458,14 @@ public final class h6 implements NotificationCenter.NotificationCenterDelegate {
             StringBuilder sb4 = new StringBuilder();
             sb4.append(this.a);
             sb4.append("_");
-            n10 = a4.a.n(f6Var.a, "_wp_o", sb4);
+            o9 = a4.a.o(f6Var.a, "_wp_o", sb4);
         } else {
             StringBuilder sb5 = new StringBuilder();
             sb5.append(this.a);
             sb5.append("_");
-            n10 = a4.a.n(f6Var.a, "_wp", sb5);
+            o9 = a4.a.o(f6Var.a, "_wp", sb5);
         }
-        sb3.append(n10);
+        sb3.append(o9);
         sb3.append(Utilities.random.nextInt());
         sb3.append(".jpg");
         return sb3.toString();

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ks {
     public final org.telegram.ui.Cells.s2 a;
@@ -36,7 +36,7 @@ public final class ks {
                 break;
             }
             js jsVar = (js) arrayList.get(i11);
-            dp = org.telegram.messenger.ok.y(4.0f, jsVar.e, dp);
+            dp = org.telegram.messenger.bi.y(4.0f, jsVar.e, dp);
             if (dp < 0) {
                 break;
             }
@@ -56,13 +56,13 @@ public final class ks {
             if (jsVar2 == null || jsVar2.a != size) {
                 js jsVar3 = new js();
                 jsVar3.a = size;
-                e11 e11Var = new e11(hg.k0.h(size, "+"), 10.0f, AndroidUtilities.bold());
-                e11Var.s(this.a);
-                jsVar3.c = e11Var;
+                f11 f11Var = new f11(hg.c.h(size, "+"), 10.0f, AndroidUtilities.bold());
+                f11Var.s(this.a);
+                jsVar3.c = f11Var;
                 int dp2 = AndroidUtilities.dp(9.32f);
-                e11 e11Var2 = jsVar3.c;
-                jsVar3.e = dp2 + ((int) e11Var2.c);
-                e11Var2.j();
+                f11 f11Var2 = jsVar3.c;
+                jsVar3.e = dp2 + ((int) f11Var2.c);
+                f11Var2.j();
                 jsVar3.d = org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.n8, false);
                 this.d = jsVar3;
             }

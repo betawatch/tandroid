@@ -6,7 +6,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements OnSuccessListener, OnFailureListener, d6.h {
     public final /* synthetic */ u a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public void i(d6.f fVar, int i10) {
+    public void j(d6.f fVar, int i10) {
         g6.b bVar = u.i;
         bVar.b("onSessionEnded with error = %d", Integer.valueOf(i10));
         u uVar = this.a;
@@ -69,19 +69,38 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void j(d6.f fVar) {
+    public /* bridge */ /* synthetic */ void k(d6.f fVar) {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void k(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void l(d6.f fVar, int i10) {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void l(d6.f fVar) {
+    public /* bridge */ /* synthetic */ void n(d6.f fVar) {
+    }
+
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public void onFailure(Exception exc) {
+        u uVar = this.a;
+        uVar.getClass();
+        g6.b bVar = u.i;
+        Log.w(bVar.a, bVar.d("Fail to store SessionState", new Object[0]), exc);
+        uVar.b(100);
+    }
+
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public void onSuccess(Object obj) {
+        u uVar = this.a;
+        uVar.h = (c6.r) obj;
+        c0.i iVar = uVar.g;
+        if (iVar != null) {
+            iVar.a();
+        }
     }
 
     @Override // d6.h
-    public void n(d6.f fVar, String str) {
+    public void p(d6.f fVar, String str) {
         c6.k kVar;
         g6.b bVar = u.i;
         u uVar = this.a;
@@ -112,26 +131,7 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
         uVar.c();
     }
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        u uVar = this.a;
-        uVar.getClass();
-        g6.b bVar = u.i;
-        Log.w(bVar.a, bVar.d("Fail to store SessionState", new Object[0]), exc);
-        uVar.b(100);
-    }
-
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public void onSuccess(Object obj) {
-        u uVar = this.a;
-        uVar.h = (c6.r) obj;
-        c0.i iVar = uVar.g;
-        if (iVar != null) {
-            iVar.a();
-        }
-    }
-
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void p(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void s(d6.f fVar, int i10) {
     }
 }

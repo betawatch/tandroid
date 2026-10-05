@@ -21,7 +21,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ca implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -273,7 +273,7 @@ public final /* synthetic */ class ca implements RequestDelegate {
                 TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = (TL_stats.TL_loadAsyncGraph) obj;
                 if (tLObject instanceof TL_stats.TL_statsGraph) {
                     try {
-                        bVar = va1.c0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), 1, false);
+                        bVar = ta1.c0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), 1, false);
                     } catch (JSONException e7) {
                         e7.printStackTrace();
                     }
@@ -285,17 +285,17 @@ public final /* synthetic */ class ca implements RequestDelegate {
             case 25:
                 ej0 ej0Var = (ej0) obj3;
                 String str4 = (String) obj2;
-                ua1 ua1Var = (ua1) obj;
+                sa1 sa1Var = (sa1) obj;
                 if (tLObject instanceof TL_stats.TL_statsGraph) {
                     try {
-                        bVar = va1.c0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), ej0Var.r.i, false);
+                        bVar = ta1.c0(new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data), ej0Var.r.i, false);
                     } catch (JSONException e10) {
                         e10.printStackTrace();
                     }
                 } else if (tLObject instanceof TL_stats.TL_statsGraphError) {
                     Toast.makeText(ej0Var.getContext(), ((TL_stats.TL_statsGraphError) tLObject).error, 1).show();
                 }
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.bo0(ej0Var, bVar, str4, ua1Var, 24));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.bo0(ej0Var, bVar, str4, sa1Var, 24));
                 break;
             case 26:
                 AndroidUtilities.runOnUIThread(new f90((ak0) obj3, (TLRPC.TL_contacts_importedContacts) tLObject, (TLRPC.TL_inputPhoneContact) obj2, tL_error, (TLRPC.TL_contacts_importContacts) obj));

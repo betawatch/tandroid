@@ -2,7 +2,7 @@ package w7;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class g9 {
     public static void a(z3.d dVar, int i10, e2.h hVar) {
@@ -26,11 +26,11 @@ public abstract class g9 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void b(z3.d dVar, z3.m mVar, e2.h hVar) {
+    public static void b(z3.d dVar, z3.l lVar, e2.h hVar) {
         int c10;
         boolean z10;
         int i10;
-        long j3 = mVar.a;
+        long j3 = lVar.a;
         if (j3 == -9223372036854775807L) {
             c10 = 0;
         } else {
@@ -46,14 +46,14 @@ public abstract class g9 {
             List z11 = dVar.z(j3);
             long m10 = dVar.m(c10);
             if (!z11.isEmpty()) {
-                long j10 = mVar.a;
+                long j10 = lVar.a;
                 if (j10 < m10) {
                     hVar.accept(new z3.a(j10, m10 - j10, z11));
                     z10 = true;
                     for (i10 = c10; i10 < dVar.G(); i10++) {
                         a(dVar, i10, hVar);
                     }
-                    if (mVar.b) {
+                    if (lVar.b) {
                         return;
                     }
                     if (z10) {
@@ -73,7 +73,7 @@ public abstract class g9 {
         z10 = false;
         while (i10 < dVar.G()) {
         }
-        if (mVar.b) {
+        if (lVar.b) {
         }
     }
 }

@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class m1 extends View implements Drawable.Callback, org.telegram.ui.Cells.p9 {
     public final t70 a;
@@ -117,7 +117,7 @@ public final class m1 extends View implements Drawable.Callback, org.telegram.ui
             int dp2 = size - AndroidUtilities.dp(54);
             TL_iv.pageBlockDetails pageblockdetails2 = this.h;
             g4 g4Var = this.b;
-            b3 p5 = i4.p(t70Var, this, null, richText, dp2, 0, pageblockdetails2, (g4Var == null || !g4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.fx0.a(), 0, this.b);
+            b3 p5 = i4.p(t70Var, this, null, richText, dp2, 0, pageblockdetails2, (g4Var == null || !g4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.gx0.a(), 0, this.b);
             this.c = p5;
             if (p5 != null) {
                 dp = Math.max(dp, this.c.d.getHeight() + AndroidUtilities.dp(21.0f));

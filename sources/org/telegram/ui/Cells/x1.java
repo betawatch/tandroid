@@ -10,10 +10,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ah0;
 import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.l71;
 import org.telegram.ui.jc0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class x1 extends org.telegram.ui.Components.p6 {
     public final /* synthetic */ int s;
@@ -59,7 +59,7 @@ public final class x1 extends org.telegram.ui.Components.p6 {
                 canvas.translate(AndroidUtilities.dp(15.0f), 0.0f);
                 super.onDraw(canvas);
                 canvas.translate(((getMeasuredWidth() - d()) / 2.0f) - AndroidUtilities.dp(30.0f), AndroidUtilities.dp(11.0f));
-                ((k71) this.v).b.draw(canvas);
+                ((l71) this.v).b.draw(canvas);
                 canvas.restore();
                 break;
             case 3:
@@ -120,10 +120,10 @@ public final class x1 extends org.telegram.ui.Components.p6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(k71 k71Var, Context context) {
+    public x1(l71 l71Var, Context context) {
         super(context, true, true, true);
         this.s = 2;
-        this.v = k71Var;
+        this.v = l71Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

@@ -14,7 +14,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class k20 extends LinearLayout {
     public final ci.d a;
@@ -31,7 +31,7 @@ public final class k20 extends LinearLayout {
         if (!AndroidUtilities.isTablet()) {
             addView(w9Var, w7.z5.q(110, 110, 49));
         }
-        TextView f7 = org.telegram.messenger.f0.f(context, 1, 20.0f);
+        TextView f7 = org.telegram.messenger.q.f(context, 1, 20.0f);
         com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.i6.G6, null, false, f7, 1);
         f7.setText(LocaleController.getString(R.string.GalleryAccessAllowAccess));
         f7.setTypeface(AndroidUtilities.bold());

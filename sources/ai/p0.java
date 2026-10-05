@@ -9,7 +9,7 @@ import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -53,7 +53,7 @@ public final /* synthetic */ class p0 implements Runnable {
                     d dVar = new d();
                     long j3 = this.c;
                     long j10 = this.b;
-                    new yh.m7(context, dVar, j10, 17, "", new a3.g0(o1Var, j3, tL_textWithEntities, j10, 1), o1Var.M).show();
+                    new yh.n7(context, dVar, j10, 17, "", new a3.g0(o1Var, j3, tL_textWithEntities, j10, 1), o1Var.M).show();
                     break;
                 }
                 break;
@@ -81,7 +81,7 @@ public final /* synthetic */ class p0 implements Runnable {
                 org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.f;
                 org.telegram.ui.ActionBar.d6 d6Var2 = (org.telegram.ui.ActionBar.d6) this.h;
                 int i11 = this.d;
-                yh.o g10 = yh.o.g(i11);
+                yh.p g10 = yh.p.g(i11);
                 long j13 = this.b;
                 g10.f(context2, j13, this.c, new ei.r3(f3VarArr, context2, i11, j13, d6Var2, 2));
                 break;

@@ -1,64 +1,102 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.WindowInsets;
+import android.widget.Toast;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class up0 implements li.i, r0.n, org.telegram.ui.ActionBar.l1, li.j {
+public final /* synthetic */ class up0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zq0 b;
+    public final /* synthetic */ br0 b;
 
-    public /* synthetic */ up0(zq0 zq0Var, int i10) {
+    public /* synthetic */ up0(br0 br0Var, int i10) {
         this.a = i10;
-        this.b = zq0Var;
+        this.b = br0Var;
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        WindowInsets g10 = l1Var.g();
-        zq0 zq0Var = this.b;
-        zq0Var.processLegacyContainerInsets(g10);
-        i0.b f7 = l1Var.a.f(519);
-        if (!zq0Var.G0.equals(f7)) {
-            zq0Var.G0 = f7;
-            zq0Var.container.requestLayout();
-        }
-        return r0.l1.b;
-    }
-
-    @Override // li.j
-    public int f() {
-        zq0 zq0Var = this.b;
-        zq0Var.getClass();
-        return zq0Var.getThemedColor(org.telegram.ui.ActionBar.i6.d6);
-    }
-
-    @Override // li.i
-    public void k(int i10) {
-        zq0.m(this.b, i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.l1
-    public void o(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.n1 n1Var;
-        org.telegram.ui.ActionBar.n1 n1Var2;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
+            case 0:
+                this.b.S0(true);
+                break;
+            case 1:
+                br0 br0Var = this.b;
+                br0Var.e0.a(!r0.a.q, true);
+                br0Var.W0();
+                break;
             case 2:
-                zq0 zq0Var = this.b;
-                zq0Var.getClass();
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var = zq0Var.J0) != null && n1Var.isShowing()) {
-                    zq0Var.J0.d(true);
-                    break;
+                br0 br0Var2 = this.b;
+                org.telegram.ui.ActionBar.n1 n1Var = br0Var2.J0;
+                if (n1Var != null && n1Var.isShowing()) {
+                    br0Var2.J0.d(true);
+                }
+                br0Var2.S0(false);
+                break;
+            case 3:
+                br0 br0Var3 = this.b;
+                org.telegram.ui.ActionBar.n1 n1Var2 = br0Var3.J0;
+                if (n1Var2 != null && n1Var2.isShowing()) {
+                    br0Var3.J0.d(true);
+                }
+                br0Var3.S0(true);
+                break;
+            case 4:
+                br0 br0Var4 = this.b;
+                String[] strArr = br0Var4.o0;
+                if (br0Var4.U.m() == 0) {
+                    if (br0Var4.n0 || strArr[0] != null) {
+                        br0Var4.dismiss();
+                        PhotoViewer.t1().G0(true, false);
+                        if (strArr[0] != null || !br0Var4.l0) {
+                            br0Var4.getContext();
+                            br0Var4.J0();
+                            break;
+                        } else {
+                            br0Var4.m0 = true;
+                            Toast.makeText(br0Var4.getContext(), LocaleController.getString(R.string.Loading), 0).show();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 5:
+                br0 br0Var5 = this.b;
+                String[] strArr2 = br0Var5.o0;
+                if (br0Var5.U.m() == 0) {
+                    if (br0Var5.n0 || strArr2[0] != null) {
+                        br0Var5.dismiss();
+                        if (strArr2[0] != null || !br0Var5.l0) {
+                            br0Var5.getContext();
+                            br0Var5.J0();
+                            break;
+                        } else {
+                            br0Var5.m0 = true;
+                            Toast.makeText(br0Var5.getContext(), LocaleController.getString(R.string.Loading), 0).show();
+                            break;
+                        }
+                    }
                 }
                 break;
             default:
-                zq0 zq0Var2 = this.b;
-                zq0Var2.getClass();
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (n1Var2 = zq0Var2.J0) != null && n1Var2.isShowing()) {
-                    zq0Var2.J0.d(true);
-                    break;
+                br0 br0Var6 = this.b;
+                String[] strArr3 = br0Var6.o0;
+                if (br0Var6.U.m() == 0) {
+                    if (br0Var6.n0 || strArr3[0] != null) {
+                        br0Var6.dismiss();
+                        if (strArr3[0] != null || !br0Var6.l0) {
+                            br0Var6.getContext();
+                            br0Var6.J0();
+                            break;
+                        } else {
+                            br0Var6.m0 = true;
+                            Toast.makeText(br0Var6.getContext(), LocaleController.getString(R.string.Loading), 0).show();
+                            break;
+                        }
+                    }
                 }
                 break;
         }

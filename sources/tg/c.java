@@ -3,11 +3,11 @@ package tg;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.l2;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.va1;
+import org.telegram.ui.ta1;
 import org.telegram.ui.w5;
-import yh.x3;
+import yh.y3;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -30,12 +30,12 @@ public final /* synthetic */ class c implements Runnable {
                 }
                 break;
             default:
-                x3.d2(va1.b0(this.b, true));
+                y3.d2(ta1.b0(this.b, true));
                 break;
         }
     }
 
-    public /* synthetic */ c(x3 x3Var, TLRPC.Chat chat) {
+    public /* synthetic */ c(y3 y3Var, TLRPC.Chat chat) {
         this.b = chat;
     }
 }

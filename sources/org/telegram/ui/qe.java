@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qe implements Runnable {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final /* synthetic */ class qe implements Runnable {
                 ynVar.t7();
                 break;
             case 7:
-                ue1 Z = ue1.Z(-ynVar.R5, 0L);
+                se1 Z = se1.Z(-ynVar.R5, 0L);
                 Z.y = ynVar;
                 ynVar.presentFragment(Z);
                 break;
@@ -200,7 +200,7 @@ public final /* synthetic */ class qe implements Runnable {
                                 View view = (View) u1Var.getParent();
                                 tpVar3.measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
                                 if (i15 > AndroidUtilities.dp(10.0f) + tpVar3.getMeasuredHeight()) {
-                                    int C = org.telegram.messenger.f0.C(6.0f, u1Var.getChecksY(), i15);
+                                    int C = org.telegram.messenger.q.C(6.0f, u1Var.getChecksY(), i15);
                                     int dp = AndroidUtilities.dp(5.0f) + u1Var.getChecksX();
                                     int measuredWidth = view.getMeasuredWidth();
                                     float measuredHeight = C - tpVar3.getMeasuredHeight();

@@ -66,7 +66,7 @@ import org.telegram.ui.tg0;
 import org.telegram.ui.ug0;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.BooleanCallback, cd0, ImageReceiver.ImageReceiverDelegate, d5, ol0, nl0, a2, bd0, jl0, pl0 {
     public final /* synthetic */ int a;
@@ -173,7 +173,7 @@ public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.Bool
         if (rk0Var == null || !(view instanceof qk0)) {
             return false;
         }
-        rk0Var.h(sk0Var, ((qk0) view).e, true, false);
+        rk0Var.i(sk0Var, ((qk0) view).e, true, false);
         return true;
     }
 
@@ -238,7 +238,7 @@ public final /* synthetic */ class s implements e2.m, e2.h, MessagesStorage.Bool
             case 11:
                 ArrayList arrayList = ((LaunchActivity) this.c).d0;
                 if (!arrayList.isEmpty()) {
-                    MessagesController.getInstance(this.b).openByUserName("spambot", (n2) hg.k0.g(1, arrayList), 1);
+                    MessagesController.getInstance(this.b).openByUserName("spambot", (n2) hg.c.g(1, arrayList), 1);
                     break;
                 }
                 break;

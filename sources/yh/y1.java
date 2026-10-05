@@ -1,26 +1,77 @@
 package yh;
 
-import android.content.DialogInterface;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y1 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class y1 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x3 b;
+    public final /* synthetic */ y3 b;
 
-    public /* synthetic */ y1(x3 x3Var, int i10) {
+    public /* synthetic */ y1(y3 y3Var, int i10) {
         this.a = i10;
-        this.b = x3Var;
+        this.b = y3Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        TLRPC.Message message;
         switch (this.a) {
             case 0:
-                this.b.j0.setLoading(false);
+                y3 y3Var = this.b;
+                y3Var.getClass();
+                if (((Boolean) obj).booleanValue()) {
+                    y3Var.skipDismissAnimation();
+                }
+                y3Var.dismiss();
+                break;
+            case 1:
+                TL_stars.starGiftUpgradePreview stargiftupgradepreview = (TL_stars.starGiftUpgradePreview) obj;
+                y3 y3Var2 = this.b;
+                y3Var2.getClass();
+                if (stargiftupgradepreview != null) {
+                    y3Var2.h1 = stargiftupgradepreview.sample_attributes;
+                    y3Var2.i1 = stargiftupgradepreview.prices;
+                    y3Var2.j1 = stargiftupgradepreview.next_prices;
+                    y3Var2.b2();
+                    break;
+                }
+                break;
+            case 2:
+                this.b.dismiss(((Boolean) obj).booleanValue());
                 break;
             default:
-                this.b.j0.setLoading(false);
+                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
+                y3 y3Var3 = this.b;
+                y3Var3.K0 = false;
+                y3Var3.L0 = true;
+                if (savedStarGift != null) {
+                    y3Var3.f1 = Boolean.valueOf(savedStarGift.unsaved);
+                    MessageObject messageObject = y3Var3.E0;
+                    if (messageObject != null && (message = messageObject.messageOwner) != null) {
+                        TLRPC.MessageAction messageAction = message.action;
+                        if (messageAction instanceof TLRPC.TL_messageActionStarGiftUnique) {
+                            TLRPC.TL_messageActionStarGiftUnique tL_messageActionStarGiftUnique = (TLRPC.TL_messageActionStarGiftUnique) messageAction;
+                            boolean z10 = tL_messageActionStarGiftUnique.saved;
+                            boolean z11 = !savedStarGift.unsaved;
+                            if (z10 != z11) {
+                                tL_messageActionStarGiftUnique.saved = z11;
+                            }
+                        } else if (messageAction instanceof TLRPC.TL_messageActionStarGift) {
+                            TLRPC.TL_messageActionStarGift tL_messageActionStarGift = (TLRPC.TL_messageActionStarGift) messageAction;
+                            boolean z12 = tL_messageActionStarGift.saved;
+                            boolean z13 = !savedStarGift.unsaved;
+                            if (z12 != z13) {
+                                tL_messageActionStarGift.saved = z13;
+                            }
+                        }
+                        y3Var3.i2(messageObject, null);
+                        break;
+                    }
+                }
                 break;
         }
     }

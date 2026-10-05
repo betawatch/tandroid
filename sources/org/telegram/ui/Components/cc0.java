@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class cc0 extends FrameLayout {
     public final hc0 E;
@@ -83,7 +83,7 @@ public final class cc0 extends FrameLayout {
     /* JADX WARN: Type inference failed for: r2v74, types: [android.view.View, org.telegram.ui.ActionBar.f1] */
     /* JADX WARN: Type inference failed for: r2v75, types: [android.view.View, org.telegram.ui.ActionBar.f1] */
     /* JADX WARN: Type inference failed for: r33v0, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout, java.lang.Object, org.telegram.ui.Components.cc0] */
-    /* JADX WARN: Type inference failed for: r3v3, types: [android.view.View, android.view.ViewGroup, org.telegram.ui.Components.lw0, org.telegram.ui.y8] */
+    /* JADX WARN: Type inference failed for: r3v3, types: [android.view.View, android.view.ViewGroup, org.telegram.ui.Components.mw0, org.telegram.ui.y8] */
     /* JADX WARN: Type inference failed for: r3v6, types: [ah.c] */
     /* JADX WARN: Type inference failed for: r9v8, types: [android.view.ViewGroup] */
     /*
@@ -164,10 +164,10 @@ public final class cc0 extends FrameLayout {
         this.s = actionBarPopupWindow$ActionBarPopupWindowLayout;
         actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().setOnForegroundOpenFinished(new nb0(this, i11));
         ch.d c10 = ic0Var.G.c(actionBarPopupWindow$ActionBarPopupWindowLayout, null, false);
-        c10.x(eh.b.k(ec0Var));
-        c10.y(AndroidUtilities.dp(8.0f));
+        c10.w(eh.b.k(ec0Var));
+        c10.x(AndroidUtilities.dp(8.0f));
         c10.l.e = true;
-        c10.z(AndroidUtilities.dp(12.0f));
+        c10.y(AndroidUtilities.dp(12.0f));
         actionBarPopupWindow$ActionBarPopupWindowLayout.setBackground(c10);
         addView(actionBarPopupWindow$ActionBarPopupWindowLayout, w7.z5.c(-2.0f, -2));
         if (i10 != 0 || (messages = messagePreviewParams4.replyMessage) == null) {
@@ -1649,15 +1649,15 @@ public final class cc0 extends FrameLayout {
                 r11 = 0;
                 messagePreviewParams2 = messagePreviewParams4;
             } else {
-                LinearLayout f7 = org.telegram.messenger.ok.f(context3, 1);
+                LinearLayout e7 = org.telegram.messenger.bi.e(context3, 1);
                 if (z12) {
-                    linearLayout = f7;
+                    linearLayout = e7;
                     drawable = null;
                     messagePreviewParams3 = messagePreviewParams4;
                     z11 = true;
                 } else {
                     messagePreviewParams3 = messagePreviewParams4;
-                    ?? r92 = f7;
+                    ?? r92 = e7;
                     drawable = null;
                     org.telegram.ui.ActionBar.f1 f1Var6 = new org.telegram.ui.ActionBar.f1(0, context3, ic0Var.F, true, false);
                     f1Var6.g(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back, null);
@@ -3369,7 +3369,7 @@ public final class cc0 extends FrameLayout {
             if (messages == null || i11 == 0 || i11 > messages.previewMessages.size()) {
                 this.R = 0;
             } else {
-                int b10 = org.telegram.messenger.f0.b(4.0f, measuredHeight, 0);
+                int b10 = org.telegram.messenger.q.b(4.0f, measuredHeight, 0);
                 this.R = b10;
                 this.R = Math.min(((ub0Var.getMeasuredHeight() - this.R) + b10) - ((int) ((((AndroidUtilities.displaySize.y - (Build.VERSION.SDK_INT >= 35 ? AndroidUtilities.navigationBarHeight : 0)) * 0.8f) - this.W) - AndroidUtilities.dp(8.0f))), this.R);
             }

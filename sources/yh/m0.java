@@ -1,97 +1,12 @@
 package yh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Path;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class m0 extends u3 {
-    public final float[] A0;
-    public final Path B0;
-    public final float[] C0;
-    public final /* synthetic */ s0 D0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m0(s0 s0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, k0 k0Var, ai.e2 e2Var, ai.e2 e2Var2, ai.e2 e2Var3, ai.e2 e2Var4, ai.e2 e2Var5, ai.e2 e2Var6) {
-        super(context, d6Var, k0Var, e2Var, null, e2Var2, e2Var3, e2Var4, e2Var5, e2Var6);
-        this.D0 = s0Var;
-        this.A0 = new float[3];
-        this.B0 = new Path();
-        this.C0 = new float[8];
-    }
-
-    @Override // yh.u3
-    public final void d(f4.d dVar) {
-        super.d(dVar);
-        this.D0.R(true);
-    }
-
-    @Override // yh.u3, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipPath(this.B0);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // yh.u3
-    public final int getFinalHeight() {
-        return AndroidUtilities.dp(315.0f);
-    }
-
-    @Override // yh.u3
-    public final float getRealHeight() {
-        return AndroidUtilities.dp(315.0f);
-    }
-
-    @Override // yh.u3
-    public final void j(int i10) {
-        s0 s0Var = this.D0;
-        ImageView imageView = s0Var.m0;
-        if (imageView != null && org.telegram.ui.ActionBar.i6.B1(imageView.getBackground(), i10, false)) {
-            s0Var.m0.invalidate();
-        }
-        ImageView imageView2 = s0Var.n0;
-        if (imageView2 != null && org.telegram.ui.ActionBar.i6.B1(imageView2.getBackground(), i10, false)) {
-            s0Var.n0.invalidate();
-        }
-        for (ai.w7 w7Var : s0Var.Z) {
-            Drawable background = w7Var.getBackground();
-            org.telegram.ui.Components.p6 p6Var = (org.telegram.ui.Components.p6) w7Var.d;
-            if (org.telegram.ui.ActionBar.i6.B1(background, i10, false)) {
-                w7Var.invalidate();
-            }
-            int d = i0.a.d(0.33f, i10, -1);
-            float[] fArr = this.A0;
-            Color.colorToHSV(d, fArr);
-            fArr[1] = Math.min(1.0f, fArr[1] * 1.1f);
-            fArr[2] = Math.min(1.0f, fArr[2] * 1.1f);
-            int HSVToColor = Color.HSVToColor(fArr);
-            if (p6Var.getSizeableBackground() instanceof k3) {
-                ((k3) p6Var.getSizeableBackground()).b.setColor(HSVToColor);
-                p6Var.invalidate();
-            } else if (org.telegram.ui.ActionBar.i6.B1(p6Var.getSizeableBackground(), HSVToColor, false)) {
-                p6Var.invalidate();
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        float dp = AndroidUtilities.dp(12.0f);
-        float[] fArr = this.C0;
-        fArr[3] = dp;
-        fArr[2] = dp;
-        fArr[1] = dp;
-        fArr[0] = dp;
-        Path path = this.B0;
-        path.rewind();
-        path.addRoundRect(0.0f, 0.0f, i10, i11, this.C0, Path.Direction.CW);
+public final class m0 extends s4.j {
+    @Override // s4.j
+    public final float A(View view) {
+        return 0.3f;
     }
 }

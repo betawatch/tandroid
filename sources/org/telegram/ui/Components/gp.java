@@ -13,9 +13,9 @@ import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.zi1;
+import org.telegram.ui.xi1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class gp implements vi {
     public final /* synthetic */ pp a;
@@ -42,7 +42,7 @@ public final class gp implements vi {
                 Point realScreenSize = AndroidUtilities.getRealScreenSize();
                 Bitmap loadBitmap = ImageLoader.loadBitmap(str, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
                 loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-                dp dpVar = new dp(new zi1(file, file, ""), loadBitmap, false, 2);
+                dp dpVar = new dp(new xi1(file, file, ""), loadBitmap, false, 2);
                 dpVar.V1 = ppVar.f0;
                 dpVar.F1 = false;
                 dpVar.E1 = false;

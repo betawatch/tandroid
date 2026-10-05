@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oh implements Runnable {
     public final /* synthetic */ int a;
@@ -116,7 +116,7 @@ public final /* synthetic */ class oh implements Runnable {
                     messageObject2 = messageObject4;
                 }
                 ynVar4.pc(messageObject2, true);
-                zg.k0.f();
+                zg.i0.f();
                 break;
             case 9:
                 org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) obj;
@@ -144,23 +144,23 @@ public final /* synthetic */ class oh implements Runnable {
             case 12:
                 to toVar = (to) obj2;
                 toVar.getClass();
-                toVar.presentFragment(va1.b0((TLRPC.Chat) obj, true));
+                toVar.presentFragment(ta1.b0((TLRPC.Chat) obj, true));
                 break;
             case 13:
                 hp hpVar = (hp) obj2;
                 String str2 = (String) obj;
                 TLRPC.TL_channels_checkUsername tL_channels_checkUsername = new TLRPC.TL_channels_checkUsername();
                 tL_channels_checkUsername.username = str2;
-                tL_channels_checkUsername.channel = hpVar.getMessagesController().getInputChannel(hpVar.Z);
-                hpVar.h0 = hpVar.getConnectionsManager().sendRequest(tL_channels_checkUsername, new ca(hpVar, str2, tL_channels_checkUsername, 6), 2);
+                tL_channels_checkUsername.channel = hpVar.getMessagesController().getInputChannel(hpVar.a0);
+                hpVar.i0 = hpVar.getConnectionsManager().sendRequest(tL_channels_checkUsername, new ca(hpVar, str2, tL_channels_checkUsername, 6), 2);
                 break;
             case 14:
                 hp hpVar2 = (hp) obj2;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj;
                 boolean z10 = tL_error2 == null || !tL_error2.text.equals("CHANNELS_ADMIN_PUBLIC_TOO_MUCH");
-                hpVar2.c0 = z10;
-                if (!z10 && hpVar2.getUserConfig().isPremium() && !hpVar2.d0 && hpVar2.x != null) {
-                    hpVar2.d0 = true;
+                hpVar2.d0 = z10;
+                if (!z10 && hpVar2.getUserConfig().isPremium() && !hpVar2.e0 && hpVar2.y != null) {
+                    hpVar2.e0 = true;
                     hpVar2.b0();
                     hpVar2.getConnectionsManager().sendRequest(new TLRPC.TL_channels_getAdminedPublicChannels(), new uo(hpVar2, i12));
                     break;

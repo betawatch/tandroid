@@ -8,12 +8,12 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.a91;
+import org.telegram.ui.Components.b91;
 import org.telegram.ui.Components.cl0;
 import org.telegram.ui.Components.kj0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class l3 extends FrameLayout {
     public final r1 a;
@@ -175,7 +175,7 @@ public final class l3 extends FrameLayout {
                 textView2.setVisibility(0);
                 textView2.setAlpha(0.0f);
                 textView2.setTranslationY(AndroidUtilities.dp(5.0f));
-                textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new a91(this, 13)).start();
+                textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new b91(this, 13)).start();
             }
             this.c = i10;
         }
@@ -205,7 +205,7 @@ public final class l3 extends FrameLayout {
         textView2.setVisibility(0);
         textView2.setAlpha(0.0f);
         textView2.setTranslationY(AndroidUtilities.dp(5.0f));
-        textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new a91(this, 13)).start();
+        textView2.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setListener(new b91(this, 13)).start();
         this.c = i10;
     }
 

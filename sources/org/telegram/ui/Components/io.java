@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class io extends LinearLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -77,7 +77,7 @@ public final class io extends LinearLayout {
         textView3.setMaxWidth(AndroidUtilities.dp(260.0f));
         addView(textView3, w7.z5.t(-2, -2, (i10 != 2 ? LocaleController.isRTL ? 5 : 3 : 1) | 48, 0, 8, 0, i10 != 2 ? 0 : 8));
         for (int i12 = 0; i12 < 4; i12++) {
-            LinearLayout e7 = org.telegram.messenger.f0.e(activity, 0);
+            LinearLayout e7 = org.telegram.messenger.q.e(activity, 0);
             addView(e7, w7.z5.t(-2, -2, LocaleController.isRTL ? 5 : 3, 0, 8, 0, 0));
             ImageView imageView = new ImageView(activity);
             int i13 = org.telegram.ui.ActionBar.i6.ic;

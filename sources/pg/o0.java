@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class o0 implements Runnable {
                 s0Var.c.a(s0Var.h);
                 l2.g gVar = s0Var.a;
                 if (gVar != null) {
-                    gVar.m();
+                    gVar.V();
                     break;
                 }
                 break;
@@ -46,7 +46,7 @@ public final /* synthetic */ class o0 implements Runnable {
                         s0Var.d = i1Var;
                         l2.g gVar2 = s0Var.a;
                         if (gVar2 != null) {
-                            gVar2.m();
+                            gVar2.V();
                             break;
                         }
                     }
@@ -66,7 +66,7 @@ public final /* synthetic */ class o0 implements Runnable {
                     s0Var.d = i1Var;
                     l2.g gVar3 = s0Var.a;
                     if (gVar3 != null) {
-                        gVar3.m();
+                        gVar3.V();
                     }
                     if (s0Var.H) {
                         BotWebViewVibrationEffect.SELECTION_CHANGE.vibrate();

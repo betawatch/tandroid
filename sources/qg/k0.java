@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.vt0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class k0 extends FrameLayout {
     public float a;
@@ -51,7 +51,7 @@ public final class k0 extends FrameLayout {
         float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f), vt0Var.N1);
         if (vt0Var.c2 != null) {
             rect.inset(-AndroidUtilities.dp(4.0f), -AndroidUtilities.dp(4.0f));
-            vt0Var.c2.z(lerp);
+            vt0Var.c2.y(lerp);
             vt0Var.c2.setBounds(rect);
             vt0Var.c2.draw(canvas2);
         } else {
@@ -115,7 +115,7 @@ public final class k0 extends FrameLayout {
             if (j0Var != null && j0Var.getSelectedColorIndex() != 0) {
                 dp = AndroidUtilities.lerp(f11 - AndroidUtilities.dp(3.0f), AndroidUtilities.dp(2.0f) + f11, vt0Var.N1);
             }
-            i1.z1(f7, f10, dp, paint.getColor(), canvas2);
+            i1.y1(f7, f10, dp, paint.getColor(), canvas2);
             if (j0Var != null && j0Var.getSelectedColorIndex() == 0) {
                 paint3.setAlpha((int) (view.getAlpha() * paint3.getAlpha() * vt0Var.N1));
                 canvas2.drawCircle(f7, f10, com.google.android.gms.internal.vision.e2.b(1.0f, vt0Var.N1, paint3.getStrokeWidth() + AndroidUtilities.dp(3.0f), f11), paint3);

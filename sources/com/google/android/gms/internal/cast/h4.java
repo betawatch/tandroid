@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class h4 extends v7.r5 implements i9.w {
     public static final boolean d;
@@ -433,7 +433,7 @@ public abstract class h4 extends v7.r5 implements i9.w {
                 if (isDone()) {
                     throw new TimeoutException(str.concat(" but future completed as timeout expired"));
                 }
-                throw new TimeoutException(a4.a.C(str, " for ", h4Var));
+                throw new TimeoutException(a4.a.D(str, " for ", h4Var));
             }
         } else {
             throw new InterruptedException();

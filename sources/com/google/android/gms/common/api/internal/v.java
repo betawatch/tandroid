@@ -4,16 +4,16 @@ import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.d81;
-import org.telegram.ui.Components.n81;
+import org.telegram.ui.Components.e81;
 import org.telegram.ui.Components.o81;
+import org.telegram.ui.Components.p81;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.du0;
 import org.telegram.ui.nl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class v implements n81 {
+public final class v implements o81 {
     public int a;
     public boolean b;
     public Object c;
@@ -48,7 +48,7 @@ public final class v implements n81 {
 
     public void c(int i10) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        Object obj = o81.f0;
+        Object obj = p81.f0;
         if (i10 == 2) {
             Drawable[] drawableArr = PhotoViewer.U8;
             photoViewer.u0();
@@ -59,8 +59,8 @@ public final class v implements n81 {
             }
             du0 du0Var = photoViewer.f0;
             if (du0Var == null || !du0Var.x) {
-                d81 d81Var = photoViewer.F2;
-                if (d81Var == null || !d81Var.y()) {
+                e81 e81Var = photoViewer.F2;
+                if (e81Var == null || !e81Var.y()) {
                     z10 = false;
                 }
             } else {
@@ -86,7 +86,7 @@ public final class v implements n81 {
         photoViewer.u0();
         int i11 = photoViewer.c2;
         if (i11 == 1 && photoViewer.z2 != null) {
-            Object obj = o81.f0;
+            Object obj = p81.f0;
             if (i10 == 2) {
                 photoViewer.s0();
                 photoViewer.V7 = photoViewer.v8;
@@ -114,11 +114,11 @@ public final class v implements n81 {
 
     public void f(float f7) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        d81 d81Var = photoViewer.F2;
-        if (d81Var == null) {
+        e81 e81Var = photoViewer.F2;
+        if (e81Var == null) {
             return;
         }
-        if (d81Var.y()) {
+        if (e81Var.y()) {
             photoViewer.H2 = false;
             photoViewer.F2.B();
             photoViewer.e0.invalidate();

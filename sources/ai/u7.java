@@ -9,16 +9,16 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ax;
-import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.e11;
 import org.telegram.ui.Components.n00;
 import org.telegram.ui.gn0;
 import org.telegram.ui.gp;
 import org.telegram.ui.nl0;
 import org.telegram.ui.so0;
+import org.telegram.ui.x71;
 import org.telegram.ui.xf0;
-import org.telegram.ui.z71;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class u7 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new f(18));
                 break;
             case 16:
-                int i13 = d11.e;
+                int i13 = e11.e;
                 break;
             case 17:
                 int i14 = xf0.t0;
@@ -93,7 +93,7 @@ public final /* synthetic */ class u7 implements RequestDelegate {
                 List list = so0.g1;
                 break;
             default:
-                int i16 = z71.e;
+                int i16 = x71.e;
                 break;
         }
     }

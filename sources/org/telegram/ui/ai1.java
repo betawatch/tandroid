@@ -1,88 +1,29 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class ai1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mi1 b;
+public final class ai1 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ ki1 a;
 
-    public /* synthetic */ ai1(mi1 mi1Var, int i10) {
-        this.a = i10;
-        this.b = mi1Var;
+    public ai1(ki1 ki1Var) {
+        this.a = ki1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ai.l4 l4Var;
-        ai.l4 l4Var2;
-        switch (this.a) {
-            case 0:
-                mi1 mi1Var = this.b;
-                mi1Var.i1 = null;
-                mi1Var.f1 = 1.0f;
-                mi1Var.Y0 = 0.0f;
-                mi1Var.Z0 = 0.0f;
-                mi1Var.s.invalidate();
-                break;
-            case 1:
-                org.telegram.ui.Components.voip.n2.k().a.setAlpha(1.0f);
-                AndroidUtilities.runOnUIThread(new hz0(this, 25), 200L);
-                break;
-            case 2:
-                mi1 mi1Var2 = this.b;
-                mi1Var2.L0.unlock();
-                mi1Var2.Y.setCornerRadius(-1.0f);
-                mi1Var2.E0 = false;
-                mi1Var2.Y.b0 = false;
-                mi1Var2.q0 = mi1Var2.p0;
-                mi1Var2.H();
-                break;
-            case 3:
-                for (org.telegram.ui.Components.w9 w9Var : this.b.V) {
-                    org.telegram.ui.Components.q5 q5Var = w9Var.e;
-                    if (q5Var != null && (l4Var = q5Var.k) != null) {
-                        l4Var.setAllowStartAnimation(true);
-                        w9Var.e.k.startAnimation();
-                    }
-                }
-                break;
-            case 4:
-                mi1 mi1Var3 = this.b;
-                mi1Var3.B();
-                for (org.telegram.ui.Components.w9 w9Var2 : mi1Var3.V) {
-                    org.telegram.ui.Components.q5 q5Var2 = w9Var2.e;
-                    if (q5Var2 != null && (l4Var2 = q5Var2.k) != null) {
-                        l4Var2.setAllowStartAnimation(false);
-                        w9Var2.e.k.stopAnimation();
-                    }
-                }
-                mi1Var3.R.setVisibility(8);
-                break;
-            case 5:
-                mi1 mi1Var4 = this.b;
-                if (mi1Var4.Z.getTag() == null) {
-                    mi1Var4.Z.setVisibility(8);
-                    break;
-                }
-                break;
-            case 6:
-                mi1 mi1Var5 = this.b;
-                mi1Var5.Y.setTranslationX(0.0f);
-                mi1Var5.Y.setTranslationY(0.0f);
-                mi1Var5.Y.setScaleY(1.0f);
-                mi1Var5.Y.setScaleX(1.0f);
-                mi1Var5.Y.setVisibility(8);
-                break;
-            case 7:
-                this.b.y.setVisibility(8);
-                break;
-            default:
-                this.b.e0.setVisibility(8);
-                break;
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        ki1 ki1Var = this.a;
+        com.google.android.gms.internal.cast.p pVar = ki1Var.l1;
+        if (pVar != null) {
+            pVar.run();
+            ki1Var.l1 = null;
         }
+        AndroidUtilities.runOnUIThread(new hz0(this, 24));
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

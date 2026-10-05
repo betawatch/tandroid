@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class i {
     public CaptureRequest.Builder A;
@@ -933,12 +933,12 @@ public final class i {
         n0 n0Var2 = n0.b;
         if (n0Var == n0Var2 || this.e0) {
             Range o9 = o(rangeArr3, 30);
-            StringBuilder v = a4.a.v("fps selection: id=", str, ", requested=");
-            v.append(n0Var.a);
-            v.append(", mode=REGULAR, range=");
-            v.append(o9);
-            v.append(this.e0 ? ", reason=session-wide fallback" : "");
-            mVar.b(v.toString());
+            StringBuilder w10 = a4.a.w("fps selection: id=", str, ", requested=");
+            w10.append(n0Var.a);
+            w10.append(", mode=REGULAR, range=");
+            w10.append(o9);
+            w10.append(this.e0 ? ", reason=session-wide fallback" : "");
+            mVar.b(w10.toString());
             return new aa.a(n0Var2, o9, lVar, false, 27);
         }
         int i10 = n0Var.a;
@@ -1286,7 +1286,7 @@ public final class i {
                 sb4.append(this.H);
                 sb4.append(", timestampSource=");
                 sb4.append(p() ? "REALTIME" : "UNKNOWN");
-                sb4.append(this.G != this.h ? a4.a.n(this.h.a, ")", new StringBuilder(" (fallback from ")) : "");
+                sb4.append(this.G != this.h ? a4.a.o(this.h.a, ")", new StringBuilder(" (fallback from ")) : "");
                 mVar3.b(sb4.toString());
                 if (l0Var == l0Var5) {
                     if (this.a0) {
@@ -1357,7 +1357,7 @@ public final class i {
             sb42.append(this.H);
             sb42.append(", timestampSource=");
             sb42.append(p() ? "REALTIME" : "UNKNOWN");
-            sb42.append(this.G != this.h ? a4.a.n(this.h.a, ")", new StringBuilder(" (fallback from ")) : "");
+            sb42.append(this.G != this.h ? a4.a.o(this.h.a, ")", new StringBuilder(" (fallback from ")) : "");
             mVar32.b(sb42.toString());
             if (l0Var == l0Var5) {
             }
@@ -1424,7 +1424,7 @@ public final class i {
         sb422.append(this.H);
         sb422.append(", timestampSource=");
         sb422.append(p() ? "REALTIME" : "UNKNOWN");
-        sb422.append(this.G != this.h ? a4.a.n(this.h.a, ")", new StringBuilder(" (fallback from ")) : "");
+        sb422.append(this.G != this.h ? a4.a.o(this.h.a, ")", new StringBuilder(" (fallback from ")) : "");
         mVar322.b(sb422.toString());
         if (l0Var == l0Var5) {
         }

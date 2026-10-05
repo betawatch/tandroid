@@ -17,13 +17,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.s7;
 import org.telegram.ui.Cells.t7;
-import org.telegram.ui.Components.ds0;
+import org.telegram.ui.Components.es0;
 import org.telegram.ui.Components.gl0;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.zl0;
 import s4.c1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public class t extends gl0 {
     public final Context c;
@@ -76,13 +76,13 @@ public class t extends gl0 {
     }
 
     public final boolean L(int i10) {
-        ds0 ds0Var = this.s.W;
+        es0 es0Var = this.s.W;
         d9 d9Var = this.e;
         if (d9Var == null) {
             return false;
         }
         if (d9Var instanceof u8) {
-            TLRPC.User user = MessagesController.getInstance(ds0Var.b).getUser(Long.valueOf(ds0Var.d));
+            TLRPC.User user = MessagesController.getInstance(es0Var.b).getUser(Long.valueOf(es0Var.d));
             return user != null && user.bot && user.bot_has_main_app && user.bot_can_edit;
         }
         if (i10 < 0 || i10 >= d9Var.i.size()) {
@@ -201,22 +201,22 @@ public class t extends gl0 {
             t7Var.f0 = messageObject != null && this.e.m(messageObject.getId());
             t7Var.setReorder(true);
             t7Var.k(messageObject, this == this.f ? uVar.e : uVar.d, false);
-            ds0 ds0Var = uVar.W;
-            if (!ds0Var.G.C1 || messageObject == null) {
+            es0 es0Var = uVar.W;
+            if (!es0Var.G.C1 || messageObject == null) {
                 t7Var.i(false, false);
             } else {
-                t7Var.i(ds0Var.c(messageObject), true);
+                t7Var.i(es0Var.c(messageObject), true);
             }
         }
     }
 
     @Override // s4.h0
     public final c1 x(ViewGroup viewGroup, int i10) {
-        ds0 ds0Var = this.s.W;
+        es0 es0Var = this.s.W;
         if (this.h == null) {
-            this.h = new s7(viewGroup.getContext(), ds0Var.c);
+            this.h = new s7(viewGroup.getContext(), es0Var.c);
         }
-        t7 t7Var = new t7(this.c, this.h, ds0Var.b);
+        t7 t7Var = new t7(this.c, this.h, es0Var.b);
         t7Var.w0 = true;
         t7Var.setGradientView(null);
         t7Var.d0 = true;

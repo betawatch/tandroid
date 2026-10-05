@@ -8,7 +8,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ep implements org.telegram.ui.Components.ml0 {
     public final /* synthetic */ gp a;
@@ -26,12 +26,11 @@ public final class ep implements org.telegram.ui.Components.ml0 {
             return;
         }
         if (tL_username.editable) {
-            View view2 = hpVar.fragmentView;
-            if (view2 instanceof ScrollView) {
-                ((ScrollView) view2).smoothScrollTo(0, hpVar.y.getTop() - AndroidUtilities.dp(128.0f));
+            if (hpVar.fragmentView instanceof ScrollView) {
+                hpVar.a.smoothScrollTo(0, hpVar.E.getTop() - AndroidUtilities.dp(128.0f));
             }
-            hpVar.a.requestFocus();
-            AndroidUtilities.showKeyboard(hpVar.a);
+            hpVar.b.requestFocus();
+            AndroidUtilities.showKeyboard(hpVar.b);
             return;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(gpVar.getContext(), 0, hpVar.getResourceProvider());

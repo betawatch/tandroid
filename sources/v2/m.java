@@ -7,7 +7,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import u2.b1;
 import v7.m7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class m extends a {
     public final int E;
@@ -32,18 +32,18 @@ public final class m extends a {
                 b1Var.z = true;
             }
         }
-        h0 L = aVar.L(this.E);
-        L.b(this.F);
+        h0 K = aVar.K(this.E);
+        K.b(this.F);
         try {
             long open = b0Var.open(this.b.b(this.G));
             if (open != -1) {
                 open += this.G;
             }
             c3.l lVar = new c3.l(this.r, this.G, open);
-            for (int i10 = 0; i10 != -1; i10 = L.a(lVar, ConnectionsManager.DEFAULT_DATACENTER_ID, true)) {
+            for (int i10 = 0; i10 != -1; i10 = K.a(lVar, ConnectionsManager.DEFAULT_DATACENTER_ID, true)) {
                 this.G += i10;
             }
-            L.c(this.h, 1, (int) this.G, 0, null);
+            K.c(this.h, 1, (int) this.G, 0, null);
             m7.a(b0Var);
             this.H = true;
         } catch (Throwable th2) {

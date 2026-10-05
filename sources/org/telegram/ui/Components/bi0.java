@@ -24,7 +24,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class bi0 extends zp implements NotificationCenter.NotificationCenterDelegate {
     public boolean A0;
@@ -44,7 +44,7 @@ public class bi0 extends zp implements NotificationCenter.NotificationCenterDele
     public final float[] O0;
     public ImageLocation P0;
     public ImageLocation Q0;
-    public p71 R0;
+    public q71 R0;
     public MessagesController.DialogPhotos S0;
     public final ArrayList T0;
     public final ArrayList U0;
@@ -239,7 +239,7 @@ public class bi0 extends zp implements NotificationCenter.NotificationCenterDele
         return (ImageLocation) arrayList.get(i10);
     }
 
-    public final boolean H(p71 p71Var, ImageLocation imageLocation, ImageLocation imageLocation2, boolean z10) {
+    public final boolean H(q71 q71Var, ImageLocation imageLocation, ImageLocation imageLocation2, boolean z10) {
         MessagesController.DialogPhotos dialogPhotos;
         MessagesController.DialogPhotos dialogPhotos2;
         if (imageLocation != null && imageLocation2 != null && this.c1 == 0) {
@@ -264,12 +264,12 @@ public class bi0 extends zp implements NotificationCenter.NotificationCenterDele
             if (arrayList.isEmpty()) {
                 this.P0 = imageLocation;
                 this.Q0 = imageLocation2;
-                this.R0 = p71Var;
+                this.R0 = q71Var;
                 this.U0.add(null);
                 this.T0.add(null);
                 arrayList.add(imageLocation);
                 this.Y0.add(imageLocation2);
-                this.Z0.add(p71Var);
+                this.Z0.add(q71Var);
                 this.W0.add(null);
                 this.V0.add(null);
                 this.a1.add(-1);
@@ -681,7 +681,7 @@ public class bi0 extends zp implements NotificationCenter.NotificationCenterDele
                                         TLRPC.VideoSize vectorMarkupVideoSize = FileLoader.getVectorMarkupVideoSize(photo2);
                                         if (vectorMarkupVideoSize != null) {
                                             user3 = user;
-                                            arrayList11.add(new p71(vectorMarkupVideoSize, user != null && user3.premium, 2));
+                                            arrayList11.add(new q71(vectorMarkupVideoSize, user != null && user3.premium, 2));
                                             obj = null;
                                             arrayList9.add(null);
                                             arrayList6.add(null);
@@ -713,7 +713,7 @@ public class bi0 extends zp implements NotificationCenter.NotificationCenterDele
                                     TLRPC.VideoSize vectorMarkupVideoSize2 = FileLoader.getVectorMarkupVideoSize(photo2);
                                     if (vectorMarkupVideoSize2 != null) {
                                         user = user2;
-                                        arrayList11.add(new p71(vectorMarkupVideoSize2, user2 != null && user2.premium, 2));
+                                        arrayList11.add(new q71(vectorMarkupVideoSize2, user2 != null && user2.premium, 2));
                                         z12 = false;
                                         arrayList9.add(null);
                                         arrayList6.add(null);

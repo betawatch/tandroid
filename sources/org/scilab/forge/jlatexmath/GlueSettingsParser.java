@@ -10,7 +10,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class GlueSettingsParser {
     private static final String RESOURCE_NAME = "GlueSettings.xml";
@@ -36,7 +36,7 @@ public class GlueSettingsParser {
 
     private static void checkMapping(Object obj, String str, String str2, String str3) {
         if (obj == null) {
-            throw new XMLResourceParseException(RESOURCE_NAME, str, str2, a.p("has an unknown value '", str3, "'!"));
+            throw new XMLResourceParseException(RESOURCE_NAME, str, str2, a.q("has an unknown value '", str3, "'!"));
         }
     }
 
@@ -49,7 +49,7 @@ public class GlueSettingsParser {
                 str2 = element.getAttribute(strArr[i10]);
                 fArr[i10] = (float) (!str2.equals("") ? Double.parseDouble(str2) : 0.0d);
             } catch (NumberFormatException unused) {
-                throw new XMLResourceParseException(RESOURCE_NAME, "GlueType", strArr[i10], a.p("has an invalid real value '", str2, "'!"));
+                throw new XMLResourceParseException(RESOURCE_NAME, "GlueType", strArr[i10], a.q("has an invalid real value '", str2, "'!"));
             }
         }
         return new Glue(fArr[0], fArr[1], fArr[2], str);

@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class c00 extends org.telegram.ui.ActionBar.n2 {
     public boolean E;
@@ -45,7 +45,7 @@ public final class c00 extends org.telegram.ui.ActionBar.n2 {
     public final bj R;
     public ValueAnimator S;
     public float T;
-    public zb1 a;
+    public xb1 a;
     public b00 b;
     public final MessagesController.DialogFilter c;
     public final TL_chatlists.TL_exportedChatlistInvite d;
@@ -332,15 +332,15 @@ public final class c00 extends org.telegram.ui.ActionBar.n2 {
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false));
-        zb1 zb1Var = new zb1(context, 9, null);
-        this.a = zb1Var;
-        zb1Var.setLayoutManager(new s4.c0(1, false));
+        xb1 xb1Var = new xb1(context, 9, null);
+        this.a = xb1Var;
+        xb1Var.setLayoutManager(new s4.c0(1, false));
         this.a.setVerticalScrollBarEnabled(false);
         frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
-        zb1 zb1Var2 = this.a;
+        xb1 xb1Var2 = this.a;
         b00 b00Var = new b00(this);
         this.b = b00Var;
-        zb1Var2.setAdapter(b00Var);
+        xb1Var2.setAdapter(b00Var);
         this.a.setOnItemClickListener(new i(this, 8));
         MessagesController messagesController = getMessagesController();
         MessagesController.DialogFilter dialogFilter = this.c;
@@ -416,7 +416,7 @@ public final class c00 extends org.telegram.ui.ActionBar.n2 {
         TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite = this.d;
         String string = TextUtils.isEmpty(tL_exportedChatlistInvite == null ? null : tL_exportedChatlistInvite.title) ? LocaleController.getString(R.string.FilterShare) : tL_exportedChatlistInvite.title;
         if (z10) {
-            this.actionBar.H(string, false, 220L, null);
+            this.actionBar.G(string, false, 220L, null);
         } else {
             this.actionBar.setTitle(string);
         }
@@ -450,7 +450,7 @@ public final class c00 extends org.telegram.ui.ActionBar.n2 {
         ArrayList arrayList2 = this.f;
         if (arrayList2.size() > 1) {
             boolean z11 = arrayList.size() >= Math.min(Z(), arrayList2.size());
-            this.P.a(LocaleController.getString(!z11 ? R.string.SelectAll : R.string.DeselectAll), new org.telegram.ui.Components.es0(6, this, z11));
+            this.P.a(LocaleController.getString(!z11 ? R.string.SelectAll : R.string.DeselectAll), new org.telegram.ui.Components.fs0(6, this, z11));
         } else {
             this.P.a("", null);
         }

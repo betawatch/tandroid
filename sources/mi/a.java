@@ -8,7 +8,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import w7.z;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class a extends z {
     public final boolean a;
@@ -109,7 +109,7 @@ public final class a extends z {
             float f20 = fVar.d;
             float f21 = f19 + f20;
             canvas.translate(-f18, -f21);
-            fVar.e.y(canvas, f18, f21, bounds.right + f17, bounds.bottom + f20);
+            fVar.e.v(canvas, f18, f21, bounds.right + f17, bounds.bottom + f20);
             canvas.restore();
             f7 = f14;
             f10 = f15;

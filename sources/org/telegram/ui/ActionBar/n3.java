@@ -26,13 +26,13 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.jk;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class n3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -107,7 +107,7 @@ public final class n3 extends FrameLayout {
         if (size == 0) {
             return;
         }
-        m3 m3Var = (m3) hg.k0.g(1, tabs);
+        m3 m3Var = (m3) hg.c.g(1, tabs);
         LaunchActivity launchActivity = LaunchActivity.G1;
         w3 w3Var = launchActivity == null ? null : launchActivity.y0;
         if (w3Var != null && (valueAnimator = w3Var.d) != null) {
@@ -466,7 +466,7 @@ public final class n3 extends FrameLayout {
             m3 m3Var = tabs.get(i10);
             org.telegram.ui.i4 i4Var = m3Var.J;
             if (i4Var != null && !i4Var.d0.isEmpty()) {
-                Object g10 = hg.k0.g(1, m3Var.J.d0);
+                Object g10 = hg.c.g(1, m3Var.J.d0);
                 if ((g10 instanceof TLRPC.WebPage) && ((TLRPC.WebPage) g10).id == webPage.id) {
                     e(m3Var);
                     return m3Var;
@@ -491,7 +491,7 @@ public final class n3 extends FrameLayout {
                 if (replaceEmoji == null) {
                     k3Var.u = null;
                 } else {
-                    k3Var.u = new e11(replaceEmoji, 17.0f, AndroidUtilities.bold());
+                    k3Var.u = new f11(replaceEmoji, 17.0f, AndroidUtilities.bold());
                 }
             }
             charSequence = replaceEmoji;

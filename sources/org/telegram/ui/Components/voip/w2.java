@@ -18,12 +18,12 @@ import android.widget.TextView;
 import android.widget.ToggleButton;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.a91;
+import org.telegram.ui.Components.b91;
 import org.telegram.ui.Components.da;
 import org.telegram.ui.Components.tr;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class w2 extends FrameLayout {
     public String E;
@@ -118,7 +118,7 @@ public class w2 extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.Q, this.P ? 1.0f : 0.0f);
             this.U = ofFloat;
             ofFloat.addUpdateListener(new v2(this, 0));
-            this.U.addListener(new a91(this, 10));
+            this.U.addListener(new b91(this, 10));
             this.U.setDuration(150L);
             this.U.start();
         }

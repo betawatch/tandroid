@@ -21,34 +21,34 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
-import n7.z0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.a81;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.b81;
 import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.d81;
+import org.telegram.ui.Components.e81;
 import org.telegram.ui.Components.ff0;
 import org.telegram.ui.Components.gf0;
 import org.telegram.ui.Components.lc0;
 import org.telegram.ui.Components.mh0;
-import org.telegram.ui.Components.oq0;
 import org.telegram.ui.Components.r6;
-import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.sg0;
 import org.telegram.ui.Components.tk0;
-import org.telegram.ui.Components.xo0;
+import org.telegram.ui.Components.yo0;
+import org.telegram.ui.Components.yv0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.os0;
+import org.telegram.ui.y61;
 import s4.c1;
 import s4.f1;
 import s4.h1;
 import s4.o0;
 import s4.p0;
-import yh.x3;
+import yh.v7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common.api.internal.s, h1, oq0 {
+public class e implements m.k, yo0, d5, lg.o, b81, com.google.android.gms.common.api.internal.s, h1, yv0, y61 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -185,7 +185,7 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
                 i19 = i20;
             }
             f10 = 0.0f;
-            arrayList2.add((PointF) hg.k0.g(1, arrayList));
+            arrayList2.add((PointF) hg.c.g(1, arrayList));
         }
         float f18 = ((PointF) arrayList2.get(0)).x;
         if (f18 > f10) {
@@ -193,7 +193,7 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
                 arrayList2.add(0, new PointF(i23, 0.0f));
             }
         }
-        float f19 = ((PointF) hg.k0.g(1, arrayList2)).x;
+        float f19 = ((PointF) hg.c.g(1, arrayList2)).x;
         if (f19 < f7) {
             for (int i24 = ((int) f19) + 1; i24 <= 255; i24++) {
                 arrayList2.add(new PointF(i24, 255.0f));
@@ -210,6 +210,14 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
             fArr[i25] = sqrt;
         }
         return fArr;
+    }
+
+    @Override // org.telegram.ui.Components.yv0
+    public void E(boolean z10) {
+        le.b bVar = ((yh.h) this.b).s;
+        if (bVar != null) {
+            bVar.a(z10, true);
+        }
     }
 
     @Override // lg.o
@@ -232,7 +240,7 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
         ((gf0) this.b).c.setAspectLock(z10);
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public void Y(float f7, boolean z10) {
         mg.h hVar = (mg.h) this.b;
         float f10 = hVar.b;
@@ -244,6 +252,13 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
             r6Var.c(null, z11);
         }
         hVar.invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.yv0
+    public float Y0() {
+        i0.b bVar;
+        bVar = ((n2) ((yh.h) this.b)).mSystemInsets;
+        return org.telegram.messenger.q.b(9.0f, ((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2) * 2) + bVar.b, 0);
     }
 
     public n4.a a() {
@@ -301,7 +316,25 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
         return o0.x(view) - ((ViewGroup.MarginLayoutParams) ((p0) view.getLayoutParams())).leftMargin;
     }
 
-    public void g(aa.a aVar) {
+    @Override // org.telegram.ui.Components.yv0
+    public int e1() {
+        i0.b bVar;
+        bVar = ((n2) ((yh.h) this.b)).mSystemInsets;
+        return bVar.d;
+    }
+
+    public void g(za.a0 a0Var) {
+        ((l5.r) ((i5.f) ((pa.b) this.b).get())).a("FIREBASE_APPQUALITY_SESSION", new i5.c("json"), new v7(this, 3)).a(new i5.a(null, a0Var, i5.d.a, null), new j2.e(20));
+    }
+
+    @Override // org.telegram.ui.Components.yo0
+    public CharSequence getContentDescription() {
+        mg.h hVar = (mg.h) this.b;
+        float f7 = hVar.b;
+        return String.valueOf(Math.round((hVar.a.getProgress() * (hVar.c - f7)) + f7));
+    }
+
+    public void h(aa.a aVar) {
         h8.j jVar = (h8.j) this.b;
         jVar.a = aVar;
         Iterator it = jVar.c.iterator();
@@ -312,14 +345,7 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
         jVar.b = null;
     }
 
-    @Override // org.telegram.ui.Components.xo0
-    public CharSequence getContentDescription() {
-        mg.h hVar = (mg.h) this.b;
-        float f7 = hVar.b;
-        return String.valueOf(Math.round((hVar.a.getProgress() * (hVar.c - f7)) + f7));
-    }
-
-    public void h(p4.p pVar, p4.m mVar, Collection collection) {
+    public void i(p4.p pVar, p4.m mVar, Collection collection) {
         p4.e eVar = (p4.e) this.b;
         if (pVar != eVar.y || mVar == null) {
             if (pVar == eVar.e) {
@@ -343,11 +369,11 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
         eVar.y = null;
     }
 
-    public boolean i(int i10, int i11, Bundle bundle) {
+    public boolean j(int i10, int i11, Bundle bundle) {
         return false;
     }
 
-    public void j(c1 c1Var, q0 q0Var, q0 q0Var2) {
+    public void k(c1 c1Var, q0 q0Var, q0 q0Var2) {
         boolean z10;
         c1 T;
         int i10;
@@ -385,21 +411,17 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
         }
     }
 
-    public e k(int i10) {
-        if (i10 == 16) {
-            i10 = 12;
-        }
-        ((AudioAttributes.Builder) this.b).setUsage(i10);
-        return this;
-    }
-
     @Override // s4.h1
     public int l() {
         return ((o0) this.b).D();
     }
 
-    public /* bridge */ void m(int i10) {
-        k(i10);
+    public e m(int i10) {
+        if (i10 == 16) {
+            i10 = 12;
+        }
+        ((AudioAttributes.Builder) this.b).setUsage(i10);
+        return this;
     }
 
     @Override // s4.h1
@@ -418,28 +440,15 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
         }
     }
 
-    public void o(c1 c1Var) {
-        RecyclerView recyclerView = (RecyclerView) this.b;
-        o0 o0Var = recyclerView.x;
-        View view = c1Var.a;
-        of.e eVar = recyclerView.b;
-        la.h hVar = o0Var.a;
-        hh.h hVar2 = (hh.h) hVar.b;
-        int indexOfChild = hVar2.a.indexOfChild(view);
-        if (indexOfChild >= 0) {
-            if (((e6.n) hVar.c).A(indexOfChild)) {
-                hVar.Y(view);
-            }
-            hVar2.a(indexOfChild);
-        }
-        eVar.g(view);
+    public /* bridge */ void o(int i10) {
+        m(i10);
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public void onStateChanged(boolean z10, int i10) {
         tk0 tk0Var = (tk0) this.b;
         if (z10 && tk0Var.n.n() >= 0) {
@@ -454,7 +463,7 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
         }
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
@@ -464,18 +473,26 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
         return ((o0) this.b).q(i10);
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public /* synthetic */ int p0() {
         return 0;
     }
 
-    public Object q() {
-        if (n7.a.b == null) {
-            n7.a.b = new cc.k();
+    public void q(c1 c1Var) {
+        RecyclerView recyclerView = (RecyclerView) this.b;
+        o0 o0Var = recyclerView.x;
+        View view = c1Var.a;
+        of.e eVar = recyclerView.b;
+        la.h hVar = o0Var.a;
+        hh.h hVar2 = (hh.h) hVar.b;
+        int indexOfChild = hVar2.a.indexOfChild(view);
+        if (indexOfChild >= 0) {
+            if (((e6.n) hVar.c).A(indexOfChild)) {
+                hVar.Y(view);
+            }
+            hVar2.a(indexOfChild);
         }
-        synchronized (n7.a.a) {
-        }
-        throw new IllegalStateException("Must call PhenotypeContext.setContext() first");
+        eVar.g(view);
     }
 
     @Override // s4.h1
@@ -495,11 +512,13 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
         }
     }
 
-    @Override // org.telegram.ui.Components.oq0
-    public void x0() {
-        rc k10 = ((x3) this.b).getBulletinFactory().k(false);
-        k10.t = true;
-        k10.j();
+    public Object s() {
+        if (n7.a.b == null) {
+            n7.a.b = new cc.k();
+        }
+        synchronized (n7.a.a) {
+        }
+        throw new IllegalStateException("Must call PhenotypeContext.setContext() first");
     }
 
     public /* synthetic */ e(Object obj, int i10) {
@@ -507,7 +526,7 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public void onRenderedFirstFrame() {
     }
 
@@ -535,40 +554,33 @@ public class e implements m.k, xo0, d5, lg.o, a81, com.google.android.gms.common
             case 25:
                 this.b = new CopyOnWriteArrayList();
                 break;
-            case 27:
-                this.b = new z0[zf.b.values().length];
-                break;
             default:
                 this.b = new AudioAttributes.Builder();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public void B() {
     }
 
-    @Override // org.telegram.ui.Components.oq0
-    public /* synthetic */ void V() {
-    }
-
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
-    @Override // org.telegram.ui.Components.a81
-    public void onError(d81 d81Var, Exception exc) {
+    @Override // org.telegram.ui.Components.b81
+    public void onError(e81 e81Var, Exception exc) {
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
     }
 }

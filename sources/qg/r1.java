@@ -19,7 +19,7 @@ import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.tr;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class r1 extends LinearLayout {
     public final nj0[] a;
@@ -201,7 +201,7 @@ public final class r1 extends LinearLayout {
         float f10 = nj0Var2 != null ? this.n : 0.0f;
         float f11 = 1.0f;
         if (f10 > 0.25f && f10 < 0.75f) {
-            f11 = (f10 <= 0.25f || f10 >= 0.5f) ? org.telegram.messenger.f0.x(0.75f, f10, 0.25f, 1.0f) : (0.5f - f10) / 0.25f;
+            f11 = (f10 <= 0.25f || f10 >= 0.5f) ? org.telegram.messenger.q.x(0.75f, f10, 0.25f, 1.0f) : (0.5f - f10) / 0.25f;
         }
         float dp = (AndroidUtilities.dp(3.0f) * f11) + (Math.min((nj0Var.getWidth() - nj0Var.getPaddingLeft()) - nj0Var.getPaddingRight(), (nj0Var.getHeight() - nj0Var.getPaddingTop()) - nj0Var.getPaddingBottom()) / 2.0f) + AndroidUtilities.dp(3.0f);
         float width = (nj0Var.getWidth() / 2.0f) + nj0Var.getX();

@@ -1,9 +1,9 @@
 package ng;
 
-import org.telegram.ui.yf1;
+import org.telegram.ui.wf1;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final /* synthetic */ class b implements Runnable {
             case 0:
                 yn ynVar = this.b;
                 if (ynVar.getParentLayout() != null) {
-                    yf1.I0(ynVar);
+                    wf1.I0(ynVar);
                     break;
                 }
                 break;

@@ -4,7 +4,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jw implements Runnable {
     public final /* synthetic */ int a;
@@ -73,9 +73,9 @@ public final /* synthetic */ class jw implements Runnable {
                 uy uyVar4 = this.b;
                 uyVar4.e0[0].a.requestLayout();
                 mx mxVar = uyVar4.F3;
-                yf1 yf1Var = (mxVar == null || !(mxVar.getFragment() instanceof yf1)) ? null : (yf1) uyVar4.F3.getFragment();
-                if (yf1Var != null) {
-                    yf1Var.B0();
+                wf1 wf1Var = (mxVar == null || !(mxVar.getFragment() instanceof wf1)) ? null : (wf1) uyVar4.F3.getFragment();
+                if (wf1Var != null) {
+                    wf1Var.B0();
                 }
                 uyVar4.P3(false);
                 uyVar4.b5();

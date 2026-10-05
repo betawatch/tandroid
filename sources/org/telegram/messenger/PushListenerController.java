@@ -11,7 +11,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class PushListenerController {
     public static final int NOTIFICATION_ID = 1;
@@ -19,7 +19,7 @@ public class PushListenerController {
     public static final int PUSH_TYPE_HUAWEI = 13;
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static final class GooglePushListenerServiceProvider implements IPushListenerServiceProvider {
         public static final GooglePushListenerServiceProvider INSTANCE = new GooglePushListenerServiceProvider();
         private Boolean hasServices;
@@ -58,7 +58,7 @@ public class PushListenerController {
                 firebaseMessaging.getClass();
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
                 firebaseMessaging.f.execute(new ci.x8(5, firebaseMessaging, taskCompletionSource));
-                taskCompletionSource.getTask().addOnCompleteListener(new c0(this, 11));
+                taskCompletionSource.getTask().addOnCompleteListener(new d0(this, 11));
             } catch (Throwable th2) {
                 FileLog.e(th2);
             }
@@ -101,7 +101,7 @@ public class PushListenerController {
         }
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public interface IPushListenerServiceProvider {
         String getLogTitle();
 
@@ -112,7 +112,7 @@ public class PushListenerController {
         void onRequestPushToken();
     }
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PushType {
     }
@@ -122,22 +122,50 @@ public class PushListenerController {
         switch (str) {
             case "CHAT_REACT_CONTACT":
                 return LocaleController.formatString(R.string.PushChatReactContact, objArr);
+            case "REACT_WALLET_TONCONNECT_REQUEST":
+                return LocaleController.formatString(R.string.PushReactWalletTonConnectRequest, objArr);
+            case "CHAT_REACT_POLL_APPEND":
+                return LocaleController.formatString(R.string.PushChatReactPollUpdate, objArr);
             case "REACT_GEOLIVE":
                 return LocaleController.formatString(R.string.PushReactGeoLocation, objArr);
+            case "REACT_GAME_SCORE":
+                return LocaleController.formatString(R.string.PushReactGameScore, objArr);
             case "REACT_STORY_HIDDEN":
                 return LocaleController.formatString(R.string.PushReactStoryHidden, objArr);
+            case "CHAT_REACT_TODO_DONE":
+            case "CHAT_REACT_TODO_APPEND":
+                return LocaleController.formatString(R.string.PushChatReactTodoUpdate, objArr);
+            case "REACT_RECURRING_PAY":
+                return LocaleController.formatString(R.string.PushReactRecurringPay, objArr);
+            case "REACT_STARGIFT_UPGRADE":
+                return LocaleController.formatString(R.string.PushReactStarGiftUpgrade, objArr);
             case "REACT_HIDDEN":
                 return LocaleController.formatString(R.string.PushReactHidden, objArr);
             case "CHAT_REACT_NOTEXT":
                 return LocaleController.formatString(R.string.PushChatReactNotext, objArr);
+            case "CHAT_REACT_GAME_SCORE":
+                return LocaleController.formatString(R.string.PushChatReactGameScore, objArr);
             case "REACT_NOTEXT":
                 return LocaleController.formatString(R.string.PushReactNoText, objArr);
+            case "REACT_PHOTO_SECRET":
+                return LocaleController.formatString(R.string.PushReactPhotoSecret, objArr);
+            case "REACT_WALLPAPER":
+                return LocaleController.formatString(R.string.PushReactWallpaper, objArr);
             case "CHAT_REACT_INVOICE":
                 return LocaleController.formatString(R.string.PushChatReactInvoice, objArr);
+            case "CHAT_REACT_NOTHEME":
+            case "CHAT_REACT_THEME":
+                return LocaleController.formatString(R.string.PushChatReactThemeChange, objArr);
             case "REACT_CONTACT":
                 return LocaleController.formatString(R.string.PushReactContect, objArr);
+            case "REACT_STARGIFT_PREPAID_UPGRADE":
+                return LocaleController.formatString(R.string.PushReactStarGiftPrepaidUpgrade, objArr);
             case "CHAT_REACT_STICKER":
                 return LocaleController.formatString(R.string.PushChatReactSticker, objArr);
+            case "REACT_SAME_WALLPAPER":
+                return LocaleController.formatString(R.string.PushReactSameWallpaper, objArr);
+            case "REACT_GRAM_TRANSFER_COMMENT":
+                return LocaleController.formatString(R.string.PushReactGramTransferComment, objArr);
             case "REACT_GAME":
                 return LocaleController.formatString(R.string.PushReactGame, objArr);
             case "REACT_POLL":
@@ -150,12 +178,27 @@ public class PushListenerController {
                 return LocaleController.formatString(R.string.PushReactTodo, objArr);
             case "REACT_INVOICE":
                 return LocaleController.formatString(R.string.PushReactInvoice, objArr);
+            case "REACT_SCREENSHOT":
+                return LocaleController.formatString(R.string.PushReactScreenshot, objArr);
             case "CHAT_REACT_DOC":
                 return LocaleController.formatString(R.string.PushChatReactDoc, objArr);
             case "CHAT_REACT_GEO":
                 return LocaleController.formatString(R.string.PushChatReactGeo, objArr);
             case "CHAT_REACT_GIF":
                 return LocaleController.formatString(R.string.PushChatReactGif, objArr);
+            case "REACT_TODO_DONE":
+            case "REACT_TODO_APPEND":
+                return LocaleController.formatString(R.string.PushReactTodoUpdate, objArr);
+            case "REACT_NOTHEME":
+            case "REACT_THEME":
+            case "REACT_GIFT_THEME":
+                return LocaleController.formatString(R.string.PushReactThemeChange, objArr);
+            case "REACT_GRAM_TRANSFER":
+                return LocaleController.formatString(R.string.PushReactGramTransfer, objArr);
+            case "REACT_STARGIFT_UNPACK_UPGRADE":
+                return LocaleController.formatString(R.string.PushReactStarGiftUnpackUpgrade, objArr);
+            case "REACT_GIFTCODE":
+                return LocaleController.formatString(R.string.PushReactGiftCode, objArr);
             case "REACT_STICKER":
                 return LocaleController.formatString(R.string.PushReactSticker, objArr);
             case "CHAT_REACT_AUDIO":
@@ -164,14 +207,32 @@ public class PushListenerController {
                 return LocaleController.formatString(R.string.PushChatReactPhoto, objArr);
             case "CHAT_REACT_ROUND":
                 return LocaleController.formatString(R.string.PushChatReactRound, objArr);
+            case "CHAT_REACT_STORY":
+                return LocaleController.formatString(R.string.PushChatReactStory, objArr);
             case "CHAT_REACT_VIDEO":
                 return LocaleController.formatString(R.string.PushChatReactVideo, objArr);
             case "CHAT_REACT_GIVEAWAY":
                 return LocaleController.formatString(R.string.NotificationChatReactGiveaway, objArr);
+            case "REACT_UNIQUE_STARGIFT":
+                return LocaleController.formatString(R.string.PushReactUniqueStarGift, objArr);
+            case "REACT_STORY_MENTION":
+                return LocaleController.formatString(R.string.PushReactStoryMention, objArr);
+            case "REACT_GIVEAWAY_STARS":
+                return LocaleController.formatString(R.string.NotificationReactGiveaway, objArr);
             case "REACT_GIVEAWAY":
                 return LocaleController.formatString(R.string.NotificationReactGiveaway, objArr);
+            case "REACT_STARGIFT":
+                return LocaleController.formatString(R.string.PushReactStarGift, objArr);
             case "CHAT_REACT_GEOLIVE":
                 return LocaleController.formatString(R.string.PushChatReactGeoLive, objArr);
+            case "REACT_VIDEO_SECRET":
+                return LocaleController.formatString(R.string.PushReactVideoSecret, objArr);
+            case "REACT_SUGGEST_BIRTHDAY":
+                return LocaleController.formatString(R.string.PushReactSuggestBirthday, objArr);
+            case "REACT_PROXIMITY":
+                return LocaleController.formatString(R.string.PushReactProximity, objArr);
+            case "REACT_PAID_MEDIA":
+                return LocaleController.formatString(R.string.PushReactPaidMedia, objArr);
             case "REACT_AUDIO":
                 return LocaleController.formatString(R.string.PushReactAudio, objArr);
             case "REACT_PHOTO":
@@ -182,6 +243,8 @@ public class PushListenerController {
                 return LocaleController.formatString(R.string.PushReactStory, objArr);
             case "REACT_VIDEO":
                 return LocaleController.formatString(R.string.PushReactVideo, objArr);
+            case "REACT_SUGGEST_USERPIC":
+                return LocaleController.formatString(R.string.PushReactSuggestUserpic, objArr);
             case "REACT_DOC":
                 return LocaleController.formatString(R.string.PushReactDoc, objArr);
             case "REACT_GEO":
@@ -234,9 +297,9 @@ public class PushListenerController {
         	at jadx.core.dex.visitors.typeinference.TypeInferenceVisitor.visit(TypeInferenceVisitor.java:77)
         */
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$processRemoteMessage$6(java.lang.String r72, java.lang.String r73, long r74) {
+    public static /* synthetic */ void lambda$processRemoteMessage$6(java.lang.String r73, java.lang.String r74, long r75) {
         /*
-            Method dump skipped, instructions count: 10296
+            Method dump skipped, instructions count: 10326
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.PushListenerController.lambda$processRemoteMessage$6(java.lang.String, java.lang.String, long):void");
@@ -326,9 +389,9 @@ public class PushListenerController {
         } catch (Throwable unused) {
         }
         if (BuildVars.DEBUG_VERSION) {
-            StringBuilder v = a4.a.v("finished ", str2, " service, time = ");
-            v.append(SystemClock.elapsedRealtime() - elapsedRealtime);
-            FileLog.d(v.toString());
+            StringBuilder w10 = a4.a.w("finished ", str2, " service, time = ");
+            w10.append(SystemClock.elapsedRealtime() - elapsedRealtime);
+            FileLog.d(w10.toString());
         }
     }
 

@@ -5,7 +5,7 @@ import b2.o0;
 import b2.s;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class c implements o0 {
     public final byte[] a;
@@ -51,6 +51,6 @@ public final class c implements o0 {
     }
 
     public final String toString() {
-        return a4.a.n(this.a.length, "\"", a4.a.w("ICY: title=\"", this.b, "\", url=\"", this.c, "\", rawMetadata.length=\""));
+        return a4.a.o(this.a.length, "\"", a4.a.x("ICY: title=\"", this.b, "\", url=\"", this.c, "\", rawMetadata.length=\""));
     }
 }

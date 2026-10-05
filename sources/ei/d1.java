@@ -23,12 +23,12 @@ import org.telegram.ui.ca;
 import org.telegram.ui.dg0;
 import org.telegram.ui.oy;
 import org.telegram.ui.uy;
-import org.telegram.ui.yf1;
+import org.telegram.ui.wf1;
 import org.telegram.ui.yn;
-import yh.m7;
-import yh.t5;
+import yh.n7;
+import yh.u5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d1 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -115,7 +115,7 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
                         }
 
                         @Override // org.telegram.ui.oy
-                        public final boolean u(uy uyVar, ArrayList arrayList2, CharSequence charSequence, boolean z10, boolean z11, int i12, int i13, yf1 yf1Var) {
+                        public final boolean u(uy uyVar, ArrayList arrayList2, CharSequence charSequence, boolean z10, boolean z11, int i12, int i13, wf1 wf1Var) {
                             MessageObject messageObject;
                             TLRPC.TL_forumTopic findTopic;
                             TLRPC.Message message;
@@ -164,11 +164,11 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
                                 q1Var2.c0 = true;
                                 eVar.run(arrayList3.size() > 0 ? null : "USER_DECLINED", arrayList3);
                             }
-                            if (yf1Var == null) {
+                            if (wf1Var == null) {
                                 uyVar.finishFragment();
                                 return true;
                             }
-                            yf1Var.finishFragment();
+                            wf1Var.finishFragment();
                             uyVar.removeSelfFromStack();
                             return true;
                         }
@@ -212,17 +212,17 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
                 }
                 break;
             default:
-                yh.e0 e0Var = (yh.e0) this.d;
+                yh.f0 f0Var = (yh.f0) this.d;
                 Context context = (Context) this.e;
                 d6 d6Var = (d6) this.f;
                 Utilities.Callback callback = (Utilities.Callback) this.h;
-                if (e0Var.s.W) {
+                if (f0Var.s.W) {
                     int i12 = this.c;
                     if (!MessagesController.getInstance(i12).isFrozen()) {
-                        t5 x10 = t5.x(i12, e0Var.H.a);
+                        u5 x10 = u5.x(i12, f0Var.H.a);
                         zf.a l4 = x10.e ? zf.a.l(x10.p()) : null;
-                        if (!e0Var.c && (l4 == null || l4.b < e0Var.H.b)) {
-                            zf.a aVar = e0Var.H;
+                        if (!f0Var.c && (l4 == null || l4.b < f0Var.H.b)) {
+                            zf.a aVar = f0Var.H;
                             zf.b bVar = aVar.a;
                             if (bVar != zf.b.a) {
                                 if (bVar == zf.b.b) {
@@ -232,12 +232,12 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
                             } else {
                                 long a2 = aVar.a();
                                 long j10 = this.b;
-                                new m7(context, d6Var, a2, 13, ng.d.h(i12, j10), null, j10).show();
+                                new n7(context, d6Var, a2, 13, ng.d.h(i12, j10), null, j10).show();
                                 break;
                             }
                         } else {
-                            callback.run(MessageSuggestionParams.of(e0Var.H, e0Var.I));
-                            e0Var.dismiss();
+                            callback.run(MessageSuggestionParams.of(f0Var.H, f0Var.I));
+                            f0Var.dismiss();
                             break;
                         }
                     } else {
@@ -258,8 +258,8 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
         this.c = i10;
     }
 
-    public /* synthetic */ d1(yh.e0 e0Var, yn ynVar, int i10, Context context, d6 d6Var, long j3, Utilities.Callback callback) {
-        this.d = e0Var;
+    public /* synthetic */ d1(yh.f0 f0Var, yn ynVar, int i10, Context context, d6 d6Var, long j3, Utilities.Callback callback) {
+        this.d = f0Var;
         this.c = i10;
         this.e = context;
         this.f = d6Var;

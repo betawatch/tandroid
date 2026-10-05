@@ -48,7 +48,7 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class PopupNotificationActivity extends Activity implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int b0 = 0;
@@ -76,7 +76,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
     public final ArrayList G = new ArrayList();
     public final ArrayList H = new ArrayList();
     public VelocityTracker I = null;
-    public final org.telegram.ui.Components.hx0[] J = new org.telegram.ui.Components.hx0[5];
+    public final org.telegram.ui.Components.ix0[] J = new org.telegram.ui.Components.ix0[5];
     public int L = -1;
     public boolean O = false;
     public MessageObject Q = null;
@@ -606,9 +606,9 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 dh0Var2.r = textPaint;
                 textPaint.setTextSize(AndroidUtilities.dp(16.0f));
                 dh0Var2.K = DownloadController.getInstance(dh0Var2.n).generateObserverTag();
-                org.telegram.ui.Components.to0 to0Var = new org.telegram.ui.Components.to0(dh0Var2);
-                dh0Var2.s = to0Var;
-                to0Var.h = dh0Var2;
+                org.telegram.ui.Components.uo0 uo0Var = new org.telegram.ui.Components.uo0(dh0Var2);
+                dh0Var2.s = uo0Var;
+                uo0Var.h = dh0Var2;
                 org.telegram.ui.Components.li0 li0Var = new org.telegram.ui.Components.li0();
                 li0Var.c = 0.0f;
                 li0Var.f = AndroidUtilities.dp(2.0f);
@@ -1248,25 +1248,25 @@ public class PopupNotificationActivity extends Activity implements NotificationC
             return;
         }
         int i10 = 0;
-        org.telegram.ui.Components.hx0[] hx0VarArr = this.J;
+        org.telegram.ui.Components.ix0[] ix0VarArr = this.J;
         if (!z10) {
             this.e.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (Drawable) null, (Drawable) null);
             this.e.setCompoundDrawablePadding(0);
-            while (i10 < hx0VarArr.length) {
-                hx0VarArr[i10].e();
+            while (i10 < ix0VarArr.length) {
+                ix0VarArr[i10].e();
                 i10++;
             }
             return;
         }
         try {
             Integer printingStringType = MessagesController.getInstance(this.Q.currentAccount).getPrintingStringType(this.Q.getDialogId(), 0L);
-            this.e.setCompoundDrawablesWithIntrinsicBounds(hx0VarArr[printingStringType.intValue()], (Drawable) null, (Drawable) null, (Drawable) null);
+            this.e.setCompoundDrawablesWithIntrinsicBounds(ix0VarArr[printingStringType.intValue()], (Drawable) null, (Drawable) null, (Drawable) null);
             this.e.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
-            while (i10 < hx0VarArr.length) {
+            while (i10 < ix0VarArr.length) {
                 if (i10 == printingStringType.intValue()) {
-                    hx0VarArr[i10].d();
+                    ix0VarArr[i10].d();
                 } else {
-                    hx0VarArr[i10].e();
+                    ix0VarArr[i10].e();
                 }
                 i10++;
             }
@@ -1308,9 +1308,9 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.pushMessagesUpdated);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
         this.K = ConnectionsManager.generateClassGuid();
-        this.J[0] = new org.telegram.ui.Components.e61(false);
+        this.J[0] = new org.telegram.ui.Components.f61(false);
         this.J[1] = new org.telegram.ui.Components.up(false);
-        this.J[2] = new org.telegram.ui.Components.qp0(false);
+        this.J[2] = new org.telegram.ui.Components.rp0(false);
         this.J[3] = new org.telegram.ui.Components.tg0(null, false);
         this.J[4] = new org.telegram.ui.Components.mm0(false);
         y8 y8Var = new y8(this, this, 6);
@@ -1340,7 +1340,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         kVar.setOccupyStatusBar(false);
         this.a.setBackButtonImage(R.drawable.ic_close_white);
         this.a.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.s8, false));
-        this.a.A(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.t8, false), false);
+        this.a.z(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.t8, false), false);
         this.E.addView(this.a);
         ViewGroup.LayoutParams layoutParams = this.a.getLayoutParams();
         layoutParams.width = -1;
@@ -1462,7 +1462,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.PermissionNoAudioWithHint);
         alertDialog$Builder.h(LocaleController.getString(R.string.PermissionOpenSettings), new jl0(this, 8));
-        org.telegram.messenger.f0.o(R.string.OK, alertDialog$Builder, null);
+        org.telegram.messenger.q.o(R.string.OK, alertDialog$Builder, null);
     }
 
     @Override // android.app.Activity
@@ -1510,7 +1510,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         long dialogId = this.Q.getDialogId();
         this.b.a1(this.Q.currentAccount, dialogId);
         if (DialogObject.isEncryptedDialog(dialogId)) {
-            this.M = MessagesController.getInstance(this.Q.currentAccount).getUser(Long.valueOf(org.telegram.messenger.f0.l(MessagesController.getInstance(this.Q.currentAccount), dialogId).user_id));
+            this.M = MessagesController.getInstance(this.Q.currentAccount).getUser(Long.valueOf(org.telegram.messenger.q.l(MessagesController.getInstance(this.Q.currentAccount), dialogId).user_id));
         } else if (DialogObject.isUserDialog(dialogId)) {
             this.M = MessagesController.getInstance(this.Q.currentAccount).getUser(Long.valueOf(dialogId));
         } else if (DialogObject.isChatDialog(dialogId)) {

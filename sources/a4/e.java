@@ -24,9 +24,9 @@ import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.u6;
 import org.telegram.ui.w6;
 import s4.c1;
-import zg.o0;
+import zg.m0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Comparator {
     public final /* synthetic */ int a;
@@ -76,10 +76,10 @@ public final /* synthetic */ class e implements Comparator {
                 int i15 = ba.b.f;
                 return name.substring(0, i15).compareTo(((File) obj2).getName().substring(0, i15));
             case 10:
-                o0 o0Var = (o0) obj2;
-                String str = ((o0) obj).f;
+                m0 m0Var = (m0) obj2;
+                String str = ((m0) obj).f;
                 int i16 = (str == null || !str.equals("❤")) ? 0 : -1;
-                String str2 = o0Var.f;
+                String str2 = m0Var.f;
                 return i16 - ((str2 == null || !str2.equals("❤")) ? 0 : -1);
             case 11:
                 return (int) (((pc) obj2).e - ((pc) obj).e);

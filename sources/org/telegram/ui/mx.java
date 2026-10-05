@@ -6,9 +6,9 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AnimationNotificationsLocker;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class mx extends f41 {
+public final class mx extends d41 {
     public boolean S;
     public ty T;
     public final /* synthetic */ ny U;
@@ -26,7 +26,7 @@ public final class mx extends f41 {
         this.M = true;
     }
 
-    @Override // org.telegram.ui.f41
+    @Override // org.telegram.ui.d41
     public final void d(boolean z10) {
         ty tyVar = this.T;
         tyVar.c.G = true;
@@ -40,7 +40,7 @@ public final class mx extends f41 {
         this.T.a.invalidate();
         this.T.d.l();
         this.T.G.l();
-        this.T.a.A1(null, 0.0f, z10);
+        this.T.a.z1(null, 0.0f, z10);
         uyVar.y = false;
         this.U.requestLayout();
         if (!c()) {
@@ -60,9 +60,9 @@ public final class mx extends f41 {
         uyVar.d5();
     }
 
-    @Override // org.telegram.ui.f41
+    @Override // org.telegram.ui.d41
     public final void e(boolean z10) {
-        li.m mVar;
+        li.p pVar;
         int i10;
         uy uyVar = this.W;
         uyVar.y = true;
@@ -72,8 +72,8 @@ public final class mx extends f41 {
         this.T = tyVar;
         if (tyVar.F == null) {
             tyVar.F = new kx(this.V, null);
-            mVar = ((org.telegram.ui.ActionBar.n2) uyVar).glassEngine;
-            mVar.b(this.T.F);
+            pVar = ((org.telegram.ui.ActionBar.n2) uyVar).glassEngine;
+            pVar.b(this.T.F);
             this.T.F.setLayoutManager(new lx(this, this.T));
             ty tyVar2 = this.T;
             int i11 = this.T.s;
@@ -83,9 +83,9 @@ public final class mx extends f41 {
             i10 = ((org.telegram.ui.ActionBar.n2) uyVar).currentAccount;
             tyVar2.G = new gg.m(uyVar, this.V, i11, i12, z11, arrayList, i10, uyVar.G);
             ty tyVar3 = this.T;
-            gg.m mVar2 = tyVar3.G;
-            mVar2.S = true;
-            tyVar3.F.setAdapter(mVar2);
+            gg.m mVar = tyVar3.G;
+            mVar.S = true;
+            tyVar3.F.setAdapter(mVar);
             ty tyVar4 = this.T;
             tyVar4.addView(tyVar4.F);
         }
@@ -95,9 +95,9 @@ public final class mx extends f41 {
         }
         this.T.a.C0();
         ty tyVar5 = this.T;
-        gg.m mVar3 = tyVar5.G;
-        mVar3.h = tyVar5.s;
-        mVar3.l();
+        gg.m mVar2 = tyVar5.G;
+        mVar2.h = tyVar5.s;
+        mVar2.l();
         ty tyVar6 = this.T;
         tyVar6.d.O(tyVar6.a, false);
         ty tyVar7 = this.T;
@@ -110,14 +110,14 @@ public final class mx extends f41 {
         this.T.G.l();
         float f7 = !z10 ? uyVar.N : -uyVar.N;
         ty tyVar8 = this.T;
-        tyVar8.a.A1(tyVar8.F, f7, false);
+        tyVar8.a.z1(tyVar8.F, f7, false);
         this.T.a.setClipChildren(false);
         this.T.a.C0();
         uyVar.M3();
         uyVar.d5();
     }
 
-    @Override // org.telegram.ui.f41
+    @Override // org.telegram.ui.d41
     public final boolean getOccupyStatusbar() {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
@@ -130,7 +130,7 @@ public final class mx extends f41 {
         return kVar2.getOccupyStatusBar();
     }
 
-    @Override // org.telegram.ui.f41
+    @Override // org.telegram.ui.d41
     public final void setOpenProgress(float f7) {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;

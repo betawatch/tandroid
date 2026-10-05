@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ft;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class j2 {
     public static final HashMap e = new HashMap();
@@ -48,7 +48,7 @@ public final class j2 {
             return;
         }
         if (!richText.texts.isEmpty()) {
-            a((TL_iv.RichText) hg.k0.g(1, richText.texts));
+            a((TL_iv.RichText) hg.c.g(1, richText.texts));
             return;
         }
         if (!(richText instanceof TL_iv.textPlain) || (str = (textplain = (TL_iv.textPlain) richText).text) == null || str.endsWith(" ")) {
@@ -67,7 +67,7 @@ public final class j2 {
             return;
         }
         if (!richText.texts.isEmpty()) {
-            b((TL_iv.RichText) hg.k0.g(1, richText.texts));
+            b((TL_iv.RichText) hg.c.g(1, richText.texts));
             return;
         }
         if (richText instanceof TL_iv.textPlain) {
@@ -282,7 +282,7 @@ public final class j2 {
         }
         if (!richText.texts.isEmpty()) {
             r(richText.texts.get(0));
-            q((TL_iv.RichText) hg.k0.g(1, richText.texts));
+            q((TL_iv.RichText) hg.c.g(1, richText.texts));
             return richText;
         }
         if ((richText instanceof TL_iv.textPlain) && (str = (textplain = (TL_iv.textPlain) richText).text) != null) {
@@ -303,7 +303,7 @@ public final class j2 {
             return;
         }
         if (!richText.texts.isEmpty()) {
-            q((TL_iv.RichText) hg.k0.g(1, richText.texts));
+            q((TL_iv.RichText) hg.c.g(1, richText.texts));
         } else {
             if (!(richText instanceof TL_iv.textPlain) || (str = (textplain = (TL_iv.textPlain) richText).text) == null) {
                 return;
@@ -991,7 +991,7 @@ public final class j2 {
                         break;
                     case 4:
                         if (!arrayList.isEmpty()) {
-                            b((TL_iv.RichText) hg.k0.g(1, arrayList));
+                            b((TL_iv.RichText) hg.c.g(1, arrayList));
                         }
                         richText = l(jSONObject, tL_page);
                         break;
@@ -1002,13 +1002,13 @@ public final class j2 {
                         break;
                     case 6:
                         if (!arrayList.isEmpty()) {
-                            b((TL_iv.RichText) hg.k0.g(1, arrayList));
+                            b((TL_iv.RichText) hg.c.g(1, arrayList));
                             break;
                         }
                         break;
                     case 7:
                         if (!arrayList.isEmpty()) {
-                            a((TL_iv.RichText) hg.k0.g(1, arrayList));
+                            a((TL_iv.RichText) hg.c.g(1, arrayList));
                         }
                         TL_iv.textImage textimage = new TL_iv.textImage();
                         String optString3 = jSONObject.optString("src");

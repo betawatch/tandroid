@@ -12,7 +12,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import v7.m8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class x implements db.v {
     public final of.b a;
@@ -89,7 +89,7 @@ public final class x implements db.v {
                         Method a2 = ib.c.a.a(cls2, field3);
                         ib.c.f(a2);
                         if (a2.getAnnotation(eb.b.class) != null && field3.getAnnotation(eb.b.class) == null) {
-                            throw new db.j(a4.a.p("@SerializedName on ", ib.c.d(a2, r14), " is not supported"));
+                            throw new db.j(a4.a.q("@SerializedName on ", ib.c.d(a2, r14), " is not supported"));
                         }
                         z11 = c11;
                         method = a2;

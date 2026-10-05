@@ -34,7 +34,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class cz extends FrameLayout {
     public org.telegram.ui.Components.u9 a;
@@ -57,15 +57,15 @@ public final class cz extends FrameLayout {
         int i10 = 0;
         setWillNotDraw(false);
         setPadding(0, AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f));
-        LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
-        addView(f7, w7.z5.e(-2, -2, 17));
+        LinearLayout e7 = org.telegram.messenger.bi.e(context, 1);
+        addView(e7, w7.z5.e(-2, -2, 17));
         org.telegram.ui.Cells.w0 w0Var = new org.telegram.ui.Cells.w0(context);
         w0Var.setCustomText(LocaleController.getString(R.string.WidgetPreview));
-        f7.addView(w0Var, w7.z5.t(-2, -2, 17, 0, 0, 0, 4));
+        e7.addView(w0Var, w7.z5.t(-2, -2, 17, 0, 0, 0, 4));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setBackgroundResource(R.drawable.widget_bg);
-        f7.addView(linearLayout, w7.z5.t(-2, -2, 17, 10, 0, 10, 0));
+        e7.addView(linearLayout, w7.z5.t(-2, -2, 17, 10, 0, 10, 0));
         dzVar.d = new ImageView(context);
         int i11 = dzVar.w;
         if (i11 == 0) {
@@ -299,9 +299,9 @@ public final class cz extends FrameLayout {
                                                     } else if (messageObject.isPhoto()) {
                                                         str3 = "🖼 ";
                                                     }
-                                                    StringBuilder u10 = a4.a.u(str3);
-                                                    u10.append((Object) messageObject.caption);
-                                                    charSequence2 = u10.toString();
+                                                    StringBuilder v = a4.a.v(str3);
+                                                    v.append((Object) messageObject.caption);
+                                                    charSequence2 = v.toString();
                                                 } else {
                                                     if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
                                                         charSequence = "📊 " + ((TLRPC.TL_messageMediaPoll) messageMedia).poll.question.text;
@@ -341,10 +341,10 @@ public final class cz extends FrameLayout {
                                                         } else if (messageObject.isPhoto()) {
                                                             str3 = "🖼 ";
                                                         }
-                                                        StringBuilder u11 = a4.a.u(str3);
-                                                        u11.append(charSequence6.replace('\n', ' '));
+                                                        StringBuilder v9 = a4.a.v(str3);
+                                                        v9.append(charSequence6.replace('\n', ' '));
                                                         Object[] objArr = new Object[2];
-                                                        objArr[0] = u11.toString();
+                                                        objArr[0] = v9.toString();
                                                         objArr[c10] = string;
                                                         valueOf = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr));
                                                     } else {
@@ -369,9 +369,9 @@ public final class cz extends FrameLayout {
                                                             color = getContext().getResources().getColor(R.color.widget_action_text);
                                                             TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
                                                             if (messageMedia2 instanceof TLRPC.TL_messageMediaPoll) {
-                                                                k10 = a4.a.p("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069");
+                                                                k10 = a4.a.q("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069");
                                                             } else if (messageMedia2 instanceof TLRPC.TL_messageMediaGame) {
-                                                                k10 = a4.a.p("🎮 \u2068", messageMedia2.game.title, "\u2069");
+                                                                k10 = a4.a.q("🎮 \u2068", messageMedia2.game.title, "\u2069");
                                                             } else {
                                                                 k10 = messageObject.type == 14 ? org.telegram.ui.Cells.c1.k("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString();
                                                                 c12 = '\n';

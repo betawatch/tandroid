@@ -17,9 +17,9 @@ import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.w9;
 import w7.z5;
-import yh.x7;
+import yh.z7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class k extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public final w9 a;
@@ -60,7 +60,7 @@ public final class k extends LinearLayout implements NotificationCenter.Notifica
     }
 
     public final void a(long j3, boolean z10) {
-        this.d.c(x7.d1(false, org.telegram.messenger.f0.h((int) j3, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
+        this.d.c(z7.d1(false, org.telegram.messenger.q.h((int) j3, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
     }
 
     public final void b(int i10, boolean z10, boolean z11) {

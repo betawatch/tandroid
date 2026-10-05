@@ -1,70 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.view.TextureView;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f71 implements Runnable {
+public final /* synthetic */ class f71 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ f71(Object obj, int i10) {
+    public /* synthetic */ f71(int i10, View view) {
         this.a = i10;
-        this.b = obj;
+        this.b = view;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ((g71) this.b).invalidateSelf();
+                g71 g71Var = (g71) this.b;
+                g71Var.getClass();
+                g71Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g71Var.invalidate();
                 break;
             case 1:
-                yz yzVar = ((t71) this.b).b;
-                if (yzVar != null) {
-                    yzVar.e(false, true, false);
-                    break;
-                }
-                break;
-            case 2:
-                d81 d81Var = (d81) this.b;
-                i2.f0 f0Var = d81Var.d;
-                if (f0Var != null) {
-                    TextureView textureView = d81Var.n;
-                    f0Var.B1();
-                    if (textureView != null && textureView == f0Var.V) {
-                        f0Var.B1();
-                        f0Var.o1();
-                        f0Var.t1(null);
-                        f0Var.m1(0, 0);
-                    }
-                    d81Var.d.v1(d81Var.n);
-                    ArrayList arrayList = d81Var.N;
-                    if (arrayList != null) {
-                        d81Var.F(arrayList, d81Var.O);
-                    } else if (d81Var.U) {
-                        d81Var.G(d81Var.Q, d81Var.S, d81Var.R, d81Var.T);
-                    } else {
-                        d81Var.D(d81Var.Q, d81Var.S);
-                    }
-                    d81Var.C();
-                    break;
-                }
-                break;
-            case 3:
-                d81 d81Var2 = ((c81) this.b).f;
-                d81Var2.a0.removeCallbacksAndMessages(null);
-                d81Var2.K.onVisualizerUpdate(false, true, null);
-                break;
-            case 4:
-                ((f81) this.b).g = false;
-                break;
-            case 5:
-                ((z91) ((ki.d) ((org.telegram.ui.Cells.fa) this.b).b).b).v.b();
+                m71 m71Var = (m71) this.b;
+                m71Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m71Var.b = floatValue;
+                m71Var.setTranslationY(floatValue);
                 break;
             default:
-                ((v91) this.b).d(false, true);
+                g91 g91Var = (g91) this.b;
+                g91Var.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g91Var.setAnimationIdicatorProgress(floatValue2);
+                f91 f91Var = g91Var.y;
+                if (f91Var != null) {
+                    ((n2.c) f91Var).k(floatValue2);
+                    break;
+                }
                 break;
         }
     }

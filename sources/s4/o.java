@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class o {
     public static final fb.i a = new fb.i(4);
@@ -166,7 +166,7 @@ public abstract class o {
         int[] iArr4 = new int[i18];
         ArrayList arrayList3 = new ArrayList();
         while (!arrayList2.isEmpty()) {
-            m mVar2 = (m) hg.k0.w(1, arrayList2);
+            m mVar2 = (m) hg.c.w(1, arrayList2);
             int i19 = mVar2.a;
             int i20 = mVar2.b;
             int i21 = mVar2.c;
@@ -268,7 +268,7 @@ public abstract class o {
                 }
                 nVar.a += mVar2.a;
                 nVar.b += mVar2.c;
-                m mVar3 = arrayList3.isEmpty() ? new m() : (m) hg.k0.w(1, arrayList3);
+                m mVar3 = arrayList3.isEmpty() ? new m() : (m) hg.c.w(1, arrayList3);
                 mVar3.a = mVar2.a;
                 mVar3.c = mVar2.c;
                 if (nVar.e) {

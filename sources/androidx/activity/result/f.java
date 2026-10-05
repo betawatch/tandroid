@@ -13,7 +13,7 @@ import androidx.lifecycle.v;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class f {
     public final HashMap a = new HashMap();
@@ -146,16 +146,16 @@ public abstract class f {
         this.e.remove(str);
         HashMap hashMap = this.f;
         if (hashMap.containsKey(str)) {
-            StringBuilder v = a4.a.v("Dropping pending result for request ", str, ": ");
-            v.append(hashMap.get(str));
-            Log.w("ActivityResultRegistry", v.toString());
+            StringBuilder w10 = a4.a.w("Dropping pending result for request ", str, ": ");
+            w10.append(hashMap.get(str));
+            Log.w("ActivityResultRegistry", w10.toString());
             hashMap.remove(str);
         }
         Bundle bundle = this.g;
         if (bundle.containsKey(str)) {
-            StringBuilder v9 = a4.a.v("Dropping pending result for request ", str, ": ");
-            v9.append(bundle.getParcelable(str));
-            Log.w("ActivityResultRegistry", v9.toString());
+            StringBuilder w11 = a4.a.w("Dropping pending result for request ", str, ": ");
+            w11.append(bundle.getParcelable(str));
+            Log.w("ActivityResultRegistry", w11.toString());
             bundle.remove(str);
         }
         HashMap hashMap2 = this.c;

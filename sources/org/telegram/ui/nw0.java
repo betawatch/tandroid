@@ -17,13 +17,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class nw0 extends org.telegram.ui.ActionBar.n2 {
     public final long a;
     public org.telegram.ui.Cells.z7 b;
     public org.telegram.ui.Components.j90 c;
-    public org.telegram.ui.Components.c71 d;
+    public org.telegram.ui.Components.e71 d;
     public org.telegram.ui.Components.sr e;
     public org.telegram.ui.ActionBar.v0 f;
     public final boolean h;
@@ -166,9 +166,9 @@ public final class nw0 extends org.telegram.ui.ActionBar.n2 {
         this.c.setBackgroundColor(getThemedColor(i11));
         this.c.b(true);
         this.c.d(0, null, false);
-        org.telegram.ui.Components.c71 c71Var = new org.telegram.ui.Components.c71(context, this.currentAccount, this.classGuid, false, new c5(this, 16), new mw0(this, 2), null, this.resourceProvider);
-        this.d = c71Var;
-        c71Var.s1();
+        org.telegram.ui.Components.e71 e71Var = new org.telegram.ui.Components.e71(context, this.currentAccount, this.classGuid, false, new c5(this, 16), new mw0(this, 2), null, this.resourceProvider);
+        this.d = e71Var;
+        e71Var.r1();
         frameLayout2.addView(this.d, w7.z5.e(-1, -1, 51));
         return this.fragmentView;
     }
@@ -207,13 +207,13 @@ public final class nw0 extends org.telegram.ui.ActionBar.n2 {
 
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean onFragmentCreate() {
-        org.telegram.ui.Components.u61 u61Var;
+        org.telegram.ui.Components.w61 w61Var;
         super.onFragmentCreate();
-        org.telegram.ui.Components.c71 c71Var = this.d;
-        if (c71Var == null || (u61Var = c71Var.f3) == null) {
+        org.telegram.ui.Components.e71 e71Var = this.d;
+        if (e71Var == null || (w61Var = e71Var.f3) == null) {
             return true;
         }
-        u61Var.N(false);
+        w61Var.N(false);
         return true;
     }
 }

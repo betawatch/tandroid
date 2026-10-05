@@ -14,13 +14,13 @@ import android.widget.TextView;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.gd0;
-import org.telegram.ui.Components.rp0;
+import org.telegram.ui.Components.sp0;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.u31;
+import org.telegram.ui.Components.v31;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class w5 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -50,19 +50,19 @@ public final class w5 extends LinearLayout {
         switch (this.a) {
             case 4:
                 super.dispatchDraw(canvas);
-                ((e11) this.b).e(canvas, ((gd0) this.c).getX() - AndroidUtilities.dp(50.0f), getHeight() / 2.0f);
+                ((f11) this.b).e(canvas, ((gd0) this.c).getX() - AndroidUtilities.dp(50.0f), getHeight() / 2.0f);
                 break;
             case 5:
                 canvas.save();
                 org.telegram.ui.Components.e6 e6Var = (org.telegram.ui.Components.e6) this.b;
-                u31 u31Var = (u31) this.c;
-                float e7 = e6Var.e(u31Var.w);
+                v31 v31Var = (v31) this.c;
+                float e7 = e6Var.e(v31Var.w);
                 if (e7 > 0.0f) {
-                    if (u31Var.c == null) {
-                        u31Var.c = new rp0(this);
+                    if (v31Var.c == null) {
+                        v31Var.c = new sp0(this);
                     }
                     canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
-                    u31Var.c.a(canvas, e7);
+                    v31Var.c.a(canvas, e7);
                     canvas.translate((-getWidth()) / 2.0f, (-getHeight()) / 2.0f);
                 }
                 super.dispatchDraw(canvas);
@@ -231,10 +231,10 @@ public final class w5 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w5(u31 u31Var, Context context) {
+    public w5(v31 v31Var, Context context) {
         super(context);
         this.a = 5;
-        this.c = u31Var;
+        this.c = v31Var;
         this.b = new org.telegram.ui.Components.e6(this, 360L, tr.h);
     }
 

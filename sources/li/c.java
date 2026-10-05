@@ -2,7 +2,7 @@ package li;
 
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class c implements oi.a {
     public final int a;
@@ -14,7 +14,7 @@ public final class c implements oi.a {
     }
 
     @Override // oi.a
-    public final void y(Canvas canvas, float f7, float f10, float f11, float f12) {
+    public final void v(Canvas canvas, float f7, float f10, float f11, float f12) {
         d.a(this.b, canvas, this.a, f7, f10, f11, f12);
     }
 }

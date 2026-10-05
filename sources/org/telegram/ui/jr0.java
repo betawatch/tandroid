@@ -15,7 +15,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jr0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -146,11 +146,11 @@ public final /* synthetic */ class jr0 implements Utilities.Callback {
                 Integer num2 = (Integer) obj;
                 FrameLayout frameLayout = photoViewer5.R7;
                 if (frameLayout != null && frameLayout.getVisibility() != 8) {
-                    photoViewer5.R7.setTranslationY(photoViewer5.P0.getTranslationY() - (photoViewer5.U1.getAlpha() * org.telegram.messenger.f0.b(46.0f, photoViewer5.U1.getEditTextHeight(), 0)));
+                    photoViewer5.R7.setTranslationY(photoViewer5.P0.getTranslationY() - (photoViewer5.U1.getAlpha() * org.telegram.messenger.q.b(46.0f, photoViewer5.U1.getEditTextHeight(), 0)));
                 }
-                photoViewer5.e1.setTranslationY(photoViewer5.U1.getAlpha() * (-org.telegram.messenger.f0.b(46.0f, num2.intValue(), 0)));
-                photoViewer5.f1.setTranslationY(photoViewer5.U1.getAlpha() * (-org.telegram.messenger.f0.b(46.0f, num2.intValue(), 0)));
-                photoViewer5.g1.setTranslationY(photoViewer5.U1.getAlpha() * (-org.telegram.messenger.f0.b(46.0f, num2.intValue(), 0)));
+                photoViewer5.e1.setTranslationY(photoViewer5.U1.getAlpha() * (-org.telegram.messenger.q.b(46.0f, num2.intValue(), 0)));
+                photoViewer5.f1.setTranslationY(photoViewer5.U1.getAlpha() * (-org.telegram.messenger.q.b(46.0f, num2.intValue(), 0)));
+                photoViewer5.g1.setTranslationY(photoViewer5.U1.getAlpha() * (-org.telegram.messenger.q.b(46.0f, num2.intValue(), 0)));
                 ci.i iVar = photoViewer5.U1.M;
                 if (iVar != null) {
                     iVar.setTranslationY((-num2.intValue()) - AndroidUtilities.dp(14.0f));

@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class d70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, le.d, View.OnClickListener, ph.d {
     public boolean E;
@@ -87,7 +87,7 @@ public class d70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
     public final fh.d q0;
     public s4.c0 r;
     public ah.n r0;
-    public org.telegram.ui.Components.tx0 s;
+    public org.telegram.ui.Components.ux0 s;
     public final ArrayList s0;
     public final RectF t0;
     public final RectF u0;
@@ -303,7 +303,7 @@ public class d70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         if (Build.VERSION.SDK_INT < 29 || !SharedConfig.chatBlurEnabled() || (dVar = d70Var.q0) == null) {
             return;
         }
-        dVar.y(canvas, rectF.left, rectF.top, rectF.right, rectF.bottom);
+        dVar.v(canvas, rectF.left, rectF.top, rectF.right, rectF.bottom);
         int alpha = paint.getAlpha();
         paint.setAlpha(178);
         canvas.drawRect(rectF, paint);
@@ -430,12 +430,11 @@ public class d70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         org.telegram.ui.Components.w00 w00Var = new org.telegram.ui.Components.w00(context, null);
         w00Var.setViewType(6);
         w00Var.w = false;
-        org.telegram.ui.Components.tx0 tx0Var = new org.telegram.ui.Components.tx0(context, w00Var, 1, null);
-        this.s = tx0Var;
-        tx0Var.addView(w00Var);
+        org.telegram.ui.Components.ux0 ux0Var = new org.telegram.ui.Components.ux0(context, w00Var, 1, null);
+        this.s = ux0Var;
+        ux0Var.addView(w00Var);
         this.s.e(true, false);
         this.s.d.setText(LocaleController.getString(R.string.NoResult));
-        k0Var.addView(this.s);
         this.r = new s4.c0(1, false);
         org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
         this.n = zl0Var;
@@ -452,6 +451,7 @@ public class d70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         org.telegram.ui.Components.zl0 zl0Var3 = this.n;
         float f7 = -this.a;
         k0Var.addView(zl0Var3, w7.z5.d(-1, -1.0f, 119, 0.0f, f7, 0.0f, f7));
+        k0Var.addView(this.s);
         this.n.setOnItemClickListener(new ai.n6(17, this, context));
         this.n.setOnScrollListener(new i3(this, 14));
         org.telegram.ui.Components.zl0 zl0Var4 = this.n;
@@ -717,7 +717,7 @@ public class d70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
     }
 
     public final void i0() {
-        if (this.n.a1()) {
+        if (this.n.Z0()) {
             this.n.setClipBounds(null);
             return;
         }
@@ -725,7 +725,7 @@ public class d70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         int i10 = this.a;
         int measuredHeight = this.actionBar.getMeasuredHeight() + AndroidUtilities.dp(i10 + 48) + ((int) this.b.e);
         int measuredWidth = this.n.getMeasuredWidth();
-        int B = org.telegram.messenger.f0.B(i10, this.n.getMeasuredHeight(), dp);
+        int B = org.telegram.messenger.q.B(i10, this.n.getMeasuredHeight(), dp);
         Rect rect = this.o0;
         rect.set(0, measuredHeight, measuredWidth, B);
         this.n.setClipBounds(rect);
@@ -891,7 +891,7 @@ public class d70 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                     String format = String.format("%d", Integer.valueOf(this.Z.m()));
                     int indexOf = TextUtils.indexOf(spannableStringBuilder, format);
                     if (indexOf >= 0) {
-                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.d61(AndroidUtilities.bold()), indexOf, format.length() + indexOf, 33);
+                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.e61(AndroidUtilities.bold()), indexOf, format.length() + indexOf, 33);
                     }
                     b2Var.T = spannableStringBuilder;
                 } else {

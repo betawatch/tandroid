@@ -9,7 +9,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class q7 extends i7 {
     public org.telegram.ui.Cells.s7 n;
@@ -57,10 +57,10 @@ public final class q7 extends i7 {
         int i11 = aVar.d;
         File file = aVar.a;
         if (i11 == 1) {
-            imageReceiver.setImage(ImageLocation.getForPath("vthumb://0:" + file.getAbsolutePath()), a4.a.k(max, max, "_"), this.s, null, null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath("vthumb://0:" + file.getAbsolutePath()), a4.a.l(max, max, "_"), this.s, null, null, 0);
             t7Var.m(AndroidUtilities.formatFileSize(aVar.c), true);
         } else {
-            imageReceiver.setImage(ImageLocation.getForPath("thumb://0:" + file.getAbsolutePath()), a4.a.k(max, max, "_"), this.s, null, null, 0);
+            imageReceiver.setImage(ImageLocation.getForPath("thumb://0:" + file.getAbsolutePath()), a4.a.l(max, max, "_"), this.s, null, null, 0);
             t7Var.m(AndroidUtilities.formatFileSize(aVar.c), false);
         }
         t7Var.i(this.v.f.j.contains(aVar), z10);

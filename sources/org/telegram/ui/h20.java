@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class h20 {
     /* JADX WARN: Removed duplicated region for block: B:15:0x00e2  */
@@ -44,7 +44,7 @@ public abstract class h20 {
         String str5;
         org.telegram.ui.ActionBar.d6 d6Var2;
         org.telegram.ui.ActionBar.f3 f3Var2;
-        org.telegram.ui.Components.q21 q21Var;
+        org.telegram.ui.Components.r21 r21Var;
         org.telegram.ui.ActionBar.f3 f3Var3 = new org.telegram.ui.ActionBar.f3(1, (Context) activity, d6Var, false);
         f3Var3.fixNavigationBar(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h5, d6Var));
         LinearLayout linearLayout = new LinearLayout(activity);
@@ -75,9 +75,9 @@ public abstract class h20 {
                 String formatCurrency2 = BillingController.getInstance().formatCurrency(tL_collectibleInfo.crypto_amount, tL_collectibleInfo.crypto_currency);
                 if (i10 != 0) {
                     f3Var = f3Var3;
-                    String formatString2 = LocaleController.formatString(R.string.FragmentUsernameTitle, t8.b.i("@", str));
-                    formatString = LocaleController.formatString(R.string.FragmentUsernameMessage, LocaleController.formatShortDateTime(tL_collectibleInfo.purchase_date), formatCurrency2, TextUtils.isEmpty(formatCurrency) ? "" : a4.a.p("(", formatCurrency, ")"));
-                    b10 = a4.a.q(MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix, "/", str, new StringBuilder());
+                    String formatString2 = LocaleController.formatString(R.string.FragmentUsernameTitle, sa.e.i("@", str));
+                    formatString = LocaleController.formatString(R.string.FragmentUsernameMessage, LocaleController.formatShortDateTime(tL_collectibleInfo.purchase_date), formatCurrency2, TextUtils.isEmpty(formatCurrency) ? "" : a4.a.q("(", formatCurrency, ")"));
+                    b10 = a4.a.r(MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix, "/", str, new StringBuilder());
                     str4 = formatString2;
                 } else {
                     f3Var = f3Var3;
@@ -85,7 +85,7 @@ public abstract class h20 {
                         return;
                     }
                     String formatString3 = LocaleController.formatString(R.string.FragmentPhoneTitle, gf.b.c().b("+" + str));
-                    formatString = LocaleController.formatString(R.string.FragmentPhoneMessage, LocaleController.formatShortDateTime(tL_collectibleInfo.purchase_date), formatCurrency2, TextUtils.isEmpty(formatCurrency) ? "" : a4.a.p("(", formatCurrency, ")"));
+                    formatString = LocaleController.formatString(R.string.FragmentPhoneMessage, LocaleController.formatShortDateTime(tL_collectibleInfo.purchase_date), formatCurrency2, TextUtils.isEmpty(formatCurrency) ? "" : a4.a.q("(", formatCurrency, ")"));
                     b10 = gf.b.c().b("+" + str);
                     str4 = formatString3;
                 }
@@ -94,14 +94,14 @@ public abstract class h20 {
                 if (str5 == null) {
                     d6Var2 = d6Var;
                     org.telegram.ui.ActionBar.f3 f3Var4 = f3Var;
-                    q21Var = new org.telegram.ui.Components.q21(str5, i10, f3Var4, d6Var2, 2);
+                    r21Var = new org.telegram.ui.Components.r21(str5, i10, f3Var4, d6Var2, 2);
                     f3Var2 = f3Var4;
                 } else {
                     d6Var2 = d6Var;
                     f3Var2 = f3Var;
-                    q21Var = null;
+                    r21Var = null;
                 }
-                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(str4, q21Var);
+                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(str4, r21Var);
                 SpannableString spannableString = new SpannableString("TON");
                 org.telegram.ui.Components.rq rqVar = new org.telegram.ui.Components.rq(R.drawable.mini_gram_16, 0);
                 rqVar.setWidth(AndroidUtilities.dp(13.0f));
@@ -133,7 +133,7 @@ public abstract class h20 {
                 linearLayout.addView(frameLayout2, w7.z5.t(-2, 28, 1, 42, 10, 42, 18));
                 TextView textView2 = new TextView(activity);
                 textView2.setGravity(17);
-                org.telegram.messenger.ok.n(i12, d6Var2, textView2, 1, 14.0f);
+                org.telegram.messenger.bi.m(i12, d6Var2, textView2, 1, 14.0f);
                 textView2.setText(replaceCharSequence);
                 linearLayout.addView(textView2, w7.z5.t(-1, -2, 1, 32, 0, 32, 19));
                 ci.d dVar = new ci.d(activity, d6Var2, true);
@@ -141,12 +141,12 @@ public abstract class h20 {
                 dVar.g(LocaleController.getString(R.string.FragmentUsernameOpen), false, true);
                 dVar.setOnClickListener(new tv(7, activity, tL_collectibleInfo));
                 linearLayout.addView(dVar, w7.z5.k(6.0f, 0.0f, 6.0f, 0.0f, -1, 48));
-                if (q21Var != null) {
+                if (r21Var != null) {
                     ci.d dVar2 = new ci.d(activity, d6Var2, true);
                     dVar2.setRoundRadius(24);
                     dVar2.d();
                     dVar2.g(LocaleController.getString(i10 == 0 ? R.string.FragmentUsernameCopy : R.string.FragmentPhoneCopy), false, true);
-                    dVar2.setOnClickListener(new tv(8, q21Var, f3Var2));
+                    dVar2.setOnClickListener(new tv(8, r21Var, f3Var2));
                     linearLayout.addView(dVar2, w7.z5.k(6.0f, 6.0f, 6.0f, 0.0f, -1, 48));
                 }
                 f3Var2.setCustomView(linearLayout);
@@ -163,7 +163,7 @@ public abstract class h20 {
         str5 = b10;
         if (str5 == null) {
         }
-        SpannableStringBuilder replaceSingleTag2 = AndroidUtilities.replaceSingleTag(str4, q21Var);
+        SpannableStringBuilder replaceSingleTag2 = AndroidUtilities.replaceSingleTag(str4, r21Var);
         SpannableString spannableString2 = new SpannableString("TON");
         org.telegram.ui.Components.rq rqVar2 = new org.telegram.ui.Components.rq(R.drawable.mini_gram_16, 0);
         rqVar2.setWidth(AndroidUtilities.dp(13.0f));
@@ -195,7 +195,7 @@ public abstract class h20 {
         linearLayout.addView(frameLayout22, w7.z5.t(-2, 28, 1, 42, 10, 42, 18));
         TextView textView22 = new TextView(activity);
         textView22.setGravity(17);
-        org.telegram.messenger.ok.n(i122, d6Var2, textView22, 1, 14.0f);
+        org.telegram.messenger.bi.m(i122, d6Var2, textView22, 1, 14.0f);
         textView22.setText(replaceCharSequence2);
         linearLayout.addView(textView22, w7.z5.t(-1, -2, 1, 32, 0, 32, 19));
         ci.d dVar3 = new ci.d(activity, d6Var2, true);
@@ -203,7 +203,7 @@ public abstract class h20 {
         dVar3.g(LocaleController.getString(R.string.FragmentUsernameOpen), false, true);
         dVar3.setOnClickListener(new tv(7, activity, tL_collectibleInfo));
         linearLayout.addView(dVar3, w7.z5.k(6.0f, 0.0f, 6.0f, 0.0f, -1, 48));
-        if (q21Var != null) {
+        if (r21Var != null) {
         }
         f3Var2.setCustomView(linearLayout);
         f3Var2.show();

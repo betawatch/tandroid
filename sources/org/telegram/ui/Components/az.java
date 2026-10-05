@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class az extends FrameLayout implements le.d {
     public aq E;
@@ -101,9 +101,9 @@ public abstract class az extends FrameLayout implements le.d {
                             lqVar.setText("");
                             azVar.c(null, false);
                             if (zyVar != null) {
-                                zyVar.F1();
-                                zyVar.H1(null);
-                                zyVar.I1(true, true);
+                                zyVar.E1();
+                                zyVar.G1(null);
+                                zyVar.H1(true, true);
                             }
                             azVar.f(false);
                             lqVar.clearAnimation();
@@ -119,9 +119,9 @@ public abstract class az extends FrameLayout implements le.d {
                         azVar2.c(null, false);
                         zy zyVar2 = azVar2.r;
                         if (zyVar2 != null) {
-                            zyVar2.F1();
-                            zyVar2.H1(null);
-                            zyVar2.I1(true, true);
+                            zyVar2.E1();
+                            zyVar2.G1(null);
+                            zyVar2.H1(true, true);
                         }
                         azVar2.f(false);
                         lqVar2.clearAnimation();
@@ -184,9 +184,9 @@ public abstract class az extends FrameLayout implements le.d {
                             lqVar2.setText("");
                             azVar.c(null, false);
                             if (zyVar != null) {
-                                zyVar.F1();
-                                zyVar.H1(null);
-                                zyVar.I1(true, true);
+                                zyVar.E1();
+                                zyVar.G1(null);
+                                zyVar.H1(true, true);
                             }
                             azVar.f(false);
                             lqVar2.clearAnimation();
@@ -202,9 +202,9 @@ public abstract class az extends FrameLayout implements le.d {
                         azVar2.c(null, false);
                         zy zyVar2 = azVar2.r;
                         if (zyVar2 != null) {
-                            zyVar2.F1();
-                            zyVar2.H1(null);
-                            zyVar2.I1(true, true);
+                            zyVar2.E1();
+                            zyVar2.G1(null);
+                            zyVar2.H1(true, true);
                         }
                         azVar2.f(false);
                         lqVar22.clearAnimation();
@@ -242,23 +242,23 @@ public abstract class az extends FrameLayout implements le.d {
                             azVar.g(false);
                             break;
                         default:
-                            nx0 nx0Var = (nx0) obj;
+                            ox0 ox0Var = (ox0) obj;
                             az azVar2 = this.b;
                             nz nzVar2 = azVar2.G;
                             zy zyVar2 = azVar2.r;
-                            if (nx0Var != null) {
-                                if (zyVar2.getSelectedCategory() != nx0Var) {
-                                    azVar2.c(nx0Var.a, false);
-                                    zyVar2.H1(nx0Var);
+                            if (ox0Var != null) {
+                                if (zyVar2.getSelectedCategory() != ox0Var) {
+                                    azVar2.c(ox0Var.a, false);
+                                    zyVar2.G1(ox0Var);
                                     break;
                                 } else {
                                     azVar2.c(null, false);
-                                    zyVar2.H1(null);
+                                    zyVar2.G1(null);
                                     break;
                                 }
                             } else {
                                 azVar2.d(false);
-                                zyVar2.H1(null);
+                                zyVar2.G1(null);
                                 nzVar2.o0.d.setText("");
                                 nzVar2.i0.h1(0, 0);
                                 break;
@@ -286,23 +286,23 @@ public abstract class az extends FrameLayout implements le.d {
                             azVar.g(false);
                             break;
                         default:
-                            nx0 nx0Var = (nx0) obj;
+                            ox0 ox0Var = (ox0) obj;
                             az azVar2 = this.b;
                             nz nzVar2 = azVar2.G;
                             zy zyVar2 = azVar2.r;
-                            if (nx0Var != null) {
-                                if (zyVar2.getSelectedCategory() != nx0Var) {
-                                    azVar2.c(nx0Var.a, false);
-                                    zyVar2.H1(nx0Var);
+                            if (ox0Var != null) {
+                                if (zyVar2.getSelectedCategory() != ox0Var) {
+                                    azVar2.c(ox0Var.a, false);
+                                    zyVar2.G1(ox0Var);
                                     break;
                                 } else {
                                     azVar2.c(null, false);
-                                    zyVar2.H1(null);
+                                    zyVar2.G1(null);
                                     break;
                                 }
                             } else {
                                 azVar2.d(false);
-                                zyVar2.H1(null);
+                                zyVar2.G1(null);
                                 nzVar2.o0.d.setText("");
                                 nzVar2.i0.h1(0, 0);
                                 break;

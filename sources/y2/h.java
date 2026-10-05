@@ -8,7 +8,7 @@ import android.os.Trace;
 import java.io.IOException;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class h extends Handler implements Runnable {
     public final int a;
@@ -70,7 +70,7 @@ public final class h extends Handler implements Runnable {
         long j3 = elapsedRealtime - this.c;
         g gVar = this.d;
         gVar.getClass();
-        gVar.t(this.b, elapsedRealtime, j3, this.f);
+        gVar.x(this.b, elapsedRealtime, j3, this.f);
         this.e = null;
         l lVar = this.s;
         z2.a aVar = lVar.a;
@@ -104,7 +104,7 @@ public final class h extends Handler implements Runnable {
         int i11 = message.what;
         if (i11 == 2) {
             try {
-                gVar.v(this.b, elapsedRealtime, j3);
+                gVar.y(this.b, elapsedRealtime, j3);
                 return;
             } catch (RuntimeException e7) {
                 e2.a.f("LoadTask", "Unexpected exception handling load completed", e7);
@@ -119,8 +119,8 @@ public final class h extends Handler implements Runnable {
         this.e = iOException;
         int i12 = this.f + 1;
         this.f = i12;
-        k4.d s10 = gVar.s(this.b, elapsedRealtime, j3, iOException, i12);
-        int i13 = s10.a;
+        k4.d v = gVar.v(this.b, elapsedRealtime, j3, iOException, i12);
+        int i13 = v.a;
         if (i13 == 3) {
             this.s.c = this.e;
             return;
@@ -129,7 +129,7 @@ public final class h extends Handler implements Runnable {
             if (i13 == 1) {
                 this.f = 1;
             }
-            long j10 = s10.b;
+            long j10 = v.b;
             if (j10 == -9223372036854775807L) {
                 j10 = Math.min((this.f - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
             }

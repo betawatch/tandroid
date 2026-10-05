@@ -7,7 +7,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class el extends org.telegram.ui.Components.ic0 {
     public final /* synthetic */ yn H;
@@ -63,22 +63,22 @@ public final class el extends org.telegram.ui.Components.ic0 {
                 i10 = 0;
                 z11 = false;
             }
-            Bundle e7 = org.telegram.messenger.ok.e(3, "onlySelect", "dialogsType", true);
-            e7.putBoolean("quote", !z10);
+            Bundle d = org.telegram.messenger.bi.d(3, "onlySelect", "dialogsType", true);
+            d.putBoolean("quote", !z10);
             boolean z12 = (z10 || (messages = ynVar.d5.replyMessage) == null || messages.messages.isEmpty() || ynVar.d5.quote != null) ? false : true;
-            e7.putBoolean("reply_to", z12);
+            d.putBoolean("reply_to", z12);
             if (z12) {
                 long peerDialogId = DialogObject.getPeerDialogId(ynVar.d5.replyMessage.messages.get(0).getFromPeer());
                 if (peerDialogId != 0 && peerDialogId != ynVar.a() && peerDialogId != ynVar.getUserConfig().getClientUserId() && peerDialogId > 0) {
-                    e7.putLong("reply_to_author", peerDialogId);
+                    d.putLong("reply_to_author", peerDialogId);
                 }
             }
-            e7.putInt("hasPoll", i10);
-            e7.putBoolean("hasInvoice", z11);
+            d.putInt("hasPoll", i10);
+            d.putBoolean("hasInvoice", z11);
             MessagePreviewParams.Messages messages3 = ynVar.d5.forwardMessages;
-            e7.putInt("messagesCount", messages3 != null ? messages3.messages.size() : 0);
-            e7.putBoolean("canSelectTopics", true);
-            uy uyVar = new uy(e7);
+            d.putInt("messagesCount", messages3 != null ? messages3.messages.size() : 0);
+            d.putBoolean("canSelectTopics", true);
+            uy uyVar = new uy(d);
             uyVar.C2 = ynVar;
             ynVar.presentFragment(uyVar);
         }

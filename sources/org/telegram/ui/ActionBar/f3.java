@@ -49,7 +49,7 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ib0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class f3 extends Dialog implements j2 {
     private static final boolean AVOID_SYSTEM_CUTOUT_FULLSCREEN = false;
@@ -92,7 +92,7 @@ public class f3 extends Dialog implements j2 {
     private boolean forceKeyboardOnDismiss;
     private boolean fullHeight;
     protected boolean fullWidth;
-    protected final li.m glassEngine;
+    protected final li.p glassEngine;
     private float hideSystemVerticalInsetsProgress;
     private int internalBackgroundColor;
     protected boolean isFullscreen;
@@ -1181,7 +1181,7 @@ public class f3 extends Dialog implements j2 {
         this.notificationsLocker = new AnimationNotificationsLocker();
         this.useBackgroundTopPadding = true;
         this.customViewGravity = 51;
-        this.glassEngine = new li.m();
+        this.glassEngine = new li.p();
         this.smoothContainerViewLayoutUntil = -1L;
         this.resourcesProvider = d6Var;
         if (i10 == 3) {

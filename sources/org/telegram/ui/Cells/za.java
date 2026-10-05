@@ -26,11 +26,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxSquare;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.qp;
 import org.telegram.ui.rk0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class za extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.y5 {
     public final org.telegram.ui.Components.h9 E;
@@ -239,11 +239,11 @@ public class za extends FrameLayout implements NotificationCenter.NotificationCe
                 string = LocaleController.getString(R.string.NotificationsOff);
             }
             if (rk0Var.f) {
-                string = t8.b.v(string, ", Auto");
+                string = sa.e.v(string, ", Auto");
             }
         }
         if (DialogObject.isEncryptedDialog(rk0Var.d)) {
-            TLRPC.EncryptedChat l4 = org.telegram.messenger.f0.l(MessagesController.getInstance(i10), rk0Var.d);
+            TLRPC.EncryptedChat l4 = org.telegram.messenger.q.l(MessagesController.getInstance(i10), rk0Var.d);
             if (l4 == null || (user = MessagesController.getInstance(i10).getUser(Long.valueOf(l4.user_id))) == null) {
                 return;
             }
@@ -280,8 +280,8 @@ public class za extends FrameLayout implements NotificationCenter.NotificationCe
         return this.b.getText();
     }
 
-    public final void h(int i10, g61 g61Var, boolean z10) {
-        long j3 = g61Var.x;
+    public final void h(int i10, h61 h61Var, boolean z10) {
+        long j3 = h61Var.x;
         if (j3 <= 0) {
             TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
             if (chat != null) {
@@ -293,7 +293,7 @@ public class za extends FrameLayout implements NotificationCenter.NotificationCe
         TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j3));
         String publicUsername = UserObject.getPublicUsername(user);
         if (user != null) {
-            d(user, null, !TextUtils.isEmpty(publicUsername) ? t8.b.i("@", publicUsername) : user.bot ? LocaleController.getString(R.string.Bot) : user.contact ? LocaleController.getString(R.string.FilterContact) : LocaleController.getString(R.string.FilterNonContact), z10);
+            d(user, null, !TextUtils.isEmpty(publicUsername) ? sa.e.i("@", publicUsername) : user.bot ? LocaleController.getString(R.string.Bot) : user.contact ? LocaleController.getString(R.string.FilterContact) : LocaleController.getString(R.string.FilterNonContact), z10);
         }
     }
 

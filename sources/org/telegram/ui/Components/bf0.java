@@ -27,7 +27,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class bf0 extends org.telegram.ui.ActionBar.f3 {
     public static final /* synthetic */ int O = 0;
@@ -230,8 +230,8 @@ public final class bf0 extends org.telegram.ui.ActionBar.f3 {
                     ue0Var.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.i6.h5));
                     ue0Var.setBackButtonImage(R.drawable.ic_ab_back);
                     int i16 = org.telegram.ui.ActionBar.i6.j5;
-                    ue0Var.B(getThemedColor(i16), false);
-                    ue0Var.A(getThemedColor(org.telegram.ui.ActionBar.i6.I5), false);
+                    ue0Var.A(getThemedColor(i16), false);
+                    ue0Var.z(getThemedColor(org.telegram.ui.ActionBar.i6.I5), false);
                     ue0Var.setTitleColor(getThemedColor(i16));
                     ue0Var.setOccupyStatusBar(false);
                     ue0Var.setAlpha(0.0f);
@@ -315,8 +315,8 @@ public final class bf0 extends org.telegram.ui.ActionBar.f3 {
         ue0Var2.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.i6.h5));
         ue0Var2.setBackButtonImage(R.drawable.ic_ab_back);
         int i162 = org.telegram.ui.ActionBar.i6.j5;
-        ue0Var2.B(getThemedColor(i162), false);
-        ue0Var2.A(getThemedColor(org.telegram.ui.ActionBar.i6.I5), false);
+        ue0Var2.A(getThemedColor(i162), false);
+        ue0Var2.z(getThemedColor(org.telegram.ui.ActionBar.i6.I5), false);
         ue0Var2.setTitleColor(getThemedColor(i162));
         ue0Var2.setOccupyStatusBar(false);
         ue0Var2.setAlpha(0.0f);

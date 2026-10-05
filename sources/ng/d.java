@@ -36,10 +36,10 @@ import org.telegram.ui.Components.sq;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.Components.z80;
-import org.telegram.ui.yf1;
+import org.telegram.ui.wf1;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class d {
     public static final /* synthetic */ int a = 0;
@@ -329,26 +329,26 @@ public abstract class d {
                 if (((ActionBarLayout) ynVar.getParentLayout()).j()) {
                     AndroidUtilities.runOnUIThread(new b(ynVar, 0), 500L);
                 } else {
-                    yf1.I0(ynVar);
+                    wf1.I0(ynVar);
                 }
             }
         }
-        if (lastFragment instanceof yf1) {
-            yf1 yf1Var = (yf1) lastFragment;
-            long j10 = yf1Var.a;
-            if ((-(-j10)) != j3 || yf1Var.getMessagesController().getChat(Long.valueOf(j3)).forum) {
+        if (lastFragment instanceof wf1) {
+            wf1 wf1Var = (wf1) lastFragment;
+            long j10 = wf1Var.a;
+            if ((-(-j10)) != j3 || wf1Var.getMessagesController().getChat(Long.valueOf(j3)).forum) {
                 return;
             }
-            if (yf1Var.getParentLayout() != null && ((ActionBarLayout) yf1Var.getParentLayout()).j()) {
-                AndroidUtilities.runOnUIThread(new h0(yf1Var, 15), 500L);
+            if (wf1Var.getParentLayout() != null && ((ActionBarLayout) wf1Var.getParentLayout()).j()) {
+                AndroidUtilities.runOnUIThread(new h0(wf1Var, 15), 500L);
                 return;
             }
-            yf1Var.H = true;
+            wf1Var.H = true;
             Bundle bundle = new Bundle();
             bundle.putLong("chat_id", j10);
             yn ynVar2 = new yn(bundle);
             ynVar2.ha = true;
-            yf1Var.presentFragment(ynVar2);
+            wf1Var.presentFragment(ynVar2);
         }
     }
 }

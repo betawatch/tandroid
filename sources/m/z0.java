@@ -24,7 +24,7 @@ import v7.v7;
 import w7.q6;
 import w7.s7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class z0 extends TextView implements u0.k {
     public final e2.c a;
@@ -366,7 +366,7 @@ public class z0 extends TextView implements u0.k {
     @Override // android.widget.TextView
     public void setFirstBaselineToTopHeight(int i10) {
         if (Build.VERSION.SDK_INT >= 28) {
-            getSuperCaller().i(i10);
+            getSuperCaller().m(i10);
         } else {
             s7.b(i10, this);
         }

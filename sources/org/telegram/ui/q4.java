@@ -16,7 +16,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class q4 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public p4 a;
@@ -27,6 +27,7 @@ public final class q4 extends org.telegram.ui.ActionBar.n2 implements Notificati
     public LinearLayout f;
     public final ArrayList h;
     public int n;
+    public org.telegram.ui.Components.so0 r;
 
     public q4() {
         super(null);
@@ -137,30 +138,32 @@ public final class q4 extends org.telegram.ui.ActionBar.n2 implements Notificati
 
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
+        setHasOwnBackground(true);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.AutoDeleteMessages));
         this.actionBar.setActionBarMenuOnItemClick(new ei.u(this, 20));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false));
-        zd zdVar = new zd(getParentActivity());
-        org.telegram.ui.Components.ro0 ro0Var = new org.telegram.ui.Components.ro0(getParentActivity(), zdVar, this.resourceProvider, true);
-        zdVar.setOrientation(1);
-        ro0Var.addView(zdVar);
-        frameLayout.addView(ro0Var);
-        this.actionBar.setAdaptiveBackground(ro0Var);
+        org.telegram.ui.Components.ro0 ro0Var = new org.telegram.ui.Components.ro0(getParentActivity());
+        org.telegram.ui.Components.so0 so0Var = new org.telegram.ui.Components.so0(getParentActivity(), ro0Var, this.resourceProvider, true);
+        this.r = so0Var;
+        so0Var.setDrawBackground(true);
+        this.r.setOverScrollMode(0);
+        ro0Var.setOrientation(1);
+        this.r.addView(ro0Var);
+        frameLayout.addView(this.r);
         FrameLayout frameLayout2 = new FrameLayout(context);
-        org.telegram.ui.Components.ux0 ux0Var = new org.telegram.ui.Components.ux0(context, this.currentAccount);
-        ux0Var.setStickerNum(10);
-        frameLayout2.addView(ux0Var, w7.z5.e(130, 130, 17));
+        org.telegram.ui.Components.vx0 vx0Var = new org.telegram.ui.Components.vx0(context, this.currentAccount);
+        vx0Var.setStickerNum(10);
+        frameLayout2.addView(vx0Var, w7.z5.e(130, 130, 17));
         frameLayout2.setTag(-33024);
-        zdVar.addView(frameLayout2, w7.z5.n(-1, 170));
+        ro0Var.addView(frameLayout2, w7.z5.n(-1, 170));
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         this.f = linearLayout;
         linearLayout.setOrientation(1);
         this.f.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
-        zdVar.addView(this.f, w7.z5.n(-1, -2));
+        ro0Var.addView(this.f, w7.z5.n(-1, -2));
         org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(getParentActivity());
         m4Var.setText(LocaleController.getString(R.string.MessageLifetime));
         this.f.addView(m4Var);
@@ -203,9 +206,19 @@ public final class q4 extends org.telegram.ui.ActionBar.n2 implements Notificati
         W();
         org.telegram.ui.Cells.e9 e9Var = new org.telegram.ui.Cells.e9(context, 12, this.resourceProvider);
         e9Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.GlobalAutoDeleteInfo), new n4(this)));
-        zdVar.addView(e9Var, w7.z5.n(-1, -2));
+        ro0Var.addView(e9Var, w7.z5.n(-1, -2));
         T(this.n, false);
         return this.fragmentView;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final org.telegram.ui.Components.so0 getScrollViewForSimpleGlass() {
+        return this.r;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
     }
 
     @Override // org.telegram.ui.ActionBar.n2

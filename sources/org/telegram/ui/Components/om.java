@@ -10,7 +10,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class om extends org.telegram.ui.ou0 {
     public ArrayList a = new ArrayList();
@@ -76,7 +76,7 @@ public final class om extends org.telegram.ui.ou0 {
                 yu0Var.h = new int[]{(int) r8.left, (int) r8.top, (int) r8.right, (int) r8.bottom};
                 RectF rectF = qmVar.q;
                 yu0Var.j = (int) (-smVar.getY());
-                yu0Var.i = smVar.getHeight() - ((int) (((-smVar.getY()) + tmVar.r.getHeight()) - tmVar.b.j1()));
+                yu0Var.i = smVar.getHeight() - ((int) (((-smVar.getY()) + tmVar.r.getHeight()) - tmVar.b.l1()));
                 return yu0Var;
             }
         }

@@ -27,7 +27,7 @@ import org.telegram.ui.gd0;
 import org.telegram.ui.tv;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements j0, IMapsProvider.OnMarkerClickListener {
     public final /* synthetic */ float a;
@@ -123,7 +123,7 @@ public final /* synthetic */ class g0 implements j0, IMapsProvider.OnMarkerClick
                 frameLayout3.setBackground(i6.K(AndroidUtilities.dp(36.0f), u4.a(fd0Var.a)));
                 frameLayout.addView(frameLayout3, z5.d(36, 36.0f, 81, 0.0f, 0.0f, 0.0f, 4.0f));
                 w9 w9Var = new w9(context);
-                w9Var.f(a4.a.s(new StringBuilder("https://ss3.4sqi.net/img/categories_v2/"), fd0Var.c.venue_type, "_64.png"), null, null);
+                w9Var.f(a4.a.t(new StringBuilder("https://ss3.4sqi.net/img/categories_v2/"), fd0Var.c.venue_type, "_64.png"), null, null);
                 frameLayout3.addView(w9Var, z5.e(30, 30, 17));
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 ofFloat.addUpdateListener(new cd0(dd0Var, frameLayout3));

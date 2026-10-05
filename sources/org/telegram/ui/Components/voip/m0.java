@@ -34,20 +34,20 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.t6;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.gt;
 import org.telegram.ui.Components.in0;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.uo0;
 import org.telegram.ui.Components.v20;
+import org.telegram.ui.Components.vo0;
 import org.telegram.ui.a40;
 import org.telegram.ui.h60;
 import org.telegram.ui.w30;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class m0 extends FrameLayout {
     public boolean A0;
@@ -228,11 +228,11 @@ public abstract class m0 extends FrameLayout {
         addView(f0Var, z5.e(56, -1, 51));
         TextView textView = new TextView(context);
         this.d0 = textView;
-        org.telegram.messenger.f0.q(textView, -1, 1, 15.0f);
+        org.telegram.messenger.q.q(textView, -1, 1, 15.0f);
         textView.setText(LocaleController.getString(R.string.CallVideoPin));
         TextView textView2 = new TextView(context);
         this.e0 = textView2;
-        org.telegram.messenger.f0.q(textView2, -1, 1, 15.0f);
+        org.telegram.messenger.q.q(textView2, -1, 1, 15.0f);
         textView2.setText(LocaleController.getString(R.string.CallVideoUnpin));
         addView(textView, z5.e(-2, -2, 51));
         addView(textView2, z5.e(-2, -2, 51));
@@ -984,12 +984,12 @@ public abstract class m0 extends FrameLayout {
                     uVar11.setScaleX(0.5f);
                     uVar11.setScaleY(0.5f);
                     uVar11.E = true;
-                    uo0 uo0Var = new uo0(26, this, uVar11);
+                    vo0 vo0Var = new vo0(26, this, uVar11);
                     if (uVar11.a.d.isFirstFrameRendered()) {
-                        uo0Var.run();
+                        vo0Var.run();
                     } else {
-                        AndroidUtilities.runOnUIThread(uo0Var, 250L);
-                        uVar11.m0.add(uo0Var);
+                        AndroidUtilities.runOnUIThread(vo0Var, 250L);
+                        uVar11.m0.add(vo0Var);
                     }
                     u uVar102 = new u(this, this.i0, h60Var);
                     uVar102.w = videoParticipant;
@@ -1423,9 +1423,9 @@ public abstract class m0 extends FrameLayout {
                                 spannableStringBuilder.append((CharSequence) ", ");
                             }
                             if (user != null) {
-                                spannableStringBuilder.append(UserObject.getFirstName(user), new d61(AndroidUtilities.bold()), 0);
+                                spannableStringBuilder.append(UserObject.getFirstName(user), new e61(AndroidUtilities.bold()), 0);
                             } else {
-                                spannableStringBuilder.append(chat.title, new d61(AndroidUtilities.bold()), 0);
+                                spannableStringBuilder.append(chat.title, new e61(AndroidUtilities.bold()), 0);
                             }
                         }
                     }

@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class lc0 extends org.telegram.ui.ActionBar.n2 {
     public FrameLayout a;
@@ -55,7 +55,7 @@ public final class lc0 extends org.telegram.ui.ActionBar.n2 {
                 return;
             }
             if (((fc0) arrayList.get(i11)).e == i10) {
-                this.b.f1(new i2.s(this, i11, 13), 700, true);
+                this.b.e1(new i2.s(this, i11, 13), 700, true);
                 return;
             }
             i11++;
@@ -108,7 +108,7 @@ public final class lc0 extends org.telegram.ui.ActionBar.n2 {
                 arrayList2.add(fc0.b(262144, LocaleController.getString("LiteOptionsLiquidGlass")));
             }
             arrayList2.add(fc0.b(32768, LocaleController.getString("LiteOptionsScale")));
-            if (org.telegram.ui.Components.v11.c()) {
+            if (org.telegram.ui.Components.w11.c()) {
                 arrayList2.add(fc0.b(65536, LocaleController.getString("LiteOptionsThanos")));
             }
         }
@@ -148,7 +148,7 @@ public final class lc0 extends org.telegram.ui.ActionBar.n2 {
                                     kc0Var.c(fc0Var, true);
                                     int S = lc0Var.S(i12);
                                     imageView.clearAnimation();
-                                    org.telegram.messenger.ok.s(imageView.animate().rotation((S < 0 || !lc0Var.n[S]) ? 0.0f : 180.0f), org.telegram.ui.Components.tr.h, 240L);
+                                    org.telegram.messenger.bi.r(imageView.animate().rotation((S < 0 || !lc0Var.n[S]) ? 0.0f : 180.0f), org.telegram.ui.Components.tr.h, 240L);
                                 }
                                 kc0Var.f.c(LiteMode.isEnabled(i12), true);
                             } else {
@@ -183,7 +183,7 @@ public final class lc0 extends org.telegram.ui.ActionBar.n2 {
         this.a = new FrameLayout(context);
         org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
         this.b = zl0Var;
-        zl0Var.s1();
+        zl0Var.r1();
         org.telegram.ui.Components.zl0 zl0Var2 = this.b;
         s4.c0 c0Var = new s4.c0();
         this.c = c0Var;

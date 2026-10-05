@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class k70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.x40 {
     public TLRPC.FileLocation E;
@@ -181,13 +181,13 @@ public final class k70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         jdVar.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
         this.fragmentView.setOnTouchListener(new bi.d(2));
         this.x = context.getResources().getDrawable(R.drawable.greydivider_top).mutate();
-        xb1 xb1Var = new xb1(this, context, 13);
-        xb1Var.setOrientation(1);
-        jdVar.addView(xb1Var, w7.z5.c(-1.0f, -1));
+        vb1 vb1Var = new vb1(this, context, 13);
+        vb1Var.setOrientation(1);
+        jdVar.addView(vb1Var, w7.z5.c(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(context);
         this.s = frameLayout;
         frameLayout.setBackground(org.telegram.ui.ActionBar.i6.d0(AndroidUtilities.dp(16.0f), getThemedColor(org.telegram.ui.ActionBar.i6.d6)));
-        xb1Var.addView(this.s, w7.z5.k(9.0f, 0.0f, 9.0f, 0.0f, -1, -2));
+        vb1Var.addView(this.s, w7.z5.k(9.0f, 0.0f, 9.0f, 0.0f, -1, -2));
         ai.y5 y5Var = new ai.y5(this, context, 9);
         this.d = y5Var;
         int i13 = this.P;
@@ -321,7 +321,7 @@ public final class k70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         frameLayout6.addView(muVar5, w7.z5.d(-1, -2.0f, 16, z14 ? 5.0f : 96.0f, 0.0f, z14 ? 96.0f : 5.0f, 0.0f));
         org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
         this.b = zl0Var;
-        zl0Var.s1();
+        zl0Var.r1();
         this.X = new org.telegram.ui.Components.sz(this.b, 1);
         org.telegram.ui.Components.zl0 zl0Var2 = this.b;
         i70 i70Var = new i70(this, context);
@@ -330,7 +330,7 @@ public final class k70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.b.setLayoutManager(this.X);
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
-        xb1Var.addView(this.b, w7.z5.n(-1, -1));
+        vb1Var.addView(this.b, w7.z5.n(-1, -1));
         this.b.setOnScrollListener(new i3(this, 15));
         this.b.setOnItemClickListener(new f70(this));
         org.telegram.ui.Components.c20 c20Var = new org.telegram.ui.Components.c20(context, this.resourceProvider, false);

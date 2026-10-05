@@ -59,7 +59,6 @@ import e2.d0;
 import e2.v;
 import g6.f;
 import g6.w;
-import hc.e;
 import j$.util.DesugarCollections;
 import j4.a0;
 import j4.f0;
@@ -98,18 +97,19 @@ import m.p3;
 import n6.l;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.a81;
-import org.telegram.ui.Components.d81;
-import org.telegram.ui.Components.t71;
+import org.telegram.ui.Components.b81;
+import org.telegram.ui.Components.e81;
+import org.telegram.ui.Components.u71;
 import org.telegram.ui.Components.uz;
 import org.telegram.ui.Components.yz;
+import sa.e;
 import v7.n;
 import v7.p;
 import z3.d;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
+public final class a implements s, b81, d, a0, OnCompleteListener, n5.b {
     public static a e;
     public final /* synthetic */ int a;
     public Object b;
@@ -147,12 +147,12 @@ public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
             return str;
         }
         if (!str.contains("?")) {
-            return a4.a.C(str, "?", sb3);
+            return a4.a.D(str, "?", sb3);
         }
         if (!str.endsWith("&")) {
             sb3 = "&".concat(sb3);
         }
-        return t8.b.v(str, sb3);
+        return e.v(str, sb3);
     }
 
     @Override // z3.d
@@ -500,7 +500,7 @@ public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
             v1.b bVar = new v1.b((g) this.d);
             ((LinkedHashMap) bVar.a).put(q0.b, key);
             try {
-                viewModel = s0Var.D(cls, bVar);
+                viewModel = s0Var.H(cls, bVar);
             } catch (AbstractMethodError unused) {
                 viewModel = s0Var.f(cls);
             }
@@ -564,7 +564,7 @@ public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
             i11++;
             jc.f fVar2 = (jc.f) obj;
             int i12 = fVar2.d;
-            e eVar = fVar2.a;
+            hc.e eVar = fVar2.a;
             int a2 = eVar.a(fVar);
             int i13 = a2 + 4;
             int ordinal = eVar.ordinal();
@@ -599,53 +599,53 @@ public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
         scheduledFuture.cancel(false);
     }
 
-    @Override // org.telegram.ui.Components.a81
-    public void onError(d81 d81Var, Exception exc) {
+    @Override // org.telegram.ui.Components.b81
+    public void onError(e81 e81Var, Exception exc) {
         ga gaVar = ((b7) this.d).N;
         if (gaVar != null) {
             gaVar.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public /* synthetic */ void onRenderedFirstFrame(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public void onStateChanged(boolean z10, int i10) {
         b7 b7Var = (b7) this.d;
         z6 z6Var = b7Var.K;
-        d81 d81Var = b7Var.e;
-        if (d81Var == null) {
+        e81 e81Var = b7Var.e;
+        if (e81Var == null) {
             return;
         }
-        if (d81Var.y()) {
+        if (e81Var.y()) {
             AndroidUtilities.runOnUIThread(z6Var);
         } else {
             AndroidUtilities.cancelRunOnUIThread(z6Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         ((b7) this.d).i();
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public void onVideoSizeChanged(int i10, int i11, int i12, float f7) {
         b7 b7Var = (b7) this.d;
         k8 k8Var = (k8) this.b;
         if (k8Var != null) {
             j8 q6 = b7Var.e.q(k8Var.d1);
             k8Var.d1 = q6;
-            t71 t71Var = b7Var.n;
-            if (t71Var != null) {
-                t71Var.setHDRInfo(q6);
+            u71 u71Var = b7Var.n;
+            if (u71Var != null) {
+                u71Var.setHDRInfo(q6);
             }
         }
         int i13 = (int) (i10 * f7);
@@ -658,13 +658,13 @@ public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
             k8Var.A();
         }
         b7Var.b();
-        t71 t71Var2 = b7Var.n;
-        if (t71Var2 != null) {
+        u71 u71Var2 = b7Var.n;
+        if (u71Var2 != null) {
             int i15 = b7Var.f;
             int i16 = b7Var.h;
-            t71Var2.d = i15;
-            t71Var2.e = i16;
-            yz yzVar = t71Var2.b;
+            u71Var2.d = i15;
+            u71Var2.e = i16;
+            yz yzVar = u71Var2.b;
             if (yzVar == null) {
                 return;
             }
@@ -680,7 +680,7 @@ public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
     */
     public boolean p() {
         com.google.firebase.messaging.o oVar;
-        if (((a6.i) this.d).H("gcm.n.noui")) {
+        if (((a6.i) this.d).E("gcm.n.noui")) {
             return true;
         }
         FirebaseMessagingService firebaseMessagingService = (FirebaseMessagingService) this.c;
@@ -879,7 +879,7 @@ public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
         this.d = obj2;
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public void onRenderedFirstFrame() {
         k8 k8Var = (k8) this.b;
         Runnable[] runnableArr = (Runnable[]) this.c;
@@ -898,10 +898,10 @@ public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
         }
         Runnable runnable = runnableArr[0];
         if (runnable == null) {
-            t71 t71Var = b7Var.n;
-            if (t71Var != null) {
+            u71 u71Var = b7Var.n;
+            if (u71Var != null) {
                 if (a7Var == null || !a7Var.g) {
-                    t71Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new ba(21, this, k8Var)).start();
+                    u71Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new ba(21, this, k8Var)).start();
                     return;
                 }
                 return;
@@ -986,11 +986,11 @@ public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
         }
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.a81
+    @Override // org.telegram.ui.Components.b81
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
     }
 
@@ -1154,7 +1154,7 @@ public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
     }
 
     public a(m mVar, hc.f fVar, jc.e eVar) {
-        e eVar2;
+        hc.e eVar2;
         int i10;
         int i11;
         this.a = 23;
@@ -1164,7 +1164,7 @@ public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
         int i12 = 0;
         int i13 = 0;
         while (true) {
-            eVar2 = e.n;
+            eVar2 = hc.e.n;
             if (eVar3 == null) {
                 break;
             }
@@ -1172,8 +1172,8 @@ public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
             int i15 = i12 + eVar3.d;
             jc.e eVar4 = eVar3.e;
             int i16 = i13;
-            e eVar5 = eVar3.a;
-            boolean z10 = (eVar5 == e.h && eVar4 == null && i14 != 0) || !(eVar4 == null || i14 == eVar4.c);
+            hc.e eVar5 = eVar3.a;
+            boolean z10 = (eVar5 == hc.e.h && eVar4 == null && i14 != 0) || !(eVar4 == null || i14 == eVar4.c);
             i10 = z10 ? 1 : i16;
             if (eVar4 == null || eVar4.a != eVar5 || z10) {
                 ((ArrayList) this.b).add(0, new jc.f(this, eVar5, eVar3.b, i14, i15));
@@ -1196,7 +1196,7 @@ public final class a implements s, a81, d, a0, OnCompleteListener, n5.b {
             if (fVar2 != null && fVar2.a != eVar2 && i17 != 0) {
                 ((ArrayList) this.b).add(0, new jc.f(this, eVar2, 0, 0, 0));
             }
-            ((ArrayList) this.b).add(((jc.f) ((ArrayList) this.b).get(0)).a == eVar2 ? 1 : 0, new jc.f(this, e.s, 0, 0, 0));
+            ((ArrayList) this.b).add(((jc.f) ((ArrayList) this.b).get(0)).a == eVar2 ? 1 : 0, new jc.f(this, hc.e.s, 0, 0, 0));
         }
         int i18 = fVar.a;
         int i19 = 26;

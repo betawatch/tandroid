@@ -27,7 +27,7 @@ import q3.m;
 import v7.p7;
 import v7.y7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public final int a;
@@ -393,16 +393,16 @@ public final class d implements o {
                                             if (length == -1 || length == j16) {
                                                 j14 = j16;
                                             } else {
-                                                StringBuilder t10 = a4.a.t(length, "VBRI data size mismatch: ", ", ");
+                                                StringBuilder u10 = a4.a.u(length, "VBRI data size mismatch: ", ", ");
                                                 j14 = j16;
-                                                t10.append(j14);
-                                                e2.a.n("VbriSeeker", t10.toString());
+                                                u10.append(j14);
+                                                e2.a.n("VbriSeeker", u10.toString());
                                             }
                                             if (j14 != j22) {
-                                                StringBuilder t11 = a4.a.t(j14, "VBRI bytes and ToC mismatch (using max): ", ", ");
-                                                t11.append(j22);
-                                                t11.append("\nSeeking will be inaccurate.");
-                                                e2.a.n("VbriSeeker", t11.toString());
+                                                StringBuilder u11 = a4.a.u(j14, "VBRI bytes and ToC mismatch (using max): ", ", ");
+                                                u11.append(j22);
+                                                u11.append("\nSeeking will be inaccurate.");
+                                                e2.a.n("VbriSeeker", u11.toString());
                                                 j14 = Math.max(j14, j22);
                                             }
                                             zVar = zVar2;

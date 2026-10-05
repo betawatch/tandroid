@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wo implements Runnable {
     public final /* synthetic */ int a;
@@ -16,12 +16,12 @@ public final /* synthetic */ class wo implements Runnable {
         switch (this.a) {
             case 0:
                 hp hpVar = this.b;
-                hpVar.c0 = true;
+                hpVar.d0 = true;
                 hpVar.b0();
                 break;
             case 1:
                 hp hpVar2 = this.b;
-                hpVar2.X = hpVar2.getMessagesController().getChat(Long.valueOf(hpVar2.Z));
+                hpVar2.Y = hpVar2.getMessagesController().getChat(Long.valueOf(hpVar2.a0));
                 hpVar2.X();
                 break;
             case 2:
@@ -29,9 +29,9 @@ public final /* synthetic */ class wo implements Runnable {
                 break;
             case 3:
                 hp hpVar3 = this.b;
-                hpVar3.c0 = true;
-                if (hpVar3.a.length() > 0) {
-                    hpVar3.U(hpVar3.a.getText().toString());
+                hpVar3.d0 = true;
+                if (hpVar3.b.length() > 0) {
+                    hpVar3.U(hpVar3.b.getText().toString());
                 }
                 hpVar3.b0();
                 break;

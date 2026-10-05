@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
 import v7.k8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class o extends j9.a implements w {
     public static final boolean d;
@@ -400,11 +400,11 @@ public abstract class o extends j9.a implements w {
                     String obj3 = timeUnit.toString();
                     Locale locale = Locale.ROOT;
                     String lowerCase = obj3.toLowerCase(locale);
-                    StringBuilder t10 = a4.a.t(j3, "Waited ", " ");
-                    t10.append(timeUnit.toString().toLowerCase(locale));
-                    String sb2 = t10.toString();
+                    StringBuilder u10 = a4.a.u(j3, "Waited ", " ");
+                    u10.append(timeUnit.toString().toLowerCase(locale));
+                    String sb2 = u10.toString();
                     if (nanos + 1000 < j10) {
-                        String v = t8.b.v(sb2, " (plus ");
+                        String v = sa.e.v(sb2, " (plus ");
                         long j13 = -nanos;
                         long convert = timeUnit.convert(j13, TimeUnit.NANOSECONDS);
                         long nanos2 = j13 - timeUnit.toNanos(convert);
@@ -412,19 +412,19 @@ public abstract class o extends j9.a implements w {
                         if (convert > j10) {
                             String str = v + convert + " " + lowerCase;
                             if (z10) {
-                                str = t8.b.v(str, ",");
+                                str = sa.e.v(str, ",");
                             }
-                            v = t8.b.v(str, " ");
+                            v = sa.e.v(str, " ");
                         }
                         if (z10) {
                             v = v + nanos2 + " nanoseconds ";
                         }
-                        sb2 = t8.b.v(v, "delay)");
+                        sb2 = sa.e.v(v, "delay)");
                     }
                     if (isDone()) {
-                        throw new TimeoutException(t8.b.v(sb2, " but future completed as timeout expired"));
+                        throw new TimeoutException(sa.e.v(sb2, " but future completed as timeout expired"));
                     }
-                    throw new TimeoutException(a4.a.C(sb2, " for ", oVar));
+                    throw new TimeoutException(a4.a.D(sb2, " for ", oVar));
                 }
                 Object obj4 = this.a;
                 if ((obj4 != null) && (!(obj4 instanceof e))) {

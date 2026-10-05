@@ -12,7 +12,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class PollVotesAlert$UserCell extends LinearLayout {
     public ArrayList E;
@@ -22,7 +22,7 @@ public class PollVotesAlert$UserCell extends LinearLayout {
     public final TextView c;
     public final TextView d;
     public final h9 e;
-    public final gx0 f;
+    public final hx0 f;
     public TLRPC.User h;
     public TLRPC.Chat n;
     public CharSequence r;
@@ -65,7 +65,7 @@ public class PollVotesAlert$UserCell extends LinearLayout {
         textView2.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));
         textView2.setTextSize(1, 13.0f);
         addView(textView2, w7.z5.p(-2, -2, 0.0f, 21, 2, 0, 4, 0));
-        this.f = new gx0(20, i5Var);
+        this.f = new hx0(20, i5Var);
     }
 
     public float getPlaceholderAlpha() {

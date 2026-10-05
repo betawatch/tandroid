@@ -5,14 +5,14 @@ import android.graphics.Bitmap;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.aa1;
 import org.telegram.ui.Components.d30;
-import org.telegram.ui.Components.f71;
 import org.telegram.ui.Components.h30;
 import org.telegram.ui.Components.j30;
+import org.telegram.ui.Components.q61;
 import org.telegram.ui.Components.su;
-import org.telegram.ui.Components.z91;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class fa implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -88,20 +88,20 @@ public final class fa implements ViewTreeObserver.OnPreDrawListener {
                 ((ci.r6) obj).invalidate();
                 break;
             default:
-                z91 z91Var = (z91) ((ki.d) obj).b;
-                z91Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = z91Var.e;
+                aa1 aa1Var = (aa1) ((ki.d) obj).b;
+                aa1Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView = aa1Var.e;
                 if (imageView != null) {
                     imageView.setVisibility(4);
-                    z91Var.e.setImageDrawable(null);
-                    Bitmap bitmap = z91Var.h;
+                    aa1Var.e.setImageDrawable(null);
+                    Bitmap bitmap = aa1Var.h;
                     if (bitmap != null) {
                         bitmap.recycle();
-                        z91Var.h = null;
+                        aa1Var.h = null;
                     }
                 }
-                AndroidUtilities.runOnUIThread(new f71(this, 5));
-                z91Var.r = 0;
+                AndroidUtilities.runOnUIThread(new q61(this, 6));
+                aa1Var.r = 0;
                 break;
         }
         return true;

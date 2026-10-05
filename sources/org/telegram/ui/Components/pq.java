@@ -28,7 +28,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class pq extends FrameLayout {
     public static final /* synthetic */ int e0 = 0;
@@ -178,9 +178,9 @@ public class pq extends FrameLayout {
                                     arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property4, 1.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property3, 1.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property2, 1.0f));
-                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, hg.k0.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, hg.c.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                                 } else {
-                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, hg.k0.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, hg.c.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property4, 0.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property3, 0.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property2, 0.0f));
@@ -229,7 +229,7 @@ public class pq extends FrameLayout {
                                     arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
                                 } else if (i18 == 4) {
                                     pqVar.K = 3;
-                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property5, org.telegram.messenger.f0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property5, org.telegram.messenger.q.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
                                 }
                                 if (pqVar.K < pqVar.L) {
                                     imageView2.setVisibility(0);
@@ -405,9 +405,9 @@ public class pq extends FrameLayout {
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 1.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 1.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 1.0f));
-                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.k0.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                             } else {
-                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.k0.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 0.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 0.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 0.0f));
@@ -456,7 +456,7 @@ public class pq extends FrameLayout {
                                 arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
                             } else if (i182 == 4) {
                                 pqVar.K = 3;
-                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.f0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.q.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
                             }
                             if (pqVar.K < pqVar.L) {
                                 imageView22.setVisibility(0);
@@ -586,9 +586,9 @@ public class pq extends FrameLayout {
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 1.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 1.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 1.0f));
-                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.k0.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                             } else {
-                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.k0.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 0.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 0.0f));
                                 arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 0.0f));
@@ -637,7 +637,7 @@ public class pq extends FrameLayout {
                                 arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
                             } else if (i182 == 4) {
                                 pqVar.K = 3;
-                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.f0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.q.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
                             }
                             if (pqVar.K < pqVar.L) {
                                 imageView22.setVisibility(0);
@@ -782,9 +782,9 @@ public class pq extends FrameLayout {
                                     arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 1.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 1.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 1.0f));
-                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.k0.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                                 } else {
-                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.k0.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, hg.c.f(pqVar.K, 1, AndroidUtilities.dp(13.0f), (pqVar.K - 1) * AndroidUtilities.dp(30.0f))));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 0.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 0.0f));
                                     arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 0.0f));
@@ -833,7 +833,7 @@ public class pq extends FrameLayout {
                                     arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
                                 } else if (i182 == 4) {
                                     pqVar.K = 3;
-                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.f0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.q.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
                                 }
                                 if (pqVar.K < pqVar.L) {
                                     imageView22.setVisibility(0);
@@ -998,9 +998,9 @@ public class pq extends FrameLayout {
         } else if (i12 == 2) {
             imageView.setTranslationX(AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f));
         } else if (i12 == 3) {
-            imageView.setTranslationX(org.telegram.messenger.f0.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2));
+            imageView.setTranslationX(org.telegram.messenger.q.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2));
         } else {
-            imageView.setTranslationX(org.telegram.messenger.f0.D(13.0f, 3, AndroidUtilities.dp(30.0f) * 3));
+            imageView.setTranslationX(org.telegram.messenger.q.D(13.0f, 3, AndroidUtilities.dp(30.0f) * 3));
         }
         org.telegram.ui.ActionBar.k0 k0Var = this.F;
         org.telegram.ui.ActionBar.v0 v0Var = this.I;
@@ -1040,7 +1040,7 @@ public class pq extends FrameLayout {
     public final void g(int i10, ArrayList arrayList, boolean z10) {
         float f7;
         int i11 = this.K;
-        int D = org.telegram.messenger.f0.D(13.0f, i11 - 1, AndroidUtilities.dp(30.0f) * i11);
+        int D = org.telegram.messenger.q.D(13.0f, i11 - 1, AndroidUtilities.dp(30.0f) * i11);
         FrameLayout frameLayout = this.w;
         float f10 = frameLayout.getLeft() + D > i10 - AndroidUtilities.dp(this.J == 1 ? 50.0f : 0.0f) ? r7 - r2 : 0.0f;
         Property property = View.TRANSLATION_X;
@@ -1107,7 +1107,7 @@ public class pq extends FrameLayout {
                 }
                 colorPicker$RadioButtonArr[i12].setTag(R.id.index_tag, null);
             }
-            i13 = org.telegram.messenger.f0.C(13.0f, AndroidUtilities.dp(f7), i13);
+            i13 = org.telegram.messenger.q.C(13.0f, AndroidUtilities.dp(f7), i13);
             i12++;
         }
     }

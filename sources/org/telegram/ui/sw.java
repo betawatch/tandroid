@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class sw extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ uy a;
@@ -35,8 +35,8 @@ public final class sw extends org.telegram.ui.ActionBar.j {
         uy uyVar = this.a;
         ArrayList arrayList3 = uyVar.I2;
         if ((i10 == 201 || i10 == 200 || i10 == 202 || i10 == 203) && (dyVar = uyVar.C0) != null) {
-            HashMap hashMap = dyVar.A0;
-            uy uyVar2 = dyVar.K0;
+            HashMap hashMap = dyVar.B0;
+            uy uyVar2 = dyVar.L0;
             if (i10 == 202) {
                 if (uyVar2 == null || uyVar2.getParentActivity() == null) {
                     return;
@@ -70,7 +70,7 @@ public final class sw extends org.telegram.ui.ActionBar.j {
                 return;
             } else {
                 if (i10 == 201) {
-                    uy uyVar3 = new uy(org.telegram.messenger.ok.e(3, "onlySelect", "dialogsType", true));
+                    uy uyVar3 = new uy(org.telegram.messenger.bi.d(3, "onlySelect", "dialogsType", true));
                     uyVar3.C2 = new org.telegram.ui.Components.pv(dyVar, 18);
                     uyVar2.presentFragment(uyVar3);
                     return;
@@ -95,7 +95,7 @@ public final class sw extends org.telegram.ui.ActionBar.j {
                 dy dyVar3 = uyVar.C0;
                 if (dyVar3 != null && dyVar3.getVisibility() == 0) {
                     dy dyVar4 = uyVar.C0;
-                    if (dyVar4.z0) {
+                    if (dyVar4.A0) {
                         dyVar4.S(false);
                         return;
                     }
@@ -120,7 +120,7 @@ public final class sw extends org.telegram.ui.ActionBar.j {
             dy dyVar5 = uyVar.C0;
             if (dyVar5 != null && dyVar5.getVisibility() == 0) {
                 dy dyVar6 = uyVar.C0;
-                if (dyVar6.z0) {
+                if (dyVar6.A0) {
                     dyVar6.S(false);
                     return;
                 }

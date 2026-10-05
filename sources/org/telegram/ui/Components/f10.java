@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class f10 extends cb {
     public boolean A0;
@@ -145,7 +145,7 @@ public final class f10 extends cb {
     }
 
     @Override // org.telegram.ui.Components.cb
-    public final void E(lw0 lw0Var) {
+    public final void E(mw0 mw0Var) {
         zl0 zl0Var = this.d;
         zl0Var.setOverScrollMode(2);
         zl0Var.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));

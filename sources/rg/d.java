@@ -11,16 +11,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.t3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.yl0;
-import org.telegram.ui.n41;
+import org.telegram.ui.l41;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class d extends yl0 {
     public final d6 c;
@@ -91,7 +91,7 @@ public final class d extends yl0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.n41] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.l41] */
     /* JADX WARN: Type inference failed for: r1v7, types: [rg.f] */
     @Override // s4.h0
     public final s4.c1 x(ViewGroup viewGroup, int i10) {
@@ -108,20 +108,20 @@ public final class d extends yl0 {
                 t3Var = new t3(context, 16);
             }
         } else if (this.s) {
-            ?? n41Var = new n41(context, 11);
-            LinearLayout f7 = ok.f(context, 0);
+            ?? l41Var = new l41(context, 11);
+            LinearLayout e7 = bi.e(context, 0);
             ImageView imageView = new ImageView(context);
             imageView.setImageDrawable(b1.c(context.getDrawable(R.drawable.other_2x_large), b1.d().a));
-            f7.addView(imageView, z5.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
+            e7.addView(imageView, z5.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
             TextView textView = new TextView(context);
             textView.setText(LocaleController.getString(R.string.DoubledLimits));
             textView.setGravity(17);
             textView.setTextSize(1, 20.0f);
             textView.setTextColor(i6.v0(i6.G6, d6Var));
             textView.setTypeface(AndroidUtilities.bold());
-            f7.addView(textView, z5.e(-2, -2, 16));
-            n41Var.addView(f7, z5.e(-2, -2, 17));
-            t3Var = n41Var;
+            e7.addView(textView, z5.e(-2, -2, 16));
+            l41Var.addView(e7, z5.e(-2, -2, 17));
+            t3Var = l41Var;
         } else {
             t3Var = new t3(context, 64);
         }

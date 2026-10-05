@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import a4.a;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 final class zzqs extends zzqv {
     private final byte[] zzc;
@@ -15,7 +15,7 @@ final class zzqs extends zzqv {
         int length = bArr.length;
         if (((length - i11) | i11) < 0) {
             Locale locale = Locale.US;
-            throw new IllegalArgumentException(a.l(length, i11, "Array range is invalid. Buffer.length=", ", offset=0, length="));
+            throw new IllegalArgumentException(a.m(length, i11, "Array range is invalid. Buffer.length=", ", offset=0, length="));
         }
         this.zzc = bArr;
         this.zze = 0;

@@ -6,14 +6,14 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class f0 {
     public static void A(Parcel parcel, int i10, int i11) {
         if (i10 == i11) {
             return;
         }
-        throw new androidx.car.app.j(a4.a.s(hg.k0.k("Expected size ", i11, " got ", i10, " (0x"), Integer.toHexString(i10), ")"), parcel);
+        throw new androidx.car.app.j(a4.a.t(hg.c.k("Expected size ", i11, " got ", i10, " (0x"), Integer.toHexString(i10), ")"), parcel);
     }
 
     public static void B(Parcel parcel, int i10, int i11) {
@@ -21,7 +21,7 @@ public abstract class f0 {
         if (x10 == i11) {
             return;
         }
-        throw new androidx.car.app.j(a4.a.s(hg.k0.k("Expected size ", i11, " got ", x10, " (0x"), Integer.toHexString(x10), ")"), parcel);
+        throw new androidx.car.app.j(a4.a.t(hg.c.k("Expected size ", i11, " got ", x10, " (0x"), Integer.toHexString(x10), ")"), parcel);
     }
 
     public static Bundle a(Parcel parcel, int i10) {
@@ -166,7 +166,7 @@ public abstract class f0 {
 
     public static void m(Parcel parcel, int i10) {
         if (parcel.dataPosition() != i10) {
-            throw new androidx.car.app.j(hg.k0.h(i10, "Overread allowed size end="), parcel);
+            throw new androidx.car.app.j(hg.c.h(i10, "Overread allowed size end="), parcel);
         }
     }
 
@@ -256,7 +256,7 @@ public abstract class f0 {
         }
         int i10 = x10 + dataPosition;
         if (i10 < dataPosition || i10 > parcel.dataSize()) {
-            throw new androidx.car.app.j(a4.a.l(dataPosition, i10, "Size read is invalid start=", " end="), parcel);
+            throw new androidx.car.app.j(a4.a.m(dataPosition, i10, "Size read is invalid start=", " end="), parcel);
         }
         return i10;
     }

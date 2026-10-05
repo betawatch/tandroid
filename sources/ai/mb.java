@@ -42,7 +42,7 @@ import org.telegram.ui.fz;
 import org.telegram.ui.gz;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class mb extends FrameLayout implements View.OnClickListener {
     public final Path E;
@@ -335,8 +335,8 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 boolean z13 = e6Var.C1;
                 c6 c6Var = e6Var.O1;
                 if (!z13 && c6Var.a != null) {
-                    zg.o0 d = zg.o0.d(mediaArea.reaction);
-                    if (!d.equals(zg.o0.d(c6Var.a.sent_reaction))) {
+                    zg.m0 d = zg.m0.d(mediaArea.reaction);
+                    if (!d.equals(zg.m0.d(c6Var.a.sent_reaction))) {
                         e6Var.L0(d);
                     }
                 }
@@ -349,7 +349,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                 if (arrayList2.size() > 12) {
                     return;
                 }
-                zg.o0 d10 = zg.o0.d(mediaArea.reaction);
+                zg.m0 d10 = zg.m0.d(mediaArea.reaction);
                 String str = d10.f;
                 if (str == null) {
                     str = MessageObject.findAnimatedEmojiEmoticon(org.telegram.ui.Components.q5.f(gzVar.b, d10.g));
@@ -376,7 +376,7 @@ public abstract class mb extends FrameLayout implements View.OnClickListener {
                         if (arrayList.isEmpty()) {
                             return;
                         }
-                        fz fzVar = (fz) hg.k0.g(1, arrayList);
+                        fz fzVar = (fz) hg.c.g(1, arrayList);
                         fzVar.getClass();
                         fzVar.e = f12;
                         fzVar.d = f11;

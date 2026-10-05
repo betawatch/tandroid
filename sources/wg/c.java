@@ -32,13 +32,13 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.f0;
+import org.telegram.messenger.q;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.fx0;
+import org.telegram.ui.Components.gx0;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.kj0;
@@ -46,7 +46,7 @@ import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.r90;
 import tg.s;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class c {
     public TextPaint A;
@@ -257,7 +257,7 @@ public final class c {
         this.t.draw(canvas);
         canvas.restore();
         canvas.translate(0.0f, AndroidUtilities.dp(6.0f) + this.o);
-        int C = f0.C(6.0f, this.o, dp5);
+        int C = q.C(6.0f, this.o, dp5);
         int i15 = 0;
         int i16 = 0;
         while (true) {
@@ -502,9 +502,9 @@ public final class c {
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
             float dp3 = AndroidUtilities.dp(2.0f);
             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-            this.s = fx0.c(spannableStringBuilder, textPaint2, dp2, alignment, dp3, false, truncateAt, dp2, 10, true);
-            this.t = fx0.c(this.R, this.y, dp2, alignment, AndroidUtilities.dp(2.0f), false, truncateAt, dp2, 10, true);
-            this.u = fx0.c(spannableStringBuilder2, this.y, dp2, alignment, AndroidUtilities.dp(3.0f), false, truncateAt, dp2, 10, true);
+            this.s = gx0.c(spannableStringBuilder, textPaint2, dp2, alignment, dp3, false, truncateAt, dp2, 10, true);
+            this.t = gx0.c(this.R, this.y, dp2, alignment, AndroidUtilities.dp(2.0f), false, truncateAt, dp2, 10, true);
+            this.u = gx0.c(spannableStringBuilder2, this.y, dp2, alignment, AndroidUtilities.dp(3.0f), false, truncateAt, dp2, 10, true);
             int max = Math.max(i10, dp2);
             this.r = max - dp2;
             float f7 = max;

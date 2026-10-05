@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hn0 implements ml0 {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class hn0 implements ml0 {
         org.telegram.ui.qp0 qp0Var;
         int i11;
         int i12;
-        zg.o0 o0Var;
+        zg.m0 m0Var;
         TLRPC.Document document;
         switch (this.a) {
             case 0:
@@ -209,7 +209,7 @@ public final /* synthetic */ class hn0 implements ml0 {
                     int i17 = qp0Var2.m0;
                     if (qp0Var2.o0 == null) {
                         o5 o5Var = pp0Var4.c;
-                        org.telegram.ui.t61[] t61VarArr = new org.telegram.ui.t61[1];
+                        org.telegram.ui.r61[] r61VarArr = new org.telegram.ui.r61[1];
                         int min = (int) Math.min(AndroidUtilities.dp(330.0f), AndroidUtilities.displaySize.y * 0.75f);
                         int min2 = (int) Math.min(AndroidUtilities.dp(324.0f), AndroidUtilities.displaySize.x * 0.95f);
                         if (o5Var != null) {
@@ -224,7 +224,7 @@ public final /* synthetic */ class hn0 implements ml0 {
                             i11 = 0;
                             i12 = 0;
                         }
-                        org.telegram.ui.mp0 mp0Var = new org.telegram.ui.mp0(qp0Var2, wp0Var, qp0Var2.getContext(), Integer.valueOf(i12), i17 == 1 ? 5 : 7, wp0Var.getResourceProvider(), i17 == 1 ? 24 : 16, pp0Var4.a(), pp0Var4, t61VarArr);
+                        org.telegram.ui.mp0 mp0Var = new org.telegram.ui.mp0(qp0Var2, wp0Var, qp0Var2.getContext(), Integer.valueOf(i12), i17 == 1 ? 5 : 7, wp0Var.getResourceProvider(), i17 == 1 ? 24 : 16, pp0Var4.a(), pp0Var4, r61VarArr);
                         mp0Var.g1 = true;
                         long j10 = qp0Var2.n;
                         mp0Var.setSelected(j10 == 0 ? null : Long.valueOf(j10));
@@ -232,51 +232,51 @@ public final /* synthetic */ class hn0 implements ml0 {
                         mp0Var.y(o5Var, pp0Var4);
                         org.telegram.ui.np0 np0Var = new org.telegram.ui.np0(qp0Var2, mp0Var);
                         qp0Var2.o0 = np0Var;
-                        t61VarArr[0] = np0Var;
+                        r61VarArr[0] = np0Var;
                         np0Var.showAsDropDown(pp0Var4, 0, i11, (LocaleController.isRTL ? 3 : 5) | 48);
-                        t61VarArr[0].b();
+                        r61VarArr[0].b();
                     }
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.c71 c71Var = (org.telegram.ui.c71) this.c;
-                boolean z11 = view instanceof org.telegram.ui.l61;
+                org.telegram.ui.a71 a71Var = (org.telegram.ui.a71) this.c;
+                boolean z11 = view instanceof org.telegram.ui.j61;
                 int i18 = this.b;
                 try {
                     if (!z11) {
                         if (!(view instanceof ImageView)) {
-                            if (!(view instanceof org.telegram.ui.g61)) {
+                            if (!(view instanceof org.telegram.ui.e61)) {
                                 if (view != null) {
                                     view.callOnClick();
                                     break;
                                 }
                             } else {
-                                c71Var.i(i10, (org.telegram.ui.g61) view);
+                                a71Var.i(i10, (org.telegram.ui.e61) view);
                                 if (i18 != 1 && i18 != 11) {
-                                    c71Var.performHapticFeedback(3, 1);
+                                    a71Var.performHapticFeedback(3, 1);
                                 }
                             }
                         } else {
-                            c71Var.o(view, null);
+                            a71Var.o(view, null);
                             if (i18 != 1 && i18 != 11) {
-                                c71Var.performHapticFeedback(3, 1);
+                                a71Var.performHapticFeedback(3, 1);
                             }
                         }
                     } else {
-                        org.telegram.ui.l61 l61Var = (org.telegram.ui.l61) view;
-                        if (l61Var.s || (((o0Var = l61Var.x) != null && o0Var.a) || i18 == 13 || i18 == 14)) {
-                            c71Var.l();
-                            c71Var.r(l61Var, l61Var.x);
-                        } else if (!l61Var.Q || (document = l61Var.d) == null) {
-                            c71Var.o(l61Var, l61Var.e);
-                        } else if (c71Var.W == 6) {
-                            c71Var.p(l61Var, Long.valueOf(document.id), document, l61Var.v, null);
+                        org.telegram.ui.j61 j61Var = (org.telegram.ui.j61) view;
+                        if (j61Var.s || (((m0Var = j61Var.x) != null && m0Var.a) || i18 == 13 || i18 == 14)) {
+                            a71Var.l();
+                            a71Var.r(j61Var, j61Var.x);
+                        } else if (!j61Var.Q || (document = j61Var.d) == null) {
+                            a71Var.o(j61Var, j61Var.e);
+                        } else if (a71Var.W == 6) {
+                            a71Var.p(j61Var, Long.valueOf(document.id), document, j61Var.v, null);
                         } else {
-                            c71Var.p(l61Var, null, document, l61Var.v, null);
+                            a71Var.p(j61Var, null, document, j61Var.v, null);
                         }
                         if (i18 != 1 && i18 != 11) {
-                            c71Var.performHapticFeedback(3, 1);
+                            a71Var.performHapticFeedback(3, 1);
                         }
                     }
                     break;

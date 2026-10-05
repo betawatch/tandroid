@@ -79,7 +79,7 @@ import s4.y;
 import s4.y0;
 import u0.b;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class RecyclerView extends ViewGroup {
     public static final int[] P0 = {R.attr.clipToPadding};
@@ -352,12 +352,12 @@ public class RecyclerView extends ViewGroup {
     }
 
     public View E(float f7, float f10) {
-        for (int C = this.e.C() - 1; C >= 0; C--) {
-            View B = this.e.B(C);
-            float translationX = B.getTranslationX();
-            float translationY = B.getTranslationY();
-            if (f7 >= B.getLeft() + translationX && f7 <= B.getRight() + translationX && f10 >= B.getTop() + translationY && f10 <= B.getBottom() + translationY) {
-                return B;
+        for (int x10 = this.e.x() - 1; x10 >= 0; x10--) {
+            View w10 = this.e.w(x10);
+            float translationX = w10.getTranslationX();
+            float translationY = w10.getTranslationY();
+            if (f7 >= w10.getLeft() + translationX && f7 <= w10.getRight() + translationX && f10 >= w10.getTop() + translationY && f10 <= w10.getBottom() + translationY) {
+                return w10;
             }
         }
         return null;
@@ -402,16 +402,16 @@ public class RecyclerView extends ViewGroup {
     }
 
     public final void I(int[] iArr) {
-        int C = this.e.C();
-        if (C == 0) {
+        int x10 = this.e.x();
+        if (x10 == 0) {
             iArr[0] = -1;
             iArr[1] = -1;
             return;
         }
         int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
         int i11 = TLObject.FLAG_31;
-        for (int i12 = 0; i12 < C; i12++) {
-            c1 U = U(this.e.B(i12));
+        for (int i12 = 0; i12 < x10; i12++) {
+            c1 U = U(this.e.w(i12));
             if (U != null && !U.r()) {
                 int c10 = U.c();
                 if (c10 < i10) {
@@ -433,7 +433,7 @@ public class RecyclerView extends ViewGroup {
         }
         int L = this.e.L();
         for (int i11 = 0; i11 < L; i11++) {
-            c1 U = U(this.e.K(i11));
+            c1 U = U(this.e.J(i11));
             if (U != null && !U.j() && N(U) == i10) {
                 if (!((ArrayList) this.e.d).contains(U.a)) {
                     return U;
@@ -453,7 +453,7 @@ public class RecyclerView extends ViewGroup {
         int L = this.e.L();
         c1 c1Var = null;
         for (int i11 = 0; i11 < L; i11++) {
-            c1 U = U(this.e.K(i11));
+            c1 U = U(this.e.J(i11));
             if (U != null && !U.j()) {
                 if (z10) {
                     if (U.c != i10) {
@@ -600,15 +600,15 @@ public class RecyclerView extends ViewGroup {
     public final n0 X(int i10) {
         int itemDecorationCount = getItemDecorationCount();
         if (i10 < 0 || i10 >= itemDecorationCount) {
-            throw new IndexOutOfBoundsException(a4.a.k(i10, itemDecorationCount, " is an invalid index for size "));
+            throw new IndexOutOfBoundsException(a4.a.l(i10, itemDecorationCount, " is an invalid index for size "));
         }
         return (n0) this.y.get(i10);
     }
 
     public final void Y(long j3, c1 c1Var, c1 c1Var2) {
-        int C = this.e.C();
-        for (int i10 = 0; i10 < C; i10++) {
-            c1 U = U(this.e.B(i10));
+        int x10 = this.e.x();
+        for (int i10 = 0; i10 < x10; i10++) {
+            c1 U = U(this.e.w(i10));
             if (U != c1Var && Q(U) == j3) {
                 h0 h0Var = this.w;
                 if (h0Var == null || !h0Var.b) {
@@ -837,7 +837,7 @@ public class RecyclerView extends ViewGroup {
     public final void e0() {
         int L = this.e.L();
         for (int i10 = 0; i10 < L; i10++) {
-            ((p0) this.e.K(i10).getLayoutParams()).c = true;
+            ((p0) this.e.J(i10).getLayoutParams()).c = true;
         }
         ArrayList arrayList = (ArrayList) this.b.e;
         int size = arrayList.size();
@@ -853,7 +853,7 @@ public class RecyclerView extends ViewGroup {
         int i12 = i10 + i11;
         int L = this.e.L();
         for (int i13 = 0; i13 < L; i13++) {
-            c1 U = U(this.e.K(i13));
+            c1 U = U(this.e.J(i13));
             if (U != null && !U.r()) {
                 int i14 = U.c;
                 s4.z0 z0Var = this.t0;
@@ -1232,11 +1232,11 @@ public class RecyclerView extends ViewGroup {
         boolean z10 = view.getParent() == this;
         this.b.k(T(view));
         if (c1Var.l()) {
-            this.e.s(view, -1, view.getLayoutParams(), true);
+            this.e.n(view, -1, view.getLayoutParams(), true);
             return;
         }
         if (!z10) {
-            this.e.r(view, -1, true);
+            this.e.m(view, -1, true);
             return;
         }
         h hVar = this.e;
@@ -1371,7 +1371,7 @@ public class RecyclerView extends ViewGroup {
     public final void n() {
         int L = this.e.L();
         for (int i10 = 0; i10 < L; i10++) {
-            c1 U = U(this.e.K(i10));
+            c1 U = U(this.e.J(i10));
             if (U != null && !U.r()) {
                 U.d = -1;
                 U.g = -1;
@@ -1408,7 +1408,7 @@ public class RecyclerView extends ViewGroup {
         this.Q = true;
         int L = this.e.L();
         for (int i10 = 0; i10 < L; i10++) {
-            c1 U = U(this.e.K(i10));
+            c1 U = U(this.e.J(i10));
             if (U != null && !U.r()) {
                 U.a(6);
             }
@@ -2031,11 +2031,11 @@ public class RecyclerView extends ViewGroup {
             aVar.l();
             if (!this.K) {
                 h hVar = this.e;
-                int C = hVar.C();
+                int x10 = hVar.x();
                 int i14 = 0;
                 while (true) {
-                    if (i14 < C) {
-                        c1 U = U(hVar.B(i14));
+                    if (i14 < x10) {
+                        c1 U = U(hVar.w(i14));
                         if (U != null && !U.r() && U.m()) {
                             s();
                             break;
@@ -2240,9 +2240,9 @@ public class RecyclerView extends ViewGroup {
         z0 z0Var2 = this.f;
         if (z12) {
             try {
-                int C = this.e.C() - 1;
-                while (C >= 0) {
-                    c1 U = U(this.e.B(C));
+                int x10 = this.e.x() - 1;
+                while (x10 >= 0) {
+                    c1 U = U(this.e.w(x10));
                     if (U != null && !U.r()) {
                         long Q = Q(U);
                         this.c0.getClass();
@@ -2304,20 +2304,20 @@ public class RecyclerView extends ViewGroup {
                                 } catch (Exception e7) {
                                     e = e7;
                                     StringBuilder sb2 = new StringBuilder();
-                                    for (int C2 = this.e.C() - 1; C2 >= 0; C2--) {
-                                        c1 U2 = U(this.e.B(C2));
+                                    for (int x11 = this.e.x() - 1; x11 >= 0; x11--) {
+                                        c1 U2 = U(this.e.w(x11));
                                         if (U2 != null && !U2.r()) {
-                                            sb2.append("Holder at" + C2 + " " + U2 + "\n");
+                                            sb2.append("Holder at" + x11 + " " + U2 + "\n");
                                         }
                                     }
                                     throw new RuntimeException(sb2.toString(), e);
                                 }
                             }
                         }
-                        C--;
+                        x10--;
                         i15 = 1;
                     }
-                    C--;
+                    x10--;
                     i15 = 1;
                 }
                 f fVar2 = (f) z0Var2.b;
@@ -2335,13 +2335,13 @@ public class RecyclerView extends ViewGroup {
                         int i20 = i19 & 3;
                         e eVar2 = this.L0;
                         if (i20 == 3) {
-                            eVar2.o(c1Var3);
+                            eVar2.q(c1Var3);
                         } else if ((i19 & 1) != 0) {
                             b2.q0 q0Var2 = i1Var.b;
                             if (q0Var2 == null) {
-                                eVar2.o(c1Var3);
+                                eVar2.q(c1Var3);
                             } else {
-                                eVar2.j(c1Var3, q0Var2, i1Var.c);
+                                eVar2.k(c1Var3, q0Var2, i1Var.c);
                             }
                         } else if ((i19 & 14) == 14) {
                             b2.q0 q0Var3 = i1Var.b;
@@ -2389,7 +2389,7 @@ public class RecyclerView extends ViewGroup {
                                 }
                             }
                         } else if ((i19 & 4) != 0) {
-                            eVar2.j(c1Var3, i1Var.b, null);
+                            eVar2.k(c1Var3, i1Var.b, null);
                         } else if ((i19 & 8) != 0) {
                             b2.q0 q0Var7 = i1Var.b;
                             b2.q0 q0Var8 = i1Var.c;
@@ -2459,7 +2459,7 @@ public class RecyclerView extends ViewGroup {
                     if (i28 >= L) {
                         break;
                     }
-                    c1 U3 = U(this.e.K(i28));
+                    c1 U3 = U(this.e.J(i28));
                     if (U3 != null && !U3.j() && U3.e == j3) {
                         if (!((ArrayList) this.e.d).contains(U3.a)) {
                             c1Var = U3;
@@ -2485,7 +2485,7 @@ public class RecyclerView extends ViewGroup {
                     }
                 }
             }
-            if (this.e.C() > 0) {
+            if (this.e.x() > 0) {
                 int i30 = z0Var.l;
                 if (i30 == -1) {
                     i30 = 0;
@@ -2930,9 +2930,9 @@ public class RecyclerView extends ViewGroup {
         z0Var.e = this.w.h();
         I(this.B0);
         if (z0Var.j) {
-            int C = this.e.C();
-            for (int i10 = 0; i10 < C; i10++) {
-                c1 U = U(this.e.B(i10));
+            int x10 = this.e.x();
+            for (int i10 = 0; i10 < x10; i10++) {
+                c1 U = U(this.e.w(i10));
                 if (!U.r() && (!U.h() || this.w.b)) {
                     b2.q0 l4 = this.c0.l(z0Var, U, m0.b(U), U.d());
                     i1 i1Var2 = (i1) fVar2.get(U);
@@ -2951,7 +2951,7 @@ public class RecyclerView extends ViewGroup {
         if (z0Var.k) {
             int L = this.e.L();
             for (int i11 = 0; i11 < L; i11++) {
-                c1 U2 = U(this.e.K(i11));
+                c1 U2 = U(this.e.J(i11));
                 if (!U2.r()) {
                     if (U2.d == -1) {
                         U2.d = U2.c;
@@ -2963,8 +2963,8 @@ public class RecyclerView extends ViewGroup {
             z0Var.f = false;
             this.x.b0(this.b, z0Var);
             z0Var.f = z13;
-            for (int i12 = 0; i12 < this.e.C(); i12++) {
-                c1 U3 = U(this.e.B(i12));
+            for (int i12 = 0; i12 < this.e.x(); i12++) {
+                c1 U3 = U(this.e.w(i12));
                 if (!U3.r() && ((i1Var = (i1) fVar2.get(U3)) == null || (i1Var.a & 4) == 0)) {
                     int b10 = m0.b(U3);
                     boolean e7 = U3.e(8192);
@@ -3128,14 +3128,14 @@ public class RecyclerView extends ViewGroup {
         int o02 = i11 != 0 ? this.x.o0(i11, eVar, z0Var) : 0;
         Trace.endSection();
         h hVar = this.e;
-        int C = hVar.C();
-        for (int i13 = 0; i13 < C; i13++) {
-            View B = hVar.B(i13);
-            c1 T = T(B);
+        int x10 = hVar.x();
+        for (int i13 = 0; i13 < x10; i13++) {
+            View w10 = hVar.w(i13);
+            c1 T = T(w10);
             if (T != null && (c1Var = T.k) != null) {
                 View view = c1Var.a;
-                int left = B.getLeft();
-                int top = B.getTop();
+                int left = w10.getLeft();
+                int top = w10.getTop();
                 if (left != view.getLeft() || top != view.getTop()) {
                     view.layout(left, top, view.getWidth() + left, view.getHeight() + top);
                 }

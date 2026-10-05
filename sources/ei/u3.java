@@ -29,7 +29,7 @@ import org.telegram.ui.Components.w00;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -113,9 +113,9 @@ public final /* synthetic */ class u3 implements Runnable {
                 } else {
                     TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
                     int i12 = this.b;
-                    yh.o g10 = yh.o.g(i12);
+                    yh.p g10 = yh.p.g(i12);
                     long j10 = this.f;
-                    yh.l d = g10.d(j10);
+                    yh.m d = g10.d(j10);
                     int i13 = d.a;
                     MessagesController.getInstance(i13).putUsers(connectedstarrefbots.users, false);
                     d.c = 0;
@@ -150,7 +150,7 @@ public final /* synthetic */ class u3 implements Runnable {
                         U.presentFragment(new f4(j10));
                     }
                     if (connectedbotstarref != null) {
-                        yh.m e7 = yh.o.g(i12).e(j10);
+                        yh.n e7 = yh.p.g(i12).e(j10);
                         long j11 = connectedbotstarref.bot_id;
                         ArrayList arrayList3 = e7.e;
                         int i15 = 0;

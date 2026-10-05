@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.mediarouter.app.x;
-import hg.k0;
 import java.util.WeakHashMap;
 import l.k;
 import l.z;
@@ -27,7 +26,7 @@ import r0.i0;
 import r0.l0;
 import v7.v7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class ActionBarContextView extends ViewGroup {
     public TextView E;
@@ -63,7 +62,7 @@ public class ActionBarContextView extends ViewGroup {
     public static int g(int i10, int i11, int i12, View view, boolean z10) {
         int measuredWidth = view.getMeasuredWidth();
         int measuredHeight = view.getMeasuredHeight();
-        int y3 = k0.y(i12, measuredHeight, 2, i11);
+        int y3 = hg.c.y(i12, measuredHeight, 2, i11);
         if (z10) {
             view.layout(i10 - measuredWidth, y3, i10, measuredHeight + y3);
         } else {

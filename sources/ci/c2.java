@@ -4,7 +4,7 @@ import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.gw;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class c2 extends gw {
     public final /* synthetic */ e2 g0;
@@ -30,10 +30,10 @@ public final class c2 extends gw {
         }
         if (l2Var != null && (k2Var = l2Var.f) != null) {
             if (k2Var.getSelectedCategory() != null) {
-                p1.y1(p1Var, 0, 0);
-                l2Var.f.H1(null);
+                p1.x1(p1Var, 0, 0);
+                l2Var.f.G1(null);
             }
-            l2Var.f.F1();
+            l2Var.f.E1();
             l2Var.b();
         }
         if (d2Var != null) {
@@ -59,7 +59,7 @@ public final class c2 extends gw {
                 e2Var.n = f7;
                 paddingTop = p1Var.getPaddingTop();
             }
-            p1.y1(p1Var, i11, ((int) (f7 + paddingTop)) - AndroidUtilities.dp(102.0f));
+            p1.x1(p1Var, i11, ((int) (f7 + paddingTop)) - AndroidUtilities.dp(102.0f));
         }
         return true;
     }

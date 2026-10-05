@@ -3,6 +3,7 @@ package r2;
 import ai.m0;
 import ai.m8;
 import android.content.ClipData;
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Canvas;
@@ -15,7 +16,6 @@ import android.view.View;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import e9.a1;
-import e9.f0;
 import e9.i0;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,10 +30,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.w0;
 import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.nl0;
 import org.telegram.ui.Components.r80;
 import org.telegram.ui.Components.v50;
@@ -46,16 +47,15 @@ import tg.t0;
 import tg.z0;
 import xh.j0;
 import xh.q1;
-import yh.e0;
-import yh.l3;
-import yh.t5;
-import yh.u7;
-import yh.x7;
-import yh.z3;
+import yh.a4;
+import yh.f0;
+import yh.m3;
+import yh.u5;
+import yh.z7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s implements w, t5.b, t0.e, pa.a, a2, nl0, uh.a, Continuation, x2.m, yf.m, r0.n, BillingController.ProductDetailsResponseListenerLegacy, d5, le.d, Utilities.Callback5, ro0 {
+public final /* synthetic */ class s implements w, t5.b, t0.e, pa.a, a2, nl0, uh.a, Continuation, x2.m, yf.m, r0.n, BillingController.ProductDetailsResponseListenerLegacy, Utilities.Callback5, d5, le.d, ro0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -66,14 +66,14 @@ public final /* synthetic */ class s implements w, t5.b, t0.e, pa.a, a2, nl0, uh
 
     @Override // org.telegram.ui.Components.d5
     public void K(int i10, int i11, boolean z10) {
-        e0 e0Var = (e0) this.b;
+        f0 f0Var = (f0) this.b;
         if (z10) {
             long j3 = i10;
-            if (e0Var.I != j3) {
-                e0Var.I = j3;
-                e0Var.r.setText(e0.o(j3));
+            if (f0Var.I != j3) {
+                f0Var.I = j3;
+                f0Var.r.setText(f0.o(j3));
             }
-            e0Var.n(true);
+            f0Var.n(true);
         }
     }
 
@@ -86,7 +86,7 @@ public final /* synthetic */ class s implements w, t5.b, t0.e, pa.a, a2, nl0, uh
     @Override // org.telegram.ui.ro0
     public void a(int i10) {
         switch (this.a) {
-            case 26:
+            case 27:
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.b;
                 if (i10 != 1) {
                     if (i10 != 3) {
@@ -98,7 +98,7 @@ public final /* synthetic */ class s implements w, t5.b, t0.e, pa.a, a2, nl0, uh
                     break;
                 }
                 break;
-            case 27:
+            case 28:
                 m0 m0Var = (m0) this.b;
                 if (i10 != 1) {
                     if (i10 != 3) {
@@ -127,7 +127,7 @@ public final /* synthetic */ class s implements w, t5.b, t0.e, pa.a, a2, nl0, uh
 
     @Override // le.d
     public void a0(int i10, float f7, float f10, le.e eVar) {
-        View view = ((z3) this.b).b;
+        View view = ((a4) this.b).b;
         if (view instanceof w0) {
             ((w0) view).I();
         } else {
@@ -138,7 +138,7 @@ public final /* synthetic */ class s implements w, t5.b, t0.e, pa.a, a2, nl0, uh
     @Override // x2.m
     public a1 b(int i10, b2.l1 l1Var, int[] iArr) {
         x2.i iVar = (x2.i) this.b;
-        f0 u10 = i0.u();
+        e9.f0 u10 = i0.u();
         for (int i11 = 0; i11 < l1Var.a; i11++) {
             u10.b(new x2.f(i10, l1Var, i11, iVar, iArr[i11]));
         }
@@ -165,7 +165,7 @@ public final /* synthetic */ class s implements w, t5.b, t0.e, pa.a, a2, nl0, uh
                 ((xh.d) this.b).a(j3, true);
                 break;
             default:
-                ((l3) this.b).h();
+                ((m3) this.b).h();
                 break;
         }
     }
@@ -290,7 +290,7 @@ public final /* synthetic */ class s implements w, t5.b, t0.e, pa.a, a2, nl0, uh
         if (i11 >= 25 && (i10 & 1) != 0) {
             try {
                 iVar.a.d();
-                Parcelable parcelable = (Parcelable) iVar.a.l();
+                Parcelable parcelable = (Parcelable) iVar.a.j();
                 bundle = bundle == null ? new Bundle() : new Bundle(bundle);
                 bundle.putParcelable("androidx.core.view.extra.INPUT_CONTENT_INFO", parcelable);
             } catch (Exception e7) {
@@ -363,21 +363,31 @@ public final /* synthetic */ class s implements w, t5.b, t0.e, pa.a, a2, nl0, uh
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        int i10;
+        d6 d6Var;
         switch (this.a) {
-            case 25:
-                t5.b((t5) this.b, (ArrayList) obj, (Integer) obj2, (Long) obj3, (ArrayList) obj4, (ArrayList) obj5);
-                break;
-            default:
-                u7 u7Var = (u7) this.b;
-                g61 g61Var = (g61) obj;
-                ((Integer) obj3).intValue();
-                ((Float) obj4).floatValue();
-                ((Float) obj5).floatValue();
-                u7Var.getClass();
-                if (g61Var.G instanceof TL_stars.StarsTransaction) {
-                    x7.n1(u7Var.getContext(), false, 0L, u7Var.c, (TL_stars.StarsTransaction) g61Var.G, u7Var.b);
+            case 21:
+                yh.g gVar = (yh.g) this.b;
+                h61 h61Var = (h61) obj;
+                yh.h hVar = gVar.r;
+                if (!(h61Var.G instanceof TL_stars.StarsTransaction)) {
+                    if (gVar.h) {
+                        gVar.h = false;
+                        gVar.a();
+                        break;
+                    }
+                } else {
+                    Context context = gVar.getContext();
+                    long j3 = hVar.b;
+                    i10 = ((n2) hVar).currentAccount;
+                    TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) h61Var.G;
+                    d6Var = ((n2) hVar).resourceProvider;
+                    z7.n1(context, true, j3, i10, starsTransaction, d6Var);
                     break;
                 }
+                break;
+            default:
+                u5.b((u5) this.b, (ArrayList) obj, (Integer) obj2, (Long) obj3, (ArrayList) obj4, (ArrayList) obj5);
                 break;
         }
     }

@@ -35,7 +35,7 @@ import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w2 implements org.telegram.ui.ActionBar.a2, d5, org.telegram.ui.Cells.s5, ImageReceiver.ImageReceiverDelegate, gj, org.telegram.ui.ActionBar.m1, ol0, MessagesStorage.BooleanCallback, nl0, pl0 {
     public final /* synthetic */ int a;
@@ -157,7 +157,7 @@ public final /* synthetic */ class w2 implements org.telegram.ui.ActionBar.a2, d
             } else {
                 kmVar2.m(intValue);
             }
-            xiVar.S1(containsKey ? 2 : 1);
+            xiVar.U1(containsKey ? 2 : 1);
             t5Var2.setHasSpoiler(photoEntry.hasSpoiler);
             t5Var2.setHighQuality(photoEntry.isHighQuality());
             t5Var2.f(photoEntry.starsAmount, hashMap.size() > 1);
@@ -178,9 +178,9 @@ public final /* synthetic */ class w2 implements org.telegram.ui.ActionBar.a2, d
     public void c(float f7, float f10, int i10, View view) {
         switch (this.a) {
             case 19:
-                c71 c71Var = (c71) this.b;
+                e71 e71Var = (e71) this.b;
                 Utilities.Callback5 callback5 = (Utilities.Callback5) this.c;
-                g61 G = c71Var.f3.G(i10);
+                h61 G = e71Var.f3.G(i10);
                 if (G != null) {
                     callback5.run(G, view, Integer.valueOf(i10), Float.valueOf(f7), Float.valueOf(f10));
                     break;
@@ -322,7 +322,7 @@ public final /* synthetic */ class w2 implements org.telegram.ui.ActionBar.a2, d
                 ArrayList<MessageObject> arrayList3 = (ArrayList) this.c;
                 qo0Var.getClass();
                 b2Var.dismiss();
-                qo0Var.K0.getDownloadController().deleteRecentFiles(arrayList3);
+                qo0Var.L0.getDownloadController().deleteRecentFiles(arrayList3);
                 qo0Var.S(false);
                 break;
             case 18:
@@ -393,16 +393,16 @@ public final /* synthetic */ class w2 implements org.telegram.ui.ActionBar.a2, d
     /* JADX WARN: Multi-variable type inference failed */
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public void run(boolean z10) {
-        tt0 tt0Var = (tt0) this.b;
+        ut0 ut0Var = (ut0) this.b;
         TLRPC.User user = (TLRPC.User) this.c;
-        pv0 pv0Var = tt0Var.d;
-        pv0Var.v1.finishFragment();
-        org.telegram.ui.ActionBar.n2 n2Var = pv0Var.v1;
+        qv0 qv0Var = ut0Var.d;
+        qv0Var.v1.finishFragment();
+        org.telegram.ui.ActionBar.n2 n2Var = qv0Var.v1;
         if (n2Var instanceof NotificationCenter.NotificationCenterDelegate) {
             n2Var.getNotificationCenter().removeObserver((NotificationCenter.NotificationCenterDelegate) n2Var, NotificationCenter.closeChats);
         }
         n2Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-        n2Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(pv0Var.j1), user, null, Boolean.valueOf(z10));
+        n2Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(qv0Var.j1), user, null, Boolean.valueOf(z10));
         n2Var.getMessagesController().setSavedViewAs(false);
     }
 
@@ -425,9 +425,9 @@ public final /* synthetic */ class w2 implements org.telegram.ui.ActionBar.a2, d
 
     @Override // org.telegram.ui.Components.pl0
     public boolean c(float f7, float f10, int i10, View view) {
-        c71 c71Var = (c71) this.b;
+        e71 e71Var = (e71) this.b;
         Utilities.Callback5Return callback5Return = (Utilities.Callback5Return) this.c;
-        g61 G = c71Var.f3.G(i10);
+        h61 G = e71Var.f3.G(i10);
         if (G == null) {
             return false;
         }

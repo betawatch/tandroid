@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l5 implements Runnable {
     public final /* synthetic */ int a;
@@ -106,7 +106,7 @@ public final /* synthetic */ class l5 implements Runnable {
                                 if (h6Var3 == null) {
                                     h6Var3 = new h6();
                                     h6Var3.E = i15;
-                                    h6Var3.b = new File(ApplicationLoader.getFilesDirFixed(), t8.b.v(str, ".attheme")).getAbsolutePath();
+                                    h6Var3.b = new File(ApplicationLoader.getFilesDirFixed(), sa.e.v(str, ".attheme")).getAbsolutePath();
                                     arrayList2.add(h6Var3);
                                     arrayList.add(h6Var3);
                                     z12 = true;

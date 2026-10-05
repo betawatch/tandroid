@@ -8,7 +8,7 @@ import org.telegram.messenger.NotificationsSettingsFacade;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class m11 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ String a;
@@ -29,11 +29,11 @@ public final class m11 extends org.telegram.ui.ActionBar.j {
         int i16;
         int i17;
         p11 p11Var = this.b;
-        long j3 = p11Var.f;
-        long j10 = p11Var.e;
+        long j3 = p11Var.h;
+        long j10 = p11Var.f;
         String str = this.a;
         if (i10 == -1) {
-            if (!p11Var.h && p11Var.n) {
+            if (!p11Var.n && p11Var.r) {
                 i17 = ((org.telegram.ui.ActionBar.n2) p11Var).currentAccount;
                 MessagesController.getNotificationsSettings(i17).edit().putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0).apply();
             }
@@ -44,7 +44,7 @@ public final class m11 extends org.telegram.ui.ActionBar.j {
             edit.putBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + str, true);
             i12 = ((org.telegram.ui.ActionBar.n2) p11Var).currentAccount;
             TLRPC.Dialog dialog = (TLRPC.Dialog) MessagesController.getInstance(i12).dialogs_dict.f(j10);
-            if (p11Var.n) {
+            if (p11Var.r) {
                 edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0);
                 if (j3 == 0) {
                     i16 = ((org.telegram.ui.ActionBar.n2) p11Var).currentAccount;
@@ -70,16 +70,16 @@ public final class m11 extends org.telegram.ui.ActionBar.j {
             edit.apply();
             i15 = ((org.telegram.ui.ActionBar.n2) p11Var).currentAccount;
             NotificationsController.getInstance(i15).updateServerNotificationsSettings(j10, j3);
-            if (p11Var.r != null) {
+            if (p11Var.s != null) {
                 rk0 rk0Var = new rk0();
                 rk0Var.d = j10;
                 rk0Var.b = true;
-                int c10 = org.telegram.messenger.f0.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, str, notificationsSettings, 0);
+                int c10 = org.telegram.messenger.q.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, str, notificationsSettings, 0);
                 rk0Var.c = c10;
                 if (c10 != 0) {
-                    rk0Var.a = org.telegram.messenger.f0.c(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL, str, notificationsSettings, 0);
+                    rk0Var.a = org.telegram.messenger.q.c(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL, str, notificationsSettings, 0);
                 }
-                p11Var.r.v(rk0Var);
+                p11Var.s.v(rk0Var);
             }
         }
         p11Var.finishFragment();

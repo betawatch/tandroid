@@ -32,6 +32,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -50,10 +51,10 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.o20;
-import org.telegram.ui.ui1;
+import org.telegram.ui.si1;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class z0 extends cb {
     public final ci.d X;
@@ -247,11 +248,11 @@ public final class z0 extends cb {
             return false;
         }
         String lowerCase = AndroidUtilities.translitSafe(tL_help_country.default_name).toLowerCase();
-        if (lowerCase.startsWith(str) || org.telegram.messenger.f0.w(" ", str, lowerCase)) {
+        if (lowerCase.startsWith(str) || bi.u(" ", str, lowerCase)) {
             return true;
         }
         String lowerCase2 = AndroidUtilities.translitSafe(tL_help_country.iso2).toLowerCase();
-        return lowerCase2.startsWith(str) || org.telegram.messenger.f0.w(" ", str, lowerCase2);
+        return lowerCase2.startsWith(str) || bi.u(" ", str, lowerCase2);
     }
 
     @Override // org.telegram.ui.Components.cb
@@ -328,7 +329,7 @@ public final class z0 extends cb {
             tL_channelParticipantsRecent.q = str;
             tL_channels_getParticipants.offset = 0;
             tL_channels_getParticipants.limit = 50;
-            connectionsManager.sendRequest(tL_channels_getParticipants, new ui1(2, messagesController, x0Var));
+            connectionsManager.sendRequest(tL_channels_getParticipants, new si1(2, messagesController, x0Var));
             return;
         }
         if (i10 != 2) {

@@ -23,7 +23,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.pe0;
 import org.telegram.ui.Components.v90;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class q2 extends View {
     public final Paint a;
@@ -138,7 +138,7 @@ public final class q2 extends View {
             Object obj2 = arrayList.get(i10);
             i10++;
             m2 m2Var2 = (m2) obj2;
-            m2Var2.a(canvas, com.google.android.gms.internal.vision.e2.A((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), this.d[m2Var2.e - 1], 2.0f, getPaddingLeft()) + m2Var2.d, org.telegram.messenger.f0.D(48.0f, m2Var2.e - 1, AndroidUtilities.dp(12.0f)));
+            m2Var2.a(canvas, com.google.android.gms.internal.vision.e2.A((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), this.d[m2Var2.e - 1], 2.0f, getPaddingLeft()) + m2Var2.d, org.telegram.messenger.q.D(48.0f, m2Var2.e - 1, AndroidUtilities.dp(12.0f)));
         }
     }
 
@@ -213,7 +213,7 @@ public final class q2 extends View {
             float[] fArr3 = this.d;
             fArr3[i15] = fArr3[i15] + m2Var2.b;
         }
-        setMeasuredDimension(size, org.telegram.messenger.f0.D(12.0f, i13 - 1, org.telegram.messenger.f0.D(36.0f, i13, AndroidUtilities.dp(24.0f))));
+        setMeasuredDimension(size, org.telegram.messenger.q.D(12.0f, i13 - 1, org.telegram.messenger.q.D(36.0f, i13, AndroidUtilities.dp(24.0f))));
     }
 
     @Override // android.view.View

@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dl0 implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -30,8 +30,8 @@ public final /* synthetic */ class dl0 implements Utilities.Callback {
     public final /* synthetic */ Object k;
     public final /* synthetic */ Object l;
 
-    public /* synthetic */ dl0(c71 c71Var, String str, boolean z10, ArrayList arrayList, HashMap hashMap, ArrayList arrayList2, LinkedHashSet linkedHashSet, LinkedHashSet linkedHashSet2, ArrayList arrayList3, ArrayList arrayList4, boolean z11) {
-        this.e = c71Var;
+    public /* synthetic */ dl0(a71 a71Var, String str, boolean z10, ArrayList arrayList, HashMap hashMap, ArrayList arrayList2, LinkedHashSet linkedHashSet, LinkedHashSet linkedHashSet2, ArrayList arrayList3, ArrayList arrayList4, boolean z11) {
+        this.e = a71Var;
         this.b = str;
         this.c = z10;
         this.f = arrayList;
@@ -93,7 +93,7 @@ public final /* synthetic */ class dl0 implements Utilities.Callback {
                 }
                 break;
             default:
-                final c71 c71Var = (c71) this.e;
+                final a71 a71Var = (a71) this.e;
                 final String str3 = this.b;
                 final boolean z12 = this.c;
                 final ArrayList arrayList = (ArrayList) this.f;
@@ -104,92 +104,92 @@ public final /* synthetic */ class dl0 implements Utilities.Callback {
                 final ArrayList arrayList3 = (ArrayList) this.k;
                 final ArrayList arrayList4 = (ArrayList) this.l;
                 final boolean z13 = this.d;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.n51
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.l51
                     @Override // java.lang.Runnable
                     public final void run() {
-                        c71 c71Var2 = c71.this;
-                        g51 g51Var = c71Var2.I1;
-                        if (g51Var != null) {
-                            AndroidUtilities.cancelRunOnUIThread(g51Var);
-                            c71Var2.I1 = null;
+                        a71 a71Var2 = a71.this;
+                        e51 e51Var = a71Var2.I1;
+                        if (e51Var != null) {
+                            AndroidUtilities.cancelRunOnUIThread(e51Var);
+                            a71Var2.I1 = null;
                         }
-                        String str4 = c71Var2.z1;
+                        String str4 = a71Var2.z1;
                         String str5 = str3;
                         if (str5 != str4) {
                             return;
                         }
-                        c71Var2.y1 = true;
-                        c71Var2.z(true, z12);
-                        t51 t51Var = c71Var2.f0;
-                        if (t51Var != null) {
-                            t51Var.d(true);
+                        a71Var2.y1 = true;
+                        a71Var2.z(true, z12);
+                        r51 r51Var = a71Var2.f0;
+                        if (r51Var != null) {
+                            r51Var.d(true);
                         }
-                        ArrayList arrayList5 = c71Var2.A1;
+                        ArrayList arrayList5 = a71Var2.A1;
                         if (arrayList5 == null) {
-                            c71Var2.A1 = new ArrayList();
+                            a71Var2.A1 = new ArrayList();
                         } else {
                             arrayList5.clear();
                         }
-                        ArrayList arrayList6 = c71Var2.D1;
+                        ArrayList arrayList6 = a71Var2.D1;
                         if (arrayList6 == null) {
-                            c71Var2.D1 = new ArrayList();
+                            a71Var2.D1 = new ArrayList();
                         } else {
                             arrayList6.clear();
                         }
-                        ArrayList arrayList7 = c71Var2.C1;
+                        ArrayList arrayList7 = a71Var2.C1;
                         if (arrayList7 == null) {
-                            c71Var2.C1 = new ArrayList();
+                            a71Var2.C1 = new ArrayList();
                         } else {
                             arrayList7.clear();
                         }
-                        ArrayList arrayList8 = c71Var2.B1;
+                        ArrayList arrayList8 = a71Var2.B1;
                         if (arrayList8 == null) {
-                            c71Var2.B1 = new ArrayList();
+                            a71Var2.B1 = new ArrayList();
                         } else {
                             arrayList8.clear();
                         }
                         int i10 = 0;
-                        c71Var2.i0.v0(0);
-                        int i11 = c71Var2.W;
+                        a71Var2.i0.v0(0);
+                        int i11 = a71Var2.W;
                         if (i11 == 1 || i11 == 14 || i11 == 11 || i11 == 2) {
                             ArrayList arrayList9 = arrayList;
                             if (arrayList9.isEmpty()) {
                                 TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(str5);
                                 if (tL_availableReaction != null) {
-                                    c71Var2.A1.add(zg.o0.c(tL_availableReaction));
+                                    a71Var2.A1.add(zg.m0.c(tL_availableReaction));
                                 }
                             } else {
-                                c71Var2.A1.addAll(arrayList9);
+                                a71Var2.A1.addAll(arrayList9);
                             }
                             ArrayList arrayList10 = arrayList2;
                             if (!arrayList10.isEmpty()) {
-                                c71Var2.B1.addAll(arrayList10);
+                                a71Var2.B1.addAll(arrayList10);
                             }
                         }
                         Iterator it = linkedHashSet.iterator();
                         while (it.hasNext()) {
                             Long l4 = (Long) it.next();
                             l4.getClass();
-                            ArrayList arrayList11 = c71Var2.A1;
-                            zg.o0 o0Var = new zg.o0();
+                            ArrayList arrayList11 = a71Var2.A1;
+                            zg.m0 m0Var = new zg.m0();
                             long longValue = l4.longValue();
-                            o0Var.g = longValue;
-                            o0Var.h = longValue;
-                            arrayList11.add(o0Var);
+                            m0Var.g = longValue;
+                            m0Var.h = longValue;
+                            arrayList11.add(m0Var);
                         }
                         Iterator it2 = linkedHashSet2.iterator();
                         while (it2.hasNext()) {
-                            c71Var2.A1.add(zg.o0.b((String) it2.next()));
+                            a71Var2.A1.add(zg.m0.b((String) it2.next()));
                         }
-                        c71Var2.D1.addAll(arrayList3);
+                        a71Var2.D1.addAll(arrayList3);
                         ArrayList arrayList12 = arrayList4;
                         int size = arrayList12.size();
                         while (i10 < size) {
                             Object obj2 = arrayList12.get(i10);
                             i10++;
-                            c71Var2.C1.addAll((ArrayList) obj2);
+                            a71Var2.C1.addAll((ArrayList) obj2);
                         }
-                        c71Var2.q0.E(true ^ z13);
+                        a71Var2.q0.E(true ^ z13);
                     }
                 });
                 break;

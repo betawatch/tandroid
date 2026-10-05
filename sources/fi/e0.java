@@ -8,11 +8,11 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.e71;
 import w7.d9;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class e0 extends h0 {
     public final /* synthetic */ k0 h;
@@ -30,12 +30,12 @@ public final class e0 extends h0 {
         t tVar = new t(k0Var, 3);
         u uVar = new u(k0Var, 2);
         d6Var = ((f3) k0Var).resourcesProvider;
-        c71 c71Var = new c71(context, i10, 0, false, tVar, uVar, null, d6Var);
-        this.d = c71Var;
-        c71Var.s1();
-        c71 c71Var2 = this.d;
-        c71Var2.f3.r = false;
-        c71Var2.setClipToPadding(false);
+        e71 e71Var = new e71(context, i10, 0, false, tVar, uVar, null, d6Var);
+        this.d = e71Var;
+        e71Var.r1();
+        e71 e71Var2 = this.d;
+        e71Var2.f3.r = false;
+        e71Var2.setClipToPadding(false);
         this.d.setPadding(0, 0, 0, AndroidUtilities.dp(60.0f) + AndroidUtilities.navigationBarHeight);
         this.c.addView(k0Var.G, z5.g());
         this.c.addView(this.d, 0, z5.c(-1.0f, -1));
@@ -45,11 +45,11 @@ public final class e0 extends h0 {
         this.a = kVar;
         kVar.setOccupyStatusBar(false);
         this.a.setTitleColor(k0Var.getThemedColor(i6.G6));
-        this.a.A(k0Var.getThemedColor(i6.z8), false);
+        this.a.z(k0Var.getThemedColor(i6.z8), false);
         org.telegram.ui.ActionBar.k kVar2 = this.a;
         boolean z10 = k0Var.N;
         kVar2.setBackButtonImage(z10 ? R.drawable.ic_ab_close : R.drawable.ic_ab_back);
-        this.a.B(k0Var.getThemedColor(i6.y8), false);
+        this.a.A(k0Var.getThemedColor(i6.y8), false);
         this.a.setTitle(LocaleController.getString(R.string.CommunityAddAChatToCommunity));
         this.a.getTitleTextView().setTranslationX(-AndroidUtilities.dp(18.0f));
         this.a.setActionBarMenuOnItemClick(new ei.u(this, 6));

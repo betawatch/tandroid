@@ -15,7 +15,7 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ke extends LinearLayout {
     public final LinearLayout a;
@@ -83,7 +83,7 @@ public final class ke extends LinearLayout {
             if (i11 == 0 && !jeVar.a) {
                 linearLayoutArr[i11].setVisibility(8);
             } else if (i11 != 1 || jeVar.g) {
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(t8.b.v(str, " "));
+                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(sa.e.v(str, " "));
                 boolean equalsIgnoreCase = "TON".equalsIgnoreCase(str);
                 TextView[] textViewArr = this.c;
                 if (equalsIgnoreCase) {
@@ -97,16 +97,16 @@ public final class ke extends LinearLayout {
                         i10 = i11;
                         spannableStringBuilder2.append((CharSequence) format);
                     }
-                    spannableStringBuilder = me.D0(spannableStringBuilder2, textViewArr[i10].getPaint(), 1.05f, 0.0f, true);
+                    spannableStringBuilder = me.K(spannableStringBuilder2, textViewArr[i10].getPaint(), 1.05f, 0.0f, true);
                 } else {
                     i10 = i11;
                     if ("XTR".equalsIgnoreCase(str)) {
                         if (i10 == 0) {
                             spannableStringBuilder2.append((CharSequence) LocaleController.formatNumber(jeVar.d, ' '));
                         } else {
-                            spannableStringBuilder2.append((CharSequence) yh.x7.P0(jeVar.i, 0.8f, ' '));
+                            spannableStringBuilder2.append((CharSequence) yh.z7.P0(jeVar.i, 0.8f, ' '));
                         }
-                        spannableStringBuilder = yh.x7.d1(false, spannableStringBuilder2, 0.7f, null);
+                        spannableStringBuilder = yh.z7.d1(false, spannableStringBuilder2, 0.7f, null);
                     } else {
                         spannableStringBuilder2.append((CharSequence) Long.toString(jeVar.d));
                         spannableStringBuilder = spannableStringBuilder2;

@@ -1,46 +1,57 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.CacheFetcher;
-import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class px0 extends CacheFetcher {
-    @Override // org.telegram.messenger.CacheFetcher
-    public final void getLocal(int i10, Object obj, Utilities.Callback2 callback2) {
-        MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new zm(i10, (Integer) obj, callback2, 19));
+public final /* synthetic */ class px0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback4 b;
+
+    public /* synthetic */ px0(Utilities.Callback4 callback4, int i10) {
+        this.a = i10;
+        this.b = callback4;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.messenger.CacheFetcher
-    public final void getRemote(int i10, Object obj, long j3, Utilities.Callback4 callback4) {
-        TLRPC.TL_messages_getEmojiGroups tL_messages_getEmojiGroups;
-        Integer num = (Integer) obj;
-        if (num.intValue() == 1) {
-            TLRPC.TL_messages_getEmojiStatusGroups tL_messages_getEmojiStatusGroups = new TLRPC.TL_messages_getEmojiStatusGroups();
-            tL_messages_getEmojiStatusGroups.hash = (int) j3;
-            tL_messages_getEmojiGroups = tL_messages_getEmojiStatusGroups;
-        } else if (num.intValue() == 2) {
-            TLRPC.TL_messages_getEmojiProfilePhotoGroups tL_messages_getEmojiProfilePhotoGroups = new TLRPC.TL_messages_getEmojiProfilePhotoGroups();
-            tL_messages_getEmojiProfilePhotoGroups.hash = (int) j3;
-            tL_messages_getEmojiGroups = tL_messages_getEmojiProfilePhotoGroups;
-        } else if (num.intValue() == 3) {
-            TLRPC.TL_messages_getEmojiStickerGroups tL_messages_getEmojiStickerGroups = new TLRPC.TL_messages_getEmojiStickerGroups();
-            tL_messages_getEmojiStickerGroups.hash = (int) j3;
-            tL_messages_getEmojiGroups = tL_messages_getEmojiStickerGroups;
-        } else {
-            TLRPC.TL_messages_getEmojiGroups tL_messages_getEmojiGroups2 = new TLRPC.TL_messages_getEmojiGroups();
-            tL_messages_getEmojiGroups2.hash = (int) j3;
-            tL_messages_getEmojiGroups = tL_messages_getEmojiGroups2;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                boolean z10 = tLObject instanceof TLRPC.TL_messages_emojiGroupsNotModified;
+                Utilities.Callback4 callback4 = this.b;
+                if (!z10) {
+                    if (!(tLObject instanceof TLRPC.TL_messages_emojiGroups)) {
+                        callback4.run(Boolean.FALSE, null, 0L, Boolean.TRUE);
+                        break;
+                    } else {
+                        callback4.run(Boolean.FALSE, (TLRPC.TL_messages_emojiGroups) tLObject, Long.valueOf(r5.hash), Boolean.TRUE);
+                        break;
+                    }
+                } else {
+                    Boolean bool = Boolean.TRUE;
+                    callback4.run(bool, null, 0L, bool);
+                    break;
+                }
+            default:
+                boolean z11 = tLObject instanceof TLRPC.TL_emojiListNotModified;
+                Utilities.Callback4 callback42 = this.b;
+                if (!z11) {
+                    if (!(tLObject instanceof TLRPC.TL_emojiList)) {
+                        callback42.run(Boolean.FALSE, null, 0L, Boolean.TRUE);
+                        break;
+                    } else {
+                        TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) tLObject;
+                        callback42.run(Boolean.FALSE, tL_emojiList, Long.valueOf(tL_emojiList.hash), Boolean.TRUE);
+                        break;
+                    }
+                } else {
+                    Boolean bool2 = Boolean.TRUE;
+                    callback42.run(bool2, null, 0L, bool2);
+                    break;
+                }
         }
-        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getEmojiGroups, new ox0(callback4, 0));
-    }
-
-    @Override // org.telegram.messenger.CacheFetcher
-    public final void setLocal(int i10, Object obj, Object obj2, long j3) {
-        MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new zm(i10, (TLRPC.TL_messages_emojiGroups) obj2, (Integer) obj, 18));
     }
 }

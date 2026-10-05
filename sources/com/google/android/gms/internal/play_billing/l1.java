@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.Locale;
 import v7.e6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class l1 implements Iterable, Serializable {
     public static final l1 c = new l1(a2.b);
@@ -27,12 +27,12 @@ public class l1 implements Iterable, Serializable {
             return i13;
         }
         if (i10 < 0) {
-            throw new IndexOutOfBoundsException(hg.k0.i(i10, "Beginning index: ", " < 0"));
+            throw new IndexOutOfBoundsException(hg.c.i(i10, "Beginning index: ", " < 0"));
         }
         if (i11 < i10) {
-            throw new IndexOutOfBoundsException(a4.a.l(i10, i11, "Beginning index larger than ending index: ", ", "));
+            throw new IndexOutOfBoundsException(a4.a.m(i10, i11, "Beginning index larger than ending index: ", ", "));
         }
-        throw new IndexOutOfBoundsException(a4.a.l(i11, i12, "End index: ", " >= "));
+        throw new IndexOutOfBoundsException(a4.a.m(i11, i12, "End index: ", " >= "));
     }
 
     public static l1 q(int i10, int i11, byte[] bArr) {
@@ -62,7 +62,7 @@ public class l1 implements Iterable, Serializable {
                     throw new IllegalArgumentException("Length too large: " + o9 + o());
                 }
                 if (o9 > l1Var.o()) {
-                    throw new IllegalArgumentException(a4.a.l(o9, l1Var.o(), "Ran off end of other: 0, ", ", "));
+                    throw new IllegalArgumentException(a4.a.m(o9, l1Var.o(), "Ran off end of other: 0, ", ", "));
                 }
                 byte[] bArr = l1Var.b;
                 int i12 = 0;
@@ -129,6 +129,6 @@ public class l1 implements Iterable, Serializable {
         sb2.append(" size=");
         sb2.append(o9);
         sb2.append(" contents=\"");
-        return a4.a.s(sb2, concat, "\">");
+        return a4.a.t(sb2, concat, "\">");
     }
 }

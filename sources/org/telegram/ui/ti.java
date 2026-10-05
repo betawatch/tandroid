@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ti implements Runnable {
     public final /* synthetic */ int a;
@@ -12,9 +12,9 @@ public final /* synthetic */ class ti implements Runnable {
     public final /* synthetic */ org.telegram.ui.Components.sk0 e;
     public final /* synthetic */ float f;
     public final /* synthetic */ float h;
-    public final /* synthetic */ zg.o0 n;
+    public final /* synthetic */ zg.m0 n;
 
-    public /* synthetic */ ti(ui uiVar, int i10, boolean z10, org.telegram.ui.Components.sk0 sk0Var, float f7, float f10, zg.o0 o0Var, int i11) {
+    public /* synthetic */ ti(ui uiVar, int i10, boolean z10, org.telegram.ui.Components.sk0 sk0Var, float f7, float f10, zg.m0 m0Var, int i11) {
         this.a = i11;
         this.b = uiVar;
         this.c = i10;
@@ -22,7 +22,7 @@ public final /* synthetic */ class ti implements Runnable {
         this.e = sk0Var;
         this.f = f7;
         this.h = f10;
-        this.n = o0Var;
+        this.n = m0Var;
     }
 
     @Override // java.lang.Runnable
@@ -37,8 +37,8 @@ public final /* synthetic */ class ti implements Runnable {
                 org.telegram.ui.Cells.a0 q82 = ynVar.q8(this.c, true);
                 if (this.d) {
                     i10 = ((org.telegram.ui.ActionBar.n2) ynVar).currentAccount;
-                    zg.k0.d(ynVar, this.e, q82, null, this.f, this.h, this.n, i10, 1);
-                    zg.k0.f();
+                    zg.i0.d(ynVar, this.e, q82, null, this.f, this.h, this.n, i10, 1);
+                    zg.i0.f();
                     break;
                 }
                 break;

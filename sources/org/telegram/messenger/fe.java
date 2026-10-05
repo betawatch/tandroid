@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fe implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -59,7 +59,7 @@ public final /* synthetic */ class fe implements Runnable {
                 final org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.s;
                 final int[] iArr2 = (int[]) this.v;
                 String charSequence = j3Var.getText().toString();
-                StringBuilder u10 = a4.a.u(charSequence);
+                StringBuilder v = a4.a.v(charSequence);
                 Iterator it = set.iterator();
                 while (true) {
                     if (!it.hasNext()) {
@@ -68,8 +68,8 @@ public final /* synthetic */ class fe implements Runnable {
                         str = "";
                     }
                 }
-                u10.append(str);
-                final String sb2 = u10.toString();
+                v.append(str);
+                final String sb2 = v.toString();
                 int length = sb2.length();
                 int i10 = this.b;
                 if (length >= 4) {
@@ -96,7 +96,7 @@ public final /* synthetic */ class fe implements Runnable {
                                         String str2 = sb2;
                                         strArr3[0] = str2;
                                         dVar2.setEnabled(true);
-                                        e9Var2.setText(LocaleController.formatString(R.string.UsernameAvailable, t8.b.i("@", str2)));
+                                        e9Var2.setText(LocaleController.formatString(R.string.UsernameAvailable, sa.e.i("@", str2)));
                                         e9Var2.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.w6, d6Var2));
                                         return;
                                     }

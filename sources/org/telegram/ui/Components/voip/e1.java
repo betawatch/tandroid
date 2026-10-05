@@ -17,24 +17,24 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.cd0;
-import org.telegram.ui.Components.cw0;
 import org.telegram.ui.Components.dw0;
-import org.telegram.ui.Components.ow0;
+import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.pw0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ch0;
-import yh.x7;
+import yh.z7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e1 implements cw0, dw0, org.telegram.ui.ActionBar.a2, cd0, GenericProvider, FlagSecureReason.FlagSecureCondition, Utilities.Callback2Return, ow0 {
+public final /* synthetic */ class e1 implements dw0, ew0, org.telegram.ui.ActionBar.a2, cd0, GenericProvider, FlagSecureReason.FlagSecureCondition, Utilities.Callback2Return, pw0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ e1(int i10) {
         this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.ew0
     public void b(Object obj, float f7) {
         k1 k1Var = (k1) obj;
         switch (this.a) {
@@ -126,7 +126,7 @@ public final /* synthetic */ class e1 implements cw0, dw0, org.telegram.ui.Actio
         }
     }
 
-    @Override // org.telegram.ui.Components.cw0
+    @Override // org.telegram.ui.Components.dw0
     public float get(Object obj) {
         k1 k1Var = (k1) obj;
         switch (this.a) {
@@ -137,7 +137,7 @@ public final /* synthetic */ class e1 implements cw0, dw0, org.telegram.ui.Actio
         }
     }
 
-    @Override // org.telegram.ui.Components.ow0
+    @Override // org.telegram.ui.Components.pw0
     public void j(int i10) {
         SharedConfig.proxyRotationTimeout = i10;
         SharedConfig.saveConfig();
@@ -171,7 +171,7 @@ public final /* synthetic */ class e1 implements cw0, dw0, org.telegram.ui.Actio
 
     @Override // org.telegram.messenger.Utilities.Callback2Return
     public Object run(Object obj, Object obj2) {
-        return ((Integer) obj).intValue() == 0 ? x7.d1(false, LocaleController.formatPluralStringComma("Stars", ((Integer) obj2).intValue()), 0.66f, null) : LocaleController.formatNumber(r4.intValue(), ',');
+        return ((Integer) obj).intValue() == 0 ? z7.d1(false, LocaleController.formatPluralStringComma("Stars", ((Integer) obj2).intValue()), 0.66f, null) : LocaleController.formatNumber(r4.intValue(), ',');
     }
 
     @Override // org.telegram.messenger.FlagSecureReason.FlagSecureCondition
@@ -180,7 +180,7 @@ public final /* synthetic */ class e1 implements cw0, dw0, org.telegram.ui.Actio
         return SharedConfig.passcodeHash.length() > 0 && !SharedConfig.allowScreenCapture;
     }
 
-    @Override // org.telegram.ui.Components.ow0
+    @Override // org.telegram.ui.Components.pw0
     public /* synthetic */ void l() {
     }
 

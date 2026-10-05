@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.xb1;
+import org.telegram.ui.vb1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class vm0 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,25 +46,25 @@ public final class vm0 implements Runnable {
         switch (this.a) {
             case 0:
                 an0 an0Var = this.b;
-                xb1 xb1Var = an0Var.e;
+                vb1 vb1Var = an0Var.e;
                 an0Var.b0 = false;
                 an0Var.V = an0Var.getScrollX() + an0Var.W;
                 tabSize = an0Var.getTabSize();
                 int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
                 an0Var.U = ceil;
                 an0Var.T = ceil;
-                if (an0Var.e(ceil) && ceil >= 0 && ceil < xb1Var.getChildCount()) {
+                if (an0Var.e(ceil) && ceil >= 0 && ceil < vb1Var.getChildCount()) {
                     try {
                         an0Var.performHapticFeedback(0);
                     } catch (Exception unused) {
                     }
                     an0Var.d0 = 0.0f;
                     an0Var.v = 0.0f;
-                    View childAt = xb1Var.getChildAt(ceil);
+                    View childAt = vb1Var.getChildAt(ceil);
                     an0Var.s = childAt;
                     an0Var.c0 = childAt.getX() - an0Var.getScrollX();
                     an0Var.s.invalidate();
-                    xb1Var.invalidate();
+                    vb1Var.invalidate();
                     an0Var.j();
                     an0Var.invalidate();
                     break;

@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class ed0 extends org.telegram.ui.Components.lw0 implements r0.m {
+public final class ed0 extends org.telegram.ui.Components.mw0 implements r0.m {
     public final b2.q0 w0;
     public boolean x0;
     public final /* synthetic */ gd0 y0;
@@ -23,7 +23,7 @@ public final class ed0 extends org.telegram.ui.Components.lw0 implements r0.m {
         this.w0 = new b2.q0();
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.mw0
     public final void L(Canvas canvas, ArrayList arrayList) {
         gd0 gd0Var = this.y0;
         if (gd0Var.K0 != null) {
@@ -79,7 +79,7 @@ public final class ed0 extends org.telegram.ui.Components.lw0 implements r0.m {
         }
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         gd0 gd0Var = this.y0;

@@ -39,7 +39,7 @@ import org.telegram.ui.Components.f20;
 import org.telegram.ui.Components.j20;
 import org.telegram.ui.Components.q30;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.xb0;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
@@ -50,7 +50,7 @@ import tg.u0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class f extends cb implements le.d {
     public static final /* synthetic */ int r0 = 0;
@@ -60,7 +60,7 @@ public final class f extends cb implements le.d {
     public final ArrayList a0;
     public final ArrayList b0;
     public String c0;
-    public u61 d0;
+    public w61 d0;
     public final ci.d e0;
     public final o f0;
     public final u5 g0;
@@ -275,10 +275,10 @@ public final class f extends cb implements le.d {
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(zl0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 8), this.resourcesProvider);
-        this.d0 = u61Var;
-        u61Var.r = false;
-        return u61Var;
+        w61 w61Var = new w61(zl0Var, getContext(), this.currentAccount, 0, true, new hi.a(this, 8), this.resourcesProvider);
+        this.d0 = w61Var;
+        w61Var.r = false;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

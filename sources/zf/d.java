@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.zip.CRC32;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.gb1;
+import org.telegram.ui.eb1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static void a(TLRPC.GroupCall groupCall, TLRPC.GroupCall groupCall2) {
@@ -52,7 +52,7 @@ public abstract class d {
         }
         ArrayList<TLRPC.PollAnswer> arrayList = new ArrayList<>(poll.answers);
         poll.shuffled_answers = arrayList;
-        List.-EL.sort(arrayList, new gb1(23));
+        List.-EL.sort(arrayList, new eb1(23));
     }
 
     public static ArrayList c(java.util.List list, Class cls) {
@@ -155,5 +155,21 @@ public abstract class d {
         tL_inputGeoPoint.lat = geoPoint.lat;
         tL_inputGeoPoint._long = geoPoint._long;
         return tL_inputMediaGeoPoint;
+    }
+
+    public static void i(String str, ArrayList arrayList) {
+        int i10;
+        int i11;
+        if (arrayList == null || arrayList.isEmpty()) {
+            return;
+        }
+        int length = str != null ? str.length() : 0;
+        for (int i12 = 0; i12 < arrayList.size(); i12++) {
+            TLRPC.MessageEntity messageEntity = (TLRPC.MessageEntity) arrayList.get(i12);
+            if (messageEntity == null || (i10 = messageEntity.offset) < 0 || i10 > length || (i11 = messageEntity.length) <= 0 || i11 > length - i10) {
+                arrayList.clear();
+                return;
+            }
+        }
     }
 }

@@ -12,10 +12,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class o5 extends Drawable implements w5 {
-    public yh.j8 E;
+    public yh.l8 E;
     public Integer F;
     public int G;
     public PorterDuffColorFilter H;
@@ -30,7 +30,7 @@ public class o5 extends Drawable implements w5 {
     public final e6 e;
     public final Drawable[] f;
     public View h;
-    public org.telegram.ui.c71 n;
+    public org.telegram.ui.a71 n;
     public final boolean r;
     public final int s;
     public int v;
@@ -91,13 +91,13 @@ public class o5 extends Drawable implements w5 {
         float e7 = this.e.e(this.y);
         qg qgVar = this.L;
         if (e7 > 0.0f) {
-            yh.j8 j8Var = this.E;
-            j8Var.c.set(rect);
-            j8Var.e();
+            yh.l8 l8Var = this.E;
+            l8Var.c.set(rect);
+            l8Var.e();
             this.E.d();
-            yh.j8 j8Var2 = this.E;
+            yh.l8 l8Var2 = this.E;
             Integer num = this.F;
-            j8Var2.a(canvas, org.telegram.ui.ActionBar.i6.l1(e7, num == null ? -1 : num.intValue()));
+            l8Var2.a(canvas, org.telegram.ui.ActionBar.i6.l1(e7, num == null ? -1 : num.intValue()));
             yf.h.d().a(15, qgVar);
         } else {
             yf.h.d().f(qgVar);
@@ -299,9 +299,9 @@ public class o5 extends Drawable implements w5 {
                 this.h.invalidate();
             }
         }
-        org.telegram.ui.c71 c71Var = this.n;
-        if (c71Var != null) {
-            c71Var.invalidate();
+        org.telegram.ui.a71 a71Var = this.n;
+        if (a71Var != null) {
+            a71Var.invalidate();
         }
         invalidateSelf();
     }
@@ -383,7 +383,7 @@ public class o5 extends Drawable implements w5 {
         }
         if (z11) {
             if (this.E == null) {
-                this.E = new yh.j8(1, 8);
+                this.E = new yh.l8(1, 8);
             }
             this.y = z10;
             invalidate();
@@ -391,7 +391,7 @@ public class o5 extends Drawable implements w5 {
         }
         this.y = z10;
         if (z10 && this.E == null) {
-            this.E = new yh.j8(1, 8);
+            this.E = new yh.l8(1, 8);
         } else if (!z10 && this.E != null) {
             this.E = null;
         }

@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class qs extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.x40 {
     public os E;
@@ -52,7 +52,7 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
     public TLRPC.Photo T;
     public org.telegram.ui.Components.w9 U;
     public FrameLayout V;
-    public org.telegram.ui.Components.c71 W;
+    public org.telegram.ui.Components.e71 W;
     public boolean X;
     public boolean Y;
     public MessageObject Z;
@@ -260,11 +260,11 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(fileLocation.volume_id);
                 sb2.append("_");
-                String n10 = a4.a.n(fileLocation.local_id, "@50_50", sb2);
+                String o9 = a4.a.o(fileLocation.local_id, "@50_50", sb2);
                 StringBuilder sb3 = new StringBuilder();
                 sb3.append(closestPhotoSizeWithSize.location.volume_id);
                 sb3.append("_");
-                ImageLoader.getInstance().replaceImageInCache(n10, a4.a.n(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3), ImageLocation.getForUser(qsVar.currentAccount, user, 1), false);
+                ImageLoader.getInstance().replaceImageInCache(o9, a4.a.o(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3), ImageLocation.getForUser(qsVar.currentAccount, user, 1), false);
             }
             if (closestPhotoSizeWithSize2 != null && fileLocation2 != null) {
                 FileLoader.getInstance(qsVar.currentAccount).getPathToAttach(fileLocation2, true).renameTo(FileLoader.getInstance(qsVar.currentAccount).getPathToAttach(closestPhotoSizeWithSize2, true));
@@ -337,14 +337,15 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
 
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
+        final int i10 = 1;
+        setHasOwnBackground(true);
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
-        int i10 = org.telegram.ui.ActionBar.i6.f8;
+        int i11 = org.telegram.ui.ActionBar.i6.f8;
         org.telegram.ui.ActionBar.d6 d6Var = this.r;
-        final int i11 = 0;
-        kVar.A(org.telegram.ui.ActionBar.i6.v0(i10, d6Var), false);
-        this.actionBar.B(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v8, d6Var), false);
+        final int i12 = 0;
+        kVar.z(org.telegram.ui.ActionBar.i6.v0(i11, d6Var), false);
+        this.actionBar.A(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v8, d6Var), false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        final int i12 = 1;
         this.actionBar.setAllowOverlayTitle(true);
         if (this.I) {
             this.actionBar.setTitle(LocaleController.getString(R.string.NewContact));
@@ -352,14 +353,12 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
             this.actionBar.setTitle(LocaleController.getString(R.string.EditContact));
         }
         this.actionBar.setActionBarMenuOnItemClick(new ms(this));
-        this.a = this.actionBar.n().e(1, LocaleController.getString(R.string.Done).toUpperCase());
+        this.a = this.actionBar.n().e(1, LocaleController.getString(R.string.Done));
         FrameLayout frameLayout = new FrameLayout(context);
-        int i13 = org.telegram.ui.ActionBar.i6.a7;
-        frameLayout.setBackgroundColor(getThemedColor(i13));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.V = frameLayout2;
-        int i14 = org.telegram.ui.ActionBar.i6.d6;
-        frameLayout2.setBackgroundColor(getThemedColor(i14));
+        int i13 = org.telegram.ui.ActionBar.i6.d6;
+        frameLayout2.setBackgroundColor(getThemedColor(i13));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.e = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(32.0f));
@@ -391,9 +390,9 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
         FrameLayout frameLayout3 = this.V;
         TextView textView3 = this.f;
         boolean z10 = LocaleController.isRTL;
-        TextView i15 = org.telegram.ui.Cells.c1.i(frameLayout3, textView3, w7.z5.d(-2, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 94.0f, 25.66f, z10 ? 94.0f : 0.0f, 0.0f), context);
-        this.h = i15;
-        i15.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.A6, d6Var));
+        TextView i14 = org.telegram.ui.Cells.c1.i(frameLayout3, textView3, w7.z5.d(-2, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 94.0f, 25.66f, z10 ? 94.0f : 0.0f, 0.0f), context);
+        this.h = i14;
+        i14.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.A6, d6Var));
         this.h.setTextSize(1, 14.0f);
         this.h.setLines(1);
         this.h.setMaxLines(1);
@@ -407,7 +406,7 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
         org.telegram.ui.Cells.j3 j3Var = new org.telegram.ui.Cells.j3(context, LocaleController.getString(R.string.FirstName), false, false, -1, this.r);
         this.b = j3Var;
         j3Var.b.setImeOptions(5);
-        this.b.setBackgroundColor(getThemedColor(i14));
+        this.b.setBackgroundColor(getThemedColor(i13));
         this.b.setDivider(true);
         this.b.b.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.ks
             public final /* synthetic */ qs b;
@@ -417,10 +416,10 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
             }
 
             @Override // android.widget.TextView.OnEditorActionListener
-            public final boolean onEditorAction(TextView textView5, int i16, KeyEvent keyEvent) {
-                switch (i11) {
+            public final boolean onEditorAction(TextView textView5, int i15, KeyEvent keyEvent) {
+                switch (i12) {
                     case 0:
-                        if (i16 == 5) {
+                        if (i15 == 5) {
                             qs qsVar = this.b;
                             qsVar.c.b.requestFocus();
                             org.telegram.ui.Cells.h3 h3Var = qsVar.c.b;
@@ -430,8 +429,8 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
                         break;
                     case 1:
                         qs qsVar2 = this.b;
-                        if (i16 != 6) {
-                            if (i16 == 5) {
+                        if (i15 != 6) {
+                            if (i15 == 5) {
                                 qsVar2.d.b.requestFocus();
                                 qsVar2.d.b.setSelection(qsVar2.c.b.length());
                                 break;
@@ -442,7 +441,7 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
                         }
                         break;
                     default:
-                        if (i16 == 6) {
+                        if (i15 == 6) {
                             this.b.a.performClick();
                             break;
                         }
@@ -456,7 +455,7 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
         org.telegram.ui.Cells.j3 j3Var2 = new org.telegram.ui.Cells.j3(context, LocaleController.getString(R.string.LastName), false, false, -1, this.r);
         this.c = j3Var2;
         j3Var2.b.setImeOptions(5);
-        this.c.setBackgroundColor(getThemedColor(i14));
+        this.c.setBackgroundColor(getThemedColor(i13));
         this.c.b.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.ks
             public final /* synthetic */ qs b;
 
@@ -465,10 +464,10 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
             }
 
             @Override // android.widget.TextView.OnEditorActionListener
-            public final boolean onEditorAction(TextView textView5, int i16, KeyEvent keyEvent) {
-                switch (i12) {
+            public final boolean onEditorAction(TextView textView5, int i15, KeyEvent keyEvent) {
+                switch (i10) {
                     case 0:
-                        if (i16 == 5) {
+                        if (i15 == 5) {
                             qs qsVar = this.b;
                             qsVar.c.b.requestFocus();
                             org.telegram.ui.Cells.h3 h3Var = qsVar.c.b;
@@ -478,8 +477,8 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
                         break;
                     case 1:
                         qs qsVar2 = this.b;
-                        if (i16 != 6) {
-                            if (i16 == 5) {
+                        if (i15 != 6) {
+                            if (i15 == 5) {
                                 qsVar2.d.b.requestFocus();
                                 qsVar2.d.b.setSelection(qsVar2.c.b.length());
                                 break;
@@ -490,7 +489,7 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
                         }
                         break;
                     default:
-                        if (i16 == 6) {
+                        if (i15 == 6) {
                             this.b.a.performClick();
                             break;
                         }
@@ -504,8 +503,8 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.d = j3Var3;
         j3Var3.b.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.i6.gc));
         this.d.b.setImeOptions(6);
-        this.d.setBackgroundColor(getThemedColor(i14));
-        final int i16 = 2;
+        this.d.setBackgroundColor(getThemedColor(i13));
+        final int i15 = 2;
         this.d.b.setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.ks
             public final /* synthetic */ qs b;
 
@@ -514,10 +513,10 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
             }
 
             @Override // android.widget.TextView.OnEditorActionListener
-            public final boolean onEditorAction(TextView textView5, int i162, KeyEvent keyEvent) {
-                switch (i16) {
+            public final boolean onEditorAction(TextView textView5, int i152, KeyEvent keyEvent) {
+                switch (i15) {
                     case 0:
-                        if (i162 == 5) {
+                        if (i152 == 5) {
                             qs qsVar = this.b;
                             qsVar.c.b.requestFocus();
                             org.telegram.ui.Cells.h3 h3Var = qsVar.c.b;
@@ -527,8 +526,8 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
                         break;
                     case 1:
                         qs qsVar2 = this.b;
-                        if (i162 != 6) {
-                            if (i162 == 5) {
+                        if (i152 != 6) {
+                            if (i152 == 5) {
                                 qsVar2.d.b.requestFocus();
                                 qsVar2.d.b.setSelection(qsVar2.c.b.length());
                                 break;
@@ -539,7 +538,7 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
                         }
                         break;
                     default:
-                        if (i162 == 6) {
+                        if (i152 == 6) {
                             this.b.a.performClick();
                             break;
                         }
@@ -555,9 +554,9 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
             r8Var.m(R.drawable.msg_addphoto, LocaleController.formatString(R.string.SuggestUserPhoto, user.first_name), true);
             this.x.setBackground(org.telegram.ui.ActionBar.i6.J0(d6Var, true));
             org.telegram.ui.Cells.r8 r8Var2 = this.x;
-            int i17 = org.telegram.ui.ActionBar.i6.v6;
-            int i18 = org.telegram.ui.ActionBar.i6.u6;
-            r8Var2.e(i17, i18);
+            int i16 = org.telegram.ui.ActionBar.i6.v6;
+            int i17 = org.telegram.ui.ActionBar.i6.u6;
+            r8Var2.e(i16, i17);
             final org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.photo_suggest_icon, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
             this.x.e.setTranslationX(-AndroidUtilities.dp(8.0f));
             this.x.e.setAnimation(kj0Var);
@@ -570,7 +569,7 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    switch (i11) {
+                    switch (i12) {
                         case 0:
                             final qs qsVar = this.b;
                             qsVar.R = 1;
@@ -580,12 +579,12 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
                             TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                             boolean z12 = (userProfilePhoto == null ? null : userProfilePhoto.photo_small) != null;
                             ai.f fVar = new ai.f(18);
-                            final int i19 = 1;
+                            final int i18 = 1;
                             final org.telegram.ui.Components.kj0 kj0Var2 = kj0Var;
                             y40Var.o(z12, fVar, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.js
                                 @Override // android.content.DialogInterface.OnDismissListener
                                 public final void onDismiss(DialogInterface dialogInterface) {
-                                    switch (i19) {
+                                    switch (i18) {
                                         case 0:
                                             qs qsVar2 = qsVar;
                                             boolean h = qsVar2.P.h();
@@ -626,12 +625,12 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
                             TLRPC.UserProfilePhoto userProfilePhoto2 = user3.photo;
                             boolean z13 = (userProfilePhoto2 == null ? null : userProfilePhoto2.photo_small) != null;
                             ai.f fVar2 = new ai.f(18);
-                            final int i20 = 0;
+                            final int i19 = 0;
                             final org.telegram.ui.Components.kj0 kj0Var3 = kj0Var;
                             y40Var2.o(z13, fVar2, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.js
                                 @Override // android.content.DialogInterface.OnDismissListener
                                 public final void onDismiss(DialogInterface dialogInterface) {
-                                    switch (i20) {
+                                    switch (i19) {
                                         case 0:
                                             qs qsVar22 = qsVar2;
                                             boolean h = qsVar22.P.h();
@@ -670,7 +669,7 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
             this.y = r8Var3;
             r8Var3.m(R.drawable.msg_addphoto, LocaleController.formatString(R.string.UserSetPhoto, user.first_name), false);
             this.y.setBackground(org.telegram.ui.ActionBar.i6.J0(d6Var, true));
-            this.y.e(i17, i18);
+            this.y.e(i16, i17);
             final org.telegram.ui.Components.kj0 kj0Var2 = new org.telegram.ui.Components.kj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
             this.y.e.setTranslationX(-AndroidUtilities.dp(8.0f));
             this.y.e.setAnimation(kj0Var2);
@@ -683,7 +682,7 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    switch (i12) {
+                    switch (i10) {
                         case 0:
                             final qs qsVar = this.b;
                             qsVar.R = 1;
@@ -693,12 +692,12 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
                             TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                             boolean z12 = (userProfilePhoto == null ? null : userProfilePhoto.photo_small) != null;
                             ai.f fVar = new ai.f(18);
-                            final int i19 = 1;
+                            final int i18 = 1;
                             final org.telegram.ui.Components.kj0 kj0Var22 = kj0Var2;
                             y40Var.o(z12, fVar, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.js
                                 @Override // android.content.DialogInterface.OnDismissListener
                                 public final void onDismiss(DialogInterface dialogInterface) {
-                                    switch (i19) {
+                                    switch (i18) {
                                         case 0:
                                             qs qsVar22 = qsVar;
                                             boolean h = qsVar22.P.h();
@@ -739,12 +738,12 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
                             TLRPC.UserProfilePhoto userProfilePhoto2 = user3.photo;
                             boolean z13 = (userProfilePhoto2 == null ? null : userProfilePhoto2.photo_small) != null;
                             ai.f fVar2 = new ai.f(18);
-                            final int i20 = 0;
+                            final int i19 = 0;
                             final org.telegram.ui.Components.kj0 kj0Var3 = kj0Var2;
                             y40Var2.o(z13, fVar2, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.js
                                 @Override // android.content.DialogInterface.OnDismissListener
                                 public final void onDismiss(DialogInterface dialogInterface) {
-                                    switch (i20) {
+                                    switch (i19) {
                                         case 0:
                                             qs qsVar22 = qsVar2;
                                             boolean h = qsVar22.P.h();
@@ -789,13 +788,13 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
             this.E.i(LocaleController.getString(R.string.ResetToOriginalPhoto), false);
             this.E.getImageView().setVisibility(0);
             this.E.setBackground(org.telegram.ui.ActionBar.i6.J0(d6Var, true));
-            this.E.e(i17, i18);
+            this.E.e(i16, i17);
             this.E.setOnClickListener(new a0(this, context, user, 10));
             org.telegram.ui.Cells.r8 r8Var4 = new org.telegram.ui.Cells.r8(context, d6Var);
             this.F = r8Var4;
             r8Var4.m(R.drawable.menu_birthday, LocaleController.formatString(R.string.UserSuggestBirthday, new Object[0]), false);
             this.F.setBackground(org.telegram.ui.ActionBar.i6.J0(d6Var, true));
-            this.F.e(i17, i18);
+            this.F.e(i16, i17);
             this.F.setNeedDivider(true);
             this.F.e.setTranslationX(AndroidUtilities.dp(4.0f));
             this.F.setOnClickListener(new org.telegram.ui.Components.gt(27, this, user));
@@ -809,13 +808,12 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
             }
             g0();
         }
-        org.telegram.ui.Components.c71 c71Var = new org.telegram.ui.Components.c71(this, new c5(this, 7), new z0(this, 28), null);
-        this.W = c71Var;
-        c71Var.s1();
+        org.telegram.ui.Components.e71 e71Var = new org.telegram.ui.Components.e71(this, new c5(this, 7), new z0(this, 28), null);
+        this.W = e71Var;
+        e71Var.r1();
+        this.W.setSectionsDrawBackground(true);
         this.W.setOnScrollListener(new ii.n3(4, this, frameLayout));
-        this.W.setBackgroundColor(getThemedColor(i13));
         frameLayout.addView(this.W, w7.z5.e(-1, -1, 119));
-        this.actionBar.setAdaptiveBackground(this.W);
         if (this.I && this.K) {
             this.X = true;
         }
@@ -977,6 +975,11 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
     }
 
     @Override // org.telegram.ui.ActionBar.n2
+    public final org.telegram.ui.Components.zl0 getListViewForSimpleGlass() {
+        return this.W;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
     public final org.telegram.ui.ActionBar.d6 getResourceProvider() {
         return this.r;
     }
@@ -985,7 +988,6 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         e eVar = new e(this, 11);
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.i6.d6));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.i6.v8));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.i6.A8));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.i6.t8));
@@ -1016,6 +1018,11 @@ public final class qs extends org.telegram.ui.ActionBar.n2 implements Notificati
         arrayList.add(new org.telegram.ui.ActionBar.k6(null, 0, null, null, null, eVar, org.telegram.ui.ActionBar.i6.T7));
         arrayList.add(new org.telegram.ui.ActionBar.k6(null, 0, null, null, null, eVar, org.telegram.ui.ActionBar.i6.U7));
         return arrayList;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
     }
 
     @Override // org.telegram.ui.ActionBar.n2

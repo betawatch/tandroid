@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ng0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -96,7 +96,7 @@ public final /* synthetic */ class ng0 implements RequestDelegate {
                                                         if (list2.size() > 1) {
                                                             String string = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + substring, null);
                                                             if (string != null) {
-                                                                utVar = (ut) t8.b.h(1, list2);
+                                                                utVar = (ut) sa.e.h(1, list2);
                                                                 int size = arrayList.size();
                                                                 int i15 = 0;
                                                                 while (true) {
@@ -110,7 +110,7 @@ public final /* synthetic */ class ng0 implements RequestDelegate {
                                                                     }
                                                                 }
                                                             } else {
-                                                                utVar = (ut) t8.b.h(1, list2);
+                                                                utVar = (ut) sa.e.h(1, list2);
                                                             }
                                                             utVar3 = utVar;
                                                         } else {
@@ -220,7 +220,7 @@ public final /* synthetic */ class ng0 implements RequestDelegate {
                                                         if (list2.size() > 1) {
                                                             String string = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + substring, null);
                                                             if (string != null) {
-                                                                utVar = (ut) t8.b.h(1, list2);
+                                                                utVar = (ut) sa.e.h(1, list2);
                                                                 int size = arrayList.size();
                                                                 int i15 = 0;
                                                                 while (true) {
@@ -234,7 +234,7 @@ public final /* synthetic */ class ng0 implements RequestDelegate {
                                                                     }
                                                                 }
                                                             } else {
-                                                                utVar = (ut) t8.b.h(1, list2);
+                                                                utVar = (ut) sa.e.h(1, list2);
                                                             }
                                                             utVar3 = utVar;
                                                         } else {

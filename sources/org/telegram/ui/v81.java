@@ -1,86 +1,71 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class v81 extends LinearLayout implements org.telegram.ui.ActionBar.y5 {
     public final org.telegram.ui.ActionBar.d6 a;
-    public final org.telegram.ui.Components.h9 b;
-    public final org.telegram.ui.Components.w9 c;
-    public final org.telegram.ui.ActionBar.i5 d;
+    public final org.telegram.ui.Components.dc0 b;
+    public final FrameLayout c;
+    public final ImageView d;
     public final TextView e;
-    public final ImageView f;
-    public final org.telegram.ui.Components.o5 h;
-    public final org.telegram.ui.Components.o5 n;
+    public final TextView f;
+    public final TextView h;
+    public boolean n;
 
     public v81(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.a = d6Var;
         setOrientation(0);
-        this.b = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.c = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(14.0f));
-        org.telegram.ui.ActionBar.i5 i5Var = new org.telegram.ui.ActionBar.i5(context);
-        this.d = i5Var;
-        i5Var.setTextSize(15);
-        i5Var.setTypeface(AndroidUtilities.bold());
-        i5Var.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, d6Var));
-        this.h = new org.telegram.ui.Components.o5(AndroidUtilities.dp(24.0f), 7, i5Var, false);
-        this.n = new org.telegram.ui.Components.o5(AndroidUtilities.dp(24.0f), 7, i5Var, false);
-        i5Var.addOnAttachStateChangeListener(new g5(this, 4));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        org.telegram.ui.Components.dc0 dc0Var = new org.telegram.ui.Components.dc0(1);
+        this.b = dc0Var;
+        frameLayout.setBackground(dc0Var);
+        ImageView imageView = new ImageView(context);
+        this.d = imageView;
+        imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        frameLayout.addView(imageView, w7.z5.e(24, 24, 17));
+        LinearLayout e7 = org.telegram.messenger.bi.e(context, 1);
         TextView textView = new TextView(context);
         this.e = textView;
-        textView.setPadding(AndroidUtilities.dp(6.66f), 0, AndroidUtilities.dp(6.66f), 0);
-        textView.setTextSize(1, 11.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setGravity(17);
-        textView.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Sh, d6Var));
-        textView.setBackground(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(10.0f), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Oh, d6Var)));
-        ImageView imageView = new ImageView(context);
-        this.f = imageView;
-        imageView.setImageResource(R.drawable.msg_arrowright);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.m6, d6Var), PorterDuff.Mode.SRC_IN));
-        if (!LocaleController.isRTL) {
-            i5Var.setGravity(19);
-            addView(w9Var, w7.z5.t(28, 28, 19, 18, 0, 18, 0));
-            addView(i5Var, w7.z5.p(0, -1, 1.0f, 119, 0, 0, 18, 0));
-            addView(textView, w7.z5.p(-2, 20, 0.0f, 16, 0, 0, 0, 0));
-            addView(imageView, w7.z5.p(24, 24, 0.0f, 21, 0, 0, 12, 0));
-            return;
+        textView.setTextSize(1, 16.0f);
+        TextView h = com.google.android.gms.internal.vision.e2.h(e7, textView, w7.z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        this.f = h;
+        h.setTextSize(1, 13.0f);
+        TextView h10 = com.google.android.gms.internal.vision.e2.h(e7, h, w7.z5.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2), context);
+        this.h = h10;
+        h10.setTextSize(1, 16.0f);
+        if (LocaleController.isRTL) {
+            addView(h10, w7.z5.t(-2, -2, 16, 20, 0, 0, 0));
+            addView(e7, w7.z5.p(0, -2, 1.0f, 23, 20, 0, 18, 0));
+            addView(frameLayout, w7.z5.t(28, 28, 21, 0, 0, 18, 0));
+        } else {
+            addView(frameLayout, w7.z5.t(28, 28, 19, 18, 0, 0, 0));
+            addView(e7, w7.z5.p(0, -2, 1.0f, 23, 18, 0, 20, 0));
+            addView(h10, w7.z5.t(-2, -2, 16, 0, 0, 20, 0));
         }
-        i5Var.setGravity(21);
-        imageView.setScaleX(-1.0f);
-        addView(imageView, w7.z5.p(24, 24, 0.0f, 19, 12, 0, 0, 0));
-        addView(textView, w7.z5.p(-2, 20, 0.0f, 16, 0, 0, 0, 0));
-        addView(i5Var, w7.z5.p(0, -1, 1.0f, 119, 18, 0, 0, 0));
-        addView(w9Var, w7.z5.t(28, 28, 21, 18, 0, 18, 0));
+        e();
     }
 
     @Override // org.telegram.ui.ActionBar.y5
     public final void e() {
         int i10 = org.telegram.ui.ActionBar.i6.G6;
         org.telegram.ui.ActionBar.d6 d6Var = this.a;
-        this.d.setTextColor(org.telegram.ui.ActionBar.i6.v0(i10, d6Var));
-        this.e.setBackground(org.telegram.ui.ActionBar.i6.b0(AndroidUtilities.dp(10.0f), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Oh, d6Var)));
-        this.f.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.m6, d6Var), PorterDuff.Mode.SRC_IN));
-        this.n.k(Integer.valueOf(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.zh, d6Var)));
+        this.e.setTextColor(org.telegram.ui.ActionBar.i6.v0(i10, d6Var));
+        this.f.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.y6, d6Var));
+        this.h.setTextColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.n6, d6Var));
+        this.b.b = d6Var != null ? d6Var.a() : org.telegram.ui.ActionBar.i6.I.q();
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
@@ -89,81 +74,13 @@ public final class v81 extends LinearLayout implements org.telegram.ui.ActionBar
 
     @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.n ? 60.0f : 50.0f), TLObject.FLAG_30));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0093  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x009e  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00ad  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x006d  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0065  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void set(int i10) {
-        Long emojiStatusDocumentId;
-        TLRPC.User currentUser = UserConfig.getInstance(i10).getCurrentUser();
-        org.telegram.ui.Components.h9 h9Var = this.b;
-        h9Var.m(i10, currentUser);
-        org.telegram.ui.Components.w9 w9Var = this.c;
-        w9Var.getImageReceiver().setCurrentAccount(i10);
-        w9Var.e(currentUser, h9Var);
-        String userName = UserObject.getUserName(currentUser);
-        org.telegram.ui.ActionBar.i5 i5Var = this.d;
-        i5Var.l(userName, false);
-        Integer valueOf = Integer.valueOf(i10);
-        org.telegram.ui.Components.o5 o5Var = this.h;
-        o5Var.x = valueOf;
-        Integer valueOf2 = Integer.valueOf(i10);
-        org.telegram.ui.Components.o5 o5Var2 = this.n;
-        o5Var2.x = valueOf2;
-        int i11 = org.telegram.ui.ActionBar.i6.zh;
-        org.telegram.ui.ActionBar.d6 d6Var = this.a;
-        o5Var.k(Integer.valueOf(org.telegram.ui.ActionBar.i6.v0(i11, d6Var)));
-        if (currentUser != null) {
-            long j3 = currentUser.bot_verification_icon;
-            if (j3 != 0) {
-                o5Var.j(j3, false);
-                emojiStatusDocumentId = UserObject.getEmojiStatusDocumentId(currentUser);
-                o5Var2.k(Integer.valueOf(org.telegram.ui.ActionBar.i6.v0(i11, d6Var)));
-                if (emojiStatusDocumentId == null) {
-                    o5Var2.j(emojiStatusDocumentId.longValue(), false);
-                } else if (currentUser == null || !currentUser.premium) {
-                    o5Var2.g(null, false);
-                } else {
-                    o5Var2.g(getContext().getResources().getDrawable(R.drawable.msg_premium_liststar).mutate(), false);
-                }
-                if (o5Var.d()) {
-                    o5Var = null;
-                }
-                i5Var.setLeftDrawable(o5Var);
-                if (o5Var2.d()) {
-                    o5Var2 = null;
-                }
-                i5Var.i(o5Var2);
-                int mainUnreadCount = MessagesStorage.getInstance(i10).getMainUnreadCount();
-                int i12 = mainUnreadCount <= 0 ? 8 : 0;
-                TextView textView = this.e;
-                textView.setVisibility(i12);
-                textView.setText(LocaleController.formatNumber(mainUnreadCount, ','));
-            }
-        }
-        o5Var.g(null, false);
-        emojiStatusDocumentId = UserObject.getEmojiStatusDocumentId(currentUser);
-        o5Var2.k(Integer.valueOf(org.telegram.ui.ActionBar.i6.v0(i11, d6Var)));
-        if (emojiStatusDocumentId == null) {
-        }
-        if (o5Var.d()) {
-        }
-        i5Var.setLeftDrawable(o5Var);
-        if (o5Var2.d()) {
-        }
-        i5Var.i(o5Var2);
-        int mainUnreadCount2 = MessagesStorage.getInstance(i10).getMainUnreadCount();
-        if (mainUnreadCount2 <= 0) {
-        }
-        TextView textView2 = this.e;
-        textView2.setVisibility(i12);
-        textView2.setText(LocaleController.formatNumber(mainUnreadCount2, ','));
+    public void setValue(CharSequence charSequence) {
+        int i10 = !TextUtils.isEmpty(charSequence) ? 0 : 8;
+        TextView textView = this.h;
+        textView.setVisibility(i10);
+        textView.setText(charSequence);
     }
 }

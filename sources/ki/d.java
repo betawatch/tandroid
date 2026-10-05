@@ -14,15 +14,15 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.Cells.fa;
+import org.telegram.ui.Components.aa1;
 import org.telegram.ui.Components.f60;
 import org.telegram.ui.Components.q50;
 import org.telegram.ui.Components.rg0;
-import org.telegram.ui.Components.t11;
 import org.telegram.ui.Components.u11;
 import org.telegram.ui.Components.v11;
-import org.telegram.ui.Components.z91;
+import org.telegram.ui.Components.w11;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class d implements TextureView.SurfaceTextureListener {
     public final /* synthetic */ int a;
@@ -33,8 +33,8 @@ public final class d implements TextureView.SurfaceTextureListener {
         this.b = obj;
     }
 
-    /* JADX WARN: Type inference failed for: r5v3, types: [org.telegram.ui.Components.p11] */
-    /* JADX WARN: Type inference failed for: r6v0, types: [org.telegram.ui.Components.p11] */
+    /* JADX WARN: Type inference failed for: r5v3, types: [org.telegram.ui.Components.q11] */
+    /* JADX WARN: Type inference failed for: r6v0, types: [org.telegram.ui.Components.q11] */
     @Override // android.view.TextureView.SurfaceTextureListener
     public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
         switch (this.a) {
@@ -63,28 +63,28 @@ public final class d implements TextureView.SurfaceTextureListener {
             case 2:
                 break;
             case 3:
-                final v11 v11Var = (v11) this.b;
-                ArrayList arrayList = v11Var.c;
-                t11 t11Var = v11Var.a;
-                if (t11Var != null) {
-                    t11Var.i();
-                    v11Var.a = null;
+                final w11 w11Var = (w11) this.b;
+                ArrayList arrayList = w11Var.c;
+                u11 u11Var = w11Var.a;
+                if (u11Var != null) {
+                    u11Var.i();
+                    w11Var.a = null;
                 }
                 final int i12 = 0;
-                ?? r52 = new Runnable() { // from class: org.telegram.ui.Components.p11
+                ?? r52 = new Runnable() { // from class: org.telegram.ui.Components.q11
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {
                             case 0:
-                                v11Var.invalidate();
+                                w11Var.invalidate();
                                 break;
                             default:
-                                v11 v11Var2 = v11Var;
-                                Runnable runnable = v11Var2.d;
+                                w11 w11Var2 = w11Var;
+                                Runnable runnable = w11Var2.d;
                                 if (runnable != null) {
-                                    v11Var2.e = true;
-                                    v11Var2.d = null;
-                                    v11.b(runnable);
+                                    w11Var2.e = true;
+                                    w11Var2.d = null;
+                                    w11.b(runnable);
                                     break;
                                 }
                                 break;
@@ -92,45 +92,45 @@ public final class d implements TextureView.SurfaceTextureListener {
                     }
                 };
                 final int i13 = 1;
-                t11 t11Var2 = new t11(surfaceTexture, r52, new Runnable() { // from class: org.telegram.ui.Components.p11
+                u11 u11Var2 = new u11(surfaceTexture, r52, new Runnable() { // from class: org.telegram.ui.Components.q11
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i13) {
                             case 0:
-                                v11Var.invalidate();
+                                w11Var.invalidate();
                                 break;
                             default:
-                                v11 v11Var2 = v11Var;
-                                Runnable runnable = v11Var2.d;
+                                w11 w11Var2 = w11Var;
+                                Runnable runnable = w11Var2.d;
                                 if (runnable != null) {
-                                    v11Var2.e = true;
-                                    v11Var2.d = null;
-                                    v11.b(runnable);
+                                    w11Var2.e = true;
+                                    w11Var2.d = null;
+                                    w11.b(runnable);
                                     break;
                                 }
                                 break;
                         }
                     }
                 }, i10, i11);
-                v11Var.a = t11Var2;
-                t11Var2.a = EmuDetector.with(v11Var.getContext()).detect();
+                w11Var.a = u11Var2;
+                u11Var2.a = EmuDetector.with(w11Var.getContext()).detect();
                 if (!arrayList.isEmpty()) {
                     for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                        u11 u11Var = (u11) arrayList.get(i14);
-                        Bitmap bitmap = u11Var.e;
+                        v11 v11Var = (v11) arrayList.get(i14);
+                        Bitmap bitmap = v11Var.e;
                         if (bitmap != null) {
-                            v11Var.a.c(u11Var.f, bitmap, u11Var.c, u11Var.d);
+                            w11Var.a.c(v11Var.f, bitmap, v11Var.c, v11Var.d);
                         } else {
-                            ArrayList arrayList2 = u11Var.b;
+                            ArrayList arrayList2 = v11Var.b;
                             if (arrayList2 != null) {
-                                v11Var.a.f(arrayList2, u11Var.d);
+                                w11Var.a.f(arrayList2, v11Var.d);
                             } else {
-                                v11Var.a.e(u11Var.a, u11Var.g, u11Var.d);
+                                w11Var.a.e(v11Var.a, v11Var.g, v11Var.d);
                             }
                         }
                     }
                     arrayList.clear();
-                    Choreographer.getInstance().postFrameCallback(v11Var.b);
+                    Choreographer.getInstance().postFrameCallback(w11Var.b);
                     break;
                 }
                 break;
@@ -185,31 +185,31 @@ public final class d implements TextureView.SurfaceTextureListener {
                 ((rg0) this.b).V.w3.setSurfaceTexture(surfaceTexture);
                 return false;
             case 3:
-                v11 v11Var = (v11) this.b;
-                t11 t11Var = v11Var.a;
-                if (t11Var != null) {
-                    t11Var.i();
-                    v11Var.a = null;
+                w11 w11Var = (w11) this.b;
+                u11 u11Var = w11Var.a;
+                if (u11Var != null) {
+                    u11Var.i();
+                    w11Var.a = null;
                 }
-                Runnable runnable = v11Var.d;
+                Runnable runnable = w11Var.d;
                 if (runnable == null) {
                     return false;
                 }
-                v11Var.d = null;
-                v11.b(runnable);
+                w11Var.d = null;
+                w11.b(runnable);
                 return false;
             case 4:
-                z91 z91Var = (z91) this.b;
-                TextureView textureView = z91Var.d;
-                if (!z91Var.S) {
+                aa1 aa1Var = (aa1) this.b;
+                TextureView textureView = aa1Var.d;
+                if (!aa1Var.S) {
                     return true;
                 }
-                if (z91Var.W) {
-                    z91Var.r = 2;
+                if (aa1Var.W) {
+                    aa1Var.r = 2;
                 }
                 textureView.setSurfaceTexture(surfaceTexture);
                 textureView.setVisibility(0);
-                z91Var.S = false;
+                aa1Var.S = false;
                 return false;
             default:
                 vh.e eVar = ((vh.f) this.b).f;
@@ -243,8 +243,8 @@ public final class d implements TextureView.SurfaceTextureListener {
             case 2:
                 return;
             case 3:
-                t11 t11Var = ((v11) this.b).a;
-                if (t11Var == null || (handler = t11Var.getHandler()) == null || !t11Var.b.get()) {
+                u11 u11Var = ((w11) this.b).a;
+                if (u11Var == null || (handler = u11Var.getHandler()) == null || !u11Var.b.get()) {
                     return;
                 }
                 handler.sendMessage(handler.obtainMessage(1, i10, i11));
@@ -363,10 +363,10 @@ public final class d implements TextureView.SurfaceTextureListener {
                 }
                 break;
             case 4:
-                z91 z91Var = (z91) this.b;
-                if (z91Var.r == 1) {
-                    z91Var.n.getViewTreeObserver().addOnPreDrawListener(new fa(this, 4));
-                    z91Var.n.invalidate();
+                aa1 aa1Var = (aa1) this.b;
+                if (aa1Var.r == 1) {
+                    aa1Var.n.getViewTreeObserver().addOnPreDrawListener(new fa(this, 4));
+                    aa1Var.n.invalidate();
                     break;
                 }
                 break;

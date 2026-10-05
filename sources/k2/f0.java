@@ -31,7 +31,7 @@ import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.MediaController;
 import v7.y7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class f0 implements q {
     public static final Object o0 = new Object();
@@ -460,7 +460,7 @@ public final class f0 implements q {
                 if (oVar != null) {
                     throw nVar;
                 }
-                oVar.w(nVar);
+                oVar.x(nVar);
                 throw nVar;
             }
             i10 = i11;
@@ -777,7 +777,7 @@ public final class f0 implements q {
             p pVar = new p(write, this.v.a, r2);
             o oVar2 = this.t;
             if (oVar2 != null) {
-                oVar2.w(pVar);
+                oVar2.x(pVar);
             }
             if (!pVar.b || this.a == null) {
                 b0Var.a(pVar);
@@ -1289,7 +1289,7 @@ public final class f0 implements q {
                                             case 18:
                                                 break;
                                             default:
-                                                throw new IllegalStateException(hg.k0.h(i18, "Unexpected audio encoding: "));
+                                                throw new IllegalStateException(hg.c.h(i18, "Unexpected audio encoding: "));
                                         }
                                 }
                             }
@@ -1353,9 +1353,9 @@ public final class f0 implements q {
                     if (!this.N && Math.abs(W - j3) > 200000) {
                         o oVar = this.t;
                         if (oVar != null) {
-                            StringBuilder t10 = a4.a.t(W, "Unexpected audio track timestamp discontinuity: expected ", ", got ");
-                            t10.append(j3);
-                            oVar.w(new cc.k(t10.toString()));
+                            StringBuilder u10 = a4.a.u(W, "Unexpected audio track timestamp discontinuity: expected ", ", got ");
+                            u10.append(j3);
+                            oVar.x(new cc.k(u10.toString()));
                         }
                         this.N = true;
                     }
@@ -1369,7 +1369,7 @@ public final class f0 implements q {
                         a(j3);
                         o oVar2 = this.t;
                         if (oVar2 != null && j10 != 0) {
-                            oVar2.A();
+                            oVar2.y();
                         }
                     }
                     if (this.v.c == 0) {
@@ -1552,7 +1552,7 @@ public final class f0 implements q {
         this.Z = audioSessionId;
         o oVar = this.t;
         if (oVar != null) {
-            oVar.K(this.v.a());
+            oVar.E(this.v.a());
             if (z13) {
                 this.a0 = true;
                 this.t.onAudioSessionIdChanged(this.Z);

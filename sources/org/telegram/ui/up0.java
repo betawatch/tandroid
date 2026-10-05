@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class up0 extends FrameLayout {
     public final RectF E;
@@ -257,7 +257,7 @@ public class up0 extends FrameLayout {
         float height = getHeight() - AndroidUtilities.dp(82.0f);
         RectF rectF = this.E;
         rectF.set((getWidth() - AndroidUtilities.dp(86.0f)) / 2.0f, getHeight() - AndroidUtilities.dp(168.0f), (AndroidUtilities.dp(86.0f) + getWidth()) / 2.0f, height);
-        yh.j0.c(canvas, this.v, getWidth(), getHeight(), 1.0f, rectF, 1.0f);
+        yh.k0.c(canvas, this.v, getWidth(), getHeight(), 1.0f, rectF, 1.0f);
         int dp = AndroidUtilities.dp(this.n ? 18.0f : 54.0f);
         ImageReceiver imageReceiver = this.d;
         imageReceiver.setRoundRadius(dp);

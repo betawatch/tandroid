@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class t30 implements gg.b2 {
     public final /* synthetic */ u30 a;
@@ -24,19 +24,19 @@ public final class t30 implements gg.b2 {
         if (u30Var.f > i11) {
             v30Var.H(i11);
         }
-        if (u30Var.d.e() || !v30Var.d.T0()) {
+        if (u30Var.d.e() || !v30Var.d.S0()) {
             return;
         }
         v30Var.s.e(false, z10);
     }
 
     @Override // gg.b2
-    public final a0.i w() {
+    public final a0.i s() {
         return this.a.w.e0;
     }
 
     @Override // gg.b2
-    public final /* synthetic */ a0.i y() {
+    public final /* synthetic */ a0.i x() {
         return null;
     }
 
@@ -46,6 +46,6 @@ public final class t30 implements gg.b2 {
     }
 
     @Override // gg.b2
-    public final /* synthetic */ void C(ArrayList arrayList) {
+    public final /* synthetic */ void F(ArrayList arrayList) {
     }
 }

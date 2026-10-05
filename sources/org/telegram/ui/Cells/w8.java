@@ -20,13 +20,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class w8 extends FrameLayout {
     public static final t8 J = new t8("animationProgress", 0);
@@ -354,7 +354,7 @@ public class w8 extends FrameLayout {
         this.E = i10;
         TextView textView = new TextView(context);
         this.c = textView;
-        ok.n(z10 ? org.telegram.ui.ActionBar.i6.j5 : org.telegram.ui.ActionBar.i6.G6, d6Var, textView, 1, 16.0f);
+        bi.m(z10 ? org.telegram.ui.ActionBar.i6.j5 : org.telegram.ui.ActionBar.i6.G6, d6Var, textView, 1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
@@ -365,7 +365,7 @@ public class w8 extends FrameLayout {
         addView(textView, w7.z5.d(-1, -1.0f, (z11 ? 5 : 3) | 48, z11 ? 70.0f : i10, 0.0f, z11 ? i10 : 70.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
-        ok.n(z10 ? org.telegram.ui.ActionBar.i6.J5 : org.telegram.ui.ActionBar.i6.z6, d6Var, textView2, 1, 13.0f);
+        bi.m(z10 ? org.telegram.ui.ActionBar.i6.J5 : org.telegram.ui.ActionBar.i6.z6, d6Var, textView2, 1, 13.0f);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setLines(1);
         textView2.setMaxLines(1);

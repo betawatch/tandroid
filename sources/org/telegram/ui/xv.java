@@ -16,9 +16,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xv implements org.telegram.ui.Components.dr0, org.telegram.ui.Components.nl0, org.telegram.ui.Components.ol0, o10, org.telegram.ui.ActionBar.a2, li.i, r0.n, li.j, org.telegram.ui.Components.al0 {
+public final /* synthetic */ class xv implements org.telegram.ui.Components.er0, org.telegram.ui.Components.nl0, org.telegram.ui.Components.ol0, o10, org.telegram.ui.ActionBar.a2, li.l, r0.n, li.m, org.telegram.ui.Components.al0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ uy b;
 
@@ -69,7 +69,7 @@ public final /* synthetic */ class xv implements org.telegram.ui.Components.dr0,
         switch (this.a) {
             case 1:
                 uy uyVar = this.b;
-                org.telegram.ui.Components.g61 G = uyVar.C0.k0.G(i10);
+                org.telegram.ui.Components.h61 G = uyVar.C0.l0.G(i10);
                 Object obj = G != null ? G.G : null;
                 if (!(obj instanceof TLRPC.Chat)) {
                     if (obj instanceof MessageObject) {
@@ -90,7 +90,7 @@ public final /* synthetic */ class xv implements org.telegram.ui.Components.dr0,
                     Bundle bundle2 = new Bundle();
                     bundle2.putLong("chat_id", ((TLRPC.Chat) obj).id);
                     yn ynVar2 = new yn(bundle2);
-                    org.telegram.ui.Components.lo0 lo0Var = uyVar.C0.k0;
+                    org.telegram.ui.Components.lo0 lo0Var = uyVar.C0.l0;
                     lo0Var.getClass();
                     ArrayList arrayList = new ArrayList();
                     while (true) {
@@ -100,7 +100,7 @@ public final /* synthetic */ class xv implements org.telegram.ui.Components.dr0,
                             uyVar.presentFragment(ynVar2);
                             break;
                         } else {
-                            org.telegram.ui.Components.g61 G2 = lo0Var.G(i10);
+                            org.telegram.ui.Components.h61 G2 = lo0Var.G(i10);
                             if (G2 != null) {
                                 Object obj2 = G2.G;
                                 if (obj2 instanceof TLRPC.Chat) {
@@ -119,7 +119,7 @@ public final /* synthetic */ class xv implements org.telegram.ui.Components.dr0,
                 break;
             case 2:
                 uy uyVar2 = this.b;
-                org.telegram.ui.Components.g61 G3 = uyVar2.C0.p0.G(i10);
+                org.telegram.ui.Components.h61 G3 = uyVar2.C0.q0.G(i10);
                 Object obj3 = G3 != null ? G3.G : null;
                 if (!(obj3 instanceof TLRPC.User)) {
                     if (obj3 instanceof MessageObject) {
@@ -143,7 +143,7 @@ public final /* synthetic */ class xv implements org.telegram.ui.Components.dr0,
                 break;
             default:
                 uy uyVar3 = this.b;
-                Object J = uyVar3.C0.c0.J(i10);
+                Object J = uyVar3.C0.d0.J(i10);
                 if (!(J instanceof TLRPC.TL_sponsoredPeer)) {
                     if (view instanceof org.telegram.ui.Cells.i6) {
                         org.telegram.ui.Cells.i6 i6Var = (org.telegram.ui.Cells.i6) view;
@@ -153,18 +153,18 @@ public final /* synthetic */ class xv implements org.telegram.ui.Components.dr0,
                         }
                     }
                     if (uyVar3.R0 != 10) {
-                        uyVar3.w4(view, i10, uyVar3.C0.c0);
+                        uyVar3.w4(view, i10, uyVar3.C0.d0);
                         break;
                     } else {
                         dy dyVar = uyVar3.C0;
-                        ai.w0 w0Var = dyVar.W;
-                        uyVar3.x4(view, i10, f7, dyVar.c0);
+                        ai.w0 w0Var = dyVar.a0;
+                        uyVar3.x4(view, i10, f7, dyVar.d0);
                         break;
                     }
                 } else {
                     TLRPC.TL_sponsoredPeer tL_sponsoredPeer = (TLRPC.TL_sponsoredPeer) J;
                     uyVar3.presentFragment(yn.Q9(DialogObject.getPeerDialogId(tL_sponsoredPeer.peer)));
-                    org.telegram.ui.Components.jo0 jo0Var = uyVar3.C0.c0;
+                    org.telegram.ui.Components.jo0 jo0Var = uyVar3.C0.d0;
                     jo0Var.getClass();
                     TLRPC.TL_messages_clickSponsoredMessage tL_messages_clickSponsoredMessage = new TLRPC.TL_messages_clickSponsoredMessage();
                     tL_messages_clickSponsoredMessage.random_id = tL_sponsoredPeer.random_id;
@@ -187,7 +187,7 @@ public final /* synthetic */ class xv implements org.telegram.ui.Components.dr0,
         uyVar.fragmentView.invalidate();
     }
 
-    @Override // li.j
+    @Override // li.m
     public int f() {
         uy uyVar = this.b;
         uyVar.getClass();
@@ -266,7 +266,7 @@ public final /* synthetic */ class xv implements org.telegram.ui.Components.dr0,
         this.b.f5(z10, arrayList, arrayList2, z11, true);
     }
 
-    @Override // li.i
+    @Override // li.l
     public void k(int i10) {
         uy.C0(this.b, i10);
     }

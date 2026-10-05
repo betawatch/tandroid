@@ -3,7 +3,7 @@ package ii;
 import java.util.ArrayList;
 import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class k3 extends q9 {
     public final /* synthetic */ v3 K0;
@@ -21,7 +21,7 @@ public final class k3 extends q9 {
         if (s10 == null || s10.length() == 0) {
             return true;
         }
-        x3Var.d5(s10);
+        x3Var.c5(s10);
         return true;
     }
 
@@ -30,20 +30,20 @@ public final class k3 extends q9 {
         x3 x3Var = this.L0;
         CharSequence s10 = x3Var.u3.s();
         if (s10 != null && s10.length() > 0) {
-            x3Var.d5(s10);
+            x3Var.c5(s10);
         }
-        x3Var.G2();
+        x3Var.F2();
     }
 
     @Override // org.telegram.ui.Cells.q9, org.telegram.ui.Cells.da
     public final void G() {
         super.G();
-        this.K0.w();
+        this.K0.t();
     }
 
     @Override // org.telegram.ui.Cells.da
     public final void I() {
-        this.L0.e4();
+        this.L0.d4();
     }
 
     @Override // org.telegram.ui.Cells.da
@@ -51,7 +51,7 @@ public final class k3 extends q9 {
         if (b0()) {
             return true;
         }
-        return this.L0.U4();
+        return this.L0.T4();
     }
 
     @Override // org.telegram.ui.Cells.da

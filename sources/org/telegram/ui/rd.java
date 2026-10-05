@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rd implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class rd implements View.OnFocusChangeListener {
     public final void onFocusChange(View view, boolean z10) {
         switch (this.a) {
             case 0:
-                ae aeVar = ((me) this.b).N1;
+                ae aeVar = ((me) this.b).K0;
                 float f7 = z10 ? 1.0f : 0.0f;
                 aeVar.b(f7, f7, true);
                 break;
@@ -87,12 +87,12 @@ public final /* synthetic */ class rd implements View.OnFocusChangeListener {
                 ld0Var6.b(f15, f15, true);
                 break;
             case 11:
-                wd1 wd1Var = (wd1) this.b;
+                ud1 ud1Var = (ud1) this.b;
                 if (!z10) {
-                    wd1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp)));
+                    ud1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp)));
                     break;
                 } else {
-                    wd1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp2)));
+                    ud1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp2)));
                     break;
                 }
             default:

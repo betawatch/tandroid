@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xa implements bh.a {
     public final /* synthetic */ int a;
@@ -28,15 +28,10 @@ public final /* synthetic */ class xa implements bh.a {
             case 0:
                 ((tb) this.b).Z(canvas, rectF);
                 break;
-            case 1:
+            default:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
                 org.telegram.ui.Components.zl0 zl0Var = premiumPreviewFragment.a;
                 gh.d.a(zl0Var, canvas, rectF, zl0Var, premiumPreviewFragment.d0);
-                break;
-            default:
-                a91 a91Var = (a91) this.b;
-                org.telegram.ui.Components.c71 c71Var = a91Var.c;
-                gh.d.a(c71Var, canvas, rectF, c71Var, a91Var.b);
                 break;
         }
     }

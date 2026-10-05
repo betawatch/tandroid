@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class sl0 extends p20 {
     public View a;
@@ -28,7 +28,7 @@ public final class sl0 extends p20 {
             }
             float x10 = motionEvent.getX();
             float y3 = motionEvent.getY();
-            zl0Var.k1(view, x10, y3, true);
+            zl0Var.j1(view, x10, y3, true);
             int i10 = zl0Var.O1;
             if (zl0Var.R1 && i10 != -1) {
                 try {
@@ -55,7 +55,7 @@ public final class sl0 extends p20 {
                 zl0Var.e1 = null;
                 zl0Var.N1 = null;
                 zl0Var.P1 = false;
-                zl0Var.n1(motionEvent, view);
+                zl0Var.m1(motionEvent, view);
             }
         }
     }

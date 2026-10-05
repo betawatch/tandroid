@@ -5,7 +5,6 @@ import bf.p;
 import bf.q;
 import bf.r;
 import bf.t;
-import hg.k0;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,7 +17,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import t7.s;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class d {
     public static final LinkedHashSet p = new LinkedHashSet(Arrays.asList(bf.b.class, bf.i.class, bf.h.class, bf.j.class, t.class, bf.n.class, bf.l.class));
@@ -139,7 +138,7 @@ public final class d {
 
     public final void e(df.a aVar) {
         if (h() == aVar) {
-            a4.a.x(1, this.n);
+            a4.a.y(1, this.n);
         }
         if (aVar instanceof m) {
             b((m) aVar);
@@ -180,7 +179,7 @@ public final class d {
     }
 
     public final df.a h() {
-        return (df.a) k0.g(1, this.n);
+        return (df.a) hg.c.g(1, this.n);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:232:0x01ef, code lost:
@@ -335,16 +334,16 @@ public final class d {
     */
     public final void i(String str) {
         df.a aVar;
-        t8.c cVar;
-        t8.c cVar2;
-        we.c cVar3;
+        t8.b bVar;
+        t8.b bVar2;
+        we.c cVar;
         char charAt;
         int i10;
         e eVar;
         f fVar;
         int i11;
-        StringBuilder v;
-        t8.c cVar4;
+        StringBuilder Y;
+        t8.b bVar3;
         boolean z10;
         j jVar;
         char charAt2;
@@ -417,8 +416,8 @@ public final class d {
                                     case 0:
                                         aVar = aVar3;
                                         CharSequence charSequence = this.a;
-                                        StringBuilder v9 = gVar.v();
-                                        if (v9 != null && v9.toString().contains("|") && !v9.toString().contains("\n")) {
+                                        StringBuilder Y2 = gVar.Y();
+                                        if (Y2 != null && Y2.toString().contains("|") && !Y2.toString().contains("\n")) {
                                             CharSequence subSequence = charSequence.subSequence(this.b, charSequence.length());
                                             ArrayList arrayList3 = new ArrayList();
                                             boolean z13 = false;
@@ -443,21 +442,21 @@ public final class d {
                                                         }
                                                     }
                                                 }
-                                                arrayList3.add(cVar3);
+                                                arrayList3.add(cVar);
                                             }
                                             arrayList3 = null;
                                             if (arrayList3 != null && !arrayList3.isEmpty()) {
-                                                ArrayList i21 = xe.b.i(v9);
+                                                ArrayList i21 = xe.b.i(Y2);
                                                 if (arrayList3.size() >= i21.size()) {
-                                                    cVar2 = new t8.c(new xe.b(arrayList3, i21));
-                                                    cVar2.a = this.b;
-                                                    cVar2.c = true;
-                                                    cVar = cVar2;
+                                                    bVar2 = new t8.b(new xe.b(arrayList3, i21));
+                                                    bVar2.a = this.b;
+                                                    bVar2.c = true;
+                                                    bVar = bVar2;
                                                     break;
                                                 }
                                             }
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         break;
                                     case 1:
                                         aVar = aVar3;
@@ -470,11 +469,11 @@ public final class d {
                                             if (i25 < charSequence2.length() && ((charAt = charSequence2.charAt(i25)) == '\t' || charAt == ' ')) {
                                                 i24 = i23 + 2;
                                             }
-                                            cVar = new t8.c(new a());
-                                            cVar.b = i24;
+                                            bVar = new t8.b(new a());
+                                            bVar.b = i24;
                                             break;
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         break;
                                     case 2:
                                         aVar = aVar3;
@@ -514,9 +513,9 @@ public final class d {
                                                     if (i32 == -1) {
                                                         eVar = new e('`', i29, i26);
                                                         if (eVar != null) {
-                                                            cVar2 = new t8.c(eVar);
-                                                            cVar2.a = i10 + eVar.a.h;
-                                                            cVar = cVar2;
+                                                            bVar2 = new t8.b(eVar);
+                                                            bVar2.a = i10 + eVar.a.h;
+                                                            bVar = bVar2;
                                                             break;
                                                         }
                                                     }
@@ -536,7 +535,7 @@ public final class d {
                                             if (eVar != null) {
                                             }
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         break;
                                     case 3:
                                         aVar = aVar3;
@@ -589,9 +588,9 @@ public final class d {
                                                     }
                                                 }
                                                 if (fVar == null) {
-                                                    cVar4 = new t8.c(fVar);
-                                                    cVar4.a = charSequence4.length();
-                                                    cVar = cVar4;
+                                                    bVar3 = new t8.b(fVar);
+                                                    bVar3.a = charSequence4.length();
+                                                    bVar = bVar3;
                                                     break;
                                                 } else {
                                                     char charAt9 = charSequence4.charAt(i33);
@@ -599,21 +598,21 @@ public final class d {
                                                         if (charAt9 == '=') {
                                                             if (s.c(s.b('=', charSequence4, i33 + 1, charSequence4.length()), charSequence4.length(), charSequence4) >= charSequence4.length()) {
                                                                 i11 = 1;
-                                                                if (i11 > 0 && (v = gVar.v()) != null) {
-                                                                    t8.c cVar5 = new t8.c(new f(i11, v.toString()));
-                                                                    cVar5.a = charSequence4.length();
-                                                                    cVar5.c = true;
-                                                                    cVar = cVar5;
+                                                                if (i11 > 0 && (Y = gVar.Y()) != null) {
+                                                                    t8.b bVar4 = new t8.b(new f(i11, Y.toString()));
+                                                                    bVar4.a = charSequence4.length();
+                                                                    bVar4.c = true;
+                                                                    bVar = bVar4;
                                                                     break;
                                                                 }
                                                             }
                                                         }
                                                         i11 = 0;
                                                         if (i11 > 0) {
-                                                            t8.c cVar52 = new t8.c(new f(i11, v.toString()));
-                                                            cVar52.a = charSequence4.length();
-                                                            cVar52.c = true;
-                                                            cVar = cVar52;
+                                                            t8.b bVar42 = new t8.b(new f(i11, Y.toString()));
+                                                            bVar42.a = charSequence4.length();
+                                                            bVar42.c = true;
+                                                            bVar = bVar42;
                                                         }
                                                     }
                                                     if (s.c(s.b('-', charSequence4, i33 + 1, charSequence4.length()), charSequence4.length(), charSequence4) >= charSequence4.length()) {
@@ -630,7 +629,7 @@ public final class d {
                                             if (fVar == null) {
                                             }
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         break;
                                     case 4:
                                         aVar = aVar3;
@@ -643,23 +642,23 @@ public final class d {
                                                     Pattern pattern = patternArr[0];
                                                     Pattern pattern2 = patternArr[1];
                                                     if (pattern.matcher(charSequence5.subSequence(i37, charSequence5.length())).find()) {
-                                                        cVar = new t8.c(new g(pattern2));
-                                                        cVar.a = this.b;
+                                                        bVar = new t8.b(new g(pattern2));
+                                                        bVar.a = this.b;
                                                         break;
                                                     }
                                                 }
                                             }
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         break;
                                     case 5:
                                         aVar = aVar3;
                                         if (this.g >= 4 && !this.h && !(h().e() instanceof r)) {
-                                            cVar = new t8.c(new f());
-                                            cVar.b = this.c + 4;
+                                            bVar = new t8.b(new f());
+                                            bVar.b = this.c + 4;
                                             break;
                                         } else {
-                                            cVar = null;
+                                            bVar = null;
                                             break;
                                         }
                                         break;
@@ -671,7 +670,7 @@ public final class d {
                                         } else {
                                             int i40 = this.e;
                                             int i41 = this.c + i39;
-                                            boolean z14 = gVar.v() != null;
+                                            boolean z14 = gVar.Y() != null;
                                             CharSequence charSequence6 = this.a;
                                             char charAt10 = charSequence6.charAt(i40);
                                             if (charAt10 == '*' || charAt10 == '+' || charAt10 == '-') {
@@ -679,9 +678,9 @@ public final class d {
                                                 aVar = aVar3;
                                                 int i42 = i40 + 1;
                                                 if (i42 >= charSequence6.length() || (charAt2 = charSequence6.charAt(i42)) == '\t' || charAt2 == ' ') {
-                                                    bf.c cVar6 = new bf.c();
-                                                    cVar6.g = charAt10;
-                                                    jVar = new j(cVar6, i42);
+                                                    bf.c cVar2 = new bf.c();
+                                                    cVar2.g = charAt10;
+                                                    jVar = new j(cVar2, i42);
                                                     if (jVar != null) {
                                                         bf.n nVar = jVar.a;
                                                         int i43 = jVar.b;
@@ -715,14 +714,14 @@ public final class d {
                                                                 if (aVar4 instanceof k) {
                                                                     bf.n nVar3 = ((k) aVar4).a;
                                                                     if (((nVar3 instanceof bf.c) && (nVar2 instanceof bf.c)) ? Character.valueOf(((bf.c) nVar3).g).equals(Character.valueOf(((bf.c) nVar2).g)) : ((nVar3 instanceof q) && (nVar2 instanceof q)) ? Character.valueOf(((q) nVar3).h).equals(Character.valueOf(((q) nVar2).h)) : false) {
-                                                                        cVar4 = new t8.c(lVar);
-                                                                        cVar4.b = i46;
-                                                                        cVar = cVar4;
+                                                                        bVar3 = new t8.b(lVar);
+                                                                        bVar3.b = i46;
+                                                                        bVar = bVar3;
                                                                         break;
                                                                     }
                                                                 }
-                                                                cVar = new t8.c(new k(nVar2), lVar);
-                                                                cVar.b = i46;
+                                                                bVar = new t8.b(new k(nVar2), lVar);
+                                                                bVar.b = i46;
                                                                 break;
                                                             }
                                                         }
@@ -786,7 +785,7 @@ public final class d {
                                                 }
                                             }
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         break;
                                     case 7:
                                         if (this.g < 4) {
@@ -800,8 +799,8 @@ public final class d {
                                                 if (i50 >= length7) {
                                                     int i54 = i53;
                                                     if ((i51 >= 3 && i52 == 0 && i54 == 0) || ((i52 >= 3 && i51 == 0 && i54 == 0) || (i54 >= 3 && i51 == 0 && i52 == 0))) {
-                                                        cVar = new t8.c(new c(1));
-                                                        cVar.a = charSequence7.length();
+                                                        bVar = new t8.b(new c(1));
+                                                        bVar.a = charSequence7.length();
                                                     }
                                                 } else {
                                                     char charAt13 = charSequence7.charAt(i50);
@@ -819,7 +818,7 @@ public final class d {
                                                 }
                                             }
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         aVar = aVar3;
                                         break;
                                     default:
@@ -838,51 +837,51 @@ public final class d {
                                                 }
                                             }
                                             if (i12 >= 2 && s.b(' ', charSequence8, i55 + i12, length8) == length8) {
-                                                cVar = new t8.c(new zc.b(i12));
-                                                cVar.a = length8 + 1;
+                                                bVar = new t8.b(new zc.b(i12));
+                                                bVar.a = length8 + 1;
                                                 aVar = aVar3;
                                                 break;
                                             }
                                         }
-                                        cVar = null;
+                                        bVar = null;
                                         aVar = aVar3;
                                         break;
                                 }
-                                if (cVar == null) {
+                                if (bVar == null) {
                                     aVar3 = aVar;
                                     i17 = 4;
                                 }
                             } else {
                                 aVar = aVar3;
-                                cVar = null;
+                                bVar = null;
                             }
                         }
-                        if (cVar == null) {
+                        if (bVar == null) {
                             k(this.e);
                         } else {
                             if (!isEmpty) {
                                 f(arrayList2);
                                 isEmpty = true;
                             }
-                            int i57 = cVar.a;
+                            int i57 = bVar.a;
                             if (i57 != -1) {
                                 k(i57);
                             } else {
-                                int i58 = cVar.b;
+                                int i58 = bVar.b;
                                 if (i58 != -1) {
                                     j(i58);
                                 }
                             }
-                            if (cVar.c) {
+                            if (bVar.c) {
                                 df.a h10 = h();
-                                a4.a.x(1, arrayList);
+                                a4.a.y(1, arrayList);
                                 this.o.remove(h10);
                                 if (h10 instanceof m) {
                                     b((m) h10);
                                 }
                                 h10.e().g();
                             }
-                            df.a[] aVarArr = (df.a[]) cVar.d;
+                            df.a[] aVarArr = (df.a[]) bVar.d;
                             int length9 = aVarArr.length;
                             int i59 = 0;
                             while (i59 < length9) {

@@ -23,17 +23,17 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.aa1;
 import org.telegram.ui.Components.ba1;
+import org.telegram.ui.Components.ca1;
 import org.telegram.ui.Components.pe0;
-import org.telegram.ui.Components.s71;
+import org.telegram.ui.Components.t71;
 import org.telegram.ui.Components.vf0;
 import org.telegram.ui.Components.yz;
 import org.telegram.ui.Components.zz;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class pa implements CameraView.CameraViewDelegate, r0.n, org.telegram.ui.ActionBar.a2, aa1, Utilities.CallbackVoidReturn, s71, g9, i8 {
+public final /* synthetic */ class pa implements CameraView.CameraViewDelegate, r0.n, org.telegram.ui.ActionBar.a2, ba1, Utilities.CallbackVoidReturn, t71, g9, i8 {
     public final /* synthetic */ int a;
     public final /* synthetic */ kc b;
 
@@ -55,7 +55,7 @@ public final /* synthetic */ class pa implements CameraView.CameraViewDelegate, 
         return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.Components.aa1
+    @Override // org.telegram.ui.Components.ba1
     public void a(float f7) {
         kc kcVar = this.b;
         nb nbVar = kcVar.B0;
@@ -66,7 +66,7 @@ public final /* synthetic */ class pa implements CameraView.CameraViewDelegate, 
         kcVar.j0(true);
     }
 
-    @Override // org.telegram.ui.Components.s71
+    @Override // org.telegram.ui.Components.t71
     public void c(yz yzVar) {
         MediaController.SavedFilterState savedFilterState;
         kc kcVar = this.b;
@@ -289,10 +289,10 @@ public final /* synthetic */ class pa implements CameraView.CameraViewDelegate, 
             C = null;
         }
         kcVar.e0(kcVar.f0 == 0 ? C : null);
-        ba1 ba1Var = kcVar.V0;
-        if (ba1Var != null) {
+        ca1 ca1Var = kcVar.V0;
+        if (ca1Var != null) {
             kcVar.T1 = 0.0f;
-            ba1Var.b(0.0f, false);
+            ca1Var.b(0.0f, false);
         }
         kcVar.m0(true);
     }

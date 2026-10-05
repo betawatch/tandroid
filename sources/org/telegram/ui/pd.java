@@ -7,7 +7,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pd implements Runnable {
     public final /* synthetic */ int a;
@@ -29,37 +29,37 @@ public final /* synthetic */ class pd implements Runnable {
                 break;
             case 2:
                 me meVar = this.b;
-                org.telegram.ui.Components.c71 c71Var = meVar.a2;
-                if (c71Var != null) {
-                    boolean z10 = meVar.h1;
-                    c71Var.f3.N((meVar.U1 != -1) == meVar.d2.a());
-                    if (z10 && meVar.U1 != -1) {
-                        meVar.Z();
+                org.telegram.ui.Components.e71 e71Var = meVar.X0;
+                if (e71Var != null) {
+                    boolean z10 = meVar.e0;
+                    e71Var.f3.N((meVar.R0 != -1) == meVar.a1.a());
+                    if (z10 && meVar.R0 != -1) {
+                        meVar.a();
                         break;
                     }
                 }
                 break;
             case 3:
                 me meVar2 = this.b;
-                meVar2.n2 = meVar2.m2;
+                meVar2.k1 = meVar2.j1;
                 break;
             case 4:
-                this.b.M1.setLoading(false);
+                this.b.J0.setLoading(false);
                 break;
             case 5:
-                this.b.b2.setVisibility(8);
+                this.b.Y0.setVisibility(8);
                 break;
             case 6:
-                this.b.b2.setVisibility(8);
+                this.b.Y0.setVisibility(8);
                 break;
             default:
                 me meVar3 = this.b;
-                int i10 = meVar3.r1;
-                AndroidUtilities.cancelRunOnUIThread(meVar3.v2);
-                if (meVar3.m2 != meVar3.n2) {
+                int i10 = meVar3.o0;
+                AndroidUtilities.cancelRunOnUIThread(meVar3.s1);
+                if (meVar3.j1 != meVar3.k1) {
                     TLRPC.TL_channels_restrictSponsoredMessages tL_channels_restrictSponsoredMessages = new TLRPC.TL_channels_restrictSponsoredMessages();
-                    tL_channels_restrictSponsoredMessages.channel = MessagesController.getInstance(i10).getInputChannel(-meVar3.s1);
-                    tL_channels_restrictSponsoredMessages.restricted = meVar3.m2;
+                    tL_channels_restrictSponsoredMessages.channel = MessagesController.getInstance(i10).getInputChannel(-meVar3.p0);
+                    tL_channels_restrictSponsoredMessages.restricted = meVar3.j1;
                     ConnectionsManager.getInstance(i10).sendRequest(tL_channels_restrictSponsoredMessages, new wd(meVar3, 0));
                     break;
                 }

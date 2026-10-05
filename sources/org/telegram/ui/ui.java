@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ui implements Runnable {
     public final /* synthetic */ boolean a;
@@ -12,11 +12,11 @@ public final class ui implements Runnable {
     public final /* synthetic */ org.telegram.ui.Components.sk0 e;
     public final /* synthetic */ float f;
     public final /* synthetic */ float h;
-    public final /* synthetic */ zg.o0 n;
+    public final /* synthetic */ zg.m0 n;
     public final /* synthetic */ MessageObject r;
     public final /* synthetic */ yn s;
 
-    public ui(yn ynVar, boolean z10, boolean z11, int i10, boolean z12, org.telegram.ui.Components.sk0 sk0Var, float f7, float f10, zg.o0 o0Var, MessageObject messageObject) {
+    public ui(yn ynVar, boolean z10, boolean z11, int i10, boolean z12, org.telegram.ui.Components.sk0 sk0Var, float f7, float f10, zg.m0 m0Var, MessageObject messageObject) {
         this.s = ynVar;
         this.a = z10;
         this.b = z11;
@@ -25,7 +25,7 @@ public final class ui implements Runnable {
         this.e = sk0Var;
         this.f = f7;
         this.h = f10;
-        this.n = o0Var;
+        this.n = m0Var;
         this.r = messageObject;
     }
 

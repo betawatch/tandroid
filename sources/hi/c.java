@@ -18,17 +18,17 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.rq;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class c extends cb {
     public final d1 X;
-    public u61 Y;
+    public w61 Y;
 
     public c(Context context, TLRPC.Chat chat, Runnable runnable) {
         super(context, (d6) null, false);
@@ -69,10 +69,10 @@ public final class c extends cb {
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(this.d, getContext(), this.currentAccount, 0, true, new a(this, 1), this.resourcesProvider);
-        this.Y = u61Var;
-        u61Var.r = false;
-        return u61Var;
+        w61 w61Var = new w61(this.d, getContext(), this.currentAccount, 0, true, new a(this, 1), this.resourcesProvider);
+        this.Y = w61Var;
+        w61Var.r = false;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

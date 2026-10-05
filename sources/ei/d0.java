@@ -18,11 +18,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.fx0;
+import org.telegram.ui.Components.gx0;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class d0 extends View {
     public boolean E;
@@ -204,14 +204,14 @@ public final class d0 extends View {
             textPaint.setTextSize(dp);
             this.F = size;
             int i12 = (int) (AndroidUtilities.displaySize.x * 0.6f);
-            StaticLayout c10 = fx0.c(Emoji.replaceEmoji(this.n, textPaint.getFontMetricsInt(), false), textPaint, i12, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, i12, 1, true);
+            StaticLayout c10 = gx0.c(Emoji.replaceEmoji(this.n, textPaint.getFontMetricsInt(), false), textPaint, i12, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, i12, 1, true);
             this.r = c10;
             this.s = c10.getLineCount() > 0 ? this.r.getLineWidth(0) : 0.0f;
         }
         AndroidUtilities.dp(4.0f);
         int dp2 = AndroidUtilities.dp(40.0f);
         if (this.f) {
-            dp2 = org.telegram.messenger.f0.C(4.0f, (int) this.s, dp2);
+            dp2 = org.telegram.messenger.q.C(4.0f, (int) this.s, dp2);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(dp2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
     }

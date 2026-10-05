@@ -5,7 +5,7 @@ import android.graphics.Typeface;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class mc extends ob {
     public final w9 a;
@@ -22,15 +22,15 @@ public final class mc extends ob {
         addView(w9Var, w7.z5.i(32.0f, 32.0f, 8388627, 12.0f, 0.0f, 12.0f, 0.0f));
         int themedColor = getThemedColor(i10);
         int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.i6.Gi);
-        LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
-        addView(f7, w7.z5.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+        LinearLayout e7 = org.telegram.messenger.bi.e(context, 1);
+        addView(e7, w7.z5.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
         q90 q90Var = new q90(context, null);
         this.b = q90Var;
         q90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
         q90Var.setTextColor(themedColor);
         q90Var.setTextSize(1, 14.0f);
         q90Var.setTypeface(AndroidUtilities.bold());
-        f7.addView(q90Var);
+        e7.addView(q90Var);
         q90 q90Var2 = new q90(context, null);
         this.c = q90Var2;
         q90Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
@@ -38,7 +38,7 @@ public final class mc extends ob {
         q90Var2.setLinkTextColor(themedColor2);
         q90Var2.setTypeface(Typeface.SANS_SERIF);
         q90Var2.setTextSize(1, 13.0f);
-        f7.addView(q90Var2);
+        e7.addView(q90Var2);
     }
 
     @Override // org.telegram.ui.Components.vb

@@ -1,5 +1,6 @@
 package e2;
 
+import a3.k0;
 import android.app.UiModeManager;
 import android.content.Context;
 import android.content.res.Configuration;
@@ -20,7 +21,6 @@ import b2.b1;
 import b2.r0;
 import b2.s0;
 import ci.x8;
-import hg.k0;
 import j$.util.DesugarTimeZone;
 import j$.util.Objects;
 import java.math.BigDecimal;
@@ -53,7 +53,7 @@ import v7.n7;
 import v7.p7;
 import v7.r6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class d0 {
     public static final String a;
@@ -162,7 +162,7 @@ public abstract class d0 {
             case 6:
                 return "camera motion";
             default:
-                return i10 >= 10000 ? k0.i(i10, "custom (", ")") : "?";
+                return i10 >= 10000 ? hg.c.i(i10, "custom (", ")") : "?";
         }
     }
 
@@ -418,9 +418,9 @@ public abstract class d0 {
         }
         String str4 = (String) g.get(str2);
         if (str4 != null) {
-            StringBuilder u10 = a4.a.u(str4);
-            u10.append(b10.substring(str2.length()));
-            b10 = u10.toString();
+            StringBuilder v = a4.a.v(str4);
+            v.append(b10.substring(str2.length()));
+            b10 = v.toString();
             str2 = str4;
         }
         if (!"no".equals(str2) && !"i".equals(str2) && !"zh".equals(str2)) {
@@ -743,7 +743,7 @@ public abstract class d0 {
         x8 x8Var = new x8(14, c0Var, wVar);
         i9.q qVar = i9.q.a;
         c0Var.a(x8Var, qVar);
-        wVar.a(new a3.k0(wVar, c0Var, pVar, 22), qVar);
+        wVar.a(new k0(wVar, c0Var, pVar, 22), qVar);
         return c0Var;
     }
 

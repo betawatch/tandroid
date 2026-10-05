@@ -25,12 +25,12 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.a01;
 import org.telegram.ui.h60;
-import org.telegram.ui.og1;
+import org.telegram.ui.mg1;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class p9 implements org.telegram.ui.ActionBar.a2, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, nl0, MessagesController.IsInChatCheckedCallback, t5.b, s5.e, pa.a, og1 {
+public final /* synthetic */ class p9 implements org.telegram.ui.ActionBar.a2, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, nl0, MessagesController.IsInChatCheckedCallback, t5.b, s5.e, pa.a, mg1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -157,9 +157,9 @@ public final /* synthetic */ class p9 implements org.telegram.ui.ActionBar.a2, C
         return null;
     }
 
-    @Override // org.telegram.ui.og1
+    @Override // org.telegram.ui.mg1
     public void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-        ((yh.g) this.c).h0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
+        ((yh.h) this.c).p0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate

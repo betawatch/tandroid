@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class p70 extends LinearLayout {
     public final org.telegram.ui.Components.eu a;
@@ -24,7 +24,7 @@ public final class p70 extends LinearLayout {
         super(context);
         this.h = s70Var;
         this.f = new o70(this);
-        TextView f7 = org.telegram.messenger.f0.f(context, 1, 16.0f);
+        TextView f7 = org.telegram.messenger.q.f(context, 1, 16.0f);
         f7.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false));
         f7.setText("t.me/addemoji/");
         org.telegram.ui.Components.eu euVar = new org.telegram.ui.Components.eu(context, null);

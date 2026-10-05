@@ -11,7 +11,7 @@ import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class si0 extends Drawable {
     public final Drawable a;
@@ -40,7 +40,7 @@ public final class si0 extends Drawable {
 
     public final void a(Drawable drawable) {
         Rect bounds = getBounds();
-        drawable.setBounds(org.telegram.ui.Cells.c1.e(2, bounds.centerX(), drawable), org.telegram.messenger.ok.d(2, bounds.centerY(), drawable), org.telegram.ui.Cells.c1.w(2, bounds.centerX(), drawable), org.telegram.ui.Cells.c1.t(2, bounds.centerY(), drawable));
+        drawable.setBounds(org.telegram.ui.Cells.c1.t(2, bounds.centerX(), drawable), org.telegram.ui.Cells.c1.e(2, bounds.centerY(), drawable), org.telegram.ui.Cells.c1.x(2, bounds.centerX(), drawable), org.telegram.ui.Cells.c1.w(2, bounds.centerY(), drawable));
     }
 
     public final void b(boolean z10, boolean z11, boolean z12) {

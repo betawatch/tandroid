@@ -23,7 +23,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class oj0 extends org.telegram.ui.Components.cb {
     public static oj0 u0;
@@ -200,14 +200,14 @@ public final class oj0 extends org.telegram.ui.Components.cb {
                 if (tL_contact != null && (user = messagesController.getUser(Long.valueOf(tL_contact.user_id))) != null && ((z10 || !user.bot) && !UserObject.isService(user.id) && !UserObject.isUserSelf(user))) {
                     String lowerCase2 = UserObject.getUserName(user).toLowerCase();
                     String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-                    if (lowerCase2.startsWith(lowerCase) || org.telegram.messenger.f0.w(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || org.telegram.messenger.f0.w(" ", translitSafe, translitSafe2)) {
+                    if (lowerCase2.startsWith(lowerCase) || org.telegram.messenger.bi.u(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || org.telegram.messenger.bi.u(" ", translitSafe, translitSafe2)) {
                         arrayList.add(user);
                     } else if (user.usernames != null) {
                         for (int i12 = 0; i12 < user.usernames.size(); i12++) {
                             TLRPC.TL_username tL_username = user.usernames.get(i12);
                             if (tL_username != null && tL_username.active) {
                                 String lowerCase3 = tL_username.username.toLowerCase();
-                                if (lowerCase3.startsWith(lowerCase) || org.telegram.messenger.f0.w("_", lowerCase, lowerCase3) || lowerCase3.startsWith(translitSafe) || org.telegram.messenger.f0.w(" ", translitSafe, lowerCase3)) {
+                                if (lowerCase3.startsWith(lowerCase) || org.telegram.messenger.bi.u("_", lowerCase, lowerCase3) || lowerCase3.startsWith(translitSafe) || org.telegram.messenger.bi.u(" ", translitSafe, lowerCase3)) {
                                     arrayList.add(user);
                                     break;
                                 }
@@ -217,7 +217,7 @@ public final class oj0 extends org.telegram.ui.Components.cb {
                         String str2 = user.username;
                         if (str2 != null) {
                             String lowerCase4 = str2.toLowerCase();
-                            if (lowerCase4.startsWith(lowerCase) || org.telegram.messenger.f0.w("_", lowerCase, lowerCase4) || lowerCase4.startsWith(translitSafe) || org.telegram.messenger.f0.w(" ", translitSafe, lowerCase4)) {
+                            if (lowerCase4.startsWith(lowerCase) || org.telegram.messenger.bi.u("_", lowerCase, lowerCase4) || lowerCase4.startsWith(translitSafe) || org.telegram.messenger.bi.u(" ", translitSafe, lowerCase4)) {
                                 arrayList.add(user);
                             }
                         }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.StatsController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ru implements org.telegram.ui.Components.jl0, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ vu a;
@@ -33,8 +33,8 @@ public final /* synthetic */ class ru implements org.telegram.ui.Components.jl0,
                 i13 = ((org.telegram.ui.ActionBar.n2) zuVar).currentAccount;
                 StatsController.getInstance(i13).resetStats(2);
                 vuVar.e3 = true;
-                vuVar.B1();
-                vuVar.C1(true);
+                vuVar.A1();
+                vuVar.B1(true);
                 return;
             }
             uu uuVar = uuVarArr[i14];

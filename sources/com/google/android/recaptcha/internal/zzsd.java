@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 final class zzsd {
     private static final zzsd zzb = new zzsd(true);
@@ -195,7 +195,7 @@ final class zzsd {
             zzA = zzqv.zzA(zza) + zzqv.zzA(16);
             int zzA3 = zzqv.zzA(24);
             int zza2 = ((zztc) value).zza();
-            zzx = e2.c(zza2, zza2, zzA3);
+            zzx = e2.w(zza2, zza2, zzA3);
         } else {
             int zza3 = ((zzsc) entry.getKey()).zza();
             int zzA4 = zzqv.zzA(8);

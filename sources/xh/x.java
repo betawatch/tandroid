@@ -7,9 +7,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class x extends yh.u3 {
+public final class x extends yh.v3 {
     public final Path A0;
     public final float[] B0;
     public final /* synthetic */ int C0;
@@ -24,7 +24,7 @@ public final class x extends yh.u3 {
         this.B0 = new float[8];
     }
 
-    @Override // yh.u3, android.view.ViewGroup, android.view.View
+    @Override // yh.v3, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         canvas.save();
         canvas.clipPath(this.A0);
@@ -40,12 +40,12 @@ public final class x extends yh.u3 {
         return super.drawChild(canvas, view, j3);
     }
 
-    @Override // yh.u3
+    @Override // yh.v3
     public final int getFinalHeight() {
         return AndroidUtilities.dp(this.C0);
     }
 
-    @Override // yh.u3
+    @Override // yh.v3
     public final float getRealHeight() {
         return AndroidUtilities.dp(this.C0);
     }
@@ -59,7 +59,7 @@ public final class x extends yh.u3 {
         }
     }
 
-    @Override // yh.u3
+    @Override // yh.v3
     public final void j(int i10) {
         this.D0.c0.setRibbonColor(i10);
     }

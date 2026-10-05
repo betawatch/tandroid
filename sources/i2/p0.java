@@ -20,7 +20,7 @@ import java.util.List;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class p0 implements Handler.Callback, u2.c0, i1, a3.y {
     public static final long u0 = e2.d0.e0(10000);
@@ -1165,7 +1165,7 @@ public final class p0 implements Handler.Callback, u2.c0, i1, a3.y {
         if (size < 0) {
             Collections.sort(arrayList);
         } else {
-            a4.a.y(arrayList.get(size));
+            a4.a.z(arrayList.get(size));
             throw null;
         }
     }

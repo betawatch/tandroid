@@ -1,17 +1,17 @@
 package rg;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.cg0;
-import yh.i2;
-import yh.x3;
-import yh.x7;
+import yh.j2;
+import yh.y3;
+import yh.z7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class j1 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final class j1 extends FrameLayout {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.a) {
             case 3:
-                if (((x7) this.b).r0) {
+                if (((z7) this.b).r0) {
                     return false;
                 }
                 return super.dispatchTouchEvent(motionEvent);
@@ -37,18 +37,31 @@ public final class j1 extends FrameLayout {
         }
     }
 
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 4:
+                super.onDraw(canvas);
+                zg.o oVar = (zg.o) this.b;
+                if (oVar.x > 0) {
+                    canvas.drawRect(0.0f, getHeight() - oVar.x, getWidth(), getHeight(), oVar.y);
+                    break;
+                }
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         switch (this.a) {
             case 4:
                 super.onLayout(z10, i10, i11, i12, i13);
-                zg.q qVar = (zg.q) this.b;
-                if (qVar.K && z10) {
-                    qVar.w.setTranslationY(-qVar.c.getMeasuredHeight());
-                    int measuredHeight = qVar.c.getMeasuredHeight();
-                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) qVar.y.getLayoutParams();
-                    marginLayoutParams.bottomMargin = measuredHeight;
-                    qVar.y.setLayoutParams(marginLayoutParams);
+                zg.o oVar = (zg.o) this.b;
+                if (oVar.N && z10) {
+                    oVar.e0(oVar.P.e);
                     break;
                 }
                 break;
@@ -99,10 +112,10 @@ public final class j1 extends FrameLayout {
         switch (this.a) {
             case 2:
                 super.setTranslationY(f7);
-                x3 x3Var = (x3) this.b;
-                i2 i2Var = x3Var.d0;
-                if (i2Var != null && i2Var.getVisibility() == 0) {
-                    x3Var.d0.invalidate();
+                y3 y3Var = (y3) this.b;
+                j2 j2Var = y3Var.d0;
+                if (j2Var != null && j2Var.getVisibility() == 0) {
+                    y3Var.d0.invalidate();
                     break;
                 }
                 break;
@@ -110,5 +123,13 @@ public final class j1 extends FrameLayout {
                 super.setTranslationY(f7);
                 break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j1(zg.o oVar, Context context) {
+        super(context);
+        this.a = 4;
+        this.b = oVar;
+        setWillNotDraw(false);
     }
 }

@@ -30,7 +30,7 @@ import org.telegram.ui.oh;
 import org.telegram.ui.yn;
 import org.telegram.ui.zl;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -103,7 +103,7 @@ public final /* synthetic */ class v1 implements RequestDelegate {
                 }
                 break;
             case 13:
-                AndroidUtilities.runOnUIThread(new gg.t((hg.y) this.b, tLObject, (TL_account.TL_businessChatLink) this.c, 7));
+                AndroidUtilities.runOnUIThread(new gg.t((hg.z) this.b, tLObject, (TL_account.TL_businessChatLink) this.c, 7));
                 break;
             case 14:
                 AndroidUtilities.runOnUIThread(new gg.x1(3, (hg.l0) this.b, (ld) this.c));

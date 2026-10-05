@@ -18,7 +18,7 @@ import ii.s2;
 import java.util.concurrent.CountDownLatch;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class q {
     public long B;
@@ -97,7 +97,7 @@ public final class q {
         if (z10) {
             return;
         }
-        StringBuilder j3 = t8.b.j(str, ": 0x");
+        StringBuilder j3 = sa.e.j(str, ": 0x");
         j3.append(Integer.toHexString(EGL14.eglGetError()));
         throw new IllegalStateException(j3.toString());
     }

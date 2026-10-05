@@ -1,11 +1,10 @@
 package lf;
 
 import com.google.android.gms.common.api.internal.n1;
-import hg.k0;
 import java.io.EOFException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class e {
     public static final n1 e = new n1(1);
@@ -47,25 +46,25 @@ public final class e {
     }
 
     public final b b() {
-        byte D = this.d.D();
-        if (D == 0) {
+        byte d02 = this.d.d0();
+        if (d02 == 0) {
             return b.c;
         }
-        if (D == 1) {
+        if (d02 == 1) {
             return b.d;
         }
-        if (D == 2) {
+        if (d02 == 2) {
             return b.e;
         }
-        if (D == 3) {
+        if (d02 == 3) {
             return b.f;
         }
-        throw new c(k0.h(D, "Invalid encoding: "));
+        throw new c(hg.c.h(d02, "Invalid encoding: "));
     }
 
     public final String c(int i10, b bVar) {
         if (i10 > this.a.e()) {
-            throw new c(k0.h(i10, "Could not read fixed-length string of length: "));
+            throw new c(hg.c.h(i10, "Could not read fixed-length string of length: "));
         }
         d dVar = (d) e.get();
         byte[] bArr = dVar.a;
@@ -106,9 +105,9 @@ public final class e {
         byte[] bArr2 = dVar.a;
         int i11 = 0;
         for (int i12 = 0; i12 < min; i12++) {
-            byte D = this.d.D();
-            bArr2[i12] = D;
-            if (D != 0 || (bVar == b.d && i11 == 0 && i12 % 2 != 0)) {
+            byte d02 = this.d.d0();
+            bArr2[i12] = d02;
+            if (d02 != 0 || (bVar == b.d && i11 == 0 && i12 % 2 != 0)) {
                 i11 = 0;
             } else {
                 i11++;

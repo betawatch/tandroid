@@ -30,9 +30,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bu implements org.telegram.ui.Components.nl0, org.telegram.ui.Components.ow0, org.telegram.ui.ActionBar.a2, MessagesController.ErrorDelegate, org.telegram.ui.Components.fh0, Utilities.Callback5, org.telegram.ui.Components.de0, org.telegram.ui.ActionBar.l1, org.telegram.ui.Components.jl0, gg.b2, org.telegram.ui.Components.ol0, r0.n, yt, le.d, qj0 {
+public final /* synthetic */ class bu implements org.telegram.ui.Components.nl0, org.telegram.ui.Components.pw0, org.telegram.ui.ActionBar.a2, MessagesController.ErrorDelegate, org.telegram.ui.Components.fh0, Utilities.Callback5, org.telegram.ui.Components.de0, org.telegram.ui.ActionBar.l1, org.telegram.ui.Components.jl0, gg.b2, org.telegram.ui.Components.ol0, r0.n, yt, le.d, qj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -42,7 +42,7 @@ public final /* synthetic */ class bu implements org.telegram.ui.Components.nl0,
     }
 
     @Override // gg.b2
-    public /* synthetic */ void C(ArrayList arrayList) {
+    public /* synthetic */ void F(ArrayList arrayList) {
         int i10 = this.a;
     }
 
@@ -115,7 +115,7 @@ public final /* synthetic */ class bu implements org.telegram.ui.Components.nl0,
 
     @Override // org.telegram.ui.Components.nl0
     public void c(float f7, float f10, int i10, View view) {
-        org.telegram.ui.Components.g61 G;
+        org.telegram.ui.Components.h61 G;
         Object obj;
         long j3;
         int S;
@@ -175,7 +175,7 @@ public final /* synthetic */ class bu implements org.telegram.ui.Components.nl0,
                         edit.commit();
                         ((org.telegram.ui.Cells.r8) view).setChecked(z11);
                     }
-                    li.m.f();
+                    li.p.f();
                     break;
                 }
                 break;
@@ -318,7 +318,7 @@ public final /* synthetic */ class bu implements org.telegram.ui.Components.nl0,
                 ConnectionsManager.getInstance(i11).sendRequest(deleteaccount, new m(gf0Var, 12), 10);
                 break;
             case 27:
-                ((org.telegram.messenger.qj) obj).run();
+                ((org.telegram.messenger.rj) obj).run();
                 break;
             default:
                 wk0 wk0Var = ((sk0) obj).b;
@@ -390,7 +390,7 @@ public final /* synthetic */ class bu implements org.telegram.ui.Components.nl0,
         }
     }
 
-    @Override // org.telegram.ui.Components.ow0
+    @Override // org.telegram.ui.Components.pw0
     public void j(int i10) {
         int i11;
         int i12;
@@ -472,7 +472,7 @@ public final /* synthetic */ class bu implements org.telegram.ui.Components.nl0,
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        if (((org.telegram.ui.Components.g61) obj).d != 1 || mzVar.b == null) {
+        if (((org.telegram.ui.Components.h61) obj).d != 1 || mzVar.b == null) {
             return;
         }
         boolean z10 = !mzVar.c;
@@ -485,20 +485,20 @@ public final /* synthetic */ class bu implements org.telegram.ui.Components.nl0,
         mzVar.e.f3.N(true);
     }
 
+    @Override // gg.b2
+    public /* synthetic */ a0.i s() {
+        switch (this.a) {
+        }
+        return null;
+    }
+
     @Override // org.telegram.ui.Components.nl0
     public /* synthetic */ void s0(View view, float f7, float f10) {
         int i10 = this.a;
     }
 
     @Override // gg.b2
-    public /* synthetic */ a0.i w() {
-        switch (this.a) {
-        }
-        return null;
-    }
-
-    @Override // gg.b2
-    public /* synthetic */ a0.i y() {
+    public /* synthetic */ a0.i x() {
         switch (this.a) {
         }
         return null;
@@ -528,7 +528,7 @@ public final /* synthetic */ class bu implements org.telegram.ui.Components.nl0,
     private final /* synthetic */ void n(ArrayList arrayList) {
     }
 
-    @Override // org.telegram.ui.Components.ow0
+    @Override // org.telegram.ui.Components.pw0
     public /* synthetic */ void l() {
     }
 

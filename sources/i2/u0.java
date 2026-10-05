@@ -15,10 +15,10 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 import org.telegram.ui.Components.v50;
-import org.telegram.ui.gb1;
+import org.telegram.ui.eb1;
 import v7.y7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class u0 {
     public final Object a;
@@ -362,7 +362,7 @@ public final class u0 {
             }
             i26++;
         }
-        Pair j10 = x2.p.j(1, tVar2, iArr6, new ca.b(pVar, iVar, z11, iArr7, 7), new gb1(14));
+        Pair j10 = x2.p.j(1, tVar2, iArr6, new ca.b(pVar, iVar, z11, iArr7, 7), new eb1(14));
         if (j10 != null) {
             qVarArr[((Integer) j10.second).intValue()] = (x2.q) j10.first;
         }
@@ -381,12 +381,12 @@ public final class u0 {
             a1.d dVar = new a1.d(iVar, str, iArr7, (!iVar.k || context2 == null) ? null : e2.d0.w(context2), 20);
             str2 = str;
             l1Var = null;
-            j3 = x2.p.j(2, tVar2, iArr6, dVar, new gb1(13));
+            j3 = x2.p.j(2, tVar2, iArr6, dVar, new eb1(13));
         }
         int i27 = 4;
         if ((iVar.A || j3 == null) && o1Var2.a != 2) {
             iArr = iArr9;
-            pair = x2.p.j(4, tVar2, iArr6, new r2.s(iVar, 15), new gb1(12));
+            pair = x2.p.j(4, tVar2, iArr6, new r2.s(iVar, 15), new eb1(12));
         } else {
             iArr = iArr9;
             pair = l1Var;
@@ -406,7 +406,7 @@ public final class u0 {
                 String str3 = e2.d0.a;
                 obj = locale.toLanguageTag();
             }
-            pair2 = x2.p.j(3, tVar2, iArr6, new v50(iVar, str2, obj, 11), new gb1(15));
+            pair2 = x2.p.j(3, tVar2, iArr6, new v50(iVar, str2, obj, 11), new eb1(15));
         }
         if (pair2 != 0) {
             qVarArr[((Integer) pair2.second).intValue()] = (x2.q) pair2.first;
@@ -439,7 +439,7 @@ public final class u0 {
                         int i35 = 0;
                         while (i35 < a10.a) {
                             u2.p1 p1Var5 = p1Var4;
-                            if (hg.k0.d(iArr11[i35], iVar.t0)) {
+                            if (hg.c.d(iArr11[i35], iVar.t0)) {
                                 i12 = i35;
                                 x2.g gVar2 = new x2.g(a10.d[i35], iArr11[i12]);
                                 if (gVar != 0) {

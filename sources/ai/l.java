@@ -28,7 +28,7 @@ import org.telegram.ui.rx;
 import org.telegram.ui.to;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -178,7 +178,7 @@ public final /* synthetic */ class l implements Utilities.Callback {
                 c1Var.v1(j3, new e4((xh.q1) obj4, eVar, (Utilities.Callback) obj2, c1Var, 19));
                 break;
             default:
-                yh.x3.s0((yh.x3) obj4, (TL_stories.TL_premium_boostsStatus) obj3, this.b, (MessagesController) obj2, (ChannelBoostsController.CanApplyBoost) obj);
+                yh.y3.s0((yh.y3) obj4, (TL_stories.TL_premium_boostsStatus) obj3, this.b, (MessagesController) obj2, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
         }
     }

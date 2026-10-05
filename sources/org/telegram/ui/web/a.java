@@ -3,9 +3,9 @@ package org.telegram.ui.web;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements org.telegram.ui.ActionBar.a2, Utilities.Callback5 {
     public final /* synthetic */ k a;
@@ -24,14 +24,14 @@ public final /* synthetic */ class a implements org.telegram.ui.ActionBar.a2, Ut
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         org.telegram.ui.s sVar;
-        g61 g61Var = (g61) obj;
+        h61 h61Var = (h61) obj;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        boolean G = g61Var.G(d.class);
+        boolean H = h61Var.H(d.class);
         k kVar = this.a;
-        if (G) {
-            String charSequence = g61Var.l.toString();
+        if (H) {
+            String charSequence = h61Var.l.toString();
             org.telegram.ui.z zVar = kVar.L;
             if (zVar != null) {
                 zVar.run(charSequence);
@@ -39,11 +39,11 @@ public final /* synthetic */ class a implements org.telegram.ui.ActionBar.a2, Ut
             }
             return;
         }
-        if (!g61Var.G(g.class) || (sVar = kVar.N) == null) {
+        if (!h61Var.H(g.class) || (sVar = kVar.N) == null) {
             return;
         }
         try {
-            sVar.run(k.a((MessageObject) g61Var.H));
+            sVar.run(k.a((MessageObject) h61Var.H));
         } catch (Exception e7) {
             FileLog.e(e7);
         }

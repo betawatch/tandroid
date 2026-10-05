@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class fd extends Drawable {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final class fd extends Drawable {
         float round = Math.round(f7 * 10.0f) / 10.0f;
         long j3 = (long) round;
         if (round == j3) {
-            return a4.a.o(j3, "");
+            return a4.a.p(j3, "");
         }
         return "" + round;
     }
@@ -193,7 +193,7 @@ public final class fd extends Drawable {
     public void onBoundsChange(Rect rect) {
         switch (this.a) {
             case 5:
-                ((ImageReceiver) this.b).setImageCoords(AndroidUtilities.dp(2.0f) + rect.left, AndroidUtilities.dp(2.0f) + rect.top, org.telegram.messenger.ok.y(2.0f, rect.left, rect.right - AndroidUtilities.dp(2.0f)), org.telegram.messenger.ok.y(2.0f, rect.top, rect.bottom - AndroidUtilities.dp(2.0f)));
+                ((ImageReceiver) this.b).setImageCoords(AndroidUtilities.dp(2.0f) + rect.left, AndroidUtilities.dp(2.0f) + rect.top, org.telegram.messenger.bi.y(2.0f, rect.left, rect.right - AndroidUtilities.dp(2.0f)), org.telegram.messenger.bi.y(2.0f, rect.top, rect.bottom - AndroidUtilities.dp(2.0f)));
                 break;
             default:
                 super.onBoundsChange(rect);

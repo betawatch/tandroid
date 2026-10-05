@@ -9,7 +9,7 @@ import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class uu0 {
     public final View i;
@@ -134,7 +134,7 @@ public abstract class uu0 {
                 }
                 if (drawable != null) {
                     if (this.k != -2) {
-                        drawable.setAlpha((int) org.telegram.messenger.f0.z(1.0f, this.l, 255.0f, f10));
+                        drawable.setAlpha((int) org.telegram.messenger.q.z(1.0f, this.l, 255.0f, f10));
                     } else {
                         drawable.setAlpha((int) (f10 * 255.0f));
                     }

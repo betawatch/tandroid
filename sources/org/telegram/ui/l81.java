@@ -1,64 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MrzRecognizer;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class l81 implements v9 {
-    public TLObject a = null;
-    public TLRPC.TL_error b = null;
-    public final /* synthetic */ SessionsActivity c;
+public final /* synthetic */ class l81 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y81 b;
 
-    public l81(SessionsActivity sessionsActivity) {
-        this.c = sessionsActivity;
+    public /* synthetic */ l81(y81 y81Var, int i10) {
+        this.a = i10;
+        this.b = y81Var;
     }
 
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ String J0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.v9
-    public final void L(String str) {
-        TLObject tLObject = this.a;
-        if (!(tLObject instanceof TLRPC.TL_authorization)) {
-            if (this.b != null) {
-                AndroidUtilities.runOnUIThread(new k81(this, 0));
-                return;
-            }
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                MessagesController.getInstance(this.b.currentAccount).deleteUserPhoto(null);
+                break;
+            case 1:
+                nf.f.s(this.b.getParentActivity(), LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl));
+                break;
+            default:
+                this.b.c.f3.N(true);
+                break;
         }
-        TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
-        boolean z10 = tL_authorization.password_pending;
-        SessionsActivity sessionsActivity = this.c;
-        if (z10) {
-            sessionsActivity.f.add(0, tL_authorization);
-            sessionsActivity.V = 4;
-            sessionsActivity.k0(false);
-        } else {
-            sessionsActivity.e.add(0, tL_authorization);
-        }
-        sessionsActivity.m0();
-        sessionsActivity.a.l();
-        sessionsActivity.s.m(0L, this.a, 11);
-    }
-
-    @Override // org.telegram.ui.v9
-    public final boolean g1(String str, n9 n9Var) {
-        this.a = null;
-        this.b = null;
-        AndroidUtilities.runOnUIThread(new nf0(this, str, n9Var, 29), 750L);
-        return true;
-    }
-
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ void T0(MrzRecognizer.Result result) {
-    }
-
-    @Override // org.telegram.ui.v9
-    public final /* synthetic */ void onDismiss() {
     }
 }

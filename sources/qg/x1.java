@@ -16,17 +16,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.gw0;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.uk0;
 import org.telegram.ui.fs0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class x1 extends j {
     public final Bitmap A0;
@@ -41,13 +41,13 @@ public final class x1 extends j {
     public final int s0;
     public boolean t0;
     public final e6 u0;
-    public final fw0 v0;
+    public final gw0 v0;
     public final int w0;
     public boolean x0;
     public final e6 y0;
     public final ai.f0 z0;
 
-    public x1(Context context, PointF pointF, fw0 fw0Var, String str, int i10) {
+    public x1(Context context, PointF pointF, gw0 gw0Var, String str, int i10) {
         super(context, pointF);
         this.s0 = -1;
         this.t0 = false;
@@ -61,7 +61,7 @@ public final class x1 extends j {
         setRotation(0.0f);
         setScale(1.0f);
         this.r0 = str;
-        this.v0 = fw0Var;
+        this.v0 = gw0Var;
         ai.f0 f0Var = new ai.f0(this, context);
         this.z0 = f0Var;
         addView(f0Var, z5.c(-1.0f, -1));
@@ -80,7 +80,7 @@ public final class x1 extends j {
     private String getImageFilter() {
         Point point = AndroidUtilities.displaySize;
         int round = Math.round((Math.min(point.x, point.y) * 0.8f) / AndroidUtilities.density);
-        return a4.a.k(round, round, "_");
+        return a4.a.l(round, round, "_");
     }
 
     @Override // qg.j
@@ -92,7 +92,7 @@ public final class x1 extends j {
         return this.s0;
     }
 
-    public fw0 getBaseSize() {
+    public gw0 getBaseSize() {
         return this.v0;
     }
 
@@ -133,15 +133,15 @@ public final class x1 extends j {
         getMeasuredHeight();
         getScale();
         AndroidUtilities.dp(64.0f);
-        float x10 = ok.x(dp, 2.0f, getPositionX(), scaleX);
-        return new uk0(x10, ok.x(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + x10) - x10, dp2 * scaleX);
+        float x10 = bi.x(dp, 2.0f, getPositionX(), scaleX);
+        return new uk0(x10, bi.x(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + x10) - x10, dp2 * scaleX);
     }
 
     @Override // qg.j
     public final void k() {
-        fw0 fw0Var = this.v0;
-        float f7 = fw0Var.a / 2.0f;
-        float f10 = fw0Var.b / 2.0f;
+        gw0 gw0Var = this.v0;
+        float f7 = gw0Var.a / 2.0f;
+        float f10 = gw0Var.b / 2.0f;
         MediaController.CropState cropState = this.G0;
         if (cropState != null) {
             f7 *= cropState.cropPw;
@@ -164,9 +164,9 @@ public final class x1 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        fw0 fw0Var = this.v0;
-        float f7 = fw0Var.a;
-        float f10 = fw0Var.b;
+        gw0 gw0Var = this.v0;
+        float f7 = gw0Var.a;
+        float f10 = gw0Var.b;
         MediaController.CropState cropState = this.G0;
         if (cropState != null) {
             f7 *= cropState.cropPw;
@@ -221,7 +221,7 @@ public final class x1 extends j {
         }
     }
 
-    public x1(Context context, PointF pointF, fw0 fw0Var, TLObject tLObject) {
+    public x1(Context context, PointF pointF, gw0 gw0Var, TLObject tLObject) {
         super(context, pointF);
         this.s0 = -1;
         this.t0 = false;
@@ -235,7 +235,7 @@ public final class x1 extends j {
         setRotation(0.0f);
         setScale(1.0f);
         this.q0 = tLObject;
-        this.v0 = fw0Var;
+        this.v0 = gw0Var;
         ai.f0 f0Var = new ai.f0(this, context);
         this.z0 = f0Var;
         addView(f0Var, z5.c(-1.0f, -1));

@@ -33,13 +33,13 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.k20;
 import v7.z6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class w3 extends View {
     public float E;
@@ -73,7 +73,7 @@ public final class w3 extends View {
     public final RectF e0;
     public final org.telegram.ui.Components.e6 f;
     public final Path f0;
-    public e11 g0;
+    public f11 g0;
     public final OverScroller h;
     public boolean h0;
     public org.telegram.ui.Cells.z i0;
@@ -485,7 +485,7 @@ public final class w3 extends View {
                             paint3.setAlpha(i15);
                             canvas.drawRoundRect(rectF6, lerp5, lerp5, paint3);
                             canvas.save();
-                            canvas.translate(rectF6.left, t8.b.d(AndroidUtilities.dp(50.0f), lerp4, rectF6.top, currentActionBarHeight));
+                            canvas.translate(rectF6.left, sa.e.d(AndroidUtilities.dp(50.0f), lerp4, rectF6.top, currentActionBarHeight));
                             canvas.scale(1.0f, AndroidUtilities.lerp(1.0f, 1.25f, f28));
                             if (m3Var != null && m3Var.m != null) {
                                 float width3 = rectF6.width() / m3Var.m.getWidth();
@@ -545,7 +545,7 @@ public final class w3 extends View {
         canvas.restore();
         canvas.restore();
         if (this.g0 == null) {
-            this.g0 = new e11(LocaleController.getString(R.string.BotCloseAllTabs), 14.0f, AndroidUtilities.bold());
+            this.g0 = new f11(LocaleController.getString(R.string.BotCloseAllTabs), 14.0f, AndroidUtilities.bold());
         }
         if (this.i0 == null || this.h0 != i6.I.q()) {
             boolean q6 = i6.I.q();

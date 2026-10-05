@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class b80 extends z4.a {
     public final /* synthetic */ int c;
@@ -42,7 +42,7 @@ public final class b80 extends z4.a {
             case 0:
                 return ((c80) this.d).F.length;
             case 1:
-                return ((rd1) this.d).b != 0 ? 1 : 2;
+                return ((pd1) this.d).b != 0 ? 1 : 2;
             default:
                 return ((rg.y0) this.d).d.size();
         }
@@ -88,8 +88,8 @@ public final class b80 extends z4.a {
                 textView2.setText(AndroidUtilities.replaceTags(c80Var.G[i10]));
                 return m6Var;
             case 1:
-                rd1 rd1Var = (rd1) this.d;
-                View view = i10 == 0 ? rd1Var.t0 : rd1Var.m0;
+                pd1 pd1Var = (pd1) this.d;
+                View view = i10 == 0 ? pd1Var.t0 : pd1Var.m0;
                 gVar.addView(view);
                 return view;
             default:

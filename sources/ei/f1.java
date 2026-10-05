@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -25,14 +25,14 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.w6;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.cj1;
 import org.telegram.ui.da0;
-import org.telegram.ui.ej1;
 import org.telegram.ui.uy;
 import org.telegram.ui.web.HttpGetFileTask;
 import org.telegram.ui.wq;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -98,7 +98,7 @@ public final /* synthetic */ class f1 implements Runnable {
                         if ((botInlineMessage2 instanceof TLRPC.TL_botInlineMessageMediaAuto) || (botInlineMessage2 instanceof TLRPC.TL_botInlineMessageMediaWebPage)) {
                             String str2 = botInlineResult.content.url;
                             String httpUrlExtension = ImageLoader.getHttpUrlExtension(str2, null);
-                            File file = new File(FileLoader.getDirectory(4), Utilities.MD5(str2) + (TextUtils.isEmpty(httpUrlExtension) ? FileLoader.getExtensionByMimeType(tL_messages_preparedInlineMessage.result.content.mime_type) : t8.b.i(".", httpUrlExtension)));
+                            File file = new File(FileLoader.getDirectory(4), Utilities.MD5(str2) + (TextUtils.isEmpty(httpUrlExtension) ? FileLoader.getExtensionByMimeType(tL_messages_preparedInlineMessage.result.content.mime_type) : sa.e.i(".", httpUrlExtension)));
                             if (file.exists()) {
                                 h1Var.run();
                                 break;
@@ -138,9 +138,9 @@ public final /* synthetic */ class f1 implements Runnable {
                         LaunchActivity.C0(launchActivity, launchActivity.O, tL_attachMenuBot, str3, false);
                         break;
                     } else {
-                        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) hg.k0.g(1, arrayList2);
+                        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) hg.c.g(1, arrayList2);
                         if (AndroidUtilities.isTablet() && !(n2Var instanceof yn) && !arrayList.isEmpty()) {
-                            n2Var = (org.telegram.ui.ActionBar.n2) hg.k0.g(1, arrayList);
+                            n2Var = (org.telegram.ui.ActionBar.n2) hg.c.g(1, arrayList);
                         }
                         ArrayList arrayList4 = new ArrayList();
                         if (!TextUtils.isEmpty(str4)) {
@@ -170,7 +170,7 @@ public final /* synthetic */ class f1 implements Runnable {
                             w6Var.setColor(i6.w0(null, i6.ia, false));
                             w6Var.setBackgroundColor(i6.w0(null, i6.L5, false));
                             w6Var.setAttachBot(tL_attachMenuBot);
-                            ej1.a(launchActivity, new wq(launchActivity, i12, this.d, uyVar, n2Var, user, str5), null);
+                            cj1.a(launchActivity, new wq(launchActivity, i12, this.d, uyVar, n2Var, user, str5), null);
                             break;
                         } else if (uyVar != null) {
                             if (n2Var != null) {
@@ -199,10 +199,10 @@ public final /* synthetic */ class f1 implements Runnable {
                         }
                     }
                 } else {
-                    a02 = yc.a0((org.telegram.ui.ActionBar.n2) hg.k0.g(1, arrayList2));
+                    a02 = yc.a0((org.telegram.ui.ActionBar.n2) hg.c.g(1, arrayList2));
                     i10 = R.string.BotCantAddToAttachMenu;
                 }
-                ok.p(i10, a02, null);
+                bi.o(i10, a02, null);
                 break;
         }
     }

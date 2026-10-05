@@ -20,7 +20,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class kc0 extends FrameLayout {
     public final ImageView a;
@@ -147,7 +147,7 @@ public final class kc0 extends FrameLayout {
         if ((Build.VERSION.SDK_INT < 33 || (SharedConfig.getDevicePerformanceClass() < 1 && !BuildVars.DEBUG_PRIVATE_VERSION)) && (262144 & i10) > 0) {
             bitCount--;
         }
-        return (org.telegram.ui.Components.v11.c() || (i10 & 65536) <= 0) ? bitCount : bitCount - 1;
+        return (org.telegram.ui.Components.w11.c() || (i10 & 65536) <= 0) ? bitCount : bitCount - 1;
     }
 
     public final void b(boolean z10, boolean z11) {
@@ -161,7 +161,7 @@ public final class kc0 extends FrameLayout {
                 imageView.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
                 linearLayout.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
                 r12.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
-                org.telegram.messenger.ok.r(qpVar.animate(), z10 ? 0.5f : 1.0f, 220L);
+                org.telegram.messenger.bi.q(qpVar.animate(), z10 ? 0.5f : 1.0f, 220L);
             } else {
                 imageView.setAlpha(z10 ? 0.5f : 1.0f);
                 linearLayout.setAlpha(z10 ? 0.5f : 1.0f);

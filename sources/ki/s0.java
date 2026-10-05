@@ -14,12 +14,13 @@ import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.a11;
 import org.telegram.ui.Components.e60;
 import org.telegram.ui.Components.pv;
-import org.telegram.ui.Components.z01;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class s0 {
     public boolean A;
@@ -107,7 +108,7 @@ public final class s0 {
         sb2.append(", output=");
         sb2.append(q0Var.a);
         sb2.append("x");
-        hg.k0.s(sb2, q0Var.a, ", bitrate=", i10, ", cameraMode=");
+        hg.c.t(sb2, q0Var.a, ", bitrate=", i10, ", cameraMode=");
         sb2.append(m0Var);
         sb2.append(", fps=");
         sb2.append(n0Var.a);
@@ -136,7 +137,7 @@ public final class s0 {
         if (i10 == 10 || i10 == 8) {
             return;
         }
-        this.m.b("cancel requested: state=".concat(hg.k0.B(i10)));
+        this.m.b("cancel requested: state=".concat(hg.c.B(i10)));
         if (b(3)) {
             e();
             r();
@@ -160,7 +161,7 @@ public final class s0 {
                 this.D = true;
                 if (o0Var != null && !o0Var.d) {
                     o0Var.d = true;
-                    this.m.b("output generation invalidated: id=" + o0Var.a + ", reason=" + hg.k0.A(i10) + ", availableSize=" + o0Var.c);
+                    this.m.b("output generation invalidated: id=" + o0Var.a + ", reason=" + hg.c.A(i10) + ", availableSize=" + o0Var.c);
                     this.k.execute(new e0(this, o0Var, i10, 1));
                 }
                 return true;
@@ -215,7 +216,7 @@ public final class s0 {
         if (i10 == 9 || i10 == 10) {
             return;
         }
-        this.m.a("fatal error in state=".concat(hg.k0.B(i10)), exc);
+        this.m.a("fatal error in state=".concat(hg.c.B(i10)), exc);
         if (b(4)) {
             e();
             r();
@@ -229,12 +230,18 @@ public final class s0 {
             e60 e60Var = (e60) this.d.b;
             e60Var.u();
             FileLog.e(exc);
-            z01 z01Var = e60Var.T;
-            if (z01Var != null) {
-                z01Var.d(true);
+            a11 a11Var = e60Var.T;
+            if (a11Var != null) {
+                a11Var.d(true);
             }
             e60Var.T = null;
-            NotificationCenter.getInstance(e60Var.h).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordStartError, Integer.valueOf(e60Var.n));
+            MediaController.getInstance().requestRecordAudioFocus(false);
+            if (e60Var.e0) {
+                e60Var.r(6);
+            } else {
+                NotificationCenter.getInstance(e60Var.h).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordStartError, Integer.valueOf(e60Var.n));
+            }
+            e60Var.t(false, false);
             if (!this.B && !this.l.D()) {
                 i();
             } else {
@@ -272,7 +279,7 @@ public final class s0 {
             try {
                 if (!o0Var.d && !o0Var.e) {
                     o0Var.d = true;
-                    this.m.b("output generation invalidated: id=" + o0Var.a + ", reason=" + hg.k0.A(i10) + ", availableSize=" + o0Var.c);
+                    this.m.b("output generation invalidated: id=" + o0Var.a + ", reason=" + hg.c.A(i10) + ", availableSize=" + o0Var.c);
                     this.k.execute(new e0(this, o0Var, i10, 0));
                 }
             } finally {
@@ -295,25 +302,25 @@ public final class s0 {
         this.O = true;
         o0 o0Var = this.P;
         m mVar = this.m;
-        StringBuilder v = a4.a.v("session summary: terminal=", str, ", state=");
-        v.append(hg.k0.B(this.W));
-        v.append(", durationMs=");
-        v.append(j());
-        v.append(", pauses=");
-        v.append(this.L);
-        v.append(", resumes=");
-        v.append(this.M);
-        v.append(", cameraSwitches=");
-        v.append(this.N);
-        v.append(", facing=");
-        v.append(this.q);
-        v.append(", cameraMode=");
-        v.append(this.r);
-        v.append(", generation=");
-        v.append(o0Var == null ? 0L : o0Var.a);
-        v.append(", availableSize=");
-        v.append(o0Var != null ? o0Var.c : 0L);
-        mVar.b(v.toString());
+        StringBuilder w10 = a4.a.w("session summary: terminal=", str, ", state=");
+        w10.append(hg.c.B(this.W));
+        w10.append(", durationMs=");
+        w10.append(j());
+        w10.append(", pauses=");
+        w10.append(this.L);
+        w10.append(", resumes=");
+        w10.append(this.M);
+        w10.append(", cameraSwitches=");
+        w10.append(this.N);
+        w10.append(", facing=");
+        w10.append(this.q);
+        w10.append(", cameraMode=");
+        w10.append(this.r);
+        w10.append(", generation=");
+        w10.append(o0Var == null ? 0L : o0Var.a);
+        w10.append(", availableSize=");
+        w10.append(o0Var != null ? o0Var.c : 0L);
+        mVar.b(w10.toString());
     }
 
     public final void n() {
@@ -431,30 +438,30 @@ public final class s0 {
     public final void s(File file, long j3, long j10, boolean z10, int i10) {
         long nanoTime = System.nanoTime();
         m mVar = this.m;
-        StringBuilder t10 = a4.a.t(j3, "final range remux started: range=", "..");
-        t10.append(j10);
-        t10.append(", includeAudio=");
-        t10.append(z10);
-        t10.append(", reason=");
-        t10.append(hg.k0.A(i10));
-        mVar.b(t10.toString());
+        StringBuilder u10 = a4.a.u(j3, "final range remux started: range=", "..");
+        u10.append(j10);
+        u10.append(", includeAudio=");
+        u10.append(z10);
+        u10.append(", reason=");
+        u10.append(hg.c.A(i10));
+        mVar.b(u10.toString());
         g();
         k(this.P, i10);
         c(z10);
         g();
         a3.z a2 = w7.k.a(file, this.Q, j3, j10, z10);
-        this.Q.f();
+        this.Q.g();
         long e7 = w7.k.e(this.Q.a) / 1000;
         m mVar2 = this.m;
-        StringBuilder t11 = a4.a.t(e7, "final range remux completed: durationMs=", ", requestedDurationMs=");
-        t11.append(a2.b);
-        t11.append(", actualStartMs=");
-        t11.append(a2.a);
-        t11.append(", size=");
-        t11.append(this.Q.a.length());
-        t11.append(", elapsedMs=");
-        t11.append(f(nanoTime));
-        mVar2.b(t11.toString());
+        StringBuilder u11 = a4.a.u(e7, "final range remux completed: durationMs=", ", requestedDurationMs=");
+        u11.append(a2.b);
+        u11.append(", actualStartMs=");
+        u11.append(a2.a);
+        u11.append(", size=");
+        u11.append(this.Q.a.length());
+        u11.append(", elapsedMs=");
+        u11.append(f(nanoTime));
+        mVar2.b(u11.toString());
         g();
         this.k.execute(new f0(this, this.P, this.Q.a, e7, z10));
     }
@@ -473,7 +480,7 @@ public final class s0 {
     public final void v(int i10) {
         int i11 = this.W;
         this.W = i10;
-        this.m.b("state: " + hg.k0.B(i11) + " -> " + hg.k0.B(i10) + ", durationMs=" + j());
+        this.m.b("state: " + hg.c.B(i11) + " -> " + hg.c.B(i10) + ", durationMs=" + j());
         o();
     }
 

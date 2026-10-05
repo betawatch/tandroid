@@ -16,7 +16,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import n7.z0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class h implements cf.a {
     public static final Pattern i = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -233,7 +233,7 @@ public final class h implements cf.a {
                     if (d11 != null) {
                         i10 = 1;
                         String i12 = e2.i(1, 1, d11);
-                        kVar = new bf.k(1, t8.b.i("mailto:", i12), null);
+                        kVar = new bf.k(1, sa.e.i("mailto:", i12), null);
                         kVar.b(new s(i12));
                     } else {
                         i10 = 1;

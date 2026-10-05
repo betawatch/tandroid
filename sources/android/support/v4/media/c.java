@@ -8,7 +8,7 @@ import android.support.v4.media.session.b0;
 import n4.i0;
 import n4.m;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class c {
     public final /* synthetic */ int a;
@@ -31,14 +31,14 @@ public final class c {
             case 0:
                 f fVar = MediaMetadataCompat.d;
                 if (fVar.containsKey(str) && ((Integer) fVar.get(str)).intValue() != 2) {
-                    throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a Bitmap"));
+                    throw new IllegalArgumentException(a4.a.q("The ", str, " key cannot be used to put a Bitmap"));
                 }
                 this.b.putParcelable(str, bitmap);
                 return;
             default:
                 Integer num = (Integer) m.c.get(str);
                 if (num != null && num.intValue() != 2) {
-                    throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a Bitmap"));
+                    throw new IllegalArgumentException(a4.a.q("The ", str, " key cannot be used to put a Bitmap"));
                 }
                 this.b.putParcelable(str, bitmap);
                 return;
@@ -56,7 +56,7 @@ public final class c {
     public void c(long j3, String str) {
         Integer num = (Integer) m.c.get(str);
         if (num != null && num.intValue() != 0) {
-            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a long"));
+            throw new IllegalArgumentException(a4.a.q("The ", str, " key cannot be used to put a long"));
         }
         this.b.putLong(str, j3);
     }
@@ -67,7 +67,7 @@ public final class c {
         int i10 = i0Var.a;
         Integer num = (Integer) m.c.get(str);
         if (num != null && num.intValue() != 3) {
-            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a Rating"));
+            throw new IllegalArgumentException(a4.a.q("The ", str, " key cannot be used to put a Rating"));
         }
         if (i0Var.c == null) {
             if (i0Var.b()) {
@@ -106,14 +106,14 @@ public final class c {
             case 0:
                 f fVar = MediaMetadataCompat.d;
                 if (fVar.containsKey(str) && ((Integer) fVar.get(str)).intValue() != 1) {
-                    throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a String"));
+                    throw new IllegalArgumentException(a4.a.q("The ", str, " key cannot be used to put a String"));
                 }
                 this.b.putCharSequence(str, str2);
                 return;
             default:
                 Integer num = (Integer) m.c.get(str);
                 if (num != null && num.intValue() != 1) {
-                    throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a String"));
+                    throw new IllegalArgumentException(a4.a.q("The ", str, " key cannot be used to put a String"));
                 }
                 this.b.putCharSequence(str, str2);
                 return;
@@ -123,7 +123,7 @@ public final class c {
     public void f(CharSequence charSequence, String str) {
         Integer num = (Integer) m.c.get(str);
         if (num != null && num.intValue() != 1) {
-            throw new IllegalArgumentException(a4.a.p("The ", str, " key cannot be used to put a CharSequence"));
+            throw new IllegalArgumentException(a4.a.q("The ", str, " key cannot be used to put a CharSequence"));
         }
         this.b.putCharSequence(str, charSequence);
     }

@@ -36,7 +36,7 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.n21;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class b2 extends FrameLayout implements m0, NotificationCenter.NotificationCenterDelegate {
     public static final float[] U = {0.02f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 0.02f};
@@ -521,7 +521,7 @@ public final class b2 extends FrameLayout implements m0, NotificationCenter.Noti
                                             Paint paint = (Paint) aVar4.h;
                                             Bitmap[] bitmapArr = (Bitmap[]) aVar4.d;
                                             i13 = width;
-                                            paint.setAlpha((int) org.telegram.messenger.f0.z(1.0f, clamp2, clamp, 255.0f));
+                                            paint.setAlpha((int) org.telegram.messenger.q.z(1.0f, clamp2, clamp, 255.0f));
                                             canvas.drawBitmap(bitmapArr[h1Var3.a], f14, f15, paint);
                                             paint.setAlpha((int) (clamp * clamp2 * 255.0f));
                                             canvas.drawBitmap(bitmapArr[h1Var3.b], f14, f15, paint);

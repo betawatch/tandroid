@@ -4,25 +4,25 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.TranslateController;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.e71;
 import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class w extends f61 {
+public final class w extends g61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        f61.setup(new w());
+        g61.setup(new w());
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final void bindView(View view, g61 g61Var, boolean z10, u61 u61Var, c71 c71Var) {
+    @Override // org.telegram.ui.Components.g61
+    public final void bindView(View view, h61 h61Var, boolean z10, w61 w61Var, e71 e71Var) {
         x xVar = (x) view;
-        TranslateController.Language language = (TranslateController.Language) g61Var.G;
+        TranslateController.Language language = (TranslateController.Language) h61Var.G;
         xVar.a.setText(language.displayName);
         xVar.b.setText(language.ownDisplayName);
         if (xVar.c != z10) {
@@ -32,7 +32,7 @@ public final class w extends f61 {
         xVar.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.g61
     public final View createView(Context context, zl0 zl0Var, int i10, int i11, d6 d6Var) {
         return new x(context);
     }

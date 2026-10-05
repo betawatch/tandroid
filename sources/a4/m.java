@@ -78,14 +78,14 @@ import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.f0;
+import org.telegram.messenger.q;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
 import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.d81;
+import org.telegram.ui.Components.e81;
 import org.telegram.ui.Components.xi;
-import org.telegram.ui.Components.xv0;
+import org.telegram.ui.Components.yv0;
 import org.telegram.ui.q20;
 import qg.b2;
 import r0.i0;
@@ -93,9 +93,9 @@ import r0.l1;
 import u2.t;
 import w7.z8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, OnCompleteListener, xv0, n, r0.n, db.n, k0, v3, e2, y2.g, le.d, l.i, l2.i {
+public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, OnCompleteListener, yv0, n, r0.n, db.n, k0, v3, e2, y2.g, le.d, l.i, l2.i {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -198,12 +198,12 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
             xiVar.P = true;
             xiVar.x1.setVisibility(8);
             xiVar.t2 = new q5(e2Var, aVar, xiVar, 11);
-            xiVar.o1();
+            xiVar.q1();
             xiVar.show();
         }
     }
 
-    @Override // org.telegram.ui.Components.xv0
+    @Override // org.telegram.ui.Components.yv0
     public void E(boolean z10) {
         di.k kVar = (di.k) this.b;
         le.b bVar = kVar.W;
@@ -294,7 +294,7 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
                 if (r3Var != null) {
                     r3Var.getClass();
                     if (charSequence != null && charSequence.length() > 0) {
-                        r3Var.a.v4(charSequence.toString());
+                        r3Var.a.u4(charSequence.toString());
                         break;
                     }
                 }
@@ -304,7 +304,7 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
                 if (q3Var != null) {
                     q3Var.getClass();
                     if (charSequence != null && charSequence.length() > 0) {
-                        q3Var.a.v4(charSequence.toString());
+                        q3Var.a.u4(charSequence.toString());
                         break;
                     }
                 }
@@ -321,8 +321,8 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
         }
         k8Var.Z = f7;
         k8Var.j = true;
-        d81 d81Var = b7Var.e;
-        if (d81Var == null || d81Var.p() == -9223372036854775807L) {
+        e81 e81Var = b7Var.e;
+        if (e81Var == null || e81Var.p() == -9223372036854775807L) {
             return;
         }
         b7Var.m((long) (f7 * b7Var.e.p()));
@@ -468,7 +468,7 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
                 r3 r3Var = zVar.O;
                 if (r3Var != null) {
                     ii.a aVar = zVar.a;
-                    if (r3Var.a.U4()) {
+                    if (r3Var.a.T4()) {
                     }
                 }
                 break;
@@ -477,7 +477,7 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
                 q3 q3Var = w4Var.N;
                 if (q3Var != null) {
                     ii.a aVar2 = w4Var.a;
-                    if (q3Var.a.U4()) {
+                    if (q3Var.a.T4()) {
                     }
                 }
                 break;
@@ -542,9 +542,9 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
         e2Var.x0(i10 != 2 ? i10 : 0, true);
     }
 
-    @Override // org.telegram.ui.Components.xv0
+    @Override // org.telegram.ui.Components.yv0
     public float Y0() {
-        return f0.b(9.0f, ((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2) * 2) + ((di.k) this.b).Z, 0);
+        return q.b(9.0f, ((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2) * 2) + ((di.k) this.b).Z, 0);
     }
 
     @Override // ii.k0
@@ -642,7 +642,7 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
                 r3 r3Var = ((z) this.b).O;
                 if (r3Var != null) {
                     x3 x3Var = r3Var.a;
-                    x3.O1(x3Var, i1Var);
+                    x3.N1(x3Var, i1Var);
                     x3Var.o3.P(i1Var, true);
                     break;
                 }
@@ -651,7 +651,7 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
                 q3 q3Var = ((w4) this.b).N;
                 if (q3Var != null) {
                     x3 x3Var2 = q3Var.a;
-                    x3.O1(x3Var2, i1Var);
+                    x3.N1(x3Var2, i1Var);
                     x3Var2.o3.P(i1Var, true);
                     break;
                 }
@@ -747,7 +747,7 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
         return true;
     }
 
-    @Override // org.telegram.ui.Components.xv0
+    @Override // org.telegram.ui.Components.yv0
     public int e1() {
         return ((di.k) this.b).a0;
     }
@@ -782,7 +782,7 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
                 z zVar = (z) this.b;
                 r3 r3Var = zVar.O;
                 if (r3Var != null) {
-                    x3.R1(r3Var.a, zVar.a);
+                    x3.Q1(r3Var.a, zVar.a);
                     break;
                 }
                 break;
@@ -790,7 +790,7 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
                 w4 w4Var = (w4) this.b;
                 q3 q3Var = w4Var.N;
                 if (q3Var != null) {
-                    x3.R1(q3Var.a, w4Var.a);
+                    x3.Q1(q3Var.a, w4Var.a);
                     break;
                 }
                 break;
@@ -916,18 +916,18 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
             b7Var.m(j3);
             return;
         }
-        d81 d81Var = b7Var.e;
-        if (d81Var != null) {
-            d81Var.L(j3, true);
+        e81 e81Var = b7Var.e;
+        if (e81Var != null) {
+            e81Var.L(j3, true);
             return;
         }
         if (b7Var.j()) {
             b7Var.E.m(j3, true);
             return;
         }
-        d81 d81Var2 = b7Var.y;
-        if (d81Var2 != null) {
-            d81Var2.L(j3, false);
+        e81 e81Var2 = b7Var.y;
+        if (e81Var2 != null) {
+            e81Var2.L(j3, false);
         }
     }
 
@@ -983,9 +983,9 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
     public void onContentChanged() {
         ii.e2 e2Var = (ii.e2) this.b;
         if (e2Var.y0 != null) {
-            boolean o32 = e2Var.P.o3();
-            e2Var.L0 = o32;
-            e2Var.y0.h(o32);
+            boolean n32 = e2Var.P.n3();
+            e2Var.L0 = n32;
+            e2Var.y0.h(n32);
             e2Var.y0.invalidate();
         }
         e2Var.C0();
@@ -1029,80 +1029,8 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
         ((ii.e2) this.b).o0(74, i10);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0056  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0059  */
-    @Override // y2.g
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public k4.d s(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
-        long j11;
-        y2.o oVar = (y2.o) iVar;
-        l2.h hVar = (l2.h) this.b;
-        long j12 = oVar.a;
-        Uri uri = oVar.d.c;
-        t tVar = new t(j10);
-        int i11 = oVar.c;
-        hVar.m.getClass();
-        if (!(iOException instanceof s0) && !(iOException instanceof FileNotFoundException) && !(iOException instanceof u) && !(iOException instanceof y2.k)) {
-            int i12 = g2.j.b;
-            for (Throwable th2 = iOException; th2 != null; th2 = th2.getCause()) {
-                if (!(th2 instanceof g2.j) || ((g2.j) th2).a != 2008) {
-                }
-            }
-            j11 = Math.min((i10 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
-            k4.d dVar = j11 != -9223372036854775807L ? y2.l.f : new k4.d(0, j11, false);
-            hVar.q.r(tVar, i11, iOException, !dVar.a());
-            return dVar;
-        }
-        j11 = -9223372036854775807L;
-        if (j11 != -9223372036854775807L) {
-        }
-        hVar.q.r(tVar, i11, iOException, !dVar.a());
-        return dVar;
-    }
-
     @Override // ci.oc
-    public void s0(float f7) {
-        b7 b7Var = (b7) this.b;
-        k8 k8Var = b7Var.d;
-        if (k8Var == null) {
-            return;
-        }
-        k8Var.t0 = f7;
-        k8Var.j = true;
-        b7Var.y(true);
-    }
-
-    @Override // y2.g
-    public void t(y2.i iVar, long j3, long j10, int i10) {
-        t tVar;
-        y2.o oVar = (y2.o) iVar;
-        l2.h hVar = (l2.h) this.b;
-        if (i10 == 0) {
-            long j11 = oVar.a;
-            tVar = new t(oVar.b);
-        } else {
-            long j12 = oVar.a;
-            Uri uri = oVar.d.c;
-            tVar = new t(j10);
-        }
-        hVar.q.s(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
-    }
-
-    @Override // ci.oc
-    public void t0(int i10, long j3) {
-        ArrayList arrayList;
-        b7 b7Var = (b7) this.b;
-        k8 k8Var = b7Var.d;
-        if (k8Var == null || (arrayList = k8Var.T) == null || i10 < 0 || i10 >= arrayList.size()) {
-            return;
-        }
-        ((k8) b7Var.d.T.get(i10)).X = j3;
-    }
-
-    @Override // ci.oc
-    public void u() {
+    public void s() {
         b7 b7Var = (b7) this.b;
         b7Var.s(null, null, true);
         kc kcVar = ((yb) b7Var).C0;
@@ -1139,6 +1067,43 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
     }
 
     @Override // ci.oc
+    public void s0(float f7) {
+        b7 b7Var = (b7) this.b;
+        k8 k8Var = b7Var.d;
+        if (k8Var == null) {
+            return;
+        }
+        k8Var.t0 = f7;
+        k8Var.j = true;
+        b7Var.y(true);
+    }
+
+    @Override // ii.v3
+    public void t() {
+        ii.e2 e2Var = (ii.e2) this.b;
+        k3 k3Var = e2Var.P.u3;
+        e2Var.x0((k3Var != null && k3Var.y() && e2Var.P.D4()) ? 1 : 0, true);
+        e2Var.y0();
+        e2Var.w0();
+    }
+
+    @Override // ci.oc
+    public void t0(int i10, long j3) {
+        ArrayList arrayList;
+        b7 b7Var = (b7) this.b;
+        k8 k8Var = b7Var.d;
+        if (k8Var == null || (arrayList = k8Var.T) == null || i10 < 0 || i10 >= arrayList.size()) {
+            return;
+        }
+        ((k8) b7Var.d.T.get(i10)).X = j3;
+    }
+
+    @Override // m.e2
+    public void u(l.k kVar, MenuItem menuItem) {
+        ((l.e) this.b).f.removeCallbacksAndMessages(kVar);
+    }
+
+    @Override // ci.oc
     public void u0(long j3) {
         b7 b7Var = (b7) this.b;
         k8 k8Var = b7Var.d;
@@ -1150,8 +1115,106 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
         b7Var.w(true);
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0059  */
     @Override // y2.g
-    public void v(y2.i iVar, long j3, long j10) {
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public k4.d v(y2.i iVar, long j3, long j10, IOException iOException, int i10) {
+        long j11;
+        y2.o oVar = (y2.o) iVar;
+        l2.h hVar = (l2.h) this.b;
+        long j12 = oVar.a;
+        Uri uri = oVar.d.c;
+        t tVar = new t(j10);
+        int i11 = oVar.c;
+        hVar.m.getClass();
+        if (!(iOException instanceof s0) && !(iOException instanceof FileNotFoundException) && !(iOException instanceof u) && !(iOException instanceof y2.k)) {
+            int i12 = g2.j.b;
+            for (Throwable th2 = iOException; th2 != null; th2 = th2.getCause()) {
+                if (!(th2 instanceof g2.j) || ((g2.j) th2).a != 2008) {
+                }
+            }
+            j11 = Math.min((i10 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
+            k4.d dVar = j11 != -9223372036854775807L ? y2.l.f : new k4.d(0, j11, false);
+            hVar.q.r(tVar, i11, iOException, !dVar.a());
+            return dVar;
+        }
+        j11 = -9223372036854775807L;
+        if (j11 != -9223372036854775807L) {
+        }
+        hVar.q.r(tVar, i11, iOException, !dVar.a());
+        return dVar;
+    }
+
+    @Override // ii.k0
+    public void v0() {
+        switch (this.a) {
+            case 21:
+                z zVar = (z) this.b;
+                r3 r3Var = zVar.O;
+                if (r3Var != null) {
+                    ii.a aVar = zVar.a;
+                    x3.P1(r3Var.a);
+                    break;
+                }
+                break;
+            default:
+                w4 w4Var = (w4) this.b;
+                q3 q3Var = w4Var.N;
+                if (q3Var != null) {
+                    ii.a aVar2 = w4Var.a;
+                    x3.P1(q3Var.a);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // l.i
+    public void w(l.k kVar) {
+        n4 n4Var = ((ActionMenuView) this.b).K;
+        if (n4Var != null) {
+            n4Var.w(kVar);
+        }
+    }
+
+    @Override // androidx.lifecycle.a0
+    public void w0(Object obj) {
+        CharSequence charSequence = (CharSequence) obj;
+        androidx.biometric.p pVar = (androidx.biometric.p) this.b;
+        if (charSequence != null) {
+            if (pVar.R()) {
+                pVar.W(charSequence);
+            }
+            pVar.l0.d(null);
+        }
+    }
+
+    @Override // y2.g
+    public void x(y2.i iVar, long j3, long j10, int i10) {
+        t tVar;
+        y2.o oVar = (y2.o) iVar;
+        l2.h hVar = (l2.h) this.b;
+        if (i10 == 0) {
+            long j11 = oVar.a;
+            tVar = new t(oVar.b);
+        } else {
+            long j12 = oVar.a;
+            Uri uri = oVar.d.c;
+            tVar = new t(j10);
+        }
+        hVar.q.s(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
+    }
+
+    @Override // y2.g
+    public void x0(y2.i iVar, long j3, long j10, boolean z10) {
+        ((l2.h) this.b).w((y2.o) iVar, j10);
+    }
+
+    @Override // y2.g
+    public void y(y2.i iVar, long j3, long j10) {
         int i10;
         long j11;
         y2.o oVar = (y2.o) iVar;
@@ -1246,69 +1309,6 @@ public final class m implements z3.d, a0, androidx.activity.result.b, s, o, oc, 
             hVar.v();
         } else {
             hVar.x(new IOException("Unsupported UTC timing scheme"));
-        }
-    }
-
-    @Override // ii.k0
-    public void v0() {
-        switch (this.a) {
-            case 21:
-                z zVar = (z) this.b;
-                r3 r3Var = zVar.O;
-                if (r3Var != null) {
-                    ii.a aVar = zVar.a;
-                    x3.Q1(r3Var.a);
-                    break;
-                }
-                break;
-            default:
-                w4 w4Var = (w4) this.b;
-                q3 q3Var = w4Var.N;
-                if (q3Var != null) {
-                    ii.a aVar2 = w4Var.a;
-                    x3.Q1(q3Var.a);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // ii.v3
-    public void w() {
-        ii.e2 e2Var = (ii.e2) this.b;
-        k3 k3Var = e2Var.P.u3;
-        e2Var.x0((k3Var != null && k3Var.y() && e2Var.P.E4()) ? 1 : 0, true);
-        e2Var.y0();
-        e2Var.w0();
-    }
-
-    @Override // androidx.lifecycle.a0
-    public void w0(Object obj) {
-        CharSequence charSequence = (CharSequence) obj;
-        androidx.biometric.p pVar = (androidx.biometric.p) this.b;
-        if (charSequence != null) {
-            if (pVar.R()) {
-                pVar.W(charSequence);
-            }
-            pVar.l0.d(null);
-        }
-    }
-
-    @Override // m.e2
-    public void x(l.k kVar, MenuItem menuItem) {
-        ((l.e) this.b).f.removeCallbacksAndMessages(kVar);
-    }
-
-    @Override // y2.g
-    public void x0(y2.i iVar, long j3, long j10, boolean z10) {
-        ((l2.h) this.b).w((y2.o) iVar, j10);
-    }
-
-    @Override // l.i
-    public void y(l.k kVar) {
-        n4 n4Var = ((ActionMenuView) this.b).K;
-        if (n4Var != null) {
-            n4Var.y(kVar);
         }
     }
 

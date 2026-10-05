@@ -62,7 +62,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class gd0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public TLRPC.TL_channelLocation A0;
@@ -522,8 +522,8 @@ public class gd0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
         int i13 = org.telegram.ui.ActionBar.i6.j5;
         kVar2.setTitleColor(getThemedColor(i13));
-        this.actionBar.B(getThemedColor(i13), false);
-        this.actionBar.A(getThemedColor(org.telegram.ui.ActionBar.i6.I5), false);
+        this.actionBar.A(getThemedColor(i13), false);
+        this.actionBar.z(getThemedColor(org.telegram.ui.ActionBar.i6.I5), false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         org.telegram.ui.ActionBar.c5 c5Var = this.parentLayout;
@@ -726,7 +726,7 @@ public class gd0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                         oi0Var.addView(frameLayout, w7.z5.t(-1, -2, 51, 22, 0, 0, 4));
                                         TextView textView = new TextView(parentActivity);
                                         textView.setText(LocaleController.getString(R.string.LocationNotifiation));
-                                        org.telegram.messenger.f0.q(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false), 1, 20.0f);
+                                        org.telegram.messenger.q.q(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false), 1, 20.0f);
                                         frameLayout.addView(textView, w7.z5.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
                                         textView.setOnTouchListener(new bi.d(20));
                                         LinearLayout linearLayout = new LinearLayout(parentActivity);
@@ -940,7 +940,7 @@ public class gd0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                         oi0Var.addView(frameLayout, w7.z5.t(-1, -2, 51, 22, 0, 0, 4));
                                         TextView textView = new TextView(parentActivity);
                                         textView.setText(LocaleController.getString(R.string.LocationNotifiation));
-                                        org.telegram.messenger.f0.q(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false), 1, 20.0f);
+                                        org.telegram.messenger.q.q(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false), 1, 20.0f);
                                         frameLayout.addView(textView, w7.z5.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
                                         textView.setOnTouchListener(new bi.d(20));
                                         LinearLayout linearLayout = new LinearLayout(parentActivity);
@@ -1177,7 +1177,7 @@ public class gd0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 oi0Var.addView(frameLayout, w7.z5.t(-1, -2, 51, 22, 0, 0, 4));
                                 TextView textView = new TextView(parentActivity);
                                 textView.setText(LocaleController.getString(R.string.LocationNotifiation));
-                                org.telegram.messenger.f0.q(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false), 1, 20.0f);
+                                org.telegram.messenger.q.q(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false), 1, 20.0f);
                                 frameLayout.addView(textView, w7.z5.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
                                 textView.setOnTouchListener(new bi.d(20));
                                 LinearLayout linearLayout = new LinearLayout(parentActivity);
@@ -1407,7 +1407,7 @@ public class gd0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 oi0Var.addView(frameLayout, w7.z5.t(-1, -2, 51, 22, 0, 0, 4));
                                 TextView textView = new TextView(parentActivity);
                                 textView.setText(LocaleController.getString(R.string.LocationNotifiation));
-                                org.telegram.messenger.f0.q(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false), 1, 20.0f);
+                                org.telegram.messenger.q.q(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false), 1, 20.0f);
                                 frameLayout.addView(textView, w7.z5.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
                                 textView.setOnTouchListener(new bi.d(20));
                                 LinearLayout linearLayout = new LinearLayout(parentActivity);
@@ -1632,7 +1632,7 @@ public class gd0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 oi0Var.addView(frameLayout, w7.z5.t(-1, -2, 51, 22, 0, 0, 4));
                                 TextView textView2 = new TextView(parentActivity);
                                 textView2.setText(LocaleController.getString(R.string.LocationNotifiation));
-                                org.telegram.messenger.f0.q(textView2, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false), 1, 20.0f);
+                                org.telegram.messenger.q.q(textView2, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false), 1, 20.0f);
                                 frameLayout.addView(textView2, w7.z5.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
                                 textView2.setOnTouchListener(new bi.d(20));
                                 LinearLayout linearLayout = new LinearLayout(parentActivity);
@@ -1854,7 +1854,7 @@ public class gd0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 oi0Var.addView(frameLayout, w7.z5.t(-1, -2, 51, 22, 0, 0, 4));
                                 TextView textView2 = new TextView(parentActivity);
                                 textView2.setText(LocaleController.getString(R.string.LocationNotifiation));
-                                org.telegram.messenger.f0.q(textView2, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false), 1, 20.0f);
+                                org.telegram.messenger.q.q(textView2, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.j5, false), 1, 20.0f);
                                 frameLayout.addView(textView2, w7.z5.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
                                 textView2.setOnTouchListener(new bi.d(20));
                                 LinearLayout linearLayout = new LinearLayout(parentActivity);
@@ -2018,7 +2018,7 @@ public class gd0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         zl0Var2.setLayoutManager(c0Var);
         if (this.M0 != null) {
             this.L0 = new org.telegram.ui.Cells.v3(context, this.resourceProvider);
-            wc0 wc0Var = new wc0(this, context, new org.telegram.ui.Components.hv0(this), this, new vc0(this), getResourceProvider());
+            wc0 wc0Var = new wc0(this, context, new org.telegram.ui.Components.iv0(this), this, new vc0(this), getResourceProvider());
             this.K0 = wc0Var;
             wc0Var.setBackgroundColor(getThemedColor(i12));
             this.K0.addView(this.L0, w7.z5.e(-1, 32, 55));
@@ -2548,7 +2548,7 @@ public class gd0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                 if (this.c.getVisibility() != 8 && MessageObject.getFromChatId(message) != getUserConfig().getClientUserId()) {
                     this.c.setVisibility(0);
                     this.H = true;
-                    this.c.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(180L).setListener(new org.telegram.ui.Components.a91(this, 25)).start();
+                    this.c.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(180L).setListener(new org.telegram.ui.Components.b91(this, 25)).start();
                 }
             }
         }
@@ -2670,11 +2670,11 @@ public class gd0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
             }
             int i10 = this.G0;
             if (i10 == 6) {
-                this.H0 = org.telegram.messenger.f0.B(66.0f, measuredHeight, currentActionBarHeight);
+                this.H0 = org.telegram.messenger.q.B(66.0f, measuredHeight, currentActionBarHeight);
             } else if (i10 == 2) {
-                this.H0 = org.telegram.messenger.f0.B(73.0f, measuredHeight, currentActionBarHeight);
+                this.H0 = org.telegram.messenger.q.B(73.0f, measuredHeight, currentActionBarHeight);
             } else {
-                this.H0 = org.telegram.messenger.f0.B(66.0f, measuredHeight, currentActionBarHeight);
+                this.H0 = org.telegram.messenger.q.B(66.0f, measuredHeight, currentActionBarHeight);
             }
             wc0 wc0Var = this.K0;
             if (wc0Var != null && wc0Var.c0(8) > 0) {

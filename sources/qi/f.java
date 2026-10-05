@@ -57,14 +57,14 @@ import n7.z0;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
+import org.telegram.ui.Components.aa1;
 import org.telegram.ui.Components.j10;
-import org.telegram.ui.Components.z91;
 import org.telegram.ui.web.l1;
 import org.telegram.ui.web.m1;
 import y9.t0;
 import zd.e0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class f implements n5.b {
     public static volatile f e;
@@ -301,11 +301,10 @@ public final class f implements n5.b {
         }
         bf.f fVar = (bf.f) dVar.l.b;
         Iterator it2 = ((ArrayList) this.d).iterator();
-        if (!it2.hasNext()) {
-            return fVar;
+        if (it2.hasNext()) {
+            throw a4.a.k(it2);
         }
-        it2.next().getClass();
-        throw new ClassCastException();
+        return fVar;
     }
 
     public HashMap J(BufferedReader bufferedReader) {
@@ -332,7 +331,7 @@ public final class f implements n5.b {
                         String trim2 = trim.substring(0, indexOf).trim();
                         String trim3 = trim.substring(indexOf + 1).trim();
                         if (trim3.endsWith(";")) {
-                            sb2 = a4.a.u(trim3);
+                            sb2 = a4.a.v(trim3);
                             str = trim2;
                         } else {
                             e(trim2, trim3, hashMap);
@@ -550,10 +549,10 @@ public final class f implements n5.b {
             str = str.concat(" pid");
         }
         if (((Integer) this.c) == null) {
-            str = t8.b.v(str, " importance");
+            str = sa.e.v(str, " importance");
         }
         if (((Boolean) this.d) == null) {
-            str = t8.b.v(str, " defaultProcess");
+            str = sa.e.v(str, " defaultProcess");
         }
         if (str.isEmpty()) {
             return new t0((String) this.a, ((Integer) this.b).intValue(), ((Integer) this.c).intValue(), ((Boolean) this.d).booleanValue());
@@ -567,10 +566,10 @@ public final class f implements n5.b {
             str = str.concat(" version");
         }
         if (((String) this.c) == null) {
-            str = t8.b.v(str, " buildVersion");
+            str = sa.e.v(str, " buildVersion");
         }
         if (((Boolean) this.d) == null) {
-            str = t8.b.v(str, " jailbroken");
+            str = sa.e.v(str, " jailbroken");
         }
         if (str.isEmpty()) {
             return new y9.z0(((Integer) this.a).intValue(), (String) this.b, (String) this.c, ((Boolean) this.d).booleanValue());
@@ -837,7 +836,7 @@ public final class f implements n5.b {
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0063, code lost:
     
-        throw new java.lang.Exception(t8.b.i("Premature end of parens in ", r13));
+        throw new java.lang.Exception(sa.e.i("Premature end of parens in ", r13));
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -848,7 +847,7 @@ public final class f implements n5.b {
             return;
         }
         if (trim.charAt(0) == '(') {
-            Matcher matcher = z91.z0.matcher(trim);
+            Matcher matcher = aa1.z0.matcher(trim);
             int i11 = 0;
             while (true) {
                 if (!matcher.find()) {
@@ -1005,11 +1004,11 @@ public final class f implements n5.b {
         }
         zArr[0] = false;
         String trim = str.trim();
-        Matcher matcher = z91.x0.matcher(trim);
+        Matcher matcher = aa1.x0.matcher(trim);
         if (matcher.find()) {
             trim = trim.substring(matcher.group(0).length());
         } else {
-            Matcher matcher2 = z91.y0.matcher(trim);
+            Matcher matcher2 = aa1.y0.matcher(trim);
             if (matcher2.find()) {
                 trim = trim.substring(matcher2.group(0).length());
                 zArr[0] = true;

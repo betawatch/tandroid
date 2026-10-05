@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class jg0 extends FrameLayout {
     public float a;
@@ -109,7 +109,7 @@ public final class jg0 extends FrameLayout {
                 f10 = a4.a.e(i14, i11, 0.5f, 1.0f);
             } else {
                 if (i14 > AndroidUtilities.displaySize.x - layoutParams.width) {
-                    f10 = org.telegram.messenger.ok.b((i14 - r11) + r10, i11, 0.5f, 1.0f);
+                    f10 = org.telegram.messenger.bi.b((i14 - r11) + r10, i11, 0.5f, 1.0f);
                 }
             }
             if (pipRoundVideoView.a.getAlpha() != f10) {

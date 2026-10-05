@@ -90,9 +90,8 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.web.c1;
 import v7.l8;
 import w7.z5;
-import zg.q0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k0 implements Runnable {
     public final /* synthetic */ int a;
@@ -150,7 +149,7 @@ public final /* synthetic */ class k0 implements Runnable {
                 return;
             case 1:
                 z4 z4Var = (z4) this.b;
-                zg.o0 o0Var = (zg.o0) this.c;
+                zg.m0 m0Var = (zg.m0) this.c;
                 View view = (View) this.d;
                 e6 e6Var = z4Var.a;
                 e6Var.u3 = true;
@@ -178,19 +177,19 @@ public final /* synthetic */ class k0 implements Runnable {
                     e6Var.m3 = dVar;
                 }
                 e6Var.p3 = false;
-                if (o0Var.g != 0) {
+                if (m0Var.g != 0) {
                     e6Var.p3 = true;
-                    q5 q5Var3 = new q5(2, e6Var.C2, o0Var.g);
+                    q5 q5Var3 = new q5(2, e6Var.C2, m0Var.g);
                     e6Var.o3 = q5Var3;
                     q5Var3.a(e6Var);
-                } else if (o0Var.f != null && (tL_availableReaction = MediaDataController.getInstance(e6Var.C2).getReactionsMap().get(o0Var.f)) != null) {
+                } else if (m0Var.f != null && (tL_availableReaction = MediaDataController.getInstance(e6Var.C2).getReactionsMap().get(m0Var.f)) != null) {
                     e6Var.n3.setImage(null, null, ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60", null, null, null, 0L, null, null, 0);
-                    imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.around_animation), zg.k0.a(), null, null, null, 0);
+                    imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.around_animation), zg.i0.a(), null, null, null, 0);
                     if (imageReceiver.getLottieAnimation() != null) {
                         imageReceiver.getLottieAnimation().N(0, false, true);
                     }
                 }
-                e6Var.E0.setReaction(o0Var);
+                e6Var.E0.setReaction(m0Var);
                 if (e6Var.D1) {
                     TL_stories.StoryItem storyItem3 = c6Var.a;
                     if (storyItem3.sent_reaction == null) {
@@ -200,16 +199,16 @@ public final /* synthetic */ class k0 implements Runnable {
                         TL_stories.StoryItem storyItem4 = c6Var.a;
                         TL_stories.StoryViews storyViews = storyItem4.views;
                         storyViews.reactions_count++;
-                        q0.b(null, storyItem4.sent_reaction, storyViews);
+                        zg.o0.b(null, storyItem4.sent_reaction, storyViews);
                         e6Var.k1(true);
                     }
                 }
-                if (o0Var.g != 0 && (q5Var = e6Var.E0.f) != null) {
+                if (m0Var.g != 0 && (q5Var = e6Var.E0.f) != null) {
                     zg.d a2 = zg.d.a(q5Var, false, true);
                     e6Var.m3 = a2;
                     a2.f(e6Var);
                 }
-                e6Var.S1.g0(e6Var.B1, c6Var.a, o0Var);
+                e6Var.S1.g0(e6Var.B1, c6Var.a, m0Var);
                 int[] iArr3 = new int[2];
                 view.getLocationInWindow(iArr3);
                 int[] iArr4 = new int[2];
@@ -223,7 +222,7 @@ public final /* synthetic */ class k0 implements Runnable {
                 q9 q9Var3 = e6Var.E0;
                 q9Var3.setAllowDrawReaction(false);
                 ImageReceiver imageReceiver2 = q9Var3.e;
-                if (o0Var.g == 0 && (tL_availableReaction2 = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(o0Var.f)) != null) {
+                if (m0Var.g == 0 && (tL_availableReaction2 = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsMap().get(m0Var.f)) != null) {
                     imageReceiver2.setImage(ImageLocation.getForDocument(tL_availableReaction2.center_icon), "40_40_nolimit", null, "tgs", tL_availableReaction2, 1);
                     imageReceiver2.setAutoRepeat(0);
                 }
@@ -491,7 +490,7 @@ public final /* synthetic */ class k0 implements Runnable {
                     }
                     d2Var.I = d2Var.H;
                     d2Var.l();
-                    p1.y1(e2Var.b, 0, 0);
+                    p1.x1(e2Var.b, 0, 0);
                     e2Var.f.c(false);
                     e2Var.e.n(false);
                     return;

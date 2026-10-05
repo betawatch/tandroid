@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.ui.fb1;
+import org.telegram.ui.db1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class x20 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 0;
@@ -19,8 +19,8 @@ public final class x20 extends AnimatorListenerAdapter {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public x20(fb1 fb1Var, wi wiVar, org.telegram.ui.Cells.u1 u1Var, org.telegram.ui.jk jkVar, org.telegram.ui.yn ynVar) {
-        this.f = fb1Var;
+    public x20(db1 db1Var, wi wiVar, org.telegram.ui.Cells.u1 u1Var, org.telegram.ui.jk jkVar, org.telegram.ui.yn ynVar) {
+        this.f = db1Var;
         this.b = wiVar;
         this.c = u1Var;
         this.d = jkVar;
@@ -47,10 +47,10 @@ public final class x20 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                fb1 fb1Var = (fb1) this.f;
-                fb1Var.D.unlock();
+                db1 db1Var = (db1) this.f;
+                db1Var.D.unlock();
                 wi wiVar = (wi) this.b;
-                ((ArrayList) wiVar.c).remove(fb1Var);
+                ((ArrayList) wiVar.c).remove(db1Var);
                 wiVar.a();
                 ((ViewGroup) wiVar.d).invalidate();
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.c;
@@ -62,7 +62,7 @@ public final class x20 extends AnimatorListenerAdapter {
                 org.telegram.ui.yn ynVar = (org.telegram.ui.yn) this.e;
                 ((to[]) ynVar.Y.b)[0].c.setAlpha(1.0f);
                 ((to[]) ynVar.Y.b)[0].d.setAlpha(1.0f);
-                z5.release((View) null, fb1Var.H);
+                z5.release((View) null, db1Var.H);
                 break;
         }
     }

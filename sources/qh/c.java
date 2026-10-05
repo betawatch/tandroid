@@ -19,14 +19,14 @@ import org.telegram.ui.Cells.c6;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.c20;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.n41;
+import org.telegram.ui.l41;
 import org.telegram.ui.py0;
 import org.telegram.ui.ug;
 import org.telegram.ui.yn;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawListener {
     public final Rect E;
@@ -44,8 +44,8 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
     public u1 n;
     public int r;
     public ug s;
-    public final n41 v;
-    public final n41 w;
+    public final l41 v;
+    public final l41 w;
     public final int x;
     public final int[] y;
 
@@ -91,16 +91,16 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         i5Var.setGravity(17);
         i5Var.setTranslationY(AndroidUtilities.dp(44.0f));
         i5Var.setVisibility(8);
-        n41 n41Var = new n41(activity, 10);
-        this.w = n41Var;
-        addView(n41Var, layoutParams);
-        n41 n41Var2 = new n41(activity, 9);
-        this.v = n41Var2;
-        n41Var.addView(n41Var2, z5.c(-2.0f, -1));
-        n41Var2.addView(i5Var, z5.e(54, 24, 53));
-        n41Var2.addView(bVar, z5.e(44, 44, 51));
-        n41Var2.addView(dVar, z5.d(44, 44.0f, 53, 0.0f, 0.0f, 5.0f, 0.0f));
-        n41Var2.addView(c6Var, z5.d(-1, -2.0f, 119, 39.0f, 0.0f, 47.0f, 0.0f));
+        l41 l41Var = new l41(activity, 10);
+        this.w = l41Var;
+        addView(l41Var, layoutParams);
+        l41 l41Var2 = new l41(activity, 9);
+        this.v = l41Var2;
+        l41Var.addView(l41Var2, z5.c(-2.0f, -1));
+        l41Var2.addView(i5Var, z5.e(54, 24, 53));
+        l41Var2.addView(bVar, z5.e(44, 44, 51));
+        l41Var2.addView(dVar, z5.d(44, 44.0f, 53, 0.0f, 0.0f, 5.0f, 0.0f));
+        l41Var2.addView(c6Var, z5.d(-1, -2.0f, 119, 39.0f, 0.0f, 47.0f, 0.0f));
         c6Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(11.0f));
     }
 
@@ -155,13 +155,13 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
                 int width = rect.width();
                 FrameLayout.LayoutParams layoutParams = this.e;
                 int i12 = layoutParams.width;
-                n41 n41Var = this.w;
+                l41 l41Var = this.w;
                 if (i12 != width) {
                     layoutParams.width = width;
-                    n41Var.setLayoutParams(layoutParams);
+                    l41Var.setLayoutParams(layoutParams);
                 }
-                n41Var.setTranslationX(rect.left);
-                n41Var.setTranslationY(AndroidUtilities.dp(0.66f) + rect.top);
+                l41Var.setTranslationX(rect.left);
+                l41Var.setTranslationY(AndroidUtilities.dp(0.66f) + rect.top);
                 return true;
             }
             ug ugVar = this.s;

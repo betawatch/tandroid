@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class i20 extends ViewGroup {
     public AnimatorSet a;
@@ -74,12 +74,12 @@ public final class i20 extends ViewGroup {
                 } else {
                     c10 = 0;
                     if (childAt.getMeasuredWidth() + i13 > dp) {
-                        dp2 = org.telegram.messenger.f0.C(8.0f, childAt.getMeasuredHeight(), dp2);
+                        dp2 = org.telegram.messenger.q.C(8.0f, childAt.getMeasuredHeight(), dp2);
                         i13 = 0;
                     }
                 }
                 if (childAt.getMeasuredWidth() + i14 > dp) {
-                    dp3 = org.telegram.messenger.f0.C(8.0f, childAt.getMeasuredHeight(), dp3);
+                    dp3 = org.telegram.messenger.q.C(8.0f, childAt.getMeasuredHeight(), dp3);
                     i14 = 0;
                 }
                 int dp4 = AndroidUtilities.dp(13.0f) + i13;
@@ -108,9 +108,9 @@ public final class i20 extends ViewGroup {
                     }
                 }
                 if (!contains) {
-                    i13 = org.telegram.messenger.f0.C(9.0f, childAt.getMeasuredWidth(), i13);
+                    i13 = org.telegram.messenger.q.C(9.0f, childAt.getMeasuredWidth(), i13);
                 }
-                i14 = org.telegram.messenger.f0.C(9.0f, childAt.getMeasuredWidth(), i14);
+                i14 = org.telegram.messenger.q.C(9.0f, childAt.getMeasuredWidth(), i14);
             }
             i12++;
         }
@@ -118,7 +118,7 @@ public final class i20 extends ViewGroup {
             z10 = AndroidUtilities.dp(372.0f) / 3;
         } else {
             Point point = AndroidUtilities.displaySize;
-            z10 = org.telegram.messenger.ok.z(158.0f, Math.min(point.x, point.y), 3);
+            z10 = org.telegram.messenger.bi.z(158.0f, Math.min(point.x, point.y), 3);
         }
         if (dp - i13 < z10) {
             dp2 += AndroidUtilities.dp(40.0f);

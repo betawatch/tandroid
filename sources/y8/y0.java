@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 import m.p3;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class y0 extends n6.g {
     public final ExecutorService U;
@@ -37,16 +37,16 @@ public final class y0 extends n6.g {
         super(context, looper, 14, p3Var, kVar, lVar, 0);
         ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
         z0 a2 = z0.a(context);
-        this.V = new w9.k();
-        this.W = new w9.k();
-        this.X = new w9.k();
-        this.Y = new w9.k();
-        this.Z = new w9.k();
-        this.a0 = new w9.k();
-        this.b0 = new w9.k();
-        this.c0 = new w9.k();
-        this.d0 = new w9.k();
-        this.e0 = new w9.k();
+        this.V = new w9.k(2);
+        this.W = new w9.k(2);
+        this.X = new w9.k(2);
+        this.Y = new w9.k(2);
+        this.Z = new w9.k(2);
+        this.a0 = new w9.k(2);
+        this.b0 = new w9.k(2);
+        this.c0 = new w9.k(2);
+        this.d0 = new w9.k(2);
+        this.e0 = new w9.k(2);
         n6.l.h(unconfigurableExecutorService);
         this.U = unconfigurableExecutorService;
         this.f0 = a2;

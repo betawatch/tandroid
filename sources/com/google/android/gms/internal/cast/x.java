@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -75,11 +75,11 @@ public final /* synthetic */ class x implements Runnable {
                         Iterator it = hashSet2.iterator();
                         while (it.hasNext()) {
                             String num = Integer.toString(((f1) it.next()).a);
-                            String i10 = t8.b.i("feature_usage_timestamp_reported_feature_", num);
+                            String i10 = sa.e.i("feature_usage_timestamp_reported_feature_", num);
                             if (!sharedPreferences.contains(i10)) {
-                                i10 = t8.b.i("feature_usage_timestamp_detected_feature_", num);
+                                i10 = sa.e.i("feature_usage_timestamp_detected_feature_", num);
                             }
-                            String i11 = t8.b.i("feature_usage_timestamp_reported_feature_", num);
+                            String i11 = sa.e.i("feature_usage_timestamp_reported_feature_", num);
                             if (!TextUtils.equals(i10, i11)) {
                                 long j11 = sharedPreferences.getLong(i10, 0L);
                                 edit.remove(i10);

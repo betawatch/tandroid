@@ -25,9 +25,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class ff0 extends org.telegram.ui.Components.qw0 implements org.telegram.ui.Components.x40 {
+public final class ff0 extends org.telegram.ui.Components.rw0 implements org.telegram.ui.Components.x40 {
     public String E;
     public String F;
     public Bundle G;
@@ -382,12 +382,12 @@ public final class ff0 extends org.telegram.ui.Components.qw0 implements org.tel
         AndroidUtilities.runOnUIThread(new uq(this, photoSize2, photoSize, 28));
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final boolean b() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final boolean c(boolean z10) {
         ug0 ug0Var = this.O;
         if (z10) {
@@ -405,7 +405,7 @@ public final class ff0 extends org.telegram.ui.Components.qw0 implements org.tel
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void d() {
         this.H = false;
     }
@@ -420,7 +420,7 @@ public final class ff0 extends org.telegram.ui.Components.qw0 implements org.tel
         return null;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public String getHeaderName() {
         return LocaleController.getString("YourName", R.string.YourName);
     }
@@ -430,7 +430,7 @@ public final class ff0 extends org.telegram.ui.Components.qw0 implements org.tel
         return null;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void h(String str) {
         int i10;
         if (this.H) {
@@ -458,7 +458,7 @@ public final class ff0 extends org.telegram.ui.Components.qw0 implements org.tel
         ConnectionsManager.getInstance(i10).sendRequest(tL_auth_signUp, new m(this, 11), 10);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void j() {
         TextView textView = this.x;
         if (textView != null) {
@@ -478,7 +478,7 @@ public final class ff0 extends org.telegram.ui.Components.qw0 implements org.tel
         AndroidUtilities.runOnUIThread(new sd0(this, 3), ug0.t0);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void k(Bundle bundle) {
         byte[] decode;
         Bundle bundle2 = bundle.getBundle("registerview_params");
@@ -506,7 +506,7 @@ public final class ff0 extends org.telegram.ui.Components.qw0 implements org.tel
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void l(Bundle bundle) {
         String obj = this.c.getText().toString();
         if (obj.length() != 0) {
@@ -530,7 +530,7 @@ public final class ff0 extends org.telegram.ui.Components.qw0 implements org.tel
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void m(Bundle bundle, boolean z10) {
         if (bundle == null) {
             return;
@@ -542,7 +542,7 @@ public final class ff0 extends org.telegram.ui.Components.qw0 implements org.tel
         this.G = bundle;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void n() {
         this.f.invalidateSelf();
         int i10 = org.telegram.ui.ActionBar.i6.G6;
@@ -595,7 +595,7 @@ public final class ff0 extends org.telegram.ui.Components.qw0 implements org.tel
         Property property = View.ALPHA;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(kdVar, (Property<kd, Float>) property, 1.0f), ObjectAnimator.ofFloat(ldVar, (Property<ld, Float>) property, 0.0f));
         this.s.setDuration(180L);
-        this.s.addListener(new org.telegram.ui.Components.a91(this, 26));
+        this.s.addListener(new org.telegram.ui.Components.b91(this, 26));
         this.s.start();
     }
 

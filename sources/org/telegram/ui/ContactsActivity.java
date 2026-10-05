@@ -48,7 +48,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements le.d, NotificationCenter.NotificationCenterDelegate, bh0, ph.d {
     public boolean E;
@@ -81,7 +81,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements le
     public boolean c0;
     public ys d;
     public final a0.i d0;
-    public org.telegram.ui.Components.tx0 e;
+    public org.telegram.ui.Components.ux0 e;
     public ImageView e0;
     public org.telegram.ui.Components.zl0 f;
     public NumberTextView f0;
@@ -452,7 +452,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements le
     @Override // org.telegram.ui.ActionBar.n2
     public final org.telegram.ui.ActionBar.k createActionBar(Context context) {
         org.telegram.ui.ActionBar.k createActionBar = super.createActionBar(context);
-        createActionBar.J();
+        createActionBar.I();
         createActionBar.getTitlesContainer().setTranslationX(AndroidUtilities.dp(4.0f));
         createActionBar.setAddToContainer(false);
         createActionBar.k();
@@ -573,9 +573,9 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements le
         org.telegram.ui.Components.w00 w00Var = new org.telegram.ui.Components.w00(context, null);
         w00Var.setViewType(29);
         w00Var.w = false;
-        org.telegram.ui.Components.tx0 tx0Var = new org.telegram.ui.Components.tx0(context, w00Var, 1, null);
-        this.e = tx0Var;
-        tx0Var.addView(w00Var, 0);
+        org.telegram.ui.Components.ux0 ux0Var = new org.telegram.ui.Components.ux0(context, w00Var, 1, null);
+        this.e = ux0Var;
+        ux0Var.addView(w00Var, 0);
         this.e.setAnimateLayoutChange(true);
         this.e.e(true, false);
         this.e.d.setText(LocaleController.getString(R.string.NoResult));
@@ -814,9 +814,9 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements le
     }
 
     public final void h0() {
-        org.telegram.ui.Components.tx0 tx0Var = this.e;
-        if (tx0Var != null) {
-            tx0Var.b(Math.max(this.q0 + this.n0, this.r0), false);
+        org.telegram.ui.Components.ux0 ux0Var = this.e;
+        if (ux0Var != null) {
+            ux0Var.b(Math.max(this.q0 + this.n0, this.r0), false);
         }
     }
 
@@ -917,7 +917,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements le
         if (user.bot || !this.P) {
             editTextBoldCursor = null;
         } else {
-            formatStringSimple = a4.a.C(formatStringSimple, "\n\n", LocaleController.getString(R.string.AddToTheGroupForwardCount));
+            formatStringSimple = a4.a.D(formatStringSimple, "\n\n", LocaleController.getString(R.string.AddToTheGroupForwardCount));
             editTextBoldCursor = new EditTextBoldCursor(getParentActivity());
             editTextBoldCursor.setTextSize(1, 18.0f);
             editTextBoldCursor.setText("50");
@@ -1197,7 +1197,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements le
             z12 = true;
         } else if (z10) {
             AndroidUtilities.hideKeyboard(this.fragmentView.findFocus());
-            this.actionBar.M(null, null);
+            this.actionBar.L(null, null);
             this.h0.c(1.0f, true);
         }
         this.f0.a(iVar.m(), z12);

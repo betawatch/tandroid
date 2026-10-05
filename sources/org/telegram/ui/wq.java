@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wq implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -82,7 +82,7 @@ public final /* synthetic */ class wq implements Utilities.Callback {
                             sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(i11).isUserContactBlocked(longValue));
                         }
                         edit.putLong(org.telegram.ui.Cells.c1.j(longValue, "ask_paid_message_", "_price"), sendPaidMessagesStars);
-                        yh.t5.y(i11, false).O.put(l4, Long.valueOf(System.currentTimeMillis()));
+                        yh.u5.y(i11, false).O.put(l4, Long.valueOf(System.currentTimeMillis()));
                     }
                     edit.apply();
                 }
@@ -91,7 +91,7 @@ public final /* synthetic */ class wq implements Utilities.Callback {
                     @Override // java.lang.Runnable
                     public final void run() {
                         int i13 = i11;
-                        long j12 = yh.t5.y(i13, false).p().amount;
+                        long j12 = yh.u5.y(i13, false).p().amount;
                         long j13 = j11;
                         Utilities.Callback callback2 = callback;
                         HashMap hashMap2 = hashMap;
@@ -104,11 +104,11 @@ public final /* synthetic */ class wq implements Utilities.Callback {
                             return;
                         }
                         long longValue2 = ((Long) arrayList.get(0)).longValue();
-                        new yh.m7(activity2, d6Var, j13, 13, DialogObject.getShortName(i13, longValue2), new b2(callback2, hashMap2, 0), longValue2).show();
+                        new yh.n7(activity2, d6Var, j13, 13, DialogObject.getShortName(i13, longValue2), new b2(callback2, hashMap2, 0), longValue2).show();
                     }
                 };
-                if (!yh.t5.y(i11, false).e) {
-                    yh.t5 y3 = yh.t5.y(i11, false);
+                if (!yh.u5.y(i11, false).e) {
+                    yh.u5 y3 = yh.u5.y(i11, false);
                     y3.e = false;
                     y3.q(false, true, runnable);
                     y3.e = true;
@@ -125,7 +125,7 @@ public final /* synthetic */ class wq implements Utilities.Callback {
                 tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(i13).getInputUser(this.c);
                 tL_messages_toggleBotInAttachMenu.enabled = true;
                 tL_messages_toggleBotInAttachMenu.write_allowed = true;
-                ConnectionsManager.getInstance(i13).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.hi((LaunchActivity) obj5, i13, (uy) obj4, (org.telegram.ui.ActionBar.n2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
+                ConnectionsManager.getInstance(i13).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.ii((LaunchActivity) obj5, i13, (uy) obj4, (org.telegram.ui.ActionBar.n2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
                 break;
         }
     }

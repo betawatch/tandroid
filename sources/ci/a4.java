@@ -6,10 +6,10 @@ import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class a4 extends org.telegram.ui.ActionBar.f3 {
     public final z3 b;
@@ -27,10 +27,10 @@ public final class a4 extends org.telegram.ui.ActionBar.f3 {
         z3Var.setMultipleOnClick(false);
         z3Var.setOnBackClickListener(new x3(this, 0));
         z3Var.setOnSelectListener(new bi.v(this, 4));
-        lw0 lw0Var = new lw0(context, null);
-        this.containerView = lw0Var;
+        mw0 mw0Var = new mw0(context, null);
+        this.containerView = mw0Var;
         int i10 = this.backgroundPaddingLeft;
-        lw0Var.setPadding(i10, 0, i10, 0);
+        mw0Var.setPadding(i10, 0, i10, 0);
         this.containerView.addView(z3Var);
     }
 

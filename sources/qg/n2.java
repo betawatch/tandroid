@@ -56,17 +56,17 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.v11;
+import org.telegram.ui.Components.w11;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.jr0;
 import org.telegram.ui.n21;
-import org.telegram.ui.ui1;
+import org.telegram.ui.si1;
 import w7.z5;
 import x7.fa;
 import x7.m7;
 import x7.o7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class n2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int r0 = 0;
@@ -84,7 +84,7 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
     public float P;
     public float Q;
     public float R;
-    public v11 S;
+    public w11 S;
     public int T;
     public int U;
     public boolean V;
@@ -470,7 +470,7 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
                 arrayList2.add(j2Var2);
             }
         }
-        arrayList2.add((j2) hg.k0.g(1, arrayList));
+        arrayList2.add((j2) hg.c.g(1, arrayList));
         return arrayList2;
     }
 
@@ -2534,7 +2534,7 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
             tL_documentAttributeSticker.alt = l2Var3.c;
             tL_documentAttributeSticker.stickerset = new TLRPC.TL_inputStickerSetEmpty();
             tL_messages_uploadMedia.media.attributes.add(tL_documentAttributeSticker);
-            ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_messages_uploadMedia, new ui1(1, this, l2Var3), 2);
+            ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_messages_uploadMedia, new si1(1, this, l2Var3), 2);
             return;
         }
         if (i10 == NotificationCenter.fileUploadProgressChanged) {
@@ -2746,14 +2746,14 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
         return this.I;
     }
 
-    public v11 getThanosEffect() {
-        if (!v11.c()) {
+    public w11 getThanosEffect() {
+        if (!w11.c()) {
             return null;
         }
         if (this.S == null) {
-            v11 v11Var = new v11(getContext(), new d2(this, 1));
-            this.S = v11Var;
-            addView(v11Var, z5.c(-1.0f, -1));
+            w11 w11Var = new w11(getContext(), new d2(this, 1));
+            this.S = w11Var;
+            addView(w11Var, z5.c(-1.0f, -1));
         }
         return this.S;
     }

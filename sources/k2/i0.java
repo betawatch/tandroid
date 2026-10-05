@@ -24,7 +24,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class i0 extends r2.r implements t0 {
     public final Context X0;
@@ -705,7 +705,7 @@ public final class i0 extends r2.r implements t0 {
                 l0();
                 j0();
             } finally {
-                hg.k0.z(this.V, null);
+                hg.c.z(this.V, null);
                 this.V = null;
             }
         } finally {
@@ -764,11 +764,11 @@ public final class i0 extends r2.r implements t0 {
         a1 f7;
         boolean z10;
         boolean z11;
-        int b10 = hg.k0.b(1, 0, 0, 0);
+        int b10 = hg.c.b(1, 0, 0, 0);
         String str = sVar.r;
         String str2 = sVar.r;
         if (!r0.i(str)) {
-            return hg.k0.b(0, 0, 0, 0);
+            return hg.c.b(0, 0, 0, 0);
         }
         int i11 = sVar.S;
         boolean z12 = i11 != 0;
@@ -781,7 +781,7 @@ public final class i0 extends r2.r implements t0 {
             }
             i10 = z0(sVar);
             if (((f0) qVar).G(sVar)) {
-                return hg.k0.b(4, 8, 32, i10);
+                return hg.c.b(4, 8, 32, i10);
             }
             if ("audio/raw".equals(str2) || ((f0) qVar).G(sVar)) {
                 f0Var = (f0) qVar;
@@ -800,7 +800,7 @@ public final class i0 extends r2.r implements t0 {
                     }
                     if (!f7.isEmpty()) {
                         if (!z13) {
-                            return hg.k0.b(2, 0, 0, 0);
+                            return hg.c.b(2, 0, 0, 0);
                         }
                         r2.o oVar2 = (r2.o) f7.get(0);
                         boolean e7 = oVar2.e(sVar);

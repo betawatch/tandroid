@@ -19,7 +19,7 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import v7.v7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class p0 extends Spinner {
     public static final int[] r = {R.attr.spinnerMode};
@@ -94,7 +94,7 @@ public final class p0 extends Spinner {
             m0 m0Var = new m0(this, this.b, attributeSet);
             la.h Q2 = la.h.Q(this.b, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
             this.h = ((TypedArray) Q2.c).getLayoutDimension(3, -2);
-            m0Var.i(Q2.F(1));
+            m0Var.i(Q2.A(1));
             m0Var.S = typedArray2.getString(2);
             Q2.R();
             this.f = m0Var;

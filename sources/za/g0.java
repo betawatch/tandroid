@@ -5,7 +5,7 @@ import com.google.android.gms.tasks.Task;
 import org.telegram.tgnet.TLObject;
 import v7.t7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class g0 implements c0 {
     public static final double f = Math.random();
@@ -13,14 +13,14 @@ public final class g0 implements c0 {
     public final k9.h a;
     public final qa.d b;
     public final bb.h c;
-    public final l2.g d;
+    public final k2.e d;
     public final id.h e;
 
-    public g0(k9.h hVar, qa.d dVar, bb.h hVar2, l2.g gVar, id.h hVar3) {
+    public g0(k9.h hVar, qa.d dVar, bb.h hVar2, k2.e eVar, id.h hVar3) {
         this.a = hVar;
         this.b = dVar;
         this.c = hVar2;
-        this.d = gVar;
+        this.d = eVar;
         this.e = hVar3;
     }
 

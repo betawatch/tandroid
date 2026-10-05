@@ -32,7 +32,7 @@ import org.telegram.ui.yi;
 import org.telegram.ui.yn;
 import org.telegram.ui.zi;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o8 implements Runnable {
     public final /* synthetic */ int a;
@@ -145,7 +145,7 @@ public final /* synthetic */ class o8 implements Runnable {
                     ii.f0 f0Var = h0Var.E;
                     ii.a aVar = h0Var.a;
                     ii.x3 x3Var = ((ii.p3) f0Var).a;
-                    x3Var.q3(false);
+                    x3Var.p3(false);
                     x3Var.o3.o0(new ii.u3(x3Var, aVar, i14), e0Var);
                     break;
                 }

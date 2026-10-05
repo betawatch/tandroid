@@ -14,13 +14,13 @@ import ci.qc;
 import ci.ra;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
-import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.fw0;
 import org.telegram.ui.Components.rc;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class q4 extends FrameLayout {
-    public static final ew0 b0 = new ew0(new d2.c(21), new d2.c(22));
+    public static final fw0 b0 = new fw0(new d2.c(21), new d2.c(22));
     public Runnable E;
     public p4 F;
     public o1.k G;

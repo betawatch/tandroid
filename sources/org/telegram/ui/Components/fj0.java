@@ -21,7 +21,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class fj0 implements LeadingMarginSpan {
     public final Path E;
@@ -216,7 +216,7 @@ public final class fj0 implements LeadingMarginSpan {
                                     int i16 = fj0Var2.d;
                                     if (i16 - 2 >= 0) {
                                         z10 = true;
-                                        if (layout.getLineRight(layout.getLineForOffset(i16 - 1)) - AndroidUtilities.dp(12.0f) > bj0Var.d - (fj0Var2.J != null ? org.telegram.messenger.f0.D(3.333f, 2, AndroidUtilities.dp(23.66f) + r12.c) : org.telegram.messenger.f0.D(3.333f, 2, AndroidUtilities.dp(23.66f)))) {
+                                        if (layout.getLineRight(layout.getLineForOffset(i16 - 1)) - AndroidUtilities.dp(12.0f) > bj0Var.d - (fj0Var2.J != null ? org.telegram.messenger.q.D(3.333f, 2, AndroidUtilities.dp(23.66f) + r12.c) : org.telegram.messenger.q.D(3.333f, 2, AndroidUtilities.dp(23.66f)))) {
                                             z11 = true;
                                             if (z14 != z11) {
                                                 int i17 = fj0Var2.d;

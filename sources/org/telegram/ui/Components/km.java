@@ -19,7 +19,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class km extends gl0 {
     public final Context c;
@@ -69,7 +69,7 @@ public final class km extends gl0 {
                     M = (MediaController.PhotoEntry) arrayList2.get(0);
                 }
             } else if (!chatAttachAlertPhotoLayout.T0.photos.isEmpty()) {
-                M = (MediaController.PhotoEntry) hg.k0.g(1, chatAttachAlertPhotoLayout.T0.photos);
+                M = (MediaController.PhotoEntry) hg.c.g(1, chatAttachAlertPhotoLayout.T0.photos);
             }
         }
         if (M == null) {
@@ -373,7 +373,7 @@ public final class km extends gl0 {
         n5Var.addView(imageView2, w7.z5.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
         TextView textView = new TextView(context);
         n5Var.c = textView;
-        org.telegram.messenger.ok.n(org.telegram.ui.ActionBar.i6.ca, d6Var, textView, 1, 12.0f);
+        org.telegram.messenger.bi.m(org.telegram.ui.ActionBar.i6.ca, d6Var, textView, 1, 12.0f);
         textView.setGravity(17);
         n5Var.addView(textView, w7.z5.d(-2, -2.0f, 17, 5.0f, 13.0f, 5.0f, 0.0f));
         n5Var.d = AndroidUtilities.dp(80.0f);

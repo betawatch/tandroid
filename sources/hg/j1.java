@@ -25,7 +25,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.gq;
 import org.telegram.ui.Components.tr;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class j1 extends LinearLayout {
     public boolean E;
@@ -138,7 +138,7 @@ public abstract class j1 extends LinearLayout {
                 this.f[i10] = w5Var;
                 addView(w5Var, z5.i(-1.0f, -2.0f, 51, 18.0f, 0.0f, 8.0f, 0.0f));
             } else {
-                ViewGroup f7 = ok.f(context, 0);
+                ViewGroup e7 = bi.e(context, 0);
                 this.h[i10] = new TextView(context);
                 this.h[i10].setTextSize(1, 14.0f);
                 this.h[i10].setTextColor(i6.v0(i6.G6, d6Var));
@@ -153,14 +153,14 @@ public abstract class j1 extends LinearLayout {
                     frameLayout2.addView(this.n[i10][i15], z5.e(-1, -1, 119));
                 }
                 if (LocaleController.isRTL) {
-                    f7.addView(frameLayout2, z5.q(-2, -1, 51));
-                    f7.addView(this.h[i10], z5.q(-1, -1, 53));
+                    e7.addView(frameLayout2, z5.q(-2, -1, 51));
+                    e7.addView(this.h[i10], z5.q(-1, -1, 53));
                 } else {
-                    f7.addView(this.h[i10], z5.q(-2, -1, 51));
-                    f7.addView(frameLayout2, z5.q(-1, -1, 53));
+                    e7.addView(this.h[i10], z5.q(-2, -1, 51));
+                    e7.addView(frameLayout2, z5.q(-1, -1, 53));
                 }
-                this.f[i10] = f7;
-                addView(f7, z5.u(-1.0f, -2.0f, 51, 18.0f, i10 == 1 ? 1.0f : 11.66f, 28.0f, i10 == 6 ? 16.66f : 0.0f));
+                this.f[i10] = e7;
+                addView(e7, z5.u(-1.0f, -2.0f, 51, 18.0f, i10 == 1 ? 1.0f : 11.66f, 28.0f, i10 == 6 ? 16.66f : 0.0f));
             }
             i10++;
         }

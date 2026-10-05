@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -195,16 +195,16 @@ public final /* synthetic */ class m implements RequestDelegate {
                 c11Var.F = false;
                 break;
             case 21:
-                AndroidUtilities.runOnUIThread(new wa1((StickersActivity) obj, 1));
+                AndroidUtilities.runOnUIThread(new ua1((StickersActivity) obj, 1));
                 break;
             case 22:
-                ne1 ne1Var = (ne1) obj;
+                le1 le1Var = (le1) obj;
                 if (tL_error == null) {
                     TLRPC.TL_messages_inactiveChats tL_messages_inactiveChats = (TLRPC.TL_messages_inactiveChats) tLObject2;
                     ArrayList arrayList2 = new ArrayList();
                     for (int i20 = 0; i20 < tL_messages_inactiveChats.chats.size(); i20++) {
                         TLRPC.Chat chat = tL_messages_inactiveChats.chats.get(i20);
-                        int currentTime = (ne1Var.getConnectionsManager().getCurrentTime() - tL_messages_inactiveChats.dates.get(i20).intValue()) / 86400;
+                        int currentTime = (le1Var.getConnectionsManager().getCurrentTime() - tL_messages_inactiveChats.dates.get(i20).intValue()) / 86400;
                         String formatPluralString = currentTime < 30 ? LocaleController.formatPluralString("Days", currentTime, new Object[0]) : currentTime < 365 ? LocaleController.formatPluralString("Months", currentTime / 30, new Object[0]) : LocaleController.formatPluralString("Years", currentTime / 365, new Object[0]);
                         if (ChatObject.isMegagroup(chat)) {
                             arrayList2.add(LocaleController.formatString("InactiveChatSignature", R.string.InactiveChatSignature, LocaleController.formatPluralString("Members", chat.participants_count, new Object[0]), formatPluralString));
@@ -214,23 +214,23 @@ public final /* synthetic */ class m implements RequestDelegate {
                             arrayList2.add(LocaleController.formatString("InactiveChatSignature", R.string.InactiveChatSignature, LocaleController.formatPluralString("Members", chat.participants_count, new Object[0]), formatPluralString));
                         }
                     }
-                    AndroidUtilities.runOnUIThread(new td1(ne1Var, arrayList2, tL_messages_inactiveChats, 3));
+                    AndroidUtilities.runOnUIThread(new rd1(le1Var, arrayList2, tL_messages_inactiveChats, 3));
                     break;
                 }
                 break;
             case 23:
-                ih1 ih1Var = (ih1) obj;
-                ih1Var.getClass();
-                AndroidUtilities.runOnUIThread(new g91(17, ih1Var, tLObject2));
+                gh1 gh1Var = (gh1) obj;
+                gh1Var.getClass();
+                AndroidUtilities.runOnUIThread(new e91(17, gh1Var, tLObject2));
                 break;
             case 24:
                 int[][] iArr = WallpapersListActivity.i0;
                 AndroidUtilities.runOnUIThread(new hz0((WallpapersListActivity) obj, 28));
                 break;
             default:
-                bj1 bj1Var = (bj1) obj;
+                zi1 zi1Var = (zi1) obj;
                 if (tLObject2 != null) {
-                    AndroidUtilities.runOnUIThread(new g91(i14, bj1Var, tLObject2));
+                    AndroidUtilities.runOnUIThread(new e91(i14, zi1Var, tLObject2));
                     break;
                 }
                 break;

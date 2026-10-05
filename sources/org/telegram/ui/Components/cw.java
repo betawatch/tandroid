@@ -20,7 +20,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class cw extends ViewGroup {
     public Boolean E;
@@ -253,7 +253,7 @@ public class cw extends ViewGroup {
             this.I = ofFloat;
             ofFloat.addUpdateListener(new k6(this, 19));
             this.I.addListener(new da(7, this, z10));
-            this.I.setDuration(zg.e0.d() ? 0L : 350L);
+            this.I.setDuration(zg.c0.d() ? 0L : 350L);
             this.I.setInterpolator(tr.h);
             this.I.start();
         }
@@ -269,7 +269,7 @@ public class cw extends ViewGroup {
 
     @Override // android.view.View
     public final void invalidate() {
-        if (zg.e0.b(this)) {
+        if (zg.c0.b(this)) {
             return;
         }
         super.invalidate();
@@ -442,7 +442,7 @@ public class cw extends ViewGroup {
 
     @Override // android.view.View
     public final void invalidate(int i10, int i11, int i12, int i13) {
-        if (zg.e0.b(this)) {
+        if (zg.c0.b(this)) {
             return;
         }
         super.invalidate(i10, i11, i12, i13);

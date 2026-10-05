@@ -26,13 +26,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.d61;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.qp;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class x1 extends FrameLayout {
     public final h9 a;
@@ -94,7 +94,7 @@ public final class x1 extends FrameLayout {
             str3 = "/".concat(str3);
         }
         spannableStringBuilder.append((CharSequence) "/").append((CharSequence) a2Var.b);
-        spannableStringBuilder.setSpan(new d61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new e61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
         int i10 = i6.G6;
         d6 d6Var = this.f;
         spannableStringBuilder.setSpan(new ForegroundColorSpan(i6.v0(i10, d6Var)), 0, spannableStringBuilder.length(), 33);
@@ -123,7 +123,7 @@ public final class x1 extends FrameLayout {
             int i11 = w1.d;
             SpannableString spannableString = new SpannableString("+");
             w1 w1Var = new w1(a2);
-            int dp2 = (int) (((e11) w1Var.c).c + AndroidUtilities.dp(10.0f));
+            int dp2 = (int) (((f11) w1Var.c).c + AndroidUtilities.dp(10.0f));
             this.n[0] = dp2;
             spannableString.setSpan(w1Var, 0, spannableString.length(), 33);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(TextUtils.ellipsize(spannableStringBuilder, nVar.getPaint(), (dp * 1.5f) - r12[0], TextUtils.TruncateAt.END));

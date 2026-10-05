@@ -39,7 +39,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
@@ -58,7 +58,7 @@ import org.telegram.ui.h60;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class u extends FrameLayout implements o0 {
     public final m A0;
@@ -244,7 +244,7 @@ public final class u extends FrameLayout implements o0 {
         textView.setGravity(17);
         textView.setAlpha(0.0f);
         if (ChatObject.canManageCalls(chat)) {
-            org.telegram.messenger.f0.m(R.string.NoRtmpStreamFromAppOwner, textView);
+            org.telegram.messenger.q.m(R.string.NoRtmpStreamFromAppOwner, textView);
         } else {
             textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoRtmpStreamFromAppViewer", R.string.NoRtmpStreamFromAppViewer, chat.title)));
         }
@@ -727,7 +727,7 @@ public final class u extends FrameLayout implements o0 {
                 this.v = true;
                 h60 h60Var = this.G;
                 if (h60Var.t2.size() > 0) {
-                    this.n0 = (p0) hg.k0.w(1, h60Var.t2);
+                    this.n0 = (p0) hg.c.w(1, h60Var.t2);
                 } else {
                     this.n0 = new p0();
                 }
@@ -1416,7 +1416,7 @@ public final class u extends FrameLayout implements o0 {
             }
         } else if (this.h) {
             this.w0 = 1.0f;
-            int A2 = ok.A(14.0f, 2, Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11)));
+            int A2 = bi.A(14.0f, 2, Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11)));
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(A2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + A2, TLObject.FLAG_30));
         } else if (this.H) {
             this.w0 = 1.0f;
@@ -1429,7 +1429,7 @@ public final class u extends FrameLayout implements o0 {
             } else if (h60.G3) {
                 dp = AndroidUtilities.dp(320.0f);
             } else {
-                A = ok.A(14.0f, 2, View.MeasureSpec.getSize(i10)) + (h60.F3 ? -AndroidUtilities.dp(90.0f) : 0);
+                A = bi.A(14.0f, 2, View.MeasureSpec.getSize(i10)) + (h60.F3 ? -AndroidUtilities.dp(90.0f) : 0);
                 float f11 = (this.I / i13) * A;
                 lVar = this.e;
                 if (lVar == null) {

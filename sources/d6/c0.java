@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class c0 extends e6.g {
     public final /* synthetic */ int a;
@@ -86,15 +86,15 @@ public final class c0 extends e6.g {
             case 0:
                 q4 q4Var = ((c) this.b).l;
                 if (q4Var != null) {
-                    x6 C = q4Var.a.C();
+                    x6 w10 = q4Var.a.w();
                     u2 u2Var = new u2(str);
                     u2Var.b = j3;
                     u2Var.c = i10;
                     u2Var.d = j10;
                     u2Var.e = j11;
                     j3 j3Var = new j3(u2Var);
-                    j3Var.f = C.h;
-                    C.d.add(j3Var);
+                    j3Var.f = w10.h;
+                    w10.d.add(j3Var);
                     break;
                 }
                 break;

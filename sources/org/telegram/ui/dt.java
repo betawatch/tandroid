@@ -5,13 +5,28 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dt implements r0.n, org.telegram.ui.Components.rk0 {
     public final /* synthetic */ rt a;
 
     public /* synthetic */ dt(rt rtVar) {
         this.a = rtVar;
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public /* synthetic */ boolean B() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public /* synthetic */ boolean E() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public /* synthetic */ boolean K() {
+        return false;
     }
 
     @Override // r0.n
@@ -21,54 +36,39 @@ public final /* synthetic */ class dt implements r0.n, org.telegram.ui.Component
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public void h(View view, zg.o0 o0Var, boolean z10, boolean z11) {
-        if (o0Var == null) {
+    public void i(View view, zg.m0 m0Var, boolean z10, boolean z11) {
+        if (m0Var == null) {
             return;
         }
         rt rtVar = this.a;
-        zg.b0 reactionsWindow = rtVar.P.getReactionsWindow();
-        if (!rtVar.o.contains(o0Var.f)) {
-            rtVar.o.add(o0Var.f);
+        zg.z reactionsWindow = rtVar.P.getReactionsWindow();
+        if (!rtVar.o.contains(m0Var.f)) {
+            rtVar.o.add(m0Var.f);
             if (rtVar.o.size() > 7) {
                 rtVar.o.remove(0);
             }
         } else if (rtVar.o.size() <= 1) {
             return;
         } else {
-            rtVar.o.remove(o0Var.f);
+            rtVar.o.remove(m0Var.f);
         }
         rtVar.P.setSelectedEmojis(rtVar.o);
         if (reactionsWindow != null) {
-            zg.x xVar = reactionsWindow.m;
+            zg.v vVar = reactionsWindow.m;
             rtVar.P.p(null, null, false);
-            if (xVar != null) {
-                xVar.setSelectedReactions(rtVar.o);
-                xVar.setRecentReactions(rtVar.P.V);
+            if (vVar != null) {
+                vVar.setSelectedReactions(rtVar.o);
+                vVar.setRecentReactions(rtVar.P.V);
             }
             reactionsWindow.d();
         }
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public /* synthetic */ boolean j() {
-        return true;
+    public /* synthetic */ void I() {
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public /* synthetic */ boolean k() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.rk0
-    public /* synthetic */ boolean p() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.rk0
-    public /* synthetic */ void o() {
-    }
-
-    @Override // org.telegram.ui.Components.rk0
-    public /* synthetic */ void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    public /* synthetic */ void H(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

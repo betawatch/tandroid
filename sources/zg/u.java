@@ -1,44 +1,42 @@
 package zg;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.lc0;
-import yh.t3;
+import android.animation.ValueAnimator;
+import android.view.View;
+import java.util.ArrayList;
+import yh.s8;
+import yh.t8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u implements Runnable {
+public final /* synthetic */ class u implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b0 b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ u(b0 b0Var, int i10) {
+    public /* synthetic */ u(int i10, Object obj, Object obj2) {
         this.a = i10;
-        this.b = b0Var;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.a.invalidate();
+                z zVar = (z) this.b;
+                ArrayList arrayList = (ArrayList) this.c;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    z.g((View) arrayList.get(i10), floatValue);
+                }
+                zVar.m.k0.invalidate();
                 break;
             default:
-                b0 b0Var = this.b;
-                t3 t3Var = b0Var.c;
-                if (t3Var.getParent() != null) {
-                    if (b0Var.d) {
-                        AndroidUtilities.removeFromParent(t3Var);
-                    } else {
-                        try {
-                            b0Var.b.removeView(t3Var);
-                        } catch (Exception unused) {
-                        }
-                    }
-                    lc0 lc0Var = b0Var.p;
-                    if (lc0Var != null) {
-                        lc0Var.run();
-                        break;
-                    }
-                }
+                t8 t8Var = (t8) this.b;
+                s8 s8Var = (s8) this.c;
+                t8Var.getClass();
+                s8Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t8Var.a1();
                 break;
         }
     }

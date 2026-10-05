@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class o20 extends LinearLayout {
     public final /* synthetic */ int a = 0;
@@ -80,22 +80,22 @@ public final class o20 extends LinearLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setClipChildren(false);
         frameLayout.setClipToPadding(false);
-        yh.b7 b7Var = new yh.b7(context, 70, 0);
-        frameLayout.addView(b7Var, w7.z5.c(-1.0f, -1));
+        yh.c7 c7Var = new yh.c7(context, 70, 0);
+        frameLayout.addView(c7Var, w7.z5.c(-1.0f, -1));
         sg.e eVar = new sg.e(context, 1, 2);
         this.c = eVar;
         sg.a aVar = eVar.b;
         aVar.w = org.telegram.ui.ActionBar.i6.fk;
         aVar.x = org.telegram.ui.ActionBar.i6.gk;
         aVar.b();
-        eVar.setStarParticlesView(b7Var);
+        eVar.setStarParticlesView(c7Var);
         frameLayout.addView(eVar, w7.z5.d(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         eVar.setPaused(false);
-        yh.l7 l7Var = new yh.l7(context, i10, d6Var);
-        this.d = l7Var;
-        w7.b6.a(l7Var);
-        l7Var.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 27));
-        frameLayout.addView(l7Var, w7.z5.d(-2, -2.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
+        yh.m7 m7Var = new yh.m7(context, i10, d6Var);
+        this.d = m7Var;
+        w7.b6.a(m7Var);
+        m7Var.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 27));
+        frameLayout.addView(m7Var, w7.z5.d(-2, -2.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
         addView(frameLayout, w7.z5.c(150.0f, -1));
         TextView textView = new TextView(context);
         this.b = textView;

@@ -4,7 +4,7 @@ import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class a6 implements h1 {
     public final /* synthetic */ f6 a;
@@ -47,7 +47,7 @@ public final class a6 implements h1 {
     }
 
     @Override // ii.h1
-    public final /* synthetic */ boolean G(boolean z10) {
+    public final /* synthetic */ boolean C(boolean z10) {
         return false;
     }
 
@@ -56,7 +56,7 @@ public final class a6 implements h1 {
         c6 c6Var = this.a.y;
         if (c6Var != null) {
             x3 x3Var = ((f3) c6Var).a;
-            x3.O1(x3Var, i1Var);
+            x3.N1(x3Var, i1Var);
             x3Var.o3.P(i1Var, true);
         }
     }
@@ -68,7 +68,7 @@ public final class a6 implements h1 {
         if (c6Var == null || f6Var.x == null) {
             return false;
         }
-        return ((f3) c6Var).a.U4();
+        return ((f3) c6Var).a.T4();
     }
 
     @Override // ii.h1
@@ -90,7 +90,7 @@ public final class a6 implements h1 {
         if (c6Var == null || (aVar = f6Var.x) == null) {
             return;
         }
-        x3.R1(((f3) c6Var).a, aVar);
+        x3.Q1(((f3) c6Var).a, aVar);
     }
 
     @Override // ii.h1
@@ -119,14 +119,14 @@ public final class a6 implements h1 {
     }
 
     @Override // ii.h1
-    public final void x(CharSequence charSequence) {
+    public final void w(CharSequence charSequence) {
         c6 c6Var = this.a.y;
         if (c6Var != null) {
             f3 f3Var = (f3) c6Var;
             if (charSequence == null || charSequence.length() <= 0) {
                 return;
             }
-            f3Var.a.v4(charSequence.toString());
+            f3Var.a.u4(charSequence.toString());
         }
     }
 

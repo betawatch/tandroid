@@ -13,7 +13,7 @@ import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.fx0;
 import org.telegram.ui.kn0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y5 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -109,7 +109,7 @@ public final /* synthetic */ class y5 implements Runnable {
                     throw new IllegalArgumentException("offerToken can not be empty");
                 }
                 bVar.c = str3;
-                billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumSubscription, Collections.singletonList(bVar.s()), fVar, false);
+                billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumSubscription, Collections.singletonList(bVar.i()), fVar, false);
                 return;
         }
     }

@@ -22,13 +22,13 @@ import org.telegram.ui.Components.pi;
 import org.telegram.ui.Components.pl;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.Components.xi;
-import org.telegram.ui.Components.xy0;
 import org.telegram.ui.Components.yy0;
 import org.telegram.ui.Components.zh;
 import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.zy0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.pi1;
+import org.telegram.ui.ni1;
 import org.telegram.ui.pu0;
 import org.telegram.ui.s21;
 import org.telegram.ui.to;
@@ -38,7 +38,7 @@ import org.telegram.ui.vw;
 import org.telegram.ui.y21;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -225,7 +225,7 @@ public final /* synthetic */ class x implements ValueAnimator.AnimatorUpdateList
                 zhVar.getClass();
                 euVar.setOffsetY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 xi xiVar = zhVar.c0;
-                xiVar.R1();
+                xiVar.T1();
                 pi piVar = xiVar.y0;
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = xiVar.j0;
                 if (piVar == chatAttachAlertPhotoLayout) {
@@ -239,22 +239,22 @@ public final /* synthetic */ class x implements ValueAnimator.AnimatorUpdateList
                 mVar.getClass();
                 ouVar.b = ((Integer) valueAnimator.getAnimatedValue()).intValue();
                 while (i10 < ((ArrayList) mVar.d).size()) {
-                    if (!zg.e0.b) {
+                    if (!zg.c0.b) {
                         ((View) ((ArrayList) mVar.d).get(i10)).invalidate();
                     }
                     i10++;
                 }
                 break;
             case 16:
-                yy0 yy0Var = (yy0) this.b;
-                xy0[] xy0VarArr = (xy0[]) this.c;
-                yy0Var.getClass();
+                zy0 zy0Var = (zy0) this.b;
+                yy0[] yy0VarArr = (yy0[]) this.c;
+                zy0Var.getClass();
                 float floatValue8 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                while (i10 < xy0VarArr.length) {
-                    yy0Var.c[i10] = (yy0Var.d[i10] * floatValue8) + ((1.0f - floatValue8) * yy0Var.e[i10]);
+                while (i10 < yy0VarArr.length) {
+                    zy0Var.c[i10] = (zy0Var.d[i10] * floatValue8) + ((1.0f - floatValue8) * zy0Var.e[i10]);
                     i10++;
                 }
-                yy0Var.invalidate();
+                zy0Var.invalidate();
                 break;
             case 17:
                 org.telegram.ui.Components.voip.m0 m0Var = (org.telegram.ui.Components.voip.m0) this.b;
@@ -351,10 +351,10 @@ public final /* synthetic */ class x implements ValueAnimator.AnimatorUpdateList
                 aVar2.b = intValue2;
                 break;
             case 25:
-                pi1 pi1Var = (pi1) this.b;
+                ni1 ni1Var = (ni1) this.b;
                 wi wiVar = (wi) this.c;
-                pi1Var.getClass();
-                pi1Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ni1Var.getClass();
+                ni1Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 wiVar.invalidate();
                 break;
             case 26:

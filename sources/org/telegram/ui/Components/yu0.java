@@ -1,39 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SavedMessagesController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class yu0 extends org.telegram.ui.Cells.s2 {
-    public final /* synthetic */ zu0 W4;
+public final class yu0 extends s4.v {
+    public final /* synthetic */ av0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yu0(zu0 zu0Var, Context context) {
-        super(context, true);
-        this.W4 = zu0Var;
+    public yu0(av0 av0Var) {
+        this.d = av0Var;
     }
 
-    @Override // org.telegram.ui.Cells.s2
-    public final boolean O() {
-        return false;
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.c1 c1Var) {
+        super.a(recyclerView, c1Var);
+        c1Var.a.setPressed(false);
     }
 
-    @Override // org.telegram.ui.Cells.s2
-    public final boolean getIsPinned() {
-        zu0 zu0Var = this.W4;
-        ArrayList arrayList = zu0Var.f;
-        hu0 hu0Var = zu0Var.s;
-        if (hu0Var == null || hu0Var.getAdapter() != zu0Var) {
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.c1 c1Var) {
+        SavedMessagesController.SavedDialog r10;
+        int l4 = s4.v.l(0, 0);
+        qv0 qv0Var = this.d.x;
+        return (!qv0Var.C1 || recyclerView.getAdapter() == qv0Var.S || (r10 = r(c1Var)) == null || !r10.pinned) ? l4 : s4.v.l(3, 0);
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.c1 c1Var, s4.c1 c1Var2) {
+        av0 av0Var = this.d;
+        ArrayList arrayList = av0Var.f;
+        qv0 qv0Var = av0Var.x;
+        if (!qv0Var.C1 || recyclerView.getAdapter() == qv0Var.S) {
             return false;
         }
-        zu0Var.s.getClass();
-        int R = RecyclerView.R(this);
-        if (R < 0 || R >= arrayList.size()) {
+        SavedMessagesController.SavedDialog r10 = r(c1Var);
+        SavedMessagesController.SavedDialog r11 = r(c1Var2);
+        if (r10 == null || r11 == null || !r10.pinned || !r11.pinned) {
             return false;
         }
-        return ((SavedMessagesController.SavedDialog) arrayList.get(R)).pinned;
+        int b10 = c1Var.b();
+        int b11 = c1Var2.b();
+        arrayList.remove(b10);
+        arrayList.add(b11, r10);
+        av0Var.p(b10, b11);
+        av0Var.h = true;
+        return true;
+    }
+
+    @Override // s4.v
+    public final void p(s4.c1 c1Var, int i10) {
+        iu0 iu0Var;
+        av0 av0Var = this.d;
+        gq0 gq0Var = av0Var.n;
+        if (c1Var != null && (iu0Var = av0Var.s) != null) {
+            iu0Var.d1(false);
+        }
+        if (i10 == 0) {
+            AndroidUtilities.cancelRunOnUIThread(gq0Var);
+            AndroidUtilities.runOnUIThread(gq0Var, 300L);
+        }
+    }
+
+    public final SavedMessagesController.SavedDialog r(s4.c1 c1Var) {
+        int b10;
+        if (c1Var != null && (b10 = c1Var.b()) >= 0) {
+            av0 av0Var = this.d;
+            if (b10 < av0Var.f.size()) {
+                return (SavedMessagesController.SavedDialog) av0Var.f.get(b10);
+            }
+        }
+        return null;
+    }
+
+    @Override // s4.v
+    public final void q(s4.c1 c1Var) {
     }
 }

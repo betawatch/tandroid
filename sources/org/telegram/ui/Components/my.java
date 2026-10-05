@@ -5,7 +5,7 @@ import java.util.LinkedHashSet;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class my implements bz {
     public final /* synthetic */ ny a;
@@ -35,7 +35,7 @@ public final class my implements bz {
         String str = this.a.v;
         yw ywVar = new yw(2, this, str);
         if (Emoji.fullyConsistsOfEmojis(str)) {
-            rx0.F3.fetch(UserConfig.selectedAccount, str, new org.telegram.ui.qc(22, linkedHashSet, ywVar));
+            sx0.F3.fetch(UserConfig.selectedAccount, str, new org.telegram.ui.qc(22, linkedHashSet, ywVar));
         } else {
             ywVar.run();
         }

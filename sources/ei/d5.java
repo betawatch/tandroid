@@ -22,7 +22,7 @@ import org.telegram.ui.Components.n5;
 import org.telegram.ui.Components.q5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class d5 {
     public static void a(int i10, long j3, org.telegram.ui.web.q qVar) {
@@ -115,7 +115,7 @@ public abstract class d5 {
         if (activity == null) {
             return false;
         }
-        return org.telegram.messenger.f0.v("requested_", j3, activity.getSharedPreferences("botemojistatus_" + i10, 0), false);
+        return org.telegram.messenger.q.w("requested_", j3, activity.getSharedPreferences("botemojistatus_" + i10, 0), false);
     }
 
     public static void e(Context context, int i10, long j3) {

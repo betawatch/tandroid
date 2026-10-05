@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Switch;
@@ -27,7 +27,7 @@ import org.telegram.ui.Components.nj0;
 import org.telegram.ui.d10;
 import org.telegram.ui.fp0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class r8 extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 E;
@@ -523,7 +523,7 @@ public class r8 extends FrameLayout {
         org.telegram.ui.ActionBar.i5 i5Var3 = this.b;
         if (i5Var3.getVisibility() == 0) {
             float f7 = this.v > 50 ? 4 : 2;
-            int dp4 = AndroidUtilities.dp(1.0f) + ok.z(f7, (i14 - i5Var2.getTextHeight()) - i5Var3.getTextHeight(), 2);
+            int dp4 = AndroidUtilities.dp(1.0f) + bi.z(f7, (i14 - i5Var2.getTextHeight()) - i5Var3.getTextHeight(), 2);
             i5Var2.layout(dp, dp4, i5Var2.getMeasuredWidth() + dp, i5Var2.getMeasuredHeight() + dp4);
             int dp5 = AndroidUtilities.dp(f7) + i5Var2.getTextHeight() + dp4;
             i5Var3.layout(dp, dp5, i5Var3.getMeasuredWidth() + dp, i5Var3.getMeasuredHeight() + dp5);
@@ -568,8 +568,8 @@ public class r8 extends FrameLayout {
         org.telegram.ui.ActionBar.i5 i5Var2 = this.d;
         org.telegram.ui.ActionBar.i5 i5Var3 = this.a;
         if (z10) {
-            i5Var3.measure(ok.c(this.n + 71, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
-            i5Var.measure(ok.c(this.n + 71, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
+            i5Var3.measure(bi.c(this.n + 71, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
+            i5Var.measure(bi.c(this.n + 71, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
             p6Var.measure(View.MeasureSpec.makeMeasureSpec((size - AndroidUtilities.dp(this.n + 103)) - i5Var3.getTextWidth(), LocaleController.isRTL ? TLObject.FLAG_31 : TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
             i5Var2.measure(View.MeasureSpec.makeMeasureSpec((size - AndroidUtilities.dp(this.n + 103)) - i5Var3.getTextWidth(), LocaleController.isRTL ? TLObject.FLAG_31 : TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
         } else {

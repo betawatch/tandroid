@@ -17,7 +17,6 @@ import e2.v;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import hg.k0;
 import j$.util.DesugarCollections;
 import java.math.RoundingMode;
 import java.util.ArrayDeque;
@@ -32,7 +31,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import v7.t6;
 import v7.z7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class h implements c3.o {
     public static final byte[] O = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
@@ -51,7 +50,7 @@ public final class h implements c3.o {
     public boolean L;
     public boolean M;
     public long N;
-    public final z3.l a;
+    public final z3.k a;
     public final int b;
     public final List c;
     public final byte[] h;
@@ -84,8 +83,8 @@ public final class h implements c3.o {
         P = new s(rVar);
     }
 
-    public h(z3.l lVar, int i10, b0 b0Var, List list, l2.o oVar) {
-        this.a = lVar;
+    public h(z3.k kVar, int i10, b0 b0Var, List list, l2.o oVar) {
+        this.a = kVar;
         this.b = i10;
         this.j = b0Var;
         this.c = DesugarCollections.unmodifiableList(list);
@@ -147,7 +146,7 @@ public final class h implements c3.o {
         int i11 = qVar.e;
         v vVar2 = qVar.n;
         if (B != i11) {
-            StringBuilder j10 = k0.j(B, "Senc sample count ", " is different from fragment sample count");
+            StringBuilder j10 = hg.c.j(B, "Senc sample count ", " is different from fragment sample count");
             j10.append(qVar.e);
             throw s0.a(null, j10.toString());
         }
@@ -708,7 +707,7 @@ public final class h implements c3.o {
                                         int x10 = vVar6.x();
                                         int B2 = vVar6.B();
                                         if (B2 > qVar3.e) {
-                                            StringBuilder j27 = k0.j(B2, "Saiz sample count ", " is greater than fragment sample count");
+                                            StringBuilder j27 = hg.c.j(B2, "Saiz sample count ", " is greater than fragment sample count");
                                             j27.append(qVar3.e);
                                             throw s0.a(null, j27.toString());
                                         }

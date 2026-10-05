@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -229,18 +229,18 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implem
                 int indexOf = privacySettingsActivity.d.login_email_pattern.indexOf(42);
                 int lastIndexOf = privacySettingsActivity.d.login_email_pattern.lastIndexOf(42);
                 if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                    org.telegram.ui.Components.m11 m11Var = new org.telegram.ui.Components.m11();
-                    m11Var.a |= 256;
-                    m11Var.b = indexOf;
+                    org.telegram.ui.Components.n11 n11Var = new org.telegram.ui.Components.n11();
+                    n11Var.a |= 256;
+                    n11Var.b = indexOf;
                     int i13 = lastIndexOf + 1;
-                    m11Var.c = i13;
-                    valueOf.setSpan(new org.telegram.ui.Components.n11(m11Var, 0), indexOf, i13, 0);
+                    n11Var.c = i13;
+                    valueOf.setSpan(new org.telegram.ui.Components.o11(n11Var, 0), indexOf, i13, 0);
                 }
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(context);
                 alertDialog$Builder2.a.R = valueOf;
                 alertDialog$Builder2.a.T = LocaleController.getString(R.string.EmailLoginChangeMessage);
                 alertDialog$Builder2.k(LocaleController.getString(R.string.ChangeEmail), new vx0(privacySettingsActivity, 4));
-                hg.k0.o(R.string.Cancel, alertDialog$Builder2, null);
+                hg.c.p(R.string.Cancel, alertDialog$Builder2, null);
                 return;
             }
             if (i10 == privacySettingsActivity.passwordRow) {
@@ -253,7 +253,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implem
                 }
                 TL_account.Password password3 = privacySettingsActivity.d;
                 if (!password3.has_password) {
-                    privacySettingsActivity.presentFragment(new bh1(TextUtils.isEmpty(password3.email_unconfirmed_pattern) ? 6 : 5, privacySettingsActivity.d));
+                    privacySettingsActivity.presentFragment(new zg1(TextUtils.isEmpty(password3.email_unconfirmed_pattern) ? 6 : 5, privacySettingsActivity.d));
                     return;
                 }
                 TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
@@ -276,7 +276,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implem
                 }
             }
             if (i10 == privacySettingsActivity.passcodeRow) {
-                privacySettingsActivity.presentFragment(PasscodeActivity.b0());
+                privacySettingsActivity.presentFragment(PasscodeActivity.h0());
                 return;
             }
             if (i10 == privacySettingsActivity.secretWebpageRow) {
@@ -640,7 +640,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implem
         this.fragmentView = frameLayout;
         org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
         this.b = zl0Var;
-        zl0Var.s1();
+        zl0Var.r1();
         this.b.setSectionsDrawBackground(true);
         this.b.setLayoutManager(new gg.b0(i10, false, 16));
         this.b.setVerticalScrollBarEnabled(false);

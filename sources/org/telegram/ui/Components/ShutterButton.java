@@ -16,15 +16,15 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class ShutterButton extends View {
     public Drawable a;
     public DecelerateInterpolator b;
     public Paint c;
     public Paint d;
-    public uv0 e;
-    public vv0 f;
+    public vv0 e;
+    public wv0 f;
     public boolean h;
     public float n;
     public long r;
@@ -47,23 +47,23 @@ public class ShutterButton extends View {
         animatorSet.start();
     }
 
-    public final void a(vv0 vv0Var) {
-        if (this.f != vv0Var) {
-            this.f = vv0Var;
+    public final void a(wv0 wv0Var) {
+        if (this.f != wv0Var) {
+            this.f = wv0Var;
             this.r = System.currentTimeMillis();
             this.s = 0L;
-            if (this.f != vv0.b) {
+            if (this.f != wv0.b) {
                 this.n = 0.0f;
             }
             invalidate();
         }
     }
 
-    public uv0 getDelegate() {
+    public vv0 getDelegate() {
         return this.e;
     }
 
-    public vv0 getState() {
+    public wv0 getState() {
         return this.f;
     }
 
@@ -88,7 +88,7 @@ public class ShutterButton extends View {
         float f7 = measuredWidth;
         float f10 = measuredHeight;
         canvas.drawCircle(f7, f10, AndroidUtilities.dp(26.0f), paint2);
-        if (this.f != vv0.b) {
+        if (this.f != wv0.b) {
             if (this.n != 0.0f) {
                 canvas.drawCircle(f7, f10, AndroidUtilities.dp(26.5f) * scaleX, paint);
                 return;
@@ -165,7 +165,7 @@ public class ShutterButton extends View {
             }
             ul ulVar = (ul) this.e;
             ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ulVar.e;
-            ba1 ba1Var = chatAttachAlertPhotoLayout.l0;
+            ca1 ca1Var = chatAttachAlertPhotoLayout.l0;
             org.telegram.ui.ActionBar.d3 d3Var = ulVar.d;
             boolean z10 = d3Var.getWidth() < d3Var.getHeight();
             float f7 = z10 ? x10 : y3;
@@ -174,12 +174,12 @@ public class ShutterButton extends View {
                 if (f10 < 0.0f) {
                     boolean z11 = ChatAttachAlertPhotoLayout.q1;
                     chatAttachAlertPhotoLayout.t0(true);
-                    ba1Var.b((-f10) / AndroidUtilities.dp(200.0f), true);
+                    ca1Var.b((-f10) / AndroidUtilities.dp(200.0f), true);
                     ulVar.b = true;
                     return true;
                 }
                 if (ulVar.b) {
-                    ba1Var.b(0.0f, true);
+                    ca1Var.b(0.0f, true);
                 }
                 if (x10 == 0.0f && y3 == 0.0f) {
                     ulVar.b = false;
@@ -188,7 +188,7 @@ public class ShutterButton extends View {
                     if (x10 == 0.0f) {
                     }
                     AndroidUtilities.cancelRunOnUIThread(t6Var);
-                    if (this.f == vv0.b) {
+                    if (this.f == wv0.b) {
                         this.v = false;
                         setHighlighted(false);
                         ul ulVar2 = (ul) this.e;
@@ -201,7 +201,7 @@ public class ShutterButton extends View {
                         boolean z12 = ChatAttachAlertPhotoLayout.q1;
                         chatAttachAlertPhotoLayout2.l0();
                         CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout2.P.getCameraSession(), true);
-                        a(vv0.a);
+                        a(wv0.a);
                         return true;
                     }
                 }
@@ -214,8 +214,8 @@ public class ShutterButton extends View {
         return true;
     }
 
-    public void setDelegate(uv0 uv0Var) {
-        this.e = uv0Var;
+    public void setDelegate(vv0 vv0Var) {
+        this.e = vv0Var;
     }
 
     @Override // android.view.View

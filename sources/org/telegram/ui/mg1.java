@@ -1,20 +1,9 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class mg1 extends bh1 {
-    public final /* synthetic */ TwoStepVerificationActivity k0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mg1(TwoStepVerificationActivity twoStepVerificationActivity, int i10, TL_account.Password password) {
-        super(i10, 4, password);
-        this.k0 = twoStepVerificationActivity;
-    }
-
-    @Override // org.telegram.ui.bh1
-    public final void B0() {
-        this.k0.N = true;
-    }
+public interface mg1 {
+    void j(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP);
 }

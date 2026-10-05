@@ -13,9 +13,9 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.ui.PasscodeActivity;
-import org.telegram.ui.zb1;
+import org.telegram.ui.xb1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class tn implements TextWatcher {
     public final /* synthetic */ int a;
@@ -59,10 +59,10 @@ public final class tn implements TextWatcher {
                 break;
             case 1:
                 xn xnVar2 = ((vn) obj).d;
-                zb1 zb1Var = xnVar2.s;
+                xb1 xb1Var = xnVar2.s;
                 un unVar = (un) this.c;
-                View F = zb1Var.F(unVar);
-                T = F != null ? zb1Var.T(F) : null;
+                View F = xb1Var.F(unVar);
+                T = F != null ? xb1Var.T(F) : null;
                 if (T != null) {
                     View view = T.a;
                     int b10 = T.b();
@@ -156,10 +156,10 @@ public final class tn implements TextWatcher {
                 break;
             case 6:
                 org.telegram.ui.uv0 uv0Var3 = ((org.telegram.ui.sv0) obj).d;
-                zb1 zb1Var2 = uv0Var3.c;
+                xb1 xb1Var2 = uv0Var3.c;
                 org.telegram.ui.rv0 rv0Var = (org.telegram.ui.rv0) this.c;
-                View F2 = zb1Var2.F(rv0Var);
-                T = F2 != null ? zb1Var2.T(F2) : null;
+                View F2 = xb1Var2.F(rv0Var);
+                T = F2 != null ? xb1Var2.T(F2) : null;
                 if (T != null) {
                     View view2 = T.a;
                     int b11 = T.b() - uv0Var3.n0;

@@ -6,16 +6,16 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.aa1;
 import org.telegram.ui.Components.ba1;
+import org.telegram.ui.Components.ca1;
 import org.telegram.ui.Components.gf0;
-import org.telegram.ui.Components.h91;
+import org.telegram.ui.Components.i91;
 import org.telegram.ui.Components.n00;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class d2 extends org.telegram.ui.Components.r6 {
     public final /* synthetic */ int b;
@@ -75,23 +75,23 @@ public final class d2 extends org.telegram.ui.Components.r6 {
                 org.telegram.ui.ActionBar.d6 d6Var = n00Var.a;
                 n00Var.T.setColor(i0.a.d(f7, org.telegram.ui.ActionBar.i6.v0(i10, d6Var), org.telegram.ui.ActionBar.i6.v0(n00Var.c0, d6Var)));
                 ai.w0 w0Var = n00Var.F;
-                w0Var.h1();
+                w0Var.g1();
                 w0Var.invalidate();
                 ((n00) obj).invalidate();
                 break;
             case 4:
-                h91 h91Var = (h91) this.c;
-                h91Var.x = f7;
-                h91Var.invalidate();
+                i91 i91Var = (i91) this.c;
+                i91Var.x = f7;
+                i91Var.invalidate();
                 break;
             case 5:
-                ba1 ba1Var = (ba1) this.c;
-                ba1Var.E = f7;
-                aa1 aa1Var = ba1Var.L;
-                if (aa1Var != null) {
-                    aa1Var.a(f7);
+                ca1 ca1Var = (ca1) this.c;
+                ca1Var.E = f7;
+                ba1 ba1Var = ca1Var.L;
+                if (ba1Var != null) {
+                    ba1Var.a(f7);
                 }
-                ba1Var.invalidate();
+                ca1Var.invalidate();
                 break;
             case 6:
                 ((View) obj).setAlpha(f7);
@@ -119,9 +119,9 @@ public final class d2 extends org.telegram.ui.Components.r6 {
             case 3:
                 return Float.valueOf(((n00) this.c).w0);
             case 4:
-                return Float.valueOf(((h91) this.c).x);
+                return Float.valueOf(((i91) this.c).x);
             case 5:
-                return Float.valueOf(((ba1) this.c).E);
+                return Float.valueOf(((ca1) this.c).E);
             case 6:
                 return Float.valueOf(((View) obj).getAlpha());
             default:
@@ -130,17 +130,17 @@ public final class d2 extends org.telegram.ui.Components.r6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d2(h91 h91Var) {
+    public d2(i91 i91Var) {
         super("progress", 0);
         this.b = 4;
-        this.c = h91Var;
+        this.c = i91Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d2(ba1 ba1Var) {
+    public d2(ca1 ca1Var) {
         super("clipProgress", 0);
         this.b = 5;
-        this.c = ba1Var;
+        this.c = ca1Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

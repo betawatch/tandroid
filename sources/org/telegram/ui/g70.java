@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class g70 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -36,13 +36,13 @@ public final class g70 extends AnimatorListenerAdapter {
                 }
                 break;
             case 9:
-                ((a91) this.c).n = null;
+                ((y81) this.c).n = null;
                 break;
             case 11:
-                bh1 bh1Var = (bh1) this.c;
-                AnimatorSet animatorSet = bh1Var.I;
+                zg1 zg1Var = (zg1) this.c;
+                AnimatorSet animatorSet = zg1Var.I;
                 if (animatorSet != null && animatorSet.equals(animator)) {
-                    bh1Var.I = null;
+                    zg1Var.I = null;
                     break;
                 }
                 break;
@@ -134,50 +134,50 @@ public final class g70 extends AnimatorListenerAdapter {
                     break;
                 }
             case 7:
-                e51 e51Var = (e51) this.c;
-                e51Var.v = this.b ? 1.0f : 0.0f;
-                if (e51Var.S) {
-                    e51Var.N.invalidate();
+                c51 c51Var = (c51) this.c;
+                c51Var.v = this.b ? 1.0f : 0.0f;
+                if (c51Var.S) {
+                    c51Var.N.invalidate();
                     break;
                 }
                 break;
             case 8:
-                y61 y61Var = (y61) this.c;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = y61Var.v;
+                w61 w61Var = (w61) this.c;
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = w61Var.v;
                 float f7 = this.b ? 1.0f : 0.0f;
-                y61Var.L = f7;
+                w61Var.L = f7;
                 actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleY(f7);
-                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.tr.g.getInterpolation(y61Var.L));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(org.telegram.ui.Components.tr.g.getInterpolation(w61Var.L));
                 int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
                 for (int i10 = 0; i10 < itemsCount; i10++) {
-                    float cascade = AndroidUtilities.cascade(y61Var.L, i10, itemsCount, 4.0f);
+                    float cascade = AndroidUtilities.cascade(w61Var.L, i10, itemsCount, 4.0f);
                     actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10).setTranslationY((1.0f - cascade) * AndroidUtilities.dp(-12.0f));
                     actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10).setAlpha(cascade);
                 }
-                y61Var.N = null;
+                w61Var.N = null;
                 break;
             case 9:
-                a91 a91Var = (a91) this.c;
-                if (a91Var.n != null && (z3Var = a91Var.r) != null) {
+                y81 y81Var = (y81) this.c;
+                if (y81Var.n != null && (z3Var = y81Var.r) != null) {
                     if (!this.b) {
                         z3Var.setVisibility(4);
                     }
-                    a91Var.n = null;
+                    y81Var.n = null;
                     break;
                 }
                 break;
             case 10:
-                ((ge1) this.c).y = this.b ? 1.0f : 0.0f;
+                ((ee1) this.c).y = this.b ? 1.0f : 0.0f;
                 break;
             case 11:
-                bh1 bh1Var = (bh1) this.c;
-                AnimatorSet animatorSet2 = bh1Var.I;
+                zg1 zg1Var = (zg1) this.c;
+                AnimatorSet animatorSet2 = zg1Var.I;
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
                     if (this.b) {
-                        bh1Var.e.setVisibility(4);
+                        zg1Var.e.setVisibility(4);
                         break;
                     } else {
-                        bh1Var.b.setVisibility(4);
+                        zg1Var.b.setVisibility(4);
                         break;
                     }
                 }
@@ -250,28 +250,28 @@ public final class g70 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                zg.b0 b0Var = (zg.b0) this.c;
-                org.telegram.ui.Components.sk0 sk0Var = b0Var.n;
-                b0Var.k();
-                b0Var.l();
+                zg.z zVar = (zg.z) this.c;
+                org.telegram.ui.Components.sk0 sk0Var = zVar.n;
+                zVar.k();
+                zVar.l();
                 boolean z10 = this.b;
-                zg.b0.a(b0Var, z10);
-                b0Var.m.invalidateOutline();
-                b0Var.j = z10 ? 1.0f : 0.0f;
+                zg.z.a(zVar, z10);
+                zVar.m.invalidateOutline();
+                zVar.j = z10 ? 1.0f : 0.0f;
                 if (z10) {
-                    b0Var.k = true;
-                    b0Var.a.invalidate();
+                    zVar.k = true;
+                    zVar.a.invalidate();
                 }
-                sk0Var.setCustomEmojiEnterProgress(Utilities.clamp(b0Var.j, 1.0f, 0.0f));
+                sk0Var.setCustomEmojiEnterProgress(Utilities.clamp(zVar.j, 1.0f, 0.0f));
                 if (!z10) {
                     sk0Var.setImportantForAccessibility(0);
                     sk0Var.setSkipDraw(false);
-                    b0Var.f();
+                    zVar.f();
                     Runtime.getRuntime().gc();
-                    int i11 = b0Var.y;
+                    int i11 = zVar.y;
                     sk0Var.setCustomEmojiReactionsBackground((i11 == 4 || i11 == 5) ? false : true);
                 }
-                b0Var.C = false;
+                zVar.C = false;
                 break;
         }
     }

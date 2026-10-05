@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class ja extends zl0 {
     public int e3;
@@ -19,7 +19,7 @@ public abstract class ja extends zl0 {
 
     @Override // org.telegram.ui.Components.zl0, android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
-        if (this.e3 == 0 || a1()) {
+        if (this.e3 == 0 || Z0()) {
             super.dispatchDraw(canvas);
         } else {
             canvas.clipRect(0, this.e3, getMeasuredWidth(), getMeasuredHeight() + this.i3);
@@ -29,7 +29,7 @@ public abstract class ja extends zl0 {
 
     @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view.getY() + view.getMeasuredHeight() >= this.e3 || this.j3 || a1()) {
+        if (view.getY() + view.getMeasuredHeight() >= this.e3 || this.j3 || Z0()) {
             return super.drawChild(canvas, view, j3);
         }
         return true;
@@ -45,13 +45,13 @@ public abstract class ja extends zl0 {
     @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        z1();
+        y1();
     }
 
     @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i10, int i11) {
         this.h3 = true;
-        z1();
+        y1();
         super.setPadding(getPaddingLeft(), this.f3 + this.e3, getPaddingRight(), getPaddingBottom());
         this.h3 = false;
         super.onMeasure(i10, i11);
@@ -72,11 +72,11 @@ public abstract class ja extends zl0 {
         super.setPadding(i10, i11 + this.e3, i12, i13);
     }
 
-    public int y1() {
+    public int x1() {
         return AndroidUtilities.dp(203.0f);
     }
 
-    public final void z1() {
+    public final void y1() {
         if (getLayoutParams() == null) {
             return;
         }
@@ -84,7 +84,7 @@ public abstract class ja extends zl0 {
             this.e3 = 0;
             ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = 0;
         } else {
-            this.e3 = y1();
+            this.e3 = x1();
             ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = -this.e3;
         }
     }

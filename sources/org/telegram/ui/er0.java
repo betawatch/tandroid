@@ -27,7 +27,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class er0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class er0 implements View.OnClickListener {
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         int i10;
-        org.telegram.ui.Components.d81 d81Var;
+        org.telegram.ui.Components.e81 e81Var;
         int i11;
         Bitmap bitmap;
         Bitmap bitmap2;
@@ -128,7 +128,7 @@ public final /* synthetic */ class er0 implements View.OnClickListener {
                     long time = photoViewer10.q5.getTime();
                     String y12 = PhotoViewer.y1();
                     photoViewer10.q5.b.setLoading(true);
-                    Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.h31(photoViewer10, y12, photoEntry, time, 5));
+                    Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.i31(photoViewer10, y12, photoEntry, time, 5));
                     break;
                 }
                 break;
@@ -225,8 +225,8 @@ public final /* synthetic */ class er0 implements View.OnClickListener {
                 }
                 photoViewer12.f1.a(!photoViewer12.Q1(), true);
                 photoViewer12.S7.animate().alpha(photoViewer12.Q1() ? 0.45f : 1.0f).start();
-                if (photoViewer12.Q1() && (d81Var = photoViewer12.F2) != null) {
-                    d81Var.B();
+                if (photoViewer12.Q1() && (e81Var = photoViewer12.F2) != null) {
+                    e81Var.B();
                 }
                 photoViewer12.e0.invalidate();
                 if (photoViewer12.h1 == null) {
@@ -433,7 +433,7 @@ public final /* synthetic */ class er0 implements View.OnClickListener {
                     if (photoViewer20.m4 == null || (of2 = photoViewer20.l4.e5) == null) {
                         of2 = MessageSuggestionParams.of(photoViewer20.l4.n5.messageOwner.suggested_post);
                     }
-                    if (!yh.t5.U(photoViewer20.T, of2.amount)) {
+                    if (!yh.u5.U(photoViewer20.T, of2.amount)) {
                         yn ynVar2 = photoViewer20.l4;
                         if (ynVar2 != null) {
                             ynVar2.Sb(of2);
@@ -481,9 +481,9 @@ public final /* synthetic */ class er0 implements View.OnClickListener {
                     if (photoViewer22.r1) {
                         if (photoViewer22.k8) {
                             TextureView textureView = photoViewer22.B2;
-                            if (textureView instanceof org.telegram.ui.Components.t71) {
-                                org.telegram.ui.Components.t71 t71Var = (org.telegram.ui.Components.t71) textureView;
-                                if (t71Var.getVideoWidth() <= 0 || t71Var.getVideoHeight() <= 0) {
+                            if (textureView instanceof org.telegram.ui.Components.u71) {
+                                org.telegram.ui.Components.u71 u71Var = (org.telegram.ui.Components.u71) textureView;
+                                if (u71Var.getVideoWidth() <= 0 || u71Var.getVideoHeight() <= 0) {
                                 }
                             }
                         }
@@ -510,9 +510,9 @@ public final /* synthetic */ class er0 implements View.OnClickListener {
                     if (photoViewer25.r1) {
                         if (photoViewer25.k8) {
                             TextureView textureView2 = photoViewer25.B2;
-                            if (textureView2 instanceof org.telegram.ui.Components.t71) {
-                                org.telegram.ui.Components.t71 t71Var2 = (org.telegram.ui.Components.t71) textureView2;
-                                if (t71Var2.getVideoWidth() <= 0 || t71Var2.getVideoHeight() <= 0) {
+                            if (textureView2 instanceof org.telegram.ui.Components.u71) {
+                                org.telegram.ui.Components.u71 u71Var2 = (org.telegram.ui.Components.u71) textureView2;
+                                if (u71Var2.getVideoWidth() <= 0 || u71Var2.getVideoHeight() <= 0) {
                                 }
                             }
                         }
@@ -530,9 +530,9 @@ public final /* synthetic */ class er0 implements View.OnClickListener {
                         if (photoViewer26.r1) {
                             if (photoViewer26.k8) {
                                 TextureView textureView3 = photoViewer26.B2;
-                                if (textureView3 instanceof org.telegram.ui.Components.t71) {
-                                    org.telegram.ui.Components.t71 t71Var3 = (org.telegram.ui.Components.t71) textureView3;
-                                    if (t71Var3.getVideoWidth() <= 0 || t71Var3.getVideoHeight() <= 0) {
+                                if (textureView3 instanceof org.telegram.ui.Components.u71) {
+                                    org.telegram.ui.Components.u71 u71Var3 = (org.telegram.ui.Components.u71) textureView3;
+                                    if (u71Var3.getVideoWidth() <= 0 || u71Var3.getVideoHeight() <= 0) {
                                     }
                                 }
                             }

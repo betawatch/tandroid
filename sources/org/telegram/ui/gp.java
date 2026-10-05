@@ -11,7 +11,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class gp extends org.telegram.ui.Components.zl0 {
     public static final /* synthetic */ int i3 = 0;
@@ -38,7 +38,7 @@ public final class gp extends org.telegram.ui.Components.zl0 {
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int R;
-        int size = this.h3.N.size();
+        int size = this.h3.O.size();
         int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
         int i11 = TLObject.FLAG_31;
         for (int i12 = 0; i12 < getChildCount(); i12++) {
@@ -65,11 +65,11 @@ public final class gp extends org.telegram.ui.Components.zl0 {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
     }
 
-    public final void y1(TLRPC.TL_username tL_username, boolean z10, boolean z11) {
+    public final void x1(TLRPC.TL_username tL_username, boolean z10, boolean z11) {
         TLRPC.TL_username tL_username2;
         int min;
         hp hpVar = this.h3;
-        ArrayList arrayList = hpVar.N;
+        ArrayList arrayList = hpVar.O;
         int i10 = 0;
         for (int i11 = 0; i11 < arrayList.size(); i11++) {
             if (arrayList.get(i11) == tL_username) {
@@ -121,7 +121,7 @@ public final class gp extends org.telegram.ui.Components.zl0 {
                         }
                         if (childAt instanceof pa) {
                             pa paVar = (pa) childAt;
-                            paVar.setLoading(hpVar.P.contains(tL_username2.username));
+                            paVar.setLoading(hpVar.Q.contains(tL_username2.username));
                             TLRPC.TL_username tL_username3 = paVar.v;
                             if (tL_username3 != null) {
                                 paVar.a(tL_username3, paVar.w, true, paVar.x);
@@ -136,7 +136,7 @@ public final class gp extends org.telegram.ui.Components.zl0 {
                 }
                 int i18 = i13 - 1;
                 fp fpVar = this.e3;
-                ArrayList arrayList2 = fpVar.c.h3.N;
+                ArrayList arrayList2 = fpVar.c.h3.O;
                 if (i11 >= arrayList2.size() || i18 >= arrayList2.size()) {
                     return;
                 }

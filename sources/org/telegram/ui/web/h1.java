@@ -15,22 +15,22 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.tx0;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.x61;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.ux0;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.xb0;
+import org.telegram.ui.Components.z61;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class h1 extends x61 {
+public final class h1 extends z61 {
     public final Utilities.Callback e;
     public boolean n;
     public String r;
     public NumberTextView s;
     public org.telegram.ui.ActionBar.v0 w;
-    public tx0 x;
+    public ux0 x;
     public ArrayList f = e1.a(new ii.q1(this, 4));
     public final ArrayList h = new ArrayList();
     public final HashSet v = new HashSet();
@@ -39,8 +39,8 @@ public final class h1 extends x61 {
         this.e = callback;
     }
 
-    @Override // org.telegram.ui.Components.x61
-    public final void S(ArrayList arrayList, u61 u61Var) {
+    @Override // org.telegram.ui.Components.z61
+    public final void S(ArrayList arrayList, w61 w61Var) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeZone(TimeZone.getDefault());
         int i10 = 5;
@@ -54,17 +54,17 @@ public final class h1 extends x61 {
                     calendar.setTimeInMillis(d1Var.b);
                     int i13 = calendar.get(5) + (calendar.get(2) * 100) + (calendar.get(1) * 10000);
                     if (i12 != i13) {
-                        arrayList.add(g61.q(LocaleController.formatDateChat(d1Var.b / 1000)));
+                        arrayList.add(h61.r(LocaleController.formatDateChat(d1Var.b / 1000)));
                         i12 = i13;
                     }
                     String str = this.r;
                     int i14 = g.a;
-                    g61 J = g61.J(g.class);
-                    J.z = 3;
-                    J.q = false;
-                    J.H = d1Var;
-                    J.m = str;
-                    arrayList.add(J);
+                    h61 K = h61.K(g.class);
+                    K.z = 3;
+                    K.q = false;
+                    K.H = d1Var;
+                    K.m = str;
+                    arrayList.add(K);
                 }
             }
         } else {
@@ -76,53 +76,53 @@ public final class h1 extends x61 {
                 calendar.setTimeInMillis(d1Var2.b);
                 int i16 = calendar.get(i10) + (calendar.get(i11) * 100) + (calendar.get(1) * 10000);
                 if (i15 != i16) {
-                    arrayList.add(g61.q(LocaleController.formatDateChat(d1Var2.b / 1000)));
+                    arrayList.add(h61.r(LocaleController.formatDateChat(d1Var2.b / 1000)));
                     i15 = i16;
                 }
                 String str2 = this.r;
                 int i17 = g.a;
-                g61 J2 = g61.J(g.class);
-                J2.z = 3;
-                J2.q = false;
-                J2.H = d1Var2;
-                J2.m = str2;
-                arrayList.add(J2);
+                h61 K2 = h61.K(g.class);
+                K2.z = 3;
+                K2.q = false;
+                K2.H = d1Var2;
+                K2.m = str2;
+                arrayList.add(K2);
                 size2--;
                 i10 = 5;
                 i11 = 2;
             }
             if (this.n) {
-                arrayList.add(g61.o(32));
-                arrayList.add(g61.o(32));
-                arrayList.add(g61.o(32));
+                arrayList.add(h61.p(32));
+                arrayList.add(h61.p(32));
+                arrayList.add(h61.p(32));
             }
         }
         if (arrayList.isEmpty()) {
             return;
         }
-        arrayList.add(g61.B(null));
+        arrayList.add(h61.C(null));
     }
 
-    @Override // org.telegram.ui.Components.x61
+    @Override // org.telegram.ui.Components.z61
     public final CharSequence T() {
         return LocaleController.getString(R.string.WebHistory);
     }
 
-    @Override // org.telegram.ui.Components.x61
-    public final void U(g61 g61Var, View view) {
-        if (!g61Var.G(g.class) || this.actionBar.s()) {
+    @Override // org.telegram.ui.Components.z61
+    public final void U(h61 h61Var, View view) {
+        if (!h61Var.H(g.class) || this.actionBar.s()) {
             return;
         }
         finishFragment();
-        this.e.run((d1) g61Var.H);
+        this.e.run((d1) h61Var.H);
     }
 
-    @Override // org.telegram.ui.Components.x61
-    public final boolean W(g61 g61Var, View view) {
+    @Override // org.telegram.ui.Components.z61
+    public final boolean W(h61 h61Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.x61, org.telegram.ui.ActionBar.n2
+    @Override // org.telegram.ui.Components.z61, org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         this.fragmentView = super.createView(context);
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
@@ -133,9 +133,9 @@ public final class h1 extends x61 {
         org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
         int i11 = i6.G6;
         kVar2.setTitleColor(getThemedColor(i11));
-        this.actionBar.A(getThemedColor(i6.z8), false);
-        this.actionBar.B(getThemedColor(i11), false);
-        this.actionBar.B(getThemedColor(i11), true);
+        this.actionBar.z(getThemedColor(i6.z8), false);
+        this.actionBar.A(getThemedColor(i11), false);
+        this.actionBar.A(getThemedColor(i11), true);
         this.actionBar.setCastShadows(true);
         this.actionBar.setActionBarMenuOnItemClick(new f1(this));
         org.telegram.ui.ActionBar.z j3 = this.actionBar.j(null);
@@ -156,9 +156,9 @@ public final class h1 extends x61 {
         searchField.setTextColor(getThemedColor(i11));
         searchField.setHintTextColor(getThemedColor(i6.Si));
         searchField.setCursorColor(getThemedColor(i11));
-        tx0 tx0Var = new tx0(context, null, 1, null);
-        this.x = tx0Var;
-        tx0Var.d.setText(LocaleController.getString(TextUtils.isEmpty(this.r) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
+        ux0 ux0Var = new ux0(context, null, 1, null);
+        this.x = ux0Var;
+        ux0Var.d.setText(LocaleController.getString(TextUtils.isEmpty(this.r) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
         this.x.e.setVisibility(8);
         this.x.e(false, false);
         this.x.setAnimateLayoutChange(true);

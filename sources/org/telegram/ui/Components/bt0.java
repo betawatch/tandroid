@@ -1,21 +1,32 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class bt0 extends FragmentContextView {
-    public final /* synthetic */ pv0 Q0;
+public final class bt0 extends org.telegram.ui.Cells.j7 {
+    public final /* synthetic */ qv0 l0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bt0(pv0 pv0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, pv0 pv0Var2, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context, n2Var, pv0Var2, false, d6Var);
-        this.Q0 = pv0Var;
+    public bt0(qv0 qv0Var, Context context) {
+        super(context);
+        this.l0 = qv0Var;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        pv0 pv0Var = this.Q0;
-        pv0Var.P0.i(pv0Var.Q0, i10 == 0, true);
+    @Override // org.telegram.ui.Cells.j7
+    public final boolean d(MessageObject messageObject) {
+        boolean isVoice = messageObject.isVoice();
+        qv0 qv0Var = this.l0;
+        if (isVoice || messageObject.isRoundVideo()) {
+            boolean playMessage = MediaController.getInstance().playMessage(messageObject);
+            MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? qv0Var.t1[4].a : null, false);
+            return playMessage;
+        }
+        if (messageObject.isMusic()) {
+            return MediaController.getInstance().setPlaylist(qv0Var.t1[4].a, messageObject, qv0Var.c1);
+        }
+        return false;
     }
 }

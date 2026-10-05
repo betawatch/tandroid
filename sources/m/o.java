@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import v7.v7;
 import w7.s7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class o extends CheckedTextView implements u0.k {
     public final p a;
@@ -55,7 +55,7 @@ public final class o extends CheckedTextView implements u0.k {
                 } catch (Resources.NotFoundException unused) {
                 }
                 if (typedArray.hasValue(2)) {
-                    setCheckMarkTintList(Q.D(2));
+                    setCheckMarkTintList(Q.y(2));
                 }
                 if (typedArray.hasValue(3)) {
                     setCheckMarkTintMode(l1.b(typedArray.getInt(3, -1), null));

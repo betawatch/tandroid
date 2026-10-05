@@ -15,31 +15,31 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.e71;
 import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.d10;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class b4 extends f61 {
+public final class b4 extends g61 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        f61.setup(new b4());
+        g61.setup(new b4());
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final void bindView(View view, g61 g61Var, boolean z10, u61 u61Var, c71 c71Var) {
-        Object obj = g61Var.G;
+    @Override // org.telegram.ui.Components.g61
+    public final void bindView(View view, h61 h61Var, boolean z10, w61 w61Var, e71 e71Var) {
+        Object obj = h61Var.G;
         if (!(obj instanceof TL_payments.connectedBotStarRef)) {
             if (obj instanceof TL_payments.starRefProgram) {
                 c4 c4Var = (c4) view;
                 TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj;
-                boolean z11 = g61Var.r;
+                boolean z11 = h61Var.r;
                 TLRPC.User user = MessagesController.getInstance(c4Var.a).getUser(Long.valueOf(starrefprogram.bot_id));
                 h9 h9Var = new h9((d6) null);
                 h9Var.r(user);
@@ -78,7 +78,7 @@ public final class b4 extends f61 {
         }
         c4 c4Var2 = (c4) view;
         TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj;
-        boolean z12 = g61Var.r;
+        boolean z12 = h61Var.r;
         View view2 = c4Var2.e;
         ImageView imageView = c4Var2.f;
         TLRPC.User user2 = MessagesController.getInstance(c4Var2.a).getUser(Long.valueOf(connectedbotstarref.bot_id));
@@ -120,7 +120,7 @@ public final class b4 extends f61 {
         c4Var2.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.g61
     public final View createView(Context context, zl0 zl0Var, int i10, int i11, d6 d6Var) {
         return new c4(context, i10, d6Var);
     }

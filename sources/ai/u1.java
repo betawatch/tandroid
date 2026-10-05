@@ -15,13 +15,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.h31;
+import org.telegram.ui.Components.i31;
 import org.telegram.ui.Components.sj0;
 import org.telegram.ui.Components.yw;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.uq;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -322,7 +322,7 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                 break;
             case 3:
                 Pattern pattern = LaunchActivity.B1;
-                AndroidUtilities.runOnUIThread(new h31(tLObject, (MessagesController) obj2, this.b, (uq) obj, 3));
+                AndroidUtilities.runOnUIThread(new i31(tLObject, (MessagesController) obj2, this.b, (uq) obj, 3));
                 break;
             case 4:
                 MessagesController messagesController = (MessagesController) obj2;
@@ -343,12 +343,12 @@ public final /* synthetic */ class u1 implements RequestDelegate {
                 }
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new h31((yh.t5) obj2, tLObject, this.b, (Utilities.Callback) obj, 10));
+                AndroidUtilities.runOnUIThread(new i31((yh.u5) obj2, tLObject, this.b, (Utilities.Callback) obj, 10));
                 break;
             default:
-                yh.s5 s5Var = (yh.s5) obj2;
-                s5Var.getClass();
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f(s5Var, tLObject, (MessagesController) obj, tL_error, this.b));
+                yh.t5 t5Var = (yh.t5) obj2;
+                t5Var.getClass();
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f(t5Var, tLObject, (MessagesController) obj, tL_error, this.b));
                 break;
         }
     }

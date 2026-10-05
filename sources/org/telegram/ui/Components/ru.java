@@ -11,9 +11,9 @@ import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LanguageDetector;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ru implements p.a, GenericProvider, org.telegram.ui.ActionBar.a2, gh.b, cw0, dw0, ImageReceiver.ImageReceiverDelegate, r0.n, LanguageDetector.ExceptionCallback {
+public final /* synthetic */ class ru implements p.a, GenericProvider, org.telegram.ui.ActionBar.a2, gh.b, dw0, ew0, ImageReceiver.ImageReceiverDelegate, r0.n, LanguageDetector.ExceptionCallback {
     public final /* synthetic */ int a;
 
     public /* synthetic */ ru(int i10) {
@@ -30,7 +30,7 @@ public final /* synthetic */ class ru implements p.a, GenericProvider, org.teleg
         return bitmap.getConfig() == Bitmap.Config.ALPHA_8 ? bitmap : bitmap.extractAlpha();
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.ew0
     public void b(Object obj, float f7) {
         switch (this.a) {
             case 5:
@@ -80,9 +80,9 @@ public final /* synthetic */ class ru implements p.a, GenericProvider, org.teleg
                     return;
                 }
             default:
-                pp0 pp0Var = (pp0) obj;
-                pp0Var.n = f7;
-                pp0Var.invalidate();
+                qp0 qp0Var = (qp0) obj;
+                qp0Var.n = f7;
+                qp0Var.invalidate();
                 break;
         }
     }
@@ -139,7 +139,7 @@ public final /* synthetic */ class ru implements p.a, GenericProvider, org.teleg
                 b2Var.dismiss();
                 break;
             case 25:
-                int i11 = qy0.u0;
+                int i11 = ry0.u0;
                 break;
             case 26:
                 b2Var.dismiss();
@@ -150,7 +150,7 @@ public final /* synthetic */ class ru implements p.a, GenericProvider, org.teleg
         }
     }
 
-    @Override // org.telegram.ui.Components.cw0
+    @Override // org.telegram.ui.Components.dw0
     public float get(Object obj) {
         switch (this.a) {
             case 4:
@@ -164,7 +164,7 @@ public final /* synthetic */ class ru implements p.a, GenericProvider, org.teleg
             case 14:
                 return ((rg0) obj).L;
             default:
-                return ((pp0) obj).n;
+                return ((qp0) obj).n;
         }
     }
 
@@ -181,7 +181,7 @@ public final /* synthetic */ class ru implements p.a, GenericProvider, org.teleg
                 int i10 = nz.M2;
                 break;
             default:
-                int i11 = zq0.W0;
+                int i11 = br0.W0;
                 break;
         }
         return 0;

@@ -12,9 +12,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public class us extends u61 {
+public class us extends w61 {
     public final int N;
     public final int O;
     public final boolean P;
@@ -111,7 +111,7 @@ public class us extends u61 {
         if (z10) {
             ArrayList arrayList = this.T;
             if (!arrayList.isEmpty()) {
-                MessageObject messageObject = (MessageObject) hg.k0.g(1, arrayList);
+                MessageObject messageObject = (MessageObject) hg.c.g(1, arrayList);
                 tL_messages_searchGlobal.offset_rate = this.c0;
                 tL_messages_searchGlobal.offset_id = messageObject.getId();
                 if (messageObject.messageOwner.peer_id == null) {

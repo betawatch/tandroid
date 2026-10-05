@@ -14,18 +14,18 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class ac extends r {
     public final Path R1;
     public final /* synthetic */ kc S1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ac(kc kcVar, Activity activity, FrameLayout frameLayout, lw0 lw0Var, FrameLayout frameLayout2, ai.d dVar, org.telegram.ui.Components.ka kaVar) {
-        super(activity, frameLayout, lw0Var, frameLayout2, dVar, kaVar);
+    public ac(kc kcVar, Activity activity, FrameLayout frameLayout, mw0 mw0Var, FrameLayout frameLayout2, ai.d dVar, org.telegram.ui.Components.ka kaVar) {
+        super(activity, frameLayout, mw0Var, frameLayout2, dVar, kaVar);
         this.S1 = kcVar;
         this.R1 = new Path();
     }
@@ -38,7 +38,7 @@ public final class ac extends r {
             return false;
         }
         int i11 = MessagesController.getInstance(this.U).storyCaptionLengthLimitPremium;
-        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), hg.k0.h(i11, "")));
+        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), hg.c.h(i11, "")));
         int indexOf = replaceTags.toString().indexOf("__");
         if (indexOf >= 0) {
             replaceTags.replace(indexOf, indexOf + 2, (CharSequence) "");

@@ -42,7 +42,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -224,7 +224,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
                         rk0 rk0Var = new rk0();
                         rk0Var.d = longValue2;
                         ArrayList arrayList26 = arrayList14;
-                        rk0Var.b = org.telegram.messenger.f0.v(NotificationsSettingsFacade.PROPERTY_CUSTOM, longValue2, notificationsSettings, false);
+                        rk0Var.b = org.telegram.messenger.q.w(NotificationsSettingsFacade.PROPERTY_CUSTOM, longValue2, notificationsSettings, false);
                         int intValue = ((Integer) next.getValue()).intValue();
                         rk0Var.c = intValue;
                         if (intValue != 0 && (num = (Integer) all.get(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL.concat(replace))) != null) {
@@ -349,7 +349,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
         }
         ArrayList arrayList31 = arrayList27;
         ArrayList arrayList32 = arrayList;
-        Collections.sort(arrayList32, Comparator$-CC.comparingDouble(new org.telegram.ui.Components.h81(3)));
+        Collections.sort(arrayList32, Comparator$-CC.comparingDouble(new org.telegram.ui.Components.i81(3)));
         int max = Math.max(0, arrayList32.size() - 5);
         while (max < arrayList32.size()) {
             long peerDialogId = DialogObject.getPeerDialogId(((TLRPC.TL_topPeer) arrayList32.get(max)).peer);
@@ -811,7 +811,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
             notificationsSettingsActivity.presentFragment(new NotificationsCustomSettingsActivity(i14, arrayList, arrayList2, false));
         } else {
             boolean z16 = isGlobalNotificationsEnabled;
-            org.telegram.messenger.qj qjVar = new org.telegram.messenger.qj(notificationsSettingsActivity, i11, z16, j5Var, i10);
+            org.telegram.messenger.rj rjVar = new org.telegram.messenger.rj(notificationsSettingsActivity, i11, z16, j5Var, i10);
             z10 = z16;
             if (i10 == notificationsSettingsActivity.storiesRow) {
                 arrayList3 = notificationsSettingsActivity.h;
@@ -836,7 +836,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
                 }
                 arrayList4 = null;
             } else if (i10 == notificationsSettingsActivity.reactionsRow) {
-                qjVar.run();
+                rjVar.run();
             } else {
                 arrayList3 = notificationsSettingsActivity.f;
                 if (arrayList3 != null && !arrayList3.isEmpty()) {
@@ -847,7 +847,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
                 arrayList4 = null;
             }
             if (str == null) {
-                qjVar.run();
+                rjVar.run();
             } else {
                 AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(notificationsSettingsActivity.getParentActivity());
                 int size = arrayList3.size();
@@ -859,7 +859,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
                 }
                 b2Var3.R = LocaleController.getString("NotificationsExceptions", R.string.NotificationsExceptions);
                 alertDialog$Builder3.i(LocaleController.getString("ViewExceptions", R.string.ViewExceptions), new c7(notificationsSettingsActivity, arrayList3, arrayList4, 16));
-                alertDialog$Builder3.h(LocaleController.getString("OK", R.string.OK), new bu(qjVar, 27));
+                alertDialog$Builder3.h(LocaleController.getString("OK", R.string.OK), new bu(rjVar, 27));
                 notificationsSettingsActivity.showDialog(b2Var3);
             }
         }
@@ -876,9 +876,9 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
         ConnectionsManager.getInstance(notificationsSettingsActivity.currentAccount).sendRequest(new TL_account.resetNotifySettings(), new m(notificationsSettingsActivity, 15));
     }
 
-    public final void A0(org.telegram.ui.Components.q21 q21Var) {
+    public final void A0(org.telegram.ui.Components.r21 r21Var) {
         MediaDataController.getInstance(this.currentAccount).loadHints(true);
-        MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new nf0(this, new ArrayList(MediaDataController.getInstance(this.currentAccount).hints), q21Var, 9));
+        MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new nf0(this, new ArrayList(MediaDataController.getInstance(this.currentAccount).hints), r21Var, 9));
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -897,7 +897,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 
         this.fragmentView = frameLayout;
         org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
         this.a = zl0Var;
-        zl0Var.s1();
+        zl0Var.r1();
         this.a.setItemAnimator(null);
         this.a.setSectionsDrawBackground(true);
         this.a.setLayoutAnimation(null);

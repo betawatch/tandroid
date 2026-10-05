@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class th0 extends FrameLayout {
     public float E;
@@ -30,7 +30,7 @@ public final class th0 extends FrameLayout {
     public boolean G;
     public boolean H;
     public boolean I;
-    public final org.telegram.ui.Components.v21 J;
+    public final org.telegram.ui.Components.w21 J;
     public final /* synthetic */ wh0 K;
     public int a;
     public final LinearLayout b;
@@ -56,7 +56,7 @@ public final class th0 extends FrameLayout {
         this.v = paint;
         this.w = new RectF();
         this.E = 1.0f;
-        this.J = new org.telegram.ui.Components.v21();
+        this.J = new org.telegram.ui.Components.w21();
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         LinearLayout linearLayout = new LinearLayout(context);
@@ -148,7 +148,7 @@ public final class th0 extends FrameLayout {
         if (tL_starsSubscriptionPricing != null) {
             linearLayout.setVisibility(0);
             imageView.setVisibility(8);
-            SpannableStringBuilder d12 = yh.x7.d1(false, org.telegram.messenger.f0.h(tL_chatInviteExported.subscription_pricing.amount, ',', new StringBuilder("⭐️ ")), 0.75f, null);
+            SpannableStringBuilder d12 = yh.z7.d1(false, org.telegram.messenger.q.h(tL_chatInviteExported.subscription_pricing.amount, ',', new StringBuilder("⭐️ ")), 0.75f, null);
             TextView textView = this.f;
             textView.setText(d12);
             int i13 = tL_chatInviteExported.subscription_pricing.period;
@@ -200,11 +200,11 @@ public final class th0 extends FrameLayout {
                 formatPluralString = i14 > 0 ? LocaleController.formatPluralString("PeopleJoined", i14, new Object[0]) : "";
                 if (tL_chatInviteExported.requested > 0) {
                     if (tL_chatInviteExported.usage > 0) {
-                        formatPluralString = t8.b.v(formatPluralString, ", ");
+                        formatPluralString = sa.e.v(formatPluralString, ", ");
                     }
-                    StringBuilder u10 = a4.a.u(formatPluralString);
-                    u10.append(LocaleController.formatPluralString("JoinRequests", tL_chatInviteExported.requested, new Object[0]));
-                    formatPluralString = u10.toString();
+                    StringBuilder v = a4.a.v(formatPluralString);
+                    v.append(LocaleController.formatPluralString("JoinRequests", tL_chatInviteExported.requested, new Object[0]));
+                    formatPluralString = v.toString();
                 }
             }
         }

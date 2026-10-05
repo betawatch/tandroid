@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class pk0 extends w9 {
     public final /* synthetic */ int G;
@@ -64,7 +64,7 @@ public final class pk0 extends w9 {
         switch (this.G) {
             case 0:
                 qk0 qk0Var = this.H;
-                if (!zg.e0.c(this, qk0Var.P)) {
+                if (!zg.c0.c(this, qk0Var.P)) {
                     super.invalidate(rect);
                     qk0Var.P.invalidate();
                     break;
@@ -101,13 +101,13 @@ public final class pk0 extends w9 {
     public void invalidate(int i10, int i11, int i12, int i13) {
         switch (this.G) {
             case 0:
-                if (!zg.e0.c(this)) {
+                if (!zg.c0.c(this)) {
                     super.invalidate(i10, i11, i12, i13);
                     break;
                 }
                 break;
             case 1:
-                if (!zg.e0.c(this)) {
+                if (!zg.c0.c(this)) {
                     super.invalidate(i10, i11, i12, i13);
                     break;
                 }
@@ -124,14 +124,14 @@ public final class pk0 extends w9 {
         qk0 qk0Var = this.H;
         switch (i10) {
             case 0:
-                if (!zg.e0.c(this, qk0Var.P)) {
+                if (!zg.c0.c(this, qk0Var.P)) {
                     super.invalidate();
                     qk0Var.P.invalidate();
                     break;
                 }
                 break;
             case 1:
-                if (!zg.e0.c(this)) {
+                if (!zg.c0.c(this)) {
                     super.invalidate();
                     break;
                 }

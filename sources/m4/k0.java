@@ -32,7 +32,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class k0 extends n4.p {
     public static final int w;
@@ -163,7 +163,7 @@ public final class k0 extends n4.p {
                 i11++;
                 long j3 = ((n4.v) obj).b;
                 if (hashSet.contains(Long.valueOf(j3))) {
-                    Log.e("MediaSessionCompat", a4.a.o(j3, "Found duplicate queue id: "), new IllegalArgumentException("id of each queue item should be unique"));
+                    Log.e("MediaSessionCompat", a4.a.p(j3, "Found duplicate queue id: "), new IllegalArgumentException("id of each queue item should be unique"));
                 }
                 hashSet.add(Long.valueOf(j3));
             }
@@ -304,7 +304,7 @@ public final class k0 extends n4.p {
                     i10 = 2;
                 } else {
                     if (d != 4) {
-                        throw new IllegalArgumentException(hg.k0.h(d, "Unrecognized State: "));
+                        throw new IllegalArgumentException(hg.c.h(d, "Unrecognized State: "));
                     }
                     i10 = 1;
                 }

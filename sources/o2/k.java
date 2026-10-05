@@ -10,7 +10,6 @@ import c5.b0;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import hg.k0;
 import i2.q1;
 import ii.n4;
 import j$.util.Objects;
@@ -31,7 +30,7 @@ import u2.p1;
 import v7.y7;
 import w7.h8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class k implements d0, p2.t {
     public final j2.k E;
@@ -455,7 +454,7 @@ public final class k implements d0, p2.t {
                         List list6 = oVar.k;
                         if (list6 != null) {
                             for (int i20 = 0; i20 < list6.size(); i20++) {
-                                arrayList3.add(new l1(k0.h(i20, "main:cc:"), cVar3.b((b2.s) list6.get(i20))));
+                                arrayList3.add(new l1(hg.c.h(i20, "main:cc:"), cVar3.b((b2.s) list6.get(i20))));
                             }
                         }
                         cVar = cVar3;
@@ -872,9 +871,9 @@ public final class k implements d0, p2.t {
                             qVar = qVar3;
                         } else {
                             long j10 = j3 < 0 ? -j3 : 0L;
-                            j y3 = qVar3.y();
+                            j w10 = qVar3.w();
                             long j11 = j10;
-                            v2.l[] a2 = iVar2.a(y3, j3);
+                            v2.l[] a2 = iVar2.a(w10, j3);
                             iVar = iVar2;
                             List list = qVar3.E;
                             i11 = i21;
@@ -886,7 +885,7 @@ public final class k implements d0, p2.t {
                             qVar = qVar3;
                             x2.r rVar5 = rVar3;
                             rVar5.k(j3, j11, -9223372036854775807L, list, a2);
-                            if (rVar5.l() != iVar.h.a(y3.d)) {
+                            if (rVar5.l() != iVar.h.a(w10.d)) {
                                 z20 = true;
                             } else {
                                 z20 = true;
@@ -1017,10 +1016,10 @@ public final class k implements d0, p2.t {
         System.arraycopy(c1VarArr4, 0, c1VarArr, 0, length2);
         q[] qVarArr5 = (q[]) e2.d0.S(i23, qVarArr3);
         this.K = qVarArr5;
-        a1 w10 = i0.w(qVarArr5);
-        AbstractList w11 = e9.q.w(w10, new o0(26));
+        a1 w11 = i0.w(qVarArr5);
+        AbstractList w12 = e9.q.w(w11, new o0(26));
         this.w.getClass();
-        this.M = new u2.n(w10, w11);
+        this.M = new u2.n(w11, w12);
         return j3;
     }
 

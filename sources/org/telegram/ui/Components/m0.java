@@ -12,7 +12,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -75,9 +75,9 @@ public final /* synthetic */ class m0 implements View.OnClickListener {
                     calendar2.set(14, 0);
                 }
                 int timeInMillis = (int) (calendar2.getTimeInMillis() / 1000);
-                org.telegram.ui.r51 r51Var = (org.telegram.ui.r51) fs0Var.b;
+                org.telegram.ui.p51 p51Var = (org.telegram.ui.p51) fs0Var.b;
                 ((boolean[]) fs0Var.c)[0] = true;
-                r51Var.e(Integer.valueOf(timeInMillis));
+                p51Var.e(Integer.valueOf(timeInMillis));
                 runnable2 = a3Var2.a.dismissRunnable;
                 runnable2.run();
                 break;
@@ -102,7 +102,7 @@ public final /* synthetic */ class m0 implements View.OnClickListener {
                 runnable3.run();
                 break;
             case 3:
-                qy0.x((qy0) this.b, (int[]) this.e, (EditTextBoldCursor) this.f, (TextView) this.c, (TextView) this.h, (AlertDialog$Builder) this.d);
+                ry0.x((ry0) this.b, (int[]) this.e, (EditTextBoldCursor) this.f, (TextView) this.c, (TextView) this.h, (AlertDialog$Builder) this.d);
                 break;
             case 4:
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;

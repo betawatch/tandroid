@@ -1,79 +1,61 @@
 package zg;
 
-import android.app.Activity;
-import android.text.SpannableString;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.q5;
-import org.telegram.ui.Components.yc;
-import org.telegram.ui.Components.z5;
-import org.telegram.ui.c71;
-import yh.r5;
+import org.telegram.ui.yn;
+import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class p extends c71 {
-    public boolean d2;
-    public final /* synthetic */ q e2;
+public final /* synthetic */ class p implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p(q qVar, q qVar2, Activity activity, d6 d6Var, int i10) {
-        super(qVar2, activity, false, null, 6, false, d6Var, 16, i10);
-        this.e2 = qVar;
-        this.d2 = true;
-        setDrawBackground(false);
+    public /* synthetic */ p(r rVar, int i10) {
+        this.a = i10;
+        this.b = rVar;
     }
 
-    @Override // org.telegram.ui.c71, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        if (this.d2) {
-            this.d2 = false;
-            this.e2.b.s(null);
-        }
-    }
-
-    @Override // org.telegram.ui.c71
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        q qVar = this.e2;
-        int i10 = qVar.J;
-        ArrayList arrayList = qVar.F;
-        LinkedHashMap linkedHashMap = qVar.E;
-        if (linkedHashMap.containsKey(l4)) {
-            arrayList.remove(l4);
-            z5 z5Var = (z5) linkedHashMap.remove(l4);
-            z5Var.setRemoved(new r5(5, this, z5Var));
-            qVar.U(z5Var);
-            qVar.b.x(l4, true);
-            qVar.X(false);
-            return;
-        }
-        if (linkedHashMap.size() - (linkedHashMap.containsKey(-1L) ? 1 : 0) >= i10) {
-            yc.a0(qVar).t(LocaleController.formatPluralString("ReactionMaxCountError", i10, new Object[0]), null).j();
-            return;
-        }
-        try {
-            int editTextSelectionEnd = qVar.n.getEditTextSelectionEnd();
-            SpannableString spannableString = new SpannableString("b");
-            z5 e7 = q0.e(document, l4, qVar.n.getFontMetricsInt());
-            e7.cacheType = q5.g();
-            e7.setAdded();
-            arrayList.add(w7.q.b(editTextSelectionEnd, 0, arrayList.size()), l4);
-            linkedHashMap.put(l4, e7);
-            spannableString.setSpan(e7, 0, spannableString.length(), 33);
-            qVar.n.getText().insert(editTextSelectionEnd, spannableString);
-            qVar.n.setSelection(editTextSelectionEnd + spannableString.length());
-            qVar.b.x(l4, true);
-            qVar.X(true);
-            qVar.U(e7);
-        } catch (Exception e10) {
-            FileLog.e(e10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.c(true);
+                break;
+            default:
+                r rVar = this.b;
+                rVar.e = rVar.b();
+                int i10 = rVar.f;
+                int i11 = rVar.h;
+                yn ynVar = rVar.a;
+                if (rVar.b == null) {
+                    q qVar = new q((ynVar.getUserConfig().getClientUserId() > ynVar.a() ? 1 : (ynVar.getUserConfig().getClientUserId() == ynVar.a() ? 0 : -1)) == 0 ? 3 : 0, ynVar.getCurrentAccount(), rVar.getContext(), rVar.a, ynVar.getResourceProvider());
+                    qVar.l1 = 1.0f;
+                    qVar.setWillNotDraw(false);
+                    rVar.b = qVar;
+                    int dp = AndroidUtilities.dp(4.0f) + (LocaleController.isRTL ? 0 : i11);
+                    int dp2 = AndroidUtilities.dp(4.0f);
+                    int dp3 = AndroidUtilities.dp(4.0f);
+                    if (!LocaleController.isRTL) {
+                        i11 = 0;
+                    }
+                    qVar.setPadding(dp, dp2, dp3 + i11, AndroidUtilities.dp(i10));
+                    rVar.b.setDelegate(new l2.g(rVar, 25));
+                    rVar.b.setClipChildren(false);
+                    rVar.b.setClipToPadding(false);
+                    rVar.addView(rVar.b, z5.e(-2, i10 + 70, 5));
+                }
+                rVar.c(false);
+                if (!rVar.b.isEnabled()) {
+                    rVar.x = false;
+                    rVar.b.setTransitionProgress(1.0f);
+                    break;
+                } else {
+                    rVar.x = true;
+                    rVar.b.p(rVar.e, ynVar.X7, true);
+                    rVar.b.r(false);
+                    break;
+                }
         }
     }
 }

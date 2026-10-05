@@ -15,7 +15,7 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ua implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -167,8 +167,8 @@ public final /* synthetic */ class ua implements Utilities.Callback {
                     I.n(user, LocaleController.getString(R.string.ViewProfile), new r1(ynVar2, sm0Var, user, 16));
                 }
                 sm0Var.e(I);
-                if (characterStyle instanceof org.telegram.ui.Components.m61) {
-                    String url = ((org.telegram.ui.Components.m61) characterStyle).getURL();
+                if (characterStyle instanceof org.telegram.ui.Components.n61) {
+                    String url = ((org.telegram.ui.Components.n61) characterStyle).getURL();
                     if (url == null) {
                         url = "";
                     }
@@ -262,7 +262,7 @@ public final /* synthetic */ class ua implements Utilities.Callback {
                 }
                 break;
             default:
-                yh.x3.r0((yh.x3) this.b, (TL_stars.StarGift) this.c, (TL_stars.StarGiftAttribute) this.d, (org.telegram.ui.Components.ad[]) this.e, (boolean[]) this.f, (ArrayList) obj);
+                yh.y3.r0((yh.y3) this.b, (TL_stars.StarGift) this.c, (TL_stars.StarGiftAttribute) this.d, (org.telegram.ui.Components.ad[]) this.e, (boolean[]) this.f, (ArrayList) obj);
                 break;
         }
     }

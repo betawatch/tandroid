@@ -9,9 +9,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class ri0 extends org.telegram.ui.Components.lw0 {
+public final class ri0 extends org.telegram.ui.Components.mw0 {
     public final k20 A0;
     public final Paint B0;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 C0;
@@ -39,7 +39,7 @@ public final class ri0 extends org.telegram.ui.Components.lw0 {
     
         if ((r5[1] - r3[1]) > r4) goto L81;
      */
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -123,7 +123,7 @@ public final class ri0 extends org.telegram.ui.Components.lw0 {
                 } else if (zi0Var.V != null) {
                     canvas2.save();
                     canvas2.translate(0.0f, zi0Var.S.getY());
-                    canvas2.saveLayerAlpha(zi0Var.S.getX() + zi0Var.S.getPaddingLeft(), 0.0f, ((zi0Var.S.getX() + zi0Var.S.getPaddingLeft()) + zi0Var.S.getWidth()) - zi0Var.S.getPaddingRight(), zi0Var.S.getHeight(), (int) org.telegram.messenger.ok.x(zi0Var.E, 0.1f, 1.0f, 255.0f), 31);
+                    canvas2.saveLayerAlpha(zi0Var.S.getX() + zi0Var.S.getPaddingLeft(), 0.0f, ((zi0Var.S.getX() + zi0Var.S.getPaddingLeft()) + zi0Var.S.getWidth()) - zi0Var.S.getPaddingRight(), zi0Var.S.getHeight(), (int) org.telegram.messenger.bi.x(zi0Var.E, 0.1f, 1.0f, 255.0f), 31);
                     zi0Var.V.run(canvas2);
                     canvas2.restore();
                     canvas2.restore();
@@ -131,7 +131,7 @@ public final class ri0 extends org.telegram.ui.Components.lw0 {
                 } else {
                     f13 = alpha;
                     paint.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.Sd, this.C0));
-                    paint.setAlpha((int) org.telegram.messenger.ok.x(zi0Var.E, 0.1f, 1.0f, paint.getAlpha()));
+                    paint.setAlpha((int) org.telegram.messenger.bi.x(zi0Var.E, 0.1f, 1.0f, paint.getAlpha()));
                     canvas2.drawRect(zi0Var.S.getPaddingLeft(), zi0Var.S.getY(), ((zi0Var.S.getX() + zi0Var.S.getPaddingLeft()) + zi0Var.S.getWidth()) - zi0Var.S.getPaddingRight(), zi0Var.S.getY() + zi0Var.S.getHeight(), paint);
                 }
                 org.telegram.ui.Components.d dVar = zi0Var.U;

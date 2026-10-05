@@ -13,7 +13,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class lq extends org.telegram.ui.Components.yl0 {
     public final Context c;
@@ -736,7 +736,7 @@ public final class lq extends org.telegram.ui.Components.yl0 {
                                     break;
                             }
                         }
-                    }, a4.a.m(r12, "/10"), !mqVar.A0);
+                    }, a4.a.n(r12, "/10"), !mqVar.A0);
                     v8Var.setIcon(mq.l0(mqVar) ? R.drawable.permission_locked : 0);
                 } else if (i10 == mqVar.N0) {
                     ?? r42 = tL_chatAdminRights39.post_messages;
@@ -826,7 +826,7 @@ public final class lq extends org.telegram.ui.Components.yl0 {
                                     break;
                             }
                         }
-                    }, a4.a.m(i56, "/3"), !mqVar.O0);
+                    }, a4.a.n(i56, "/3"), !mqVar.O0);
                 } else if (i10 == mqVar.S0) {
                     TLRPC.TL_chatAdminRights tL_chatAdminRights40 = mqVar.M;
                     ?? r52 = tL_chatAdminRights40.post_stories;
@@ -916,7 +916,7 @@ public final class lq extends org.telegram.ui.Components.yl0 {
                                     break;
                             }
                         }
-                    }, a4.a.m(i58, "/3"), !mqVar.T0);
+                    }, a4.a.n(i58, "/3"), !mqVar.T0);
                 } else if (i10 == mqVar.W) {
                     v8Var.d(LocaleController.getString(R.string.ManageGroup), mqVar.K, true, false);
                     tL_chatAdminRights38 = mqVar.N;
@@ -1564,7 +1564,7 @@ public final class lq extends org.telegram.ui.Components.yl0 {
                 }
                 break;
             case 11:
-                ((org.telegram.ui.Components.w01) view).a(mqVar.v, mqVar.S, i48 == 0, false, new t3(this, 3));
+                ((org.telegram.ui.Components.x01) view).a(mqVar.v, mqVar.S, i48 == 0, false, new t3(this, 3));
                 break;
         }
     }
@@ -1661,7 +1661,7 @@ public final class lq extends org.telegram.ui.Components.yl0 {
                 i11 = ((org.telegram.ui.ActionBar.n2) mqVar).currentAccount;
                 long j3 = -mqVar.s;
                 d6Var = ((org.telegram.ui.ActionBar.n2) mqVar).resourceProvider;
-                view2 = new org.telegram.ui.Components.w01(i11, j3, this.c, d6Var);
+                view2 = new org.telegram.ui.Components.x01(i11, j3, this.c, d6Var);
                 break;
         }
         return new org.telegram.ui.Components.il0(view2);

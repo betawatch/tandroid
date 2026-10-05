@@ -29,7 +29,7 @@ import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.nl0;
 import org.telegram.ui.Components.voip.g2;
 import org.telegram.ui.LaunchActivity;
@@ -44,7 +44,7 @@ import org.telegram.ui.ul0;
 import org.telegram.ui.w00;
 import org.telegram.ui.xl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Continuation, a2, j0, nl0, bt, androidx.car.app.utils.a {
     public final /* synthetic */ int a;
@@ -96,9 +96,9 @@ public final /* synthetic */ class i implements Continuation, a2, j0, nl0, bt, a
     public void g(b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
-                hg.a0 a0Var = (hg.a0) this.c;
-                (!this.b ? a0Var.k : a0Var.j).remove(Long.valueOf(((g61) this.d).x));
-                a0Var.e.run();
+                hg.b0 b0Var = (hg.b0) this.c;
+                (!this.b ? b0Var.k : b0Var.j).remove(Long.valueOf(((h61) this.d).x));
+                b0Var.e.run();
                 break;
             case 2:
             case 7:
@@ -137,7 +137,7 @@ public final /* synthetic */ class i implements Continuation, a2, j0, nl0, bt, a
                 TLRPC.TL_username tL_username = (TLRPC.TL_username) this.d;
                 boolean z13 = this.b;
                 gp gpVar = epVar.a;
-                gpVar.y1(tL_username, z13, true);
+                gpVar.x1(tL_username, z13, true);
                 gpVar.h3.T();
                 break;
             case 6:

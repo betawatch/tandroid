@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class fo0 extends s4.s0 {
     public final /* synthetic */ int a;
@@ -55,18 +55,18 @@ public final class fo0 extends s4.s0 {
         switch (this.a) {
             case 0:
                 org.telegram.ui.dy dyVar = this.c;
-                dyVar.p0.V();
+                dyVar.q0.V();
                 dyVar.U();
                 break;
             case 1:
                 org.telegram.ui.dy dyVar2 = this.c;
-                dyVar2.w0.W();
+                dyVar2.x0.W();
                 dyVar2.U();
                 break;
             case 2:
                 org.telegram.ui.dy dyVar3 = this.c;
-                jo0 jo0Var = dyVar3.c0;
-                s4.c0 c0Var = dyVar3.d0;
+                jo0 jo0Var = dyVar3.d0;
+                s4.c0 c0Var = dyVar3.e0;
                 int L0 = c0Var.L0();
                 int N0 = c0Var.N0();
                 int abs = Math.abs(c0Var.N0() - L0) + 1;
@@ -78,7 +78,7 @@ public final class fo0 extends s4.s0 {
                 break;
             default:
                 org.telegram.ui.dy dyVar4 = this.c;
-                lo0 lo0Var = dyVar4.k0;
+                lo0 lo0Var = dyVar4.l0;
                 if (lo0Var.Y && !lo0Var.W && !TextUtils.isEmpty(lo0Var.b0) && (zl0Var = lo0Var.d) != null) {
                     int i13 = 0;
                     while (true) {

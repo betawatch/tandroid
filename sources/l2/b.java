@@ -10,7 +10,6 @@ import e9.a1;
 import e9.g0;
 import e9.i0;
 import e9.q;
-import hg.k0;
 import i2.q1;
 import i2.s0;
 import ii.n4;
@@ -33,7 +32,7 @@ import u2.e1;
 import u2.p1;
 import v7.y7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class b implements d0, d1, v2.g {
     public static final Pattern P = Pattern.compile("CC([1-4])=(.+)");
@@ -187,14 +186,14 @@ public final class b implements d0, d1, v2.g {
                     if ("urn:scte:dash:cc:cea-608:2015".equals(fVar.a)) {
                         r rVar = new r();
                         rVar.q = r0.n("application/cea-608");
-                        rVar.a = a4.a.r(new StringBuilder(), aVar5.a, ":cea608");
+                        rVar.a = a4.a.s(new StringBuilder(), aVar5.a, ":cea608");
                         sVarArr2 = t(fVar, P, new b2.s(rVar));
                         break;
                     }
                     if ("urn:scte:dash:cc:cea-708:2015".equals(fVar.a)) {
                         r rVar2 = new r();
                         rVar2.q = r0.n("application/cea-708");
-                        rVar2.a = a4.a.r(new StringBuilder(), aVar5.a, ":cea708");
+                        rVar2.a = a4.a.s(new StringBuilder(), aVar5.a, ":cea708");
                         sVarArr2 = t(fVar, Q, new b2.s(rVar2));
                         break;
                     }
@@ -246,7 +245,7 @@ public final class b implements d0, d1, v2.g {
             int i31 = i24;
             m2.a aVar6 = (m2.a) list2.get(iArr7[0]);
             long j10 = aVar6.a;
-            String l4 = j10 != -1 ? Long.toString(j10) : k0.h(i25, "unset:");
+            String l4 = j10 != -1 ? Long.toString(j10) : hg.c.h(i25, "unset:");
             int i32 = i31 + 1;
             if (zArr3[i25]) {
                 i12 = i31 + 2;
@@ -272,7 +271,7 @@ public final class b implements d0, d1, v2.g {
             aVarArr[i34] = aVar7;
             int i35 = -1;
             if (i32 != -1) {
-                String v = t8.b.v(l4, ":emsg");
+                String v = sa.e.v(l4, ":emsg");
                 r rVar3 = new r();
                 rVar3.a = v;
                 rVar3.q = r0.n("application/x-emsg");
@@ -284,7 +283,7 @@ public final class b implements d0, d1, v2.g {
                 i35 = -1;
             }
             if (i12 != i35) {
-                String v9 = t8.b.v(l4, ":cc");
+                String v9 = sa.e.v(l4, ":cc");
                 aVarArr[i12] = new a(3, 1, iArr8, i34, -1, -1, -1, i0.w(sVarArr4[i25]));
                 s(aVar, sVarArr4[i25]);
                 l1VarArr[i12] = new l1(v9, sVarArr4[i25]);
@@ -350,7 +349,7 @@ public final class b implements d0, d1, v2.g {
                 r a2 = sVar.a();
                 String str = sVar.k;
                 a2.q = r0.n("application/x-media3-cues");
-                a2.O = ((qb.b) pVar.c).H(sVar);
+                a2.O = ((qb.b) pVar.c).D(sVar);
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(sVar.r);
                 sb2.append(str != null ? " ".concat(str) : "");
@@ -416,7 +415,7 @@ public final class b implements d0, d1, v2.g {
             ArrayList arrayList = hVar.v;
             hVar.J = j3;
             hVar.M = false;
-            if (hVar.y()) {
+            if (hVar.w()) {
                 hVar.I = j3;
             } else {
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
@@ -474,7 +473,7 @@ public final class b implements d0, d1, v2.g {
     public final void i(long j3) {
         long j10;
         for (v2.h hVar : this.H) {
-            if (!hVar.y()) {
+            if (!hVar.w()) {
                 b1 b1Var = hVar.x;
                 int i10 = b1Var.q;
                 b1Var.j(j3, true);
@@ -858,11 +857,11 @@ public final class b implements d0, d1, v2.g {
                 long d = this.K.d(this.L);
                 b1 b1Var = hVar.x;
                 e2.d.g(!hVar.r.d());
-                if (!hVar.y() && d != -9223372036854775807L && !hVar.v.isEmpty()) {
-                    v2.a w10 = hVar.w();
-                    long j10 = w10.w;
+                if (!hVar.w() && d != -9223372036854775807L && !hVar.v.isEmpty()) {
+                    v2.a t10 = hVar.t();
+                    long j10 = t10.w;
                     if (j10 == -9223372036854775807L) {
-                        j10 = w10.n;
+                        j10 = t10.n;
                     }
                     if (j10 > d) {
                         long q6 = b1Var.q();

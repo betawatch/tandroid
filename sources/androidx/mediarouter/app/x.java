@@ -27,7 +27,7 @@ import org.telegram.ui.yn;
 import s4.c1;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class x implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -218,11 +218,11 @@ public final class x implements View.OnClickListener {
                 xi xiVar = new xi(ynVar.getParentActivity(), ynVar, false, false, false, ynVar.getResourceProvider());
                 ppVar.Y = xiVar;
                 xiVar.drawNavigationBar = true;
-                xiVar.I1(LocaleController.getString(R.string.ChooseBackground));
+                xiVar.K1(LocaleController.getString(R.string.ChooseBackground));
                 xi xiVar2 = ppVar.Y;
                 xiVar2.Z1 = new gp(ppVar);
-                xiVar2.G1(1, false);
-                ppVar.Y.o1();
+                xiVar2.I1(1, false);
+                ppVar.Y.q1();
                 ppVar.Y.j0.f0();
                 ppVar.Y.show();
                 ppVar.Z = new m6(ppVar, ppVar.getContext());

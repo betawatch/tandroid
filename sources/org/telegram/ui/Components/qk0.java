@@ -31,11 +31,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class qk0 extends FrameLayout {
     public boolean E;
-    public yh.j8 F;
+    public yh.l8 F;
     public final nk0 G;
     public boolean H;
     public float I;
@@ -50,7 +50,7 @@ public final class qk0 extends FrameLayout {
     public final pk0 b;
     public final pk0 c;
     public final ImageReceiver d;
-    public zg.o0 e;
+    public zg.m0 e;
     public rg.c1 f;
     public float h;
     public boolean n;
@@ -98,23 +98,23 @@ public final class qk0 extends FrameLayout {
         pk0Var3.setLayerNum(ConnectionsManager.DEFAULT_DATACENTER_ID);
     }
 
-    public static void a(qk0 qk0Var, zg.o0 o0Var, int i10) {
+    public static void a(qk0 qk0Var, zg.m0 m0Var, int i10) {
         pk0 pk0Var = qk0Var.c;
         pk0 pk0Var2 = qk0Var.a;
         pk0 pk0Var3 = qk0Var.b;
         sk0 sk0Var = qk0Var.P;
-        qk0Var.f(o0Var, false);
-        zg.o0 o0Var2 = qk0Var.e;
-        if (o0Var2 != null && o0Var2.equals(o0Var)) {
+        qk0Var.f(m0Var, false);
+        zg.m0 m0Var2 = qk0Var.e;
+        if (m0Var2 != null && m0Var2.equals(m0Var)) {
             qk0Var.y = i10;
-            qk0Var.e(o0Var);
+            qk0Var.e(m0Var);
             return;
         }
         int i11 = sk0Var.J;
         org.telegram.ui.ActionBar.d6 d6Var = sk0Var.k0;
         int i12 = sk0Var.M0;
         boolean isPremium = UserConfig.getInstance(i11).isPremium();
-        boolean z10 = (i12 == 3 && !isPremium) || (i12 == 5 && o0Var.d && !isPremium);
+        boolean z10 = (i12 == 3 && !isPremium) || (i12 == 5 && m0Var.d && !isPremium);
         qk0Var.H = z10;
         if (z10 && qk0Var.f == null) {
             rg.c1 c1Var = new rg.c1(qk0Var.getContext(), 1, null);
@@ -128,14 +128,14 @@ public final class qk0 extends FrameLayout {
             c1Var2.setVisibility(qk0Var.H ? 0 : 8);
         }
         qk0Var.d();
-        qk0Var.e = o0Var;
-        qk0Var.r = o0Var.a || (o0Var.f != null && ((sk0Var.q() || sk0Var.G0) && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS)));
+        qk0Var.e = m0Var;
+        qk0Var.r = m0Var.a || (m0Var.f != null && ((sk0Var.q() || sk0Var.G0) && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS)));
         if (i12 == 4 || qk0Var.e.b) {
             qk0Var.r = false;
         }
-        zg.o0 o0Var3 = qk0Var.e;
-        if (o0Var3.a || o0Var3.f != null) {
-            qk0Var.e(o0Var);
+        zg.m0 m0Var3 = qk0Var.e;
+        if (m0Var3.a || m0Var3.f != null) {
+            qk0Var.e(m0Var);
             pk0Var.setAnimatedEmojiDrawable(null);
             if (pk0Var2.getImageReceiver().getLottieAnimation() != null) {
                 pk0Var2.getImageReceiver().getLottieAnimation().N(0, false, false);
@@ -299,9 +299,9 @@ public final class qk0 extends FrameLayout {
             float measuredWidth = getMeasuredWidth() >> 1;
             float measuredHeight = getMeasuredHeight() >> 1;
             float measuredWidth2 = (getMeasuredWidth() >> 1) - AndroidUtilities.dp(1.0f);
-            zg.o0 o0Var = this.e;
+            zg.m0 m0Var = this.e;
             sk0 sk0Var = this.P;
-            canvas.drawCircle(measuredWidth, measuredHeight, measuredWidth2, (o0Var == null || !o0Var.a) ? sk0Var.H0 : sk0Var.I0);
+            canvas.drawCircle(measuredWidth, measuredHeight, measuredWidth2, (m0Var == null || !m0Var.a) ? sk0Var.H0 : sk0Var.I0);
         }
         q5 q5Var = this.b.e;
         if (q5Var != null && (l4Var = q5Var.k) != null) {
@@ -311,8 +311,8 @@ public final class qk0 extends FrameLayout {
                 l4Var.setRoundRadius(this.w ? AndroidUtilities.dp(6.0f) : 0);
             }
         }
-        zg.o0 o0Var2 = this.e;
-        if (o0Var2 != null && o0Var2.a && this.F != null && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS) && LiteMode.isEnabled(131072)) {
+        zg.m0 m0Var2 = this.e;
+        if (m0Var2 != null && m0Var2.a && this.F != null && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS) && LiteMode.isEnabled(131072)) {
             RectF rectF = AndroidUtilities.rectTmp;
             float height = ((int) (getHeight() * 0.7f)) / 2.0f;
             rectF.set((getWidth() / 2.0f) - height, (getHeight() / 2.0f) - height, (getWidth() / 2.0f) + height, (getHeight() / 2.0f) + height);
@@ -326,33 +326,33 @@ public final class qk0 extends FrameLayout {
         super.dispatchDraw(canvas);
     }
 
-    public final void e(zg.o0 o0Var) {
+    public final void e(zg.m0 m0Var) {
         TLRPC.TL_availableReaction tL_availableReaction;
         sk0 sk0Var = this.P;
         int i10 = sk0Var.M0;
         pk0 pk0Var = this.a;
         pk0 pk0Var2 = this.b;
-        if (o0Var != null && o0Var.a) {
+        if (m0Var != null && m0Var.a) {
             pk0Var.getImageReceiver().setImageBitmap(new kj0(R.raw.star_reaction, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f)));
             pk0Var2.getImageReceiver().setImageBitmap(getContext().getResources().getDrawable(R.drawable.star_reaction));
             if (this.F == null) {
-                this.F = new yh.j8(1, SharedConfig.getDevicePerformanceClass() == 2 ? 45 : 18);
+                this.F = new yh.l8(1, SharedConfig.getDevicePerformanceClass() == 2 ? 45 : 18);
                 return;
             }
             return;
         }
-        if (i10 == 4 && o0Var != null && o0Var.f != null) {
-            pk0Var.getImageReceiver().setImageBitmap(Emoji.getEmojiDrawable(o0Var.f));
-            pk0Var2.getImageReceiver().setImageBitmap(Emoji.getEmojiDrawable(o0Var.f));
+        if (i10 == 4 && m0Var != null && m0Var.f != null) {
+            pk0Var.getImageReceiver().setImageBitmap(Emoji.getEmojiDrawable(m0Var.f));
+            pk0Var2.getImageReceiver().setImageBitmap(Emoji.getEmojiDrawable(m0Var.f));
             return;
         }
-        zg.o0 o0Var2 = this.e;
-        if (o0Var2.b) {
+        zg.m0 m0Var2 = this.e;
+        if (m0Var2.b) {
             TLRPC.Document effectDocument = MessagesController.getInstance(sk0Var.J).getEffectDocument(this.e.g);
             pk0Var2.getImageReceiver().setImage(ImageLocation.getForDocument(effectDocument), "60_60_firstframe", null, null, this.r ? null : DocumentObject.getSvgThumb(effectDocument, org.telegram.ui.ActionBar.i6.m6, 0.2f), 0L, "tgs", this.e, 0);
             return;
         }
-        if (o0Var2.f != null) {
+        if (m0Var2.f != null) {
             TLRPC.TL_availableReaction tL_availableReaction2 = MediaDataController.getInstance(sk0Var.J).getReactionsMap().get(this.e.f);
             if (tL_availableReaction2 != null) {
                 SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tL_availableReaction2.activate_animation, org.telegram.ui.ActionBar.i6.m6, 0.2f);
@@ -361,21 +361,21 @@ public final class qk0 extends FrameLayout {
                     if (SharedConfig.getDevicePerformanceClass() <= 0 || i10 == 4) {
                         pk0Var2.getImageReceiver().setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60_firstframe", null, null, this.r ? null : svgThumb, 0L, "tgs", this.e, 0);
                     } else {
-                        pk0Var.getImageReceiver().setImage(ImageLocation.getForDocument(tL_availableReaction.appear_animation), "30_30_nolimit", null, null, svgThumb, 0L, "tgs", o0Var, 0);
+                        pk0Var.getImageReceiver().setImage(ImageLocation.getForDocument(tL_availableReaction.appear_animation), "30_30_nolimit", null, null, svgThumb, 0L, "tgs", m0Var, 0);
                         pk0Var2.getImageReceiver().setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60_firstframe", null, null, this.r ? null : svgThumb, 0L, "tgs", this.e, 0);
                     }
                 } else {
                     tL_availableReaction = tL_availableReaction2;
-                    pk0Var.getImageReceiver().setImage(ImageLocation.getForDocument(tL_availableReaction2.appear_animation), "30_30_nolimit", null, null, svgThumb, 0L, "tgs", o0Var, 0);
+                    pk0Var.getImageReceiver().setImage(ImageLocation.getForDocument(tL_availableReaction2.appear_animation), "30_30_nolimit", null, null, svgThumb, 0L, "tgs", m0Var, 0);
                     pk0Var2.getImageReceiver().setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60_pcache", null, null, this.r ? null : svgThumb, 0L, "tgs", this.e, 0);
                 }
                 if (pk0Var.getImageReceiver().getLottieAnimation() != null) {
                     pk0Var.getImageReceiver().getLottieAnimation().N(0, false, true);
                 }
-                this.c.getImageReceiver().setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60_pcache", null, null, svgThumb, 0L, "tgs", o0Var, 0);
+                this.c.getImageReceiver().setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), "60_60_pcache", null, null, svgThumb, 0L, "tgs", m0Var, 0);
                 ImageReceiver imageReceiver = this.d;
                 imageReceiver.setAllowStartLottieAnimation(false);
-                MediaDataController.getInstance(sk0Var.J).preloadImage(imageReceiver, ImageLocation.getForDocument(tL_availableReaction.around_animation), zg.k0.a());
+                MediaDataController.getInstance(sk0Var.J).preloadImage(imageReceiver, ImageLocation.getForDocument(tL_availableReaction.around_animation), zg.i0.a());
             }
             rg.c1 c1Var = this.f;
             if (c1Var != null) {
@@ -384,9 +384,9 @@ public final class qk0 extends FrameLayout {
         }
     }
 
-    public final void f(zg.o0 o0Var, boolean z10) {
+    public final void f(zg.m0 m0Var, boolean z10) {
         boolean z11 = this.w;
-        boolean contains = this.P.d0.contains(o0Var);
+        boolean contains = this.P.d0.contains(m0Var);
         this.w = contains;
         if (contains != z11) {
             pk0 pk0Var = this.a;
@@ -423,9 +423,9 @@ public final class qk0 extends FrameLayout {
     @Override // android.view.View
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        zg.o0 o0Var = this.e;
-        if (o0Var != null) {
-            String str = o0Var.f;
+        zg.m0 m0Var = this.e;
+        if (m0Var != null) {
+            String str = m0Var.f;
             if (str != null) {
                 accessibilityNodeInfo.setText(str);
                 accessibilityNodeInfo.setEnabled(true);
@@ -449,7 +449,7 @@ public final class qk0 extends FrameLayout {
                     this.N = true;
                     this.L = motionEvent.getX();
                     this.M = motionEvent.getY();
-                    if (this.h == 1.0f && !this.H && (i10 = sk0Var.M0) != 3 && i10 != 4 && i10 != 5 && ((rk0Var = sk0Var.g0) == null || rk0Var.j())) {
+                    if (this.h == 1.0f && !this.H && (i10 = sk0Var.M0) != 3 && i10 != 4 && i10 != 5 && ((rk0Var = sk0Var.g0) == null || rk0Var.B())) {
                         AndroidUtilities.runOnUIThread(nk0Var, ViewConfiguration.getLongPressTimeout());
                     }
                 }
@@ -462,7 +462,7 @@ public final class qk0 extends FrameLayout {
                     sk0Var.r0 = true;
                     if (System.currentTimeMillis() - sk0Var.s0 > 300) {
                         sk0Var.s0 = System.currentTimeMillis();
-                        sk0Var.g0.h(this, this.e, sk0Var.n0 > 0.8f, false);
+                        sk0Var.g0.i(this, this.e, sk0Var.n0 > 0.8f, false);
                     }
                 }
                 if (!sk0Var.r0 && sk0Var.l0 != null) {

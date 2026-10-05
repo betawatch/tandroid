@@ -18,10 +18,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class st extends View {
-    public final e11 a;
+    public final f11 a;
     public final Drawable b;
     public final ImageReceiver c;
     public final Rect d;
@@ -35,7 +35,7 @@ public class st extends View {
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.c = imageReceiver;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(22.66f));
-        this.a = new e11(charSequence, 14.0f, AndroidUtilities.bold());
+        this.a = new f11(charSequence, 14.0f, AndroidUtilities.bold());
         Drawable mutate = context.getResources().getDrawable(R.drawable.arrow_newchat).mutate();
         this.b = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
@@ -107,8 +107,8 @@ public class st extends View {
     }
 
     public void setBlurredBackgroundDrawable(ch.d dVar) {
-        dVar.y(AndroidUtilities.dp(4.0f));
-        dVar.z(AndroidUtilities.dp(11.0f));
+        dVar.x(AndroidUtilities.dp(4.0f));
+        dVar.y(AndroidUtilities.dp(11.0f));
         this.f = dVar;
     }
 

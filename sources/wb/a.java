@@ -5,7 +5,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.mlkit.vision.common.internal.MobileVisionBase;
 import lf.g;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class a implements OnFailureListener, q9.d {
     public static final a a = new a();
@@ -14,7 +14,7 @@ public final class a implements OnFailureListener, q9.d {
 
     @Override // q9.d
     public Object E(cf.c cVar) {
-        return new c(cVar.v(b.class));
+        return new c(cVar.q(b.class));
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener

@@ -4,8 +4,10 @@ import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.Iterator;
+import li.o;
+import li.p;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class c {
     public final fh.a a;
@@ -15,7 +17,7 @@ public final class c {
     public pe.b e;
     public hh.k f;
     public ViewGroup g;
-    public li.m h;
+    public p h;
     public boolean i;
 
     public c(fh.a aVar) {
@@ -32,33 +34,33 @@ public final class c {
 
     public final ch.d c(View view, dh.a aVar, boolean z10) {
         ViewGroup viewGroup;
-        ch.d f7 = this.a.f();
-        if (this.i && Build.VERSION.SDK_INT >= 33 && (f7 instanceof ch.e)) {
-            ch.e eVar = (ch.e) f7;
+        ch.d b10 = this.a.b();
+        if (this.i && Build.VERSION.SDK_INT >= 33 && (b10 instanceof ch.e)) {
+            ch.e eVar = (ch.e) b10;
             eVar.Q = new j(eVar.L);
         }
-        f7.x(aVar);
+        b10.w(aVar);
         int i10 = this.b;
         int i11 = this.c;
-        f7.j = i10;
-        f7.k = i11;
+        b10.j = i10;
+        b10.k = i11;
         pe.b bVar = this.e;
         if (bVar != null && view != null) {
             bVar.add(view);
         }
-        li.m mVar = this.h;
-        if (mVar != null && view != null) {
-            mVar.c.add(new li.l(view, f7));
+        p pVar = this.h;
+        if (pVar != null && view != null) {
+            pVar.c.add(new o(view, b10));
         }
         hh.k kVar = this.f;
         if (kVar != null && (viewGroup = this.g) != null && view != null) {
-            kVar.d(view, viewGroup, new b(0, f7, view), z10);
+            kVar.d(view, viewGroup, new b(0, b10, view), z10);
         }
         pe.b bVar2 = this.d;
         if (bVar2 != null) {
-            bVar2.add(f7);
+            bVar2.add(b10);
         }
-        return f7;
+        return b10;
     }
 
     public final void d() {
@@ -71,8 +73,8 @@ public final class c {
         }
     }
 
-    public final void e(li.m mVar) {
-        this.h = mVar;
+    public final void e(p pVar) {
+        this.h = pVar;
     }
 
     public final void f(pe.b bVar) {

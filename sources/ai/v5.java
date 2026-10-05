@@ -33,13 +33,13 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.Components.as;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.hh0;
-import org.telegram.ui.Components.t41;
+import org.telegram.ui.Components.u41;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.ur;
 import org.telegram.ui.zr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class v5 extends as {
     public boolean c;
@@ -578,7 +578,7 @@ public final class v5 extends as {
                             }
                             storyItem3 = c6Var.a;
                             if (storyItem3 != null) {
-                                if (storyItem3.translated && TextUtils.equals(storyItem3.translatedLng, t41.A())) {
+                                if (storyItem3.translated && TextUtils.equals(storyItem3.translatedLng, u41.A())) {
                                     org.telegram.ui.ActionBar.v0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_translate, LocaleController.getString(R.string.HideTranslation), false, v5Var.d).setOnClickListener(new i5(v5Var, 4));
                                 } else if (MessagesController.getInstance(e6Var.C2).getTranslateController().canTranslateStory(c6Var.a)) {
                                     actionBarPopupWindow$ActionBarPopupWindowLayout8 = actionBarPopupWindow$ActionBarPopupWindowLayout;

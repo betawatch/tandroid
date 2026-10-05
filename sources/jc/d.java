@@ -1,11 +1,10 @@
 package jc;
 
 import cc.k;
-import hg.k0;
 import java.util.Arrays;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final int[][] a = {new int[]{1, 1, 1, 1, 1, 1, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 1, 1, 1, 1, 1, 1}};
@@ -293,7 +292,7 @@ public abstract class d {
                                     }
                                     break;
                                 default:
-                                    throw new IllegalArgumentException(k0.h(i10, "Invalid mask pattern: "));
+                                    throw new IllegalArgumentException(hg.c.h(i10, "Invalid mask pattern: "));
                             }
                         }
                         bArr4[i51][i55] = (byte) i12;

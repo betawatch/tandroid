@@ -14,7 +14,7 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class u9 extends TextView {
     public final /* synthetic */ int a = 0;
@@ -42,8 +42,8 @@ public final class u9 extends TextView {
                 RectF rectF = (RectF) this.d;
                 rectF.set(0.0f, 0.0f, getWidth(), getHeight());
                 Path path = this.c;
-                Paint paint2 = zg.p0.V;
-                zg.p0.h(rectF, AndroidUtilities.rectTmp, path);
+                Paint paint2 = zg.n0.V;
+                zg.n0.h(rectF, AndroidUtilities.rectTmp, path);
                 canvas.drawPath(path, paint);
                 super.dispatchDraw(canvas);
                 break;
@@ -99,14 +99,14 @@ public final class u9 extends TextView {
                 super.onMeasure(i10, i11);
                 if (getText() instanceof Spanned) {
                     Spanned spanned = (Spanned) getText();
-                    org.telegram.ui.Components.k61[] k61VarArr = (org.telegram.ui.Components.k61[]) spanned.getSpans(0, spanned.length(), org.telegram.ui.Components.k61.class);
-                    if (k61VarArr != null && k61VarArr.length > 0) {
+                    org.telegram.ui.Components.l61[] l61VarArr = (org.telegram.ui.Components.l61[]) spanned.getSpans(0, spanned.length(), org.telegram.ui.Components.l61.class);
+                    if (l61VarArr != null && l61VarArr.length > 0) {
                         org.telegram.ui.Components.k90 k90Var = new org.telegram.ui.Components.k90(0);
                         this.c = k90Var;
                         k90Var.n = false;
-                        for (int i12 = 0; i12 < k61VarArr.length; i12++) {
-                            int spanStart = spanned.getSpanStart(k61VarArr[i12]);
-                            int spanEnd = spanned.getSpanEnd(k61VarArr[i12]);
+                        for (int i12 = 0; i12 < l61VarArr.length; i12++) {
+                            int spanStart = spanned.getSpanStart(l61VarArr[i12]);
+                            int spanEnd = spanned.getSpanEnd(l61VarArr[i12]);
                             ((org.telegram.ui.Components.k90) this.c).d(getLayout(), spanStart, 0.0f);
                             int i13 = getText() != null ? getPaint().baselineShift : 0;
                             org.telegram.ui.Components.k90 k90Var2 = (org.telegram.ui.Components.k90) this.c;

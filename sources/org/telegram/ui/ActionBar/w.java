@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public final /* synthetic */ ActionBarLayout E;
@@ -194,7 +194,7 @@ public final class w extends FrameLayout {
         Drawable drawable;
         ArrayList<j2> arrayList;
         ActionBarLayout actionBarLayout = this.E;
-        n2 n2Var = !actionBarLayout.O0.isEmpty() ? (n2) t8.b.h(1, actionBarLayout.O0) : null;
+        n2 n2Var = !actionBarLayout.O0.isEmpty() ? (n2) sa.e.h(1, actionBarLayout.O0) : null;
         s sVar = actionBarLayout.G;
         if (sVar != null && (arrayList = sVar.sheetsStack) != null && !arrayList.isEmpty()) {
             n2Var = actionBarLayout.G;

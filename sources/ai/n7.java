@@ -1,25 +1,26 @@
 package ai;
 
 import android.animation.ValueAnimator;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.qd0;
 import org.telegram.ui.Components.sh0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class n7 implements z4.e {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ n7(Object obj, int i10) {
+    public /* synthetic */ n7(int i10, View view) {
         this.a = i10;
-        this.b = obj;
+        this.b = view;
     }
 
     @Override // z4.e
     public final void a(int i10) {
         switch (this.a) {
-            case 2:
+            case 1:
                 qd0 qd0Var = (qd0) this.b;
                 z4.e eVar = qd0Var.c;
                 if (eVar != null) {
@@ -68,9 +69,6 @@ public final class n7 implements z4.e {
                 }
                 break;
             case 1:
-                ((li.m) this.b).e++;
-                break;
-            case 2:
                 qd0 qd0Var = (qd0) this.b;
                 qd0Var.h = i10;
                 qd0Var.n = f7;
@@ -118,7 +116,7 @@ public final class n7 implements z4.e {
                     break;
                 }
                 break;
-            case 2:
+            case 1:
                 qd0 qd0Var = (qd0) this.b;
                 if (i10 == 0) {
                     qd0.a(qd0Var, qd0Var.e.getCurrentItem(), 0);
@@ -139,11 +137,5 @@ public final class n7 implements z4.e {
     }
 
     private final void f(int i10) {
-    }
-
-    private final void g(int i10) {
-    }
-
-    private final void h(int i10) {
     }
 }

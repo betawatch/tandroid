@@ -1,40 +1,39 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class x71 implements View.OnClickListener {
-    public final /* synthetic */ j81 a;
-    public final /* synthetic */ TLRPC.TL_authorization b;
-    public final /* synthetic */ SessionsActivity c;
-    public final /* synthetic */ z71 d;
+public final class x71 extends org.telegram.ui.ActionBar.f3 {
+    public static final /* synthetic */ int e = 0;
+    public TLRPC.TL_authorization b;
+    public SessionsActivity c;
+    public org.telegram.ui.Components.nj0 d;
 
-    public x71(z71 z71Var, j81 j81Var, TLRPC.TL_authorization tL_authorization, SessionsActivity sessionsActivity) {
-        this.d = z71Var;
-        this.a = j81Var;
-        this.b = tL_authorization;
-        this.c = sessionsActivity;
+    public static void m(x71 x71Var, String str) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(x71Var.getContext());
+        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.Copy)}, new lg.j(12, x71Var, str));
+        alertDialog$Builder.o();
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.d.c.getParentActivity());
-        alertDialog$Builder.a.T = LocaleController.getString(R.string.TerminateSessionText);
-        alertDialog$Builder.a.R = LocaleController.getString(R.string.AreYouSureSessionTitle);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Terminate), new c7(this, this.a, this.b, 21));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        SessionsActivity sessionsActivity = this.c;
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        sessionsActivity.showDialog(b2Var);
-        TextView textView = (TextView) b2Var.d(-1);
-        if (textView != null) {
-            textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false));
-        }
+    public static void n(x71 x71Var) {
+        TL_account.changeAuthorizationSettings changeauthorizationsettings = new TL_account.changeAuthorizationSettings();
+        TLRPC.TL_authorization tL_authorization = x71Var.b;
+        changeauthorizationsettings.encrypted_requests_disabled = tL_authorization.encrypted_requests_disabled;
+        changeauthorizationsettings.call_requests_disabled = tL_authorization.call_requests_disabled;
+        changeauthorizationsettings.flags = 3;
+        changeauthorizationsettings.hash = tL_authorization.hash;
+        ConnectionsManager.getInstance(x71Var.currentAccount).sendRequest(changeauthorizationsettings, new ai.u7(21));
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void show() {
+        super.show();
+        this.d.d();
     }
 }

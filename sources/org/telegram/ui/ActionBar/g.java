@@ -13,7 +13,7 @@ import org.telegram.ui.Components.x8;
 import org.telegram.ui.Components.xi;
 import org.telegram.ui.ug0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -118,7 +118,7 @@ public final class g extends AnimatorListenerAdapter {
                         xiVar.x1.setVisibility(4);
                     }
                     if (this.c) {
-                        xiVar.Y1();
+                        xiVar.a2();
                         xiVar.O0.setVisibility(z11 ? 0 : 8);
                     }
                     xiVar.M0 = null;

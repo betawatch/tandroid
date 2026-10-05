@@ -26,9 +26,8 @@ import n6.l;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.ui.Cells.c1;
-import qa.e;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class c {
     public static final Pattern d = Pattern.compile("[0-9]+s");
@@ -46,7 +45,7 @@ public final class c {
         try {
             return new URL("https://firebaseinstallations.googleapis.com/v1/" + str);
         } catch (MalformedURLException e7) {
-            throw new e(e7.getMessage());
+            throw new qa.e(e7.getMessage());
         }
     }
 
@@ -83,7 +82,7 @@ public final class c {
             return;
         }
         Log.w("Firebase-Installations", str4);
-        Log.w("Firebase-Installations", c1.k("Firebase options used while communicating with Firebase server APIs: ", str2, ", ", str3, TextUtils.isEmpty(str) ? "" : t8.b.i(", ", str)));
+        Log.w("Firebase-Installations", c1.k("Firebase options used while communicating with Firebase server APIs: ", str2, ", ", str3, TextUtils.isEmpty(str) ? "" : e.i(", ", str)));
     }
 
     public static long d(String str) {
@@ -281,7 +280,7 @@ public final class c {
             httpURLConnection.addRequestProperty("x-goog-api-key", str);
             return httpURLConnection;
         } catch (IOException unused2) {
-            throw new e("Firebase Installations Service is unavailable. Please try again later.");
+            throw new qa.e("Firebase Installations Service is unavailable. Please try again later.");
         }
     }
 }

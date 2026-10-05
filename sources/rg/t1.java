@@ -9,18 +9,18 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Components.nj0;
-import yh.j8;
+import yh.l8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class t1 extends r8 {
-    public final j8 Q;
+    public final l8 Q;
     public final int R;
     public final s1 S;
 
     public t1(Context context, int i10, d6 d6Var) {
         super(context, d6Var);
-        this.Q = new j8(1, 15);
+        this.Q = new l8(1, 15);
         this.S = new s1(this, 0);
         this.R = i10 == 1 ? i6.fk : i6.Mj;
     }
@@ -30,9 +30,9 @@ public final class t1 extends r8 {
         boolean isEnabled = LiteMode.isEnabled(131072);
         s1 s1Var = this.S;
         if (isEnabled) {
-            j8 j8Var = this.Q;
-            j8Var.d();
-            j8Var.a(canvas, i6.w0(null, this.R, false));
+            l8 l8Var = this.Q;
+            l8Var.d();
+            l8Var.a(canvas, i6.w0(null, this.R, false));
             yf.h.d().a(15, s1Var);
         } else {
             yf.h.d().f(s1Var);

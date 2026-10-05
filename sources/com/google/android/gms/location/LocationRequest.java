@@ -15,7 +15,7 @@ import r7.p;
 import u6.f;
 import w7.g0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class LocationRequest extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LocationRequest> CREATOR = new j(5);
@@ -102,49 +102,49 @@ public final class LocationRequest extends a implements ReflectedParcelable {
         int intValue;
         String str;
         String str2;
-        StringBuilder u10 = a4.a.u("Request[");
+        StringBuilder v = a4.a.v("Request[");
         int i10 = this.a;
         if (i10 == 105) {
-            u10.append(g8.l.a(i10));
+            v.append(g8.l.a(i10));
         } else {
-            u10.append("@");
+            v.append("@");
             if (b()) {
-                p.a(u10, this.b);
-                u10.append("/");
-                p.a(u10, this.d);
+                p.a(v, this.b);
+                v.append("/");
+                p.a(v, this.d);
             } else {
-                p.a(u10, this.b);
+                p.a(v, this.b);
             }
-            u10.append(" ");
-            u10.append(g8.l.a(this.a));
+            v.append(" ");
+            v.append(g8.l.a(this.a));
         }
         if (this.a == 105 || this.c != this.b) {
-            u10.append(", minUpdateInterval=");
-            u10.append(c(this.c));
+            v.append(", minUpdateInterval=");
+            v.append(c(this.c));
         }
         float f7 = this.h;
         if (f7 > 0.0d) {
-            u10.append(", minUpdateDistance=");
-            u10.append(f7);
+            v.append(", minUpdateDistance=");
+            v.append(f7);
         }
         if (this.a != 105 ? this.r != this.b : this.r != Long.MAX_VALUE) {
-            u10.append(", maxUpdateAge=");
-            u10.append(c(this.r));
+            v.append(", maxUpdateAge=");
+            v.append(c(this.r));
         }
         long j3 = this.e;
         if (j3 != Long.MAX_VALUE) {
-            u10.append(", duration=");
-            p.a(u10, j3);
+            v.append(", duration=");
+            p.a(v, j3);
         }
         int i11 = this.f;
         if (i11 != Integer.MAX_VALUE) {
-            u10.append(", maxUpdates=");
-            u10.append(i11);
+            v.append(", maxUpdates=");
+            v.append(i11);
         }
         boolean z10 = true;
         int i12 = this.v;
         if (i12 != 0) {
-            u10.append(", ");
+            v.append(", ");
             if (i12 == 0) {
                 str2 = "THROTTLE_BACKGROUND";
             } else if (i12 == 1) {
@@ -155,11 +155,11 @@ public final class LocationRequest extends a implements ReflectedParcelable {
                 }
                 str2 = "THROTTLE_NEVER";
             }
-            u10.append(str2);
+            v.append(str2);
         }
         int i13 = this.s;
         if (i13 != 0) {
-            u10.append(", ");
+            v.append(", ");
             if (i13 == 0) {
                 str = "GRANULARITY_PERMISSION_LEVEL";
             } else if (i13 == 1) {
@@ -170,18 +170,18 @@ public final class LocationRequest extends a implements ReflectedParcelable {
                 }
                 str = "GRANULARITY_FINE";
             }
-            u10.append(str);
+            v.append(str);
         }
         if (this.n) {
-            u10.append(", waitForAccurateLocation");
+            v.append(", waitForAccurateLocation");
         }
         if (this.x) {
-            u10.append(", bypass");
+            v.append(", bypass");
         }
         String str3 = this.w;
         if (str3 != null) {
-            u10.append(", moduleId=");
-            u10.append(str3);
+            v.append(", moduleId=");
+            v.append(str3);
         }
         Method method = f.d;
         WorkSource workSource = this.y;
@@ -194,16 +194,16 @@ public final class LocationRequest extends a implements ReflectedParcelable {
                 Log.e("WorkSourceUtil", "Unable to check WorkSource emptiness", e7);
             }
             if (!z10) {
-                u10.append(", ");
-                u10.append(workSource);
+                v.append(", ");
+                v.append(workSource);
             }
             jVar = this.E;
             if (jVar != null) {
-                u10.append(", impersonation=");
-                u10.append(jVar);
+                v.append(", impersonation=");
+                v.append(jVar);
             }
-            u10.append(']');
-            return u10.toString();
+            v.append(']');
+            return v.toString();
         }
         Method method2 = f.c;
         if (method2 != null) {
@@ -222,8 +222,8 @@ public final class LocationRequest extends a implements ReflectedParcelable {
             jVar = this.E;
             if (jVar != null) {
             }
-            u10.append(']');
-            return u10.toString();
+            v.append(']');
+            return v.toString();
         }
         intValue = 0;
         if (intValue != 0) {
@@ -233,8 +233,8 @@ public final class LocationRequest extends a implements ReflectedParcelable {
         jVar = this.E;
         if (jVar != null) {
         }
-        u10.append(']');
-        return u10.toString();
+        v.append(']');
+        return v.toString();
     }
 
     @Override // android.os.Parcelable

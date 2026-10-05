@@ -8,9 +8,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class ul implements uv0 {
+public final class ul implements vv0 {
     public File a;
     public boolean b;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 c;
@@ -36,7 +36,7 @@ public final class ul implements uv0 {
             }
             if (n2Var != null && n2Var.getParentActivity() != null) {
                 if (!chatAttachAlertPhotoLayout.w0) {
-                    org.telegram.messenger.ok.p(R.string.GlobalAttachVideoRestricted, new yc(chatAttachAlertPhotoLayout.P, this.c), null);
+                    org.telegram.messenger.bi.o(R.string.GlobalAttachVideoRestricted, new yc(chatAttachAlertPhotoLayout.P, this.c), null);
                     return false;
                 }
                 if (Build.VERSION.SDK_INT >= 23 && chatAttachAlertPhotoLayout.getContext().checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
@@ -111,7 +111,7 @@ public final class ul implements uv0 {
                         }
                     }
                 }, chatAttachAlertPhotoLayout.P);
-                chatAttachAlertPhotoLayout.k0.a(vv0.b);
+                chatAttachAlertPhotoLayout.k0.a(wv0.b);
                 chatAttachAlertPhotoLayout.P.runHaptic();
                 return true;
             }
@@ -127,13 +127,13 @@ public final class ul implements uv0 {
         if (chatAttachAlertPhotoLayout.s0 || (gmVar = chatAttachAlertPhotoLayout.P) == null || gmVar.getCameraSession() == null) {
             return;
         }
-        if (shutterButton.getState() == vv0.b) {
+        if (shutterButton.getState() == wv0.b) {
             chatAttachAlertPhotoLayout.l0();
             CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout.P.getCameraSession(), false);
-            shutterButton.a(vv0.a);
+            shutterButton.a(wv0.a);
         } else {
             if (!chatAttachAlertPhotoLayout.x0) {
-                org.telegram.messenger.ok.p(R.string.GlobalAttachPhotoRestricted, new yc(chatAttachAlertPhotoLayout.P, this.c), null);
+                org.telegram.messenger.bi.o(R.string.GlobalAttachPhotoRestricted, new yc(chatAttachAlertPhotoLayout.P, this.c), null);
                 return;
             }
             org.telegram.ui.ActionBar.n2 n2Var = xiVar.f0;

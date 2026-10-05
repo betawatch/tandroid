@@ -9,13 +9,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.n11;
 import org.telegram.ui.Components.q90;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class a7 extends LinearLayout {
     public TextView a;
@@ -55,7 +55,7 @@ public abstract class a7 extends LinearLayout {
             }
             return;
         }
-        textView2.setText(LocaleController.formatString(R.string.CheckPhoneNumber, ok.h(new StringBuilder("+"), MessagesController.getInstance(i11).getUser(Long.valueOf(UserConfig.getInstance(i11).clientUserId)).phone, gf.b.c())));
+        textView2.setText(LocaleController.formatString(R.string.CheckPhoneNumber, bi.g(new StringBuilder("+"), MessagesController.getInstance(i11).getUser(Long.valueOf(UserConfig.getInstance(i11).clientUserId)).phone, gf.b.c())));
         String string = LocaleController.getString(R.string.CheckPhoneNumberInfo);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
         int indexOf = string.indexOf("**");
@@ -64,7 +64,7 @@ public abstract class a7 extends LinearLayout {
             spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 2, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) "");
             try {
-                spannableStringBuilder.setSpan(new k61(LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl), (m11) null), indexOf, lastIndexOf - 2, 33);
+                spannableStringBuilder.setSpan(new l61(LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl), (n11) null), indexOf, lastIndexOf - 2, 33);
             } catch (Exception e7) {
                 FileLog.e(e7);
             }

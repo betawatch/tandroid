@@ -13,7 +13,7 @@ import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class iq0 extends org.telegram.ui.ActionBar.n2 {
     public Bitmap a;
@@ -26,9 +26,9 @@ public final class iq0 extends org.telegram.ui.ActionBar.n2 {
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         this.actionBar.setBackgroundColor(-13421773);
-        this.actionBar.A(-12763843, false);
+        this.actionBar.z(-12763843, false);
         this.actionBar.setTitleColor(-1);
-        this.actionBar.B(-1, false);
+        this.actionBar.A(-1, false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.CropImage));
@@ -56,7 +56,7 @@ public final class iq0 extends org.telegram.ui.ActionBar.n2 {
             if (string == null && uri == null) {
                 return false;
             }
-            if (string != null && !t8.b.u(string)) {
+            if (string != null && !sa.e.u(string)) {
                 return false;
             }
             if (AndroidUtilities.isTablet()) {

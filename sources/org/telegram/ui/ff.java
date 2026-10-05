@@ -13,7 +13,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ff implements Comparator {
     public final /* synthetic */ int a;
@@ -113,15 +113,15 @@ public final /* synthetic */ class ff implements Comparator {
                 }
                 return ((Float) pair4.first).floatValue() > ((Float) pair3.first).floatValue() ? -1 : 0;
             case 16:
-                int i10 = ((org.telegram.ui.Components.nq0) obj).c;
-                int i11 = ((org.telegram.ui.Components.nq0) obj2).c;
+                int i10 = ((org.telegram.ui.Components.pq0) obj).c;
+                int i11 = ((org.telegram.ui.Components.pq0) obj2).c;
                 if (i10 < i11) {
                     return 1;
                 }
                 return i10 > i11 ? -1 : 0;
             case 17:
-                id2 = ((org.telegram.ui.Components.nu0) obj2).c;
-                id3 = ((org.telegram.ui.Components.nu0) obj).c;
+                id2 = ((org.telegram.ui.Components.ou0) obj2).c;
+                id3 = ((org.telegram.ui.Components.ou0) obj).c;
                 break;
             case 18:
                 Pair pair5 = (Pair) obj;

@@ -1,18 +1,18 @@
 package org.telegram.ui.ActionBar;
 
 import android.util.SparseIntArray;
-import org.telegram.ui.rd1;
+import org.telegram.ui.pd1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class p5 extends e5 {
     public final /* synthetic */ int R = 1;
     public final /* synthetic */ Object S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p5(rd1 rd1Var, int i10, boolean z10) {
+    public p5(pd1 pd1Var, int i10, boolean z10) {
         super(i10, true, z10, null);
-        this.S = rd1Var;
+        this.S = pd1Var;
     }
 
     @Override // org.telegram.ui.ActionBar.e5
@@ -41,7 +41,7 @@ public final class p5 extends e5 {
     public void n(int i10, int i11, int i12) {
         switch (this.R) {
             case 1:
-                if (!((rd1) this.S).d2) {
+                if (!((pd1) this.S).d2) {
                     super.n(i10, i11, i12);
                     break;
                 }
@@ -56,7 +56,7 @@ public final class p5 extends e5 {
     public void o(int i10, int i11, int i12, int i13, int i14, int i15, boolean z10, boolean z11) {
         switch (this.R) {
             case 1:
-                if (!((rd1) this.S).d2) {
+                if (!((pd1) this.S).d2) {
                     super.o(i10, i11, i12, i13, i14, i15, z10, z11);
                     break;
                 }

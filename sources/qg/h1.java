@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class h1 extends View {
     public int a;
@@ -31,7 +31,7 @@ public final class h1 extends View {
         }
         float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
         float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
-        i1.z1(width, height, min, this.a, canvas);
+        i1.y1(width, height, min, this.a, canvas);
         if (this.b != 0.0f) {
             i1Var.f3.setColor(this.a);
             i1Var.f3.setAlpha(255);

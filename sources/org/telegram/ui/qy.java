@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class qy extends org.telegram.ui.Components.ja implements ai.s9 {
     public static final /* synthetic */ int C3 = 0;
@@ -65,93 +65,13 @@ public final class qy extends org.telegram.ui.Components.ja implements ai.s9 {
         this.i3 = AndroidUtilities.dp(200.0f);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x0087, code lost:
-    
-        if ((r3.getTop() - getPaddingTop()) > ((getMeasuredHeight() - getPaddingTop()) / 2.0f)) goto L32;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void A1(kx kxVar, float f7, boolean z10) {
-        uy uyVar;
-        org.telegram.ui.Components.zl0 zl0Var = kxVar == null ? this.s3 : this;
-        if (zl0Var == null) {
-            this.s3 = kxVar;
-            return;
-        }
-        boolean z11 = false;
-        org.telegram.ui.Cells.s2 s2Var = null;
-        org.telegram.ui.Cells.s2 s2Var2 = null;
-        int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        int i11 = 0;
-        while (true) {
-            int childCount = zl0Var.getChildCount();
-            uyVar = this.B3;
-            if (i11 >= childCount) {
-                break;
-            }
-            View childAt = zl0Var.getChildAt(i11);
-            if (childAt instanceof org.telegram.ui.Cells.s2) {
-                org.telegram.ui.Cells.s2 s2Var3 = (org.telegram.ui.Cells.s2) childAt;
-                if (s2Var3.getDialogId() == uyVar.F3.getCurrentFragmetDialogId()) {
-                    s2Var = s2Var3;
-                }
-                if (childAt.getTop() >= 0 && s2Var3.getDialogId() != 0 && childAt.getTop() < i10) {
-                    i10 = s2Var3.getTop();
-                    s2Var2 = s2Var3;
-                }
-            }
-            i11++;
-        }
-        if (s2Var != null) {
-            if (AndroidUtilities.dp(70.0f) * getAdapter().h() > getMeasuredHeight()) {
-            }
-        }
-        s2Var = s2Var2;
-        this.s3 = kxVar;
-        if (s2Var != null) {
-            if (kxVar != null) {
-                kxVar.setPadding(getPaddingLeft(), this.f3, getPaddingLeft(), getPaddingBottom());
-                int F = ((gg.m) kxVar.getAdapter()).F(s2Var.getDialogId());
-                int top = (int) ((s2Var.getTop() - zl0Var.getPaddingTop()) + f7);
-                if (F >= 0) {
-                    ty tyVar = this.n3;
-                    if (tyVar.s == 0 && tyVar.v == 2 && uyVar.i4()) {
-                        z11 = true;
-                    }
-                    int dp = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 76.0f : 70.0f);
-                    int paddingTop = ((getPaddingTop() + top) - (F * dp)) - F;
-                    if (z11) {
-                        paddingTop += dp;
-                    }
-                    int paddingTop2 = getPaddingTop();
-                    if (paddingTop > paddingTop2) {
-                        top = (top + paddingTop2) - paddingTop;
-                    }
-                    ((s4.c0) kxVar.getLayoutManager()).h1(F, top);
-                }
-            }
-            int F2 = ((gg.m) getAdapter()).F(s2Var.getDialogId());
-            int top2 = s2Var.getTop() - getPaddingTop();
-            if (z10 && uyVar.K) {
-                top2 += AndroidUtilities.dp(81.0f);
-            }
-            if (z10) {
-                top2 += AndroidUtilities.dp(48.0f);
-            }
-            if (F2 >= 0) {
-                ((s4.c0) getLayoutManager()).h1(F2, top2);
-            }
-        }
-    }
-
-    public final void B1(boolean z10, org.telegram.ui.Cells.s2 s2Var) {
+    public final void A1(boolean z10, org.telegram.ui.Cells.s2 s2Var) {
         SharedConfig.toggleArchiveHidden();
         uy uyVar = this.B3;
         UndoView h42 = uyVar.h4();
         if (!SharedConfig.archiveHidden) {
             h42.l(0L, 7, null, null);
-            C1();
+            B1();
             if (!z10 || s2Var == null) {
                 return;
             }
@@ -171,13 +91,13 @@ public final class qy extends org.telegram.ui.Components.ja implements ai.s9 {
             if (z10) {
                 uyVar.d1 = true;
             } else {
-                C1();
+                B1();
             }
         }
         h42.l(0L, 6, null, null);
     }
 
-    public final void C1() {
+    public final void B1() {
         int i10 = SharedConfig.archiveHidden ? 2 : 0;
         ty tyVar = this.n3;
         tyVar.v = i10;
@@ -246,15 +166,15 @@ public final class qy extends org.telegram.ui.Components.ja implements ai.s9 {
         org.telegram.ui.ActionBar.d6 d6Var = this.p2;
         Paint paint3 = this.q3;
         if (f16 > 0.0f) {
-            canvas2.clipRect(0, 0, AndroidUtilities.lerp(getMeasuredWidth(), AndroidUtilities.dp(f41.getRightPaddingSize()), this.p3), getMeasuredHeight());
+            canvas2.clipRect(0, 0, AndroidUtilities.lerp(getMeasuredWidth(), AndroidUtilities.dp(d41.getRightPaddingSize()), this.p3), getMeasuredHeight());
             paint3.setColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.s9, d6Var));
             paint3.setAlpha((int) (paint3.getAlpha() * this.p3));
-            canvas2.drawRect(0.0f, 0.0f, AndroidUtilities.dp(f41.getRightPaddingSize()), getMeasuredHeight(), paint3);
+            canvas2.drawRect(0.0f, 0.0f, AndroidUtilities.dp(d41.getRightPaddingSize()), getMeasuredHeight(), paint3);
             paint = paint3;
             int alpha = org.telegram.ui.ActionBar.i6.k0.getAlpha();
             org.telegram.ui.ActionBar.i6.k0.setAlpha((int) (this.p3 * alpha));
             canvas2 = canvas;
-            canvas2.drawRect(AndroidUtilities.dp(f41.getRightPaddingSize()), 0.0f, AndroidUtilities.dp(f41.getRightPaddingSize()) - 1, getMeasuredHeight(), org.telegram.ui.ActionBar.i6.k0);
+            canvas2.drawRect(AndroidUtilities.dp(d41.getRightPaddingSize()), 0.0f, AndroidUtilities.dp(d41.getRightPaddingSize()) - 1, getMeasuredHeight(), org.telegram.ui.ActionBar.i6.k0);
             org.telegram.ui.ActionBar.i6.k0.setAlpha(alpha);
         } else {
             paint = paint3;
@@ -522,7 +442,7 @@ public final class qy extends org.telegram.ui.Components.ja implements ai.s9 {
             Paint paint6 = nd0Var.a;
             int dp = AndroidUtilities.dp(110.0f);
             int dp2 = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 78.0f : 72.0f);
-            float measuredWidth = ((view5.getMeasuredWidth() + r12) * nd0Var.h) - org.telegram.messenger.f0.D(62.0f, 3, dp);
+            float measuredWidth = ((view5.getMeasuredWidth() + r12) * nd0Var.h) - org.telegram.messenger.q.D(62.0f, 3, dp);
             int i24 = dp / 2;
             int i25 = measuredHeight - i24;
             paint6.setColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
@@ -535,7 +455,7 @@ public final class qy extends org.telegram.ui.Components.ja implements ai.s9 {
             float f28 = dp + measuredWidth;
             rectF4.set(measuredWidth, i25, f28, i25 + dp);
             float f29 = nd0Var.g;
-            int x12 = (int) (f29 < 0.5f ? org.telegram.messenger.ok.x(f29, 0.5f, 1.0f, 35.0f) : ((f29 - 0.5f) * 35.0f) / 0.5f);
+            int x12 = (int) (f29 < 0.5f ? org.telegram.messenger.bi.x(f29, 0.5f, 1.0f, 35.0f) : ((f29 - 0.5f) * 35.0f) / 0.5f);
             float f30 = x12;
             float f31 = 360 - (x12 * 2);
             canvas.drawArc(rectF4, f30, f31, true, paint5);
@@ -840,7 +760,7 @@ public final class qy extends org.telegram.ui.Components.ja implements ai.s9 {
                             org.telegram.ui.Cells.s2 s2Var = (org.telegram.ui.Cells.s2) view;
                             long dialogId = s2Var.getDialogId();
                             if (DialogObject.isFolderDialogId(dialogId)) {
-                                B1(false, s2Var);
+                                A1(false, s2Var);
                             } else {
                                 TLRPC.Dialog dialog = (TLRPC.Dialog) uyVar.getMessagesController().dialogs_dict.f(dialogId);
                                 if (dialog != null) {
@@ -940,10 +860,10 @@ public final class qy extends org.telegram.ui.Components.ja implements ai.s9 {
                     fArr[1] = 0.0f;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
                     ofFloat.addUpdateListener(new c3(this, 9));
-                    ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.ok.b(getViewOffset(), AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
+                    ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.bi.b(getViewOffset(), AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
                     ofFloat.setInterpolator(org.telegram.ui.Components.tr.h);
                     setScrollEnabled(false);
-                    ofFloat.addListener(new org.telegram.ui.Components.a91(this, 20));
+                    ofFloat.addListener(new org.telegram.ui.Components.b91(this, 20));
                     ofFloat.start();
                 }
             }
@@ -998,12 +918,92 @@ public final class qy extends org.telegram.ui.Components.ja implements ai.s9 {
     }
 
     @Override // org.telegram.ui.Components.zl0
-    public final boolean w1() {
+    public final boolean v1() {
         return true;
     }
 
     @Override // org.telegram.ui.Components.ja
-    public final int y1() {
+    public final int x1() {
         return AndroidUtilities.dp(48.0f);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x0087, code lost:
+    
+        if ((r3.getTop() - getPaddingTop()) > ((getMeasuredHeight() - getPaddingTop()) / 2.0f)) goto L32;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void z1(kx kxVar, float f7, boolean z10) {
+        uy uyVar;
+        org.telegram.ui.Components.zl0 zl0Var = kxVar == null ? this.s3 : this;
+        if (zl0Var == null) {
+            this.s3 = kxVar;
+            return;
+        }
+        boolean z11 = false;
+        org.telegram.ui.Cells.s2 s2Var = null;
+        org.telegram.ui.Cells.s2 s2Var2 = null;
+        int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        int i11 = 0;
+        while (true) {
+            int childCount = zl0Var.getChildCount();
+            uyVar = this.B3;
+            if (i11 >= childCount) {
+                break;
+            }
+            View childAt = zl0Var.getChildAt(i11);
+            if (childAt instanceof org.telegram.ui.Cells.s2) {
+                org.telegram.ui.Cells.s2 s2Var3 = (org.telegram.ui.Cells.s2) childAt;
+                if (s2Var3.getDialogId() == uyVar.F3.getCurrentFragmetDialogId()) {
+                    s2Var = s2Var3;
+                }
+                if (childAt.getTop() >= 0 && s2Var3.getDialogId() != 0 && childAt.getTop() < i10) {
+                    i10 = s2Var3.getTop();
+                    s2Var2 = s2Var3;
+                }
+            }
+            i11++;
+        }
+        if (s2Var != null) {
+            if (AndroidUtilities.dp(70.0f) * getAdapter().h() > getMeasuredHeight()) {
+            }
+        }
+        s2Var = s2Var2;
+        this.s3 = kxVar;
+        if (s2Var != null) {
+            if (kxVar != null) {
+                kxVar.setPadding(getPaddingLeft(), this.f3, getPaddingLeft(), getPaddingBottom());
+                int F = ((gg.m) kxVar.getAdapter()).F(s2Var.getDialogId());
+                int top = (int) ((s2Var.getTop() - zl0Var.getPaddingTop()) + f7);
+                if (F >= 0) {
+                    ty tyVar = this.n3;
+                    if (tyVar.s == 0 && tyVar.v == 2 && uyVar.i4()) {
+                        z11 = true;
+                    }
+                    int dp = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 76.0f : 70.0f);
+                    int paddingTop = ((getPaddingTop() + top) - (F * dp)) - F;
+                    if (z11) {
+                        paddingTop += dp;
+                    }
+                    int paddingTop2 = getPaddingTop();
+                    if (paddingTop > paddingTop2) {
+                        top = (top + paddingTop2) - paddingTop;
+                    }
+                    ((s4.c0) kxVar.getLayoutManager()).h1(F, top);
+                }
+            }
+            int F2 = ((gg.m) getAdapter()).F(s2Var.getDialogId());
+            int top2 = s2Var.getTop() - getPaddingTop();
+            if (z10 && uyVar.K) {
+                top2 += AndroidUtilities.dp(81.0f);
+            }
+            if (z10) {
+                top2 += AndroidUtilities.dp(48.0f);
+            }
+            if (F2 >= 0) {
+                ((s4.c0) getLayoutManager()).h1(F2, top2);
+            }
+        }
     }
 }

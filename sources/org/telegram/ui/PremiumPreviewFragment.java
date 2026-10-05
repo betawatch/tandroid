@@ -45,7 +45,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -213,9 +213,9 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
                     return;
                 }
                 if (i15 == 33) {
-                    hg.c cVar = new hg.c(null);
-                    cVar.h = -4;
-                    premiumPreviewFragment.presentFragment(cVar);
+                    hg.d dVar = new hg.d(null);
+                    dVar.h = -4;
+                    premiumPreviewFragment.presentFragment(dVar);
                     return;
                 }
                 if (i15 == 30) {
@@ -244,11 +244,11 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
                         premiumPreviewFragment.presentFragment(filtersSetupActivity);
                         return;
                     } else if (i15 == 36) {
-                        premiumPreviewFragment.presentFragment(new hg.m());
+                        premiumPreviewFragment.presentFragment(new hg.n());
                         return;
                     } else {
                         if (i15 == 37) {
-                            premiumPreviewFragment.presentFragment(new hg.v());
+                            premiumPreviewFragment.presentFragment(new hg.w());
                             return;
                         }
                         return;
@@ -257,7 +257,7 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
                 Long emojiStatusDocumentId = UserObject.getEmojiStatusDocumentId(premiumPreviewFragment.getUserConfig().getCurrentUser());
                 ai.m0 m0Var = new ai.m0(19, premiumPreviewFragment, ow0Var2);
                 if (premiumPreviewFragment.s0 == null) {
-                    t61[] t61VarArr = new t61[1];
+                    r61[] r61VarArr = new r61[1];
                     boolean z10 = ((float) (ow0Var2.getHeight() + ow0Var2.getTop())) > ((float) premiumPreviewFragment.a.getMeasuredHeight()) / 2.0f;
                     int min = (int) Math.min(AndroidUtilities.dp(330.0f), AndroidUtilities.displaySize.y * 0.75f);
                     int min2 = (int) Math.min(AndroidUtilities.dp(324.0f), AndroidUtilities.displaySize.x * 0.95f);
@@ -284,16 +284,16 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
                             i11 = i16;
                             ow0Var = ow0Var2;
                             int i17 = i11;
-                            tw0 tw0Var = new tw0(premiumPreviewFragment, premiumPreviewFragment, premiumPreviewFragment.getParentActivity(), Integer.valueOf(i12), !z10 ? 12 : 0, premiumPreviewFragment.getResourceProvider(), !z10 ? 24 : 16, m0Var, t61VarArr);
+                            tw0 tw0Var = new tw0(premiumPreviewFragment, premiumPreviewFragment, premiumPreviewFragment.getParentActivity(), Integer.valueOf(i12), !z10 ? 12 : 0, premiumPreviewFragment.getResourceProvider(), !z10 ? 24 : 16, m0Var, r61VarArr);
                             tw0Var.g1 = true;
                             tw0Var.setSelected(emojiStatusDocumentId);
                             tw0Var.setSaveState(3);
                             tw0Var.y(o5Var, ow0Var);
                             uw0 uw0Var = new uw0(premiumPreviewFragment, tw0Var);
                             premiumPreviewFragment.s0 = uw0Var;
-                            t61VarArr[0] = uw0Var;
+                            r61VarArr[0] = uw0Var;
                             uw0Var.showAsDropDown(ow0Var2, 0, i17, 53);
-                            t61VarArr[0].b();
+                            r61VarArr[0].b();
                         }
                         o5Var = o5Var3;
                         ow0Var = ow0Var2;
@@ -306,16 +306,16 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
                     if (!z10) {
                     }
                     int i172 = i11;
-                    tw0 tw0Var2 = new tw0(premiumPreviewFragment, premiumPreviewFragment, premiumPreviewFragment.getParentActivity(), Integer.valueOf(i12), !z10 ? 12 : 0, premiumPreviewFragment.getResourceProvider(), !z10 ? 24 : 16, m0Var, t61VarArr);
+                    tw0 tw0Var2 = new tw0(premiumPreviewFragment, premiumPreviewFragment, premiumPreviewFragment.getParentActivity(), Integer.valueOf(i12), !z10 ? 12 : 0, premiumPreviewFragment.getResourceProvider(), !z10 ? 24 : 16, m0Var, r61VarArr);
                     tw0Var2.g1 = true;
                     tw0Var2.setSelected(emojiStatusDocumentId);
                     tw0Var2.setSaveState(3);
                     tw0Var2.y(o5Var, ow0Var);
                     uw0 uw0Var2 = new uw0(premiumPreviewFragment, tw0Var2);
                     premiumPreviewFragment.s0 = uw0Var2;
-                    t61VarArr[0] = uw0Var2;
+                    r61VarArr[0] = uw0Var2;
                     uw0Var2.showAsDropDown(ow0Var2, 0, i172, 53);
-                    t61VarArr[0].b();
+                    r61VarArr[0].b();
                 }
             }
         }
@@ -780,11 +780,11 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
                 TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
                 tL_inputStickerSetShortName.short_name = "RestrictedEmoji";
                 MediaDataController.getInstance(this.currentAccount).getStickerSet((TLRPC.InputStickerSet) tL_inputStickerSetShortName, false);
-                hg.f.a(this.currentAccount).c(null);
+                hg.g.a(this.currentAccount).c(null);
                 if (getMessagesController().suggestedFilters.isEmpty()) {
                     getMessagesController().loadSuggestedFilters();
                 }
-                hg.y d = hg.y.d(this.currentAccount);
+                hg.z d = hg.z.d(this.currentAccount);
                 if (!d.d) {
                     d.e(true, false);
                 }
@@ -872,9 +872,9 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
         this.K.addView(this.e0, w7.z5.c(-1.0f, -1));
         FrameLayout frameLayout = this.K;
         ch.d c10 = cVar.c(frameLayout, null, false);
-        c10.x(eh.b.j(this.resourceProvider));
-        c10.z(AndroidUtilities.dp(28.0f));
-        c10.y(AndroidUtilities.dp(5.0f));
+        c10.w(eh.b.j(this.resourceProvider));
+        c10.y(AndroidUtilities.dp(28.0f));
+        c10.x(AndroidUtilities.dp(5.0f));
         frameLayout.setBackground(c10);
         w7.b6.b(this.K, 0.02f, 1.5f);
         this.J.addView(this.K, w7.z5.d(-1, 64.0f, 80, 4.0f, 0.0f, 4.0f, 0.0f));
@@ -1200,11 +1200,11 @@ public class PremiumPreviewFragment extends org.telegram.ui.ActionBar.n2 impleme
             return;
         }
         boolean z10 = this.h0;
-        kVar.B(org.telegram.ui.ActionBar.i6.w0(null, z10 ? org.telegram.ui.ActionBar.i6.G6 : org.telegram.ui.ActionBar.i6.Tj, false), true);
-        this.actionBar.B(org.telegram.ui.ActionBar.i6.w0(null, z10 ? org.telegram.ui.ActionBar.i6.G6 : org.telegram.ui.ActionBar.i6.Tj, false), false);
+        kVar.A(org.telegram.ui.ActionBar.i6.w0(null, z10 ? org.telegram.ui.ActionBar.i6.G6 : org.telegram.ui.ActionBar.i6.Tj, false), true);
+        this.actionBar.A(org.telegram.ui.ActionBar.i6.w0(null, z10 ? org.telegram.ui.ActionBar.i6.G6 : org.telegram.ui.ActionBar.i6.Tj, false), false);
         org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.i6.Tj;
-        kVar2.A(i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, i10, false), 60), false);
+        kVar2.z(i0.a.k(org.telegram.ui.ActionBar.i6.w0(null, i10, false), 60), false);
         this.V.a.g();
         dx0 dx0Var = this.U;
         if (dx0Var != null) {

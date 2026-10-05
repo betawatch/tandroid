@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pr0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -242,14 +242,14 @@ public final /* synthetic */ class pr0 implements View.OnClickListener {
                                                 case 0:
                                                     PhotoViewer photoViewer2 = photoViewer;
                                                     if (AndroidUtilities.addToClipboard(photoViewer2.T4.sponsoredInfo)) {
-                                                        org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.yc(org.telegram.ui.Components.mb.a(photoViewer2.E), dVar));
+                                                        org.telegram.messenger.bi.n(R.string.TextCopied, new org.telegram.ui.Components.yc(org.telegram.ui.Components.mb.a(photoViewer2.E), dVar));
                                                         break;
                                                     }
                                                     break;
                                                 default:
                                                     PhotoViewer photoViewer3 = photoViewer;
                                                     if (AndroidUtilities.addToClipboard(photoViewer3.T4.sponsoredAdditionalInfo)) {
-                                                        org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.yc(org.telegram.ui.Components.mb.a(photoViewer3.E), dVar));
+                                                        org.telegram.messenger.bi.n(R.string.TextCopied, new org.telegram.ui.Components.yc(org.telegram.ui.Components.mb.a(photoViewer3.E), dVar));
                                                         break;
                                                     }
                                                     break;
@@ -274,14 +274,14 @@ public final /* synthetic */ class pr0 implements View.OnClickListener {
                                                 case 0:
                                                     PhotoViewer photoViewer2 = photoViewer;
                                                     if (AndroidUtilities.addToClipboard(photoViewer2.T4.sponsoredInfo)) {
-                                                        org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.yc(org.telegram.ui.Components.mb.a(photoViewer2.E), dVar));
+                                                        org.telegram.messenger.bi.n(R.string.TextCopied, new org.telegram.ui.Components.yc(org.telegram.ui.Components.mb.a(photoViewer2.E), dVar));
                                                         break;
                                                     }
                                                     break;
                                                 default:
                                                     PhotoViewer photoViewer3 = photoViewer;
                                                     if (AndroidUtilities.addToClipboard(photoViewer3.T4.sponsoredAdditionalInfo)) {
-                                                        org.telegram.messenger.ok.o(R.string.TextCopied, new org.telegram.ui.Components.yc(org.telegram.ui.Components.mb.a(photoViewer3.E), dVar));
+                                                        org.telegram.messenger.bi.n(R.string.TextCopied, new org.telegram.ui.Components.yc(org.telegram.ui.Components.mb.a(photoViewer3.E), dVar));
                                                         break;
                                                     }
                                                     break;
@@ -386,18 +386,18 @@ public final /* synthetic */ class pr0 implements View.OnClickListener {
                     if (messageObject5 != null && (message = messageObject5.messageOwner) != null && message.media != null && messageObject5.hasVideoQualities()) {
                         int i18 = messageObject5.currentAccount;
                         TLRPC.MessageMedia messageMedia = messageObject5.messageOwner.media;
-                        ArrayList s10 = org.telegram.ui.Components.d81.s(i18, messageMedia.document, messageMedia.alt_documents, 0, true);
+                        ArrayList s10 = org.telegram.ui.Components.e81.s(i18, messageMedia.document, messageMedia.alt_documents, 0, true);
                         linearLayout.removeAllViews();
                         int i19 = 0;
                         while (i19 < s10.size()) {
-                            org.telegram.ui.Components.z71 z71Var = (org.telegram.ui.Components.z71) s10.get(i19);
-                            org.telegram.ui.Components.b81 a2 = z71Var.a();
+                            org.telegram.ui.Components.a81 a81Var = (org.telegram.ui.Components.a81) s10.get(i19);
+                            org.telegram.ui.Components.c81 a2 = a81Var.a();
                             StringBuilder sb2 = new StringBuilder();
                             int i20 = R.string.QualitySaveIn;
                             Object[] objArr = new Object[i14];
-                            objArr[0] = Integer.valueOf(z71Var.b());
+                            objArr[0] = Integer.valueOf(a81Var.b());
                             sb2.append(LocaleController.formatString(i20, objArr));
-                            sb2.append(z71Var.a ? " (" + LocaleController.getString(R.string.QualitySource) + ")" : "");
+                            sb2.append(a81Var.a ? " (" + LocaleController.getString(R.string.QualitySource) + ")" : "");
                             String sb3 = sb2.toString();
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                             if (a2.b()) {
@@ -417,7 +417,7 @@ public final /* synthetic */ class pr0 implements View.OnClickListener {
                             c10.setSubtext(spannableStringBuilder);
                             c10.c(-328966, -328966);
                             c10.b.setPadding(0, 0, 0, 0);
-                            c10.setOnClickListener(new a0(vrVar, messageObject5, z71Var, 9));
+                            c10.setOnClickListener(new a0(vrVar, messageObject5, a81Var, 9));
                             c10.setSelectorColor(268435455);
                             i19++;
                             f11 = 0.0f;

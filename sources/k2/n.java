@@ -1,6 +1,6 @@
 package k2;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class n extends Exception {
     public final int a;
@@ -13,8 +13,8 @@ public final class n extends Exception {
     */
     public n(int i10, int i11, int i12, int i13, int i14, b2.s sVar, boolean z10, RuntimeException runtimeException) {
         super(r5.toString(), runtimeException);
-        StringBuilder k10 = hg.k0.k("AudioTrack init failed ", i10, " Config(", i11, ", ");
-        hg.k0.s(k10, i12, ", ", i13, ", ");
+        StringBuilder k10 = hg.c.k("AudioTrack init failed ", i10, " Config(", i11, ", ");
+        hg.c.t(k10, i12, ", ", i13, ", ");
         k10.append(i14);
         k10.append(") ");
         k10.append(sVar);

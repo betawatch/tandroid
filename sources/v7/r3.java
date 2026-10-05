@@ -1,13 +1,13 @@
 package v7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class r3 implements ia.d {
     public static final r3 a = new r3();
-    public static final ia.c b = new ia.c("inferenceCommonLogEvent", hg.k0.m(t8.b.l(h.class, new e(1))));
-    public static final ia.c c = new ia.c("options", hg.k0.m(t8.b.l(h.class, new e(2))));
-    public static final ia.c d = new ia.c("identifyLanguageResult", hg.k0.m(t8.b.l(h.class, new e(3))));
-    public static final ia.c e = new ia.c("identifyPossibleLanguagesResult", hg.k0.m(t8.b.l(h.class, new e(4))));
+    public static final ia.c b = new ia.c("inferenceCommonLogEvent", hg.c.m(sa.e.l(h.class, new e(1))));
+    public static final ia.c c = new ia.c("options", hg.c.m(sa.e.l(h.class, new e(2))));
+    public static final ia.c d = new ia.c("identifyLanguageResult", hg.c.m(sa.e.l(h.class, new e(3))));
+    public static final ia.c e = new ia.c("identifyPossibleLanguagesResult", hg.c.m(sa.e.l(h.class, new e(4))));
 
     @Override // ia.a
     public final void a(Object obj, Object obj2) {

@@ -1,54 +1,50 @@
 package yh;
 
 import android.content.Context;
-import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.e71;
+import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.tr;
+import org.telegram.ui.Components.w61;
+import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class g7 extends FrameLayout {
-    public final org.telegram.ui.Components.p6 a;
-    public final ImageView b;
-    public int c;
-    public boolean d;
+public final class g7 extends g61 {
+    public static final /* synthetic */ int a = 0;
 
-    public g7(Context context) {
-        super(context);
-        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(context, false, false, false);
-        this.a = p6Var;
-        p6Var.getDrawable().o(true, true, false);
-        p6Var.setTextSize(AndroidUtilities.dp(15.0f));
-        addView(p6Var, w7.z5.i(-1.0f, -1.0f, 8388627, 22.0f, 0.0f, 58.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.arrow_more);
-        addView(imageView, w7.z5.i(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 17.0f, 0.0f));
+    static {
+        g61.setup(new g7());
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.d) {
-            canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight(), org.telegram.ui.ActionBar.i6.k0);
+    @Override // org.telegram.ui.Components.g61
+    public final void bindView(View view, h61 h61Var, boolean z10, w61 w61Var, e71 e71Var) {
+        h7 h7Var = (h7) view;
+        org.telegram.ui.Components.p6 p6Var = h7Var.a;
+        ImageView imageView = h7Var.b;
+        int i10 = h7Var.c;
+        int i11 = h61Var.d;
+        boolean z11 = i10 == i11;
+        h7Var.c = i11;
+        p6Var.c(h61Var.l, z11, true);
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, h61Var.q ? org.telegram.ui.ActionBar.i6.o6 : org.telegram.ui.ActionBar.i6.G6, false);
+        p6Var.setTextColor(w02);
+        imageView.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+        if (z11) {
+            imageView.animate().rotation(h61Var.f ? 0.0f : 180.0f).setDuration(340L).setInterpolator(tr.h);
+        } else {
+            imageView.setRotation(h61Var.f ? 0.0f : 180.0f);
         }
+        h7Var.d = z10;
+        h7Var.setWillNotDraw(!z10);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+    @Override // org.telegram.ui.Components.g61
+    public final View createView(Context context, zl0 zl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new h7(context);
     }
 }

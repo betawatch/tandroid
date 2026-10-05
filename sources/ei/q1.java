@@ -20,25 +20,25 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
 import org.webrtc.MediaStreamTrack;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class q1 extends cb {
     public final int X;
     public final String Y;
-    public u61 Z;
+    public w61 Z;
     public final n1 a0;
     public boolean b0;
     public boolean c0;
@@ -291,25 +291,25 @@ public final class q1 extends cb {
         l1 l1Var = new l1(context, i11);
         l1Var.setDelegate(new m1());
         l1Var.X3(p1Var, null, false, false, false, false);
-        LinearLayout f7 = ok.f(context, r11);
-        f7.addView(w0Var, z5.n(-1, -2));
-        f7.addView(l1Var, z5.n(-1, -2));
+        LinearLayout e7 = bi.e(context, r11);
+        e7.addView(w0Var, z5.n(-1, -2));
+        e7.addView(l1Var, z5.n(-1, -2));
         n1 n1Var = new n1(context, null);
         this.a0 = n1Var;
         n1Var.V(b7.e(null, i11, j3, i6.I.q()));
-        n1Var.addView(f7, z5.d(-1, -1.0f, 119, 4.0f, 8.0f, 4.0f, 8.0f));
+        n1Var.addView(e7, z5.d(-1, -1.0f, 119, 4.0f, 8.0f, 4.0f, 8.0f));
         FrameLayout frameLayout = new FrameLayout(context);
-        ci.d g10 = ok.g(24, context, d6Var, r11);
-        g10.g(LocaleController.getString(R.string.BotShareMessageShare), false, r11);
-        g10.setOnClickListener(new d1(this, tL_messages_preparedInlineMessage, eVar, i11, j3, sVar));
-        frameLayout.addView(g10, z5.d(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));
+        ci.d f7 = bi.f(24, context, d6Var, r11);
+        f7.g(LocaleController.getString(R.string.BotShareMessageShare), false, r11);
+        f7.setOnClickListener(new d1(this, tL_messages_preparedInlineMessage, eVar, i11, j3, sVar));
+        frameLayout.addView(f7, z5.d(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));
         ViewGroup viewGroup = this.containerView;
         int i13 = this.backgroundPaddingLeft;
         viewGroup.addView(frameLayout, z5.f(-2.0f, 87, i13, 0, i13, 0));
         zl0 zl0Var = this.d;
         int i14 = this.backgroundPaddingLeft;
         zl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f) + r11);
-        this.d.s1();
+        this.d.r1();
         int i15 = i6.a7;
         setBackgroundColor(getThemedColor(i15));
         fixNavigationBar(getThemedColor(i15));
@@ -471,9 +471,9 @@ public final class q1 extends cb {
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(zl0Var, getContext(), this.X, 0, true, new bi.v(this, 15), this.resourcesProvider);
-        this.Z = u61Var;
-        return u61Var;
+        w61 w61Var = new w61(zl0Var, getContext(), this.X, 0, true, new bi.v(this, 15), this.resourcesProvider);
+        this.Z = w61Var;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

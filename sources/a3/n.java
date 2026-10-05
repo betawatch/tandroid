@@ -32,7 +32,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 import u2.c1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class n extends r2.r {
     public static final int[] N1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -234,16 +234,16 @@ public final class n extends r2.r {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:396:0x0740, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:396:0x0742, code lost:
     
         if (r0.equals("ELUGA_Ray_X") == false) goto L101;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x08ca, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x08cc, code lost:
     
         if (r13.equals("JSN-L21") == false) goto L664;
      */
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x008b A[FALL_THROUGH] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x008d A[FALL_THROUGH] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -2507,7 +2507,7 @@ public final class n extends r2.r {
         try {
             super.o();
         } finally {
-            bVar.x(this.O0);
+            bVar.w(this.O0);
             bVar.S(x1.d);
         }
     }
@@ -2667,7 +2667,7 @@ public final class n extends r2.r {
                 l0();
                 j0();
             } finally {
-                hg.k0.z(this.V, null);
+                hg.c.z(this.V, null);
                 this.V = null;
             }
         } finally {
@@ -2752,7 +2752,7 @@ public final class n extends r2.r {
         boolean z10;
         int i10 = 0;
         if (!r0.m(sVar.r)) {
-            return hg.k0.b(0, 0, 0, 0);
+            return hg.c.b(0, 0, 0, 0);
         }
         boolean z11 = sVar.v != null;
         Context context = this.X0;
@@ -2761,11 +2761,11 @@ public final class n extends r2.r {
             B0 = B0(context, iVar, sVar, false, false);
         }
         if (B0.isEmpty()) {
-            return hg.k0.b(1, 0, 0, 0);
+            return hg.c.b(1, 0, 0, 0);
         }
         int i11 = sVar.S;
         if (i11 != 0 && i11 != 2) {
-            return hg.k0.b(2, 0, 0, 0);
+            return hg.c.b(2, 0, 0, 0);
         }
         r2.o oVar = (r2.o) B0.get(0);
         boolean e7 = oVar.e(sVar);

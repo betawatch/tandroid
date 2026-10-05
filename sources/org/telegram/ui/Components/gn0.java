@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gn0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -68,16 +68,16 @@ public final /* synthetic */ class gn0 implements Runnable {
                 break;
             default:
                 on0 on0Var2 = this.b;
-                tx0 tx0Var = on0Var2.a;
+                ux0 ux0Var = on0Var2.a;
                 if (this.c.equals(on0Var2.L)) {
                     if (on0Var2.r == 0) {
                         on0Var2.N.b(0);
                     }
                     on0Var2.e(this.d, this.e, true);
                     if (on0Var2.r == 0) {
-                        tx0Var.e(false, true);
-                        q90 q90Var = tx0Var.e;
-                        tx0Var.d.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
+                        ux0Var.e(false, true);
+                        q90 q90Var = ux0Var.e;
+                        ux0Var.d.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
                         q90Var.setVisibility(0);
                         q90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
                         break;

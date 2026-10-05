@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class uq implements Runnable {
     public final /* synthetic */ int a;
@@ -234,9 +234,9 @@ public final /* synthetic */ class uq implements Runnable {
                     w0Var.Y1 = rrVar.B1;
                     w0Var.Z1 = 0;
                     nrVar2.l();
-                    org.telegram.ui.Components.tx0 tx0Var = rrVar.b;
-                    if (tx0Var != null && rrVar.a.d.d1 == 0 && rrVar.R) {
-                        tx0Var.e(false, true);
+                    org.telegram.ui.Components.ux0 ux0Var = rrVar.b;
+                    if (ux0Var != null && rrVar.a.d.d1 == 0 && rrVar.R) {
+                        ux0Var.e(false, true);
                     }
                 }
                 rrVar.resumeDelayedFragmentAnimation();
@@ -480,9 +480,9 @@ public final /* synthetic */ class uq implements Runnable {
                     }
                     yb0 yb0Var = new yb0(dc0Var, str2, 0);
                     if (!password.has_password) {
-                        bh1 bh1Var = new bh1(TextUtils.isEmpty(password.email_unconfirmed_pattern) ? 6 : 5, password);
-                        bh1Var.j0 = yb0Var;
-                        dc0Var.n(bh1Var, false);
+                        zg1 zg1Var = new zg1(TextUtils.isEmpty(password.email_unconfirmed_pattern) ? 6 : 5, password);
+                        zg1Var.j0 = yb0Var;
+                        dc0Var.n(zg1Var, false);
                         break;
                     } else {
                         TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();

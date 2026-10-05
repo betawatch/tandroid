@@ -7,7 +7,7 @@ import android.text.style.ImageSpan;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ai implements TextWatcher {
     public boolean a;
@@ -81,9 +81,9 @@ public final class ai implements TextWatcher {
             if (zhVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(zhVar.getText().toString().trim())) {
                 z11 = true;
             }
-            xiVar.J1(z11);
+            xiVar.L1(z11);
         }
-        xiVar.b1(true);
+        xiVar.d1(true);
     }
 
     @Override // android.text.TextWatcher
@@ -98,7 +98,7 @@ public final class ai implements TextWatcher {
         if (xiVar.B2.getAdapter() != null) {
             xiVar.B2.setReversed(false);
             xiVar.B2.getAdapter().U(charSequence, xiVar.E0.getEditText().getSelectionStart(), null, false, false);
-            xiVar.R1();
+            xiVar.T1();
         }
     }
 

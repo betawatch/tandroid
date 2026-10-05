@@ -14,9 +14,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m4 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.ow0, Utilities.Callback2Return, org.telegram.ui.Components.yv0, hh.i, org.telegram.ui.Components.ll0, org.telegram.ui.Components.cw0, org.telegram.ui.Components.dw0, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.cd0, org.telegram.ui.Components.ed0 {
+public final /* synthetic */ class m4 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.pw0, Utilities.Callback2Return, org.telegram.ui.Components.zv0, hh.i, org.telegram.ui.Components.ll0, org.telegram.ui.Components.dw0, org.telegram.ui.Components.ew0, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.cd0, org.telegram.ui.Components.ed0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ m4(int i10) {
@@ -27,7 +27,7 @@ public final /* synthetic */ class m4 implements org.telegram.ui.ActionBar.a2, o
         return (ActionMode.Callback2) obj;
     }
 
-    @Override // org.telegram.ui.Components.dw0
+    @Override // org.telegram.ui.Components.ew0
     public void b(Object obj, float f7) {
         es esVar = (es) obj;
         switch (this.a) {
@@ -68,7 +68,7 @@ public final /* synthetic */ class m4 implements org.telegram.ui.ActionBar.a2, o
     public String e(int i10) {
         switch (this.a) {
             case 21:
-                return hg.k0.h(i10, "");
+                return hg.c.h(i10, "");
             case 22:
                 switch (i10) {
                     case 0:
@@ -143,7 +143,7 @@ public final /* synthetic */ class m4 implements org.telegram.ui.ActionBar.a2, o
         }
     }
 
-    @Override // org.telegram.ui.Components.cw0
+    @Override // org.telegram.ui.Components.dw0
     public float get(Object obj) {
         es esVar = (es) obj;
         switch (this.a) {
@@ -160,17 +160,17 @@ public final /* synthetic */ class m4 implements org.telegram.ui.ActionBar.a2, o
         }
     }
 
-    @Override // org.telegram.ui.Components.yv0
+    @Override // org.telegram.ui.Components.zv0
     public /* synthetic */ float h(RecyclerView recyclerView) {
         return org.telegram.ui.Cells.c1.c(recyclerView);
     }
 
-    @Override // org.telegram.ui.Components.yv0
+    @Override // org.telegram.ui.Components.zv0
     public RecyclerView i(View view) {
         return ((ge) view).a;
     }
 
-    @Override // org.telegram.ui.Components.ow0
+    @Override // org.telegram.ui.Components.pw0
     public void j(int i10) {
         if (i10 == 0) {
             SharedConfig.setKeepMedia(3);
@@ -190,7 +190,7 @@ public final /* synthetic */ class m4 implements org.telegram.ui.ActionBar.a2, o
         view.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.yv0
+    @Override // org.telegram.ui.Components.zv0
     public /* synthetic */ void n(RecyclerView recyclerView) {
         org.telegram.ui.Cells.c1.b(recyclerView);
     }
@@ -230,7 +230,7 @@ public final /* synthetic */ class m4 implements org.telegram.ui.ActionBar.a2, o
         }
     }
 
-    @Override // org.telegram.ui.Components.ow0
+    @Override // org.telegram.ui.Components.pw0
     public /* synthetic */ void l() {
     }
 }

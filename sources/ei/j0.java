@@ -11,14 +11,13 @@ import android.widget.ImageView;
 import ci.qc;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ok;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.e6;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.wp;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class j0 extends Drawable {
     public final ImageView a;
@@ -71,7 +70,7 @@ public final class j0 extends Drawable {
             float f14 = centerY;
             canvas2.scale(f12, f12, f13, f14);
             Drawable drawable = this.e;
-            drawable.setBounds(org.telegram.ui.Cells.c1.e(2, centerX, drawable), ok.d(2, centerY, drawable), org.telegram.ui.Cells.c1.w(2, centerX, drawable), org.telegram.ui.Cells.c1.t(2, centerY, drawable));
+            drawable.setBounds(org.telegram.ui.Cells.c1.t(2, centerX, drawable), org.telegram.ui.Cells.c1.e(2, centerY, drawable), org.telegram.ui.Cells.c1.x(2, centerX, drawable), org.telegram.ui.Cells.c1.w(2, centerY, drawable));
             drawable.setAlpha((int) (f11 * 255.0f));
             drawable.draw(canvas2);
             float dp = AndroidUtilities.dp(14.0f);

@@ -4,14 +4,14 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class pu0 extends ImageView {
     public int a;
     public boolean b;
     public boolean c;
     public boolean d;
-    public org.telegram.ui.Components.d81 e;
+    public org.telegram.ui.Components.e81 e;
     public final org.telegram.ui.Components.tr f;
     public ValueAnimator h;
     public final /* synthetic */ PhotoViewer n;
@@ -30,8 +30,8 @@ public final class pu0 extends ImageView {
 
     public static void a(pu0 pu0Var) {
         PhotoViewer photoViewer = pu0Var.n;
-        org.telegram.ui.Components.d81 d81Var = photoViewer.F2;
-        if (d81Var == null || d81Var.p() == -9223372036854775807L) {
+        org.telegram.ui.Components.e81 e81Var = photoViewer.F2;
+        if (e81Var == null || e81Var.p() == -9223372036854775807L) {
             ValueAnimator valueAnimator = pu0Var.h;
             if (valueAnimator != null) {
                 valueAnimator.cancel();

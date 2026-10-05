@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -375,22 +375,22 @@ public final /* synthetic */ class e0 implements View.OnTouchListener {
                 }
                 break;
             case 6:
-                c71 c71Var = (c71) this.b;
-                c71Var.getClass();
-                if (motionEvent.getAction() == 0 && (runnable = c71Var.T1) != null) {
+                a71 a71Var = (a71) this.b;
+                a71Var.getClass();
+                if (motionEvent.getAction() == 0 && (runnable = a71Var.T1) != null) {
                     runnable.run();
                     break;
                 }
                 break;
             default:
-                ge1 ge1Var = (ge1) this.b;
-                if (ge1Var.S != null && motionEvent.getAction() == 0) {
-                    Drawable backgroundDrawable2 = ((ActionBarPopupWindow$ActionBarPopupWindowLayout) ge1Var.S).getBackgroundDrawable();
+                ee1 ee1Var = (ee1) this.b;
+                if (ee1Var.S != null && motionEvent.getAction() == 0) {
+                    Drawable backgroundDrawable2 = ((ActionBarPopupWindow$ActionBarPopupWindowLayout) ee1Var.S).getBackgroundDrawable();
                     RectF rectF2 = AndroidUtilities.rectTmp;
                     rectF2.set(backgroundDrawable2.getBounds());
-                    rectF2.offset(ge1Var.S.getX(), ge1Var.S.getY());
+                    rectF2.offset(ee1Var.S.getX(), ee1Var.S.getY());
                     if (!rectF2.contains(motionEvent.getX(), motionEvent.getY())) {
-                        ge1Var.c(true);
+                        ee1Var.c(true);
                         break;
                     }
                 }

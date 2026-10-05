@@ -7,14 +7,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class jv extends org.telegram.ui.Components.cb {
     public final iv X;
     public final u6 Y;
     public final o0.a Z;
     public n6 a0;
-    public final org.telegram.ui.Components.xy0[] b0;
+    public final org.telegram.ui.Components.yy0[] b0;
     public final org.telegram.ui.Cells.a2[] c0;
     public final LinearLayout d0;
     public final k6 e0;
@@ -27,7 +27,7 @@ public final class jv extends org.telegram.ui.Components.cb {
         int i10;
         long j3;
         long j10;
-        this.b0 = new org.telegram.ui.Components.xy0[8];
+        this.b0 = new org.telegram.ui.Components.yy0[8];
         this.c0 = new org.telegram.ui.Cells.a2[8];
         this.Z = aVar;
         this.Y = u6Var;
@@ -85,20 +85,20 @@ public final class jv extends org.telegram.ui.Components.cb {
                 j10 = 0;
             }
             if (j10 > j3) {
-                org.telegram.ui.Components.xy0[] xy0VarArr = this.b0;
-                org.telegram.ui.Components.xy0 xy0Var = new org.telegram.ui.Components.xy0();
+                org.telegram.ui.Components.yy0[] yy0VarArr = this.b0;
+                org.telegram.ui.Components.yy0 yy0Var = new org.telegram.ui.Components.yy0();
                 Paint paint = new Paint(1);
-                xy0Var.b = paint;
-                xy0Var.c = true;
-                xy0Var.d = false;
+                yy0Var.b = paint;
+                yy0Var.c = true;
+                yy0Var.d = false;
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setStrokeWidth(AndroidUtilities.dp(5.0f));
                 paint.setStrokeCap(Paint.Cap.ROUND);
                 paint.setStrokeJoin(Paint.Join.ROUND);
-                xy0VarArr[i11] = xy0Var;
-                org.telegram.ui.Components.xy0 xy0Var2 = this.b0[i11];
-                xy0Var2.e = j10;
-                xy0Var2.a = i13;
+                yy0VarArr[i11] = yy0Var;
+                org.telegram.ui.Components.yy0 yy0Var2 = this.b0[i11];
+                yy0Var2.e = j10;
+                yy0Var2.a = i13;
                 org.telegram.ui.Cells.a2 a2Var2 = new org.telegram.ui.Cells.a2(4, 21, parentActivity, null, false);
                 a2Var2.setTag(Integer.valueOf(i11));
                 a2Var2.setBackgroundDrawable(org.telegram.ui.ActionBar.i6.K0(false));
@@ -123,13 +123,13 @@ public final class jv extends org.telegram.ui.Components.cb {
             a2Var.setNeedDivider(false);
         }
         iv ivVar2 = this.X;
-        org.telegram.ui.Components.xy0[] xy0VarArr2 = this.b0;
-        ivVar2.b = xy0VarArr2;
+        org.telegram.ui.Components.yy0[] yy0VarArr2 = this.b0;
+        ivVar2.b = yy0VarArr2;
         ivVar2.F = bVar;
         ivVar2.invalidate();
-        ivVar2.c = new float[xy0VarArr2.length];
-        ivVar2.d = new float[xy0VarArr2.length];
-        ivVar2.e = new float[xy0VarArr2.length];
+        ivVar2.c = new float[yy0VarArr2.length];
+        ivVar2.d = new float[yy0VarArr2.length];
+        ivVar2.e = new float[yy0VarArr2.length];
         ivVar2.c(false);
         if (ivVar2.y > 1) {
             ivVar2.f = 0.0f;
@@ -143,11 +143,11 @@ public final class jv extends org.telegram.ui.Components.cb {
             k6Var.s = dp;
             int i15 = 0;
             while (true) {
-                org.telegram.ui.Components.g91 g91Var = k6Var.h;
-                if (i15 >= g91Var.getViewPages().length) {
+                org.telegram.ui.Components.h91 h91Var = k6Var.h;
+                if (i15 >= h91Var.getViewPages().length) {
                     break;
                 }
-                org.telegram.ui.Components.zl0 c10 = v7.c(g91Var.getViewPages()[i15]);
+                org.telegram.ui.Components.zl0 c10 = v7.c(h91Var.getViewPages()[i15]);
                 if (c10 != null) {
                     c10.setPadding(c10.getPaddingLeft(), 0, c10.getPaddingRight(), dp);
                 }
@@ -169,11 +169,11 @@ public final class jv extends org.telegram.ui.Components.cb {
     }
 
     @Override // org.telegram.ui.Components.cb
-    public final void E(org.telegram.ui.Components.lw0 lw0Var) {
+    public final void E(org.telegram.ui.Components.mw0 mw0Var) {
         this.d.j(new i3(this, 10));
         if (this.s != null) {
             P();
-            lw0Var.addView(this.a0, w7.z5.e(-1, 72, 80));
+            mw0Var.addView(this.a0, w7.z5.e(-1, 72, 80));
         }
     }
 

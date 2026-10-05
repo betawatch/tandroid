@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class r70 extends org.telegram.ui.Components.yl0 {
     public final Context c;
@@ -127,9 +127,9 @@ public final class r70 extends org.telegram.ui.Components.yl0 {
         if (indexOf2 != -1) {
             String str3 = stickerSet.emojis ? "t.me/addemoji/" : "t.me/addstickers/";
             int length = str3.length() + indexOf2;
-            StringBuilder u10 = a4.a.u(str3);
-            u10.append(stickerSet.short_name);
-            SpannableString spannableString2 = new SpannableString(u10.toString());
+            StringBuilder v = a4.a.v(str3);
+            v.append(stickerSet.short_name);
+            SpannableString spannableString2 = new SpannableString(v.toString());
             spannableString2.setSpan(new org.telegram.ui.Components.h10(org.telegram.ui.ActionBar.i6.q6, resourceProvider), length, lowerCase.length() + length, 0);
             m8Var.c.setText(spannableString2);
         }

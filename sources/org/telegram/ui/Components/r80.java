@@ -4,7 +4,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r80 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -26,10 +26,10 @@ public final /* synthetic */ class r80 implements Utilities.Callback2 {
                 u80.m((u80) this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.d, (TLRPC.ChatInviteJoinResult) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                xh.h4.T((xh.h4) this.c, (TL_stars.TL_starGiftUnique) this.d, this.b, (yh.a3) obj, (nf.e) obj2);
+                xh.h4.T((xh.h4) this.c, (TL_stars.TL_starGiftUnique) this.d, this.b, (yh.b3) obj, (nf.e) obj2);
                 break;
             default:
-                yh.i7.O((yh.i7) this.c, (g61) this.d, this.b, (Boolean) obj, (String) obj2);
+                yh.j7.O((yh.j7) this.c, (h61) this.d, this.b, (Boolean) obj, (String) obj2);
                 break;
         }
     }

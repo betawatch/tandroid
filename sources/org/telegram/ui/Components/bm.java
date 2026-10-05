@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.rd1;
+import org.telegram.ui.pd1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class bm extends org.telegram.ui.ActionBar.v0 {
     public final /* synthetic */ int v0;
@@ -30,15 +30,15 @@ public final class bm extends org.telegram.ui.ActionBar.v0 {
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(((rd1) this.w0).h.getText());
+                accessibilityNodeInfo.setText(((pd1) this.w0).h.getText());
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bm(rd1 rd1Var, Context context, org.telegram.ui.ActionBar.z zVar) {
+    public bm(pd1 pd1Var, Context context, org.telegram.ui.ActionBar.z zVar) {
         super(context, zVar, 0, 0);
         this.v0 = 2;
-        this.w0 = rd1Var;
+        this.w0 = pd1Var;
     }
 }

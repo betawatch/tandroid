@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class cy implements org.telegram.ui.Components.mo0, org.telegram.ui.Components.pl0, ci.bc, org.telegram.ui.Components.e20 {
     public final /* synthetic */ uy a;
@@ -50,8 +50,8 @@ public final class cy implements org.telegram.ui.Components.mo0, org.telegram.ui
             }
         }
         dy dyVar = uyVar.C0;
-        ai.w0 w0Var = dyVar.W;
-        return uyVar.x4(view, i10, f7, dyVar.c0);
+        ai.w0 w0Var = dyVar.a0;
+        return uyVar.x4(view, i10, f7, dyVar.d0);
     }
 
     public void d(gg.q0 q0Var) {
@@ -59,12 +59,12 @@ public final class cy implements org.telegram.ui.Components.mo0, org.telegram.ui
         if (uyVar.p3) {
             dy dyVar = uyVar.C0;
             if (dyVar != null) {
-                dyVar.B0.remove(q0Var);
+                dyVar.C0.remove(q0Var);
                 dy dyVar2 = uyVar.C0;
                 String obj = uyVar.j0.getSearchField().getText().toString();
                 View currentView = dyVar2.getCurrentView();
-                boolean z10 = TextUtils.isEmpty(dyVar2.L0) ? true : !dyVar2.f0;
-                dyVar2.L0 = obj;
+                boolean z10 = TextUtils.isEmpty(dyVar2.M0) ? true : !dyVar2.g0;
+                dyVar2.M0 = obj;
                 dyVar2.Q(currentView, dyVar2.getCurrentPosition(), obj, z10);
             }
             uyVar.f5(true, null, null, false, true);

@@ -1,22 +1,35 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+import android.content.Context;
+
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class ra1 {
-    public String a;
-    public String b;
-    public String c;
-    public boolean d;
-    public String e;
-    public String f;
-    public String g;
-    public boolean h;
-    public String i;
-    public String j;
-    public String k;
-    public boolean l;
-    public String m;
-    public String n;
-    public String o;
-    public boolean p;
+public final class ra1 extends da1 {
+    public final int v;
+    public final int w;
+    public int x;
+    public org.telegram.ui.Components.s61 y;
+
+    public ra1(Context context, int i10, int i11, ig.f fVar, int i12) {
+        super(context, i11, fVar, null);
+        this.v = i10;
+        this.w = i12;
+    }
+
+    @Override // org.telegram.ui.da1
+    public final void b(fa1 fa1Var) {
+        int i10;
+        if (fa1Var == null || (i10 = this.x) < 0) {
+            return;
+        }
+        fa1Var.a(this.v, this.w, i10, this.y);
+    }
+
+    @Override // org.telegram.ui.da1
+    public final void c() {
+    }
+
+    @Override // org.telegram.ui.da1
+    public final void f() {
+    }
 }

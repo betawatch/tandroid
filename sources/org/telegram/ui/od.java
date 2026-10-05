@@ -4,23 +4,23 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class od implements org.telegram.ui.Components.wv0, org.telegram.ui.ActionBar.a2, Utilities.Callback5, Utilities.Callback5Return {
+public final /* synthetic */ class od implements org.telegram.ui.Components.xv0, org.telegram.ui.ActionBar.a2, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ me a;
 
     public /* synthetic */ od(me meVar) {
         this.a = meVar;
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.xv0
     public int b() {
-        return this.a.U1;
+        return this.a.R0;
     }
 
     @Override // org.telegram.ui.ActionBar.a2
     public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        this.a.p1.presentFragment(new bh1(6, null));
+        this.a.m0.presentFragment(new zg1(6, null));
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5Return
@@ -38,29 +38,29 @@ public final /* synthetic */ class od implements org.telegram.ui.Components.wv0,
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
         me meVar = this.a;
-        pd pdVar = meVar.v2;
-        int i10 = meVar.r1;
-        long j3 = meVar.s1;
-        int i11 = ((org.telegram.ui.Components.g61) obj).d;
+        pd pdVar = meVar.s1;
+        int i10 = meVar.o0;
+        long j3 = meVar.p0;
+        int i11 = ((org.telegram.ui.Components.h61) obj).d;
         if (i11 != 1) {
             if (i11 == 4) {
-                meVar.p1.presentFragment(new ei.f4(j3));
+                meVar.m0.presentFragment(new ei.f4(j3));
             }
         } else {
-            if (meVar.u1 >= MessagesController.getInstance(i10).channelRestrictSponsoredLevelMin) {
-                meVar.m2 = !meVar.m2;
+            if (meVar.r0 >= MessagesController.getInstance(i10).channelRestrictSponsoredLevelMin) {
+                meVar.j1 = !meVar.j1;
                 AndroidUtilities.cancelRunOnUIThread(pdVar);
                 AndroidUtilities.runOnUIThread(pdVar, 1000L);
-                meVar.a2.f3.N(true);
+                meVar.X0.f3.N(true);
                 return;
             }
-            if (meVar.t1 == null) {
+            if (meVar.q0 == null) {
                 return;
             }
-            rg.k0 k0Var = new rg.k0(30, meVar.r1, meVar.getContext(), meVar.p1, meVar.q1);
+            rg.k0 k0Var = new rg.k0(30, meVar.o0, meVar.getContext(), meVar.m0, meVar.n0);
             k0Var.H1(j3);
-            k0Var.F1(meVar.t1, true);
-            MessagesController.getInstance(i10).getBoostsController().userCanBoostChannel(j3, meVar.t1, new qc(1, meVar, k0Var));
+            k0Var.F1(meVar.q0, true);
+            MessagesController.getInstance(i10).getBoostsController().userCanBoostChannel(j3, meVar.q0, new qc(1, meVar, k0Var));
         }
     }
 }

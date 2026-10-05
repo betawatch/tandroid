@@ -7,12 +7,12 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.os.Build;
-import li.n;
+import li.q;
 import org.telegram.ui.ActionBar.i6;
 import w7.z;
 import yf.y;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class f extends li.e {
     public final oi.a e;
@@ -132,14 +132,14 @@ public final class f extends li.e {
     }
 
     @Override // li.e
-    public final void f(int i10, int i11) {
-        this.i.e(i11 / 255.0f);
+    public final void f(int i10) {
+        this.i.e(i10 / 255.0f);
         invalidateSelf();
     }
 
     @Override // li.e
-    public final void g(n nVar) {
-        boolean z10 = nVar.a;
+    public final void g(q qVar) {
+        boolean z10 = qVar.a;
         z zVar = this.h;
         z zVar2 = z10 ? this.g : zVar;
         z zVar3 = this.i;

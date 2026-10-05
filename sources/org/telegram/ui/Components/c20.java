@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class c20 extends FrameLayout implements le.d {
     public final le.b a;
@@ -196,14 +196,14 @@ public final class c20 extends FrameLayout implements le.d {
             this.n = cVar;
             ch.f fVar2 = new ch.f(cVar);
             this.r = fVar2;
-            fVar2.x(fVar);
+            fVar2.w(fVar);
             float dpf2 = AndroidUtilities.dpf2(0.4f);
             float dpf22 = AndroidUtilities.dpf2(0.4f);
             ch.c cVar2 = fVar2.l;
             cVar2.i = dpf2;
             cVar2.j = dpf22;
-            fVar2.z(AndroidUtilities.dp(18.0f));
-            fVar2.y(AndroidUtilities.dp(5.66f));
+            fVar2.y(AndroidUtilities.dp(18.0f));
+            fVar2.x(AndroidUtilities.dp(5.66f));
         }
         g();
     }

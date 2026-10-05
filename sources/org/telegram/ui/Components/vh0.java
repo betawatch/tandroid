@@ -11,9 +11,9 @@ import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class vh0 extends w9 implements iw0 {
+public final class vh0 extends w9 implements jw0 {
     public final int G;
     public RadialProgress2 H;
     public ValueAnimator I;
@@ -36,7 +36,7 @@ public final class vh0 extends w9 implements iw0 {
         setLayerNum(bi0Var.l1);
     }
 
-    @Override // org.telegram.ui.Components.iw0
+    @Override // org.telegram.ui.Components.jw0
     public final void g(Runnable runnable) {
         this.O = runnable;
     }
@@ -144,7 +144,7 @@ public final class vh0 extends w9 implements iw0 {
             RadialProgress2 radialProgress2 = this.H;
             int i14 = this.G;
             int i15 = (i11 - currentActionBarHeight) - dp2;
-            radialProgress2.q((i10 - i14) / 2, hg.k0.y(i15, i14, 2, currentActionBarHeight), (i10 + i14) / 2, ((i15 + i14) / 2) + currentActionBarHeight);
+            radialProgress2.q((i10 - i14) / 2, hg.c.y(i15, i14, 2, currentActionBarHeight), (i10 + i14) / 2, ((i15 + i14) / 2) + currentActionBarHeight);
         }
     }
 

@@ -50,7 +50,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.Components.x40, NotificationCenter.NotificationCenterDelegate {
     public TLRPC.TL_chatBannedRights A0;
@@ -127,9 +127,9 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
     public org.telegram.ui.Cells.r8 u0;
     public org.telegram.ui.Components.mu v;
     public TLRPC.FileLocation v0;
-    public zd w;
+    public org.telegram.ui.Components.ro0 w;
     public long w0;
-    public org.telegram.ui.Components.ro0 x;
+    public org.telegram.ui.Components.so0 x;
     public TLRPC.Chat x0;
     public LinearLayout y;
     public TLRPC.ChatFull y0;
@@ -206,9 +206,9 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         if (U == null) {
             return;
         }
-        Bundle e7 = org.telegram.messenger.ok.e(16, "onlySelect", "dialogsType", true);
-        e7.putBoolean("resetDelegate", false);
-        uy uyVar = new uy(e7);
+        Bundle d = org.telegram.messenger.bi.d(16, "onlySelect", "dialogsType", true);
+        d.putBoolean("resetDelegate", false);
+        uy uyVar = new uy(d);
         uyVar.setCurrentAccount(i10);
         uyVar.C2 = new ei.v1(uyVar, i10, j3, botverifiersettings);
         U.presentFragment(uyVar);
@@ -294,23 +294,23 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         AndroidUtilities.runOnUIThread(new fi.k(this, photoSize2, inputFile, inputFile2, videoSize, photoSize, d, str));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:142:0x078f  */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x07e8  */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0871  */
-    /* JADX WARN: Removed duplicated region for block: B:155:0x08a8  */
-    /* JADX WARN: Removed duplicated region for block: B:163:0x08ca  */
-    /* JADX WARN: Removed duplicated region for block: B:173:0x0904  */
-    /* JADX WARN: Removed duplicated region for block: B:180:0x0928  */
-    /* JADX WARN: Removed duplicated region for block: B:183:0x0935  */
-    /* JADX WARN: Removed duplicated region for block: B:186:0x0942  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0969  */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x0804  */
-    /* JADX WARN: Removed duplicated region for block: B:256:0x0f20  */
-    /* JADX WARN: Removed duplicated region for block: B:258:0x0f2c  */
-    /* JADX WARN: Removed duplicated region for block: B:264:0x0f8d  */
-    /* JADX WARN: Removed duplicated region for block: B:267:0x0fb9  */
-    /* JADX WARN: Removed duplicated region for block: B:271:0x0fc1  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x0f92  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x0787  */
+    /* JADX WARN: Removed duplicated region for block: B:145:0x07e0  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x0869  */
+    /* JADX WARN: Removed duplicated region for block: B:155:0x08a0  */
+    /* JADX WARN: Removed duplicated region for block: B:163:0x08c2  */
+    /* JADX WARN: Removed duplicated region for block: B:173:0x08fc  */
+    /* JADX WARN: Removed duplicated region for block: B:180:0x0920  */
+    /* JADX WARN: Removed duplicated region for block: B:183:0x092d  */
+    /* JADX WARN: Removed duplicated region for block: B:186:0x093a  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x0961  */
+    /* JADX WARN: Removed duplicated region for block: B:205:0x07fc  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x0f18  */
+    /* JADX WARN: Removed duplicated region for block: B:258:0x0f24  */
+    /* JADX WARN: Removed duplicated region for block: B:264:0x0f85  */
+    /* JADX WARN: Removed duplicated region for block: B:267:0x0fb1  */
+    /* JADX WARN: Removed duplicated region for block: B:271:0x0fb9  */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x0f8a  */
     @Override // org.telegram.ui.ActionBar.n2
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -351,6 +351,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         TLRPC.ChatFull chatFull3;
         TLRPC.ChatFull chatFull4;
         final int i15 = 1;
+        setHasOwnBackground(true);
         org.telegram.ui.Components.mu muVar = this.v;
         if (muVar != null) {
             muVar.o();
@@ -361,22 +362,21 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         jd jdVar = new jd(i15, context, this);
         jdVar.setOnTouchListener(new bi.d(9));
         this.fragmentView = jdVar;
-        jdVar.setBackgroundColor(org.telegram.ui.ActionBar.i6.u0(org.telegram.ui.ActionBar.i6.a7));
-        zd zdVar = new zd(context);
-        this.w = zdVar;
-        org.telegram.ui.Components.ro0 ro0Var = new org.telegram.ui.Components.ro0(context, this.w, this.resourceProvider, false);
-        this.x = ro0Var;
-        ro0Var.setFillViewport(true);
+        org.telegram.ui.Components.ro0 ro0Var = new org.telegram.ui.Components.ro0(context);
+        this.w = ro0Var;
+        org.telegram.ui.Components.so0 so0Var = new org.telegram.ui.Components.so0(context, this.w, this.resourceProvider, false);
+        this.x = so0Var;
+        so0Var.setFillViewport(true);
+        this.x.setDrawBackground(true);
         jdVar.addView(this.x, w7.z5.c(-1.0f, -1));
-        this.actionBar.setAdaptiveBackground(this.x);
-        this.x.addView(zdVar, new FrameLayout.LayoutParams(-1, -2));
-        zdVar.setOrientation(1);
+        this.x.addView(ro0Var, new FrameLayout.LayoutParams(-1, -2));
+        ro0Var.setOrientation(1);
         this.actionBar.setTitle(LocaleController.getString(R.string.ChannelEdit));
         LinearLayout linearLayout = new LinearLayout(context);
         this.d = linearLayout;
         linearLayout.setOrientation(1);
         this.d.setBackgroundColor(org.telegram.ui.ActionBar.i6.u0(org.telegram.ui.ActionBar.i6.d6));
-        zdVar.addView(this.d, w7.z5.n(-1, -2));
+        ro0Var.addView(this.d, w7.z5.n(-1, -2));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.d.addView(frameLayout2, w7.z5.n(-1, -2));
         int i16 = 6;
@@ -489,7 +489,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -544,22 +544,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var7 = toVar14.H;
                             boolean z15 = r8Var7 != null && r8Var7.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j10;
-                            hpVar.n0 = z15;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j10;
+                            hpVar.o0 = z15;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -620,30 +620,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i19 = 0; i19 < tL_chatReactionsSome.reactions.size(); i19++) {
@@ -651,7 +645,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i19)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -697,7 +691,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.y = linearLayout2;
         linearLayout2.setOrientation(1);
-        zdVar.addView(this.y, w7.z5.n(-1, -2));
+        ro0Var.addView(this.y, w7.z5.n(-1, -2));
         final int i17 = 12;
         if (this.D0 != null || ChatObject.canChangeChatInfo(this.x0)) {
             ro roVar = new ro(context);
@@ -791,7 +785,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -846,22 +840,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var7 = toVar14.H;
                             boolean z152 = r8Var7 != null && r8Var7.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j10;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j10;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -922,30 +916,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i19 = 0; i19 < tL_chatReactionsSome.reactions.size(); i19++) {
@@ -953,7 +941,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i19)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -1002,11 +990,11 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         this.E.addTextChangedListener(new md(1));
         org.telegram.ui.Cells.b7 b7Var = new org.telegram.ui.Cells.b7(context);
         this.G = b7Var;
-        zdVar.addView(b7Var, w7.z5.n(-1, -2));
+        ro0Var.addView(b7Var, w7.z5.n(-1, -2));
         LinearLayout linearLayout3 = new LinearLayout(context);
         this.F = linearLayout3;
         linearLayout3.setOrientation(1);
-        zdVar.addView(this.F, w7.z5.n(-1, -2));
+        ro0Var.addView(this.F, w7.z5.n(-1, -2));
         TLRPC.Chat chat4 = this.x0;
         if (chat4 != null) {
             if (chat4.megagroup && ((chatFull4 = this.y0) == null || chatFull4.can_set_location)) {
@@ -1102,7 +1090,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 to toVar9 = this.b;
-                                toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                 break;
                             case 7:
                                 to toVar10 = this.b;
@@ -1157,22 +1145,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                 boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                 hp hpVar = new hp(null);
-                                hpVar.M = new ArrayList();
                                 hpVar.N = new ArrayList();
-                                hpVar.P = new ArrayList();
-                                hpVar.c0 = true;
-                                hpVar.f0 = new ArrayList();
-                                hpVar.o0 = new HashMap();
-                                hpVar.q0 = new wo(hpVar, 5);
-                                hpVar.t0 = false;
-                                hpVar.Z = j10;
-                                hpVar.n0 = z152;
+                                hpVar.O = new ArrayList();
+                                hpVar.Q = new ArrayList();
+                                hpVar.d0 = true;
+                                hpVar.g0 = new ArrayList();
+                                hpVar.p0 = new HashMap();
+                                hpVar.r0 = new wo(hpVar, 5);
+                                hpVar.u0 = false;
+                                hpVar.a0 = j10;
+                                hpVar.o0 = z152;
                                 TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                hpVar.Y = chatFull7;
+                                hpVar.Z = chatFull7;
                                 if (chatFull7 != null) {
                                     TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                     if (tL_chatInviteExported != null) {
-                                        hpVar.l0 = tL_chatInviteExported;
+                                        hpVar.m0 = tL_chatInviteExported;
                                     } else {
                                         hpVar.W(false);
                                     }
@@ -1233,30 +1221,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             case 23:
                                 to toVar20 = this.b;
                                 if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                    toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                    toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                     break;
                                 } else {
                                     Bundle bundle5 = new Bundle();
                                     bundle5.putLong("chat_id", toVar20.w0);
                                     aq aqVar = new aq(bundle5);
-                                    aqVar.d = new ArrayList();
-                                    aqVar.r = new ArrayList();
-                                    aqVar.v = -1;
-                                    aqVar.F = new ArrayList();
-                                    long j12 = bundle5.getLong("chat_id", 0L);
-                                    aqVar.c = j12;
                                     TLRPC.ChatFull chatFull9 = toVar20.y0;
                                     aqVar.b = chatFull9;
                                     if (chatFull9 != null) {
                                         if (aqVar.a == null) {
-                                            aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                            aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                         }
                                         aqVar.d = new ArrayList();
                                         TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                         if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                            aqVar.w = 0;
+                                            aqVar.v = 0;
                                         } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                            aqVar.w = 2;
+                                            aqVar.v = 2;
                                         } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                             TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                             for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -1264,7 +1246,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                     aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                 }
                                             }
-                                            aqVar.w = 1;
+                                            aqVar.v = 1;
                                         }
                                     }
                                     toVar20.presentFragment(aqVar);
@@ -1376,7 +1358,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 to toVar9 = this.b;
-                                toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                 break;
                             case 7:
                                 to toVar10 = this.b;
@@ -1431,22 +1413,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                 boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                 hp hpVar = new hp(null);
-                                hpVar.M = new ArrayList();
                                 hpVar.N = new ArrayList();
-                                hpVar.P = new ArrayList();
-                                hpVar.c0 = true;
-                                hpVar.f0 = new ArrayList();
-                                hpVar.o0 = new HashMap();
-                                hpVar.q0 = new wo(hpVar, 5);
-                                hpVar.t0 = false;
-                                hpVar.Z = j10;
-                                hpVar.n0 = z152;
+                                hpVar.O = new ArrayList();
+                                hpVar.Q = new ArrayList();
+                                hpVar.d0 = true;
+                                hpVar.g0 = new ArrayList();
+                                hpVar.p0 = new HashMap();
+                                hpVar.r0 = new wo(hpVar, 5);
+                                hpVar.u0 = false;
+                                hpVar.a0 = j10;
+                                hpVar.o0 = z152;
                                 TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                hpVar.Y = chatFull7;
+                                hpVar.Z = chatFull7;
                                 if (chatFull7 != null) {
                                     TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                     if (tL_chatInviteExported != null) {
-                                        hpVar.l0 = tL_chatInviteExported;
+                                        hpVar.m0 = tL_chatInviteExported;
                                     } else {
                                         hpVar.W(false);
                                     }
@@ -1507,30 +1489,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             case 23:
                                 to toVar20 = this.b;
                                 if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                    toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                    toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                     break;
                                 } else {
                                     Bundle bundle5 = new Bundle();
                                     bundle5.putLong("chat_id", toVar20.w0);
                                     aq aqVar = new aq(bundle5);
-                                    aqVar.d = new ArrayList();
-                                    aqVar.r = new ArrayList();
-                                    aqVar.v = -1;
-                                    aqVar.F = new ArrayList();
-                                    long j12 = bundle5.getLong("chat_id", 0L);
-                                    aqVar.c = j12;
                                     TLRPC.ChatFull chatFull9 = toVar20.y0;
                                     aqVar.b = chatFull9;
                                     if (chatFull9 != null) {
                                         if (aqVar.a == null) {
-                                            aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                            aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                         }
                                         aqVar.d = new ArrayList();
                                         TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                         if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                            aqVar.w = 0;
+                                            aqVar.v = 0;
                                         } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                            aqVar.w = 2;
+                                            aqVar.v = 2;
                                         } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                             TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                             for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -1538,7 +1514,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                     aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                 }
                                             }
-                                            aqVar.w = 1;
+                                            aqVar.v = 1;
                                         }
                                     }
                                     toVar20.presentFragment(aqVar);
@@ -1650,7 +1626,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 to toVar9 = this.b;
-                                toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                 break;
                             case 7:
                                 to toVar10 = this.b;
@@ -1705,22 +1681,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                 boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                 hp hpVar = new hp(null);
-                                hpVar.M = new ArrayList();
                                 hpVar.N = new ArrayList();
-                                hpVar.P = new ArrayList();
-                                hpVar.c0 = true;
-                                hpVar.f0 = new ArrayList();
-                                hpVar.o0 = new HashMap();
-                                hpVar.q0 = new wo(hpVar, 5);
-                                hpVar.t0 = false;
-                                hpVar.Z = j10;
-                                hpVar.n0 = z152;
+                                hpVar.O = new ArrayList();
+                                hpVar.Q = new ArrayList();
+                                hpVar.d0 = true;
+                                hpVar.g0 = new ArrayList();
+                                hpVar.p0 = new HashMap();
+                                hpVar.r0 = new wo(hpVar, 5);
+                                hpVar.u0 = false;
+                                hpVar.a0 = j10;
+                                hpVar.o0 = z152;
                                 TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                hpVar.Y = chatFull7;
+                                hpVar.Z = chatFull7;
                                 if (chatFull7 != null) {
                                     TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                     if (tL_chatInviteExported != null) {
-                                        hpVar.l0 = tL_chatInviteExported;
+                                        hpVar.m0 = tL_chatInviteExported;
                                     } else {
                                         hpVar.W(false);
                                     }
@@ -1781,30 +1757,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             case 23:
                                 to toVar20 = this.b;
                                 if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                    toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                    toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                     break;
                                 } else {
                                     Bundle bundle5 = new Bundle();
                                     bundle5.putLong("chat_id", toVar20.w0);
                                     aq aqVar = new aq(bundle5);
-                                    aqVar.d = new ArrayList();
-                                    aqVar.r = new ArrayList();
-                                    aqVar.v = -1;
-                                    aqVar.F = new ArrayList();
-                                    long j12 = bundle5.getLong("chat_id", 0L);
-                                    aqVar.c = j12;
                                     TLRPC.ChatFull chatFull9 = toVar20.y0;
                                     aqVar.b = chatFull9;
                                     if (chatFull9 != null) {
                                         if (aqVar.a == null) {
-                                            aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                            aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                         }
                                         aqVar.d = new ArrayList();
                                         TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                         if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                            aqVar.w = 0;
+                                            aqVar.v = 0;
                                         } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                            aqVar.w = 2;
+                                            aqVar.v = 2;
                                         } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                             TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                             for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -1812,7 +1782,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                     aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                 }
                                             }
-                                            aqVar.w = 1;
+                                            aqVar.v = 1;
                                         }
                                     }
                                     toVar20.presentFragment(aqVar);
@@ -1925,7 +1895,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 to toVar9 = this.b;
-                                toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                 break;
                             case 7:
                                 to toVar10 = this.b;
@@ -1980,22 +1950,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                 boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                 hp hpVar = new hp(null);
-                                hpVar.M = new ArrayList();
                                 hpVar.N = new ArrayList();
-                                hpVar.P = new ArrayList();
-                                hpVar.c0 = true;
-                                hpVar.f0 = new ArrayList();
-                                hpVar.o0 = new HashMap();
-                                hpVar.q0 = new wo(hpVar, 5);
-                                hpVar.t0 = false;
-                                hpVar.Z = j10;
-                                hpVar.n0 = z152;
+                                hpVar.O = new ArrayList();
+                                hpVar.Q = new ArrayList();
+                                hpVar.d0 = true;
+                                hpVar.g0 = new ArrayList();
+                                hpVar.p0 = new HashMap();
+                                hpVar.r0 = new wo(hpVar, 5);
+                                hpVar.u0 = false;
+                                hpVar.a0 = j10;
+                                hpVar.o0 = z152;
                                 TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                hpVar.Y = chatFull7;
+                                hpVar.Z = chatFull7;
                                 if (chatFull7 != null) {
                                     TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                     if (tL_chatInviteExported != null) {
-                                        hpVar.l0 = tL_chatInviteExported;
+                                        hpVar.m0 = tL_chatInviteExported;
                                     } else {
                                         hpVar.W(false);
                                     }
@@ -2056,30 +2026,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             case 23:
                                 to toVar20 = this.b;
                                 if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                    toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                    toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                     break;
                                 } else {
                                     Bundle bundle5 = new Bundle();
                                     bundle5.putLong("chat_id", toVar20.w0);
                                     aq aqVar = new aq(bundle5);
-                                    aqVar.d = new ArrayList();
-                                    aqVar.r = new ArrayList();
-                                    aqVar.v = -1;
-                                    aqVar.F = new ArrayList();
-                                    long j12 = bundle5.getLong("chat_id", 0L);
-                                    aqVar.c = j12;
                                     TLRPC.ChatFull chatFull9 = toVar20.y0;
                                     aqVar.b = chatFull9;
                                     if (chatFull9 != null) {
                                         if (aqVar.a == null) {
-                                            aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                            aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                         }
                                         aqVar.d = new ArrayList();
                                         TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                         if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                            aqVar.w = 0;
+                                            aqVar.v = 0;
                                         } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                            aqVar.w = 2;
+                                            aqVar.v = 2;
                                         } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                             TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                             for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -2087,7 +2051,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                     aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                 }
                                             }
-                                            aqVar.w = 1;
+                                            aqVar.v = 1;
                                         }
                                     }
                                     toVar20.presentFragment(aqVar);
@@ -2200,7 +2164,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 to toVar9 = this.b;
-                                toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                 break;
                             case 7:
                                 to toVar10 = this.b;
@@ -2255,22 +2219,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                 boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                 hp hpVar = new hp(null);
-                                hpVar.M = new ArrayList();
                                 hpVar.N = new ArrayList();
-                                hpVar.P = new ArrayList();
-                                hpVar.c0 = true;
-                                hpVar.f0 = new ArrayList();
-                                hpVar.o0 = new HashMap();
-                                hpVar.q0 = new wo(hpVar, 5);
-                                hpVar.t0 = false;
-                                hpVar.Z = j10;
-                                hpVar.n0 = z152;
+                                hpVar.O = new ArrayList();
+                                hpVar.Q = new ArrayList();
+                                hpVar.d0 = true;
+                                hpVar.g0 = new ArrayList();
+                                hpVar.p0 = new HashMap();
+                                hpVar.r0 = new wo(hpVar, 5);
+                                hpVar.u0 = false;
+                                hpVar.a0 = j10;
+                                hpVar.o0 = z152;
                                 TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                hpVar.Y = chatFull7;
+                                hpVar.Z = chatFull7;
                                 if (chatFull7 != null) {
                                     TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                     if (tL_chatInviteExported != null) {
-                                        hpVar.l0 = tL_chatInviteExported;
+                                        hpVar.m0 = tL_chatInviteExported;
                                     } else {
                                         hpVar.W(false);
                                     }
@@ -2331,30 +2295,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             case 23:
                                 to toVar20 = this.b;
                                 if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                    toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                    toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                     break;
                                 } else {
                                     Bundle bundle5 = new Bundle();
                                     bundle5.putLong("chat_id", toVar20.w0);
                                     aq aqVar = new aq(bundle5);
-                                    aqVar.d = new ArrayList();
-                                    aqVar.r = new ArrayList();
-                                    aqVar.v = -1;
-                                    aqVar.F = new ArrayList();
-                                    long j12 = bundle5.getLong("chat_id", 0L);
-                                    aqVar.c = j12;
                                     TLRPC.ChatFull chatFull9 = toVar20.y0;
                                     aqVar.b = chatFull9;
                                     if (chatFull9 != null) {
                                         if (aqVar.a == null) {
-                                            aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                            aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                         }
                                         aqVar.d = new ArrayList();
                                         TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                         if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                            aqVar.w = 0;
+                                            aqVar.v = 0;
                                         } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                            aqVar.w = 2;
+                                            aqVar.v = 2;
                                         } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                             TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                             for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -2362,7 +2320,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                     aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                 }
                                             }
-                                            aqVar.w = 1;
+                                            aqVar.v = 1;
                                         }
                                     }
                                     toVar20.presentFragment(aqVar);
@@ -2558,7 +2516,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 to toVar9 = this.b;
-                                toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                 break;
                             case 7:
                                 to toVar10 = this.b;
@@ -2613,22 +2571,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                 boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                 hp hpVar = new hp(null);
-                                hpVar.M = new ArrayList();
                                 hpVar.N = new ArrayList();
-                                hpVar.P = new ArrayList();
-                                hpVar.c0 = true;
-                                hpVar.f0 = new ArrayList();
-                                hpVar.o0 = new HashMap();
-                                hpVar.q0 = new wo(hpVar, 5);
-                                hpVar.t0 = false;
-                                hpVar.Z = j102;
-                                hpVar.n0 = z152;
+                                hpVar.O = new ArrayList();
+                                hpVar.Q = new ArrayList();
+                                hpVar.d0 = true;
+                                hpVar.g0 = new ArrayList();
+                                hpVar.p0 = new HashMap();
+                                hpVar.r0 = new wo(hpVar, 5);
+                                hpVar.u0 = false;
+                                hpVar.a0 = j102;
+                                hpVar.o0 = z152;
                                 TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                hpVar.Y = chatFull7;
+                                hpVar.Z = chatFull7;
                                 if (chatFull7 != null) {
                                     TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                     if (tL_chatInviteExported != null) {
-                                        hpVar.l0 = tL_chatInviteExported;
+                                        hpVar.m0 = tL_chatInviteExported;
                                     } else {
                                         hpVar.W(false);
                                     }
@@ -2689,30 +2647,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             case 23:
                                 to toVar20 = this.b;
                                 if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                    toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                    toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                     break;
                                 } else {
                                     Bundle bundle5 = new Bundle();
                                     bundle5.putLong("chat_id", toVar20.w0);
                                     aq aqVar = new aq(bundle5);
-                                    aqVar.d = new ArrayList();
-                                    aqVar.r = new ArrayList();
-                                    aqVar.v = -1;
-                                    aqVar.F = new ArrayList();
-                                    long j12 = bundle5.getLong("chat_id", 0L);
-                                    aqVar.c = j12;
                                     TLRPC.ChatFull chatFull9 = toVar20.y0;
                                     aqVar.b = chatFull9;
                                     if (chatFull9 != null) {
                                         if (aqVar.a == null) {
-                                            aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                            aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                         }
                                         aqVar.d = new ArrayList();
                                         TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                         if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                            aqVar.w = 0;
+                                            aqVar.v = 0;
                                         } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                            aqVar.w = 2;
+                                            aqVar.v = 2;
                                         } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                             TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                             for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -2720,7 +2672,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                     aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                 }
                                             }
-                                            aqVar.w = 1;
+                                            aqVar.v = 1;
                                         }
                                     }
                                     toVar20.presentFragment(aqVar);
@@ -2779,12 +2731,12 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
             } else {
                 e9Var.setFixedSize(12);
             }
-            zdVar.addView(toVar.P, w7.z5.n(-1, -2));
+            ro0Var.addView(toVar.P, w7.z5.n(-1, -2));
         }
         LinearLayout linearLayout4 = new LinearLayout(context2);
         toVar.R = linearLayout4;
         linearLayout4.setOrientation(1);
-        zdVar.addView(toVar.R, w7.z5.n(-1, -2));
+        ro0Var.addView(toVar.R, w7.z5.n(-1, -2));
         final int i27 = 8;
         if (toVar.x0 != null) {
             org.telegram.ui.Cells.r8 r8Var14 = new org.telegram.ui.Cells.r8(context2);
@@ -2884,7 +2836,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     to toVar9 = this.b;
-                                    toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                    toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                     break;
                                 case 7:
                                     to toVar10 = this.b;
@@ -2939,22 +2891,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                     boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                     hp hpVar = new hp(null);
-                                    hpVar.M = new ArrayList();
                                     hpVar.N = new ArrayList();
-                                    hpVar.P = new ArrayList();
-                                    hpVar.c0 = true;
-                                    hpVar.f0 = new ArrayList();
-                                    hpVar.o0 = new HashMap();
-                                    hpVar.q0 = new wo(hpVar, 5);
-                                    hpVar.t0 = false;
-                                    hpVar.Z = j102;
-                                    hpVar.n0 = z152;
+                                    hpVar.O = new ArrayList();
+                                    hpVar.Q = new ArrayList();
+                                    hpVar.d0 = true;
+                                    hpVar.g0 = new ArrayList();
+                                    hpVar.p0 = new HashMap();
+                                    hpVar.r0 = new wo(hpVar, 5);
+                                    hpVar.u0 = false;
+                                    hpVar.a0 = j102;
+                                    hpVar.o0 = z152;
                                     TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                    hpVar.Y = chatFull7;
+                                    hpVar.Z = chatFull7;
                                     if (chatFull7 != null) {
                                         TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                         if (tL_chatInviteExported != null) {
-                                            hpVar.l0 = tL_chatInviteExported;
+                                            hpVar.m0 = tL_chatInviteExported;
                                         } else {
                                             hpVar.W(false);
                                         }
@@ -3015,30 +2967,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 case 23:
                                     to toVar20 = this.b;
                                     if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                        toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                        toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                         break;
                                     } else {
                                         Bundle bundle5 = new Bundle();
                                         bundle5.putLong("chat_id", toVar20.w0);
                                         aq aqVar = new aq(bundle5);
-                                        aqVar.d = new ArrayList();
-                                        aqVar.r = new ArrayList();
-                                        aqVar.v = -1;
-                                        aqVar.F = new ArrayList();
-                                        long j12 = bundle5.getLong("chat_id", 0L);
-                                        aqVar.c = j12;
                                         TLRPC.ChatFull chatFull9 = toVar20.y0;
                                         aqVar.b = chatFull9;
                                         if (chatFull9 != null) {
                                             if (aqVar.a == null) {
-                                                aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                                aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                             }
                                             aqVar.d = new ArrayList();
                                             TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                             if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                                aqVar.w = 0;
+                                                aqVar.v = 0;
                                             } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                                aqVar.w = 2;
+                                                aqVar.v = 2;
                                             } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                                 TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                                 for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -3046,7 +2992,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                         aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                     }
                                                 }
-                                                aqVar.w = 1;
+                                                aqVar.v = 1;
                                             }
                                         }
                                         toVar20.presentFragment(aqVar);
@@ -3155,7 +3101,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     to toVar9 = this.b;
-                                    toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                    toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                     break;
                                 case 7:
                                     to toVar10 = this.b;
@@ -3210,22 +3156,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                     boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                     hp hpVar = new hp(null);
-                                    hpVar.M = new ArrayList();
                                     hpVar.N = new ArrayList();
-                                    hpVar.P = new ArrayList();
-                                    hpVar.c0 = true;
-                                    hpVar.f0 = new ArrayList();
-                                    hpVar.o0 = new HashMap();
-                                    hpVar.q0 = new wo(hpVar, 5);
-                                    hpVar.t0 = false;
-                                    hpVar.Z = j102;
-                                    hpVar.n0 = z152;
+                                    hpVar.O = new ArrayList();
+                                    hpVar.Q = new ArrayList();
+                                    hpVar.d0 = true;
+                                    hpVar.g0 = new ArrayList();
+                                    hpVar.p0 = new HashMap();
+                                    hpVar.r0 = new wo(hpVar, 5);
+                                    hpVar.u0 = false;
+                                    hpVar.a0 = j102;
+                                    hpVar.o0 = z152;
                                     TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                    hpVar.Y = chatFull7;
+                                    hpVar.Z = chatFull7;
                                     if (chatFull7 != null) {
                                         TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                         if (tL_chatInviteExported != null) {
-                                            hpVar.l0 = tL_chatInviteExported;
+                                            hpVar.m0 = tL_chatInviteExported;
                                         } else {
                                             hpVar.W(false);
                                         }
@@ -3286,30 +3232,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 case 23:
                                     to toVar20 = this.b;
                                     if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                        toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                        toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                         break;
                                     } else {
                                         Bundle bundle5 = new Bundle();
                                         bundle5.putLong("chat_id", toVar20.w0);
                                         aq aqVar = new aq(bundle5);
-                                        aqVar.d = new ArrayList();
-                                        aqVar.r = new ArrayList();
-                                        aqVar.v = -1;
-                                        aqVar.F = new ArrayList();
-                                        long j12 = bundle5.getLong("chat_id", 0L);
-                                        aqVar.c = j12;
                                         TLRPC.ChatFull chatFull9 = toVar20.y0;
                                         aqVar.b = chatFull9;
                                         if (chatFull9 != null) {
                                             if (aqVar.a == null) {
-                                                aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                                aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                             }
                                             aqVar.d = new ArrayList();
                                             TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                             if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                                aqVar.w = 0;
+                                                aqVar.v = 0;
                                             } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                                aqVar.w = 2;
+                                                aqVar.v = 2;
                                             } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                                 TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                                 for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -3317,7 +3257,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                         aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                     }
                                                 }
-                                                aqVar.w = 1;
+                                                aqVar.v = 1;
                                             }
                                         }
                                         toVar20.presentFragment(aqVar);
@@ -3426,7 +3366,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     to toVar9 = this.b;
-                                    toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                    toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                     break;
                                 case 7:
                                     to toVar10 = this.b;
@@ -3481,22 +3421,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                     boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                     hp hpVar = new hp(null);
-                                    hpVar.M = new ArrayList();
                                     hpVar.N = new ArrayList();
-                                    hpVar.P = new ArrayList();
-                                    hpVar.c0 = true;
-                                    hpVar.f0 = new ArrayList();
-                                    hpVar.o0 = new HashMap();
-                                    hpVar.q0 = new wo(hpVar, 5);
-                                    hpVar.t0 = false;
-                                    hpVar.Z = j102;
-                                    hpVar.n0 = z152;
+                                    hpVar.O = new ArrayList();
+                                    hpVar.Q = new ArrayList();
+                                    hpVar.d0 = true;
+                                    hpVar.g0 = new ArrayList();
+                                    hpVar.p0 = new HashMap();
+                                    hpVar.r0 = new wo(hpVar, 5);
+                                    hpVar.u0 = false;
+                                    hpVar.a0 = j102;
+                                    hpVar.o0 = z152;
                                     TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                    hpVar.Y = chatFull7;
+                                    hpVar.Z = chatFull7;
                                     if (chatFull7 != null) {
                                         TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                         if (tL_chatInviteExported != null) {
-                                            hpVar.l0 = tL_chatInviteExported;
+                                            hpVar.m0 = tL_chatInviteExported;
                                         } else {
                                             hpVar.W(false);
                                         }
@@ -3557,30 +3497,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 case 23:
                                     to toVar20 = this.b;
                                     if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                        toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                        toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                         break;
                                     } else {
                                         Bundle bundle5 = new Bundle();
                                         bundle5.putLong("chat_id", toVar20.w0);
                                         aq aqVar = new aq(bundle5);
-                                        aqVar.d = new ArrayList();
-                                        aqVar.r = new ArrayList();
-                                        aqVar.v = -1;
-                                        aqVar.F = new ArrayList();
-                                        long j12 = bundle5.getLong("chat_id", 0L);
-                                        aqVar.c = j12;
                                         TLRPC.ChatFull chatFull9 = toVar20.y0;
                                         aqVar.b = chatFull9;
                                         if (chatFull9 != null) {
                                             if (aqVar.a == null) {
-                                                aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                                aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                             }
                                             aqVar.d = new ArrayList();
                                             TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                             if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                                aqVar.w = 0;
+                                                aqVar.v = 0;
                                             } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                                aqVar.w = 2;
+                                                aqVar.v = 2;
                                             } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                                 TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                                 for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -3588,7 +3522,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                         aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                     }
                                                 }
-                                                aqVar.w = 1;
+                                                aqVar.v = 1;
                                             }
                                         }
                                         toVar20.presentFragment(aqVar);
@@ -3698,7 +3632,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         break;
                                     case 6:
                                         to toVar9 = this.b;
-                                        toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                        toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                         break;
                                     case 7:
                                         to toVar10 = this.b;
@@ -3753,22 +3687,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                         boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                         hp hpVar = new hp(null);
-                                        hpVar.M = new ArrayList();
                                         hpVar.N = new ArrayList();
-                                        hpVar.P = new ArrayList();
-                                        hpVar.c0 = true;
-                                        hpVar.f0 = new ArrayList();
-                                        hpVar.o0 = new HashMap();
-                                        hpVar.q0 = new wo(hpVar, 5);
-                                        hpVar.t0 = false;
-                                        hpVar.Z = j102;
-                                        hpVar.n0 = z152;
+                                        hpVar.O = new ArrayList();
+                                        hpVar.Q = new ArrayList();
+                                        hpVar.d0 = true;
+                                        hpVar.g0 = new ArrayList();
+                                        hpVar.p0 = new HashMap();
+                                        hpVar.r0 = new wo(hpVar, 5);
+                                        hpVar.u0 = false;
+                                        hpVar.a0 = j102;
+                                        hpVar.o0 = z152;
                                         TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                        hpVar.Y = chatFull7;
+                                        hpVar.Z = chatFull7;
                                         if (chatFull7 != null) {
                                             TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                             if (tL_chatInviteExported != null) {
-                                                hpVar.l0 = tL_chatInviteExported;
+                                                hpVar.m0 = tL_chatInviteExported;
                                             } else {
                                                 hpVar.W(false);
                                             }
@@ -3829,30 +3763,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     case 23:
                                         to toVar20 = this.b;
                                         if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                            toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                            toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                             break;
                                         } else {
                                             Bundle bundle5 = new Bundle();
                                             bundle5.putLong("chat_id", toVar20.w0);
                                             aq aqVar = new aq(bundle5);
-                                            aqVar.d = new ArrayList();
-                                            aqVar.r = new ArrayList();
-                                            aqVar.v = -1;
-                                            aqVar.F = new ArrayList();
-                                            long j12 = bundle5.getLong("chat_id", 0L);
-                                            aqVar.c = j12;
                                             TLRPC.ChatFull chatFull9 = toVar20.y0;
                                             aqVar.b = chatFull9;
                                             if (chatFull9 != null) {
                                                 if (aqVar.a == null) {
-                                                    aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                                    aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                                 }
                                                 aqVar.d = new ArrayList();
                                                 TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                                 if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                                    aqVar.w = 0;
+                                                    aqVar.v = 0;
                                                 } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                                    aqVar.w = 2;
+                                                    aqVar.v = 2;
                                                 } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                                     TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                                     for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -3860,7 +3788,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                             aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                         }
                                                     }
-                                                    aqVar.w = 1;
+                                                    aqVar.v = 1;
                                                 }
                                             }
                                             toVar20.presentFragment(aqVar);
@@ -3971,7 +3899,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     to toVar9 = this.b;
-                                    toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                    toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                     break;
                                 case 7:
                                     to toVar10 = this.b;
@@ -4026,22 +3954,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                     boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                     hp hpVar = new hp(null);
-                                    hpVar.M = new ArrayList();
                                     hpVar.N = new ArrayList();
-                                    hpVar.P = new ArrayList();
-                                    hpVar.c0 = true;
-                                    hpVar.f0 = new ArrayList();
-                                    hpVar.o0 = new HashMap();
-                                    hpVar.q0 = new wo(hpVar, 5);
-                                    hpVar.t0 = false;
-                                    hpVar.Z = j102;
-                                    hpVar.n0 = z152;
+                                    hpVar.O = new ArrayList();
+                                    hpVar.Q = new ArrayList();
+                                    hpVar.d0 = true;
+                                    hpVar.g0 = new ArrayList();
+                                    hpVar.p0 = new HashMap();
+                                    hpVar.r0 = new wo(hpVar, 5);
+                                    hpVar.u0 = false;
+                                    hpVar.a0 = j102;
+                                    hpVar.o0 = z152;
                                     TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                    hpVar.Y = chatFull7;
+                                    hpVar.Z = chatFull7;
                                     if (chatFull7 != null) {
                                         TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                         if (tL_chatInviteExported != null) {
-                                            hpVar.l0 = tL_chatInviteExported;
+                                            hpVar.m0 = tL_chatInviteExported;
                                         } else {
                                             hpVar.W(false);
                                         }
@@ -4102,30 +4030,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 case 23:
                                     to toVar20 = this.b;
                                     if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                        toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                        toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                         break;
                                     } else {
                                         Bundle bundle5 = new Bundle();
                                         bundle5.putLong("chat_id", toVar20.w0);
                                         aq aqVar = new aq(bundle5);
-                                        aqVar.d = new ArrayList();
-                                        aqVar.r = new ArrayList();
-                                        aqVar.v = -1;
-                                        aqVar.F = new ArrayList();
-                                        long j12 = bundle5.getLong("chat_id", 0L);
-                                        aqVar.c = j12;
                                         TLRPC.ChatFull chatFull9 = toVar20.y0;
                                         aqVar.b = chatFull9;
                                         if (chatFull9 != null) {
                                             if (aqVar.a == null) {
-                                                aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                                aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                             }
                                             aqVar.d = new ArrayList();
                                             TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                             if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                                aqVar.w = 0;
+                                                aqVar.v = 0;
                                             } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                                aqVar.w = 2;
+                                                aqVar.v = 2;
                                             } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                                 TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                                 for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -4133,7 +4055,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                         aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                     }
                                                 }
-                                                aqVar.w = 1;
+                                                aqVar.v = 1;
                                             }
                                         }
                                         toVar20.presentFragment(aqVar);
@@ -4242,7 +4164,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     to toVar9 = this.b;
-                                    toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                    toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                     break;
                                 case 7:
                                     to toVar10 = this.b;
@@ -4297,22 +4219,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                     boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                     hp hpVar = new hp(null);
-                                    hpVar.M = new ArrayList();
                                     hpVar.N = new ArrayList();
-                                    hpVar.P = new ArrayList();
-                                    hpVar.c0 = true;
-                                    hpVar.f0 = new ArrayList();
-                                    hpVar.o0 = new HashMap();
-                                    hpVar.q0 = new wo(hpVar, 5);
-                                    hpVar.t0 = false;
-                                    hpVar.Z = j102;
-                                    hpVar.n0 = z152;
+                                    hpVar.O = new ArrayList();
+                                    hpVar.Q = new ArrayList();
+                                    hpVar.d0 = true;
+                                    hpVar.g0 = new ArrayList();
+                                    hpVar.p0 = new HashMap();
+                                    hpVar.r0 = new wo(hpVar, 5);
+                                    hpVar.u0 = false;
+                                    hpVar.a0 = j102;
+                                    hpVar.o0 = z152;
                                     TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                    hpVar.Y = chatFull7;
+                                    hpVar.Z = chatFull7;
                                     if (chatFull7 != null) {
                                         TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                         if (tL_chatInviteExported != null) {
-                                            hpVar.l0 = tL_chatInviteExported;
+                                            hpVar.m0 = tL_chatInviteExported;
                                         } else {
                                             hpVar.W(false);
                                         }
@@ -4373,30 +4295,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 case 23:
                                     to toVar20 = this.b;
                                     if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                        toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                        toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                         break;
                                     } else {
                                         Bundle bundle5 = new Bundle();
                                         bundle5.putLong("chat_id", toVar20.w0);
                                         aq aqVar = new aq(bundle5);
-                                        aqVar.d = new ArrayList();
-                                        aqVar.r = new ArrayList();
-                                        aqVar.v = -1;
-                                        aqVar.F = new ArrayList();
-                                        long j12 = bundle5.getLong("chat_id", 0L);
-                                        aqVar.c = j12;
                                         TLRPC.ChatFull chatFull9 = toVar20.y0;
                                         aqVar.b = chatFull9;
                                         if (chatFull9 != null) {
                                             if (aqVar.a == null) {
-                                                aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                                aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                             }
                                             aqVar.d = new ArrayList();
                                             TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                             if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                                aqVar.w = 0;
+                                                aqVar.v = 0;
                                             } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                                aqVar.w = 2;
+                                                aqVar.v = 2;
                                             } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                                 TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                                 for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -4404,7 +4320,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                         aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                     }
                                                 }
-                                                aqVar.w = 1;
+                                                aqVar.v = 1;
                                             }
                                         }
                                         toVar20.presentFragment(aqVar);
@@ -4514,7 +4430,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         break;
                                     case 6:
                                         to toVar9 = this.b;
-                                        toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                        toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                         break;
                                     case 7:
                                         to toVar10 = this.b;
@@ -4569,22 +4485,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                         boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                         hp hpVar = new hp(null);
-                                        hpVar.M = new ArrayList();
                                         hpVar.N = new ArrayList();
-                                        hpVar.P = new ArrayList();
-                                        hpVar.c0 = true;
-                                        hpVar.f0 = new ArrayList();
-                                        hpVar.o0 = new HashMap();
-                                        hpVar.q0 = new wo(hpVar, 5);
-                                        hpVar.t0 = false;
-                                        hpVar.Z = j102;
-                                        hpVar.n0 = z152;
+                                        hpVar.O = new ArrayList();
+                                        hpVar.Q = new ArrayList();
+                                        hpVar.d0 = true;
+                                        hpVar.g0 = new ArrayList();
+                                        hpVar.p0 = new HashMap();
+                                        hpVar.r0 = new wo(hpVar, 5);
+                                        hpVar.u0 = false;
+                                        hpVar.a0 = j102;
+                                        hpVar.o0 = z152;
                                         TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                        hpVar.Y = chatFull7;
+                                        hpVar.Z = chatFull7;
                                         if (chatFull7 != null) {
                                             TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                             if (tL_chatInviteExported != null) {
-                                                hpVar.l0 = tL_chatInviteExported;
+                                                hpVar.m0 = tL_chatInviteExported;
                                             } else {
                                                 hpVar.W(false);
                                             }
@@ -4645,30 +4561,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     case 23:
                                         to toVar20 = this.b;
                                         if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                            toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                            toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                             break;
                                         } else {
                                             Bundle bundle5 = new Bundle();
                                             bundle5.putLong("chat_id", toVar20.w0);
                                             aq aqVar = new aq(bundle5);
-                                            aqVar.d = new ArrayList();
-                                            aqVar.r = new ArrayList();
-                                            aqVar.v = -1;
-                                            aqVar.F = new ArrayList();
-                                            long j12 = bundle5.getLong("chat_id", 0L);
-                                            aqVar.c = j12;
                                             TLRPC.ChatFull chatFull9 = toVar20.y0;
                                             aqVar.b = chatFull9;
                                             if (chatFull9 != null) {
                                                 if (aqVar.a == null) {
-                                                    aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                                    aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                                 }
                                                 aqVar.d = new ArrayList();
                                                 TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                                 if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                                    aqVar.w = 0;
+                                                    aqVar.v = 0;
                                                 } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                                    aqVar.w = 2;
+                                                    aqVar.v = 2;
                                                 } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                                     TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                                     for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -4676,7 +4586,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                             aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                         }
                                                     }
-                                                    aqVar.w = 1;
+                                                    aqVar.v = 1;
                                                 }
                                             }
                                             toVar20.presentFragment(aqVar);
@@ -4787,7 +4697,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     to toVar9 = this.b;
-                                    toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                    toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                     break;
                                 case 7:
                                     to toVar10 = this.b;
@@ -4842,22 +4752,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                     boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                     hp hpVar = new hp(null);
-                                    hpVar.M = new ArrayList();
                                     hpVar.N = new ArrayList();
-                                    hpVar.P = new ArrayList();
-                                    hpVar.c0 = true;
-                                    hpVar.f0 = new ArrayList();
-                                    hpVar.o0 = new HashMap();
-                                    hpVar.q0 = new wo(hpVar, 5);
-                                    hpVar.t0 = false;
-                                    hpVar.Z = j102;
-                                    hpVar.n0 = z152;
+                                    hpVar.O = new ArrayList();
+                                    hpVar.Q = new ArrayList();
+                                    hpVar.d0 = true;
+                                    hpVar.g0 = new ArrayList();
+                                    hpVar.p0 = new HashMap();
+                                    hpVar.r0 = new wo(hpVar, 5);
+                                    hpVar.u0 = false;
+                                    hpVar.a0 = j102;
+                                    hpVar.o0 = z152;
                                     TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                    hpVar.Y = chatFull7;
+                                    hpVar.Z = chatFull7;
                                     if (chatFull7 != null) {
                                         TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                         if (tL_chatInviteExported != null) {
-                                            hpVar.l0 = tL_chatInviteExported;
+                                            hpVar.m0 = tL_chatInviteExported;
                                         } else {
                                             hpVar.W(false);
                                         }
@@ -4918,30 +4828,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 case 23:
                                     to toVar20 = this.b;
                                     if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                        toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                        toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                         break;
                                     } else {
                                         Bundle bundle5 = new Bundle();
                                         bundle5.putLong("chat_id", toVar20.w0);
                                         aq aqVar = new aq(bundle5);
-                                        aqVar.d = new ArrayList();
-                                        aqVar.r = new ArrayList();
-                                        aqVar.v = -1;
-                                        aqVar.F = new ArrayList();
-                                        long j12 = bundle5.getLong("chat_id", 0L);
-                                        aqVar.c = j12;
                                         TLRPC.ChatFull chatFull9 = toVar20.y0;
                                         aqVar.b = chatFull9;
                                         if (chatFull9 != null) {
                                             if (aqVar.a == null) {
-                                                aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                                aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                             }
                                             aqVar.d = new ArrayList();
                                             TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                             if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                                aqVar.w = 0;
+                                                aqVar.v = 0;
                                             } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                                aqVar.w = 2;
+                                                aqVar.v = 2;
                                             } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                                 TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                                 for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -4949,7 +4853,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                         aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                     }
                                                 }
-                                                aqVar.w = 1;
+                                                aqVar.v = 1;
                                             }
                                         }
                                         toVar20.presentFragment(aqVar);
@@ -5060,7 +4964,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         break;
                                     case 6:
                                         to toVar9 = this.b;
-                                        toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                        toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                         break;
                                     case 7:
                                         to toVar10 = this.b;
@@ -5115,22 +5019,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                         boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                         hp hpVar = new hp(null);
-                                        hpVar.M = new ArrayList();
                                         hpVar.N = new ArrayList();
-                                        hpVar.P = new ArrayList();
-                                        hpVar.c0 = true;
-                                        hpVar.f0 = new ArrayList();
-                                        hpVar.o0 = new HashMap();
-                                        hpVar.q0 = new wo(hpVar, 5);
-                                        hpVar.t0 = false;
-                                        hpVar.Z = j102;
-                                        hpVar.n0 = z152;
+                                        hpVar.O = new ArrayList();
+                                        hpVar.Q = new ArrayList();
+                                        hpVar.d0 = true;
+                                        hpVar.g0 = new ArrayList();
+                                        hpVar.p0 = new HashMap();
+                                        hpVar.r0 = new wo(hpVar, 5);
+                                        hpVar.u0 = false;
+                                        hpVar.a0 = j102;
+                                        hpVar.o0 = z152;
                                         TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                        hpVar.Y = chatFull7;
+                                        hpVar.Z = chatFull7;
                                         if (chatFull7 != null) {
                                             TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                             if (tL_chatInviteExported != null) {
-                                                hpVar.l0 = tL_chatInviteExported;
+                                                hpVar.m0 = tL_chatInviteExported;
                                             } else {
                                                 hpVar.W(false);
                                             }
@@ -5191,30 +5095,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     case 23:
                                         to toVar20 = this.b;
                                         if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                            toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                            toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                             break;
                                         } else {
                                             Bundle bundle5 = new Bundle();
                                             bundle5.putLong("chat_id", toVar20.w0);
                                             aq aqVar = new aq(bundle5);
-                                            aqVar.d = new ArrayList();
-                                            aqVar.r = new ArrayList();
-                                            aqVar.v = -1;
-                                            aqVar.F = new ArrayList();
-                                            long j12 = bundle5.getLong("chat_id", 0L);
-                                            aqVar.c = j12;
                                             TLRPC.ChatFull chatFull9 = toVar20.y0;
                                             aqVar.b = chatFull9;
                                             if (chatFull9 != null) {
                                                 if (aqVar.a == null) {
-                                                    aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                                    aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                                 }
                                                 aqVar.d = new ArrayList();
                                                 TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                                 if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                                    aqVar.w = 0;
+                                                    aqVar.v = 0;
                                                 } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                                    aqVar.w = 2;
+                                                    aqVar.v = 2;
                                                 } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                                     TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                                     for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -5222,7 +5120,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                             aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                         }
                                                     }
-                                                    aqVar.w = 1;
+                                                    aqVar.v = 1;
                                                 }
                                             }
                                             toVar20.presentFragment(aqVar);
@@ -5333,7 +5231,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         break;
                                     case 6:
                                         to toVar9 = this.b;
-                                        toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                        toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                         break;
                                     case 7:
                                         to toVar10 = this.b;
@@ -5388,22 +5286,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                         boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                         hp hpVar = new hp(null);
-                                        hpVar.M = new ArrayList();
                                         hpVar.N = new ArrayList();
-                                        hpVar.P = new ArrayList();
-                                        hpVar.c0 = true;
-                                        hpVar.f0 = new ArrayList();
-                                        hpVar.o0 = new HashMap();
-                                        hpVar.q0 = new wo(hpVar, 5);
-                                        hpVar.t0 = false;
-                                        hpVar.Z = j102;
-                                        hpVar.n0 = z152;
+                                        hpVar.O = new ArrayList();
+                                        hpVar.Q = new ArrayList();
+                                        hpVar.d0 = true;
+                                        hpVar.g0 = new ArrayList();
+                                        hpVar.p0 = new HashMap();
+                                        hpVar.r0 = new wo(hpVar, 5);
+                                        hpVar.u0 = false;
+                                        hpVar.a0 = j102;
+                                        hpVar.o0 = z152;
                                         TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                        hpVar.Y = chatFull7;
+                                        hpVar.Z = chatFull7;
                                         if (chatFull7 != null) {
                                             TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                             if (tL_chatInviteExported != null) {
-                                                hpVar.l0 = tL_chatInviteExported;
+                                                hpVar.m0 = tL_chatInviteExported;
                                             } else {
                                                 hpVar.W(false);
                                             }
@@ -5464,30 +5362,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     case 23:
                                         to toVar20 = this.b;
                                         if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                            toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                            toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                             break;
                                         } else {
                                             Bundle bundle5 = new Bundle();
                                             bundle5.putLong("chat_id", toVar20.w0);
                                             aq aqVar = new aq(bundle5);
-                                            aqVar.d = new ArrayList();
-                                            aqVar.r = new ArrayList();
-                                            aqVar.v = -1;
-                                            aqVar.F = new ArrayList();
-                                            long j12 = bundle5.getLong("chat_id", 0L);
-                                            aqVar.c = j12;
                                             TLRPC.ChatFull chatFull9 = toVar20.y0;
                                             aqVar.b = chatFull9;
                                             if (chatFull9 != null) {
                                                 if (aqVar.a == null) {
-                                                    aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                                    aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                                 }
                                                 aqVar.d = new ArrayList();
                                                 TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                                 if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                                    aqVar.w = 0;
+                                                    aqVar.v = 0;
                                                 } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                                    aqVar.w = 2;
+                                                    aqVar.v = 2;
                                                 } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                                     TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                                     for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -5495,7 +5387,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                             aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                         }
                                                     }
-                                                    aqVar.w = 1;
+                                                    aqVar.v = 1;
                                                 }
                                             }
                                             toVar20.presentFragment(aqVar);
@@ -5649,7 +5541,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -5704,22 +5596,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                             boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j102;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j102;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -5780,30 +5672,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -5811,7 +5697,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -5920,7 +5806,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -5975,22 +5861,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                             boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j102;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j102;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -6051,30 +5937,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -6082,7 +5962,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -6191,7 +6071,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -6246,22 +6126,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                             boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j102;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j102;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -6322,30 +6202,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -6353,7 +6227,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -6464,7 +6338,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -6519,22 +6393,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                             boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j102;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j102;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -6595,30 +6469,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -6626,7 +6494,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -6735,7 +6603,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -6790,22 +6658,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                             boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j102;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j102;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -6866,30 +6734,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -6897,7 +6759,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -7009,7 +6871,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -7064,22 +6926,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                             boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j102;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j102;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -7140,30 +7002,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -7171,7 +7027,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -7283,7 +7139,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -7338,22 +7194,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                             boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j102;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j102;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -7414,30 +7270,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -7445,7 +7295,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -7595,7 +7445,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -7650,22 +7500,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                             boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j102;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j102;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -7726,30 +7576,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -7757,7 +7601,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -7868,7 +7712,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -7923,22 +7767,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                             boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j102;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j102;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -7999,30 +7843,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -8030,7 +7868,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -8157,7 +7995,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -8212,22 +8050,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                             boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j102;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j102;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -8288,30 +8126,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -8319,7 +8151,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -8430,7 +8262,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -8485,22 +8317,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                             boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j102;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j102;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -8561,30 +8393,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -8592,7 +8418,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -8703,7 +8529,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -8758,22 +8584,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                             boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j102;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j102;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -8834,30 +8660,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -8865,7 +8685,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -8890,7 +8710,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                 toVar.R.setVisibility(8);
                 toVar.G.setVisibility(8);
             }
-            zdVar.addView(new org.telegram.ui.Cells.b7(context2), w7.z5.n(-1, -2));
+            ro0Var.addView(new org.telegram.ui.Cells.b7(context2), w7.z5.n(-1, -2));
         } else if (toVar.D0 != null) {
             toVar.s0 = new org.telegram.ui.Cells.e9(context2, i12, toVar.resourceProvider);
             String string = LocaleController.getString(R.string.BotManageInfo);
@@ -8900,7 +8720,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                 valueOf.setSpan(new so(0), indexOf, indexOf + 10, 33);
             }
             toVar.s0.setText(valueOf);
-            zdVar.addView(toVar.s0, w7.z5.n(-1, -2));
+            ro0Var.addView(toVar.s0, w7.z5.n(-1, -2));
             org.telegram.ui.Cells.r8 r8Var32 = new org.telegram.ui.Cells.r8(context2);
             toVar.u0 = r8Var32;
             r8Var32.setBackground(org.telegram.ui.ActionBar.i6.K0(true));
@@ -8908,7 +8728,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
             org.telegram.ui.Cells.r8 r8Var33 = toVar.u0;
             int i40 = org.telegram.ui.ActionBar.i6.q6;
             r8Var33.e(i40, i40);
-            zdVar.addView(toVar.u0, w7.z5.n(-1, -2));
+            ro0Var.addView(toVar.u0, w7.z5.n(-1, -2));
             final int i41 = 13;
             toVar.u0.setOnClickListener(new View.OnClickListener(toVar) { // from class: org.telegram.ui.co
                 public final /* synthetic */ to b;
@@ -8997,7 +8817,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -9052,22 +8872,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                             boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j102;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j102;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -9128,30 +8948,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j12 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j12;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j12));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -9159,7 +8973,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -9180,7 +8994,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
             org.telegram.ui.Cells.e9 e9Var2 = new org.telegram.ui.Cells.e9(context2, i12, toVar.resourceProvider);
             toVar.t0 = e9Var2;
             e9Var2.setFixedSize(i12);
-            zdVar.addView(toVar.t0, w7.z5.n(-1, -2));
+            ro0Var.addView(toVar.t0, w7.z5.n(-1, -2));
             org.telegram.ui.Cells.r8 r8Var34 = toVar.u0;
             TLRPC.UserFull userFull2 = toVar.E0;
             r8Var34.setVisibility((userFull2 == null || (botInfo2 = userFull2.bot_info) == null || botInfo2.verifier_settings == null) ? 8 : 0);
@@ -9192,7 +9006,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                 LinearLayout linearLayout5 = new LinearLayout(context2);
                 toVar.S = linearLayout5;
                 linearLayout5.setOrientation(1);
-                zdVar.addView(toVar.S, w7.z5.n(-1, -2));
+                ro0Var.addView(toVar.S, w7.z5.n(-1, -2));
                 org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(context2);
                 m4Var.setText(LocaleController.getString(R.string.BotBalance));
                 toVar.S.addView(m4Var, w7.z5.n(-1, -2));
@@ -9201,7 +9015,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                 r8Var35.setBackground(org.telegram.ui.ActionBar.i6.K0(false));
                 toVar.m0.setPrioritizeTitleOverValue(true);
                 toVar.S.addView(toVar.m0, w7.z5.n(-1, -2));
-                final yh.o g11 = yh.o.g(toVar.currentAccount);
+                final yh.p g11 = yh.p.g(toVar.currentAccount);
                 final int i42 = 0;
                 toVar.m0.setOnClickListener(new View.OnClickListener(toVar) { // from class: org.telegram.ui.fo
                     public final /* synthetic */ to b;
@@ -9217,7 +9031,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 to toVar3 = this.b;
                                 long j11 = toVar3.C0;
                                 if (g11.h(j11, false) != null) {
-                                    toVar3.presentFragment(new yh.g(1, j11));
+                                    toVar3.presentFragment(new yh.h(1, j11));
                                     break;
                                 }
                                 break;
@@ -9225,7 +9039,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 to toVar4 = this.b;
                                 long j12 = toVar4.C0;
                                 if (g11.h(j12, false) != null) {
-                                    toVar4.presentFragment(new yh.g(0, j12));
+                                    toVar4.presentFragment(new yh.h(0, j12));
                                     break;
                                 }
                                 break;
@@ -9276,7 +9090,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 to toVar3 = this.b;
                                 long j11 = toVar3.C0;
                                 if (g11.h(j11, false) != null) {
-                                    toVar3.presentFragment(new yh.g(1, j11));
+                                    toVar3.presentFragment(new yh.h(1, j11));
                                     break;
                                 }
                                 break;
@@ -9284,7 +9098,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 to toVar4 = this.b;
                                 long j12 = toVar4.C0;
                                 if (g11.h(j12, false) != null) {
-                                    toVar4.presentFragment(new yh.g(0, j12));
+                                    toVar4.presentFragment(new yh.h(0, j12));
                                     break;
                                 }
                                 break;
@@ -9299,7 +9113,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         z10 = false;
                     } else {
                         z10 = false;
-                        d12 = yh.x7.d1(false, TextUtils.concat("XTR", yh.x7.Q0(g11.c(j3), 0.85f, ' ')), 0.85f, null);
+                        d12 = yh.z7.d1(false, TextUtils.concat("XTR", yh.z7.Q0(g11.c(j3), 0.85f, ' ')), 0.85f, null);
                     }
                     r8Var37.q(string2, d12, R.drawable.menu_premium_main, z10);
                 } else {
@@ -9312,7 +9126,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                 e9Var4.setFixedSize(12);
                 num2 = num;
                 e9Var4.setTag(R.id.fit_width_tag, num2);
-                zdVar.addView(e9Var4, w7.z5.n(-1, 12));
+                ro0Var.addView(e9Var4, w7.z5.n(-1, 12));
                 toVar.S.setVisibility((toVar.n0.getVisibility() == 0 || toVar.m0.getVisibility() == 0) ? 0 : 8);
                 chat = toVar.x0;
                 i13 = 14;
@@ -9344,7 +9158,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                             toVar3.showDialog(new fi.k0(toVar3, j13, null, null));
                                             break;
                                         } else {
-                                            toVar3.presentFragment(new fi.p(t8.b.f(j13, "community_id")));
+                                            toVar3.presentFragment(new fi.p(sa.e.f(j13, "community_id")));
                                             break;
                                         }
                                     default:
@@ -9357,7 +9171,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 }
                             }
                         });
-                        zdVar.addView(toVar.h0, w7.z5.n(-1, -2));
+                        ro0Var.addView(toVar.h0, w7.z5.n(-1, -2));
                         org.telegram.ui.Cells.r8 r8Var38 = new org.telegram.ui.Cells.r8(context2);
                         toVar.j0 = r8Var38;
                         r8Var38.m(R.drawable.outline_community_remove_24, LocaleController.getString(z17 ? R.string.CommunityRemoveBotFromCommunity : toVar.I0 ? R.string.CommunityRemoveChannelFromCommunity : R.string.CommunityRemoveGroupFromCommunity), false);
@@ -9377,12 +9191,12 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 org.telegram.ui.Components.e5.v0(toVar3, string3, LocaleController.getString(z17 ? R.string.CommunityMenuRemoveBotFromCommunityConfirm : toVar3.I0 ? R.string.CommunityMenuRemoveChannelFromCommunityConfirm : R.string.CommunityMenuRemoveGroupFromCommunityConfirm), LocaleController.getString(R.string.Remove), true, new oo(toVar3, j12, j11, 0));
                             }
                         });
-                        zdVar.addView(toVar2.j0, w7.z5.n(-1, -2));
+                        ro0Var.addView(toVar2.j0, w7.z5.n(-1, -2));
                         org.telegram.ui.Cells.e9 e9Var5 = new org.telegram.ui.Cells.e9(context3, 12, toVar2.getResourceProvider());
                         toVar2.k0 = e9Var5;
                         e9Var5.setFixedSize(14);
                         toVar2.k0.setTag(R.id.fit_width_tag, num2);
-                        zdVar.addView(toVar2.k0, w7.z5.n(-1, 14));
+                        ro0Var.addView(toVar2.k0, w7.z5.n(-1, 14));
                     } else {
                         toVar2 = toVar;
                         f7 = -2.0f;
@@ -9412,7 +9226,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                             toVar3.showDialog(new fi.k0(toVar3, j13, null, null));
                                             break;
                                         } else {
-                                            toVar3.presentFragment(new fi.p(t8.b.f(j13, "community_id")));
+                                            toVar3.presentFragment(new fi.p(sa.e.f(j13, "community_id")));
                                             break;
                                         }
                                     default:
@@ -9428,8 +9242,8 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         org.telegram.ui.Cells.e9 e9Var6 = new org.telegram.ui.Cells.e9(context3, 12, toVar2.resourceProvider);
                         toVar2.i0 = e9Var6;
                         e9Var6.setText(LocaleController.getString(z17 ? R.string.CommunityAddBotToCommunityInfo : toVar2.I0 ? R.string.CommunityAddChannelToCommunityInfo : R.string.CommunityAddGroupToCommunityInfo));
-                        zdVar.addView(toVar2.g0, w7.z5.n(-1, -2));
-                        zdVar.addView(toVar2.i0, w7.z5.n(-1, -2));
+                        ro0Var.addView(toVar2.g0, w7.z5.n(-1, -2));
+                        ro0Var.addView(toVar2.i0, w7.z5.n(-1, -2));
                     }
                 } else {
                     toVar2 = toVar;
@@ -9440,7 +9254,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                 if (chat2 != null && chat2.creator) {
                     FrameLayout frameLayout3 = new FrameLayout(context3);
                     toVar2.c0 = frameLayout3;
-                    zdVar.addView(frameLayout3, w7.z5.n(-1, -2));
+                    ro0Var.addView(frameLayout3, w7.z5.n(-1, -2));
                     org.telegram.ui.Cells.ea eaVar = new org.telegram.ui.Cells.ea(context3);
                     toVar2.d0 = eaVar;
                     eaVar.setTextColor(org.telegram.ui.ActionBar.i6.u0(org.telegram.ui.ActionBar.i6.p7));
@@ -9540,7 +9354,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     to toVar9 = this.b;
-                                    toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                                    toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                                     break;
                                 case 7:
                                     to toVar10 = this.b;
@@ -9595,22 +9409,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                                     boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                                     hp hpVar = new hp(null);
-                                    hpVar.M = new ArrayList();
                                     hpVar.N = new ArrayList();
-                                    hpVar.P = new ArrayList();
-                                    hpVar.c0 = true;
-                                    hpVar.f0 = new ArrayList();
-                                    hpVar.o0 = new HashMap();
-                                    hpVar.q0 = new wo(hpVar, 5);
-                                    hpVar.t0 = false;
-                                    hpVar.Z = j102;
-                                    hpVar.n0 = z152;
+                                    hpVar.O = new ArrayList();
+                                    hpVar.Q = new ArrayList();
+                                    hpVar.d0 = true;
+                                    hpVar.g0 = new ArrayList();
+                                    hpVar.p0 = new HashMap();
+                                    hpVar.r0 = new wo(hpVar, 5);
+                                    hpVar.u0 = false;
+                                    hpVar.a0 = j102;
+                                    hpVar.o0 = z152;
                                     TLRPC.ChatFull chatFull7 = toVar14.y0;
-                                    hpVar.Y = chatFull7;
+                                    hpVar.Z = chatFull7;
                                     if (chatFull7 != null) {
                                         TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                         if (tL_chatInviteExported != null) {
-                                            hpVar.l0 = tL_chatInviteExported;
+                                            hpVar.m0 = tL_chatInviteExported;
                                         } else {
                                             hpVar.W(false);
                                         }
@@ -9671,30 +9485,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 case 23:
                                     to toVar20 = this.b;
                                     if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                        toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                        toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                         break;
                                     } else {
                                         Bundle bundle5 = new Bundle();
                                         bundle5.putLong("chat_id", toVar20.w0);
                                         aq aqVar = new aq(bundle5);
-                                        aqVar.d = new ArrayList();
-                                        aqVar.r = new ArrayList();
-                                        aqVar.v = -1;
-                                        aqVar.F = new ArrayList();
-                                        long j122 = bundle5.getLong("chat_id", 0L);
-                                        aqVar.c = j122;
                                         TLRPC.ChatFull chatFull9 = toVar20.y0;
                                         aqVar.b = chatFull9;
                                         if (chatFull9 != null) {
                                             if (aqVar.a == null) {
-                                                aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j122));
+                                                aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                             }
                                             aqVar.d = new ArrayList();
                                             TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                             if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                                aqVar.w = 0;
+                                                aqVar.v = 0;
                                             } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                                aqVar.w = 2;
+                                                aqVar.v = 2;
                                             } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                                 TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                                 for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -9702,7 +9510,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                         aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                                     }
                                                 }
-                                                aqVar.w = 1;
+                                                aqVar.v = 1;
                                             }
                                         }
                                         toVar20.presentFragment(aqVar);
@@ -9722,7 +9530,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                     });
                     org.telegram.ui.Cells.b7 b7Var2 = new org.telegram.ui.Cells.b7(context3);
                     toVar2.e0 = b7Var2;
-                    zdVar.addView(b7Var2, w7.z5.n(-1, -2));
+                    ro0Var.addView(b7Var2, w7.z5.n(-1, -2));
                 }
                 UndoView undoView = new UndoView(context3);
                 toVar2.c = undoView;
@@ -9758,7 +9566,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         if (chat2 != null) {
             FrameLayout frameLayout32 = new FrameLayout(context3);
             toVar2.c0 = frameLayout32;
-            zdVar.addView(frameLayout32, w7.z5.n(-1, -2));
+            ro0Var.addView(frameLayout32, w7.z5.n(-1, -2));
             org.telegram.ui.Cells.ea eaVar2 = new org.telegram.ui.Cells.ea(context3);
             toVar2.d0 = eaVar2;
             eaVar2.setTextColor(org.telegram.ui.ActionBar.i6.u0(org.telegram.ui.ActionBar.i6.p7));
@@ -9853,7 +9661,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 6:
                             to toVar9 = this.b;
-                            toVar9.presentFragment(va1.b0(toVar9.x0, false));
+                            toVar9.presentFragment(ta1.b0(toVar9.x0, false));
                             break;
                         case 7:
                             to toVar10 = this.b;
@@ -9908,22 +9716,22 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             org.telegram.ui.Cells.r8 r8Var72 = toVar14.H;
                             boolean z152 = r8Var72 != null && r8Var72.getVisibility() == 0;
                             hp hpVar = new hp(null);
-                            hpVar.M = new ArrayList();
                             hpVar.N = new ArrayList();
-                            hpVar.P = new ArrayList();
-                            hpVar.c0 = true;
-                            hpVar.f0 = new ArrayList();
-                            hpVar.o0 = new HashMap();
-                            hpVar.q0 = new wo(hpVar, 5);
-                            hpVar.t0 = false;
-                            hpVar.Z = j102;
-                            hpVar.n0 = z152;
+                            hpVar.O = new ArrayList();
+                            hpVar.Q = new ArrayList();
+                            hpVar.d0 = true;
+                            hpVar.g0 = new ArrayList();
+                            hpVar.p0 = new HashMap();
+                            hpVar.r0 = new wo(hpVar, 5);
+                            hpVar.u0 = false;
+                            hpVar.a0 = j102;
+                            hpVar.o0 = z152;
                             TLRPC.ChatFull chatFull7 = toVar14.y0;
-                            hpVar.Y = chatFull7;
+                            hpVar.Z = chatFull7;
                             if (chatFull7 != null) {
                                 TLRPC.TL_chatInviteExported tL_chatInviteExported = chatFull7.exported_invite;
                                 if (tL_chatInviteExported != null) {
-                                    hpVar.l0 = tL_chatInviteExported;
+                                    hpVar.m0 = tL_chatInviteExported;
                                 } else {
                                     hpVar.W(false);
                                 }
@@ -9984,30 +9792,24 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         case 23:
                             to toVar20 = this.b;
                             if (ChatObject.isChannelAndNotMegaGroup(toVar20.x0)) {
-                                toVar20.presentFragment(new zg.q(toVar20.w0, toVar20.y0));
+                                toVar20.presentFragment(new zg.o(toVar20.w0, toVar20.y0));
                                 break;
                             } else {
                                 Bundle bundle5 = new Bundle();
                                 bundle5.putLong("chat_id", toVar20.w0);
                                 aq aqVar = new aq(bundle5);
-                                aqVar.d = new ArrayList();
-                                aqVar.r = new ArrayList();
-                                aqVar.v = -1;
-                                aqVar.F = new ArrayList();
-                                long j122 = bundle5.getLong("chat_id", 0L);
-                                aqVar.c = j122;
                                 TLRPC.ChatFull chatFull9 = toVar20.y0;
                                 aqVar.b = chatFull9;
                                 if (chatFull9 != null) {
                                     if (aqVar.a == null) {
-                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(j122));
+                                        aqVar.a = aqVar.getMessagesController().getChat(Long.valueOf(aqVar.c));
                                     }
                                     aqVar.d = new ArrayList();
                                     TLRPC.ChatReactions chatReactions = chatFull9.available_reactions;
                                     if (chatReactions instanceof TLRPC.TL_chatReactionsAll) {
-                                        aqVar.w = 0;
+                                        aqVar.v = 0;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsNone) {
-                                        aqVar.w = 2;
+                                        aqVar.v = 2;
                                     } else if (chatReactions instanceof TLRPC.TL_chatReactionsSome) {
                                         TLRPC.TL_chatReactionsSome tL_chatReactionsSome = (TLRPC.TL_chatReactionsSome) chatReactions;
                                         for (int i192 = 0; i192 < tL_chatReactionsSome.reactions.size(); i192++) {
@@ -10015,7 +9817,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                                 aqVar.d.add(((TLRPC.TL_reactionEmoji) tL_chatReactionsSome.reactions.get(i192)).emoticon);
                                             }
                                         }
-                                        aqVar.w = 1;
+                                        aqVar.v = 1;
                                     }
                                 }
                                 toVar20.presentFragment(aqVar);
@@ -10035,7 +9837,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
             });
             org.telegram.ui.Cells.b7 b7Var22 = new org.telegram.ui.Cells.b7(context3);
             toVar2.e0 = b7Var22;
-            zdVar.addView(b7Var22, w7.z5.n(-1, -2));
+            ro0Var.addView(b7Var22, w7.z5.n(-1, -2));
         }
         UndoView undoView2 = new UndoView(context3);
         toVar2.c = undoView2;
@@ -10200,9 +10002,9 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         }
         if (((Long) objArr[0]).longValue() == j3) {
             if (this.n0 != null) {
-                yh.o g10 = yh.o.g(this.currentAccount);
+                yh.p g10 = yh.p.g(this.currentAccount);
                 this.n0.setVisibility(g10.a(j3) ? 0 : 8);
-                this.n0.u(yh.x7.d1(false, TextUtils.concat("XTR", yh.x7.P0(g10.c(j3), 0.8f, ' ')), 0.85f, null), true);
+                this.n0.u(yh.z7.d1(false, TextUtils.concat("XTR", yh.z7.P0(g10.c(j3), 0.8f, ' ')), 0.85f, null), true);
                 org.telegram.ui.Cells.r8 r8Var3 = this.l0;
                 if (r8Var3 != null) {
                     r8Var3.setNeedDivider(g10.a(j3) || g10.b(j3));
@@ -10210,7 +10012,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                 this.S.setVisibility((this.n0.getVisibility() == 0 || this.m0.getVisibility() == 0) ? 0 : 8);
             }
             if (this.m0 != null) {
-                yh.o g11 = yh.o.g(this.currentAccount);
+                yh.p g11 = yh.p.g(this.currentAccount);
                 this.m0.setVisibility(g11.b(j3) ? 0 : 8);
                 long i14 = g11.i(j3);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
@@ -10335,10 +10137,14 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
     }
 
     @Override // org.telegram.ui.ActionBar.n2
+    public final org.telegram.ui.Components.so0 getScrollViewForSimpleGlass() {
+        return this.x;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         e eVar = new e(this, 5);
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.i6.a7));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.i6.v8));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 128, null, null, null, null, org.telegram.ui.ActionBar.i6.A8));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.actionBar, 256, null, null, null, null, org.telegram.ui.ActionBar.i6.t8));
@@ -10547,8 +10353,8 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         Bundle bundle = new Bundle();
                         bundle.putLong("chat_id", this.w0);
                         org.telegram.ui.ActionBar.c5 parentLayout = getParentLayout();
-                        HashSet hashSet = yf1.n1;
-                        ((ActionBarLayout) parentLayout).c(i10, yf1.E0(getMessagesController(), getMessagesStorage(), bundle));
+                        HashSet hashSet = wf1.n1;
+                        ((ActionBarLayout) parentLayout).c(i10, wf1.E0(getMessagesController(), getMessagesStorage(), bundle));
                     }
                     i10++;
                 }
@@ -10764,7 +10570,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                 return;
             }
             bp0Var.v = z10;
-            bp0Var.r = new org.telegram.ui.Components.e11(Emoji.replaceEmoji(chat.title, org.telegram.ui.ActionBar.i6.o2.getFontMetricsInt(), false), 13.0f, AndroidUtilities.bold());
+            bp0Var.r = new org.telegram.ui.Components.f11(Emoji.replaceEmoji(chat.title, org.telegram.ui.ActionBar.i6.o2.getFontMetricsInt(), false), 13.0f, AndroidUtilities.bold());
             rp0 rp0Var2 = bp0Var.w;
             if (rp0Var2 != null) {
                 rp0Var2.e(null);
@@ -11016,10 +10822,6 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
 
     @Override // org.telegram.ui.ActionBar.n2
     public final void onInsets(int i10, int i11, int i12, int i13) {
-        zd zdVar = this.w;
-        if (zdVar != null) {
-            zdVar.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + i13);
-        }
         UndoView undoView = this.c;
         if (undoView != null) {
             undoView.setTranslationY(-i13);
@@ -11120,7 +10922,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         if (TextUtils.isEmpty(publicUsername)) {
                             this.J.s(LocaleController.getString("Discussion", R.string.Discussion), chat2.title, false, R.drawable.msg_discuss, true);
                         } else {
-                            this.J.s(LocaleController.getString("Discussion", R.string.Discussion), t8.b.i("@", publicUsername), false, R.drawable.msg_discuss, true);
+                            this.J.s(LocaleController.getString("Discussion", R.string.Discussion), sa.e.i("@", publicUsername), false, R.drawable.msg_discuss, true);
                         }
                     } else {
                         String publicUsername2 = ChatObject.getPublicUsername(chat2);
@@ -11134,7 +10936,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                         } else {
                             org.telegram.ui.Cells.r8 r8Var14 = this.J;
                             String string3 = LocaleController.getString("LinkedChannel", R.string.LinkedChannel);
-                            String i17 = t8.b.i("@", publicUsername2);
+                            String i17 = sa.e.i("@", publicUsername2);
                             int i18 = R.drawable.msg_channel;
                             org.telegram.ui.Cells.r8 r8Var15 = this.Q;
                             r8Var14.s(string3, i17, false, i18, r8Var15 != null && r8Var15.getVisibility() == 0);
@@ -11202,7 +11004,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                     r8Var19.s(string5, str5, false, i20, (r8Var20 != null && r8Var20.getVisibility() == 0) || ((r8Var = this.J) != null && r8Var.getVisibility() == 0) || ((r8Var2 = this.Q) != null && r8Var2.getVisibility() == 0));
                 }
             } else {
-                String string6 = !isPublic ? LocaleController.getString("TypeLocationGroupEdit", R.string.TypeLocationGroupEdit) : String.format(a4.a.s(new StringBuilder("https://"), getMessagesController().linkPrefix, "/%s"), ChatObject.getPublicUsername(this.x0));
+                String string6 = !isPublic ? LocaleController.getString("TypeLocationGroupEdit", R.string.TypeLocationGroupEdit) : String.format(a4.a.t(new StringBuilder("https://"), getMessagesController().linkPrefix, "/%s"), ChatObject.getPublicUsername(this.x0));
                 org.telegram.ui.Cells.r8 r8Var21 = this.I;
                 String string7 = LocaleController.getString("TypeLocationGroup", R.string.TypeLocationGroup);
                 int i21 = R.drawable.msg_channel;
@@ -11429,14 +11231,14 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                     if (!this.H0) {
                         Bundle bundle = new Bundle();
                         bundle.putLong("chat_id", this.w0);
-                        ((ActionBarLayout) getParentLayout()).c(i10, new yf1(bundle));
+                        ((ActionBarLayout) getParentLayout()).c(i10, new wf1(bundle));
                         i10++;
                     }
                 }
-            } else if (this.H0 && (fragmentStack.get(i10) instanceof yf1)) {
-                yf1 yf1Var = (yf1) fragmentStack.get(i10);
-                if (yf1Var.g() != null && yf1Var.g().id == this.w0) {
-                    ((ActionBarLayout) getParentLayout()).a0(yf1Var, false);
+            } else if (this.H0 && (fragmentStack.get(i10) instanceof wf1)) {
+                wf1 wf1Var = (wf1) fragmentStack.get(i10);
+                if (wf1Var.g() != null && wf1Var.g().id == this.w0) {
+                    ((ActionBarLayout) getParentLayout()).a0(wf1Var, false);
                     i10--;
                 }
             } else if (this.H0 && (fragmentStack.get(i10) instanceof uy) && (uyVar = (uy) fragmentStack.get(i10)) != null && (mxVar = uyVar.F3) != null && mxVar.c()) {
@@ -11560,7 +11362,7 @@ public class to extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         } else if (chat2 != null) {
             j3 = chat2.send_paid_messages_stars;
         }
-        this.K.s(LocaleController.getString(R.string.PostSuggestions), yh.x7.d1(false, LocaleController.formatString(R.string.PostSuggestionsStars, Long.valueOf(j3)), 0.66f, null), false, R.drawable.msg_markunread, true);
+        this.K.s(LocaleController.getString(R.string.PostSuggestions), yh.z7.d1(false, LocaleController.formatString(R.string.PostSuggestionsStars, Long.valueOf(j3)), 0.66f, null), false, R.drawable.msg_markunread, true);
     }
 
     @Override // org.telegram.ui.Components.x40

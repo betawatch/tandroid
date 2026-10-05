@@ -52,14 +52,14 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.ds0;
+import org.telegram.ui.Components.es0;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xi;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import rg.y0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -87,8 +87,7 @@ public final /* synthetic */ class a0 implements Runnable {
             case 0:
                 Iterator it = ((k0) this.b).n.iterator();
                 if (it.hasNext()) {
-                    it.next().getClass();
-                    throw new ClassCastException();
+                    throw a4.a.k(it);
                 }
                 return;
             case 1:
@@ -109,9 +108,9 @@ public final /* synthetic */ class a0 implements Runnable {
                 return;
             case 3:
                 bi.u uVar = (bi.u) this.b;
-                ds0 ds0Var = uVar.W;
+                es0 es0Var = uVar.W;
                 u8 u8Var = uVar.a;
-                ds0Var.a(u8Var == null ? "" : u8Var.E);
+                es0Var.a(u8Var == null ? "" : u8Var.E);
                 return;
             case 4:
                 ((c1.e) this.b).e().onError(new w0.h("Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context.", 2));
@@ -169,7 +168,7 @@ public final /* synthetic */ class a0 implements Runnable {
                     d2Var.x = recentStickers.size() + d2Var.x;
                     d2Var.I = d2Var.H;
                     d2Var.l();
-                    p1.y1(e2Var.b, 0, 0);
+                    p1.x1(e2Var.b, 0, 0);
                     e2Var.f.c(false);
                     e2Var.e.n(false);
                     return;
@@ -210,10 +209,10 @@ public final /* synthetic */ class a0 implements Runnable {
                 if (i13 > arrayList3.size() - 1) {
                     p2Var.k = 0;
                 }
-                zg.f0 f0Var = p2Var.j;
-                f0Var.e((zg.o0) arrayList3.get(p2Var.k));
+                zg.d0 d0Var = p2Var.j;
+                d0Var.e((zg.m0) arrayList3.get(p2Var.k));
                 p2Var.j = p2Var.i;
-                p2Var.i = f0Var;
+                p2Var.i = d0Var;
                 p2Var.p.invalidate();
                 return;
             case 15:

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Map;
 import v7.m7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class s0 implements y2.i {
     public final Uri a;
@@ -47,8 +47,8 @@ public final class s0 implements y2.i {
                 this.s = b10;
                 long open = this.b.open(b10);
                 if (this.h) {
-                    if (i11 != 1 && this.c.E() != -1) {
-                        this.f.a = this.c.E();
+                    if (i11 != 1 && this.c.z() != -1) {
+                        this.f.a = this.c.z();
                     }
                     m7.a(this.b);
                     return;
@@ -101,12 +101,12 @@ public final class s0 implements y2.i {
                         c3.l lVar = (c3.l) hVar3.d;
                         lVar.getClass();
                         i11 = oVar3.m(lVar, sVar);
-                        long E = this.c.E();
-                        if (E > this.x.s + j3) {
+                        long z11 = this.c.z();
+                        if (z11 > this.x.s + j3) {
                             this.e.d();
                             v0 v0Var2 = this.x;
                             v0Var2.H.post(v0Var2.G);
-                            j3 = E;
+                            j3 = z11;
                         }
                     } catch (InterruptedException unused) {
                         throw new InterruptedIOException();
@@ -114,13 +114,13 @@ public final class s0 implements y2.i {
                 }
                 if (i11 == 1) {
                     i11 = 0;
-                } else if (this.c.E() != -1) {
-                    this.f.a = this.c.E();
+                } else if (this.c.z() != -1) {
+                    this.f.a = this.c.z();
                 }
                 m7.a(this.b);
             } catch (Throwable th2) {
-                if (i11 != 1 && this.c.E() != -1) {
-                    this.f.a = this.c.E();
+                if (i11 != 1 && this.c.z() != -1) {
+                    this.f.a = this.c.z();
                 }
                 m7.a(this.b);
                 throw th2;

@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n21 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class n21 implements Runnable {
                 }
                 break;
             case 2:
-                int i11 = m91.d0;
+                int i11 = k91.d0;
                 break;
             case 3:
                 org.telegram.ui.ActionBar.i6.N = false;
@@ -83,7 +83,7 @@ public final /* synthetic */ class n21 implements Runnable {
                 } catch (Exception e7) {
                     FileLog.e(e7);
                 }
-                AndroidUtilities.runOnUIThread(new g91(26, arrayList, longSparseArray));
+                AndroidUtilities.runOnUIThread(new e91(26, arrayList, longSparseArray));
                 break;
             case 8:
                 try {
@@ -192,12 +192,12 @@ public final /* synthetic */ class n21 implements Runnable {
             case 20:
                 org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
                 if (U2 != null) {
-                    U2.presentFragment(new yh.x7());
+                    U2.presentFragment(new yh.z7());
                     break;
                 }
                 break;
             case 21:
-                yh.t5[][] t5VarArr = yh.t5.S;
+                yh.u5[][] u5VarArr = yh.u5.S;
                 break;
             default:
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);

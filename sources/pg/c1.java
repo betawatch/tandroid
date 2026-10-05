@@ -37,7 +37,7 @@ import z7.lg;
 import z7.ma;
 import z7.wf;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class c1 implements Runnable {
     public final /* synthetic */ int a;
@@ -193,15 +193,15 @@ public final class c1 implements Runnable {
                 rg.t0 t0Var = (rg.t0) this.b;
                 ArrayList arrayList = t0Var.n3;
                 if (t0Var.u3) {
-                    if (!arrayList.isEmpty() && (R = RecyclerView.R((rg.p1) hg.k0.g(1, arrayList))) >= 0) {
+                    if (!arrayList.isEmpty() && (R = RecyclerView.R((rg.p1) hg.c.g(1, arrayList))) >= 0) {
                         View m10 = t0Var.f3.m(R + 1);
                         if (m10 != null) {
                             t0Var.k3 = false;
-                            t0Var.y1(m10, true);
+                            t0Var.x1(m10, true);
                             t0Var.w0(0, m10.getTop() - ((t0Var.getMeasuredHeight() - m10.getMeasuredHeight()) / 2), AndroidUtilities.overshootInterpolator);
                         }
                     }
-                    t0Var.z1();
+                    t0Var.y1();
                     return;
                 }
                 return;

@@ -1,63 +1,99 @@
 package yh;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.ld0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class b7 extends rg.y1 {
-    public Paint[] n;
-    public final /* synthetic */ int r;
-    public final /* synthetic */ int s;
+public final class b7 implements TextWatcher {
+    public boolean a;
+    public int b = 2;
+    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ ld0 d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ ci.d h;
+    public final /* synthetic */ TextView n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b7(Context context, int i10, int i11) {
-        super(context);
-        this.r = i10;
-        this.s = i11;
-        b();
+    public b7(EditTextBoldCursor editTextBoldCursor, ld0 ld0Var, long j3, boolean z10, ci.d dVar, TextView textView) {
+        this.c = editTextBoldCursor;
+        this.d = ld0Var;
+        this.e = j3;
+        this.f = z10;
+        this.h = dVar;
+        this.n = textView;
     }
 
-    @Override // rg.y1
-    public final void a() {
-        rg.x1 x1Var = new rg.x1(this.r);
-        this.a = x1Var;
-        x1Var.N = 105;
-        int i10 = 0;
-        x1Var.M = false;
-        x1Var.G = false;
-        x1Var.K = true;
-        x1Var.H = true;
-        x1Var.J = false;
-        x1Var.m = true;
-        x1Var.h = true;
-        if (this.s == 1) {
-            x1Var.k = AndroidUtilities.dp(24.0f);
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0078  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0098  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00a8  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        long j3;
+        ld0 ld0Var = this.d;
+        EditTextBoldCursor editTextBoldCursor = this.c;
+        if (this.a) {
+            return;
         }
-        this.n = new Paint[20];
-        while (true) {
-            Paint[] paintArr = this.n;
-            if (i10 >= paintArr.length) {
-                rg.x1 x1Var2 = this.a;
-                x1Var2.l = new ci.y7(this, 5);
-                x1Var2.r = 17;
-                x1Var2.s = 18;
-                x1Var2.t = 19;
-                x1Var2.P = org.telegram.ui.ActionBar.i6.G6;
-                x1Var2.c();
-                return;
+        try {
+            j3 = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
+        } catch (Exception unused) {
+            j3 = 0;
+        }
+        try {
+            if (j3 > MessagesController.getInstance(UserConfig.selectedAccount).starsPaidPostAmountMax) {
+                this.a = true;
+                j3 = MessagesController.getInstance(UserConfig.selectedAccount).starsPaidPostAmountMax;
+                editTextBoldCursor.setText(Long.toString(j3));
+                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                int i10 = -this.b;
+                this.b = i10;
+                AndroidUtilities.shakeViewSpring(ld0Var, i10);
             }
-            paintArr[i10] = new Paint(1);
-            this.n[i10].setColorFilter(new PorterDuffColorFilter(i0.a.d(i10 / (this.n.length - 1), -371690, -14281), PorterDuff.Mode.SRC_IN));
-            i10++;
+        } catch (Exception unused2) {
+            this.a = true;
+            long j10 = this.e;
+            editTextBoldCursor.setText(j10 <= 0 ? "" : Long.toString(j10));
+            editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+            this.a = false;
+            if (!this.f) {
+            }
+            ld0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+            TextView textView = this.n;
+            if (j3 != 0) {
+            }
+        }
+        this.a = false;
+        if (!this.f) {
+            this.h.setEnabled(j3 > 0);
+        }
+        ld0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+        TextView textView2 = this.n;
+        if (j3 != 0) {
+            textView2.animate().alpha(0.0f).start();
+            textView2.setText("");
+        } else {
+            textView2.animate().alpha(1.0f).start();
+            textView2.setText("≈" + BillingController.getInstance().formatCurrency((long) ((j3 / 1000.0d) * MessagesController.getInstance(UserConfig.selectedAccount).starsUsdWithdrawRate1000), "USD"));
         }
     }
 
-    @Override // rg.y1
-    public final int getStarsRectWidth() {
-        return getMeasuredWidth();
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

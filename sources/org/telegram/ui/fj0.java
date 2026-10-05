@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class fj0 extends org.telegram.ui.Components.yl0 {
     public final Context c;
@@ -143,30 +143,30 @@ public final class fj0 extends org.telegram.ui.Components.yl0 {
             }
         }
         if (i15 == 4) {
-            fa1 fa1Var = (fa1) view;
-            fa1Var.e(hj0Var.r, false);
-            fa1Var.setLayoutParams(new s4.p0(-1, -2));
+            da1 da1Var = (da1) view;
+            da1Var.e(hj0Var.r, false);
+            da1Var.setLayoutParams(new s4.p0(-1, -2));
             return;
         }
         if (i15 != 5) {
             if (i15 != 7) {
                 return;
             }
-            fa1 fa1Var2 = (fa1) view;
-            fa1Var2.e(hj0Var.s, false);
-            fa1Var2.setLayoutParams(new s4.p0(-1, -2));
+            da1 da1Var2 = (da1) view;
+            da1Var2.e(hj0Var.s, false);
+            da1Var2.setLayoutParams(new s4.p0(-1, -2));
             return;
         }
         gj0 gj0Var = (gj0) view;
         TextView[] textViewArr = gj0Var.a;
         TextView[] textViewArr2 = gj0Var.b;
         hj0 hj0Var2 = gj0Var.c;
-        sa1 sa1Var = hj0Var2.e0;
+        qa1 qa1Var = hj0Var2.e0;
         MessageObject messageObject2 = hj0Var2.n;
-        if (sa1Var != null) {
-            i13 = sa1Var.d();
-            i12 = sa1Var.a();
-            i14 = sa1Var.c();
+        if (qa1Var != null) {
+            i13 = qa1Var.d();
+            i12 = qa1Var.a();
+            i14 = qa1Var.c();
         } else {
             int i18 = messageObject2.isStory() ? messageObject2.storyItem.views.views_count : messageObject2.messageOwner.views;
             i12 = messageObject2.isStory() ? messageObject2.storyItem.views.forwards_count : messageObject2.messageOwner.forwards;

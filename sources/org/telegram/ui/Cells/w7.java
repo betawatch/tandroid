@@ -27,7 +27,6 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -35,7 +34,7 @@ import org.telegram.ui.Components.sq;
 import org.telegram.ui.Components.v90;
 import org.telegram.ui.ad0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class w7 extends FrameLayout {
     public boolean E;
@@ -311,7 +310,7 @@ public final class w7 extends FrameLayout {
                 this.K = color;
                 drawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN));
             }
-            this.J.setBounds(c1.e(2, (int) rectF.centerX(), this.J), ok.d(2, (int) rectF.centerY(), this.J), c1.w(2, (int) rectF.centerX(), this.J), c1.t(2, (int) rectF.centerY(), this.J));
+            this.J.setBounds(c1.t(2, (int) rectF.centerX(), this.J), c1.e(2, (int) rectF.centerY(), this.J), c1.x(2, (int) rectF.centerX(), this.J), c1.w(2, (int) rectF.centerY(), this.J));
             this.J.draw(canvas);
         }
     }

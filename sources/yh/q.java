@@ -1,36 +1,12 @@
 package yh;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.w61;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class q extends f61 {
-    static {
-        f61.setup(new q());
-    }
-
-    public static g61 a(String str, CharSequence charSequence, int i10) {
-        g61 J = g61.J(q.class);
-        J.b = false;
-        J.z = i10;
-        J.l = str;
-        J.m = charSequence;
-        return J;
-    }
-
-    @Override // org.telegram.ui.Components.f61
-    public final void bindView(View view, g61 g61Var, boolean z10, u61 u61Var, c71 c71Var) {
-        ((r) view).a(g61Var.l, g61Var.m, g61Var.z);
-    }
-
-    @Override // org.telegram.ui.Components.f61
-    public final View createView(Context context, zl0 zl0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        return new r(context, 0, d6Var);
+public final class q extends w61 {
+    @Override // org.telegram.ui.Components.w61, org.telegram.ui.Components.yl0
+    public final boolean D(s4.c1 c1Var) {
+        return false;
     }
 }

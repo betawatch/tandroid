@@ -14,7 +14,7 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class ic0 extends FrameLayout {
     public final ArrayList E;
@@ -51,10 +51,10 @@ public abstract class ic0 extends FrameLayout {
         gc0 gc0Var = new gc0(context, ec0Var);
         this.e = gc0Var;
         ch.d c10 = cVar.c(gc0Var, null, false);
-        c10.x(eh.b.k(ec0Var));
+        c10.w(eh.b.k(ec0Var));
         c10.l.e = true;
-        c10.y(AndroidUtilities.dp(8.0f));
-        c10.z(AndroidUtilities.dp(16.0f));
+        c10.x(AndroidUtilities.dp(8.0f));
+        c10.y(AndroidUtilities.dp(16.0f));
         gc0Var.setBackground(c10);
         int i12 = 0;
         for (int i13 = 0; i13 < 3; i13++) {

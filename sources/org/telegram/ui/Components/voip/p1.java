@@ -2,16 +2,16 @@ package org.telegram.ui.Components.voip;
 
 import android.app.Activity;
 import android.widget.FrameLayout;
-import org.telegram.ui.uh1;
+import org.telegram.ui.sh1;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class p1 extends FrameLayout {
     public final m1 a;
     public final FrameLayout b;
     public final o1[] c;
-    public uh1 d;
+    public sh1 d;
 
     public p1(Activity activity, r1 r1Var) {
         super(activity);

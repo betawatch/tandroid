@@ -10,10 +10,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class g0 extends cb {
-    public u61 X;
+    public w61 X;
     public TLRPC.TL_channelAdminLogEventsFilter Y;
     public ArrayList Z;
     public a0.i a0;
@@ -104,7 +104,7 @@ public final class g0 extends cb {
         zl0 zl0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
         zl0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(68.0f));
-        this.d.s1();
+        this.d.r1();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:31:0x0037, code lost:
@@ -133,7 +133,7 @@ public final class g0 extends cb {
     public static void N(g0 g0Var, View view, int i10, float f7) {
         boolean z10;
         ArrayList arrayList;
-        g61 G = g0Var.X.G(i10 - 1);
+        h61 G = g0Var.X.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -294,111 +294,111 @@ public final class g0 extends cb {
         }
     }
 
-    public final void O(ArrayList arrayList, u61 u61Var) {
+    public final void O(ArrayList arrayList, w61 w61Var) {
         if (this.Y == null) {
             return;
         }
-        arrayList.add(g61.B(null));
+        arrayList.add(h61.C(null));
         com.google.android.gms.internal.vision.e2.n(R.string.EventLogFilterByActions, arrayList);
         boolean z10 = this.b0;
         int i10 = 0;
         int i11 = 2;
-        g61 z11 = g61.z(P(0), LocaleController.getString(z10 ? R.string.EventLogFilterSectionMembers : R.string.EventLogFilterSectionSubscribers), 2);
+        h61 A = h61.A(P(0), LocaleController.getString(z10 ? R.string.EventLogFilterSectionMembers : R.string.EventLogFilterSectionSubscribers), 2);
         TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter = this.Y;
         int i12 = 1;
-        z11.K(tL_channelAdminLogEventsFilter.promote || tL_channelAdminLogEventsFilter.demote || (z10 && (tL_channelAdminLogEventsFilter.kick || tL_channelAdminLogEventsFilter.ban || tL_channelAdminLogEventsFilter.unkick || tL_channelAdminLogEventsFilter.unban)) || tL_channelAdminLogEventsFilter.invite || tL_channelAdminLogEventsFilter.join || tL_channelAdminLogEventsFilter.leave || tL_channelAdminLogEventsFilter.edit_rank);
-        z11.f = !this.d0;
-        z11.D = new ci.n4(this, i10, 6);
-        arrayList.add(z11);
+        A.L(tL_channelAdminLogEventsFilter.promote || tL_channelAdminLogEventsFilter.demote || (z10 && (tL_channelAdminLogEventsFilter.kick || tL_channelAdminLogEventsFilter.ban || tL_channelAdminLogEventsFilter.unkick || tL_channelAdminLogEventsFilter.unban)) || tL_channelAdminLogEventsFilter.invite || tL_channelAdminLogEventsFilter.join || tL_channelAdminLogEventsFilter.leave || tL_channelAdminLogEventsFilter.edit_rank);
+        A.f = !this.d0;
+        A.D = new ci.n4(this, i10, 6);
+        arrayList.add(A);
         if (this.d0) {
-            g61 y3 = g61.y(3, LocaleController.getString(R.string.EventLogFilterSectionAdmin));
-            y3.i = 1;
+            h61 z11 = h61.z(3, LocaleController.getString(R.string.EventLogFilterSectionAdmin));
+            z11.i = 1;
             TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter2 = this.Y;
-            y3.K(tL_channelAdminLogEventsFilter2.promote || tL_channelAdminLogEventsFilter2.demote);
-            arrayList.add(y3);
+            z11.L(tL_channelAdminLogEventsFilter2.promote || tL_channelAdminLogEventsFilter2.demote);
+            arrayList.add(z11);
             if (z10) {
-                g61 y10 = g61.y(4, LocaleController.getString(R.string.EventLogFilterNewRestrictions));
-                y10.i = 1;
+                h61 z12 = h61.z(4, LocaleController.getString(R.string.EventLogFilterNewRestrictions));
+                z12.i = 1;
                 TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter3 = this.Y;
-                y10.K(tL_channelAdminLogEventsFilter3.kick || tL_channelAdminLogEventsFilter3.ban || tL_channelAdminLogEventsFilter3.unkick || tL_channelAdminLogEventsFilter3.unban);
-                arrayList.add(y10);
+                z12.L(tL_channelAdminLogEventsFilter3.kick || tL_channelAdminLogEventsFilter3.ban || tL_channelAdminLogEventsFilter3.unkick || tL_channelAdminLogEventsFilter3.unban);
+                arrayList.add(z12);
             }
-            g61 y11 = g61.y(5, LocaleController.getString(z10 ? R.string.EventLogFilterNewMembers : R.string.EventLogFilterNewSubscribers));
-            y11.i = 1;
+            h61 z13 = h61.z(5, LocaleController.getString(z10 ? R.string.EventLogFilterNewMembers : R.string.EventLogFilterNewSubscribers));
+            z13.i = 1;
             TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter4 = this.Y;
-            y11.K(tL_channelAdminLogEventsFilter4.invite || tL_channelAdminLogEventsFilter4.join);
-            arrayList.add(y11);
-            g61 y12 = g61.y(6, LocaleController.getString(z10 ? R.string.EventLogFilterLeavingMembers2 : R.string.EventLogFilterLeavingSubscribers2));
-            y12.i = 1;
-            y12.K(this.Y.leave);
-            arrayList.add(y12);
+            z13.L(tL_channelAdminLogEventsFilter4.invite || tL_channelAdminLogEventsFilter4.join);
+            arrayList.add(z13);
+            h61 z14 = h61.z(6, LocaleController.getString(z10 ? R.string.EventLogFilterLeavingMembers2 : R.string.EventLogFilterLeavingSubscribers2));
+            z14.i = 1;
+            z14.L(this.Y.leave);
+            arrayList.add(z14);
             if (z10) {
-                g61 y13 = g61.y(7, LocaleController.getString(R.string.EventLogFilterMembersRank));
-                y13.i = 1;
-                y13.K(this.Y.edit_rank);
-                arrayList.add(y13);
+                h61 z15 = h61.z(7, LocaleController.getString(R.string.EventLogFilterMembersRank));
+                z15.i = 1;
+                z15.L(this.Y.edit_rank);
+                arrayList.add(z15);
             }
         }
-        g61 z12 = g61.z(P(1), LocaleController.getString(z10 ? R.string.EventLogFilterSectionGroupSettings : R.string.EventLogFilterSectionChannelSettings), 8);
+        h61 A2 = h61.A(P(1), LocaleController.getString(z10 ? R.string.EventLogFilterSectionGroupSettings : R.string.EventLogFilterSectionChannelSettings), 8);
         TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter5 = this.Y;
-        z12.K(tL_channelAdminLogEventsFilter5.info || tL_channelAdminLogEventsFilter5.settings || tL_channelAdminLogEventsFilter5.invites || tL_channelAdminLogEventsFilter5.group_call);
-        z12.f = !this.e0;
-        z12.D = new ci.n4(this, i12, 6);
-        arrayList.add(z12);
+        A2.L(tL_channelAdminLogEventsFilter5.info || tL_channelAdminLogEventsFilter5.settings || tL_channelAdminLogEventsFilter5.invites || tL_channelAdminLogEventsFilter5.group_call);
+        A2.f = !this.e0;
+        A2.D = new ci.n4(this, i12, 6);
+        arrayList.add(A2);
         if (this.e0) {
-            g61 y14 = g61.y(9, LocaleController.getString(z10 ? R.string.EventLogFilterGroupInfo : R.string.EventLogFilterChannelInfo));
-            y14.i = 1;
+            h61 z16 = h61.z(9, LocaleController.getString(z10 ? R.string.EventLogFilterGroupInfo : R.string.EventLogFilterChannelInfo));
+            z16.i = 1;
             TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter6 = this.Y;
-            y14.K(tL_channelAdminLogEventsFilter6.info || tL_channelAdminLogEventsFilter6.settings);
-            arrayList.add(y14);
-            g61 y15 = g61.y(10, LocaleController.getString(R.string.EventLogFilterInvites));
-            y15.i = 1;
-            y15.K(this.Y.invites);
-            arrayList.add(y15);
-            g61 y16 = g61.y(11, LocaleController.getString(R.string.EventLogFilterCalls));
-            y16.i = 1;
-            y16.K(this.Y.group_call);
-            arrayList.add(y16);
+            z16.L(tL_channelAdminLogEventsFilter6.info || tL_channelAdminLogEventsFilter6.settings);
+            arrayList.add(z16);
+            h61 z17 = h61.z(10, LocaleController.getString(R.string.EventLogFilterInvites));
+            z17.i = 1;
+            z17.L(this.Y.invites);
+            arrayList.add(z17);
+            h61 z18 = h61.z(11, LocaleController.getString(R.string.EventLogFilterCalls));
+            z18.i = 1;
+            z18.L(this.Y.group_call);
+            arrayList.add(z18);
         }
-        g61 z13 = g61.z(P(2), LocaleController.getString(R.string.EventLogFilterSectionMessages), 12);
+        h61 A3 = h61.A(P(2), LocaleController.getString(R.string.EventLogFilterSectionMessages), 12);
         TLRPC.TL_channelAdminLogEventsFilter tL_channelAdminLogEventsFilter7 = this.Y;
-        z13.K(tL_channelAdminLogEventsFilter7.delete || tL_channelAdminLogEventsFilter7.edit || tL_channelAdminLogEventsFilter7.pinned);
-        z13.f = !this.f0;
-        z13.D = new ci.n4(this, i11, 6);
-        arrayList.add(z13);
+        A3.L(tL_channelAdminLogEventsFilter7.delete || tL_channelAdminLogEventsFilter7.edit || tL_channelAdminLogEventsFilter7.pinned);
+        A3.f = !this.f0;
+        A3.D = new ci.n4(this, i11, 6);
+        arrayList.add(A3);
         if (this.f0) {
-            g61 y17 = g61.y(13, LocaleController.getString(R.string.EventLogFilterDeletedMessages));
-            y17.i = 1;
-            y17.K(this.Y.delete);
-            arrayList.add(y17);
-            g61 y18 = g61.y(14, LocaleController.getString(R.string.EventLogFilterEditedMessages));
-            y18.i = 1;
-            y18.K(this.Y.edit);
-            arrayList.add(y18);
-            g61 y19 = g61.y(15, LocaleController.getString(R.string.EventLogFilterPinnedMessages));
-            y19.i = 1;
-            y19.K(this.Y.pinned);
-            arrayList.add(y19);
+            h61 z19 = h61.z(13, LocaleController.getString(R.string.EventLogFilterDeletedMessages));
+            z19.i = 1;
+            z19.L(this.Y.delete);
+            arrayList.add(z19);
+            h61 z20 = h61.z(14, LocaleController.getString(R.string.EventLogFilterEditedMessages));
+            z20.i = 1;
+            z20.L(this.Y.edit);
+            arrayList.add(z20);
+            h61 z21 = h61.z(15, LocaleController.getString(R.string.EventLogFilterPinnedMessages));
+            z21.i = 1;
+            z21.L(this.Y.pinned);
+            arrayList.add(z21);
         }
-        arrayList.add(g61.B(null));
+        arrayList.add(h61.C(null));
         com.google.android.gms.internal.vision.e2.n(R.string.EventLogFilterByAdmins, arrayList);
-        g61 y20 = g61.y(16, LocaleController.getString(R.string.EventLogFilterByAdminsAll));
+        h61 z22 = h61.z(16, LocaleController.getString(R.string.EventLogFilterByAdminsAll));
         a0.i iVar = this.a0;
         int m10 = iVar == null ? 0 : iVar.m();
         ArrayList arrayList2 = this.Z;
-        y20.K(m10 >= (arrayList2 == null ? 0 : arrayList2.size()));
-        arrayList.add(y20);
+        z22.L(m10 >= (arrayList2 == null ? 0 : arrayList2.size()));
+        arrayList.add(z22);
         if (this.Z != null) {
             for (int i13 = 0; i13 < this.Z.size(); i13++) {
                 long peerDialogId = DialogObject.getPeerDialogId(((TLRPC.ChannelParticipant) this.Z.get(i13)).peer);
                 TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(peerDialogId));
-                g61 g61Var = new g61(37);
-                g61Var.d = (-1) - i13;
-                g61Var.G = user;
-                g61Var.i = 1;
+                h61 h61Var = new h61(37);
+                h61Var.d = (-1) - i13;
+                h61Var.G = user;
+                h61Var.i = 1;
                 a0.i iVar2 = this.a0;
-                g61Var.K(iVar2 != null && iVar2.d(peerDialogId));
-                arrayList.add(g61Var);
+                h61Var.L(iVar2 != null && iVar2.d(peerDialogId));
+                arrayList.add(h61Var);
             }
         }
     }
@@ -442,9 +442,9 @@ public final class g0 extends cb {
                 this.a0.k(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(peerDialogId)), peerDialogId);
             }
         }
-        u61 u61Var = this.X;
-        if (u61Var != null) {
-            u61Var.N(true);
+        w61 w61Var = this.X;
+        if (w61Var != null) {
+            w61Var.N(true);
         }
     }
 
@@ -461,9 +461,9 @@ public final class g0 extends cb {
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(zl0Var, getContext(), this.currentAccount, 0, true, new d(this, 3), this.resourcesProvider);
-        this.X = u61Var;
-        return u61Var;
+        w61 w61Var = new w61(zl0Var, getContext(), this.currentAccount, 0, true, new d(this, 3), this.resourcesProvider);
+        this.X = w61Var;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

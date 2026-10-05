@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class es implements MessagesStorage.LongCallback, nl0 {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class es implements MessagesStorage.LongCallback, n
     public void c(float f7, float f10, int i10, View view) {
         boolean z10;
         is isVar = this.b;
-        g61 G = isVar.X.G(i10 - 1);
+        h61 G = isVar.X.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -193,7 +193,7 @@ public final /* synthetic */ class es implements MessagesStorage.LongCallback, n
                                 if (i15 >= isVar.X.x.size()) {
                                     break;
                                 }
-                                g61 G2 = isVar.X.G(i15);
+                                h61 G2 = isVar.X.G(i15);
                                 if (G2.a == 39 && G2.d == 0) {
                                     s4.c1 K = isVar.d.K(i15 + 1);
                                     if (K != null) {

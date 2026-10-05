@@ -50,7 +50,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.XiaomiUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class EditTextBoldCursor extends gu {
     private static final String BLINK_CLASS = "android.widget.Editor$Blink";
@@ -99,7 +99,7 @@ public class EditTextBoldCursor extends gu {
     private float hintAlpha;
     private o6 hintAnimatedDrawable;
     private o6 hintAnimatedDrawable2;
-    private bz0 hintAnimator;
+    private cz0 hintAnimator;
     private int hintColor;
     private long hintLastUpdateTime;
     private StaticLayout hintLayout;
@@ -688,8 +688,8 @@ public class EditTextBoldCursor extends gu {
                     getPaint().setColor(this.hintColor);
                     getPaint().setAlpha((int) ((Color.alpha(this.hintColor) / 255.0f) * this.hintAlpha * 255.0f));
                 }
-                bz0 bz0Var = this.hintAnimator;
-                if (bz0Var == null || !bz0Var.e) {
+                cz0 cz0Var = this.hintAnimator;
+                if (cz0Var == null || !cz0Var.e) {
                     f7 = 2.0f;
                     f10 = 150.0f;
                     Utilities.Callback2<Canvas, Runnable> callback2 = this.drawHint;
@@ -701,45 +701,45 @@ public class EditTextBoldCursor extends gu {
                 } else {
                     canvas2.save();
                     canvas2.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                    bz0 bz0Var2 = this.hintAnimator;
+                    cz0 cz0Var2 = this.hintAnimator;
                     TextPaint paint = getPaint();
-                    EditTextBoldCursor editTextBoldCursor = bz0Var2.a;
-                    if (bz0Var2.e) {
-                        float f18 = bz0Var2.h * (bz0Var2.f ? bz0Var2.i : 1.0f - bz0Var2.i);
+                    EditTextBoldCursor editTextBoldCursor = cz0Var2.a;
+                    if (cz0Var2.e) {
+                        float f18 = cz0Var2.h * (cz0Var2.f ? cz0Var2.i : 1.0f - cz0Var2.i);
                         int alpha = paint.getAlpha();
-                        if (bz0Var2.d != null) {
+                        if (cz0Var2.d != null) {
                             canvas2.save();
                             canvas2.translate(f18, 0.0f);
-                            bz0Var2.d.draw(canvas2);
+                            cz0Var2.d.draw(canvas2);
                             canvas2.restore();
                         }
-                        if (bz0Var2.b != null) {
-                            float f19 = bz0Var2.f ? 1.0f - bz0Var2.i : bz0Var2.i;
+                        if (cz0Var2.b != null) {
+                            float f19 = cz0Var2.f ? 1.0f - cz0Var2.i : cz0Var2.i;
                             canvas2.save();
                             f7 = 2.0f;
                             paint.setAlpha((int) (alpha * f19));
                             canvas2.translate(f18, 0.0f);
-                            if (bz0Var2.g) {
+                            if (cz0Var2.g) {
                                 float f20 = (f19 * 0.1f) + 0.9f;
                                 canvas2.scale(f20, f20, f18, editTextBoldCursor.getMeasuredHeight() / 2.0f);
                             }
-                            bz0Var2.b.draw(canvas2);
+                            cz0Var2.b.draw(canvas2);
                             canvas2.restore();
                             paint.setAlpha(alpha);
                         } else {
                             f7 = 2.0f;
                         }
-                        if (bz0Var2.c != null) {
-                            float f21 = bz0Var2.f ? bz0Var2.i : 1.0f - bz0Var2.i;
+                        if (cz0Var2.c != null) {
+                            float f21 = cz0Var2.f ? cz0Var2.i : 1.0f - cz0Var2.i;
                             canvas2.save();
                             f10 = 150.0f;
-                            paint.setAlpha((int) (alpha * (bz0Var2.f ? bz0Var2.i : 1.0f - bz0Var2.i)));
+                            paint.setAlpha((int) (alpha * (cz0Var2.f ? cz0Var2.i : 1.0f - cz0Var2.i)));
                             canvas2.translate(f18, 0.0f);
-                            if (bz0Var2.g) {
+                            if (cz0Var2.g) {
                                 float f22 = (f21 * 0.1f) + 0.9f;
                                 canvas2.scale(f22, f22, f18, editTextBoldCursor.getMeasuredHeight() / f7);
                             }
-                            bz0Var2.c.draw(canvas2);
+                            cz0Var2.c.draw(canvas2);
                             canvas2.restore();
                             paint.setAlpha(alpha);
                             canvas2.restore();
@@ -1239,10 +1239,10 @@ public class EditTextBoldCursor extends gu {
         int max = Math.max(1, Math.min(2, 60));
         d.h(runnable);
         yf.f e7 = d.e(max);
-        if (e7.f == null) {
-            e7.f = new pe.b();
+        if (e7.d == null) {
+            e7.d = new pe.b();
         }
-        e7.f.add(runnable);
+        e7.d.add(runnable);
         return true;
     }
 
@@ -1582,14 +1582,14 @@ public class EditTextBoldCursor extends gu {
         boolean z12 = false;
         if (getMeasuredWidth() == 0 ? false : z10) {
             if (this.hintAnimator == null) {
-                this.hintAnimator = new bz0(this);
+                this.hintAnimator = new cz0(this);
             }
-            bz0 bz0Var = this.hintAnimator;
+            cz0 cz0Var = this.hintAnimator;
             StaticLayout staticLayout = this.hintLayout;
             CharSequence charSequence6 = this.hint;
-            bz0Var.getClass();
+            cz0Var.getClass();
             if (staticLayout != null && !charSequence6.equals(charSequence5)) {
-                ValueAnimator valueAnimator = bz0Var.j;
+                ValueAnimator valueAnimator = cz0Var.j;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
@@ -1615,41 +1615,41 @@ public class EditTextBoldCursor extends gu {
                     spannableStringBuilder.setSpan(new oz(z12), indexOf, charSequence3.length() + indexOf, 0);
                     int dp = AndroidUtilities.dp(400.0f);
                     Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                    bz0Var.b = new StaticLayout(spannableStringBuilder, textPaint, dp, alignment, 1.0f, 0.0f, false);
+                    cz0Var.b = new StaticLayout(spannableStringBuilder, textPaint, dp, alignment, 1.0f, 0.0f, false);
                     StaticLayout staticLayout2 = new StaticLayout(spannableStringBuilder2, textPaint, AndroidUtilities.dp(400.0f), alignment, 1.0f, 0.0f, false);
-                    bz0Var.d = staticLayout2;
-                    bz0Var.e = true;
-                    bz0Var.f = z11;
-                    bz0Var.h = indexOf == 0 ? 0.0f : -staticLayout2.getPrimaryHorizontal(indexOf);
-                    bz0Var.c = null;
-                    bz0Var.g = false;
+                    cz0Var.d = staticLayout2;
+                    cz0Var.e = true;
+                    cz0Var.f = z11;
+                    cz0Var.h = indexOf == 0 ? 0.0f : -staticLayout2.getPrimaryHorizontal(indexOf);
+                    cz0Var.c = null;
+                    cz0Var.g = false;
                 } else {
                     int dp2 = AndroidUtilities.dp(400.0f);
                     Layout.Alignment alignment2 = Layout.Alignment.ALIGN_NORMAL;
-                    bz0Var.b = new StaticLayout(charSequence5, textPaint, dp2, alignment2, 1.0f, 0.0f, false);
-                    bz0Var.c = new StaticLayout(charSequence6, textPaint, AndroidUtilities.dp(400.0f), alignment2, 1.0f, 0.0f, false);
-                    bz0Var.d = null;
-                    bz0Var.e = true;
-                    bz0Var.g = true;
-                    bz0Var.h = 0.0f;
+                    cz0Var.b = new StaticLayout(charSequence5, textPaint, dp2, alignment2, 1.0f, 0.0f, false);
+                    cz0Var.c = new StaticLayout(charSequence6, textPaint, AndroidUtilities.dp(400.0f), alignment2, 1.0f, 0.0f, false);
+                    cz0Var.d = null;
+                    cz0Var.e = true;
+                    cz0Var.g = true;
+                    cz0Var.h = 0.0f;
                 }
-                bz0Var.i = 0.0f;
+                cz0Var.i = 0.0f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                bz0Var.j = ofFloat;
-                ofFloat.addUpdateListener(new v70(bz0Var, 26));
-                bz0Var.j.addListener(new hd0(bz0Var, 21));
-                bz0Var.j.setDuration(150L);
-                bz0Var.j.setInterpolator(tr.f);
-                bz0Var.j.start();
+                cz0Var.j = ofFloat;
+                ofFloat.addUpdateListener(new v70(cz0Var, 26));
+                cz0Var.j.addListener(new hd0(cz0Var, 21));
+                cz0Var.j.setDuration(150L);
+                cz0Var.j.setInterpolator(tr.f);
+                cz0Var.j.start();
             }
         } else {
-            bz0 bz0Var2 = this.hintAnimator;
-            if (bz0Var2 != null) {
-                ValueAnimator valueAnimator2 = bz0Var2.j;
+            cz0 cz0Var2 = this.hintAnimator;
+            if (cz0Var2 != null) {
+                ValueAnimator valueAnimator2 = cz0Var2.j;
                 if (valueAnimator2 != null) {
                     valueAnimator2.cancel();
                 }
-                bz0Var2.e = false;
+                cz0Var2.e = false;
             }
         }
         this.hint = charSequence5;

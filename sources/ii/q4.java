@@ -16,14 +16,13 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.ok;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0 {
     public static final /* synthetic */ int M = 0;
@@ -204,9 +203,9 @@ public final class q4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
             int centerY = (int) imageReceiver.getCenterY();
             Drawable drawable = this.E;
             if (drawable != null) {
-                int e7 = org.telegram.ui.Cells.c1.e(2, centerX, drawable);
-                int d = ok.d(2, centerY, drawable);
-                drawable.setBounds(e7, d, drawable.getIntrinsicWidth() + e7, drawable.getIntrinsicHeight() + d);
+                int t10 = org.telegram.ui.Cells.c1.t(2, centerX, drawable);
+                int e7 = org.telegram.ui.Cells.c1.e(2, centerY, drawable);
+                drawable.setBounds(t10, e7, drawable.getIntrinsicWidth() + t10, drawable.getIntrinsicHeight() + e7);
                 drawable.draw(canvas2);
             }
             TL_iv.pageBlockMap map = getMap();

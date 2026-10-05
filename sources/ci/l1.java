@@ -1,9 +1,9 @@
 package ci;
 
 import android.view.ViewGroup;
-import org.telegram.ui.c71;
+import org.telegram.ui.a71;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class l1 extends w7.a6 {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final class l1 extends w7.a6 {
                 ((p1) this.b).i3 = false;
                 break;
             default:
-                ((c71) this.b).w1 = false;
+                ((a71) this.b).w1 = false;
                 break;
         }
     }
@@ -33,7 +33,7 @@ public final class l1 extends w7.a6 {
                 ((p1) this.b).i3 = true;
                 break;
             default:
-                ((c71) this.b).w1 = true;
+                ((a71) this.b).w1 = true;
                 break;
         }
     }

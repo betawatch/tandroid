@@ -25,7 +25,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -34,9 +34,9 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.cb;
 import org.telegram.ui.Cells.ua;
 import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.f91;
-import org.telegram.ui.Components.fs0;
-import org.telegram.ui.Components.mr0;
+import org.telegram.ui.Components.g91;
+import org.telegram.ui.Components.gs0;
+import org.telegram.ui.Components.nr0;
 import org.telegram.ui.Components.qp;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.rq;
@@ -48,11 +48,11 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import w7.b6;
 import w7.z5;
-import yh.j5;
 import yh.k5;
-import yh.t5;
+import yh.l5;
+import yh.u5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class s2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final HashMap T = new HashMap();
@@ -74,11 +74,11 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
     public final org.telegram.ui.ActionBar.n2 a;
     public final int b;
     public final long c;
-    public final k5 d;
-    public final j5 e;
+    public final l5 d;
+    public final k5 e;
     public final d6 f;
     public final x1 h;
-    public final f91 n;
+    public final g91 n;
     public final FrameLayout r;
     public final SpannableStringBuilder s;
     public final SpannableStringBuilder v;
@@ -97,14 +97,14 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         int i11;
         String str;
         this.H = -1;
-        fs0 fs0Var = (fs0) this;
-        this.N = new u1(fs0Var, 2);
-        this.O = new le.b(0, new w1(fs0Var), tr.h, 380L, true);
+        gs0 gs0Var = (gs0) this;
+        this.N = new u1(gs0Var, 2);
+        this.O = new le.b(0, new w1(gs0Var), tr.h, 380L, true);
         this.Q = AndroidUtilities.displaySize.y;
         this.a = n2Var;
         this.b = i10;
         if (DialogObject.isEncryptedDialog(j3)) {
-            TLRPC.EncryptedChat l4 = org.telegram.messenger.f0.l(MessagesController.getInstance(i10), j3);
+            TLRPC.EncryptedChat l4 = org.telegram.messenger.q.l(MessagesController.getInstance(i10), j3);
             if (l4 != null) {
                 this.c = l4.user_id;
             } else {
@@ -113,11 +113,11 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         } else {
             this.c = j3;
         }
-        t5.y(i10, false).Q(this.c);
+        u5.y(i10, false).Q(this.c);
         int i12 = 1;
-        k5 G = t5.y(i10, false).G(this.c, true);
+        l5 G = u5.y(i10, false).G(this.c, true);
         this.d = G;
-        j5 F = t5.y(i10, false).F(this.c, true);
+        k5 F = u5.y(i10, false).F(this.c, true);
         this.e = F;
         F.g = G;
         G.o = true;
@@ -132,12 +132,12 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         }
         G.a();
         this.f = d6Var;
-        x1 x1Var = new x1(fs0Var, context, n2Var);
+        x1 x1Var = new x1(gs0Var, context, n2Var);
         this.h = x1Var;
         x1Var.setAllowDisallowInterceptTouch(true);
-        x1Var.setAdapter(new y1(fs0Var, i10, d6Var));
+        x1Var.setAdapter(new y1(gs0Var, i10, d6Var));
         addView(x1Var, z5.e(-1, -1, 119));
-        f91 n10 = x1Var.n(10, true);
+        g91 n10 = x1Var.n(10, true);
         this.n = n10;
         int i13 = i6.Gh;
         int i14 = i6.G6;
@@ -153,8 +153,8 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         n10.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         n10.setClipToPadding(false);
         n10.r = 12;
-        n10.setPreTabClick(new w1(fs0Var));
-        n10.setOnTabLongClick(new org.telegram.ui.Components.e2(fs0Var, i10, n2Var, context, d6Var, 5));
+        n10.setPreTabClick(new w1(gs0Var));
+        n10.setOnTabLongClick(new org.telegram.ui.Components.e2(gs0Var, i10, n2Var, context, d6Var, 5));
         addView(n10, z5.e(-1, 42, 48));
         fh.c cVar = new fh.c();
         int i18 = i6.d6;
@@ -162,8 +162,8 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         ah.c cVar2 = new ah.c(cVar);
         w5 w5Var = new w5(context);
         ch.d c10 = cVar2.c(w5Var, new dh.b(i18, d6Var), false);
-        c10.y(AndroidUtilities.dp(8.0f));
-        c10.z(AndroidUtilities.dp(22.0f));
+        c10.x(AndroidUtilities.dp(8.0f));
+        c10.y(AndroidUtilities.dp(22.0f));
         w5Var.setBackground(c10);
         b6.b(w5Var, 0.02f, 1.2f);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -189,12 +189,12 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         linearLayout.addView(qpVar, z5.t(26, 26, 16, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         this.E = textView;
-        ok.n(i6.j5, d6Var, textView, 1, 14.0f);
+        bi.m(i6.j5, d6Var, textView, 1, 14.0f);
         textView.setText(LocaleController.getString(R.string.Gift2ChannelNotify));
         linearLayout.addView(textView, z5.t(-2, -2, 16, 9, 0, 0, 0));
         w5Var.addView(linearLayout, z5.d(-2, 38.0f, 17, 0.0f, 6.0f, 0.0f, 6.0f));
         b6.b(linearLayout, 0.025f, 1.5f);
-        linearLayout.setOnClickListener(new ua(fs0Var, n2Var, i10, 19));
+        linearLayout.setOnClickListener(new ua(gs0Var, n2Var, i10, 19));
         Boolean bool = G.h;
         if (bool != null) {
             qpVar.a(bool.booleanValue(), false);
@@ -210,7 +210,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(sb2.toString());
                 spannableStringBuilder.setSpan(new rq(R.drawable.filled_gift_simple, 0), 0, 1, 33);
                 this.s = spannableStringBuilder;
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(org.telegram.messenger.f0.g(R.string.ProfileGiftsAdd, new StringBuilder("+ ")));
+                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(org.telegram.messenger.q.g(R.string.ProfileGiftsAdd, new StringBuilder("+ ")));
                 spannableStringBuilder2.setSpan(new rq(R.drawable.filled_add_album, 0), 0, 1, 33);
                 this.v = spannableStringBuilder2;
                 ci.d dVar = new ci.d(context, d6Var, true);
@@ -221,7 +221,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
                 dVar.g(spannableStringBuilder, false, true);
                 dVar.setStateListAnimator(null);
                 w5Var.addView(dVar, z5.e(-2, -1, 17));
-                w5Var.setOnClickListener(new mr0(fs0Var, z10, i10, i12));
+                w5Var.setOnClickListener(new nr0(gs0Var, z10, i10, i12));
                 dVar.setVisibility(!d() ? 8 : 0);
                 linearLayout.setVisibility(d() ? 0 : 8);
                 this.x = 60;
@@ -238,7 +238,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(sb2.toString());
         spannableStringBuilder3.setSpan(new rq(R.drawable.filled_gift_simple, 0), 0, 1, 33);
         this.s = spannableStringBuilder3;
-        SpannableStringBuilder spannableStringBuilder22 = new SpannableStringBuilder(org.telegram.messenger.f0.g(R.string.ProfileGiftsAdd, new StringBuilder("+ ")));
+        SpannableStringBuilder spannableStringBuilder22 = new SpannableStringBuilder(org.telegram.messenger.q.g(R.string.ProfileGiftsAdd, new StringBuilder("+ ")));
         spannableStringBuilder22.setSpan(new rq(R.drawable.filled_add_album, 0), 0, 1, 33);
         this.v = spannableStringBuilder22;
         ci.d dVar2 = new ci.d(context, d6Var, true);
@@ -249,7 +249,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         dVar2.g(spannableStringBuilder3, false, true);
         dVar2.setStateListAnimator(null);
         w5Var.addView(dVar2, z5.e(-2, -1, 17));
-        w5Var.setOnClickListener(new mr0(fs0Var, z10, i10, i12));
+        w5Var.setOnClickListener(new nr0(gs0Var, z10, i10, i12));
         dVar2.setVisibility(!d() ? 8 : 0);
         linearLayout.setVisibility(d() ? 0 : 8);
         this.x = 60;
@@ -258,24 +258,24 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         n();
     }
 
-    public static void j(org.telegram.ui.ActionBar.f1 f1Var, k5 k5Var, Runnable runnable, int i10) {
-        f1Var.setOnClickListener(new ua(k5Var, i10, runnable, 20));
-        f1Var.setOnLongClickListener(new cb(k5Var, i10, runnable));
+    public static void j(org.telegram.ui.ActionBar.f1 f1Var, l5 l5Var, Runnable runnable, int i10) {
+        f1Var.setOnClickListener(new ua(l5Var, i10, runnable, 20));
+        f1Var.setOnLongClickListener(new cb(l5Var, i10, runnable));
     }
 
     public final void a() {
-        k5 k5Var;
+        l5 l5Var;
         o2 currentPage = getCurrentPage();
-        if (currentPage == null || (k5Var = currentPage.e) == null || !currentPage.d) {
+        if (currentPage == null || (l5Var = currentPage.e) == null || !currentPage.d) {
             return;
         }
-        int i10 = k5Var.d;
+        int i10 = l5Var.d;
         new m4(this.a, this.c, i10, new ei.s4(this, i10, currentPage, 5)).show();
     }
 
     public final boolean b() {
-        j5 j5Var = this.e;
-        return j5Var.h() && j5Var.d().size() < MessagesController.getInstance(this.b).config.stargiftsCollectionsLimit.get();
+        k5 k5Var = this.e;
+        return k5Var.h() && k5Var.d().size() < MessagesController.getInstance(this.b).config.stargiftsCollectionsLimit.get();
     }
 
     public final boolean c() {
@@ -369,14 +369,14 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
     }
 
     public int getBottomOffset() {
-        float translationY = this.r.getTranslationY() - org.telegram.messenger.f0.B(this.x, Math.max(AndroidUtilities.dp(240.0f), this.Q) + (-r0.getTop()), 1);
+        float translationY = this.r.getTranslationY() - org.telegram.messenger.q.B(this.x, Math.max(AndroidUtilities.dp(240.0f), this.Q) + (-r0.getTop()), 1);
         if (this.Q < AndroidUtilities.dp(240.0f)) {
             translationY += Math.min(AndroidUtilities.dp(240.0f) - this.Q, AndroidUtilities.dp(this.x));
         }
         return (int) (AndroidUtilities.dp(this.x) - translationY);
     }
 
-    public k5 getCurrentList() {
+    public l5 getCurrentList() {
         o2 currentPage = getCurrentPage();
         return currentPage != null ? currentPage.e : this.d;
     }
@@ -399,15 +399,15 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
 
     public int getGiftsCount() {
         int i10;
-        k5 k5Var;
+        l5 l5Var;
         int i11;
         o2 currentPage = getCurrentPage();
-        k5 k5Var2 = this.d;
-        if (currentPage == null || (k5Var = currentPage.e) == k5Var2) {
-            if (k5Var2 != null && (i10 = k5Var2.n) > 0) {
+        l5 l5Var2 = this.d;
+        if (currentPage == null || (l5Var = currentPage.e) == l5Var2) {
+            if (l5Var2 != null && (i10 = l5Var2.n) > 0) {
                 return i10;
             }
-        } else if (k5Var != null && (i11 = k5Var.n) > 0) {
+        } else if (l5Var != null && (i11 = l5Var.n) > 0) {
             return i11;
         }
         int i12 = this.b;
@@ -428,12 +428,12 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
 
     public long getLastEmojisHash() {
         long j3 = 0;
-        k5 k5Var = this.d;
-        if (k5Var != null && !k5Var.l.isEmpty()) {
+        l5 l5Var = this.d;
+        if (l5Var != null && !l5Var.l.isEmpty()) {
             HashSet hashSet = new HashSet();
             int i10 = 0;
-            for (int i11 = 0; i10 < 3 && i11 < k5Var.l.size(); i11++) {
-                TLRPC.Document document = ((TL_stars.SavedStarGift) k5Var.l.get(i11)).gift.getDocument();
+            for (int i11 = 0; i10 < 3 && i11 < l5Var.l.size(); i11++) {
+                TLRPC.Document document = ((TL_stars.SavedStarGift) l5Var.l.get(i11)).gift.getDocument();
                 if (document != null) {
                     hashSet.add(Long.valueOf(document.id));
                     j3 = Objects.hash(Long.valueOf(j3), Long.valueOf(document.id));
@@ -458,9 +458,9 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
     }
 
     public float getTabsVisibility() {
-        f91 f91Var = this.n;
-        if (f91Var != null) {
-            return f91Var.getAlpha();
+        g91 g91Var = this.n;
+        if (g91Var != null) {
+            return g91Var.getAlpha();
         }
         return 0.0f;
     }
@@ -510,7 +510,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         }
         AndroidUtilities.requestAdjustNothing(findActivity, this.a.getClassGuid());
         b2VarArr[0].setOnDismissListener(new ei.u0(this, a2Var, findActivity, 6));
-        b2VarArr[0].setOnShowListener(new hg.r(3, a2Var));
+        b2VarArr[0].setOnShowListener(new hg.s(3, a2Var));
         b2VarArr[0].show();
         org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
         b2Var.h0 = false;
@@ -532,9 +532,9 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         }
         int i11 = i10 - 1;
         if (i11 >= 0) {
-            j5 j5Var = this.e;
-            if (i11 < j5Var.d().size()) {
-                k5 e7 = (i11 < 0 || i11 >= j5Var.d().size()) ? null : j5Var.e(((TL_stars.TL_starGiftCollection) j5Var.d().get(i11)).collection_id);
+            k5 k5Var = this.e;
+            if (i11 < k5Var.d().size()) {
+                l5 e7 = (i11 < 0 || i11 >= k5Var.d().size()) ? null : k5Var.e(((TL_stars.TL_starGiftCollection) k5Var.d().get(i11)).collection_id);
                 if (e7 != null) {
                     return e7.l.isEmpty();
                 }
@@ -556,7 +556,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
             nextPositionAlpha = ((x1Var.getNextPositionAlpha() * (k(x1Var.getNextPosition()) ? 1.0f : 0.0f)) + (x1Var.getCurrentPositionAlpha() * (k(x1Var.getCurrentPosition()) ? 1.0f : 0.0f))) * (AndroidUtilities.dp(68.0f) + 2);
         }
         FrameLayout frameLayout = this.r;
-        float B = nextPositionAlpha + org.telegram.messenger.f0.B(this.x, (-frameLayout.getTop()) + this.Q, 1);
+        float B = nextPositionAlpha + org.telegram.messenger.q.B(this.x, (-frameLayout.getTop()) + this.Q, 1);
         boolean z10 = this.Q > AndroidUtilities.dp(184.0f);
         le.b bVar = this.O;
         bVar.a(z10, true);
@@ -580,7 +580,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         int dp = AndroidUtilities.dp(19.0f);
         int i10 = i6.Oh;
         d6 d6Var = this.f;
-        dVar.setBackground(i6.b0(dp, ((fs0) this).U.V0(i6.v0(i10, d6Var))));
+        dVar.setBackground(i6.b0(dp, ((gs0) this).U.V0(i6.v0(i10, d6Var))));
         View[] viewPages = this.h.getViewPages();
         if (viewPages != null) {
             for (View view : viewPages) {
@@ -619,16 +619,16 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
 
     public final void o() {
         float f7;
-        f91 f91Var = this.n;
-        if (f91Var == null) {
+        g91 g91Var = this.n;
+        if (g91Var == null) {
             return;
         }
         float min = Math.min(this.K, getTabsHeight() - AndroidUtilities.dp(42.0f));
         float clamp01 = Utilities.clamp01(AndroidUtilities.ilerp(min - this.K, -AndroidUtilities.dp(42.0f), 0.0f));
         float lerp = AndroidUtilities.lerp(0.9f, 1.0f, clamp01);
-        f91Var.setTranslationY(min);
-        f91Var.setScaleX(lerp);
-        f91Var.setScaleY(lerp);
+        g91Var.setTranslationY(min);
+        g91Var.setScaleX(lerp);
+        g91Var.setScaleY(lerp);
         x1 x1Var = this.h;
         if (x1Var.getViewPages() != null) {
             f7 = 0.0f;
@@ -640,7 +640,7 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         } else {
             f7 = 0.0f;
         }
-        f91Var.setAlpha(w7.q.a(f7, 0.0f, 1.0f) * clamp01);
+        g91Var.setAlpha(w7.q.a(f7, 0.0f, 1.0f) * clamp01);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -656,15 +656,15 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         }
         f(false);
         n();
-        k5 k5Var = this.d;
-        if (k5Var != null) {
-            k5Var.o = true;
-            k5Var.a();
+        l5 l5Var = this.d;
+        if (l5Var != null) {
+            l5Var.o = true;
+            l5Var.a();
         }
-        j5 j5Var = this.e;
-        if (j5Var != null) {
-            j5Var.j = true;
-            j5Var.i();
+        k5 k5Var = this.e;
+        if (k5Var != null) {
+            k5Var.j = true;
+            k5Var.i();
         }
     }
 
@@ -680,13 +680,13 @@ public abstract class s2 extends FrameLayout implements NotificationCenter.Notif
         NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.starUserGiftsLoaded);
         NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.starUserGiftCollectionsLoaded);
         NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.updateInterfaces);
-        k5 k5Var = this.d;
-        if (k5Var != null) {
-            k5Var.o = false;
+        l5 l5Var = this.d;
+        if (l5Var != null) {
+            l5Var.o = false;
         }
-        j5 j5Var = this.e;
-        if (j5Var != null) {
-            j5Var.j = false;
+        k5 k5Var = this.e;
+        if (k5Var != null) {
+            k5Var.j = false;
         }
     }
 

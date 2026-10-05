@@ -13,7 +13,7 @@ import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ig0 extends View {
     public ValueAnimator E;
@@ -144,11 +144,11 @@ public final class ig0 extends View {
             if (f7 < 0.0f) {
                 this.r = 0.0f;
             } else {
-                float f10 = hg.k0.f(this.b, 1, r4, dp) - f7;
+                float f10 = hg.c.f(this.b, 1, r4, dp) - f7;
                 int measuredHeight = getMeasuredHeight() - dp;
                 int i14 = this.v;
                 if (f10 < measuredHeight - i14) {
-                    this.r = hg.k0.f(this.b, 1, i14, dp) - ((getMeasuredHeight() - dp) - this.v);
+                    this.r = hg.c.f(this.b, 1, i14, dp) - ((getMeasuredHeight() - dp) - this.v);
                 }
             }
             float f11 = (i10 - 1) * this.w;

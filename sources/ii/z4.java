@@ -16,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class z4 {
     public static ColorMatrixColorFilter f;
@@ -50,7 +50,7 @@ public final class z4 {
             return;
         }
         int i10 = AndroidUtilities.displaySize.x;
-        String k10 = a4.a.k(i10, i10, "_");
+        String l4 = a4.a.l(i10, i10, "_");
         StringBuilder sb3 = new StringBuilder();
         u uVar2 = this.e;
         if (uVar2 == null) {
@@ -58,7 +58,7 @@ public final class z4 {
         } else {
             String str = uVar2.b ? "v" : uVar2.c ? "a" : "p";
             if (uVar2.e != null) {
-                StringBuilder j3 = t8.b.j(str, ":local:");
+                StringBuilder j3 = sa.e.j(str, ":local:");
                 j3.append(this.e.e);
                 sb2 = j3.toString();
             } else {
@@ -75,7 +75,7 @@ public final class z4 {
                         }
                     }
                 }
-                StringBuilder j11 = t8.b.j(str, ":");
+                StringBuilder j11 = sa.e.j(str, ":");
                 j11.append(this.e.a);
                 j11.append(":");
                 j11.append(j10);
@@ -84,7 +84,7 @@ public final class z4 {
         }
         sb3.append(sb2);
         sb3.append("@");
-        sb3.append(k10);
+        sb3.append(l4);
         if (sb3.toString().equals(null)) {
             return;
         }
@@ -93,7 +93,7 @@ public final class z4 {
         if (!uVar4.b) {
             if (uVar4.e != null) {
                 imageReceiver.setOrientation(uVar4.l, uVar4.m, true);
-                imageReceiver.setImage(ImageLocation.getForPath(this.e.e), k10, null, null, null, 0);
+                imageReceiver.setImage(ImageLocation.getForPath(this.e.e), l4, null, null, null, 0);
                 return;
             } else {
                 if (!uVar4.b() || (photo = this.e.g) == null) {
@@ -103,13 +103,13 @@ public final class z4 {
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize());
                 TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(this.e.g.sizes, 100);
                 imageReceiver.setOrientation(0, 0, false);
-                imageReceiver.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, this.e.g), k10, ImageLocation.getForPhoto(closestPhotoSizeWithSize2, this.e.g), k10, null, 0L, null, this.e.g, 0);
+                imageReceiver.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, this.e.g), l4, ImageLocation.getForPhoto(closestPhotoSizeWithSize2, this.e.g), l4, null, 0L, null, this.e.g, 0);
                 return;
             }
         }
         if (uVar4.e != null) {
             imageReceiver.setOrientation(0, 0, false);
-            imageReceiver.setImage(ImageLocation.getForVideoPath(this.e.e), ImageLoader.AUTOPLAY_FILTER, null, k10, null, k10, null, 0L, null, null, 0);
+            imageReceiver.setImage(ImageLocation.getForVideoPath(this.e.e), ImageLoader.AUTOPLAY_FILTER, null, l4, null, l4, null, 0L, null, null, 0);
             return;
         }
         if (!uVar4.b() || (document = this.e.h) == null) {
@@ -146,7 +146,7 @@ public final class z4 {
             }
         }
         imageReceiver.setOrientation(0, 0, false);
-        imageReceiver.setImage(ImageLocation.getForDocument(this.e.h), ImageLoader.AUTOPLAY_FILTER, ImageLocation.getForDocument(photoSize, this.e.h), k10, ImageLocation.getForDocument(photoSize2, this.e.h), k10, null, 0L, null, this.e.h, 0);
+        imageReceiver.setImage(ImageLocation.getForDocument(this.e.h), ImageLoader.AUTOPLAY_FILTER, ImageLocation.getForDocument(photoSize, this.e.h), l4, ImageLocation.getForDocument(photoSize2, this.e.h), l4, null, 0L, null, this.e.h, 0);
     }
 
     public final boolean b() {

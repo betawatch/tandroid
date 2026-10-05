@@ -1,15 +1,15 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class jt0 extends org.telegram.ui.Components.d81 {
+public final class jt0 extends org.telegram.ui.Components.e81 {
     public final /* synthetic */ PhotoViewer m0;
 
     public jt0(PhotoViewer photoViewer) {
         this.m0 = photoViewer;
     }
 
-    @Override // org.telegram.ui.Components.d81
+    @Override // org.telegram.ui.Components.e81
     public final void B() {
         super.B();
         PhotoViewer photoViewer = this.m0;
@@ -23,7 +23,7 @@ public final class jt0 extends org.telegram.ui.Components.d81 {
         b5.d.x(false);
     }
 
-    @Override // org.telegram.ui.Components.d81
+    @Override // org.telegram.ui.Components.e81
     public final void C() {
         super.C();
         PhotoViewer photoViewer = this.m0;
@@ -35,7 +35,7 @@ public final class jt0 extends org.telegram.ui.Components.d81 {
         b5.d.x(true);
     }
 
-    @Override // org.telegram.ui.Components.d81
+    @Override // org.telegram.ui.Components.e81
     public final void K(long j3) {
         L(j3, false);
         PhotoViewer photoViewer = this.m0;
@@ -48,7 +48,7 @@ public final class jt0 extends org.telegram.ui.Components.d81 {
         b5.d.D(j3);
     }
 
-    @Override // org.telegram.ui.Components.d81
+    @Override // org.telegram.ui.Components.e81
     public final void Q(float f7) {
         super.Q(f7);
         if (this.m0.O8) {
@@ -57,7 +57,7 @@ public final class jt0 extends org.telegram.ui.Components.d81 {
         b5.d.z(f7);
     }
 
-    @Override // org.telegram.ui.Components.d81, b2.z0
+    @Override // org.telegram.ui.Components.e81, b2.z0
     public final void onRenderedFirstFrame() {
         b2.v0 h;
         super.onRenderedFirstFrame();

@@ -3,7 +3,7 @@ package y8;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class v0 extends o6.a implements x8.l {
     public static final Parcelable.Creator<v0> CREATOR = new n0(8);
@@ -33,7 +33,7 @@ public final class v0 extends o6.a implements x8.l {
     }
 
     public final String toString() {
-        return a4.a.s(hg.k0.k("AmsEntityUpdateParcelable{, mEntityId=", this.a, ", mAttributeId=", this.b, ", mValue='"), this.c, "'}");
+        return a4.a.t(hg.c.k("AmsEntityUpdateParcelable{, mEntityId=", this.a, ", mAttributeId=", this.b, ", mValue='"), this.c, "'}");
     }
 
     @Override // android.os.Parcelable

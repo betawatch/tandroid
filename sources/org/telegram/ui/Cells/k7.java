@@ -34,7 +34,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.a90;
@@ -48,7 +48,7 @@ import org.telegram.ui.Components.w00;
 import org.telegram.ui.x10;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class k7 extends FrameLayout implements DownloadController.FileDownloadProgressListener {
     public MessageObject E;
@@ -140,19 +140,19 @@ public final class k7 extends FrameLayout implements DownloadController.FileDown
             addView(textView2, w7.z5.d(-1, -2.0f, (z16 ? 5 : 3) | 48, z16 ? 8.0f : 72.0f, 9.0f, z16 ? 72.0f : 8.0f, 0.0f));
             f7 = 14.0f;
         } else if (i10 == 2) {
-            LinearLayout f10 = ok.f(context, 0);
+            LinearLayout e7 = bi.e(context, 0);
             boolean z17 = LocaleController.isRTL;
-            addView(f10, w7.z5.d(-1, -2.0f, (z17 ? 5 : 3) | 48, z17 ? 16.0f : 72.0f, 5.0f, z17 ? 72.0f : 16.0f, 0.0f));
+            addView(e7, w7.z5.d(-1, -2.0f, (z17 ? 5 : 3) | 48, z17 ? 16.0f : 72.0f, 5.0f, z17 ? 72.0f : 16.0f, 0.0f));
             TextView textView3 = new TextView(context);
             this.r = textView3;
-            ok.n(org.telegram.ui.ActionBar.i6.A6, d6Var, textView3, 1, 14.0f);
+            bi.m(org.telegram.ui.ActionBar.i6.A6, d6Var, textView3, 1, 14.0f);
             f7 = 14.0f;
             if (LocaleController.isRTL) {
-                f10.addView(textView3, w7.z5.l(0.0f, -2, -2));
-                f10.addView(textView2, w7.z5.m(1.0f, -2, -2, 0, 4, 0));
+                e7.addView(textView3, w7.z5.l(0.0f, -2, -2));
+                e7.addView(textView2, w7.z5.m(1.0f, -2, -2, 0, 4, 0));
             } else {
-                f10.addView(textView2, w7.z5.l(1.0f, -2, -2));
-                f10.addView(textView3, w7.z5.m(0.0f, -2, -2, 4, 0, 0));
+                e7.addView(textView2, w7.z5.l(1.0f, -2, -2));
+                e7.addView(textView3, w7.z5.m(0.0f, -2, -2, 4, 0, 0));
             }
             textView2.setMaxLines(2);
             TextView textView4 = new TextView(context);
@@ -466,7 +466,7 @@ public final class k7 extends FrameLayout implements DownloadController.FileDown
     }
 
     public final void e() {
-        String C;
+        String D;
         MessageObject messageObject = this.E;
         if (messageObject == null || messageObject.getDocument() == null) {
             return;
@@ -475,19 +475,19 @@ public final class k7 extends FrameLayout implements DownloadController.FileDown
         long j3 = messageObject2.messageOwner.date * 1000;
         long j10 = this.N;
         if (j10 == 0) {
-            C = AndroidUtilities.formatFileSize(messageObject2.getDocument().size);
+            D = AndroidUtilities.formatFileSize(messageObject2.getDocument().size);
         } else {
             Locale locale = Locale.ENGLISH;
-            C = a4.a.C(AndroidUtilities.formatFileSize(j10), " / ", AndroidUtilities.formatFileSize(this.E.getDocument().size));
+            D = a4.a.D(AndroidUtilities.formatFileSize(j10), " / ", AndroidUtilities.formatFileSize(this.E.getDocument().size));
         }
         int i10 = this.H;
         org.telegram.ui.Components.y5 y5Var = this.e;
         if (i10 == 2) {
-            y5Var.setText(new SpannableStringBuilder().append((CharSequence) C).append(' ').append((CharSequence) this.I).append(' ').append(x10.d(this.E, true, 2, y5Var.getPaint())));
+            y5Var.setText(new SpannableStringBuilder().append((CharSequence) D).append(' ').append((CharSequence) this.I).append(' ').append(x10.d(this.E, true, 2, y5Var.getPaint())));
             this.r.setText(LocaleController.stringForMessageListDate(this.E.messageOwner.date));
             return;
         }
-        y5Var.setText(C + ", " + LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(new Date(j3)), LocaleController.getInstance().getFormatterDay().format(new Date(j3))));
+        y5Var.setText(D + ", " + LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(new Date(j3)), LocaleController.getInstance().getFormatterDay().format(new Date(j3))));
     }
 
     public final void f(boolean z10) {
@@ -622,7 +622,7 @@ public final class k7 extends FrameLayout implements DownloadController.FileDown
                 int measuredHeight = textView.getMeasuredHeight() - AndroidUtilities.dp(22.0f);
                 if (textView2 != null && textView2.getVisibility() == 0) {
                     textView2.layout(textView2.getLeft(), textView2.getTop() + measuredHeight, textView2.getRight(), textView2.getBottom() + measuredHeight);
-                    measuredHeight = org.telegram.messenger.f0.C(3.0f, textView2.getMeasuredHeight(), measuredHeight);
+                    measuredHeight = org.telegram.messenger.q.C(3.0f, textView2.getMeasuredHeight(), measuredHeight);
                 }
                 org.telegram.ui.Components.y5 y5Var = this.e;
                 y5Var.layout(y5Var.getLeft(), y5Var.getTop() + measuredHeight, y5Var.getRight(), y5Var.getBottom() + measuredHeight);
@@ -652,7 +652,7 @@ public final class k7 extends FrameLayout implements DownloadController.FileDown
             this.Q = true;
             textView.setText(AndroidUtilities.ellipsizeCenterEnd(this.J, this.E.highlightedWords.get(0), textView.getMeasuredWidth(), textView.getPaint(), 130));
             this.Q = false;
-            measuredHeight = org.telegram.messenger.f0.C(3.0f, textView.getMeasuredHeight(), measuredHeight);
+            measuredHeight = org.telegram.messenger.q.C(3.0f, textView.getMeasuredHeight(), measuredHeight);
         }
         setMeasuredDimension(getMeasuredWidth(), measuredHeight);
     }

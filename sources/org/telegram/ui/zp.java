@@ -4,13 +4,12 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class zp extends s4.h0 {
     public final /* synthetic */ Context c;
@@ -24,21 +23,11 @@ public final class zp extends s4.h0 {
     @Override // s4.h0
     public final int h() {
         aq aqVar = this.d;
-        ArrayList arrayList = aqVar.r;
-        if (aqVar.G) {
-            return (aqVar.d.isEmpty() ? 0 : arrayList.size() + 1) + 1;
-        }
-        return (aqVar.d.isEmpty() ? 0 : arrayList.size() + 1) + 2;
+        return (!aqVar.d.isEmpty() ? aqVar.n.size() + 1 : 0) + 2;
     }
 
     @Override // s4.h0
     public final int j(int i10) {
-        if (this.d.G) {
-            if (i10 == 0) {
-                return 0;
-            }
-            return i10 == 1 ? 1 : 2;
-        }
         if (i10 == 0) {
             return 3;
         }
@@ -56,29 +45,22 @@ public final class zp extends s4.h0 {
         aq aqVar = this.d;
         if (j3 != 0) {
             if (j3 == 1) {
-                org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
-                m4Var.setText(LocaleController.getString(R.string.OnlyAllowThisReactions));
-                m4Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
+                ((org.telegram.ui.Cells.m4) view).setText(LocaleController.getString(R.string.OnlyAllowThisReactions));
                 return;
             } else {
                 if (j3 != 2) {
                     return;
                 }
-                org.telegram.ui.Cells.y yVar = (org.telegram.ui.Cells.y) view;
-                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) aqVar.r.get(i10 - (aqVar.G ? 2 : 3));
+                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) aqVar.n.get(i10 - 3);
                 boolean contains = aqVar.d.contains(tL_availableReaction.reaction);
                 i11 = ((org.telegram.ui.ActionBar.n2) aqVar).currentAccount;
-                yVar.a(tL_availableReaction, contains, i11);
+                ((org.telegram.ui.Cells.y) view).a(tL_availableReaction, contains, i11);
                 return;
             }
         }
         org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
         e9Var.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.B6, false));
-        if (aqVar.G) {
-            e9Var.setText(ChatObject.isChannelAndNotMegaGroup(aqVar.a) ? LocaleController.getString(R.string.EnableReactionsChannelInfo) : LocaleController.getString(R.string.EnableReactionsGroupInfo));
-            return;
-        }
-        int i12 = aqVar.v;
+        int i12 = aqVar.s;
         if (i12 == 1) {
             e9Var.setText(LocaleController.getString(R.string.EnableSomeReactionsInfo));
         } else if (i12 == 0) {
@@ -102,10 +84,8 @@ public final class zp extends s4.h0 {
         }
         FrameLayout frameLayout = new FrameLayout(context);
         aq aqVar = this.d;
-        if (aqVar.s.getParent() != null) {
-            ((ViewGroup) aqVar.s.getParent()).removeView(aqVar.s);
-        }
-        frameLayout.addView(aqVar.s);
+        AndroidUtilities.removeFromParent(aqVar.r);
+        frameLayout.addView(aqVar.r);
         frameLayout.setLayoutParams(new s4.p0(-1, -2));
         return new org.telegram.ui.Components.il0(frameLayout);
     }

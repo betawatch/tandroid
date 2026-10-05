@@ -10,7 +10,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class qp extends View {
     public final CheckBoxBase a;
@@ -63,7 +63,7 @@ public class qp extends View {
         int measuredWidth = getMeasuredWidth() >> 1;
         int measuredHeight = getMeasuredHeight() >> 1;
         Drawable drawable = this.b;
-        drawable.setBounds(org.telegram.ui.Cells.c1.e(2, measuredWidth, drawable), org.telegram.messenger.ok.d(2, measuredHeight, this.b), org.telegram.ui.Cells.c1.w(2, measuredWidth, this.b), org.telegram.ui.Cells.c1.t(2, measuredHeight, this.b));
+        drawable.setBounds(org.telegram.ui.Cells.c1.t(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.e(2, measuredHeight, this.b), org.telegram.ui.Cells.c1.x(2, measuredWidth, this.b), org.telegram.ui.Cells.c1.w(2, measuredHeight, this.b));
         this.b.draw(canvas);
         Paint paint = new Paint();
         paint.setStyle(Paint.Style.STROKE);

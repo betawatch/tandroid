@@ -15,11 +15,11 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.a91;
+import org.telegram.ui.Components.b91;
 import org.telegram.ui.Components.qr;
 import org.telegram.ui.h60;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class p extends t2 {
     public float g0;
@@ -88,7 +88,7 @@ public final class p extends t2 {
         ImageView imageView = uVar.x0;
         if (imageView != null && imageView.getParent() != null) {
             if (uVar.x0.getAlpha() == 1.0f) {
-                uVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new a91(this, 4)).start();
+                uVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new b91(this, 4)).start();
             } else if (uVar.x0.getParent() != null) {
                 pVar.removeView(uVar.x0);
             }
@@ -183,7 +183,7 @@ public final class p extends t2 {
                 int dp2 = AndroidUtilities.dp(33.0f);
                 if (uVar.r || uVar.b) {
                     f10 = 10.0f;
-                    d = (int) t8.b.d(AndroidUtilities.dp(39.0f), m0Var.c, AndroidUtilities.dp(10.0f), dp2);
+                    d = (int) sa.e.d(AndroidUtilities.dp(39.0f), m0Var.c, AndroidUtilities.dp(10.0f), dp2);
                 } else {
                     f10 = 10.0f;
                     d = (int) ((Math.max(1.0f - m0Var.c, (uVar.h || uVar.f) ? m0Var.n : 0.0f) * AndroidUtilities.dp(10.0f)) + dp2);

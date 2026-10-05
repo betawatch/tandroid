@@ -18,7 +18,7 @@ import m.c3;
 import m.l1;
 import r0.i0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -188,9 +188,9 @@ public final class c {
                 }
             }
             if (typedArray.hasValue(1)) {
-                ColorStateList D = Q.D(1);
+                ColorStateList y3 = Q.y(1);
                 int i13 = Build.VERSION.SDK_INT;
-                r0.a0.g(view, D);
+                r0.a0.g(view, y3);
                 if (i13 == 21) {
                     Drawable background = view.getBackground();
                     if (r0.a0.c(view) == null && r0.a0.d(view) == null) {

@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rd0 implements o1.g {
     public final /* synthetic */ int a;
@@ -56,28 +56,28 @@ public final /* synthetic */ class rd0 implements o1.g {
             case 3:
                 fv0 fv0Var = (fv0) obj;
                 int dp = fv0Var.e > fv0Var.f ? AndroidUtilities.dp(48.0f) : 0;
-                org.telegram.ui.Components.f81 f81Var = fv0Var.s.q3;
+                org.telegram.ui.Components.g81 g81Var = fv0Var.s.q3;
                 int measuredHeight = fv0Var.getMeasuredHeight();
-                f81Var.h = (int) (((fv0Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - dp);
-                f81Var.i = measuredHeight;
-                View view2 = f81Var.v;
+                g81Var.h = (int) (((fv0Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - dp);
+                g81Var.i = measuredHeight;
+                View view2 = g81Var.v;
                 if (view2 != null) {
                     view2.invalidate();
                     break;
                 }
                 break;
             case 4:
-                f41 f41Var = (f41) obj;
-                f41Var.y = f7 / 1000.0f;
-                f41Var.invalidate();
+                d41 d41Var = (d41) obj;
+                d41Var.y = f7 / 1000.0f;
+                d41Var.invalidate();
                 break;
             default:
-                y41 y41Var = (y41) obj;
-                org.telegram.ui.Components.f81 f81Var2 = y41Var.r.Q;
-                int measuredHeight2 = y41Var.getMeasuredHeight();
-                f81Var2.h = (int) (((y41Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - 0);
-                f81Var2.i = measuredHeight2;
-                View view3 = f81Var2.v;
+                w41 w41Var = (w41) obj;
+                org.telegram.ui.Components.g81 g81Var2 = w41Var.r.Q;
+                int measuredHeight2 = w41Var.getMeasuredHeight();
+                g81Var2.h = (int) (((w41Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - 0);
+                g81Var2.i = measuredHeight2;
+                View view3 = g81Var2.v;
                 if (view3 != null) {
                     view3.invalidate();
                     break;

@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.m3;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class z0 extends WebView {
     public static final /* synthetic */ int V = 0;
@@ -258,19 +258,19 @@ public final class z0 extends WebView {
     @Override // android.webkit.WebView
     public final void loadData(String str, String str2, String str3) {
         this.d = null;
-        StringBuilder w10 = a4.a.w("loadData ", str, " ", str2, " ");
-        w10.append(str3);
-        c(w10.toString());
+        StringBuilder x10 = a4.a.x("loadData ", str, " ", str2, " ");
+        x10.append(str3);
+        c(x10.toString());
         super.loadData(str, str2, str3);
     }
 
     @Override // android.webkit.WebView
     public final void loadDataWithBaseURL(String str, String str2, String str3, String str4, String str5) {
         this.d = null;
-        StringBuilder w10 = a4.a.w("loadDataWithBaseURL ", str, " ", str2, " ");
-        a4.a.z(w10, str3, " ", str4, " ");
-        w10.append(str5);
-        c(w10.toString());
+        StringBuilder x10 = a4.a.x("loadDataWithBaseURL ", str, " ", str2, " ");
+        a4.a.A(x10, str3, " ", str4, " ");
+        x10.append(str5);
+        c(x10.toString());
         super.loadDataWithBaseURL(str, str2, str3, str4, str5);
     }
 

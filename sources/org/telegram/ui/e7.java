@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class e7 implements org.telegram.ui.Components.ml0 {
     public final /* synthetic */ org.telegram.ui.Components.zl0 a;
@@ -25,7 +25,7 @@ public final class e7 implements org.telegram.ui.Components.ml0 {
         }
         k7 k7Var = v7Var.E;
         if (k7Var != null) {
-            k7Var.i(o7Var.c, o7Var.d, false);
+            k7Var.f(o7Var.c, o7Var.d, false);
         }
     }
 }

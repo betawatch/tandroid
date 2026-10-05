@@ -80,7 +80,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -96,20 +96,20 @@ import org.telegram.ui.Cells.e9;
 import org.telegram.ui.Cells.m4;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.in0;
-import org.telegram.ui.Components.q21;
+import org.telegram.ui.Components.r21;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.sq;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ap0;
-import org.telegram.ui.g91;
+import org.telegram.ui.e91;
 import org.telegram.ui.s9;
 import org.telegram.ui.w9;
 import org.telegram.ui.zr0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class c1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static boolean P0 = true;
@@ -1487,7 +1487,7 @@ public abstract class c1 extends FrameLayout implements NotificationCenter.Notif
                             z0 z0Var3 = z0Var2;
                             da daVar3 = daVar;
                             if (z20) {
-                                MessagesController.getInstance(c1Var3.M).unblockPeer(c1Var3.U.id, new q21(c1Var3, i22, z0Var3, daVar3, 13));
+                                MessagesController.getInstance(c1Var3.M).unblockPeer(c1Var3.U.id, new r21(c1Var3, i22, z0Var3, daVar3, 13));
                                 return;
                             }
                             SendMessagesHelper.getInstance(c1Var3.M).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(c1Var3.M).getCurrentUser(), c1Var3.U.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
@@ -2048,7 +2048,7 @@ public abstract class c1 extends FrameLayout implements NotificationCenter.Notif
                         w(daVar);
                         return;
                     }
-                    final Runnable[] runnableArr = {new g91(24, this, daVar)};
+                    final Runnable[] runnableArr = {new e91(24, this, daVar)};
                     AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(getContext(), d6Var);
                     if (TextUtils.isEmpty(str12)) {
                         alertDialog$Builder3.l(LocaleController.getString(R.string.BotAllowBiometryTitle));
@@ -2572,64 +2572,64 @@ public abstract class c1 extends FrameLayout implements NotificationCenter.Notif
                     int i10 = 1;
                     String[] strArr = new String[1];
                     boolean[] zArr = new boolean[1];
-                    f3 j3 = ok.j(1, context, resourceProvider, false);
-                    LinearLayout f7 = ok.f(context, 1);
+                    f3 i11 = bi.i(1, context, resourceProvider, false);
+                    LinearLayout e7 = bi.e(context, 1);
                     org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
                     TLRPC.User user = MessagesController.getInstance(u1Var.a).getUser(Long.valueOf(u1Var.b));
                     h9 h9Var = new h9((d6) null);
                     h9Var.r(user);
                     w9Var.e(user, h9Var);
-                    f7.addView(w9Var, z5.t(80, 80, 49, 0, 21, 0, 13));
-                    int i11 = i6.G6;
-                    TextView b10 = w7.d6.b(context, 20.0f, i11, true, null);
-                    ok.l(R.string.BotRestoreStorageTitle, b10, 17);
-                    f7.addView(b10, z5.t(-1, -2, 7, 32, 0, 32, 10));
-                    TextView b11 = w7.d6.b(context, 14.0f, i11, false, null);
+                    e7.addView(w9Var, z5.t(80, 80, 49, 0, 21, 0, 13));
+                    int i12 = i6.G6;
+                    TextView b10 = w7.d6.b(context, 20.0f, i12, true, null);
+                    bi.k(R.string.BotRestoreStorageTitle, b10, 17);
+                    e7.addView(b10, z5.t(-1, -2, 7, 32, 0, 32, 10));
+                    TextView b11 = w7.d6.b(context, 14.0f, i12, false, null);
                     b11.setText(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BotRestoreStorageText, DialogObject.getDialogTitle(user))));
                     b11.setGravity(17);
-                    f7.addView(b11, z5.t(-1, -2, 7, 32, 0, 32, 19));
+                    e7.addView(b11, z5.t(-1, -2, 7, 32, 0, 32, 19));
                     e9 e9Var = new e9(context, resourceProvider);
                     e9Var.setBackground(new sq(new ColorDrawable(i6.v0(i6.a7, resourceProvider)), i6.U0(context, R.drawable.greydivider, i6.v0(i6.b7, resourceProvider))));
                     e9Var.setFixedSize(12);
-                    f7.addView(e9Var, z5.t(-1, 12, 7, 0, 0, 0, 0));
+                    e7.addView(e9Var, z5.t(-1, 12, 7, 0, 0, 0, 0));
                     m4 m4Var = new m4(context, resourceProvider);
                     m4Var.setText(LocaleController.getString(R.string.BotRestoreStorageHeader));
-                    f7.addView(m4Var, z5.t(-1, -2, 7, 0, 0, 0, 0));
+                    e7.addView(m4Var, z5.t(-1, -2, 7, 0, 0, 0, 0));
                     ci.d dVar = new ci.d(context, resourceProvider, true);
                     ArrayList arrayList = new ArrayList();
-                    int i12 = 0;
-                    while (i12 < h.size()) {
-                        ei.t1 t1Var = (ei.t1) h.get(i12);
-                        ei.s1 s1Var = new ei.s1(t1Var, i12 < h.size() - i10, context);
+                    int i13 = 0;
+                    while (i13 < h.size()) {
+                        ei.t1 t1Var = (ei.t1) h.get(i13);
+                        ei.s1 s1Var = new ei.s1(t1Var, i13 < h.size() - i10, context);
                         s1Var.setBackground(i6.f0(i6.v0(i6.i6, resourceProvider), 2, -1));
-                        LinearLayout linearLayout = f7;
+                        LinearLayout linearLayout = e7;
                         String[] strArr2 = strArr;
                         s1Var.setOnClickListener(new o5(strArr2, t1Var, arrayList, dVar, 2));
                         linearLayout.addView(s1Var, z5.n(-1, 56));
                         arrayList.add(s1Var);
-                        f7 = linearLayout;
+                        e7 = linearLayout;
                         strArr = strArr2;
                         i10 = 1;
-                        i12++;
+                        i13++;
                     }
                     String[] strArr3 = strArr;
-                    LinearLayout linearLayout2 = f7;
+                    LinearLayout linearLayout2 = e7;
                     dVar.g(LocaleController.getString(R.string.BotRestoreStorageButton), false, true);
                     dVar.setEnabled(strArr3[0] != null);
                     linearLayout2.addView(dVar, z5.t(-1, 48, 7, 8, 8, 8, 4));
-                    j3.customView = linearLayout2;
-                    j3.fixNavigationBar(i6.v0(i6.h5, resourceProvider));
-                    dVar.setOnClickListener(new o5(zArr, a0Var, strArr3, j3, 3));
-                    j3.setOnDismissListener(new ei.f0(1, zArr, a0Var));
-                    j3.show();
-                } catch (Exception e7) {
-                    y(daVar, "secure_storage_failed", C("req_id", string, "error", e7.getMessage()));
+                    i11.customView = linearLayout2;
+                    i11.fixNavigationBar(i6.v0(i6.h5, resourceProvider));
+                    dVar.setOnClickListener(new o5(zArr, a0Var, strArr3, i11, 3));
+                    i11.setOnDismissListener(new ei.f0(1, zArr, a0Var));
+                    i11.show();
+                } catch (Exception e10) {
+                    y(daVar, "secure_storage_failed", C("req_id", string, "error", e10.getMessage()));
                 }
             } catch (Exception unused) {
                 y(daVar, "secure_storage_failed", C("req_id", string, "error", "KEY_INVALID"));
             }
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        } catch (Exception e11) {
+            FileLog.e(e11);
             if (TextUtils.isEmpty("")) {
                 return;
             }
@@ -3243,7 +3243,7 @@ public abstract class c1 extends FrameLayout implements NotificationCenter.Notif
             this.y0 = this.O;
             String str = "{height:" + (max / AndroidUtilities.density) + ",is_state_stable:" + z10 + ",is_expanded:" + this.O + "}";
             if (!z12 || r()) {
-                NotificationCenter.getInstance(this.M).doOnIdle(new y(this, a4.a.p("window.Telegram.WebView.receiveEvent('viewport_changed', ", str, ");"), 0));
+                NotificationCenter.getInstance(this.M).doOnIdle(new y(this, a4.a.q("window.Telegram.WebView.receiveEvent('viewport_changed', ", str, ");"), 0));
             } else {
                 h("notifyEvent viewport_changed dropped for untrusted document");
             }

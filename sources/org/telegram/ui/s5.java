@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s5 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -150,7 +150,7 @@ public final /* synthetic */ class s5 implements DialogInterface.OnDismissListen
                 }
                 break;
             case 15:
-                ((c71) obj).w(0.0f);
+                ((a71) obj).w(0.0f);
                 break;
             case 16:
                 ShareActivity shareActivity = (ShareActivity) obj;
@@ -172,7 +172,7 @@ public final /* synthetic */ class s5 implements DialogInterface.OnDismissListen
                 twoStepVerificationActivity.finishFragment();
                 break;
             default:
-                ((mi1) obj).u0.b();
+                ((ki1) obj).u0.b();
                 break;
         }
     }

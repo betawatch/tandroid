@@ -13,9 +13,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class re implements org.telegram.ui.Components.g60, org.telegram.ui.Components.j60, org.telegram.ui.ActionBar.a2, MessagesStorage.BooleanCallback, org.telegram.ui.Components.lo, org.telegram.ui.Components.zj0, ResultCallback, li.i, wh.c, jh.a, jh.b, org.telegram.ui.Components.ol0, y60, ps, jh.d {
+public final /* synthetic */ class re implements org.telegram.ui.Components.g60, org.telegram.ui.Components.j60, org.telegram.ui.ActionBar.a2, MessagesStorage.BooleanCallback, org.telegram.ui.Components.lo, org.telegram.ui.Components.zj0, ResultCallback, li.l, wh.c, jh.a, jh.b, org.telegram.ui.Components.ol0, y60, ps, jh.d {
     public final /* synthetic */ int a;
     public final /* synthetic */ yn b;
 
@@ -60,7 +60,7 @@ public final /* synthetic */ class re implements org.telegram.ui.Components.g60,
                 Object J = ynVar.G1.getAdapter().J(i10 - 1);
                 if (J instanceof gg.h1) {
                     gg.h1 h1Var = (gg.h1) J;
-                    if (ynVar.G1.getAdapter().J != null && org.telegram.ui.Components.h61.h) {
+                    if (ynVar.G1.getAdapter().J != null && org.telegram.ui.Components.i61.h) {
                         ynVar.W.setFieldText("");
                         jk jkVar = ynVar.W;
                         String str = h1Var.a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class re implements org.telegram.ui.Components.g60,
                         ynVar.showDialog(alertDialog$Builder.a);
                         return true;
                     }
-                    if (org.telegram.ui.Components.h61.h) {
+                    if (org.telegram.ui.Components.i61.h) {
                         ynVar.W.setFieldText("");
                         jk jkVar2 = ynVar.W;
                         String str2 = (String) J;
@@ -247,7 +247,7 @@ public final /* synthetic */ class re implements org.telegram.ui.Components.g60,
         } else if (i10 == 0) {
             ai.g4 g4Var = ynVar.H1;
             if (g4Var != null) {
-                g4Var.F1(null, 0);
+                g4Var.H1(null, 0);
             }
             ynVar.W9();
         }
@@ -262,7 +262,7 @@ public final /* synthetic */ class re implements org.telegram.ui.Components.g60,
         ynVar.nc(true);
     }
 
-    @Override // li.i
+    @Override // li.l
     public void k(int i10) {
         yn.T0(this.b, i10);
     }

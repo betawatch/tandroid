@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ba extends org.telegram.ui.ActionBar.n2 {
     public aa a;
@@ -59,8 +59,8 @@ public final class ba extends org.telegram.ui.ActionBar.n2 {
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.i6.f8;
         org.telegram.ui.ActionBar.d6 d6Var = this.d;
-        kVar.A(org.telegram.ui.ActionBar.i6.v0(i10, d6Var), false);
-        this.actionBar.B(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v8, d6Var), false);
+        kVar.z(org.telegram.ui.ActionBar.i6.v0(i10, d6Var), false);
+        this.actionBar.A(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v8, d6Var), false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.EditName));

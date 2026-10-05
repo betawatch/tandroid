@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class z7 extends s4.h0 {
     public final /* synthetic */ int c;
@@ -218,7 +218,7 @@ public final class z7 extends s4.h0 {
                     marginLayoutParams.rightMargin = 0;
                     textView.setText(LocaleController.getString(i22));
                 } else {
-                    SpannableString spannableString = new SpannableString(org.telegram.messenger.f0.g(i22, new StringBuilder("d ")));
+                    SpannableString spannableString = new SpannableString(org.telegram.messenger.q.g(i22, new StringBuilder("d ")));
                     org.telegram.ui.Components.rq rqVar = new org.telegram.ui.Components.rq(R.drawable.msg_mini_premiumlock, 0);
                     rqVar.setTopOffset(1);
                     rqVar.setSize(AndroidUtilities.dp(13.0f));

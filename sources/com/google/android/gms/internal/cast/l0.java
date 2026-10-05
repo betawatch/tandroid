@@ -15,7 +15,7 @@ import w7.xa;
 import w7.ya;
 import w7.za;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class l0 implements Map, Serializable, j$.util.Map {
     public final /* synthetic */ int a;
@@ -618,7 +618,7 @@ public abstract class l0 implements Map, Serializable, j$.util.Map {
             case 0:
                 int i10 = ((u0) this).h;
                 if (i10 < 0) {
-                    throw new IllegalArgumentException(hg.k0.h(i10, "size cannot be negative but was: "));
+                    throw new IllegalArgumentException(hg.c.h(i10, "size cannot be negative but was: "));
                 }
                 StringBuilder sb2 = new StringBuilder((int) Math.min(i10 * 8, 1073741824L));
                 sb2.append('{');
@@ -639,7 +639,7 @@ public abstract class l0 implements Map, Serializable, j$.util.Map {
             case 1:
                 int i11 = ((com.google.android.gms.internal.play_billing.a0) this).h;
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(hg.k0.h(i11, "size cannot be negative but was: "));
+                    throw new IllegalArgumentException(hg.c.h(i11, "size cannot be negative but was: "));
                 }
                 StringBuilder sb3 = new StringBuilder((int) Math.min(i11 * 8, 1073741824L));
                 sb3.append('{');
@@ -660,7 +660,7 @@ public abstract class l0 implements Map, Serializable, j$.util.Map {
             case 2:
                 int i12 = ((t7.l) this).h;
                 if (i12 < 0) {
-                    throw new IllegalArgumentException(hg.k0.h(i12, "size cannot be negative but was: "));
+                    throw new IllegalArgumentException(hg.c.h(i12, "size cannot be negative but was: "));
                 }
                 StringBuilder sb4 = new StringBuilder((int) Math.min(i12 * 8, 1073741824L));
                 sb4.append('{');

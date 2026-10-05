@@ -12,11 +12,11 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.xb1;
+import org.telegram.ui.vb1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class w8 extends lw0 {
+public final class w8 extends mw0 {
     public float A0;
     public float B0;
     public final /* synthetic */ e9 C0;
@@ -33,7 +33,7 @@ public final class w8 extends lw0 {
         this.w0 = new b2.q0();
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int save = canvas.save();
@@ -170,8 +170,8 @@ public final class w8 extends lw0 {
             } else {
                 i12 = 0;
             }
-            xb1 xb1Var = e9Var.r;
-            xb1Var.setTranslationY((xb1Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) e9Var.r.getLayoutParams()).topMargin) - i12);
+            vb1 vb1Var = e9Var.r;
+            vb1Var.setTranslationY((vb1Var.getTranslationY() + ((ViewGroup.MarginLayoutParams) e9Var.r.getLayoutParams()).topMargin) - i12);
             ((ViewGroup.MarginLayoutParams) e9Var.r.getLayoutParams()).topMargin = i12;
             boolean z13 = e9Var.L;
             if (!e9Var.U) {

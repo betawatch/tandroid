@@ -2,16 +2,16 @@ package ci;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.mj;
 import org.telegram.ui.Components.nz;
-import org.telegram.ui.Components.qy0;
 import org.telegram.ui.Components.qz;
+import org.telegram.ui.Components.ry0;
 import org.telegram.ui.Components.sy;
 import org.telegram.ui.Components.ty;
 import org.telegram.ui.qp0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class x1 extends g.p {
     public final /* synthetic */ int c;
@@ -71,11 +71,11 @@ public final class x1 extends g.p {
                 tyVar.B1();
                 return tyVar.R.get(i10);
             case 5:
-                qy0 qy0Var = (qy0) this.d;
-                if ((qy0Var.W == null || !(qy0Var.d.e.get(i10) instanceof Integer)) && i10 != qy0Var.d.h) {
+                ry0 ry0Var = (ry0) this.d;
+                if ((ry0Var.W == null || !(ry0Var.d.e.get(i10) instanceof Integer)) && i10 != ry0Var.d.h) {
                     return 1;
                 }
-                return qy0Var.d.d;
+                return ry0Var.d.d;
             case 6:
                 qp0 qp0Var = (qp0) this.d;
                 if (i10 < qp0Var.b0 || i10 >= qp0Var.c0) {
@@ -83,19 +83,19 @@ public final class x1 extends g.p {
                 }
                 return 1;
             case 7:
-                g61 G = ((xh.h4) this.d).i0.G(i10 - 1);
+                h61 G = ((xh.h4) this.d).i0.G(i10 - 1);
                 if (G == null || (i11 = G.u) == -1) {
                     return 3;
                 }
                 return i11;
             default:
-                yh.s0 s0Var = (yh.s0) this.d;
-                qz qzVar = s0Var.h0;
-                yh.n0 n0Var = s0Var.k0;
-                if (n0Var == null || i10 == 0) {
+                yh.t0 t0Var = (yh.t0) this.d;
+                qz qzVar = t0Var.h0;
+                yh.o0 o0Var = t0Var.k0;
+                if (o0Var == null || i10 == 0) {
                     return qzVar.J;
                 }
-                g61 G2 = n0Var.G(i10 - 1);
+                h61 G2 = o0Var.G(i10 - 1);
                 return (G2 == null || (i12 = G2.u) == -1) ? qzVar.J : i12;
         }
     }

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
@@ -27,14 +27,14 @@ import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.yn0;
 import org.telegram.ui.Components.zn0;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.bj1;
 import org.telegram.ui.ci0;
 import org.telegram.ui.di0;
-import org.telegram.ui.xi1;
+import org.telegram.ui.vi1;
+import org.telegram.ui.zi1;
 import w7.z5;
-import yh.x3;
+import yh.y3;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class n0 extends yl0 {
     public final /* synthetic */ int c;
@@ -53,7 +53,7 @@ public final class n0 extends yl0 {
     }
 
     public void F(int i10, int i11) {
-        int[] iArr = ((x3) this.d).P0;
+        int[] iArr = ((y3) this.d).P0;
         if (iArr[0] == i10 && iArr[1] == i11) {
             return;
         }
@@ -81,7 +81,7 @@ public final class n0 extends yl0 {
             case 5:
                 return ((rg.j) obj).d.size();
             default:
-                return ((x3) obj).P0.length;
+                return ((y3) obj).P0.length;
         }
     }
 
@@ -112,8 +112,8 @@ public final class n0 extends yl0 {
                 if (i10 >= 0 && i10 < arrayList.size()) {
                     xn0 xn0Var = (xn0) arrayList.get(i10);
                     zn0 zn0Var = (zn0) view;
-                    zg.o0 o0Var = zn0Var.d;
-                    boolean z10 = o0Var == null || !o0Var.equals(xn0Var.a);
+                    zg.m0 m0Var = zn0Var.d;
+                    boolean z10 = m0Var == null || !m0Var.equals(xn0Var.a);
                     if (z10) {
                         TLRPC.TL_reactionCount tL_reactionCount = new TLRPC.TL_reactionCount();
                         tL_reactionCount.reaction = xn0Var.a.g();
@@ -174,7 +174,7 @@ public final class n0 extends yl0 {
                 ci0Var.a((TLObject) di0Var.c.get(i10), false, ((Integer) di0Var.b.get(i10)).intValue());
                 break;
             case 4:
-                ((xi1) c1Var.a).a = WallpapersListActivity.k0[i10];
+                ((vi1) c1Var.a).a = WallpapersListActivity.k0[i10];
                 break;
             case 5:
                 rg.j jVar = (rg.j) this.d;
@@ -190,7 +190,7 @@ public final class n0 extends yl0 {
                 break;
             default:
                 ua uaVar = (ua) c1Var.a;
-                int i11 = ((x3) this.d).P0[(r0.length - 1) - i10];
+                int i11 = ((y3) this.d).P0[(r0.length - 1) - i10];
                 if (uaVar.a != i11) {
                     uaVar.a = i11;
                     uaVar.requestLayout();
@@ -220,8 +220,8 @@ public final class n0 extends yl0 {
                 ci0Var.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(50.0f)));
                 return new il0(ci0Var);
             case 4:
-                bj1 bj1Var = (bj1) this.d;
-                return new il0(new xi1(bj1Var.E, bj1Var.c));
+                zi1 zi1Var = (zi1) this.d;
+                return new il0(new vi1(zi1Var.E, zi1Var.c));
             case 5:
                 rg.j jVar = (rg.j) this.d;
                 d6 d6Var = jVar.a;
@@ -239,17 +239,17 @@ public final class n0 extends yl0 {
                     TextView textView = new TextView(context);
                     iVar.a = textView;
                     textView.setTypeface(AndroidUtilities.bold());
-                    ok.n(i6.G6, d6Var, textView, 1, 14.0f);
+                    bi.m(i6.G6, d6Var, textView, 1, 14.0f);
                     iVar.addView(textView, z5.d(-1, -2.0f, 0, 68.0f, 8.0f, 16.0f, 0.0f));
                     TextView textView2 = new TextView(context);
                     iVar.b = textView2;
-                    ok.n(i6.y6, d6Var, textView2, 1, 14.0f);
+                    bi.m(i6.y6, d6Var, textView2, 1, 14.0f);
                     iVar.addView(textView2, z5.d(-1, -2.0f, 0, 68.0f, 28.0f, 16.0f, 8.0f));
                     view = iVar;
                 }
                 return com.google.android.gms.internal.vision.e2.k(view, view, -1, -2);
             default:
-                ua uaVar = new ua(((x3) this.d).getContext());
+                ua uaVar = new ua(((y3) this.d).getContext());
                 uaVar.a = 0;
                 return new il0(uaVar);
         }

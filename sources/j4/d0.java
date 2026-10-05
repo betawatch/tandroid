@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.List;
 import v7.t8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class d0 implements c3.o {
     public final int a;
@@ -20,7 +20,7 @@ public final class d0 implements c3.o {
     public final e2.v d;
     public final SparseIntArray e;
     public final f f;
-    public final z3.l g;
+    public final z3.k g;
     public final SparseArray h;
     public final SparseBooleanArray i;
     public final SparseBooleanArray j;
@@ -35,11 +35,11 @@ public final class d0 implements c3.o {
     public int s;
     public int t;
 
-    public d0(int i10, int i11, z3.l lVar, e2.b0 b0Var, f fVar) {
+    public d0(int i10, int i11, z3.k kVar, e2.b0 b0Var, f fVar) {
         this.f = fVar;
         this.a = i10;
         this.b = i11;
-        this.g = lVar;
+        this.g = kVar;
         if (i10 == 1 || i10 == 2) {
             this.c = Collections.singletonList(b0Var);
         } else {

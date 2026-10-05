@@ -39,7 +39,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class b80 {
     public ViewGroup A;
@@ -126,7 +126,7 @@ public final class b80 {
         if (n2Var.getContext() == null) {
             return;
         }
-        if ((((n2Var instanceof ProfileActivity) && ((ProfileActivity) n2Var).I0) || (((n2Var instanceof org.telegram.ui.uy) && ((org.telegram.ui.uy) n2Var).W) || (((n2Var instanceof ContactsActivity) && ((ContactsActivity) n2Var).I) || ((n2Var instanceof org.telegram.ui.a91) && ((org.telegram.ui.a91) n2Var).L)))) && (parentLayout = n2Var.getParentLayout()) != null) {
+        if ((((n2Var instanceof ProfileActivity) && ((ProfileActivity) n2Var).I0) || (((n2Var instanceof org.telegram.ui.uy) && ((org.telegram.ui.uy) n2Var).W) || (((n2Var instanceof ContactsActivity) && ((ContactsActivity) n2Var).I) || ((n2Var instanceof org.telegram.ui.y81) && ((org.telegram.ui.y81) n2Var).L)))) && (parentLayout = n2Var.getParentLayout()) != null) {
             org.telegram.ui.ActionBar.n2 safeLastFragment = parentLayout.getSafeLastFragment();
             if (safeLastFragment instanceof org.telegram.ui.ch0) {
                 n2Var = safeLastFragment;
@@ -526,10 +526,10 @@ public final class b80 {
         ViewGroup viewGroup = this.A;
         if (viewGroup instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
             ch.d c10 = cVar.c(viewGroup, null, z10);
-            c10.x(eVar);
-            c10.y(AndroidUtilities.dp(8.0f));
+            c10.w(eVar);
+            c10.x(AndroidUtilities.dp(8.0f));
             c10.l.e = true;
-            c10.z(AndroidUtilities.dp(12.0f));
+            c10.y(AndroidUtilities.dp(12.0f));
             viewGroup.setBackground(c10);
         }
     }
@@ -900,10 +900,10 @@ public final class b80 {
                         org.telegram.ui.ActionBar.d6 d6Var = this.d;
                         T(org.telegram.ui.ActionBar.i6.l1(0.06f, org.telegram.ui.ActionBar.i6.v0(i20, d6Var)));
                         ch.d c11 = new ah.c(this.n).c(this.A, null, true);
-                        c11.x(eh.b.k(d6Var));
-                        c11.y(AndroidUtilities.dp(8.0f));
+                        c11.w(eh.b.k(d6Var));
+                        c11.x(AndroidUtilities.dp(8.0f));
                         c11.l.e = true;
-                        c11.z(AndroidUtilities.dp(12.0f));
+                        c11.y(AndroidUtilities.dp(12.0f));
                         c11.i(width + this.q, height + this.r);
                         this.A.setBackground(c11);
                     }
@@ -953,10 +953,10 @@ public final class b80 {
                 org.telegram.ui.ActionBar.d6 d6Var2 = this.d;
                 T(org.telegram.ui.ActionBar.i6.l1(0.06f, org.telegram.ui.ActionBar.i6.v0(i202, d6Var2)));
                 ch.d c112 = new ah.c(this.n).c(this.A, null, true);
-                c112.x(eh.b.k(d6Var2));
-                c112.y(AndroidUtilities.dp(8.0f));
+                c112.w(eh.b.k(d6Var2));
+                c112.x(AndroidUtilities.dp(8.0f));
                 c112.l.e = true;
-                c112.z(AndroidUtilities.dp(12.0f));
+                c112.y(AndroidUtilities.dp(12.0f));
                 c112.i(width + this.q, height + this.r);
                 this.A.setBackground(c112);
             }
@@ -1269,7 +1269,7 @@ public final class b80 {
         w9Var.e(tLObject, h9Var);
         frameLayout.addView(w9Var, w7.z5.d(34, 34.0f, 19, 13.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
-        org.telegram.messenger.ok.n(org.telegram.ui.ActionBar.i6.j5, d6Var, textView, 1, 16.0f);
+        org.telegram.messenger.bi.m(org.telegram.ui.ActionBar.i6.j5, d6Var, textView, 1, 16.0f);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setSingleLine(true);
         if (tLObject instanceof TLRPC.User) {
@@ -1278,7 +1278,7 @@ public final class b80 {
             textView.setText(((TLRPC.Chat) tLObject).title);
         }
         TextView i11 = org.telegram.ui.Cells.c1.i(frameLayout, textView, w7.z5.d(-2, -2.0f, 55, 59.0f, 6.0f, 16.0f, 0.0f), context);
-        org.telegram.messenger.ok.n(org.telegram.ui.ActionBar.i6.q5, d6Var, i11, 1, 13.0f);
+        org.telegram.messenger.bi.m(org.telegram.ui.ActionBar.i6.q5, d6Var, i11, 1, 13.0f);
         i11.setText(AndroidUtilities.replaceArrows(str, false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(0.66f)));
         frameLayout.addView(i11, w7.z5.d(-2, -2.0f, 55, 59.0f, 27.0f, 16.0f, 0.0f));
         frameLayout.setOnClickListener(new t70(this, runnable, 0));

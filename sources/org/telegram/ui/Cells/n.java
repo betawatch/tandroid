@@ -15,11 +15,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.l61;
+import org.telegram.ui.Components.n11;
 import org.telegram.ui.Components.qp;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class n extends FrameLayout {
     public final org.telegram.ui.Components.w9 a;
@@ -80,15 +80,15 @@ public final class n extends FrameLayout {
     public final void a(TLRPC.Chat chat, boolean z10) {
         StringBuilder sb2 = new StringBuilder();
         int i10 = this.n;
-        String s10 = a4.a.s(sb2, MessagesController.getInstance(i10).linkPrefix, "/");
+        String t10 = a4.a.t(sb2, MessagesController.getInstance(i10).linkPrefix, "/");
         this.f = chat;
         org.telegram.ui.Components.h9 h9Var = this.d;
         h9Var.k(i10, chat);
         this.b.l(chat.title, false);
-        StringBuilder u10 = a4.a.u(s10);
-        u10.append(ChatObject.getPublicUsername(chat));
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(u10.toString());
-        spannableStringBuilder.setSpan(new k61("", (m11) null), s10.length(), spannableStringBuilder.length(), 33);
+        StringBuilder v = a4.a.v(t10);
+        v.append(ChatObject.getPublicUsername(chat));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(v.toString());
+        spannableStringBuilder.setSpan(new l61("", (n11) null), t10.length(), spannableStringBuilder.length(), 33);
         this.c.l(spannableStringBuilder, false);
         this.a.e(chat, h9Var);
         this.h = z10;

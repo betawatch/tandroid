@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class g5 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -33,9 +33,9 @@ public final class g5 implements View.OnAttachStateChangeListener {
                 }
                 break;
             default:
-                v81 v81Var = (v81) this.b;
-                v81Var.h.a();
-                v81Var.n.a();
+                t81 t81Var = (t81) this.b;
+                t81Var.h.a();
+                t81Var.n.a();
                 break;
         }
     }
@@ -60,9 +60,9 @@ public final class g5 implements View.OnAttachStateChangeListener {
                 }
                 break;
             default:
-                v81 v81Var = (v81) this.b;
-                v81Var.h.b();
-                v81Var.n.b();
+                t81 t81Var = (t81) this.b;
+                t81Var.h.b();
+                t81Var.n.b();
                 break;
         }
     }

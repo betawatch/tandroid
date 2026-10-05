@@ -36,7 +36,7 @@ import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.tr;
 import v7.o8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0 {
     public static Paint k0;
@@ -248,11 +248,9 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
             imageView.setBackground(new d2(org.telegram.ui.ActionBar.i6.Z(org.telegram.ui.ActionBar.i6.v0(i11, d6Var), org.telegram.ui.ActionBar.i6.v(org.telegram.ui.ActionBar.i6.v0(i11, d6Var), org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.i6, d6Var)), 20, 20)));
         } else {
             imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-            fh.d dVar = this.I;
-            dVar.getClass();
-            ch.e eVar = new ch.e(dVar);
-            eVar.x(this.J);
-            eVar.z(AndroidUtilities.dp(16.0f));
+            ch.e eVar = new ch.e(this.I);
+            eVar.w(this.J);
+            eVar.y(AndroidUtilities.dp(16.0f));
             this.L.put(imageView, eVar);
         }
         w7.b6.a(imageView);
@@ -392,7 +390,7 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         if (i10 < 0 || i10 >= m10.size() || !((u) m10.get(i10)).a()) {
             return;
         }
-        x3.P1(this.a, (u) m10.get(i10), this.N.a);
+        x3.O1(this.a, (u) m10.get(i10), this.N.a);
     }
 
     public final boolean l() {
@@ -434,7 +432,7 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
             arrayList.add(z4Var);
         }
         while (arrayList.size() > m10.size()) {
-            z4 z4Var2 = (z4) hg.k0.w(1, arrayList);
+            z4 z4Var2 = (z4) hg.c.w(1, arrayList);
             z4Var2.a.onDetachedFromWindow();
             z4Var2.b.onDetachedFromWindow();
             z4Var2.c = null;
@@ -458,7 +456,7 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
         this.w.bringToFront();
         this.x.bringToFront();
         while (arrayList2.size() > m10.size()) {
-            ImageView imageView = (ImageView) hg.k0.w(1, arrayList2);
+            ImageView imageView = (ImageView) hg.c.w(1, arrayList2);
             removeView(imageView);
             this.K.remove(imageView);
             this.L.remove(imageView);
@@ -573,7 +571,7 @@ public final class w4 extends a0 implements org.telegram.ui.ActionBar.y5, p9, m0
             }
             int size = arrayList.size();
             float dp = AndroidUtilities.dp(5.0f) + ((getPaddingTop() + this.P) - AndroidUtilities.dp(23.0f));
-            int dp2 = AndroidUtilities.dp(4.0f) + org.telegram.messenger.f0.D(6.0f, size - 1, AndroidUtilities.dp(7.0f) * size);
+            int dp2 = AndroidUtilities.dp(4.0f) + org.telegram.messenger.q.D(6.0f, size - 1, AndroidUtilities.dp(7.0f) * size);
             int paddingLeft = getPaddingLeft();
             int max = Math.max(0, (getWidth() - paddingLeft) - getPaddingRight());
             float f13 = this.W + this.a0;

@@ -19,7 +19,7 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.d10;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class i1 extends LinearLayout {
     public final d6 a;
@@ -76,7 +76,7 @@ public final class i1 extends LinearLayout {
         h9Var.q(chat);
         w9Var.e(chat, h9Var);
         int i11 = R.string.HashtagSuggestion2Title;
-        StringBuilder j3 = t8.b.j(str, "@");
+        StringBuilder j3 = sa.e.j(str, "@");
         j3.append(ChatObject.getPublicUsername(chat));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatString(i11, j3.toString()));
         spannableStringBuilder.append((CharSequence) "  d");

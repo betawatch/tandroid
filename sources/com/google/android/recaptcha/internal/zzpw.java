@@ -6,7 +6,7 @@ import com.google.android.recaptcha.internal.zzpw;
 import java.io.IOException;
 import java.util.List;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class zzpw<MessageType extends zzpw<MessageType, BuilderType>, BuilderType extends zzpv<MessageType, BuilderType>> implements zzts {
     protected int zza = 0;
@@ -31,7 +31,7 @@ public abstract class zzpw<MessageType extends zzpw<MessageType, BuilderType>, B
             zzqsVar.zzC();
             return new zzqk(bArr);
         } catch (IOException e7) {
-            throw new RuntimeException(a.p("Serializing ", getClass().getName(), " to a ByteString threw an IOException (should never happen)."), e7);
+            throw new RuntimeException(a.q("Serializing ", getClass().getName(), " to a ByteString threw an IOException (should never happen)."), e7);
         }
     }
 
@@ -45,7 +45,7 @@ public abstract class zzpw<MessageType extends zzpw<MessageType, BuilderType>, B
             zzqsVar.zzC();
             return bArr;
         } catch (IOException e7) {
-            throw new RuntimeException(a.p("Serializing ", getClass().getName(), " to a byte array threw an IOException (should never happen)."), e7);
+            throw new RuntimeException(a.q("Serializing ", getClass().getName(), " to a byte array threw an IOException (should never happen)."), e7);
         }
     }
 }

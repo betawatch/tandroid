@@ -5,13 +5,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.ik;
+import org.telegram.messenger.jk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.py0;
-import yh.k5;
+import yh.l5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class j4 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.v0 a;
@@ -33,7 +33,7 @@ public final class j4 extends org.telegram.ui.ActionBar.j {
         org.telegram.ui.ActionBar.f1 f1Var;
         org.telegram.ui.ActionBar.f1 f1Var2;
         m4 m4Var = this.c;
-        k5 k5Var = m4Var.Y;
+        l5 l5Var = m4Var.Y;
         if (i10 != 1) {
             if (i10 == -1) {
                 m4Var.dismiss();
@@ -83,16 +83,16 @@ public final class j4 extends org.telegram.ui.ActionBar.j {
             f1Var = null;
             f1Var2 = null;
         }
-        ik ikVar = new ik(this, f1Var3, h, h10, h11, h12, canUserDoAction, f1Var, f1Var2, 4);
-        ikVar.run();
-        f1Var3.setOnClickListener(new py0(28, this, ikVar));
-        s2.j(h, k5Var, ikVar, 1);
-        s2.j(h10, k5Var, ikVar, 2);
-        s2.j(h11, k5Var, ikVar, 4);
-        s2.j(h12, k5Var, ikVar, 8);
+        jk jkVar = new jk(this, f1Var3, h, h10, h11, h12, canUserDoAction, f1Var, f1Var2, 4);
+        jkVar.run();
+        f1Var3.setOnClickListener(new py0(28, this, jkVar));
+        s2.j(h, l5Var, jkVar, 1);
+        s2.j(h10, l5Var, jkVar, 2);
+        s2.j(h11, l5Var, jkVar, 4);
+        s2.j(h12, l5Var, jkVar, 8);
         if (canUserDoAction) {
-            s2.j(f1Var, k5Var, ikVar, 256);
-            s2.j(f1Var2, k5Var, ikVar, 512);
+            s2.j(f1Var, l5Var, jkVar, 256);
+            s2.j(f1Var2, l5Var, jkVar, 512);
         }
         F.Y = true;
         F.J = false;

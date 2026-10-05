@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class k0 extends o6.a implements x8.g {
     public static final Parcelable.Creator<k0> CREATOR = new c(27);
@@ -28,7 +28,7 @@ public final class k0 extends o6.a implements x8.g {
         sb2.append(",");
         sb2.append(this.b);
         sb2.append(", size=");
-        return a4.a.s(sb2, obj, "]");
+        return a4.a.t(sb2, obj, "]");
     }
 
     @Override // android.os.Parcelable

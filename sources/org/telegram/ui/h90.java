@@ -28,7 +28,7 @@ import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h90 implements Runnable {
     public final /* synthetic */ int a;
@@ -109,9 +109,9 @@ public final /* synthetic */ class h90 implements Runnable {
                 break;
             case 6:
                 LaunchActivity launchActivity6 = (LaunchActivity) this.b;
-                rd1 rd1Var = (rd1) this.c;
+                pd1 pd1Var = (pd1) this.c;
                 Pattern pattern4 = LaunchActivity.B1;
-                launchActivity6.p0(rd1Var);
+                launchActivity6.p0(pd1Var);
                 break;
             case 7:
                 LaunchActivity launchActivity7 = (LaunchActivity) this.b;
@@ -272,7 +272,7 @@ public final /* synthetic */ class h90 implements Runnable {
                 xf0 xf0Var = (xf0) this.b;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder((Activity) this.c);
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.CancelLinkSuccessTitle);
-                alertDialog$Builder.a.T = LocaleController.formatString("CancelLinkSuccess", R.string.CancelLinkSuccess, org.telegram.messenger.ok.h(new StringBuilder("+"), xf0Var.b, gf.b.c()));
+                alertDialog$Builder.a.T = LocaleController.formatString("CancelLinkSuccess", R.string.CancelLinkSuccess, org.telegram.messenger.bi.g(new StringBuilder("+"), xf0Var.b, gf.b.c()));
                 alertDialog$Builder.k(LocaleController.getString(R.string.Close), null);
                 alertDialog$Builder.a.setOnDismissListener(new tf0(xf0Var, i12));
                 alertDialog$Builder.o();

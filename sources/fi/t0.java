@@ -21,16 +21,16 @@ import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.c71;
 import org.telegram.ui.Components.e5;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.e71;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.k9;
 import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class t0 implements gi.e {
     public final Context a;
@@ -59,7 +59,7 @@ public final class t0 implements gi.e {
         this.d = i10;
         this.e = j3;
         this.f = MessagesController.getInstance(i10).getChat(Long.valueOf(j3));
-        this.o = MessagesController.getMainSettings(i10).getLong(a4.a.o(j3, "community_requests_last_view_time_"), 0L);
+        this.o = MessagesController.getMainSettings(i10).getLong(a4.a.p(j3, "community_requests_last_view_time_"), 0L);
     }
 
     public final void a() {
@@ -80,8 +80,8 @@ public final class t0 implements gi.e {
         }
     }
 
-    public final void b(c71 c71Var) {
-        if (this.m || this.n || c71Var.e3.N0() + 10 <= c71Var.f3.x.size()) {
+    public final void b(e71 e71Var) {
+        if (this.m || this.n || e71Var.e3.N0() + 10 <= e71Var.f3.x.size()) {
             return;
         }
         d();
@@ -105,11 +105,11 @@ public final class t0 implements gi.e {
                     boolean z10 = !communityPeerRequest.visible;
                     boolean z11 = i10 < size + (-1);
                     int i11 = gi.g.a;
-                    g61 J = g61.J(gi.g.class);
-                    J.G = new gi.f(peerDialogId, user, z10);
-                    J.H = this;
-                    J.j = !z11;
-                    arrayList.add(J);
+                    h61 K = h61.K(gi.g.class);
+                    K.G = new gi.f(peerDialogId, user, z10);
+                    K.H = this;
+                    K.j = !z11;
+                    arrayList.add(K);
                 }
                 i10++;
             }
@@ -117,7 +117,7 @@ public final class t0 implements gi.e {
         if (this.n) {
             return;
         }
-        arrayList.add(g61.o(29));
+        arrayList.add(h61.p(29));
     }
 
     public final void d() {

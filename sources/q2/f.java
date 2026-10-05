@@ -4,14 +4,13 @@ import android.graphics.Bitmap;
 import android.os.Trace;
 import b2.s;
 import h2.h;
-import hg.k0;
 import ii.b0;
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
 import n4.y;
 import u2.f0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class f extends i2.f {
     public final k0.b I;
@@ -309,7 +308,7 @@ public final class f extends i2.f {
             k0.b bVar = this.I;
             bVar.getClass();
             int c10 = k0.b.c(sVar);
-            if (c10 != k0.b(4, 0, 0, 0) && c10 != k0.b(3, 0, 0, 0)) {
+            if (c10 != hg.c.b(4, 0, 0, 0) && c10 != hg.c.b(3, 0, 0, 0)) {
                 throw d(new c("Provided decoder factory can't create decoder for format."), this.S, false, 4005);
             }
             b bVar2 = this.T;

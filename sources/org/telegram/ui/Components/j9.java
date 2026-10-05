@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class j9 {
     public float A;
@@ -380,7 +380,7 @@ public final class j9 {
                                 if (i29 == 0) {
                                     if (this.l) {
                                         f15 = 1.0f;
-                                        i17 = org.telegram.messenger.ok.z(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), i10);
+                                        i17 = org.telegram.messenger.bi.z(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), i10);
                                     } else {
                                         f15 = 1.0f;
                                         i17 = dp2;
@@ -410,7 +410,7 @@ public final class j9 {
                                         f17 = this.e;
                                     } else if (i31 == i10) {
                                         if (this.l) {
-                                            i16 = org.telegram.messenger.ok.z(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), i10);
+                                            i16 = org.telegram.messenger.bi.z(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), i10);
                                         } else {
                                             i16 = dp2;
                                         }
@@ -419,7 +419,7 @@ public final class j9 {
                                         float f24 = this.e;
                                         imageReceiver.setImageX((int) com.google.android.gms.internal.vision.e2.z(1.0f, f24, i33, i32 * f24));
                                     } else if (i31 == -1 && this.l) {
-                                        int z19 = org.telegram.messenger.ok.z(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), i10) + (i21 * i28);
+                                        int z19 = org.telegram.messenger.bi.z(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), i10) + (i21 * i28);
                                         float f25 = this.e;
                                         imageReceiver.setImageX((int) com.google.android.gms.internal.vision.e2.z(1.0f, f25, e7 + r5, z19 * f25));
                                     }
@@ -508,7 +508,7 @@ public final class j9 {
                     if (imageReceiver2.hasImageSet()) {
                         if (i37 == 0) {
                             if (this.l) {
-                                i14 = org.telegram.messenger.ok.z(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), 2);
+                                i14 = org.telegram.messenger.bi.z(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), 2);
                             } else {
                                 i14 = dp2;
                             }
@@ -534,7 +534,7 @@ public final class j9 {
                                         f14 = this.e;
                                     } else if (i39 == 2) {
                                         if (this.l) {
-                                            i13 = org.telegram.messenger.ok.z(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), 2);
+                                            i13 = org.telegram.messenger.bi.z(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), 2);
                                         } else {
                                             i13 = dp2;
                                         }
@@ -543,7 +543,7 @@ public final class j9 {
                                         float f29 = this.e;
                                         imageReceiver2.setImageX((int) com.google.android.gms.internal.vision.e2.z(1.0f, f29, i41, i40 * f29));
                                     } else if (i39 == -1 && this.l) {
-                                        int z20 = org.telegram.messenger.ok.z(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), 2) + (i21 * i36);
+                                        int z20 = org.telegram.messenger.bi.z(z15 ? 8.0f : 4.0f, this.p - (i26 * i21), 2) + (i21 * i36);
                                         float f30 = this.e;
                                         imageReceiver2.setImageX((int) com.google.android.gms.internal.vision.e2.z(1.0f, f30, e7 + r10, z20 * f30));
                                     }
@@ -909,12 +909,12 @@ public final class j9 {
             TLRPC.Document document = messageMedia.document;
             if (document != null) {
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 50, true, null, false);
-                i9VarArr[i10].e.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(storyItem.media.document.thumbs, 50, true, closestPhotoSizeWithSize, true), storyItem.media.document), a4.a.k(d, d, "_"), ImageLocation.getForDocument(closestPhotoSizeWithSize, storyItem.media.document), a4.a.k(d, d, "_"), 0L, null, storyItem, 0);
+                i9VarArr[i10].e.setImage(ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(storyItem.media.document.thumbs, 50, true, closestPhotoSizeWithSize, true), storyItem.media.document), a4.a.l(d, d, "_"), ImageLocation.getForDocument(closestPhotoSizeWithSize, storyItem.media.document), a4.a.l(d, d, "_"), 0L, null, storyItem, 0);
             } else {
                 TLRPC.Photo photo = messageMedia.photo;
                 if (photo != null) {
                     TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 50, true, null, false);
-                    i9VarArr[i10].e.setImage(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(storyItem.media.photo.sizes, 50, true, closestPhotoSizeWithSize2, true), storyItem.media.photo), a4.a.k(d, d, "_"), ImageLocation.getForPhoto(closestPhotoSizeWithSize2, storyItem.media.photo), a4.a.k(d, d, "_"), 0L, null, storyItem, 0);
+                    i9VarArr[i10].e.setImage(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(storyItem.media.photo.sizes, 50, true, closestPhotoSizeWithSize2, true), storyItem.media.photo), a4.a.l(d, d, "_"), ImageLocation.getForPhoto(closestPhotoSizeWithSize2, storyItem.media.photo), a4.a.l(d, d, "_"), 0L, null, storyItem, 0);
                 }
             }
         } else if (user == null) {

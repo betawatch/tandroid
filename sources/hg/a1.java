@@ -2,13 +2,13 @@ package hg;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class a1 implements RequestDelegate {
                                         e1Var2.finishFragment();
                                         break;
                                     } else {
-                                        ok.p(R.string.UnknownError, yc.a0(e1Var2), null);
+                                        bi.o(R.string.UnknownError, yc.a0(e1Var2), null);
                                         break;
                                     }
                                 } else {
@@ -54,7 +54,7 @@ public final /* synthetic */ class a1 implements RequestDelegate {
                                         break;
                                     } else {
                                         e1Var3.b.a(0.0f);
-                                        ok.p(R.string.UnknownError, yc.a0(e1Var3), null);
+                                        bi.o(R.string.UnknownError, yc.a0(e1Var3), null);
                                         break;
                                     }
                                 } else {
@@ -82,7 +82,7 @@ public final /* synthetic */ class a1 implements RequestDelegate {
                                         e1Var22.finishFragment();
                                         break;
                                     } else {
-                                        ok.p(R.string.UnknownError, yc.a0(e1Var22), null);
+                                        bi.o(R.string.UnknownError, yc.a0(e1Var22), null);
                                         break;
                                     }
                                 } else {
@@ -98,7 +98,7 @@ public final /* synthetic */ class a1 implements RequestDelegate {
                                         break;
                                     } else {
                                         e1Var3.b.a(0.0f);
-                                        ok.p(R.string.UnknownError, yc.a0(e1Var3), null);
+                                        bi.o(R.string.UnknownError, yc.a0(e1Var3), null);
                                         break;
                                     }
                                 } else {

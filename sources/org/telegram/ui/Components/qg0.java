@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class qg0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -29,8 +29,8 @@ public final class qg0 extends FrameLayout {
             case 1:
                 super.dispatchDraw(canvas);
                 rg0 rg0Var = this.b;
-                dp0 dp0Var = rg0Var.R;
-                if (dp0Var != null && dp0Var.a()) {
+                ep0 ep0Var = rg0Var.R;
+                if (ep0Var != null && ep0Var.a()) {
                     rg0Var.R.setBounds(getLeft(), getTop(), getRight(), getBottom());
                     rg0Var.R.draw(canvas);
                     break;
@@ -148,7 +148,7 @@ public final class qg0 extends FrameLayout {
                     float f7 = rg0Var.K;
                     kVar.b = f7;
                     kVar.c = true;
-                    kVar.u.i = a4.a.A(rg0Var.t(), rg0Var.J, 2.0f, f7) >= AndroidUtilities.displaySize.x / 2.0f ? (r3 - (rg0Var.t() * rg0Var.J)) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+                    kVar.u.i = a4.a.B(rg0Var.t(), rg0Var.J, 2.0f, f7) >= AndroidUtilities.displaySize.x / 2.0f ? (r3 - (rg0Var.t() * rg0Var.J)) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
                     rg0Var.M.f();
                     o1.k kVar2 = rg0Var.N;
                     kVar2.b = rg0Var.L;
@@ -169,9 +169,9 @@ public final class qg0 extends FrameLayout {
         switch (this.a) {
             case 1:
                 rg0 rg0Var = this.b;
-                v71 v71Var = rg0Var.Q;
-                if (v71Var.j) {
-                    v71Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
+                w71 w71Var = rg0Var.Q;
+                if (w71Var.j) {
+                    w71Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
                     rg0Var.Q.draw(canvas);
                 }
                 PhotoViewer photoViewer = rg0Var.V;

@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p21 implements Runnable {
     public final /* synthetic */ int a;
@@ -49,14 +49,14 @@ public final /* synthetic */ class p21 implements Runnable {
                         long max = Math.max(0L, (i10 - (System.currentTimeMillis() / 1000)) - 1);
                         int i11 = (int) (max % 60);
                         int min = Math.min(99, (int) (max / 60));
-                        org.telegram.ui.Components.cp0 cp0Var = s21Var.s;
+                        org.telegram.ui.Components.dp0 dp0Var = s21Var.s;
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(min < 10 ? "0" : "");
                         sb2.append(min);
                         sb2.append(":");
                         sb2.append(i11 < 10 ? "0" : "");
                         sb2.append(i11);
-                        cp0Var.q(sb2.toString(), true, false);
+                        dp0Var.q(sb2.toString(), true, false);
                     }
                     if (s21Var.isAttachedToWindow()) {
                         AndroidUtilities.runOnUIThread(s21Var.N, 1000L);

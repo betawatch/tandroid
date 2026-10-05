@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.util.List;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class a0 extends c {
     public final Context a;
@@ -148,7 +148,7 @@ public final class a0 extends c {
                     throw new z("Resource identifier must be an integer.", null, 1004);
                 }
             } else {
-                parseInt = resourcesForApplication.getIdentifier(a4.a.C(packageName, ":", path), "raw", null);
+                parseInt = resourcesForApplication.getIdentifier(a4.a.D(packageName, ":", path), "raw", null);
                 if (parseInt == 0) {
                     throw new z("Resource not found.", null, 2005);
                 }

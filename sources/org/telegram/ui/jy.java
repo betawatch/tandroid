@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class jy extends org.telegram.ui.ActionBar.f5 {
     public final /* synthetic */ uy f;
@@ -41,7 +41,7 @@ public final class jy extends org.telegram.ui.ActionBar.f5 {
 
     @Override // org.telegram.ui.ActionBar.f5
     public final void m() {
-        li.m mVar;
+        li.p pVar;
         uy uyVar = this.f;
         iy iyVar = uyVar.X;
         if (iyVar != null) {
@@ -66,14 +66,14 @@ public final class jy extends org.telegram.ui.ActionBar.f5 {
         uyVar.X.setCloseButtonVisible(false);
         uyVar.h5(true);
         uyVar.K3();
-        mVar = ((org.telegram.ui.ActionBar.n2) uyVar).glassEngine;
-        mVar.g();
+        pVar = ((org.telegram.ui.ActionBar.n2) uyVar).glassEngine;
+        pVar.g();
     }
 
     @Override // org.telegram.ui.ActionBar.f5
     public final void n() {
         org.telegram.ui.ActionBar.k kVar;
-        li.m mVar;
+        li.p pVar;
         org.telegram.ui.Components.jo0 jo0Var;
         org.telegram.ui.Components.jo0 jo0Var2;
         uy uyVar = this.f;
@@ -86,10 +86,10 @@ public final class jy extends org.telegram.ui.ActionBar.f5 {
         ty tyVar = uyVar.e0[0];
         if (tyVar != null) {
             if (uyVar.n2 != null) {
-                tyVar.a.d1();
+                tyVar.a.c1();
                 dy dyVar = uyVar.C0;
                 if (dyVar != null) {
-                    ai.w0 w0Var = dyVar.W;
+                    ai.w0 w0Var = dyVar.a0;
                     if (w0Var.i1) {
                         w0Var.i1 = false;
                         w0Var.L0(false);
@@ -118,13 +118,13 @@ public final class jy extends org.telegram.ui.ActionBar.f5 {
         kVar = ((org.telegram.ui.ActionBar.n2) uyVar).actionBar;
         kVar.setBackButtonContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
-        mVar = ((org.telegram.ui.ActionBar.n2) uyVar).glassEngine;
-        mVar.g();
+        pVar = ((org.telegram.ui.ActionBar.n2) uyVar).glassEngine;
+        pVar.g();
         dy dyVar2 = uyVar.C0;
-        if (dyVar2 != null && (jo0Var2 = dyVar2.c0) != null) {
+        if (dyVar2 != null && (jo0Var2 = dyVar2.d0) != null) {
             jo0Var2.c = gg.f0.d;
         }
-        if ((dyVar2 != null && (jo0Var = dyVar2.c0) != null && jo0Var.N()) || uyVar.getMessagesController().getTotalDialogsCount() > 10 || uyVar.s3 || uyVar.K) {
+        if ((dyVar2 != null && (jo0Var = dyVar2.d0) != null && jo0Var.N()) || uyVar.getMessagesController().getTotalDialogsCount() > 10 || uyVar.s3 || uyVar.K) {
             uyVar.k2 = true;
             if (!uyVar.p3) {
                 uyVar.X4(true, false, true, false);
@@ -142,7 +142,7 @@ public final class jy extends org.telegram.ui.ActionBar.f5 {
         String obj = editText.getText().toString();
         boolean isEmpty = obj.isEmpty();
         uy uyVar = this.f;
-        if (!isEmpty || (((dyVar = uyVar.C0) != null && (jo0Var = dyVar.c0) != null && jo0Var.N()) || uyVar.s3 || uyVar.K)) {
+        if (!isEmpty || (((dyVar = uyVar.C0) != null && (jo0Var = dyVar.d0) != null && jo0Var.N()) || uyVar.s3 || uyVar.K)) {
             uyVar.k2 = true;
             if (!uyVar.p3) {
                 uyVar.X4(true, false, true, false);
@@ -151,8 +151,8 @@ public final class jy extends org.telegram.ui.ActionBar.f5 {
         dy dyVar2 = uyVar.C0;
         if (dyVar2 != null) {
             View currentView = dyVar2.getCurrentView();
-            boolean z10 = TextUtils.isEmpty(dyVar2.L0) ? true : !dyVar2.f0;
-            dyVar2.L0 = obj;
+            boolean z10 = TextUtils.isEmpty(dyVar2.M0) ? true : !dyVar2.g0;
+            dyVar2.M0 = obj;
             dyVar2.Q(currentView, dyVar2.getCurrentPosition(), obj, z10);
         }
     }

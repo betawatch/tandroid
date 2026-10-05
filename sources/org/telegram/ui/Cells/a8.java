@@ -4,9 +4,9 @@ import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stats;
-import org.telegram.ui.sa1;
+import org.telegram.ui.qa1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class a8 extends org.telegram.ui.Components.w9 {
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 G;
@@ -22,8 +22,8 @@ public final class a8 extends org.telegram.ui.Components.w9 {
     @Override // org.telegram.ui.Components.w9, android.view.View
     public final void onDraw(Canvas canvas) {
         c8 c8Var = this.H;
-        sa1 sa1Var = c8Var.v;
-        if (sa1Var == null || !(sa1Var.a instanceof TL_stats.TL_postInteractionCountersStory)) {
+        qa1 qa1Var = c8Var.v;
+        if (qa1Var == null || !(qa1Var.a instanceof TL_stats.TL_postInteractionCountersStory)) {
             super.onDraw(canvas);
             return;
         }

@@ -2,7 +2,7 @@ package k2;
 
 import android.media.AudioTrack;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class d0 extends AudioTrack.StreamEventCallback {
     public final /* synthetic */ e0 a;
@@ -16,7 +16,7 @@ public final class d0 extends AudioTrack.StreamEventCallback {
         f0 f0Var;
         o oVar;
         if (audioTrack.equals(this.a.c.x) && (oVar = (f0Var = this.a.c).t) != null && f0Var.X) {
-            oVar.H();
+            oVar.D();
         }
     }
 
@@ -32,7 +32,7 @@ public final class d0 extends AudioTrack.StreamEventCallback {
         f0 f0Var;
         o oVar;
         if (audioTrack.equals(this.a.c.x) && (oVar = (f0Var = this.a.c).t) != null && f0Var.X) {
-            oVar.H();
+            oVar.D();
         }
     }
 }

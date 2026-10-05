@@ -14,12 +14,12 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ha implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -175,7 +175,7 @@ public final /* synthetic */ class ha implements Utilities.Callback {
                 }
                 kcVar5.X0.x(2, bool.booleanValue());
                 kcVar5.Y0.clearAnimation();
-                ok.r(kcVar5.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
+                bi.q(kcVar5.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
                 org.telegram.ui.Components.rc rcVar = org.telegram.ui.Components.rc.w;
                 if (rcVar != null && rcVar.a == 2) {
                     rcVar.l();

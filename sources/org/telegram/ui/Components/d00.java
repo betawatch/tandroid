@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d00 implements nl0, ol0 {
     public final /* synthetic */ n00 a;
@@ -180,7 +180,7 @@ public final /* synthetic */ class d00 implements nl0, ol0 {
                                     H.a0(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-4.0f));
                                     H.Z();
                                     uyVar.L0 = H;
-                                    n00Var.F.e1(true);
+                                    n00Var.F.d1(true);
                                     return true;
                                 }
                                 dialogFilter2 = dialogFilter3;
@@ -214,7 +214,7 @@ public final /* synthetic */ class d00 implements nl0, ol0 {
                             H2.a0(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-4.0f));
                             H2.Z();
                             uyVar.L0 = H2;
-                            n00Var.F.e1(true);
+                            n00Var.F.d1(true);
                             return true;
                         }
                     }
@@ -251,7 +251,7 @@ public final /* synthetic */ class d00 implements nl0, ol0 {
                     H22.a0(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-4.0f));
                     H22.Z();
                     uyVar.L0 = H22;
-                    n00Var.F.e1(true);
+                    n00Var.F.d1(true);
                     return true;
                 }
             }

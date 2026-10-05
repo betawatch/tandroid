@@ -49,10 +49,10 @@ import org.telegram.ui.Components.dg;
 import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.fh;
 import org.telegram.ui.Components.nm;
-import org.telegram.ui.Components.pv0;
 import org.telegram.ui.Components.qm;
-import org.telegram.ui.Components.rx0;
+import org.telegram.ui.Components.qv0;
 import org.telegram.ui.Components.sm;
+import org.telegram.ui.Components.sx0;
 import org.telegram.ui.Components.t80;
 import org.telegram.ui.Components.tm;
 import org.telegram.ui.Components.xi;
@@ -72,7 +72,7 @@ import org.telegram.ui.uy;
 import org.telegram.ui.yn;
 import org.telegram.ui.z90;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -218,9 +218,9 @@ public final /* synthetic */ class h0 implements Runnable {
                     y9 y9Var = l9Var2.k;
                     y9Var.b.getStorageQueue().postRunnable(new w9(y9Var, peerStories, 0));
                 }
-                StringBuilder t10 = a4.a.t(j13, "StoriesController processAllStoriesResponse dialogId=", " overwrite stories ");
-                t10.append(tL_stories_peerStories.stories.stories.size());
-                FileLog.d(t10.toString());
+                StringBuilder u10 = a4.a.u(j13, "StoriesController processAllStoriesResponse dialogId=", " overwrite stories ");
+                u10.append(tL_stories_peerStories.stories.stories.size());
+                FileLog.d(u10.toString());
                 NotificationCenter.getInstance(i19).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
                 return;
             case 3:
@@ -432,10 +432,10 @@ public final /* synthetic */ class h0 implements Runnable {
                 t80.Wc((t80) this.c, this.b, (TLRPC.Chat) this.d);
                 return;
             case 21:
-                ((pv0) this.c).v1.presentFragment(yn.P9(((MessageObject) this.d).getId(), this.b));
+                ((qv0) this.c).v1.presentFragment(yn.P9(((MessageObject) this.d).getId(), this.b));
                 return;
             case 22:
-                rx0.z1((rx0) this.c, (TLRPC.TL_messages_emojiGroups) this.d, this.b);
+                sx0.y1((sx0) this.c, (TLRPC.TL_messages_emojiGroups) this.d, this.b);
                 return;
             case 23:
                 uy uyVar2 = (uy) this.c;

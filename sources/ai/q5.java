@@ -35,6 +35,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -57,10 +58,10 @@ import org.telegram.ui.no;
 import org.telegram.ui.oy;
 import org.telegram.ui.ro0;
 import org.telegram.ui.uy;
-import org.telegram.ui.yf1;
+import org.telegram.ui.wf1;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q5 implements MessagesStorage.StringCallback, ec, androidx.car.app.utils.b, MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.a2, SuccessContinuation, ro0, el, m4.j0, i9.p, ed0, org.telegram.ui.ActionBar.r0, oy, org.telegram.ui.Components.d5 {
     public final /* synthetic */ int a;
@@ -111,7 +112,7 @@ public final /* synthetic */ class q5 implements MessagesStorage.StringCallback,
                 if (i10 != 3) {
                     md0Var.dismiss();
                 }
-                g3Var.d.x.G(str, org.telegram.ui.Cells.c1.x(i10).toLowerCase(Locale.ROOT), false);
+                g3Var.d.x.G(str, org.telegram.ui.Cells.c1.y(i10).toLowerCase(Locale.ROOT), false);
                 break;
             default:
                 md0 md0Var2 = (md0) this.b;
@@ -120,7 +121,7 @@ public final /* synthetic */ class q5 implements MessagesStorage.StringCallback,
                 if (i10 != 3) {
                     md0Var2.dismiss();
                 }
-                r4Var.getWebViewContainer().G(str2, org.telegram.ui.Cells.c1.x(i10).toLowerCase(Locale.ROOT), false);
+                r4Var.getWebViewContainer().G(str2, org.telegram.ui.Cells.c1.y(i10).toLowerCase(Locale.ROOT), false);
                 break;
         }
     }
@@ -447,7 +448,7 @@ public final /* synthetic */ class q5 implements MessagesStorage.StringCallback,
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, yf1 yf1Var) {
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
         MessageObject messageObject = (MessageObject) this.c;
         TL_keyboard.TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = (TL_keyboard.TL_inlineButtonTypeSwitchInline) this.d;
@@ -598,7 +599,7 @@ public final /* synthetic */ class q5 implements MessagesStorage.StringCallback,
                         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList6.get(i18);
                         if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null) {
                             String translitSafe2 = AndroidUtilities.translitSafe((tL_messages_stickerSet.set.title + "").toLowerCase());
-                            if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.f0.w(" ", translitSafe, translitSafe2)) {
+                            if (translitSafe2.startsWith(translitSafe) || bi.u(" ", translitSafe, translitSafe2)) {
                                 int size = arrayList7.size();
                                 arrayList7.add(tL_messages_stickerSet);
                                 sparseIntArray.put(d2Var.x, size);
@@ -619,7 +620,7 @@ public final /* synthetic */ class q5 implements MessagesStorage.StringCallback,
                     }
                     d2Var.I = d2Var.H;
                     d2Var.l();
-                    ci.p1.y1(e2Var.b, 0, 0);
+                    ci.p1.x1(e2Var.b, 0, 0);
                     e2Var.f.c(false);
                     e2Var.e.n(false);
                     break;

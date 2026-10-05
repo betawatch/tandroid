@@ -24,7 +24,7 @@ import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class z1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
     public final t70 a;
@@ -163,7 +163,7 @@ public final class z1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             if (pageblockmap.level > 0) {
                 i13 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(r0 * 14);
                 this.n = i13;
-                i14 = org.telegram.messenger.ok.y(18.0f, i13, size);
+                i14 = org.telegram.messenger.bi.y(18.0f, i13, size);
                 dp = i14;
             } else {
                 this.n = AndroidUtilities.dp(18.0f);
@@ -216,14 +216,14 @@ public final class z1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             if (q6 != null) {
                 int height = this.d.d.getHeight() + AndroidUtilities.dp(4.0f);
                 this.s = height;
-                i15 = org.telegram.messenger.f0.C(4.0f, height, i15);
+                i15 = org.telegram.messenger.q.C(4.0f, height, i15);
                 b3 b3Var = this.d;
                 b3Var.s = this.n;
                 b3Var.v = this.r;
             }
             int i19 = i15;
             TL_iv.pageBlockMap pageblockmap5 = this.x;
-            b3 p5 = i4.p(this.a, this, null, pageblockmap5.caption.credit, dp, 0, pageblockmap5, (g4Var == null || !g4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.fx0.a(), 0, this.b);
+            b3 p5 = i4.p(this.a, this, null, pageblockmap5.caption.credit, dp, 0, pageblockmap5, (g4Var == null || !g4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.gx0.a(), 0, this.b);
             this.e = p5;
             if (p5 != null) {
                 i19 += this.e.d.getHeight() + AndroidUtilities.dp(4.0f);

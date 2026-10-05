@@ -16,9 +16,9 @@ import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.LaunchActivity;
-import yh.t5;
+import yh.u5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -63,7 +63,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 long nanoTime = System.nanoTime();
                 try {
                     try {
-                        tVar.f();
+                        tVar.g();
                         s0Var.m.b("preview output finalized: size=" + tVar.a.length() + ", replace=" + z10 + ", elapsedMs=" + s0.f(nanoTime));
                         s0Var.g();
                         if (z10) {
@@ -148,7 +148,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 if (f3Var != null) {
                     f3Var.dismiss();
                 }
-                t5.y(i11, false).S();
+                u5.y(i11, false).S();
                 n2 U = LaunchActivity.U();
                 if (U != null) {
                     yc.a0(U).V(Collections.singletonList(tLObject), LocaleController.getString(R.string.StarsSubscriptionCancelledToast), AndroidUtilities.replaceTags((!z12 || TextUtils.isEmpty(starsSubscription.title)) ? (!z13 || TextUtils.isEmpty(starsSubscription.title)) ? LocaleController.formatString(R.string.StarsSubscriptionCancelledToastText, LocaleController.formatDateChat(starsSubscription.until_date)) : LocaleController.formatString(R.string.StarsSubscriptionCancelledBotToastText, LocaleController.formatDateChat(starsSubscription.until_date), starsSubscription.title) : LocaleController.formatString(R.string.StarsSubscriptionCancelledBizToastText, LocaleController.formatDateChat(starsSubscription.until_date), starsSubscription.title)), null).k(false);

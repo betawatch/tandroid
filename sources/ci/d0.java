@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class d0 {
     public int a;
@@ -54,7 +54,7 @@ public final class d0 {
         sb2.append((int) Math.ceil(AndroidUtilities.displaySize.x / AndroidUtilities.density));
         sb2.append("_");
         sb2.append((int) Math.ceil(AndroidUtilities.displaySize.y / AndroidUtilities.density));
-        String s10 = a4.a.s(sb2, (k8Var == null || !k8Var.K) ? "" : "_g", "_exif");
+        String t10 = a4.a.t(sb2, (k8Var == null || !k8Var.K) ? "" : "_g", "_exif");
         k8 k8Var2 = this.n;
         e0 e0Var = this.p;
         ImageReceiver imageReceiver = this.c;
@@ -71,7 +71,7 @@ public final class d0 {
                 } else {
                     String str = k8Var2.N;
                     if (str != null) {
-                        imageReceiver.setImage(str, s10, null, null, 0L);
+                        imageReceiver.setImage(str, t10, null, null, 0L);
                     } else {
                         imageReceiver.clearImage();
                     }
@@ -104,7 +104,7 @@ public final class d0 {
             }
             this.d.play();
         } else {
-            imageReceiver.setImage(k8Var2.L.getAbsolutePath(), s10, null, null, 0L);
+            imageReceiver.setImage(k8Var2.L.getAbsolutePath(), t10, null, null, 0L);
         }
         e0Var.invalidate();
     }

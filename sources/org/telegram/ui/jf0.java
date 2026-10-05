@@ -20,9 +20,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class jf0 extends org.telegram.ui.Components.qw0 {
+public final class jf0 extends org.telegram.ui.Components.rw0 {
     public final /* synthetic */ ug0 E;
     public final org.telegram.ui.Components.ld0 a;
     public final EditTextBoldCursor b;
@@ -187,17 +187,17 @@ public final class jf0 extends org.telegram.ui.Components.qw0 {
         frameLayout22.setOnClickListener(new j60(this, 8));
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final boolean b() {
         return !this.E.h0;
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public String getHeaderName() {
         return LocaleController.getString("AddEmailTitle", R.string.AddEmailTitle);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void h(String str) {
         int i10;
         int i11;
@@ -253,12 +253,12 @@ public final class jf0 extends org.telegram.ui.Components.qw0 {
         ConnectionsManager.getInstance(i10).sendRequest(sendverifyemailcode, new ca(this, bundle, sendverifyemailcode, 22), 10);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void j() {
         AndroidUtilities.runOnUIThread(new hf0(this, 0), ug0.t0);
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void k(Bundle bundle) {
         Bundle bundle2 = bundle.getBundle("emailsetup_params");
         this.n = bundle2;
@@ -271,7 +271,7 @@ public final class jf0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void l(Bundle bundle) {
         String obj = this.b.getText().toString();
         if (obj != null && obj.length() != 0) {
@@ -283,7 +283,7 @@ public final class jf0 extends org.telegram.ui.Components.qw0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void m(Bundle bundle, boolean z10) {
         if (bundle == null) {
             return;
@@ -302,7 +302,7 @@ public final class jf0 extends org.telegram.ui.Components.qw0 {
         editTextBoldCursor.requestFocus();
     }
 
-    @Override // org.telegram.ui.Components.qw0
+    @Override // org.telegram.ui.Components.rw0
     public final void n() {
         int i10 = org.telegram.ui.ActionBar.i6.G6;
         this.c.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, i10, false));

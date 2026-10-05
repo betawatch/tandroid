@@ -4,7 +4,7 @@ import a0.f;
 import android.os.Parcel;
 import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class c extends b {
     public final SparseIntArray d;
@@ -28,7 +28,7 @@ public final class c extends b {
         if (i10 == this.f) {
             i10 = this.g;
         }
-        return new c(parcel, dataPosition, i10, a4.a.s(new StringBuilder(), this.h, "  "), this.a, this.b, this.c);
+        return new c(parcel, dataPosition, i10, a4.a.t(new StringBuilder(), this.h, "  "), this.a, this.b, this.c);
     }
 
     @Override // y4.b

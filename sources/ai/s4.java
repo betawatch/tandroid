@@ -38,17 +38,16 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.be;
-import org.telegram.ui.Components.fy0;
+import org.telegram.ui.Components.gy0;
 import org.telegram.ui.Components.j90;
 import org.telegram.ui.Components.lk;
 import org.telegram.ui.Components.qk;
-import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.ry0;
 import org.telegram.ui.Components.u80;
 import org.telegram.ui.Components.w80;
 import org.telegram.ui.Components.x80;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.bh1;
 import org.telegram.ui.h60;
 import org.telegram.ui.hh;
 import org.telegram.ui.hp;
@@ -67,8 +66,9 @@ import org.telegram.ui.wm0;
 import org.telegram.ui.wn;
 import org.telegram.ui.y21;
 import org.telegram.ui.yn;
+import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s4 implements Runnable {
     public final /* synthetic */ int a;
@@ -77,11 +77,11 @@ public final /* synthetic */ class s4 implements Runnable {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ s4(u4 u4Var, View view, zg.o0 o0Var, boolean z10, boolean z11) {
+    public /* synthetic */ s4(u4 u4Var, View view, zg.m0 m0Var, boolean z10, boolean z11) {
         this.a = 0;
         this.c = u4Var;
         this.d = view;
-        this.e = o0Var;
+        this.e = m0Var;
         this.b = z10;
     }
 
@@ -206,10 +206,10 @@ public final /* synthetic */ class s4 implements Runnable {
             case 0:
                 u4 u4Var = (u4) this.c;
                 View view = (View) this.d;
-                zg.o0 o0Var = (zg.o0) this.e;
+                zg.m0 m0Var = (zg.m0) this.e;
                 boolean z11 = this.b;
                 e6 e6Var = u4Var.a;
-                org.telegram.ui.Components.e5.a0(e6Var.C2, 1, e6Var.B1, new t4(u4Var, z11, o0Var, view));
+                org.telegram.ui.Components.e5.a0(e6Var.C2, 1, e6Var.B1, new t4(u4Var, z11, m0Var, view));
                 return;
             case 1:
                 ci.w1 w1Var = (ci.w1) this.c;
@@ -311,10 +311,10 @@ public final /* synthetic */ class s4 implements Runnable {
                 ki.s0 s0Var = (ki.s0) this.c;
                 ki.t tVar = (ki.t) this.d;
                 boolean z17 = this.b;
-                ki.o0 o0Var2 = (ki.o0) this.e;
+                ki.o0 o0Var = (ki.o0) this.e;
                 long nanoTime = System.nanoTime();
                 try {
-                    tVar.f();
+                    tVar.g();
                     File file2 = tVar.a;
                     long e11 = w7.k.e(file2) / 1000;
                     s0Var.m.b("active output finalized: size=" + file2.length() + ", durationMs=" + e11 + ", elapsedMs=" + ki.s0.f(nanoTime));
@@ -323,7 +323,7 @@ public final /* synthetic */ class s4 implements Runnable {
                     boolean z18 = e11 > j3;
                     if (z17 && !z18) {
                         try {
-                            s0Var.k.execute(new ki.f0(s0Var, o0Var2, tVar.a, e11, true));
+                            s0Var.k.execute(new ki.f0(s0Var, o0Var, tVar.a, e11, true));
                             return;
                         } catch (Exception e12) {
                             e = e12;
@@ -533,9 +533,9 @@ public final /* synthetic */ class s4 implements Runnable {
                         spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoAnytimeUser2, m10.f())));
                     }
                 } else if (z22) {
-                    spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoAdmin2, m10.f(), yh.e0.o(message.suggested_post.schedule_date), ei.m.L0(i21))));
+                    spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoAdmin2, m10.f(), yh.f0.o(message.suggested_post.schedule_date), ei.m.L0(i21))));
                 } else {
-                    spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoUser2, m10.f(), yh.e0.o(message.suggested_post.schedule_date))));
+                    spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(R.string.SuggestedMessageAcceptInfoUser2, m10.f(), yh.f0.o(message.suggested_post.schedule_date))));
                 }
                 spannableStringBuilder.append(' ');
                 int i22 = R.string.SuggestedMessageAcceptInfo3;
@@ -574,8 +574,8 @@ public final /* synthetic */ class s4 implements Runnable {
                 boolean z23 = this.b;
                 if (tL_error == null) {
                     TLRPC.TL_chatInviteExported tL_chatInviteExported = (TLRPC.TL_chatInviteExported) tLObject2;
-                    hpVar.l0 = tL_chatInviteExported;
-                    TLRPC.ChatFull chatFull = hpVar.Y;
+                    hpVar.m0 = tL_chatInviteExported;
+                    TLRPC.ChatFull chatFull = hpVar.Z;
                     if (chatFull != null) {
                         chatFull.exported_invite = tL_chatInviteExported;
                     }
@@ -590,11 +590,11 @@ public final /* synthetic */ class s4 implements Runnable {
                         hpVar.showDialog(alertDialog$Builder.a);
                     }
                 }
-                j90 j90Var = hpVar.G;
+                j90 j90Var = hpVar.H;
                 if (j90Var != null) {
-                    TLRPC.TL_chatInviteExported tL_chatInviteExported2 = hpVar.l0;
+                    TLRPC.TL_chatInviteExported tL_chatInviteExported2 = hpVar.m0;
                     j90Var.setLink(tL_chatInviteExported2 != null ? tL_chatInviteExported2.link : null);
-                    hpVar.G.c(hpVar.l0, hpVar.Z);
+                    hpVar.H.c(hpVar.m0, hpVar.a0);
                     return;
                 }
                 return;
@@ -690,20 +690,20 @@ public final /* synthetic */ class s4 implements Runnable {
                 u80.t((u80) this.c, (TLRPC.TL_error) this.d, this.b, (TLRPC.TL_messages_importChatInvite) this.e);
                 return;
             case 20:
-                fy0 fy0Var = (fy0) this.c;
+                gy0 gy0Var = (gy0) this.c;
                 TLObject tLObject3 = (TLObject) this.d;
                 boolean z28 = this.b;
                 org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.e;
-                qy0 qy0Var = fy0Var.a;
+                ry0 ry0Var = gy0Var.a;
                 if (tLObject3 instanceof TLRPC.TL_messages_stickerSet) {
                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject3;
                     MediaDataController.getInstance(UserConfig.selectedAccount).putStickerSet(tL_messages_stickerSet);
                     if (z28) {
                         MediaDataController.getInstance(UserConfig.selectedAccount).toggleStickerSet(null, tLObject3, 0, null, false, false);
                     } else {
-                        qy0Var.S = tL_messages_stickerSet;
-                        qy0Var.t0();
-                        qy0Var.B0();
+                        ry0Var.S = tL_messages_stickerSet;
+                        ry0Var.t0();
+                        ry0Var.B0();
                     }
                 }
                 b2Var.dismiss();
@@ -806,7 +806,7 @@ public final /* synthetic */ class s4 implements Runnable {
                 y21.U((y21) this.c, this.b, (org.telegram.ui.ActionBar.c4) this.d, (org.telegram.ui.ActionBar.b5) this.e);
                 return;
             default:
-                bh1.c0((bh1) this.c, (TLRPC.TL_error) this.d, (TLObject) this.e, this.b);
+                zg1.c0((zg1) this.c, (TLRPC.TL_error) this.d, (TLObject) this.e, this.b);
                 return;
         }
     }

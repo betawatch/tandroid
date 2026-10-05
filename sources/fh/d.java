@@ -9,9 +9,8 @@ import android.graphics.RenderEffect;
 import android.graphics.RenderNode;
 import android.graphics.Shader;
 import android.os.Build;
-import yh.k0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class d implements a {
     public final a a;
@@ -24,7 +23,6 @@ public final class d implements a {
     public boolean n;
     public boolean r;
     public RecordingCanvas s;
-    public k0 v;
 
     public d(a aVar) {
         this.a = aVar;
@@ -42,11 +40,8 @@ public final class d implements a {
     }
 
     @Override // fh.a
-    public final void b() {
-        k0 k0Var = this.v;
-        if (k0Var != null) {
-            k0Var.run();
-        }
+    public final ch.d b() {
+        return new ch.e(this);
     }
 
     public final void c() {
@@ -66,27 +61,22 @@ public final class d implements a {
         this.b.setRenderEffect(f7 > 0.0f ? RenderEffect.createBlurEffect(f7, f7, Shader.TileMode.CLAMP) : null);
     }
 
-    @Override // fh.a
-    public final ch.d f() {
-        return new ch.e(this);
-    }
-
-    public final void g(float f7, RenderEffect renderEffect) {
+    public final void f(float f7, RenderEffect renderEffect) {
         this.b.setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(f7, f7, Shader.TileMode.CLAMP), renderEffect));
     }
 
-    public final void h(int i10, int i11) {
+    public final void g(int i10, int i11) {
         this.b.setPosition(0, 0, i10, i11);
     }
 
     @Override // oi.a
-    public final void y(Canvas canvas, float f7, float f10, float f11, float f12) {
+    public final void v(Canvas canvas, float f7, float f10, float f11, float f12) {
         i iVar;
         li.c cVar;
         if (!canvas.isHardwareAccelerated()) {
             a aVar = this.a;
             if (aVar != null) {
-                aVar.y(canvas, f7, f10, f11, f12);
+                aVar.v(canvas, f7, f10, f11, f12);
                 return;
             }
             return;
@@ -96,7 +86,7 @@ public final class d implements a {
         }
         a aVar2 = this.f;
         if (aVar2 != null) {
-            aVar2.y(canvas, f7, f10, f11, f12);
+            aVar2.v(canvas, f7, f10, f11, f12);
         }
         canvas.save();
         if (!this.n) {
@@ -104,7 +94,7 @@ public final class d implements a {
         }
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 31 && (cVar = this.h) != null) {
-            cVar.y(canvas, f7, f10, f11, f12);
+            cVar.v(canvas, f7, f10, f11, f12);
         } else if (i10 < 31 || (iVar = this.d) == null) {
             canvas.drawRenderNode(this.b);
         } else {

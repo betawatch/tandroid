@@ -7,7 +7,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class dp extends org.telegram.ui.Components.y80 {
     public final /* synthetic */ Context w;
@@ -26,10 +26,10 @@ public final class dp extends org.telegram.ui.Components.y80 {
         int i10;
         org.telegram.ui.ActionBar.d6 d6Var;
         hp hpVar = this.x;
-        if (!hpVar.V || (chatFull = hpVar.Y) == null || (i10 = chatFull.invitesCount) == 0) {
+        if (!hpVar.W || (chatFull = hpVar.Z) == null || (i10 = chatFull.invitesCount) == 0) {
             return true;
         }
-        String str = hpVar.a0 ? z10 ? "ApproveNewMembersEnableForLinksChannel" : "ApproveNewMembersDisableForLinksChannel" : z10 ? "ApproveNewMembersEnableForLinks" : "ApproveNewMembersDisableForLinks";
+        String str = hpVar.b0 ? z10 ? "ApproveNewMembersEnableForLinksChannel" : "ApproveNewMembersDisableForLinksChannel" : z10 ? "ApproveNewMembersEnableForLinks" : "ApproveNewMembersDisableForLinks";
         Context context = this.w;
         d6Var = ((org.telegram.ui.ActionBar.n2) hpVar).resourceProvider;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
@@ -50,13 +50,13 @@ public final class dp extends org.telegram.ui.Components.y80 {
                         boolean z11 = z10;
                         dp dpVar = this.b;
                         dpVar.setJoinRequest(z11);
-                        dpVar.x.W = true;
+                        dpVar.x.X = true;
                         break;
                     default:
                         boolean z12 = z10;
                         dp dpVar2 = this.b;
                         dpVar2.setJoinRequest(z12);
-                        dpVar2.x.W = false;
+                        dpVar2.x.X = false;
                         break;
                 }
             }
@@ -76,13 +76,13 @@ public final class dp extends org.telegram.ui.Components.y80 {
                         boolean z11 = z10;
                         dp dpVar = this.b;
                         dpVar.setJoinRequest(z11);
-                        dpVar.x.W = true;
+                        dpVar.x.X = true;
                         break;
                     default:
                         boolean z12 = z10;
                         dp dpVar2 = this.b;
                         dpVar2.setJoinRequest(z12);
-                        dpVar2.x.W = false;
+                        dpVar2.x.X = false;
                         break;
                 }
             }

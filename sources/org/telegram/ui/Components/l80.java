@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l80 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -76,12 +76,12 @@ public final /* synthetic */ class l80 implements View.OnClickListener {
                 if (photoViewer != null) {
                     dg0 dg0Var = rg0Var.r;
                     if (dg0Var == null) {
-                        d81 d81Var = photoViewer.F2;
-                        if (d81Var != null) {
-                            if (d81Var.y()) {
-                                d81Var.B();
+                        e81 e81Var = photoViewer.F2;
+                        if (e81Var != null) {
+                            if (e81Var.y()) {
+                                e81Var.B();
                             } else {
-                                d81Var.C();
+                                e81Var.C();
                             }
                         }
                     } else if (dg0Var.G) {
@@ -131,36 +131,36 @@ public final /* synthetic */ class l80 implements View.OnClickListener {
                 ((qo0) this.b).S(false);
                 break;
             case 15:
-                er0 er0Var = ((cr0) this.b).s;
-                ArrayList arrayList = er0Var.s;
+                fr0 fr0Var = ((dr0) this.b).s;
+                ArrayList arrayList = fr0Var.s;
                 if (!arrayList.isEmpty()) {
-                    er0Var.r = TextUtils.join(" ", arrayList).toString();
-                    er0Var.n = false;
-                    er0Var.d();
-                    er0Var.w = null;
-                    if (er0Var.b != 0) {
-                        er0Var.b = 0;
-                        dr0 dr0Var = er0Var.H;
-                        if (dr0Var != null) {
-                            ((org.telegram.ui.xv) dr0Var).i(0);
+                    fr0Var.r = TextUtils.join(" ", arrayList).toString();
+                    fr0Var.n = false;
+                    fr0Var.d();
+                    fr0Var.w = null;
+                    if (fr0Var.b != 0) {
+                        fr0Var.b = 0;
+                        er0 er0Var = fr0Var.H;
+                        if (er0Var != null) {
+                            ((org.telegram.ui.xv) er0Var).i(0);
                             break;
                         }
                     }
                 }
                 break;
             case 16:
-                pv0 pv0Var = ((yt0) this.b).f;
-                org.telegram.ui.ActionBar.n2 n2Var = pv0Var.v1;
+                qv0 qv0Var = ((zt0) this.b).f;
+                org.telegram.ui.ActionBar.n2 n2Var = qv0Var.v1;
                 if (n2Var != null && n2Var.getParentLayout() != null) {
-                    ((ActionBarLayout) pv0Var.v1.getParentLayout()).r();
+                    ((ActionBarLayout) qv0Var.v1.getParentLayout()).r();
                     break;
                 }
                 break;
             case 17:
-                ((br0) this.b).run();
+                ((gq0) this.b).run();
                 break;
             case 18:
-                ((tx0) this.b).b.getImageReceiver().startAnimation();
+                ((ux0) this.b).b.getImageReceiver().startAnimation();
                 break;
             case 19:
                 AndroidUtilities.runOnUIThread((ai.a7) this.b, 100L);
@@ -169,15 +169,15 @@ public final /* synthetic */ class l80 implements View.OnClickListener {
                 ((EditTextBoldCursor) this.b).setText("");
                 break;
             case 21:
-                l21 l21Var = ((n21) this.b).b;
-                l21Var.setText("");
-                AndroidUtilities.showKeyboard(l21Var);
+                m21 m21Var = ((o21) this.b).b;
+                m21Var.setText("");
+                AndroidUtilities.showKeyboard(m21Var);
                 break;
             case 22:
-                ((x21) this.b).b.getImageReceiver().startAnimation();
+                ((y21) this.b).b.getImageReceiver().startAnimation();
                 break;
             case 23:
-                ((t41) this.b).dismiss();
+                ((u41) this.b).dismiss();
                 break;
             case 24:
                 org.telegram.ui.yn ynVar = ((org.telegram.ui.wk) this.b).s;

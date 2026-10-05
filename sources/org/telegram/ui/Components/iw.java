@@ -11,9 +11,9 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class iw implements li.i, ol0, ym0, le.d {
+public final /* synthetic */ class iw implements li.l, ol0, ym0, le.d {
     public final /* synthetic */ int a;
     public final /* synthetic */ nz b;
 
@@ -76,7 +76,7 @@ public final /* synthetic */ class iw implements li.i, ol0, ym0, le.d {
                     if (i10 != nzVar2.H1) {
                         if (zwVar != null && (zyVar = zwVar.r) != null && zyVar.getSelectedCategory() != null) {
                             zwVar.c(null, false);
-                            zyVar.H1(null);
+                            zyVar.G1(null);
                         }
                         if (i10 != nzVar2.F1) {
                             if (i10 != nzVar2.G1) {
@@ -125,7 +125,7 @@ public final /* synthetic */ class iw implements li.i, ol0, ym0, le.d {
                             break;
                         }
                     } else {
-                        nzVar2.t1.o(new c61(nzVar2.getContext(), new hx(nzVar2), nzVar2.x1, nzVar2.y1, nzVar2.z1, null, nzVar2.Z1));
+                        nzVar2.t1.o(new d61(nzVar2.getContext(), new hx(nzVar2), nzVar2.x1, nzVar2.y1, nzVar2.z1, null, nzVar2.Z1));
                         break;
                     }
                 }
@@ -157,7 +157,7 @@ public final /* synthetic */ class iw implements li.i, ol0, ym0, le.d {
             if (T != null && T.b() <= nzVar.getRecentEmoji().size()) {
                 nzVar.t1.n();
             }
-            zxVar.z1(view);
+            zxVar.y1(view);
             return true;
         }
         if (wyVar.getSpan() != null || (str = (String) wyVar.getTag()) == null) {
@@ -238,7 +238,7 @@ public final /* synthetic */ class iw implements li.i, ol0, ym0, le.d {
             i11 = AndroidUtilities.dp((r3 * 4) - (AndroidUtilities.isTablet() ? 5 : 1)) + (avVar2.n[0] * i12);
         }
         if (iArr[0] - i11 < AndroidUtilities.dp(5.0f)) {
-            i11 = org.telegram.messenger.ok.D(5.0f, iArr[0] - i11, i11);
+            i11 = org.telegram.messenger.bi.D(5.0f, iArr[0] - i11, i11);
         } else if ((iArr[0] - i11) + dp > AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f)) {
             i11 += ((iArr[0] - i11) + dp) - (AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f));
         }
@@ -248,12 +248,12 @@ public final /* synthetic */ class iw implements li.i, ol0, ym0, le.d {
         bvVar.setFocusable(true);
         bvVar.showAsDropDown(view, i15, (((view.getMeasuredHeight() - i12) / 2) + ((-view.getMeasuredHeight()) - dp2)) - top);
         nzVar.h.requestDisallowInterceptTouchEvent(true);
-        zxVar.e1(true);
-        zxVar.z1(view);
+        zxVar.d1(true);
+        zxVar.y1(view);
         return true;
     }
 
-    @Override // li.i
+    @Override // li.l
     public void k(int i10) {
         nz nzVar = this.b;
         ah.i iVar = nzVar.j2;

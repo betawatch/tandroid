@@ -1,60 +1,34 @@
 package org.telegram.ui;
 
-import android.util.LongSparseArray;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class vi1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ WallpapersListActivity a;
+public final class vi1 extends View {
+    public int a;
+    public final /* synthetic */ WallpapersListActivity b;
 
-    public vi1(WallpapersListActivity wallpapersListActivity) {
-        this.a = wallpapersListActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vi1(WallpapersListActivity wallpapersListActivity, Context context) {
+        super(context);
+        this.b = wallpapersListActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        WallpapersListActivity wallpapersListActivity = this.a;
-        LongSparseArray longSparseArray = wallpapersListActivity.g0;
-        if (i10 == -1) {
-            kVar = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).actionBar;
-            if (!kVar.s()) {
-                wallpapersListActivity.finishFragment();
-                return;
-            }
-            longSparseArray.clear();
-            kVar2 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).actionBar;
-            kVar2.r();
-            wallpapersListActivity.D0();
-            return;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        WallpapersListActivity wallpapersListActivity = this.b;
+        wallpapersListActivity.s.setColor(this.a);
+        canvas.drawCircle(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(31.0f), AndroidUtilities.dp(18.0f), wallpapersListActivity.s);
+        if (this.a == org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false)) {
+            canvas.drawCircle(AndroidUtilities.dp(25.0f), AndroidUtilities.dp(31.0f), AndroidUtilities.dp(18.0f), wallpapersListActivity.v);
         }
-        if (i10 != 4) {
-            if (i10 == 3) {
-                uy uyVar = new uy(org.telegram.messenger.ok.e(3, "onlySelect", "dialogsType", true));
-                uyVar.C2 = new ti1(this);
-                wallpapersListActivity.presentFragment(uyVar);
-                return;
-            }
-            return;
-        }
-        if (wallpapersListActivity.getParentActivity() == null) {
-            return;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wallpapersListActivity.getParentActivity());
-        alertDialog$Builder.a.R = LocaleController.formatPluralString("DeleteBackground", longSparseArray.size(), new Object[0]);
-        alertDialog$Builder.a.T = LocaleController.formatString("DeleteChatBackgroundsAlert", R.string.DeleteChatBackgroundsAlert, new Object[0]);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ti1(this));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-        wallpapersListActivity.showDialog(b2Var);
-        TextView textView = (TextView) b2Var.d(-1);
-        if (textView != null) {
-            textView.setTextColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.q7, false));
-        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(AndroidUtilities.dp(50.0f), AndroidUtilities.dp(62.0f));
     }
 }

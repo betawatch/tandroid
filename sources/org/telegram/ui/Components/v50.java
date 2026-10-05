@@ -23,9 +23,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.yf1;
+import org.telegram.ui.wf1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v50 implements d5, org.telegram.ui.ActionBar.a2, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback, t5.b, s5.e, e2.h, x2.m, org.telegram.ui.oy {
     public final /* synthetic */ int a;
@@ -309,7 +309,7 @@ public final /* synthetic */ class v50 implements d5, org.telegram.ui.ActionBar.
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         Bitmap bitmap;
-        s21 s21Var = (s21) this.b;
+        t21 t21Var = (t21) this.b;
         op opVar = (op) this.c;
         TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.d;
         ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
@@ -320,9 +320,9 @@ public final /* synthetic */ class v50 implements d5, org.telegram.ui.ActionBar.
         if (drawable instanceof pc0) {
             pc0 pc0Var = (pc0) drawable;
             TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            pc0Var.t(s21.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
-            pc0Var.u(s21Var.L);
-            s21Var.invalidate();
+            pc0Var.t(t21.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
+            pc0Var.u(t21Var.L);
+            t21Var.invalidate();
         }
     }
 
@@ -335,12 +335,12 @@ public final /* synthetic */ class v50 implements d5, org.telegram.ui.ActionBar.
     public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
-                pv0 pv0Var = (pv0) this.b;
+                qv0 qv0Var = (qv0) this.b;
                 ai.u8 u8Var = (ai.u8) this.c;
                 ArrayList arrayList = (ArrayList) this.d;
                 u8Var.F(arrayList);
-                yc.a0(pv0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
-                pv0Var.L(false);
+                yc.a0(qv0Var.v1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
+                qv0Var.L(false);
                 break;
             case 4:
                 boolean[] zArr = (boolean[]) this.b;
@@ -390,7 +390,7 @@ public final /* synthetic */ class v50 implements d5, org.telegram.ui.ActionBar.
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(org.telegram.ui.uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, yf1 yf1Var) {
-        return yh.x3.W((yh.x3) this.b, (TL_stars.TL_starGiftUnique) this.c, (org.telegram.ui.uy) this.d, arrayList);
+    public boolean u(org.telegram.ui.uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
+        return yh.y3.W((yh.y3) this.b, (TL_stars.TL_starGiftUnique) this.c, (org.telegram.ui.uy) this.d, arrayList);
     }
 }

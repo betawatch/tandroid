@@ -47,7 +47,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class jl extends pi implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int E0 = 0;
@@ -70,7 +70,7 @@ public final class jl extends pi implements NotificationCenter.NotificationCente
     public final zl0 Q;
     public final dl R;
     public final ImageView S;
-    public final hg.e0 T;
+    public final hg.f0 T;
     public boolean U;
     public boolean V;
     public boolean W;
@@ -127,8 +127,8 @@ public final class jl extends pi implements NotificationCenter.NotificationCente
         xi xiVar2 = this.b;
         org.telegram.ui.ActionBar.n2 n2Var = xiVar2.f0;
         final org.telegram.ui.yn ynVar = n2Var instanceof org.telegram.ui.yn ? (org.telegram.ui.yn) n2Var : null;
-        long l1 = xiVar2.l1();
-        this.c0 = l1;
+        long n12 = xiVar2.n1();
+        this.c0 = n12;
         if (this.b.O) {
             this.y0 = 7;
         } else if (!z10 || ynVar == null || ynVar.h != null || ynVar.c() || UserObject.isUserSelf(ynVar.i())) {
@@ -348,7 +348,7 @@ public final class jl extends pi implements NotificationCenter.NotificationCente
         this.d = w0Var;
         this.f = true;
         w0Var.setClipToPadding(false);
-        gg.t0 t0Var2 = new gg.t0(context, this.y0, l1, true, d6Var, this.b.O, false, false);
+        gg.t0 t0Var2 = new gg.t0(context, this.y0, n12, true, d6Var, this.b.O, false, false);
         this.O = t0Var2;
         w0Var.setAdapter(t0Var2);
         xi xiVar3 = this.b;
@@ -361,10 +361,10 @@ public final class jl extends pi implements NotificationCenter.NotificationCente
         w0Var.setItemAnimator(jVar);
         t0Var2.O(this.a0, this.W);
         w0Var.setVerticalScrollBarEnabled(false);
-        w0Var.s1();
-        hg.e0 e0Var = new hg.e0(this, w0Var);
-        this.T = e0Var;
-        w0Var.setLayoutManager(e0Var);
+        w0Var.r1();
+        hg.f0 f0Var2 = new hg.f0(this, w0Var);
+        this.T = f0Var2;
+        w0Var.setLayoutManager(f0Var2);
         addView(w0Var, w7.z5.e(-1, -1, 51));
         w0Var.setOnScrollListener(new cl(this));
         final int i19 = 0;
@@ -388,7 +388,7 @@ public final class jl extends pi implements NotificationCenter.NotificationCente
             }
         });
         uk ukVar = new uk(this, 1);
-        t0Var2.H = l1;
+        t0Var2.H = n12;
         t0Var2.y = ukVar;
         t0Var2.P(AndroidUtilities.dp(16.0f) + this.z0);
         addView(f0Var, w7.z5.e(-1, -1, 51));
@@ -574,7 +574,7 @@ public final class jl extends pi implements NotificationCenter.NotificationCente
                 tL_messageMediaGeo.geo = tL_geoPoint;
                 tL_geoPoint.lat = AndroidUtilities.fixLocationCoord(jlVar.r0.getLatitude());
                 tL_messageMediaGeo.geo._long = AndroidUtilities.fixLocationCoord(jlVar.r0.getLongitude());
-                e5.a0(xiVar.J1, xiVar.h1() + 1, xiVar.l1(), new ai.e4(jlVar, ynVar, tL_messageMediaGeo, d6Var, 6));
+                e5.a0(xiVar.J1, xiVar.j1() + 1, xiVar.n1(), new ai.e4(jlVar, ynVar, tL_messageMediaGeo, d6Var, 6));
                 return;
             }
             jlVar2 = jlVar;
@@ -596,7 +596,7 @@ public final class jl extends pi implements NotificationCenter.NotificationCente
         }
         Object J = t0Var.J(i10);
         if (J instanceof TLRPC.TL_messageMediaVenue) {
-            e5.a0(xiVar.J1, xiVar.h1() + 1, xiVar.l1(), new ai.e4(jlVar2, ynVar2, (TLRPC.TL_messageMediaVenue) J, d6Var2, 7));
+            e5.a0(xiVar.J1, xiVar.j1() + 1, xiVar.n1(), new ai.e4(jlVar2, ynVar2, (TLRPC.TL_messageMediaVenue) J, d6Var2, 7));
         }
     }
 
@@ -888,7 +888,7 @@ public final class jl extends pi implements NotificationCenter.NotificationCente
             public final void run(int i10) {
                 jl jlVar = jl.this;
                 xi xiVar = jlVar.b;
-                e5.a0(xiVar.J1, xiVar.h1() + 1, xiVar.l1(), new ci.l4(jlVar, i10, 4));
+                e5.a0(xiVar.J1, xiVar.j1() + 1, xiVar.n1(), new ci.l4(jlVar, i10, 4));
             }
         }, d6Var).show();
     }
@@ -1167,13 +1167,13 @@ public final class jl extends pi implements NotificationCenter.NotificationCente
             int max3 = Math.max(this.C0 - i10, 0);
             int i14 = this.A0;
             org.telegram.ui.ActionBar.v0 v0Var = this.r;
-            float C = org.telegram.messenger.ok.C(80.0f, i14 - v0Var.getMeasuredHeight(), max3);
+            float C = org.telegram.messenger.bi.C(80.0f, i14 - v0Var.getMeasuredHeight(), max3);
             v0Var.setTranslationY(C);
             hl hlVar = this.s;
             hlVar.c = C;
             hlVar.setTranslationY(C + hlVar.b);
             this.n.setTranslationY(-this.B0);
-            int D = org.telegram.messenger.ok.D(48.0f, (this.A0 - this.B0) / 2, max);
+            int D = org.telegram.messenger.bi.D(48.0f, (this.A0 - this.B0) / 2, max);
             this.s0 = D;
             this.S.setTranslationY(D);
             if (i13 != this.B0) {
@@ -1461,8 +1461,8 @@ public final class jl extends pi implements NotificationCenter.NotificationCente
             }
             xiVar.setAllowNestedScroll(true);
         }
-        this.P.r1(0, i12, 0, this.e);
-        this.Q.r1(0, 0, 0, this.e);
+        this.P.q1(0, i12, 0, this.e);
+        this.Q.q1(0, 0, 0, this.e);
     }
 
     @Override // org.telegram.ui.Components.pi

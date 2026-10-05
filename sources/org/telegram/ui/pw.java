@@ -30,9 +30,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pw implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.nl0, oy, ContactsLoadingObserver.Callback, org.telegram.ui.Components.sv0, org.telegram.ui.Components.ol0, ImageReceiver.ImageReceiverDelegate, OnCompleteListener, yt, FileLoader.FileResolver {
+public final /* synthetic */ class pw implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.nl0, oy, ContactsLoadingObserver.Callback, org.telegram.ui.Components.tv0, org.telegram.ui.Components.ol0, ImageReceiver.ImageReceiverDelegate, OnCompleteListener, yt, FileLoader.FileResolver {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -53,7 +53,7 @@ public final /* synthetic */ class pw implements org.telegram.ui.ActionBar.a2, o
         return false;
     }
 
-    @Override // org.telegram.ui.Components.sv0
+    @Override // org.telegram.ui.Components.tv0
     public void b(LocationController.SharingLocationInfo sharingLocationInfo) {
         LaunchActivity launchActivity = (LaunchActivity) this.b;
         int[] iArr = (int[]) this.c;
@@ -351,7 +351,7 @@ public final /* synthetic */ class pw implements org.telegram.ui.ActionBar.a2, o
     }
 
     @Override // org.telegram.ui.oy
-    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, yf1 yf1Var) {
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, wf1 wf1Var) {
         o80 o80Var = (o80) this.c;
         uy uyVar2 = (uy) this.b;
         CacheByChatsController.KeepMediaException keepMediaException = null;

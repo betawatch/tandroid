@@ -17,10 +17,10 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class fv extends LinearLayout {
-    public final zb1 a;
+    public final xb1 a;
     public s4.c0 b;
     public final org.telegram.ui.Components.np c;
     public final org.telegram.ui.Components.kj0 d;
@@ -46,32 +46,32 @@ public final class fv extends LinearLayout {
         addView(frameLayout, w7.z5.c(-2.0f, -1));
         org.telegram.ui.Components.np npVar = new org.telegram.ui.Components.np(n2Var.getCurrentAccount(), (i10 == 0 || i10 == -1) ? 0 : 1, null);
         this.c = npVar;
-        zb1 zb1Var = new zb1(getContext(), 8, d6Var);
-        this.a = zb1Var;
-        zb1Var.setAdapter(npVar);
-        zb1Var.setSelectorDrawableColor(0);
-        zb1Var.setClipChildren(false);
-        zb1Var.setClipToPadding(false);
-        zb1Var.setHasFixedSize(true);
-        zb1Var.setItemAnimator(null);
-        zb1Var.setNestedScrollingEnabled(false);
+        xb1 xb1Var = new xb1(getContext(), 8, d6Var);
+        this.a = xb1Var;
+        xb1Var.setAdapter(npVar);
+        xb1Var.setSelectorDrawableColor(0);
+        xb1Var.setClipChildren(false);
+        xb1Var.setClipToPadding(false);
+        xb1Var.setHasFixedSize(true);
+        xb1Var.setItemAnimator(null);
+        xb1Var.setNestedScrollingEnabled(false);
         c();
-        zb1Var.setFocusable(false);
-        zb1Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        zb1Var.setOnItemClickListener(new ai.n6(15, this, n2Var));
+        xb1Var.setFocusable(false);
+        xb1Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+        xb1Var.setOnItemClickListener(new ai.n6(15, this, n2Var));
         org.telegram.ui.Components.w00 w00Var = new org.telegram.ui.Components.w00(getContext(), null);
         w00Var.setViewType(14);
         w00Var.setVisibility(0);
         if (i10 == 0 || i10 == -1) {
             frameLayout.addView(w00Var, w7.z5.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
-            frameLayout.addView(zb1Var, w7.z5.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
+            frameLayout.addView(xb1Var, w7.z5.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
         } else {
             frameLayout.addView(w00Var, w7.z5.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
-            frameLayout.addView(zb1Var, w7.z5.d(-1, -2.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
+            frameLayout.addView(xb1Var, w7.z5.d(-1, -2.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
         }
-        zb1Var.setEmptyView(w00Var);
-        zb1Var.Y1 = true;
-        zb1Var.Z1 = 0;
+        xb1Var.setEmptyView(w00Var);
+        xb1Var.Y1 = true;
+        xb1Var.Z1 = 0;
         if (i10 == 0) {
             org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(R.raw.sun_outline, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
             this.d = kj0Var;
@@ -233,7 +233,7 @@ public final class fv extends LinearLayout {
         boolean z10 = point.y > point.x;
         Boolean bool = this.w;
         if (bool == null || bool.booleanValue() != z10) {
-            zb1 zb1Var = this.a;
+            xb1 xb1Var = this.a;
             int i10 = this.s;
             if (i10 != 0 && i10 != -1) {
                 int i11 = z10 ? 3 : 9;
@@ -241,18 +241,18 @@ public final class fv extends LinearLayout {
                 if (c0Var instanceof s4.s) {
                     ((s4.s) c0Var).y1(i11);
                 } else {
-                    zb1Var.setHasFixedSize(false);
+                    xb1Var.setHasFixedSize(false);
                     getContext();
                     s4.s sVar = new s4.s(i11);
                     sVar.O = new ev(0);
                     this.b = sVar;
-                    zb1Var.setLayoutManager(sVar);
+                    xb1Var.setLayoutManager(sVar);
                 }
             } else if (this.b == null) {
                 getContext();
                 s4.c0 c0Var2 = new s4.c0(0, false);
                 this.b = c0Var2;
-                zb1Var.setLayoutManager(c0Var2);
+                xb1Var.setLayoutManager(c0Var2);
             }
             this.w = Boolean.valueOf(z10);
         }

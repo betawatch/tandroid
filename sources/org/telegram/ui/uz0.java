@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class uz0 extends org.telegram.ui.Components.r6 {
     public final /* synthetic */ ProfileActivity b;
@@ -31,9 +31,9 @@ public final class uz0 extends org.telegram.ui.Components.r6 {
         if (lz0Var != null) {
             lz0Var.setActionBarActionMode(f7);
         }
-        yh.g0 g0Var = profileActivity.v0;
-        if (g0Var != null) {
-            g0Var.setActionBarActionMode(f7);
+        yh.h0 h0Var = profileActivity.v0;
+        if (h0Var != null) {
+            h0Var.setActionBarActionMode(f7);
         }
         profileActivity.d1.invalidate();
         int v03 = profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.vh, profileActivity.z0);
@@ -54,12 +54,12 @@ public final class uz0 extends org.telegram.ui.Components.r6 {
         int v05 = profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v8, profileActivity.z0);
         int v06 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.y8, profileActivity.z0);
         kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-        kVar.B(AndroidUtilities.getOffsetColor(v05, v06, f7, 1.0f), false);
+        kVar.A(AndroidUtilities.getOffsetColor(v05, v06, f7, 1.0f), false);
         MessagesController.PeerColor peerColor = profileActivity.Q5;
         int v07 = peerColor != null ? 1090519039 : peerColor != null ? 553648127 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.f8, profileActivity.z0);
         int v08 = org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.z8, profileActivity.z0);
         kVar2 = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-        kVar2.A(AndroidUtilities.getOffsetColor(v07, v08, f7, 1.0f), false);
+        kVar2.z(AndroidUtilities.getOffsetColor(v07, v08, f7, 1.0f), false);
         profileActivity.d1.invalidate();
         profileActivity.T0.setIconColor(profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v8, profileActivity.z0));
         profileActivity.Q0.setIconColor(profileActivity.Q5 != null ? -1 : org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.v8, profileActivity.z0));

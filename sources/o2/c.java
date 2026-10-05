@@ -4,7 +4,7 @@ import b2.r0;
 import java.util.ArrayList;
 import v7.y7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class c {
     public static final int[] c = {8, 13, 11, 2, 0, 1, 7};
@@ -25,7 +25,7 @@ public final class c {
         b2.r a2 = sVar.a();
         String str = sVar.k;
         a2.q = r0.n("application/x-media3-cues");
-        a2.O = this.a.H(sVar);
+        a2.O = this.a.D(sVar);
         StringBuilder sb2 = new StringBuilder();
         sb2.append(sVar.r);
         sb2.append(str != null ? " ".concat(str) : "");

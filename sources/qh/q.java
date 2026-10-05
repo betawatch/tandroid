@@ -10,12 +10,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.e71;
 import org.telegram.ui.Components.m9;
 import org.telegram.ui.web.u0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class q extends FrameLayout {
     public final m9 a;
@@ -37,7 +37,7 @@ public final class q extends FrameLayout {
         addView(textView, z5.g());
     }
 
-    public final c71 a(n2 n2Var, long j3, int i10, byte[] bArr, int i11, Utilities.Callback callback) {
+    public final e71 a(n2 n2Var, long j3, int i10, byte[] bArr, int i11, Utilities.Callback callback) {
         k kVar = this.c;
         if (kVar != null) {
             return kVar;

@@ -15,10 +15,10 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.eu;
-import org.telegram.ui.p61;
-import org.telegram.ui.t51;
+import org.telegram.ui.n61;
+import org.telegram.ui.r51;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class c6 extends eu {
     public final /* synthetic */ int c;
@@ -63,7 +63,7 @@ public final class c6 extends eu {
     public void invalidate() {
         switch (this.c) {
             case 1:
-                if (!zg.e0.b) {
+                if (!zg.c0.b) {
                     super.invalidate();
                     break;
                 }
@@ -115,8 +115,8 @@ public final class c6 extends eu {
                 break;
             case 1:
                 if (z10) {
-                    ((t51) this.d).y.q();
-                    AndroidUtilities.runOnUIThread(new p61(this, 0), 200L);
+                    ((r51) this.d).y.q();
+                    AndroidUtilities.runOnUIThread(new n61(this, 0), 200L);
                 }
                 super.onFocusChanged(z10, i10, rect);
                 break;
@@ -180,10 +180,10 @@ public final class c6 extends eu {
                 }
                 break;
             case 1:
-                if (motionEvent.getAction() != 1 || !((t51) this.d).y.u()) {
+                if (motionEvent.getAction() != 1 || !((r51) this.d).y.u()) {
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new p61(this, 1), 200L);
+                    AndroidUtilities.runOnUIThread(new n61(this, 1), 200L);
                     break;
                 }
         }

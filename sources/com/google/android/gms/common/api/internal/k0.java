@@ -2,12 +2,12 @@ package com.google.android.gms.common.api.internal;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public interface k0 {
     boolean A();
 
-    e E(e eVar);
+    e D(e eVar);
 
     void e(Bundle bundle);
 
@@ -17,5 +17,5 @@ public interface k0 {
 
     void t(int i10);
 
-    void u();
+    void w();
 }

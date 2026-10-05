@@ -3,38 +3,38 @@ package ei;
 import android.content.Context;
 import android.view.View;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.e71;
 import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class k extends f61 {
+public final class k extends g61 {
     static {
-        f61.setup(new k());
+        g61.setup(new k());
     }
 
-    public static g61 a(int i10, String str, String str2) {
-        g61 J = g61.J(k.class);
-        J.k = i10;
-        J.l = str;
-        J.m = str2;
-        return J;
+    public static h61 a(int i10, String str, String str2) {
+        h61 K = h61.K(k.class);
+        K.k = i10;
+        K.l = str;
+        K.m = str2;
+        return K;
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final void bindView(View view, g61 g61Var, boolean z10, u61 u61Var, c71 c71Var) {
-        ((l) view).a(g61Var.l, g61Var.m, g61Var.k);
+    @Override // org.telegram.ui.Components.g61
+    public final void bindView(View view, h61 h61Var, boolean z10, w61 w61Var, e71 e71Var) {
+        ((l) view).a(h61Var.l, h61Var.m, h61Var.k);
     }
 
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.g61
     public final View createView(Context context, zl0 zl0Var, int i10, int i11, d6 d6Var) {
         return new l(context, d6Var, false);
     }
 
-    @Override // org.telegram.ui.Components.f61
+    @Override // org.telegram.ui.Components.g61
     public final boolean isClickable() {
         return false;
     }

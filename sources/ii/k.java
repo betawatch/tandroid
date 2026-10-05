@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.r80;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -123,7 +123,7 @@ public final /* synthetic */ class k implements Runnable {
                         AccountInstance accountInstance = AccountInstance.getInstance(UserConfig.selectedAccount);
                         of.b bVar = new of.b(7, false);
                         bVar.O((c5.o) list.get(0));
-                        billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumGiveaway, Collections.singletonList(bVar.s()));
+                        billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumGiveaway, Collections.singletonList(bVar.i()));
                         break;
                     }
                 } else {
@@ -149,7 +149,7 @@ public final /* synthetic */ class k implements Runnable {
                         AccountInstance accountInstance2 = AccountInstance.getInstance(UserConfig.selectedAccount);
                         of.b bVar2 = new of.b(7, false);
                         bVar2.O((c5.o) list2.get(0));
-                        billingController2.launchBillingFlow(parentActivity2, accountInstance2, tL_inputStorePaymentPremiumGiftCode, Collections.singletonList(bVar2.s()));
+                        billingController2.launchBillingFlow(parentActivity2, accountInstance2, tL_inputStorePaymentPremiumGiftCode, Collections.singletonList(bVar2.i()));
                         break;
                     }
                 } else {
@@ -176,12 +176,12 @@ public final /* synthetic */ class k implements Runnable {
                     }
                 } else {
                     BillingController.getInstance().addResultListener(oVar.c, new ci.k5(5, hVar3, m0Var));
-                    BillingController.getInstance().setOnCanceled(new yh.j4(m0Var, 2));
+                    BillingController.getInstance().setOnCanceled(new yh.k4(m0Var, 2));
                     BillingController billingController3 = BillingController.getInstance();
                     AccountInstance accountInstance3 = AccountInstance.getInstance(UserConfig.selectedAccount);
                     of.b bVar3 = new of.b(7, false);
                     bVar3.O((c5.o) list3.get(0));
-                    billingController3.launchBillingFlow(activity, accountInstance3, tL_inputStorePaymentStarsGiveaway, Collections.singletonList(bVar3.s()));
+                    billingController3.launchBillingFlow(activity, accountInstance3, tL_inputStorePaymentStarsGiveaway, Collections.singletonList(bVar3.i()));
                     break;
                 }
             default:
@@ -203,12 +203,12 @@ public final /* synthetic */ class k implements Runnable {
                     }
                 } else {
                     BillingController.getInstance().addResultListener(oVar2.c, new ci.k5(4, hVar4, r80Var));
-                    BillingController.getInstance().setOnCanceled(new yh.l4(r80Var, 0));
+                    BillingController.getInstance().setOnCanceled(new yh.m4(r80Var, 0));
                     BillingController billingController4 = BillingController.getInstance();
                     AccountInstance accountInstance4 = AccountInstance.getInstance(UserConfig.selectedAccount);
                     of.b bVar4 = new of.b(7, false);
                     bVar4.O((c5.o) list4.get(0));
-                    billingController4.launchBillingFlow(activity2, accountInstance4, tL_inputStorePaymentStarsGift, Collections.singletonList(bVar4.s()));
+                    billingController4.launchBillingFlow(activity2, accountInstance4, tL_inputStorePaymentStarsGift, Collections.singletonList(bVar4.i()));
                     break;
                 }
         }

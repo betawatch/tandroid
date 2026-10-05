@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.e6;
@@ -27,7 +27,7 @@ import org.telegram.ui.g70;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class q0 extends FrameLayout implements t90 {
     public boolean E;
@@ -279,7 +279,7 @@ public class q0 extends FrameLayout implements t90 {
         hVar.n = 1.2f;
         hVar.k = false;
         hVar.m = 4.0f;
-        LinearLayout f7 = ok.f(context, 0);
+        LinearLayout e7 = bi.e(context, 0);
         p0 p0Var = new p0(this, context, 0);
         this.d = p0Var;
         p0Var.b(0.35f, 350L, tr.h);
@@ -293,11 +293,11 @@ public class q0 extends FrameLayout implements t90 {
         nj0Var.setVisibility(8);
         ai.f0 f0Var = new ai.f0(this, context, 28);
         this.r = f0Var;
-        f0Var.addView(f7, z5.e(-2, -2, 17));
+        f0Var.addView(e7, z5.e(-2, -2, 17));
         int k10 = i0.a.k(-1, 120);
         f0Var.setBackground(i6.i0(i10, i10, i10, i10, 0, k10, k10));
-        f7.addView(p0Var, z5.q(-2, -2, 16));
-        f7.addView(nj0Var, z5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
+        e7.addView(p0Var, z5.q(-2, -2, 16));
+        e7.addView(nj0Var, z5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
         addView(f0Var);
         setOutlineProvider(yf.f0.b);
         setClipToOutline(true);

@@ -13,13 +13,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.is;
 import org.telegram.ui.Components.os;
-import org.telegram.ui.Components.pv0;
-import org.telegram.ui.Components.q21;
+import org.telegram.ui.Components.qv0;
+import org.telegram.ui.Components.r21;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.oi0;
 import org.telegram.ui.t70;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class za implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -75,12 +75,12 @@ public final /* synthetic */ class za implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ei.m3((is) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj, 22));
                 break;
             case 5:
-                pv0 pv0Var = (pv0) obj3;
+                qv0 qv0Var = (qv0) obj3;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
                 AndroidUtilities.runOnUIThread(new os((org.telegram.ui.ActionBar.b2[]) obj2, 2));
                 int i11 = this.b;
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new c9(pv0Var, i11, tL_error, tL_messages_editMessage, 25));
+                    AndroidUtilities.runOnUIThread(new c9(qv0Var, i11, tL_error, tL_messages_editMessage, 25));
                     break;
                 } else {
                     MessagesController.getInstance(i11).processUpdates((TLRPC.Updates) tLObject, false);
@@ -98,7 +98,7 @@ public final /* synthetic */ class za implements RequestDelegate {
                 int i12 = this.b;
                 if (!z10) {
                     if (tL_error != null) {
-                        AndroidUtilities.runOnUIThread(new q21(i12, tL_error, n2Var2, tL_payments_assignPlayMarketTransaction, 10));
+                        AndroidUtilities.runOnUIThread(new r21(i12, tL_error, n2Var2, tL_payments_assignPlayMarketTransaction, 10));
                         break;
                     }
                 } else {

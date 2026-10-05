@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class g6 {
     public final int a;
@@ -47,7 +47,7 @@ public final class g6 {
         if (i10 == g6Var.e && !messages_messages.messages.isEmpty()) {
             arrayList2.clear();
             Collections.sort(arrayList, Comparator$-CC.comparingInt(new ai.g7(7)));
-            TLRPC.Message message = (TLRPC.Message) hg.k0.g(1, messages_messages.messages);
+            TLRPC.Message message = (TLRPC.Message) hg.c.g(1, messages_messages.messages);
             long j10 = message.grouped_id;
             if (j10 != 0) {
                 ArrayList<TLRPC.Message> arrayList3 = messages_messages.messages;

@@ -19,7 +19,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class a50 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final TextView[] b;
@@ -45,7 +45,7 @@ public final class a50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         FrameLayout frameLayout = new FrameLayout(context);
         setCustomView(frameLayout);
         TextView textView = new TextView(context);
-        org.telegram.messenger.ok.k(20.0f, 1, textView);
+        org.telegram.messenger.bi.j(20.0f, 1, textView);
         int i10 = org.telegram.ui.ActionBar.i6.j5;
         textView.setTextColor(getThemedColor(i10));
         textView.setSingleLine(true);

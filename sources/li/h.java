@@ -7,35 +7,43 @@ import android.os.Trace;
 import android.view.View;
 import j$.util.Objects;
 import java.util.ArrayList;
+import java.util.Iterator;
 import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.zl0;
 import w7.e0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class h {
-    public final /* synthetic */ m a;
+    public final /* synthetic */ p a;
 
-    public h(m mVar) {
-        this.a = mVar;
+    public h(p pVar) {
+        this.a = pVar;
     }
 
     public final void a() {
         int i10;
-        m mVar = this.a;
-        ArrayList arrayList = mVar.c;
-        ArrayList arrayList2 = mVar.z;
-        long j3 = mVar.q;
-        long j10 = m.B;
+        p pVar = this.a;
+        ArrayList arrayList = pVar.c;
+        ArrayList arrayList2 = pVar.A;
+        long j3 = pVar.r;
+        long j10 = p.C;
         if (j3 != j10) {
-            mVar.q = j10;
+            pVar.r = j10;
             i10 = 32;
         } else {
             i10 = 0;
         }
         long j11 = i6.Hl;
-        if (mVar.p != j11) {
-            mVar.p = j11;
+        if (pVar.q != j11) {
+            pVar.q = j11;
             i10 |= 16;
+        }
+        Iterator it = pVar.l.iterator();
+        while (it.hasNext()) {
+            if (((zl0) it.next()).b0()) {
+                pVar.g++;
+            }
         }
         if (i10 == 0) {
             return;
@@ -43,70 +51,70 @@ public final class h {
         if (e0.a(i10, 16)) {
             int size = arrayList2.size();
             for (int i11 = 0; i11 < size; i11++) {
-                k kVar = (k) arrayList2.get(i11);
-                kVar.a.a(kVar.b.f());
+                n nVar = (n) arrayList2.get(i11);
+                nVar.a.a(nVar.b.f());
             }
         }
         int size2 = arrayList.size();
         for (int i12 = 0; i12 < size2; i12++) {
-            l lVar = (l) arrayList.get(i12);
+            o oVar = (o) arrayList.get(i12);
             if (e0.a(i10, 32)) {
-                e eVar = lVar.b;
-                n nVar = m.A;
-                if (!Objects.equals(eVar.a, nVar)) {
-                    eVar.a = nVar;
-                    eVar.g(nVar);
+                e eVar = oVar.b;
+                q qVar = p.B;
+                if (!Objects.equals(eVar.a, qVar)) {
+                    eVar.a = qVar;
+                    eVar.g(qVar);
                 }
             }
             if (e0.a(i10, 16)) {
-                lVar.b.k();
+                oVar.b.k();
             }
-            lVar.b.invalidateSelf();
-            lVar.a.invalidate();
-            lVar.g = true;
+            oVar.b.invalidateSelf();
+            oVar.a.invalidate();
+            oVar.g = true;
         }
-        mVar.r |= i10;
+        pVar.s |= i10;
     }
 
     public final void b() {
         boolean z10;
         boolean z11;
         boolean z12;
-        m mVar = this.a;
-        ArrayList arrayList = mVar.l;
+        p pVar = this.a;
+        ArrayList arrayList = pVar.m;
         Trace.beginSection("G.CheckPositions");
-        Rect rect = mVar.t;
-        ni.a aVar = mVar.w;
-        ArrayList arrayList2 = mVar.c;
-        RectF rectF = mVar.s;
-        int width = mVar.k.getWidth();
-        int height = mVar.k.getHeight();
-        if (mVar.u == width && mVar.v == height) {
+        Rect rect = pVar.u;
+        ni.a aVar = pVar.x;
+        ArrayList arrayList2 = pVar.c;
+        RectF rectF = pVar.t;
+        int width = pVar.k.getWidth();
+        int height = pVar.k.getHeight();
+        if (pVar.v == width && pVar.w == height) {
             z10 = false;
         } else {
-            mVar.u = width;
-            mVar.v = height;
+            pVar.v = width;
+            pVar.w = height;
             z10 = true;
         }
         int size = arrayList2.size();
         int i10 = 0;
         while (i10 < size) {
-            l lVar = (l) arrayList2.get(i10);
-            View view = lVar.a;
-            RectF rectF2 = lVar.f;
-            RectF rectF3 = lVar.d;
-            RectF rectF4 = lVar.c;
+            o oVar = (o) arrayList2.get(i10);
+            View view = oVar.a;
+            RectF rectF2 = oVar.f;
+            RectF rectF3 = oVar.d;
+            RectF rectF4 = oVar.c;
             boolean z13 = z10;
-            RectF rectF5 = lVar.e;
+            RectF rectF5 = oVar.e;
             int i11 = size;
-            e eVar = lVar.b;
+            e eVar = oVar.b;
             int i12 = i10;
-            if (hh.k.c(view, mVar.k, rectF)) {
+            if (hh.k.c(view, pVar.k, rectF)) {
                 if (rectF4.equals(rectF)) {
                     z11 = false;
                 } else {
                     rectF4.set(rectF);
-                    lVar.g = true;
+                    oVar.g = true;
                     eVar.i(rectF4.left, rectF4.top);
                     z11 = true;
                 }
@@ -117,28 +125,28 @@ public final class h {
                 } else {
                     rectF3.set(rectF);
                     z12 = true;
-                    lVar.g = true;
+                    oVar.g = true;
                     z11 = true;
                 }
                 rectF.offset(rectF4.left, rectF4.top);
                 if (!rectF5.equals(rectF)) {
                     rectF5.set(rectF);
-                    lVar.g = z12;
+                    oVar.g = z12;
                     z11 = true;
                 }
                 rectF.set(rectF5);
                 rectF.inset(-eVar.c(), -eVar.d());
                 if (!rectF2.equals(rectF)) {
                     rectF2.set(rectF);
-                    lVar.g = true;
+                    oVar.g = true;
                     z11 = true;
                 }
-                View view2 = lVar.a;
+                View view2 = oVar.a;
                 boolean z14 = !rectF5.isEmpty() && view2.isAttachedToWindow() && rectF5.intersects(0.0f, 0.0f, (float) width, (float) height) && eVar.b > 0 && view2.getVisibility() == 0 && view2.getAlpha() > 0.0f && view2.getScaleX() != 0.0f && view2.getScaleY() != 0.0f;
-                boolean z15 = lVar.h != z14 || (z14 && !(z14 && eVar.e()));
+                boolean z15 = oVar.h != z14 || (z14 && !(z14 && eVar.e()));
                 if (z15) {
-                    lVar.h = z14;
-                    lVar.g = true;
+                    oVar.h = z14;
+                    oVar.g = true;
                     z11 = true;
                 }
                 if ((z14 || z15) && z11) {
@@ -156,14 +164,14 @@ public final class h {
             aVar.b = 0;
             int size2 = arrayList2.size();
             for (int i13 = 0; i13 < size2; i13++) {
-                l lVar2 = (l) arrayList2.get(i13);
-                if (lVar2.h && lVar2.b.j()) {
-                    RectF rectF6 = lVar2.f;
+                o oVar2 = (o) arrayList2.get(i13);
+                if (oVar2.h && oVar2.b.j()) {
+                    RectF rectF6 = oVar2.f;
                     aVar.a(rectF6.left, rectF6.top, rectF6.right, rectF6.bottom);
                 }
             }
-            ni.b bVar = mVar.d;
-            ni.a aVar2 = mVar.x;
+            ni.b bVar = pVar.d;
+            ni.a aVar2 = pVar.y;
             bVar.getClass();
             if (aVar == aVar2) {
                 throw new IllegalArgumentException("positions and output must be different arrays");
@@ -236,8 +244,8 @@ public final class h {
             }
         }
         Trace.endSection();
-        int i20 = mVar.r;
-        mVar.r = 0;
+        int i20 = pVar.s;
+        pVar.s = 0;
         if (z16) {
             i20 |= 4;
         }
@@ -247,33 +255,33 @@ public final class h {
                 ah.i iVar = (ah.i) arrayList.get(i21);
                 if (iVar.e) {
                     iVar.e = false;
-                    mVar.g++;
+                    pVar.g++;
                 }
             }
         }
-        long j3 = mVar.o;
-        long j10 = mVar.g;
+        long j3 = pVar.p;
+        long j10 = pVar.g;
         if (j3 != j10) {
-            mVar.o = j10;
+            pVar.p = j10;
             i20 |= 8;
         }
-        long j11 = mVar.n;
-        long j12 = mVar.f;
+        long j11 = pVar.o;
+        long j12 = pVar.f;
         if (j11 != j12) {
-            mVar.n = j12;
+            pVar.o = j12;
             i20 |= 2;
         }
-        long j13 = mVar.m;
-        long j14 = mVar.e;
+        long j13 = pVar.n;
+        long j14 = pVar.e;
         if (j13 != j14) {
-            mVar.m = j14;
+            pVar.n = j14;
             i20 |= 1;
         }
         if (i20 != 0) {
             Trace.beginSection("G.Listeners");
-            i iVar2 = mVar.a;
-            if (iVar2 != null) {
-                iVar2.k(i20);
+            l lVar = pVar.a;
+            if (lVar != null) {
+                lVar.k(i20);
             }
             Trace.endSection();
             boolean a2 = e0.a(i20, 4);
@@ -284,16 +292,16 @@ public final class h {
             Trace.beginSection("G.UpdateDisplayLists");
             int size4 = arrayList2.size();
             for (int i22 = 0; i22 < size4; i22++) {
-                l lVar3 = (l) arrayList2.get(i22);
-                boolean z18 = lVar3.h;
-                e eVar2 = lVar3.b;
-                if (z18 && (lVar3.g || a2 || z17)) {
-                    lVar3.g = false;
+                o oVar3 = (o) arrayList2.get(i22);
+                boolean z18 = oVar3.h;
+                e eVar2 = oVar3.b;
+                if (z18 && (oVar3.g || a2 || z17)) {
+                    oVar3.g = false;
                     if (eVar2.j()) {
                         eVar2.a();
                     } else {
                         eVar2.invalidateSelf();
-                        lVar3.a.invalidate();
+                        oVar3.a.invalidate();
                     }
                 }
             }

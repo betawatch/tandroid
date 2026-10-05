@@ -17,7 +17,7 @@ import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.dg0;
-import org.telegram.ui.Components.q31;
+import org.telegram.ui.Components.r31;
 import org.telegram.ui.Components.rg0;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.u90;
@@ -28,7 +28,7 @@ import org.telegram.ui.n20;
 import org.telegram.ui.r50;
 import org.telegram.ui.s50;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class n4 extends View {
     public final /* synthetic */ int a = 0;
@@ -49,8 +49,8 @@ public final class n4 extends View {
         org.telegram.ui.ActionBar.k kVar;
         switch (this.a) {
             case 2:
-                q31 q31Var = (q31) this.d;
-                org.telegram.ui.Components.o6 o6Var = q31Var.e;
+                r31 r31Var = (r31) this.d;
+                org.telegram.ui.Components.o6 o6Var = r31Var.e;
                 float g10 = o6Var.g();
                 if (g10 > 0.0f) {
                     float lerp = AndroidUtilities.lerp(0.6f, 1.0f, g10);
@@ -62,9 +62,9 @@ public final class n4 extends View {
                     float dp = AndroidUtilities.dp(8.33f);
                     float dp2 = AndroidUtilities.dp(8.33f);
                     org.telegram.ui.Components.i6 i6Var = (org.telegram.ui.Components.i6) this.b;
-                    i6Var.setColor(i6Var.b.a(org.telegram.ui.ActionBar.i6.v0(q31Var.I, i6Var.a), false));
-                    textColor = q31Var.getTextColor();
-                    i6Var.setColor(i0.a.d(q31Var.F, i6Var.getColor(), textColor));
+                    i6Var.setColor(i6Var.b.a(org.telegram.ui.ActionBar.i6.v0(r31Var.I, i6Var.a), false));
+                    textColor = r31Var.getTextColor();
+                    i6Var.setColor(i0.a.d(r31Var.F, i6Var.getColor(), textColor));
                     i6Var.setAlpha((int) (i6Var.getAlpha() * g10));
                     canvas.drawRoundRect(rectF, dp, dp2, i6Var);
                     o6Var.m(rectF);
@@ -295,7 +295,7 @@ public final class n4 extends View {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 2:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(AndroidUtilities.dp(16.66f), ((q31) this.d).e.d + AndroidUtilities.dp(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.66f), TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(AndroidUtilities.dp(16.66f), ((r31) this.d).e.d + AndroidUtilities.dp(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.66f), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -333,7 +333,7 @@ public final class n4 extends View {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 2:
-                return ((q31) this.d).e == drawable || super.verifyDrawable(drawable);
+                return ((r31) this.d).e == drawable || super.verifyDrawable(drawable);
             case 3:
                 return super.verifyDrawable(drawable) || drawable == ((org.telegram.ui.Components.o6) this.b);
             default:
@@ -379,12 +379,12 @@ public final class n4 extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n4(q31 q31Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public n4(r31 r31Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        this.d = q31Var;
+        this.d = r31Var;
         this.c = d6Var;
         this.b = new org.telegram.ui.Components.i6(this, d6Var);
-        q31Var.e.setCallback(this);
+        r31Var.e.setCallback(this);
     }
 
     public n4(Activity activity) {

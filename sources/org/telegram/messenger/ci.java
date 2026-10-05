@@ -1,32 +1,30 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ci implements Runnable {
+public final /* synthetic */ class ci implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ SecretChatHelper b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ TLRPC.EncryptedChat c;
 
-    public /* synthetic */ ci(SecretChatHelper secretChatHelper, long j3, int i10) {
+    public /* synthetic */ ci(SecretChatHelper secretChatHelper, TLRPC.EncryptedChat encryptedChat, int i10) {
         this.a = i10;
         this.b = secretChatHelper;
-        this.c = j3;
+        this.c = encryptedChat;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$processDecryptedObject$12(this.c);
-                break;
-            case 1:
-                this.b.lambda$processDecryptedObject$10(this.c);
-                break;
-            case 2:
-                this.b.lambda$processDecryptedObject$11(this.c);
+                this.b.lambda$acceptSecretChat$22(this.c, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$processUpdateEncryption$3(this.c);
+                this.b.lambda$acceptSecretChat$23(this.c, tLObject, tL_error);
                 break;
         }
     }

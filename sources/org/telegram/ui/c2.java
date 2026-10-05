@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class c2 extends View implements org.telegram.ui.Cells.p9, e3 {
     public final t70 a;
@@ -68,7 +68,7 @@ public final class c2 extends View implements org.telegram.ui.Cells.p9, e3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.ok.a(this);
+        return org.telegram.messenger.bi.a(this);
     }
 
     @Override // android.view.View
@@ -143,7 +143,7 @@ public final class c2 extends View implements org.telegram.ui.Cells.p9, e3 {
                 a2 = Layout.Alignment.ALIGN_CENTER;
             } else {
                 g4 g4Var = this.b;
-                a2 = (g4Var == null || !g4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.fx0.a();
+                a2 = (g4Var == null || !g4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.gx0.a();
             }
             Layout.Alignment alignment = a2;
             TL_iv.RichText richText = this.f.text;

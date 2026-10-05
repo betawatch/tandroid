@@ -20,10 +20,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.gw0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class w0 extends FrameLayout {
     public float E;
@@ -44,7 +44,7 @@ public abstract class w0 extends FrameLayout {
     public final TextView s;
     public final TextView v;
     public final w1 w;
-    public fw0 x;
+    public gw0 x;
     public boolean y;
 
     public w0(Context context, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, MediaController.CropState cropState) {
@@ -110,23 +110,23 @@ public abstract class w0 extends FrameLayout {
         frameLayout.addView(i12, z5.d(-2, 44.0f, 5, 0.0f, 0.0f, -8.0f, 0.0f));
     }
 
-    private fw0 getPaintingSize() {
-        fw0 fw0Var = this.x;
-        if (fw0Var != null) {
-            return fw0Var;
+    private gw0 getPaintingSize() {
+        gw0 gw0Var = this.x;
+        if (gw0Var != null) {
+            return gw0Var;
         }
         Bitmap bitmap = this.f;
-        fw0 fw0Var2 = new fw0(bitmap.getWidth(), bitmap.getHeight());
+        gw0 gw0Var2 = new gw0(bitmap.getWidth(), bitmap.getHeight());
         float f7 = 1280;
-        fw0Var2.a = f7;
+        gw0Var2.a = f7;
         float floor = (float) Math.floor((f7 * r0) / r1);
-        fw0Var2.b = floor;
+        gw0Var2.b = floor;
         if (floor > f7) {
-            fw0Var2.b = f7;
-            fw0Var2.a = (float) Math.floor((f7 * r1) / r0);
+            gw0Var2.b = f7;
+            gw0Var2.a = (float) Math.floor((f7 * r1) / r0);
         }
-        this.x = fw0Var2;
-        return fw0Var2;
+        this.x = gw0Var2;
+        return gw0Var2;
     }
 
     public final void a(MotionEvent motionEvent) {
@@ -138,7 +138,7 @@ public abstract class w0 extends FrameLayout {
         double radians = (float) Math.toRadians(-f1Var.getRotation());
         double d10 = y3;
         float measuredWidth = (f1Var.getMeasuredWidth() / 2.0f) + ((float) ((Math.cos(radians) * d) - (Math.sin(radians) * d10)));
-        float measuredHeight = (f1Var.getMeasuredHeight() / 2.0f) + ((float) hg.k0.e(radians, d10, Math.sin(radians) * d));
+        float measuredHeight = (f1Var.getMeasuredHeight() / 2.0f) + ((float) hg.c.e(radians, d10, Math.sin(radians) * d));
         MotionEvent obtain = MotionEvent.obtain(motionEvent);
         obtain.setLocation(measuredWidth, measuredHeight);
         f1Var.e(obtain);

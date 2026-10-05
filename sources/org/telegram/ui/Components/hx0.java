@@ -1,22 +1,65 @@
 package org.telegram.ui.Components;
 
 import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public abstract class hx0 extends Drawable {
-    public final void a() {
-        yf.h d = yf.h.d();
-        d.getClass();
-        yf.h.c();
-        d.e.add(this);
+public final class hx0 {
+    public final o5 a;
+    public Drawable b;
+
+    public hx0(FrameLayout frameLayout) {
+        this(18, frameLayout);
     }
 
-    public abstract void b(int i10);
+    public final o5 a(TLRPC.User user, TLRPC.Chat chat, int i10, boolean z10) {
+        o5 o5Var = this.a;
+        if (chat != null && chat.verified) {
+            Drawable drawable = this.b;
+            if (drawable == null) {
+                drawable = new sq(org.telegram.ui.ActionBar.i6.f1, org.telegram.ui.ActionBar.i6.i1);
+            }
+            this.b = drawable;
+            o5Var.g(drawable, z10);
+            o5Var.k(null);
+            return o5Var;
+        }
+        if (chat != null && DialogObject.getEmojiStatusDocumentId(chat.emoji_status) != 0) {
+            o5Var.j(DialogObject.getEmojiStatusDocumentId(chat.emoji_status), z10);
+            o5Var.k(Integer.valueOf(i10));
+            return o5Var;
+        }
+        if (user != null && user.verified) {
+            Drawable drawable2 = this.b;
+            if (drawable2 == null) {
+                drawable2 = new sq(org.telegram.ui.ActionBar.i6.f1, org.telegram.ui.ActionBar.i6.i1);
+            }
+            this.b = drawable2;
+            o5Var.g(drawable2, z10);
+            o5Var.k(null);
+            return o5Var;
+        }
+        if (user != null && DialogObject.getEmojiStatusDocumentId(user.emoji_status) != 0) {
+            o5Var.j(DialogObject.getEmojiStatusDocumentId(user.emoji_status), z10);
+            o5Var.k(Integer.valueOf(i10));
+            return o5Var;
+        }
+        if (user == null || !user.premium) {
+            o5Var.g(null, z10);
+            o5Var.k(null);
+            return o5Var;
+        }
+        o5Var.g(rg.b1.d().e, z10);
+        o5Var.k(Integer.valueOf(i10));
+        return o5Var;
+    }
 
-    public abstract void c(boolean z10);
-
-    public abstract void d();
-
-    public abstract void e();
+    public hx0(int i10, View view) {
+        this.a = new o5(AndroidUtilities.dp(i10), view);
+    }
 }

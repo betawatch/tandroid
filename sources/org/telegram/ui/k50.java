@@ -8,7 +8,7 @@ import android.os.Build;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class k50 implements org.telegram.ui.Components.rk0 {
     public final Path a = new Path();
@@ -23,49 +23,17 @@ public final class k50 implements org.telegram.ui.Components.rk0 {
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final void h(View view, zg.o0 o0Var, boolean z10, boolean z11) {
-        TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
-        String str = o0Var.f;
-        if (str == null) {
-            str = "👍";
-        }
-        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
-        tL_textWithEntities.text = str;
-        long j3 = o0Var.g;
-        if (j3 != 0) {
-            tL_messageEntityCustomEmoji.document_id = j3;
-            tL_messageEntityCustomEmoji.offset = 0;
-            tL_messageEntityCustomEmoji.length = str.length();
-            tL_textWithEntities.entities.add(tL_messageEntityCustomEmoji);
-        }
-        h60 h60Var = this.c;
-        h60Var.A1(tL_textWithEntities);
-        i40 i40Var = h60Var.H;
-        if (i40Var.m()) {
-            i40Var.j();
-        } else {
-            i40Var.d();
-        }
-        zg.b0 reactionsWindow = h60Var.K.getReactionsWindow();
-        if (reactionsWindow == null || reactionsWindow.q) {
-            return;
-        }
-        h60Var.K.getReactionsWindow().e();
-        h60Var.K.n();
-    }
-
-    @Override // org.telegram.ui.Components.rk0
-    public final boolean j() {
+    public final boolean B() {
         return false;
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ boolean k() {
+    public final /* synthetic */ boolean E() {
         return false;
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final void n(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
+    public final void H(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
         Paint paint = this.b;
         if (f7 > 0.0f) {
             canvas.drawRoundRect(rectF, f7, f7, paint);
@@ -96,11 +64,43 @@ public final class k50 implements org.telegram.ui.Components.rk0 {
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final boolean p() {
+    public final boolean K() {
         return true;
     }
 
     @Override // org.telegram.ui.Components.rk0
-    public final /* synthetic */ void o() {
+    public final void i(View view, zg.m0 m0Var, boolean z10, boolean z11) {
+        TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
+        String str = m0Var.f;
+        if (str == null) {
+            str = "👍";
+        }
+        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+        tL_textWithEntities.text = str;
+        long j3 = m0Var.g;
+        if (j3 != 0) {
+            tL_messageEntityCustomEmoji.document_id = j3;
+            tL_messageEntityCustomEmoji.offset = 0;
+            tL_messageEntityCustomEmoji.length = str.length();
+            tL_textWithEntities.entities.add(tL_messageEntityCustomEmoji);
+        }
+        h60 h60Var = this.c;
+        h60Var.A1(tL_textWithEntities);
+        i40 i40Var = h60Var.H;
+        if (i40Var.m()) {
+            i40Var.j();
+        } else {
+            i40Var.d();
+        }
+        zg.z reactionsWindow = h60Var.K.getReactionsWindow();
+        if (reactionsWindow == null || reactionsWindow.q) {
+            return;
+        }
+        h60Var.K.getReactionsWindow().e();
+        h60Var.K.n();
+    }
+
+    @Override // org.telegram.ui.Components.rk0
+    public final /* synthetic */ void I() {
     }
 }

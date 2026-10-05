@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ew implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -43,13 +43,13 @@ public final /* synthetic */ class ew implements Runnable {
                 org.telegram.ui.Components.yc ycVar = (org.telegram.ui.Components.yc) this.n;
                 org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.r;
                 TLRPC.TL_channels_sponsoredMessageReportResultChooseOption tL_channels_sponsoredMessageReportResultChooseOption = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) this.b;
-                v31 v31Var = new v31(context, a1Var, this.c, bArr);
-                v31Var.M(tL_channels_sponsoredMessageReportResultChooseOption);
-                v31Var.s = new o31(aVar, ycVar, context, a1Var, dVar);
-                v31Var.show();
+                t31 t31Var = new t31(context, a1Var, this.c, bArr);
+                t31Var.M(tL_channels_sponsoredMessageReportResultChooseOption);
+                t31Var.s = new m31(aVar, ycVar, context, a1Var, dVar);
+                t31Var.show();
                 break;
             default:
-                yh.x3.C0((yh.x3) this.d, (nf.e) this.f, (org.telegram.ui.ActionBar.b2) this.e, this.b, (TL_stars.TL_starGiftUnique) this.h, (TLRPC.TL_error) this.n, this.c, (CharSequence) this.r);
+                yh.y3.C0((yh.y3) this.d, (nf.e) this.f, (org.telegram.ui.ActionBar.b2) this.e, this.b, (TL_stars.TL_starGiftUnique) this.h, (TLRPC.TL_error) this.n, this.c, (CharSequence) this.r);
                 break;
         }
     }
@@ -65,8 +65,8 @@ public final /* synthetic */ class ew implements Runnable {
         this.r = tL_messages_checkHistoryImportPeer;
     }
 
-    public /* synthetic */ ew(yh.x3 x3Var, nf.e eVar, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLRPC.TL_error tL_error, long j3, CharSequence charSequence) {
-        this.d = x3Var;
+    public /* synthetic */ ew(yh.y3 y3Var, nf.e eVar, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, TL_stars.TL_starGiftUnique tL_starGiftUnique, TLRPC.TL_error tL_error, long j3, CharSequence charSequence) {
+        this.d = y3Var;
         this.f = eVar;
         this.e = b2Var;
         this.b = tLObject;

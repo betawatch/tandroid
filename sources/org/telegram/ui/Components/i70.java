@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class i70 extends tx0 {
+public final class i70 extends ux0 {
     public final /* synthetic */ int K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -14,7 +14,7 @@ public final class i70 extends tx0 {
         this.K = i11;
     }
 
-    @Override // org.telegram.ui.Components.tx0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ux0, android.view.ViewGroup, android.view.View
     public void onAttachedToWindow() {
         switch (this.K) {
             case 0:
@@ -31,7 +31,7 @@ public final class i70 extends tx0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tx0, android.view.View
+    @Override // org.telegram.ui.Components.ux0, android.view.View
     public void setVisibility(int i10) {
         switch (this.K) {
             case 2:

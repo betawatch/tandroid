@@ -1,46 +1,112 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.util.SparseIntArray;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class v81 extends f91 {
-    public final /* synthetic */ g91 t0;
+public final class v81 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h91 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v81(g91 g91Var, Context context, boolean z10, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(i10, context, d6Var, z10);
-        this.t0 = g91Var;
+    public /* synthetic */ v81(h91 h91Var, int i10) {
+        this.a = i10;
+        this.b = h91Var;
     }
 
-    @Override // org.telegram.ui.Components.f91
-    public final void e(float f7, int i10, int i11) {
-        float f10 = f7 < 0.0f ? 0.0f : f7 > 1.0f ? 1.0f : f7;
-        this.F = i10;
-        SparseIntArray sparseIntArray = this.b0;
-        this.G = sparseIntArray.get(i10);
-        if (f10 > 0.0f) {
-            this.L = i11;
-            this.M = sparseIntArray.get(i11);
-        } else {
-            this.L = -1;
-            this.M = -1;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                h91 h91Var = this.b;
+                View[] viewArr = h91Var.e;
+                View[] viewArr2 = h91Var.e;
+                if (viewArr[1] != null) {
+                    h91Var.G();
+                    h91Var.h.put(h91Var.f[1], viewArr2[1]);
+                    h91Var.removeView(viewArr2[1]);
+                    h91Var.F(viewArr2[0], 0.0f);
+                    viewArr2[1] = null;
+                }
+                h91Var.S = null;
+                h91Var.x(true);
+                w81 w81Var = h91Var.M;
+                if (w81Var != null) {
+                    w81Var.v.invalidate();
+                    h91Var.M.v.g1();
+                    h91Var.M.invalidate();
+                }
+                h91Var.u();
+                h91Var.J.unlock();
+                break;
+            case 1:
+                h91 h91Var2 = this.b;
+                h91Var2.w = null;
+                View[] viewArr3 = h91Var2.e;
+                if (viewArr3[1] != null) {
+                    if (!h91Var2.F) {
+                        h91Var2.G();
+                    }
+                    h91Var2.h.put(h91Var2.f[1], viewArr3[1]);
+                    h91Var2.removeView(viewArr3[1]);
+                    viewArr3[1].setVisibility(8);
+                    viewArr3[1] = null;
+                }
+                h91Var2.x = false;
+                h91Var2.I = false;
+                w81 w81Var2 = h91Var2.M;
+                if (w81Var2 != null) {
+                    w81Var2.setEnabled(true);
+                }
+                h91Var2.x(false);
+                h91Var2.u();
+                h91Var2.J.unlock();
+                break;
+            case 2:
+                h91 h91Var3 = this.b;
+                h91Var3.w = null;
+                View[] viewArr4 = h91Var3.e;
+                View view = viewArr4[1];
+                if (view != null) {
+                    h91Var3.removeView(view);
+                    viewArr4[1] = null;
+                }
+                h91Var3.x = false;
+                w81 w81Var3 = h91Var3.M;
+                if (w81Var3 != null) {
+                    w81Var3.setEnabled(true);
+                    w81 w81Var4 = h91Var3.M;
+                    w81Var4.J = false;
+                    w81Var4.a = 1.0f;
+                    w81Var4.v.g1();
+                    h91Var3.M.invalidate();
+                    break;
+                }
+                break;
+            default:
+                h91 h91Var4 = this.b;
+                h91Var4.w = null;
+                View[] viewArr5 = h91Var4.e;
+                if (viewArr5[1] != null) {
+                    if (!h91Var4.F) {
+                        h91Var4.G();
+                    }
+                    h91Var4.h.put(h91Var4.f[1], viewArr5[1]);
+                    h91Var4.removeView(viewArr5[1]);
+                    viewArr5[1].setVisibility(8);
+                    viewArr5[1] = null;
+                }
+                h91Var4.x = false;
+                h91Var4.I = false;
+                w81 w81Var5 = h91Var4.M;
+                if (w81Var5 != null) {
+                    w81Var5.setEnabled(true);
+                }
+                h91Var4.x(false);
+                h91Var4.u();
+                h91Var4.J.unlock();
+                break;
         }
-        this.K = f10;
-        this.v.h1();
-        invalidate();
-        c(i10);
-        if (f10 >= 1.0f) {
-            this.L = -1;
-            this.M = -1;
-            this.F = i11;
-            this.G = sparseIntArray.get(i11);
-        }
-        e91 e91Var = this.y;
-        if (e91Var != null) {
-            ((g91) ((n2.c) e91Var).b).s();
-        }
-        this.t0.z(f7 <= 0.5f ? i10 : i11, i10 < i11);
     }
 }

@@ -4,7 +4,7 @@ import a4.a;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class NewCommandMacro {
     protected static HashMap<String, String> macrocode = new HashMap<>();
@@ -17,7 +17,7 @@ public class NewCommandMacro {
 
     public static void addReNewCommand(String str, String str2, int i10) {
         if (macrocode.get(str) == null) {
-            throw new ParseException(a.p("Command ", str, " is not defined ! Use newcommand instead ..."));
+            throw new ParseException(a.q("Command ", str, " is not defined ! Use newcommand instead ..."));
         }
         macrocode.put(str, str2);
         MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i10));
@@ -65,6 +65,6 @@ public class NewCommandMacro {
             MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i10, 1.0f));
             return;
         }
-        throw new ParseException(a.p("Command ", str, " already exists ! Use renewcommand instead ..."));
+        throw new ParseException(a.q("Command ", str, " already exists ! Use renewcommand instead ..."));
     }
 }

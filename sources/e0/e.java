@@ -8,7 +8,7 @@ import android.text.TextUtils;
 import java.util.Arrays;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class e extends f0.e {
     /* JADX WARN: Multi-variable type inference failed */
@@ -16,7 +16,7 @@ public abstract class e extends f0.e {
         HashSet hashSet = new HashSet();
         for (int i11 = 0; i11 < strArr.length; i11++) {
             if (TextUtils.isEmpty(strArr[i11])) {
-                throw new IllegalArgumentException(a4.a.s(new StringBuilder("Permission request for permissions "), Arrays.toString(strArr), " must not contain null or empty values"));
+                throw new IllegalArgumentException(a4.a.t(new StringBuilder("Permission request for permissions "), Arrays.toString(strArr), " must not contain null or empty values"));
             }
             if (Build.VERSION.SDK_INT < 33 && TextUtils.equals(strArr[i11], "android.permission.POST_NOTIFICATIONS")) {
                 hashSet.add(Integer.valueOf(i11));

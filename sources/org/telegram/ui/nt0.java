@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class nt0 extends l4 {
     public final /* synthetic */ PhotoViewer h;
@@ -47,7 +47,7 @@ public final class nt0 extends l4 {
             layoutParams.height = getMeasuredHeight();
         }
         TextureView textureView = photoViewer.B2;
-        if (textureView instanceof org.telegram.ui.Components.t71) {
+        if (textureView instanceof org.telegram.ui.Components.u71) {
             textureView.setPivotX(textureView.getMeasuredWidth() / 2);
             photoViewer.E2.setPivotX(photoViewer.B2.getMeasuredWidth() / 2);
         } else {

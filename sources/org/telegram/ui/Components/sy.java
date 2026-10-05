@@ -16,7 +16,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class sy extends yl0 {
     public yw E;
@@ -351,7 +351,7 @@ public final class sy extends yl0 {
                     int i14 = 0;
                     for (int i15 = 0; i15 < size; i15++) {
                         TLRPC.Document document = (TLRPC.Document) nzVar.i1.get(i15);
-                        fw0 C1 = qz.C1(tyVar.F1(document, document.attributes));
+                        gw0 C1 = qz.C1(tyVar.F1(document, document.attributes));
                         int min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * dp) / measuredWidth) * i11));
                         if (i12 < min) {
                             this.H += i13;

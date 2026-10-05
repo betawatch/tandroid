@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class cb extends org.telegram.ui.ActionBar.f3 {
     public boolean E;
@@ -294,7 +294,7 @@ public abstract class cb extends org.telegram.ui.ActionBar.f3 {
         if (yaVar == null || TextUtils.equals(y(), yaVar.getTitle())) {
             return;
         }
-        yaVar.H(y(), false, 350L, tr.h);
+        yaVar.G(y(), false, 350L, tr.h);
     }
 
     @Override // org.telegram.ui.ActionBar.f3
@@ -409,7 +409,7 @@ public abstract class cb extends org.telegram.ui.ActionBar.f3 {
     public void D(float f7) {
     }
 
-    public void E(lw0 lw0Var) {
+    public void E(mw0 mw0Var) {
     }
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -451,7 +451,7 @@ public abstract class cb extends org.telegram.ui.ActionBar.f3 {
 
     public cb(Context context, org.telegram.ui.ActionBar.n2 n2Var, bb bbVar) {
         super(bbVar.b, context, bbVar.g, bbVar.a);
-        lw0 lw0Var;
+        mw0 mw0Var;
         this.v = 0.4f;
         this.w = true;
         this.x = 1.0f;
@@ -477,9 +477,9 @@ public abstract class cb extends org.telegram.ui.ActionBar.f3 {
         if (z11) {
             wa waVar = new wa(this, context, z12, z10);
             this.s = waVar;
-            lw0Var = waVar;
+            mw0Var = waVar;
         } else {
-            lw0Var = new xa(this, context, z12, z10);
+            mw0Var = new xa(this, context, z12, z10);
         }
         zl0 w10 = w(context);
         this.d = w10;
@@ -497,29 +497,29 @@ public abstract class cb extends org.telegram.ui.ActionBar.f3 {
         if (z10) {
             w10.setHasFixedSize(true);
             w10.setAdapter(v(w10));
-            setCustomView(lw0Var);
-            lw0Var.addView(w10, w7.z5.c(-2.0f, -1));
+            setCustomView(mw0Var);
+            mw0Var.addView(w10, w7.z5.c(-2.0f, -1));
         } else {
             w10.setAdapter(new ab(this, v(w10), context));
-            this.containerView = lw0Var;
-            ya yaVar = new ya(this, context, lw0Var);
+            this.containerView = mw0Var;
+            ya yaVar = new ya(this, context, mw0Var);
             this.e = yaVar;
             yaVar.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.i6.h5));
             yaVar.setTitleColor(getThemedColor(org.telegram.ui.ActionBar.i6.G6));
-            yaVar.A(getThemedColor(org.telegram.ui.ActionBar.i6.z8), false);
+            yaVar.z(getThemedColor(org.telegram.ui.ActionBar.i6.z8), false);
             yaVar.setBackButtonImage(R.drawable.ic_ab_back);
-            yaVar.B(getThemedColor(org.telegram.ui.ActionBar.i6.y8), false);
+            yaVar.A(getThemedColor(org.telegram.ui.ActionBar.i6.y8), false);
             yaVar.setCastShadows(true);
             yaVar.setTitle(y());
             yaVar.setActionBarMenuOnItemClick(new org.telegram.ui.qo(this, 7));
-            lw0Var.addView(w10);
-            lw0Var.addView(yaVar, w7.z5.d(-1, -2.0f, 0, 6.0f, 0.0f, 6.0f, 0.0f));
-            w10.j(new ai.r(lw0Var, 16));
+            mw0Var.addView(w10);
+            mw0Var.addView(yaVar, w7.z5.d(-1, -2.0f, 0, 6.0f, 0.0f, 6.0f, 0.0f));
+            w10.j(new ai.r(mw0Var, 16));
         }
         if (i10 == 2) {
             I();
         }
-        E(lw0Var);
+        E(mw0Var);
         K();
     }
 }

@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class dg0 extends FrameLayout {
     public float E;
@@ -51,13 +51,13 @@ public abstract class dg0 extends FrameLayout {
             return;
         }
         String[] split = str.split("\\|");
-        String s10 = a4.a.s(new StringBuilder(), split[0].split("\\$")[0], "2/");
+        String t10 = a4.a.t(new StringBuilder(), split[0].split("\\$")[0], "2/");
         String str2 = split[0].split("\\$N")[1];
         String str3 = split.length == 3 ? split[2].split("M#")[1] : split.length == 2 ? split[1].split("t#")[1] : split[3].split("M#")[1];
         int ceil = (int) (videoDuration <= 100 ? Math.ceil(videoDuration / 25.0f) : videoDuration <= 250 ? Math.ceil((videoDuration / 2.0f) / 25.0f) : videoDuration <= 500 ? Math.ceil((videoDuration / 4.0f) / 25.0f) : videoDuration <= 1000 ? Math.ceil((videoDuration / 5.0f) / 25.0f) : Math.ceil((videoDuration / 10.0f) / 25.0f));
         for (int i10 = 0; i10 < ceil; i10++) {
             Locale locale = Locale.ROOT;
-            arrayList.add(s10 + "M" + i10 + str2 + "&sigh=" + str3);
+            arrayList.add(t10 + "M" + i10 + str2 + "&sigh=" + str3);
         }
     }
 

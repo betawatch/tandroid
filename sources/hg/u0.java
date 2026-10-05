@@ -20,7 +20,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -29,16 +29,17 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.v8;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.e71;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.Components.yc;
+import org.telegram.ui.Components.zl0;
 import org.telegram.ui.LaunchActivity;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class u0 extends n2 {
     public static final int U = -1;
@@ -80,7 +81,7 @@ public final class u0 extends n2 {
     public boolean T;
     public sr a;
     public org.telegram.ui.ActionBar.v0 b;
-    public c71 c;
+    public e71 c;
     public gg.c2 d;
     public FrameLayout e;
     public EditTextBoldCursor f;
@@ -88,7 +89,7 @@ public final class u0 extends n2 {
     public w5 n;
     public TextView r;
     public ImageView s;
-    public a0 v;
+    public b0 v;
     public boolean w;
     public boolean x;
     public String y;
@@ -115,7 +116,7 @@ public final class u0 extends n2 {
         }
         if (tLObject instanceof TLRPC.TL_boolFalse) {
             u0Var.a.a(0.0f);
-            ok.p(R.string.UnknownError, yc.a0(u0Var), null);
+            bi.o(R.string.UnknownError, yc.a0(u0Var), null);
             return;
         }
         if (tLObject instanceof TLRPC.Updates) {
@@ -124,38 +125,38 @@ public final class u0 extends n2 {
         int i10 = iArr[0] + 1;
         iArr[0] = i10;
         if (i10 == arrayList.size()) {
-            f.a(u0Var.currentAccount).b();
+            g.a(u0Var.currentAccount).b();
             u0Var.getMessagesController().clearFullUsers();
             u0Var.finishFragment();
             if (!z10 || user == null) {
                 if (user == null || (U2 = LaunchActivity.U()) == null) {
                     return;
                 }
-                k0.p(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(user)}, yc.a0(U2), R.raw.contact_check, 36);
+                c.q(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(user)}, yc.a0(U2), R.raw.contact_check, 36);
                 return;
             }
             n2 U3 = LaunchActivity.U();
             if (U3 != null) {
-                k0.p(R.string.BusinessBotDone, new Object[]{UserObject.getUserName(user)}, yc.a0(U3), R.raw.contact_check, 36);
+                c.q(R.string.BusinessBotDone, new Object[]{UserObject.getUserName(user)}, yc.a0(U3), R.raw.contact_check, 36);
             }
         }
     }
 
-    public static void U(final u0 u0Var, g61 g61Var, final View view) {
-        if (g61Var.g && !u0Var.v.h(g61Var)) {
-            int i10 = g61Var.d;
+    public static void U(final u0 u0Var, h61 h61Var, final View view) {
+        if (h61Var.g && !u0Var.v.h(h61Var)) {
+            int i10 = h61Var.d;
             if (i10 == U) {
-                a0 a0Var = u0Var.v;
+                b0 b0Var = u0Var.v;
                 u0Var.I = true;
-                a0Var.h = true;
+                b0Var.h = true;
                 u0Var.c.f3.N(true);
                 u0Var.X(true);
                 return;
             }
             if (i10 == V) {
-                a0 a0Var2 = u0Var.v;
+                b0 b0Var2 = u0Var.v;
                 u0Var.I = false;
-                a0Var2.h = false;
+                b0Var2.h = false;
                 u0Var.c.f3.N(true);
                 u0Var.X(true);
                 return;
@@ -166,8 +167,8 @@ public final class u0 extends n2 {
                 u0Var.X(true);
                 return;
             }
-            if (g61Var.a == 13) {
-                TLRPC.User user = (TLRPC.User) u0Var.N.get(g61Var.x);
+            if (h61Var.a == 13) {
+                TLRPC.User user = (TLRPC.User) u0Var.N.get(h61Var.x);
                 if (user == null) {
                     return;
                 }
@@ -861,13 +862,13 @@ public final class u0 extends n2 {
     }
 
     public final boolean Y() {
-        a0 a0Var;
+        b0 b0Var;
         if (this.T) {
             TLRPC.User user = this.M;
             boolean z10 = user != null;
             TL_account.TL_connectedBot tL_connectedBot = this.H;
             if (z10 == (tL_connectedBot != null)) {
-                if ((user == null ? 0L : user.id) == (tL_connectedBot != null ? tL_connectedBot.bot_id : 0L) && (user == null || (this.J.equals(tL_connectedBot.rights) && ((a0Var = this.v) == null || !a0Var.g())))) {
+                if ((user == null ? 0L : user.id) == (tL_connectedBot != null ? tL_connectedBot.bot_id : 0L) && (user == null || (this.J.equals(tL_connectedBot.rights) && ((b0Var = this.v) == null || !b0Var.g())))) {
                 }
             }
             return true;
@@ -941,6 +942,7 @@ public final class u0 extends n2 {
 
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
+        setHasOwnBackground(true);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.BusinessBots2));
@@ -952,7 +954,6 @@ public final class u0 extends n2 {
         this.b = this.actionBar.n().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.a);
         X(false);
         FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackgroundColor(i6.w0(null, i6.a7, false));
         new LinearLayout(getParentActivity()).setOrientation(0);
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getParentActivity());
         this.f = editTextBoldCursor;
@@ -1010,19 +1011,24 @@ public final class u0 extends n2 {
         gg.c2 c2Var = new gg.c2(true);
         this.d = c2Var;
         c2Var.a = new xa.c(this, 25);
-        a0 a0Var = new a0(this, new n0(this, 3));
-        this.v = a0Var;
+        b0 b0Var = new b0(this, new n0(this, 3));
+        this.v = b0Var;
         TL_account.TL_connectedBot tL_connectedBot = this.H;
-        a0Var.i(tL_connectedBot == null ? null : tL_connectedBot.recipients);
-        c71 c71Var = new c71(this, new bi.v(this, 24), new q0(this, 3), null);
-        this.c = c71Var;
-        c71Var.s1();
-        c71 c71Var2 = this.c;
-        c71Var2.f3.r = false;
-        frameLayout.addView(c71Var2, z5.c(-1.0f, -1));
-        this.actionBar.z(this.c, true);
+        b0Var.i(tL_connectedBot == null ? null : tL_connectedBot.recipients);
+        e71 e71Var = new e71(this, new bi.v(this, 24), new q0(this, 3), null);
+        this.c = e71Var;
+        e71Var.r1();
+        this.c.setSectionsDrawBackground(true);
+        e71 e71Var2 = this.c;
+        e71Var2.f3.r = false;
+        frameLayout.addView(e71Var2, z5.c(-1.0f, -1));
         this.fragmentView = frameLayout;
         return frameLayout;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final zl0 getListViewForSimpleGlass() {
+        return this.c;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -1062,14 +1068,8 @@ public final class u0 extends n2 {
     public final boolean onFragmentCreate() {
         if (!this.S && !this.T) {
             this.S = true;
-            f.a(this.currentAccount).c(new ai.y1(this, 24));
+            g.a(this.currentAccount).c(new ai.y1(this, 24));
         }
         return super.onFragmentCreate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.n2
-    public final void onInsets(int i10, int i11, int i12, int i13) {
-        this.c.setPadding(0, 0, 0, i13);
-        this.c.setClipToPadding(false);
     }
 }

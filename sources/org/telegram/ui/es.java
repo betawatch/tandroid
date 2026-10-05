@@ -14,13 +14,13 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class es extends EditTextBoldCursor {
-    public static final org.telegram.ui.Components.ew0 I;
-    public static final org.telegram.ui.Components.ew0 J;
-    public static final org.telegram.ui.Components.ew0 K;
-    public static final org.telegram.ui.Components.ew0 L;
+    public static final org.telegram.ui.Components.fw0 I;
+    public static final org.telegram.ui.Components.fw0 J;
+    public static final org.telegram.ui.Components.fw0 K;
+    public static final org.telegram.ui.Components.fw0 L;
     public Canvas E;
     public ValueAnimator F;
     public ValueAnimator G;
@@ -40,18 +40,18 @@ public abstract class es extends EditTextBoldCursor {
     public Bitmap y;
 
     static {
-        org.telegram.ui.Components.ew0 ew0Var = new org.telegram.ui.Components.ew0(new m4(11), new m4(12));
-        ew0Var.c = 100.0f;
-        I = ew0Var;
-        org.telegram.ui.Components.ew0 ew0Var2 = new org.telegram.ui.Components.ew0(new m4(13), new m4(14));
-        ew0Var2.c = 100.0f;
-        J = ew0Var2;
-        org.telegram.ui.Components.ew0 ew0Var3 = new org.telegram.ui.Components.ew0(new m4(15), new m4(16));
-        ew0Var3.c = 100.0f;
-        K = ew0Var3;
-        org.telegram.ui.Components.ew0 ew0Var4 = new org.telegram.ui.Components.ew0(new m4(17), new m4(18));
-        ew0Var4.c = 100.0f;
-        L = ew0Var4;
+        org.telegram.ui.Components.fw0 fw0Var = new org.telegram.ui.Components.fw0(new m4(11), new m4(12));
+        fw0Var.c = 100.0f;
+        I = fw0Var;
+        org.telegram.ui.Components.fw0 fw0Var2 = new org.telegram.ui.Components.fw0(new m4(13), new m4(14));
+        fw0Var2.c = 100.0f;
+        J = fw0Var2;
+        org.telegram.ui.Components.fw0 fw0Var3 = new org.telegram.ui.Components.fw0(new m4(15), new m4(16));
+        fw0Var3.c = 100.0f;
+        K = fw0Var3;
+        org.telegram.ui.Components.fw0 fw0Var4 = new org.telegram.ui.Components.fw0(new m4(17), new m4(18));
+        fw0Var4.c = 100.0f;
+        L = fw0Var4;
     }
 
     public static void k(o1.k kVar, float f7) {

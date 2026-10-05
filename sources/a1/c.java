@@ -95,12 +95,12 @@ import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.t7;
 import org.telegram.ui.Components.al0;
 import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.ds0;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.es0;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.nl0;
 import org.telegram.ui.Components.ol0;
 import org.telegram.ui.Components.sq;
-import org.telegram.ui.Components.yv0;
+import org.telegram.ui.Components.zv0;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.jx;
 import org.telegram.ui.uy;
@@ -109,12 +109,12 @@ import r0.l1;
 import r0.n;
 import s4.m0;
 import vh.k;
-import yh.u7;
 import yh.w7;
+import yh.y7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, i, ol0, Utilities.Callback2Return, nl0, a2, t9, dc, k, n, al0, Utilities.Callback5, v1, CameraController.VideoTakeCallback, Continuation, OnCompleteListener, yv0 {
+public final /* synthetic */ class c implements OnSuccessListener, i, ol0, Utilities.Callback2Return, nl0, a2, t9, dc, k, n, al0, Utilities.Callback5, v1, CameraController.VideoTakeCallback, Continuation, OnCompleteListener, zv0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -1710,15 +1710,15 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ol0, Utili
                 }
                 return false;
             case 12:
-                ds0 ds0Var = ((u) this.b).W;
-                if (ds0Var.G.C1 || !(view instanceof t7)) {
+                es0 es0Var = ((u) this.b).W;
+                if (es0Var.G.C1 || !(view instanceof t7)) {
                     return false;
                 }
                 MessageObject messageObject = ((t7) view).getMessageObject();
-                if (ds0Var.c(messageObject)) {
-                    ds0Var.g(messageObject);
+                if (es0Var.c(messageObject)) {
+                    es0Var.g(messageObject);
                 } else {
-                    ds0Var.e(messageObject);
+                    es0Var.e(messageObject);
                 }
                 return true;
             default:
@@ -1838,15 +1838,15 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ol0, Utili
         }
     }
 
-    @Override // org.telegram.ui.Components.yv0
+    @Override // org.telegram.ui.Components.zv0
     public /* synthetic */ float h(RecyclerView recyclerView) {
         return c1.c(recyclerView);
     }
 
-    @Override // org.telegram.ui.Components.yv0
+    @Override // org.telegram.ui.Components.zv0
     public RecyclerView i(View view) {
-        ((w7) this.b).getClass();
-        return ((u7) view).a;
+        ((y7) this.b).getClass();
+        return ((w7) view).a;
     }
 
     @Override // pg.v1
@@ -1871,7 +1871,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ol0, Utili
         lVar.b.add(kVar);
     }
 
-    @Override // org.telegram.ui.Components.yv0
+    @Override // org.telegram.ui.Components.zv0
     public /* synthetic */ void n(RecyclerView recyclerView) {
         c1.b(recyclerView);
     }
@@ -2018,12 +2018,12 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ol0, Utili
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         bb bbVar = (bb) this.b;
-        g61 g61Var = (g61) obj;
+        h61 h61Var = (h61) obj;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        int i10 = g61Var.d;
-        k8 k8Var = (k8) g61Var.G;
+        int i10 = h61Var.d;
+        k8 k8Var = (k8) h61Var.G;
         bbVar.c(false, true);
         kc kcVar = bbVar.O;
         if (k8Var == kcVar.K1 || kcVar.X1) {
@@ -2080,9 +2080,9 @@ public final /* synthetic */ class c implements OnSuccessListener, i, ol0, Utili
             case 3:
                 return o1.a((o1) this.b, (Long) obj2);
             default:
-                ds0 ds0Var = (ds0) this.b;
+                es0 es0Var = (es0) this.b;
                 if (((Integer) obj).intValue() == -1) {
-                    new y(ds0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new y1(ds0Var, 4)).show();
+                    new y(es0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new y1(es0Var, 4)).show();
                     return Boolean.TRUE;
                 }
                 return Boolean.FALSE;

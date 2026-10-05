@@ -18,7 +18,7 @@ import org.telegram.ui.Components.xi;
 import org.telegram.ui.yn;
 import org.telegram.ui.zi0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m5 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -93,10 +93,10 @@ public final /* synthetic */ class m5 implements View.OnLongClickListener {
                 ii.x3 x3Var = rVar.r;
                 int i12 = rVar.n;
                 if (UserConfig.getInstance(i12).isPremium()) {
-                    if (x3Var.m3() && !x3Var.o3()) {
-                        if (x3Var.O3()) {
-                            ArrayList<TL_iv.PageBlock> b32 = x3Var.b3();
-                            if (!b32.isEmpty()) {
+                    if (x3Var.l3() && !x3Var.n3()) {
+                        if (x3Var.N3()) {
+                            ArrayList<TL_iv.PageBlock> a32 = x3Var.a3();
+                            if (!a32.isEmpty()) {
                                 org.telegram.ui.ActionBar.n2 n2Var = xiVar.f0;
                                 yn ynVar = n2Var instanceof yn ? (yn) n2Var : null;
                                 zi0 zi0Var = rVar.O;
@@ -107,19 +107,19 @@ public final /* synthetic */ class m5 implements View.OnLongClickListener {
                                 zi0 zi0Var2 = new zi0(rVar.getContext(), d6Var);
                                 rVar.O = zi0Var2;
                                 zi0Var2.setOnDismissListener(new ai.f5(rVar, 4));
-                                long l1 = xiVar.l1();
+                                long n12 = xiVar.n1();
                                 MessageObject messageObject = ynVar != null ? ynVar.l5 : null;
                                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
                                 tL_message.id = 0;
                                 tL_message.out = true;
-                                tL_message.peer_id = MessagesController.getInstance(i12).getPeer(l1);
+                                tL_message.peer_id = MessagesController.getInstance(i12).getPeer(n12);
                                 tL_message.from_id = MessagesController.getInstance(i12).getPeer(UserConfig.getInstance(i12).getClientUserId());
                                 tL_message.flags2 |= 8192;
                                 TL_iv.RichMessage richMessage = new TL_iv.RichMessage();
                                 tL_message.rich_message = richMessage;
-                                richMessage.blocks = b32;
-                                richMessage.photos = x3Var.D2();
-                                tL_message.rich_message.documents = x3Var.A2();
+                                richMessage.blocks = a32;
+                                richMessage.photos = x3Var.C2();
+                                tL_message.rich_message.documents = x3Var.z2();
                                 if (messageObject != null && !messageObject.isTopicMainMessage) {
                                     TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
                                     tL_messageReplyHeader.flags |= 16;
@@ -134,7 +134,7 @@ public final /* synthetic */ class m5 implements View.OnLongClickListener {
                                 messageObject2.isOutOwnerCached = Boolean.TRUE;
                                 messageObject2.generateLayout(null);
                                 messageObject2.notime = true;
-                                rVar.O.q(org.telegram.messenger.f0.k(messageObject2));
+                                rVar.O.q(org.telegram.messenger.q.k(messageObject2));
                                 wg sendButton = c4Var.getSendButton();
                                 sendButton.setScaleX(1.0f);
                                 sendButton.setScaleY(1.0f);
@@ -149,8 +149,8 @@ public final /* synthetic */ class m5 implements View.OnLongClickListener {
                                 b80 F2 = b80.F(rVar, d6Var, sendButton);
                                 boolean z11 = ynVar != null && UserObject.isUserSelf(ynVar.i());
                                 if (ynVar != null && ynVar.D6()) {
-                                    F2.c(R.drawable.msg_calendar2, LocaleController.getString(z11 ? R.string.SetReminder : R.string.ScheduleMessage), new ai.j(rVar, l1, 10), false);
-                                    if (!z11 && l1 > 0) {
+                                    F2.c(R.drawable.msg_calendar2, LocaleController.getString(z11 ? R.string.SetReminder : R.string.ScheduleMessage), new ai.j(rVar, n12, 10), false);
+                                    if (!z11 && n12 > 0) {
                                         F2.c(R.drawable.msg_online, LocaleController.getString(R.string.SendWhenOnline), new ii.d(rVar, 0), false);
                                     }
                                 }
@@ -168,7 +168,7 @@ public final /* synthetic */ class m5 implements View.OnLongClickListener {
                                 }
                             }
                         } else if (c4Var != null) {
-                            c4Var.setSendEnabled(x3Var.O3());
+                            c4Var.setSendEnabled(x3Var.N3());
                             break;
                         }
                     }

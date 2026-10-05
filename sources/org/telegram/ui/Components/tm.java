@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class tm extends pi {
     public static final HashMap U = new HashMap();
@@ -215,7 +215,7 @@ public final class tm extends pi {
 
     @Override // org.telegram.ui.Components.pi
     public final boolean i() {
-        this.b.W1(false);
+        this.b.Y1(false);
         return true;
     }
 
@@ -323,7 +323,7 @@ public final class tm extends pi {
                     this.R = 0;
                 }
                 if (w0Var.getPaddingTop() == this.R || w0Var.getPaddingBottom() != this.e) {
-                    w0Var.r1(w0Var.getPaddingLeft(), this.R, w0Var.getPaddingRight(), this.e);
+                    w0Var.q1(w0Var.getPaddingLeft(), this.R, w0Var.getPaddingRight(), this.e);
                     invalidate();
                 }
                 TextView textView = this.x;
@@ -347,7 +347,7 @@ public final class tm extends pi {
         }
         if (w0Var.getPaddingTop() == this.R) {
         }
-        w0Var.r1(w0Var.getPaddingLeft(), this.R, w0Var.getPaddingRight(), this.e);
+        w0Var.q1(w0Var.getPaddingLeft(), this.R, w0Var.getPaddingRight(), this.e);
         invalidate();
         TextView textView2 = this.x;
         if (!AndroidUtilities.isTablet()) {

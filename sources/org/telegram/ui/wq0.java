@@ -39,7 +39,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class wq0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public final boolean E;
@@ -51,7 +51,7 @@ public final class wq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public org.telegram.ui.Components.zl0 K;
     public uq0 L;
     public pq0 M;
-    public org.telegram.ui.Components.tx0 N;
+    public org.telegram.ui.Components.ux0 N;
     public sq0 O;
     public org.telegram.ui.ActionBar.v0 P;
     public org.telegram.ui.ActionBar.f1 Q;
@@ -253,7 +253,7 @@ public final class wq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         edit.putInt(NotificationBadge.NewHtcHomeBadger.COUNT, this.n.size());
         int size = this.n.size();
         for (int i10 = 0; i10 < size; i10++) {
-            edit.putString(hg.k0.h(i10, "recent"), (String) this.n.get(i10));
+            edit.putString(hg.c.h(i10, "recent"), (String) this.n.get(i10));
         }
         edit.commit();
     }
@@ -268,8 +268,8 @@ public final class wq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
         int i12 = this.v0;
         kVar2.setTitleColor(org.telegram.ui.ActionBar.i6.w0(null, i12, false));
-        this.actionBar.B(org.telegram.ui.ActionBar.i6.w0(null, i12, false), false);
-        this.actionBar.A(org.telegram.ui.ActionBar.i6.w0(null, this.w0, false), false);
+        this.actionBar.A(org.telegram.ui.ActionBar.i6.w0(null, i12, false), false);
+        this.actionBar.z(org.telegram.ui.ActionBar.i6.w0(null, this.w0, false), false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         int i13 = this.a;
         MediaController.AlbumEntry albumEntry = this.J;
@@ -342,9 +342,9 @@ public final class wq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.O = sq0Var;
         sq0Var.setAlpha(0.0f);
         this.O.setVisibility(8);
-        org.telegram.ui.Components.tx0 tx0Var = new org.telegram.ui.Components.tx0(context, this.O, 1, getResourceProvider());
-        this.N = tx0Var;
-        tx0Var.setAnimateLayoutChange(true);
+        org.telegram.ui.Components.ux0 ux0Var = new org.telegram.ui.Components.ux0(context, this.O, 1, getResourceProvider());
+        this.N = ux0Var;
+        ux0Var.setAnimateLayoutChange(true);
         this.N.d.setTypeface(Typeface.DEFAULT);
         this.N.d.setTextSize(1, 16.0f);
         this.N.d.setTextColor(getThemedColor(org.telegram.ui.ActionBar.i6.y6));
@@ -500,7 +500,7 @@ public final class wq0 extends org.telegram.ui.ActionBar.n2 implements Notificat
             }
         }
         this.S = true;
-        this.s0.i(i10, false, z10);
+        this.s0.h(i10, false, z10);
         if (this.T != 2) {
             vq0 vq0Var = this.s0;
             if (vq0Var == null || vq0Var.e()) {

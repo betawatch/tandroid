@@ -26,18 +26,19 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.f20;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 import org.telegram.ui.Components.wi;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class c8 extends org.telegram.ui.Components.cb implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener, le.d {
     public boolean A0;
@@ -67,7 +68,7 @@ public final class c8 extends org.telegram.ui.Components.cb implements Notificat
     public final ah.i l0;
     public final ah.c m0;
     public final x7 n0;
-    public u61 o0;
+    public w61 o0;
     public MessageObject p0;
     public String q0;
     public int r0;
@@ -191,7 +192,7 @@ public final class c8 extends org.telegram.ui.Components.cb implements Notificat
         zl0 zl0Var = this.d;
         int i13 = this.backgroundPaddingLeft;
         zl0Var.setPadding(i13, 0, i13, 0);
-        this.d.s1();
+        this.d.r1();
         s4.j jVar = new s4.j();
         jVar.m = false;
         jVar.C = false;
@@ -237,10 +238,10 @@ public final class c8 extends org.telegram.ui.Components.cb implements Notificat
         this.d.setOnScrollListener(new b8(this));
         this.d.setOnItemClickListener(new ai.u0(this, callback, d6Var, 1));
         this.glassEngine.b(this.d);
-        this.glassEngine.h(this.containerView);
-        li.m mVar = this.glassEngine;
-        mVar.a = new w7(this);
-        mVar.d = new ni.b(AndroidUtilities.dp(48.0f));
+        this.glassEngine.i(this.containerView);
+        li.p pVar = this.glassEngine;
+        pVar.a = new w7(this);
+        pVar.d = new ni.b(AndroidUtilities.dp(48.0f));
     }
 
     public static /* synthetic */ void N(c8 c8Var, Long l4) {
@@ -255,7 +256,7 @@ public final class c8 extends org.telegram.ui.Components.cb implements Notificat
 
     public static void O(c8 c8Var, Utilities.Callback callback, org.telegram.ui.ActionBar.d6 d6Var, View view, int i10) {
         if (!(view instanceof org.telegram.ui.Cells.j7)) {
-            g61 G = c8Var.o0.G(i10 - 1);
+            h61 G = c8Var.o0.G(i10 - 1);
             if (G != null && G.d == 1) {
                 new c8(c8Var.getContext(), true, c8Var, callback, d6Var).show();
                 return;
@@ -470,11 +471,11 @@ public final class c8 extends org.telegram.ui.Components.cb implements Notificat
             return false;
         }
         String lowerCase = str3.toLowerCase();
-        if (lowerCase.startsWith(str) || org.telegram.messenger.f0.w(" ", str, lowerCase)) {
+        if (lowerCase.startsWith(str) || bi.u(" ", str, lowerCase)) {
             return true;
         }
         String translitSafe = AndroidUtilities.translitSafe(lowerCase);
-        return translitSafe.startsWith(str2) || org.telegram.messenger.f0.w(" ", str2, translitSafe);
+        return translitSafe.startsWith(str2) || bi.u(" ", str2, translitSafe);
     }
 
     @Override // org.telegram.ui.Components.cb
@@ -516,11 +517,11 @@ public final class c8 extends org.telegram.ui.Components.cb implements Notificat
                 if (arrayList.isEmpty() || arrayList.size() <= 1) {
                     i11 = 0;
                 } else {
-                    arrayList.add(g61.B(null));
+                    arrayList.add(h61.C(null));
                     i11 = AndroidUtilities.dp(12.0f);
                 }
                 this.o0.U();
-                arrayList.add(g61.t(str));
+                arrayList.add(h61.u(str));
                 int size2 = arrayList3.size();
                 int i14 = 0;
                 while (i14 < size2) {
@@ -528,20 +529,20 @@ public final class c8 extends org.telegram.ui.Components.cb implements Notificat
                     i14++;
                     y7 y7Var = new y7(this, i12);
                     int i15 = org.telegram.ui.Cells.i7.a;
-                    g61 J = g61.J(org.telegram.ui.Cells.i7.class);
-                    J.G = (MessageObject) obj2;
-                    J.H = y7Var;
-                    arrayList.add(J);
+                    h61 K = h61.K(org.telegram.ui.Cells.i7.class);
+                    K.G = (MessageObject) obj2;
+                    K.H = y7Var;
+                    arrayList.add(K);
                     i11 += AndroidUtilities.dp(56.0f);
                 }
                 if (z11) {
-                    arrayList.add(g61.o(4));
-                    arrayList.add(g61.o(4));
-                    arrayList.add(g61.o(4));
+                    arrayList.add(h61.p(4));
+                    arrayList.add(h61.p(4));
+                    arrayList.add(h61.p(4));
                     i11 += AndroidUtilities.dp(56.0f) * 3;
                 }
                 if (z12 && !z11) {
-                    g61 c10 = g61.c(i10, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
+                    h61 c10 = h61.c(i10, R.drawable.arrow_more, LocaleController.getString(R.string.ShowMore));
                     c10.q = true;
                     arrayList.add(c10);
                     i11 += AndroidUtilities.dp(50.0f);
@@ -659,7 +660,7 @@ public final class c8 extends org.telegram.ui.Components.cb implements Notificat
             tL_messages_searchGlobal.q = str4;
             tL_messages_searchGlobal.limit = 20;
             if (arrayList.size() > 0) {
-                MessageObject messageObject = (MessageObject) hg.k0.g(1, arrayList);
+                MessageObject messageObject = (MessageObject) hg.c.g(1, arrayList);
                 tL_messages_searchGlobal.offset_id = messageObject.getId();
                 tL_messages_searchGlobal.offset_rate = this.r0;
                 tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(this.currentAccount).getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
@@ -740,10 +741,10 @@ public final class c8 extends org.telegram.ui.Components.cb implements Notificat
 
     @Override // org.telegram.ui.Components.cb
     public final yl0 v(zl0 zl0Var) {
-        u61 u61Var = new u61(zl0Var, getContext(), this.currentAccount, 0, false, new u7(this, 0), this.resourcesProvider);
-        this.o0 = u61Var;
-        u61Var.r = false;
-        return u61Var;
+        w61 w61Var = new w61(zl0Var, getContext(), this.currentAccount, 0, false, new u7(this, 0), this.resourcesProvider);
+        this.o0 = w61Var;
+        w61Var.r = false;
+        return w61Var;
     }
 
     @Override // org.telegram.ui.Components.cb

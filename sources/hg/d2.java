@@ -11,7 +11,6 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.TranslateController;
 import org.telegram.ui.ActionBar.f5;
-import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.dl;
 import org.telegram.ui.Components.gk;
 import org.telegram.ui.Components.j8;
@@ -20,12 +19,11 @@ import org.telegram.ui.Components.kk;
 import org.telegram.ui.Components.qa0;
 import org.telegram.ui.Components.qk;
 import org.telegram.ui.Components.rk;
-import org.telegram.ui.Components.w61;
+import org.telegram.ui.Components.y61;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.LanguageSelectActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.a91;
 import org.telegram.ui.br0;
 import org.telegram.ui.gd0;
 import org.telegram.ui.nr;
@@ -33,19 +31,20 @@ import org.telegram.ui.nv;
 import org.telegram.ui.r70;
 import org.telegram.ui.rr;
 import org.telegram.ui.s70;
+import org.telegram.ui.sf1;
 import org.telegram.ui.sp;
 import org.telegram.ui.tp;
 import org.telegram.ui.tr;
-import org.telegram.ui.uf1;
+import org.telegram.ui.w31;
 import org.telegram.ui.wb;
+import org.telegram.ui.wf1;
 import org.telegram.ui.xh0;
 import org.telegram.ui.xt;
-import org.telegram.ui.y31;
-import org.telegram.ui.yf1;
+import org.telegram.ui.y81;
 import org.telegram.ui.zc0;
 import org.telegram.ui.zt;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class d2 extends f5 {
     public final /* synthetic */ int f;
@@ -118,10 +117,6 @@ public final class d2 extends f5 {
                 tpVar.b.setFastScrollVisible(true);
                 tpVar.b.setVerticalScrollBarEnabled(false);
                 tpVar.d.setShowAtCenter(false);
-                View view = tpVar.fragmentView;
-                int i10 = i6.a7;
-                view.setBackgroundColor(i6.w0(null, i10, false));
-                tpVar.fragmentView.setTag(Integer.valueOf(i10));
                 tpVar.d.b();
                 break;
             case 3:
@@ -144,9 +139,9 @@ public final class d2 extends f5 {
             case 4:
                 tr trVar = (tr) this.h;
                 trVar.n = null;
-                w61 w61Var = trVar.a;
-                if (w61Var != null) {
-                    w61Var.f3.N(true);
+                y61 y61Var = trVar.a;
+                if (y61Var != null) {
+                    y61Var.f3.N(true);
                     break;
                 }
                 break;
@@ -260,22 +255,22 @@ public final class d2 extends f5 {
                 qa0Var.j(null);
                 break;
             case 17:
-                y31 y31Var = (y31) this.h;
-                y31Var.f = null;
-                if (y31Var.b != null) {
-                    y31Var.d.setVisibility(8);
-                    y31Var.b.setAdapter(y31Var.a);
+                w31 w31Var = (w31) this.h;
+                w31Var.f = null;
+                if (w31Var.b != null) {
+                    w31Var.d.setVisibility(8);
+                    w31Var.b.setAdapter(w31Var.a);
                     break;
                 }
                 break;
             case 18:
-                a91 a91Var = (a91) this.h;
-                a91Var.a.a(false, true);
-                a91Var.n0(false, true);
-                a91Var.c.f3.N(false);
+                y81 y81Var = (y81) this.h;
+                y81Var.a.a(false, true);
+                y81Var.m0(false, true);
+                y81Var.c.f3.N(false);
                 break;
             case 19:
-                yf1.b0((yf1) this.h, false);
+                wf1.b0((wf1) this.h, false);
                 break;
         }
     }
@@ -326,12 +321,12 @@ public final class d2 extends f5 {
                 rk rkVar = (rk) this.h;
                 rkVar.b0 = true;
                 rkVar.G.setVisibility(8);
-                rkVar.b.q1(rkVar.F.getSearchField(), true);
+                rkVar.b.s1(rkVar.F.getSearchField(), true);
                 break;
             case 7:
                 jl jlVar = (jl) this.h;
                 jlVar.l0 = true;
-                jlVar.b.q1(jlVar.E.getSearchField(), true);
+                jlVar.b.s1(jlVar.E.getSearchField(), true);
                 break;
             case 8:
                 ContactsActivity contactsActivity = (ContactsActivity) this.h;
@@ -363,21 +358,21 @@ public final class d2 extends f5 {
                 br0Var.c.getSearchField().requestFocus();
                 break;
             case 18:
-                a91 a91Var = (a91) this.h;
-                a91Var.a.a(true, true);
-                a91Var.f.I("");
-                a91Var.n0(false, true);
-                a91Var.c.f3.N(false);
+                y81 y81Var = (y81) this.h;
+                y81Var.a.a(true, true);
+                y81Var.f.I("");
+                y81Var.m0(false, true);
+                y81Var.c.f3.N(false);
                 break;
             case 19:
-                yf1 yf1Var = (yf1) this.h;
-                yf1.b0(yf1Var, true);
-                uf1 uf1Var = yf1Var.r0;
-                if (!uf1Var.c0.equals("")) {
-                    uf1Var.M(uf1Var.e[0], uf1Var.getCurrentPosition(), "", false);
+                wf1 wf1Var = (wf1) this.h;
+                wf1.b0(wf1Var, true);
+                sf1 sf1Var = wf1Var.r0;
+                if (!sf1Var.d0.equals("")) {
+                    sf1Var.M(sf1Var.e[0], sf1Var.getCurrentPosition(), "", false);
                 }
-                yf1Var.r0.setAlpha(0.0f);
-                yf1Var.r0.o0.e(true, false);
+                wf1Var.r0.setAlpha(0.0f);
+                wf1Var.r0.p0.e(true, false);
                 break;
         }
     }
@@ -432,10 +427,6 @@ public final class d2 extends f5 {
                         sp spVar = tpVar.e;
                         if (adapter != spVar) {
                             tpVar.b.setAdapter(spVar);
-                            View view = tpVar.fragmentView;
-                            int i10 = i6.d6;
-                            view.setBackgroundColor(i6.w0(null, i10, false));
-                            tpVar.fragmentView.setTag(Integer.valueOf(i10));
                             tpVar.e.l();
                             tpVar.b.setFastScrollVisible(false);
                             tpVar.b.setVerticalScrollBarEnabled(true);
@@ -473,9 +464,9 @@ public final class d2 extends f5 {
             case 4:
                 tr trVar = (tr) this.h;
                 trVar.n = editText.getText().toString();
-                w61 w61Var = trVar.a;
-                if (w61Var != null) {
-                    w61Var.f3.N(true);
+                y61 y61Var = trVar.a;
+                if (y61Var != null) {
+                    y61Var.f3.N(true);
                     break;
                 }
                 break;
@@ -679,47 +670,47 @@ public final class d2 extends f5 {
                 break;
             case 17:
                 String obj9 = editText.getText().toString();
-                y31 y31Var = (y31) this.h;
+                w31 w31Var = (w31) this.h;
                 if (obj9 == null) {
-                    y31Var.f = null;
+                    w31Var.f = null;
                 } else {
                     String lowerCase = obj9.trim().toLowerCase();
-                    ArrayList arrayList = y31Var.f;
+                    ArrayList arrayList = w31Var.f;
                     if (arrayList == null) {
-                        y31Var.f = new ArrayList();
+                        w31Var.f = new ArrayList();
                     } else {
                         arrayList.clear();
                     }
-                    for (int i11 = 0; i11 < y31Var.h.size(); i11++) {
-                        TranslateController.Language language = (TranslateController.Language) y31Var.h.get(i11);
+                    for (int i10 = 0; i10 < w31Var.h.size(); i10++) {
+                        TranslateController.Language language = (TranslateController.Language) w31Var.h.get(i10);
                         if (language.q.startsWith(lowerCase)) {
-                            y31Var.f.add(0, language);
+                            w31Var.f.add(0, language);
                         } else if (language.q.contains(lowerCase)) {
-                            y31Var.f.add(language);
+                            w31Var.f.add(language);
                         }
                     }
-                    y31Var.c.l();
+                    w31Var.c.l();
                 }
                 if (obj9.length() != 0) {
-                    zl0 zl0Var7 = y31Var.b;
+                    zl0 zl0Var7 = w31Var.b;
                     if (zl0Var7 != null) {
-                        zl0Var7.setAdapter(y31Var.c);
+                        zl0Var7.setAdapter(w31Var.c);
                         break;
                     }
-                } else if (y31Var.b != null) {
-                    y31Var.d.setVisibility(8);
-                    y31Var.b.setAdapter(y31Var.a);
+                } else if (w31Var.b != null) {
+                    w31Var.d.setVisibility(8);
+                    w31Var.b.setAdapter(w31Var.a);
                     break;
                 }
                 break;
             case 18:
-                ((a91) this.h).f.I(editText.getText().toString());
+                ((y81) this.h).f.I(editText.getText().toString());
                 break;
             case 19:
                 String obj10 = editText.getText().toString();
-                uf1 uf1Var = ((yf1) this.h).r0;
-                if (!uf1Var.c0.equals(obj10)) {
-                    uf1Var.M(uf1Var.e[0], uf1Var.getCurrentPosition(), obj10, false);
+                sf1 sf1Var = ((wf1) this.h).r0;
+                if (!sf1Var.d0.equals(obj10)) {
+                    sf1Var.M(sf1Var.e[0], sf1Var.getCurrentPosition(), obj10, false);
                     break;
                 }
                 break;

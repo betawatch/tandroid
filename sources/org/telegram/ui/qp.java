@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class qp extends org.telegram.ui.Components.yl0 {
     public final Context c;
@@ -74,7 +74,7 @@ public final class qp extends org.telegram.ui.Components.yl0 {
             b5Var.setTag(Integer.valueOf(i10));
             TLRPC.Chat chat = (TLRPC.Chat) tpVar.v.get(i10 - tpVar.G);
             String publicUsername = ChatObject.getPublicUsername(chat);
-            b5Var.b(chat, null, TextUtils.isEmpty(publicUsername) ? null : t8.b.i("@", publicUsername), (i10 == tpVar.H - 1 && tpVar.h.linked_chat_id == 0) ? false : true);
+            b5Var.b(chat, null, TextUtils.isEmpty(publicUsername) ? null : sa.e.i("@", publicUsername), (i10 == tpVar.H - 1 && tpVar.h.linked_chat_id == 0) ? false : true);
             return;
         }
         if (i11 == 1) {

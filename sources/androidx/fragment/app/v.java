@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 import java.util.concurrent.CopyOnWriteArraySet;
 import n7.z0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class v extends androidx.activity.l implements e0.c, e0.d {
     public boolean L;
@@ -35,10 +35,10 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
             public final void accept(Object obj) {
                 switch (i10) {
                     case 0:
-                        this.b.J.L();
+                        this.b.J.J();
                         break;
                     default:
-                        this.b.J.L();
+                        this.b.J.J();
                         break;
                 }
             }
@@ -55,10 +55,10 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
             public final void accept(Object obj) {
                 switch (i11) {
                     case 0:
-                        this.b.J.L();
+                        this.b.J.J();
                         break;
                     default:
-                        this.b.J.L();
+                        this.b.J.J();
                         break;
                 }
             }
@@ -151,7 +151,7 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
 
     @Override // androidx.activity.l, android.app.Activity
     public void onActivityResult(int i10, int i11, Intent intent) {
-        this.J.L();
+        this.J.J();
         super.onActivityResult(i10, i11, intent);
     }
 
@@ -211,14 +211,14 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
 
     @Override // androidx.activity.l, android.app.Activity
     public void onRequestPermissionsResult(int i10, String[] strArr, int[] iArr) {
-        this.J.L();
+        this.J.J();
         super.onRequestPermissionsResult(i10, strArr, iArr);
     }
 
     @Override // android.app.Activity
     public void onResume() {
         xa.c cVar = this.J;
-        cVar.L();
+        cVar.J();
         super.onResume();
         this.M = true;
         ((u) cVar.b).d.A(true);
@@ -227,7 +227,7 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
     @Override // android.app.Activity
     public void onStart() {
         xa.c cVar = this.J;
-        cVar.L();
+        cVar.J();
         u uVar = (u) cVar.b;
         super.onStart();
         this.N = false;
@@ -250,7 +250,7 @@ public abstract class v extends androidx.activity.l implements e0.c, e0.d {
 
     @Override // android.app.Activity
     public final void onStateNotSaved() {
-        this.J.L();
+        this.J.J();
     }
 
     @Override // android.app.Activity

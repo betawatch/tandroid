@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class b implements a {
     public final d6 a;
@@ -23,6 +23,11 @@ public class b implements a {
 
     @Override // dh.a
     public int B() {
+        return this.e;
+    }
+
+    @Override // dh.a
+    public int H() {
         return this.d;
     }
 
@@ -51,11 +56,6 @@ public class b implements a {
             this.h = -1;
             this.e = TLObject.FLAG_29;
         }
-    }
-
-    @Override // dh.a
-    public int i() {
-        return this.e;
     }
 
     public b(d6 d6Var, int i10, float f7) {

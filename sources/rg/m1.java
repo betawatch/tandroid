@@ -27,7 +27,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.cl0;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.p90;
 import org.telegram.ui.Components.q90;
@@ -51,10 +51,10 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.cg0;
 import org.telegram.ui.ex0;
 import org.telegram.ui.ow0;
-import org.telegram.ui.xb1;
+import org.telegram.ui.vb1;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class m1 extends cb implements NotificationCenter.NotificationCenterDelegate {
     public View A0;
@@ -94,7 +94,7 @@ public class m1 extends cb implements NotificationCenter.NotificationCenterDeleg
     public final a1 p0;
     public ei.g q0;
     public cg0 r0;
-    public xb1 s0;
+    public vb1 s0;
     public final n2 t0;
     public Integer u0;
     public float v0;
@@ -142,7 +142,7 @@ public class m1 extends cb implements NotificationCenter.NotificationCenterDeleg
     }
 
     @Override // org.telegram.ui.Components.cb
-    public final void E(lw0 lw0Var) {
+    public final void E(mw0 mw0Var) {
         this.Y = UserConfig.selectedAccount;
         q0 q0Var = new q0(getContext(), this.resourcesProvider, false);
         q0Var.a(PremiumPreviewFragment.o0(this.Y, null), new org.telegram.ui.Components.voip.o(this, 10), false);
@@ -157,11 +157,11 @@ public class m1 extends cb implements NotificationCenter.NotificationCenterDeleg
         }
         this.L0.addView(q0Var, z5.d(-1, 48.0f, 16, 16.0f, 0.0f, 16.0f, 0.0f));
         this.L0.setBackgroundColor(getThemedColor(i6.h5));
-        lw0Var.addView(this.L0, z5.e(-1, 68, 80));
+        mw0Var.addView(this.L0, z5.e(-1, 68, 80));
     }
 
-    public void U(xb1 xb1Var) {
-        xb1Var.addView(this.B0, z5.p(140, 140, 1.0f, 17, 10, 10, 10, 10));
+    public void U(vb1 vb1Var) {
+        vb1Var.addView(this.B0, z5.p(140, 140, 1.0f, 17, 10, 10, 10, 10));
     }
 
     public int W() {
@@ -250,7 +250,7 @@ public class m1 extends cb implements NotificationCenter.NotificationCenterDeleg
                                 this.O0[1].setVisibility(0);
                                 ViewPropertyAnimator alpha = this.O0[1].animate().alpha(1.0f);
                                 tr trVar = tr.f;
-                                ok.s(alpha, trVar, 200L);
+                                bi.r(alpha, trVar, 200L);
                                 this.O0[0].animate().alpha(0.0f).setInterpolator(trVar).setDuration(200L).withEndAction(new e1(this, i10)).start();
                                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                                 ofFloat.addUpdateListener(new g1(this, i11));
@@ -416,7 +416,7 @@ public class m1 extends cb implements NotificationCenter.NotificationCenterDeleg
         canvas.scale(f15, f15, lerp, lerp2);
         int i10 = (int) lerp;
         int i11 = (int) lerp2;
-        rightDrawable.setBounds(org.telegram.ui.Cells.c1.e(2, i10, rightDrawable), ok.d(2, i11, rightDrawable), org.telegram.ui.Cells.c1.w(2, i10, rightDrawable), org.telegram.ui.Cells.c1.t(2, i11, rightDrawable));
+        rightDrawable.setBounds(org.telegram.ui.Cells.c1.t(2, i10, rightDrawable), org.telegram.ui.Cells.c1.e(2, i11, rightDrawable), org.telegram.ui.Cells.c1.x(2, i10, rightDrawable), org.telegram.ui.Cells.c1.w(2, i11, rightDrawable));
         rightDrawable.setAlpha((int) ((1.0f - Utilities.clamp(this.G0, 1.0f, 0.0f)) * 255.0f));
         rightDrawable.draw(canvas);
         rightDrawable.setAlpha(0);

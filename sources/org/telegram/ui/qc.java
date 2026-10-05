@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qc implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class qc implements Utilities.Callback {
             case 1:
                 rg.k0 k0Var = (rg.k0) obj2;
                 k0Var.G1((ChannelBoostsController.CanApplyBoost) obj);
-                ((me) obj3).p1.showDialog(k0Var);
+                ((me) obj3).m0.showDialog(k0Var);
                 break;
             case 2:
                 yn ynVar = (yn) obj3;
@@ -107,7 +107,7 @@ public final /* synthetic */ class qc implements Utilities.Callback {
                     break;
                 }
             case 5:
-                yn.p1((yn) obj3, (b41[]) obj2, (org.telegram.ui.Components.b80) obj);
+                yn.p1((yn) obj3, (z31[]) obj2, (org.telegram.ui.Components.b80) obj);
                 break;
             case 6:
                 ((yn) obj3).gb = true;
@@ -124,7 +124,7 @@ public final /* synthetic */ class qc implements Utilities.Callback {
                 b2VarArr[0] = null;
                 if (tL_statsPollStats != null) {
                     if (tL_statsPollStats.votes_graph instanceof TL_stats.TL_statsGraphError) {
-                        org.telegram.messenger.f0.p(R.string.PollStatsWillLater, org.telegram.ui.Components.yc.a0(ynVar4), R.raw.timer_toast, 24);
+                        org.telegram.messenger.q.p(R.string.PollStatsWillLater, org.telegram.ui.Components.yc.a0(ynVar4), R.raw.timer_toast, 24);
                         break;
                     } else {
                         new th.g(ynVar4.getParentActivity(), ynVar4.ca, tL_statsPollStats).show();
@@ -246,10 +246,10 @@ public final /* synthetic */ class qc implements Utilities.Callback {
             case 17:
                 org.telegram.ui.Components.xi xiVar2 = (org.telegram.ui.Components.xi) obj3;
                 ((yn) obj2).e5 = (MessageSuggestionParams) obj;
-                boolean D1 = xiVar2.D1(0, true, 0, xiVar2.p1(), xiVar2.N0);
+                boolean F1 = xiVar2.F1(0, true, 0, xiVar2.r1(), xiVar2.N0);
                 org.telegram.ui.Components.of ofVar = xiVar2.h0;
                 if (ofVar != null) {
-                    ofVar.h(!D1);
+                    ofVar.h(!F1);
                     xiVar2.h0 = null;
                     break;
                 }
@@ -377,14 +377,14 @@ public final /* synthetic */ class qc implements Utilities.Callback {
                 break;
             case 28:
                 MessagesController messagesController2 = (MessagesController) obj3;
-                org.telegram.ui.Components.xr0 xr0Var = (org.telegram.ui.Components.xr0) obj2;
+                org.telegram.ui.Components.yr0 yr0Var = (org.telegram.ui.Components.yr0) obj2;
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (((Boolean) obj).booleanValue()) {
                     messagesController2.setContentSettings(true);
                     if (U != null) {
                         org.telegram.ui.Components.yc.a0(U).P(R.raw.chats_infotip, AndroidUtilities.replaceArrows(AndroidUtilities.premiumText(LocaleController.getString(R.string.SensitiveContentSettingsToast), new org.telegram.ui.Components.ud(i12, U)), true)).k(true);
                     }
-                    xr0Var.run(Boolean.TRUE);
+                    yr0Var.run(Boolean.TRUE);
                     break;
                 } else if (U != null) {
                     org.telegram.ui.Components.yc.a0(U).M(LocaleController.getString(R.string.AgeVerificationFailedTitle), LocaleController.getString(R.string.AgeVerificationFailedText), R.raw.error).j();
@@ -392,7 +392,7 @@ public final /* synthetic */ class qc implements Utilities.Callback {
                 }
                 break;
             default:
-                org.telegram.ui.Components.pv0.j((org.telegram.ui.Components.pv0) obj3, (TL_stories.StoryItem) obj2, (ai.e9) obj);
+                org.telegram.ui.Components.qv0.j((org.telegram.ui.Components.qv0) obj3, (TL_stories.StoryItem) obj2, (ai.e9) obj);
                 break;
         }
     }

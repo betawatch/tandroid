@@ -5,7 +5,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gg implements Runnable {
     public final /* synthetic */ int a;
@@ -29,9 +29,9 @@ public final /* synthetic */ class gg implements Runnable {
                 LongSparseIntArray longSparseIntArray = ynVar.K5;
                 long j3 = this.c;
                 longSparseIntArray.put(j3, 0);
-                org.telegram.ui.Components.v31 v31Var = ynVar.P1;
-                if (v31Var != null) {
-                    v31Var.setAllTopicsHidden(false);
+                org.telegram.ui.Components.w31 w31Var = ynVar.P1;
+                if (w31Var != null) {
+                    w31Var.setAllTopicsHidden(false);
                 }
                 if (j3 == ynVar.b4) {
                     ynVar.y0.O(false);
@@ -61,7 +61,7 @@ public final /* synthetic */ class gg implements Runnable {
                 org.telegram.ui.Components.yc.a0(this.b).M(LocaleController.getString(R.string.StarsGiveawaySentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsGiveawaySentPopupInfo", (int) this.c)), R.raw.stars_topup).k(true);
                 break;
             default:
-                this.b.presentFragment(new ProfileActivity(t8.b.f(this.c, "user_id"), null));
+                this.b.presentFragment(new ProfileActivity(sa.e.f(this.c, "user_id"), null));
                 break;
         }
     }

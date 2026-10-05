@@ -14,7 +14,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.i6;
@@ -26,7 +26,7 @@ import org.telegram.ui.Components.nn;
 import org.telegram.ui.Components.w00;
 import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class u1 extends yl0 {
     public int E;
@@ -171,7 +171,7 @@ public abstract class u1 extends yl0 {
                     return;
                 }
                 ContactsController.Contact contact = (ContactsController.Contact) E(i10);
-                ((i6) view).t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), ok.h(new StringBuilder("+"), contact.shortPhones.get(0), gf.b.c()), false, false);
+                ((i6) view).t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), bi.g(new StringBuilder("+"), contact.shortPhones.get(0), gf.b.c()), false, false);
                 return;
             }
             String str2 = (String) E(i10);

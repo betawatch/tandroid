@@ -6,7 +6,7 @@ import e2.d0;
 import java.io.EOFException;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final f a;
@@ -34,6 +34,16 @@ public final class b implements g {
             this.e = 0;
         }
         this.a = new f();
+    }
+
+    @Override // x3.g
+    public final void C(long j3) {
+        this.n = d0.i(j3, 0L, this.f - 1);
+        this.e = 2;
+        this.r = this.b;
+        this.s = this.c;
+        this.v = 0L;
+        this.w = this.f;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:26:0x00c4 A[RETURN] */
@@ -161,15 +171,5 @@ public final class b implements g {
             return new a(this);
         }
         return null;
-    }
-
-    @Override // x3.g
-    public final void y(long j3) {
-        this.n = d0.i(j3, 0L, this.f - 1);
-        this.e = 2;
-        this.r = this.b;
-        this.s = this.c;
-        this.v = 0L;
-        this.w = this.f;
     }
 }

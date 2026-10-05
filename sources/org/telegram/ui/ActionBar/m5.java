@@ -31,6 +31,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -41,8 +42,8 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.cw0;
+import org.telegram.ui.Components.e61;
 import org.telegram.ui.Components.ea0;
 import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.gd0;
@@ -51,7 +52,7 @@ import org.telegram.ui.Components.iz;
 import org.telegram.ui.Components.j90;
 import org.telegram.ui.Components.jo0;
 import org.telegram.ui.Components.jy;
-import org.telegram.ui.Components.np0;
+import org.telegram.ui.Components.op0;
 import org.telegram.ui.Components.pa0;
 import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.sr;
@@ -64,8 +65,8 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yw;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.k8;
+import org.telegram.ui.m41;
 import org.telegram.ui.mq;
-import org.telegram.ui.o41;
 import org.telegram.ui.o6;
 import org.telegram.ui.q6;
 import org.telegram.ui.qc;
@@ -80,7 +81,7 @@ import org.telegram.ui.uy;
 import org.telegram.ui.wq;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m5 implements Runnable {
     public final /* synthetic */ int a;
@@ -467,7 +468,7 @@ public final /* synthetic */ class m5 implements Runnable {
                                 if (i23 < i21) {
                                     int i24 = i23;
                                     String str7 = strArr[i24];
-                                    if (lowerCase.startsWith(str7) || org.telegram.messenger.f0.w(" ", str7, lowerCase) || (translitString2 != null && (translitString2.startsWith(str7) || org.telegram.messenger.f0.w(" ", str7, translitString2)))) {
+                                    if (lowerCase.startsWith(str7) || bi.u(" ", str7, lowerCase) || (translitString2 != null && (translitString2.startsWith(str7) || bi.u(" ", str7, translitString2)))) {
                                         str4 = lowerCase;
                                         r42 = 1;
                                     } else if (publicUsername == null || !publicUsername.startsWith(str7)) {
@@ -482,7 +483,7 @@ public final /* synthetic */ class m5 implements Runnable {
                                         if (r42 == 1) {
                                             arrayList4.add(AndroidUtilities.generateSearchName(str2, str3, str7));
                                         } else {
-                                            arrayList4.add(AndroidUtilities.generateSearchName(t8.b.i("@", publicUsername), null, "@" + str7));
+                                            arrayList4.add(AndroidUtilities.generateSearchName(sa.e.i("@", publicUsername), null, "@" + str7));
                                         }
                                         arrayList5.add(tLObject6);
                                     } else {
@@ -520,7 +521,7 @@ public final /* synthetic */ class m5 implements Runnable {
                                 char c10 = 0;
                                 while (i26 < i21) {
                                     String str10 = strArr3[i26];
-                                    if (lowerCase3.startsWith(str10) || org.telegram.messenger.f0.w(str5, str10, lowerCase3) || (translitString3 != null && (translitString3.startsWith(str10) || org.telegram.messenger.f0.w(str5, str10, translitString3)))) {
+                                    if (lowerCase3.startsWith(str10) || bi.u(str5, str10, lowerCase3) || (translitString3 != null && (translitString3.startsWith(str10) || bi.u(str5, str10, translitString3)))) {
                                         str = str5;
                                         c10 = 1;
                                     } else {
@@ -606,7 +607,7 @@ public final /* synthetic */ class m5 implements Runnable {
                     if (i27 < iArr.length) {
                         if (iArr2[0] == iArr[i27]) {
                             spannableStringBuilder.append((CharSequence) strArr4[i27]);
-                            spannableStringBuilder.setSpan(new d61(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
+                            spannableStringBuilder.setSpan(new e61(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
                         } else {
                             i27++;
                         }
@@ -629,7 +630,7 @@ public final /* synthetic */ class m5 implements Runnable {
                 r52.setText(spannableStringBuilder);
                 break;
             case 18:
-                ChatActivityEnterView.f((ChatActivityEnterView) this.b, (bw0) this.c, (int[]) this.d, (np0) this.e);
+                ChatActivityEnterView.f((ChatActivityEnterView) this.b, (cw0) this.c, (int[]) this.d, (op0) this.e);
                 break;
             case 19:
                 xn xnVar = (xn) this.b;
@@ -975,7 +976,7 @@ public final /* synthetic */ class m5 implements Runnable {
                 uy uyVar2 = (uy) this.c;
                 Context context3 = (Context) this.d;
                 b80 b80Var = (b80) this.e;
-                uyVar2.showDialog(new o41(context3, uyVar2.getResourceProvider(), new yw(29, jo0Var, uyVar2)));
+                uyVar2.showDialog(new m41(context3, uyVar2.getResourceProvider(), new yw(29, jo0Var, uyVar2)));
                 b80Var.u();
                 break;
         }

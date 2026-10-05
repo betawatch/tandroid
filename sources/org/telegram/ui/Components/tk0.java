@@ -11,7 +11,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class tk0 extends View {
     public final RectF E;
@@ -39,7 +39,7 @@ public final class tk0 extends View {
     public final Paint e;
     public final sg0 f;
     public final o6 h;
-    public d81 n;
+    public e81 n;
     public float r;
     public float s;
     public float v;
@@ -283,8 +283,8 @@ public final class tk0 extends View {
     }
 
     public final boolean b() {
-        d81 d81Var = this.n;
-        return d81Var != null && d81Var.y();
+        e81 e81Var = this.n;
+        return e81Var != null && e81Var.y();
     }
 
     @Override // android.view.View
@@ -330,11 +330,11 @@ public final class tk0 extends View {
                 this.v = Utilities.clamp(AndroidUtilities.ilerp(motionEvent.getX(), rectF3.left + AndroidUtilities.dp(11.33f), rectF3.right - AndroidUtilities.dp(11.33f)), 1.0f, Utilities.clamp01(Math.max(1.0f / this.r, AndroidUtilities.dp(30.0f) / (rectF3.width() - AndroidUtilities.dp(22.66f))) + this.s));
                 invalidate();
             } else if (this.U) {
-                d81 d81Var = this.n;
-                if (d81Var != null) {
+                e81 e81Var = this.n;
+                if (e81Var != null) {
                     float clamp = Utilities.clamp(AndroidUtilities.ilerp(motionEvent.getX(), rectF3.left + AndroidUtilities.dp(11.33f), rectF3.right - AndroidUtilities.dp(11.33f)), this.v, this.s);
                     this.V = clamp;
-                    d81Var.L((long) (clamp * this.n.p()), false);
+                    e81Var.L((long) (clamp * this.n.p()), false);
                 }
                 invalidate();
             }
@@ -343,15 +343,15 @@ public final class tk0 extends View {
             if (motionEvent.getAction() == 1 && this.T) {
                 setPlaying(!b());
             } else if (this.R && this.w) {
-                d81 d81Var2 = this.n;
-                if (d81Var2 != null) {
-                    d81Var2.L((long) (this.s * d81Var2.p()), false);
+                e81 e81Var2 = this.n;
+                if (e81Var2 != null) {
+                    e81Var2.L((long) (this.s * e81Var2.p()), false);
                 }
                 setPlaying(true);
             } else if (this.S && this.w) {
-                d81 d81Var3 = this.n;
-                if (d81Var3 != null) {
-                    d81Var3.L(Math.max((long) (this.s * d81Var3.p()), ((long) (this.v * this.n.p())) - 1500), false);
+                e81 e81Var3 = this.n;
+                if (e81Var3 != null) {
+                    e81Var3.L(Math.max((long) (this.s * e81Var3.p()), ((long) (this.v * this.n.p())) - 1500), false);
                 }
                 setPlaying(true);
             } else if (this.U && !b()) {
@@ -382,11 +382,11 @@ public final class tk0 extends View {
     }
 
     public long getDuration() {
-        d81 d81Var = this.n;
-        if (d81Var == null) {
+        e81 e81Var = this.n;
+        if (e81Var == null) {
             return 0L;
         }
-        return d81Var.p();
+        return e81Var.p();
     }
 
     public double getNewDuration() {

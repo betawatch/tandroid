@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class m extends o6.a {
     public static final Parcelable.Creator<m> CREATOR = new r0(18);
@@ -62,12 +62,12 @@ public final class m extends o6.a {
         String valueOf = String.valueOf(this.a);
         String valueOf2 = String.valueOf(this.c);
         String valueOf3 = String.valueOf(this.d);
-        StringBuilder v = a4.a.v("AuthenticatorSelectionCriteria{\n attachment=", valueOf, ", \n requireResidentKey=");
-        v.append(this.b);
-        v.append(", \n requireUserVerification=");
-        v.append(valueOf2);
-        v.append(", \n residentKeyRequirement=");
-        return a4.a.s(v, valueOf3, "\n }");
+        StringBuilder w10 = a4.a.w("AuthenticatorSelectionCriteria{\n attachment=", valueOf, ", \n requireResidentKey=");
+        w10.append(this.b);
+        w10.append(", \n requireUserVerification=");
+        w10.append(valueOf2);
+        w10.append(", \n residentKeyRequirement=");
+        return a4.a.t(w10, valueOf3, "\n }");
     }
 
     @Override // android.os.Parcelable

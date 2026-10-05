@@ -7,13 +7,13 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.av0;
+import org.telegram.ui.Components.bv0;
 import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.zm;
 import org.telegram.ui.jx;
 import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k3 implements Utilities.Callback4 {
     public final /* synthetic */ int a;
@@ -125,10 +125,10 @@ public final /* synthetic */ class k3 implements Utilities.Callback4 {
                 }
                 break;
             default:
-                av0 av0Var = (av0) this.b;
+                bv0 bv0Var = (bv0) this.b;
                 zm zmVar = (zm) this.c;
                 ArrayList arrayList2 = (ArrayList) obj;
-                int i11 = av0Var.d;
+                int i11 = bv0Var.d;
                 MessagesController.getInstance(i11).putUsers((ArrayList) obj2, true);
                 MessagesController.getInstance(i11).putChats((ArrayList) obj3, true);
                 org.telegram.ui.Components.q5.h(i11).d((ArrayList) obj4);
@@ -137,10 +137,10 @@ public final /* synthetic */ class k3 implements Utilities.Callback4 {
                     if (messageObject.hasValidGroupId() && messageObject.messageOwner.reactions != null) {
                         messageObject.isPrimaryGroupMessage = true;
                     }
-                    messageObject.setQuery(av0Var.w);
-                    av0Var.n.add(messageObject);
+                    messageObject.setQuery(bv0Var.w);
+                    bv0Var.n.add(messageObject);
                 }
-                av0Var.G(true);
+                bv0Var.G(true);
                 AndroidUtilities.runOnUIThread(zmVar, 540L);
                 break;
         }

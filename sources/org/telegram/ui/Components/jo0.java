@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class jo0 extends gg.i0 {
     public final /* synthetic */ org.telegram.ui.uy I0;
@@ -23,13 +23,13 @@ public final class jo0 extends gg.i0 {
         int i10 = this.B0;
         super.l();
         org.telegram.ui.dy dyVar = this.K0;
-        if (!dyVar.J0 && (w0Var = dyVar.W) != null) {
+        if (!dyVar.K0 && (w0Var = dyVar.a0) != null) {
             w0Var.v0(0);
-            dyVar.J0 = true;
+            dyVar.K0 = true;
         }
         if (h() != 0 || i10 == 0 || this.D0 > 0) {
             return;
         }
-        dyVar.a0.e(false, false);
+        dyVar.b0.e(false, false);
     }
 }

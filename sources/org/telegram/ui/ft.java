@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ft implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -173,7 +173,7 @@ public final /* synthetic */ class ft implements Utilities.Callback {
                         TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
                         tL_contacts_search.q = str;
                         tL_contacts_search.limit = 50;
-                        i12 = connectionsManager.sendRequest(tL_contacts_search, new ui1(i11, messagesController, ftVar));
+                        i12 = connectionsManager.sendRequest(tL_contacts_search, new si1(i11, messagesController, ftVar));
                     }
                     oj0Var.m0 = i12;
                     break;
@@ -292,11 +292,11 @@ public final /* synthetic */ class ft implements Utilities.Callback {
                 g11 g11Var = (g11) obj3;
                 String str4 = (String) obj2;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) obj;
-                TLRPC.Document k10 = c71.k(str4, tL_messages_stickerSet2);
+                TLRPC.Document k10 = a71.k(str4, tL_messages_stickerSet2);
                 if (k10 == null) {
-                    StringBuilder v = a4.a.v("couldn't find ", str4, " sticker in EmojiAnimations");
+                    StringBuilder w10 = a4.a.w("couldn't find ", str4, " sticker in EmojiAnimations");
                     String[] strArr = j11.s;
-                    FileLog.e(v.toString());
+                    FileLog.e(w10.toString());
                     break;
                 } else {
                     i11 i11Var = new i11();
@@ -318,29 +318,29 @@ public final /* synthetic */ class ft implements Utilities.Callback {
                 ((ai.i) obj3).run((HashSet) obj2);
                 break;
             case 16:
-                e51 e51Var = (e51) obj3;
+                c51 c51Var = (c51) obj3;
                 View view = (View) obj2;
                 Bitmap bitmap3 = (Bitmap) obj;
                 if (view != null) {
-                    e51Var.getClass();
+                    c51Var.getClass();
                     view.setVisibility(0);
                 }
-                e51Var.f = bitmap3;
+                c51Var.f = bitmap3;
                 Paint paint2 = new Paint(1);
-                e51Var.n = paint2;
-                Bitmap bitmap4 = e51Var.f;
+                c51Var.n = paint2;
+                Bitmap bitmap4 = c51Var.f;
                 Shader.TileMode tileMode2 = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader2 = new BitmapShader(bitmap4, tileMode2, tileMode2);
-                e51Var.h = bitmapShader2;
+                c51Var.h = bitmapShader2;
                 paint2.setShader(bitmapShader2);
                 ColorMatrix colorMatrix2 = new ColorMatrix();
                 AndroidUtilities.adjustSaturationColorMatrix(colorMatrix2, org.telegram.ui.ActionBar.i6.I.q() ? 0.05f : 0.25f);
                 AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix2, org.telegram.ui.ActionBar.i6.I.q() ? -0.02f : -0.04f);
-                e51Var.n.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
-                e51Var.r = new Matrix();
+                c51Var.n.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
+                c51Var.r = new Matrix();
                 break;
             case 17:
-                a91.W((a91) obj3, (TLRPC.TL_attachMenuBot) obj2);
+                y81.U((y81) obj3, (TLRPC.TL_attachMenuBot) obj2);
                 break;
             case 18:
                 ThemeActivity themeActivity = (ThemeActivity) obj3;
@@ -359,9 +359,9 @@ public final /* synthetic */ class ft implements Utilities.Callback {
                 break;
             case 19:
                 ThemeActivity themeActivity2 = (ThemeActivity) obj3;
-                g91 g91Var = (g91) obj2;
+                e91 e91Var = (e91) obj2;
                 if (((Boolean) obj).booleanValue()) {
-                    g91Var.run();
+                    e91Var.run();
                     break;
                 } else {
                     org.telegram.ui.Components.yc.a0(themeActivity2).M(LocaleController.getString(R.string.AgeVerificationFailedTitle), LocaleController.getString(R.string.AgeVerificationFailedText), R.raw.error).j();
@@ -401,27 +401,27 @@ public final /* synthetic */ class ft implements Utilities.Callback {
                 break;
             case 23:
                 org.telegram.messenger.voip.f fVar = (org.telegram.messenger.voip.f) obj2;
-                if (((Object[]) obj)[1] == ((yh.k5) obj3)) {
+                if (((Object[]) obj)[1] == ((yh.l5) obj3)) {
                     fVar.run();
                     break;
                 }
                 break;
             case 24:
-                org.telegram.ui.Components.fs0 fs0Var = (org.telegram.ui.Components.fs0) obj3;
+                org.telegram.ui.Components.gs0 gs0Var = (org.telegram.ui.Components.gs0) obj3;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj2;
                 String str5 = (String) obj;
-                yh.j5 j5Var = fs0Var.e;
+                yh.k5 k5Var = gs0Var.e;
                 int i16 = tL_starGiftCollection.collection_id;
-                j5Var.getClass();
+                k5Var.getClass();
                 TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
-                int i17 = j5Var.a;
-                updatestargiftcollection.peer = MessagesController.getInstance(i17).getInputPeer(j5Var.b);
+                int i17 = k5Var.a;
+                updatestargiftcollection.peer = MessagesController.getInstance(i17).getInputPeer(k5Var.b);
                 updatestargiftcollection.collection_id = i16;
                 updatestargiftcollection.flags |= 1;
                 updatestargiftcollection.title = str5;
                 ConnectionsManager.getInstance(i17).sendRequest(updatestargiftcollection, null);
                 tL_starGiftCollection.title = str5;
-                fs0Var.f(true);
+                gs0Var.f(true);
                 break;
             case 25:
                 xh.z4 z4Var = (xh.z4) obj3;
@@ -437,50 +437,50 @@ public final /* synthetic */ class ft implements Utilities.Callback {
                 MessagesController.getInstance(z4Var.Y).getMainSettings().edit().putBoolean("show_gift_for_" + j10, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j10, true).apply();
                 break;
             case 26:
-                yh.x3 x3Var = (yh.x3) obj3;
+                yh.y3 y3Var = (yh.y3) obj3;
                 String str6 = (String) obj2;
                 TL_stars.starGiftUpgradePreview stargiftupgradepreview = (TL_stars.starGiftUpgradePreview) obj;
-                yh.u3 u3Var = x3Var.e0;
-                ei.l[] lVarArr = x3Var.s0;
-                ci.d dVar = x3Var.j0;
+                yh.v3 v3Var = y3Var.e0;
+                ei.l[] lVarArr = y3Var.s0;
+                ci.d dVar = y3Var.j0;
                 if (stargiftupgradepreview != null) {
-                    u3Var.setPreviewingAttributes(stargiftupgradepreview.sample_attributes);
-                    x3Var.q2(1, false, null);
-                    u3Var.i(1, LocaleController.getString(R.string.Gift2LearnMoreTitle), LocaleController.formatString(R.string.Gift2LearnMoreText, str6), null);
+                    v3Var.setPreviewingAttributes(stargiftupgradepreview.sample_attributes);
+                    y3Var.q2(1, false, null);
+                    v3Var.i(1, LocaleController.getString(R.string.Gift2LearnMoreTitle), LocaleController.formatString(R.string.Gift2LearnMoreText, str6), null);
                     lVarArr[0].setText(LocaleController.getString(R.string.Gift2UpgradeFeature1TextLearn));
                     lVarArr[1].setText(LocaleController.getString(R.string.Gift2UpgradeFeature2TextLearn));
                     lVarArr[2].setText(LocaleController.getString(R.string.Gift2UpgradeFeature3TextLearn));
-                    x3Var.u0.setVisibility(8);
-                    x3Var.t0.setVisibility(8);
+                    y3Var.u0.setVisibility(8);
+                    y3Var.t0.setVisibility(8);
                     dVar.setFilled(true);
                     dVar.g(LocaleController.getString(R.string.OK), false, true);
                     dVar.f(null, false);
-                    dVar.setOnClickListener(new yh.u0(x3Var, 4));
-                    x3Var.show();
+                    dVar.setOnClickListener(new yh.v0(y3Var, 4));
+                    y3Var.show();
                     break;
                 }
                 break;
             case 27:
-                yh.x3.m0((yh.x3) obj3, (org.telegram.ui.ActionBar.b2) obj2, (TL_stars.SavedStarGift) obj);
+                yh.y3.m0((yh.y3) obj3, (org.telegram.ui.ActionBar.b2) obj2, (TL_stars.SavedStarGift) obj);
                 break;
             case 28:
-                yh.x2 x2Var = (yh.x2) obj3;
-                x2Var.getClass();
-                ((yh.v2) obj2).a((TL_stars.StarGift) obj, true);
-                x2Var.d(true);
+                yh.y2 y2Var = (yh.y2) obj3;
+                y2Var.getClass();
+                ((yh.w2) obj2).a((TL_stars.StarGift) obj, true);
+                y2Var.d(true);
                 break;
             default:
-                yh.c3 c3Var = (yh.c3) obj3;
+                yh.d3 d3Var = (yh.d3) obj3;
                 zf.b bVar = (zf.b) obj2;
                 TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) obj;
-                nf.e eVar = c3Var.n;
-                if (eVar != null && bVar == c3Var.q) {
+                nf.e eVar = d3Var.n;
+                if (eVar != null && bVar == d3Var.q) {
                     eVar.c(false);
                 }
-                c3Var.p.remove(bVar);
+                d3Var.p.remove(bVar);
                 if (tL_payments_paymentFormStarGift != null) {
-                    c3Var.o.put(bVar, new yh.a3(bVar, tL_payments_paymentFormStarGift));
-                    c3Var.a(true);
+                    d3Var.o.put(bVar, new yh.b3(bVar, tL_payments_paymentFormStarGift));
+                    d3Var.a(true);
                     break;
                 }
                 break;

@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class zh extends mu {
     public boolean V;
@@ -30,8 +30,8 @@ public final class zh extends mu {
         wh whVar = xiVar.D0;
         whVar.setTranslationY(f7);
         whVar.invalidate();
-        xiVar.e1();
-        xiVar.U1(xiVar.y0, 0);
+        xiVar.g1();
+        xiVar.W1(xiVar.y0, 0);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -85,9 +85,9 @@ public final class zh extends mu {
         zh zhVar = xiVar.E0;
         if (!xiVar.u1) {
             if (motionEvent.getX() <= zhVar.getEditText().getLeft() || motionEvent.getX() >= zhVar.getEditText().getRight() || motionEvent.getY() <= zhVar.getEditText().getTop() || motionEvent.getY() >= zhVar.getEditText().getBottom()) {
-                xiVar.q1(zhVar.getEditText(), false);
+                xiVar.s1(zhVar.getEditText(), false);
             } else {
-                xiVar.q1(zhVar.getEditText(), true);
+                xiVar.s1(zhVar.getEditText(), true);
             }
         }
         return super.onInterceptTouchEvent(motionEvent);
@@ -96,7 +96,7 @@ public final class zh extends mu {
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        this.c0.R1();
+        this.c0.T1();
     }
 
     @Override // org.telegram.ui.Components.mu
@@ -118,10 +118,10 @@ public final class zh extends mu {
             if (i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim())) {
                 z10 = true;
             }
-            xiVar.J1(z10);
+            xiVar.L1(z10);
         }
         xiVar.W1 = whVar.getTop() + xiVar.V1;
         whVar.invalidate();
-        xiVar.R1();
+        xiVar.T1();
     }
 }

@@ -30,7 +30,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
@@ -43,33 +43,33 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.bf0;
+import org.telegram.ui.Components.br0;
 import org.telegram.ui.Components.ld;
-import org.telegram.ui.Components.mt0;
+import org.telegram.ui.Components.nt0;
 import org.telegram.ui.Components.voip.e1;
 import org.telegram.ui.Components.yc;
-import org.telegram.ui.Components.zq0;
 import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.bc1;
 import org.telegram.ui.ez0;
+import org.telegram.ui.f41;
 import org.telegram.ui.fs0;
-import org.telegram.ui.h41;
 import org.telegram.ui.h60;
 import org.telegram.ui.i4;
 import org.telegram.ui.kn0;
 import org.telegram.ui.l50;
 import org.telegram.ui.nb;
 import org.telegram.ui.t10;
+import org.telegram.ui.ud1;
 import org.telegram.ui.uy;
 import org.telegram.ui.v3;
-import org.telegram.ui.wd1;
 import org.telegram.ui.x10;
+import org.telegram.ui.x71;
 import org.telegram.ui.yn;
-import org.telegram.ui.z71;
+import org.telegram.ui.zb1;
 import pg.k1;
 import pg.m1;
 import pg.n1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -209,13 +209,13 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 }
                 return;
             case 6:
-                mt0 mt0Var = (mt0) this.b;
+                nt0 nt0Var = (nt0) this.b;
                 String str6 = (String) this.c;
                 if (i10 == 0) {
-                    mt0Var.a.R0(str6);
+                    nt0Var.a.R0(str6);
                     return;
                 }
-                mt0Var.getClass();
+                nt0Var.getClass();
                 if (i10 == 1) {
                     if (str6.startsWith("mailto:")) {
                         str6 = str6.substring(7);
@@ -292,7 +292,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 ez0.a((ez0) this.b, (Context) this.c, i10);
                 return;
             case 11:
-                h41 h41Var = (h41) this.b;
+                f41 f41Var = (f41) this.b;
                 switch (((e1) this.c).a) {
                     case 24:
                         ri.e.c.b(i10 == 0 ? q0.b : q0.c);
@@ -305,7 +305,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         break;
                     default:
                         ri.c cVar = ri.e.f;
-                        int i14 = h41.c[i10];
+                        int i14 = f41.c[i10];
                         synchronized (cVar) {
                             cVar.b = i14;
                             cVar.a = true;
@@ -313,17 +313,17 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                             break;
                         }
                 }
-                h41Var.b.l();
+                f41Var.b.l();
                 return;
             case 12:
-                z71 z71Var = (z71) this.b;
+                x71 x71Var = (x71) this.b;
                 ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.c));
-                ok.o(R.string.TextCopied, new yc(z71Var.getContainer(), null));
+                bi.n(R.string.TextCopied, new yc(x71Var.getContainer(), null));
                 return;
             case 13:
-                bc1 bc1Var = (bc1) this.b;
+                zb1 zb1Var = (zb1) this.b;
                 h6 h6Var = (h6) this.c;
-                ThemeActivity themeActivity = bc1Var.e;
+                ThemeActivity themeActivity = zb1Var.e;
                 if (themeActivity.getParentActivity() == null) {
                     return;
                 }
@@ -334,7 +334,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         return;
                     }
                     String str8 = "https://" + themeActivity.getMessagesController().linkPrefix + "/addtheme/" + h6Var.F.slug;
-                    themeActivity.showDialog(new zq0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
+                    themeActivity.showDialog(new br0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
                     return;
                 }
                 if (i10 != 1) {
@@ -350,7 +350,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                         return;
                     }
                     if (i10 == 3) {
-                        themeActivity.presentFragment(new wd1(h6Var, null, false));
+                        themeActivity.presentFragment(new ud1(h6Var, null, false));
                         return;
                     }
                     if (themeActivity.getParentActivity() == null) {
@@ -359,7 +359,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
                     alertDialog$Builder.a.R = LocaleController.getString("DeleteThemeTitle", R.string.DeleteThemeTitle);
                     alertDialog$Builder.a.T = LocaleController.getString("DeleteThemeAlert", R.string.DeleteThemeAlert);
-                    alertDialog$Builder.k(LocaleController.getString("Delete", R.string.Delete), new fs0(16, bc1Var, h6Var));
+                    alertDialog$Builder.k(LocaleController.getString("Delete", R.string.Delete), new fs0(16, zb1Var, h6Var));
                     alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
                     b2 b2Var = alertDialog$Builder.a;
                     themeActivity.showDialog(b2Var);
@@ -468,12 +468,12 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     if (string == null) {
                         sb2 = "" + m1Var.a;
                     } else {
-                        StringBuilder j3 = t8.b.j(string, "|");
+                        StringBuilder j3 = sa.e.j(string, "|");
                         j3.append(m1Var.a);
                         sb2 = j3.toString();
                     }
                     for (int i16 = 0; i16 < arrayList4.size(); i16++) {
-                        StringBuilder j10 = t8.b.j(sb2, ",");
+                        StringBuilder j10 = sa.e.j(sb2, ",");
                         j10.append(Math.round(((k1) arrayList4.get(i16)).a));
                         j10.append(",");
                         j10.append(Math.round(((k1) arrayList4.get(i16)).b));

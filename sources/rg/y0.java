@@ -33,12 +33,12 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.b80;
 import org.telegram.ui.ex0;
 import org.telegram.ui.fx0;
-import org.telegram.ui.h81;
+import org.telegram.ui.p81;
 import org.telegram.ui.u5;
 import w7.z5;
-import yh.x3;
+import yh.y3;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class y0 extends f3 implements NotificationCenter.NotificationCenterDelegate {
     public final boolean E;
@@ -155,15 +155,15 @@ public final class y0 extends f3 implements NotificationCenter.NotificationCente
         this.N = y7Var;
         y7Var.setBackgroundColor(getThemedColor(i6.h5));
         this.N.setTitleColor(getThemedColor(i6.G6));
-        this.N.A(getThemedColor(i6.z8), false);
+        this.N.z(getThemedColor(i6.z8), false);
         y7 y7Var2 = this.N;
         int i10 = i6.y8;
-        y7Var2.B(getThemedColor(i10), false);
-        this.N.B(getThemedColor(i10), true);
+        y7Var2.A(getThemedColor(i10), false);
+        this.N.A(getThemedColor(i10), true);
         this.N.setCastShadows(true);
         this.N.setExtraHeight(AndroidUtilities.dp(2.0f));
         this.N.setBackButtonImage(R.drawable.ic_ab_back);
-        this.N.setActionBarMenuOnItemClick(new h81(this, 10));
+        this.N.setActionBarMenuOnItemClick(new p81(this, 9));
         this.containerView.addView(this.N, z5.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
         ((FrameLayout.LayoutParams) this.N.getLayoutParams()).topMargin = (-this.backgroundPaddingTop) - AndroidUtilities.dp(2.0f);
         AndroidUtilities.updateViewVisibilityAnimated(this.N, false, 1.0f, false);
@@ -444,7 +444,7 @@ public final class y0 extends f3 implements NotificationCenter.NotificationCente
         frameLayout2.setBackgroundColor(getThemedColor(i6.h5));
         linearLayout.addView(frameLayout2, z5.q(-1, 68, 80));
         if (i11 == 40) {
-            q0Var.b(x3.g2(LocaleController.getString(R.string.Understood)), true, false);
+            q0Var.b(y3.g2(LocaleController.getString(R.string.Understood)), true, false);
         } else if (UserConfig.getInstance(i10).isPremium()) {
             q0Var.b(LocaleController.getString(R.string.OK), false, false);
         }

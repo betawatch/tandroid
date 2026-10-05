@@ -30,17 +30,17 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.a91;
+import org.telegram.ui.Components.b91;
 import org.telegram.ui.Components.pc0;
 import org.telegram.ui.Components.tr;
-import org.telegram.ui.fi1;
-import org.telegram.ui.mi1;
+import org.telegram.ui.di1;
+import org.telegram.ui.ki1;
 import org.telegram.ui.qo;
-import org.telegram.ui.xb1;
+import org.telegram.ui.vb1;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class d1 extends FrameLayout implements VoIPService.StateListener {
     public float E;
@@ -63,7 +63,7 @@ public abstract class d1 extends FrameLayout implements VoIPService.StateListene
     public boolean a;
     public final ai.f0 b;
     public final b1 c;
-    public final xb1 d;
+    public final vb1 d;
     public final y2[] e;
     public final t2 f;
     public int h;
@@ -95,9 +95,9 @@ public abstract class d1 extends FrameLayout implements VoIPService.StateListene
         this.J = f10;
         int i11 = 3;
         this.e = new y2[3];
-        fi1 fi1Var = (fi1) this;
-        this.T = new GestureDetector(context, new a1(fi1Var));
-        ai.f0 f0Var = new ai.f0(fi1Var, context, 24);
+        di1 di1Var = (di1) this;
+        this.T = new GestureDetector(context, new a1(di1Var));
+        ai.f0 f0Var = new ai.f0(di1Var, context, 24);
         this.b = f0Var;
         f0Var.setClickable(true);
         addView(f0Var, z5.c(-1.0f, -1));
@@ -116,11 +116,11 @@ public abstract class d1 extends FrameLayout implements VoIPService.StateListene
         this.r = kVar;
         kVar.setBackButtonDrawable(new org.telegram.ui.ActionBar.g2(false));
         kVar.setBackgroundColor(0);
-        kVar.B(i6.w0(null, i6.hg, false), false);
+        kVar.A(i6.w0(null, i6.hg, false), false);
         kVar.setOccupyStatusBar(true);
-        kVar.setActionBarMenuOnItemClick(new qo(fi1Var, 15));
+        kVar.setActionBarMenuOnItemClick(new qo(di1Var, 15));
         addView(kVar);
-        b1 b1Var = new b1(fi1Var, getContext());
+        b1 b1Var = new b1(di1Var, getContext());
         this.c = b1Var;
         b1Var.setMaxLines(1);
         b1Var.setEllipsize(null);
@@ -139,12 +139,12 @@ public abstract class d1 extends FrameLayout implements VoIPService.StateListene
             b1Var.setForeground(i6.i0(dp, dp, dp, dp, 0, k10, k10));
         }
         b1Var.setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
-        b1Var.setOnClickListener(new o(fi1Var, 2));
+        b1Var.setOnClickListener(new o(di1Var, 2));
         addView(b1Var, z5.d(52, 52.0f, 81, 0.0f, 0.0f, 0.0f, 80.0f));
-        xb1 xb1Var = new xb1(fi1Var, context, 12);
-        this.d = xb1Var;
-        xb1Var.setClipChildren(false);
-        addView(xb1Var, z5.e(-1, 64, 80));
+        vb1 vb1Var = new vb1(di1Var, context, 12);
+        this.d = vb1Var;
+        vb1Var.setClipChildren(false);
+        addView(vb1Var, z5.e(-1, 64, 80));
         int i13 = 0;
         while (i13 < this.e.length) {
             String string = i13 == 0 ? LocaleController.getString(R.string.VoipPhoneScreen) : i13 == 1 ? LocaleController.getString(R.string.VoipFrontCamera) : LocaleController.getString(R.string.VoipBackCamera);
@@ -152,7 +152,7 @@ public abstract class d1 extends FrameLayout implements VoIPService.StateListene
             this.e[i13].setContentDescription(string);
             this.e[i13].setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(10.0f), 0);
             this.d.addView(this.e[i13], z5.n(-2, -1));
-            this.e[i13].setOnClickListener(new n4(fi1Var, i13, 16));
+            this.e[i13].setOnClickListener(new n4(di1Var, i13, 16));
             i13++;
         }
         setWillNotDraw(false);
@@ -173,7 +173,7 @@ public abstract class d1 extends FrameLayout implements VoIPService.StateListene
         textView.setText(LocaleController.getString(R.string.VoipVideoPrivateScreenSharing));
         textView.setGravity(17);
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        org.telegram.messenger.f0.q(textView, -1, 1, 15.0f);
+        org.telegram.messenger.q.q(textView, -1, 1, 15.0f);
         frameLayout.addView(textView, z5.d(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
         frameLayout.setTag("screencast_stub");
         frameLayout.setVisibility(8);
@@ -184,10 +184,10 @@ public abstract class d1 extends FrameLayout implements VoIPService.StateListene
         imageView2.setScaleType(ImageView.ScaleType.FIT_XY);
         f0Var2.addView(imageView2);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new xa(fi1Var, f7, f10, i11));
-        ofFloat.addListener(new a91(fi1Var, 6));
+        ofFloat.addUpdateListener(new xa(di1Var, f7, f10, i11));
+        ofFloat.addListener(new b91(di1Var, 6));
         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat2.addUpdateListener(new r0(fi1Var, i10));
+        ofFloat2.addUpdateListener(new r0(di1Var, i10));
         tr trVar = tr.f;
         ofFloat.setInterpolator(trVar);
         long j3 = 320;
@@ -212,34 +212,34 @@ public abstract class d1 extends FrameLayout implements VoIPService.StateListene
         if (this.a || this.y != 1.0f) {
             return;
         }
-        fi1 fi1Var = (fi1) this;
+        di1 di1Var = (di1) this;
         int i10 = 0;
-        fi1Var.V.v.S = false;
-        fi1Var.V.v.invalidate();
+        di1Var.V.v.S = false;
+        di1Var.V.v.invalidate();
         int i11 = 1;
         this.a = true;
         b();
-        mi1 mi1Var = fi1Var.V;
-        mi1Var.o0 = null;
+        ki1 ki1Var = di1Var.V;
+        ki1Var.o0 = null;
         VoIPService sharedInstance = VoIPService.getSharedInstance();
-        mi1Var.u0.setLockOnScreen(false);
+        ki1Var.u0.setLockOnScreen(false);
         int i12 = 2;
         if (z11) {
-            mi1Var.n0 = true;
+            ki1Var.n0 = true;
             if (sharedInstance != null && !z10) {
                 sharedInstance.requestVideoCall(false);
                 sharedInstance.setVideoState(false, 2);
                 sharedInstance.switchToSpeaker();
             }
             if (sharedInstance != null) {
-                mi1Var.v(mi1Var.f, sharedInstance, true);
+                ki1Var.v(ki1Var.f, sharedInstance, true);
             }
         } else if (sharedInstance != null) {
             sharedInstance.setVideoState(false, 0);
         }
-        mi1Var.q0 = mi1Var.p0;
-        mi1Var.H();
-        if (fi1Var.V.m0 && z11) {
+        ki1Var.q0 = ki1Var.p0;
+        ki1Var.H();
+        if (di1Var.V.m0 && z11) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             ofFloat.addUpdateListener(new y0(this, i10));
             ofFloat.setInterpolator(tr.f);

@@ -3,7 +3,7 @@ package s4;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class k {
     public final ArrayList a;
@@ -126,7 +126,7 @@ public final class k {
                                 }
                             } else {
                                 if (i21 != 16) {
-                                    StringBuilder j3 = hg.k0.j(i18, "unknown flag for pos ", " ");
+                                    StringBuilder j3 = hg.c.j(i18, "unknown flag for pos ", " ");
                                     j3.append(Long.toBinaryString(i21));
                                     throw new IllegalStateException(j3.toString());
                                 }
@@ -166,7 +166,7 @@ public final class k {
                         if (i30 != 0) {
                             if (i30 != 4 && i30 != 8) {
                                 if (i30 != 16) {
-                                    StringBuilder j10 = hg.k0.j(i28, "unknown flag for pos ", " ");
+                                    StringBuilder j10 = hg.c.j(i28, "unknown flag for pos ", " ");
                                     j10.append(Long.toBinaryString(i30));
                                     throw new IllegalStateException(j10.toString());
                                 }

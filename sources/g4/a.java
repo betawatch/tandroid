@@ -13,17 +13,18 @@ import e2.v;
 import e9.a1;
 import e9.g0;
 import e9.i0;
-import hg.k0;
+import hg.c;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
+import sa.e;
+import z3.l;
 import z3.m;
-import z3.n;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
-public final class a implements n {
+public final class a implements m {
     public final v a = new v();
     public final boolean b;
     public final int c;
@@ -88,13 +89,8 @@ public final class a implements n {
         }
     }
 
-    @Override // z3.n
-    public final int A() {
-        return 2;
-    }
-
-    @Override // z3.n
-    public final void F(byte[] bArr, int i10, int i11, m mVar, h hVar) {
+    @Override // z3.m
+    public final void E(byte[] bArr, int i10, int i11, l lVar, h hVar) {
         String v;
         int i12;
         v vVar = this.a;
@@ -147,7 +143,7 @@ public final class a implements n {
                     vVar.K(i13);
                     int j11 = vVar.j();
                     if (D4 > spannableStringBuilder.length()) {
-                        StringBuilder j12 = k0.j(D4, "Truncating styl end (", ") to cueText.length() (");
+                        StringBuilder j12 = c.j(D4, "Truncating styl end (", ") to cueText.length() (");
                         j12.append(spannableStringBuilder.length());
                         j12.append(").");
                         e2.a.n("Tx3gParser", j12.toString());
@@ -180,12 +176,17 @@ public final class a implements n {
         hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, i0.z(new b(spannableStringBuilder, null, null, null, f7, 0, 0, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0))));
     }
 
-    @Override // z3.n
+    @Override // z3.m
     public final /* synthetic */ z3.d h(int i10, int i11, byte[] bArr) {
-        return t8.b.a(this, bArr, i11);
+        return e.a(this, bArr, i11);
     }
 
-    @Override // z3.n
+    @Override // z3.m
+    public final int y() {
+        return 2;
+    }
+
+    @Override // z3.m
     public final /* synthetic */ void reset() {
     }
 }

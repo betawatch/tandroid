@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class k00 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -33,19 +33,19 @@ public final class k00 extends AnimatorListenerAdapter {
                 ((org.telegram.ui.web.v1) this.d).c(this.b, this.c, false);
                 break;
             default:
-                yh.m8 m8Var = (yh.m8) this.d;
-                m8Var.c0 = this.c;
-                if (m8Var.getValue() != this.b) {
-                    m8Var.e(m8Var.getValue());
+                yh.o8 o8Var = (yh.o8) this.d;
+                o8Var.c0 = this.c;
+                if (o8Var.getValue() != this.b) {
+                    o8Var.e(o8Var.getValue());
                 }
-                m8Var.invalidate();
+                o8Var.invalidate();
                 break;
         }
     }
 
-    public k00(yh.m8 m8Var, float f7, int i10) {
+    public k00(yh.o8 o8Var, float f7, int i10) {
         this.a = 2;
-        this.d = m8Var;
+        this.d = o8Var;
         this.c = f7;
         this.b = i10;
     }

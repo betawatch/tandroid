@@ -7,11 +7,11 @@ import ci.qc;
 import java.util.ArrayList;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.e71;
 import org.telegram.ui.Components.zl0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class i1 extends n2 {
     public final CharSequence a;
@@ -21,7 +21,7 @@ public final class i1 extends n2 {
     public final int e;
     public qc f;
     public gg.x1 h;
-    public c71 n;
+    public e71 n;
     public boolean r;
 
     public i1(CharSequence charSequence, ArrayList arrayList, int i10, int i11, int i12) {
@@ -44,7 +44,7 @@ public final class i1 extends n2 {
         if (arrayList.size() >= this.e) {
             return false;
         }
-        return arrayList.isEmpty() || S() || ((f1) k0.g(1, arrayList)).b < Math.min(1438, this.d + (-2));
+        return arrayList.isEmpty() || S() || ((f1) c.g(1, arrayList)).b < Math.min(1438, this.d + (-2));
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -55,9 +55,9 @@ public final class i1 extends n2 {
         this.actionBar.setTitle(this.a);
         this.actionBar.setActionBarMenuOnItemClick(new ei.u(this, 15));
         FrameLayout frameLayout = new FrameLayout(context);
-        c71 c71Var = new c71(this, new bi.v(this, 28), new ei.f(this, 5), null);
-        this.n = c71Var;
-        c71Var.s1();
+        e71 e71Var = new e71(this, new bi.v(this, 28), new ei.f(this, 5), null);
+        this.n = e71Var;
+        e71Var.r1();
         this.n.setSectionsDrawBackground(true);
         frameLayout.addView(this.n, z5.c(-1.0f, -1));
         this.fragmentView = frameLayout;

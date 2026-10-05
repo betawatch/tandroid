@@ -23,7 +23,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class md extends ci.m {
     public boolean S0;
@@ -54,8 +54,8 @@ public abstract class md extends ci.m {
     public Utilities.Callback r1;
     public boolean s1;
 
-    public md(Context context, FrameLayout frameLayout, lw0 lw0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.d6 d6Var, ka kaVar, Runnable runnable) {
-        super(context, frameLayout, lw0Var, frameLayout2, d6Var, kaVar);
+    public md(Context context, FrameLayout frameLayout, mw0 mw0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.d6 d6Var, ka kaVar, Runnable runnable) {
+        super(context, frameLayout, mw0Var, frameLayout2, d6Var, kaVar);
         this.b1 = 0;
         this.c1 = new int[]{ConnectionsManager.DEFAULT_DATACENTER_ID, 3, 10, 30, 0};
         this.f1 = new RectF();
@@ -305,9 +305,9 @@ public abstract class md extends ci.m {
             if (cVar != null) {
                 if (this.j1 == null) {
                     ch.d c10 = cVar.c(this, null, false);
-                    c10.x(eh.b.i(this.a));
-                    c10.y(AndroidUtilities.dp(5.0f));
-                    c10.z(AndroidUtilities.dp(16.0f));
+                    c10.w(eh.b.i(this.a));
+                    c10.x(AndroidUtilities.dp(5.0f));
+                    c10.y(AndroidUtilities.dp(16.0f));
                     this.j1 = c10;
                 }
                 Rect rect = AndroidUtilities.rectTmp2;

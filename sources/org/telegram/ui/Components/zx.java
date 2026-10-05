@@ -19,7 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class zx extends zl0 {
     public boolean e3;
@@ -46,21 +46,6 @@ public final class zx extends zl0 {
         tr trVar = tr.f;
     }
 
-    public final void A1() {
-        nz nzVar = this.m3;
-        int i10 = nzVar.c;
-        zx zxVar = nzVar.P;
-        zx zxVar2 = nzVar.P;
-        z5[] z5VarArr = new z5[zxVar.getChildCount()];
-        for (int i11 = 0; i11 < zxVar2.getChildCount(); i11++) {
-            View childAt = zxVar2.getChildAt(i11);
-            if (childAt instanceof wy) {
-                z5VarArr[i11] = ((wy) childAt).getSpan();
-            }
-        }
-        nzVar.d2 = z5.update(i10, this, z5VarArr, (LongSparseArray<q5>) nzVar.d2);
-    }
-
     @Override // org.telegram.ui.Components.zl0
     public final void K0(Canvas canvas, RectF rectF, long j3) {
         SparseArray sparseArray;
@@ -75,7 +60,7 @@ public final class zx extends zl0 {
         canvas2.save();
         canvas.clipRect(rectF);
         if (this.k3 != getChildCount()) {
-            A1();
+            z1();
             this.k3 = getChildCount();
         }
         int i11 = 0;
@@ -94,7 +79,7 @@ public final class zx extends zl0 {
         }
         sparseArray.clear();
         int i13 = 1;
-        boolean z11 = nzVar.u2 > 0 && SystemClock.elapsedRealtime() - nzVar.u2 < y1() && nzVar.r2 != null && nzVar.s2 >= 0;
+        boolean z11 = nzVar.u2 > 0 && SystemClock.elapsedRealtime() - nzVar.u2 < x1() && nzVar.r2 != null && nzVar.s2 >= 0;
         float f7 = 0.0f;
         if (nzVar.d2 != null && zxVar != null) {
             int i14 = 0;
@@ -104,7 +89,7 @@ public final class zx extends zl0 {
                     int top = childAt.getTop() + ((int) childAt.getTranslationY());
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(top);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.k0.w(i13, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.c.w(i13, arrayList) : new ArrayList();
                         sparseArray.put(top, arrayList4);
                     }
                     arrayList4.add((wy) childAt);
@@ -164,7 +149,7 @@ public final class zx extends zl0 {
                 i17++;
             }
             if (xxVar == null) {
-                xxVar = !arrayList2.isEmpty() ? (xx) hg.k0.w(1, arrayList2) : new xx(this);
+                xxVar = !arrayList2.isEmpty() ? (xx) hg.c.w(1, arrayList2) : new xx(this);
                 xxVar.M = i16;
                 xxVar.e();
             }
@@ -209,7 +194,7 @@ public final class zx extends zl0 {
         zx zxVar = nzVar.P;
         nzVar.m2.g();
         if (this.k3 != getChildCount()) {
-            A1();
+            z1();
             this.k3 = getChildCount();
         }
         int i10 = 0;
@@ -227,7 +212,7 @@ public final class zx extends zl0 {
             i11++;
         }
         sparseArray.clear();
-        boolean z10 = nzVar.u2 > 0 && SystemClock.elapsedRealtime() - nzVar.u2 < y1() && nzVar.r2 != null && nzVar.s2 >= 0;
+        boolean z10 = nzVar.u2 > 0 && SystemClock.elapsedRealtime() - nzVar.u2 < x1() && nzVar.r2 != null && nzVar.s2 >= 0;
         if (nzVar.d2 != null && zxVar != null) {
             for (int i12 = 0; i12 < zxVar.getChildCount(); i12++) {
                 View childAt = zxVar.getChildAt(i12);
@@ -235,7 +220,7 @@ public final class zx extends zl0 {
                     int top = childAt.getTop() + ((int) childAt.getTranslationY());
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(top);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.k0.w(1, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) hg.c.w(1, arrayList) : new ArrayList();
                         sparseArray.put(top, arrayList4);
                     }
                     arrayList4.add((wy) childAt);
@@ -285,7 +270,7 @@ public final class zx extends zl0 {
                 i15++;
             }
             if (xxVar == null) {
-                xxVar = !arrayList2.isEmpty() ? (xx) hg.k0.w(1, arrayList2) : new xx(this);
+                xxVar = !arrayList2.isEmpty() ? (xx) hg.c.w(1, arrayList2) : new xx(this);
                 xxVar.M = i14;
                 xxVar.e();
             }
@@ -396,7 +381,7 @@ public final class zx extends zl0 {
     @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        A1();
+        z1();
     }
 
     @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
@@ -447,7 +432,7 @@ public final class zx extends zl0 {
         }
         super.onLayout(z10, i10, i11, i12, i13);
         nzVar.l(true);
-        A1();
+        z1();
     }
 
     @Override // org.telegram.ui.Components.zl0, androidx.recyclerview.widget.RecyclerView, android.view.View
@@ -548,12 +533,12 @@ public final class zx extends zl0 {
         super.requestLayout();
     }
 
-    public final long y1() {
+    public final long x1() {
         nz nzVar = this.m3;
         return Math.max(400L, Math.min(45, nzVar.t2 - nzVar.s2) * 35) + Math.max(600L, Math.min(55, nzVar.t2 - nzVar.s2) * 40) + 150;
     }
 
-    public final void z1(View view) {
+    public final void y1(View view) {
         if (this.l3 != null) {
             int i10 = 0;
             while (i10 < this.l3.size()) {
@@ -573,5 +558,20 @@ public final class zx extends zl0 {
                 i10++;
             }
         }
+    }
+
+    public final void z1() {
+        nz nzVar = this.m3;
+        int i10 = nzVar.c;
+        zx zxVar = nzVar.P;
+        zx zxVar2 = nzVar.P;
+        z5[] z5VarArr = new z5[zxVar.getChildCount()];
+        for (int i11 = 0; i11 < zxVar2.getChildCount(); i11++) {
+            View childAt = zxVar2.getChildAt(i11);
+            if (childAt instanceof wy) {
+                z5VarArr[i11] = ((wy) childAt).getSpan();
+            }
+        }
+        nzVar.d2 = z5.update(i10, this, z5VarArr, (LongSparseArray<q5>) nzVar.d2);
     }
 }

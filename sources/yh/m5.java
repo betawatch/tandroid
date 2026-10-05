@@ -1,43 +1,19 @@
 package yh;
 
-import j$.util.Objects;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class m5 {
-    public final long a;
-    public final int b;
+public interface m5 {
+    void a();
 
-    public m5(long j3, int i10) {
-        this.a = j3;
-        this.b = i10;
-    }
+    int b(int i10);
 
-    public static m5 a(int i10, long j3) {
-        return new m5(j3, i10);
-    }
+    int c();
 
-    public static m5 b(MessageObject messageObject) {
-        if (messageObject == null) {
-            return null;
-        }
-        TLRPC.Message message = messageObject.messageOwner;
-        return (message == null || !(message.isThreadMessage || messageObject.isForwardedChannelPost()) || messageObject.messageOwner.fwd_from == null) ? new m5(messageObject.getDialogId(), messageObject.getId()) : new m5(messageObject.getFromChatId(), messageObject.messageOwner.fwd_from.saved_from_msg_id);
-    }
+    void d();
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof m5) {
-            m5 m5Var = (m5) obj;
-            if (m5Var.a == this.a && m5Var.b == this.b) {
-                return true;
-            }
-        }
-        return false;
-    }
+    int e();
 
-    public final int hashCode() {
-        return Objects.hash(Long.valueOf(this.a), Integer.valueOf(this.b));
-    }
+    Object get(int i10);
+
+    int indexOf(Object obj);
 }

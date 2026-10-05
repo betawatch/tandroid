@@ -1,154 +1,81 @@
 package yh;
 
 import android.content.Context;
-import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.aw0;
-import org.telegram.ui.Components.bm0;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.g91;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.e71;
+import org.telegram.ui.Components.w00;
+import org.telegram.ui.Components.xb0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class w7 extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
-    public final int a;
-    public final g91 b;
-    public final v7 c;
-    public final FrameLayout d;
-    public final aw0 e;
+public final class w7 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
+    public final e71 a;
+    public final org.telegram.ui.ActionBar.d6 b;
+    public final int c;
+    public final int d;
+    public final boolean e;
+    public final long f;
+    public final u7 h;
 
-    public w7(Context context, int i10, boolean z10, long j3, int i11, org.telegram.ui.ActionBar.d6 d6Var, aw0 aw0Var) {
+    public w7(Context context, boolean z10, long j3, int i10, int i11, int i12, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        this.e = aw0Var;
-        this.a = i10;
-        setOrientation(1);
-        g91 g91Var = aw0Var == null ? new g91(context, null) : new bm0(context, d6Var, aw0Var);
-        this.b = g91Var;
-        v7 v7Var = new v7(context, i10, z10, j3, i11, d6Var);
-        this.c = v7Var;
-        v7Var.g = aw0Var == null ? null : (bm0) g91Var;
-        g91Var.setAdapter(v7Var);
-        View n10 = g91Var.n(aw0Var == null ? 3 : -2, true);
-        View view = new View(context);
-        view.setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.d7, d6Var));
-        if (aw0Var == null) {
-            this.d = null;
-            addView(n10, w7.z5.n(-1, 48));
-            addView(view, new LinearLayout.LayoutParams(w7.z5.z(-1.0f), w7.z5.z(1.0f / AndroidUtilities.density)));
-            setBackgroundColor(org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.h5, d6Var));
-        } else {
-            setClipChildren(false);
-            setClipToPadding(false);
-            FrameLayout frameLayout = new FrameLayout(context);
-            this.d = frameLayout;
-            frameLayout.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-            frameLayout.addView(n10, w7.z5.e(-1, 48, 48));
-        }
-        addView(g91Var, w7.z5.n(-1, -1));
-    }
-
-    public final void a(boolean z10) {
-        v7 v7Var = this.c;
-        g91 g91Var = this.b;
-        aw0 aw0Var = this.e;
-        if (aw0Var == null) {
-            v7Var.i();
-            g91Var.o(z10);
-            return;
-        }
-        ArrayList arrayList = v7Var.i;
-        ArrayList arrayList2 = v7Var.i;
-        int i10 = 0;
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            i10 |= 1 << ((g61) arrayList.get(i11)).z;
-        }
-        View currentView = g91Var.getCurrentView();
-        int i12 = currentView instanceof u7 ? ((u7) currentView).d : 0;
-        v7Var.i();
-        int i13 = 0;
-        for (int i14 = 0; i14 < arrayList2.size(); i14++) {
-            i13 |= 1 << ((g61) arrayList2.get(i14)).z;
-        }
-        if (i10 == i13) {
-            if (z10) {
-                return;
-            }
-            g91Var.o(false);
-            return;
-        }
-        g91Var.onTouchEvent(null);
-        int i15 = 0;
-        while (true) {
-            if (i15 >= arrayList2.size()) {
-                i15 = 0;
-                break;
-            } else if (((g61) arrayList2.get(i15)).z == i12) {
-                break;
-            } else {
-                i15++;
-            }
-        }
-        g91Var.setPosition(i15);
-        g91Var.J();
-        g91Var.o(false);
-        aw0Var.k0();
+        this.d = i10;
+        this.e = z10;
+        this.c = i11;
+        this.f = j3;
+        this.b = d6Var;
+        this.h = new u7(j3, i11, i10, z10);
+        e71 e71Var = new e71(context, i11, i12, true, new o7(this, 1), new v7(this, 0), null, d6Var);
+        this.a = e71Var;
+        addView(e71Var, w7.z5.c(-1.0f, -1));
+        e71Var.setOnScrollListener(new xb0(this, 23));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.starTransactionsLoaded) {
-            a(true);
+        int i12 = NotificationCenter.starTransactionsLoaded;
+        e71 e71Var = this.a;
+        if (i10 != i12) {
+            if (i10 == NotificationCenter.botStarsTransactionsLoaded && ((Long) objArr[0]).longValue() == this.f) {
+                e71Var.f3.N(true);
+                return;
+            }
+            return;
         }
-    }
-
-    public zl0 getCurrentListView() {
-        View currentView = this.b.getCurrentView();
-        if (currentView instanceof u7) {
-            return ((u7) currentView).a;
+        e71Var.f3.N(true);
+        if (e71Var.canScrollVertically(1)) {
+            for (int i13 = 0; i13 < e71Var.getChildCount(); i13++) {
+                if (!(e71Var.getChildAt(i13) instanceof w00)) {
+                }
+            }
+            return;
         }
-        return null;
-    }
-
-    public FrameLayout getTabsContainer() {
-        return this.d;
-    }
-
-    public g91 getViewPager() {
-        return this.b;
+        this.h.run();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
-        a(false);
-        NotificationCenter.getInstance(this.a).addObserver(this, NotificationCenter.starTransactionsLoaded);
         super.onAttachedToWindow();
+        long j3 = this.f;
+        int i10 = this.c;
+        if (j3 != 0) {
+            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.botStarsTransactionsLoaded);
+        } else {
+            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.starTransactionsLoaded);
+        }
+        this.a.f3.N(false);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.starTransactionsLoaded);
         super.onDetachedFromWindow();
-    }
-
-    public void setGlassEngine(li.m mVar) {
-        if (mVar != null) {
-            v7 v7Var = this.c;
-            if (v7Var.h == mVar) {
-                return;
-            }
-            v7Var.h = mVar;
-            g91 g91Var = this.b;
-            mVar.c(g91Var);
-            for (View view : g91Var.getViewPages()) {
-                if (view instanceof u7) {
-                    mVar.b(((u7) view).a);
-                }
-            }
+        long j3 = this.f;
+        int i10 = this.c;
+        if (j3 != 0) {
+            NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.botStarsTransactionsLoaded);
+        } else {
+            NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.starTransactionsLoaded);
         }
     }
 }

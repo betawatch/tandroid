@@ -11,7 +11,7 @@ import b2.s;
 import e2.d;
 import e2.d0;
 import e2.p;
-import hg.k0;
+import hg.c;
 import i2.c0;
 import i2.f;
 import i2.f0;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import n4.y;
 import w7.m;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class b extends f implements Handler.Callback {
     public final a I;
@@ -52,9 +52,9 @@ public final class b extends f implements Handler.Callback {
     @Override // i2.f
     public final int A(s sVar) {
         if (this.I.b(sVar)) {
-            return k0.b(sVar.S == 0 ? 4 : 2, 0, 0, 0);
+            return c.b(sVar.S == 0 ? 4 : 2, 0, 0, 0);
         }
-        return k0.b(0, 0, 0, 0);
+        return c.b(0, 0, 0, 0);
     }
 
     public final void C(p0 p0Var, ArrayList arrayList) {

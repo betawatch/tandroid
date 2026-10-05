@@ -29,7 +29,7 @@ import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.tr;
 import v7.u7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class f1 extends Drawable {
     public static m1 C = new m1();
@@ -336,13 +336,13 @@ public final class f1 extends Drawable {
                             }
                             if (f7 < 1.0f) {
                                 bitmap2 = bitmap;
-                                yh.j0.b(canvas2, 2, this.A, bitmap2, bounds.width(), bounds.height(), 1.0f - f7);
+                                yh.k0.b(canvas2, 2, this.A, bitmap2, bounds.width(), bounds.height(), 1.0f - f7);
                             } else {
                                 bitmap2 = bitmap;
                             }
                             if (f7 > 0.0f) {
                                 canvas2.translate(0.0f, AndroidUtilities.dp(-31.0f));
-                                yh.j0.b(canvas2, 0, this.A, bitmap2, bounds.width(), bounds.height(), f7);
+                                yh.k0.b(canvas2, 0, this.A, bitmap2, bounds.width(), bounds.height(), f7);
                             }
                             canvas2 = canvas;
                             canvas2.restore();
@@ -360,13 +360,13 @@ public final class f1 extends Drawable {
             e1Var.k(Integer.valueOf(i14));
             if (f7 < f10) {
                 canvas2 = canvas;
-                yh.j0.a(canvas2, 2, e1Var, bounds.width(), bounds.height(), f10 - f7, 1.0f);
+                yh.k0.a(canvas2, 2, e1Var, bounds.width(), bounds.height(), f10 - f7, 1.0f);
             } else {
                 canvas2 = canvas;
             }
             if (f7 > 0.0f) {
                 canvas2.translate(0.0f, AndroidUtilities.dp(-31.0f));
-                yh.j0.a(canvas2, 0, e1Var, bounds.width(), bounds.height(), f7, 1.0f);
+                yh.k0.a(canvas2, 0, e1Var, bounds.width(), bounds.height(), f7, 1.0f);
             }
             canvas2.restore();
         }

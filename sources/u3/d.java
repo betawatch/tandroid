@@ -10,6 +10,7 @@ import b2.r0;
 import b2.s0;
 import c3.h0;
 import c3.i0;
+import c3.l;
 import c3.o;
 import c3.p;
 import c3.q;
@@ -44,9 +45,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLObject;
-import z3.l;
+import z3.k;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public static final byte[] f0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -91,7 +92,7 @@ public final class d implements o {
     public boolean d0;
     public final boolean e;
     public q e0;
-    public final l f;
+    public final k f;
     public final v g;
     public final v h;
     public final v i;
@@ -125,7 +126,7 @@ public final class d implements o {
         k0 = DesugarCollections.unmodifiableMap(hashMap);
     }
 
-    public d(l lVar, int i10) {
+    public d(k kVar, int i10) {
         b bVar = new b();
         this.s = -1L;
         this.t = -9223372036854775807L;
@@ -136,7 +137,7 @@ public final class d implements o {
         this.E = -9223372036854775807L;
         this.a = bVar;
         bVar.d = new n4(this, 26);
-        this.f = lVar;
+        this.f = kVar;
         this.d = (i10 & 1) == 0;
         this.e = (i10 & 2) == 0;
         this.b = new e();
@@ -176,7 +177,7 @@ public final class d implements o {
     public final boolean b(p pVar) {
         b0 b0Var = new b0(8, (byte) 0);
         v vVar = (v) b0Var.c;
-        c3.l lVar = (c3.l) pVar;
+        l lVar = (l) pVar;
         long j3 = lVar.c;
         long j10 = 1024;
         if (j3 != -1 && j3 <= 1024) {
@@ -807,7 +808,7 @@ public final class d implements o {
                             z11 = false;
                             bVar.e = 0;
                         } else if (i10 == 4) {
-                            n4Var.x(i24, (int) bVar.g, pVar2);
+                            n4Var.C(i24, (int) bVar.g, pVar2);
                             z11 = false;
                             bVar.e = 0;
                         } else {

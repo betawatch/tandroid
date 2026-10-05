@@ -1,60 +1,58 @@
 package yh;
 
-import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class m {
     public final int a;
     public final long b;
     public int c;
     public boolean d;
-    public long f;
-    public boolean h;
-    public boolean i;
-    public String j;
     public final ArrayList e = new ArrayList();
-    public int g = 1;
+    public long f;
+    public boolean g;
+    public boolean h;
+    public int i;
 
     public m(int i10, long j3) {
+        this.g = false;
         this.h = false;
-        this.i = false;
-        this.j = null;
         this.a = i10;
         this.b = j3;
         if (System.currentTimeMillis() - this.f > 900000) {
             this.c = 0;
-            this.d = false;
-            this.i = false;
-            this.f = 0L;
-            this.j = null;
             this.h = false;
+            this.d = false;
+            if (this.i != 0) {
+                ConnectionsManager.getInstance(i10).cancelRequest(this.i, true);
+                this.i = 0;
+            }
+            this.g = false;
             a();
         }
     }
 
     public final void a() {
-        if (this.h || this.i || this.d) {
+        if (this.g || this.h || this.d) {
             return;
         }
         this.f = System.currentTimeMillis();
-        this.h = true;
-        TL_payments.getSuggestedStarRefBots getsuggestedstarrefbots = new TL_payments.getSuggestedStarRefBots();
+        this.g = true;
+        TL_payments.getConnectedStarRefBots getconnectedstarrefbots = new TL_payments.getConnectedStarRefBots();
         int i10 = this.a;
-        getsuggestedstarrefbots.peer = MessagesController.getInstance(i10).getInputPeer(this.b);
-        getsuggestedstarrefbots.limit = 20;
-        int i11 = this.g;
-        getsuggestedstarrefbots.order_by_date = i11 == 3;
-        getsuggestedstarrefbots.order_by_revenue = i11 == 2;
-        if (TextUtils.isEmpty(this.j)) {
-            getsuggestedstarrefbots.offset = "";
-        } else {
-            getsuggestedstarrefbots.offset = this.j;
+        getconnectedstarrefbots.peer = MessagesController.getInstance(i10).getInputPeer(this.b);
+        getconnectedstarrefbots.limit = 20;
+        ArrayList arrayList = this.e;
+        if (!arrayList.isEmpty()) {
+            TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) hg.c.g(1, arrayList);
+            getconnectedstarrefbots.flags |= 4;
+            getconnectedstarrefbots.offset_date = connectedbotstarref.date;
+            getconnectedstarrefbots.offset_link = connectedbotstarref.url;
         }
-        ConnectionsManager.getInstance(i10).sendRequest(getsuggestedstarrefbots, new ai.n8(this, 26));
+        this.i = ConnectionsManager.getInstance(i10).sendRequest(getconnectedstarrefbots, new ai.n8(this, 24));
     }
 }

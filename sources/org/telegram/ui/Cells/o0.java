@@ -28,13 +28,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.fn0;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class o0 {
     public boolean A;
@@ -57,7 +57,7 @@ public final class o0 {
     public float p;
     public u90 s;
     public final org.telegram.ui.Components.e6 u;
-    public e11 v;
+    public f11 v;
     public final zc y;
     public final TextPaint f = new TextPaint(1);
     public final Paint k = new Paint(1);
@@ -347,10 +347,10 @@ public final class o0 {
             paint.setShadowLayer(AndroidUtilities.dpf2(1.0f), 0.0f, AndroidUtilities.dpf2(0.33f), i0.a.k(-16777216, (int) (27.0f * clamp)));
             canvas.drawPath(path, paint);
             canvas.clipPath(path);
-            e11 e11Var = this.v;
-            if (e11Var != null) {
+            f11 f11Var = this.v;
+            if (f11Var != null) {
                 arrayList = arrayList2;
-                e11Var.c(rectF3.left + AndroidUtilities.dp(17.0f), rectF3.top + AndroidUtilities.dp(20.0f), clamp, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, u1Var.Id), canvas);
+                f11Var.c(rectF3.left + AndroidUtilities.dp(17.0f), rectF3.top + AndroidUtilities.dp(20.0f), clamp, org.telegram.ui.ActionBar.i6.v0(org.telegram.ui.ActionBar.i6.G6, u1Var.Id), canvas);
                 canvas2 = canvas;
             } else {
                 canvas2 = canvas;
@@ -371,7 +371,7 @@ public final class o0 {
                     float f25 = (1.0f - e7) * clamp;
                     org.telegram.ui.Components.h9[] h9VarArr = n0Var.b;
                     float f26 = e7;
-                    e11 e11Var2 = n0Var.k;
+                    f11 f11Var2 = n0Var.k;
                     float f27 = dp2;
                     Paint paint2 = n0Var.j;
                     canvas2.save();
@@ -411,9 +411,9 @@ public final class o0 {
                     int i13 = max;
                     RectF rectF6 = rectF3;
                     ArrayList arrayList4 = arrayList;
-                    if (e11Var2 != null) {
-                        e11Var2.p = i10 - AndroidUtilities.dp(32.0f);
-                        float l4 = e11Var2.l() + AndroidUtilities.dp(n0Var.h != null ? 17.0f : 8.0f);
+                    if (f11Var2 != null) {
+                        f11Var2.p = i10 - AndroidUtilities.dp(32.0f);
+                        float l4 = f11Var2.l() + AndroidUtilities.dp(n0Var.h != null ? 17.0f : 8.0f);
                         float dp5 = AndroidUtilities.dp(1.0f) + AndroidUtilities.dp(54.0f) + AndroidUtilities.dp(10.0f);
                         AndroidUtilities.rectTmp.set((f30 - l4) / f13, dp5 - AndroidUtilities.dp(14.33f), (f30 + l4) / f13, dp5);
                         boolean z10 = n0Var.m;
@@ -502,10 +502,10 @@ public final class o0 {
                     path2.addCircle((f37 / f13) + f36, (AndroidUtilities.dp(54.0f) / f13) + AndroidUtilities.dp(10.0f), AndroidUtilities.dp(54.0f) / f13, direction);
                     float f38 = f37 * 0.4f;
                     RectF rectF9 = AndroidUtilities.rectTmp;
-                    rectF9.set(com.google.android.gms.internal.vision.e2.A(f37, f38, 2.0f, f36), AndroidUtilities.dp(69.0f), org.telegram.messenger.f0.a(f37, f38, 2.0f, f36), AndroidUtilities.dp(79.0f));
+                    rectF9.set(com.google.android.gms.internal.vision.e2.A(f37, f38, 2.0f, f36), AndroidUtilities.dp(69.0f), org.telegram.messenger.q.a(f37, f38, 2.0f, f36), AndroidUtilities.dp(79.0f));
                     path2.addRoundRect(rectF9, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), direction);
                     float f39 = f37 * 0.35f;
-                    rectF9.set(com.google.android.gms.internal.vision.e2.A(f37, f39, 2.0f, f36), AndroidUtilities.dp(83.0f), org.telegram.messenger.f0.a(f37, f39, 2.0f, f36), AndroidUtilities.dp(91.0f));
+                    rectF9.set(com.google.android.gms.internal.vision.e2.A(f37, f39, 2.0f, f36), AndroidUtilities.dp(83.0f), org.telegram.messenger.q.a(f37, f39, 2.0f, f36), AndroidUtilities.dp(91.0f));
                     path2.addRoundRect(rectF9, AndroidUtilities.dp(2.5f), AndroidUtilities.dp(2.5f), direction);
                     max2++;
                     f13 = 2.0f;
@@ -631,9 +631,9 @@ public final class o0 {
             }
         }
         if (this.v == null) {
-            e11 e11Var = new e11(LocaleController.getString(this.c > 0 ? R.string.SimilarBots : R.string.SimilarChannels), 14.0f, AndroidUtilities.bold());
-            e11Var.o = true;
-            this.v = e11Var;
+            f11 f11Var = new f11(LocaleController.getString(this.c > 0 ? R.string.SimilarBots : R.string.SimilarChannels), 14.0f, AndroidUtilities.bold());
+            f11Var.o = true;
+            this.v = f11Var;
         }
         if (d()) {
             u1Var.s0 = AndroidUtilities.dp(144.0f) + u1Var.s0;

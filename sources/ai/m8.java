@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m8 implements Runnable {
     public final /* synthetic */ int a;
@@ -144,12 +144,12 @@ public final /* synthetic */ class m8 implements Runnable {
                 new xh.z4((Context) obj3, this.c, ((GiftAuctionController.Auction) obj2).gift, null, this.b, (Runnable) obj, false, false).show();
                 break;
             case 12:
-                yh.n nVar = (yh.n) obj;
+                yh.o oVar = (yh.o) obj;
                 TLObject tLObject2 = (TLObject) obj2;
-                int i15 = ((yh.o) obj3).a;
-                boolean[] zArr = nVar.d;
-                boolean[] zArr2 = nVar.b;
-                ArrayList[] arrayListArr = nVar.a;
+                int i15 = ((yh.p) obj3).a;
+                boolean[] zArr = oVar.d;
+                boolean[] zArr2 = oVar.b;
+                ArrayList[] arrayListArr = oVar.a;
                 zArr[i12] = false;
                 if (tLObject2 instanceof TL_stars.StarsStatus) {
                     TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject2;
@@ -157,10 +157,10 @@ public final /* synthetic */ class m8 implements Runnable {
                     MessagesController.getInstance(i15).putChats(starsStatus.chats, false);
                     arrayListArr[i12].addAll(starsStatus.history);
                     zArr2[i12] = !arrayListArr[i12].isEmpty() || zArr2[i12];
-                    boolean[] zArr3 = nVar.e;
+                    boolean[] zArr3 = oVar.e;
                     boolean z10 = (starsStatus.flags & 1) == 0;
                     zArr3[i12] = z10;
-                    nVar.c[i12] = z10 ? null : starsStatus.next_offset;
+                    oVar.c[i12] = z10 ? null : starsStatus.next_offset;
                     NotificationCenter.getInstance(i15).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsTransactionsLoaded, Long.valueOf(j3));
                     break;
                 }
@@ -231,10 +231,10 @@ public final /* synthetic */ class m8 implements Runnable {
         this.c = i10;
     }
 
-    public /* synthetic */ m8(yh.o oVar, yh.n nVar, int i10, TLObject tLObject, long j3) {
+    public /* synthetic */ m8(yh.p pVar, yh.o oVar, int i10, TLObject tLObject, long j3) {
         this.a = 12;
-        this.d = oVar;
-        this.f = nVar;
+        this.d = pVar;
+        this.f = oVar;
         this.c = i10;
         this.e = tLObject;
         this.b = j3;

@@ -1,15 +1,41 @@
 package yh;
 
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class i3 extends e3 {
-    public final TL_stars.starGiftAttributePattern c;
+public final class i3 extends f3 {
+    public final boolean c;
+    public final ImageReceiver d;
 
-    public i3(TL_stars.starGiftAttributePattern stargiftattributepattern) {
-        this.a = stargiftattributepattern.name;
-        this.b = stargiftattributepattern.getRarityPermille();
-        this.c = stargiftattributepattern;
+    public i3(View view, TL_stars.starGiftAttributeModel stargiftattributemodel) {
+        this.a = stargiftattributemodel.name;
+        this.b = stargiftattributemodel.getRarityPermille();
+        this.c = true;
+        ImageReceiver imageReceiver = new ImageReceiver(view);
+        this.d = imageReceiver;
+        z7.f1(imageReceiver, stargiftattributemodel.document, 160);
+    }
+
+    @Override // yh.f3
+    public final void a() {
+        if (this.c) {
+            this.d.onDetachedFromWindow();
+        }
+    }
+
+    @Override // yh.f3
+    public final boolean b() {
+        return this.d.getLottieAnimation() != null;
+    }
+
+    public i3(w9 w9Var, TL_stars.starGiftAttributeModel stargiftattributemodel) {
+        this.a = stargiftattributemodel.name;
+        this.b = stargiftattributemodel.getRarityPermille();
+        this.c = false;
+        this.d = w9Var.getImageReceiver();
     }
 }

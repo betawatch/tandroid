@@ -5,7 +5,7 @@ import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class u extends d {
     public final /* synthetic */ String a;
@@ -37,9 +37,9 @@ public final class u extends d {
             executorService.shutdownNow();
         } catch (InterruptedException unused) {
             Locale locale = Locale.US;
-            String p5 = a4.a.p("Interrupted while waiting for ", str, " to shut down. Requesting immediate shutdown.");
+            String q6 = a4.a.q("Interrupted while waiting for ", str, " to shut down. Requesting immediate shutdown.");
             if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                Log.d("FirebaseCrashlytics", p5, null);
+                Log.d("FirebaseCrashlytics", q6, null);
             }
             executorService.shutdownNow();
         }

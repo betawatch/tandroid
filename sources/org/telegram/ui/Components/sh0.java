@@ -23,7 +23,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class sh0 extends View {
     public int E;
@@ -35,7 +35,7 @@ public final class sh0 extends View {
     public boolean K;
     public RenderNode L;
     public RenderNode M;
-    public final iw0[] N;
+    public final jw0[] N;
     public final e6 O;
     public final ai.n7 P;
     public boolean a;
@@ -70,10 +70,10 @@ public final class sh0 extends View {
         this.F = false;
         this.G = false;
         this.H = false;
-        this.N = new iw0[3];
+        this.N = new jw0[3];
         e6 e6Var = new e6(this, 0L, 350L, tr.f);
         this.O = e6Var;
-        this.P = new ai.n7(this, 3);
+        this.P = new ai.n7(2, this);
         e6Var.d(1.0f, true);
         boolean z10 = this.a & SharedConfig.useNewBlur;
         this.a = z10;
@@ -231,7 +231,7 @@ public final class sh0 extends View {
     */
     public final boolean d() {
         org.telegram.ui.kv0 kv0Var;
-        iw0[] iw0VarArr;
+        jw0[] jw0VarArr;
         bi0 bi0Var = this.h;
         boolean z10 = false;
         if (bi0Var != null && ((kv0Var = bi0Var.h1) == null || !kv0Var.n)) {
@@ -247,13 +247,13 @@ public final class sh0 extends View {
                 this.H = false;
                 int i11 = 0;
                 while (true) {
-                    iw0VarArr = this.N;
+                    jw0VarArr = this.N;
                     if (i11 >= length) {
                         break;
                     }
-                    iw0 iw0Var = iw0VarArr[i11];
-                    if (iw0Var != null) {
-                        iw0Var.g(null);
+                    jw0 jw0Var = jw0VarArr[i11];
+                    if (jw0Var != null) {
+                        jw0Var.g(null);
                     }
                     gi0 gi0Var = gi0VarArr[i11];
                     if (gi0Var != null) {
@@ -284,9 +284,9 @@ public final class sh0 extends View {
                 h(0, E);
                 rh0 rh0Var = this.v;
                 if (length == 1) {
-                    iw0 iw0Var2 = iw0VarArr[0];
-                    if (iw0Var2 != null) {
-                        iw0Var2.g(rh0Var);
+                    jw0 jw0Var2 = jw0VarArr[0];
+                    if (jw0Var2 != null) {
+                        jw0Var2.g(rh0Var);
                     }
                     return !this.G;
                 }
@@ -295,12 +295,12 @@ public final class sh0 extends View {
                 if (this.x == 0) {
                     h(2, this.h.E(this.w - 1));
                 }
-                for (iw0 iw0Var3 : iw0VarArr) {
-                    if (iw0Var3 != null) {
-                        iw0Var3.g(rh0Var);
+                for (jw0 jw0Var3 : jw0VarArr) {
+                    if (jw0Var3 != null) {
+                        jw0Var3.g(rh0Var);
                     }
                 }
-                if ((E != null && iw0VarArr[0] == null) || (this.x != 0 && E2 != null && iw0VarArr[1] == null)) {
+                if ((E != null && jw0VarArr[0] == null) || (this.x != 0 && E2 != null && jw0VarArr[1] == null)) {
                     z10 = true;
                 }
                 this.F = z10;
@@ -349,9 +349,9 @@ public final class sh0 extends View {
                         gi0Var2.a();
                         this.d[i10] = null;
                     }
-                    iw0 iw0Var = this.N[i10];
-                    if (iw0Var != null) {
-                        iw0Var.g(null);
+                    jw0 jw0Var = this.N[i10];
+                    if (jw0Var != null) {
+                        jw0Var.g(null);
                         this.N[i10] = null;
                     }
                 } catch (Throwable th2) {
@@ -401,14 +401,14 @@ public final class sh0 extends View {
                     return;
                 }
                 j();
-                iw0[] iw0VarArr = this.N;
-                iw0 iw0Var = iw0VarArr[0];
-                if (iw0Var != null) {
-                    iw0Var.g(null);
+                jw0[] jw0VarArr = this.N;
+                jw0 jw0Var = jw0VarArr[0];
+                if (jw0Var != null) {
+                    jw0Var.g(null);
                 }
-                iw0 iw0Var2 = iw0VarArr[1];
-                if (iw0Var2 != null) {
-                    iw0Var2.g(null);
+                jw0 jw0Var2 = jw0VarArr[1];
+                if (jw0Var2 != null) {
+                    jw0Var2.g(null);
                 }
                 float renderNodeScale2 = getRenderNodeScale();
                 this.L.setPosition(0, 0, (int) (f7 / renderNodeScale2), (int) ((this.r + this.n) / renderNodeScale2));
@@ -527,12 +527,12 @@ public final class sh0 extends View {
             gi0Var.f = true;
         }
         if (i10 == 0 || (this.x != 0 && i10 == 1)) {
-            boolean z10 = view instanceof iw0;
-            iw0[] iw0VarArr = this.N;
+            boolean z10 = view instanceof jw0;
+            jw0[] jw0VarArr = this.N;
             if (z10) {
-                iw0VarArr[i10] = (iw0) view;
+                jw0VarArr[i10] = (jw0) view;
             } else {
-                iw0VarArr[i10] = null;
+                jw0VarArr[i10] = null;
             }
         }
     }
@@ -553,15 +553,15 @@ public final class sh0 extends View {
             E.draw(canvas);
             canvas.restore();
         }
-        boolean z10 = E instanceof iw0;
-        iw0[] iw0VarArr = this.N;
+        boolean z10 = E instanceof jw0;
+        jw0[] jw0VarArr = this.N;
         if (!z10) {
-            iw0VarArr[i10] = null;
+            jw0VarArr[i10] = null;
             return;
         }
-        iw0 iw0Var = (iw0) E;
-        iw0VarArr[i10] = iw0Var;
-        iw0Var.g(this.v);
+        jw0 jw0Var = (jw0) E;
+        jw0VarArr[i10] = jw0Var;
+        jw0Var.g(this.v);
     }
 
     public final void j() {

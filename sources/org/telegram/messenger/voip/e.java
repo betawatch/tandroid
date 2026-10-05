@@ -25,11 +25,11 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.f70;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.gg;
-import org.telegram.ui.n31;
-import org.telegram.ui.v31;
+import org.telegram.ui.l31;
+import org.telegram.ui.t31;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -68,10 +68,10 @@ public final /* synthetic */ class e implements Runnable {
                 byte[] bArr = (byte[]) this.f;
                 yn ynVar = (yn) this.h;
                 MessageObject messageObject = (MessageObject) this.n;
-                v31 v31Var = new v31(activity, d6Var, this.b, bArr);
-                v31Var.M((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject);
-                v31Var.s = new n31(ynVar, activity, d6Var, messageObject);
-                v31Var.show();
+                t31 t31Var = new t31(activity, d6Var, this.b, bArr);
+                t31Var.M((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject);
+                t31Var.s = new l31(ynVar, activity, d6Var, messageObject);
+                t31Var.show();
                 break;
             default:
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.f;
@@ -103,12 +103,12 @@ public final /* synthetic */ class e implements Runnable {
                         StringBuilder sb2 = new StringBuilder();
                         sb2.append(fileLocationArr[0].volume_id);
                         sb2.append("_");
-                        String n10 = a4.a.n(fileLocationArr[0].local_id, "@50_50", sb2);
+                        String o9 = a4.a.o(fileLocationArr[0].local_id, "@50_50", sb2);
                         StringBuilder sb3 = new StringBuilder();
                         sb3.append(closestPhotoSizeWithSize.location.volume_id);
                         sb3.append("_");
                         z10 = true;
-                        ImageLoader.getInstance().replaceImageInCache(n10, a4.a.n(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3), ImageLocation.getForUserOrChat(ynVar2.getCurrentAccount(), user, 1), false);
+                        ImageLoader.getInstance().replaceImageInCache(o9, a4.a.o(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3), ImageLocation.getForUserOrChat(ynVar2.getCurrentAccount(), user, 1), false);
                     }
                     if (closestVideoSizeWithSize != null && str != null) {
                         new File(str).renameTo(FileLoader.getInstance(ynVar2.getCurrentAccount()).getPathToAttach(closestVideoSizeWithSize, "mp4", z10));

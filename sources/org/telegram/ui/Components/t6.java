@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class t6 extends ob {
     public t6(LaunchActivity launchActivity, org.telegram.ui.jb0 jb0Var) {
@@ -25,6 +25,6 @@ public final class t6 extends ob {
         qVar.setOuterPadding(AndroidUtilities.dp(8.0f));
         qVar.setBackgroundOuterPadding(AndroidUtilities.dp(24.0f));
         qVar.setForeground(jb0Var.c);
-        org.telegram.messenger.ok.q(R.string.AppIconChangedTo, new Object[]{LocaleController.getString(jb0Var.d)}, textView);
+        org.telegram.messenger.bi.p(R.string.AppIconChangedTo, new Object[]{LocaleController.getString(jb0Var.d)}, textView);
     }
 }

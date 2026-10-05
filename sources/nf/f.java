@@ -16,7 +16,6 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.os.RemoteException;
 import android.text.TextUtils;
-import hg.k0;
 import java.lang.ref.WeakReference;
 import java.net.IDN;
 import java.net.URLEncoder;
@@ -52,7 +51,7 @@ import org.telegram.ui.i4;
 import org.telegram.ui.z2;
 import t7.u;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class f {
     public static z0 a;
@@ -464,7 +463,7 @@ public abstract class f {
                     m3Var = tabs.get(i10);
                     i4 i4Var = m3Var.J;
                     if (i4Var != null && !i4Var.d0.isEmpty()) {
-                        Object g10 = k0.g(1, m3Var.J.d0);
+                        Object g10 = hg.c.g(1, m3Var.J.d0);
                         if (g10 instanceof z2) {
                             org.telegram.ui.web.z0 z0Var = ((z2) g10).b;
                             if (z0Var == null && (m3VarArr = m3Var.J.u0) != null && (m3Var2 = m3VarArr[0]) != null) {

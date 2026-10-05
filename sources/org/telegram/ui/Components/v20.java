@@ -21,7 +21,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class v20 extends FrameLayout implements org.telegram.ui.Components.voip.o0 {
     public final TextPaint E;
@@ -117,7 +117,7 @@ public final class v20 extends FrameLayout implements org.telegram.ui.Components
     public final void c(Canvas canvas) {
         if (this.w != null) {
             canvas.save();
-            int z10 = org.telegram.messenger.ok.z(24.0f, getMeasuredWidth() - this.y, 2);
+            int z10 = org.telegram.messenger.bi.z(24.0f, getMeasuredWidth() - this.y, 2);
             int alpha = (int) (getAlpha() * this.s * 255.0f);
             TextPaint textPaint = this.E;
             textPaint.setAlpha(alpha);
@@ -370,7 +370,7 @@ public final class v20 extends FrameLayout implements org.telegram.ui.Components
         }
         this.K = true;
         if (h60Var.t2.size() > 0) {
-            this.I = (org.telegram.ui.Components.voip.p0) hg.k0.w(1, h60Var.t2);
+            this.I = (org.telegram.ui.Components.voip.p0) hg.c.w(1, h60Var.t2);
         } else {
             this.I = new org.telegram.ui.Components.voip.p0();
         }

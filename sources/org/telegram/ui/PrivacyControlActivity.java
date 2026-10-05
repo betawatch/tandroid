@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.x40 {
     public boolean A0;
@@ -208,11 +208,11 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 impleme
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(privacyControlActivity.x0.location.volume_id);
                 sb2.append("_");
-                String n10 = a4.a.n(privacyControlActivity.x0.location.local_id, "@50_50", sb2);
+                String o9 = a4.a.o(privacyControlActivity.x0.location.local_id, "@50_50", sb2);
                 StringBuilder sb3 = new StringBuilder();
                 sb3.append(closestPhotoSizeWithSize.location.volume_id);
                 sb3.append("_");
-                ImageLoader.getInstance().replaceImageInCache(n10, a4.a.n(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3), ImageLocation.getForLocal(closestPhotoSizeWithSize.location), false);
+                ImageLoader.getInstance().replaceImageInCache(o9, a4.a.o(closestPhotoSizeWithSize.location.local_id, "@50_50", sb3), ImageLocation.getForLocal(closestPhotoSizeWithSize.location), false);
             }
             if (closestPhotoSizeWithSize2 == null || privacyControlActivity.x0 == null) {
                 return;
@@ -915,7 +915,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 impleme
         this.fragmentView = frameLayout;
         org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
         this.d = zl0Var;
-        zl0Var.s1();
+        zl0Var.r1();
         this.d.setLayoutManager(new s4.c0(1, false));
         this.d.setSectionsDrawBackground(true);
         this.d.setVerticalScrollBarEnabled(false);
@@ -940,7 +940,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 impleme
             return;
         }
         if (i10 == NotificationCenter.emojiLoaded) {
-            this.d.h1();
+            this.d.g1();
         } else {
             if (i10 != NotificationCenter.didSetNewWallpapper || (tx0Var = this.e) == null) {
                 return;

@@ -2,10 +2,10 @@ package ci;
 
 import android.animation.ValueAnimator;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.rd1;
+import org.telegram.ui.pd1;
 import org.telegram.ui.wp0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class tb implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -51,10 +51,10 @@ public final class tb implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             default:
-                rd1 rd1Var = (rd1) this.c;
-                rd1Var.i2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rd1Var.h2.invalidate();
-                if (!this.b && rd1Var.i2 > 0.5f) {
+                pd1 pd1Var = (pd1) this.c;
+                pd1Var.i2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pd1Var.h2.invalidate();
+                if (!this.b && pd1Var.i2 > 0.5f) {
                     this.b = true;
                     break;
                 }

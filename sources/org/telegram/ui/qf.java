@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qf implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -93,8 +93,8 @@ public final /* synthetic */ class qf implements View.OnClickListener {
                 m4Var.setHeight(47);
                 m4Var.setText(LocaleController.getString("ChatHistory", R.string.ChatHistory));
                 linearLayout.addView(m4Var);
-                LinearLayout f7 = org.telegram.messenger.ok.f(context, 1);
-                linearLayout.addView(f7, w7.z5.n(-1, -2));
+                LinearLayout e7 = org.telegram.messenger.bi.e(context, 1);
+                linearLayout.addView(e7, w7.z5.n(-1, -2));
                 org.telegram.ui.Cells.j6[] j6VarArr = new org.telegram.ui.Cells.j6[2];
                 int i14 = 0;
                 for (int i15 = 2; i14 < i15; i15 = 2) {
@@ -109,7 +109,7 @@ public final /* synthetic */ class qf implements View.OnClickListener {
                     } else {
                         j6VarArr[i14].b(LocaleController.getString("ChatHistoryHidden", R.string.ChatHistoryHidden), LocaleController.getString("ChatHistoryHiddenInfo2", R.string.ChatHistoryHiddenInfo2), false, toVar.J0);
                     }
-                    f7.addView(j6VarArr[i14], w7.z5.n(-1, -2));
+                    e7.addView(j6VarArr[i14], w7.z5.n(-1, -2));
                     j6VarArr[i14].setOnClickListener(new a0(toVar, j6VarArr, a3Var, 8));
                     i14++;
                 }
@@ -207,7 +207,7 @@ public final /* synthetic */ class qf implements View.OnClickListener {
             case 19:
                 org.telegram.ui.Components.e9 e9Var = (org.telegram.ui.Components.e9) obj2;
                 ((boolean[]) obj)[0] = true;
-                e9Var.J.y1(e9Var.Y);
+                e9Var.J.x1(e9Var.Y);
                 e9Var.S.dismiss();
                 break;
             case 20:
@@ -274,14 +274,14 @@ public final /* synthetic */ class qf implements View.OnClickListener {
                     org.telegram.ui.Components.e5.M(parentActivity, ynVar2.a(), new org.telegram.ui.Components.w2(5, glVar, ilVar), jlVar.a);
                     break;
                 } else {
-                    org.telegram.ui.Components.e5.a0(xiVar.J1, xiVar.h1() + 1, xiVar.l1(), new qc(20, glVar, ilVar));
+                    org.telegram.ui.Components.e5.a0(xiVar.J1, xiVar.j1() + 1, xiVar.n1(), new qc(20, glVar, ilVar));
                     break;
                 }
             case 23:
                 org.telegram.ui.Components.xn xnVar = ((org.telegram.ui.Components.vn) obj2).d;
-                zb1 zb1Var = xnVar.s;
-                View F2 = zb1Var.F((org.telegram.ui.Components.un) obj);
-                s4.c1 T = F2 != null ? zb1Var.T(F2) : null;
+                xb1 xb1Var = xnVar.s;
+                View F2 = xb1Var.F((org.telegram.ui.Components.un) obj);
+                s4.c1 T = F2 != null ? xb1Var.T(F2) : null;
                 if (T != null && (b10 = T.b() - xnVar.t0) >= 0 && b10 < xnVar.K.length) {
                     org.telegram.ui.Components.xn.M(xnVar, b10);
                     break;
@@ -392,7 +392,7 @@ public final /* synthetic */ class qf implements View.OnClickListener {
                 break;
             default:
                 ((org.telegram.ui.Components.is) obj2).B0 = !r12.B0;
-                ((org.telegram.ui.Components.u61) obj).N(true);
+                ((org.telegram.ui.Components.w61) obj).N(true);
                 break;
         }
     }

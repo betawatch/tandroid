@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class wv extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static Pattern V;
@@ -249,7 +249,7 @@ public class wv extends org.telegram.ui.ActionBar.f3 implements NotificationCent
                                     if (z11 && view2 != null) {
                                         Context context = n2Var3.getFragmentView().getContext();
                                         TLObject tLObject4 = tL_messages_stickerSet2;
-                                        rc.g(n2Var3, new vx0(context, tLObject4 == null ? stickerSet4 : tLObject4, 1, 2, null, n2Var3.getResourceProvider()), 1500).j();
+                                        rc.g(n2Var3, new wx0(context, tLObject4 == null ? stickerSet4 : tLObject4, 1, 2, null, n2Var3.getResourceProvider()), 1500).j();
                                     }
                                     if (tLObject3 instanceof TLRPC.TL_messages_stickerSetInstallResultArchive) {
                                         MediaDataController.getInstance(i12).processStickerSetInstallResultArchive(n2Var3, true, i11, (TLRPC.TL_messages_stickerSetInstallResultArchive) tLObject3);
@@ -356,7 +356,7 @@ public class wv extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(q5.f(wvVar.currentAccount, z5Var.getDocumentId())));
         spannableString.setSpan(z5Var, 0, spannableString.length(), 33);
         if (AndroidUtilities.addToClipboard(spannableString)) {
-            org.telegram.messenger.ok.o(R.string.EmojiCopied, new yc((FrameLayout) wvVar.containerView, wvVar.resourcesProvider));
+            org.telegram.messenger.bi.n(R.string.EmojiCopied, new yc((FrameLayout) wvVar.containerView, wvVar.resourcesProvider));
         }
     }
 
@@ -749,7 +749,7 @@ public class wv extends org.telegram.ui.ActionBar.f3 implements NotificationCent
                         org.telegram.ui.ActionBar.n2 n2Var = wvVar.c;
                         TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) gvVar.a.get(i12);
                         org.telegram.ui.ActionBar.n2 n2Var2 = wvVar.c;
-                        new qy0(context, n2Var, inputStickerSet, null, n2Var2 instanceof org.telegram.ui.yn ? ((org.telegram.ui.yn) n2Var2).W : null, wvVar.resourcesProvider).show();
+                        new ry0(context, n2Var, inputStickerSet, null, n2Var2 instanceof org.telegram.ui.yn ? ((org.telegram.ui.yn) n2Var2).W : null, wvVar.resourcesProvider).show();
                     }
                 } else {
                     wv wvVar2 = gvVar.h;

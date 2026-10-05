@@ -24,16 +24,16 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public abstract class r extends m {
     public static final int[] Q1 = {21600, 43200, 86400, 172800};
-    public e11 A1;
+    public f11 A1;
     public Utilities.Callback B1;
     public Utilities.Callback C1;
     public p D1;
@@ -80,12 +80,12 @@ public abstract class r extends m {
     public final RectF u1;
     public final RectF v1;
     public final Path w1;
-    public e11 x1;
+    public f11 x1;
     public Path y1;
     public Paint z1;
 
-    public r(Context context, FrameLayout frameLayout, lw0 lw0Var, FrameLayout frameLayout2, ai.d dVar, org.telegram.ui.Components.ka kaVar) {
-        super(context, frameLayout, lw0Var, frameLayout2, dVar, kaVar);
+    public r(Context context, FrameLayout frameLayout, mw0 mw0Var, FrameLayout frameLayout2, ai.d dVar, org.telegram.ui.Components.ka kaVar) {
+        super(context, frameLayout, mw0Var, frameLayout2, dVar, kaVar);
         this.W0 = true;
         this.X0 = 0;
         ac acVar = (ac) this;
@@ -449,7 +449,7 @@ public abstract class r extends m {
             }
             if (f7 > 0.0f) {
                 if (this.x1 == null) {
-                    this.x1 = new e11(LocaleController.getString(R.string.SlideToCancel2), 15.0f, null);
+                    this.x1 = new f11(LocaleController.getString(R.string.SlideToCancel2), 15.0f, null);
                 }
                 if (this.y1 == null) {
                     Path path = new Path();
@@ -481,7 +481,7 @@ public abstract class r extends m {
             }
             if (e10 > f13) {
                 if (this.A1 == null) {
-                    this.A1 = new e11(LocaleController.getString(R.string.CancelRound), f12, AndroidUtilities.bold());
+                    this.A1 = new f11(LocaleController.getString(R.string.CancelRound), f12, AndroidUtilities.bold());
                 }
                 this.A1.p = (int) ((rectF.width() - AndroidUtilities.dp(116.0f)) - o6Var.d());
                 float width = ((rectF.width() / 4.0f) * f14) + (rectF.centerX() - (this.A1.l() / 2.0f));
@@ -576,7 +576,7 @@ public abstract class r extends m {
         canvas.restore();
         float f17 = e6Var.c;
         float f18 = e6Var2.c;
-        float z13 = org.telegram.messenger.f0.z(1.0f, f17, AndroidUtilities.lerp(this.s1.e(this.c1 < 0.4f), 0.0f, f18), f7);
+        float z13 = org.telegram.messenger.q.z(1.0f, f17, AndroidUtilities.lerp(this.s1.e(this.c1 < 0.4f), 0.0f, f18), f7);
         float dp4 = rectF.right - AndroidUtilities.dp(20.0f);
         float lerp2 = (AndroidUtilities.lerp(AndroidUtilities.dp(50.0f), AndroidUtilities.dp(36.0f), f18) * z13) / 2.0f;
         float f19 = 1.0f - f18;

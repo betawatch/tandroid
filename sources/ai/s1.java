@@ -34,7 +34,7 @@ import org.telegram.ui.hh;
 import org.telegram.ui.jm;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -178,9 +178,9 @@ public final /* synthetic */ class s1 implements Runnable {
                 }
                 break;
             case 12:
-                hg.y yVar = (hg.y) this.c;
-                yVar.b.add(this.b, (TL_account.TL_businessChatLink) this.d);
-                NotificationCenter.getInstance(yVar.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
+                hg.z zVar = (hg.z) this.c;
+                zVar.b.add(this.b, (TL_account.TL_businessChatLink) this.d);
+                NotificationCenter.getInstance(zVar.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
                 break;
             case 13:
                 i2.d1 d1Var = (i2.d1) this.c;

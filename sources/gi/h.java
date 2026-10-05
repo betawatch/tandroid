@@ -25,7 +25,7 @@ import org.telegram.ui.Components.rq;
 import org.telegram.ui.Components.w9;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class h extends FrameLayout implements y5 {
     public static final /* synthetic */ int F = 0;
@@ -53,7 +53,7 @@ public final class h extends FrameLayout implements y5 {
         if (Build.VERSION.SDK_INT >= 31) {
             fh.d dVar = new fh.d(null);
             this.s = dVar;
-            dVar.g(AndroidUtilities.dp(7.0f), h0.a());
+            dVar.f(AndroidUtilities.dp(7.0f), h0.a());
             dVar.n = true;
             cVar = new ah.c(dVar);
         } else {
@@ -92,8 +92,8 @@ public final class h extends FrameLayout implements y5 {
         float dpf22 = AndroidUtilities.dpf2(0.43f);
         eVar.f = dpf2;
         eVar.h = dpf22;
-        c10.x(eVar);
-        c10.z(AndroidUtilities.dp(7.0f));
+        c10.w(eVar);
+        c10.y(AndroidUtilities.dp(7.0f));
         this.v = c10;
         textView.setBackground(c10);
         LinearLayout linearLayout = new LinearLayout(context);

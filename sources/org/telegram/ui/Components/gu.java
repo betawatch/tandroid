@@ -27,7 +27,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class gu extends EditText {
     private static final int SPOILER_TIMEOUT = 10000;
@@ -113,10 +113,10 @@ public abstract class gu extends EditText {
         boolean z10 = false;
         if (text instanceof Spannable) {
             Spannable spannable = (Spannable) text;
-            for (n11 n11Var : (n11[]) spannable.getSpans(0, spannable.length(), n11.class)) {
-                int spanStart = spannable.getSpanStart(n11Var);
-                int spanEnd = spannable.getSpanEnd(n11Var);
-                if (n11Var.c() && ((spanStart > (i10 = this.selStart) && spanEnd < this.selEnd) || ((i10 > spanStart && i10 < spanEnd) || ((i11 = this.selEnd) > spanStart && i11 < spanEnd)))) {
+            for (o11 o11Var : (o11[]) spannable.getSpans(0, spannable.length(), o11.class)) {
+                int spanStart = spannable.getSpanStart(o11Var);
+                int spanEnd = spannable.getSpanEnd(o11Var);
+                if (o11Var.c() && ((spanStart > (i10 = this.selStart) && spanEnd < this.selEnd) || ((i10 > spanStart && i10 < spanEnd) || ((i11 = this.selEnd) > spanStart && i11 < spanEnd)))) {
                     removeCallbacks(this.spoilerTimeout);
                     this.postedSpoilerTimeout = false;
                     z10 = true;
@@ -232,14 +232,14 @@ public abstract class gu extends EditText {
     public void invalidateEffects() {
         Editable text = getText();
         if (text != null) {
-            for (n11 n11Var : (n11[]) text.getSpans(0, text.length(), n11.class)) {
-                if (n11Var.c()) {
+            for (o11 o11Var : (o11[]) text.getSpans(0, text.length(), o11.class)) {
+                if (o11Var.c()) {
                     boolean z10 = this.isSpoilersRevealed;
-                    m11 m11Var = n11Var.b;
+                    n11 n11Var = o11Var.b;
                     if (z10) {
-                        m11Var.a |= 512;
+                        n11Var.a |= 512;
                     } else {
-                        m11Var.a &= -513;
+                        n11Var.a &= -513;
                     }
                 }
             }
@@ -516,13 +516,13 @@ public abstract class gu extends EditText {
         this.isSpoilersRevealed = z10;
         Editable text = getText();
         if (text != null) {
-            for (n11 n11Var : (n11[]) text.getSpans(0, text.length(), n11.class)) {
-                if (n11Var.c()) {
-                    m11 m11Var = n11Var.b;
+            for (o11 o11Var : (o11[]) text.getSpans(0, text.length(), o11.class)) {
+                if (o11Var.c()) {
+                    n11 n11Var = o11Var.b;
                     if (z10) {
-                        m11Var.a |= 512;
+                        n11Var.a |= 512;
                     } else {
-                        m11Var.a &= -513;
+                        n11Var.a &= -513;
                     }
                 }
             }

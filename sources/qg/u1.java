@@ -3,7 +3,7 @@ package qg;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class u1 extends GestureDetector.SimpleOnGestureListener {
     public float a;
@@ -46,7 +46,7 @@ public final class u1 extends GestureDetector.SimpleOnGestureListener {
             float a2 = w7.q.a(com.google.android.gms.internal.vision.e2.z(f12, f13, y3, f11), f13, f12);
             v1 v1Var = w1Var.K;
             if (v1Var != null) {
-                v1Var.E(a2);
+                v1Var.X(a2);
             } else {
                 w1Var.H.c = a2;
             }

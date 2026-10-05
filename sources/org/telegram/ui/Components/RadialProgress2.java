@@ -17,7 +17,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class RadialProgress2 {
     public float A;
@@ -403,7 +403,7 @@ public class RadialProgress2 {
         String str2;
         if (str != null) {
             Locale locale = Locale.US;
-            str2 = a4.a.k(this.x * 2, this.x * 2, "_");
+            str2 = a4.a.l(this.x * 2, this.x * 2, "_");
         } else {
             str2 = null;
         }
@@ -414,13 +414,13 @@ public class RadialProgress2 {
         Locale locale = Locale.US;
         ImageLocation forDocument = ImageLocation.getForDocument(photoSize, document);
         int i10 = this.x;
-        this.w.setImage(forDocument, a4.a.k(i10 * 2, i10 * 2, "_"), null, null, messageObject, 1);
+        this.w.setImage(forDocument, a4.a.l(i10 * 2, i10 * 2, "_"), null, null, messageObject, 1);
     }
 
     public final void j(TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, TLRPC.Document document, Object obj) {
         Locale locale = Locale.US;
-        String k10 = a4.a.k(this.x * 2, this.x * 2, "_");
-        this.w.setImage(photoSize == null ? null : ImageLocation.getForDocument(photoSize, document), k10, photoSize2 != null ? ImageLocation.getForDocument(photoSize2, document) : null, k10, null, 0L, null, obj, 1);
+        String l4 = a4.a.l(this.x * 2, this.x * 2, "_");
+        this.w.setImage(photoSize == null ? null : ImageLocation.getForDocument(photoSize, document), l4, photoSize2 != null ? ImageLocation.getForDocument(photoSize2, document) : null, l4, null, 0L, null, obj, 1);
     }
 
     public final void k(int i10, boolean z10, boolean z11) {

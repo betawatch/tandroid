@@ -8,7 +8,6 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
-import hg.k0;
 import java.util.ArrayList;
 import n6.l;
 import qb.j;
@@ -22,7 +21,7 @@ import x7.na;
 import x7.oa;
 import x7.y;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class a implements b {
     public final Context a;
@@ -63,7 +62,7 @@ public final class a implements b {
                 if (i13 == 35) {
                     bVar = new x6.b(null);
                 } else if (i13 != 842094169) {
-                    throw new mb.a(k0.h(aVar.e, "Unsupported image format: "), 3);
+                    throw new mb.a(hg.c.h(aVar.e, "Unsupported image format: "), 3);
                 }
             }
             l.h(null);

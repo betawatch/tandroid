@@ -10,7 +10,7 @@ import org.telegram.messenger.ProxyRotationController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class x11 extends org.telegram.ui.Components.yl0 {
     public final Context c;
@@ -62,7 +62,7 @@ public final class x11 extends org.telegram.ui.Components.yl0 {
             return;
         }
         kVar3 = ((org.telegram.ui.ActionBar.n2) proxyListActivity).actionBar;
-        kVar3.M(null, null);
+        kVar3.L(null, null);
         int i11 = proxyListActivity.n;
         r(i11, proxyListActivity.r - i11, 2);
     }
@@ -222,14 +222,14 @@ public final class x11 extends org.telegram.ui.Components.yl0 {
                 break;
             case 6:
                 if (i10 == proxyListActivity.w) {
-                    org.telegram.ui.Components.pw0 pw0Var = (org.telegram.ui.Components.pw0) view;
+                    org.telegram.ui.Components.qw0 qw0Var = (org.telegram.ui.Components.qw0) view;
                     ArrayList arrayList3 = new ArrayList(ProxyRotationController.ROTATION_TIMEOUTS);
                     String[] strArr = new String[arrayList3.size()];
                     for (int i14 = 0; i14 < arrayList3.size(); i14++) {
                         strArr[i14] = LocaleController.formatString(R.string.ProxyRotationTimeoutSeconds, arrayList3.get(i14));
                     }
-                    pw0Var.setCallback(new org.telegram.ui.Components.voip.e1(23));
-                    pw0Var.b(SharedConfig.proxyRotationTimeout, null, strArr);
+                    qw0Var.setCallback(new org.telegram.ui.Components.voip.e1(23));
+                    qw0Var.b(SharedConfig.proxyRotationTimeout, null, strArr);
                     break;
                 }
                 break;
@@ -290,7 +290,7 @@ public final class x11 extends org.telegram.ui.Components.yl0 {
             b7Var = new y11(this.d, context);
             b7Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
         } else {
-            b7Var = new org.telegram.ui.Components.pw0(context, null);
+            b7Var = new org.telegram.ui.Components.qw0(context, null);
             b7Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.d6, false));
         }
         return com.google.android.gms.internal.vision.e2.k(b7Var, b7Var, -1, -2);

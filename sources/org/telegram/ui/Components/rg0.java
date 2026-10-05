@@ -25,11 +25,11 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class rg0 implements rf.a {
-    public static final ew0 n0 = new ew0(new ru(12), new ru(13));
-    public static final ew0 o0 = new ew0(new ru(14), new ru(15));
+    public static final fw0 n0 = new fw0(new ru(12), new ru(13));
+    public static final fw0 o0 = new fw0(new ru(14), new ru(15));
     public static final rg0 p0 = new rg0();
     public boolean E;
     public ValueAnimator F;
@@ -42,7 +42,7 @@ public final class rg0 implements rf.a {
     public o1.k N;
     public Float O;
     public boolean P;
-    public dp0 R;
+    public ep0 R;
     public int S;
     public int T;
     public zu U;
@@ -75,7 +75,7 @@ public final class rg0 implements rf.a {
     public View y;
     public float a = 1.4f;
     public float J = 1.0f;
-    public final v71 Q = new v71(false);
+    public final w71 Q = new w71(false);
     public final mg0 e0 = new mg0(this, 1);
     public float[] g0 = new float[2];
     public final mg0 h0 = new mg0(this, 2);
@@ -142,10 +142,10 @@ public final class rg0 implements rf.a {
 
     public static void v(boolean z10) {
         rg0 rg0Var = p0;
-        v71 v71Var = rg0Var.Q;
-        v71Var.e(false);
-        v71Var.d(!z10);
-        v71Var.f(true);
+        w71 w71Var = rg0Var.Q;
+        w71Var.e(false);
+        w71Var.d(!z10);
+        w71Var.f(true);
         ai.n4 n4Var = rg0Var.b0;
         if (n4Var != null) {
             n4Var.invalidate();
@@ -159,15 +159,15 @@ public final class rg0 implements rf.a {
     public static void w(PhotoViewer photoViewer) {
         rg0 rg0Var = p0;
         rg0Var.V = photoViewer;
-        d81 d81Var = photoViewer.F2;
+        e81 e81Var = photoViewer.F2;
         pf.e eVar = rg0Var.W;
         if (eVar != null) {
             eVar.c();
             rg0Var.W = null;
         }
-        if (d81Var != null && sf.c.a(photoViewer.y) == 1) {
+        if (e81Var != null && sf.c.a(photoViewer.y) == 1) {
             pf.d dVar = new pf.d(photoViewer.y, rg0Var);
-            dVar.c = "photo-viewer-pip-" + d81Var.a;
+            dVar.c = "photo-viewer-pip-" + e81Var.a;
             dVar.e = 1;
             dVar.d = AndroidUtilities.dp(10.0f);
             dVar.j = rg0Var.d;
@@ -176,7 +176,7 @@ public final class rg0 implements rf.a {
             int i11 = rg0Var.T;
             dVar.h = i10;
             dVar.i = i11;
-            dVar.g = d81Var.d;
+            dVar.g = e81Var.d;
             dVar.f = true;
             rg0Var.W = dVar.a();
         }
@@ -298,7 +298,7 @@ public final class rg0 implements rf.a {
                 qg0 qg0Var2 = rg0Var.h;
                 Objects.requireNonNull(qg0Var2);
                 int i14 = 12;
-                rg0Var.R = new dp0(new lc0(qg0Var2, i14), true);
+                rg0Var.R = new ep0(new lc0(qg0Var2, i14), true);
                 rg0Var.h.setWillNotDraw(false);
                 rg0Var.h.setAlpha(0.0f);
                 View view3 = new View(context);
@@ -515,22 +515,22 @@ public final class rg0 implements rf.a {
         if (this.r != null) {
             return r0.getCurrentPosition();
         }
-        d81 d81Var = this.V.F2;
-        if (d81Var == null) {
+        e81 e81Var = this.V.F2;
+        if (e81Var == null) {
             return 0L;
         }
-        return d81Var.n();
+        return e81Var.n();
     }
 
     public final long m() {
         if (this.r != null) {
             return r0.getVideoDuration();
         }
-        d81 d81Var = this.V.F2;
-        if (d81Var == null) {
+        e81 e81Var = this.V.F2;
+        if (e81Var == null) {
             return 0L;
         }
-        return d81Var.p();
+        return e81Var.p();
     }
 
     public final com.google.firebase.messaging.u n() {
@@ -547,9 +547,9 @@ public final class rg0 implements rf.a {
             Point point = AndroidUtilities.displaySize;
             this.a = (Math.min(point.x, point.y) - AndroidUtilities.dp(32.0f)) / t();
             float f7 = this.O.floatValue() < 1.0f ? 0.6f : 0.45f;
-            v71 v71Var = this.Q;
-            v71Var.q = f7;
-            v71Var.a();
+            w71 w71Var = this.Q;
+            w71Var.q = f7;
+            w71Var.a();
         }
         return this.O.floatValue();
     }
@@ -608,11 +608,11 @@ public final class rg0 implements rf.a {
         if (dg0Var != null) {
             y3 = dg0Var.G;
         } else {
-            d81 d81Var = photoViewer.F2;
-            if (d81Var == null) {
+            e81 e81Var = photoViewer.F2;
+            if (e81Var == null) {
                 return;
             } else {
-                y3 = d81Var.y();
+                y3 = e81Var.y();
             }
         }
         mg0 mg0Var = this.e0;

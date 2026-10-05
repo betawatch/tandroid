@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ih implements Runnable {
     public final /* synthetic */ int a;
@@ -15,12 +15,12 @@ public final /* synthetic */ class ih implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        boolean D1;
+        boolean F1;
         switch (this.a) {
             case 0:
                 xi xiVar = this.b;
                 mu muVar = xiVar.c0 ? xiVar.P0 : xiVar.E0;
-                xiVar.J1(muVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(muVar.getText().toString().trim()));
+                xiVar.L1(muVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(muVar.getText().toString().trim()));
                 break;
             case 1:
                 xi xiVar2 = this.b;
@@ -31,22 +31,22 @@ public final /* synthetic */ class ih implements Runnable {
                 eiVar.setEffect(k10);
                 pi piVar = xiVar2.y0;
                 if (piVar == xiVar2.j0 || piVar == xiVar2.q0) {
-                    D1 = xiVar2.D1(0, false, 0, xiVar2.p1(), k10);
+                    F1 = xiVar2.F1(0, false, 0, xiVar2.r1(), k10);
                 } else {
-                    if (!piVar.G(0, false, 0, xiVar2.p1(), k10)) {
+                    if (!piVar.G(0, false, 0, xiVar2.r1(), k10)) {
                         xiVar2.dismiss();
                     }
-                    D1 = false;
+                    F1 = false;
                 }
                 of ofVar2 = xiVar2.h0;
                 if (ofVar2 != null) {
-                    ofVar2.h(!D1);
+                    ofVar2.h(!F1);
                     xiVar2.h0 = null;
                     break;
                 }
                 break;
             case 2:
-                this.b.C1();
+                this.b.E1();
                 break;
             default:
                 xi.n(this.b);

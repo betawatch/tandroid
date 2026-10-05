@@ -17,25 +17,25 @@ import android.os.Build;
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebView;
-import org.telegram.ui.Components.e11;
+import org.telegram.ui.Components.f11;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.k20;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public class BotFullscreenButtons extends View {
     private final org.telegram.ui.Components.e6 animatedBack;
     private final org.telegram.ui.Components.e6 animatedDownloading;
     private final org.telegram.ui.Components.e6 animatedPreview;
     private boolean back;
-    private final e11 backText;
+    private final f11 backText;
     private final Paint backgroundPaint;
     private final Path backgroundPath;
     private RenderNode blurNode;
     private final org.telegram.ui.Components.zc closeBounce;
     private final RectF closeRect;
     private final RectF closeRectArea;
-    private final e11 closeText;
+    private final f11 closeText;
     private final org.telegram.ui.Components.zc collapseBounce;
     private final RectF collapseClickRect;
     private final RectF collapseRect;
@@ -58,14 +58,14 @@ public class BotFullscreenButtons extends View {
     int pressed;
     private boolean preview;
     private final k20 previewClip;
-    private e11 previewText;
+    private f11 previewText;
     private final RectF rightMenu;
     private final long start;
     private Drawable verifiedBackground;
     private Drawable verifiedForeground;
     public WebView webView;
 
-    /* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
     public static class OptionsIcon extends Drawable {
         private final org.telegram.ui.Components.e6 animatedDownloading;
         private final Paint downloadPaint;
@@ -198,8 +198,8 @@ public class BotFullscreenButtons extends View {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStrokeJoin(Paint.Join.ROUND);
-        this.backText = new e11(LocaleController.getString(R.string.BotFullscreenBack), 13.0f, AndroidUtilities.bold());
-        this.closeText = new e11(LocaleController.getString(R.string.BotFullscreenClose), 13.0f, AndroidUtilities.bold());
+        this.backText = new f11(LocaleController.getString(R.string.BotFullscreenBack), 13.0f, AndroidUtilities.bold());
+        this.closeText = new f11(LocaleController.getString(R.string.BotFullscreenClose), 13.0f, AndroidUtilities.bold());
         paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(1.0f)));
         path.rewind();
         path.moveTo(-AndroidUtilities.dpf2(1.33f), AndroidUtilities.dpf2(0.16f));
@@ -270,13 +270,13 @@ public class BotFullscreenButtons extends View {
         float e7 = this.animatedBack.e(this.back);
         float e10 = this.animatedPreview.e(this.preview);
         float dp6 = (this.rightMenu.left - AndroidUtilities.dp(18.0f)) - (this.insets.left + AndroidUtilities.dp(38.0f));
-        e11 e11Var = this.previewText;
-        if (e11Var == null) {
+        f11 f11Var = this.previewText;
+        if (f11Var == null) {
             dp = 0.0f;
             f7 = 18.0f;
         } else {
             f7 = 18.0f;
-            dp = e11Var.c + AndroidUtilities.dp(this.verifiedBackground != null ? 30.0f : 12.0f);
+            dp = f11Var.c + AndroidUtilities.dp(this.verifiedBackground != null ? 30.0f : 12.0f);
         }
         float min = Math.min(dp6, dp);
         this.leftMenu.set(this.insets.left + AndroidUtilities.dp(8.0f), this.insets.top + AndroidUtilities.dp(8.0f), this.insets.left + AndroidUtilities.dp(38.0f) + AndroidUtilities.lerp(AndroidUtilities.lerp(this.closeText.c, this.backText.c, e7) + AndroidUtilities.dp(12.0f), min, e10), this.insets.top + AndroidUtilities.dp(38.0f));
@@ -306,7 +306,7 @@ public class BotFullscreenButtons extends View {
             }
             RenderNode c10 = b.c(this.parentRenderNode);
             f11 = 16.0f;
-            this.blurNode.setPosition(0, 0, f0.b(16.0f, c10.getWidth(), 1), Math.max(1, (int) Math.min(this.insets.top + AndroidUtilities.dp(46.0f), c10.getHeight())));
+            this.blurNode.setPosition(0, 0, q.b(16.0f, c10.getWidth(), 1), Math.max(1, (int) Math.min(this.insets.top + AndroidUtilities.dp(46.0f), c10.getHeight())));
             RecordingCanvas beginRecording = this.blurNode.beginRecording();
             beginRecording.translate(-AndroidUtilities.dp(8.0f), 0.0f);
             beginRecording.drawRenderNode(c10);
@@ -347,10 +347,10 @@ public class BotFullscreenButtons extends View {
         } else {
             canvas2.save();
             canvas2.translate(com.google.android.gms.internal.vision.e2.b(1.0f, e10, min, this.leftMenu.left + AndroidUtilities.dp(30.0f)), this.leftMenu.centerY());
-            e11 e11Var2 = this.previewText;
-            e11Var2.p = ((this.leftMenu.right - AndroidUtilities.dp(this.verifiedBackground != null ? 30.0f : 12.0f)) - (this.leftMenu.left + AndroidUtilities.dp(30.0f))) + 2.0f;
+            f11 f11Var2 = this.previewText;
+            f11Var2.p = ((this.leftMenu.right - AndroidUtilities.dp(this.verifiedBackground != null ? 30.0f : 12.0f)) - (this.leftMenu.left + AndroidUtilities.dp(30.0f))) + 2.0f;
             f13 = 1.0f;
-            e11Var2.c(0.0f, 0.0f, e10, -1, canvas);
+            f11Var2.c(0.0f, 0.0f, e10, -1, canvas);
             f12 = e10;
             canvas2 = canvas;
             canvas2.translate(this.previewText.l() + AndroidUtilities.dp(5.0f), 0.0f);
@@ -484,7 +484,7 @@ public class BotFullscreenButtons extends View {
     }
 
     public void setName(String str, boolean z10) {
-        this.previewText = new e11(str, 13.0f, AndroidUtilities.bold());
+        this.previewText = new f11(str, 13.0f, AndroidUtilities.bold());
         if (z10) {
             this.verifiedBackground = getContext().getResources().getDrawable(R.drawable.verified_area).mutate();
             this.verifiedForeground = getContext().getResources().getDrawable(R.drawable.verified_check).mutate();

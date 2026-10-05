@@ -20,7 +20,7 @@ import java.util.concurrent.locks.Lock;
 import m.p3;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class g0 implements k0 {
     public n6.h E;
@@ -69,7 +69,7 @@ public final class g0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final e E(e eVar) {
+    public final e D(e eVar) {
         throw new IllegalStateException("GoogleApiClient is not connected yet.");
     }
 
@@ -117,7 +117,7 @@ public final class g0 implements k0 {
         try {
             m0Var.o.h();
             m0Var.m = new a0(m0Var);
-            m0Var.m.u();
+            m0Var.m.w();
             m0Var.b.signalAll();
             m0Var.a.unlock();
             n0.a.execute(new q4(this, 13));
@@ -150,7 +150,7 @@ public final class g0 implements k0 {
                 n6.l.h(cVar);
                 cVar.disconnect();
             }
-            this.a.p.s(this.r.isEmpty() ? null : this.r);
+            this.a.p.u(this.r.isEmpty() ? null : this.r);
         } catch (Throwable th2) {
             m0Var.a.unlock();
             throw th2;
@@ -244,9 +244,9 @@ public final class g0 implements k0 {
         Log.w("GACConnecting", stringWriter.toString());
         Log.w("GACConnecting", "Unexpected callback in ".concat(toString()));
         Log.w("GACConnecting", "mRemainingConnections=" + this.n);
-        StringBuilder v = a4.a.v("GoogleApiClient connecting is in step ", this.h != 0 ? "STEP_GETTING_REMOTE_SERVICE" : "STEP_SERVICE_BINDINGS_AND_SIGN_IN", " but received callback for step ");
-        v.append(i10 != 0 ? "STEP_GETTING_REMOTE_SERVICE" : "STEP_SERVICE_BINDINGS_AND_SIGN_IN");
-        Log.e("GACConnecting", v.toString(), new Exception());
+        StringBuilder w10 = a4.a.w("GoogleApiClient connecting is in step ", this.h != 0 ? "STEP_GETTING_REMOTE_SERVICE" : "STEP_SERVICE_BINDINGS_AND_SIGN_IN", " but received callback for step ");
+        w10.append(i10 != 0 ? "STEP_GETTING_REMOTE_SERVICE" : "STEP_SERVICE_BINDINGS_AND_SIGN_IN");
+        Log.e("GACConnecting", w10.toString(), new Exception());
         d(new k6.a(8, null));
         return false;
     }
@@ -301,7 +301,7 @@ public final class g0 implements k0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void u() {
+    public final void w() {
         m0 m0Var = this.a;
         HashMap hashMap = m0Var.i;
         j0 j0Var = m0Var.o;

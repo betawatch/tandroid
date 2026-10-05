@@ -5,7 +5,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ka implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -86,13 +86,13 @@ public final /* synthetic */ class ka implements TextView.OnEditorActionListener
                 PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
                 int i11 = passcodeActivity.E;
                 if (i11 == 0) {
-                    passcodeActivity.h0();
+                    passcodeActivity.n0();
                     return true;
                 }
                 if (i11 != 1) {
                     return false;
                 }
-                passcodeActivity.g0();
+                passcodeActivity.m0();
                 return true;
             case 9:
                 gn0 gn0Var = (gn0) this.b;
@@ -120,14 +120,14 @@ public final /* synthetic */ class ka implements TextView.OnEditorActionListener
                 editTextBoldCursorArr[intValue].requestFocus();
                 return true;
             case 11:
-                m71 m71Var = (m71) this.b;
+                k71 k71Var = (k71) this.b;
                 if (keyEvent == null) {
                     return false;
                 }
                 if ((keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 84) && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
                     return false;
                 }
-                AndroidUtilities.hideKeyboard(m71Var.c0);
+                AndroidUtilities.hideKeyboard(k71Var.c0);
                 return false;
             default:
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;

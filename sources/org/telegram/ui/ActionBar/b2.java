@@ -46,9 +46,9 @@ import org.telegram.ui.Components.nj0;
 import org.telegram.ui.Components.nu;
 import org.telegram.ui.Components.x6;
 import org.telegram.ui.x80;
-import yh.n7;
+import yh.p7;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int c1 = 0;
@@ -322,7 +322,7 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
                                 break;
                             case 1:
                                 b2 b2Var = this.b;
-                                new n7(b2Var.getContext(), b2Var.R0).show();
+                                new p7(b2Var.getContext(), b2Var.R0).show();
                                 break;
                             default:
                                 b2 b2Var2 = this.b;
@@ -355,7 +355,7 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
                                 break;
                             case 1:
                                 b2 b2Var = this.b;
-                                new n7(b2Var.getContext(), b2Var.R0).show();
+                                new p7(b2Var.getContext(), b2Var.R0).show();
                                 break;
                             default:
                                 b2 b2Var2 = this.b;
@@ -597,7 +597,7 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
                                     break;
                                 case 1:
                                     b2 b2Var = this.b;
-                                    new n7(b2Var.getContext(), b2Var.R0).show();
+                                    new p7(b2Var.getContext(), b2Var.R0).show();
                                     break;
                                 default:
                                     b2 b2Var2 = this.b;

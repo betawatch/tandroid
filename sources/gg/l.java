@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ja;
 import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class l extends FrameLayout {
     public boolean a;
@@ -91,7 +91,7 @@ public final class l extends FrameLayout {
                 int i20 = (size - 1) + i18;
                 ArrayList arrayList = mVar.d;
                 if (arrayList != null) {
-                    i20 = org.telegram.messenger.f0.C(52.0f, (mVar.d.size() - 1) + (AndroidUtilities.dp(58.0f) * arrayList.size()), i20);
+                    i20 = org.telegram.messenger.q.C(52.0f, (mVar.d.size() - 1) + (AndroidUtilities.dp(58.0f) * arrayList.size()), i20);
                 }
                 int i21 = z10 ? dp + 1 : 0;
                 if (i20 < i17) {

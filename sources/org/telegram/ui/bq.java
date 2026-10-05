@@ -4,7 +4,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bq implements org.telegram.ui.ActionBar.a2, MessagesController.ErrorDelegate, MessagesStorage.LongCallback {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class bq implements org.telegram.ui.ActionBar.a2, M
             default:
                 mq mqVar2 = this.b;
                 mqVar2.getClass();
-                mqVar2.presentFragment(new bh1(6, null));
+                mqVar2.presentFragment(new zg1(6, null));
                 break;
             case 4:
                 this.b.finishFragment();

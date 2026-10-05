@@ -5,7 +5,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kf0 implements Runnable {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class kf0 implements Runnable {
                 String string = LocaleController.getString(R.string.YourPasswordSuccess);
                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                 b2Var.R = string;
-                b2Var.T = LocaleController.formatString(R.string.ChangePhoneNumberSuccessWithPhone, org.telegram.messenger.ok.h(new StringBuilder("+"), xf0Var.d, gf.b.c()));
+                b2Var.T = LocaleController.formatString(R.string.ChangePhoneNumberSuccessWithPhone, org.telegram.messenger.bi.g(new StringBuilder("+"), xf0Var.d, gf.b.c()));
                 alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
                 b2Var.setOnDismissListener(new tf0(xf0Var, i11));
                 alertDialog$Builder.o();

@@ -26,7 +26,6 @@ import b2.k1;
 import b2.l1;
 import b2.m1;
 import b2.p1;
-import b2.q;
 import b2.q1;
 import ci.ca;
 import ci.e9;
@@ -46,9 +45,8 @@ import e2.d0;
 import e9.k0;
 import e9.o1;
 import ei.f4;
-import hg.v;
-import hg.y;
-import i9.w;
+import hg.w;
+import hg.z;
 import ii.i1;
 import ii.j4;
 import ii.j6;
@@ -81,7 +79,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.f0;
+import org.telegram.messenger.q;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -109,7 +107,7 @@ import org.telegram.ui.uc0;
 import u2.b0;
 import v7.l8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements hh.i, g9, a2, OnFailureListener, q9.d, nl0, OnCompleteListener, Continuation, ol0, Utilities.Callback3Return, bd0, p0, cu, j4, e2.n, e2.m, j0, e2.h, z0 {
     public final /* synthetic */ int a;
@@ -459,7 +457,7 @@ public final /* synthetic */ class b implements hh.i, g9, a2, OnFailureListener,
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context3, 0, d6Var7);
                     alertDialog$Builder.a.R = LocaleController.getString(R.string.GroupTooLarge);
                     alertDialog$Builder.a.T = LocaleController.getString(R.string.GroupTooLargeMessage);
-                    f0.o(R.string.OK, alertDialog$Builder, null);
+                    q.o(R.string.OK, alertDialog$Builder, null);
                 } else if (hashMap.containsKey(Long.valueOf(j3))) {
                     ArrayList arrayList4 = (ArrayList) hashMap.get(Long.valueOf(j3));
                     if (arrayList4 != null) {
@@ -554,7 +552,7 @@ public final /* synthetic */ class b implements hh.i, g9, a2, OnFailureListener,
     }
 
     @Override // e2.n
-    public void e(Object obj, q qVar) {
+    public void e(Object obj, b2.q qVar) {
         j2.b bVar = (j2.b) obj;
         bVar.d((b1) this.c, new of.b(qVar, ((j2.f) this.b).e));
     }
@@ -632,7 +630,7 @@ public final /* synthetic */ class b implements hh.i, g9, a2, OnFailureListener,
                 k1Var.Q();
                 break;
             default:
-                y.d(r4.currentAccount).a((v) this.b, ((TL_account.TL_businessChatLink) this.c).link);
+                z.d(r4.currentAccount).a((w) this.b, ((TL_account.TL_businessChatLink) this.c).link);
                 break;
         }
     }
@@ -641,9 +639,9 @@ public final /* synthetic */ class b implements hh.i, g9, a2, OnFailureListener,
     public Object h(a0 a0Var, m4.r rVar, int i10) {
         switch (this.a) {
             case 28:
-                return a0Var.j() ? l8.b(new m4.k1(-100)) : d0.d0((w) ((z0) this.b).h(a0Var, rVar, i10), new q5(a0Var, rVar, (o0) this.c, 14));
+                return a0Var.j() ? l8.b(new m4.k1(-100)) : d0.d0((i9.w) ((z0) this.b).h(a0Var, rVar, i10), new q5(a0Var, rVar, (o0) this.c, 14));
             default:
-                return a0Var.j() ? l8.b(new m4.k1(-100)) : d0.d0((w) ((z0) this.b).h(a0Var, rVar, i10), new q5(a0Var, rVar, (y0) this.c, 15));
+                return a0Var.j() ? l8.b(new m4.k1(-100)) : d0.d0((i9.w) ((z0) this.b).h(a0Var, rVar, i10), new q5(a0Var, rVar, (y0) this.c, 15));
         }
     }
 
@@ -716,7 +714,7 @@ public final /* synthetic */ class b implements hh.i, g9, a2, OnFailureListener,
                 }
                 ii.d3 d3Var = q5Var.E;
                 if (d3Var != null && q5Var.a != null) {
-                    x3.Q1(d3Var.a);
+                    x3.P1(d3Var.a);
                     break;
                 }
                 break;
@@ -824,16 +822,16 @@ public final /* synthetic */ class b implements hh.i, g9, a2, OnFailureListener,
 
     @Override // org.telegram.messenger.Utilities.Callback3Return
     public Object run(Object obj, Object obj2, Object obj3) {
-        hg.m mVar = (hg.m) this.b;
+        hg.n nVar = (hg.n) this.b;
         View view = (View) this.c;
         TLRPC.Document document = (TLRPC.Document) obj2;
-        mVar.x = false;
-        AndroidUtilities.cancelRunOnUIThread(mVar.e);
-        hg.i iVar = mVar.r;
-        mVar.y = document;
-        iVar.setSticker(document);
+        nVar.x = false;
+        AndroidUtilities.cancelRunOnUIThread(nVar.e);
+        hg.j jVar = nVar.r;
+        nVar.y = document;
+        jVar.setSticker(document);
         ((r8) view).setValueSticker(document);
-        mVar.e0(true);
+        nVar.e0(true);
         return Boolean.TRUE;
     }
 

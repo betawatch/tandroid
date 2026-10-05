@@ -37,22 +37,22 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Cells.e9;
 import org.telegram.ui.Cells.p9;
 import org.telegram.ui.Cells.q9;
-import org.telegram.ui.Components.g71;
+import org.telegram.ui.Components.h71;
 import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.m9;
 import org.telegram.ui.Components.o20;
 import org.telegram.ui.Components.p20;
 import org.telegram.ui.Components.rg0;
 import org.telegram.ui.Components.sm0;
-import org.telegram.ui.Components.u71;
-import org.telegram.ui.Components.xo0;
+import org.telegram.ui.Components.v71;
+import org.telegram.ui.Components.yo0;
 import org.telegram.ui.ThemeActivity;
+import org.telegram.ui.ub1;
 import org.telegram.ui.vt0;
-import org.telegram.ui.wb1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n, me.a, qg.v1, com.google.android.gms.common.api.internal.o, s4.h1, com.google.android.gms.common.api.internal.s, androidx.lifecycle.s0, w2.d {
+public final class n4 implements k0, k2.o, l.w, l.i, k1.f, yo0, le.f, v71, r0.n, me.a, qg.v1, com.google.android.gms.common.api.internal.o, s4.h1, com.google.android.gms.common.api.internal.s, androidx.lifecycle.s0, w2.d {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -62,12 +62,7 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
     }
 
     @Override // k2.o
-    public void A() {
-        ((FfmpegAudioRenderer) this.b).Z = true;
-    }
-
-    @Override // k2.o
-    public void C(k2.l lVar) {
+    public void A(k2.l lVar) {
         n4.y yVar = ((FfmpegAudioRenderer) this.b).I;
         Handler handler = (Handler) yVar.b;
         if (handler != null) {
@@ -75,27 +70,264 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
         }
     }
 
-    @Override // androidx.lifecycle.s0
-    public androidx.lifecycle.p0 D(Class cls, v1.b bVar) {
-        androidx.lifecycle.m0 m0Var = null;
-        for (v1.c cVar : (v1.c[]) this.b) {
-            if (cVar.a.equals(cls)) {
-                m0Var = new androidx.lifecycle.m0();
+    public void C(int i10, int i11, c3.p pVar) {
+        char c10;
+        char c11;
+        long j3;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        u3.d dVar = (u3.d) this.b;
+        u3.e eVar = dVar.b;
+        SparseArray sparseArray = dVar.c;
+        e2.v vVar = dVar.k;
+        e2.v vVar2 = dVar.i;
+        int i16 = 1;
+        int i17 = 0;
+        if (i10 != 161 && i10 != 163) {
+            if (i10 == 165) {
+                if (dVar.J != 2) {
+                    return;
+                }
+                u3.c cVar = (u3.c) sparseArray.get(dVar.P);
+                int i18 = dVar.S;
+                e2.v vVar3 = dVar.p;
+                if (i18 != 4 || !"V_VP9".equals(cVar.c)) {
+                    pVar.o(i11);
+                    return;
+                } else {
+                    vVar3.G(i11);
+                    pVar.readFully(vVar3.a, 0, i11);
+                    return;
+                }
+            }
+            if (i10 == 16877) {
+                dVar.d(i10);
+                u3.c cVar2 = dVar.x;
+                int i19 = cVar2.h;
+                if (i19 != 1685485123 && i19 != 1685480259) {
+                    pVar.o(i11);
+                    return;
+                }
+                byte[] bArr = new byte[i11];
+                cVar2.P = bArr;
+                pVar.readFully(bArr, 0, i11);
+                return;
+            }
+            if (i10 == 16981) {
+                dVar.d(i10);
+                byte[] bArr2 = new byte[i11];
+                dVar.x.j = bArr2;
+                pVar.readFully(bArr2, 0, i11);
+                return;
+            }
+            if (i10 == 18402) {
+                byte[] bArr3 = new byte[i11];
+                pVar.readFully(bArr3, 0, i11);
+                dVar.d(i10);
+                dVar.x.k = new c3.g0(1, 0, 0, bArr3);
+                return;
+            }
+            if (i10 == 21419) {
+                Arrays.fill(vVar.a, (byte) 0);
+                pVar.readFully(vVar.a, 4 - i11, i11);
+                vVar.J(0);
+                dVar.z = (int) vVar.z();
+                return;
+            }
+            if (i10 == 25506) {
+                dVar.d(i10);
+                byte[] bArr4 = new byte[i11];
+                dVar.x.l = bArr4;
+                pVar.readFully(bArr4, 0, i11);
+                return;
+            }
+            if (i10 != 30322) {
+                throw b2.s0.a(null, "Unexpected id: " + i10);
+            }
+            dVar.d(i10);
+            byte[] bArr5 = new byte[i11];
+            dVar.x.x = bArr5;
+            pVar.readFully(bArr5, 0, i11);
+            return;
+        }
+        if (dVar.J == 0) {
+            dVar.P = (int) eVar.b(pVar, false, true, 8);
+            dVar.Q = eVar.c;
+            dVar.L = -9223372036854775807L;
+            dVar.J = 1;
+            vVar2.G(0);
+        }
+        u3.c cVar3 = (u3.c) sparseArray.get(dVar.P);
+        if (cVar3 == null) {
+            pVar.o(i11 - dVar.Q);
+            dVar.J = 0;
+            return;
+        }
+        cVar3.Z.getClass();
+        if (dVar.J == 1) {
+            dVar.j(pVar, 3);
+            int i20 = (vVar2.a[2] & 6) >> 1;
+            byte b10 = 255;
+            if (i20 == 0) {
+                dVar.N = 1;
+                int[] iArr = dVar.O;
+                if (iArr == null) {
+                    iArr = new int[1];
+                } else if (iArr.length < 1) {
+                    iArr = new int[Math.max(iArr.length * 2, 1)];
+                }
+                dVar.O = iArr;
+                iArr[0] = (i11 - dVar.Q) - 3;
+            } else {
+                dVar.j(pVar, 4);
+                int i21 = (vVar2.a[3] & 255) + 1;
+                dVar.N = i21;
+                int[] iArr2 = dVar.O;
+                if (iArr2 == null) {
+                    iArr2 = new int[i21];
+                } else if (iArr2.length < i21) {
+                    iArr2 = new int[Math.max(iArr2.length * 2, i21)];
+                }
+                dVar.O = iArr2;
+                if (i20 == 2) {
+                    int i22 = (i11 - dVar.Q) - 4;
+                    int i23 = dVar.N;
+                    Arrays.fill(iArr2, 0, i23, i22 / i23);
+                } else {
+                    if (i20 != 1) {
+                        if (i20 != 3) {
+                            throw b2.s0.a(null, "Unexpected lacing value: " + i20);
+                        }
+                        int i24 = 0;
+                        int i25 = 0;
+                        int i26 = 4;
+                        while (true) {
+                            int i27 = dVar.N - i16;
+                            if (i24 >= i27) {
+                                c10 = 1;
+                                c11 = 0;
+                                dVar.O[i27] = ((i11 - dVar.Q) - i26) - i25;
+                                break;
+                            }
+                            dVar.O[i24] = i17;
+                            int i28 = i26 + 1;
+                            dVar.j(pVar, i28);
+                            if (vVar2.a[i26] == 0) {
+                                throw b2.s0.a(null, "No valid varint length mask found");
+                            }
+                            int i29 = 0;
+                            while (true) {
+                                if (i29 >= 8) {
+                                    j3 = 0;
+                                    i12 = i28;
+                                    break;
+                                }
+                                int i30 = 1 << (7 - i29);
+                                if ((vVar2.a[i26] & i30) != 0) {
+                                    i12 = i28 + i29;
+                                    dVar.j(pVar, i12);
+                                    j3 = vVar2.a[i26] & b10 & (~i30);
+                                    while (i28 < i12) {
+                                        j3 = (j3 << 8) | (vVar2.a[i28] & b10);
+                                        i28++;
+                                        b10 = 255;
+                                    }
+                                    if (i24 > 0) {
+                                        j3 -= (1 << ((i29 * 7) + 6)) - 1;
+                                    }
+                                } else {
+                                    i29++;
+                                    b10 = 255;
+                                }
+                            }
+                            if (j3 < -2147483648L || j3 > 2147483647L) {
+                                break;
+                            }
+                            int i31 = (int) j3;
+                            int[] iArr3 = dVar.O;
+                            if (i24 != 0) {
+                                i31 += iArr3[i24 - 1];
+                            }
+                            iArr3[i24] = i31;
+                            i25 += i31;
+                            i24++;
+                            i26 = i12;
+                            b10 = 255;
+                            i16 = 1;
+                            i17 = 0;
+                        }
+                        throw b2.s0.a(null, "EBML lacing sample size out of range.");
+                    }
+                    int i32 = 0;
+                    int i33 = 0;
+                    int i34 = 4;
+                    while (true) {
+                        i13 = dVar.N - 1;
+                        if (i32 >= i13) {
+                            break;
+                        }
+                        dVar.O[i32] = 0;
+                        while (true) {
+                            i14 = i34 + 1;
+                            dVar.j(pVar, i14);
+                            int i35 = vVar2.a[i34] & 255;
+                            int[] iArr4 = dVar.O;
+                            i15 = iArr4[i32] + i35;
+                            iArr4[i32] = i15;
+                            if (i35 != 255) {
+                                break;
+                            } else {
+                                i34 = i14;
+                            }
+                        }
+                        i33 += i15;
+                        i32++;
+                        i34 = i14;
+                    }
+                    dVar.O[i13] = ((i11 - dVar.Q) - i34) - i33;
+                }
+            }
+            c10 = 1;
+            c11 = 0;
+            byte[] bArr6 = vVar2.a;
+            dVar.K = dVar.l((bArr6[c10] & 255) | (bArr6[c11] << 8)) + dVar.E;
+            dVar.R = (cVar3.e == 2 || (i10 == 163 && (vVar2.a[2] & 128) == 128)) ? 1 : 0;
+            dVar.J = 2;
+            dVar.M = 0;
+        }
+        if (i10 == 163) {
+            while (true) {
+                int i36 = dVar.M;
+                if (i36 >= dVar.N) {
+                    dVar.J = 0;
+                    return;
+                } else {
+                    dVar.e(cVar3, ((dVar.M * cVar3.f) / MediaDataController.MAX_STYLE_RUNS_COUNT) + dVar.K, dVar.R, dVar.n(pVar, cVar3, dVar.O[i36], false), 0);
+                    dVar.M++;
+                }
+            }
+        } else {
+            while (true) {
+                int i37 = dVar.M;
+                if (i37 >= dVar.N) {
+                    return;
+                }
+                int[] iArr5 = dVar.O;
+                iArr5[i37] = dVar.n(pVar, cVar3, iArr5[i37], true);
+                dVar.M++;
             }
         }
-        if (m0Var != null) {
-            return m0Var;
-        }
-        throw new IllegalArgumentException("No initializer set for given class ".concat(cls.getName()));
     }
 
-    @Override // qg.v1
-    public void E(float f7) {
-        vt0 vt0Var = (vt0) this.b;
-        pg.u0.e(vt0Var.P1).k(String.valueOf(pg.m.a.indexOf(vt0Var.W0.getCurrentBrush())), f7);
-        pg.t1 t1Var = vt0Var.K1;
-        t1Var.c = f7;
-        vt0Var.t0(t1Var, null);
+    @Override // k2.o
+    public void E(k2.l lVar) {
+        n4.y yVar = ((FfmpegAudioRenderer) this.b).I;
+        Handler handler = (Handler) yVar.b;
+        if (handler != null) {
+            handler.post(new k2.i(yVar, lVar, 1));
+        }
     }
 
     public void F(int i10, long j3) {
@@ -550,12 +782,26 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
         return false;
     }
 
+    @Override // androidx.lifecycle.s0
+    public androidx.lifecycle.p0 H(Class cls, v1.b bVar) {
+        androidx.lifecycle.m0 m0Var = null;
+        for (v1.c cVar : (v1.c[]) this.b) {
+            if (cVar.a.equals(cls)) {
+                m0Var = new androidx.lifecycle.m0();
+            }
+        }
+        if (m0Var != null) {
+            return m0Var;
+        }
+        throw new IllegalArgumentException("No initializer set for given class ".concat(cls.getName()));
+    }
+
     public void I() {
         ArrayDeque arrayDeque = (ArrayDeque) this.b;
         if (arrayDeque.isEmpty()) {
             return;
         }
-        throw new IOException("data item not completed, stackSize: " + arrayDeque.size() + " scope: " + O());
+        throw new IOException("data item not completed, stackSize: " + arrayDeque.size() + " scope: " + L());
     }
 
     @Override // ii.k0
@@ -567,29 +813,28 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
         return null;
     }
 
-    @Override // k2.o
-    public void K(k2.l lVar) {
-        n4.y yVar = ((FfmpegAudioRenderer) this.b).I;
-        Handler handler = (Handler) yVar.b;
-        if (handler != null) {
-            handler.post(new k2.i(yVar, lVar, 1));
+    public void K(long j3) {
+        long L = L();
+        if (L != j3) {
+            if (L != -1) {
+                if (L != -2) {
+                    return;
+                } else {
+                    L = -2;
+                }
+            }
+            StringBuilder u10 = a4.a.u(j3, "expected non-string scope or scope ", " but found ");
+            u10.append(L);
+            throw new IOException(u10.toString());
         }
     }
 
-    public void L(long j3) {
-        long O = O();
-        if (O != j3) {
-            if (O != -1) {
-                if (O != -2) {
-                    return;
-                } else {
-                    O = -2;
-                }
-            }
-            StringBuilder t10 = a4.a.t(j3, "expected non-string scope or scope ", " but found ");
-            t10.append(O);
-            throw new IOException(t10.toString());
+    public long L() {
+        ArrayDeque arrayDeque = (ArrayDeque) this.b;
+        if (arrayDeque.isEmpty()) {
+            return 0L;
         }
+        return ((Long) arrayDeque.peek()).longValue();
     }
 
     @Override // l.i
@@ -607,16 +852,8 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
             if (charSequence == null || charSequence.length() <= 0) {
                 return;
             }
-            t3Var.a.v4(charSequence.toString());
+            t3Var.a.u4(charSequence.toString());
         }
-    }
-
-    public long O() {
-        ArrayDeque arrayDeque = (ArrayDeque) this.b;
-        if (arrayDeque.isEmpty()) {
-            return 0L;
-        }
-        return ((Long) arrayDeque.peek()).longValue();
     }
 
     @Override // r0.n
@@ -646,17 +883,26 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
             return false;
         }
         a aVar = q4Var.a;
-        return ((t3) o4Var).a.U4();
+        return ((t3) o4Var).a.T4();
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // qg.v1
+    public void X(float f7) {
+        vt0 vt0Var = (vt0) this.b;
+        pg.u0.e(vt0Var.P1).k(String.valueOf(pg.m.a.indexOf(vt0Var.W0.getCurrentBrush())), f7);
+        pg.t1 t1Var = vt0Var.K1;
+        t1Var.c = f7;
+        vt0Var.t0(t1Var, null);
+    }
+
+    @Override // org.telegram.ui.Components.yo0
     public void Y(float f7, boolean z10) {
-        wb1 wb1Var = (wb1) ((org.telegram.ui.Cells.k0) this.b);
+        ub1 ub1Var = (ub1) ((org.telegram.ui.Cells.k0) this.b);
         int i10 = (int) (org.telegram.ui.ActionBar.i6.q * 100.0f);
         int i11 = (int) (f7 * 100.0f);
         org.telegram.ui.ActionBar.i6.q = f7;
         if (i10 != i11) {
-            ThemeActivity themeActivity = wb1Var.e.e;
+            ThemeActivity themeActivity = ub1Var.e.e;
             il0 il0Var = (il0) themeActivity.b.K(themeActivity.f0);
             if (il0Var != null) {
                 ((e9) il0Var.a).setText(LocaleController.formatString("AutoNightBrightnessInfo", R.string.AutoNightBrightnessInfo, Integer.valueOf((int) (org.telegram.ui.ActionBar.i6.q * 100.0f))));
@@ -729,7 +975,7 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
         o4 o4Var = ((q4) this.b).G;
         if (o4Var != null) {
             x3 x3Var = ((t3) o4Var).a;
-            x3.O1(x3Var, i1Var);
+            x3.N1(x3Var, i1Var);
             x3Var.o3.P(i1Var, true);
         }
     }
@@ -774,7 +1020,7 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
         q4 q4Var = (q4) this.b;
         o4 o4Var = q4Var.G;
         if (o4Var != null) {
-            x3.R1(((t3) o4Var).a, q4Var.a);
+            x3.Q1(((t3) o4Var).a, q4Var.a);
         }
     }
 
@@ -801,7 +1047,7 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
         return currentBrush == null ? pg.u0.e(i10).i : pg.u0.e(i10).f(String.valueOf(pg.m.a.indexOf(currentBrush)), currentBrush.d());
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public CharSequence getContentDescription() {
         return " ";
     }
@@ -826,7 +1072,7 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
         return false;
     }
 
-    @Override // org.telegram.ui.Components.u71
+    @Override // org.telegram.ui.Components.v71
     public void invalidate() {
         ((rg0) this.b).h.invalidate();
     }
@@ -860,12 +1106,12 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
     @Override // me.a
     public boolean needClickAt(View view, float f7, float f10) {
         int dp = AndroidUtilities.dp(9.0f);
-        g71 g71Var = (g71) this.b;
+        h71 h71Var = (h71) this.b;
         float f11 = -dp;
-        g71Var.g.inset(f11, f11);
-        boolean contains = g71Var.g.contains(f7, f10);
+        h71Var.g.inset(f11, f11);
+        boolean contains = h71Var.g.contains(f7, f10);
         float f12 = dp;
-        g71Var.g.inset(f12, f12);
+        h71Var.g.inset(f12, f12);
         return contains;
     }
 
@@ -885,7 +1131,7 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
 
     @Override // me.a
     public void onClickAt(View view, float f7, float f10) {
-        Runnable runnable = ((g71) this.b).j;
+        Runnable runnable = ((h71) this.b).j;
         if (runnable != null) {
             runnable.run();
         }
@@ -893,12 +1139,12 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
 
     @Override // me.a
     public void onClickTouchDown(View view, float f7, float f10) {
-        ((g71) this.b).h.c(true);
+        ((h71) this.b).h.c(true);
     }
 
     @Override // me.a
     public void onClickTouchUp(View view, float f7, float f10) {
-        ((g71) this.b).h.c(false);
+        ((h71) this.b).h.c(false);
     }
 
     @Override // me.a
@@ -920,7 +1166,7 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
         return ((s4.o0) this.b).q(i10);
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public /* synthetic */ int p0() {
         return 0;
     }
@@ -997,273 +1243,12 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
         o4 o4Var = q4Var.G;
         if (o4Var != null) {
             a aVar = q4Var.a;
-            x3.Q1(((t3) o4Var).a);
-        }
-    }
-
-    @Override // k2.o
-    public void w(Exception exc) {
-        e2.a.f("DecoderAudioRenderer", "Audio sink error", exc);
-        n4.y yVar = ((FfmpegAudioRenderer) this.b).I;
-        Handler handler = (Handler) yVar.b;
-        if (handler != null) {
-            handler.post(new k2.g(yVar, exc, 1));
-        }
-    }
-
-    public void x(int i10, int i11, c3.p pVar) {
-        char c10;
-        char c11;
-        long j3;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        u3.d dVar = (u3.d) this.b;
-        u3.e eVar = dVar.b;
-        SparseArray sparseArray = dVar.c;
-        e2.v vVar = dVar.k;
-        e2.v vVar2 = dVar.i;
-        int i16 = 1;
-        int i17 = 0;
-        if (i10 != 161 && i10 != 163) {
-            if (i10 == 165) {
-                if (dVar.J != 2) {
-                    return;
-                }
-                u3.c cVar = (u3.c) sparseArray.get(dVar.P);
-                int i18 = dVar.S;
-                e2.v vVar3 = dVar.p;
-                if (i18 != 4 || !"V_VP9".equals(cVar.c)) {
-                    pVar.o(i11);
-                    return;
-                } else {
-                    vVar3.G(i11);
-                    pVar.readFully(vVar3.a, 0, i11);
-                    return;
-                }
-            }
-            if (i10 == 16877) {
-                dVar.d(i10);
-                u3.c cVar2 = dVar.x;
-                int i19 = cVar2.h;
-                if (i19 != 1685485123 && i19 != 1685480259) {
-                    pVar.o(i11);
-                    return;
-                }
-                byte[] bArr = new byte[i11];
-                cVar2.P = bArr;
-                pVar.readFully(bArr, 0, i11);
-                return;
-            }
-            if (i10 == 16981) {
-                dVar.d(i10);
-                byte[] bArr2 = new byte[i11];
-                dVar.x.j = bArr2;
-                pVar.readFully(bArr2, 0, i11);
-                return;
-            }
-            if (i10 == 18402) {
-                byte[] bArr3 = new byte[i11];
-                pVar.readFully(bArr3, 0, i11);
-                dVar.d(i10);
-                dVar.x.k = new c3.g0(1, 0, 0, bArr3);
-                return;
-            }
-            if (i10 == 21419) {
-                Arrays.fill(vVar.a, (byte) 0);
-                pVar.readFully(vVar.a, 4 - i11, i11);
-                vVar.J(0);
-                dVar.z = (int) vVar.z();
-                return;
-            }
-            if (i10 == 25506) {
-                dVar.d(i10);
-                byte[] bArr4 = new byte[i11];
-                dVar.x.l = bArr4;
-                pVar.readFully(bArr4, 0, i11);
-                return;
-            }
-            if (i10 != 30322) {
-                throw b2.s0.a(null, "Unexpected id: " + i10);
-            }
-            dVar.d(i10);
-            byte[] bArr5 = new byte[i11];
-            dVar.x.x = bArr5;
-            pVar.readFully(bArr5, 0, i11);
-            return;
-        }
-        if (dVar.J == 0) {
-            dVar.P = (int) eVar.b(pVar, false, true, 8);
-            dVar.Q = eVar.c;
-            dVar.L = -9223372036854775807L;
-            dVar.J = 1;
-            vVar2.G(0);
-        }
-        u3.c cVar3 = (u3.c) sparseArray.get(dVar.P);
-        if (cVar3 == null) {
-            pVar.o(i11 - dVar.Q);
-            dVar.J = 0;
-            return;
-        }
-        cVar3.Z.getClass();
-        if (dVar.J == 1) {
-            dVar.j(pVar, 3);
-            int i20 = (vVar2.a[2] & 6) >> 1;
-            byte b10 = 255;
-            if (i20 == 0) {
-                dVar.N = 1;
-                int[] iArr = dVar.O;
-                if (iArr == null) {
-                    iArr = new int[1];
-                } else if (iArr.length < 1) {
-                    iArr = new int[Math.max(iArr.length * 2, 1)];
-                }
-                dVar.O = iArr;
-                iArr[0] = (i11 - dVar.Q) - 3;
-            } else {
-                dVar.j(pVar, 4);
-                int i21 = (vVar2.a[3] & 255) + 1;
-                dVar.N = i21;
-                int[] iArr2 = dVar.O;
-                if (iArr2 == null) {
-                    iArr2 = new int[i21];
-                } else if (iArr2.length < i21) {
-                    iArr2 = new int[Math.max(iArr2.length * 2, i21)];
-                }
-                dVar.O = iArr2;
-                if (i20 == 2) {
-                    int i22 = (i11 - dVar.Q) - 4;
-                    int i23 = dVar.N;
-                    Arrays.fill(iArr2, 0, i23, i22 / i23);
-                } else {
-                    if (i20 != 1) {
-                        if (i20 != 3) {
-                            throw b2.s0.a(null, "Unexpected lacing value: " + i20);
-                        }
-                        int i24 = 0;
-                        int i25 = 0;
-                        int i26 = 4;
-                        while (true) {
-                            int i27 = dVar.N - i16;
-                            if (i24 >= i27) {
-                                c10 = 1;
-                                c11 = 0;
-                                dVar.O[i27] = ((i11 - dVar.Q) - i26) - i25;
-                                break;
-                            }
-                            dVar.O[i24] = i17;
-                            int i28 = i26 + 1;
-                            dVar.j(pVar, i28);
-                            if (vVar2.a[i26] == 0) {
-                                throw b2.s0.a(null, "No valid varint length mask found");
-                            }
-                            int i29 = 0;
-                            while (true) {
-                                if (i29 >= 8) {
-                                    j3 = 0;
-                                    i12 = i28;
-                                    break;
-                                }
-                                int i30 = 1 << (7 - i29);
-                                if ((vVar2.a[i26] & i30) != 0) {
-                                    i12 = i28 + i29;
-                                    dVar.j(pVar, i12);
-                                    j3 = vVar2.a[i26] & b10 & (~i30);
-                                    while (i28 < i12) {
-                                        j3 = (j3 << 8) | (vVar2.a[i28] & b10);
-                                        i28++;
-                                        b10 = 255;
-                                    }
-                                    if (i24 > 0) {
-                                        j3 -= (1 << ((i29 * 7) + 6)) - 1;
-                                    }
-                                } else {
-                                    i29++;
-                                    b10 = 255;
-                                }
-                            }
-                            if (j3 < -2147483648L || j3 > 2147483647L) {
-                                break;
-                            }
-                            int i31 = (int) j3;
-                            int[] iArr3 = dVar.O;
-                            if (i24 != 0) {
-                                i31 += iArr3[i24 - 1];
-                            }
-                            iArr3[i24] = i31;
-                            i25 += i31;
-                            i24++;
-                            i26 = i12;
-                            b10 = 255;
-                            i16 = 1;
-                            i17 = 0;
-                        }
-                        throw b2.s0.a(null, "EBML lacing sample size out of range.");
-                    }
-                    int i32 = 0;
-                    int i33 = 0;
-                    int i34 = 4;
-                    while (true) {
-                        i13 = dVar.N - 1;
-                        if (i32 >= i13) {
-                            break;
-                        }
-                        dVar.O[i32] = 0;
-                        while (true) {
-                            i14 = i34 + 1;
-                            dVar.j(pVar, i14);
-                            int i35 = vVar2.a[i34] & 255;
-                            int[] iArr4 = dVar.O;
-                            i15 = iArr4[i32] + i35;
-                            iArr4[i32] = i15;
-                            if (i35 != 255) {
-                                break;
-                            } else {
-                                i34 = i14;
-                            }
-                        }
-                        i33 += i15;
-                        i32++;
-                        i34 = i14;
-                    }
-                    dVar.O[i13] = ((i11 - dVar.Q) - i34) - i33;
-                }
-            }
-            c10 = 1;
-            c11 = 0;
-            byte[] bArr6 = vVar2.a;
-            dVar.K = dVar.l((bArr6[c10] & 255) | (bArr6[c11] << 8)) + dVar.E;
-            dVar.R = (cVar3.e == 2 || (i10 == 163 && (vVar2.a[2] & 128) == 128)) ? 1 : 0;
-            dVar.J = 2;
-            dVar.M = 0;
-        }
-        if (i10 == 163) {
-            while (true) {
-                int i36 = dVar.M;
-                if (i36 >= dVar.N) {
-                    dVar.J = 0;
-                    return;
-                } else {
-                    dVar.e(cVar3, ((dVar.M * cVar3.f) / MediaDataController.MAX_STYLE_RUNS_COUNT) + dVar.K, dVar.R, dVar.n(pVar, cVar3, dVar.O[i36], false), 0);
-                    dVar.M++;
-                }
-            }
-        } else {
-            while (true) {
-                int i37 = dVar.M;
-                if (i37 >= dVar.N) {
-                    return;
-                }
-                int[] iArr5 = dVar.O;
-                iArr5[i37] = dVar.n(pVar, cVar3, iArr5[i37], true);
-                dVar.M++;
-            }
+            x3.P1(((t3) o4Var).a);
         }
     }
 
     @Override // l.i
-    public void y(l.k kVar) {
+    public void w(l.k kVar) {
         Toolbar toolbar = (Toolbar) this.b;
         m.h hVar = toolbar.a.J;
         if (hVar == null || !hVar.g()) {
@@ -1272,6 +1257,21 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
                 ((androidx.fragment.app.c0) it.next()).a.t();
             }
         }
+    }
+
+    @Override // k2.o
+    public void x(Exception exc) {
+        e2.a.f("DecoderAudioRenderer", "Audio sink error", exc);
+        n4.y yVar = ((FfmpegAudioRenderer) this.b).I;
+        Handler handler = (Handler) yVar.b;
+        if (handler != null) {
+            handler.post(new k2.g(yVar, exc, 1));
+        }
+    }
+
+    @Override // k2.o
+    public void y() {
+        ((FfmpegAudioRenderer) this.b).Z = true;
     }
 
     @Override // le.f
@@ -1340,12 +1340,12 @@ public final class n4 implements k0, k2.o, l.w, l.i, k1.f, xo0, le.f, u71, r0.n,
     public /* synthetic */ void h(boolean z10) {
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public void B() {
     }
 
     @Override // k2.o
-    public /* synthetic */ void H() {
+    public /* synthetic */ void D() {
     }
 
     @Override // le.f

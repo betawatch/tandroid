@@ -2,9 +2,9 @@ package hg;
 
 import android.view.View;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q0 implements org.telegram.ui.ActionBar.a2, Utilities.Callback5 {
     public final /* synthetic */ int a;
@@ -35,6 +35,6 @@ public final /* synthetic */ class q0 implements org.telegram.ui.ActionBar.a2, U
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        u0.U(this.b, (g61) obj, (View) obj2);
+        u0.U(this.b, (h61) obj, (View) obj2);
     }
 }

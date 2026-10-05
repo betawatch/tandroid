@@ -3,7 +3,7 @@ package a4;
 import e2.d0;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class l implements z3.e {
     public final ArrayDeque a = new ArrayDeque();
@@ -54,24 +54,24 @@ public abstract class l implements z3.e {
 
     @Override // h2.e
     public final void e(Object obj) {
-        z3.j jVar = (z3.j) obj;
-        e2.d.b(jVar == this.d);
-        j jVar2 = (j) jVar;
-        if (!jVar2.isEndOfStream()) {
-            long j3 = jVar2.e;
+        z3.i iVar = (z3.i) obj;
+        e2.d.b(iVar == this.d);
+        j jVar = (j) iVar;
+        if (!jVar.isEndOfStream()) {
+            long j3 = jVar.e;
             if (j3 != Long.MIN_VALUE) {
                 long j10 = this.g;
                 if (j10 != -9223372036854775807L && j3 < j10) {
-                    jVar2.clear();
-                    this.a.add(jVar2);
+                    jVar.clear();
+                    this.a.add(jVar);
                     this.d = null;
                 }
             }
         }
         long j11 = this.f;
         this.f = 1 + j11;
-        jVar2.s = j11;
-        this.c.add(jVar2);
+        jVar.s = j11;
+        this.c.add(jVar);
         this.d = null;
     }
 
@@ -106,7 +106,7 @@ public abstract class l implements z3.e {
 
     @Override // h2.e
     /* renamed from: h, reason: merged with bridge method [inline-methods] */
-    public z3.k c() {
+    public z3.j c() {
         ArrayDeque arrayDeque = this.b;
         if (arrayDeque.isEmpty()) {
             return null;
@@ -125,23 +125,23 @@ public abstract class l implements z3.e {
             boolean isEndOfStream = jVar2.isEndOfStream();
             ArrayDeque arrayDeque3 = this.a;
             if (isEndOfStream) {
-                z3.k kVar = (z3.k) arrayDeque.pollFirst();
-                kVar.addFlag(4);
+                z3.j jVar3 = (z3.j) arrayDeque.pollFirst();
+                jVar3.addFlag(4);
                 jVar2.clear();
                 arrayDeque3.add(jVar2);
-                return kVar;
+                return jVar3;
             }
             g(jVar2);
             if (i()) {
                 m f7 = f();
-                z3.k kVar2 = (z3.k) arrayDeque.pollFirst();
+                z3.j jVar4 = (z3.j) arrayDeque.pollFirst();
                 long j3 = jVar2.e;
-                kVar2.timeUs = j3;
-                kVar2.a = f7;
-                kVar2.b = j3;
+                jVar4.timeUs = j3;
+                jVar4.a = f7;
+                jVar4.b = j3;
                 jVar2.clear();
                 arrayDeque3.add(jVar2);
-                return kVar2;
+                return jVar4;
             }
             jVar2.clear();
             arrayDeque3.add(jVar2);

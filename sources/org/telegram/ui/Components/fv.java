@@ -16,7 +16,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class fv implements org.telegram.ui.pt {
     public final /* synthetic */ wv a;
@@ -71,7 +71,7 @@ public final class fv implements org.telegram.ui.pt {
             wv wvVar = this.a;
             viewGroup = ((org.telegram.ui.ActionBar.f3) wvVar).containerView;
             d6Var = ((org.telegram.ui.ActionBar.f3) wvVar).resourcesProvider;
-            org.telegram.messenger.ok.o(R.string.EmojiCopied, new yc((FrameLayout) viewGroup, d6Var));
+            org.telegram.messenger.bi.n(R.string.EmojiCopied, new yc((FrameLayout) viewGroup, d6Var));
         }
     }
 

@@ -2,7 +2,7 @@ package v7;
 
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class d8 {
     public String a;
@@ -23,16 +23,16 @@ public final class d8 {
             str = str.concat(" gmpAppId");
         }
         if (this.i == null) {
-            str = t8.b.v(str, " platform");
+            str = sa.e.v(str, " platform");
         }
         if (this.c == null) {
-            str = t8.b.v(str, " installationUuid");
+            str = sa.e.v(str, " installationUuid");
         }
         if (((String) this.k) == null) {
-            str = t8.b.v(str, " buildVersion");
+            str = sa.e.v(str, " buildVersion");
         }
         if (((String) this.f) == null) {
-            str = t8.b.v(str, " displayVersion");
+            str = sa.e.v(str, " displayVersion");
         }
         if (str.isEmpty()) {
             return new y9.a0(this.a, this.b, this.i.intValue(), this.c, this.d, this.e, (String) this.k, (String) this.f, (y9.d2) this.g, (y9.j1) this.h, (y9.g1) this.j);

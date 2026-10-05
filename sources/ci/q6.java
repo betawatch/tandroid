@@ -55,18 +55,18 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ah;
 import org.telegram.ui.Components.ch;
-import org.telegram.ui.Components.d81;
-import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.e81;
+import org.telegram.ui.Components.gw0;
 import org.telegram.ui.Components.kj0;
-import org.telegram.ui.Components.kw0;
-import org.telegram.ui.Components.mw0;
+import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.nw0;
 import org.telegram.ui.Components.nz;
 import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.tr;
@@ -74,9 +74,9 @@ import org.telegram.ui.Components.wh;
 import org.telegram.ui.Components.xi;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
-public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
+public abstract class q6 extends nw0 implements qg.q1, qg.h, qg.m1, lw0, gc {
     public final qg.f1 A0;
     public final pg.t1 A1;
     public final qg.j1 B0;
@@ -91,7 +91,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
     public final int F1;
     public boolean G0;
     public final d6 G1;
-    public fw0 H0;
+    public gw0 H0;
     public org.telegram.ui.ActionBar.n1 H1;
     public boolean I0;
     public o6 I1;
@@ -238,14 +238,14 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
         return 2;
     }
 
-    private fw0 getPaintingSize() {
-        fw0 fw0Var = this.H0;
-        if (fw0Var != null) {
-            return fw0Var;
+    private gw0 getPaintingSize() {
+        gw0 gw0Var = this.H0;
+        if (gw0Var != null) {
+            return gw0Var;
         }
-        fw0 fw0Var2 = new fw0(1080.0f, 1920.0f);
-        this.H0 = fw0Var2;
-        return fw0Var2;
+        gw0 gw0Var2 = new gw0(1080.0f, 1920.0f);
+        this.H0 = gw0Var2;
+        return gw0Var2;
     }
 
     private void setCoverPause(boolean z10) {
@@ -813,7 +813,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
         }
     }
 
-    @Override // org.telegram.ui.Components.kw0
+    @Override // org.telegram.ui.Components.lw0
     public final void F(int i10, boolean z10) {
         boolean z11;
         if (i10 > AndroidUtilities.dp(50.0f) && this.r2 && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
@@ -1021,7 +1021,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
                     }
                 } else if (b10 == 4) {
                     qg.a2 l02 = l0(false);
-                    l02.s(zg.o0.d(mediaEntity.mediaArea.reaction), false);
+                    l02.s(zg.m0.d(mediaEntity.mediaArea.reaction), false);
                     if (mediaEntity.mediaArea.flipped) {
                         l02.r(false);
                     }
@@ -1037,9 +1037,9 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
                         yb ybVar = kcVar.X0;
                         if (ybVar != null) {
                             ybVar.w = m0;
-                            d81 d81Var = ybVar.x;
-                            if (d81Var != null) {
-                                d81Var.V(m0.u0);
+                            e81 e81Var = ybVar.x;
+                            if (e81Var != null) {
+                                e81Var.V(m0.u0);
                             }
                         }
                         ac acVar = kcVar.c1;
@@ -1104,7 +1104,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
                     q5 q5Var = q6Var.w1;
                     float f13 = q6Var.D1;
                     boolean z11 = z10;
-                    q5Var.A1(f13, z11);
+                    q5Var.z1(f13, z11);
                     qg.j1 j1Var = q6Var.B0;
                     j1Var.setProgress(q6Var.D1);
                     qg.f1 f1Var = q6Var.A0;
@@ -1291,7 +1291,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
             whVar.setVisibility(8);
         }
         xiVar.setOnDismissListener(new l5(this, 0));
-        xiVar.o1();
+        xiVar.q1();
         xiVar.show();
     }
 
@@ -1468,7 +1468,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
         return e02;
     }
 
-    @Override // org.telegram.ui.Components.mw0, org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.nw0, org.telegram.ui.Components.mw0
     public final int R() {
         return this.O1.l - this.M1.getBottomPadding2();
     }
@@ -1656,7 +1656,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.lw0, org.telegram.ui.ActionBar.y5
+    @Override // org.telegram.ui.Components.mw0, org.telegram.ui.ActionBar.y5
     public final void e() {
         this.E1.setColor(-15132391);
     }
@@ -1762,7 +1762,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
         return this.A0;
     }
 
-    @Override // org.telegram.ui.Components.mw0, org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.nw0, org.telegram.ui.Components.mw0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }
@@ -1971,7 +1971,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
 
     public final qg.x1 k0(String str, boolean z10) {
         float f7;
-        fw0 fw0Var;
+        gw0 gw0Var;
         this.l2 = true;
         try {
             BitmapFactory.Options options = new BitmapFactory.Options();
@@ -1985,23 +1985,23 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
         j6 j6Var = this.R0;
         if (f7 > 1.0f) {
             float floor = (float) Math.floor(Math.max(this.R1, j6Var.getMeasuredWidth()) * 0.5d);
-            fw0Var = new fw0(floor, floor / f7);
+            gw0Var = new gw0(floor, floor / f7);
         } else {
             float floor2 = (float) Math.floor(Math.max(this.S1, j6Var.getMeasuredHeight()) * 0.5d);
-            fw0Var = new fw0(f7 * floor2, floor2);
+            gw0Var = new gw0(f7 * floor2, floor2);
         }
-        fw0 fw0Var2 = fw0Var;
+        gw0 gw0Var2 = gw0Var;
         Pair<Integer, Integer> imageOrientation = AndroidUtilities.getImageOrientation(str);
         if ((((Integer) imageOrientation.first).intValue() / 90) % 2 == 1) {
-            float f10 = fw0Var2.a;
-            fw0Var2.a = fw0Var2.b;
-            fw0Var2.b = f10;
+            float f10 = gw0Var2.a;
+            gw0Var2.a = gw0Var2.b;
+            gw0Var2.b = f10;
         }
         Context context = getContext();
         PointF e02 = e0();
         int intValue = ((Integer) imageOrientation.first).intValue();
         ((Integer) imageOrientation.second).getClass();
-        qg.x1 x1Var = new qg.x1(context, e02, fw0Var2, str, intValue);
+        qg.x1 x1Var = new qg.x1(context, e02, gw0Var2, str, intValue);
         x1Var.setDelegate(this);
         j6Var.addView(x1Var);
         g0();
@@ -2010,7 +2010,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
 
     public final qg.a2 l0(boolean z10) {
         String str;
-        fw0 fw0Var = new fw0(AndroidUtilities.dp(106.0f), AndroidUtilities.dp(106.0f));
+        gw0 gw0Var = new gw0(AndroidUtilities.dp(106.0f), AndroidUtilities.dp(106.0f));
         PointF e02 = e0();
         j6 j6Var = this.R0;
         if (j6Var.getMeasuredHeight() > 0) {
@@ -2030,18 +2030,18 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
         qg.a2 a2Var = new qg.a2(getContext(), e02);
         a2Var.r0 = new ai.ob(a2Var);
         a2Var.s0 = new ai.ob(a2Var);
-        a2Var.t0 = new zg.f0(a2Var);
-        a2Var.u0 = new zg.f0(a2Var);
+        a2Var.t0 = new zg.d0(a2Var);
+        a2Var.u0 = new zg.d0(a2Var);
         org.telegram.ui.Components.e6 e6Var = new org.telegram.ui.Components.e6(a2Var);
         a2Var.w0 = e6Var;
         org.telegram.ui.Components.e6 e6Var2 = new org.telegram.ui.Components.e6(a2Var);
         a2Var.x0 = e6Var2;
         a2Var.z0 = 1.0f;
-        a2Var.q0 = fw0Var;
+        a2Var.q0 = gw0Var;
         e6Var2.d(1.0f, true);
         e6Var.d(1.0f, true);
         List<TLRPC.TL_availableReaction> reactionsList = MediaDataController.getInstance(UserConfig.selectedAccount).getReactionsList();
-        zg.f0 f0Var = a2Var.t0;
+        zg.d0 d0Var = a2Var.t0;
         int i11 = 0;
         while (true) {
             if (i11 >= reactionsList.size()) {
@@ -2054,9 +2054,9 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
             }
             i11++;
         }
-        zg.o0 b10 = zg.o0.b(str);
+        zg.m0 b10 = zg.m0.b(str);
         a2Var.v0 = b10;
-        f0Var.e(b10);
+        d0Var.e(b10);
         a2Var.k();
         a2Var.setDelegate(this);
         j6Var.addView(a2Var);
@@ -2079,8 +2079,8 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
             measuredWidth = this.R1;
         }
         float floor = (float) Math.floor(0.43f * r1);
-        fw0 fw0Var = new fw0(floor, floor);
-        qg.b2 b2Var = new qg.b2(getContext(), new PointF((measuredWidth - (floor / 2.0f)) - AndroidUtilities.dp(16.0f), (fw0Var.b / 2.0f) + AndroidUtilities.dp(72.0f)), fw0Var, str);
+        gw0 gw0Var = new gw0(floor, floor);
+        qg.b2 b2Var = new qg.b2(getContext(), new PointF((measuredWidth - (floor / 2.0f)) - AndroidUtilities.dp(16.0f), (gw0Var.b / 2.0f) + AndroidUtilities.dp(72.0f)), gw0Var, str);
         b2Var.setDelegate(this);
         j6Var.addView(b2Var);
         g0();
@@ -2107,7 +2107,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
         p6 p6Var = new p6(e0(), f10, f7);
         Context context = getContext();
         float floor = (float) Math.floor(getPaintingSize().a * 0.5d);
-        c6 c6Var = new c6(this, context, p6Var.a, p6Var.c, p6Var.b, new fw0(floor, floor), document, obj);
+        c6 c6Var = new c6(this, context, p6Var.a, p6Var.c, p6Var.b, new gw0(floor, floor), document, obj);
         boolean isTextColorEmoji = MessageObject.isTextColorEmoji(document);
         ImageReceiver imageReceiver = c6Var.x0;
         if (isTextColorEmoji) {
@@ -2121,7 +2121,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
     }
 
     public final qg.v2 o0(boolean z10) {
-        fw0 paintingSize = getPaintingSize();
+        gw0 paintingSize = getPaintingSize();
         PointF Q0 = Q0(null);
         qg.v2 v2Var = new qg.v2(getContext(), Q0, (int) (paintingSize.a / 9.0f), "", this.A1, this.L0);
         float f7 = paintingSize.a / 9.0f;
@@ -2164,12 +2164,12 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
         return v2Var;
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
     }
 
-    @Override // org.telegram.ui.Components.lw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.mw0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         sk0 sk0Var = this.Z1;
         if (sk0Var != null) {
@@ -2391,7 +2391,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
         boolean z17;
         TLRPC.Message message;
         org.telegram.ui.Cells.w0 w0Var;
-        yh.z3 z3Var;
+        yh.a4 a4Var;
         ImageReceiver imageReceiver3;
         ImageReceiver imageReceiver4;
         TLRPC.TL_reactionCustomEmoji tL_reactionCustomEmoji;
@@ -2521,7 +2521,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
                                     if (jVar instanceof qg.o2) {
                                         mediaEntity.type = (byte) 0;
                                         qg.o2 o2Var = (qg.o2) jVar;
-                                        fw0 baseSize = o2Var.getBaseSize();
+                                        gw0 baseSize = o2Var.getBaseSize();
                                         mediaEntity.width = baseSize.a;
                                         mediaEntity.height = baseSize.b;
                                         mediaEntity.document = o2Var.getSticker();
@@ -2547,7 +2547,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
                                     } else if (jVar instanceof qg.x1) {
                                         qg.x1 x1Var = (qg.x1) jVar;
                                         mediaEntity.type = (byte) 2;
-                                        fw0 baseSize2 = x1Var.getBaseSize();
+                                        gw0 baseSize2 = x1Var.getBaseSize();
                                         mediaEntity.width = baseSize2.a;
                                         mediaEntity.height = baseSize2.b;
                                         mediaEntity.text = x1Var.q(i17);
@@ -2660,16 +2660,16 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
                                                     mediaAreaCoordinates2.y = ((mediaEntity.height / 2.0f) + mediaEntity.y) * 100.0f;
                                                     if (z19) {
                                                         qg.s0 s0Var3 = ((qg.t0) jVar).q0;
-                                                        mediaAreaCoordinates2.w = ok.x(s0Var3.I * 2 * scaleX, j6Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = ok.x(s0Var3.J * 2 * scaleY, j6Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = bi.x(s0Var3.I * 2 * scaleX, j6Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = bi.x(s0Var3.J * 2 * scaleY, j6Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof qg.w2) {
                                                         qg.s0 s0Var4 = ((qg.w2) jVar).q0;
-                                                        mediaAreaCoordinates2.w = ok.x(s0Var4.I * 2 * scaleX, j6Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = ok.x(s0Var4.J * 2 * scaleY, j6Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = bi.x(s0Var4.I * 2 * scaleX, j6Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = bi.x(s0Var4.J * 2 * scaleY, j6Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof qg.q0) {
                                                         qg.o0 o0Var = ((qg.q0) jVar).q0;
-                                                        mediaAreaCoordinates2.w = ok.x(o0Var.f * 2 * scaleX, j6Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = ok.x(o0Var.h * 2 * scaleY, j6Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = bi.x(o0Var.f * 2 * scaleX, j6Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = bi.x(o0Var.h * 2 * scaleY, j6Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof qg.a2) {
                                                         qg.a2 a2Var = (qg.a2) jVar;
                                                         float padding = ((a2Var.getPadding() * 2) * scaleX) / j6Var.getMeasuredWidth();
@@ -2699,8 +2699,8 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
                                             double r10 = e1Var2.r(rectF);
                                             rectF.offset(u5Var2.getX(), u5Var2.getY());
                                             rectF.offset(x0Var.getX(), x0Var.getY());
-                                            mediaEntity.mediaArea.coordinates.x = (((rectF.centerX() * scaleX) + ok.b(view.getWidth(), 2.0f, scaleX, (view.getWidth() / 2.0f) + x10)) / j6Var.getMeasuredWidth()) * 100.0f;
-                                            mediaEntity.mediaArea.coordinates.y = (((rectF.centerY() * scaleY) + ok.b(view.getHeight(), 2.0f, scaleY, (view.getHeight() / 2.0f) + y3)) / j6Var.getMeasuredHeight()) * 100.0f;
+                                            mediaEntity.mediaArea.coordinates.x = (((rectF.centerX() * scaleX) + bi.b(view.getWidth(), 2.0f, scaleX, (view.getWidth() / 2.0f) + x10)) / j6Var.getMeasuredWidth()) * 100.0f;
+                                            mediaEntity.mediaArea.coordinates.y = (((rectF.centerY() * scaleY) + bi.b(view.getHeight(), 2.0f, scaleY, (view.getHeight() / 2.0f) + y3)) / j6Var.getMeasuredHeight()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.w = ((rectF.width() * scaleX) / j6Var.getMeasuredWidth()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.h = ((rectF.height() * scaleY) / j6Var.getMeasuredHeight()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.rotation = ((-mediaEntity.rotation) / 3.141592653589793d) * 180.0d;
@@ -2752,7 +2752,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
                                                 mediaEntity.type = (byte) 4;
                                                 TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction = new TL_stories.TL_mediaAreaSuggestedReaction();
                                                 mediaEntity.mediaArea = tL_mediaAreaSuggestedReaction;
-                                                zg.o0 currentReaction = a2Var2.getCurrentReaction();
+                                                zg.m0 currentReaction = a2Var2.getCurrentReaction();
                                                 if (currentReaction.f != null) {
                                                     TLRPC.TL_reactionEmoji tL_reactionEmoji = new TLRPC.TL_reactionEmoji();
                                                     tL_reactionEmoji.emoticon = currentReaction.f;
@@ -2769,7 +2769,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
                                                 mediaArea4.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                             } else if (jVar instanceof qg.b2) {
                                                 qg.b2 b2Var = (qg.b2) jVar;
-                                                fw0 baseSize3 = b2Var.getBaseSize();
+                                                gw0 baseSize3 = b2Var.getBaseSize();
                                                 mediaEntity.width = baseSize3.a;
                                                 mediaEntity.height = baseSize3.b;
                                                 mediaEntity.type = (byte) 5;
@@ -2820,7 +2820,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
                                                             }
                                                             i25++;
                                                         }
-                                                        if (w0Var == null || (z3Var = w0Var.F0) == null || (imageReceiver3 = z3Var.d) == null) {
+                                                        if (w0Var == null || (a4Var = w0Var.F0) == null || (imageReceiver3 = a4Var.d) == null) {
                                                             e1Var = e1Var3;
                                                             i12 = i14;
                                                             u5Var = u5Var3;
@@ -2890,7 +2890,7 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
                                                             z15 = z18;
                                                         } else {
                                                             imageReceiver3.setVisible(false, false);
-                                                            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) yh.t5.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
+                                                            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) yh.u5.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
                                                             if (stargiftattributemodel != null) {
                                                                 float dp = AndroidUtilities.dp(110.0f);
                                                                 e1Var = e1Var3;
@@ -2929,8 +2929,8 @@ public abstract class q6 extends mw0 implements qg.q1, qg.h, qg.m1, kw0, gc {
                                                                 mediaEntity2.x = (childAt.getWidth() / 2.0f) + x11;
                                                                 mediaEntity2.y = (childAt.getHeight() / 2.0f) + y10;
                                                                 i12 = i14;
-                                                                float b11 = ok.b(childAt.getWidth(), 2.0f, scaleX2, centerX * scaleX2);
-                                                                float b12 = ok.b(childAt.getHeight(), 2.0f, scaleY3, centerY * scaleY3);
+                                                                float b11 = bi.b(childAt.getWidth(), 2.0f, scaleX2, centerX * scaleX2);
+                                                                float b12 = bi.b(childAt.getHeight(), 2.0f, scaleY3, centerY * scaleY3);
                                                                 u5Var = u5Var3;
                                                                 view = childAt;
                                                                 double d10 = mediaEntity2.x;

@@ -16,7 +16,7 @@ import java.util.List;
 import org.telegram.messenger.MediaController;
 import v7.r6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class x {
     public static final HashMap a = new HashMap();
@@ -128,7 +128,7 @@ public abstract class x {
         String str;
         int i10;
         MediaCodecInfo.CodecCapabilities capabilitiesForType;
-        boolean v;
+        boolean y3;
         boolean Y;
         boolean z11;
         boolean i11;
@@ -152,7 +152,7 @@ public abstract class x {
                         if (c10 != null) {
                             try {
                                 capabilitiesForType = a2.getCapabilitiesForType(c10);
-                                v = vVar.v("tunneled-playback", c10, capabilitiesForType);
+                                y3 = vVar.y("tunneled-playback", c10, capabilitiesForType);
                                 Y = vVar.Y("tunneled-playback", capabilitiesForType);
                                 z11 = tVar2.c;
                             } catch (Exception e7) {
@@ -161,11 +161,11 @@ public abstract class x {
                                 str = name;
                             }
                             if (z11 || !Y) {
-                                if (!z11 || v) {
-                                    boolean v9 = vVar.v("secure-playback", c10, capabilitiesForType);
+                                if (!z11 || y3) {
+                                    boolean y10 = vVar.y("secure-playback", c10, capabilitiesForType);
                                     boolean Y2 = vVar.Y("secure-playback", capabilitiesForType);
                                     if (z13 || !Y2) {
-                                        if (!z13 || v9) {
+                                        if (!z13 || y10) {
                                             boolean h = h(a2, str2);
                                             z10 = p02;
                                             try {
@@ -185,10 +185,10 @@ public abstract class x {
                                                 e2.a.e("MediaCodecUtil", "Failed to query codec " + str + " (" + c10 + ")");
                                                 throw e;
                                             }
-                                            if (!(z10 && z13 == v9) && (z10 || z13)) {
+                                            if (!(z10 && z13 == y10) && (z10 || z13)) {
                                                 boolean z14 = z12;
                                                 i10 = i14;
-                                                if (!z10 && v9) {
+                                                if (!z10 && y10) {
                                                     str = name;
                                                     try {
                                                         arrayList.add(o.i(name + ".secure", str2, c10, capabilitiesForType, h, i11, z14, true));

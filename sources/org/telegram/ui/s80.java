@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class s80 extends org.telegram.ui.Components.yl0 {
     public final Context c;
@@ -272,7 +272,7 @@ public final class s80 extends org.telegram.ui.Components.yl0 {
             case 4:
                 org.telegram.ui.Cells.ea eaVar = (org.telegram.ui.Cells.ea) view;
                 eaVar.d();
-                HashSet X = y31.X();
+                HashSet X = w31.X();
                 String string2 = LocaleController.getString(R.string.DoNotTranslate);
                 try {
                     boolean[] zArr = new boolean[1];
@@ -286,7 +286,7 @@ public final class s80 extends org.telegram.ui.Components.yl0 {
                                 if (!z17) {
                                     sb3.append(", ");
                                 }
-                                String y3 = org.telegram.ui.Components.t41.y(org.telegram.ui.Components.t41.C(str, zArr, null));
+                                String y3 = org.telegram.ui.Components.u41.y(org.telegram.ui.Components.u41.C(str, zArr, null));
                                 if (y3 != null) {
                                     sb3.append(y3);
                                     z17 = false;
@@ -299,7 +299,7 @@ public final class s80 extends org.telegram.ui.Components.yl0 {
                                 break;
                             }
                         } else {
-                            charSequence = org.telegram.ui.Components.t41.y(org.telegram.ui.Components.t41.C((String) X.iterator().next(), zArr, null));
+                            charSequence = org.telegram.ui.Components.u41.y(org.telegram.ui.Components.u41.C((String) X.iterator().next(), zArr, null));
                         }
                     } else {
                         charSequence = "";
@@ -356,7 +356,7 @@ public final class s80 extends org.telegram.ui.Components.yl0 {
             g9Var.r = 21;
             TextView textView = new TextView(context);
             g9Var.a = textView;
-            org.telegram.messenger.ok.t(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f, 1);
+            org.telegram.messenger.bi.s(textView, org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.G6, false), 1, 16.0f, 1);
             textView.setMaxLines(1);
             textView.setSingleLine(true);
             textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);

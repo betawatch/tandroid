@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class qd0 extends HorizontalScrollView {
     public int E;
@@ -38,7 +38,7 @@ public final class qd0 extends HorizontalScrollView {
 
     public qd0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        this.b = new ai.n7(this, 2);
+        this.b = new ai.n7(1, this);
         this.h = 0;
         this.n = 0.0f;
         this.s = -10066330;

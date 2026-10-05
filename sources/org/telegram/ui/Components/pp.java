@@ -39,9 +39,9 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.WallpapersListActivity;
-import org.telegram.ui.rd1;
+import org.telegram.ui.pd1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class pp extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int i0 = 0;
@@ -277,7 +277,7 @@ public final class pp extends org.telegram.ui.ActionBar.f3 implements Notificati
     }
 
     public static void o(pp ppVar, View view, int i10) {
-        br0 br0Var;
+        gq0 gq0Var;
         zl0 zl0Var = ppVar.w;
         np npVar = ppVar.h;
         if (npVar.d.get(i10) == ppVar.M || ppVar.R != null) {
@@ -288,30 +288,30 @@ public final class pp extends org.telegram.ui.ActionBar.f3 implements Notificati
         npVar.E(i10);
         ppVar.containerView.postDelayed(new kf(ppVar, i10, 1), 100L);
         for (int i11 = 0; i11 < zl0Var.getChildCount(); i11++) {
-            s21 s21Var = (s21) zl0Var.getChildAt(i11);
-            if (s21Var != view && (br0Var = s21Var.J) != null) {
-                AndroidUtilities.cancelRunOnUIThread(br0Var);
-                s21Var.J.run();
+            t21 t21Var = (t21) zl0Var.getChildAt(i11);
+            if (t21Var != view && (gq0Var = t21Var.J) != null) {
+                AndroidUtilities.cancelRunOnUIThread(gq0Var);
+                t21Var.J.run();
             }
         }
         if (!((op) npVar.d.get(i10)).a.a) {
-            ((s21) view).d();
+            ((t21) view).d();
         }
         ppVar.D(true);
     }
 
-    public static void q(pp ppVar, rd1 rd1Var) {
+    public static void q(pp ppVar, pd1 pd1Var) {
         org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
         l2Var.a = true;
         org.telegram.ui.yn ynVar = ppVar.v;
-        rd1Var.a.a = ynVar.getResourceProvider();
-        rd1Var.p1 = new hp(ppVar);
+        pd1Var.a.a = ynVar.getResourceProvider();
+        pd1Var.p1 = new hp(ppVar);
         l2Var.c = new uh(3);
         l2Var.d = new xo(ppVar, 5);
         l2Var.b = new xo(ppVar, 6);
         l2Var.e = true;
-        ppVar.X = rd1Var;
-        ynVar.showAsSheet(rd1Var, l2Var);
+        ppVar.X = pd1Var;
+        ynVar.showAsSheet(pd1Var, l2Var);
     }
 
     public final void A(boolean z10, boolean z11) {
@@ -581,8 +581,8 @@ public final class pp extends org.telegram.ui.ActionBar.f3 implements Notificati
         ArrayList arrayList = new ArrayList();
         if (this.v.c7) {
             org.telegram.ui.ActionBar.n2 n2Var = this.X;
-            if (n2Var instanceof rd1) {
-                arrayList.addAll(((rd1) n2Var).S0());
+            if (n2Var instanceof pd1) {
+                arrayList.addAll(((pd1) n2Var).S0());
                 return arrayList;
             }
         }
@@ -593,7 +593,7 @@ public final class pp extends org.telegram.ui.ActionBar.f3 implements Notificati
         int i10 = 0;
         arrayList.add(new org.telegram.ui.ActionBar.k6(null, 32, null, null, new Drawable[]{this.shadowDrawable}, mpVar, org.telegram.ui.ActionBar.i6.h5));
         arrayList.add(new org.telegram.ui.ActionBar.k6(this.E, 4, null, null, null, null, org.telegram.ui.ActionBar.i6.j5));
-        arrayList.add(new org.telegram.ui.ActionBar.k6(this.w, 16, new Class[]{s21.class}, null, null, null, org.telegram.ui.ActionBar.i6.i5));
+        arrayList.add(new org.telegram.ui.ActionBar.k6(this.w, 16, new Class[]{t21.class}, null, null, null, org.telegram.ui.ActionBar.i6.i5));
         int i11 = org.telegram.ui.ActionBar.i6.Oh;
         View view = this.I;
         arrayList.add(new org.telegram.ui.ActionBar.k6(view, 32, null, null, null, null, i11));
@@ -719,16 +719,16 @@ public final class pp extends org.telegram.ui.ActionBar.f3 implements Notificati
                     i10 = ynVar.i();
                     if (i10 != null && !i10.self) {
                         z12 = c4Var.a;
-                        vx0 vx0Var = new vx0(getContext(), null, 1, -1, c4Var.f(), ynVar.getResourceProvider());
-                        vx0Var.c.setVisibility(8);
-                        TextView textView = vx0Var.b;
+                        wx0 wx0Var = new wx0(getContext(), null, 1, -1, c4Var.f(), ynVar.getResourceProvider());
+                        wx0Var.c.setVisibility(8);
+                        TextView textView = wx0Var.b;
                         if (z12) {
                             textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ThemeAlsoAppliedForHint", R.string.ThemeAlsoAppliedForHint, i10.first_name)));
                         } else {
                             textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ThemeAlsoDisabledForHint", R.string.ThemeAlsoDisabledForHint, i10.first_name)));
                         }
                         textView.setTypeface(null);
-                        rcVar = rc.g(ynVar, vx0Var, 2750);
+                        rcVar = rc.g(ynVar, wx0Var, 2750);
                     }
                 }
             }
@@ -747,13 +747,13 @@ public final class pp extends org.telegram.ui.ActionBar.f3 implements Notificati
             i10 = ynVar.i();
             if (i10 != null) {
                 z12 = c4Var.a;
-                vx0 vx0Var2 = new vx0(getContext(), null, 1, -1, c4Var.f(), ynVar.getResourceProvider());
-                vx0Var2.c.setVisibility(8);
-                TextView textView2 = vx0Var2.b;
+                wx0 wx0Var2 = new wx0(getContext(), null, 1, -1, c4Var.f(), ynVar.getResourceProvider());
+                wx0Var2.c.setVisibility(8);
+                TextView textView2 = wx0Var2.b;
                 if (z12) {
                 }
                 textView2.setTypeface(null);
-                rcVar = rc.g(ynVar, vx0Var2, 2750);
+                rcVar = rc.g(ynVar, wx0Var2, 2750);
             }
         }
         dismiss();
@@ -835,7 +835,7 @@ public final class pp extends org.telegram.ui.ActionBar.f3 implements Notificati
                 WallpapersListActivity.z0((ArrayList) abVar.e, z10);
                 abVar.l();
             }
-            this.Y.a1();
+            this.Y.c1();
         }
         np npVar = this.h;
         if (npVar == null || npVar.d == null) {

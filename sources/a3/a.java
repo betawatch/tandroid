@@ -8,7 +8,7 @@ import androidx.media3.decoder.VideoDecoderOutputBuffer;
 import b2.x1;
 import u2.c1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class a extends i2.f {
     public final long I;
@@ -270,7 +270,7 @@ public abstract class a extends i2.f {
             return;
         }
         n2.h hVar = this.X;
-        hg.k0.z(this.W, hVar);
+        hg.c.z(this.W, hVar);
         this.W = hVar;
         if (hVar != null && hVar.h() == null && this.W.g() == null) {
             return;
@@ -311,7 +311,7 @@ public abstract class a extends i2.f {
         b2.s sVar = (b2.s) yVar.c;
         sVar.getClass();
         n2.h hVar2 = (n2.h) yVar.b;
-        hg.k0.z(this.X, hVar2);
+        hg.c.z(this.X, hVar2);
         this.X = hVar2;
         b2.s sVar2 = this.N;
         this.N = sVar;
@@ -371,7 +371,7 @@ public abstract class a extends i2.f {
             }
             this.P = null;
         }
-        hg.k0.z(this.W, null);
+        hg.c.z(this.W, null);
         this.W = null;
     }
 
@@ -529,11 +529,11 @@ public abstract class a extends i2.f {
         this.g0 = null;
         this.a0 = Math.min(this.a0, 0);
         try {
-            hg.k0.z(this.X, null);
+            hg.c.z(this.X, null);
             this.X = null;
             I();
         } finally {
-            bVar.x(this.m0);
+            bVar.w(this.m0);
         }
     }
 

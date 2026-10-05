@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.s90;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.bh1;
 import org.telegram.ui.us0;
+import org.telegram.ui.zg1;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class k0 extends ImageView {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final class k0 extends ImageView {
             case 3:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 accessibilityNodeInfo.setCheckable(true);
-                accessibilityNodeInfo.setChecked(((bh1) this.b).n.getTransformationMethod() == null);
+                accessibilityNodeInfo.setChecked(((zg1) this.b).n.getTransformationMethod() == null);
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);

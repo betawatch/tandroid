@@ -8,29 +8,29 @@ import android.view.View;
 import android.widget.LinearLayout;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class ia extends LinearLayout {
-    public final lw0 a;
+    public final mw0 a;
     public Paint b;
     public int c;
     public final boolean d;
     public final boolean e;
     public final Rect f;
 
-    public ia(Context context, lw0 lw0Var) {
+    public ia(Context context, mw0 mw0Var) {
         super(context);
         this.c = 0;
         this.d = true;
         this.e = true;
         this.f = new Rect();
-        this.a = lw0Var;
+        this.a = mw0Var;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
-        lw0 lw0Var;
+        mw0 mw0Var;
         if (!SharedConfig.chatBlurEnabled() || this.a == null || !this.e || this.c == 0) {
             canvas2 = canvas;
         } else {
@@ -42,33 +42,33 @@ public final class ia extends LinearLayout {
             float f7 = 0.0f;
             View view = this;
             while (true) {
-                lw0Var = this.a;
-                if (view == lw0Var) {
+                mw0Var = this.a;
+                if (view == mw0Var) {
                     break;
                 }
                 f7 += view.getY();
                 view = (View) view.getParent();
             }
             canvas2 = canvas;
-            lw0Var.J(canvas2, f7, this.f, this.b, this.d);
+            mw0Var.J(canvas2, f7, this.f, this.b, this.d);
         }
         super.dispatchDraw(canvas2);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
-        lw0 lw0Var;
-        if (SharedConfig.chatBlurEnabled() && (lw0Var = this.a) != null) {
-            lw0Var.T.add(this);
+        mw0 mw0Var;
+        if (SharedConfig.chatBlurEnabled() && (mw0Var = this.a) != null) {
+            mw0Var.T.add(this);
         }
         super.onAttachedToWindow();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        lw0 lw0Var = this.a;
-        if (lw0Var != null) {
-            lw0Var.T.remove(this);
+        mw0 mw0Var = this.a;
+        if (mw0Var != null) {
+            mw0Var.T.remove(this);
         }
         super.onDetachedFromWindow();
     }

@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n1 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,43 +28,43 @@ public final /* synthetic */ class n1 implements Runnable {
                 ArrayList arrayList = x3.z4;
                 TL_iv.pageBlockPullquote pageblockpullquote = new TL_iv.pageBlockPullquote();
                 pageblockpullquote.caption = new TL_iv.textEmpty();
-                x3Var.W4(this.c, pageblockpullquote, 0, 0, false, false);
+                x3Var.V4(this.c, pageblockpullquote, 0, 0, false, false);
                 break;
             case 1:
-                e2Var.P.X4(aVar, new TL_iv.pageBlockPreformatted());
+                e2Var.P.W4(aVar, new TL_iv.pageBlockPreformatted());
                 break;
             case 2:
-                e2Var.P.X4(aVar, new TL_iv.pageBlockFooter());
+                e2Var.P.W4(aVar, new TL_iv.pageBlockFooter());
                 break;
             case 3:
-                e2Var.P.X4(aVar, new TL_iv.pageBlockParagraph());
+                e2Var.P.W4(aVar, new TL_iv.pageBlockParagraph());
                 break;
             case 4:
                 x3 x3Var2 = e2Var.P;
                 ArrayList arrayList2 = x3.z4;
                 TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
                 pageblockblockquote.caption = new TL_iv.textEmpty();
-                x3Var2.W4(this.c, pageblockblockquote, 0, 0, false, false);
+                x3Var2.V4(this.c, pageblockblockquote, 0, 0, false, false);
                 break;
             case 5:
-                e2Var.P.Y4(aVar, 0);
+                e2Var.P.X4(aVar, 0);
                 break;
             case 6:
-                e2Var.P.Y4(aVar, 1);
+                e2Var.P.X4(aVar, 1);
                 break;
             case 7:
-                e2Var.P.Y4(aVar, 2);
+                e2Var.P.X4(aVar, 2);
                 break;
             case 8:
-                e2Var.P.Y4(aVar, 3);
+                e2Var.P.X4(aVar, 3);
                 break;
             default:
-                View B1 = e2Var.P.B1(aVar);
-                if (!(B1 instanceof q4)) {
+                View A1 = e2Var.P.A1(aVar);
+                if (!(A1 instanceof q4)) {
                     e2Var.P.f3.N(false);
                     break;
                 } else {
-                    ((q4) B1).h(aVar, e2Var.P.getMapDelegate());
+                    ((q4) A1).h(aVar, e2Var.P.getMapDelegate());
                     break;
                 }
         }

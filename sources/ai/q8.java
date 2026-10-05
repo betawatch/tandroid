@@ -32,12 +32,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.b80;
-import org.telegram.ui.Components.v31;
+import org.telegram.ui.Components.w31;
 import org.telegram.ui.Components.xi;
 import org.telegram.ui.sa0;
 import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q8 implements Runnable {
     public final /* synthetic */ int a;
@@ -116,7 +116,7 @@ public final /* synthetic */ class q8 implements Runnable {
                             i16++;
                         } else if (storyItem3 instanceof TL_stories.TL_storyItemDeleted) {
                             peerStories.stories.remove(i16);
-                            org.telegram.messenger.f0.n(storyItem3.id, new StringBuilder("StoriesController remove story id="));
+                            org.telegram.messenger.q.n(storyItem3.id, new StringBuilder("StoriesController remove story id="));
                             z11 = true;
                             z12 = true;
                         } else {
@@ -130,7 +130,7 @@ public final /* synthetic */ class q8 implements Runnable {
                             if (storyItem3.firstFramePath == null) {
                                 storyItem3.firstFramePath = storyItem4.firstFramePath;
                             }
-                            org.telegram.messenger.f0.n(storyItem3.id, new StringBuilder("StoriesController update story id="));
+                            org.telegram.messenger.q.n(storyItem3.id, new StringBuilder("StoriesController update story id="));
                             z11 = true;
                         }
                     }
@@ -187,7 +187,7 @@ public final /* synthetic */ class q8 implements Runnable {
                     TL_stories.TL_peerStories tL_peerStories = new TL_stories.TL_peerStories();
                     tL_peerStories.peer = tL_updateStory.peer;
                     tL_peerStories.stories.add(tL_updateStory.story);
-                    org.telegram.messenger.f0.n(tL_updateStory.story.id, new StringBuilder("StoriesController add new user with story id="));
+                    org.telegram.messenger.q.n(tL_updateStory.story.id, new StringBuilder("StoriesController add new user with story id="));
                     long peerDialogId = DialogObject.getPeerDialogId(tL_peerStories.peer);
                     l9Var.b0(peerDialogId, tL_peerStories);
                     if (peerDialogId != UserConfig.getInstance(UserConfig.selectedAccount).clientUserId) {
@@ -631,16 +631,16 @@ public final /* synthetic */ class q8 implements Runnable {
                 if (messageSuggestionParams == null) {
                     messageSuggestionParams = MessageSuggestionParams.empty();
                 }
-                new yh.e0(context, i20, this.b, messageSuggestionParams, ynVar, d6Var, 0, new org.telegram.ui.qc(17, xiVar, ynVar)).show();
+                new yh.f0(context, i20, this.b, messageSuggestionParams, ynVar, d6Var, 0, new org.telegram.ui.qc(17, xiVar, ynVar)).show();
                 return;
             default:
-                v31 v31Var = (v31) obj3;
+                w31 w31Var = (w31) obj3;
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
                 ((b80) obj2).u();
-                TLRPC.User user3 = MessagesController.getInstance(v31Var.b).getUser(Long.valueOf(j3));
+                TLRPC.User user3 = MessagesController.getInstance(w31Var.b).getUser(Long.valueOf(j3));
                 if (user3 != null) {
-                    yn ynVar2 = v31Var.h;
-                    org.telegram.ui.Components.e5.r(ynVar2, -1, user3, chat, true, new z1(v31Var, j3, 6), ynVar2.getResourceProvider());
+                    yn ynVar2 = w31Var.h;
+                    org.telegram.ui.Components.e5.r(ynVar2, -1, user3, chat, true, new z1(w31Var, j3, 6), ynVar2.getResourceProvider());
                     return;
                 }
                 return;

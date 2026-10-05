@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class i1 extends zl0 {
     public static final Paint j3;
@@ -49,7 +49,7 @@ public abstract class i1 extends zl0 {
         setOnItemClickListener(new ai.g(this, 15));
     }
 
-    public static void y1(Canvas canvas, RectF rectF, int i10) {
+    public static void x1(Canvas canvas, RectF rectF, int i10) {
         float f7 = rectF.left;
         while (f7 <= rectF.right) {
             float f10 = rectF.top;
@@ -76,7 +76,7 @@ public abstract class i1 extends zl0 {
         }
     }
 
-    public static void z1(float f7, float f10, float f11, int i10, Canvas canvas) {
+    public static void y1(float f7, float f10, float f11, int i10, Canvas canvas) {
         Paint paint = m3;
         paint.setColor(i10);
         if (paint.getAlpha() == 255) {
@@ -90,33 +90,16 @@ public abstract class i1 extends zl0 {
         Path path = l3;
         path.rewind();
         path.moveTo(rectF.centerX(), rectF.centerY());
-        path.lineTo((float) hg.k0.e(-1.5707963267948966d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(-1.5707963267948966d) * (rectF.height() / 2.0f)) + rectF.centerY()));
+        path.lineTo((float) hg.c.e(-1.5707963267948966d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(-1.5707963267948966d) * (rectF.height() / 2.0f)) + rectF.centerY()));
         path.moveTo(rectF.centerX(), rectF.centerY());
-        path.lineTo((float) hg.k0.e(4.71238898038469d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(4.71238898038469d) * (rectF.height() / 2.0f)) + rectF.centerY()));
+        path.lineTo((float) hg.c.e(4.71238898038469d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(4.71238898038469d) * (rectF.height() / 2.0f)) + rectF.centerY()));
         path.addArc(rectF, -45.0f, 180.0f);
         canvas.save();
         canvas.clipPath(path);
-        y1(canvas, rectF, AndroidUtilities.dp(4.0f));
+        x1(canvas, rectF, AndroidUtilities.dp(4.0f));
         canvas.restore();
         paint.setColor(i10);
         canvas.drawArc(rectF, -45.0f, 180.0f, true, paint);
-    }
-
-    public final void A1(float f7, boolean z10) {
-        float interpolation = z10 ? tr.g.getInterpolation(f7) : tr.i.getInterpolation(f7);
-        float childCount = 1.0f / (getChildCount() - 1);
-        for (int i10 = 0; i10 < getChildCount(); i10++) {
-            View childAt = getChildAt(i10);
-            if (i10 == 0) {
-                childAt.setAlpha(interpolation == 1.0f ? 1.0f : 0.0f);
-            } else {
-                float f10 = i10 * childCount;
-                float min = Math.min(interpolation, f10) / f10;
-                childAt.setScaleX(min);
-                childAt.setScaleY(min);
-            }
-        }
-        invalidate();
     }
 
     public int getSelectedColorIndex() {
@@ -135,5 +118,22 @@ public abstract class i1 extends zl0 {
     public void setSelectedColorIndex(int i10) {
         this.g3 = i10;
         getAdapter().l();
+    }
+
+    public final void z1(float f7, boolean z10) {
+        float interpolation = z10 ? tr.g.getInterpolation(f7) : tr.i.getInterpolation(f7);
+        float childCount = 1.0f / (getChildCount() - 1);
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            View childAt = getChildAt(i10);
+            if (i10 == 0) {
+                childAt.setAlpha(interpolation == 1.0f ? 1.0f : 0.0f);
+            } else {
+                float f10 = i10 * childCount;
+                float min = Math.min(interpolation, f10) / f10;
+                childAt.setScaleX(min);
+                childAt.setScaleY(min);
+            }
+        }
+        invalidate();
     }
 }

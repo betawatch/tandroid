@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t4 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -23,16 +23,16 @@ public final /* synthetic */ class t4 implements Utilities.Callback {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ t4(u4 u4Var, boolean z10, zg.o0 o0Var, View view) {
+    public /* synthetic */ t4(u4 u4Var, boolean z10, zg.m0 m0Var, View view) {
         this.c = u4Var;
         this.b = z10;
-        this.d = o0Var;
+        this.d = m0Var;
         this.e = view;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        zg.k0 k0Var;
+        zg.i0 i0Var;
         TLRPC.Document f7;
         yc ycVar;
         int i10;
@@ -45,35 +45,35 @@ public final /* synthetic */ class t4 implements Utilities.Callback {
         switch (i12) {
             case 0:
                 u4 u4Var = (u4) obj4;
-                zg.o0 o0Var = (zg.o0) obj3;
+                zg.m0 m0Var = (zg.m0) obj3;
                 View view = (View) obj2;
                 Long l4 = (Long) obj;
                 e6 e6Var = u4Var.a;
-                if (!z10 || o0Var.f == null) {
-                    k0Var = new zg.k0(view.getContext(), null, e6Var.f2, null, view, e6Var.getMeasuredWidth() / 2.0f, e6Var.getMeasuredHeight() / 2.0f, o0Var, e6Var.C2, 2, true);
+                if (!z10 || m0Var.f == null) {
+                    i0Var = new zg.i0(view.getContext(), null, e6Var.f2, null, view, e6Var.getMeasuredWidth() / 2.0f, e6Var.getMeasuredHeight() / 2.0f, m0Var, e6Var.C2, 2, true);
                 } else {
                     try {
                         e6Var.performHapticFeedback(0);
                     } catch (Exception unused) {
                     }
-                    k0Var = new zg.k0(view.getContext(), null, e6Var.f2, null, view, e6Var.getMeasuredWidth() / 2.0f, e6Var.getMeasuredHeight() / 2.0f, o0Var, e6Var.C2, 0, true);
+                    i0Var = new zg.i0(view.getContext(), null, e6Var.f2, null, view, e6Var.getMeasuredWidth() / 2.0f, e6Var.getMeasuredHeight() / 2.0f, m0Var, e6Var.C2, 0, true);
                 }
-                zg.k0.B = k0Var;
+                zg.i0.B = i0Var;
                 int i13 = R.id.parent_tag;
-                zg.h0 h0Var = k0Var.i;
-                h0Var.setTag(i13, 1);
-                e6Var.addView(h0Var);
+                zg.f0 f0Var = i0Var.i;
+                f0Var.setTag(i13, 1);
+                e6Var.addView(f0Var);
                 c6 c6Var = e6Var.O1;
-                k0Var.s = true;
-                k0Var.y = System.currentTimeMillis();
-                if (o0Var.f != null) {
-                    f7 = MediaDataController.getInstance(e6Var.C2).getEmojiAnimatedSticker(o0Var.f);
-                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(o0Var.f, e6Var.B1);
+                i0Var.s = true;
+                i0Var.y = System.currentTimeMillis();
+                if (m0Var.f != null) {
+                    f7 = MediaDataController.getInstance(e6Var.C2).getEmojiAnimatedSticker(m0Var.f);
+                    SendMessagesHelper.SendMessageParams of2 = SendMessagesHelper.SendMessageParams.of(m0Var.f, e6Var.B1);
                     of2.replyToStoryItem = c6Var.a;
                     of2.payStars = l4.longValue();
                     SendMessagesHelper.getInstance(e6Var.C2).sendMessage(of2);
                 } else {
-                    f7 = org.telegram.ui.Components.q5.f(e6Var.C2, o0Var.g);
+                    f7 = org.telegram.ui.Components.q5.f(e6Var.C2, m0Var.g);
                     String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(f7, null);
                     if (findAnimatedEmojiEmoticon == null) {
                         if (e6Var.f2.getReactionsWindow() != null) {
@@ -85,7 +85,7 @@ public final /* synthetic */ class t4 implements Utilities.Callback {
                         SendMessagesHelper.SendMessageParams of3 = SendMessagesHelper.SendMessageParams.of(findAnimatedEmojiEmoticon, e6Var.B1);
                         of3.entities = new ArrayList<>();
                         TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
-                        tL_messageEntityCustomEmoji.document_id = o0Var.g;
+                        tL_messageEntityCustomEmoji.document_id = m0Var.g;
                         tL_messageEntityCustomEmoji.offset = 0;
                         tL_messageEntityCustomEmoji.length = findAnimatedEmojiEmoticon.length();
                         of3.entities.add(tL_messageEntityCustomEmoji);
@@ -127,7 +127,7 @@ public final /* synthetic */ class t4 implements Utilities.Callback {
                     i10 = R.raw.error;
                     i11 = R.string.UnknownError;
                 }
-                org.telegram.messenger.f0.p(i11, ycVar, i10, 36);
+                org.telegram.messenger.q.p(i11, ycVar, i10, 36);
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj4;

@@ -20,7 +20,7 @@ import org.telegram.ui.Components.q90;
 import org.telegram.ui.Components.tr;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class r0 extends LinearLayout {
     public final ArrayList a;
@@ -194,8 +194,8 @@ public final class r0 extends LinearLayout {
                     size6 = i11;
                 }
                 i10 = size6;
-                if (hg.k0.g(1, arrayList6) == o0Var && arrayList6.size() > 1) {
-                    ((o0) hg.k0.g(2, arrayList6)).b.setScaleY(0.1f);
+                if (hg.c.g(1, arrayList6) == o0Var && arrayList6.size() > 1) {
+                    ((o0) hg.c.g(2, arrayList6)).b.setScaleY(0.1f);
                     ((o0) arrayList6.get(arrayList6.size() - 2)).b.setScaleX(0.1f);
                     ((o0) arrayList6.get(arrayList6.size() - 2)).b.animate().alpha(1.0f).scaleY(1.0f).scaleX(1.0f).setDuration(j3).setInterpolator(trVar).start();
                     size6 = i10;

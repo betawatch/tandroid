@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class rm {
     public long i;
@@ -22,7 +22,7 @@ public final class rm {
     public float q;
     public float r;
     public float s;
-    public e11 u;
+    public f11 u;
     public long v;
     public final org.telegram.ui.ActionBar.e5 x;
     public final m.c3 y;

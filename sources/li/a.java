@@ -8,17 +8,17 @@ import k2.v;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.g91;
+import org.telegram.ui.Components.h91;
 import org.telegram.ui.Components.zl0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class a {
-    public final m a;
+    public final p a;
     public final fh.c b;
     public final ah.c c;
     public final ah.i d;
@@ -28,34 +28,34 @@ public final class a {
     public ViewGroup h;
     public bh.a i;
 
-    public a(m mVar, org.telegram.ui.ActionBar.n nVar) {
-        this.a = mVar;
-        mVar.a = new v(this, 2);
-        mVar.d = new ni.b(AndroidUtilities.dp(48.0f));
+    public a(p pVar, org.telegram.ui.ActionBar.n nVar) {
+        this.a = pVar;
+        pVar.a = new v(this, 2);
+        pVar.d = new ni.b(AndroidUtilities.dp(48.0f));
         fh.c cVar = new fh.c();
         this.b = cVar;
         cVar.a(nVar.f());
-        mVar.z.add(new k(cVar, nVar));
+        pVar.A.add(new n(cVar, nVar));
         if (Build.VERSION.SDK_INT < 31 || !SharedConfig.chatBlurEnabled()) {
             this.f = oi.b.a;
             this.e = null;
             this.d = null;
             ah.c cVar2 = new ah.c(cVar);
             this.c = cVar2;
-            cVar2.h = mVar;
+            cVar2.h = pVar;
             return;
         }
         ah.i iVar = new ah.i(false, false);
         this.d = iVar;
         d dVar = new d();
         this.e = dVar;
-        mVar.a(iVar);
+        pVar.a(iVar);
         fh.d dVar2 = new fh.d(cVar);
         dVar2.f = cVar;
         ah.f.c();
         ah.c cVar3 = new ah.c(dVar2);
         this.c = cVar3;
-        cVar3.h = mVar;
+        cVar3.h = pVar;
         int dp = AndroidUtilities.dp(LiteMode.isEnabled(262144) ? 8.0f : 48.0f);
         cVar3.b = dp;
         cVar3.c = dp;
@@ -67,9 +67,9 @@ public final class a {
     }
 
     public static void c(ViewGroup viewGroup, int i10, int i11, int i12, int i13) {
-        int C = ok.C(48.0f, i10, -AndroidUtilities.dp(8.0f));
+        int C = bi.C(48.0f, i10, -AndroidUtilities.dp(8.0f));
         int i14 = (i10 + i12) - C;
-        int C2 = ok.C(48.0f, i11, -AndroidUtilities.dp(8.0f));
+        int C2 = bi.C(48.0f, i11, -AndroidUtilities.dp(8.0f));
         AndroidUtilities.setViewLayoutMargins(viewGroup, 0, C, 0, C2);
         viewGroup.setPadding(0, i14, 0, (i11 + i13) - C2);
     }
@@ -112,7 +112,7 @@ public final class a {
         fVar.o = gVar3;
         fVar.k = true;
         fVar.invalidateSelf();
-        this.a.c.add(new l(view, fVar));
+        this.a.c.add(new o(view, fVar));
         return fVar;
     }
 
@@ -154,7 +154,7 @@ public final class a {
         fVar.o = gVar3;
         fVar.k = true;
         fVar.invalidateSelf();
-        this.a.c.add(new l(view, fVar));
+        this.a.c.add(new o(view, fVar));
         return fVar;
     }
 
@@ -171,19 +171,19 @@ public final class a {
         kVar.setCenterTitleAndGlass(true);
         kVar.setExtraHeight(AndroidUtilities.dp(6.0f));
         kVar.T0 = true;
-        kVar.K(this.c, eh.b.m(d6Var), false);
+        kVar.J(this.c, eh.b.m(d6Var), false);
     }
 
-    public final void e(FrameLayout frameLayout, g91 g91Var, org.telegram.ui.ActionBar.k kVar, d6 d6Var) {
+    public final void e(FrameLayout frameLayout, h91 h91Var, org.telegram.ui.ActionBar.k kVar, d6 d6Var) {
         this.g = frameLayout;
-        this.h = g91Var;
-        this.a.c(g91Var);
+        this.h = h91Var;
+        this.a.c(h91Var);
         AndroidUtilities.removeFromParent(kVar);
         frameLayout.addView(kVar, z5.e(-1, -2, 48));
         kVar.setAddToContainer(false);
         kVar.setCenterTitleAndGlass(true);
         kVar.setExtraHeight(AndroidUtilities.dp(6.0f));
         kVar.T0 = true;
-        kVar.K(this.c, eh.b.m(d6Var), false);
+        kVar.J(this.c, eh.b.m(d6Var), false);
     }
 }

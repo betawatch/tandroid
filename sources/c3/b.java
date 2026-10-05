@@ -3,7 +3,6 @@ package c3;
 import android.util.Base64;
 import b2.p0;
 import b2.s0;
-import hg.k0;
 import java.io.EOFException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -14,7 +13,7 @@ import java.util.List;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.OneUIUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 12000, 11025, 8000, 7350};
@@ -446,7 +445,7 @@ public abstract class b {
         }
         int l4 = l(hVar);
         int i11 = hVar.i(4);
-        String h10 = k0.h(i10, "mp4a.40.");
+        String h10 = hg.c.h(i10, "mp4a.40.");
         if (i10 == 5 || i10 == 29) {
             l4 = l(hVar);
             int i12 = hVar.i(5);

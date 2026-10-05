@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class b7 {
     public static String a(BufferedInputStream bufferedInputStream, ArrayList arrayList) {
@@ -92,13 +92,13 @@ public abstract class b7 {
         BufferedInputStream bufferedInputStream = new BufferedInputStream(gZIPInputStream);
         String b10 = b(bufferedInputStream, arrayList);
         if (!"P5".equals(b10)) {
-            throw new IOException(t8.b.i("Not a binary PGM (P5), got: ", b10));
+            throw new IOException(sa.e.i("Not a binary PGM (P5), got: ", b10));
         }
         int c10 = c(a(bufferedInputStream, arrayList), "width");
         int c11 = c(a(bufferedInputStream, arrayList), "height");
         int c12 = c(a(bufferedInputStream, arrayList), "maxval");
         if (c12 != 255) {
-            throw new IOException(hg.k0.h(c12, "Only 8-bit PGM supported (maxval=255), got: "));
+            throw new IOException(hg.c.h(c12, "Only 8-bit PGM supported (maxval=255), got: "));
         }
         Bitmap createBitmap = Bitmap.createBitmap(c10, c11, Bitmap.Config.ALPHA_8);
         int rowBytes = createBitmap.getRowBytes();
@@ -133,7 +133,7 @@ public abstract class b7 {
             Iterator it = list.iterator();
             while (it.hasNext()) {
                 String str = (String) it.next();
-                gZIPOutputStream.write(a4.a.p("#", str == null ? "" : str.replace('\r', ' ').replace('\n', ' '), "\n").getBytes(StandardCharsets.US_ASCII));
+                gZIPOutputStream.write(a4.a.q("#", str == null ? "" : str.replace('\r', ' ').replace('\n', ' '), "\n").getBytes(StandardCharsets.US_ASCII));
             }
         }
         Charset charset = StandardCharsets.US_ASCII;

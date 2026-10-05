@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qy0 implements org.telegram.ui.ActionBar.j6 {
     public final /* synthetic */ int a;
@@ -32,11 +32,11 @@ public final /* synthetic */ class qy0 implements org.telegram.ui.ActionBar.j6 {
                 break;
             case 1:
                 p11 p11Var = (p11) n2Var;
-                org.telegram.ui.Components.zl0 zl0Var = p11Var.a;
+                org.telegram.ui.Components.zl0 zl0Var = p11Var.b;
                 if (zl0Var != null) {
                     int childCount = zl0Var.getChildCount();
                     while (i11 < childCount) {
-                        View childAt = p11Var.a.getChildAt(i11);
+                        View childAt = p11Var.b.getChildAt(i11);
                         if (childAt instanceof org.telegram.ui.Cells.ya) {
                             ((org.telegram.ui.Cells.ya) childAt).b();
                         }
@@ -69,34 +69,32 @@ public final /* synthetic */ class qy0 implements org.telegram.ui.ActionBar.j6 {
                 y21Var.setNavigationBarColor(y21Var.getThemedColor(org.telegram.ui.ActionBar.i6.a7));
                 break;
             case 4:
-                f31 f31Var = (f31) n2Var;
-                f31Var.a.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false));
-                f31Var.c.l();
+                ((d31) n2Var).b.l();
                 break;
             case 5:
-                va1 va1Var = (va1) n2Var;
-                u91 u91Var = va1Var.S;
-                if (u91Var != null) {
-                    int childCount2 = u91Var.getChildCount();
+                ta1 ta1Var = (ta1) n2Var;
+                s91 s91Var = ta1Var.S;
+                if (s91Var != null) {
+                    int childCount2 = s91Var.getChildCount();
                     for (int i13 = 0; i13 < childCount2; i13++) {
-                        va1.j0(va1Var.S.getChildAt(i13));
+                        ta1.j0(ta1Var.S.getChildAt(i13));
                     }
-                    int hiddenChildCount = va1Var.S.getHiddenChildCount();
+                    int hiddenChildCount = ta1Var.S.getHiddenChildCount();
                     for (int i14 = 0; i14 < hiddenChildCount; i14++) {
-                        va1.j0(va1Var.S.V(i14));
+                        ta1.j0(ta1Var.S.V(i14));
                     }
-                    int cachedChildCount = va1Var.S.getCachedChildCount();
+                    int cachedChildCount = ta1Var.S.getCachedChildCount();
                     for (int i15 = 0; i15 < cachedChildCount; i15++) {
-                        va1.j0(va1Var.S.P(i15));
+                        ta1.j0(ta1Var.S.P(i15));
                     }
-                    int attachedScrapChildCount = va1Var.S.getAttachedScrapChildCount();
+                    int attachedScrapChildCount = ta1Var.S.getAttachedScrapChildCount();
                     while (i11 < attachedScrapChildCount) {
-                        va1.j0(va1Var.S.O(i11));
+                        ta1.j0(ta1Var.S.O(i11));
                         i11++;
                     }
-                    va1Var.S.getRecycledViewPool().a();
+                    ta1Var.S.getRecycledViewPool().a();
                 }
-                ig.f fVar = va1Var.Z;
+                ig.f fVar = ta1Var.Z;
                 if (fVar != null) {
                     fVar.g = true;
                     break;
@@ -139,35 +137,35 @@ public final /* synthetic */ class qy0 implements org.telegram.ui.ActionBar.j6 {
                 }
                 break;
             case 7:
-                rd1.W((rd1) n2Var);
+                pd1.W((pd1) n2Var);
                 break;
             case 8:
-                ne1 ne1Var = (ne1) n2Var;
-                org.telegram.ui.Components.zl0 zl0Var2 = ne1Var.a;
+                le1 le1Var = (le1) n2Var;
+                org.telegram.ui.Components.zl0 zl0Var2 = le1Var.a;
                 if (zl0Var2 != null) {
                     int childCount3 = zl0Var2.getChildCount();
                     for (int i19 = 0; i19 < childCount3; i19++) {
-                        View childAt3 = ne1Var.a.getChildAt(i19);
+                        View childAt3 = le1Var.a.getChildAt(i19);
                         if (childAt3 instanceof org.telegram.ui.Cells.g4) {
                             ((org.telegram.ui.Cells.g4) childAt3).f(0);
                         }
                     }
                 }
-                org.telegram.ui.Components.zl0 zl0Var3 = ne1Var.b;
+                org.telegram.ui.Components.zl0 zl0Var3 = le1Var.b;
                 if (zl0Var3 != null) {
                     int childCount4 = zl0Var3.getChildCount();
                     for (int i20 = 0; i20 < childCount4; i20++) {
-                        View childAt4 = ne1Var.b.getChildAt(i20);
+                        View childAt4 = le1Var.b.getChildAt(i20);
                         if (childAt4 instanceof org.telegram.ui.Cells.g4) {
                             ((org.telegram.ui.Cells.g4) childAt4).f(0);
                         }
                     }
                 }
-                ne1Var.c.setBackground(org.telegram.ui.ActionBar.x5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.i6.Oh));
-                ne1Var.F.setProgressColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.h6, false));
+                le1Var.c.setBackground(org.telegram.ui.ActionBar.x5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.i6.Oh));
+                le1Var.F.setProgressColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.h6, false));
                 break;
             case 9:
-                yf1.W((yf1) n2Var);
+                wf1.W((wf1) n2Var);
                 break;
             default:
                 UsersSelectActivity usersSelectActivity = (UsersSelectActivity) n2Var;

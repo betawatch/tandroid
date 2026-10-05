@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.tr;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class e2 extends a2 {
     public final p1 b;
@@ -82,8 +82,8 @@ public final class e2 extends a2 {
             l2Var.r = false;
             k2 k2Var = l2Var.f;
             if (k2Var != null) {
-                k2Var.G1(s2Var.c);
-                l2Var.f.E1();
+                k2Var.F1(s2Var.c);
+                l2Var.f.D1();
                 if (l2Var.f.getSelectedCategory() != null) {
                     d2Var.H = l2Var.f.getSelectedCategory().a;
                     androidx.fragment.app.a0 a0Var = d2Var.M;
@@ -97,8 +97,8 @@ public final class e2 extends a2 {
             l2Var.d.setText(s2Var.b);
             k2 k2Var2 = l2Var.f;
             if (k2Var2 != null) {
-                k2Var2.H1(null);
-                l2Var.f.F1();
+                k2Var2.G1(null);
+                l2Var.f.E1();
             }
             AndroidUtilities.cancelRunOnUIThread(d2Var.M);
             AndroidUtilities.runOnUIThread(d2Var.M);
@@ -122,7 +122,7 @@ public final class e2 extends a2 {
             }
             Object tag = p1Var.getChildAt(i10).getTag();
             if ((tag instanceof Integer) && ((Integer) tag).intValue() == 34) {
-                return org.telegram.messenger.f0.b(102.0f, r3.getBottom(), 0);
+                return org.telegram.messenger.q.b(102.0f, r3.getBottom(), 0);
             }
             i10++;
         }

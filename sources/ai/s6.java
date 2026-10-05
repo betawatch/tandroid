@@ -16,7 +16,7 @@ import org.telegram.ui.Components.hb0;
 import org.telegram.ui.Components.ol0;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class s6 implements ol0 {
     public final /* synthetic */ jc a;
@@ -84,13 +84,13 @@ public final class s6 implements ol0 {
                             case 0:
                                 messagesController2.getStoriesController().j0(user2.id, true, true);
                                 k7 k7Var2 = s6Var.b;
-                                hg.k0.p(R.string.StoryHidFromToast, new Object[]{str3}, new yc(k7Var2, k7Var2.s), R.raw.ic_ban, 36);
+                                hg.c.q(R.string.StoryHidFromToast, new Object[]{str3}, new yc(k7Var2, k7Var2.s), R.raw.ic_ban, 36);
                                 o6Var2.a(k7Var2.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                             default:
                                 messagesController2.getStoriesController().j0(user2.id, false, true);
                                 k7 k7Var3 = s6Var.b;
-                                hg.k0.p(R.string.StoryShownBackToToast, new Object[]{str3}, new yc(k7Var3, k7Var3.s), R.raw.contact_check, 36);
+                                hg.c.q(R.string.StoryShownBackToToast, new Object[]{str3}, new yc(k7Var3, k7Var3.s), R.raw.contact_check, 36);
                                 o6Var2.a(k7Var3.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                         }
@@ -119,13 +119,13 @@ public final class s6 implements ol0 {
                             case 0:
                                 messagesController2.getStoriesController().j0(user2.id, true, true);
                                 k7 k7Var2 = s6Var.b;
-                                hg.k0.p(R.string.StoryHidFromToast, new Object[]{str3}, new yc(k7Var2, k7Var2.s), R.raw.ic_ban, 36);
+                                hg.c.q(R.string.StoryHidFromToast, new Object[]{str3}, new yc(k7Var2, k7Var2.s), R.raw.ic_ban, 36);
                                 o6Var2.a(k7Var2.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                             default:
                                 messagesController2.getStoriesController().j0(user2.id, false, true);
                                 k7 k7Var3 = s6Var.b;
-                                hg.k0.p(R.string.StoryShownBackToToast, new Object[]{str3}, new yc(k7Var3, k7Var3.s), R.raw.contact_check, 36);
+                                hg.c.q(R.string.StoryShownBackToToast, new Object[]{str3}, new yc(k7Var3, k7Var3.s), R.raw.contact_check, 36);
                                 o6Var2.a(k7Var3.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                         }

@@ -36,8 +36,8 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.hi;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
+import org.telegram.messenger.ii;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
@@ -56,7 +56,7 @@ import org.telegram.ui.h60;
 import org.telegram.ui.hz0;
 import w7.z5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class g2 {
     public static long a;
@@ -129,7 +129,7 @@ public abstract class g2 {
                         g2.b(TLRPC.User.this, chat, str, inputPeer, false, z11, z12, z13, activity, n2Var, accountInstance, false, false, false);
                     }
                 });
-                hg.k0.o(R.string.Cancel, alertDialog$Builder, null);
+                hg.c.p(R.string.Cancel, alertDialog$Builder, null);
                 return;
             }
             if (chat != null && inputPeer != null && (chatFull = accountInstance.getMessagesController().getChatFull(chat.id)) != null) {
@@ -237,7 +237,7 @@ public abstract class g2 {
                 arrayList.remove(file2);
             }
         }
-        return z10 ? new File(file, t8.b.v(str, "_stats.log")).getAbsolutePath() : new File(file, t8.b.v(str, ".log")).getAbsolutePath();
+        return z10 ? new File(file, sa.e.v(str, "_stats.log")).getAbsolutePath() : new File(file, sa.e.v(str, ".log")).getAbsolutePath();
     }
 
     public static void f(TLRPC.User user, TLRPC.Chat chat, String str, boolean z10, boolean z11, boolean z12, Boolean bool, Activity activity, org.telegram.ui.ActionBar.n2 n2Var, AccountInstance accountInstance) {
@@ -330,7 +330,7 @@ public abstract class g2 {
             objArr[c10] = formatName;
             b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString(i10, objArr));
             alertDialog$Builder.k(LocaleController.getString(R.string.OK), new y1(user, chat, str, z10, z11, z12, activity, n2Var, accountInstance));
-            hg.k0.o(R.string.Cancel, alertDialog$Builder, null);
+            hg.c.p(R.string.Cancel, alertDialog$Builder, null);
         }
     }
 
@@ -395,7 +395,7 @@ public abstract class g2 {
 
     public static void i(Activity activity) {
         final SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-        LinearLayout e7 = org.telegram.messenger.f0.e(activity, 1);
+        LinearLayout e7 = org.telegram.messenger.q.e(activity, 1);
         TextView textView = new TextView(activity);
         textView.setTextSize(1, 15.0f);
         textView.setText("Please only change these settings if you know exactly what they do.");
@@ -564,21 +564,21 @@ public abstract class g2 {
         final File file4 = file;
         final int[] iArr = {0};
         int i11 = 1;
-        LinearLayout f7 = ok.f(context, 1);
+        LinearLayout e7 = bi.e(context, 1);
         int dp = AndroidUtilities.dp(16.0f);
-        f7.setPadding(dp, dp, dp, 0);
+        e7.setPadding(dp, dp, dp, 0);
         final TextView textView = new TextView(context);
         textView.setTextSize(2, 16.0f);
         com.google.android.gms.internal.vision.e2.p(i6.j5, null, false, textView, 17);
         textView.setText(LocaleController.getString(R.string.VoipRateCallAlert));
-        f7.addView(textView);
+        e7.addView(textView);
         final aa aaVar = new aa(context);
         aaVar.c = new Paint();
         aaVar.d = 5;
         aaVar.e = 0;
         aaVar.a = BitmapFactory.decodeResource(aaVar.getResources(), R.drawable.ic_rating_star_filled).extractAlpha();
         aaVar.b = BitmapFactory.decodeResource(aaVar.getResources(), R.drawable.ic_rating_star).extractAlpha();
-        f7.addView(aaVar, z5.t(-2, -2, 1, 0, 16, 0, 0));
+        e7.addView(aaVar, z5.t(-2, -2, 1, 0, 16, 0, 0));
         final LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         ai.e2 e2Var = new ai.e2(14);
@@ -638,7 +638,7 @@ public abstract class g2 {
             i12++;
             i11 = 1;
         }
-        f7.addView(linearLayout, z5.k(-8.0f, 0.0f, -8.0f, 0.0f, -1, -2));
+        e7.addView(linearLayout, z5.k(-8.0f, 0.0f, -8.0f, 0.0f, -1, -2));
         linearLayout.setVisibility(8);
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         editTextBoldCursor.setHint(LocaleController.getString(R.string.VoipFeedbackCommentHint));
@@ -650,20 +650,20 @@ public abstract class g2 {
         editTextBoldCursor.setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
         editTextBoldCursor.setTextSize(1, 18.0f);
         editTextBoldCursor.setVisibility(8);
-        f7.addView(editTextBoldCursor, z5.k(8.0f, 8.0f, 8.0f, 0.0f, -1, -2));
+        e7.addView(editTextBoldCursor, z5.k(8.0f, 8.0f, 8.0f, 0.0f, -1, -2));
         final boolean[] zArr = {true};
         final org.telegram.ui.Cells.a2 a2Var2 = new org.telegram.ui.Cells.a2(context, 1);
         gt gtVar = new gt(25, zArr, a2Var2);
         a2Var2.e(LocaleController.getString(R.string.CallReportIncludeLogs), null, true, false, false);
         a2Var2.setClipToPadding(false);
         a2Var2.setOnClickListener(gtVar);
-        f7.addView(a2Var2, z5.k(-8.0f, 0.0f, -8.0f, 0.0f, -1, -2));
+        e7.addView(a2Var2, z5.k(-8.0f, 0.0f, -8.0f, 0.0f, -1, -2));
         final TextView textView2 = new TextView(context);
         textView2.setTextSize(2, 14.0f);
         textView2.setTextColor(i6.w0(null, i6.r5, false));
         textView2.setPadding(org.telegram.ui.Cells.c1.d(8.0f, R.string.CallReportLogsExplain, textView2), 0, AndroidUtilities.dp(8.0f), 0);
         textView2.setOnClickListener(gtVar);
-        f7.addView(textView2);
+        e7.addView(textView2);
         a2Var2.setVisibility(8);
         textView2.setVisibility(8);
         if (!file4.exists()) {
@@ -671,7 +671,7 @@ public abstract class g2 {
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.CallMessageReportProblem);
-        alertDialog$Builder.n(f7);
+        alertDialog$Builder.n(e7);
         alertDialog$Builder.k(LocaleController.getString(R.string.Send), new s0.b(24));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         alertDialog$Builder.a.setOnDismissListener(new d2(1, hz0Var));
@@ -737,7 +737,7 @@ public abstract class g2 {
                 tL_inputPhoneCall.access_hash = j10;
                 tL_inputPhoneCall.id = j3;
                 setcallrating.user_initiative = z11;
-                ConnectionsManager.getInstance(i10).sendRequest(setcallrating, new hi(i13, zArr2, file5, setcallrating, arrayList, context));
+                ConnectionsManager.getInstance(i10).sendRequest(setcallrating, new ii(i13, zArr2, file5, setcallrating, arrayList, context));
                 b2Var2.dismiss();
             }
         });

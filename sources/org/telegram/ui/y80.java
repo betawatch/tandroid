@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y80 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -51,10 +51,10 @@ public final /* synthetic */ class y80 implements Runnable {
                     bundle.putLong("user_id", user.id);
                     launchActivity.p0(new yn(bundle));
                 } else {
-                    StringBuilder v = a4.a.v("cant import contact token. token=", str, " err=");
-                    v.append(tL_error == null ? null : tL_error.text);
-                    FileLog.e(v.toString());
-                    org.telegram.messenger.ok.p(R.string.NoUsernameFound, org.telegram.ui.Components.yc.a0((org.telegram.ui.ActionBar.n2) hg.k0.g(1, launchActivity.d0)), null);
+                    StringBuilder w10 = a4.a.w("cant import contact token. token=", str, " err=");
+                    w10.append(tL_error == null ? null : tL_error.text);
+                    FileLog.e(w10.toString());
+                    org.telegram.messenger.bi.o(R.string.NoUsernameFound, org.telegram.ui.Components.yc.a0((org.telegram.ui.ActionBar.n2) hg.c.g(1, launchActivity.d0)), null);
                 }
                 try {
                     h90Var.run();
@@ -77,7 +77,7 @@ public final /* synthetic */ class y80 implements Runnable {
                             i10 = R.raw.error;
                             i11 = R.string.UniqueGiftNotFound;
                         }
-                        org.telegram.messenger.f0.p(i11, a02, i10, 36);
+                        org.telegram.messenger.q.p(i11, a02, i10, 36);
                     }
                 } else if (tLObject instanceof TL_stars.TL_payments_uniqueStarGift) {
                     TL_stars.TL_payments_uniqueStarGift tL_payments_uniqueStarGift = (TL_stars.TL_payments_uniqueStarGift) tLObject;
@@ -87,14 +87,14 @@ public final /* synthetic */ class y80 implements Runnable {
                     org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
                     TL_stars.StarGift starGift = tL_payments_uniqueStarGift.gift;
                     if (starGift instanceof TL_stars.TL_starGiftUnique) {
-                        yh.x3 x3Var = new yh.x3(launchActivity2, this.e, 0L, null, null);
-                        x3Var.h2(str, (TL_stars.TL_starGiftUnique) starGift, null);
+                        yh.y3 y3Var = new yh.y3(launchActivity2, this.e, 0L, null, null);
+                        y3Var.h2(str, (TL_stars.TL_starGiftUnique) starGift, null);
                         if (U2 == null) {
-                            x3Var.show();
+                            y3Var.show();
                         } else if (U2.getLastStoryViewer() == null || !U2.getLastStoryViewer().K0) {
-                            U2.showDialog(x3Var);
+                            U2.showDialog(y3Var);
                         } else {
-                            U2.getLastStoryViewer().showDialog(x3Var);
+                            U2.getLastStoryViewer().showDialog(y3Var);
                         }
                     }
                 }

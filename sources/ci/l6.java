@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class l6 extends FrameLayout {
     public float a;
@@ -106,7 +106,7 @@ public final class l6 extends FrameLayout {
             if (q5Var != null && q5Var.getSelectedColorIndex() != 0) {
                 dp = AndroidUtilities.lerp(f11 - AndroidUtilities.dp(3.0f), AndroidUtilities.dp(2.0f) + f11, mbVar.D1);
             }
-            qg.i1.z1(f7, f10, dp, paint.getColor(), canvas2);
+            qg.i1.y1(f7, f10, dp, paint.getColor(), canvas2);
             if (q5Var != null && q5Var.getSelectedColorIndex() == 0) {
                 paint3.setAlpha((int) (view.getAlpha() * paint3.getAlpha() * mbVar.D1));
                 canvas2.drawCircle(f7, f10, com.google.android.gms.internal.vision.e2.b(1.0f, mbVar.D1, paint3.getStrokeWidth() + AndroidUtilities.dp(3.0f), f11), paint3);

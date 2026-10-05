@@ -6,10 +6,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w3 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -49,19 +50,19 @@ public final /* synthetic */ class w3 implements Utilities.Callback2 {
                     TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj3;
                     boolean contains = v3Var.j.contains(Long.valueOf(stargiftattributemodel.document.id));
                     boolean z10 = !contains;
-                    if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(translitSafe) || org.telegram.messenger.f0.w(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || org.telegram.messenger.f0.w(" ", translitSafe, stargiftattributemodel.name.toLowerCase())) {
+                    if (TextUtils.isEmpty(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase) || stargiftattributemodel.name.toLowerCase().startsWith(translitSafe) || bi.u(" ", lowerCase, stargiftattributemodel.name.toLowerCase()) || bi.u(" ", translitSafe, stargiftattributemodel.name.toLowerCase())) {
                         Integer num = (Integer) v3Var.m.get(Long.valueOf(stargiftattributemodel.document.id));
                         int intValue = num == null ? 0 : num.intValue();
                         int i12 = p3.a;
-                        g61 J = g61.J(p3.class);
-                        J.G = stargiftattributemodel;
-                        J.l = lowerCase;
-                        J.z = intValue;
+                        h61 K = h61.K(p3.class);
+                        K.G = stargiftattributemodel;
+                        K.l = lowerCase;
+                        K.z = intValue;
                         if (!TextUtils.isEmpty(lowerCase)) {
                             z10 = (isEmpty || contains) ? false : true;
                         }
-                        J.K(z10);
-                        arrayList2.add(J);
+                        K.L(z10);
+                        arrayList2.add(K);
                     }
                 }
                 if (arrayList2.isEmpty()) {
@@ -87,20 +88,20 @@ public final /* synthetic */ class w3 implements Utilities.Callback2 {
                         str2 = str;
                     } else {
                         str2 = str;
-                        str = (org.telegram.messenger.f0.w(str2, lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || org.telegram.messenger.f0.w(str2, translitSafe2, stargiftattributebackdrop.name.toLowerCase())) ? " " : str2;
+                        str = (bi.u(str2, lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || bi.u(str2, translitSafe2, stargiftattributebackdrop.name.toLowerCase())) ? " " : str2;
                     }
                     Integer num2 = (Integer) v3Var2.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                     int intValue2 = num2 == null ? 0 : num2.intValue();
                     int i14 = i3.a;
-                    g61 J2 = g61.J(i3.class);
-                    J2.G = stargiftattributebackdrop;
-                    J2.l = lowerCase2;
-                    J2.z = intValue2;
+                    h61 K2 = h61.K(i3.class);
+                    K2.G = stargiftattributebackdrop;
+                    K2.l = lowerCase2;
+                    K2.z = intValue2;
                     if (!TextUtils.isEmpty(lowerCase2)) {
                         z11 = (isEmpty2 || contains2) ? false : true;
                     }
-                    J2.K(z11);
-                    arrayList3.add(J2);
+                    K2.L(z11);
+                    arrayList3.add(K2);
                 }
                 if (arrayList3.isEmpty()) {
                     arrayList3.add(k3.a(LocaleController.getString(R.string.Gift2ResaleFiltersBackdropEmpty)));
@@ -121,20 +122,20 @@ public final /* synthetic */ class w3 implements Utilities.Callback2 {
                     TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj5;
                     boolean contains3 = v3Var3.l.contains(Long.valueOf(stargiftattributepattern.document.id));
                     boolean z12 = !contains3;
-                    if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(translitSafe3) || org.telegram.messenger.f0.w(str4, lowerCase3, stargiftattributepattern.name.toLowerCase()) || org.telegram.messenger.f0.w(str4, translitSafe3, stargiftattributepattern.name.toLowerCase())) {
+                    if (TextUtils.isEmpty(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase3) || stargiftattributepattern.name.toLowerCase().startsWith(translitSafe3) || bi.u(str4, lowerCase3, stargiftattributepattern.name.toLowerCase()) || bi.u(str4, translitSafe3, stargiftattributepattern.name.toLowerCase())) {
                         str3 = str4;
                         Integer num3 = (Integer) v3Var3.o.get(Long.valueOf(stargiftattributepattern.document.id));
                         int intValue3 = num3 == null ? 0 : num3.intValue();
                         int i16 = s3.a;
-                        g61 J3 = g61.J(s3.class);
-                        J3.G = stargiftattributepattern;
-                        J3.l = lowerCase3;
-                        J3.z = intValue3;
+                        h61 K3 = h61.K(s3.class);
+                        K3.G = stargiftattributepattern;
+                        K3.l = lowerCase3;
+                        K3.z = intValue3;
                         if (!TextUtils.isEmpty(lowerCase3)) {
                             z12 = (isEmpty3 || contains3) ? false : true;
                         }
-                        J3.K(z12);
-                        arrayList4.add(J3);
+                        K3.L(z12);
+                        arrayList4.add(K3);
                     } else {
                         str3 = str4;
                     }

@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -434,18 +434,18 @@ public final /* synthetic */ class v implements View.OnLongClickListener {
                 }
                 return false;
             default:
-                c71 c71Var = (c71) this.b;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(c71Var.getContext(), 0, null);
+                a71 a71Var = (a71) this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(a71Var.getContext(), 0, null);
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiStatusesTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiStatusesText);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Clear), new h51(c71Var));
+                alertDialog$Builder.k(LocaleController.getString(R.string.Clear), new f51(a71Var));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 alertDialog$Builder.a.P0 = false;
-                alertDialog$Builder.j(new s5(c71Var, 15));
+                alertDialog$Builder.j(new s5(a71Var, 15));
                 alertDialog$Builder.o();
-                c71Var.w(1.0f);
+                a71Var.w(1.0f);
                 try {
-                    c71Var.performHapticFeedback(0, 1);
+                    a71Var.performHapticFeedback(0, 1);
                 } catch (Exception unused3) {
                 }
                 return true;

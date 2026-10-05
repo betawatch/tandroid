@@ -12,19 +12,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.cl0;
 import org.telegram.ui.Components.e6;
-import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.gw0;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.uk0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class a2 extends j {
-    public fw0 q0;
+    public gw0 q0;
     public ob r0;
     public ob s0;
-    public zg.f0 t0;
-    public zg.f0 u0;
-    public zg.o0 v0;
+    public zg.d0 t0;
+    public zg.d0 u0;
+    public zg.m0 v0;
     public e6 w0;
     public e6 x0;
     public boolean y0;
@@ -39,7 +39,7 @@ public final class a2 extends j {
 
     @Override // qg.j, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        fw0 fw0Var = this.q0;
+        gw0 gw0Var = this.q0;
         int padding = getPadding();
         float d = this.x0.d(1.0f, false);
         if (d == 1.0f) {
@@ -51,12 +51,12 @@ public final class a2 extends j {
         ob obVar = this.s0;
         if (obVar != null) {
             obVar.e = (int) ((1.0f - d) * 255.0f);
-            obVar.setBounds(padding, padding, ((int) fw0Var.a) - padding, ((int) fw0Var.b) - padding);
+            obVar.setBounds(padding, padding, ((int) gw0Var.a) - padding, ((int) gw0Var.b) - padding);
             this.s0.draw(canvas);
         }
         ob obVar2 = this.r0;
         obVar2.e = (int) (d * 255.0f);
-        obVar2.setBounds(padding, padding, ((int) fw0Var.a) - padding, ((int) fw0Var.b) - padding);
+        obVar2.setBounds(padding, padding, ((int) gw0Var.a) - padding, ((int) gw0Var.b) - padding);
         this.r0.draw(canvas);
         Rect rect = AndroidUtilities.rectTmp2;
         float width = (this.r0.getBounds().width() * 0.61f) / 2.0f;
@@ -71,21 +71,21 @@ public final class a2 extends j {
             canvas.save();
             float f10 = 1.0f - d10;
             canvas.scale(f10, f10, rect.centerX(), rect.top);
-            zg.f0 f0Var = this.u0;
-            f0Var.h = f10;
-            f0Var.a(canvas);
+            zg.d0 d0Var = this.u0;
+            d0Var.h = f10;
+            d0Var.a(canvas);
             canvas.restore();
             canvas.save();
             canvas.scale(d10, d10, rect.centerX(), rect.bottom);
-            zg.f0 f0Var2 = this.t0;
-            f0Var2.h = d10;
-            f0Var2.a(canvas);
+            zg.d0 d0Var2 = this.t0;
+            d0Var2.h = d10;
+            d0Var2.a(canvas);
             canvas.restore();
         }
         canvas.restore();
     }
 
-    public zg.o0 getCurrentReaction() {
+    public zg.m0 getCurrentReaction() {
         return this.v0;
     }
 
@@ -118,9 +118,9 @@ public final class a2 extends j {
 
     @Override // qg.j
     public final void k() {
-        fw0 fw0Var = this.q0;
-        float f7 = fw0Var.a / 2.0f;
-        float f10 = fw0Var.b / 2.0f;
+        gw0 gw0Var = this.q0;
+        float f7 = gw0Var.a / 2.0f;
+        float f10 = gw0Var.b / 2.0f;
         setX(getPositionX() - f7);
         setY(getPositionY() - f10);
         m();
@@ -142,8 +142,8 @@ public final class a2 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        fw0 fw0Var = this.q0;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) fw0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) fw0Var.b, TLObject.FLAG_30));
+        gw0 gw0Var = this.q0;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) gw0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) gw0Var.b, TLObject.FLAG_30));
     }
 
     public final void q(boolean z10) {
@@ -179,21 +179,21 @@ public final class a2 extends j {
         ofFloat.start();
     }
 
-    public final void s(zg.o0 o0Var, boolean z10) {
-        if (Objects.equals(this.v0, o0Var)) {
+    public final void s(zg.m0 m0Var, boolean z10) {
+        if (Objects.equals(this.v0, m0Var)) {
             return;
         }
         if (!z10) {
-            this.v0 = o0Var;
-            this.t0.e(o0Var);
+            this.v0 = m0Var;
+            this.t0.e(m0Var);
             invalidate();
             return;
         }
-        this.v0 = o0Var;
-        this.u0.e(o0Var);
-        zg.f0 f0Var = this.t0;
+        this.v0 = m0Var;
+        this.u0.e(m0Var);
+        zg.d0 d0Var = this.t0;
         this.t0 = this.u0;
-        this.u0 = f0Var;
+        this.u0 = d0Var;
         this.w0.d(0.0f, true);
         invalidate();
     }

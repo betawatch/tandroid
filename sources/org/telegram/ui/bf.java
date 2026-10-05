@@ -33,7 +33,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bf implements Runnable {
     public final /* synthetic */ int a;
@@ -422,10 +422,10 @@ public final /* synthetic */ class bf implements Runnable {
                 }
             case 10:
                 ((boolean[]) obj6)[0] = true;
-                ((yh.t5) obj7).Z((String) obj3, (TLRPC.ChatInvite) obj5, new yh.e4((boolean[]) obj4, (Utilities.Callback2) obj2, (Utilities.Callback) obj));
+                ((yh.u5) obj7).Z((String) obj3, (TLRPC.ChatInvite) obj5, new yh.f4((boolean[]) obj4, (Utilities.Callback2) obj2, (Utilities.Callback) obj));
                 break;
             case 11:
-                yh.t5 t5Var = (yh.t5) obj7;
+                yh.u5 u5Var = (yh.u5) obj7;
                 TLObject tLObject10 = (TLObject) obj6;
                 MessageObject messageObject3 = (MessageObject) obj5;
                 TLRPC.InputInvoice inputInvoice = (TLRPC.InputInvoice) obj4;
@@ -433,15 +433,15 @@ public final /* synthetic */ class bf implements Runnable {
                 org.telegram.ui.Components.yc ycVar = (org.telegram.ui.Components.yc) obj2;
                 TLRPC.TL_error tL_error8 = (TLRPC.TL_error) obj;
                 if (tLObject10 instanceof TLRPC.TL_payments_paymentFormStars) {
-                    t5Var.a0(messageObject3, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject10, callback3);
+                    u5Var.a0(messageObject3, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject10, callback3);
                     break;
                 } else {
                     callback3.run(Boolean.FALSE);
-                    hg.k0.p(R.string.UnknownErrorCode, new Object[]{tL_error8 != null ? tL_error8.text : "FAILED_GETTING_FORM"}, ycVar, R.raw.error, 36);
+                    hg.c.q(R.string.UnknownErrorCode, new Object[]{tL_error8 != null ? tL_error8.text : "FAILED_GETTING_FORM"}, ycVar, R.raw.error, 36);
                     break;
                 }
             case 12:
-                yh.t5 t5Var2 = (yh.t5) obj7;
+                yh.u5 u5Var2 = (yh.u5) obj7;
                 List list2 = (List) obj6;
                 org.telegram.ui.Components.r80 r80Var = (org.telegram.ui.Components.r80) obj5;
                 TLRPC.TL_inputStorePaymentStarsGift tL_inputStorePaymentStarsGift = (TLRPC.TL_inputStorePaymentStarsGift) obj4;
@@ -449,35 +449,35 @@ public final /* synthetic */ class bf implements Runnable {
                 c5.h hVar2 = (c5.h) obj2;
                 Activity activity = (Activity) obj;
                 if (list2.isEmpty()) {
-                    AndroidUtilities.runOnUIThread(new yh.l4(r80Var, i19));
+                    AndroidUtilities.runOnUIThread(new yh.m4(r80Var, i19));
                     break;
                 } else {
                     c5.o oVar = (c5.o) list2.get(0);
                     c5.k a2 = oVar.a();
                     if (a2 == null) {
-                        AndroidUtilities.runOnUIThread(new yh.l4(r80Var, i17));
+                        AndroidUtilities.runOnUIThread(new yh.m4(r80Var, i17));
                         break;
                     } else {
                         tL_inputStorePaymentStarsGift.currency = a2.c;
                         tL_inputStorePaymentStarsGift.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                         TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore2 = new TLRPC.TL_payments_canPurchaseStore();
                         tL_payments_canPurchaseStore2.purpose = tL_inputStorePaymentStarsGift;
-                        ConnectionsManager.getInstance(t5Var2.a).sendRequest(tL_payments_canPurchaseStore2, new fh1(oVar, hVar2, r80Var, activity, tL_inputStorePaymentStarsGift, list2, 4));
+                        ConnectionsManager.getInstance(u5Var2.a).sendRequest(tL_payments_canPurchaseStore2, new dh1(oVar, hVar2, r80Var, activity, tL_inputStorePaymentStarsGift, list2, 4));
                         break;
                     }
                 }
             default:
-                yh.p8 p8Var = (yh.p8) obj7;
+                yh.r8 r8Var = (yh.r8) obj7;
                 ai.h1[] h1VarArr = (ai.h1[]) obj6;
                 int[] iArr2 = (int[]) obj5;
                 RectF rectF = (RectF) obj4;
                 View view = (View) obj3;
-                zg.p0 p0Var = (zg.p0) obj2;
-                zg.m0 m0Var = (zg.m0) obj;
-                if (p8Var.d) {
+                zg.n0 n0Var2 = (zg.n0) obj2;
+                zg.k0 k0Var = (zg.k0) obj;
+                if (r8Var.d) {
                     ai.h1 h1Var = h1VarArr[0];
                     if (h1Var == null) {
-                        h1Var = p8Var.N.d(p8Var.O);
+                        h1Var = r8Var.N.d(r8Var.O);
                         h1VarArr[0] = h1Var;
                     }
                     if (h1Var != null) {
@@ -495,7 +495,7 @@ public final /* synthetic */ class bf implements Runnable {
                     }
                 } else {
                     view.getLocationInWindow(iArr2);
-                    rectF.set(AndroidUtilities.dp(4.0f) + iArr2[0] + p0Var.c + m0Var.x, ((m0Var.B - AndroidUtilities.dp(22.0f)) / 2.0f) + iArr2[1] + p0Var.d + m0Var.y, AndroidUtilities.dp(26.0f) + iArr2[0] + p0Var.c + m0Var.x, ((AndroidUtilities.dp(22.0f) + m0Var.B) / 2.0f) + iArr2[1] + p0Var.d + m0Var.y);
+                    rectF.set(AndroidUtilities.dp(4.0f) + iArr2[0] + n0Var2.c + k0Var.x, ((k0Var.B - AndroidUtilities.dp(22.0f)) / 2.0f) + iArr2[1] + n0Var2.d + k0Var.y, AndroidUtilities.dp(26.0f) + iArr2[0] + n0Var2.c + k0Var.x, ((AndroidUtilities.dp(22.0f) + k0Var.B) / 2.0f) + iArr2[1] + n0Var2.d + k0Var.y);
                     break;
                 }
                 break;

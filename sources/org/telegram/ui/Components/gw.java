@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public abstract class gw extends en0 {
     public static final int[] e0 = {R.drawable.msg_emoji_smiles, R.drawable.msg_emoji_cat, R.drawable.msg_emoji_food, R.drawable.msg_emoji_activities, R.drawable.msg_emoji_travel, R.drawable.msg_emoji_objects, R.drawable.msg_emoji_other, R.drawable.msg_emoji_flags};
@@ -558,7 +558,7 @@ public abstract class gw extends en0 {
                 if (cwVar5 != null) {
                     cwVar5.bringToFront();
                     if (cwVar5.getAlpha() < 1.0f) {
-                        cwVar5.animate().alpha(1.0f).setDuration(zg.e0.d() ? 0L : 200L).setInterpolator(tr.f).start();
+                        cwVar5.animate().alpha(1.0f).setDuration(zg.c0.d() ? 0L : 200L).setInterpolator(tr.f).start();
                     }
                 }
                 for (int i18 = 0; i18 < arrayList2.size(); i18++) {

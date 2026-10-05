@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import n6.l;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements q9.d {
     public static final /* synthetic */ b b = new b(0);
@@ -20,7 +20,7 @@ public final /* synthetic */ class b implements q9.d {
     public final Object E(cf.c cVar) {
         switch (this.a) {
             case 0:
-                ArrayList arrayList = new ArrayList(cVar.v(tb.a.class));
+                ArrayList arrayList = new ArrayList(cVar.q(tb.a.class));
                 l.j("No delegate creator registered.", !arrayList.isEmpty());
                 Collections.sort(arrayList, c.a);
                 return new e((Context) cVar.a(Context.class), (tb.a) arrayList.get(0));

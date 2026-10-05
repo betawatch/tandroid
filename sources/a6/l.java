@@ -13,13 +13,12 @@ import com.google.android.gms.common.api.internal.t0;
 import com.google.android.gms.common.api.s;
 import com.google.android.gms.internal.clearcut.v0;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import hg.k0;
 import org.json.JSONException;
 import t7.u;
 import v7.g5;
 import w7.h9;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class l extends b8.b {
     public final /* synthetic */ int b = 0;
@@ -103,7 +102,7 @@ public final class l extends b8.b {
 
     public void L0() {
         if (!u6.b.e((RevocationBoundService) this.c, Binder.getCallingUid())) {
-            throw new SecurityException(k0.i(Binder.getCallingUid(), "Calling UID ", " is not Google Play services."));
+            throw new SecurityException(hg.c.i(Binder.getCallingUid(), "Calling UID ", " is not Google Play services."));
         }
     }
 

@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class be implements Runnable {
     public final /* synthetic */ int a;
@@ -86,7 +86,7 @@ public final /* synthetic */ class be implements Runnable {
                 TLRPC.TL_attachMenuBot tL_attachMenuBot = (TLRPC.TL_attachMenuBot) this.c;
                 MediaDataController.getInstance(xiVar2.J1).loadAttachMenuBots(false, true);
                 if (xiVar2.y0 == xiVar2.x0.get(tL_attachMenuBot.bot_id)) {
-                    xiVar2.N1(xiVar2.j0);
+                    xiVar2.P1(xiVar2.j0);
                     break;
                 }
                 break;
@@ -95,7 +95,7 @@ public final /* synthetic */ class be implements Runnable {
                 TLRPC.TL_attachMenuBot tL_attachMenuBot2 = ((qi) this.c).c;
                 tL_attachMenuBot2.side_menu_disclaimer_needed = false;
                 tL_attachMenuBot2.inactive = false;
-                xiVar3.K1(tL_attachMenuBot2.bot_id, null, false, true);
+                xiVar3.M1(tL_attachMenuBot2.bot_id, null, false, true);
                 MediaDataController.getInstance(xiVar3.J1).updateAttachMenuBotsInCache();
                 break;
             case 8:
@@ -177,9 +177,9 @@ public final /* synthetic */ class be implements Runnable {
                 break;
             case 17:
                 ko koVar = (ko) this.b;
-                hg.g gVar = (hg.g) this.c;
+                hg.h hVar = (hg.h) this.c;
                 mo.a(koVar.c);
-                gVar.run();
+                hVar.run();
                 break;
             case 18:
                 ((kp) this.b).b.x((List) this.c);
@@ -223,11 +223,11 @@ public final /* synthetic */ class be implements Runnable {
                     prVar2.c0 = groupcallstreamrtmpurl.key;
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(prVar2.c0);
                     prVar2.d0 = spannableStringBuilder;
-                    m11 m11Var = new m11();
-                    m11Var.a |= 256;
-                    m11Var.b = 0;
-                    m11Var.c = spannableStringBuilder.length();
-                    prVar2.d0.setSpan(new n11(m11Var, 0), 0, prVar2.d0.length(), 0);
+                    n11 n11Var = new n11();
+                    n11Var.a |= 256;
+                    n11Var.b = 0;
+                    n11Var.c = spannableStringBuilder.length();
+                    prVar2.d0.setSpan(new o11(n11Var, 0), 0, prVar2.d0.length(), 0);
                     prVar2.e0.N(false);
                     break;
                 }

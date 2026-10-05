@@ -42,7 +42,7 @@ public final class b extends o6.a {
         sb2.append(",collectForDebugStartTimeMillis: ");
         sb2.append(this.b);
         sb2.append(",collectForDebugExpiryTimeMillis: ");
-        return a4.a.r(sb2, this.c, "]");
+        return a4.a.s(sb2, this.c, "]");
     }
 
     @Override // android.os.Parcelable

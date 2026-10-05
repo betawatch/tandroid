@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class l0 {
     public Long a;
@@ -40,7 +40,7 @@ public final class l0 {
         TLRPC.User user = MessagesController.getInstance(m0Var.b).getUser(Long.valueOf(m0Var.c));
         DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str));
         request.setTitle(UserObject.getUserName(user));
-        request.setDescription(TextUtils.isEmpty(str2) ? "Downloading file..." : a4.a.p("Downloading ", str2, "..."));
+        request.setDescription(TextUtils.isEmpty(str2) ? "Downloading file..." : a4.a.q("Downloading ", str2, "..."));
         request.setNotificationVisibility(0);
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, str2);
         this.a = Long.valueOf(m0Var.d.enqueue(request));

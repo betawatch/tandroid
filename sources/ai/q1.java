@@ -18,7 +18,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -99,7 +99,7 @@ public final /* synthetic */ class q1 implements RequestDelegate {
                                     i10++;
                                     tL_dataJSON = ((TL_update.TL_updateGroupCallConnection) obj3).params;
                                 }
-                                hg.k0.t(new StringBuilder("[LivePlayer] joined call "), inputGroupCall.id);
+                                org.telegram.messenger.q.r(new StringBuilder("[LivePlayer] joined call "), inputGroupCall.id);
                                 d2Var.x = true;
                                 if (d2Var.w && d2Var.E != null) {
                                     if (tL_dataJSON == null || tL_dataJSON.data.startsWith("{\"stream\":true")) {
@@ -153,7 +153,7 @@ public final /* synthetic */ class q1 implements RequestDelegate {
                     i10 = 0;
                     while (i10 < size) {
                     }
-                    hg.k0.t(new StringBuilder("[LivePlayer] joined call "), inputGroupCall.id);
+                    org.telegram.messenger.q.r(new StringBuilder("[LivePlayer] joined call "), inputGroupCall.id);
                     d2Var.x = true;
                     if (d2Var.w) {
                     }

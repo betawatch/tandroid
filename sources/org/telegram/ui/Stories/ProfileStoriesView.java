@@ -39,7 +39,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.f0;
+import org.telegram.messenger.q;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -55,7 +55,7 @@ import org.telegram.ui.f01;
 import org.telegram.ui.lz0;
 import v7.z6;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public class ProfileStoriesView extends View implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int s0 = 0;
@@ -707,7 +707,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                                     int alpha3 = a2.getAlpha();
                                     ea eaVar6 = eaVar4;
                                     Paint paint13 = a2;
-                                    paint13.setAlpha((int) f0.z(1.0f, clamp3, alpha3, f17));
+                                    paint13.setAlpha((int) q.z(1.0f, clamp3, alpha3, f17));
                                     paint13.setStrokeWidth(AndroidUtilities.dpf2(z14 ? 3.0f : 2.33f));
                                     float f35 = f32;
                                     f21 = clamp3;

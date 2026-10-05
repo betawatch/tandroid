@@ -2,12 +2,11 @@ package j4;
 
 import b2.r0;
 import c3.h0;
-import hg.k0;
 import i2.m0;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public final class n implements i {
     public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
@@ -174,7 +173,7 @@ public final class n implements i {
                                         rVar.y = i29;
                                         rVar.D = f7;
                                         rVar.t = Collections.singletonList(copyOf);
-                                        k0.r(rVar, h0Var);
+                                        hg.c.s(rVar, h0Var);
                                         this.j = true;
                                     } else {
                                         f7 = i23 / i24;
@@ -201,7 +200,7 @@ public final class n implements i {
                                         rVar2.y = i292;
                                         rVar2.D = f7;
                                         rVar2.t = Collections.singletonList(copyOf);
-                                        k0.r(rVar2, h0Var);
+                                        hg.c.s(rVar2, h0Var);
                                         this.j = true;
                                     }
                                 } else if (i22 < 7) {
@@ -229,7 +228,7 @@ public final class n implements i {
                                     rVar22.y = i2922;
                                     rVar22.D = f7;
                                     rVar22.t = Collections.singletonList(copyOf);
-                                    k0.r(rVar22, h0Var);
+                                    hg.c.s(rVar22, h0Var);
                                     this.j = true;
                                 } else {
                                     e2.a.n("H263Reader", "Invalid aspect ratio");
@@ -257,7 +256,7 @@ public final class n implements i {
                                     rVar222.y = i29222;
                                     rVar222.D = f7;
                                     rVar222.t = Collections.singletonList(copyOf);
-                                    k0.r(rVar222, h0Var);
+                                    hg.c.s(rVar222, h0Var);
                                     this.j = true;
                                 }
                             } else {

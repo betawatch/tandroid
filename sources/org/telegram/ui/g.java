@@ -34,9 +34,9 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class g implements v9, gv0, org.telegram.ui.web.b1, org.telegram.ui.Components.xo0, org.telegram.ui.Components.d5, org.telegram.ui.Components.dn0, ai.fc, org.telegram.ui.Components.nl0, org.telegram.ui.Cells.l1, id1, org.telegram.ui.Components.xv0, km, me.a, org.telegram.ui.Components.pl0, org.telegram.ui.Cells.r7, org.telegram.ui.Components.oq, org.telegram.ui.Components.oq0, s4.e0, org.telegram.ui.Components.n8, org.telegram.ui.Components.m20, r0.n, yt, o11, org.telegram.ui.ActionBar.d6 {
+public final class g implements v9, gv0, org.telegram.ui.web.b1, org.telegram.ui.Components.yo0, org.telegram.ui.Components.d5, org.telegram.ui.Components.dn0, ai.fc, org.telegram.ui.Components.nl0, org.telegram.ui.Cells.l1, gd1, org.telegram.ui.Components.yv0, km, me.a, org.telegram.ui.Components.pl0, org.telegram.ui.Cells.r7, org.telegram.ui.Components.oq, org.telegram.ui.Components.qq0, s4.e0, org.telegram.ui.Components.n8, org.telegram.ui.Components.m20, r0.n, yt, o11, org.telegram.ui.ActionBar.d6 {
     public final /* synthetic */ int a;
     public final Object b;
 
@@ -50,7 +50,7 @@ public final class g implements v9, gv0, org.telegram.ui.web.b1, org.telegram.ui
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public void B() {
         switch (this.a) {
             case 5:
@@ -89,9 +89,9 @@ public final class g implements v9, gv0, org.telegram.ui.web.b1, org.telegram.ui
         ((s4.h0) this.b).p(i10, i11);
     }
 
-    @Override // org.telegram.ui.Components.xv0
+    @Override // org.telegram.ui.Components.yv0
     public void E(boolean z10) {
-        Runnable runnable = ((me) this.b).V1;
+        Runnable runnable = ((me) this.b).S0;
         if (runnable != null) {
             runnable.run();
         }
@@ -271,7 +271,7 @@ public final class g implements v9, gv0, org.telegram.ui.web.b1, org.telegram.ui
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public void Y(float f7, boolean z10) {
         switch (this.a) {
             case 3:
@@ -329,16 +329,16 @@ public final class g implements v9, gv0, org.telegram.ui.web.b1, org.telegram.ui
                 break;
             case 5:
                 j5.d = f7;
-                org.telegram.ui.Components.lw0 lw0Var = ((j5) this.b).b;
-                lw0Var.M();
-                lw0Var.N();
+                org.telegram.ui.Components.mw0 mw0Var = ((j5) this.b).b;
+                mw0Var.M();
+                mw0Var.N();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.xv0
+    @Override // org.telegram.ui.Components.yv0
     public float Y0() {
-        return org.telegram.messenger.f0.b(9.0f, ((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2) * 2) + ((me) this.b).X1, 0);
+        return org.telegram.messenger.q.b(9.0f, ((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2) * 2) + ((me) this.b).U0, 0);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -351,7 +351,7 @@ public final class g implements v9, gv0, org.telegram.ui.web.b1, org.telegram.ui
         return null;
     }
 
-    @Override // org.telegram.ui.id1
+    @Override // org.telegram.ui.gd1
     public boolean a() {
         org.telegram.ui.ActionBar.d6 d6Var;
         org.telegram.ui.ActionBar.d6 d6Var2;
@@ -378,7 +378,7 @@ public final class g implements v9, gv0, org.telegram.ui.web.b1, org.telegram.ui
         k8Var.b.post(d5Var);
     }
 
-    @Override // org.telegram.ui.id1
+    @Override // org.telegram.ui.gd1
     public boolean a1() {
         return false;
     }
@@ -521,10 +521,10 @@ public final class g implements v9, gv0, org.telegram.ui.web.b1, org.telegram.ui
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xv0
+    @Override // org.telegram.ui.Components.yv0
     public int e1() {
         me meVar = (me) this.b;
-        return meVar.Y1 + meVar.Z1;
+        return meVar.V0 + meVar.W0;
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -554,7 +554,7 @@ public final class g implements v9, gv0, org.telegram.ui.web.b1, org.telegram.ui
         return false;
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public CharSequence getContentDescription() {
         switch (this.a) {
             case 3:
@@ -945,7 +945,7 @@ public final class g implements v9, gv0, org.telegram.ui.web.b1, org.telegram.ui
         return true;
     }
 
-    @Override // org.telegram.ui.Components.xo0
+    @Override // org.telegram.ui.Components.yo0
     public int p0() {
         switch (this.a) {
             case 3:
@@ -964,7 +964,7 @@ public final class g implements v9, gv0, org.telegram.ui.web.b1, org.telegram.ui
         ((x10) this.b).i0.e(f7);
     }
 
-    @Override // org.telegram.ui.id1
+    @Override // org.telegram.ui.gd1
     public void q1(boolean z10) {
         org.telegram.ui.ActionBar.d6 d6Var;
         org.telegram.ui.ActionBar.d6 d6Var2;
@@ -1011,7 +1011,7 @@ public final class g implements v9, gv0, org.telegram.ui.web.b1, org.telegram.ui
         return org.telegram.ui.ActionBar.i6.v3;
     }
 
-    @Override // org.telegram.ui.Components.oq0
+    @Override // org.telegram.ui.Components.qq0
     public void x0() {
         if (AndroidUtilities.shouldShowClipboardToast()) {
             ((h60) this.b).k1().k(0L, 33, null, null, null, null);
@@ -1150,7 +1150,7 @@ public final class g implements v9, gv0, org.telegram.ui.web.b1, org.telegram.ui
     public /* synthetic */ void U(org.telegram.ui.Cells.u1 u1Var) {
     }
 
-    @Override // org.telegram.ui.Components.oq0
+    @Override // org.telegram.ui.Components.qq0
     public /* synthetic */ void V() {
     }
 

@@ -11,7 +11,6 @@ import android.os.Trace;
 import e0.h0;
 import e2.a0;
 import e2.d0;
-import hg.k0;
 import i2.n1;
 import j$.util.Objects;
 import java.nio.ByteBuffer;
@@ -28,7 +27,7 @@ import org.telegram.ui.Cells.c1;
 import u2.f0;
 import v7.a8;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes.dex */
 public abstract class r extends i2.f {
     public static final byte[] W0 = {0, 0, 1, 103, 66, -64, 11, -38, 37, -112, 0, 0, 1, 104, -50, 15, 19, 32, 0, 0, 1, 101, -120, -124, 13, -50, 113, 24, -96, 0, 47, -65, 28, 49, -61, 39, 93, 120};
@@ -788,19 +787,19 @@ public abstract class r extends i2.f {
         }
         try {
             Trace.beginSection("createCodec:" + str);
-            l v = this.I.v(Q);
-            this.b0 = v;
-            v.f(new n2.c(this, 14));
+            l f11 = this.I.f(Q);
+            this.b0 = f11;
+            f11.f(new n2.c(this, 14));
             Trace.endSection();
             this.h.getClass();
-            float f11 = f10;
+            float f12 = f10;
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
             if (!oVar.e(sVar)) {
                 String c10 = b2.s.c(sVar);
                 Locale locale = Locale.US;
                 e2.a.n("MediaCodecRenderer", c1.k("Format exceeds selected codec's capabilities [", c10, ", ", str, "]"));
             }
-            this.f0 = f11;
+            this.f0 = f12;
             this.c0 = sVar;
             if (i11 <= 25 && "OMX.Exynos.avc.dec.secure".equals(str)) {
                 String str2 = Build.MODEL;
@@ -1057,7 +1056,7 @@ public abstract class r extends i2.f {
             sVar = sVar2;
         }
         n2.h hVar = (n2.h) yVar.b;
-        k0.z(this.V, hVar);
+        hg.c.z(this.V, hVar);
         this.V = hVar;
         this.S = sVar;
         if (this.x0) {
@@ -1345,7 +1344,7 @@ public abstract class r extends i2.f {
     }
 
     public final void o0(n2.h hVar) {
-        k0.z(this.U, hVar);
+        hg.c.z(this.U, hVar);
         this.U = hVar;
     }
 

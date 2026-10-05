@@ -19,14 +19,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ki0;
 import org.telegram.ui.Components.qq;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class s3 extends FrameLayout {
     public int E;
@@ -64,7 +64,7 @@ public final class s3 extends FrameLayout {
         addView(textView, z10 ? w7.z5.i(-2.0f, -2.0f, 8388659, i10, 8.0f, 40.0f, 0.0f) : w7.z5.d(-2, -2.0f, 51, i10, 8.0f, 40.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        ok.n(org.telegram.ui.ActionBar.i6.We, d6Var, textView2, 1, 13.0f);
+        bi.m(org.telegram.ui.ActionBar.i6.We, d6Var, textView2, 1, 13.0f);
         textView2.setEllipsize(truncateAt);
         textView2.setSingleLine(true);
         addView(textView2, z10 ? w7.z5.i(-2.0f, -2.0f, 8388659, i10, 30.0f, 100.0f, 0.0f) : w7.z5.d(-2, -2.0f, 51, i10, 30.0f, 100.0f, 0.0f));
@@ -287,7 +287,7 @@ public final class s3 extends FrameLayout {
             int measuredWidth2 = textView.getMeasuredWidth();
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView.getLayoutParams();
             if (measuredWidth2 < measuredWidth) {
-                layoutParams.rightMargin = hg.k0.y(measuredWidth, measuredWidth2, 2, AndroidUtilities.dp(14.0f));
+                layoutParams.rightMargin = hg.c.y(measuredWidth, measuredWidth2, 2, AndroidUtilities.dp(14.0f));
             } else {
                 layoutParams.rightMargin = AndroidUtilities.dp(14.0f);
             }

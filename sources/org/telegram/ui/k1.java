@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class k1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
     public final ai.w0 a;
@@ -153,7 +153,7 @@ public final class k1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
                 int dp2 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(r15 * 14);
                 this.e = dp2;
                 this.f = dp2;
-                i12 = org.telegram.messenger.ok.y(18.0f, dp2, size);
+                i12 = org.telegram.messenger.bi.y(18.0f, dp2, size);
                 dp = i12;
             } else {
                 this.e = 0;
@@ -179,7 +179,7 @@ public final class k1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             if (p5 != null) {
                 int height = k1Var.c.d.getHeight() + AndroidUtilities.dp(4.0f);
                 k1Var.n = height;
-                measuredHeight = org.telegram.messenger.f0.C(4.0f, height, measuredHeight);
+                measuredHeight = org.telegram.messenger.q.C(4.0f, height, measuredHeight);
                 b3 b3Var = k1Var.c;
                 b3Var.s = k1Var.f;
                 b3Var.v = k1Var.h;
@@ -189,7 +189,7 @@ public final class k1 extends FrameLayout implements org.telegram.ui.Cells.p9 {
             TL_iv.pageBlockCollage pageblockcollage3 = k1Var.s;
             TL_iv.RichText richText2 = pageblockcollage3.caption.credit;
             if (k1Var.w.G) {
-                alignment = org.telegram.ui.Components.fx0.a();
+                alignment = org.telegram.ui.Components.gx0.a();
             }
             b3 p10 = i4.p(i4Var, k1Var, null, richText2, dp, 0, pageblockcollage3, alignment, 0, k1Var.w);
             k1Var.d = p10;

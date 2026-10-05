@@ -12,7 +12,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class xl extends fm {
     public final /* synthetic */ boolean b;
@@ -92,7 +92,7 @@ public final class xl extends fm {
         chatAttachAlertPhotoLayout.t0 = false;
         if (ChatAttachAlertPhotoLayout.q1) {
             xi xiVar = chatAttachAlertPhotoLayout.b;
-            xiVar.Z1.B1(0, true, true, 0, 0, 0L, xiVar.p1(), false, 0L);
+            xiVar.Z1.B1(0, true, true, 0, 0, 0L, xiVar.r1(), false, 0L);
             return;
         }
         if (!chatAttachAlertPhotoLayout.b0) {
@@ -124,11 +124,11 @@ public final class xl extends fm {
                 }
             }
         }
-        xiVar.X0();
+        xiVar.Z0();
         PhotoViewer.t1();
         PhotoViewer.t1().O = false;
         PhotoViewer.t1().u2 = false;
-        e5.a0(xiVar.J1, xiVar.h1() + ChatAttachAlertPhotoLayout.s1.size(), xiVar.l1(), new sl(this, z11, z10, i11));
+        e5.a0(xiVar.J1, xiVar.j1() + ChatAttachAlertPhotoLayout.s1.size(), xiVar.n1(), new sl(this, z11, z10, i11));
     }
 
     @Override // org.telegram.ui.ou0, org.telegram.ui.wu0
@@ -162,7 +162,7 @@ public final class xl extends fm {
                 chatAttachAlertPhotoLayout.r.setVisibility(8);
                 chatAttachAlertPhotoLayout.G.l();
                 chatAttachAlertPhotoLayout.v.l();
-                chatAttachAlertPhotoLayout.b.S1(0);
+                chatAttachAlertPhotoLayout.b.U1(0);
             }
         }
         return true;

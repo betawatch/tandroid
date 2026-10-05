@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class v3 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.ActionBar.t3 {
     public ValueAnimator E;
@@ -299,7 +299,7 @@ public final class v3 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.A
     public final int k() {
         int dp = AndroidUtilities.dp(16.0f);
         View view = this.d;
-        return org.telegram.messenger.f0.A(20.0f, l(), dp + (view == null ? AndroidUtilities.displaySize.y : view.getHeight()));
+        return org.telegram.messenger.q.A(20.0f, l(), dp + (view == null ? AndroidUtilities.displaySize.y : view.getHeight()));
     }
 
     public final int l() {

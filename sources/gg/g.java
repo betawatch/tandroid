@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ul0;
 import org.telegram.ui.Components.wx;
-import org.telegram.ui.c71;
+import org.telegram.ui.a71;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class g extends s4.o {
     public final /* synthetic */ int b;
@@ -66,7 +66,7 @@ public final class g extends s4.o {
             case 3:
                 return Objects.equals(this.c.get(i10), ((ul0) this.d).n.get(i11));
             default:
-                return ((Long) this.c.get(i10)).equals(((c71) this.d).v0.get(i11));
+                return ((Long) this.c.get(i10)).equals(((a71) this.d).v0.get(i11));
         }
     }
 
@@ -82,7 +82,7 @@ public final class g extends s4.o {
             case 3:
                 return ((ul0) this.d).n.size();
             default:
-                return ((c71) this.d).v0.size();
+                return ((a71) this.d).v0.size();
         }
     }
 

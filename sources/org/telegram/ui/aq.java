@@ -1,7 +1,9 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
@@ -14,51 +16,54 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final class aq extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
-    public org.telegram.ui.Cells.k6 E;
-    public ArrayList F;
-    public boolean G;
+    public final ArrayList E;
     public TLRPC.Chat a;
     public TLRPC.ChatFull b;
-    public long c;
+    public final long c;
     public ArrayList d;
-    public LinearLayout e;
+    public FrameLayout e;
     public org.telegram.ui.Components.zl0 f;
     public zp h;
-    public org.telegram.ui.Cells.w8 n;
-    public ArrayList r;
-    public LinearLayout s;
+    public final ArrayList n;
+    public LinearLayout r;
+    public int s;
     public int v;
-    public int w;
+    public org.telegram.ui.Cells.k6 w;
     public org.telegram.ui.Cells.k6 x;
     public org.telegram.ui.Cells.k6 y;
 
+    public aq(Bundle bundle) {
+        super(bundle);
+        this.d = new ArrayList();
+        this.n = new ArrayList();
+        this.s = -1;
+        this.E = new ArrayList();
+        this.c = bundle.getLong("chat_id", 0L);
+    }
+
     public final void T(int i10, boolean z10) {
-        zp zpVar;
-        ArrayList arrayList = this.F;
-        ArrayList arrayList2 = this.r;
-        if (this.v == i10) {
+        if (this.s == i10) {
             return;
         }
-        org.telegram.ui.Cells.w8 w8Var = this.n;
-        if (w8Var != null) {
-            boolean z11 = i10 == 1 || i10 == 0;
-            w8Var.setChecked(z11);
-            int w02 = org.telegram.ui.ActionBar.i6.w0(null, z11 ? org.telegram.ui.ActionBar.i6.f6 : org.telegram.ui.ActionBar.i6.e6, false);
-            if (z11) {
-                this.n.b(w02, z11);
-            } else {
-                this.n.setBackgroundColorAnimatedReverse(w02);
-            }
-        }
-        this.v = i10;
+        this.s = i10;
         int i11 = 0;
-        while (i11 < arrayList.size()) {
-            ((org.telegram.ui.Cells.k6) arrayList.get(i11)).a(i10 == i11, z10);
+        while (true) {
+            ArrayList arrayList = this.E;
+            boolean z11 = true;
+            if (i11 >= arrayList.size()) {
+                break;
+            }
+            org.telegram.ui.Cells.k6 k6Var = (org.telegram.ui.Cells.k6) arrayList.get(i11);
+            if (i10 != i11) {
+                z11 = false;
+            }
+            k6Var.a(z11, z10);
             i11++;
         }
+        ArrayList arrayList2 = this.n;
         if (i10 == 1) {
             if (z10) {
                 this.d.clear();
@@ -77,19 +82,20 @@ public final class aq extends org.telegram.ui.ActionBar.n2 implements Notificati
                     this.d.add(((TLRPC.TL_availableReaction) arrayList2.get(1)).reaction);
                 }
             }
-            zp zpVar2 = this.h;
-            if (zpVar2 != null && z10) {
-                zpVar2.s(this.G ? 1 : 2, arrayList2.size() + 1);
+            zp zpVar = this.h;
+            if (zpVar != null && z10) {
+                zpVar.s(2, arrayList2.size() + 1);
             }
         } else if (!this.d.isEmpty()) {
             this.d.clear();
-            zp zpVar3 = this.h;
-            if (zpVar3 != null && z10) {
-                zpVar3.t(this.G ? 1 : 2, arrayList2.size() + 1);
+            zp zpVar2 = this.h;
+            if (zpVar2 != null && z10) {
+                zpVar2.t(2, arrayList2.size() + 1);
             }
         }
-        if (!this.G && (zpVar = this.h) != null && z10) {
-            zpVar.m(1);
+        zp zpVar3 = this.h;
+        if (zpVar3 != null && z10) {
+            zpVar3.m(1);
         }
         zp zpVar4 = this.h;
         if (zpVar4 == null || z10) {
@@ -98,136 +104,113 @@ public final class aq extends org.telegram.ui.ActionBar.n2 implements Notificati
         zpVar4.l();
     }
 
-    public final void U() {
-        this.e.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, org.telegram.ui.ActionBar.i6.a7, false));
-        org.telegram.ui.Cells.w8 w8Var = this.n;
-        if (w8Var != null) {
-            w8Var.d(org.telegram.ui.ActionBar.i6.g6, org.telegram.ui.ActionBar.i6.O6, org.telegram.ui.ActionBar.i6.P6, org.telegram.ui.ActionBar.i6.Q6, org.telegram.ui.ActionBar.i6.R6);
-        }
-        this.h.l();
-    }
-
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
-        ArrayList arrayList = this.F;
-        this.G = ChatObject.isChannelAndNotMegaGroup(this.c, this.currentAccount);
+        setHasOwnBackground(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.Reactions));
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new qo(this, 3));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        this.r.addAll(getMediaDataController().getEnabledReactionsList());
-        if (this.G) {
-            org.telegram.ui.Cells.w8 w8Var = new org.telegram.ui.Cells.w8(context);
-            this.n = w8Var;
-            w8Var.setHeight(56);
-            this.n.f(LocaleController.getString(R.string.EnableReactions), !this.d.isEmpty(), false);
-            org.telegram.ui.Cells.w8 w8Var2 = this.n;
-            w8Var2.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, w8Var2.e.h ? org.telegram.ui.ActionBar.i6.f6 : org.telegram.ui.ActionBar.i6.e6, false));
-            this.n.setTypeface(AndroidUtilities.bold());
-            final int i10 = 0;
-            this.n.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.xp
-                public final /* synthetic */ aq b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    switch (i10) {
-                        case 0:
-                            aq aqVar = this.b;
-                            aqVar.T(aqVar.n.e.h ? 2 : 1, true);
-                            break;
-                        case 1:
-                            final int i11 = 0;
-                            final aq aqVar2 = this.b;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i11) {
-                                        case 0:
-                                            aqVar2.T(0, true);
-                                            break;
-                                        case 1:
-                                            aqVar2.T(1, true);
-                                            break;
-                                        default:
-                                            aqVar2.T(2, true);
-                                            break;
-                                    }
-                                }
-                            });
-                            break;
-                        case 2:
-                            final int i12 = 1;
-                            final aq aqVar3 = this.b;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i12) {
-                                        case 0:
-                                            aqVar3.T(0, true);
-                                            break;
-                                        case 1:
-                                            aqVar3.T(1, true);
-                                            break;
-                                        default:
-                                            aqVar3.T(2, true);
-                                            break;
-                                    }
-                                }
-                            });
-                            break;
-                        default:
-                            final int i13 = 2;
-                            final aq aqVar4 = this.b;
-                            AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i13) {
-                                        case 0:
-                                            aqVar4.T(0, true);
-                                            break;
-                                        case 1:
-                                            aqVar4.T(1, true);
-                                            break;
-                                        default:
-                                            aqVar4.T(2, true);
-                                            break;
-                                    }
-                                }
-                            });
-                            break;
-                    }
-                }
-            });
-            linearLayout.addView(this.n, w7.z5.n(-1, -2));
-        }
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.n.addAll(getMediaDataController().getEnabledReactionsList());
         org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(context);
         m4Var.setText(LocaleController.getString(R.string.AvailableReactions));
-        LinearLayout linearLayout2 = new LinearLayout(context);
-        this.s = linearLayout2;
-        linearLayout2.setOrientation(1);
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.r = linearLayout;
+        linearLayout.setOrientation(1);
+        this.r.setClickable(true);
         org.telegram.ui.Cells.k6 k6Var = new org.telegram.ui.Cells.k6(context, null);
-        this.x = k6Var;
+        this.w = k6Var;
         k6Var.c(LocaleController.getString(R.string.AllReactions), false, true);
         org.telegram.ui.Cells.k6 k6Var2 = new org.telegram.ui.Cells.k6(context, null);
-        this.y = k6Var2;
+        this.x = k6Var2;
         k6Var2.c(LocaleController.getString(R.string.SomeReactions), false, true);
         org.telegram.ui.Cells.k6 k6Var3 = new org.telegram.ui.Cells.k6(context, null);
-        this.E = k6Var3;
+        this.y = k6Var3;
         k6Var3.c(LocaleController.getString(R.string.NoReactions), false, false);
-        this.s.addView(m4Var, w7.z5.n(-1, -2));
-        this.s.addView(this.x, w7.z5.n(-1, -2));
-        this.s.addView(this.y, w7.z5.n(-1, -2));
-        this.s.addView(this.E, w7.z5.n(-1, -2));
+        this.r.addView(m4Var, w7.z5.n(-1, -2));
+        this.r.addView(this.w, w7.z5.n(-1, -2));
+        this.r.addView(this.x, w7.z5.n(-1, -2));
+        this.r.addView(this.y, w7.z5.n(-1, -2));
+        ArrayList arrayList = this.E;
         arrayList.clear();
+        arrayList.add(this.w);
         arrayList.add(this.x);
         arrayList.add(this.y);
-        arrayList.add(this.E);
+        final int i10 = 0;
+        this.w.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.xp
+            public final /* synthetic */ aq b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i10) {
+                    case 0:
+                        final int i11 = 2;
+                        final aq aqVar = this.b;
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i11) {
+                                    case 0:
+                                        aqVar.T(2, true);
+                                        break;
+                                    case 1:
+                                        aqVar.T(1, true);
+                                        break;
+                                    default:
+                                        aqVar.T(0, true);
+                                        break;
+                                }
+                            }
+                        });
+                        break;
+                    case 1:
+                        final int i12 = 1;
+                        final aq aqVar2 = this.b;
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i12) {
+                                    case 0:
+                                        aqVar2.T(2, true);
+                                        break;
+                                    case 1:
+                                        aqVar2.T(1, true);
+                                        break;
+                                    default:
+                                        aqVar2.T(0, true);
+                                        break;
+                                }
+                            }
+                        });
+                        break;
+                    default:
+                        final int i13 = 0;
+                        final aq aqVar3 = this.b;
+                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                switch (i13) {
+                                    case 0:
+                                        aqVar3.T(2, true);
+                                        break;
+                                    case 1:
+                                        aqVar3.T(1, true);
+                                        break;
+                                    default:
+                                        aqVar3.T(0, true);
+                                        break;
+                                }
+                            }
+                        });
+                        break;
+                }
+            }
+        });
         final int i11 = 1;
         this.x.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.xp
             public final /* synthetic */ aq b;
@@ -240,64 +223,60 @@ public final class aq extends org.telegram.ui.ActionBar.n2 implements Notificati
             public final void onClick(View view) {
                 switch (i11) {
                     case 0:
-                        aq aqVar = this.b;
-                        aqVar.T(aqVar.n.e.h ? 2 : 1, true);
-                        break;
-                    case 1:
-                        final int i112 = 0;
-                        final aq aqVar2 = this.b;
+                        final int i112 = 2;
+                        final aq aqVar = this.b;
                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i112) {
                                     case 0:
-                                        aqVar2.T(0, true);
+                                        aqVar.T(2, true);
                                         break;
                                     case 1:
-                                        aqVar2.T(1, true);
+                                        aqVar.T(1, true);
                                         break;
                                     default:
-                                        aqVar2.T(2, true);
+                                        aqVar.T(0, true);
                                         break;
                                 }
                             }
                         });
                         break;
-                    case 2:
+                    case 1:
                         final int i12 = 1;
-                        final aq aqVar3 = this.b;
+                        final aq aqVar2 = this.b;
                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i12) {
                                     case 0:
-                                        aqVar3.T(0, true);
+                                        aqVar2.T(2, true);
                                         break;
                                     case 1:
-                                        aqVar3.T(1, true);
+                                        aqVar2.T(1, true);
                                         break;
                                     default:
-                                        aqVar3.T(2, true);
+                                        aqVar2.T(0, true);
                                         break;
                                 }
                             }
                         });
                         break;
                     default:
-                        final int i13 = 2;
-                        final aq aqVar4 = this.b;
+                        final int i13 = 0;
+                        final aq aqVar3 = this.b;
                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i13) {
                                     case 0:
-                                        aqVar4.T(0, true);
+                                        aqVar3.T(2, true);
                                         break;
                                     case 1:
-                                        aqVar4.T(1, true);
+                                        aqVar3.T(1, true);
                                         break;
                                     default:
-                                        aqVar4.T(2, true);
+                                        aqVar3.T(0, true);
                                         break;
                                 }
                             }
@@ -318,142 +297,60 @@ public final class aq extends org.telegram.ui.ActionBar.n2 implements Notificati
             public final void onClick(View view) {
                 switch (i12) {
                     case 0:
-                        aq aqVar = this.b;
-                        aqVar.T(aqVar.n.e.h ? 2 : 1, true);
-                        break;
-                    case 1:
-                        final int i112 = 0;
-                        final aq aqVar2 = this.b;
+                        final int i112 = 2;
+                        final aq aqVar = this.b;
                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i112) {
                                     case 0:
-                                        aqVar2.T(0, true);
+                                        aqVar.T(2, true);
                                         break;
                                     case 1:
-                                        aqVar2.T(1, true);
+                                        aqVar.T(1, true);
                                         break;
                                     default:
-                                        aqVar2.T(2, true);
+                                        aqVar.T(0, true);
                                         break;
                                 }
                             }
                         });
                         break;
-                    case 2:
+                    case 1:
                         final int i122 = 1;
-                        final aq aqVar3 = this.b;
+                        final aq aqVar2 = this.b;
                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i122) {
                                     case 0:
-                                        aqVar3.T(0, true);
+                                        aqVar2.T(2, true);
                                         break;
                                     case 1:
-                                        aqVar3.T(1, true);
+                                        aqVar2.T(1, true);
                                         break;
                                     default:
-                                        aqVar3.T(2, true);
+                                        aqVar2.T(0, true);
                                         break;
                                 }
                             }
                         });
                         break;
                     default:
-                        final int i13 = 2;
-                        final aq aqVar4 = this.b;
+                        final int i13 = 0;
+                        final aq aqVar3 = this.b;
                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i13) {
                                     case 0:
-                                        aqVar4.T(0, true);
-                                        break;
-                                    case 1:
-                                        aqVar4.T(1, true);
-                                        break;
-                                    default:
-                                        aqVar4.T(2, true);
-                                        break;
-                                }
-                            }
-                        });
-                        break;
-                }
-            }
-        });
-        final int i13 = 3;
-        this.E.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.xp
-            public final /* synthetic */ aq b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i13) {
-                    case 0:
-                        aq aqVar = this.b;
-                        aqVar.T(aqVar.n.e.h ? 2 : 1, true);
-                        break;
-                    case 1:
-                        final int i112 = 0;
-                        final aq aqVar2 = this.b;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                switch (i112) {
-                                    case 0:
-                                        aqVar2.T(0, true);
-                                        break;
-                                    case 1:
-                                        aqVar2.T(1, true);
-                                        break;
-                                    default:
-                                        aqVar2.T(2, true);
-                                        break;
-                                }
-                            }
-                        });
-                        break;
-                    case 2:
-                        final int i122 = 1;
-                        final aq aqVar3 = this.b;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                switch (i122) {
-                                    case 0:
-                                        aqVar3.T(0, true);
+                                        aqVar3.T(2, true);
                                         break;
                                     case 1:
                                         aqVar3.T(1, true);
                                         break;
                                     default:
-                                        aqVar3.T(2, true);
-                                        break;
-                                }
-                            }
-                        });
-                        break;
-                    default:
-                        final int i132 = 2;
-                        final aq aqVar4 = this.b;
-                        AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.yp
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                switch (i132) {
-                                    case 0:
-                                        aqVar4.T(0, true);
-                                        break;
-                                    case 1:
-                                        aqVar4.T(1, true);
-                                        break;
-                                    default:
-                                        aqVar4.T(2, true);
+                                        aqVar3.T(0, true);
                                         break;
                                 }
                             }
@@ -462,15 +359,14 @@ public final class aq extends org.telegram.ui.ActionBar.n2 implements Notificati
                 }
             }
         });
-        int i14 = org.telegram.ui.ActionBar.i6.d6;
-        m4Var.setBackgroundColor(org.telegram.ui.ActionBar.i6.w0(null, i14, false));
-        org.telegram.ui.Cells.k6 k6Var4 = this.x;
-        int w02 = org.telegram.ui.ActionBar.i6.w0(null, i14, false);
-        int i15 = org.telegram.ui.ActionBar.i6.i6;
-        k6Var4.setBackground(org.telegram.ui.ActionBar.i6.g0(w02, org.telegram.ui.ActionBar.i6.w0(null, i15, false)));
-        this.y.setBackground(org.telegram.ui.ActionBar.i6.g0(org.telegram.ui.ActionBar.i6.w0(null, i14, false), org.telegram.ui.ActionBar.i6.w0(null, i15, false)));
-        this.E.setBackground(org.telegram.ui.ActionBar.i6.g0(org.telegram.ui.ActionBar.i6.w0(null, i14, false), org.telegram.ui.ActionBar.i6.w0(null, i15, false)));
-        T(this.w, false);
+        org.telegram.ui.Cells.k6 k6Var4 = this.w;
+        int i13 = org.telegram.ui.ActionBar.i6.d6;
+        int w02 = org.telegram.ui.ActionBar.i6.w0(null, i13, false);
+        int i14 = org.telegram.ui.ActionBar.i6.i6;
+        k6Var4.setBackground(org.telegram.ui.ActionBar.i6.g0(w02, org.telegram.ui.ActionBar.i6.w0(null, i14, false)));
+        this.x.setBackground(org.telegram.ui.ActionBar.i6.g0(org.telegram.ui.ActionBar.i6.w0(null, i13, false), org.telegram.ui.ActionBar.i6.w0(null, i14, false)));
+        this.y.setBackground(org.telegram.ui.ActionBar.i6.g0(org.telegram.ui.ActionBar.i6.w0(null, i13, false), org.telegram.ui.ActionBar.i6.w0(null, i14, false)));
+        T(this.v, false);
         org.telegram.ui.Components.zl0 zl0Var = new org.telegram.ui.Components.zl0(context, null);
         this.f = zl0Var;
         zl0Var.setLayoutManager(new s4.c0());
@@ -479,26 +375,28 @@ public final class aq extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.h = zpVar;
         zl0Var2.setAdapter(zpVar);
         this.f.setOnItemClickListener(new i(this, 4));
-        linearLayout.addView(this.f, w7.z5.l(1.0f, -1, 0));
-        this.f.s1();
-        this.actionBar.setAdaptiveBackground(this.f);
-        this.e = linearLayout;
-        this.fragmentView = linearLayout;
-        U();
+        frameLayout.addView(this.f, w7.z5.g());
+        this.f.r1();
+        this.f.setSectionsDrawBackground(true);
+        this.e = frameLayout;
+        this.fragmentView = frameLayout;
+        this.h.l();
         return this.e;
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        ArrayList arrayList = this.r;
         if (i11 != this.currentAccount) {
             return;
         }
         if (i10 == NotificationCenter.reactionsDidLoad) {
+            ArrayList arrayList = this.n;
             arrayList.clear();
             arrayList.addAll(getMediaDataController().getEnabledReactionsList());
             this.h.l();
-        } else if (i10 == NotificationCenter.dialogDeleted && ((Long) objArr[0]).longValue() == (-this.c)) {
+            return;
+        }
+        if (i10 == NotificationCenter.dialogDeleted && ((Long) objArr[0]).longValue() == (-this.c)) {
             org.telegram.ui.ActionBar.c5 c5Var = this.parentLayout;
             if (c5Var == null || c5Var.getLastFragment() != this) {
                 removeSelfFromStack();
@@ -509,8 +407,18 @@ public final class aq extends org.telegram.ui.ActionBar.n2 implements Notificati
     }
 
     @Override // org.telegram.ui.ActionBar.n2
+    public final org.telegram.ui.Components.zl0 getListViewForSimpleGlass() {
+        return this.f;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
         return w7.c6.a(new e(this, 8), org.telegram.ui.ActionBar.i6.d6, org.telegram.ui.ActionBar.i6.G6, org.telegram.ui.ActionBar.i6.z6, org.telegram.ui.ActionBar.i6.i6, org.telegram.ui.ActionBar.i6.a7, org.telegram.ui.ActionBar.i6.B6, org.telegram.ui.ActionBar.i6.p7, org.telegram.ui.ActionBar.i6.f6, org.telegram.ui.ActionBar.i6.g6, org.telegram.ui.ActionBar.i6.O6, org.telegram.ui.ActionBar.i6.P6, org.telegram.ui.ActionBar.i6.Q6, org.telegram.ui.ActionBar.i6.R6);
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x004a, code lost:
@@ -546,7 +454,7 @@ public final class aq extends org.telegram.ui.ActionBar.n2 implements Notificati
     @Override // org.telegram.ui.ActionBar.n2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
-        getMessagesController().setChatReactions(this.c, this.v, this.d);
+        getMessagesController().setChatReactions(this.c, this.s, this.d);
         getNotificationCenter().removeObserver(this, NotificationCenter.reactionsDidLoad);
         getNotificationCenter().removeObserver(this, NotificationCenter.dialogDeleted);
     }

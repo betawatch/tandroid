@@ -11,9 +11,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.ActionBar.c5;
 import org.telegram.ui.Components.q90;
 import org.telegram.ui.ProfileActivity;
-import yh.t5;
+import yh.u5;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f2 implements Runnable {
     public final /* synthetic */ int a;
@@ -56,10 +56,10 @@ public final /* synthetic */ class f2 implements Runnable {
                 ((c5) obj).getLastFragment().presentFragment(new ProfileActivity(bundle, null));
                 break;
             case 3:
-                nf.f.s(((yh.g) obj).getParentActivity(), LocaleController.getString(i11));
+                nf.f.s(((yh.h) obj).getParentActivity(), LocaleController.getString(i11));
                 break;
             case 4:
-                ConnectionsManager.getInstance(((t5) obj).a).cancelRequest(i11, true);
+                ConnectionsManager.getInstance(((u5) obj).a).cancelRequest(i11, true);
                 break;
             default:
                 zg.f fVar = (zg.f) obj;

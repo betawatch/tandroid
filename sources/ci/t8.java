@@ -16,13 +16,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.hc0;
 import org.telegram.ui.Components.tr;
 import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zl0;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class t8 extends org.telegram.ui.Components.cb implements NotificationCenter.NotificationCenterDelegate {
     public p8 X;
@@ -116,11 +116,11 @@ public final class t8 extends org.telegram.ui.Components.cb implements Notificat
         TLRPC.WebPage webPage;
         org.telegram.ui.Cells.j3 j3Var = t8Var.Z;
         org.telegram.ui.Cells.j3 j3Var2 = t8Var.Y;
-        g61 G = t8Var.X.G(i10 - 1);
+        h61 G = t8Var.X.G(i10 - 1);
         if (G == null) {
             return;
         }
-        if (!G.G(r8.class) || (webPage = t8Var.g0) == null || U(webPage)) {
+        if (!G.H(r8.class) || (webPage = t8Var.g0) == null || U(webPage)) {
             if (G.d == 2 && (view instanceof org.telegram.ui.Cells.w8)) {
                 boolean z10 = !t8Var.m0;
                 t8Var.m0 = z10;

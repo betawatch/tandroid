@@ -13,11 +13,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.ok;
+import org.telegram.messenger.bi;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final class l0 implements View.OnLongClickListener {
     public final /* synthetic */ z0 a;
@@ -62,7 +62,7 @@ public final class l0 implements View.OnLongClickListener {
                     switch (i11) {
                         case 0:
                             z0 z0Var = l0Var.a;
-                            f3 j3 = ok.j(1, z0Var.getContext(), null, false);
+                            f3 i14 = bi.i(1, z0Var.getContext(), null, false);
                             try {
                                 parse = Uri.parse(str5);
                             } catch (Exception e7) {
@@ -73,22 +73,22 @@ public final class l0 implements View.OnLongClickListener {
                                     str = str5;
                                     FileLog.e(e);
                                     str2 = str;
-                                    j3.multipleLinesTitle = true;
-                                    j3.title = str2;
-                                    j3.bigTitle = false;
+                                    i14.multipleLinesTitle = true;
+                                    i14.title = str2;
+                                    i14.bigTitle = false;
                                     CharSequence[] charSequenceArr = {LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)};
                                     DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.k0
                                         @Override // android.content.DialogInterface.OnClickListener
-                                        public final void onClick(DialogInterface dialogInterface, int i14) {
-                                            int i15 = i12;
+                                        public final void onClick(DialogInterface dialogInterface, int i15) {
+                                            int i16 = i12;
                                             String str6 = str5;
                                             l0 l0Var2 = l0Var;
-                                            switch (i15) {
+                                            switch (i16) {
                                                 case 0:
                                                     z0 z0Var2 = l0Var2.a;
-                                                    if (i14 != 0) {
-                                                        if (i14 != 1) {
-                                                            if (i14 == 2) {
+                                                    if (i15 != 0) {
+                                                        if (i15 != 1) {
+                                                            if (i15 == 2) {
                                                                 AndroidUtilities.addToClipboard(str6);
                                                                 c1 c1Var = z0Var2.Q;
                                                                 if (c1Var != null) {
@@ -137,9 +137,9 @@ public final class l0 implements View.OnLongClickListener {
                                                     break;
                                                 default:
                                                     z0 z0Var3 = l0Var2.a;
-                                                    if (i14 != 0) {
-                                                        if (i14 != 1) {
-                                                            if (i14 == 2) {
+                                                    if (i15 != 0) {
+                                                        if (i15 != 1) {
+                                                            if (i15 == 2) {
                                                                 AndroidUtilities.addToClipboard(str6);
                                                                 c1 c1Var3 = z0Var3.Q;
                                                                 if (c1Var3 != null) {
@@ -168,32 +168,32 @@ public final class l0 implements View.OnLongClickListener {
                                             }
                                         }
                                     };
-                                    j3.items = charSequenceArr;
-                                    j3.onClickListener = onClickListener;
-                                    j3.show();
-                                    z0Var.F = j3;
+                                    i14.items = charSequenceArr;
+                                    i14.onClickListener = onClickListener;
+                                    i14.show();
+                                    z0Var.F = i14;
                                     return;
                                 }
                             }
                             if (parse != null && !parse.getScheme().equalsIgnoreCase("data")) {
                                 str = nf.f.v(parse, null, null, nf.f.a(parse.getHost()), null);
                                 str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
-                                j3.multipleLinesTitle = true;
-                                j3.title = str2;
-                                j3.bigTitle = false;
+                                i14.multipleLinesTitle = true;
+                                i14.title = str2;
+                                i14.bigTitle = false;
                                 CharSequence[] charSequenceArr2 = {LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)};
                                 DialogInterface.OnClickListener onClickListener2 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.k0
                                     @Override // android.content.DialogInterface.OnClickListener
-                                    public final void onClick(DialogInterface dialogInterface, int i14) {
-                                        int i15 = i12;
+                                    public final void onClick(DialogInterface dialogInterface, int i15) {
+                                        int i16 = i12;
                                         String str6 = str5;
                                         l0 l0Var2 = l0Var;
-                                        switch (i15) {
+                                        switch (i16) {
                                             case 0:
                                                 z0 z0Var2 = l0Var2.a;
-                                                if (i14 != 0) {
-                                                    if (i14 != 1) {
-                                                        if (i14 == 2) {
+                                                if (i15 != 0) {
+                                                    if (i15 != 1) {
+                                                        if (i15 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             c1 c1Var = z0Var2.Q;
                                                             if (c1Var != null) {
@@ -242,9 +242,9 @@ public final class l0 implements View.OnLongClickListener {
                                                 break;
                                             default:
                                                 z0 z0Var3 = l0Var2.a;
-                                                if (i14 != 0) {
-                                                    if (i14 != 1) {
-                                                        if (i14 == 2) {
+                                                if (i15 != 0) {
+                                                    if (i15 != 1) {
+                                                        if (i15 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             c1 c1Var3 = z0Var3.Q;
                                                             if (c1Var3 != null) {
@@ -273,29 +273,29 @@ public final class l0 implements View.OnLongClickListener {
                                         }
                                     }
                                 };
-                                j3.items = charSequenceArr2;
-                                j3.onClickListener = onClickListener2;
-                                j3.show();
-                                z0Var.F = j3;
+                                i14.items = charSequenceArr2;
+                                i14.onClickListener = onClickListener2;
+                                i14.show();
+                                z0Var.F = i14;
                             }
                             str = str5;
                             str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
-                            j3.multipleLinesTitle = true;
-                            j3.title = str2;
-                            j3.bigTitle = false;
+                            i14.multipleLinesTitle = true;
+                            i14.title = str2;
+                            i14.bigTitle = false;
                             CharSequence[] charSequenceArr22 = {LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)};
                             DialogInterface.OnClickListener onClickListener22 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.k0
                                 @Override // android.content.DialogInterface.OnClickListener
-                                public final void onClick(DialogInterface dialogInterface, int i14) {
-                                    int i15 = i12;
+                                public final void onClick(DialogInterface dialogInterface, int i15) {
+                                    int i16 = i12;
                                     String str6 = str5;
                                     l0 l0Var2 = l0Var;
-                                    switch (i15) {
+                                    switch (i16) {
                                         case 0:
                                             z0 z0Var2 = l0Var2.a;
-                                            if (i14 != 0) {
-                                                if (i14 != 1) {
-                                                    if (i14 == 2) {
+                                            if (i15 != 0) {
+                                                if (i15 != 1) {
+                                                    if (i15 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         c1 c1Var = z0Var2.Q;
                                                         if (c1Var != null) {
@@ -344,9 +344,9 @@ public final class l0 implements View.OnLongClickListener {
                                             break;
                                         default:
                                             z0 z0Var3 = l0Var2.a;
-                                            if (i14 != 0) {
-                                                if (i14 != 1) {
-                                                    if (i14 == 2) {
+                                            if (i15 != 0) {
+                                                if (i15 != 1) {
+                                                    if (i15 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         c1 c1Var3 = z0Var3.Q;
                                                         if (c1Var3 != null) {
@@ -375,14 +375,14 @@ public final class l0 implements View.OnLongClickListener {
                                     }
                                 }
                             };
-                            j3.items = charSequenceArr22;
-                            j3.onClickListener = onClickListener22;
-                            j3.show();
-                            z0Var.F = j3;
+                            i14.items = charSequenceArr22;
+                            i14.onClickListener = onClickListener22;
+                            i14.show();
+                            z0Var.F = i14;
                             break;
                         default:
                             z0 z0Var2 = l0Var.a;
-                            f3 j10 = ok.j(1, z0Var2.getContext(), null, false);
+                            f3 i15 = bi.i(1, z0Var2.getContext(), null, false);
                             try {
                                 Uri parse2 = Uri.parse(str5);
                                 str3 = nf.f.v(parse2, null, null, nf.f.a(parse2.getHost()), null);
@@ -395,22 +395,22 @@ public final class l0 implements View.OnLongClickListener {
                                     str3 = str5;
                                     FileLog.e(e);
                                     str4 = str3;
-                                    j10.multipleLinesTitle = true;
-                                    j10.title = str4;
-                                    j10.bigTitle = false;
+                                    i15.multipleLinesTitle = true;
+                                    i15.title = str4;
+                                    i15.bigTitle = false;
                                     CharSequence[] charSequenceArr3 = {LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)};
                                     DialogInterface.OnClickListener onClickListener3 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.k0
                                         @Override // android.content.DialogInterface.OnClickListener
-                                        public final void onClick(DialogInterface dialogInterface, int i14) {
-                                            int i15 = i13;
+                                        public final void onClick(DialogInterface dialogInterface, int i152) {
+                                            int i16 = i13;
                                             String str6 = str5;
                                             l0 l0Var2 = l0Var;
-                                            switch (i15) {
+                                            switch (i16) {
                                                 case 0:
                                                     z0 z0Var22 = l0Var2.a;
-                                                    if (i14 != 0) {
-                                                        if (i14 != 1) {
-                                                            if (i14 == 2) {
+                                                    if (i152 != 0) {
+                                                        if (i152 != 1) {
+                                                            if (i152 == 2) {
                                                                 AndroidUtilities.addToClipboard(str6);
                                                                 c1 c1Var = z0Var22.Q;
                                                                 if (c1Var != null) {
@@ -459,9 +459,9 @@ public final class l0 implements View.OnLongClickListener {
                                                     break;
                                                 default:
                                                     z0 z0Var3 = l0Var2.a;
-                                                    if (i14 != 0) {
-                                                        if (i14 != 1) {
-                                                            if (i14 == 2) {
+                                                    if (i152 != 0) {
+                                                        if (i152 != 1) {
+                                                            if (i152 == 2) {
                                                                 AndroidUtilities.addToClipboard(str6);
                                                                 c1 c1Var3 = z0Var3.Q;
                                                                 if (c1Var3 != null) {
@@ -490,10 +490,10 @@ public final class l0 implements View.OnLongClickListener {
                                             }
                                         }
                                     };
-                                    j10.items = charSequenceArr3;
-                                    j10.onClickListener = onClickListener3;
-                                    j10.show();
-                                    z0Var2.F = j10;
+                                    i15.items = charSequenceArr3;
+                                    i15.onClickListener = onClickListener3;
+                                    i15.show();
+                                    z0Var2.F = i15;
                                 }
                             }
                             try {
@@ -502,22 +502,22 @@ public final class l0 implements View.OnLongClickListener {
                                 e = e13;
                                 FileLog.e(e);
                                 str4 = str3;
-                                j10.multipleLinesTitle = true;
-                                j10.title = str4;
-                                j10.bigTitle = false;
+                                i15.multipleLinesTitle = true;
+                                i15.title = str4;
+                                i15.bigTitle = false;
                                 CharSequence[] charSequenceArr32 = {LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)};
                                 DialogInterface.OnClickListener onClickListener32 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.k0
                                     @Override // android.content.DialogInterface.OnClickListener
-                                    public final void onClick(DialogInterface dialogInterface, int i14) {
-                                        int i15 = i13;
+                                    public final void onClick(DialogInterface dialogInterface, int i152) {
+                                        int i16 = i13;
                                         String str6 = str5;
                                         l0 l0Var2 = l0Var;
-                                        switch (i15) {
+                                        switch (i16) {
                                             case 0:
                                                 z0 z0Var22 = l0Var2.a;
-                                                if (i14 != 0) {
-                                                    if (i14 != 1) {
-                                                        if (i14 == 2) {
+                                                if (i152 != 0) {
+                                                    if (i152 != 1) {
+                                                        if (i152 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             c1 c1Var = z0Var22.Q;
                                                             if (c1Var != null) {
@@ -566,9 +566,9 @@ public final class l0 implements View.OnLongClickListener {
                                                 break;
                                             default:
                                                 z0 z0Var3 = l0Var2.a;
-                                                if (i14 != 0) {
-                                                    if (i14 != 1) {
-                                                        if (i14 == 2) {
+                                                if (i152 != 0) {
+                                                    if (i152 != 1) {
+                                                        if (i152 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             c1 c1Var3 = z0Var3.Q;
                                                             if (c1Var3 != null) {
@@ -597,27 +597,27 @@ public final class l0 implements View.OnLongClickListener {
                                         }
                                     }
                                 };
-                                j10.items = charSequenceArr32;
-                                j10.onClickListener = onClickListener32;
-                                j10.show();
-                                z0Var2.F = j10;
+                                i15.items = charSequenceArr32;
+                                i15.onClickListener = onClickListener32;
+                                i15.show();
+                                z0Var2.F = i15;
                             }
-                            j10.multipleLinesTitle = true;
-                            j10.title = str4;
-                            j10.bigTitle = false;
+                            i15.multipleLinesTitle = true;
+                            i15.title = str4;
+                            i15.bigTitle = false;
                             CharSequence[] charSequenceArr322 = {LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)};
                             DialogInterface.OnClickListener onClickListener322 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.k0
                                 @Override // android.content.DialogInterface.OnClickListener
-                                public final void onClick(DialogInterface dialogInterface, int i14) {
-                                    int i15 = i13;
+                                public final void onClick(DialogInterface dialogInterface, int i152) {
+                                    int i16 = i13;
                                     String str6 = str5;
                                     l0 l0Var2 = l0Var;
-                                    switch (i15) {
+                                    switch (i16) {
                                         case 0:
                                             z0 z0Var22 = l0Var2.a;
-                                            if (i14 != 0) {
-                                                if (i14 != 1) {
-                                                    if (i14 == 2) {
+                                            if (i152 != 0) {
+                                                if (i152 != 1) {
+                                                    if (i152 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         c1 c1Var = z0Var22.Q;
                                                         if (c1Var != null) {
@@ -666,9 +666,9 @@ public final class l0 implements View.OnLongClickListener {
                                             break;
                                         default:
                                             z0 z0Var3 = l0Var2.a;
-                                            if (i14 != 0) {
-                                                if (i14 != 1) {
-                                                    if (i14 == 2) {
+                                            if (i152 != 0) {
+                                                if (i152 != 1) {
+                                                    if (i152 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         c1 c1Var3 = z0Var3.Q;
                                                         if (c1Var3 != null) {
@@ -697,10 +697,10 @@ public final class l0 implements View.OnLongClickListener {
                                     }
                                 }
                             };
-                            j10.items = charSequenceArr322;
-                            j10.onClickListener = onClickListener322;
-                            j10.show();
-                            z0Var2.F = j10;
+                            i15.items = charSequenceArr322;
+                            i15.onClickListener = onClickListener322;
+                            i15.show();
+                            z0Var2.F = i15;
                     }
                 }
             });
@@ -741,7 +741,7 @@ public final class l0 implements View.OnLongClickListener {
                 switch (i112) {
                     case 0:
                         z0 z0Var = l0Var.a;
-                        f3 j3 = ok.j(1, z0Var.getContext(), null, false);
+                        f3 i14 = bi.i(1, z0Var.getContext(), null, false);
                         try {
                             parse = Uri.parse(str5);
                         } catch (Exception e7) {
@@ -752,22 +752,22 @@ public final class l0 implements View.OnLongClickListener {
                                 str = str5;
                                 FileLog.e(e);
                                 str2 = str;
-                                j3.multipleLinesTitle = true;
-                                j3.title = str2;
-                                j3.bigTitle = false;
+                                i14.multipleLinesTitle = true;
+                                i14.title = str2;
+                                i14.bigTitle = false;
                                 CharSequence[] charSequenceArr22 = {LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)};
                                 DialogInterface.OnClickListener onClickListener22 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.k0
                                     @Override // android.content.DialogInterface.OnClickListener
-                                    public final void onClick(DialogInterface dialogInterface, int i14) {
-                                        int i15 = i12;
+                                    public final void onClick(DialogInterface dialogInterface, int i152) {
+                                        int i16 = i12;
                                         String str6 = str5;
                                         l0 l0Var2 = l0Var;
-                                        switch (i15) {
+                                        switch (i16) {
                                             case 0:
                                                 z0 z0Var22 = l0Var2.a;
-                                                if (i14 != 0) {
-                                                    if (i14 != 1) {
-                                                        if (i14 == 2) {
+                                                if (i152 != 0) {
+                                                    if (i152 != 1) {
+                                                        if (i152 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             c1 c1Var = z0Var22.Q;
                                                             if (c1Var != null) {
@@ -816,9 +816,9 @@ public final class l0 implements View.OnLongClickListener {
                                                 break;
                                             default:
                                                 z0 z0Var3 = l0Var2.a;
-                                                if (i14 != 0) {
-                                                    if (i14 != 1) {
-                                                        if (i14 == 2) {
+                                                if (i152 != 0) {
+                                                    if (i152 != 1) {
+                                                        if (i152 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             c1 c1Var3 = z0Var3.Q;
                                                             if (c1Var3 != null) {
@@ -847,32 +847,32 @@ public final class l0 implements View.OnLongClickListener {
                                         }
                                     }
                                 };
-                                j3.items = charSequenceArr22;
-                                j3.onClickListener = onClickListener22;
-                                j3.show();
-                                z0Var.F = j3;
+                                i14.items = charSequenceArr22;
+                                i14.onClickListener = onClickListener22;
+                                i14.show();
+                                z0Var.F = i14;
                                 return;
                             }
                         }
                         if (parse != null && !parse.getScheme().equalsIgnoreCase("data")) {
                             str = nf.f.v(parse, null, null, nf.f.a(parse.getHost()), null);
                             str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
-                            j3.multipleLinesTitle = true;
-                            j3.title = str2;
-                            j3.bigTitle = false;
+                            i14.multipleLinesTitle = true;
+                            i14.title = str2;
+                            i14.bigTitle = false;
                             CharSequence[] charSequenceArr222 = {LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)};
                             DialogInterface.OnClickListener onClickListener222 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.k0
                                 @Override // android.content.DialogInterface.OnClickListener
-                                public final void onClick(DialogInterface dialogInterface, int i14) {
-                                    int i15 = i12;
+                                public final void onClick(DialogInterface dialogInterface, int i152) {
+                                    int i16 = i12;
                                     String str6 = str5;
                                     l0 l0Var2 = l0Var;
-                                    switch (i15) {
+                                    switch (i16) {
                                         case 0:
                                             z0 z0Var22 = l0Var2.a;
-                                            if (i14 != 0) {
-                                                if (i14 != 1) {
-                                                    if (i14 == 2) {
+                                            if (i152 != 0) {
+                                                if (i152 != 1) {
+                                                    if (i152 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         c1 c1Var = z0Var22.Q;
                                                         if (c1Var != null) {
@@ -921,9 +921,9 @@ public final class l0 implements View.OnLongClickListener {
                                             break;
                                         default:
                                             z0 z0Var3 = l0Var2.a;
-                                            if (i14 != 0) {
-                                                if (i14 != 1) {
-                                                    if (i14 == 2) {
+                                            if (i152 != 0) {
+                                                if (i152 != 1) {
+                                                    if (i152 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         c1 c1Var3 = z0Var3.Q;
                                                         if (c1Var3 != null) {
@@ -952,29 +952,29 @@ public final class l0 implements View.OnLongClickListener {
                                     }
                                 }
                             };
-                            j3.items = charSequenceArr222;
-                            j3.onClickListener = onClickListener222;
-                            j3.show();
-                            z0Var.F = j3;
+                            i14.items = charSequenceArr222;
+                            i14.onClickListener = onClickListener222;
+                            i14.show();
+                            z0Var.F = i14;
                         }
                         str = str5;
                         str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
-                        j3.multipleLinesTitle = true;
-                        j3.title = str2;
-                        j3.bigTitle = false;
+                        i14.multipleLinesTitle = true;
+                        i14.title = str2;
+                        i14.bigTitle = false;
                         CharSequence[] charSequenceArr2222 = {LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)};
                         DialogInterface.OnClickListener onClickListener2222 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.k0
                             @Override // android.content.DialogInterface.OnClickListener
-                            public final void onClick(DialogInterface dialogInterface, int i14) {
-                                int i15 = i12;
+                            public final void onClick(DialogInterface dialogInterface, int i152) {
+                                int i16 = i12;
                                 String str6 = str5;
                                 l0 l0Var2 = l0Var;
-                                switch (i15) {
+                                switch (i16) {
                                     case 0:
                                         z0 z0Var22 = l0Var2.a;
-                                        if (i14 != 0) {
-                                            if (i14 != 1) {
-                                                if (i14 == 2) {
+                                        if (i152 != 0) {
+                                            if (i152 != 1) {
+                                                if (i152 == 2) {
                                                     AndroidUtilities.addToClipboard(str6);
                                                     c1 c1Var = z0Var22.Q;
                                                     if (c1Var != null) {
@@ -1023,9 +1023,9 @@ public final class l0 implements View.OnLongClickListener {
                                         break;
                                     default:
                                         z0 z0Var3 = l0Var2.a;
-                                        if (i14 != 0) {
-                                            if (i14 != 1) {
-                                                if (i14 == 2) {
+                                        if (i152 != 0) {
+                                            if (i152 != 1) {
+                                                if (i152 == 2) {
                                                     AndroidUtilities.addToClipboard(str6);
                                                     c1 c1Var3 = z0Var3.Q;
                                                     if (c1Var3 != null) {
@@ -1054,14 +1054,14 @@ public final class l0 implements View.OnLongClickListener {
                                 }
                             }
                         };
-                        j3.items = charSequenceArr2222;
-                        j3.onClickListener = onClickListener2222;
-                        j3.show();
-                        z0Var.F = j3;
+                        i14.items = charSequenceArr2222;
+                        i14.onClickListener = onClickListener2222;
+                        i14.show();
+                        z0Var.F = i14;
                         break;
                     default:
                         z0 z0Var2 = l0Var.a;
-                        f3 j10 = ok.j(1, z0Var2.getContext(), null, false);
+                        f3 i15 = bi.i(1, z0Var2.getContext(), null, false);
                         try {
                             Uri parse2 = Uri.parse(str5);
                             str3 = nf.f.v(parse2, null, null, nf.f.a(parse2.getHost()), null);
@@ -1074,22 +1074,22 @@ public final class l0 implements View.OnLongClickListener {
                                 str3 = str5;
                                 FileLog.e(e);
                                 str4 = str3;
-                                j10.multipleLinesTitle = true;
-                                j10.title = str4;
-                                j10.bigTitle = false;
+                                i15.multipleLinesTitle = true;
+                                i15.title = str4;
+                                i15.bigTitle = false;
                                 CharSequence[] charSequenceArr322 = {LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)};
                                 DialogInterface.OnClickListener onClickListener322 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.k0
                                     @Override // android.content.DialogInterface.OnClickListener
-                                    public final void onClick(DialogInterface dialogInterface, int i14) {
-                                        int i15 = i13;
+                                    public final void onClick(DialogInterface dialogInterface, int i152) {
+                                        int i16 = i13;
                                         String str6 = str5;
                                         l0 l0Var2 = l0Var;
-                                        switch (i15) {
+                                        switch (i16) {
                                             case 0:
                                                 z0 z0Var22 = l0Var2.a;
-                                                if (i14 != 0) {
-                                                    if (i14 != 1) {
-                                                        if (i14 == 2) {
+                                                if (i152 != 0) {
+                                                    if (i152 != 1) {
+                                                        if (i152 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             c1 c1Var = z0Var22.Q;
                                                             if (c1Var != null) {
@@ -1138,9 +1138,9 @@ public final class l0 implements View.OnLongClickListener {
                                                 break;
                                             default:
                                                 z0 z0Var3 = l0Var2.a;
-                                                if (i14 != 0) {
-                                                    if (i14 != 1) {
-                                                        if (i14 == 2) {
+                                                if (i152 != 0) {
+                                                    if (i152 != 1) {
+                                                        if (i152 == 2) {
                                                             AndroidUtilities.addToClipboard(str6);
                                                             c1 c1Var3 = z0Var3.Q;
                                                             if (c1Var3 != null) {
@@ -1169,10 +1169,10 @@ public final class l0 implements View.OnLongClickListener {
                                         }
                                     }
                                 };
-                                j10.items = charSequenceArr322;
-                                j10.onClickListener = onClickListener322;
-                                j10.show();
-                                z0Var2.F = j10;
+                                i15.items = charSequenceArr322;
+                                i15.onClickListener = onClickListener322;
+                                i15.show();
+                                z0Var2.F = i15;
                             }
                         }
                         try {
@@ -1181,22 +1181,22 @@ public final class l0 implements View.OnLongClickListener {
                             e = e13;
                             FileLog.e(e);
                             str4 = str3;
-                            j10.multipleLinesTitle = true;
-                            j10.title = str4;
-                            j10.bigTitle = false;
+                            i15.multipleLinesTitle = true;
+                            i15.title = str4;
+                            i15.bigTitle = false;
                             CharSequence[] charSequenceArr3222 = {LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)};
                             DialogInterface.OnClickListener onClickListener3222 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.k0
                                 @Override // android.content.DialogInterface.OnClickListener
-                                public final void onClick(DialogInterface dialogInterface, int i14) {
-                                    int i15 = i13;
+                                public final void onClick(DialogInterface dialogInterface, int i152) {
+                                    int i16 = i13;
                                     String str6 = str5;
                                     l0 l0Var2 = l0Var;
-                                    switch (i15) {
+                                    switch (i16) {
                                         case 0:
                                             z0 z0Var22 = l0Var2.a;
-                                            if (i14 != 0) {
-                                                if (i14 != 1) {
-                                                    if (i14 == 2) {
+                                            if (i152 != 0) {
+                                                if (i152 != 1) {
+                                                    if (i152 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         c1 c1Var = z0Var22.Q;
                                                         if (c1Var != null) {
@@ -1245,9 +1245,9 @@ public final class l0 implements View.OnLongClickListener {
                                             break;
                                         default:
                                             z0 z0Var3 = l0Var2.a;
-                                            if (i14 != 0) {
-                                                if (i14 != 1) {
-                                                    if (i14 == 2) {
+                                            if (i152 != 0) {
+                                                if (i152 != 1) {
+                                                    if (i152 == 2) {
                                                         AndroidUtilities.addToClipboard(str6);
                                                         c1 c1Var3 = z0Var3.Q;
                                                         if (c1Var3 != null) {
@@ -1276,27 +1276,27 @@ public final class l0 implements View.OnLongClickListener {
                                     }
                                 }
                             };
-                            j10.items = charSequenceArr3222;
-                            j10.onClickListener = onClickListener3222;
-                            j10.show();
-                            z0Var2.F = j10;
+                            i15.items = charSequenceArr3222;
+                            i15.onClickListener = onClickListener3222;
+                            i15.show();
+                            z0Var2.F = i15;
                         }
-                        j10.multipleLinesTitle = true;
-                        j10.title = str4;
-                        j10.bigTitle = false;
+                        i15.multipleLinesTitle = true;
+                        i15.title = str4;
+                        i15.bigTitle = false;
                         CharSequence[] charSequenceArr32222 = {LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)};
                         DialogInterface.OnClickListener onClickListener32222 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.k0
                             @Override // android.content.DialogInterface.OnClickListener
-                            public final void onClick(DialogInterface dialogInterface, int i14) {
-                                int i15 = i13;
+                            public final void onClick(DialogInterface dialogInterface, int i152) {
+                                int i16 = i13;
                                 String str6 = str5;
                                 l0 l0Var2 = l0Var;
-                                switch (i15) {
+                                switch (i16) {
                                     case 0:
                                         z0 z0Var22 = l0Var2.a;
-                                        if (i14 != 0) {
-                                            if (i14 != 1) {
-                                                if (i14 == 2) {
+                                        if (i152 != 0) {
+                                            if (i152 != 1) {
+                                                if (i152 == 2) {
                                                     AndroidUtilities.addToClipboard(str6);
                                                     c1 c1Var = z0Var22.Q;
                                                     if (c1Var != null) {
@@ -1345,9 +1345,9 @@ public final class l0 implements View.OnLongClickListener {
                                         break;
                                     default:
                                         z0 z0Var3 = l0Var2.a;
-                                        if (i14 != 0) {
-                                            if (i14 != 1) {
-                                                if (i14 == 2) {
+                                        if (i152 != 0) {
+                                            if (i152 != 1) {
+                                                if (i152 == 2) {
                                                     AndroidUtilities.addToClipboard(str6);
                                                     c1 c1Var3 = z0Var3.Q;
                                                     if (c1Var3 != null) {
@@ -1376,10 +1376,10 @@ public final class l0 implements View.OnLongClickListener {
                                 }
                             }
                         };
-                        j10.items = charSequenceArr32222;
-                        j10.onClickListener = onClickListener32222;
-                        j10.show();
-                        z0Var2.F = j10;
+                        i15.items = charSequenceArr32222;
+                        i15.onClickListener = onClickListener32222;
+                        i15.show();
+                        z0Var2.F = i15;
                 }
             }
         });

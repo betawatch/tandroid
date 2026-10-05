@@ -1,45 +1,40 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes3.dex */
-public final class h41 extends s4.s0 {
-    public final /* synthetic */ t41 a;
+public final class h41 extends zl0 {
+    public final /* synthetic */ u41 e3;
 
-    public h41(t41 t41Var) {
-        this.a = t41Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h41(u41 u41Var, Context context) {
+        super(context, null);
+        this.e3 = u41Var;
     }
 
-    @Override // s4.s0
-    public final void a(RecyclerView recyclerView, int i10) {
-        t41 t41Var = this.a;
-        g41 g41Var = t41Var.H;
-        if (i10 == 0) {
-            t41Var.G = false;
+    @Override // org.telegram.ui.Components.zl0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            float y3 = motionEvent.getY();
+            u41 u41Var = this.e3;
+            if (y3 < u41Var.z(true) - getTop()) {
+                u41Var.dismiss();
+                return true;
+            }
         }
-        if ((i10 == 0 || i10 == 2) && t41Var.z(false) > 0.0f && t41Var.z(false) < AndroidUtilities.dp(96.0f) && g41Var.canScrollVertically(1) && t41.u(t41Var)) {
-            t41Var.G = true;
-            g41Var.w0(0, (int) t41Var.z(false), null);
-        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // s4.s0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ViewGroup viewGroup;
-        t41 t41Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) t41Var).containerView;
-        viewGroup.invalidate();
-        boolean canScrollVertically = t41Var.H.canScrollVertically(1);
-        View view = t41Var.L;
-        Boolean bool = t41Var.Q;
-        if (bool == null || bool.booleanValue() != canScrollVertically) {
-            t41Var.Q = Boolean.valueOf(canScrollVertically);
-            view.animate().cancel();
-            org.telegram.messenger.ok.s(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), tr.h, 320L);
-        }
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onRequestFocusInDescendants(int i10, Rect rect) {
+        return true;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
+    public final void requestChildFocus(View view, View view2) {
     }
 }

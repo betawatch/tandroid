@@ -9,11 +9,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.hj;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.w61;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u7 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -29,22 +29,22 @@ public final /* synthetic */ class u7 implements Utilities.Callback2 {
         switch (this.a) {
             case 0:
                 ArrayList arrayList = (ArrayList) obj;
-                u61 u61Var = (u61) obj2;
+                w61 w61Var = (w61) obj2;
                 c8 c8Var = this.b;
                 MessagesController.SavedMusicList savedMusicList = c8Var.e0;
-                u61Var.E = 1;
+                w61Var.E = 1;
                 int dp = AndroidUtilities.dp(64.0f);
-                arrayList.add(g61.C(AndroidUtilities.dp(64.0f)));
+                arrayList.add(h61.D(AndroidUtilities.dp(64.0f)));
                 if (c8Var.Z || c8Var.h0) {
                     dp += c8Var.W(true, arrayList, LocaleController.getString(R.string.AudioSearchLocal), c8Var.b0, false, false, -1);
                 }
                 if (!c8Var.Z) {
                     if (TextUtils.isEmpty(c8Var.q0) && !c8Var.h0) {
-                        u61Var.U();
-                        g61 c10 = g61.c(1, R.drawable.msg2_folder, LocaleController.getString(R.string.StoryMusicSelectFromFiles));
+                        w61Var.U();
+                        h61 c10 = h61.c(1, R.drawable.msg2_folder, LocaleController.getString(R.string.StoryMusicSelectFromFiles));
                         c10.q = true;
                         arrayList.add(c10);
-                        u61Var.T();
+                        w61Var.T();
                         dp += AndroidUtilities.dp(50.0f);
                     }
                     if (!c8Var.h0 && savedMusicList != null) {
@@ -57,22 +57,22 @@ public final /* synthetic */ class u7 implements Utilities.Callback2 {
                         String string = LocaleController.getString(R.string.NoAudioFound);
                         String string2 = LocaleController.getString(R.string.NoAudioFilesInfo);
                         int i10 = hj.a;
-                        g61 J = g61.J(hj.class);
-                        J.l = string;
-                        J.m = string2;
-                        arrayList.add(J);
+                        h61 K = h61.K(hj.class);
+                        K.l = string;
+                        K.m = string2;
+                        arrayList.add(K);
                     } else {
                         String string3 = LocaleController.getString(R.string.NoAudioFound);
                         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(c8Var.q0.length() >= 3 ? R.string.NoAudioFoundInfo2 : R.string.NoAudioFoundInfo, c8Var.q0));
                         int i11 = hj.a;
-                        g61 J2 = g61.J(hj.class);
-                        J2.l = string3;
-                        J2.m = replaceTags;
-                        arrayList.add(J2);
+                        h61 K2 = h61.K(hj.class);
+                        K2.l = string3;
+                        K2.m = replaceTags;
+                        arrayList.add(K2);
                     }
                 }
-                arrayList.add(g61.B(null));
-                arrayList.add(g61.C(Math.max(0, AndroidUtilities.dp(24.0f) + (((AndroidUtilities.displaySize.y - (AndroidUtilities.dp(12.0f) + dp)) - AndroidUtilities.statusBarHeight) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()))));
+                arrayList.add(h61.C(null));
+                arrayList.add(h61.D(Math.max(0, AndroidUtilities.dp(24.0f) + (((AndroidUtilities.displaySize.y - (AndroidUtilities.dp(12.0f) + dp)) - AndroidUtilities.statusBarHeight) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()))));
                 break;
             default:
                 c8.P(this.b, (TLRPC.messages_BotResults) obj);

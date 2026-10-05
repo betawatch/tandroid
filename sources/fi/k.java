@@ -15,7 +15,6 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.x40;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.a91;
 import org.telegram.ui.g10;
 import org.telegram.ui.h60;
 import org.telegram.ui.jo;
@@ -24,8 +23,9 @@ import org.telegram.ui.nd;
 import org.telegram.ui.no;
 import org.telegram.ui.p50;
 import org.telegram.ui.to;
+import org.telegram.ui.y81;
 
-/* compiled from: r8-map-id-90c74b6d1af88fe423a82a48cb36c0781986d7c98a26085f38aeb2edc71128ad */
+/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -273,7 +273,7 @@ public final /* synthetic */ class k implements Runnable {
                 ProfileActivity.d0((ProfileActivity) this.r, this.b, this.c, this.d, this.f, this.e, this.h, this.n);
                 break;
             default:
-                a91.X((a91) this.r, this.b, this.c, this.d, this.f, this.e, this.h, this.n);
+                y81.T((y81) this.r, this.b, this.c, this.d, this.f, this.e, this.h, this.n);
                 break;
         }
     }
