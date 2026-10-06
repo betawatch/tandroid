@@ -66,7 +66,7 @@ import x7.fa;
 import x7.m7;
 import x7.o7;
 
-/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+/* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
 /* loaded from: classes3.dex */
 public final class n2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int r0 = 0;
@@ -2480,7 +2480,7 @@ public final class n2 extends FrameLayout implements NotificationCenter.Notifica
         this.V = false;
     }
 
-    public final Bitmap d(Bitmap bitmap, int i10, int i11, boolean z10) {
+    public final Bitmap d(int i10, int i11, Bitmap bitmap, boolean z10) {
         Bitmap sourceBitmap = getSourceBitmap();
         if (bitmap == null || bitmap.isRecycled() || sourceBitmap == null) {
             return null;

@@ -24,7 +24,7 @@ import java.util.zip.GZIPInputStream;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.n11;
 
-/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+/* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
 /* loaded from: classes.dex */
 public class CodeHighlighting {
     public static final int MATCH_COMMENT = 6;
@@ -39,7 +39,7 @@ public class CodeHighlighting {
     private static HashSet<String> languages;
     private static final ConcurrentHashMap<String, Highlighting> processedHighlighting = new ConcurrentHashMap<>();
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class CachedPattern {
         private Pattern pattern;
         private String patternSource;
@@ -58,7 +58,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class CachedToSpan {
         public int end;
         public int group;
@@ -71,7 +71,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class ColorSpan extends CharacterStyle {
         public int group;
 
@@ -106,7 +106,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class Highlighting {
         String language;
         SpannableString result;
@@ -116,7 +116,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class LinkedList {
         public Node head;
         public int length = 0;
@@ -166,7 +166,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class LockedSpannableString extends SpannableString {
         public boolean ready;
 
@@ -214,7 +214,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class LockedWithFallbackSpannableString extends LockedSpannableString {
         public SpannableStringBuilder fallback;
 
@@ -254,7 +254,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class Match {
         int index;
         int length;
@@ -264,7 +264,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class Node {
         public Node next;
         public Node prev;
@@ -274,7 +274,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class ParsedPattern {
         private CachedPattern cachedPattern;
         boolean caseInsensitive;
@@ -296,7 +296,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class RematchOptions {
         TokenPattern cause;
         int reach;
@@ -305,7 +305,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class Span extends CharacterStyle {
         public final String code;
         public final int currentType;
@@ -346,7 +346,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class StreamReader {
         private final InputStream is;
 
@@ -998,7 +998,7 @@ public class CodeHighlighting {
         return linkedList;
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class TokenPattern {
         public boolean greedy;
         public int group;
@@ -1031,7 +1031,7 @@ public class CodeHighlighting {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class StringToken {
         final int group;
         final LinkedList inside;

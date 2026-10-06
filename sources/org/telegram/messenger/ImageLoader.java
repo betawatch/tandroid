@@ -83,7 +83,7 @@ import org.telegram.ui.Components.pc0;
 import org.telegram.ui.Components.q21;
 import org.telegram.ui.Components.uw0;
 
-/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+/* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
 /* loaded from: classes.dex */
 public class ImageLoader {
     public static final String AUTOPLAY_FILTER = "g";
@@ -134,7 +134,7 @@ public class ImageLoader {
     private LinkedList<HttpImageTask> httpTasks = new LinkedList<>();
     private LinkedList<ArtworkLoadTask> artworkTasks = new LinkedList<>();
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public class 5 implements FileLoader.FileLoaderDelegate {
         final /* synthetic */ int val$currentAccount;
 
@@ -318,7 +318,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public class 6 extends BroadcastReceiver {
         public 6() {
         }
@@ -342,7 +342,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static /* synthetic */ class 7 {
         static final /* synthetic */ int[] $SwitchMap$android$graphics$Bitmap$CompressFormat;
 
@@ -367,7 +367,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public class ArtworkLoadTask extends AsyncTask<Void, Void, String> {
         private CacheImage cacheImage;
         private boolean canRetry = true;
@@ -585,7 +585,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public class CacheImage {
         protected ArtworkLoadTask artworkTask;
         protected CacheOutTask cacheTask;
@@ -917,7 +917,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public class CacheOutTask implements Runnable {
         private CacheImage cacheImage;
         private boolean isCancelled;
@@ -1104,9 +1104,9 @@ public class ImageLoader {
             }
         }
 
-        /* JADX WARN: Can't wrap try/catch for region: R(14:897|(2:899|(12:901|902|903|(1:905)(1:927)|906|907|908|909|(2:915|(1:917))|(1:919)(1:922)|920|921))|930|902|903|(0)(0)|906|907|908|909|(4:911|913|915|(0))|(0)(0)|920|921) */
+        /* JADX WARN: Can't wrap try/catch for region: R(14:899|(2:901|(12:903|904|905|(1:907)(1:929)|908|909|910|911|(2:917|(1:919))|(1:921)(1:924)|922|923))|932|904|905|(0)(0)|908|909|910|911|(4:913|915|917|(0))|(0)(0)|922|923) */
         /* JADX WARN: Can't wrap try/catch for region: R(18:72|(6:73|74|75|76|(1:78)(1:124)|79)|(3:81|82|(9:84|85|86|(1:118)|(3:103|(1:117)(4:106|(1:110)|111|(1:115))|116)(1:92)|93|(1:102)(1:97)|(1:99)(1:101)|100))|123|85|86|(0)|118|(0)|103|(0)|117|116|93|(1:95)|102|(0)(0)|100) */
-        /* JADX WARN: Can't wrap try/catch for region: R(23:344|(1:896)(1:351)|352|(2:354|(1:894)(1:358))(1:895)|359|(20:361|(3:363|(1:365)(1:882)|366)(2:883|(17:885|(1:887)(1:889)|888|368|369|370|371|(15:373|374|375|(5:377|378|379|380|381)(1:843)|382|383|(1:385)(2:825|(1:827)(2:828|(1:830)(2:831|(1:833)(1:834))))|386|387|388|389|(1:391)(2:816|(1:818))|392|(1:815)(9:396|397|(2:780|(11:782|(1:802)(1:786)|(1:788)|789|790|791|(4:796|797|798|(1:800))|801|797|798|(0))(4:803|(1:805)(1:808)|806|807))(2:(3:401|402|403)(1:779)|404)|405|(1:777)(1:409)|410|(1:412)|413|(1:776)(3:419|(2:420|(1:423)(1:422))|424))|425)(3:848|(11:850|851|852|(1:854)(1:875)|855|857|858|(1:860)|861|(3:863|(2:864|(1:867)(1:866))|868)(1:872)|869)(1:878)|870)|426|427|428|(3:683|684|883)(4:430|431|432|a22)|468|(3:471|(1:473)(1:475)|474)|(2:481|(1:483))|484|(3:(1:499)(1:502)|500|501)(3:(1:491)(1:494)|492|493))(2:890|(1:892)))|367|368|369|370|371|(0)(0)|426|427|428|(0)(0)|468|(3:471|(0)(0)|474)|(4:477|479|481|(0))|484|(1:486)|(0)(0)|500|501)|893|369|370|371|(0)(0)|426|427|428|(0)(0)|468|(0)|(0)|484|(0)|(0)(0)|500|501) */
+        /* JADX WARN: Can't wrap try/catch for region: R(23:344|(1:898)(1:351)|352|(2:354|(1:896)(1:358))(1:897)|359|(20:361|(3:363|(1:365)(1:884)|366)(2:885|(17:887|(1:889)(1:891)|890|368|369|370|371|(15:373|374|375|(5:377|378|379|380|381)(1:845)|382|383|(1:385)(2:827|(1:829)(2:830|(1:832)(2:833|(1:835)(1:836))))|386|387|388|389|(1:391)(2:818|(1:820))|392|(1:817)(9:396|397|(2:782|(11:784|(1:804)(1:788)|(1:790)|791|792|793|(4:798|799|800|(1:802))|803|799|800|(0))(4:805|(1:807)(1:810)|808|809))(2:(3:401|402|403)(1:781)|404)|405|(1:779)(1:409)|410|(1:412)|413|(1:778)(3:419|(2:420|(1:423)(1:422))|424))|425)(3:850|(11:852|853|854|(1:856)(1:877)|857|859|860|(1:862)|863|(3:865|(2:866|(1:869)(1:868))|870)(1:874)|871)(1:880)|872)|426|427|428|(3:685|686|883)(4:430|431|432|a22)|468|(3:471|(1:473)(1:475)|474)|(2:481|(1:483))|484|(3:(1:499)(1:502)|500|501)(3:(1:491)(1:494)|492|493))(2:892|(1:894)))|367|368|369|370|371|(0)(0)|426|427|428|(0)(0)|468|(3:471|(0)(0)|474)|(4:477|479|481|(0))|484|(1:486)|(0)(0)|500|501)|895|369|370|371|(0)(0)|426|427|428|(0)(0)|468|(0)|(0)|484|(0)|(0)(0)|500|501) */
         /* JADX WARN: Code restructure failed: missing block: B:120:0x0221, code lost:
         
             r0 = move-exception;
@@ -1115,32 +1115,32 @@ public class ImageLoader {
         
             org.telegram.messenger.FileLog.e(r0);
          */
-        /* JADX WARN: Code restructure failed: missing block: B:880:0x085d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:882:0x085d, code lost:
         
             r0 = th;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:881:0x085e, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:883:0x085e, code lost:
         
             r21 = r6;
             r22 = r7;
             r23 = r11;
             r32 = 0.0f;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:924:0x0d8d, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:926:0x0d93, code lost:
         
             r0 = th;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:925:0x0d91, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:927:0x0d97, code lost:
         
             org.telegram.messenger.FileLog.e(r0);
             r0 = r3;
             r3 = null;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:928:0x0d8f, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:930:0x0d95, code lost:
         
             r0 = th;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:929:0x0d90, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:931:0x0d96, code lost:
         
             r3 = null;
          */
@@ -1166,34 +1166,34 @@ public class ImageLoader {
         /* JADX WARN: Removed duplicated region for block: B:335:0x0385  */
         /* JADX WARN: Removed duplicated region for block: B:373:0x0619  */
         /* JADX WARN: Removed duplicated region for block: B:430:0x0a13  */
-        /* JADX WARN: Removed duplicated region for block: B:454:0x0a59 A[Catch: all -> 0x0a45, TryCatch #19 {all -> 0x0a45, blocks: (B:432:0x0a17, B:433:0x0a22, B:442:0x0a30, B:445:0x0a38, B:448:0x0a3f, B:450:0x0a51, B:454:0x0a59, B:456:0x0a63, B:461:0x0a81, B:503:0x0a8d, B:504:0x0a9d, B:508:0x0ab2, B:512:0x0ad3, B:514:0x0ad7, B:672:0x0aba, B:677:0x0a4c, B:681:0x0cb1, B:435:0x0a23, B:437:0x0a27, B:440:0x0a2d), top: B:431:0x0a17, inners: #4 }] */
-        /* JADX WARN: Removed duplicated region for block: B:470:0x0cc5 A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:473:0x0cd0  */
-        /* JADX WARN: Removed duplicated region for block: B:475:0x0cd2  */
-        /* JADX WARN: Removed duplicated region for block: B:477:0x0ce7  */
-        /* JADX WARN: Removed duplicated region for block: B:483:0x0d06  */
-        /* JADX WARN: Removed duplicated region for block: B:486:0x0d10  */
-        /* JADX WARN: Removed duplicated region for block: B:499:0x0d33  */
-        /* JADX WARN: Removed duplicated region for block: B:502:0x0d3a  */
-        /* JADX WARN: Removed duplicated region for block: B:504:0x0a9d A[Catch: all -> 0x0a45, TryCatch #19 {all -> 0x0a45, blocks: (B:432:0x0a17, B:433:0x0a22, B:442:0x0a30, B:445:0x0a38, B:448:0x0a3f, B:450:0x0a51, B:454:0x0a59, B:456:0x0a63, B:461:0x0a81, B:503:0x0a8d, B:504:0x0a9d, B:508:0x0ab2, B:512:0x0ad3, B:514:0x0ad7, B:672:0x0aba, B:677:0x0a4c, B:681:0x0cb1, B:435:0x0a23, B:437:0x0a27, B:440:0x0a2d), top: B:431:0x0a17, inners: #4 }] */
+        /* JADX WARN: Removed duplicated region for block: B:454:0x0a59 A[Catch: all -> 0x0a45, TryCatch #19 {all -> 0x0a45, blocks: (B:432:0x0a17, B:433:0x0a22, B:442:0x0a30, B:445:0x0a38, B:448:0x0a3f, B:450:0x0a51, B:454:0x0a59, B:456:0x0a63, B:461:0x0a81, B:503:0x0a8d, B:504:0x0a9d, B:508:0x0ab2, B:512:0x0ad3, B:514:0x0ad7, B:674:0x0aba, B:679:0x0a4c, B:683:0x0cb7, B:435:0x0a23, B:437:0x0a27, B:440:0x0a2d), top: B:431:0x0a17, inners: #3 }] */
+        /* JADX WARN: Removed duplicated region for block: B:470:0x0ccb A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:473:0x0cd6  */
+        /* JADX WARN: Removed duplicated region for block: B:475:0x0cd8  */
+        /* JADX WARN: Removed duplicated region for block: B:477:0x0ced  */
+        /* JADX WARN: Removed duplicated region for block: B:483:0x0d0c  */
+        /* JADX WARN: Removed duplicated region for block: B:486:0x0d16  */
+        /* JADX WARN: Removed duplicated region for block: B:499:0x0d39  */
+        /* JADX WARN: Removed duplicated region for block: B:502:0x0d40  */
+        /* JADX WARN: Removed duplicated region for block: B:504:0x0a9d A[Catch: all -> 0x0a45, TryCatch #19 {all -> 0x0a45, blocks: (B:432:0x0a17, B:433:0x0a22, B:442:0x0a30, B:445:0x0a38, B:448:0x0a3f, B:450:0x0a51, B:454:0x0a59, B:456:0x0a63, B:461:0x0a81, B:503:0x0a8d, B:504:0x0a9d, B:508:0x0ab2, B:512:0x0ad3, B:514:0x0ad7, B:674:0x0aba, B:679:0x0a4c, B:683:0x0cb7, B:435:0x0a23, B:437:0x0a27, B:440:0x0a2d), top: B:431:0x0a17, inners: #3 }] */
         /* JADX WARN: Removed duplicated region for block: B:506:0x0aae  */
-        /* JADX WARN: Removed duplicated region for block: B:525:0x0be2  */
-        /* JADX WARN: Removed duplicated region for block: B:534:0x0bff A[Catch: all -> 0x0bf5, TryCatch #11 {all -> 0x0bf5, blocks: (B:526:0x0be4, B:528:0x0bee, B:531:0x0bfa, B:534:0x0bff, B:536:0x0c05, B:540:0x0c19, B:546:0x0c27, B:548:0x0c2d, B:550:0x0c4a, B:552:0x0c37, B:554:0x0c3d, B:557:0x0c52, B:559:0x0c60, B:560:0x0c69), top: B:523:0x0be0 }] */
-        /* JADX WARN: Removed duplicated region for block: B:550:0x0c4a A[Catch: all -> 0x0bf5, TryCatch #11 {all -> 0x0bf5, blocks: (B:526:0x0be4, B:528:0x0bee, B:531:0x0bfa, B:534:0x0bff, B:536:0x0c05, B:540:0x0c19, B:546:0x0c27, B:548:0x0c2d, B:550:0x0c4a, B:552:0x0c37, B:554:0x0c3d, B:557:0x0c52, B:559:0x0c60, B:560:0x0c69), top: B:523:0x0be0 }] */
+        /* JADX WARN: Removed duplicated region for block: B:553:0x0be8  */
         /* JADX WARN: Removed duplicated region for block: B:55:0x0161  */
-        /* JADX WARN: Removed duplicated region for block: B:676:0x0bdb  */
-        /* JADX WARN: Removed duplicated region for block: B:683:0x0876 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-        /* JADX WARN: Removed duplicated region for block: B:710:0x08e7 A[Catch: all -> 0x08ae, TryCatch #8 {all -> 0x08ae, blocks: (B:684:0x0876, B:685:0x0883, B:694:0x0891, B:696:0x08aa, B:700:0x08b5, B:701:0x08be, B:703:0x08d3, B:708:0x08e0, B:710:0x08e7, B:712:0x090c, B:714:0x0916, B:718:0x091c, B:719:0x0922, B:721:0x0928, B:725:0x093a, B:727:0x0940, B:729:0x094b, B:731:0x0951, B:766:0x08f2, B:768:0x0903, B:769:0x08fd, B:773:0x0a08, B:687:0x0884, B:689:0x0888, B:692:0x088e), top: B:683:0x0876, inners: #24 }] */
-        /* JADX WARN: Removed duplicated region for block: B:800:0x0759 A[Catch: all -> 0x074e, TryCatch #30 {all -> 0x074e, blocks: (B:405:0x077a, B:409:0x0788, B:413:0x079f, B:420:0x07af, B:424:0x07b8, B:776:0x07bd, B:777:0x0791, B:791:0x073d, B:793:0x0743, B:798:0x0752, B:800:0x0759, B:805:0x0763, B:807:0x0774, B:808:0x076e), top: B:397:0x06c1 }] */
-        /* JADX WARN: Removed duplicated region for block: B:848:0x07e1  */
+        /* JADX WARN: Removed duplicated region for block: B:562:0x0c05 A[Catch: all -> 0x0bfb, TryCatch #11 {all -> 0x0bfb, blocks: (B:554:0x0bea, B:556:0x0bf4, B:559:0x0c00, B:562:0x0c05, B:564:0x0c0b, B:568:0x0c1f, B:574:0x0c2d, B:576:0x0c33, B:578:0x0c50, B:580:0x0c3d, B:582:0x0c43, B:585:0x0c58, B:587:0x0c66, B:588:0x0c6f), top: B:551:0x0be6 }] */
+        /* JADX WARN: Removed duplicated region for block: B:578:0x0c50 A[Catch: all -> 0x0bfb, TryCatch #11 {all -> 0x0bfb, blocks: (B:554:0x0bea, B:556:0x0bf4, B:559:0x0c00, B:562:0x0c05, B:564:0x0c0b, B:568:0x0c1f, B:574:0x0c2d, B:576:0x0c33, B:578:0x0c50, B:580:0x0c3d, B:582:0x0c43, B:585:0x0c58, B:587:0x0c66, B:588:0x0c6f), top: B:551:0x0be6 }] */
+        /* JADX WARN: Removed duplicated region for block: B:678:0x0be1  */
+        /* JADX WARN: Removed duplicated region for block: B:685:0x0876 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Removed duplicated region for block: B:712:0x08e7 A[Catch: all -> 0x08ae, TryCatch #7 {all -> 0x08ae, blocks: (B:686:0x0876, B:687:0x0883, B:696:0x0891, B:698:0x08aa, B:702:0x08b5, B:703:0x08be, B:705:0x08d3, B:710:0x08e0, B:712:0x08e7, B:714:0x090c, B:716:0x0916, B:720:0x091c, B:721:0x0922, B:723:0x0928, B:727:0x093a, B:729:0x0940, B:731:0x094b, B:733:0x0951, B:768:0x08f2, B:770:0x0903, B:771:0x08fd, B:775:0x0a08, B:689:0x0884, B:691:0x0888, B:694:0x088e), top: B:685:0x0876, inners: #24 }] */
+        /* JADX WARN: Removed duplicated region for block: B:802:0x0759 A[Catch: all -> 0x074e, TryCatch #28 {all -> 0x074e, blocks: (B:405:0x077a, B:409:0x0788, B:413:0x079f, B:420:0x07af, B:424:0x07b8, B:778:0x07bd, B:779:0x0791, B:793:0x073d, B:795:0x0743, B:800:0x0752, B:802:0x0759, B:807:0x0763, B:809:0x0774, B:810:0x076e), top: B:397:0x06c1 }] */
+        /* JADX WARN: Removed duplicated region for block: B:850:0x07e1  */
         /* JADX WARN: Removed duplicated region for block: B:88:0x023d A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:905:0x0d7c  */
+        /* JADX WARN: Removed duplicated region for block: B:907:0x0d82  */
         /* JADX WARN: Removed duplicated region for block: B:90:0x0242 A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:911:0x0d98  */
-        /* JADX WARN: Removed duplicated region for block: B:917:0x0db7  */
-        /* JADX WARN: Removed duplicated region for block: B:919:0x0dbf  */
-        /* JADX WARN: Removed duplicated region for block: B:922:0x0dc4  */
-        /* JADX WARN: Removed duplicated region for block: B:927:0x0d7e  */
+        /* JADX WARN: Removed duplicated region for block: B:913:0x0d9e  */
+        /* JADX WARN: Removed duplicated region for block: B:919:0x0dbd  */
+        /* JADX WARN: Removed duplicated region for block: B:921:0x0dc5  */
+        /* JADX WARN: Removed duplicated region for block: B:924:0x0dca  */
+        /* JADX WARN: Removed duplicated region for block: B:929:0x0d84  */
         /* JADX WARN: Removed duplicated region for block: B:95:0x0281  */
         /* JADX WARN: Removed duplicated region for block: B:99:0x0290  */
         /* JADX WARN: Type inference failed for: r10v15, types: [boolean] */
@@ -2125,7 +2125,7 @@ public class ImageLoader {
                                                     if (this.cacheImage.filter != null) {
                                                         float width = bitmap2.getWidth();
                                                         float height = bitmap2.getHeight();
-                                                        if (f10 != f7 && width != f10 && width > f10 + f12 && bitmap2 != (createScaledBitmap = Bitmaps.createScaledBitmap(bitmap2, (int) f10, (int) (height / (width / f10)), true))) {
+                                                        if (f10 != f7 && width != f10 && width > f10 + f12 && bitmap2 != (createScaledBitmap = Bitmap.createScaledBitmap(bitmap2, (int) f10, (int) (height / (width / f10)), true))) {
                                                             bitmap2.recycle();
                                                             bitmap2 = createScaledBitmap;
                                                         }
@@ -2412,7 +2412,10 @@ public class ImageLoader {
                                                                         i13 = 0;
                                                                         secureDocumentKey4 = null;
                                                                     }
-                                                                    if (bitmap2 == null) {
+                                                                    if (bitmap2 != null || (secureDocumentKey == null && !z42)) {
+                                                                        i32 = i13;
+                                                                        secureDocumentKey = secureDocumentKey4;
+                                                                    } else {
                                                                         try {
                                                                             RandomAccessFile randomAccessFile5 = new RandomAccessFile(file3, "r");
                                                                             int i41 = i13;
@@ -2508,9 +2511,6 @@ public class ImageLoader {
                                                                             i32 = i13;
                                                                             secureDocumentKey = secureDocumentKey4;
                                                                         }
-                                                                    } else {
-                                                                        i32 = i13;
-                                                                        secureDocumentKey = secureDocumentKey4;
                                                                     }
                                                                     i11 = i32;
                                                                     secureDocumentKey = secureDocumentKey;
@@ -2534,7 +2534,7 @@ public class ImageLoader {
                                                                         if (width2 <= height2 || f10 <= f142222222) {
                                                                             float f17 = height2 / f142222222;
                                                                             if (f17 > 1.0f) {
-                                                                                createScaledBitmap2 = Bitmaps.createScaledBitmap(bitmap2, (int) (width2 / f17), (int) f142222222, true);
+                                                                                createScaledBitmap2 = Bitmap.createScaledBitmap(bitmap2, (int) (width2 / f17), (int) f142222222, true);
                                                                                 if (bitmap2 != createScaledBitmap2) {
                                                                                     bitmap2.recycle();
                                                                                     bitmap2 = createScaledBitmap2;
@@ -2546,7 +2546,7 @@ public class ImageLoader {
                                                                         } else {
                                                                             float f18 = width2 / f10;
                                                                             if (f18 > 1.0f) {
-                                                                                createScaledBitmap2 = Bitmaps.createScaledBitmap(bitmap2, (int) f10, (int) (height2 / f18), true);
+                                                                                createScaledBitmap2 = Bitmap.createScaledBitmap(bitmap2, (int) f10, (int) (height2 / f18), true);
                                                                                 if (bitmap2 != createScaledBitmap2) {
                                                                                 }
                                                                             }
@@ -2557,7 +2557,7 @@ public class ImageLoader {
                                                                     }
                                                                     if (bitmap2 != null) {
                                                                         if (z442222222) {
-                                                                            Bitmap createScaledBitmap3 = bitmap2.getWidth() * bitmap2.getHeight() > 22500 ? Bitmaps.createScaledBitmap(bitmap2, 100, 100, false) : bitmap2;
+                                                                            Bitmap createScaledBitmap3 = bitmap2.getWidth() * bitmap2.getHeight() > 22500 ? Bitmap.createScaledBitmap(bitmap2, 100, 100, false) : bitmap2;
                                                                             z19 = Utilities.needInvert(createScaledBitmap3) != 0;
                                                                             if (createScaledBitmap3 != bitmap2) {
                                                                                 try {
@@ -2588,7 +2588,7 @@ public class ImageLoader {
                                                                         }
                                                                         if (c12 != 0 && (height2 > 100.0f || width2 > 100.0f)) {
                                                                             height2 = 80.0f;
-                                                                            bitmap2 = Bitmaps.createScaledBitmap(bitmap2, 80, 80, false);
+                                                                            bitmap2 = Bitmap.createScaledBitmap(bitmap2, 80, 80, false);
                                                                             width2 = 80.0f;
                                                                         }
                                                                         if (c12 != 0 && height2 < 100.0f && width2 < 100.0f && bitmap2.getConfig() == Bitmap.Config.ARGB_8888) {
@@ -2914,7 +2914,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public class HttpFileTask extends AsyncTask<Void, Void, Boolean> {
         private int currentAccount;
         private String ext;
@@ -3144,7 +3144,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public class HttpImageTask extends AsyncTask<Void, Void, Boolean> {
         private CacheImage cacheImage;
         private boolean canRetry = true;
@@ -3522,7 +3522,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class MessageThumb {
         BitmapDrawable drawable;
         String key;
@@ -3533,7 +3533,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class PhotoSizeFromPhoto extends TLRPC.PhotoSize {
         public final TLRPC.InputPhoto inputPhoto;
         public final TLRPC.Photo photo;
@@ -3548,7 +3548,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class ThumbGenerateInfo {
         private boolean big;
         private String filter;
@@ -3562,7 +3562,7 @@ public class ImageLoader {
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public class ThumbGenerateTask implements Runnable {
         private ThumbGenerateInfo info;
         private int mediaType;
@@ -3662,7 +3662,7 @@ public class ImageLoader {
                         float f12 = min;
                         float f13 = height;
                         float min2 = Math.min(f11 / f12, f13 / f12);
-                        if (min2 > 1.0f && (createScaledBitmap = Bitmaps.createScaledBitmap(bitmap, (int) (f11 / min2), (int) (f13 / min2), true)) != bitmap) {
+                        if (min2 > 1.0f && (createScaledBitmap = Bitmap.createScaledBitmap(bitmap, (int) (f11 / min2), (int) (f13 / min2), true)) != bitmap) {
                             bitmap.recycle();
                             bitmap = createScaledBitmap;
                         }
@@ -4170,7 +4170,7 @@ public class ImageLoader {
                             Utilities.blurBitmap(strippedPhotoBitmap, 3);
                             float f7 = C2.x;
                             float f10 = AndroidUtilities.density;
-                            Bitmap createScaledBitmap = Bitmaps.createScaledBitmap(strippedPhotoBitmap, (int) (f7 / f10), (int) (C2.y / f10), true);
+                            Bitmap createScaledBitmap = Bitmap.createScaledBitmap(strippedPhotoBitmap, (int) (f7 / f10), (int) (C2.y / f10), true);
                             if (createScaledBitmap != strippedPhotoBitmap) {
                                 strippedPhotoBitmap.recycle();
                                 strippedPhotoBitmap = createScaledBitmap;
@@ -4201,7 +4201,7 @@ public class ImageLoader {
                         Utilities.blurBitmap(loadBitmap, 3);
                         float f13 = C22.x;
                         float f14 = AndroidUtilities.density;
-                        Bitmap createScaledBitmap2 = Bitmaps.createScaledBitmap(loadBitmap, (int) (f13 / f14), (int) (C22.y / f14), true);
+                        Bitmap createScaledBitmap2 = Bitmap.createScaledBitmap(loadBitmap, (int) (f13 / f14), (int) (C22.y / f14), true);
                         if (createScaledBitmap2 != loadBitmap) {
                             loadBitmap.recycle();
                             loadBitmap = createScaledBitmap2;
@@ -5341,7 +5341,7 @@ public class ImageLoader {
                                 bitmap = BitmapFactory.decodeFile(str2, options);
                                 if (bitmap != null) {
                                     try {
-                                        Bitmap createBitmap2 = Bitmaps.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix22, true);
+                                        Bitmap createBitmap2 = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix22, true);
                                         if (createBitmap2 != bitmap) {
                                             bitmap.recycle();
                                             return createBitmap2;
@@ -5363,7 +5363,7 @@ public class ImageLoader {
                                         bitmap = bitmap2;
                                         if (bitmap != null) {
                                             try {
-                                                Bitmap createBitmap3 = Bitmaps.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix22, true);
+                                                Bitmap createBitmap3 = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix22, true);
                                                 if (createBitmap3 != bitmap) {
                                                     bitmap.recycle();
                                                     bitmap = createBitmap3;
@@ -5394,7 +5394,7 @@ public class ImageLoader {
                         try {
                             if (decodeStream != null) {
                                 try {
-                                    createBitmap = Bitmaps.createBitmap(decodeStream, 0, 0, decodeStream.getWidth(), decodeStream.getHeight(), matrix22, true);
+                                    createBitmap = Bitmap.createBitmap(decodeStream, 0, 0, decodeStream.getWidth(), decodeStream.getHeight(), matrix22, true);
                                 } catch (Throwable th8) {
                                     th = th8;
                                     bitmap2 = decodeStream;
@@ -5774,7 +5774,7 @@ public class ImageLoader {
     */
     private static TLRPC.PhotoSize scaleAndSaveImageInternal(TLRPC.PhotoSize photoSize, Bitmap bitmap, Bitmap.CompressFormat compressFormat, boolean z10, int i10, int i11, float f7, float f10, float f11, int i12, boolean z11, boolean z12, boolean z13) {
         TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated;
-        Bitmap createScaledBitmap = (f11 > 1.0f || z12) ? Bitmaps.createScaledBitmap(bitmap, i10, i11, true) : bitmap;
+        Bitmap createScaledBitmap = (f11 > 1.0f || z12) ? Bitmap.createScaledBitmap(bitmap, i10, i11, true) : bitmap;
         if (photoSize != null) {
             TLRPC.FileLocation fileLocation = photoSize.location;
             if (fileLocation instanceof TLRPC.TL_fileLocationToBeDeprecated) {

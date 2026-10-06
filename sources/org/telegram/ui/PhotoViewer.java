@@ -156,7 +156,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+/* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
 /* loaded from: classes3.dex */
 public class PhotoViewer implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.m20, org.telegram.ui.Components.l20, rf.a, le.d {
     public static Drawable[] U8;
@@ -666,7 +666,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     public final float[] z7;
     public boolean z8;
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public class BackgroundDrawable extends ColorDrawable {
         public static final /* synthetic */ int g = 0;
         public final RectF a;
@@ -788,7 +788,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         }
     }
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class CounterView extends View {
         public StaticLayout a;
         public final TextPaint b;
@@ -17555,7 +17555,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                     if (k2Var == null) {
                                         return;
                                     }
-                                    k2Var.e = n2Var2.d(bitmap6, 0, 0, true);
+                                    k2Var.e = n2Var2.d(0, 0, bitmap6, true);
                                     qg.k2 k2Var2 = n2Var2.E;
                                     k2Var2.g = k2Var2.c();
                                     qg.n2.c(n2Var2.E, n2Var2.T, n2Var2.U);
@@ -17581,7 +17581,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                 if (k2Var3 == null) {
                                     return;
                                 }
-                                k2Var3.e = n2Var3.d(createBitmap4, 0, 0, true);
+                                k2Var3.e = n2Var3.d(0, 0, createBitmap4, true);
                                 qg.k2 k2Var4 = n2Var3.E;
                                 k2Var4.g = k2Var4.c();
                                 qg.n2.c(n2Var3.E, n2Var3.T, n2Var3.U);
@@ -17839,7 +17839,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                                     } else if (i33 == 2) {
                                         matrix2.postScale(1.0f, -1.0f);
                                     }
-                                    createBitmap = Bitmaps.createBitmap(bitmap11, 0, 0, bitmap11.getWidth(), bitmap11.getHeight(), matrix2, true);
+                                    createBitmap = Bitmap.createBitmap(bitmap11, 0, 0, bitmap11.getWidth(), bitmap11.getHeight(), matrix2, true);
                                 } else {
                                     bitmap3 = bitmap11;
                                     z13 = false;
@@ -18144,7 +18144,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             } else if (i11 == 2) {
                 matrix.postScale(1.0f, -1.0f);
             }
-            createBitmap = Bitmaps.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+            createBitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
         }
         bitmap2 = createBitmap;
         z10 = true;

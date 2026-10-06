@@ -1,12 +1,12 @@
 package org.telegram.ui;
 
 import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Bitmaps;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+/* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
 /* loaded from: classes3.dex */
 public final class u70 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -139,25 +139,23 @@ public final class u70 extends org.telegram.ui.ActionBar.j {
                             int height = (int) (f11 * iq0Var2.a.getHeight());
                             int width2 = (int) (f12 * iq0Var2.a.getWidth());
                             int width3 = (int) (f13 * iq0Var2.a.getWidth());
-                            if (width < 0) {
-                                width = 0;
+                            int i12 = width < 0 ? 0 : width;
+                            int i13 = height < 0 ? 0 : height;
+                            if (i12 + width2 > iq0Var2.a.getWidth()) {
+                                width2 = iq0Var2.a.getWidth() - i12;
                             }
-                            if (height < 0) {
-                                height = 0;
+                            int i14 = width2;
+                            if (i13 + width3 > iq0Var2.a.getHeight()) {
+                                width3 = iq0Var2.a.getHeight() - i13;
                             }
-                            if (width + width2 > iq0Var2.a.getWidth()) {
-                                width2 = iq0Var2.a.getWidth() - width;
-                            }
-                            if (height + width3 > iq0Var2.a.getHeight()) {
-                                width3 = iq0Var2.a.getHeight() - height;
-                            }
+                            int i15 = width3;
                             try {
-                                bitmap = Bitmaps.createBitmap(iq0Var2.a, width, height, width2, width3);
+                                bitmap = Bitmap.createBitmap(iq0Var2.a, i12, i13, i14, i15, (Matrix) null, false);
                             } catch (Throwable th2) {
                                 FileLog.e(th2);
                                 System.gc();
                                 try {
-                                    bitmap = Bitmaps.createBitmap(iq0Var2.a, width, height, width2, width3);
+                                    bitmap = Bitmap.createBitmap(iq0Var2.a, i12, i13, i14, i15, (Matrix) null, false);
                                 } catch (Throwable th3) {
                                     FileLog.e(th3);
                                     bitmap = null;
@@ -218,12 +216,12 @@ public final class u70 extends org.telegram.ui.ActionBar.j {
                 if (i10 != -1) {
                     if (i10 != 1) {
                         if (i10 == 2) {
-                            int i12 = PopupNotificationActivity.b0;
+                            int i16 = PopupNotificationActivity.b0;
                             popupNotificationActivity.p();
                             break;
                         }
                     } else {
-                        int i13 = PopupNotificationActivity.b0;
+                        int i17 = PopupNotificationActivity.b0;
                         popupNotificationActivity.k();
                         break;
                     }

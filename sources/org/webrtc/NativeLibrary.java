@@ -1,13 +1,13 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+/* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
 /* loaded from: classes4.dex */
 class NativeLibrary {
     private static String TAG = "NativeLibrary";
     private static boolean libraryLoaded;
     private static Object lock = new Object();
 
-    /* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
     public static class DefaultLoader implements NativeLibraryLoader {
         @Override // org.webrtc.NativeLibraryLoader
         public boolean load(String str) {

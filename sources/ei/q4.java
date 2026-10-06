@@ -17,7 +17,7 @@ import org.telegram.messenger.GenericProvider;
 import org.telegram.ui.Components.fw0;
 import org.telegram.ui.Components.rc;
 
-/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+/* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
 /* loaded from: classes4.dex */
 public abstract class q4 extends FrameLayout {
     public static final fw0 b0 = new fw0(new d2.c(21), new d2.c(22));

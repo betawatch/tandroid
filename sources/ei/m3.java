@@ -81,7 +81,7 @@ import org.telegram.ui.yi;
 import org.telegram.ui.yn;
 import org.telegram.ui.zr0;
 
-/* compiled from: r8-map-id-8e647ea09dd204f7fa56b0790cd1c6c7931fe567b34678ab0d221a9ad6af8f53 */
+/* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m3 implements Runnable {
     public final /* synthetic */ int a;
@@ -838,7 +838,7 @@ public final /* synthetic */ class m3 implements Runnable {
                         k2Var.i.set(k2Var.h);
                         matrix.mapRect(k2Var.i);
                         k2Var.c = i42;
-                        Bitmap d = n2Var5.d(n2Var5.I, 0, 0, false);
+                        Bitmap d = n2Var5.d(0, 0, n2Var5.I, false);
                         k2Var.d = d;
                         if (d == null) {
                             FileLog.e(new RuntimeException("createSmoothEdgesSegmentedImage failed on empty image"));
@@ -863,7 +863,7 @@ public final /* synthetic */ class m3 implements Runnable {
                             k2Var2.i.set(k2Var2.h);
                             matrix.mapRect(k2Var2.i);
                             k2Var2.c = i42;
-                            Bitmap d10 = n2Var5.d(m2Var.a, m2Var.b, m2Var.c, false);
+                            Bitmap d10 = n2Var5.d(m2Var.b, m2Var.c, m2Var.a, false);
                             k2Var2.d = d10;
                             if (d10 != null) {
                                 k2Var2.f = k2Var2.c();
