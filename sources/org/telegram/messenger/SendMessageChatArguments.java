@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
+/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
 /* loaded from: classes.dex */
 public class SendMessageChatArguments {
     public static final SendMessageChatArguments EMPTY = new Builder().build();
@@ -8,7 +8,7 @@ public class SendMessageChatArguments {
     public final int quickReplyShortcutId;
     public final long welcomeMessageChatId;
 
-    /* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
+    /* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
     public static class Builder {
         private String quickReplyShortcut;
         private int quickReplyShortcutId;

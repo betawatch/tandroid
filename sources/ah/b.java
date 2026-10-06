@@ -56,6 +56,7 @@ import ii.r;
 import ii.t5;
 import ii.u3;
 import ii.x3;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -107,7 +108,7 @@ import org.telegram.ui.uc0;
 import u2.b0;
 import v7.l8;
 
-/* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
+/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements hh.i, g9, a2, OnFailureListener, q9.d, nl0, OnCompleteListener, Continuation, ol0, Utilities.Callback3Return, bd0, p0, cu, j4, e2.n, e2.m, j0, e2.h, z0 {
     public final /* synthetic */ int a;
@@ -724,9 +725,12 @@ public final /* synthetic */ class b implements hh.i, g9, a2, OnFailureListener,
     @Override // hh.i
     public void k(RectF rectF, View view) {
         ch.d dVar = (ch.d) this.b;
-        View view2 = (View) this.c;
+        WeakReference weakReference = (WeakReference) this.c;
         dVar.i(rectF.left, rectF.top);
-        view2.invalidate();
+        View view2 = (View) weakReference.get();
+        if (view2 != null) {
+            view2.invalidate();
+        }
     }
 
     @Override // com.google.android.gms.tasks.OnCompleteListener

@@ -3,11 +3,12 @@ package ah;
 import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
+import java.lang.ref.WeakReference;
 import java.util.Iterator;
 import li.o;
 import li.p;
 
-/* compiled from: r8-map-id-995671d6bce0aaeb91824b65f2f1988c5410eae59f1d5d7c368a0027313cc0ad */
+/* compiled from: r8-map-id-512d310aee599d224f4c0b0a2d01feec484432ddc9f55a7433fffe3405d6493d */
 /* loaded from: classes3.dex */
 public final class c {
     public final fh.a a;
@@ -33,7 +34,6 @@ public final class c {
     }
 
     public final ch.d c(View view, dh.a aVar, boolean z10) {
-        ViewGroup viewGroup;
         ch.d b10 = this.a.b();
         if (this.i && Build.VERSION.SDK_INT >= 33 && (b10 instanceof ch.e)) {
             ch.e eVar = (ch.e) b10;
@@ -52,9 +52,8 @@ public final class c {
         if (pVar != null && view != null) {
             pVar.c.add(new o(view, b10));
         }
-        hh.k kVar = this.f;
-        if (kVar != null && (viewGroup = this.g) != null && view != null) {
-            kVar.d(view, viewGroup, new b(0, b10, view), z10);
+        if (this.f != null && this.g != null && view != null) {
+            this.f.d(view, this.g, new b(0, b10, new WeakReference(view)), z10);
         }
         pe.b bVar2 = this.d;
         if (bVar2 != null) {

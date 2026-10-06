@@ -1,10 +1,10 @@
 Signature-Version: 1.0
 Created-By: Android Gradle 8.13.2
-SHA-256-Digest-Manifest: RHjJKhNVD5kwe1rqpJ9yY7LxOeZg6M6Qdl8mOWZLbZc=
+SHA-256-Digest-Manifest: F/7CLiLVNvZjvXPc0Efrxhf09iHo+GeEey1IuYA/kkI=
 X-Android-APK-Signed: 2
 
 Name: AndroidManifest.xml
-SHA-256-Digest: ebzFrsPnoCE1yrcAJK5yhMp3D5mx+qRKPpoSvV4IKuI=
+SHA-256-Digest: 4NYTeftn60By89MoWyaa3mUIgt0atY+WCJ9CzAPyA1o=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: XJYoj9g1jxqW8LSScnHRcHzQEKpqZlq7SOYe/7+BzW4=
@@ -209,7 +209,7 @@ Name: assets/day.attheme
 SHA-256-Digest: l/KBfB6FEOrGfSkoe53dwG0w9pmh8zx9cr6IugDsQD0=
 
 Name: assets/dexopt/baseline.prof
-SHA-256-Digest: WjJTTkZXZs9JZffiAt9Zi0+VUYNzYSuqKFkBwj/2aqw=
+SHA-256-Digest: 1z3pu+c0MBI6uJNOLfO1c3hPBL5EaeY++eK+v0ieLZU=
 
 Name: assets/dexopt/baseline.profm
 SHA-256-Digest: RPlRB+w7tYkKoFm92tQ1b4nDGggfclzBLUH77sO2uv4=
@@ -570,16 +570,16 @@ Name: car-app-api.level
 SHA-256-Digest: U7VDQ6k7m7J1AoQX3N5vqx+XQLdKhUbKn5KuRPKg9B0=
 
 Name: classes.dex
-SHA-256-Digest: YGNWaTqC+qIckyp3ZW1sXirSOeozuliJF+kpgUvc56w=
+SHA-256-Digest: lcOz9k9h36yQ5MceseE5w3iPycluq8kR4XWyBy0cNSI=
 
 Name: classes2.dex
 SHA-256-Digest: /Us914DjN/Yy33HKJf/e1qbfVlHJA3ZmLU+oV8QOLOc=
 
 Name: classes3.dex
-SHA-256-Digest: KA6WEH5fXlleV3mjWd2X+7iN8rUf8nIpD0dZiwm9iAY=
+SHA-256-Digest: xS8hReLcC9WTS8w79nByPBpKezYY8RQ3FtLE1IU4p9c=
 
 Name: classes4.dex
-SHA-256-Digest: oLATW2yjx/YPmH0vCJ4ruqh5OeBDM8PDaH+ctZheWwM=
+SHA-256-Digest: 6EsIpLfCTOKaj2p9qbDDCwaZpaQTO68TmNkMBjRiXuw=
 
 Name: client_analytics.proto
 SHA-256-Digest: EsiOhXZ9ARjm/oKvt02rDTapjzIdPYgYWzazsNC7GXU=
@@ -21615,7 +21615,7 @@ Name: res/zzZ.xml
 SHA-256-Digest: E4VAfgYXmJpd0w//sLoB023purpYUbqY97+GnPQ400Y=
 
 Name: resources.arsc
-SHA-256-Digest: 7go1qHZLC1rJHQA5ZU70w8WupFYFVMbukcaREQQb+tA=
+SHA-256-Digest: 2uI88+77BeCA1fBse9vT5AWcaWCPxZ82W1U22F34UeM=
 
 Name: version.txt
 SHA-256-Digest: p5wDnbLFihlIF5QDi90qOP68wP82L4ISXw+/3WXeeM0=
